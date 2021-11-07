@@ -4,21 +4,36 @@ export default function PolicyList(props) {
   return (
     <fieldset>
       <div className="">
-        {props.data.map((person, personIdx) => (
-          <div key={personIdx} className="relative flex items-start py-4">
-            <div className="">
-              <Link href={'/laws/' + person.id} key={person.id}>
-                <a className="font-semibold">{person.name}</a>
+        {props.data.map((data, dataIdx) => (
+          <div key={dataIdx} className="block py-7">
+            <div className="block">
+              <Link href={"/laws/" + data.id} key={data.id}>
+                <a className="underline text-lg font-semibold ">
+                  {data.lawTitel}
+                </a>
               </Link>
             </div>
-            <div>{person.description}</div>
+            <div className="block">{data.officieleTitel}</div>
 
-            <div>
-              <div>Bevoegdheidsniveau: {person.bevoegdheidsniveau}</div>
-
-              <div>Reikwijdte: {person.reikwijdte}</div>
-
-              <div>Afbreukrisico: {person.afbreukrisico}</div>
+            <div className="flex space-x-3">
+              <div className="flex-2 text-normal text-gray-400">
+                Bevoegdheidsniveau:{" "}
+                <span className="block-inline font-semibold text-gray-900">
+                  {data.Bevoegdheidsniveau}
+                </span>
+              </div>
+              <div className="flex-1 text-normal text-gray-400">
+                Reikwijdte:{" "}
+                <span className="block-inline font-semibold text-gray-900">
+                  {data.Reikwijdte}
+                </span>
+              </div>
+              <div className="flex-1 text-normal text-gray-400">
+                Afbreukrisico:{" "}
+                <span className="block-inline font-semibold text-gray-900">
+                  {data.Afbreukrisico}
+                </span>
+              </div>
             </div>
           </div>
         ))}

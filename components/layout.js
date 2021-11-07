@@ -9,7 +9,7 @@ export default function Layout({ children }) {
       <Head>
         <title>Layouts Example</title>
       </Head>
-      <main>{children}</main>
+      <main className="w-1/2 sm:w-full">{children}</main>
       <Footer />
     </>
   );
