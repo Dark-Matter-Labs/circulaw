@@ -7,8 +7,8 @@ export default function PolicyList(props) {
         {props.data.map((person, personIdx) => (
           <div key={personIdx} className="relative flex items-start py-4">
             <div className="">
-              <Link href="/">
-                <a className="font-semibold	">{person.name}</a>
+              <Link href={'/laws/' + person.id} key={person.id}>
+                <a className="font-semibold">{person.name}</a>
               </Link>
             </div>
             <div>{person.description}</div>
