@@ -17,7 +17,7 @@ export default function PolicyList(props) {
               {data.Rechtsgebied} - {data.officieleTitel}
             </div>
 
-            <div className='flex space-x-3'>
+            <div className='flex space-x-8'>
               <div className='flex-2 mr-5 text-normal text-base text-gray-400'>
                 Bevoegdheidsniveau:{" "}
                 <span className='block-inline font-semibold text-base text-gray-900'>

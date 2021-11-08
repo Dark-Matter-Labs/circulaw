@@ -35,7 +35,7 @@ export default function Laws() {
       <div className='flex '>
         <div className='p-3 my-11'>
           <h2 className='block text-4xl mb-32'>HOUTBOUW</h2>
-          <div className='pb-3 border-b border-black mb-3'>
+          <div className=' flex justify-between pb-3 border-b border-black mb-3'>
             <span className='text-lg'>Verfijnen</span>{" "}
             <span className='underline'>Reset</span>
           </div>
@@ -48,7 +48,7 @@ export default function Laws() {
           <SearchFilter title='R - ladder' data={RLadder} />
         </div>
 
-        <div className='p-3 mt-14 ml-10'>
+        <div className='p-3 mt-10 ml-10'>
           <h1 className='block text-4xl'>
             Circulaire transitie maatregelen & mogelijkheden
           </h1>
