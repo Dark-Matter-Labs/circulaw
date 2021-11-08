@@ -3,6 +3,7 @@ import useSWR from "swr";
 import Link from "next/link";
 import Image from 'next/image'
 import placeholder from "../../public/placeholder.png"
+import { StarIcon } from '@heroicons/react/solid'
 
 
 import Layout from "../../components/layout";
@@ -15,6 +16,10 @@ const fetcher = async (url) => {
   }
   return data;
 };
+
+function classNames(...classes) {
+	  return classes.filter(Boolean).join(' ')
+	}
 
 export default function Law() {
   const { query } = useRouter();
@@ -35,10 +40,10 @@ export default function Law() {
 				  width: 25px;
 				  height: 25px;  
 				  }
-			  .true {
+			  .score-true {
 					background-color: #565D61;
 				  }
-			  .flase {
+			  .score-false {
 				  background-color: #C2D1D9;
 				  }
 			`}</style>
@@ -118,9 +123,19 @@ export default function Law() {
             <div className='py-5'>
               <div className='font-bold	'>Juridische reikwijdte</div>
 			  
-			   <div className="square ${data === true ? 'true' : 'false'}`"></div>
-			   <div className="square ${data === true ? 'true' : 'false'}`"></div>
-			   <div className="square ${data === true ? 'true' : 'false'}`"></div>
+				<div className="ml-1 flex items-center">
+					  {[0, 1, 2, 3, 4].map((rating) => (
+						<div
+						  key={rating}
+						  className={classNames(
+							data.Reikwijdte > rating ? 'score-true' : 'score-false',
+							'h-5 w-5 flex-shrink-0'
+						  )}
+						  aria-hidden="true"
+						/>
+					  ))}
+					</div>
+			   
 			  <div>{data.Reikwijdte}</div>
 			  
 			  
@@ -130,9 +145,18 @@ export default function Law() {
 
             <div className='py-5'>
               <div className='font-bold	'>Juridisch afbreukrisico</div>
-			  <div className="square ${data === true ? 'true' : 'false'}`"></div>
-				 <div className="square ${data === true ? 'true' : 'false'}`"></div>
-				 <div className="square ${data === true ? 'true' : 'false'}`"></div>
+			  <div className="ml-1 flex items-center">
+					{[0, 1, 2, 3, 4].map((rating) => (
+					  <div
+						key={rating}
+						className={classNames(
+						  data.Afbreukrisico > rating ? 'score-true' : 'score-false',
+						  'h-5 w-5 flex-shrink-0'
+						)}
+						aria-hidden="true"
+					  />
+					))}
+				  </div>
 			  <div>{data.Afbreukrisico}</div>
             </div>
 
@@ -156,21 +180,7 @@ export default function Law() {
   );
 }
 
-export  function Rating(data) {
-	console.log(data);
-return(<>
-		
 
-	</>)
-}
-
-export  function RatingIndicator(data) {
-	console.log("SQR" + data);
-	return(<>
-		
-
-		</>)
-	}
 	
 	
 	
