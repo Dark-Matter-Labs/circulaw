@@ -26,16 +26,19 @@ const fetcher = async (url) => {
 export default function Laws() {
   const { query } = useRouter();
   const { data, error } = useSWR(() => `/api/laws/`, fetcher);
-
+  const numberOfLaws = 59;
   if (error) return <div>{error.message}</div>;
   if (!data) return <div>Loading...</div>;
 
   return (
     <Layout>
-      <div className='flex'>
-        <div className='p-3 mt-14'>
-          <h2 className='text-lg'>HOUTBOUW</h2>
-          <div className=''>Verfijnen</div>
+      <div className='flex '>
+        <div className='p-3 my-11'>
+          <h2 className='block text-4xl mb-32'>HOUTBOUW</h2>
+          <div className='pb-3 border-b border-black mb-3'>
+            <span className='text-lg'>Verfijnen</span>{" "}
+            <span className='underline'>Reset</span>
+          </div>
           <SearchFilter
             title='Wettelijk bevoegdheidsniveau'
             data={WettelijkBevoegdheidsniveau}
@@ -45,25 +48,28 @@ export default function Laws() {
           <SearchFilter title='R - ladder' data={RLadder} />
         </div>
 
-        <div className='p-3 mt-14'>
-          <h1 className=' block text-4xl'>
+        <div className='p-3 mt-14 ml-10'>
+          <h1 className='block text-4xl'>
             Circulaire transitie maatregelen & mogelijkheden
           </h1>
-          <div className='block'>
-            <span className=''>165</span> maatregelen gevonden
+          <div className='block my-4'>
+            <span className='font-bold'>{numberOfLaws}</span> maatregelen
+            gevonden
           </div>
+
           <div>
             <input type='checkbox' />
-            <span className='pl-3'>
+            <span className='pl-3 text-gray-400	'>
               Maatregelen met voorbeelden van succesvolle toepassingen
             </span>
           </div>
-          <div>
+          <div className='pb-3 border-b border-black'>
             <input type='checkbox' />
-            <span className='pl-3'>
+            <span className='pl-3 text-gray-400	'>
               Alleen maatregelen in HUIDIGE wet- en regelgeving
             </span>
           </div>
+
           <div className=''>
             <PolicyList data={data} />
           </div>

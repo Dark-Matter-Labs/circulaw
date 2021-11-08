@@ -71,27 +71,27 @@ export default function Law() {
 
             <table className='table-fixed w-full mt-5'>
               <tbody>
-                <tr className='py-3 border-b-2 border-t-2'>
+                <tr className='my-10 border-b-2 border-t-2'>
                   <td className='w-1/2'>Rechtsgebied</td>
                   <td className='w-1/2'>{data.Rechtsgebied}</td>
                 </tr>
-                <tr className='py-3 border-b-2'>
+                <tr className='my-10 border-b-2'>
                   <td className='w-1/2'>Wettelijk document</td>
                   <td className='w-1/2'>{data.officieleTitel}</td>
                 </tr>
-                <tr className='py-3 border-b-2'>
+                <tr className='my-10 border-b-2'>
                   <td className='w-1/2'>Artikel</td>
                   <td className='w-1/2'>{data.Artikel}</td>
                 </tr>
-                <tr className='py-3 border-b-2'>
+                <tr className='my-10 border-b-2'>
                   <td className='w-1/2'>Ingang wet</td>
                   <td className='w-1/2'>{data.IngangWet}</td>
                 </tr>
-                <tr className='py-3 border-b-2'>
+                <tr className='my-10 border-b-2'>
                   <td className='w-1/2'>Bevoegdheids niveau</td>
                   <td className='w-1/2'>{data.Bevoegdheidsniveau}</td>
                 </tr>
-                <tr className='py-3 border-b-2'>
+                <tr className='my-10 border-b-2'>
                   <td className='w-1/2'>Type document</td>
                   <td className='w-1/2'>{data.TypeDocument}</td>
                 </tr>
@@ -106,7 +106,7 @@ export default function Law() {
                 </tr>
               </tbody>
             </table>
-            <h3 className='mt-5 text-lg font-extrabold'>
+            <h3 className='my-5 text-lg font-extrabold'>
               Voorbeelden uit de praktijk waar de maatregelen succesvol zijn
               toegepast
             </h3>
@@ -119,24 +119,24 @@ export default function Law() {
  
             </div>
           </div>
-          <div className='w-1/3'>
+          <div className='w-1/3 '>
             <div className='py-5'>
               <div className='font-bold	'>Juridische reikwijdte</div>
 			  
-				<div className="ml-1 flex items-center">
+				<div className="mt-3 flex items-center">
 					  {[0, 1, 2, 3, 4].map((rating) => (
 						<div
 						  key={rating}
 						  className={classNames(
 							data.Reikwijdte > rating ? 'score-true' : 'score-false',
-							'h-5 w-5 flex-shrink-0'
+							'mr-5 h-5 w-5 flex-shrink-0'
 						  )}
 						  aria-hidden="true"
 						/>
 					  ))}
 					</div>
 			   
-			  <div>{data.Reikwijdte}</div>
+			  <div className="mt-3">{data.Reikwijdte}</div>
 			  
 			  
 			  
@@ -145,19 +145,19 @@ export default function Law() {
 
             <div className='py-5'>
               <div className='font-bold	'>Juridisch afbreukrisico</div>
-			  <div className="ml-1 flex items-center">
+			  <div className="mt-3 flex items-center">
 					{[0, 1, 2, 3, 4].map((rating) => (
 					  <div
 						key={rating}
 						className={classNames(
 						  data.Afbreukrisico > rating ? 'score-true' : 'score-false',
-						  'h-5 w-5 flex-shrink-0'
+						  'mr-5 h-5 w-5 flex-shrink-0'
 						)}
 						aria-hidden="true"
 					  />
 					))}
 				  </div>
-			  <div>{data.Afbreukrisico}</div>
+			  <div className="mt-3">{data.Afbreukrisico}</div>
             </div>
 
             <div className='py-5'>
@@ -180,15 +180,10 @@ export default function Law() {
   );
 }
 
+export  function Rating(data) {
+ {/* TODO: @Will make the ratings system a componet which suporots diff values + shapes */}
+return(<>
+		
 
-	
-	
-	
-
-
-	
-	
-	
-	
-	
-	
+	</>)
+}

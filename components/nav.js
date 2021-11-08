@@ -6,10 +6,10 @@ export default function Nav() {
       <div className='p-5'>Digitale tool Juridisch Landschap</div>
       <div className='bg-black text-white flex justify-between space-x-4 py-3'>
         <Link href='/laws'>
-          <a className='px-5'>Home</a>
+          <a className='px-5 font-bold'>Home</a>
         </Link>
 
-        <div className='justify-between'>
+        <div className='justify-between px-5'>
           <Link href='/laws'>
             <a className='px-3'>Maatregelen</a>
           </Link>
@@ -21,7 +21,7 @@ export default function Nav() {
           </Link>
         </div>
 
-        <div className='justify-between'>
+        <div className='justify-between px-5'>
           <Link href='/laws'>
             <a className='px-3'>Over ons</a>
           </Link>
