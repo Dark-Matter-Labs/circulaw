@@ -2,6 +2,13 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import Link from "next/link";
 
+import {
+  WettelijkBevoegdheidsniveau,
+  Rechtsgebied,
+  Fase,
+  RLadder,
+} from "../../dataFilterExample";
+
 import Layout from "/components/layout";
 import SearchFilter from "/components/search-filter";
 import PolicyList from "/components/policy-list";
@@ -25,34 +32,39 @@ export default function Laws() {
 
   return (
     <Layout>
-      <div className="">header content</div>
-      <div className="flex">
-        <div className="p-3 mt-14">
-          <h2 className="text-lg">HOUTBOUW</h2>
-          <div className="">Verfijnen</div>
-          Paste Filters Here
+      <div className='flex'>
+        <div className='p-3 mt-14'>
+          <h2 className='text-lg'>HOUTBOUW</h2>
+          <div className=''>Verfijnen</div>
+          <SearchFilter
+            title='Wettelijk bevoegdheidsniveau'
+            data={WettelijkBevoegdheidsniveau}
+          />
+          <SearchFilter title='Rechtsgebied' data={Rechtsgebied} />
+          <SearchFilter title='Fase' data={Fase} />
+          <SearchFilter title='R - ladder' data={RLadder} />
         </div>
 
-        <div className="p-3 mt-14">
-          <h1 className=" block text-4xl">
+        <div className='p-3 mt-14'>
+          <h1 className=' block text-4xl'>
             Circulaire transitie maatregelen & mogelijkheden
           </h1>
-          <div className="block">
-            <span className="">165</span> maatregelen gevonden
+          <div className='block'>
+            <span className=''>165</span> maatregelen gevonden
           </div>
           <div>
-            <input type="checkbox" />
-            <span className="pl-3">
+            <input type='checkbox' />
+            <span className='pl-3'>
               Maatregelen met voorbeelden van succesvolle toepassingen
             </span>
           </div>
           <div>
-            <input type="checkbox" />
-            <span className="pl-3">
+            <input type='checkbox' />
+            <span className='pl-3'>
               Alleen maatregelen in HUIDIGE wet- en regelgeving
             </span>
           </div>
-          <div className="">
+          <div className=''>
             <PolicyList data={data} />
           </div>
         </div>

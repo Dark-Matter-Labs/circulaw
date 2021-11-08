@@ -1,23 +1,25 @@
 export default function SearchFilter(props) {
   return (
-    <fieldset>
-      <legend className="">{props.title}</legend>
-      <div className="">
-        {props.data.map((person, personIdx) => (
-          <div key={personIdx} className="relative flex items-start py-4">
-            <div className="">
+    <fieldset className='py-5'>
+      <legend className='text-lg'>{props.title}</legend>
+      <div>
+        {props.data.map((data, dataIdx) => (
+          <div key={dataIdx} className='relative flex justify-between'>
+            <div>
               <input
-                id={`person-${person.id}`}
-                name={`person-${person.id}`}
-                type="checkbox"
-                className=""
+                id={`data-${data.id}`}
+                name={`data-${data.id}`}
+                type='checkbox'
               />
-              <label htmlFor={`person-${person.id}`} className="select-none">
-                {person.name}
+              <label
+                htmlFor={`data-${data.id}`}
+                className='select-none font-semibold text-sm pl-2'
+              >
+                {data.name}
               </label>
             </div>
-            <div className="flex items-center">
-              <div>{person.id}</div>
+            <div className='font-normal text-sm text-gray-400'>
+              {data.number}
             </div>
           </div>
         ))}

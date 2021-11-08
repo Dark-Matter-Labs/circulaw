@@ -15,7 +15,7 @@ export const laws = [
     Bevoegdheidsniveau: "Lokaal",
     "Verbinding met andere artikelen (Moet je dit artikel lezen juncto andere artikelen?)":
       "",
-    Reikwijdte: 2,
+    Reikwijdte: "2",
     Afbreukrisico: 5,
     "Beleids instrument type": "Juridisch",
     "Opmerkingen type norm valt hier ook onder": "",
@@ -29,7 +29,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 2,
+    id: "2",
     Artikel: 2.12,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -44,7 +44,7 @@ export const laws = [
     Bevoegdheidsniveau: "Provinciaal",
     "Verbinding met andere artikelen (Moet je dit artikel lezen juncto andere artikelen?)":
       "",
-    Reikwijdte: 3,
+    Reikwijdte: "3",
     Afbreukrisico: 5,
     "Beleids instrument type": "Juridisch",
     "Opmerkingen type norm valt hier ook onder": "",
@@ -58,7 +58,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 3,
+    id: "3",
     Artikel: 2.14,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -73,7 +73,7 @@ export const laws = [
     Bevoegdheidsniveau: "Nationaal",
     "Verbinding met andere artikelen (Moet je dit artikel lezen juncto andere artikelen?)":
       "",
-    Reikwijdte: 4,
+    Reikwijdte: "4",
     Afbreukrisico: 1,
     "Beleids instrument type": "Juridisch",
     "Opmerkingen type norm valt hier ook onder": "",
@@ -116,7 +116,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 5,
+    id: "5",
     Artikel: 2.24,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -145,7 +145,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 6,
+    id: "6",
     Artikel: 3.1,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -175,7 +175,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 7,
+    id: "7",
     Artikel: 3.1,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -205,7 +205,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 8,
+    id: "8",
     Artikel: 3.1,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -235,7 +235,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 9,
+    id: "9",
     Artikel: 3.4,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -264,7 +264,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 10,
+    id: "10",
     Artikel: 3.4,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -293,7 +293,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 11,
+    id: "11",
     Artikel: 3.4,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -322,7 +322,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 12,
+    id: "12",
     Artikel: 4.1,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -351,7 +351,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 13,
+    id: "13",
     Artikel: 4.2,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -380,7 +380,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 14,
+    id: "14",
     Artikel: 4.3,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -409,7 +409,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 15,
+    id: "15",
     Artikel: 4.3,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -438,7 +438,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 16,
+    id: "16",
     Artikel: 4.3,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -467,7 +467,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 17,
+    id: "17",
     Artikel: 4.4,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -496,7 +496,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 18,
+    id: "18",
     Artikel: 4.4,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -525,7 +525,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 19,
+    id: "19",
     Artikel: 4.5,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -554,7 +554,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 20,
+    id: "20",
     Artikel: 4.5,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -583,7 +583,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 21,
+    id: "21",
     Artikel: 4.6,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -612,7 +612,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 22,
+    id: "22",
     Artikel: 4.7,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -641,7 +641,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 23,
+    id: "23",
     Artikel: 4.14,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -670,7 +670,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 24,
+    id: "24",
     Artikel: 4.15,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -699,7 +699,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 25,
+    id: "25",
     Artikel: 4.18,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -728,7 +728,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 26,
+    id: "26",
     Artikel: 4.19,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -757,7 +757,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 27,
+    id: "27",
     Artikel: 5.1,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -786,7 +786,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 28,
+    id: "28",
     Artikel: 5.4,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -815,7 +815,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 29,
+    id: "29",
     Artikel: 5.18,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -844,7 +844,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 30,
+    id: "30",
     Artikel: 5.34,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -873,7 +873,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 31,
+    id: "31",
     Artikel: 9.1,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -902,7 +902,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 32,
+    id: "32",
     Artikel: 9.1,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -931,7 +931,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 33,
+    id: "33",
     Artikel: 9.1,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -960,7 +960,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 34,
+    id: "34",
     Artikel: 11.1,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -990,7 +990,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 35,
+    id: "35",
     Artikel: 11.1,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1020,7 +1020,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 36,
+    id: "36",
     Artikel: 11.1,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1050,7 +1050,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 37,
+    id: "37",
     Artikel: 11.1,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1080,7 +1080,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 38,
+    id: "38",
     Artikel: 12.3,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1109,7 +1109,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 39,
+    id: "39",
     Artikel: 12.22,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1138,7 +1138,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 40,
+    id: "40",
     Artikel: 23.3,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1167,7 +1167,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 41,
+    id: "41",
     Artikel: 23.3,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1196,7 +1196,7 @@ export const laws = [
     TypeDocument: "",
   },
   {
-    id: 42,
+    id: "42",
     Artikel: 2.28,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1226,7 +1226,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 43,
+    id: "43",
     Artikel: 2.3,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1255,7 +1255,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 44,
+    id: "44",
     Artikel: "2.31a",
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1285,7 +1285,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 45,
+    id: "45",
     Artikel: 2.75,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1315,7 +1315,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 46,
+    id: "46",
     Artikel: 2.76,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1344,7 +1344,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 47,
+    id: "47",
     Artikel: "2.78a",
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1373,7 +1373,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 48,
+    id: "48",
     Artikel: "2.78b",
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1403,7 +1403,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 49,
+    id: "49",
     Artikel: 2.8,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1432,7 +1432,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 50,
+    id: "50",
     Artikel: 2.9,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1461,7 +1461,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 51,
+    id: "51",
     Artikel: 2.97,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1490,7 +1490,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 52,
+    id: "52",
     Artikel: 2.114,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1519,7 +1519,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 53,
+    id: "53",
     Artikel: 2.115,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1548,7 +1548,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 54,
+    id: "54",
     Artikel: "2.115a",
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1577,7 +1577,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 55,
+    id: "55",
     Artikel: "2a.39",
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1607,7 +1607,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 56,
+    id: "56",
     Artikel: "2a.46",
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1636,7 +1636,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 57,
+    id: "57",
     Artikel: "2a.50",
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1665,7 +1665,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 58,
+    id: "58",
     Artikel: 2,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
@@ -1693,7 +1693,7 @@ export const laws = [
     TypeDocument: "Wet in formele zin",
   },
   {
-    id: 59,
+    id: "59",
     Artikel: 2,
     "Nee - Geen circulariteit te vinden in dit artikel/ lid (Click if this is true)":
       "FALSE",
