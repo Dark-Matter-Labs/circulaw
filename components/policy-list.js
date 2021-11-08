@@ -13,7 +13,7 @@ export default function PolicyList(props) {
                 </a>
               </Link>
             </div>
-            <div className='block'>{data.officieleTitel}</div>
+            <div className='block'>{data.Rechtsgebied} - {data.officieleTitel}</div>
 
             <div className='flex space-x-3'>
               <div className='flex-2 text-normal text-base text-gray-400'>
