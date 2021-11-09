@@ -33,8 +33,8 @@ export default function Laws() {
   return (
     <Layout>
       <div className='flex '>
-        <div className='p-3 my-11'>
-          <h2 className='block text-4xl mb-32'>HOUTBOUW</h2>
+        <div className='p-3 my-10'>
+          <h2 className='block text-4xl mb-20'>HOUTBOUW</h2>
           <div className=' flex justify-between pb-3 border-b border-black mb-3'>
             <span className='text-lg'>Verfijnen</span>{" "}
             <span className='underline'>Reset</span>

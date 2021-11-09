@@ -9,7 +9,9 @@ export default function Layout({ children }) {
       <Head>
         <title>Layouts Example</title>
       </Head>
-      <main className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">{children}</main>
+      <main className='relative max-w-xl mx-auto px-8 max-w-7xl'>
+        {children}
+      </main>
       <Footer />
     </>
   );
