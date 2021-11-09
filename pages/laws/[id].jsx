@@ -1,10 +1,9 @@
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import Link from "next/link";
-import Image from 'next/image'
-import placeholder from "../../public/placeholder.png"
-import { StarIcon } from '@heroicons/react/solid'
-
+import Image from "next/image";
+import placeholder from "../../public/placeholder.png";
+import { StarIcon } from "@heroicons/react/solid";
 
 import Layout from "../../components/layout";
 const fetcher = async (url) => {
@@ -18,11 +17,12 @@ const fetcher = async (url) => {
 };
 
 function classNames(...classes) {
-	  return classes.filter(Boolean).join(' ')
-	}
+  return classes.filter(Boolean).join(" ");
+}
 
 export default function Law() {
   const { query } = useRouter();
+
   const { data, error } = useSWR(
     () => query.id && `/api/laws/${query.id}`,
     fetcher
@@ -31,24 +31,23 @@ export default function Law() {
   if (!data) return <div>Loading...</div>;
 
   return (
-	  
     <Layout>
-		<style jsx>{`
-			  .square {
-				  display: inline-block;
-				  margin-right: 1rem;
-				  width: 25px;
-				  height: 25px;  
-				  }
-			  .score-true {
-					background-color: #565D61;
-				  }
-			  .score-false {
-				  background-color: #C2D1D9;
-				  }
-			`}</style>
+      <style jsx>{`
+        .square {
+          display: inline-block;
+          margin-right: 1rem;
+          width: 25px;
+          height: 25px;
+        }
+        .score-true {
+          background-color: #565d61;
+        }
+        .score-false {
+          background-color: #c2d1d9;
+        }
+      `}</style>
       <div className='mt-14 p-8'>
-        <div className='block w-full'>
+        <div className='block p-6 w-full'>
           <Link href='/laws' className='mt-24 mb-2 w-full font-normal '>
             <a>← Overzicht maatregelen</a>
           </Link>
@@ -68,7 +67,6 @@ export default function Law() {
               Waarom zit deze mogelijkheid in de wettelijke bepaling?
             </h3>
             <p className='border-solid'>{data.Toelichting}</p>
-
             <table className='table-fixed w-full mt-5'>
               <tbody>
                 <tr className='my-10 border-b-2 border-t-2'>
@@ -106,58 +104,69 @@ export default function Law() {
                 </tr>
               </tbody>
             </table>
-            <h3 className='my-5 text-lg font-extrabold'>
-              Voorbeelden uit de praktijk waar de maatregelen succesvol zijn
-              toegepast
-            </h3>
-            <div>
-				
-              <Image alt="document preview" src={placeholder} width={222} height={156} />
+            <div
+              className={classNames(
+                data.OpmerkingenLink === "" ? "hidden" : ""
+              )}
+            >
+              <h3 className='my-5 text-lg font-extrabold'>
+                Voorbeelden uit de praktijk waar de maatregelen succesvol zijn
+                toegepast
+              </h3>
+              <Image
+                alt='document preview'
+                src={placeholder}
+                width={222}
+                height={156}
+              />
 
-              <div>Voorbeeld 1 </div>
+              <div>
+                {" "}
+                <Link href={data.OpmerkingenLink}>
+                  <a>Voorbeeld 1</a>
+                </Link>
+              </div>
+
               <p>{data.Opmerkingen}</p>
- 
             </div>
           </div>
           <div className='w-1/3 '>
             <div className='py-5'>
               <div className='font-bold	'>Juridische reikwijdte</div>
-			  
-				<div className="mt-3 flex items-center">
-					  {[0, 1, 2, 3, 4].map((rating) => (
-						<div
-						  key={rating}
-						  className={classNames(
-							data.Reikwijdte > rating ? 'score-true' : 'score-false',
-							'mr-5 h-5 w-5 flex-shrink-0'
-						  )}
-						  aria-hidden="true"
-						/>
-					  ))}
-					</div>
-			   
-			  <div className="mt-3">{data.Reikwijdte}</div>
-			  
-			  
-			  
-			
+
+              <div className='mt-3 flex items-center'>
+                {[0, 1, 2, 3, 4].map((rating) => (
+                  <div
+                    key={rating}
+                    className={classNames(
+                      data.Reikwijdte > rating ? "score-true" : "score-false",
+                      "mr-5 h-5 w-5 flex-shrink-0"
+                    )}
+                    aria-hidden='true'
+                  />
+                ))}
+              </div>
+
+              <div className='mt-3'>{data.Reikwijdte}</div>
             </div>
 
             <div className='py-5'>
               <div className='font-bold	'>Juridisch afbreukrisico</div>
-			  <div className="mt-3 flex items-center">
-					{[0, 1, 2, 3, 4].map((rating) => (
-					  <div
-						key={rating}
-						className={classNames(
-						  data.Afbreukrisico > rating ? 'score-true' : 'score-false',
-						  'mr-5 h-5 w-5 flex-shrink-0'
-						)}
-						aria-hidden="true"
-					  />
-					))}
-				  </div>
-			  <div className="mt-3">{data.Afbreukrisico}</div>
+              <div className='mt-3 flex items-center'>
+                {[0, 1, 2, 3, 4].map((rating) => (
+                  <div
+                    key={rating}
+                    className={classNames(
+                      data.Afbreukrisico > rating
+                        ? "score-true"
+                        : "score-false",
+                      "mr-5 h-5 w-5 flex-shrink-0"
+                    )}
+                    aria-hidden='true'
+                  />
+                ))}
+              </div>
+              <div className='mt-3'>{data.Afbreukrisico}</div>
             </div>
 
             <div className='py-5'>
@@ -180,10 +189,9 @@ export default function Law() {
   );
 }
 
-export  function Rating(data) {
- {/* TODO: @Will make the ratings system a componet which suporots diff values + shapes */}
-return(<>
-		
-
-	</>)
+export function Rating(data) {
+  {
+    /* TODO: @Will make the ratings system a componet which suporots diff values + shapes */
+  }
+  return <></>;
 }
