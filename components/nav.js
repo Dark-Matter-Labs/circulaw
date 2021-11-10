@@ -1,6 +1,11 @@
 import Link from "next/link";
+import { signIn, signOut, useSession } from "next-auth/client";
 
 export default function Nav() {
+  const [session, loading] = useSession();
+  if (loading) {
+    return <p>Loading...</p>;
+  }
   return (
     <div className=''>
       <div className='p-5'>Digitale tool Juridisch Landschap</div>
@@ -28,6 +33,26 @@ export default function Nav() {
           <Link href='/laws'>
             <a className='px-3'>Contact </a>
           </Link>
+          {!session && (
+            <>
+              <button
+                onClick={signIn}
+                className='justify-center py-1 px-2 border border-transparent rounded-md shadow-sm text-sm font-medium '
+              >
+                Sign in
+              </button>
+            </>
+          )}
+          {session && (
+            <>
+              <button
+                onClick={signOut}
+                className='justify-center py-1 px-2 border border-transparent rounded-md shadow-sm text-sm font-medium '
+              >
+                Sign out
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>

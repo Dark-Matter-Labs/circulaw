@@ -14,15 +14,10 @@ export default function Layout({ children }) {
     <>
       <Nav />
       <Head>
-        <title>Layouts Example</title>
+        <title>Digitale tool Juridisch Landschap</title>
       </Head>
       <main className='relative max-w-xl mx-auto px-8 max-w-7xl'>
-        {!session && (
-          <>
-            Not signed in <br />
-            <button onClick={signIn}>Sign in</button>
-          </>
-        )}
+        {!session && <></>}
         {session && <>{children}</>}
       </main>
       <Footer />
