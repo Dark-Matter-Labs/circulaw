@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import placeholder from "../../public/placeholder.png";
 import { StarIcon } from "@heroicons/react/solid";
+import Tooltip from "../../components/tooltip";
 
 import Layout from "../../components/layout";
 const fetcher = async (url) => {
@@ -125,6 +126,10 @@ export default function Law() {
                 <Link href={data.OpmerkingenLink}>
                   <a>Voorbeeld 1</a>
                 </Link>
+                <br />
+                <Link href={data.OpmerkingenLink}>
+                  <a className='underline text-blue-500'>Link ↗</a>
+                </Link>
               </div>
 
               <p>{data.Opmerkingen}</p>
@@ -132,7 +137,10 @@ export default function Law() {
           </div>
           <div className='w-1/3 '>
             <div className='py-5'>
-              <div className='font-bold	'>Juridische reikwijdte</div>
+              <div className='relative flex justify-between'>
+                <div className='font-bold	'>Invloed</div>
+                <Tooltip data='' />
+              </div>
 
               <div className='mt-3 flex items-center'>
                 {[0, 1, 2, 3, 4].map((rating) => (
@@ -151,7 +159,10 @@ export default function Law() {
             </div>
 
             <div className='py-5'>
-              <div className='font-bold	'>Juridisch afbreukrisico</div>
+              <div className='relative flex justify-between'>
+                <div className='font-bold	'>Juridisch afbreukrisico</div>
+                <Tooltip data={data.JuridischAfbreukrisicoToolTip} />
+              </div>
               <div className='mt-3 flex items-center'>
                 {[0, 1, 2, 3, 4].map((rating) => (
                   <div

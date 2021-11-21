@@ -25,7 +25,7 @@ export default function PolicyList(props) {
                 </span>
               </div>
               <div className='flex-2 mr-5 text-normal text-base text-gray-400'>
-                Reikwijdte:{" "}
+                Invloed:{" "}
                 <span className='block-inline font-semibold text-base text-gray-900'>
                   {data.Reikwijdte}
                 </span>
