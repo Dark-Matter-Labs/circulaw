@@ -28,6 +28,7 @@ export default function Law() {
     () => query.id && `/api/laws/${query.id}`,
     fetcher
   );
+
   if (error) return <div>{error.message} </div>;
   if (!data) return <div>Loading...</div>;
 
@@ -114,12 +115,11 @@ export default function Law() {
                 Voorbeelden uit de praktijk waar de maatregelen succesvol zijn
                 toegepast
               </h3>
-              <Image
-                alt='document preview'
-                src={placeholder}
-                width={222}
-                height={156}
-              />
+              {/* <LinkPreviewer
+                data={
+                  data.OpmerkingenLink === "" ? "null" : data.OpmerkingenLink
+                }
+              /> */}
 
               <div>
                 {" "}
@@ -202,7 +202,7 @@ export default function Law() {
 
 export function Rating(data) {
   {
-    /* TODO: @Will make the ratings system a componet which suporots diff values + shapes */
+    /* TODO: @Will make the ratings system a component which supports diff values (3,5,10) + shapes */
   }
-  return <></>;
+  return <>Future Rating Systems</>;
 }

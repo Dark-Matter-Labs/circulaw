@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 
 export default function Tooltip(props) {
@@ -18,9 +19,7 @@ export default function Tooltip(props) {
       <div class='absolute bottom-0 right-0 flex flex-col items-center hidden mb-6 group-hover:flex'>
         <span class='relative z-10 p-2 w-96 text-xs leading-none text-white bg-black shadow-lg '>
           <div className='text-left'>
-            {props.dateTime === "" ? (
-              props.data
-            ) : (
+            {props.data === "" ? (
               <>
                 Het juridisch afbreukrisico is opgebouwd uit vijf elementen.
                 <br />
@@ -41,9 +40,15 @@ export default function Tooltip(props) {
                 daarvan bepalen de waardering voor het juridisch afbreukrisico:
                 1 (laag) t/m 5 (hoog).
               </>
+            ) : (
+              <>
+                {" "}
+                <div
+                  className='text-container'
+                  dangerouslySetInnerHTML={{ __html: props.data }}
+                />
+              </>
             )}
-
-            {props.data}
           </div>
         </span>
         <div class='w-3 h-3 -mt-2 rotate-45 bg-black'></div>
