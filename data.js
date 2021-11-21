@@ -17,6 +17,7 @@ export const laws = [
       "",
     Reikwijdte: 2,
     Afbreukrisico: 5,
+    JuridischAfbreukrisicoToolTip: "",
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -47,6 +48,8 @@ export const laws = [
       "",
     Reikwijdte: "3",
     Afbreukrisico: 5,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -77,6 +80,8 @@ export const laws = [
       "",
     Reikwijdte: "4",
     Afbreukrisico: 1,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -107,6 +112,8 @@ export const laws = [
       "",
     Reikwijdte: 4,
     Afbreukrisico: 5,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -137,6 +144,8 @@ export const laws = [
       "Bkl",
     Reikwijdte: 4,
     Afbreukrisico: 1,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -167,6 +176,8 @@ export const laws = [
       "",
     Reikwijdte: 3,
     Afbreukrisico: 1,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     OpmerkingenLink: "Zie Omgevingsvisie Amsterdam2050 als voorbeeld",
     OpmerkingenLink: "https://amsterdam2050.nl",
@@ -198,6 +209,8 @@ export const laws = [
       "",
     Reikwijdte: 4,
     Afbreukrisico: 1,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "Zie Omgevingsvisie Amsterdam2050 als voorbeeld",
     OpmerkingenLink: "https://amsterdam2050.nl",
@@ -229,6 +242,8 @@ export const laws = [
       "",
     Reikwijdte: 5,
     Afbreukrisico: 1,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "Zie Omgevingsvisie Amsterdam2050 als voorbeeld",
     OpmerkingenLink: "https://amsterdam2050.nl",
@@ -260,6 +275,8 @@ export const laws = [
       "",
     Reikwijdte: 3,
     Afbreukrisico: 3,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -291,6 +308,8 @@ export const laws = [
       "",
     Reikwijdte: 4,
     Afbreukrisico: 3,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -322,6 +341,8 @@ export const laws = [
       "",
     Reikwijdte: 5,
     Afbreukrisico: 3,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -353,6 +374,8 @@ export const laws = [
       "",
     Reikwijdte: 3,
     Afbreukrisico: 3,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -384,6 +407,8 @@ export const laws = [
       "",
     Reikwijdte: 3,
     Afbreukrisico: 3,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -415,6 +440,8 @@ export const laws = [
       "",
     Reikwijdte: 5,
     Afbreukrisico: 1,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -446,6 +473,8 @@ export const laws = [
       "",
     Reikwijdte: 5,
     Afbreukrisico: 1,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -477,6 +506,8 @@ export const laws = [
       "",
     Reikwijdte: 5,
     Afbreukrisico: 1,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -508,6 +539,8 @@ export const laws = [
       "",
     Reikwijdte: 2,
     Afbreukrisico: 5,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -539,6 +572,8 @@ export const laws = [
       "",
     Reikwijdte: 3,
     Afbreukrisico: 5,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -570,6 +605,8 @@ export const laws = [
       "",
     Reikwijdte: 1,
     Afbreukrisico: 2,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -601,6 +638,8 @@ export const laws = [
       "",
     Reikwijdte: 2,
     Afbreukrisico: 2,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -632,6 +671,8 @@ export const laws = [
       "",
     Reikwijdte: 3,
     Afbreukrisico: 2,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -663,6 +704,8 @@ export const laws = [
       "",
     Reikwijdte: 2,
     Afbreukrisico: 3,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Informatief",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -694,6 +737,8 @@ export const laws = [
       "",
     Reikwijdte: 2,
     Afbreukrisico: 3,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -725,6 +770,8 @@ export const laws = [
       "",
     Reikwijdte: 2,
     Afbreukrisico: 3,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -756,6 +803,8 @@ export const laws = [
       "",
     Reikwijdte: 1,
     Afbreukrisico: 1,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -787,6 +836,8 @@ export const laws = [
       "",
     Reikwijdte: 3,
     Afbreukrisico: 3,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -818,6 +869,8 @@ export const laws = [
       "",
     Reikwijdte: 3,
     Afbreukrisico: 5,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -849,6 +902,8 @@ export const laws = [
       "",
     Reikwijdte: 3,
     Afbreukrisico: 5,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -880,6 +935,8 @@ export const laws = [
       "",
     Reikwijdte: 5,
     Afbreukrisico: 1,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -911,6 +968,8 @@ export const laws = [
       "",
     Reikwijdte: 2,
     Afbreukrisico: 2,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -942,6 +1001,8 @@ export const laws = [
       "",
     Reikwijdte: 1,
     Afbreukrisico: 2,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -973,6 +1034,8 @@ export const laws = [
       "",
     Reikwijdte: 1,
     Afbreukrisico: 2,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1004,6 +1067,8 @@ export const laws = [
       "",
     Reikwijdte: 1,
     Afbreukrisico: 2,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1035,6 +1100,8 @@ export const laws = [
       "",
     Reikwijdte: 2,
     Afbreukrisico: 5,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink:
@@ -1067,6 +1134,8 @@ export const laws = [
       "",
     Reikwijdte: 2,
     Afbreukrisico: 5,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink:
@@ -1099,6 +1168,8 @@ export const laws = [
       "",
     Reikwijdte: 2,
     Afbreukrisico: 5,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink:
@@ -1131,6 +1202,8 @@ export const laws = [
       "",
     Reikwijdte: 2,
     Afbreukrisico: 5,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink:
@@ -1163,6 +1236,8 @@ export const laws = [
       "",
     Reikwijdte: 1,
     Afbreukrisico: 4,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1194,6 +1269,8 @@ export const laws = [
       "",
     Reikwijdte: 1,
     Afbreukrisico: 4,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1225,6 +1302,8 @@ export const laws = [
       "",
     Reikwijdte: 2,
     Afbreukrisico: 4,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1256,6 +1335,8 @@ export const laws = [
       "",
     Reikwijdte: 3,
     Afbreukrisico: 4,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1287,6 +1368,8 @@ export const laws = [
       "jo. art. 1.1 Aanbestedingswet\njo. art. 2.29 Aanbestedingswet\njo. par. 43 Richtlijn 2014/24/EU",
     Reikwijdte: 3,
     Afbreukrisico: 2,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink:
@@ -1319,6 +1402,8 @@ export const laws = [
       "jo. art. 1.1 Aanbestedingswet\njo. art. 2.28 lid 1 Aanbestedingswet\njo. art. 2.31 Aanbestedingswet",
     Reikwijdte: 3,
     Afbreukrisico: 3,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1350,6 +1435,8 @@ export const laws = [
       "jo. art. 1.1 Aanbestedingswet",
     Reikwijdte: 3,
     Afbreukrisico: 2,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink:
@@ -1383,6 +1470,8 @@ export const laws = [
       "",
     Reikwijdte: 3,
     Afbreukrisico: 2,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1414,6 +1503,8 @@ export const laws = [
       "",
     Reikwijdte: 3,
     Afbreukrisico: 4,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1445,6 +1536,8 @@ export const laws = [
       "jo. art. 2.115 lid 3 Aanbestedingswet",
     Reikwijdte: 3,
     Afbreukrisico: 2,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1477,6 +1570,8 @@ export const laws = [
       "",
     Reikwijdte: 3,
     Afbreukrisico: 2,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1508,6 +1603,8 @@ export const laws = [
       "jo. art. 2.115 lid 3 Aanbestedingswet",
     Reikwijdte: 3,
     Afbreukrisico: 3,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1539,6 +1636,8 @@ export const laws = [
       "",
     Reikwijdte: 3,
     Afbreukrisico: 5,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1570,6 +1669,8 @@ export const laws = [
       "2.93 lid 1 sub h Aanbestedingswet",
     Reikwijdte: 3,
     Afbreukrisico: 2,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1601,6 +1702,8 @@ export const laws = [
       "",
     Reikwijdte: 3,
     Afbreukrisico: 2,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1632,6 +1735,8 @@ export const laws = [
       "2.114 lid 2 sub a Aanbestedingswet",
     Reikwijdte: 3,
     Afbreukrisico: 3,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1663,6 +1768,8 @@ export const laws = [
       "2.114 lid 2 sub b Aanbestedingswet",
     Reikwijdte: 3,
     Afbreukrisico: 3,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1695,6 +1802,8 @@ export const laws = [
       "",
     Reikwijdte: 3,
     Afbreukrisico: 4,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1726,6 +1835,8 @@ export const laws = [
       "jo. art. 1.10 Aanbestedingswet",
     Reikwijdte: 3,
     Afbreukrisico: 5,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1757,6 +1868,8 @@ export const laws = [
       "",
     Reikwijdte: 3,
     Afbreukrisico: 3,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1787,6 +1900,8 @@ export const laws = [
     "Verbinding met andere artikelen (Moet je dit artikel lezen juncto andere artikelen?)": 2,
     Reikwijdte: 2,
     Afbreukrisico: "",
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",
@@ -1819,6 +1934,8 @@ export const laws = [
       "",
     Reikwijdte: 2,
     Afbreukrisico: 2,
+    JuridischAfbreukrisicoToolTip: "",
+
     BeleidsInstrumentType: "Juridisch",
     Opmerkingen: "",
     OpmerkingenLink: "",

@@ -11,7 +11,7 @@ export const WettelijkBevoegdheidsniveau = [
   },
   {
     id: "3",
-    name: "Lokaal",
+    name: "Gemeentelijk",
     number: "13",
   },
 ];
@@ -34,31 +34,26 @@ export const Rechtsgebied = [
   },
 ];
 
-export const Fase = [
+export const Plaberum = [
   {
     id: "1",
-    name: "Ontwerp",
+    name: "Verkenning",
     number: "11",
   },
   {
-    id: "1",
-    name: "Productie",
+    id: "2",
+    name: "Haalbaarheid",
     number: "26",
   },
   {
-    id: "1",
-    name: "Aanschaf",
+    id: "3",
+    name: "Ontwerp",
     number: "23",
   },
   {
-    id: "1",
-    name: "Gebruik",
+    id: "4",
+    name: "Uitvoering",
     number: "78",
-  },
-  {
-    id: "1",
-    name: "Afdank",
-    number: "5",
   },
 ];
 

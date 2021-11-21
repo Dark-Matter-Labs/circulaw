@@ -6,6 +6,7 @@ import {
   WettelijkBevoegdheidsniveau,
   Rechtsgebied,
   Fase,
+  Plaberum,
   RLadder,
 } from "../../dataFilterExample";
 
@@ -44,7 +45,7 @@ export default function Laws() {
             data={WettelijkBevoegdheidsniveau}
           />
           <SearchFilter title='Rechtsgebied' data={Rechtsgebied} />
-          <SearchFilter title='Fase' data={Fase} />
+          <SearchFilter title='Plaberum' data={Plaberum} />
           <SearchFilter title='R - ladder' data={RLadder} />
         </div>
 
