@@ -3,6 +3,7 @@ import { signIn, signOut, useSession } from "next-auth/client";
 
 export default function Nav() {
   const [session, loading] = useSession();
+
   if (loading) {
     return <p>Loading...</p>;
   }
