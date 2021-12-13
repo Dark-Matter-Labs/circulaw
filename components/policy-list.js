@@ -11,7 +11,7 @@ export default function PolicyList(props) {
     <fieldset>
       <div className='py-5 relative max-w-lg'>
         <input
-          aria-label='Search articles'
+          aria-label='Search'
           type='text'
           onChange={(e) => setSearchValue(e.target.value)}
           placeholder='Search articles'
