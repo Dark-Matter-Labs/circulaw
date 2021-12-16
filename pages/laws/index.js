@@ -26,7 +26,7 @@ const fetcher = async (url) => {
 export default function Laws() {
   const { query } = useRouter();
   const { data, error } = useSWR(() => `/api/laws/`, fetcher);
-  const numberOfLaws = 59;
+  const numberOfLaws = data.length;
   if (error) return <div>{error.message}</div>;
   if (!data) return <div>Loading...</div>;
 
