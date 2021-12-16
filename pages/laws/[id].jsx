@@ -56,33 +56,46 @@ export default function Law() {
 
           <h1 className='font-bold text-2xl mb-9'>{data.titel}</h1>
           <div>
-            <div>
-              <span className='font-bold inline-block'>Fase:</span> {data.fasen}
+            <div className='inline-block pr-4'>
+              Fase:
+              <span className='font-bold inline-block'>{data.fasen}</span>
             </div>
-            <div>
-              <span className='font-bold inline-block'>R ladder:</span>{" "}
-              {data.r_ladder}
+            <div className='inline-block pr-4'>
+              R ladder:
+              <span className='font-bold inline-block'>{data.r_ladder}</span>
             </div>
           </div>
         </div>
 
         <div className='flex'>
           <div className='w-2/3 p-6'>
-            <h3 className='font-bold pb-2'>
-              Circulaire maatregel/ mogelijkheid
-            </h3>
-            <p className='border-solid border p-3'>
-              {data.InhoudCirculaireMaatregel}
-            </p>
-            <h3 className='font-bold pt-6 pb-1'>
-              Waarom zit deze mogelijkheid in de wettelijke bepaling?
-            </h3>
-            <p className='border-solid'>{data.Toelichting}</p>
+            <div className='py-4'>
+              <h3 className='font-bold pb-2'>
+                Samenvatting juridische maatregel
+              </h3>
+              <p className=''>{data.samenvatting}</p>
+            </div>
+            <div className='py-4'>
+              <h3 className='font-bold pb-2'>
+                Voorbeelden van circulaire handelingsperspectieven
+              </h3>
+              <p className=' px-4 py-4 bg-blue-100'>{data.voorbeelden}</p>
+            </div>
+            <div className='py-4'>
+              <h3 className='font-bold pb-2'>
+                Eisen/beperkingen van de juridische maatregel
+              </h3>
+              <p className=''>{data.eisen_beperkingen}</p>
+            </div>
+            <div className='py-4'>
+              <h3 className='font-bold pb-2'>Juridische toelichting</h3>
+              <p className=''>{data.juridische_toelichting}</p>
+            </div>
             <table className='table-fixed w-full mt-5'>
               <tbody>
                 <tr className='my-10 border-b-2 border-t-2'>
                   <td className='w-1/2'>Rechtsgebied</td>
-                  <td className='w-1/2'>{data.Rechtsgebied}</td>
+                  <td className='w-1/2'>{data.rechtsgebied}</td>
                 </tr>
                 <tr className='my-10 border-b-2'>
                   <td className='w-1/2'>Wettelijk document</td>
@@ -96,11 +109,11 @@ export default function Law() {
                 </tr>
                 <tr className='my-10 border-b-2'>
                   <td className='w-1/2'>Ingang wet</td>
-                  <td className='w-1/2'>{data.IngangWet}</td>
+                  <td className='w-1/2'>{data.ingang_van_wet}</td>
                 </tr>
                 <tr className='my-10 border-b-2'>
                   <td className='w-1/2'>Bevoegdheids niveau</td>
-                  <td className='w-1/2'>{data.bevoegdheidsniveau}</td>
+                  <td className='w-1/2'>{data.beleids_instrument_type}</td>
                 </tr>
                 <tr className='my-10 border-b-2'>
                   <td className='w-1/2'>Type document</td>
@@ -113,13 +126,15 @@ export default function Law() {
                 </tr>
                 <tr>
                   <td>Beleidsinstrument</td>
-                  <td>{data.BeleidsInstrumentType}</td>
+                  <td>{data.beleids_instrument_type}</td>
                 </tr>
               </tbody>
             </table>
             <div
               className={classNames(
-                data.OpmerkingenLink === "" ? "hidden" : ""
+                data.opmerkingen_type_norm_valt_hier_ook_onder === ""
+                  ? "hidden"
+                  : ""
               )}
             >
               <h3 className='my-5 text-lg font-extrabold'>
