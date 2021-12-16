@@ -1,20 +1,22 @@
 import { useState } from "react";
 import Link from "next/link";
+import Pagination from "next-pagination/dist";
 
 export default function PolicyList(props) {
   const [searchValue, setSearchValue] = useState("");
   const lawData = props.data.filter((lawData) => {
-    const searchContent = lawData.lawTitel;
+    const searchContent = lawData.titel;
+    console.log(searchContent);
     return searchContent.toLowerCase().includes(searchValue.toLowerCase());
   });
   return (
-    <fieldset>
+    <>
       <div className='py-5 relative max-w-lg'>
         <input
           aria-label='Search'
           type='text'
           onChange={(e) => setSearchValue(e.target.value)}
-          placeholder='Search articles'
+          placeholder='Search'
           className='block w-full px-4 py-2 text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-gray-100'
         />
         <svg
@@ -34,51 +36,56 @@ export default function PolicyList(props) {
       </div>
       <div className=''>
         {!lawData.length && "No Laws found."}
+
         {lawData.map((lawData, lawDataIdx) => {
           const {
             id,
-            lawTitel,
-            Rechtsgebied,
+            titel,
             officieleTitel,
-            Reikwijdte,
-            Bevoegdheidsniveau,
-            Afbreukrisico,
+            rechtsgebied,
+            bevoegdheidsniveau,
+            ranking_invloed,
+            ranking_afbreukrisico,
+            officiele_titel_wettelijk_document,
           } = lawData;
           return (
             <div key={lawDataIdx} className='block py-5'>
               <div className='block my-1'>
-                <Link href={"/laws/" + id} key={id}>
-                  <a className='underline text-lg font-semibold'>{lawTitel}</a>
+                <Link href={"/laws/" + id} key={lawDataIdx}>
+                  <a className='underline text-lg font-semibold'>{titel}</a>
                 </Link>
               </div>
               <div className='block'>
-                {Rechtsgebied} - {officieleTitel}
+                {rechtsgebied} - {officiele_titel_wettelijk_document}
               </div>
 
               <div className='flex space-x-8'>
                 <div className='flex-2 mr-5 text-normal text-base text-gray-400'>
                   Bevoegdheidsniveau:{" "}
                   <span className='block-inline font-semibold text-base text-gray-900'>
-                    {Bevoegdheidsniveau}
+                    {bevoegdheidsniveau}
                   </span>
                 </div>
+
                 <div className='flex-2 mr-5 text-normal text-base text-gray-400'>
                   Invloed:{" "}
                   <span className='block-inline font-semibold text-base text-gray-900'>
-                    {Reikwijdte}
+                    {ranking_invloed}
                   </span>
                 </div>
                 <div className='flex-2 mr-5 text-normal text-base text-gray-400'>
                   Afbreukrisico:{" "}
                   <span className='block-inline font-semibold text-base text-gray-900'>
-                    {Afbreukrisico}
+                    {ranking_afbreukrisico}
                   </span>
                 </div>
               </div>
             </div>
           );
         })}
+
+        <div></div>
       </div>
-    </fieldset>
+    </>
   );
 }

@@ -1,13 +1,12 @@
 import { useRouter } from "next/router";
 import useSWR from "swr";
-import Link from "next/link";
 
 import {
-  WettelijkBevoegdheidsniveau,
-  Rechtsgebied,
-  Fase,
-  Plaberum,
-  RLadder,
+  wettelijk_bevoegdheidsniveau,
+  rechtsgebied,
+  fasen,
+  plaberum,
+  r_ladder,
 } from "../../dataFilterExample";
 
 import Layout from "/components/layout";
@@ -42,11 +41,11 @@ export default function Laws() {
           </div>
           <SearchFilter
             title='Wettelijk bevoegdheidsniveau'
-            data={WettelijkBevoegdheidsniveau}
+            data={wettelijk_bevoegdheidsniveau}
           />
-          <SearchFilter title='Rechtsgebied' data={Rechtsgebied} />
-          <SearchFilter title='Plaberum' data={Plaberum} />
-          <SearchFilter title='R - ladder' data={RLadder} />
+          <SearchFilter title='Rechtsgebied' data={rechtsgebied} />
+          <SearchFilter title='Planningsfase' data={plaberum} />
+          <SearchFilter title='R - ladder' data={r_ladder} />
         </div>
 
         <div className='p-3 mt-10 ml-10'>

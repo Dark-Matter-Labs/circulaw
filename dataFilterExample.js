@@ -1,4 +1,4 @@
-export const WettelijkBevoegdheidsniveau = [
+export const wettelijk_bevoegdheidsniveau = [
   {
     id: "1",
     name: "Nationaal",
@@ -16,7 +16,7 @@ export const WettelijkBevoegdheidsniveau = [
   },
 ];
 
-export const Rechtsgebied = [
+export const rechtsgebied = [
   {
     id: "1",
     name: "Publiek",
@@ -34,7 +34,7 @@ export const Rechtsgebied = [
   },
 ];
 
-export const Plaberum = [
+export const plaberum = [
   {
     id: "1",
     name: "Verkenning",
@@ -57,7 +57,7 @@ export const Plaberum = [
   },
 ];
 
-export const RLadder = [
+export const r_ladder = [
   {
     id: "1",
     name: "R1 Refuse & rethink",

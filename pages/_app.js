@@ -1,4 +1,5 @@
 import "tailwindcss/tailwind.css";
+import "next-pagination/dist/index.css";
 
 import { Provider } from "next-auth/client";
 

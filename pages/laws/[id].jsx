@@ -54,7 +54,16 @@ export default function Law() {
             <a>← Overzicht maatregelen</a>
           </Link>
 
-          <h1 className='font-bold text-2xl mb-9'>{data.lawTitel}</h1>
+          <h1 className='font-bold text-2xl mb-9'>{data.titel}</h1>
+          <div>
+            <div>
+              <span className='font-bold inline-block'>Fase:</span> {data.fasen}
+            </div>
+            <div>
+              <span className='font-bold inline-block'>R ladder:</span>{" "}
+              {data.r_ladder}
+            </div>
+          </div>
         </div>
 
         <div className='flex'>
@@ -77,11 +86,13 @@ export default function Law() {
                 </tr>
                 <tr className='my-10 border-b-2'>
                   <td className='w-1/2'>Wettelijk document</td>
-                  <td className='w-1/2'>{data.officieleTitel}</td>
+                  <td className='w-1/2'>
+                    {data.officiele_titel_wettelijk_document}
+                  </td>
                 </tr>
                 <tr className='my-10 border-b-2'>
                   <td className='w-1/2'>Artikel</td>
-                  <td className='w-1/2'>{data.Artikel}</td>
+                  <td className='w-1/2'>{data.artikel}</td>
                 </tr>
                 <tr className='my-10 border-b-2'>
                   <td className='w-1/2'>Ingang wet</td>
@@ -89,16 +100,16 @@ export default function Law() {
                 </tr>
                 <tr className='my-10 border-b-2'>
                   <td className='w-1/2'>Bevoegdheids niveau</td>
-                  <td className='w-1/2'>{data.Bevoegdheidsniveau}</td>
+                  <td className='w-1/2'>{data.bevoegdheidsniveau}</td>
                 </tr>
                 <tr className='my-10 border-b-2'>
                   <td className='w-1/2'>Type document</td>
-                  <td className='w-1/2'>{data.TypeDocument}</td>
+                  <td className='w-1/2'>{data.type_document}</td>
                 </tr>
 
                 <tr className='border-b-2'>
                   <td>Relatie</td>
-                  <td>{data.Relatie}</td>
+                  <td>{data.relatie}</td>
                 </tr>
                 <tr>
                   <td>Beleidsinstrument</td>
@@ -123,11 +134,11 @@ export default function Law() {
 
               <div>
                 {" "}
-                <Link href={data.OpmerkingenLink}>
+                <Link href={data.opmerkingen_type_norm_valt_hier_ook_onder}>
                   <a>Voorbeeld 1</a>
                 </Link>
                 <br />
-                <Link href={data.OpmerkingenLink}>
+                <Link href={data.opmerkingen_type_norm_valt_hier_ook_onder}>
                   <a className='underline text-blue-500'>Link ↗</a>
                 </Link>
               </div>
@@ -147,7 +158,9 @@ export default function Law() {
                   <div
                     key={rating}
                     className={classNames(
-                      data.Reikwijdte > rating ? "score-true" : "score-false",
+                      data.ranking_invloed > rating
+                        ? "score-true"
+                        : "score-false",
                       "mr-5 h-5 w-5 flex-shrink-0"
                     )}
                     aria-hidden='true'
@@ -155,7 +168,7 @@ export default function Law() {
                 ))}
               </div>
 
-              <div className='mt-3'>{data.Reikwijdte}</div>
+              <div className='mt-3'>{data.ranking_invloed}</div>
             </div>
 
             <div className='py-5'>
@@ -168,7 +181,7 @@ export default function Law() {
                   <div
                     key={rating}
                     className={classNames(
-                      data.Afbreukrisico > rating
+                      data.ranking_afbreukrisico > rating
                         ? "score-true"
                         : "score-false",
                       "mr-5 h-5 w-5 flex-shrink-0"
@@ -177,13 +190,13 @@ export default function Law() {
                   />
                 ))}
               </div>
-              <div className='mt-3'>{data.Afbreukrisico}</div>
+              <div className='mt-3'>{data.ranking_afbreukrisico}</div>
             </div>
 
-            <div className='py-5'>
+            {/* <div className='py-5'>
               <div className='font-bold	'>Trefwoorden</div>
               ...
-            </div>
+            </div> */}
 
             <div className='py-5'>
               <div className='font-bold	'>Relevante organisaties</div>

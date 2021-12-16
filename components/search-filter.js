@@ -1,7 +1,10 @@
 import { InformationCircle } from "@heroicons/react/solid";
 import Tooltip from "../components/tooltip";
 
+// function which on check from try to false passed the data.name to the search query in policy-list for example Bevoegdheidsniveau = true then add data.Bevoegdheidsniveau to search scope.
+
 export default function SearchFilter(props) {
+  console.log(props);
   return (
     <fieldset className='py-4  border-b border-black'>
       <div className='block'>
