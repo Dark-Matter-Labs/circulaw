@@ -31,6 +31,43 @@ export const laws = [
     is_gebaseerd_op: "",
     ingang_van_wet: "Nog niet inwerking getreden",
     type_document: "Wet in formele zin",
+    JuridischAfbreukrisicoToolTip: `div>
+     <p>Het juridisch afbreukrisico is opgebouwd uit een analyse waar vijf elementen gewaardeerd worden met een score tussen 1 (laag) – 5 (hoog):
+     </p><br/><br/>
+     <table>
+         <tr>
+         <th>
+           Element
+           
+           </th>
+         <th>Score</th>
+         </tr>
+         <tr>
+         <td>De wet is redelijk duidelijk </td>
+         <td>2</td>
+         </tr>
+         <tr>
+         <td>Er is nog geen jurisprudentie beschikbaar over de maatrege</td>
+         <td>5</td>
+         </tr>
+         <tr>
+         <td>
+           De maatregel is redelijk complex
+           
+           </td>
+         <td>3</td>
+         </tr>
+         <tr>
+         <td>De kans op schadeclaims is relatief laag</td>
+         <td>2</td>
+         </tr>
+         <tr>
+         <td>Niet-juridische beoordeling</td>
+         <td>Niet relevant</td>
+         </tr>
+     
+       </table>
+   </div>`,
   },
   {
     id: "360747",
