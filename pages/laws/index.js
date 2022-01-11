@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 
@@ -24,11 +25,60 @@ const fetcher = async (url) => {
 };
 
 export default function Laws() {
-  const { query } = useRouter();
   const { data, error } = useSWR(() => `/api/laws/`, fetcher);
-  const numberOfLaws = 67;
   if (error) return <div>{error.message}</div>;
   if (!data) return <div>Loading...</div>;
+
+  const [laws, setLaws] = useState(data);
+  const [selected, setSelected] = useState({
+    wettelijk_bevoegdheidsniveau: [],
+    rechtsgebied: [],
+    plaberum: [],
+    r_ladder: [],
+  });
+  const { query } = useRouter();
+
+  const numberOfLaws = 67;
+
+  const handleFilters = (checkboxState, key) => {
+    console.log("handleFilters", handleFilters);
+
+    const newFilters = { ...selected };
+    newFilters[key] = checkboxState;
+    setSelected(newFilters);
+  };
+
+  useEffect(() => {
+    const filteredLaws = data
+      .filter(
+        (m) =>
+          selected.wettelijk_bevoegdheidsniveau.length === 0 ||
+          selected.wettelijk_bevoegdheidsniveau.includes(0) ||
+          selected.wettelijk_bevoegdheidsniveau.includes(
+            m.wettelijk_bevoegdheidsniveau
+          )
+      )
+      .filter(
+        (m) =>
+          selected.rechtsgebied.length === 0 ||
+          selected.rechtsgebied.includes("") ||
+          selected.rechtsgebied.includes(m.rechtsgebied)
+      )
+      .filter(
+        (m) =>
+          selected.plaberum.length === 0 ||
+          selected.plaberum.includes("") ||
+          selected.plaberum.includes(m.plaberum)
+      )
+      .filter(
+        (m) =>
+          selected.r_ladder.length === 0 ||
+          selected.r_ladder.includes("") ||
+          selected.r_ladder.includes(m.r_ladder)
+      );
+    console.log("filteredLaws", filteredLaws);
+    setLaws(filteredLaws);
+  }, [selected]);
 
   return (
     <Layout>
@@ -41,11 +91,32 @@ export default function Laws() {
           </div>
           <SearchFilter
             title='Wettelijk bevoegdheidsniveau'
-            data={wettelijk_bevoegdheidsniveau}
+            list={wettelijk_bevoegdheidsniveau}
+            handleFilters={(checkboxState) =>
+              handleFilters(checkboxState, "wettelijk_bevoegdheidsniveau")
+            }
           />
-          <SearchFilter title='Rechtsgebied' data={rechtsgebied} />
-          <SearchFilter title='Planningsfase' data={plaberum} />
-          <SearchFilter title='R - ladder' data={r_ladder} />
+          <SearchFilter
+            title='Rechtsgebied'
+            list={rechtsgebied}
+            handleFilters={(checkboxState) =>
+              handleFilters(checkboxState, "rechtsgebied")
+            }
+          />
+          <SearchFilter
+            title='Planningsfase'
+            list={plaberum}
+            handleFilters={(checkboxState) =>
+              handleFilters(checkboxState, "plaberum")
+            }
+          />
+          <SearchFilter
+            title='R - ladder'
+            list={r_ladder}
+            handleFilters={(checkboxState) =>
+              handleFilters(checkboxState, "r_ladder")
+            }
+          />
         </div>
 
         <div className='p-3 mt-10 ml-10'>

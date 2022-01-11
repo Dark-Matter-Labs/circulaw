@@ -1,15 +1,27 @@
+import { useState } from "react";
 import { InformationCircle } from "@heroicons/react/solid";
 import Tooltip from "../components/tooltip";
+import { handleToggle } from "../utils";
 
 // function which on check from try to false passed the data.name to the search query in policy-list for example Bevoegdheidsniveau = true then add data.Bevoegdheidsniveau to search scope.
 
-export default function SearchFilter(props) {
-  console.log(props);
+export default function SearchFilter({ list, title, handleFilters }) {
+  const [checkedArray, setCheckedArray] = useState([]);
+
+  const onChangeHandler = (checkboxId) => {
+    const newState = handleToggle(checkboxId, checkedArray);
+    setCheckedArray(newState);
+    const mapIdToValueArray = newState.map((id) => {
+      return list[id].value;
+    });
+    handleFilters(mapIdToValueArray);
+  };
+
   return (
     <fieldset className='py-4  border-b border-black'>
       <div className='block'>
         <div className='relative flex justify-between'>
-          <legend className='text-lg'>{props.title}</legend>
+          <legend className='text-lg'>{title}</legend>
           <svg
             className='text-gray-300 w-5 h-5'
             xmlns='http://www.w3.org/2000/svg'
@@ -25,13 +37,14 @@ export default function SearchFilter(props) {
         </div>
       </div>
       <div>
-        {props.data.map((data, dataIdx) => (
+        {list.map((data, dataIdx) => (
           <div key={dataIdx} className='relative flex justify-between '>
             <div className='my-1'>
               <input
-                id={`data-${data.id}`}
-                name={`data-${data.id}`}
                 type='checkbox'
+                id={`data-${data.id}`}
+                checked={checkedArray.indexOf(data.id) !== -1}
+                onClick={() => onChangeHandler(data.id)}
               />
               <label
                 htmlFor={`data-${data.id}`}
