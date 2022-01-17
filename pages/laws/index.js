@@ -27,7 +27,9 @@ const fetcher = async (url) => {
 export default function Laws() {
   const { data, error } = useSWR(() => `/api/laws/`, fetcher);
   if (error) return <div>{error.message}</div>;
-  if (!data) return <div>Loading...</div>;
+
+  // commented this out as it causes a render loop
+  //if (!data) return <div>Loading...</div>;
 
   const [laws, setLaws] = useState(data);
   const [selected, setSelected] = useState({
@@ -49,7 +51,9 @@ export default function Laws() {
   };
 
   useEffect(() => {
-    const filteredLaws = data
+    //added check for data to have been retrieved here
+    if(data) {
+      const filteredLaws = data
       .filter(
         (m) =>
           selected.wettelijk_bevoegdheidsniveau.length === 0 ||
@@ -78,6 +82,7 @@ export default function Laws() {
       );
     console.log("filteredLaws", filteredLaws);
     setLaws(filteredLaws);
+    }
   }, [selected]);
 
   return (
@@ -140,10 +145,11 @@ export default function Laws() {
               Alleen maatregelen in HUIDIGE wet- en regelgeving
             </span>
           </div>
-
-          <div className=''>
-            <PolicyList data={data} />
-          </div>
+          {data && 
+           <div className=''>
+             <PolicyList data={data} />
+           </div>
+          }
         </div>
       </div>
     </Layout>
