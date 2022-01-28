@@ -30,8 +30,9 @@ export default function Laws() {
 
   // commented this out as it causes a render loop
   //if (!data) return <div>Loading...</div>;
-
   const [laws, setLaws] = useState(data);
+  //Quick way to filter is to pass it in as a search query
+  // const [passFilterToSearch, setPassFilterToSearch] = useState(data);
   const [selected, setSelected] = useState({
     wettelijk_bevoegdheidsniveau: [],
     rechtsgebied: [],
@@ -43,8 +44,7 @@ export default function Laws() {
   const numberOfLaws = 67;
 
   const handleFilters = (checkboxState, key) => {
-    console.log("handleFilters", handleFilters);
-
+    console.log("handleFilters", checkboxState);
     const newFilters = { ...selected };
     newFilters[key] = checkboxState;
     setSelected(newFilters);
@@ -52,36 +52,36 @@ export default function Laws() {
 
   useEffect(() => {
     //added check for data to have been retrieved here
-    if(data) {
+    if (data) {
       const filteredLaws = data
-      .filter(
-        (m) =>
-          selected.wettelijk_bevoegdheidsniveau.length === 0 ||
-          selected.wettelijk_bevoegdheidsniveau.includes(0) ||
-          selected.wettelijk_bevoegdheidsniveau.includes(
-            m.wettelijk_bevoegdheidsniveau
-          )
-      )
-      .filter(
-        (m) =>
-          selected.rechtsgebied.length === 0 ||
-          selected.rechtsgebied.includes("") ||
-          selected.rechtsgebied.includes(m.rechtsgebied)
-      )
-      .filter(
-        (m) =>
-          selected.plaberum.length === 0 ||
-          selected.plaberum.includes("") ||
-          selected.plaberum.includes(m.plaberum)
-      )
-      .filter(
-        (m) =>
-          selected.r_ladder.length === 0 ||
-          selected.r_ladder.includes("") ||
-          selected.r_ladder.includes(m.r_ladder)
-      );
-    console.log("filteredLaws", filteredLaws);
-    setLaws(filteredLaws);
+        .filter(
+          (m) =>
+            selected.wettelijk_bevoegdheidsniveau.length === 0 ||
+            selected.wettelijk_bevoegdheidsniveau.includes(0) ||
+            selected.wettelijk_bevoegdheidsniveau.includes(
+              m.wettelijk_bevoegdheidsniveau
+            )
+        )
+        .filter(
+          (m) =>
+            selected.rechtsgebied.length === 0 ||
+            selected.rechtsgebied.includes("") ||
+            selected.rechtsgebied.includes(m.rechtsgebied)
+        )
+        .filter(
+          (m) =>
+            selected.plaberum.length === 0 ||
+            selected.plaberum.includes("") ||
+            selected.plaberum.includes(m.plaberum)
+        )
+        .filter(
+          (m) =>
+            selected.r_ladder.length === 0 ||
+            selected.r_ladder.includes("") ||
+            selected.r_ladder.includes(m.r_ladder)
+        );
+      console.log("filteredLaws", filteredLaws);
+      setLaws(filteredLaws);
     }
   }, [selected]);
 
@@ -145,11 +145,11 @@ export default function Laws() {
               Alleen maatregelen in HUIDIGE wet- en regelgeving
             </span>
           </div>
-          {data && 
-           <div className=''>
-             <PolicyList data={data} />
-           </div>
-          }
+          {data && (
+            <div className=''>
+              <PolicyList data={laws} />
+            </div>
+          )}
         </div>
       </div>
     </Layout>

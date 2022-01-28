@@ -10,6 +10,7 @@ export default function SearchFilter({ list, title, handleFilters }) {
 
   const onChangeHandler = (checkboxId) => {
     const newState = handleToggle(checkboxId, checkedArray);
+    // console.log("newState");
     setCheckedArray(newState);
     const mapIdToValueArray = newState.map((id) => {
       return list[id].value;
@@ -38,7 +39,7 @@ export default function SearchFilter({ list, title, handleFilters }) {
       </div>
       <div>
         {list.map((data, dataIdx) => (
-          <div key={dataIdx} className='relative flex justify-between '>
+          <div key={dataIdx} className='relative flex justify-between'>
             <div className='my-1'>
               <input
                 type='checkbox'

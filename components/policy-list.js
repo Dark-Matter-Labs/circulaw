@@ -10,7 +10,7 @@ export default function PolicyList(props) {
       lawData.bevoegdheidsniveau +
       lawData.rechtsgebied +
       lawData.officiele_titel_wettelijk_document;
-    console.log(searchContent);
+    // console.log(searchContent);
     return searchContent.toLowerCase().includes(searchValue.toLowerCase());
   });
   return (
