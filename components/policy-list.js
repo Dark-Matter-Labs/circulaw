@@ -5,7 +5,11 @@ import Pagination from "next-pagination/dist";
 export default function PolicyList(props) {
   const [searchValue, setSearchValue] = useState("");
   const lawData = props.data.filter((lawData) => {
-    const searchContent = lawData.titel;
+    const searchContent =
+      lawData.titel +
+      lawData.bevoegdheidsniveau +
+      lawData.rechtsgebied +
+      lawData.officiele_titel_wettelijk_document;
     console.log(searchContent);
     return searchContent.toLowerCase().includes(searchValue.toLowerCase());
   });
