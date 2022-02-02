@@ -8,6 +8,8 @@ export default function PolicyList(props) {
     const searchContent =
       lawData.titel +
       lawData.bevoegdheidsniveau +
+      lawData.r_ladder +
+      lawData.fasen +
       lawData.rechtsgebied +
       lawData.officiele_titel_wettelijk_document;
     // console.log(searchContent);

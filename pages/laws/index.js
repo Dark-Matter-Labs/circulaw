@@ -147,7 +147,7 @@ export default function Laws() {
           </div>
           {data && (
             <div className=''>
-              <PolicyList data={laws} />
+              <PolicyList data={data} />
             </div>
           )}
         </div>
