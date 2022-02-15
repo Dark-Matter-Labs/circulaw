@@ -2,8 +2,6 @@ import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/client";
 
 import Layout from "/components/layout";
-import SearchFilter from "/components/search-filter";
-import PolicyList from "/components/policy-list";
 
 export default function Index() {
   const [session, loading] = useSession();
