@@ -10,7 +10,6 @@ export default function SearchFilter({ list, title, handleFilters }) {
 
   const onChangeHandler = (checkboxId) => {
     const newState = handleToggle(checkboxId, checkedArray);
-    // console.log("newState");
     setCheckedArray(newState);
     const mapIdToValueArray = newState.map((id) => {
       return list[id].value;
