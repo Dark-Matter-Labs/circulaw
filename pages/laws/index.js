@@ -39,9 +39,8 @@ export default function Laws() {
     plaberum: [],
     r_ladder: [],
   });
+  const [numberOfLaws, setNumberOfLaws] = useState(67);
   const { query } = useRouter();
-
-  const numberOfLaws = 67;
 
   const handleFilters = (checkboxState, key) => {
     console.log("handleFilters", checkboxState);
@@ -53,37 +52,35 @@ export default function Laws() {
   useEffect(() => {
     //added check for data to have been retrieved here
     if (data) {
-      const filteredLaws = data
-        .filter(
-          (m) =>
-            selected.wettelijk_bevoegdheidsniveau.length === 0 ||
-            selected.wettelijk_bevoegdheidsniveau.includes(0) ||
-            selected.wettelijk_bevoegdheidsniveau.includes(
-              m.wettelijk_bevoegdheidsniveau
-            )
-        )
-        .filter(
-          (m) =>
-            selected.rechtsgebied.length === 0 ||
-            selected.rechtsgebied.includes("") ||
-            selected.rechtsgebied.includes(m.rechtsgebied)
-        )
-        .filter(
-          (m) =>
-            selected.plaberum.length === 0 ||
-            selected.plaberum.includes("") ||
-            selected.plaberum.includes(m.plaberum)
-        )
-        .filter(
-          (m) =>
-            selected.r_ladder.length === 0 ||
-            selected.r_ladder.includes("") ||
-            selected.r_ladder.includes(m.r_ladder)
-        );
+      const filteredLaws = data;
+      if(selected.wettelijk_bevoegdheidsniveau.length > 0 && !selected.wettelijk_bevoegdheidsniveau.includes("all")){
+        filteredLaws = data.filter(element => {
+          return selected.wettelijk_bevoegdheidsniveau.includes(element.bevoegdheidsniveau)
+        })
+      } 
+
+      if(selected.r_ladder.length > 0 && !selected.r_ladder.includes("all")){
+        filteredLaws = data.filter(element => {
+          return selected.r_ladder.includes(element.r_ladder)
+        })
+      }
+
+      if(selected.rechtsgebied.length > 0 && !selected.rechtsgebied.includes("all")){
+        filteredLaws = data.filter(element => {
+          return selected.rechtsgebied.includes(element.rechtsgebied)
+        })
+      }
+
+      if(selected.plaberum.length > 0 && !selected.plaberum.includes("all")){
+        filteredLaws = data.filter(element => {
+          return selected.plaberum.includes(element.fasen)
+        })
+      }
       console.log("filteredLaws", filteredLaws);
       setLaws(filteredLaws);
+      setNumberOfLaws(filteredLaws.length);
     }
-  }, [selected]);
+  }, [data, selected]);
 
   return (
     <Layout>
@@ -147,7 +144,7 @@ export default function Laws() {
           </div>
           {data && (
             <div className=''>
-              <PolicyList data={data} />
+              <PolicyList data={laws} />
             </div>
           )}
         </div>
