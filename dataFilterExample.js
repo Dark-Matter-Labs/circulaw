@@ -3,7 +3,7 @@ export const wettelijk_bevoegdheidsniveau = [
     id: 0,
     name: "all",
     label: "all wettelijk_bevoegdheidsniveau",
-    value: "",
+    value: "all",
   },
   {
     id: "1",
@@ -33,7 +33,7 @@ export const rechtsgebied = [
     id: 0,
     name: "all",
     label: "all rechtsgebied",
-    value: "", // This checkbox value help us to match the movies genre field.
+    value: "all", // This checkbox value help us to match the movies genre field.
   },
   {
     id: "1",
@@ -55,6 +55,27 @@ export const rechtsgebied = [
     label: "Fiscaal",
     value: "Fiscaal",
     number: "55",
+  },
+  {
+    id: "4",
+    name: "Aanbesteding",
+    label: "Aanbesteding",
+    value: "Aanbesteding",
+    number: "-",
+  },
+  {
+    id: "5",
+    name: "Erfpacht",
+    label: "Erfpacht",
+    value: "Erfpacht",
+    number: "-",
+  },
+  {
+    id: "6",
+    name: "Koop",
+    label: "Koop",
+    value: "Koop",
+    number: "-",
   },
 ];
 
@@ -94,7 +115,7 @@ export const r_ladder = [
     id: 0,
     name: "all",
     label: "all r_ladder",
-    value: "",
+    value: "all",
   },
   {
     id: "1",
