@@ -1,20 +1,20 @@
 import { useState } from "react";
 import Link from "next/link";
-import Pagination from "next-pagination/dist";
 
 export default function PolicyList(props) {
   const [searchValue, setSearchValue] = useState("");
-  const lawData = props.data.filter((lawData) => {
-    const searchContent =
-      lawData.titel +
-      lawData.bevoegdheidsniveau +
-      lawData.r_ladder +
-      lawData.fasen +
-      lawData.rechtsgebied +
-      lawData.officiele_titel_wettelijk_document;
-    // console.log(searchContent);
-    return searchContent.toLowerCase().includes(searchValue.toLowerCase());
-  });
+  let lawData = [];
+  if(props.data){
+    lawData = props.data.filter((lawData) => {
+      const searchContent =
+        lawData.titel +
+        lawData.bevoegdheidsniveau +
+        lawData.rechtsgebied +
+        lawData.officiele_titel_wettelijk_document;
+      return searchContent.toLowerCase().includes(searchValue.toLowerCase());
+    });
+  }
+
   return (
     <>
       <div className='py-5 relative max-w-lg'>
@@ -41,7 +41,7 @@ export default function PolicyList(props) {
         </svg>
       </div>
       <div className=''>
-        {!lawData.length && "No Laws found."}
+        {lawData.length === 0 && "No Laws found."}
 
         {lawData.map((lawData, lawDataIdx) => {
           const {
