@@ -26,7 +26,7 @@ const fetcher = async (url) => {
 
 export default function Laws() {
   const { data, error } = useSWR(() => `/api/laws/`, fetcher);
-  if (error) return <div>{error.message}</div>;
+  //if (error) return <div>{error.message}</div>;
 
   // commented this out as it causes a render loop
   //if (!data) return <div>Loading...</div>;
