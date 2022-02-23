@@ -43,7 +43,7 @@ export default function SearchFilter({ list, title, handleFilters }) {
               <input
                 type='checkbox'
                 id={`data-${data.id}`}
-                checked={checkedArray.indexOf(data.id) !== -1}
+                defaultChecked={checkedArray.indexOf(data.id) !== -1}
                 onClick={() => onChangeHandler(data.id)}
               />
               <label
