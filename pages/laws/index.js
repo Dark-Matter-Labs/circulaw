@@ -43,7 +43,6 @@ export default function Laws() {
   const { query } = useRouter();
 
   const handleFilters = (checkboxState, key) => {
-    console.log("handleFilters", checkboxState);
     const newFilters = { ...selected };
     newFilters[key] = checkboxState;
     setSelected(newFilters);
@@ -54,29 +53,29 @@ export default function Laws() {
     if (data) {
       const filteredLaws = data;
       if(selected.wettelijk_bevoegdheidsniveau.length > 0 && !selected.wettelijk_bevoegdheidsniveau.includes("all")){
-        filteredLaws = data.filter(element => {
+        filteredLaws = filteredLaws.filter(element => {
           return selected.wettelijk_bevoegdheidsniveau.includes(element.bevoegdheidsniveau)
         })
       } 
 
       if(selected.r_ladder.length > 0 && !selected.r_ladder.includes("all")){
-        filteredLaws = data.filter(element => {
-          return selected.r_ladder.includes(element.r_ladder)
+        filteredLaws = filteredLaws.filter(element => {
+          return element.r_ladder.split(', ').some(i => selected.r_ladder.includes(i))
         })
       }
 
       if(selected.rechtsgebied.length > 0 && !selected.rechtsgebied.includes("all")){
-        filteredLaws = data.filter(element => {
-          return selected.rechtsgebied.includes(element.rechtsgebied)
+        filteredLaws = filteredLaws.filter(element => {
+          return selected.rechtsgebied.includes(element.relatie)
         })
       }
 
       if(selected.plaberum.length > 0 && !selected.plaberum.includes("all")){
-        filteredLaws = data.filter(element => {
+        filteredLaws = filteredLaws.filter(element => {
           return selected.plaberum.includes(element.fasen)
         })
       }
-      console.log("filteredLaws", filteredLaws);
+
       setLaws(filteredLaws);
       setNumberOfLaws(filteredLaws.length);
     }
