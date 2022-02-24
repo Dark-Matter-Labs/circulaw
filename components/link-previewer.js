@@ -5,7 +5,7 @@ import placeholder from "../public/placeholder.png";
 
 export function Tooltip(props) {
   return (
-    <div className='relative flex flex-col items-center group'>
+    <div className="relative flex flex-col items-center group">
       <div>
         <h2>{photo?.title} + props</h2>
       </div>
