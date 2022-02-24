@@ -42,12 +42,12 @@ export default function SearchFilter({ list, title, handleFilters }) {
             <div className='my-1'>
               <input
                 type='checkbox'
-                id={`data-${data.id}`}
+                id={`data-${data.value}-${data.id}`}
                 defaultChecked={checkedArray.indexOf(data.id) !== -1}
                 onClick={() => onChangeHandler(data.id)}
               />
               <label
-                htmlFor={`data-${data.id}`}
+                htmlFor={`data-${data.value}-${data.id}`}
                 className='select-none font-normal text-sm pl-2'
               >
                 {data.name}
