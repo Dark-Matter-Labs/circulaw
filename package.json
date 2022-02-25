@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "clean": "npx prettier --write ."
   },
   "dependencies": {
     "@heroicons/react": "^1.0.5",
