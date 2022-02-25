@@ -8,54 +8,38 @@ export default function Nav() {
     return <p>Loading...</p>;
   }
   return (
-    <div className=''>
-      <div className='p-5'>Digitale tool Juridisch Landschap</div>
-      <div className='bg-black text-white flex justify-between space-x-4 py-3'>
-        <Link href='/laws'>
-          <a className='px-5 font-bold'>Home</a>
-        </Link>
-
-        <div className='justify-between px-5'>
-          <Link href='/laws'>
-            <a className='px-3'>Maatregelen</a>
+    <div className="flex inset-x-0 top-0 p-5 sm:p-9">
+      <div className="flex-1">
+        <div className="content">logo</div>
+        <div className="content right-0">
+          <Link href="/laws">
+            <a className="px-3">Over ons</a>
           </Link>
-          <Link href='/laws'>
-            <a className='px-3'>Voorbeelprojecten </a>
+          <Link href="/laws">
+            <a className="px-3">Blog</a>
           </Link>
-          <Link href='/laws'>
-            <a className='px-3'>Juridische kaart</a>
+          <Link href="/laws">
+            <a className="px-3">Contact</a>
           </Link>
-        </div>
-
-        <div className='justify-between px-5'>
-          <Link href='/laws'>
-            <a className='px-3'>Over ons</a>
-          </Link>
-          <Link href='/laws'>
-            <a className='px-3'>Contact </a>
-          </Link>
-          {!session && (
-            <>
-              <button
-                onClick={signIn}
-                className='justify-center py-1 px-2 border border-transparent rounded-md shadow-sm text-sm font-medium '
-              >
-                Sign in
-              </button>
-            </>
-          )}
-          {session && (
-            <>
-              <button
-                onClick={signOut}
-                className='justify-center py-1 px-2 border border-transparent rounded-md shadow-sm text-sm font-medium '
-              >
-                Sign out
-              </button>
-            </>
-          )}
         </div>
       </div>
+      {/*       <div className="content">
+        <Link href="/laws">
+          <a className="px-3">Maatregelen</a>
+        </Link>
+        <Link href="/laws">
+          <a className="px-3">Contact</a>
+        </Link>
+      </div> */}
+
+      {/*       <div className="content">
+        <Link href="/laws">
+          <a className="px-3">Button</a>
+        </Link>
+        <Link href="/laws">
+          <a className="px-3">Zoeken</a>
+        </Link>
+      </div> */}
     </div>
   );
 }
