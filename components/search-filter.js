@@ -5,8 +5,10 @@ import { handleToggle } from "../utils";
 
 const SearchFilter = forwardRef(({ list, title, handleFilters }, ref) => {
   const [checkedArray, setCheckedArray] = useState([]);
+  const [clicked, setClicked] = useState(false);
 
   const onChangeHandler = (checkboxId) => {
+    setClicked(true);
     const newState = handleToggle(checkboxId, checkedArray);
     setCheckedArray(newState);
     const mapIdToValueArray = newState.map((id) => {
@@ -20,11 +22,13 @@ const SearchFilter = forwardRef(({ list, title, handleFilters }, ref) => {
       setCheckedArray([]);
     },
     set(selectedArray) {
-      let newArr = [];
-      for (let index = 0; index < selectedArray.length; index++) {
-        newArr.push(index.toString());
+      if(!clicked){
+        let newArr = [];
+        for (let index = 0; index < selectedArray.length; index++) {
+          newArr.push(index.toString());
+        }
+        setCheckedArray(newArr);
       }
-      setCheckedArray(newArr);
     },
   }));
 
