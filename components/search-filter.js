@@ -1,11 +1,9 @@
-import { useState } from "react";
-import { InformationCircle } from "@heroicons/react/solid";
-import Tooltip from "../components/tooltip";
+import { useState, forwardRef, useImperativeHandle } from "react";
 import { handleToggle } from "../utils";
 
 // function which on check from try to false passed the data.name to the search query in policy-list for example Bevoegdheidsniveau = true then add data.Bevoegdheidsniveau to search scope.
 
-export default function SearchFilter({ list, title, handleFilters }) {
+const SearchFilter = forwardRef(({ list, title, handleFilters }, ref) => {
   const [checkedArray, setCheckedArray] = useState([]);
 
   const onChangeHandler = (checkboxId) => {
@@ -16,6 +14,19 @@ export default function SearchFilter({ list, title, handleFilters }) {
     });
     handleFilters(mapIdToValueArray);
   };
+
+  useImperativeHandle(ref, () => ({
+    reset() {
+      setCheckedArray([]);
+    },
+    set(selectedArray) {
+      let newArr = [];
+      for (let index = 0; index < selectedArray.length; index++) {
+        newArr.push(index.toString());
+      }
+      setCheckedArray(newArr);
+    },
+  }));
 
   return (
     <fieldset className="py-4  border-b border-black">
@@ -43,8 +54,8 @@ export default function SearchFilter({ list, title, handleFilters }) {
               <input
                 type="checkbox"
                 id={`data-${data.value}-${data.id}`}
-                defaultChecked={checkedArray.indexOf(data.id) !== -1}
-                onClick={() => onChangeHandler(data.id)}
+                checked={checkedArray.indexOf(data.id) !== -1}
+                onChange={() => onChangeHandler(data.id)}
               />
               <label
                 htmlFor={`data-${data.value}-${data.id}`}
@@ -61,4 +72,8 @@ export default function SearchFilter({ list, title, handleFilters }) {
       </div>
     </fieldset>
   );
-}
+});
+
+SearchFilter.displayName = "SearchFilter";
+
+export default SearchFilter;
