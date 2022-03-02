@@ -25,7 +25,11 @@ const SearchFilter = forwardRef(({ list, title, handleFilters }, ref) => {
       if(!clicked){
         let newArr = [];
         for (let index = 0; index < selectedArray.length; index++) {
-          newArr.push(index.toString());
+          list.map((element) => {
+            if(selectedArray[index] === element.value){
+              newArr.push(element.id);
+            }
+          })
         }
         setCheckedArray(newArr);
       }
