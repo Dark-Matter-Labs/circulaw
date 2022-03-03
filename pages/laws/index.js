@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import { useState, useEffect, useRef } from "react";
 import useSWR from "swr";
-
+import createPersistedState from "use-persisted-state";
 import {
   wettelijk_bevoegdheidsniveau,
   rechtsgebied,
@@ -23,23 +22,29 @@ const fetcher = async (url) => {
   return data;
 };
 
+//creating objects for persisting values
+const useSelectedState = createPersistedState("selected");
+const useVoorbeeldenState = createPersistedState("voorbeelden");
+const useHuidigeState = createPersistedState("huidige");
+
 export default function Laws() {
   const { data, error } = useSWR(() => `/api/laws/`, fetcher);
-  //if (error) return <div>{error.message}</div>;
 
-  // commented this out as it causes a render loop
-  //if (!data) return <div>Loading...</div>;
+  //creating references to access child component functions
+  const wettelijkFilterRef = useRef();
+  const rechtsgebiedFilterRef = useRef();
+  const planningsfaseFilterRef = useRef();
+  const rLadderFilterRef = useRef();
+
   const [laws, setLaws] = useState(data);
-  //Quick way to filter is to pass it in as a search query
-  // const [passFilterToSearch, setPassFilterToSearch] = useState(data);
-  const [selected, setSelected] = useState({
+  const [selected, setSelected] = useSelectedState({
     wettelijk_bevoegdheidsniveau: [],
     rechtsgebied: [],
     plaberum: [],
     r_ladder: [],
   });
-  const [voorbeelden, setVoorbeelden] = useState(false);
-  const [huidige, setHuidige] = useState(false);
+  const [voorbeelden, setVoorbeelden] = useVoorbeeldenState(false);
+  const [huidige, setHuidige] = useHuidigeState(false);
 
   const [numberOfLaws, setNumberOfLaws] = useState(67);
 
@@ -57,10 +62,16 @@ export default function Laws() {
       r_ladder: [],
     });
 
+    wettelijkFilterRef.current.reset();
+    rechtsgebiedFilterRef.current.reset();
+    planningsfaseFilterRef.current.reset();
+    rLadderFilterRef.current.reset();
+
     setVoorbeelden(false);
     setHuidige(false);
   };
 
+  //effect to check for filtering and update data
   useEffect(() => {
     //added check for data to have been retrieved here
     if (data) {
@@ -103,7 +114,9 @@ export default function Laws() {
 
       if (huidige) {
         filteredLaws = filteredLaws.filter((element) => {
-          return element.ingang_van_wet !== "Nog niet inwerking getreden";
+          return !element.ingang_van_wet.includes(
+            "Nog niet inwerking getreden"
+          );
         });
       }
 
@@ -111,6 +124,37 @@ export default function Laws() {
       setNumberOfLaws(filteredLaws.length);
     }
   }, [data, selected, voorbeelden, huidige]);
+
+  //effect to check for data from persisted state from localStorage and update values when needed
+  useEffect(() => {
+    if (
+      selected.wettelijk_bevoegdheidsniveau.length !== 0 &&
+      typeof wettelijkFilterRef.current !== "undefined"
+    ) {
+      wettelijkFilterRef.current.set(selected.wettelijk_bevoegdheidsniveau);
+    }
+
+    if (
+      selected.rechtsgebied.length !== 0 &&
+      typeof rechtsgebiedFilterRef.current !== "undefined"
+    ) {
+      rechtsgebiedFilterRef.current.set(selected.rechtsgebied);
+    }
+
+    if (
+      selected.plaberum.length !== 0 &&
+      typeof planningsfaseFilterRef.current !== "undefined"
+    ) {
+      planningsfaseFilterRef.current.set(selected.plaberum);
+    }
+
+    if (
+      selected.r_ladder.length !== 0 &&
+      typeof rLadderFilterRef.current !== "undefined"
+    ) {
+      rLadderFilterRef.current.set(selected.r_ladder);
+    }
+  });
 
   return (
     <Layout>
@@ -124,6 +168,7 @@ export default function Laws() {
             </span>
           </div>
           <SearchFilter
+            ref={wettelijkFilterRef}
             title="Wettelijk bevoegdheidsniveau"
             list={wettelijk_bevoegdheidsniveau}
             handleFilters={(checkboxState) =>
@@ -131,6 +176,7 @@ export default function Laws() {
             }
           />
           <SearchFilter
+            ref={rechtsgebiedFilterRef}
             title="Rechtsgebied"
             list={rechtsgebied}
             handleFilters={(checkboxState) =>
@@ -138,6 +184,7 @@ export default function Laws() {
             }
           />
           <SearchFilter
+            ref={planningsfaseFilterRef}
             title="Planningsfase"
             list={plaberum}
             handleFilters={(checkboxState) =>
@@ -145,6 +192,7 @@ export default function Laws() {
             }
           />
           <SearchFilter
+            ref={rLadderFilterRef}
             title="R - ladder"
             list={r_ladder}
             handleFilters={(checkboxState) =>

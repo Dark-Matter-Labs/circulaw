@@ -1,14 +1,16 @@
-import { useState } from "react";
-import { InformationCircle } from "@heroicons/react/solid";
-import Tooltip from "../components/tooltip";
+import { useState, forwardRef, useImperativeHandle } from "react";
 import { handleToggle } from "../utils";
 
 // function which on check from try to false passed the data.name to the search query in policy-list for example Bevoegdheidsniveau = true then add data.Bevoegdheidsniveau to search scope.
 
-export default function SearchFilter({ list, title, handleFilters }) {
+const SearchFilter = forwardRef(({ list, title, handleFilters }, ref) => {
   const [checkedArray, setCheckedArray] = useState([]);
 
+  //state to check if set value is for mouse click or state persist
+  const [clicked, setClicked] = useState(false);
+
   const onChangeHandler = (checkboxId) => {
+    setClicked(true);
     const newState = handleToggle(checkboxId, checkedArray);
     setCheckedArray(newState);
     const mapIdToValueArray = newState.map((id) => {
@@ -16,6 +18,28 @@ export default function SearchFilter({ list, title, handleFilters }) {
     });
     handleFilters(mapIdToValueArray);
   };
+
+  //functions for parent component to reset checkbox values and set values from localStorage
+  useImperativeHandle(ref, () => ({
+    reset() {
+      setCheckedArray([]);
+    },
+    set(selectedArray) {
+      //only do this for state persist and not mouse click
+      if (!clicked) {
+        let newArr = [];
+        for (let index = 0; index < selectedArray.length; index++) {
+          //matching values to IDs
+          list.map((element) => {
+            if (selectedArray[index] === element.value) {
+              newArr.push(element.id);
+            }
+          });
+        }
+        setCheckedArray(newArr);
+      }
+    },
+  }));
 
   return (
     <fieldset className="py-4  border-b border-black">
@@ -43,8 +67,8 @@ export default function SearchFilter({ list, title, handleFilters }) {
               <input
                 type="checkbox"
                 id={`data-${data.value}-${data.id}`}
-                defaultChecked={checkedArray.indexOf(data.id) !== -1}
-                onClick={() => onChangeHandler(data.id)}
+                checked={checkedArray.indexOf(data.id) !== -1}
+                onChange={() => onChangeHandler(data.id)}
               />
               <label
                 htmlFor={`data-${data.value}-${data.id}`}
@@ -61,4 +85,8 @@ export default function SearchFilter({ list, title, handleFilters }) {
       </div>
     </fieldset>
   );
-}
+});
+
+SearchFilter.displayName = "SearchFilter";
+
+export default SearchFilter;
