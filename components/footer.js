@@ -1,16 +1,14 @@
 export default function Footer() {
-const navigation = {
-  main: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Jobs", href: "#" },
-    { name: "Press", href: "#" },
-    { name: "Accessibility", href: "#" },
-    { name: "Partners", href: "#" },
-  ],
-};
-
-export default function Example() {
+  const navigation = {
+    main: [
+      { name: "About", href: "#" },
+      { name: "Blog", href: "#" },
+      { name: "Jobs", href: "#" },
+      { name: "Press", href: "#" },
+      { name: "Accessibility", href: "#" },
+      { name: "Partners", href: "#" },
+    ],
+  };
   return (
     <footer className="bg-white">
       <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
