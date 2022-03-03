@@ -22,6 +22,7 @@ const fetcher = async (url) => {
   return data;
 };
 
+//creating objects for persisting values
 const useSelectedState = createPersistedState("selected");
 const useVoorbeeldenState = createPersistedState("voorbeelden");
 const useHuidigeState = createPersistedState("huidige");
@@ -29,6 +30,7 @@ const useHuidigeState = createPersistedState("huidige");
 export default function Laws() {
   const { data, error } = useSWR(() => `/api/laws/`, fetcher);
 
+  //creating references to access child component functions
   const wettelijkFilterRef = useRef();
   const rechtsgebiedFilterRef = useRef();
   const planningsfaseFilterRef = useRef();
@@ -69,6 +71,7 @@ export default function Laws() {
     setHuidige(false);
   };
 
+  //effect to check for filtering and update data
   useEffect(() => {
     //added check for data to have been retrieved here
     if (data) {
@@ -122,6 +125,7 @@ export default function Laws() {
     }
   }, [data, selected, voorbeelden, huidige]);
 
+  //effect to check for data from persisted state from localStorage and update values when needed
   useEffect(() => {
     if (
       selected.wettelijk_bevoegdheidsniveau.length !== 0 &&

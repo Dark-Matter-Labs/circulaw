@@ -5,6 +5,8 @@ import { handleToggle } from "../utils";
 
 const SearchFilter = forwardRef(({ list, title, handleFilters }, ref) => {
   const [checkedArray, setCheckedArray] = useState([]);
+
+  //state to check if set value is for mouse click or state persist
   const [clicked, setClicked] = useState(false);
 
   const onChangeHandler = (checkboxId) => {
@@ -17,19 +19,22 @@ const SearchFilter = forwardRef(({ list, title, handleFilters }, ref) => {
     handleFilters(mapIdToValueArray);
   };
 
+  //functions for parent component to reset checkbox values and set values from localStorage
   useImperativeHandle(ref, () => ({
     reset() {
       setCheckedArray([]);
     },
     set(selectedArray) {
-      if(!clicked){
+      //only do this for state persist and not mouse click
+      if (!clicked) {
         let newArr = [];
         for (let index = 0; index < selectedArray.length; index++) {
+          //matching values to IDs
           list.map((element) => {
-            if(selectedArray[index] === element.value){
+            if (selectedArray[index] === element.value) {
               newArr.push(element.id);
             }
-          })
+          });
         }
         setCheckedArray(newArr);
       }
