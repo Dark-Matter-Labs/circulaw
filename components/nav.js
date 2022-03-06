@@ -32,14 +32,14 @@ export default function Nav() {
         </Link>
       </div> */}
 
-      {/*       <div className="content">
+      <div className="content">
         <Link href="/laws">
           <a className="px-3">Button</a>
         </Link>
         <Link href="/laws">
           <a className="px-3">Zoeken</a>
         </Link>
-      </div> */}
+      </div>
     </div>
   );
 }
