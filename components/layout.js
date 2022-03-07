@@ -16,7 +16,7 @@ export default function Layout({ children }) {
       <Head>
         <title>Digitale tool Juridisch Landschap</title>
       </Head>
-      <main className="">
+      <main className="p-8">
         {!session && <>{children}</>}
         {session && <>{children}</>}
       </main>

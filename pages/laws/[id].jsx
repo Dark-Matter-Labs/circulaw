@@ -5,7 +5,6 @@ import Image from "next/image";
 import placeholder from "../../public/placeholder.png";
 import { StarIcon } from "@heroicons/react/solid";
 import Tooltip from "../../components/tooltip";
-
 import Layout from "../../components/layout";
 const fetcher = async (url) => {
   const res = await fetch(url);
