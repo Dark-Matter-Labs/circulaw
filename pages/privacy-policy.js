@@ -1,3 +1,5 @@
+import Layout from "../components/layout";
+
 export default function Laws() {
   return (
     <Layout>

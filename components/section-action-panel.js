@@ -1,12 +1,12 @@
 import Link from "next/link";
 export default function ActionPanel(props) {
   return (
-    <div className="bg-white border border-gray-900 outline-4 shadow sm:rounded-lg">
+    <div className="bg-white border-2 border-gray-900 outline-4 shadow sm:rounded-lg ">
       <div className="px-4 py-5 sm:p-6">
         <div className="sm:flex sm:items-start sm:justify-between">
           <div>
             <div className="mt-2 max-w-xl text-sm text-gray-900">
-              <p>{props.paragraph}</p>
+              {props.paragraph}
             </div>
           </div>
           <div className="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">

@@ -56,10 +56,10 @@ export default function Nav() {
           <Link href="#">
             <a className="px-3">Hoe het werkt</a>
           </Link>
-          <Link href="#">
+          <Link href="/blog">
             <a className="px-3">Blog</a>
           </Link>
-          <Link href="#">
+          <Link href="/contact">
             <a className="px-3">Contact</a>
           </Link>
         </div>

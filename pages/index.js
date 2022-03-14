@@ -8,6 +8,7 @@ import Layout from "/components/layout";
 import SectionTypes from "/components/section-types-list";
 
 import cycleScale from "../public/cycle-scale.png";
+import seedHero from "../public/seeds.png";
 
 export default function Index() {
   const [session, loading] = useSession();
@@ -47,7 +48,7 @@ export default function Index() {
 
       <div className="flex flex-wrap items-center py-8">
         <div className="content w-full sm:w-1/3 right-0">
-          <Image src={cycleScale} alt="FIX" />
+          <Image src={seedHero} alt="FIX" />
         </div>
         <div className="flex-1 w-full sm:w-2/3">
           <div className="font-bold text-xl pb-6">
@@ -60,37 +61,38 @@ export default function Index() {
           ons in <span className="font-bold">houtbouw</span> en{" "}
           <span className="font-bold">circulaire</span>
           <span className="font-bold">windmolens</span> in de gebouwde omgeving.
-          In de loop van het jaar volgen er meer waardeketens en thema's.
+          In de loop van het jaar volgen er meer waardeketens en themas.
           <Link href="#">
             <a>Hoe het werkt →</a>
           </Link>
         </div>
       </div>
-      <SectionTypes qty="4" />
+      <div className="font-bold text-3xl pb-6">Waardeketens</div>
 
-      <div className="">Consumptiegoederen</div>
+      <SectionTypes
+        qty="4"
+        title="Circulaire bouweconomie"
+        description=""
+        data="0"
+      />
 
-      <div className="pl-6 italic">
-        Volgt in de toekomst, blijf op de hoogte
-      </div>
+      <SectionTypes
+        qty="4"
+        title="Consumptiegoederen"
+        description=""
+        data="0"
+      />
 
-      <div className="">Biomassa en voedsel</div>
+      <SectionTypes
+        qty="4"
+        title="Biomassa en voedsel"
+        description=""
+        data=""
+      />
 
-      <div className="pl-6 italic">
-        Volgt in de toekomst, blijf op de hoogte
-      </div>
+      <SectionTypes qty="4" title="Maakindustrie" description="" data="" />
 
-      <div className="">Maakindustrie</div>
-
-      <div className="pl-6 italic">
-        Volgt in de toekomst, blijf op de hoogte
-      </div>
-
-      <div className="">Kunststoffen</div>
-
-      <div className="pl-6 italic">
-        Volgt in de toekomst, blijf op de hoogte
-      </div>
+      <SectionTypes qty="4" title="Kunststoffen" description="" data="" />
 
       <ActionPanel
         paragraph="Blijf wekelijks op de hoogte van nieuwe kansen binnen de
@@ -98,24 +100,6 @@ export default function Index() {
         buttonText="Ontvang de nieuwsbrief"
         buttonLink="/"
       />
-      <LogoCloud />
-      {!session && (
-        <>
-          Not signed in <br />
-          <button onClick={signIn}>Sign in</button>
-        </>
-      )}
-      {session && (
-        <>
-          Signed in as {session.user.name} <br />
-          <button onClick={signOut}>Sign out</button>
-        </>
-      )}
-      <div>
-        <Link href="/laws">
-          <a>Go to private page</a>
-        </Link>
-      </div>
     </Layout>
   );
 }
