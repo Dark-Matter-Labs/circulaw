@@ -27,6 +27,7 @@ const useSelectedState = createPersistedState("selected");
 const useVoorbeeldenState = createPersistedState("voorbeelden");
 const useHuidigeState = createPersistedState("huidige");
 
+
 export default function Laws() {
   const { data, error } = useSWR(() => `/api/laws/`, fetcher);
 
