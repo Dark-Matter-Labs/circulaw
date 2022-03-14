@@ -9,4 +9,7 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  images: {
+    domains: ["tailwindui.com"],
+  },
 };
