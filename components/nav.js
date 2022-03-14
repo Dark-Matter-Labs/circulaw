@@ -40,8 +40,8 @@ export default function Nav() {
   return (
     <div className="flex border-b-4 inset-x-0 top-0 p-5 sm:p-9">
       <div className="flex-1">
-        <div className="content">
-          <Image src={logo} alt="Picture of the author" />
+        <div className="content ">
+          <Image src={logo} alt="Juridische Tool Logo" />
         </div>
         <div className="content right-0">
           <Popover className="inline-block relative px-3">
@@ -99,7 +99,7 @@ export default function Nav() {
                 <Popover.Button
                   className={classNames(
                     open ? "text-gray-900" : "text-gray-500",
-                    "group bg-white rounded-md inline-flex  text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    "group bg-white rounded-md inline-flex ßtext-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   )}
                 >
                   <span>Juridische Thema</span>
