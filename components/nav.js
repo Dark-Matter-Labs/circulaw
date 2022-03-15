@@ -9,7 +9,7 @@ import logo from "../public/logo.png";
 
 const waardeketens = [
   { name: "Gebouwde omgeving", description: "description", href: "#" },
-  { name: "Houtbouw", description: "description", href: "#" },
+  { name: "Houtbouw", description: "description", href: "/Houtbouw" },
   { name: "Circulaire windmolens", description: "description", href: "#" },
   { name: "Overige maatregelen", description: "description", href: "#" },
   { name: "Consumptiegoederen", description: "description", href: "#" },
