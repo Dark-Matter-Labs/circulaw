@@ -48,14 +48,16 @@ export default function Houtbouw() {
         </Link>
         <span className="">→</span>
         <Link href="/blog/hello-world">
-          <a>Blog Post</a>
+          <a>Gebouwde omgeving </a>
         </Link>
       </div>
-      <div className=" ">
+      <div className="pt-5">
         <div className=" ">
-          <Image src={IconWood} alt="Icon of Wood" width={50} height={50} />
+          <div className="text-3xl bold">
+            <Image src={IconWood} alt="Icon of Wood" width={48} height={29} />
+            Houtbouw
+          </div>
         </div>
-        <div className="text-3xl bold">Houtbouw</div>
         <div className="">
           <div className="">
             <div className="">
@@ -67,7 +69,11 @@ export default function Houtbouw() {
               beleidsmakers van gemeentes, provincies en ministeries In de
               toekomst: met handelingsperspectief om maatregelen toe te passen
             </div>
-            <div>Verken alle maatregelen in de houtbouw →</div>
+            <div>
+              <Link href="/laws">
+                <a>Verken alle maatregelen in de houtbouw →</a>
+              </Link>
+            </div>
           </div>
           <div>
             <Image src={IconWood} alt="Icon of Wood" width={50} height={50} />
@@ -83,11 +89,15 @@ export default function Houtbouw() {
             </div>
             <div className="">
               Bouwen met hout in plaats van beton heeft de grootste
-              milieu-impactreductie van alle circulaire bouwstrategieën.  10%
+              milieu-impactreductie van alle circulaire bouwstrategieën. 10%
               meer bouwen met hout in plaats van beton zou de totale
               milieubelasting van bouwmaterialen in nederland met 5% verlagen.
             </div>
-            <div>Meer over de voordelen van houtbouw →</div>
+            <div>
+              <Link href="/laws">
+                <a>Meer over de voordelen van houtbouw →</a>
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -117,23 +127,14 @@ export default function Houtbouw() {
               {collecties.map((file) => (
                 <li key={file.source} className="relative border bg-[#E6F2FA]">
                   <div className="group block w-full p-4">
-                    <div className="">
-                      <button
-                        type="button"
-                        className="absolute inset-0 focus:outline-none"
-                      >
-                        <span className="sr-only">
-                          View details for {file.title}
-                        </span>
-                      </button>
-                    </div>
+                    <div className=""></div>
                     <p className="mt-2 block text-sm font-medium pointer-events-none">
                       {file.title}
                     </p>
                     <p className="block text-sm font-medium text-gray-500 pointer-events-none">
                       {file.description}
                     </p>
-                    <Link href="#">
+                    <Link href="/laws">
                       <a>Bekijk de maatregelen →</a>
                     </Link>
                   </div>
