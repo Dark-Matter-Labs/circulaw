@@ -9,7 +9,7 @@ import logo from "../public/logo.png";
 
 const waardeketens = [
   { name: "Gebouwde omgeving", description: "description", href: "#" },
-  { name: "Houtbouw", description: "description", href: "#" },
+  { name: "Houtbouw", description: "description", href: "/houtbouw" },
   { name: "Circulaire windmolens", description: "description", href: "#" },
   { name: "Overige maatregelen", description: "description", href: "#" },
   { name: "Consumptiegoederen", description: "description", href: "#" },
@@ -41,7 +41,13 @@ export default function Nav() {
     <div className="flex border-b-4 inset-x-0 top-0 p-5 sm:p-9">
       <div className="flex-1">
         <div className="content ">
-          <Image src={logo} alt="Juridische Tool Logo" />
+          <Image
+            src={logo}
+            layout="fixed"
+            width="282px"
+            height="64px"
+            alt="Juridische Tool Logo"
+          />
         </div>
         <div className="content right-0">
           <Popover className="inline-block relative px-3">
@@ -72,7 +78,7 @@ export default function Nav() {
                   leaveFrom="opacity-100 translate-y-0"
                   leaveTo="opacity-0 translate-y-1"
                 >
-                  <Popover.Panel className="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-xs sm:px-0">
+                  <Popover.Panel className="absolute z-10  transform  mt-3 px-2 w-screen max-w-xs sm:px-0">
                     <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                       <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                         {waardeketens.map((item) => (
@@ -144,10 +150,13 @@ export default function Nav() {
           </Popover>
         </div>
       </div>
-      <div className="flex-1 right-0">
-        <div className="content">
+      <div className="flex-1">
+        <div className="content float-right mr-40 mt-10">
           <Link href="#">
             <a className="px-3">Hoe het werkt</a>
+          </Link>
+          <Link href="#">
+            <a className="px-3">Over ons</a>
           </Link>
           <Link href="/blog">
             <a className="px-3">Blog</a>
@@ -155,11 +164,6 @@ export default function Nav() {
           <Link href="/contact">
             <a className="px-3">Contact</a>
           </Link>
-        </div>
-        <div className="content">
-          SearchIdon
-          <input type="search" id="search" name="search" />
-          <input type="submit" value="Submit" />
         </div>
       </div>
     </div>
