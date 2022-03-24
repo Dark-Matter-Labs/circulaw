@@ -18,13 +18,13 @@ export default function Index() {
   }
   return (
     <Layout>
-      <div className="flex flex-wrap items-center py-8">
+      <div className="flex flex-wrap items-center py-8 ml-10 mr-10">
         <div className="flex-1 w-full sm:w-2/3">
           <div className="font-bold text-4xl pb-6">
             Ontdek juridische en fiscale maatregelen om de circulaire economie
             te versnellen
           </div>
-          <ul>
+          <ul className="list-disc">
             <li className="">
               Mogelikheden .in bestaande en toekomstige wetgeving
             </li>
@@ -37,9 +37,11 @@ export default function Index() {
               passen
             </li>
           </ul>
-          <Link href="#">
-            <a>Hoe het werkt →</a>
-          </Link>
+          <div className="pt-10 text-blue-500 float-right">
+            <Link href="#">
+              <a>Hoe het werkt →</a>
+            </Link>
+          </div>
         </div>
         <div className="content w-full sm:w-1/3 right-0">
           <Image src={cycleScale} alt="FIX" />
@@ -51,23 +53,23 @@ export default function Index() {
           <Image src={seedHero} alt="FIX" />
         </div>
         <div className="flex-1 w-full sm:w-2/3">
-          <div className="font-bold text-xl pb-6">
-            Ontdek juridische en fiscale maatregelen om de circulaire economie
-            te versnellen
-          </div>
+          <div className="font-bold text-xl pb-6">Een tool in de groei</div>
           Onze juristen analyseren dag in dag uit de wet en regelgeving met een
-          circulaire bril. Ons doel: binnen elke waardeketen relevante
-          juridische kansen en maatregelen ontdekken. Op dit moment verdiepen we
-          ons in <span className="font-bold">houtbouw</span> en{" "}
-          <span className="font-bold">circulaire</span>
-          <span className="font-bold">windmolens</span> in de gebouwde omgeving.
-          In de loop van het jaar volgen er meer waardeketens en themas.
-          <Link href="#">
-            <a>Hoe het werkt →</a>
-          </Link>
+          circulaire bril. Op dit moment verdiepen we ons in <b>
+            houtbouw
+          </b> en <b>circulaire windmolens</b> in de <b>gebouwde omgeving</b>.{" "}
+          <br />
+          <br />
+          Ons doel: In de loop van het jaar binnen elke waardeketen relevante
+          juridische kansen en maatregelen ontdekken
+          <div className="pt-10 text-blue-500 float-right mr-20">
+            <Link href="#">
+              <a>Onze ambitie →</a>
+            </Link>
+          </div>
         </div>
       </div>
-      <div className="font-bold text-3xl pb-6">Waardeketens</div>
+      <div className="font-bold text-3xl pb-6 pt-10">Waardeketens</div>
 
       <SectionTypes
         qty="4"
@@ -75,24 +77,6 @@ export default function Index() {
         description=""
         data="0"
       />
-
-      <SectionTypes
-        qty="4"
-        title="Consumptiegoederen"
-        description=""
-        data="0"
-      />
-
-      <SectionTypes
-        qty="4"
-        title="Biomassa en voedsel"
-        description=""
-        data=""
-      />
-
-      <SectionTypes qty="4" title="Maakindustrie" description="" data="" />
-
-      <SectionTypes qty="4" title="Kunststoffen" description="" data="" />
 
       <ActionPanel
         paragraph="Blijf wekelijks op de hoogte van nieuwe kansen binnen de

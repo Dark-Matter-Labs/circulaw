@@ -24,7 +24,7 @@ export default function Index() {
         </>
       )}
       <div>
-        <Link href='/laws'>
+        <Link href="/laws">
           <a>Go to private page</a>
         </Link>
       </div>
