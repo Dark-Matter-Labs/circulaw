@@ -8,21 +8,49 @@ import Image from "next/image";
 import logo from "../public/logo.png";
 
 const waardeketens = [
-  { name: "Gebouwde omgeving", description: "description", href: "#" },
+  {
+    name: "Gebouwde omgeving",
+    description: "description",
+    href: "/gebouwde-omgeving",
+  },
   { name: "Houtbouw", description: "description", href: "/houtbouw" },
-  { name: "Circulaire windmolens", description: "description", href: "#" },
-  { name: "Overige maatregelen", description: "description", href: "#" },
-  { name: "Consumptiegoederen", description: "description", href: "#" },
-  { name: "Biomassa en voedsel", description: "description", href: "#" },
-  { name: "Maakindustrie", description: "description", href: "#" },
-  { name: "Kunststoffen", description: "description", href: "#" },
+  {
+    name: "Circulaire windmolens",
+    description: "description",
+    href: "/circulaire-windmolens",
+  },
+  {
+    name: "Overige maatregelen",
+    description: "description",
+    href: "/overige-maatregelen",
+  },
+  {
+    name: "Consumptiegoederen",
+    description: "description",
+    href: "/consumptiegoederen",
+  },
+  {
+    name: "Biomassa en voedsel",
+    description: "description",
+    href: "/biomassa-en-voedsel",
+  },
+  { name: "Maakindustrie", description: "description", href: "/maakindustrie" },
+  { name: "Kunststoffen", description: "description", href: "/kunststoffen" },
 ];
 
 const juridischeThema = [
-  { name: "Fysieke leefomgeving", description: "description", href: "#" },
-  { name: "Aanbestedingen", description: "description", href: "#" },
-  { name: "Bouwen", description: "description", href: "#" },
-  { name: "Gronduitgifte", description: "description", href: "#" },
+  {
+    name: "Fysieke leefomgeving",
+    description: "description",
+    href: "/fysieke-leefomgeving",
+  },
+  {
+    name: "Aanbestedingen",
+    description: "description",
+    href: "/aanbestedingen",
+  },
+  { name: "Bouwen", description: "description", href: "/bouwen" },
+  { name: "Gronduitgifte", description: "description", href: "/gronduitgifte" },
 ];
 
 const voorbeelden = [{ name: "name", description: "description", href: "#" }];
