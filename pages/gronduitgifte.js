@@ -16,5 +16,5 @@ export default function Gronduitgifte() {
   if (loading) {
     return <p>Loading...</p>;
   }
-  return <Layout>gGronduitgifte Placeholder</Layout>;
+  return <Layout>Gronduitgifte Placeholder</Layout>;
 }
