@@ -58,29 +58,27 @@ export default function Law() {
         <Link href="/laws" className="mt-24 mb-2 w-full font-normal ">
           <a>← Overzicht maatregelen</a>
         </Link>
-        <div className="border-b-2 ">
-          <div className="inline-block">
-            <Image
-              src={IcontWood}
-              alt="Icon of a Wood Log"
-              width={42}
-              height={25}
-            />
-          </div>
-          <div className="inline-block">
-            Fase: <span className="bold">{data.fasen}</span>
-            <div className="inline-block">{/* <ToolTip data="" /> */}</div>
-          </div>
-
-          <div className="inline-block">R-ladder: {data.r_ladder}</div>
-        </div>
-
-        <div className="block p-6 w-full">
-          <h1 className="font-bold text-3xl mb-9">{data.titel}</h1>
-        </div>
 
         <div className="flex">
           <div className="w-2/3 p-6">
+            <div className="border-b-2 ">
+              <div className="inline-block">
+                <Image
+                  src={IcontWood}
+                  alt="Icon of a Wood Log"
+                  width={42}
+                  height={25}
+                />
+              </div>
+              <div className="inline-block">
+                Fase: <span className="bold">{data.fasen}</span>
+                <div className="inline-block">{/* <ToolTip data="" /> */}</div>
+              </div>
+
+              <div className="inline-block">R-ladder: {data.r_ladder}</div>
+            </div>
+            <h1 className="font-bold text-3xl my-9">{data.titel}</h1>
+
             <div className="py-4">
               <h3 className="font-bold text-xl pb-2">
                 Samenvatting juridische maatregel
@@ -177,13 +175,13 @@ export default function Law() {
           </div>
           <div className="w-1/3 ">
             <div className="py-5">
-              <div className="relative flex justify-between">
-                <div className="font-bold	">Juridisch Invloed</div>
+              <div className="relative flex justify-between  border-t-2 border-black">
+                <div className="font-bold 	">Juridisch Invloed</div>
                 {/* <Tooltip data="" /> */}
               </div>
 
               <div className="mt-3 flex items-center">
-                LAAG
+                <span className="pr-5"> LAAG</span>
                 {[0, 1, 2, 3, 4].map((rating) => (
                   <div
                     key={rating}
@@ -198,17 +196,15 @@ export default function Law() {
                 ))}
                 HOOG
               </div>
-
-              <div className="mt-3">{data.ranking_invloed}</div>
             </div>
 
             <div className="py-5">
-              <div className="relative flex justify-between">
-                <div className="font-bold	">Juridisch afbreukrisico</div>
+              <div className="relative flex justify-between border-t-2 border-black">
+                <div className="font-bold	 ">Juridisch afbreukrisico</div>
                 {/* <Tooltip data={data.JuridischAfbreukrisicoToolTip} /> */}
               </div>
               <div className="mt-3 flex items-center">
-                LAAG
+                <span className="pr-5"> LAAG</span>
                 {[0, 1, 2, 3, 4].map((rating) => (
                   <div
                     key={rating}
@@ -223,34 +219,41 @@ export default function Law() {
                 ))}
                 HOOG
               </div>
-              <div className="mt-3">{data.ranking_afbreukrisico}</div>
             </div>
 
-            <div className="py-5">
-              <div>
+            <div className="px-4 py-4 border-2 rounded bg-[#d8edfb]">
+              <div className="font-bold pb-4 ">
                 Deze maatregel is nog niet in werking getreden en nog niet
                 toegepast
               </div>
-              <div>
-                In de toekomst vind je hier een interactieve handleiding die je
-                meeneemt in hoe je:
+              <div className="">
+                <div className="pb-4">
+                  In de toekomst vind je hier een interactieve handleiding die
+                  je meeneemt in hoe je:
+                </div>
                 <ul className="marker:text-sky-400 list-disc pl-5 space-y-3">
-                  <li>
+                  <li className="pb-4">
                     met de maatregel een project vormt en hiermee met de markt
                     mee aan de slag kan gaan
                   </li>
-                  <li>
+                  <li className="pb-4">
                     intern kunt checken of het haalbaar, realistisch en het
                     goede moment is om de maatregel toe te passen
                   </li>
-                  <li>
+                  <li className="pb-4">
                     de maatregel kan combineren met andere juridische,
                     financiële en faciliterende beleidsinstrumenten, om zo meer
                     impact te maken{" "}
                   </li>
                 </ul>
               </div>
-              <button>HOUD ME OP DE HOOGTE </button>
+              <div className="w-full px-4 py-4">
+                <Link href="/">
+                  <a className="px-4 py-4 border-2 rounded text-white bg-[#0088d9]">
+                    HOUD ME OP DE HOOGTE
+                  </a>
+                </Link>
+              </div>{" "}
             </div>
           </div>
         </div>
