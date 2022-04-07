@@ -69,13 +69,17 @@ export default function Nav() {
     <div className="flex border-b-4 inset-x-0 top-0 p-5 sm:p-9">
       <div className="flex-1">
         <div className="content ">
-          <Image
-            src={logo}
-            layout="fixed"
-            width="282px"
-            height="64px"
-            alt="Juridische Tool Logo"
-          />
+          <Link href="/">
+            <a>
+              <Image
+                src={logo}
+                layout="fixed"
+                width="282px"
+                height="64px"
+                alt="Juridische Tool Logo"
+              />
+            </a>
+          </Link>
         </div>
         <div className="content right-0">
           <Popover className="inline-block relative px-3">
