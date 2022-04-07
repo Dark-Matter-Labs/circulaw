@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import useSWR from "swr";
+import Link from "next/link";
 import createPersistedState from "use-persisted-state";
 import {
   wettelijk_bevoegdheidsniveau,
@@ -158,6 +159,29 @@ export default function Measures() {
 
   return (
     <Layout>
+      <div className="w-full mt-10 ">
+        <div className="block">
+          <Link href="/blog/hello-world">
+            <a>Home</a>
+          </Link>
+          <span className=""> → </span>
+          <Link href="/blog/hello-world">
+            <a>Gebouwde omgeving</a>
+          </Link>
+          <span className=""> → </span>
+          <Link href="/blog/hello-world">
+            <a> Houtbouw </a>
+          </Link>
+        </div>
+      </div>
+      <div className="w-full border-b-2 py-4 mt-10 ">
+        <div className="block my-4">
+          <span className="font-bold">{numberOfLaws}</span> maatregelen gevonden
+        </div>
+        <h1 className="block text-4xl">
+          Maatregelen met veel impact (hoog op de R-ladder)
+        </h1>
+      </div>
       <div className="flex ">
         <div className="p-3 my-10">
           <h2 className="block text-4xl mb-20">HOUTBOUW</h2>
@@ -202,14 +226,6 @@ export default function Measures() {
         </div>
 
         <div className="p-3 mt-10 ml-10">
-          <h1 className="block text-4xl">
-            Circulaire transitie maatregelen & mogelijkheden
-          </h1>
-          <div className="block my-4">
-            <span className="font-bold">{numberOfLaws}</span> maatregelen
-            gevonden
-          </div>
-
           <div>
             <input
               type="checkbox"
