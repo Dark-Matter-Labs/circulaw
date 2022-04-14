@@ -52,8 +52,8 @@ export default function Index() {
         <div className="content w-full sm:w-1/3 right-0">
           <Image src={seedHero} alt="FIX" />
         </div>
-        <div className="flex-1 w-full sm:w-2/3">
-          <div className="font-bold text-xl pb-6">Een tool in de groei</div>
+        <div className="flex-1 w-full sm:w-2/3 pl-4">
+          <div className="font-bold text-xl pb-6 ">Een tool in de groei</div>
           Onze juristen analyseren dag in dag uit de wet en regelgeving met een
           circulaire bril. Op dit moment verdiepen we ons in <b>
             houtbouw

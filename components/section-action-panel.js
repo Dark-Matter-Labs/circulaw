@@ -5,7 +5,7 @@ export default function ActionPanel(props) {
       <div className="px-4 py-5 sm:p-6">
         <div className="sm:flex sm:items-start sm:justify-between">
           <div>
-            <div className="mt-2 max-w-xl text-sm text-gray-900">
+            <div className="mt-2 max-w-xl text-sm text-gray-500">
               {props.paragraph}
             </div>
           </div>
