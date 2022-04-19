@@ -3,8 +3,12 @@ import Link from "next/link";
 import Layout from "../components/layout";
 import ActionPanel from "../components/section-action-panel";
 
-import IconWood from "../public/icons/wood.png";
+import WoodIcon from "../public/icons/wood.png";
 import CollectionIcon from "../public/icons/collection.png";
+
+import PlaceHolder from "../public/placeholder.png";
+import HoutbouwHero from "../public/houtbouwHero.png";
+import co2Hero from "../public/illustration-co2.png";
 
 const collecties = [
   {
@@ -42,29 +46,29 @@ const collecties = [
 export default function Houtbouw() {
   return (
     <Layout>
-      <div className="flex">
-        <Link href="/blog/hello-world">
-          <a>Home</a>
+      <div className="flex pb-9 pt-9 ">
+        <Link href="/">
+          <a>Home </a>
         </Link>
-        <span className="">→</span>
-        <Link href="/blog/hello-world">
-          <a>Gebouwde omgeving </a>
+        <span className=""> → </span>
+        <Link href="/">
+          <a> Gebouwde omgeving </a>
         </Link>
       </div>
-      <div className="pt-5">
-        <div className=" ">
-          <div className="text-3xl bold">
-            <Image src={IconWood} alt="Icon of Wood" width={48} height={29} />
-            Houtbouw
+      <div className="pt-5 ">
+        <div className="pb-4">
+          <div className="pr-4 inline-block">
+            <Image src={WoodIcon} alt="Icon of Wood" width={48} height={29} />
           </div>
+          <div className="text-3xl bold inline-block">Houtbouw</div>
         </div>
-        <div className="">
-          <div className="">
-            <div className="">
+        <div className="border-2 flex">
+          <div className="w-full sm:w-2/3 p-4">
+            <div className="text-lg pb-4">
               Juridische en fiscale maatregelen om de transitie naar houtbouw te
               versnellen
             </div>
-            <div className="">
+            <div className=" pb-4">
               Mogelijkheden in bestaande en toekomstige wetgeving Voor
               beleidsmakers van gemeentes, provincies en ministeries In de
               toekomst: met handelingsperspectief om maatregelen toe te passen
@@ -75,21 +79,34 @@ export default function Houtbouw() {
               </Link>
             </div>
           </div>
-          <div>
-            <Image src={IconWood} alt="Icon of Wood" width={50} height={50} />
+          <div className="w-full sm:w-1/3">
+            <Image
+              src={HoutbouwHero}
+              alt="Icon of Wood"
+              width={500}
+              height={500}
+              layout="responsive"
+            />
           </div>
         </div>
-        <div className="">
-          <div>
-            <Image src={IconWood} alt="Icon of Wood" width={50} height={50} />
+
+        <div className="border-2 flex">
+          <div className="w-full sm:w-1/3">
+            <Image
+              src={co2Hero}
+              alt="Icon of Wood"
+              width={500}
+              height={500}
+              layout="responsive"
+            />
           </div>
-          <div className="">
+          <div className="w-full sm:w-2/3 p-4">
             <div className="">
               Houtbouw voor het behalen van klimaatdoelstellingen
             </div>
             <div className="">
               Bouwen met hout in plaats van beton heeft de grootste
-              milieu-impactreductie van alle circulaire bouwstrategieën. 10%
+              milieu-impactreductie van alle circulaire bouwstrategieën.  10%
               meer bouwen met hout in plaats van beton zou de totale
               milieubelasting van bouwmaterialen in nederland met 5% verlagen.
             </div>
@@ -102,41 +119,57 @@ export default function Houtbouw() {
         </div>
 
         <div className="">
-          <div className="">Uitgelichte maatregelen rond houtbouw</div>List of
-          Laws
-        </div>
-
-        <div className="">
           <div>
-            <div>
+            <div className="inline-block pr-4">
               <Image
                 src={CollectionIcon}
                 alt="Icon indocating a collection"
-                width={50}
-                height={50}
+                width={20}
+                height={20}
               />
-              <div className="text-2xl bold py-6">
+              <div className="text-2xl bold pl-4 py-6 inline-block">
                 COLLECTIES MAATREGELEN BINNEN HOUTBOUW
               </div>
             </div>
 
             <ul
               role="list"
-              className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 w-full"
+              className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 w-full pb-9"
             >
               {collecties.map((file) => (
-                <li key={file.source} className="relative border bg-[#E6F2FA]">
+                <li key={file.source} className="relative border bg-[#E6F2FA] ">
+                  <div className="w-full p-4">
+                    <div className="inline-block w-1/2">
+                      <Image
+                        src={CollectionIcon}
+                        alt="Picture of the author"
+                        width={20}
+                        height={20}
+                      />
+                    </div>
+
+                    <div className="inline-block w-1/2">
+                      <Image
+                        src={WoodIcon}
+                        alt="Icon indocating a collection"
+                        width={20}
+                        height={20}
+                      />
+                    </div>
+                  </div>
                   <div className="group block w-full p-4">
                     <div className=""></div>
-                    <p className="mt-2 block text-sm font-medium pointer-events-none">
+                    <p className="mt-2 block text-md font-medium pointer-events-none pb-4">
                       {file.title}
                     </p>
-                    <p className="block text-sm font-medium text-gray-500 pointer-events-none">
+                    <p className="block text-sm text-gray-500 pointer-events-none">
                       {file.description}
                     </p>
-                    <Link href="/laws">
-                      <a>Bekijk de maatregelen →</a>
-                    </Link>
+                    <div className="pt-4">
+                      <Link href="/laws">
+                        <a>Bekijk de maatregelen →</a>
+                      </Link>
+                    </div>
                   </div>
                 </li>
               ))}
