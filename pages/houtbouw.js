@@ -63,7 +63,7 @@ export default function Houtbouw() {
         <div className="text-3xl bold inline-block">Houtbouw</div>
       </div>
       <div>
-        <div className="flex border-2">
+        <div className="flex border-2 mb-4">
           <div className="w-full md:w-2/3 p-4">
             <div className="">
               <div className="text-lg font-bold pb-4">
