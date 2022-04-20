@@ -102,7 +102,32 @@ export default function Houtbouw() {
           </div>
         </div>
 
-        <div className="flex"></div>
+        <div className="flex border-2">
+          <div className="w-full md:w-1/2">
+            <Image src={co2Hero} alt="Icon of Wood" width={500} height={500} />
+          </div>
+
+          <div className="w-full md:w-2/3 p-4">
+            <div className="justify-between">
+              <div className="text-lg font-bold pb-4">
+                Houtbouw voor het behalen van klimaatdoelstellingen
+              </div>
+              <div className="text-sm pb-4">
+                Bouwen met hout in plaats van beton heeft de grootste
+                milieu-impactreductie van alle circulaire bouwstrategieën. meer
+                bouwen met hout in plaats van beton zou de totale
+                milieubelasting van bouwmaterialen in nederland met 5% verlagen.
+              </div>
+            </div>
+            <div>
+              <Link href="/laws">
+                <a className="text-[#4099DA]">
+                  Meer over de voordelen van houtbouw →
+                </a>
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="pt-5">
         {/* <div className="border-2 flex">
