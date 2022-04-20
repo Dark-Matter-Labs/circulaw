@@ -84,11 +84,11 @@ export default function Houtbouw() {
                   </li>
                 </ul>
               </div>
-              <Link href="/laws">
-                <a className="bg-[#4099DA] text-white py-2 px-4 rounded">
-                  Verken alle maatregelen in de houtbouw →
-                </a>
-              </Link>
+              <div className="bg-[#4099DA] text-white py-2 px-4 rounded max-w-max">
+                <Link href="/laws">
+                  <a className="">Verken alle maatregelen in de houtbouw →</a>
+                </Link>
+              </div>{" "}
             </div>
           </div>
           <div className="relative w-full md:w-1/3 ">
@@ -179,11 +179,11 @@ export default function Houtbouw() {
                       {file.description}
                     </p>
                     <div className="pt-4 static">
-                      <Link href="/laws">
-                        <a className=" text-sm bg-[#4099DA] text-white py-2 px-4 rounded inline-block bottom-4">
-                          Bekijk de maatregelen →
-                        </a>
-                      </Link>
+                      <div className=" text-sm bg-[#4099DA] text-white py-2 px-4 rounded inline-block bottom-4 max-w-max">
+                        <Link href="/laws">
+                          <a className="">Bekijk de maatregelen →</a>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </li>
