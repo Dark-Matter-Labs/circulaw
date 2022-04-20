@@ -91,20 +91,24 @@ export default function Houtbouw() {
               </Link>
             </div>
           </div>
-
-          <div className="w-full md:w-1/3">
+          <div className="relative w-full md:w-1/3 ">
             <Image
               src={HoutbouwHero}
               alt="Icon of Wood"
-              width={500}
-              height={500}
+              layout="fill"
+              objectFit="cover"
             />
           </div>
         </div>
 
         <div className="flex border-2">
-          <div className="w-full md:w-1/2">
-            <Image src={co2Hero} alt="Icon of Wood" width={500} height={500} />
+          <div className="relative w-full md:w-1/2">
+            <Image
+              src={co2Hero}
+              alt="Icon of Wood"
+              layout="fill"
+              objectFit="cover"
+            />
           </div>
 
           <div className="w-full md:w-2/3 p-4">
@@ -130,80 +134,6 @@ export default function Houtbouw() {
         </div>
       </div>
       <div className="pt-5">
-        {/* <div className="border-2 flex">
-          <div className="w-full md:w-2/3 p-4">
-            <div className="justify-between">
-              <div className="text-lg font-bold pb-4">
-                Juridische en fiscale maatregelen om de transitie naar houtbouw
-                te versnellen
-              </div>
-              <div className="pb-4">
-                <ul className="list-disc pl-5">
-                  <li className="text-sm">
-                    Mogelijkheden in bestaande en toekomstige wetgeving
-                  </li>
-                  <li className="text-sm">
-                    Voor beleidsmakers van gemeentes, provincies en ministeries
-                  </li>
-                  <li className="text-sm">
-                    In de toekomst: met handelingsperspectief om maatregelen toe
-                    te passen
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div>
-              <Link href="/laws">
-                <a className="bg-[#4099DA] text-white py-2 px-4 rounded">
-                  Verken alle maatregelen in de houtbouw →
-                </a>
-              </Link>
-            </div>
-          </div>
-          <div className="w-full md:w-1/3">
-            <Image
-              src={HoutbouwHero}
-              alt="Icon of Wood"
-              width={500}
-              height={500}
-            />
-          </div>
-        </div>
-
-        <div className="flex border-2">
-          <div className="w-full md:w-1/2">
-            <Image src={co2Hero} alt="Icon of Wood" width={500} height={500} />
-          </div>
-
-          <div className="w-full md:w-1/2">
-            <Image src={co2Hero} alt="Icon of Wood" width={500} height={500} />
-          </div>
-
-           <div className="w-full md:w-1/3">
-            <Image src={co2Hero} alt="Icon of Wood" width={500} height={500} />
-          </div>
-          <div className="w-full md:w-2/3 p-4">
-            <div className="justify-between">
-              <div className="">
-                Houtbouw voor het behalen van klimaatdoelstellingen
-              </div>
-              <div className="text-sm">
-                Bouwen met hout in plaats van beton heeft de grootste
-                milieu-impactreductie van alle circulaire bouwstrategieën. meer
-                bouwen met hout in plaats van beton zou de totale
-                milieubelasting van bouwmaterialen in nederland met 5% verlagen.
-              </div>
-            </div>
-            <div>
-              <Link href="/laws">
-                <a className="text-[#4099DA]">
-                  Meer over de voordelen van houtbouw →
-                </a>
-              </Link>
-            </div>
-          </div>
-        </div> */}
-
         <div className="pt-6">
           <div>
             <div className="inline-block pr-4">
