@@ -46,26 +46,28 @@ const collecties = [
 export default function Houtbouw() {
   return (
     <Layout>
-      <div className="pb-9 pt-9 text-[#4099DA]">
+      <div className="text-sm pb-9 pt-9 text-[#4099DA]">
         <Link href="/">
           <a>Home</a>
         </Link>
-        <span className="px-1"> → </span>
-        <Link href="/">
-          <a> Gebouwde omgeving </a>
-        </Link>
-        <span className="px-1"> → </span>
+        <span className="px-1"> → Gebouwde omgeving → </span>
+
+        {/*<span className="px-1"> →  </span>
+         <Link href="/">
+          <a>Gebouwde omgeving</a>
+        </Link> 
+        <span className="px-1"> → </span>*/}
       </div>
       <div className="pb-14 pt-14">
         <div className="pr-4 inline-block">
           <Image src={WoodIcon} alt="Icon of Wood" width={48} />
         </div>
-        <div className="text-3xl bold inline-block">Houtbouw</div>
+        <div className="text-3xl text-bold inline-block">Houtbouw</div>
       </div>
       <div>
         <div className="flex border-2 mb-4">
-          <div className="w-full md:w-2/3 p-4">
-            <div className="">
+          <div className="w-full md:w-1/2 p-4">
+            <div className="py-8">
               <div className="text-lg font-bold pb-4">
                 Juridische en fiscale maatregelen om de transitie naar houtbouw
                 te versnellen
@@ -85,13 +87,13 @@ export default function Houtbouw() {
                 </ul>
               </div>
               <div className="bg-[#4099DA] text-white py-2 px-4 rounded max-w-max">
-                <Link href="/laws">
+                <Link href="/measures">
                   <a className="">Verken alle maatregelen in de houtbouw →</a>
                 </Link>
               </div>{" "}
             </div>
           </div>
-          <div className="relative w-full md:w-1/3 ">
+          <div className="relative w-full md:w-1/2 ">
             <Image
               src={HoutbouwHero}
               alt="Icon of Wood"
@@ -111,19 +113,19 @@ export default function Houtbouw() {
             />
           </div>
 
-          <div className="w-full md:w-2/3 p-4">
-            <div className="justify-between">
+          <div className="w-full md:w-1/2 p-4">
+            <div className="py-8">
               <div className="text-lg font-bold pb-4">
                 Houtbouw voor het behalen van klimaatdoelstellingen
               </div>
-              <div className="text-sm pb-4">
+              <div className="text-sm ">
                 Bouwen met hout in plaats van beton heeft de grootste
                 milieu-impactreductie van alle circulaire bouwstrategieën. meer
                 bouwen met hout in plaats van beton zou de totale
                 milieubelasting van bouwmaterialen in nederland met 5% verlagen.
               </div>
             </div>
-            <div>
+            <div className="pb-4">
               <Link href="/laws">
                 <a className="text-[#4099DA]">
                   Meer over de voordelen van houtbouw →
@@ -187,7 +189,7 @@ export default function Houtbouw() {
               ))}
               <li className="relative">
                 <div className="flex w-full h-full p-4 justify-center items-center">
-                  <Link href="/blog/hello-world">
+                  <Link href="/measures">
                     <a className="text-sm text-[#4099DA] ">
                       Verken alle maatregelen in de houtbouw →
                     </a>
