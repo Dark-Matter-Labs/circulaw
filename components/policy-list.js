@@ -1,5 +1,8 @@
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
+import IconWood from "../public/icons/wood.png";
 
 export default function PolicyList(props) {
   const [searchValue, setSearchValue] = useState("");
@@ -56,9 +59,20 @@ export default function PolicyList(props) {
           } = lawData;
           return (
             <div key={lawDataIdx} className="block py-5">
+              <div className="">
+                <div className="inline-block">
+                  <Image src={IconWood} alt="Icon of Wood" />
+                </div>
+                <span className="inline-block pl-4">HOUTBOUW</span>
+              </div>
               <div className="block my-1">
-                <Link href={"/laws/" + id} key={lawDataIdx}>
-                  <a className="underline text-lg font-semibold">{titel}</a>
+                <Link href={"/measures/" + id} key={lawDataIdx}>
+                  <a className="underline text-lg font-semibold no-underline">
+                    {titel}{" "}
+                    <span className="p-1 text-normal rounded text-base bg-red-200 no-underline">
+                      FLAG
+                    </span>{" "}
+                  </a>
                 </Link>
               </div>
               <div className="block">
@@ -67,23 +81,29 @@ export default function PolicyList(props) {
 
               <div className="flex space-x-8">
                 <div className="flex-2 mr-5 text-normal text-base text-gray-400">
-                  Bevoegdheidsniveau:{" "}
-                  <span className="block-inline font-semibold text-base text-gray-900">
+                  Juridische impact:{" "}
+                  {/* <span className="block-inline font-semibold text-base text-gray-900">
                     {bevoegdheidsniveau}
-                  </span>
+                  </span> */}
                 </div>
 
                 <div className="flex-2 mr-5 text-normal text-base text-gray-400">
-                  Invloed:{" "}
-                  <span className="block-inline font-semibold text-base text-gray-900">
+                  Juridische houdbaarheid::{" "}
+                  {/* <span className="block-inline font-semibold text-base text-gray-900">
                     {ranking_invloed}
-                  </span>
+                  </span> */}
                 </div>
                 <div className="flex-2 mr-5 text-normal text-base text-gray-400">
-                  Afbreukrisico:{" "}
-                  <span className="block-inline font-semibold text-base text-gray-900">
+                  R-ladder:{" "}
+                  {/* <span className="block-inline font-semibold text-base text-gray-900">
                     {ranking_afbreukrisico}
-                  </span>
+                  </span> */}
+                </div>
+              </div>
+
+              <div className="flex space-x-8">
+                <div className="p-1 text-normal rounded text-base bg-gray-200">
+                  {rechtsgebied}
                 </div>
               </div>
             </div>

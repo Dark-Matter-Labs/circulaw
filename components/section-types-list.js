@@ -7,10 +7,15 @@ import HoutbouwHero from "../public/houtbouw-hero.png";
 import WindmolensHero from "../public/windmolens-hero.png";
 import OverigeHero from "../public/overige-hero.png";
 
+import windIcon from "../public/icons/wind.png";
+import cityIcon from "../public/icons/city.png";
+import woodIcon from "../public/icons/wood.png";
+
 const types = [
   {
     heroImage: HoutbouwHero,
-    icon: "",
+    icon: woodIcon,
+    count: "77",
     title: "Houtbouw",
     description:
       "Ontdek de juridische kansen en maatregelen die de transitie naar houtbouw kunnen versnellen",
@@ -21,7 +26,8 @@ const types = [
   },
   {
     heroImage: WindmolensHero,
-    icon: "",
+    icon: windIcon,
+    count: "00",
     title: "Circulaire windmolens",
     description:
       "Onze juristen brengen op dit moment de kansen en maatregelen in de wetgeving rond circulaire windmolens in kaart. Binnenkort",
@@ -32,7 +38,8 @@ const types = [
   },
   {
     heroImage: OverigeHero,
-    icon: "",
+    icon: cityIcon,
+    count: "17",
     title: "Overige maatregelen circulaire bouweconomie",
     description:
       "Deze maatregelen zijn ook in de de circulaire bouweconomie toepasbaar",
@@ -66,11 +73,16 @@ export default function SectionTypes({ data, qty, title, description }) {
                 />
               </div>
               <div className="group block w-full p-4">
-                <div className=""></div>
-                <p className="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none">
-                  {file.title}
-                </p>
-                <p className="block text-sm font-medium text-gray-500 pointer-events-none">
+                <div className="flex"></div>
+                <div className="inline-block">
+                  <div className="inline-block">
+                    <Image src={file.icon} alt="Picture of the author" />
+                  </div>
+                  <div className="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none pb-4">
+                    {file.title} ({file.count})
+                  </div>
+                </div>
+                <p className="block text-sm  text-gray-500 pointer-events-none pb-4">
                   {file.description}
                 </p>
                 <Link href={file.href}>
