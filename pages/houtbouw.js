@@ -46,26 +46,28 @@ const collecties = [
 export default function Houtbouw() {
   return (
     <Layout>
-      <div className="pb-9 pt-9 text-[#4099DA]">
+      <div className="text-sm pb-9 pt-9 text-[#4099DA]">
         <Link href="/">
           <a>Home</a>
         </Link>
-        <span className="px-1"> → </span>
-        <Link href="/">
-          <a> Gebouwde omgeving </a>
-        </Link>
-        <span className="px-1"> → </span>
+        <span className="px-1"> → Gebouwde omgeving → </span>
+
+        {/*<span className="px-1"> →  </span>
+         <Link href="/">
+          <a>Gebouwde omgeving</a>
+        </Link> 
+        <span className="px-1"> → </span>*/}
       </div>
-      <div className="pb-4">
+      <div className="pb-14 pt-14">
         <div className="pr-4 inline-block">
           <Image src={WoodIcon} alt="Icon of Wood" width={48} />
         </div>
-        <div className="text-3xl bold inline-block">Houtbouw</div>
+        <div className="text-3xl text-bold inline-block">Houtbouw</div>
       </div>
       <div>
-        <div className="flex border-2">
-          <div className="w-full md:w-2/3 p-4">
-            <div className="">
+        <div className="flex border-2 mb-4">
+          <div className="w-full md:w-1/2 p-4">
+            <div className="py-8">
               <div className="text-lg font-bold pb-4">
                 Juridische en fiscale maatregelen om de transitie naar houtbouw
                 te versnellen
@@ -84,42 +86,46 @@ export default function Houtbouw() {
                   </li>
                 </ul>
               </div>
-              <Link href="/laws">
-                <a className="bg-[#4099DA] text-white py-2 px-4 rounded">
-                  Verken alle maatregelen in de houtbouw →
-                </a>
-              </Link>
+              <div className="bg-[#4099DA] text-white py-2 px-4 rounded max-w-max">
+                <Link href="/measures">
+                  <a className="">Verken alle maatregelen in de houtbouw →</a>
+                </Link>
+              </div>{" "}
             </div>
           </div>
-
-          <div className="w-full md:w-1/3">
+          <div className="relative w-full md:w-1/2 ">
             <Image
               src={HoutbouwHero}
               alt="Icon of Wood"
-              width={500}
-              height={500}
+              layout="fill"
+              objectFit="cover"
             />
           </div>
         </div>
 
         <div className="flex border-2">
-          <div className="w-full md:w-1/2">
-            <Image src={co2Hero} alt="Icon of Wood" width={500} height={500} />
+          <div className="relative w-full md:w-1/2">
+            <Image
+              src={co2Hero}
+              alt="Icon of Wood"
+              layout="fill"
+              objectFit="cover"
+            />
           </div>
 
-          <div className="w-full md:w-2/3 p-4">
-            <div className="justify-between">
+          <div className="w-full md:w-1/2 p-4">
+            <div className="py-8">
               <div className="text-lg font-bold pb-4">
                 Houtbouw voor het behalen van klimaatdoelstellingen
               </div>
-              <div className="text-sm pb-4">
+              <div className="text-sm ">
                 Bouwen met hout in plaats van beton heeft de grootste
                 milieu-impactreductie van alle circulaire bouwstrategieën. meer
                 bouwen met hout in plaats van beton zou de totale
                 milieubelasting van bouwmaterialen in nederland met 5% verlagen.
               </div>
             </div>
-            <div>
+            <div className="pb-4">
               <Link href="/laws">
                 <a className="text-[#4099DA]">
                   Meer over de voordelen van houtbouw →
@@ -130,80 +136,6 @@ export default function Houtbouw() {
         </div>
       </div>
       <div className="pt-5">
-        {/* <div className="border-2 flex">
-          <div className="w-full md:w-2/3 p-4">
-            <div className="justify-between">
-              <div className="text-lg font-bold pb-4">
-                Juridische en fiscale maatregelen om de transitie naar houtbouw
-                te versnellen
-              </div>
-              <div className="pb-4">
-                <ul className="list-disc pl-5">
-                  <li className="text-sm">
-                    Mogelijkheden in bestaande en toekomstige wetgeving
-                  </li>
-                  <li className="text-sm">
-                    Voor beleidsmakers van gemeentes, provincies en ministeries
-                  </li>
-                  <li className="text-sm">
-                    In de toekomst: met handelingsperspectief om maatregelen toe
-                    te passen
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div>
-              <Link href="/laws">
-                <a className="bg-[#4099DA] text-white py-2 px-4 rounded">
-                  Verken alle maatregelen in de houtbouw →
-                </a>
-              </Link>
-            </div>
-          </div>
-          <div className="w-full md:w-1/3">
-            <Image
-              src={HoutbouwHero}
-              alt="Icon of Wood"
-              width={500}
-              height={500}
-            />
-          </div>
-        </div>
-
-        <div className="flex border-2">
-          <div className="w-full md:w-1/2">
-            <Image src={co2Hero} alt="Icon of Wood" width={500} height={500} />
-          </div>
-
-          <div className="w-full md:w-1/2">
-            <Image src={co2Hero} alt="Icon of Wood" width={500} height={500} />
-          </div>
-
-           <div className="w-full md:w-1/3">
-            <Image src={co2Hero} alt="Icon of Wood" width={500} height={500} />
-          </div>
-          <div className="w-full md:w-2/3 p-4">
-            <div className="justify-between">
-              <div className="">
-                Houtbouw voor het behalen van klimaatdoelstellingen
-              </div>
-              <div className="text-sm">
-                Bouwen met hout in plaats van beton heeft de grootste
-                milieu-impactreductie van alle circulaire bouwstrategieën. meer
-                bouwen met hout in plaats van beton zou de totale
-                milieubelasting van bouwmaterialen in nederland met 5% verlagen.
-              </div>
-            </div>
-            <div>
-              <Link href="/laws">
-                <a className="text-[#4099DA]">
-                  Meer over de voordelen van houtbouw →
-                </a>
-              </Link>
-            </div>
-          </div>
-        </div> */}
-
         <div className="pt-6">
           <div>
             <div className="inline-block pr-4">
@@ -227,15 +159,12 @@ export default function Houtbouw() {
                   <div className="w-full p-4">
                     <div className="relative">
                       <div className="absolute left-0 top-0 h-16 w-8">
-                        <Image
-                          src={CollectionIcon}
-                          alt="Picture of the author"
-                        />
+                        <Image src={WoodIcon} alt="Picture of the author" />
                       </div>
 
                       <div className="absolute right-0 top-0 h-16 w-8">
                         <Image
-                          src={WoodIcon}
+                          src={CollectionIcon}
                           alt="Icon indocating a collection"
                         />
                       </div>
@@ -249,18 +178,18 @@ export default function Houtbouw() {
                       {file.description}
                     </p>
                     <div className="pt-4 static">
-                      <Link href="/laws">
-                        <a className=" text-sm bg-[#4099DA] text-white py-2 px-4 rounded inline-block bottom-4">
-                          Bekijk de maatregelen →
-                        </a>
-                      </Link>
+                      <div className=" text-sm bg-[#4099DA] text-white py-2 px-4 rounded inline-block bottom-4 max-w-max">
+                        <Link href="/laws">
+                          <a className="">Bekijk de maatregelen →</a>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </li>
               ))}
-              <li className="relative border ">
+              <li className="relative">
                 <div className="flex w-full h-full p-4 justify-center items-center">
-                  <Link href="/blog/hello-world">
+                  <Link href="/measures">
                     <a className="text-sm text-[#4099DA] ">
                       Verken alle maatregelen in de houtbouw →
                     </a>
