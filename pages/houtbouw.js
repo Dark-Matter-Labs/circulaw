@@ -56,7 +56,7 @@ export default function Houtbouw() {
         </Link>
         <span className="px-1"> → </span>
       </div>
-      <div className="pb-4">
+      <div className="pb-14 pt-14">
         <div className="pr-4 inline-block">
           <Image src={WoodIcon} alt="Icon of Wood" width={48} />
         </div>
@@ -157,15 +157,12 @@ export default function Houtbouw() {
                   <div className="w-full p-4">
                     <div className="relative">
                       <div className="absolute left-0 top-0 h-16 w-8">
-                        <Image
-                          src={CollectionIcon}
-                          alt="Picture of the author"
-                        />
+                        <Image src={WoodIcon} alt="Picture of the author" />
                       </div>
 
                       <div className="absolute right-0 top-0 h-16 w-8">
                         <Image
-                          src={WoodIcon}
+                          src={CollectionIcon}
                           alt="Icon indocating a collection"
                         />
                       </div>
@@ -188,7 +185,7 @@ export default function Houtbouw() {
                   </div>
                 </li>
               ))}
-              <li className="relative border ">
+              <li className="relative">
                 <div className="flex w-full h-full p-4 justify-center items-center">
                   <Link href="/blog/hello-world">
                     <a className="text-sm text-[#4099DA] ">
