@@ -1,203 +1,232 @@
-import Link from "next/link";
-import { signIn, signOut, useSession } from "next-auth/client";
 import { Fragment } from "react";
-import { Popover, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/solid";
-import Image from "next/image";
-
-import logo from "../public/logo.png";
-
-const waardeketens = [
-  {
-    name: "Gebouwde omgeving",
-    description: "description",
-    href: "/gebouwde-omgeving",
-  },
-  { name: "Houtbouw", description: "description", href: "/houtbouw" },
-  {
-    name: "Circulaire windmolens",
-    description: "description",
-    href: "/circulaire-windmolens",
-  },
-  {
-    name: "Overige maatregelen",
-    description: "description",
-    href: "/overige-maatregelen",
-  },
-  {
-    name: "Consumptiegoederen",
-    description: "description",
-    href: "/consumptiegoederen",
-  },
-  {
-    name: "Biomassa en voedsel",
-    description: "description",
-    href: "/biomassa-en-voedsel",
-  },
-  { name: "Maakindustrie", description: "description", href: "/maakindustrie" },
-  { name: "Kunststoffen", description: "description", href: "/kunststoffen" },
-];
-
-const juridischeThema = [
-  {
-    name: "Fysieke leefomgeving",
-    description: "description",
-    href: "/fysieke-leefomgeving",
-  },
-  {
-    name: "Aanbestedingen",
-    description: "description",
-    href: "/aanbestedingen",
-  },
-  { name: "Bouwen", description: "description", href: "/bouwen" },
-  { name: "Gronduitgifte", description: "description", href: "/gronduitgifte" },
-];
-
-const voorbeelden = [{ name: "name", description: "description", href: "#" }];
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Nav() {
-  const [session, loading] = useSession();
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+export default function Example() {
   return (
-    <div className="flex border-b-4 inset-x-0 top-0 p-5 sm:p-9">
-      <div className="flex-1">
-        <div className="content ">
-          <Link href="/">
-            <a>
-              <Image
-                src={logo}
-                layout="fixed"
-                width="282px"
-                height="64px"
-                alt="Juridische Tool Logo"
-              />
-            </a>
-          </Link>
-        </div>
-        <div className="content right-0">
-          <Popover className="inline-block relative px-3">
-            {({ open }) => (
-              <>
-                <Popover.Button
-                  className={classNames(
-                    open ? "text-gray-900" : "text-gray-500",
-                    "group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+    <Disclosure as="nav" className="bg-white shadow">
+      {({ open }) => (
+        <>
+          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div className="relative flex justify-between h-16">
+              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                {/* Mobile menu button */}
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <XIcon className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
                   )}
-                >
-                  <span>Waardeketens</span>
-                  <ChevronDownIcon
-                    className={classNames(
-                      open ? "text-gray-600" : "text-gray-400",
-                      "ml-2 h-5 w-5 group-hover:text-gray-500"
-                    )}
-                    aria-hidden="true"
+                </Disclosure.Button>
+              </div>
+              <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                <div className="flex-shrink-0 flex items-center">
+                  <div className="">CIRCULAW</div>
+                  {/* <img
+                    className="block lg:hidden h-8 w-auto"
+                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                    alt="Workflow"
                   />
-                </Popover.Button>
+                  <img
+                    className="hidden lg:block h-8 w-auto"
+                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
+                    alt="Workflow"
+                  /> */}
+                </div>
+                <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                  {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
+                  <a
+                    href="#"
+                    className="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  >
+                    Dashboard
+                  </a>
+                  <a
+                    href="#"
+                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  >
+                    Team
+                  </a>
+                  <a
+                    href="#"
+                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  >
+                    Projects
+                  </a>
+                  <a
+                    href="#"
+                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                  >
+                    Calendar
+                  </a>
+                </div>
+              </div>
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <button
+                  type="button"
+                  className="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  <span className="sr-only">View notifications</span>
+                  <BellIcon className="h-6 w-6" aria-hidden="true" />
+                </button>
 
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-200"
-                  enterFrom="opacity-0 translate-y-1"
-                  enterTo="opacity-100 translate-y-0"
-                  leave="transition ease-in duration-150"
-                  leaveFrom="opacity-100 translate-y-0"
-                  leaveTo="opacity-0 translate-y-1"
-                >
-                  <Popover.Panel className="absolute z-10  transform  mt-3 px-2 w-screen max-w-xs sm:px-0">
-                    <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-                      <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                        {waardeketens.map((item) => (
+                {/* Profile dropdown */}
+                <Menu as="div" className="ml-3 relative">
+                  <div>
+                    <Menu.Button className="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      <span className="sr-only">Open user menu</span>
+                      <img
+                        className="h-8 w-8 rounded-full"
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        alt=""
+                      />
+                    </Menu.Button>
+                  </div>
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-200"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Item>
+                        {({ active }) => (
                           <a
-                            key={item.name}
-                            href={item.href}
-                            className="-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
+                            href="#"
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
                           >
-                            <p className="text-base font-medium text-gray-900">
-                              {item.name}
-                            </p>
+                            Your Profile
                           </a>
-                        ))}
-                      </div>
-                    </div>
-                  </Popover.Panel>
-                </Transition>
-              </>
-            )}
-          </Popover>
-          <Popover className="inline-block relative px-3">
-            {({ open }) => (
-              <>
-                <Popover.Button
-                  className={classNames(
-                    open ? "text-gray-900" : "text-gray-500",
-                    "group bg-white rounded-md inline-flex ßtext-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                  )}
-                >
-                  <span>Juridische Thema</span>
-                  <ChevronDownIcon
-                    className={classNames(
-                      open ? "text-gray-600" : "text-gray-400",
-                      "ml-2 h-5 w-5 group-hover:text-gray-500"
-                    )}
-                    aria-hidden="true"
-                  />
-                </Popover.Button>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
+                          >
+                            Settings
+                          </a>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
+                          >
+                            Sign out
+                          </a>
+                        )}
+                      </Menu.Item>
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
+              </div>
+            </div>
+          </div>
 
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-200"
-                  enterFrom="opacity-0 translate-y-1"
-                  enterTo="opacity-100 translate-y-0"
-                  leave="transition ease-in duration-150"
-                  leaveFrom="opacity-100 translate-y-0"
-                  leaveTo="opacity-0 translate-y-1"
-                >
-                  <Popover.Panel className="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-xs sm:px-0">
-                    <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-                      <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                        {juridischeThema.map((item) => (
-                          <a
-                            key={item.name}
-                            href={item.href}
-                            className="-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
-                          >
-                            <p className="text-base font-medium text-gray-900">
-                              {item.name}
-                            </p>
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  </Popover.Panel>
-                </Transition>
-              </>
-            )}
-          </Popover>
-        </div>
-      </div>
-      <div className="flex-1">
-        <div className="content float-right mr-40 mt-10">
-          <Link href="#">
-            <a className="px-3">Hoe het werkt</a>
-          </Link>
-          <Link href="#">
-            <a className="px-3">Over ons</a>
-          </Link>
-          <Link href="/blog">
-            <a className="px-3">Blog</a>
-          </Link>
-          <Link href="/contact">
-            <a className="px-3">Contact</a>
-          </Link>
-        </div>
-      </div>
-    </div>
+          <Disclosure.Panel className="sm:hidden">
+            <div className="pt-2 pb-4 space-y-1">
+              {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
+              <Disclosure.Button
+                as="a"
+                href="#"
+                className="border-transparent text-gray-900 border border-gray-500 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medium"
+              >
+                MAATREGELEN
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="#"
+                className="border-transparent text-gray-400 border border-gray-500 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medium"
+              >
+                Gebouwde omgeving
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="#"
+                className="border-transparent text-gray-400 border border-gray-500 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base"
+              >
+                Houtbouw
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="#"
+                className="border-transparent text-gray-400 border border-gray-500 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medium"
+              >
+                Windmolens (coming soon)
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="#"
+                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medium"
+              >
+                Consumptoegoederen
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="#"
+                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medium"
+              >
+                Biomassa en voedsel
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="#"
+                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medium"
+              >
+                Maakindustrie
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="#"
+                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medium"
+              >
+                Kunststoffen
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="#"
+                className="border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base"
+              >
+                HOE HET WERKT
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="#"
+                className="border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base"
+              >
+                OVER ONS
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="#"
+                className="border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base"
+              >
+                CONTACT
+              </Disclosure.Button>
+            </div>
+          </Disclosure.Panel>
+        </>
+      )}
+    </Disclosure>
   );
 }
