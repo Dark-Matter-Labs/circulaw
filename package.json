@@ -7,7 +7,7 @@
     "clean": "npx prettier --write ."
   },
   "dependencies": {
-    "@headlessui/react": "^1.5.0",
+    "@headlessui/react": "^1.6.0",
     "@heroicons/react": "^1.0.6",
     "next": "^12.0.7",
     "next-auth": "^3.29.0",
