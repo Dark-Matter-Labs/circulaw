@@ -54,7 +54,7 @@ export default function Example() {
               </div>
               <div className="mt-12 md:mt-0">
                 <h3 className="text-sm text-white tracking-wider uppercase">
-                  JURIDISCHE THEMA'S
+                  JURIDISCHE THEMAS
                 </h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.JURIDISCHE.map((item) => (
