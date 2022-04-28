@@ -10,10 +10,7 @@ export default function PolicyList(props) {
   if (props.data) {
     lawData = props.data.filter((lawData) => {
       const searchContent =
-        lawData.titel +
-        lawData.bevoegdheidsniveau +
-        lawData.rechtsgebied +
-        lawData.officiele_titel_wettelijk_document;
+        lawData.titel + lawData.rechtsgebied + lawData.citeertitel;
       return searchContent.toLowerCase().includes(searchValue.toLowerCase());
     });
   }
@@ -50,12 +47,23 @@ export default function PolicyList(props) {
           const {
             id,
             titel,
-            officieleTitel,
-            rechtsgebied,
-            bevoegdheidsniveau,
-            ranking_invloed,
-            ranking_afbreukrisico,
-            officiele_titel_wettelijk_document,
+            casus,
+            subrechtsgebied,
+            is_er_een_praktijk_voorbeeld,
+            europees,
+            nationaal,
+            provinciaal,
+            waterschappen,
+            gemeentelijk,
+            introductie_juridische_maatregel,
+            juridische_invloed,
+            juridische_houdbaarheid,
+            R1,
+            R2,
+            R3,
+            R4,
+            R5,
+            R6,
           } = lawData;
           return (
             <div key={lawDataIdx} className="block py-5">
@@ -63,47 +71,59 @@ export default function PolicyList(props) {
                 <div className="inline-block">
                   <Image src={IconWood} alt="Icon of Wood" />
                 </div>
-                <span className="inline-block pl-4">HOUTBOUW</span>
+                <span className="inline-block pl-4">{casus}</span>
               </div>
               <div className="block my-1">
                 <Link href={"/measures/" + id} key={lawDataIdx}>
                   <a className="underline text-lg font-semibold no-underline">
                     {titel}{" "}
-                    <span className="p-1 text-normal rounded text-base bg-red-200 no-underline">
-                      FLAG
-                    </span>{" "}
+                    {is_er_een_praktijk_voorbeeld && (
+                      <span className="p-1 text-normal rounded text-base bg-red-200 no-underline">
+                        Voorbeeld
+                      </span>
+                    )}
                   </a>
                 </Link>
               </div>
               <div className="block">
-                {rechtsgebied} - {officiele_titel_wettelijk_document}
+                {europees && <span>Europees </span>}
+                {nationaal && <span>Nationaal </span>}
+                {provinciaal && <span>Provinciaal </span>}
+                {waterschappen && <span>Waterschappen </span>}
+                {gemeentelijk && <span>Gemeentelijk</span>}
               </div>
+              <div className="block">{introductie_juridische_maatregel}</div>
 
               <div className="flex space-x-8">
                 <div className="flex-2 mr-5 text-normal text-base text-gray-400">
                   Juridische impact:{" "}
-                  {/* <span className="block-inline font-semibold text-base text-gray-900">
-                    {bevoegdheidsniveau}
-                  </span> */}
+                  <span className="block-inline font-semibold text-base text-gray-900">
+                    {juridische_invloed}
+                  </span>
                 </div>
 
                 <div className="flex-2 mr-5 text-normal text-base text-gray-400">
-                  Juridische houdbaarheid::{" "}
-                  {/* <span className="block-inline font-semibold text-base text-gray-900">
-                    {ranking_invloed}
-                  </span> */}
+                  Juridische houdbaarheid:{" "}
+                  <span className="block-inline font-semibold text-base text-gray-900">
+                    {juridische_houdbaarheid}
+                  </span>
                 </div>
                 <div className="flex-2 mr-5 text-normal text-base text-gray-400">
                   R-ladder:{" "}
-                  {/* <span className="block-inline font-semibold text-base text-gray-900">
-                    {ranking_afbreukrisico}
-                  </span> */}
+                  <span className="block-inline font-semibold text-base text-gray-900">
+                    {R1 && <span>R1 </span>}
+                    {R2 && <span>R2 </span>}
+                    {R3 && <span>R3 </span>}
+                    {R4 && <span>R4 </span>}
+                    {R5 && <span>R5 </span>}
+                    {R6 && <span>R6</span>}
+                  </span>
                 </div>
               </div>
 
               <div className="flex space-x-8">
                 <div className="p-1 text-normal rounded text-base bg-gray-200">
-                  {rechtsgebied}
+                  {subrechtsgebied}
                 </div>
               </div>
             </div>
