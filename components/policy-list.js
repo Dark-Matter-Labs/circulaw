@@ -92,7 +92,7 @@ export default function PolicyList(props) {
                 {waterschappen && <span>Waterschappen </span>}
                 {gemeentelijk && <span>Gemeentelijk</span>}
               </div>
-              <div className="block">{introductie_juridische_maatregel}</div>
+              <div className="block newlineDisplay">{introductie_juridische_maatregel}</div>
 
               <div className="flex space-x-8">
                 <div className="flex-2 mr-5 text-normal text-base text-gray-400">
