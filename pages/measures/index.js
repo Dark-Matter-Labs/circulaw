@@ -5,7 +5,8 @@ import createPersistedState from "use-persisted-state";
 import {
   wettelijk_bevoegdheidsniveau,
   rechtsgebied,
-  plaberum,
+  subrechtsgebied,
+  juridische_houdbaarheid,
   r_ladder,
 } from "../../dataFilterExample";
 
@@ -25,8 +26,6 @@ const fetcher = async (url) => {
 
 //creating objects for persisting values
 const useSelectedState = createPersistedState("selected");
-const useVoorbeeldenState = createPersistedState("voorbeelden");
-const useHuidigeState = createPersistedState("huidige");
 
 export default function Measures() {
   const { data, error } = useSWR(() => `/api/laws/`, fetcher);
@@ -34,18 +33,18 @@ export default function Measures() {
   //creating references to access child component functions
   const wettelijkFilterRef = useRef();
   const rechtsgebiedFilterRef = useRef();
-  const planningsfaseFilterRef = useRef();
+  const subrechtsgebiedFilterRef = useRef();
   const rLadderFilterRef = useRef();
+  const juridischeFilterRef = useRef();
 
   const [laws, setLaws] = useState(data);
   const [selected, setSelected] = useSelectedState({
     wettelijk_bevoegdheidsniveau: [],
     rechtsgebied: [],
-    plaberum: [],
+    subrechtsgebied: [],
     r_ladder: [],
+    juridische_houdbaarheid: [],
   });
-  const [voorbeelden, setVoorbeelden] = useVoorbeeldenState(false);
-  const [huidige, setHuidige] = useHuidigeState(false);
 
   const [numberOfLaws, setNumberOfLaws] = useState(67);
 
@@ -59,17 +58,16 @@ export default function Measures() {
     setSelected({
       wettelijk_bevoegdheidsniveau: [],
       rechtsgebied: [],
-      plaberum: [],
+      subrechtsgebied: [],
       r_ladder: [],
+      juridische_houdbaarheid: [],
     });
 
     wettelijkFilterRef.current.reset();
     rechtsgebiedFilterRef.current.reset();
-    planningsfaseFilterRef.current.reset();
+    subrechtsgebiedFilterRef.current.reset();
     rLadderFilterRef.current.reset();
-
-    setVoorbeelden(false);
-    setHuidige(false);
+    juridischeFilterRef.current.reset();
   };
 
   //effect to check for filtering and update data
@@ -78,53 +76,85 @@ export default function Measures() {
     if (data) {
       const filteredLaws = data;
       if (selected.wettelijk_bevoegdheidsniveau.length > 0) {
-        filteredLaws = filteredLaws.filter((element) => {
-          return (
-            selected.wettelijk_bevoegdheidsniveau.includes(
-              element.bevoegdheidsniveau
-            ) || element.bevoegdheidsniveau === "Alle bevoegdheidsniveaus"
-          );
-        });
+        if (selected.wettelijk_bevoegdheidsniveau.includes("europees")) {
+          filteredLaws = filteredLaws.filter((element) => {
+            return element.europees;
+          });
+        }
+        if (selected.wettelijk_bevoegdheidsniveau.includes("nationaal")) {
+          filteredLaws = filteredLaws.filter((element) => {
+            return element.nationaal;
+          });
+        }
+        if (selected.wettelijk_bevoegdheidsniveau.includes("provinciaal")) {
+          filteredLaws = filteredLaws.filter((element) => {
+            return element.provinciaal;
+          });
+        }
+        if (selected.wettelijk_bevoegdheidsniveau.includes("gemeentelijk")) {
+          filteredLaws = filteredLaws.filter((element) => {
+            return element.gemeentelijk;
+          });
+        }
       }
 
       if (selected.r_ladder.length > 0) {
-        filteredLaws = filteredLaws.filter((element) => {
-          return element.r_ladder
-            .split(", ")
-            .some((i) => selected.r_ladder.includes(i));
-        });
+        if (selected.r_ladder.includes("R1")) {
+          filteredLaws = filteredLaws.filter((element) => {
+            return element.R1;
+          });
+        }
+        if (selected.r_ladder.includes("R2")) {
+          filteredLaws = filteredLaws.filter((element) => {
+            return element.R2;
+          });
+        }
+        if (selected.r_ladder.includes("R3")) {
+          filteredLaws = filteredLaws.filter((element) => {
+            return element.R3;
+          });
+        }
+        if (selected.r_ladder.includes("R4")) {
+          filteredLaws = filteredLaws.filter((element) => {
+            return element.R4;
+          });
+        }
+        if (selected.r_ladder.includes("R5")) {
+          filteredLaws = filteredLaws.filter((element) => {
+            return element.R5;
+          });
+        }
+        if (selected.r_ladder.includes("R6")) {
+          filteredLaws = filteredLaws.filter((element) => {
+            return element.R6;
+          });
+        }
       }
 
       if (selected.rechtsgebied.length > 0) {
         filteredLaws = filteredLaws.filter((element) => {
-          return selected.rechtsgebied.includes(element.relatie);
+          return selected.rechtsgebied.includes(element.rechtsgebied);
         });
       }
 
-      if (selected.plaberum.length > 0) {
+      if (selected.juridische_houdbaarheid.length > 0) {
         filteredLaws = filteredLaws.filter((element) => {
-          return selected.plaberum.includes(element.fasen);
-        });
-      }
-
-      if (voorbeelden) {
-        filteredLaws = filteredLaws.filter((element) => {
-          return element.opmerkingen_type_norm_valt_hier_ook_onder !== "";
-        });
-      }
-
-      if (huidige) {
-        filteredLaws = filteredLaws.filter((element) => {
-          return !element.ingang_van_wet.includes(
-            "Nog niet inwerking getreden"
+          return selected.juridische_houdbaarheid.includes(
+            element.juridische_houdbaarheid
           );
+        });
+      }
+
+      if (selected.subrechtsgebied.length > 0) {
+        filteredLaws = filteredLaws.filter((element) => {
+          return selected.subrechtsgebied.includes(element.subrechtsgebied);
         });
       }
 
       setLaws(filteredLaws);
       setNumberOfLaws(filteredLaws.length);
     }
-  }, [data, selected, voorbeelden, huidige]);
+  }, [data, selected]);
 
   //effect to check for data from persisted state from localStorage and update values when needed
   useEffect(() => {
@@ -143,10 +173,10 @@ export default function Measures() {
     }
 
     if (
-      selected.plaberum.length !== 0 &&
-      typeof planningsfaseFilterRef.current !== "undefined"
+      selected.subrechtsgebied.length !== 0 &&
+      typeof subrechtsgebiedFilterRef.current !== "undefined"
     ) {
-      planningsfaseFilterRef.current.set(selected.plaberum);
+      subrechtsgebiedFilterRef.current.set(selected.subrechtsgebied);
     }
 
     if (
@@ -154,6 +184,13 @@ export default function Measures() {
       typeof rLadderFilterRef.current !== "undefined"
     ) {
       rLadderFilterRef.current.set(selected.r_ladder);
+    }
+
+    if (
+      selected.juridische_houdbaarheid.length !== 0 &&
+      typeof juridischeFilterRef.current !== "undefined"
+    ) {
+      juridischeFilterRef.current.set(selected.juridische_houdbaarheid);
     }
   });
 
@@ -178,9 +215,6 @@ export default function Measures() {
         <div className="block my-4">
           <span className="font-bold">{numberOfLaws}</span> maatregelen gevonden
         </div>
-        <h1 className="block text-4xl">
-          Maatregelen met veel impact (hoog op de R-ladder)
-        </h1>
       </div>
       <div className="flex ">
         <div className="p-3 my-10">
@@ -193,7 +227,7 @@ export default function Measures() {
           </div>
           <SearchFilter
             ref={wettelijkFilterRef}
-            title="Wettelijk bevoegdheidsniveau"
+            title="Bevoegdheidsniveau"
             list={wettelijk_bevoegdheidsniveau}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "wettelijk_bevoegdheidsniveau")
@@ -208,14 +242,6 @@ export default function Measures() {
             }
           />
           <SearchFilter
-            ref={planningsfaseFilterRef}
-            title="Planningsfase"
-            list={plaberum}
-            handleFilters={(checkboxState) =>
-              handleFilters(checkboxState, "plaberum")
-            }
-          />
-          <SearchFilter
             ref={rLadderFilterRef}
             title="R - ladder"
             list={r_ladder}
@@ -223,29 +249,25 @@ export default function Measures() {
               handleFilters(checkboxState, "r_ladder")
             }
           />
+          <SearchFilter
+            ref={juridischeFilterRef}
+            title="Juridische houdbaarheid"
+            list={juridische_houdbaarheid}
+            handleFilters={(checkboxState) =>
+              handleFilters(checkboxState, "juridische_houdbaarheid")
+            }
+          />
+          <SearchFilter
+            ref={subrechtsgebiedFilterRef}
+            title="Subrechtsgebied"
+            list={subrechtsgebied}
+            handleFilters={(checkboxState) =>
+              handleFilters(checkboxState, "subrechtsgebied")
+            }
+          />
         </div>
 
         <div className="p-3 mt-10 ml-10">
-          <div>
-            <input
-              type="checkbox"
-              checked={voorbeelden}
-              onChange={(e) => setVoorbeelden(e.target.checked)}
-            />
-            <span className="pl-3 text-gray-400	">
-              Maatregelen met voorbeelden van succesvolle toepassingen
-            </span>
-          </div>
-          <div className="pb-3 border-b border-black">
-            <input
-              type="checkbox"
-              checked={huidige}
-              onChange={(e) => setHuidige(e.target.checked)}
-            />
-            <span className="pl-3 text-gray-400	">
-              Alleen maatregelen in HUIDIGE wet- en regelgeving
-            </span>
-          </div>
           {data && (
             <div className="">
               <PolicyList data={laws} />
