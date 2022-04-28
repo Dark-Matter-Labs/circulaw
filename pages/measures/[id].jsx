@@ -2,11 +2,7 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import Link from "next/link";
 import Image from "next/image";
-import placeholder from "../../public/placeholder.png";
-import { StarIcon } from "@heroicons/react/solid";
 import Layout from "../../components/layout";
-import ToolTip from "../../components/tooltip";
-
 import IcontWood from "../../public/icons/wood.png";
 
 const fetcher = async (url) => {
@@ -56,7 +52,7 @@ export default function Law() {
       `}</style>
       <div className="p-8">
         <Link href="/laws" className="mt-24 mb-2 w-full font-normal ">
-          <a>← Overzicht maatregelen</a>
+          <a>← Terug</a>
         </Link>
 
         <div className="flex">
@@ -71,112 +67,106 @@ export default function Law() {
                 />
               </div>
               <div className="inline-block">
-                Fase: <span className="bold">{data.fasen}</span>
+                <span className="bold">{data.casus}</span>
                 <div className="inline-block">{/* <ToolTip data="" /> */}</div>
               </div>
-
-              <div className="inline-block">R-ladder: {data.r_ladder}</div>
+              <div className="inline-block pl-10">
+                Fase: {data.planningsfase_binnen_de_gebiedsontwikkeling}
+              </div>
+              <div className="inline-block pl-5">
+                R-ladder:
+                {data.R1 && <span>R1 </span>}
+                {data.R2 && <span>R2 </span>}
+                {data.R3 && <span>R3 </span>}
+                {data.R4 && <span>R4</span>}
+                {data.R5 && <span>R5</span>}
+                {data.R6 && <span>R6</span>}
+              </div>
             </div>
             <h1 className="font-bold text-3xl my-9">{data.titel}</h1>
 
             <div className="py-4">
               <h3 className="font-bold text-xl pb-2">
-                Samenvatting juridische maatregel
+                {data.kop_1_samenvatting_juridische_maatregel}
               </h3>
-              <p className="">{data.samenvatting}</p>
+              <p className="newlineDisplay">{data.introductie_juridische_maatregel}</p>
             </div>
             <div className="py-4">
               <h3 className="font-bold text-xl pb-2">
-                Voorbeelden van circulaire handelingsperspectieven
+                {data.kop_2_toepassing_juridische_maatregel}
               </h3>
               <p className=" px-5 py-5 border-2  border-black rounded ">
-                {data.voorbeelden}
+                {data.toepassing_juridische_maatregel}
               </p>
+            </div>
+            {data.is_er_een_praktijk_voorbeeld && (
+              <div className="py-4">
+                <h3 className="font-bold text-xl pb-2">
+                  {data.kop_3_uit_de_praktijk}
+                </h3>
+                <p className="">{data.uit_de_praktijk}</p>
+                <a className="underline" href={data.voorbeeld_link}>{data.voorbeeld_link_teks}</a>
+              </div>
+            )}
+            <div className="py-4">
+              <h3 className="font-bold text-xl pb-2">
+                {data.kop_4_eisen_en_beperkingen}
+              </h3>
+              <p className="">{data.eisen_en_beperkingen}</p>
             </div>
             <div className="py-4">
               <h3 className="font-bold text-xl pb-2">
-                Eisen/beperkingen van de juridische maatregel
+                {data.kop_5_juridische_toelichting}
               </h3>
-              <p className="">{data.eisen_beperkingen}</p>
-            </div>
-            <div className="py-4">
-              <h3 className="font-bold text-xl pb-2">Juridische toelichting</h3>
               <p className="">{data.juridische_toelichting}</p>
             </div>
             <table className="table-fixed w-full mt-5">
               <tbody>
                 <tr className="my-10 border-b-2 border-t-2">
                   <td className="w-1/2">Rechtsgebied</td>
-                  <td className="w-1/2">{data.rechtsgebied}</td>
-                </tr>
-                <tr className="my-10 border-b-2">
-                  <td className="w-1/2">Wettelijk document</td>
                   <td className="w-1/2">
-                    {data.officiele_titel_wettelijk_document}
+                    {data.rechtsgebied} - {data.subrechtsgebied}
                   </td>
                 </tr>
                 <tr className="my-10 border-b-2">
+                  <td className="w-1/2">Citeertitel</td>
+                  <td className="w-1/2">{data.citeertitel}</td>
+                </tr>
+                <tr className="my-10 border-b-2">
                   <td className="w-1/2">Artikel</td>
-                  <td className="w-1/2">{data.artikel}</td>
+                  <td className="w-1/2">
+                    <a href={data.link_naar_wetsartikel}>{data.artikel}</a>
+                  </td>
                 </tr>
                 <tr className="my-10 border-b-2">
-                  <td className="w-1/2">Ingang wet</td>
-                  <td className="w-1/2">{data.ingang_van_wet}</td>
+                  <td className="w-1/2">Geldig vanaf</td>
+                  <td className="w-1/2">{data.geldend_vanaf}</td>
                 </tr>
                 <tr className="my-10 border-b-2">
-                  <td className="w-1/2">Bevoegdheids niveau</td>
-                  <td className="w-1/2">{data.beleids_instrument_type}</td>
+                  <td className="w-1/2">Bevoegdheidsniveau</td>
+                  <td className="w-1/2">
+                    {data.europees && <span>Europees </span>}
+                    {data.nationaal && <span>Nationaal </span>}
+                    {data.provinciaal && <span>Provinciaal </span>}
+                    {data.waterschappen && <span>Waterschappen </span>}
+                    {data.gemeentelijk && <span>Gemeentelijk</span>}
+                  </td>
                 </tr>
                 <tr className="my-10 border-b-2">
                   <td className="w-1/2">Type document</td>
                   <td className="w-1/2">{data.type_document}</td>
                 </tr>
-
-                <tr className="border-b-2">
-                  <td>Relatie</td>
-                  <td>{data.relatie}</td>
-                </tr>
                 <tr>
                   <td>Beleidsinstrument</td>
-                  <td>{data.beleids_instrument_type}</td>
+                  <td>{data.type_beleidsinstrument}</td>
                 </tr>
               </tbody>
             </table>
-            <div
-              className={classNames(
-                data.opmerkingen_type_norm_valt_hier_ook_onder === ""
-                  ? "hidden"
-                  : ""
-              )}
-            >
-              <h3 className="my-5 text-lg font-extrabold">
-                Voorbeelden uit de praktijk waar de maatregelen succesvol zijn
-                toegepast
-              </h3>
-              {/* <LinkPreviewer
-                data={
-                  data.OpmerkingenLink === "" ? "null" : data.OpmerkingenLink
-                }
-              /> */}
-
-              <div>
-                {" "}
-                <Link href={data.opmerkingen_type_norm_valt_hier_ook_onder}>
-                  <a>Voorbeeld 1</a>
-                </Link>
-                <br />
-                <Link href={data.opmerkingen_type_norm_valt_hier_ook_onder}>
-                  <a className="underline text-blue-500">Link ↗</a>
-                </Link>
-              </div>
-
-              <p>{data.Opmerkingen}</p>
-            </div>
           </div>
           <div className="w-1/3 ">
             <div className="py-5">
               <div className="relative flex justify-between  border-t-2 border-black">
-                <div className="font-bold 	">Juridisch Invloed</div>
+                <div className="font-bold 	">Juridisch invloed</div>
                 {/* <Tooltip data="" /> */}
               </div>
 
@@ -186,7 +176,7 @@ export default function Law() {
                   <div
                     key={rating}
                     className={classNames(
-                      data.ranking_invloed > rating
+                      data.juridische_invloed > rating
                         ? "score-true"
                         : "score-false",
                       "mr-5 h-6 w-6 flex-shrink-0 rounded-full"
@@ -200,7 +190,7 @@ export default function Law() {
 
             <div className="py-5">
               <div className="relative flex justify-between border-t-2 border-black">
-                <div className="font-bold	 ">Juridisch afbreukrisico</div>
+                <div className="font-bold	 ">Juridisch houdbaarheid</div>
                 {/* <Tooltip data={data.JuridischAfbreukrisicoToolTip} /> */}
               </div>
               <div className="mt-3 flex items-center">
@@ -209,7 +199,7 @@ export default function Law() {
                   <div
                     key={rating}
                     className={classNames(
-                      data.ranking_afbreukrisico > rating
+                      data.juridische_houdbaarheid > rating
                         ? "score-true"
                         : "score-false",
                       "mr-5 h-6 w-6 flex-shrink-0 rounded-full"
@@ -223,36 +213,17 @@ export default function Law() {
 
             <div className="px-4 py-4 border-2 rounded bg-[#d8edfb]">
               <div className="font-bold pb-4 ">
-                Deze maatregel is nog niet in werking getreden en nog niet
-                toegepast
+                {data.kop_6_ministappenplan}
               </div>
               <div className="">
-                <div className="pb-4">
-                  In de toekomst vind je hier een interactieve handleiding die
-                  je meeneemt in hoe je:
-                </div>
-                <ul className="marker:text-sky-400 list-disc pl-5 space-y-3">
-                  <li className="pb-4">
-                    met de maatregel een project vormt en hiermee met de markt
-                    mee aan de slag kan gaan
-                  </li>
-                  <li className="pb-4">
-                    intern kunt checken of het haalbaar, realistisch en het
-                    goede moment is om de maatregel toe te passen
-                  </li>
-                  <li className="pb-4">
-                    de maatregel kan combineren met andere juridische,
-                    financiële en faciliterende beleidsinstrumenten, om zo meer
-                    impact te maken{" "}
-                  </li>
-                </ul>
+                <div className="pb-4">{data.ministappenplan}</div>
               </div>
               <div className="w-full px-4 py-4">
-                <Link href="/">
+                <a href={data.links_ministappenplan}>
                   <a className="px-4 py-4 border-2 rounded text-white bg-[#0088d9]">
                     HOUD ME OP DE HOOGTE
                   </a>
-                </Link>
+                </a>
               </div>{" "}
             </div>
           </div>
