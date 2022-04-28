@@ -86,30 +86,30 @@ export default function Example() {
                   </div>
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                  <a
-                    href="#"
-                    className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium"
-                  >
-                    Hoe het werkt
-                  </a>
-                  <a
-                    href="#"
-                    className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium"
-                  >
-                    Over ons
-                  </a>
-                  <a
-                    href="/blog"
-                    className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium"
-                  >
-                    Blog
-                  </a>
-                  <a
-                    href="/contact"
-                    className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium"
-                  >
-                    Contact
-                  </a>
+                  <Link href="#">
+                    <a
+                      href="#"
+                      className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium"
+                    >
+                      Hoe het werkt
+                    </a>
+                  </Link>
+                  <Link href="#">
+                    <a className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">
+                      Over ons
+                    </a>
+                  </Link>
+
+                  <Link href="/blog">
+                    <a className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">
+                      Blog
+                    </a>
+                  </Link>
+                  <Link href="/contact">
+                    <a className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">
+                      Contact
+                    </a>
+                  </Link>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
