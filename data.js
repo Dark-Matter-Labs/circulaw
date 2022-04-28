@@ -81,7 +81,7 @@ export const laws = [
     kop_3_uit_de_praktijk: "Uit de praktijk",
     uit_de_praktijk:
       "De gemeente Amsterdam heeft houtbouw opgenomen in haar omgevingsplan. Op pagina 176  en 203 vind je er meer over terug.",
-    voorbeeld_link_teks: "",
+    voorbeeld_link_teks: "link text",
     voorbeeld_link: "https://amsterdam2050.nl/",
     afbeelding_van_voorbeeld_link: "",
     kop_4_eisen_en_beperkingen:
@@ -410,7 +410,7 @@ export const laws = [
       "* Duurzaamheid als belangrijk(ste) criterium in een tender",
     uit_de_praktijk:
       "Inschrijving voor een tender is vrijwillig. De gemeente bepaalt voor elke tender aan welke voorwaarden partijen moeten voldoen en welke criteria prioriteit krijgen. De gemeente kan ervoor kiezen het meeste gewicht toe te kennen aan duurzaamheidseisen. De partij die op duurzaamheidsniveau het beste scoort, wint de tender. Deze partij krijgt vervolgens een optieovereenkomst, waarmee het een jaar lang recht op erfpacht heeft. Uitgangspunt van de overeenkomst is het definitieve ontwerp, dat volledig aan de duurzaamheidseisen voldoet. Op basis van deze overeenkomst kan de gemeente de duurzaamheidseisen handhaven.   \n\n[KADER] Tender in de praktijk (1): Roadmap Circulaire Gronduitgifte\nDe gemeente Amsterdam introduceerde in 2017 de Roadmap Circulaire Gronduitgifte. Daarmee stimuleert, meet en beloont het het circulair bouwen en innoveren in de stad. De gemeente laat zien hoe je dit door een tender kunt bereiken. Lees hier meer over de roadmap en hoe je een circulaire tender kunt vormgeven:\nhttps://www.pianoo.nl/nl/document/14280/roadmap-circulaire-gronduitgifte\n\n[KADER] Tender in de praktijk (2): HAUT\nIn 2016 schreef de gemeente Amsterdam een tender uit voor een gebouw in het Amstelkwartier. Het duurzame ontwerp voor het gebouw ‘HAUT’ was de winnende inschrijving. Met een hoogte van 73 meter en 21 verdiepingen wordt HAUT de hoogste houten woontoren van Nederland. Meer informatie vind je hier: https://hautamsterdam.nl/nl/.",
-    voorbeeld_link_teks: "",
+    voorbeeld_link_teks: "link text",
     voorbeeld_link:
       "https://www.pianoo.nl/nl/document/14280/roadmap-circulaire-gronduitgifte\n\nhttps://hautamsterdam.nl/nl/",
     afbeelding_van_voorbeeld_link: "",
@@ -477,7 +477,7 @@ export const laws = [
       "[KADER] Innovatiepartnerschap in de praktijk (1): Hof van Twente",
     uit_de_praktijk:
       "Toen gemeente Hof van Twente in de dorpen Markelo en Delden twee nieuwe, duurzame kindcentra wilde laten bouwen, kozen ze voor innovatiepartnerschap. Een mijlpaal: het was de eerste keer dat een onderwijsbouwproject via deze procedure tot stand kwam. De onderzoeks- en ontwikkelfase werden direct gekoppeld aan de realisatie van de gebouwen, die klimaatneutraal, simpel van opzet en slim ontworpen moesten zijn. Na een grondige onderzoeksfase, koos de gemeente voor een consortium van een vastgoedontwikkelaar, architectenbureau en een installatiebureau. In februari 2019 begon men met de bouw. In het voorjaar van 2020 openden de deuren van het eerste gebouw, een jaar later stond het tweede kindcentra er. De gebouwen staan bovenaan de lijst van meest duurzame schoolgebouwen van Europa.\n\n[KADER] Innovatiepartnerschap in de praktijk (2): Amsterdam\nAmsterdam volgt het voorbeeld van Hof van Twente. De komende jaren wil de gemeente meerdere nieuwe, duurzame en kwalitatief hoogwaardige schoolgebouwen realiseren, onder meer in de IJburgse wijk Strandeiland. Als aanbestedingsprocedure kiest de gemeente voor innovatiepartnerschap. De aanbestedingsfase om het meest geschikte consortium te vinden, is in 2022 begonnen.    \nLees meer over dit voorbeeld van innovatiepartnerschap in Amsterdam",
-    voorbeeld_link_teks: "",
+    voorbeeld_link_teks: "link text",
     voorbeeld_link:
       "https://www.pianoo.nl/sites/default/files/media/documents/Innovatiepartnerschapindepraktijk-januari%202019.pdf\n\nhttps://www.tubantia.nl/hof-van-twente/de-groenste-scholen-van-europa-staan-in-hof-van-twente-duurzaamheid-zit-in-ons-dna~aa9b5a5d/?referrer=https%3A%2F%2Fwww.google.com%2F&cb=f20199f831022acf1702151368787071&auth_rd=1\n\nhttps://www.duurzaamgebouwd.nl/artikel/20211122-innovatiepartnerschap-meer-duurzame-scholen-minder-faalkosten",
     afbeelding_van_voorbeeld_link: "",
@@ -542,7 +542,7 @@ export const laws = [
     kop_3_uit_de_praktijk: "Uit de praktijk",
     uit_de_praktijk:
       "In het Chw bestemmingsplan Vinkenhoef is een algemene regel opgenomen die voor het verlenen van een omgevingsvergunning vereist dat er een aantoonbare bijdrage geleverd wordt aan de verduurzaming en circularoteot van de fysieke leefomgeving.",
-    voorbeeld_link_teks: "",
+    voorbeeld_link_teks: "link text",
     voorbeeld_link:
       "https://www.ruimtelijkeplannen.nl/documents/NL.IMRO.0307.BP00180-0301/r_NL.IMRO.0307.BP00180-0301.html#_13_Duurzaamheidencirculariteit",
     afbeelding_van_voorbeeld_link: "",
@@ -607,7 +607,7 @@ export const laws = [
     kop_3_uit_de_praktijk: "Uit de praktijk",
     uit_de_praktijk:
       "De gemeente Amsterdam heeft in haar omgevingsvisie geen expliciete verwijzing naar ciruculaire windturbines opgenomen, maar wel de algemene intentie om Amsterdam circulair te maken.",
-    voorbeeld_link_teks: "",
+    voorbeeld_link_teks: "link text",
     voorbeeld_link:
       "https://amsterdam2050.nl/wp-content/uploads/2021/09/Omgevingsvisie-Amsterdam-2050_Lage-resolutie.pdf",
     afbeelding_van_voorbeeld_link: "",
@@ -673,7 +673,7 @@ export const laws = [
     kop_3_uit_de_praktijk: "Uit de praktijk",
     uit_de_praktijk:
       "De provincie Flevoland heeft in haar provinciale omgevingsvisie de opgave opgenomen om de energietransitie circulair te maken. Daarbij wordt er expliciet verwezen naar schaarse materialen in windturbines en de behoefte voor circulariteit.",
-    voorbeeld_link_teks: "",
+    voorbeeld_link_teks: "link text",
     voorbeeld_link:
       "https://www.omgevingsvisieflevoland.nl/actueel/circulaire-energietransitie/",
     afbeelding_van_voorbeeld_link: "",
@@ -925,8 +925,8 @@ export const laws = [
     uit_de_praktijk:
       "Hoewel dit voorbeeld geen overheidslichaam is, kan het toch als inspiratie dienen. ASR biedt namelijk als grootgrondbezitter korting op de pachtprijs aan boeren die duurzaam te werk gaan.",
     voorbeeld_link_teks:
-      "https://www.volkskrant.nl/nieuws-achtergrond/verzekeraar-en-grondbezitter-asr-helpt-duurzame-boeren-met-korting-op-pachtprijs~bd5b3404/",
-    voorbeeld_link: "",
+      "link text",
+    voorbeeld_link: "https://www.volkskrant.nl/nieuws-achtergrond/verzekeraar-en-grondbezitter-asr-helpt-duurzame-boeren-met-korting-op-pachtprijs~bd5b3404/",
     afbeelding_van_voorbeeld_link: "",
     kop_4_eisen_en_beperkingen: "Eisen en beperkingen",
     eisen_en_beperkingen:

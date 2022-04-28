@@ -3,7 +3,6 @@ import useSWR from "swr";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../components/layout";
-
 import IcontWood from "../../public/icons/wood.png";
 
 const fetcher = async (url) => {
@@ -90,7 +89,7 @@ export default function Law() {
               <h3 className="font-bold text-xl pb-2">
                 {data.kop_1_samenvatting_juridische_maatregel}
               </h3>
-              <p className="">{data.introductie_juridische_maatregel}</p>
+              <p className="newlineDisplay">{data.introductie_juridische_maatregel}</p>
             </div>
             <div className="py-4">
               <h3 className="font-bold text-xl pb-2">
@@ -106,7 +105,7 @@ export default function Law() {
                   {data.kop_3_uit_de_praktijk}
                 </h3>
                 <p className="">{data.uit_de_praktijk}</p>
-                <a href={data.voorbeeld_link}>{data.voorbeeld_link_teks}</a>
+                <a className="underline" href={data.voorbeeld_link}>{data.voorbeeld_link_teks}</a>
               </div>
             )}
             <div className="py-4">
