@@ -53,26 +53,6 @@ export default function Example() {
                 </div>
               </div>
               <div className="mt-12 md:mt-0">
-<<<<<<< HEAD
-                <h3 className="text-sm text-white tracking-wider uppercase">
-                  JURIDISCHE THEMAS
-                </h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {navigation.JURIDISCHE.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-base text-white hover:text-[#4099DA]"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-12 md:mt-0">
-=======
->>>>>>> 58940a4 (linting errors)
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.other.map((item) => (
                     <li key={item.name}>
