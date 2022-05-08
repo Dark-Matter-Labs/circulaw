@@ -2,7 +2,7 @@ const navigation = {
   WAARDEKETENS: [
     { name: "Gebouwde omgeving", href: "#", className: "" },
     { name: "Houtbouw", href: "#", className: "pl-4" },
-    { name: "Circuulaire windmolens", href: "#", className: "pl-4" },
+    { name: "Circulaire windmolens", href: "#", className: "pl-4" },
     { name: "Overige maatregelen", href: "#", className: "pl-4" },
     { name: "Consumptiegoederen", href: "#", className: "pl-4" },
     { name: "Biomassa en voedsel", href: "#", className: "pl-4" },
