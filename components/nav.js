@@ -203,70 +203,70 @@ export default function Example() {
               <Disclosure.Button
                 as="a"
                 href="/gebouwde-omgeving"
-                className="py-8 border-transparent text-gray-900 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
+                className="border-transparent text-gray-900 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
               >
                 Gebouwde omgeving
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/houtbouw"
-                className="py-8 border-transparent text-gray-900 border border-gray-500 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base"
+                className="border-transparent text-gray-900 border border-gray-500 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base"
               >
                 Houtbouw
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="py-8 border-transparent text-gray-400 border border-gray-500 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base"
+                className="border-transparent text-gray-400 border border-gray-500 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base"
               >
                 Windmolens (coming soon)
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/consumptiegoederen"
-                className="py-8 border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
+                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
               >
                 Consumptoegoederen
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/biomassa-en-voedsel"
-                className="py-8 border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
+                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
               >
                 Biomassa en voedsel
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/maakindustrie"
-                className="py-8 border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
+                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
               >
                 Maakindustrie
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="py-8 border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
+                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
               >
                 Kunststoffen
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/kunststoffen"
-                className="py-8 border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medi5m"
+                className="border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medi5m"
               >
                 HOE HET WERKT
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="py-8 border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medi5m"
+                className="border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medi5m"
               >
                 OVER ONS
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/contact"
-                className="py-8 border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medi5m"
+                className="border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medi5m"
               >
                 CONTACT
               </Disclosure.Button>
