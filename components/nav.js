@@ -1,8 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Fragment } from "react";
 import { Popover, Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon, SearchIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
+
+import CirculawLogo from "../public/circulaw.png";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -81,8 +84,8 @@ export default function Example() {
               </div>
               <div className=" flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <div className="text-white sm:text-gray-900 font-medium">
-                    CIRCULAW
+                  <div className="w-48">
+                    <Image src={CirculawLogo} alt="Picture of the author" />
                   </div>
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -125,7 +128,7 @@ export default function Example() {
             </div>
           </div>
           <div className="flex inset-x-0 top-0 p-5 sm:p-9 invisible sm:visible hidden sm:inline">
-            <div className="flex-1 ">
+            <div className="flex-1 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
               <div className="content right-0">
                 <Popover className="inline-block relative ">
                   {({ open }) => (
