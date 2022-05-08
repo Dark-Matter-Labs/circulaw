@@ -50,7 +50,7 @@ export default function Houtbouw() {
         <Link href="/">
           <a>Home</a>
         </Link>
-        <span className="px-1"> → Gebouwde omgeving → </span>
+        <span className="px-1"> </span>
 
         {/*<span className="px-1"> →  </span>
          <Link href="/">
@@ -62,7 +62,7 @@ export default function Houtbouw() {
         <div className="pr-4 inline-block">
           <Image src={WoodIcon} alt="Icon of Wood" width={48} />
         </div>
-        <div className="text-3xl text-bold inline-block">Houtbouw</div>
+        <div className="text-3xl font-bold inline-block">Houtbouw</div>
       </div>
       <div>
         <div className="flex border-2 mb-4">
@@ -155,7 +155,7 @@ export default function Houtbouw() {
               className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 md:grid-cols-3 sm:gap-x-6 pb-9 flex flex-col justify-between"
             >
               {collecties.map((file) => (
-                <li key={file.source} className="static border bg-[#E6F2FA] ">
+                <li key={file.source} className="static  bg-[#E6F2FA] ">
                   <div className="w-full p-4">
                     <div className="relative">
                       <div className="absolute left-0 top-0 h-16 w-8">
@@ -174,7 +174,7 @@ export default function Houtbouw() {
                     <p className="mt-2 block text-md font-medium pointer-events-none pb-4">
                       {file.title}
                     </p>
-                    <p className="block text-sm text-gray-500 pointer-events-none">
+                    <p className="block text-sm pointer-events-none">
                       {file.description}
                     </p>
                     <div className="pt-4 static">
