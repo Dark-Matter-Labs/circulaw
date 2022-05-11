@@ -221,8 +221,8 @@ export default function Measures() {
           <h2 className="block text-4xl mb-20">HOUTBOUW</h2>
           <div className=" flex justify-between pb-3 border-b border-black mb-3">
             <span className="text-lg">Verfijnen</span>{" "}
-            <span onClick={reset} className="underline">
-              Reset
+            <span onClick={reset} className="underline blue">
+              Wis filters
             </span>
           </div>
           <SearchFilter
