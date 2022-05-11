@@ -1,3 +1,30 @@
 .newlineDisplay {
-    white-space: break-spaces;
+  white-space: break-spaces;
+}
+
+.casus {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.subrecht-text {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.blue {
+  color: #4099da;
+}
+
+.description {
+  max-width: 70%;
+}
+
+.my-anchor-css-class {
+  color: #4099da;
 }
