@@ -1,8 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Fragment } from "react";
 import { Popover, Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon, SearchIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
+
+import CirculawLogo from "../public/circulaw.png";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -81,8 +84,8 @@ export default function Example() {
               </div>
               <div className=" flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <div className="text-white sm:text-gray-900 font-medium">
-                    CIRCULAW
+                  <div className="w-48">
+                    <Image src={CirculawLogo} alt="Picture of the author" />
                   </div>
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -125,7 +128,7 @@ export default function Example() {
             </div>
           </div>
           <div className="flex inset-x-0 top-0 p-5 sm:p-9 invisible sm:visible hidden sm:inline">
-            <div className="flex-1 ">
+            <div className="flex-1 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
               <div className="content right-0">
                 <Popover className="inline-block relative ">
                   {({ open }) => (
@@ -133,7 +136,7 @@ export default function Example() {
                       <Popover.Button
                         className={classNames(
                           open ? "text-gray-900" : "text-gray-500",
-                          "group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                          "group bg-white rounded-md inline-flex items-center text-base font-medium"
                         )}
                       >
                         <span>Waardeketens</span>
@@ -162,7 +165,7 @@ export default function Example() {
                                 <a
                                   key={item.name}
                                   href={item.href}
-                                  className="-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
+                                  className="-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
                                 >
                                   <p
                                     className={`text-base font-medium text-gray-900 ${item.className}`}
@@ -200,70 +203,70 @@ export default function Example() {
               <Disclosure.Button
                 as="a"
                 href="/gebouwde-omgeving"
-                className="border-transparent text-gray-900 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medium"
+                className="border-transparent text-gray-900 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
               >
                 Gebouwde omgeving
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/houtbouw"
-                className="border-transparent text-gray-900 border border-gray-500 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base"
+                className="border-transparent text-gray-900 border border-gray-500 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base"
               >
                 Houtbouw
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="border-transparent text-gray-400 border border-gray-500 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 text-base"
+                className="border-transparent text-gray-400 border border-gray-500 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base"
               >
                 Windmolens (coming soon)
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/consumptiegoederen"
-                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medium"
+                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
               >
                 Consumptoegoederen
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/biomassa-en-voedsel"
-                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medium"
+                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
               >
                 Biomassa en voedsel
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/maakindustrie"
-                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medium"
+                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
               >
                 Maakindustrie
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medium"
+                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
               >
                 Kunststoffen
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/kunststoffen"
-                className="border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medium"
+                className="border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medi5m"
               >
                 HOE HET WERKT
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="#"
-                className="border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medium"
+                className="border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medi5m"
               >
                 OVER ONS
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/contact"
-                className="border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medium"
+                className="border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medi5m"
               >
                 CONTACT
               </Disclosure.Button>

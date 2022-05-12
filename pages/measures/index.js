@@ -74,7 +74,7 @@ export default function Measures() {
   useEffect(() => {
     //added check for data to have been retrieved here
     if (data) {
-      const filteredLaws = data;
+      let filteredLaws = data;
       if (selected.wettelijk_bevoegdheidsniveau.length > 0) {
         if (selected.wettelijk_bevoegdheidsniveau.includes("europees")) {
           filteredLaws = filteredLaws.filter((element) => {

@@ -131,12 +131,36 @@ export default function PolicyList(props) {
                 <div className="flex-2 mr-5 text-normal text-base text-gray-400">
                   R-ladder:{" "}
                   <span className="block-inline font-semibold text-base text-gray-900">
-                    {R1 && <span>R1 </span>}
-                    {R2 && <span>R2 </span>}
-                    {R3 && <span>R3 </span>}
-                    {R4 && <span>R4 </span>}
-                    {R5 && <span>R5 </span>}
-                    {R6 && <span>R6</span>}
+                    {R1 && (
+                      <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                        R1{" "}
+                      </span>
+                    )}
+                    {R2 && (
+                      <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                        R2{" "}
+                      </span>
+                    )}
+                    {R3 && (
+                      <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                        R3{" "}
+                      </span>
+                    )}
+                    {R4 && (
+                      <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                        R4{" "}
+                      </span>
+                    )}
+                    {R5 && (
+                      <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                        R5{" "}
+                      </span>
+                    )}
+                    {R6 && (
+                      <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                        R6
+                      </span>
+                    )}
                   </span>
                 </div>
               </div>

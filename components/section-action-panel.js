@@ -5,9 +5,7 @@ export default function ActionPanel(props) {
       <div className="px-4 py-5 sm:p-6">
         <div className="sm:flex sm:items-start sm:justify-between">
           <div>
-            <div className="mt-2 max-w-xl text-sm text-gray-500">
-              {props.paragraph}
-            </div>
+            <div className="mt-2 max-w-xl text-sm ">{props.paragraph}</div>
           </div>
           <div className="mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center">
             <Link href={props.buttonLink}>

@@ -76,7 +76,7 @@ export default function Search() {
   useEffect(() => {
     //added check for data to have been retrieved here
     if (data) {
-      const filteredLaws = data;
+      let filteredLaws = data;
       if (selected.wettelijk_bevoegdheidsniveau.length > 0) {
         filteredLaws = filteredLaws.filter((element) => {
           return (
