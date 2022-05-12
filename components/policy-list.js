@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import ShowMoreText from "react-show-more-text";
 
 import IconWood from "../public/icons/wood.png";
 
@@ -69,9 +70,14 @@ export default function PolicyList(props) {
             <div key={lawDataIdx} className="block py-5">
               <div className="">
                 <div className="inline-block">
-                  <Image src={IconWood} alt="Icon of Wood" />
+                  <Image
+                    width="27"
+                    height="16"
+                    src={IconWood}
+                    alt="Icon of Wood"
+                  />
                 </div>
-                <span className="inline-block pl-4">{casus}</span>
+                <span className="inline-block pl-4 casus">{casus}</span>
               </div>
               <div className="block my-1">
                 <Link href={"/measures/" + id} key={lawDataIdx}>
@@ -85,15 +91,27 @@ export default function PolicyList(props) {
                   </a>
                 </Link>
               </div>
-              <div className="block">
-                {europees && <span>Europees </span>}
-                {nationaal && <span>Nationaal </span>}
-                {provinciaal && <span>Provinciaal </span>}
-                {waterschappen && <span>Waterschappen </span>}
+              <div className="block bold-text">
+                {europees && <span>Europees - </span>}
+                {nationaal && <span>Nationaal - </span>}
+                {provinciaal && <span>Provinciaal - </span>}
+                {waterschappen && <span>Waterschappen - </span>}
                 {gemeentelijk && <span>Gemeentelijk</span>}
               </div>
               <div className="block newlineDisplay">
-                {introductie_juridische_maatregel}
+                <ShowMoreText
+                  lines={2}
+                  more="uitbreiden"
+                  less="dichtbij"
+                  className="content-css"
+                  anchorClass="my-anchor-css-class"
+                  expanded={false}
+                  width={700}
+                >
+                  <p className="description">
+                    {introductie_juridische_maatregel}
+                  </p>
+                </ShowMoreText>
               </div>
 
               <div className="flex space-x-8">
@@ -148,7 +166,7 @@ export default function PolicyList(props) {
               </div>
 
               <div className="flex space-x-8">
-                <div className="p-1 text-normal rounded text-base bg-gray-200">
+                <div className="p-1 subrecht-text rounded text-base bg-gray-200">
                   {subrechtsgebied}
                 </div>
               </div>

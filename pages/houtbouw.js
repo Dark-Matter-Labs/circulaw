@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from 'react';
 import Layout from "../components/layout";
 import PolicyList from "../components/policy-list";
 import ActionPanel from "../components/section-action-panel";
@@ -243,6 +244,9 @@ const collecties = [
 ];
 
 export default function Houtbouw() {
+  useEffect(() => {
+    localStorage.clear();
+  });
   return (
     <Layout>
       <div className="text-sm pb-9 pt-9 text-[#4099DA]">

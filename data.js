@@ -924,9 +924,9 @@ export const laws = [
     kop_3_uit_de_praktijk: "Uit de praktijk",
     uit_de_praktijk:
       "Hoewel dit voorbeeld geen overheidslichaam is, kan het toch als inspiratie dienen. ASR biedt namelijk als grootgrondbezitter korting op de pachtprijs aan boeren die duurzaam te werk gaan.",
-    voorbeeld_link_teks:
-      "link text",
-    voorbeeld_link: "https://www.volkskrant.nl/nieuws-achtergrond/verzekeraar-en-grondbezitter-asr-helpt-duurzame-boeren-met-korting-op-pachtprijs~bd5b3404/",
+    voorbeeld_link_teks: "link text",
+    voorbeeld_link:
+      "https://www.volkskrant.nl/nieuws-achtergrond/verzekeraar-en-grondbezitter-asr-helpt-duurzame-boeren-met-korting-op-pachtprijs~bd5b3404/",
     afbeelding_van_voorbeeld_link: "",
     kop_4_eisen_en_beperkingen: "Eisen en beperkingen",
     eisen_en_beperkingen:
