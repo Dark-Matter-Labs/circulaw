@@ -198,15 +198,15 @@ export default function Measures() {
     <Layout>
       <div className="w-full mt-10 ">
         <div className="block">
-          <Link href="/blog/hello-world">
+          <Link href="/">
             <a>Home</a>
           </Link>
           <span className=""> → </span>
-          <Link href="/blog/hello-world">
+          <Link href="/gebouwde-omgeving">
             <a>Gebouwde omgeving</a>
           </Link>
           <span className=""> → </span>
-          <Link href="/blog/hello-world">
+          <Link href="/houtbouw">
             <a> Houtbouw </a>
           </Link>
         </div>
