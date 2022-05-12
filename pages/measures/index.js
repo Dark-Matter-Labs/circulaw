@@ -75,6 +75,11 @@ export default function Measures() {
     //added check for data to have been retrieved here
     if (data) {
       let filteredLaws = data;
+
+      filteredLaws = filteredLaws.filter((element) => {
+        return element.casus === "Houtbouw"
+      })
+
       if (selected.wettelijk_bevoegdheidsniveau.length > 0) {
         if (selected.wettelijk_bevoegdheidsniveau.includes("europees")) {
           filteredLaws = filteredLaws.filter((element) => {
