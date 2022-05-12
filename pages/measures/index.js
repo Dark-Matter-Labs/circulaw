@@ -164,7 +164,7 @@ export default function Measures() {
     ) {
       wettelijkFilterRef.current.set(selected.wettelijk_bevoegdheidsniveau);
     }
-
+    
     if (
       selected.rechtsgebied.length !== 0 &&
       typeof rechtsgebiedFilterRef.current !== "undefined"
