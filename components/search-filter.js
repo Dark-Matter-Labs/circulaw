@@ -63,20 +63,39 @@ const SearchFilter = forwardRef(({ list, title, handleFilters }, ref) => {
       <div>
         {list.map((data, dataIdx) => (
           <div key={dataIdx} className="relative flex justify-between">
-            <div className="my-1">
-              <input
-                type="checkbox"
-                id={`data-${data.value}-${data.id}`}
-                checked={checkedArray.indexOf(data.id) !== -1}
-                onChange={() => onChangeHandler(data.id)}
-              />
-              <label
-                htmlFor={`data-${data.value}-${data.id}`}
-                className="select-none font-normal text-sm pl-2"
-              >
-                {data.name}
-              </label>
-            </div>
+            {data.number > 0 ? (
+              <div className="my-1">
+                <input
+                  type="checkbox"
+                  id={`data-${data.value}-${data.id}`}
+                  checked={checkedArray.indexOf(data.id) !== -1}
+                  onChange={() => onChangeHandler(data.id)}
+                />
+                <label
+                  htmlFor={`data-${data.value}-${data.id}`}
+                  className="select-none font-normal text-sm pl-2"
+                >
+                  {data.name}
+                </label>
+              </div>
+            ) : (
+              <div className="my-1">
+                <input
+                  disabled
+                  type="checkbox"
+                  id={`data-${data.value}-${data.id}`}
+                  checked={checkedArray.indexOf(data.id) !== -1}
+                  onChange={() => onChangeHandler(data.id)}
+                />
+                <label
+                  htmlFor={`data-${data.value}-${data.id}`}
+                  className="select-none font-normal text-gray-500 text-sm pl-2"
+                >
+                  {data.name}
+                </label>
+              </div>
+            )}
+
             <div className="font-normal text-sm text-gray-400">
               {data.number}
             </div>

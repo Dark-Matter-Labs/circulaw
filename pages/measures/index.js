@@ -198,15 +198,15 @@ export default function Measures() {
     <Layout>
       <div className="w-full mt-10 ">
         <div className="block">
-          <Link href="/blog/hello-world">
+          <Link href="/">
             <a>Home</a>
           </Link>
           <span className=""> → </span>
-          <Link href="/blog/hello-world">
+          <Link href="/gebouwde-omgeving">
             <a>Gebouwde omgeving</a>
           </Link>
           <span className=""> → </span>
-          <Link href="/blog/hello-world">
+          <Link href="/houtbouw">
             <a> Houtbouw </a>
           </Link>
         </div>
@@ -221,8 +221,8 @@ export default function Measures() {
           <h2 className="block text-4xl mb-20">HOUTBOUW</h2>
           <div className=" flex justify-between pb-3 border-b border-black mb-3">
             <span className="text-lg">Verfijnen</span>{" "}
-            <span onClick={reset} className="underline">
-              Reset
+            <span onClick={reset} className="underline blue">
+              Wis filters
             </span>
           </div>
           <SearchFilter

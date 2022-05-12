@@ -70,9 +70,6 @@ export default function Law() {
                 <span className="bold">{data.casus}</span>
                 <div className="inline-block">{/* <ToolTip data="" /> */}</div>
               </div>
-              <div className="inline-block pl-10">
-                Fase: {data.planningsfase_binnen_de_gebiedsontwikkeling}
-              </div>
               <div className="inline-block pl-5">
                 R-ladder:
                 {data.R1 && <span>R1 </span>}
@@ -89,7 +86,9 @@ export default function Law() {
               <h3 className="font-bold text-xl pb-2">
                 {data.kop_1_samenvatting_juridische_maatregel}
               </h3>
-              <p className="newlineDisplay">{data.introductie_juridische_maatregel}</p>
+              <p className="newlineDisplay">
+                {data.introductie_juridische_maatregel}
+              </p>
             </div>
             <div className="py-4">
               <h3 className="font-bold text-xl pb-2">
@@ -105,14 +104,16 @@ export default function Law() {
                   {data.kop_3_uit_de_praktijk}
                 </h3>
                 <p className="">{data.uit_de_praktijk}</p>
-                <a className="underline" href={data.voorbeeld_link}>{data.voorbeeld_link_teks}</a>
+                <a className="underline" href={data.voorbeeld_link}>
+                  {data.voorbeeld_link_teks}
+                </a>
               </div>
             )}
             <div className="py-4">
               <h3 className="font-bold text-xl pb-2">
                 {data.kop_4_eisen_en_beperkingen}
               </h3>
-              <p className="">{data.eisen_en_beperkingen}</p>
+              <p className="newlineDisplay">{data.eisen_en_beperkingen}</p>
             </div>
             <div className="py-4">
               <h3 className="font-bold text-xl pb-2">
@@ -211,21 +212,23 @@ export default function Law() {
               </div>
             </div>
 
-            <div className="px-4 py-4 border-2 rounded bg-[#d8edfb]">
-              <div className="font-bold pb-4 ">
-                {data.kop_6_ministappenplan}
-              </div>
-              <div className="">
-                <div className="pb-4">{data.ministappenplan}</div>
-              </div>
-              <div className="w-full px-4 py-4">
-                <a href={data.links_ministappenplan}>
-                  <a className="px-4 py-4 border-2 rounded text-white bg-[#0088d9]">
-                    HOUD ME OP DE HOOGTE
+            {data.kop_6_ministappenplan && (
+              <div className="px-4 py-4 border-2 rounded bg-[#d8edfb]">
+                <div className="font-bold pb-4 ">
+                  {data.kop_6_ministappenplan}
+                </div>
+                <div className="">
+                  <div className="pb-4">{data.ministappenplan}</div>
+                </div>
+                <div className="w-full px-4 py-4">
+                  <a href={data.links_ministappenplan}>
+                    <a className="px-4 py-4 border-2 rounded text-white bg-[#0088d9]">
+                      HOUD ME OP DE HOOGTE
+                    </a>
                   </a>
-                </a>
-              </div>{" "}
-            </div>
+                </div>{" "}
+              </div>
+            )}
           </div>
         </div>
       </div>
