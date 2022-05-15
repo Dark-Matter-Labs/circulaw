@@ -85,7 +85,12 @@ export default function Example() {
               <div className=" flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <div className="w-48">
-                    <Image src={CirculawLogo} alt="Picture of the author" />
+                    <Link href="/">
+                      <a>
+                        {" "}
+                        <Image src={CirculawLogo} alt="Picture of the author" />
+                      </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -130,66 +135,65 @@ export default function Example() {
           <div className="flex inset-x-0 top-0 p-5 sm:p-9 invisible sm:visible hidden sm:inline">
             <div className="flex-1 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
               <div className="content right-0">
-                <Popover className="inline-block relative ">
-                  {({ open }) => (
-                    <>
-                      <Popover.Button
-                        className={classNames(
-                          open ? "text-gray-900" : "text-gray-500",
-                          "group bg-white rounded-md inline-flex items-center text-base font-medium"
-                        )}
-                      >
-                        <span>Waardeketens</span>
-                        <ChevronDownIcon
+                <div className="">
+                  <Popover className="inline-block relative ">
+                    {({ open }) => (
+                      <>
+                        <Popover.Button
                           className={classNames(
-                            open ? "text-gray-600" : "text-gray-400",
-                            "ml-2 h-5 w-5 group-hover:text-gray-500"
+                            open ? "text-gray-900" : "text-gray-500",
+                            "group bg-white rounded-md inline-flex items-center text-base font-medium"
                           )}
-                          aria-hidden="true"
-                        />
-                      </Popover.Button>
+                        >
+                          <span>Waardeketens</span>
+                          <ChevronDownIcon
+                            className={classNames(
+                              open ? "text-gray-600" : "text-gray-400",
+                              "ml-2 h-5 w-5 group-hover:text-gray-500"
+                            )}
+                            aria-hidden="true"
+                          />
+                        </Popover.Button>
 
-                      <Transition
-                        as={Fragment}
-                        enter="transition ease-out duration-200"
-                        enterFrom="opacity-0 translate-y-1"
-                        enterTo="opacity-100 translate-y-0"
-                        leave="transition ease-in duration-150"
-                        leaveFrom="opacity-100 translate-y-0"
-                        leaveTo="opacity-0 translate-y-1"
-                      >
-                        <Popover.Panel className="absolute z-10  transform w-screen max-w-xs sm:px-0">
-                          <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-                            <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                              {waardeketens.map((item) => (
-                                <a
-                                  key={item.name}
-                                  href={item.href}
-                                  className="-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
-                                >
-                                  <p
-                                    className={`text-base font-medium text-gray-900 ${item.className}`}
+                        <Transition
+                          as={Fragment}
+                          enter="transition ease-out duration-200"
+                          enterFrom="opacity-0 translate-y-1"
+                          enterTo="opacity-100 translate-y-0"
+                          leave="transition ease-in duration-150"
+                          leaveFrom="opacity-100 translate-y-0"
+                          leaveTo="opacity-0 translate-y-1"
+                        >
+                          <Popover.Panel className="absolute z-10  transform w-screen max-w-xs sm:px-0">
+                            <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+                              <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                                {waardeketens.map((item) => (
+                                  <a
+                                    key={item.name}
+                                    href={item.href}
+                                    className="-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
                                   >
-                                    {item.name}
-                                  </p>
-                                </a>
-                              ))}
+                                    <p
+                                      className={`text-base font-medium text-gray-900 ${item.className}`}
+                                    >
+                                      {item.name}
+                                    </p>
+                                  </a>
+                                ))}
+                              </div>
                             </div>
-                          </div>
-                        </Popover.Panel>
-                      </Transition>
-                    </>
-                  )}
-                </Popover>
+                          </Popover.Panel>
+                        </Transition>
+                      </>
+                    )}
+                  </Popover>
+                  <div className="py-3 px-4 bg-slate-500">
+                    ' search'
+                    <input type="text" name="search" id="search" />
+                  </div>
+                </div>
               </div>
             </div>
-            <input
-              type="text"
-              name="first-name"
-              id="first-name"
-              autoComplete="given-name"
-              className="py-3 px-4  shadow-sm border-gray-900 "
-            />
           </div>
           <Disclosure.Panel className="sm:hidden">
             <div className="pt-2 pb-4 ">
