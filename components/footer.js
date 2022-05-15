@@ -1,19 +1,35 @@
 const navigation = {
   WAARDEKETENS: [
-    { name: "Gebouwde omgeving", href: "#", className: "" },
-    { name: "Houtbouw", href: "#", className: "pl-4" },
-    { name: "Circulaire windmolens", href: "#", className: "pl-4" },
-    { name: "Overige maatregelen", href: "#", className: "pl-4" },
-    { name: "Consumptiegoederen", href: "#", className: "pl-4" },
-    { name: "Biomassa en voedsel", href: "#", className: "pl-4" },
-    { name: "Maakindustrie", href: "#", className: "pl-4" },
-    { name: "Kunststoffen", href: "#", className: "pl-4" },
+    { name: "Gebouwde omgeving", href: "/gebouwde-omgeving", className: "" },
+    { name: "Houtbouw", href: "/houtbouw", className: "pl-4" },
+    {
+      name: "Circulaire windmolens",
+      href: "/circulaire-windmolens",
+      className: "pl-4",
+    },
+    {
+      name: "Overige maatregelen",
+      href: "overige maatregelen",
+      className: "pl-4",
+    },
+    {
+      name: "Consumptiegoederen",
+      href: "consumptiegoederen",
+      className: "pl-4",
+    },
+    {
+      name: "Biomassa en voedsel",
+      href: "/biomassa-en-voedsel",
+      className: "pl-4",
+    },
+    { name: "Maakindustrie", href: "/maakindustrie", className: "pl-4" },
+    { name: "Kunststoffen", href: "/kunststoffen", className: "pl-4" },
   ],
 
   other: [
-    { name: "OVER ONS", href: "#", className: "" },
-    { name: "BLOG", href: "#", className: "" },
-    { name: "CONTACT", href: "#", className: "" },
+    { name: "OVER ONS", href: "/over-ons", className: "" },
+    { name: "BLOG", href: "/blog", className: "" },
+    { name: "CONTACT", href: "/contact", className: "" },
   ],
 };
 
