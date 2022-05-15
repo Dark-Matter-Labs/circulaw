@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from 'react';
+import { useEffect } from "react";
 import Layout from "../components/layout";
 import PolicyList from "../components/policy-list";
 import ActionPanel from "../components/section-action-panel";

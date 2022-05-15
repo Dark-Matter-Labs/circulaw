@@ -1,6 +1,10 @@
 const navigation = {
   WAARDEKETENS: [
-    { name: "Gebouwde omgeving", href: "/gebouwde-omgeving", className: "" },
+    {
+      name: "Gebouwde omgeving",
+      href: "/gebouwde-omgeving",
+      className: "font-bold",
+    },
     { name: "Houtbouw", href: "/houtbouw", className: "pl-4" },
     {
       name: "Circulaire windmolens",
@@ -15,15 +19,15 @@ const navigation = {
     {
       name: "Consumptiegoederen",
       href: "consumptiegoederen",
-      className: "pl-4",
+      className: "font-bold",
     },
     {
       name: "Biomassa en voedsel",
       href: "/biomassa-en-voedsel",
-      className: "pl-4",
+      className: "font-bold",
     },
-    { name: "Maakindustrie", href: "/maakindustrie", className: "pl-4" },
-    { name: "Kunststoffen", href: "/kunststoffen", className: "pl-4" },
+    { name: "Maakindustrie", href: "/maakindustrie", className: "font-bold" },
+    { name: "Kunststoffen", href: "/kunststoffen", className: "font-bold" },
   ],
 
   other: [
@@ -44,7 +48,7 @@ export default function Example() {
           <div className="grid grid-cols-1 gap-8 sm:col-span-3">
             <div className="sm:grid sm:grid-cols-4 md:gap-8">
               <div className="col-span-2">
-                <h3 className="text-sm text-white tracking-wider uppercase">
+                <h3 className="text-sm text-white font-bold tracking-wider uppercase">
                   WAARDEKETENS
                 </h3>
                 <div className="grid grid-cols-1 gap-8">
