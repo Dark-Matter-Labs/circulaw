@@ -88,7 +88,15 @@ export default function Example() {
                     <Link href="/">
                       <a>
                         {" "}
+                        {/* <div className="">
                         <Image src={CirculawLogo} alt="Picture of the author" />
+                          </div> */}
+                        <div className="">
+                          <Image
+                            src={CirculawLogo}
+                            alt="Picture of the author"
+                          />
+                        </div>
                       </a>
                     </Link>
                   </div>
