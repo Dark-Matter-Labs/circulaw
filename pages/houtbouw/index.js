@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
-import Layout from "../components/layout";
-import PolicyList from "../components/policy-list";
-import ActionPanel from "../components/section-action-panel";
+import Layout from "../../components/layout";
+import PolicyList from "../../components/policy-list";
+import ActionPanel from "../../components/section-action-panel";
 
-import WoodIcon from "../public/icons/wood.png";
-import CollectionIcon from "../public/icons/collection.png";
+import WoodIcon from "../../public/icons/wood.png";
+import CollectionIcon from "../../public/icons/collection.png";
 
-import PlaceHolder from "../public/placeholder.png";
-import HoutbouwHero from "../public/houtbouwHero.png";
-import co2Hero from "../public/illustration-co2.png";
+import PlaceHolder from "../../public/placeholder.png";
+import HoutbouwHero from "../../public/houtbouwHero.png";
+import co2Hero from "../../public/illustration-co2.png";
 
 const laws = [
   {
@@ -403,15 +403,15 @@ export default function Houtbouw() {
           </div>
         </div>
         <div className="">
-          <div className="">Uitgelichte maatregelen rond houtbouw</div>
-          <div className="">
-            <div className="">
+          <div className="text-xl font-bold pl-2 py-6 inline-block">
+            Uitgelichte maatregelen rond houtbouw
+          </div>
+          <div className="flex">
+            <div className="w-full sm:w-1/3">
               <Image src={HoutbouwHero} alt="Picture of the author" />
             </div>
-            <div className="">
-              <div className="">
-                <PolicyList data={laws} />
-              </div>
+            <div className="w-full sm:w-2/3 pl-4">
+              <PolicyList data={laws} />
             </div>
           </div>
         </div>
