@@ -278,7 +278,9 @@ export default function Houtbouw() {
               <div className="pb-4">
                 <ul className="list-disc pl-5">
                   <li className="text-sm">
-                    Mogelijkheden in bestaande en toekomstige wetgeving
+                    <Link href="/meer-over-de-voordelen-van-houtbouw">
+                      <a>Mogelijkheden in bestaande en toekomstige wetgeving</a>
+                    </Link>
                   </li>
                   <li className="text-sm">
                     Voor beleidsmakers van gemeentes, provincies en ministeries
