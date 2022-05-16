@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { signIn, signOut, useSession } from "next-auth/client";
 import Hero from "../components/section-hero";
 import LogoCloud from "../components/section-logo-cloud";
 import ActionPanel from "../components/section-action-panel";
@@ -11,11 +10,6 @@ import cycleScale from "../public/cycle-scale.png";
 import seedHero from "../public/seeds.png";
 
 export default function Index() {
-  const [session, loading] = useSession();
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
   return (
     <Layout>
       <div className="flex flex-wrap items-center py-8 ml-10 mr-10">

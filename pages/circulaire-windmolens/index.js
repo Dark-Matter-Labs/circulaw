@@ -8,7 +8,7 @@ import {
   subrechtsgebied,
   juridische_houdbaarheid,
   r_ladder,
-} from "../dataFilterExample";
+} from "../../dataFilterExample";
 
 import Layout from "/components/layout";
 import SearchFilter from "/components/search-filter";
@@ -77,8 +77,8 @@ export default function Measures() {
       let filteredLaws = data;
 
       filteredLaws = filteredLaws.filter((element) => {
-        return element.casus === "Circulaire windmolens"
-      })
+        return element.casus === "Circulaire windmolens";
+      });
 
       if (selected.wettelijk_bevoegdheidsniveau.length > 0) {
         if (selected.wettelijk_bevoegdheidsniveau.includes("europees")) {

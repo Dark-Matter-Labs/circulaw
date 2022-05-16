@@ -77,8 +77,8 @@ export default function Measures() {
       let filteredLaws = data;
 
       filteredLaws = filteredLaws.filter((element) => {
-        return element.casus === "Houtbouw"
-      })
+        return element.casus === "Houtbouw";
+      });
 
       if (selected.wettelijk_bevoegdheidsniveau.length > 0) {
         if (selected.wettelijk_bevoegdheidsniveau.includes("europees")) {
@@ -202,7 +202,7 @@ export default function Measures() {
   return (
     <Layout>
       <div className="w-full mt-10 ">
-        <div className="block">
+        <div className="block text-[#4099DA]">
           <Link href="/">
             <a>Home</a>
           </Link>
