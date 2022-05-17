@@ -7,8 +7,6 @@ import ActionPanel from "../../components/section-action-panel";
 
 import WoodIcon from "../../public/icons/wood.png";
 import CollectionIcon from "../../public/icons/collection.png";
-
-import PlaceHolder from "../../public/placeholder.png";
 import HoutbouwHero from "../../public/houtbouwHero.png";
 import co2Hero from "../../public/illustration-co2.png";
 
@@ -213,30 +211,35 @@ const laws = [
 const collecties = [
   {
     icon: "",
+    id: 0,
     title: "Hoog op de R-ladder!",
     description:
       "Deze maatregelen volgen de strategie R1 Refuse & Rethink en R2 Reduce op de  R-ladder.",
   },
   {
     icon: "",
+    id: 1,
     title: "Maatregelen die juridisch goed stand houden",
     description:
       "Deze maatregelen hebben een hoge ‘jurdische houdbaarheid’. Er bestaat bijvoorbeeld al jurispredentie over of  andere organisatie pastten de maatregel al toe.",
   },
   {
     icon: "",
+    id: 2,
     title: "Gewaagde maatregelen voor innovators",
     description:
       "Uitdagende maatregelen waar je je tanden in kunt zetten. Ze staan hoog op de R-ladder, maar ze zijn nog niet eerder toegepast.",
   },
   {
     icon: "",
+    id: 3,
     title: "Maatregelen en mogelijkheden rond aanbesteding",
     description:
       "Deze juridische kansen en maatregelen hebben we voor je gevonden binnen de Aanbestedingswet",
   },
   {
     icon: "",
+    id: 4,
     title: "Mogelijkheden binnen de nieuwe omgevingswet",
     description:
       "Deze juridische kansen en maatregelen hebben we voor je gevonden binnen de nieuwe Omgevingswet",
@@ -360,7 +363,7 @@ export default function Houtbouw() {
               className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 md:grid-cols-3 sm:gap-x-6 pb-9 flex flex-col justify-between"
             >
               {collecties.map((file) => (
-                <li key={file.source} className="static  bg-[#E6F2FA] ">
+                <li key={file.id} className="static  bg-[#E6F2FA] ">
                   <div className="w-full p-4">
                     <div className="relative">
                       <div className="absolute left-0 top-0 h-16 w-8">
