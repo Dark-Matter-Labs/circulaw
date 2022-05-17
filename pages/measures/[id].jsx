@@ -52,7 +52,7 @@ export default function Law() {
       `}</style>
       <div className="p-8">
         <Link href="/laws" className="mt-24 mb-2 w-full font-normal ">
-          <a className="blue">← Terug</a>
+          <a className="link font-semibold">← Terug</a>
         </Link>
 
         <div className="flex">
@@ -67,17 +67,49 @@ export default function Law() {
                 />
               </div>
               <div className="inline-block">
-                <span className="bold">{data.casus}</span>
+                <Link
+                  href={"/" + data.casus.replace(/\s+/g, "-").toLowerCase()}
+                >
+                  <a>
+                    <span className="font-semibold link">{data.casus}</span>
+                  </a>
+                </Link>
                 <div className="inline-block">{/* <ToolTip data="" /> */}</div>
               </div>
-              <div className="inline-block pl-5">
-                R-ladder:
-                {data.R1 && <span>R1 </span>}
-                {data.R2 && <span>R2 </span>}
-                {data.R3 && <span>R3 </span>}
-                {data.R4 && <span>R4</span>}
-                {data.R5 && <span>R5</span>}
-                {data.R6 && <span>R6</span>}
+              <div className="inline-block float-right">
+                R-ladder:{" "}
+                <span className="block-inline font-semibold text-base text-gray-900">
+                  {data.R1 && (
+                    <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                      R1{" "}
+                    </span>
+                  )}
+                  {data.R2 && (
+                    <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                      R2{" "}
+                    </span>
+                  )}
+                  {data.R3 && (
+                    <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                      R3{" "}
+                    </span>
+                  )}
+                  {data.R4 && (
+                    <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                      R4{" "}
+                    </span>
+                  )}
+                  {data.R5 && (
+                    <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                      R5{" "}
+                    </span>
+                  )}
+                  {data.R6 && (
+                    <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                      R6
+                    </span>
+                  )}
+                </span>
               </div>
             </div>
             <h1 className="font-bold text-3xl my-9">{data.titel}</h1>

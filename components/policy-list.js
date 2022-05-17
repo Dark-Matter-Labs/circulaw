@@ -10,7 +10,9 @@ export default function PolicyList(props) {
   if (props.data) {
     lawData = props.data.filter((lawData) => {
       const searchContent =
-        lawData.titel + lawData.introductie_juridische_maatregel + lawData.eisen_en_beperkingen;
+        lawData.titel +
+        lawData.introductie_juridische_maatregel +
+        lawData.eisen_en_beperkingen;
       return searchContent.toLowerCase().includes(searchValue.toLowerCase());
     });
   }
@@ -85,10 +87,10 @@ export default function PolicyList(props) {
                   </a>
                 </Link>
                 {is_er_een_praktijk_voorbeeld && (
-                      <span className="p-1 text-normal rounded font-semibold text-base bg-red-200 no-underline">
-                        Voorbeeld
-                      </span>
-                    )}
+                  <span className="p-1 text-normal rounded font-semibold text-base bg-red-200 no-underline">
+                    Voorbeeld
+                  </span>
+                )}
               </div>
               <div className="block bold-text">
                 {europees && <span>Europees - </span>}
@@ -98,12 +100,12 @@ export default function PolicyList(props) {
                 {gemeentelijk && <span>Gemeentelijk</span>}
               </div>
               <div className="block newlineDisplay twoLines">
-              <Link href={"/measures/" + id} key={lawDataIdx}>
-              <a className="detailPageLink">
-                <p className="description">
-                  {introductie_juridische_maatregel}
-                </p>
-                </a>
+                <Link href={"/measures/" + id} key={lawDataIdx}>
+                  <a>
+                    <p className="description">
+                      {introductie_juridische_maatregel}
+                    </p>
+                  </a>
                 </Link>
               </div>
 
