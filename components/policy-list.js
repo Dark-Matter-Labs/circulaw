@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import ShowMoreText from "react-show-more-text";
 
 import IconWood from "../public/icons/wood.png";
 
@@ -11,7 +10,7 @@ export default function PolicyList(props) {
   if (props.data) {
     lawData = props.data.filter((lawData) => {
       const searchContent =
-        lawData.titel + lawData.rechtsgebied + lawData.citeertitel;
+        lawData.titel + lawData.introductie_juridische_maatregel + lawData.eisen_en_beperkingen;
       return searchContent.toLowerCase().includes(searchValue.toLowerCase());
     });
   }
@@ -81,15 +80,15 @@ export default function PolicyList(props) {
               </div>
               <div className="block my-1">
                 <Link href={"/measures/" + id} key={lawDataIdx}>
-                  <a className="underline text-lg font-semibold no-underline">
+                  <a className="underline text-lg font-semibold no-underline detailPageLink">
                     {titel}{" "}
-                    {is_er_een_praktijk_voorbeeld && (
-                      <span className="p-1 text-normal rounded text-base bg-red-200 no-underline">
+                  </a>
+                </Link>
+                {is_er_een_praktijk_voorbeeld && (
+                      <span className="p-1 text-normal rounded font-semibold text-base bg-red-200 no-underline">
                         Voorbeeld
                       </span>
                     )}
-                  </a>
-                </Link>
               </div>
               <div className="block bold-text">
                 {europees && <span>Europees - </span>}
@@ -98,20 +97,14 @@ export default function PolicyList(props) {
                 {waterschappen && <span>Waterschappen - </span>}
                 {gemeentelijk && <span>Gemeentelijk</span>}
               </div>
-              <div className="block newlineDisplay">
-                <ShowMoreText
-                  lines={2}
-                  more="uitbreiden"
-                  less="dichtbij"
-                  className="content-css"
-                  anchorClass="my-anchor-css-class"
-                  expanded={false}
-                  width={700}
-                >
-                  <p className="description">
-                    {introductie_juridische_maatregel}
-                  </p>
-                </ShowMoreText>
+              <div className="block newlineDisplay twoLines">
+              <Link href={"/measures/" + id} key={lawDataIdx}>
+              <a className="detailPageLink">
+                <p className="description">
+                  {introductie_juridische_maatregel}
+                </p>
+                </a>
+                </Link>
               </div>
 
               <div className="flex space-x-8">
