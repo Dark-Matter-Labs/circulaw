@@ -27,12 +27,15 @@
 
 .twoLines {
   line-height: 1.5em;
-  height: 3em;      
+  height: 3em;
   overflow: hidden;
 }
-
 
 .detailPageLink:hover {
   color: #4099da;
   text-decoration: underline;
+}
+
+.link {
+  color: #4099da;
 }
