@@ -1,4 +1,4 @@
-# circular-economy
+# Circulaw
 
 A project for exploring circular economy laws in the Netherlands.
 
@@ -14,7 +14,7 @@ New branches should use the `FirstName/Task` structure and when merged should li
 
 ## Getting Started
 
-Where are using [next JS](https://nextjs.org) as our JS framework and out CSS library is [tailwinds](https://tailwinds.com). The project is hosted on [Vercel](https://vercel.com) at the moment and all of the data is currently being stored in a static JSON file called `/data.js`
+Where are using [Next.js](https://nextjs.org) as our JS framework and out CSS library is [Tailwind](https://tailwindui.com/). The project is hosted on [Vercel](https://vercel.com) at the moment and all of the data is currently being stored in a static JSON file called `/data.js`
 
 You can get started by installing the dependencies by running:
 
@@ -58,9 +58,9 @@ NEXTAUTH_PASSWORD="circular"
 
 ### JavaScript
 
-- [Next.JS](http://www.jshint.com/docs/) is used to prevent JavaScript error.
-- [React](http://facebook.github.io/react) is used for UI.
+- [Next.js](https://nextjs.org) is used app rendering and links.
+- [React](http://facebook.github.io/react) is used for interactive UI.
 
 ### CSS
 
-- [Tailwinds](http://cssnext.putaindecode.io) is used to write futureproof CSS for CSS vendor prefix under the hood).
+- [Tailwind](https://tailwindui.com/) is used to write futureproof CSS for CSS vendor prefix under the hood).
