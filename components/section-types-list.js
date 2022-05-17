@@ -60,9 +60,8 @@ export default function SectionTypes({ data, qty, title, description }) {
           className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 w-full"
         >
           {types.map((file) => (
-            <li key={file.source} className="relative border">
+            <li key={file.title} className="relative border">
               <div
-                c
                 className="object-cover pointer-events-none group-hover:opacity-75"
               >
                 <Image

@@ -52,7 +52,7 @@ export default function Law() {
       `}</style>
       <div className="p-8">
         <Link href="/laws" className="mt-24 mb-2 w-full font-normal ">
-          <a>← Terug</a>
+          <a className="blue">← Terug</a>
         </Link>
 
         <div className="flex">
