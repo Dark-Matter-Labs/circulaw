@@ -61,9 +61,7 @@ export default function SectionTypes({ data, qty, title, description }) {
         >
           {types.map((file) => (
             <li key={file.title} className="relative border">
-              <div
-                className="object-cover pointer-events-none group-hover:opacity-75"
-              >
+              <div className="object-cover pointer-events-none group-hover:opacity-75">
                 <Image
                   src={file.heroImage}
                   alt="Picture of the case"
