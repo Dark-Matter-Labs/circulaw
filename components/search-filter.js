@@ -3,7 +3,7 @@ import { handleToggle } from "../utils";
 
 // function which on check from try to false passed the data.name to the search query in policy-list for example Bevoegdheidsniveau = true then add data.Bevoegdheidsniveau to search scope.
 
-const SearchFilter = forwardRef(({ list, title, handleFilters }, ref) => {
+const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, ref) => {
   const [checkedArray, setCheckedArray] = useState([]);
 
   //state to check if set value is for mouse click or state persist
@@ -40,7 +40,6 @@ const SearchFilter = forwardRef(({ list, title, handleFilters }, ref) => {
       }
     },
   }));
-
   return (
     <fieldset className="py-4  border-b border-black">
       <div className="block">
@@ -63,7 +62,7 @@ const SearchFilter = forwardRef(({ list, title, handleFilters }, ref) => {
       <div>
         {list.map((data, dataIdx) => (
           <div key={dataIdx} className="relative flex justify-between">
-            {data.number > 0 ? (
+            {filterNumbers[dataIdx] > 0 ? (
               <div className="my-1">
                 <input
                   type="checkbox"
@@ -95,9 +94,8 @@ const SearchFilter = forwardRef(({ list, title, handleFilters }, ref) => {
                 </label>
               </div>
             )}
-
             <div className="font-normal text-sm text-gray-400">
-              {data.number}
+            {filterNumbers[dataIdx]}
             </div>
           </div>
         ))}
