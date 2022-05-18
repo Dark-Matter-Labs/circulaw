@@ -46,7 +46,17 @@ export default function Measures() {
     juridische_houdbaarheid: [],
   });
 
-  const [numberOfLaws, setNumberOfLaws] = useState(67);
+  const [numberOfLaws, setNumberOfLaws] = useState(8);
+
+  const [numberOfEuropees, setNumberOfEuropee] = useState(0);
+  const [numberOfNationaal, setNumberOfNationaal] = useState(0);
+  const [numberOfProvinciaal, setNumberOfProvinciaal] = useState(0);
+  const [numberOfGemeentelijk, setNumberOfGemeentelijk] = useState(0);
+
+  const [numberOfPubliek, setNumberOfPubliek] = useState(0);
+  const [numberOfPrivaat, setNumberOfPrivaat] = useState(0);
+  const [numberOfFiscaal, setNumberOfFiscaal] = useState(0);
+
 
   const handleFilters = (checkboxState, key) => {
     const newFilters = { ...selected };
@@ -75,6 +85,14 @@ export default function Measures() {
     //added check for data to have been retrieved here
     if (data) {
       let filteredLaws = data;
+      let numEuropee = 0;
+      let numNationaal = 0;
+      let numProvinciaal = 0;
+      let numGemeentelijk = 0;
+      let numPubliek = 0;
+      let numPrivaat = 0;
+      let numFiscaal = 0;
+
 
       filteredLaws = filteredLaws.filter((element) => {
         return element.casus === "Houtbouw";
@@ -156,8 +174,39 @@ export default function Measures() {
         });
       }
 
+      filteredLaws.map((measure) => {
+        if(measure.europees){
+          numEuropee += 1;
+        }
+        if(measure.nationaal){
+          numNationaal += 1;
+        }
+        if(measure.provinciaal){
+          numProvinciaal += 1;
+        }
+        if(measure.gemeentelijk){
+          numGemeentelijk += 1;
+        }
+
+        if(measure.rechtsgebied === "Publiekrecht"){
+          numPubliek += 1;
+        } else if(measure.rechtsgebied === "Privaatrecht"){
+          numPrivaat += 1;
+        } else if(measure.rechtsgebied === "Fiscaalrecht"){
+          numFiscaal += 1;
+        } 
+        
+      });
+
       setLaws(filteredLaws);
       setNumberOfLaws(filteredLaws.length);
+      setNumberOfEuropee(numEuropee);
+      setNumberOfNationaal(numNationaal);
+      setNumberOfProvinciaal(numProvinciaal);
+      setNumberOfGemeentelijk(numGemeentelijk);
+      setNumberOfPubliek(numPubliek);
+      setNumberOfPrivaat(numPrivaat);
+      setNumberOfFiscaal(numFiscaal);
     }
   }, [data, selected]);
 
@@ -234,6 +283,7 @@ export default function Measures() {
             ref={wettelijkFilterRef}
             title="Bevoegdheidsniveau"
             list={wettelijk_bevoegdheidsniveau}
+            filterNumbers={[numberOfEuropees, numberOfNationaal, numberOfProvinciaal, numberOfGemeentelijk]}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "wettelijk_bevoegdheidsniveau")
             }
@@ -242,6 +292,7 @@ export default function Measures() {
             ref={rechtsgebiedFilterRef}
             title="Rechtsgebied"
             list={rechtsgebied}
+            filterNumbers={[numberOfPubliek, numberOfPrivaat, numberOfFiscaal]}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "rechtsgebied")
             }
@@ -250,6 +301,7 @@ export default function Measures() {
             ref={rLadderFilterRef}
             title="R - ladder"
             list={r_ladder}
+            filterNumbers={[0,0,0,0,0,0,0]}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "r_ladder")
             }
@@ -258,6 +310,7 @@ export default function Measures() {
             ref={juridischeFilterRef}
             title="Juridische houdbaarheid"
             list={juridische_houdbaarheid}
+            filterNumbers={[0,0,0,0,0,0,0]}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "juridische_houdbaarheid")
             }
@@ -266,6 +319,7 @@ export default function Measures() {
             ref={subrechtsgebiedFilterRef}
             title="Subrechtsgebied"
             list={subrechtsgebied}
+            filterNumbers={[0,0,0,0,0,0,0]}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "subrechtsgebied")
             }
