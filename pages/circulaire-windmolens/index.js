@@ -234,6 +234,7 @@ export default function Measures() {
             ref={wettelijkFilterRef}
             title="Bevoegdheidsniveau"
             list={wettelijk_bevoegdheidsniveau}
+            filterNumbers={[0,0,0,0,0,0,0]}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "wettelijk_bevoegdheidsniveau")
             }
@@ -242,6 +243,7 @@ export default function Measures() {
             ref={rechtsgebiedFilterRef}
             title="Rechtsgebied"
             list={rechtsgebied}
+            filterNumbers={[0,0,0,0,0,0,0]}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "rechtsgebied")
             }
@@ -250,6 +252,7 @@ export default function Measures() {
             ref={rLadderFilterRef}
             title="R - ladder"
             list={r_ladder}
+            filterNumbers={[0,0,0,0,0,0,0]}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "r_ladder")
             }
@@ -258,6 +261,7 @@ export default function Measures() {
             ref={juridischeFilterRef}
             title="Juridische houdbaarheid"
             list={juridische_houdbaarheid}
+            filterNumbers={[0,0,0,0,0,0,0]}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "juridische_houdbaarheid")
             }
@@ -266,6 +270,7 @@ export default function Measures() {
             ref={subrechtsgebiedFilterRef}
             title="Subrechtsgebied"
             list={subrechtsgebied}
+            filterNumbers={[0,0,0,0,0,0,0]}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "subrechtsgebied")
             }
