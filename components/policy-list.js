@@ -12,7 +12,15 @@ export default function PolicyList(props) {
       const searchContent =
         lawData.titel +
         lawData.introductie_juridische_maatregel +
-        lawData.eisen_en_beperkingen;
+        lawData.eisen_en_beperkingen +
+        lawData.kop_1_samenvatting_juridische_maatregel +
+        lawData.kop_2_toepassing_juridische_maatregel +
+        lawData.toepassing_juridische_maatregel +
+        lawData.kop_3_uit_de_praktijk +
+        lawData.uit_de_praktijk +
+        lawData.subrechtsgebied +
+        lawData.artikel +
+        lawData.citeertitel;
       return searchContent.toLowerCase().includes(searchValue.toLowerCase());
     });
   }
