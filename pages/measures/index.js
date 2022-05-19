@@ -133,7 +133,6 @@ export default function Measures() {
       let numCont = 0;
       let numGron = 0;
 
-
       filteredLaws = filteredLaws.filter((element) => {
         return element.casus === "Houtbouw";
       });
@@ -216,69 +215,69 @@ export default function Measures() {
 
       //dynamically calculate filter numbers
       filteredLaws.map((measure) => {
-        if(measure.europees){
+        if (measure.europees) {
           numEuropee += 1;
         }
-        if(measure.nationaal){
+        if (measure.nationaal) {
           numNationaal += 1;
         }
-        if(measure.provinciaal){
+        if (measure.provinciaal) {
           numProvinciaal += 1;
         }
-        if(measure.gemeentelijk){
+        if (measure.gemeentelijk) {
           numGemeentelijk += 1;
         }
 
-        if(measure.rechtsgebied === "Publiekrecht"){
+        if (measure.rechtsgebied === "Publiekrecht") {
           numPubliek += 1;
-        } else if(measure.rechtsgebied === "Privaatrecht"){
+        } else if (measure.rechtsgebied === "Privaatrecht") {
           numPrivaat += 1;
-        } else if(measure.rechtsgebied === "Fiscaalrecht"){
+        } else if (measure.rechtsgebied === "Fiscaalrecht") {
           numFiscaal += 1;
-        } 
+        }
 
-        if(measure.R1){
+        if (measure.R1) {
           numR1 += 1;
         }
-        if(measure.R2){
+        if (measure.R2) {
           numR2 += 1;
         }
-        if(measure.R3){
+        if (measure.R3) {
           numR3 += 1;
         }
-        if(measure.R4){
+        if (measure.R4) {
           numR4 += 1;
         }
-        if(measure.R5){
+        if (measure.R5) {
           numR5 += 1;
         }
-        if(measure.R6){
+        if (measure.R6) {
           numR6 += 1;
         }
 
-        if(measure.juridische_houdbaarheid === 1){
+        if (measure.juridische_houdbaarheid === 1) {
           numJ1 += 1;
-        } else if(measure.juridische_houdbaarheid === 2){
+        } else if (measure.juridische_houdbaarheid === 2) {
           numJ2 += 1;
-        } else if(measure.juridische_houdbaarheid === 3){
+        } else if (measure.juridische_houdbaarheid === 3) {
           numJ3 += 1;
-        } else if(measure.juridische_houdbaarheid === 4){
+        } else if (measure.juridische_houdbaarheid === 4) {
           numJ4 += 1;
-        } else if(measure.juridische_houdbaarheid === 5){
+        } else if (measure.juridische_houdbaarheid === 5) {
           numJ5 += 1;
-        } 
+        }
 
-        if(measure.subrechtsgebied === "Erfpacht"){
+        if (measure.subrechtsgebied === "Erfpacht") {
           numErp += 1;
-        } else if(measure.subrechtsgebied === "Omgevingsrecht"){
+        } else if (measure.subrechtsgebied === "Omgevingsrecht") {
           numOmg += 1;
-        } else if(measure.subrechtsgebied === "Aanbesteding"){
+        } else if (measure.subrechtsgebied === "Aanbesteding") {
           numAan += 1;
-        } else if(measure.subrechtsgebied === "Contracten"){
+        } else if (measure.subrechtsgebied === "Contracten") {
           numCont += 1;
-        } else if(measure.subrechtsgebied === "Gronduitgifte"){
+        } else if (measure.subrechtsgebied === "Gronduitgifte") {
           numGron += 1;
-        } 
+        }
       });
 
       setLaws(filteredLaws);
@@ -387,7 +386,12 @@ export default function Measures() {
             ref={wettelijkFilterRef}
             title="Bevoegdheidsniveau"
             list={wettelijk_bevoegdheidsniveau}
-            filterNumbers={[numberOfEuropees, numberOfNationaal, numberOfProvinciaal, numberOfGemeentelijk]}
+            filterNumbers={[
+              numberOfEuropees,
+              numberOfNationaal,
+              numberOfProvinciaal,
+              numberOfGemeentelijk,
+            ]}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "wettelijk_bevoegdheidsniveau")
             }
@@ -405,7 +409,14 @@ export default function Measures() {
             ref={rLadderFilterRef}
             title="R - ladder"
             list={r_ladder}
-            filterNumbers={[numberOfR1, numberOfR2, numberOfR3, numberOfR4, numberOfR5, numberOfR6]}
+            filterNumbers={[
+              numberOfR1,
+              numberOfR2,
+              numberOfR3,
+              numberOfR4,
+              numberOfR5,
+              numberOfR6,
+            ]}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "r_ladder")
             }
@@ -414,7 +425,13 @@ export default function Measures() {
             ref={juridischeFilterRef}
             title="Juridische houdbaarheid"
             list={juridische_houdbaarheid}
-            filterNumbers={[numberOfJ1, numberOfJ2, numberOfJ3, numberOfJ4, numberOfJ5]}
+            filterNumbers={[
+              numberOfJ1,
+              numberOfJ2,
+              numberOfJ3,
+              numberOfJ4,
+              numberOfJ5,
+            ]}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "juridische_houdbaarheid")
             }
@@ -423,7 +440,13 @@ export default function Measures() {
             ref={subrechtsgebiedFilterRef}
             title="Subrechtsgebied"
             list={subrechtsgebied}
-            filterNumbers={[numberOfErp, numberOfOmg, numberOfAan, numberOfCont, numberOfGron]}
+            filterNumbers={[
+              numberOfErp,
+              numberOfOmg,
+              numberOfAan,
+              numberOfCont,
+              numberOfGron,
+            ]}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "subrechtsgebied")
             }
