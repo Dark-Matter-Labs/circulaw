@@ -46,7 +46,36 @@ export default function Measures() {
     juridische_houdbaarheid: [],
   });
 
-  const [numberOfLaws, setNumberOfLaws] = useState(67);
+  const [numberOfLaws, setNumberOfLaws] = useState(3);
+
+  //dynamic filter numbers
+  const [numberOfEuropees, setNumberOfEuropee] = useState(0);
+  const [numberOfNationaal, setNumberOfNationaal] = useState(0);
+  const [numberOfProvinciaal, setNumberOfProvinciaal] = useState(0);
+  const [numberOfGemeentelijk, setNumberOfGemeentelijk] = useState(0);
+
+  const [numberOfPubliek, setNumberOfPubliek] = useState(0);
+  const [numberOfPrivaat, setNumberOfPrivaat] = useState(0);
+  const [numberOfFiscaal, setNumberOfFiscaal] = useState(0);
+
+  const [numberOfR1, setNumberOfR1] = useState(0);
+  const [numberOfR2, setNumberOfR2] = useState(0);
+  const [numberOfR3, setNumberOfR3] = useState(0);
+  const [numberOfR4, setNumberOfR4] = useState(0);
+  const [numberOfR5, setNumberOfR5] = useState(0);
+  const [numberOfR6, setNumberOfR6] = useState(0);
+
+  const [numberOfJ1, setNumberOfJ1] = useState(0);
+  const [numberOfJ2, setNumberOfJ2] = useState(0);
+  const [numberOfJ3, setNumberOfJ3] = useState(0);
+  const [numberOfJ4, setNumberOfJ4] = useState(0);
+  const [numberOfJ5, setNumberOfJ5] = useState(0);
+
+  const [numberOfErp, setNumberOfErp] = useState(0);
+  const [numberOfOmg, setNumberOfOmg] = useState(0);
+  const [numberOfAan, setNumberOfAan] = useState(0);
+  const [numberOfCont, setNumberOfCont] = useState(0);
+  const [numberOfGron, setNumberOfGron] = useState(0);
 
   const handleFilters = (checkboxState, key) => {
     const newFilters = { ...selected };
@@ -75,6 +104,34 @@ export default function Measures() {
     //added check for data to have been retrieved here
     if (data) {
       let filteredLaws = data;
+
+      let numEuropee = 0;
+      let numNationaal = 0;
+      let numProvinciaal = 0;
+      let numGemeentelijk = 0;
+
+      let numPubliek = 0;
+      let numPrivaat = 0;
+      let numFiscaal = 0;
+
+      let numR1 = 0;
+      let numR2 = 0;
+      let numR3 = 0;
+      let numR4 = 0;
+      let numR5 = 0;
+      let numR6 = 0;
+
+      let numJ1 = 0;
+      let numJ2 = 0;
+      let numJ3 = 0;
+      let numJ4 = 0;
+      let numJ5 = 0;
+
+      let numErp = 0;
+      let numOmg = 0;
+      let numAan = 0;
+      let numCont = 0;
+      let numGron = 0;
 
       filteredLaws = filteredLaws.filter((element) => {
         return element.casus === "Circulaire windmolens";
@@ -156,8 +213,103 @@ export default function Measures() {
         });
       }
 
+      //dynamically calculate filter numbers
+      filteredLaws.map((measure) => {
+        if(measure.europees){
+          numEuropee += 1;
+        }
+        if(measure.nationaal){
+          numNationaal += 1;
+        }
+        if(measure.provinciaal){
+          numProvinciaal += 1;
+        }
+        if(measure.gemeentelijk){
+          numGemeentelijk += 1;
+        }
+
+        if(measure.rechtsgebied === "Publiekrecht"){
+          numPubliek += 1;
+        } else if(measure.rechtsgebied === "Privaatrecht"){
+          numPrivaat += 1;
+        } else if(measure.rechtsgebied === "Fiscaalrecht"){
+          numFiscaal += 1;
+        } 
+
+        if(measure.R1){
+          numR1 += 1;
+        }
+        if(measure.R2){
+          numR2 += 1;
+        }
+        if(measure.R3){
+          numR3 += 1;
+        }
+        if(measure.R4){
+          numR4 += 1;
+        }
+        if(measure.R5){
+          numR5 += 1;
+        }
+        if(measure.R6){
+          numR6 += 1;
+        }
+
+        if(measure.juridische_houdbaarheid === 1){
+          numJ1 += 1;
+        } else if(measure.juridische_houdbaarheid === 2){
+          numJ2 += 1;
+        } else if(measure.juridische_houdbaarheid === 3){
+          numJ3 += 1;
+        } else if(measure.juridische_houdbaarheid === 4){
+          numJ4 += 1;
+        } else if(measure.juridische_houdbaarheid === 5){
+          numJ5 += 1;
+        } 
+
+        if(measure.subrechtsgebied === "Erfpacht"){
+          numErp += 1;
+        } else if(measure.subrechtsgebied === "Omgevingsrecht"){
+          numOmg += 1;
+        } else if(measure.subrechtsgebied === "Aanbesteding"){
+          numAan += 1;
+        } else if(measure.subrechtsgebied === "Contracten"){
+          numCont += 1;
+        } else if(measure.subrechtsgebied === "Gronduitgifte"){
+          numGron += 1;
+        } 
+      });
+
       setLaws(filteredLaws);
       setNumberOfLaws(filteredLaws.length);
+
+      setNumberOfEuropee(numEuropee);
+      setNumberOfNationaal(numNationaal);
+      setNumberOfProvinciaal(numProvinciaal);
+      setNumberOfGemeentelijk(numGemeentelijk);
+
+      setNumberOfPubliek(numPubliek);
+      setNumberOfPrivaat(numPrivaat);
+      setNumberOfFiscaal(numFiscaal);
+
+      setNumberOfR1(numR1);
+      setNumberOfR2(numR2);
+      setNumberOfR3(numR3);
+      setNumberOfR4(numR4);
+      setNumberOfR5(numR5);
+      setNumberOfR6(numR6);
+
+      setNumberOfJ1(numJ1);
+      setNumberOfJ2(numJ2);
+      setNumberOfJ3(numJ3);
+      setNumberOfJ4(numJ4);
+      setNumberOfJ5(numJ5);
+
+      setNumberOfErp(numErp);
+      setNumberOfOmg(numOmg);
+      setNumberOfAan(numAan);
+      setNumberOfCont(numCont);
+      setNumberOfGron(numGron);
     }
   }, [data, selected]);
 
@@ -234,7 +386,7 @@ export default function Measures() {
             ref={wettelijkFilterRef}
             title="Bevoegdheidsniveau"
             list={wettelijk_bevoegdheidsniveau}
-            filterNumbers={[0,0,0,0,0,0,0]}
+            filterNumbers={[numberOfEuropees, numberOfNationaal, numberOfProvinciaal, numberOfGemeentelijk]}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "wettelijk_bevoegdheidsniveau")
             }
@@ -243,7 +395,7 @@ export default function Measures() {
             ref={rechtsgebiedFilterRef}
             title="Rechtsgebied"
             list={rechtsgebied}
-            filterNumbers={[0,0,0,0,0,0,0]}
+            filterNumbers={[numberOfPubliek, numberOfPrivaat, numberOfFiscaal]}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "rechtsgebied")
             }
@@ -252,7 +404,7 @@ export default function Measures() {
             ref={rLadderFilterRef}
             title="R - ladder"
             list={r_ladder}
-            filterNumbers={[0,0,0,0,0,0,0]}
+            filterNumbers={[numberOfR1, numberOfR2, numberOfR3, numberOfR4, numberOfR5, numberOfR6]}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "r_ladder")
             }
@@ -261,7 +413,7 @@ export default function Measures() {
             ref={juridischeFilterRef}
             title="Juridische houdbaarheid"
             list={juridische_houdbaarheid}
-            filterNumbers={[0,0,0,0,0,0,0]}
+            filterNumbers={[numberOfJ1, numberOfJ2, numberOfJ3, numberOfJ4, numberOfJ5]}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "juridische_houdbaarheid")
             }
@@ -270,7 +422,7 @@ export default function Measures() {
             ref={subrechtsgebiedFilterRef}
             title="Subrechtsgebied"
             list={subrechtsgebied}
-            filterNumbers={[0,0,0,0,0,0,0]}
+            filterNumbers={[numberOfErp, numberOfOmg, numberOfAan, numberOfCont, numberOfGron]}
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, "subrechtsgebied")
             }
