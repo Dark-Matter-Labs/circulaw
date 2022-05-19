@@ -254,9 +254,9 @@ export default function Law() {
                 </div>
                 <div className="w-full px-4 py-4">
                   <a href={data.links_ministappenplan}>
-                    <a className="px-4 py-4 border-2 rounded text-white bg-[#0088d9]">
+                    <button className="px-4 py-4 border-2 rounded text-white bg-[#0088d9]">
                       HOUD ME OP DE HOOGTE
-                    </a>
+                    </button>
                   </a>
                 </div>{" "}
               </div>
