@@ -7,6 +7,8 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 
 import CirculawLogo from "../public/circulaw.png";
 
+SearchIcon;
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -116,11 +118,11 @@ export default function Example() {
                     </a>
                   </Link>
 
-                  <Link href="/blog">
+                  {/* <Link href="/blog">
                     <a className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">
                       Blog
                     </a>
-                  </Link>
+                  </Link> */}
                   <Link href="/contact">
                     <a className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">
                       Contact
@@ -154,7 +156,7 @@ export default function Example() {
                               "group bg-white rounded-md inline-flex items-center text-base font-medium"
                             )}
                           >
-                            <span>Waardeketens</span>
+                            <span className="uppercase">Waardeketens</span>
                             <ChevronDownIcon
                               className={classNames(
                                 open ? "text-gray-600" : "text-gray-400",
@@ -196,13 +198,31 @@ export default function Example() {
                         </>
                       )}
                     </Popover>
+                    <div className="inline-block relative ">
+                      <Link href="/hoe-het-werkt">
+                        <a className="uppercase pl-4 text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium">
+                          Hoe Het Werkt
+                        </a>
+                      </Link>
+                    </div>
+                    <div className="inline-block relative ">
+                      <Link href="#">
+                        <a className="uppercase pl-4 text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium">
+                          vraag & antwoord
+                        </a>
+                      </Link>
+                    </div>
                   </div>
-                  <div className="py-3 px-4 absolute right-0">
+                  <div className="py-3 px-4 absolute right-0 border-2 border-black">
+                    <div className="">
+                      <SearchIcon className="h-6 w-6" aria-hidden="true" />
+                    </div>
                     <input
                       type="search"
                       name="search"
                       id="search"
-                      className=" block w-full border-2 border-black"
+                      placeholder="Waar wil je maatregelen over vinden?"
+                      className="block w-full "
                     />
                   </div>
                 </div>
