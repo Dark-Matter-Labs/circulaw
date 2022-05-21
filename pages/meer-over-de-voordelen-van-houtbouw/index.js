@@ -44,8 +44,8 @@ export default function Houtbouw() {
         Juridische experts hebben deze maatregelen met een circulaire bril via
         een uniek proces geinventariseerd vanuit de wet- en regelgeving en
         leesbaar gemaakt voor beleidsmakers. Op dit moment vind je maatregelen
-        met kansen om 'Houtbouw' en 'Circulaire windturbines' te bevorderen. In
-        de toekomst volgen meer thema's.
+        met kansen om &apos; Houtbouw &apos; en &apos; Circulaire windturbines
+        &apos; te bevorderen. In de toekomst volgen meer thema &apos; s.
       </div>
       <div className="">Verken de maatregelen </div>
       <div className="">Image</div>

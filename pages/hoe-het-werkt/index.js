@@ -43,15 +43,15 @@ export default function Kunststoffen() {
           toegepast. Juridische experts hebben deze maatregelen met een
           circulaire bril via een uniek proces. geinventariseerd vanuit de wet-
           en regelgeving en leesbaar gemaakt voor. beleidsmakers. Op dit moment
-          vind je maatregelen met kansen om '
+          vind je maatregelen met kansen om &apos;
           <Link href="/houtbouw">
             <a>Houtbouw</a>
           </Link>
-          ' en '
+          &apos; en &apos;
           <Link href="/windturbines">
             <a>Circulaire windturbines</a>
           </Link>
-          ' te bevorderen. In de toekomst volgen meer thema's.
+          &apos; te bevorderen. In de toekomst volgen meer thema&apos;s.
         </div>
         <div className="">Verken de maatregelen</div>
         <div className="">IMAEG</div>
@@ -84,8 +84,8 @@ export default function Kunststoffen() {
 
         <div className="">
           Vind je als beleidsmaker een maatregel in CircuLaw waarvan je je
-          afvraagt of '"ie interessant of relevant zou kunnen zijn voor jouw
-          gemeente of provincie? Dan daagt CircuLaw je uit:
+          afvraagt of &apos; ie interessant of relevant zou kunnen zijn voor
+          jouw gemeente of provincie? Dan daagt CircuLaw je uit:
           <ul>
             <li>verken de maatregel</li>
             <li>
@@ -101,11 +101,11 @@ export default function Kunststoffen() {
         <div className="pa-4 bg-[#dbedfb]">
           <div className="font-bold">Een voorbeeld:</div>
           <div className="">
-            Je vind in CircuLaw een maatregel 'Houtbouw een plek geven in de
-            omgevingsvisie' Je vraagt je af in jouw gemeente daar al iets mee
-            doet. Je klopt an bij............en bespreekt of en hoe je
-            'Houtbouw' in de omgevingsvisie kan opnemen en wat de impact is.
-            Daarna onderneem je actie om het voor elkaar te krijgen.
+            Je vind in CircuLaw een maatregel &apos;Houtbouw een plek geven in
+            de omgevingsvisie&apos; Je vraagt je af in jouw gemeente daar al
+            iets mee doet. Je klopt an bij............en bespreekt of en hoe je
+            &apos; Houtbouw &apos; in de omgevingsvisie kan opnemen en wat de
+            impact is. Daarna onderneem je actie om het voor elkaar te krijgen.
           </div>
         </div>
         <div className="font-bold">Let op:</div>
