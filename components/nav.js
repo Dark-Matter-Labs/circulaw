@@ -283,7 +283,7 @@ export default function Example() {
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/contact"
+                href="/over-ons"
                 className="border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medi5m"
               >
                 CONTACT
