@@ -407,19 +407,6 @@ export default function Houtbouw() {
             </ul>
           </div>
         </div>
-        <div className="">
-          <div className="text-xl font-bold pl-2 py-6 inline-block">
-            Uitgelichte maatregelen rond houtbouw
-          </div>
-          <div className="flex">
-            <div className="w-full sm:w-1/3">
-              <Image src={HoutbouwHero} alt="Picture of the author" />
-            </div>
-            <div className="w-full sm:w-2/3 pl-4">
-              <PolicyList data={laws} />
-            </div>
-          </div>
-        </div>
 
         <ActionPanel
           paragraph="Blijf wekelijks op de hoogte van nieuwe kansen binnen de
