@@ -156,7 +156,7 @@ export default function Example() {
                               "group bg-white rounded-md inline-flex items-center text-base font-medium"
                             )}
                           >
-                            <span className="uppercase">Waardeketens</span>
+                            <span className="uppercase">Maatregelen</span>
                             <ChevronDownIcon
                               className={classNames(
                                 open ? "text-gray-600" : "text-gray-400",
@@ -206,7 +206,7 @@ export default function Example() {
                       </Link>
                     </div>
                     <div className="inline-block relative ">
-                      <Link href="#">
+                      <Link href="/faq">
                         <a className="uppercase pl-4 text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium">
                           vraag & antwoord
                         </a>
