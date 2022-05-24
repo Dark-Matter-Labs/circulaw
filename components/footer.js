@@ -2,7 +2,7 @@ const navigation = {
   WAARDEKETENS: [
     {
       name: "Gebouwde omgeving",
-      href: "/gebouwde-omgeving",
+      href: "/#",
       className: "font-bold",
     },
     { name: "Houtbouw", href: "/houtbouw", className: "pl-4" },
@@ -31,8 +31,8 @@ const navigation = {
   ],
 
   other: [
+    { name: "Hoe het werkt", href: "/hoe-het-werkt", className: "" },
     { name: "OVER ONS", href: "/over-ons", className: "" },
-    { name: "BLOG", href: "/blog", className: "" },
     { name: "CONTACT", href: "/contact", className: "" },
   ],
 };
@@ -49,7 +49,7 @@ export default function Example() {
             <div className="sm:grid sm:grid-cols-4 md:gap-8">
               <div className="col-span-2">
                 <h3 className="text-sm text-white font-bold tracking-wider uppercase">
-                  WAARDEKETENS
+                  MAATREGELEN
                 </h3>
                 <div className="grid grid-cols-1 gap-8">
                   <ul role="list" className="mt-4 space-y-4">

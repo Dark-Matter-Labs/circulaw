@@ -317,7 +317,8 @@ export default function Houtbouw() {
               src={co2Hero}
               alt="Icon of Wood"
               layout="fill"
-              objectFit="cover"
+              objectFit="contain"
+              
             />
           </div>
 
@@ -366,7 +367,7 @@ export default function Houtbouw() {
                 <li key={file.id} className="static  bg-[#E6F2FA] ">
                   <div className="w-full p-4">
                     <div className="relative">
-                      <div className="absolute left-0 top-0 h-16 w-8">
+                      <div className="absolute left-0 top-0 h-16 w-8 m-1">
                         <Image src={WoodIcon} alt="Picture of the author" />
                       </div>
 
