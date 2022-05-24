@@ -17,7 +17,7 @@ const waardeketens = [
   {
     name: "Gebouwde omgeving",
     description: "description",
-    href: "/gebouwde-omgeving",
+    href: "#",
     className: "",
   },
   {
@@ -104,27 +104,13 @@ export default function Example() {
                   </div>
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                  <Link href="#">
-                    <a
-                      href="#"
-                      className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium"
-                    >
-                      Hoe het werkt
-                    </a>
-                  </Link>
-                  <Link href="#">
+                  <Link href="/over-ons">
                     <a className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">
                       Over ons
                     </a>
                   </Link>
-
-                  {/* <Link href="/blog">
-                    <a className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">
-                      Blog
-                    </a>
-                  </Link> */}
                   <Link href="/contact">
-                    <a className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">
+                    <a className="text-black inline-flex items-center px-1 pt-1 text-sm font-medium">
                       Contact
                     </a>
                   </Link>
@@ -152,7 +138,7 @@ export default function Example() {
                         <>
                           <Popover.Button
                             className={classNames(
-                              open ? "text-gray-900" : "text-gray-500",
+                              open ? "text-black" : "text-black",
                               "group bg-white rounded-md inline-flex items-center text-base font-medium"
                             )}
                           >
@@ -200,14 +186,14 @@ export default function Example() {
                     </Popover>
                     <div className="inline-block relative ">
                       <Link href="/hoe-het-werkt">
-                        <a className="uppercase pl-4 text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium">
+                        <a className="uppercase pl-4 text-black group bg-white rounded-md inline-flex items-center text-base font-medium">
                           Hoe Het Werkt
                         </a>
                       </Link>
                     </div>
                     <div className="inline-block relative ">
                       <Link href="/faq">
-                        <a className="uppercase pl-4 text-gray-500 group bg-white rounded-md inline-flex items-center text-base font-medium">
+                        <a className="uppercase pl-4 text-black group bg-white rounded-md inline-flex items-center text-base font-medium">
                           vraag & antwoord
                         </a>
                       </Link>
@@ -296,7 +282,7 @@ export default function Example() {
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/over-ons"
                 className="border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medi5m"
               >
                 OVER ONS
