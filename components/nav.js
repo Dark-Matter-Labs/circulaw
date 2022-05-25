@@ -103,7 +103,7 @@ export default function Example() {
                     </Link>
                   </div>
                 </div>
-                <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                <div className="hidden absolute inset-y-0 right-0 sm:ml-6 sm:flex">
                   <Link href="/over-ons">
                     <a className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">
                       Over ons
@@ -131,7 +131,7 @@ export default function Example() {
           <div className="flex inset-x-0 top-0 p-5 sm:p-9 invisible sm:visible hidden sm:inline">
             <div className="flex-1 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
               <div className="content right-0">
-                <div className="flex">
+                <div className="relative flex items-center justify-between">
                   <div className="">
                     <Popover className="inline-block relative ">
                       {({ open }) => (
@@ -184,7 +184,7 @@ export default function Example() {
                         </>
                       )}
                     </Popover>
-                    <div className="inline-block relative ">
+                    <div className="inline-block relative">
                       <Link href="/hoe-het-werkt">
                         <a className="uppercase pl-4 text-black group bg-white rounded-md inline-flex items-center text-base font-medium">
                           Hoe Het Werkt
@@ -199,17 +199,17 @@ export default function Example() {
                       </Link>
                     </div>
                   </div>
-                  <div className="py-3 px-4 absolute right-0 border-2 border-black">
-                    <div className="">
+                  <div className="w-96 inline-block absolute right-0 py-3 px-4 border-2 border-black">
+                    <div className="flex">
                       <SearchIcon className="h-6 w-6" aria-hidden="true" />
+                      <input
+                        type="search"
+                        name="search"
+                        id="search"
+                        placeholder="Waar wil je maatregelen over vinden?"
+                        className="block w-full"
+                      />
                     </div>
-                    <input
-                      type="search"
-                      name="search"
-                      id="search"
-                      placeholder="Waar wil je maatregelen over vinden?"
-                      className="block w-full "
-                    />
                   </div>
                 </div>
               </div>

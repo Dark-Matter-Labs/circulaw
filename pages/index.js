@@ -18,7 +18,7 @@ export default function Index() {
             Ontdek juridische en fiscale maatregelen om de circulaire economie
             te versnellen
           </div>
-          <ul className="list-disc">
+          <ul className="list-disc pl-5">
             <li className="">
               Mogelikheden .in bestaande en toekomstige wetgeving
             </li>
