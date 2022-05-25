@@ -5,7 +5,7 @@ import Layout from "../../components/layout";
 export default function Kunststoffen() {
   return (
     <Layout>
-      <div className="p-9">
+      <div className="p-9 max-w-2xl">
         <div className="text-2xl font-bold py-14">Hoe CircuLaw werkt</div>
         <div className="text-xl font-bold">Waarom CircuLaw?</div>
         <div className="">

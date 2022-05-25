@@ -4,7 +4,7 @@ import Layout from "../../components/layout";
 export default function OverOns() {
   return (
     <Layout>
-      <div className="py-9 ">
+      <div className="py-9 max-w-2xl">
         <div className="text-2xl font-bold py-4">Over ons</div>
         <div className="">
           Eind 2020 startte{" "}
