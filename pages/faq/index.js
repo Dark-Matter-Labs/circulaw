@@ -13,11 +13,11 @@ export default function Blog() {
         </div>
         <div className="w-full pb-4">
           Eind 2020 startte gemeente Amsterdam in samenwerking met Dark Matter
-          Labs en verschillende andere partners het project 'Activerende
-          regelgeving voor en circulaire samenleving'. De ontwikkeling van de
-          tool 'CircuLaw' is een van de speerpunten van dit project. Het doel
-          van CircuLaw: regelgeving intensiever en effectiever inzetten om de
-          circulaire transitie te versnellen.
+          Labs en verschillende andere partners het project &apos;Activerende
+          regelgeving voor en circulaire samenleving&apos;. De ontwikkeling van
+          de tool &apos;CircuLaw&apos; is een van de speerpunten van dit
+          project. Het doel van CircuLaw: regelgeving intensiever en effectiever
+          inzetten om de circulaire transitie te versnellen.
         </div>
         <div className="w-full pb-4">
           Inmiddels zijn we bijna anderhalf jaar verder en is de tool volop in
@@ -45,12 +45,13 @@ export default function Blog() {
         </div>
         <div className="w-full pb-4">
           De afgelopen jaren is van alles ondernomen om de samenleving
-          circulairder te maken. Door hun vrijblijvendheid boekten 'zachte'
-          initiatieven echter niet snel of effectief genoeg resultaat. Onder
-          meer de Sociaal-Economische Raad (SER) en het Planbureau voor de
-          Leefomgeving adviseren daarom om meer 'dwang en drang toe te passen.
-          Het bindende en dwingende karakter van regelgeving maakt het een
-          uitgelezen middel om circulaire doelen te realiseren.
+          circulairder te maken. Door hun vrijblijvendheid boekten
+          &apos;zachte&apos; initiatieven echter niet snel of effectief genoeg
+          resultaat. Onder meer de Sociaal-Economische Raad (SER) en het
+          Planbureau voor de Leefomgeving adviseren daarom om meer &apos;dwang
+          en drang toe te passen. Het bindende en dwingende karakter van
+          regelgeving maakt het een uitgelezen middel om circulaire doelen te
+          realiseren.
         </div>
         <div className="w-full pb-4 text-2xl font-bold ">
           Voor wie is CircuLaw precies bedoeld?
@@ -73,11 +74,11 @@ export default function Blog() {
           om ze te inspireren en vanuit daar te verkennen hoe
           beleidsmedewerkers.de maatregelen .in hun eigen context kunnen
           gebruiken. Voorbeelden uit de praktijk moeten ze daarbij helpen (Zie:
-          'Staan er ook voorbeelden uit de praktijk.in Circul aw?'). Ook laten
-          We en welke maatregelen in de praktijk god samengaan. en elkaar kunnen
-          versterken.- We hopen zoveel_ mogelik maatregelen te kunnen voorzien
-          van praktische tips en tricks. waarmee beleidsmedewerkers gelijk aan
-          de slag kunnen
+          &apos;Staan er ook voorbeelden uit de praktijk.in Circul aw?&apos;).
+          Ook laten We en welke maatregelen in de praktijk god samengaan. en
+          elkaar kunnen versterken.- We hopen zoveel_ mogelik maatregelen te
+          kunnen voorzien van praktische tips en tricks. waarmee
+          beleidsmedewerkers gelijk aan de slag kunnen
         </div>
         <div className="w-full pb-4 text-2xl font-bold ">
           Wat kunnen beleidsmedewerkers níet met CircuLaw?
@@ -133,9 +134,9 @@ export default function Blog() {
         </div>
         <div className="w-full pb-4">
           Daar waar mogelijk noemen we bij elke maatregel voorbeelden uit de
-          praktijk. Dat 'daar waar mogelijk' is een belangrijke kanttekening: er
-          zijn namelijk in de praktijk niet altijd voorbeelden van eerdere
-          toepassingen.
+          praktijk. Dat &apos;daar waar mogelijk&apos; is een belangrijke
+          kanttekening: er zijn namelijk in de praktijk niet altijd voorbeelden
+          van eerdere toepassingen.
         </div>
         <div className="w-full pb-4 text-2xl font-bold ">Waarom niet?</div>
         <div className="w-full pb-4">
@@ -144,10 +145,10 @@ export default function Blog() {
           zijn er. nog niet heel veel best practices, of überhaupt practices,
           die we kunnen delen. Wat bekend is, staat in Circulaw. Als er een.
           raktiikvoorbeeld is, nemen we dat in CircuLaw op (zie boven onder:
-          'Hoe blift. Circulaw up-to-date?')
+          &apos;Hoe blift. Circulaw up-to-date?&apos;)
         </div>
         <div className="w-full pb-4 text-2xl font-bold ">
-          CircuLaw staat vol 'maatregelen',. Wat zijn dat precies?
+          CircuLaw staat vol &apos;maatregelen&apos;,. Wat zijn dat precies?
         </div>
         <div className="w-full pb-4">
           Een maatregel is een juridisch instrument waarmee overheden en
@@ -163,16 +164,16 @@ export default function Blog() {
         </div>
         <div className="w-full pb-4">
           Nee, dat kan niet. Als je als beleidsmaker een maatregel leest waarvan
-          je je afvraagt of 'ie interessant of relevant zou kunnen zijn voor
-          jouw gemeente, is het de bedoeling dat je een jurist of juridische
-          afdeling binnen de gemeente raadpleegt. Samen kunnen jullie kijken hoe
-          en of jouw gemeente lets met de maatregel kan doen. Een voorbeeld: je
-          leest over de MilieuPrestatie Gebouwen en vraagt je af of daar in jouw
-          gemeente al iets mee gedaan wordt. Dan klop je aan bij de afdeling
-          Ruimte & Duurzaamheid om te bespreken of jullie als gemeente een
-          maatwerkregel in kunnen stellen om de MPG te verlagen, en zo ja, in
-          welk gebied precies. Daarna kunnen trajecten en acties in werking
-          worden gezet.
+          je je afvraagt of &apos;ie interessant of relevant zou kunnen zijn
+          voor jouw gemeente, is het de bedoeling dat je een jurist of
+          juridische afdeling binnen de gemeente raadpleegt. Samen kunnen jullie
+          kijken hoe en of jouw gemeente lets met de maatregel kan doen. Een
+          voorbeeld: je leest over de MilieuPrestatie Gebouwen en vraagt je af
+          of daar in jouw gemeente al iets mee gedaan wordt. Dan klop je aan bij
+          de afdeling Ruimte & Duurzaamheid om te bespreken of jullie als
+          gemeente een maatwerkregel in kunnen stellen om de MPG te verlagen, en
+          zo ja, in welk gebied precies. Daarna kunnen trajecten en acties in
+          werking worden gezet.
         </div>
         <div className="w-full pb-4 text-2xl font-bold ">
           Kunnen maatregelen in elke gemeente op dezelfde manier worden.
@@ -208,8 +209,9 @@ export default function Blog() {
           altijd accuraat.
         </div>
         <div className="w-full pb-4 text-2xl font-bold ">
-          Men spreekt steeds over de 'circulaire economie' die Nederland in 2050
-          moet ziin. Hoe ziet zo'n circulaire economie er eigenlijk precies uit?
+          Men spreekt steeds over de &apos;circulaire economie&apos; die
+          Nederland in 2050 moet ziin. Hoe ziet zo&apos;n circulaire economie er
+          eigenlijk precies uit?
         </div>
         <div className="w-full pb-4">
           Een circulaire economie is een economie waarin geen nieuwe
@@ -222,7 +224,7 @@ export default function Blog() {
         <div className="w-full pb-4 text-2xl font-bold ">
           Waarom probeert CircuLaw beleid aan te passen op bestaande wetten?
           Waarom niet andersom? Met andere wooden: waarom passen we niet
-          'gewoon' de wet aan naar een meer circulaire variant?
+          &apos;gewoon&apos; de wet aan naar een meer circulaire variant?
         </div>
         <div className="w-full pb-4">
           Gemeenten en provincies kunnen wel hun eigen regelgeving aanpassen,
@@ -243,7 +245,7 @@ export default function Blog() {
         </div>
         <div className="w-full pb-4 text-2xl font-bold ">
           Op dit moment zoomt CircuLaw in op twee cases: houtbouw en circulaire
-          windturbines. Waarom hebben we juist voor die thema's gekozen?
+          windturbines. Waarom hebben we juist voor die thema&apos;s gekozen?
         </div>
         <div className="w-full pb-4">
           Over houtbouw is al best veel bekend. Vrij veel gemeenten
@@ -298,10 +300,11 @@ export default function Blog() {
           Die garantie is er zeker. In onze uitleg van de maatregelen doen we
           niets anders dan vertellen wat er in de wet staat. Met dank aan ons
           team van juristen die alle wetten en maatregelen uitpluizen. De crux
-          zit 'm in de creatieve toepassing van verschillende. maatregelen._
-          Door kennis over circulariteit en de toepassing van wetgeving te
-          combineren, komen we tot inventieve oplossingen en suggesties. Zonder
-          daarbij.afbreuk te doen. aan.de juridische houdbaarheid
+          zit &apos;m in de creatieve toepassing van verschillende.
+          maatregelen._ Door kennis over circulariteit en de toepassing van
+          wetgeving te combineren, komen we tot inventieve oplossingen en
+          suggesties. Zonder daarbij.afbreuk te doen. aan.de juridische
+          houdbaarheid
         </div>
         <div className="w-full pb-4 text-2xl font-bold ">
           Wie zitten er achter de ontwikkeling van Circulaw?
@@ -318,19 +321,19 @@ export default function Blog() {
         </div>
         <div className="w-full pb-4">
           Fen team van onder meer circulaire experts, beleidsmakers, juristen,
-          strategisch ontwerpers, UX'ers, developers en copvwriters. Aan het
-          roer van dit cross-disciplinaire. team staan het CTO Innovatieteam van
-          Gemeente Amsterdam en Dark Matter Labs.
+          strategisch ontwerpers, UX&apos;ers, developers en copvwriters. Aan
+          het roer van dit cross-disciplinaire. team staan het CTO Innovatieteam
+          van Gemeente Amsterdam en Dark Matter Labs.
         </div>
 
         <div className="w-full pb-4 text-2xl font-bold ">
           Wanneer is CircuLaw af?
         </div>
         <div className="w-full pb-4">
-          Het juiste antwoord is 'nooit'. Circul aw wordt immers continu
-          up-to-date gehouden met nieuwe (juridische) ontwikkelingen en
+          Het juiste antwoord is &apos;nooit&apos;. Circul aw wordt immers
+          continu up-to-date gehouden met nieuwe (juridische) ontwikkelingen en
           praktijkvoorbeelden. Find 2022 hopen we een eerste. versie met een
-          drie- of viertal uitgewerkte cases te hebben. Of 'ie dan ook al_
+          drie- of viertal uitgewerkte cases te hebben. Of &apos;ie dan ook al_
           meteen door. externe gebruikers te gebruiken is, valt nog even te
           bezien. Find 2023 hopen we nog enkele cases toegevoegd te hebben en
           echt live te kunnen gaan...
