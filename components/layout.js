@@ -9,7 +9,7 @@ export default function Layout({ children }) {
   return (
     <>
       <div className="bg-indigo-600">
-        <div className="max-w-7xl mx-auto py-3  sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto p-4">
           <div className="flex items-center justify-between flex-wrap">
             <div className="w-0 flex-1 flex items-center">
               <span className="flex p-2 rounded-lg bg-indigo-800">
@@ -41,9 +41,7 @@ export default function Layout({ children }) {
       <Head>
         <title>Digitale tool Juridisch Landschap</title>
       </Head>
-      <main className="max-w-7xl mx-auto py-3  sm:px-6 lg:px-8">
-        {children}
-      </main>
+      <main className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">{children}</main>
       <Footer />
     </>
   );

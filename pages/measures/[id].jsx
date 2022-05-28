@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../components/layout";
 import IcontWood from "../../public/icons/wood.png";
+import Tooltip from "../../components/tooltip";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -224,7 +225,7 @@ export default function Law() {
             <div className="py-5">
               <div className="relative flex justify-between border-t-2 border-black">
                 <div className="font-bold	 ">Juridisch houdbaarheid</div>
-                {/* <Tooltip data={data.JuridischAfbreukrisicoToolTip} /> */}
+                <Tooltip data={data.JuridischAfbreukrisicoToolTip} />
               </div>
               <div className="mt-3 flex items-center">
                 <span className="pr-5"> LAAG</span>
