@@ -11,7 +11,7 @@ import ActionPanel from "../../components/section-action-panel";
 
 export default function Houtbouw() {
   return (
-    <Layout>
+    <Layout className="max-w-2xl">
       <div className="">Hoe CircuLaw werkt</div>
       <div className="">
         De klimaatcrisis is een van de grootste bedreigingen van onze tijd. Om
