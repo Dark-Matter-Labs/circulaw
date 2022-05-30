@@ -31,9 +31,9 @@ const navigation = {
   ],
 
   other: [
-    { name: "Hoe het werkt", href: "/hoe-het-werkt", className: "" },
-    { name: "OVER ONS", href: "/over-ons", className: "" },
-    { name: "CONTACT", href: "/contact", className: "" },
+    { name: "HOE HET WERKT", href: "/hoe-het-werkt", className: "uppercase" },
+    { name: "OVER ONS", href: "/over-ons", className: "uppercase" },
+    { name: "CONTACT", href: "/contact", className: "uppercase" },
   ],
 };
 

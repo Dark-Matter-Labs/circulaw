@@ -311,7 +311,7 @@ export default function Houtbouw() {
           </div>
         </div>
 
-        <div className="flex border-2">
+        <div className="flex border-2 min-h-fit];">
           <div className="relative w-full md:w-1/2">
             <Image
               src={co2Hero}
