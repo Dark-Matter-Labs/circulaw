@@ -92,13 +92,13 @@ export default function ToolTips(props) {
                           R-ladder met strategieën van circulairiteit Juristen
                           hebben voor elke maatregel een inschatting gemaakt
                           binnen welke circulaire strategie deze past. R1
-                          'Refuse and rethink' is heel circulair, R6 'Recover'
-                          veel minder. Zo scoort je eigen bioplastic bakje
-                          meenemen naar een afhaalrestaurant R1, terwij) glas
-                          recyclen met een R5-score aanzienlijk minder
-                          circulaire impact heft. Geen nieuwe schoenen kopen
-                          scoort R1, tegenover het recyclen van je schoenen
-                          waarvoor een waarde van R5 staat.
+                          &apos;Refuse and rethink&apos; is heel circulair, R6
+                          &apos;Recover&apos; veel minder. Zo scoort je eigen
+                          bioplastic bakje meenemen naar een afhaalrestaurant
+                          R1, terwij) glas recyclen met een R5-score aanzienlijk
+                          minder circulaire impact heft. Geen nieuwe schoenen
+                          kopen scoort R1, tegenover het recyclen van je
+                          schoenen waarvoor een waarde van R5 staat.
                           <div className="">
                             <Image src={R1} alt="Picture of the author" />
                           </div>
