@@ -2,6 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../components/layout";
 
+import HCW1 from "../../public/hcw-1.png";
+import HCW2 from "../../public/hcw-2.png";
+import HCW3 from "../../public/hcw-3.png";
+import HCW4 from "../../public/hcw-4.png";
+
 export default function Kunststoffen() {
   return (
     <Layout>
@@ -27,15 +32,9 @@ export default function Kunststoffen() {
         </div>
 
         <div className="">
-          Image
-          {/* <Image
-            src="me.png"
-            alt="Picture of the author"
-            width={500}
-            height={500}
-          /> */}
+          <Image src={HCW1} alt="Picture of the author" />
         </div>
-        <div className="">
+        <div className="py-9">
           <ul className="pl-6 list-disc">
             <li>
               Samen met verschillende Nederlandse rechtenuniversiteiten
@@ -55,14 +54,8 @@ export default function Kunststoffen() {
           </ul>
         </div>
         <div className="text-xl font-bold">Verken de maatregelen</div>
-        <div className="">
-          Image
-          {/* <Image
-            src="me.png"
-            alt="Picture of the author"
-            width={500}
-            height={500}
-          /> */}
+        <div className="py-9">
+          <Image src={HCW2} alt="Picture of the author" />
         </div>
 
         <div className="">
@@ -75,18 +68,14 @@ export default function Kunststoffen() {
           bevorderen. In de toekomst volgen meer thema’s.
         </div>
 
-        <div className="text-xl font-bold">Verdiep je in de maatregelen</div>
+        <div className="text-xl font-bold py-9">
+          Verdiep je in de maatregelen
+        </div>
         <div className="">
-          Image
-          {/* <Image
-    src="me.png"
-    alt="Picture of the author"
-    width={500}
-    height={500}
-  /> */}
+          <Image src={HCW3} alt="Picture of the author" />
         </div>
 
-        <div className="">
+        <div className="py-9">
           Een maatregel is een juridisch instrument waarmee overheden een
           beleidsdoel kunnen vormgeven en behalen. Voorbeelden van maatregelen
           zijn subsidies, vergunningen of belastingen of.... Een maatregel in
@@ -116,16 +105,10 @@ export default function Kunststoffen() {
           Pas de maatregelen toe in nieuw, circulair beleid
         </div>
         <div className="">
-          Image
-          {/* <Image
-    src="me.png"
-    alt="Picture of the author"
-    width={500}
-    height={500}
-  /> */}
+          <Image src={HCW4} alt="Picture of the author" />
         </div>
 
-        <div className="">
+        <div className="py-9">
           Vind je als beleidsmaker een maatregel in CircuLaw waarvan je je
           afvraagt of ‘ie interessant of relevant zou kunnen zijn voor jouw
           gemeente of provincie? Dan daagt CircuLaw je uit:
@@ -139,7 +122,7 @@ export default function Kunststoffen() {
           </ul>
         </div>
 
-        <div className="p-4 bg-[#dbedfb] ">
+        <div className="py-9 p-4 bg-[#dbedfb]">
           <div className="font-bold">Een voorbeeld:</div>
 
           <ul className="pl-6 list-disc">
@@ -157,14 +140,14 @@ export default function Kunststoffen() {
             <li>Daarna onderneem je actie om het voor elkaar te krijgen.</li>
           </ul>
         </div>
-        <div className="font-bold">Let op:</div>
+        <div className="font-bold py-9">Let op:</div>
 
         <div className="italic">
           De maatregelen kun je in de praktijk nit allemaal één-op-één overnemen
           of toepassen: sommige maatregelen zijn zelfs nog niet eerder toegepast
           en vragen om een innovative aanpak!
         </div>
-        <div className="">Meer weten over CircuLaw in Vraag & Antwoord</div>
+        <div className="py-9">Meer weten over CircuLaw in Vraag & Antwoord</div>
         <div className="">Draag bij!</div>
         <div className="">
           Wil je zelf bijdragen aan de ontwikkeling van CircuLaw? Dat kan! Wij

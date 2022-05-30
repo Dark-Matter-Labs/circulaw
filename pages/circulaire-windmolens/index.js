@@ -1,284 +1,415 @@
-import { useState, useEffect, useRef } from "react";
-import useSWR from "swr";
+import Image from "next/image";
 import Link from "next/link";
-import createPersistedState from "use-persisted-state";
-import {
-  wettelijk_bevoegdheidsniveau,
-  rechtsgebied,
-  subrechtsgebied,
-  juridische_houdbaarheid,
-  r_ladder,
-} from "../../dataFilterExample";
+import { useEffect } from "react";
+import Layout from "../../components/layout";
+import PolicyList from "../../components/policy-list";
+import ActionPanel from "../../components/section-action-panel";
 
-import Layout from "/components/layout";
-import SearchFilter from "/components/search-filter";
-import PolicyList from "/components/policy-list";
+import WindIcon from "../../public/icons/wind.png";
+import CollectionIcon from "../../public/icons/collection.png";
+import HoutbouwHero from "../../public/houtbouwHero.png";
+import co2Hero from "../../public/illustration-co2.png";
 
-const fetcher = async (url) => {
-  const res = await fetch(url);
-  const data = await res.json();
+const laws = [
+  {
+    id: "0",
+    artikel: "2.11",
+    circulair: true,
+    titel: "Omgevingswaarden in het omgevingsplan: meer houtbouw, minder CO2",
+    kop_1_samenvatting_juridische_maatregel:
+      "Wat zijn omgevingswaarden en welk doel hebben ze?",
+    introductie_juridische_maatregel:
+      "Omgevingswaarden zijn instrumenten uit de Omgevingswet die gemeenten kunnen inzetten om beleid uit de gemeentelijke omgevingsvisie uit te voeren. Het doel van omgevingswaarden is om een veilige en gezonde fysieke leefomgeving te creëren. Als de omgevingswaarden in een gebied behaald zijn, zijn activiteiten die de waarde verder verhogen, niet meer toegestaan.",
+    kop_2_toepassing_juridische_maatregel:
+      "Hoe kan de inzet van omgevingswaarden de circulaire transitie versnellen?",
+    toepassing_juridische_maatregel:
+      "Door omgevingswaarden in het omgevingsplan op te nemen, kunnen gemeenten voor bepaalde plangebieden strengere eisen stellen. Een omgevingswaarde kan onder meer bepalen dat in een bepaald gebied niet meer CO2 uitgestoten mag worden. Bosbouw en houtproductie verlagen de hoeveelheid CO2 in de lucht. Zo creëert de omgevingswaarde ruimte voor bosbouw en houtproductie, dat voor houtbouw gebruikt kan worden.",
+    is_er_een_praktijk_voorbeeld: false,
+    kop_3_uit_de_praktijk: "Uit de praktijk",
+    uit_de_praktijk: "",
+    voorbeeld_link_teks: "",
+    voorbeeld_link: "",
+    afbeelding_van_voorbeeld_link: "",
+    kop_4_eisen_en_beperkingen: "Omgevingswaarden: eisen en beperkingen",
+    eisen_en_beperkingen:
+      "- Een omgevingswaarde moet objectief vast te stellen en meetbaar zijn;. \n- Omgevingswaarden zijn alleen zinvol als de activiteit of handeling (bijna) volledig binnen de gemeentegrond valt;\n- Bij elke omgevingswaarde moeten helder de bevoegdheden van het college worden aangegeven. Mag het college bijvoorbeeld op basis van de omgevingswaarde het omgevingsplan wijzigen of omgevingsvergunningen afgeven waarbij van het omgevingsplan afgeweken wordt? De omgevingswaarden moeten duidelijke, bindende kaders verschaffen.",
+    kop_5_juridische_toelichting: "Juridische toelichting",
+    juridische_toelichting:
+      "Op grond van artikel 2.11 lid 1 Omgevingswet is de gemeenteraad bevoegd om omgevingswaarden vast te stellen in het omgevingsplan in de zin van artikel 2.4 Omgevingswet.",
+    juridische_houdbaarheid: 3,
+    duidelijkheid_wet: "",
+    eenlijnige_uitspraken: "",
+    literatuur: "",
+    juridische_invloed: 2,
+    bereik: "",
+    duur: "",
+    frequentie: "",
+    omvang: "",
+    europees: false,
+    nationaal: false,
+    provinciaal: false,
+    gemeentelijk: true,
+    type_beleidsinstrument: "Juridisch",
+    R1: true,
+    R2: true,
+    R3: false,
+    R4: false,
+    R5: false,
+    R6: false,
+    valt_deze_mogelijkheid_onder_een_overheidsopdracht_of_consessie_opdracht: false,
+    soort_opdracht: "",
+    waar_valt_het_onder: "",
+    kop_6_ministappenplan:
+      "Deze maatregel is nog niet in werking getreden en nog niet toegepast",
+    ministappenplan:
+      "In de toekomst vind je hier een interactieve handleiding die je meeneemt in hoe je: \n\n- met de maatregel een project vormt en hiermee met de markt mee aan de slag kan gaan\n\n- intern kunt checken of het haalbaar, realistisch en het goede moment is om de maatregel toe te passen\n\n- de maatregel kan combineren met andere juridische, financiële en faciliterende beleidsinstrumenten, om zo meer impact te maken",
+    kop_7_titel_links_ministappenplan: "",
+    titel_link_ministappenplan: "",
+    links_ministappenplan: "",
+    goed_in_combinatie_met: "",
+    rechtsgebied: "Publiekrecht",
+    subrechtsgebied: "Omgevingsrecht",
+    citeertitel: "Omgevingswet",
+    link_naar_wetsartikel: "",
+    geldend_vanaf: "Nog niet inwerking getreden",
+    type_document: "Wet in formele zin",
+    waardeketen: "Gebouwde Omgeving",
+    casus: "Houtbouw",
+  },
+  {
+    id: "1",
+    artikel: "3.1",
+    circulair: true,
+    titel: "Houtbouw een plek geven in de gemeentelijke omgevingsvisie",
+    kop_1_samenvatting_juridische_maatregel:
+      "Wat staat er in de gemeentelijke omgevingsvisie?",
+    introductie_juridische_maatregel:
+      "In de gemeentelijke omgevingsvisie beschrijft de gemeente de integrale langetermijnvisie voor de fysieke leefomgeving. De visie geeft aan welke gemeentelijke kernkwaliteiten beschermd moeten worden en wat de maatschappelijke uitdaging is. De omgevingsvisie is de basis van het te vormen omgevingsbeleid en kan onder meer betrekking hebben op:\n- ruimtelijke aspecten;\n- energie-infrastructuur;\n- landbouw;\n- landschap;\n- milieu;\n- natuur;\n- water.",
+    kop_2_toepassing_juridische_maatregel:
+      "Hoe kan de gemeentelijke omgevingsvisie houtbouw bevorderen?",
+    toepassing_juridische_maatregel:
+      "Door houtbouw in de gemeentelijk omgevingsvisie op te nemen, wordt het onderdeel van de beleidscyclus van de Omgevingswet. Dat maakt het mogelijk om later in de beleidscyclus houtbouw op de agenda te zetten. Vanuit de omgevingsvisie komen andere maatregelen – zoals omgevingsvergunningen, een omgevingsplan of omgevingswaarden – voort. Die kunnen vervolgens ingezet worden om houtbouw te stimuleren of af te dwingen.",
+    is_er_een_praktijk_voorbeeld: true,
+    kop_3_uit_de_praktijk: "Uit de praktijk",
+    uit_de_praktijk:
+      "De gemeente Amsterdam heeft houtbouw opgenomen in haar omgevingsplan. Op pagina 176  en 203 vind je er meer over terug.",
+    voorbeeld_link_teks: "link text",
+    voorbeeld_link: "https://amsterdam2050.nl/",
+    afbeelding_van_voorbeeld_link: "",
+    kop_4_eisen_en_beperkingen:
+      "Gemeentelijke omgevingsvisie: eisen en beperkingen",
+    eisen_en_beperkingen:
+      "De omgevingsvisie is zelfbindend voor het bestuursorgaan dat het heeft opgesteld. De visie geldt dus niet voor burgers, bedrijven of andere overheden. Ook betekent het dat er geen bezwaar en beroep tegen de visie mogelijk is. Wel mag iedereen in de voorbereiding van de omgevingsvisie zienswijzen naar voren brengen.",
+    kop_5_juridische_toelichting: "Juridische toelichting",
+    juridische_toelichting:
+      "Op grond van artikel 3.1 lid 1 Omgevingswet kan een gemeentelijke omgevingsvisie worden vastgesteld.",
+    juridische_houdbaarheid: 5,
+    duidelijkheid_wet: "",
+    eenlijnige_uitspraken: "",
+    literatuur: "",
+    juridische_invloed: 3,
+    bereik: "",
+    duur: "",
+    frequentie: "",
+    omvang: "",
+    europees: false,
+    nationaal: false,
+    provinciaal: false,
+    gemeentelijk: true,
+    type_beleidsinstrument: "Juridisch",
+    R1: true,
+    R2: true,
+    R3: false,
+    R4: false,
+    R5: false,
+    R6: false,
+    valt_deze_mogelijkheid_onder_een_overheidsopdracht_of_consessie_opdracht: false,
+    soort_opdracht: "",
+    waar_valt_het_onder: "",
+    kop_6_ministappenplan: "Zelf houtbouw een plek geven in de omgevingsvisie?",
+    ministappenplan:
+      "In de toekomst vind je hier een stappenplan om houtbouw op te nemen in de omgevingsvisie",
+    kop_7_titel_links_ministappenplan: "",
+    titel_link_ministappenplan: "",
+    links_ministappenplan: "",
+    goed_in_combinatie_met: "",
+    rechtsgebied: "Publiekrecht",
+    subrechtsgebied: "Omgevingsrecht",
+    citeertitel: "Omgevingswet",
+    link_naar_wetsartikel: "",
+    geldend_vanaf: "Nog niet inwerking getreden",
+    type_document: "Wet in formele zin",
+    waardeketen: "Gebouwde Omgeving",
+    casus: "Houtbouw",
+  },
+  {
+    id: "2",
+    artikel: "4.159",
+    circulair: true,
+    titel: "Hoe een maatwerkregel over de MPG houtbouw kan stimuleren",
+    kop_1_samenvatting_juridische_maatregel: "Wat zijn maatwerkregels?",
+    introductie_juridische_maatregel:
+      "Maatwerkregels zijn instrumenten waarmee de gemeente aanvullende regels kan stellen. Een algemene regel van het Rijk of de provincie is de basis; de maatwerkregel is een lokale uitwerking of aanscherping ervan. Maatwerkregels kunnen over verschillende onderwerpen gaan, waaronder de MilieuPrestatie Gebouwen (MPG).",
+    kop_2_toepassing_juridische_maatregel:
+      "Hoe kan een maatwerkregel over de MPG houtbouw stimuleren?",
+    toepassing_juridische_maatregel:
+      "De MPG is een objectieve maatstaf voor de duurzaamheid van een gebouw. Het geeft aan hoe milieubelastend de materialen zijn die in een gebouw zijn gebruikt. Specifiek gaat het om nieuwbouwwoningen en kantoorgebouwen. Hoe duurzamer het gebruikte materiaal, hoe lager de milieuprestatie van het gebouw, des te minder het milieu belast wordt. Dankzij de duurzaamheid van hout leidt houtbouw tot een lage MPG. Door in een bepaald gebied de MPG te verlagen, moedigt de gemeente houtbouw aan.",
+    is_er_een_praktijk_voorbeeld: false,
+    kop_3_uit_de_praktijk: "Uit de praktijk",
+    uit_de_praktijk: "",
+    voorbeeld_link_teks: "",
+    voorbeeld_link: "",
+    afbeelding_van_voorbeeld_link: "",
+    kop_4_eisen_en_beperkingen: "Eisen aan en beperkingen van maatwerkregels",
+    eisen_en_beperkingen:
+      "- Maatwerkregels van de gemeente worden altijd in het omgevingsplan opgenomen;\n- Decentrale bestuursorganen mogen alleen maatwerkregels vaststellen mits zij daarvoor toestemming hebben van een hoger bestuursorgaan;\n- De huidige MPG is wettelijk vastgesteld op 0,8;\n- Een maatwerkregel over de MPG kan alleen worden vastgesteld voor nieuwbouwwoningen of voor kantoorgebouwen groter dan 100 m²;\n- Maatwerkregels moeten altijd een beleidsdoel dienen, zoals het bevorderen van de fysieke leefomgeving of verbeteren van de veiligheid.",
+    kop_5_juridische_toelichting: "Juridische toelichting",
+    juridische_toelichting:
+      "Op grond van artikel 4.7 Ow kunnen maatwerkregels worden vastgesteld op o.a. artikel 4.159 Ow.",
+    juridische_houdbaarheid: 5,
+    duidelijkheid_wet: "",
+    eenlijnige_uitspraken: "",
+    literatuur: "",
+    juridische_invloed: 3,
+    bereik: "",
+    duur: "",
+    frequentie: "",
+    omvang: "",
+    europees: false,
+    nationaal: false,
+    provinciaal: false,
+    gemeentelijk: true,
+    type_beleidsinstrument: "Juridisch",
+    R1: false,
+    R2: true,
+    R3: false,
+    R4: false,
+    R5: false,
+    R6: false,
+    valt_deze_mogelijkheid_onder_een_overheidsopdracht_of_consessie_opdracht: false,
+    soort_opdracht: "",
+    waar_valt_het_onder: "",
+    kop_6_ministappenplan:
+      "Deze maatregel is nog niet in werking getreden en nog niet toegepast",
+    ministappenplan:
+      "In de toekomst vind je hier een interactieve handleiding die je meeneemt in hoe je: \n- met de maatregel een project vormt en hiermee met de markt mee aan de slag kan gaan\n- intern kunt checken of het haalbaar, realistisch en het goede moment is om de maatregel toe te passen\n- de maatregel kan combineren met andere juridische, financiële en faciliterende beleidsinstrumenten, om zo meer impact te maken",
+    kop_7_titel_links_ministappenplan: "",
+    titel_link_ministappenplan: "",
+    links_ministappenplan:
+      "https://iplo.nl/regelgeving/regels-voor-activiteiten/technische-bouwactiviteit/rijksregels-bouwactiviteit/milieuprestatie-bbl/ \n\nhttps://www.metropoolregioamsterdam.nl/wp-content/uploads/2021/10/Convenant-Green-Deal-Houtbouw.pdf",
+    goed_in_combinatie_met: "",
+    rechtsgebied: "Publiekrecht",
+    subrechtsgebied: "Omgevingsrecht",
+    citeertitel: "Omgevingswet",
+    link_naar_wetsartikel: "",
+    geldend_vanaf: "Nog niet inwerking getreden",
+    type_document: "AMvB",
+    waardeketen: "Gebouwde Omgeving",
+    casus: "Houtbouw",
+  },
+];
+const collecties = [
+  {
+    icon: "",
+    id: 0,
+    title: "Lorem ipsum dolor sit",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    icon: "",
+    id: 1,
+    title: "Lorem ipsum dolor sit",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+  },
+  {
+    icon: "",
+    id: 2,
+    title: "Lorem ipsum dolor sit",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+  },
+  {
+    icon: "",
+    id: 3,
+    title: "Lorem ipsum dolor sit",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+  },
+  {
+    icon: "",
+    id: 4,
+    title: "Lorem ipsum dolor sit",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+  },
+];
 
-  if (res.status !== 200) {
-    throw new Error(data.message);
-  }
-  return data;
-};
-
-//creating objects for persisting values
-const useSelectedState = createPersistedState("selected");
-
-export default function Measures() {
-  const { data, error } = useSWR(() => `/api/laws/`, fetcher);
-
-  //creating references to access child component functions
-  const wettelijkFilterRef = useRef();
-  const rechtsgebiedFilterRef = useRef();
-  const subrechtsgebiedFilterRef = useRef();
-  const rLadderFilterRef = useRef();
-  const juridischeFilterRef = useRef();
-
-  const [laws, setLaws] = useState(data);
-  const [selected, setSelected] = useSelectedState({
-    wettelijk_bevoegdheidsniveau: [],
-    rechtsgebied: [],
-    subrechtsgebied: [],
-    r_ladder: [],
-    juridische_houdbaarheid: [],
-  });
-
-  const [numberOfLaws, setNumberOfLaws] = useState(67);
-
-  const handleFilters = (checkboxState, key) => {
-    const newFilters = { ...selected };
-    newFilters[key] = checkboxState;
-    setSelected(newFilters);
-  };
-
-  const reset = () => {
-    setSelected({
-      wettelijk_bevoegdheidsniveau: [],
-      rechtsgebied: [],
-      subrechtsgebied: [],
-      r_ladder: [],
-      juridische_houdbaarheid: [],
-    });
-
-    wettelijkFilterRef.current.reset();
-    rechtsgebiedFilterRef.current.reset();
-    subrechtsgebiedFilterRef.current.reset();
-    rLadderFilterRef.current.reset();
-    juridischeFilterRef.current.reset();
-  };
-
-  //effect to check for filtering and update data
+export default function CirculaireWindmolens() {
   useEffect(() => {
-    //added check for data to have been retrieved here
-    if (data) {
-      let filteredLaws = data;
-
-      filteredLaws = filteredLaws.filter((element) => {
-        return element.casus === "Circulaire windmolens";
-      });
-
-      if (selected.wettelijk_bevoegdheidsniveau.length > 0) {
-        if (selected.wettelijk_bevoegdheidsniveau.includes("europees")) {
-          filteredLaws = filteredLaws.filter((element) => {
-            return element.europees;
-          });
-        }
-        if (selected.wettelijk_bevoegdheidsniveau.includes("nationaal")) {
-          filteredLaws = filteredLaws.filter((element) => {
-            return element.nationaal;
-          });
-        }
-        if (selected.wettelijk_bevoegdheidsniveau.includes("provinciaal")) {
-          filteredLaws = filteredLaws.filter((element) => {
-            return element.provinciaal;
-          });
-        }
-        if (selected.wettelijk_bevoegdheidsniveau.includes("gemeentelijk")) {
-          filteredLaws = filteredLaws.filter((element) => {
-            return element.gemeentelijk;
-          });
-        }
-      }
-
-      if (selected.r_ladder.length > 0) {
-        if (selected.r_ladder.includes("R1")) {
-          filteredLaws = filteredLaws.filter((element) => {
-            return element.R1;
-          });
-        }
-        if (selected.r_ladder.includes("R2")) {
-          filteredLaws = filteredLaws.filter((element) => {
-            return element.R2;
-          });
-        }
-        if (selected.r_ladder.includes("R3")) {
-          filteredLaws = filteredLaws.filter((element) => {
-            return element.R3;
-          });
-        }
-        if (selected.r_ladder.includes("R4")) {
-          filteredLaws = filteredLaws.filter((element) => {
-            return element.R4;
-          });
-        }
-        if (selected.r_ladder.includes("R5")) {
-          filteredLaws = filteredLaws.filter((element) => {
-            return element.R5;
-          });
-        }
-        if (selected.r_ladder.includes("R6")) {
-          filteredLaws = filteredLaws.filter((element) => {
-            return element.R6;
-          });
-        }
-      }
-
-      if (selected.rechtsgebied.length > 0) {
-        filteredLaws = filteredLaws.filter((element) => {
-          return selected.rechtsgebied.includes(element.rechtsgebied);
-        });
-      }
-
-      if (selected.juridische_houdbaarheid.length > 0) {
-        filteredLaws = filteredLaws.filter((element) => {
-          return selected.juridische_houdbaarheid.includes(
-            element.juridische_houdbaarheid
-          );
-        });
-      }
-
-      if (selected.subrechtsgebied.length > 0) {
-        filteredLaws = filteredLaws.filter((element) => {
-          return selected.subrechtsgebied.includes(element.subrechtsgebied);
-        });
-      }
-
-      setLaws(filteredLaws);
-      setNumberOfLaws(filteredLaws.length);
-    }
-  }, [data, selected]);
-
-  //effect to check for data from persisted state from localStorage and update values when needed
-  useEffect(() => {
-    if (
-      selected.wettelijk_bevoegdheidsniveau.length !== 0 &&
-      typeof wettelijkFilterRef.current !== "undefined"
-    ) {
-      wettelijkFilterRef.current.set(selected.wettelijk_bevoegdheidsniveau);
-    }
-
-    if (
-      selected.rechtsgebied.length !== 0 &&
-      typeof rechtsgebiedFilterRef.current !== "undefined"
-    ) {
-      rechtsgebiedFilterRef.current.set(selected.rechtsgebied);
-    }
-
-    if (
-      selected.subrechtsgebied.length !== 0 &&
-      typeof subrechtsgebiedFilterRef.current !== "undefined"
-    ) {
-      subrechtsgebiedFilterRef.current.set(selected.subrechtsgebied);
-    }
-
-    if (
-      selected.r_ladder.length !== 0 &&
-      typeof rLadderFilterRef.current !== "undefined"
-    ) {
-      rLadderFilterRef.current.set(selected.r_ladder);
-    }
-
-    if (
-      selected.juridische_houdbaarheid.length !== 0 &&
-      typeof juridischeFilterRef.current !== "undefined"
-    ) {
-      juridischeFilterRef.current.set(selected.juridische_houdbaarheid);
-    }
+    localStorage.clear();
   });
-
   return (
     <Layout>
-      <div className="w-full mt-10 ">
-        <div className="block">
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-          <span className=""> → </span>
-          <Link href="/gebouwde-omgeving">
-            <a>Gebouwde omgeving</a>
-          </Link>
-          <span className=""> → </span>
-          <Link href="/houtbouw">
-            <a> Circulaire windmolens </a>
-          </Link>
+      <div className="text-sm pb-9 pt-9 text-[#4099DA]">
+        <Link href="/">
+          <a>Home</a>
+        </Link>
+        <span className="px-1"> </span>
+
+        {/*<span className="px-1"> →  </span>
+         <Link href="/">
+          <a>Gebouwde omgeving</a>
+        </Link> 
+        <span className="px-1"> → </span>*/}
+      </div>
+      <div className="pb-14 pt-14">
+        <div className="pr-4 inline-block">
+          <Image src={WindIcon} alt="Icon of Wood" width={48} />
+        </div>
+        <div className="text-3xl font-bold inline-block">
+          Circulaire Windmolens
         </div>
       </div>
-      <div className="w-full border-b-2 py-4 mt-10 ">
-        <div className="block my-4">
-          <span className="font-bold">{numberOfLaws}</span> maatregelen gevonden
-        </div>
-      </div>
-      <div className="flex ">
-        <div className="p-3 my-10">
-          <h2 className="block text-4xl mb-20">Circulaire Windmolens</h2>
-          <div className=" flex justify-between pb-3 border-b border-black mb-3">
-            <span className="text-lg">Verfijnen</span>{" "}
-            <span onClick={reset} className="underline blue">
-              Wis filters
-            </span>
+      <div>
+        <div className="flex border-2 mb-4">
+          <div className="w-full md:w-1/2 p-4">
+            <div className="py-8">
+              <div className="text-lg font-bold pb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+              <div className="pb-4">
+                <ul className="list-disc pl-5">
+                  <li className="text-sm">
+                    <Link href="/meer-over-de-voordelen-van-houtbouw">
+                      <a>consectetur adipiscing elit</a>
+                    </Link>
+                  </li>
+                  <li className="text-sm">consectetur adipiscing elit,</li>
+                  <li className="text-sm">
+                    Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua.
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-[#4099DA] text-white py-2 px-4 rounded max-w-max">
+                <Link href="/measures/windmolens">
+                  <a className="">Verken alle maatregelen voor windmolens →</a>
+                </Link>
+              </div>{" "}
+            </div>
           </div>
-          <SearchFilter
-            ref={wettelijkFilterRef}
-            title="Bevoegdheidsniveau"
-            list={wettelijk_bevoegdheidsniveau}
-            handleFilters={(checkboxState) =>
-              handleFilters(checkboxState, "wettelijk_bevoegdheidsniveau")
-            }
-          />
-          <SearchFilter
-            ref={rechtsgebiedFilterRef}
-            title="Rechtsgebied"
-            list={rechtsgebied}
-            handleFilters={(checkboxState) =>
-              handleFilters(checkboxState, "rechtsgebied")
-            }
-          />
-          <SearchFilter
-            ref={rLadderFilterRef}
-            title="R - ladder"
-            list={r_ladder}
-            handleFilters={(checkboxState) =>
-              handleFilters(checkboxState, "r_ladder")
-            }
-          />
-          <SearchFilter
-            ref={juridischeFilterRef}
-            title="Juridische houdbaarheid"
-            list={juridische_houdbaarheid}
-            handleFilters={(checkboxState) =>
-              handleFilters(checkboxState, "juridische_houdbaarheid")
-            }
-          />
-          <SearchFilter
-            ref={subrechtsgebiedFilterRef}
-            title="Subrechtsgebied"
-            list={subrechtsgebied}
-            handleFilters={(checkboxState) =>
-              handleFilters(checkboxState, "subrechtsgebied")
-            }
-          />
+          <div className="relative w-full md:w-1/2 ">
+            <Image
+              src={HoutbouwHero}
+              alt="Icon of Wood"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
         </div>
 
-        <div className="p-3 mt-10 ml-10">
-          {data && (
-            <div className="">
-              <PolicyList data={laws} />
+        <div className="flex border-2">
+          <div className="relative w-full md:w-1/2">
+            <Image
+              src={co2Hero}
+              alt="Icon of Wood"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
+
+          <div className="w-full md:w-1/2 p-4">
+            <div className="py-8">
+              <div className="text-lg font-bold pb-4">Lorem ipsum</div>
+              <div className="text-sm ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
             </div>
-          )}
+            <div className="pb-4">
+              <Link href="/meer-over-de-voordelen-van-houtbouw">
+                <a className="text-[#4099DA]">
+                  Meer over de voordelen van houtbouw →
+                </a>
+              </Link>
+            </div>
+          </div>
         </div>
+      </div>
+      <div className="pt-5">
+        <div className="pt-6">
+          <div>
+            <div className="inline-block pr-4">
+              <Image
+                src={CollectionIcon}
+                alt="Icon indocating a collection"
+                width={20}
+                height={20}
+              />
+              <div className="text-xl font-bold pl-2 py-6 inline-block">
+                COLLECTIES MAATREGELEN BINNEN HOUTBOUW
+              </div>
+            </div>
+
+            <ul
+              role="list"
+              className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 md:grid-cols-3 sm:gap-x-6 pb-9 flex flex-col justify-between"
+            >
+              {collecties.map((file) => (
+                <li key={file.id} className="static  bg-[#E6F2FA] ">
+                  <div className="w-full p-4">
+                    <div className="relative">
+                      <div className="absolute left-0 top-0 h-16 w-8 m-1">
+                        <Image src={WindIcon} alt="Picture of the author" />
+                      </div>
+
+                      <div className="absolute right-0 top-0 h-16 w-8">
+                        <Image
+                          src={CollectionIcon}
+                          alt="Icon indocating a collection"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="group static w-full p-4">
+                    <p className="mt-2 block text-md font-medium pointer-events-none pb-4">
+                      {file.title}
+                    </p>
+                    <p className="block text-sm pointer-events-none">
+                      {file.description}
+                    </p>
+                    <div className="pt-4 static">
+                      <div className=" text-sm bg-[#4099DA] text-white py-2 px-4 rounded inline-block bottom-4 max-w-max">
+                        <Link href="/measures/windmolens">
+                          <a className="">Bekijk de maatregelen →</a>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              ))}
+              <li className="relative">
+                <div className="flex w-full h-full p-4 justify-center items-center">
+                  <Link href=" meer-over-de-voordelen-van-windmolens">
+                    <a className="text-sm text-[#4099DA] ">
+                      Verken alle maatregelen voor circulaire windmolens →
+                    </a>
+                  </Link>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <ActionPanel
+          paragraph="Blijf wekelijks op de hoogte van nieuwe kansen binnen de
+        wet- en regelgeving rond de circulaire transitie"
+          buttonText="Ontvang de nieuwsbrief"
+          buttonLink="/"
+        />
       </div>
     </Layout>
   );
