@@ -295,7 +295,7 @@ export default function Houtbouw() {
                 </ul>
               </div>
               <div className="bg-[#4099DA] text-white py-2 px-4 rounded max-w-max">
-                <Link href="/measures">
+                <Link href="/laws">
                   <a className="">Verken alle maatregelen in de houtbouw →</a>
                 </Link>
               </div>{" "}
@@ -311,14 +311,13 @@ export default function Houtbouw() {
           </div>
         </div>
 
-        <div className="flex border-2">
+        <div className="flex border-2 min-h-fit];">
           <div className="relative w-full md:w-1/2">
             <Image
               src={co2Hero}
               alt="Icon of Wood"
               layout="fill"
               objectFit="contain"
-              
             />
           </div>
 
@@ -335,7 +334,7 @@ export default function Houtbouw() {
               </div>
             </div>
             <div className="pb-4">
-              <Link href="/laws">
+              <Link href="/meer-over-de-voordelen-van-houtbouw">
                 <a className="text-[#4099DA]">
                   Meer over de voordelen van houtbouw →
                 </a>

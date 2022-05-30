@@ -3,6 +3,9 @@ import { Dialog, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+
+import R1 from "../public/r1.png";
 
 export default function ToolTips(props) {
   const [open, setOpen] = useState(false);
@@ -86,68 +89,25 @@ export default function ToolTips(props) {
                       <div className="relative mt-6 flex-1 px-4 sm:px-6">
                         {/* Replace with your content */}
                         <div className="absolute inset-0 px-4 sm:px-6">
-                          {props.data === "" ? (
-                            <>
-                              De juridische invloed zegt iets over de grootte
-                              van de maatregel. Het is opgebouwd uit vier
-                              elementen:
-                              <br />
-                              <ul>
-                                <li> - Bereik</li>
-                                <li> - Duur</li>
-                                <li> - Frequentie</li>
-                                <li> - Omvang</li>
-                              </ul>
-                              <br />
-                              Elk element krijgt een eigen score tussen 1 - 5.
-                              De gemiddelden daarvan bepalen de waardering voor
-                              de juridische invloed: 1 (laag) t/m 5 (hoog).
-                            </>
-                          ) : (
-                            <>
-                              <div>
-                                <p>
-                                  Het juridisch afbreukrisico is opgebouwd uit
-                                  een analyse waar vijf elementen gewaardeerd
-                                  worden met een score tussen 1 (laag) – 5
-                                  (hoog):
-                                </p>
-                                <br />
-                                <br />
-                                <table>
-                                  <tr>
-                                    <th>Element</th>
-                                    <th>Score</th>
-                                  </tr>
-                                  <tr>
-                                    <td>De wet is redelijk duidelijk </td>
-                                    <td>2</td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                      Er is nog geen jurisprudentie beschikbaar
-                                      over de maatrege
-                                    </td>
-                                    <td>5</td>
-                                  </tr>
-                                  <tr>
-                                    <td>De maatregel is redelijk complex</td>
-                                    <td>3</td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                      De kans op schadeclaims is relatief laag
-                                    </td>
-                                    <td>2</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Niet-juridische beoordeling</td>
-                                    <td>Niet relevant</td>
-                                  </tr>
-                                </table>
-                              </div>
-                            </>
-                          )}
+                          R-ladder met strategieën van circulairiteit Juristen
+                          hebben voor elke maatregel een inschatting gemaakt
+                          binnen welke circulaire strategie deze past. R1
+                          &apos;Refuse and rethink&apos; is heel circulair, R6
+                          &apos;Recover&apos; veel minder. Zo scoort je eigen
+                          bioplastic bakje meenemen naar een afhaalrestaurant
+                          R1, terwij) glas recyclen met een R5-score aanzienlijk
+                          minder circulaire impact heft. Geen nieuwe schoenen
+                          kopen scoort R1, tegenover het recyclen van je
+                          schoenen waarvoor een waarde van R5 staat.
+                          <div className="">
+                            <Image src={R1} alt="Picture of the author" />
+                          </div>
+                          <div className="italic text-[#0088d9]">
+                            Bron: PBI1 (Planbureau voor de Leefomgeving)
+                          </div>
+                          <Link href="https://www.rvo.nl/onderwerpen/duurzaam-ondernemen/circulaire-economie/r-ladder">
+                            <a>Meer over de R ladder op de website van RVO</a>
+                          </Link>
                         </div>
                       </div>
                     </div>

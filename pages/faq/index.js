@@ -5,7 +5,7 @@ export default function Blog() {
     <Layout>
       <div className="max-w-2xl">
         <div className="flex flex-wrap ">
-          <div className="w-full text-2xl font-bold py-4">
+          <div className="w-full text-4xl font-bold py-9">
             Vragen en antwoorden over CircuLaw
           </div>
           <div className="w-full italic pb-4">
