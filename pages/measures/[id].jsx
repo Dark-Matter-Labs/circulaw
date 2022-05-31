@@ -82,32 +82,32 @@ export default function Law() {
                 <span className="block-inline font-semibold text-base text-gray-900">
                   {data.R1 && (
                     <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
-                      R1{" "}
+                      <Tooltip icon="false">R1</Tooltip>
                     </span>
                   )}
                   {data.R2 && (
                     <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
-                      R2{" "}
+                      <Tooltip icon="false">R2</Tooltip>
                     </span>
                   )}
                   {data.R3 && (
                     <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
-                      R3{" "}
+                      <Tooltip icon="false">R3</Tooltip>
                     </span>
                   )}
                   {data.R4 && (
                     <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
-                      R4{" "}
+                      <Tooltip icon="false">R4</Tooltip>
                     </span>
                   )}
                   {data.R5 && (
                     <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
-                      R5{" "}
+                      <Tooltip icon="false">R5</Tooltip>
                     </span>
                   )}
                   {data.R6 && (
                     <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
-                      R6
+                      <Tooltip icon="false">R6</Tooltip>
                     </span>
                   )}
                 </span>

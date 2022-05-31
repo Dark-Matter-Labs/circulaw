@@ -5,14 +5,12 @@ import Layout from "../../components/layout";
 import PolicyList from "../../components/policy-list";
 import ActionPanel from "../../components/section-action-panel";
 
-{
-  /* import ExampleImage from ""; */
-}
-
 export default function Houtbouw() {
   return (
     <Layout className="max-w-2xl">
-      <div className="">Hoe CircuLaw werkt</div>
+      <div className="py-9 text-3xl font-bold inline-block">
+        Hoe CircuLaw werkt
+      </div>
       <div className="">
         De klimaatcrisis is een van de grootste bedreigingen van onze tijd. Om
         (verdere) opwarming van de aarde tegen te gaan, is drastische actie
@@ -22,7 +20,7 @@ export default function Houtbouw() {
         energie om uit te vinden welke fiscaal-juridische instrumenten ze kunnen
         inzetten.
       </div>
-      <div className="">
+      <div className="py-4">
         CircuLaw lat beleidsmakers zien welke regelgeving mogeliikheden biedt om
         nieuw. ander circulair beleid te maken.
       </div>
@@ -47,14 +45,13 @@ export default function Houtbouw() {
         met kansen om &apos; Houtbouw &apos; en &apos; Circulaire windturbines
         &apos; te bevorderen. In de toekomst volgen meer thema &apos; s.
       </div>
-      <div className="">Verken de maatregelen </div>
-      <div className="">Image</div>
+      <div className="text-2xl py-9 font-bold">Verken de maatregelen </div>
       <div className="">
         Fen maatregel is een iuridisch instrument waarmee overheden een
         beleidsdoel kunnen. vormgeven en behalen. Voorbeelden van maatregelen
         ziin subsidies, vergunningen of belastingen of ...? Fen maatregel in
         Circul aw beschriift kort:
-        <ul>
+        <ul className="list-disc pl-6">
           <li>Het onderwerp waarop de maatregel betrekking heeft</li>
           <li>
             Wat de maatregel inhoudt in zo begrijpelijk mogelijke juridische
