@@ -22,12 +22,12 @@ export default function Kunststoffen() {
           en energie om uit te vinden welke fiscaal-juridische instrumenten ze
           kunnen inzetten en hoe ze deze vervolgens kunnen gebruiken.
         </div>
-        <div className="py-9 text-lg font-bold italic">
+        <div className="py-9 text-lg font-bold">
           CircuLaw laat beleidsmakers zien welke mogelijkheden in bestaande wet-
           en regelgeving aanwezig zijn om de circulaire transitie te versnellen
         </div>
 
-        <div className="text-xl font-bold">
+        <div className="text-xl font-bold pb-4">
           Wetgeving geanalyseerd en geïnventariseerd door juridische experts
         </div>
 
@@ -101,7 +101,7 @@ export default function Kunststoffen() {
           </ul>
         </div>
 
-        <div className="text-xl font-bold">
+        <div className="text-xl font-bold pb-4">
           Pas de maatregelen toe in nieuw, circulair beleid
         </div>
         <div className="">
@@ -125,7 +125,7 @@ export default function Kunststoffen() {
         <div className="py-9 p-4 bg-[#dbedfb]">
           <div className="font-bold">Een voorbeeld:</div>
 
-          <ul className="pl-6 list-disc">
+          <ul className="">
             <li>
               Je vind in CircuLaw een maatregel ‘Houtbouw een plek geven in de
               omgevingsvisie’
@@ -147,14 +147,8 @@ export default function Kunststoffen() {
           of toepassen: sommige maatregelen zijn zelfs nog niet eerder toegepast
           en vragen om een innovative aanpak!
         </div>
-        <div className="py-9">Meer weten over CircuLaw in Vraag & Antwoord</div>
-        <div className="">Draag bij!</div>
-        <div className="">
-          Wil je zelf bijdragen aan de ontwikkeling van CircuLaw? Dat kan! Wij
-          zijn altijd op zoek naar nieuwe kennis, inzichten en ideeën en
-          voorbeelden van toegepaste maatregelen in beleid zodat we het wet- en
-          regelgevingsstelsel nog beter in dienst kunnen stellen van de
-          circulaire transitie! Neem contact met ons op.
+        <div className="py-9 text-2xl text-[#4099DA]">
+          Meer weten over CircuLaw in Vraag & Antwoord
         </div>
       </div>
     </Layout>
