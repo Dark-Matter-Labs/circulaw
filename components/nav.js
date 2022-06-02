@@ -2,12 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { Fragment } from "react";
 import { Popover, Disclosure, Menu, Transition } from "@headlessui/react";
-import { MenuIcon, XIcon, SearchIcon } from "@heroicons/react/outline";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 
 import CirculawLogo from "../public/circulaw.png";
-
-SearchIcon;
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -115,16 +113,6 @@ export default function Example() {
                     </a>
                   </Link>
                 </div>
-              </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button type="button" className="p-1 rounded-full text-white">
-                  <span className="sr-only">Search</span>
-                  <Link href="/search">
-                    <a>
-                      <SearchIcon className="h-6 w-6" aria-hidden="true" />
-                    </a>
-                  </Link>
-                </button>
               </div>
             </div>
           </div>
