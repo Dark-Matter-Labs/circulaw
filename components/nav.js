@@ -2,12 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { Fragment } from "react";
 import { Popover, Disclosure, Menu, Transition } from "@headlessui/react";
-import { MenuIcon, XIcon, SearchIcon } from "@heroicons/react/outline";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 
 import CirculawLogo from "../public/circulaw.png";
-
-SearchIcon;
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -116,16 +114,6 @@ export default function Example() {
                   </Link>
                 </div>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button type="button" className="p-1 rounded-full text-white">
-                  <span className="sr-only">Search</span>
-                  <Link href="/search">
-                    <a>
-                      <SearchIcon className="h-6 w-6" aria-hidden="true" />
-                    </a>
-                  </Link>
-                </button>
-              </div>
             </div>
           </div>
           <div className="flex inset-x-0 top-0 p-5 sm:p-9 invisible sm:visible hidden sm:inline">
@@ -197,18 +185,6 @@ export default function Example() {
                           vraag & antwoord
                         </a>
                       </Link>
-                    </div>
-                  </div>
-                  <div className="w-96 inline-block absolute right-0 py-3 px-4 border-2 border-black">
-                    <div className="flex">
-                      <SearchIcon className="h-6 w-6" aria-hidden="true" />
-                      <input
-                        type="search"
-                        name="search"
-                        id="search"
-                        placeholder="Waar wil je maatregelen over vinden?"
-                        className="block w-full"
-                      />
                     </div>
                   </div>
                 </div>

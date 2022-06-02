@@ -456,7 +456,7 @@ export default function Measures() {
         <div className="p-3 mt-10 ml-10">
           {data && (
             <div className="">
-              <PolicyList data={laws} />
+              <PolicyList data={laws} casus="Houtbouw" />
             </div>
           )}
         </div>
