@@ -199,18 +199,6 @@ export default function Example() {
                       </Link>
                     </div>
                   </div>
-                  <div className="w-96 inline-block absolute right-0 py-3 px-4 border-2 border-black">
-                    <div className="flex">
-                      <SearchIcon className="h-6 w-6" aria-hidden="true" />
-                      <input
-                        type="search"
-                        name="search"
-                        id="search"
-                        placeholder="Waar wil je maatregelen over vinden?"
-                        className="block w-full"
-                      />
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
