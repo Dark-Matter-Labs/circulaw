@@ -1,7 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import Hero from "../components/section-hero";
-import LogoCloud from "../components/section-logo-cloud";
 import ActionPanel from "../components/section-action-panel";
 import Layout from "/components/layout";
 import SectionTypes from "/components/section-types-list";
