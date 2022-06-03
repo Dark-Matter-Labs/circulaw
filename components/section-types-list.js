@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Fragment } from "react";
 
-import Placeholder from "../public/placeholder.png";
 import HoutbouwHero from "../public/houtbouw-hero.png";
 import WindmolensHero from "../public/windmolens-hero.png";
 import OverigeHero from "../public/overige-hero.png";
