@@ -11,7 +11,7 @@ export default function Kunststoffen() {
   return (
     <Layout>
       <div className="max-w-2xl">
-        <div className="text-2xl font-bold py-14">Hoe CircuLaw werkt</div>
+        <div className="text-3xl font-bold py-14">Hoe CircuLaw werkt</div>
         <div className="text-xl font-bold">Waarom CircuLaw?</div>
         <div className="">
           De klimaatcrisis is een van de grootste bedreigingen van onze tijd. Om
@@ -148,7 +148,9 @@ export default function Kunststoffen() {
           en vragen om een innovative aanpak!
         </div>
         <div className="py-9 text-2xl text-[#4099DA]">
-          Meer weten over CircuLaw in Vraag & Antwoord
+          <Link href="/faq">
+            <a>Meer over CircuLaw in Vraag & Antwoord</a>
+          </Link>
         </div>
       </div>
     </Layout>
