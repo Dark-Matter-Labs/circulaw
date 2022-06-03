@@ -359,10 +359,6 @@ export default function Measures() {
             <a>Home</a>
           </Link>
           <span className=""> → </span>
-          <Link href="/gebouwde-omgeving">
-            <a>Gebouwde omgeving</a>
-          </Link>
-          <span className=""> → </span>
           <Link href="/circulaire-windmolens">
             <a> Circulaire windmolens </a>
           </Link>
@@ -378,7 +374,7 @@ export default function Measures() {
           <h2 className="block text-4xl mb-20">Circulaire windmolens</h2>
           <div className=" flex justify-between pb-3 border-b border-black mb-3">
             <span className="text-lg">Verfijnen</span>{" "}
-            <span onClick={reset} className="underline blue">
+            <span onClick={reset} className="underline blue link-hover">
               Wis filters
             </span>
           </div>
