@@ -2,7 +2,7 @@ const navigation = {
   WAARDEKETENS: [
     {
       name: "Gebouwde omgeving",
-      href: "/#",
+      href: "",
       className: "font-bold",
     },
     { name: "Houtbouw", href: "/houtbouw", className: "pl-4" },

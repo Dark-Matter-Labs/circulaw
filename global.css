@@ -43,3 +43,7 @@
 .link {
   color: #4099da;
 }
+
+.link-hover:hover {
+  cursor: pointer;
+}
