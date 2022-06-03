@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import Layout from "../../components/layout";
-import PolicyList from "../../components/policy-list";
 import ActionPanel from "../../components/section-action-panel";
 
 import WindIcon from "../../public/icons/wind.png";
@@ -330,9 +329,9 @@ export default function CirculaireWindmolens() {
               </div>
             </div>
             <div className="pb-4">
-              <Link href="/meer-over-de-voordelen-van-houtbouw">
+              <Link href="/meer-over-de-voordelen-van-windmolens">
                 <a className="text-[#4099DA]">
-                  Meer over de voordelen van houtbouw →
+                  Meer over de voordelen van windmolens →
                 </a>
               </Link>
             </div>
@@ -340,70 +339,6 @@ export default function CirculaireWindmolens() {
         </div>
       </div>
       <div className="pt-5">
-        <div className="pt-6">
-          <div>
-            <div className="inline-block pr-4">
-              <Image
-                src={CollectionIcon}
-                alt="Icon indocating a collection"
-                width={20}
-                height={20}
-              />
-              <div className="text-xl font-bold pl-2 py-6 inline-block">
-                COLLECTIES MAATREGELEN BINNEN HOUTBOUW
-              </div>
-            </div>
-
-            <ul
-              role="list"
-              className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 md:grid-cols-3 sm:gap-x-6 pb-9 flex flex-col justify-between"
-            >
-              {collecties.map((file) => (
-                <li key={file.id} className="static  bg-[#E6F2FA] ">
-                  <div className="w-full p-4">
-                    <div className="relative">
-                      <div className="absolute left-0 top-0 h-16 w-8 m-1">
-                        <Image src={WindIcon} alt="Picture of the author" />
-                      </div>
-
-                      <div className="absolute right-0 top-0 h-16 w-8">
-                        <Image
-                          src={CollectionIcon}
-                          alt="Icon indocating a collection"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="group static w-full p-4">
-                    <p className="mt-2 block text-md font-medium pointer-events-none pb-4">
-                      {file.title}
-                    </p>
-                    <p className="block text-sm pointer-events-none">
-                      {file.description}
-                    </p>
-                    <div className="pt-4 static">
-                      <div className=" text-sm bg-[#4099DA] text-white py-2 px-4 rounded inline-block bottom-4 max-w-max">
-                        <Link href="/measures/windmolens">
-                          <a className="">Bekijk de maatregelen →</a>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              ))}
-              <li className="relative">
-                <div className="flex w-full h-full p-4 justify-center items-center">
-                  <Link href=" meer-over-de-voordelen-van-windmolens">
-                    <a className="text-sm text-[#4099DA] ">
-                      Verken alle maatregelen voor circulaire windmolens →
-                    </a>
-                  </Link>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
         <ActionPanel
           paragraph="Blijf wekelijks op de hoogte van nieuwe kansen binnen de
         wet- en regelgeving rond de circulaire transitie"
