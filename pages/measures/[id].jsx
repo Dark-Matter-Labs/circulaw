@@ -6,6 +6,11 @@ import Layout from "../../components/layout";
 import IcontWood from "../../public/icons/wood.png";
 import Tooltip from "../../components/tooltip";
 
+const formatDate = (date) => {
+  let dateObject = new Date(date);
+  return dateObject.toLocaleDateString();
+};
+
 const fetcher = async (url) => {
   const res = await fetch(url);
   const data = await res.json();
@@ -174,7 +179,7 @@ export default function Law() {
                 </tr>
                 <tr className="my-10 border-b-2">
                   <td className="w-1/2">Geldig vanaf</td>
-                  <td className="w-1/2">{data.geldend_vanaf}</td>
+                  <td className="w-1/2">{formatDate(data.geldend_vanaf)}</td>
                 </tr>
                 <tr className="my-10 border-b-2">
                   <td className="w-1/2">Bevoegdheidsniveau</td>
