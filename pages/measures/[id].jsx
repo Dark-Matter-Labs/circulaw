@@ -6,6 +6,36 @@ import Layout from "../../components/layout";
 import IcontWood from "../../public/icons/wood.png";
 import Tooltip from "../../components/tooltip";
 
+const formatDate = (date) => {
+  let dateObject = new Date(date);
+  return dateObject.toLocaleDateString();
+};
+
+const checkURL = (text) => {
+  let match = text.match(
+    /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi
+  );
+
+  if (match === null) {
+    return [];
+  }
+  return match;
+};
+
+const URLReplacer = (text) => {
+  let match = text.match(
+    /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi
+  );
+  let linkFormattedText = text;
+  match.map((url) => {
+    linkFormattedText = linkFormattedText.replace(
+      url,
+      `<a class="link" href=\"` + url + '"  target="_BLANK">' + url + `</a>`
+    );
+  });
+  return linkFormattedText;
+};
+
 const fetcher = async (url) => {
   const res = await fetch(url);
   const data = await res.json();
@@ -122,14 +152,29 @@ export default function Law() {
               <p className="newlineDisplay">
                 {data.introductie_juridische_maatregel}
               </p>
+              {data.link_juridische_maatregel.length > 0 && (
+                <p className="mt-2 link">
+                  <a href={data.link_juridische_maatregel}>
+                    {data.link_juridische_maatregel}
+                  </a>
+                </p>
+              )}
             </div>
             <div className="py-4">
               <h3 className="font-bold text-xl pb-2">
                 {data.kop_2_toepassing_juridische_maatregel}
               </h3>
-              <p className=" px-5 py-5 border-2  border-black rounded ">
-                {data.toepassing_juridische_maatregel}
-              </p>
+              <div className=" px-5 py-5 border-2  border-black rounded newlineDisplay">
+                {checkURL(data.toepassing_juridische_maatregel).length > 0 ? (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: URLReplacer(data.toepassing_juridische_maatregel),
+                    }}
+                  />
+                ) : (
+                  data.toepassing_juridische_maatregel
+                )}
+              </div>
             </div>
             {data.is_er_een_praktijk_voorbeeld && (
               <div className="py-4">
@@ -174,7 +219,7 @@ export default function Law() {
                 </tr>
                 <tr className="my-10 border-b-2">
                   <td className="w-1/2">Geldig vanaf</td>
-                  <td className="w-1/2">{data.geldend_vanaf}</td>
+                  <td className="w-1/2">{formatDate(data.geldend_vanaf)}</td>
                 </tr>
                 <tr className="my-10 border-b-2">
                   <td className="w-1/2">Bevoegdheidsniveau</td>
