@@ -8,8 +8,7 @@ export const laws = [
       "Wat is concurrentiegerichte dialoog?",
     introductie_juridische_maatregel:
       "Als aanbesteder kan je kiezen uit verschillende aanbestedingsprocedures. Een van deze procedures is de concurrentiegerichte dialoog. De procedure biedt uitkomst bij behoefte aan een innovatieve oplossing. Je kan in gesprek gaan met deelnemers van de aanbestedingsprocedure om te bepalen welke middelen geschikt zijn om zo goed mogelijk aan de behoeften van de aanbestedende dienst te voldoen.",
-    link_juridische_maatregel:
-      "Als aanbesteder kan je kiezen uit verschillende aanbestedingsprocedures. Een van deze procedures is de concurrentiegerichte dialoog. De procedure biedt uitkomst bij behoefte aan een innovatieve oplossing. Je kan in gesprek gaan met deelnemers van de aanbestedingsprocedure om te bepalen welke middelen geschikt zijn om zo goed mogelijk aan de behoeften van de aanbestedende dienst te voldoen.",
+    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan de concurrentiegerichte dialoog houtbouw verbeteren?",
     toepassing_juridische_maatregel:
