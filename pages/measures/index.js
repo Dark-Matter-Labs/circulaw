@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import useSWR from "swr";
+import Image from "next/image";
 import Link from "next/link";
 import createPersistedState from "use-persisted-state";
+import { SearchIcon } from "@heroicons/react/outline";
 import {
   wettelijk_bevoegdheidsniveau,
   rechtsgebied,
@@ -13,6 +15,7 @@ import {
 import Layout from "/components/layout";
 import SearchFilter from "/components/search-filter";
 import PolicyList from "/components/policy-list";
+import IconWood from "../../public/icons/wood.png";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -46,7 +49,7 @@ export default function Measures() {
     juridische_houdbaarheid: [],
   });
 
-  const [numberOfLaws, setNumberOfLaws] = useState(8);
+  const [numberOfLaws, setNumberOfLaws] = useState(46);
 
   //dynamic filter numbers
   const [numberOfEuropees, setNumberOfEuropee] = useState(0);
@@ -77,6 +80,8 @@ export default function Measures() {
   const [numberOfCont, setNumberOfCont] = useState(0);
   const [numberOfGron, setNumberOfGron] = useState(0);
 
+  const [searchValue, setSearchValue] = useState("");
+
   const handleFilters = (checkboxState, key) => {
     const newFilters = { ...selected };
     newFilters[key] = checkboxState;
@@ -97,6 +102,8 @@ export default function Measures() {
     subrechtsgebiedFilterRef.current.reset();
     rLadderFilterRef.current.reset();
     juridischeFilterRef.current.reset();
+
+    setSearchValue("");
   };
 
   //effect to check for filtering and update data
@@ -213,6 +220,22 @@ export default function Measures() {
         });
       }
 
+      filteredLaws = filteredLaws.filter((element) => {
+        const searchContent =
+          element.titel +
+          element.introductie_juridische_maatregel +
+          element.eisen_en_beperkingen +
+          element.kop_1_samenvatting_juridische_maatregel +
+          element.kop_2_toepassing_juridische_maatregel +
+          element.toepassing_juridische_maatregel +
+          element.kop_3_uit_de_praktijk +
+          element.uit_de_praktijk +
+          element.subrechtsgebied +
+          element.artikel +
+          element.citeertitel;
+        return searchContent.toLowerCase().includes(searchValue.toLowerCase());
+      });
+
       //dynamically calculate filter numbers
       filteredLaws.map((measure) => {
         if (measure.europees) {
@@ -311,7 +334,7 @@ export default function Measures() {
       setNumberOfCont(numCont);
       setNumberOfGron(numGron);
     }
-  }, [data, selected]);
+  }, [data, selected, searchValue]);
 
   //effect to check for data from persisted state from localStorage and update values when needed
   useEffect(() => {
@@ -364,14 +387,65 @@ export default function Measures() {
           </Link>
         </div>
       </div>
-      <div className="w-full border-b-2 py-4 mt-10 ">
-        <div className="block my-4">
-          <span className="font-bold">{numberOfLaws}</span> maatregelen gevonden
+      <div className="grid grid-cols-2 gap-x-0 border-b-2 pb-4">
+        <div className="pt-8">
+          <div className="inline-block">
+            <Image width="27" height="16" src={IconWood} alt="Icon of Wood" />
+          </div>
+          <h2 className="inline-block pl-2 text-3xl mb-20">Houtbouw</h2>
+        </div>
+        <div className="relative">
+          <div>
+            <span className="inline-block ">Zoek in houtbouwmaatregelen</span>
+          </div>
+          <div className="w-96 inline-block py-4 mb-10 px-4 border-2 border-black">
+            <div className="flex">
+              <SearchIcon className="h-6 w-6" aria-hidden="true" />
+              <input
+                onChange={(e) => setSearchValue(e.target.value)}
+                value={searchValue}
+                name="search"
+                id="search"
+                placeholder="Zoek op trefwoord"
+                className="block w-full"
+              />
+            </div>
+            {searchValue !== "" && (
+              <button onClick={reset} className="blue">
+                Clear search
+              </button>
+            )}
+          </div>
+          {numberOfLaws === 0 && (
+            <div>
+              <span>
+                <b>0</b> maatregelen gevonden voor <b>{searchValue}</b> in{" "}
+                <b>Houtbouw</b>{" "}
+              </span>
+            </div>
+          )}
+
+          {laws.length > 1 && (
+            <div>
+              <span>
+                <b>{laws.length}</b> maatregelen gevonden voor{" "}
+                <b>{searchValue}</b> in <b>Houtbouw</b>{" "}
+              </span>
+            </div>
+          )}
+
+          {searchValue !== "" && laws.length === 1 && (
+            <div>
+              <span>
+                <b>{laws.length}</b> maatregel gevonden voor{" "}
+                <b>{searchValue}</b> in <b>Houtbouw</b>{" "}
+              </span>
+            </div>
+          )}
         </div>
       </div>
       <div className="flex ">
         <div className="p-3 my-10">
-          <h2 className="block text-4xl mb-20">HOUTBOUW</h2>
           <div className=" flex justify-between pb-3 border-b border-black mb-3">
             <span className="text-lg">Verfijnen</span>{" "}
             <span onClick={reset} className="underline blue link-hover">
@@ -451,7 +525,7 @@ export default function Measures() {
 
         <div className="p-3 mt-10 ml-10">
           {data && (
-            <div className="">
+            <div>
               <PolicyList data={laws} casus="Houtbouw" />
             </div>
           )}
