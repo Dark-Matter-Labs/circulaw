@@ -1,80 +1,16 @@
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { SearchIcon } from "@heroicons/react/outline";
 
 import IconWood from "../public/icons/wood.png";
 
 export default function PolicyList(props) {
-  const [searchValue, setSearchValue] = useState("");
   let lawData = [];
   if (props.data) {
-    lawData = props.data.filter((lawData) => {
-      const searchContent =
-        lawData.titel +
-        lawData.introductie_juridische_maatregel +
-        lawData.eisen_en_beperkingen +
-        lawData.kop_1_samenvatting_juridische_maatregel +
-        lawData.kop_2_toepassing_juridische_maatregel +
-        lawData.toepassing_juridische_maatregel +
-        lawData.kop_3_uit_de_praktijk +
-        lawData.uit_de_praktijk +
-        lawData.subrechtsgebied +
-        lawData.artikel +
-        lawData.citeertitel;
-      return searchContent.toLowerCase().includes(searchValue.toLowerCase());
-    });
+    lawData = props.data;
   }
-
   return (
     <>
-      <div className="relative">
-        <div>
-          <span className="inline-block ">Zoek in houtbouwmaatregelen</span>
-        </div>
-        <div className="w-96 inline-block py-4 mb-10 px-4 border-2 border-black">
-          <div className="flex">
-            <SearchIcon className="h-6 w-6" aria-hidden="true" />
-            <input
-              onChange={(e) => setSearchValue(e.target.value)}
-              type="search"
-              name="search"
-              id="search"
-              placeholder="Zoek op trefwoord"
-              className="block w-full"
-            />
-          </div>
-        </div>
-      </div>
-
       <div className="">
-        {lawData.length === 0 && (
-          <div>
-            <span>
-              <b>0</b> maatregelen gevonden voor <b>{searchValue}</b> in{" "}
-              <b>{props.casus}</b>{" "}
-            </span>
-          </div>
-        )}
-
-        {searchValue !== "" && lawData.length > 1 && (
-          <div>
-            <span>
-              <b>{lawData.length}</b> maatregelen gevonden voor{" "}
-              <b>{searchValue}</b> in <b>{props.casus}</b>{" "}
-            </span>
-          </div>
-        )}
-
-        {searchValue !== "" && lawData.length === 1 && (
-          <div>
-            <span>
-              <b>{lawData.length}</b> maatregel gevonden voor{" "}
-              <b>{searchValue}</b> in <b>{props.casus}</b>{" "}
-            </span>
-          </div>
-        )}
-
         {lawData.map((lawData, lawDataIdx) => {
           const {
             id,
