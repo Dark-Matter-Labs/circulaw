@@ -425,19 +425,19 @@ export default function Measures() {
             </div>
           )}
 
-          {laws.length > 1 && (
+          {numberOfLaws > 1 && (
             <div>
               <span>
-                <b>{laws.length}</b> maatregelen gevonden voor{" "}
+                <b>{numberOfLaws}</b> maatregelen gevonden voor{" "}
                 <b>{searchValue}</b> in <b>Houtbouw</b>{" "}
               </span>
             </div>
           )}
 
-          {searchValue !== "" && laws.length === 1 && (
+          {searchValue !== "" && numberOfLaws=== 1 && (
             <div>
               <span>
-                <b>{laws.length}</b> maatregel gevonden voor{" "}
+                <b>{numberOfLaws}</b> maatregel gevonden voor{" "}
                 <b>{searchValue}</b> in <b>Houtbouw</b>{" "}
               </span>
             </div>
