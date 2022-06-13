@@ -150,15 +150,18 @@ export default function Law() {
                 {data.kop_1_samenvatting_juridische_maatregel}
               </h3>
               <p className="newlineDisplay">
-                {data.introductie_juridische_maatregel}
+                {checkURL(data.introductie_juridische_maatregel).length > 0 ? (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: URLReplacer(
+                        data.introductie_juridische_maatregel
+                      ),
+                    }}
+                  />
+                ) : (
+                  data.introductie_juridische_maatregel
+                )}
               </p>
-              {data.link_juridische_maatregel.length > 0 && (
-                <p className="mt-2 link">
-                  <a href={data.link_juridische_maatregel}>
-                    {data.link_juridische_maatregel}
-                  </a>
-                </p>
-              )}
             </div>
             <div className="py-4">
               <h3 className="font-bold text-xl pb-2">
