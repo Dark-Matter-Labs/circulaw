@@ -7,8 +7,7 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel:
       "Wat is concurrentiegerichte dialoog?",
     introductie_juridische_maatregel:
-      "Als aanbesteder kan je kiezen uit verschillende aanbestedingsprocedures. Een van deze procedures is de concurrentiegerichte dialoog. De procedure biedt uitkomst bij behoefte aan een innovatieve oplossing. Je kan in gesprek gaan met deelnemers van de aanbestedingsprocedure om te bepalen welke middelen geschikt zijn om zo goed mogelijk aan de behoeften van de aanbestedende dienst te voldoen.",
-    link_juridische_maatregel: "",
+      "Als aanbesteder kan je kiezen uit verschillende aanbestedingsprocedures. Een van deze procedures is de concurrentiegerichte dialoog. De procedure biedt uitkomst bij behoefte aan een innovatieve oplossing. Je kan in gesprek gaan met deelnemers van de aanbestedingsprocedure om te bepalen welke middelen geschikt zijn om zo goed mogelijk aan de behoeften van de aanbestedende dienst te voldoen.\n\nZie voor meer informatie:\nhttps://www.pianoo.nl/nl/inkoopproces/aanbestedingsprocedures/eu-specifieke-procedures/concurrentiegerichte-dialoog",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan de concurrentiegerichte dialoog houtbouw verbeteren?",
     toepassing_juridische_maatregel:
@@ -74,9 +73,7 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel:
       "Wat is de mededingingsprocedure met onderhandeling?",
     introductie_juridische_maatregel:
-      "Als aanbesteder kan je kiezen uit verschillende aanbestedingsprocedures. Een van deze procedures is de mededingingsprocedure met onderhandeling. De procedure biedt uitkomst bij behoefte aan een innovatieve oplossing waar nog geen ontwikkeltraject voor loopt, maar die goed valt te specificeren. Je mag onderhandelen met deelnemers van de aanbestedingsprocedure over verschillende aspecten van een opdracht. Dat maakt het mogelijk de aanbieder te vinden die het best in staat is om - tegen de beste prijs - de gewenste innovatie te realiseren.",
-    link_juridische_maatregel:
-      "https://www.pianoo.nl/nl/inkoopproces/fase-1-voorbereiden/mogelijke-procedures/europese-specifieke-procedures-2",
+      "Als aanbesteder kan je kiezen uit verschillende aanbestedingsprocedures. Een van deze procedures is de mededingingsprocedure met onderhandeling. De procedure biedt uitkomst bij behoefte aan een innovatieve oplossing waar nog geen ontwikkeltraject voor loopt, maar die goed valt te specificeren. Je mag onderhandelen met deelnemers van de aanbestedingsprocedure over verschillende aspecten van een opdracht. Dat maakt het mogelijk de aanbieder te vinden die het best in staat is om - tegen de beste prijs - de gewenste innovatie te realiseren.\n\nZie voor meer informatie: https://www.pianoo.nl/nl/inkoopproces/fase-1-voorbereiden/mogelijke-procedures/europese-specifieke-procedures-2",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan de mededingingsprocedure houtbouw verbeteren?",
     toepassing_juridische_maatregel:
@@ -139,9 +136,7 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel:
       "Wat is een innovatiepartnerschap?",
     introductie_juridische_maatregel:
-      "Als aanbesteder kan je kiezen uit verschillende aanbestedingsprocedures. Een van deze procedures is de procedure van het innovatiepartnerschap. Een partnerschap staat je toe om vroeg in het innovatieproces met een of meerdere marktpartijen samen te werken en gezamenlijk de richting en inhoud van de innovatieve oplossingen te bepalen. Vooraf spreek je af onder welke voorwaarden de innovatie ontwikkeld wordt en hoe de intellectuele eigendom geregeld wordt. De aanbesteder is, bij succesvolle ontwikkeling, verplicht het resultaat af te nemen.",
-    link_juridische_maatregel:
-      "https://www.pianoo.nl/nl/inkoopproces/aanbestedingsprocedures/eu-specifieke-procedures/innovatiepartnerschap en https://www.pianoo.nl/sites/default/files/documents/documents/innovatiepartnerschapjuni2016.pdf",
+      "Als aanbesteder kan je kiezen uit verschillende aanbestedingsprocedures. Een van deze procedures is de procedure van het innovatiepartnerschap. Een partnerschap staat je toe om vroeg in het innovatieproces met een of meerdere marktpartijen samen te werken en gezamenlijk de richting en inhoud van de innovatieve oplossingen te bepalen. Vooraf spreek je af onder welke voorwaarden de innovatie ontwikkeld wordt en hoe de intellectuele eigendom geregeld wordt. De aanbesteder is, bij succesvolle ontwikkeling, verplicht het resultaat af te nemen.\n\nZie voor meer informatie: https://www.pianoo.nl/nl/inkoopproces/aanbestedingsprocedures/eu-specifieke-procedures/innovatiepartnerschap en https://www.pianoo.nl/sites/default/files/documents/documents/innovatiepartnerschapjuni2016.pdf",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan een innovatiepartnerschap houtbouw verbeteren?",
     toepassing_juridische_maatregel:
@@ -210,7 +205,6 @@ export const laws = [
       "Wat zijn technische specificaties en wanneer worden ze gebruikt?",
     introductie_juridische_maatregel:
       "In aanbestedingsstukken worden regelmatig technische specificaties opgenomen. In deze specificaties staan de eisen waar de opdracht aan moet voldoen. Een inschrijving die niet aan de eisen voldoet, komt sowieso niet in aanmerking. \n\nTechnische specificaties kunnen op twee manieren geformuleerd worden: in technische of functionele eisen. Technische eisen benoemen exact de criteria waar een product, dienst of levering aan moet voldoen. Functionele eisen zijn minder afgekaderd. Die beschrijven slechts in hoofdlijnen waar een product, dienst of levering aan moet voldoen. Dat biedt ruimte voor innovatieve ideeën. \n\nMet technische en functionele eisen kunnen circulaire doelen op het gebied van ontwerp en productiemateriaal (makkelijker) behaald worden.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kunnen technische specificaties houtbouw bevorderen?",
     toepassing_juridische_maatregel:
@@ -279,7 +273,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat is een keurmerkvereiste?",
     introductie_juridische_maatregel:
       "Het is wettelijk mogelijk om in de technische specificaties, gunningscriteria of contractvoorwaarden een keurmerk te eisen. Via een keurmerk kan een onafhankelijke, derde organisatie garanderen dat een product of dienst aan bepaalde vereisten voldoet. Een verwijzing naar een keurmerk in een aanbestedingsopdracht geeft dus meer zekerheid.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan een keurmerkvereiste houtbouw verbeteren?",
     toepassing_juridische_maatregel:
@@ -343,7 +336,6 @@ export const laws = [
       "Wat zijn bijzondere uitvoeringsvoorwaarden?",
     introductie_juridische_maatregel:
       "Bij een aanbesteding mag je ook vragen naar bijzondere uitvoeringsvoorwaarden. Dat zijn voorwaarden die niet in technische of functionele specificaties te zetten zijn, maar eerder gaan om hoe het product of de opdracht tot stand komt. Vaak gaat het in de praktijk om voorwaarden uit sociale overwegingen. Een aanbesteder kan bijvoorbeeld eisen dat een bepaald percentage mensen met een afstand tot de arbeidsmarkt bij het project wordt betrokken.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan je circulariteit verwerken in de bijzondere uitvoeringsvoorwaarden van een houtbouwopdracht?",
     toepassing_juridische_maatregel:
@@ -406,9 +398,7 @@ export const laws = [
       "Ervaring met houtbouw als geschiktheidseis stellen bij aanbesteding",
     kop_1_samenvatting_juridische_maatregel: "Wat zijn geschiktheidseisen?",
     introductie_juridische_maatregel:
-      "Een aanbestedende dienst kan geschiktheidseisen stellen aan gegadigden en inschrijvers. Deze eisen zien alleen op de ondernemer en niet op de inhoud van de opdracht. Een eis kan zijn dat de inschrijver bepaalde certificaten heeft of relevante ervaring. In de geschiktheidseisen kunnen ook duurzaamheidscriteria worden opgenomen.\n\nGeschiktheidseisen mogen gaan over:\na. de financiële en economische draagkracht;\nb. technische bekwaamheid en beroepsbekwaamheid;\nc. beroepsbevoegdheid.",
-    link_juridische_maatregel:
-      "https://www.pianoo.nl/nl/metrokaart/geschiktheidseisen.",
+      "Een aanbestedende dienst kan geschiktheidseisen stellen aan gegadigden en inschrijvers. Deze eisen zien alleen op de ondernemer en niet op de inhoud van de opdracht. Een eis kan zijn dat de inschrijver bepaalde certificaten heeft of relevante ervaring. In de geschiktheidseisen kunnen ook duurzaamheidscriteria worden opgenomen.\n\nGeschiktheidseisen mogen gaan over:\na. de financiële en economische draagkracht;\nb. technische bekwaamheid en beroepsbekwaamheid;\nc. beroepsbevoegdheid.\n\nZie voor meer informatie: https://www.pianoo.nl/nl/metrokaart/geschiktheidseisen.",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan je houtbouw verbeteren met een geschiktheidseis?",
     toepassing_juridische_maatregel:
@@ -473,9 +463,7 @@ export const laws = [
     titel: "Houtbouw uitvragen via subgunningscriteria",
     kop_1_samenvatting_juridische_maatregel: "Wat zijn subgunningscriteria?",
     introductie_juridische_maatregel:
-      "Er zijn drie gunningscriteria, te weten: beste prijs-kwaliteitsverhouding, laagste kosten berekend op basis van kosteneffectiviteit en laagste prijs. Als de aanbestedende dienst kiest voor het gunningscriterium 'beste prijs-kwaliteitverhouding', moeten nadere kwaliteitscriteria worden opgesteld. De nadere criteria worden ook 'subgunningscriteria' genoemd (NB DD kan misschien in explainer?). In de wet staan voorbeelden opgesomd van nadere criteria die gehanteerd kunnen worden, zoals sociale, milieu- of innovatieve kenmerken. Dit is geen uitputtende lijst. Een aanbestedende dienst kan dus ook zelf nadere criteria bedenken om te formuleren wat een opdracht van hogere kwaliteit maakt.",
-    link_juridische_maatregel:
-      "https://www.pianoo.nl/nl/inkoopproces/fase-1-voorbereiden/keuze-gunningscriterium-en-opstellen-subgunningscriteria",
+      "Er zijn drie gunningscriteria, te weten: beste prijs-kwaliteitsverhouding, laagste kosten berekend op basis van kosteneffectiviteit en laagste prijs. Als de aanbestedende dienst kiest voor het gunningscriterium 'beste prijs-kwaliteitverhouding', moeten nadere kwaliteitscriteria worden opgesteld. De nadere criteria worden ook 'subgunningscriteria' genoemd (NB DD kan misschien in explainer?). In de wet staan voorbeelden opgesomd van nadere criteria die gehanteerd kunnen worden, zoals sociale, milieu- of innovatieve kenmerken. Dit is geen uitputtende lijst. Een aanbestedende dienst kan dus ook zelf nadere criteria bedenken om te formuleren wat een opdracht van hogere kwaliteit maakt.\n\nZie ook https://www.pianoo.nl/nl/inkoopproces/fase-1-voorbereiden/keuze-gunningscriterium-en-opstellen-subgunningscriteria",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan je houtbouw verwerken in subgunningscriteria?",
     toepassing_juridische_maatregel:
@@ -538,7 +526,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat zijn levenscycluskosten?",
     introductie_juridische_maatregel:
       "Levenscycluskosten zijn alle kosten die verband houden met het onderhoud, verbruik, hergebruik of verwijdering van een product of dienst. Ook kosten gerelateerd aan externe milieueffecten vallen onder de levenscycluskosten. Dat kunnen kosten zijn voor  milieuverontreiniging die wordt veroorzaakt door winning van een bepaalde grondstof, verontreiniging door het product zelf of als gevolg van de productie ervan. Kortom: levenscycluskosten zijn alle kosten van een product waar men vandaag, morgen en in de verre toekomst rekening mee moet houden. Bij de gunning van een opdracht kunnen levenscycluskosten doorslaggevend zijn. In dat geval wint de inschrijving die de laagste levenscycluskosten garandeert.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kunnen levenscycluskosten de circulaire transitie versnellen?",
     toepassing_juridische_maatregel:
@@ -602,7 +589,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat is een omgevingswaarde?",
     introductie_juridische_maatregel:
       "Een omgevingswaarde is een instrument waarmee de gemeente het beleid uit de gemeentelijke omgevingsvisie kan uitvoeren. Omgevingswaarden worden per omgevingsplan vastgesteld binnen een bepaald gebied. Indien de omgevingswaarden binnen een gebied zijn behaald, is het niet meer toegestaan om bepaalde activiteiten uit te voeren die de omgevingswaarden verder zullen verhogen.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kunnen omgevingswaarden houtbouw bevorderen?",
     toepassing_juridische_maatregel:
@@ -632,7 +618,7 @@ export const laws = [
     europees: false,
     nationaal: false,
     provinciaal: false,
-    gemeentelijk: false,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: true,
     R2: true,
@@ -666,7 +652,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat is een omgevingswaarde?",
     introductie_juridische_maatregel:
       "Een omgevingswaarde is een instrument waarmee de provincie het beleid uit de provinciale omgevingsvisie kan uitvoeren. Omgevingswaarden worden per omgevingsplan vastgesteld binnen een bepaald gebied. Indien de omgevingswaarden binnen een gebied zijn behaald, is het niet meer toegestaan om bepaalde activiteiten uit te voeren die de omgevingswaarden verder zullen verhogen.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kunnen omgevingswaarden houtbouw bevorderen?",
     toepassing_juridische_maatregel:
@@ -695,7 +680,7 @@ export const laws = [
     omvang: "",
     europees: false,
     nationaal: false,
-    provinciaal: false,
+    provinciaal: true,
     gemeentelijk: false,
     type_beleidsinstrument: "Juridisch",
     R1: true,
@@ -730,7 +715,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat zijn instructieregels?",
     introductie_juridische_maatregel:
       "Middels een instructieregel kan een provincie aangeven aan een gemeente hoe deze een taak of bevoegdheid moet uitoefenen om bepaalde omgevingswaarden te halen of andere doelstellingen die betrekken hebben op de fysieke leefomgeving. Deze andere doelstellingen voor de fysieke leefomgeving van de provincie kunnen blijken uit alle schriftelijke openbare documenten van de provincie.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Het toepassen van instructieregels om omgevingswaarden te behalen",
     toepassing_juridische_maatregel:
@@ -759,7 +743,7 @@ export const laws = [
     omvang: "",
     europees: false,
     nationaal: false,
-    provinciaal: false,
+    provinciaal: true,
     gemeentelijk: false,
     type_beleidsinstrument: "Juridisch",
     R1: true,
@@ -795,7 +779,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat zijn instructieregels?",
     introductie_juridische_maatregel:
       "Middels een instructieregel kan het Rijk aangeven aan een provincie of gemeente hoe deze een taak of bevoegdheid moet uitoefenen om bepaalde omgevingswaarden te halen of andere doelstellingen die betrekken hebben op de fysieke leefomgeving.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Het toepassen van instructieregels om omgevingswaarden te behalen",
     toepassing_juridische_maatregel:
@@ -823,7 +806,7 @@ export const laws = [
     frequentie: "",
     omvang: "",
     europees: false,
-    nationaal: false,
+    nationaal: true,
     provinciaal: false,
     gemeentelijk: false,
     type_beleidsinstrument: "Juridisch",
@@ -859,7 +842,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat is een omgevingsvisie?",
     introductie_juridische_maatregel:
       "In de omgevingsvisie kan de gemeente de integrale langetermijnvisie voor de hele fysieke leefomgeving en het grondgebied beschrijven. Hierin staan de maatschappelijke opgave en de te beschermen kernkwaliteiten van een gemeente in beschreven.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Houtbouw in de gemeentelijke omgevingsvisie vormgegeven",
     toepassing_juridische_maatregel:
@@ -889,7 +871,7 @@ export const laws = [
     europees: false,
     nationaal: false,
     provinciaal: false,
-    gemeentelijk: false,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: true,
     R2: true,
@@ -923,7 +905,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat is een omgevingsvisie?",
     introductie_juridische_maatregel:
       "In de omgevingsvisie kan de provincie de integrale langetermijnvisie voor de hele fysieke leefomgeving en het grondgebied beschrijven. Hierin staan de maatschappelijke opgave en de te beschermen kernkwaliteiten van een gemeente in beschreven.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Houtbouw in de provinciale omgevingsvisie vormgegeven",
     toepassing_juridische_maatregel:
@@ -952,7 +933,7 @@ export const laws = [
     omvang: "",
     europees: false,
     nationaal: false,
-    provinciaal: false,
+    provinciaal: true,
     gemeentelijk: false,
     type_beleidsinstrument: "Juridisch",
     R1: true,
@@ -987,7 +968,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat is een omgevingsvisie?",
     introductie_juridische_maatregel:
       "In de omgevingsvisie kan het Rijk de integrale langetermijnvisie voor de hele fysieke leefomgeving en het grondgebied beschrijven. Hierin staan de maatschappelijke opgave en de te beschermen kernkwaliteiten van een gemeente in beschreven.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Houtbouw in de nationale omgevingsvisie vormgegeven",
     toepassing_juridische_maatregel:
@@ -1015,7 +995,7 @@ export const laws = [
     frequentie: "",
     omvang: "",
     europees: false,
-    nationaal: false,
+    nationaal: true,
     provinciaal: false,
     gemeentelijk: false,
     type_beleidsinstrument: "Juridisch",
@@ -1052,7 +1032,6 @@ export const laws = [
       "Wat is een gemeentelijk omgevingsprogramma",
     introductie_juridische_maatregel:
       "De gemeente kan met een zelfbindend omgevingsprogramma met concrete plannen met beleid en maatregelen de gewenste kwaliteit van de fysieke leefomgeving bereiken.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan het gemeentelijk omgevingsprogamma houtbouw bevorderen?",
     toepassing_juridische_maatregel:
@@ -1082,7 +1061,7 @@ export const laws = [
     europees: false,
     nationaal: false,
     provinciaal: false,
-    gemeentelijk: false,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: true,
     R2: true,
@@ -1117,7 +1096,6 @@ export const laws = [
       "Wat is een provinciaal omgevingsprogramma?",
     introductie_juridische_maatregel:
       "De provincie kan met een zelfbindend omgevingsprogramma met concrete plannen met beleid en maatregelen de gewenste kwaliteit van de fysieke leefomgeving bereiken.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan het provinciale omgevingsprogamma houtbouw bevorderen?",
     toepassing_juridische_maatregel:
@@ -1146,7 +1124,7 @@ export const laws = [
     omvang: "",
     europees: false,
     nationaal: false,
-    provinciaal: false,
+    provinciaal: true,
     gemeentelijk: false,
     type_beleidsinstrument: "Juridisch",
     R1: true,
@@ -1182,7 +1160,6 @@ export const laws = [
       "Wat is een nationaal omgevingsprogramma?",
     introductie_juridische_maatregel:
       "Het Rijk kan met een zelfbindend omgevingsprogramma met concrete plannen met beleid en maatregelen de gewenste kwaliteit van de fysieke leefomgeving bereiken.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan het nationale omgevingsprogamma houtbouw bevorderen?",
     toepassing_juridische_maatregel:
@@ -1210,7 +1187,7 @@ export const laws = [
     frequentie: "",
     omvang: "",
     europees: false,
-    nationaal: false,
+    nationaal: true,
     provinciaal: false,
     gemeentelijk: false,
     type_beleidsinstrument: "Juridisch",
@@ -1246,7 +1223,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat is een omgevingsplan?",
     introductie_juridische_maatregel:
       "De gemeente ontwikkelt voor het gehele gebied een omgevingsplan waarin regels worden vastgesteld  die betrekking hebben of kunnen hebben op de fysieke leefomgeving. Het omgevingsplan heeft een brede reikwijdte en kan voor ieder gebied zeggen welke activiteiten zij wel of niet toestaat, bijvoorbeeld wonen, recreatie of bedrijvigheid.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe geef je houtbouw vorm in het omgevingsplan?",
     toepassing_juridische_maatregel:
@@ -1275,7 +1251,7 @@ export const laws = [
     europees: false,
     nationaal: false,
     provinciaal: false,
-    gemeentelijk: false,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: true,
     R2: true,
@@ -1309,7 +1285,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat is een omgevingsverordening?",
     introductie_juridische_maatregel:
       "De gemeente ontwikkelt voor het gehele gebied een omgevingsplan waarin regels worden vastgesteld  die betrekking hebben of kunnen hebben op de fysieke leefomgeving. Het omgevingsplan heeft een brede reikwijdte en kan voor ieder gebied zeggen welke activiteiten zij wel of niet toestaat, bijvoorbeeld wonen, recreatie of bedrijvigheid.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe stimuleer je houtbouw middels een omgevingsverordening?",
     toepassing_juridische_maatregel:
@@ -1338,7 +1313,7 @@ export const laws = [
     europees: false,
     nationaal: false,
     provinciaal: false,
-    gemeentelijk: false,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: true,
     R2: true,
@@ -1373,7 +1348,6 @@ export const laws = [
       "Hoe werkt een verbodsbepaling in een omgevingsvergunning?",
     introductie_juridische_maatregel:
       "De gemeente kan in het omgevingsplan een verbod op bepaalde activiteiten zonder omgevingsvergunning plaatsen. De vergunning is noodzakelijk voor het doen van deze verboden activiteit.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan een verbodsbepaling in een omgevingsvergunning houtbouw stimuleren?",
     toepassing_juridische_maatregel:
@@ -1403,7 +1377,7 @@ export const laws = [
     europees: false,
     nationaal: false,
     provinciaal: false,
-    gemeentelijk: false,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: true,
     R2: true,
@@ -1438,7 +1412,6 @@ export const laws = [
       "Hoe werkt een verbodsbepaling in een omgevingsvergunning?",
     introductie_juridische_maatregel:
       "De provincie kan in de omgevingsverordening een verbod op bepaalde activiteiten zonder omgevingsvergunning plaatsen. De vergunning is noodzakelijk voor het doen van deze verboden activiteit.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan een verbodsbepaling in een omgevingsvergunning houtbouw stimuleren?",
     toepassing_juridische_maatregel:
@@ -1467,7 +1440,7 @@ export const laws = [
     omvang: "",
     europees: false,
     nationaal: false,
-    provinciaal: false,
+    provinciaal: true,
     gemeentelijk: false,
     type_beleidsinstrument: "Juridisch",
     R1: true,
@@ -1502,7 +1475,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat is een maatwerkvoorschrift?",
     introductie_juridische_maatregel:
       "De gemeente kan in het omgevingsplan regels opnemen met betrekking tot maatwerkvoorschriften waarmee in individuele gevallen kan worden afgeweken van algemeen geldende regels.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kunnen maatwerkvoorschriften de circulaire transitie versnellen?",
     toepassing_juridische_maatregel:
@@ -1531,7 +1503,7 @@ export const laws = [
     europees: false,
     nationaal: false,
     provinciaal: false,
-    gemeentelijk: false,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: true,
     R2: true,
@@ -1565,7 +1537,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat zijn maatwerkregels?",
     introductie_juridische_maatregel:
       "De gemeente kan in het omgevingsplan regels opnemen met betrekking tot maatwerkregels waarmee voor bepaalde gebieden of activiteiten nadere regels kunnen worden gesteld.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan een maatwerkregel over de MPG houtbouw stimuleren?",
     toepassing_juridische_maatregel:
@@ -1595,7 +1566,7 @@ export const laws = [
     europees: false,
     nationaal: false,
     provinciaal: false,
-    gemeentelijk: false,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: true,
     R2: true,
@@ -1629,7 +1600,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat zijn maatwerkregels?",
     introductie_juridische_maatregel:
       "De provincie kan in de omgevingsverordening regels opnemen met betrekking tot maatwerkregels waarmee voor bepaalde gebieden of activiteiten nadere regels kunnen worden gesteld.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan een maatwerkregel over de MPG houtbouw stimuleren?",
     toepassing_juridische_maatregel:
@@ -1658,7 +1628,7 @@ export const laws = [
     omvang: "",
     europees: false,
     nationaal: false,
-    provinciaal: false,
+    provinciaal: true,
     gemeentelijk: false,
     type_beleidsinstrument: "Juridisch",
     R1: true,
@@ -1694,7 +1664,6 @@ export const laws = [
       "Wat is een gelijkwaardigheidsbepaling?",
     introductie_juridische_maatregel:
       "Onder de Omgevingswet is het bijna altijd mogelijk om in plaats van een in algemene regels voorgeschreven maatregel een 'gelijkwaardige maatregel' te treffen. De gelijkwaardige maatregel moet ten minste hetzelfde resultaat bereiken als de wetgever met de voorgeschreven maatregel heeft beoogd.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan een gelijkwaardigheidsbepaling bijdragen aan circulariteit?",
     toepassing_juridische_maatregel:
@@ -1722,9 +1691,9 @@ export const laws = [
     frequentie: "",
     omvang: "",
     europees: false,
-    nationaal: false,
-    provinciaal: false,
-    gemeentelijk: false,
+    nationaal: true,
+    provinciaal: true,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: true,
     R2: true,
@@ -1758,7 +1727,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "wat is voorkeursrecht ?",
     introductie_juridische_maatregel:
       "De gemeente kan op een onroerende zaak een gemeentelijk voorkeursrecht vestigen op basis van het omgevingsplan. Op deze manier kan de gemeente eigenaar worden van stukken grond en die gronden met pacht en voorwaarden verhuren en vergunnen.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe stimuleer je houtbouw middels gemeentelijke voorkeursrechten?",
     toepassing_juridische_maatregel:
@@ -1788,7 +1756,7 @@ export const laws = [
     europees: false,
     nationaal: false,
     provinciaal: false,
-    gemeentelijk: false,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: true,
     R2: true,
@@ -1822,7 +1790,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "wat is voorkeursrecht ?",
     introductie_juridische_maatregel:
       "De provincie kan op een onroerende zaak een gemeentelijk voorkeursrecht vestigen op basis van het omgevingsplan. Op deze manier kan de provincie eigenaar worden van stukken grond en die gronden met pacht en voorwaarden verhuren en vergunnen.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe stimuleer je houtbouw middels provinciale voorkeursrechten?",
     toepassing_juridische_maatregel:
@@ -1851,7 +1818,7 @@ export const laws = [
     omvang: "",
     europees: false,
     nationaal: false,
-    provinciaal: false,
+    provinciaal: true,
     gemeentelijk: false,
     type_beleidsinstrument: "Juridisch",
     R1: true,
@@ -1886,7 +1853,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "wat is voorkeursrecht ?",
     introductie_juridische_maatregel:
       "Het Rijk kan op een onroerende zaak een gemeentelijk voorkeursrecht vestigen op basis van het omgevingsplan. Op deze manier kan het Rijk eigenaar worden van stukken grond en die gronden met pacht en voorwaarden verhuren en vergunnen.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan het Rijk houtbouw stimuleren middels voorkeursrechten?",
     toepassing_juridische_maatregel:
@@ -1913,7 +1879,7 @@ export const laws = [
     frequentie: "",
     omvang: "",
     europees: false,
-    nationaal: false,
+    nationaal: true,
     provinciaal: false,
     gemeentelijk: false,
     type_beleidsinstrument: "Juridisch",
@@ -1949,7 +1915,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat is onteigening?",
     introductie_juridische_maatregel:
       "Onteigenen is het ontnemen van grondeigendom in het algemeen belang voor het ontwikkelen, gebruiken of beheren van de fysieke leefomgeving. Het instrument onteigening wordt toegepast als aankoop niet of niet op tijd lukt. Onteigening van onroerende zaken kan plaatsvinden in het algemeen belang van het ontwikkelen, gebruiken of beheren van de fysieke leefomgeving.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe bevorder je de circulaire transitie met behulp van onteigening?",
     toepassing_juridische_maatregel:
@@ -1978,7 +1943,7 @@ export const laws = [
     europees: false,
     nationaal: false,
     provinciaal: false,
-    gemeentelijk: false,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: true,
     R2: true,
@@ -2012,7 +1977,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat is onteigening?",
     introductie_juridische_maatregel:
       "Onteigenen is het ontnemen van grondeigendom in het algemeen belang voor het ontwikkelen, gebruiken of beheren van de fysieke leefomgeving. Het instrument onteigening wordt toegepast als aankoop niet of niet op tijd lukt. Voorwaarden zijn een algemeen belang, noodzaak en urgentie van de onteigening. Onteigening van onroerende zaken kan plaatsvinden in het algemeen belang van het ontwikkelen, gebruiken of beheren van de fysieke leefomgeving.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe bevorder je de circulaire transitie met behulp van onteigening?",
     toepassing_juridische_maatregel:
@@ -2040,7 +2004,7 @@ export const laws = [
     omvang: "",
     europees: false,
     nationaal: false,
-    provinciaal: false,
+    provinciaal: true,
     gemeentelijk: false,
     type_beleidsinstrument: "Juridisch",
     R1: true,
@@ -2075,7 +2039,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat is onteigening?",
     introductie_juridische_maatregel:
       "Onteigenen is het ontnemen van grondeigendom in het algemeen belang voor het ontwikkelen, gebruiken of beheren van de fysieke leefomgeving. Het instrument onteigening wordt toegepast als aankoop niet of niet op tijd lukt. Voorwaarden zijn een algemeen belang, noodzaak en urgentie van de onteigening. Onteigening van onroerende zaken kan plaatsvinden in het algemeen belang van het ontwikkelen, gebruiken of beheren van de fysieke leefomgeving.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe bevorder je de circulaire transitie met behulp van onteigening?",
     toepassing_juridische_maatregel:
@@ -2102,7 +2065,7 @@ export const laws = [
     frequentie: "",
     omvang: "",
     europees: false,
-    nationaal: false,
+    nationaal: true,
     provinciaal: false,
     gemeentelijk: false,
     type_beleidsinstrument: "Juridisch",
@@ -2139,7 +2102,6 @@ export const laws = [
       "Wat is een experimenteerbepaling?",
     introductie_juridische_maatregel:
       "Deze bepaling maakt het mogelijk dat tijdelijk kan worden afgeweken van bepalingen uit o.a. de Omgevingswet bij wijze van experiment.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan je houtbouw stimuleren via de experimenteerbepaling?",
     toepassing_juridische_maatregel:
@@ -2167,9 +2129,9 @@ export const laws = [
     frequentie: "",
     omvang: "",
     europees: false,
-    nationaal: false,
-    provinciaal: false,
-    gemeentelijk: false,
+    nationaal: true,
+    provinciaal: true,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: true,
     R2: true,
@@ -2204,7 +2166,6 @@ export const laws = [
       "Wat is een experimenteerbepaling?",
     introductie_juridische_maatregel:
       "Deze bepaling maakt het mogelijk dat tijdelijk kan worden afgeweken van bepalingen uit o.a. de Omgevingswet bij wijze van experiment.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan je houtbouw stimuleren via de experimenteerbepaling?",
     toepassing_juridische_maatregel:
@@ -2232,9 +2193,9 @@ export const laws = [
     frequentie: "",
     omvang: "",
     europees: false,
-    nationaal: false,
-    provinciaal: false,
-    gemeentelijk: false,
+    nationaal: true,
+    provinciaal: true,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: true,
     R2: true,
@@ -2269,7 +2230,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat is een financiele bijdrage?",
     introductie_juridische_maatregel:
       "Het college van burgemeester en wethouders, gedeputeerde staten of Onze Minister van Binnenlandse Zaken en Koninkrijksrelaties kunnen in een overeenkomst bepalingen opnemen over financiële bijdragen voor ontwikkelingen van een gebied, bijvoorbeeld voor de bouw van een bouwwerk.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan je houtbouw bevorderen middels een financiële bijdrage op basis van een omgevingsvisie of programma?",
     toepassing_juridische_maatregel:
@@ -2297,7 +2257,7 @@ export const laws = [
     frequentie: "",
     omvang: "",
     europees: false,
-    nationaal: false,
+    nationaal: true,
     provinciaal: false,
     gemeentelijk: false,
     type_beleidsinstrument: "Juridisch",
@@ -2334,7 +2294,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat is een meldingsplicht?",
     introductie_juridische_maatregel:
       "Er bestaat een meldingsplicht voor de initiatiefnemer aan de gemeente wanneer deze houtafval wil voorbehandelen voor verdere recycling.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan je bijdragen aan de circulaire transitie middels een meldingsplicht voor houtafval?",
     toepassing_juridische_maatregel:
@@ -2364,7 +2323,7 @@ export const laws = [
     europees: false,
     nationaal: false,
     provinciaal: false,
-    gemeentelijk: false,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: false,
     R2: false,
@@ -2399,7 +2358,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat is een meldingsplicht?",
     introductie_juridische_maatregel:
       "Er bestaat een meldingsplicht voor het ontvangen van afvalstoffen aan de gemeente wanneer deze houtafval wil ontvangen voor verdere recycling.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan je bijdragen aan houtbouw middels een meldingsplicht voor afval?",
     toepassing_juridische_maatregel:
@@ -2429,7 +2387,7 @@ export const laws = [
     europees: false,
     nationaal: false,
     provinciaal: false,
-    gemeentelijk: false,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: false,
     R2: false,
@@ -2464,7 +2422,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat is een meldingsplicht?",
     introductie_juridische_maatregel:
       "Er bestaat een meldingsplicht aan de minister van I&W indien een initiatiefnemer houtopstanden wil gaan vellen.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan je bijdragen aan houtbouw middels een meldingsplicht voor het vellen van houtopstanden?",
     toepassing_juridische_maatregel:
@@ -2492,7 +2449,7 @@ export const laws = [
     frequentie: "",
     omvang: "",
     europees: false,
-    nationaal: false,
+    nationaal: true,
     provinciaal: false,
     gemeentelijk: false,
     type_beleidsinstrument: "Juridisch",
@@ -2529,7 +2486,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat zijn maatwerkvoorschriften?",
     introductie_juridische_maatregel:
       "Met een maatwerkvoorschrift kan de gemeente in individuele gevallen afwijken van algemene regels om ambities voor de kwaliteit van de fysieke leefomgeving te bereiken.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kunnen maatwerkvoorschriften voor bestaande bouw houtbouw stimuleren?",
     toepassing_juridische_maatregel:
@@ -2559,7 +2515,7 @@ export const laws = [
     europees: false,
     nationaal: false,
     provinciaal: false,
-    gemeentelijk: false,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: true,
     R2: true,
@@ -2595,7 +2551,6 @@ export const laws = [
       "Wat zijn energiebesparende maatregelen?",
     introductie_juridische_maatregel:
       "Aan een gebouw worden door de eigenaar alle energiebesparende maatregelen getroffen met een terugverdientijd van ten hoogstens vijf jaar.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kunnen energiebesparende maatregelen voor woningen en kantoren bijdragen aan houtbouw?",
     toepassing_juridische_maatregel:
@@ -2623,9 +2578,9 @@ export const laws = [
     frequentie: "",
     omvang: "",
     europees: false,
-    nationaal: false,
-    provinciaal: false,
-    gemeentelijk: false,
+    nationaal: true,
+    provinciaal: true,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: true,
     R2: true,
@@ -2660,7 +2615,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat zijn maatwerkregels?",
     introductie_juridische_maatregel:
       "Met maatwerkregels kan de gemeente bepaalde regels die zijn opgesteld door het Rijk of de provincie uitwerken.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan een maatwerkregel over de MPG houtbouw stimuleren?",
     toepassing_juridische_maatregel:
@@ -2687,7 +2641,7 @@ export const laws = [
     frequentie: "",
     omvang: "",
     europees: false,
-    nationaal: false,
+    nationaal: true,
     provinciaal: false,
     gemeentelijk: false,
     type_beleidsinstrument: "Juridisch",
@@ -2724,12 +2678,11 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat is een sloopmelding?",
     introductie_juridische_maatregel:
       "Een initiatiefnemer doet een sloopmelding bij het college om inzichtelijk te maken of er veilig wordt gesloopt, of asbest op een juiste manier wordt verwijderd en of er verantwoord wordt omgegaan met restmaterialen en afvalscheiding.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan je houtbouw stimuleren middels een sloopmelding?",
     toepassing_juridische_maatregel:
       "Door het maken van de sloopmelding kan het bevoegd gezag monitoren hoe de materialenstromen in de stad bewegen. Het inzichtelijk maken van deze data bevordert twee circulaire aspecten: enerzijds kan het bevoegd gezag daardoor vraag en aanbod van reststromen beter reguleren en op elkaar afstromen door het creeren van een platform hiervoor. Anderzijds zorgt het inzichtelijk ervoor dat kan worden bijgehouden in hoeverre het circulaire beleid aansluit op de gegevens.",
-    "is_er_een_praktijk_voorbeeld ": true,
+    "is_er_een_praktijk_voorbeeld ": false,
     kop_3_uit_de_praktijk: "Uit de praktijk",
     uit_de_praktijk: "",
     voorbeeld_link_teks: "",
@@ -2752,7 +2705,7 @@ export const laws = [
     europees: false,
     nationaal: false,
     provinciaal: false,
-    gemeentelijk: false,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: false,
     R2: false,
@@ -2787,7 +2740,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat zijn maatwerkvoorschriften?",
     introductie_juridische_maatregel:
       "Het college kan een maatwerkvoorschrift opstellen voor een initiatiefnemer die bezig is met bouw- en/of sloopwerkzaamheden.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan je middels maatwerkvoorschriften voor bouw- en sloopwerkzaamheden houtbouw stimuleren?",
     toepassing_juridische_maatregel:
@@ -2817,7 +2769,7 @@ export const laws = [
     europees: false,
     nationaal: false,
     provinciaal: false,
-    gemeentelijk: false,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: false,
     R2: false,
@@ -2852,12 +2804,11 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat zijn nadere fracties?",
     introductie_juridische_maatregel:
       "Het college kan een maatwerkvoorschrift vaststellen voor een initiatiefnemer die bezig is met het scheiden van bouw- en sloopafval. Hierdoor kan het college vaststellen dat er moet worden gescheiden in meerdere fracties dan al verplicht.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kan je via nadere fracties bij sloopwerkzaamheden houtbouw stimuleren?",
     toepassing_juridische_maatregel:
       "Het scheiden van afval in meerdere fracties zorgt ervoor dat de materialen hoogwaardig worden gescheiden. Dit betekent dat er minder materialen worden verwerkt als afval en zo terug kunnen vloeien in de beschikbare materialen in de stad.",
-    "is_er_een_praktijk_voorbeeld ": true,
+    "is_er_een_praktijk_voorbeeld ": false,
     kop_3_uit_de_praktijk: "Uit de praktijk",
     uit_de_praktijk: "",
     voorbeeld_link_teks: "",
@@ -2881,7 +2832,7 @@ export const laws = [
     europees: false,
     nationaal: false,
     provinciaal: false,
-    gemeentelijk: false,
+    gemeentelijk: true,
     type_beleidsinstrument: "Juridisch",
     R1: false,
     R2: false,
@@ -2916,7 +2867,6 @@ export const laws = [
     kop_1_samenvatting_juridische_maatregel: "Wat zijn regels over hergebruik?",
     introductie_juridische_maatregel:
       "De Rijksoverheid kan ter stimulering van hergebruik, preventie, recycling en andere nuttige toepassing, van een doelmatig beheer van afvalstoffen per AMvB regels stellen met betrekking stoffen, mengsels of producten of afvalstoffen.",
-    link_juridische_maatregel: "",
     kop_2_toepassing_juridische_maatregel:
       "Hoe kunnen regels over hergebruik de circulaire transitie bevorderen?",
     toepassing_juridische_maatregel:
@@ -2944,7 +2894,7 @@ export const laws = [
     frequentie: "",
     omvang: "",
     europees: false,
-    nationaal: false,
+    nationaal: true,
     provinciaal: false,
     gemeentelijk: false,
     type_beleidsinstrument: "Juridisch",
