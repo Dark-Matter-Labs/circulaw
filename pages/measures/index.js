@@ -434,7 +434,7 @@ export default function Measures() {
             </div>
           )}
 
-          {searchValue !== "" && numberOfLaws=== 1 && (
+          {searchValue !== "" && numberOfLaws === 1 && (
             <div>
               <span>
                 <b>{numberOfLaws}</b> maatregel gevonden voor{" "}
