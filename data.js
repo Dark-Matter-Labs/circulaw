@@ -1,7 +1,7 @@
 export const laws = [
   {
     id: "0",
-    "artikel ": "2.28",
+    artikel: "2.28",
     circulair: true,
     titel: "Innovatieve houtbouw via concurrentiegerichte dialoog",
     kop_1_samenvatting_juridische_maatregel:
@@ -66,7 +66,7 @@ export const laws = [
   },
   {
     id: "1",
-    "artikel ": "2.30",
+    artikel: "2.30",
     circulair: true,
     titel:
       "Innovatieve houtbouw via de mededingingsprocedure met onderhandeling",
@@ -130,7 +130,7 @@ export const laws = [
   },
   {
     id: "2",
-    "artikel ": "2.31a",
+    artikel: "2.31a",
     circulair: true,
     titel: "Vernieuw houtbouw met een innovatiepartnerschap",
     kop_1_samenvatting_juridische_maatregel:
@@ -197,7 +197,7 @@ export const laws = [
   },
   {
     id: "3",
-    "artikel ": "2.75",
+    artikel: "2.75",
     circulair: true,
     titel:
       "Hoe technische specificaties in overheidsopdrachten houtbouw kunnen bevorderen",
@@ -267,7 +267,7 @@ export const laws = [
   },
   {
     id: "4",
-    "artikel ": "2.78a",
+    artikel: "2.78a",
     circulair: true,
     titel: "Eis een (houtbouw-)keurmerk bij aanbesteding",
     kop_1_samenvatting_juridische_maatregel: "Wat is een keurmerkvereiste?",
@@ -329,7 +329,7 @@ export const laws = [
   },
   {
     id: "5",
-    "artikel ": "2.80",
+    artikel: "2.80",
     circulair: true,
     titel: "Houtbouw verwerken in bijzondere uitvoeringsvoorwaarden",
     kop_1_samenvatting_juridische_maatregel:
@@ -392,7 +392,7 @@ export const laws = [
   },
   {
     id: "6",
-    "artikel ": "2.90",
+    artikel: "2.90",
     circulair: true,
     titel:
       "Ervaring met houtbouw als geschiktheidseis stellen bij aanbesteding",
@@ -458,7 +458,7 @@ export const laws = [
   },
   {
     id: "7",
-    "artikel ": "2.115",
+    artikel: "2.115",
     circulair: true,
     titel: "Houtbouw uitvragen via subgunningscriteria",
     kop_1_samenvatting_juridische_maatregel: "Wat zijn subgunningscriteria?",
@@ -520,7 +520,7 @@ export const laws = [
   },
   {
     id: "8",
-    "artikel ": "2.155a",
+    artikel: "2.155a",
     circulair: true,
     titel: "Levenscycluskosten als gunningscriterium, meer houtbouw",
     kop_1_samenvatting_juridische_maatregel: "Wat zijn levenscycluskosten?",
@@ -583,7 +583,7 @@ export const laws = [
   },
   {
     id: "9",
-    "artikel ": "2.11",
+    artikel: "2.11",
     circulair: true,
     titel: "Omgevingswaarden in omgevingsplan",
     kop_1_samenvatting_juridische_maatregel: "Wat is een omgevingswaarde?",
@@ -646,7 +646,7 @@ export const laws = [
   },
   {
     id: "10",
-    "artikel ": "2.12",
+    artikel: "2.12",
     circulair: true,
     titel: "Omgevingswaarden in de omgevingsverordening",
     kop_1_samenvatting_juridische_maatregel: "Wat is een omgevingswaarde?",
@@ -709,7 +709,7 @@ export const laws = [
   },
   {
     id: "11",
-    "artikel ": "2.22",
+    artikel: "2.22",
     circulair: true,
     titel: "Instructieregels behalen omgevingswaarden",
     kop_1_samenvatting_juridische_maatregel: "Wat zijn instructieregels?",
@@ -772,7 +772,7 @@ export const laws = [
   },
   {
     id: "12",
-    "artikel ": "2.24",
+    artikel: "2.24",
     circulair: true,
     titel:
       "Instructieregels behalen omgevingswaarden of andere doelstellingen fysieke leefomgeving",
@@ -836,7 +836,7 @@ export const laws = [
   },
   {
     id: "13",
-    "artikel ": "3.1",
+    artikel: "3.1",
     circulair: true,
     titel: "Gemeentelijke omgevingsvisie",
     kop_1_samenvatting_juridische_maatregel: "Wat is een omgevingsvisie?",
@@ -899,7 +899,7 @@ export const laws = [
   },
   {
     id: "14",
-    "artikel ": "3.1",
+    artikel: "3.1",
     circulair: true,
     titel: "Provinciale omgevingsvisie",
     kop_1_samenvatting_juridische_maatregel: "Wat is een omgevingsvisie?",
@@ -962,7 +962,7 @@ export const laws = [
   },
   {
     id: "15",
-    "artikel ": "3.1",
+    artikel: "3.1",
     circulair: true,
     titel: "Nationale omgevingsvisie",
     kop_1_samenvatting_juridische_maatregel: "Wat is een omgevingsvisie?",
@@ -1025,7 +1025,7 @@ export const laws = [
   },
   {
     id: "16",
-    "artikel ": "3.4",
+    artikel: "3.4",
     circulair: true,
     titel: "Gemeentelijk omgevingsprogramma",
     kop_1_samenvatting_juridische_maatregel:
@@ -1089,7 +1089,7 @@ export const laws = [
   },
   {
     id: "17",
-    "artikel ": "3.4",
+    artikel: "3.4",
     circulair: true,
     titel: "Provinciaal omgevingsprogramma",
     kop_1_samenvatting_juridische_maatregel:
@@ -1153,7 +1153,7 @@ export const laws = [
   },
   {
     id: "18",
-    "artikel ": "3.4",
+    artikel: "3.4",
     circulair: true,
     titel: "Nationaal omgevingsprogramma",
     kop_1_samenvatting_juridische_maatregel:
@@ -1217,7 +1217,7 @@ export const laws = [
   },
   {
     id: "19",
-    "artikel ": "4.1",
+    artikel: "4.1",
     circulair: true,
     titel: "Houtbouw in het omgevingsplan",
     kop_1_samenvatting_juridische_maatregel: "Wat is een omgevingsplan?",
@@ -1279,7 +1279,7 @@ export const laws = [
   },
   {
     id: "20",
-    "artikel ": "4.2",
+    artikel: "4.2",
     circulair: true,
     titel: "Houtbouw in omgevingsverordening",
     kop_1_samenvatting_juridische_maatregel: "Wat is een omgevingsverordening?",
@@ -1341,7 +1341,7 @@ export const laws = [
   },
   {
     id: "21",
-    "artikel ": "4.4",
+    artikel: "4.4",
     circulair: true,
     titel: "Verbod activiteit zonder omgevingsvergunning",
     kop_1_samenvatting_juridische_maatregel:
@@ -1405,7 +1405,7 @@ export const laws = [
   },
   {
     id: "22",
-    "artikel ": "4.4",
+    artikel: "4.4",
     circulair: true,
     titel: "Verbod activiteit zonder omgevingsvergunning",
     kop_1_samenvatting_juridische_maatregel:
@@ -1469,7 +1469,7 @@ export const laws = [
   },
   {
     id: "23",
-    "artikel ": "4.5",
+    artikel: "4.5",
     circulair: true,
     titel: "Grondslag maatwerkvoorschrift",
     kop_1_samenvatting_juridische_maatregel: "Wat is een maatwerkvoorschrift?",
@@ -1531,7 +1531,7 @@ export const laws = [
   },
   {
     id: "24",
-    "artikel ": "4.6",
+    artikel: "4.6",
     circulair: true,
     titel: "Maatwerkregels omgevingsplan",
     kop_1_samenvatting_juridische_maatregel: "Wat zijn maatwerkregels?",
@@ -1594,7 +1594,7 @@ export const laws = [
   },
   {
     id: "25",
-    "artikel ": "4.6",
+    artikel: "4.6",
     circulair: true,
     titel: "Maatwerkregels omgevingsverordening",
     kop_1_samenvatting_juridische_maatregel: "Wat zijn maatwerkregels?",
@@ -1657,7 +1657,7 @@ export const laws = [
   },
   {
     id: "26",
-    "artikel ": "4.7",
+    artikel: "4.7",
     circulair: true,
     titel: "Grondslag gelijkwaardigheidsbepaling",
     kop_1_samenvatting_juridische_maatregel:
@@ -1721,7 +1721,7 @@ export const laws = [
   },
   {
     id: "27",
-    "artikel ": "9.1",
+    artikel: "9.1",
     circulair: true,
     titel: "Voorkeursrecht gemeenten",
     kop_1_samenvatting_juridische_maatregel: "wat is voorkeursrecht ?",
@@ -1784,7 +1784,7 @@ export const laws = [
   },
   {
     id: "28",
-    "artikel ": "9.1",
+    artikel: "9.1",
     circulair: true,
     titel: "Voorkeursrecht provincies",
     kop_1_samenvatting_juridische_maatregel: "wat is voorkeursrecht ?",
@@ -1847,7 +1847,7 @@ export const laws = [
   },
   {
     id: "29",
-    "artikel ": "9.1",
+    artikel: "9.1",
     circulair: true,
     titel: "Voorkeursrecht Rijk",
     kop_1_samenvatting_juridische_maatregel: "wat is voorkeursrecht ?",
@@ -1909,7 +1909,7 @@ export const laws = [
   },
   {
     id: "30",
-    "artikel ": "11.1",
+    artikel: "11.1",
     circulair: true,
     titel: "Onteigening",
     kop_1_samenvatting_juridische_maatregel: "Wat is onteigening?",
@@ -1971,7 +1971,7 @@ export const laws = [
   },
   {
     id: "31",
-    "artikel ": "11.1",
+    artikel: "11.1",
     circulair: true,
     titel: "Onteigening",
     kop_1_samenvatting_juridische_maatregel: "Wat is onteigening?",
@@ -2033,7 +2033,7 @@ export const laws = [
   },
   {
     id: "32",
-    "artikel ": "11.1",
+    artikel: "11.1",
     circulair: true,
     titel: "Onteigening",
     kop_1_samenvatting_juridische_maatregel: "Wat is onteigening?",
@@ -2095,7 +2095,7 @@ export const laws = [
   },
   {
     id: "33",
-    "artikel ": "23.3",
+    artikel: "23.3",
     circulair: true,
     titel: "Experimenteerbepaling",
     kop_1_samenvatting_juridische_maatregel:
@@ -2159,7 +2159,7 @@ export const laws = [
   },
   {
     id: "34",
-    "artikel ": "23.3",
+    artikel: "23.3",
     circulair: true,
     titel: "Experimenteerbepaling",
     kop_1_samenvatting_juridische_maatregel:
@@ -2223,7 +2223,7 @@ export const laws = [
   },
   {
     id: "35",
-    "artikel ": "8.20",
+    artikel: "8.20",
     circulair: true,
     titel:
       "Financiele bijdrage voor houten bouwwerken op basis van een omgevingsvisie of programma",
@@ -2288,7 +2288,7 @@ export const laws = [
   },
   {
     id: "36",
-    "artikel ": "3.169",
+    artikel: "3.169",
     circulair: true,
     titel: "Meldingsplicht voorbereiding houtafval voor recycling",
     kop_1_samenvatting_juridische_maatregel: "Wat is een meldingsplicht?",
@@ -2352,7 +2352,7 @@ export const laws = [
   },
   {
     id: "37",
-    "artikel ": "4.619",
+    artikel: "4.619",
     circulair: true,
     titel: "Meldingsplicht ontvangst afvalstoffen",
     kop_1_samenvatting_juridische_maatregel: "Wat is een meldingsplicht?",
@@ -2416,7 +2416,7 @@ export const laws = [
   },
   {
     id: "38",
-    "artikel ": "11.127",
+    artikel: "11.127",
     circulair: true,
     titel: "Meldingsplicht vellen houtopstanden",
     kop_1_samenvatting_juridische_maatregel: "Wat is een meldingsplicht?",
@@ -2480,7 +2480,7 @@ export const laws = [
   },
   {
     id: "39",
-    "artikel ": "3.7",
+    artikel: "3.7",
     circulair: true,
     titel: "Maatwerkvoorschriften bestaande bouw",
     kop_1_samenvatting_juridische_maatregel: "Wat zijn maatwerkvoorschriften?",
@@ -2544,7 +2544,7 @@ export const laws = [
   },
   {
     id: "40",
-    "artikel ": "3.84",
+    artikel: "3.84",
     circulair: true,
     titel: "Energiebesparende maatregelen woningen en kantoren",
     kop_1_samenvatting_juridische_maatregel:
@@ -2609,7 +2609,7 @@ export const laws = [
   },
   {
     id: "41",
-    "artikel ": "4.159",
+    artikel: "4.159",
     circulair: true,
     titel: "Maatwerkregels MPG",
     kop_1_samenvatting_juridische_maatregel: "Wat zijn maatwerkregels?",
@@ -2672,7 +2672,7 @@ export const laws = [
   },
   {
     id: "42",
-    "artikel ": "7.10",
+    artikel: "7.10",
     circulair: true,
     titel: "Sloopmelding",
     kop_1_samenvatting_juridische_maatregel: "Wat is een sloopmelding?",
@@ -2734,7 +2734,7 @@ export const laws = [
   },
   {
     id: "43",
-    "artikel ": "7.14",
+    artikel: "7.14",
     circulair: true,
     titel: "Maatwerkvoorschrift procedure bouw- en sloopwerkzaamheden",
     kop_1_samenvatting_juridische_maatregel: "Wat zijn maatwerkvoorschriften?",
@@ -2798,7 +2798,7 @@ export const laws = [
   },
   {
     id: "44",
-    "artikel ": "7.26",
+    artikel: "7.26",
     circulair: true,
     titel: "Nadere fracties eisen sloopwerkzaamheden",
     kop_1_samenvatting_juridische_maatregel: "Wat zijn nadere fracties?",
@@ -2861,7 +2861,7 @@ export const laws = [
   },
   {
     id: "45",
-    "artikel ": "9.5.2",
+    artikel: "9.5.2",
     circulair: true,
     titel: "Regels hergebruik producten",
     kop_1_samenvatting_juridische_maatregel: "Wat zijn regels over hergebruik?",
