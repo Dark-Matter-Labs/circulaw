@@ -341,6 +341,14 @@ export default function Houtbouw() {
             </div>
           </div>
         </div>
+        <div className="mt-10 mb-10">
+          <iframe
+            src="https://embed.kumu.io/a869c92294a6587ee4291bcf39930073"
+            width="100%"
+            height="600"
+            frameBorder="0"
+          ></iframe>
+        </div>
       </div>
       <div className="pt-5">
         <div className="pt-6">

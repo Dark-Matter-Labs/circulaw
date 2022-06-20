@@ -217,7 +217,9 @@ export default function Law() {
                 <tr className="my-10 border-b-2">
                   <td className="w-1/2">Artikel</td>
                   <td className="w-1/2">
-                    <a className="link" href={data.link_naar_wetsartikel}>{data.artikel}</a>
+                    <a className="link" href={data.link_naar_wetsartikel}>
+                      {data.artikel}
+                    </a>
                   </td>
                 </tr>
                 <tr className="my-10 border-b-2">
