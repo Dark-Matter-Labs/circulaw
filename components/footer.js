@@ -1,3 +1,6 @@
+import Image from "next/image";
+import climateKICLogo from "../public/EIT-CKIC-Logo_White_Standard.png";
+
 const navigation = {
   WAARDEKETENS: [
     {
@@ -79,6 +82,9 @@ export default function Example() {
                     </li>
                   ))}
                 </ul>
+              </div>
+              <div>
+                <Image src={climateKICLogo} alt="EIT Climate KIC Logo" />
               </div>
             </div>
           </div>
