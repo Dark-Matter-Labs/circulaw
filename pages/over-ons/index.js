@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import climateKICLogo from "../../public/EIT-CKIC-Logo_Transparent_Standard.png";
 import Layout from "../../components/layout";
 
 export default function OverOns() {
@@ -80,6 +82,9 @@ export default function OverOns() {
           hieraan aan te passen. CircuLaw heeft in de vroege ontwikkelfase
           deelgenomen aan Climate-KICs Deep Demonstrations Programma, en heeft
           vanuit dit programma financiering en kennis ontvangen.
+          <div className="p-20">
+            <Image src={climateKICLogo} alt="EIT Climate KIC Logo" />
+          </div>
         </div>
 
         <div className="text-xl font-bold py-4">Provincie Noord-Holland</div>

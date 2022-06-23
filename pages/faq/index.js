@@ -1,3 +1,5 @@
+import Image from "next/image";
+import climateKICLogo from "../../public/EIT-CKIC-Logo_Transparent_Standard.png";
 import Layout from "../../components/layout";
 
 export default function Blog() {
@@ -315,10 +317,13 @@ export default function Blog() {
             Wie zitten er achter de ontwikkeling van Circulaw?
           </div>
           <div className="w-full pb-4">
-            Gemeente Amsterdam, Dark Matter Laboratories, Climate KIC. Provincie
-            Noord-Holland,_ Provincie Flevoland, Riiksdienst voor Ondernemend
-            Nederland (RVO) en het MRA (Metropoolregio Amsterdam) Kernteam
-            Houtbouw
+            Gemeente Amsterdam, Dark Matter Laboratories, EIT Climate KIC.
+            Provincie Noord-Holland,_ Provincie Flevoland, Riiksdienst voor
+            Ondernemend Nederland (RVO) en het MRA (Metropoolregio Amsterdam)
+            Kernteam Houtbouw
+            <div className="p-20">
+              <Image src={climateKICLogo} alt="EIT Climate KIC Logo" />
+            </div>
           </div>
 
           <div className="w-full pb-4 text-2xl font-bold ">
