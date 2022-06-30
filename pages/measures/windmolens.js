@@ -134,7 +134,7 @@ export default function Measures() {
       let numGron = 0;
 
       filteredLaws = filteredLaws.filter((element) => {
-        return element.casus === "Circulaire windmolens";
+        return element.casus === "Circulaire windturbines";
       });
 
       if (selected.wettelijk_bevoegdheidsniveau.length > 0) {
