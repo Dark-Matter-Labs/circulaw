@@ -2,14 +2,6 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  usePDF,
-  Document,
-  Page,
-  StyleSheet,
-  View,
-  Text,
-} from "@react-pdf/renderer";
 import Layout from "../../components/layout";
 import IcontWood from "../../public/icons/wood.png";
 import Tooltip from "../../components/tooltip";
@@ -73,19 +65,6 @@ const fetcher = async (url) => {
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
-
-const MyDoc = () => (
-  <Document>
-    <Page size="A4" style={styles.page}>
-      <View style={styles.section}>
-        <Text>Section #1</Text>
-      </View>
-      <View style={styles.section}>
-        <Text>Section #2</Text>
-      </View>
-    </Page>
-  </Document>
-);
 
 export default function Law() {
   const { query } = useRouter();
@@ -374,9 +353,6 @@ export default function Law() {
           </div>
         </div>
       </div>
-      <a href={instance.url} download="test.pdf">
-        Download
-      </a>
     </Layout>
   );
 }

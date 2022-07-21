@@ -5,7 +5,6 @@ import ActionPanel from "../components/section-action-panel";
 import Layout from "/components/layout";
 import SectionTypes from "/components/section-types-list";
 import cycleScale from "../public/Circulaw_texture.svg";
-import seedHero from "../public/seeds.png";
 import hammerIcon from "../public/hammer.svg";
 import userIcon from "../public/person.svg";
 import leafIcon from "../public/leaf.svg";
