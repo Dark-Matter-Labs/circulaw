@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Fragment } from "react";
-import { Popover, Disclosure, Menu, Transition } from "@headlessui/react";
+import { Popover, Disclosure, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 
-import CirculawLogo from "../public/circulaw.png";
+import CirculawLogo from "../public/Circulaw_logotype.svg";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -62,14 +62,12 @@ const waardeketens = [
   },
 ];
 
-const voorbeelden = [{ name: "name", description: "description", href: "#" }];
-
-export default function Example() {
+export default function Nav() {
   return (
     <Disclosure as="nav" className="bg-white shadow">
       {({ open }) => (
         <>
-          <div className="bg-[#4099DA] sm:bg-white max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="bg-light sm:bg-light px-2 sm:px-6 lg:px-20 lg:py-8 nav">
             <div className="relative flex justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button */}
@@ -82,15 +80,12 @@ export default function Example() {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className=" flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start ">
                 <div className="flex-shrink-0 flex items-center">
                   <div className="w-48">
                     <Link href="/">
                       <a>
                         {" "}
-                        {/* <div className="">
-                        <Image src={CirculawLogo} alt="Picture of the author" />
-                          </div> */}
                         <div className="">
                           <Image
                             src={CirculawLogo}
@@ -101,90 +96,139 @@ export default function Example() {
                     </Link>
                   </div>
                 </div>
-                <div className="hidden absolute inset-y-0 right-0 sm:ml-6 sm:flex">
-                  <Link href="/over-ons">
-                    <a className="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">
-                      Over ons
-                    </a>
-                  </Link>
-                  <Link href="/contact">
-                    <a className="text-black inline-flex items-center px-1 pt-1 text-sm font-medium">
-                      Contact
-                    </a>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex inset-x-0 top-0 p-5 sm:p-9 invisible sm:visible hidden sm:inline">
-            <div className="flex-1 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-              <div className="content right-0">
-                <div className="relative flex items-center justify-between">
-                  <div className="">
-                    <Popover className="inline-block relative ">
-                      {({ open }) => (
-                        <>
-                          <Popover.Button
-                            className={classNames(
-                              open ? "text-black" : "text-black",
-                              "group bg-white rounded-md inline-flex items-center text-base font-medium"
-                            )}
-                          >
-                            <span className="uppercase">Maatregelen</span>
-                            <ChevronDownIcon
-                              className={classNames(
-                                open ? "text-gray-600" : "text-gray-400",
-                                "ml-2 h-5 w-5 group-hover:text-gray-500"
-                              )}
-                              aria-hidden="true"
-                            />
-                          </Popover.Button>
+                <div className="hidden sm:ml-6 sm:flex">
+                  <div className="flex inset-x-0 top-0 p-5 invisible sm:visible hidden sm:inline">
+                    <div className="flex-1 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+                      <div className="content right-0">
+                        <div className="relative flex items-center justify-between font-manrope font-semibold">
+                          <div className="">
+                            <Popover className="inline-block relative ">
+                              {({ open }) => (
+                                <>
+                                  <Popover.Button
+                                    className={classNames(
+                                      open ? "text-black" : "text-black",
+                                      "group rounded-md inline-flex items-center text-base font-medium"
+                                    )}
+                                  >
+                                    <span className="uppercase">
+                                      Thema&apos;s
+                                    </span>
+                                    <ChevronDownIcon
+                                      className={classNames(
+                                        open
+                                          ? "text-gray-600"
+                                          : "text-gray-400",
+                                        "ml-2 h-5 w-5 group-hover:text-gray-500"
+                                      )}
+                                      aria-hidden="true"
+                                    />
+                                  </Popover.Button>
 
-                          <Transition
-                            as={Fragment}
-                            enter="transition ease-out duration-200"
-                            enterFrom="opacity-0 translate-y-1"
-                            enterTo="opacity-100 translate-y-0"
-                            leave="transition ease-in duration-150"
-                            leaveFrom="opacity-100 translate-y-0"
-                            leaveTo="opacity-0 translate-y-1"
-                          >
-                            <Popover.Panel className="absolute z-10  transform w-screen max-w-xs sm:px-0">
-                              <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-                                <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                                  {waardeketens.map((item) => (
-                                    <a
-                                      key={item.name}
-                                      href={item.href}
-                                      className="-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
-                                    >
-                                      <p
-                                        className={`text-base font-medium text-gray-900 ${item.className}`}
-                                      >
-                                        {item.name}
-                                      </p>
-                                    </a>
-                                  ))}
-                                </div>
-                              </div>
-                            </Popover.Panel>
-                          </Transition>
-                        </>
-                      )}
-                    </Popover>
-                    <div className="inline-block relative">
-                      <Link href="/hoe-het-werkt">
-                        <a className="uppercase pl-4 text-black group bg-white rounded-md inline-flex items-center text-base font-medium">
-                          Hoe Het Werkt
-                        </a>
-                      </Link>
-                    </div>
-                    <div className="inline-block relative ">
-                      <Link href="/faq">
-                        <a className="uppercase pl-4 text-black group bg-white rounded-md inline-flex items-center text-base font-medium">
-                          vraag & antwoord
-                        </a>
-                      </Link>
+                                  <Transition
+                                    as={Fragment}
+                                    enter="transition ease-out duration-200"
+                                    enterFrom="opacity-0 translate-y-1"
+                                    enterTo="opacity-100 translate-y-0"
+                                    leave="transition ease-in duration-150"
+                                    leaveFrom="opacity-100 translate-y-0"
+                                    leaveTo="opacity-0 translate-y-1"
+                                  >
+                                    <Popover.Panel className="absolute z-10  transform w-screen max-w-xs sm:px-0">
+                                      <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+                                        <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                                          {waardeketens.map((item) => (
+                                            <a
+                                              key={item.name}
+                                              href={item.href}
+                                              className="-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
+                                            >
+                                              <p
+                                                className={`text-base font-medium text-gray-900 ${item.className}`}
+                                              >
+                                                {item.name}
+                                              </p>
+                                            </a>
+                                          ))}
+                                        </div>
+                                      </div>
+                                    </Popover.Panel>
+                                  </Transition>
+                                </>
+                              )}
+                            </Popover>
+                            <Popover className="inline-block relative ">
+                              {({ open }) => (
+                                <>
+                                  <Popover.Button
+                                    className={classNames(
+                                      open ? "text-black" : "text-black",
+                                      "group rounded-md inline-flex items-center text-base font-medium"
+                                    )}
+                                  >
+                                    <span className="uppercase pl-8">
+                                    OVER CIRCULAW
+                                    </span>
+                                    <ChevronDownIcon
+                                      className={classNames(
+                                        open
+                                          ? "text-gray-600"
+                                          : "text-gray-400",
+                                        "ml-2 h-5 w-5 group-hover:text-gray-500"
+                                      )}
+                                      aria-hidden="true"
+                                    />
+                                  </Popover.Button>
+
+                                  <Transition
+                                    as={Fragment}
+                                    enter="transition ease-out duration-200"
+                                    enterFrom="opacity-0 translate-y-1"
+                                    enterTo="opacity-100 translate-y-0"
+                                    leave="transition ease-in duration-150"
+                                    leaveFrom="opacity-100 translate-y-0"
+                                    leaveTo="opacity-0 translate-y-1"
+                                  >
+                                    <Popover.Panel className="absolute z-10  transform w-screen max-w-xs sm:px-0">
+                                      <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+                                        <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                                          {waardeketens.map((item) => (
+                                            <a
+                                              key={item.name}
+                                              href={item.href}
+                                              className="-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
+                                            >
+                                              <p
+                                                className={`text-base font-medium text-gray-900 ${item.className}`}
+                                              >
+                                                {item.name}
+                                              </p>
+                                            </a>
+                                          ))}
+                                        </div>
+                                      </div>
+                                    </Popover.Panel>
+                                  </Transition>
+                                </>
+                              )}
+                            </Popover>
+                            <div className="inline-block relative">
+                              <Link href="/hoe-het-werkt">
+                                <a className="uppercase pl-8 text-black group rounded-md inline-flex items-center text-base font-medium">
+                                VRAAG & ANTWOORD
+                                </a>
+                              </Link>
+                            </div>
+                            <div className="inline-block relative ">
+                              <Link href="/faq">
+                                <a className="uppercase pl-8 text-black group rounded-md inline-flex items-center text-base font-medium">
+                                CONTACT
+                                </a>
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
