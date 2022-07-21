@@ -6,18 +6,6 @@ import Layout from "../../components/layout";
 import IcontWood from "../../public/icons/wood.png";
 import Tooltip from "../../components/tooltip";
 
-const styles = StyleSheet.create({
-  page: {
-    flexDirection: "row",
-    backgroundColor: "#E4E4E4",
-  },
-  section: {
-    margin: 10,
-    padding: 10,
-    flexGrow: 1,
-  },
-});
-
 const formatDate = (date) => {
   let dateObject = new Date(date);
   return dateObject.toLocaleDateString();
