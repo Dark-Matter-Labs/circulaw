@@ -51,3 +51,16 @@
 .link-hover:hover {
   cursor: pointer;
 }
+
+.texture-move {
+  transform: translate(100px,10px);  
+  -webkit-transform: translate(120px,-200px); 
+  z-index: 1;
+  margin-bottom: -40%;
+  position: relative;
+}
+
+.nav {
+  z-index: 99999;
+  position: relative;
+}
