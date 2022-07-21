@@ -62,8 +62,6 @@ export default function Law() {
     fetcher
   );
 
-  const [instance, updateInstance] = usePDF({ document: MyDoc });
-
   if (error) return <div>{error.message} </div>;
   if (!data) return <div>Loading...</div>;
 
