@@ -9,6 +9,7 @@
   "dependencies": {
     "@headlessui/react": "^1.6.0",
     "@heroicons/react": "^1.0.6",
+    "@react-pdf/renderer": "^2.3.0",
     "next": "^12.0.7",
     "next-pagination": "^3.1.0",
     "open-graph-scraper": "^4.11.0",
