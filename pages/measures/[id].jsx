@@ -2,9 +2,29 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import Link from "next/link";
 import Image from "next/image";
+import {
+  usePDF,
+  Document,
+  Page,
+  StyleSheet,
+  View,
+  Text,
+} from "@react-pdf/renderer";
 import Layout from "../../components/layout";
 import IcontWood from "../../public/icons/wood.png";
 import Tooltip from "../../components/tooltip";
+
+const styles = StyleSheet.create({
+  page: {
+    flexDirection: "row",
+    backgroundColor: "#E4E4E4",
+  },
+  section: {
+    margin: 10,
+    padding: 10,
+    flexGrow: 1,
+  },
+});
 
 const formatDate = (date) => {
   let dateObject = new Date(date);
@@ -30,7 +50,11 @@ const URLReplacer = (text) => {
   match.map((url) => {
     linkFormattedText = linkFormattedText.replace(
       url,
-      `<a class="link" href=\"` + url + '"  target="_BLANK">' + url + `</a>`
+      `<a class="text-green2" href=\"` +
+        url +
+        '"  target="_BLANK">' +
+        url +
+        `</a>`
     );
   });
   return linkFormattedText;
@@ -50,6 +74,19 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+const MyDoc = () => (
+  <Document>
+    <Page size="A4" style={styles.page}>
+      <View style={styles.section}>
+        <Text>Section #1</Text>
+      </View>
+      <View style={styles.section}>
+        <Text>Section #2</Text>
+      </View>
+    </Page>
+  </Document>
+);
+
 export default function Law() {
   const { query } = useRouter();
 
@@ -58,8 +95,14 @@ export default function Law() {
     fetcher
   );
 
+  const [instance, updateInstance] = usePDF({ document: MyDoc });
+
   if (error) return <div>{error.message} </div>;
   if (!data) return <div>Loading...</div>;
+
+  if (instance.loading) return <div>Loading ...</div>;
+
+  if (instance.error) return <div>Something went wrong: {error}</div>;
 
   return (
     <Layout>
@@ -82,10 +125,21 @@ export default function Law() {
         }
       `}</style>
       <div className="p-8">
-        <Link href="/laws" className="mt-24 mb-2 w-full font-normal ">
-          <a className="link font-semibold">← Terug</a>
-        </Link>
-
+        {data.casus === "Houtbouw" ? (
+          <Link
+            href="/measures/houtbouw"
+            className="mt-24 mb-2 w-full font-normal "
+          >
+            <a className="text-green2 font-semibold">← Terug</a>
+          </Link>
+        ) : (
+          <Link
+            href="/measures/windmolens"
+            className="mt-24 mb-2 w-full font-normal "
+          >
+            <a className="text-green2 font-semibold">← Terug</a>
+          </Link>
+        )}
         <div className="flex">
           <div className="w-2/3 p-6">
             <div className="border-b-2 ">
@@ -102,7 +156,9 @@ export default function Law() {
                   href={"/" + data.casus.replace(/\s+/g, "-").toLowerCase()}
                 >
                   <a>
-                    <span className="font-semibold link">{data.casus}</span>
+                    <span className="font-semibold text-green2">
+                      {data.casus}
+                    </span>
                   </a>
                 </Link>
                 <div className="inline-block">{/* <ToolTip data="" /> */}</div>
@@ -111,32 +167,32 @@ export default function Law() {
                 R-ladder:{" "}
                 <span className="block-inline font-semibold text-base text-gray-900">
                   {data.R1 && (
-                    <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                    <span className="bg-green2 text-white rounded-full p-1 mr-2">
                       <Tooltip icon="false">R1</Tooltip>
                     </span>
                   )}
                   {data.R2 && (
-                    <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                    <span className="bg-green2 text-white rounded-full p-1 mr-2">
                       <Tooltip icon="false">R2</Tooltip>
                     </span>
                   )}
                   {data.R3 && (
-                    <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                    <span className="bg-green2 text-white rounded-full p-1 mr-2">
                       <Tooltip icon="false">R3</Tooltip>
                     </span>
                   )}
                   {data.R4 && (
-                    <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                    <span className="bg-green2 text-white rounded-full p-1 mr-2">
                       <Tooltip icon="false">R4</Tooltip>
                     </span>
                   )}
                   {data.R5 && (
-                    <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                    <span className="bg-green2 text-white rounded-full p-1 mr-2">
                       <Tooltip icon="false">R5</Tooltip>
                     </span>
                   )}
                   {data.R6 && (
-                    <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                    <span className="bg-green2 text-white rounded-full p-1 mr-2">
                       <Tooltip icon="false">R6</Tooltip>
                     </span>
                   )}
@@ -167,7 +223,7 @@ export default function Law() {
               <h3 className="font-bold text-xl pb-2">
                 {data.kop_2_toepassing_juridische_maatregel}
               </h3>
-              <div className=" px-5 py-5 border-2  border-black rounded newlineDisplay">
+              <div className="px-5 py-5 border-2  border-black rounded newlineDisplay ">
                 {checkURL(data.toepassing_juridische_maatregel).length > 0 ? (
                   <div
                     dangerouslySetInnerHTML={{
@@ -217,7 +273,10 @@ export default function Law() {
                 <tr className="my-10 border-b-2">
                   <td className="w-1/2">Artikel</td>
                   <td className="w-1/2">
-                    <a className="link" href={data.link_naar_wetsartikel}>
+                    <a
+                      className="text-green2"
+                      href={data.link_naar_wetsartikel}
+                    >
                       {data.artikel}
                     </a>
                   </td>
@@ -249,13 +308,13 @@ export default function Law() {
           </div>
           <div className="w-1/3 ">
             <div className="py-5">
-              <div className="relative flex justify-between  border-t-2 border-black">
-                <div className="font-bold 	">Juridisch invloed</div>
+              <div className="relative flex justify-between border-t-2 border-black">
+                <div className="font-bold">Juridisch invloed</div>
                 {/* <Tooltip data="" /> */}
               </div>
 
               <div className="mt-3 flex items-center">
-                <span className="pr-5"> LAAG</span>
+                <span className="pr-5">LAAG</span>
                 {[0, 1, 2, 3, 4].map((rating) => (
                   <div
                     key={rating}
@@ -315,6 +374,9 @@ export default function Law() {
           </div>
         </div>
       </div>
+      <a href={instance.url} download="test.pdf">
+        Download
+      </a>
     </Layout>
   );
 }
