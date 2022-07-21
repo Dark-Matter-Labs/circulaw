@@ -251,7 +251,7 @@ export default function CirculaireWindmolens() {
   });
   return (
     <Layout>
-      <div className="text-sm pb-9 pt-9 text-[#4099DA]">
+      <div className="text-sm pb-9 pt-9 text-green2">
         <Link href="/">
           <a>Home</a>
         </Link>
@@ -268,7 +268,7 @@ export default function CirculaireWindmolens() {
           <Image src={WindIcon} alt="Icon of Wood" width={48} />
         </div>
         <div className="text-3xl font-bold inline-block">
-          Circulaire Windmolens
+          Circulaire Windturbines
         </div>
       </div>
       <div>
@@ -293,7 +293,7 @@ export default function CirculaireWindmolens() {
                   </li>
                 </ul>
               </div>
-              <div className="bg-[#4099DA] text-white py-2 px-4 rounded max-w-max">
+              <div className="bg-green2 text-white py-2 px-4 rounded max-w-max">
                 <Link href="/measures/windmolens">
                   <a className="">Verken alle maatregelen voor windmolens →</a>
                 </Link>

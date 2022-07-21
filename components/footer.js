@@ -10,7 +10,7 @@ const navigation = {
     },
     { name: "Houtbouw", href: "/houtbouw", className: "pl-4" },
     {
-      name: "Circulaire windmolens",
+      name: "Circulaire turbines",
       href: "/circulaire-windmolens",
       className: "pl-4",
     },
@@ -40,9 +40,9 @@ const navigation = {
   ],
 };
 
-export default function Example() {
+export default function Footer() {
   return (
-    <footer className="bg-[#707A85] mt-20" aria-labelledby="footer-heading">
+    <footer className="bg-green2 mt-20" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
