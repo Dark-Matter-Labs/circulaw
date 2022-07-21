@@ -65,10 +65,6 @@ export default function Law() {
   if (error) return <div>{error.message} </div>;
   if (!data) return <div>Loading...</div>;
 
-  if (instance.loading) return <div>Loading ...</div>;
-
-  if (instance.error) return <div>Something went wrong: {error}</div>;
-
   return (
     <Layout>
       <style jsx>{`
