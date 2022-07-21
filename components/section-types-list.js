@@ -74,7 +74,7 @@ export default function SectionTypes({ data, qty, title, description }) {
                   <div className="inline-block">
                     <Image src={file.icon} alt="Picture of the author" />
                   </div>
-                  <div className="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none pb-4">
+                  <div className="mt-2 block text-sm font-medium text-gray-900  pointer-events-none pb-4">
                     {file.title} ({file.count})
                   </div>
                 </div>
