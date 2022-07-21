@@ -354,13 +354,13 @@ export default function Measures() {
   return (
     <Layout>
       <div className="w-full mt-10 ">
-        <div className="block text-[#4099DA]">
+        <div className="block text-green2">
           <Link href="/">
             <a>Home</a>
           </Link>
           <span className=""> → </span>
           <Link href="/circulaire-windmolens">
-            <a> Circulaire windmolens </a>
+            <a> Circulaire Turbines </a>
           </Link>
         </div>
       </div>
@@ -374,7 +374,7 @@ export default function Measures() {
           <h2 className="block text-4xl mb-20">Circulaire windmolens</h2>
           <div className=" flex justify-between pb-3 border-b border-black mb-3">
             <span className="text-lg">Verfijnen</span>{" "}
-            <span onClick={reset} className="underline blue link-hover">
+            <span onClick={reset} className="underline text-green1 link-hover">
               Wis filters
             </span>
           </div>

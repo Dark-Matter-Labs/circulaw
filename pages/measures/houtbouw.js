@@ -377,7 +377,7 @@ export default function Measures() {
   return (
     <Layout>
       <div className="w-full mt-10 ">
-        <div className="block text-[#4099DA]">
+        <div className="block text-green2">
           <Link href="/">
             <a>Home</a>
           </Link>
@@ -411,7 +411,7 @@ export default function Measures() {
               />
             </div>
             {searchValue !== "" && (
-              <button onClick={reset} className="blue">
+              <button onClick={reset} className="text-green1">
                 Clear search
               </button>
             )}
@@ -448,7 +448,7 @@ export default function Measures() {
         <div className="p-3 my-10">
           <div className=" flex justify-between pb-3 border-b border-black mb-3">
             <span className="text-lg">Verfijnen</span>{" "}
-            <span onClick={reset} className="underline blue link-hover">
+            <span onClick={reset} className="underline text-green1 link-hover">
               Wis filters
             </span>
           </div>
