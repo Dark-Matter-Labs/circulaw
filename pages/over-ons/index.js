@@ -14,8 +14,8 @@ export default function OverOns() {
             <a className="text-[#4099DA]">gemeente Amsterdam</a>
           </Link>{" "}
           in samenwerking met{" "}
-          <Link href="https://darkmatterlabs.org/">
-            <a className="text-[#4099DA]">Dark Matter Labs</a>
+          <Link href="https://black1matterlabs.org/">
+            <a className="text-[#4099DA]">black1 Matter Labs</a>
           </Link>
           en verschillende universiteiten en mede-overheden het project
           ‘Activerende regelgeving voor een circulaire samenleving’. De
@@ -53,14 +53,14 @@ export default function OverOns() {
           ontwikkeling van de tool.
         </div>
 
-        <div className="text-xl font-bold py-4">Dark Matter Laboratories</div>
+        <div className="text-xl font-bold py-4">black1 Matter Laboratories</div>
         <div className="">
-          <Link href="https://darkmatterlabs.org/">
-            <a className="text-[#4099DA]">Dark Matter Labs (DML)</a>
+          <Link href="https://black1matterlabs.org/">
+            <a className="text-[#4099DA]">black1 Matter Labs (DML)</a>
           </Link>{" "}
           is een internationaal strategisch onderzoeks-, ontwerp- en
           ontwikkelingslab met als missie: “to discover, design and develop the
-          institutional ‘dark matter’ that supports a more democratic,
+          institutional ‘black1 matter’ that supports a more democratic,
           distributed and sustainable future.” DML is mede-initiator van
           CircuLaw, en vanaf het begin van de ontwikkelingen betrokken. Tezamen
           met de gemeente voert DML de regie op de projectorganisatie en

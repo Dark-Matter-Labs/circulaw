@@ -30,7 +30,7 @@ const URLReplacer = (text) => {
   match.map((url) => {
     linkFormattedText = linkFormattedText.replace(
       url,
-      `<a class="text-green2" href=\"` +
+      `<a class="text-greenLink" href=\"` +
         url +
         '"  target="_BLANK">' +
         url +
@@ -91,14 +91,14 @@ export default function Law() {
             href="/measures/houtbouw"
             className="mt-24 mb-2 w-full font-normal "
           >
-            <a className="text-green2 font-semibold">← Terug</a>
+            <a className="text-greenLink font-semibold">← Terug</a>
           </Link>
         ) : (
           <Link
             href="/measures/windmolens"
             className="mt-24 mb-2 w-full font-normal "
           >
-            <a className="text-green2 font-semibold">← Terug</a>
+            <a className="text-greenLink font-semibold">← Terug</a>
           </Link>
         )}
         <div className="flex">
@@ -117,7 +117,7 @@ export default function Law() {
                   href={"/" + data.casus.replace(/\s+/g, "-").toLowerCase()}
                 >
                   <a>
-                    <span className="font-semibold text-green2">
+                    <span className="font-semibold text-greenLink">
                       {data.casus}
                     </span>
                   </a>
@@ -128,32 +128,32 @@ export default function Law() {
                 R-ladder:{" "}
                 <span className="block-inline font-semibold text-base text-gray-900">
                   {data.R1 && (
-                    <span className="bg-green2 text-white rounded-full p-1 mr-2">
+                    <span className="bg-greenLink text-white rounded-full p-1 mr-2">
                       <Tooltip icon="false">R1</Tooltip>
                     </span>
                   )}
                   {data.R2 && (
-                    <span className="bg-green2 text-white rounded-full p-1 mr-2">
+                    <span className="bg-greenLink text-white rounded-full p-1 mr-2">
                       <Tooltip icon="false">R2</Tooltip>
                     </span>
                   )}
                   {data.R3 && (
-                    <span className="bg-green2 text-white rounded-full p-1 mr-2">
+                    <span className="bg-greenLink text-white rounded-full p-1 mr-2">
                       <Tooltip icon="false">R3</Tooltip>
                     </span>
                   )}
                   {data.R4 && (
-                    <span className="bg-green2 text-white rounded-full p-1 mr-2">
+                    <span className="bg-greenLink text-white rounded-full p-1 mr-2">
                       <Tooltip icon="false">R4</Tooltip>
                     </span>
                   )}
                   {data.R5 && (
-                    <span className="bg-green2 text-white rounded-full p-1 mr-2">
+                    <span className="bg-greenLink text-white rounded-full p-1 mr-2">
                       <Tooltip icon="false">R5</Tooltip>
                     </span>
                   )}
                   {data.R6 && (
-                    <span className="bg-green2 text-white rounded-full p-1 mr-2">
+                    <span className="bg-greenLink text-white rounded-full p-1 mr-2">
                       <Tooltip icon="false">R6</Tooltip>
                     </span>
                   )}
@@ -235,7 +235,7 @@ export default function Law() {
                   <td className="w-1/2">Artikel</td>
                   <td className="w-1/2">
                     <a
-                      className="text-green2"
+                      className="text-greenLink"
                       href={data.link_naar_wetsartikel}
                     >
                       {data.artikel}

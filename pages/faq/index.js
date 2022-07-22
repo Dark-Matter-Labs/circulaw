@@ -15,12 +15,13 @@ export default function Blog() {
             samenleving
           </div>
           <div className="w-full pb-4">
-            Eind 2020 startte gemeente Amsterdam in samenwerking met Dark Matter
-            Labs en verschillende andere partners het project &apos;Activerende
-            regelgeving voor en circulaire samenleving&apos;. De ontwikkeling
-            van de tool &apos;CircuLaw&apos; is een van de speerpunten van dit
-            project. Het doel van CircuLaw: regelgeving intensiever en
-            effectiever inzetten om de circulaire transitie te versnellen.
+            Eind 2020 startte gemeente Amsterdam in samenwerking met black1
+            Matter Labs en verschillende andere partners het project
+            &apos;Activerende regelgeving voor en circulaire samenleving&apos;.
+            De ontwikkeling van de tool &apos;CircuLaw&apos; is een van de
+            speerpunten van dit project. Het doel van CircuLaw: regelgeving
+            intensiever en effectiever inzetten om de circulaire transitie te
+            versnellen.
           </div>
           <div className="w-full pb-4">
             Inmiddels zijn we bijna anderhalf jaar verder en is de tool volop in
