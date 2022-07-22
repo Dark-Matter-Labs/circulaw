@@ -1,3 +1,113 @@
+h1 {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 62px;
+}
+
+h1.mobile {
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 130%;
+}
+
+h2 {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 150%;
+}
+
+h2.mobile {
+  font-size: 20px;
+  line-height: 140%;
+}
+
+h3 {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+}
+
+.body-text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 35px;
+}
+
+.body-text-mobile {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 170%;
+}
+
+.card-body {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 170%;
+}
+
+.link {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 35px;
+  text-decoration-line: underline;
+}
+
+.link-mobile {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration-line: underline;
+}
+
+.menu-title {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.menu-title-mobile {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.breadcrumb {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 19px;
+  text-decoration-line: underline;
+}
+
+.button {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+}
+
 .newlineDisplay {
   white-space: break-spaces;
 }
@@ -15,14 +125,6 @@
   font-size: 12px;
   font-weight: 600;
   line-height: 18px;
-}
-
-.blue {
-  color: #4099da;
-}
-
-.blue-bg {
-  background-color: #4099da;
 }
 
 .description {
@@ -44,23 +146,31 @@
   text-decoration: underline;
 }
 
-.link {
-  color: #4099da;
-}
-
 .link-hover:hover {
   cursor: pointer;
 }
 
 .texture-move {
-  transform: translate(100px,10px);  
-  -webkit-transform: translate(120px,-200px); 
+  transform: translate(30vw, 0);
+  -webkit-transform: translate(30vw, 0);
+  -ms-transform: translate(30vw, 0); /* IE 9 */
+  -o-transform: translate(30vw, 0); /* Opera */
+  -moz-transform: translate(30vw, 0); /* Firefox */
   z-index: 1;
   margin-bottom: -40%;
-  position: relative;
+}
+
+.texture-move2 {
+  transform: translate(30vw, 0);
+  -webkit-transform: translate(60vw, -40vh);
+  -ms-transform: translate(30vw, 0); /* IE 9 */
+  -o-transform: translate(30vw, 0); /* Opera */
+  -moz-transform: translate(30vw, 0); /* Firefox */
+  z-index: 1;
+  margin-bottom: -40%;
 }
 
 .nav {
-  z-index: 99999;
+  z-index: 10;
   position: relative;
 }
