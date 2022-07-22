@@ -30,44 +30,47 @@ const waardeketens = [
     href: "/circulaire-windmolens",
     className: "pl-8 font-normal",
   },
+];
+
+const over = [
   {
-    name: "Overige maatregelen",
+    name: "Waarom CircuLaw?",
     description: "description",
-    href: "/overige-maatregelen",
-    className: "pl-8 font-normal text-gray-400",
-  },
-  {
-    name: "Consumptiegoederen",
-    description: "description",
-    href: "/consumptiegoederen",
+    href: "#",
     className: "",
   },
   {
-    name: "Biomassa en voedsel",
+    name: "Wat willen we bereiken?",
     description: "description",
-    href: "/biomassa-en-voedsel",
+    href: "/",
     className: "",
   },
   {
-    name: "Maakindustrie",
+    name: "Hoever zijn we?",
     description: "description",
-    href: "/maakindustrie",
+    href: "/",
     className: "",
   },
   {
-    name: "Kunststoffen",
+    name: "Wie maken het?",
     description: "description",
-    href: "/kunststoffen",
+    href: "/",
+    className: "",
+  },
+  {
+    name: "Meedoen?",
+    description: "description",
+    href: "/",
     className: "",
   },
 ];
 
 export default function Nav() {
   return (
-    <Disclosure as="nav" className="bg-white shadow">
+    <Disclosure as="nav" className="bg-white">
       {({ open }) => (
         <>
-          <div className="bg-light sm:bg-light px-2 sm:px-6 lg:px-20 lg:py-8 nav">
+          <div className="bg-blush2 sm:bg-blush2 px-2 sm:px-6 lg:px-20 lg:py-8 nav">
             <div className="relative flex justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button */}
@@ -87,10 +90,7 @@ export default function Nav() {
                       <a>
                         {" "}
                         <div className="">
-                          <Image
-                            src={CirculawLogo}
-                            alt="Picture of the author"
-                          />
+                          <Image src={CirculawLogo} alt="CicuLaw logo" />
                         </div>
                       </a>
                     </Link>
@@ -167,7 +167,7 @@ export default function Nav() {
                                     )}
                                   >
                                     <span className="uppercase pl-8">
-                                    OVER CIRCULAW
+                                      OVER CIRCULAW
                                     </span>
                                     <ChevronDownIcon
                                       className={classNames(
@@ -192,7 +192,7 @@ export default function Nav() {
                                     <Popover.Panel className="absolute z-10  transform w-screen max-w-xs sm:px-0">
                                       <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                                         <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                                          {waardeketens.map((item) => (
+                                          {over.map((item) => (
                                             <a
                                               key={item.name}
                                               href={item.href}
@@ -215,14 +215,14 @@ export default function Nav() {
                             <div className="inline-block relative">
                               <Link href="/hoe-het-werkt">
                                 <a className="uppercase pl-8 text-black group rounded-md inline-flex items-center text-base font-medium">
-                                VRAAG & ANTWOORD
+                                  VRAAG & ANTWOORD
                                 </a>
                               </Link>
                             </div>
                             <div className="inline-block relative ">
                               <Link href="/faq">
                                 <a className="uppercase pl-8 text-black group rounded-md inline-flex items-center text-base font-medium">
-                                CONTACT
+                                  CONTACT
                                 </a>
                               </Link>
                             </div>
