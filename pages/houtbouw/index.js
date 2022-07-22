@@ -251,7 +251,7 @@ export default function Houtbouw() {
   });
   return (
     <Layout>
-      <div className="text-sm pb-9 pt-9 text-green2">
+      <div className="text-sm pb-9 pt-9 text-greenLink">
         <Link href="/">
           <a>Home</a>
         </Link>
@@ -293,7 +293,7 @@ export default function Houtbouw() {
                   </li>
                 </ul>
               </div>
-              <div className="bg-green2 text-white py-2 px-4 rounded max-w-max">
+              <div className="bg-greenLink text-white py-2 px-4 rounded max-w-max">
                 <Link href="/measures/houtbouw">
                   <a className="">Verken alle maatregelen in de houtbouw →</a>
                 </Link>
@@ -370,7 +370,7 @@ export default function Houtbouw() {
               className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 md:grid-cols-3 sm:gap-x-6 pb-9 flex flex-col justify-between"
             >
               {collecties.map((file) => (
-                <li key={file.id} className="static  bg-green4 ">
+                <li key={file.id} className="static  bg-green3 ">
                   <div className="w-full p-4">
                     <div className="relative">
                       <div className="absolute left-0 top-0 h-16 w-8 m-1">
@@ -393,7 +393,7 @@ export default function Houtbouw() {
                       {file.description}
                     </p>
                     <div className="pt-4 static">
-                      <div className=" text-sm bg-green2 text-white py-2 px-4 rounded inline-block bottom-4 max-w-max">
+                      <div className=" text-sm bg-greenLink text-white py-2 px-4 rounded inline-block bottom-4 max-w-max">
                         <Link href="/laws">
                           <a className="">Bekijk de maatregelen →</a>
                         </Link>
