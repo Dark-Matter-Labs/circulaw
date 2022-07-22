@@ -6,18 +6,22 @@ import Nav from "/components/nav";
 export default function Layout({ children }) {
   return (
     <>
-      <div className="bg-green3">
-        <div className="max-w-7xl mx-auto p-4">
-          <div className="flex items-center justify-between flex-wrap">
+      <div className="bg-blush2 border border-grey1">
+        <div className="mx-20 p-4">
+          <div className="flex justify-between flex-wrap">
             <div className="w-0 flex-1 flex items-center">
-              <span className="flex p-2 rounded-lg bg-green3">
-              </span>
-              <p className="ml-3 font-medium text-white truncate font-manrope font-normal">
+              <p className="ml-3 font-medium text-black1 truncate font-manrope font-normal">
                 <span className="md:hidden">
-                <span className="font-bold bg-light p-2">ALPHA</span> Testversie CircuLaw – je <u>feedback</u> helpt ons CircuLaw te verbeteren
+                  <span className="font-bold bg-blush1 p-2">ALPHA</span>{" "}
+                  Testversie CircuLaw -{" "}
+                  <span className="link text-greenLink">Lees meer -&gt;</span>
                 </span>
                 <span className="hidden md:inline">
-                  <span className="font-bold bg-light p-2">ALPHA</span> Testversie CircuLaw – je <u>feedback</u> helpt ons CircuLaw te verbeteren
+                  <span className="font-bold bg-blush1 p-4 m-2">ALPHA</span>{" "}
+                  Testversie CircuLaw -{" "}
+                  <span className="link-mobile text-greenLink">
+                    Lees meer -&gt;
+                  </span>
                 </span>
               </p>
             </div>
