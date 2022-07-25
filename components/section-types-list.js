@@ -40,7 +40,7 @@ export default function SectionTypes() {
     <div className="pb-20">
       <ul
         role="list"
-        className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-10"
+        className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 sm:gap-x-10"
       >
         {types.map((file) => (
           <li key={file.title} className="relative bg-white w-full">
