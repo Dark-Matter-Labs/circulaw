@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowNarrowDownIcon } from "@heroicons/react/solid";
 import ActionPanel from "../components/section-action-panel";
 import Layout from "/components/layout";
 import SectionTypes from "/components/section-types-list";
@@ -81,11 +80,11 @@ export default function Index() {
               type="button"
               className="inline-flex rounded-full items-center px-4 py-2 border border-blush1 button text-blush1 bg-green1 hover:bg-greenLink focus:outline-none "
             >
-              Waarom CircuLaw?
-              <ArrowNarrowDownIcon
-                className="ml-3 -mr-1 h-5 w-5"
-                aria-hidden="true"
-              />
+              <Link href="#waarom">
+                <a>
+                Waarom CircuLaw? ↓
+                </a>
+              </Link>
             </button>
           </div>
         </div>
@@ -110,7 +109,7 @@ export default function Index() {
         <div className="texture-move2 invisible sm:visible">
           <Image src={overTexture} alt="texture icon" />
         </div>
-        <div className="border-b border-grey1 pb-10">
+        <div className="border-b border-grey1 pb-10" id="waarom">
           <h2 className="pt-10">Waarom CircuLaw?</h2>
           <p className="body py-5">
             Voor het tegengaan van klimaatverandering, het verminderen van

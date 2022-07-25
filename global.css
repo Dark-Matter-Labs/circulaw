@@ -108,6 +108,11 @@ h3 {
   line-height: 27px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 .newlineDisplay {
   white-space: break-spaces;
 }
@@ -174,3 +179,4 @@ h3 {
   z-index: 10;
   position: relative;
 }
+
