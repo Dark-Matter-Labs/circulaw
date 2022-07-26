@@ -5,10 +5,6 @@ import HoutbouwHero from "../public/houtbouw.png";
 import WindmolensHero from "../public/turbine.png";
 import OverigeHero from "../public/biennekort.png";
 
-import windIcon from "../public/icons/wind.png";
-import cityIcon from "../public/icons/city.png";
-import woodIcon from "../public/icons/wood.png";
-
 const types = [
   {
     heroImage: HoutbouwHero,
@@ -43,7 +39,7 @@ export default function SectionTypes() {
         className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 sm:gap-x-10"
       >
         {types.map((file) => (
-          <li key={file.title} className="relative bg-white w-full">
+          <li key={file.title} className="relative bg-white w-full rounded-md shadow">
             <div className="object-cover pointer-events-none">
               <Image
                 src={file.heroImage}
