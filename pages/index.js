@@ -13,7 +13,7 @@ export default function Index() {
   return (
     <Layout>
       <div className="items-center bg-white">
-        <div className="mx-20 pb-20">
+        <div className="mx-20 pb-10">
           <div className="grid grid-cols-2 gap-1">
             <h1 className="text-green1 pb-6 pt-20 ">
               Regelgeving voor een circulaire economie
@@ -91,7 +91,7 @@ export default function Index() {
       </div>
 
       <div className="px-20 bg-greenAlpha pb-20">
-        <h2 className="pb-6 pt-10">Thema’s</h2>
+        <h2 className="pb-6 pt-8">Thema’s</h2>
 
         <SectionTypes />
         <p className="body-text">
@@ -111,7 +111,7 @@ export default function Index() {
         </div>
         <div className="border-b border-grey1 pb-10" id="waarom">
           <h2 className="pt-10">Waarom CircuLaw?</h2>
-          <p className="body py-5">
+          <p className="body-text py-5">
             Voor het tegengaan van klimaatverandering, het verminderen van
             vervuiling, het behoud van biodiversiteit en de beschikbaarheid van
             grondstoffen is een circulaire economie essentieel. In Nederland
@@ -126,7 +126,7 @@ export default function Index() {
         </div>
         <div className="border-b border-grey1 pb-10">
           <h2 className="pt-10">Hoever zijn we?</h2>
-          <ul className="body py-5 list-disc">
+          <ul className="body-text py-5 list-disc">
             <li>
               Een overzicht van wet- en regelgeving voor beleidsmakers die aan
               de slag willen met maatregelen voor de thema’s{" "}
@@ -147,7 +147,7 @@ export default function Index() {
         </div>
         <div className="border-b border-grey1 pb-10">
           <h2 className="pt-10">Voor wie is CircuLaw?</h2>
-          <p className="body py-5">
+          <p className="body-text py-5">
             CircuLaw is een service waarmee we in de eerste plaats beleidsmakers
             en transitiemanagers helpen meer en beter gebruik te maken van
             regelgeving om de circulaire economie te bevorderen. Maar CircuLaw
@@ -159,7 +159,7 @@ export default function Index() {
         </div>
         <div className="pb-10">
           <h2 className="pt-10">Wie maken CircuLaw?</h2>
-          <p className="body py-5">
+          <p className="body-text py-5">
             Gemeente Amsterdam, Dark Matter Laboratories, EIT Climate KIC, de
             Provincies Noord-Holland en Flevoland, Rijksdienst voor Ondernemend
             Nederland (RVO), het MRA (Metropoolregio Amsterdam) Kernteam
