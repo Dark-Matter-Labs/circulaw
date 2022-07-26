@@ -2,12 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import Layout from "../../components/layout";
+import SectionTypes from "/components/section-types-list";
 import ActionPanel from "../../components/section-action-panel";
 
-import WoodIcon from "../../public/icons/wood.png";
+import WoodIcon from "../../public/icons/wood.svg";
+import HoutbouwHero from "../../public/houtbouwHero.jpg";
 import CollectionIcon from "../../public/icons/collection.png";
-import HoutbouwHero from "../../public/houtbouwHero.png";
-import co2Hero from "../../public/illustration-co2.png";
 
 const laws = [
   {
@@ -251,106 +251,48 @@ export default function Houtbouw() {
   });
   return (
     <Layout>
-      <div className="text-sm pb-9 pt-9 text-greenLink">
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        <span className="px-1"> </span>
+      <div className="grid grid-cols-1 sm:grid-cols-2">
+      <div className="mx-20">
+        <div className="breadcrumb pt-8 text-greenLink">
+          <Link href="/">
+            <a>Home &gt; </a>
+          </Link>
+          </div>
+          <div className="pb-14 pt-14">
+          <div className="pr-4 inline-block">
+            <Image src={WoodIcon} alt="Icon of Wood" width={48} />
+          </div>
+          <h1 className="text-green1 inline-block">Houtbouw stimuleren </h1>
+          <h2 className="pt-4 pb-4">Milieudoelstellingen behalen met houtbouw</h2>
+          <p className="body-text">De manier waarop wij nu in Nederland bouwen is zeer belastend voor het milieu. Er is een eenvoudige oplossing: vervang beton deels door hout. Is dat hout dan wel geschikt en belasten we het milieu niet nog erger wanneer we bomen moeten gaan kappen?
 
-        {/*<span className="px-1"> →  </span>
-         <Link href="/">
-          <a>Gebouwde omgeving</a>
-        </Link> 
-        <span className="px-1"> → </span>*/}
-      </div>
-      <div className="pb-14 pt-14">
-        <div className="pr-4 inline-block">
-          <Image src={WoodIcon} alt="Icon of Wood" width={48} />
+Het is goed om te weten dat niet alleen de bosbouw steeds duurzamer geworden is, maar ook dat er veel nieuwe houtproducten zijn ontwikkeld die grote mogelijkheden bieden. Daardoor kan houtbouw heel goed bijdragen aan onze klimaatdoelstellingen.</p>
         </div>
-        <div className="text-3xl font-bold inline-block">Houtbouw</div>
+
+        <span className="text-greenLink link pt-10">
+        Hoe  houtbouw de circulaire transitie versnelt→
+          </span>
+
       </div>
       <div>
-        <div className="flex border-2 mb-4">
-          <div className="w-full md:w-1/2 p-4">
-            <div className="py-8">
-              <div className="text-lg font-bold pb-4">
-                Juridische en fiscale maatregelen om de transitie naar houtbouw
-                te versnellen
-              </div>
-              <div className="pb-4">
-                <ul className="list-disc pl-5">
-                  <li className="text-sm">
-                    <Link href="/meer-over-de-voordelen-van-houtbouw">
-                      <a>Mogelijkheden in bestaande en toekomstige wetgeving</a>
-                    </Link>
-                  </li>
-                  <li className="text-sm">
-                    Voor beleidsmakers van gemeentes, provincies en ministeries
-                  </li>
-                  <li className="text-sm">
-                    In de toekomst: met handelingsperspectief om maatregelen toe
-                    te passen
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-greenLink text-white py-2 px-4 rounded max-w-max">
-                <Link href="/measures/houtbouw">
-                  <a className="">Verken alle maatregelen in de houtbouw →</a>
-                </Link>
-              </div>{" "}
-            </div>
-          </div>
-          <div className="relative w-full md:w-1/2 ">
-            <Image
+      <Image
               src={HoutbouwHero}
               alt="Icon of Wood"
-              layout="fill"
-              objectFit="cover"
+              layout="responsive"
             />
-          </div>
-        </div>
-
-        <div className="flex border-2 min-h-fit];">
-          <div className="relative w-full md:w-1/2">
-            <Image
-              src={co2Hero}
-              alt="Icon of Wood"
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
-
-          <div className="w-full md:w-1/2 p-4">
-            <div className="py-8">
-              <div className="text-lg font-bold pb-4">
-                Houtbouw voor het behalen van klimaatdoelstellingen
-              </div>
-              <div className="text-sm ">
-                Bouwen met hout in plaats van beton heeft de grootste
-                milieu-impactreductie van alle circulaire bouwstrategieën. meer
-                bouwen met hout in plaats van beton zou de totale
-                milieubelasting van bouwmaterialen in nederland met 5% verlagen.
-              </div>
-            </div>
-            <div className="pb-4">
-              <Link href="/meer-over-de-voordelen-van-houtbouw">
-                <a className="text-[#4099DA]">
-                  Meer over de voordelen van houtbouw →
-                </a>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="mt-10 mb-10">
-          <iframe
-            src="https://embed.kumu.io/a869c92294a6587ee4291bcf39930073"
-            width="100%"
-            height="600"
-            frameBorder="0"
-          ></iframe>
-        </div>
       </div>
-      <div className="pt-5">
+
+      </div>
+     
+     
+
+      <div className="mx-20 my-20">
+        <h2 className="pb-8">3 maatregelen om houtbouw te stimuleren en direct mee aan de slag te gaan </h2>
+        <SectionTypes />
+
+
+      </div>
+      <div className="pt-5 mx-20">
         <div className="pt-6">
           <div>
             <div className="inline-block pr-4">
