@@ -5,8 +5,7 @@ import Layout from "../../components/layout";
 import ActionPanel from "../../components/section-action-panel";
 
 import WindIcon from "../../public/icons/wind.png";
-import CollectionIcon from "../../public/icons/collection.png";
-import HoutbouwHero from "../../public/houtbouwHero.png";
+import HoutbouwHero from "../../public/houtbouwHero.jpg";
 import co2Hero from "../../public/illustration-co2.png";
 
 const laws = [
