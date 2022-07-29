@@ -13,22 +13,16 @@ function classNames(...classes) {
 
 const waardeketens = [
   {
-    name: "Gebouwde omgeving",
-    description: "description",
-    href: "#",
-    className: "",
-  },
-  {
     name: "Houtbouw",
     description: "description",
     href: "/houtbouw",
-    className: "pl-8 font-normal",
+    className: "font-normal",
   },
   {
     name: "Circulaire windmolens",
     description: "description",
     href: "/circulaire-windmolens",
-    className: "pl-8 font-normal",
+    className: "font-normal",
   },
 ];
 
@@ -141,7 +135,7 @@ export default function Nav() {
                                             <a
                                               key={item.name}
                                               href={item.href}
-                                              className="-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
+                                              className="-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 border-b uppercase dropdown-menu"
                                             >
                                               <p
                                                 className={`text-base font-medium text-gray-900 ${item.className}`}
@@ -196,7 +190,7 @@ export default function Nav() {
                                             <a
                                               key={item.name}
                                               href={item.href}
-                                              className="-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
+                                              className="-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase dropdown-menu border-b"
                                             >
                                               <p
                                                 className={`text-base font-medium text-gray-900 ${item.className}`}
@@ -220,7 +214,7 @@ export default function Nav() {
                               </Link>
                             </div>
                             <div className="inline-block relative ">
-                              <Link href="/faq">
+                              <Link href="/contact">
                                 <a className="uppercase pl-8 text-black group rounded-md inline-flex items-center text-base font-medium">
                                   CONTACT
                                 </a>
