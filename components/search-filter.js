@@ -1,8 +1,6 @@
 import { useState, forwardRef, useImperativeHandle } from "react";
 import { handleToggle } from "../utils";
 
-// function which on check from try to false passed the data.name to the search query in policy-list for example Bevoegdheidsniveau = true then add data.Bevoegdheidsniveau to search scope.
-
 const SearchFilter = forwardRef(
   ({ list, title, filterNumbers, handleFilters }, ref) => {
     const [checkedArray, setCheckedArray] = useState([]);
@@ -42,20 +40,20 @@ const SearchFilter = forwardRef(
       },
     }));
     return (
-      <fieldset className="py-4  border-b border-black">
+      <fieldset className="py-4 border-b border-black">
         <div className="block">
           <div className="relative flex justify-between">
-            <legend className="text-lg">{title}</legend>
+            <legend className="text-base font-manrope font-semibold mr-8">
+              {title}
+            </legend>
             <svg
-              className="text-gray-300 w-5 h-5"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
+              className="w-6 h-6 fill-current text-black mb-2"
+              viewBox="0 0 26 26"
             >
+              <circle cx="12" cy="15" r="10" fill="#979797" />
               <path
-                fillRule="evenodd"
-                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                clipRule="evenodd"
+                d="M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z"
+                fill="black"
               />
             </svg>
           </div>
@@ -74,12 +72,12 @@ const SearchFilter = forwardRef(
                     />
                     <label
                       htmlFor={`data-${data.value}-${data.id}`}
-                      className="select-none font-normal text-sm pl-2"
+                      className="select-none font-manrope text-sm pl-2"
                     >
                       {data.name}
                     </label>
                   </div>
-                  <div className="font-bold text-sm text-black">
+                  <div className="font-bold font-manrope text-sm text-black">
                     ({filterNumbers[dataIdx]})
                   </div>
                 </>
