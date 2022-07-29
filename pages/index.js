@@ -78,12 +78,10 @@ export default function Index() {
           <div className="mt-10">
             <button
               type="button"
-              className="inline-flex rounded-full items-center px-4 py-2 border border-blush1 button text-blush1 bg-green1 hover:bg-greenLink focus:outline-none "
+              className="inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-white hover:bg-greenLink focus:outline-none "
             >
               <Link href="#waarom">
-                <a>
-                Waarom CircuLaw? ↓
-                </a>
+                <a>Waarom CircuLaw? ↓</a>
               </Link>
             </button>
           </div>
@@ -93,7 +91,7 @@ export default function Index() {
       <div className="px-20 bg-greenAlpha pb-20">
         <h2 className="pb-6 pt-8">Thema’s</h2>
 
-        <SectionTypes />
+        <SectionTypes type="home" />
         <p className="body-text">
           In 2022 volgen meer thema’s binnen verschillende waardeketens. <br />
           Lees meer over de{" "}
