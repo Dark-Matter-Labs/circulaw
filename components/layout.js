@@ -6,7 +6,7 @@ import Nav from "/components/nav";
 export default function Layout({ children }) {
   return (
     <>
-      <div className="bg-blush2 border border-grey1">
+      <div className="bg-grey2 border border-grey1">
         <div className="mx-20 p-4">
           <div className="flex justify-between flex-wrap">
             <div className="w-0 flex-1 flex items-center">
