@@ -15,7 +15,7 @@ import {
 import Layout from "/components/layout";
 import SearchFilter from "/components/search-filter";
 import PolicyList from "/components/policy-list";
-import IconWood from "../../public/icons/wood.png";
+import IconWood from "../../public/icons/houtbouwIconBg.svg";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -49,7 +49,7 @@ export default function Measures() {
     juridische_houdbaarheid: [],
   });
 
-  const [numberOfLaws, setNumberOfLaws] = useState(46);
+  const [numberOfLaws, setNumberOfLaws] = useState(44);
 
   //dynamic filter numbers
   const [numberOfEuropees, setNumberOfEuropee] = useState(0);
@@ -376,8 +376,8 @@ export default function Measures() {
 
   return (
     <Layout>
-      <div className="w-full mt-10 ">
-        <div className="block text-greenLink">
+      <div className="mx-20 grid grid-cols-3">
+        <div className="breadcrumb pt-8 text-greenLink">
           <Link href="/">
             <a>Home</a>
           </Link>
@@ -386,75 +386,98 @@ export default function Measures() {
             <a> Houtbouw </a>
           </Link>
         </div>
-      </div>
-      <div className="grid grid-cols-2 gap-x-0 border-b-2 pb-4">
-        <div className="pt-8">
-          <div className="inline-block">
-            <Image width="27" height="16" src={IconWood} alt="Icon of Wood" />
-          </div>
-          <h2 className="inline-block pl-2 text-3xl mb-20">Houtbouw</h2>
+        <div className="col-span-2 bg-green3 bg-opacity font-manrope p-5 mt-2 mb-10 max-w-3xl">
+          <p>
+            Wij hebben 44 kansvolle maatregelen gevonden waarmee je beleid uit
+            kunt voeren om de houtbouwtransitie te versnellen. Veel daarvan zijn
+            nog niet eerder toegepast: je gaat er mee pionieren. <br />
+            <br />
+            In de toekomst gaan we{" "}
+            <span className="font-bold text-greenLink">
+              tools aanbieden
+            </span>{" "}
+            voor het in praktijk brengen ervan. Tot die tijd hebben de
+            maatregelen alvast op een rij gezet.
+          </p>
         </div>
-        <div className="relative">
-          <div>
-            <span className="inline-block ">Zoek in houtbouwmaatregelen</span>
+
+        <div className="container mb-20">
+          <div className="container-image">
+            <Image src={IconWood} alt="Houtbouw icon" />
           </div>
-          <div className="w-96 inline-block py-4 mb-10 px-4 border-2 border-black">
-            <div className="flex">
-              <SearchIcon className="h-6 w-6" aria-hidden="true" />
-              <input
-                onChange={(e) => setSearchValue(e.target.value)}
-                value={searchValue}
-                name="search"
-                id="search"
-                placeholder="Zoek op trefwoord"
-                className="block w-full"
-              />
+          <div>
+            <h2 className="max-w-0 leading-6 pb-1 pl-1">Houtbouw stimuleren</h2>
+          </div>
+        </div>
+        <div className="col-span-2">
+          <div className="pt-5">
+            <div>
+              <span className="font-manrope font-semibold text-base">
+                Zoek in houtbouwmaatregelen
+              </span>
             </div>
-            {searchValue !== "" && (
-              <button onClick={reset} className="text-greenLink">
-                Clear search
-              </button>
+            <div className="w-6/12 py-4 mb-10 px-4 border border-grey1 rounded-xl">
+              <div className="flex">
+                <SearchIcon className="h-6 w-6" aria-hidden="true" />
+                <input
+                  onChange={(e) => setSearchValue(e.target.value)}
+                  value={searchValue}
+                  name="search"
+                  id="search"
+                  placeholder="Zoek op trefwoord"
+                  className="block w-full font-openSans text-grey1 italic"
+                />
+              </div>
+              {searchValue !== "" && (
+                <button onClick={reset} className="text-greenLink font-manrope">
+                  Clear search
+                </button>
+              )}
+            </div>
+            {numberOfLaws === 0 && (
+              <div>
+                <span className="font-manrope text-xl">
+                  <b>0</b> maatregelen gevonden voor <b>{searchValue}</b> in{" "}
+                  <b>Houtbouw</b>{" "}
+                </span>
+              </div>
+            )}
+
+            {numberOfLaws > 1 && (
+              <div>
+                <span className="font-manrope text-xl">
+                  <b>{numberOfLaws}</b> maatregelen gevonden voor{" "}
+                  <b>{searchValue}</b> in <b>Houtbouw</b>{" "}
+                </span>
+              </div>
+            )}
+
+            {searchValue !== "" && numberOfLaws === 1 && (
+              <div>
+                <span className="font-manrope text-xl">
+                  <b>{numberOfLaws}</b> maatregel gevonden voor{" "}
+                  <b>{searchValue}</b> in <b>Houtbouw</b>{" "}
+                </span>
+              </div>
             )}
           </div>
-          {numberOfLaws === 0 && (
-            <div>
-              <span>
-                <b>0</b> maatregelen gevonden voor <b>{searchValue}</b> in{" "}
-                <b>Houtbouw</b>{" "}
-              </span>
-            </div>
-          )}
+        </div>
 
-          {numberOfLaws > 1 && (
-            <div>
-              <span>
-                <b>{numberOfLaws}</b> maatregelen gevonden voor{" "}
-                <b>{searchValue}</b> in <b>Houtbouw</b>{" "}
-              </span>
-            </div>
-          )}
-
-          {searchValue !== "" && numberOfLaws === 1 && (
-            <div>
-              <span>
-                <b>{numberOfLaws}</b> maatregel gevonden voor{" "}
-                <b>{searchValue}</b> in <b>Houtbouw</b>{" "}
-              </span>
-            </div>
-          )}
+        <div className=" mb-3">
+          <span className="text-xl font-manrope font-semibold pr-8">
+            Filter op:
+          </span>{" "}
+          <span
+            onClick={reset}
+            className="underline text-greenLink text-lg link-hover font-manrope font-extrabold"
+          >
+            Wis filters
+          </span>
         </div>
       </div>
-      <div className="flex ">
-        <div className="p-3 my-10">
-          <div className=" flex justify-between pb-3 border-b border-black mb-3">
-            <span className="text-lg">Verfijnen</span>{" "}
-            <span
-              onClick={reset}
-              className="underline text-greenLink link-hover"
-            >
-              Wis filters
-            </span>
-          </div>
+      <div className="grid grid-cols-2 gap-x-0 border-b-2 pb-4 mx-20"></div>
+      <div className="flex mx-20">
+        <div className="p-3 my-4">
           <SearchFilter
             ref={wettelijkFilterRef}
             title="Bevoegdheidsniveau"
