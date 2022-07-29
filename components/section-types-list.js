@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -5,10 +6,15 @@ import HoutbouwHero from "../public/houtbouw.png";
 import WindmolensHero from "../public/turbine.png";
 import OverigeHero from "../public/biennekort.png";
 
+import HoutbouwDetails1 from "../public/houtbouw1.png";
+import HoutbouwDetails2 from "../public/houtbouw2.png";
+import HoutbouwDetails3 from "../public/houtbouw3.png";
+
 const types = [
   {
     heroImage: HoutbouwHero,
     title: "Houtbouw stimuleren",
+    tag: "",
     description:
       "Meer bouwen met hout heeft grote invloed op het klimaat. Daarom vind je hier maatregelen om houtbouw te stimuleren en een leidraad voor de toepassing van een aantal van die maatregelen",
     buttonText: "Meer over houtbouw",
@@ -17,6 +23,7 @@ const types = [
   {
     heroImage: WindmolensHero,
     title: "Circulaire windturbines",
+    tag: "",
     description:
       "Windenergie speelt een cruciale rol in onze duurzame energie-ambities. Daarom vind je hier maatregelen die de inzet van windturbines bevorderen en die sturen op ontwikkeling en inzet van windturbines die op zich zelf ook circulair zijn.",
     buttonText: "Meer over windturbines",
@@ -25,21 +32,64 @@ const types = [
   {
     heroImage: OverigeHero,
     title: "",
+    tag: "",
     description: "Jouw thema hier?",
     buttonText: "",
     href: "#",
   },
 ];
 
-export default function SectionTypes() {
+const houtbouwTypes = [
+  {
+    heroImage: HoutbouwDetails1,
+    title: "",
+    description:
+      "Stimuleren van houtbouw binnen het gemeentelijk omgevingsprogramma",
+    tag: "Omgevingswet",
+    buttonText: "Lees meer",
+    href: "/measures/houtbouw",
+  },
+  {
+    heroImage: HoutbouwDetails2,
+    title: "",
+    description: "Inzet van sloopmelding voor de bevordering van houtbouw",
+    tag: "Omgevingswet",
+    buttonText: "Lees meer",
+    href: "/measures/houtbouw",
+  },
+  {
+    heroImage: HoutbouwDetails3,
+    title: "",
+    description:
+      "Hoe technische specificaties in overheidsopdrachten houtbouw kunnen bevorderen",
+    tag: "Aanbesteding",
+    buttonText: "Lees meer",
+    href: "/measures/houtbouw",
+  },
+];
+
+export default function SectionTypes(props) {
+  const [type, setType] = useState([]);
+
+  useEffect(() => {
+    if (props.type === "home") {
+      setType(types);
+    } else if (props.type === "houtbouw") {
+      setType(houtbouwTypes);
+    }
+  }, [props.type]);
+
   return (
     <div className="pb-20">
       <ul
         role="list"
         className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 sm:gap-x-10"
       >
-        {types.map((file) => (
-          <li key={file.title} className="relative bg-white w-full rounded-md shadow">
+        {type.map((file) => (
+          <li
+            key={file.title}
+            className="relative bg-white w-full rounded-md shadow"
+          >
             <div className="object-cover pointer-events-none">
               <Image
                 src={file.heroImage}
@@ -57,6 +107,11 @@ export default function SectionTypes() {
               <p className="card-body block text-black pointer-events-none pb-4">
                 {file.description}
               </p>
+              {file.tag && (
+                <div className="my-8 ">
+                  <span className="p-2 rounded-lg bg-green3">{file.tag}</span>
+                </div>
+              )}
               {file.buttonText && (
                 <button
                   type="button"
