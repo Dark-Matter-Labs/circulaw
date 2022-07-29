@@ -1,6 +1,10 @@
 module.exports = {
   mode: "jit",
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}", "./public/**/*.html"],
+  purge: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./public/**/*.html",
+  ],
   darkMode: false, // or 'media' or 'className'
   theme: {
     extend: {
@@ -15,6 +19,8 @@ module.exports = {
         greenAlpha: "rgba(109, 159, 107, 0.2)",
         greenLink: "#019975",
         grey1: "#979797",
+        grey2: "#DAD8D8",
+        grey3: "#CDD2C8",
         white1: "#F8FAF8",
       },
       fontFamily: {
@@ -26,5 +32,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };
