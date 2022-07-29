@@ -52,9 +52,9 @@ h3 {
 .card-body {
   font-family: "Manrope";
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 170%;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 150%;
 }
 
 .link {
@@ -97,7 +97,6 @@ h3 {
   font-weight: 800;
   font-size: 14px;
   line-height: 19px;
-  text-decoration-line: underline;
 }
 
 .button {
@@ -108,10 +107,33 @@ h3 {
   line-height: 27px;
 }
 
+.r-category {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 149.19%;
+}
+
+.dropdown-menu {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 150%;
+}
+
+.filter-body {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+}
+
 html {
   scroll-behavior: smooth;
 }
-
 
 .newlineDisplay {
   white-space: break-spaces;
@@ -180,3 +202,31 @@ html {
   position: relative;
 }
 
+.bg-opacity {
+  --tw-bg-opacity: 0.13;
+}
+
+.container {
+  display: inline-flex;
+  align-items: center;
+}
+.container-image {
+  float: left;
+}
+
+.square {
+  display: inline-block;
+  margin-right: 1rem;
+  width: 25px;
+  height: 25px;
+}
+.score-true {
+  background-color: #6d9f6b;
+  border-color: #6d9f6b;
+  border-width: 1px;
+}
+.score-false {
+  background-color: #ffffff;
+  border-color: #6d9f6b;
+  border-width: 1px;
+}
