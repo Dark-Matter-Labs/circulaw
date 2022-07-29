@@ -3,7 +3,7 @@ import useSWR from "swr";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../components/layout";
-import IcontWood from "../../public/icons/wood.png";
+import IcontWood from "../../public/icons/houtbouwIconBg.svg";
 import Tooltip from "../../components/tooltip";
 
 const formatDate = (date) => {
@@ -30,7 +30,7 @@ const URLReplacer = (text) => {
   match.map((url) => {
     linkFormattedText = linkFormattedText.replace(
       url,
-      `<a class="text-greenLink" href=\"` +
+      `<a class="text-greenLink link" href=\"` +
         url +
         '"  target="_BLANK">' +
         url +
@@ -67,106 +67,25 @@ export default function Law() {
 
   return (
     <Layout>
-      <style jsx>{`
-        .square {
-          display: inline-block;
-          margin-right: 1rem;
-          width: 25px;
-          height: 25px;
-        }
-        .score-true {
-          background-color: #4099da;
-          border-color: #4099da;
-          border-width: 1px;
-        }
-        .score-false {
-          background-color: #ffffff;
-          border-color: #4099da;
-          border-width: 1px;
-        }
-      `}</style>
-      <div className="p-8">
+      <div className="mx-20 pt-10">
         {data.casus === "Houtbouw" ? (
-          <Link
-            href="/measures/houtbouw"
-            className="mt-24 mb-2 w-full font-normal "
-          >
-            <a className="text-greenLink font-semibold">← Terug</a>
+          <Link href="/measures/houtbouw" className="">
+            <a className="text-greenLink breadcrumb">← Terug</a>
           </Link>
         ) : (
-          <Link
-            href="/measures/windmolens"
-            className="mt-24 mb-2 w-full font-normal "
-          >
-            <a className="text-greenLink font-semibold">← Terug</a>
+          <Link href="/measures/windmolens" className="">
+            <a className="text-greenLink breadcrumb">← Terug</a>
           </Link>
         )}
         <div className="flex">
-          <div className="w-2/3 p-6">
-            <div className="border-b-2 ">
-              <div className="inline-block">
-                <Image
-                  src={IcontWood}
-                  alt="Icon of a Wood Log"
-                  width={42}
-                  height={25}
-                />
-              </div>
-              <div className="inline-block">
-                <Link
-                  href={"/" + data.casus.replace(/\s+/g, "-").toLowerCase()}
-                >
-                  <a>
-                    <span className="font-semibold text-greenLink">
-                      {data.casus}
-                    </span>
-                  </a>
-                </Link>
-                <div className="inline-block">{/* <ToolTip data="" /> */}</div>
-              </div>
-              <div className="inline-block float-right">
-                R-ladder:{" "}
-                <span className="block-inline font-semibold text-base text-gray-900">
-                  {data.R1 && (
-                    <span className="bg-greenLink text-white rounded-full p-1 mr-2">
-                      <Tooltip icon="false">R1</Tooltip>
-                    </span>
-                  )}
-                  {data.R2 && (
-                    <span className="bg-greenLink text-white rounded-full p-1 mr-2">
-                      <Tooltip icon="false">R2</Tooltip>
-                    </span>
-                  )}
-                  {data.R3 && (
-                    <span className="bg-greenLink text-white rounded-full p-1 mr-2">
-                      <Tooltip icon="false">R3</Tooltip>
-                    </span>
-                  )}
-                  {data.R4 && (
-                    <span className="bg-greenLink text-white rounded-full p-1 mr-2">
-                      <Tooltip icon="false">R4</Tooltip>
-                    </span>
-                  )}
-                  {data.R5 && (
-                    <span className="bg-greenLink text-white rounded-full p-1 mr-2">
-                      <Tooltip icon="false">R5</Tooltip>
-                    </span>
-                  )}
-                  {data.R6 && (
-                    <span className="bg-greenLink text-white rounded-full p-1 mr-2">
-                      <Tooltip icon="false">R6</Tooltip>
-                    </span>
-                  )}
-                </span>
-              </div>
-            </div>
-            <h1 className="font-bold text-3xl my-9">{data.titel}</h1>
+          <div className="w-2/3 p-6 pb-20">
+            <h1 className="my-9 text-green1">{data.titel}</h1>
 
             <div className="py-4">
-              <h3 className="font-bold text-xl pb-2">
+              <h2 className="pb-2">
                 {data.kop_1_samenvatting_juridische_maatregel}
-              </h3>
-              <p className="newlineDisplay">
+              </h2>
+              <p className="newlineDisplay body-text">
                 {checkURL(data.introductie_juridische_maatregel).length > 0 ? (
                   <div
                     dangerouslySetInnerHTML={{
@@ -181,10 +100,10 @@ export default function Law() {
               </p>
             </div>
             <div className="py-4">
-              <h3 className="font-bold text-xl pb-2">
+              <h2 className="pb-2">
                 {data.kop_2_toepassing_juridische_maatregel}
-              </h3>
-              <div className="px-5 py-5 border-2  border-black rounded newlineDisplay ">
+              </h2>
+              <div className="py-5 body-text newlineDisplay">
                 {checkURL(data.toepassing_juridische_maatregel).length > 0 ? (
                   <div
                     dangerouslySetInnerHTML={{
@@ -198,42 +117,46 @@ export default function Law() {
             </div>
             {data.is_er_een_praktijk_voorbeeld && (
               <div className="py-4">
-                <h3 className="font-bold text-xl pb-2">
-                  {data.kop_3_uit_de_praktijk}
-                </h3>
-                <p className="">{data.uit_de_praktijk}</p>
-                <a className="underline" href={data.voorbeeld_link}>
+                <h2 className="pb-2">{data.kop_3_uit_de_praktijk}</h2>
+                <p className="body-text">{data.uit_de_praktijk}</p>
+                <a className="link text-greenLink" href={data.voorbeeld_link}>
                   {data.voorbeeld_link_teks}
                 </a>
               </div>
             )}
             <div className="py-4">
-              <h3 className="font-bold text-xl pb-2">
-                {data.kop_4_eisen_en_beperkingen}
-              </h3>
-              <p className="newlineDisplay">{data.eisen_en_beperkingen}</p>
+              <h2 className="pb-2">{data.kop_4_eisen_en_beperkingen}</h2>
+              <p className="newlineDisplay body-text">
+                {data.eisen_en_beperkingen}
+              </p>
             </div>
             <div className="py-4">
-              <h3 className="font-bold text-xl pb-2">
-                {data.kop_5_juridische_toelichting}
-              </h3>
-              <p className="">{data.juridische_toelichting}</p>
+              <h2 className="pb-2">{data.kop_5_juridische_toelichting}</h2>
+              <p className="body-text">{data.juridische_toelichting}</p>
             </div>
             <table className="table-fixed w-full mt-5">
               <tbody>
                 <tr className="my-10 border-b-2 border-t-2">
-                  <td className="w-1/2">Rechtsgebied</td>
-                  <td className="w-1/2">
+                  <td className="w-1/2 font-manrope text-base font-normal">
+                    Rechtsgebied
+                  </td>
+                  <td className="w-1/2 font-manrope text-base font-bold">
                     {data.rechtsgebied} - {data.subrechtsgebied}
                   </td>
                 </tr>
                 <tr className="my-10 border-b-2">
-                  <td className="w-1/2">Citeertitel</td>
-                  <td className="w-1/2">{data.citeertitel}</td>
+                  <td className="w-1/2 font-manrope text-base font-normal">
+                    Citeertitel
+                  </td>
+                  <td className="w-1/2 font-manrope text-base font-bold">
+                    {data.citeertitel}
+                  </td>
                 </tr>
                 <tr className="my-10 border-b-2">
-                  <td className="w-1/2">Artikel</td>
-                  <td className="w-1/2">
+                  <td className="w-1/2 font-manrope text-base font-normal">
+                    Artikel
+                  </td>
+                  <td className="w-1/2 font-manrope text-base font-bold">
                     <a
                       className="text-greenLink"
                       href={data.link_naar_wetsartikel}
@@ -243,12 +166,18 @@ export default function Law() {
                   </td>
                 </tr>
                 <tr className="my-10 border-b-2">
-                  <td className="w-1/2">Geldig vanaf</td>
-                  <td className="w-1/2">{formatDate(data.geldend_vanaf)}</td>
+                  <td className="w-1/2 font-manrope text-base font-normal">
+                    Geldig vanaf
+                  </td>
+                  <td className="w-1/2 font-manrope text-base font-bold">
+                    {formatDate(data.geldend_vanaf)}
+                  </td>
                 </tr>
                 <tr className="my-10 border-b-2">
-                  <td className="w-1/2">Bevoegdheidsniveau</td>
-                  <td className="w-1/2">
+                  <td className="w-1/2 font-manrope text-base font-normal">
+                    Bevoegdheidsniveau
+                  </td>
+                  <td className="w-1/2 font-manrope text-base font-bold">
                     {data.europees && <span>Europees </span>}
                     {data.nationaal && <span>Nationaal </span>}
                     {data.provinciaal && <span>Provinciaal </span>}
@@ -257,25 +186,103 @@ export default function Law() {
                   </td>
                 </tr>
                 <tr className="my-10 border-b-2">
-                  <td className="w-1/2">Type document</td>
-                  <td className="w-1/2">{data.type_document}</td>
+                  <td className="w-1/2 font-manrope text-base font-normal">
+                    Type document
+                  </td>
+                  <td className="w-1/2 font-manrope text-base font-bold">
+                    {data.type_document}
+                  </td>
                 </tr>
                 <tr>
-                  <td>Beleidsinstrument</td>
-                  <td>{data.type_beleidsinstrument}</td>
+                  <td className="font-manrope text-base font-normal">
+                    Beleidsinstrument
+                  </td>
+                  <td className="font-manrope text-base font-bold">
+                    {data.type_beleidsinstrument}
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div className="w-1/3 ">
+          <div className="w-1/3">
+            <div className="container pb-2">
+              <div className="container-image">
+                <Image src={IcontWood} alt="Icon of a Wood Log" />
+              </div>
+              <div className="">
+                <Link
+                  href={"/" + data.casus.replace(/\s+/g, "-").toLowerCase()}
+                >
+                  <a>
+                    <span className="font-openSans font-bold pl-2 text-greenLink">
+                      {data.casus}
+                    </span>
+                  </a>
+                </Link>
+              </div>
+            </div>
+
+            <div className="py-5 border-t-2 border-grey2 ">
+              <p className="font-manrope font-semibold text-lg text-black1 pb-2">
+                R-ladder{" "}
+              </p>
+              <span className="block-inline font-semibold text-base text-gray-900">
+                {data.R1 && (
+                  <span className="bg-green2 text-white rounded-full p-1 mr-2">
+                    <Tooltip icon="false">R1</Tooltip>
+                  </span>
+                )}
+                {data.R2 && (
+                  <span className="bg-green2 text-white rounded-full p-1 mr-2">
+                    <Tooltip icon="false">R2</Tooltip>
+                  </span>
+                )}
+                {data.R3 && (
+                  <span className="bg-green2 text-white rounded-full p-1 mr-2">
+                    <Tooltip icon="false">R3</Tooltip>
+                  </span>
+                )}
+                {data.R4 && (
+                  <span className="bg-green2 text-white rounded-full p-1 mr-2">
+                    <Tooltip icon="false">R4</Tooltip>
+                  </span>
+                )}
+                {data.R5 && (
+                  <span className="bg-green2 text-white rounded-full p-1 mr-2">
+                    <Tooltip icon="false">R5</Tooltip>
+                  </span>
+                )}
+                {data.R6 && (
+                  <span className="bg-green2 text-white rounded-full p-1 mr-2">
+                    <Tooltip icon="false">R6</Tooltip>
+                  </span>
+                )}
+              </span>
+            </div>
+
             <div className="py-5">
-              <div className="relative flex justify-between border-t-2 border-black">
-                <div className="font-bold">Juridisch invloed</div>
-                {/* <Tooltip data="" /> */}
+              <div className="relative border-t-2 border-grey2 pt-4">
+                <div className="font-manrope font-semibold text-lg text-black1 pb-2">
+                  Subrechtsgebied
+                </div>
+              </div>
+
+              <div className="font-manrope font-normal text-base">
+                <p>{data.subrechtsgebied}</p>
+              </div>
+            </div>
+
+            <div className="py-5">
+              <div className="relative flex justify-between border-t-2 border-grey2 pt-2">
+                <div className="font-manrope font-semibold text-lg text-black1 pb-2">
+                  Juridisch invloed
+                </div>
               </div>
 
               <div className="mt-3 flex items-center">
-                <span className="pr-5">LAAG</span>
+                <span className="pr-5 font-manrope font-normal text-base">
+                  LAAG
+                </span>
                 {[0, 1, 2, 3, 4].map((rating) => (
                   <div
                     key={rating}
@@ -293,12 +300,17 @@ export default function Law() {
             </div>
 
             <div className="py-5">
-              <div className="relative flex justify-between border-t-2 border-black">
-                <div className="font-bold	 ">Juridisch houdbaarheid</div>
+              <div className="relative flex justify-between border-t-2 border-grey2 pt-2">
+                <div className="font-manrope font-semibold text-lg text-black1 pb-2">
+                  Juridisch houdbaarheid
+                </div>
                 <Tooltip data={data.JuridischAfbreukrisicoToolTip} />
               </div>
               <div className="mt-3 flex items-center">
-                <span className="pr-5"> LAAG</span>
+                <span className="pr-5 font-manrope font-normal text-base">
+                  {" "}
+                  LAAG
+                </span>
                 {[0, 1, 2, 3, 4].map((rating) => (
                   <div
                     key={rating}
