@@ -104,7 +104,7 @@ export default function SectionTypes(props) {
                   {file.title}
                 </h3>
               </div>
-              <p className="card-body block text-black pointer-events-none pb-4">
+              <p className="body-text-mobile sm:card-body block text-black pointer-events-none pb-4">
                 {file.description}
               </p>
               {file.tag && (

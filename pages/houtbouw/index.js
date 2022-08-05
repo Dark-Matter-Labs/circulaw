@@ -16,22 +16,24 @@ export default function Houtbouw() {
   });
   return (
     <Layout>
-      <div className="grid grid-cols-1 sm:grid-cols-2">
-        <div className="mx-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gradient-bg">
+        <div className="mx-5 sm:mx-20 ">
           <div className="breadcrumb pt-8 text-greenLink">
             <Link href="/">
               <a>Home &gt; </a>
             </Link>
           </div>
-          <div className="pb-14 pt-14">
+          <div className="pb-14 pt-14 ">
             <div className="pr-4 inline-block">
               <Image src={WoodIcon} alt="Icon of Wood" width={48} />
             </div>
-            <h1 className="text-green1 inline-block">Houtbouw stimuleren </h1>
-            <h2 className="pt-4 pb-4">
+            <h1 className="text-green1 inline-block mobile sm:main">
+              Houtbouw stimuleren{" "}
+            </h1>
+            <h2 className="pt-4 pb-4 mobile sm:main">
               Milieudoelstellingen behalen met houtbouw
             </h2>
-            <p className="body-text">
+            <p className="body-text-mobile sm:body-text">
               De manier waarop wij nu in Nederland bouwen is zeer belastend voor
               het milieu. Er is een eenvoudige oplossing: vervang beton deels
               door hout. Is dat hout dan wel geschikt en belasten we het milieu
@@ -43,7 +45,7 @@ export default function Houtbouw() {
             </p>
           </div>
 
-          <span className="text-greenLink link pt-10">
+          <span className="text-greenLink link-mobile sm:link pt-10">
             <a
               href="https://www.ams-institute.org/documents/64/AMS_Institute_Houtbouwmythes_ontkracht.pdf"
               target="_blank"
@@ -58,8 +60,8 @@ export default function Houtbouw() {
         </div>
       </div>
 
-      <div className="mx-20 my-20">
-        <h2 className="pb-8">
+      <div className="mx-5 sm:mx-20 my-20">
+        <h2 className="pb-8 mobile sm:main">
           3 maatregelen om houtbouw te stimuleren en direct mee aan de slag te
           gaan{" "}
         </h2>
@@ -69,10 +71,10 @@ export default function Houtbouw() {
         <div className="border-b border-grey1 pb-10">
           <div className="grid grid-cols-1 sm:grid-cols-3">
             <div className="col-span-2">
-              <h2 className="pt-10">
+              <h2 className="pt-10 mobile sm:main">
                 44 houtbouwmaatregelen voor innovatieve beleidsmakers
               </h2>
-              <p className="body-text py-5 max-w-2xl">
+              <p className="body-text-mobile sm:body-text py-5 max-w-2xl">
                 Weten waar kansen liggen om de houtbouwtransitie te versnellen?
                 CircuLaw biedt je nu een overzicht van 44 maatregelen die je
                 daarvoor kunt inzetten.
@@ -93,11 +95,11 @@ export default function Houtbouw() {
         <div className="border-b border-grey1 pb-10">
           <div className="grid grid-cols-1 sm:grid-cols-3">
             <div className="col-span-2">
-              <h2 className="pt-10">
+              <h2 className="pt-10 mobile sm:main">
                 Hoe hangen de maatregelen om houtbouw te stimuleren met elkaar
                 samen?
               </h2>
-              <p className="body-text py-5 max-w-2xl">
+              <p className="body-text-mobile sm:body-text py-5 max-w-2xl">
                 CircuLaw heeft 44 maatregelen gedefinieerd die je kunt inzetten
                 om houtbouw te stimuleren. Als je meerdere maatregelen toepast,
                 is je impact natuurlijk groter. Maar dan is het wel handig om te
@@ -105,7 +107,7 @@ export default function Houtbouw() {
                 we je ook inzicht in de relatie tussen de verschillende
                 maatregelen.
               </p>
-              <span className="text-greenLink link">
+              <span className="text-greenLink link-mobile sm:link">
                 Bekijk hoe de maatregelen met elkaar samenhangen →
               </span>
             </div>
@@ -121,16 +123,16 @@ export default function Houtbouw() {
         <div className="border-b border-grey1 pb-10">
           <div className="grid grid-cols-1 sm:grid-cols-3">
             <div className="col-span-2">
-              <h2 className="pt-10">
+              <h2 className="pt-10 mobile sm:main">
                 Welke overheid heeft welke bevoegdheid voor houtbouwmaatregelen?
               </h2>
-              <p className="body-text py-5 max-w-2xl">
+              <p className="body-text-mobile sm:body-text py-5 max-w-2xl">
                 Inzicht in bevoegdheden en verantwoordelijkheden is belangrijk
                 om te komen tot een goede samenwerking in circulaire
                 productieketens. In dit overzicht wordt per maatregel duidelijk
                 welke overheid waarvoor aan de lat staat.
               </p>
-              <span className="text-greenLink link">
+              <span className="text-greenLink link-mobile sm:link">
                 Bekijk overzicht bevoegdheden maatregelen →
               </span>
             </div>

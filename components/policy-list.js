@@ -38,7 +38,10 @@ export default function PolicyList(props) {
             R6,
           } = lawData;
           return (
-            <div key={lawDataIdx} className="block max-w-4xl ml-40 pb-10">
+            <div
+              key={lawDataIdx}
+              className="block max-w-md sm:max-w-4xl sm:ml-0 md:ml-40 pb-8 sm:pb-10"
+            >
               <div className="">
                 <div className="inline-block">
                   <Image
@@ -81,8 +84,8 @@ export default function PolicyList(props) {
                 </Link>
               </div>
 
-              <div className="flex space-x-8">
-                <div className="flex-2 mr-5 text-normal font-openSans text-xs text-gray-400 ">
+              <div className="grid grid-cols-1 sm:flex space-x-0 sm:space-x-8 space-y-4 sm:space-y-0 py-2 sm:py-0">
+                <div className="flex-2 mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 ">
                   <span className="block-inline flex items-center">
                     Juridische impact:{" "}
                     {[0, 1, 2, 3, 4].map((rating) => (
@@ -100,7 +103,7 @@ export default function PolicyList(props) {
                   </span>
                 </div>
 
-                <div className="flex-2 mr-5 text-normal font-openSans text-xs text-gray-400">
+                <div className="flex-2 mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400">
                   <span className="block-inline flex items-center">
                     Juridische houdbaarheid:{" "}
                     {[0, 1, 2, 3, 4].map((rating) => (
@@ -117,7 +120,7 @@ export default function PolicyList(props) {
                     ))}
                   </span>
                 </div>
-                <div className="flex-2 mr-5 text-normal font-openSans text-xs text-gray-400 ">
+                <div className="flex-2 mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 ">
                   R-ladder:{" "}
                   <span className="block-inline text-gray-900 r-category">
                     {R1 && (
@@ -162,8 +165,6 @@ export default function PolicyList(props) {
             </div>
           );
         })}
-
-        <div></div>
       </div>
     </>
   );

@@ -21,18 +21,38 @@ const navigation = {
     },
   ],
   OVER: [
-    { name: "Waarom CircuLaw?", href: "/", className: "text-white1" },
-    { name: "Wat willen we bereiken?", href: "/", className: "text-white1" },
-    { name: "Hoever zijn we?", href: "/", className: "text-white1" },
-    { name: "Wie maken het?", href: "/", className: "text-white1" },
-    { name: "Meedoen?", href: "/", className: "text-white1" },
+    {
+      name: "Waarom CircuLaw?",
+      href: "/waarom-circulaw",
+      className: "text-white1",
+    },
+    {
+      name: "Wat is CircuLaw?",
+      href: "/wat-is-circulaw",
+      className: "text-white1",
+    },
+    {
+      name: "Status en ambities",
+      href: "/status-en-ambities",
+      className: "text-white1",
+    },
+    {
+      name: "Wetsanalyse met circulaire blik",
+      href: "/wetsanalyse-met-circulaire-blik",
+      className: "text-white1",
+    },
+    {
+      name: "Wie maken CircuLaw?",
+      href: "/wie-maken-circulaw",
+      className: "text-white1",
+    },
   ],
 
   other: [
     { name: "Veel gestelde vragen", href: "/hoe-het-werkt", className: "" },
     { name: "Contact", href: "/contact", className: "" },
-    { name: "Disclaimer/Alpha", href: "/", className: "" },
-    { name: "Privacy", href: "/", className: "" },
+    { name: "Disclaimer/Alpha", href: "/alpha", className: "" },
+    { name: "Privacy", href: "/privacy-policy", className: "" },
   ],
 };
 
@@ -44,10 +64,10 @@ export default function Footer() {
           <div className="grid grid-cols-1 gap-8 sm:col-span-3">
             <div className="sm:grid sm:grid-cols-4 md:gap-8">
               <div className="">
-                <p className="text-sm text-green3 font-publicSans font-bold tracking-wider uppercase">
+                <p className="text-sm text-green3 font-publicSans font-bold tracking-wider uppercase pb-4 sm:pb-0 ">
                   THEMA’S
                 </p>
-                <div className="grid grid-cols-1 gap-8">
+                <div className="grid grid-cols-1 gap-8 pb-4 sm:pb-0">
                   <ul role="list" className="mt-4 space-y-4">
                     {navigation.WAARDEKETENS.map((item) => (
                       <li key={item.name}>
@@ -63,10 +83,10 @@ export default function Footer() {
                 </div>
               </div>
               <div className="">
-                <p className="text-sm text-green3 font-publicSans font-bold tracking-wider uppercase">
+                <p className="text-sm text-green3 font-publicSans font-bold tracking-wider uppercase pb-4 sm:pb-0">
                   OVER CIRCULAW
                 </p>
-                <div className="grid grid-cols-1 gap-8">
+                <div className="grid grid-cols-1 gap-8 pb-4 sm:pb-0">
                   <ul role="list" className="mt-4 space-y-4">
                     {navigation.OVER.map((item) => (
                       <li key={item.name}>
@@ -99,9 +119,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="mx-10">
-        <div className=" py-12 px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-x-2 md:grid-cols-6 lg:grid-cols-6">
+      <div className="mx-5 sm:mx-10">
+        <div className="py-12 px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 gap-x-2 gap-y-4 md:grid-cols-6 lg:grid-cols-6">
             <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
               <Image
                 layout="fixed"
@@ -120,15 +140,6 @@ export default function Footer() {
                 alt="Mirage"
               />
             </div>
-            <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-              <Image
-                layout="fixed"
-                height={39}
-                width={200}
-                src={provinceNord}
-                alt="StaticKit"
-              />
-            </div>
             <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
               <Image
                 layout="fixed"
@@ -138,7 +149,16 @@ export default function Footer() {
                 alt="Transistor"
               />
             </div>
-            <div className="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
+            <div className="sm:col-span-2 flex justify-center md:col-span-2 lg:col-span-1">
+              <Image
+                layout="fixed"
+                height={39}
+                width={200}
+                src={provinceNord}
+                alt="StaticKit"
+              />
+            </div>
+            <div className="sm:col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
               <Image
                 layout="fixed"
                 height={100}
@@ -147,7 +167,7 @@ export default function Footer() {
                 alt="Workcation"
               />
             </div>
-            <div className="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
+            <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
               <Image
                 layout="fixed"
                 height={85}

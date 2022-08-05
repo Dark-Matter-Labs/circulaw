@@ -30,31 +30,31 @@ const over = [
   {
     name: "Waarom CircuLaw?",
     description: "description",
-    href: "#",
+    href: "/waarom-circulaw",
     className: "",
   },
   {
-    name: "Wat willen we bereiken?",
+    name: "Wat is CircuLaw?",
     description: "description",
-    href: "/",
+    href: "/wat-is-circulaw",
     className: "",
   },
   {
-    name: "Hoever zijn we?",
+    name: "Status en ambities",
     description: "description",
-    href: "/",
+    href: "/status-en-ambities",
     className: "",
   },
   {
-    name: "Wie maken het?",
+    name: "Wetsanalyse met circulaire blik",
     description: "description",
-    href: "/",
+    href: "/wetsanalyse-met-circulaire-blik",
     className: "",
   },
   {
-    name: "Meedoen?",
+    name: "Wie maken CircuLaw?",
     description: "description",
-    href: "/",
+    href: "/wie-maken-circulaw",
     className: "",
   },
 ];
@@ -66,9 +66,9 @@ export default function Nav() {
         <>
           <div className="bg-blush2 sm:bg-blush2 px-2 sm:px-6 lg:px-20 lg:py-8 nav">
             <div className="relative flex justify-between h-16">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
                 {/* Mobile menu button */}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-white ">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-green1 ">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -91,7 +91,7 @@ export default function Nav() {
                   </div>
                 </div>
                 <div className="hidden sm:ml-6 sm:flex">
-                  <div className="flex inset-x-0 top-0 p-5 invisible sm:visible hidden sm:inline">
+                  <div className="flex inset-x-0 top-0 p-5 invisible sm:visible hidden sm:inline ">
                     <div className="flex-1 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                       <div className="content right-0">
                         <div className="relative flex items-center justify-between font-manrope font-semibold">
@@ -229,84 +229,82 @@ export default function Nav() {
               </div>
             </div>
           </div>
-          <Disclosure.Panel className="sm:hidden">
-            <div className="pt-2 pb-4 ">
+          <Disclosure.Panel className="sm:hidden bg-blush2">
+            <div className="pt-2 pb-4 menu-title-mobile">
               <Disclosure.Button
-                as="a"
-                href="#"
-                className="border-transparent text-gray-900 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medium"
+                as="span"
+                className="uppercase  text-black1  border-t block pl-3 pr-4 py-5 font-semibold"
               >
-                MAATREGELEN
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="/gebouwde-omgeving"
-                className="border-transparent text-gray-900 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
-              >
-                Gebouwde omgeving
+                Thema&apos;s
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/houtbouw"
-                className="border-transparent text-gray-900 border border-gray-500 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base"
+                className="ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base"
               >
                 Houtbouw
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
-                className="border-transparent text-gray-400 border border-gray-500 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base"
+                href="/circulaire-windmolens"
+                className="ml-5 border-transparent text-gray-900 border-b border-blush3 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base"
               >
-                Windmolens (coming soon)
+                Windmolens
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="span"
+                className="uppercase  text-black1  border-t block pl-3 pr-4 py-5 font-semibold"
+              >
+                Over CircuLaw
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/consumptiegoederen"
-                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
+                href="/waarom-circulaw"
+                className="ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base"
               >
-                Consumptoegoederen
+                Waarom CircuLaw?
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/biomassa-en-voedsel"
-                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
+                href="/wat-is-circulaw"
+                className="ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base"
               >
-                Biomassa en voedsel
+                Wat is CircuLaw?
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/maakindustrie"
-                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
+                href="/status-en-ambities"
+                className="ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base"
               >
-                Maakindustrie
+                Status en ambities
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
-                className="border-transparent text-gray-400 border border-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5  text-base font-medium"
+                href="/wetsanalyse-met-circulaire-blik"
+                className="ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base"
               >
-                Kunststoffen
+                Wetsanalyse met circulaire blik
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/kunststoffen"
-                className="border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medi5m"
+                href="/wie-maken-circulaw"
+                className="ml-5 border-transparent text-gray-900 border-b border-blush3 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base"
               >
-                HOE HET WERKT
+                Wie maken CircuLaw?
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/over-ons"
-                className="border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medi5m"
+                href="/hoe-het-werkt"
+                className="uppercase text-black1  border-b border-blush3 block pl-3 pr-4 py-5 font-semibold"
               >
-                OVER ONS
+                Vraag en Antwoord
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/over-ons"
-                className="border-transparent text-black border border-gray-900 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2  text-base font-medi5m"
+                href="/contact"
+                className="uppercase text-black1  border-b border-blush3 block pl-3 pr-4 py-5 font-semibold"
               >
-                CONTACT
+                Contact
               </Disclosure.Button>
             </div>
           </Disclosure.Panel>

@@ -30,7 +30,7 @@ const URLReplacer = (text) => {
   match.map((url) => {
     linkFormattedText = linkFormattedText.replace(
       url,
-      `<a class="text-greenLink link" href=\"` +
+      `<a class="text-greenLink mobile-link wrap sm:link" href=\"` +
         url +
         '"  target="_BLANK">' +
         url +
@@ -67,7 +67,7 @@ export default function Law() {
 
   return (
     <Layout>
-      <div className="mx-20 pt-10">
+      <div className="px-5 sm:px-20 pt-10 gradient-bg ">
         {data.casus === "Houtbouw" ? (
           <Link href="/measures/houtbouw" className="">
             <a className="text-greenLink breadcrumb">← Terug</a>
@@ -78,14 +78,14 @@ export default function Law() {
           </Link>
         )}
         <div className="flex">
-          <div className="w-2/3 p-6 pb-20">
-            <h1 className="my-9 text-green1">{data.titel}</h1>
+          <div className="w-11/12 sm:w-2/3 p-6 pb-20">
+            <h1 className="my-9 text-green1 mobile sm:main">{data.titel}</h1>
 
             <div className="py-4">
-              <h2 className="pb-2">
+              <h2 className="pb-2 mobile sm:main">
                 {data.kop_1_samenvatting_juridische_maatregel}
               </h2>
-              <p className="newlineDisplay body-text">
+              <p className="newlineDisplay body-text-mobile sm:body-text">
                 {checkURL(data.introductie_juridische_maatregel).length > 0 ? (
                   <div
                     dangerouslySetInnerHTML={{
@@ -93,6 +93,7 @@ export default function Law() {
                         data.introductie_juridische_maatregel
                       ),
                     }}
+                    className=""
                   />
                 ) : (
                   data.introductie_juridische_maatregel
@@ -100,10 +101,10 @@ export default function Law() {
               </p>
             </div>
             <div className="py-4">
-              <h2 className="pb-2">
+              <h2 className="pb-2 mobile sm:main">
                 {data.kop_2_toepassing_juridische_maatregel}
               </h2>
-              <div className="py-5 body-text newlineDisplay">
+              <div className="py-5 body-text-mobile sm:body-text newlineDisplay">
                 {checkURL(data.toepassing_juridische_maatregel).length > 0 ? (
                   <div
                     dangerouslySetInnerHTML={{
@@ -117,22 +118,35 @@ export default function Law() {
             </div>
             {data.is_er_een_praktijk_voorbeeld && (
               <div className="py-4">
-                <h2 className="pb-2">{data.kop_3_uit_de_praktijk}</h2>
-                <p className="body-text">{data.uit_de_praktijk}</p>
-                <a className="link text-greenLink" href={data.voorbeeld_link}>
+                <h2 className="pb-2 mobile sm:main">
+                  {data.kop_3_uit_de_praktijk}
+                </h2>
+                <p className="body-text-mobile sm:body-text">
+                  {data.uit_de_praktijk}
+                </p>
+                <a
+                  className="link-mobile sm:link text-greenLink"
+                  href={data.voorbeeld_link}
+                >
                   {data.voorbeeld_link_teks}
                 </a>
               </div>
             )}
             <div className="py-4">
-              <h2 className="pb-2">{data.kop_4_eisen_en_beperkingen}</h2>
-              <p className="newlineDisplay body-text">
+              <h2 className="pb-2 mobile sm:main">
+                {data.kop_4_eisen_en_beperkingen}
+              </h2>
+              <p className="newlineDisplay body-text-mobile sm:body-text">
                 {data.eisen_en_beperkingen}
               </p>
             </div>
             <div className="py-4">
-              <h2 className="pb-2">{data.kop_5_juridische_toelichting}</h2>
-              <p className="body-text">{data.juridische_toelichting}</p>
+              <h2 className="pb-2 mobile sm:main">
+                {data.kop_5_juridische_toelichting}
+              </h2>
+              <p className="body-text-mobile sm:body-text">
+                {data.juridische_toelichting}
+              </p>
             </div>
             <table className="table-fixed w-full mt-5">
               <tbody>
@@ -204,7 +218,7 @@ export default function Law() {
               </tbody>
             </table>
           </div>
-          <div className="w-1/3">
+          <div className="hidden sm:block w-1/3">
             <div className="container pb-2">
               <div className="container-image">
                 <Image src={IcontWood} alt="Icon of a Wood Log" />
