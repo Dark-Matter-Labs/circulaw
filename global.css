@@ -1,3 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  h1.mobile {
+    font-family: "Public Sans";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 130%;
+  }
+
+  h1.main {
+    font-family: "Public Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 62px;
+  }
+
+  h2.main {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 150%;
+  }
+
+  h2.mobile {
+    font-size: 20px;
+    line-height: 140%;
+  }
+
+  h3 {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+  }
+
+  .body-text {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 35px;
+  }
+
+  .body-text-mobile {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 170%;
+  }
+
+  .card-body {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 150%;
+  }
+
+  .link {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 35px;
+    text-decoration-line: underline;
+  }
+
+  .link-mobile {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration-line: underline;
+  }
+
+  .menu-title {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+  }
+
+  .menu-title-mobile {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+  }
+
+  .breadcrumb {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .button {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .r-category {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 149.19%;
+  }
+
+  .dropdown-menu {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 150%;
+  }
+
+  .filter-body {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 .newlineDisplay {
   white-space: break-spaces;
 }
@@ -15,14 +160,6 @@
   font-size: 12px;
   font-weight: 600;
   line-height: 18px;
-}
-
-.blue {
-  color: #4099da;
-}
-
-.blue-bg {
-  background-color: #4099da;
 }
 
 .description {
@@ -44,10 +181,68 @@
   text-decoration: underline;
 }
 
-.link {
-  color: #4099da;
-}
-
 .link-hover:hover {
   cursor: pointer;
+}
+
+.texture-move {
+  transform: translate(30vw, 0);
+  -webkit-transform: translate(30vw, 0);
+  -ms-transform: translate(30vw, 0); /* IE 9 */
+  -o-transform: translate(30vw, 0); /* Opera */
+  -moz-transform: translate(30vw, 0); /* Firefox */
+  z-index: 1;
+  margin-bottom: -40%;
+}
+
+.texture-move2 {
+  transform: translate(30vw, 0);
+  -webkit-transform: translate(60vw, -40vh);
+  -ms-transform: translate(30vw, 0); /* IE 9 */
+  -o-transform: translate(30vw, 0); /* Opera */
+  -moz-transform: translate(30vw, 0); /* Firefox */
+  z-index: 1;
+  margin-bottom: -40%;
+}
+
+.nav {
+  z-index: 10;
+  position: relative;
+}
+
+.bg-opacity {
+  --tw-bg-opacity: 0.13;
+}
+
+.container {
+  display: inline-flex;
+  align-items: center;
+}
+.container-image {
+  float: left;
+}
+
+.square {
+  display: inline-block;
+  margin-right: 1rem;
+  width: 25px;
+  height: 25px;
+}
+.score-true {
+  background-color: #6d9f6b;
+  border-color: #6d9f6b;
+  border-width: 1px;
+}
+.score-false {
+  background-color: #ffffff;
+  border-color: #6d9f6b;
+  border-width: 1px;
+}
+
+.wrap {
+  word-wrap: break-word;
+}
+
+.gradient-bg {
+  background: linear-gradient(#f9d9c8, 1%, #fff);
 }

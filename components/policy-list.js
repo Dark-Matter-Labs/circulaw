@@ -1,7 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import IconWood from "../public/icons/wood.png";
+import IconWood from "../public/icons/wood.svg";
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
 export default function PolicyList(props) {
   let lawData = [];
@@ -34,38 +38,43 @@ export default function PolicyList(props) {
             R6,
           } = lawData;
           return (
-            <div key={lawDataIdx} className="block py-5">
+            <div
+              key={lawDataIdx}
+              className="block max-w-md sm:max-w-4xl sm:ml-0 md:ml-40 pb-8 sm:pb-10"
+            >
               <div className="">
                 <div className="inline-block">
                   <Image
-                    width="27"
-                    height="16"
+                    width="20"
+                    height="20"
                     src={IconWood}
                     alt="Icon of Wood"
                   />
                 </div>
-                <span className="inline-block pl-4 casus">{casus}</span>
-              </div>
-              <div className="block my-1">
-                <Link href={"/measures/" + id} key={lawDataIdx}>
-                  <a className="underline text-lg font-semibold no-underline detailPageLink">
-                    {titel}{" "}
-                  </a>
-                </Link>
+                <span className="inline-block pl-4 font-openSans casus">
+                  {casus}
+                </span>
                 {is_er_een_praktijk_voorbeeld && (
-                  <span className="p-1 text-normal rounded font-semibold text-base bg-red-200 no-underline">
+                  <span className="ml-2 p-1 text-normal rounded font-semibold text-sm bg-green2 text-white no-underline">
                     Voorbeeld
                   </span>
                 )}
               </div>
-              <div className="block bold-text">
+              <div className="block my-1">
+                <Link href={"/measures/" + id} key={lawDataIdx}>
+                  <a className="underline text-lg font-semibold no-underline detailPageLink">
+                    <h3>{titel} </h3>
+                  </a>
+                </Link>
+              </div>
+              <div className="block font-manrope font-bold text-xs pb-1">
                 {europees && <span>Europees - </span>}
                 {nationaal && <span>Nationaal - </span>}
                 {provinciaal && <span>Provinciaal - </span>}
                 {waterschappen && <span>Waterschappen - </span>}
                 {gemeentelijk && <span>Gemeentelijk</span>}
               </div>
-              <div className="block newlineDisplay twoLines">
+              <div className="block newlineDisplay twoLines font-manrope font-normal font-base mb-1">
                 <Link href={"/measures/" + id} key={lawDataIdx}>
                   <a>
                     <p className="description">
@@ -75,50 +84,72 @@ export default function PolicyList(props) {
                 </Link>
               </div>
 
-              <div className="flex space-x-8">
-                <div className="flex-2 mr-5 text-normal text-base text-gray-400">
-                  Juridische impact:{" "}
-                  <span className="block-inline font-semibold text-base text-gray-900">
-                    {juridische_invloed}
+              <div className="grid grid-cols-1 sm:flex space-x-0 sm:space-x-8 space-y-4 sm:space-y-0 py-2 sm:py-0">
+                <div className="flex-2 mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 ">
+                  <span className="block-inline flex items-center">
+                    Juridische impact:{" "}
+                    {[0, 1, 2, 3, 4].map((rating) => (
+                      <div
+                        key={rating}
+                        className={classNames(
+                          juridische_invloed > rating
+                            ? "score-true"
+                            : "score-false",
+                          "mx-1 h-4 w-4 flex-shrink-0 rounded-full"
+                        )}
+                        aria-hidden="true"
+                      />
+                    ))}
                   </span>
                 </div>
 
-                <div className="flex-2 mr-5 text-normal text-base text-gray-400">
-                  Juridische houdbaarheid:{" "}
-                  <span className="block-inline font-semibold text-base text-gray-900">
-                    {juridische_houdbaarheid}
+                <div className="flex-2 mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400">
+                  <span className="block-inline flex items-center">
+                    Juridische houdbaarheid:{" "}
+                    {[0, 1, 2, 3, 4].map((rating) => (
+                      <div
+                        key={rating}
+                        className={classNames(
+                          juridische_houdbaarheid > rating
+                            ? "score-true"
+                            : "score-false",
+                          "mx-1 h-4 w-4 flex-shrink-0 rounded-full"
+                        )}
+                        aria-hidden="true"
+                      />
+                    ))}
                   </span>
                 </div>
-                <div className="flex-2 mr-5 text-normal text-base text-gray-400">
+                <div className="flex-2 mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 ">
                   R-ladder:{" "}
-                  <span className="block-inline font-semibold text-base text-gray-900">
+                  <span className="block-inline text-gray-900 r-category">
                     {R1 && (
-                      <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                      <span className="bg-green2 text-white rounded-full p-1 mr-2">
                         R1{" "}
                       </span>
                     )}
                     {R2 && (
-                      <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                      <span className="bg-green2 text-white rounded-full p-1 mr-2">
                         R2{" "}
                       </span>
                     )}
                     {R3 && (
-                      <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                      <span className="bg-green2 text-white rounded-full p-1 mr-2">
                         R3{" "}
                       </span>
                     )}
                     {R4 && (
-                      <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                      <span className="bg-green2 text-white rounded-full p-1 mr-2">
                         R4{" "}
                       </span>
                     )}
                     {R5 && (
-                      <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                      <span className="bg-green2 text-white rounded-full p-1 mr-2">
                         R5{" "}
                       </span>
                     )}
                     {R6 && (
-                      <span className="bg-[#4099DA] text-white rounded-full p-1 mr-2">
+                      <span className="bg-green2 text-white rounded-full p-1 mr-2">
                         R6
                       </span>
                     )}
@@ -127,15 +158,13 @@ export default function PolicyList(props) {
               </div>
 
               <div className="flex space-x-8">
-                <div className="p-1 subrecht-text rounded text-base bg-gray-200">
+                <div className="p-1 subrecht-text rounded text-sm font-openSans bg-grey3 bg-opacity-50 ">
                   {subrechtsgebied}
                 </div>
               </div>
             </div>
           );
         })}
-
-        <div></div>
       </div>
     </>
   );

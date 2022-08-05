@@ -14,7 +14,7 @@ export default function OverOns() {
             <a className="text-[#4099DA]">gemeente Amsterdam</a>
           </Link>{" "}
           in samenwerking met{" "}
-          <Link href="https://darkmatterlabs.org/">
+          <Link href="https://black1matterlabs.org/">
             <a className="text-[#4099DA]">Dark Matter Labs</a>
           </Link>
           en verschillende universiteiten en mede-overheden het project
@@ -55,7 +55,7 @@ export default function OverOns() {
 
         <div className="text-xl font-bold py-4">Dark Matter Laboratories</div>
         <div className="">
-          <Link href="https://darkmatterlabs.org/">
+          <Link href="https://black1matterlabs.org/">
             <a className="text-[#4099DA]">Dark Matter Labs (DML)</a>
           </Link>{" "}
           is een internationaal strategisch onderzoeks-, ontwerp- en

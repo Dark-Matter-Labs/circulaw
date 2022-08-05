@@ -1,107 +1,131 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Fragment } from "react";
 
-import HoutbouwHero from "../public/houtbouw-hero.png";
-import WindmolensHero from "../public/windmolens-hero.png";
-import OverigeHero from "../public/overige-hero.png";
+import HoutbouwHero from "../public/houtbouw.png";
+import WindmolensHero from "../public/turbine.png";
+import OverigeHero from "../public/biennekort.png";
 
-import windIcon from "../public/icons/wind.png";
-import cityIcon from "../public/icons/city.png";
-import woodIcon from "../public/icons/wood.png";
+import HoutbouwDetails1 from "../public/houtbouw1.png";
+import HoutbouwDetails2 from "../public/houtbouw2.png";
+import HoutbouwDetails3 from "../public/houtbouw3.png";
 
 const types = [
   {
     heroImage: HoutbouwHero,
-    icon: woodIcon,
-    count: "77",
-    title: "Houtbouw",
+    title: "Houtbouw stimuleren",
+    tag: "",
     description:
-      "Ontdek de juridische kansen en maatregelen die de transitie naar houtbouw kunnen versnellen",
+      "Meer bouwen met hout heeft grote invloed op het klimaat. Daarom vind je hier maatregelen om houtbouw te stimuleren en een leidraad voor de toepassing van een aantal van die maatregelen",
     buttonText: "Meer over houtbouw",
     href: "/houtbouw",
-    url: "https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80",
-    active: "true",
   },
   {
     heroImage: WindmolensHero,
-    icon: windIcon,
-    count: "00",
-    title: "Circulaire windmolens",
+    title: "Circulaire windturbines",
+    tag: "",
     description:
-      "Onze juristen brengen op dit moment de kansen en maatregelen in de wetgeving rond circulaire windmolens in kaart. Binnenkort",
-    buttonText: "Meer over windmolens",
+      "Windenergie speelt een cruciale rol in onze duurzame energie-ambities. Daarom vind je hier maatregelen die de inzet van windturbines bevorderen en die sturen op ontwikkeling en inzet van windturbines die op zich zelf ook circulair zijn.",
+    buttonText: "Meer over windturbines",
     href: "/circulaire-windmolens",
-    url: "https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80",
-    active: "false",
   },
   {
     heroImage: OverigeHero,
-    icon: cityIcon,
-    count: "17",
-    title: "Overige maatregelen circulaire bouweconomie",
-    description:
-      "Deze maatregelen zijn ook in de de circulaire bouweconomie toepasbaar",
-    buttonText: "Bekijk de maatregelen",
+    title: "",
+    tag: "",
+    description: "Jouw thema hier?",
+    buttonText: "",
     href: "#",
-    url: "https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80",
-    active: "true",
   },
 ];
 
-export default function SectionTypes({ data, qty, title, description }) {
-  if ({ data } != null) {
-    return (
-      <div className="pb-20">
-        <div className="text-2xl bold py-6">{title}</div>
-        <ul
-          role="list"
-          className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 w-full"
-        >
-          {types.map((file) => (
-            <li key={file.title} className="relative border">
-              <div className="object-cover pointer-events-none group-hover:opacity-75">
-                <Image
-                  src={file.heroImage}
-                  alt="Picture of the case"
-                  width={382}
-                  height={248}
-                />
-              </div>
-              <div className="group block w-full p-4">
-                <div className="flex"></div>
-                <div className="inline-block">
-                  <div className="inline-block">
-                    <Image src={file.icon} alt="Picture of the author" />
-                  </div>
-                  <div className="mt-2 block text-sm font-medium text-gray-900 truncate pointer-events-none pb-4">
-                    {file.title} ({file.count})
-                  </div>
-                </div>
-                <p className="block text-sm  text-gray-500 pointer-events-none pb-4">
-                  {file.description}
-                </p>
-                <Link href={file.href}>
-                  <a>{file.buttonText} →</a>
-                </Link>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
-  if ({ data } === null) {
-    return (
-      <>
-        <div className="text-2xl bold py-6">{title}</div>
+const houtbouwTypes = [
+  {
+    heroImage: HoutbouwDetails1,
+    title: "",
+    description:
+      "Stimuleren van houtbouw binnen het gemeentelijk omgevingsprogramma",
+    tag: "Omgevingswet",
+    buttonText: "Lees meer",
+    href: "/measures/houtbouw",
+  },
+  {
+    heroImage: HoutbouwDetails2,
+    title: "",
+    description: "Inzet van sloopmelding voor de bevordering van houtbouw",
+    tag: "Omgevingswet",
+    buttonText: "Lees meer",
+    href: "/measures/houtbouw",
+  },
+  {
+    heroImage: HoutbouwDetails3,
+    title: "",
+    description:
+      "Hoe technische specificaties in overheidsopdrachten houtbouw kunnen bevorderen",
+    tag: "Aanbesteding",
+    buttonText: "Lees meer",
+    href: "/measures/houtbouw",
+  },
+];
 
-        <div className="pl-6 italic">
-          Volgt in de toekomst, blijf op de hoogte
-        </div>
-      </>
-    );
-  } else {
-    return <></>;
-  }
+export default function SectionTypes(props) {
+  const [type, setType] = useState([]);
+
+  useEffect(() => {
+    if (props.type === "home") {
+      setType(types);
+    } else if (props.type === "houtbouw") {
+      setType(houtbouwTypes);
+    }
+  }, [props.type]);
+
+  return (
+    <div className="pb-20">
+      <ul
+        role="list"
+        className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 sm:gap-x-10"
+      >
+        {type.map((file) => (
+          <li
+            key={file.title}
+            className="relative bg-white w-full rounded-md shadow"
+          >
+            <div className="object-cover pointer-events-none">
+              <Image
+                src={file.heroImage}
+                layout="responsive"
+                alt="Picture of the case"
+              />
+            </div>
+            <div className="group block w-full p-4 bg-white px-10">
+              <div className="flex"></div>
+              <div className="inline-block">
+                <h3 className="mt-2 block text-black pointer-events-none pb-4">
+                  {file.title}
+                </h3>
+              </div>
+              <p className="body-text-mobile sm:card-body block text-black pointer-events-none pb-4">
+                {file.description}
+              </p>
+              {file.tag && (
+                <div className="my-8 ">
+                  <span className="p-2 rounded-lg bg-green3">{file.tag}</span>
+                </div>
+              )}
+              {file.buttonText && (
+                <button
+                  type="button"
+                  className="inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-transparent hover:bg-greenLink focus:outline-none "
+                >
+                  <Link href={file.href}>
+                    <a>{file.buttonText} →</a>
+                  </Link>
+                </button>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }

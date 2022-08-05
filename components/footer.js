@@ -1,66 +1,79 @@
 import Image from "next/image";
+import amsLogo from "../public/logo_partners/gasd_sponsor_cmyk_wit.svg";
 import climateKICLogo from "../public/EIT-CKIC-Logo_White_Standard.png";
+import provinceNord from "../public/logo_partners/PNH_RGB_wit_trans.png";
+import provinceFlevLogo from "../public/logo_partners/Provincie-Flevoland_wit.png";
+import nlLogo from "../public/logo_partners/logo-nl-nowhitespace.svg";
+import dmLogo from "../public/logo_partners/DML_Logo_white@2000x.png";
 
 const navigation = {
   WAARDEKETENS: [
     {
       name: "Gebouwde omgeving",
       href: "",
-      className: "font-bold",
+      className: "font-bold text-green3",
     },
-    { name: "Houtbouw", href: "/houtbouw", className: "pl-4" },
+    { name: "Houtbouw", href: "/houtbouw", className: "pl-4 text-white1" },
     {
-      name: "Circulaire windmolens",
+      name: "Circulaire turbines",
       href: "/circulaire-windmolens",
-      className: "pl-4",
+      className: "pl-4 text-white1",
+    },
+  ],
+  OVER: [
+    {
+      name: "Waarom CircuLaw?",
+      href: "/waarom-circulaw",
+      className: "text-white1",
     },
     {
-      name: "Overige maatregelen",
-      href: "overige maatregelen",
-      className: "pl-4",
+      name: "Wat is CircuLaw?",
+      href: "/wat-is-circulaw",
+      className: "text-white1",
     },
     {
-      name: "Consumptiegoederen",
-      href: "consumptiegoederen",
-      className: "font-bold",
+      name: "Status en ambities",
+      href: "/status-en-ambities",
+      className: "text-white1",
     },
     {
-      name: "Biomassa en voedsel",
-      href: "/biomassa-en-voedsel",
-      className: "font-bold",
+      name: "Wetsanalyse met circulaire blik",
+      href: "/wetsanalyse-met-circulaire-blik",
+      className: "text-white1",
     },
-    { name: "Maakindustrie", href: "/maakindustrie", className: "font-bold" },
-    { name: "Kunststoffen", href: "/kunststoffen", className: "font-bold" },
+    {
+      name: "Wie maken CircuLaw?",
+      href: "/wie-maken-circulaw",
+      className: "text-white1",
+    },
   ],
 
   other: [
-    { name: "HOE HET WERKT", href: "/hoe-het-werkt", className: "uppercase" },
-    { name: "OVER ONS", href: "/over-ons", className: "uppercase" },
-    { name: "CONTACT", href: "/contact", className: "uppercase" },
+    { name: "Veel gestelde vragen", href: "/hoe-het-werkt", className: "" },
+    { name: "Contact", href: "/contact", className: "" },
+    { name: "Disclaimer/Alpha", href: "/alpha", className: "" },
+    { name: "Privacy", href: "/privacy-policy", className: "" },
   ],
 };
 
-export default function Example() {
+export default function Footer() {
   return (
-    <footer className="bg-[#707A85] mt-20" aria-labelledby="footer-heading">
-      <h2 id="footer-heading" className="sr-only">
-        Footer
-      </h2>
+    <footer className="bg-green1" aria-labelledby="footer-heading">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div className="pb-8">
           <div className="grid grid-cols-1 gap-8 sm:col-span-3">
             <div className="sm:grid sm:grid-cols-4 md:gap-8">
-              <div className="col-span-2">
-                <h3 className="text-sm text-white font-bold tracking-wider uppercase">
-                  MAATREGELEN
-                </h3>
-                <div className="grid grid-cols-1 gap-8">
+              <div className="">
+                <p className="text-sm text-green3 font-publicSans font-bold tracking-wider uppercase pb-4 sm:pb-0 ">
+                  THEMA’S
+                </p>
+                <div className="grid grid-cols-1 gap-8 pb-4 sm:pb-0">
                   <ul role="list" className="mt-4 space-y-4">
                     {navigation.WAARDEKETENS.map((item) => (
                       <li key={item.name}>
                         <a
                           href={item.href}
-                          className={`text-base text-white hover:text-[#4099DA] ${item.className}`}
+                          className={`text-base hover:text-[#4099DA] ${item.className}`}
                         >
                           {item.name}
                         </a>
@@ -69,7 +82,26 @@ export default function Example() {
                   </ul>
                 </div>
               </div>
-              <div className="mt-12 md:mt-0">
+              <div className="">
+                <p className="text-sm text-green3 font-publicSans font-bold tracking-wider uppercase pb-4 sm:pb-0">
+                  OVER CIRCULAW
+                </p>
+                <div className="grid grid-cols-1 gap-8 pb-4 sm:pb-0">
+                  <ul role="list" className="mt-4 space-y-4">
+                    {navigation.OVER.map((item) => (
+                      <li key={item.name}>
+                        <a
+                          href={item.href}
+                          className={`text-base hover:text-[#4099DA] ${item.className}`}
+                        >
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="mt-5">
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.other.map((item) => (
                     <li key={item.name}>
@@ -83,9 +115,66 @@ export default function Example() {
                   ))}
                 </ul>
               </div>
-              <div>
-                <Image src={climateKICLogo} alt="EIT Climate KIC Logo" />
-              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mx-5 sm:mx-10">
+        <div className="py-12 px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 gap-x-2 gap-y-4 md:grid-cols-6 lg:grid-cols-6">
+            <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+              <Image
+                layout="fixed"
+                height={57}
+                width={182}
+                src={amsLogo}
+                alt="Tuple"
+              />
+            </div>
+            <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+              <Image
+                layout="fixed"
+                height={75}
+                width={135}
+                src={climateKICLogo}
+                alt="Mirage"
+              />
+            </div>
+            <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
+              <Image
+                layout="fixed"
+                height={100}
+                width={200}
+                src={provinceFlevLogo}
+                alt="Transistor"
+              />
+            </div>
+            <div className="sm:col-span-2 flex justify-center md:col-span-2 lg:col-span-1">
+              <Image
+                layout="fixed"
+                height={39}
+                width={200}
+                src={provinceNord}
+                alt="StaticKit"
+              />
+            </div>
+            <div className="sm:col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
+              <Image
+                layout="fixed"
+                height={100}
+                width={200}
+                src={nlLogo}
+                alt="Workcation"
+              />
+            </div>
+            <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
+              <Image
+                layout="fixed"
+                height={85}
+                width={85}
+                src={dmLogo}
+                alt="Workcation"
+              />
             </div>
           </div>
         </div>

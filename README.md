@@ -1,4 +1,4 @@
-# Circulaw
+# CircuLaw
 
 A project for exploring circular economy laws in the Netherlands.
 
