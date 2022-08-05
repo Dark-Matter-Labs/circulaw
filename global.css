@@ -1,134 +1,142 @@
-h1 {
-  font-family: "Public Sans";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 52px;
-  line-height: 62px;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-h1.mobile {
-  font-weight: 800;
-  font-size: 30px;
-  line-height: 130%;
-}
+@layer components {
+  h1.mobile {
+    font-family: "Public Sans";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 130%;
+  }
 
-h2 {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 150%;
-}
+  h1.main {
+    font-family: "Public Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 62px;
+  }
 
-h2.mobile {
-  font-size: 20px;
-  line-height: 140%;
-}
+  h2.main {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 150%;
+  }
 
-h3 {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 150%;
-}
+  h2.mobile {
+    font-size: 20px;
+    line-height: 140%;
+  }
 
-.body-text {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 35px;
-}
+  h3 {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+  }
 
-.body-text-mobile {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 170%;
-}
+  .body-text {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 35px;
+  }
 
-.card-body {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 150%;
-}
+  .body-text-mobile {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 170%;
+  }
 
-.link {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 35px;
-  text-decoration-line: underline;
-}
+  .card-body {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 150%;
+  }
 
-.link-mobile {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
-  text-decoration-line: underline;
-}
+  .link {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 35px;
+    text-decoration-line: underline;
+  }
 
-.menu-title {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 150%;
-}
+  .link-mobile {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration-line: underline;
+  }
 
-.menu-title-mobile {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 150%;
-}
+  .menu-title {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+  }
 
-.breadcrumb {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 800;
-  font-size: 14px;
-  line-height: 19px;
-}
+  .menu-title-mobile {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+  }
 
-.button {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 27px;
-}
+  .breadcrumb {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 19px;
+  }
 
-.r-category {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 149.19%;
-}
+  .button {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+  }
 
-.dropdown-menu {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 150%;
-}
+  .r-category {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 149.19%;
+  }
 
-.filter-body {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 19px;
+  .dropdown-menu {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 150%;
+  }
+
+  .filter-body {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+  }
 }
 
 html {
@@ -229,4 +237,12 @@ html {
   background-color: #ffffff;
   border-color: #6d9f6b;
   border-width: 1px;
+}
+
+.wrap {
+  word-wrap: break-word;
+}
+
+.gradient-bg {
+  background: linear-gradient(#f9d9c8, 1%, #fff);
 }
