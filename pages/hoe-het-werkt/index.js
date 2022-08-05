@@ -2,18 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../components/layout";
 
-import HCW1 from "../../public/hcw-1.png";
-import HCW2 from "../../public/hcw-2.png";
-import HCW3 from "../../public/hcw-3.png";
-import HCW4 from "../../public/hcw-4.png";
-
 export default function Kunststoffen() {
   return (
     <Layout>
-      <div className="max-w-2xl">
-        <div className="text-3xl font-bold py-14">Hoe CircuLaw werkt</div>
-        <div className="text-xl font-bold">Waarom CircuLaw?</div>
-        <div className="">
+      <div className="mx-20">
+        <h1 className="py-14 mobile sm:main">Hoe CircuLaw werkt</h1>
+        <h2 className="mobile sm:main">Waarom CircuLaw?</h2>
+        <div className="body-text">
           De klimaatcrisis is een van de grootste bedreigingen van onze tijd. Om
           (verdere) opwarming van de aarde tegen te gaan, is drastische actie
           nodig. In 2050 wil Nederland volledig circulair zijn. Juridische
@@ -22,20 +17,17 @@ export default function Kunststoffen() {
           en energie om uit te vinden welke fiscaal-juridische instrumenten ze
           kunnen inzetten en hoe ze deze vervolgens kunnen gebruiken.
         </div>
-        <div className="py-9 text-lg font-bold">
+        <div className="py-9 body-text">
           CircuLaw laat beleidsmakers zien welke mogelijkheden in bestaande wet-
           en regelgeving aanwezig zijn om de circulaire transitie te versnellen
         </div>
 
-        <div className="text-xl font-bold pb-4">
+        <h2 className="mobile sm:main">
           Wetgeving geanalyseerd en geïnventariseerd door juridische experts
-        </div>
+        </h2>
 
-        <div className="">
-          <Image src={HCW1} alt="Picture of the author" />
-        </div>
-        <div className="py-9">
-          <ul className="pl-6 list-disc">
+        <div className="py-8">
+          <ul className="pl-6 body-text list-disc">
             <li>
               Samen met verschillende Nederlandse rechtenuniversiteiten
               ontwikkelde CircuLaw een protocol dat wetten analyseert vanuit
@@ -53,12 +45,9 @@ export default function Kunststoffen() {
             </li>
           </ul>
         </div>
-        <div className="text-xl font-bold">Verken de maatregelen</div>
-        <div className="py-9">
-          <Image src={HCW2} alt="Picture of the author" />
-        </div>
+        <h2 className="mobile sm:main">Verken de maatregelen</h2>
 
-        <div className="">
+        <div className="body-text">
           In CircuLaw vind je dus maatregelen die beleidsmakers helpen de
           circulaire transitie te versnellen. Dat kunnen nieuwe maatregelen
           zijn, maar ook bestaande maatregelen die nog niet, of weinig worden
@@ -68,19 +57,14 @@ export default function Kunststoffen() {
           bevorderen. In de toekomst volgen meer thema’s.
         </div>
 
-        <div className="text-xl font-bold py-9">
-          Verdiep je in de maatregelen
-        </div>
-        <div className="">
-          <Image src={HCW3} alt="Picture of the author" />
-        </div>
+        <h2 className="pt-8 mobile sm:main">Verdiep je in de maatregelen</h2>
 
-        <div className="py-9">
+        <div className="py-9 body-text">
           Een maatregel is een juridisch instrument waarmee overheden een
           beleidsdoel kunnen vormgeven en behalen. Voorbeelden van maatregelen
           zijn subsidies, vergunningen of belastingen of.... Een maatregel in
           CircuLaw beschrijft kort:
-          <ul className="pl-6 list-disc">
+          <ul className="pl-6 list-disc ">
             <li>Het onderwerp waarop de maatregel betrekking heeft</li>
             <li>
               Wat de maatregel inhoudt in zo begrijpelijk mogelijke juridische
@@ -101,14 +85,11 @@ export default function Kunststoffen() {
           </ul>
         </div>
 
-        <div className="text-xl font-bold pb-4">
+        <h2 className="mobile sm:main pb-4">
           Pas de maatregelen toe in nieuw, circulair beleid
-        </div>
-        <div className="">
-          <Image src={HCW4} alt="Picture of the author" />
-        </div>
+        </h2>
 
-        <div className="py-9">
+        <div className="py-9 body-text">
           Vind je als beleidsmaker een maatregel in CircuLaw waarvan je je
           afvraagt of ‘ie interessant of relevant zou kunnen zijn voor jouw
           gemeente of provincie? Dan daagt CircuLaw je uit:
@@ -122,10 +103,10 @@ export default function Kunststoffen() {
           </ul>
         </div>
 
-        <div className="py-9 p-4 bg-[#dbedfb]">
-          <div className="font-bold">Een voorbeeld:</div>
+        <div className="py-9 p-4 bg-green3">
+          <div className="body-text">Een voorbeeld:</div>
 
-          <ul className="">
+          <ul className="body-text">
             <li>
               Je vind in CircuLaw een maatregel ‘Houtbouw een plek geven in de
               omgevingsvisie’
@@ -140,17 +121,12 @@ export default function Kunststoffen() {
             <li>Daarna onderneem je actie om het voor elkaar te krijgen.</li>
           </ul>
         </div>
-        <div className="font-bold py-9">Let op:</div>
+        <h2 className="mobile sm:main py-9">Let op:</h2>
 
-        <div className="italic">
+        <div className="italic body-text pb-10">
           De maatregelen kun je in de praktijk nit allemaal één-op-één overnemen
           of toepassen: sommige maatregelen zijn zelfs nog niet eerder toegepast
           en vragen om een innovative aanpak!
-        </div>
-        <div className="py-9 text-2xl text-[#4099DA]">
-          <Link href="/faq">
-            <a>Meer over CircuLaw in Vraag & Antwoord</a>
-          </Link>
         </div>
       </div>
     </Layout>
