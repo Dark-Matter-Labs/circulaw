@@ -1,4 +1,4 @@
-import { laws } from "../../../data";
+import { laws } from '../../../data';
 
 export default function personHandler({ query: { id } }, res) {
   const filtered = laws.filter((p) => p.id === id);

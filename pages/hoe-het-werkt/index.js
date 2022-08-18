@@ -1,133 +1,167 @@
-import Link from "next/link";
-import Image from "next/image";
-import Layout from "../../components/layout";
+import Link from 'next/link';
+import Layout from '../../components/layout';
 
 export default function Kunststoffen() {
   return (
     <Layout>
-      <div className="mx-20">
-        <h1 className="py-14 mobile sm:main">Hoe CircuLaw werkt</h1>
-        <h2 className="mobile sm:main">Waarom CircuLaw?</h2>
-        <div className="body-text">
-          De klimaatcrisis is een van de grootste bedreigingen van onze tijd. Om
-          (verdere) opwarming van de aarde tegen te gaan, is drastische actie
-          nodig. In 2050 wil Nederland volledig circulair zijn. Juridische
-          instrumenten zijn onmisbaar om deze transitie waar te maken. Maar wet-
-          en regelgeving is complexe materie. Het kost beleidsmakers veel tijd
-          en energie om uit te vinden welke fiscaal-juridische instrumenten ze
-          kunnen inzetten en hoe ze deze vervolgens kunnen gebruiken.
-        </div>
-        <div className="py-9 body-text">
-          CircuLaw laat beleidsmakers zien welke mogelijkheden in bestaande wet-
-          en regelgeving aanwezig zijn om de circulaire transitie te versnellen
-        </div>
+      <div className='mx-20 max-w-4xl pb-8'>
+        <h1 className='py-14 mobile sm:main'>Veelgestelde vragen en antwoorden over CircuLaw</h1>
+        <h2 className='mobile sm:main'>Wat is het doel van CircuLaw</h2>
+        <p className='body-text-mobile sm:body-text pb-4'>
+          Het doel van CircuLaw is het versnellen van de transitie naar een circulaire economie door
+          meer en beter gebruik van de mogelijkheden die het wet- en regelgevingsstelsel biedt.
+        </p>
+        <h2 className='mobile sm:main'>Waarom CircuLaw?</h2>
+        <p className='body-text-mobile sm:body-text pb-4'>
+          Uit recente adviezen van Planbureau voor de Leefomgeving en de Reflectiegroep Circulaire
+          Economie blijkt dat meer drang en dwang nodig is om de circulaire transitie te versnellen.
+          In de praktijk blijkt echter dat beleidsmakers bij provincies en gemeenten vaak niet weten
+          welke juridische instrumenten ze tot hun beschikking hebben, en hoe ze deze moeten
+          toepassen. Uit breed Nederlands onderzoek blijkt dat slechts 8% van de inzet van
+          beleidsinstrumenten door decentrale overheden wet- en regelgeving betreft. CircuLaw wil
+          hier verandering in brengen door beleidsmakers in Nederland te helpen, zodat zij vaker met
+          juridische maatregelen aan de slag gaan.
+        </p>
 
-        <h2 className="mobile sm:main">
-          Wetgeving geanalyseerd en geïnventariseerd door juridische experts
+        <h2 className='mobile sm:main'>Voor wie is CircuLaw bedoeld?</h2>
+        <p className='body-text-mobile sm:body-text pb-4'>
+          CircuLaw is in de eerste plaats bedoeld voor beleidsmakers die bij de gemeente of
+          provincie werken en bezig zijn met innovatie, duurzaamheid en de circulaire transitie.
+          CircuLaw geeft hen inzicht in de maatregelen die wet- en regelgeving biedt, en geeft hen
+          handelingsperspectief. Ook maakt CircuLaw duidelijk hoe bevoegdheden en maatregelen zijn
+          verdeeld over verschillende overheidslagen binnen een circulaire casus of productgroep,
+          houtbouw bijvoorbeeld.
+        </p>
+        <p className='body-text-mobile sm:body-text pb-4'>
+          Zodoende is CircuLaw ook relevant voor beleidsstrategen en transitiemanagers van
+          ministeries en adviesbureaus. Voor juristen is CircuLaw interessant vanwege de manier
+          waarop wet- en regelgeving is geanalyseerd, en om samen met een beleidsmaker snel een
+          overzicht te krijgen in de mogelijkheden die wet- en regelgeving biedt.
+        </p>
+
+        <h2 className='mobile sm:main'>Wat zijn de &apos;maatregelen&apos; in CircuLaw?</h2>
+
+        <p className='body-text-mobile sm:body-text pb-4'>
+          Een maatregel is een juridisch instrument waarmee overheden een beleidsdoel kunnen
+          vormgeven en realiseren. Voorbeelden van maatregelen zijn eisen, vergunningen of
+          belastingen.
+        </p>
+
+        <h2 className='mobile sm:main'>
+          Ik wil aan de slag met een maatregel, maar weet niet goed hoe dat moet. Kan CircuLaw
+          helpen?
         </h2>
 
-        <div className="py-8">
-          <ul className="pl-6 body-text list-disc">
-            <li>
-              Samen met verschillende Nederlandse rechtenuniversiteiten
-              ontwikkelde CircuLaw een protocol dat wetten analyseert vanuit
-              circulaire transitiedoelen v
-            </li>
-            <li>
-              Juridische experts voeren hiermee wetsanalyses uit op basis van
-              circulaire thema’s en productgroepen zoals ‘Houtbouw’ of
-              ‘Circulaire windturbines’
-            </li>
-            <li>
-              De maatregelen die hieruit voortkomen maken zij met een
-              multidisciplinair team leesbaar voor beleidsmakers, zodat zij die
-              makkelijk kunnen toepassen.
-            </li>
-          </ul>
-        </div>
-        <h2 className="mobile sm:main">Verken de maatregelen</h2>
+        <p className='body-text-mobile sm:body-text pb-4'>
+          CircuLaw maakt de beschikbare maatregelen inzichtelijk die kunnen bijdragen aan het
+          realiseren van de operationele doelen van een circulaire casus, zoals houtbouw. Succesvol
+          toegepaste maatregelen worden geanalyseerd en in stappenplannen uitgewerkt, zodat andere
+          gemeenten en provincies die kunnen overnemen. Ook worden interactieve handleidingen voor
+          toepassing van maatregelen ontwikkeld.
+        </p>
 
-        <div className="body-text">
-          In CircuLaw vind je dus maatregelen die beleidsmakers helpen de
-          circulaire transitie te versnellen. Dat kunnen nieuwe maatregelen
-          zijn, maar ook bestaande maatregelen die nog niet, of weinig worden
-          toegepast. Met zoeken en filteren kun je in CircuLaw waar je mee aan
-          de slag wilt in jouw gemeente of provincie. Op dit moment vind je
-          maatregelen met kansen om ‘Houtbouw’ en ‘Circulaire windturbines’ te
-          bevorderen. In de toekomst volgen meer thema’s.
-        </div>
-
-        <h2 className="pt-8 mobile sm:main">Verdiep je in de maatregelen</h2>
-
-        <div className="py-9 body-text">
-          Een maatregel is een juridisch instrument waarmee overheden een
-          beleidsdoel kunnen vormgeven en behalen. Voorbeelden van maatregelen
-          zijn subsidies, vergunningen of belastingen of.... Een maatregel in
-          CircuLaw beschrijft kort:
-          <ul className="pl-6 list-disc ">
-            <li>Het onderwerp waarop de maatregel betrekking heeft</li>
-            <li>
-              Wat de maatregel inhoudt in zo begrijpelijk mogelijke juridische
-              taal
-            </li>
-
-            <li>
-              Hoe de maatregel kansen biedt om circulariteit te bevorderen
-            </li>
-
-            <li>Eisen en beperkingen aan het inzetten van de maatregel</li>
-
-            <li>
-              De juridische bron, een inschatting van de juridische houdbaarheid
-              v en de mate van circulaire strategie (R-waarde v) achter de
-              maatregel.
-            </li>
-          </ul>
-        </div>
-
-        <h2 className="mobile sm:main pb-4">
-          Pas de maatregelen toe in nieuw, circulair beleid
+        <h2 className='mobile sm:main pb-4'>
+          Welke circulaire casussen en productgroepen pakt CircuLaw nog meer op?
         </h2>
+        <p className='body-text-mobile sm:body-text'>
+          Welke casus of productgroep we na houtbouw en circulaire windturbines oppakken is nog niet
+          bekend. Laat ons vooral weten waar jij behoefte aan hebt en waarom.
+        </p>
+        <p className='body-text-mobile sm:body-text text-greenLink pb-4'>
+          <Link href='/contact'>
+            <a>Contact</a>
+          </Link>
+        </p>
 
-        <div className="py-9 body-text">
-          Vind je als beleidsmaker een maatregel in CircuLaw waarvan je je
-          afvraagt of ‘ie interessant of relevant zou kunnen zijn voor jouw
-          gemeente of provincie? Dan daagt CircuLaw je uit:
-          <ul className="pl-6 list-disc">
-            <li>Verken de maatregel</li>
-            <li>
-              Bespreek deze met juridische experts in je eigen organisatie
-            </li>
+        <h2 className='mobile sm:main pb-4'>
+          Ik heb een van de door CircuLaw beschreven maatregelen in de praktijk toegepast, hoe kan
+          ik die ervaring delen?
+        </h2>
+        <p className='body-text-mobile sm:body-text'>
+          Geweldig! Hier horen we heel graag meer over, want jouw ervaringen helpen anderen verder.
+        </p>
+        <p className='body-text-mobile sm:body-text text-greenLink pb-4'>
+          <Link href='/contact'>
+            <a>Contact</a>
+          </Link>
+        </p>
 
-            <li>Gebruik de maatregel in je eigen context</li>
+        <h2 className='mobile sm:main pb-4'>
+          Ik wil een suggestie doen, ik wil graag meewerken aan CircuLaw. Kan dat?
+        </h2>
+        <p className='body-text-mobile sm:body-text'>We horen graag van je!</p>
+        <p className='body-text-mobile sm:body-text text-greenLink pb-4'>
+          <Link href='/contact'>
+            <a>Contact</a>
+          </Link>
+        </p>
+
+        <h2 className='mobile sm:main pb-4'>
+          Ik wil een wetsanalyse laten uitvoeren op een circulaire casus of productgroep, kan
+          CircuLaw helpen?
+        </h2>
+        <p className='body-text-mobile sm:body-text'>
+          Wij komen graag met je in contact om de mogelijkheden te bespreken.
+        </p>
+        <p className='body-text-mobile sm:body-text text-greenLink pb-4'>
+          <Link href='/contact'>
+            <a>Contact</a>
+          </Link>
+        </p>
+
+        <h2 className='mobile sm:main'>Wanneer is CircuLaw klaar?</h2>
+
+        <p className='body-text-mobile sm:body-text pb-4'>
+          Het juiste antwoord is: nooit! CircuLaw wordt continu gevuld met de uitkomsten van
+          wetsanalyses van nieuwe circulaire casussen en productgroepen, inspirerende
+          praktijkvoorbeelden en nieuwe thema’s. Door toepassing van maatregelen in de praktijk
+          leren we steeds meer, en deze lessen worden meegenomen in CircuLaw.
+        </p>
+
+        <h2 className='mobile sm:main'>Hoe wordt CircuLaw betaald?</h2>
+
+        <p className='body-text-mobile sm:body-text pb-4'>
+          De ontwikkeling van CircuLaw wordt betaald door Gemeente Amsterdam, Climate-KIC, Provincie
+          Noord-Holland, Provincie Flevoland, RVO, de Transitieagenda Circulaire Bouweconomie, Dark
+          Matter Labs en Laudes Built By Nature. In de toekomst wordt een exploitatiemodel
+          ontwikkeld waarbij het uitgangspunt is dat alle inhoud open source is en gratis voor
+          iedereen beschikbaar.
+        </p>
+
+        <h2 className='mobile sm:main'>
+          Hoe identificeert CircuLaw relevante juridische maatregelen?
+        </h2>
+        <p className='body-text-mobile sm:body-text pb-4'>
+          Vernieuwend aan CircuLaw is dat wetsanalyses worden uitgevoerd vanuit transitiedoelen. Om
+          de meest geschikte maatregelen met betrekking tot een casus of productgroep te
+          identificeren, doet het juridische team uitgebreid onderzoek naar zowel de direct als de
+          indirect relevante beleidsdoelen. We onderzoeken eerst de vijf circulaire fasen van een
+          productgroep: ontwerp, productie, aankoop, gebruik en einde van de levensduur. Voor deze
+          fasen stellen we samen met experts operationele doelen vast. Vervolgens bakenen we met een
+          speciaal ontwikkelde methode het juridische werkgebied af: van de duizenden wetten,
+          besluiten en regelingen wordt een selectie gemaakt van wetten die relevant zijn. Binnen
+          deze geselecteerde wetten wordt per artikel gekeken of er ruimte of mogelijkheden in zit
+          waarmee circulariteit kan worden bevorderd.
+        </p>
+        <p className='body-text-mobile sm:body-text pb-4'>
+          Om te zorgen dat de juridische analist hier zo creatief en vanuit zoveel mogelijk
+          verschillende perspectieven naar kijkt, is een analysesleutel ontwikkeld. De wet- en
+          regelgeving wordt op artikelniveau geanalyseerd vanuit de volgende vragen:
+          <ul className='list-disc pl-6'>
+            <li>kan dit artikel bijdragen aan de gestelde operationele doelen?</li>
+            <li>kan hier circulariteit in worden gelezen? </li>
+            <li>is deze wettelijke bepaling circulair toepasbaar?</li>
           </ul>
-        </div>
-
-        <div className="py-9 p-4 bg-green3">
-          <div className="body-text">Een voorbeeld:</div>
-
-          <ul className="body-text">
-            <li>
-              Je vind in CircuLaw een maatregel ‘Houtbouw een plek geven in de
-              omgevingsvisie’
-            </li>
-            <li>Je vraagt je af of jouw gemeente daar al iets mee doet.</li>
-
-            <li>
-              Je klopt aan bij……….…en bespreekt of en hoe je ‘Houtbouw’ in de
-              omgevingsvisie kan opnemen en wat de impact is.
-            </li>
-
-            <li>Daarna onderneem je actie om het voor elkaar te krijgen.</li>
-          </ul>
-        </div>
-        <h2 className="mobile sm:main py-9">Let op:</h2>
-
-        <div className="italic body-text pb-10">
-          De maatregelen kun je in de praktijk nit allemaal één-op-één overnemen
-          of toepassen: sommige maatregelen zijn zelfs nog niet eerder toegepast
-          en vragen om een innovative aanpak!
-        </div>
+        </p>
+        <p className='body-text-mobile sm:body-text pb-4'>
+          De geïdentificeerde maatregelen waarderen we op basis van afbreukrisico en invloed.
+          Hiermee geven we beleidsmedewerkers een indicatie mee van de toepasbaarheid van een
+          maatregel, en helpen we hen een goede selectie te maken.
+        </p>
+        <p className='body-text-mobile sm:body-text pb-4'>
+          Nieuwsgierig naar meer achtergrondinformatie over de methoden voor wetsanalyse die
+          speciaal voor CircuLaw ontwikkeld zijn? Check het protocol voor wetsanalyse hier.
+        </p>
       </div>
     </Layout>
   );

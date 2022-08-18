@@ -4,7 +4,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "clean": "npx prettier --write ."
+    "clean": "prettier --write \"(pages|components)/**/*.+(js|jsx|json|css|md)\" --config ./.prettierrc"
   },
   "dependencies": {
     "@headlessui/react": "^1.6.0",

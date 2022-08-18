@@ -5,19 +5,19 @@ import Layout from '../../components/layout';
 import SectionTypes from '/components/section-types-list';
 
 import WoodIcon from '../../public/icons/wood.svg';
-import HoutbouwHero from '../../public/houtbouwHero.jpeg';
+import WindturbineHero from '../../public/windturbineHero.jpg';
 import HoutbouwSection1 from '../../public/houtbouwsection1.png';
 import HoutbouwSection2 from '../../public/houtbouwsection2.png';
 import HoutbouwSection3 from '../../public/houtbouwsection3.png';
 
-export default function Houtbouw() {
+export default function Windturbine() {
   useEffect(() => {
     localStorage.clear();
   });
   return (
     <Layout>
       <div className='grid grid-cols-1 lg:grid-cols-2 gradient-bg justify-items-end'>
-        <div className='mx-5 sm:mx-20 max-w-2xl'>
+        <div className='mx-5 sm:mx-20 '>
           <div className='breadcrumb pt-8 text-greenLink'>
             <Link href='/'>
               <a>Home &gt; </a>
@@ -27,45 +27,25 @@ export default function Houtbouw() {
             <div className='pr-4 inline-block'>
               <Image src={WoodIcon} alt='Icon of Wood' width={48} />
             </div>
-            <h1 className='text-green1 inline-block mobile sm:main'>Houtbouw stimuleren </h1>
-            <h2 className='pt-4 pb-4 mobile sm:main'>Milieudoelstellingen behalen met houtbouw</h2>
-            <p className='body-text-mobile sm:body-text'>
-              De manier waarop wij nu in Nederland bouwen is zeer belastend voor het milieu. Er is
-              een eenvoudige oplossing: vervang beton deels door hout. Is dat hout dan wel geschikt
-              en belasten we het milieu niet nog erger wanneer we bomen moeten gaan kappen? Het is
-              goed om te weten dat niet alleen de bosbouw steeds duurzamer geworden is, maar ook dat
-              er veel nieuwe houtproducten zijn ontwikkeld die grote mogelijkheden bieden. Daardoor
-              kan houtbouw heel goed bijdragen aan onze klimaatdoelstellingen.
+            <h1 className='text-green1 inline-block mobile sm:main'>Circulaire windturbines </h1>
+            <p className='body-text-mobile sm:body-text pt-4'>
+              Windenergie speelt een cruciale rol in onze duurzame energie-ambities. Daarom vind je
+              hier maatregelen die de inzet van windturbines bevorderen en die sturen op
+              ontwikkeling en inzet van windturbines die op zich zelf ook circulair zijn.
             </p>
           </div>
-
-          <span className='text-greenLink link-mobile sm:link pt-10'>
-            <a
-              href='https://www.ams-institute.org/documents/64/AMS_Institute_Houtbouwmythes_ontkracht.pdf'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              Hoe houtbouw de circulaire transitie versnelt→
-            </a>
-          </span>
         </div>
-        <div className=''>
+        <div>
           <Image
-            src={HoutbouwHero}
+            src={WindturbineHero}
             alt='Icon of Wood'
             layout='fixed'
             height='649px'
-            width='597px'
+            width='720px'
           />
         </div>
       </div>
 
-      <div className='mx-5 sm:mx-20 my-20'>
-        <h2 className='pb-8 mobile sm:main'>
-          3 maatregelen om houtbouw te stimuleren en direct mee aan de slag te gaan{' '}
-        </h2>
-        <SectionTypes type='houtbouw' />
-      </div>
       <div className='pt-5 px-20 bg-green3 bg-opacity-10'>
         <div className='border-b border-grey1 pb-10'>
           <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
@@ -77,7 +57,7 @@ export default function Houtbouw() {
                 Weten waar kansen liggen om de houtbouwtransitie te versnellen? CircuLaw biedt je nu
                 een overzicht van 44 maatregelen die je daarvoor kunt inzetten.
               </p>
-              <Link href='/measures/houtbouw'>
+              <Link href='/measures/windturbines'>
                 <a>
                   <span className='text-greenLink link'>Bekijk alle houtbouwmaatregelen →</span>
                 </a>

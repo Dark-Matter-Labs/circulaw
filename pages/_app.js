@@ -1,6 +1,6 @@
-import "tailwindcss/tailwind.css";
-import "next-pagination/dist/index.css";
-import "../global.css";
+import 'tailwindcss/tailwind.css';
+import 'next-pagination/dist/index.css';
+import '../global.css';
 
 export default function MyApp({ Component, pageProps }) {
   // Use the layout defined at the page level, if available
