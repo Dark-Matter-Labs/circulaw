@@ -1,10 +1,8 @@
-@tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 @layer components {
   h1.mobile {
-    font-family: "Public Sans";
+    font-family: 'Public Sans';
     font-style: normal;
     font-weight: 800;
     font-size: 30px;
@@ -12,7 +10,7 @@
   }
 
   h1.main {
-    font-family: "Public Sans";
+    font-family: 'Public Sans';
     font-style: normal;
     font-weight: 700;
     font-size: 52px;
@@ -20,7 +18,7 @@
   }
 
   h2.main {
-    font-family: "Manrope";
+    font-family: 'Manrope';
     font-style: normal;
     font-weight: 800;
     font-size: 24px;
@@ -33,7 +31,7 @@
   }
 
   h3 {
-    font-family: "Manrope";
+    font-family: 'Manrope';
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
@@ -41,7 +39,7 @@
   }
 
   .body-text {
-    font-family: "Manrope";
+    font-family: 'Manrope';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -49,7 +47,7 @@
   }
 
   .body-text-mobile {
-    font-family: "Manrope";
+    font-family: 'Manrope';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -57,7 +55,7 @@
   }
 
   .card-body {
-    font-family: "Manrope";
+    font-family: 'Manrope';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
@@ -65,7 +63,7 @@
   }
 
   .link {
-    font-family: "Manrope";
+    font-family: 'Manrope';
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
@@ -74,7 +72,7 @@
   }
 
   .link-mobile {
-    font-family: "Manrope";
+    font-family: 'Manrope';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -83,7 +81,7 @@
   }
 
   .menu-title {
-    font-family: "Manrope";
+    font-family: 'Manrope';
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -91,7 +89,7 @@
   }
 
   .menu-title-mobile {
-    font-family: "Manrope";
+    font-family: 'Manrope';
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
@@ -99,7 +97,7 @@
   }
 
   .breadcrumb {
-    font-family: "Manrope";
+    font-family: 'Manrope';
     font-style: normal;
     font-weight: 800;
     font-size: 14px;
@@ -107,7 +105,7 @@
   }
 
   .button {
-    font-family: "Manrope";
+    font-family: 'Manrope';
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
@@ -115,7 +113,7 @@
   }
 
   .r-category {
-    font-family: "Manrope";
+    font-family: 'Manrope';
     font-style: normal;
     font-weight: 700;
     font-size: 12px;
@@ -123,7 +121,7 @@
   }
 
   .dropdown-menu {
-    font-family: "Manrope";
+    font-family: 'Manrope';
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
@@ -131,7 +129,7 @@
   }
 
   .filter-body {
-    font-family: "Manrope";
+    font-family: 'Manrope';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -205,11 +203,6 @@ html {
   margin-bottom: -40%;
 }
 
-.nav {
-  z-index: 10;
-  position: relative;
-}
-
 .bg-opacity {
   --tw-bg-opacity: 0.13;
 }
@@ -245,4 +238,13 @@ html {
 
 .gradient-bg {
   background: linear-gradient(#f9d9c8, 1%, #fff);
+}
+
+[type='checkbox']:checked {
+  background-color: #22532c !important;
+  border: 1px solid #22532c !important;
+}
+
+[type='checkbox']:focus {
+  border-color: #22532c !important;
 }
