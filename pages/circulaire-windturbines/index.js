@@ -1,0 +1,115 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect } from 'react';
+import Layout from '../../components/layout';
+import SectionTypes from '/components/section-types-list';
+
+import WoodIcon from '../../public/icons/wood.svg';
+import WindturbineHero from '../../public/windturbineHero.jpg';
+import HoutbouwSection1 from '../../public/houtbouwsection1.png';
+import HoutbouwSection2 from '../../public/houtbouwsection2.png';
+import HoutbouwSection3 from '../../public/houtbouwsection3.png';
+
+export default function Windturbine() {
+  useEffect(() => {
+    localStorage.clear();
+  });
+  return (
+    <Layout>
+      <div className='grid grid-cols-1 lg:grid-cols-2 gradient-bg justify-items-end'>
+        <div className='mx-5 sm:mx-20 '>
+          <div className='breadcrumb pt-8 text-greenLink'>
+            <Link href='/'>
+              <a>Home &gt; </a>
+            </Link>
+          </div>
+          <div className='pb-14 pt-14 '>
+            <div className='pr-4 inline-block'>
+              <Image src={WoodIcon} alt='Icon of Wood' width={48} />
+            </div>
+            <h1 className='text-green1 inline-block mobile sm:main'>Circulaire windturbines </h1>
+            <p className='body-text-mobile sm:body-text pt-4'>
+              Windenergie speelt een cruciale rol in onze duurzame energie-ambities. Daarom vind je
+              hier maatregelen die de inzet van windturbines bevorderen en die sturen op
+              ontwikkeling en inzet van windturbines die op zich zelf ook circulair zijn.
+            </p>
+          </div>
+        </div>
+        <div>
+          <Image
+            src={WindturbineHero}
+            alt='Icon of Wood'
+            layout='fixed'
+            height='649px'
+            width='720px'
+          />
+        </div>
+      </div>
+
+      <div className='pt-5 px-20 bg-green3 bg-opacity-10'>
+        <div className='border-b border-grey1 pb-10'>
+          <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
+            <div className='col-span-2'>
+              <h2 className='pt-10 mobile sm:main'>
+                44 houtbouwmaatregelen voor innovatieve beleidsmakers
+              </h2>
+              <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
+                Weten waar kansen liggen om de houtbouwtransitie te versnellen? CircuLaw biedt je nu
+                een overzicht van 44 maatregelen die je daarvoor kunt inzetten.
+              </p>
+              <Link href='/measures/windturbines'>
+                <a>
+                  <span className='text-greenLink link'>Bekijk alle houtbouwmaatregelen →</span>
+                </a>
+              </Link>
+            </div>
+            <div className=''>
+              <Image src={HoutbouwSection1} alt='Houtbuow section image' layout='responsive' />
+            </div>
+          </div>
+        </div>
+        <div className='border-b border-grey1 pb-10'>
+          <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
+            <div className='col-span-2'>
+              <h2 className='pt-10 mobile sm:main'>
+                Hoe hangen de maatregelen om houtbouw te stimuleren met elkaar samen?
+              </h2>
+              <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
+                CircuLaw heeft 44 maatregelen gedefinieerd die je kunt inzetten om houtbouw te
+                stimuleren. Als je meerdere maatregelen toepast, is je impact natuurlijk groter.
+                Maar dan is het wel handig om te weten hoe die maatregelen met elkaar samenhangen.
+                Daarom bieden we je ook inzicht in de relatie tussen de verschillende maatregelen.
+              </p>
+              <span className='text-greenLink link-mobile sm:link'>
+                Bekijk hoe de maatregelen met elkaar samenhangen →
+              </span>
+            </div>
+            <div className=''>
+              <Image src={HoutbouwSection2} alt='Houtbuow section image' layout='responsive' />
+            </div>
+          </div>
+        </div>
+        <div className='border-b border-grey1 pb-40 pt-10'>
+          <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
+            <div className='col-span-2'>
+              <h2 className='pt-10 mobile sm:main'>
+                Welke overheid heeft welke bevoegdheid voor houtbouwmaatregelen?
+              </h2>
+              <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
+                Inzicht in bevoegdheden en verantwoordelijkheden is belangrijk om te komen tot een
+                goede samenwerking in circulaire productieketens. In dit overzicht wordt per
+                maatregel duidelijk welke overheid waarvoor aan de lat staat.
+              </p>
+              <span className='text-greenLink link-mobile sm:link'>
+                Bekijk overzicht bevoegdheden maatregelen →
+              </span>
+            </div>
+            <div className=''>
+              <Image src={HoutbouwSection3} alt='Houtbuow section image' layout='responsive' />
+            </div>
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
+}
