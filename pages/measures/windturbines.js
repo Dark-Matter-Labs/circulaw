@@ -50,7 +50,7 @@ export default function Measures() {
     juridische_houdbaarheid: [],
   });
 
-  const [numberOfLaws, setNumberOfLaws] = useState(44);
+  const [numberOfLaws, setNumberOfLaws] = useState(11);
 
   //dynamic filter numbers
   const [numberOfEuropees, setNumberOfEuropee] = useState(0);
@@ -143,7 +143,7 @@ export default function Measures() {
       let numGron = 0;
 
       filteredLaws = filteredLaws.filter((element) => {
-        return element.casus === 'Houtbouw';
+        return element.casus === 'Circulaire windturbines';
       });
 
       if (selected.wettelijk_bevoegdheidsniveau.length > 0) {
@@ -506,8 +506,8 @@ export default function Measures() {
             <a>Home</a>
           </Link>
           <span className=''> → </span>
-          <Link href='/houtbouw'>
-            <a> Houtbouw </a>
+          <Link href='/circulaire-windturbines'>
+            <a> Circulaire windturbines </a>
           </Link>
         </div>
         <div className='hidden sm:block col-span-2 bg-green3 bg-opacity font-manrope p-5 mt-2 mb-10 max-w-3xl'>
@@ -529,7 +529,9 @@ export default function Measures() {
             <Image src={IconWood} alt='Houtbouw icon' />
           </div>
           <div>
-            <h2 className='max-w-0 leading-6 pb-1 pl-1 mobile sm:main'>Houtbouw stimuleren</h2>
+            <h2 className='max-w-0 leading-6 pb-1 pl-1 mobile sm:main'>
+              Circulaire windturbines stimuleren
+            </h2>
           </div>
         </div>
         <div className='col-span-2'>
@@ -560,7 +562,8 @@ export default function Measures() {
             {numberOfLaws === 0 && (
               <div>
                 <span className='font-manrope text-lg sm:text-xl'>
-                  <b>0</b> maatregelen gevonden voor <b>{searchValue}</b> in <b>Houtbouw</b>{' '}
+                  <b>0</b> maatregelen gevonden voor <b>{searchValue}</b> in{' '}
+                  <b>Circulaire windturbines</b>{' '}
                 </span>
               </div>
             )}
@@ -569,7 +572,7 @@ export default function Measures() {
               <div>
                 <span className='font-manrope text-lg sm:text-xl'>
                   <b>{numberOfLaws}</b> maatregelen gevonden voor <b>{searchValue}</b> in{' '}
-                  <b>Houtbouw</b>{' '}
+                  <b>Circulaire windturbines</b>{' '}
                 </span>
               </div>
             )}
@@ -578,7 +581,7 @@ export default function Measures() {
               <div>
                 <span className='font-manrope text-lg sm:text-xl'>
                   <b>{numberOfLaws}</b> maatregel gevonden voor <b>{searchValue}</b> in{' '}
-                  <b>Houtbouw</b>{' '}
+                  <b>irculaire windturbines</b>{' '}
                 </span>
               </div>
             )}
@@ -658,7 +661,7 @@ export default function Measures() {
         <div className='mt-10 sm:ml-10'>
           {data && (
             <div>
-              <PolicyList data={laws} casus='Houtbouw' />
+              <PolicyList data={laws} casus='Circulaire windturbines' />
             </div>
           )}
         </div>
