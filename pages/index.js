@@ -71,7 +71,7 @@ export default function Index() {
               className='inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-white hover:bg-greenLink focus:outline-none '
             >
               <Link href='#waarom'>
-                <a>Waarom CircuLaw? ↓</a>
+                <a className='smooth-scroll'>Waarom CircuLaw? ↓</a>
               </Link>
             </button>
           </div>

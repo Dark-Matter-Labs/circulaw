@@ -28,14 +28,18 @@ export default function Houtbouw() {
               <Image src={WoodIcon} alt='Icon of Wood' width={48} />
             </div>
             <h1 className='text-green1 inline-block mobile sm:main'>Houtbouw stimuleren </h1>
-            <h2 className='pt-4 pb-4 mobile sm:main'>Milieudoelstellingen behalen met houtbouw</h2>
-            <p className='body-text-mobile sm:body-text'>
+            <p className='pt-4 body-text-mobile sm:body-text'>
               De manier waarop wij nu in Nederland bouwen is zeer belastend voor het milieu. Er is
-              een eenvoudige oplossing: vervang beton deels door hout. Is dat hout dan wel geschikt
-              en belasten we het milieu niet nog erger wanneer we bomen moeten gaan kappen? Het is
-              goed om te weten dat niet alleen de bosbouw steeds duurzamer geworden is, maar ook dat
-              er veel nieuwe houtproducten zijn ontwikkeld die grote mogelijkheden bieden. Daardoor
-              kan houtbouw heel goed bijdragen aan onze klimaatdoelstellingen.
+              een eenvoudige oplossing: vervang beton deels door hout.
+            </p>
+            <p className='body-text-mobile sm:body-text'>
+              Bosbouw is steeds duurzamer geworden en er zijn veel nieuwe houtproducten ontwikkeld
+              die grote mogelijkheden bieden.
+              <br />
+            </p>
+            <p className='body-text-mobile sm:body-text'>
+              Daardoor kan houtbouw een goede bijdrage leveren om binnen planetaire grenzen te
+              opereren.
             </p>
           </div>
 
@@ -45,7 +49,7 @@ export default function Houtbouw() {
               target='_blank'
               rel='noopener noreferrer'
             >
-              Hoe houtbouw de circulaire transitie versnelt→
+              Meer over nut van houtbouw →
             </a>
           </span>
         </div>
@@ -62,7 +66,8 @@ export default function Houtbouw() {
 
       <div className='mx-5 sm:mx-20 my-20'>
         <h2 className='pb-8 mobile sm:main'>
-          3 maatregelen om houtbouw te stimuleren en direct mee aan de slag te gaan{' '}
+          Meer weten over hoe je maatregelen kunt toepassen? Hier vind je 3 voorbeelden uit de
+          praktijk:
         </h2>
         <SectionTypes type='houtbouw' />
       </div>
@@ -70,12 +75,10 @@ export default function Houtbouw() {
         <div className='border-b border-grey1 pb-10'>
           <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
             <div className='col-span-2'>
-              <h2 className='pt-10 mobile sm:main'>
-                44 houtbouwmaatregelen voor innovatieve beleidsmakers
-              </h2>
+              <h2 className='pt-10 mobile sm:main'>34 Houtbouwmaatregelen</h2>
               <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
                 Weten waar kansen liggen om de houtbouwtransitie te versnellen? CircuLaw biedt je nu
-                een overzicht van 44 maatregelen die je daarvoor kunt inzetten.
+                een overzicht van 34 maatregelen die je daarvoor kunt inzetten.
               </p>
               <Link href='/measures/houtbouw'>
                 <a>
@@ -92,16 +95,17 @@ export default function Houtbouw() {
           <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
             <div className='col-span-2'>
               <h2 className='pt-10 mobile sm:main'>
-                Hoe hangen de maatregelen om houtbouw te stimuleren met elkaar samen?
+                Bekijk houtbouwmaatregelen niet op zich, maar in samenhang
               </h2>
               <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
-                CircuLaw heeft 44 maatregelen gedefinieerd die je kunt inzetten om houtbouw te
+                CircuLaw heeft 34 maatregelen gedefinieerd die je kunt inzetten om houtbouw te
                 stimuleren. Als je meerdere maatregelen toepast, is je impact natuurlijk groter.
-                Maar dan is het wel handig om te weten hoe die maatregelen met elkaar samenhangen.
-                Daarom bieden we je ook inzicht in de relatie tussen de verschillende maatregelen.
+                Maar dan is het wel handig om te weten hoe maatregelen met elkaar samenhangen.
+                Daarom bieden we je hier bij wijze van voorbeeld inzicht in de relatie tussen een
+                aantal maatregelen.
               </p>
               <span className='text-greenLink link-mobile sm:link'>
-                Bekijk hoe de maatregelen met elkaar samenhangen →
+                Samenhang aantal houtbouwmaatregelen →
               </span>
             </div>
             <div className=''>
@@ -112,13 +116,11 @@ export default function Houtbouw() {
         <div className='border-b border-grey1 pb-40 pt-10'>
           <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
             <div className='col-span-2'>
-              <h2 className='pt-10 mobile sm:main'>
-                Welke overheid heeft welke bevoegdheid voor houtbouwmaatregelen?
-              </h2>
               <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
-                Inzicht in bevoegdheden en verantwoordelijkheden is belangrijk om te komen tot een
-                goede samenwerking in circulaire productieketens. In dit overzicht wordt per
-                maatregel duidelijk welke overheid waarvoor aan de lat staat.
+                Om een circulaire strategie volledig te implementeren, is samenwerking tussen
+                overheden en stakeholders nodig. Om te weten wie waarvoor aan de lat staat, is
+                inzicht nodig in bevoegdheden en verantwoordelijkheden. In dit overzicht wordt per
+                maatregel duidelijk welke laag van de overheid betrokken is.
               </p>
               <span className='text-greenLink link-mobile sm:link'>
                 Bekijk overzicht bevoegdheden maatregelen →

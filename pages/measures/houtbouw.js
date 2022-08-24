@@ -50,7 +50,7 @@ export default function Measures() {
     juridische_houdbaarheid: [],
   });
 
-  const [numberOfLaws, setNumberOfLaws] = useState(44);
+  const [numberOfLaws, setNumberOfLaws] = useState(35);
 
   //dynamic filter numbers
   const [numberOfEuropees, setNumberOfEuropee] = useState(0);
@@ -511,10 +511,12 @@ export default function Measures() {
           </Link>
         </div>
         <div className='hidden sm:block col-span-2 bg-green3 bg-opacity font-manrope p-5 mt-2 mb-10 max-w-3xl'>
+          <h3>34 houtbouwmaatregelen voor innovatieve beleidsmakers</h3>
           <p>
-            Wij hebben 44 kansvolle maatregelen gevonden waarmee je beleid uit kunt voeren om de
-            houtbouwtransitie te versnellen. Veel daarvan zijn nog niet eerder toegepast: je gaat er
-            mee pionieren. <br />
+            Wij hebben 34 kansvolle maatregelen gevonden waarmee je beleid uit kunt voeren om de
+            houtbouwtransitie te versnellen. Met sommige maatregelen is al praktijkervaring
+            opgedaan, met andere nog niet. Durf te pionieren. Jouw ervaringen kunnen dan ook anderen
+            weer verder helpen. <br />
             <br />
             In de toekomst gaan we <span className='font-bold text-greenLink'>
               tools aanbieden

@@ -2,9 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import Layout from '../../components/layout';
-import SectionTypes from '/components/section-types-list';
 
-import WoodIcon from '../../public/icons/wood.svg';
+import WindmillIcon from '../../public/windmill.svg';
 import WindturbineHero from '../../public/windturbineHero.jpg';
 import HoutbouwSection1 from '../../public/houtbouwsection1.png';
 import HoutbouwSection2 from '../../public/houtbouwsection2.png';
@@ -25,7 +24,7 @@ export default function Windturbine() {
           </div>
           <div className='pb-14 pt-14 '>
             <div className='pr-4 inline-block'>
-              <Image src={WoodIcon} alt='Icon of Wood' width={48} />
+              <Image src={WindmillIcon} alt='Icon of Wood' width={48} />
             </div>
             <h1 className='text-green1 inline-block mobile sm:main'>Circulaire windturbines </h1>
             <p className='body-text-mobile sm:body-text pt-4'>
@@ -50,12 +49,10 @@ export default function Windturbine() {
         <div className='border-b border-grey1 pb-10'>
           <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
             <div className='col-span-2'>
-              <h2 className='pt-10 mobile sm:main'>
-                44 houtbouwmaatregelen voor innovatieve beleidsmakers
-              </h2>
+              <h2 className='pt-10 mobile sm:main'>10 Circulaire windturbine maatregelen</h2>
               <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
-                Weten waar kansen liggen om de houtbouwtransitie te versnellen? CircuLaw biedt je nu
-                een overzicht van 44 maatregelen die je daarvoor kunt inzetten.
+                Weten waar kansen liggen om de transitie naar circulaire windturbines te versnellen?
+                CircuLaw biedt je een overzicht van 10 maatregelen die je daarvoor kunt inzetten.
               </p>
               <Link href='/measures/windturbines'>
                 <a>
@@ -72,16 +69,17 @@ export default function Windturbine() {
           <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
             <div className='col-span-2'>
               <h2 className='pt-10 mobile sm:main'>
-                Hoe hangen de maatregelen om houtbouw te stimuleren met elkaar samen?
+                Bekijk circulaire windturbine maatregelen niet op zich, maar in samenhang
               </h2>
               <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
-                CircuLaw heeft 44 maatregelen gedefinieerd die je kunt inzetten om houtbouw te
-                stimuleren. Als je meerdere maatregelen toepast, is je impact natuurlijk groter.
-                Maar dan is het wel handig om te weten hoe die maatregelen met elkaar samenhangen.
-                Daarom bieden we je ook inzicht in de relatie tussen de verschillende maatregelen.
+                CircuLaw heeft 10 maatregelen gedefinieerd die je kunt inzetten om circulaire
+                windturbines te stimuleren. Als je meerdere maatregelen toepast, is je impact
+                natuurlijk groter. Maar dan is het wel handig om te weten hoe die maatregelen met
+                elkaar samenhangen. Daarom bieden we je ook inzicht in de relatie tussen de
+                verschillende maatregelen.
               </p>
               <span className='text-greenLink link-mobile sm:link'>
-                Bekijk hoe de maatregelen met elkaar samenhangen →
+                Samenhang circulaire windturbine maatregelen →
               </span>
             </div>
             <div className=''>
@@ -92,16 +90,14 @@ export default function Windturbine() {
         <div className='border-b border-grey1 pb-40 pt-10'>
           <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
             <div className='col-span-2'>
-              <h2 className='pt-10 mobile sm:main'>
-                Welke overheid heeft welke bevoegdheid voor houtbouwmaatregelen?
-              </h2>
               <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
-                Inzicht in bevoegdheden en verantwoordelijkheden is belangrijk om te komen tot een
-                goede samenwerking in circulaire productieketens. In dit overzicht wordt per
-                maatregel duidelijk welke overheid waarvoor aan de lat staat.
+                Om een circulaire strategie volledig te implementeren, is samenwerking tussen
+                overheden en stakeholders nodig. Om te weten wie waarvoor aan de lat staat, is
+                inzicht nodig in bevoegdheden en verantwoordelijkheden. In dit overzicht wordt per
+                maatregel duidelijk welke laag van de overheid betrokken is.
               </p>
               <span className='text-greenLink link-mobile sm:link'>
-                Bekijk overzicht bevoegdheden maatregelen →
+                Bekijk het bevoegdheden-overzicht →
               </span>
             </div>
             <div className=''>

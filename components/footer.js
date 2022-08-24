@@ -113,7 +113,7 @@ export default function Footer() {
       </div>
       <div className='mx-5 sm:mx-10'>
         <div className='py-12 px-4 sm:px-6 lg:px-8'>
-          <div className='grid grid-cols-2 gap-x-2 gap-y-4 sm:grid-cols-3 lg:grid-cols-6 justify-evenly justify-items-center flex items-baseline'>
+          <div className='grid grid-cols-2 gap-x-2 gap-y-4 md:grid-cols-2 lg:grid-cols-6 justify-evenly justify-items-center flex items-baseline'>
             <div className=''>
               <a href='https://www.amsterdam.nl/' target='_blank' rel='noopener noreferrer'>
                 <Image layout='fixed' height={57} width={182} src={amsLogo} alt='Amsterdam logo' />

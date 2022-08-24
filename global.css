@@ -28,6 +28,7 @@
   h2.mobile {
     font-size: 20px;
     line-height: 140%;
+    font-weight: 700;
   }
 
   h3 {
@@ -137,7 +138,7 @@
   }
 }
 
-html {
+.smooth-scroll {
   scroll-behavior: smooth;
 }
 

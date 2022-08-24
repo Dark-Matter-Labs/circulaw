@@ -66,9 +66,9 @@ export default function Nav() {
         <>
           <div className='bg-blush2 px-2 sm:px-6 lg:px-20 lg:py-8'>
             <div className=''>
-              <div className='absolute inset-y-0 right-0 flex items-center sm:hidden'>
+              <div className=' inset-y-0 right-0 flex items-center lg:hidden'>
                 {/* Mobile menu button */}
-                <Disclosure.Button className='inline-flex items-center justify-center p-2 rounded-md text-green1 '>
+                <Disclosure.Button className=' p-2 rounded-md text-green1 '>
                   <span className='sr-only'>Open main menu</span>
                   {open ? (
                     <XIcon className='block h-6 w-6' aria-hidden='true' />
@@ -85,8 +85,8 @@ export default function Nav() {
                     </a>
                   </Link>
                 </div>
-                <div className='hidden sm:ml-6 sm:flex'>
-                  <div className='flex inset-x-0 top-0 pl-5 invisible sm:visible hidden sm:inline '>
+                <div className='hidden lg:ml-6 lg:flex'>
+                  <div className='flex inset-x-0 top-0 pl-5 invisible lg:visible hidden lg:inline '>
                     <div className='flex-1 max-w-7xl px-2 sm:px-6 lg:px-8'>
                       <div className='content right-0'>
                         <div className='relative flex items-center justify-between font-manrope font-semibold'>

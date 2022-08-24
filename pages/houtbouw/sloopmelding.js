@@ -14,47 +14,50 @@ export default function Law() {
       <div className='px-5 sm:px-20 pt-10 gradient-bg '>
         <div className='flex'>
           <div className='w-11/12 sm:w-2/3 p-6 pb-20'>
-            <h1 className='my-9 text-green1 mobile sm:main'>Gemeentelijke omgevingsvisie</h1>
+            <h1 className='my-9 text-green1 mobile sm:main'>Sloopmelding</h1>
 
             <div className='py-4'>
-              <h2 className='pb-2 mobile sm:main'>De gemeentelijke omgevingsvisie: wat is het?</h2>
+              <h2 className='pb-2 mobile sm:main'>De sloopmelding: wat is het?</h2>
               <p className='newlineDisplay body-text-mobile sm:body-text'>
-                Een gemeente legt in een omgevingsvisie vast wat de maatschappelijke opgaven zijn op
-                het gebied van de fysieke leefomgeving en hoe taken ingevuld worden om ambities en
-                beleidsdoeleinden te behalen. Hierin staat op wat voor manier beleid doorwerkt en
-                welke instrumenten daarvoor worden ingezet. Een omgevingsvisie gaat in op de
-                kernkwaliteiten van ruimte, milieu en natuur, water, infrastructuur, verkeer en
-                vervoer, landschap en cultureel erfgoed, én op de samenhang daartussen Een
-                omgevingsvisie is vormvrij. Dat betekent dat de gemeenteraad het detailniveau, de
-                gebieden, sectoren en thema’s zelf bepaalt.
+                Een initiatiefnemer van sloop moet een melding doen bij het Omgevingsloket om
+                inzichtelijk te maken of er veilig wordt gesloopt en of er verantwoord wordt
+                omgegaan met restmaterialen en afvalscheiding. Door de sloopmelding weten gemeenten
+                waar en wanneer er wordt gesloopt. Ook moet een initiatiefnemer een schatting geven
+                van de aard en hoeveelheid van de vrijkomende materialen bij de sloopwerkzaamheden
+                en aangeven waar hij dat materiaal naar afvoert.
               </p>
             </div>
             <div className='py-4'>
-              <h2 className='pb-2 mobile sm:main'>
-                Hoe kan een gemeentelijke omgevingsvisie houtbouw bevorderen?{' '}
-              </h2>
-              <p className='py-5 body-text-mobile sm:body-text newlineDisplay'>
-                De omgevingsvisie is een beleidsmatige basis voor inzet van juridische, financiële
-                of andere instrumenten om beleidsdoelen na te streven. Het expliciet opnemen van
-                houtbouw in de gemeentelijke omgevingsvisie zorgt voor een inbedding van houtbouw in
-                de beleidscyclus van de Omgevingswet. Dit maakt het mogelijk om beleid ter
-                bevordering van houtbouw binnen de gemeente te maken en uit te voeren. De
-                omgevingsvisie dient als het ware ter onderbouwing van het te vormen beleid en zorgt
-                voor doorwerking naar andere instrumenten die kunnen worden ingezet voor houtbouw.
+              <h2 className='pb-2 mobile sm:main'>Hoe kan een sloopmelding houtbouw bevorderen?</h2>
+              <p className='body-text-mobile sm:body-text'>
+                Door een sloopmelding kunnen gemeenten in de gaten houden welke gebouwen er binnen
+                de gemeente worden gesloopt en op welke manier dit gebeurt. Voor gemeentes wordt zo
+                inzichtelijk welke materialen in het algemeen beschikbaar komen en in het bijzonder
+                hoeveel hout er beschikbaar komt voor hergebruik in de bouw
+              </p>
+              <p className='py-5 body-text-mobile sm:body-text'>
+                Het inzichtelijk maken van deze data bevordert twee circulaire aspecten:
+                <ul className='list-disc pl-6'>
+                  <li>
+                    gemeenten kunnen vraag en aanbod van reststromen beter reguleren en op elkaar
+                    afstemmen. Dit kan bijvoorbeeld gebeuren door een platform waar sloopmeldingen
+                    worden verbonden aan initiatiefnemers van nog te ontwikkelen gebouwen. Daarnaast
+                    ontwikkelen en bouwen gemeenten zelf ook veel en kunnen zijn de vrijgekomen
+                    materialen zelf inkopen.{' '}
+                  </li>
+                  <li>
+                    gemeenten kunnen zo digitaal en kwantitatief bijhouden in hoeverre hun
+                    circulaire beleid aansluit bij materiaalstromen in de stad.
+                  </li>
+                </ul>
               </p>
             </div>
             <div className='py-4'>
               <h2 className='pb-2 mobile sm:main'>Uit de praktijk</h2>
               <p className='body-text-mobile sm:body-text'>
-                Het is mogelijk om vooruitlopend op de Omgevingswet al een omgevingsvisie te maken.
-                Zo staat in{' '}
-                <a
-                  href='https://amsterdam2050.nl/wp-content/uploads/2021/06/OPM%20Omgevingsvisie-2050-20210613-200dpi.pdf'
-                  className='text-greenLink'
-                >
-                  de omgevingsvisie van gemeente Amsterdam
-                </a>{' '}
-                het opschalen van bouwen met hout benoemd als beleidsambitie.{' '}
+                De sloopmelding is onderdeel van de regelgeving van de Omgevingswet; omdat de
+                Omgevingswet nog niet in werking is getreden is er nog geen praktijkvoorbeeld: ga
+                ermee aan de slag, je bent de eerste!
               </p>
             </div>
 
@@ -63,42 +66,38 @@ export default function Law() {
               <p className='newlineDisplay body-text-mobile sm:body-text'>
                 <ul className='list-disc pl-6'>
                   <li>
-                    Juridische informatie over de gemeentelijke omgevingsvisie:{' '}
+                    Juridische informatie over sloopmeldingen:
                     <a
-                      href='https://iplo.nl/regelgeving/instrumenten/omgevingsvisie-gemeente/staat-erin/#:~:text=Iedere%20gemeente%20in%20Nederland%20stelt,vervoer%2C%20infrastructuur%20en%20cultureel%20erfgoed.'
+                      href='https://iplo.nl/regelgeving/regels-voor-activiteiten/sloopactiviteit/rijksregels-sloopactiviteit/informatieplicht-sloopactiviteit/'
                       className='text-greenLink'
                     >
-                      Gemeentelijke omgevingsvisie: dit staat er in - Informatiepunt Leefomgeving
-                      (iplo.nl)
+                      Informatieplicht sloopactiviteit - Informatiepunt Leefomgeving (iplo.nl)
                     </a>
                   </li>
                   <li>
-                    De voormalige gemeente Weesp heeft houtbouw opgenomen in haar omgevingsvisie:{' '}
-                    <a
-                      href='https://assets.amsterdam.nl/publish/pages/1007002/definitief_vrm21_670_omgevingsvisie_weesp_14dec2021_spread_tg.pdf'
-                      className='text-greenLink'
-                    >
-                      https://assets.amsterdam.nl/publish/pages/1007002/definitief_vrm21_670_omgevingsvisie_weesp_14dec2021_spread_tg.pdf{' '}
+                    Informatie over circulair slopen:
+                    <a href='https://www.allesovercirculairslopen.nl/' className='text-greenLink'>
+                      Alles over circulair slopen | powered by VERAS
                     </a>
                   </li>
                   <li>
-                    Ook in de nationale omgevingsvisie is houtbouw opgenomen:{' '}
+                    Een overzichtelijke artikel met een stappenplan om circulaire sloop binnen je
+                    eigen gemeente mogelijk te maken:
                     <a
-                      href='https://www.denationaleomgevingsvisie.nl/publicaties/novi-stukken+publicaties/handlerdownloadfiles.ashx?idnv=1760380'
+                      href='https://openresearch.amsterdam/nl/page/86336/circular-demolition'
                       className='text-greenLink'
                     >
-                      Ministerie van Binnenlandse Zaken en Koninkrijksrelaties | Nationale
-                      Omgevingsvisie (denationaleomgevingsvisie.nl)
+                      Circular demolition - openresearch.amsterdam
                     </a>{' '}
                   </li>
                   <li>
-                    Hier lees je meer over een praktijkproef van een afwegingskader voor het
-                    opstellen van een omgevingsvisie:{' '}
+                    Praktijkvoorbeelden van circulair slopen in het algemeen:
                     <a
-                      href='https://vng.nl/sites/default/files/2020-06/praktijkproef-afwegingskader-omgevingsvisie_20200529.pdf'
+                      href='https://circulairebouweconomie.nl/nieuws/praktijkvoorbeeld-succesvolle-circulaire-sloop-schoolgebouw-hattem/'
                       className='text-greenLink'
                     >
-                      praktijkproef-afwegingskader-omgevingsvisie_20200529.pdf (vng.nl)
+                      Praktijkvoorbeeld - Succesvolle circulaire sloop schoolgebouw Hattem |
+                      Circulaire Bouweconomie
                     </a>
                   </li>
                 </ul>
@@ -107,23 +106,15 @@ export default function Law() {
             <div className='py-4'>
               <h2 className='pb-2 mobile sm:main'>Beleid en andere instrumenten</h2>
               <p className='body-text-mobile sm:body-text'>
-                De ambities die in de omgevingsvisie worden beschreven werken door in het
-                omgevingsplan, de omgevingsprogramma’s en de vergunningverlening. Ook andere,
-                niet-juridische maatregelen zoals communicatie-instrumenten of financiële
-                instrumenten kunnen hiervoor worden ingezet. Om te zorgen dat de beleidsvisies uit
-                de omgevingsvisie met deze instrumenten behaald worden is het belangrijk om de
-                omgevingsvisie te monitoren en evalueren. De omgevingsvisie hoeft dan niet in zijn
-                geheel te worden aangepast maar dit kan modulair en op elk moment gebeuren,
-                bijvoorbeeld jaarlijks of tegelijk met het coalitieakkoord.
-              </p>
-              <p className='body-text-mobile sm:body-text'>
-                Ook is het belangrijk dat rekening wordt gehouden met de nationale en provinciale
-                omgevingsvisies. Dit is een wettelijke eis. Omgevingsvisies zijn zelfbindend, wat
-                betekent dat het document alleen verplichtingen schept voor de maker ervan. De
-                omgevingsvisie kan dus geen verplichting opleggen aan andere bestuursorganen. Het
-                kennen van de omgevingsvisies van naastliggende gemeenten of provincies is echter
-                wel belangrijk voor het versnellen van beleidsdoeleinden zoals de circulaire
-                bouwtransitie met houtbouw.
+                Gemeenten kunnen strengere eisen stellen voor initiatiefnemers van sloop. Dit worden
+                maatwerkvoorschriften genoemd. Met een maatwerkvoorschrift kan onder andere worden
+                bepaald dat de initiatiefnemer na het slopen een opgave moet doen van de
+                daadwerkelijke bij de sloop vrijgekomen materiaalstromen. Met een ander
+                maatwerkvoorschrift kan van initiatiefnemers worden gevraagd om in extra fracties te
+                slopen. Fracties zijn groepen materiaalstromen zoals betonvloeren, isolatiemateriaal
+                en hout. Door het verplichten van sloop in meerdere fracties kunnen
+                sloopwerkzaamheden tot kleinere productgroepen worden verwerkt waardoor deze
+                materiaalstromen gemakkelijker kunnen worden doorverkocht aan afnemers.
               </p>
             </div>
             <div className='py-4'>
@@ -133,17 +124,9 @@ export default function Law() {
               <p className='body-text-mobile sm:body-text'>
                 <ul className='list-disc pl-6'>
                   <li>
-                    Bij het opstellen van de omgevingsvisie houdt de gemeente rekening met het
-                    voorzorgsbeginsel, het beginsel van preventief handelen, het beginsel dat
-                    milieuaantastingen bij voorrang aan de bron bestreden moeten worden en het
-                    beginsel dat de vervuiler betaalt.
-                  </li>
-                  <li>
-                    Gemeenten moeten rekening houden met de samenhang van de relevante onderdelen en
-                    aspecten van de fysieke leefomgeving en van de rechtstreeks daarbij betrokken
-                    belangen. Gemeenten moeten dus altijd een afweging maken tussen het beschermen
-                    en benutten van alle relevante onderdelen en aspecten van de fysieke
-                    leefomgeving.
+                    De sloopmelding moet ten minste vier weken voor het begin van de
+                    sloopwerkzaamheden worden ingediend. Dan hebben gemeenten genoeg tijd om de
+                    sloopmelding te verwerken en inventariseren.
                   </li>
                 </ul>
               </p>
@@ -161,16 +144,18 @@ export default function Law() {
                   </tr>
                   <tr className='my-10 border-b-2'>
                     <td className='w-1/2 font-manrope text-base font-normal'>Citeertitel</td>
-                    <td className='w-1/2 font-manrope text-base font-bold'>Omgevingswet</td>
+                    <td className='w-1/2 font-manrope text-base font-bold'>
+                      Besluit bouwwerken leefomgeving
+                    </td>
                   </tr>
                   <tr className='my-10 border-b-2'>
                     <td className='w-1/2 font-manrope text-base font-normal'>Artikel</td>
-                    <td className='w-1/2 font-manrope text-base font-bold'>3.1, eerste lid</td>
+                    <td className='w-1/2 font-manrope text-base font-bold'>7.10</td>
                   </tr>
                   <tr className='my-10 border-b-2'>
                     <td className='w-1/2 font-manrope text-base font-normal'>Geldig vanaf</td>
                     <td className='w-1/2 font-manrope text-base font-bold'>
-                      Nog niet in werking getreden
+                      nog niet in werking getreden
                     </td>
                   </tr>
                   <tr className='my-10 border-b-2'>
@@ -179,11 +164,13 @@ export default function Law() {
                   </tr>
                   <tr className='my-10 border-b-2'>
                     <td className='w-1/2 font-manrope text-base font-normal'>Type document</td>
-                    <td className='w-1/2 font-manrope text-base font-bold'>Wet in formele zin</td>
+                    <td className='w-1/2 font-manrope text-base font-bold'>
+                      Algemene Maatregel van Bestuur
+                    </td>
                   </tr>
                   <tr>
                     <td className='font-manrope text-base font-normal'>Beleidsinstrument</td>
-                    <td className='font-manrope text-base font-bold'>Juridisch</td>
+                    <td className='font-manrope text-base font-bold'>Facilitair</td>
                   </tr>
                 </tbody>
               </table>
@@ -207,13 +194,10 @@ export default function Law() {
               <p className='font-manrope font-semibold text-lg text-black1 pb-2'>R-ladder </p>
               <span className='block-inline font-semibold text-base text-gray-900'>
                 <span className='bg-green2 text-white rounded-full p-1 mr-2'>
-                  <Tooltip icon='false'>R1</Tooltip>
-                </span>
-                <span className='bg-green2 text-white rounded-full p-1 mr-2'>
-                  <Tooltip icon='false'>R2</Tooltip>
-                </span>
-                <span className='bg-green2 text-white rounded-full p-1 mr-2'>
                   <Tooltip icon='false'>R5</Tooltip>
+                </span>
+                <span className='bg-green2 text-white rounded-full p-1 mr-2'>
+                  <Tooltip icon='false'>R6</Tooltip>
                 </span>
               </span>
             </div>
@@ -243,7 +227,7 @@ export default function Law() {
                   <div
                     key={rating}
                     className={classNames(
-                      2 > rating ? 'score-true' : 'score-false',
+                      3 > rating ? 'score-true' : 'score-false',
                       'mr-5 h-6 w-6 flex-shrink-0 rounded-full',
                     )}
                     aria-hidden='true'
@@ -265,7 +249,7 @@ export default function Law() {
                   <div
                     key={rating}
                     className={classNames(
-                      1 > rating ? 'score-true' : 'score-false',
+                      4 > rating ? 'score-true' : 'score-false',
                       'mr-5 h-6 w-6 flex-shrink-0 rounded-full',
                     )}
                     aria-hidden='true'
