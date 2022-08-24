@@ -50,7 +50,7 @@ export default function Measures() {
     juridische_houdbaarheid: [],
   });
 
-  const [numberOfLaws, setNumberOfLaws] = useState(11);
+  const [numberOfLaws, setNumberOfLaws] = useState(10);
 
   //dynamic filter numbers
   const [numberOfEuropees, setNumberOfEuropee] = useState(0);
@@ -512,9 +512,10 @@ export default function Measures() {
         </div>
         <div className='hidden sm:block col-span-2 bg-green3 bg-opacity font-manrope p-5 mt-2 mb-10 max-w-3xl'>
           <p>
-            Wij hebben 44 kansvolle maatregelen gevonden waarmee je beleid uit kunt voeren om de
-            houtbouwtransitie te versnellen. Veel daarvan zijn nog niet eerder toegepast: je gaat er
-            mee pionieren. <br />
+            Wij hebben 10 kansvolle maatregelen gevonden waarmee je beleid uit kunt voeren om de de
+            circulariteit van windturbines te versnellen. Met sommige maatregelen is al
+            praktijkervaring opgedaan, met andere nog niet. Durf te pionieren. Jouw ervaringen
+            kunnen dan ook anderen weer verder helpen. <br />
             <br />
             In de toekomst gaan we <span className='font-bold text-greenLink'>
               tools aanbieden
