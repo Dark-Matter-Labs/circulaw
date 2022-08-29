@@ -11,7 +11,7 @@ export default function WatIsCircuLaw() {
         </Link>
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-3'>
-        <div className='mx-5 sm:mx-20 my-20 col-span-2'>
+        <div className='mx-5 sm:mx-20 my-20 col-span-2 text-black1'>
           <h1 className='pb-5 mobile sm:main'>Wat is CircuLaw?</h1>
           <h2 className='mobile sm:main'>Overzicht wet-en regelgeving</h2>
           <p className='body-text-mobile sm:body-text max-w-4xl'>
@@ -46,7 +46,7 @@ export default function WatIsCircuLaw() {
           <br />
           <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
             Op deze manier wordt het mogelijk om landelijk een instrumentenmix te ontwikkelen voor
-            een <span className='text-greenLink'>productgroep v.</span> Of om als gemeente naar een
+            een <span className='text-greenLink'>productgroep.</span> Of om als gemeente naar een
             provincie te gaan, en samen stappen te gaan zetten in bijvoorbeeld het optimaliseren van
             de houtbouwketen.
           </p>

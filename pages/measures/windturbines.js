@@ -16,7 +16,7 @@ import {
 import Layout from '/components/layout';
 import SearchFilter from '/components/search-filter';
 import PolicyList from '/components/policy-list';
-import IconWood from '../../public/icons/houtbouwIconBg.svg';
+import WindmillIcon from '../../public/windmill.svg';
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -373,7 +373,7 @@ export default function Measures() {
 
   return (
     <Layout>
-      <div className='min-h-full'>
+      <div className='min-h-full z-50'>
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog as='div' className='relative z-40 lg:hidden' onClose={setSidebarOpen}>
             <Transition.Child
@@ -516,18 +516,12 @@ export default function Measures() {
             circulariteit van windturbines te versnellen. Met sommige maatregelen is al
             praktijkervaring opgedaan, met andere nog niet. Durf te pionieren. Jouw ervaringen
             kunnen dan ook anderen weer verder helpen. <br />
-            <br />
-            In de toekomst gaan we <span className='font-bold text-greenLink'>
-              tools aanbieden
-            </span>{' '}
-            voor het in praktijk brengen ervan. Tot die tijd hebben de maatregelen alvast op een rij
-            gezet.
           </p>
         </div>
 
         <div className='container mb-2 sm:mb-20 mt-10'>
           <div className='container-image'>
-            <Image src={IconWood} alt='Houtbouw icon' />
+            <Image src={WindmillIcon} alt='Windmill icon' />
           </div>
           <div>
             <h2 className='max-w-0 leading-6 pb-1 pl-1 mobile sm:main'>

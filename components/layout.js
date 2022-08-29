@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Footer from '/components/footer';
 import Nav from '/components/nav';
 
-export default function Layout({ children }) {
+export default function Layout(props) {
   return (
     <>
       <div className='bg-grey2 border border-grey1'>
@@ -21,7 +21,7 @@ export default function Layout({ children }) {
                 </span>
                 <span className='hidden md:inline'>
                   <span className='font-bold bg-blush1 p-4 m-2'>ALPHA</span> Testversie CircuLaw -{' '}
-                  <span className='link text-greenLink'>
+                  <span className='link-mobile text-greenLink'>
                     <Link href='/alpha'>
                       <a>Lees meer -&gt;</a>
                     </Link>
@@ -32,11 +32,11 @@ export default function Layout({ children }) {
           </div>
         </div>
       </div>
-      <Nav />
+      {props.page !== 'home' && <Nav />}
       <Head>
         <title>Digitale tool Juridisch Landschap</title>
       </Head>
-      <main className=''>{children}</main>
+      <main className=''>{props.children}</main>
       <Footer />
     </>
   );

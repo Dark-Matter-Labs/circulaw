@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Switch } from '@headlessui/react';
+import Link from 'next/link';
 import Layout from '../../components/layout';
 
 function classNames(...classes) {
@@ -115,9 +116,11 @@ export default function Contact() {
                 <div className='ml-3'>
                   <p className='text-base text-gray-500'>
                     Ik ga akkoord met de{' '}
-                    <a href='#' className='font-medium text-greenLink font-manrope'>
-                      privacy verklaring
-                    </a>
+                    <Link href='/privacy-policy'>
+                      <a href='#' className='font-medium text-greenLink font-manrope'>
+                        privacy verklaring
+                      </a>
+                    </Link>
                   </p>
                 </div>
               </div>

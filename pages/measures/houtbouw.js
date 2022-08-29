@@ -50,7 +50,7 @@ export default function Measures() {
     juridische_houdbaarheid: [],
   });
 
-  const [numberOfLaws, setNumberOfLaws] = useState(35);
+  const [numberOfLaws, setNumberOfLaws] = useState(34);
 
   //dynamic filter numbers
   const [numberOfEuropees, setNumberOfEuropee] = useState(0);
@@ -373,7 +373,7 @@ export default function Measures() {
 
   return (
     <Layout>
-      <div className='min-h-full'>
+      <div className='min-h-full z-50'>
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog as='div' className='relative z-40 lg:hidden' onClose={setSidebarOpen}>
             <Transition.Child
@@ -517,12 +517,6 @@ export default function Measures() {
             houtbouwtransitie te versnellen. Met sommige maatregelen is al praktijkervaring
             opgedaan, met andere nog niet. Durf te pionieren. Jouw ervaringen kunnen dan ook anderen
             weer verder helpen. <br />
-            <br />
-            In de toekomst gaan we <span className='font-bold text-greenLink'>
-              tools aanbieden
-            </span>{' '}
-            voor het in praktijk brengen ervan. Tot die tijd hebben de maatregelen alvast op een rij
-            gezet.
           </p>
         </div>
 
