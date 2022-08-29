@@ -1,10 +1,19 @@
 import Image from 'next/image';
-import amsLogo from '../public/logo_partners/gasd_sponsor_cmyk_wit.svg';
-import climateKICLogo from '../public/EIT-CKIC-Logo_White_Standard.png';
-import provinceNord from '../public/logo_partners/PNH_RGB_wit_trans.png';
-import provinceFlevLogo from '../public/logo_partners/Provincie-Flevoland_wit.png';
-import nlLogo from '../public/logo_partners/logo-nl-nowhitespace.svg';
-import dmLogo from '../public/logo_partners/DML_Logo_white@2000x.png';
+import logo1 from '../public/logo_partners/CircuLawPartners-01.png';
+import logo2 from '../public/logo_partners/CircuLawPartners-02.png';
+import logo3 from '../public/logo_partners/CircuLawPartners-03.png';
+import logo4 from '../public/logo_partners/CircuLawPartners-04.png';
+import logo5 from '../public/logo_partners/CircuLawPartners-05.png';
+import logo6 from '../public/logo_partners/CircuLawPartners-06.png';
+import logo7 from '../public/logo_partners/CircuLawPartners-07.png';
+import logo8 from '../public/logo_partners/CircuLawPartners-08.png';
+import logo9 from '../public/logo_partners/CircuLawPartners-09.png';
+import logo10 from '../public/logo_partners/CircuLawPartners-10.png';
+import logo11 from '../public/logo_partners/CircuLawPartners-15.png';
+import logo12 from '../public/logo_partners/CircuLawPartners-11.png';
+import logo13 from '../public/logo_partners/CircuLawPartners-12.png';
+import logo14 from '../public/logo_partners/CircuLawPartners-13.png';
+import logo15 from '../public/logo_partners/CircuLawPartners-14.png';
 
 const navigation = {
   WAARDEKETENS: [
@@ -54,7 +63,7 @@ const navigation = {
 export default function Footer() {
   return (
     <footer className='bg-green1' aria-labelledby='footer-heading'>
-      <div className='max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8'>
+      <div className='max-w-7xl mx-auto pt-12 px-4 sm:px-6 lg:pt-16 lg:px-8'>
         <div className='pb-8'>
           <div className='grid grid-cols-1 gap-8 sm:col-span-3'>
             <div className='sm:grid sm:grid-cols-4 md:gap-8'>
@@ -111,67 +120,56 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className='mx-5 sm:mx-10'>
-        <div className='py-12 px-4 sm:px-6 lg:px-8'>
-          <div className='grid grid-cols-2 gap-x-2 gap-y-4 md:grid-cols-2 lg:grid-cols-6 justify-evenly justify-items-center flex items-baseline'>
-            <div className=''>
-              <a href='https://www.amsterdam.nl/' target='_blank' rel='noopener noreferrer'>
-                <Image layout='fixed' height={57} width={182} src={amsLogo} alt='Amsterdam logo' />
-              </a>
-            </div>
-            <div className=''>
-              <a href='https://www.climate-kic.org/' target='_blank' rel='noopener noreferrer'>
-                <Image
-                  layout='fixed'
-                  height={75}
-                  width={135}
-                  src={climateKICLogo}
-                  alt='EIT Climate KIC logo'
-                />
-              </a>
-            </div>
-            <div className=''>
-              <a href='https://www.flevoland.nl/' target='_blank' rel='noopener noreferrer'>
-                <Image
-                  layout='fixed'
-                  height={100}
-                  width={200}
-                  src={provinceFlevLogo}
-                  alt='Flovoland logo'
-                />
-              </a>
-            </div>
-            <div className=''>
-              <a href='https://www.noord-holland.nl/' target='_blank' rel='noopener noreferrer'>
-                <Image
-                  layout='fixed'
-                  height={39}
-                  width={200}
-                  src={provinceNord}
-                  alt='Noord Holland logo'
-                />
-              </a>
-            </div>
-            <div className=''>
-              <a href='https://www.rvo.nl/' target='_blank' rel='noopener noreferrer'>
-                <Image layout='fixed' height={100} width={200} src={nlLogo} alt='RVO logo' />
-              </a>
-            </div>
-            <div className=''>
-              <a href='https://darkmatterlabs.org/' target='_blank' rel='noopener noreferrer'>
-                <Image
-                  layout='fixed'
-                  height={85}
-                  width={85}
-                  src={dmLogo}
-                  alt='Dark Matter Labs logo'
-                />
-              </a>
-            </div>
+      <div className='max-w-7xl mx-auto pb-12 px-4 lg:pb-16'>
+        <div className='grid grid-cols-2 gap-0.5 md:grid-cols-5 '>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
+            <Image src={logo1} alt='Amsterdam logo' />
+          </div>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
+            <Image src={logo2} alt='Amsterdam logo' />
+          </div>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
+            <Image src={logo3} alt='Amsterdam logo' />
+          </div>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
+            <Image src={logo4} alt='Amsterdam logo' />
+          </div>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
+            <Image src={logo5} alt='Amsterdam logo' />
+          </div>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
+            <Image src={logo6} alt='Amsterdam logo' />
+          </div>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
+            <Image src={logo7} alt='Amsterdam logo' />
+          </div>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
+            <Image src={logo8} alt='Amsterdam logo' />
+          </div>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
+            <Image src={logo9} alt='Amsterdam logo' />
+          </div>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
+            <Image src={logo10} alt='Amsterdam logo' />
+          </div>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
+            <Image src={logo11} alt='Amsterdam logo' />
+          </div>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
+            <Image src={logo12} alt='Amsterdam logo' />
+          </div>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
+            <Image src={logo13} alt='Amsterdam logo' />
+          </div>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
+            <Image src={logo14} alt='Amsterdam logo' />
+          </div>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
+            <Image src={logo15} alt='Amsterdam logo' />
           </div>
         </div>
       </div>
-      <div className='mx-5 sm:mx-10 pb-10 text-white1'>
+      <div className='mx-20 sm:mx-20 pb-10 text-white1 text-sm'>
         <p>
           Welkom bij CircuLaw. Deze website is volop in ontwikkeling en in deze versie testen we dan
           ook de techniek, opzet en inhoud van de site. Wat betreft de inhoud zijn sommige
