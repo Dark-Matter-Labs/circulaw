@@ -52,7 +52,7 @@ export default function Privacy() {
         <h2 className='mobile sm:main py-2'>
           Wanneer verstrekken wij je persoonsgegevens aan derden
         </h2>
-        <p className='body-text-mobile sm:body-text '>Dit doen wij nooit.</p>
+        <p className='body-text-mobile sm:body-text'>Dit doen wij nooit.</p>
         <h2 className='mobile sm:main py-2'>
           Hoe zit het met links naar websites van derde partijen
         </h2>

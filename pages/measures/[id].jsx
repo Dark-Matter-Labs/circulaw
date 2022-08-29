@@ -194,38 +194,26 @@ export default function Law() {
             </div>
 
             <div className='py-5 border-t-2 border-grey2 '>
-              <p className='font-manrope font-semibold text-lg text-black1 pb-2'>R-ladder </p>
+              <div className='flex pb-2'>
+                <span className='font-manrope font-semibold text-lg text-black1'>R-ladder</span>
+                <Tooltip>
+                  <svg className='w-6 h-6 fill-current text-black ' viewBox='0 0 26 26'>
+                    <circle cx='12' cy='15' r='10' fill='#979797' />
+                    <path
+                      d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
+                      fill='black'
+                    />
+                  </svg>
+                </Tooltip>
+              </div>
+
               <span className='block-inline font-semibold text-base text-gray-900'>
-                {data.R1 && (
-                  <span className='bg-green2 text-white rounded-full p-1 mr-2'>
-                    <Tooltip icon='false'>R1</Tooltip>
-                  </span>
-                )}
-                {data.R2 && (
-                  <span className='bg-green2 text-white rounded-full p-1 mr-2'>
-                    <Tooltip icon='false'>R2</Tooltip>
-                  </span>
-                )}
-                {data.R3 && (
-                  <span className='bg-green2 text-white rounded-full p-1 mr-2'>
-                    <Tooltip icon='false'>R3</Tooltip>
-                  </span>
-                )}
-                {data.R4 && (
-                  <span className='bg-green2 text-white rounded-full p-1 mr-2'>
-                    <Tooltip icon='false'>R4</Tooltip>
-                  </span>
-                )}
-                {data.R5 && (
-                  <span className='bg-green2 text-white rounded-full p-1 mr-2'>
-                    <Tooltip icon='false'>R5</Tooltip>
-                  </span>
-                )}
-                {data.R6 && (
-                  <span className='bg-green2 text-white rounded-full p-1 mr-2'>
-                    <Tooltip icon='false'>R6</Tooltip>
-                  </span>
-                )}
+                {data.R1 && <span className='bg-green2 text-white rounded-full p-1 mr-2'>R1</span>}
+                {data.R2 && <span className='bg-green2 text-white rounded-full p-1 mr-2'>R2</span>}
+                {data.R3 && <span className='bg-green2 text-white rounded-full p-1 mr-2'>R3</span>}
+                {data.R4 && <span className='bg-green2 text-white rounded-full p-1 mr-2'>R4</span>}
+                {data.R5 && <span className='bg-green2 text-white rounded-full p-1 mr-2'>R5</span>}
+                {data.R6 && <span className='bg-green2 text-white rounded-full p-1 mr-2'>R6</span>}
               </span>
             </div>
 
@@ -286,22 +274,6 @@ export default function Law() {
                 HOOG
               </div>
             </div>
-
-            {data.kop_6_ministappenplan && (
-              <div className='px-4 py-4 border-2 rounded bg-[#d8edfb]'>
-                <div className='font-bold pb-4 '>{data.kop_6_ministappenplan}</div>
-                <div className=''>
-                  <div className='pb-4'>{data.ministappenplan}</div>
-                </div>
-                <div className='w-full px-4 py-4'>
-                  <a href={data.links_ministappenplan}>
-                    <button className='px-4 py-4 border-2 rounded text-white bg-[#0088d9]'>
-                      HOUD ME OP DE HOOGTE
-                    </button>
-                  </a>
-                </div>{' '}
-              </div>
-            )}
           </div>
         </div>
       </div>

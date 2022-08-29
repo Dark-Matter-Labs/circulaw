@@ -60,7 +60,7 @@ export default function Law() {
 
             <div className='py-4'>
               <h2 className='pb-2 mobile sm:main'>Verder lezen/andere bronnen</h2>
-              <p className='newlineDisplay body-text-mobile sm:body-text'>
+              <p className='newlineDisplay body-text-mobile sm:body-text truncate'>
                 <ul className='list-disc pl-6'>
                   <li>
                     Juridische informatie over de gemeentelijke omgevingsvisie:{' '}
@@ -76,7 +76,7 @@ export default function Law() {
                     De voormalige gemeente Weesp heeft houtbouw opgenomen in haar omgevingsvisie:{' '}
                     <a
                       href='https://assets.amsterdam.nl/publish/pages/1007002/definitief_vrm21_670_omgevingsvisie_weesp_14dec2021_spread_tg.pdf'
-                      className='text-greenLink'
+                      className='text-greenLink '
                     >
                       https://assets.amsterdam.nl/publish/pages/1007002/definitief_vrm21_670_omgevingsvisie_weesp_14dec2021_spread_tg.pdf{' '}
                     </a>

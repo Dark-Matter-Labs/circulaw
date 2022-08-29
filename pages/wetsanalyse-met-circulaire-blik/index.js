@@ -11,7 +11,7 @@ export default function WetAnalyse() {
         </Link>
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-3'>
-        <div className='mx-5 sm:mx-20 my-20 col-span-2'>
+        <div className='mx-5 sm:mx-20 my-20 col-span-2 text-black1'>
           <h1 className='pb-5 mobile sm:main'>Wetsanalyse vanuit circulaire blik</h1>
           <h2 className='mobile sm:main'>Hoe CircuLaw juristen de wet analyseren</h2>
           <p className='body-text-mobile sm:body-text max-w-4xl'>

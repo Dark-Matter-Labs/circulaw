@@ -71,7 +71,7 @@ export default function Houtbouw() {
         </h2>
         <SectionTypes type='houtbouw' />
       </div>
-      <div className='pt-5 px-20 bg-green3 bg-opacity-10'>
+      <div className='pt-5 px-5 sm:px-20 bg-green3 bg-opacity-10'>
         <div className='border-b border-grey1 pb-10'>
           <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
             <div className='col-span-2'>
@@ -82,7 +82,9 @@ export default function Houtbouw() {
               </p>
               <Link href='/measures/houtbouw'>
                 <a>
-                  <span className='text-greenLink link'>Bekijk alle houtbouwmaatregelen →</span>
+                  <span className='text-greenLink link-mobile sm:link'>
+                    Bekijk alle houtbouwmaatregelen →
+                  </span>
                 </a>
               </Link>
             </div>

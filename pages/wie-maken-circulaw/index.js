@@ -11,7 +11,7 @@ export default function WieMaken() {
         </Link>
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-3'>
-        <div className='mx-5 sm:mx-20 my-20 col-span-2'>
+        <div className='mx-5 sm:mx-20 my-20 col-span-2 text-black1'>
           <h1 className='pb-5 mobile sm:main'>Wie maken CircuLaw?</h1>
           <p className='body-text-mobile sm:body-text max-w-4xl'>
             Eind 2020 startte gemeente Amsterdam in samenwerking met Dark Matter Labsen
