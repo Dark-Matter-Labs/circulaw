@@ -26,9 +26,11 @@
   }
 
   h2.mobile {
+    font-family: 'Manrope';
+    font-style: normal;
     font-size: 20px;
     line-height: 140%;
-    font-weight: 700;
+    font-weight: 800;
   }
 
   h3 {
@@ -36,14 +38,59 @@
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
-    line-height: 150%;
+    line-height: 130%;
+  }
+
+  h4 {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 140%;
+  }
+
+  h5 {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 149.19%;
+  }
+
+  h6 {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 149.19%;
+  }
+
+  .homepage-header-title {
+    font-family: 'Public Sans';
+    font-size: 83px;
+    font-weight: 700;
+    line-height: 96px;
+    letter-spacing: 0em;
+  }
+
+  .homepage-header-title-mobile {
+    font-family: 'Public Sans';
+    font-weight: 700;
+  }
+
+  .homepage-header-body {
+    font-family: 'Public Sans';
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 30px;
+    letter-spacing: 0em;
   }
 
   .body-text {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 35px;
   }
 
@@ -109,7 +156,7 @@
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 27px;
   }
 
@@ -136,11 +183,39 @@
     font-size: 14px;
     line-height: 19px;
   }
+
+  .filter-h1 {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .filter-h1-mobile {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .filter-body-mobile {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+  }
 }
 
-.smooth-scroll {
-  scroll-behavior: smooth;
+.home-header-bg {
+  background-image: url('./public/Landing_pg_texture.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+
 
 .newlineDisplay {
   white-space: break-spaces;
