@@ -5,68 +5,24 @@ import { Popover, Disclosure, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
+import { get_waardeketens, get_over } from '../utils/nav_structure';
 import CirculawLogo from '../public/Circulaw_logotype.svg';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-const waardeketens = [
-  {
-    name: 'Houtbouw',
-    description: 'description',
-    href: '/houtbouw',
-    className: 'font-normal',
-  },
-  {
-    name: 'Circulaire windturbines',
-    description: 'description',
-    href: '/circulaire-windturbines',
-    className: 'font-normal',
-  },
-];
-
-const over = [
-  {
-    name: 'Waarom CircuLaw?',
-    description: 'description',
-    href: '/waarom-circulaw',
-    className: '',
-  },
-  {
-    name: 'Wat is CircuLaw?',
-    description: 'description',
-    href: '/wat-is-circulaw',
-    className: '',
-  },
-  {
-    name: 'Status en ambities',
-    description: 'description',
-    href: '/status-en-ambities',
-    className: '',
-  },
-  {
-    name: 'Wetsanalyse met circulaire blik',
-    description: 'description',
-    href: '/wetsanalyse-met-circulaire-blik',
-    className: '',
-  },
-  {
-    name: 'Wie maken CircuLaw?',
-    description: 'description',
-    href: '/wie-maken-circulaw',
-    className: '',
-  },
-];
+const waardeketens = get_waardeketens();
+const over = get_over();
 
 export default function Nav() {
   return (
-    <Disclosure as='nav' className='sticky top-0 z-50'>
+    <Disclosure as='nav' className='sticky top-0 z-40'>
       {({ open }) => (
         <>
           <div className='bg-blush2 px-2 sm:px-6 lg:px-20 lg:py-8'>
             <div className=''>
-              <div className=' inset-y-0 right-0 flex items-center lg:hidden'>
+              <div className='inset-y-0 float-right flex items-center lg:hidden'>
                 {/* Mobile menu button */}
                 <Disclosure.Button className=' p-2 rounded-md text-green1 '>
                   <span className='sr-only'>Open main menu</span>
@@ -78,10 +34,17 @@ export default function Nav() {
                 </Disclosure.Button>
               </div>
               <div className='flex items-baseline sm:justify-start '>
-                <div className=''>
+                <div className='hidden sm:block md:py-5 lg:py-0'>
                   <Link href='/'>
                     <a className=''>
                       <Image src={CirculawLogo} alt='CircuLaw logo' />
+                    </a>
+                  </Link>
+                </div>
+                <div className='block sm:hidden'>
+                  <Link href='/'>
+                    <a className=''>
+                      <Image layout='fixed' width={200} src={CirculawLogo} alt='CircuLaw logo' />
                     </a>
                   </Link>
                 </div>
