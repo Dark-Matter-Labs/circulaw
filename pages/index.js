@@ -313,13 +313,13 @@ export default function Index() {
           In 2022 volgen meer thema’s binnen verschillende waardeketens. <br />
           Lees meer over de{' '}
           <span className='bold-text text-greenLink'>
-            <Link href='status-en-ambities'>
+            <Link href='/status-en-ambities'>
               <a>status en ambitie van CircuLaw</a>
             </Link>
           </span>{' '}
           of ga naar{' '}
           <span className='bold-text text-greenLink'>
-            <Link href='hoe-het-werkt'>
+            <Link href='/hoe-het-werkt'>
               <a>Vraag & Antwoord</a>
             </Link>
           </span>

@@ -27,6 +27,9 @@ module.exports = {
         publicSans: ["'Public Sans'", 'sans-serif'],
         manrope: ["'Manrope'", 'sans-serif'],
       },
+      screens: {
+        'lg': '1145px',
+      },
     },
   },
   variants: {
