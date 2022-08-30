@@ -1,5 +1,7 @@
 import { useState, forwardRef, useImperativeHandle } from 'react';
 import { handleToggle } from '../utils';
+import RTooltip from '../components/r_ladder_tooltip';
+import JHTooltip from '../components/juridische_houdbaarheid_tooltip';
 
 const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, ref) => {
   const [checkedArray, setCheckedArray] = useState([]);
@@ -43,13 +45,28 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
       <div className='block'>
         <div className='relative flex justify-between'>
           <legend className='text-base font-manrope font-semibold mr-8'>{title}</legend>
-          <svg className='w-6 h-6 fill-current text-black mb-2' viewBox='0 0 26 26'>
-            <circle cx='12' cy='15' r='10' fill='#979797' />
-            <path
-              d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
-              fill='black'
-            />
-          </svg>
+          {title === 'R - ladder' && (
+            <RTooltip>
+              <svg className='w-6 h-6 fill-current text-black mb-2' viewBox='0 0 26 26'>
+                <circle cx='12' cy='15' r='10' fill='#979797' />
+                <path
+                  d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
+                  fill='black'
+                />
+              </svg>
+            </RTooltip>
+          )}
+          {title === 'Juridische houdbaarheid' && (
+            <JHTooltip>
+              <svg className='w-6 h-6 fill-current text-black mb-2' viewBox='0 0 26 26'>
+                <circle cx='12' cy='15' r='10' fill='#979797' />
+                <path
+                  d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
+                  fill='black'
+                />
+              </svg>
+            </JHTooltip>
+          )}
         </div>
       </div>
       <div>

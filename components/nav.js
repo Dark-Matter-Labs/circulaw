@@ -179,7 +179,7 @@ export default function Nav() {
               </div>
             </div>
           </div>
-          <Disclosure.Panel className='sm:hidden bg-blush2'>
+          <Disclosure.Panel className='lg:hidden bg-blush2'>
             <div className='pt-2 pb-4 menu-title-mobile'>
               <Disclosure.Button
                 as='span'

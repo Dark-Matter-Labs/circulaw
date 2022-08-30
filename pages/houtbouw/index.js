@@ -75,10 +75,10 @@ export default function Houtbouw() {
         <div className='border-b border-grey1 pb-10'>
           <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
             <div className='col-span-2'>
-              <h2 className='pt-10 mobile sm:main'>34 Houtbouwmaatregelen</h2>
+              <h2 className='pt-10 mobile sm:main'>35 Houtbouwmaatregelen</h2>
               <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
                 Weten waar kansen liggen om de houtbouwtransitie te versnellen? CircuLaw biedt je nu
-                een overzicht van 34 maatregelen die je daarvoor kunt inzetten.
+                een overzicht van 35 maatregelen die je daarvoor kunt inzetten.
               </p>
               <Link href='/measures/houtbouw'>
                 <a>
@@ -100,7 +100,7 @@ export default function Houtbouw() {
                 Bekijk houtbouwmaatregelen niet op zich, maar in samenhang
               </h2>
               <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
-                CircuLaw heeft 34 maatregelen gedefinieerd die je kunt inzetten om houtbouw te
+                CircuLaw heeft 35 maatregelen gedefinieerd die je kunt inzetten om houtbouw te
                 stimuleren. Als je meerdere maatregelen toepast, is je impact natuurlijk groter.
                 Maar dan is het wel handig om te weten hoe maatregelen met elkaar samenhangen.
                 Daarom bieden we je hier bij wijze van voorbeeld inzicht in de relatie tussen een
