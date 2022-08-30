@@ -2,7 +2,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Layout from '../../components/layout';
 import IcontWood from '../../public/icons/houtbouwIconBg.svg';
-import Tooltip from '../../components/tooltip';
+import RTooltip from '../../components/r_ladder_tooltip';
+import JHTooltip from '../../components/juridische_houdbaarheid_tooltip';
+import JITooltip from '../../components/juridische_invloed_tooltip';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -12,6 +14,120 @@ export default function Law() {
   return (
     <Layout>
       <div className='px-5 sm:px-20 pt-10 gradient-bg '>
+        <div className='block md:hidden w-1/3'>
+          <div className='container pb-2'>
+            <div className='container-image'>
+              <Image src={IcontWood} alt='Icon of a Wood Log' />
+            </div>
+            <div className=''>
+              <Link href={'/houtbouw'}>
+                <a>
+                  <span className='font-openSans font-bold pl-2 text-greenLink'>Houtbouw</span>
+                </a>
+              </Link>
+            </div>
+          </div>
+
+          <div className='py-5 border-t-2 border-grey2 '>
+            <div className='flex pb-2'>
+              <span className='font-manrope font-semibold text-lg text-black1'>R-ladder</span>
+              <RTooltip>
+                <svg className='w-6 h-6 fill-current text-black mx-2' viewBox='0 0 26 26'>
+                  <circle cx='12' cy='15' r='10' fill='#979797' />
+                  <path
+                    d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
+                    fill='black'
+                  />
+                </svg>
+              </RTooltip>
+            </div>
+
+            <span className='block-inline font-semibold text-base text-gray-900'>
+              <span className='bg-green2 text-white rounded-full p-1 mr-2'>R1</span>
+              <span className='bg-green2 text-white rounded-full p-1 mr-2'>R2</span>
+              <span className='bg-green2 text-white rounded-full p-1 mr-2'>R5</span>
+            </span>
+          </div>
+
+          <div className='py-5'>
+            <div className='relative border-t-2 border-grey2 pt-4'>
+              <div className='font-manrope font-semibold text-lg text-black1 pb-2'>
+                Subrechtsgebied
+              </div>
+            </div>
+
+            <div className='font-manrope font-normal text-base'>
+              <p>Omgevingsrecht</p>
+            </div>
+          </div>
+
+          <div className='py-5'>
+            <div className='relative flex justify-between border-t-2 border-grey2 pt-2'>
+              <div className='flex pb-2'>
+                <span className='font-manrope font-semibold text-lg text-black1'>
+                  Juridisch invloed
+                </span>
+                <JITooltip>
+                  <svg className='w-6 h-6 fill-current text-black mx-2' viewBox='0 0 26 26'>
+                    <circle cx='12' cy='15' r='10' fill='#979797' />
+                    <path
+                      d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
+                      fill='black'
+                    />
+                  </svg>
+                </JITooltip>
+              </div>
+            </div>
+
+            <div className='mt-3 flex items-center'>
+              <span className='pr-5 font-manrope font-normal text-base'>LAAG</span>
+              {[0, 1, 2, 3, 4].map((rating) => (
+                <div
+                  key={rating}
+                  className={classNames(
+                    2 > rating ? 'score-true' : 'score-false',
+                    'mr-5 h-6 w-6 flex-shrink-0 rounded-full',
+                  )}
+                  aria-hidden='true'
+                />
+              ))}
+              HOOG
+            </div>
+          </div>
+
+          <div className='py-5'>
+            <div className='relative flex justify-between border-t-2 border-grey2 pt-2'>
+              <div className='flex pb-2'>
+                <span className='font-manrope font-semibold text-lg text-black1 pb-2'>
+                  Juridisch houdbaarheid
+                </span>
+                <JHTooltip>
+                  <svg className='w-6 h-6 fill-current text-black mx-2' viewBox='0 0 26 26'>
+                    <circle cx='12' cy='15' r='10' fill='#979797' />
+                    <path
+                      d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
+                      fill='black'
+                    />
+                  </svg>
+                </JHTooltip>
+              </div>
+            </div>
+            <div className='mt-3 flex items-center'>
+              <span className='pr-5 font-manrope font-normal text-base'> LAAG</span>
+              {[0, 1, 2, 3, 4].map((rating) => (
+                <div
+                  key={rating}
+                  className={classNames(
+                    1 > rating ? 'score-true' : 'score-false',
+                    'mr-5 h-6 w-6 flex-shrink-0 rounded-full',
+                  )}
+                  aria-hidden='true'
+                />
+              ))}
+              HOOG
+            </div>
+          </div>
+        </div>
         <div className='flex'>
           <div className='w-11/12 sm:w-2/3 p-6 pb-20'>
             <h1 className='my-9 text-green1 mobile sm:main'>Gemeentelijke omgevingsvisie</h1>
@@ -189,13 +305,13 @@ export default function Law() {
               </table>
             </div>
           </div>
-          <div className='hidden sm:block w-1/3'>
+          <div className='hidden md:block w-1/3'>
             <div className='container pb-2'>
               <div className='container-image'>
                 <Image src={IcontWood} alt='Icon of a Wood Log' />
               </div>
               <div className=''>
-                <Link href={'/houtbuow'}>
+                <Link href='/houtbouw'>
                   <a>
                     <span className='font-openSans font-bold pl-2 text-greenLink'>Houtbouw</span>
                   </a>
@@ -204,17 +320,22 @@ export default function Law() {
             </div>
 
             <div className='py-5 border-t-2 border-grey2 '>
-              <p className='font-manrope font-semibold text-lg text-black1 pb-2'>R-ladder </p>
+              <div className='flex pb-2'>
+                <span className='font-manrope font-semibold text-lg text-black1'>R-ladder</span>
+                <RTooltip>
+                  <svg className='w-6 h-6 fill-current text-black mx-2' viewBox='0 0 26 26'>
+                    <circle cx='12' cy='15' r='10' fill='#979797' />
+                    <path
+                      d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
+                      fill='black'
+                    />
+                  </svg>
+                </RTooltip>
+              </div>
               <span className='block-inline font-semibold text-base text-gray-900'>
-                <span className='bg-green2 text-white rounded-full p-1 mr-2'>
-                  <Tooltip icon='false'>R1</Tooltip>
-                </span>
-                <span className='bg-green2 text-white rounded-full p-1 mr-2'>
-                  <Tooltip icon='false'>R2</Tooltip>
-                </span>
-                <span className='bg-green2 text-white rounded-full p-1 mr-2'>
-                  <Tooltip icon='false'>R5</Tooltip>
-                </span>
+                <span className='bg-green2 text-white rounded-full p-1 mr-2'>R1</span>
+                <span className='bg-green2 text-white rounded-full p-1 mr-2'>R2</span>
+                <span className='bg-green2 text-white rounded-full p-1 mr-2'>R5</span>
               </span>
             </div>
 
@@ -232,8 +353,19 @@ export default function Law() {
 
             <div className='py-5'>
               <div className='relative flex justify-between border-t-2 border-grey2 pt-2'>
-                <div className='font-manrope font-semibold text-lg text-black1 pb-2'>
-                  Juridisch invloed
+                <div className='flex pb-2'>
+                  <span className='font-manrope font-semibold text-lg text-black1'>
+                    Juridisch invloed
+                  </span>
+                  <JITooltip>
+                    <svg className='w-6 h-6 fill-current text-black mx-2' viewBox='0 0 26 26'>
+                      <circle cx='12' cy='15' r='10' fill='#979797' />
+                      <path
+                        d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
+                        fill='black'
+                      />
+                    </svg>
+                  </JITooltip>
                 </div>
               </div>
 
@@ -255,8 +387,19 @@ export default function Law() {
 
             <div className='py-5'>
               <div className='relative flex justify-between border-t-2 border-grey2 pt-2'>
-                <div className='font-manrope font-semibold text-lg text-black1 pb-2'>
-                  Juridisch houdbaarheid
+                <div className='flex pb-2'>
+                  <span className='font-manrope font-semibold text-lg text-black1'>
+                    Juridisch houdbaarheid
+                  </span>
+                  <JHTooltip>
+                    <svg className='w-6 h-6 fill-current text-black mx-2' viewBox='0 0 26 26'>
+                      <circle cx='12' cy='15' r='10' fill='#979797' />
+                      <path
+                        d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
+                        fill='black'
+                      />
+                    </svg>
+                  </JHTooltip>
                 </div>
               </div>
               <div className='mt-3 flex items-center'>

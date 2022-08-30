@@ -1,11 +1,6 @@
 import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-
-import R1 from '../public/r1.png';
 
 export default function ToolTips({ children, icon }) {
   const [open, setOpen] = useState(false);
@@ -71,10 +66,10 @@ export default function ToolTips({ children, icon }) {
                       leaveFrom='opacity-100'
                       leaveTo='opacity-0'
                     >
-                      <div className='absolute top-0 left-0 -ml-8 flex pt-4 pr-2 sm:-ml-10 sm:pr-4'>
+                      <div className='absolute float-right top-0 right-0 flex pt-4 pr-2 sm:-ml-10'>
                         <button
                           type='button'
-                          className='rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white'
+                          className='rounded-md text-green1'
                           onClick={() => setOpen(false)}
                         >
                           <span className='sr-only'>Close panel</span>
@@ -86,29 +81,37 @@ export default function ToolTips({ children, icon }) {
                       <div className='px-4 sm:px-6'>
                         <Dialog.Title className='text-lg font-medium text-gray-900'>
                           {' '}
-                          Panel title{' '}
+                          Juridische houdbaarheid
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>
-                        {/* Replace with your content */}
                         <div className='absolute inset-0 px-4 sm:px-6'>
-                          R-ladder met strategieën van circulairiteit Juristen hebben voor elke
-                          maatregel een inschatting gemaakt binnen welke circulaire strategie deze
-                          past. R1 &apos;Refuse and rethink&apos; is heel circulair, R6
-                          &apos;Recover&apos; veel minder. Zo scoort je eigen bioplastic bakje
-                          meenemen naar een afhaalrestaurant R1, terwij) glas recyclen met een
-                          R5-score aanzienlijk minder circulaire impact heft. Geen nieuwe schoenen
-                          kopen scoort R1, tegenover het recyclen van je schoenen waarvoor een
-                          waarde van R5 staat.
-                          <div className=''>
-                            <Image src={R1} alt='Picture of the author' />
-                          </div>
-                          <div className='italic text-[#0088d9]'>
-                            Bron: PBI1 (Planbureau voor de Leefomgeving)
-                          </div>
-                          <Link href='https://www.rvo.nl/onderwerpen/duurzaam-ondernemen/circulaire-economie/r-ladder'>
-                            <a>Meer over de R ladder op de website van RVO</a>
-                          </Link>
+                          <p className='tooltip-body'>
+                            CircuLaw heeft per maatregel een inschatting gemaakt van de juridische
+                            houdbaarheid. Dit is een totaalscore gebaseerd op 3 factoren:
+                          </p>
+                          <br />
+                          <p className='tooltip-body'>
+                            <b>Duidelijkheid wet:</b>
+                          </p>
+                          <p className='tooltip-body'>
+                            Hoe duidelijk is de tekst, toelichting en het commentaar van de wet?
+                          </p>
+                          <br />
+                          <p className='tooltip-body font-bold'>
+                            <b>Eenduidigheid jurisprudentie:</b>
+                          </p>
+                          <p className='tooltip-body'>
+                            Zijn de juridische uitspraken duidelijk en niet dubbelzinnig?
+                          </p>
+                          <br />
+                          <p className='tooltip-body font-bold'>
+                            <b>Beschikbare juridische literatuur:</b>
+                          </p>
+                          <p className='tooltip-body'>
+                            Hoeveel is er al over de maatregel geschreven in niet-juridische
+                            bronnen?
+                          </p>
                         </div>
                       </div>
                     </div>
