@@ -17,7 +17,7 @@ export default function Houtbouw() {
   return (
     <Layout>
       <div className='grid grid-cols-1 lg:grid-cols-2 gradient-bg justify-items-end'>
-        <div className='mx-5 sm:mx-20 max-w-2xl'>
+        <div className='mx-7 sm:mx-20 max-w-2xl'>
           <div className='breadcrumb pt-8 text-greenLink'>
             <Link href='/'>
               <a>Home &gt; </a>
@@ -64,7 +64,7 @@ export default function Houtbouw() {
         </div>
       </div>
 
-      <div className='mx-5 sm:mx-20 my-20'>
+      <div className='mx-7 sm:mx-20 my-20'>
         <h2 className='pb-8 mobile sm:main'>
           Meer weten over hoe je maatregelen kunt toepassen? Hier vind je 3 voorbeelden uit de
           praktijk:

@@ -82,7 +82,7 @@ export default function SectionTypes(props) {
     <div className='pb-20'>
       <ul
         role='list'
-        className='grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 sm:gap-x-10'
+        className='grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 sm:gap-x-10 max-w-8xl'
       >
         {type.map((file) => (
           <li
@@ -96,7 +96,7 @@ export default function SectionTypes(props) {
               <div className='inline-block'>
                 <h3 className='mt-2 block text-black pointer-events-none pb-4'>{file.title}</h3>
               </div>
-              <p className='body-text-mobile sm:card-body block text-black pointer-events-none py-4'>
+              <p className='body-text-mobile sm:card-body block text-black pointer-events-none py-4 w-full'>
                 {file.description}
               </p>
               {file.tag && (

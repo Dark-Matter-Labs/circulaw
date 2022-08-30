@@ -32,9 +32,9 @@ export default function Index() {
                       <Disclosure.Button className='p-2 rounded-md text-blush1 '>
                         <span className='sr-only'>Open main menu</span>
                         {open ? (
-                          <XIcon className='block h-6 w-6' aria-hidden='true' />
+                          <XIcon className='block h-10 w-10' aria-hidden='true' />
                         ) : (
-                          <MenuIcon className='block h-6 w-6' aria-hidden='true' />
+                          <MenuIcon className='block h-10 w-10' aria-hidden='true' />
                         )}
                       </Disclosure.Button>
                     </div>
@@ -267,7 +267,7 @@ export default function Index() {
             )}
           </Disclosure>
 
-          <main className=' mx-auto max-w-6xl px-4 sm:mt-24'>
+          <main className=' mx-auto max-w-4xl px-4 sm:mt-24'>
             <div className='text-center'>
               <h1 className='text-6xl homepage-header-title-mobile sm:homepage-header-title text-white1 py-10'>
                 <span className='block '>Regelgeving voor een circulaire economie</span>{' '}

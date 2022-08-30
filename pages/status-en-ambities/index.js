@@ -11,7 +11,7 @@ export default function StatusEn() {
         </Link>
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-3'>
-        <div className='mx-5 sm:mx-20 my-20 col-span-2 text-black1'>
+        <div className='mx-7 sm:mx-20 my-20 col-span-2 text-black1'>
           <h1 className='pb-5 mobile sm:main'> Status en ambities CircuLaw</h1>
           <p className='body-text-mobile sm:body-text max-w-4xl pb-5'>
             CircuLaw wordt stap voor stap ontwikkeld. Op dit moment bevat de website van CircuLaw
@@ -104,7 +104,7 @@ export default function StatusEn() {
             systeem. Ook dit is onderdeel van het idee van een open public service.
           </p>
         </div>
-        <div className='mx-5 sm:mx-20 my-20 max-w-sm'>
+        <div className='mx-7 sm:mx-20 my-20 max-w-sm'>
           <OverNav pagename='status' />
         </div>
       </div>
