@@ -20,7 +20,7 @@ function classNames(...classes) {
 export default function Index() {
   return (
     <Layout page='home'>
-      <div className='relative home-header-bg py-10'>
+      <div className='relative home-header-bg'>
         <div className='relative pt-6 pb-16 sm:pb-24'>
           <Disclosure as='nav' className=' '>
             {({ open }) => (
