@@ -34,7 +34,7 @@ export default function Layout(props) {
       </div>
       {props.page !== 'home' && <Nav />}
       <Head>
-        <title>Digitale tool Juridisch Landschap</title>
+        <title>CircuLaw</title>
       </Head>
       <main className=''>{props.children}</main>
       <Footer />
