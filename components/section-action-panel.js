@@ -2,7 +2,7 @@ import Link from 'next/link';
 export default function ActionPanel(props) {
   return (
     <div className='bg-green3 py-10'>
-      <div className='mx-5 sm:mx-20 py-5'>
+      <div className='mx-7 sm:mx-20 py-5'>
         <h2 className='mobile sm:main'>{props.title}</h2>
         <div className='sm:flex sm:items-start sm:justify-between'>
           <div>

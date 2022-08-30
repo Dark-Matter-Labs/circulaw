@@ -11,7 +11,7 @@ export default function WatIsCircuLaw() {
         </Link>
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-3'>
-        <div className='mx-5 sm:mx-20 my-20 col-span-2 text-black1'>
+        <div className='mx-7 sm:mx-20 my-20 col-span-2 text-black1'>
           <h1 className='pb-5 mobile sm:main'>Wat is CircuLaw?</h1>
           <h2 className='mobile sm:main'>Overzicht wet-en regelgeving</h2>
           <p className='body-text-mobile sm:body-text max-w-4xl'>
@@ -78,7 +78,7 @@ export default function WatIsCircuLaw() {
             wet als service.
           </p>
         </div>
-        <div className='mx-5 sm:mx-20 my-20 max-w-sm'>
+        <div className='mx-7 sm:mx-20 my-20 max-w-sm'>
           <OverNav pagename='wat' />
         </div>
       </div>

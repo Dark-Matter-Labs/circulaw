@@ -66,7 +66,7 @@ export default function Law() {
 
   return (
     <Layout>
-      <div className='px-5 sm:px-20 pt-10 gradient-bg '>
+      <div className='px-5 sm:px-20 pt-10 gradient-bg'>
         {data.casus === 'Houtbouw' ? (
           <Link href='/measures/houtbouw' className=''>
             <a className='text-greenLink breadcrumb'>← Terug</a>
@@ -76,7 +76,7 @@ export default function Law() {
             <a className='text-greenLink breadcrumb'>← Terug</a>
           </Link>
         )}
-        <div className='block md:hidden w-1/3'>
+        <div className='block md:hidden'>
           <div className='container pb-2'>
             <div className='container-image'>
               <Image src={IcontWood} alt='Icon of a Wood Log' />
@@ -193,8 +193,8 @@ export default function Law() {
             </div>
           </div>
         </div>
-        <div className='flex'>
-          <div className='w-11/12 sm:w-2/3 p-6 pb-20'>
+        <div className='grid grid-cols-1 sm:grid-cols-3'>
+          <div className='w-full sm:max-w-4xl p-6 pb-20 col-span-2'>
             <h1 className='my-9 text-green1 mobile sm:main'>{data.titel}</h1>
 
             <div className='py-4'>
@@ -296,7 +296,7 @@ export default function Law() {
               </tbody>
             </table>
           </div>
-          <div className='hidden md:block w-1/3'>
+          <div className='hidden md:block md:float-right'>
             <div className='container pb-2'>
               <div className='container-image'>
                 <Image src={IcontWood} alt='Icon of a Wood Log' />

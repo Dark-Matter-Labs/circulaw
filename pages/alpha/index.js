@@ -4,7 +4,7 @@ import Layout from '../../components/layout';
 export default function Alpha() {
   return (
     <Layout>
-      <div className='mx-5 sm:mx-20 my-20 max-w-2xl'>
+      <div className='mx-7 sm:mx-20 my-20 max-w-2xl'>
         <h1 className='mobile sm:main'>Testversie CircuLaw</h1>
         <p className='body-text-mobile sm:body-text'>
           In deze versie testen we de techniek, de opzet én de inhoud van de site.

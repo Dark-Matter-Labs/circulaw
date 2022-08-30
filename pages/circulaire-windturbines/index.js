@@ -16,7 +16,7 @@ export default function Windturbine() {
   return (
     <Layout>
       <div className='grid grid-cols-1 lg:grid-cols-2 gradient-bg justify-items-end'>
-        <div className='mx-5 sm:mx-20 '>
+        <div className='mx-7 sm:mx-20 '>
           <div className='breadcrumb pt-8 text-greenLink'>
             <Link href='/'>
               <a>Home &gt; </a>

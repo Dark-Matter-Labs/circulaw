@@ -27,9 +27,9 @@ export default function Nav() {
                 <Disclosure.Button className=' p-2 rounded-md text-green1 '>
                   <span className='sr-only'>Open main menu</span>
                   {open ? (
-                    <XIcon className='block h-6 w-6' aria-hidden='true' />
+                    <XIcon className='block h-10 w-10' aria-hidden='true' />
                   ) : (
-                    <MenuIcon className='block h-6 w-6' aria-hidden='true' />
+                    <MenuIcon className='block h-10 w-10' aria-hidden='true' />
                   )}
                 </Disclosure.Button>
               </div>

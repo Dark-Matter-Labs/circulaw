@@ -500,7 +500,7 @@ export default function Measures() {
           </Dialog>
         </Transition.Root>
       </div>
-      <div className='mx-5 sm:mx-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
+      <div className='mx-7 sm:mx-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
         <div className='hidden sm:block breadcrumb pt-8 text-greenLink'>
           <Link href='/'>
             <a>Home</a>
@@ -603,7 +603,7 @@ export default function Measures() {
           </span>
         </div>
       </div>
-      <div className='flex mx-5 sm:mx-20'>
+      <div className='flex mx-7 sm:mx-20'>
         <div className='hidden md:block p-3 my-4'>
           <SearchFilter
             ref={wettelijkFilterRef}
