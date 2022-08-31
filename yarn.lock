@@ -2063,6 +2063,11 @@ lodash.merge@^4.6.2:
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==
+
 lodash.topath@^4.5.2:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/lodash.topath/-/lodash.topath-4.5.2.tgz#3616351f3bba61994a0931989660bd03254fd009"
@@ -2527,7 +2532,7 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-prop-types@^15.6.2, prop-types@^15.8.1:
+prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -2608,6 +2613,14 @@ react-reconciler@^0.23.0:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     scheduler "^0.17.0"
+
+react-scroll@^1.8.7:
+  version "1.8.7"
+  resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.8.7.tgz#8020035329efad00f03964e18aff6822137de3aa"
+  integrity sha512-fBOIwweAlhicx8RqP9tQXn/Uhd+DTtVRjw+0VBsIn1Z+MjRYLhTZ0tMoTAU1vOD3dce8mI6copexI4yWII+Luw==
+  dependencies:
+    lodash.throttle "^4.1.1"
+    prop-types "^15.7.2"
 
 react@^17.0.2:
   version "17.0.2"
