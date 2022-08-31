@@ -4,6 +4,7 @@ import { Fragment } from 'react';
 import { Popover, Transition, Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
+import { Link as ScrollLink } from 'react-scroll';
 import ActionPanel from '../components/section-action-panel';
 import Layout from '/components/layout';
 import SectionTypes from '/components/section-types-list';
@@ -39,17 +40,17 @@ export default function Index() {
                       </Disclosure.Button>
                     </div>
                     <div className='flex items-baseline sm:justify-start '>
-                      <div className='hidden sm:block md:py-5 lg:py-0'>
+                      <div className='hidden lg:block md:py-5 lg:py-0'>
                         <Link href='/'>
                           <a className=''>
                             <Image src={logo} alt='CircuLaw logo' />
                           </a>
                         </Link>
                       </div>
-                      <div className='block sm:hidden'>
+                      <div className='block lg:hidden'>
                         <Link href='/'>
                           <a className=''>
-                            <Image layout='fixed' width={200} src={logo} alt='CircuLaw logo' />
+                            <Image layout='fixed' width={140} src={logo} alt='CircuLaw logo' />
                           </a>
                         </Link>
                       </div>
@@ -267,7 +268,7 @@ export default function Index() {
             )}
           </Disclosure>
 
-          <main className=' mx-auto max-w-4xl px-4 sm:mt-24'>
+          <main className=' mx-auto max-w-4xl px-4 sm:mt-12'>
             <div className='text-center'>
               <h1 className='text-6xl homepage-header-title-mobile sm:homepage-header-title text-white1 py-10'>
                 <span className='block '>Regelgeving voor een circulaire economie</span>{' '}
@@ -284,9 +285,9 @@ export default function Index() {
                     type='button'
                     className='inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-blush2 hover:bg-greenLink focus:outline-none'
                   >
-                    <Link href='#thema'>
-                      <a>Bekijk de thema&rsquo;s ↓</a>
-                    </Link>
+                    <ScrollLink to='thema' smooth={true}>
+                      Bekijk de thema&rsquo;s ↓
+                    </ScrollLink>
                   </button>
                 </div>
                 <div className='mt-3 rounded-md sm:mt-0 sm:ml-3'>
@@ -294,9 +295,9 @@ export default function Index() {
                     type='button'
                     className='inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-blush2 hover:bg-greenLink focus:outline-none'
                   >
-                    <Link href='#waarom'>
+                    <ScrollLink to='waarom' smooth={true}>
                       <a>Meer over CircuLaw? ↓</a>
-                    </Link>
+                    </ScrollLink>
                   </button>
                 </div>
               </div>
@@ -305,7 +306,7 @@ export default function Index() {
         </div>
       </div>
 
-      <div className='px-5 sm:px-20 bg-greenAlpha pb-20' id='thema'>
+      <div className='px-5 sm:px-20 bg-greenAlpha pb-20' name='thema'>
         <h2 className='pb-6 pt-8 mobile sm:main text-green1'>Thema’s</h2>
 
         <SectionTypes type='home' />
@@ -326,10 +327,12 @@ export default function Index() {
         </p>
       </div>
       <div className='px-5 sm:px-20 bg-white py-20 mr-10'>
-        <h1 className='mobile sm:main text-green1'>Over CircuLaw</h1>
-        <div className='border-b border-grey1 pb-10' id='waarom'>
+        <h1 className='mobile sm:main text-green1' name='waarom'>
+          Over CircuLaw
+        </h1>
+        <div className='border-b border-grey1 pb-10'>
           <h2 className='pt-10 mobile sm:main'>Waarom CircuLaw?</h2>
-          <p className='body-text-mobile sm:body-text py-5'>
+          <p className='body-text-mobile sm:body-text py-5 max-w-5xl'>
             Om binnen planetaire grenzen te opereren is een circulaire economie essentieel. Hiervoor
             is meer drang en dwang nodig. CircuLaw laat juridische mogelijkheden zien die kunnen
             bijdragen aan versnelling van de circulaire transitie.
@@ -342,7 +345,7 @@ export default function Index() {
         </div>
         <div className='border-b border-grey1 pb-10'>
           <h2 className='pt-10 mobile sm:main'>Wat is CircuLaw?</h2>
-          <p className='body-text-mobile sm:body-text py-5'>
+          <p className='body-text-mobile sm:body-text py-5 max-w-5xl'>
             CircuLaw is een service waarmee we in de eerste plaats beleidsmakers en
             transitiemanagers helpen meer en beter gebruik te maken van regelgeving om de circulaire
             economie te bevorderen.
@@ -355,7 +358,7 @@ export default function Index() {
         </div>
         <div className='border-b border-grey1 pb-10'>
           <h2 className='pt-10 mobile sm:main'>Status en ambities CircuLaw</h2>
-          <p className='body-text-mobile sm:body-text py-5'>
+          <p className='body-text-mobile sm:body-text py-5 max-w-5xl'>
             CircuLaw wordt stap voor stap ontwikkeld. Op dit moment bevat de website vooral
             informatie over wet-en regelgeving die voor beleidsmakers relevant is. Deze informatie
             wordt geleidelijk uitgebreid
@@ -368,7 +371,7 @@ export default function Index() {
         </div>
         <div className='pb-10'>
           <h2 className='pt-10 mobile sm:main'>Wie zijn betrokken bij CircuLaw?</h2>
-          <p className='body-text-mobile sm:body-text py-5'>
+          <p className='body-text-mobile sm:body-text py-5 max-w-5xl'>
             CircuLaw wordt ontwikkeld door Gemeente Amsterdam, Dark Matter Labs en een consortium
             van publieke partners en kennisinstituten
           </p>

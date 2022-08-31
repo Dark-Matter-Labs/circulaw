@@ -20,7 +20,7 @@ module.exports = {
         greenLink: '#019975',
         grey1: '#979797',
         grey2: '#DAD8D8',
-        grey3: '#CDD2C8',
+        grey3: 'rgba(205, 210, 200, 0.47)',
         white1: '#F8FAF8',
       },
       fontFamily: {

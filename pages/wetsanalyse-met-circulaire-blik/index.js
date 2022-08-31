@@ -13,62 +13,35 @@ export default function WetAnalyse() {
       <div className='grid grid-cols-1 sm:grid-cols-3'>
         <div className='mx-7 sm:mx-20 my-20 col-span-2 text-black1'>
           <h1 className='pb-5 mobile sm:main'>Wetsanalyse vanuit circulaire blik</h1>
-          <h2 className='mobile sm:main'>Hoe CircuLaw juristen de wet analyseren</h2>
           <p className='body-text-mobile sm:body-text max-w-4xl'>
             Vernieuwend aan CircuLaw is dat wetsanalyses worden uitgevoerd vanuit transitiedoelen.
+            Om de meest geschikte maatregelen met betrekking tot een casus of productgroep te
+            identificeren, doet het juridische team uitgebreid onderzoek naar zowel de direct als de
+            indirect relevante beleidsdoelen. We onderzoeken eerst de vijf circulaire fasen van een
+            productgroep: ontwerp, productie, aankoop, gebruik en einde van de levensduur. Voor deze
+            fasen stellen we samen met experts operationele doelen vast. Vervolgens bakenen we met
+            een speciaal ontwikkelde methode het juridische werkgebied af: van de duizenden wetten,
+            besluiten en regelingen wordt een selectie gemaakt van wetten die relevant zijn. Binnen
+            deze geselecteerde wetten wordt per artikel gekeken of er ruimte of mogelijkheden in zit
+            waarmee circulariteit kan worden bevorderd.
           </p>
           <br />
           <p className='body-text-mobile sm:body-text max-w-4xl'>
-            Per productgroep en ketenfase worden operationele doelen geformuleerd. Vervolgens wordt
-            met een speciaal ontwikkelde methode het juridische werkgebied afgebakend: van de
-            duizenden bestaande wetten, besluiten en regelingen wordt een selectie gemaakt van
-            wetten die mogelijk relevant zijn.
+            Om te zorgen dat de juridische analist hier zo creatief en vanuit zoveel mogelijk
+            verschillende perspectieven naar kijkt, is een analysesleutel ontwikkeld. De wet- en
+            regelgeving wordt op artikelniveau geanalyseerd vanuit de volgende vragen:
+            <ul className='list-disc pl-6'>
+              <li>kan dit artikel bijdragen aan de gestelde operationele doelen?</li>
+              <li>kan hier circulariteit in worden gelezen? </li>
+              <li>is deze wettelijke bepaling circulair toepasbaar?</li>
+            </ul>
           </p>
           <br />
           <p className='body-text-mobile sm:body-text max-w-4xl'>
-            Deze wetten worden op artikelniveau geanalyseerd vanuit de vraag: kan dit artikel
-            bijdragen aan het gestelde operationele doel; kan hier circulariteit in worden gelezen?
+            De geïdentificeerde maatregelen waarderen we op basis van afbreukrisico en invloed.
+            Hiermee geven we beleidsmedewerkers een indicatie mee van de toepasbaarheid van een
+            maatregel, en helpen we hen een goede selectie te maken.
           </p>
-          <br />
-          <p className='body-text-mobile sm:body-text max-w-4xl'>
-            Om de juridische analist hier zo creatief en vanuit zo veel mogelijk verschillende
-            perspectieven naar te laten kijken, is een analysesleutel ontwikkeld. Voor de
-            maatregelen die uit deze analyse rollen is een rankingsysteem ontwikkeld, waarbij
-            maatregelen een score krijgen op juridische houdbaarheid en invloed.
-          </p>
-          <br />
-          <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
-            Ook laten we zien wat het verband is tussen de gevonden maatregelen. Hiermee geven we
-            beleidsmakers een indicatie mee van de toepasbaarheid van een maatregel, en helpen we
-            hen een goede selectie te maken.
-          </p>
-
-          <h2 className='mobile sm:main'>Wetsanalyse laten uitvoeren door CircuLaw?</h2>
-          <p className='body-text-mobile sm:body-text max-w-4xl pb-5'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non faucibus dolor.
-            Phasellus facilisis quis nibh id vehicula. Vestibulum ut dolor metus. Nulla lobortis
-            tortor eu urna elementum, vel cursus nibh ullamcorper. Pellentesque quam odio, tempor
-            eget aliquam sit amet, scelerisque eget eros. Praesent suscipit nisl in nibh gravida,
-            nec condimentum arcu congue.
-          </p>
-
-          <div className='flex bg-green2 bg-opacity-20 p-10 justify-between flex-wrap'>
-            <div>
-              <p className='body-text-mobile sm:body-text'>
-                Meer weten? Of wil je een wetsanalyse laten uitvoeren op een circulair thema?
-              </p>
-            </div>
-            <div>
-              <button
-                type='button'
-                className='inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-white bg-green1 hover:bg-greenLink focus:outline-none '
-              >
-                <Link href='/contact'>
-                  <a>Neem contact op →</a>
-                </Link>
-              </button>
-            </div>
-          </div>
         </div>
         <div className='mx-7 sm:mx-20 my-20 max-w-sm'>
           <OverNav pagename='wet' />

@@ -581,7 +581,7 @@ export default function Measures() {
           </div>
         </div>
 
-        <div className='md:hidden py-5 w-28'>
+        <div className='lg:hidden py-5 w-28'>
           <button
             type='button'
             className='px-4 inline-flex border-2 p-2 w-full border-black1 rounded-lg focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500 lg:hidden'
@@ -593,7 +593,7 @@ export default function Measures() {
           </button>
         </div>
 
-        <div className='hidden md:block mb-3'>
+        <div className='hidden lg:block mb-3'>
           <span className='text-xl font-manrope font-semibold pr-8'>Filter op:</span>{' '}
           <span
             onClick={reset}
@@ -603,8 +603,8 @@ export default function Measures() {
           </span>
         </div>
       </div>
-      <div className='flex mx-7 sm:mx-20'>
-        <div className='hidden md:block p-3 my-4'>
+      <div className='flex mx-7 lg:mx-20'>
+        <div className='hidden lg:block p-3 my-4'>
           <SearchFilter
             ref={wettelijkFilterRef}
             title='Bevoegdheidsniveau'
@@ -651,7 +651,7 @@ export default function Measures() {
           />
         </div>
 
-        <div className='mt-10 sm:ml-10'>
+        <div className='lg:mt-10 lg:ml-10'>
           {data && (
             <div>
               <PolicyList data={laws} casus='Houtbouw' />

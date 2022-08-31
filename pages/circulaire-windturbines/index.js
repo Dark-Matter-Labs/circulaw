@@ -15,7 +15,7 @@ export default function Windturbine() {
   });
   return (
     <Layout>
-      <div className='grid grid-cols-1 lg:grid-cols-2 gradient-bg justify-items-end'>
+      <div className='grid grid-cols-1 lg:grid-cols-2 gradient-bg'>
         <div className='mx-7 sm:mx-20 '>
           <div className='breadcrumb pt-8 text-greenLink'>
             <Link href='/'>
@@ -34,8 +34,8 @@ export default function Windturbine() {
             </p>
           </div>
         </div>
-        <div>
-          <Image src={WindturbineHero} alt='Icon of Wood' layout='fixed' height={649} width={800} />
+        <div className='sm:justify-self-center lg:justify-self-end'>
+          <Image src={WindturbineHero} alt='Icon of Wood' height={649} width={800} />
         </div>
       </div>
 
@@ -44,6 +44,9 @@ export default function Windturbine() {
           <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
             <div className='col-span-2'>
               <h2 className='pt-10 mobile sm:main'>10 Circulaire windturbine maatregelen</h2>
+              <div className='block py-4 sm:hidden'>
+                <Image src={HoutbouwSection1} alt='Houtbuow section image' layout='responsive' />
+              </div>
               <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
                 Weten waar kansen liggen om de transitie naar circulaire windturbines te versnellen?
                 CircuLaw biedt je een overzicht van 10 maatregelen die je daarvoor kunt inzetten.
@@ -56,7 +59,7 @@ export default function Windturbine() {
                 </a>
               </Link>
             </div>
-            <div className=''>
+            <div className='hidden sm:block'>
               <Image src={HoutbouwSection1} alt='Houtbuow section image' layout='responsive' />
             </div>
           </div>
@@ -67,6 +70,9 @@ export default function Windturbine() {
               <h2 className='pt-10 mobile sm:main'>
                 Bekijk circulaire windturbine maatregelen niet op zich, maar in samenhang
               </h2>
+              <div className='block py-4 sm:hidden'>
+                <Image src={HoutbouwSection2} alt='Houtbuow section image' layout='responsive' />
+              </div>
               <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
                 CircuLaw heeft 10 maatregelen gedefinieerd die je kunt inzetten om circulaire
                 windturbines te stimuleren. Als je meerdere maatregelen toepast, is je impact
@@ -78,7 +84,7 @@ export default function Windturbine() {
                 Samenhang circulaire windturbine maatregelen →
               </span>
             </div>
-            <div className=''>
+            <div className='hidden sm:block'>
               <Image src={HoutbouwSection2} alt='Houtbuow section image' layout='responsive' />
             </div>
           </div>
@@ -86,6 +92,9 @@ export default function Windturbine() {
         <div className='border-b border-grey1 pb-40 pt-10'>
           <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
             <div className='col-span-2'>
+              <div className='block py-4 sm:hidden'>
+                <Image src={HoutbouwSection3} alt='Houtbuow section image' layout='responsive' />
+              </div>
               <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
                 Om een circulaire strategie volledig te implementeren, is samenwerking tussen
                 overheden en stakeholders nodig. Om te weten wie waarvoor aan de lat staat, is
@@ -96,7 +105,7 @@ export default function Windturbine() {
                 Bekijk het bevoegdheden-overzicht →
               </span>
             </div>
-            <div className=''>
+            <div className='hidden sm:block'>
               <Image src={HoutbouwSection3} alt='Houtbuow section image' layout='responsive' />
             </div>
           </div>
