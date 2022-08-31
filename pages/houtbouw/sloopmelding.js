@@ -15,6 +15,7 @@ export default function Law() {
     <Layout>
       <div className='px-5 sm:px-20 pt-10 gradient-bg '>
         <div className='block md:hidden'>
+          <h1 className='my-9 text-green1 mobile sm:main'>Sloopmelding</h1>
           <div className='container pb-2'>
             <div className='container-image'>
               <Image src={IcontWood} alt='Icon of a Wood Log' />
@@ -128,7 +129,7 @@ export default function Law() {
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-3'>
           <div className='w-full sm:max-w-4xl p-6 pb-20 col-span-2'>
-            <h1 className='my-9 text-green1 mobile sm:main'>Sloopmelding</h1>
+            <h1 className='hidden sm:block my-9 text-green1 mobile sm:main'>Sloopmelding</h1>
 
             <div className='py-4'>
               <h2 className='pb-2 mobile sm:main'>De sloopmelding: wat is het?</h2>
