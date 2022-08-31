@@ -10,8 +10,13 @@ import HoutbouwDetails1 from '../public/houtbouw1.png';
 import HoutbouwDetails2 from '../public/houtbouw2.png';
 import HoutbouwDetails3 from '../public/houtbouw3.png';
 
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ');
+}
+
 const types = [
   {
+    id: 0,
     heroImage: HoutbouwHero,
     title: 'Houtbouw stimuleren',
     tag: '',
@@ -21,6 +26,7 @@ const types = [
     href: '/houtbouw',
   },
   {
+    id: 2,
     heroImage: WindmolensHero,
     title: 'Circulaire windturbines',
     tag: '',
@@ -30,6 +36,7 @@ const types = [
     href: '/circulaire-windturbines',
   },
   {
+    id: 3,
     heroImage: OverigeHero,
     title: 'Circulaire matrasketen, en…',
     tag: '',
@@ -42,25 +49,28 @@ const types = [
 
 const houtbouwTypes = [
   {
+    id: 0,
     heroImage: HoutbouwDetails1,
-    title: '',
-    description: 'Stimuleren van houtbouw binnen de gemeentelijke omgevingsvisie',
+    title: 'Stimuleren van houtbouw binnen de gemeentelijke omgevingsvisie',
+    description: '',
     tag: 'Omgevingswet',
     buttonText: 'Bekijk de maatregel',
     href: 'houtbouw/gemeentelijke-omgevingsvisie',
   },
   {
+    id: 1,
     heroImage: HoutbouwDetails2,
-    title: '',
-    description: 'Gebruiken van sloopmelding voor het hergebruiken van hout ',
+    title: 'Gebruiken van sloopmelding voor het hergebruiken van hout',
+    description: '',
     tag: 'Omgevingswet',
     buttonText: 'Bekijk de maatregel',
     href: 'houtbouw/sloopmelding',
   },
   {
+    id: 3,
     heroImage: HoutbouwDetails3,
-    title: '',
-    description: 'Inzetten van de MPG in subgunningscriteria voor aanbestedingen',
+    title: 'Inzetten van de MPG in subgunningscriteria voor aanbestedingen',
+    description: '',
     tag: 'Aanbesteding',
     buttonText: 'Bekijk de maatregel',
     href: 'houtbouw/gemeentelijke-omgevingsvisie',
@@ -85,29 +95,31 @@ export default function SectionTypes(props) {
         className='grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 sm:gap-x-10 max-w-8xl'
       >
         {type.map((file) => (
-          <li
-            key={file.title}
-            className='relative bg-white w-full rounded-md shadow grid content-between'
-          >
+          <li key={file.id} className='relative shadow bg-white w-full'>
             <div className='object-cover pointer-events-none'>
               <Image src={file.heroImage} layout='responsive' alt='Picture of the case' />
             </div>
             <div className='group block w-full p-4 bg-white px-10'>
-              <div className='inline-block'>
+              <div className={classNames(props.type === 'houtbouw' ? 'h-20' : '', 'inline-block')}>
                 <h3 className='mt-2 block text-black pointer-events-none pb-4'>{file.title}</h3>
               </div>
-              <p className='body-text-mobile sm:card-body block text-black pointer-events-none py-4 w-full'>
+              <p
+                className={classNames(
+                  props.type === 'home' ? '' : '',
+                  'body-text-mobile sm:card-body block text-black pointer-events-none py-4 w-full',
+                )}
+              >
                 {file.description}
               </p>
               {file.tag && (
                 <div className='my-8 '>
-                  <span className='p-2 rounded-md bg-green3'>{file.tag}</span>
+                  <span className='p-2 rounded-md bg-grey3 font-openSans text-xs'>{file.tag}</span>
                 </div>
               )}
               {file.buttonText && (
                 <button
                   type='button'
-                  className='inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-transparent hover:bg-greenLink '
+                  className='inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-transparent hover:bg-greenLink'
                 >
                   <Link href={file.href}>
                     <a>{file.buttonText} →</a>

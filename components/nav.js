@@ -34,17 +34,17 @@ export default function Nav() {
                 </Disclosure.Button>
               </div>
               <div className='flex items-baseline sm:justify-start '>
-                <div className='hidden sm:block md:py-5 lg:py-0'>
+                <div className='hidden lg:block md:py-5 lg:py-0'>
                   <Link href='/'>
                     <a className=''>
                       <Image src={CirculawLogo} alt='CircuLaw logo' />
                     </a>
                   </Link>
                 </div>
-                <div className='block sm:hidden'>
+                <div className='block lg:hidden'>
                   <Link href='/'>
                     <a className=''>
-                      <Image layout='fixed' width={200} src={CirculawLogo} alt='CircuLaw logo' />
+                      <Image layout='fixed' width={140} src={CirculawLogo} alt='CircuLaw logo' />
                     </a>
                   </Link>
                 </div>

@@ -16,7 +16,7 @@ export default function Houtbouw() {
   });
   return (
     <Layout>
-      <div className='grid grid-cols-1 lg:grid-cols-2 gradient-bg justify-items-end'>
+      <div className='grid grid-cols-1 lg:grid-cols-2 gradient-bg '>
         <div className='mx-7 sm:mx-20 max-w-2xl'>
           <div className='breadcrumb pt-8 text-greenLink'>
             <Link href='/'>
@@ -53,14 +53,13 @@ export default function Houtbouw() {
             </a>
           </span>
         </div>
-        <div className=''>
-          <Image
-            src={HoutbouwHero}
-            alt='Icon of Wood'
-            layout='fixed'
-            height='649px'
-            width='597px'
-          />
+        <div className='sm:justify-self-center lg:justify-self-end'>
+          <div className='hidden lg:block'>
+            <Image src={HoutbouwHero} alt='Icon of Wood' height='649px' width='597px' />
+          </div>
+          <div className='block lg:hidden'>
+            <Image src={HoutbouwHero} alt='Icon of Wood' height='649px' width='597px' />
+          </div>
         </div>
       </div>
 
@@ -76,6 +75,9 @@ export default function Houtbouw() {
           <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
             <div className='col-span-2'>
               <h2 className='pt-10 mobile sm:main'>35 Houtbouwmaatregelen</h2>
+              <div className='block py-4 sm:hidden'>
+                <Image src={HoutbouwSection1} alt='Houtbuow section image' layout='responsive' />
+              </div>
               <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
                 Weten waar kansen liggen om de houtbouwtransitie te versnellen? CircuLaw biedt je nu
                 een overzicht van 35 maatregelen die je daarvoor kunt inzetten.
@@ -88,7 +90,7 @@ export default function Houtbouw() {
                 </a>
               </Link>
             </div>
-            <div className=''>
+            <div className='hidden sm:block'>
               <Image src={HoutbouwSection1} alt='Houtbuow section image' layout='responsive' />
             </div>
           </div>
@@ -99,6 +101,9 @@ export default function Houtbouw() {
               <h2 className='pt-10 mobile sm:main'>
                 Bekijk houtbouwmaatregelen niet op zich, maar in samenhang
               </h2>
+              <div className='block py-4 sm:hidden'>
+                <Image src={HoutbouwSection2} alt='Houtbuow section image' layout='responsive' />
+              </div>
               <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
                 CircuLaw heeft 35 maatregelen gedefinieerd die je kunt inzetten om houtbouw te
                 stimuleren. Als je meerdere maatregelen toepast, is je impact natuurlijk groter.
@@ -110,7 +115,7 @@ export default function Houtbouw() {
                 Samenhang aantal houtbouwmaatregelen →
               </span>
             </div>
-            <div className=''>
+            <div className='hidden sm:block'>
               <Image src={HoutbouwSection2} alt='Houtbuow section image' layout='responsive' />
             </div>
           </div>
@@ -118,6 +123,9 @@ export default function Houtbouw() {
         <div className='border-b border-grey1 pb-40 pt-10'>
           <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
             <div className='col-span-2'>
+              <div className='block py-4 sm:hidden'>
+                <Image src={HoutbouwSection3} alt='Houtbuow section image' layout='responsive' />
+              </div>
               <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
                 Om een circulaire strategie volledig te implementeren, is samenwerking tussen
                 overheden en stakeholders nodig. Om te weten wie waarvoor aan de lat staat, is
@@ -128,7 +136,7 @@ export default function Houtbouw() {
                 Bekijk overzicht bevoegdheden maatregelen →
               </span>
             </div>
-            <div className=''>
+            <div className='hidden sm:block'>
               <Image src={HoutbouwSection3} alt='Houtbuow section image' layout='responsive' />
             </div>
           </div>
