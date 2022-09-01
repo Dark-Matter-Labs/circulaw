@@ -257,7 +257,7 @@ export default function WieMaken() {
               <a className='text-greenLink'>Neem contact met ons op</a>
             </Link>
             .
-            </p>
+          </p>
         </div>
         <div className='mx-7 sm:mx-20 my-20 max-w-sm'>
           <OverNav pagename='wie' />
