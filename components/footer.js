@@ -122,19 +122,19 @@ export default function Footer() {
       </div>
       <div className='max-w-7xl mx-auto pb-12 px-4 lg:pb-16'>
         <div className='grid grid-cols-2 gap-0.5 md:grid-cols-5 '>
-          <div className='col-span-1 flex justify-center py-8 px-8 '>
+          <div className='col-span-1 flex justify-center py-12 px-8 '>
             <Image src={logo1} alt='Amsterdam logo' />
           </div>
-          <div className='col-span-1 flex justify-center py-8 px-8 '>
+          <div className='col-span-1 flex justify-center py-12 px-8 '>
             <Image src={logo2} alt='Amsterdam logo' />
           </div>
           <div className='col-span-1 flex justify-center py-8 px-8 '>
             <Image src={logo3} alt='Amsterdam logo' />
           </div>
-          <div className='col-span-1 flex justify-center py-8 px-8 '>
+          <div className='col-span-1 flex justify-center py-12 px-8 '>
             <Image src={logo4} alt='Amsterdam logo' />
           </div>
-          <div className='col-span-1 flex justify-center py-8 px-8 '>
+          <div className='col-span-1 flex justify-center py-12 px-8 '>
             <Image src={logo5} alt='Amsterdam logo' />
           </div>
           <div className='col-span-1 flex justify-center py-8 px-8 '>
