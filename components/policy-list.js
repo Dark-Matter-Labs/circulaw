@@ -54,11 +54,35 @@ export default function PolicyList(props) {
                 )}
               </div>
               <div className='block my-1'>
-                <Link href={'/measures/' + id} key={lawDataIdx}>
-                  <a className='underline text-lg font-semibold no-underline hover:text-greenLink'>
-                    <h3>{titel} </h3>
-                  </a>
-                </Link>
+                {(function () {
+                  if (titel === 'Sloopmelding') {
+                    return (
+                      <Link href='/houtbouw/sloopmelding/' key={lawDataIdx}>
+                        <a className='underline text-lg font-semibold no-underline hover:text-greenLink'>
+                          <h3>{titel} </h3>
+                        </a>
+                      </Link>
+                    );
+                  } else if (
+                    titel === 'Houtbouw een plek geven in de gemeentelijke omgevingsvisie'
+                  ) {
+                    return (
+                      <Link href='/houtbouw/gemeentelijke-omgevingsvisie/' key={lawDataIdx}>
+                        <a className='underline text-lg font-semibold no-underline hover:text-greenLink'>
+                          <h3>{titel} </h3>
+                        </a>
+                      </Link>
+                    );
+                  } else {
+                    return (
+                      <Link href={'/measures/' + id} key={lawDataIdx}>
+                        <a className='underline text-lg font-semibold no-underline hover:text-greenLink'>
+                          <h3>{titel} </h3>
+                        </a>
+                      </Link>
+                    );
+                  }
+                })()}
               </div>
               <div className='block font-manrope font-bold text-xs pb-1'>
                 {europees && <span>Europees - </span>}
