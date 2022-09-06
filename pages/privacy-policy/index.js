@@ -12,7 +12,7 @@ export default function Privacy() {
         </p>
         <p className='body-text-mobile sm:body-text '>
           Contactgegevens projectteam CircuLaw:{' '}
-          <span className='text-greenLink'>
+          <span className='text-greenLink link-mobile sm:link'>
             <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
           </span>
         </p>
@@ -100,14 +100,14 @@ export default function Privacy() {
         <p className='body-text-mobile sm:body-text '>
           De gemeente Amsterdam heeft het recht om haar Privacyverklaring te wijzigen. Als er
           inhoudelijke wijzigingen worden doorgevoerd, maken we dit bekend via de website{' '}
-          <span className='text-greenLink'>
+          <span className='text-greenLink link-mobile sm:link'>
             <a href='https://www.amsterdam.nl/'>amsterdam.nl</a>
           </span>
           .{' '}
         </p>
         <p className='body-text-mobile sm:body-text '>
           Heb je vragen naar aanleiding van deze Privacyverklaring? Mail ons dan op{' '}
-          <span className='text-greenLink'>
+          <span className='text-greenLink link-mobile sm:link'>
             <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
           </span>
         </p>

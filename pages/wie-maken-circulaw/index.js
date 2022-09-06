@@ -14,21 +14,23 @@ export default function WieMaken() {
         <div className='grid grid-cols-1 sm:grid-cols-3'>
           <div className='my-20 col-span-2 text-black1'>
             <h1 className='pb-5 mobile sm:main'>Wie maken CircuLaw?</h1>
-            <p className='body-text-mobile sm:body-text max-w-4xl'>
+            <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
               Gemeente Amsterdam, Dark Matter Laboratories, EIT Climate KIC, de Provincies
               Noord-Holland en Flevoland, Rijksdienst voor Ondernemend Nederland (RVO), het MRA
               (Metropoolregio Amsterdam), Belastingdienst, TU Delft, Universiteit van Amsterdam,
               Erasmus School of Law, Vrije Universiteit (VU), Wageningen Universiteit, Stichting
               Koninklijk Nederlands Normalisatie Instituut (NEN).
             </p>
-            <br />
 
-            <h2 className='mobile sm:main'>Gemeente Amsterdam, Stedelijke Innovatie</h2>
+            <h2 className='mobile sm:main pb-2'>Gemeente Amsterdam, Stedelijke Innovatie</h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
               Gemeente Amsterdam is al jaren koploper in de circulaire economie. Het doel van de
               stad is om in 2050 volledig circulair te zijn, en het grondstoffengebruik in 2030
               gehalveerd te hebben.{' '}
-              <a href='https://www.amsterdam.nl/innovatie/duurzaamheid/' className='text-greenLink'>
+              <a
+                href='https://www.amsterdam.nl/innovatie/duurzaamheid/'
+                className='text-greenLink link-mobile sm:link'
+              >
                 Het stedelijk innovatieteam van Amsterdam
               </a>{' '}
               heeft CircuLaw in 2020 geïnitieerd. Dit team werkt samen met partners in en buiten de
@@ -39,9 +41,9 @@ export default function WieMaken() {
               van beleidsafdelingen bij aan de ontwikkeling van de tool.
             </p>
 
-            <h2 className='mobile sm:main'>Dark Matter Laboratories</h2>
+            <h2 className='mobile sm:main pb-2'>Dark Matter Laboratories</h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
-              <a href='https://darkmatterlabs.org/' className='text-greenLink'>
+              <a href='https://darkmatterlabs.org/' className='text-greenLink link-mobile sm:link'>
                 Dark Matter Labs (DML)
               </a>{' '}
               is een internationaal strategisch onderzoeks-, ontwerp- en ontwikkelingslab met als
@@ -53,9 +55,9 @@ export default function WieMaken() {
               interdisciplinaire kennisintegratie en technologische kennis.
             </p>
 
-            <h2 className='mobile sm:main'>EIT Climate-KIC</h2>
+            <h2 className='mobile sm:main pb-2'>EIT Climate-KIC</h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
-              <a href='https://www.climate-kic.org/' className='text-greenLink'>
+              <a href='https://www.climate-kic.org/' className='text-greenLink link-mobile sm:link'>
                 EIT Climate-KIC
               </a>{' '}
               is een kennis- en innovatiecommunity (KIC) die werkt aan het versnellen van de
@@ -67,23 +69,26 @@ export default function WieMaken() {
               financiering en kennis ontvangen.
             </p>
 
-            <h2 className='mobile sm:main'>Provincie Noord-Holland</h2>
+            <h2 className='mobile sm:main pb-2'>Provincie Noord-Holland</h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
               De Noord-Hollandse economie moet in het jaar 2050 volledig circulair zijn. Afval wordt
               dan niet meer verbrand of gestort maar gebruikt als grondstof voor nieuwe materialen
               en producten. Het delven van nieuwe grondstoffen wordt dan tot het minimum beperkt. Om
               dit te bereiken, wil de provincie circulair ondernemen én het circulair maken van
               grondstofketens stimuleren en opschalen.{' '}
-              <a href='https://www.noord-holland.nl/' className='text-greenLink'>
+              <a
+                href='https://www.noord-holland.nl/'
+                className='text-greenLink link-mobile sm:link'
+              >
                 Provincie Noord-Holland
               </a>{' '}
               draagt financieel bij aan de ontwikkeling van CircuLaw en levert kennis en advies op
               de ontwikkeling van de tool en service.
             </p>
 
-            <h2 className='mobile sm:main'>Provincie Flevoland</h2>
+            <h2 className='mobile sm:main pb-2'>Provincie Flevoland</h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
-              <a href='https://www.flevoland.nl/' className='text-greenLink'>
+              <a href='https://www.flevoland.nl/' className='text-greenLink link-mobile sm:link'>
                 Provincie Flevoland
               </a>{' '}
               heeft circulaire economie benoemd als één van de zeven hoofdopgaven in de
@@ -92,11 +97,14 @@ export default function WieMaken() {
               de ontwikkeling van CircuLaw.
             </p>
 
-            <h2 className='mobile sm:main'>Rijksdienst voor Ondernemend Nederland (RVO)</h2>
+            <h2 className='mobile sm:main pb-2'>Rijksdienst voor Ondernemend Nederland (RVO)</h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
               De Rijksoverheid zet zich in voor een uitstekend ondernemersklimaat. Ministeries
               stippelen daar beleid voor uit. De taak om dit beleid uit te voeren ligt bij{' '}
-              <a href='https://www.rvo.nl/klimaat-energie' className='text-greenLink'>
+              <a
+                href='https://www.rvo.nl/klimaat-energie'
+                className='text-greenLink link-mobile sm:link'
+              >
                 RVO
               </a>
               . RVO draagt vanuit de landelijke Transitieagenda Circulaire Bouweconomie financieel
@@ -104,9 +112,12 @@ export default function WieMaken() {
               ontwikkeling van CircuLaw.
             </p>
 
-            <h2 className='mobile sm:main'>Metropoolregio Amsterdam (MRA)</h2>
+            <h2 className='mobile sm:main pb-2'>Metropoolregio Amsterdam (MRA)</h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
-              <a href='https://www.metropoolregioamsterdam.nl/' className='text-greenLink'>
+              <a
+                href='https://www.metropoolregioamsterdam.nl/'
+                className='text-greenLink link-mobile sm:link'
+              >
                 De Metropoolregio Amsterdam
               </a>{' '}
               is het samenwerkingsverband van de provincies Noord-Holland en Flevoland, 30 gemeenten
@@ -117,7 +128,7 @@ export default function WieMaken() {
               maken, waar ondernemers op kunnen investeren. Vanuit het{' '}
               <a
                 href='https://www.metropoolregioamsterdam.nl/een-op-de-vijf-nieuwbouwwoningen-in-mra-vanaf-2025-van-hout/'
-                className='text-greenLink'
+                className='text-greenLink link-mobile sm:link'
               >
                 Kernteam Houtbouw
               </a>
@@ -125,11 +136,11 @@ export default function WieMaken() {
               hoe houtbouwmaatregelen het best toegepast kunnen worden.
             </p>
 
-            <h2 className='mobile sm:main'>Belastingdienst</h2>
+            <h2 className='mobile sm:main pb-2'>Belastingdienst</h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
               <a
                 href='https://www.belastingdienst.nl/wps/wcm/connect/nl/home/home'
-                className='text-greenLink'
+                className='text-greenLink link-mobile sm:link'
               >
                 De belastingdienst
               </a>{' '}
@@ -140,10 +151,10 @@ export default function WieMaken() {
               wetgeving kan worden geanalyseerd vanuit circulaire doelen.
             </p>
 
-            <h2 className='mobile sm:main'>Erasmus School of Law</h2>
+            <h2 className='mobile sm:main pb-2'>Erasmus School of Law</h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
               Professoren en academici vanuit de faculteiten{' '}
-              <a href='https://www.eur.nl/en/esl' className='text-greenLink'>
+              <a href='https://www.eur.nl/en/esl' className='text-greenLink link-mobile sm:link'>
                 ‘Law and Innovation’ en ‘Erasmus Centre for Local Governments’
               </a>{' '}
               dragen inhoudelijk bij aan de ontwikkeling van CircuLaw. Het gaat daarbij om kennis
@@ -152,12 +163,12 @@ export default function WieMaken() {
               ontwikkeld, wordt vervolgens gebruikt in het het universitaire onderwijs.
             </p>
 
-            <h2 className='mobile sm:main'>TU Delft</h2>
+            <h2 className='mobile sm:main pb-2'>TU Delft</h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
               De afdeling{' '}
               <a
                 href='https://www.tudelft.nl/bk/over-faculteit/afdelingen/management-in-the-built-environment'
-                className='text-greenLink'
+                className='text-greenLink link-mobile sm:link'
               >
                 Management in the Built Environment (MBE) van TU Delft
               </a>{' '}
@@ -169,13 +180,13 @@ export default function WieMaken() {
               toepassingsmodule van de CircuLaw.
             </p>
 
-            <h2 className='mobile sm:main'>
+            <h2 className='mobile sm:main pb-2'>
               Amsterdam Institute for Advanced Metropolitan Solutions (AMS)
             </h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
               <a
                 href='https://www.ams-institute.org/urban-challenges/circularity-urban-regions/'
-                className='text-greenLink'
+                className='text-greenLink link-mobile sm:link'
               >
                 AMS Institute{' '}
               </a>
@@ -189,11 +200,11 @@ export default function WieMaken() {
               CircuLaw.
             </p>
 
-            <h2 className='mobile sm:main'>Wageningen Universiteit - WUR Law group</h2>
+            <h2 className='mobile sm:main pb-2'>Wageningen Universiteit - WUR Law group</h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
               <a
                 href='https://www.wur.nl/en/research-results/chair-groups/social-sciences/law-group.htm'
-                className='text-greenLink'
+                className='text-greenLink link-mobile sm:link'
               >
                 WUR Law Group
               </a>{' '}
@@ -203,13 +214,13 @@ export default function WieMaken() {
               bij aan de inhoudelijke ontwikkeling van CircuLaw.
             </p>
 
-            <h2 className='mobile sm:main'>Vrije universiteit (VU)</h2>
+            <h2 className='mobile sm:main pb-2'>Vrije universiteit (VU)</h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
               Digitale mogelijkheden verbinden ons en brengen informatie dichterbij. Ze geven ons
               een gevoel van vrijheid en onafhankelijkheid. Wetenschappers van de{' '}
               <a
                 href='https://vu.nl/nl/onderzoek/thema/de-digitale-wereld'
-                className='text-greenLink'
+                className='text-greenLink link-mobile sm:link'
               >
                 Vrije Universiteit
               </a>{' '}
@@ -222,14 +233,14 @@ export default function WieMaken() {
               CircuLaw.
             </p>
 
-            <h2 className='mobile sm:main'>
+            <h2 className='mobile sm:main pb-2'>
               Stichting Koninklijk Nederlands Normalisatie Instituut (NEN)
             </h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
               Het programma Circulaire Economie van{' '}
               <a
                 href='https://www.nen.nl/afspraken-voor-een-circulaire-economie'
-                className='text-greenLink'
+                className='text-greenLink link-mobile sm:link'
               >
                 NEN
               </a>{' '}
@@ -239,25 +250,31 @@ export default function WieMaken() {
               het stimuleren van het gebruik van hernieuwbare grondstoffen. Met NEN wordt verkend
               hoe NEN normen concreet kunnen bijdragen aan het versnellen van de circulaire
               transitie. Ook wordt met het{' '}
-              <a href='https://www.nen.nl/innovatielab' className='text-greenLink'>
+              <a
+                href='https://www.nen.nl/innovatielab'
+                className='text-greenLink link-mobile sm:link'
+              >
                 NEN Innovatielab
               </a>{' '}
               verkend of en hoe in de toekomst op technisch gebied kan worden samengewerkt,
               bijvoorbeeld door koppeling met{' '}
-              <a href='https://connect.nen.nl/Portal' className='text-greenLink'>
+              <a
+                href='https://connect.nen.nl/Portal'
+                className='text-greenLink link-mobile sm:link'
+              >
                 NEN-Connect
               </a>
               .
             </p>
 
-            <h2 className='mobile sm:main'>Draag bij! </h2>
+            <h2 className='mobile sm:main pb-2'>Draag bij! </h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
               Wil je zelf bijdragen aan de ontwikkeling van CircuLaw? Dat kan! Wij zijn altijd op
               zoek naar nieuwe kennis, inzichten en ideeën en voorbeelden van toegepaste maatregelen
               in beleid zodat we het wet- en regelgevingsstelsel nog beter in dienst kunnen stellen
               van de circulaire transitie!{' '}
               <Link href='/contact'>
-                <a className='text-greenLink'>Neem contact met ons op</a>
+                <a className='text-greenLink link-mobile sm:link'>Neem contact met ons op</a>
               </Link>
               .
             </p>

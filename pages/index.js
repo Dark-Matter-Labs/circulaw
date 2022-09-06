@@ -320,13 +320,13 @@ export default function Index() {
           <p className='body-text-mobile sm:body-text'>
             In 2022 volgen meer thema’s binnen verschillende waardeketens. <br />
             Lees meer over de{' '}
-            <span className='bold-text text-greenLink'>
+            <span className='link-mobile sm:link text-greenLink'>
               <Link href='/status-en-ambities'>
                 <a>status en ambitie van CircuLaw</a>
               </Link>
             </span>{' '}
             of ga naar{' '}
-            <span className='bold-text text-greenLink'>
+            <span className='link-mobile sm:link text-greenLink'>
               <Link href='/hoe-het-werkt'>
                 <a>Vraag & Antwoord</a>
               </Link>
@@ -372,7 +372,7 @@ export default function Index() {
               informatie over wet-en regelgeving die voor beleidsmakers relevant is. Deze informatie
               wordt geleidelijk uitgebreid
             </p>
-            <span className='text-greenLink link'>
+            <span className='text-greenLink link-mobile sm:link'>
               <Link href='/status-en-ambities'>
                 <a>Lees verder →</a>
               </Link>
@@ -384,7 +384,7 @@ export default function Index() {
               CircuLaw wordt ontwikkeld door Gemeente Amsterdam, Dark Matter Labs en een consortium
               van publieke partners en kennisinstituten
             </p>
-            <span className='text-greenLink link'>
+            <span className='text-greenLink link-mobile sm:link'>
               <Link href='/wie-maken-circulaw'>
                 <a>Lees verder om te zien wie allemaal bijdragen aan CircuLaw →</a>
               </Link>

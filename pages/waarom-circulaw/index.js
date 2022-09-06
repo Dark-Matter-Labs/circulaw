@@ -14,7 +14,7 @@ export default function WaaromCirculaw() {
         <div className='grid grid-col-1 lg:grid-cols-3'>
           <div className='my-20 col-span-2 text-black1'>
             <h1 className='pb-5 mobile sm:main'>Waarom CircuLaw?</h1>
-            <p className='body-text-mobile sm:body-text max-w-4xl'>
+            <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
               Voor het tegengaan van klimaatverandering, het verminderen van vervuiling, het behoud
               van biodiversiteit en de beschikbaarheid van grondstoffen is een circulaire economie
               essentieel. In Nederland hebben we nog een lange weg te gaan. De wet- en regelgeving
@@ -24,7 +24,7 @@ export default function WaaromCirculaw() {
               en zo bij te dragen aan een versnelling van de circulaire transitie.
             </p>
 
-            <h2 className='mobile sm:main pt-5 pb-1'>
+            <h2 className='mobile sm:main pt-5 pb-2'>
               Wet-en regelgeving biedt aanknopingspunten voor actie, maar…
             </h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-5'>

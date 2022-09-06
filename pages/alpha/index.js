@@ -17,12 +17,12 @@ export default function Alpha() {
           Ga als gebruiker dus vooral aan de slag met alles wat je hier vindt, maar weet ook dat
           CircuLaw nog lang niet af is.
           <ul className='list-disc pl-6'>
-            <li className='text-greenLink'>
+            <li className='text-greenLink link-mobile sm:link'>
               <Link href='/status-en-ambities'>
                 <a>De status van CircuLaw</a>
               </Link>
             </li>
-            <li className='text-greenLink'>
+            <li className='text-greenLink link-mobile sm:link'>
               <Link href='/contact'>
                 <a>Mijn feedback op deze testversie</a>
               </Link>{' '}

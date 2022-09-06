@@ -172,7 +172,7 @@ export default function Law() {
                   maken. Zo staat in{' '}
                   <a
                     href='https://amsterdam2050.nl/wp-content/uploads/2021/06/OPM%20Omgevingsvisie-2050-20210613-200dpi.pdf'
-                    className='text-greenLink'
+                    className='text-greenLink link-mobile sm:link'
                   >
                     de omgevingsvisie van gemeente Amsterdam
                   </a>{' '}
@@ -188,7 +188,7 @@ export default function Law() {
                       Juridische informatie over de gemeentelijke omgevingsvisie:{' '}
                       <a
                         href='https://iplo.nl/regelgeving/instrumenten/omgevingsvisie-gemeente/staat-erin/#:~:text=Iedere%20gemeente%20in%20Nederland%20stelt,vervoer%2C%20infrastructuur%20en%20cultureel%20erfgoed.'
-                        className='text-greenLink'
+                        className='text-greenLink link-mobile sm:link'
                       >
                         Gemeentelijke omgevingsvisie: dit staat er in - Informatiepunt Leefomgeving
                         (iplo.nl)
@@ -198,7 +198,7 @@ export default function Law() {
                       De voormalige gemeente Weesp heeft houtbouw opgenomen in haar omgevingsvisie:{' '}
                       <a
                         href='https://assets.amsterdam.nl/publish/pages/1007002/definitief_vrm21_670_omgevingsvisie_weesp_14dec2021_spread_tg.pdf'
-                        className='text-greenLink '
+                        className='text-greenLink link-mobile sm:link'
                       >
                         https://assets.amsterdam.nl/publish/pages/1007002/definitief_vrm21_670_omgevingsvisie_weesp_14dec2021_spread_tg.pdf{' '}
                       </a>
@@ -207,7 +207,7 @@ export default function Law() {
                       Ook in de nationale omgevingsvisie is houtbouw opgenomen:{' '}
                       <a
                         href='https://www.denationaleomgevingsvisie.nl/publicaties/novi-stukken+publicaties/handlerdownloadfiles.ashx?idnv=1760380'
-                        className='text-greenLink'
+                        className='text-greenLink link-mobile sm:link'
                       >
                         Ministerie van Binnenlandse Zaken en Koninkrijksrelaties | Nationale
                         Omgevingsvisie (denationaleomgevingsvisie.nl)
@@ -218,7 +218,7 @@ export default function Law() {
                       opstellen van een omgevingsvisie:{' '}
                       <a
                         href='https://vng.nl/sites/default/files/2020-06/praktijkproef-afwegingskader-omgevingsvisie_20200529.pdf'
-                        className='text-greenLink'
+                        className='text-greenLink link-mobile sm:link'
                       >
                         praktijkproef-afwegingskader-omgevingsvisie_20200529.pdf (vng.nl)
                       </a>

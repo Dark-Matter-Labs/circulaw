@@ -187,7 +187,7 @@ export default function Law() {
                       Juridische informatie over sloopmeldingen:
                       <a
                         href='https://iplo.nl/regelgeving/regels-voor-activiteiten/sloopactiviteit/rijksregels-sloopactiviteit/informatieplicht-sloopactiviteit/'
-                        className='text-greenLink'
+                        className='text-greenLink link-mobile sm:link'
                       >
                         Informatieplicht sloopactiviteit - Informatiepunt Leefomgeving (iplo.nl)
                       </a>
@@ -203,7 +203,7 @@ export default function Law() {
                       eigen gemeente mogelijk te maken:
                       <a
                         href='https://openresearch.amsterdam/nl/page/86336/circular-demolition'
-                        className='text-greenLink'
+                        className='text-greenLink link-mobile sm:link'
                       >
                         Circular demolition - openresearch.amsterdam
                       </a>{' '}
@@ -212,7 +212,7 @@ export default function Law() {
                       Praktijkvoorbeelden van circulair slopen in het algemeen:
                       <a
                         href='https://circulairebouweconomie.nl/nieuws/praktijkvoorbeeld-succesvolle-circulaire-sloop-schoolgebouw-hattem/'
-                        className='text-greenLink'
+                        className='text-greenLink link-mobile sm:link'
                       >
                         Praktijkvoorbeeld - Succesvolle circulaire sloop schoolgebouw Hattem |
                         Circulaire Bouweconomie

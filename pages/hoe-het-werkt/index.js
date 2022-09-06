@@ -69,7 +69,7 @@ export default function Kunststoffen() {
             Welke casus of productgroep we na houtbouw en circulaire windturbines oppakken is nog
             niet bekend. Laat ons vooral weten waar jij behoefte aan hebt en waarom.
           </p>
-          <p className='link-mobile sm:link text-greenLink pb-4'>
+          <p className='link-mobile sm:link text-greenLink pb-4 link-mobile sm:link'>
             <Link href='/contact'>
               <a>Contact</a>
             </Link>
@@ -83,7 +83,7 @@ export default function Kunststoffen() {
             Geweldig! Hier horen we heel graag meer over, want jouw ervaringen helpen anderen
             verder.
           </p>
-          <p className='body-text-mobile sm:body-text text-greenLink pb-4'>
+          <p className='body-text-mobile sm:body-text text-greenLink pb-4 link-mobile sm:link'>
             <Link href='/contact'>
               <a>Contact</a>
             </Link>
@@ -93,7 +93,7 @@ export default function Kunststoffen() {
             Ik wil een suggestie doen, ik wil graag meewerken aan CircuLaw. Kan dat?
           </h2>
           <p className='body-text-mobile sm:body-text'>We horen graag van je!</p>
-          <p className='body-text-mobile sm:body-text text-greenLink pb-4'>
+          <p className='body-text-mobile sm:body-text text-greenLink pb-4 link-mobile sm:link'>
             <Link href='/contact'>
               <a>Contact</a>
             </Link>
@@ -106,7 +106,7 @@ export default function Kunststoffen() {
           <p className='body-text-mobile sm:body-text'>
             Wij komen graag met je in contact om de mogelijkheden te bespreken.
           </p>
-          <p className='body-text-mobile sm:body-text text-greenLink pb-4'>
+          <p className='body-text-mobile sm:body-text text-greenLink pb-4 link-mobile sm:link'>
             <Link href='/contact'>
               <a>Contact</a>
             </Link>
