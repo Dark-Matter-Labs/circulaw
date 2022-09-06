@@ -91,7 +91,7 @@ export default function PolicyList(props) {
                 {waterschappen && <span>Waterschappen - </span>}
                 {gemeentelijk && <span>Gemeentelijk</span>}
               </div>
-              <div className='block newlineDisplay twoLines font-manrope font-normal font-base mb-1'>
+              <div className='block newlineDisplay twoLines font-manrope font-normal font-base mb-4'>
                 <Link href={'/measures/' + id} key={lawDataIdx}>
                   <a>
                     <p className='max-w-xs sm:max-w-5xl'>{introductie_juridische_maatregel}</p>

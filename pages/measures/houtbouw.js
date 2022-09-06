@@ -373,290 +373,307 @@ export default function Measures() {
 
   return (
     <Layout>
-      <div className='min-h-full z-50'>
-        <Transition.Root show={sidebarOpen} as={Fragment}>
-          <Dialog as='div' className='relative z-40 lg:hidden' onClose={setSidebarOpen}>
-            <Transition.Child
-              as={Fragment}
-              enter='transition-opacity ease-linear duration-300'
-              enterFrom='opacity-0'
-              enterTo='opacity-100'
-              leave='transition-opacity ease-linear duration-300'
-              leaveFrom='opacity-100'
-              leaveTo='opacity-0'
-            >
-              <div className='fixed inset-0 bg-gray-600 bg-opacity-75' />
-            </Transition.Child>
-
-            <div className='fixed inset-0 flex z-40'>
+      <div className='max-w-7xl mx-7 lg:mx-auto'>
+        <div className='min-h-full z-50'>
+          <Transition.Root show={sidebarOpen} as={Fragment}>
+            <Dialog as='div' className='relative z-40 lg:hidden' onClose={setSidebarOpen}>
               <Transition.Child
                 as={Fragment}
-                enter='transition ease-in-out duration-300 transform'
-                enterFrom='-translate-x-full'
-                enterTo='translate-x-0'
-                leave='transition ease-in-out duration-300 transform'
-                leaveFrom='translate-x-0'
-                leaveTo='-translate-x-full'
+                enter='transition-opacity ease-linear duration-300'
+                enterFrom='opacity-0'
+                enterTo='opacity-100'
+                leave='transition-opacity ease-linear duration-300'
+                leaveFrom='opacity-100'
+                leaveTo='opacity-0'
               >
-                <Dialog.Panel className='relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-white'>
-                  <Transition.Child
-                    as={Fragment}
-                    enter='ease-in-out duration-300'
-                    enterFrom='opacity-0'
-                    enterTo='opacity-100'
-                    leave='ease-in-out duration-300'
-                    leaveFrom='opacity-100'
-                    leaveTo='opacity-0'
-                  >
-                    <div className='absolute top-0 right-0 pt-2'>
-                      <button
-                        type='button'
-                        className='ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'
-                        onClick={() => setSidebarOpen(false)}
-                      >
-                        <span className='sr-only'>Close sidebar</span>
-                        <XIcon className='h-6 w-6 text-green1' aria-hidden='true' />
-                      </button>
-                    </div>
-                  </Transition.Child>
-                  <div className='flex-shrink-0 flex items-center px-4'>
-                    <span className='font-manrope font-bold text-lg'>Filters</span>
-                  </div>
-                  <div className='flex-1 h-0 overflow-y-auto'>
-                    <div className='p-8 '>
-                      <SearchFilter
-                        ref={wettelijkFilterRef}
-                        title='Bevoegdheidsniveau'
-                        list={wettelijk_bevoegdheidsniveau}
-                        filterNumbers={[
-                          numberOfEuropees,
-                          numberOfNationaal,
-                          numberOfProvinciaal,
-                          numberOfGemeentelijk,
-                        ]}
-                        handleFilters={(checkboxState) =>
-                          handleFilters(checkboxState, 'wettelijk_bevoegdheidsniveau')
-                        }
-                      />
-                      <SearchFilter
-                        ref={rechtsgebiedFilterRef}
-                        title='Rechtsgebied'
-                        list={rechtsgebied}
-                        filterNumbers={[numberOfPubliek, numberOfPrivaat, numberOfFiscaal]}
-                        handleFilters={(checkboxState) =>
-                          handleFilters(checkboxState, 'rechtsgebied')
-                        }
-                      />
-                      <SearchFilter
-                        ref={rLadderFilterRef}
-                        title='R - ladder'
-                        list={r_ladder}
-                        filterNumbers={[
-                          numberOfR1,
-                          numberOfR2,
-                          numberOfR3,
-                          numberOfR4,
-                          numberOfR5,
-                          numberOfR6,
-                        ]}
-                        handleFilters={(checkboxState) => handleFilters(checkboxState, 'r_ladder')}
-                      />
-                      <SearchFilter
-                        ref={juridischeFilterRef}
-                        title='Juridische houdbaarheid'
-                        list={juridische_houdbaarheid}
-                        filterNumbers={[numberOfJ1, numberOfJ2, numberOfJ3, numberOfJ4, numberOfJ5]}
-                        handleFilters={(checkboxState) =>
-                          handleFilters(checkboxState, 'juridische_houdbaarheid')
-                        }
-                      />
-                      <SearchFilter
-                        ref={subrechtsgebiedFilterRef}
-                        title='Subrechtsgebied'
-                        list={subrechtsgebied}
-                        filterNumbers={[
-                          numberOfErp,
-                          numberOfOmg,
-                          numberOfAan,
-                          numberOfCont,
-                          numberOfGron,
-                        ]}
-                        handleFilters={(checkboxState) =>
-                          handleFilters(checkboxState, 'subrechtsgebied')
-                        }
-                      />
-                    </div>
-
-                    <span onClick={reset} className='link-mobile text-greenLink p-8'>
-                      Wis filters
-                    </span>
-                  </div>
-                </Dialog.Panel>
+                <div className='fixed inset-0 bg-gray-600 bg-opacity-75' />
               </Transition.Child>
-              <div className='flex-shrink-0 w-14' aria-hidden='true'>
-                {/* Dummy element to force sidebar to shrink to fit close icon */}
-              </div>
-            </div>
-          </Dialog>
-        </Transition.Root>
-      </div>
-      <div className='mx-7 sm:mx-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
-        <div className='hidden sm:block breadcrumb pt-8 text-greenLink'>
-          <Link href='/'>
-            <a>Home</a>
-          </Link>
-          <span className=''> → </span>
-          <Link href='/houtbouw'>
-            <a> Houtbouw </a>
-          </Link>
-        </div>
-        <div className='hidden sm:block col-span-2 bg-green3 bg-opacity font-manrope p-5 mt-2 mb-10 max-w-3xl'>
-          <h3>35 houtbouwmaatregelen voor innovatieve beleidsmakers</h3>
-          <p>
-            Wij hebben 35 kansvolle maatregelen gevonden waarmee je beleid uit kunt voeren om de
-            houtbouwtransitie te versnellen. Met sommige maatregelen is al praktijkervaring
-            opgedaan, met andere nog niet. Durf te pionieren. Jouw ervaringen kunnen dan ook anderen
-            weer verder helpen. <br />
-          </p>
-        </div>
 
-        <div className='container mb-2 sm:mb-20 mt-10'>
-          <div className='container-image'>
-            <Image src={IconWood} alt='Houtbouw icon' />
-          </div>
-          <div>
-            <h2 className='max-w-0 leading-6 pb-1 pl-1 mobile sm:main'>Houtbouw stimuleren</h2>
-          </div>
-        </div>
-        <div className='col-span-2'>
-          <div className='pt-5'>
-            <div>
-              <span className='font-manrope font-semibold text-base'>
-                Zoek in houtbouwmaatregelen
-              </span>
-            </div>
-            <div className='sm:w-6/12 py-4 mb-10 px-4 border border-grey1 rounded-xl'>
-              <div className='flex'>
-                <SearchIcon className='h-6 w-6' aria-hidden='true' />
-                <input
-                  onChange={(e) => setSearchValue(e.target.value)}
-                  value={searchValue}
-                  name='search'
-                  id='search'
-                  placeholder='Zoek op trefwoord'
-                  className='block w-full font-openSans text-grey1 italic'
-                />
+              <div className='fixed inset-0 flex z-40'>
+                <Transition.Child
+                  as={Fragment}
+                  enter='transition ease-in-out duration-300 transform'
+                  enterFrom='-translate-x-full'
+                  enterTo='translate-x-0'
+                  leave='transition ease-in-out duration-300 transform'
+                  leaveFrom='translate-x-0'
+                  leaveTo='-translate-x-full'
+                >
+                  <Dialog.Panel className='relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-white'>
+                    <Transition.Child
+                      as={Fragment}
+                      enter='ease-in-out duration-300'
+                      enterFrom='opacity-0'
+                      enterTo='opacity-100'
+                      leave='ease-in-out duration-300'
+                      leaveFrom='opacity-100'
+                      leaveTo='opacity-0'
+                    >
+                      <div className='absolute top-0 right-0 pt-2'>
+                        <button
+                          type='button'
+                          className='ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'
+                          onClick={() => setSidebarOpen(false)}
+                        >
+                          <span className='sr-only'>Close sidebar</span>
+                          <XIcon className='h-6 w-6 text-green1' aria-hidden='true' />
+                        </button>
+                      </div>
+                    </Transition.Child>
+                    <div className='flex-shrink-0 flex items-center px-4'>
+                      <span className='font-manrope font-bold text-lg'>Filters</span>
+                    </div>
+                    <div className='flex-1 h-0 overflow-y-auto'>
+                      <div className='p-8 '>
+                        <SearchFilter
+                          ref={wettelijkFilterRef}
+                          title='Bevoegdheidsniveau'
+                          list={wettelijk_bevoegdheidsniveau}
+                          filterNumbers={[
+                            numberOfEuropees,
+                            numberOfNationaal,
+                            numberOfProvinciaal,
+                            numberOfGemeentelijk,
+                          ]}
+                          handleFilters={(checkboxState) =>
+                            handleFilters(checkboxState, 'wettelijk_bevoegdheidsniveau')
+                          }
+                        />
+                        <SearchFilter
+                          ref={rechtsgebiedFilterRef}
+                          title='Rechtsgebied'
+                          list={rechtsgebied}
+                          filterNumbers={[numberOfPubliek, numberOfPrivaat, numberOfFiscaal]}
+                          handleFilters={(checkboxState) =>
+                            handleFilters(checkboxState, 'rechtsgebied')
+                          }
+                        />
+                        <SearchFilter
+                          ref={rLadderFilterRef}
+                          title='R - ladder'
+                          list={r_ladder}
+                          filterNumbers={[
+                            numberOfR1,
+                            numberOfR2,
+                            numberOfR3,
+                            numberOfR4,
+                            numberOfR5,
+                            numberOfR6,
+                          ]}
+                          handleFilters={(checkboxState) =>
+                            handleFilters(checkboxState, 'r_ladder')
+                          }
+                        />
+                        <SearchFilter
+                          ref={juridischeFilterRef}
+                          title='Juridische houdbaarheid'
+                          list={juridische_houdbaarheid}
+                          filterNumbers={[
+                            numberOfJ1,
+                            numberOfJ2,
+                            numberOfJ3,
+                            numberOfJ4,
+                            numberOfJ5,
+                          ]}
+                          handleFilters={(checkboxState) =>
+                            handleFilters(checkboxState, 'juridische_houdbaarheid')
+                          }
+                        />
+                        <SearchFilter
+                          ref={subrechtsgebiedFilterRef}
+                          title='Subrechtsgebied'
+                          list={subrechtsgebied}
+                          filterNumbers={[
+                            numberOfErp,
+                            numberOfOmg,
+                            numberOfAan,
+                            numberOfCont,
+                            numberOfGron,
+                          ]}
+                          handleFilters={(checkboxState) =>
+                            handleFilters(checkboxState, 'subrechtsgebied')
+                          }
+                        />
+                      </div>
+
+                      <span onClick={reset} className='link-mobile text-greenLink p-8'>
+                        Wis filters
+                      </span>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
+                <div className='flex-shrink-0 w-14' aria-hidden='true'>
+                  {/* Dummy element to force sidebar to shrink to fit close icon */}
+                </div>
               </div>
-              {searchValue !== '' && (
-                <button onClick={reset} className='text-greenLink font-manrope'>
-                  Clear search
-                </button>
+            </Dialog>
+          </Transition.Root>
+        </div>
+        <div className='mx-7 sm:mx-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 '>
+          <div className='hidden sm:block breadcrumb pt-8 text-greenLink'>
+            <Link href='/'>
+              <a>Home</a>
+            </Link>
+            <span className=''> → </span>
+            <Link href='/houtbouw'>
+              <a> Houtbouw </a>
+            </Link>
+          </div>
+          <div className='hidden sm:block col-span-2 bg-green3 bg-opacity font-manrope p-5 mt-2 mb-10 max-w-3xl'>
+            <h3>35 houtbouwmaatregelen voor innovatieve beleidsmakers</h3>
+            <p>
+              Wij hebben 35 kansvolle maatregelen gevonden waarmee je beleid uit kunt voeren om de
+              houtbouwtransitie te versnellen. Met sommige maatregelen is al praktijkervaring
+              opgedaan, met andere nog niet. Durf te pionieren. Jouw ervaringen kunnen dan ook
+              anderen weer verder helpen. <br />
+            </p>
+          </div>
+
+          <div className='container mb-2 sm:mb-20 mt-10'>
+            <div className='container-image'>
+              <Image src={IconWood} alt='Houtbouw icon' />
+            </div>
+            <div>
+              <h2 className='max-w-0 leading-6 pb-1 pl-1 mobile sm:main'>Houtbouw stimuleren</h2>
+            </div>
+          </div>
+          <div className='col-span-2'>
+            <div className='pt-5'>
+              <div>
+                <span className='font-manrope font-semibold text-base'>
+                  Zoek in houtbouwmaatregelen
+                </span>
+              </div>
+              <div className='sm:w-6/12 py-4 mb-10 px-4 border border-grey1 rounded-xl'>
+                <div className='flex'>
+                  <SearchIcon className='h-6 w-6' aria-hidden='true' />
+                  <input
+                    onChange={(e) => setSearchValue(e.target.value)}
+                    value={searchValue}
+                    name='search'
+                    id='search'
+                    placeholder='Zoek op trefwoord'
+                    className='block w-full font-openSans text-grey1 italic'
+                  />
+                </div>
+                {searchValue !== '' && (
+                  <button onClick={reset} className='text-greenLink font-manrope'>
+                    Clear search
+                  </button>
+                )}
+              </div>
+              {numberOfLaws === 0 && (
+                <div>
+                  <span className='font-manrope text-lg sm:text-xl'>
+                    <b>0</b> maatregelen gevonden voor <b>{searchValue}</b> in <b>Houtbouw</b>{' '}
+                  </span>
+                </div>
+              )}
+
+              {numberOfLaws > 1 && (
+                <div>
+                  <span className='font-manrope text-lg sm:text-xl'>
+                    <b>{numberOfLaws}</b> maatregelen gevonden voor <b>{searchValue}</b> in{' '}
+                    <b>Houtbouw</b>{' '}
+                  </span>
+                </div>
+              )}
+
+              {searchValue !== '' && numberOfLaws === 1 && (
+                <div>
+                  <span className='font-manrope text-lg sm:text-xl'>
+                    <b>{numberOfLaws}</b> maatregel gevonden voor <b>{searchValue}</b> in{' '}
+                    <b>Houtbouw</b>{' '}
+                  </span>
+                </div>
               )}
             </div>
-            {numberOfLaws === 0 && (
-              <div>
-                <span className='font-manrope text-lg sm:text-xl'>
-                  <b>0</b> maatregelen gevonden voor <b>{searchValue}</b> in <b>Houtbouw</b>{' '}
-                </span>
-              </div>
-            )}
+          </div>
 
-            {numberOfLaws > 1 && (
-              <div>
-                <span className='font-manrope text-lg sm:text-xl'>
-                  <b>{numberOfLaws}</b> maatregelen gevonden voor <b>{searchValue}</b> in{' '}
-                  <b>Houtbouw</b>{' '}
-                </span>
-              </div>
-            )}
+          <div className='lg:hidden py-5 w-28'>
+            <button
+              type='button'
+              className='px-4 inline-flex border-2 p-2 w-full border-black1 rounded-lg focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500 lg:hidden'
+              onClick={() => setSidebarOpen(true)}
+            >
+              <span className='sr-only'>Open sidebar</span>
+              <span className='font-openSans text-black text-base font-semibold'>Filter</span>
+              <AdjustmentsIcon className='h-6 w-6' aria-hidden='true' />
+            </button>
+          </div>
 
-            {searchValue !== '' && numberOfLaws === 1 && (
+          <div className='hidden lg:block mb-3'>
+            <span className='text-xl font-manrope font-semibold pr-8'>Filter op:</span>{' '}
+            <span
+              onClick={reset}
+              className='underline text-greenLink text-lg link-hover font-manrope font-extrabold'
+            >
+              Wis filters
+            </span>
+          </div>
+        </div>
+        <div className='flex mx-7 lg:mx-20'>
+          <div className='hidden lg:block p-3 my-4'>
+            <SearchFilter
+              ref={wettelijkFilterRef}
+              title='Bevoegdheidsniveau'
+              list={wettelijk_bevoegdheidsniveau}
+              filterNumbers={[
+                numberOfEuropees,
+                numberOfNationaal,
+                numberOfProvinciaal,
+                numberOfGemeentelijk,
+              ]}
+              handleFilters={(checkboxState) =>
+                handleFilters(checkboxState, 'wettelijk_bevoegdheidsniveau')
+              }
+            />
+            <SearchFilter
+              ref={rechtsgebiedFilterRef}
+              title='Rechtsgebied'
+              list={rechtsgebied}
+              filterNumbers={[numberOfPubliek, numberOfPrivaat, numberOfFiscaal]}
+              handleFilters={(checkboxState) => handleFilters(checkboxState, 'rechtsgebied')}
+            />
+            <SearchFilter
+              ref={rLadderFilterRef}
+              title='R - ladder'
+              list={r_ladder}
+              filterNumbers={[
+                numberOfR1,
+                numberOfR2,
+                numberOfR3,
+                numberOfR4,
+                numberOfR5,
+                numberOfR6,
+              ]}
+              handleFilters={(checkboxState) => handleFilters(checkboxState, 'r_ladder')}
+            />
+            <SearchFilter
+              ref={juridischeFilterRef}
+              title='Juridische houdbaarheid'
+              list={juridische_houdbaarheid}
+              filterNumbers={[numberOfJ1, numberOfJ2, numberOfJ3, numberOfJ4, numberOfJ5]}
+              handleFilters={(checkboxState) =>
+                handleFilters(checkboxState, 'juridische_houdbaarheid')
+              }
+            />
+            <SearchFilter
+              ref={subrechtsgebiedFilterRef}
+              title='Subrechtsgebied'
+              list={subrechtsgebied}
+              filterNumbers={[numberOfErp, numberOfOmg, numberOfAan, numberOfCont, numberOfGron]}
+              handleFilters={(checkboxState) => handleFilters(checkboxState, 'subrechtsgebied')}
+            />
+          </div>
+
+          <div className='mt-10 '>
+            {data && (
               <div>
-                <span className='font-manrope text-lg sm:text-xl'>
-                  <b>{numberOfLaws}</b> maatregel gevonden voor <b>{searchValue}</b> in{' '}
-                  <b>Houtbouw</b>{' '}
-                </span>
+                <PolicyList data={laws} casus='Houtbouw' />
               </div>
             )}
           </div>
-        </div>
-
-        <div className='lg:hidden py-5 w-28'>
-          <button
-            type='button'
-            className='px-4 inline-flex border-2 p-2 w-full border-black1 rounded-lg focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500 lg:hidden'
-            onClick={() => setSidebarOpen(true)}
-          >
-            <span className='sr-only'>Open sidebar</span>
-            <span className='font-openSans text-black text-base font-semibold'>Filter</span>
-            <AdjustmentsIcon className='h-6 w-6' aria-hidden='true' />
-          </button>
-        </div>
-
-        <div className='hidden lg:block mb-3'>
-          <span className='text-xl font-manrope font-semibold pr-8'>Filter op:</span>{' '}
-          <span
-            onClick={reset}
-            className='underline text-greenLink text-lg link-hover font-manrope font-extrabold'
-          >
-            Wis filters
-          </span>
-        </div>
-      </div>
-      <div className='flex mx-7 lg:mx-20'>
-        <div className='hidden lg:block p-3 my-4'>
-          <SearchFilter
-            ref={wettelijkFilterRef}
-            title='Bevoegdheidsniveau'
-            list={wettelijk_bevoegdheidsniveau}
-            filterNumbers={[
-              numberOfEuropees,
-              numberOfNationaal,
-              numberOfProvinciaal,
-              numberOfGemeentelijk,
-            ]}
-            handleFilters={(checkboxState) =>
-              handleFilters(checkboxState, 'wettelijk_bevoegdheidsniveau')
-            }
-          />
-          <SearchFilter
-            ref={rechtsgebiedFilterRef}
-            title='Rechtsgebied'
-            list={rechtsgebied}
-            filterNumbers={[numberOfPubliek, numberOfPrivaat, numberOfFiscaal]}
-            handleFilters={(checkboxState) => handleFilters(checkboxState, 'rechtsgebied')}
-          />
-          <SearchFilter
-            ref={rLadderFilterRef}
-            title='R - ladder'
-            list={r_ladder}
-            filterNumbers={[numberOfR1, numberOfR2, numberOfR3, numberOfR4, numberOfR5, numberOfR6]}
-            handleFilters={(checkboxState) => handleFilters(checkboxState, 'r_ladder')}
-          />
-          <SearchFilter
-            ref={juridischeFilterRef}
-            title='Juridische houdbaarheid'
-            list={juridische_houdbaarheid}
-            filterNumbers={[numberOfJ1, numberOfJ2, numberOfJ3, numberOfJ4, numberOfJ5]}
-            handleFilters={(checkboxState) =>
-              handleFilters(checkboxState, 'juridische_houdbaarheid')
-            }
-          />
-          <SearchFilter
-            ref={subrechtsgebiedFilterRef}
-            title='Subrechtsgebied'
-            list={subrechtsgebied}
-            filterNumbers={[numberOfErp, numberOfOmg, numberOfAan, numberOfCont, numberOfGron]}
-            handleFilters={(checkboxState) => handleFilters(checkboxState, 'subrechtsgebied')}
-          />
-        </div>
-
-        <div className='mt-10 sm:ml-10'>
-          {data && (
-            <div>
-              <PolicyList data={laws} casus='Houtbouw' />
-            </div>
-          )}
         </div>
       </div>
     </Layout>

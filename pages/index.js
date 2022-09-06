@@ -8,7 +8,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import ActionPanel from '../components/section-action-panel';
 import Layout from '/components/layout';
 import SectionTypes from '/components/section-types-list';
-import logo from '../public/logo-home.svg';
+import logo from '../public/Circulaw_logotype_home.png';
 import { get_waardeketens, get_over } from '../utils/nav_structure';
 
 const waardeketens = get_waardeketens();
@@ -26,7 +26,7 @@ export default function Index() {
           <Disclosure as='nav' className=' '>
             {({ open }) => (
               <>
-                <div className='px-2 sm:px-6 lg:px-20'>
+                <div className='lg:max-w-7xl lg:mx-auto'>
                   <div className=''>
                     <div className='inset-y-0 float-right flex items-center lg:hidden'>
                       {/* Mobile menu button */}
@@ -43,14 +43,20 @@ export default function Index() {
                       <div className='hidden lg:block md:py-5 lg:py-0'>
                         <Link href='/'>
                           <a className=''>
-                            <Image src={logo} alt='CircuLaw logo' />
+                            <Image height={46} width={250} src={logo} alt='CircuLaw logo' />
                           </a>
                         </Link>
                       </div>
-                      <div className='block lg:hidden'>
+                      <div className='block lg:hidden py-4 mx-7'>
                         <Link href='/'>
                           <a className=''>
-                            <Image width={140} src={logo} alt='CircuLaw logo' quality={100} />
+                            <Image
+                              height={24}
+                              width={120}
+                              src={logo}
+                              alt='CircuLaw logo'
+                              quality={100}
+                            />
                           </a>
                         </Link>
                       </div>
@@ -307,79 +313,83 @@ export default function Index() {
       </div>
 
       <div className='px-5 sm:px-20 bg-greenAlpha pb-20' name='thema'>
-        <h2 className='pb-6 pt-8 mobile sm:main text-green1'>Thema’s</h2>
+        <div className='max-w-7xl mx-auto'>
+          <h2 className='pb-6 pt-8 mobile sm:main text-green1'>Thema’s</h2>
 
-        <SectionTypes type='home' />
-        <p className='body-text-mobile sm:body-text'>
-          In 2022 volgen meer thema’s binnen verschillende waardeketens. <br />
-          Lees meer over de{' '}
-          <span className='bold-text text-greenLink'>
-            <Link href='/status-en-ambities'>
-              <a>status en ambitie van CircuLaw</a>
-            </Link>
-          </span>{' '}
-          of ga naar{' '}
-          <span className='bold-text text-greenLink'>
-            <Link href='/hoe-het-werkt'>
-              <a>Vraag & Antwoord</a>
-            </Link>
-          </span>
-        </p>
+          <SectionTypes type='home' />
+          <p className='body-text-mobile sm:body-text'>
+            In 2022 volgen meer thema’s binnen verschillende waardeketens. <br />
+            Lees meer over de{' '}
+            <span className='link-mobile sm:link text-greenLink'>
+              <Link href='/status-en-ambities'>
+                <a>status en ambitie van CircuLaw</a>
+              </Link>
+            </span>{' '}
+            of ga naar{' '}
+            <span className='link-mobile sm:link text-greenLink'>
+              <Link href='/hoe-het-werkt'>
+                <a>Vraag & Antwoord</a>
+              </Link>
+            </span>
+          </p>
+        </div>
       </div>
       <div className='px-5 sm:px-20 bg-white py-20 mr-10'>
-        <h1 className='mobile sm:main text-green1' name='waarom'>
-          Over CircuLaw
-        </h1>
-        <div className='border-b border-grey1 pb-10'>
-          <h2 className='pt-10 mobile sm:main'>Waarom CircuLaw?</h2>
-          <p className='body-text-mobile sm:body-text py-5 max-w-4xl'>
-            Om binnen planetaire grenzen te opereren is een circulaire economie essentieel. Hiervoor
-            is meer drang en dwang nodig. CircuLaw laat juridische mogelijkheden zien die kunnen
-            bijdragen aan versnelling van de circulaire transitie.
-          </p>
-          <span className='text-greenLink link-mobile sm:link'>
-            <Link href='/waarom-circulaw'>
-              <a>Lees verder →</a>
-            </Link>
-          </span>
-        </div>
-        <div className='border-b border-grey1 pb-10'>
-          <h2 className='pt-10 mobile sm:main'>Wat is CircuLaw?</h2>
-          <p className='body-text-mobile sm:body-text py-5 max-w-4xl'>
-            CircuLaw is een service waarmee we in de eerste plaats beleidsmakers en
-            transitiemanagers helpen meer en beter gebruik te maken van regelgeving om de circulaire
-            economie te bevorderen.
-          </p>
-          <span className='text-greenLink link-mobile sm:link'>
-            <Link href='/wat-is-circulaw'>
-              <a>Lees verder →</a>
-            </Link>
-          </span>
-        </div>
-        <div className='border-b border-grey1 pb-10'>
-          <h2 className='pt-10 mobile sm:main'>Status en ambities CircuLaw</h2>
-          <p className='body-text-mobile sm:body-text py-5 max-w-4xl'>
-            CircuLaw wordt stap voor stap ontwikkeld. Op dit moment bevat de website vooral
-            informatie over wet-en regelgeving die voor beleidsmakers relevant is. Deze informatie
-            wordt geleidelijk uitgebreid
-          </p>
-          <span className='text-greenLink link'>
-            <Link href='/status-en-ambities'>
-              <a>Lees verder →</a>
-            </Link>
-          </span>
-        </div>
-        <div className='pb-10'>
-          <h2 className='pt-10 mobile sm:main'>Wie zijn betrokken bij CircuLaw?</h2>
-          <p className='body-text-mobile sm:body-text py-5 max-w-4xl'>
-            CircuLaw wordt ontwikkeld door Gemeente Amsterdam, Dark Matter Labs en een consortium
-            van publieke partners en kennisinstituten
-          </p>
-          <span className='text-greenLink link'>
-            <Link href='/wie-maken-circulaw'>
-              <a>Lees verder om te zien wie allemaal bijdragen aan CircuLaw →</a>
-            </Link>
-          </span>
+        <div className='max-w-7xl mx-auto'>
+          <h1 className='mobile sm:main text-green1' name='waarom'>
+            Over CircuLaw
+          </h1>
+          <div className='border-b border-grey1 pb-10'>
+            <h2 className='pt-10 mobile sm:main'>Waarom CircuLaw?</h2>
+            <p className='body-text-mobile sm:body-text py-5 max-w-4xl'>
+              Om binnen planetaire grenzen te opereren is een circulaire economie essentieel.
+              Hiervoor is meer drang en dwang nodig. CircuLaw laat juridische mogelijkheden zien die
+              kunnen bijdragen aan versnelling van de circulaire transitie.
+            </p>
+            <span className='text-greenLink link-mobile sm:link'>
+              <Link href='/waarom-circulaw'>
+                <a>Lees verder →</a>
+              </Link>
+            </span>
+          </div>
+          <div className='border-b border-grey1 pb-10'>
+            <h2 className='pt-10 mobile sm:main'>Wat is CircuLaw?</h2>
+            <p className='body-text-mobile sm:body-text py-5 max-w-4xl'>
+              CircuLaw is een service waarmee we in de eerste plaats beleidsmakers en
+              transitiemanagers helpen meer en beter gebruik te maken van regelgeving om de
+              circulaire economie te bevorderen.
+            </p>
+            <span className='text-greenLink link-mobile sm:link'>
+              <Link href='/wat-is-circulaw'>
+                <a>Lees verder →</a>
+              </Link>
+            </span>
+          </div>
+          <div className='border-b border-grey1 pb-10'>
+            <h2 className='pt-10 mobile sm:main'>Status en ambities CircuLaw</h2>
+            <p className='body-text-mobile sm:body-text py-5 max-w-4xl'>
+              CircuLaw wordt stap voor stap ontwikkeld. Op dit moment bevat de website vooral
+              informatie over wet-en regelgeving die voor beleidsmakers relevant is. Deze informatie
+              wordt geleidelijk uitgebreid
+            </p>
+            <span className='text-greenLink link-mobile sm:link'>
+              <Link href='/status-en-ambities'>
+                <a>Lees verder →</a>
+              </Link>
+            </span>
+          </div>
+          <div className='pb-10'>
+            <h2 className='pt-10 mobile sm:main'>Wie zijn betrokken bij CircuLaw?</h2>
+            <p className='body-text-mobile sm:body-text py-5 max-w-4xl'>
+              CircuLaw wordt ontwikkeld door Gemeente Amsterdam, Dark Matter Labs en een consortium
+              van publieke partners en kennisinstituten
+            </p>
+            <span className='text-greenLink link-mobile sm:link'>
+              <Link href='/wie-maken-circulaw'>
+                <a>Lees verder om te zien wie allemaal bijdragen aan CircuLaw →</a>
+              </Link>
+            </span>
+          </div>
         </div>
       </div>
       <ActionPanel

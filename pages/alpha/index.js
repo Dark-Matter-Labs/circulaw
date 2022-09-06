@@ -4,7 +4,7 @@ import Layout from '../../components/layout';
 export default function Alpha() {
   return (
     <Layout>
-      <div className='mx-7 sm:mx-20 my-20 max-w-2xl'>
+      <div className='mx-7 max-w-7xl lg:mx-auto my-20 max-w-2xl'>
         <h1 className='mobile sm:main text-black1 pb-2'>Testversie CircuLaw</h1>
         <p className='body-text-mobile sm:body-text text-black1'>
           In deze versie testen we de techniek, de opzet én de inhoud van de site.
@@ -17,12 +17,12 @@ export default function Alpha() {
           Ga als gebruiker dus vooral aan de slag met alles wat je hier vindt, maar weet ook dat
           CircuLaw nog lang niet af is.
           <ul className='list-disc pl-6'>
-            <li className='text-greenLink'>
+            <li className='text-greenLink link-mobile sm:link'>
               <Link href='/status-en-ambities'>
                 <a>De status van CircuLaw</a>
               </Link>
             </li>
-            <li className='text-greenLink'>
+            <li className='text-greenLink link-mobile sm:link'>
               <Link href='/contact'>
                 <a>Mijn feedback op deze testversie</a>
               </Link>{' '}

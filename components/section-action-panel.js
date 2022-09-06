@@ -2,7 +2,7 @@ import Link from 'next/link';
 export default function ActionPanel(props) {
   return (
     <div className='bg-green3 py-10'>
-      <div className='mx-7 sm:mx-20 py-5'>
+      <div className='mx-7 sm:max-w-7xl sm:mx-auto py-5'>
         <h2 className='mobile sm:main'>{props.title}</h2>
         <div className='sm:flex sm:items-start sm:justify-between'>
           <div>
@@ -13,7 +13,7 @@ export default function ActionPanel(props) {
               <a>
                 <button
                   type='button'
-                  className='inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-transparent hover:bg-greenLink focus:outline-none'
+                  className='inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-transparent hover:bg-green1 hover:text-white1 focus:outline-none'
                 >
                   {props.buttonText} →
                 </button>

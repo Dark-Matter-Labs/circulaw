@@ -21,7 +21,7 @@ const types = [
     title: 'Houtbouw stimuleren',
     tag: '',
     description:
-      'Meer bouwen met hout heeft grote invloed op het klimaat. Daarom vind je hier maatregelen om houtbouw te stimuleren en een leidraad voor de toepassing van een aantal van die maatregelen',
+      'Meer bouwen met hout heeft grote invloed op het klimaat. Daarom vind je hier maatregelen om houtbouw te stimuleren en een leidraad voor de toepassing van een aantal van die maatregelen.',
     buttonText: 'Meer over houtbouw',
     href: '/houtbouw',
   },
@@ -114,7 +114,7 @@ export default function SectionTypes(props) {
               <p
                 className={classNames(
                   props.type === 'home' ? '' : '',
-                  'body-text-mobile sm:card-body block text-black pointer-events-none py-4 w-full',
+                  'body-text-mobile sm:card-body block text-black pointer-events-none py-4 w-full ',
                 )}
               >
                 {file.description}
@@ -127,7 +127,7 @@ export default function SectionTypes(props) {
               {file.buttonText && (
                 <button
                   type='button'
-                  className='inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-transparent hover:bg-greenLink'
+                  className='inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-transparent hover:bg-green1 hover:text-white1'
                 >
                   <Link href={file.href}>
                     <a>{file.buttonText} →</a>
