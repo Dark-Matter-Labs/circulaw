@@ -5,15 +5,15 @@ export default function Alpha() {
   return (
     <Layout>
       <div className='mx-7 sm:mx-20 my-20 max-w-2xl'>
-        <h1 className='mobile sm:main'>Testversie CircuLaw</h1>
-        <p className='body-text-mobile sm:body-text'>
+        <h1 className='mobile sm:main text-black1 pb-2'>Testversie CircuLaw</h1>
+        <p className='body-text-mobile sm:body-text text-black1'>
           In deze versie testen we de techniek, de opzet én de inhoud van de site.
         </p>
-        <p className='body-text-mobile sm:body-text'>
+        <p className='body-text-mobile sm:body-text text-black1'>
           We horen heel graag wat jij ervan vindt, wat je anders zou willen, wat je mist en
           natuurlijk horen we ook graag waar je blij van wordt.
         </p>
-        <p className='body-text-mobile sm:body-text'>
+        <p className='body-text-mobile sm:body-text text-black1'>
           Ga als gebruiker dus vooral aan de slag met alles wat je hier vindt, maar weet ook dat
           CircuLaw nog lang niet af is.
           <ul className='list-disc pl-6'>

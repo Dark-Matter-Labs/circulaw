@@ -96,12 +96,20 @@ export default function SectionTypes(props) {
       >
         {type.map((file) => (
           <li key={file.id} className='relative shadow bg-white w-full'>
-            <div className='object-cover pointer-events-none'>
-              <Image src={file.heroImage} layout='responsive' alt='Picture of the case' />
+            <div className='object-cover'>
+              <Link href={file.href}>
+                <a>
+                  <Image src={file.heroImage} layout='responsive' alt='Picture of the case' />
+                </a>
+              </Link>
             </div>
-            <div className='group block w-full p-4 bg-white px-10'>
+            <div className='group block w-full p-4 bg-white px-10 '>
               <div className={classNames(props.type === 'houtbouw' ? 'h-20' : '', 'inline-block')}>
-                <h3 className='mt-2 block text-black pointer-events-none pb-4'>{file.title}</h3>
+                <Link href={file.href}>
+                  <a>
+                    <h3 className='mt-2 block text-black pointer-events-none pb-4'>{file.title}</h3>
+                  </a>
+                </Link>
               </div>
               <p
                 className={classNames(

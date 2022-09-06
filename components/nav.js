@@ -44,7 +44,7 @@ export default function Nav() {
                 <div className='block lg:hidden'>
                   <Link href='/'>
                     <a className=''>
-                      <Image layout='fixed' width={140} src={CirculawLogo} alt='CircuLaw logo' />
+                      <Image width={140} src={CirculawLogo} alt='CircuLaw logo' />
                     </a>
                   </Link>
                 </div>

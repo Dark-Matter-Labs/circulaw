@@ -123,6 +123,9 @@ export default function Houtbouw() {
         <div className='border-b border-grey1 pb-40 pt-10'>
           <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
             <div className='col-span-2'>
+              <h2 className='pt-10 mobile sm:main'>
+                Welke overheid heeft welke bevoegdheid voor houtbouwmaatregelen?
+              </h2>
               <div className='block py-4 sm:hidden'>
                 <Image src={HoutbouwSection3} alt='Houtbuow section image' layout='responsive' />
               </div>

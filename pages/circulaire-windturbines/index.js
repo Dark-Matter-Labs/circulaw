@@ -54,7 +54,7 @@ export default function Windturbine() {
               <Link href='/measures/windturbines'>
                 <a>
                   <span className='text-greenLink link-mobile sm:link'>
-                    Bekijk alle houtbouwmaatregelen →
+                    Bekijk alle circulaire windturbines maatregelen →
                   </span>
                 </a>
               </Link>
