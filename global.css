@@ -245,10 +245,6 @@
   line-height: 18px;
 }
 
-.description {
-  max-width: 90%;
-}
-
 .twoLines {
   line-height: 1.5em;
   height: 3em;
@@ -259,10 +255,6 @@
   -webkit-box-orient: vertical;
 }
 
-.detailPageLink:hover {
-  color: #4099da;
-  text-decoration: underline;
-}
 
 .link-hover:hover {
   cursor: pointer;
