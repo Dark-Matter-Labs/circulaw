@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, Fragment } from 'react';
-import { Dialog, Menu, Transition } from '@headlessui/react';
+import { Dialog, Transition } from '@headlessui/react';
 import useSWR from 'swr';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -651,7 +651,7 @@ export default function Measures() {
           />
         </div>
 
-        <div className='lg:mt-10 lg:ml-10'>
+        <div className='mt-10 sm:ml-10'>
           {data && (
             <div>
               <PolicyList data={laws} casus='Houtbouw' />

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, Fragment } from 'react';
-import { Dialog, Menu, Transition } from '@headlessui/react';
+import { Dialog, Transition } from '@headlessui/react';
 import useSWR from 'swr';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -576,7 +576,7 @@ export default function Measures() {
               <div>
                 <span className='font-manrope text-lg sm:text-xl'>
                   <b>{numberOfLaws}</b> maatregel gevonden voor <b>{searchValue}</b> in{' '}
-                  <b>irculaire windturbines</b>{' '}
+                  <b>Circulaire windturbines</b>{' '}
                 </span>
               </div>
             )}
