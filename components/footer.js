@@ -122,19 +122,19 @@ export default function Footer() {
       </div>
       <div className='max-w-7xl mx-auto pb-12 px-4 lg:pb-16'>
         <div className='grid grid-cols-2 gap-0.5 md:grid-cols-5 '>
-          <div className='col-span-1 flex justify-center py-12 px-8 '>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
             <Image src={logo1} alt='Amsterdam logo' />
           </div>
-          <div className='col-span-1 flex justify-center py-12 px-8 '>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
             <Image src={logo2} alt='Amsterdam logo' />
           </div>
-          <div className='col-span-1 flex justify-center py-8 px-8 '>
+          <div className='col-span-1 flex justify-center py-2 px-8 '>
             <Image src={logo3} alt='Amsterdam logo' />
           </div>
-          <div className='col-span-1 flex justify-center py-12 px-8 '>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
             <Image src={logo4} alt='Amsterdam logo' />
           </div>
-          <div className='col-span-1 flex justify-center py-12 px-8 '>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
             <Image src={logo5} alt='Amsterdam logo' />
           </div>
           <div className='col-span-1 flex justify-center py-8 px-8 '>
@@ -169,7 +169,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className='mx-20 sm:mx-20 pb-10 text-white1 text-sm'>
+      <div className='mx-7 sm:max-w-7xl sm:mx-auto pb-10 text-white1 text-sm'>
         <p>
           Welkom bij CircuLaw. Deze website is volop in ontwikkeling en in deze versie testen we dan
           ook de techniek, opzet en inhoud van de site. Wat betreft de inhoud zijn sommige

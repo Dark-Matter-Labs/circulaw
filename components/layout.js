@@ -7,7 +7,7 @@ export default function Layout(props) {
   return (
     <>
       <div className='bg-grey2 border border-grey1'>
-        <div className='mx-2 sm:mx-20 p-4'>
+        <div className='mx-7 sm:mx-auto max-w-7xl py-4'>
           <div className='flex justify-between flex-wrap'>
             <div className='w-0 flex-1 flex items-center'>
               <p className='ml-3 font-medium text-black1 truncate font-manrope font-normal'>

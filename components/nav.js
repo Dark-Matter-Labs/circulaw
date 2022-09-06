@@ -6,7 +6,7 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
 import { get_waardeketens, get_over } from '../utils/nav_structure';
-import CirculawLogo from '../public/Circulaw_logotype.svg';
+import CirculawLogo from '../public/Circulaw_logotype.png';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -17,10 +17,10 @@ const over = get_over();
 
 export default function Nav() {
   return (
-    <Disclosure as='nav' className='sticky top-0 z-40'>
+    <Disclosure as='nav' className='sticky top-0 z-40 bg-blush2'>
       {({ open }) => (
         <>
-          <div className='bg-blush2 px-2 sm:px-6 lg:px-20 lg:py-8'>
+          <div className='lg:py-8 max-w-7xl mx-auto'>
             <div className=''>
               <div className='inset-y-0 float-right flex items-center lg:hidden'>
                 {/* Mobile menu button */}
@@ -37,14 +37,26 @@ export default function Nav() {
                 <div className='hidden lg:block md:py-5 lg:py-0'>
                   <Link href='/'>
                     <a className=''>
-                      <Image src={CirculawLogo} alt='CircuLaw logo' />
+                      <Image
+                        height={46}
+                        width={250}
+                        src={CirculawLogo}
+                        alt='CircuLaw logo'
+                        quality={100}
+                      />
                     </a>
                   </Link>
                 </div>
-                <div className='block lg:hidden'>
+                <div className='block lg:hidden py-4 mx-7'>
                   <Link href='/'>
                     <a className=''>
-                      <Image width={140} src={CirculawLogo} alt='CircuLaw logo' />
+                      <Image
+                        height={24}
+                        width={120}
+                        src={CirculawLogo}
+                        alt='CircuLaw logo'
+                        quality={100}
+                      />
                     </a>
                   </Link>
                 </div>
