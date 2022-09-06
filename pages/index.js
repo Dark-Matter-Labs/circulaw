@@ -50,7 +50,7 @@ export default function Index() {
                       <div className='block lg:hidden'>
                         <Link href='/'>
                           <a className=''>
-                            <Image width={140} src={logo} alt='CircuLaw logo' />
+                            <Image width={140} src={logo} alt='CircuLaw logo' quality={100} />
                           </a>
                         </Link>
                       </div>
