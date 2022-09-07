@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Layout from '../../components/layout';
-import TimberImage from '../../public/Timber_Measures_Web.svg';
+import TimberImage from '../../public/Timber_Measures_Web.png';
 
 export default function InfoPage() {
   return (
