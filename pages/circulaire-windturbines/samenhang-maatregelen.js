@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Layout from '../../components/layout';
-import TimberImage from '../../public/Windmill_Process_Web.svg';
+import TimberImage from '../../public/Windmill_Process_Web.png';
 
 export default function InfoPage() {
   return (
