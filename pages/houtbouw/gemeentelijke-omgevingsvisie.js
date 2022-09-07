@@ -87,7 +87,7 @@ export default function Law() {
                   <div
                     key={rating}
                     className={classNames(
-                      2 > rating ? 'score-true' : 'score-false',
+                      3 > rating ? 'score-true' : 'score-false',
                       'mr-5 h-6 w-6 flex-shrink-0 rounded-full',
                     )}
                     aria-hidden='true'
@@ -120,7 +120,7 @@ export default function Law() {
                   <div
                     key={rating}
                     className={classNames(
-                      1 > rating ? 'score-true' : 'score-false',
+                      5 > rating ? 'score-true' : 'score-false',
                       'mr-5 h-6 w-6 flex-shrink-0 rounded-full',
                     )}
                     aria-hidden='true'
@@ -383,7 +383,7 @@ export default function Law() {
                     <div
                       key={rating}
                       className={classNames(
-                        2 > rating ? 'score-true' : 'score-false',
+                        3 > rating ? 'score-true' : 'score-false',
                         'mr-5 h-6 w-6 flex-shrink-0 rounded-full',
                       )}
                       aria-hidden='true'
@@ -416,7 +416,7 @@ export default function Law() {
                     <div
                       key={rating}
                       className={classNames(
-                        1 > rating ? 'score-true' : 'score-false',
+                        5 > rating ? 'score-true' : 'score-false',
                         'mr-5 h-6 w-6 flex-shrink-0 rounded-full',
                       )}
                       aria-hidden='true'

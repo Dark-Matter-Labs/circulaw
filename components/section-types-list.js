@@ -69,11 +69,11 @@ const houtbouwTypes = [
   {
     id: 3,
     heroImage: HoutbouwDetails3,
-    title: 'Inzetten van de MPG in subgunningscriteria voor aanbestedingen',
+    title: 'Inzetten van de MPG als subselectiecriterium bij gronduitgifte',
     description: '',
     tag: 'Aanbesteding',
     buttonText: 'Bekijk de maatregel',
-    href: 'houtbouw/gemeentelijke-omgevingsvisie',
+    href: 'houtbouw/mpg-als-subselectiecriterium-bij-gronduitgifte',
   },
 ];
 
