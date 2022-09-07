@@ -6,9 +6,9 @@ import SectionTypes from '/components/section-types-list';
 
 import WoodIcon from '../../public/icons/wood.svg';
 import HoutbouwHero from '../../public/houtbouwHero.jpeg';
-import HoutbouwSection1 from '../../public/houtbouwsection1.png';
-import HoutbouwSection2 from '../../public/houtbouwsection2.png';
-import HoutbouwSection3 from '../../public/houtbouwsection3.png';
+import HoutbouwSection1 from '../../public/Measures_Teaser.png';
+import HoutbouwSection2 from '../../public/Timber_Process_Teaser.png';
+import HoutbouwSection3 from '../../public/Timber_Measures_Teaser.png';
 
 export default function Houtbouw() {
   useEffect(() => {
@@ -106,9 +106,7 @@ export default function Houtbouw() {
             <div className='border-b border-grey1 pb-10'>
               <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
                 <div className='col-span-2'>
-                  <h2 className='pt-10 mobile sm:main'>
-                    Bekijk houtbouwmaatregelen niet op zich, maar in samenhang
-                  </h2>
+                  <h2 className='pt-10 mobile sm:main'>Bekijk houtbouwmaatregelen in samenhan</h2>
                   <div className='block py-4 sm:hidden'>
                     <Image
                       src={HoutbouwSection2}
@@ -123,9 +121,13 @@ export default function Houtbouw() {
                     Daarom bieden we je hier bij wijze van voorbeeld inzicht in de relatie tussen
                     een aantal maatregelen.
                   </p>
-                  <span className='text-greenLink link-mobile sm:link'>
-                    Samenhang aantal houtbouwmaatregelen →
-                  </span>
+                  <Link href='/houtbouw/samenhang-aantal-houtbouwmaatregelen'>
+                    <a>
+                      <span className='text-greenLink link-mobile sm:link'>
+                        Samenhang aantal houtbouwmaatregelen →
+                      </span>
+                    </a>
+                  </Link>
                 </div>
                 <div className='hidden sm:block'>
                   <Image src={HoutbouwSection2} alt='Houtbuow section image' layout='responsive' />
@@ -136,7 +138,7 @@ export default function Houtbouw() {
               <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
                 <div className='col-span-2'>
                   <h2 className='pt-10 mobile sm:main'>
-                    Welke overheid heeft welke bevoegdheid voor houtbouwmaatregelen?
+                    Bevoegdheden overheid voor houtbouwmaatregelen
                   </h2>
                   <div className='block py-4 sm:hidden'>
                     <Image
@@ -151,9 +153,13 @@ export default function Houtbouw() {
                     inzicht nodig in bevoegdheden en verantwoordelijkheden. In dit overzicht wordt
                     per maatregel duidelijk welke laag van de overheid betrokken is.
                   </p>
-                  <span className='text-greenLink link-mobile sm:link'>
-                    Bekijk overzicht bevoegdheden maatregelen →
-                  </span>
+                  <Link href='/houtbouw/welke-overheid'>
+                    <a>
+                      <span className='text-greenLink link-mobile sm:link'>
+                        Bekijk overzicht bevoegdheden maatregelen →
+                      </span>
+                    </a>
+                  </Link>
                 </div>
                 <div className='hidden sm:block'>
                   <Image src={HoutbouwSection3} alt='Houtbuow section image' layout='responsive' />

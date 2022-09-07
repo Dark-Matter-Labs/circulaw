@@ -5,9 +5,9 @@ import Layout from '../../components/layout';
 
 import WindmillIcon from '../../public/windmill.svg';
 import WindturbineHero from '../../public/windturbineHero.jpg';
-import HoutbouwSection1 from '../../public/houtbouwsection1.png';
-import HoutbouwSection2 from '../../public/houtbouwsection2.png';
-import HoutbouwSection3 from '../../public/houtbouwsection3.png';
+import HoutbouwSection1 from '../../public/Measures_Teaser.png';
+import HoutbouwSection2 from '../../public/Windmill_Process_Teaser.png';
+import HoutbouwSection3 from '../../public/Timber_Measures_Teaser.png';
 
 export default function Windturbine() {
   useEffect(() => {
@@ -81,7 +81,7 @@ export default function Windturbine() {
               <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
                 <div className='col-span-2'>
                   <h2 className='pt-10 mobile sm:main'>
-                    Bekijk circulaire windturbine maatregelen niet op zich, maar in samenhang
+                    Samenhang maatregelen circulaire windturbines
                   </h2>
                   <div className='block py-4 sm:hidden'>
                     <Image
@@ -97,9 +97,13 @@ export default function Windturbine() {
                     met elkaar samenhangen. Daarom bieden we je ook inzicht in de relatie tussen de
                     verschillende maatregelen.
                   </p>
-                  <span className='text-greenLink link-mobile sm:link'>
-                    Samenhang circulaire windturbine maatregelen →
-                  </span>
+                  <Link href='/circulaire-windturbines/samenhang-maatregelen'>
+                    <a>
+                      <span className='text-greenLink link-mobile sm:link'>
+                        Samenhang maatregelen circulaire windturbines →
+                      </span>
+                    </a>
+                  </Link>
                 </div>
                 <div className='hidden sm:block'>
                   <Image src={HoutbouwSection2} alt='Houtbuow section image' layout='responsive' />
@@ -109,6 +113,9 @@ export default function Windturbine() {
             <div className='border-b border-grey1 pb-40 pt-10'>
               <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
                 <div className='col-span-2'>
+                  <h2 className='pt-10 mobile sm:main'>
+                    Welke overheid heeft welke bevoegdheid voor maatregelen circulaire windturbines?
+                  </h2>
                   <div className='block py-4 sm:hidden'>
                     <Image
                       src={HoutbouwSection3}
@@ -122,9 +129,13 @@ export default function Windturbine() {
                     inzicht nodig in bevoegdheden en verantwoordelijkheden. In dit overzicht wordt
                     per maatregel duidelijk welke laag van de overheid betrokken is.
                   </p>
-                  <span className='text-greenLink link-mobile sm:link'>
-                    Bekijk het bevoegdheden-overzicht →
-                  </span>
+                  <Link href='/circulaire-windturbines/welke-overheid-heeft'>
+                    <a>
+                      <span className='text-greenLink link-mobile sm:link'>
+                        Bekijk het bevoegdheden-overzicht →
+                      </span>
+                    </a>
+                  </Link>
                 </div>
                 <div className='hidden sm:block'>
                   <Image src={HoutbouwSection3} alt='Houtbuow section image' layout='responsive' />

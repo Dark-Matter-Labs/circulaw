@@ -85,7 +85,7 @@ export default function Law() {
                   <div
                     key={rating}
                     className={classNames(
-                      3 > rating ? 'score-true' : 'score-false',
+                      1 > rating ? 'score-true' : 'score-false',
                       'mr-5 h-6 w-6 flex-shrink-0 rounded-full',
                     )}
                     aria-hidden='true'
@@ -118,7 +118,7 @@ export default function Law() {
                   <div
                     key={rating}
                     className={classNames(
-                      4 > rating ? 'score-true' : 'score-false',
+                      5 > rating ? 'score-true' : 'score-false',
                       'mr-5 h-6 w-6 flex-shrink-0 rounded-full',
                     )}
                     aria-hidden='true'
@@ -170,6 +170,24 @@ export default function Law() {
                   </ul>
                 </div>
               </div>
+              <div className='bg-green1 px-4 py-4 mx-5'>
+                <h2 className='pb-2 mobile sm:main text-white1'>
+                  Zelf aan de slag met sloopmeldingen
+                </h2>
+                <p className='body-text-mobile sm:body-text text-white1 pb-4'>
+                  Waar moet je aan denken om in jouw organisatie sloopmeldingen te gebruiken voor
+                  circulaire doeleinden?
+                </p>
+                <a download href='/public/LeidraadSloopmeldingen-CircuLaw.pdf'>
+                  <button
+                    type='button'
+                    className='inline-flex rounded-full items-center px-4 py-2 border border-green2 button text-white1 bg-green2'
+                  >
+                    Bekijk de leidraad →
+                  </button>
+                </a>
+              </div>
+
               <div className='py-4'>
                 <h2 className='pb-2 mobile sm:main'>Uit de praktijk</h2>
                 <p className='body-text-mobile sm:body-text'>
@@ -194,7 +212,10 @@ export default function Law() {
                     </li>
                     <li>
                       Informatie over circulair slopen:
-                      <a href='https://www.allesovercirculairslopen.nl/' className='text-greenLink'>
+                      <a
+                        href='https://www.allesovercirculairslopen.nl/'
+                        className='text-greenLink link-mobile sm:link'
+                      >
                         Alles over circulair slopen | powered by VERAS
                       </a>
                     </li>
@@ -365,7 +386,7 @@ export default function Law() {
                     <div
                       key={rating}
                       className={classNames(
-                        3 > rating ? 'score-true' : 'score-false',
+                        1 > rating ? 'score-true' : 'score-false',
                         'mr-5 h-6 w-6 flex-shrink-0 rounded-full',
                       )}
                       aria-hidden='true'
@@ -398,7 +419,7 @@ export default function Law() {
                     <div
                       key={rating}
                       className={classNames(
-                        4 > rating ? 'score-true' : 'score-false',
+                        5 > rating ? 'score-true' : 'score-false',
                         'mr-5 h-6 w-6 flex-shrink-0 rounded-full',
                       )}
                       aria-hidden='true'
