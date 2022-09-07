@@ -106,7 +106,7 @@ export default function Houtbouw() {
             <div className='border-b border-grey1 pb-10'>
               <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
                 <div className='col-span-2'>
-                  <h2 className='pt-10 mobile sm:main'>Bekijk houtbouwmaatregelen in samenhan</h2>
+                  <h2 className='pt-10 mobile sm:main'>Bekijk houtbouwmaatregelen in samenhang</h2>
                   <div className='block py-4 sm:hidden'>
                     <Image
                       src={HoutbouwSection2}
