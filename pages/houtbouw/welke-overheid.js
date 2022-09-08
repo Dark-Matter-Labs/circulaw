@@ -9,6 +9,9 @@ export default function InfoPage() {
         <h1 className='mobile sm:main text-green1 pb-2'>
           Welke overheid heeft welke bevoegdheid voor houtbouwmaatregelen?
         </h1>
+        <div className=''>
+          <Image src={TimberImage} layout='responsive' alt='Picture of the case' />
+        </div>
         <p className='body-text-mobile sm:body-text text-black1 pb-6'>
           Op rijksniveau kunnen regels gesteld worden ten aanzien van hergebruik van producten en
           kan het Rijk financieel bijdragen aan doelen die gesteld worden in een omgevingsvisie -
@@ -32,9 +35,6 @@ export default function InfoPage() {
           worden verankerd. Als laatste kunnen overheden innovatie toestaan middels technische
           gelijkwaardigheid van bouwonderdelen en door experimenten.
         </p>
-      </div>
-      <div className='mx-10'>
-        <Image src={TimberImage} layout='responsive' alt='Picture of the case' />
       </div>
     </Layout>
   );

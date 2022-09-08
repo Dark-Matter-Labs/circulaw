@@ -170,7 +170,7 @@ export default function Law() {
                   </ul>
                 </div>
               </div>
-              <div className='bg-green1 px-4 py-4 mx-5'>
+              <div className='bg-green1 px-4 py-4'>
                 <h2 className='pb-2 mobile sm:main text-white1'>
                   Zelf aan de slag met sloopmeldingen
                 </h2>
@@ -188,7 +188,7 @@ export default function Law() {
                 </a>
               </div>
 
-              <div className='py-4'>
+              <div className='py-5'>
                 <h2 className='pb-2 mobile sm:main'>Uit de praktijk</h2>
                 <p className='body-text-mobile sm:body-text'>
                   De sloopmelding is onderdeel van de regelgeving van de Omgevingswet; omdat de
