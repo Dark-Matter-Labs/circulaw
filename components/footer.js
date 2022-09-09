@@ -63,7 +63,7 @@ const navigation = {
 export default function Footer() {
   return (
     <footer className='bg-green1' aria-labelledby='footer-heading'>
-      <div className='max-w-7xl mx-auto pt-12 px-4 sm:px-6 lg:pt-16 lg:px-8'>
+      <div className='global-margin pt-12 px-4 sm:px-6 lg:pt-16 lg:px-8'>
         <div className='pb-8'>
           <div className='grid grid-cols-1 gap-8 sm:col-span-3'>
             <div className='sm:grid sm:grid-cols-4 md:gap-8'>
@@ -120,7 +120,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className='max-w-7xl mx-auto pb-12 px-4 lg:pb-16'>
+      <div className='global-margin pb-12 px-4 lg:pb-16'>
         <div className='grid grid-cols-2 gap-0.5 md:grid-cols-5 '>
           <div className='col-span-1 flex justify-center py-8 px-8 '>
             <Image src={logo1} alt='Amsterdam logo' />
@@ -169,7 +169,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className='mx-7 sm:max-w-7xl sm:mx-auto pb-10 text-white1 text-sm'>
+      <div className='global-margin pb-10 text-white1 text-sm'>
         <p>
           Welkom bij CircuLaw. Deze website is volop in ontwikkeling en in deze versie testen we dan
           ook de techniek, opzet en inhoud van de site. Wat betreft de inhoud zijn sommige

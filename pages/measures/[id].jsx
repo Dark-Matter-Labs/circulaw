@@ -67,7 +67,7 @@ export default function Law() {
   return (
     <Layout>
       <div className='gradient-bg'>
-        <div className='mx-7 max-w-7xl lg:mx-auto pt-10'>
+        <div className='global-margin pt-10'>
           {data.casus === 'Houtbouw' ? (
             <Link href='/measures/houtbouw' className=''>
               <a className='text-greenLink breadcrumb'>← Terug</a>

@@ -3,7 +3,7 @@ import Layout from '../../components/layout';
 export default function Privacy() {
   return (
     <Layout>
-      <div className='mx-7 max-w-7xl lg:mx-auto my-20 max-w-2xl text-black1'>
+      <div className='global-margin my-20 max-w-2xl text-black1'>
         <h1 className='mobile sm:main'>Privacyverklaring</h1>
         <p className='body-text-mobile sm:body-text pt-2'>
           Het projectteam CircuLaw is verantwoordelijk voor de verwerking van persoonsgegevens zoals
