@@ -20,7 +20,7 @@ export default function Nav() {
     <Disclosure as='nav' className='sticky top-0 z-40 bg-blush2'>
       {({ open }) => (
         <>
-          <div className='lg:py-8 max-w-7xl mx-auto'>
+          <div className='lg:py-8 global-margin'>
             <div className=''>
               <div className='inset-y-0 float-right flex items-center lg:hidden'>
                 {/* Mobile menu button */}
@@ -62,7 +62,7 @@ export default function Nav() {
                 </div>
                 <div className='hidden lg:ml-6 lg:flex'>
                   <div className='flex inset-x-0 top-0 pl-5 invisible lg:visible hidden lg:inline '>
-                    <div className='flex-1 max-w-7xl px-2 sm:px-6 lg:px-8'>
+                    <div className='flex-1 global-margin px-2 sm:px-6 lg:px-8'>
                       <div className='content right-0'>
                         <div className='relative flex items-center justify-between font-manrope font-semibold'>
                           <div className=''>

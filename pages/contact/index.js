@@ -11,7 +11,7 @@ export default function Contact() {
   const [agreed, setAgreed] = useState(false);
   return (
     <Layout>
-      <div className='mx-7 sm:mx-auto max-w-7xl'>
+      <div className='global-margin'>
         <h1 className='text-green1 pt-10 mobile sm:main'>Contact</h1>
         <p className='body-text-mobile sm:body-text py-10 max-w-2xl'>
           Heb je een vraag of opmerking over de site of het project? Vul dan je gegevens in. Na

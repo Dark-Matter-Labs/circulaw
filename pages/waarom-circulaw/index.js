@@ -5,7 +5,7 @@ import OverNav from '../../components/over-nav';
 export default function WaaromCirculaw() {
   return (
     <Layout>
-      <div className='mx-7 max-w-7xl lg:mx-auto'>
+      <div className='global-margin'>
         <div className='breadcrumb pt-8 text-greenLink'>
           <Link href='/'>
             <a>Home &gt; </a>

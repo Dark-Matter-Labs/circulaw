@@ -26,7 +26,7 @@ export default function Index() {
           <Disclosure as='nav' className=' '>
             {({ open }) => (
               <>
-                <div className='lg:max-w-7xl lg:mx-auto'>
+                <div className='global-margin'>
                   <div className=''>
                     <div className='inset-y-0 float-right flex items-center lg:hidden'>
                       {/* Mobile menu button */}
@@ -62,7 +62,7 @@ export default function Index() {
                       </div>
                       <div className='hidden lg:ml-6 lg:flex'>
                         <div className='flex inset-x-0 top-0 pl-5 invisible lg:visible hidden lg:inline '>
-                          <div className='flex-1 max-w-7xl px-2 sm:px-6 lg:px-8'>
+                          <div className='flex-1 global-margin px-2 sm:px-6 lg:px-8'>
                             <div className='content right-0'>
                               <div className='relative flex items-center justify-between font-manrope font-semibold'>
                                 <div className=''>
@@ -313,7 +313,7 @@ export default function Index() {
       </div>
 
       <div className='px-5 sm:px-20 bg-greenAlpha pb-20' name='thema'>
-        <div className='max-w-7xl mx-auto'>
+        <div className='global-margin'>
           <h2 className='pb-6 pt-8 mobile sm:main text-green1'>Thema’s</h2>
 
           <SectionTypes type='home' />
@@ -335,7 +335,7 @@ export default function Index() {
         </div>
       </div>
       <div className='px-5 sm:px-20 bg-white py-20 mr-10'>
-        <div className='max-w-7xl mx-auto'>
+        <div className='global-margin'>
           <h1 className='mobile sm:main text-green1' name='waarom'>
             Over CircuLaw
           </h1>

@@ -14,7 +14,7 @@ export default function Law() {
   return (
     <Layout>
       <div className='gradient-bg '>
-        <div className='mx-7 lg:mx-auto max-w-7xl pt-10 '>
+        <div className='global-margin pt-10 '>
           <div className='block lg:hidden'>
             <h1 className='my-9 text-green1 mobile sm:main'>Sloopmelding</h1>
             <div className='container pb-2'>
@@ -129,7 +129,7 @@ export default function Law() {
             </div>
           </div>
           <div className='grid grid-cols-1 sm:grid-cols-3'>
-            <div className='w-full sm:max-w-4xl p-6 pb-20 col-span-2'>
+            <div className='w-full sm:max-w-4xl pb-20 col-span-2'>
               <h1 className='hidden lg:block my-9 text-green1 mobile sm:main'>Sloopmelding</h1>
 
               <div className='py-4'>

@@ -373,7 +373,7 @@ export default function Measures() {
 
   return (
     <Layout>
-      <div className='max-w-7xl mx-7 lg:mx-auto'>
+      <div className='global-margin'>
         <div className='min-h-full z-50'>
           <Transition.Root show={sidebarOpen} as={Fragment}>
             <Dialog as='div' className='relative z-40 lg:hidden' onClose={setSidebarOpen}>

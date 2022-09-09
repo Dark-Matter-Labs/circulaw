@@ -16,7 +16,7 @@ export default function Windturbine() {
   return (
     <Layout>
       <div className='gradient-bg'>
-        <div className='max-w-7xl mx-7 sm:mx-auto'>
+        <div className='global-margin'>
           <div className='grid grid-cols-1 lg:grid-cols-2'>
             <div className=''>
               <div className='breadcrumb pt-8 text-greenLink'>
@@ -46,7 +46,7 @@ export default function Windturbine() {
       </div>
 
       <div className='bg-green3 bg-opacity-10'>
-        <div className='max-w-7xl mx-7 sm:mx-auto'>
+        <div className='global-margin'>
           <div className='pt-5'>
             <div className='border-b border-grey1 pb-10'>
               <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
