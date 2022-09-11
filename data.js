@@ -2007,7 +2007,7 @@ export const laws = [
     "kop_3_uit_de_praktijk": "Uit de praktijk",
     "uit_de_praktijk": "Hoewel dit voorbeeld geen overheidslichaam is, kan het toch als inspiratie dienen: ASR biedt als grootgrondbezitter korting op de pachtprijs aan boeren die duurzaam te werk gaan.",
     "voorbeeld_link_teks": "https://www.volkskrant.nl/nieuws-achtergrond/verzekeraar-en-grondbezitter-asr-helpt-duurzame-boeren-met-korting-op-pachtprijs~bd5b3404/",
-    "voorbeeld_link": "",
+    "voorbeeld_link": "https://www.volkskrant.nl/nieuws-achtergrond/verzekeraar-en-grondbezitter-asr-helpt-duurzame-boeren-met-korting-op-pachtprijs~bd5b3404/",
     "afbeelding_van_voorbeeld_link": "",
     "kop_4_eisen_en_beperkingen": "Eisen en beperkingen",
     "eisen_en_beperkingen": "- Bij het geven van korting op de huurprijs moet wel gelet worden op de staatssteunregels. \n- Staatssteun houdt in dat een voordeel wordt geboden aan een marktpartij dat andere marktpartijen niet toekomt. \nDit verstoort de mededinging. Staatssteun is in beginsel dan ook verboden. \n- Hier bestaan wel uitzonderingen op. Ten aanzien van staatssteun dient onderzocht te worden of dit idee onder een van de uitzonderingen van de Algemene Groepsvrijstellingsverordening valt of dat de DE-minimisverordening kan worden toegepast. Deze laatste verordening maakt uitzonderingen voor staatssteun onder een bepaald maximum, 200.000 euro of minder, afhankelijk van de sector.\n- Als geen sprake is van staatssteun, is de Wet Markt & Overheid van toepassing. De gemeente verricht hier namelijk zelf een economische activiteit (het verhuren van onroerend goed). In de wet staan gedragsregels waar de gemeente zich aan moet houden om oneerlijke concurrentie te voorkomen.",

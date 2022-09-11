@@ -73,7 +73,7 @@ export default function Law() {
               <a className='text-greenLink breadcrumb'>← Terug</a>
             </Link>
           ) : (
-            <Link href='/measures/windmolens' className=''>
+            <Link href='/measures/windturbines' className=''>
               <a className='text-greenLink breadcrumb'>← Terug</a>
             </Link>
           )}

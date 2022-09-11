@@ -1,16 +1,24 @@
 import Image from 'next/image';
 import Layout from '../../components/layout';
 import TimberImage from '../../public/Timber_Process_Web.png';
+import TimberImageMob from '../../public/Timber_Process_Mob.png';
 
 export default function InfoPage() {
   return (
     <Layout>
-      <div className='global-margin my-20'>
-        <h1 className='mobile sm:main text-green1 pb-2'>Samenhang aantal houtbouwmaatregelen</h1>
-        <div className=''>
-          <Image src={TimberImage} layout='responsive' alt='Picture of the case' />
-        </div>
-        <div className=''>
+      <div className='global-margin mt-20'>
+        <h1 className='mobile sm:main text-green1 pb-2 max-w-3xl mx-auto'>
+          Samenhang aantal houtbouwmaatregelen
+        </h1>
+      </div>
+      <div className='hidden sm:block image-margin'>
+        <Image src={TimberImage} layout='responsive' alt='Picture of the case' />
+      </div>
+      <div className='block sm:hidden'>
+        <Image src={TimberImageMob} layout='responsive' alt='Picture of the case' />
+      </div>
+      <div className='global-margin mb-20'>
+        <div className='max-w-3xl mx-auto'>
           <p className='body-text-mobile sm:body-text text-black1 pb-6'>
             In een omgevingsvisie of omgevingsprogramma kunnen overheden kenbaar maken dat zij
             ambities hebben om met hout te bouwen. Hierdoor kunnen financiële bijdragen worden

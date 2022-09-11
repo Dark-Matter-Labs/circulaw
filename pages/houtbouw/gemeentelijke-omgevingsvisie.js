@@ -185,43 +185,42 @@ export default function Law() {
                 <div className='newlineDisplay body-text-mobile sm:body-text truncate'>
                   <ul className='list-disc pl-6'>
                     <li>
-                      Juridische informatie over de gemeentelijke omgevingsvisie:{' '}
                       <a
                         href='https://iplo.nl/regelgeving/instrumenten/omgevingsvisie-gemeente/staat-erin/#:~:text=Iedere%20gemeente%20in%20Nederland%20stelt,vervoer%2C%20infrastructuur%20en%20cultureel%20erfgoed.'
                         className='text-greenLink link-mobile sm:link'
                       >
-                        Gemeentelijke omgevingsvisie: dit staat er in - Informatiepunt Leefomgeving
-                        (iplo.nl)
-                      </a>
+                        Juridische informatie
+                      </a>{' '}
+                      over de gemeentelijke omgevingsvisie
                     </li>
                     <li>
-                      De voormalige gemeente Weesp heeft houtbouw opgenomen in haar omgevingsvisie:{' '}
+                      De voormalige gemeente Weesp heeft houtbouw opgenomen in haar{' '}
                       <a
                         href='https://assets.amsterdam.nl/publish/pages/1007002/definitief_vrm21_670_omgevingsvisie_weesp_14dec2021_spread_tg.pdf'
                         className='text-greenLink link-mobile sm:link'
                       >
-                        https://assets.amsterdam.nl/publish/pages/1007002/definitief_vrm21_670_omgevingsvisie_weesp_14dec2021_spread_tg.pdf{' '}
+                        omgevingsvisie{' '}
                       </a>
                     </li>
                     <li>
-                      Ook in de nationale omgevingsvisie is houtbouw opgenomen:{' '}
+                      Ook in de{' '}
                       <a
                         href='https://www.denationaleomgevingsvisie.nl/publicaties/novi-stukken+publicaties/handlerdownloadfiles.ashx?idnv=1760380'
                         className='text-greenLink link-mobile sm:link'
                       >
-                        Ministerie van Binnenlandse Zaken en Koninkrijksrelaties | Nationale
-                        Omgevingsvisie (denationaleomgevingsvisie.nl)
+                        nationale omgevingsvisie
                       </a>{' '}
+                      is houtbouw opgenomen
                     </li>
                     <li>
-                      Hier lees je meer over een praktijkproef van een afwegingskader voor het
-                      opstellen van een omgevingsvisie:{' '}
+                      Hier lees je meer over een{' '}
                       <a
                         href='https://vng.nl/sites/default/files/2020-06/praktijkproef-afwegingskader-omgevingsvisie_20200529.pdf'
                         className='text-greenLink link-mobile sm:link'
                       >
-                        praktijkproef-afwegingskader-omgevingsvisie_20200529.pdf (vng.nl)
-                      </a>
+                        praktijkproef van een afwegingskader
+                      </a>{' '}
+                      voor het opstellen van een omgevingsvisie
                     </li>
                   </ul>
                 </div>

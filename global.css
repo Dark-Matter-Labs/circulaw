@@ -8,6 +8,10 @@
     @apply xl:mx-auto;
   }
 
+  .image-margin {
+    @apply max-w-screen-2xl mx-auto;
+  }
+
   h1.mobile {
     font-family: 'Public Sans';
     font-style: normal;

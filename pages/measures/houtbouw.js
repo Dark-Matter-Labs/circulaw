@@ -11,7 +11,7 @@ import {
   subrechtsgebied,
   juridische_houdbaarheid,
   r_ladder,
-} from '../../dataFilterExample';
+} from '../../dataFilter';
 
 import Layout from '/components/layout';
 import SearchFilter from '/components/search-filter';

@@ -73,11 +73,6 @@ export default function WatIsCircuLaw() {
               versnellen van de circulaire transitie, en er mee aan de slag te gaan. De wet als
               service.
             </p>
-            <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
-              CircuLaw maakt het mogelijk om gelijk te zien welke mogelijkheden een specifieke wet
-              biedt voor het versnellen van de circulaire transitie, en er mee aan de slag te gaan.
-              De wet als service.
-            </p>
             <h2 className='mobile sm:main pb-2'>Uniformiteit in decentrale uitvoering </h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-6'>
               In Nederland zijn veel taken en bevoegdheden gedecentraliseerd naar provincies en

@@ -57,10 +57,10 @@ export default function Houtbouw() {
             </div>
             <div className='sm:justify-self-center lg:justify-self-end'>
               <div className='hidden lg:block'>
-                <Image src={HoutbouwHero} alt='Icon of Wood' height='649px' width='597px' />
+                <Image src={HoutbouwHero} alt='Icon of Wood' height='549px' width='597px' />
               </div>
               <div className='block lg:hidden'>
-                <Image src={HoutbouwHero} alt='Icon of Wood' height='649px' width='597px' />
+                <Image src={HoutbouwHero} alt='Icon of Wood' height='549px' width='597px' />
               </div>
             </div>
           </div>
