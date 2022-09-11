@@ -17,7 +17,7 @@ export default function Windturbine() {
     <Layout>
       <div className='gradient-bg'>
         <div className='global-margin'>
-          <div className='grid grid-cols-1 lg:grid-cols-2'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-20 mb-10'>
             <div className=''>
               <div className='breadcrumb pt-8 text-greenLink'>
                 <Link href='/'>

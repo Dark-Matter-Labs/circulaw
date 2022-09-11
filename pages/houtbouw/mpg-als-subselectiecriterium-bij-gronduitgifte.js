@@ -209,7 +209,7 @@ export default function Law() {
                   levensfases van een gebouw wordt de milieudruk bepaald. De levensfases zijn:
                   Productie, Bouw, Gebruik, Sloop, Hergebruik. Onder milieudruk vallen de gebruikte
                   energie en grondstoffen, en ook geproduceerde uitstoot en afvalstoffen. De
-                  milieudruk (uitgedrukt in euro&rsqup;s) wordt afgezet tegen de oppervlakte en
+                  milieudruk (uitgedrukt in euro&rsquo;s) wordt afgezet tegen de oppervlakte en
                   verwachte levensduur van het gebouw. Gebouwen die meer circulair zijn leiden zo
                   tot een lagere MPG-score. De wettelijk minimale MPG-norm voor kantoren is 1,0.
                   Voor woningen geldt 0,8. Beide worden geleidelijk verzwaard tot 0,5 in 2030. Dit

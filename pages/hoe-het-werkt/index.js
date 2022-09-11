@@ -161,10 +161,6 @@ export default function Kunststoffen() {
             Hiermee geven we beleidsmedewerkers een indicatie mee van de toepasbaarheid van een
             maatregel, en helpen we hen een goede selectie te maken.
           </p>
-          <p className='body-text-mobile sm:body-text pb-4'>
-            Nieuwsgierig naar meer achtergrondinformatie over de methoden voor wetsanalyse die
-            speciaal voor CircuLaw ontwikkeld zijn? Check het protocol voor wetsanalyse hier.
-          </p>
         </div>
       </div>
     </Layout>

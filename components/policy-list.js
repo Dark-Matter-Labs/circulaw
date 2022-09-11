@@ -40,7 +40,7 @@ export default function PolicyList(props) {
           return (
             <div
               key={lawDataIdx}
-              className='block max-w-lg sm:max-w-4xl sm:ml-0 lg:ml-40 pb-8 sm:pb-10'
+              className='block max-w-lg sm:max-w-5xl sm:ml-0 lg:ml-40 pb-8 sm:pb-10'
             >
               <div className=''>
                 <div className='inline-block'>
@@ -68,6 +68,17 @@ export default function PolicyList(props) {
                   ) {
                     return (
                       <Link href='/houtbouw/gemeentelijke-omgevingsvisie/' key={lawDataIdx}>
+                        <a className='underline text-lg font-semibold no-underline hover:text-greenLink'>
+                          <h3>{titel} </h3>
+                        </a>
+                      </Link>
+                    );
+                  } else if (titel === 'Onteigening') {
+                    return (
+                      <Link
+                        href='/houtbouw/mpg-als-subselectiecriterium-bij-gronduitgifte/'
+                        key={lawDataIdx}
+                      >
                         <a className='underline text-lg font-semibold no-underline hover:text-greenLink'>
                           <h3>{titel} </h3>
                         </a>
@@ -102,7 +113,7 @@ export default function PolicyList(props) {
               <div className='grid grid-cols-1 sm:flex space-x-0 sm:space-x-8 space-y-4 sm:space-y-0 py-2 sm:py-0'>
                 <div className='flex-2 mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 '>
                   <span className='block-inline flex items-center'>
-                    Juridische impact:{' '}
+                    Juridische invloed:{' '}
                     {[0, 1, 2, 3, 4].map((rating) => (
                       <div
                         key={rating}

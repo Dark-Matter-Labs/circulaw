@@ -1,25 +1,40 @@
 import Image from 'next/image';
 import Layout from '../../components/layout';
 import TimberImage from '../../public/Timber_Measures_Web.png';
+import TimberImageMob from '../../public/Timber_Measures_Mob.png';
 
 export default function InfoPage() {
   return (
     <Layout>
       <div className='global-margin my-20 max-w-2xl'>
         <h1 className='mobile sm:main text-green1 pb-2'>
-          Samenhang maatregelen circulaire windturbines
+          Welke overheid heeft welke bevoegdheid voor maatregelen circulaire windturbines?
         </h1>
-        <div className=''>
-          <Image src={TimberImage} layout='responsive' alt='Picture of the case' />
-        </div>
-        <div className=''>
+      </div>
+      <div className='hidden sm:block image-margin'>
+        <Image src={TimberImage} layout='responsive' alt='Picture of the case' />
+      </div>
+      <div className='block sm:hidden'>
+        <Image src={TimberImageMob} layout='responsive' alt='Picture of the case' />
+      </div>
+      <div className='global-margin mb-20'>
+        <div className='max-w-3xl mx-auto'>
           <p className='body-text-mobile sm:body-text text-black1 pb-6'>
-            Beleid rondom circulaire windturbines kan worden opgenomen in omgevingsvisies. Door dit
-            te verankeren kunnen subsidies worden vastgesteld. Daarnaast plaats kunnen overheden
-            proberen meer grond te kopen om uit te kunnen geven met circulaire eisen. Ook kunnen met
-            het omgevingsplan of een projectbesluit vergunningen worden verleend voor circulaire
-            windturbines. Afspraken over de kosten van circulaire windturbines kunnen voor het
-            omgevingsplan worden vastgelegd in een anterieure overeenkomst.
+            Provincies en gemeenten kunnen circulaire windturbines opnemen in hun omgevingsvisie om
+            dit beleidsdoel kenbaar te maken. Het vergroten van het aandeel publieke grond van
+            provincies en gemeenten zorgt ervoor dat circulaire eisen kunnen worden gesteld bij de
+            uitgifte van de gronden.
+          </p>
+          <p className='body-text-mobile sm:body-text text-black1 pb-6'>
+            Gemeenten kunnen daarnaast circulariteit opnemen in hun omgevingsplan en zodoende
+            aanvullende eisen stellen bij de vergunningverlening. In een anterieure overeenkomst
+            worden kosten voor gebiedsontwikkeling vastgelegd en daar kan circulariteit ook bij
+            betrokken worden.
+          </p>
+          <p className='body-text-mobile sm:body-text text-black1 pb-6'>
+            Gemeenten, provincies en Rijk hebben ook nog gedeelde bevoegdheden: door circulaire
+            eisen te stellen bij gronduitgifte - door verkoop, erfpacht en huurovereenkomsten -
+            wordt het plaatsen van circulaire windturbines aangemoedigd.
           </p>
         </div>
       </div>
