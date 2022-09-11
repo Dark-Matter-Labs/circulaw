@@ -10,6 +10,13 @@ export default function Document() {
           href='https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Public+Sans:wght@300;700;800&display=swap'
           rel='stylesheet'
         />
+        <meta name='description' content='Regelgeving voor een circulaire economie' />
+        <meta property='og:title' content='CircuLaw' key='ogtitle' />
+        <meta
+          property='og:description'
+          content='Regelgeving voor een circulaire economie'
+          key='ogdesc'
+        />
       </Head>
       <body>
         <Main />
