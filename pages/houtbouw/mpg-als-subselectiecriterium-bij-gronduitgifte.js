@@ -308,7 +308,7 @@ export default function Law() {
               </div>
               <div className='py-4'>
                 <h2 className='pb-2 mobile sm:main'>Selectieprocedure: eisen en beperkingen</h2>
-                <div className='body-text-mobile sm:body-text'>
+                <div className='body-text-mobile sm:body-text overflow-x-hidden'>
                   <p>Een selectieprocedure moet aan de volgende eisen voldoen: </p>
                   <ul className='list-disc pl-6'>
                     <li>

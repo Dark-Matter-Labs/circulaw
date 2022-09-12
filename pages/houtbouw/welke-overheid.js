@@ -15,7 +15,7 @@ export default function InfoPage() {
         <Image src={TimberImage} layout='responsive' alt='Picture of the case' />
       </div>
       <div className='block sm:hidden'>
-        <Image src={TimberImage} layout='responsive' alt='Picture of the case' />
+        <Image src={TimberImageMob} layout='responsive' alt='Picture of the case' />
       </div>
       <div className='global-margin mb-20'>
         <div className='max-w-3xl mx-auto'>

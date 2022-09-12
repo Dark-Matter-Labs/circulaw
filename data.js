@@ -292,7 +292,7 @@ export const laws = [
     "kop_1_samenvatting_juridische_maatregel": "Wat zijn bijzondere uitvoeringsvoorwaarden?",
     "introductie_juridische_maatregel": "Bij een aanbesteding mag je ook vragen naar bijzondere uitvoeringsvoorwaarden. Dat zijn voorwaarden die niet in technische of functionele specificaties te zetten zijn, maar eerder gaan om hoe het product of de opdracht tot stand komt. Vaak gaat het in de praktijk om voorwaarden uit sociale overwegingen. Een aanbesteder kan bijvoorbeeld eisen dat een bepaald percentage mensen met een afstand tot de arbeidsmarkt bij het project wordt betrokken.",
     "kop_2_toepassing_juridische_maatregel": "Hoe kan je circulariteit verwerken in de bijzondere uitvoeringsvoorwaarden van een houtbouwopdracht?",
-    "toepassing_juridische_maatregel": "",
+    "toepassing_juridische_maatregel": "Behalve dat houtbouw op zichzelf een circulaire manier van bouwen is, kan in de aanbesteding meer circulariteit uitgevraagd worden via bijzondere uitvoeringsvoorwaarden. Je kan bijvoorbeeld eisen dat de uitvoerder beschikt over een bepaald recyclingsysteem. Via zo'n recyclesysteem kan een aannemer ervoor zorgen dat bouwrestanten hoogwaardiger herbruikt worden. Met behulp van een team van experts in bouwprocessen, CE en een jurist kan je verder verkennen hoe afval dat bij de bouw achterblijft hoogwaardig(er) herbruikt kan worden.",
     "is_er_een_praktijk_voorbeeld": false,
     "kop_3_uit_de_praktijk": "Uit de praktijk",
     "uit_de_praktijk": "",
@@ -513,7 +513,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "9",
+    "id": "10",
     "artikel": "2.11",
     "circulair": true,
     "titel": "Omgevingswaarden in het omgevingsplan",
@@ -570,7 +570,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "10",
+    "id": "11",
     "artikel": "2.12",
     "circulair": true,
     "titel": "Omgevingswaarden in de omgevingsverordening",
@@ -627,7 +627,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "11",
+    "id": "12",
     "artikel": "3.1",
     "circulair": true,
     "titel": "Houtbouw een plek geven in de gemeentelijke omgevingsvisie",
@@ -645,11 +645,11 @@ export const laws = [
     "eisen_en_beperkingen": "- Het zelfbindende karakter van de omgevingsvisie brengt met zich mee dat er geen beroep open staat tegen het besluit tot vaststelling van de omgevingsvisie;\n- Bij de vaststelling van de omgevingsvisie moeten bestuursorganen zorgdragen voor inspraak en voorbereiding conform afdeling 3.4 Awb;\n- Het indienen van zienswijzen staat open voor 'een ieder' en daarmee niet enkel voor belanghebbenden.",
     "kop_5_juridische_toelichting": "Juridische toelichting",
     "juridische_toelichting": "Op grond van artikel 3.1 lid 1 Omgevingswet kan een gemeentelijke omgevingsvisie worden vastgesteld.",
-    "juridische_houdbaarheid": 1,
+    "juridische_houdbaarheid": 5,
     "duidelijkheid_wet": "",
     "eenlijnige_uitspraken": "",
     "literatuur": "",
-    "juridische_invloed": 2,
+    "juridische_invloed": 3,
     "bereik": "",
     "duur": "",
     "frequentie": "",
@@ -661,67 +661,10 @@ export const laws = [
     "type_beleidsinstrument": "Juridisch",
     "R1": true,
     "R2": true,
-    "R3": false,
-    "R4": false,
+    "R3": true,
+    "R4": true,
     "R5": true,
-    "R6": false,
-    "valt_deze_mogelijkheid_onder_een_overheidsopdracht_of_consessie_opdracht": false,
-    "soort_opdracht": "",
-    "waar_valt_het_onder": "",
-    "kop_6_ministappenplan": "",
-    "ministappenplan": "",
-    "kop_7_titel_links_ministappenplan": "",
-    "titel_link_ministappenplan": "",
-    "links_ministappenplan": "",
-    "goed_in_combinatie_met": "",
-    "rechtsgebied": "Publiekrecht",
-    "subrechtsgebied": "Omgevingsrecht",
-    "citeertitel": "Omgevingswet",
-    "link_naar_wetsartikel": "https://iplo.nl/regelgeving/omgevingswet/",
-    "geldend_vanaf": "2022-12-31T23:00:00.000Z",
-    "type_document": "Wet in formele zin",
-    "waardeketen": "Gebouwde Omgeving",
-    "casus": "Houtbouw"
-  },
-  {
-    "id": "12",
-    "artikel": "3.1",
-    "circulair": true,
-    "titel": "Houtbouw een plek geven in de provinciale omgevingsvisie",
-    "kop_1_samenvatting_juridische_maatregel": "Wat is een omgevingsvisie?",
-    "introductie_juridische_maatregel": "In de gemeentelijke omgevingsvisie beschrijft de gemeente de integrale langetermijnvisie voor de fysieke leefomgeving. De visie geeft aan welke gemeentelijke kernkwaliteiten beschermd moeten worden en wat de maatschappelijke uitdaging is. De omgevingsvisie is de basis van het te vormen omgevingsbeleid en kan onder meer betrekking hebben op:\n- ruimtelijke aspecten;\n- energie-infrastructuur;\n- landbouw;\n- landschap\n- milieu;\n- natuur;\n- water.",
-    "kop_2_toepassing_juridische_maatregel": "Houtbouw in de provinciale omgevingsvisie vormgegeven",
-    "toepassing_juridische_maatregel": "Door houtbouw in de gemeentelijk omgevingsvisie op te nemen, wordt het onderdeel van de beleidscyclus van de Omgevingswet. Dat maakt het mogelijk om later in de beleidscyclus houtbouw op de agenda te zetten. Vanuit de omgevingsvisie komen andere maatregelen – zoals omgevingsvergunningen, een omgevingsplan of omgevingswaarden – voort. Die kunnen vervolgens ingezet worden om houtbouw te stimuleren of af te dwingen.",
-    "is_er_een_praktijk_voorbeeld": false,
-    "kop_3_uit_de_praktijk": "Uit de praktijk",
-    "uit_de_praktijk": "",
-    "voorbeeld_link_teks": "",
-    "voorbeeld_link": "",
-    "afbeelding_van_voorbeeld_link": "",
-    "kop_4_eisen_en_beperkingen": "De provinciale omgevingsvisie: eisen en beperkingen",
-    "eisen_en_beperkingen": "- Het zelfbindende karakter van de omgevingsvisie brengt met zich mee dat er geen beroep open staat tegen het besluit tot vaststelling van de omgevingsvisie;\n- Bij de vaststelling van de omgevingsvisie moeten bestuursorganen zorgdragen voor inspraak en voorbereiding conform afdeling 3.4 Awb;\n- Het indienen van zienswijzen staat open voor 'een ieder' en daarmee niet enkel voor belanghebbenden.",
-    "kop_5_juridische_toelichting": "Juridische toelichting",
-    "juridische_toelichting": "Op grond van artikel 3.1 lid 2 Omgevingswet kan een provinciale omgevingsvisie worden vastgesteld.",
-    "juridische_houdbaarheid": 1,
-    "duidelijkheid_wet": "",
-    "eenlijnige_uitspraken": "",
-    "literatuur": "",
-    "juridische_invloed": 3,
-    "bereik": "",
-    "duur": "",
-    "frequentie": "",
-    "omvang": "",
-    "europees": false,
-    "nationaal": false,
-    "provinciaal": true,
-    "gemeentelijk": false,
-    "type_beleidsinstrument": "Juridisch",
-    "R1": true,
-    "R2": true,
-    "R3": false,
-    "R4": false,
-    "R5": true,
-    "R6": false,
+    "R6": true,
     "valt_deze_mogelijkheid_onder_een_overheidsopdracht_of_consessie_opdracht": false,
     "soort_opdracht": "",
     "waar_valt_het_onder": "",
@@ -744,10 +687,10 @@ export const laws = [
     "id": "13",
     "artikel": "3.1",
     "circulair": true,
-    "titel": "Houtbouw een plek geven in de nationale omgevingsvisie",
+    "titel": "Houtbouw een plek geven in de provinciale omgevingsvisie",
     "kop_1_samenvatting_juridische_maatregel": "Wat is een omgevingsvisie?",
     "introductie_juridische_maatregel": "In de gemeentelijke omgevingsvisie beschrijft de gemeente de integrale langetermijnvisie voor de fysieke leefomgeving. De visie geeft aan welke gemeentelijke kernkwaliteiten beschermd moeten worden en wat de maatschappelijke uitdaging is. De omgevingsvisie is de basis van het te vormen omgevingsbeleid en kan onder meer betrekking hebben op:\n- ruimtelijke aspecten;\n- energie-infrastructuur;\n- landbouw;\n- landschap\n- milieu;\n- natuur;\n- water.",
-    "kop_2_toepassing_juridische_maatregel": "Houtbouw in de nationale omgevingsvisie vormgegeven",
+    "kop_2_toepassing_juridische_maatregel": "Houtbouw in de provinciale omgevingsvisie vormgegeven",
     "toepassing_juridische_maatregel": "Door houtbouw in de gemeentelijk omgevingsvisie op te nemen, wordt het onderdeel van de beleidscyclus van de Omgevingswet. Dat maakt het mogelijk om later in de beleidscyclus houtbouw op de agenda te zetten. Vanuit de omgevingsvisie komen andere maatregelen – zoals omgevingsvergunningen, een omgevingsplan of omgevingswaarden – voort. Die kunnen vervolgens ingezet worden om houtbouw te stimuleren of af te dwingen.",
     "is_er_een_praktijk_voorbeeld": false,
     "kop_3_uit_de_praktijk": "Uit de praktijk",
@@ -755,30 +698,30 @@ export const laws = [
     "voorbeeld_link_teks": "",
     "voorbeeld_link": "",
     "afbeelding_van_voorbeeld_link": "",
-    "kop_4_eisen_en_beperkingen": "De nationale omgevingsvisie: eisen en beperkingen",
+    "kop_4_eisen_en_beperkingen": "De provinciale omgevingsvisie: eisen en beperkingen",
     "eisen_en_beperkingen": "- Het zelfbindende karakter van de omgevingsvisie brengt met zich mee dat er geen beroep open staat tegen het besluit tot vaststelling van de omgevingsvisie;\n- Bij de vaststelling van de omgevingsvisie moeten bestuursorganen zorgdragen voor inspraak en voorbereiding conform afdeling 3.4 Awb;\n- Het indienen van zienswijzen staat open voor 'een ieder' en daarmee niet enkel voor belanghebbenden.",
     "kop_5_juridische_toelichting": "Juridische toelichting",
-    "juridische_toelichting": "Op grond van artikel 3.1 lid 3 kan een nationale omgevingsvisie worden vastgesteld.",
-    "juridische_houdbaarheid": 1,
+    "juridische_toelichting": "Op grond van artikel 3.1 lid 2 Omgevingswet kan een provinciale omgevingsvisie worden vastgesteld.",
+    "juridische_houdbaarheid": 5,
     "duidelijkheid_wet": "",
     "eenlijnige_uitspraken": "",
     "literatuur": "",
-    "juridische_invloed": 4,
+    "juridische_invloed": 3,
     "bereik": "",
     "duur": "",
     "frequentie": "",
     "omvang": "",
     "europees": false,
-    "nationaal": true,
-    "provinciaal": false,
+    "nationaal": false,
+    "provinciaal": true,
     "gemeentelijk": false,
     "type_beleidsinstrument": "Juridisch",
     "R1": true,
     "R2": true,
-    "R3": false,
-    "R4": false,
+    "R3": true,
+    "R4": true,
     "R5": true,
-    "R6": false,
+    "R6": true,
     "valt_deze_mogelijkheid_onder_een_overheidsopdracht_of_consessie_opdracht": false,
     "soort_opdracht": "",
     "waar_valt_het_onder": "",
@@ -799,6 +742,63 @@ export const laws = [
   },
   {
     "id": "14",
+    "artikel": "3.1",
+    "circulair": true,
+    "titel": "Houtbouw een plek geven in de nationale omgevingsvisie",
+    "kop_1_samenvatting_juridische_maatregel": "Wat is een omgevingsvisie?",
+    "introductie_juridische_maatregel": "In de gemeentelijke omgevingsvisie beschrijft de gemeente de integrale langetermijnvisie voor de fysieke leefomgeving. De visie geeft aan welke gemeentelijke kernkwaliteiten beschermd moeten worden en wat de maatschappelijke uitdaging is. De omgevingsvisie is de basis van het te vormen omgevingsbeleid en kan onder meer betrekking hebben op:\n- ruimtelijke aspecten;\n- energie-infrastructuur;\n- landbouw;\n- landschap\n- milieu;\n- natuur;\n- water.",
+    "kop_2_toepassing_juridische_maatregel": "Houtbouw in de nationale omgevingsvisie vormgegeven",
+    "toepassing_juridische_maatregel": "Door houtbouw in de gemeentelijk omgevingsvisie op te nemen, wordt het onderdeel van de beleidscyclus van de Omgevingswet. Dat maakt het mogelijk om later in de beleidscyclus houtbouw op de agenda te zetten. Vanuit de omgevingsvisie komen andere maatregelen – zoals omgevingsvergunningen, een omgevingsplan of omgevingswaarden – voort. Die kunnen vervolgens ingezet worden om houtbouw te stimuleren of af te dwingen.",
+    "is_er_een_praktijk_voorbeeld": false,
+    "kop_3_uit_de_praktijk": "Uit de praktijk",
+    "uit_de_praktijk": "",
+    "voorbeeld_link_teks": "",
+    "voorbeeld_link": "",
+    "afbeelding_van_voorbeeld_link": "",
+    "kop_4_eisen_en_beperkingen": "De nationale omgevingsvisie: eisen en beperkingen",
+    "eisen_en_beperkingen": "- Het zelfbindende karakter van de omgevingsvisie brengt met zich mee dat er geen beroep open staat tegen het besluit tot vaststelling van de omgevingsvisie;\n- Bij de vaststelling van de omgevingsvisie moeten bestuursorganen zorgdragen voor inspraak en voorbereiding conform afdeling 3.4 Awb;\n- Het indienen van zienswijzen staat open voor 'een ieder' en daarmee niet enkel voor belanghebbenden.",
+    "kop_5_juridische_toelichting": "Juridische toelichting",
+    "juridische_toelichting": "Op grond van artikel 3.1 lid 3 kan een nationale omgevingsvisie worden vastgesteld.",
+    "juridische_houdbaarheid": 5,
+    "duidelijkheid_wet": "",
+    "eenlijnige_uitspraken": "",
+    "literatuur": "",
+    "juridische_invloed": 4,
+    "bereik": "",
+    "duur": "",
+    "frequentie": "",
+    "omvang": "",
+    "europees": false,
+    "nationaal": true,
+    "provinciaal": false,
+    "gemeentelijk": false,
+    "type_beleidsinstrument": "Juridisch",
+    "R1": true,
+    "R2": true,
+    "R3": true,
+    "R4": true,
+    "R5": true,
+    "R6": true,
+    "valt_deze_mogelijkheid_onder_een_overheidsopdracht_of_consessie_opdracht": false,
+    "soort_opdracht": "",
+    "waar_valt_het_onder": "",
+    "kop_6_ministappenplan": "",
+    "ministappenplan": "",
+    "kop_7_titel_links_ministappenplan": "",
+    "titel_link_ministappenplan": "",
+    "links_ministappenplan": "",
+    "goed_in_combinatie_met": "",
+    "rechtsgebied": "Publiekrecht",
+    "subrechtsgebied": "Omgevingsrecht",
+    "citeertitel": "Omgevingswet",
+    "link_naar_wetsartikel": "https://iplo.nl/regelgeving/omgevingswet/",
+    "geldend_vanaf": "2022-12-31T23:00:00.000Z",
+    "type_document": "Wet in formele zin",
+    "waardeketen": "Gebouwde Omgeving",
+    "casus": "Houtbouw"
+  },
+  {
+    "id": "15",
     "artikel": "3.4",
     "circulair": true,
     "titel": "Gemeentelijk omgevingsprogramma",
@@ -813,7 +813,7 @@ export const laws = [
     "voorbeeld_link": "",
     "afbeelding_van_voorbeeld_link": "",
     "kop_4_eisen_en_beperkingen": "Gemeentelijk omgevingsprogramma: eisen en beperkingen",
-    "eisen_en_beperkingen": "- Het zelfbindende karakter van de omgevingsvisie brengt met zich mee dat er geen beroep open staat tegen het besluit tot vaststelling van de omgevingsvisie;\n- Bij de vaststelling van de omgevingsvisie moeten bestuursorganen zorg dragen voor inspraak en voorbereiding conform afdeling 3.4 Awb;\n- Het indienen van zienswijzen staat open voor 'een ieder' en daarmee niet enkel voor belanghebbenden.",
+    "eisen_en_beperkingen": "- Het zelfbindende karakter van het omgeivngsprogramma brengt met zich mee dat er geen beroep open staat tegen het besluit tot vaststelling van de omgevingsvisie;\n- Er is geen sprake van direct toezicht of handhaving op een programma.",
     "kop_5_juridische_toelichting": "Juridische toelichting",
     "juridische_toelichting": "Op grond van artikel 3.4 Omgevingswet kan de gemeente een programma vaststellen.",
     "juridische_houdbaarheid": 2,
@@ -855,7 +855,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "15",
+    "id": "16",
     "artikel": "3.4",
     "circulair": true,
     "titel": "Provinciaal omgevingsprogramma",
@@ -870,7 +870,7 @@ export const laws = [
     "voorbeeld_link": "",
     "afbeelding_van_voorbeeld_link": "",
     "kop_4_eisen_en_beperkingen": "Provinciaal omgevingsprogramma: eisen en beperkingen",
-    "eisen_en_beperkingen": "- Het zelfbindende karakter van de omgevingsvisie brengt met zich mee dat er geen beroep open staat tegen het besluit tot vaststelling van de omgevingsvisie;\n- Bij de vaststelling van de omgevingsvisie moeten bestuursorganen zorg dragen voor inspraak en voorbereiding conform afdeling 3.4 Awb;\n- Het indienen van zienswijzen staat open voor 'een ieder' en daarmee niet enkel voor belanghebbenden.",
+    "eisen_en_beperkingen": "- Het zelfbindende karakter van het omgeivngsprogramma brengt met zich mee dat er geen beroep open staat tegen het besluit tot vaststelling van de omgevingsvisie;\n- Er is geen sprake van direct toezicht of handhaving op een programma.",
     "kop_5_juridische_toelichting": "Juridische toelichting",
     "juridische_toelichting": "Op grond van artikel 3.4 Omgevingswet kan de provincie een programma vaststellen.",
     "juridische_houdbaarheid": 2,
@@ -912,7 +912,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "16",
+    "id": "17",
     "artikel": "3.4",
     "circulair": true,
     "titel": "Nationaal omgevingsprogramma",
@@ -927,7 +927,7 @@ export const laws = [
     "voorbeeld_link": "",
     "afbeelding_van_voorbeeld_link": "",
     "kop_4_eisen_en_beperkingen": "Nationaal omgevingsprogramma: eisen en beperkingen",
-    "eisen_en_beperkingen": "- Het zelfbindende karakter van de omgevingsvisie brengt met zich mee dat er geen beroep open staat tegen het besluit tot vaststelling van de omgevingsvisie;\n- Bij de vaststelling van de omgevingsvisie moeten bestuursorganen zorg dragen voor inspraak en voorbereiding conform afdeling 3.4 Awb;\n- Het indienen van zienswijzen staat open voor 'een ieder' en daarmee niet enkel voor belanghebbenden.",
+    "eisen_en_beperkingen": "- Het zelfbindende karakter van het omgeivngsprogramma brengt met zich mee dat er geen beroep open staat tegen het besluit tot vaststelling van de omgevingsvisie;\n- Er is geen sprake van direct toezicht of handhaving op een programma.",
     "kop_5_juridische_toelichting": "Juridische toelichting",
     "juridische_toelichting": "Op grond van artikel 3.4 Omgevingswet kan het Rijk een programma vaststellen.",
     "juridische_houdbaarheid": 2,
@@ -969,7 +969,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "17",
+    "id": "18",
     "artikel": "4.1",
     "circulair": true,
     "titel": "Houtbouw in het omgevingsplan",
@@ -1026,7 +1026,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "18",
+    "id": "19",
     "artikel": "4.2",
     "circulair": true,
     "titel": "Houtbouw in omgevingsverordening",
@@ -1083,7 +1083,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "19",
+    "id": "20",
     "artikel": "4.4",
     "circulair": true,
     "titel": "Activiteiten verbieden zonder omgevingsvergunning",
@@ -1140,7 +1140,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "20",
+    "id": "21",
     "artikel": "4.7",
     "circulair": true,
     "titel": "Gelijkwaardigheidsbepaling",
@@ -1197,7 +1197,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "21",
+    "id": "22",
     "artikel": "9.1",
     "circulair": true,
     "titel": "Het gemeentelijk voorkeursrecht als aanjager van houtbouw",
@@ -1254,7 +1254,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "22",
+    "id": "23",
     "artikel": "9.1",
     "circulair": true,
     "titel": "Het provinciaal voorkeursrecht als aanjager van houtbouw",
@@ -1311,7 +1311,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "23",
+    "id": "24",
     "artikel": "9.1",
     "circulair": true,
     "titel": "Het nationaal voorkeursrecht als aanjager van houtbouw",
@@ -1368,7 +1368,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "24",
+    "id": "25",
     "artikel": "11.1",
     "circulair": true,
     "titel": "Onteigening",
@@ -1425,7 +1425,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "25",
+    "id": "26",
     "artikel": "11.1",
     "circulair": true,
     "titel": "Onteigening",
@@ -1482,7 +1482,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "26",
+    "id": "27",
     "artikel": "11.1",
     "circulair": true,
     "titel": "Onteigening",
@@ -1539,7 +1539,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "27",
+    "id": "28",
     "artikel": "23.3",
     "circulair": true,
     "titel": "Experimenteerbepaling",
@@ -1596,7 +1596,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "28",
+    "id": "29",
     "artikel": "8.20",
     "circulair": true,
     "titel": "Financiele bijdrage voor houten bouwwerken op basis van een omgevingsvisie of programma",
@@ -1653,7 +1653,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "29",
+    "id": "30",
     "artikel": "3.169",
     "circulair": true,
     "titel": "Meldingsplicht voorbereiding houtafval voor recycling",
@@ -1710,7 +1710,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "30",
+    "id": "31",
     "artikel": "4.619",
     "circulair": true,
     "titel": "Meldingsplicht ontvangst afvalstoffen",
@@ -1767,7 +1767,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "31",
+    "id": "32",
     "artikel": "3.7",
     "circulair": true,
     "titel": "Maatwerkvoorschriften bestaande bouw",
@@ -1824,7 +1824,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "32",
+    "id": "33",
     "artikel": "7.10",
     "circulair": true,
     "titel": "Sloopmelding",
@@ -1842,11 +1842,11 @@ export const laws = [
     "eisen_en_beperkingen": "- Bij meldingsplichtige sloopactiviteiten moet het bevoegd gezag uiterlijk 2 dagen voor aanvang en 1 dag na afronding van de werkzaamheden worden geïnformeerd;\n- Tijdens de sloop moet standaardinformatie aangeleverd worden.",
     "kop_5_juridische_toelichting": "Juridische toelichting",
     "juridische_toelichting": "Op basis van artikel 7.10 Bbl is het niet toegestaan om een bouwwerk of gedeelte daarvan te slopen als daarbij asbest wordt verwijderd of de hoeveelheid sloopafval naar redelijke inschatting meer dan 10 m3 bedraagt, zonder dit ten minste vier weken voor het begin van de sloopwerkzaamheden te melden.",
-    "juridische_houdbaarheid": 4,
+    "juridische_houdbaarheid": 5,
     "duidelijkheid_wet": "",
     "eenlijnige_uitspraken": "",
     "literatuur": "",
-    "juridische_invloed": 3,
+    "juridische_invloed": 1,
     "bereik": "",
     "duur": "",
     "frequentie": "",
@@ -1881,7 +1881,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "33",
+    "id": "34",
     "artikel": "7.26",
     "circulair": true,
     "titel": "Nadere fracties eisen sloopwerkzaamheden",
@@ -1938,7 +1938,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "34",
+    "id": "35",
     "artikel": "9.5.2",
     "circulair": true,
     "titel": "Regels hergebruik producten",
@@ -1995,7 +1995,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "35",
+    "id": "37",
     "artikel": "7:201",
     "circulair": true,
     "titel": "Circulaire windturbines bevorderen door het sluiten van huurovereenkomsten",
@@ -2007,7 +2007,7 @@ export const laws = [
     "kop_3_uit_de_praktijk": "Uit de praktijk",
     "uit_de_praktijk": "Hoewel dit voorbeeld geen overheidslichaam is, kan het toch als inspiratie dienen: ASR biedt als grootgrondbezitter korting op de pachtprijs aan boeren die duurzaam te werk gaan.",
     "voorbeeld_link_teks": "https://www.volkskrant.nl/nieuws-achtergrond/verzekeraar-en-grondbezitter-asr-helpt-duurzame-boeren-met-korting-op-pachtprijs~bd5b3404/",
-    "voorbeeld_link": "https://www.volkskrant.nl/nieuws-achtergrond/verzekeraar-en-grondbezitter-asr-helpt-duurzame-boeren-met-korting-op-pachtprijs~bd5b3404/",
+    "voorbeeld_link": "",
     "afbeelding_van_voorbeeld_link": "",
     "kop_4_eisen_en_beperkingen": "Eisen en beperkingen",
     "eisen_en_beperkingen": "- Bij het geven van korting op de huurprijs moet wel gelet worden op de staatssteunregels. \n- Staatssteun houdt in dat een voordeel wordt geboden aan een marktpartij dat andere marktpartijen niet toekomt. \nDit verstoort de mededinging. Staatssteun is in beginsel dan ook verboden. \n- Hier bestaan wel uitzonderingen op. Ten aanzien van staatssteun dient onderzocht te worden of dit idee onder een van de uitzonderingen van de Algemene Groepsvrijstellingsverordening valt of dat de DE-minimisverordening kan worden toegepast. Deze laatste verordening maakt uitzonderingen voor staatssteun onder een bepaald maximum, 200.000 euro of minder, afhankelijk van de sector.\n- Als geen sprake is van staatssteun, is de Wet Markt & Overheid van toepassing. De gemeente verricht hier namelijk zelf een economische activiteit (het verhuren van onroerend goed). In de wet staan gedragsregels waar de gemeente zich aan moet houden om oneerlijke concurrentie te voorkomen.",
@@ -2052,7 +2052,7 @@ export const laws = [
     "casus": "Circulaire windturbines"
   },
   {
-    "id": "36",
+    "id": "38",
     "artikel": "7:1",
     "circulair": true,
     "titel": "Circulaire windturbines bevorderen door tenders bij gronduitgifte door verkoop.",
@@ -2109,7 +2109,7 @@ export const laws = [
     "casus": "Circulaire windturbines"
   },
   {
-    "id": "37",
+    "id": "39",
     "artikel": "5:85",
     "circulair": true,
     "titel": "Circulaire windturbines bevorderen door tenders bij gronduitgifte in erfpacht",
@@ -2166,7 +2166,7 @@ export const laws = [
     "casus": "Circulaire windturbines"
   },
   {
-    "id": "39",
+    "id": "41",
     "artikel": "2.4",
     "circulair": true,
     "titel": "Circulariteit in het omgevingsplan",
@@ -2223,7 +2223,7 @@ export const laws = [
     "casus": "Circulaire windturbines"
   },
   {
-    "id": "40",
+    "id": "42",
     "artikel": "3.1",
     "circulair": true,
     "titel": "Circulaire windturbines in de gemeentelijke omgevingsvisie",
@@ -2280,7 +2280,7 @@ export const laws = [
     "casus": "Circulaire windturbines"
   },
   {
-    "id": "41",
+    "id": "43",
     "artikel": "3.1",
     "circulair": true,
     "titel": "Circulaire windturbines in de provinciale omgevingsvisie",
@@ -2337,7 +2337,7 @@ export const laws = [
     "casus": "Circulaire windturbines"
   },
   {
-    "id": "42",
+    "id": "44",
     "artikel": "5.46",
     "circulair": true,
     "titel": "Projectbesluit",
@@ -2394,7 +2394,7 @@ export const laws = [
     "casus": "Circulaire windturbines"
   },
   {
-    "id": "43",
+    "id": "45",
     "artikel": "9.1",
     "circulair": true,
     "titel": "Voorkeursrecht gemeenten",
@@ -2451,7 +2451,7 @@ export const laws = [
     "casus": "Circulaire windturbines"
   },
   {
-    "id": "44",
+    "id": "46",
     "artikel": "9.1",
     "circulair": true,
     "titel": "Voorkeursrecht provincies",
@@ -2508,7 +2508,7 @@ export const laws = [
     "casus": "Circulaire windturbines"
   },
   {
-    "id": "45",
+    "id": "47",
     "artikel": "13.22",
     "circulair": true,
     "titel": "Duurzaamheidseisen in een anterieure overeenkomst",
@@ -2530,7 +2530,7 @@ export const laws = [
     "duidelijkheid_wet": "",
     "eenlijnige_uitspraken": "",
     "literatuur": "",
-    "juridische_invloed": "",
+    "juridische_invloed": 2,
     "bereik": "",
     "duur": "",
     "frequentie": "",
