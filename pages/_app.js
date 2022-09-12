@@ -10,7 +10,6 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
       {getLayout(<Component {...pageProps} />)}
-      <Component {...pageProps} />
       <Script src="https://scripts.simpleanalyticscdn.com/latest.js"  />
       <noscript>
         {/* eslint-disable @next/next/no-img-element */}
