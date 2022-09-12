@@ -1,4 +1,4 @@
-import Script from "next/script";
+import Script from 'next/script';
 import 'tailwindcss/tailwind.css';
 import 'next-pagination/dist/index.css';
 import '../global.css';
@@ -10,15 +10,15 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
       {getLayout(<Component {...pageProps} />)}
-      <Script src="https://scripts.simpleanalyticscdn.com/latest.js"  />
+      <Script src='https://scripts.simpleanalyticscdn.com/latest.js' />
       <noscript>
         {/* eslint-disable @next/next/no-img-element */}
         <img
-          src="https://queue.simpleanalyticscdn.com/noscript.gif"
-          alt=""
-          referrerPolicy="no-referrer-when-downgrade"
+          src='https://queue.simpleanalyticscdn.com/noscript.gif'
+          alt=''
+          referrerPolicy='no-referrer-when-downgrade'
         />
       </noscript>
     </>
-    );
+  );
 }
