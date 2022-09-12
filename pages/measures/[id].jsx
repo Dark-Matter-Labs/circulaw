@@ -67,7 +67,7 @@ export default function Law() {
   return (
     <Layout>
       <div className='gradient-bg'>
-        <div className='global-margin pt-10'>
+        <div className='global-margin pt-10 overflow-x-hidden'>
           {data.casus === 'Houtbouw' ? (
             <Link href='/measures/houtbouw' className=''>
               <a className='text-greenLink breadcrumb'>← Terug</a>
@@ -198,7 +198,7 @@ export default function Law() {
             </div>
           </div>
           <div className='grid grid-cols-1 sm:grid-cols-3'>
-            <div className='w-full sm:max-w-4xl p-6 pb-20 col-span-2'>
+            <div className='w-full sm:max-w-4xl pb-20 col-span-2'>
               <h1 className='hidden lg:block my-9 text-green1 mobile sm:main'>{data.titel}</h1>
               <div className='py-4'>
                 <h2 className='pb-2 mobile sm:main'>
