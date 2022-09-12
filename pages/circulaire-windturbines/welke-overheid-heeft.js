@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Layout from '../../components/layout';
-import TimberImage from '../../public/Timber_Measures_Web.png';
-import TimberImageMob from '../../public/Timber_Measures_Mob.png';
+import TimberImage from '../../public/Windmill_Measures_Web.png';
+import TimberImageMob from '../../public/Windmill_Measures_Mob.png';
 
 export default function InfoPage() {
   return (
