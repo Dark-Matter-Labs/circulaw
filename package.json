@@ -1,5 +1,8 @@
 {
-  "private": true,
+  "name": "circulaw",
+  "version": "1.0.0",
+  "description": "regelgeving voor een circulaire economie",
+  "license": "GPLv3",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
