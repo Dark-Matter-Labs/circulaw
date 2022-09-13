@@ -513,6 +513,63 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
+    "id": "9",
+    "artikel": "3.14",
+    "circulair": true,
+    "titel": "MPG als subselectiecriterium bij gronduitgifte",
+    "kop_1_samenvatting_juridische_maatregel": "Gronduitgifte: wat is het?",
+    "introductie_juridische_maatregel": "Gronduitgifte is het uitgeven van bouwgrond door een gemeente aan gegadigden die bijvoorbeeld een woning of bedrijf willen bouwen. Het gaat om een privaatrechtelijke overeenkomst tussen de gemeente en de gegadigde. Aan deze uitgifte van grond worden voorwaarden gekoppeld. Uitgifte vindt meestal plaats via een selectieprocedure, zoals inschrijving of loting. Dit is vergelijkbaar met de verdeling van schaarse vergunningen. \n\nSinds het Didam-arrest is de overheid verplicht een selectieprocedure op te zetten bij gronduitgifte, tenzij van te voren duidelijk is dat slecht één serieuze gegadigde geschikt is voor de koop van de grond. Het voordeel van deze selectieprocedure is dat je als overheid innovaties kan stimuleren die andere partijen niet aandurven. Zo kan je circulaire doelstellingen nastreven, zoals het bevorderen van houtbouw .\n\nBinnen het selectiebeleid kan je verschillende criteria vaststellen aan de hand waarvan de uiteindelijke keuze tussen de deelnemers wordt gemaakt. Aan deze criteria zijn drie voorwaarden verbonden: \n(1) de criteria moeten objectief zijn; \n(2) de criteria moeten door een rechter kunnen worden getoetst; en \n(3) de criteria moeten redelijk zijn. \n\nBij het opstellen van deze criteria moeten de algemene beginselen van behoorlijk bestuur in acht worden genomen. Het vereiste van objectiviteit houdt in dat de criteria ondubbelzinnig en zo duidelijk mogelijk moeten worden geformuleerd.\n\nKijk voor een voorbeeld van de selectiecriteria naar de gunningscriteria afkomstig uit de Aanbestedingswet: \n- beste prijs-kwaliteitsverhouding (BPKV); \n- laagste kosten berekend op basis van kosteneffectiviteit; en \n- laagste prijs. \n\nWordt gekozen voor het selectiecriterium 'beste prijs-kwaliteitverhouding', dan moeten nadere kwaliteitscriteria worden opgesteld, zoals sociale, milieu- of innovatieve criteria. Zo kunnen op verschillende manieren circulaire criteria of duurzaamheidscriteria worden verwerkt waar houtbouw beter op scoort. Voor voorbeelden van selectiecriteria toegepast op gronduitgifte, biedt het beleid van de gemeente Urk <https://www.urk.nl/_flysystem/media/selectieleidraad-openbare-biedprocedure-gronduitgifte-deelgebied-1a-zeeheldenwijk.pdf > inspiratie: zie met name paragraaf 3 over ‘beste prijs-kwaliteitsverhouding’.",
+    "kop_2_toepassing_juridische_maatregel": "Hoe kan de MPG als subselectiecriterium houtbouw bevorderen?",
+    "toepassing_juridische_maatregel": "Één manier om houtbouw te stimuleren via gronduitgifte is door de MPG-score (milieuprestatie gebouwen) een grote rol te laten spelen in de selectiebeslissing, bijvoorbeeld door de MPG-score van het gebouw als subselectiecriterium te gebruiken. De MPG is een indicator die in een getalswaarde de milieuprestaties van een gebouw weergeeft op basis van een levenscyclusanalyse. Van verschillende levensfases van een gebouw wordt de milieudruk bepaald. De levensfases zijn: Productie, Bouw, Gebruik, Sloop, Hergebruik. Onder milieudruk vallen de gebruikte energie en grondstoffen, en ook geproduceerde uitstoot en afvalstoffen. De milieudruk (uitgedrukt in euro's) wordt afgezet tegen de oppervlakte en verwachte levensduur van het gebouw. Gebouwen die meer circulair zijn leiden zo tot een lagere MPG-score. De wettelijk minimale MPG-norm voor kantoren is 1,0. Voor woningen geldt 0,8. Beide worden geleidelijk verzwaard tot 0,5 in 2030. Dit volgt uit het Bouwbesluit 2012. \n\nAls je besluit te gaan selecteren op basis van MPG-score kan dat op verschillende manieren. Bepaal dus hoe deelnemers kunnen scoren met hun MPG. Dat kan met een vooraf vastgestelde schaal die is gekoppeld aan MPG-waarden, of een relatieve schaal, waarbij de hoogste score van een deelnemer de meeste punten krijgt en de laagste de minste",
+    "is_er_een_praktijk_voorbeeld": true,
+    "kop_3_uit_de_praktijk": "Uit de praktijk",
+    "uit_de_praktijk": "In de praktijk wordt de MPG-score al veel gebruikt bij selectieprocedures voor grondontwikkeling. De Gemeente Amsterdam besloot bijvoorbeeld in 2015 dat minstens 30% van de selectiebeslissing op duurzaamheid gebaseerd moet worden. Dat heeft geleid tot verschillende manieren waarop duurzaamheid als selectiecriterium is ingevuld, waaronder de MPG-score als indicator voor circulair bouwen, met name wat betreft circulair materiaalgebruik. De winnende inschrijvingen in selectieprocedures van bouwprojecten ‘de Koffiefabriek’ en ‘Juf Nienke’ zijn hier goede voorbeelden van.",
+    "voorbeeld_link_teks": "",
+    "voorbeeld_link": "",
+    "afbeelding_van_voorbeeld_link": "",
+    "kop_4_eisen_en_beperkingen": "Eisen en beperkingen",
+    "eisen_en_beperkingen": "Over aanbesteden op basis van MPG zijn de laatste jaren verschillende rapporten verschenen. Zie bijvoorbeeld:\n- Een meer algemene leidraad over circulair inkopen door Platform CB ‘23 <https://platformcb23.nl/images/leidraden/Platform_CB23_Leidraad_Circulair-Inkopen_versie1.pdf> \n- Algemene informatie over de MPG van de RvO <https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/milieuprestatie-gebouwen-mpg.>\n- Leidraad over de verduurzaming van gemeentelijk vastgoed met praktijkvoorbeelden, 2020 door de RvO <https://energieslag.rvo.nl/file/download/f4f55197-f450-4ce6-9704-039831f3c179/1611914396leidraad%20verduurzamen%20gemeentelijk%20vastgoed%20-%20stappenplan%20met%20praktijkvoorbeelden.pdf>",
+    "kop_5_juridische_toelichting": "Beleid en andere instrumenten",
+    "juridische_toelichting": "Over het algemeen is het verstandig naast de MPG ook andere criteria te gebruiken, omdat andere duurzaamheids- en circulariteitsaspecten niet of onvoldoende in MPG-scores verwerkt zijn. Daarbij kun je onder meer denken aan de zogenaamde  BENG-normen voor energiegebruik van gebouwen, het percentage hernieuwbaar materiaal en het percentage secundair materiaal. Overweeg ook kwalitatieve criteria mee te nemen, zoals ‘de integrale verwerking van circulariteit in het ontwerp’ of ‘de integrale verwerking van duurzaamheid in het ontwerp’. Als je meerdere criteria stelt moet je altijd ook het relatieve gewicht bepalen van de MPG-score ten opzichte van andere subselectiecriteria. Een (duurzame) inkoopspecialist kan helpen bij het vinden van een combinatie van criteria en het bepalen van de juiste weging van die criteria die voor jouw opdracht het beste is, omdat die de markt kent. Leg contact binnen je organisatie of werk met externe expertise als je aan de slag gaat met circulair aanbesteden. \n\nJe kan een MPG als selectiecriterium ook combineren met een minimale eis voor een MPG-score. Het Transitieteam Circulaire Bouweconomie adviseert bijvoorbeeld om een relatieve weging van inschrijvingen te combineren met een minimale grenswaarde van 10 tot 15% onder de wettelijke eis uit het Bouwbesluit (0,7 in 2022). Zo filter je in ieder geval al de minst ambitieuze inschrijvingen eruit.\n\nHoud bij gebruik van de MPG in het bijzonder rekening met zonnepanelen. Zonnepanelen zijn essentieel voor de energie- en circulaire transitie, maar verhogen de MPG-score sterk. Daarom moet je zonnepanelen buiten de MPG-score houden of zorgen dat andere delen van de opdracht die opvangen. Je kan dit bijvoorbeeld ondervangen met een minimumeis aan duurzame energie. Het Transiti",
+    "juridische_houdbaarheid": 4,
+    "duidelijkheid_wet": "",
+    "eenlijnige_uitspraken": "",
+    "literatuur": "",
+    "juridische_invloed": 3,
+    "bereik": "",
+    "duur": "",
+    "frequentie": "",
+    "omvang": "",
+    "europees": "",
+    "nationaal": true,
+    "provinciaal": true,
+    "gemeentelijk": true,
+    "type_beleidsinstrument": "Juridisch",
+    "R1": true,
+    "R2": true,
+    "R3": false,
+    "R4": false,
+    "R5": true,
+    "R6": "",
+    "valt_deze_mogelijkheid_onder_een_overheidsopdracht_of_consessie_opdracht": "",
+    "soort_opdracht": "",
+    "waar_valt_het_onder": "",
+    "kop_6_ministappenplan": "",
+    "ministappenplan": "",
+    "kop_7_titel_links_ministappenplan": "",
+    "titel_link_ministappenplan": "",
+    "links_ministappenplan": "",
+    "goed_in_combinatie_met": "",
+    "rechtsgebied": "Privaatrecht",
+    "subrechtsgebied": "Gronduitgifte",
+    "citeertitel": "Burgerlijk Wetboek",
+    "link_naar_wetsartikel": "wetten.nl - Regeling - Burgerlijk Wetboek Boek 3 - BWBR0005291 (overheid.nl)",
+    "geldend_vanaf": "2021-06-30T22:00:00.000Z",
+    "type_document": "Wet in formele zin",
+    "waardeketen": "Gebouwde Omgeving",
+    "casus": "Houtbouw"
+  },
+  {
     "id": "10",
     "artikel": "2.11",
     "circulair": true,
@@ -1995,7 +2052,7 @@ export const laws = [
     "casus": "Houtbouw"
   },
   {
-    "id": "37",
+    "id": "36",
     "artikel": "7:201",
     "circulair": true,
     "titel": "Circulaire windturbines bevorderen door het sluiten van huurovereenkomsten",
@@ -2052,7 +2109,7 @@ export const laws = [
     "casus": "Circulaire windturbines"
   },
   {
-    "id": "38",
+    "id": "37",
     "artikel": "7:1",
     "circulair": true,
     "titel": "Circulaire windturbines bevorderen door tenders bij gronduitgifte door verkoop.",
@@ -2109,7 +2166,7 @@ export const laws = [
     "casus": "Circulaire windturbines"
   },
   {
-    "id": "39",
+    "id": "38",
     "artikel": "5:85",
     "circulair": true,
     "titel": "Circulaire windturbines bevorderen door tenders bij gronduitgifte in erfpacht",
@@ -2166,7 +2223,7 @@ export const laws = [
     "casus": "Circulaire windturbines"
   },
   {
-    "id": "41",
+    "id": "39",
     "artikel": "2.4",
     "circulair": true,
     "titel": "Circulariteit in het omgevingsplan",
@@ -2223,7 +2280,7 @@ export const laws = [
     "casus": "Circulaire windturbines"
   },
   {
-    "id": "42",
+    "id": "40",
     "artikel": "3.1",
     "circulair": true,
     "titel": "Circulaire windturbines in de gemeentelijke omgevingsvisie",
@@ -2280,7 +2337,7 @@ export const laws = [
     "casus": "Circulaire windturbines"
   },
   {
-    "id": "43",
+    "id": "41",
     "artikel": "3.1",
     "circulair": true,
     "titel": "Circulaire windturbines in de provinciale omgevingsvisie",
@@ -2337,7 +2394,7 @@ export const laws = [
     "casus": "Circulaire windturbines"
   },
   {
-    "id": "44",
+    "id": "42",
     "artikel": "5.46",
     "circulair": true,
     "titel": "Projectbesluit",
@@ -2394,7 +2451,7 @@ export const laws = [
     "casus": "Circulaire windturbines"
   },
   {
-    "id": "45",
+    "id": "43",
     "artikel": "9.1",
     "circulair": true,
     "titel": "Voorkeursrecht gemeenten",
@@ -2451,7 +2508,7 @@ export const laws = [
     "casus": "Circulaire windturbines"
   },
   {
-    "id": "46",
+    "id": "44",
     "artikel": "9.1",
     "circulair": true,
     "titel": "Voorkeursrecht provincies",
@@ -2508,7 +2565,7 @@ export const laws = [
     "casus": "Circulaire windturbines"
   },
   {
-    "id": "47",
+    "id": "45",
     "artikel": "13.22",
     "circulair": true,
     "titel": "Duurzaamheidseisen in een anterieure overeenkomst",

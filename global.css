@@ -9,7 +9,7 @@
   }
 
   .image-margin {
-    @apply max-w-screen-2xl mx-auto;
+    @apply max-w-screen-xl mx-auto;
   }
 
   h1.mobile {
