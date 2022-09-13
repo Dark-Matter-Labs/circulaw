@@ -7,7 +7,7 @@ export default function InfoPage() {
   return (
     <Layout>
       <div className='global-margin my-20 max-w-2xl'>
-        <h1 className='mobile sm:main text-green1 pb-2'>
+        <h1 className='mobile sm:main text-green1 pb-2 max-w-3xl mx-auto'>
           Welke overheid heeft welke bevoegdheid voor maatregelen circulaire windturbines?
         </h1>
       </div>

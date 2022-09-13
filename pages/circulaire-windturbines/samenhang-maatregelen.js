@@ -7,7 +7,7 @@ export default function InfoPage() {
   return (
     <Layout>
       <div className='global-margin my-20'>
-        <h1 className='mobile sm:main text-green1 pb-2'>
+        <h1 className='mobile sm:main text-green1 pb-2 max-w-3xl mx-auto'>
           Samenhang maatregelen circulaire windturbines
         </h1>
       </div>
