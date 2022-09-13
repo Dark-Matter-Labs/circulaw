@@ -79,7 +79,7 @@ export default function PolicyList(props) {
                         </a>
                       </Link>
                     );
-                  } else if (titel === 'Onteigening') {
+                  } else if (titel === 'MPG als subselectiecriterium bij gronduitgifte') {
                     return (
                       <Link
                         href='/houtbouw/mpg-als-subselectiecriterium-bij-gronduitgifte/'
