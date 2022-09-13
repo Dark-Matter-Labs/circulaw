@@ -178,7 +178,7 @@ export default function Law() {
                   Waar moet je aan denken om in jouw organisatie sloopmeldingen te gebruiken voor
                   circulaire doeleinden?
                 </p>
-                <a href='/LeidraadSloopmeldingen-CircuLaw.pdf'>
+                <a href='/Leidraad-Sloopmelding-CircuLaw.pdf'>
                   <button
                     type='button'
                     className='inline-flex rounded-full items-center px-4 py-2 border border-green2 button text-white1 bg-green2'

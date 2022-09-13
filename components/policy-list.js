@@ -45,12 +45,11 @@ export default function PolicyList(props) {
             >
               <div className=''>
                 <div className='inline-block'>
-                  {casus === 'Houtbouw' ?
+                  {casus === 'Houtbouw' ? (
                     <Image width='20' height='20' src={IconWood} alt='Icon of Wood' />
-                    :
+                  ) : (
                     <Image width='20' height='20' src={WindmillIcon} alt='Icon of Wood' />
-                }
-                
+                  )}
                 </div>
                 <span className='inline-block pl-4 font-openSans casus'>{casus}</span>
                 {is_er_een_praktijk_voorbeeld && (

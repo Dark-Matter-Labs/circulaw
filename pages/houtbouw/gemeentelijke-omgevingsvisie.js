@@ -165,6 +165,24 @@ export default function Law() {
                   houtbouw.
                 </p>
               </div>
+              <div className='bg-green1 px-4 py-4'>
+                <h2 className='pb-2 mobile sm:main text-white1'>
+                  Zelf aan de slag met sloopmeldingen
+                </h2>
+                <p className='body-text-mobile sm:body-text text-white1 pb-4'>
+                  Waar moet je aan denken om in jouw organisatie sloopmeldingen te gebruiken voor
+                  circulaire doeleinden?
+                </p>
+                <a href='/Leidraad-Omgevingsvisie-CircuLaw.pdf'>
+                  <button
+                    type='button'
+                    className='inline-flex rounded-full items-center px-4 py-2 border border-green2 button text-white1 bg-green2'
+                  >
+                    Bekijk de leidraad →
+                  </button>
+                </a>
+              </div>
+
               <div className='py-4'>
                 <h2 className='pb-2 mobile sm:main'>Uit de praktijk</h2>
                 <p className='body-text-mobile sm:body-text'>
