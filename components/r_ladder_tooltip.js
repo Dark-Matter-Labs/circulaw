@@ -123,7 +123,11 @@ export default function ToolTips({ children, icon }) {
                             Bron: PBL (Planbureau voor de Leefomgeving)
                           </div>
                           <Link href='https://www.rvo.nl/onderwerpen/duurzaam-ondernemen/circulaire-economie/r-ladder'>
-                            <a target="_blank" rel="noopener noreferrer" className='text-greenLink link-mobile sm:link'>
+                            <a
+                              target='_blank'
+                              rel='noopener noreferrer'
+                              className='text-greenLink link-mobile sm:link'
+                            >
                               Meer over de R ladder op de website van RVO
                             </a>
                           </Link>

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import Layout from '../../components/layout';
 import TimberImage from '../../public/Windmill_Measures_Web.png';
 import TimberImageMob from '../../public/Windmill_Measures_Mob.png';
@@ -7,6 +8,14 @@ export default function InfoPage() {
   return (
     <Layout>
       <div className='global-margin my-20 max-w-2xl'>
+        <div className='breadcrumb text-greenLink pb-8'>
+          <Link href='/'>
+            <a>Home &gt; </a>
+          </Link>
+          <Link href='/circulaire-windturbines'>
+            <a>Circulaire windturbines &gt; </a>
+          </Link>
+        </div>
         <h1 className='mobile sm:main text-green1 pb-2 max-w-3xl mx-auto'>
           Welke overheid heeft welke bevoegdheid voor maatregelen circulaire windturbines?
         </h1>

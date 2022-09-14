@@ -190,7 +190,8 @@ export default function Law() {
                   <a
                     href='https://www.urk.nl/_flysystem/media/selectieleidraad-openbare-biedprocedure-gronduitgifte-deelgebied-1a-zeeheldenwijk.pdf'
                     className='link-mobile sm:link text-greenLink'
-                    target="_blank" rel="noopener noreferrer"
+                    target='_blank'
+                    rel='noopener noreferrer'
                   >
                     het beleid van de gemeente Urk
                   </a>{' '}
@@ -268,7 +269,8 @@ export default function Law() {
                       <a
                         href='https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/milieuprestatie-gebouwen-mpg'
                         className='text-greenLink link-mobile sm:link'
-                        target="_blank" rel="noopener noreferrer"
+                        target='_blank'
+                        rel='noopener noreferrer'
                       >
                         Algemene informatie over de MPG van de RvO
                       </a>
@@ -277,7 +279,8 @@ export default function Law() {
                       <a
                         href='https://energieslag.rvo.nl/file/download/f4f55197-f450-4ce6-9704-039831f3c179/1611914396leidraad%20verduurzamen%20gemeentelijk%20vastgoed%20-%20stappenplan%20met%20praktijkvoorbeelden.pdf'
                         className='text-greenLink link-mobile sm:link'
-                        target="_blank" rel="noopener noreferrer"
+                        target='_blank'
+                        rel='noopener noreferrer'
                       >
                         Leidraad over de verduurzaming van gemeentelijk vastgoed met
                         praktijkvoorbeelden, 2020 door de RvO
@@ -389,7 +392,8 @@ export default function Law() {
                         <a
                           href='https://www.pianoo.nl/nl/document/12961/factsheet-termijnen-aanbestedingswet-2012 '
                           className='link-mobile sm:link text-greenLink'
-                          target="_blank" rel="noopener noreferrer"
+                          target='_blank'
+                          rel='noopener noreferrer'
                         >
                           https://www.pianoo.nl/nl/document/12961/factsheet-termijnen-aanbestedingswet-2012{' '}
                         </a>

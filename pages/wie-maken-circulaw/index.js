@@ -30,7 +30,8 @@ export default function WieMaken() {
               <a
                 href='https://www.amsterdam.nl/innovatie/duurzaamheid/'
                 className='text-greenLink link-mobile sm:link'
-                target="_blank" rel="noopener noreferrer"
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 Het stedelijk innovatieteam van Amsterdam
               </a>{' '}
@@ -44,7 +45,12 @@ export default function WieMaken() {
 
             <h2 className='mobile sm:main pb-2'>Dark Matter Laboratories</h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
-              <a href='https://darkmatterlabs.org/' target="_blank" rel="noopener noreferrer" className='text-greenLink link-mobile sm:link'>
+              <a
+                href='https://darkmatterlabs.org/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-greenLink link-mobile sm:link'
+              >
                 Dark Matter Labs (DML)
               </a>{' '}
               is een internationaal strategisch onderzoeks-, ontwerp- en ontwikkelingslab met als
@@ -58,7 +64,12 @@ export default function WieMaken() {
 
             <h2 className='mobile sm:main pb-2'>EIT Climate-KIC</h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
-              <a href='https://www.climate-kic.org/' target="_blank" rel="noopener noreferrer" className='text-greenLink link-mobile sm:link'>
+              <a
+                href='https://www.climate-kic.org/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-greenLink link-mobile sm:link'
+              >
                 EIT Climate-KIC
               </a>{' '}
               is een kennis- en innovatiecommunity (KIC) die werkt aan het versnellen van de
@@ -80,7 +91,8 @@ export default function WieMaken() {
               <a
                 href='https://www.noord-holland.nl/'
                 className='text-greenLink link-mobile sm:link'
-                target="_blank" rel="noopener noreferrer"
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 Provincie Noord-Holland
               </a>{' '}
@@ -90,7 +102,12 @@ export default function WieMaken() {
 
             <h2 className='mobile sm:main pb-2'>Provincie Flevoland</h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
-              <a href='https://www.flevoland.nl/' target="_blank" rel="noopener noreferrer" className='text-greenLink link-mobile sm:link'>
+              <a
+                href='https://www.flevoland.nl/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-greenLink link-mobile sm:link'
+              >
                 Provincie Flevoland
               </a>{' '}
               heeft circulaire economie benoemd als één van de zeven hoofdopgaven in de
@@ -106,7 +123,8 @@ export default function WieMaken() {
               <a
                 href='https://www.rvo.nl/klimaat-energie'
                 className='text-greenLink link-mobile sm:link'
-                target="_blank" rel="noopener noreferrer"
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 RVO
               </a>
@@ -120,7 +138,8 @@ export default function WieMaken() {
               <a
                 href='https://www.metropoolregioamsterdam.nl/'
                 className='text-greenLink link-mobile sm:link'
-                target="_blank" rel="noopener noreferrer"
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 De Metropoolregio Amsterdam
               </a>{' '}
@@ -133,7 +152,8 @@ export default function WieMaken() {
               <a
                 href='https://www.metropoolregioamsterdam.nl/een-op-de-vijf-nieuwbouwwoningen-in-mra-vanaf-2025-van-hout/'
                 className='text-greenLink link-mobile sm:link'
-                target="_blank" rel="noopener noreferrer"
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 Kernteam Houtbouw
               </a>
@@ -146,7 +166,8 @@ export default function WieMaken() {
               <a
                 href='https://www.belastingdienst.nl/wps/wcm/connect/nl/home/home'
                 className='text-greenLink link-mobile sm:link'
-                target="_blank" rel="noopener noreferrer"
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 De belastingdienst
               </a>{' '}
@@ -160,7 +181,12 @@ export default function WieMaken() {
             <h2 className='mobile sm:main pb-2'>Erasmus School of Law</h2>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
               Professoren en academici vanuit de faculteiten{' '}
-              <a href='https://www.eur.nl/en/esl' target="_blank" rel="noopener noreferrer" className='text-greenLink link-mobile sm:link'>
+              <a
+                href='https://www.eur.nl/en/esl'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-greenLink link-mobile sm:link'
+              >
                 ‘Law and Innovation’ en ‘Erasmus Centre for Local Governments’
               </a>{' '}
               dragen inhoudelijk bij aan de ontwikkeling van CircuLaw. Het gaat daarbij om kennis
@@ -175,7 +201,8 @@ export default function WieMaken() {
               <a
                 href='https://www.tudelft.nl/bk/over-faculteit/afdelingen/management-in-the-built-environment'
                 className='text-greenLink link-mobile sm:link'
-                target="_blank" rel="noopener noreferrer"
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 Management in the Built Environment (MBE) van TU Delft
               </a>{' '}
@@ -194,7 +221,8 @@ export default function WieMaken() {
               <a
                 href='https://www.ams-institute.org/urban-challenges/circularity-urban-regions/'
                 className='text-greenLink link-mobile sm:link'
-                target="_blank" rel="noopener noreferrer"
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 AMS Institute{' '}
               </a>
@@ -213,7 +241,8 @@ export default function WieMaken() {
               <a
                 href='https://www.wur.nl/en/research-results/chair-groups/social-sciences/law-group.htm'
                 className='text-greenLink link-mobile sm:link'
-                target="_blank" rel="noopener noreferrer"
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 WUR Law Group
               </a>{' '}
@@ -230,7 +259,8 @@ export default function WieMaken() {
               <a
                 href='https://vu.nl/nl/onderzoek/thema/de-digitale-wereld'
                 className='text-greenLink link-mobile sm:link'
-                target="_blank" rel="noopener noreferrer"
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 Vrije Universiteit
               </a>{' '}
@@ -251,7 +281,8 @@ export default function WieMaken() {
               <a
                 href='https://www.nen.nl/afspraken-voor-een-circulaire-economie'
                 className='text-greenLink link-mobile sm:link'
-                target="_blank" rel="noopener noreferrer"
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 NEN
               </a>{' '}
@@ -264,7 +295,8 @@ export default function WieMaken() {
               <a
                 href='https://www.nen.nl/innovatielab'
                 className='text-greenLink link-mobile sm:link'
-                target="_blank" rel="noopener noreferrer"
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 NEN Innovatielab
               </a>{' '}
@@ -273,7 +305,8 @@ export default function WieMaken() {
               <a
                 href='https://connect.nen.nl/Portal'
                 className='text-greenLink link-mobile sm:link'
-                target="_blank" rel="noopener noreferrer"
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 NEN-Connect
               </a>
