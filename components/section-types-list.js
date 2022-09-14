@@ -107,7 +107,7 @@ export default function SectionTypes(props) {
                 <Image src={file.heroImage} layout='responsive' alt='Picture of the case' />
               )}
             </div>
-            <div className='group block w-full p-4 bg-white px-10 '>
+            <div className='group block w-full p-4 bg-white px-10'>
               <div className={classNames(props.type === 'houtbouw' ? 'h-20' : '', 'inline-block')}>
                 {file.href !== '' ? (
                   <Link href={file.href}>

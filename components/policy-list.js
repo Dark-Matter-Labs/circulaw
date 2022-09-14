@@ -45,7 +45,7 @@ export default function PolicyList(props) {
                   {casus === 'Houtbouw' ? (
                     <Image width='20' height='20' src={IconWood} alt='Icon of Wood' />
                   ) : (
-                    <Image width='24' height='24' src={WindmillIcon} alt='Icon of Wood' />
+                    <Image width='40' height='40' src={WindmillIcon} alt='Icon of Wood' />
                   )}
                 </div>
                 <span className='inline-block pl-4 font-openSans casus'>{casus}</span>

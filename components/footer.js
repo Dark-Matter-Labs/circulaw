@@ -178,7 +178,7 @@ export default function Footer() {
           rechten kunnen worden ontleend. We horen graag wat je ervan vindt, wat je anders zou
           willen, wat je mist en natuurlijk horen we ook graag waar je blij van wordt.{' '}
           <Link href='/contact'>
-            <a className='link-mobile text-blush1'>Stuur je feedback op deze testversie.</a>
+            <a className='font-bold underline text-blush1'>Stuur je feedback op deze testversie.</a>
           </Link>
         </p>
       </div>

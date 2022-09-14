@@ -366,7 +366,7 @@ export default function Index() {
             </span>
           </div>
           <div className='border-b border-grey1 pb-10'>
-            <h2 className='pt-10 mobile sm:main'>Status en ambities CircuLaw</h2>
+            <h2 className='pt-10 mobile sm:main'>Wat vind je nu op CircuLaw?</h2>
             <p className='body-text-mobile sm:body-text py-5 max-w-4xl'>
               CircuLaw wordt stap voor stap ontwikkeld. Op dit moment bevat de website vooral
               informatie over wet-en regelgeving die voor beleidsmakers relevant is. Deze informatie
