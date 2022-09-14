@@ -42,7 +42,7 @@ const navigation = {
       className: 'text-white1',
     },
     {
-      name: 'Wetsanalyse met circulaire blik',
+      name: 'Wetsanalyse vanuit circulaire blik',
       href: '/wetsanalyse-met-circulaire-blik',
       className: 'text-white1',
     },
