@@ -70,21 +70,20 @@ export default function Contact() {
         {!submitSuccess ? (
           <>
             <h1 className='text-green1 pt-10 mobile sm:main'>Contact</h1>
-            <p className='body-text-mobile sm:body-text py-10 max-w-2xl text-black1'></p>
             {showPrivacyError && (
-              <p className='body-text-mobile sm:body-text py-10 max-w-2xl text-red-600'>
+              <p className='body-text-mobile sm:body-text py-2 max-w-2xl text-red-600'>
                 Ga akkoord met de privacyvoorwaarden om te kunnen verzenden
               </p>
             )}
 
             {showEmailError && (
-              <p className='body-text-mobile sm:body-text py-10 max-w-2xl text-red-600'>
+              <p className='body-text-mobile sm:body-text py-2 max-w-2xl text-red-600'>
                 Vul een geldig e-mail adres in
               </p>
             )}
 
             {showTextError && (
-              <p className='body-text-mobile sm:body-text py-10 max-w-2xl text-red-600'>
+              <p className='body-text-mobile sm:body-text py-2 max-w-2xl text-red-600'>
                 Vul een vraag of opmerking in
               </p>
             )}

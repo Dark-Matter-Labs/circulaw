@@ -14,10 +14,9 @@ export default function StatusEn() {
         <div className='grid grid-cols-1 lg:grid-cols-3'>
           <div className='my-20 col-span-2 text-black1'>
             <h1 className='pb-5 mobile sm:main'>Wat vind je nu op de site van CircuLaw?</h1>
-            <h2 className='mobile sm:main pb-2'>
-              CircuLaw wordt stap voor stap ontwikkeld. Op dit moment biedt CircuLaw het volgende:
-            </h2>
+            <h2 className='mobile sm:main pb-2'>CircuLaw wordt stap voor stap ontwikkeld.</h2>
             <div className='body-text-mobile sm:body-text max-w-4xl pb-10'>
+              Op dit moment biedt CircuLaw het volgende:
               <ul className='list-disc pl-6'>
                 <li>
                   Een overzicht van wet- en regelgeving voor beleidsmakers die aan de slag willen
@@ -44,13 +43,15 @@ export default function StatusEn() {
                   verschillende bevoegdheidsniveaus (rijk, provincies, gemeenten)
                 </li>
               </ul>
+            </div>
+            <p className='body-text-mobile sm:body-text max-w-4xl '>
+              {' '}
               Met deze versie van CircuLaw kunnen gebruikers al aan de slag. Mede op basis van hun
               bevindingen en hun wensen breiden wij CircuLaw geleidelijk uit. Een volgende versie
               bevat in ieder geval informatie over nieuwe thema’s of productgroepen, en een verdere
               doorontwikkeling van de huidige functionaliteiten en overzichten. De ambities van
               CircuLaw reiken ver.
-            </div>
-            <br />
+            </p>
           </div>
           <div className='mx-20 my-20 max-w-sm'>
             <OverNav pagename='status' />

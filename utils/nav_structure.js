@@ -27,7 +27,7 @@ const waardeketens = [
       className: '',
     },
     {
-      name: 'Status en ambities',
+      name: 'Wat vind je nu op CircuLaw?',
       description: 'description',
       href: '/status-en-ambities',
       className: '',
