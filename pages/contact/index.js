@@ -190,7 +190,7 @@ export default function Contact() {
                       <p className='text-base text-gray-500'>
                         Ik ga akkoord met de{' '}
                         <Link href='/privacy-policy'>
-                          <a href='#' className='font-medium text-greenLink font-manrope'>
+                          <a className='font-medium text-greenLink font-manrope'>
                             privacy verklaring
                           </a>
                         </Link>

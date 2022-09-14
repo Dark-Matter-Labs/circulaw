@@ -319,10 +319,10 @@ export default function Index() {
           <SectionTypes type='home' />
           <p className='body-text-mobile sm:body-text'>
             In 2022 volgen meer thema’s binnen verschillende waardeketens. <br />
-            Lees meer over de{' '}
+            Lees meer over{' '}
             <span className='link-mobile sm:link text-greenLink'>
               <Link href='/status-en-ambities'>
-                <a>status en ambitie van CircuLaw</a>
+                <a>wat je nu vindt op CircuLaw</a>
               </Link>
             </span>{' '}
             of ga naar{' '}
