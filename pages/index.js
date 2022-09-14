@@ -334,7 +334,7 @@ export default function Index() {
           </p>
         </div>
       </div>
-      <div className='bg-white py-20 mr-10'>
+      <div className='bg-white py-20'>
         <div className='global-margin'>
           <h1 className='mobile sm:main text-green1' name='waarom'>
             Over CircuLaw
