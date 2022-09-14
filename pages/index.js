@@ -274,8 +274,8 @@ export default function Index() {
             )}
           </Disclosure>
 
-          <main className=' global-margin sm:mt-12'>
-            <div className='text-center'>
+          <main className='global-margin sm:mt-12'>
+            <div className='text-center mx-auto max-w-4xl'>
               <h1 className='text-6xl homepage-header-title-mobile sm:homepage-header-title text-white1 py-10'>
                 <span className='block '>Regelgeving voor een circulaire economie</span>{' '}
               </h1>
