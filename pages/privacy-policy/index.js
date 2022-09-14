@@ -4,7 +4,7 @@ export default function Privacy() {
   return (
     <Layout>
       <div className='global-margin my-20 max-w-2xl text-black1'>
-        <h1 className='mobile sm:main'>Privacyverklaring</h1>
+        <h1 className='mobile sm:main pb-6'>Privacyverklaring</h1>
         <p className='body-text-mobile sm:body-text pt-2 pb-6'>
           Het projectteam CircuLaw is verantwoordelijk voor de verwerking van persoonsgegevens zoals
           weergegeven in dit statement. CircuLaw Alfa is een alfaversie van het product CircuLaw.
