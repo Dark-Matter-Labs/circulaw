@@ -3,7 +3,7 @@
 @layer components {
   .global-margin {
     @apply max-w-7xl;
-    @apply mx-7;
+    @apply mx-8;
     @apply md:mx-10;
     @apply xl:mx-auto;
   }

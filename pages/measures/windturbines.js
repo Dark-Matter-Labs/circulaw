@@ -614,7 +614,7 @@ export default function Measures() {
             </span>
           </div>
         </div>
-        <div className='flex'>
+        <div className='grid grid-cols-1 sm:grid-cols-4'>
           <div className='hidden lg:block p-3 my-4'>
             <SearchFilter
               ref={wettelijkFilterRef}
@@ -669,7 +669,7 @@ export default function Measures() {
             />
           </div>
 
-          <div className='mt-10'>
+          <div className='mt-10 col-span-3'>
             {data && (
               <div>
                 <PolicyList data={laws} casus='Circulaire windturbines' />

@@ -509,7 +509,7 @@ export default function Measures() {
             </Dialog>
           </Transition.Root>
         </div>
-        <div className='global-margin grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 '>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 '>
           <div className='hidden sm:block breadcrumb pt-8 text-greenLink'>
             <Link href='/'>
               <a>Home</a>
@@ -612,7 +612,7 @@ export default function Measures() {
             </span>
           </div>
         </div>
-        <div className='flex global-margin'>
+        <div className='grid grid-cols-1 sm:grid-cols-4'>
           <div className='hidden lg:block p-3 my-4'>
             <SearchFilter
               ref={wettelijkFilterRef}
@@ -667,7 +667,7 @@ export default function Measures() {
             />
           </div>
 
-          <div className='mt-10 '>
+          <div className='mt-10 col-span-3 '>
             {data && (
               <div>
                 <PolicyList data={laws} casus='Houtbouw' />

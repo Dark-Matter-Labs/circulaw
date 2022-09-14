@@ -47,7 +47,7 @@ export default function Nav() {
                     </a>
                   </Link>
                 </div>
-                <div className='block lg:hidden py-4 mx-7'>
+                <div className='block lg:hidden py-4 '>
                   <Link href='/'>
                     <a className=''>
                       <Image
@@ -62,7 +62,7 @@ export default function Nav() {
                 </div>
                 <div className='hidden lg:ml-6 lg:flex'>
                   <div className='flex inset-x-0 top-0 pl-5 invisible lg:visible hidden lg:inline '>
-                    <div className='flex-1 global-margin px-2 sm:px-6 lg:px-8'>
+                    <div className='flex-1 global-margin'>
                       <div className='content right-0'>
                         <div className='relative flex items-center justify-between font-manrope font-semibold'>
                           <div className=''>

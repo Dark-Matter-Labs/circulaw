@@ -120,7 +120,7 @@ export default function ToolTips({ children, icon }) {
                             <Image src={R1} alt='Picture of the author' />
                           </div>
                           <div className='card-body'>
-                            Bron: PBI1 (Planbureau voor de Leefomgeving)
+                            Bron: PBL (Planbureau voor de Leefomgeving)
                           </div>
                           <Link href='https://www.rvo.nl/onderwerpen/duurzaam-ondernemen/circulaire-economie/r-ladder'>
                             <a className='text-greenLink link-mobile sm:link'>

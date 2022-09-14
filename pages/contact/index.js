@@ -11,12 +11,41 @@ function classNames(...classes) {
 export default function Contact() {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [agreed, setAgreed] = useState(false);
+  const [send, setSend] = useState(true);
+  const [text, setText] = useState('');
+  const [email, setEmail] = useState('');
+  const [showPrivacyError, setShowPrivacyError] = useState(false);
+  const [showEmailError, setShowEmailError] = useState(false);
+  const [showTextError, setShowTextError] = useState(false);
+
   const form = useRef();
+
+  function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+  }
 
   const sendMessage = (e) => {
     e.preventDefault();
 
-    if (agreed) {
+    if (!agreed) {
+      setShowPrivacyError(true);
+    } else {
+      setShowPrivacyError(false);
+    }
+
+    if (!isValidEmail(email) || email === '') {
+      setShowEmailError(true);
+    } else {
+      setShowEmailError(false);
+    }
+
+    if (text === '') {
+      setShowTextError(true);
+    } else {
+      setShowTextError(false);
+    }
+
+    if (agreed && isValidEmail(email) && text !== '') {
       emailjs
         .sendForm(
           'circulaw',
@@ -41,10 +70,25 @@ export default function Contact() {
         {!submitSuccess ? (
           <>
             <h1 className='text-green1 pt-10 mobile sm:main'>Contact</h1>
-            <p className='body-text-mobile sm:body-text py-10 max-w-2xl text-black1'>
-              Heb je een vraag of opmerking over de site of het project? Vul dan je gegevens in. Na
-              verzending nemen we zo snel mogelijk contact met je op.
-            </p>
+            <p className='body-text-mobile sm:body-text py-10 max-w-2xl text-black1'></p>
+            {showPrivacyError && (
+              <p className='body-text-mobile sm:body-text py-10 max-w-2xl text-red-600'>
+                Ga akkoord met de privacyvoorwaarden om te kunnen verzenden
+              </p>
+            )}
+
+            {showEmailError && (
+              <p className='body-text-mobile sm:body-text py-10 max-w-2xl text-red-600'>
+                Vul een geldig e-mail adres in
+              </p>
+            )}
+
+            {showTextError && (
+              <p className='body-text-mobile sm:body-text py-10 max-w-2xl text-red-600'>
+                Vul een vraag of opmerking in
+              </p>
+            )}
+
             <div className='mt-8 max-w-3xl mb-20'>
               <form
                 ref={form}
@@ -99,6 +143,7 @@ export default function Contact() {
                       type='email'
                       autoComplete='email'
                       className='py-3 px-4 block w-full shadow-sm focus:ring-green1 focus:border-green1 border-gray-300 rounded-md'
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                 </div>
@@ -117,6 +162,7 @@ export default function Contact() {
                       rows={4}
                       className='py-3 px-4 block w-full shadow-sm focus:ring-green1 focus:border-green1 border border-gray-300 rounded-md'
                       defaultValue={''}
+                      onChange={(e) => setText(e.target.value)}
                     />
                   </div>
                 </div>

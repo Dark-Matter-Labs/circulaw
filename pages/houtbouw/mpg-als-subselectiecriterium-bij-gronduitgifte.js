@@ -225,11 +225,11 @@ export default function Law() {
               </div>
               <div className='bg-green1 px-4 py-4'>
                 <h2 className='pb-2 mobile sm:main text-white1'>
-                  Zelf aan de slag met sloopmeldingen
+                  Zelf aan de slag met gronduitgifte?
                 </h2>
                 <p className='body-text-mobile sm:body-text text-white1 pb-4'>
-                  Waar moet je aan denken om in jouw organisatie sloopmeldingen te gebruiken voor
-                  circulaire doeleinden?
+                  Check hoe de MPG als subgunningscriterium in jouw organisatie kunt gebruiken om
+                  houtbouw te bevorderen.
                 </p>
                 <a href='/Leidraad-Gronduitgifte-CircuLaw.pdf'>
                   <button
@@ -259,18 +259,10 @@ export default function Law() {
                 <h2 className='pb-2 mobile sm:main'>Verder lezen andere bronnen</h2>
                 <div className='newlineDisplay body-text-mobile sm:body-text truncate'>
                   <p className='body-text-mobile sm:body-text'>
-                    Over aanbesteden op basis van MPG zijn de laatste jaren verschillende rapporten
-                    verschenen. Zie bijvoorbeeld:
+                    Over gronduitgifte op basis van MPG zijn de laatste jaren verschillende
+                    rapporten verschenen. Zie bijvoorbeeld:
                   </p>
                   <ul className='list-disc pl-6'>
-                    <li>
-                      <a
-                        href='https://platformcb23.nl/images/leidraden/Platform_CB23_Leidraad_Circulair-Inkopen_versie1.pdf'
-                        className='text-greenLink link-mobile sm:link'
-                      >
-                        Een meer algemene leidraad over circulair inkopen door Platform CB ‘23
-                      </a>
-                    </li>
                     <li>
                       <a
                         href='https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/milieuprestatie-gebouwen-mpg'
@@ -485,7 +477,7 @@ export default function Law() {
                 </div>
 
                 <div className='font-manrope font-normal text-base'>
-                  <p>Omgevingsrecht</p>
+                  <p>Gronduitgifte</p>
                 </div>
               </div>
 

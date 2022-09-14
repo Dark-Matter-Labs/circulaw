@@ -15,77 +15,105 @@ export default function WatIsCircuLaw() {
           <div className='my-20 col-span-2 text-black1'>
             <h1 className='pb-5 mobile sm:main'>Wat is CircuLaw?</h1>
             <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
-              CircuLaw is een service waarmee we beleidsmakers, transitiemanagers en juristen helpen
-              meer en beter gebruik te maken van regelgeving om de circulaire economie te
-              bevorderen. In een tool bieden we hen per circulaire productgroep op basis van brede
-              wetsanalyses beleidsmaatregelen aan. Ook bieden we hulp bij de toepassing van die
-              maatregelen met een praktische leidraad en praktijkvoorbeelden. Maar CircuLaw is
-              ambitieus. Door stap voor stap uit te breiden willen we uiteindelijk ook
-              vergunningverleners, toezichthouders en circulaire ondernemers bedienen.
+              CircuLaw is een transitietool: het wil de transitie naar de circulaire economie
+              versnellen door beleidsmakers meer en beter gebruik te laten maken van de
+              mogelijkheden die nu binnen de bestaande regelgeving aanwezig zijn. Zo kan de overstap
+              van het lineaire systeem naar een circulair systeem worden gemaakt. Een randvoorwaarde
+              voor circulaire marktontwikkeling.
             </p>
-            <h2 className='mobile sm:main pb-2'>Overzicht wet-en regelgeving</h2>
-            <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
-              We verzamelen de mogelijkheden die het wet- en regelgevingsstelsel biedt voor de
-              circulaire transitie centraal en stellen deze via CircuLaw voor iedereen beschikbaar,
-              zodat CircuLaw fungeert als collectief geheugen. Daarnaast voeren we per thema
-              systematische wetsanalyses uit om nieuwe maatregelen te vinden.
-            </p>
-
-            <h2 className='mobile sm:main pb-2'>Van wet-en regelgeving naar praktijk</h2>
-            <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
-              Als juridische maatregelen al zijn toegepast, geeft CircuLaw ook voorbeelden uit de
-              praktijk. Ter inspiratie, én als middel om beleidsmedewerker op weg te helpen.
-              Daarnaast presenteert CircuLaw ook instructies aan beleidsmedewerkers hoe zij binnen
-              hun provincie of gemeente maatregelen kunnen toepassen. Hierbij worden ook suggesties
-              gedaan voor teksten, waarden of verwijzingen naar keurmerken, die als basis kunnen
-              dienen voor het stellen van eisen. Ook worden waar mogelijk modelteksten aangeboden,
-              die bijvoorbeeld één op één verwerkt kunnen worden in een verordening.
-            </p>
-
-            <h2 className='mobile sm:main pb-2'>Bevoegdheden inzichtelijk maken</h2>
-            <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
-              Een belangrijke meerwaarde van CircuLaw is dat het de samenwerking tussen overheden
-              bevordert. Onze wetsanalyses maken op maatregelniveau inzichtelijk welke overheidslaag
-              bevoegd is om een regel te stellen. Op deze manier wordt het mogelijk om landelijk een
-              instrumentenmix te ontwikkelen voor een productgroep. Of om als gemeente naar een
-              provincie te gaan, en samen stappen te gaan zetten in bijvoorbeeld het optimaliseren
-              van de houtbouwketen.
-            </p>
-
-            <h2 className='mobile sm:main pb-2'>Verbinden van wetsgebieden</h2>
-            <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
-              CircuLaw maakt inzichtelijk hoe binnen bepaalde thema’s maatregelen samenhangen. Die
-              samenhang is van groot belang, want om de transitie te versnellen, is het invoeren van
-              één beleidsmaatregel vaak niet voldoende. Het idee van transitiemanagement is dat
-              gelijktijdig aan meerdere knoppen wordt gedraaid, waarmee het systeem op verschillende
-              punten bewerkt wordt - en daarmee in beweging komt. Het inzetten van de juiste
-              instrumentenmix kan leiden tot wat we ‘hefbomen’ noemen in de transitie. Het
-              combineren en inzetten van maatregelen van verschillende rechtsgebieden, bijvoorbeeld
-              publiek en privaat, kan een versterkend effect hebben.
-            </p>
-
             <h2 className='mobile sm:main pb-2'>Law as a Service</h2>
-            <p className='body-text-mobile sm:body-text max-w-4xl pb-6'>
-              CircuLaw wil wet- en regelgeving tot leven brengen. Van een eindeloze hoeveelheid
-              statische wetten op papier, naar een bruikbaar, tastbaar inzicht en overzicht.
-              Toepasbaar vanuit de doelstellingen van een circulaire productgroep. CircuLaw maakt
-              het mogelijk om gelijk te zien welke mogelijkheden een specifieke wet biedt voor het
-              versnellen van de circulaire transitie, en er mee aan de slag te gaan. De wet als
-              service.
+            <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
+              CircuLaw brengt wet- en regelgeving tot leven. Van een eindeloze hoeveelheid statische
+              wetten op papier, naar een bruikbaar, tastbaar inzicht en overzicht. Toepasbaar vanuit
+              de doelstellingen van een circulaire casus of productgroep. De wet als service.
             </p>
-            <h2 className='mobile sm:main pb-2'>Uniformiteit in decentrale uitvoering </h2>
-            <p className='body-text-mobile sm:body-text max-w-4xl pb-6'>
-              In Nederland zijn veel taken en bevoegdheden gedecentraliseerd naar provincies en
-              gemeenten. Lokaal kun je dan maatwerkoplossingen introduceren. Daar zitten voor-en
-              nadelen aan. In de praktijk blijkt dat overheden hierdoor verschillende eisen aan de
-              markt stellen. En het gevolg daarvan is dat bedrijven die hun circulaire producten of
-              diensten in meerdere gemeenten of provincies willen aanbieden, opschalingsproblemen
-              kunnen ervaren.
+
+            <h2 className='mobile sm:main pb-2'>Handelingsperspectief in wet- en regelgeving</h2>
+            <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
+              Voor beleidsmakers is het nog niet zo makkelijk om met wet- en regelgeving aan de slag
+              te gaan. In de praktijk is het vaak eenvoudiger om bijvoorbeeld een subsidieregeling
+              op te stellen, of een kennisconsortium te vormen. Toch is het belangrijk dat
+              juridische maatregelen aan de mix worden toegevoegd. CircuLaw is erop gericht om
+              beleidsmakers zo goed mogelijk hierbij te helpen. Op basis van systematische
+              wetsanalyses presenteert CircuLaw per thema of productgroep een overzicht aan
+              maatregelen, soms pasklaar en soms innovatief van aard. Dit is allemaal onderdeel van
+              onze ‘open public service’.
             </p>
+            <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
+              Het aanbieden van maatregelen is daarbij pas het begin. Het komende jaar werken we
+              samen met ‘communities of practice’ aan een toepassingsmodule, waarbij we
+              beleidsmakers antwoorden geven op vragen als: “waarop moet ik toetsen bij
+              toepassing?”, “hoe ga ik van een maatregel naar een project met de markt?” Ook
+              onderzoeken we de mogelijkheden om landelijk en regionaal een leerinfrastructuur te
+              ontwikkelen, waarbij we bijvoorbeeld campagnes, cursussen en kennisbijeenkomsten
+              kunnen inzetten.
+            </p>
+
+            <h2 className='mobile sm:main pb-2'>Inzicht in samenhang instrumenten</h2>
+            <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
+              Als beleidsmaker is het moeilijk om overzicht te krijgen van beschikbare juridische
+              maatregelen, of om te bepalen hoe maatregelen zich tot elkaar verhouden. Zeker als het
+              maatregelen betreft van verschillende wetsgebieden: publiekrecht, privaatrecht of
+              fiscaalrecht. CircuLaw visualiseert per casus of productgroep hoe beschikbare
+              maatregelen samenhangen. Zo’n visualisatie kan als dashboard dienen voor de
+              beleidsmaker en stelt die in staat om tegelijk aan verschillende knoppen t  te
+              draaien. En dus op een gecoördineerde, gerichte manier combinaties van maatregelen in
+              te zetten. Dit is belangrijk, omdat een transitie vergt dat in een systeem
+              tegelijkertijd op verschillende plekken veranderingen plaatsvinden.
+            </p>
+
+            <h2 className='mobile sm:main pb-2'>
+              Samenwerking tussen verschillende overheidslagen
+            </h2>
+            <p className='body-text-mobile sm:body-text max-w-4xl pb-10'>
+              Nederland heeft ambitieuze circulaire doelstellingen: in 2030 moet het primaire
+              grondstoffengebruik met 50% verminderd zijn. Ook veel provincies en gemeenten hebben
+              vergelijkbare verreikende ambities opgesteld. Deze doelstellingen worden in 2022 en
+              2023 op rijksniveau per productgroep geconcretiseerd en uitgewerkt in het Nationaal
+              Programma Circulaire Economie. Samenwerking tussen de verschillende overheidslagen
+              binnen productieketens is cruciaal om deze doelstellingen te halen. CircuLaw maakt
+              daarom met visualisaties inzichtelijk welke overheidslaag over welke maatregelen en
+              mogelijkheden beschikt. Op die manier wordt duidelijk wie wat moet doen, en kunnen
+              overheden concreet op maatregelniveau de samenwerking zoeken en met meer synergie aan
+              circulaire productieketens werken.
+            </p>
+
+            <h2 className='mobile sm:main pb-2'>
+              Harmonisatie in regelgeving decentrale overheden
+            </h2>
+            <p className='body-text-mobile sm:body-text max-w-4xl pb-6'>
+              Provincies en gemeenten hebben binnen wet- en regelgeving de ruimte voor eigen
+              afwegingen, wat een belangrijk principe is van het democratische stelsel in Nederland.
+              Zo kunnen zij bijvoorbeeld in aanbestedingen en verordeningen zelf de eisen, criteria
+              en voorwaarden bepalen. De veelheid aan verschillende regels waartoe dit leidt kan
+              problemen veroorzaken voor ondernemers. In de praktijk blijken zij bij verschillende
+              overheden te moeten voldoen aan uiteenlopende circulaire eisen, waardoor het
+              onduidelijk is hoe zij hun producten moeten ontwikkelen. Dit kan kan hen terughoudend
+              maken om te investeren en problemen veroorzaken in opschaling. CircuLaw wil bijdragen
+              aan meer harmonisatie in regelgeving van decentrale overheden door bij toepassing van
+              de maatregelen suggesties te doen voor deze eisen en criteria. Dit willen we doen door
+              onder meer door modelteksten aan te bieden, of voorstellen voor bepaalde waarden.
+            </p>
+            <h2 className='mobile sm:main pb-2'>Collectief geheugen</h2>
+            <p className='body-text-mobile sm:body-text max-w-4xl pb-6'>
+              Overheden kunnen een wetsanalyse laten uitvoeren voor een productgroep of casus
+              waarmee de tool verder gevuld wordt. Zo wordt CircuLaw steeds rijker en wordt de
+              circulaire transitie steeds verder gedekt. Dit heeft nog een groot voordeel: overheden
+              hoeven straks niet telkens opnieuw apart losse opdrachten te verlenen voor onderzoek
+              naar mogelijkheden in regelgeving. Hiermee kunnen we een hoop geld besparen en
+              voorkomen dat het wiel steeds op verschillende plekken opnieuw uitgevonden wordt.
+            </p>
+            <h2 className='mobile sm:main pb-2'>Voorbeelden en ervaringen</h2>
             <p className='body-text-mobile sm:body-text max-w-4xl'>
-              Als – geholpen door CircuLaw - meerdere gemeenten en provincies op eenzelfde manier
-              wet-en regelgeving overnemen en implementeren, draagt dit bij aan de
-              investeringszekerheid voor circulaire ondernemers.
+              Leren doe je nooit alleen, en al helemaal niet als het gaat om de toepassing van
+              juridische maatregelen. De lessen die worden geleerd van implementatie in de ene
+              gemeente of provincie, kunnen zeer waardevol zijn voor de uitvoering ervan op een
+              andere plek. Daarom reconstrueren we precies hoe zo’n ‘pasklare maatregel’ is
+              toegepast, en bieden we een stappenplan zodat die maatregel ook elders kan worden
+              toegepast. In de toekomst willen we de tool zo vormgeven dat het mogelijk wordt om
+              feedbackloops te laten ontstaan. Beleidsmakers kunnen dan zelf hun ervaringen delen,
+              elkaar input geven of zelfs direct maatregelen in het systeem invoeren. Ook dit is
+              onderdeel van het idee van een ‘open public service’.
             </p>
           </div>
           <div className='mx-20 my-20 max-w-sm'>
