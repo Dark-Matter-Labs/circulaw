@@ -133,7 +133,7 @@ export default function Law() {
             </div>
           </div>
           <div className='grid grid-cols-1 sm:grid-cols-3'>
-            <div className='w-full sm:max-w-4xl pb-20 col-span-2'>
+            <div className='w-full sm:max-w-3xl pb-20 col-span-2'>
               <h1 className='hidden lg:block my-9 text-green1 mobile sm:main'>
                 MPG als subselectiecriterium bij gronduitgifte
               </h1>
