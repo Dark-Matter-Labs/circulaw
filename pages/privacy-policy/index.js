@@ -23,7 +23,8 @@ export default function Privacy() {
           maakt van onze digitale diensten, contact opneemt met het projectteam van CircuLaw of op
           een andere manier gebruik maakt van onze diensten, worden de door jou verstrekte
           persoonsgegevens vastgelegd en verwerkt onder de verantwoordelijkheid van de gemeente
-          Amsterdam.
+          Amsterdam. De gemeente verwerkt deze persoonsgegevens op basis van een gerechtvaardigd
+          belang, artikel 6, eerste lid, sub f, van de AVG.
         </p>
         <h2 className='mobile sm:main py-2'>Welke gegevens verwerken wij</h2>
         <p className='body-text-mobile sm:body-text'>
@@ -33,7 +34,7 @@ export default function Privacy() {
           gegevens maken wij geen gebruik van AI-technieken.
         </p>
         <h2 className='mobile sm:main py-2'>Met welk doel verwerken wij je persoonsgegevens</h2>
-        <p className='body-text-mobile sm:body-text '>
+        <div className='body-text-mobile sm:body-text '>
           We verwerken je persoonsgegevens
           <ul className='list-disc pl-6'>
             <li>om je te informeren over ons product;</li>
@@ -48,7 +49,7 @@ export default function Privacy() {
             </li>
             <li>om te voldoen aan een wettelijke verplichting.</li>
           </ul>
-        </p>
+        </div>
         <h2 className='mobile sm:main py-2'>
           Wanneer verstrekken wij je persoonsgegevens aan derden
         </h2>
@@ -66,7 +67,7 @@ export default function Privacy() {
           (persoonlijke) informatie verschaft.
         </p>
         <h2 className='mobile sm:main py-2'>Wat zijn jouw rechten?</h2>
-        <p className='body-text-mobile sm:body-text '>
+        <p className='body-text-mobile sm:body-text pb-4'>
           Je hebt het recht op inzage in je persoonsgegevens en het recht om correctie, verwijdering
           of overdracht van je persoonsgegevens te vragen. Daarnaast heb je het recht bezwaar te
           maken tegen het verwerken van je gegevens.
@@ -89,13 +90,29 @@ export default function Privacy() {
           zijn genoemd of om te voldoen aan wettelijke (bewaar)verplichtingen.
         </p>
         <h2 className='mobile sm:main py-2'>Hoe gaan we om met cookies?</h2>
-        <p className='body-text-mobile sm:body-text '>
-          CircuLaw maakt gebruik van technische en functionele cookies. Onze analytische cookies
-          maken geen inbreuk op jouw privacy. Wij gebruiken deze cookies alleen om ons product te
-          optimaliseren. Je kunt je afmelden voor cookies door je internetbrowser zo in te stellen
-          dat deze geen cookies meer opslaat. Ook kun je alle informatie die eerder is opgeslagen
-          via de instellingen van jouw browser verwijderen.
+        <p className='body-text-mobile sm:body-text pb-4'>
+          Een cookie is een klein tekstbestand dat onzichtbaar is voor de gebruiker en dat de
+          browser opslaat op de computer of het mobiele apparaat van de gebruiker wanneer de
+          gebruiker een website bezoekt.
         </p>
+        <p className='body-text-mobile sm:body-text pb-4'>
+          Op grond van artikel 11.7a van de Telecommunicatiewet (Tw) moeten de bezoekers van de
+          website geïnformeerd worden over en toestemming geven voor het plaatsen en/of uitlezen van
+          cookies op hun apparaat (zoals hun computer, laptop of smartphone).
+        </p>
+        <p className='body-text-mobile sm:body-text pb-4'>
+          Er zijn uitzonderingen op het toestemmingsvereiste. Bijvoorbeeld als de cookies technisch
+          noodzakelijk zijn om de website goed te laten werken. Dit noemen we functionele cookies.
+          Ook is er een uitzondering voor bepaalde analytische cookies. Er is bijvoorbeeld geen
+          toestemming nodig voor het plaatsen van analytische cookies, mits die cookies alleen
+          gebruikt worden om bezoekers te tellen. Met analytische cookies krijgen wij beter inzicht
+          in het functioneren van onze website.
+        </p>
+        <p className='body-text-mobile sm:body-text'>
+          CircuLaw maakt alleen gebruik van functionele en analytische cookies waar geen toestemming
+          voor gevraagd hoeft te worden.
+        </p>
+
         <h2 className='mobile sm:main py-2'>Wijziging van deze Privacyverklaring</h2>
         <p className='body-text-mobile sm:body-text '>
           De gemeente Amsterdam heeft het recht om haar Privacyverklaring te wijzigen. Als er

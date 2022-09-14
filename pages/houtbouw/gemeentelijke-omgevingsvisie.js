@@ -167,11 +167,11 @@ export default function Law() {
               </div>
               <div className='bg-green1 px-4 py-4'>
                 <h2 className='pb-2 mobile sm:main text-white1'>
-                  Zelf aan de slag met sloopmeldingen
+                  Zelf aan de slag met de omgevingsvisie?
                 </h2>
                 <p className='body-text-mobile sm:body-text text-white1 pb-4'>
-                  Waar moet je aan denken om in jouw organisatie sloopmeldingen te gebruiken voor
-                  circulaire doeleinden?
+                  Check hoe je de omgevingsvisie in jouw organisatie kunt gebruiken om houtbouw te
+                  bevorderen.
                 </p>
                 <a href='/Leidraad-Omgevingsvisie-CircuLaw.pdf'>
                   <button

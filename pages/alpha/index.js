@@ -10,24 +10,19 @@ export default function Alpha() {
           In deze versie testen we de techniek, de opzet én de inhoud van de site.
         </p>
         <p className='body-text-mobile sm:body-text text-black1'>
-          We horen heel graag wat jij ervan vindt, wat je anders zou willen, wat je mist en
-          natuurlijk horen we ook graag waar je blij van wordt.
+          Welkom bij CircuLaw. Deze website is volop in ontwikkeling. In deze versie testen we de
+          techniek, opzet en inhoud van de site. Het is mogelijk dat de inhoud van de site
+          incompleet is of fouten bevat. Dat betekent dan ook dat aan de inhoud van deze site geen
+          rechten kunnen worden ontleend.
         </p>
         <p className='body-text-mobile sm:body-text text-black1'>
-          Ga als gebruiker dus vooral aan de slag met alles wat je hier vindt, maar weet ook dat
-          CircuLaw nog lang niet af is.
-          <ul className='list-disc pl-6'>
-            <li className='text-greenLink link-mobile sm:link'>
-              <Link href='/status-en-ambities'>
-                <a>De status van CircuLaw</a>
-              </Link>
-            </li>
-            <li className='text-greenLink link-mobile sm:link'>
-              <Link href='/contact'>
-                <a>Mijn feedback op deze testversie</a>
-              </Link>{' '}
-            </li>
-          </ul>
+          We horen graag wat je ervan vindt, wat je anders zou willen, wat je mist en natuurlijk
+          horen we ook graag waar je blij van wordt.
+          <p className='text-greenLink link-mobile sm:link'>
+            <Link href='/contact'>
+              <a>Stuur je feedback op deze testversie</a>
+            </Link>{' '}
+          </p>
         </p>
       </div>
     </Layout>

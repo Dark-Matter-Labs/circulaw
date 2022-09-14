@@ -39,10 +39,7 @@ export default function PolicyList(props) {
             R6,
           } = lawData;
           return (
-            <div
-              key={lawDataIdx}
-              className='block max-w-lg sm:max-w-5xl sm:ml-0 lg:ml-40 pb-8 sm:pb-10'
-            >
+            <div key={lawDataIdx} className='block sm:ml-0 lg:ml-28 pb-8 sm:pb-10'>
               <div className=''>
                 <div className='inline-block'>
                   {casus === 'Houtbouw' ? (

@@ -47,7 +47,7 @@ export default function Index() {
                           </a>
                         </Link>
                       </div>
-                      <div className='block lg:hidden py-4 mx-7'>
+                      <div className='block lg:hidden py-4'>
                         <Link href='/'>
                           <a className=''>
                             <Image
@@ -274,7 +274,7 @@ export default function Index() {
             )}
           </Disclosure>
 
-          <main className=' mx-auto max-w-4xl px-4 sm:mt-12'>
+          <main className=' global-margin sm:mt-12'>
             <div className='text-center'>
               <h1 className='text-6xl homepage-header-title-mobile sm:homepage-header-title text-white1 py-10'>
                 <span className='block '>Regelgeving voor een circulaire economie</span>{' '}
@@ -312,7 +312,7 @@ export default function Index() {
         </div>
       </div>
 
-      <div className='px-5 sm:px-20 bg-greenAlpha pb-20' name='thema'>
+      <div className='bg-greenAlpha pb-20' name='thema'>
         <div className='global-margin'>
           <h2 className='pb-6 pt-8 mobile sm:main text-green1'>Thema’s</h2>
 
@@ -334,7 +334,7 @@ export default function Index() {
           </p>
         </div>
       </div>
-      <div className='px-5 sm:px-20 bg-white py-20 mr-10'>
+      <div className='bg-white py-20 mr-10'>
         <div className='global-margin'>
           <h1 className='mobile sm:main text-green1' name='waarom'>
             Over CircuLaw
