@@ -112,7 +112,7 @@ export default function PolicyList(props) {
                 </Link>
               </div>
 
-              <div className='grid grid-cols-1 sm:flex space-x-0 sm:space-x-8 space-y-4 sm:space-y-0 py-2 sm:py-0'>
+              <div className='grid grid-cols-1 lg:flex space-x-0 lg:space-x-8 space-y-4 py-2 sm:py-0'>
                 <div className='flex-2 mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 '>
                   <span className='block-inline flex items-center'>
                     Juridische invloed:{' '}
@@ -144,7 +144,7 @@ export default function PolicyList(props) {
                     ))}
                   </span>
                 </div>
-                <div className='flex-2 mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 '>
+                <div className='flex-2 md:mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 '>
                   R-ladder:{' '}
                   <span className='block-inline text-gray-900 r-category'>
                     {R1 && <span className='bg-green2 text-white rounded-full p-1 mr-2'>R1 </span>}

@@ -191,7 +191,8 @@ export default function Law() {
                   <a
                     href='https://amsterdam2050.nl/wp-content/uploads/2021/06/OPM%20Omgevingsvisie-2050-20210613-200dpi.pdf'
                     className='text-greenLink link-mobile sm:link'
-                    target="_blank" rel="noopener noreferrer"
+                    target='_blank'
+                    rel='noopener noreferrer'
                   >
                     de omgevingsvisie van gemeente Amsterdam
                   </a>{' '}
@@ -207,7 +208,8 @@ export default function Law() {
                       <a
                         href='https://iplo.nl/regelgeving/instrumenten/omgevingsvisie-gemeente/staat-erin/#:~:text=Iedere%20gemeente%20in%20Nederland%20stelt,vervoer%2C%20infrastructuur%20en%20cultureel%20erfgoed.'
                         className='text-greenLink link-mobile sm:link'
-                        target="_blank" rel="noopener noreferrer"
+                        target='_blank'
+                        rel='noopener noreferrer'
                       >
                         Juridische informatie
                       </a>{' '}
@@ -218,7 +220,8 @@ export default function Law() {
                       <a
                         href='https://assets.amsterdam.nl/publish/pages/1007002/definitief_vrm21_670_omgevingsvisie_weesp_14dec2021_spread_tg.pdf'
                         className='text-greenLink link-mobile sm:link'
-                        target="_blank" rel="noopener noreferrer"
+                        target='_blank'
+                        rel='noopener noreferrer'
                       >
                         omgevingsvisie{' '}
                       </a>
@@ -228,7 +231,8 @@ export default function Law() {
                       <a
                         href='https://www.denationaleomgevingsvisie.nl/publicaties/novi-stukken+publicaties/handlerdownloadfiles.ashx?idnv=1760380'
                         className='text-greenLink link-mobile sm:link'
-                        target="_blank" rel="noopener noreferrer"
+                        target='_blank'
+                        rel='noopener noreferrer'
                       >
                         nationale omgevingsvisie
                       </a>{' '}
@@ -239,7 +243,8 @@ export default function Law() {
                       <a
                         href='https://vng.nl/sites/default/files/2020-06/praktijkproef-afwegingskader-omgevingsvisie_20200529.pdf'
                         className='text-greenLink link-mobile sm:link'
-                        target="_blank" rel="noopener noreferrer"
+                        target='_blank'
+                        rel='noopener noreferrer'
                       >
                         praktijkproef van een afwegingskader
                       </a>{' '}

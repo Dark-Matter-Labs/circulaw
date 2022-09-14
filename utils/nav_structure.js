@@ -33,7 +33,7 @@ const waardeketens = [
       className: '',
     },
     {
-      name: 'Wetsanalyse met circulaire blik',
+      name: 'Wetsanalyse vanuit circulaire blik',
       description: 'description',
       href: '/wetsanalyse-met-circulaire-blik',
       className: '',

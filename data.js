@@ -2112,7 +2112,7 @@ export const laws = [
     "id": "37",
     "artikel": "7:1",
     "circulair": true,
-    "titel": "Circulaire windturbines bevorderen door tenders bij gronduitgifte door verkoop.",
+    "titel": "Circulaire windturbines bevorderen door tenders bij gronduitgifte door verkoop",
     "kop_1_samenvatting_juridische_maatregel": "Wat houdt de koopovereenkomst in?",
     "introductie_juridische_maatregel": "De koopovereenkomst wordt gesloten zodra de kopende en de verkopende partij overeenstemming hebben bereikt. De koopovereenkomst geeft aan onder welke voorwaarden bepaalde grond mag worden gekocht. In de koopovereenkomst worden alle afspraken inzake de koop vastgelegd.",
     "kop_2_toepassing_juridische_maatregel": "Hoe kunnen tenders bij gronduitgifte de circulaire transitie versnellen?",
