@@ -7,7 +7,7 @@ export default function Kunststoffen() {
       <div className='global-margin  pb-8 text-black1'>
         <div className='max-w-4xl'>
           <h1 className='py-14 mobile sm:main '>Veelgestelde vragen en antwoorden over CircuLaw</h1>
-          <h2 className='mobile sm:main pb-2'>Wat is het doel van CircuLaw</h2>
+          <h2 className='mobile sm:main pb-2'>Wat is het doel van CircuLaw?</h2>
           <p className='body-text-mobile sm:body-text pb-10'>
             Het doel van CircuLaw is het versnellen van de transitie naar een circulaire economie
             door meer en beter gebruik van de mogelijkheden die het wet- en regelgevingsstelsel
