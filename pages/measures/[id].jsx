@@ -3,6 +3,7 @@ import useSWR from 'swr';
 import Link from 'next/link';
 import Image from 'next/image';
 import Layout from '../../components/layout';
+import WindmillIcon from '../../public/winturbines.svg';
 import IcontWood from '../../public/icons/houtbouwIconBg.svg';
 import RTooltip from '../../components/r_ladder_tooltip';
 import JHTooltip from '../../components/juridische_houdbaarheid_tooltip';
@@ -81,7 +82,15 @@ export default function Law() {
             <h1 className='my-9 text-green1 mobile sm:main'>{data.titel}</h1>
             <div className='container pb-2'>
               <div className='container-image'>
-                <Image src={IcontWood} alt='Icon of a Wood Log' />
+                {data.casus === 'Houtbouw' ? (
+                  <div className='container-image'>
+                    <Image src={IcontWood} alt='Icon of a Wood Log' />
+                  </div>
+                ) : (
+                  <div className='container-image'>
+                    <Image src={WindmillIcon} alt='Icon of a Wood Log' />
+                  </div>
+                )}
               </div>
               <div className=''>
                 <Link href={'/' + data.casus.replace(/\s+/g, '-').toLowerCase()}>
@@ -303,9 +312,15 @@ export default function Law() {
             </div>
             <div className='hidden lg:block float-right'>
               <div className='container pb-2'>
-                <div className='container-image'>
-                  <Image src={IcontWood} alt='Icon of a Wood Log' />
-                </div>
+                {data.casus === 'Houtbouw' ? (
+                  <div className='container-image'>
+                    <Image src={IcontWood} alt='Icon of a Wood Log' />
+                  </div>
+                ) : (
+                  <div className='container-image'>
+                    <Image src={WindmillIcon} alt='Icon of a Wood Log' />
+                  </div>
+                )}
                 <div className=''>
                   <Link href={'/' + data.casus.replace(/\s+/g, '-').toLowerCase()}>
                     <a>

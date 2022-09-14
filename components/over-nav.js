@@ -2,12 +2,12 @@ const navigation = [
   { name: 'Waarom CircuLaw?', href: '/waarom-circulaw', pagename: 'waarom' },
   { name: 'Wat is CircuLaw?', href: '/wat-is-circulaw', pagename: 'wat' },
   {
-    name: 'Status en ambities',
+    name: 'Wat vind je nu op CircuLaw?',
     href: '/status-en-ambities',
     pagename: 'status',
   },
   {
-    name: 'Wetsanalyse met circulaire blik',
+    name: 'Wetsanalyse vanuit circulaire blik',
     href: '/wetsanalyse-met-circulaire-blik',
     pagename: 'wet',
   },

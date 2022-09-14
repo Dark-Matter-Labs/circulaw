@@ -37,7 +37,7 @@ const navigation = {
       className: 'text-white1',
     },
     {
-      name: 'Status en ambities',
+      name: 'Wat vind je nu op CircuLaw?',
       href: '/status-en-ambities',
       className: 'text-white1',
     },
@@ -178,7 +178,7 @@ export default function Footer() {
           rechten kunnen worden ontleend. We horen graag wat je ervan vindt, wat je anders zou
           willen, wat je mist en natuurlijk horen we ook graag waar je blij van wordt.{' '}
           <Link href='/contact'>
-            <a>Stuur je feedback op deze testversie.</a>
+            <a className='link-mobile text-blush1'>Stuur je feedback op deze testversie.</a>
           </Link>
         </p>
       </div>
