@@ -90,7 +90,7 @@ export default function Privacy() {
           zijn genoemd of om te voldoen aan wettelijke (bewaar)verplichtingen.
         </p>
         <h2 className='mobile sm:main py-2'>Hoe gaan we om met cookies?</h2>
-        <p className='body-text-mobile sm:body-text pb-6'>
+        <p className='body-text-mobile sm:body-text pb-6 max-w-4xl'>
           Een cookie is een klein tekstbestand dat onzichtbaar is voor de gebruiker en dat de
           browser opslaat op de computer of het mobiele apparaat van de gebruiker wanneer de
           gebruiker een website bezoekt.
@@ -114,7 +114,7 @@ export default function Privacy() {
         </p>
 
         <h2 className='mobile sm:main py-2'>Wijziging van deze Privacyverklaring</h2>
-        <p className='body-text-mobile sm:body-text pb-6'>
+        <p className='body-text-mobile sm:body-text pb-6 max-w-4xl'>
           De gemeente Amsterdam heeft het recht om haar Privacyverklaring te wijzigen. Als er
           inhoudelijke wijzigingen worden doorgevoerd, maken we dit bekend via de website{' '}
           <span className='text-greenLink link-mobile sm:link'>
@@ -122,7 +122,7 @@ export default function Privacy() {
           </span>
           .{' '}
         </p>
-        <p className='body-text-mobile sm:body-text '>
+        <p className='body-text-mobile sm:body-text max-w-4xl'>
           Heb je vragen naar aanleiding van deze Privacyverklaring? Mail ons dan op{' '}
           <span className='text-greenLink link-mobile sm:link'>
             <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
