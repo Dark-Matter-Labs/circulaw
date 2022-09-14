@@ -223,7 +223,7 @@ export default function Law() {
                   laagste de minste
                 </p>
               </div>
-              <div className='bg-green1 px-4 py-4'>
+              <div className='bg-green1 px-10 py-10'>
                 <h2 className='pb-2 mobile sm:main text-white1'>
                   Zelf aan de slag met gronduitgifte?
                 </h2>
@@ -241,7 +241,7 @@ export default function Law() {
                 </a>
               </div>
 
-              <div className='py-4'>
+              <div className='pb-4 pt-8'>
                 <h2 className='pb-2 mobile sm:main'>Uit de praktijk</h2>
                 <p className='body-text-mobile sm:body-text'>
                   In de praktijk wordt de MPG-score al veel gebruikt bij selectieprocedures voor

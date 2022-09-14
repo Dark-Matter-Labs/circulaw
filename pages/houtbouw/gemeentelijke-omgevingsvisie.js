@@ -165,7 +165,7 @@ export default function Law() {
                   houtbouw.
                 </p>
               </div>
-              <div className='bg-green1 px-4 py-4'>
+              <div className='bg-green1 px-10 py-10'>
                 <h2 className='pb-2 mobile sm:main text-white1'>
                   Zelf aan de slag met de omgevingsvisie?
                 </h2>
@@ -183,7 +183,7 @@ export default function Law() {
                 </a>
               </div>
 
-              <div className='py-4'>
+              <div className='pb-4 pt-8'>
                 <h2 className='pb-2 mobile sm:main'>Uit de praktijk</h2>
                 <p className='body-text-mobile sm:body-text'>
                   Het is mogelijk om vooruitlopend op de Omgevingswet al een omgevingsvisie te
