@@ -322,7 +322,7 @@ export default function Index() {
             Lees meer over{' '}
             <span className='link-mobile sm:link text-greenLink'>
               <Link href='/status-en-ambities'>
-                <a>wat je nu vind op CircuLaw</a>
+                <a>wat je nu vindt op CircuLaw</a>
               </Link>
             </span>{' '}
             of ga naar{' '}

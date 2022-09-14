@@ -118,7 +118,7 @@ export default function Privacy() {
           De gemeente Amsterdam heeft het recht om haar Privacyverklaring te wijzigen. Als er
           inhoudelijke wijzigingen worden doorgevoerd, maken we dit bekend via de website{' '}
           <span className='text-greenLink link-mobile sm:link'>
-            <a href='https://www.amsterdam.nl/'>amsterdam.nl</a>
+            <a href='https://www.amsterdam.nl/' target="_blank" rel="noopener noreferrer">amsterdam.nl</a>
           </span>
           .{' '}
         </p>

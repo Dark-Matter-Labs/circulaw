@@ -206,6 +206,7 @@ export default function Law() {
                       <a
                         href='https://iplo.nl/regelgeving/regels-voor-activiteiten/sloopactiviteit/rijksregels-sloopactiviteit/informatieplicht-sloopactiviteit/'
                         className='text-greenLink link-mobile sm:link'
+                        target="_blank" rel="noopener noreferrer"
                       >
                         Informatieplicht sloopactiviteit - Informatiepunt Leefomgeving (iplo.nl)
                       </a>
@@ -215,6 +216,7 @@ export default function Law() {
                       <a
                         href='https://www.allesovercirculairslopen.nl/'
                         className='text-greenLink link-mobile sm:link'
+                        target="_blank" rel="noopener noreferrer"
                       >
                         Alles over circulair slopen | powered by VERAS
                       </a>
@@ -225,6 +227,7 @@ export default function Law() {
                       <a
                         href='https://openresearch.amsterdam/nl/page/86336/circular-demolition'
                         className='text-greenLink link-mobile sm:link'
+                        target="_blank" rel="noopener noreferrer"
                       >
                         Circular demolition - openresearch.amsterdam
                       </a>{' '}
@@ -234,6 +237,7 @@ export default function Law() {
                       <a
                         href='https://circulairebouweconomie.nl/nieuws/praktijkvoorbeeld-succesvolle-circulaire-sloop-schoolgebouw-hattem/'
                         className='text-greenLink link-mobile sm:link'
+                        target="_blank" rel="noopener noreferrer"
                       >
                         Praktijkvoorbeeld - Succesvolle circulaire sloop schoolgebouw Hattem |
                         Circulaire Bouweconomie
