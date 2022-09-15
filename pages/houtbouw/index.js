@@ -32,12 +32,8 @@ export default function Houtbouw() {
                 <h1 className='text-green1 inline-block mobile sm:main'>Houtbouw stimuleren </h1>
                 <p className='pt-4 body-text-mobile sm:body-text'>
                   De manier waarop wij nu in Nederland bouwen is zeer belastend voor het milieu. Er
-                  is een eenvoudige oplossing: vervang beton deels door hout.
-                </p>
-                <p className='body-text-mobile sm:body-text'>
-                  Bosbouw is steeds duurzamer geworden en er zijn veel nieuwe houtproducten
+                  is een eenvoudige oplossing: vervang beton deels door hout. Bosbouw is steeds duurzamer geworden en er zijn veel nieuwe houtproducten
                   ontwikkeld die grote mogelijkheden bieden.
-                  <br />
                 </p>
                 <p className='body-text-mobile sm:body-text'>
                   Daardoor kan houtbouw een goede bijdrage leveren om binnen planetaire grenzen te
