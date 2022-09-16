@@ -112,7 +112,7 @@ export default function PolicyList(props) {
                 </Link>
               </div>
 
-              <div className='grid grid-cols-1 lg:flex space-x-0 lg:space-x-8 py-2 sm:py-0'>
+              <div className='grid grid-cols-1 lg:flex space-x-0 lg:space-x-8 space-y-4 sm:space-y-0  py-2 sm:py-0'>
                 <div className='flex-2 mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 '>
                   <span className='block-inline flex items-center'>
                     Juridische invloed:{' '}
