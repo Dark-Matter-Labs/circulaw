@@ -20,6 +20,7 @@
     "open-graph-scraper": "^4.11.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-hotjar": "^5.1.0",
     "react-scroll": "^1.8.7",
     "swr": "^1.0.1",
     "use-persisted-state": "^0.3.3"
