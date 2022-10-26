@@ -47,7 +47,10 @@ export default function Law() {
               <span className='block-inline font-semibold text-base text-gray-900'>
                 <span className='bg-green2 text-white rounded-full p-1 mr-2'>R1</span>
                 <span className='bg-green2 text-white rounded-full p-1 mr-2'>R2</span>
+                <span className='bg-green2 text-white rounded-full p-1 mr-2'>R3</span>
+                <span className='bg-green2 text-white rounded-full p-1 mr-2'>R4</span>
                 <span className='bg-green2 text-white rounded-full p-1 mr-2'>R5</span>
+                <span className='bg-green2 text-white rounded-full p-1 mr-2'>R6</span>
               </span>
             </div>
 
@@ -178,7 +181,7 @@ export default function Law() {
                     type='button'
                     className='inline-flex rounded-full items-center px-4 py-2 border border-green2 button text-white1 bg-green2'
                   >
-                    Bekijk de leidraad →
+                    Bekijk de leidraad (pdf)→
                   </button>
                 </a>
               </div>
@@ -370,7 +373,10 @@ export default function Law() {
                 <span className='block-inline font-semibold text-base text-gray-900'>
                   <span className='bg-green2 text-white rounded-full p-1 mr-2'>R1</span>
                   <span className='bg-green2 text-white rounded-full p-1 mr-2'>R2</span>
+                  <span className='bg-green2 text-white rounded-full p-1 mr-2'>R3</span>
+                  <span className='bg-green2 text-white rounded-full p-1 mr-2'>R4</span>
                   <span className='bg-green2 text-white rounded-full p-1 mr-2'>R5</span>
+                  <span className='bg-green2 text-white rounded-full p-1 mr-2'>R6</span>
                 </span>
               </div>
 
