@@ -17,7 +17,7 @@ export default function Law() {
         <div className='global-margin pt-10 '>
           <div className='block lg:hidden'>
             <h1 className='my-9 text-green1 mobile sm:main'>
-              MPG als subselectiecriterium bij gronduitgifte
+            MPG als subselectiecriterium bij gronduitgifte
             </h1>
             <div className='container pb-2'>
               <div className='container-image'>
@@ -138,55 +138,34 @@ export default function Law() {
                 MPG als subselectiecriterium bij gronduitgifte
               </h1>
               <div className='py-4'>
+                <p className='newlineDisplay body-text-mobile sm:body-text'>
+                Bij gronduitgifte is de gemeente verplicht een selectieprocedure op te zetten. Het voordeel daarvan is dat je als overheid innovaties kan stimuleren die andere partijen niet aandurven. Zo kan je circulaire doelstellingen nastreven, zoals het bevorderen van houtbouw
+                </p>
+                </div>
+              <div className='py-4'>
                 <h2 className='pb-2 mobile sm:main'>Gronduitgifte: wat is het?</h2>
                 <p className='newlineDisplay body-text-mobile sm:body-text'>
-                  Gronduitgifte is het uitgeven van bouwgrond door een gemeente aan gegadigden die
-                  bijvoorbeeld een woning of bedrijf willen bouwen. Het gaat om een
-                  privaatrechtelijke overeenkomst tussen de gemeente en de gegadigde. Aan deze
-                  uitgifte van grond worden voorwaarden gekoppeld. Uitgifte vindt meestal plaats via
-                  een selectieprocedure, zoals inschrijving of loting. Dit is vergelijkbaar met de
-                  verdeling van schaarse vergunningen.
-                </p>
-                <p className='py-5 body-text-mobile sm:body-text newlineDisplay'>
-                  Sinds het Didam-arrest is de overheid verplicht een selectieprocedure op te zetten
-                  bij gronduitgifte, tenzij van te voren duidelijk is dat slecht één serieuze
-                  gegadigde geschikt is voor de koop van de grond. Het voordeel van deze
-                  selectieprocedure is dat je als overheid innovaties kan stimuleren die andere
-                  partijen niet aandurven. Zo kan je circulaire doelstellingen nastreven, zoals het
-                  bevorderen van houtbouw.
+                Gronduitgifte is het uitgeven van bouwgrond door een gemeente aan gegadigden die bijvoorbeeld een woning of bedrijf willen bouwen. Het gaat om een privaatrechtelijke overeenkomst tussen de gemeente en de gegadigde. Aan deze uitgifte van grond worden voorwaarden gekoppeld. Uitgifte vindt meestal plaats via een selectieprocedure, zoals inschrijving of loting. Dit is vergelijkbaar met de verdeling van schaarse vergunningen.
                 </p>
                 <div className='py-5 body-text-mobile sm:body-text newlineDisplay'>
-                  Binnen het selectiebeleid kan je verschillende criteria vaststellen aan de hand
-                  waarvan de uiteindelijke keuze tussen de deelnemers wordt gemaakt. Aan deze
-                  criteria zijn drie voorwaarden verbonden:
+                De uiteindelijke keuze voor de partij waaraan je als gemeente de grond uitgeeft is altijd gebaseerd op verschillende criteria. Bij het opstellen van die criteria moet je de algemene beginselen van behoorlijk bestuur in acht nemen. Aan de vast te stellen criteria zijn verder drie voorwaarden verbonden:
                   <ul className='list-disc pl-6'>
-                    <li>de criteria moeten objectief zijn; </li>
-                    <li>de criteria moeten door een rechter kunnen worden getoetst; en </li>
-                    <li>de criteria moeten redelijk zijn. </li>
+                    <li>de criteria zijn objectief (de criteria zijn ondubbelzinnig en zo duidelijk mogelijk geformuleerd);</li>
+                    <li>de criteria kunnen door een rechter worden getoetst; en</li>
+                    <li>de criteria zijn redelijk.</li>
                   </ul>
                 </div>
-                <p className='py-5 body-text-mobile sm:body-text newlineDisplay'>
-                  Bij het opstellen van deze criteria moeten de algemene beginselen van behoorlijk
-                  bestuur in acht worden genomen. Het vereiste van objectiviteit houdt in dat de
-                  criteria ondubbelzinnig en zo duidelijk mogelijk moeten worden geformuleerd.
-                </p>
                 <div className='py-5 body-text-mobile sm:body-text newlineDisplay'>
-                  Kijk voor een voorbeeld van de selectiecriteria naar de gunningscriteria afkomstig
-                  uit de Aanbestedingswet:
+                Kijk voor een voorbeeld van de selectiecriteria naar de gunningscriteria afkomstig uit de Aanbestedingswet:
                   <ul className='list-disc pl-6'>
-                    <li>beste prijs-kwaliteitsverhouding (BPKV); </li>
-                    <li>laagste kosten berekend op basis van kosteneffectiviteit; en </li>
+                    <li>bbeste prijs-kwaliteitsverhouding (BPKV);</li>
+                    <li>laagste kosten berekend op basis van kosteneffectiviteit; en</li>
                     <li>laagste prijs.</li>
                   </ul>
                 </div>
 
                 <p className='py-5 body-text-mobile sm:body-text newlineDisplay'>
-                  Wordt gekozen voor het selectiecriterium &lsquo;beste
-                  prijs-kwaliteitverhouding&rsquo;, dan moeten nadere kwaliteitscriteria worden
-                  opgesteld, zoals sociale, milieu- of innovatieve criteria. Zo kunnen op
-                  verschillende manieren circulaire criteria of duurzaamheidscriteria worden
-                  verwerkt waar houtbouw beter op scoort. Voor voorbeelden van selectiecriteria
-                  toegepast op gronduitgifte, biedt{' '}
+                Kies je voor het selectiecriterium ‘beste prijs-kwaliteitverhouding’, dan moeten nadere kwaliteitscriteria worden opgesteld, zoals sociale, milieu- of innovatieve criteria. Zo kunnen op verschillende manieren circulaire criteria of duurzaamheidscriteria worden verwerkt waar houtbouw beter op scoort. Voor voorbeelden van selectiecriteria toegepast op gronduitgifte, biedt
                   <a
                     href='https://www.urk.nl/_flysystem/media/selectieleidraad-openbare-biedprocedure-gronduitgifte-deelgebied-1a-zeeheldenwijk.pdf'
                     className='link-mobile sm:link text-greenLink'
@@ -203,27 +182,22 @@ export default function Law() {
                   Hoe kan de MPG als subselectiecriterium houtbouw bevorderen?
                 </h2>
                 <p className='py-5 body-text-mobile sm:body-text newlineDisplay'>
-                  Één manier om houtbouw te stimuleren via gronduitgifte is door de MPG-score
-                  (milieuprestatie gebouwen) een grote rol te laten spelen in de selectiebeslissing,
-                  bijvoorbeeld door de MPG-score van het gebouw als subselectiecriterium te
-                  gebruiken. De MPG is een indicator die in een getalswaarde de milieuprestaties van
-                  een gebouw weergeeft op basis van een levenscyclusanalyse. Van verschillende
-                  levensfases van een gebouw wordt de milieudruk bepaald. De levensfases zijn:
-                  Productie, Bouw, Gebruik, Sloop, Hergebruik. Onder milieudruk vallen de gebruikte
-                  energie en grondstoffen, en ook geproduceerde uitstoot en afvalstoffen. De
-                  milieudruk (uitgedrukt in euro&rsquo;s) wordt afgezet tegen de oppervlakte en
-                  verwachte levensduur van het gebouw. Gebouwen die meer circulair zijn leiden zo
-                  tot een lagere MPG-score. De wettelijk minimale MPG-norm voor kantoren is 1,0.
-                  Voor woningen geldt 0,8. Beide worden geleidelijk verzwaard tot 0,5 in 2030. Dit
-                  volgt uit het Bouwbesluit 2012.
+                Eén manier om houtbouw te stimuleren via gronduitgifte is door de MPG-score (MilieuPrestatie Gebouwen) een grote rol te laten spelen in de selectiebeslissing. Dit kan door de MPG-score van het gebouw als subselectiecriterium te gebruiken. 
+                <h3 className='py-5 mobile sm:main'>
+                Wat is de MPG?
+                </h3>
+                <p className='pb-4 body-text-mobile sm:body-text newlineDisplay'>
+                De MPG is een indicator die in een getalswaarde de milieuprestaties van een gebouw weergeeft op basis van een levenscyclusanalyse. Van verschillende levensfases van een gebouw wordt de milieudruk bepaald. De levensfases zijn: Productie, Bouw, Gebruik, Sloop, Hergebruik. Onder milieudruk vallen de gebruikte energie en grondstoffen, en ook geproduceerde uitstoot en afvalstoffen. De milieudruk (uitgedrukt in euro’s) wordt afgezet tegen de oppervlakte en verwachte levensduur van het gebouw. Gebouwen die meer circulair zijn leiden zo tot een lagere MPG-score. De wettelijk minimale MPG-norm voor kantoren is 1,0. Voor woningen geldt 0,8. Beide worden geleidelijk verzwaard tot 0,5 in 2030. Dit volgt uit het Bouwbesluit 2012.
                 </p>
-                <p className='py-5 body-text-mobile sm:body-text newlineDisplay'>
-                  Als je besluit te gaan selecteren op basis van MPG-score kan dat op verschillende
-                  manieren. Bepaal dus hoe deelnemers kunnen scoren met hun MPG. Dat kan met een
-                  vooraf vastgestelde schaal die is gekoppeld aan MPG-waarden, of een relatieve
-                  schaal, waarbij de hoogste score van een deelnemer de meeste punten krijgt en de
-                  laagste de minste
                 </p>
+                <div className='py-5 body-text-mobile sm:body-text newlineDisplay'>
+                Wil je de MPG-scores meenemen in je selectiecriteria, dan kan dat op twee manieren: 
+                  <ul className='list-disc pl-6'>
+                    <li>met een vooraf vastgestelde schaal die is gekoppeld aan MPG-scores, of </li>
+                    <li>met een relatieve schaal, waarbij de deelnemer met de laagste MPG-score de meeste punten krijgt en de deelnemer met de hoogste MPG-score de minste.</li>
+                  </ul>
+                </div>
+               
               </div>
               <div className='bg-green1 px-10 py-10'>
                 <h2 className='pb-2 mobile sm:main text-white1'>
@@ -238,7 +212,7 @@ export default function Law() {
                     type='button'
                     className='inline-flex rounded-full items-center px-4 py-2 border border-green2 button text-white1 bg-green2'
                   >
-                    Bekijk de leidraad →
+                    Bekijk de leidraad (pdf) →
                   </button>
                 </a>
               </div>
@@ -246,17 +220,60 @@ export default function Law() {
               <div className='pb-4 pt-8'>
                 <h2 className='pb-2 mobile sm:main'>Uit de praktijk</h2>
                 <p className='body-text-mobile sm:body-text'>
-                  In de praktijk wordt de MPG-score al veel gebruikt bij selectieprocedures voor
-                  grondontwikkeling. De Gemeente Amsterdam besloot bijvoorbeeld in 2015 dat minstens
-                  30% van de selectiebeslissing op duurzaamheid gebaseerd moet worden. Dat heeft
-                  geleid tot verschillende manieren waarop duurzaamheid als selectiecriterium is
-                  ingevuld, waaronder de MPG-score als indicator voor circulair bouwen, met name wat
-                  betreft circulair materiaalgebruik. De winnende inschrijvingen in
-                  selectieprocedures van bouwprojecten ‘de Koffiefabriek’ en ‘Juf Nienke’ zijn hier
-                  goede voorbeelden van.
+                In de praktijk wordt de MPG-score al veel gebruikt bij selectieprocedures voor gronduitgifte. De Gemeente Amsterdam besloot in 2015 dat minstens 30% van de selectiebeslissing op duurzaamheid gebaseerd moet zijn. Daarom maakt de gemeente nu vaker van de MPG-score gebruik als indicator voor circulair bouwen, met name wat betreft circulair materiaalgebruik. De winnende inschrijvingen in selectieprocedures van bouwprojecten ‘de Koffiefabriek’ en ‘Juf Nienke’ zijn hier goede voorbeelden van.
                 </p>
               </div>
 
+              
+              <div className='py-4'>
+                <h2 className='pb-2 mobile sm:main'>Beleid en andere instrumenten</h2>
+                <p className='body-text-mobile sm:body-text pb-6'>
+                Naast de MPG worden ook andere criteria gebruikt, omdat andere duurzaamheids- en circulariteitsaspecten niet of onvoldoende in MPG-scores zijn verwerkt. Een eis waar een inschrijver in ieder geval aan moet voldoen is de zogenaamde BENG-norm voor energiegebruik van gebouwen (zie kader). Verder kunnen aanvullende criteria worden opgenomen, zoals het percentage hernieuwbaar materiaal en het percentage secundair materiaal. Overweeg ook kwalitatieve criteria mee te nemen, zoals ‘de integrale verwerking van circulariteit in het ontwerp’ of ‘de integrale verwerking van duurzaamheid in het ontwerp’. 
+                </p>
+
+                <h3 className='py-2 mobile sm:main'>
+                Voor alle nieuwbouw geldt dat de vergunningaanvragen moeten voldoen aan de eisen voor Bijna Energieneutrale Gebouwen (BENG).
+                </h3>
+                <div className='pb-5 body-text-mobile sm:body-text newlineDisplay'>
+                De energieprestatie bij BENG wordt bepaald aan de hand van 3 individueel te behalen eisen:
+                  <ul className='list-disc pl-6'>
+                    <li>de maximale energiebehoefte in kWh per m2 gebruiksoppervlak per jaar (kWh/m2.jr)</li>
+                    <li>het maximale primair fossiel energiegebruik, eveneens in kWh per m2 gebruiksoppervlak per jaar (kWh/m2.jr)</li>
+                    <li>het minimale aandeel hernieuwbare energie in procenten (%)</li>
+                  </ul>
+                </div>
+
+
+                <p className='body-text-mobile sm:body-text pb-6'>
+                Als je meerdere criteria stelt moet je altijd ook het relatieve gewicht bepalen van de MPG-score ten opzichte van andere subselectiecriteria. Om de juiste combinatie van criteria te vinden, en om de juiste weging van die criteria te bepalen, kan het nuttig zijn om een specialist in te huren. Denk hier bijvoorbeeld aan een technische duurzaamheidsadviseur. Leg contact binnen je organisatie of werk met externe expertise als je aan de slag gaat met circulair aanbesteden.
+Je kan een MPG als selectiecriterium ook combineren met een minimale eis voor een MPG-score. Zo filter je in ieder geval al de minst ambitieuze inschrijvingen eruit.
+Houd bij gebruik van de MPG in het bijzonder rekening met zonnepanelen. Zonnepanelen zijn essentieel voor de energie- en circulaire transitie, maar verhogen de MPG-score sterk. Daarom moet je zonnepanelen buiten de MPG-score houden of zorgen dat andere delen van de opdracht die opvangen. Je kan dit bijvoorbeeld ondervangen met een minimumeis aan duurzame energie. Het Transitieteam Circulaire Bouweconomie adviseert een minimum van 40% op BENG-3.
+
+                </p>
+              </div>
+              <div className='py-4'>
+                <h2 className='pb-2 mobile sm:main'>Selectieprocedure: eisen en beperkingen</h2>
+                <div className='body-text-mobile sm:body-text overflow-x-hidden'>
+                  <p>Houd de volgende punten in het achterhoofd, als je een selectieprocedure opzet:</p>
+                  <ul className='list-disc pl-6'>
+                    <li>
+                    De overheid moet in de eerste plaats met inachtneming van de hem toekomende beleidsruimte criteria opstellen aan de hand waarvan de koper wordt geselecteerd. Deze criteria moeten objectief, toetsbaar en redelijk zijn.
+                    </li>
+                    <li>
+                    Verder is het aan te bevelen om gegadigden die afvallen na de selectieprocedure tijd te geven om juridische stappen te ondernemen tegen de selectiebeslissing; binnen die tijd kan de overheid wachten met het aangaan van de voorgenomen overeenkomst.
+
+                    </li>
+                  
+                  </ul>
+
+                  <h2 className='pb-2 mobile sm:main'>Uitzondering op de verplichte selectieprocedure:</h2>
+                  <p className='body-text-mobile sm:body-text'>
+                  De selectieprocedure hoeft niet te worden toegepast als van te voren duidelijk is dat slechts één serieuze gegadigde in aanmerking komt voor de aankoop. Dit moet ook worden vastgesteld op grond van objectieve, toetsbare en redelijke criteria. Het is onwaarschijnlijk dat dit vaak zal voorkomen. Als je vermoedt dat hier sprake van is, leg het dan altijd voor aan juridische experts binnen of buiten je eigen organisatie.
+                  </p>
+
+                
+                </div>
+              </div>
               <div className='py-4'>
                 <h2 className='pb-2 mobile sm:main'>Verder lezen andere bronnen</h2>
                 <div className='newlineDisplay body-text-mobile sm:body-text truncate'>
@@ -275,130 +292,6 @@ export default function Law() {
                         Algemene informatie over de MPG van de RvO
                       </a>
                     </li>
-                    <li>
-                      <a
-                        href='https://energieslag.rvo.nl/file/download/f4f55197-f450-4ce6-9704-039831f3c179/1611914396leidraad%20verduurzamen%20gemeentelijk%20vastgoed%20-%20stappenplan%20met%20praktijkvoorbeelden.pdf'
-                        className='text-greenLink link-mobile sm:link'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                      >
-                        Leidraad over de verduurzaming van gemeentelijk vastgoed met
-                        praktijkvoorbeelden, 2020 door de RvO
-                      </a>{' '}
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className='py-4'>
-                <h2 className='pb-2 mobile sm:main'>Beleid en andere instrumenten</h2>
-                <p className='body-text-mobile sm:body-text pb-6'>
-                  Over het algemeen is het verstandig naast de MPG ook andere criteria te gebruiken,
-                  omdat andere duurzaamheids- en circulariteitsaspecten niet of onvoldoende in
-                  MPG-scores verwerkt zijn. Daarbij kun je onder meer denken aan de zogenaamde
-                  BENG-normen voor energiegebruik van gebouwen, het percentage hernieuwbaar
-                  materiaal en het percentage secundair materiaal. Overweeg ook kwalitatieve
-                  criteria mee te nemen, zoals ‘de integrale verwerking van circulariteit in het
-                  ontwerp’ of ‘de integrale verwerking van duurzaamheid in het ontwerp’. Als je
-                  meerdere criteria stelt moet je altijd ook het relatieve gewicht bepalen van de
-                  MPG-score ten opzichte van andere subselectiecriteria. Een (duurzame)
-                  inkoopspecialist kan helpen bij het vinden van een combinatie van criteria en het
-                  bepalen van de juiste weging van die criteria die voor jouw opdracht het beste is,
-                  omdat die de markt kent. Leg contact binnen je organisatie of werk met externe
-                  expertise als je aan de slag gaat met circulair aanbesteden.
-                </p>
-                <p className='body-text-mobile sm:body-text pb-6'>
-                  Je kan een MPG als selectiecriterium ook combineren met een minimale eis voor een
-                  MPG-score. Het Transitieteam Circulaire Bouweconomie adviseert bijvoorbeeld om een
-                  relatieve weging van inschrijvingen te combineren met een minimale grenswaarde van
-                  10 tot 15% onder de wettelijke eis uit het Bouwbesluit (0,7 in 2022). Zo filter je
-                  in ieder geval al de minst ambitieuze inschrijvingen eruit.
-                </p>
-                <p className='body-text-mobile sm:body-text'>
-                  Houd bij gebruik van de MPG in het bijzonder rekening met zonnepanelen.
-                  Zonnepanelen zijn essentieel voor de energie- en circulaire transitie, maar
-                  verhogen de MPG-score sterk. Daarom moet je zonnepanelen buiten de MPG-score
-                  houden of zorgen dat andere delen van de opdracht die opvangen. Je kan dit
-                  bijvoorbeeld ondervangen met een minimumeis aan duurzame energie. Het
-                  Transitieteam Circulaire Bouweconomie adviseert een minimum van 40% op BENG-3.
-                </p>
-              </div>
-              <div className='py-4'>
-                <h2 className='pb-2 mobile sm:main'>Selectieprocedure: eisen en beperkingen</h2>
-                <div className='body-text-mobile sm:body-text overflow-x-hidden'>
-                  <p>Een selectieprocedure moet aan de volgende eisen voldoen: </p>
-                  <ul className='list-disc pl-6'>
-                    <li>
-                      De overheid moet in de eerste plaats met inachtneming van de hem toekomende
-                      beleidsruimte criteria opstellen aan de hand waarvan de koper wordt
-                      geselecteerd. Deze criteria moeten objectief, toetsbaar en redelijk zijn.
-                    </li>
-                    <li>
-                      De overheid moet de volgende zaken op een passende wijze openbaar maken:
-                      <ul className='list-disc pl-6'>
-                        <li>de beschikbaarheid van de onroerende zaak; </li>
-                        <li>de selectieprocedure;</li>
-                        <li>het tijdschema; en </li>
-                        <li>de toe te passen selectiecriteria.</li>
-                      </ul>
-                    </li>
-                    <li>
-                      Iets op een passende wijze openbaar maken betekent dat de overheid de
-                      voorwaarden en modaliteiten van de selectieprocedure op zo’n manier bekend
-                      maakt dat (potentiële) gegadigden daarvan tijdig kennis kunnen nemen. Denk aan
-                      (een vaste rubriek op) de algemene website van de overheidsorganisatie, een
-                      speciaal voor dit type kennisgevingen ingerichte webpagina of het
-                      Gemeenteblad.
-                    </li>
-                  </ul>
-                  <p className='pt-6'>Uitzondering op de verplichte selectieprocedure: </p>
-                  <ul className='list-disc pl-6'>
-                    <li>
-                      De selectieprocedure hoeft niet te worden toegepast, als van te voren
-                      duidelijk is dat slechts één serieuze gegadigde in aanmerking komt voor de
-                      aankoop. Dit moet ook worden vastgesteld op grond van objectieve, toetsbare en
-                      redelijke criteria. Het is onwaarschijnlijk dat dit vaak zal voorkomen. Als je
-                      vermoedt dat hier sprake van is, leg dan contact met juridische experts binnen
-                      je organisatie of werk met externe juridisch adviseurs.{' '}
-                    </li>
-                  </ul>
-
-                  <p className='pt-6'>Termijn:</p>
-                  <ul className='list-disc pl-6'>
-                    <li>
-                      De selectieprocedure hoeft niet te worden toegepast, als van te voren
-                      duidelijk is dat slechts één serieuze gegadigde in aanmerking komt voor de
-                      aankoop. Dit moet ook worden vastgesteld op grond van objectieve, toetsbare en
-                      redelijke criteria. Het is onwaarschijnlijk dat dit vaak zal voorkomen. Als je
-                      vermoedt dat hier sprake van is, leg dan contact met juridische experts binnen
-                      je organisatie of werk met externe juridisch adviseurs.{' '}
-                    </li>
-                    <ul className='list-disc pl-6'>
-                      <li>
-                        Naarmate meer inspanningen worden gevraagd, zijn langere termijnen logisch.
-                      </li>
-                      <li>
-                        Ook is het verstandig om enige ruimte te bieden voor het stellen van vragen
-                        door de (potentiële) gegadigden.
-                      </li>
-                      <li>
-                        Ook is het aan te bevelen om gegadigden die afvallen na de selectieprocedure
-                        tijd te geven om juridische stappen te ondernemen tegen de
-                        selectiebeslissing; binnen die tijd kan de overheid wachten met het aangaan
-                        van de voorgenomen overeenkomst.
-                      </li>
-                      <li>
-                        Zie voor te hanteren termijnen de termijnen in het aanbestedingsrecht. Zie
-                        hiervoor:{' '}
-                        <a
-                          href='https://www.pianoo.nl/nl/document/12961/factsheet-termijnen-aanbestedingswet-2012 '
-                          className='link-mobile sm:link text-greenLink'
-                          target='_blank'
-                          rel='noopener noreferrer'
-                        >
-                          https://www.pianoo.nl/nl/document/12961/factsheet-termijnen-aanbestedingswet-2012{' '}
-                        </a>
-                      </li>
-                    </ul>
                   </ul>
                 </div>
               </div>

@@ -183,7 +183,7 @@ export default function Law() {
                     type='button'
                     className='inline-flex rounded-full items-center px-4 py-2 border border-green2 button text-white1 bg-green2'
                   >
-                    Bekijk de leidraad →
+                    Bekijk de leidraad (pdf)→
                   </button>
                 </a>
               </div>
