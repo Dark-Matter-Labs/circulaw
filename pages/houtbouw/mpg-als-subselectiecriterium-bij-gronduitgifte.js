@@ -143,10 +143,12 @@ export default function Law() {
                 </p>
                 </div>
               <div className='py-4'>
-                <h2 className='pb-2 mobile sm:main'>Gronduitgifte: wat is het?</h2>
+              <div className='bg-gray-100 px-4 py-4'>
+                <h3 className='pb-2 mobile sm:main'>Gronduitgifte: wat is het?</h3>
                 <p className='newlineDisplay body-text-mobile sm:body-text'>
                 Gronduitgifte is het uitgeven van bouwgrond door een gemeente aan gegadigden die bijvoorbeeld een woning of bedrijf willen bouwen. Het gaat om een privaatrechtelijke overeenkomst tussen de gemeente en de gegadigde. Aan deze uitgifte van grond worden voorwaarden gekoppeld. Uitgifte vindt meestal plaats via een selectieprocedure, zoals inschrijving of loting. Dit is vergelijkbaar met de verdeling van schaarse vergunningen.
                 </p>
+                </div>
                 <div className='py-5 body-text-mobile sm:body-text newlineDisplay'>
                 De uiteindelijke keuze voor de partij waaraan je als gemeente de grond uitgeeft is altijd gebaseerd op verschillende criteria. Bij het opstellen van die criteria moet je de algemene beginselen van behoorlijk bestuur in acht nemen. Aan de vast te stellen criteria zijn verder drie voorwaarden verbonden:
                   <ul className='list-disc pl-6'>
@@ -182,14 +184,16 @@ export default function Law() {
                   Hoe kan de MPG als subselectiecriterium houtbouw bevorderen?
                 </h2>
                 <p className='py-5 body-text-mobile sm:body-text newlineDisplay'>
-                Eén manier om houtbouw te stimuleren via gronduitgifte is door de MPG-score (MilieuPrestatie Gebouwen) een grote rol te laten spelen in de selectiebeslissing. Dit kan door de MPG-score van het gebouw als subselectiecriterium te gebruiken. 
+                Eén manier om houtbouw te stimuleren via gronduitgifte is door de MPG-score (MilieuPrestatie Gebouwen) een grote rol te laten spelen in de selectiebeslissing. Dit kan door de MPG-score van het gebouw als subselectiecriterium te gebruiken. </p>
+                <div className='bg-gray-100 px-4 py-4'>
                 <h3 className='py-5 mobile sm:main'>
                 Wat is de MPG?
                 </h3>
                 <p className='pb-4 body-text-mobile sm:body-text newlineDisplay'>
                 De MPG is een indicator die in een getalswaarde de milieuprestaties van een gebouw weergeeft op basis van een levenscyclusanalyse. Van verschillende levensfases van een gebouw wordt de milieudruk bepaald. De levensfases zijn: Productie, Bouw, Gebruik, Sloop, Hergebruik. Onder milieudruk vallen de gebruikte energie en grondstoffen, en ook geproduceerde uitstoot en afvalstoffen. De milieudruk (uitgedrukt in euro’s) wordt afgezet tegen de oppervlakte en verwachte levensduur van het gebouw. Gebouwen die meer circulair zijn leiden zo tot een lagere MPG-score. De wettelijk minimale MPG-norm voor kantoren is 1,0. Voor woningen geldt 0,8. Beide worden geleidelijk verzwaard tot 0,5 in 2030. Dit volgt uit het Bouwbesluit 2012.
                 </p>
-                </p>
+                </div>
+                
                 <div className='py-5 body-text-mobile sm:body-text newlineDisplay'>
                 Wil je de MPG-scores meenemen in je selectiecriteria, dan kan dat op twee manieren: 
                   <ul className='list-disc pl-6'>
@@ -230,7 +234,7 @@ export default function Law() {
                 <p className='body-text-mobile sm:body-text pb-6'>
                 Naast de MPG worden ook andere criteria gebruikt, omdat andere duurzaamheids- en circulariteitsaspecten niet of onvoldoende in MPG-scores zijn verwerkt. Een eis waar een inschrijver in ieder geval aan moet voldoen is de zogenaamde BENG-norm voor energiegebruik van gebouwen (zie kader). Verder kunnen aanvullende criteria worden opgenomen, zoals het percentage hernieuwbaar materiaal en het percentage secundair materiaal. Overweeg ook kwalitatieve criteria mee te nemen, zoals ‘de integrale verwerking van circulariteit in het ontwerp’ of ‘de integrale verwerking van duurzaamheid in het ontwerp’. 
                 </p>
-
+                <div className='bg-gray-100 px-4 py-4'>
                 <h3 className='py-2 mobile sm:main'>
                 Voor alle nieuwbouw geldt dat de vergunningaanvragen moeten voldoen aan de eisen voor Bijna Energieneutrale Gebouwen (BENG).
                 </h3>
@@ -241,6 +245,7 @@ export default function Law() {
                     <li>het maximale primair fossiel energiegebruik, eveneens in kWh per m2 gebruiksoppervlak per jaar (kWh/m2.jr)</li>
                     <li>het minimale aandeel hernieuwbare energie in procenten (%)</li>
                   </ul>
+                </div>
                 </div>
 
 
