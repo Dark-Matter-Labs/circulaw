@@ -17,6 +17,7 @@ const over = get_over();
 
 export default function Nav() {
   return (
+    /* TODO: add case for navbar to work on homepage and remove the custom navbar on homepage */
     <Disclosure as='nav' className='sticky top-0 z-40 bg-blush2'>
       {({ open }) => (
         <>

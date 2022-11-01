@@ -1,3 +1,5 @@
+// TODO: combine this page and windturbines.js into [measures].js
+
 import { useState, useEffect, useRef, Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import useSWR from 'swr';
