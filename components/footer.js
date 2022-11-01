@@ -132,9 +132,9 @@ export default function Footer() {
           <div className='col-span-1 flex justify-center py-4 px-8 lg:py-2 '>
             <Image src={logo3} alt='Amsterdam logo' />
           </div>
-          {/* <div className='col-span-1 flex justify-center py-8 px-8 '>
+          {<div className='col-span-1 flex justify-center py-8 px-8 '>
             <Image src={logo4} alt='Amsterdam logo' />
-          </div> */}
+          </div>}
           <div className='col-span-1 flex justify-center py-8 px-8 '>
             <Image src={logo5} alt='Amsterdam logo' />
           </div>
