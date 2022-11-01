@@ -15,6 +15,7 @@ export default function Windturbine() {
   });
   return (
     <Layout>
+      {/* TODO: this page and Houtbouw index page are very similar and basic layout should be combined */} 
       <div className='gradient-bg'>
         <div className='global-margin'>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-20 mb-10'>

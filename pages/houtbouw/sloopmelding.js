@@ -13,6 +13,7 @@ function classNames(...classes) {
 export default function Law() {
   return (
     <Layout>
+      {/* TODO: create generic template for special measures */} 
       <div className='gradient-bg '>
         <div className='global-margin pt-10 '>
           <div className='block lg:hidden'>
