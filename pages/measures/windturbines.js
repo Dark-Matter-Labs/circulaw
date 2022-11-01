@@ -1,5 +1,4 @@
 // TODO: combine this page and houtbouw.js into [measures].js
-
 import { useState, useEffect, useRef, Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import useSWR from 'swr';
