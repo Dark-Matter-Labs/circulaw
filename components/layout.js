@@ -32,7 +32,7 @@ export default function Layout(props) {
           </div>
         </div>
       </div>
-      {props.page !== 'home' && <Nav />}
+      <Nav />
       <Head>
         <title>CircuLaw</title>
       </Head>
@@ -41,3 +41,4 @@ export default function Layout(props) {
     </>
   );
 }
+//
