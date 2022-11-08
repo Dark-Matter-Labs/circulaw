@@ -124,49 +124,49 @@ export default function Footer() {
       <div className='global-margin pb-12 px-4 lg:pb-16'>
         <div className='grid grid-cols-2 gap-0.5 md:grid-cols-5 '>
           <div className='col-span-1 flex justify-center py-8 px-8 '>
-            <Image src={logo1} alt='Amsterdam logo' />
+            <Image src={logo1} alt='Gemeente Amsterdam logo' />
           </div>
           <div className='col-span-1 flex justify-center py-8 px-8 '>
-            <Image src={logo2} alt='Amsterdam logo' />
+            <Image src={logo2} alt='Dark Matter Labs logo' />
           </div>
           <div className='col-span-1 flex justify-center py-4 px-8 lg:py-2 '>
-            <Image src={logo3} alt='Amsterdam logo' />
-          </div>
-          {/* <div className='col-span-1 flex justify-center py-8 px-8 '>
-            <Image src={logo4} alt='Amsterdam logo' />
-          </div> */}
-          <div className='col-span-1 flex justify-center py-8 px-8 '>
-            <Image src={logo5} alt='Amsterdam logo' />
+            <Image src={logo3} alt='Climate-KIC logo' />
           </div>
           <div className='col-span-1 flex justify-center py-8 px-8 '>
-            <Image src={logo6} alt='Amsterdam logo' />
+            <Image src={logo4} alt='Built by Nature logo' />
           </div>
           <div className='col-span-1 flex justify-center py-8 px-8 '>
-            <Image src={logo7} alt='Amsterdam logo' />
+            <Image src={logo5} alt='Amsterdam Institute for Advanced Metropolitan Solutions logo' />
           </div>
           <div className='col-span-1 flex justify-center py-8 px-8 '>
-            <Image src={logo8} alt='Amsterdam logo' />
+            <Image src={logo6} alt='De Circulaire Bouweconomie logo' />
           </div>
           <div className='col-span-1 flex justify-center py-8 px-8 '>
-            <Image src={logo9} alt='Amsterdam logo' />
+            <Image src={logo7} alt='Provincie Noord-Holland logo' />
           </div>
           <div className='col-span-1 flex justify-center py-8 px-8 '>
-            <Image src={logo10} alt='Amsterdam logo' />
+            <Image src={logo8} alt='Provincie Flevoland logo' />
           </div>
           <div className='col-span-1 flex justify-center py-8 px-8 '>
-            <Image src={logo11} alt='Amsterdam logo' />
+            <Image src={logo9} alt='Rijksdienst voor Ondernemend logo' />
           </div>
           <div className='col-span-1 flex justify-center py-8 px-8 '>
-            <Image src={logo12} alt='Amsterdam logo' />
+            <Image src={logo10} alt='Ministerie van Financiën logo' />
           </div>
           <div className='col-span-1 flex justify-center py-8 px-8 '>
-            <Image src={logo13} alt='Amsterdam logo' />
+            <Image src={logo11} alt='Wageningen University & Research logo' />
           </div>
           <div className='col-span-1 flex justify-center py-8 px-8 '>
-            <Image src={logo14} alt='Amsterdam logo' />
+            <Image src={logo12} alt='TU Delft logo' />
           </div>
           <div className='col-span-1 flex justify-center py-8 px-8 '>
-            <Image src={logo15} alt='Amsterdam logo' />
+            <Image src={logo13} alt='Erasmus Universiteit Rotterdam logo' />
+          </div>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
+            <Image src={logo14} alt='Vrije Universiteit Amsterdam logo' />
+          </div>
+          <div className='col-span-1 flex justify-center py-8 px-8 '>
+            <Image src={logo15} alt='Universiteit van Amsterdam logo' />
           </div>
         </div>
       </div>
