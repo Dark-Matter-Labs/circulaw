@@ -2,7 +2,7 @@
   "name": "circulaw",
   "version": "1.0.0",
   "description": "regelgeving voor een circulaire economie",
-  "license": "GPLv3",
+  "license": "GPL-3.0-or-later",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
