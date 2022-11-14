@@ -5,7 +5,7 @@
     @apply max-w-7xl;
     @apply mx-8;
     @apply md:mx-10;
-    @apply xl:mx-auto;
+    @apply 2xl:mx-auto;
   }
 
   .image-margin {
