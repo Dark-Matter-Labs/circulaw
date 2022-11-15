@@ -107,43 +107,54 @@ export default function SectionTypes(props) {
                 <Image src={file.heroImage} layout='responsive' alt='Picture of the case' />
               )}
             </div>
+
             <div className='group block w-full p-4 bg-white px-10'>
-              <div className={classNames(props.type === 'houtbouw' ? 'h-20' : '', 'inline-block')}>
-                {file.href !== '' ? (
-                  <Link href={file.href}>
-                    <a>
-                      <h3 className='mt-2 block text-black pointer-events-none pb-4'>
-                        {file.title}
-                      </h3>
-                    </a>
-                  </Link>
-                ) : (
-                  <h3 className='mt-2 block text-black pointer-events-none pb-4'>{file.title}</h3>
+              <div>
+                <div
+                  className={classNames(props.type === 'houtbouw' ? 'h-20' : '', 'inline-block')}
+                >
+                  {file.href !== '' ? (
+                    <Link href={file.href}>
+                      <a>
+                        <h3 className='mt-2 block text-black pointer-events-none pb-4'>
+                          {file.title}
+                        </h3>
+                      </a>
+                    </Link>
+                  ) : (
+                    <h3 className='mt-2 block text-black pointer-events-none pb-4'>{file.title}</h3>
+                  )}
+                  {/*added height for the description while on home to ensure all the text can be read*/}
+                </div>
+                <p
+                  className={classNames(
+                    props.type === 'home' ? 'h-80 md:h-72' : '',
+                    'body-text-mobile sm:card-body block text-black pointer-events-none py-4 w-full',
+                  )}
+                >
+                  {file.description}
+                </p>
+                {file.tag && (
+                  <div className='my-8 h-16 block'>
+                    <span className='p-2 rounded-md bg-grey3 font-openSans text-xs'>
+                      {file.tag}
+                    </span>
+                  </div>
                 )}
               </div>
-              <p
-                className={classNames(
-                  props.type === 'home' ? '' : '',
-                  'body-text-mobile sm:card-body block text-black pointer-events-none py-4 w-full ',
+              {/*wrapped button in div to seperate it from description */}
+              <div className='group block w-full py-4 bg-white px-10 absolute inset-x-0 bottom-0'>
+                {file.buttonText && (
+                  <button
+                    type='button'
+                    className='inline-block rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-transparent hover:bg-green1 hover:text-white1 transition ease-in-out hover:duration-150 '
+                  >
+                    <Link href={file.href}>
+                      <a>{file.buttonText} →</a>
+                    </Link>
+                  </button>
                 )}
-              >
-                {file.description}
-              </p>
-              {file.tag && (
-                <div className='my-8 '>
-                  <span className='p-2 rounded-md bg-grey3 font-openSans text-xs'>{file.tag}</span>
-                </div>
-              )}
-              {file.buttonText && (
-                <button
-                  type='button'
-                  className='inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-transparent hover:bg-green1 hover:text-white1'
-                >
-                  <Link href={file.href}>
-                    <a>{file.buttonText} →</a>
-                  </Link>
-                </button>
-              )}
+              </div>
             </div>
           </li>
         ))}
