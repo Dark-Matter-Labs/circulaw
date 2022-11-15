@@ -6,7 +6,7 @@ import { Popover, Disclosure, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { Link as ScrollLink } from 'react-scroll';
-import { get_waardeketens, get_over } from '../utils/nav_structure';
+import { get_waardeketens, get_over } from '../utils/nav-structure';
 import CirculawLogo from '../public/Circulaw_logotype.png';
 import logo from '../public/Circulaw_logotype_home.png';
 
