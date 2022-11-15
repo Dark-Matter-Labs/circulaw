@@ -9,7 +9,7 @@ import ActionPanel from '../components/section-action-panel';
 import Layout from '/layouts/layout';
 import SectionTypes from '/components/section-types-list';
 import logo from '../public/Circulaw_logotype_home.png';
-import { get_waardeketens, get_over } from '../utils/nav_structure';
+import { get_waardeketens, get_over } from '../utils/nav-structure';
 
 const waardeketens = get_waardeketens();
 const over = get_over();
