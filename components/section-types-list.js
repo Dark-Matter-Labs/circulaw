@@ -128,7 +128,7 @@ export default function SectionTypes(props) {
                 </div>
                 <p
                   className={classNames(
-                    props.type === 'home' ? 'h-80 md:h-72' : '',
+                    props.type === 'home' ? 'h-[21rem]' : '',
                     'body-text-mobile sm:card-body block text-black pointer-events-none py-4 w-full',
                   )}
                 >
