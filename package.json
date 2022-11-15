@@ -2,7 +2,7 @@
   "name": "circulaw",
   "version": "1.0.0",
   "description": "regelgeving voor een circulaire economie",
-  "license": "GPLv3",
+  "license": "GPL-3.0-or-later",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,7 +13,6 @@
     "@emailjs/browser": "^3.7.0",
     "@headlessui/react": "^1.6.0",
     "@heroicons/react": "^1.0.6",
-    "@react-pdf/renderer": "^2.3.0",
     "@tailwindcss/forms": "^0.5.2",
     "next": "^12.0.7",
     "next-pagination": "^3.1.0",

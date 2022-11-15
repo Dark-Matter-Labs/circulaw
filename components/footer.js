@@ -121,6 +121,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      {/* TODO: add image alt tags */}
       <div className='global-margin pb-12 px-4 lg:pb-16'>
         <div className='grid grid-cols-2 gap-0.5 md:grid-cols-5 '>
           <div className='col-span-1 flex justify-center py-8 px-8 '>
