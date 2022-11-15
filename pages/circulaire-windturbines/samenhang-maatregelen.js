@@ -7,7 +7,7 @@ import TimberImageMob from '../../public/Windmill_Process_Mob.png';
 export default function InfoPage() {
   return (
     <Layout>
-      {/* TODO: this page and Houtbouw samenhang page are very similar and basic layout should be combined */} 
+      {/* TODO: this page and Houtbouw samenhang page are very similar and basic layout should be combined */}
       <div className='global-margin my-20'>
         <div className='breadcrumb text-greenLink pb-8'>
           <Link href='/'>
