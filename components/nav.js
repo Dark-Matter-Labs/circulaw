@@ -566,7 +566,7 @@ export default function Nav() {
                   className='inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-blush2 hover:bg-green1 hover:text-white1 focus:outline-none'
                 >
                   <ScrollLink to='waarom' smooth={true}>
-                    <a>Meer over CircuLaw? ↓</a>
+                    Meer over CircuLaw? ↓
                   </ScrollLink>
                 </button>
               </div>
