@@ -1,5 +1,5 @@
-import Layout from '../../components/layout';
-import WelkeLayout from '../../components/welke-layout';
+import Layout from '../../layouts/layout';
+import WelkeLayout from '../../layouts/welke-layout';
 import WindmillImage from '../../public/Windmill_Measures_Web.png';
 import WindmillImageMob from '../../public/Windmill_Measures_Mob.png';
 

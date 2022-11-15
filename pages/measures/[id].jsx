@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import Link from 'next/link';
 import Image from 'next/image';
-import Layout from '../../components/layout';
+import Layout from '../../layouts/layout';
 import WindmillIcon from '../../public/winturbines.svg';
 import IcontWood from '../../public/icons/houtbouwIconBg.svg';
 import RTooltip from '../../components/r-ladder-tooltip';
