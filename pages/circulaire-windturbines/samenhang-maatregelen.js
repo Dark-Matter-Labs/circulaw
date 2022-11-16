@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import Layout from '../../components/layout';
 import WindmillImage from '../../public/Windmill_Process_Web.png';
 import WindmillImageMob from '../../public/Windmill_Process_Mob.png';

@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import Layout from '../../components/layout';
 import TimberImage from '../../public/Timber_Process_Web.png';
 import TimberImageMob from '../../public/Timber_Process_Mob.png';

@@ -24,7 +24,7 @@ export default function Nav() {
       /* TODO: add case for navbar to work on homepage and remove the custom navbar on homepage */
       /* I used the router.pathname to display the two different nav on the home page was nested in the div containing the background image and text 'regelgeving voor een...'*/
       /* The alternative would be to remove the navbar completely from the div containing the background image but then need to play around with the css a bit more */
-      /*The navbar from the homepage starts at line 287 */
+      /* The navbar from the homepage starts at line 287 */
       <Disclosure as='nav' className='sticky top-0 z-40 bg-blush2'>
         {({ open }) => (
           <>

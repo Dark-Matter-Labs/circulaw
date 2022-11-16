@@ -14,7 +14,7 @@ export default function ThemeLayout(props) {
               </Link>
             </div>
             <div className='pb-14 pt-14 '>
-              {/*maybe make the icon closer to the home link.
+              {/* maybe make the icon closer to the home link.
                 may need to re-jig the top and bottom paddings here
                 I find it a bit to much */}
               <div className='pr-4 inline-block'>
@@ -43,7 +43,7 @@ export default function ThemeLayout(props) {
             </div>
           </div>
         </div>
-        {/*using the prop isSpecialMeasures to conditionally render this section
+        {/* using the prop isSpecialMeasures to conditionally render this section
           if there is not special measure set this to '' and the section will not render*/}
         {props.isSpecialMeasures !== '' && (
           <div className='my-20'>

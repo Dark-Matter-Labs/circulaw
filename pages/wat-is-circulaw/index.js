@@ -56,7 +56,7 @@ export default function WatIsCircuLaw() {
               maatregelen betreft van verschillende wetsgebieden: publiekrecht, privaatrecht of
               fiscaalrecht. CircuLaw visualiseert per casus of productgroep hoe beschikbare
               maatregelen samenhangen. Zo’n visualisatie kan als dashboard dienen voor de
-              beleidsmaker en stelt die in staat om tegelijk aan verschillende knoppen t  te
+              beleidsmaker en stelt die in staat om tegelijk aan verschillende knoppen t te
               draaien. En dus op een gecoördineerde, gerichte manier combinaties van maatregelen in
               te zetten. Dit is belangrijk, omdat een transitie vergt dat in een systeem
               tegelijkertijd op verschillende plekken veranderingen plaatsvinden.

@@ -11,7 +11,6 @@ function classNames(...classes) {
 export default function Contact() {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [agreed, setAgreed] = useState(false);
-  const [send, setSend] = useState(true);
   const [text, setText] = useState('');
   const [email, setEmail] = useState('');
   const [showPrivacyError, setShowPrivacyError] = useState(false);
@@ -54,7 +53,7 @@ export default function Contact() {
           process.env.NEXT_PUBLIC_EMAILJS_USER_ID,
         )
         .then(
-          (result) => {
+          () => {
             setSubmitSuccess(true);
           },
           (error) => {
