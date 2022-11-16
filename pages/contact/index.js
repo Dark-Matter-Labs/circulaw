@@ -3,6 +3,7 @@ import { Switch } from '@headlessui/react';
 import Link from 'next/link';
 import emailjs from '@emailjs/browser';
 import Layout from '../../components/layout';
+import CustomButton from '../../components/customButton';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -199,12 +200,9 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
-                  <button
-                    onClick={sendMessage}
-                    className='inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-white hover:bg-greenLink focus:outline-none'
-                  >
+                  <CustomButton onClick={sendMessage} color = 'whiteBackground'>
                     Verzenden &rarr;
-                  </button>
+                  </CustomButton>
                 </div>
               </form>
             </div>
@@ -218,9 +216,9 @@ export default function Contact() {
             <div className='sm:col-span-2 pb-20'>
               <Link href='/'>
                 <a>
-                  <button className='inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-white hover:bg-greenLink focus:outline-none'>
+                  <CustomButton color = 'whiteBackground'>
                     Naar de homepage &rarr;
-                  </button>
+                  </CustomButton>
                 </a>
               </Link>
             </div>

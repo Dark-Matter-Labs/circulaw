@@ -146,7 +146,7 @@ export default function SectionTypes(props) {
               {/*wrapped button in div to seperate it from description */}
               <div className='group block w-full py-4 bg-white px-10 absolute inset-x-0 bottom-0'>
                 {file.buttonText && (
-                  <CustomButton color = 'sectionTypes'>
+                  <CustomButton color = 'whiteBackground'>
                     <Link href={file.href}>
                       <a>{file.buttonText} →</a>
                     </Link>
