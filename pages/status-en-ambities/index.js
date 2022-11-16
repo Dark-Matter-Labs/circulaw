@@ -31,7 +31,7 @@ export default function StatusEn() {
                   op bevoegdheidsniveau of rechtsgebied
                 </li>
                 <li>
-                  Drie ‘pasklare’ maatregelen om  houtbouw te stimuleren, met een leidraad die je
+                  Drie ‘pasklare’ maatregelen om houtbouw te stimuleren, met een leidraad die je
                   direct op weg helpt
                 </li>
                 <li>

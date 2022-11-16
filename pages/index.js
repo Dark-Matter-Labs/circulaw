@@ -1,22 +1,7 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { Fragment } from 'react';
-import { Popover, Transition, Disclosure } from '@headlessui/react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import { ChevronDownIcon } from '@heroicons/react/solid';
-import { Link as ScrollLink } from 'react-scroll';
 import ActionPanel from '../components/section-action-panel';
 import Layout from '/layouts/layout';
 import SectionTypes from '/components/section-types-list';
-import logo from '../public/Circulaw_logotype_home.png';
-import { get_waardeketens, get_over } from '../utils/nav-structure';
-
-const waardeketens = get_waardeketens();
-const over = get_over();
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
-}
 
 export default function Index() {
   return (
