@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import Layout from '../../layouts/layout';
+import Layout from '../../components/layouts/layout';
 import WindmillIcon from '../../public/windmill.svg';
 import WindturbineHero from '../../public/windturbineHero.jpg';
 import WindturbineSection1 from '../../public/Measures_Teaser.png';

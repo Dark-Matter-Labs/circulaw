@@ -1,4 +1,4 @@
-import Layout from '../../layouts/layout';
+import Layout from '../../components/layouts/layout';
 import WindmillImage from '../../public/Windmill_Process_Web.png';
 import WindmillImageMob from '../../public/Windmill_Process_Mob.png';
 import SamenhangLayout from '../../layouts/samenhang-layout';

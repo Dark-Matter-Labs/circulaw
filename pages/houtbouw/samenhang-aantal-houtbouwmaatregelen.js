@@ -1,4 +1,4 @@
-import Layout from '../../layouts/layout';
+import Layout from '../../components/layouts/layout';
 import TimberImage from '../../public/Timber_Process_Web.png';
 import TimberImageMob from '../../public/Timber_Process_Mob.png';
 import SamenhangLayout from '../../layouts/samenhang-layout';

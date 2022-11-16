@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import Layout from '../../layouts/layout';
+import Layout from '../../components/layouts/layout';
 import WoodIcon from '../../public/icons/wood.svg';
 import HoutbouwHero from '../../public/houtbouwHero.jpeg';
 import HoutbouwSection1 from '../../public/Measures_Teaser.png';

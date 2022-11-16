@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import Layout from '../../layouts/layout';
+import Layout from '../../components/layouts/layout';
 import IcontWood from '../../public/icons/houtbouwIconBg.svg';
 import RTooltip from '../../components/r-ladder-tooltip';
 import JHTooltip from '../../components/juridische-houdbaarheid-tooltip';

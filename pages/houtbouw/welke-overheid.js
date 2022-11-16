@@ -1,4 +1,4 @@
-import Layout from '../../layouts/layout';
+import Layout from '../../components/layouts/layout';
 import TimberImage from '../../public/Timber_Measures_Web.png';
 import TimberImageMob from '../../public/Timber_Measures_Mob.png';
 import WelkeLayout from '../../layouts/welke-layout';
