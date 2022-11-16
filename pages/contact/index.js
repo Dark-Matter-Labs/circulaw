@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { Switch } from '@headlessui/react';
 import Link from 'next/link';
 import emailjs from '@emailjs/browser';
-import Layout from '../../components/layout';
+import Layout from '../../layouts/layout';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');

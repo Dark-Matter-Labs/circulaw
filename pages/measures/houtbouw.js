@@ -15,7 +15,7 @@ import {
   r_ladder,
 } from '../../dataFilter';
 
-import Layout from '/components/layout';
+import Layout from '/layouts/layout';
 import SearchFilter from '/components/search-filter';
 import PolicyList from '/components/policy-list';
 import IconWood from '../../public/icons/houtbouwIconBg.svg';

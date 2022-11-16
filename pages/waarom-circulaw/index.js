@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Layout from '../../components/layout';
+import Layout from '../../layouts/layout';
 import OverNav from '../../components/over-nav';
 
 export default function WaaromCirculaw() {
