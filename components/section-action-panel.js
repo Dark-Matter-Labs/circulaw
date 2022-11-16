@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import CustomButton from './customButton';
+import CustomButton from './custom-button';
 
 export default function ActionPanel(props) {
   return (

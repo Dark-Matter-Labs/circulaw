@@ -9,7 +9,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import { get_waardeketens, get_over } from '../utils/nav_structure';
 import CirculawLogo from '../public/Circulaw_logotype.png';
 import logo from '../public/Circulaw_logotype_home.png';
-import CustomButton from './customButton';
+import CustomButton from './custom-button';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');

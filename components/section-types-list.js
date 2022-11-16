@@ -9,7 +9,7 @@ import OverigeHero from '../public/biennekort.png';
 import HoutbouwDetails1 from '../public/houtbouw1.png';
 import HoutbouwDetails2 from '../public/houtbouw2.png';
 import HoutbouwDetails3 from '../public/houtbouw3.png';
-import CustomButton from './customButton';
+import CustomButton from './custom-button';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');

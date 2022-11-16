@@ -5,7 +5,7 @@ import IcontWood from '../../public/icons/houtbouwIconBg.svg';
 import RTooltip from '../../components/r_ladder_tooltip';
 import JHTooltip from '../../components/juridische_houdbaarheid_tooltip';
 import JITooltip from '../../components/juridische_invloed_tooltip';
-import CustomButton from '../../components/customButton';
+import CustomButton from '../../components/custom-button';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');

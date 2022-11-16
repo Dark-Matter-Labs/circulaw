@@ -3,7 +3,7 @@ import { Switch } from '@headlessui/react';
 import Link from 'next/link';
 import emailjs from '@emailjs/browser';
 import Layout from '../../components/layout';
-import CustomButton from '../../components/customButton';
+import CustomButton from '../../components/custom-button';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
