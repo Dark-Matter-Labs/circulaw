@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Layout from '../../components/layout';
+import Layout from '../../layouts/layout';
 import WindmillImage from '../../public/Windmill_Process_Web.png';
 import WindmillImageMob from '../../public/Windmill_Process_Mob.png';
-import SamenhangLayout from '../../components/samenhang-layout';
+import SamenhangLayout from '../../layouts/samenhang-layout';
 
 export default function InfoPage() {
   return (

@@ -1,7 +1,7 @@
-import Layout from '../../components/layout';
+import Layout from '../../layouts/layout';
 import TimberImage from '../../public/Timber_Measures_Web.png';
 import TimberImageMob from '../../public/Timber_Measures_Mob.png';
-import WelkeLayout from '../../components/welke-layout';
+import WelkeLayout from '../../layouts/welke-layout';
 
 export default function InfoPage() {
   return (
