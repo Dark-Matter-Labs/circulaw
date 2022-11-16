@@ -200,7 +200,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
-                  <CustomButton onClick={sendMessage} color = 'whiteBackground'>
+                  <CustomButton onClick={sendMessage} color='whiteBackground'>
                     Verzenden &rarr;
                   </CustomButton>
                 </div>
@@ -216,9 +216,7 @@ export default function Contact() {
             <div className='sm:col-span-2 pb-20'>
               <Link href='/'>
                 <a>
-                  <CustomButton color = 'whiteBackground'>
-                    Naar de homepage &rarr;
-                  </CustomButton>
+                  <CustomButton color='whiteBackground'>Naar de homepage &rarr;</CustomButton>
                 </a>
               </Link>
             </div>

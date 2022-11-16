@@ -246,9 +246,7 @@ export default function Law() {
                   houtbouw te bevorderen.
                 </p>
                 <a href='/Leidraad-Gronduitgifte-CircuLaw.pdf'>
-                <CustomButton color ='toPdf'>
-                    Bekijk de leidraad (pdf) →
-                </CustomButton>
+                  <CustomButton color='toPdf'>Bekijk de leidraad (pdf) →</CustomButton>
                 </a>
               </div>
 

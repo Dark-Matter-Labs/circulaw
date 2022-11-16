@@ -552,7 +552,7 @@ export default function Nav() {
             </p>
             <div className='mt-5 sm:flex sm:justify-center md:mt-8'>
               <div className='rounded-md'>
-               <CustomButton color='home'>
+                <CustomButton color='home'>
                   <ScrollLink to='thema' smooth={true}>
                     Bekijk de thema&rsquo;s ↓
                   </ScrollLink>

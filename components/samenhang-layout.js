@@ -19,7 +19,7 @@ export default function SamenhangLayout(props) {
           <Link href='/'>
             <a>Home &gt; </a>
           </Link>
-          <Link href= {`/${props.casus.toLowerCase().replace(/ /g, '-')}`} >
+          <Link href={`/${props.casus.toLowerCase().replace(/ /g, '-')}`}>
             <a className=' inline-block lowercase first-letter:uppercase'>{props.casus} &gt; </a>
           </Link>
         </div>

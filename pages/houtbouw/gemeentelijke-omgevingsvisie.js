@@ -179,9 +179,7 @@ export default function Law() {
                   bevorderen.
                 </p>
                 <a href='/Leidraad-Omgevingsvisie-CircuLaw.pdf'>
-                  <CustomButton color ='toPdf'>
-                    Bekijk de leidraad (pdf)→
-                  </CustomButton>
+                  <CustomButton color='toPdf'>Bekijk de leidraad (pdf)→</CustomButton>
                 </a>
               </div>
 

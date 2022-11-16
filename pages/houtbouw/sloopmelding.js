@@ -181,9 +181,7 @@ export default function Law() {
                   circulaire doeleinden?
                 </p>
                 <a href='/Leidraad-Sloopmelding-CircuLaw.pdf'>
-                  <CustomButton color = 'toPdf'>
-                    Bekijk de leidraad (pdf)→
-                  </CustomButton>
+                  <CustomButton color='toPdf'>Bekijk de leidraad (pdf)→</CustomButton>
                 </a>
               </div>
 
