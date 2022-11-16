@@ -5,7 +5,7 @@ import HoutbouwHero from '../../public/houtbouwHero.jpeg';
 import HoutbouwSection1 from '../../public/Measures_Teaser.png';
 import HoutbouwSection2 from '../../public/Timber_Process_Teaser.png';
 import HoutbouwSection3 from '../../public/Timber_Measures_Teaser.png';
-import ThemeLayout from '../../layouts/theme-index-layout';
+import ThemeLayout from '../../components/layouts/theme-index-layout';
 
 /* List of Props
 icon - imported icon
