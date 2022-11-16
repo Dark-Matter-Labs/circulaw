@@ -5,6 +5,7 @@ import IcontWood from '../../public/icons/houtbouwIconBg.svg';
 import RTooltip from '../../components/r_ladder_tooltip';
 import JHTooltip from '../../components/juridische_houdbaarheid_tooltip';
 import JITooltip from '../../components/juridische_invloed_tooltip';
+import CustomButton from '../../components/customButton';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -178,12 +179,9 @@ export default function Law() {
                   bevorderen.
                 </p>
                 <a href='/Leidraad-Omgevingsvisie-CircuLaw.pdf'>
-                  <button
-                    type='button'
-                    className='inline-flex rounded-full items-center px-4 py-2 border border-green2 button text-white1 bg-green2'
-                  >
+                  <CustomButton color ='toPdf'>
                     Bekijk de leidraad (pdf)→
-                  </button>
+                  </CustomButton>
                 </a>
               </div>
 
