@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import SectionTypes from '../components/section-types-list';
+import SectionTypes from '../../components/section-types-list';
 
 export default function ThemeLayout(props) {
   return (
