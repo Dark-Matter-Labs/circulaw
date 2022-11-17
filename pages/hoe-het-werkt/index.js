@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Layout from '../../layouts/layout';
+import Layout from '../../components/layouts/layout';
 
 export default function Kunststoffen() {
   return (

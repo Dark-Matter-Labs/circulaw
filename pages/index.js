@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import ActionPanel from '../components/section-action-panel';
-import Layout from '/layouts/layout';
+import Layout from '/components/layouts/layout';
 import SectionTypes from '/components/section-types-list';
 
 export default function Index() {

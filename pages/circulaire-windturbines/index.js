@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import Layout from '../../layouts/layout';
+import Layout from '../../components/layouts/layout';
 import WindmillIcon from '../../public/windmill.svg';
 import WindturbineHero from '../../public/windturbineHero.jpg';
 import WindturbineSection1 from '../../public/Measures_Teaser.png';
 import WindturbineSection2 from '../../public/Windmill_Process_Teaser.png';
 import WindturbineSection3 from '../../public/Timber_Measures_Teaser.png';
-import ThemeLayout from '../../layouts/theme-index-layout';
+import ThemeLayout from '../../components/layouts/theme-index-layout';
 
 export default function Windturbine() {
   useEffect(() => {

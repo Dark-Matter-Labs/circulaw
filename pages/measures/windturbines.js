@@ -14,7 +14,7 @@ import {
   r_ladder,
 } from '../../dataFilter';
 
-import Layout from '/layouts/layout';
+import Layout from '/components/layouts/layout';
 import SearchFilter from '/components/search-filter';
 import PolicyList from '/components/policy-list';
 import WindmillIcon from '../../public/windmill.svg';
