@@ -9,6 +9,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import { get_waardeketens, get_over } from '../utils/nav-structure';
 import CirculawLogo from '../public/Circulaw_logotype.png';
 import logo from '../public/Circulaw_logotype_home.png';
+import CustomButton from './custom-button';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -551,24 +552,18 @@ export default function Nav() {
             </p>
             <div className='mt-5 sm:flex sm:justify-center md:mt-8'>
               <div className='rounded-md'>
-                <button
-                  type='button'
-                  className='inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-blush2 hover:bg-green1 hover:text-white1 focus:outline-none'
-                >
+                <CustomButton color='home'>
                   <ScrollLink to='thema' smooth={true}>
                     Bekijk de thema&rsquo;s ↓
                   </ScrollLink>
-                </button>
+                </CustomButton>
               </div>
               <div className='mt-3 rounded-md sm:mt-0 sm:ml-3'>
-                <button
-                  type='button'
-                  className='inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-blush2 hover:bg-green1 hover:text-white1 focus:outline-none'
-                >
+                <CustomButton color='home'>
                   <ScrollLink to='waarom' smooth={true}>
                     Meer over CircuLaw? ↓
                   </ScrollLink>
-                </button>
+                </CustomButton>
               </div>
             </div>
           </div>

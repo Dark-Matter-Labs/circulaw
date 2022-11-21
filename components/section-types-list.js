@@ -9,6 +9,7 @@ import OverigeHero from '../public/biennekort.png';
 import HoutbouwDetails1 from '../public/houtbouw1.png';
 import HoutbouwDetails2 from '../public/houtbouw2.png';
 import HoutbouwDetails3 from '../public/houtbouw3.png';
+import CustomButton from './custom-button';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -145,14 +146,11 @@ export default function SectionTypes(props) {
               {/* wrapped button in div to seperate it from description */}
               <div className='group block w-full py-4 bg-white px-10 absolute inset-x-0 bottom-0'>
                 {file.buttonText && (
-                  <button
-                    type='button'
-                    className='inline-block rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-transparent hover:bg-green1 hover:text-white1 transition ease-in-out hover:duration-150 '
-                  >
+                  <CustomButton color='whiteBackground'>
                     <Link href={file.href}>
                       <a>{file.buttonText} →</a>
                     </Link>
-                  </button>
+                  </CustomButton>
                 )}
               </div>
             </div>
