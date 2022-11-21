@@ -1,4 +1,3 @@
-import Link from 'next/link';
 
 const buttonColors = {
   home: 'border-green1 bg-blush2 hover:bg-green1 text-green1 hover:text-white1 transition ease-in-out hover:duration-150 focus:outline-none',
