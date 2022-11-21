@@ -1,12 +1,12 @@
 import { useState, forwardRef, useImperativeHandle } from 'react';
 import { handleToggle } from '../utils';
-import RTooltip from '../components/r_ladder_tooltip';
-import JHTooltip from '../components/juridische_houdbaarheid_tooltip';
+import RTooltip from '../components/r-ladder-tooltip';
+import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 
 const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, ref) => {
   const [checkedArray, setCheckedArray] = useState([]);
 
-  //state to check if set value is for mouse click or state persist
+  // state to check if set value is for mouse click or state persist
   const [clicked, setClicked] = useState(false);
 
   const onChangeHandler = (checkboxId) => {
@@ -19,17 +19,17 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
     handleFilters(mapIdToValueArray);
   };
 
-  //functions for parent component to reset checkbox values and set values from localStorage
+  // functions for parent component to reset checkbox values and set values from localStorage
   useImperativeHandle(ref, () => ({
     reset() {
       setCheckedArray([]);
     },
     set(selectedArray) {
-      //only do this for state persist and not mouse click
+      // only do this for state persist and not mouse click
       if (!clicked) {
         let newArr = [];
         for (let index = 0; index < selectedArray.length; index++) {
-          //matching values to IDs
+          // matching values to IDs
           list.map((element) => {
             if (selectedArray[index] === element.value) {
               newArr.push(element.id);

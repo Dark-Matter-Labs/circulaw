@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import Layout from '../../components/layout';
+import Layout from '../../components/layouts/layout';
 import WindmillIcon from '../../public/windmill.svg';
 import WindturbineHero from '../../public/windturbineHero.jpg';
 import WindturbineSection1 from '../../public/Measures_Teaser.png';
 import WindturbineSection2 from '../../public/Windmill_Process_Teaser.png';
 import WindturbineSection3 from '../../public/Timber_Measures_Teaser.png';
-import ThemeLayout from '../../components/theme-index-layout';
+import ThemeLayout from '../../components/layouts/theme-index-layout';
 
 export default function Windturbine() {
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function Windturbine() {
         heroImageAlt='hero image of Windturbine'
         isSpecialMeasures=''
         type=''
-        seeMeasuresTitle='10 Circulaire windturbine maatregelen'
+        seeMeasuresTitle='10 Circulairewindturbinemaatregelen'
         seeMeasuresImage={WindturbineSection1}
         seeMeasuresImageAlt='Windturbine section image'
         seeMeasuresText='Weten waar kansen liggen om de transitie naar circulaire windturbines te

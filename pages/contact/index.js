@@ -2,7 +2,8 @@ import { useState, useRef } from 'react';
 import { Switch } from '@headlessui/react';
 import Link from 'next/link';
 import emailjs from '@emailjs/browser';
-import Layout from '../../components/layout';
+import Layout from '../../components/layouts/layout';
+import CustomButton from '../../components/custom-button';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -11,7 +12,6 @@ function classNames(...classes) {
 export default function Contact() {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [agreed, setAgreed] = useState(false);
-  const [send, setSend] = useState(true);
   const [text, setText] = useState('');
   const [email, setEmail] = useState('');
   const [showPrivacyError, setShowPrivacyError] = useState(false);
@@ -54,7 +54,7 @@ export default function Contact() {
           process.env.NEXT_PUBLIC_EMAILJS_USER_ID,
         )
         .then(
-          (result) => {
+          () => {
             setSubmitSuccess(true);
           },
           (error) => {
@@ -172,8 +172,8 @@ export default function Contact() {
                         checked={agreed}
                         onChange={setAgreed}
                         className={classNames(
-                          agreed ? 'bg-indigo-600' : 'bg-gray-200',
-                          'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
+                          agreed ? 'bg-green1' : 'bg-gray-200',
+                          'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green1',
                         )}
                       >
                         <span className='sr-only'>Agree to policies</span>
@@ -199,12 +199,9 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
-                  <button
-                    onClick={sendMessage}
-                    className='inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-white hover:bg-greenLink focus:outline-none'
-                  >
+                  <CustomButton onClick={sendMessage} color='whiteBackground'>
                     Verzenden &rarr;
-                  </button>
+                  </CustomButton>
                 </div>
               </form>
             </div>
@@ -218,9 +215,7 @@ export default function Contact() {
             <div className='sm:col-span-2 pb-20'>
               <Link href='/'>
                 <a>
-                  <button className='inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-white hover:bg-greenLink focus:outline-none'>
-                    Naar de homepage &rarr;
-                  </button>
+                  <CustomButton color='whiteBackground'>Naar de homepage &rarr;</CustomButton>
                 </a>
               </Link>
             </div>

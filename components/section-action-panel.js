@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import CustomButton from './custom-button';
+
 export default function ActionPanel(props) {
   return (
     <div className='bg-green3 py-10'>
@@ -11,12 +13,7 @@ export default function ActionPanel(props) {
           <div className='mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center'>
             <Link href={props.buttonLink}>
               <a>
-                <button
-                  type='button'
-                  className='inline-flex rounded-full items-center px-4 py-2 border border-green1 button text-green1 bg-transparent hover:bg-green1 hover:text-white1 focus:outline-none'
-                >
-                  {props.buttonText} →
-                </button>
+                <CustomButton color='actionPanel'>{props.buttonText} →</CustomButton>
               </a>
             </Link>
           </div>

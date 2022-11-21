@@ -2,12 +2,12 @@ import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import Link from 'next/link';
 import Image from 'next/image';
-import Layout from '../../components/layout';
+import Layout from '../../components/layouts/layout';
 import WindmillIcon from '../../public/winturbines.svg';
 import IcontWood from '../../public/icons/houtbouwIconBg.svg';
-import RTooltip from '../../components/r_ladder_tooltip';
-import JHTooltip from '../../components/juridische_houdbaarheid_tooltip';
-import JITooltip from '../../components/juridische_invloed_tooltip';
+import RTooltip from '../../components/r-ladder-tooltip';
+import JHTooltip from '../../components/juridische-houdbaarheid-tooltip';
+import JITooltip from '../../components/juridische-invloed-tooltip';
 
 const formatDate = (date) => {
   let dateObject = new Date(date);
@@ -16,6 +16,7 @@ const formatDate = (date) => {
 
 const checkURL = (text) => {
   let match = text.match(
+      // eslint-disable-next-line
     /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi,
   );
 
@@ -27,17 +28,19 @@ const checkURL = (text) => {
 
 const URLReplacer = (text) => {
   let match = text.match(
+      // eslint-disable-next-line
     /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi,
   );
   let linkFormattedText = text;
   match.map((url) => {
     linkFormattedText = linkFormattedText.replace(
       url,
-      `<a class="text-greenLink mobile-link wrap sm:link" href=\"` +
+        // eslint-disable-next-line
+      '<a class="text-greenLink mobile-link wrap sm:link" href=\"' +
         url +
         '"  target="_BLANK">' +
         url +
-        `</a>`,
+        '</a>',
     );
   });
   return linkFormattedText;
@@ -452,11 +455,4 @@ export default function Law() {
       </div>
     </Layout>
   );
-}
-
-export function Rating(data) {
-  {
-    /* TODO: @Will make the ratings system a component which supports diff values (3,5,10) + shapes */
-  }
-  return <>Future Rating Systems</>;
 }
