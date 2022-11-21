@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import Layout from '../../components/layout';
+import Layout from '../../components/layouts/layout';
 import IcontWood from '../../public/icons/houtbouwIconBg.svg';
-import RTooltip from '../../components/r_ladder_tooltip';
-import JHTooltip from '../../components/juridische_houdbaarheid_tooltip';
-import JITooltip from '../../components/juridische_invloed_tooltip';
+import RTooltip from '../../components/r-ladder-tooltip';
+import JHTooltip from '../../components/juridische-houdbaarheid-tooltip';
+import JITooltip from '../../components/juridische-invloed-tooltip';
 import CustomButton from '../../components/custom-button';
 
 function classNames(...classes) {

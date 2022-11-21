@@ -15,7 +15,7 @@ import {
   r_ladder,
 } from '../../dataFilter';
 
-import Layout from '/components/layout';
+import Layout from '/components/layouts/layout';
 import SearchFilter from '/components/search-filter';
 import PolicyList from '/components/policy-list';
 import IconWood from '../../public/icons/houtbouwIconBg.svg';
@@ -30,13 +30,13 @@ const fetcher = async (url) => {
   return data;
 };
 
-//creating objects for persisting values
+// creating objects for persisting values
 const useSelectedState = createPersistedState('selected');
 
 export default function Measures() {
-  const { data, error } = useSWR(() => `/api/laws/`, fetcher);
+  const { data } = useSWR(() => '/api/laws/', fetcher);
 
-  //creating references to access child component functions
+  // creating references to access child component functions
   const wettelijkFilterRef = useRef();
   const rechtsgebiedFilterRef = useRef();
   const subrechtsgebiedFilterRef = useRef();
@@ -54,7 +54,7 @@ export default function Measures() {
 
   const [numberOfLaws, setNumberOfLaws] = useState(36);
 
-  //dynamic filter numbers
+  // dynamic filter numbers
   const [numberOfEuropees, setNumberOfEuropee] = useState(0);
   const [numberOfNationaal, setNumberOfNationaal] = useState(0);
   const [numberOfProvinciaal, setNumberOfProvinciaal] = useState(0);
@@ -110,9 +110,9 @@ export default function Measures() {
     setSearchValue('');
   };
 
-  //effect to check for filtering and update data
+  // effect to check for filtering and update data
   useEffect(() => {
-    //added check for data to have been retrieved here
+    // added check for data to have been retrieved here
     if (data) {
       let filteredLaws = data;
 
@@ -238,7 +238,7 @@ export default function Measures() {
         return searchContent.toLowerCase().includes(searchValue.toLowerCase());
       });
 
-      //dynamically calculate filter numbers
+      // dynamically calculate filter numbers
       filteredLaws.map((measure) => {
         if (measure.europees) {
           numEuropee += 1;
@@ -338,7 +338,7 @@ export default function Measures() {
     }
   }, [data, selected, searchValue]);
 
-  //effect to check for data from persisted state from localStorage and update values when needed
+  // effect to check for data from persisted state from localStorage and update values when needed
   useEffect(() => {
     if (
       selected.wettelijk_bevoegdheidsniveau.length !== 0 &&

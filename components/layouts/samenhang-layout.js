@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-/*list of props
+/* list of props
 casus
 title
 img

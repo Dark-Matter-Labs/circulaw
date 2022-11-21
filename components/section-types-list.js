@@ -125,7 +125,7 @@ export default function SectionTypes(props) {
                   ) : (
                     <h3 className='mt-2 block text-black pointer-events-none pb-4'>{file.title}</h3>
                   )}
-                  {/*added height for the description while on home to ensure all the text can be read*/}
+                  {/* added height for the description while on home to ensure all the text can be read*/}
                 </div>
                 <p
                   className={classNames(
@@ -143,7 +143,7 @@ export default function SectionTypes(props) {
                   </div>
                 )}
               </div>
-              {/*wrapped button in div to seperate it from description */}
+              {/* wrapped button in div to seperate it from description */}
               <div className='group block w-full py-4 bg-white px-10 absolute inset-x-0 bottom-0'>
                 {file.buttonText && (
                   <CustomButton color='whiteBackground'>

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import Footer from '/components/footer';
-import Nav from '/components/nav';
+import Footer from '../../components/footer';
+import Nav from '../../components/nav';
 
 export default function Layout(props) {
   return (

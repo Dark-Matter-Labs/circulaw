@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import Layout from '../../components/layout';
+import Layout from '../../components/layouts/layout';
 import IcontWood from '../../public/icons/houtbouwIconBg.svg';
-import RTooltip from '../../components/r_ladder_tooltip';
-import JHTooltip from '../../components/juridische_houdbaarheid_tooltip';
-import JITooltip from '../../components/juridische_invloed_tooltip';
+import RTooltip from '../../components/r-ladder-tooltip';
+import JHTooltip from '../../components/juridische-houdbaarheid-tooltip';
+import JITooltip from '../../components/juridische-invloed-tooltip';
 import CustomButton from '../../components/custom-button';
 
 function classNames(...classes) {
@@ -270,7 +270,7 @@ export default function Law() {
                     <li>
                       De sloopmelding moet ten minste vier weken voor het begin van de
                       sloopwerkzaamheden worden ingediend. Dan hebben gemeenten genoeg tijd om de
-                      sloopmelding te verwerken en inventariseren.
+                      sloopmelding te verwerken en te inventariseren.
                     </li>
                   </ul>
                 </div>
