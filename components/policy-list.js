@@ -99,8 +99,9 @@ export default function PolicyList(props) {
               </div>
               <div className='block font-manrope font-bold text-xs pb-1'>
                 {europees && <span>Europees - </span>}
-                {nationaal && <span>Nationaal - </span>}
-                {provinciaal && <span>Provinciaal - </span>}
+                {nationaal && <span>Nationaal {provinciaal && <span> - </span>} </span>}{' '}
+                {/*added extra conditional statements to remove the - when there is only one region */}
+                {provinciaal && <span>Provinciaal {gemeentelijk && <span> - </span>} </span>}
                 {waterschappen && <span>Waterschappen - </span>}
                 {gemeentelijk && <span>Gemeentelijk</span>}
               </div>

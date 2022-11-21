@@ -50,8 +50,8 @@ export default function Kunststoffen() {
           </p>
 
           <h2 className='mobile sm:main pb-2'>
-            Ik wil aan de slag met een maatregel, maar weet niet goed hoe dat moet. Kan CircuLaw
-            helpen?
+            Ik wil aan de slag met een maatregel, maar weet niet goed hoe dat moet. <br />
+            Kan CircuLaw helpen?
           </h2>
 
           <p className='body-text-mobile sm:body-text pb-10'>

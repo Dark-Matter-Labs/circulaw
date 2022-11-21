@@ -26,7 +26,7 @@ export default function Windturbine() {
         heroImageAlt='hero image of Windturbine'
         isSpecialMeasures=''
         type=''
-        seeMeasuresTitle='10 Circulaire windturbine maatregelen'
+        seeMeasuresTitle='10 Circulairewindturbinemaatregelen'
         seeMeasuresImage={WindturbineSection1}
         seeMeasuresImageAlt='Windturbine section image'
         seeMeasuresText='Weten waar kansen liggen om de transitie naar circulaire windturbines te

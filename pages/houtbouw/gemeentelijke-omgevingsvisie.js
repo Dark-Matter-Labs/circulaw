@@ -149,7 +149,7 @@ export default function Law() {
                   en beleidsdoeleinden te behalen. Hierin staat op wat voor manier beleid doorwerkt
                   en welke instrumenten daarvoor worden ingezet. Een omgevingsvisie gaat in op de
                   kernkwaliteiten van ruimte, milieu en natuur, water, infrastructuur, verkeer en
-                  vervoer, landschap en cultureel erfgoed, én op de samenhang daartussen Een
+                  vervoer, landschap en cultureel erfgoed, én op de samenhang daartussen. Een
                   omgevingsvisie is vormvrij. Dat betekent dat de gemeenteraad het detailniveau, de
                   gebieden, sectoren en thema’s zelf bepaalt.
                 </p>
