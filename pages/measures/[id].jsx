@@ -36,11 +36,11 @@ const URLReplacer = (text) => {
     linkFormattedText = linkFormattedText.replace(
       url,
         // eslint-disable-next-line
-      '<a class="text-greenLink mobile-link wrap sm:link" href=\"' +
+      '<a class="text-greenLink mobile-link wrap inline-block sm:link" href=\"' +
         url +
-        '"  target="_BLANK">' +
+        '"  target="_BLANK">' + 
         url +
-        '</a>',
+        '<img className="mt-2 inline" alt = "new tab" src = "/icons/VectornewTab.png" width = {18} height ={18}/>' + '</a>',
     );
   });
   return linkFormattedText;
@@ -249,8 +249,8 @@ export default function Law() {
                 <div className='py-4'>
                   <h2 className='pb-2 mobile sm:main'>{data.kop_3_uit_de_praktijk}</h2>
                   <p className='body-text-mobile sm:body-text'>{data.uit_de_praktijk}</p>
-                  <a className='link-mobile sm:link text-greenLink' href={data.voorbeeld_link}>
-                    {data.voorbeeld_link_teks}
+                  <a className='link-mobile sm:link text-greenLink' href={data.voorbeeld_link} target="_blank" rel='noreferrer'>
+                    {data.voorbeeld_link_teks}<span className='pl-2'><Image className='mt-2' alt = 'new tab' src = '/icons/VectornewTab.png' width = {18} height ={18}/></span>
                   </a>
                 </div>
               )}
@@ -279,8 +279,8 @@ export default function Law() {
                   <tr className='my-10 border-b-2'>
                     <td className='w-1/2 font-manrope text-base font-normal'>Artikel</td>
                     <td className='w-1/2 font-manrope text-base font-bold'>
-                      <a className='text-greenLink' href={data.link_naar_wetsartikel}>
-                        {data.artikel}
+                      <a className='text-greenLink underline' target='_blank' href={data.link_naar_wetsartikel} rel='noreferrer'>
+                        {data.artikel}<span className='pl-2'><Image alt = 'new tab' src = '/icons/VectornewTab.png' width = {13} height ={13}/></span>
                       </a>
                     </td>
                   </tr>

@@ -178,7 +178,7 @@ export default function Law() {
                   Check hoe je de omgevingsvisie in jouw organisatie kunt gebruiken om houtbouw te
                   bevorderen.
                 </p>
-                <a href='/Leidraad-Omgevingsvisie-CircuLaw.pdf'>
+                <a href='/Leidraad-Omgevingsvisie-CircuLaw.pdf' target='_blank'>
                   <CustomButton color='toPdf'>Bekijk de leidraad (pdf)→</CustomButton>
                 </a>
               </div>

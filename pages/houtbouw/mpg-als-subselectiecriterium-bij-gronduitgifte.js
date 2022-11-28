@@ -245,7 +245,7 @@ export default function Law() {
                   Check hoe de MPG als subgunningscriterium in jouw organisatie kunt gebruiken om
                   houtbouw te bevorderen.
                 </p>
-                <a href='/Leidraad-Gronduitgifte-CircuLaw.pdf'>
+                <a href='/Leidraad-Gronduitgifte-CircuLaw.pdf' target='_blank'>
                   <CustomButton color='toPdf'>Bekijk de leidraad (pdf) →</CustomButton>
                 </a>
               </div>
