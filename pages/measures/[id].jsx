@@ -220,7 +220,7 @@ export default function Law() {
                 </h2>
                 <p className='newlineDisplay body-text-mobile sm:body-text'>
                   {checkURL(data.introductie_juridische_maatregel).length > 0 ? (
-                    <div
+                    <span
                       dangerouslySetInnerHTML={{
                         __html: URLReplacer(data.introductie_juridische_maatregel),
                       }}
