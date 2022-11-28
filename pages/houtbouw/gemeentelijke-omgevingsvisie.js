@@ -6,6 +6,7 @@ import RTooltip from '../../components/r-ladder-tooltip';
 import JHTooltip from '../../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../../components/juridische-invloed-tooltip';
 import CustomButton from '../../components/custom-button';
+import LinkIcon from '../../components/link-icon';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -195,7 +196,7 @@ export default function Law() {
                     rel='noopener noreferrer'
                   >
                     de omgevingsvisie van gemeente Amsterdam
-                    <span className='pl-2'><Image className='mt-2' alt = 'new tab' src = '/icons/VectornewTab.png' width = {18} height ={18}/></span>
+                    <LinkIcon />
                   </a>{' '}
                   het opschalen van bouwen met hout benoemd als beleidsambitie.{' '}
                 </p>
@@ -213,7 +214,7 @@ export default function Law() {
                         rel='noopener noreferrer'
                       >
                         Juridische informatie
-                    <span className='pl-2'><Image className='mt-2' alt = 'new tab' src = '/icons/VectornewTab.png' width = {18} height ={18}/></span>
+                        <LinkIcon />
                       </a>{' '}
                       over de gemeentelijke omgevingsvisie
                     </li>
@@ -226,7 +227,7 @@ export default function Law() {
                         rel='noopener noreferrer'
                       >
                         omgevingsvisie{' '}
-                    <span className='pl-2'><Image className='mt-2' alt = 'new tab' src = '/icons/VectornewTab.png' width = {18} height ={18}/></span>
+                        <LinkIcon />
                       </a>
                     </li>
                     <li>
@@ -238,7 +239,7 @@ export default function Law() {
                         rel='noopener noreferrer'
                       >
                         nationale omgevingsvisie
-                    <span className='pl-2'><Image className='mt-2' alt = 'new tab' src = '/icons/VectornewTab.png' width = {18} height ={18}/></span>
+                        <LinkIcon />
                       </a>{' '}
                       is houtbouw opgenomen
                     </li>
@@ -251,7 +252,7 @@ export default function Law() {
                         rel='noopener noreferrer'
                       >
                         praktijkproef van een afwegingskader
-                    <span className='pl-2'><Image className='mt-2' alt = 'new tab' src = '/icons/VectornewTab.png' width = {18} height ={18}/></span>
+                        <LinkIcon />
                       </a>{' '}
                       voor het opstellen van een omgevingsvisie
                     </li>

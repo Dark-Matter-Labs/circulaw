@@ -8,6 +8,7 @@ import IcontWood from '../../public/icons/houtbouwIconBg.svg';
 import RTooltip from '../../components/r-ladder-tooltip';
 import JHTooltip from '../../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../../components/juridische-invloed-tooltip';
+import LinkIcon from '../../components/link-icon';
 
 const formatDate = (date) => {
   let dateObject = new Date(date);
@@ -250,7 +251,7 @@ export default function Law() {
                   <h2 className='pb-2 mobile sm:main'>{data.kop_3_uit_de_praktijk}</h2>
                   <p className='body-text-mobile sm:body-text'>{data.uit_de_praktijk}</p>
                   <a className='link-mobile sm:link text-greenLink' href={data.voorbeeld_link} target="_blank" rel='noreferrer'>
-                    {data.voorbeeld_link_teks}<span className='pl-2'><Image className='mt-2' alt = 'new tab' src = '/icons/VectornewTab.png' width = {18} height ={18}/></span>
+                    {data.voorbeeld_link_teks}<LinkIcon />
                   </a>
                 </div>
               )}

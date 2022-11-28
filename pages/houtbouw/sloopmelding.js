@@ -6,6 +6,7 @@ import RTooltip from '../../components/r-ladder-tooltip';
 import JHTooltip from '../../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../../components/juridische-invloed-tooltip';
 import CustomButton from '../../components/custom-button';
+import LinkIcon from '../../components/link-icon';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -207,7 +208,7 @@ export default function Law() {
                         rel='noopener noreferrer'
                       >
                         Informatieplicht sloopactiviteit - Informatiepunt Leefomgeving (iplo.nl)
-                        <span className='pl-2'><Image className='mt-2' alt = 'new tab' src = '/icons/VectornewTab.png' width = {18} height ={18}/></span>
+                        <LinkIcon />
                       </a>
                     </li>
                     <li>
@@ -219,7 +220,7 @@ export default function Law() {
                         rel='noopener noreferrer'
                       >
                         Alles over circulair slopen | powered by VERAS
-                        <span className='pl-2'><Image className='mt-2' alt = 'new tab' src = '/icons/VectornewTab.png' width = {18} height ={18}/></span>
+                        <LinkIcon />
                       </a>
                     </li>
                     <li>
@@ -232,7 +233,7 @@ export default function Law() {
                         rel='noopener noreferrer'
                       >
                         Circular demolition - openresearch.amsterdam
-                        <span className='pl-2'><Image className='mt-2' alt = 'new tab' src = '/icons/VectornewTab.png' width = {18} height ={18}/></span>
+                        <LinkIcon />
                       </a>{' '}
                     </li>
                     <li>
@@ -245,7 +246,7 @@ export default function Law() {
                       >
                         Praktijkvoorbeeld - Succesvolle circulaire sloop schoolgebouw Hattem |
                         Circulaire Bouweconomie
-                        <span className='pl-2'><Image className='mt-2' alt = 'new tab' src = '/icons/VectornewTab.png' width = {18} height ={18}/></span>
+                        <LinkIcon />
                       </a>
                     </li>
                   </ul>
