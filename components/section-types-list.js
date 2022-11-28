@@ -136,7 +136,7 @@ export default function SectionTypes(props) {
                   {file.description}
                 </p>
                 {file.tag && (
-                  <div className='my-8 h-16 block'>
+                  <div className='md:my-8 mt-8 mb-16 h-16 block'>
                     <span className='p-2 rounded-md bg-grey3 font-openSans text-xs'>
                       {file.tag}
                     </span>
