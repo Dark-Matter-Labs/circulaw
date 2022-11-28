@@ -16,7 +16,7 @@ const formatDate = (date) => {
 
 const checkURL = (text) => {
   let match = text.match(
-      // eslint-disable-next-line
+    // eslint-disable-next-line
     /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi,
   );
 
@@ -28,15 +28,15 @@ const checkURL = (text) => {
 
 const URLReplacer = (text) => {
   let match = text.match(
-      // eslint-disable-next-line
+    // eslint-disable-next-line
     /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi,
   );
   let linkFormattedText = text;
   match.map((url) => {
     linkFormattedText = linkFormattedText.replace(
       url,
-        // eslint-disable-next-line
-      '<a class="text-greenLink mobile-link wrap sm:link" href=\"' +
+      // eslint-disable-next-line
+      '<a class="text-greenLink mobile-link wrap sm:link" href="' +
         url +
         '"  target="_BLANK">' +
         url +
