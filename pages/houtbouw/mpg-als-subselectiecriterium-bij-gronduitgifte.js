@@ -6,6 +6,7 @@ import RTooltip from '../../components/r-ladder-tooltip';
 import JHTooltip from '../../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../../components/juridische-invloed-tooltip';
 import CustomButton from '../../components/custom-button';
+import LinkIcon from '../../components/link-icon';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -188,7 +189,7 @@ export default function Law() {
                   nadere kwaliteitscriteria worden opgesteld, zoals sociale, milieu- of innovatieve
                   criteria. Zo kunnen op verschillende manieren circulaire criteria of
                   duurzaamheidscriteria worden verwerkt waar houtbouw beter op scoort. Voor
-                  voorbeelden van selectiecriteria toegepast op gronduitgifte, biedt
+                  voorbeelden van selectiecriteria toegepast op gronduitgifte, biedt &nbsp;
                   <a
                     href='https://www.urk.nl/_flysystem/media/selectieleidraad-openbare-biedprocedure-gronduitgifte-deelgebied-1a-zeeheldenwijk.pdf'
                     className='link-mobile sm:link text-greenLink'
@@ -196,6 +197,7 @@ export default function Law() {
                     rel='noopener noreferrer'
                   >
                     het beleid van de gemeente Urk
+                    <LinkIcon />
                   </a>{' '}
                   inspiratie: zie met name paragraaf 3 over ‘beste prijs-kwaliteitsverhouding’.
                 </p>
@@ -245,7 +247,7 @@ export default function Law() {
                   Check hoe de MPG als subgunningscriterium in jouw organisatie kunt gebruiken om
                   houtbouw te bevorderen.
                 </p>
-                <a href='/Leidraad-Gronduitgifte-CircuLaw.pdf'>
+                <a href='/Leidraad-Gronduitgifte-CircuLaw.pdf' target='_blank'>
                   <CustomButton color='toPdf'>Bekijk de leidraad (pdf) →</CustomButton>
                 </a>
               </div>
@@ -363,6 +365,7 @@ export default function Law() {
                         rel='noopener noreferrer'
                       >
                         Algemene informatie over de MPG van de RvO
+                        <LinkIcon />
                       </a>
                     </li>
                   </ul>
