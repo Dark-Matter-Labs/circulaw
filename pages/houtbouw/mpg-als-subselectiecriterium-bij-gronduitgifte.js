@@ -188,7 +188,7 @@ export default function Law() {
                   nadere kwaliteitscriteria worden opgesteld, zoals sociale, milieu- of innovatieve
                   criteria. Zo kunnen op verschillende manieren circulaire criteria of
                   duurzaamheidscriteria worden verwerkt waar houtbouw beter op scoort. Voor
-                  voorbeelden van selectiecriteria toegepast op gronduitgifte, biedt
+                  voorbeelden van selectiecriteria toegepast op gronduitgifte, biedt &nbsp;
                   <a
                     href='https://www.urk.nl/_flysystem/media/selectieleidraad-openbare-biedprocedure-gronduitgifte-deelgebied-1a-zeeheldenwijk.pdf'
                     className='link-mobile sm:link text-greenLink'
@@ -196,6 +196,7 @@ export default function Law() {
                     rel='noopener noreferrer'
                   >
                     het beleid van de gemeente Urk
+                    <span className='pl-2'><Image className='mt-2' alt = 'new tab' src = '/icons/VectornewTab.png' width = {18} height ={18}/></span>
                   </a>{' '}
                   inspiratie: zie met name paragraaf 3 over ‘beste prijs-kwaliteitsverhouding’.
                 </p>
@@ -363,6 +364,7 @@ export default function Law() {
                         rel='noopener noreferrer'
                       >
                         Algemene informatie over de MPG van de RvO
+                    <span className='pl-2'><Image className='mt-2' alt = 'new tab' src = '/icons/VectornewTab.png' width = {18} height ={18}/></span>
                       </a>
                     </li>
                   </ul>
