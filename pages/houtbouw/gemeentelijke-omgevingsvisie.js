@@ -226,8 +226,7 @@ export default function Law() {
                         target='_blank'
                         rel='noopener noreferrer'
                       >
-                        omgevingsvisie{' '}
-                        <LinkIcon />
+                        omgevingsvisie <LinkIcon />
                       </a>
                     </li>
                     <li>

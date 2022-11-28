@@ -17,7 +17,7 @@ const formatDate = (date) => {
 
 const checkURL = (text) => {
   let match = text.match(
-      // eslint-disable-next-line
+    // eslint-disable-next-line
     /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi,
   );
 
@@ -29,19 +29,20 @@ const checkURL = (text) => {
 
 const URLReplacer = (text) => {
   let match = text.match(
-      // eslint-disable-next-line
+    // eslint-disable-next-line
     /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi,
   );
   let linkFormattedText = text;
   match.map((url) => {
     linkFormattedText = linkFormattedText.replace(
       url,
-        // eslint-disable-next-line
-      '<a class="text-greenLink mobile-link wrap inline-block sm:link" href=\"' +
+      // eslint-disable-next-line
+      '<a class="text-greenLink mobile-link wrap inline-block sm:link" href="' +
         url +
-        '"  target="_BLANK">' + 
+        '"  target="_BLANK">' +
         url +
-        '<img className="mt-2 inline" alt = "new tab" src = "/icons/VectornewTab.png" width = {18} height ={18}/>' + '</a>',
+        '<img className="mt-2 inline" alt = "new tab" src = "/icons/VectornewTab.png" width = {18} height ={18}/>' +
+        '</a>',
     );
   });
   return linkFormattedText;
@@ -250,8 +251,14 @@ export default function Law() {
                 <div className='py-4'>
                   <h2 className='pb-2 mobile sm:main'>{data.kop_3_uit_de_praktijk}</h2>
                   <p className='body-text-mobile sm:body-text'>{data.uit_de_praktijk}</p>
-                  <a className='link-mobile sm:link text-greenLink' href={data.voorbeeld_link} target="_blank" rel='noreferrer'>
-                    {data.voorbeeld_link_teks}<LinkIcon />
+                  <a
+                    className='link-mobile sm:link text-greenLink'
+                    href={data.voorbeeld_link}
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    {data.voorbeeld_link_teks}
+                    <LinkIcon />
                   </a>
                 </div>
               )}
@@ -280,8 +287,21 @@ export default function Law() {
                   <tr className='my-10 border-b-2'>
                     <td className='w-1/2 font-manrope text-base font-normal'>Artikel</td>
                     <td className='w-1/2 font-manrope text-base font-bold'>
-                      <a className='text-greenLink underline' target='_blank' href={data.link_naar_wetsartikel} rel='noreferrer'>
-                        {data.artikel}<span className='pl-2'><Image alt = 'new tab' src = '/icons/VectornewTab.png' width = {13} height ={13}/></span>
+                      <a
+                        className='text-greenLink underline'
+                        target='_blank'
+                        href={data.link_naar_wetsartikel}
+                        rel='noreferrer'
+                      >
+                        {data.artikel}
+                        <span className='pl-2'>
+                          <Image
+                            alt='new tab'
+                            src='/icons/VectornewTab.png'
+                            width={13}
+                            height={13}
+                          />
+                        </span>
                       </a>
                     </td>
                   </tr>
