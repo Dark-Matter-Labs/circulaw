@@ -36,13 +36,13 @@ const URLReplacer = (text) => {
   match.map((url) => {
     linkFormattedText = linkFormattedText.replace(
       url,
-      // eslint-disable-next-line
-      '<a class="text-greenLink mobile-link wrap inline-block sm:link" href="' +
+      '<a class="text-greenLink link-mobile wrap inline-block sm:link" href="' +
         url +
         '"  target="_BLANK">' +
         url +
-        '<img className="mt-2 inline" alt = "new tab" src = "/icons/VectornewTab.png" width = {18} height ={18}/>' +
-        '</a>',
+        '<img class="pl-1 inline" alt = "new tab" src = "/icons/VectornewTab.png" width = {18} height ={18}/>' +
+        '</a>'
+        ,
     );
   });
   return linkFormattedText;
