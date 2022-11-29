@@ -40,7 +40,7 @@ const URLReplacer = (text) => {
         url +
         '"  target="_BLANK">' +
         url +
-        '<img class="pl-1 inline" alt = "new tab" src = "/icons/VectornewTab.png" width = {18} height ={18}/>' +
+        '<img class="pl-1 inline" alt = "new tab" src = "/icons/VectornewTab.png" width = {16} height ={16}/>' +
         '</a>'
         ,
     );
