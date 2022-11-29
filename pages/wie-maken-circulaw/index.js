@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Layout from '../../components/layouts/layout';
+import LinkIcon from '../../components/link-icon';
 import OverNav from '../../components/over-nav';
 
 export default function WieMaken() {
@@ -34,6 +35,7 @@ export default function WieMaken() {
                 rel='noopener noreferrer'
               >
                 Het stedelijk innovatieteam van Amsterdam
+                <LinkIcon />
               </a>{' '}
               heeft CircuLaw in 2020 geïnitieerd. Dit team werkt samen met partners in en buiten de
               stad aan innovaties die de transitie naar een circulaire, veilige en bereikbare stad
@@ -52,6 +54,7 @@ export default function WieMaken() {
                 className='text-greenLink link-mobile sm:link'
               >
                 Dark Matter Labs (DML)
+                <LinkIcon />
               </a>{' '}
               is een internationaal strategisch onderzoeks-, ontwerp- en ontwikkelingslab met als
               missie: “to discover, design and develop the institutional ‘dark matter’ that supports
@@ -71,6 +74,7 @@ export default function WieMaken() {
                 className='text-greenLink link-mobile sm:link'
               >
                 EIT Climate-KIC
+                <LinkIcon />
               </a>{' '}
               is een kennis- en innovatiecommunity (KIC) die werkt aan het versnellen van de
               overgang naar een koolstofarme, klimaatbestendige samenleving. Met de steun van het
@@ -95,6 +99,7 @@ export default function WieMaken() {
                 rel='noopener noreferrer'
               >
                 Provincie Noord-Holland
+                <LinkIcon />
               </a>{' '}
               draagt financieel bij aan de ontwikkeling van CircuLaw en levert kennis en advies op
               de ontwikkeling van de tool en service.
@@ -109,6 +114,7 @@ export default function WieMaken() {
                 className='text-greenLink link-mobile sm:link'
               >
                 Provincie Flevoland
+                <LinkIcon />
               </a>{' '}
               heeft circulaire economie benoemd als één van de zeven hoofdopgaven in de
               Omgevingsvisie Flevoland Straks. Zij wil in 2030 bekend staan als dé grondstoffen-
@@ -127,6 +133,7 @@ export default function WieMaken() {
                 rel='noopener noreferrer'
               >
                 RVO
+                <LinkIcon />
               </a>
               . RVO draagt vanuit de landelijke Transitieagenda Circulaire Bouweconomie financieel
               bij aan de ontwikkeling van CircuLaw. Ook levert RVO juridische kennis en advies in de
@@ -142,6 +149,7 @@ export default function WieMaken() {
                 rel='noopener noreferrer'
               >
                 De Metropoolregio Amsterdam
+                <LinkIcon />
               </a>{' '}
               is het samenwerkingsverband van de provincies Noord-Holland en Flevoland, 30 gemeenten
               en de Vervoerregio Amsterdam. De overheden in de MRA werken met elkaar samen in de
@@ -156,6 +164,7 @@ export default function WieMaken() {
                 rel='noopener noreferrer'
               >
                 Kernteam Houtbouw
+                <LinkIcon />
               </a>
               wordt bijgedragen aan de ontwikkeling van CircuLaw, en samen met partners wordt getest
               hoe houtbouwmaatregelen het best toegepast kunnen worden.
@@ -170,6 +179,7 @@ export default function WieMaken() {
                 rel='noopener noreferrer'
               >
                 De belastingdienst
+                <LinkIcon />
               </a>{' '}
               heeft jarenlange ervaring in het digitaliseren van wetgeving en hiervoor veel methodes
               en modellen ontwikkeld. Vanuit de organisatie werken verschillende experts mee aan de
@@ -188,6 +198,7 @@ export default function WieMaken() {
                 className='text-greenLink link-mobile sm:link'
               >
                 ‘Law and Innovation’ en ‘Erasmus Centre for Local Governments’
+                <LinkIcon />
               </a>{' '}
               dragen inhoudelijk bij aan de ontwikkeling van CircuLaw. Het gaat daarbij om kennis
               over wetgeving, technologie en digitalisering, en om inhoudelijke kennis op het gebied
@@ -205,6 +216,7 @@ export default function WieMaken() {
                 rel='noopener noreferrer'
               >
                 Management in the Built Environment (MBE) van TU Delft
+                <LinkIcon />
               </a>{' '}
               streeft naar een duurzame gebouwde omgeving waarin de belangen van de eindgebruiker en
               andere stakeholders uitgangspunt zijn. Vanuit MBE werken verschillende professoren en
@@ -225,6 +237,7 @@ export default function WieMaken() {
                 rel='noopener noreferrer'
               >
                 AMS Institute{' '}
+                <LinkIcon />
               </a>
               is een internationaal toonaangevend instituut waar talent wordt opgeleid en
               ingenieurs, ontwerpers en zowel natuur- als sociale wetenschappers gezamenlijk
@@ -245,6 +258,7 @@ export default function WieMaken() {
                 rel='noopener noreferrer'
               >
                 WUR Law Group
+                <LinkIcon />
               </a>{' '}
               richt zich op juridische oplossingen voor maatschappelijke problemen, waaronder ‘life
               sciences’. Het onderzoek van de groep is sterk interdisciplinair, met docenten en
@@ -263,6 +277,7 @@ export default function WieMaken() {
                 rel='noopener noreferrer'
               >
                 Vrije Universiteit
+                <LinkIcon />
               </a>{' '}
               zijn betrokken bij vele belangrijke digitale ontwikkelingen. Tegelijkertijd zijn er
               zorgen over de grenzen van digitalisering. Wat is de rol van de overheid en techreuzen
@@ -285,6 +300,7 @@ export default function WieMaken() {
                 rel='noopener noreferrer'
               >
                 NEN
+                <LinkIcon />
               </a>{' '}
               werkt in acht sectoren aan afspraken die het gebruik van grondstoffen terugdringen.
               Dat gaat niet alleen om het recyclen van grondstoffen, maar ook over een langere
@@ -299,6 +315,7 @@ export default function WieMaken() {
                 rel='noopener noreferrer'
               >
                 NEN Innovatielab
+                <LinkIcon />
               </a>{' '}
               verkend of en hoe in de toekomst op technisch gebied kan worden samengewerkt,
               bijvoorbeeld door koppeling met{' '}
@@ -309,6 +326,7 @@ export default function WieMaken() {
                 rel='noopener noreferrer'
               >
                 NEN-Connect
+                <LinkIcon />
               </a>
               .
             </p>
