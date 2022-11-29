@@ -6,6 +6,7 @@ import RTooltip from '../../components/r-ladder-tooltip';
 import JHTooltip from '../../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../../components/juridische-invloed-tooltip';
 import CustomButton from '../../components/custom-button';
+import LinkIcon from '../../components/link-icon';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -178,7 +179,7 @@ export default function Law() {
                   Check hoe je de omgevingsvisie in jouw organisatie kunt gebruiken om houtbouw te
                   bevorderen.
                 </p>
-                <a href='/Leidraad-Omgevingsvisie-CircuLaw.pdf'>
+                <a href='/Leidraad-Omgevingsvisie-CircuLaw.pdf' target='_blank'>
                   <CustomButton color='toPdf'>Bekijk de leidraad (pdf)→</CustomButton>
                 </a>
               </div>
@@ -195,6 +196,7 @@ export default function Law() {
                     rel='noopener noreferrer'
                   >
                     de omgevingsvisie van gemeente Amsterdam
+                    <LinkIcon />
                   </a>{' '}
                   het opschalen van bouwen met hout benoemd als beleidsambitie.{' '}
                 </p>
@@ -212,6 +214,7 @@ export default function Law() {
                         rel='noopener noreferrer'
                       >
                         Juridische informatie
+                        <LinkIcon />
                       </a>{' '}
                       over de gemeentelijke omgevingsvisie
                     </li>
@@ -223,7 +226,7 @@ export default function Law() {
                         target='_blank'
                         rel='noopener noreferrer'
                       >
-                        omgevingsvisie{' '}
+                        omgevingsvisie <LinkIcon />
                       </a>
                     </li>
                     <li>
@@ -235,6 +238,7 @@ export default function Law() {
                         rel='noopener noreferrer'
                       >
                         nationale omgevingsvisie
+                        <LinkIcon />
                       </a>{' '}
                       is houtbouw opgenomen
                     </li>
@@ -247,6 +251,7 @@ export default function Law() {
                         rel='noopener noreferrer'
                       >
                         praktijkproef van een afwegingskader
+                        <LinkIcon />
                       </a>{' '}
                       voor het opstellen van een omgevingsvisie
                     </li>

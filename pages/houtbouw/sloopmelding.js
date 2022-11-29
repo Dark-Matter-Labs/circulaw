@@ -6,6 +6,7 @@ import RTooltip from '../../components/r-ladder-tooltip';
 import JHTooltip from '../../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../../components/juridische-invloed-tooltip';
 import CustomButton from '../../components/custom-button';
+import LinkIcon from '../../components/link-icon';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -180,7 +181,7 @@ export default function Law() {
                   Waar moet je aan denken om in jouw organisatie sloopmeldingen te gebruiken voor
                   circulaire doeleinden?
                 </p>
-                <a href='/Leidraad-Sloopmelding-CircuLaw.pdf'>
+                <a href='/Leidraad-Sloopmelding-CircuLaw.pdf' target='_blank'>
                   <CustomButton color='toPdf'>Bekijk de leidraad (pdf)→</CustomButton>
                 </a>
               </div>
@@ -207,6 +208,7 @@ export default function Law() {
                         rel='noopener noreferrer'
                       >
                         Informatieplicht sloopactiviteit - Informatiepunt Leefomgeving (iplo.nl)
+                        <LinkIcon />
                       </a>
                     </li>
                     <li>
@@ -218,6 +220,7 @@ export default function Law() {
                         rel='noopener noreferrer'
                       >
                         Alles over circulair slopen | powered by VERAS
+                        <LinkIcon />
                       </a>
                     </li>
                     <li>
@@ -230,6 +233,7 @@ export default function Law() {
                         rel='noopener noreferrer'
                       >
                         Circular demolition - openresearch.amsterdam
+                        <LinkIcon />
                       </a>{' '}
                     </li>
                     <li>
@@ -242,6 +246,7 @@ export default function Law() {
                       >
                         Praktijkvoorbeeld - Succesvolle circulaire sloop schoolgebouw Hattem |
                         Circulaire Bouweconomie
+                        <LinkIcon />
                       </a>
                     </li>
                   </ul>
