@@ -165,7 +165,7 @@ export default function WieMaken() {
               >
                 Kernteam Houtbouw
                 <LinkIcon />
-              </a>
+              </a>{' '}
               wordt bijgedragen aan de ontwikkeling van CircuLaw, en samen met partners wordt getest
               hoe houtbouwmaatregelen het best toegepast kunnen worden.
             </p>
@@ -236,9 +236,9 @@ export default function WieMaken() {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                AMS Institute{' '}
+                AMS Institute
                 <LinkIcon />
-              </a>
+              </a>{' '}
               is een internationaal toonaangevend instituut waar talent wordt opgeleid en
               ingenieurs, ontwerpers en zowel natuur- als sociale wetenschappers gezamenlijk
               geïntegreerde grootstedelijke oplossingen ontwikkelen en valoriseren. AMS Institute
