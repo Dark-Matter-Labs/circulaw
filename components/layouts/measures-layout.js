@@ -16,6 +16,7 @@ import {
 import SearchFilter from '/components/search-filter';
 import PolicyList from '/components/policy-list';
 import { get_fetcher } from '../../utils/filter-functions';
+import Fuse from 'fuse.js';
 
 const fetcher = get_fetcher();
 
@@ -24,7 +25,6 @@ const useSelectedState = createPersistedState('selected');
 
 export default function MeasuresLayout(props) {
   const { data } = useSWR(() => '/api/laws/', fetcher);
-
   // creating references to access child component functions
   const wettelijkFilterRef = useRef();
   const rechtsgebiedFilterRef = useRef();
@@ -210,22 +210,27 @@ export default function MeasuresLayout(props) {
           return selected.subrechtsgebied.includes(element.subrechtsgebied);
         });
       }
+      
+      const fuse = new Fuse(filteredLaws, {
+        keys: [
+          'titel',
+          'introductie_juridische_maatregel',
+          'eisen_en_beperkingen',
+          'kop_1_samenvatting_juridische_maatregel',
+          'kop_2_toepassing_juridische_maatregel',
+          'toepassing_juridische_maatregel',
+          'kop_3_uit_de_praktijk',
+          'uit_de_praktijk',
+          'subrechtsgebied',
+          'artikel',
+          'citeertitel'          
+        ], 
+        includeScore: true,
+      })
 
-      filteredLaws = filteredLaws.filter((element) => {
-        const searchContent =
-          element.titel +
-          element.introductie_juridische_maatregel +
-          element.eisen_en_beperkingen +
-          element.kop_1_samenvatting_juridische_maatregel +
-          element.kop_2_toepassing_juridische_maatregel +
-          element.toepassing_juridische_maatregel +
-          element.kop_3_uit_de_praktijk +
-          element.uit_de_praktijk +
-          element.subrechtsgebied +
-          element.artikel +
-          element.citeertitel;
-        return searchContent.toLowerCase().includes(searchValue.toLowerCase());
-      });
+      const results = fuse.search(searchValue)
+      const lawResults = searchValue ? results.map(result => result.item) : filteredLaws
+      filteredLaws = lawResults
 
       // dynamically calculate filter numbers
       filteredLaws.map((measure) => {
