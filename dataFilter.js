@@ -3,25 +3,25 @@ export const wettelijk_bevoegdheidsniveau = [
     id: '0',
     name: 'Europees',
     label: 'Europees',
-    value: 'europees',
+    value: 'Europees',
   },
   {
     id: '1',
     name: 'Nationaal',
     label: 'Nationaal',
-    value: 'nationaal',
+    value: 'Nationaal',
   },
   {
     id: '2',
     name: 'Provinciaal',
     label: 'Provinciaal',
-    value: 'provinciaal',
+    value: 'Provinciaal',
   },
   {
     id: '3',
     name: 'Gemeentelijk',
     label: 'Gemeentelijk',
-    value: 'gemeentelijk',
+    value: 'Gemeentelijk',
   },
 ];
 

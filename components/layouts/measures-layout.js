@@ -40,6 +40,7 @@ export default function MeasuresLayout(props) {
     r_ladder: [],
     juridische_houdbaarheid: [],
   });
+  const allSelectedValues = selected.wettelijk_bevoegdheidsniveau.concat(selected.rechtsgebied, selected.subrechtsgebied, selected.r_ladder, selected.juridische_houdbaarheid )
 
   const [numberOfLaws, setNumberOfLaws] = useState(props.totalNumberOfLaws);
 
@@ -550,11 +551,11 @@ export default function MeasuresLayout(props) {
               </div>
             )}
 
-            {numberOfLaws > 1 && (
+            {numberOfLaws > 0 && (
               <div>
                 <span className='font-manrope text-lg sm:text-xl'>
                   <b>{numberOfLaws}</b> maatregelen gevonden voor <b>{searchValue}</b> in{' '}
-                  <b className='inline-block lowercase first-letter:uppercase'>{props.casus}</b>{' '}
+                  <b className='inline-block lowercase first-letter:uppercase'>{props.casus}</b>{' '}with the following filters:
                 </span>
               </div>
             )}
@@ -563,32 +564,20 @@ export default function MeasuresLayout(props) {
               <div>
                 <span className='font-manrope text-lg sm:text-xl'>
                   <b>{numberOfLaws}</b> maatregel gevonden voor <b>{searchValue}</b> in{' '}
-                  <b className='inline-block lowercase first-letter:uppercase'>{props.casus}</b>{' '}
+                  <b className='inline-block lowercase first-letter:uppercase'>{props.casus}</b> with the following filters:{' '}
                 </span>
               </div>
             )}
+            
             {/* display selected values */}
+            <div className=''>
             <div>
-            {selected.r_ladder.length != 0 &&
-            <div>
-            {selected.r_ladder.map((r_value, index) => (
-            <div key ={index}>
-            <button>
-            <span className='bg-green2 text-white rounded-full p-1 mr-2'>{r_value}</span>
-            </button>
-            </div>
-          ))}
-            </div>
-          }
-            </div>
-            <div>
-            {selected.wettelijk_bevoegdheidsniveau.length != 0 &&
-            <div>
-            {selected.wettelijk_bevoegdheidsniveau.map((r_value, index) => (
-            <div key ={index}>
-            <button>
-            <span className='bg-green2 text-white rounded-full p-1 mr-2'>{r_value}</span>
-            </button>
+            {allSelectedValues != 0 &&
+            <div className='flex flex-wrap grid-rows-2 sm:grid-rows-1'>
+            {allSelectedValues.map((value, index) => (
+            <div key ={index} className='inline'>
+            <span className='font-manrope text-lg sm:text-xl'>{value}{value !== allSelectedValues.slice(-1)[0] && <span>,</span>}&nbsp;</span>
+            {console.log(allSelectedValues.slice(-1)[0])}
             </div>
           ))}
             </div>
@@ -596,7 +585,7 @@ export default function MeasuresLayout(props) {
             </div>
           </div>
         </div>
-
+        </div>
         <div className='lg:hidden py-5 w-28'>
           <button
             type='button'
