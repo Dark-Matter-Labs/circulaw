@@ -210,7 +210,7 @@ export default function MeasuresLayout(props) {
           return selected.subrechtsgebied.includes(element.subrechtsgebied);
         });
       }
-      
+
       const fuse = new Fuse(filteredLaws, {
         keys: [
           'titel',
@@ -223,14 +223,14 @@ export default function MeasuresLayout(props) {
           'uit_de_praktijk',
           'subrechtsgebied',
           'artikel',
-          'citeertitel'          
-        ], 
+          'citeertitel',
+        ],
         includeScore: true,
-      })
+      });
 
-      const results = fuse.search(searchValue)
-      const lawResults = searchValue ? results.map(result => result.item) : filteredLaws
-      filteredLaws = lawResults
+      const results = fuse.search(searchValue);
+      const lawResults = searchValue ? results.map((result) => result.item) : filteredLaws;
+      filteredLaws = lawResults;
 
       // dynamically calculate filter numbers
       filteredLaws.map((measure) => {
