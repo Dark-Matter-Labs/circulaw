@@ -38,31 +38,28 @@ const FilterButton = forwardRef(({ list, handleFilters }, ref) => {
       }
     },
   }));
-  
+
   return (
-      <>
+    <>
       <div>
         {list.map((data, dataIdx) => (
           <div key={dataIdx} className='relative flex justify-between'>
-              <>
-                <div className='my-1'>
-                  <button
+            <>
+              <div className='my-1'>
+                <button
                   id={`data-${data.value}-${data.id}`}
                   onClick={() => onChangeHandler(data.id)}
-                  className='accent-pink-300 focus:accent-pink-500'>
-                    {data.name}
-                    </button>
-                </div>
-              </>
-           
+                  className='accent-pink-300 focus:accent-pink-500'
+                >
+                  {data.name}
+                </button>
+              </div>
+            </>
           </div>
         ))}
       </div>
-
-      </>
- 
-   
-   );
+    </>
+  );
 });
 FilterButton.displayName = 'FilterButton';
 
