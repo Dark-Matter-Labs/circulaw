@@ -216,7 +216,6 @@ export default function MeasuresLayout(props) {
           return selected.subrechtsgebied.includes(element.subrechtsgebied);
         });
       }
-
       filteredLaws = filteredLaws.filter((element) => {
         const searchContent =
           element.titel +
@@ -587,7 +586,6 @@ export default function MeasuresLayout(props) {
                           {value}
                           {value !== allSelectedValues.slice(-1)[0] && <span>,</span>}&nbsp;
                         </span>
-                        {console.log(allSelectedValues.slice(-1)[0])}
                       </div>
                     ))}
                   </div>
