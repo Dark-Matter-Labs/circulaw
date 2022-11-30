@@ -567,6 +567,33 @@ export default function MeasuresLayout(props) {
                 </span>
               </div>
             )}
+            {/* display selected values */}
+            <div>
+            {selected.r_ladder.length != 0 &&
+            <div>
+            {selected.r_ladder.map((r_value, index) => (
+            <div key ={index}>
+            <button>
+            <span className='bg-green2 text-white rounded-full p-1 mr-2'>{r_value}</span>
+            </button>
+            </div>
+          ))}
+            </div>
+          }
+            </div>
+            <div>
+            {selected.wettelijk_bevoegdheidsniveau.length != 0 &&
+            <div>
+            {selected.wettelijk_bevoegdheidsniveau.map((r_value, index) => (
+            <div key ={index}>
+            <button>
+            <span className='bg-green2 text-white rounded-full p-1 mr-2'>{r_value}</span>
+            </button>
+            </div>
+          ))}
+            </div>
+          }
+            </div>
           </div>
         </div>
 
