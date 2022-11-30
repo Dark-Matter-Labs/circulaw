@@ -40,8 +40,9 @@ const URLReplacer = (text) => {
         url +
         '"  target="_BLANK">' +
         url +
-        '<img class="pl-1 inline" alt = "new tab" src = "/icons/VectornewTab.png" width = {16} height ={16}/>' +
-        '</a>',
+        '<img class="pl-1 inline" alt = "new tab" src = "/icons/Vectorlink-icon.svg" width = {16} height ={16}/>' +
+        '</a>'
+        ,
     );
   });
   return linkFormattedText;
@@ -296,7 +297,7 @@ export default function Law() {
                         <span className='pl-2'>
                           <Image
                             alt='new tab'
-                            src='/icons/VectornewTab.png'
+                            src='/icons/Vectorlink-icon.svg'
                             width={13}
                             height={13}
                           />
