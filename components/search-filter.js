@@ -40,6 +40,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
       }
     },
   }));
+
   return (
     <fieldset className='py-4 border-b border-black'>
       <div className='block'>
