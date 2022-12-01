@@ -3,7 +3,17 @@ import { handleToggle } from '../utils';
 import RTooltip from '../components/r-ladder-tooltip';
 import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 
-const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, ref) => {
+const filterLabelStyles = {
+  rValueStyle: 'bg-green2 text-white rounded-full p-1 mr-2 block-inline r-category ',
+}
+const JHlabelStyles ={
+  JHlabelStyle: 'my-1 mx-1 h-4 w-4 flex-shrink-0 rounded-full'
+}
+
+
+const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters, labelStyle, xxxlabelStyle}, ref) => {
+  let labelStyles = filterLabelStyles[labelStyle]
+  let xxxJHlabelStyles = JHlabelStyles[xxxlabelStyle]
   const [checkedArray, setCheckedArray] = useState([]);
 
   // state to check if set value is for mouse click or state persist
@@ -75,7 +85,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
           <div key={dataIdx} className='relative flex justify-between'>
             {filterNumbers[dataIdx] > 0 ? (
               <>
-                <div className='my-1'>
+                <div className='my-1 block-inline flex items-center'>
                   <input
                     type='checkbox'
                     id={`data-${data.value}-${data.id}`}
@@ -85,9 +95,21 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                   />
                   <label
                     htmlFor={`data-${data.value}-${data.id}`}
-                    className='select-none font-manrope text-sm pl-2'
+                    className= 'select-none font-manrope text-sm pl-2'
                   >
-                    {data.name}
+                    {/* RVALUE */}
+                    {labelStyle && <><span className={`${labelStyles}`}>{data.value}{' '}</span><span>{data.name}</span></>}
+                   
+                    {/* Juridische houdbaarheid */}
+                    {xxxJHlabelStyles && <span className='block-inline flex items-center'>
+                    {xxxlabelStyle && [0,1,2,3,4].map((rating) => (
+                    <span key={rating} className={`${data.value > rating ? 'score-true' : 'score-false'} ${xxxJHlabelStyles} `}
+                    aria-hidden = 'true'> 
+                      </span>))}
+                      </span>}
+                    {/* std design */}
+                    {!labelStyle && !xxxlabelStyle && <span>{data.name}</span>}
+                    
                   </label>
                 </div>
                 <div className='font-bold font-manrope text-sm text-black'>
@@ -96,7 +118,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
               </>
             ) : (
               <>
-                <div className='my-1'>
+                <div className='my-1 block-inline flex items-center'>
                   <input
                     disabled
                     type='checkbox'
@@ -108,7 +130,19 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                     htmlFor={`data-${data.value}-${data.id}`}
                     className='select-none font-normal text-gray-500 text-sm pl-2'
                   >
-                    {data.name}
+                    {labelStyle && <><span className={`${labelStyles}`}>{data.value}{' '}</span><span className='font-normal text-gray-500 text-sm'>{data.name}</span></>}
+                    
+                    {/* Juridische houdbaarheid */}
+                    {xxxJHlabelStyles && <span className='block-inline flex items-center'>
+                    {xxxlabelStyle && [0,1,2,3,4].map((rating) => (
+                    <span key={rating} className={`${data.value > rating ? 'score-true' : 'score-false'} ${xxxJHlabelStyles} `}
+                    aria-hidden = 'true'> 
+                      </span>))}
+                      </span>}
+                    
+                    
+                    {!labelStyle && !xxxlabelStyle && <span>{data.name}</span>}
+                    
                   </label>
                 </div>
                 <div className='font-normal text-sm text-gray-400'>({filterNumbers[dataIdx]})</div>

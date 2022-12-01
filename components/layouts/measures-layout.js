@@ -470,6 +470,7 @@ export default function MeasuresLayout(props) {
                         handleFilters={(checkboxState) =>
                           handleFilters(checkboxState, 'juridische_houdbaarheid')
                         }
+                        
                       />
                       <SearchFilter
                         ref={subrechtsgebiedFilterRef}
@@ -651,6 +652,7 @@ export default function MeasuresLayout(props) {
             list={r_ladder}
             filterNumbers={[numberOfR1, numberOfR2, numberOfR3, numberOfR4, numberOfR5, numberOfR6]}
             handleFilters={(checkboxState) => handleFilters(checkboxState, 'r_ladder')}
+            labelStyle = 'rValueStyle'
           />
           <SearchFilter
             ref={juridischeFilterRef}
@@ -660,6 +662,7 @@ export default function MeasuresLayout(props) {
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, 'juridische_houdbaarheid')
             }
+            xxxlabelStyle= 'JHlabelStyle'
           />
           <SearchFilter
             ref={subrechtsgebiedFilterRef}
