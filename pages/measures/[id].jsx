@@ -17,8 +17,7 @@ const formatDate = (date) => {
 
 const checkURL = (text) => {
   let match = text.match(
-    // eslint-disable-next-line
-    /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi,
+    /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/gi,
   );
 
   if (match === null) {
@@ -29,8 +28,7 @@ const checkURL = (text) => {
 
 const URLReplacer = (text) => {
   let match = text.match(
-    // eslint-disable-next-line
-    /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi,
+    /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/gi,
   );
   let linkFormattedText = text;
   match.map((url) => {
@@ -83,6 +81,7 @@ export default function Law() {
               <a className='text-greenLink breadcrumb'>← Terug</a>
             </Link>
           )}
+          {/* TODO: refactor this and have same component at top and bottom */}
           <div className='block lg:hidden'>
             <h1 className='my-9 text-green1 mobile sm:main'>{data.titel}</h1>
             <div className='container pb-2'>

@@ -336,7 +336,7 @@ export default function MeasuresLayout(props) {
       setNumberOfCont(numCont);
       setNumberOfGron(numGron);
     }
-  }, [data, selected, searchValue]);
+  }, [data, selected, searchValue, props.casus]);
 
   // effect to check for data from persisted state from localStorage and update values when needed
   useEffect(() => {
