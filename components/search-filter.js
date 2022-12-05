@@ -3,17 +3,38 @@ import { handleToggle } from '../utils';
 import RTooltip from '../components/r-ladder-tooltip';
 import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 
-const filterLabelStyles = {
-  rValueStyle: 'bg-green2 text-white rounded-full p-1 mr-2 block-inline r-category ',
+{
+  /* we need 4 variables for each custom styled attribute:
+  attributeLabelStyles
+  attributeCSSClasses
+  attributeStyleProp
+  attributeStyleVar
+
+  replace attribute with attribute name
+*/
+}
+const r_ladderLabelStyles = {
+  r_ladderCSSClasses: 'bg-green2 text-white rounded-full p-1 mr-2 block-inline r-category ',
 };
-const JHlabelStyles = {
-  JHlabelStyle: 'my-1 mx-1 h-4 w-4 flex-shrink-0 rounded-full',
+const juridischeHoudbaarheidLabelStyles = {
+  juridischeHoudbaarheidCSSClasses: 'my-1 mx-1 h-4 w-4 flex-shrink-0 rounded-full',
 };
 
 const SearchFilter = forwardRef(
-  ({ list, title, filterNumbers, handleFilters, labelStyle, xxxlabelStyle }, ref) => {
-    let labelStyles = filterLabelStyles[labelStyle];
-    let xxxJHlabelStyles = JHlabelStyles[xxxlabelStyle];
+  (
+    {
+      list,
+      title,
+      filterNumbers,
+      handleFilters,
+      r_ladderStyleProp,
+      juridischeHoudbaarheidStyleProp,
+    },
+    ref,
+  ) => {
+    let r_ladderStyleVar = r_ladderLabelStyles[r_ladderStyleProp];
+    let juridischeHoudbaarheidStyleVar =
+      juridischeHoudbaarheidLabelStyles[juridischeHoudbaarheidStyleProp];
     const [checkedArray, setCheckedArray] = useState([]);
 
     // state to check if set value is for mouse click or state persist
@@ -98,30 +119,32 @@ const SearchFilter = forwardRef(
                       className='select-none font-manrope text-sm pl-2'
                     >
                       {/* RVALUE */}
-                      {labelStyle && (
+                      {r_ladderStyleProp && (
                         <>
-                          <span className={`${labelStyles}`}>{data.value} </span>
+                          <span className={`${r_ladderStyleVar}`}>{data.value} </span>
                           <span>{data.name}</span>
                         </>
                       )}
 
                       {/* Juridische houdbaarheid */}
-                      {xxxJHlabelStyles && (
+                      {juridischeHoudbaarheidStyleVar && (
                         <span className='block-inline flex items-center'>
-                          {xxxlabelStyle &&
+                          {juridischeHoudbaarheidStyleProp &&
                             [0, 1, 2, 3, 4].map((rating) => (
                               <span
                                 key={rating}
                                 className={`${
                                   data.value > rating ? 'score-true' : 'score-false'
-                                } ${xxxJHlabelStyles} `}
+                                } ${juridischeHoudbaarheidStyleVar} `}
                                 aria-hidden='true'
                               ></span>
                             ))}
                         </span>
                       )}
                       {/* std design */}
-                      {!labelStyle && !xxxlabelStyle && <span>{data.name}</span>}
+                      {!r_ladderStyleProp && !juridischeHoudbaarheidStyleProp && (
+                        <span>{data.name}</span>
+                      )}
                     </label>
                   </div>
                   <div className='font-bold font-manrope text-sm text-black'>
@@ -142,30 +165,32 @@ const SearchFilter = forwardRef(
                       htmlFor={`data-${data.value}-${data.id}`}
                       className='select-none font-normal text-gray-500 text-sm pl-2'
                     >
-                      {labelStyle && (
+                      {r_ladderStyleProp && (
                         <>
-                          <span className={`${labelStyles}`}>{data.value} </span>
+                          <span className={`${r_ladderStyleVar}`}>{data.value} </span>
                           <span className='font-normal text-gray-500 text-sm'>{data.name}</span>
                         </>
                       )}
 
                       {/* Juridische houdbaarheid */}
-                      {xxxJHlabelStyles && (
+                      {juridischeHoudbaarheidStyleVar && (
                         <span className='block-inline flex items-center'>
-                          {xxxlabelStyle &&
+                          {juridischeHoudbaarheidStyleProp &&
                             [0, 1, 2, 3, 4].map((rating) => (
                               <span
                                 key={rating}
                                 className={`${
                                   data.value > rating ? 'score-true' : 'score-false'
-                                } ${xxxJHlabelStyles} `}
+                                } ${juridischeHoudbaarheidStyleVar} `}
                                 aria-hidden='true'
                               ></span>
                             ))}
                         </span>
                       )}
 
-                      {!labelStyle && !xxxlabelStyle && <span>{data.name}</span>}
+                      {!r_ladderStyleProp && !juridischeHoudbaarheidStyleProp && (
+                        <span>{data.name}</span>
+                      )}
                     </label>
                   </div>
                   <div className='font-normal text-sm text-gray-400'>

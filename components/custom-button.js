@@ -6,7 +6,6 @@ const buttonColors = {
     'border-green1 bg-transparent hover:bg-green1 text-green1 hover:text-white1 transition ease-in-out hover:duration-150 focus:outline-none',
   toPdf: 'border-green2 text-white bg-green2',
 };
-
 export default function CustomButton({ color, children, ...props }) {
   let colorClasses = buttonColors[color];
 
