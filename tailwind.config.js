@@ -24,8 +24,7 @@ module.exports = {
         white1: '#F8FAF8',
       },
       fontFamily: {
-        publicSans: ["'Public Sans'", 'sans-serif'],
-        manrope: ["'Manrope'", 'sans-serif'],
+        manrope: ['Manrope', 'sans-serif'],
       },
       screens: {
         lg: '1145px',

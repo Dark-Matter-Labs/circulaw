@@ -39,8 +39,7 @@ const URLReplacer = (text) => {
         '"  target="_BLANK">' +
         url +
         '<img class="pl-1 inline" alt = "new tab" src = "/icons/Vectorlink-icon.svg" width = {16} height ={16}/>' +
-        '</a>'
-        ,
+        '</a>',
     );
   });
   return linkFormattedText;
