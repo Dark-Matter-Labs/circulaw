@@ -82,37 +82,37 @@ export const subrechtsgebied = [
 export const r_ladder = [
   {
     id: '0',
-    name: 'R1 Refuse/rethink',
+    name: 'Refuse/rethink',
     label: 'R1',
     value: 'R1',
   },
   {
     id: '1',
-    name: 'R2 Reduce',
+    name: 'Reduce',
     label: 'R2',
     value: 'R2',
   },
   {
     id: '2',
-    name: 'R3 Re-use',
+    name: 'Re-use',
     label: 'R3',
     value: 'R3',
   },
   {
     id: '3',
-    name: 'R4 Repair/remanufacture',
+    name: 'Repair/remanufacture',
     label: 'R4',
     value: 'R4',
   },
   {
     id: '4',
-    name: 'R5 Recycling',
+    name: 'Recycling',
     label: 'R5',
     value: 'R5',
   },
   {
     id: '5',
-    name: 'R6 Recover',
+    name: 'Recover',
     label: 'R6',
     value: 'R6',
   },
