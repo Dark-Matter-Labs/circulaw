@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef, Fragment } from 'react';
-import { Dialog, Transition } from '@headlessui/react';
+import { useState, useEffect, useRef, Fragment, useCallback } from 'react';
+import { Dialog, Transition, Combobox } from '@headlessui/react';
 import useSWR from 'swr';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -40,6 +40,7 @@ export default function MeasuresLayout(props) {
     r_ladder: [],
     juridische_houdbaarheid: [],
   });
+
   const dummyArray = []
   const allSelectedValues = dummyArray.concat(
     selected.wettelijk_bevoegdheidsniveau,
@@ -48,6 +49,16 @@ export default function MeasuresLayout(props) {
     selected.r_ladder,
     selected.juridische_houdbaarheid,
   );
+
+  // autocomplete variables and funciton
+  const [selectedResults, setSelectedResults] = useState(null);
+  const [firstLaw, setFirstLaw] = useState(null);
+
+  const firstLawFunction = useCallback(() => {
+    const firstLaw = selectedResults?.[0];
+    return firstLaw;
+  }, [selectedResults]);
+
   const [numberOfLaws, setNumberOfLaws] = useState(props.totalNumberOfLaws);
 
   // dynamic filter numbers
@@ -103,6 +114,7 @@ export default function MeasuresLayout(props) {
     rLadderFilterRef.current.reset();
     juridischeFilterRef.current.reset();
 
+    setFirstLaw(null);
     setSearchValue('');
   };
 
@@ -219,6 +231,7 @@ export default function MeasuresLayout(props) {
       }
 
       const fuse = new Fuse(filteredLaws, {
+        threshold: 0.4,
         keys: [
           'titel',
           'introductie_juridische_maatregel',
@@ -236,8 +249,13 @@ export default function MeasuresLayout(props) {
       });
 
       const results = fuse.search(searchValue);
+      console.log(results);
       const lawResults = searchValue ? results.map((result) => result.item) : filteredLaws;
       filteredLaws = lawResults;
+
+      // setting values for autocomplete
+      setSelectedResults(filteredLaws);
+      firstLawFunction();
 
       // dynamically calculate filter numbers
       filteredLaws.map((measure) => {
@@ -336,7 +354,7 @@ export default function MeasuresLayout(props) {
       setNumberOfAan(numAan);
       setNumberOfCont(numCont);
       setNumberOfGron(numGron);
-    }
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, selected, searchValue, props.casus]);
 
   // effect to check for data from persisted state from localStorage and update values when needed
@@ -535,24 +553,49 @@ export default function MeasuresLayout(props) {
             <div>
               <span className='font-manrope font-semibold text-base'>{props.searchTitle}</span>
             </div>
-            <div className='sm:w-6/12 py-4 mb-10 px-4 border border-grey1 rounded-xl'>
-              <div className='flex'>
-                <SearchIcon className='h-6 w-6' aria-hidden='true' />
-                <input
-                  onChange={(e) => setSearchValue(e.target.value)}
-                  value={searchValue}
-                  name='search'
-                  id='search'
-                  placeholder='Zoek op trefwoord'
-                  className='block w-full font-openSans text-grey1 italic'
-                />
-              </div>
-              {searchValue !== '' && (
-                <button onClick={reset} className='text-greenLink font-manrope'>
-                  Clear search
-                </button>
-              )}
+
+            {/* AUTOCOMPLETE */}
+            <div
+              className={`sm:w-9/12 my-5 focus-within:ring-2 focus-within:border-0 focus-within:ring-green1 border outline-none rounded-lg ${
+                searchValue !== '' && numberOfLaws !== 0 ? 'rounded-b-none' : ''
+              }`}
+            >
+              <Combobox value={firstLaw} onChange={setFirstLaw}>
+                <div className='flex items-center px-3'>
+                  <SearchIcon className='h-5 w-5 text-gray-500 inline-block' />
+                  <Combobox.Input
+                    onChange={(e) => setSearchValue(e.target.value)}
+                    autoComplete={'off'}
+                    className='w-full py-2 px-3 outline-none border-0 rounded-lg focus:ring-0 font-openSans text-grey1 italic'
+                    displayValue={(firstLaw) => firstLaw?.titel}
+                    placeholder='Zoek op trefwoord'
+                  />
+                </div>
+                {/* display suggestions */}
+                {searchValue !== '' && (
+                  <Combobox.Options>
+                    {selectedResults?.slice(0, 5).map((law) => (
+                      <Combobox.Option key={law.id} value={law} as={Fragment}>
+                        {/* need to redo style here */}
+                        {({ active }) => (
+                          <li
+                            className={`${
+                              active
+                                ? 'bg-green1 text-white border-0'
+                                : 'bg-white text-green1 border-0'
+                            }`}
+                          >
+                            {law.titel}
+                          </li>
+                        )}
+                      </Combobox.Option>
+                    ))}
+                  </Combobox.Options>
+                )}
+              </Combobox>
             </div>
+            {/* clear search and clear filters have the same effect. Should there maybe be a Reset? which resets all search parameters. Clear search button removed for now*/}
+
             {numberOfLaws === 0 && (
               <div>
                 <span className='font-manrope text-lg sm:text-xl'>

@@ -61,7 +61,7 @@ export default function Houtbouw() {
         seeMeasuresImage={HoutbouwSection1}
         seeMeasuresImageAlt='Houtbuow section image'
         seeMeasuresText='Weten waar kansen liggen om de houtbouwtransitie te versnellen? CircuLaw biedt
-      je nu een overzicht van 36 maatregelen die je daarvoor kunt inzetten.'
+        je nu een overzicht van 36 maatregelen die je daarvoor kunt inzetten.'
         seeMeasuresLink='/measures/houtbouw'
         seeMeasuresLinkText='Bekijk alle houtbouwmaatregelen →'
         samenhangTitle='Bekijk houtbouwmaatregelen in samenhang'
