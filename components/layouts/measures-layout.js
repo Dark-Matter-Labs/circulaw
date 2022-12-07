@@ -41,7 +41,9 @@ export default function MeasuresLayout(props) {
     juridische_houdbaarheid: [],
   });
 
-  const allSelectedValues = selected.wettelijk_bevoegdheidsniveau.concat(
+  const dummyArray = []
+  const allSelectedValues = dummyArray.concat(
+    selected.wettelijk_bevoegdheidsniveau,
     selected.rechtsgebied,
     selected.subrechtsgebied,
     selected.r_ladder,
@@ -155,22 +157,22 @@ export default function MeasuresLayout(props) {
       });
 
       if (selected.wettelijk_bevoegdheidsniveau.length > 0) {
-        if (selected.wettelijk_bevoegdheidsniveau.includes('europees')) {
+        if (selected.wettelijk_bevoegdheidsniveau.includes('Europees')) {
           filteredLaws = filteredLaws.filter((element) => {
             return element.europees;
           });
         }
-        if (selected.wettelijk_bevoegdheidsniveau.includes('nationaal')) {
+        if (selected.wettelijk_bevoegdheidsniveau.includes('Nationaal')) {
           filteredLaws = filteredLaws.filter((element) => {
             return element.nationaal;
           });
         }
-        if (selected.wettelijk_bevoegdheidsniveau.includes('provinciaal')) {
+        if (selected.wettelijk_bevoegdheidsniveau.includes('Provinciaal')) {
           filteredLaws = filteredLaws.filter((element) => {
             return element.provinciaal;
           });
         }
-        if (selected.wettelijk_bevoegdheidsniveau.includes('gemeentelijk')) {
+        if (selected.wettelijk_bevoegdheidsniveau.includes('Gemeentelijk')) {
           filteredLaws = filteredLaws.filter((element) => {
             return element.gemeentelijk;
           });
@@ -597,18 +599,19 @@ export default function MeasuresLayout(props) {
             {numberOfLaws === 0 && (
               <div>
                 <span className='font-manrope text-lg sm:text-xl'>
-                  <b>0</b> maatregelen gevonden voor <b>{searchValue}</b> in{' '}
-                  <b className='inline-block lowercase first-letter:uppercase'>{props.casus}</b>{' '}
+                  <b>0</b>{' '}resultaten in{' '}<b className='inline-block lowercase first-letter:uppercase'>{props.casus}</b>{' '}
+                  voor{' '}
+                  <b>{searchValue}</b>
                 </span>
               </div>
             )}
-
-            {numberOfLaws > 0 && (
+            {numberOfLaws > 1 && numberOfLaws < props.totalNumberOfLaws && (
               <div>
                 <span className='font-manrope text-lg sm:text-xl'>
-                  <b>{numberOfLaws}</b> maatregelen gevonden voor <b>{searchValue}</b> in{' '}
+                  <b>{numberOfLaws}</b>{' '}resultaten in{' '}
                   <b className='inline-block lowercase first-letter:uppercase'>{props.casus}</b>{' '}
-                  with the following filters:
+                  voor{' '}
+                  <b>{searchValue}</b>
                 </span>
               </div>
             )}
@@ -616,9 +619,20 @@ export default function MeasuresLayout(props) {
             {searchValue !== '' && numberOfLaws === 1 && (
               <div>
                 <span className='font-manrope text-lg sm:text-xl'>
-                  <b>{numberOfLaws}</b> maatregel gevonden voor <b>{searchValue}</b> in{' '}
+                  <b>{numberOfLaws}</b>{' '}resultaten in{' '}
                   <b className='inline-block lowercase first-letter:uppercase'>{props.casus}</b>{' '}
-                  with the following filters:{' '}
+                  voor{' '}
+                  <b>{searchValue}</b>
+                </span>
+              </div>
+            )}
+
+              {numberOfLaws === props.totalNumberOfLaws && (
+              <div>
+                <span className='font-manrope text-lg sm:text-xl'>
+                  <b>{numberOfLaws}</b>{' '}resultaten in{' '}
+                  <b className='inline-block lowercase first-letter:uppercase'>{props.casus}</b>{' '}
+                  <b>{searchValue}</b>
                 </span>
               </div>
             )}
@@ -630,7 +644,7 @@ export default function MeasuresLayout(props) {
                   <div className='flex flex-wrap grid-rows-2 sm:grid-rows-1'>
                     {allSelectedValues.map((value, index) => (
                       <div key={index} className='inline'>
-                        <span className='font-manrope text-lg sm:text-xl'>
+                        <span className='font-manrope text-lg sm:text-xl font-bold'>
                           {value}
                           {value !== allSelectedValues.slice(-1)[0] && <span>,</span>}&nbsp;
                         </span>
@@ -640,6 +654,7 @@ export default function MeasuresLayout(props) {
                 )}
               </div>
             </div>
+             
           </div>
         </div>
         <div className='lg:hidden py-5 w-28'>
@@ -693,6 +708,7 @@ export default function MeasuresLayout(props) {
             list={r_ladder}
             filterNumbers={[numberOfR1, numberOfR2, numberOfR3, numberOfR4, numberOfR5, numberOfR6]}
             handleFilters={(checkboxState) => handleFilters(checkboxState, 'r_ladder')}
+            r_ladderStyleProp='r_ladderCSSClasses'
           />
           <SearchFilter
             ref={juridischeFilterRef}
@@ -702,6 +718,7 @@ export default function MeasuresLayout(props) {
             handleFilters={(checkboxState) =>
               handleFilters(checkboxState, 'juridische_houdbaarheid')
             }
+            juridischeHoudbaarheidStyleProp='juridischeHoudbaarheidCSSClasses'
           />
           <SearchFilter
             ref={subrechtsgebiedFilterRef}
