@@ -3,22 +3,8 @@ import { handleToggle } from '../utils';
 import RTooltip from '../components/r-ladder-tooltip';
 import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 
-{
-  /* we need 4 variables for each custom styled attribute:
-  attributeLabelStyles
-  attributeCSSClasses
-  attributeStyleProp
-  attributeStyleVar
-
-  replace attribute with attribute name
-*/
-}
-const r_ladderLabelStyles = {
-  r_ladderCSSClasses: 'bg-green2 text-white rounded-full p-1 mr-2 block-inline r-category ',
-};
-const juridischeHoudbaarheidLabelStyles = {
-  juridischeHoudbaarheidCSSClasses: 'my-1 mx-1 h-4 w-4 flex-shrink-0 rounded-full',
-};
+const r_ladderLabelStyles =  'bg-green2 text-white rounded-full p-1 mr-2 block-inline r-category ';
+const juridischeHoudbaarheidLabelStyles =  'my-1 mx-1 h-4 w-4 flex-shrink-0 rounded-full';
 
 const SearchFilter = forwardRef(
   (
@@ -27,14 +13,9 @@ const SearchFilter = forwardRef(
       title,
       filterNumbers,
       handleFilters,
-      r_ladderStyleProp,
-      juridischeHoudbaarheidStyleProp,
     },
     ref,
   ) => {
-    let r_ladderStyleVar = r_ladderLabelStyles[r_ladderStyleProp];
-    let juridischeHoudbaarheidStyleVar =
-      juridischeHoudbaarheidLabelStyles[juridischeHoudbaarheidStyleProp];
     const [checkedArray, setCheckedArray] = useState([]);
 
     // state to check if set value is for mouse click or state persist
@@ -119,30 +100,30 @@ const SearchFilter = forwardRef(
                       className='select-none font-manrope text-sm pl-2'
                     >
                       {/* RVALUE */}
-                      {r_ladderStyleProp && (
+                      {title === 'R - ladder' && (
                         <>
-                          <span className={`${r_ladderStyleVar}`}>{data.value} </span>
+                          <span className={`${r_ladderLabelStyles}`}>{data.value} </span>
                           <span>{data.name}</span>
                         </>
                       )}
 
                       {/* Juridische houdbaarheid */}
-                      {juridischeHoudbaarheidStyleVar && (
+                      {title === 'Juridische houdbaarheid' && (
                         <span className='block-inline flex items-center'>
-                          {juridischeHoudbaarheidStyleProp &&
+                          {title === 'Juridische houdbaarheid'  &&
                             [0, 1, 2, 3, 4].map((rating) => (
                               <span
                                 key={rating}
                                 className={`${
                                   data.value > rating ? 'score-true' : 'score-false'
-                                } ${juridischeHoudbaarheidStyleVar} `}
+                                } ${juridischeHoudbaarheidLabelStyles} `}
                                 aria-hidden='true'
                               ></span>
                             ))}
                         </span>
                       )}
                       {/* std design */}
-                      {!r_ladderStyleProp && !juridischeHoudbaarheidStyleProp && (
+                      {title !== 'R - ladder' && title !== 'Juridische houdbaarheid' && (
                         <span>{data.name}</span>
                       )}
                     </label>
@@ -165,30 +146,30 @@ const SearchFilter = forwardRef(
                       htmlFor={`data-${data.value}-${data.id}`}
                       className='select-none font-normal text-gray-500 text-sm pl-2'
                     >
-                      {r_ladderStyleProp && (
+                      {title === 'R - ladder' && (
                         <>
-                          <span className={`${r_ladderStyleVar}`}>{data.value} </span>
+                          <span className={`${r_ladderLabelStyles}`}>{data.value} </span>
                           <span className='font-normal text-gray-500 text-sm'>{data.name}</span>
                         </>
                       )}
 
                       {/* Juridische houdbaarheid */}
-                      {juridischeHoudbaarheidStyleVar && (
+                      {title === 'Juridische houdbaarheid' && (
                         <span className='block-inline flex items-center'>
-                          {juridischeHoudbaarheidStyleProp &&
+                          {title === 'Juridische houdbaarheid' &&
                             [0, 1, 2, 3, 4].map((rating) => (
                               <span
                                 key={rating}
                                 className={`${
                                   data.value > rating ? 'score-true' : 'score-false'
-                                } ${juridischeHoudbaarheidStyleVar} `}
+                                } ${juridischeHoudbaarheidLabelStyles} `}
                                 aria-hidden='true'
                               ></span>
                             ))}
                         </span>
                       )}
 
-                      {!r_ladderStyleProp && !juridischeHoudbaarheidStyleProp && (
+                      {title !== 'R - ladder' && title !== 'Juridische houdbaarheid' && (
                         <span>{data.name}</span>
                       )}
                     </label>
