@@ -568,7 +568,7 @@ export default function MeasuresLayout(props) {
                 {searchValue !== '' && (
                   <Combobox.Options>
                     {selectedResults?.slice(0, 5).map((law) => (
-                      <Combobox.Option key={law.id} value={law} as={Fragment}>
+                      <Combobox.Option key={law.id} value={law} onClick={() => setSearchValue(law.titel)} as={Fragment}>
                         {/* need to redo style here */}
                         {({ active }) => (
                           <li
