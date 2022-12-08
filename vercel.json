@@ -3,5 +3,10 @@
     "rewrites": [{
         "source": "/studio/(.*)",
         "destination": "/studio/index.html"
-    }]
+    },
+    {
+        "source": "/static/(.*)",
+        "destination": "/studio/static"
+    }
+]
 }
