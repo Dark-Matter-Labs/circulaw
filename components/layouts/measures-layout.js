@@ -552,8 +552,7 @@ export default function MeasuresLayout(props) {
             </div>
 
             {/* AUTOCOMPLETE */}
-            <div
-              className='sm:w-9/12 my-5 focus-within:ring-2 focus-within:border-0 focus-within:ring-green1 border outline-none rounded-lg'>
+            <div className='sm:w-9/12 my-5 focus-within:ring-2 focus-within:border-0 focus-within:ring-green1 border outline-none rounded-lg'>
               <Combobox value={firstLaw} onChange={setFirstLaw}>
                 <div className='flex items-center px-3'>
                   <SearchIcon className='h-5 w-5 text-gray-500 inline-block' />
@@ -573,8 +572,16 @@ export default function MeasuresLayout(props) {
                         {/* need to redo style here */}
                         {({ active }) => (
                           <li
-                            className={
-                              `${selectedResults?.slice(0,5).slice(-1)[0].id === law.id && active === true ? 'rounded-b-lg' : ''} ${active ? 'bg-green1 text-white border-0' : 'bg-transparent text-green1 border-0'} `}
+                            className={`${
+                              selectedResults?.slice(0, 5).slice(-1)[0].id === law.id &&
+                              active === true
+                                ? 'rounded-b-lg'
+                                : ''
+                            } ${
+                              active
+                                ? 'bg-green1 text-white border-0'
+                                : 'bg-transparent text-green1 border-0'
+                            } `}
                           >
                             {law.titel}
                           </li>
