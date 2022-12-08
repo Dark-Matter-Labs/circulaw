@@ -231,7 +231,7 @@ export default function MeasuresLayout(props) {
       }
 
       const fuse = new Fuse(filteredLaws, {
-        threshold: 0.4,
+        threshold: 0.6,
         keys: [
           'titel',
           'introductie_juridische_maatregel',
@@ -550,6 +550,7 @@ export default function MeasuresLayout(props) {
         <div className='col-span-2'>
           <div className='pt-5'>
             <div>
+              <h1>threshold 0.6</h1>
               <span className='font-manrope font-semibold text-base'>{props.searchTitle}</span>
             </div>
 
