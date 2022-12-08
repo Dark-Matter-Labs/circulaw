@@ -550,6 +550,7 @@ export default function MeasuresLayout(props) {
         <div className='col-span-2'>
           <div className='pt-5'>
             <div>
+              <h1>threshold 0.4</h1>
               <span className='font-manrope font-semibold text-base'>{props.searchTitle}</span>
             </div>
 
