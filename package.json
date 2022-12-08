@@ -5,8 +5,9 @@
   "license": "GPL-3.0-or-later",
   "scripts": {
     "dev": "concurrently \"next dev\" \"cd studio && yarn dev\"",
-    "build": "echo 'Building Sanity to public/studio' && cd studio && yarn && npx @sanity/cli build ../public/studio -y && cd .. && next build",
-    "start": "vercel dev",
+    "prebuild": "echo 'Building Sanity to public/studio' && cd studio && yarn && npx @sanity/cli build ../public/studio -y && echo 'Done'",
+    "build": "next build",
+    "start": "next start",
     "clean": "prettier --write \"(pages|components)/**/*.+(js|jsx|json|css|md)\" --config ./.prettier.json",
     "lint": "next lint",
     "prepare": "husky install",
