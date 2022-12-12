@@ -75,10 +75,7 @@ export default function Law() {
             </Link>
           )}
 
-          {/* TODO: refactor this and have same component at top and bottom */}
-          {/* start here */}
           <MeasureOverview data = {data} viewport = 'desktop'/>
-          {/* finish here */}
 
           <div className='grid grid-cols-1 sm:grid-cols-3 '>
             <div className='w-full sm:max-w-3xl pb-20 col-span-2 '>
@@ -207,9 +204,7 @@ export default function Law() {
             </div>
               
 
-              {/* start here */}
             <MeasureOverview data={data} viewport ='mobile'/>
-                {/* finish here */}
 
 
           </div>
