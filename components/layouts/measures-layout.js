@@ -231,10 +231,15 @@ export default function MeasuresLayout(props) {
       }
 
       const fuse = new Fuse(filteredLaws, {
-        threshold: 0.4,
         keys: [
-          'titel',
-          'introductie_juridische_maatregel',
+          { 
+            name: 'title',
+            weight: 2
+          },
+          { 
+            name: 'introductie_juridische_maatregel',
+            weight: 1.5
+          },
           'eisen_en_beperkingen',
           'kop_1_samenvatting_juridische_maatregel',
           'kop_2_toepassing_juridische_maatregel',
@@ -246,6 +251,8 @@ export default function MeasuresLayout(props) {
           'citeertitel',
         ],
         includeScore: true,
+        threshold: 0.4,
+        ignoreLocation: true,
       });
 
       const results = fuse.search(searchValue);
