@@ -230,11 +230,18 @@ export default function MeasuresLayout(props) {
         });
       }
 
+
+
       const fuse = new Fuse(filteredLaws, {
-        threshold: 0.4,
         keys: [
-          'titel',
-          'introductie_juridische_maatregel',
+        { 
+          name: 'title',
+          weight: 2
+        },
+        { 
+          name: 'introductie_juridische_maatregel',
+          weight: 1.5
+        },
           'eisen_en_beperkingen',
           'kop_1_samenvatting_juridische_maatregel',
           'kop_2_toepassing_juridische_maatregel',
@@ -246,11 +253,17 @@ export default function MeasuresLayout(props) {
           'citeertitel',
         ],
         includeScore: true,
+        threshold: 0.2,
+        ignoreLocation: true
       });
 
       const results = fuse.search(searchValue);
       const lawResults = searchValue ? results.map((result) => result.item) : filteredLaws;
       filteredLaws = lawResults;
+
+      // display scores in consol for testing
+      const scores = results.map((result) => result.score)
+      console.log(scores)
 
       // setting values for autocomplete
       setSelectedResults(filteredLaws);
@@ -569,7 +582,7 @@ export default function MeasuresLayout(props) {
                 {/* display suggestions */}
                 {searchValue !== '' && (
                   <Combobox.Options>
-                    {selectedResults?.slice(0, 5).map((law) => (
+                    {selectedResults?.slice(0, 10).map((law) => (
                       <Combobox.Option
                         key={law.id}
                         value={law}
@@ -580,7 +593,7 @@ export default function MeasuresLayout(props) {
                         {({ active }) => (
                           <li
                             className={`${
-                              selectedResults?.slice(0, 5).slice(-1)[0].id === law.id &&
+                              selectedResults?.slice(0, 10).slice(-1)[0].id === law.id &&
                               active === true
                                 ? 'rounded-b-lg'
                                 : ''
