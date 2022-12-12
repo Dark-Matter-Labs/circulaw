@@ -6,7 +6,6 @@ import LinkIcon from '../../components/link-icon';
 import MeasureOverview from '../../components/measure-overview';
 import MeasureTable from '../../components/measure-table';
 
-
 const checkURL = (text) => {
   let match = text.match(
     /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/gi,
@@ -132,9 +131,8 @@ export default function Law() {
                 <h2 className='pb-2 mobile sm:main'>{data.kop_5_juridische_toelichting}</h2>
                 <p className='body-text-mobile sm:body-text'>{data.juridische_toelichting}</p>
               </div>
-                <MeasureTable data={data} />
+              <MeasureTable data={data} />
             </div>
-
             <MeasureOverview data={data} viewport='mobile' />
           </div>
         </div>
