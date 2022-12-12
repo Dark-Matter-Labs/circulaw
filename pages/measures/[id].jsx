@@ -51,8 +51,6 @@ const fetcher = async (url) => {
   return data;
 };
 
-
-
 export default function Law() {
   const { query } = useRouter();
 
@@ -60,7 +58,7 @@ export default function Law() {
 
   if (error) return <div>{error.message} </div>;
   if (!data) return <div>Loading...</div>;
-  console.log(data.casus)
+  console.log(data.casus);
   return (
     <Layout>
       <div className='gradient-bg'>
@@ -75,7 +73,7 @@ export default function Law() {
             </Link>
           )}
 
-          <MeasureOverview data = {data} viewport = 'desktop'/>
+          <MeasureOverview data={data} viewport='desktop' />
 
           <div className='grid grid-cols-1 sm:grid-cols-3 '>
             <div className='w-full sm:max-w-3xl pb-20 col-span-2 '>
@@ -138,8 +136,8 @@ export default function Law() {
                 <h2 className='pb-2 mobile sm:main'>{data.kop_5_juridische_toelichting}</h2>
                 <p className='body-text-mobile sm:body-text'>{data.juridische_toelichting}</p>
               </div>
-                
-                {/* refactor table to have different design on mobile */}
+
+              {/* refactor table to have different design on mobile */}
               <table className='table-fixed w-full mt-5'>
                 <tbody>
                   <tr className='my-10 border-b-2 border-t-2'>
@@ -202,11 +200,8 @@ export default function Law() {
                 </tbody>
               </table>
             </div>
-              
 
-            <MeasureOverview data={data} viewport ='mobile'/>
-
-
+            <MeasureOverview data={data} viewport='mobile' />
           </div>
         </div>
       </div>

@@ -41,7 +41,7 @@ export default function MeasuresLayout(props) {
     juridische_houdbaarheid: [],
   });
 
-  const dummyArray = []
+  const dummyArray = [];
   const allSelectedValues = dummyArray.concat(
     selected.wettelijk_bevoegdheidsniveau,
     selected.rechtsgebied,
@@ -570,7 +570,12 @@ export default function MeasuresLayout(props) {
                 {searchValue !== '' && (
                   <Combobox.Options>
                     {selectedResults?.slice(0, 5).map((law) => (
-                      <Combobox.Option key={law.id} value={law} onClick={() => setSearchValue(law.titel)} as={Fragment}>
+                      <Combobox.Option
+                        key={law.id}
+                        value={law}
+                        onClick={() => setSearchValue(law.titel)}
+                        as={Fragment}
+                      >
                         {/* need to redo style here */}
                         {({ active }) => (
                           <li
@@ -599,19 +604,18 @@ export default function MeasuresLayout(props) {
             {numberOfLaws === 0 && (
               <div>
                 <span className='font-manrope text-lg sm:text-xl'>
-                  <b>0</b>{' '}resultaten in{' '}<b className='inline-block lowercase first-letter:uppercase'>{props.casus}</b>{' '}
-                  voor{' '}
-                  <b>{searchValue}</b>
+                  <b>0</b> resultaten in{' '}
+                  <b className='inline-block lowercase first-letter:uppercase'>{props.casus}</b>{' '}
+                  voor <b>{searchValue}</b>
                 </span>
               </div>
             )}
             {numberOfLaws > 1 && numberOfLaws < props.totalNumberOfLaws && (
               <div>
                 <span className='font-manrope text-lg sm:text-xl'>
-                  <b>{numberOfLaws}</b>{' '}resultaten in{' '}
+                  <b>{numberOfLaws}</b> resultaten in{' '}
                   <b className='inline-block lowercase first-letter:uppercase'>{props.casus}</b>{' '}
-                  voor{' '}
-                  <b>{searchValue}</b>
+                  voor <b>{searchValue}</b>
                 </span>
               </div>
             )}
@@ -619,18 +623,17 @@ export default function MeasuresLayout(props) {
             {searchValue !== '' && numberOfLaws === 1 && (
               <div>
                 <span className='font-manrope text-lg sm:text-xl'>
-                  <b>{numberOfLaws}</b>{' '}resultaten in{' '}
+                  <b>{numberOfLaws}</b> resultaten in{' '}
                   <b className='inline-block lowercase first-letter:uppercase'>{props.casus}</b>{' '}
-                  voor{' '}
-                  <b>{searchValue}</b>
+                  voor <b>{searchValue}</b>
                 </span>
               </div>
             )}
 
-              {numberOfLaws === props.totalNumberOfLaws && (
+            {numberOfLaws === props.totalNumberOfLaws && (
               <div>
                 <span className='font-manrope text-lg sm:text-xl'>
-                  <b>{numberOfLaws}</b>{' '}resultaten in{' '}
+                  <b>{numberOfLaws}</b> resultaten in{' '}
                   <b className='inline-block lowercase first-letter:uppercase'>{props.casus}</b>{' '}
                   <b>{searchValue}</b>
                 </span>
@@ -654,7 +657,6 @@ export default function MeasuresLayout(props) {
                 )}
               </div>
             </div>
-             
           </div>
         </div>
         <div className='lg:hidden py-5 w-28'>
