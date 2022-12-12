@@ -109,18 +109,18 @@ export default function MeasureOverview({viewport, children, data, ...props}) {
                 </div>
 
                 <div className='mt-3 flex items-center'>
-                  <span className='pr-5 font-manrope font-normal text-base'>LAAG</span>
+                  <span className='pr-4 font-manrope font-normal text-base'>LAAG</span>
                   {[0, 1, 2, 3, 4].map((rating) => (
                     <div
                       key={rating}
                       className={classNames(
                         data.juridische_invloed > rating ? 'score-true' : 'score-false',
-                        'mr-5 h-6 w-6 flex-shrink-0 rounded-full',
+                        'mr-4 h-6 w-6 flex-shrink-0 rounded-full',
                       )}
                       aria-hidden='true'
                     />
                   ))}
-                  HOOG
+                  <span className='font-manrope font-normal text-base'>HOOG</span>
                 </div>
               </div>
 
@@ -141,19 +141,20 @@ export default function MeasureOverview({viewport, children, data, ...props}) {
                     </JHTooltip>
                   </div>
                 </div>
-                <div className='mt-3 flex items-center'>
-                  <span className='pr-5 font-manrope font-normal text-base'> LAAG</span>
+                <div className='mt-3 flex items-center w-10/12'>
+                  <span className='pr-4 font-manrope font-normal text-base'> LAAG</span>
                   {[0, 1, 2, 3, 4].map((rating) => (
-                    <div
+                    <span
                       key={rating}
                       className={classNames(
                         data.juridische_houdbaarheid > rating ? 'score-true' : 'score-false',
-                        'mr-5 h-6 w-6 flex-shrink-0 rounded-full',
+                        'mr-4 h-6 w-6 flex-shrink-0 rounded-full',
                       )}
                       aria-hidden='true'
                     />
                   ))}
-                  <span>HOOG</span>
+                  <span className='font-manrope font-normal text-base'>HOOG</span>
+                  
                 </div>
               </div>
             </div>
