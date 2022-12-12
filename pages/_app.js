@@ -11,7 +11,7 @@ export default function MyApp({ Component, pageProps }) {
 
   // Use Hotjar
   useEffect(() => {
-    hotjar.initialize(3174467, 6);
+    hotjar.initialize(process.env.NEXT_PUBLIC_HJID, process.env.NEXT_PUBLIC_HJSV)
   }, []);
 
   return (
