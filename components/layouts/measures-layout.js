@@ -710,7 +710,6 @@ export default function MeasuresLayout(props) {
             list={rLadder}
             filterNumbers={[numberOfR1, numberOfR2, numberOfR3, numberOfR4, numberOfR5, numberOfR6]}
             handleFilters={(checkboxState) => handleFilters(checkboxState, 'rLadder')}
-            r_ladderStyleProp='r_ladderCSSClasses'
           />
           <SearchFilter
             ref={juridischeFilterRef}
