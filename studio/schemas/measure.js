@@ -10,7 +10,6 @@ export default {
       {
         name: 'overview',
         title: 'Overview Content',
-        default: true
       },
       {
         name: 'table',
@@ -27,6 +26,13 @@ export default {
     ],
     // FIELDS
     fields: [
+      {
+        title: 'Is Extended',
+        name: 'isExtended',
+        type: 'boolean',
+        description: 'Select if this is the measure you want displayed as extended',
+        validation: Rule => Rule.required(),
+      },
       {
         title: 'Titel',
         name: 'titel',
@@ -132,7 +138,7 @@ export default {
         name: 'subrechtsgebied',
         type: 'string',
         description: 'Please select a subrechtsgebied',
-        validaiton: Rule => Rule.required(),
+        validaton: Rule => Rule.required(),
         options: {
           list: [
             {title: 'Erfpacht', value: 'erfpacht'},
@@ -153,9 +159,9 @@ export default {
         validation: Rule => Rule.required(),
         options: {
           list: [
-            {title: 'Low', value: 1},
-            {title: 'Medium', value: 2},
-            {title: 'High', value: 3},
+            {title: 'Low', value: '1'},
+            {title: 'Medium', value: '2'},
+            {title: 'High', value: '3'},
           ],
           layout: 'radio',
           direction: 'horizontal',
@@ -170,9 +176,9 @@ export default {
         validation: Rule => Rule.required(),
         options: {
           list: [
-            {title: 'Low', value: 1},
-            {title: 'Medium', value: 2},
-            {title: 'High', value: 3},
+            {title: 'Low', value: '1'},
+            {title: 'Medium', value: '2'},
+            {title: 'High', value: '3'},
           ],
           layout: 'radio',
           direction: 'horizontal'
@@ -252,7 +258,6 @@ export default {
         name: 'LawDate',
         type: 'datetime',
         description: 'The date the law was created - leave empty if TBD',
-        validation: Rule => Rule.required(),
         group: 'table',
         options: {
           dateFormat: 'DD-MM-YYY',
@@ -275,7 +280,8 @@ export default {
             type: 'image'
           }
         ],
-        group: 'copy'
+        group: 'copy',
+        validaton: Rule => Rule.required()
       },
       {
         title: 'Green Box',
