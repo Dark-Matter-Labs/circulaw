@@ -53,7 +53,7 @@ export default function ThemeLayout(props) {
           </div>
         )}
       </div>
-          <ThemeBottomSection props={props} />
+      <ThemeBottomSection props={props} />
     </div>
   );
 }
