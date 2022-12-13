@@ -118,7 +118,7 @@ export const rLadder = [
   },
 ];
 
-export const juridische_houdbaarheid = [
+export const juridischeHoudbaarheid = [
   {
     id: '0',
     name: '1',

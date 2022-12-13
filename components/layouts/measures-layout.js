@@ -9,7 +9,7 @@ import {
   wettelijkBevoegdheidsniveau,
   rechtsgebied,
   subrechtsgebied,
-  juridische_houdbaarheid,
+  juridischeHoudbaarheid,
   rLadder,
 } from '../../dataFilter';
 
@@ -38,7 +38,7 @@ export default function MeasuresLayout(props) {
     rechtsgebied: [],
     subrechtsgebied: [],
     rLadder: [],
-    juridische_houdbaarheid: [],
+    juridischeHoudbaarheid: [],
   });
 
   const dummyArray = [];
@@ -47,7 +47,7 @@ export default function MeasuresLayout(props) {
     selected.rechtsgebied,
     selected.subrechtsgebied,
     selected.rLadder,
-    selected.juridische_houdbaarheid,
+    selected.juridischeHoudbaarheid,
   );
 
   // autocomplete variables and funciton
@@ -105,7 +105,7 @@ export default function MeasuresLayout(props) {
       rechtsgebied: [],
       subrechtsgebied: [],
       rLadder: [],
-      juridische_houdbaarheid: [],
+      juridischeHoudbaarheid: [],
     });
 
     wettelijkFilterRef.current.reset();
@@ -218,9 +218,9 @@ export default function MeasuresLayout(props) {
         });
       }
 
-      if (selected.juridische_houdbaarheid.length > 0) {
+      if (selected.juridischeHoudbaarheid.length > 0) {
         filteredLaws = filteredLaws.filter((element) => {
-          return selected.juridische_houdbaarheid.includes(element.juridische_houdbaarheid);
+          return selected.juridischeHoudbaarheid.includes(element.juridischeHoudbaarheid);
         });
       }
 
@@ -298,15 +298,15 @@ export default function MeasuresLayout(props) {
           numR6 += 1;
         }
 
-        if (measure.juridische_houdbaarheid === 1) {
+        if (measure.juridischeHoudbaarheid === 1) {
           numJ1 += 1;
-        } else if (measure.juridische_houdbaarheid === 2) {
+        } else if (measure.juridischeHoudbaarheid === 2) {
           numJ2 += 1;
-        } else if (measure.juridische_houdbaarheid === 3) {
+        } else if (measure.juridischeHoudbaarheid === 3) {
           numJ3 += 1;
-        } else if (measure.juridische_houdbaarheid === 4) {
+        } else if (measure.juridischeHoudbaarheid === 4) {
           numJ4 += 1;
-        } else if (measure.juridische_houdbaarheid === 5) {
+        } else if (measure.juridischeHoudbaarheid === 5) {
           numJ5 += 1;
         }
 
@@ -384,10 +384,10 @@ export default function MeasuresLayout(props) {
     }
 
     if (
-      selected.juridische_houdbaarheid.length !== 0 &&
+      selected.juridischeHoudbaarheid.length !== 0 &&
       typeof juridischeFilterRef.current !== 'undefined'
     ) {
-      juridischeFilterRef.current.set(selected.juridische_houdbaarheid);
+      juridischeFilterRef.current.set(selected.juridischeHoudbaarheid);
     }
   });
   return (
@@ -483,10 +483,10 @@ export default function MeasuresLayout(props) {
                       <SearchFilter
                         ref={juridischeFilterRef}
                         title='Juridische houdbaarheid'
-                        list={juridische_houdbaarheid}
+                        list={juridischeHoudbaarheid}
                         filterNumbers={[numberOfJ1, numberOfJ2, numberOfJ3, numberOfJ4, numberOfJ5]}
                         handleFilters={(checkboxState) =>
-                          handleFilters(checkboxState, 'juridische_houdbaarheid')
+                          handleFilters(checkboxState, 'juridischeHoudbaarheid')
                         }
                       />
                       <SearchFilter
@@ -715,10 +715,10 @@ export default function MeasuresLayout(props) {
           <SearchFilter
             ref={juridischeFilterRef}
             title='Juridische houdbaarheid'
-            list={juridische_houdbaarheid}
+            list={juridischeHoudbaarheid}
             filterNumbers={[numberOfJ1, numberOfJ2, numberOfJ3, numberOfJ4, numberOfJ5]}
             handleFilters={(checkboxState) =>
-              handleFilters(checkboxState, 'juridische_houdbaarheid')
+              handleFilters(checkboxState, 'juridischeHoudbaarheid')
             }
             juridischeHoudbaarheidStyleProp='juridischeHoudbaarheidCSSClasses'
           />
