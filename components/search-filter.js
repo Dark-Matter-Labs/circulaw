@@ -3,7 +3,7 @@ import { handleToggle } from '../utils';
 import RTooltip from '../components/r-ladder-tooltip';
 import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 
-const r_ladderLabelStyles = 'bg-green2 text-white rounded-full p-1 mr-2 block-inline r-category ';
+const rLadderLabelStyles = 'bg-green2 text-white rounded-full p-1 mr-2 block-inline r-category ';
 const juridischeHoudbaarheidLabelStyles = 'my-1 mx-1 h-4 w-4 flex-shrink-0 rounded-full';
 
 const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, ref) => {
@@ -93,7 +93,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                     {/* RVALUE */}
                     {title === 'R - ladder' && (
                       <>
-                        <span className={`${r_ladderLabelStyles}`}>{data.value} </span>
+                        <span className={`${rLadderLabelStyles}`}>{data.value} </span>
                         <span>{data.name}</span>
                       </>
                     )}
@@ -139,7 +139,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                   >
                     {title === 'R - ladder' && (
                       <>
-                        <span className={`${r_ladderLabelStyles}`}>{data.value} </span>
+                        <span className={`${rLadderLabelStyles}`}>{data.value} </span>
                         <span className='font-normal text-gray-500 text-sm'>{data.name}</span>
                       </>
                     )}
