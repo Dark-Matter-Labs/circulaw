@@ -1,3 +1,6 @@
-import test from "./test"
+import measure from "./measure"
 
-export const schemaTypes = [test]
+
+
+export const schemaTypes = [measure,
+                        ]
