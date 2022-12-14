@@ -3,10 +3,8 @@ import client from '../../lib/sanity';
 
 import Link from 'next/link';
 // import Image from 'next/image';
-// import MeasureOverview from '../../components/measure-overview';
 import MeasureOverviewTest from '../../components/measure-overview-test';
 import MeasureTableTest from '../../components/measure-table-test';
-// import LinkIcon from '../../components/link-icon';
 
 const pathsQuery = `
 *[_type == "measure" && defined(slug.current)][].slug.current
@@ -26,9 +24,6 @@ const measureQuery = `
     artikelLink,
     lawDate,
     governmentLevel,
-
-
-
 }
 `
   

@@ -258,38 +258,14 @@ export default {
       },
       // COPY CONTENT
       {
-        title: 'Content block 1',
-        name: 'contentBlock1',
+        title: 'Content Builder',
+        name: 'contentBuilder',
         type: 'array',
         of: [
-          {
-            type: 'block',
-            lists: [
-              {title: 'Bullet', value: 'bullet'},
-              {title: 'Numbered', value: 'number'}
-            ],
-            
-          },
-          {
-            type: 'image'
-          }
-        ],
-        group: 'copy',
-        validaton: Rule => Rule.required()
-      },
-      {
-        title: 'Green Box',
-        name: 'greenBox',
-        type: 'array',
-        description: 'insert text that you would like in green box ',
-        of: [
-          {
-          type: 'block',
-          styles: [
-            { title: 'BoxHeading', value: 'h4' },
-            { title: 'Boxtext', value: 'normal' },
-          ]
-        }
+          {type: 'copyBlock'},
+          {type: 'greenBox'},
+          {type: 'pdfBlock'},
+          {type: 'imageBlock'}
         ],
         group: 'copy'
       },
