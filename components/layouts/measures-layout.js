@@ -6,11 +6,11 @@ import Link from 'next/link';
 import createPersistedState from 'use-persisted-state';
 import { SearchIcon, XIcon, AdjustmentsIcon } from '@heroicons/react/outline';
 import {
-  wettelijk_bevoegdheidsniveau,
+  wettelijkBevoegdheidsniveau,
   rechtsgebied,
   subrechtsgebied,
-  juridische_houdbaarheid,
-  r_ladder,
+  juridischeHoudbaarheid,
+  rLadder,
 } from '../../dataFilter';
 
 import SearchFilter from '/components/search-filter';
@@ -34,20 +34,20 @@ export default function MeasuresLayout(props) {
 
   const [laws, setLaws] = useState(data);
   const [selected, setSelected] = useSelectedState({
-    wettelijk_bevoegdheidsniveau: [],
+    wettelijkBevoegdheidsniveau: [],
     rechtsgebied: [],
     subrechtsgebied: [],
-    r_ladder: [],
-    juridische_houdbaarheid: [],
+    rLadder: [],
+    juridischeHoudbaarheid: [],
   });
 
   const dummyArray = [];
   const allSelectedValues = dummyArray.concat(
-    selected.wettelijk_bevoegdheidsniveau,
+    selected.wettelijkBevoegdheidsniveau,
     selected.rechtsgebied,
     selected.subrechtsgebied,
-    selected.r_ladder,
-    selected.juridische_houdbaarheid,
+    selected.rLadder,
+    selected.juridischeHoudbaarheid,
   );
 
   // autocomplete variables and funciton
@@ -101,11 +101,11 @@ export default function MeasuresLayout(props) {
 
   const reset = () => {
     setSelected({
-      wettelijk_bevoegdheidsniveau: [],
+      wettelijkBevoegdheidsniveau: [],
       rechtsgebied: [],
       subrechtsgebied: [],
-      r_ladder: [],
-      juridische_houdbaarheid: [],
+      rLadder: [],
+      juridischeHoudbaarheid: [],
     });
 
     wettelijkFilterRef.current.reset();
@@ -156,56 +156,56 @@ export default function MeasuresLayout(props) {
         return element.casus === props.casus;
       });
 
-      if (selected.wettelijk_bevoegdheidsniveau.length > 0) {
-        if (selected.wettelijk_bevoegdheidsniveau.includes('Europees')) {
+      if (selected.wettelijkBevoegdheidsniveau.length > 0) {
+        if (selected.wettelijkBevoegdheidsniveau.includes('Europees')) {
           filteredLaws = filteredLaws.filter((element) => {
             return element.europees;
           });
         }
-        if (selected.wettelijk_bevoegdheidsniveau.includes('Nationaal')) {
+        if (selected.wettelijkBevoegdheidsniveau.includes('Nationaal')) {
           filteredLaws = filteredLaws.filter((element) => {
             return element.nationaal;
           });
         }
-        if (selected.wettelijk_bevoegdheidsniveau.includes('Provinciaal')) {
+        if (selected.wettelijkBevoegdheidsniveau.includes('Provinciaal')) {
           filteredLaws = filteredLaws.filter((element) => {
             return element.provinciaal;
           });
         }
-        if (selected.wettelijk_bevoegdheidsniveau.includes('Gemeentelijk')) {
+        if (selected.wettelijkBevoegdheidsniveau.includes('Gemeentelijk')) {
           filteredLaws = filteredLaws.filter((element) => {
             return element.gemeentelijk;
           });
         }
       }
 
-      if (selected.r_ladder.length > 0) {
-        if (selected.r_ladder.includes('R1')) {
+      if (selected.rLadder.length > 0) {
+        if (selected.rLadder.includes('R1')) {
           filteredLaws = filteredLaws.filter((element) => {
             return element.R1;
           });
         }
-        if (selected.r_ladder.includes('R2')) {
+        if (selected.rLadder.includes('R2')) {
           filteredLaws = filteredLaws.filter((element) => {
             return element.R2;
           });
         }
-        if (selected.r_ladder.includes('R3')) {
+        if (selected.rLadder.includes('R3')) {
           filteredLaws = filteredLaws.filter((element) => {
             return element.R3;
           });
         }
-        if (selected.r_ladder.includes('R4')) {
+        if (selected.rLadder.includes('R4')) {
           filteredLaws = filteredLaws.filter((element) => {
             return element.R4;
           });
         }
-        if (selected.r_ladder.includes('R5')) {
+        if (selected.rLadder.includes('R5')) {
           filteredLaws = filteredLaws.filter((element) => {
             return element.R5;
           });
         }
-        if (selected.r_ladder.includes('R6')) {
+        if (selected.rLadder.includes('R6')) {
           filteredLaws = filteredLaws.filter((element) => {
             return element.R6;
           });
@@ -218,9 +218,9 @@ export default function MeasuresLayout(props) {
         });
       }
 
-      if (selected.juridische_houdbaarheid.length > 0) {
+      if (selected.juridischeHoudbaarheid.length > 0) {
         filteredLaws = filteredLaws.filter((element) => {
-          return selected.juridische_houdbaarheid.includes(element.juridische_houdbaarheid);
+          return selected.juridischeHoudbaarheid.includes(element.juridischeHoudbaarheid);
         });
       }
 
@@ -298,15 +298,15 @@ export default function MeasuresLayout(props) {
           numR6 += 1;
         }
 
-        if (measure.juridische_houdbaarheid === 1) {
+        if (measure.juridischeHoudbaarheid === 1) {
           numJ1 += 1;
-        } else if (measure.juridische_houdbaarheid === 2) {
+        } else if (measure.juridischeHoudbaarheid === 2) {
           numJ2 += 1;
-        } else if (measure.juridische_houdbaarheid === 3) {
+        } else if (measure.juridischeHoudbaarheid === 3) {
           numJ3 += 1;
-        } else if (measure.juridische_houdbaarheid === 4) {
+        } else if (measure.juridischeHoudbaarheid === 4) {
           numJ4 += 1;
-        } else if (measure.juridische_houdbaarheid === 5) {
+        } else if (measure.juridischeHoudbaarheid === 5) {
           numJ5 += 1;
         }
 
@@ -359,10 +359,10 @@ export default function MeasuresLayout(props) {
   // effect to check for data from persisted state from localStorage and update values when needed
   useEffect(() => {
     if (
-      selected.wettelijk_bevoegdheidsniveau.length !== 0 &&
+      selected.wettelijkBevoegdheidsniveau.length !== 0 &&
       typeof wettelijkFilterRef.current !== 'undefined'
     ) {
-      wettelijkFilterRef.current.set(selected.wettelijk_bevoegdheidsniveau);
+      wettelijkFilterRef.current.set(selected.wettelijkBevoegdheidsniveau);
     }
 
     if (
@@ -379,15 +379,15 @@ export default function MeasuresLayout(props) {
       subrechtsgebiedFilterRef.current.set(selected.subrechtsgebied);
     }
 
-    if (selected.r_ladder.length !== 0 && typeof rLadderFilterRef.current !== 'undefined') {
-      rLadderFilterRef.current.set(selected.r_ladder);
+    if (selected.rLadder.length !== 0 && typeof rLadderFilterRef.current !== 'undefined') {
+      rLadderFilterRef.current.set(selected.rLadder);
     }
 
     if (
-      selected.juridische_houdbaarheid.length !== 0 &&
+      selected.juridischeHoudbaarheid.length !== 0 &&
       typeof juridischeFilterRef.current !== 'undefined'
     ) {
-      juridischeFilterRef.current.set(selected.juridische_houdbaarheid);
+      juridischeFilterRef.current.set(selected.juridischeHoudbaarheid);
     }
   });
   return (
@@ -446,7 +446,7 @@ export default function MeasuresLayout(props) {
                       <SearchFilter
                         ref={wettelijkFilterRef}
                         title='Bevoegdheidsniveau'
-                        list={wettelijk_bevoegdheidsniveau}
+                        list={wettelijkBevoegdheidsniveau}
                         filterNumbers={[
                           numberOfEuropees,
                           numberOfNationaal,
@@ -454,7 +454,7 @@ export default function MeasuresLayout(props) {
                           numberOfGemeentelijk,
                         ]}
                         handleFilters={(checkboxState) =>
-                          handleFilters(checkboxState, 'wettelijk_bevoegdheidsniveau')
+                          handleFilters(checkboxState, 'wettelijkBevoegdheidsniveau')
                         }
                       />
                       <SearchFilter
@@ -469,7 +469,7 @@ export default function MeasuresLayout(props) {
                       <SearchFilter
                         ref={rLadderFilterRef}
                         title='R - ladder'
-                        list={r_ladder}
+                        list={rLadder}
                         filterNumbers={[
                           numberOfR1,
                           numberOfR2,
@@ -478,15 +478,15 @@ export default function MeasuresLayout(props) {
                           numberOfR5,
                           numberOfR6,
                         ]}
-                        handleFilters={(checkboxState) => handleFilters(checkboxState, 'r_ladder')}
+                        handleFilters={(checkboxState) => handleFilters(checkboxState, 'rLadder')}
                       />
                       <SearchFilter
                         ref={juridischeFilterRef}
                         title='Juridische houdbaarheid'
-                        list={juridische_houdbaarheid}
+                        list={juridischeHoudbaarheid}
                         filterNumbers={[numberOfJ1, numberOfJ2, numberOfJ3, numberOfJ4, numberOfJ5]}
                         handleFilters={(checkboxState) =>
-                          handleFilters(checkboxState, 'juridische_houdbaarheid')
+                          handleFilters(checkboxState, 'juridischeHoudbaarheid')
                         }
                       />
                       <SearchFilter
@@ -686,7 +686,7 @@ export default function MeasuresLayout(props) {
           <SearchFilter
             ref={wettelijkFilterRef}
             title='Bevoegdheidsniveau'
-            list={wettelijk_bevoegdheidsniveau}
+            list={wettelijkBevoegdheidsniveau}
             filterNumbers={[
               numberOfEuropees,
               numberOfNationaal,
@@ -694,7 +694,7 @@ export default function MeasuresLayout(props) {
               numberOfGemeentelijk,
             ]}
             handleFilters={(checkboxState) =>
-              handleFilters(checkboxState, 'wettelijk_bevoegdheidsniveau')
+              handleFilters(checkboxState, 'wettelijkBevoegdheidsniveau')
             }
           />
           <SearchFilter
@@ -707,18 +707,17 @@ export default function MeasuresLayout(props) {
           <SearchFilter
             ref={rLadderFilterRef}
             title='R - ladder'
-            list={r_ladder}
+            list={rLadder}
             filterNumbers={[numberOfR1, numberOfR2, numberOfR3, numberOfR4, numberOfR5, numberOfR6]}
-            handleFilters={(checkboxState) => handleFilters(checkboxState, 'r_ladder')}
-            r_ladderStyleProp='r_ladderCSSClasses'
+            handleFilters={(checkboxState) => handleFilters(checkboxState, 'rLadder')}
           />
           <SearchFilter
             ref={juridischeFilterRef}
             title='Juridische houdbaarheid'
-            list={juridische_houdbaarheid}
+            list={juridischeHoudbaarheid}
             filterNumbers={[numberOfJ1, numberOfJ2, numberOfJ3, numberOfJ4, numberOfJ5]}
             handleFilters={(checkboxState) =>
-              handleFilters(checkboxState, 'juridische_houdbaarheid')
+              handleFilters(checkboxState, 'juridischeHoudbaarheid')
             }
             juridischeHoudbaarheidStyleProp='juridischeHoudbaarheidCSSClasses'
           />

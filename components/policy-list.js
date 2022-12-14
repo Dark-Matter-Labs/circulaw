@@ -30,7 +30,7 @@ export default function PolicyList(props) {
             gemeentelijk,
             introductie_juridische_maatregel,
             juridische_invloed,
-            juridische_houdbaarheid,
+            juridischeHoudbaarheid,
             R1,
             R2,
             R3,
@@ -137,7 +137,7 @@ export default function PolicyList(props) {
                       <div
                         key={rating}
                         className={classNames(
-                          juridische_houdbaarheid > rating ? 'score-true' : 'score-false',
+                          juridischeHoudbaarheid > rating ? 'score-true' : 'score-false',
                           'mx-1 h-4 w-4 flex-shrink-0 rounded-full',
                         )}
                         aria-hidden='true'

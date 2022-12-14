@@ -24,7 +24,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Dit volgt uit art. 2.28 Aanbestedingswet. De stappen die tijdens de procedure doorlopen moeten worden volgen uit art. 2.29 Aanbestedingswet. Bij de procedure van de concurrentiegerichte dialoog verloopt de gunning volgens de artikelen 2.110 t/m 2.112 Aanbestedingswet.',
-    juridische_houdbaarheid: 3,
+    juridischeHoudbaarheid: 3,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -85,7 +85,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Dit volgt uit art. 2.30 jo. 2.28 lid 1 sub a en b Aanbestedingswet. De stappen die de aanbestedende dienst moet doorlopen volgen uit art. 2.31 Aanbestedingswet.',
-    juridische_houdbaarheid: 3,
+    juridischeHoudbaarheid: 3,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -149,7 +149,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Dit volgt uit art. 2.31a Aanbestedingswet. De stappen die de aanbestedende dienst moet doorlopen volgen uit art. 2.31b Aanbestedingswet.',
-    juridische_houdbaarheid: 3,
+    juridischeHoudbaarheid: 3,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -214,7 +214,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Dit volgt uit art. 2.75 jo. 2.76 Aanbestedingswet.\n\nDe volgende specifieke artikelen uit het Aanbestedingsreglement zien op technische specificaties binnen een bepaalde procedure:\n\n- Openbare procedure: art. 2.10 Aanbestedingsreglement\n- Niet-openbare procedure: art. 3.10 Aanbestedingsreglement\n- Procedure van de concurrentiegerichte dialoog: art. 4.10 Aanbestedingsreglement\n- Mededingingsprocedure met onderhandeling: art. 5.10 Aanbestedingsreglement\n- Onderhandelingsprocedure zonder aankondiging: art. 6.9 Aanbestedingsreglement\n- Procedure van innovatiepartnerschap: art. 8.10 Aanbestedingsreglement',
-    juridische_houdbaarheid: 3,
+    juridischeHoudbaarheid: 3,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -277,7 +277,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Dit volgt uit art. 2.78a Aanbestedingswet.\n\nDe volgende specifieke artikelen uit het Aanbestedingsreglement zien op het vragen om keurmerken binnen een bepaalde procedure:\n- Openbare procedure: art. 2.12 Aanbestedingsreglement\n- Niet-openbare procedure: art. 3.12 Aanbestedingsreglement\n- Procedure van de concurrentiegerichte dialoog: art. 4.12 Aanbestedingsreglement\n- Mededingingsprocedure met onderhandeling: art. 5.12 Aanbestedingsreglement\n- Onderhandelingsprocedure zonder aankondiging: art. 6.11 Aanbestedingsreglement\n- Procedure van innovatiepartnerschap: art. 8.12 Aanbestedingsreglement',
-    juridische_houdbaarheid: 3,
+    juridischeHoudbaarheid: 3,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -339,7 +339,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Dit volgt uit art. 2.80 Aanbestedingswet. Art. 2.115 lid 3 Aanbestedingswet is van overeenkomstige toepassing. Dit houdt in dat de criteria betrekking kunnen hebben op elk opzicht en elk stadium van de levenscyclus van het werk. Hieronder valt volgens dit artikel ook het productieproces, het aanbieden of verhandelen van het werk of een specifiek proces voor een andere fase van hun levenscyclus, zelfs als deze factoren geen deel uitmaken van hun materiële basis. \n\nDe volgende specifieke artikelen uit het Aanbestedingsreglement zien op bijzondere uitvoeringsvoorwaarden binnen een bepaalde procedure:\n- Openbare procedure: art. 2.11 Aanbestedingsreglement\n- Niet-openbare procedure: art. 3.11 Aanbestedinsgreglement\n- Procedure van de concurrentiegerichte dialoog: art. 4.11 Aanbestedingsreglement\n- Mededingingsprocedure met onderhandeling: art. 5.11 Aanbestedingsreglement\n- Onderhandelingsprocedure zonder aankondiging: art. 6.10 Aanbestedingsreglement\n- Procedure van innovatiepartnerschap: art. 8.11 Aanbestedingsreglement',
-    juridische_houdbaarheid: 2,
+    juridischeHoudbaarheid: 2,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -402,7 +402,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Dit volgt uit art. 2.90 Aanbestedingswet.\n\nDe volgende specifieke artikelen uit het Aanbestedingsreglement zien op geschiktheidseisen binnen een bepaalde procedure:\n- Openbare procedure: art. 2.5 Aanbestedingsreglement\n- Niet-openbare procedure: art. 3.5 Aanbestedingsreglement\n- Procedure van de concurrentiegerichte dialoog: art. 4.5 Aanbestedingsreglement\n- Mededingingsprocedure met onderhandeling: art. 5.5 Aanbestedingsreglement\n- Onderhandelingsprocedure zonder aankondiging: art. 6.4 Aanbestedingsreglement\n- Innovatiepartnerschap: art. 8.5 Aanbestedingsreglement',
-    juridische_houdbaarheid: 3,
+    juridischeHoudbaarheid: 3,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -463,7 +463,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Dit volgt uit art. 2.114 lid 2 sub a jo. art. 2.115 Aanbestedingswet.\n\nDe volgende specifieke artikelen uit het Aanbestedingsreglement heeft betrekking op de nadere criteria binnen het gunningscriterium `beste prijs-kwaliteitsverhouding’ binnen een bepaalde procedure:\n- Openbare procedure: art. 2.6 Aanbestedingsreglement\n- Niet-openbare procedure: art. 3.6 Aanbestedingsreglement\n- Procedure van de concurrentiegerichte dialoog: art. 4.6 Aanbestedingsreglement\n- Mededingingsprocedure met onderhandeling: art. 5.6 Aanbestedingsreglement\n- Onderhandelingsprocedure zonder aankondiging: art. 6.5 Aanbestedingsreglement\n- Meervoudige onderhandse procedure: art. 7.4 Aanbestedingsreglement\n- Procedure van innovatiepartnerschap: art. 8.6 Aanbestedingsreglement',
-    juridische_houdbaarheid: 3,
+    juridischeHoudbaarheid: 3,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -524,7 +524,7 @@ export const laws = [
       'De berekeningsmethode van de externe milieueffecten moet voldoen aan drie voorwaarden, zoals vastgesteld in de Aanbestedingswet (art. 2.115a lid 3):\n\n- De methode moet gebaseerd zijn op objectief controleerbare en niet-discriminerende criteria;\n- Alle inschrijvers moeten de berekeningsmethode kunnen inzien;\n- De gevraagde gegevens moeten met een redelijke inspanning door normaal zorgvuldige ondernemers kunnen worden verstrekt. Met andere woorden: het moet de inschrijver niet te veel inspanning kosten om de gevraagde gegevens aan te leveren. \n\nWanneer EU-regelgeving verplicht een bepaalde berekeningsmethode te gebruiken voor de levenscycluskosten, dan moet die methode worden toegepast. In dat geval mogen geen andere berekeningsmethoden worden gebruikt.',
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting: 'Dit volgt uit art. 2.114 lid 2 sub b jo. 2.115a Aanbestedingswet.',
-    juridische_houdbaarheid: 3,
+    juridischeHoudbaarheid: 3,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -588,7 +588,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Beleid en andere instrumenten',
     juridische_toelichting:
       'Over het algemeen is het verstandig naast de MPG ook andere criteria te gebruiken, omdat andere duurzaamheids- en circulariteitsaspecten niet of onvoldoende in MPG-scores verwerkt zijn. Daarbij kun je onder meer denken aan de zogenaamde  BENG-normen voor energiegebruik van gebouwen, het percentage hernieuwbaar materiaal en het percentage secundair materiaal. Overweeg ook kwalitatieve criteria mee te nemen, zoals ‘de integrale verwerking van circulariteit in het ontwerp’ of ‘de integrale verwerking van duurzaamheid in het ontwerp’. Als je meerdere criteria stelt moet je altijd ook het relatieve gewicht bepalen van de MPG-score ten opzichte van andere subselectiecriteria. Een (duurzame) inkoopspecialist kan helpen bij het vinden van een combinatie van criteria en het bepalen van de juiste weging van die criteria die voor jouw opdracht het beste is, omdat die de markt kent. Leg contact binnen je organisatie of werk met externe expertise als je aan de slag gaat met circulair aanbesteden. \n\nJe kan een MPG als selectiecriterium ook combineren met een minimale eis voor een MPG-score. Het Transitieteam Circulaire Bouweconomie adviseert bijvoorbeeld om een relatieve weging van inschrijvingen te combineren met een minimale grenswaarde van 10 tot 15% onder de wettelijke eis uit het Bouwbesluit (0,7 in 2022). Zo filter je in ieder geval al de minst ambitieuze inschrijvingen eruit.\n\nHoud bij gebruik van de MPG in het bijzonder rekening met zonnepanelen. Zonnepanelen zijn essentieel voor de energie- en circulaire transitie, maar verhogen de MPG-score sterk. Daarom moet je zonnepanelen buiten de MPG-score houden of zorgen dat andere delen van de opdracht die opvangen. Je kan dit bijvoorbeeld ondervangen met een minimumeis aan duurzame energie. Het Transiti',
-    juridische_houdbaarheid: 4,
+    juridischeHoudbaarheid: 4,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -649,7 +649,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van artikel 2.11 lid 1 Omgevingswet is de gemeenteraad bevoegd om omgevingswaarden vast te stellen in het omgevingsplan in de zin van artikel 2.4 Omgevingswet.',
-    juridische_houdbaarheid: 3,
+    juridischeHoudbaarheid: 3,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -710,7 +710,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van artikel 2.12 lid 1 Omgevingswet is de gemeenteraad bevoegd om omgevingswaarden vast te stellen in het omgevingsplan in de zin van artikel 2.4 Omgevingswet.',
-    juridische_houdbaarheid: 4,
+    juridischeHoudbaarheid: 4,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -772,7 +772,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van artikel 3.1 lid 1 Omgevingswet kan een gemeentelijke omgevingsvisie worden vastgesteld.',
-    juridische_houdbaarheid: 5,
+    juridischeHoudbaarheid: 5,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -833,7 +833,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van artikel 3.1 lid 2 Omgevingswet kan een provinciale omgevingsvisie worden vastgesteld.',
-    juridische_houdbaarheid: 5,
+    juridischeHoudbaarheid: 5,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -894,7 +894,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van artikel 3.1 lid 3 kan een nationale omgevingsvisie worden vastgesteld.',
-    juridische_houdbaarheid: 5,
+    juridischeHoudbaarheid: 5,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -956,7 +956,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van artikel 3.4 Omgevingswet kan de gemeente een programma vaststellen.',
-    juridische_houdbaarheid: 2,
+    juridischeHoudbaarheid: 2,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -1018,7 +1018,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van artikel 3.4 Omgevingswet kan de provincie een programma vaststellen.',
-    juridische_houdbaarheid: 2,
+    juridischeHoudbaarheid: 2,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -1080,7 +1080,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van artikel 3.4 Omgevingswet kan het Rijk een programma vaststellen.',
-    juridische_houdbaarheid: 2,
+    juridischeHoudbaarheid: 2,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -1141,7 +1141,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van art. 4.1 lid 1 Omgevingswet kan de gemeente een omgevingsplan vaststellen.',
-    juridische_houdbaarheid: 3,
+    juridischeHoudbaarheid: 3,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -1203,7 +1203,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van art. 4.1 lid 1 Omgevingswet kan de provincie een omgevingsverordening vaststellen.',
-    juridische_houdbaarheid: 3,
+    juridischeHoudbaarheid: 3,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -1266,7 +1266,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van artikel 4.4 lid 2 Omgevingswet is de gemeente bevoegd tot het vaststellen van beoordelingsregels in het omgevingsplan.',
-    juridische_houdbaarheid: 5,
+    juridischeHoudbaarheid: 5,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -1328,7 +1328,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Uit artikel 4.7 lid 1 Omgevingswet volgt dat als regels als bedoeld in paragraaf 4.1.1 voorschrijven dat een maatregel moet worden getroffen, op aanvraag toestemming kan worden verleend om, in plaats daarvan, een gelijkwaardige maatregel te treffen. Met de gelijkwaardige maatregel wordt ten minste hetzelfde resultaat bereikt als met de voorgeschreven maatregel is beoogd.',
-    juridische_houdbaarheid: 4,
+    juridischeHoudbaarheid: 4,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -1390,7 +1390,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Ingevolge art. 9.1 lid 1 Ow kan de raad bij voorkeursrechtbeschikking op een onroerende zaak een gemeentelijk voorkeursrecht vestigen op basis van de gemeentelijke omgevingsvisie.',
-    juridische_houdbaarheid: 3,
+    juridischeHoudbaarheid: 3,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -1452,7 +1452,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Ingevolge art. 9.1 lid 1 Ow kan de raad bij voorkeursrechtbeschikking op een onroerende zaak een provinciaal voorkeursrecht vestigen op basis van de provinciale omgevingsvisie.',
-    juridische_houdbaarheid: 3,
+    juridischeHoudbaarheid: 3,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -1514,7 +1514,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Ingevolge art. 9.1 lid 1 Ow kan de raad bij voorkeursrechtbeschikking op een onroerende zaak een nationaal voorkeursrecht vestigen op basis van de nationale omgevingsvisie.',
-    juridische_houdbaarheid: 3,
+    juridischeHoudbaarheid: 3,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -1576,7 +1576,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van art. 11.1 Ow kan onteigening van onroerende zaken in het algemeen belang als bedoeld in artikel 14 van de Grondwet op grond van dit artikel plaatsvinden in het algemeen belang van het ontwikkelen, gebruiken of beheren van de fysieke leefomgeving. Hierbij dienen de criteria onteigeningsbelang, noodzaak en urgentie in de zin van art. 11.5 Ow zwaar te worden meegewogen. Daarnaast dient op grond van art. 11.7 Ow de onteigening noodzakelijk te zijn onderbouwd.',
-    juridische_houdbaarheid: 5,
+    juridischeHoudbaarheid: 5,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -1638,7 +1638,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van art. 11.1 Ow kan onteigening van onroerende zaken in het algemeen belang als bedoeld in artikel 14 van de Grondwet op grond van dit artikel plaatsvinden in het algemeen belang van het ontwikkelen, gebruiken of beheren van de fysieke leefomgeving. Hierbij dienen de criteria onteigeningsbelang, noodzaak en urgentie in de zin van art. 11.5 Ow zwaar te worden meegewogen. Daarnaast dient op grond van art. 11.7 Ow de onteigening noodzakelijk te zijn onderbouwd.',
-    juridische_houdbaarheid: 5,
+    juridischeHoudbaarheid: 5,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -1700,7 +1700,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van art. 11.1 Ow kan onteigening van onroerende zaken in het algemeen belang als bedoeld in artikel 14 van de Grondwet op grond van dit artikel plaatsvinden in het algemeen belang van het ontwikkelen, gebruiken of beheren van de fysieke leefomgeving. Hierbij dienen de criteria onteigeningsbelang, noodzaak en urgentie in de zin van art. 11.5 Ow zwaar te worden meegewogen. Daarnaast dient op grond van art. 11.7 Ow de onteigening noodzakelijk te zijn onderbouwd.',
-    juridische_houdbaarheid: 5,
+    juridischeHoudbaarheid: 5,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -1762,7 +1762,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Bij algemene maatregel van bestuur kan, met inachtneming van internationaalrechtelijke verplichtingen, bij wijze van experiment worden afgeweken van het bepaalde bij of krachtens deze wet volgens art. 23.2 lid 1 Ow. Het gaat hier onder andere om bepalingen uit de Wet milieubeheer onder sub g. Dit ziet weer op bepalingen over afval.',
-    juridische_houdbaarheid: 3,
+    juridischeHoudbaarheid: 3,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -1826,7 +1826,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van artikel 8.20 kan een financiële bijdrage worden overeengekomen voor de bouw van een bouwwerk.',
-    juridische_houdbaarheid: 2,
+    juridischeHoudbaarheid: 2,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -1889,7 +1889,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van artikel 3.169 lid 1 Bal wordt bij het college een melding gemaakt van uit te voeren activiteit.',
-    juridische_houdbaarheid: 4,
+    juridischeHoudbaarheid: 4,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -1952,7 +1952,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van artikel 4.619 lid 1 Bal wordt bij het college een melding gemaakt van uit te voeren activiteit.',
-    juridische_houdbaarheid: 4,
+    juridischeHoudbaarheid: 4,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -2015,7 +2015,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van artikel 4.6 Omgevingswet en 3.7 Bbl kunnen maatwerkvoorschriften voor bestaande bouw worden vastgesteld.',
-    juridische_houdbaarheid: 4,
+    juridischeHoudbaarheid: 4,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -2078,7 +2078,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op basis van artikel 7.10 Bbl is het niet toegestaan om een bouwwerk of gedeelte daarvan te slopen als daarbij asbest wordt verwijderd of de hoeveelheid sloopafval naar redelijke inschatting meer dan 10 m3 bedraagt, zonder dit ten minste vier weken voor het begin van de sloopwerkzaamheden te melden.',
-    juridische_houdbaarheid: 5,
+    juridischeHoudbaarheid: 5,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -2140,7 +2140,7 @@ export const laws = [
       '- In de Kaderrichtlijn afvalstoffen (2008/98/EG) is een afvalhiërarchie opgenomen die lidstaten bij het opstellen van wetgeving en beleidsinitiatieven voor de preventie en het beheer van afvalstoffen als prioriteitsvolgorde moeten hanteren. \n- Volgens deze hiërarchie moeten afvalstoffen zoveel mogelijk worden gerecycled.',
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting: '',
-    juridische_houdbaarheid: 3,
+    juridischeHoudbaarheid: 3,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -2203,7 +2203,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Bij AMvB kunnen op grond van artikel 9.5.2 Wm deze regels middels een besluit worden opgesteld.',
-    juridische_houdbaarheid: 4,
+    juridischeHoudbaarheid: 4,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -2268,7 +2268,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Dit volgt uit art. 7:201 BW, art. 107/108/109 VWEU & H4b Mededingingswet',
-    juridische_houdbaarheid: 2,
+    juridischeHoudbaarheid: 2,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -2330,7 +2330,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Dit volgt uit art. 2.113 Aanbestedingswet.\n\nDe volgende specifieke artikelen uit het Aanbestedingsreglement zien op geschiktheidseisen binnen een bepaalde procedure:\n- Openbare procedure: art. 2.5 Aanbestedingsreglement\n- Niet-openbare procedure: art. 3.5 Aanbestedingsreglement\n- Procedure van de concurrentiegerichte dialoog: art. 4.5 Aanbestedingsreglement\n- Mededingingsprocedure met onderhandeling: art. 5.5 Aanbestedingsreglement\n- Onderhandelingprocedure zonder aankondiging: art. 6.4 Aanbestedingsreglement\n- Innovatiepartnerschap: art. 8.5 Aanbestedingsreglement',
-    juridische_houdbaarheid: 2,
+    juridischeHoudbaarheid: 2,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -2392,7 +2392,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Dit volgt uit art. 2.113 Aanbestedingswet.\n\nDe volgende specifieke artikelen uit het Aanbestedingsreglement zien op geschiktheidseisen binnen een bepaalde procedure:\n- Openbare procedure: art. 2.5 Aanbestedingsreglement\n- Niet-openbare procedure: art. 3.5 Aanbestedingsreglement\n- Procedure van de concurrentiegerichte dialoog: art. 4.5 Aanbestedingsreglement\n- Mededingingsprocedure met onderhandeling: art. 5.5 Aanbestedingsreglement\n- Onderhandelingprocedure zonder aankondiging: art. 6.4 Aanbestedingsreglement\n- Innovatiepartnerschap: art. 8.5 Aanbestedingsreglement',
-    juridische_houdbaarheid: 2,
+    juridischeHoudbaarheid: 2,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -2456,7 +2456,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van art. 2.4 jo. art. 4.1 Omgevingswet kan de gemeente een omgevingsplan vaststellen.',
-    juridische_houdbaarheid: 3,
+    juridischeHoudbaarheid: 3,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -2520,7 +2520,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van artikel 3.1 lid 1 Omgevingswet kan een gemeentelijke omgevingsvisie worden vastgesteld.',
-    juridische_houdbaarheid: 5,
+    juridischeHoudbaarheid: 5,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -2583,7 +2583,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Op grond van artikel 3.1 lid 2 Omgevingswet kan een provinciale omgevingsvisie worden vastgesteld.',
-    juridische_houdbaarheid: 5,
+    juridischeHoudbaarheid: 5,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -2644,7 +2644,7 @@ export const laws = [
       'In beginsel zijn de eisen in de Omgevingswet en de regelgeving die daaruit voortvloeit uitputtend geregeld. Uitzondering daarop is de eventuele ruimte voor omgevingsplanregels met een ander oogmerk dan de uitputtende regeling. In het Bbl zijn alleen regels opgenomen voor de brand- en constructieveiligheid van windturbines, uit de wetsgeschiedenis volgt niet of hiermee alle mogelijke bepalingen voor windturbines uitputtend geregeld zijn. Dit geeft ruimte voor het stellen van circulaire regels aan windturbines.',
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting: 'Op grond van artikel 5.46 Ow kan een projectbesluit worden genomen.',
-    juridische_houdbaarheid: 5,
+    juridischeHoudbaarheid: 5,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -2706,7 +2706,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Ingevolge art. 9.1 lid 1 Ow kan de raad bij voorkeursrechtbeschikking op een onroerende zaak een gemeentelijk voorkeursrecht vestigen op basis van de gemeentelijke omgevingsvisie.',
-    juridische_houdbaarheid: 4,
+    juridischeHoudbaarheid: 4,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -2768,7 +2768,7 @@ export const laws = [
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Ingevolge art. 9.1 lid 1 Ow kunnen provinciale staten een voorkeursrecht vestigen op grond van: \n- Een zelfstandige voorkeursrechtbeschikking;\n- Een omgevingsvisie of programma;\n- Een omgevingsplan.',
-    juridische_houdbaarheid: 4,
+    juridischeHoudbaarheid: 4,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',
@@ -2829,7 +2829,7 @@ export const laws = [
       '- Verstrekkende eisen mogen slechts worden overeengekomen indien de bevoegdheid tot het stellen van eisen niet uitputtend is geregeld en er geen publiekrechtelijke bevoegdheid wordt doorkruist.\n- Het zich conformeren aan verdergaande duurzaamheidseisen dient volledig vrijwillig te zijn.',
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting: 'Dit volgt uit art.13.22 Omgevingswet.',
-    juridische_houdbaarheid: 5,
+    juridischeHoudbaarheid: 5,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
     literatuur: '',

@@ -1,4 +1,4 @@
-export const wettelijk_bevoegdheidsniveau = [
+export const wettelijkBevoegdheidsniveau = [
   {
     id: '0',
     name: 'Europees',
@@ -79,7 +79,7 @@ export const subrechtsgebied = [
   },
 ];
 
-export const r_ladder = [
+export const rLadder = [
   {
     id: '0',
     name: 'Refuse/rethink',
@@ -118,7 +118,7 @@ export const r_ladder = [
   },
 ];
 
-export const juridische_houdbaarheid = [
+export const juridischeHoudbaarheid = [
   {
     id: '0',
     name: '1',

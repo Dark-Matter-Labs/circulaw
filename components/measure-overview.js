@@ -130,7 +130,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
             <span
               key={rating}
               className={classNames(
-                data.juridische_houdbaarheid > rating ? 'score-true' : 'score-false',
+                data.juridischeHoudbaarheid > rating ? 'score-true' : 'score-false',
                 'mr-4 h-6 w-6 flex-shrink-0 rounded-full',
               )}
               aria-hidden='true'
