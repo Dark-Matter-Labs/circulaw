@@ -1,5 +1,3 @@
-
-
 export const Structure = (S) => 
     S.list()
       .title('Content Types')
