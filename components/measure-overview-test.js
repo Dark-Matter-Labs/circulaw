@@ -6,11 +6,11 @@ import RTooltip from '../components/r-ladder-tooltip';
 import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../components/juridische-invloed-tooltip';
 
-{/* 
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
-*/}
+
 
 const viewportType = {
   desktop: 'block lg:hidden',
@@ -18,12 +18,11 @@ const viewportType = {
 };
 export default function MeasureOverviewTest({ viewport, children, data, ...props }) {
   let viewportClasses = viewportType[viewport];
-
   return (
     <div {...props} className={`${viewportClasses}`}>
       {children}
       <div className='container pb-2'>
-        {data.measure?.thema === 'Houtbouw' ? (
+        {data.measure?.thema === 'houtbouw' ? (
           <div className='container-image'>
             <Image src={IcontWood} alt='Icon of a Wood Log' />
           </div>
@@ -35,7 +34,7 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
         <div className=''>
           <Link href={'/' + data.measure?.thema.replace(/\s+/g, '-').toLowerCase()}>
             <a>
-              <span className='font-openSans font-bold pl-2 text-greenLink'>{data.casus}</span>
+              <span className='font-openSans font-bold pl-2 text-greenLink first-letter:uppercase block'>{data.measure?.thema}</span>
             </a>
           </Link>
         </div>
@@ -54,14 +53,10 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
             </svg>
           </RTooltip>
         </div>
-
         <span className='block-inline font-semibold text-base text-gray-900'>
-          {data.measure?.R1 && <span className='bg-green2 text-white rounded-full p-1 mr-2'>R1</span>}
-          {data.measure?.R2 && <span className='bg-green2 text-white rounded-full p-1 mr-2'>R2</span>}
-          {data.measure?.R3 && <span className='bg-green2 text-white rounded-full p-1 mr-2'>R3</span>}
-          {data.measure?.R4 && <span className='bg-green2 text-white rounded-full p-1 mr-2'>R4</span>}
-          {data.measure?.R5 && <span className='bg-green2 text-white rounded-full p-1 mr-2'>R5</span>}
-          {data.measure?.R6 && <span className='bg-green2 text-white rounded-full p-1 mr-2'>R6</span>}
+            {data.measure?.rLadder.map((rValue) => (
+                <span key={rValue} className='bg-green2 text-white rounded-full p-1 mr-2'>{rValue}</span>
+            ))}
         </span>
       </div>
 
@@ -70,7 +65,7 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
           <div className='font-manrope font-semibold text-lg text-black1 pb-2'>Subrechtsgebied</div>
         </div>
 
-        <div className='font-manrope font-normal text-base'>
+        <div className='font-manrope font-normal text-base first-letter:capitalize'>
           <p>{data.measure?.subrechtsgebied}</p>
         </div>
       </div>
@@ -93,14 +88,13 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
           </div>
         </div>
 
-        {/* 
         <div className='mt-3 flex items-center'>
           <span className='pr-4 font-manrope font-normal text-base'>LAAG</span>
-          {[0, 1, 2, 3, 4].map((rating) => (
+          {[0, 1, 2].map((rating) => (
             <div
               key={rating}
               className={classNames(
-                data.measure?.juridische_invloed > rating ? 'score-true' : 'score-false',
+                Number(data.measure?.juridischInvloed) > rating ? 'score-true' : 'score-false',
                 'mr-4 h-6 w-6 flex-shrink-0 rounded-full',
               )}
               aria-hidden='true'
@@ -108,8 +102,6 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
           ))}
           <span className='font-manrope font-normal text-base'>HOOG</span>
         </div>
-*/}
-
       </div>
 
       <div className='py-5'>
@@ -130,14 +122,14 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
           </div>
         </div>
         
-        {/* 
+        
         <div className='mt-3 flex items-center w-10/12'>
           <span className='pr-4 font-manrope font-normal text-base'> LAAG</span>
-          {[0, 1, 2, 3, 4].map((rating) => (
+          {[0, 1, 2].map((rating) => (
             <span
               key={rating}
               className={classNames(
-                data.measure?.juridische_houdbaarheid > rating ? 'score-true' : 'score-false',
+                Number(data.measure?.juridischHaalbaarheid) > rating ? 'score-true' : 'score-false',
                 'mr-4 h-6 w-6 flex-shrink-0 rounded-full',
               )}
               aria-hidden='true'
@@ -145,7 +137,6 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
           ))}
           <span className='font-manrope font-normal text-base'>HOOG</span>
         </div>
-        */}
 
       </div>
     </div>

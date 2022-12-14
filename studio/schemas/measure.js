@@ -152,23 +152,6 @@ export default {
         group: ['overview', 'filter'],
       },
       {
-        title: 'Juridisch Haalbaarheid',
-        name: 'juridischHaalbaarheid',
-        type: 'string',
-        description: 'Please select medium low or high',
-        validation: Rule => Rule.required(),
-        options: {
-          list: [
-            {title: 'Low', value: '1'},
-            {title: 'Medium', value: '2'},
-            {title: 'High', value: '3'},
-          ],
-          layout: 'radio',
-          direction: 'horizontal',
-        },
-        group: ['overview', 'filter']
-      },
-      {
         title: 'Juridisch invloed',
         name: 'juridischInvloed',
         type: 'string',
@@ -186,6 +169,23 @@ export default {
         group: ['overview']
       },
       {
+        title: 'Juridisch Haalbaarheid',
+        name: 'juridischHaalbaarheid',
+        type: 'string',
+        description: 'Please select medium low or high',
+        validation: Rule => Rule.required(),
+        options: {
+          list: [
+            {title: 'Low', value: '1'},
+            {title: 'Medium', value: '2'},
+            {title: 'High', value: '3'},
+          ],
+          layout: 'radio',
+          direction: 'horizontal',
+        },
+        group: ['overview', 'filter']
+      },
+      {
         title: 'Government Level',
         name: 'governmentLevel',
         type: 'array',
@@ -196,12 +196,13 @@ export default {
           list: [
             {title: 'Europees', value: 'europees'},
             {title: 'Nationaal', value: 'nationaal'},
-            {title: 'Provinciaal', value:'Provinciaal'},
-            {title: 'Gemeentelijk', value:'Gemeentelijk'},
+            {title: 'Provinciaal', value:'provinciaal'},
+            {title: 'Waterschappen', value: 'waterschappen'},
+            {title: 'Gemeentelijk', value:'gemeentelijk'},
           ],
           layout: 'grid',
         },
-        group: ['filter']
+        group: ['filter', 'table']
       },
       {
         title: 'Rechtsgebied',
@@ -218,17 +219,9 @@ export default {
           layout: 'radio',
           direction: 'horizontal'
         },
-        group: ['filter']
+        group: ['filter', 'table']
       },
       // ITEMS ONLY IN TABLE
-      {
-        title: 'Rechtsgebied CHECK',
-        name: 'rechtsgebied2',
-        type: 'string',
-        description: 'THIS NEEDS TO BE CHECKED AS THERE IS ALREADY THIS ATTRIBUTE',
-        validation: Rule => Rule.required(),
-        group: 'table'
-      },
       {
         title: 'Citeertitel',
         name: 'citeertitel',
@@ -255,14 +248,15 @@ export default {
       },
       {
         title: 'Geldig vanaf',
-        name: 'LawDate',
+        name: 'lawDate',
         type: 'datetime',
         description: 'The date the law was created - leave empty if TBD',
         group: 'table',
         options: {
-          dateFormat: 'DD-MM-YYY',
+          dateFormat: 'DD-MM-YYYY',
         },
       },
+      // COPY CONTENT
       {
         title: 'Content block 1',
         name: 'contentBlock1',
