@@ -6,11 +6,9 @@ import RTooltip from '../components/r-ladder-tooltip';
 import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../components/juridische-invloed-tooltip';
 
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
-
 
 const viewportType = {
   desktop: 'block lg:hidden',
@@ -34,7 +32,9 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
         <div className=''>
           <Link href={'/' + data.measure?.thema.replace(/\s+/g, '-').toLowerCase()}>
             <a>
-              <span className='font-openSans font-bold pl-2 text-greenLink first-letter:uppercase block'>{data.measure?.thema}</span>
+              <span className='font-openSans font-bold pl-2 text-greenLink first-letter:uppercase block'>
+                {data.measure?.thema}
+              </span>
             </a>
           </Link>
         </div>
@@ -54,9 +54,11 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
           </RTooltip>
         </div>
         <span className='block-inline font-semibold text-base text-gray-900'>
-            {data.measure?.rLadder.map((rValue) => (
-                <span key={rValue} className='bg-green2 text-white rounded-full p-1 mr-2'>{rValue}</span>
-            ))}
+          {data.measure?.rLadder.map((rValue) => (
+            <span key={rValue} className='bg-green2 text-white rounded-full p-1 mr-2'>
+              {rValue}
+            </span>
+          ))}
         </span>
       </div>
 
@@ -121,8 +123,7 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
             </JHTooltip>
           </div>
         </div>
-        
-        
+
         <div className='mt-3 flex items-center w-10/12'>
           <span className='pr-4 font-manrope font-normal text-base'> LAAG</span>
           {[0, 1, 2].map((rating) => (
@@ -137,7 +138,6 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
           ))}
           <span className='font-manrope font-normal text-base'>HOOG</span>
         </div>
-
       </div>
     </div>
   );

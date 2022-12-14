@@ -6,7 +6,7 @@ export default {
         {
             title: 'Green Box Title',
             name: 'greenBoxTitle',
-            type: 'string',
+            type: 'blockContent',
         },
         {
             title: 'Green Box Text',

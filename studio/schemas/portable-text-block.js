@@ -12,7 +12,9 @@ export default {
             title: 'Copy Text',
             name: 'copyText',
             type: 'array',
-            of: [{type: 'block'}]
+            of: [
+                {type: 'block'},
+            ]
         },
 
     ]
