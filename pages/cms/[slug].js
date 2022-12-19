@@ -27,7 +27,6 @@ const measureQuery = `
     lawDate,
     governmentLevel,
     content
-    },
 }
 `;
 
