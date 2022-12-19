@@ -72,7 +72,7 @@ export default function TestMeasure({ data }) {
       <div className='gradient-bg'>
         <div className='global-margin pt-10 overflow-x-hidden'>
           {/* BREADCRUMB */}
-          {data.measure?.thema === 'houtbouw' ? (
+          {data?.measure?.thema === 'houtbouw' ? (
             <Link href='/measures/houtbouw' className=''>
               <a className='text-greenLink breadcrumb'>← Terug</a>
             </Link>
@@ -86,11 +86,11 @@ export default function TestMeasure({ data }) {
           <div className='grid grid-cols-1 sm:grid-cols-3 '>
             <div className='w-full sm:max-w-3xl pb-20 col-span-2 '>
               <h1 className='hidden lg:block my-9 text-green1 mobile sm:main'>
-                {data.measure?.titel}
+                {data?.measure?.titel}
               </h1>
 
               <div className='py-4 m'>
-                <PortableText value={data.measure?.content} components={components} />
+                <PortableText value={data?.measure?.content} components={components} />
                 {}
               </div>
               <MeasureTableTest data={data} />
