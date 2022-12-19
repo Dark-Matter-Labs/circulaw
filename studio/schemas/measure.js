@@ -1,5 +1,5 @@
 
-
+import { InformationCircleIcon } from "@heroicons/react/outline"
 
 export default {
     title: 'Measure',
@@ -281,6 +281,7 @@ export default {
           },
           {
             type: 'block',
+            of: [{type: 'hoverText'}],
             lists: [
               {title: 'Bullet', value: 'bullet'},
               {title: 'Number', value: 'number'},
