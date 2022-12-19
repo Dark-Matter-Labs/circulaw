@@ -26,20 +26,11 @@ const measureQuery = `
     artikelLink,
     lawDate,
     governmentLevel,
-    content[] {
-      ...,
-        _type == "greenBox" => {
-          ...,
-          asset->
-        }
+    content
     },
 }
 `;
-{
-  /* 
-(
-*/
-}
+
 
 const components = {
   list: {
