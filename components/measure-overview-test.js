@@ -20,7 +20,7 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
     <div {...props} className={`${viewportClasses}`}>
       {children}
       <div className='container pb-2'>
-        {data.measure?.thema === 'houtbouw' ? (
+        {data?.measure?.thema === 'houtbouw' ? (
           <div className='container-image'>
             <Image src={IcontWood} alt='Icon of a Wood Log' />
           </div>
@@ -30,10 +30,10 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
           </div>
         )}
         <div className=''>
-          <Link href={'/' + data.measure?.thema.replace(/\s+/g, '-').toLowerCase()}>
+          <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()}>
             <a>
               <span className='font-openSans font-bold pl-2 text-greenLink first-letter:uppercase block'>
-                {data.measure?.thema}
+                {data?.measure?.thema}
               </span>
             </a>
           </Link>
@@ -54,7 +54,7 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
           </RTooltip>
         </div>
         <span className='block-inline font-semibold text-base text-gray-900'>
-          {data.measure?.rLadder.map((rValue) => (
+          {data?.measure?.rLadder.map((rValue) => (
             <span key={rValue} className='bg-green2 text-white rounded-full p-1 mr-2'>
               {rValue}
             </span>
@@ -68,7 +68,7 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
         </div>
 
         <div className='font-manrope font-normal text-base first-letter:capitalize'>
-          <p>{data.measure?.subrechtsgebied}</p>
+          <p>{data?.measure?.subrechtsgebied}</p>
         </div>
       </div>
 
@@ -96,7 +96,7 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
             <div
               key={rating}
               className={classNames(
-                Number(data.measure?.juridischInvloed) > rating ? 'score-true' : 'score-false',
+                Number(data?.measure?.juridischInvloed) > rating ? 'score-true' : 'score-false',
                 'mr-4 h-6 w-6 flex-shrink-0 rounded-full',
               )}
               aria-hidden='true'
@@ -130,7 +130,7 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
             <span
               key={rating}
               className={classNames(
-                Number(data.measure?.juridischHaalbaarheid) > rating ? 'score-true' : 'score-false',
+                Number(data?.measure?.juridischHaalbaarheid) > rating ? 'score-true' : 'score-false',
                 'mr-4 h-6 w-6 flex-shrink-0 rounded-full',
               )}
               aria-hidden='true'
