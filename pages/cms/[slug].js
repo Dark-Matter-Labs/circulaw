@@ -32,6 +32,9 @@ const measureQuery = `
 
 
 const components = {
+  types: {
+    greenBox: ({value}) => <div className='bg-green3 border-none rounded-lg w-4/5'><h3 className='pl-4 pt-4 pb-2'>{value?.greenBoxTitle}</h3><div className='pl-4 pb-4 body-text-mobile sm:body-text'>{value?.greenBoxText}</div></div>
+  },
   list: {
     bullet: ({children}) => <ul className="list-disc pl-6">{children}</ul>,
     number: ({children}) => <div className='newlineDisplay body-text-mobile sm:body-text truncate'><ol className='list-decimal pl-6 pb-4 mobile sm:main'>{children}</ol></div>
