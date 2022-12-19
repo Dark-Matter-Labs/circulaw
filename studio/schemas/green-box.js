@@ -6,13 +6,12 @@ export default {
         {
             title: 'Green Box Title',
             name: 'greenBoxTitle',
-            type: 'blockContent',
+            type: 'string',
         },
         {
             title: 'Green Box Text',
             name: 'greenBoxText',
             type: 'text',
         },
-
     ]
 }

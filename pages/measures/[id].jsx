@@ -78,6 +78,8 @@ export default function Law() {
           <div className='grid grid-cols-1 sm:grid-cols-3 '>
             <div className='w-full sm:max-w-3xl pb-20 col-span-2 '>
               <h1 className='hidden lg:block my-9 text-green1 mobile sm:main'>{data.titel}</h1>
+              
+              
               <div className='py-4 m'>
                 <h2 className='pb-2 mobile sm:main'>
                   {data.kop_1_samenvatting_juridische_maatregel}

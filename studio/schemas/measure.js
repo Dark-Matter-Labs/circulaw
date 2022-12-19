@@ -277,6 +277,9 @@ export default {
         type: 'array',
         of: [
           {
+            type: 'greenBox'
+          },
+          {
             type: 'block',
             lists: [
               {title: 'Bullet', value: 'bullet'},
@@ -308,10 +311,9 @@ export default {
                       name: 'blank',
                       type: 'boolean',
                     }
-                  ]
-
-                }
-              ]
+                  ],
+                },
+                ]
             }
           }
         ],

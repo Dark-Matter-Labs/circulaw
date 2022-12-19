@@ -26,7 +26,13 @@ const measureQuery = `
     artikelLink,
     lawDate,
     governmentLevel,
-    content,
+    content[] {
+      ...,
+        _type == "greenBox" => {
+          ...,
+          asset->
+        }
+    },
 }
 `;
 {
@@ -36,9 +42,6 @@ const measureQuery = `
 }
 
 const components = {
-  listItem: {
-    number: ({children}) => <li className='mobile sm:main'>{children}</li>
-  },
   list: {
     bullet: ({children}) => <ul className="list-disc pl-6">{children}</ul>,
     number: ({children}) => <div className='newlineDisplay body-text-mobile sm:body-text truncate'><ol className='list-decimal pl-6 pb-4 mobile sm:main'>{children}</ol></div>
@@ -72,6 +75,8 @@ const components = {
 };
 
 export default function TestMeasure({ data }) {
+
+
   return (
     <Layout>
       <div className='gradient-bg'>
@@ -96,6 +101,7 @@ export default function TestMeasure({ data }) {
 
               <div className='py-4 m'>
                 <PortableText value={data.measure?.content} components={components} />
+                {}
               </div>
               <MeasureTableTest data={data} />
             </div>
