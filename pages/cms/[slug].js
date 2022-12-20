@@ -28,8 +28,6 @@ const measureQuery = `
     lawDate,
     governmentLevel,
     content,
-    "pdf": content[_type == "pdfBlock"]{
-      '': asset-> {url},}
 }
 `;
 
@@ -67,8 +65,8 @@ const components = {
       </>
     ),
     pdfBlock: ({ value }) => {
-      const [_file, id, extension] = value.asset._ref.split('-');
-      console.log(_file, id, extension);
+      // eslint-disable-next-line
+      const [_file, id, extension] = value.asset._ref.split('-'); 
       return (
         <div className='bg-green1 px-10 py-10'>
           <h2 className='pb-2 mobile sm:main text-white'>{value.pdfTitle}</h2>
@@ -125,8 +123,6 @@ const components = {
 };
 
 export default function TestMeasure({ data }) {
-  console.log(data?.measure?.pdf[0].url);
-
   return (
     <Layout>
       <div className='gradient-bg'>
