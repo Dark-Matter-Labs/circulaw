@@ -233,19 +233,20 @@ export default function MeasuresLayout(props) {
       const fuse = new Fuse(filteredLaws, {
         threshold: 0.4,
         keys: [
-          'titel',
-          'introductie_juridische_maatregel',
-          'eisen_en_beperkingen',
-          'kop_1_samenvatting_juridische_maatregel',
-          'kop_2_toepassing_juridische_maatregel',
-          'toepassing_juridische_maatregel',
-          'kop_3_uit_de_praktijk',
-          'uit_de_praktijk',
-          'subrechtsgebied',
-          'artikel',
-          'citeertitel',
+          {name:'titel', weight: 1},
+          {name:'introductie_juridische_maatregel', weight: 0.7},
+          {name:'eisen_en_beperkingen', weight: 0.5},
+          {name:'kop_1_samenvatting_juridische_maatregel', weight: 0.5},
+          {name:'kop_2_toepassing_juridische_maatregel' , weight: 0.5},
+          {name: 'toepassing_juridische_maatregel' , weight: 0.5},
+          {name:'kop_3_uit_de_praktijk' , weight: 0.5},
+          {name:'uit_de_praktijk' , weight: 0.5},
+          {name:'subrechtsgebied', weight: 0.5},
+          {name:'artikel', weight: 0.5},
+          {name:'citeertitel', weight: 0.5},
         ],
         includeScore: true,
+        ignoreLocation:true
       });
 
       const results = fuse.search(searchValue);
