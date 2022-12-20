@@ -33,13 +33,22 @@ const measureQuery = `
 }
 `;
 
-
 const components = {
   types: {
-    greenBox: ({value}) => <div className='bg-green3 border-none rounded-lg w-4/5'><h3 className='pl-4 pt-4 pb-2'>{value?.greenBoxTitle}</h3><div className='pl-4 pb-4 body-text-mobile sm:body-text'>{value?.greenBoxText}</div></div>,
-    hoverText: ({value, isInline}) => <>
-    <button type='button' className = 'group' style={{display: isInline ? 'inline-block' : 'block'}}>
-    <svg  
+    greenBox: ({ value }) => (
+      <div className='bg-green3 border-none rounded-lg w-4/5'>
+        <h3 className='pl-4 pt-4 pb-2'>{value?.greenBoxTitle}</h3>
+        <div className='pl-4 pb-4 body-text-mobile sm:body-text'>{value?.greenBoxText}</div>
+      </div>
+    ),
+    hoverText: ({ value, isInline }) => (
+      <>
+        <button
+          type='button'
+          className='group'
+          style={{ display: isInline ? 'inline-block' : 'block' }}
+        >
+          <svg
             className='text-gray-300 w-5 h-5'
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 20 20'
@@ -51,36 +60,50 @@ const components = {
               clipRule='evenodd'
             />
           </svg>
-          <div className='inline-block max-w-xs absolute invisible group-hover:visible z-10 py-2 px-3 bg-gray-300 text-black text-sm text-left rounded-lg opacity-0 group-hover:opacity-100 transition tooltip'>{value.hoverText}
+          <div className='inline-block max-w-xs absolute invisible group-hover:visible z-10 py-2 px-3 bg-gray-300 text-black text-sm text-left rounded-lg opacity-0 group-hover:opacity-100 transition tooltip'>
+            {value.hoverText}
           </div>
-          </button>
-    </>,
-    pdfBlock: ({value}) => {
-      const[_file, id, extension] = value.asset._ref.split('-');
-      console.log(_file, id, extension)
+        </button>
+      </>
+    ),
+    pdfBlock: ({ value }) => {
+      const [_file, id, extension] = value.asset._ref.split('-');
+      console.log(_file, id, extension);
       return (
         <div className='bg-green1 px-10 py-10'>
           <h2 className='pb-2 mobile sm:main text-white'>{value.pdfTitle}</h2>
           <p className='body-text-mobile sm:body-text text-white1 pb-4'>{value.pdfText}</p>
-        <a href= {`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '2vfoxb3h'}/${process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'}/${id}.${extension}`} target='_blank'>
-        <CustomButton color = 'toPdf'>Bekijk de leidraad (pdf)→</CustomButton>
-        </a>
+          <a
+            href={`https://cdn.sanity.io/files/${
+              process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '2vfoxb3h'
+            }/${process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'}/${id}.${extension}`}
+            target='_blank'
+            rel='noreferrer'
+          >
+            <CustomButton color='toPdf'>Bekijk de leidraad (pdf)→</CustomButton>
+          </a>
         </div>
-      )
-    }
+      );
+    },
     // need to add hover text comp
   },
   list: {
-    bullet: ({children}) => <ul className="list-disc pl-6">{children}</ul>,
-    number: ({children}) => <div className='newlineDisplay body-text-mobile sm:body-text truncate'><ol className='list-decimal pl-6 pb-4 mobile sm:main'>{children}</ol></div>
+    bullet: ({ children }) => <ul className='list-disc pl-6'>{children}</ul>,
+    number: ({ children }) => (
+      <div className='newlineDisplay body-text-mobile sm:body-text truncate'>
+        <ol className='list-decimal pl-6 pb-4 mobile sm:main'>{children}</ol>
+      </div>
+    ),
   },
   block: {
-    h2: ({children}) => <h2 className='pb-2 mobile sm:main'>{children}</h2>,
+    h2: ({ children }) => <h2 className='pb-2 mobile sm:main'>{children}</h2>,
     // need to add other styles here
-    normal: ({children}) => <p className='newlineDisplay body-text-mobile sm:body-text pb-4'>{children}</p>
+    normal: ({ children }) => (
+      <p className='newlineDisplay body-text-mobile sm:body-text pb-4'>{children}</p>
+    ),
   },
   marks: {
-    link: ({ children, value }) =>(
+    link: ({ children, value }) =>
       value.blank == true ? (
         <>
           <a
@@ -97,14 +120,12 @@ const components = {
         <a className='text-greenLink link-mobile sm:link' href={value.href}>
           {children}
         </a>
-      )
       ),
   },
 };
 
 export default function TestMeasure({ data }) {
-
-  console.log(data?.measure?.pdf[0].url)
+  console.log(data?.measure?.pdf[0].url);
 
   return (
     <Layout>
