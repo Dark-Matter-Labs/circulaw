@@ -121,6 +121,7 @@ export default function ToolTips({ children, icon, data }) {
                             Grootte van het gebied, bijvoorbeeld gemeentelijk, provinciaal of
                             landelijk
                           </p>
+                          <br />
                           {/* CONDITIONAL TEXT */}
                           {data?.measure?.juridischInvloed == 'low' && 
                           <div>
