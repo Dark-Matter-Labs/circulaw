@@ -5,15 +5,12 @@ import IconWood from '../public/icons/wood.svg';
 import WindmillIcon from '../public/windmill.svg';
 
 
-
-
 export default function PolicyList(props) {
   let lawData = [];
   if (props.data) {
     lawData = props.data
   }
   return (
-  
   <>
   {lawData.map((law, index) => (
     <div key = {index} className='block sm:ml-0 lg:ml-28 pb-8 sm:pb-10'>
@@ -86,9 +83,6 @@ export default function PolicyList(props) {
                   {law.subrechtsgebied}
                 </div>
               </div>
-
-
-
       </div>
       </div>
     </div>

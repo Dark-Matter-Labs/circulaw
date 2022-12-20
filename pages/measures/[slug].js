@@ -5,8 +5,8 @@ import Link from 'next/link';
 import LinkIcon from '../../components/link-icon';
 import { PortableText } from '@portabletext/react';
 // import Image from 'next/image';
-import MeasureOverviewTest from '../../components/measure-overview-test';
-import MeasureTableTest from '../../components/measure-table-test';
+import MeasureOverview from '../../components/measure-overview';
+import MeasureTable from '../../components/measure-table';
 import CustomButton from '../../components/custom-button';
 
 const pathsQuery = `
@@ -138,7 +138,7 @@ export default function TestMeasure({ data }) {
             </Link>
           )}
 
-          <MeasureOverviewTest data={data} viewport='desktop' />
+          <MeasureOverview data={data} viewport='desktop' />
           <div className='grid grid-cols-1 sm:grid-cols-3 '>
             <div className='w-full sm:max-w-3xl pb-20 col-span-2 '>
               <h1 className='hidden lg:block my-9 text-green1 mobile sm:main'>
@@ -149,9 +149,9 @@ export default function TestMeasure({ data }) {
                 <PortableText value={data?.measure?.content} components={components} />
                 {}
               </div>
-              <MeasureTableTest data={data} />
+              <MeasureTable data={data} />
             </div>
-            <MeasureOverviewTest data={data} viewport='mobile' />
+            <MeasureOverview data={data} viewport='mobile' />
           </div>
         </div>
       </div>
