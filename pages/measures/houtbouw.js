@@ -5,10 +5,9 @@ import client from '../../lib/sanity';
 
 const lawsQuery = `
 *[_type == "measure" && thema == "houtbouw"]
-`
+`;
 
-
-export default function Measures({laws}) {
+export default function Measures({ laws }) {
   // casus must be exactly as written in data.js
   return (
     <Layout>
@@ -27,8 +26,7 @@ export default function Measures({laws}) {
   );
 }
 
-
 export async function getStaticProps() {
-  const laws = await client.fetch(lawsQuery)
-  return {props: {laws:laws}}
+  const laws = await client.fetch(lawsQuery);
+  return { props: { laws: laws } };
 }

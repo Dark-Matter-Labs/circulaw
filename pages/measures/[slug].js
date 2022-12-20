@@ -66,7 +66,7 @@ const components = {
     ),
     pdfBlock: ({ value }) => {
       // eslint-disable-next-line
-      const [_file, id, extension] = value.asset._ref.split('-'); 
+      const [_file, id, extension] = value.asset._ref.split('-');
       return (
         <div className='bg-green1 px-10 py-10 mb-8'>
           <h2 className='pb-2 mobile sm:main text-white'>{value.pdfTitle}</h2>
@@ -86,7 +86,11 @@ const components = {
     // need to add hover text comp
   },
   list: {
-    bullet: ({ children }) => <div className='newlineDisplay body-text-mobile sm:body-text truncate'><ul className='list-disc pl-6 pb-4 mobile sm:main'>{children}</ul></div>,
+    bullet: ({ children }) => (
+      <div className='newlineDisplay body-text-mobile sm:body-text truncate'>
+        <ul className='list-disc pl-6 pb-4 mobile sm:main'>{children}</ul>
+      </div>
+    ),
     number: ({ children }) => (
       <div className='newlineDisplay body-text-mobile sm:body-text truncate'>
         <ol className='list-decimal pl-6 pb-4 mobile sm:main'>{children}</ol>

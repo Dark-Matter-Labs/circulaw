@@ -114,33 +114,30 @@ export default function ToolTips({ children, icon, data }) {
                           </p>
                           <br />
                           {/* CONDITIONAL TEXT */}
-                          {data?.measure?.juridischHaalbaarheid == 'low' && 
-                          <div>
-                          <p className='tooltip-body font-bold'>
-                            <b>LOWWWWW</b>
-                          </p>
-                          <p className='tooltip-body'>
-                            I am here only if i am low
-                          </p>
-                          </div>}
-                          {data?.measure?.juridischHaalbaarheid == 'medium' && 
-                          <div>
-                          <p className='tooltip-body font-bold'>
-                            <b>MEDIUM</b>
-                          </p>
-                          <p className='tooltip-body'>
-                            I am here only if i am Medium
-                          </p>
-                          </div>}
-                          {data?.measure?.juridischHaalbaarheid == 'high' && 
-                          <div>
-                          <p className='tooltip-body font-bold'>
-                            <b>HIGH</b>
-                          </p>
-                          <p className='tooltip-body'>
-                            I am here only if i am High
-                          </p>
-                          </div>}
+                          {data?.measure?.juridischHaalbaarheid == 'low' && (
+                            <div>
+                              <p className='tooltip-body font-bold'>
+                                <b>LOWWWWW</b>
+                              </p>
+                              <p className='tooltip-body'>I am here only if i am low</p>
+                            </div>
+                          )}
+                          {data?.measure?.juridischHaalbaarheid == 'medium' && (
+                            <div>
+                              <p className='tooltip-body font-bold'>
+                                <b>MEDIUM</b>
+                              </p>
+                              <p className='tooltip-body'>I am here only if i am Medium</p>
+                            </div>
+                          )}
+                          {data?.measure?.juridischHaalbaarheid == 'high' && (
+                            <div>
+                              <p className='tooltip-body font-bold'>
+                                <b>HIGH</b>
+                              </p>
+                              <p className='tooltip-body'>I am here only if i am High</p>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>

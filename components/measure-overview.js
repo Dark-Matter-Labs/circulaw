@@ -87,7 +87,9 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
         </div>
 
         <div className='mt-3 flex items-center'>
-          <span className='font-manrope font-normal text-base border border-black rounded-xl uppercase px-2'>{data?.measure?.juridischInvloed}</span>
+          <span className='font-manrope font-normal text-base border border-black rounded-xl uppercase px-2'>
+            {data?.measure?.juridischInvloed}
+          </span>
         </div>
       </div>
 
@@ -109,7 +111,9 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
           </div>
         </div>
         <div className='mt-3 flex items-center w-10/12'>
-          <span className='font-manrope font-normal text-base border border-black rounded-xl px-2 uppercase'>{data?.measure?.juridischHaalbaarheid}</span>
+          <span className='font-manrope font-normal text-base border border-black rounded-xl px-2 uppercase'>
+            {data?.measure?.juridischHaalbaarheid}
+          </span>
         </div>
       </div>
     </div>
