@@ -18,13 +18,13 @@ export default function PolicyList(props) {
               {law?.thema === 'houtbouw' && (
                 <Image width='20' height='20' src={IconWood} alt='Icon of Wood' />
               )}
-              {law?.thema === 'circular-windturbines' && (
+              {law?.thema === 'circulaire-windturbines' && (
                 <Image width='20' height='20' src={WindmillIcon} alt='Icon of Wood' />
               )}
               {law?.thema === 'mattress' && (
                 <Image width='20' height='20' src={IconWood} alt='Icon of Wood' />
               )}
-              <span className='inline-block pl-4 font-openSans casus'>{law?.thema}</span>
+              <span className='inline-block pl-4 font-openSans casus'>{law?.thema.replace('-', ' ')}</span>
               {law?.extraContent &&
                 law?.extraContent.map((content) => (
                   <span

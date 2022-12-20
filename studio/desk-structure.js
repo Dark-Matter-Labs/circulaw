@@ -18,7 +18,7 @@ export const Structure = (S) =>
                       S.documentList()
                         .title('Houtbouw Measures')
                         .filter('_type == "measure" &&  thema == "houtbouw" && isExtended == true'))])),
-                S.listItem().title('Circular Windturbines').child(
+                S.listItem().title('Circulaire windturbines').child(
                   S.list().title('Extended').items([
                     S.listItem().title('Normal').child(
                       S.documentList()

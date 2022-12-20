@@ -5,7 +5,7 @@ const formatDate = (date) => {
   return dateObject.toLocaleDateString();
 };
 
-export default function MeasureTableTest({ data }) {
+export default function MeasureTable({ data }) {
   return (
     <>
       <table className='table-fixed w-full mt-5'>

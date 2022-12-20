@@ -64,7 +64,7 @@ export default {
         options: {
           list: [
             {title: 'Houtbouw', value: 'houtbouw'},
-            {title: 'Circulaire windturbines', value: 'circular-windturbines'},
+            {title: 'Circulaire windturbines', value: 'circulaire-windturbines'},
             {title: 'Mattress', value: 'mattress'},
           ], // <-- predefined values - can store these elsewhere if we want
           layout: 'dropdown'
