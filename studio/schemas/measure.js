@@ -160,9 +160,9 @@ export default {
         validation: Rule => Rule.required(),
         options: {
           list: [
-            {title: 'Low', value: '1'},
-            {title: 'Medium', value: '2'},
-            {title: 'High', value: '3'},
+            {title: 'Low', value: 'low'},
+            {title: 'Medium', value: 'medium'},
+            {title: 'High', value: 'high'},
           ],
           layout: 'radio',
           direction: 'horizontal'
@@ -177,9 +177,9 @@ export default {
         validation: Rule => Rule.required(),
         options: {
           list: [
-            {title: 'Low', value: '1'},
-            {title: 'Medium', value: '2'},
-            {title: 'High', value: '3'},
+            {title: 'Low', value: 'low'},
+            {title: 'Medium', value: 'medium'},
+            {title: 'High', value: 'high'},
           ],
           layout: 'radio',
           direction: 'horizontal',

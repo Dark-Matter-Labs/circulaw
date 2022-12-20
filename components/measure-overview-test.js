@@ -6,10 +6,6 @@ import RTooltip from '../components/r-ladder-tooltip';
 import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../components/juridische-invloed-tooltip';
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
-}
-
 const viewportType = {
   desktop: 'block lg:hidden',
   mobile: 'hidden lg:block float-right',
@@ -91,18 +87,7 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
         </div>
 
         <div className='mt-3 flex items-center'>
-          <span className='pr-4 font-manrope font-normal text-base'>LAAG</span>
-          {[0, 1, 2].map((rating) => (
-            <div
-              key={rating}
-              className={classNames(
-                Number(data?.measure?.juridischInvloed) > rating ? 'score-true' : 'score-false',
-                'mr-4 h-6 w-6 flex-shrink-0 rounded-full',
-              )}
-              aria-hidden='true'
-            />
-          ))}
-          <span className='font-manrope font-normal text-base'>HOOG</span>
+          <span className='font-manrope font-normal text-base border border-black rounded-xl uppercase px-2'>{data?.measure?.juridischInvloed}</span>
         </div>
       </div>
 
@@ -123,22 +108,8 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
             </JHTooltip>
           </div>
         </div>
-
         <div className='mt-3 flex items-center w-10/12'>
-          <span className='pr-4 font-manrope font-normal text-base'> LAAG</span>
-          {[0, 1, 2].map((rating) => (
-            <span
-              key={rating}
-              className={classNames(
-                Number(data?.measure?.juridischHaalbaarheid) > rating
-                  ? 'score-true'
-                  : 'score-false',
-                'mr-4 h-6 w-6 flex-shrink-0 rounded-full',
-              )}
-              aria-hidden='true'
-            />
-          ))}
-          <span className='font-manrope font-normal text-base'>HOOG</span>
+          <span className='font-manrope font-normal text-base border border-black rounded-xl px-2 uppercase'>{data?.measure?.juridischHaalbaarheid}</span>
         </div>
       </div>
     </div>
