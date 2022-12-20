@@ -274,6 +274,14 @@ export default {
       },
       // COPY CONTENT
       {
+        title: 'Intro Text',
+        name: 'introText',
+        type: 'text',
+        description: 'copy and past the first paragraph of content (to be displayed on the measures list)',
+        validaton: Rule => Rule.required(),
+        group: 'copy'
+      },
+      {
         title:'Content',
         name: 'content',
         type: 'array',

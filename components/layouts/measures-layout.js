@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef, Fragment, useCallback } from 'react';
 import { Dialog, Transition, Combobox } from '@headlessui/react';
-import useSWR from 'swr';
 import Image from 'next/image';
 import Link from 'next/link';
 import createPersistedState from 'use-persisted-state';
@@ -15,16 +14,17 @@ import {
 
 import SearchFilter from '/components/search-filter';
 import PolicyList from '/components/policy-list';
-import { get_fetcher } from '../../utils/filter-functions';
 import Fuse from 'fuse.js';
-
-const fetcher = get_fetcher();
+import useSWR from 'swr';
+import client from '../../lib/sanity';
+import { groq } from 'next-sanity';
 
 // creating objects for persisting values
 const useSelectedState = createPersistedState('selected');
 
 export default function MeasuresLayout(props) {
-  const { data } = useSWR(() => '/api/laws/', fetcher);
+  // need to add error ?
+  const {data}  = useSWR(groq`*[_type == "measure"]`, (query) => client.fetch(query));
   // creating references to access child component functions
   const wettelijkFilterRef = useRef();
   const rechtsgebiedFilterRef = useRef();
@@ -33,6 +33,7 @@ export default function MeasuresLayout(props) {
   const juridischeFilterRef = useRef();
 
   const [laws, setLaws] = useState(data);
+
   const [selected, setSelected] = useSelectedState({
     wettelijk_bevoegdheidsniveau: [],
     rechtsgebied: [],
@@ -152,28 +153,28 @@ export default function MeasuresLayout(props) {
       let numCont = 0;
       let numGron = 0;
 
-      filteredLaws = filteredLaws.filter((element) => {
-        return element.casus === props.casus;
+      filteredLaws = filteredLaws?.filter((element) => {
+        return element.thema === props.thema;
       });
 
       if (selected.wettelijk_bevoegdheidsniveau.length > 0) {
         if (selected.wettelijk_bevoegdheidsniveau.includes('Europees')) {
-          filteredLaws = filteredLaws.filter((element) => {
+          filteredLaws = filteredLaws?.filter((element) => {
             return element.europees;
           });
         }
         if (selected.wettelijk_bevoegdheidsniveau.includes('Nationaal')) {
-          filteredLaws = filteredLaws.filter((element) => {
+          filteredLaws = filteredLaws?.filter((element) => {
             return element.nationaal;
           });
         }
         if (selected.wettelijk_bevoegdheidsniveau.includes('Provinciaal')) {
-          filteredLaws = filteredLaws.filter((element) => {
+          filteredLaws = filteredLaws?.filter((element) => {
             return element.provinciaal;
           });
         }
         if (selected.wettelijk_bevoegdheidsniveau.includes('Gemeentelijk')) {
-          filteredLaws = filteredLaws.filter((element) => {
+          filteredLaws = filteredLaws?.filter((element) => {
             return element.gemeentelijk;
           });
         }
@@ -181,51 +182,51 @@ export default function MeasuresLayout(props) {
 
       if (selected.r_ladder.length > 0) {
         if (selected.r_ladder.includes('R1')) {
-          filteredLaws = filteredLaws.filter((element) => {
+          filteredLaws = filteredLaws?.filter((element) => {
             return element.R1;
           });
         }
         if (selected.r_ladder.includes('R2')) {
-          filteredLaws = filteredLaws.filter((element) => {
+          filteredLaws = filteredLaws?.filter((element) => {
             return element.R2;
           });
         }
         if (selected.r_ladder.includes('R3')) {
-          filteredLaws = filteredLaws.filter((element) => {
+          filteredLaws = filteredLaws?.filter((element) => {
             return element.R3;
           });
         }
         if (selected.r_ladder.includes('R4')) {
-          filteredLaws = filteredLaws.filter((element) => {
+          filteredLaws = filteredLaws?.filter((element) => {
             return element.R4;
           });
         }
         if (selected.r_ladder.includes('R5')) {
-          filteredLaws = filteredLaws.filter((element) => {
+          filteredLaws = filteredLaws?.filter((element) => {
             return element.R5;
           });
         }
         if (selected.r_ladder.includes('R6')) {
-          filteredLaws = filteredLaws.filter((element) => {
+          filteredLaws = filteredLaws?.filter((element) => {
             return element.R6;
           });
         }
       }
 
       if (selected.rechtsgebied.length > 0) {
-        filteredLaws = filteredLaws.filter((element) => {
+        filteredLaws = filteredLaws?.filter((element) => {
           return selected.rechtsgebied.includes(element.rechtsgebied);
         });
       }
 
       if (selected.juridische_houdbaarheid.length > 0) {
-        filteredLaws = filteredLaws.filter((element) => {
+        filteredLaws = filteredLaws?.filter((element) => {
           return selected.juridische_houdbaarheid.includes(element.juridische_houdbaarheid);
         });
       }
 
       if (selected.subrechtsgebied.length > 0) {
-        filteredLaws = filteredLaws.filter((element) => {
+        filteredLaws = filteredLaws?.filter((element) => {
           return selected.subrechtsgebied.includes(element.subrechtsgebied);
         });
       }
@@ -258,7 +259,7 @@ export default function MeasuresLayout(props) {
       firstLawFunction();
 
       // dynamically calculate filter numbers
-      filteredLaws.map((measure) => {
+      filteredLaws?.map((measure) => {
         if (measure.europees) {
           numEuropee += 1;
         }
@@ -325,7 +326,7 @@ export default function MeasuresLayout(props) {
       });
 
       setLaws(filteredLaws);
-      setNumberOfLaws(filteredLaws.length);
+      setNumberOfLaws(filteredLaws?.length);
 
       setNumberOfEuropee(numEuropee);
       setNumberOfNationaal(numNationaal);
@@ -355,7 +356,7 @@ export default function MeasuresLayout(props) {
       setNumberOfCont(numCont);
       setNumberOfGron(numGron);
     } // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data, selected, searchValue, props.casus]);
+  }, [data, selected, searchValue, props.thema]);
 
   // effect to check for data from persisted state from localStorage and update values when needed
   useEffect(() => {
@@ -526,8 +527,8 @@ export default function MeasuresLayout(props) {
             <a>Home</a>
           </Link>
           <span className=''> → </span>
-          <Link href={`/${props.casus.toLowerCase().replace(/ /g, '-')}`}>
-            <a className='inline-block lowercase first-letter:uppercase'>{props.casus}</a>
+          <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`}>
+            <a className='inline-block lowercase first-letter:uppercase'>{props.thema}</a>
           </Link>
         </div>
         <div className='hidden sm:block col-span-2 bg-green3 bg-opacity font-manrope p-5 mt-2 mb-10 max-w-3xl'>
@@ -540,11 +541,11 @@ export default function MeasuresLayout(props) {
 
         <div className='container mb-2 sm:mb-20 mt-10'>
           <div className='container-image'>
-            <Image src={props.icon} alt={`${props.casus} 'icon'`} />
+            <Image src={props.icon} alt={`${props.thema} 'icon'`} />
           </div>
           <div>
             <h2 className='max-w-0 leading-6 pb-1 pl-1 mobile sm:main lowercase first-letter:uppercase'>
-              {props.casus} stimuleren
+              {props.thema} stimuleren
             </h2>
           </div>
         </div>
@@ -606,7 +607,7 @@ export default function MeasuresLayout(props) {
               <div>
                 <span className='font-manrope text-lg sm:text-xl'>
                   <b>0</b> resultaten in{' '}
-                  <b className='inline-block lowercase first-letter:uppercase'>{props.casus}</b>{' '}
+                  <b className='inline-block lowercase first-letter:uppercase'>{props.thema}</b>{' '}
                   voor <b>{searchValue}</b>
                 </span>
               </div>
@@ -615,7 +616,7 @@ export default function MeasuresLayout(props) {
               <div>
                 <span className='font-manrope text-lg sm:text-xl'>
                   <b>{numberOfLaws}</b> resultaten in{' '}
-                  <b className='inline-block lowercase first-letter:uppercase'>{props.casus}</b>{' '}
+                  <b className='inline-block lowercase first-letter:uppercase'>{props.thema}</b>{' '}
                   voor <b>{searchValue}</b>
                 </span>
               </div>
@@ -625,7 +626,7 @@ export default function MeasuresLayout(props) {
               <div>
                 <span className='font-manrope text-lg sm:text-xl'>
                   <b>{numberOfLaws}</b> resultaten in{' '}
-                  <b className='inline-block lowercase first-letter:uppercase'>{props.casus}</b>{' '}
+                  <b className='inline-block lowercase first-letter:uppercase'>{props.thema}</b>{' '}
                   voor <b>{searchValue}</b>
                 </span>
               </div>
@@ -635,7 +636,7 @@ export default function MeasuresLayout(props) {
               <div>
                 <span className='font-manrope text-lg sm:text-xl'>
                   <b>{numberOfLaws}</b> resultaten in{' '}
-                  <b className='inline-block lowercase first-letter:uppercase'>{props.casus}</b>{' '}
+                  <b className='inline-block lowercase first-letter:uppercase'>{props.thema}</b>{' '}
                   <b>{searchValue}</b>
                 </span>
               </div>
@@ -735,7 +736,7 @@ export default function MeasuresLayout(props) {
         <div className='mt-10 col-span-3 '>
           {data && (
             <div>
-              <PolicyList data={laws} casus={props.casus} />
+              <PolicyList data={laws} casus={props.thema} />
             </div>
           )}
         </div>
