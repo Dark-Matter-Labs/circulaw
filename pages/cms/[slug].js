@@ -7,6 +7,7 @@ import { PortableText } from '@portabletext/react';
 // import Image from 'next/image';
 import MeasureOverviewTest from '../../components/measure-overview-test';
 import MeasureTableTest from '../../components/measure-table-test';
+import CustomButton from '../../components/custom-button';
 
 const pathsQuery = `
 *[_type == "measure" && defined(slug.current)][].slug.current
@@ -26,7 +27,9 @@ const measureQuery = `
     artikelLink,
     lawDate,
     governmentLevel,
-    content
+    content,
+    "pdf": content[_type == "pdfBlock"]{
+      '': asset-> {url},}
 }
 `;
 
@@ -35,7 +38,7 @@ const components = {
   types: {
     greenBox: ({value}) => <div className='bg-green3 border-none rounded-lg w-4/5'><h3 className='pl-4 pt-4 pb-2'>{value?.greenBoxTitle}</h3><div className='pl-4 pb-4 body-text-mobile sm:body-text'>{value?.greenBoxText}</div></div>,
     hoverText: ({value, isInline}) => <>
-    <span className='group/item' style={{display: isInline ? 'inline-block' : 'block'}}>
+    <button type='button' className = 'group' style={{display: isInline ? 'inline-block' : 'block'}}>
     <svg  
             className='text-gray-300 w-5 h-5'
             xmlns='http://www.w3.org/2000/svg'
@@ -48,10 +51,23 @@ const components = {
               clipRule='evenodd'
             />
           </svg>
-          </span>
-          <div className='group/edit invisible group-hover/item:visible'>{value.hoverText}</div>
-    </>
-    
+          <div className='inline-block max-w-xs absolute invisible group-hover:visible z-10 py-2 px-3 bg-gray-300 text-black text-sm text-left rounded-lg opacity-0 group-hover:opacity-100 transition tooltip'>{value.hoverText}
+          </div>
+          </button>
+    </>,
+    pdfBlock: ({value}) => {
+      const[_file, id, extension] = value.asset._ref.split('-');
+      console.log(_file, id, extension)
+      return (
+        <div className='bg-green1 px-10 py-10'>
+          <h2 className='pb-2 mobile sm:main text-white'>{value.pdfTitle}</h2>
+          <p className='body-text-mobile sm:body-text text-white1 pb-4'>{value.pdfText}</p>
+        <a href= {`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '2vfoxb3h'}/${process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'}/${id}.${extension}`} target='_blank'>
+        <CustomButton color = 'toPdf'>Bekijk de leidraad (pdf)→</CustomButton>
+        </a>
+        </div>
+      )
+    }
     // need to add hover text comp
   },
   list: {
@@ -88,6 +104,7 @@ const components = {
 
 export default function TestMeasure({ data }) {
 
+  console.log(data?.measure?.pdf[0].url)
 
   return (
     <Layout>

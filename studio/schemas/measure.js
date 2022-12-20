@@ -222,6 +222,21 @@ export default {
         },
         group: ['filter', 'table']
       },
+      {
+        title: 'Extra Content',
+        name: 'extraContent',
+        type: 'array',
+        description: 'Does the measure include examples or guidelines?',
+        of: [{type: 'string'}],
+        options: {
+          list: [
+            {title: 'Example', value: 'example'},
+            {title: 'Guideline', value: 'guideline'},
+          ],
+          layout: 'grid',
+        },
+        group: ['filter']
+      },
       // ITEMS ONLY IN TABLE
       {
         title: 'Citeertitel',
@@ -259,19 +274,6 @@ export default {
       },
       // COPY CONTENT
       {
-        title: 'Content Builder',
-        name: 'contentBuilder',
-        type: 'array',
-        of: [
-          {type: 'copyBlock'},
-          {type: 'greenBox'},
-          {type: 'pdfBlock'},
-          {type: 'imageBlock'}
-        ],
-        group: 'copy'
-      },
-      // MAKE GOOD ONE
-      {
         title:'Content',
         name: 'content',
         type: 'array',
@@ -280,8 +282,15 @@ export default {
             type: 'greenBox'
           },
           {
+            type: 'pdfBlock'
+          },
+          {
             type: 'block',
-            of: [{type: 'hoverText'}],
+            of: [
+              {
+                type: 'hoverText'
+              },
+            ],
             lists: [
               {title: 'Bullet', value: 'bullet'},
               {title: 'Number', value: 'number'},

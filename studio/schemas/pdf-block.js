@@ -2,7 +2,7 @@
 export default {
     title: 'PDF Block',
     name: 'pdfBlock',
-    type: 'object',
+    type: 'file',
     fields: [
         {
             title: 'PDF Title',
@@ -15,14 +15,9 @@ export default {
             type: 'text',
         },
         {
-            title: 'PDF URL',
-            name: 'pdfUrl',
-            type: 'url',
-        },{
             title: 'PDF Button Text',
             name: 'pdfButtonText',
             type: 'string',
         },
-
     ]
 }
