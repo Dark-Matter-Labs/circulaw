@@ -74,7 +74,7 @@ export default function MeasureOverviewTest({ viewport, children, data, ...props
             <span className='font-manrope font-semibold text-lg text-black1'>
               Juridisch invloed
             </span>
-            <JITooltip>
+            <JITooltip data={data}>
               <svg className='w-6 h-6 fill-current text-black mx-2' viewBox='0 0 26 26'>
                 <circle cx='12' cy='15' r='10' fill='#979797' />
                 <path
