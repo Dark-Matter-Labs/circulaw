@@ -230,34 +230,35 @@ export default function MeasuresLayout(props) {
         });
       }
 
+
+
       const fuse = new Fuse(filteredLaws, {
         keys: [
-          { 
-            name: 'title',
-            weight: 2
-          },
-          { 
-            name: 'introductie_juridische_maatregel',
-            weight: 1.5
-          },
-          'eisen_en_beperkingen',
-          'kop_1_samenvatting_juridische_maatregel',
-          'kop_2_toepassing_juridische_maatregel',
-          'toepassing_juridische_maatregel',
-          'kop_3_uit_de_praktijk',
-          'uit_de_praktijk',
-          'subrechtsgebied',
-          'artikel',
-          'citeertitel',
+          {name: 'titel', weight: 1},
+          {name: 'introductie_juridische_maatregel', weight: 0.7},
+          {name: 'eisen_en_beperkingen', weight: 0.7},
+          {name: 'kop_1_samenvatting_juridische_maatregel', weight: 0.5},
+          {name: 'kop_2_toepassing_juridische_maatregel', weight: 0.5},
+          {name: 'toepassing_juridische_maatregel', weight: 0.5},
+          {name: 'kop_3_uit_de_praktijk', weight: 0.5},
+          {name: 'uit_de_praktijk', weight: 0.5},
+          {name: 'subrechtsgebied', weight: 0.5},
+          {name: 'artikel', weight: 0.5},
+          {name: 'citeertitel', weight: 0.5},
         ],
         includeScore: true,
-        threshold: 0.4,
-        ignoreLocation: true, 
+        threshold: 0.2,
+        ignoreLocation: true,
       });
 
       const results = fuse.search(searchValue);
       const lawResults = searchValue ? results.map((result) => result.item) : filteredLaws;
       filteredLaws = lawResults;
+      console.log(filteredLaws, 'Regels hergebruik producten')
+
+      // display scores in consol for testing
+      const scores = results.map((result) => result.score)
+      console.log(scores)
 
       // setting values for autocomplete
       setSelectedResults(filteredLaws);
@@ -568,7 +569,7 @@ export default function MeasuresLayout(props) {
                   <Combobox.Input
                     onChange={(e) => setSearchValue(e.target.value)}
                     autoComplete={'off'}
-                    className='w-full py-2 px-3 outline-none border-0 rounded-lg focus:ring-0 font-openSans text-grey1 italic'
+                    className='w-full py-2 px-3 outline-none border-0 rounded-lg focus:ring-0 font-openSans placeholder:text-grey1 placeholder:italic'
                     displayValue={() => searchValue}
                     placeholder='Zoek op trefwoord'
                   />
@@ -576,7 +577,7 @@ export default function MeasuresLayout(props) {
                 {/* display suggestions */}
                 {searchValue !== '' && (
                   <Combobox.Options>
-                    {selectedResults?.slice(0, 5).map((law) => (
+                    {selectedResults?.slice(0, 10).map((law) => (
                       <Combobox.Option
                         key={law.id}
                         value={law}
@@ -587,14 +588,14 @@ export default function MeasuresLayout(props) {
                         {({ active }) => (
                           <li
                             className={`${
-                              selectedResults?.slice(0, 5).slice(-1)[0].id === law.id &&
+                              selectedResults?.slice(0, 10).slice(-1)[0].id === law.id &&
                               active === true
                                 ? 'rounded-b-lg'
                                 : ''
                             } ${
                               active
-                                ? 'bg-green2 text-white border-0'
-                                : 'bg-transparent text-green1 border-0'
+                                ? 'bg-green2 text-white border-0 py-0.5 pl-0.5'
+                                : 'bg-transparent text-green1 border-0 py-0.5 pl-0.5'
                             } `}
                           >
                             {law.titel}
