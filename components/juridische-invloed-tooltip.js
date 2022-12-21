@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
 
-export default function ToolTips({ children, icon }) {
+export default function ToolTips({ children, icon, data }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -121,6 +121,32 @@ export default function ToolTips({ children, icon }) {
                             Grootte van het gebied, bijvoorbeeld gemeentelijk, provinciaal of
                             landelijk
                           </p>
+                          <br />
+                          {/* CONDITIONAL TEXT */}
+                          {data?.measure?.juridischInvloed == 'low' && (
+                            <div>
+                              <p className='tooltip-body font-bold'>
+                                <b>LOWWWWW</b>
+                              </p>
+                              <p className='tooltip-body'>I am here only if i am low</p>
+                            </div>
+                          )}
+                          {data?.measure?.juridischInvloed == 'medium' && (
+                            <div>
+                              <p className='tooltip-body font-bold'>
+                                <b>MEDIUM</b>
+                              </p>
+                              <p className='tooltip-body'>I am here only if i am Medium</p>
+                            </div>
+                          )}
+                          {data?.measure?.juridischInvloed == 'high' && (
+                            <div>
+                              <p className='tooltip-body font-bold'>
+                                <b>HIGH</b>
+                              </p>
+                              <p className='tooltip-body'>I am here only if i am High</p>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>

@@ -1,7 +1,8 @@
-import {defineConfig} from 'sanity'
+import {defineConfig, isSanityDocument} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
+import { Structure } from './desk-structure'
 
 export default defineConfig({
   name: 'CircuLaw',
@@ -12,7 +13,11 @@ export default defineConfig({
 
   basePath: '/studio',
 
-  plugins: [deskTool(), visionTool()],
+  plugins: [
+    deskTool({
+      structure: Structure,
+    }), 
+  visionTool()],
 
   schema: {
     types: schemaTypes,
