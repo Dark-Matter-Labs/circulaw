@@ -8,7 +8,6 @@ const lawsQuery = `
 `;
 
 export default function Measures({laws}) {
-  console.log(laws)
   return (
     <Layout>
       <MeasuresLayout
