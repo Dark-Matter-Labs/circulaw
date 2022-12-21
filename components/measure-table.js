@@ -28,7 +28,7 @@ export default function MeasureTable({ data }) {
               <a
                 className='text-greenLink underline'
                 target='_blank'
-                href={data?.measure?.link_naar_wetsartikel}
+                href={data?.measure?.artikelLink}
                 rel='noreferrer'
               >
                 {data?.measure?.artikel}
