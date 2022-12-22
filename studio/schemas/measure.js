@@ -31,14 +31,14 @@ export default {
         title: 'Is Extended',
         name: 'isExtended',
         type: 'boolean',
-        description: 'Select if this is the measure you want displayed as extended',
+        description: 'Select if this is the instrument you want displayed as extended',
         validation: Rule => Rule.required(),
       },
       {
         title: 'Titel',
         name: 'titel',
         type: 'string',
-        description: 'The title of the measure which will be displayed at the top of the page',
+        description: 'The title of the instrument which will be displayed at the top of the page',
         validation: Rule => Rule.required(),
       },
       {
@@ -59,7 +59,7 @@ export default {
         title: 'Thema',
         name: 'thema',
         type: 'string',
-        description: 'What themas is the measure?',
+        description: 'What themas is the instrument?',
         validation: Rule => Rule.required(),
         options: {
           list: [
@@ -226,7 +226,7 @@ export default {
         title: 'Extra Content',
         name: 'extraContent',
         type: 'array',
-        description: 'Does the measure include examples or guidelines?',
+        description: 'Does the instrument include examples or guidelines?',
         of: [{type: 'string'}],
         options: {
           list: [
@@ -277,7 +277,7 @@ export default {
         title: 'Intro Text',
         name: 'introText',
         type: 'text',
-        description: 'copy and past the first paragraph of content (to be displayed on the measures list)',
+        description: 'copy and past the first paragraph of content (to be displayed on the instrument list)',
         validaton: Rule => Rule.required(),
         group: 'copy'
       },

@@ -450,7 +450,7 @@ export const laws = [
       'Er zijn drie gunningscriteria: \n- beste prijs-kwaliteitsverhouding, \n- laagste kosten berekend op basis van kosteneffectiviteit, en \n- laagste prijs. \nAls de aanbestedende dienst kiest voor het gunningscriterium `beste prijs-kwaliteitverhouding’, moeten nadere kwaliteitscriteria worden opgesteld. De nadere criteria worden ook `subgunningscriteria’ genoemd.  In de wet staan voorbeelden opgesomd van nadere criteria die gehanteerd kunnen worden, zoals sociale, milieu- of innovatieve kenmerken. Dit is geen uitputtende lijst. Een aanbestedende dienst kan dus ook zelf nadere criteria bedenken om te formuleren wat een opdracht van hogere kwaliteit maakt.\n\nZie ook https://www.pianoo.nl/nl/inkoopproces/fase-1-voorbereiden/keuze-gunningscriterium-en-opstellen-subgunningscriteria',
     kop_2_toepassing_juridische_maatregel: 'Hoe kan je houtbouw verwerken in subgunningscriteria?',
     toepassing_juridische_maatregel:
-      'Je kan de opdracht zo formuleren dat verschillende circulaire kenmerken van invloed zijn bij bepaling van de kwaliteit. Hierbij kun je onder andere denken aan levenscycluskosten (zie maatregel 2.155a), mate van demontabiliteit, herbruikbaarheid van materialen.',
+      'Je kan de opdracht zo formuleren dat verschillende circulaire kenmerken van invloed zijn bij bepaling van de kwaliteit. Hierbij kun je onder andere denken aan levenscycluskosten (zie juridisch instrument 2.155a), mate van demontabiliteit, herbruikbaarheid van materialen.',
     is_er_een_praktijk_voorbeeld: false,
     kop_3_uit_de_praktijk: 'Uit de praktijk',
     uit_de_praktijk: '',
@@ -759,7 +759,7 @@ export const laws = [
     kop_2_toepassing_juridische_maatregel:
       'Houtbouw in de gemeentelijke omgevingsvisie vormgegeven',
     toepassing_juridische_maatregel:
-      'Door houtbouw in de gemeentelijk omgevingsvisie op te nemen, wordt het onderdeel van de beleidscyclus van de Omgevingswet. Dat maakt het mogelijk om later in de beleidscyclus houtbouw op de agenda te zetten. Vanuit de omgevingsvisie komen andere maatregelen – zoals omgevingsvergunningen, een omgevingsplan of omgevingswaarden – voort. Die kunnen vervolgens ingezet worden om houtbouw te stimuleren of af te dwingen.',
+      'Door houtbouw in de gemeentelijk omgevingsvisie op te nemen, wordt het onderdeel van de beleidscyclus van de Omgevingswet. Dat maakt het mogelijk om later in de beleidscyclus houtbouw op de agenda te zetten. Vanuit de omgevingsvisie komen andere juridische instrumenten – zoals omgevingsvergunningen, een omgevingsplan of omgevingswaarden – voort. Die kunnen vervolgens ingezet worden om houtbouw te stimuleren of af te dwingen.',
     is_er_een_praktijk_voorbeeld: false,
     kop_3_uit_de_praktijk: 'Uit de praktijk',
     uit_de_praktijk: '',
@@ -820,7 +820,7 @@ export const laws = [
       'In de gemeentelijke omgevingsvisie beschrijft de gemeente de integrale langetermijnvisie voor de fysieke leefomgeving. De visie geeft aan welke gemeentelijke kernkwaliteiten beschermd moeten worden en wat de maatschappelijke uitdaging is. De omgevingsvisie is de basis van het te vormen omgevingsbeleid en kan onder meer betrekking hebben op:\n- ruimtelijke aspecten;\n- energie-infrastructuur;\n- landbouw;\n- landschap\n- milieu;\n- natuur;\n- water.',
     kop_2_toepassing_juridische_maatregel: 'Houtbouw in de provinciale omgevingsvisie vormgegeven',
     toepassing_juridische_maatregel:
-      'Door houtbouw in de gemeentelijk omgevingsvisie op te nemen, wordt het onderdeel van de beleidscyclus van de Omgevingswet. Dat maakt het mogelijk om later in de beleidscyclus houtbouw op de agenda te zetten. Vanuit de omgevingsvisie komen andere maatregelen – zoals omgevingsvergunningen, een omgevingsplan of omgevingswaarden – voort. Die kunnen vervolgens ingezet worden om houtbouw te stimuleren of af te dwingen.',
+      'Door houtbouw in de gemeentelijk omgevingsvisie op te nemen, wordt het onderdeel van de beleidscyclus van de Omgevingswet. Dat maakt het mogelijk om later in de beleidscyclus houtbouw op de agenda te zetten. Vanuit de omgevingsvisie komen andere juridische instrumenten – zoals omgevingsvergunningen, een omgevingsplan of omgevingswaarden – voort. Die kunnen vervolgens ingezet worden om houtbouw te stimuleren of af te dwingen.',
     is_er_een_praktijk_voorbeeld: false,
     kop_3_uit_de_praktijk: 'Uit de praktijk',
     uit_de_praktijk: '',
@@ -881,7 +881,7 @@ export const laws = [
       'In de gemeentelijke omgevingsvisie beschrijft de gemeente de integrale langetermijnvisie voor de fysieke leefomgeving. De visie geeft aan welke gemeentelijke kernkwaliteiten beschermd moeten worden en wat de maatschappelijke uitdaging is. De omgevingsvisie is de basis van het te vormen omgevingsbeleid en kan onder meer betrekking hebben op:\n- ruimtelijke aspecten;\n- energie-infrastructuur;\n- landbouw;\n- landschap\n- milieu;\n- natuur;\n- water.',
     kop_2_toepassing_juridische_maatregel: 'Houtbouw in de nationale omgevingsvisie vormgegeven',
     toepassing_juridische_maatregel:
-      'Door houtbouw in de gemeentelijk omgevingsvisie op te nemen, wordt het onderdeel van de beleidscyclus van de Omgevingswet. Dat maakt het mogelijk om later in de beleidscyclus houtbouw op de agenda te zetten. Vanuit de omgevingsvisie komen andere maatregelen – zoals omgevingsvergunningen, een omgevingsplan of omgevingswaarden – voort. Die kunnen vervolgens ingezet worden om houtbouw te stimuleren of af te dwingen.',
+      'Door houtbouw in de gemeentelijk omgevingsvisie op te nemen, wordt het onderdeel van de beleidscyclus van de Omgevingswet. Dat maakt het mogelijk om later in de beleidscyclus houtbouw op de agenda te zetten. Vanuit de omgevingsvisie komen andere juridische instrumenten – zoals omgevingsvergunningen, een omgevingsplan of omgevingswaarden – voort. Die kunnen vervolgens ingezet worden om houtbouw te stimuleren of af te dwingen.',
     is_er_een_praktijk_voorbeeld: false,
     kop_3_uit_de_praktijk: 'Uit de praktijk',
     uit_de_praktijk: '',
@@ -939,11 +939,11 @@ export const laws = [
     titel: 'Gemeentelijk omgevingsprogramma',
     kop_1_samenvatting_juridische_maatregel: 'Wat is een gemeentelijk omgevingsprogramma?',
     introductie_juridische_maatregel:
-      'De gemeente kan met een zelfbindend omgevingsprogramma met concrete plannen met beleid en maatregelen de gewenste kwaliteit van de fysieke leefomgeving bereiken.Het vrijwillige (onverplichte) programma is het meest voorkomende omgevingsprogramma. In een programma kan een gemeente beleid en maatregelen uitwerken die leiden tot een gewenste kwaliteit van de fysieke leefomgeving voor het gebied. De maatregelen kunnen verschillende soorten inhouden: het opstellen van beleidsregels, financiele instrumenten, communicatie, uitvoering van projecten en meer.',
+      'De gemeente kan met een zelfbindend omgevingsprogramma met concrete plannen met beleid en maatregelen de gewenste kwaliteit van de fysieke leefomgeving bereiken.Het vrijwillige (onverplichte) programma is het meest voorkomende omgevingsprogramma. In een programma kan een gemeente beleid en maatregelen uitwerken die leiden tot een gewenste kwaliteit van de fysieke leefomgeving voor het gebied. De juridische instrumenten kunnen verschillende soorten inhouden: het opstellen van beleidsregels, financiele instrumenten, communicatie, uitvoering van projecten en meer.',
     kop_2_toepassing_juridische_maatregel:
       'Hoe kan het gemeentelijk omgevingsprogamma houtbouw bevorderen?',
     toepassing_juridische_maatregel:
-      'Programma’s kunnen themagericht en gebiedsgericht worden opgesteld, waardoor houtbouw binnen beide programma’s kan worden ingezet. Een themagericht programma houdt in dat houtbouw als onderwerp binnen het gehele gemeentelijke gebied wordt ontwikkeld, bij een gebiedsgericht programma wordt houtbouw alleen voor een specifiek deel van de gemeente opgenomen. Het programma is dus een bundeling van maatregelen om bepaalde doelstellingen met betrekking tot houtbouw te halen om die doelstellingen zo effectiever en sneller te kunnen halen.',
+      'Programma’s kunnen themagericht en gebiedsgericht worden opgesteld, waardoor houtbouw binnen beide programma’s kan worden ingezet. Een themagericht programma houdt in dat houtbouw als onderwerp binnen het gehele gemeentelijke gebied wordt ontwikkeld, bij een gebiedsgericht programma wordt houtbouw alleen voor een specifiek deel van de gemeente opgenomen. Het programma is dus een bundeling van juridische instrumenten om bepaalde doelstellingen met betrekking tot houtbouw te halen om die doelstellingen zo effectiever en sneller te kunnen halen.',
     is_er_een_praktijk_voorbeeld: false,
     kop_3_uit_de_praktijk: 'Uit de praktijk',
     uit_de_praktijk: '',
@@ -1001,11 +1001,11 @@ export const laws = [
     titel: 'Provinciaal omgevingsprogramma',
     kop_1_samenvatting_juridische_maatregel: 'Wat is een provinciaal omgevingsprogramma?',
     introductie_juridische_maatregel:
-      'De provincie kan met een zelfbindend omgevingsprogramma met concrete plannen met beleid en maatregelen de gewenste kwaliteit van de fysieke leefomgeving bereiken.Het vrijwillige programma is het meest voorkomende omgevingsprogramma. In een programma kan een provincie beleid en maatregelen uitwerken die leiden tot een gewenste kwaliteit van de fysieke leefomgeving voor het gebied. De maatregelen kunnen verschillende soorten inhouden: het opstellen van beleidsregels, financiele instrumenten, communicatie, uitvoering van projecten en meer.',
+      'De provincie kan met een zelfbindend omgevingsprogramma met concrete plannen met beleid en maatregelen de gewenste kwaliteit van de fysieke leefomgeving bereiken.Het vrijwillige programma is het meest voorkomende omgevingsprogramma. In een programma kan een provincie beleid en juridische instrumenten uitwerken die leiden tot een gewenste kwaliteit van de fysieke leefomgeving voor het gebied. De juridische instrumenten kunnen verschillende soorten inhouden: het opstellen van beleidsregels, financiele instrumenten, communicatie, uitvoering van projecten en meer.',
     kop_2_toepassing_juridische_maatregel:
       'Hoe kan het provinciale omgevingsprogamma houtbouw bevorderen?',
     toepassing_juridische_maatregel:
-      'Programma’s kunnen themagericht en gebiedsgericht worden opgesteld, waardoor houtbouw binnen beide programma’s kan worden ingezet. Een themagericht programma houdt in dat houtbouw als onderwerp binnen het gehele gemeentelijke gebied wordt ontwikkeld, bij een gebiedsgericht programma wordt houtbouw alleen voor een specifiek deel van de provincie opgenomen. Het programma is dus een bundeling van maatregelen om bepaalde doelstellingen met betrekking tot houtbouw te halen om die doelstellingen zo effectiever en sneller te kunnen halen.',
+      'Programma’s kunnen themagericht en gebiedsgericht worden opgesteld, waardoor houtbouw binnen beide programma’s kan worden ingezet. Een themagericht programma houdt in dat houtbouw als onderwerp binnen het gehele gemeentelijke gebied wordt ontwikkeld, bij een gebiedsgericht programma wordt houtbouw alleen voor een specifiek deel van de provincie opgenomen. Het programma is dus een bundeling van juridische instrumenten om bepaalde doelstellingen met betrekking tot houtbouw te halen om die doelstellingen zo effectiever en sneller te kunnen halen.',
     is_er_een_praktijk_voorbeeld: false,
     kop_3_uit_de_praktijk: 'Uit de praktijk',
     uit_de_praktijk: '',
@@ -1063,11 +1063,11 @@ export const laws = [
     titel: 'Nationaal omgevingsprogramma',
     kop_1_samenvatting_juridische_maatregel: 'Wat is een nationaal omgevingsprogramma?',
     introductie_juridische_maatregel:
-      'Het Rijk kan met een zelfbindend omgevingsprogramma met concrete plannen met beleid en maatregelen de gewenste kwaliteit van de fysieke leefomgeving bereiken.Het vrijwillige programma is het meest voorkomende omgevingsprogramma. In een programma kan het Rijk beleid en maatregelen uitwerken die leiden tot een gewenste kwaliteit van de fysieke leefomgeving voor het gebied. De maatregelen kunnen verschillende soorten inhouden: het opstellen van beleidsregels, financiele instrumenten, communicatie, uitvoering van projecten en meer.',
+      'Het Rijk kan met een zelfbindend omgevingsprogramma met concrete plannen met beleid en maatregelen de gewenste kwaliteit van de fysieke leefomgeving bereiken.Het vrijwillige programma is het meest voorkomende omgevingsprogramma. In een programma kan het Rijk beleid en juridische instrumenten uitwerken die leiden tot een gewenste kwaliteit van de fysieke leefomgeving voor het gebied. De juridische instrumenten kunnen verschillende soorten inhouden: het opstellen van beleidsregels, financiele instrumenten, communicatie, uitvoering van projecten en meer.',
     kop_2_toepassing_juridische_maatregel:
       'Hoe kan het nationale omgevingsprogamma houtbouw bevorderen?',
     toepassing_juridische_maatregel:
-      'Programma’s kunnen themagericht en gebiedsgericht worden opgesteld, waardoor houtbouw binnen beide programma’s kan worden ingezet. Een themagericht programma houdt in dat houtbouw als onderwerp binnen het gehele gemeentelijke gebied wordt ontwikkeld, bij een gebiedsgericht programma wordt houtbouw alleen voor een specifiek deel van het Rijk opgenomen. Het programma is dus een bundeling van maatregelen om bepaalde doelstellingen met betrekking tot houtbouw te halen om die doelstellingen zo effectiever en sneller te kunnen halen.',
+      'Programma’s kunnen themagericht en gebiedsgericht worden opgesteld, waardoor houtbouw binnen beide programma’s kan worden ingezet. Een themagericht programma houdt in dat houtbouw als onderwerp binnen het gehele gemeentelijke gebied wordt ontwikkeld, bij een gebiedsgericht programma wordt houtbouw alleen voor een specifiek deel van het Rijk opgenomen. Het programma is dus een bundeling van juridische instrumenten om bepaalde doelstellingen met betrekking tot houtbouw te halen om die doelstellingen zo effectiever en sneller te kunnen halen.',
     is_er_een_praktijk_voorbeeld: false,
     kop_3_uit_de_praktijk: 'Uit de praktijk',
     uit_de_praktijk: '',
@@ -1311,11 +1311,11 @@ export const laws = [
     titel: 'Gelijkwaardigheidsbepaling',
     kop_1_samenvatting_juridische_maatregel: 'Wat is een gelijkwaardigheidsbepaling?',
     introductie_juridische_maatregel:
-      'Onder de Omgevingswet is het bijna altijd mogelijk om in plaats van een in algemene regels voorgeschreven maatregel een `gelijkwaardige maatregel’ te treffen. De gelijkwaardige maatregel moet ten minste hetzelfde resultaat bereiken als de wetgever met de voorgeschreven maatregel heeft beoogd.',
+      'Onder de Omgevingswet is het bijna altijd mogelijk om in plaats van een in algemene regels voorgeschreven juridisch instrument een `gelijkwaardig juridisch instrument’ te treffen. Het gelijkwaardig juridische instrument moet ten minste hetzelfde resultaat bereiken als de wetgever met het voorgeschreven juridische instrument heeft beoogd.',
     kop_2_toepassing_juridische_maatregel:
       'Hoe kan een gelijkwaardigheidsbepaling bijdragen aan circulariteit?',
     toepassing_juridische_maatregel:
-      'Het zoeken van een gelijkwaardige maatregel kan voor houtbouw inhouden dat wordt gezocht naar alternatieve bouwkundige oplossingen met betrekking tot de volgende aspecten: geluid, brandveiligheid en trilling. Die aspecten vereisen andere oplossingen in verhouding tot conventionele bouw, omdat hout andere eigenschappen heeft.',
+      'Het zoeken van een gelijkwaardig juridisch instrument kan voor houtbouw inhouden dat wordt gezocht naar alternatieve bouwkundige oplossingen met betrekking tot de volgende aspecten: geluid, brandveiligheid en trilling. Die aspecten vereisen andere oplossingen in verhouding tot conventionele bouw, omdat hout andere eigenschappen heeft.',
     is_er_een_praktijk_voorbeeld: false,
     kop_3_uit_de_praktijk: 'Uit de praktijk',
     uit_de_praktijk: '',
@@ -1324,10 +1324,10 @@ export const laws = [
     afbeelding_van_voorbeeld_link: '',
     kop_4_eisen_en_beperkingen: 'De gelijkwaardigheidsbepaling: eisen en beperkingen',
     eisen_en_beperkingen:
-      '- Sommige aspecten komen niet in aanmerking voor een gelijkwaardigheidsbepaling, zoals bepaalde harde EU-eisen;\n- Op aanvraag kan toestemming worden verleend om in plaats van het treffen van bepaalde bij regels gestelde maatregelen een gelijkwaardige maatregel te treffen waarmee ten minste hetzelfde resultaat wordt bereikt als met de voorgeschreven maatregel beoogd is.',
+      '- Sommige aspecten komen niet in aanmerking voor een gelijkwaardigheidsbepaling, zoals bepaalde harde EU-eisen;\n- Op aanvraag kan toestemming worden verleend om in plaats van het treffen van bepaalde bij regels gestelde maatregelen een gelijkwaardig juridisch instrument te treffen waarmee ten minste hetzelfde resultaat wordt bereikt als met het voorgeschreven juridische instrument beoogd is.',
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
-      'Uit artikel 4.7 lid 1 Omgevingswet volgt dat als regels als bedoeld in paragraaf 4.1.1 voorschrijven dat een maatregel moet worden getroffen, op aanvraag toestemming kan worden verleend om, in plaats daarvan, een gelijkwaardige maatregel te treffen. Met de gelijkwaardige maatregel wordt ten minste hetzelfde resultaat bereikt als met de voorgeschreven maatregel is beoogd.',
+      'Uit artikel 4.7 lid 1 Omgevingswet volgt dat als regels als bedoeld in paragraaf 4.1.1 voorschrijven dat een maatregel moet worden getroffen, op aanvraag toestemming kan worden verleend om, in plaats daarvan, een gelijkwaardig juridisch instrument te treffen. Met het gelijkwaardig juridische instrument wordt ten minste hetzelfde resultaat bereikt als met het voorgeschreven juridische instrument is beoogd.',
     juridischeHoudbaarheid: 4,
     duidelijkheid_wet: '',
     eenlijnige_uitspraken: '',
@@ -2199,7 +2199,7 @@ export const laws = [
     afbeelding_van_voorbeeld_link: '',
     kop_4_eisen_en_beperkingen: 'Regels hergebruik producten: eisen en beperkingen',
     eisen_en_beperkingen:
-      'De regels kunnen worden gesteld met betrekking tot de volgende handelingen: vervaardigen, in Nederland invoeren, toepassen, voorhanden hebben, aan een ander ter beschikking stellen, in ontvangst nemen, innemen, nuttig toepassen en verwijderen van bij de maatregelen aangewezen stoffen, preparaten of producten in de zin van artikel 1.1 van de Wet milieubeheer.',
+      'De regels kunnen worden gesteld met betrekking tot de volgende handelingen: vervaardigen, in Nederland invoeren, toepassen, voorhanden hebben, aan een ander ter beschikking stellen, in ontvangst nemen, innemen, nuttig toepassen en verwijderen van bij de juridische instrumenten aangewezen stoffen, preparaten of producten in de zin van artikel 1.1 van de Wet milieubeheer.',
     kop_5_juridische_toelichting: 'Juridische toelichting',
     juridische_toelichting:
       'Bij AMvB kunnen op grond van artikel 9.5.2 Wm deze regels middels een besluit worden opgesteld.',
@@ -2505,7 +2505,7 @@ export const laws = [
     kop_2_toepassing_juridische_maatregel:
       'Circulaire windturbines in de omgevingsvisie vormgegeven',
     toepassing_juridische_maatregel:
-      'Door circulaire windturbines in de gemeentelijk omgevingsvisie op te nemen, worden die onderdeel van de beleidscyclus van de Omgevingswet. Dat maakt het mogelijk om later in de beleidscyclus circulaire windturbines op de agenda te zetten. Vanuit de omgevingsvisie komen andere maatregelen – zoals omgevingsvergunningen, een omgevingsplan of omgevingswaarden – voort. Die kunnen vervolgens ingezet worden om circulaire windturbines te stimuleren of af te dwingen.',
+      'Door circulaire windturbines in de gemeentelijk omgevingsvisie op te nemen, worden die onderdeel van de beleidscyclus van de Omgevingswet. Dat maakt het mogelijk om later in de beleidscyclus circulaire windturbines op de agenda te zetten. Vanuit de omgevingsvisie komen andere juridische instrumenten – zoals omgevingsvergunningen, een omgevingsplan of omgevingswaarden – voort. Die kunnen vervolgens ingezet worden om circulaire windturbines te stimuleren of af te dwingen.',
     is_er_een_praktijk_voorbeeld: true,
     kop_3_uit_de_praktijk: 'Uit de praktijk',
     uit_de_praktijk:
@@ -2569,7 +2569,7 @@ export const laws = [
     kop_2_toepassing_juridische_maatregel:
       'Circulaire windturbines in de omgevingsvisie vormgegeven',
     toepassing_juridische_maatregel:
-      'Door circulaire windturbines in de provinciale omgevingsvisie op te nemen, worden die onderdeel van de beleidscyclus van de Omgevingswet. Dat maakt het mogelijk om later in de beleidscyclus circulaire windturbines op de agenda te zetten. Vanuit de omgevingsvisie komen andere maatregelen – zoals omgevingsvergunningen, een omgevingsplan of omgevingswaarden – voort. Deze instrumenten kunnen vervolgens ingezet worden om ciruclaire windturbines te stimuleren. Met de openbaarmaking van omgevingsvisies en programma’s wordt voor burgers, bedrijven en organisaties kenbaar wat zij van de overheid kunnen verwachten.',
+      'Door circulaire windturbines in de provinciale omgevingsvisie op te nemen, worden die onderdeel van de beleidscyclus van de Omgevingswet. Dat maakt het mogelijk om later in de beleidscyclus circulaire windturbines op de agenda te zetten. Vanuit de omgevingsvisie komen andere juridische instrumenten – zoals omgevingsvergunningen, een omgevingsplan of omgevingswaarden – voort. Deze instrumenten kunnen vervolgens ingezet worden om ciruclaire windturbines te stimuleren. Met de openbaarmaking van omgevingsvisies en programma’s wordt voor burgers, bedrijven en organisaties kenbaar wat zij van de overheid kunnen verwachten.',
     is_er_een_praktijk_voorbeeld: true,
     kop_3_uit_de_praktijk: 'Uit de praktijk',
     uit_de_praktijk:
