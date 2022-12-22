@@ -84,8 +84,8 @@ const components = {
       );
     },
     smallPara: ({value}) => (
-      <div className='flex justify-center'>
-      <div className='my-16 w-3/4'>
+      <div className='flex justify-left pl-12'>
+      <div className='mb-12 pt-10 w-5/6'>
       <h4 className='urban'>{value.smallParaTitle}</h4>
       <p className='body-small'>{value.smallParaText}</p>
       </div>
