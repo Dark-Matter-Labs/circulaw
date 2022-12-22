@@ -16,8 +16,9 @@ module.exports = {
         green1: '#22532C',
         green2: '#6D9F6B',
         green3: '#AABC97',
+        green6: '#25C38B',
         greenAlpha: 'rgba(109, 159, 107, 0.2)',
-        greenLink: '#019975',
+        greenLink: '#047857',
         grey1: '#979797',
         grey2: '#DAD8D8',
         grey3: 'rgba(205, 210, 200, 0.47)',
@@ -29,6 +30,9 @@ module.exports = {
       screens: {
         lg: '1145px',
       },
+      spacing: {
+        '128': '32rem',
+      }
     },
   },
   variants: {

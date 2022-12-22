@@ -13,6 +13,57 @@
     @apply max-w-screen-xl mx-auto;
   }
 
+   
+  h1.urban {
+    font-family: 'Urbanist', 'sans-serif';
+    font-weight: 600;
+    font-size: 54.9px;
+    line-height: 64px;
+  }
+
+  h2.urban {
+    font-family: 'Urbanist', 'sans-serif';
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  h4.urban {
+    font-family: 'Urbanist', 'sans-serif';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  .overview-thema {
+    font-family: 'Urbanist', 'sans-serif';
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  .overview-text {
+    font-family: 'Manrope';
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+
+  .tooltip-hover-text {
+    font-family: 'Manrope';
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+  }
+
+  .subheading {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-size: 22.5px;
+    line-height: 32px;
+    font-weight: 300;
+  }
+
   h1.mobile {
     font-family: 'Public Sans';
     font-style: normal;
@@ -22,7 +73,7 @@
   }
 
   h1.main {
-    font-family: 'Public Sans';
+    font-family: 'Public Sans', 'sans-serif';
     font-style: normal;
     font-weight: 700;
     font-size: 52px;
@@ -103,8 +154,8 @@
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 35px;
+    font-size: 18px;
+    line-height: 30px;
   }
 
   .body-text-mobile {
@@ -113,6 +164,14 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 170%;
+  }
+
+  .body-small {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
   }
 
   .card-body {
@@ -126,10 +185,10 @@
   .link {
     font-family: 'Manrope';
     font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 35px;
-    text-decoration-line: underline;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    text-decoration: underline;
   }
 
   .link-mobile {
@@ -138,7 +197,7 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
-    text-decoration-line: underline;
+    text-decoration: underline;
   }
 
   .menu-title {
@@ -160,9 +219,11 @@
   .breadcrumb {
     font-family: 'Manrope';
     font-style: normal;
-    font-weight: 800;
+    font-weight: 400;
     font-size: 14px;
     line-height: 19px;
+    text-transform: uppercase;
+
   }
 
   .button {
@@ -180,6 +241,22 @@
     font-size: 12px;
     line-height: 149.19%;
   }
+
+  .overview-titles {
+    font-family: 'Manrope';
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 15px;
+  }
+
+  .table-right {
+    font-family: 'Manrope';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 15px;
+  }
+  
+
 
   .dropdown-menu {
     font-family: 'Manrope';
@@ -324,6 +401,19 @@
 
 .gradient-bg {
   background: linear-gradient(#f9d9c8, 1%, #fff);
+}
+
+.gradient-overview {
+  background: linear-gradient(rgba(248, 250, 248, 0) 0%, #F8FAF8 30%);
+}
+
+.gradient-pdf {
+  background: linear-gradient(#042D36 0%, rgba(34, 83, 44, 0) 100%);
+ 
+}
+
+.measure-bg {
+  background: '#F5F5F5';
 }
 
 [type='checkbox']:checked {

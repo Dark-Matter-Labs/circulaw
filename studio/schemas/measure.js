@@ -1,5 +1,6 @@
 
-import { InformationCircleIcon } from "@heroicons/react/outline"
+// need to add image for extended 
+//
 
 export default {
     title: 'Measure',
@@ -18,7 +19,6 @@ export default {
       {
         name: 'copy',
         title: 'Copy Content',
-        default: true,
       },
       {
         name: 'filter',
@@ -40,6 +40,13 @@ export default {
         type: 'string',
         description: 'The title of the instrument which will be displayed at the top of the page',
         validation: Rule => Rule.required(),
+      },
+      {
+        title: 'Subtitle',
+        name: 'subtitle',
+        type: 'text',
+        description: 'The subtitle of the measure which will be displayed at the top of the page',
+        validation: Rule => Rule.required().max(130),
       },
       {
         title: 'Slug',
@@ -293,6 +300,9 @@ export default {
             type: 'pdfBlock'
           },
           {
+            type: 'smallPara'
+          },
+          {
             type: 'block',
             of: [
               {
@@ -306,6 +316,7 @@ export default {
             styles: [
               {title: 'H1', value: 'h1'},
               {title: 'H2', value: 'h2'},
+              {title: 'firstH2', value: 'firstH2'},
               {title: 'H3', value: 'h3'},
               {title: 'H4', value: 'h4'},
               {title: 'H5', value: 'h5'},
@@ -336,6 +347,12 @@ export default {
           }
         ],
         group: 'copy'
+      },
+      {
+        title: 'Juridische toelichting',
+        name: 'juridischeToelichting',
+        type: 'text',
+        group: ['copy', 'table']
       }
     ]
   }
