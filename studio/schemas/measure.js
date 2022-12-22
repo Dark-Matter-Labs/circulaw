@@ -1,5 +1,6 @@
 
-import { InformationCircleIcon } from "@heroicons/react/outline"
+// need to add image for extended 
+//
 
 export default {
     title: 'Measure',

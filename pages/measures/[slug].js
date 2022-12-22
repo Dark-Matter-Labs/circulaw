@@ -12,6 +12,7 @@ import CustomButton from '../../components/custom-button';
 import pdfIcon from '../../public/icons/pdf-icon.svg'
 import pdfDeco from '../../public/pdf-deco.png'
 
+
 const pathsQuery = `
 *[_type == "measure" && defined(slug.current)][].slug.current
 `;
