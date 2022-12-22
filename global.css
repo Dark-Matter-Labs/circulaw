@@ -73,7 +73,7 @@
   }
 
   h1.main {
-    font-family: 'Public Sans';
+    font-family: 'Public Sans', 'sans-serif';
     font-style: normal;
     font-weight: 700;
     font-size: 52px;

@@ -18,6 +18,7 @@ const measureQuery = `
 *[_type == "measure" && slug.current == $slug] [0] {
     _id,
     titel,
+    subtitle,
     thema,
     rLadder,
     subrechtsgebied,
@@ -31,6 +32,7 @@ const measureQuery = `
     governmentLevel,
     content,
     juridischeToelichting,
+
 }
 `;
 
@@ -162,7 +164,7 @@ export default function TestMeasure({ data }) {
               </div>
               <div className='col-span-7 row-span-1'>
               <p className='subheading py-4 mb-7'>
-              Space for a short two sentence sub heading - max 7 column width. line two of short two sentence sub heading not in schema yet ssss max 130 characters with spaces
+                {data?.measure?.subtitle}
               </p>
               </div>
           </div>
