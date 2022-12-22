@@ -10,14 +10,13 @@ export default function MeasureTable({ data }) {
     <>
     <div className='grid grid-cols-6 mt-2'>
       <div className='col-span-4'>
-      {data?.measure?.juridischeToelichting && 
               <div>
               <h2 className='pt-10 pb-4 mobile sm:urban'>Juridische toelichting</h2>
+              {data?.measure?.juridischeToelichting && 
               <p className='newlineDisplay body-text-mobile sm:body-text pb-4'>
                 {data?.measure?.juridischeToelichting}
-              </p>
+              </p>}
               </div>
-              }
       </div>
       <table className='table-fixed col-span-4'>
         <tbody>
