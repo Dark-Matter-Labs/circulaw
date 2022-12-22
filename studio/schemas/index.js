@@ -4,6 +4,7 @@ import greenBox from "./green-box"
 import pdfBlock from "./pdf-block"
 import imageBlock from "./image-object"
 import hoverText from "./hover-text"
+import smallPara from "./small-paragraph"
 
 export const schemaTypes = [
     // DOCUMENT TYPES
@@ -15,4 +16,5 @@ export const schemaTypes = [
     pdfBlock,
     imageBlock,
     hoverText,
+    smallPara
                 ]

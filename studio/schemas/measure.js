@@ -294,6 +294,9 @@ export default {
             type: 'pdfBlock'
           },
           {
+            type: 'smallPara'
+          },
+          {
             type: 'block',
             of: [
               {
