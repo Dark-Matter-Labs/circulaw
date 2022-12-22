@@ -83,7 +83,14 @@ const components = {
         </div>
       );
     },
-    // need to add hover text comp
+    smallPara: ({value}) => (
+      <div className='flex justify-center'>
+      <div className='my-16 w-3/4'>
+      <h4 className='urban'>{value.smallParaTitle}</h4>
+      <p className='body-small'>{value.smallParaText}</p>
+      </div>
+      </div>
+    )
   },
   list: {
     bullet: ({ children }) => (
