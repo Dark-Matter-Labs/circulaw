@@ -9,8 +9,6 @@ import { PortableText } from '@portabletext/react';
 import MeasureOverview from '../../components/measure-overview';
 import MeasureTable from '../../components/measure-table';
 import CustomButton from '../../components/custom-button';
-import pdfIcon from '../../public/icons/pdf-icon.svg'
-import pdfDeco from '../../public/pdf-deco.png'
 
 
 const pathsQuery = `
@@ -68,7 +66,7 @@ const components = {
         <div className='bg-green1'>
         <div className=' gradient-pdf p-10 my-16 relative overflow-hidden'>
           <div className='absolute -bottom-44 -right-44 h-96 w-96'>
-          <Image src={pdfDeco} alt='decorative image'/>
+          <Image src='/pdf-deco.png' alt='decorative image' width={584} height={562}/>
           </div>
           <h2 className='pb-2 mobile sm:urban text-white'>{value.pdfTitle}</h2>
           <p className='body-text-mobile sm:body-text text-white1 pb-4'>{value.pdfText}</p>
@@ -79,7 +77,7 @@ const components = {
             target='_blank'
             rel='noreferrer'
           >
-            <CustomButton color='toPdf'>Bekijk de leidraad &nbsp;<Image src={pdfIcon} alt= 'icon of pdf' className='ml-2'/></CustomButton>
+            <CustomButton color='toPdf'>Bekijk de leidraad &nbsp;<Image src='/icons/pdf-icon.svg' width={23} height={23} alt= 'icon of pdf' className='ml-2'/></CustomButton>
           </a>
         </div>
         </div>
