@@ -35,7 +35,7 @@ export default function ThemeLayout(props) {
           </div>
           <div className='sm:justify-self-center lg:justify-self-end'>
             <div className='hidden lg:block'>
-              <Image src={props.heroImage} alt={props.heroImageAlt} height='549px' width='597px' />
+              <Image src={props.heroImage} alt={props.heroImageAlt} height='549px' width='597px' className="h-[549px]" />
             </div>
             <div className='block lg:hidden'>
               <Image src={props.heroImage} alt={props.heroImageAlt} height='549px' width='597px' />
