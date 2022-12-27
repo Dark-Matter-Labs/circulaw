@@ -42,7 +42,7 @@ export default function PolicyList(props) {
                 </a>
               </Link>
               <div className='block font-manrope font-bold text-xs pb-1'>
-                {law?.governmentLevel.map((level) => (
+                {law?.governmentLevel?.map((level) => (
                   <span key={level} className='capitalize'>
                     {level} {law?.governmentLevel.slice(-1)[0] !== level && <span>- </span>}
                   </span>
@@ -67,7 +67,7 @@ export default function PolicyList(props) {
 
                 <div className='flex-2 mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 '>
                   <span className='block-inline flex items-center'>
-                    Juridische invloed:{' '}
+                    Juridische Haalbaarheid:{' '}
                     <span className='text-black uppercase pl-1'>{law.juridischHaalbaarheid}</span>
                   </span>
                 </div>

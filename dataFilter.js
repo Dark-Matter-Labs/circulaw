@@ -17,12 +17,14 @@ export const wettelijkBevoegdheidsniveau = [
     label: 'Provinciaal',
     value: 'Provinciaal',
   },
+  
   {
     id: '3',
     name: 'Gemeentelijk',
     label: 'Gemeentelijk',
     value: 'Gemeentelijk',
   },
+
 ];
 
 export const rechtsgebied = [
@@ -118,35 +120,59 @@ export const rLadder = [
   },
 ];
 
-export const juridischeHoudbaarheid = [
+export const juridischHaalbaarheid = [
   {
     id: '0',
-    name: '1',
-    label: '1',
-    value: 1,
+    name: 'Low',
+    label: 'Low',
+    value: 'Low',
   },
   {
     id: '1',
-    name: '2',
-    label: '2',
-    value: 2,
+    name: 'Medium',
+    label: 'Medium',
+    value: 'Medium',
   },
   {
     id: '2',
-    name: '3',
-    label: '3',
-    value: 3,
-  },
-  {
-    id: '3',
-    name: '4',
-    label: '4',
-    value: 4,
-  },
-  {
-    id: '4',
-    name: '5',
-    label: '5',
-    value: 5,
+    name: 'High',
+    label: 'High',
+    value: 'High',
   },
 ];
+
+export const juridischInvloed = [
+  {
+    id: '0',
+    name: 'Low',
+    label: 'Low',
+    value: 'Low',
+  },
+  {
+    id: '1',
+    name: 'Medium',
+    label: 'Medium',
+    value: 'Medium',
+  },
+  {
+    id: '2',
+    name: 'High',
+    label: 'High',
+    value: 'High',
+  },
+]
+
+export const extraContent = [
+  {
+    id: '0',
+    name: 'Example',
+    label: 'Example',
+    value: 'Example',
+  },
+  {
+    id: '1',
+    name: 'Guideline',
+    label: 'Guideline',
+    value: 'Guideline',
+  }, 
+]
