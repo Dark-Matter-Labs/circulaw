@@ -10,7 +10,7 @@ import {
   subrechtsgebied,
   juridischHaalbaarheid,
   juridischInvloed,
-  // extraContent,
+  extraContent,
   rLadder,
 } from '../../dataFilter';
 
@@ -23,21 +23,6 @@ import { groq } from 'next-sanity';
 
 // creating objects for persisting values
 const useSelectedState = createPersistedState('selected');
-
-{/* NEW DATA STRUCTURE FOR FILTERS
-2 different types 
-[] with single string value
-[] array with multiple values
-
-wettelijkBevoegdheidsniveau - was true/false now array of strings ['1','2']
-rLadder - was true/falie now array of strings ['1', '2']
-extraContent - new array of strings ['1', '2']
-
-rechtsgebied - [string] - one value DONE
-subrechtsgebied - [string] - one value DONE
-juridischHaalbaarheid - was number now [string] - one value
-juridischInvloed - new [string] - one value
-*/}
 
 export default function MeasuresLayout(props) {
   // need to add error check ? or replace the fetcher function in utils/filter funcition
@@ -117,13 +102,17 @@ export default function MeasuresLayout(props) {
   const [numberOfCont, setNumberOfCont] = useState(0);
   const [numberOfGron, setNumberOfGron] = useState(0);
 
-  // const [numberOfExample, setNumberOfExample] = useState(0);
-  // const [numberOfGuideline, setNumberOfGuideline] = useState(0);
+  const [numberOfExample, setNumberOfExample] = useState(0);
+  const [numberOfGuideline, setNumberOfGuideline] = useState(0);
 
   const [searchValue, setSearchValue] = useState('');
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
+
+  // taking the value of the check box and creating
+  // creates array for each attribute. [r1, r2 , Rn]
   const handleFilters = (checkboxState, key) => {
+    // key is name oc filter -checkbox state is the value 
     const newFilters = { ...selected };
     newFilters[key] = checkboxState;
     setSelected(newFilters);
@@ -138,7 +127,6 @@ export default function MeasuresLayout(props) {
       juridischHaalbaarheid: [],
       juridischInvloed: [],
       extraContent: [],
-
     });
 
     wettelijkFilterRef.current.reset();
@@ -168,12 +156,12 @@ export default function MeasuresLayout(props) {
       let numPrivaat = 0;
       let numFiscaal = 0;
       // this will no longer work
-      let numR1 = 0;
-      let numR2 = 0;
-      let numR3 = 0;
-      let numR4 = 0;
-      let numR5 = 0;
-      let numR6 = 0;
+      let numR1 = 4;
+      let numR2 = 4;
+      let numR3 = 4;
+      let numR4 = 4;
+      let numR5 = 4;
+      let numR6 = 4;
 
       let numJHLow = 0;
       let numJHMedium = 0;
@@ -183,8 +171,8 @@ export default function MeasuresLayout(props) {
       let numJIMedium = 0;
       let numJIHigh = 0;
 
-      // let numExample = 0;
-      // let numGuidline = 0;
+      let numExample = 0;
+      let numGuidline = 0;
 
       let numErp = 0;
       let numOmg = 0;
@@ -195,66 +183,83 @@ export default function MeasuresLayout(props) {
       filteredLaws = filteredLaws?.filter((element) => {
         return element.thema === props.thema;
       });
-      
+
+      // FILTER LOGIC FOR MULTICHOICE ATTRIBUTES
+      if (selected.extraContent.length > 0) {
+        if (selected.extraContent.includes('Example')) {
+          filteredLaws = filteredLaws.filter((element) => {
+            return element.extraContent.includes('Example');
+          });
+          console.log(filteredLaws, '?')
+        }
+        if (selected.extraContent.includes('Guideline')) {
+          filteredLaws = filteredLaws.filter((element) => {
+            return element.extraContent.includes('Guideline');
+          });
+        }
+      }
 
       if (selected.wettelijkBevoegdheidsniveau.length > 0) {
         if (selected.wettelijkBevoegdheidsniveau.includes('Europees')) {
           filteredLaws = filteredLaws.filter((element) => {
-            return element.europees;
+            return element.wettelijkBevoegdheidsniveau.includes('Europees');
           });
         }
         if (selected.wettelijkBevoegdheidsniveau.includes('Nationaal')) {
           filteredLaws = filteredLaws.filter((element) => {
-            return element.nationaal;
+            return element.wettelijkBevoegdheidsniveau.includes('Nationaal');
           });
         }
         if (selected.wettelijkBevoegdheidsniveau.includes('Provinciaal')) {
           filteredLaws = filteredLaws.filter((element) => {
-            return element.provinciaal;
+            return element.wettelijkBevoegdheidsniveau.includes('Provinciaal');
           });
         }
         if (selected.wettelijkBevoegdheidsniveau.includes('Gemeentelijk')) {
           filteredLaws = filteredLaws.filter((element) => {
-            return element.gemeentelijk;
+            return element.wettelijkBevoegdheidsniveau.includes('Gemeentelijk');
           });
         }
       }
+      console.log(filteredLaws, 'test')
+      
 
       if (selected.rLadder.length > 0) {
         if (selected.rLadder.includes('R1')) {
-          filteredLaws = filteredLaws.filter((element) => {
-            return element.R1;
-          });
+          filteredLaws = filteredLaws.filter((element) => { 
+            return element.rLadder.includes('R1')
+          })
         }
         if (selected.rLadder.includes('R2')) {
-          filteredLaws = filteredLaws.filter((element) => {
-            return element.R2;
-          });
+          filteredLaws = filteredLaws.filter((element) => { 
+            return element.rLadder.includes('R2')
+          })
         }
         if (selected.rLadder.includes('R3')) {
-          filteredLaws = filteredLaws.filter((element) => {
-            return element.R3;
-          });
+          filteredLaws = filteredLaws.filter((element) => { 
+            return element.rLadder.includes('R3')
+          })
         }
         if (selected.rLadder.includes('R4')) {
-          filteredLaws = filteredLaws.filter((element) => {
-            return element.R4;
-          });
+          filteredLaws = filteredLaws.filter((element) => { 
+            return element.rLadder.includes('R4')
+          })
         }
         if (selected.rLadder.includes('R5')) {
-          filteredLaws = filteredLaws.filter((element) => {
-            return element.R5;
-          });
+          filteredLaws = filteredLaws.filter((element) => { 
+            return element.rLadder.includes('R5')
+          })
         }
         if (selected.rLadder.includes('R6')) {
-          filteredLaws = filteredLaws.filter((element) => {
-            return element.R6;
-          });
+          filteredLaws = filteredLaws.filter((element) => { 
+            return element.rLadder.includes('R6')
+          })
         }
       }
-
+      
+      // FILTER LOGIC FOR SINGLE CHOICE ATTRIBUTES
       if (selected.rechtsgebied.length > 0) {
-        filteredLaws = filteredLaws?.filter((element) => {
+        filteredLaws = filteredLaws.filter((element) => {
           return selected.rechtsgebied.includes(element.rechtsgebied);
         });
       }
@@ -275,13 +280,6 @@ export default function MeasuresLayout(props) {
       if (selected.juridischInvloed.length > 0) {
         filteredLaws = filteredLaws.filter((element) => {
           return selected.juridischInvloed.includes(element.juridischInvloed);
-        });
-      }
-
-      // new for extra contnet
-      if (selected.extraContent.length > 0) {
-        filteredLaws = filteredLaws.filter((element) => {
-          return selected.extraContent.includes(element.extraContent);
         });
       }
 
@@ -308,12 +306,7 @@ export default function MeasuresLayout(props) {
       const lawResults = searchValue ? results.map((result) => result.item) : filteredLaws;
       filteredLaws = lawResults;
 
-      console.log(filteredLaws)
-      {/*
-      // display scores in consol for testing
-      const scores = results.map((result) => result.score)
-      console.log(scores)
-       */}
+    
 
       // setting values for autocomplete
       setSelectedResults(filteredLaws);
@@ -321,19 +314,24 @@ export default function MeasuresLayout(props) {
 
       // dynamically calculate filter numbers
       filteredLaws?.map((measure) => {
-
         // add extra content
+        if (measure.extraContent.includes('Example')) {
+          numExample += 1;
+        }
+        if (measure.extraContent.includes('Guideline')) {
+          numGuidline += 1;
+        }
 
-        if (measure.europees) {
+        if (measure.wettelijkBevoegdheidsniveau.includes('Europees')) {
           numEuropee += 1;
         }
-        if (measure.nationaal) {
+        if (measure.wettelijkBevoegdheidsniveau.includes('Nationaal')) {
           numNationaal += 1;
         }
-        if (measure.provinciaal) {
+        if (measure.wettelijkBevoegdheidsniveau.includes('Provinciaal')) {
           numProvinciaal += 1;
         }
-        if (measure.gemeentelijk) {
+        if (measure.wettelijkBevoegdheidsniveau.includes('Gemeentelijk')) {
           numGemeentelijk += 1;
         }
 
@@ -356,23 +354,24 @@ export default function MeasuresLayout(props) {
         } else if (measure.subrechtsgebied === 'Gronduitgifte') {
           numGron += 1;
         }
+        
 
-        if (measure.R1) {
-          numR1 += 1;
+        if (measure.rLadder.includes('R1')) {
+          numR1 += 1
         }
-        if (measure.R2) {
+        if (measure.rLadder.includes('R2')) {
           numR2 += 1;
         }
-        if (measure.R3) {
+        if (measure.rLadder.includes('R3')) {
           numR3 += 1;
         }
-        if (measure.R4) {
+        if (measure.rLadder.includes('R4')) {
           numR4 += 1;
         }
-        if (measure.R5) {
+        if (measure.rLadder.includes('R5')) {
           numR5 += 1;
         }
-        if (measure.R6) {
+        if (measure.rLadder.includes('R6')) {
           numR6 += 1;
         }
 
@@ -397,6 +396,9 @@ export default function MeasuresLayout(props) {
 
       setLaws(filteredLaws);
       setNumberOfLaws(filteredLaws?.length);
+
+      setNumberOfExample(numExample);
+      setNumberOfGuideline(numGuidline)
 
       setNumberOfEuropee(numEuropee);
       setNumberOfNationaal(numNationaal);
@@ -433,6 +435,13 @@ export default function MeasuresLayout(props) {
 
   // effect to check for data from persisted state from localStorage and update values when needed
   useEffect(() => {
+    if (
+      selected.extraContent.length !== 0 &&
+      typeof extraContentFilterRef.current !== 'undefined'
+    ) {
+      extraContentFilterRef.current.set(selected.extraContent);
+    }
+
     if (
       selected.wettelijkBevoegdheidsniveau.length !== 0 &&
       typeof wettelijkFilterRef.current !== 'undefined'
@@ -525,6 +534,18 @@ export default function MeasuresLayout(props) {
                   </div>
                   <div className='flex-1 h-0 overflow-y-auto'>
                     <div className='p-8 '>
+                    <SearchFilter
+                        ref={extraContentFilterRef}
+                        title='Extra Content'
+                        list={extraContent}
+                        filterNumbers={[
+                          numberOfExample,
+                          numberOfGuideline,
+                        ]}
+                        handleFilters={(checkboxState) =>
+                          handleFilters(checkboxState, 'extraContent')
+                        }
+                      />
                       <SearchFilter
                         ref={wettelijkFilterRef}
                         title='Bevoegdheidsniveau'
@@ -784,6 +805,18 @@ export default function MeasuresLayout(props) {
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-4'>
         <div className='hidden lg:block p-3 my-4'>
+          <SearchFilter
+              ref={extraContentFilterRef}
+              title='Extra Content'
+              list={extraContent}
+              filterNumbers={[
+                numberOfExample,
+                numberOfGuideline,
+              ]}
+              handleFilters={(checkboxState) =>
+                handleFilters(checkboxState, 'extraContent')
+              }
+           />
           <SearchFilter
             ref={wettelijkFilterRef}
             title='Bevoegdheidsniveau'

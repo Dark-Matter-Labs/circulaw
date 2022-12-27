@@ -4,10 +4,9 @@ import RTooltip from '../components/r-ladder-tooltip';
 import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../components/juridische-invloed-tooltip';
 
-
 const rLadderLabelStyles = 'bg-green2 text-white rounded-full p-1 mr-2 block-inline r-category ';
 
-const SearchFilter = forwardRef(({list, title, filterNumbers, handleFilters }, ref) => {
+const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, ref) => {
   const [checkedArray, setCheckedArray] = useState([]);
 
   // state to check if set value is for mouse click or state persist
@@ -32,10 +31,12 @@ const SearchFilter = forwardRef(({list, title, filterNumbers, handleFilters }, r
       // only do this for state persist and not mouse click
       if (!clicked) {
         let newArr = [];
-        for (let index = 0; index < selectedArray?.length; index++) {
+        for (let index = 0; index < selectedArray.length; index++) {
           // matching values to IDs
           list?.map((element) => {
+            // list = list of all the elements in dataFilter
             if (selectedArray[index] === element.value) {
+              // element = the dataFilter element
               newArr.push(element.id);
             }
           });
@@ -72,7 +73,7 @@ const SearchFilter = forwardRef(({list, title, filterNumbers, handleFilters }, r
               </svg>
             </JHTooltip>
           )}
-           {title === 'Juridisch Invloed' && (
+          {title === 'Juridisch Invloed' && (
             <JITooltip>
               <svg className='w-6 h-6 fill-current text-black mb-2' viewBox='0 0 26 26'>
                 <circle cx='12' cy='15' r='10' fill='#979797' />
@@ -110,9 +111,7 @@ const SearchFilter = forwardRef(({list, title, filterNumbers, handleFilters }, r
                       </>
                     )}
                     {/* std design */}
-                    {title !== 'R - ladder' && (
-                      <span>{data.name}</span>
-                    )}
+                    {title !== 'R - ladder' && <span>{data.name}</span>}
                   </label>
                 </div>
                 <div className='font-bold font-manrope text-sm text-black'>
@@ -140,14 +139,10 @@ const SearchFilter = forwardRef(({list, title, filterNumbers, handleFilters }, r
                       </>
                     )}
 
-                    {title !== 'R - ladder' && (
-                      <span>{data.name}</span>
-                    )}
+                    {title !== 'R - ladder' && <span>{data.name}</span>}
                   </label>
                 </div>
-                <div className='font-normal text-sm text-gray-400'>
-                  ({filterNumbers[dataIdx]})
-                  </div>
+                <div className='font-normal text-sm text-gray-400'>({filterNumbers[dataIdx]})</div>
               </>
             )}
           </div>
