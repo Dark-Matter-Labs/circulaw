@@ -24,7 +24,9 @@ export default function PolicyList(props) {
               {law?.thema === 'mattress' && (
                 <Image width='20' height='20' src={IconWood} alt='Icon of Wood' />
               )}
-              <span className='inline-block pl-4 font-openSans casus'>{law?.thema.replace('-', ' ')}</span>
+              <span className='inline-block pl-4 font-openSans casus'>
+                {law?.thema.replace('-', ' ')}
+              </span>
               {law?.extraContent &&
                 law?.extraContent.map((content) => (
                   <span

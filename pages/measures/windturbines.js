@@ -7,7 +7,7 @@ const lawsQuery = `
 *[_type == "measure" && thema == "circulaire-windturbines"]
 `;
 
-export default function Measures({laws}) {
+export default function Measures({ laws }) {
   return (
     <Layout>
       <MeasuresLayout
