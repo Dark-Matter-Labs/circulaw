@@ -14,29 +14,19 @@ export default function NotFound() {
           Zoek verder:
           <ul className=''>
             <li className='text-greenLink link-mobile sm:link'>
-              <Link href='/'>
-                <a>Home →</a>
-              </Link>
+              <Link href='/'>Home →</Link>
             </li>
             <li className='text-greenLink link-mobile sm:link'>
-              <Link href='/houtbouw'>
-                <a>Houtbouw →</a>
-              </Link>{' '}
+              <Link href='/houtbouw'>Houtbouw →</Link>{' '}
             </li>
             <li className='text-greenLink link-mobile sm:link'>
-              <Link href='/circulaire-windturbines'>
-                <a>Circulaire windturbines →</a>
-              </Link>{' '}
+              <Link href='/circulaire-windturbines'>Circulaire windturbines →</Link>{' '}
             </li>
             <li className='text-greenLink link-mobile sm:link'>
-              <Link href='/wat-is-circulaw'>
-                <a>Wat is CircuLaw? →</a>
-              </Link>{' '}
+              <Link href='/wat-is-circulaw'>Wat is CircuLaw? →</Link>{' '}
             </li>
             <li className='text-greenLink link-mobile sm:link'>
-              <Link href='/contact'>
-                <a>Contact →</a>
-              </Link>{' '}
+              <Link href='/contact'>Contact →</Link>{' '}
             </li>
           </ul>
         </p>

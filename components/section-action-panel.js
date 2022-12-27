@@ -12,9 +12,7 @@ export default function ActionPanel(props) {
           </div>
           <div className='mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center'>
             <Link href={props.buttonLink}>
-              <a>
-                <CustomButton color='actionPanel'>{props.buttonText} →</CustomButton>
-              </a>
+              <CustomButton color='actionPanel'>{props.buttonText} →</CustomButton>
             </Link>
           </div>
         </div>

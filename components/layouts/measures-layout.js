@@ -231,21 +231,19 @@ export default function MeasuresLayout(props) {
         });
       }
 
-
-
       const fuse = new Fuse(filteredLaws, {
         keys: [
-          {name: 'titel', weight: 1},
-          {name: 'introductie_juridische_maatregel', weight: 0.7},
-          {name: 'eisen_en_beperkingen', weight: 0.7},
-          {name: 'kop_1_samenvatting_juridische_maatregel', weight: 0.5},
-          {name: 'kop_2_toepassing_juridische_maatregel', weight: 0.5},
-          {name: 'toepassing_juridische_maatregel', weight: 0.5},
-          {name: 'kop_3_uit_de_praktijk', weight: 0.5},
-          {name: 'uit_de_praktijk', weight: 0.5},
-          {name: 'subrechtsgebied', weight: 0.5},
-          {name: 'artikel', weight: 0.5},
-          {name: 'citeertitel', weight: 0.5},
+          { name: 'titel', weight: 1 },
+          { name: 'introductie_juridische_maatregel', weight: 0.7 },
+          { name: 'eisen_en_beperkingen', weight: 0.7 },
+          { name: 'kop_1_samenvatting_juridische_maatregel', weight: 0.5 },
+          { name: 'kop_2_toepassing_juridische_maatregel', weight: 0.5 },
+          { name: 'toepassing_juridische_maatregel', weight: 0.5 },
+          { name: 'kop_3_uit_de_praktijk', weight: 0.5 },
+          { name: 'uit_de_praktijk', weight: 0.5 },
+          { name: 'subrechtsgebied', weight: 0.5 },
+          { name: 'artikel', weight: 0.5 },
+          { name: 'citeertitel', weight: 0.5 },
         ],
         includeScore: true,
         threshold: 0.2,
@@ -255,11 +253,11 @@ export default function MeasuresLayout(props) {
       const results = fuse.search(searchValue);
       const lawResults = searchValue ? results.map((result) => result.item) : filteredLaws;
       filteredLaws = lawResults;
-      console.log(filteredLaws, 'Regels hergebruik producten')
+      console.log(filteredLaws, 'Regels hergebruik producten');
 
       // display scores in consol for testing
-      const scores = results.map((result) => result.score)
-      console.log(scores)
+      const scores = results.map((result) => result.score);
+      console.log(scores);
 
       // setting values for autocomplete
       setSelectedResults(filteredLaws);
@@ -530,12 +528,12 @@ export default function MeasuresLayout(props) {
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 '>
         <div className='hidden sm:block breadcrumb pt-8 text-greenLink'>
-          <Link href='/'>
-            <a>Home</a>
-          </Link>
+          <Link href='/'>Home</Link>
           <span className=''> → </span>
           <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`}>
-            <a className='inline-block lowercase first-letter:uppercase'>{props.thema.replace('-', ' ')}</a>
+            <span className='inline-block lowercase first-letter:uppercase'>
+              {props.thema.replace('-', ' ')}
+            </span>
           </Link>
         </div>
         <div className='hidden sm:block col-span-2 bg-green3 bg-opacity font-manrope p-5 mt-2 mb-10 max-w-3xl'>

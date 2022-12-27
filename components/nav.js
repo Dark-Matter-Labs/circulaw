@@ -45,28 +45,24 @@ export default function Nav() {
                 <div className='flex items-baseline sm:justify-start '>
                   <div className='hidden lg:block md:py-5 lg:py-0'>
                     <Link href='/'>
-                      <a className=''>
-                        <Image
-                          height={46}
-                          width={250}
-                          src={CirculawLogo}
-                          alt='CircuLaw logo'
-                          quality={100}
-                        />
-                      </a>
+                      <Image
+                        height={46}
+                        width={250}
+                        src={CirculawLogo}
+                        alt='CircuLaw logo'
+                        quality={100}
+                      />
                     </Link>
                   </div>
                   <div className='block lg:hidden py-4 '>
                     <Link href='/'>
-                      <a className=''>
-                        <Image
-                          height={24}
-                          width={120}
-                          src={CirculawLogo}
-                          alt='CircuLaw logo'
-                          quality={100}
-                        />
-                      </a>
+                      <Image
+                        height={24}
+                        width={120}
+                        src={CirculawLogo}
+                        alt='CircuLaw logo'
+                        quality={100}
+                      />
                     </Link>
                   </div>
                   <div className='hidden lg:ml-6 lg:flex'>
@@ -179,16 +175,16 @@ export default function Nav() {
                               </Popover>
                               <div className='inline-block relative'>
                                 <Link href='/hoe-het-werkt'>
-                                  <a className='uppercase pl-8 text-black group rounded-md inline-flex items-center text-base font-medium'>
+                                  <span className='uppercase pl-8 text-black group rounded-md inline-flex items-center text-base font-medium'>
                                     VRAAG & ANTWOORD
-                                  </a>
+                                  </span>
                                 </Link>
                               </div>
                               <div className='inline-block relative '>
                                 <Link href='/contact'>
-                                  <a className='uppercase pl-8 text-black group rounded-md inline-flex items-center text-base font-medium'>
+                                  <span className='uppercase pl-8 text-black group rounded-md inline-flex items-center text-base font-medium'>
                                     CONTACT
-                                  </a>
+                                  </span>
                                 </Link>
                               </div>
                             </div>
@@ -307,22 +303,18 @@ export default function Nav() {
                   <div className='flex items-baseline sm:justify-start '>
                     <div className='hidden lg:block md:py-5 lg:py-0'>
                       <Link href='/'>
-                        <a className=''>
-                          <Image height={46} width={250} src={logo} alt='CircuLaw logo' />
-                        </a>
+                        <Image height={46} width={250} src={logo} alt='CircuLaw logo' />
                       </Link>
                     </div>
                     <div className='block lg:hidden py-4'>
                       <Link href='/'>
-                        <a className=''>
-                          <Image
-                            height={24}
-                            width={120}
-                            src={logo}
-                            alt='CircuLaw logo'
-                            quality={100}
-                          />
-                        </a>
+                        <Image
+                          height={24}
+                          width={120}
+                          src={logo}
+                          alt='CircuLaw logo'
+                          quality={100}
+                        />
                       </Link>
                     </div>
                     <div className='hidden lg:ml-6 lg:flex'>
@@ -435,16 +427,16 @@ export default function Nav() {
                                 </Popover>
                                 <div className='inline-block relative'>
                                   <Link href='/hoe-het-werkt'>
-                                    <a className='uppercase pl-8 text-white1 group rounded-md inline-flex items-center text-base font-medium'>
+                                    <span className='uppercase pl-8 text-white1 group rounded-md inline-flex items-center text-base font-medium'>
                                       VRAAG & ANTWOORD
-                                    </a>
+                                    </span>
                                   </Link>
                                 </div>
                                 <div className='inline-block relative '>
                                   <Link href='/contact'>
-                                    <a className='uppercase pl-8 text-white1 group rounded-md inline-flex items-center text-base font-medium'>
+                                    <span className='uppercase pl-8 text-white1 group rounded-md inline-flex items-center text-base font-medium'>
                                       CONTACT
-                                    </a>
+                                    </span>
                                   </Link>
                                 </div>
                               </div>

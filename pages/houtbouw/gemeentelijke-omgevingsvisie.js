@@ -26,9 +26,7 @@ export default function Law() {
               </div>
               <div className=''>
                 <Link href={'/houtbouw'}>
-                  <a>
-                    <span className='font-openSans font-bold pl-2 text-greenLink'>Houtbouw</span>
-                  </a>
+                  <span className='font-openSans font-bold pl-2 text-greenLink'>Houtbouw</span>
                 </Link>
               </div>
             </div>
@@ -352,9 +350,7 @@ export default function Law() {
                 </div>
                 <div className=''>
                   <Link href='/houtbouw'>
-                    <a>
-                      <span className='font-openSans font-bold pl-2 text-greenLink'>Houtbouw</span>
-                    </a>
+                    <span className='font-openSans font-bold pl-2 text-greenLink'>Houtbouw</span>
                   </Link>
                 </div>
               </div>

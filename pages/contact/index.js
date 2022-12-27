@@ -190,9 +190,9 @@ export default function Contact() {
                       <p className='text-base text-gray-500'>
                         Ik ga akkoord met de{' '}
                         <Link href='/privacy-policy'>
-                          <a className='font-medium text-greenLink font-manrope'>
+                          <span className='font-medium text-greenLink font-manrope'>
                             privacy verklaring
-                          </a>
+                          </span>
                         </Link>
                       </p>
                     </div>
@@ -214,9 +214,7 @@ export default function Contact() {
             </p>
             <div className='sm:col-span-2 pb-20'>
               <Link href='/'>
-                <a>
-                  <CustomButton color='whiteBackground'>Naar de homepage &rarr;</CustomButton>
-                </a>
+                <CustomButton color='whiteBackground'>Naar de homepage &rarr;</CustomButton>
               </Link>
             </div>
           </>

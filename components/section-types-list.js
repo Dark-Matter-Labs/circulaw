@@ -100,9 +100,7 @@ export default function SectionTypes(props) {
             <div className='object-cover'>
               {file.href !== '' ? (
                 <Link href={file.href}>
-                  <a>
-                    <Image src={file.heroImage} layout='responsive' alt='Picture of the case' />
-                  </a>
+                  <Image src={file.heroImage} layout='responsive' alt='Picture of the case' />
                 </Link>
               ) : (
                 <Image src={file.heroImage} layout='responsive' alt='Picture of the case' />
@@ -116,11 +114,9 @@ export default function SectionTypes(props) {
                 >
                   {file.href !== '' ? (
                     <Link href={file.href}>
-                      <a>
-                        <h3 className='mt-2 block text-black pointer-events-none pb-4'>
-                          {file.title}
-                        </h3>
-                      </a>
+                      <h3 className='mt-2 block text-black pointer-events-none pb-4'>
+                        {file.title}
+                      </h3>
                     </Link>
                   ) : (
                     <h3 className='mt-2 block text-black pointer-events-none pb-4'>{file.title}</h3>
@@ -147,9 +143,7 @@ export default function SectionTypes(props) {
               <div className='group block w-full py-4 bg-white px-10 absolute inset-x-0 bottom-0'>
                 {file.buttonText && (
                   <CustomButton color='whiteBackground'>
-                    <Link href={file.href}>
-                      <a>{file.buttonText} →</a>
-                    </Link>
+                    <Link href={file.href}>{file.buttonText} →</Link>
                   </CustomButton>
                 )}
               </div>

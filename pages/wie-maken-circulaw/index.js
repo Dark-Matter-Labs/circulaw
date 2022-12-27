@@ -338,7 +338,7 @@ export default function WieMaken() {
               in beleid zodat we het wet- en regelgevingsstelsel nog beter in dienst kunnen stellen
               van de circulaire transitie!{' '}
               <Link href='/contact'>
-                <a className='text-greenLink link-mobile sm:link'>Neem contact met ons op</a>
+                <span className='text-greenLink link-mobile sm:link'>Neem contact met ons op</span>
               </Link>
               .
             </p>

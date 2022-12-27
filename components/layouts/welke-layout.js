@@ -16,11 +16,11 @@ export default function WelkeLayout(props) {
     <>
       <div className='global-margin my-20 max-w-2xl'>
         <div className='breadcrumb text-greenLink pb-8'>
-          <Link href='/'>
-            <a>Home &gt; </a>
-          </Link>
+          <Link href='/'>Home &gt;</Link>
           <Link href={`/${props.casus.toLowerCase().replace(/ /g, '-')}`}>
-            <a className='inline-block lowercase first-letter:uppercase'>{props.casus} &gt; </a>
+            <span className='inline-block lowercase first-letter:uppercase'>
+              {props.casus} &gt;{' '}
+            </span>
           </Link>
         </div>
         <h1 className='mobile sm:main text-green1 pb-2 max-w-3xl mx-auto'>{props.title}</h1>

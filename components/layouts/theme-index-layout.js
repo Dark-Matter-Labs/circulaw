@@ -10,9 +10,7 @@ export default function ThemeLayout(props) {
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-20 mb-10'>
           <div className='max-w-2xl'>
             <div className='breadcrumb pt-8 text-greenLink'>
-              <Link href='/'>
-                <a>Home &gt; </a>
-              </Link>
+              <Link href='/'>Home &gt;</Link>
             </div>
             <div className='pb-14 pt-14 '>
               {/* maybe make the icon closer to the home link.
