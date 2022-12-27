@@ -14,21 +14,21 @@
   }
 
    
-  h1.urban {
+  .H1urban {
     font-family: 'Urbanist', 'sans-serif';
     font-weight: 600;
     font-size: 54.9px;
     line-height: 64px;
   }
 
-  h2.urban {
+  .H2urban {
     font-family: 'Urbanist', 'sans-serif';
     font-weight: 600;
     font-size: 28px;
     line-height: 32px;
   }
 
-  h4.urban {
+  .H4urban {
     font-family: 'Urbanist', 'sans-serif';
     font-weight: 500;
     font-size: 18px;
