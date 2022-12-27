@@ -40,7 +40,7 @@ const components = {
   types: {
     greenBox: ({ value }) => (
       <div className='bg-green6 w-full px-6 py-8 my-14'>
-        <h2 className='pb-6 H2urban'>{value?.greenBoxTitle}</h2>
+        <h2 className='pb-6 urban'>{value?.greenBoxTitle}</h2>
         <div className='body-text-mobile sm:body-text'>{value?.greenBoxText}</div>
       </div>
     ),
@@ -70,7 +70,7 @@ const components = {
           <div className='absolute -bottom-44 -right-44 h-96 w-96'>
           <Image src='/pdf-deco.png' alt='decorative image' width={584} height={562}/>
           </div>
-          <h2 className='pb-2 mobile sm:H2urban text-white'>{value.pdfTitle}</h2>
+          <h2 className='pb-2 mobile sm:urban text-white'>{value.pdfTitle}</h2>
           <p className='body-text-mobile sm:body-text text-white1 pb-4'>{value.pdfText}</p>
           <a
             href={`https://cdn.sanity.io/files/${
@@ -88,7 +88,7 @@ const components = {
     smallPara: ({value}) => (
       <div className='flex justify-left pl-12'>
       <div className='mb-12 pt-10 w-5/6'>
-      <h4 className='H4urban'>{value.smallParaTitle}</h4>
+      <h4 className='urban'>{value.smallParaTitle}</h4>
       <p className='body-small'>{value.smallParaText}</p>
       </div>
       </div>
@@ -107,8 +107,8 @@ const components = {
     ),
   },
   block: {
-    h2: ({ children }) => <h2 className='pt-10 pb-4 mobile sm:H2urban'>{children}</h2>,
-    firstH2: ({ children }) => <h2 className='pb-8 mobile sm:H2urban'>{children}</h2>,
+    h2: ({ children }) => <h2 className='pt-10 pb-4 mobile sm:urban'>{children}</h2>,
+    firstH2: ({ children }) => <h2 className='pb-8 mobile sm:urban'>{children}</h2>,
 
     // need to add other styles here
     normal: ({ children }) => (
@@ -158,7 +158,7 @@ export default function TestMeasure({ data }) {
           )}
           </div>
           <div className='col-span-12 row-span-1'>
-             <h1 className='hidden lg:block pt-4 mb-7 H1urban'>
+             <h1 className='hidden lg:block pt-4 mb-7 urban'>
                 {data?.measure?.titel}
               </h1>
               </div>
