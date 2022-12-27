@@ -100,10 +100,10 @@ export default function SectionTypes(props) {
             <div className='object-cover'>
               {file.href !== '' ? (
                 <Link href={file.href}>
-                  <Image src={file.heroImage} layout='responsive' alt='Picture of the case' />
+                  <Image src={file.heroImage} alt='Picture of the case' />
                 </Link>
               ) : (
-                <Image src={file.heroImage} layout='responsive' alt='Picture of the case' />
+                <Image src={file.heroImage} alt='Picture of the case' />
               )}
             </div>
 

@@ -26,10 +26,10 @@ export default function WelkeLayout(props) {
         <h1 className='mobile sm:main text-green1 pb-2 max-w-3xl mx-auto'>{props.title}</h1>
       </div>
       <div className='hidden sm:block image-margin'>
-        <Image src={props.img} layout='responsive' alt='Picture of the case' />
+        <Image src={props.img} alt='Picture of the case' />
       </div>
       <div className='block sm:hidden'>
-        <Image src={props.imgMob} layout='responsive' alt='Picture of the case' />
+        <Image src={props.imgMob} alt='Picture of the case' />
       </div>
       <div className='global-margin mb-20'>
         <div className='max-w-3xl mx-auto'>

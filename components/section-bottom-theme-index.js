@@ -13,7 +13,6 @@ export default function ThemeBottomSection({ props }) {
                 <Image
                   src={props.seeMeasuresImage}
                   alt={props.seeMeasuresImageAlt}
-                  layout='responsive'
                 />
               </div>
               <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
@@ -29,7 +28,6 @@ export default function ThemeBottomSection({ props }) {
               <Image
                 src={props.seeMeasuresImage}
                 alt={props.seeMeasuresImageAlt}
-                layout='responsive'
               />
             </div>
           </div>
@@ -42,7 +40,6 @@ export default function ThemeBottomSection({ props }) {
                 <Image
                   src={props.samenhangImage}
                   alt={props.samenhangImageAlt}
-                  layout='responsive'
                 />
               </div>
               <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>{props.samenhangText}</p>
@@ -53,7 +50,7 @@ export default function ThemeBottomSection({ props }) {
               </Link>
             </div>
             <div className='hidden sm:block'>
-              <Image src={props.samenhangImage} alt={props.samenhangImageAlt} layout='responsive' />
+              <Image src={props.samenhangImage} alt={props.samenhangImageAlt} />
             </div>
           </div>
         </div>
@@ -62,7 +59,7 @@ export default function ThemeBottomSection({ props }) {
             <div className='col-span-2'>
               <h2 className='pt-10 mobile sm:main'>{props.welkeTitle}</h2>
               <div className='block py-4 sm:hidden'>
-                <Image src={props.welkeImage} alt={props.welkeImageAlt} layout='responsive' />
+                <Image src={props.welkeImage} alt={props.welkeImageAlt} />
               </div>
               <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>{props.welkeText}</p>
               <Link href={props.welkeLink}>
@@ -70,7 +67,7 @@ export default function ThemeBottomSection({ props }) {
               </Link>
             </div>
             <div className='hidden sm:block'>
-              <Image src={props.welkeImage} alt={props.welkeImageAlt} layout='responsive' />
+              <Image src={props.welkeImage} alt={props.welkeImageAlt} />
             </div>
           </div>
         </div>
