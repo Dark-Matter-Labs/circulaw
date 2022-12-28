@@ -146,7 +146,6 @@ export default function MeasuresLayout(props) {
     // added check for data to have been retrieved here
     if (data) {
       let filteredLaws = data;
-      
       // filter for thema
       filteredLaws = filteredLaws?.filter((element) => {
         return element.thema === props.thema;
@@ -157,21 +156,6 @@ export default function MeasuresLayout(props) {
       let numProvinciaal = 0;
       let numGemeentelijk = 0;
 
-      filteredLaws.map((measure) => {
-        if (measure.wettelijkBevoegdheidsniveau.includes('Europees')) {
-          numEuropee += 1;
-        }
-        if (measure.wettelijkBevoegdheidsniveau.includes('Nationaal')) {
-          numNationaal += 1;
-        }
-        if (measure.wettelijkBevoegdheidsniveau.includes('Provinciaal')) {
-          numProvinciaal += 1;
-        }
-        if (measure.wettelijkBevoegdheidsniveau.includes('Gemeentelijk')) {
-          numGemeentelijk += 1;
-        }
-      })
-
       let numR1 = 0;
       let numR2 = 0;
       let numR3 = 0;
@@ -179,39 +163,8 @@ export default function MeasuresLayout(props) {
       let numR5 = 0;
       let numR6 = 0;
 
-      filteredLaws.map((measure) => {
-        if (measure.rLadder.includes('R1')) {
-          numR1 += 1;
-        }
-        if (measure.rLadder.includes('R2')) {
-          numR2 += 1;
-        }
-        if (measure.rLadder.includes('R3')) {
-          numR3 += 1;
-        }
-        if (measure.rLadder.includes('R4')) {
-          numR4 += 1;
-        }
-        if (measure.rLadder.includes('R5')) {
-          numR5 += 1;
-        }
-        if (measure.rLadder.includes('R6')) {
-          numR6 += 1;
-        }
-    })
-
     let numExample = 0;
     let numGuidline = 0;
-
-    // the numbers are set at the beginning ... reset also at the end?
-  filteredLaws.map((measure) => {
-      if (measure.extraContent.includes('Example')) {
-        numExample += 1;
-      }
-      if (measure.extraContent.includes('Guideline')) {
-        numGuidline += 1;
-      }
-  })
    
       let numJHLow = 0;
       let numJHMedium = 0;
@@ -269,9 +222,8 @@ export default function MeasuresLayout(props) {
           });
         }
       }
+    
       // old filter logic
-      {
-        /* 
       if (selected.rLadder.length > 0) {
         if (selected.rLadder.includes('R1')) {
           filteredLaws = filteredLaws.filter((element) => { 
@@ -304,18 +256,22 @@ export default function MeasuresLayout(props) {
           })
         }
       }
-      */
-      }
+
+     
+          
 
       // potential new filter logic but need to make dynamic counting work
+      {/*
       if (selected.rLadder.length > 0) {
-        let temparr = [];
-        for (let i = 0; i < filteredLaws.length; i++) {
-          if (filteredLaws[i].rLadder.some((rValue) => selected.rLadder.includes(rValue)) === true)
-            temparr.push(filteredLaws[i]);
-        }
-        filteredLaws = temparr;
-      }
+            let temparr = [];
+            for (let i = 0; i < filteredLaws.length; i++) {
+              if (filteredLaws[i].rLadder.some((rValue) => selected.rLadder.includes(rValue)) === true)
+                temparr.push(filteredLaws[i]);
+            }
+            filteredLaws = temparr;
+          }
+        
+    */}
 
       // FILTER LOGIC FOR SINGLE CHOICE ATTRIBUTES
       if (selected.rechtsgebied.length > 0) {
@@ -380,8 +336,6 @@ export default function MeasuresLayout(props) {
           numGuidline += 1;
         }
         
-
-        
         if (measure.wettelijkBevoegdheidsniveau.includes('Europees')) {
           numEuropee += 1;
         }
@@ -416,7 +370,6 @@ export default function MeasuresLayout(props) {
           numGron += 1;
         }
         
-        {/* 
         if (measure.rLadder.includes('R1')) {
           numR1 += 1;
         }
@@ -435,7 +388,6 @@ export default function MeasuresLayout(props) {
         if (measure.rLadder.includes('R6')) {
           numR6 += 1;
         }
-        */}
 
         if (measure.juridischHaalbaarheid === 'Low') {
           numJHLow += 1;
