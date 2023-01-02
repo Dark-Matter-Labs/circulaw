@@ -149,11 +149,11 @@ export default {
         validaton: Rule => Rule.required(),
         options: {
           list: [
-            {title: 'Erfpacht', value: 'erfpacht'},
-            {title: 'Omgevingsrecht', value: 'omgevingsrecht'},
-            {title: 'Aanbesteding', value: 'aanbesteding'},
-            {title: 'Contracten', value: 'contracten'},
-            {title: 'Gronduitgifte', value: 'gronduitgifte'},
+            {title: 'Erfpacht', value: 'Erfpacht'},
+            {title: 'Omgevingsrecht', value: 'Omgevingsrecht'},
+            {title: 'Aanbesteding', value: 'Aanbesteding'},
+            {title: 'Contracten', value: 'Contracten'},
+            {title: 'Gronduitgifte', value: 'Gronduitgifte'},
           ],
           layout: 'dropdown'
         },
@@ -167,9 +167,9 @@ export default {
         validation: Rule => Rule.required(),
         options: {
           list: [
-            {title: 'Low', value: 'low'},
-            {title: 'Medium', value: 'medium'},
-            {title: 'High', value: 'high'},
+            {title: 'Low', value: 'Low'},
+            {title: 'Medium', value: 'Medium'},
+            {title: 'High', value: 'High'},
           ],
           layout: 'radio',
           direction: 'horizontal'
@@ -184,9 +184,9 @@ export default {
         validation: Rule => Rule.required(),
         options: {
           list: [
-            {title: 'Low', value: 'low'},
-            {title: 'Medium', value: 'medium'},
-            {title: 'High', value: 'high'},
+            {title: 'Low', value: 'Low'},
+            {title: 'Medium', value: 'Medium'},
+            {title: 'High', value: 'High'},
           ],
           layout: 'radio',
           direction: 'horizontal',
@@ -194,19 +194,18 @@ export default {
         group: ['overview', 'filter']
       },
       {
-        title: 'Government Level',
-        name: 'governmentLevel',
+        title: 'Wettelijk Bevoegdheidsniveau',
+        name: 'wettelijkBevoegdheidsniveau',
         type: 'array',
         description: 'Please select one or more levels of government',
         of: [{type: 'string'}],
         validation: Rule => Rule.required(),
         options: {
           list: [
-            {title: 'Europees', value: 'europees'},
-            {title: 'Nationaal', value: 'nationaal'},
-            {title: 'Provinciaal', value:'provinciaal'},
-            {title: 'Waterschappen', value: 'waterschappen'},
-            {title: 'Gemeentelijk', value:'gemeentelijk'},
+            {title: 'Europees', value: 'Europees'},
+            {title: 'Nationaal', value: 'Nationaal'},
+            {title: 'Provinciaal', value:'Provinciaal'},
+            {title: 'Gemeentelijk', value:'Gemeentelijk'},
           ],
           layout: 'grid',
         },
@@ -220,9 +219,9 @@ export default {
         validation: Rule => Rule.required(),
         options: {
           list: [
-            {title: 'Privaatrecht', value: 'privaatrecht'},
-            {title: 'Publiekrecht', value: 'publiekrecht'},
-            {title: 'Fiscaalrecht', value: 'fiscaalrecht'},
+            {title: 'Privaatrecht', value: 'Privaatrecht'},
+            {title: 'Publiekrecht', value: 'Publiekrecht'},
+            {title: 'Fiscaalrecht', value: 'Fiscaalrecht'},
           ],
           layout: 'radio',
           direction: 'horizontal'
@@ -237,8 +236,8 @@ export default {
         of: [{type: 'string'}],
         options: {
           list: [
-            {title: 'Example', value: 'example'},
-            {title: 'Guideline', value: 'guideline'},
+            {title: 'Example', value: 'Example'},
+            {title: 'Guideline', value: 'Guideline'},
           ],
           layout: 'grid',
         },

@@ -81,7 +81,7 @@ export default function ToolTips({ children, icon, data }) {
                       <div className='px-4 sm:px-6'>
                         <Dialog.Title className='text-lg font-medium text-gray-900'>
                           {' '}
-                          Juridische houdbaarheid
+                          Juridisch haalbaarheid
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>

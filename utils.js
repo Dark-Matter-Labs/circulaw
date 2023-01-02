@@ -22,3 +22,4 @@ export const handleToggle = (checkboxId, previousState) => {
   }
   return newCheckedArray.sort((a, b) => a - b);
 };
+

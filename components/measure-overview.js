@@ -28,9 +28,11 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
           )}
           <div className=''>
             <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()}>
-              <span className='overview-thema underline pl-2 text-green1 first-letter:uppercase block'>
-                {data?.measure?.thema}
-              </span>
+              <a>
+                <span className='overview-thema underline pl-2 text-green1 first-letter:uppercase block'>
+                  {data?.measure?.thema}
+                </span>
+              </a>
             </Link>
           </div>
         </div>
@@ -96,6 +98,12 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
                 </svg>
               </JITooltip>
             </div>
+          </div>
+
+          <div className='flex items-center'>
+            <span className='overview-text border border-black rounded-xl uppercase px-2'>
+              {data?.measure?.juridischInvloed}
+            </span>
           </div>
 
           <div className='flex items-center'>
