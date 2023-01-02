@@ -62,7 +62,7 @@ export default function MeasureTable({ data }) {
             <tr className='border-b boder-grey2'>
               <td className='w-1/3 py-1.5 body-small'>Bevoegdheidsniveau</td>
               <td className='w-2/3 py-1.5 table-right'>
-                {data?.measure?.governmentLevel.map((level) => (
+                {data?.measure?.governmentLevel?.map((level) => (
                   <span key={level} className='table-right capitalize'>
                     {level}{' '}
                     {data?.measure?.governmentLevel.slice(-1)[0] !== level && <span>- </span>}
