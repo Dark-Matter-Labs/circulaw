@@ -15,9 +15,6 @@ const CookieConsent = () => {
     setCookie('localConsent', 'true', { maxAge: 60 * 60 * 24 * 365 });
     router.reload(window.location.pathname); // extra refresh to enable Hotjar
   };
-  const closeP = () => {
-    setConsent(true);
-  };
   const denyCookie = () => {
     setConsent(true);
     setCookie('localConsent', 'false', { maxAge: 60 * 60 * 24 * 365 });
@@ -40,14 +37,6 @@ const CookieConsent = () => {
           </p>
         </div>
         <div className='flex items-center'>
-          <button
-            className='p-3 mr-2 text-sm font-bold text-white uppercase bg-gray-700 whitespace-nowrap'
-            onClick={() => {
-              closeP();
-            }}
-          >
-            Close
-          </button>
           <button
             className='p-3 mr-2 text-sm font-bold text-white uppercase bg-gray-700 whitespace-nowrap'
             onClick={() => denyCookie()}
