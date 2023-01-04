@@ -31,7 +31,7 @@ const CookieConsent = () => {
             This site uses services that uses cookies to deliver better experience and analyze
             traffic. You can learn more about the services we use at our{' '}
             <Link href='/privacy-policy'>
-              <a className='text-sm underline hover:text-lightAccent'>privacy policy</a>
+              <span className='text-sm underline hover:text-lightAccent'>privacy policy</span>
             </Link>
             .
           </p>

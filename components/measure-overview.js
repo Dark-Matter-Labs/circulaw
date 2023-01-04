@@ -28,11 +28,9 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
           )}
           <div className=''>
             <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()}>
-              <a>
                 <span className='overview-thema underline pl-2 text-green1 first-letter:uppercase block'>
                   {data?.measure?.thema}
                 </span>
-              </a>
             </Link>
           </div>
         </div>
