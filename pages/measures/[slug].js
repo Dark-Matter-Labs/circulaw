@@ -164,11 +164,11 @@ export default function TestMeasure({ data }) {
               {/* BREADCRUMB */}
               {data?.measure?.thema === 'houtbouw' ? (
                 <Link href='/measures/houtbouw' className=''>
-                  <a className='breadcrumb'>{'<'} Terug</a>
+                  <span className='breadcrumb'>{'<'} Terug</span>
                 </Link>
               ) : (
                 <Link href='/measures/windturbines' className=''>
-                  <a className='text-greenLink breadcrumb flex col-span-12'>← Terug</a>
+                  <span className='text-greenLink breadcrumb flex col-span-12'>← Terug</span>
                 </Link>
               )}
             </div>

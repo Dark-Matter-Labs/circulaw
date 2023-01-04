@@ -9,7 +9,7 @@ export default function WieMaken() {
       <div className='global-margin'>
         <div className='breadcrumb pt-8 text-greenLink'>
           <Link href='/'>
-            <a>Home &gt; </a>
+            Home &gt;
           </Link>
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-3'>

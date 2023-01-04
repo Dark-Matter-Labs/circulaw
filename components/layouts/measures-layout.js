@@ -657,9 +657,9 @@ export default function MeasuresLayout(props) {
           <Link href='/'>Home</Link>
           <span className=''> → </span>
           <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`}>
-            <a className='inline-block lowercase first-letter:uppercase'>
+            <span className='inline-block lowercase first-letter:uppercase'>
               {props.thema.replace('-', ' ')}
-            </a>
+            </span>
           </Link>
         </div>
         <div className='hidden sm:block col-span-2 bg-green3 bg-opacity font-manrope p-5 mt-2 mb-10 max-w-3xl'>
