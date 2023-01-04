@@ -4,15 +4,19 @@ import 'next-pagination/dist/index.css';
 import '../global.css';
 import { hotjar } from 'react-hotjar';
 import { useEffect } from 'react';
+import { getCookie } from 'cookies-next';
 
 export default function MyApp({ Component, pageProps }) {
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout || ((page) => page);
 
-  // Use Hotjar
+  const consent = getCookie('localConsent');
+
   useEffect(() => {
-    hotjar.initialize(process.env.NEXT_PUBLIC_HJID, process.env.NEXT_PUBLIC_HJSV);
-  }, []);
+    if (consent === true) {
+      hotjar.initialize(process.env.NEXT_PUBLIC_HJID, process.env.NEXT_PUBLIC_HJSV);
+    }
+  }, [consent]);
 
   return (
     <>

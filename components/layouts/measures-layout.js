@@ -303,6 +303,13 @@ export default function MeasuresLayout(props) {
 
         keys: [
           { name: 'titel', weight: 1 },
+          { name: 'introductie_juridische_maatregel', weight: 0.7 },
+          { name: 'eisen_en_beperkingen', weight: 0.7 },
+          { name: 'kop_1_samenvatting_juridische_maatregel', weight: 0.5 },
+          { name: 'kop_2_toepassing_juridische_maatregel', weight: 0.5 },
+          { name: 'toepassing_juridische_maatregel', weight: 0.5 },
+          { name: 'kop_3_uit_de_praktijk', weight: 0.5 },
+          { name: 'uit_de_praktijk', weight: 0.5 },
           { name: 'subtitle',  weight: 0.7},
           // getFN gets all text in portable text as plaintext - this means that we search all text in the measure
           { name: 'content', getFn: (law) => toPlainText(law.content) , weight: 0.5 },
@@ -318,6 +325,11 @@ export default function MeasuresLayout(props) {
       const results = fuse.search(searchValue);
       const lawResults = searchValue ? results.map((result) => result.item) : filteredLaws;
       filteredLaws = lawResults;
+      console.log(filteredLaws, 'Regels hergebruik producten');
+
+      // display scores in consol for testing
+      const scores = results.map((result) => result.score);
+      console.log(scores);
 
       // setting values for autocomplete
       setSelectedResults(filteredLaws);

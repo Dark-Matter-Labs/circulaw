@@ -91,6 +91,9 @@ export default function Privacy() {
         </p>
         <h2 className='mobile sm:main py-2'>Hoe gaan we om met cookies?</h2>
         <p className='body-text-mobile sm:body-text pb-6 max-w-4xl'>
+          TODO: Text about Hotjar usage
+        </p>
+        <p className='body-text-mobile sm:body-text pb-6 max-w-4xl'>
           Een cookie is een klein tekstbestand dat onzichtbaar is voor de gebruiker en dat de
           browser opslaat op de computer of het mobiele apparaat van de gebruiker wanneer de
           gebruiker een website bezoekt.

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Footer from '../../components/footer';
 import Nav from '../../components/nav';
+import CookieConsent from '../../components/cookie-banner';
 
 export default function Layout(props) {
   return (
@@ -37,6 +38,7 @@ export default function Layout(props) {
         <title>CircuLaw</title>
       </Head>
       <main className=''>{props.children}</main>
+      <CookieConsent />
       <Footer />
     </>
   );
