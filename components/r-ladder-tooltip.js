@@ -121,14 +121,14 @@ export default function ToolTips({ children, icon }) {
                           <div className='card-body'>
                             Bron: PBL (Planbureau voor de Leefomgeving)
                           </div>
-                          <Link href='https://www.rvo.nl/onderwerpen/duurzaam-ondernemen/circulaire-economie/r-ladder'>
-                            <a
-                              target='_blank'
-                              rel='noopener noreferrer'
-                              className='text-greenLink link-mobile sm:link'
-                            >
+                          <Link
+                            href='https://www.rvo.nl/onderwerpen/duurzaam-ondernemen/circulaire-economie/r-ladder'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                          >
+                            <span className='text-greenLink link-mobile sm:link'>
                               Meer over de R ladder op de website van RVO
-                            </a>
+                            </span>
                           </Link>
                         </div>
                       </div>

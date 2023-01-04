@@ -17,9 +17,7 @@ export default function Alpha() {
           horen we ook graag waar je blij van wordt.
         </p>
         <p className='text-greenLink link-mobile sm:link'>
-          <Link href='/contact'>
-            <a>Stuur je feedback op deze testversie</a>
-          </Link>{' '}
+          <Link href='/contact'>Stuur je feedback op deze testversie</Link>{' '}
         </p>
       </div>
     </Layout>

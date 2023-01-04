@@ -7,9 +7,7 @@ export default function WatIsCircuLaw() {
     <Layout>
       <div className='global-margin'>
         <div className='breadcrumb pt-8 text-greenLink'>
-          <Link href='/'>
-            <a>Home &gt; </a>
-          </Link>
+          <Link href='/'>Home &gt;</Link>
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-3'>
           <div className='my-20 col-span-2 text-black1'>

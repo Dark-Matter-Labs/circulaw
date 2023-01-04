@@ -105,6 +105,12 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
               {data?.measure?.juridischInvloed}
             </span>
           </div>
+
+          <div className='flex items-center'>
+            <span className='overview-text border border-black rounded-xl uppercase px-2'>
+              {data?.measure?.juridischInvloed}
+            </span>
+          </div>
         </div>
 
         <div className='pt-5 pb-5 border-b border-grey1'>

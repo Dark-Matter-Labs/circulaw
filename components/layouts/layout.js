@@ -15,17 +15,13 @@ export default function Layout(props) {
                 <span className='md:hidden'>
                   <span className='font-bold bg-blush1 p-2'>ALPHA</span> Testversie CircuLaw -{' '}
                   <span className='link-mobile text-greenLink'>
-                    <Link href='/alpha'>
-                      <a>Lees meer -&gt;</a>
-                    </Link>
+                    <Link href='/alpha'>Lees meer -&gt;</Link>
                   </span>
                 </span>
                 <span className='hidden md:inline'>
                   <span className='font-bold bg-blush1 p-4 m-2'>ALPHA</span> Testversie CircuLaw -{' '}
                   <span className='link-mobile text-greenLink'>
-                    <Link href='/alpha'>
-                      <a>Lees meer -&gt;</a>
-                    </Link>
+                    <Link href='/alpha'>Lees meer -&gt;</Link>
                   </span>
                 </span>
               </p>

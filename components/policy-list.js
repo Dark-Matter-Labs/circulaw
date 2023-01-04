@@ -39,9 +39,9 @@ export default function PolicyList(props) {
             </div>
             <div className='block my-1'>
               <Link href={'/measures/' + law.slug.current} key={law.slug.current}>
-                <a className='text-lg font-semibold no-underline hover:text-greenLink'>
+                <span className='text-lg font-semibold no-underline hover:text-greenLink'>
                   <h3>{law.titel} </h3>
-                </a>
+                </span>
               </Link>
               <div className='block font-manrope font-bold text-xs pb-1'>
                 {law?.wettelijkBevoegdheidsniveau?.map((level) => (
@@ -54,9 +54,7 @@ export default function PolicyList(props) {
 
               <div className='block newlineDisplay twoLines font-manrope font-normal font-base mb-4'>
                 <Link href={'/measures/' + law.slug.current} key={law.slug.current} passHref>
-                  <a>
-                    <p className='max-w-xs sm:max-w-5xl'>{law.introText}</p>
-                  </a>
+                  <p className='max-w-xs sm:max-w-5xl'>{law.introText}</p>
                 </Link>
               </div>
 

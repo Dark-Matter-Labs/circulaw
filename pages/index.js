@@ -15,15 +15,11 @@ export default function Index() {
             In 2022 volgen meer thema’s binnen verschillende waardeketens. <br />
             Lees meer over{' '}
             <span className='link-mobile sm:link text-greenLink'>
-              <Link href='/status-en-ambities'>
-                <a>wat je nu vindt op CircuLaw</a>
-              </Link>
+              <Link href='/status-en-ambities'>wat je nu vindt op CircuLaw</Link>
             </span>{' '}
             of ga naar{' '}
             <span className='link-mobile sm:link text-greenLink'>
-              <Link href='/hoe-het-werkt'>
-                <a>Vraag & Antwoord</a>
-              </Link>
+              <Link href='/hoe-het-werkt'>Vraag & Antwoord</Link>
             </span>
           </p>
         </div>
@@ -41,9 +37,7 @@ export default function Index() {
               kunnen bijdragen aan versnelling van de circulaire transitie.
             </p>
             <span className='text-greenLink link-mobile sm:link'>
-              <Link href='/waarom-circulaw'>
-                <a>Lees verder →</a>
-              </Link>
+              <Link href='/waarom-circulaw'>Lees verder →</Link>
             </span>
           </div>
           <div className='border-b border-grey1 pb-10'>
@@ -54,9 +48,7 @@ export default function Index() {
               circulaire economie te bevorderen.
             </p>
             <span className='text-greenLink link-mobile sm:link'>
-              <Link href='/wat-is-circulaw'>
-                <a>Lees verder →</a>
-              </Link>
+              <Link href='/wat-is-circulaw'>Lees verder →</Link>
             </span>
           </div>
           <div className='border-b border-grey1 pb-10'>
@@ -67,9 +59,7 @@ export default function Index() {
               wordt geleidelijk uitgebreid
             </p>
             <span className='text-greenLink link-mobile sm:link'>
-              <Link href='/status-en-ambities'>
-                <a>Lees verder →</a>
-              </Link>
+              <Link href='/status-en-ambities'>Lees verder →</Link>
             </span>
           </div>
           <div className='pb-10'>
@@ -80,7 +70,7 @@ export default function Index() {
             </p>
             <span className='text-greenLink link-mobile sm:link'>
               <Link href='/wie-maken-circulaw'>
-                <a>Lees verder om te zien wie allemaal bijdragen aan CircuLaw →</a>
+                Lees verder om te zien wie allemaal bijdragen aan CircuLaw →
               </Link>
             </span>
           </div>

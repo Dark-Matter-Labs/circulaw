@@ -70,9 +70,7 @@ export default function Kunststoffen() {
             niet bekend. Laat ons vooral weten waar jij behoefte aan hebt en waarom.
           </p>
           <p className='link-mobile sm:link text-greenLink pb-4 link-mobile sm:link'>
-            <Link href='/contact'>
-              <a>Contact</a>
-            </Link>
+            <Link href='/contact'>Contact</Link>
           </p>
 
           <h2 className='mobile sm:main pb-2'>
@@ -84,9 +82,7 @@ export default function Kunststoffen() {
             verder.
           </p>
           <p className='body-text-mobile sm:body-text text-greenLink pb-4 link-mobile sm:link'>
-            <Link href='/contact'>
-              <a>Contact</a>
-            </Link>
+            <Link href='/contact'>Contact</Link>
           </p>
 
           <h2 className='mobile sm:main pb-2'>
@@ -94,9 +90,7 @@ export default function Kunststoffen() {
           </h2>
           <p className='body-text-mobile sm:body-text'>We horen graag van je!</p>
           <p className='body-text-mobile sm:body-text text-greenLink pb-4 link-mobile sm:link'>
-            <Link href='/contact'>
-              <a>Contact</a>
-            </Link>
+            <Link href='/contact'>Contact</Link>
           </p>
 
           <h2 className='mobile sm:main pb-2'>
@@ -107,9 +101,7 @@ export default function Kunststoffen() {
             Wij komen graag met je in contact om de mogelijkheden te bespreken.
           </p>
           <p className='body-text-mobile sm:body-text text-greenLink pb-4 link-mobile sm:link'>
-            <Link href='/contact'>
-              <a>Contact</a>
-            </Link>
+            <Link href='/contact'>Contact</Link>
           </p>
 
           <h2 className='mobile sm:main pb-2'>Wanneer is CircuLaw klaar?</h2>

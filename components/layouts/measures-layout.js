@@ -654,9 +654,7 @@ export default function MeasuresLayout(props) {
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 '>
         <div className='hidden sm:block breadcrumb pt-8 text-greenLink'>
-          <Link href='/'>
-            <a>Home</a>
-          </Link>
+          <Link href='/'>Home</Link>
           <span className=''> → </span>
           <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`}>
             <a className='inline-block lowercase first-letter:uppercase'>
