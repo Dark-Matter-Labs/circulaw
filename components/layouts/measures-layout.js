@@ -341,25 +341,25 @@ export default function MeasuresLayout(props) {
       filteredLaws?.map((measure) => {
         // add extra content
         
-        if (measure.extraContent.includes('Example')) {
-          numExample += 1;
-        }
-        if (measure.extraContent.includes('Guideline')) {
-          numGuidline += 1;
-        }
+        // if (measure.extraContent.includes('Example')) {
+        //   numExample += 1;
+        // }
+        // if (measure.extraContent.includes('Guideline')) {
+        //   numGuidline += 1;
+        // }
         
-        if (measure.wettelijkBevoegdheidsniveau.includes('Europees')) {
-          numEuropee += 1;
-        }
-        if (measure.wettelijkBevoegdheidsniveau.includes('Nationaal')) {
-          numNationaal += 1;
-        }
-        if (measure.wettelijkBevoegdheidsniveau.includes('Provinciaal')) {
-          numProvinciaal += 1;
-        }
-        if (measure.wettelijkBevoegdheidsniveau.includes('Gemeentelijk')) {
-          numGemeentelijk += 1;
-        }
+        // if (measure.wettelijkBevoegdheidsniveau.includes('Europees')) {
+        //   numEuropee += 1;
+        // }
+        // if (measure.wettelijkBevoegdheidsniveau.includes('Nationaal')) {
+        //   numNationaal += 1;
+        // }
+        // if (measure.wettelijkBevoegdheidsniveau.includes('Provinciaal')) {
+        //   numProvinciaal += 1;
+        // }
+        // if (measure.wettelijkBevoegdheidsniveau.includes('Gemeentelijk')) {
+        //   numGemeentelijk += 1;
+        // }
         
 
         if (measure.rechtsgebied === 'Publiekrecht') {
