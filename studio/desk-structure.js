@@ -19,7 +19,7 @@ export const Structure = (S) =>
                 S.listItem().title('Matrassen').child(
                   S.documentList()
                         .title('Matrassen measures')
-                        .filter('_type == "measure" &&  thema == "matrassen"')),
+                        .filter('_type == "measure" && thema == "matrassen"')),
         ])
           )
       ])
