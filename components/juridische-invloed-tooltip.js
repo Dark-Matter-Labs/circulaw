@@ -86,7 +86,6 @@ export default function ToolTips({ children, icon, data }) {
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>
                         <div className='absolute inset-0 px-4 sm:px-6'>
-                          {console.log(data?.measure?.invloedTooltipText)}
                           {data?.measure?.invloedTooltipText && (
                             <p className='tooltip-body'>{data?.measure?.invloedTooltipText}</p>
                           )}
