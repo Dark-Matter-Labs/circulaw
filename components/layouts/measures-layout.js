@@ -325,11 +325,9 @@ export default function MeasuresLayout(props) {
       const results = fuse.search(searchValue);
       const lawResults = searchValue ? results.map((result) => result.item) : filteredLaws;
       filteredLaws = lawResults;
-      console.log(filteredLaws, 'Regels hergebruik producten');
 
       // display scores in consol for testing
-      const scores = results.map((result) => result.score);
-      console.log(scores);
+      // const scores = results.map((result) => result.score);
 
       // setting values for autocomplete
       setSelectedResults(filteredLaws);
