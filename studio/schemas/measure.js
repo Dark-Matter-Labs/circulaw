@@ -303,7 +303,7 @@ export default {
         name: 'introText',
         type: 'text',
         description: 'Plak hier de tekst van de eerste zinnen in (deze tekst wordt in de lijst met alle  instrumenten weergegeven).',
-        validaton: Rule => Rule.required().max(215),
+        validation: Rule => Rule.required().max(215),
         group: 'copy'
       },
       {
