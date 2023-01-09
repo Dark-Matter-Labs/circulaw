@@ -22,7 +22,7 @@ const measureQuery = `
     rLadder,
     subrechtsgebied,
     juridischInvloed,
-    juridischHaalbaarheid,
+    juridischeHaalbaarheid,
     rechtsgebied,
     citeertitel,
     artikel,
@@ -31,7 +31,6 @@ const measureQuery = `
     overheidslaag,
     content,
     juridischeToelichting,
-
 }
 `;
 

@@ -6,6 +6,7 @@ const formatDate = (date) => {
   return dateObject.toLocaleDateString();
 };
 
+
 const components = {
   list: {
     bullet: ({ children }) => (

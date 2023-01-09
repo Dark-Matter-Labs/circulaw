@@ -290,7 +290,7 @@ export default {
       {
         title: 'Ingangsdatum wet',
         name: 'lawDate',
-        type: 'datetime',
+        type: 'date',
         description: 'Ingangsdatum wet (laat open als wet nog niet van kracht is)',
         group: 'table',
         options: {

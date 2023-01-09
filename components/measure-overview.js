@@ -27,7 +27,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
             </div>
           )}
           <div className=''>
-            <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()}>
+            <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()} passHref>
                 <span className='overview-thema underline pl-2 text-green1 first-letter:uppercase block'>
                   {data?.measure?.thema}
                 </span>
@@ -103,12 +103,6 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
               {data?.measure?.juridischInvloed}
             </span>
           </div>
-
-          <div className='flex items-center'>
-            <span className='overview-text border border-black rounded-xl uppercase px-2'>
-              {data?.measure?.juridischInvloed}
-            </span>
-          </div>
         </div>
 
         <div className='pt-5 pb-5 border-b border-grey1'>
@@ -134,7 +128,8 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
           </div>
           <div className='flex items-center w-10/12'>
             <span className='overview-text border border-black rounded-xl px-2 uppercase'>
-              {data?.measure?.juridischHaalbaarheid}
+              {data?.measure?.juridischeHaalbaarheid}
+              {console.log(data?.measure?.juridischeHaalbaarheid)}
             </span>
           </div>
         </div>
