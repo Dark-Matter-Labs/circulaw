@@ -46,7 +46,7 @@ export default {
         name: 'subtitle',
         type: 'text',
         description: 'The subtitle of the measure which will be displayed at the top of the page',
-        validation: Rule => Rule.required().max(130),
+        validation: Rule => Rule.max(130),
       },
       {
         title: 'Slug',

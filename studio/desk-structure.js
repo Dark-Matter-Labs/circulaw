@@ -9,36 +9,17 @@ export const Structure = (S) =>
               .title('Themas')
               .items([
                 S.listItem().title('Houtbouw').child(
-                  S.list().title('Extended').items([
-                    S.listItem().title('Normal').child(
-                      S.documentList()
-                        .title('Houtbouw Measures')
-                        .filter('_type == "measure" &&  thema == "houtbouw" && isExtended == false')),
-                    S.listItem().title('Extended').child(
-                      S.documentList()
-                        .title('Houtbouw Measures')
-                        .filter('_type == "measure" &&  thema == "houtbouw" && isExtended == true'))])),
+                  S.documentList()
+                    .title('Houtbouw Measures')
+                    .filter('_type == "measure" &&  thema == "houtbouw"')),
                 S.listItem().title('Circulaire windturbines').child(
-                  S.list().title('Extended').items([
-                    S.listItem().title('Normal').child(
-                      S.documentList()
-                        .title('Houtbouw Measures')
-                        .filter('_type == "measure" &&  thema == "circular-windturbines" && isExtended == false')),
-                    S.listItem().title('Extended').child(
-                      S.documentList()
-                          .title('Houtbouw Measures')
-                          .filter('_type == "measure" &&  thema == "circular-windturbines" && isExtended == true'))])),
+                  S.documentList()
+                    .title('Circulaire windturbines measures')
+                    .filter('_type == "measure" &&  thema == "circular-windturbines"')),
                 S.listItem().title('Mattress').child(
-                  S.list().title('Extended').items([
-                    S.listItem().title('Normal').child(
-                      S.documentList()
-                        .title('Houtbouw Measures')
-                        .filter('_type == "measure" &&  thema == "mattress" && isExtended == false')),
-                    S.listItem().title('Extended').child(
-                      S.documentList()
-                        .title('Houtbouw Measures')
-                        .filter('_type == "measure" &&  thema == "mattress" && isExtended == true'))])),
-                            ])
-                )
+                  S.documentList()
+                        .title('Mattress Measures')
+                        .filter('_type == "measure" &&  thema == "mattress"')),
         ])
-
+          )
+      ])
