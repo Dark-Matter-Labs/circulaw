@@ -28,11 +28,24 @@ export default {
     // FIELDS
     fields: [
       {
-        title: 'Is Extended',
-        name: 'isExtended',
+        title: 'Is Featured',
+        name: 'isFeatured',
         type: 'boolean',
         description: 'Select if this is the instrument you want displayed as extended',
         validation: Rule => Rule.required(),
+      },
+      {
+        title: 'Featured Image',
+        name: 'featuredImage',
+        type: 'image',
+        hidden: ({document}) => document.isFeatured === false,
+        fields: [
+          {
+            title: 'Alt Text',
+            name: 'altText',
+            type: 'string'
+          }
+        ]
       },
       {
         title: 'Titel',
