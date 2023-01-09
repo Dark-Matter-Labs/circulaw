@@ -196,6 +196,13 @@ export default {
         group: ['overview']
       },
       {
+        title: 'Invloed tooltip text',
+        name: 'invloedTooltiptext',
+        type: 'string',
+        description: '',
+        group: 'overview'
+      },
+      {
         title: 'Juridische Haalbaarheid',
         name: 'juridischeHaalbaarheid',
         type: 'string',
@@ -211,6 +218,13 @@ export default {
           direction: 'horizontal',
         },
         group: ['overview', 'filter']
+      },
+      {
+        title: 'Juridische Haalbaarheid tooltip text',
+        name: 'juridischeHaalbaarheidTooltiptext',
+        type: 'string',
+        description: '',
+        group: 'overview'
       },
       {
         title: 'Overheidslaag',
