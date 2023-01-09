@@ -5,7 +5,7 @@ import Link from 'next/link';
 import createPersistedState from 'use-persisted-state';
 import { SearchIcon, XIcon, AdjustmentsIcon } from '@heroicons/react/outline';
 import {
-  wettelijkBevoegdheidsniveau,
+  overheidslaag,
   rechtsgebied,
   subrechtsgebied,
   juridischHaalbaarheid,
@@ -41,7 +41,7 @@ export default function MeasuresLayout(props) {
   const [laws, setLaws] = useState(data);
 
   const [selected, setSelected] = useSelectedState({
-    wettelijkBevoegdheidsniveau: [],
+    overheidslaag: [],
     rechtsgebied: [],
     subrechtsgebied: [],
     rLadder: [],
@@ -52,7 +52,7 @@ export default function MeasuresLayout(props) {
 
   const dummyArray = [];
   const allSelectedValues = dummyArray.concat(
-    selected.wettelijkBevoegdheidsniveau,
+    selected.overheidslaag,
     selected.rechtsgebied,
     selected.subrechtsgebied,
     selected.rLadder,
@@ -120,7 +120,7 @@ export default function MeasuresLayout(props) {
 
   const reset = () => {
     setSelected({
-      wettelijkBevoegdheidsniveau: [],
+      overheidslaag: [],
       rechtsgebied: [],
       subrechtsgebied: [],
       rLadder: [],
@@ -200,25 +200,25 @@ export default function MeasuresLayout(props) {
         }
       }
 
-      if (selected.wettelijkBevoegdheidsniveau.length > 0) {
-        if (selected.wettelijkBevoegdheidsniveau.includes('Europees')) {
+      if (selected.overheidslaag.length > 0) {
+        if (selected.overheidslaag.includes('Europees')) {
           filteredLaws = filteredLaws.filter((element) => {
-            return element.wettelijkBevoegdheidsniveau.includes('Europees');
+            return element.overheidslaag.includes('Europees');
           });
         }
-        if (selected.wettelijkBevoegdheidsniveau.includes('Nationaal')) {
+        if (selected.overheidslaag.includes('Nationaal')) {
           filteredLaws = filteredLaws.filter((element) => {
-            return element.wettelijkBevoegdheidsniveau.includes('Nationaal');
+            return element.overheidslaag.includes('Nationaal');
           });
         }
-        if (selected.wettelijkBevoegdheidsniveau.includes('Provinciaal')) {
+        if (selected.overheidslaag.includes('Provinciaal')) {
           filteredLaws = filteredLaws.filter((element) => {
-            return element.wettelijkBevoegdheidsniveau.includes('Provinciaal');
+            return element.overheidslaag.includes('Provinciaal');
           });
         }
-        if (selected.wettelijkBevoegdheidsniveau.includes('Gemeentelijk')) {
+        if (selected.overheidslaag.includes('Gemeentelijk')) {
           filteredLaws = filteredLaws.filter((element) => {
-            return element.wettelijkBevoegdheidsniveau.includes('Gemeentelijk');
+            return element.overheidslaag.includes('Gemeentelijk');
           });
         }
       }
@@ -348,16 +348,16 @@ export default function MeasuresLayout(props) {
            numGuidline += 1;
          }
         
-         if (measure.wettelijkBevoegdheidsniveau.includes('Europees')) {
+         if (measure.overheidslaag.includes('Europees')) {
            numEuropee += 1;
          }
-         if (measure.wettelijkBevoegdheidsniveau.includes('Nationaal')) {
+         if (measure.overheidslaag.includes('Nationaal')) {
            numNationaal += 1;
          }
-         if (measure.wettelijkBevoegdheidsniveau.includes('Provinciaal')) {
+         if (measure.overheidslaag.includes('Provinciaal')) {
            numProvinciaal += 1;
          }
-         if (measure.wettelijkBevoegdheidsniveau.includes('Gemeentelijk')) {
+         if (measure.overheidslaag.includes('Gemeentelijk')) {
            numGemeentelijk += 1;
          }
         
@@ -466,10 +466,10 @@ export default function MeasuresLayout(props) {
     }
 
     if (
-      selected.wettelijkBevoegdheidsniveau.length !== 0 &&
+      selected.overheidslaag.length !== 0 &&
       typeof wettelijkFilterRef.current !== 'undefined'
     ) {
-      wettelijkFilterRef.current.set(selected.wettelijkBevoegdheidsniveau);
+      wettelijkFilterRef.current.set(selected.overheidslaag);
     }
 
     if (
@@ -569,7 +569,7 @@ export default function MeasuresLayout(props) {
                       <SearchFilter
                         ref={wettelijkFilterRef}
                         title='Bevoegdheidsniveau'
-                        list={wettelijkBevoegdheidsniveau}
+                        list={overheidslaag}
                         filterNumbers={[
                           numberOfEuropees,
                           numberOfNationaal,
@@ -577,7 +577,7 @@ export default function MeasuresLayout(props) {
                           numberOfGemeentelijk,
                         ]}
                         handleFilters={(checkboxState) =>
-                          handleFilters(checkboxState, 'wettelijkBevoegdheidsniveau')
+                          handleFilters(checkboxState, 'overheidslaag')
                         }
                       />
                       <SearchFilter
@@ -826,7 +826,7 @@ export default function MeasuresLayout(props) {
           <SearchFilter
             ref={wettelijkFilterRef}
             title='Bevoegdheidsniveau'
-            list={wettelijkBevoegdheidsniveau}
+            list={overheidslaag}
             filterNumbers={[
               numberOfEuropees,
               numberOfNationaal,
@@ -834,7 +834,7 @@ export default function MeasuresLayout(props) {
               numberOfGemeentelijk,
             ]}
             handleFilters={(checkboxState) =>
-              handleFilters(checkboxState, 'wettelijkBevoegdheidsniveau')
+              handleFilters(checkboxState, 'overheidslaag')
             }
           />
           <SearchFilter

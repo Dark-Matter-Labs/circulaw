@@ -28,7 +28,7 @@ const measureQuery = `
     artikel,
     artikelLink,
     lawDate,
-    governmentLevel,
+    overheidslaag,
     content,
     juridischeToelichting,
 

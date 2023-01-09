@@ -44,10 +44,10 @@ export default function PolicyList(props) {
                 </span>
               </Link>
               <div className='block font-manrope font-bold text-xs pb-1'>
-                {law?.wettelijkBevoegdheidsniveau?.map((level) => (
+                {law?.overheidslaag?.map((level) => (
                   <span key={level} className='capitalize'>
                     {level}{' '}
-                    {law?.wettelijkBevoegdheidsniveau.slice(-1)[0] !== level && <span>- </span>}
+                    {law?.overheidslaag.slice(-1)[0] !== level && <span>- </span>}
                   </span>
                 ))}
               </div>

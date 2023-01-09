@@ -1,4 +1,4 @@
-export const wettelijkBevoegdheidsniveau = [
+export const overheidslaag = [
   {
     id: '0',
     name: 'Europees',

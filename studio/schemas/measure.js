@@ -170,6 +170,9 @@ export default {
             {title: 'Aanbesteding', value: 'Aanbesteding'},
             {title: 'Contracten', value: 'Contracten'},
             {title: 'Gronduitgifte', value: 'Gronduitgifte'},
+            {title: 'Cultuur recht', value: 'Cultuur recht'},
+            {title: 'Staats-en bestuursrecht', value: 'Staats-en bestuursrecht'},
+            {title: 'Milieurecht', value: 'Milieurecht'},
           ],
           layout: 'dropdown'
         },
@@ -237,7 +240,7 @@ export default {
           list: [
             {title: 'Privaatrecht', value: 'Privaatrecht'},
             {title: 'Publiekrecht', value: 'Publiekrecht'},
-            {title: 'Fiscaalrecht', value: 'Fiscaalrecht'},
+            {title: 'Fiscaal recht', value: 'Fiscaal recht'},
           ],
           layout: 'radio',
           direction: 'horizontal'
@@ -296,12 +299,11 @@ export default {
       },
       // COPY CONTENT
       {
-        title: 'lawDate',
+        title: 'Intro-regels',
         name: 'introText',
         type: 'text',
         description: 'Plak hier de tekst van de eerste zinnen in (deze tekst wordt in de lijst met alle  instrumenten weergegeven).',
-        validaton: Rule => [Rule.required(),
-                            Rule.max(215)],
+        validaton: Rule => Rule.required().max(215),
         group: 'copy'
       },
       {
