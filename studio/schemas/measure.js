@@ -269,8 +269,8 @@ export default {
         of: [{type: 'string'}],
         options: {
           list: [
-            {title: 'Leidraad', value: 'leidraad'},
-            {title: 'Voorbeeld', value: 'voorbeeld'},
+            {title: 'Leidraad', value: 'Leidraad'},
+            {title: 'Voorbeeld', value: 'Voorbeeld'},
           ],
           layout: 'grid',
         },

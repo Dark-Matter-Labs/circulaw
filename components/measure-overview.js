@@ -79,7 +79,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
         <div className='pt-5 pb-1'>
           <div className='relative flex justify-between border-t border-grey1 pt-2'>
             <div className='flex py-2'>
-              <span className='overview-titles text-black1 py-2 pr-3'>Juridisch invloed</span>
+              <span className='overview-titles text-black1 py-2 pr-3'>Invloed</span>
               <JITooltip data={data}>
                 <svg
                   width='24'

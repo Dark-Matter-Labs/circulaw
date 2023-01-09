@@ -138,7 +138,7 @@ export const rLadder = [
   },
 ];
 
-export const juridischHaalbaarheid = [
+export const juridischeHaalbaarheid = [
   {
     id: '0',
     name: 'Beperkt',
@@ -183,14 +183,14 @@ export const juridischInvloed = [
 export const extraContent = [
   {
     id: '0',
-    name: 'Example',
-    label: 'Example',
-    value: 'Example',
+    name: 'Leidraad',
+    label: 'Leidraad',
+    value: 'Leidraad',
   },
   {
     id: '1',
-    name: 'Guideline',
-    label: 'Guideline',
-    value: 'Guideline',
+    name: 'Voorbeeld',
+    label: 'Voorbeeld',
+    value: 'Voorbeeld',
   }, 
 ]

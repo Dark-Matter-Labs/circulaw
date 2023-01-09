@@ -68,7 +68,7 @@ export default function PolicyList(props) {
                 <div className='flex-2 mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 '>
                   <span className='block-inline flex items-center'>
                     Juridische Haalbaarheid:{' '}
-                    <span className='text-black uppercase pl-1'>{law.juridischHaalbaarheid}</span>
+                    <span className='text-black uppercase pl-1'>{law.juridischeHaalbaarheid}</span>
                   </span>
                 </div>
                 <div className='flex-2 md:mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 '>
