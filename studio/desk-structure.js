@@ -16,10 +16,10 @@ export const Structure = (S) =>
                   S.documentList()
                     .title('Circulaire windturbines measures')
                     .filter('_type == "measure" &&  thema == "circulaire-windturbines"')),
-                S.listItem().title('Mattress').child(
+                S.listItem().title('Matrassen').child(
                   S.documentList()
-                        .title('Mattress Measures')
-                        .filter('_type == "measure" &&  thema == "mattress"')),
+                        .title('Matrassen measures')
+                        .filter('_type == "measure" &&  thema == "matrassen"')),
         ])
           )
       ])
