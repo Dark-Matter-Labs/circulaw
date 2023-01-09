@@ -186,9 +186,9 @@ export default {
         validation: Rule => Rule.required(),
         options: {
           list: [
-            {title: 'Beperkt', value: 'beperkt'},
-            {title: 'Gemiddeld', value: 'gemiddeld'},
-            {title: 'Hoog', value: 'hoog'},
+            {title: 'Beperkt', value: 'Beperkt'},
+            {title: 'Gemiddeld', value: 'Gemiddeld'},
+            {title: 'Hoog', value: 'Hoog'},
           ],
           layout: 'radio',
           direction: 'horizontal'
@@ -210,9 +210,9 @@ export default {
         validation: Rule => Rule.required(),
         options: {
           list: [
-            {title: 'Beperkt', value: 'beperkt'},
-            {title: 'Gemiddeld', value: 'gemiddeld'},
-            {title: 'Hoog', value: 'hoog'},
+            {title: 'Beperkt', value: 'Beperkt'},
+            {title: 'Gemiddeld', value: 'Gemiddeld'},
+            {title: 'Hoog', value: 'Hoog'},
           ],
           layout: 'radio',
           direction: 'horizontal',

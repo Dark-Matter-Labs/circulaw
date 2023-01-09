@@ -407,19 +407,19 @@ export default function MeasuresLayout(props) {
           numR6 += 1;
         }
 
-        if (measure.juridischHaalbaarheid === 'Low') {
+        if (measure.juridischHaalbaarheid === 'Beperkt') {
           numJHLow += 1;
-        } else if (measure.juridischHaalbaarheid === 'Medium') {
+        } else if (measure.juridischHaalbaarheid === 'Gemiddeld') {
           numJHMedium += 1;
-        } else if (measure.juridischHaalbaarheid === 'High') {
+        } else if (measure.juridischHaalbaarheid === 'Hoog') {
           numJHHigh += 1;
         }
 
-        if (measure.juridischInvloed === 'Low') {
+        if (measure.juridischInvloed === 'Beperkt') {
           numJILow += 1;
-        } else if (measure.juridischInvloed === 'Medium') {
+        } else if (measure.juridischInvloed === 'Gemiddeld') {
           numJIMedium += 1;
-        } else if (measure.juridischInvloed === 'High') {
+        } else if (measure.juridischInvloed === 'Hoog') {
           numJIHigh += 1;
         }
       });

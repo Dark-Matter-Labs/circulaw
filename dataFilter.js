@@ -141,42 +141,42 @@ export const rLadder = [
 export const juridischHaalbaarheid = [
   {
     id: '0',
-    name: 'Low',
-    label: 'Low',
-    value: 'Low',
+    name: 'Beperkt',
+    label: 'Beperkt',
+    value: 'Beperkt',
   },
   {
     id: '1',
-    name: 'Medium',
-    label: 'Medium',
-    value: 'Medium',
+    name: 'Gemiddeld',
+    label: 'Gemiddeld',
+    value: 'Gemiddeld',
   },
   {
     id: '2',
-    name: 'High',
-    label: 'High',
-    value: 'High',
+    name: 'Hoog',
+    label: 'Hoog',
+    value: 'Hoog',
   },
 ];
 
 export const juridischInvloed = [
   {
     id: '0',
-    name: 'Low',
-    label: 'Low',
-    value: 'Low',
+    name: 'Beperkt',
+    label: 'Beperkt',
+    value: 'Beperkt',
   },
   {
     id: '1',
-    name: 'Medium',
-    label: 'Medium',
-    value: 'Medium',
+    name: 'Gemiddeld',
+    label: 'Gemiddeld',
+    value: 'Gemiddeld',
   },
   {
     id: '2',
-    name: 'High',
-    label: 'High',
-    value: 'High',
+    name: 'Hoog',
+    label: 'Hoog',
+    value: 'Hoog',
   },
 ]
 
