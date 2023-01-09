@@ -42,8 +42,8 @@ export const rechtsgebied = [
   },
   {
     id: '2',
-    name: 'Fiscaalrecht',
-    label: 'Fiscaalrecht',
+    name: 'Fiscaal recht',
+    label: 'Fiscaal recht',
     value: 'Fiscaalrecht',
   },
 ];
