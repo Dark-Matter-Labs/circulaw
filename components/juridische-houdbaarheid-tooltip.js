@@ -86,20 +86,24 @@ export default function ToolTips({ children, icon, data }) {
                       </div>
                       <div className='relative mt-6 flex-1 px-12 sm:px-6'>
                         <div className='absolute inset-0 px-12 sm:px-6'>
-                          {data?.measure?.juridischeHaalbaarheidTooltiptext && 
-                          <p className='tooltip-body'>{data?.measure?.juridischeHaalbaarheidTooltiptext}</p>
-                          }
+                          {data?.measure?.juridischeHaalbaarheidTooltiptext && (
+                            <p className='tooltip-body'>
+                              {data?.measure?.juridischeHaalbaarheidTooltiptext}
+                            </p>
+                          )}
                           <div className='bg-green4 mt-6 p-6'>
-                          <p className='tooltip-body'>
-                          *Met de waardering ‘Juridische haalbaarheid’ laten we zien hoe risicovol een instrument is: wat is het afbreukrisico of de kans dat het instrument onderuit gaat bij de rechter. 
-                          </p>
-                          <br />
-                          <p className='tooltip-body'>
-                          We maken hiervan een globale inschatting, 1: beperkt, 2: gemiddeld, 3: hoog.
-                          </p>
+                            <p className='tooltip-body'>
+                              *Met de waardering ‘Juridische haalbaarheid’ laten we zien hoe
+                              risicovol een instrument is: wat is het afbreukrisico of de kans dat
+                              het instrument onderuit gaat bij de rechter.
+                            </p>
+                            <br />
+                            <p className='tooltip-body'>
+                              We maken hiervan een globale inschatting, 1: beperkt, 2: gemiddeld, 3:
+                              hoog.
+                            </p>
+                          </div>
                         </div>
-                        </div>
-                        
                       </div>
                     </div>
                   </Dialog.Panel>

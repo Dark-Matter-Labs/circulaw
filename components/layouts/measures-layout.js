@@ -150,7 +150,7 @@ export default function MeasuresLayout(props) {
       filteredLaws = filteredLaws?.filter((element) => {
         return element.thema === props.thema;
       });
-      
+
       let numEuropee = 0;
       let numNationaal = 0;
       let numProvinciaal = 0;
@@ -163,9 +163,9 @@ export default function MeasuresLayout(props) {
       let numR5 = 0;
       let numR6 = 0;
 
-    let numExample = 0;
-    let numGuidline = 0;
-   
+      let numExample = 0;
+      let numGuidline = 0;
+
       let numJHLow = 0;
       let numJHMedium = 0;
       let numJHHigh = 0;
@@ -183,8 +183,6 @@ export default function MeasuresLayout(props) {
       let numAan = 0;
       let numCont = 0;
       let numGron = 0;
-
-    
 
       // FILTER LOGIC FOR MULTICHOICE ATTRIBUTES
       if (selected.extraContent.length > 0) {
@@ -222,46 +220,44 @@ export default function MeasuresLayout(props) {
           });
         }
       }
-    
+
       // old filter logic
       if (selected.rLadder.length > 0) {
         if (selected.rLadder.includes('R1')) {
-          filteredLaws = filteredLaws.filter((element) => { 
-            return element.rLadder.includes('R1')
-          })
+          filteredLaws = filteredLaws.filter((element) => {
+            return element.rLadder.includes('R1');
+          });
         }
         if (selected.rLadder.includes('R2')) {
-          filteredLaws = filteredLaws.filter((element) => { 
-            return element.rLadder.includes('R2')
-          })
+          filteredLaws = filteredLaws.filter((element) => {
+            return element.rLadder.includes('R2');
+          });
         }
         if (selected.rLadder.includes('R3')) {
-          filteredLaws = filteredLaws.filter((element) => { 
-            return element.rLadder.includes('R3')
-          })
+          filteredLaws = filteredLaws.filter((element) => {
+            return element.rLadder.includes('R3');
+          });
         }
         if (selected.rLadder.includes('R4')) {
-          filteredLaws = filteredLaws.filter((element) => { 
-            return element.rLadder.includes('R4')
-          })
+          filteredLaws = filteredLaws.filter((element) => {
+            return element.rLadder.includes('R4');
+          });
         }
         if (selected.rLadder.includes('R5')) {
-          filteredLaws = filteredLaws.filter((element) => { 
-            return element.rLadder.includes('R5')
-          })
+          filteredLaws = filteredLaws.filter((element) => {
+            return element.rLadder.includes('R5');
+          });
         }
         if (selected.rLadder.includes('R6')) {
-          filteredLaws = filteredLaws.filter((element) => { 
-            return element.rLadder.includes('R6')
-          })
+          filteredLaws = filteredLaws.filter((element) => {
+            return element.rLadder.includes('R6');
+          });
         }
       }
 
-     
-          
-
       // potential new filter logic but need to make dynamic counting work
-      {/*
+      {
+        /*
       if (selected.rLadder.length > 0) {
             let temparr = [];
             for (let i = 0; i < filteredLaws.length; i++) {
@@ -271,7 +267,8 @@ export default function MeasuresLayout(props) {
             filteredLaws = temparr;
           }
         
-    */}
+    */
+      }
 
       // FILTER LOGIC FOR SINGLE CHOICE ATTRIBUTES
       if (selected.rechtsgebied.length > 0) {
@@ -300,7 +297,6 @@ export default function MeasuresLayout(props) {
       }
 
       const fuse = new Fuse(filteredLaws, {
-
         keys: [
           { name: 'titel', weight: 1 },
           { name: 'introductie_juridische_maatregel', weight: 0.7 },
@@ -310,9 +306,9 @@ export default function MeasuresLayout(props) {
           { name: 'toepassing_juridische_maatregel', weight: 0.5 },
           { name: 'kop_3_uit_de_praktijk', weight: 0.5 },
           { name: 'uit_de_praktijk', weight: 0.5 },
-          { name: 'subtitel',  weight: 0.7},
+          { name: 'subtitel', weight: 0.7 },
           // getFN gets all text in portable text as plaintext - this means that we search all text in the measure
-          { name: 'content', getFn: (law) => toPlainText(law.content) , weight: 0.5 },
+          { name: 'content', getFn: (law) => toPlainText(law.content), weight: 0.5 },
           { name: 'subrechtsgebied', weight: 0.5 },
           { name: 'artikel', weight: 0.5 },
           { name: 'citeertitel', weight: 0.5 },
@@ -333,32 +329,31 @@ export default function MeasuresLayout(props) {
       setSelectedResults(filteredLaws);
       firstLawFunction();
 
-      // dynamically calculate filter numbers 
-      // NEED TO ADD CONDITION BASED ON THE FIRST VALUE SELECTED. 
+      // dynamically calculate filter numbers
+      // NEED TO ADD CONDITION BASED ON THE FIRST VALUE SELECTED.
       // UPDATE FILTER NUMBERS ONLY FOR ATTRIBUTES THAT ARE NOT THE FIRST SELECTED ATTRUBUTE
       filteredLaws?.map((measure) => {
         // add extra content
-        
+
         if (measure.extraContent.includes('Example')) {
-           numExample += 1;
-         }
-         if (measure.extraContent.includes('Guideline')) {
-           numGuidline += 1;
-         }
-        
-         if (measure.overheidslaag.includes('Europees')) {
-           numEuropee += 1;
-         }
-         if (measure.overheidslaag.includes('Nationaal')) {
-           numNationaal += 1;
-         }
-         if (measure.overheidslaag.includes('Provinciaal')) {
-           numProvinciaal += 1;
-         }
-         if (measure.overheidslaag.includes('Gemeentelijk')) {
-           numGemeentelijk += 1;
-         }
-        
+          numExample += 1;
+        }
+        if (measure.extraContent.includes('Guideline')) {
+          numGuidline += 1;
+        }
+
+        if (measure.overheidslaag.includes('Europees')) {
+          numEuropee += 1;
+        }
+        if (measure.overheidslaag.includes('Nationaal')) {
+          numNationaal += 1;
+        }
+        if (measure.overheidslaag.includes('Provinciaal')) {
+          numProvinciaal += 1;
+        }
+        if (measure.overheidslaag.includes('Gemeentelijk')) {
+          numGemeentelijk += 1;
+        }
 
         if (measure.rechtsgebied === 'Publiekrecht') {
           numPubliek += 1;
@@ -379,7 +374,7 @@ export default function MeasuresLayout(props) {
         } else if (measure.subrechtsgebied === 'Gronduitgifte') {
           numGron += 1;
         }
-        
+
         if (measure.rLadder.includes('R1')) {
           numR1 += 1;
         }
@@ -463,10 +458,7 @@ export default function MeasuresLayout(props) {
       extraContentFilterRef.current.set(selected.extraContent);
     }
 
-    if (
-      selected.overheidslaag.length !== 0 &&
-      typeof wettelijkFilterRef.current !== 'undefined'
-    ) {
+    if (selected.overheidslaag.length !== 0 && typeof wettelijkFilterRef.current !== 'undefined') {
       wettelijkFilterRef.current.set(selected.overheidslaag);
     }
 
@@ -831,9 +823,7 @@ export default function MeasuresLayout(props) {
               numberOfProvinciaal,
               numberOfGemeentelijk,
             ]}
-            handleFilters={(checkboxState) =>
-              handleFilters(checkboxState, 'overheidslaag')
-            }
+            handleFilters={(checkboxState) => handleFilters(checkboxState, 'overheidslaag')}
           />
           <SearchFilter
             ref={rechtsgebiedFilterRef}

@@ -8,9 +8,7 @@ export default function WieMaken() {
     <Layout>
       <div className='global-margin'>
         <div className='breadcrumb pt-8 text-greenLink'>
-          <Link href='/'>
-            Home &gt;
-          </Link>
+          <Link href='/'>Home &gt;</Link>
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-3'>
           <div className='my-20 col-span-2 text-black1'>

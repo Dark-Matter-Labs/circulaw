@@ -86,26 +86,26 @@ export default function ToolTips({ children, icon, data }) {
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>
                         <div className='absolute inset-0 px-4 sm:px-6'>
-                        {data?.measure?.invloedTooltiptext && 
-                          <p className='tooltip-body'>{data?.measure?.invloedTooltiptext}</p>
-                          }
+                          {data?.measure?.invloedTooltiptext && (
+                            <p className='tooltip-body'>{data?.measure?.invloedTooltiptext}</p>
+                          )}
                           <div className='bg-green4 mt-6 p-6'>
-                          <p className='tooltip-body'>
-                          *Met ‘invloed’ bedoelen wij de invloed van het instrument in de praktijk. We kijken hiervoor onder andere naar:
-                          </p>
-                          <ul className='list-disc pl-6 tooltip-body'>
-                            <li>de afdwingbaarheid,</li>
-                            <li>hoeveel dírecte invloed het instrument heeft,</li>
-                            <li>hoe lang het doorwerkt,</li>
-                            <li>op hoeveel personen het betrekking heeft.</li>
-                          </ul>
-                          <br />
-                          <p className='tooltip-body'>
-                            We maken hiervan een globale inschatting: 1: beperkt, 2: gemiddeld, 3: hoog.
-                          </p>
-
-                        </div>
-                     
+                            <p className='tooltip-body'>
+                              *Met ‘invloed’ bedoelen wij de invloed van het instrument in de
+                              praktijk. We kijken hiervoor onder andere naar:
+                            </p>
+                            <ul className='list-disc pl-6 tooltip-body'>
+                              <li>de afdwingbaarheid,</li>
+                              <li>hoeveel dírecte invloed het instrument heeft,</li>
+                              <li>hoe lang het doorwerkt,</li>
+                              <li>op hoeveel personen het betrekking heeft.</li>
+                            </ul>
+                            <br />
+                            <p className='tooltip-body'>
+                              We maken hiervan een globale inschatting: 1: beperkt, 2: gemiddeld, 3:
+                              hoog.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>

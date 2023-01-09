@@ -46,8 +46,7 @@ export default function PolicyList(props) {
               <div className='block font-manrope font-bold text-xs pb-1'>
                 {law?.overheidslaag?.map((level) => (
                   <span key={level} className='capitalize'>
-                    {level}{' '}
-                    {law?.overheidslaag.slice(-1)[0] !== level && <span>- </span>}
+                    {level} {law?.overheidslaag.slice(-1)[0] !== level && <span>- </span>}
                   </span>
                 ))}
               </div>

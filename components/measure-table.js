@@ -6,7 +6,6 @@ const formatDate = (date) => {
   return dateObject.toLocaleDateString();
 };
 
-
 const components = {
   list: {
     bullet: ({ children }) => (
@@ -22,7 +21,7 @@ const components = {
       <p className='newlineDisplay body-text-mobile sm:body-text pb-4'>{children}</p>
     ),
   },
-}
+};
 
 export default function MeasureTable({ data }) {
   return (
@@ -32,7 +31,7 @@ export default function MeasureTable({ data }) {
           <div>
             <h2 className='pt-10 pb-4 mobile sm:urban'>Juridische toelichting</h2>
             {data?.measure?.juridischeToelichting && (
-              <PortableText components={components} value={data?.measure?.juridischeToelichting}/>
+              <PortableText components={components} value={data?.measure?.juridischeToelichting} />
             )}
           </div>
         </div>
@@ -81,8 +80,7 @@ export default function MeasureTable({ data }) {
               <td className='w-2/3 py-1.5 table-right'>
                 {data?.measure?.overheidslaag?.map((level) => (
                   <span key={level} className='table-right capitalize'>
-                    {level}{' '}
-                    {data?.measure?.overheidslaag.slice(-1)[0] !== level && <span>- </span>}
+                    {level} {data?.measure?.overheidslaag.slice(-1)[0] !== level && <span>- </span>}
                   </span>
                 ))}
               </td>
