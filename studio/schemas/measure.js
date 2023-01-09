@@ -1,7 +1,3 @@
-
-// need to add image for extended 
-//
-
 export default {
     title: 'Measure',
     name: 'measure',

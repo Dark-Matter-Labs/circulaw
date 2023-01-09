@@ -105,9 +105,9 @@ export default function MeasuresLayout(props) {
   const [numberOfAan, setNumberOfAan] = useState(0);
   const [numberOfCont, setNumberOfCont] = useState(0);
   const [numberOfGron, setNumberOfGron] = useState(0);
-  const [numberOfCultuur, setNumberOfCultuur] = useState(0)
-  const [numberOfStaas, setNumberOfStaas] = useState(0)
-  const [numberOfMilie, setNumberOfMilie] = useState(0)
+  const [numberOfCultuur, setNumberOfCultuur] = useState(0);
+  const [numberOfStaas, setNumberOfStaas] = useState(0);
+  const [numberOfMilie, setNumberOfMilie] = useState(0);
 
   const [numberOfLeidraad, setNumberOfLeidraad] = useState(0);
   const [numberOfVoorbeeld, setNumberOfVoorbeeld] = useState(0);
@@ -181,15 +181,14 @@ export default function MeasuresLayout(props) {
       let numPrivaat = 0;
       let numFiscaal = 0;
 
-
       let numErp = 0;
       let numOmg = 0;
       let numAan = 0;
       let numCont = 0;
       let numGron = 0;
-      let numCultuur = 0
-      let numStaas = 0
-      let numMilie = 0
+      let numCultuur = 0;
+      let numStaas = 0;
+      let numMilie = 0;
 
       // FILTER LOGIC FOR MULTICHOICE ATTRIBUTES
       if (selected.extraContent.length > 0) {
@@ -387,7 +386,7 @@ export default function MeasuresLayout(props) {
         } else if (measure.subrechtsgebied === 'Milieurecht') {
           numMilie += 1;
         }
-        
+
         if (measure.rLadder.includes('R1')) {
           numR1 += 1;
         }
@@ -461,8 +460,7 @@ export default function MeasuresLayout(props) {
       setNumberOfGron(numGron);
       setNumberOfCultuur(numCultuur);
       setNumberOfStaas(numStaas);
-      setNumberOfMilie(numMilie)
-
+      setNumberOfMilie(numMilie);
     } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, selected, searchValue, props.thema]);
 
@@ -609,7 +607,7 @@ export default function MeasuresLayout(props) {
                           numberOfGron,
                           numberOfCultuur,
                           numberOfStaas,
-                          numberOfMilie
+                          numberOfMilie,
                         ]}
                         handleFilters={(checkboxState) =>
                           handleFilters(checkboxState, 'subrechtsgebied')
@@ -633,10 +631,7 @@ export default function MeasuresLayout(props) {
                         ref={juridischeHaalbaarheidFilterRef}
                         title='Juridische Haalbaarheid'
                         list={juridischeHaalbaarheid}
-                        filterNumbers={[
-                          numberOfJHLow, 
-                          numberOfJHMedium, 
-                          numberOfJHHigh]}
+                        filterNumbers={[numberOfJHLow, numberOfJHMedium, numberOfJHHigh]}
                         handleFilters={(checkboxState) =>
                           handleFilters(checkboxState, 'juridischeHaalbaarheid')
                         }
@@ -859,7 +854,16 @@ export default function MeasuresLayout(props) {
             ref={subrechtsgebiedFilterRef}
             title='Subrechtsgebied'
             list={subrechtsgebied}
-            filterNumbers={[numberOfErp, numberOfOmg, numberOfAan, numberOfCont, numberOfGron, numberOfCultuur, numberOfStaas, numberOfMilie]}
+            filterNumbers={[
+              numberOfErp,
+              numberOfOmg,
+              numberOfAan,
+              numberOfCont,
+              numberOfGron,
+              numberOfCultuur,
+              numberOfStaas,
+              numberOfMilie,
+            ]}
             handleFilters={(checkboxState) => handleFilters(checkboxState, 'subrechtsgebied')}
           />
 
@@ -876,7 +880,9 @@ export default function MeasuresLayout(props) {
             title='Juridische Haalbaarheid'
             list={juridischeHaalbaarheid}
             filterNumbers={[numberOfJHLow, numberOfJHMedium, numberOfJHHigh]}
-            handleFilters={(checkboxState) => handleFilters(checkboxState, 'juridischeHaalbaarheid')}
+            handleFilters={(checkboxState) =>
+              handleFilters(checkboxState, 'juridischeHaalbaarheid')
+            }
           />
           <SearchFilter
             ref={juridischInvloedFilterRef}
