@@ -105,6 +105,9 @@ export default function MeasuresLayout(props) {
   const [numberOfAan, setNumberOfAan] = useState(0);
   const [numberOfCont, setNumberOfCont] = useState(0);
   const [numberOfGron, setNumberOfGron] = useState(0);
+  const [numberOfCultuur, setNumberOfCultuur] = useState(0)
+  const [numberOfStaas, setNumberOfStaas] = useState(0)
+  const [numberOfMilie, setNumberOfMilie] = useState(0)
 
   const [numberOfExample, setNumberOfExample] = useState(0);
   const [numberOfGuideline, setNumberOfGuideline] = useState(0);
@@ -178,11 +181,15 @@ export default function MeasuresLayout(props) {
       let numPrivaat = 0;
       let numFiscaal = 0;
 
+
       let numErp = 0;
       let numOmg = 0;
       let numAan = 0;
       let numCont = 0;
       let numGron = 0;
+      let numCultuur = 0
+      let numStaas = 0
+      let numMilie = 0
 
       // FILTER LOGIC FOR MULTICHOICE ATTRIBUTES
       if (selected.extraContent.length > 0) {
@@ -359,7 +366,7 @@ export default function MeasuresLayout(props) {
           numPubliek += 1;
         } else if (measure.rechtsgebied === 'Privaatrecht') {
           numPrivaat += 1;
-        } else if (measure.rechtsgebied === 'Fiscaalrecht') {
+        } else if (measure.rechtsgebied === 'Fiscaal recht') {
           numFiscaal += 1;
         }
 
@@ -373,8 +380,14 @@ export default function MeasuresLayout(props) {
           numCont += 1;
         } else if (measure.subrechtsgebied === 'Gronduitgifte') {
           numGron += 1;
+        } else if (measure.subrechtsgebied === 'Cultuur recht') {
+          numCultuur += 1;
+        } else if (measure.subrechtsgebied === 'Staats-en bestuursrecht') {
+          numStaas += 1;
+        } else if (measure.subrechtsgebied === 'Milieurecht') {
+          numMilie += 1;
         }
-
+        
         if (measure.rLadder.includes('R1')) {
           numR1 += 1;
         }
@@ -446,6 +459,10 @@ export default function MeasuresLayout(props) {
       setNumberOfAan(numAan);
       setNumberOfCont(numCont);
       setNumberOfGron(numGron);
+      setNumberOfCultuur(numCultuur);
+      setNumberOfStaas(numStaas);
+      setNumberOfMilie(numMilie)
+
     } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, selected, searchValue, props.thema]);
 
@@ -590,6 +607,9 @@ export default function MeasuresLayout(props) {
                           numberOfAan,
                           numberOfCont,
                           numberOfGron,
+                          numberOfCultuur,
+                          numberOfStaas,
+                          numberOfMilie
                         ]}
                         handleFilters={(checkboxState) =>
                           handleFilters(checkboxState, 'subrechtsgebied')
@@ -613,7 +633,10 @@ export default function MeasuresLayout(props) {
                         ref={juridischHaalbaarheidFilterRef}
                         title='Juridisch Haalbaarheid'
                         list={juridischHaalbaarheid}
-                        filterNumbers={[numberOfJHLow, numberOfJHMedium, numberOfJHHigh]}
+                        filterNumbers={[
+                          numberOfJHLow, 
+                          numberOfJHMedium, 
+                          numberOfJHHigh]}
                         handleFilters={(checkboxState) =>
                           handleFilters(checkboxState, 'juridischHaalbaarheid')
                         }
@@ -646,7 +669,7 @@ export default function MeasuresLayout(props) {
         <div className='hidden sm:block breadcrumb pt-8 text-greenLink'>
           <Link href='/'>Home</Link>
           <span className=''> → </span>
-          <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`}>
+          <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`} passHref>
             <span className='inline-block lowercase first-letter:uppercase'>
               {props.thema.replace('-', ' ')}
             </span>
@@ -836,7 +859,7 @@ export default function MeasuresLayout(props) {
             ref={subrechtsgebiedFilterRef}
             title='Subrechtsgebied'
             list={subrechtsgebied}
-            filterNumbers={[numberOfErp, numberOfOmg, numberOfAan, numberOfCont, numberOfGron]}
+            filterNumbers={[numberOfErp, numberOfOmg, numberOfAan, numberOfCont, numberOfGron, numberOfCultuur, numberOfStaas, numberOfMilie]}
             handleFilters={(checkboxState) => handleFilters(checkboxState, 'subrechtsgebied')}
           />
 

@@ -44,7 +44,7 @@ export const rechtsgebied = [
     id: '2',
     name: 'Fiscaal recht',
     label: 'Fiscaal recht',
-    value: 'Fiscaalrecht',
+    value: 'Fiscaal recht',
   },
 ];
 
@@ -78,6 +78,24 @@ export const subrechtsgebied = [
     name: 'Gronduitgifte',
     label: 'Gronduitgifte',
     value: 'Gronduitgifte',
+  },
+  {
+    id: '5',
+    name: 'Cultuur recht',
+    label: 'Cultuur recht',
+    value: 'Cultuur recht',
+  },
+  {
+    id: '6',
+    name: 'Staats-en bestuursrecht',
+    label: 'Staats-en bestuursrecht',
+    value: 'Staats-en bestuursrecht',
+  },
+  {
+    id: '7',
+    name: 'Milieurecht',
+    label: 'Milieurecht',
+    value: 'Milieurecht',
   },
 ];
 
