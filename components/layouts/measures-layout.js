@@ -310,7 +310,7 @@ export default function MeasuresLayout(props) {
           { name: 'toepassing_juridische_maatregel', weight: 0.5 },
           { name: 'kop_3_uit_de_praktijk', weight: 0.5 },
           { name: 'uit_de_praktijk', weight: 0.5 },
-          { name: 'subtitle',  weight: 0.7},
+          { name: 'subtitel',  weight: 0.7},
           // getFN gets all text in portable text as plaintext - this means that we search all text in the measure
           { name: 'content', getFn: (law) => toPlainText(law.content) , weight: 0.5 },
           { name: 'subrechtsgebied', weight: 0.5 },

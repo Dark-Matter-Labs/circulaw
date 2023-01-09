@@ -55,7 +55,7 @@ export default {
         validation: Rule => Rule.required(),
       },
       {
-        title: 'Subtitle',
+        title: 'Subtitel',
         name: 'subtitel',
         type: 'text',
         description: 'Subtitel en/of intro-tekst  -  komt direct onder de titel.',
@@ -177,7 +177,7 @@ export default {
       },
       {
         title: 'Invloed',
-        name: 'invloed',
+        name: 'juridischInvloed',
         type: 'string',
         description: 'Selecteer de mate van invloed.',
         validation: Rule => Rule.required(),

@@ -17,7 +17,7 @@ const measureQuery = `
 *[_type == "measure" && slug.current == $slug] [0] {
     _id,
     titel,
-    subtitle,
+    subtitel,
     thema,
     rLadder,
     subrechtsgebied,
@@ -176,7 +176,7 @@ export default function TestMeasure({ data }) {
               <h1 className='hidden lg:block pt-4 mb-7 urban'>{data?.measure?.titel}</h1>
             </div>
             <div className='col-span-7 row-span-1'>
-              <p className='subheading py-4 mb-7'>{data?.measure?.subtitle}</p>
+              <p className='subheading py-4 mb-7'>{data?.measure?.subtitel}</p>
             </div>
           </div>
 
