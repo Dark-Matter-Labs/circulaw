@@ -369,7 +369,8 @@ export default {
       {
         title: 'Juridische toelichting',
         name: 'juridischeToelichting',
-        type: 'text',
+        type: 'array',
+        of: [{type: 'block'}],
         group: ['copy', 'table']
       }
     ]
