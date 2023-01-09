@@ -86,12 +86,12 @@ export default function ToolTips({ children, icon, data }) {
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>
                         <div className='absolute inset-0 px-4 sm:px-6'>
-                          {data?.measure?.invloedTooltiptext && (
-                            <p className='tooltip-body'>{data?.measure?.invloedTooltiptext}</p>
+                          {data?.measure?.invloedTooltipText && (
+                            <p className='tooltip-body'>{data?.measure?.invloedToolTiptext}</p>
                           )}
                           <div className='bg-green4 mt-6 p-6'>
                             <p className='tooltip-body'>
-                              *Met ‘invloed’ bedoelen wij de invloed van het instrument in de
+                              Met ‘invloed’ bedoelen wij de invloed van het instrument in de
                               praktijk. We kijken hiervoor onder andere naar:
                             </p>
                             <ul className='list-disc pl-6 tooltip-body'>

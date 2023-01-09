@@ -196,10 +196,10 @@ export default {
         group: ['overview']
       },
       {
-        title: 'Invloed tooltip text',
-        name: 'invloedTooltiptext',
+        title: 'Toelichting invloed',
+        name: 'invloedTooltipText',
         type: 'string',
-        description: '',
+        description: 'Beschrijf kort waarom dit beperkt, gemiddeld of laag is',
         group: 'overview'
       },
       {
@@ -220,10 +220,10 @@ export default {
         group: ['overview', 'filter']
       },
       {
-        title: 'Juridische Haalbaarheid tooltip text',
-        name: 'juridischeHaalbaarheidTooltiptext',
+        title: 'Toelichting juridische haalbaarheid',
+        name: 'JHTooltipText',
         type: 'string',
-        description: '',
+        description: 'Beschrijf kort waarom dit beperkt, gemiddeld of laag is',
         group: 'overview'
       },
       {

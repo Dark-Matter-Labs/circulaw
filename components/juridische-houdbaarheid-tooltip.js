@@ -86,14 +86,14 @@ export default function ToolTips({ children, icon, data }) {
                       </div>
                       <div className='relative mt-6 flex-1 px-12 sm:px-6'>
                         <div className='absolute inset-0 px-12 sm:px-6'>
-                          {data?.measure?.juridischeHaalbaarheidTooltiptext && (
+                          {data?.measure?.JHTooltipText && (
                             <p className='tooltip-body'>
-                              {data?.measure?.juridischeHaalbaarheidTooltiptext}
+                              {data?.measure?.JHTooltipText}
                             </p>
                           )}
                           <div className='bg-green4 mt-6 p-6'>
                             <p className='tooltip-body'>
-                              *Met de waardering ‘Juridische haalbaarheid’ laten we zien hoe
+                              Met de waardering ‘Juridische haalbaarheid’ laten we zien hoe
                               risicovol een instrument is: wat is het afbreukrisico of de kans dat
                               het instrument onderuit gaat bij de rechter.
                             </p>
