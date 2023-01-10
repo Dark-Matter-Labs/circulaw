@@ -1,8 +1,8 @@
-import {defineConfig, isSanityDocument} from 'sanity'
-import {deskTool} from 'sanity/desk'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemas'
-import { Structure } from './desk-structure'
+import { defineConfig, isSanityDocument } from 'sanity';
+import { deskTool } from 'sanity/desk';
+import { visionTool } from '@sanity/vision';
+import { schemaTypes } from './schemas';
+import { Structure } from './desk-structure';
 
 export default defineConfig({
   name: 'CircuLaw',
@@ -16,10 +16,11 @@ export default defineConfig({
   plugins: [
     deskTool({
       structure: Structure,
-    }), 
-  visionTool()],
+    }),
+    visionTool(),
+  ],
 
   schema: {
     types: schemaTypes,
   },
-})
+});
