@@ -127,11 +127,27 @@ export default function Privacy() {
           </span>
           .{' '}
         </p>
-        <p className='body-text-mobile sm:body-text max-w-4xl'>
+        <p className='body-text-mobile sm:body-text max-w-4xl pb-6'>
           Heb je vragen naar aanleiding van deze Privacyverklaring? Mail ons dan op{' '}
           <span className='text-greenLink link-mobile sm:link'>
             <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
           </span>
+        </p>
+        <p className='body-text-mobile sm:body-text max-w-4xl'>
+          We are using Hotjar to understand how people use the site and collect feedback. You can
+          find more details about cookies and used privacy{' '}
+          <span className='text-greenLink link-mobile sm:link'>
+            <a
+              target='_blank'
+              href='https://help.hotjar.com/hc/en-us/articles/6952777582999-Cookies-Set-by-the-Hotjar-Tracking-Code'
+              rel='noopener noreferrer'
+            >
+              here
+            </a>
+            .
+          </span>
+          We respect your privacy and do not track or collect anything if you click Reject or have
+          Do Not Track enabled.
         </p>
       </div>
     </Layout>
