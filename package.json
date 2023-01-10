@@ -4,7 +4,8 @@
   "description": "regelgeving voor een circulaire economie",
   "license": "GPL-3.0-or-later",
   "scripts": {
-    "dev": "concurrently \"next dev\" \"cd studio && yarn && yarn dev\"",
+    "dev": "next dev",
+    "cms": "concurrently \"next dev\" \"cd studio && yarn && yarn dev\"",
     "prebuild": "echo 'Building Sanity to public/studio' && cd studio && yarn && npx @sanity/cli build ../public/studio -y && echo 'Done'",
     "build": "next build",
     "start": "next start",

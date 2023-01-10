@@ -28,8 +28,9 @@ const CookieConsent = () => {
       <div className='flex flex-col items-start px-5 py-3 space-y-2 bg-gray-200 md:flex-row md:space-y-0 md:items-stretch md:space-x-2'>
         <div className='flex items-center flex-grow text-gray-900'>
           <p className='text-sm font-medium'>
-            This site uses services that uses cookies to deliver better experience and analyze
-            traffic. You can learn more about the services we use at our{' '}
+            We are using Hotjar cookies on this site to test the beta version, so we can best
+            optimize the experience and usability. We will always respect your privacy. You can
+            learn more about the details at our{' '}
             <Link href='/privacy-policy'>
               <span className='text-sm underline hover:text-lightAccent'>privacy policy</span>
             </Link>
