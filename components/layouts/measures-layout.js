@@ -341,10 +341,10 @@ export default function MeasuresLayout(props) {
       filteredLaws?.map((measure) => {
         // add extra content
 
-        if (measure.extraContent.includes('Leidraad')) {
+        if (measure?.extraContent?.includes('Leidraad')) {
           numLeidraad += 1;
         }
-        if (measure.extraContent.includes('Voorbeeld')) {
+        if (measure?.extraContent?.includes('Voorbeeld')) {
           numVoorbeeld += 1;
         }
 
