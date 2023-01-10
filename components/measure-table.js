@@ -1,8 +1,26 @@
 import Image from 'next/image';
+import { PortableText } from '@portabletext/react';
 
 const formatDate = (date) => {
   let dateObject = new Date(date);
   return dateObject.toLocaleDateString();
+};
+
+const components = {
+  list: {
+    bullet: ({ children }) => (
+      <div className='newlineDisplay body-text-mobile sm:body-text truncate'>
+        <ul className='list-disc pl-6 pb-4 mobile sm:main'>{children}</ul>
+      </div>
+    ),
+  },
+  block: {
+    h2: ({ children }) => <h2 className='pt-10 pb-4 mobile sm:urban'>{children}</h2>,
+    // need to add other styles here
+    normal: ({ children }) => (
+      <p className='newlineDisplay body-text-mobile sm:body-text pb-4'>{children}</p>
+    ),
+  },
 };
 
 export default function MeasureTable({ data }) {
@@ -13,9 +31,7 @@ export default function MeasureTable({ data }) {
           <div>
             <h2 className='pt-10 pb-4 mobile sm:urban'>Juridische toelichting</h2>
             {data?.measure?.juridischeToelichting && (
-              <p className='newlineDisplay body-text-mobile sm:body-text pb-4'>
-                {data?.measure?.juridischeToelichting}
-              </p>
+              <PortableText components={components} value={data?.measure?.juridischeToelichting} />
             )}
           </div>
         </div>
@@ -60,12 +76,11 @@ export default function MeasureTable({ data }) {
               </td>
             </tr>
             <tr className='border-b boder-grey2'>
-              <td className='w-1/3 py-1.5 body-small'>Bevoegdheidsniveau</td>
+              <td className='w-1/3 py-1.5 body-small'>Overheidslaag</td>
               <td className='w-2/3 py-1.5 table-right'>
-                {data?.measure?.governmentLevel?.map((level) => (
+                {data?.measure?.overheidslaag?.map((level) => (
                   <span key={level} className='table-right capitalize'>
-                    {level}{' '}
-                    {data?.measure?.governmentLevel.slice(-1)[0] !== level && <span>- </span>}
+                    {level} {data?.measure?.overheidslaag.slice(-1)[0] !== level && <span>- </span>}
                   </span>
                 ))}
               </td>

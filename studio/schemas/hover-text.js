@@ -1,16 +1,16 @@
 export default {
-    title: 'Hover Text',
+    title: 'Helptekst',
     name: 'hoverText',
     type: 'object',
     fields: [
         {
-            title: 'Hover Text Tite',
+            title: 'Helptekst Titel',
             name: 'hoverTextTitle',
             type: 'string',
             description: 'this will not be displayed'
         },
         {
-            title: 'Hover Text',
+            title: 'Helptekst Text',
             name: 'hoverText',
             type: 'text',
         },

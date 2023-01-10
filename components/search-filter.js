@@ -89,9 +89,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
       <div>
         {list?.map((data, dataIdx) => (
           <div key={dataIdx} className='relative flex justify-between'>
-            
             {filterNumbers[dataIdx] > 0 ? (
-              
               <>
                 <div className='my-1 block-inline flex items-center'>
                   <input

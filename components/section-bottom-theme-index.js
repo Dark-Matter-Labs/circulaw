@@ -10,10 +10,7 @@ export default function ThemeBottomSection({ props }) {
             <div className='col-span-2'>
               <h2 className='pt-10 mobile sm:main'>{props.seeMeasuresTitle}</h2>
               <div className='block py-4 sm:hidden'>
-                <Image
-                  src={props.seeMeasuresImage}
-                  alt={props.seeMeasuresImageAlt}
-                />
+                <Image src={props.seeMeasuresImage} alt={props.seeMeasuresImageAlt} />
               </div>
               <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
                 {props.seeMeasuresText}
@@ -25,10 +22,7 @@ export default function ThemeBottomSection({ props }) {
               </Link>
             </div>
             <div className='hidden sm:block'>
-              <Image
-                src={props.seeMeasuresImage}
-                alt={props.seeMeasuresImageAlt}
-              />
+              <Image src={props.seeMeasuresImage} alt={props.seeMeasuresImageAlt} />
             </div>
           </div>
         </div>
@@ -37,10 +31,7 @@ export default function ThemeBottomSection({ props }) {
             <div className='col-span-2'>
               <h2 className='pt-10 mobile sm:main'>{props.samenhangTitle}</h2>
               <div className='block py-4 sm:hidden'>
-                <Image
-                  src={props.samenhangImage}
-                  alt={props.samenhangImageAlt}
-                />
+                <Image src={props.samenhangImage} alt={props.samenhangImageAlt} />
               </div>
               <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>{props.samenhangText}</p>
               <Link href={props.samenhangLink}>

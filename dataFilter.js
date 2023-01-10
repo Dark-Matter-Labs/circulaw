@@ -1,4 +1,4 @@
-export const wettelijkBevoegdheidsniveau = [
+export const overheidslaag = [
   {
     id: '0',
     name: 'Europees',
@@ -42,9 +42,9 @@ export const rechtsgebied = [
   },
   {
     id: '2',
-    name: 'Fiscaalrecht',
-    label: 'Fiscaalrecht',
-    value: 'Fiscaalrecht',
+    name: 'Fiscaal recht',
+    label: 'Fiscaal recht',
+    value: 'Fiscaal recht',
   },
 ];
 
@@ -78,6 +78,24 @@ export const subrechtsgebied = [
     name: 'Gronduitgifte',
     label: 'Gronduitgifte',
     value: 'Gronduitgifte',
+  },
+  {
+    id: '5',
+    name: 'Cultuur recht',
+    label: 'Cultuur recht',
+    value: 'Cultuur recht',
+  },
+  {
+    id: '6',
+    name: 'Staats-en bestuursrecht',
+    label: 'Staats-en bestuursrecht',
+    value: 'Staats-en bestuursrecht',
+  },
+  {
+    id: '7',
+    name: 'Milieurecht',
+    label: 'Milieurecht',
+    value: 'Milieurecht',
   },
 ];
 
@@ -120,59 +138,59 @@ export const rLadder = [
   },
 ];
 
-export const juridischHaalbaarheid = [
+export const juridischeHaalbaarheid = [
   {
     id: '0',
-    name: 'Low',
-    label: 'Low',
-    value: 'Low',
+    name: 'Beperkt',
+    label: 'Beperkt',
+    value: 'Beperkt',
   },
   {
     id: '1',
-    name: 'Medium',
-    label: 'Medium',
-    value: 'Medium',
+    name: 'Gemiddeld',
+    label: 'Gemiddeld',
+    value: 'Gemiddeld',
   },
   {
     id: '2',
-    name: 'High',
-    label: 'High',
-    value: 'High',
+    name: 'Hoog',
+    label: 'Hoog',
+    value: 'Hoog',
   },
 ];
 
 export const juridischInvloed = [
   {
     id: '0',
-    name: 'Low',
-    label: 'Low',
-    value: 'Low',
+    name: 'Beperkt',
+    label: 'Beperkt',
+    value: 'Beperkt',
   },
   {
     id: '1',
-    name: 'Medium',
-    label: 'Medium',
-    value: 'Medium',
+    name: 'Gemiddeld',
+    label: 'Gemiddeld',
+    value: 'Gemiddeld',
   },
   {
     id: '2',
-    name: 'High',
-    label: 'High',
-    value: 'High',
+    name: 'Hoog',
+    label: 'Hoog',
+    value: 'Hoog',
   },
 ]
 
 export const extraContent = [
   {
     id: '0',
-    name: 'Example',
-    label: 'Example',
-    value: 'Example',
+    name: 'Leidraad',
+    label: 'Leidraad',
+    value: 'Leidraad',
   },
   {
     id: '1',
-    name: 'Guideline',
-    label: 'Guideline',
-    value: 'Guideline',
+    name: 'Voorbeeld',
+    label: 'Voorbeeld',
+    value: 'Voorbeeld',
   }, 
 ]

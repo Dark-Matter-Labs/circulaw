@@ -77,76 +77,35 @@ export default function ToolTips({ children, icon, data }) {
                         </button>
                       </div>
                     </Transition.Child>
-                    <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
+                    <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl px-6'>
                       <div className='px-4 sm:px-6'>
                         <Dialog.Title className='text-lg font-medium text-gray-900'>
                           {' '}
-                          Juridische invloed
+                          Geschatte invloed
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>
                         <div className='absolute inset-0 px-4 sm:px-6'>
-                          <p className='tooltip-body'>
-                            De juridische invloed geeft een indicatie van de grootte van een
-                            maatregel. De totaalscore is het gemiddelde van de score van:
-                          </p>
-                          <br />
-                          <p className='tooltip-body'>
-                            <b>Bereik</b>
-                          </p>
-                          <p className='tooltip-body'>
-                            Hoe groot is de doelgroep, dus gaat het om bijvoorbeeld een beschikking,
-                            besluit of overeenkomst?
-                          </p>
-                          <br />
-                          <p className='tooltip-body font-bold'>
-                            <b>Duur</b>
-                          </p>
-                          <p className='tooltip-body'>
-                            Bijvoorbeeld een tijdelijke of blijvende maatregel
-                          </p>
-                          <br />
-                          <p className='tooltip-body font-bold'>
-                            <b>Frequentie</b>
-                          </p>
-                          <p className='tooltip-body'>
-                            Hoe vaak de maatregel voorkomt, bijvoorbeeld weinig of juist
-                            stelselmatig
-                          </p>
-                          <br />
-                          <p className='tooltip-body font-bold'>
-                            <b>Omvang</b>
-                          </p>
-                          <p className='tooltip-body'>
-                            Grootte van het gebied, bijvoorbeeld gemeentelijk, provinciaal of
-                            landelijk
-                          </p>
-                          <br />
-                          {/* CONDITIONAL TEXT */}
-                          {data?.measure?.juridischInvloed == 'low' && (
-                            <div>
-                              <p className='tooltip-body font-bold'>
-                                <b>LOWWWWW</b>
-                              </p>
-                              <p className='tooltip-body'>I am here only if i am low</p>
-                            </div>
+                          {data?.measure?.invloedTooltipText && (
+                            <p className='tooltip-body'>{data?.measure?.invloedTooltipText}</p>
                           )}
-                          {data?.measure?.juridischInvloed == 'medium' && (
-                            <div>
-                              <p className='tooltip-body font-bold'>
-                                <b>MEDIUM</b>
-                              </p>
-                              <p className='tooltip-body'>I am here only if i am Medium</p>
-                            </div>
-                          )}
-                          {data?.measure?.juridischInvloed == 'high' && (
-                            <div>
-                              <p className='tooltip-body font-bold'>
-                                <b>HIGH</b>
-                              </p>
-                              <p className='tooltip-body'>I am here only if i am High</p>
-                            </div>
-                          )}
+                          <div className='bg-green4 mt-6 p-6'>
+                            <p className='tooltip-body'>
+                              Met ‘invloed’ bedoelen wij de invloed van het instrument in de
+                              praktijk. We kijken hiervoor onder andere naar:
+                            </p>
+                            <ul className='list-disc pl-6 tooltip-body'>
+                              <li>de afdwingbaarheid,</li>
+                              <li>hoeveel dírecte invloed het instrument heeft,</li>
+                              <li>hoe lang het doorwerkt,</li>
+                              <li>op hoeveel personen het betrekking heeft.</li>
+                            </ul>
+                            <br />
+                            <p className='tooltip-body'>
+                              We maken hiervan een globale inschatting: 1: beperkt, 2: gemiddeld, 3:
+                              hoog.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>

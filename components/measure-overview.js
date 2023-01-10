@@ -27,10 +27,10 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
             </div>
           )}
           <div className=''>
-            <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()}>
-                <span className='overview-thema underline pl-2 text-green1 first-letter:uppercase block'>
-                  {data?.measure?.thema}
-                </span>
+            <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()} passHref>
+              <span className='overview-thema underline pl-2 text-green1 first-letter:uppercase block'>
+                {data?.measure?.thema}
+              </span>
             </Link>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
         <div className='pt-5 pb-1'>
           <div className='relative flex justify-between border-t border-grey1 pt-2'>
             <div className='flex py-2'>
-              <span className='overview-titles text-black1 py-2 pr-3'>Juridisch invloed</span>
+              <span className='overview-titles text-black1 py-2 pr-3'>Invloed</span>
               <JITooltip data={data}>
                 <svg
                   width='24'
@@ -96,12 +96,6 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
                 </svg>
               </JITooltip>
             </div>
-          </div>
-
-          <div className='flex items-center'>
-            <span className='overview-text border border-black rounded-xl uppercase px-2'>
-              {data?.measure?.juridischInvloed}
-            </span>
           </div>
 
           <div className='flex items-center'>
@@ -134,7 +128,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
           </div>
           <div className='flex items-center w-10/12'>
             <span className='overview-text border border-black rounded-xl px-2 uppercase'>
-              {data?.measure?.juridischHaalbaarheid}
+              {data?.measure?.juridischeHaalbaarheid}
             </span>
           </div>
         </div>

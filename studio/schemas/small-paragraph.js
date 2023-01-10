@@ -1,15 +1,15 @@
 export default {
-    title: 'Small Paragraph',
+    title: 'Kader secundaire info',
     name: 'smallPara',
     type: 'object',
     fields: [
         {
-            title: 'Small Paragraph Title',
+            title: 'Kader secundaire info Title',
             name: 'smallParaTitle',
             type: 'string',
         },
         {
-            title: 'Small Paragraph Text',
+            title: 'Kader secundaire info Text',
             name: 'smallParaText',
             type: 'text',
         },

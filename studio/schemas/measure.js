@@ -1,7 +1,3 @@
-
-// need to add image for extended 
-//
-
 export default {
     title: 'Measure',
     name: 'measure',
@@ -28,31 +24,44 @@ export default {
     // FIELDS
     fields: [
       {
-        title: 'Is Extended',
-        name: 'isExtended',
+        title: 'Uitgelicht op thema-pagina',
+        name: 'isFeatured',
         type: 'boolean',
-        description: 'Select if this is the instrument you want displayed as extended',
+        description: 'Moet dit instrument op de thema-pagina worden uitgelicht?',
         validation: Rule => Rule.required(),
+      },
+      {
+        title: 'Featured Image',
+        name: 'featuredImage',
+        type: 'image',
+        hidden: ({document}) => document.isFeatured === false,
+        fields: [
+          {
+            title: 'Alt Text',
+            name: 'altText',
+            type: 'string'
+          }
+        ]
       },
       {
         title: 'Titel',
         name: 'titel',
         type: 'string',
-        description: 'The title of the instrument which will be displayed at the top of the page',
+        description: 'Titel van het instrument. Zorg dat deze titel uniek is.',
         validation: Rule => Rule.required(),
       },
       {
-        title: 'Subtitle',
-        name: 'subtitle',
+        title: 'Subtitel',
+        name: 'subtitel',
         type: 'text',
-        description: 'The subtitle of the measure which will be displayed at the top of the page',
-        validation: Rule => Rule.required().max(130),
+        description: 'Subtitel en/of intro-tekst  -  komt direct onder de titel.',
+        validation: Rule => Rule.max(130),
       },
       {
         title: 'Slug',
         name: 'slug',
         type: 'slug',
-        description: 'please click on generate',
+        description: 'Klik op ‘aanmaken’. (Slug is het gedeelte van een URL die na de domeinnaam komt. Deze paginanaam wordt automatisch gegenereerd aan de hand van de titel.)',
         options: {
           source: 'titel',
           inUnique: 'true',
@@ -66,22 +75,23 @@ export default {
         title: 'Thema',
         name: 'thema',
         type: 'string',
-        description: 'What themas is the instrument?',
+        description: 'Selecteer het thema waaronder dit instrument valt.',
         validation: Rule => Rule.required(),
         options: {
           list: [
             {title: 'Houtbouw', value: 'houtbouw'},
             {title: 'Circulaire windturbines', value: 'circulaire-windturbines'},
-            {title: 'Mattress', value: 'mattress'},
+            {title: 'Matrassen', value: 'matrassen'},
           ], // <-- predefined values - can store these elsewhere if we want
           layout: 'dropdown'
         },
         group: 'overview'
       },
       {
-        title: 'Transition Agenda',
+        title: 'Transitie-agenda',
         name: 'transitionAgenda',
         type: 'string',
+        description: 'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
         options: {
           list: [
             {title: 'Biomassa en voedsel', value: 'biomassa-en-voedsel'}, 
@@ -94,9 +104,10 @@ export default {
         }
       },
       {
-        title: 'Product Group',
+        title: 'Productgroep',
         name: 'productGroup',
         type: 'string',
+        description: 'Productgroep',
         options: {
           list: [
             {title: 'Plastic verpakkingen', value: 'plastic-verpakkingen'},
@@ -116,17 +127,18 @@ export default {
             {title: 'Windparken', value: 'windparken'},
             {title: 'Zonneparken', value: 'zonneparken'},
             {title: 'Klimaatinstallaties', value: 'klimaatinstallaties'},
+            {title: 'Matressen', value: 'matressen'},
           ], // <-- predefined values
           layout: 'dropdown' // <-- defaults to 'dropdown'
         }
       },
       // ITEMS ONLY IN OVERVIEW/FILTER
       {
-        title: 'R Ladder',
+        title: 'R-Ladder',
         name: 'rLadder',
         type: 'array',
         of: [{type: 'string'}],
-        description: 'Please select applicable R Values',
+        description: 'Selecteer de R-waarde die van toepassing is.',
         validation: Rule => Rule.required(),
         options: {
           list: [
@@ -145,7 +157,7 @@ export default {
         title: 'Subrechtsgebied',
         name: 'subrechtsgebied',
         type: 'string',
-        description: 'Please select a subrechtsgebied',
+        description: 'Selecteer een subrechtsgebied.',
         validaton: Rule => Rule.required(),
         options: {
           list: [
@@ -154,22 +166,25 @@ export default {
             {title: 'Aanbesteding', value: 'Aanbesteding'},
             {title: 'Contracten', value: 'Contracten'},
             {title: 'Gronduitgifte', value: 'Gronduitgifte'},
+            {title: 'Cultuur recht', value: 'Cultuur recht'},
+            {title: 'Staats-en bestuursrecht', value: 'Staats-en bestuursrecht'},
+            {title: 'Milieurecht', value: 'Milieurecht'},
           ],
           layout: 'dropdown'
         },
         group: ['overview', 'filter'],
       },
       {
-        title: 'Juridisch invloed',
+        title: 'Invloed',
         name: 'juridischInvloed',
         type: 'string',
-        description: 'Please select medium low or high',
+        description: 'Selecteer de mate van invloed.',
         validation: Rule => Rule.required(),
         options: {
           list: [
-            {title: 'Low', value: 'Low'},
-            {title: 'Medium', value: 'Medium'},
-            {title: 'High', value: 'High'},
+            {title: 'Beperkt', value: 'Beperkt'},
+            {title: 'Gemiddeld', value: 'Gemiddeld'},
+            {title: 'Hoog', value: 'Hoog'},
           ],
           layout: 'radio',
           direction: 'horizontal'
@@ -177,16 +192,23 @@ export default {
         group: ['overview']
       },
       {
-        title: 'Juridisch Haalbaarheid',
-        name: 'juridischHaalbaarheid',
+        title: 'Toelichting invloed',
+        name: 'invloedTooltipText',
         type: 'string',
-        description: 'Please select medium low or high',
+        description: 'Beschrijf kort waarom dit beperkt, gemiddeld of laag is',
+        group: 'overview'
+      },
+      {
+        title: 'Juridische Haalbaarheid',
+        name: 'juridischeHaalbaarheid',
+        type: 'string',
+        description: 'Selecteer de mate van haalbaarheid.',
         validation: Rule => Rule.required(),
         options: {
           list: [
-            {title: 'Low', value: 'Low'},
-            {title: 'Medium', value: 'Medium'},
-            {title: 'High', value: 'High'},
+            {title: 'Beperkt', value: 'Beperkt'},
+            {title: 'Gemiddeld', value: 'Gemiddeld'},
+            {title: 'Hoog', value: 'Hoog'},
           ],
           layout: 'radio',
           direction: 'horizontal',
@@ -194,10 +216,17 @@ export default {
         group: ['overview', 'filter']
       },
       {
-        title: 'Wettelijk Bevoegdheidsniveau',
-        name: 'wettelijkBevoegdheidsniveau',
+        title: 'Toelichting juridische haalbaarheid',
+        name: 'JHTooltipText',
+        type: 'string',
+        description: 'Beschrijf kort waarom dit beperkt, gemiddeld of laag is',
+        group: 'overview'
+      },
+      {
+        title: 'Overheidslaag',
+        name: 'overheidslaag',
         type: 'array',
-        description: 'Please select one or more levels of government',
+        description: 'Selecteer een of meer relevante overheidslagen.',
         of: [{type: 'string'}],
         validation: Rule => Rule.required(),
         options: {
@@ -215,13 +244,13 @@ export default {
         title: 'Rechtsgebied',
         name: 'rechtsgebied',
         type: 'string',
-        description: 'Please select medium one option',
+        description: 'Selecteer een rechtsgebied.',
         validation: Rule => Rule.required(),
         options: {
           list: [
             {title: 'Privaatrecht', value: 'Privaatrecht'},
             {title: 'Publiekrecht', value: 'Publiekrecht'},
-            {title: 'Fiscaalrecht', value: 'Fiscaalrecht'},
+            {title: 'Fiscaal recht', value: 'Fiscaal recht'},
           ],
           layout: 'radio',
           direction: 'horizontal'
@@ -229,15 +258,15 @@ export default {
         group: ['filter', 'table']
       },
       {
-        title: 'Extra Content',
+        title: 'Bevat extra info',
         name: 'extraContent',
         type: 'array',
-        description: 'Does the instrument include examples or guidelines?',
+        description: 'Bevat het instrument voorbeelden en/of leidraden?',
         of: [{type: 'string'}],
         options: {
           list: [
-            {title: 'Example', value: 'Example'},
-            {title: 'Guideline', value: 'Guideline'},
+            {title: 'Leidraad', value: 'Leidraad'},
+            {title: 'Voorbeeld', value: 'Voorbeeld'},
           ],
           layout: 'grid',
         },
@@ -245,34 +274,34 @@ export default {
       },
       // ITEMS ONLY IN TABLE
       {
-        title: 'Citeertitel',
+        title: 'Citeertitel relevante wet',
         name: 'citeertitel',
         type: 'string',
-        description: 'The citeertitel of law e.g. aanbestedingswet 2012 ',
+        description: 'De naam van de relevante wet (bv Aanbestedingswet 2012)',
         validation: Rule => Rule.required(),
         group: 'table'
       },
       {
-        title: 'Artikel',
+        title: 'Wetsartikel-nummer',
         name: 'artikel',
         type: 'string',
-        description: 'The aricle of law e.g. 2.8a ',
+        description: 'Geef het nummer van het wetsartikel op (bv 2.8a).',
         validation: Rule => Rule.required(),
         group: 'table'
       },
       {
-        title: 'Artikel link',
+        title: 'Link wetsartikel',
         name: 'artikelLink',
         type: 'url',
-        description: 'The aricle of law referenced above - must commence with http or https',
+        description: 'De link naar een wetsartikel moet altijd beginnen met http of https.',
         validation: Rule => Rule.required().uri({scheme: ['http', 'https']}),
         group: 'table'
       },
       {
-        title: 'Geldig vanaf',
+        title: 'Ingangsdatum wet',
         name: 'lawDate',
-        type: 'datetime',
-        description: 'The date the law was created - leave empty if TBD',
+        type: 'date',
+        description: 'Ingangsdatum wet (laat open als wet nog niet van kracht is)',
         group: 'table',
         options: {
           dateFormat: 'DD-MM-YYYY',
@@ -280,15 +309,15 @@ export default {
       },
       // COPY CONTENT
       {
-        title: 'Intro Text',
+        title: 'Intro-regels',
         name: 'introText',
         type: 'text',
-        description: 'copy and past the first paragraph of content (to be displayed on the instrument list)',
-        validaton: Rule => Rule.required(),
+        description: 'Plak hier de tekst van de eerste zinnen in (deze tekst wordt in de lijst met alle  instrumenten weergegeven).',
+        validation: Rule => Rule.required().max(215),
         group: 'copy'
       },
       {
-        title:'Content',
+        title:'Inhoud',
         name: 'content',
         type: 'array',
         of: [
@@ -350,7 +379,8 @@ export default {
       {
         title: 'Juridische toelichting',
         name: 'juridischeToelichting',
-        type: 'text',
+        type: 'array',
+        of: [{type: 'block'}],
         group: ['copy', 'table']
       }
     ]

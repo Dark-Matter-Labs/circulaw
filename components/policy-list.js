@@ -44,10 +44,9 @@ export default function PolicyList(props) {
                 </span>
               </Link>
               <div className='block font-manrope font-bold text-xs pb-1'>
-                {law?.wettelijkBevoegdheidsniveau?.map((level) => (
+                {law?.overheidslaag?.map((level) => (
                   <span key={level} className='capitalize'>
-                    {level}{' '}
-                    {law?.wettelijkBevoegdheidsniveau.slice(-1)[0] !== level && <span>- </span>}
+                    {level} {law?.overheidslaag.slice(-1)[0] !== level && <span>- </span>}
                   </span>
                 ))}
               </div>
@@ -61,7 +60,7 @@ export default function PolicyList(props) {
               <div className='grid grid-cols-1 lg:flex space-x-0 lg:space-x-8 space-y-4 sm:space-y-0  py-2 sm:py-0'>
                 <div className='flex-2 mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 '>
                   <span className='block-inline flex items-center'>
-                    Juridische invloed:{' '}
+                    Invloed:{' '}
                     <span className='text-black uppercase pl-1'>{law.juridischInvloed}</span>
                   </span>
                 </div>
@@ -69,7 +68,7 @@ export default function PolicyList(props) {
                 <div className='flex-2 mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 '>
                   <span className='block-inline flex items-center'>
                     Juridische Haalbaarheid:{' '}
-                    <span className='text-black uppercase pl-1'>{law.juridischHaalbaarheid}</span>
+                    <span className='text-black uppercase pl-1'>{law.juridischeHaalbaarheid}</span>
                   </span>
                 </div>
                 <div className='flex-2 md:mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 '>

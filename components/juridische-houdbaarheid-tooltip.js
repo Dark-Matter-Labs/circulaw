@@ -77,67 +77,30 @@ export default function ToolTips({ children, icon, data }) {
                         </button>
                       </div>
                     </Transition.Child>
-                    <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
-                      <div className='px-4 sm:px-6'>
+                    <div className='flex h-full px-6 flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
+                      <div className='px-12 sm:px-6'>
                         <Dialog.Title className='text-lg font-medium text-gray-900'>
                           {' '}
-                          Juridisch haalbaarheid
+                          Geschatte juridische haalbaarheid
                         </Dialog.Title>
                       </div>
-                      <div className='relative mt-6 flex-1 px-4 sm:px-6'>
-                        <div className='absolute inset-0 px-4 sm:px-6'>
-                          <p className='tooltip-body'>
-                            CircuLaw heeft per maatregel een inschatting gemaakt van de juridische
-                            houdbaarheid. Dit is een totaalscore gebaseerd op 3 factoren:
-                          </p>
-                          <br />
-                          <p className='tooltip-body'>
-                            <b>Duidelijkheid wet:</b>
-                          </p>
-                          <p className='tooltip-body'>
-                            Hoe duidelijk is de tekst, toelichting en het commentaar van de wet?
-                          </p>
-                          <br />
-                          <p className='tooltip-body font-bold'>
-                            <b>Eenduidigheid jurisprudentie:</b>
-                          </p>
-                          <p className='tooltip-body'>
-                            Zijn de juridische uitspraken duidelijk en niet dubbelzinnig?
-                          </p>
-                          <br />
-                          <p className='tooltip-body font-bold'>
-                            <b>Beschikbare juridische literatuur:</b>
-                          </p>
-                          <p className='tooltip-body'>
-                            Hoeveel is er al over de maatregel geschreven in niet-juridische
-                            bronnen?
-                          </p>
-                          <br />
-                          {/* CONDITIONAL TEXT */}
-                          {data?.measure?.juridischHaalbaarheid == 'low' && (
-                            <div>
-                              <p className='tooltip-body font-bold'>
-                                <b>LOWWWWW</b>
-                              </p>
-                              <p className='tooltip-body'>I am here only if i am low</p>
-                            </div>
+                      <div className='relative mt-6 flex-1 px-12 sm:px-6'>
+                        <div className='absolute inset-0 px-12 sm:px-6'>
+                          {data?.measure?.JHTooltipText && (
+                            <p className='tooltip-body'>{data?.measure?.JHTooltipText}</p>
                           )}
-                          {data?.measure?.juridischHaalbaarheid == 'medium' && (
-                            <div>
-                              <p className='tooltip-body font-bold'>
-                                <b>MEDIUM</b>
-                              </p>
-                              <p className='tooltip-body'>I am here only if i am Medium</p>
-                            </div>
-                          )}
-                          {data?.measure?.juridischHaalbaarheid == 'high' && (
-                            <div>
-                              <p className='tooltip-body font-bold'>
-                                <b>HIGH</b>
-                              </p>
-                              <p className='tooltip-body'>I am here only if i am High</p>
-                            </div>
-                          )}
+                          <div className='bg-green4 mt-6 p-6'>
+                            <p className='tooltip-body'>
+                              Met de waardering ‘Juridische haalbaarheid’ laten we zien hoe
+                              risicovol een instrument is: wat is het afbreukrisico of de kans dat
+                              het instrument onderuit gaat bij de rechter.
+                            </p>
+                            <br />
+                            <p className='tooltip-body'>
+                              We maken hiervan een globale inschatting, 1: beperkt, 2: gemiddeld, 3:
+                              hoog.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
