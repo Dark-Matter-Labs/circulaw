@@ -44,7 +44,7 @@ export default function Houtbouw() {
       <ThemeLayout
         icon={WoodIcon}
         iconAlt='Icon of Matrassen'
-        title='Houtbouw stimuleren'
+        title='MATRASSEN TITEL stimuleren'
         shortDescription='CONTENT TO BE ADDED De manier waarop wij nu in Nederland bouwen is zeer belastend voor het milieu. Er
       is een eenvoudige oplossing: vervang beton deels door hout. Bosbouw is steeds
       duurzamer geworden en er zijn veel nieuwe houtproducten ontwikkeld die grote
