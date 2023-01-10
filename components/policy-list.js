@@ -21,7 +21,7 @@ export default function PolicyList(props) {
               {law?.thema === 'circulaire-windturbines' && (
                 <Image width='20' height='20' src={WindmillIcon} alt='Icon of Wood' />
               )}
-              {law?.thema === 'mattress' && (
+              {law?.thema === 'matrassen' && (
                 <Image width='20' height='20' src={IconWood} alt='Icon of Wood' />
               )}
               <span className='inline-block pl-4 font-openSans casus'>

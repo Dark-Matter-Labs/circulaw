@@ -163,15 +163,24 @@ export default function TestMeasure({ data }) {
           <div className='grid grid-cols-12 content-center'>
             <div className='col-span-12 row-span-1 h-12 mt-4'>
               {/* BREADCRUMB */}
-              {data?.measure?.thema === 'houtbouw' ? (
+              {data?.measure?.thema === 'houtbouw' && (
                 <Link href='/measures/houtbouw' className=''>
                   <span className='breadcrumb'>{'<'} Terug</span>
                 </Link>
-              ) : (
+              )}
+              {data?.measure?.thema === 'circulaire-windturbines' &&
+                (
                 <Link href='/measures/windturbines' className=''>
                   <span className='text-greenLink breadcrumb flex col-span-12'>← Terug</span>
                 </Link>
               )}
+               {data?.measure?.thema === 'matrassen' &&
+               (
+                <Link href='/measures/matrassen' className=''>
+                  <span className='text-greenLink breadcrumb flex col-span-12'>← Terug</span>
+                </Link>
+              )}
+              
             </div>
             <div className='col-span-12 row-span-1'>
               <h1 className='hidden lg:block pt-4 mb-7 urban'>{data?.measure?.titel}</h1>
