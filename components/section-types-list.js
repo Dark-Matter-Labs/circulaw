@@ -43,8 +43,8 @@ const types = [
     tag: '',
     description:
       'Binnenkort starten we met onderzoek en wetsanalyses om circulariteit in de matrasketen te stimuleren. Zijn er thema’s waar jij graag mee aan de slag zou willen? Laat het ons weten!',
-    buttonText: '',
-    href: '',
+    buttonText: 'Meer over matrassen??',
+    href: '/matrassen',
   },
 ];
 
