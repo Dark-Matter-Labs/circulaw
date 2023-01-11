@@ -40,58 +40,64 @@ export default function MeasureTable({ data }) {
               <td className='w-1/3 py-1.5 body-small'>Rechtsgebied</td>
               <td className='w-2/3 py-1.5 table-right capitalize'>
                 <span className='flex justify-end sm:justify-start'>
-                {data?.measure?.rechtsgebied} - {data?.measure?.subrechtsgebied}
+                  {data?.measure?.rechtsgebied} - {data?.measure?.subrechtsgebied}
                 </span>
               </td>
             </tr>
             <tr className=' border-b boder-grey2'>
               <td className='w-1/3 py-1.5 body-small'>Citeertitel</td>
               <td className='w-2/3 py-1.5 table-right first-letter:uppercase'>
-              <span className='flex justify-end sm:justify-start'>
-                {data?.measure?.citeertitel}
+                <span className='flex justify-end sm:justify-start'>
+                  {data?.measure?.citeertitel}
                 </span>
               </td>
             </tr>
             <tr className='border-b boder-grey2'>
               <td className='w-1/3 py-1.5 body-small'>Artikel</td>
               <td className='w-2/3 py-1.5 table-right'>
-              <span className='flex justify-end sm:justify-start'>
-                <a
-                  className='text-greenLink underline'
-                  target='_blank'
-                  href={data?.measure?.artikelLink}
-                  rel='noreferrer'
-                >
-                  {data?.measure?.artikel}
-                  <span className='pl-0.5 inline-block h-4 w-4 relative'>
-                  <Image className='' alt='new tab' src='/icons/Vectorlink-icon.svg' layout='fill' objectFit="cover" />
-                  </span>
-                </a>
+                <span className='flex justify-end sm:justify-start'>
+                  <a
+                    className='text-greenLink underline'
+                    target='_blank'
+                    href={data?.measure?.artikelLink}
+                    rel='noreferrer'
+                  >
+                    {data?.measure?.artikel}
+                    <span className='pl-0.5 inline-block h-4 w-4 relative'>
+                      <Image
+                        className=''
+                        alt='new tab'
+                        src='/icons/Vectorlink-icon.svg'
+                        layout='fill'
+                        objectFit='cover'
+                      />
+                    </span>
+                  </a>
                 </span>
               </td>
             </tr>
             <tr className='border-b boder-grey2'>
               <td className='w-1/3 py-1.5 body-small'>Geldig vanaf</td>
               <td className='w-2/3 py-1.5 table-right'>
-              <span className='flex justify-end sm:justify-start'>
-                {!data?.measure?.lawDate ? (
-                  <span className='table-right'>TBD</span>
-                ) : (
-                  formatDate(data?.measure?.lawDate)
-                )}
+                <span className='flex justify-end sm:justify-start'>
+                  {!data?.measure?.lawDate ? (
+                    <span className='table-right'>TBD</span>
+                  ) : (
+                    formatDate(data?.measure?.lawDate)
+                  )}
                 </span>
               </td>
             </tr>
             <tr className='border-b boder-grey2'>
               <td className='w-1/3 py-1.5 body-small'>Overheidslaag</td>
               <td className='w-2/3 py-1.5 table-right'>
-              <span className='flex justify-end sm:justify-start'>
-
-                {data?.measure?.overheidslaag?.map((level) => (
-                  <span key={level} className='table-right capitalize'>
-                    {level} {data?.measure?.overheidslaag.slice(-1)[0] !== level && <span>- </span>}
-                  </span>
-                ))}
+                <span className='flex justify-end sm:justify-start'>
+                  {data?.measure?.overheidslaag?.map((level) => (
+                    <span key={level} className='table-right capitalize'>
+                      {level}{' '}
+                      {data?.measure?.overheidslaag.slice(-1)[0] !== level && <span>- </span>}
+                    </span>
+                  ))}
                 </span>
               </td>
             </tr>
