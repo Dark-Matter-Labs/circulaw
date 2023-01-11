@@ -49,6 +49,19 @@
     line-height: 30px;
   }
 
+  .h3-mob-new {
+    font-family: 'Urbanist', 'sans-serif';
+    font-weight: 600;
+    font-size: 18.75px;
+    line-height: 24px;
+  }
+  .h4-mob-new {
+    font-family: 'Urbanist', 'sans-serif';
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 24px;
+  }
+
   .sub-mob-new {
     font-family: 'Manrope';
     font-size: 15px;
@@ -74,6 +87,13 @@
     font-family: 'Manrope';
     font-size: 16px;
     line-height: 22px;
+    font-weight: 500;
+  }
+
+  .tooltip-hover-text-mob {
+    font-family: 'Manrope';
+    font-size: 14px;
+    line-height: 20px;
     font-weight: 500;
   }
 

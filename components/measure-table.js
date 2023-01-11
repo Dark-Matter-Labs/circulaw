@@ -1,5 +1,5 @@
 import { PortableText } from '@portabletext/react';
-import LinkIcon from './link-icon';
+import Image from 'next/image';
 
 const formatDate = (date) => {
   let dateObject = new Date(date);
@@ -63,8 +63,9 @@ export default function MeasureTable({ data }) {
                   rel='noreferrer'
                 >
                   {data?.measure?.artikel}
-                  <LinkIcon size='mob'/>
-                  
+                  <span className='pl-0.5 inline-block h-4 w-4 relative'>
+                  <Image className='' alt='new tab' src='/icons/Vectorlink-icon.svg' layout='fill' objectFit="cover" />
+                  </span>
                 </a>
                 </span>
               </td>

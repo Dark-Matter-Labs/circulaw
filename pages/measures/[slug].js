@@ -41,7 +41,7 @@ const components = {
     greenBox: ({ value }) => (
       <div className='-mx-8 sm:mx-0 my-10'>
       <div className='bg-green6 w-full px-8 py-8'>
-        <h2 className='pb-6 urban'>{value?.greenBoxTitle}</h2>
+        <h2 className='pb-6 h3-mob-new urban'>{value?.greenBoxTitle}</h2>
         <div className='body-text-mobile sm:body-text'>{value?.greenBoxText}</div>
       </div>
       </div>
@@ -50,12 +50,13 @@ const components = {
       <>
         <button
           type='button'
-          className='group'
+          className='group inline-flex static'
           style={{ display: isInline ? 'inline-block' : 'block' }}
         >
           <svg
-            width='20'
-            height='25'
+            className='inline'
+            width='24'
+            height='24'
             viewBox='0 0 24 30'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
@@ -66,7 +67,7 @@ const components = {
               fill='#F8FAF8'
             />
           </svg>
-          <div className='inline-block max-w-sm absolute invisible group-hover:visible z-10 py-3 px-6 bg-grey2 text-black1 tooltip-hover-text opacity-0 group-hover:opacity-100 transition tooltip'>
+          <div className='inline-block max-w-xs absolute invisible group-hover:visible z-10 py-3 px-6 bg-grey2 text-black1tooltip-hover-text-mob sm:tooltip-hover-text opacity-0 group-hover:opacity-100 transition tooltip'>
             {value.hoverText}
           </div>
         </button>
@@ -82,7 +83,7 @@ const components = {
             <div className='absolute -bottom-44 -right-44 h-96 w-96 invisible md:visible'>
               <Image src='/pdf-deco.png' alt='decorative image' width={584} height={562} />
             </div>
-            <h2 className='pb-2 mobile sm:urban text-white'>{value.pdfTitle}</h2>
+            <h2 className='pb-2 h3-mob-new sm:urban text-white'>{value.pdfTitle}</h2>
             <p className='body-text-mobile sm:body-text text-white1 pb-4'>{value.pdfText}</p>
             <a
               href={`https://cdn.sanity.io/files/${
@@ -110,8 +111,8 @@ const components = {
     smallPara: ({ value }) => (
       <div className='flex justify-left pl-8 sm:pl-12'>
         <div className='mb-10 pt-10 w-5/6'>
-          <h4 className='urban'>{value.smallParaTitle}</h4>
-          <p className='body-small'>{value.smallParaText}</p>
+          <h4 className='h4-mob-new urban'>{value.smallParaTitle}</h4>
+          <p className='body-text-mobile sm:body-small'>{value.smallParaText}</p>
         </div>
       </div>
     ),
@@ -188,11 +189,11 @@ export default function TestMeasure({ data }) {
               
             </div>
             <div className='sm:col-span-12 row-span-1'>
-              <h1 className='lg:block pb-10 sm:pt-4 sm:mb-7 mob-new sm:urban'>{data?.measure?.titel}</h1>
+              <h1 className='lg:block sm:pt-4 pb-6 sm:pb-10 mob-new sm:urban'>{data?.measure?.titel}</h1>
             </div>
             {data?.measure?.subtitel && (
             <div className='sm:col-span-7 row-span-1'>
-              <p className='lg:block sub-mob-new sm:subheading pb-10 sm:py-4 sm:mb-7'>{data?.measure?.subtitel}</p>
+              <p className='lg:block sub-mob-new sm:subheading pb-10'>{data?.measure?.subtitel}</p>
             </div>
             )}
           </div>
