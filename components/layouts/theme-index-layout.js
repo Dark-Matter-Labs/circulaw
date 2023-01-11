@@ -3,6 +3,8 @@ import Image from 'next/image';
 import SectionTypes from '../../components/section-types-list';
 import ThemeBottomSection from '../section-bottom-theme-index';
 
+
+
 export default function ThemeLayout(props) {
   return (
     <div className='gradient-bg'>
