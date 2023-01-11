@@ -39,9 +39,11 @@ const measureQuery = `
 const components = {
   types: {
     greenBox: ({ value }) => (
-      <div className='bg-green6 w-full px-6 py-8 my-14'>
+      <div className='-mx-8 sm:mx-0 my-10'>
+      <div className='bg-green6 w-full px-8 py-8'>
         <h2 className='pb-6 urban'>{value?.greenBoxTitle}</h2>
         <div className='body-text-mobile sm:body-text'>{value?.greenBoxText}</div>
+      </div>
       </div>
     ),
     hoverText: ({ value, isInline }) => (
@@ -74,9 +76,10 @@ const components = {
       // eslint-disable-next-line
       const [_file, id, extension] = value.asset._ref.split('-');
       return (
-        <div className='bg-green1'>
-          <div className=' gradient-pdf p-10 my-16 relative overflow-hidden'>
-            <div className='absolute -bottom-44 -right-44 h-96 w-96'>
+        <div className='-mx-8 sm:mx-0'>
+        <div className='bg-green1 '>
+          <div className=' gradient-pdf p-10 my-10 relative overflow-hidden'>
+            <div className='absolute -bottom-44 -right-44 h-96 w-96 invisible md:visible'>
               <Image src='/pdf-deco.png' alt='decorative image' width={584} height={562} />
             </div>
             <h2 className='pb-2 mobile sm:urban text-white'>{value.pdfTitle}</h2>
@@ -101,11 +104,12 @@ const components = {
             </a>
           </div>
         </div>
+        </div>
       );
     },
     smallPara: ({ value }) => (
-      <div className='flex justify-left pl-12'>
-        <div className='mb-12 pt-10 w-5/6'>
+      <div className='flex justify-left pl-8 sm:pl-12'>
+        <div className='mb-10 pt-10 w-5/6'>
           <h4 className='urban'>{value.smallParaTitle}</h4>
           <p className='body-small'>{value.smallParaText}</p>
         </div>
@@ -125,12 +129,12 @@ const components = {
     ),
   },
   block: {
-    h2: ({ children }) => <h2 className='pt-10 pb-4 mobile sm:urban'>{children}</h2>,
-    firstH2: ({ children }) => <h2 className='pb-8 mobile sm:urban'>{children}</h2>,
+    h2: ({ children }) => <h2 className='pt-10 pb-4 mob-new sm:urban'>{children}</h2>,
+    firstH2: ({ children }) => <h2 className='pb-8 mob-new sm:urban'>{children}</h2>,
 
     // need to add other styles here
     normal: ({ children }) => (
-      <p className='newlineDisplay body-text-mobile sm:body-text pb-4'>{children}</p>
+      <p className='newlineDisplay body-text-mobile sm:body-text'>{children}</p>
     ),
   },
   marks: {
@@ -143,8 +147,8 @@ const components = {
             target='_blank'
             rel='noreferrer'
           >
-            {children}
-            <LinkIcon />
+            <span>{children}</span>
+            <LinkIcon size="desktop" />
           </a>
         </>
       ) : (
@@ -159,9 +163,10 @@ export default function TestMeasure({ data }) {
   return (
     <Layout>
       <div className='measure-bg'>
-        <div className='global-margin pt-10 overflow-x-hidden'>
-          <div className='grid grid-cols-12 content-center'>
-            <div className='col-span-12 row-span-1 h-12 mt-4'>
+        <div className='global-margin pt-4 sm:pt-10 '>
+
+          <div className='grid grid-cols 1 sm:grid-cols-12 content-center'>
+            <div className='sm:col-span-12 row-span-1 h-12 mt-4'>
               {/* BREADCRUMB */}
               {data?.measure?.thema === 'houtbouw' && (
                 <Link href='/measures/houtbouw' className=''>
@@ -182,23 +187,25 @@ export default function TestMeasure({ data }) {
               )}
               
             </div>
-            <div className='col-span-12 row-span-1'>
-              <h1 className='hidden lg:block pt-4 mb-7 urban'>{data?.measure?.titel}</h1>
+            <div className='sm:col-span-12 row-span-1'>
+              <h1 className='lg:block pb-10 sm:pt-4 sm:mb-7 mob-new sm:urban'>{data?.measure?.titel}</h1>
             </div>
-            <div className='col-span-7 row-span-1'>
-              <p className='subheading py-4 mb-7'>{data?.measure?.subtitel}</p>
+            {data?.measure?.subtitel && (
+            <div className='sm:col-span-7 row-span-1'>
+              <p className='lg:block sub-mob-new sm:subheading pb-10 sm:py-4 sm:mb-7'>{data?.measure?.subtitel}</p>
             </div>
+            )}
           </div>
 
           <div className='grid grid-cols-1 sm:grid-cols-3 '>
-            <div className='w-full sm:max-w-3xl pb-20 col-span-2 '>
-              <div className='py-4 m'>
+          <MeasureOverview data={data} viewport='mobile' />
+            <div className='sm:max-w-3xl pb-20 col-span-2 '>
+              <div className='py-4'>
                 <PortableText value={data?.measure?.content} components={components} />
                 {}
               </div>
               <MeasureTable data={data} />
             </div>
-            <MeasureOverview data={data} viewport='mobile' />
             <MeasureOverview data={data} viewport='desktop' />
           </div>
         </div>

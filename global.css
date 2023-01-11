@@ -35,6 +35,27 @@
     line-height: 32px;
   }
 
+  h1.mob-new {
+    font-family: 'Urbanist', 'sans-serif';
+    font-weight: 700;
+    font-size: 24.5px;
+    line-height: 30px;
+  }
+
+  h2.mob-new {
+    font-family: 'Urbanist', 'sans-serif';
+    font-weight: 600;
+    font-size: 21.88px;
+    line-height: 30px;
+  }
+
+  .sub-mob-new {
+    font-family: 'Manrope';
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 300;
+  }
+
   .overview-thema {
     font-family: 'Urbanist', 'sans-serif';
     font-weight: 600;
@@ -163,7 +184,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 170%;
+    line-height: 25.5px;
   }
 
   .body-small {

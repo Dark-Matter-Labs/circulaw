@@ -7,16 +7,16 @@ import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../components/juridische-invloed-tooltip';
 
 const viewportType = {
-  mobile: 'block lg:hidden',
-  desktop: 'hidden lg:block float-right pl-4 pr-28 gradient-overview h-[38rem]',
+  mobile: 'block sm:hidden gradient-overview -m-8 h-[30rem] mb-10',
+  desktop: 'hidden sm:block float-right pl-4 sm:pr-6 md:pr-10 lg:pr-14 gradient-overview h-[38rem]',
 };
 export default function MeasureOverview({ viewport, children, data, ...props }) {
   let viewportClasses = viewportType[viewport];
   return (
     <div {...props} className={`${viewportClasses}`}>
-      <div className='py-12 block h-[38rem]'>
+      <div className='px-8 pb-10 sm:pb-0 sm:px-0 sm:py-12 block h-[30rem] sm:h-[38rem]'>
         {children}
-        <div className='container pb-2'>
+        <div className='invisible sm:visible container pb-2'>
           {data?.measure?.thema === 'houtbouw' ? (
             <div className='container-image'>
               <Image src={IcontWood} alt='Icon of a Wood Log' />
@@ -35,9 +35,10 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
           </div>
         </div>
 
-        <div className='pt-5 pb-1 border-t border-grey1'>
-          <div className='flex pb-2 justify-left items-center'>
-            <span className='overview-titles text-black1 pr-3'>R-ladder</span>
+        <div className='-mt-8 sm:mt-0 sm:pt-5 pb-1 sm:border-t border-grey1'>
+          <div className='flex pb-2 justify-between items-center'>
+          <div className='flex justify-left items-center'>
+           <span className='overview-titles text-black1 pr-3'>R-ladder</span>
             <RTooltip>
               <svg
                 width='24'
@@ -53,12 +54,20 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
                 />
               </svg>
             </RTooltip>
+            </div>
+            <div className='flex justify-end items-center visible sm:hidden'>
+              <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()} passHref>
+              <span className='overview-thema underline pl-2 text-green1 first-letter:uppercase block'>
+              {data?.measure?.thema}
+              </span>
+              </Link>
+            </div>
           </div>
-          <span className='block-inline grid grid-rows-1 grid-cols-6 w-4/5'>
+          <span className='block-inline grid grid-rows-1 grid-cols-6'>
             {data?.measure?.rLadder.map((rValue) => (
               <span
                 key={rValue}
-                className='bg-green1 text-white1 r-category rounded-full p-1 mr-2 h-8 w-8 flex justify-center items-center'
+                className='bg-green1 text-white1 r-category rounded-full p-1 mr-2 h-8 w-8 sm:h-7 sm:w-7 md:h-7 md:w-7 lg:h-8 lg:w-8 flex justify-center items-center'
               >
                 {rValue}
               </span>
