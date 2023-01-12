@@ -39,21 +39,24 @@ const measureQuery = `
 const components = {
   types: {
     greenBox: ({ value }) => (
-      <div className='bg-green6 w-full px-6 py-8 my-14'>
-        <h2 className='pb-6 urban'>{value?.greenBoxTitle}</h2>
-        <div className='body-text-mobile sm:body-text'>{value?.greenBoxText}</div>
+      <div className='-mx-8 sm:mx-0 my-10'>
+        <div className='bg-green6 w-full px-8 py-8'>
+          <h2 className='pb-6 h3-mob-new urban'>{value?.greenBoxTitle}</h2>
+          <div className='body-text-mobile sm:body-text'>{value?.greenBoxText}</div>
+        </div>
       </div>
     ),
     hoverText: ({ value, isInline }) => (
       <>
         <button
           type='button'
-          className='group'
+          className='group inline-flex static'
           style={{ display: isInline ? 'inline-block' : 'block' }}
         >
           <svg
-            width='20'
-            height='25'
+            className='inline'
+            width='24'
+            height='24'
             viewBox='0 0 24 30'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
@@ -64,7 +67,7 @@ const components = {
               fill='#F8FAF8'
             />
           </svg>
-          <div className='inline-block max-w-sm absolute invisible group-hover:visible z-10 py-3 px-6 bg-grey2 text-black1 tooltip-hover-text opacity-0 group-hover:opacity-100 transition tooltip'>
+          <div className='inline-block max-w-xs absolute invisible group-hover:visible z-10 py-3 px-6 bg-grey2 text-black1tooltip-hover-text-mob sm:tooltip-hover-text opacity-0 group-hover:opacity-100 transition tooltip'>
             {value.hoverText}
           </div>
         </button>
@@ -74,40 +77,42 @@ const components = {
       // eslint-disable-next-line
       const [_file, id, extension] = value.asset._ref.split('-');
       return (
-        <div className='bg-green1'>
-          <div className=' gradient-pdf p-10 my-16 relative overflow-hidden'>
-            <div className='absolute -bottom-44 -right-44 h-96 w-96'>
-              <Image src='/pdf-deco.png' alt='decorative image' width={584} height={562} />
+        <div className='-mx-8 sm:mx-0'>
+          <div className='bg-green1 '>
+            <div className=' gradient-pdf p-10 my-10 relative overflow-hidden'>
+              <div className='absolute -bottom-44 -right-44 h-96 w-96 invisible md:visible'>
+                <Image src='/pdf-deco.png' alt='decorative image' width={584} height={562} />
+              </div>
+              <h2 className='pb-2 h3-mob-new sm:urban text-white'>{value.pdfTitle}</h2>
+              <p className='body-text-mobile sm:body-text text-white1 pb-4'>{value.pdfText}</p>
+              <a
+                href={`https://cdn.sanity.io/files/${
+                  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '2vfoxb3h'
+                }/${process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'}/${id}.${extension}`}
+                target='_blank'
+                rel='noreferrer'
+              >
+                <CustomButton color='toPdf'>
+                  Bekijk de leidraad &nbsp;
+                  <Image
+                    src='/icons/pdf-icon.svg'
+                    width={23}
+                    height={23}
+                    alt='icon of pdf'
+                    className='ml-2'
+                  />
+                </CustomButton>
+              </a>
             </div>
-            <h2 className='pb-2 mobile sm:urban text-white'>{value.pdfTitle}</h2>
-            <p className='body-text-mobile sm:body-text text-white1 pb-4'>{value.pdfText}</p>
-            <a
-              href={`https://cdn.sanity.io/files/${
-                process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '2vfoxb3h'
-              }/${process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'}/${id}.${extension}`}
-              target='_blank'
-              rel='noreferrer'
-            >
-              <CustomButton color='toPdf'>
-                Bekijk de leidraad &nbsp;
-                <Image
-                  src='/icons/pdf-icon.svg'
-                  width={23}
-                  height={23}
-                  alt='icon of pdf'
-                  className='ml-2'
-                />
-              </CustomButton>
-            </a>
           </div>
         </div>
       );
     },
     smallPara: ({ value }) => (
-      <div className='flex justify-left pl-12'>
-        <div className='mb-12 pt-10 w-5/6'>
-          <h4 className='urban'>{value.smallParaTitle}</h4>
-          <p className='body-small'>{value.smallParaText}</p>
+      <div className='flex justify-left pl-8 sm:pl-12'>
+        <div className='mb-10 pt-10 w-5/6'>
+          <h4 className='h4-mob-new urban'>{value.smallParaTitle}</h4>
+          <p className='body-text-mobile sm:body-small'>{value.smallParaText}</p>
         </div>
       </div>
     ),
@@ -125,12 +130,12 @@ const components = {
     ),
   },
   block: {
-    h2: ({ children }) => <h2 className='pt-10 pb-4 mobile sm:urban'>{children}</h2>,
-    firstH2: ({ children }) => <h2 className='pb-8 mobile sm:urban'>{children}</h2>,
+    h2: ({ children }) => <h2 className='pt-10 pb-4 mob-new sm:urban'>{children}</h2>,
+    firstH2: ({ children }) => <h2 className='pb-8 mob-new sm:urban'>{children}</h2>,
 
     // need to add other styles here
     normal: ({ children }) => (
-      <p className='newlineDisplay body-text-mobile sm:body-text pb-4'>{children}</p>
+      <p className='newlineDisplay body-text-mobile sm:body-text'>{children}</p>
     ),
   },
   marks: {
@@ -143,8 +148,8 @@ const components = {
             target='_blank'
             rel='noreferrer'
           >
-            {children}
-            <LinkIcon />
+            <span>{children}</span>
+            <LinkIcon size='desktop' />
           </a>
         </>
       ) : (
@@ -159,46 +164,49 @@ export default function TestMeasure({ data }) {
   return (
     <Layout>
       <div className='measure-bg'>
-        <div className='global-margin pt-10 overflow-x-hidden'>
-          <div className='grid grid-cols-12 content-center'>
-            <div className='col-span-12 row-span-1 h-12 mt-4'>
+        <div className='global-margin pt-4 sm:pt-10 '>
+          <div className='grid grid-cols 1 sm:grid-cols-12 content-center'>
+            <div className='sm:col-span-12 row-span-1 h-12 mt-4'>
               {/* BREADCRUMB */}
               {data?.measure?.thema === 'houtbouw' && (
                 <Link href='/measures/houtbouw' className=''>
                   <span className='breadcrumb'>{'<'} Terug</span>
                 </Link>
               )}
-              {data?.measure?.thema === 'circulaire-windturbines' &&
-                (
+              {data?.measure?.thema === 'circulaire-windturbines' && (
                 <Link href='/measures/windturbines' className=''>
                   <span className='text-greenLink breadcrumb flex col-span-12'>← Terug</span>
                 </Link>
               )}
-               {data?.measure?.thema === 'matrassen' &&
-               (
+              {data?.measure?.thema === 'matrassen' && (
                 <Link href='/measures/matrassen' className=''>
                   <span className='text-greenLink breadcrumb flex col-span-12'>← Terug</span>
                 </Link>
               )}
-              
             </div>
-            <div className='col-span-12 row-span-1'>
-              <h1 className='hidden lg:block pt-4 mb-7 urban'>{data?.measure?.titel}</h1>
+            <div className='sm:col-span-12 row-span-1'>
+              <h1 className='lg:block sm:pt-4 pb-6   sm:pb-10 mob-new sm:urban'>
+                {data?.measure?.titel}
+              </h1>
             </div>
-            <div className='col-span-7 row-span-1'>
-              <p className='subheading py-4 mb-7'>{data?.measure?.subtitel}</p>
-            </div>
+            {data?.measure?.subtitel && (
+              <div className='sm:col-span-7 row-span-1'>
+                <p className='lg:block sub-mob-new sm:subheading pb-10'>
+                  {data?.measure?.subtitel}
+                </p>
+              </div>
+            )}
           </div>
 
           <div className='grid grid-cols-1 sm:grid-cols-3 '>
-            <div className='w-full sm:max-w-3xl pb-20 col-span-2 '>
-              <div className='py-4 m'>
+            <MeasureOverview data={data} viewport='mobile' />
+            <div className='sm:max-w-3xl pb-20 col-span-2 '>
+              <div className='py-4'>
                 <PortableText value={data?.measure?.content} components={components} />
                 {}
               </div>
               <MeasureTable data={data} />
             </div>
-            <MeasureOverview data={data} viewport='mobile' />
             <MeasureOverview data={data} viewport='desktop' />
           </div>
         </div>
