@@ -1,5 +1,5 @@
 const buttonColors = {
-  home: 'border-green1 bg-blush2 hover:bg-green1 text-green1 hover:text-white1 transition ease-in-out hover:duration-150 focus:outline-none',
+  home: 'border-white1 bg-white1 shadow hover:bg-green1 text-green1 hover:text-white1 transition ease-in-out hover:duration-150 focus:outline-none',
   actionPanel:
     'border-green1 bg-green1 hover:bg-transparent text-white1 hover:text-green1 transition ease-in-out hover:duration-150 focus:outline-none',
   whiteBackground:

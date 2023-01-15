@@ -11,6 +11,12 @@ const waardeketens = [
       href: '/circulaire-windturbines',
       className: 'font-normal',
     },
+    {
+      name: 'Matrassen',
+      description: 'description',
+      href: '/matrassen',
+      className: 'font-normal',
+    },
   ];
   
   const over = [

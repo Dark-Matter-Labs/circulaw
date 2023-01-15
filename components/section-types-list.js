@@ -90,7 +90,7 @@ export default function SectionTypes(props) {
   }, [props.type]);
 
   return (
-    <div className='pb-20'>
+    <div className=''>
       <ul
         role='list'
         className='grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 sm:gap-x-10 max-w-8xl'
@@ -114,12 +114,14 @@ export default function SectionTypes(props) {
                 >
                   {file.href !== '' ? (
                     <Link href={file.href}>
-                      <h3 className='mt-2 block text-black pointer-events-none pb-4'>
+                      <h3 className='urban mt-2 block text-black pointer-events-none pb-4'>
                         {file.title}
                       </h3>
                     </Link>
                   ) : (
-                    <h3 className='mt-2 block text-black pointer-events-none pb-4'>{file.title}</h3>
+                    <h3 className='urban mt-2 block text-black pointer-events-none pb-4'>
+                      {file.title}
+                    </h3>
                   )}
                   {/* added height for the description while on home to ensure all the text can be read*/}
                 </div>

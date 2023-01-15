@@ -27,49 +27,38 @@ export default function Privacy() {
         <p className='body-text-mobile sm:body-text max-w-4xl pb-6'>
           We are using{' '}
           <span className='text-greenLink link-mobile sm:link'>
-          <a
-              target='_blank'
-              href='https://www.hotjar.com/'
-              rel='noopener noreferrer'
-            >
+            <a target='_blank' href='https://www.hotjar.com/' rel='noopener noreferrer'>
               Hotjar
             </a>
-            </span>
-            {' '}to understand how people use the site and collect feedback. We respect your privacy and do not track or collect anything if you click Reject or have
-          Do Not Track enabled.
+          </span>{' '}
+          to understand how people use the site and collect feedback. We respect your privacy and do
+          not track or collect anything if you click Reject or have Do Not Track enabled.
         </p>
 
         <h2 className='mobile sm:main py-2'>Cookies used</h2>
         <ul className='list-disc pl-6 body-text-mobile sm:body-text max-w-4xl pb-6'>
-            <li>
-            _localConsent: Saves your cookie preference, expires in 1 year
-            </li>
-            <li>
-            _hjSessionUser: Set when a user first lands on a page, expires in 1 year
-            </li>
-            <li>
-            _hjSession: Holds current session data, expires in 30 mins
-            </li>
-            <li>
-            _hjRecordingEnabled: Set when a recording starts, expires in 30 mins
-            </li>
-            <li>
-            _hjClosedSurveyInvites: Set when a user interacts with a Link Survey invitation modal, expires in 1 year
-            </li>
-            </ul>
-            <p className='body-text-mobile sm:body-text max-w-4xl pb-6'>
-         For more info you can read{' '}
+          <li>_localConsent: Saves your cookie preference, expires in 1 year</li>
+          <li>_hjSessionUser: Set when a user first lands on a page, expires in 1 year</li>
+          <li>_hjSession: Holds current session data, expires in 30 mins</li>
+          <li>_hjRecordingEnabled: Set when a recording starts, expires in 30 mins</li>
+          <li>
+            _hjClosedSurveyInvites: Set when a user interacts with a Link Survey invitation modal,
+            expires in 1 year
+          </li>
+        </ul>
+        <p className='body-text-mobile sm:body-text max-w-4xl pb-6'>
+          For more info you can read{' '}
           <span className='text-greenLink link-mobile sm:link'>
-          <a
+            <a
               target='_blank'
               href='https://help.hotjar.com/hc/en-us/articles/6952777582999-Cookies-Set-by-the-Hotjar-Tracking-Code'
               rel='noopener noreferrer'
             >
               here
             </a>
-            </span>.
+          </span>
+          .
         </p>
-
 
         <h2 className='mobile sm:main py-2'>Wijziging van deze Privacyverklaring</h2>
         <p className='body-text-mobile sm:body-text pb-6 max-w-4xl'>

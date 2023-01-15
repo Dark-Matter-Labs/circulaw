@@ -28,13 +28,13 @@ const CookieConsent = () => {
       <div className='flex flex-col items-start px-5 py-3 space-y-2 bg-gray-200 md:flex-row md:space-y-0 md:items-stretch md:space-x-2'>
         <div className='flex items-center flex-grow text-gray-900'>
           <p className='text-sm font-medium'>
-            We are using cookies on this site to test the beta version, so we can best
-            optimize the experience and usability. We will always respect your privacy. You can
-            learn more about the details at our{' '}
+            We are using cookies on this site to test the beta version, so we can best optimize the
+            experience and usability. We will always respect your privacy. You can learn more about
+            the details at our{' '}
             <Link href='/privacy-policy'>
               <span className='text-sm underline hover:text-lightAccent'>privacy policy</span>
-            </Link>
-            {' '}and our{' '}
+            </Link>{' '}
+            and our{' '}
             <Link href='/cookie-info'>
               <span className='text-sm underline hover:text-lightAccent'>cookie info.</span>
             </Link>

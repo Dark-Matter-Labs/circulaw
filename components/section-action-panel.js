@@ -3,16 +3,18 @@ import CustomButton from './custom-button';
 
 export default function ActionPanel(props) {
   return (
-    <div className='bg-green3 py-10'>
-      <div className='global-margin py-5'>
-        <h2 className='mobile sm:main'>{props.title}</h2>
-        <div className='sm:flex sm:items-start sm:justify-between'>
+    <div className=''>
+      <div className=''>
+        <h3 className='mobile sm:urban text-white1'>{props.title}</h3>
+        <div className=''>
           <div>
-            <div className='mt-2 max-w-xl body-text-mobile sm:body-text '>{props.paragraph}</div>
+            <div className='mt-2 max-w-xl body-text-mobile sm:body-text text-white1'>
+              {props.paragraph}
+            </div>
           </div>
-          <div className='mt-5 sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:flex sm:items-center'>
+          <div className='mt-5'>
             <Link href={props.buttonLink}>
-              <CustomButton color='actionPanel'>{props.buttonText} →</CustomButton>
+              <CustomButton color='home'>{props.buttonText} →</CustomButton>
             </Link>
           </div>
         </div>
