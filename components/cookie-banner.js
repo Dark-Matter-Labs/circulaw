@@ -12,12 +12,12 @@ const CookieConsent = () => {
 
   const acceptCookie = () => {
     setConsent(true);
-    setCookie('localConsent', 'true', { maxAge: 365 });
+    setCookie('localConsent', 'true', { maxAge: 60 * 60 * 24 * 365 });
     router.reload(window.location.pathname); // extra refresh to enable Hotjar
   };
   const denyCookie = () => {
     setConsent(true);
-    setCookie('localConsent', 'false', { maxAge: 365 });
+    setCookie('localConsent', 'false', { maxAge: 60 * 60 * 24 * 365 });
   };
   if (consent === true) {
     return null;
