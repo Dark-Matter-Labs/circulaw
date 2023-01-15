@@ -91,9 +91,6 @@ export default function Privacy() {
         </p>
         <h2 className='mobile sm:main py-2'>Hoe gaan we om met cookies?</h2>
         <p className='body-text-mobile sm:body-text pb-6 max-w-4xl'>
-          TODO: Text about Hotjar usage
-        </p>
-        <p className='body-text-mobile sm:body-text pb-6 max-w-4xl'>
           Een cookie is een klein tekstbestand dat onzichtbaar is voor de gebruiker en dat de
           browser opslaat op de computer of het mobiele apparaat van de gebruiker wanneer de
           gebruiker een website bezoekt.
@@ -132,22 +129,6 @@ export default function Privacy() {
           <span className='text-greenLink link-mobile sm:link'>
             <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
           </span>
-        </p>
-        <p className='body-text-mobile sm:body-text max-w-4xl'>
-          We are using Hotjar to understand how people use the site and collect feedback. You can
-          find more details about cookies and used privacy{' '}
-          <span className='text-greenLink link-mobile sm:link'>
-            <a
-              target='_blank'
-              href='https://help.hotjar.com/hc/en-us/articles/6952777582999-Cookies-Set-by-the-Hotjar-Tracking-Code'
-              rel='noopener noreferrer'
-            >
-              here
-            </a>
-            .
-          </span>
-          We respect your privacy and do not track or collect anything if you click Reject or have
-          Do Not Track enabled.
         </p>
       </div>
     </Layout>
