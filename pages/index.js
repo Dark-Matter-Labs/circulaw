@@ -1,87 +1,110 @@
 import Link from 'next/link';
-import ActionPanel from '../components/section-action-panel';
+import Image from 'next/image';
 import Layout from '/components/layouts/layout';
 import SectionTypes from '/components/section-types-list';
+import waaromImage from '../public/waarom.png';
+import watImage from '../public/wat.png';
+import hoeverImage from '../public/hoever.png';
 
 export default function Index() {
   return (
     <Layout page='home'>
-      <div className='bg-greenAlpha pb-20' name='thema'>
+      <div className='bg-green7 pb-20' name='thema'>
         <div className='global-margin'>
-          <h2 className='pb-6 pt-8 mobile sm:main text-green1'>Thema’s</h2>
+          <h2 className='pb-6 pt-8 mob-new sm:urban text-black1'>Thema’s</h2>
 
           <SectionTypes type='home' />
-          <p className='body-text-mobile sm:body-text'>
-            In 2022 volgen meer thema’s binnen verschillende waardeketens. <br />
-            Lees meer over{' '}
-            <span className='link-mobile sm:link text-greenLink'>
-              <Link href='/status-en-ambities'>wat je nu vindt op CircuLaw</Link>
-            </span>{' '}
-            of ga naar{' '}
-            <span className='link-mobile sm:link text-greenLink'>
-              <Link href='/hoe-het-werkt'>Vraag & Antwoord</Link>
-            </span>
-          </p>
         </div>
       </div>
-      <div className='bg-white py-20'>
+      <div className='bg-green7 py-10'>
         <div className='global-margin'>
-          <h1 className='mobile sm:main text-green1' name='waarom'>
+          <h1 className='mob-new  sm:urban text-black1 border-b border-grey1 pb-4' name='waarom'>
             Over CircuLaw
           </h1>
-          <div className='border-b border-grey1 pb-10'>
-            <h2 className='pt-10 mobile sm:main'>Waarom CircuLaw?</h2>
-            <p className='body-text-mobile sm:body-text py-5 max-w-4xl'>
-              Om binnen planetaire grenzen te opereren is een circulaire economie essentieel.
-              Hiervoor is meer drang en dwang nodig. CircuLaw laat juridische mogelijkheden zien die
-              kunnen bijdragen aan versnelling van de circulaire transitie.
-            </p>
-            <span className='text-greenLink link-mobile sm:link'>
-              <Link href='/waarom-circulaw'>Lees verder →</Link>
-            </span>
+          <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-grey1 py-10'>
+            <div>
+              <Image src={watImage} alt='image for wat circulaw' />
+            </div>
+            <div>
+              <h2 className='mobile sm:main'>Wat is CircuLaw?</h2>
+              <p className='body-text-mobile sm:body-text py-5 max-w-4xl'>
+                CircuLaw is een service waarmee we in de eerste plaats beleidsmakers en
+                transitiemanagers helpen meer en beter gebruik te maken van regelgeving om de
+                circulaire economie te bevorderen. Maar CircuLaw is ambitieus. Door stap voor stap
+                uit te breiden willen we uiteindelijk ook strategen, toezichthouders, juristen en
+                circulaire ondernemers bedienen.
+              </p>
+              <span className='text-greenLink link-mobile sm:link'>
+                <Link href='/wat-is-circulaw'>Meer lezen →</Link>
+              </span>
+            </div>
           </div>
-          <div className='border-b border-grey1 pb-10'>
-            <h2 className='pt-10 mobile sm:main'>Wat is CircuLaw?</h2>
-            <p className='body-text-mobile sm:body-text py-5 max-w-4xl'>
-              CircuLaw is een service waarmee we in de eerste plaats beleidsmakers en
-              transitiemanagers helpen meer en beter gebruik te maken van regelgeving om de
-              circulaire economie te bevorderen.
-            </p>
-            <span className='text-greenLink link-mobile sm:link'>
-              <Link href='/wat-is-circulaw'>Lees verder →</Link>
-            </span>
+
+          <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-grey1 py-10'>
+            <div>
+              <Image src={waaromImage} alt='image for wararom circulaw' />
+            </div>
+            <div>
+              <h2 className='mobile sm:main'>Waarom CircuLaw?</h2>
+              <p className='body-text-mobile sm:body-text py-5 max-w-4xl'>
+                Voor het tegengaan van klimaatverandering, het verminderen van vervuiling, het
+                behoud van biodiversiteit en de beschikbaarheid van grondstoffen is een circulaire
+                economie essentieel. In Nederland hebben we hierin nog een lange weg te gaan. De
+                wet-en regelgeving die hierbij kan helpen is complex, ontoegankelijk, moeilijk
+                vindbaar, onbekend. Gevolg: er worden oplossingen gezocht die vaak te vrijblijvend
+                zijn. CircuLaw laat daarom zien waar en hoe regelgeving mogelijkheden biedt om
+                circulaire doelen te halen en zo bij te dragen aan een versnelling van de circulaire
+                transitie.
+              </p>
+              <span className='text-greenLink link-mobile sm:link'>
+                <Link href='/waarom-circulaw'>Meer lezen →</Link>
+              </span>
+            </div>
           </div>
-          <div className='border-b border-grey1 pb-10'>
-            <h2 className='pt-10 mobile sm:main'>Wat vind je nu op CircuLaw?</h2>
-            <p className='body-text-mobile sm:body-text py-5 max-w-4xl'>
-              CircuLaw wordt stap voor stap ontwikkeld. Op dit moment bevat de website vooral
-              informatie over wet-en regelgeving die voor beleidsmakers relevant is. Deze informatie
-              wordt geleidelijk uitgebreid
-            </p>
-            <span className='text-greenLink link-mobile sm:link'>
-              <Link href='/status-en-ambities'>Lees verder →</Link>
-            </span>
+
+          <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-grey1 py-10'>
+            <div>
+              <Image src={hoeverImage} alt='image for hoever' />
+            </div>
+            <div>
+              <h2 className='mobile sm:main'>Hoever zijn we?</h2>
+              <ul className='body-text-mobile sm:body-text py-5 max-w-4xl list-disc pl-6'>
+                <li>
+                  Een overzicht van wet- en regelgeving voor beleidsmakers die aan de slag willen
+                  met maatregelen voor de thema’s houtbouw en circulaire windmolens
+                </li>
+                <li>Een leidraad voor 3 maatregelen die houtbouw stimuleren</li>
+                <li>
+                  Goed inzicht in de samenhang tussen bevoegdheidsniveaus binnen regelgeving rond
+                  circulaire houtbouw en circulaire windmolens
+                </li>
+              </ul>
+              <span className='text-greenLink link-mobile sm:link'>
+                <Link href='/waarom-circulaw'>Meer lezen over de volgende stappen →</Link>
+              </span>
+            </div>
           </div>
-          <div className='pb-10'>
-            <h2 className='pt-10 mobile sm:main'>Wie zijn betrokken bij CircuLaw?</h2>
-            <p className='body-text-mobile sm:body-text py-5 max-w-4xl'>
-              CircuLaw wordt ontwikkeld door Gemeente Amsterdam, Dark Matter Labs en een consortium
-              van publieke partners en kennisinstituten
-            </p>
-            <span className='text-greenLink link-mobile sm:link'>
-              <Link href='/wie-maken-circulaw'>
-                Lees verder om te zien wie allemaal bijdragen aan CircuLaw →
-              </Link>
-            </span>
+
+          <div className='grid grid-cols-1 lg:grid-cols-2 py-10'>
+            <div>
+              <Image src={waaromImage} alt='image for wararom circulaw' />
+            </div>
+            <div>
+              <h2 className='mobile sm:main'>Wie maken CircuLaw?</h2>
+              <p className='body-text-mobile sm:body-text py-5 max-w-4xl'>
+                Gemeente Amsterdam, Dark Matter Laboratories, EIT Climate KIC, de Provincies
+                Noord-Holland en Flevoland, Rijksdienst voor Ondernemend Nederland (RVO), het MRA
+                (Metropoolregio Amsterdam) Kernteam Houtbouw, Belastingdienst, TU Delft, Erasmus
+                School of LAW, de VU, Wageningen Universiteit ( WUR Law group), Stichting Koninklijk
+                Nederlands Normalisatie Instituut (NEN).
+              </p>
+              <span className='text-greenLink link-mobile sm:link'>
+                <Link href='/wie-maken-circulaw'>Meer over de makers van CircuLaw →</Link>
+              </span>
+            </div>
           </div>
         </div>
       </div>
-      <ActionPanel
-        title='Doe met ons mee'
-        paragraph='Heb je vragen, wil je je ervaringen delen of wil je een wetsanalyse laten uitvoeren op een circulair  thema of casus?'
-        buttonText='Neem contact op'
-        buttonLink='/contact'
-      />
     </Layout>
   );
 }
