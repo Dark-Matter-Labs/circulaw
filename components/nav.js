@@ -10,6 +10,7 @@ import { get_waardeketens, get_over } from '../utils/nav-structure';
 import CirculawLogo from '../public/Circulaw_logotype.png';
 import logo from '../public/Circulaw_logotype_home.png';
 import CustomButton from './custom-button';
+import BetaBanner from './beta-banner';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -283,6 +284,7 @@ export default function Nav() {
   // returns nav bar that is nested inside the header part of the index page
   return (
     <div className='relative home-header-bg'>
+      <BetaBanner />
       <div className='relative pt-6 pb-16 sm:pb-24'>
         <Disclosure as='nav' className=' '>
           {({ open }) => (
@@ -531,16 +533,17 @@ export default function Nav() {
           )}
         </Disclosure>
 
+        {/* TODO: move this into header component and out of nav*/}
         <main className='global-margin sm:mt-12'>
           <div className='text-center mx-auto max-w-4xl'>
             <h1 className='text-6xl homepage-header-title-mobile sm:homepage-header-title text-white1 py-10'>
               <span className='block '>Regelgeving voor een circulaire economie</span>{' '}
             </h1>
             <p className='mt-3 homepage-header-body text-white1 pb-8'>
-              CircuLaw laat zien hoe je met bestaande juridische maatregelen de circulaire economie
+              CircuLaw laat zien hoe je met bestaande juridische instrumenten de circulaire economie
               kan versnellen. We helpen beleidsmakers bij het selecteren en toepassen van die
-              maatregelen. En we geven overheden inzicht wie over welke juridische instrumenten
-              beschikt. Zo wordt samenwerking makkelijker.
+              instrumenten. Ook bieden we inzicht in de samenhang tussen juridische instrumenten en
+              overzicht over de verdeling van veratwoordelijkheden.
             </p>
             <div className='mt-5 sm:flex sm:justify-center md:mt-8'>
               <div className='rounded-md'>
