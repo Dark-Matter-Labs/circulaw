@@ -132,7 +132,7 @@ export default {
           { title: 'Windparken', value: 'windparken' },
           { title: 'Zonneparken', value: 'zonneparken' },
           { title: 'Klimaatinstallaties', value: 'klimaatinstallaties' },
-          { title: 'Matressen', value: 'matressen' },
+          { title: 'Matrassen', value: 'matrassen' },
         ], // <-- predefined values
         layout: 'dropdown', // <-- defaults to 'dropdown'
       },
