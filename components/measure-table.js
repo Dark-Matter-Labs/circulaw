@@ -34,20 +34,20 @@ export default function MeasureTable({ data }) {
             )}
           </div>
         </div>
-        <table className='table-fixed col-span-6 sm:col-span-4 -m-3'>
+        <table className='table-fixed col-span-6 sm:col-span-4 -m-3 sm:m-0'>
           <tbody>
             <tr className='my-10 border-b boder-grey2 border-t'>
               <td className='w-1/3 py-1.5 body-small'>Rechtsgebied</td>
               <td className='w-2/3 py-1.5 table-right capitalize'>
-                <span className='flex justify-end sm:justify-start'>
-                  {data?.measure?.rechtsgebied} - {data?.measure?.subrechtsgebied}
+                <span className='justify-end sm:justify-start'>
+                  {data?.measure?.rechtsgebied}{'>'}{data?.measure?.subrechtsgebied} 
                 </span>
               </td>
             </tr>
             <tr className=' border-b boder-grey2'>
               <td className='w-1/3 py-1.5 body-small'>Citeertitel</td>
               <td className='w-2/3 py-1.5 table-right first-letter:uppercase'>
-                <span className='flex justify-end sm:justify-start'>
+              <span className='flex justify-end sm:justify-start'>
                   {data?.measure?.citeertitel}
                 </span>
               </td>
@@ -57,7 +57,7 @@ export default function MeasureTable({ data }) {
               <td className='w-2/3 py-1.5 table-right'>
                 <span className='flex justify-end sm:justify-start'>
                   <a
-                    className='text-greenLink underline'
+                    className='text-greenLink'
                     target='_blank'
                     href={data?.measure?.artikelLink}
                     rel='noreferrer'
