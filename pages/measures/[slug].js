@@ -129,6 +129,10 @@ const components = {
       </div>
     ),
   },
+  listItem: {
+    number: ({ children }) => <li className='py-0.5'>{children}</li>,
+    bullet: ({ children }) => <li className='py-0.5'>{children}</li>,
+  },
   block: {
     h2: ({ children }) => <h2 className='pt-8 pb-8 mob-new sm:urban'>{children}</h2>,
     firstH2: ({ children }) => <h2 className='pb-8 mob-new sm:urban'>{children}</h2>,
