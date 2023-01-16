@@ -36,7 +36,11 @@ module.exports = {
       },
       spacing: {
         '128': '32rem',
-      }
+      },
+      backgroundImage: {
+        'houtbouw-hero' : 'url("/houtbouwHero.jpeg")'
+        
+      },
     },
   },
   variants: {
