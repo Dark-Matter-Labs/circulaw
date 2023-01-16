@@ -28,11 +28,52 @@
     line-height: 32px;
   }
 
+  h3.urban {
+    font-family: 'Urbanist', 'sans-serif';
+    font-weight: 600;
+    font-size: 22.5px;
+    line-height: 30px;
+  }
+
   h4.urban {
     font-family: 'Urbanist', 'sans-serif';
     font-weight: 500;
     font-size: 18px;
     line-height: 32px;
+  }
+
+  h1.mob-new {
+    font-family: 'Urbanist', 'sans-serif';
+    font-weight: 700;
+    font-size: 24.5px;
+    line-height: 30px;
+  }
+
+  h2.mob-new {
+    font-family: 'Urbanist', 'sans-serif';
+    font-weight: 600;
+    font-size: 21.88px;
+    line-height: 30px;
+  }
+
+  .h3-mob-new {
+    font-family: 'Urbanist', 'sans-serif';
+    font-weight: 600;
+    font-size: 18.75px;
+    line-height: 24px;
+  }
+  .h4-mob-new {
+    font-family: 'Urbanist', 'sans-serif';
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  .sub-mob-new {
+    font-family: 'Manrope';
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 300;
   }
 
   .overview-thema {
@@ -53,6 +94,13 @@
     font-family: 'Manrope';
     font-size: 16px;
     line-height: 22px;
+    font-weight: 500;
+  }
+
+  .tooltip-hover-text-mob {
+    font-family: 'Manrope';
+    font-size: 14px;
+    line-height: 20px;
     font-weight: 500;
   }
 
@@ -129,25 +177,25 @@
   }
 
   .homepage-header-title {
-    font-family: 'Public Sans';
-    font-size: 83px;
-    font-weight: 700;
+    font-family: 'Urbanist', 'sans-serif';
+    font-size: 85.83px;
+    font-weight: 600;
     line-height: 96px;
     letter-spacing: 0em;
   }
 
   .homepage-header-title-mobile {
-    font-family: 'Public Sans';
-    font-weight: 700;
-    font-size: 42px;
+    font-family: 'Urbanist', 'sans-serif';
+    font-weight: 600;
+    font-size: 24.5px;
+    line-height: 30px;
   }
 
   .homepage-header-body {
-    font-family: 'Public Sans';
-    font-size: 20px;
-    font-weight: 300;
+    font-family:'Urbanist', 'sans-serif';
+    font-size: 22.5px;
+    font-weight: 400;
     line-height: 30px;
-    letter-spacing: 0em;
   }
 
   .body-text {
@@ -163,7 +211,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 170%;
+    line-height: 25.5px;
   }
 
   .body-small {
@@ -230,8 +278,8 @@
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 700;
-    font-size: 20px;
-    line-height: 27px;
+    font-size: 16px;
+    line-height: 24px;
   }
 
   .r-category {
@@ -308,7 +356,7 @@
 }
 
 .home-header-bg {
-  background-image: url('./public/Landing_pg_texture.svg');
+  background-image: url('./public/2.svg');
   background-repeat: no-repeat;
   background-size: cover;
 }
