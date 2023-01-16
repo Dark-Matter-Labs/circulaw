@@ -16,6 +16,7 @@ module.exports = {
         green1: '#035E46',
         green2: '#6D9F6B',
         green3: '#AABC97',
+        green33: '#659986',
         green4: '#F9FBF9',
         green6: '#25C38B',
         green7: '#E8EBE6',
@@ -39,7 +40,7 @@ module.exports = {
       },
       backgroundImage: {
         'houtbouw-hero' : 'url("/houtbouwHero.jpeg")'
-        
+
       },
     },
   },
