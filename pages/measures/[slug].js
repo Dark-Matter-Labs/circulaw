@@ -134,9 +134,9 @@ const components = {
     bullet: ({ children }) => <li className='py-0.5'>{children}</li>,
   },
   block: {
-    h2: ({ children }) => <h2 className='pt-8 pb-8 mob-new sm:urban'>{children}</h2>,
     firstH2: ({ children }) => <h2 className='pb-8 mob-new sm:urban'>{children}</h2>,
-
+    h2: ({ children }) => <h2 className='py-8 mob-new sm:urban'>{children}</h2>,
+    h3: ({children}) => <h3 className='py-8 h3-mob-new sm:urban'>{children}</h3>,
     // need to add other styles here
     normal: ({ children }) => (
       <p className='newlineDisplay body-text-mobile sm:body-text py-2'>{children}</p>
