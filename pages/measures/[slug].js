@@ -130,12 +130,12 @@ const components = {
     ),
   },
   block: {
-    h2: ({ children }) => <h2 className='pt-10 pb-4 mob-new sm:urban'>{children}</h2>,
+    h2: ({ children }) => <h2 className='pt-8 pb-8 mob-new sm:urban'>{children}</h2>,
     firstH2: ({ children }) => <h2 className='pb-8 mob-new sm:urban'>{children}</h2>,
 
     // need to add other styles here
     normal: ({ children }) => (
-      <p className='newlineDisplay body-text-mobile sm:body-text'>{children}</p>
+      <p className='newlineDisplay body-text-mobile sm:body-text py-2'>{children}</p>
     ),
   },
   marks: {
