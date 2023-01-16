@@ -44,17 +44,16 @@ export default function ThemeLayout(props) {
             <div className='pt-20'>
               <h2 className='urban'>Overzichten van instrumenten die houtbouw stimuleren </h2>
             </div>
-
-            <div className='flex gap-14 justify-between items-center h-[32rem]'>
-              <div className='grid grid-rows-5 border-transparent shadow-md rounded-md h-5/6 w-full'>
-                <div className='row-span-2 bg-green1 rounded-t-md flex items-center justify-center'>
+            <div className='flex gap-14 justify-between items-center h-[34rem]'>
+              <div className='grid grid-rows-6 border-transparent shadow-md rounded-md h-5/6 w-full'>
+                <div className='row-span-3 bg-green1 rounded-t-md flex items-center justify-center'>
                   <div className='w-5/6 h-5/6 relative'>
                     <Image src='../list.svg' alt='' fill />
                   </div>
                 </div>
-                <div className='row-span-3'>
-                  <h3>Lijst van 36 instrumenten</h3>
-                  <p>Met handige filters om snel te vinden wat je zoekt.</p>
+                <div className='row-span-3 px-10'>
+                  <h3 className='urban pt-6'>Lijst van 36 instrumenten</h3>
+                  <p className='body-new pt-6'>Met handige filters om snel te vinden wat je zoekt.</p>
                 </div>
                 <div className='pb-6 pl-8'>
                   <CustomButton color='whiteBackground'>
@@ -79,15 +78,15 @@ export default function ThemeLayout(props) {
                   </CustomButton>
                 </div>
               </div>
-              <div className='grid grid-rows-5 border border-transparent shadow-md rounded-md h-5/6 w-full'>
-                <div className='row-span-2 bg-green1 rounded-t-md flex items-center justify-center'>
+              <div className='grid grid-rows-6 border border-transparent shadow-md rounded-md h-5/6 w-full'>
+                <div className='row-span-3 bg-green1 rounded-t-md flex items-center justify-center'>
                   <div className='w-5/6 h-5/6 relative'>
                     <Image src='../samenhang.svg' alt='' fill />
                   </div>
                 </div>
-                <div className='row-span-3'>
-                  <h3>Samenhang álle houtbouwinstrumenten in beeld</h3>
-                  <p>Hoe meer instrumenten je tegelijk inzet, hoe meer je bereikt.</p>
+                <div className='row-span-3 px-10'>
+                  <h3 className='urban pt-4'>Samenhang álle houtbouwinstrumenten in beeld</h3>
+                  <p className='body-new pt-4'>Hoe meer instrumenten je tegelijk inzet, hoe meer je bereikt.</p>
                 </div>
                 <div className='pb-6 pl-8'>
                   <CustomButton color='whiteBackground'>
@@ -112,15 +111,15 @@ export default function ThemeLayout(props) {
                   </CustomButton>
                 </div>
               </div>
-              <div className='grid grid-rows-5 border border-transparent shadow-md rounded-md h-5/6 w-full'>
-                <div className='row-span-2 bg-green1 rounded-t-md flex items-center justify-center'>
+              <div className='grid grid-rows-6 border border-transparent shadow-md rounded-md h-5/6 w-full'>
+                <div className='row-span-3 bg-green1 rounded-t-md flex items-center justify-center'>
                   <div className='w-5/6 h-5/6 relative'>
                     <Image src='../waarvoor.svg' alt='' fill />
                   </div>
                 </div>
-                <div className='row-span-3'>
-                  <h3>Wie is waarvoor bevoegd?</h3>
-                  <p>
+                <div className='row-span-3 px-10'>
+                  <h3 className='urban pt-4'>Wie is waarvoor bevoegd?</h3>
+                  <p className='body-new pt-4'>
                     Zonder samenwerking geen succes. Maar dan moet je wel weten wie voor welk
                     instrument verantwoordelijk is.
                   </p>

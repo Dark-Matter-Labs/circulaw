@@ -11,7 +11,7 @@ export default function ThemeBottomSection({ props }) {
   );
   return (
     <div>
-      <div className='pb-10 global-margin'>
+      <div className='pb-10 pt-6 global-margin'>
         <h2 className='urban'>Uitgelicht: {data?.length} instrumenten om houtbouw te bevorderen</h2>
         <h4 className='urban'>Mét voorbeelden en een handige leidraad</h4>
       </div>

@@ -175,6 +175,13 @@
     line-height: 149.19%;
   }
 
+  .body-new {
+    font-family: 'Urbanist', 'sans-serif';
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+  }
+
   .homepage-header-title {
     font-family: 'Urbanist', 'sans-serif';
     font-size: 85.83px;
