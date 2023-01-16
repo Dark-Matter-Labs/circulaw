@@ -87,4 +87,3 @@ export default function Houtbouw() {
     </Layout>
   );
 }
-

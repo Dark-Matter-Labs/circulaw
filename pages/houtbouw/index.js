@@ -42,7 +42,7 @@ export default function Houtbouw() {
   return (
     <Layout>
       <ThemeLayout
-        thema = 'houtbouw'
+        thema='houtbouw'
         icon={WoodIcon}
         iconAlt='Icon of Wood'
         title='Houtbouw stimuleren'
