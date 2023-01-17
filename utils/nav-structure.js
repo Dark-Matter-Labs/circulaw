@@ -52,6 +52,7 @@ const waardeketens = [
     },
   ];
 
+
 export function get_waardeketens() {
     return waardeketens;
 }
