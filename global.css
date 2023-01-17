@@ -12,7 +12,6 @@
   .image-margin {
     @apply max-w-screen-xl mx-auto;
   }
-
    
   h1.urban {
     font-family: 'Urbanist', 'sans-serif';
@@ -174,6 +173,13 @@
     font-weight: 600;
     font-size: 12px;
     line-height: 149.19%;
+  }
+
+  .body-new {
+    font-family: 'Urbanist', 'sans-serif';
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
   }
 
   .homepage-header-title {
@@ -455,10 +461,15 @@
   background: linear-gradient(rgba(248, 250, 248, 0) 0%, #F8FAF8 30%);
 }
 
+/* RENAME as this is also for Thema Hero */
 .gradient-pdf {
   background: linear-gradient(#042D36 0%, rgba(34, 83, 44, 0) 100%);
- 
 }
+
+.thema-hero-gradient {
+  background: linear-gradient(rgba(34, 83, 44, 0) 0%, #042D36 100%);
+}
+
 
 .measure-bg {
   background: '#F5F5F5';
