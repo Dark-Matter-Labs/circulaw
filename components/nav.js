@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/dist/client/router';
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Popover, Disclosure, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { Link as ScrollLink } from 'react-scroll';
-import { get_waardeketens, get_over } from '../utils/nav-structure';
+import { get_waardeketens } from '../utils/nav-structure';
 import CirculawLogo from '../public/Circulaw_logotype.png';
 import logo from '../public/Circulaw_logotype_home.png';
 import CustomButton from './custom-button';
@@ -20,14 +20,18 @@ function classNames(...classes) {
 }
 
 const waardeketens = get_waardeketens();
-const over = get_over();
 
 export default function Nav() {
   const { data } = useSWR(groq`*[_type == "aboutPage"]`, (query) => client.fetch(query));
 
- const slugs = data?.map((page) => page.slug.current)
-console.log(slugs)
+  // const [pages, setPages] = useState(null)
+  // useEffect(() => setPages(data?.map((page) => page)), [data])
+//  console.log(pages, 'pages')
+const [slugs, setSlugs] =useState()
+  useEffect(() => setSlugs(data?.map((page) => page.slug.current)), [data] )
 
+  // const slugs = data?.map((page) => page.slug.current)
+ // const titles = data?.map((title) => title.pageTitle)
 
   const router = useRouter();
   if (router.pathname !== '/') {
@@ -132,57 +136,6 @@ console.log(slugs)
                                   </>
                                 )}
                               </Popover>
-                              <Popover className='inline-block relative '>
-                                {({ open }) => (
-                                  <>
-                                    <Popover.Button
-                                      className={classNames(
-                                        open ? 'text-black' : 'text-black',
-                                        'group rounded-md inline-flex items-center text-base font-medium',
-                                      )}
-                                    >
-                                      <span className='uppercase pl-8'>OVER CIRCULAW</span>
-                                      <ChevronDownIcon
-                                        className={classNames(
-                                          open ? 'text-gray-600' : 'text-gray-400',
-                                          'ml-2 h-5 w-5 group-hover:text-gray-500',
-                                        )}
-                                        aria-hidden='true'
-                                      />
-                                    </Popover.Button>
-
-                                    <Transition
-                                      as={Fragment}
-                                      enter='transition ease-out duration-200'
-                                      enterFrom='opacity-0 translate-y-1'
-                                      enterTo='opacity-100 translate-y-0'
-                                      leave='transition ease-in duration-150'
-                                      leaveFrom='opacity-100 translate-y-0'
-                                      leaveTo='opacity-0 translate-y-1'
-                                    >
-                                      <Popover.Panel className='absolute z-10  transform w-screen max-w-xs sm:px-0'>
-                                        <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
-                                          <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
-                                            {over.map((item) => (
-                                              <a
-                                                key={item.name}
-                                                href={item.href}
-                                                className='-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase dropdown-menu border-b'
-                                              >
-                                                <p
-                                                  className={`text-base font-medium text-gray-900 ${item.className}`}
-                                                >
-                                                  {item.name}
-                                                </p>
-                                              </a>
-                                            ))}
-                                          </div>
-                                        </div>
-                                      </Popover.Panel>
-                                    </Transition>
-                                  </>
-                                )}
-                              </Popover>
 {/* TESST NAV */}
                               <Popover className='inline-block relative '>
                                 {({ open }) => (
@@ -217,17 +170,18 @@ console.log(slugs)
                                           <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
                                             {slugs?.map((slug) => (
                                               
-                                              <a
+                                              <Link
                                                 key={slug}
-                                                href={`about/${slug}`}
+                                                href={`/about/${encodeURIComponent(slug)}`}
                                                 className='-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase dropdown-menu border-b'
                                               >
-                                                <p
+                                                
+                                                <span
                                                   className='text-base font-medium text-gray-900'
                                                 >
-                                                  {slug}
-                                                </p>
-                                              </a>))}
+                                                  {slug.replaceAll('-', ' ')}
+                                                </span>
+                                              </Link>))}
                                             
                                           </div>
                                         </div>
@@ -290,14 +244,19 @@ console.log(slugs)
                 >
                   Over CircuLaw
                 </Disclosure.Button>
+                {slugs?.map((slug) => (
                 <Disclosure.Button
-                  as='a'
-                  href='/waarom-circulaw'
+                  key={slug}
+                 
+                
                   className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
                 >
-                  Waarom CircuLaw?
+                  <Link href={`/about/${encodeURIComponent(slug)}`}>
+                  {slug.replaceAll('-', ' ')}
+                  </Link>
                 </Disclosure.Button>
-                <Disclosure.Button
+                ))}
+                {/**                <Disclosure.Button
                   as='a'
                   href='/wat-is-circulaw'
                   className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
@@ -325,6 +284,8 @@ console.log(slugs)
                 >
                   Wie maken CircuLaw?
                 </Disclosure.Button>
+                 */}
+
                 <Disclosure.Button
                   as='a'
                   href='/hoe-het-werkt'
@@ -472,18 +433,18 @@ console.log(slugs)
                                         <Popover.Panel className='absolute z-10  transform w-screen max-w-xs sm:px-0'>
                                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                                             <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
-                                              {over.map((item) => (
-                                                <a
-                                                  key={item.name}
-                                                  href={item.href}
+                                              {slugs?.map((slug) => (
+                                                <Link
+                                                  key={slug}
+                                                  href={`/about/${encodeURIComponent(slug)}`}
                                                   className='-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase dropdown-menu border-b'
                                                 >
                                                   <p
-                                                    className={`text-base font-medium text-gray-900 ${item.className}`}
+                                                    className='text-base font-medium text-gray-900'
                                                   >
-                                                    {item.name}
+                                                  {slug.replaceAll('-', ' ')}
                                                   </p>
-                                                </a>
+                                                  </Link>
                                               ))}
                                             </div>
                                           </div>
@@ -543,13 +504,19 @@ console.log(slugs)
                   >
                     Over CircuLaw
                   </Disclosure.Button>
+
+                  {slugs?.map((slug) => (
                   <Disclosure.Button
-                    as='a'
-                    href='/waarom-circulaw'
+                    key = {slug}
                     className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
                   >
-                    Waarom CircuLaw?
+                    <Link href={`/about/${encodeURIComponent(slug)}`}>
+                    {slug.replaceAll('-', ' ')}
+                    </Link>
                   </Disclosure.Button>
+                  ))}
+
+                    {/* 
                   <Disclosure.Button
                     as='a'
                     href='/wat-is-circulaw'
@@ -578,6 +545,7 @@ console.log(slugs)
                   >
                     Wie maken CircuLaw?
                   </Disclosure.Button>
+                  */}
                   <Disclosure.Button
                     as='a'
                     href='/hoe-het-werkt'

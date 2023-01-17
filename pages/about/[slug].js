@@ -1,5 +1,5 @@
 import { PortableText } from '@portabletext/react';
-import Layout from '../../components/layouts/layout';
+import Layout from '../../components/layouts/layout'
 import client from '../../lib/sanity';
 import CustomButton from '../../components/custom-button';
 import Image from 'next/image';
@@ -10,9 +10,8 @@ const pathsQuery = `
 `;
 
 const pageQuery = `
-*[_type == "aboutPage"][0]{
+*[_type == "aboutPage" && slug.current == $slug][0]{
     pageTitle,
-    slug,
     aboutPageContent,
 }
 `
@@ -147,11 +146,12 @@ const components = {
   
 
 export default function AboutPage({data}) {
+  console.log(data)
     return (
-        <Layout slug={data?.aboutPage?.slug.current}>
+        <Layout>
             <div className='global-margin  pb-8 text-black1'>
                 <div className='max-w-4xl'>
-                    <h1 className='py-14'>{data?.aboutPage.pageTitle}</h1>
+                    <h1 className='lg:block sm:pt-10 py-6 sm:pb-10 mob-new sm:urban'>{data?.aboutPage.pageTitle}</h1>
                         <PortableText value={data?.aboutPage?.aboutPageContent} components={components} />
                 </div>
             </div>
@@ -170,7 +170,9 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
     // It's important to default the slug so that it doesn't return "undefined"
     const { slug = '' } = context.params;
-    const aboutPage = await client.fetch(pageQuery, { slug });
+    console.log(slug, 'slug')
+    const aboutPage = await client.fetch(pageQuery,  {slug} );
+    console.log(aboutPage, 'aboutPage')
     return {
       props: { data: { aboutPage } },
       revalidate: 1,

@@ -189,7 +189,7 @@ export default function TestMeasure({ data }) {
               )}
             </div>
             <div className='sm:col-span-12 row-span-1'>
-              <h1 className='lg:block sm:pt-4 pb-6   sm:pb-10 mob-new sm:urban'>
+              <h1 className='lg:block sm:pt-4 pb-6 sm:pb-10 mob-new sm:urban'>
                 {data?.measure?.titel}
               </h1>
             </div>
@@ -231,6 +231,8 @@ export async function getStaticProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
   const { slug = '' } = context.params;
   const measure = await client.fetch(measureQuery, { slug });
+  console.log(slug, 'slug')
+  console.log(measure)
   return {
     props: { data: { measure } },
     revalidate: 1,

@@ -19,6 +19,7 @@ const waardeketens = [
     },
   ];
   
+  
   const over = [
     {
       name: 'Waarom CircuLaw?',
