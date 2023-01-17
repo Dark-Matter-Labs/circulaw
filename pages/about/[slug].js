@@ -4,6 +4,8 @@ import client from '../../lib/sanity';
 import CustomButton from '../../components/custom-button';
 import Image from 'next/image';
 import LinkIcon from '../../components/link-icon';
+import Link from 'next/link';
+import OverNav from '../../components/over-nav';
 
 const pathsQuery = `
 *[_type == "aboutPage" && defined(slug.current)][].slug.current
@@ -13,6 +15,7 @@ const pageQuery = `
 *[_type == "aboutPage" && slug.current == $slug][0]{
     pageTitle,
     aboutPageContent,
+    slug,
 }
 `
 
@@ -150,9 +153,19 @@ export default function AboutPage({data}) {
     return (
         <Layout>
             <div className='global-margin  pb-8 text-black1'>
+              <div className='grid grid-cols-1 lg:grid-cols-3'>
+               <div className='col-span-2'> 
+              <div className='breadcrumb pt-8 text-greenLink'>
+                <Link href='/'>Home &gt;</Link>
+                </div>
                 <div className='max-w-4xl'>
                     <h1 className='lg:block sm:pt-10 py-6 sm:pb-10 mob-new sm:urban'>{data?.aboutPage.pageTitle}</h1>
                         <PortableText value={data?.aboutPage?.aboutPageContent} components={components} />
+                </div>
+                </div>
+                <div className='mx-20 my-20 max-w-sm'>
+                  <OverNav pagename={data?.aboutPage?.slug.current} />
+                </div>
                 </div>
             </div>
             </Layout>

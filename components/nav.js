@@ -24,14 +24,9 @@ const waardeketens = get_waardeketens();
 export default function Nav() {
   const { data } = useSWR(groq`*[_type == "aboutPage"]`, (query) => client.fetch(query));
 
-  // const [pages, setPages] = useState(null)
-  // useEffect(() => setPages(data?.map((page) => page)), [data])
-//  console.log(pages, 'pages')
-const [slugs, setSlugs] =useState()
+ 
+  const [slugs, setSlugs] =useState()
   useEffect(() => setSlugs(data?.map((page) => page.slug.current)), [data] )
-
-  // const slugs = data?.map((page) => page.slug.current)
- // const titles = data?.map((title) => title.pageTitle)
 
   const router = useRouter();
   if (router.pathname !== '/') {
