@@ -20,7 +20,7 @@ export default function OverNav(props) {
       {slugs?.map((slug) => (
         <a
           key={slug}
-          href={`/about/${slug}`}
+          href={`/about/${encodeURIComponent(slug)}`}
           className={classNames(
             slug === props.pagename
               ? 'text-black1'
