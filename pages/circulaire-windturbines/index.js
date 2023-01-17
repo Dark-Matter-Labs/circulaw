@@ -14,6 +14,9 @@ export default function Windturbine() {
   return (
     <Layout>
       <ThemeLayout
+      cardLinkList='/measures/windturbines'
+      cardLinkSamenhang='/circulaire-windturbines/samenhang-maatregelen'
+      cardLinkWaarvoor='/circulaire-windturbines/welke-overheid-heeft'
         icon={WindmillIcon}
         iconAlt='Icon of Windmill'
         title='Circulaire windturbines'

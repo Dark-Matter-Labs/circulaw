@@ -56,6 +56,7 @@ export default function ThemeLayout(props) {
                   <p className='body-new pt-6'>Met handige filters om snel te vinden wat je zoekt.</p>
                 </div>
                 <div className='pb-6 pl-8'>
+                  <Link href={props.cardLinkList}>
                   <CustomButton color='whiteBackground'>
                     Bekijk de lijst
                     <span className='pl-2'>
@@ -76,6 +77,7 @@ export default function ThemeLayout(props) {
                       </svg>
                     </span>
                   </CustomButton>
+                  </Link>
                 </div>
               </div>
               <div className='grid grid-rows-6 border border-transparent shadow-md rounded-md h-5/6 w-full'>
@@ -89,6 +91,7 @@ export default function ThemeLayout(props) {
                   <p className='body-new pt-4'>Hoe meer instrumenten je tegelijk inzet, hoe meer je bereikt.</p>
                 </div>
                 <div className='pb-6 pl-8'>
+                  <Link href={props.cardLinkSamenhang}>
                   <CustomButton color='whiteBackground'>
                     Bekijk de samenhang
                     <span className='pl-2'>
@@ -109,6 +112,7 @@ export default function ThemeLayout(props) {
                       </svg>
                     </span>
                   </CustomButton>
+                  </Link>
                 </div>
               </div>
               <div className='grid grid-rows-6 border border-transparent shadow-md rounded-md h-5/6 w-full'>
@@ -125,6 +129,7 @@ export default function ThemeLayout(props) {
                   </p>
                 </div>
                 <div className='pb-6 pl-8'>
+                  <Link href={props.cardLinkWaarvoor}>
                   <CustomButton color='whiteBackground'>
                     Bekijk de bevoegdheden
                     <span className='pl-2'>
@@ -145,6 +150,7 @@ export default function ThemeLayout(props) {
                       </svg>
                     </span>
                   </CustomButton>
+                  </Link>
                 </div>
               </div>
             </div>
