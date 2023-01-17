@@ -16,5 +16,5 @@ export const schemaTypes = [
   imageBlock,
   hoverText,
   smallPara,
-  aboutPages
+  aboutPages,
 ];

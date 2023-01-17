@@ -48,9 +48,8 @@ const navigation = {
 export default function Footer() {
   const { data } = useSWR(groq`*[_type == "aboutPage"]`, (query) => client.fetch(query));
 
- 
-  const [slugs, setSlugs] =useState()
-  useEffect(() => setSlugs(data?.map((page) => page.slug.current)), [data] )
+  const [slugs, setSlugs] = useState();
+  useEffect(() => setSlugs(data?.map((page) => page.slug.current)), [data]);
 
   return (
     <footer className='' aria-labelledby='footer-heading'>
@@ -90,7 +89,9 @@ export default function Footer() {
                             href={`/about/${encodeURIComponent(slug)}`}
                             className='text-base hover:text-green3 text-white1'
                           >
-                           <span className='inline-block first-letter:uppercase'>{slug.replaceAll('-', ' ')}</span>
+                            <span className='inline-block first-letter:uppercase'>
+                              {slug.replaceAll('-', ' ')}
+                            </span>
                           </a>
                         </li>
                       ))}

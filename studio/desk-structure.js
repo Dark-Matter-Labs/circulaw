@@ -31,13 +31,7 @@ export const Structure = (S) =>
                 ),
             ]),
         ),
-        S.listItem()
-      .title('About Pages')
-      .child(
-        S.documentList()
-          .title('About Pages')
-          .filter('_type == "aboutPage"')
-      )
-      ],
-    
-    );
+      S.listItem()
+        .title('About Pages')
+        .child(S.documentList().title('About Pages').filter('_type == "aboutPage"')),
+    ]);

@@ -136,7 +136,7 @@ const components = {
   block: {
     firstH2: ({ children }) => <h2 className='pb-8 mob-new sm:urban'>{children}</h2>,
     h2: ({ children }) => <h2 className='py-8 mob-new sm:urban'>{children}</h2>,
-    h3: ({children}) => <h3 className='py-8 h3-mob-new sm:urban'>{children}</h3>,
+    h3: ({ children }) => <h3 className='py-8 h3-mob-new sm:urban'>{children}</h3>,
     // need to add other styles here
     normal: ({ children }) => (
       <p className='newlineDisplay body-text-mobile sm:body-text py-2'>{children}</p>
@@ -231,8 +231,8 @@ export async function getStaticProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
   const { slug = '' } = context.params;
   const measure = await client.fetch(measureQuery, { slug });
-  console.log(slug, 'slug')
-  console.log(measure)
+  console.log(slug, 'slug');
+  console.log(measure);
   return {
     props: { data: { measure } },
     revalidate: 1,

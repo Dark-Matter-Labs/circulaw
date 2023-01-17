@@ -24,9 +24,8 @@ const waardeketens = get_waardeketens();
 export default function Nav() {
   const { data } = useSWR(groq`*[_type == "aboutPage"]`, (query) => client.fetch(query));
 
- 
-  const [slugs, setSlugs] =useState()
-  useEffect(() => setSlugs(data?.map((page) => page.slug.current)), [data] )
+  const [slugs, setSlugs] = useState();
+  useEffect(() => setSlugs(data?.map((page) => page.slug.current)), [data]);
 
   const router = useRouter();
   if (router.pathname !== '/') {
@@ -131,7 +130,7 @@ export default function Nav() {
                                   </>
                                 )}
                               </Popover>
-{/* TESST NAV */}
+                              {/* TESST NAV */}
                               <Popover className='inline-block relative '>
                                 {({ open }) => (
                                   <>
@@ -164,20 +163,16 @@ export default function Nav() {
                                         <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                                           <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
                                             {slugs?.map((slug) => (
-                                              
                                               <Link
                                                 key={slug}
                                                 href={`/about/${encodeURIComponent(slug)}`}
                                                 className='-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase dropdown-menu border-b'
                                               >
-                                                
-                                                <span
-                                                  className='text-base font-medium text-gray-900'
-                                                >
+                                                <span className='text-base font-medium text-gray-900'>
                                                   {slug.replaceAll('-', ' ')}
                                                 </span>
-                                              </Link>))}
-                                            
+                                              </Link>
+                                            ))}
                                           </div>
                                         </div>
                                       </Popover.Panel>
@@ -185,8 +180,6 @@ export default function Nav() {
                                   </>
                                 )}
                               </Popover>
-                              
-
 
                               <div className='inline-block relative'>
                                 <Link href='/hoe-het-werkt'>
@@ -240,16 +233,14 @@ export default function Nav() {
                   Over CircuLaw
                 </Disclosure.Button>
                 {slugs?.map((slug) => (
-                <Disclosure.Button
-                  key={slug}
-                 
-                
-                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
-                >
-                  <Link href={`/about/${encodeURIComponent(slug)}`}>
-                  {slug.replaceAll('-', ' ')}
-                  </Link>
-                </Disclosure.Button>
+                  <Disclosure.Button
+                    key={slug}
+                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
+                  >
+                    <Link href={`/about/${encodeURIComponent(slug)}`}>
+                      {slug.replaceAll('-', ' ')}
+                    </Link>
+                  </Disclosure.Button>
                 ))}
                 {/**                <Disclosure.Button
                   as='a'
@@ -434,12 +425,10 @@ export default function Nav() {
                                                   href={`/about/${encodeURIComponent(slug)}`}
                                                   className='-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase dropdown-menu border-b'
                                                 >
-                                                  <p
-                                                    className='text-base font-medium text-gray-900'
-                                                  >
-                                                  {slug.replaceAll('-', ' ')}
+                                                  <p className='text-base font-medium text-gray-900'>
+                                                    {slug.replaceAll('-', ' ')}
                                                   </p>
-                                                  </Link>
+                                                </Link>
                                               ))}
                                             </div>
                                           </div>
@@ -501,17 +490,17 @@ export default function Nav() {
                   </Disclosure.Button>
 
                   {slugs?.map((slug) => (
-                  <Disclosure.Button
-                    key = {slug}
-                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
-                  >
-                    <Link href={`/about/${encodeURIComponent(slug)}`}>
-                    {slug.replaceAll('-', ' ')}
-                    </Link>
-                  </Disclosure.Button>
+                    <Disclosure.Button
+                      key={slug}
+                      className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
+                    >
+                      <Link href={`/about/${encodeURIComponent(slug)}`}>
+                        {slug.replaceAll('-', ' ')}
+                      </Link>
+                    </Disclosure.Button>
                   ))}
 
-                    {/* 
+                  {/* 
                   <Disclosure.Button
                     as='a'
                     href='/wat-is-circulaw'
