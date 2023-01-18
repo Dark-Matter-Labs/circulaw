@@ -31,7 +31,7 @@ export default function PolicyList(props) {
                 law?.extraContent.map((content) => (
                   <span
                     key={content}
-                    className='ml-2 p-1 text-normal rounded font-semibold text-sm bg-green2 text-white no-underline'
+                    className='ml-2 p-1 text-normal rounded font-semibold text-sm bg-green-400 text-white no-underline'
                   >
                     {content}
                   </span>
@@ -58,24 +58,24 @@ export default function PolicyList(props) {
               </div>
 
               <div className='grid grid-cols-1 lg:flex space-x-0 lg:space-x-8 space-y-4 sm:space-y-0  py-2 sm:py-0'>
-                <div className='flex-2 mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 '>
+                <div className='flex-2 mr-5 text-normal font-openSans text-xs text-black-white-800 sm:text-gray-400 '>
                   <span className='block-inline flex items-center'>
                     Invloed:{' '}
                     <span className='text-black uppercase pl-1'>{law.juridischInvloed}</span>
                   </span>
                 </div>
 
-                <div className='flex-2 mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 '>
+                <div className='flex-2 mr-5 text-normal font-openSans text-xs text-black-white-800 sm:text-gray-400 '>
                   <span className='block-inline flex items-center'>
                     Juridische Haalbaarheid:{' '}
                     <span className='text-black uppercase pl-1'>{law.juridischeHaalbaarheid}</span>
                   </span>
                 </div>
-                <div className='flex-2 md:mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 '>
+                <div className='flex-2 md:mr-5 text-normal font-openSans text-xs text-black-white-800 sm:text-gray-400 '>
                   R-ladder:{' '}
                   <span className='block-inline text-gray-900 r-category'>
                     {law.rLadder.map((rValue) => (
-                      <span key={rValue} className='bg-green2 text-white rounded-full p-1 mr-2'>
+                      <span key={rValue} className='bg-green-400 text-white rounded-full p-1 mr-2'>
                         {rValue}{' '}
                       </span>
                     ))}
@@ -83,7 +83,7 @@ export default function PolicyList(props) {
                 </div>
               </div>
               <div className='flex space-x-8'>
-                <div className='p-1 subrecht-text rounded text-sm font-openSans bg-grey3 bg-opacity-50 '>
+                <div className='p-1 subrecht-text rounded text-sm font-openSans bg-green-800 bg-opacity-50 '>
                   {law.subrechtsgebied}
                 </div>
               </div>

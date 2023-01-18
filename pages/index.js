@@ -9,19 +9,19 @@ import hoeverImage from '../public/hoever.png';
 export default function Index() {
   return (
     <Layout page='home'>
-      <div className='bg-green7 pb-20' name='thema'>
+      <div className='bg-black-white-200 pb-20' name='thema'>
         <div className='global-margin'>
-          <h2 className='pb-6 pt-8 mob-new sm:urban text-black1'>Thema’s</h2>
+          <h3 className='pb-6 pt-8 mobile sm:desktop text-black-white-800'>Thema’s</h3>
 
           <SectionTypes type='home' />
         </div>
       </div>
-      <div className='bg-green7 py-10'>
+      <div className='bbg-black-white-200 py-10'>
         <div className='global-margin'>
-          <h1 className='mob-new  sm:urban text-black1 border-b border-grey1 pb-4' name='waarom'>
+          <h2 className='mobile sm:desktop text-black-white-800 border-b border-black-white-600 pb-4' name='waarom'>
             Over CircuLaw
-          </h1>
-          <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-grey1 py-10'>
+          </h2>
+          <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10'>
             <div>
               <Image src={watImage} alt='image for wat circulaw' />
             </div>
@@ -40,7 +40,7 @@ export default function Index() {
             </div>
           </div>
 
-          <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-grey1 py-10'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10'>
             <div>
               <Image src={waaromImage} alt='image for wararom circulaw' />
             </div>
@@ -62,7 +62,7 @@ export default function Index() {
             </div>
           </div>
 
-          <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-grey1 py-10'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10'>
             <div>
               <Image src={hoeverImage} alt='image for hoever' />
             </div>

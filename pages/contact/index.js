@@ -69,7 +69,7 @@ export default function Contact() {
       <div className='global-margin'>
         {!submitSuccess ? (
           <>
-            <h1 className='text-green1 pt-10 mobile sm:main'>Contact</h1>
+            <h1 className='text-green-600 pt-10 mobile sm:main'>Contact</h1>
             {showPrivacyError && (
               <p className='body-text-mobile sm:body-text py-2 max-w-2xl text-red-600'>
                 Ga akkoord met de privacyvoorwaarden om te kunnen verzenden
@@ -97,7 +97,7 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor='first-name'
-                    className='block text-lg font-semibold font-manrope text-black1'
+                    className='block text-lg font-semibold font-manrope text-black-white-800'
                   >
                     Wat is je naam? (niet verplicht)
                   </label>
@@ -107,14 +107,14 @@ export default function Contact() {
                       name='name'
                       id='first-name'
                       autoComplete='given-name'
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green1 focus:border-green1 border-gray-300 rounded-md'
+                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-md'
                     />
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
                   <label
                     htmlFor='company'
-                    className='block text-lg font-semibold font-manrope text-black1'
+                    className='block text-lg font-semibold font-manrope text-black-white-800'
                   >
                     Voor welke organisatie werk je? (niet verplicht)
                   </label>
@@ -124,14 +124,14 @@ export default function Contact() {
                       name='org'
                       id='company'
                       autoComplete='organization'
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green1 focus:border-green1 border-gray-300 rounded-md'
+                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-md'
                     />
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
                   <label
                     htmlFor='email'
-                    className='block text-lg font-semibold font-manrope text-black1'
+                    className='block text-lg font-semibold font-manrope text-black-white-800'
                   >
                     Op welk e-mailadres kunnen we je bereiken?
                   </label>
@@ -141,7 +141,7 @@ export default function Contact() {
                       name='email'
                       type='email'
                       autoComplete='email'
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green1 focus:border-green1 border-gray-300 rounded-md'
+                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-md'
                       onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
@@ -150,7 +150,7 @@ export default function Contact() {
                 <div className='sm:col-span-2'>
                   <label
                     htmlFor='message'
-                    className='block text-lg font-semibold font-manrope text-black1'
+                    className='block text-lg font-semibold font-manrope text-black-white-800'
                   >
                     Wat is je vraag of opmerking?
                   </label>
@@ -159,7 +159,7 @@ export default function Contact() {
                       id='message'
                       name='message'
                       rows={4}
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green1 focus:border-green1 border border-gray-300 rounded-md'
+                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border border-gray-300 rounded-md'
                       defaultValue={''}
                       onChange={(e) => setText(e.target.value)}
                     />
@@ -172,8 +172,8 @@ export default function Contact() {
                         checked={agreed}
                         onChange={setAgreed}
                         className={classNames(
-                          agreed ? 'bg-green1' : 'bg-gray-200',
-                          'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green1',
+                          agreed ? 'bg-green-600' : 'bg-gray-200',
+                          'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600',
                         )}
                       >
                         <span className='sr-only'>Agree to policies</span>
@@ -208,8 +208,8 @@ export default function Contact() {
           </>
         ) : (
           <>
-            <h1 className='text-green1 pt-10 mobile sm:main'>Bedankt!</h1>
-            <p className='body-text-mobile sm:body-text py-10 max-w-2xl text-black1'>
+            <h1 className='text-green-600 pt-10 mobile sm:main'>Bedankt!</h1>
+            <p className='body-text-mobile sm:body-text py-10 max-w-2xl text-black-white-800'>
               Bedankt voor je bericht. We nemen zo snel mogelijk contact met je op.
             </p>
             <div className='sm:col-span-2 pb-20'>

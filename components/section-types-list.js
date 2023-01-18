@@ -114,12 +114,12 @@ export default function SectionTypes(props) {
                 >
                   {file.href !== '' ? (
                     <Link href={file.href}>
-                      <h3 className='urban mt-2 block text-black pointer-events-none pb-4'>
+                      <h3 className='mobile sm:desktop mt-2 block text-black pointer-events-none pb-4'>
                         {file.title}
                       </h3>
                     </Link>
                   ) : (
-                    <h3 className='urban mt-2 block text-black pointer-events-none pb-4'>
+                    <h3 className='mobile sm:desktop mt-2 block text-black pointer-events-none pb-4'>
                       {file.title}
                     </h3>
                   )}
@@ -135,7 +135,7 @@ export default function SectionTypes(props) {
                 </p>
                 {file.tag && (
                   <div className='md:my-8 mt-8 mb-16 h-16 block'>
-                    <span className='p-2 rounded-md bg-grey3 font-openSans text-xs'>
+                    <span className='p-2 rounded-md bg-green-800 font-openSans text-xs'>
                       {file.tag}
                     </span>
                   </div>

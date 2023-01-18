@@ -8,7 +8,7 @@ import JITooltip from '../components/juridische-invloed-tooltip';
 
 const viewportType = {
   mobile: 'block sm:hidden gradient-overview -m-8 h-[30rem] mb-10',
-  desktop: 'hidden sm:block float-right pl-4 ml-6 sm:pr-6 md:pr-10 lg:pr-14 gradient-overview h-[38rem]',
+  desktop: 'hidden sm:block float-right pl-4 ml-6 sm:pr-6 md:pr-10 lg:pr-14 gradient-overview h-[38rem] sticky top-40',
 };
 export default function MeasureOverview({ viewport, children, data, ...props }) {
   let viewportClasses = viewportType[viewport];
@@ -28,17 +28,17 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
           )}
           <div className=''>
             <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()} passHref>
-              <span className='overview-thema underline pl-2 text-green1 first-letter:uppercase block'>
+              <span className='overview-thema underline pl-2 text-green-600 first-letter:uppercase block'>
                 {data?.measure?.thema}
               </span>
             </Link>
           </div>
         </div>
 
-        <div className='-mt-8 sm:mt-0 sm:pt-5 pb-1 sm:border-t border-grey1'>
+        <div className='-mt-8 sm:mt-0 sm:pt-5 pb-1 sm:border-t border-black-white-600'>
           <div className='flex pb-2 justify-between items-center'>
             <div className='flex justify-left items-center'>
-              <span className='overview-titles text-black1 pr-3'>R-ladder</span>
+              <span className='overview-titles text-black-white-800 pr-3'>R-ladder</span>
               <RTooltip>
                 <svg
                   width='24'
@@ -57,7 +57,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
             </div>
             <div className='flex justify-end items-center visible sm:hidden'>
               <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()} passHref>
-                <span className='overview-thema underline pl-2 text-green1 first-letter:uppercase block'>
+                <span className='overview-thema underline pl-2 text-green-600 first-letter:uppercase block'>
                   {data?.measure?.thema}
                 </span>
               </Link>
@@ -67,7 +67,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
             {data?.measure?.rLadder.map((rValue) => (
               <span
                 key={rValue}
-                className='bg-green1 text-white1 r-category rounded-full p-1 mr-2 h-8 w-8 sm:h-7 sm:w-7 md:h-7 md:w-7 lg:h-8 lg:w-8 flex justify-center items-center'
+                className='bg-green-600 text-black-white-200 r-category rounded-full p-1 mr-2 h-8 w-8 sm:h-7 sm:w-7 md:h-7 md:w-7 lg:h-8 lg:w-8 flex justify-center items-center'
               >
                 {rValue}
               </span>
@@ -76,8 +76,8 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
         </div>
 
         <div className='pt-5 pb-1'>
-          <div className='relative border-t border-grey1 pt-4'>
-            <div className='overview-titles text-black1 py-2'>Subrechtsgebied</div>
+          <div className='relative border-t border-black-white-600 pt-4'>
+            <div className='overview-titles text-black-white-800 py-2'>Subrechtsgebied</div>
           </div>
 
           <div className='overview-text first-letter:capitalize'>
@@ -86,9 +86,9 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
         </div>
 
         <div className='pt-5 pb-1'>
-          <div className='relative flex justify-between border-t border-grey1 pt-2'>
+          <div className='relative flex justify-between border-t border-black-white-600 pt-2'>
             <div className='flex py-2'>
-              <span className='overview-titles text-black1 py-2 pr-3'>Invloed</span>
+              <span className='overview-titles text-black-white-800 py-2 pr-3'>Invloed</span>
               <JITooltip data={data}>
                 <svg
                   width='24'
@@ -114,10 +114,10 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
           </div>
         </div>
 
-        <div className='pt-5 pb-5 border-b border-grey1'>
-          <div className='relative flex justify-between border-t border-grey1 pt-2'>
+        <div className='pt-5 pb-5 border-b border-black-white-600'>
+          <div className='relative flex justify-between border-t border-black-white-600 pt-2'>
             <div className='flex py-2'>
-              <span className='overview-titles text-black1 py-2 pr-3'>Juridische haalbaarheid</span>
+              <span className='overview-titles text-black-white-800 py-2 pr-3'>Juridische haalbaarheid</span>
               <JHTooltip data={data}>
                 <svg
                   width='24'

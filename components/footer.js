@@ -24,16 +24,16 @@ import logo15 from '../public/logo_partners/CircuLawPartners-14.png';
 
 const navigation = {
   WAARDEKETENS: [
-    { name: 'Houtbouw', href: '/houtbouw', className: 'text-white1' },
+    { name: 'Houtbouw', href: '/houtbouw', className: 'text-black-white-200' },
     {
       name: 'Circulaire windturbines',
       href: '/circulaire-windturbines',
-      className: 'text-white1',
+      className: 'text-black-white-200',
     },
     {
       name: 'Matrassen',
       href: '/matrassen',
-      className: 'text-white1',
+      className: 'text-black-white-200',
     },
   ],
 
@@ -53,7 +53,7 @@ export default function Footer() {
 
   return (
     <footer className='' aria-labelledby='footer-heading'>
-      <div className='bg-green1'>
+      <div className='bg-green-600'>
         <div className='global-margin pt-12 lg:pt-16 lg:px-8'>
           <div className='pb-20'>
             <div className='grid grid-cols-1 gap-8 sm:col-span-3'>
@@ -87,7 +87,7 @@ export default function Footer() {
                         <li key={slug}>
                           <a
                             href={`/about/${encodeURIComponent(slug)}`}
-                            className='text-base hover:text-green3 text-white1'
+                            className='text-base hover:text-green3 text-black-white-200'
                           >
                             <span className='inline-block first-letter:uppercase'>
                               {slug.replaceAll('-', ' ')}
@@ -122,7 +122,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className='bg-green9 py-10'>
+      <div className='bg-green-800 py-10'>
         {/* TODO: add image alt tags */}
         <div className='global-margin pb-12 px-4 lg:pb-16'>
           <div className='grid grid-cols-2 gap-x-0.5 gap-y-4 md:grid-cols-5'>
@@ -176,7 +176,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className='global-margin pb-10 text-white1 text-sm'>
+        <div className='global-margin pb-10 text-black-white-200 text-sm'>
           <p className='mx-20'>
             Welkom bij CircuLaw. Deze website is volop in ontwikkeling. In deze versie testen we de
             techniek, opzet en inhoud van de site. Het is mogelijk dat de inhoud van de site

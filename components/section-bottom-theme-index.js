@@ -12,14 +12,14 @@ export default function ThemeBottomSection({ props }) {
   return (
     <div>
       <div className='pb-10 pt-6 global-margin'>
-        <h2 className='urban'>Uitgelicht: {data?.length} instrumenten om houtbouw te bevorderen</h2>
-        <h4 className='urban'>Mét voorbeelden en een handige leidraad</h4>
+        <h2 className='mobile sm:desktop'>Uitgelicht: {data?.length} instrumenten om houtbouw te bevorderen</h2>
+        <h4 className='mobile sm:desktop'>Mét voorbeelden en een handige leidraad</h4>
       </div>
 
       <div className='bg-green3 bg-opacity-10'>
         <div className='pt-5 global-margin  '>
           {data?.map((measure) => (
-            <div key={measure._id} className='border-b border-grey1 pb-10'>
+            <div key={measure._id} className='border-b border-black-white-600 pb-10'>
               <div className='grid grid-cols-1 sm:flex items-center'>
                 <div className='hidden sm:block pt-6 pr-10'>
                   <div className='w-[33rem] h-[16rem]'>
@@ -41,7 +41,7 @@ export default function ThemeBottomSection({ props }) {
                     />
                   </div>
 
-                  <h3 className='pt-6 mobile sm:urban'>{measure.titel}</h3>
+                  <h3 className='pt-6 mobile sm:desktop'>{measure.titel}</h3>
                   <p className='body-text-mobile sm:body-new py-3 max-w-2xl'>
                     {measure.introText}
                   </p>
@@ -49,7 +49,7 @@ export default function ThemeBottomSection({ props }) {
                     <div>
                       {measure?.extraContent && (
                         <div className='flex'>
-                          <div className='border-green1 bg-green1 text-white r-category py-0.5 px-2 rounded-md'>
+                          <div className='border-green-600 bg-green-600 text-white r-category py-0.5 px-2 rounded-md'>
                             {measure.extraContent[0]}
                           </div>
                           <div className='border-green33 bg-green33 text-white r-category p-0.5 px-2 rounded-md ml-4'>
