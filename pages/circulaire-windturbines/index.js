@@ -11,13 +11,17 @@ export default function Windturbine() {
   useEffect(() => {
     localStorage.clear();
   });
+
+  
   return (
     <Layout>
       <ThemeLayout
+
+
+
       cardLinkList='/measures/windturbines'
       cardLinkSamenhang='/circulaire-windturbines/samenhang-maatregelen'
       cardLinkWaarvoor='/circulaire-windturbines/welke-overheid-heeft'
-      // need to go through props and remove old ones. 
       
       icon={WindmillIcon}
       iconAlt='Icon of Windmill'

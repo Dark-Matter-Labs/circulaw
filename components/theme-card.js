@@ -4,8 +4,8 @@ import CustomButton from './custom-button'
 
 export default function ThemeCard({props, type}) {
     return (
-        <div className='relative w-full overflow-hidden'>
-    <div className='grid grid-rows-6 border-transparent shadow-md rounded-md h-5/6 max-w-[380px]'>
+        <div className='relative w-full overflow-hidden h-auto py-10 md:py-0  '>
+    <div className='grid grid-rows-6 border-transparent shadow-md rounded-md md:h-5/6 lg:h-[90%] max-w-[380px]'>
     <div className='row-span-3 bg-green-600 rounded-t-md'>
         <div className='gradient-pdf z-5 w-full rounded-t-md h-full flex items-center justify-center'>
           
@@ -26,17 +26,17 @@ export default function ThemeCard({props, type}) {
       {type === 'list' && 
       <div className='row-span-3 px-10'>
         <h3 className='mobile sm:desktop pt-6'>{props.listTitle}</h3>
-        <p className='body-new pt-6'>{props.listText}</p>
+        <p className='body-new py-6'>{props.listText}</p>
       </div>}
       {type === 'samenhang' && 
       <div className='row-span-3 px-10'>
         <h3 className='mobile sm:desktop pt-6'>{props.samenhangTitle}</h3>
-        <p className='body-new pt-6'>{props.samenhangText}</p>
+        <p className='body-new py-6'>{props.samenhangText}</p>
       </div>}  
       {type === 'waarvoor' && 
       <div className='row-span-3 px-10'>
         <h3 className='mobile sm:desktop pt-6'>{props.waarvoorTitle}</h3>
-        <p className='body-new pt-6'>{props.waarvoorText}</p>
+        <p className='body-new py-6'>{props.waarvoorText}</p>
       </div>}
       
       <div className='pb-6 pl-8'>

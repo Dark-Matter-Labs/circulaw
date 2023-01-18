@@ -6,6 +6,7 @@ export default function ThemeLayout(props) {
   
   return (
     <>
+    <div>
       {/* HEADER */}
       <div className='w-full h-[28rem] bg-houtbouw-hero bg-center bg-cover relative'>
         <div className='thema-hero-gradient absolute inset-x-0 bottom-0 h-[42rem] z-5'>
@@ -41,7 +42,7 @@ export default function ThemeLayout(props) {
             <div className='pt-20 pb-10'>
               <h2 className='mobile sm:desktop'>Overzichten van instrumenten die {props.thema} stimuleren </h2>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-14 justify-items-center md:h-[76rem] lg:h-[38rem]'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-14 justify-items-center sm:h-auto md:h-[76rem] lg:h-[38rem]'>
 
              <ThemeCard props={props} type='list'/>
              <ThemeCard props={props} type='samenhang'/>
@@ -50,6 +51,7 @@ export default function ThemeLayout(props) {
             </div>
         </div>
         <ThemeBottomSection props={props} />
+      </div>
       </div>
     </>
   );

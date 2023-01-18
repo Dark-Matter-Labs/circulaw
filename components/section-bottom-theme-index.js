@@ -15,17 +15,22 @@ export default function ThemeBottomSection({ props }) {
   useEffect(() => setLaws(data?.map((law) => law)), [data])
 
   return (
-    <div>
+    <>
+      <div className='global-margin'>
       <div className='pb-10 pt-6 global-margin'>
         <h2 className='mobile sm:desktop'>Uitgelicht: {laws?.length} instrumenten om houtbouw te bevorderen</h2>
         <h4 className='mobile sm:desktop'>Mét voorbeelden en een handige leidraad</h4>
       </div>
+      </div>
+          <div className='bg-green3 bg-opacity-10'>
 
-      <div className='bg-green3 bg-opacity-10'>
-        <div className='pt-5 global-margin  '>
+      <div className='global-margin'>
+
+      <div className=''>
+        <div className='pt-5'>
           {laws?.map((measure) => (
             <div key={measure?._id} className='border-b border-black-white-600 pb-10'>
-              <div className='grid grid-cols-1 sm:flex items-center'>
+              <div className='grid grid-cols-1 lg:flex items-center'>
                 <div className='hidden sm:block pt-6 pr-10'>
                   <div className='w-[33rem] h-[16rem]'>
                   <Image
@@ -52,9 +57,7 @@ export default function ThemeBottomSection({ props }) {
                     {measure?.introText}
                   </p>
                   <div className='flex justify-between pt-20'>
-                    <div>
-                      {/* this is always rendering two both sections */}
-                      
+                    <div>                      
                         <div className='flex'>
                           {measure?.extraContent.includes('Leidraad') && 
                           <div className='border-green-600 bg-green-600 text-white r-category py-0.5 px-2 rounded-md'>
@@ -82,5 +85,7 @@ export default function ThemeBottomSection({ props }) {
         </div>
       </div>
     </div>
+    </div>
+    </>
   );
 }
