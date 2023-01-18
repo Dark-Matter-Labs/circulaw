@@ -28,7 +28,7 @@ export default function MeasureTable({ data }) {
       <div className='grid grid-cols-6'>
         <div className='col-span-6 sm:col-span-4'>
           <div className='pb-5'>
-            <h2 className='pt-6 pb-4 mobile sm:desktop'>Juridische toelichting</h2>
+            <h3 className='pt-6 pb-4 mobile sm:desktop'>Juridische toelichting</h3>
             {data?.measure?.juridischeToelichting && (
               <PortableText components={components} value={data?.measure?.juridischeToelichting} />
             )}
