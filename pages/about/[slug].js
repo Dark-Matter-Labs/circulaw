@@ -148,25 +148,26 @@ const components = {
 };
 
 export default function AboutPage({ data }) {
-  console.log(data);
   return (
     <Layout>
-      <div className='global-margin  pb-8 text-black-white-800'>
-        <div className='grid grid-cols-1 lg:grid-cols-3'>
+      <div className='global-margin pb-8 text-black-white-800'>
+        <div className='grid grid-cols-1 md:grid-cols-3'>
           <div className='col-span-2'>
             <div className='breadcrumb pt-8 text-greenLink'>
               <Link href='/'>Home &gt;</Link>
             </div>
             <div className='max-w-4xl'>
               <h1 className='lg:block sm:pt-10 py-6 sm:pb-10 mobile sm:desktop'>
-                {data?.aboutPage.pageTitle}
+                {data?.aboutPage?.pageTitle}
               </h1>
               <PortableText value={data?.aboutPage?.aboutPageContent} components={components} />
             </div>
           </div>
-          <div className='mx-20 my-20 max-w-sm'>
-            <OverNav pagename={data?.aboutPage?.slug.current} />
-          </div>
+          {data?.aboutPage?.pageTitle !== 'VRAAG & ANTWOORD' && (
+            <div className='md:ml-5 lg:mx-5 lg:my-20 max-w-sm col-span-1'>
+              <OverNav pagename={data?.aboutPage?.slug.current} />
+            </div>
+          )}
         </div>
       </div>
     </Layout>
@@ -184,9 +185,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
   const { slug = '' } = context.params;
-  console.log(slug, 'slug');
   const aboutPage = await client.fetch(pageQuery, { slug });
-  console.log(aboutPage, 'aboutPage');
   return {
     props: { data: { aboutPage } },
     revalidate: 1,

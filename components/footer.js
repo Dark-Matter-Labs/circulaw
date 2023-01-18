@@ -37,8 +37,9 @@ const navigation = {
     },
   ],
 
+  // FAQ href is linked to CMS.
   other: [
-    { name: 'Veel gestelde vragen', href: '/hoe-het-werkt', className: '' },
+    { name: 'Veel gestelde vragen', href: '/about/vraag-%26-antwoord', className: '' },
     { name: 'Contact', href: '/contact', className: '' },
     { name: 'Disclaimer/Alpha', href: '/alpha', className: '' },
     { name: 'Privacy', href: '/privacy-policy', className: '' },
@@ -50,6 +51,7 @@ export default function Footer() {
 
   const [slugs, setSlugs] = useState();
   useEffect(() => setSlugs(data?.map((page) => page.slug.current)), [data]);
+  const aboutSlugs = slugs?.filter(e => e !== 'vraag-&-antwoord')
 
   return (
     <footer className='' aria-labelledby='footer-heading'>
@@ -83,7 +85,7 @@ export default function Footer() {
                   </p>
                   <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                     <ul role='list' className='mt-4 space-y-4'>
-                      {slugs?.map((slug) => (
+                      {aboutSlugs?.map((slug) => (
                         <li key={slug}>
                           <a
                             href={`/about/${encodeURIComponent(slug)}`}
