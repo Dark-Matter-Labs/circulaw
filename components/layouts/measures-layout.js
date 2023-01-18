@@ -27,7 +27,8 @@ const useSelectedState = createPersistedState('selected');
 
 export default function MeasuresLayout(props) {
   // need to add error check ? or replace the fetcher function in utils/filter funcition
-  const { data } = useSWR(groq`*[_type == "measure"]`, (query) => client.fetch(query));
+  const { data } = useSWR(groq`*[_type == "measure"]| order(lower(titel) asc)`, (query) => client.fetch(query));
+
   // creating references to access child component functions
   const wettelijkFilterRef = useRef();
   const rechtsgebiedFilterRef = useRef();

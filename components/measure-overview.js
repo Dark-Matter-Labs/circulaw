@@ -8,7 +8,7 @@ import JITooltip from '../components/juridische-invloed-tooltip';
 
 const viewportType = {
   mobile: 'block sm:hidden gradient-overview -m-8 h-[30rem] mb-10',
-  desktop: 'hidden sm:block float-right pl-4 sm:pr-6 md:pr-10 lg:pr-14 gradient-overview h-[38rem]',
+  desktop: 'hidden sm:block float-right pl-4 ml-6 sm:pr-6 md:pr-10 lg:pr-14 gradient-overview h-[38rem]',
 };
 export default function MeasureOverview({ viewport, children, data, ...props }) {
   let viewportClasses = viewportType[viewport];
@@ -117,7 +117,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
         <div className='pt-5 pb-5 border-b border-grey1'>
           <div className='relative flex justify-between border-t border-grey1 pt-2'>
             <div className='flex py-2'>
-              <span className='overview-titles text-black1 py-2 pr-3'>Juridisch houdbaarheid</span>
+              <span className='overview-titles text-black1 py-2 pr-3'>Juridische haalbaarheid</span>
               <JHTooltip data={data}>
                 <svg
                   width='24'
