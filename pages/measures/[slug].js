@@ -67,7 +67,7 @@ const components = {
               fill='#F8FAF8'
             />
           </svg>
-          <div className='inline-block max-w-xs absolute invisible group-hover:visible z-10 py-3 px-6 bg-black-white-300 text-black-white-800tooltip-hover-text-mob sm:tooltip-hover-text opacity-0 group-hover:opacity-100 transition tooltip'>
+          <div className='inline-block max-w-xs absolute invisible group-hover:visible z-10 py-3 px-6 bg-black-white-300 text-black-white-800 popup-mobile sm:popup-desktop opacity-0 group-hover:opacity-100 transition tooltip'>
             {value.hoverText}
           </div>
         </button>
@@ -168,7 +168,7 @@ export default function TestMeasure({ data }) {
   return (
     <Layout>
       <div className='measure-bg'>
-        <div className='global-margin pt-4 sm:pt-10 '>
+        <div className='global-margin sm:pt-10 '>
           <div className='grid grid-cols-1 sm:grid-cols-12 content-center'>
             <div className='sm:col-span-12 row-span-1 h-12 mt-4'>
               {/* BREADCRUMB */}
