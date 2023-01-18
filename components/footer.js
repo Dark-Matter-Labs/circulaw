@@ -37,7 +37,7 @@ const navigation = {
     },
   ],
 
-  // FAQ href is linked to CMS. 
+  // FAQ href is linked to CMS.
   other: [
     { name: 'Veel gestelde vragen', href: '/about/vraag-%26-antwoord', className: '' },
     { name: 'Contact', href: '/contact', className: '' },
@@ -85,18 +85,20 @@ export default function Footer() {
                   <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                     <ul role='list' className='mt-4 space-y-4'>
                       {slugs?.map((slug) => {
-                        return slug !== 'vraag-&-antwoord' ?
-                        <li key={slug}>
-                          <a
-                            href={`/about/${encodeURIComponent(slug)}`}
-                            className='text-base hover:text-green3 text-white1'
-                          >
-                            <span className='inline-block first-letter:uppercase'>
-                              {slug.replaceAll('-', ' ')}
-                            </span>
-                          </a>
-                        </li>
-                        : <></>
+                        return slug !== 'vraag-&-antwoord' ? (
+                          <li key={slug}>
+                            <a
+                              href={`/about/${encodeURIComponent(slug)}`}
+                              className='text-base hover:text-green3 text-white1'
+                            >
+                              <span className='inline-block first-letter:uppercase'>
+                                {slug.replaceAll('-', ' ')}
+                              </span>
+                            </a>
+                          </li>
+                        ) : (
+                          <></>
+                        );
                       })}
                     </ul>
                   </div>

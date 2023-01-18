@@ -163,11 +163,11 @@ export default function AboutPage({ data }) {
               <PortableText value={data?.aboutPage?.aboutPageContent} components={components} />
             </div>
           </div>
-          {data.aboutPage.pageTitle !== 'VRAAG & ANTWOORD' &&
-          <div className='mx-20 my-20 max-w-sm'>
-            <OverNav pagename={data?.aboutPage?.slug.current} />
-          </div>
-          }
+          {data.aboutPage.pageTitle !== 'VRAAG & ANTWOORD' && (
+            <div className='mx-20 my-20 max-w-sm'>
+              <OverNav pagename={data?.aboutPage?.slug.current} />
+            </div>
+          )}
         </div>
       </div>
     </Layout>
