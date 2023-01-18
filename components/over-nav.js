@@ -15,7 +15,8 @@ export default function OverNav(props) {
 
   return (
     <nav className='space-y-1 sticky top-40' aria-label='Sidebar'>
-      {slugs?.map((slug) => (
+      {slugs?.map((slug) => {
+        return slug !== 'vraag-&-antwoord' ?
         <a
           key={slug}
           href={`/about/${encodeURIComponent(slug)}`}
@@ -32,7 +33,8 @@ export default function OverNav(props) {
             {slug.replaceAll('-', ' ')}
           </span>
         </a>
-      ))}
+        : <></>
+      })}
     </nav>
   );
 }
