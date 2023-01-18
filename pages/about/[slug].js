@@ -150,8 +150,8 @@ const components = {
 export default function AboutPage({ data }) {
   return (
     <Layout>
-      <div className='global-margin  pb-8 text-black1'>
-        <div className='grid grid-cols-1 lg:grid-cols-3'>
+      <div className='global-margin pb-8 text-black1'>
+        <div className='grid grid-cols-1 md:grid-cols-3'>
           <div className='col-span-2'>
             <div className='breadcrumb pt-8 text-greenLink'>
               <Link href='/'>Home &gt;</Link>
@@ -164,7 +164,7 @@ export default function AboutPage({ data }) {
             </div>
           </div>
           {data.aboutPage.pageTitle !== 'VRAAG & ANTWOORD' && (
-            <div className='mx-20 my-20 max-w-sm'>
+            <div className='md:ml-5 lg:mx-5 lg:my-20 max-w-sm col-span-1'>
               <OverNav pagename={data?.aboutPage?.slug.current} />
             </div>
           )}
