@@ -27,7 +27,7 @@ export default function Index() {
             </div>
             <div>
               <h2 className='mobile sm:main'>Wat is CircuLaw?</h2>
-              <p className='body-text-mobile sm:body-text py-5 max-w-4xl'>
+              <p className='p-mobile-bg sm:body-text py-5 max-w-4xl'>
                 CircuLaw is een service waarmee we in de eerste plaats beleidsmakers en
                 transitiemanagers helpen meer en beter gebruik te maken van regelgeving om de
                 circulaire economie te bevorderen. Maar CircuLaw is ambitieus. Door stap voor stap
@@ -46,7 +46,7 @@ export default function Index() {
             </div>
             <div>
               <h2 className='mobile sm:main'>Waarom CircuLaw?</h2>
-              <p className='body-text-mobile sm:body-text py-5 max-w-4xl'>
+              <p className='p-mobile-bg sm:body-text py-5 max-w-4xl'>
                 Voor het tegengaan van klimaatverandering, het verminderen van vervuiling, het
                 behoud van biodiversiteit en de beschikbaarheid van grondstoffen is een circulaire
                 economie essentieel. In Nederland hebben we hierin nog een lange weg te gaan. De
@@ -68,7 +68,7 @@ export default function Index() {
             </div>
             <div>
               <h2 className='mobile sm:main'>Hoever zijn we?</h2>
-              <ul className='body-text-mobile sm:body-text py-5 max-w-4xl list-disc pl-6'>
+              <ul className='p-mobile-bg sm:body-text py-5 max-w-4xl list-disc pl-6'>
                 <li>
                   Een overzicht van wet- en regelgeving voor beleidsmakers die aan de slag willen
                   met maatregelen voor de thema’s houtbouw en circulaire windmolens
@@ -91,7 +91,7 @@ export default function Index() {
             </div>
             <div>
               <h2 className='mobile sm:main'>Wie maken CircuLaw?</h2>
-              <p className='body-text-mobile sm:body-text py-5 max-w-4xl'>
+              <p className='p-mobile-bg sm:body-text py-5 max-w-4xl'>
                 Gemeente Amsterdam, Dark Matter Laboratories, EIT Climate KIC, de Provincies
                 Noord-Holland en Flevoland, Rijksdienst voor Ondernemend Nederland (RVO), het MRA
                 (Metropoolregio Amsterdam) Kernteam Houtbouw, Belastingdienst, TU Delft, Erasmus

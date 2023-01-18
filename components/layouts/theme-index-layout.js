@@ -21,7 +21,7 @@ export default function ThemeLayout(props) {
                 <h1 className='text-black-white-200 inline-block mobile sm:desktop'>{props.title} CF </h1>
               </div>
               <div className='col-span-7'>
-                <p className='pt-4 text-black-white-200 body-text-mobile sm:body-text'>
+                <p className='pt-4 text-black-white-200 p-mobile-bg sm:body-text'>
                   We kunnen veel milieuvriendelijker bouwen wanneer we beton (deels) vervangen door
                   houtfont change
                   <span className='text-greenLink link-mobile sm:link inline-block pl-1'>

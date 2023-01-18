@@ -42,7 +42,7 @@ export default function ThemeBottomSection({ props }) {
                   </div>
 
                   <h3 className='pt-6 mobile sm:desktop'>{measure.titel}</h3>
-                  <p className='body-text-mobile sm:body-new py-3 max-w-2xl'>
+                  <p className='p-mobile-bg sm:body-new py-3 max-w-2xl'>
                     {measure.introText}
                   </p>
                   <div className='flex justify-between pt-20'>
