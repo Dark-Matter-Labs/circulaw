@@ -4,7 +4,7 @@ import RTooltip from '../components/r-ladder-tooltip';
 import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../components/juridische-invloed-tooltip';
 
-const rLadderLabelStyles = 'bg-green2 text-white rounded-full p-1 mr-2 block-inline r-category ';
+const rLadderLabelStyles = 'bg-green-400 text-white rounded-full p-1 mr-2 block-inline r-category ';
 
 const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, ref) => {
   const [checkedArray, setCheckedArray] = useState([]);

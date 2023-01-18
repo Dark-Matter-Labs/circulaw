@@ -28,7 +28,7 @@ export default function MeasureTable({ data }) {
       <div className='grid grid-cols-6'>
         <div className='col-span-6 sm:col-span-4'>
           <div className='pb-5'>
-            <h2 className='pt-6 pb-4 mob-new sm:urban'>Juridische toelichting</h2>
+            <h2 className='pt-6 pb-4 mobile sm:desktop'>Juridische toelichting</h2>
             {data?.measure?.juridischeToelichting && (
               <PortableText components={components} value={data?.measure?.juridischeToelichting} />
             )}
@@ -36,7 +36,7 @@ export default function MeasureTable({ data }) {
         </div>
         <table className='table-fixed col-span-6 sm:col-span-4 -m-3 sm:m-0'>
           <tbody>
-            <tr className='my-10 border-b boder-grey2 border-t'>
+            <tr className='my-10 border-b boder-black-white-300 border-t'>
               <td className='w-1/3 py-1.5 body-small'>Rechtsgebied</td>
               <td className='w-2/3 py-1.5 table-right capitalize'>
                 <span className='justify-end sm:justify-start'>
@@ -46,7 +46,7 @@ export default function MeasureTable({ data }) {
                 </span>
               </td>
             </tr>
-            <tr className=' border-b boder-grey2'>
+            <tr className=' border-b boder-black-white-300'>
               <td className='w-1/3 py-1.5 body-small'>Citeertitel</td>
               <td className='w-2/3 py-1.5 table-right first-letter:uppercase'>
                 <span className='flex justify-end sm:justify-start'>
@@ -54,7 +54,7 @@ export default function MeasureTable({ data }) {
                 </span>
               </td>
             </tr>
-            <tr className='border-b boder-grey2'>
+            <tr className='border-b boder-black-white-300'>
               <td className='w-1/3 py-1.5 body-small'>Artikel</td>
               <td className='w-2/3 py-1.5 table-right'>
                 <span className='flex justify-end sm:justify-start'>
@@ -78,7 +78,7 @@ export default function MeasureTable({ data }) {
                 </span>
               </td>
             </tr>
-            <tr className='border-b boder-grey2'>
+            <tr className='border-b boder-black-white-300'>
               <td className='w-1/3 py-1.5 body-small'>Geldig vanaf</td>
               <td className='w-2/3 py-1.5 table-right'>
                 <span className='flex justify-end sm:justify-start'>
@@ -90,7 +90,7 @@ export default function MeasureTable({ data }) {
                 </span>
               </td>
             </tr>
-            <tr className='border-b boder-grey2'>
+            <tr className='border-b boder-black-white-300'>
               <td className='w-1/3 py-1.5 body-small'>Overheidslaag</td>
               <td className='w-2/3 py-1.5 table-right'>
                 <span className='flex justify-end sm:justify-start'>
