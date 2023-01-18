@@ -71,19 +71,19 @@ export default function Contact() {
           <>
             <h1 className='text-green-600 pt-10 mobile sm:main'>Contact</h1>
             {showPrivacyError && (
-              <p className='p-mobile-bg sm:body-text py-2 max-w-2xl text-red-600'>
+              <p className='p-mobile-bg sm:p-desktop-bg py-2 max-w-2xl text-red-600'>
                 Ga akkoord met de privacyvoorwaarden om te kunnen verzenden
               </p>
             )}
 
             {showEmailError && (
-              <p className='p-mobile-bg sm:body-text py-2 max-w-2xl text-red-600'>
+              <p className='p-mobile-bg sm:p-desktop-bg py-2 max-w-2xl text-red-600'>
                 Vul een geldig e-mail adres in
               </p>
             )}
 
             {showTextError && (
-              <p className='p-mobile-bg sm:body-text py-2 max-w-2xl text-red-600'>
+              <p className='p-mobile-bg sm:p-desktop-bg py-2 max-w-2xl text-red-600'>
                 Vul een vraag of opmerking in
               </p>
             )}
@@ -209,7 +209,7 @@ export default function Contact() {
         ) : (
           <>
             <h1 className='text-green-600 pt-10 mobile sm:main'>Bedankt!</h1>
-            <p className='p-mobile-bg sm:body-text py-10 max-w-2xl text-black-white-800'>
+            <p className='p-mobile-bg sm:p-desktop-bg py-10 max-w-2xl text-black-white-800'>
               Bedankt voor je bericht. We nemen zo snel mogelijk contact met je op.
             </p>
             <div className='sm:col-span-2 pb-20'>

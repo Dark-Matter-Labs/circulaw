@@ -42,7 +42,7 @@ const components = {
       <div className='-mx-8 sm:mx-0 my-10'>
         <div className='bg-green-300 w-full px-8 py-8'>
           <h3 className='pb-6 mobile sm:desktop'>{value?.greenBoxTitle}</h3>
-          <div className='p-mobile-bg sm:body-text'>{value?.greenBoxText}</div> {/* need to change */}
+          <div className='p-mobile-bg sm:p-desktop-bg'>{value?.greenBoxText}</div> {/* need to change */}
         </div>
       </div>
     ),
@@ -84,7 +84,7 @@ const components = {
                 <Image src='/pdf-deco.png' alt='decorative image' width={584} height={562} />
               </div>
               <h3 className='pb-2 mobile sm:desktop text-white'>{value.pdfTitle}</h3> {/* need to change text white */}
-              <p className='p-mobile-bg sm:body-text text-black-white-200 pb-4'>{value.pdfText}</p> {/* need to change body text */}
+              <p className='p-mobile-bg sm:p-desktop-bg text-black-white-200 pb-4'>{value.pdfText}</p> {/* need to change body text */}
               <a
                 href={`https://cdn.sanity.io/files/${
                   process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '2vfoxb3h'

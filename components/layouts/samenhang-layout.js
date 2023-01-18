@@ -33,12 +33,12 @@ export default function SamenhangLayout(props) {
       </div>
       <div className='global-margin mb-20'>
         <div className='max-w-3xl mx-auto'>
-          <p className='p-mobile-bg sm:body-text text-black-white-800 pb-6'>{props.p1}</p>
+          <p className='p-mobile-bg sm:p-desktop-bg text-black-white-800 pb-6'>{props.p1}</p>
           {props.p2 !== '' && (
-            <p className='p-mobile-bg sm:body-text text-black-white-800 pb-6'>{props.p2}</p>
+            <p className='p-mobile-bg sm:p-desktop-bg text-black-white-800 pb-6'>{props.p2}</p>
           )}
           {props.p3 !== '' && (
-            <p className='p-mobile-bg sm:body-text text-black-white-800 pb-6'>{props.p3}</p>
+            <p className='p-mobile-bg sm:p-desktop-bg text-black-white-800 pb-6'>{props.p3}</p>
           )}
         </div>
       </div>
