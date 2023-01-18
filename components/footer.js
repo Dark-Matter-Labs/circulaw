@@ -85,7 +85,7 @@ export default function Footer() {
                   </p>
                   <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                     <ul role='list' className='mt-4 space-y-4'>
-                      {slugs?.map((slug) => (
+                      {aboutSlugs?.map((slug) => (
                         <li key={slug}>
                           <a
                             href={`/about/${encodeURIComponent(slug)}`}
