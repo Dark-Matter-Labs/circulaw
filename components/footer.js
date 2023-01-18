@@ -1,5 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import useSWR from 'swr';
+import { useEffect, useState } from 'react';
+import client from '../lib/sanity';
+import { groq } from 'next-sanity';
+
 import ActionPanel from '../components/section-action-panel';
 import logo1 from '../public/logo_partners/CircuLawPartners-01.png';
 import logo2 from '../public/logo_partners/CircuLawPartners-02.png';
@@ -31,33 +36,6 @@ const navigation = {
       className: 'text-white1',
     },
   ],
-  OVER: [
-    {
-      name: 'Waarom CircuLaw?',
-      href: '/waarom-circulaw',
-      className: 'text-white1',
-    },
-    {
-      name: 'Wat is CircuLaw?',
-      href: '/wat-is-circulaw',
-      className: 'text-white1',
-    },
-    {
-      name: 'Wat vind je nu op CircuLaw?',
-      href: '/status-en-ambities',
-      className: 'text-white1',
-    },
-    {
-      name: 'Wetsanalyse vanuit circulaire blik',
-      href: '/wetsanalyse-met-circulaire-blik',
-      className: 'text-white1',
-    },
-    {
-      name: 'Wie maken CircuLaw?',
-      href: '/wie-maken-circulaw',
-      className: 'text-white1',
-    },
-  ],
 
   other: [
     { name: 'Veel gestelde vragen', href: '/hoe-het-werkt', className: '' },
@@ -68,6 +46,11 @@ const navigation = {
 };
 
 export default function Footer() {
+  const { data } = useSWR(groq`*[_type == "aboutPage"]`, (query) => client.fetch(query));
+
+  const [slugs, setSlugs] = useState();
+  useEffect(() => setSlugs(data?.map((page) => page.slug.current)), [data]);
+
   return (
     <footer className='' aria-labelledby='footer-heading'>
       <div className='bg-green1'>
@@ -100,13 +83,15 @@ export default function Footer() {
                   </p>
                   <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                     <ul role='list' className='mt-4 space-y-4'>
-                      {navigation.OVER.map((item) => (
-                        <li key={item.name}>
+                      {slugs?.map((slug) => (
+                        <li key={slug}>
                           <a
-                            href={item.href}
-                            className={`text-base hover:text-green3 ${item.className}`}
+                            href={`/about/${encodeURIComponent(slug)}`}
+                            className='text-base hover:text-green3 text-white1'
                           >
-                            {item.name}
+                            <span className='inline-block first-letter:uppercase'>
+                              {slug.replaceAll('-', ' ')}
+                            </span>
                           </a>
                         </li>
                       ))}
