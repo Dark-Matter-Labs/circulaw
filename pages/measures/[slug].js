@@ -231,8 +231,6 @@ export async function getStaticProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
   const { slug = '' } = context.params;
   const measure = await client.fetch(measureQuery, { slug });
-  console.log(slug, 'slug');
-  console.log(measure);
   return {
     props: { data: { measure } },
     revalidate: 1,

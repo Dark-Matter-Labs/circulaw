@@ -148,7 +148,6 @@ const components = {
 };
 
 export default function AboutPage({ data }) {
-  console.log(data);
   return (
     <Layout>
       <div className='global-margin  pb-8 text-black1'>
@@ -164,9 +163,11 @@ export default function AboutPage({ data }) {
               <PortableText value={data?.aboutPage?.aboutPageContent} components={components} />
             </div>
           </div>
+          {data.aboutPage.pageTitle !== 'VRAAG & ANTWOORD' &&
           <div className='mx-20 my-20 max-w-sm'>
             <OverNav pagename={data?.aboutPage?.slug.current} />
           </div>
+          }
         </div>
       </div>
     </Layout>
@@ -184,9 +185,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
   const { slug = '' } = context.params;
-  console.log(slug, 'slug');
   const aboutPage = await client.fetch(pageQuery, { slug });
-  console.log(aboutPage, 'aboutPage');
   return {
     props: { data: { aboutPage } },
     revalidate: 1,

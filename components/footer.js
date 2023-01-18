@@ -37,8 +37,9 @@ const navigation = {
     },
   ],
 
+  // FAQ href is linked to CMS. 
   other: [
-    { name: 'Veel gestelde vragen', href: '/hoe-het-werkt', className: '' },
+    { name: 'Veel gestelde vragen', href: '/about/vraag-%26-antwoord', className: '' },
     { name: 'Contact', href: '/contact', className: '' },
     { name: 'Disclaimer/Alpha', href: '/alpha', className: '' },
     { name: 'Privacy', href: '/privacy-policy', className: '' },
@@ -83,7 +84,8 @@ export default function Footer() {
                   </p>
                   <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                     <ul role='list' className='mt-4 space-y-4'>
-                      {slugs?.map((slug) => (
+                      {slugs?.map((slug) => {
+                        return slug !== 'vraag-&-antwoord' ?
                         <li key={slug}>
                           <a
                             href={`/about/${encodeURIComponent(slug)}`}
@@ -94,7 +96,8 @@ export default function Footer() {
                             </span>
                           </a>
                         </li>
-                      ))}
+                        : <></>
+                      })}
                     </ul>
                   </div>
                 </div>

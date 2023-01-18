@@ -162,7 +162,8 @@ export default function Nav() {
                                       <Popover.Panel className='absolute z-10  transform w-screen max-w-xs sm:px-0'>
                                         <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                                           <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
-                                            {slugs?.map((slug) => (
+                                            {slugs?.map((slug) => {
+                                              return slug !== 'vraag-&-antwoord' ?
                                               <Link
                                                 key={slug}
                                                 href={`/about/${encodeURIComponent(slug)}`}
@@ -172,7 +173,8 @@ export default function Nav() {
                                                   {slug.replaceAll('-', ' ')}
                                                 </span>
                                               </Link>
-                                            ))}
+                                              : <></>
+                                            })}
                                           </div>
                                         </div>
                                       </Popover.Panel>
@@ -182,11 +184,15 @@ export default function Nav() {
                               </Popover>
 
                               <div className='inline-block relative'>
-                                <Link href='/hoe-het-werkt'>
+                                {slugs?.map((slug) => {
+                                  return slug == 'vraag-&-antwoord' ?
+                                <Link href={`/about/${encodeURIComponent(slug)}`}>
                                   <span className='uppercase pl-8 text-black group rounded-md inline-flex items-center text-base font-medium'>
                                     VRAAG & ANTWOORD
                                   </span>
                                 </Link>
+                                : <></>
+                                })}
                               </div>
                               <div className='inline-block relative '>
                                 <Link href='/contact'>
@@ -232,53 +238,29 @@ export default function Nav() {
                 >
                   Over CircuLaw
                 </Disclosure.Button>
-                {slugs?.map((slug) => (
+                {slugs?.map((slug) => {
+                  return slug !== 'vraag-&-antwoord' ?
                   <Disclosure.Button
                     key={slug}
-                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
+                    className='font-semibold ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base first-letter:uppercase'
                   >
                     <Link href={`/about/${encodeURIComponent(slug)}`}>
                       {slug.replaceAll('-', ' ')}
                     </Link>
                   </Disclosure.Button>
-                ))}
-                {/**                <Disclosure.Button
-                  as='a'
-                  href='/wat-is-circulaw'
-                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
-                >
-                  Wat is CircuLaw?
-                </Disclosure.Button>
+                  : <></>
+                })}
+                {slugs?.map((slug) => {
+                  return slug === 'vraag-&-antwoord' ?
                 <Disclosure.Button
                   as='a'
-                  href='/status-en-ambities'
-                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
-                >
-                  Wat vind je nu op CircuLaw?
-                </Disclosure.Button>
-                <Disclosure.Button
-                  as='a'
-                  href='/wetsanalyse-met-circulaire-blik'
-                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
-                >
-                  Wetsanalyse vanuit circulaire blik
-                </Disclosure.Button>
-                <Disclosure.Button
-                  as='a'
-                  href='/wie-maken-circulaw'
-                  className='ml-5 border-transparent text-gray-900 border-b border-blush3 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
-                >
-                  Wie maken CircuLaw?
-                </Disclosure.Button>
-                 */}
-
-                <Disclosure.Button
-                  as='a'
-                  href='/hoe-het-werkt'
+                  href={`/about/${encodeURIComponent(slug)}`}
                   className='uppercase text-black1  border-b border-blush3 block pl-3 pr-4 py-5 font-semibold'
                 >
-                  Vraag en Antwoord
+                  Vraag & Antwoord
                 </Disclosure.Button>
+                : <></>
+                })}
                 <Disclosure.Button
                   as='a'
                   href='/contact'
@@ -419,7 +401,8 @@ export default function Nav() {
                                         <Popover.Panel className='absolute z-10  transform w-screen max-w-xs sm:px-0'>
                                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                                             <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
-                                              {slugs?.map((slug) => (
+                                              {slugs?.map((slug) => {
+                                                return slug !== 'vraag-&-antwoord' ?
                                                 <Link
                                                   key={slug}
                                                   href={`/about/${encodeURIComponent(slug)}`}
@@ -429,7 +412,8 @@ export default function Nav() {
                                                     {slug.replaceAll('-', ' ')}
                                                   </p>
                                                 </Link>
-                                              ))}
+                                                : <></>
+                                              })}
                                             </div>
                                           </div>
                                         </Popover.Panel>
@@ -438,11 +422,15 @@ export default function Nav() {
                                   )}
                                 </Popover>
                                 <div className='inline-block relative'>
-                                  <Link href='/hoe-het-werkt'>
+                                  {slugs?.map((slug) => {
+                                    return slug === 'vraag-&-antwoord' ?
+                                  <Link href={`/about/${encodeURIComponent(slug)}`}>
                                     <span className='uppercase pl-8 text-white1 group rounded-md inline-flex items-center text-base font-medium'>
                                       VRAAG & ANTWOORD
                                     </span>
                                   </Link>
+                                  : <></>
+                                  })}
                                 </div>
                                 <div className='inline-block relative '>
                                   <Link href='/contact'>
@@ -489,54 +477,31 @@ export default function Nav() {
                     Over CircuLaw
                   </Disclosure.Button>
 
-                  {slugs?.map((slug) => (
+                  {slugs?.map((slug) => {
+                      return slug !== 'vraag-&-antwoord' ?
                     <Disclosure.Button
                       key={slug}
-                      className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
+                      className='font-semibold ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base first-letter:uppercase'
                     >
                       <Link href={`/about/${encodeURIComponent(slug)}`}>
                         {slug.replaceAll('-', ' ')}
                       </Link>
                     </Disclosure.Button>
-                  ))}
+                    : <></>
+                  })}
 
-                  {/* 
+                 {slugs?.map((slug) => {
+                  return slug === 'vraag-&-antwoord' ?
+                
                   <Disclosure.Button
                     as='a'
-                    href='/wat-is-circulaw'
-                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
-                  >
-                    Wat is CircuLaw?
-                  </Disclosure.Button>
-                  <Disclosure.Button
-                    as='a'
-                    href='/status-en-ambities'
-                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
-                  >
-                    Wat vind je nu op CircuLaw?
-                  </Disclosure.Button>
-                  <Disclosure.Button
-                    as='a'
-                    href='/wetsanalyse-met-circulaire-blik'
-                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
-                  >
-                    Wetsanalyse vanuit circulaire blik
-                  </Disclosure.Button>
-                  <Disclosure.Button
-                    as='a'
-                    href='/wie-maken-circulaw'
-                    className='ml-5 border-transparent text-gray-900 border-b border-blush3 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
-                  >
-                    Wie maken CircuLaw?
-                  </Disclosure.Button>
-                  */}
-                  <Disclosure.Button
-                    as='a'
-                    href='/hoe-het-werkt'
+                    href={`/about/${encodeURIComponent(slug)}`}
                     className='uppercase text-black1  border-b border-blush3 block pl-3 pr-4 py-5 font-semibold'
                   >
                     Vraag en Antwoord
                   </Disclosure.Button>
+                  : <></>
+                   })}
                   <Disclosure.Button
                     as='a'
                     href='/contact'
