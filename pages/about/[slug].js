@@ -1,38 +1,21 @@
+import { PortableText } from '@portabletext/react';
 import Layout from '../../components/layouts/layout';
 import client from '../../lib/sanity';
-
-import Image from 'next/image';
-import Link from 'next/link';
-import LinkIcon from '../../components/link-icon';
-import { PortableText } from '@portabletext/react';
-// import Image from 'next/image';
-import MeasureOverview from '../../components/measure-overview';
-import MeasureTable from '../../components/measure-table';
 import CustomButton from '../../components/custom-button';
+import Image from 'next/image';
+import LinkIcon from '../../components/link-icon';
+import Link from 'next/link';
+import OverNav from '../../components/over-nav';
 
 const pathsQuery = `
-*[_type == "measure" && defined(slug.current)][].slug.current
+*[_type == "aboutPage" && defined(slug.current)][].slug.current
 `;
-const measureQuery = `
-*[_type == "measure" && slug.current == $slug] [0] {
-    _id,
-    titel,
-    subtitel,
-    thema,
-    rLadder,
-    subrechtsgebied,
-    juridischInvloed,
-    invloedTooltipText,
-    juridischeHaalbaarheid,
-    JHTooltipText,
-    rechtsgebied,
-    citeertitel,
-    artikel,
-    artikelLink,
-    lawDate,
-    overheidslaag,
-    content,
-    juridischeToelichting,
+
+const pageQuery = `
+*[_type == "aboutPage" && slug.current == $slug][0]{
+    pageTitle,
+    aboutPageContent,
+    slug,
 }
 `;
 
@@ -79,7 +62,7 @@ const components = {
       return (
         <div className='-mx-8 sm:mx-0'>
           <div className='bg-green1 '>
-            <div className='gradient-pdf p-10 my-10 relative overflow-hidden'>
+            <div className=' gradient-pdf p-10 my-10 relative overflow-hidden'>
               <div className='absolute -bottom-44 -right-44 h-96 w-96 invisible md:visible'>
                 <Image src='/pdf-deco.png' alt='decorative image' width={584} height={562} />
               </div>
@@ -164,54 +147,25 @@ const components = {
   },
 };
 
-export default function TestMeasure({ data }) {
+export default function AboutPage({ data }) {
+  console.log(data);
   return (
     <Layout>
-      <div className='measure-bg'>
-        <div className='global-margin pt-4 sm:pt-10 '>
-          <div className='grid grid-cols 1 sm:grid-cols-12 content-center'>
-            <div className='sm:col-span-12 row-span-1 h-12 mt-4'>
-              {/* BREADCRUMB */}
-              {data?.measure?.thema === 'houtbouw' && (
-                <Link href='/measures/houtbouw' className=''>
-                  <span className='breadcrumb'>{'<'} Terug</span>
-                </Link>
-              )}
-              {data?.measure?.thema === 'circulaire-windturbines' && (
-                <Link href='/measures/windturbines' className=''>
-                  <span className='text-greenLink breadcrumb flex col-span-12'>← Terug</span>
-                </Link>
-              )}
-              {data?.measure?.thema === 'matrassen' && (
-                <Link href='/measures/matrassen' className=''>
-                  <span className='text-greenLink breadcrumb flex col-span-12'>← Terug</span>
-                </Link>
-              )}
+      <div className='global-margin  pb-8 text-black1'>
+        <div className='grid grid-cols-1 lg:grid-cols-3'>
+          <div className='col-span-2'>
+            <div className='breadcrumb pt-8 text-greenLink'>
+              <Link href='/'>Home &gt;</Link>
             </div>
-            <div className='sm:col-span-12 row-span-1'>
-              <h1 className='lg:block sm:pt-4 pb-6 sm:pb-10 mob-new sm:urban'>
-                {data?.measure?.titel}
+            <div className='max-w-4xl'>
+              <h1 className='lg:block sm:pt-10 py-6 sm:pb-10 mob-new sm:urban'>
+                {data?.aboutPage.pageTitle}
               </h1>
+              <PortableText value={data?.aboutPage?.aboutPageContent} components={components} />
             </div>
-            {data?.measure?.subtitel && (
-              <div className='sm:col-span-7 row-span-1'>
-                <p className='lg:block sub-mob-new sm:subheading pb-10'>
-                  {data?.measure?.subtitel}
-                </p>
-              </div>
-            )}
           </div>
-
-          <div className='grid grid-cols-1 sm:grid-cols-3 '>
-            <MeasureOverview data={data} viewport='mobile' />
-            <div className='sm:max-w-3xl pb-20 col-span-2 '>
-              <div className='py-4'>
-                <PortableText value={data?.measure?.content} components={components} />
-                {}
-              </div>
-              <MeasureTable data={data} />
-            </div>
-            <MeasureOverview data={data} viewport='desktop' />
+          <div className='mx-20 my-20 max-w-sm'>
+            <OverNav pagename={data?.aboutPage?.slug.current} />
           </div>
         </div>
       </div>
@@ -230,11 +184,11 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
   const { slug = '' } = context.params;
-  const measure = await client.fetch(measureQuery, { slug });
   console.log(slug, 'slug');
-  console.log(measure);
+  const aboutPage = await client.fetch(pageQuery, { slug });
+  console.log(aboutPage, 'aboutPage');
   return {
-    props: { data: { measure } },
+    props: { data: { aboutPage } },
     revalidate: 1,
   };
 }

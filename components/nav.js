@@ -1,25 +1,32 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/dist/client/router';
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Popover, Disclosure, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { Link as ScrollLink } from 'react-scroll';
-import { get_waardeketens, get_over } from '../utils/nav-structure';
+import { get_waardeketens } from '../utils/nav-structure';
 import CirculawLogo from '../public/Circulaw_logotype.png';
 import logo from '../public/Circulaw_logotype_home.png';
 import CustomButton from './custom-button';
 import BetaBanner from './beta-banner';
+import useSWR from 'swr';
+import client from '../lib/sanity';
+import { groq } from 'next-sanity';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
 const waardeketens = get_waardeketens();
-const over = get_over();
 
 export default function Nav() {
+  const { data } = useSWR(groq`*[_type == "aboutPage"]`, (query) => client.fetch(query));
+
+  const [slugs, setSlugs] = useState();
+  useEffect(() => setSlugs(data?.map((page) => page.slug.current)), [data]);
+
   const router = useRouter();
   if (router.pathname !== '/') {
     return (
@@ -123,6 +130,7 @@ export default function Nav() {
                                   </>
                                 )}
                               </Popover>
+                              {/* TESST NAV */}
                               <Popover className='inline-block relative '>
                                 {({ open }) => (
                                   <>
@@ -154,18 +162,16 @@ export default function Nav() {
                                       <Popover.Panel className='absolute z-10  transform w-screen max-w-xs sm:px-0'>
                                         <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                                           <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
-                                            {over.map((item) => (
-                                              <a
-                                                key={item.name}
-                                                href={item.href}
+                                            {slugs?.map((slug) => (
+                                              <Link
+                                                key={slug}
+                                                href={`/about/${encodeURIComponent(slug)}`}
                                                 className='-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase dropdown-menu border-b'
                                               >
-                                                <p
-                                                  className={`text-base font-medium text-gray-900 ${item.className}`}
-                                                >
-                                                  {item.name}
-                                                </p>
-                                              </a>
+                                                <span className='text-base font-medium text-gray-900'>
+                                                  {slug.replaceAll('-', ' ')}
+                                                </span>
+                                              </Link>
                                             ))}
                                           </div>
                                         </div>
@@ -174,6 +180,7 @@ export default function Nav() {
                                   </>
                                 )}
                               </Popover>
+
                               <div className='inline-block relative'>
                                 <Link href='/hoe-het-werkt'>
                                   <span className='uppercase pl-8 text-black group rounded-md inline-flex items-center text-base font-medium'>
@@ -225,14 +232,17 @@ export default function Nav() {
                 >
                   Over CircuLaw
                 </Disclosure.Button>
-                <Disclosure.Button
-                  as='a'
-                  href='/waarom-circulaw'
-                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
-                >
-                  Waarom CircuLaw?
-                </Disclosure.Button>
-                <Disclosure.Button
+                {slugs?.map((slug) => (
+                  <Disclosure.Button
+                    key={slug}
+                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
+                  >
+                    <Link href={`/about/${encodeURIComponent(slug)}`}>
+                      {slug.replaceAll('-', ' ')}
+                    </Link>
+                  </Disclosure.Button>
+                ))}
+                {/**                <Disclosure.Button
                   as='a'
                   href='/wat-is-circulaw'
                   className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
@@ -260,6 +270,8 @@ export default function Nav() {
                 >
                   Wie maken CircuLaw?
                 </Disclosure.Button>
+                 */}
+
                 <Disclosure.Button
                   as='a'
                   href='/hoe-het-werkt'
@@ -407,18 +419,16 @@ export default function Nav() {
                                         <Popover.Panel className='absolute z-10  transform w-screen max-w-xs sm:px-0'>
                                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                                             <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
-                                              {over.map((item) => (
-                                                <a
-                                                  key={item.name}
-                                                  href={item.href}
+                                              {slugs?.map((slug) => (
+                                                <Link
+                                                  key={slug}
+                                                  href={`/about/${encodeURIComponent(slug)}`}
                                                   className='-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase dropdown-menu border-b'
                                                 >
-                                                  <p
-                                                    className={`text-base font-medium text-gray-900 ${item.className}`}
-                                                  >
-                                                    {item.name}
+                                                  <p className='text-base font-medium text-gray-900'>
+                                                    {slug.replaceAll('-', ' ')}
                                                   </p>
-                                                </a>
+                                                </Link>
                                               ))}
                                             </div>
                                           </div>
@@ -478,13 +488,19 @@ export default function Nav() {
                   >
                     Over CircuLaw
                   </Disclosure.Button>
-                  <Disclosure.Button
-                    as='a'
-                    href='/waarom-circulaw'
-                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
-                  >
-                    Waarom CircuLaw?
-                  </Disclosure.Button>
+
+                  {slugs?.map((slug) => (
+                    <Disclosure.Button
+                      key={slug}
+                      className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
+                    >
+                      <Link href={`/about/${encodeURIComponent(slug)}`}>
+                        {slug.replaceAll('-', ' ')}
+                      </Link>
+                    </Disclosure.Button>
+                  ))}
+
+                  {/* 
                   <Disclosure.Button
                     as='a'
                     href='/wat-is-circulaw'
@@ -513,6 +529,7 @@ export default function Nav() {
                   >
                     Wie maken CircuLaw?
                   </Disclosure.Button>
+                  */}
                   <Disclosure.Button
                     as='a'
                     href='/hoe-het-werkt'

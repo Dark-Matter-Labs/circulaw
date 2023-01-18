@@ -19,6 +19,7 @@ const waardeketens = [
     },
   ];
   
+  
   const over = [
     {
       name: 'Waarom CircuLaw?',
@@ -51,6 +52,7 @@ const waardeketens = [
       className: '',
     },
   ];
+
 
 export function get_waardeketens() {
     return waardeketens;
