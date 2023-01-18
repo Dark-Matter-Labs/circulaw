@@ -53,16 +53,19 @@ export default function ThemeBottomSection({ props }) {
                   </p>
                   <div className='flex justify-between pt-20'>
                     <div>
-                      {measure?.extraContent && (
+                      {/* this is always rendering two both sections */}
+                      
                         <div className='flex'>
+                          {measure?.extraContent.includes('Leidraad') && 
                           <div className='border-green-600 bg-green-600 text-white r-category py-0.5 px-2 rounded-md'>
-                            {measure?.extraContent[0]}
-                          </div>
+                            Leidraad
+                          </div>}
+                          {measure?.extraContent.includes('Voorbeeld') && 
                           <div className='border-green33 bg-green33 text-white r-category p-0.5 px-2 rounded-md ml-4'>
-                            {measure?.extraContent[1]}
-                          </div>
+                            Voorbeeld
+                          </div>}
                         </div>
-                      )}
+                    
                     </div>
                     <div>
                       <Link href={`/measures/${measure?.slug.current}`}>
