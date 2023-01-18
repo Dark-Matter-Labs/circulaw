@@ -41,7 +41,7 @@ const components = {
     greenBox: ({ value }) => (
       <div className='-mx-8 sm:mx-0 my-10'>
         <div className='bg-green-300 w-full px-8 py-8'>
-          <h2 className='pb-6 mobile sm:desktop'>{value?.greenBoxTitle}</h2>
+          <h3 className='pb-6 mobile sm:desktop'>{value?.greenBoxTitle}</h3>
           <div className='body-text-mobile sm:body-text'>{value?.greenBoxText}</div>
         </div>
       </div>
@@ -83,7 +83,7 @@ const components = {
               <div className='absolute -bottom-44 -right-44 h-96 w-96 invisible md:visible'>
                 <Image src='/pdf-deco.png' alt='decorative image' width={584} height={562} />
               </div>
-              <h2 className='pb-2 mobile sm:desktop text-white'>{value.pdfTitle}</h2>
+              <h3 className='pb-2 mobile sm:desktop text-white'>{value.pdfTitle}</h3>
               <p className='body-text-mobile sm:body-text text-black-white-200 pb-4'>{value.pdfText}</p>
               <a
                 href={`https://cdn.sanity.io/files/${
@@ -111,7 +111,7 @@ const components = {
     smallPara: ({ value }) => (
       <div className='flex justify-left pl-8 sm:pl-12'>
         <div className='mb-10 pt-10 w-5/6'>
-          <h4 className='mobile sm:desktop'>{value.smallParaTitle}</h4>
+          <h5 className='mobile sm:desktop'>{value.smallParaTitle}</h5>
           <p className='body-text-mobile sm:body-small'>{value.smallParaText}</p>
         </div>
       </div>
@@ -134,9 +134,9 @@ const components = {
     bullet: ({ children }) => <li className='py-0.5'>{children}</li>,
   },
   block: {
-    firstH2: ({ children }) => <h2 className='pb-8 mobile sm:desktop'>{children}</h2>,
-    h2: ({ children }) => <h2 className='py-8 mobile sm:desktop'>{children}</h2>,
-    h3: ({ children }) => <h3 className='py-8 mobile sm:desktop'>{children}</h3>,
+    firstH2: ({ children }) => <h3 className='pb-8 mobile sm:desktop'>{children}</h3>,
+    h2: ({ children }) => <h3 className='py-8 mobile sm:desktop'>{children}</h3>,
+    h3: ({ children }) => <h4 className='py-8 mobile sm:desktop'>{children}</h4>,
     // need to add other styles here
     normal: ({ children }) => (
       <p className='newlineDisplay body-text-mobile sm:body-text py-2'>{children}</p>
@@ -189,9 +189,9 @@ export default function TestMeasure({ data }) {
               )}
             </div>
             <div className='sm:col-span-12 row-span-1'>
-              <h1 className='lg:block sm:pt-4 pb-6 sm:pb-10 mobile sm:desktop'>
+              <h2 className='lg:block sm:pt-4 pb-6 sm:pb-10 mobile sm:desktop'>
                 {data?.measure?.titel}
-              </h1>
+              </h2>
             </div>
             {data?.measure?.subtitel && (
               <div className='sm:col-span-7 row-span-1'>

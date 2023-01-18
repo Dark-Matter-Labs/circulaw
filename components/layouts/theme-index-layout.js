@@ -40,7 +40,7 @@ export default function ThemeLayout(props) {
       <div className=''>
         <div className='global-margin'>
           {/* CREATE COMPONENT */}
-          <div classname='bg-black-white-200'>
+          <div className='bg-black-white-200'>
             <div className='pt-20'>
               <h2 className='mobile sm:desktop'>Overzichten van instrumenten die houtbouw stimuleren </h2>
             </div>
