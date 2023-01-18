@@ -27,7 +27,8 @@ const useSelectedState = createPersistedState('selected');
 
 export default function MeasuresLayout(props) {
   // need to add error check ? or replace the fetcher function in utils/filter funcition
-  const { data } = useSWR(groq`*[_type == "measure"]`, (query) => client.fetch(query));
+  const { data } = useSWR(groq`*[_type == "measure"]| order(lower(titel) asc)`, (query) => client.fetch(query));
+
   // creating references to access child component functions
   const wettelijkFilterRef = useRef();
   const rechtsgebiedFilterRef = useRef();
@@ -545,7 +546,7 @@ export default function MeasuresLayout(props) {
                         onClick={() => setSidebarOpen(false)}
                       >
                         <span className='sr-only'>Close sidebar</span>
-                        <XIcon className='h-6 w-6 text-green1' aria-hidden='true' />
+                        <XIcon className='h-6 w-6 text-green-600' aria-hidden='true' />
                       </button>
                     </div>
                   </Transition.Child>
@@ -693,14 +694,14 @@ export default function MeasuresLayout(props) {
             </div>
 
             {/* AUTOCOMPLETE */}
-            <div className='sm:w-9/12 my-5 focus-within:ring-2 focus-within:border-0 focus-within:ring-green1 border outline-none rounded-lg'>
+            <div className='sm:w-9/12 my-5 focus-within:ring-2 focus-within:border-0 focus-within:ring-green-600 border outline-none rounded-lg'>
               <Combobox value={firstLaw} onChange={setFirstLaw}>
                 <div className='flex items-center px-3'>
                   <SearchIcon className='h-5 w-5 text-gray-500 inline-block' />
                   <Combobox.Input
                     onChange={(e) => setSearchValue(e.target.value)}
                     autoComplete={'off'}
-                    className='w-full py-2 px-3 outline-none border-0 rounded-lg focus:ring-0 font-openSans placeholder:text-grey1 placeholder:italic'
+                    className='w-full py-2 px-3 outline-none border-0 rounded-lg focus:ring-0 font-openSans placeholder:text-black-white-600 placeholder:italic'
                     displayValue={() => searchValue}
                     placeholder='Zoek op trefwoord'
                   />
@@ -725,8 +726,8 @@ export default function MeasuresLayout(props) {
                                 : ''
                             } ${
                               active
-                                ? 'bg-green2 text-white border-0 py-0.5 pl-0.5'
-                                : 'bg-transparent text-green1 border-0 py-0.5 pl-0.5'
+                                ? 'bg-green-400 text-white border-0 py-0.5 pl-0.5'
+                                : 'bg-transparent text-green-600 border-0 py-0.5 pl-0.5'
                             } `}
                           >
                             {law.titel}
@@ -801,7 +802,7 @@ export default function MeasuresLayout(props) {
         <div className='lg:hidden py-5 w-28'>
           <button
             type='button'
-            className='px-4 inline-flex border-2 p-2 w-full border-black1 rounded-lg focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500 lg:hidden'
+            className='px-4 inline-flex border-2 p-2 w-full border-black-white-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500 lg:hidden'
             onClick={() => setSidebarOpen(true)}
           >
             <span className='sr-only'>Open sidebar</span>

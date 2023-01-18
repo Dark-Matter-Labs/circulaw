@@ -69,7 +69,7 @@ export default function ToolTips({ children, icon, data }) {
                       <div className='absolute float-right top-0 right-0 flex pt-4 pr-2 sm:-ml-10'>
                         <button
                           type='button'
-                          className='rounded-md text-green1'
+                          className='rounded-md text-green-600'
                           onClick={() => setOpen(false)}
                         >
                           <span className='sr-only'>Close panel</span>

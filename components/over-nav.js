@@ -22,9 +22,9 @@ export default function OverNav(props) {
           href={`/about/${encodeURIComponent(slug)}`}
           className={classNames(
             slug === props.pagename
-              ? 'text-black1'
+              ? 'text-black-white-800'
               : 'text-greenLink hover:bg-gray-50 hover:text-gray-900',
-            'flex items-center px-3 py-2 breadcrumb bg-white1',
+            'flex items-center px-3 py-2 breadcrumb bg-black-white-200',
           )}
           aria-current={slug.current ? 'page' : undefined}
         >

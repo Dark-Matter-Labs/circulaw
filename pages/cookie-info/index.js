@@ -3,7 +3,7 @@ import Layout from '../../components/layouts/layout';
 export default function Privacy() {
   return (
     <Layout>
-      <div className='global-margin my-20 max-w-2xl text-black1'>
+      <div className='global-margin my-20 max-w-2xl text-black-white-800'>
         <h1 className='mobile sm:main pb-6'>Cookies Info</h1>
         <h2 className='mobile sm:main py-2'>Hoe gaan we om met cookies?</h2>
         <p className='body-text-mobile sm:body-text pb-6 max-w-4xl'>

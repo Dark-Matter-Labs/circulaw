@@ -44,7 +44,7 @@ export default function Nav() {
               <div className=''>
                 <div className='inset-y-0 float-right flex items-center lg:hidden'>
                   {/* Mobile menu button */}
-                  <Disclosure.Button className=' p-2 rounded-md text-green1 '>
+                  <Disclosure.Button className=' p-2 rounded-md text-green-600 '>
                     <span className='sr-only'>Open main menu</span>
                     {open ? (
                       <XIcon className='block h-10 w-10' aria-hidden='true' />
@@ -212,7 +212,7 @@ export default function Nav() {
               <div className='pt-2 pb-4 menu-title-mobile'>
                 <Disclosure.Button
                   as='span'
-                  className='uppercase  text-black1  border-t block pl-3 pr-4 py-5 font-semibold'
+                  className='uppercase  text-black-white-800  border-t block pl-3 pr-4 py-5 font-semibold'
                 >
                   Thema&apos;s
                 </Disclosure.Button>
@@ -232,9 +232,56 @@ export default function Nav() {
                 </Disclosure.Button>
                 <Disclosure.Button
                   as='span'
-                  className='uppercase  text-black1  border-t block pl-3 pr-4 py-5 font-semibold'
+                  className='uppercase  text-black-white-800  border-t block pl-3 pr-4 py-5 font-semibold'
                 >
                   Over CircuLaw
+                </Disclosure.Button>
+                {slugs?.map((slug) => (
+                  <Disclosure.Button
+                    key={slug}
+                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
+                  >
+                    <Link href={`/about/${encodeURIComponent(slug)}`}>
+                      {slug.replaceAll('-', ' ')}
+                    </Link>
+                  </Disclosure.Button>
+                ))}
+                {/**                <Disclosure.Button
+                  as='a'
+                  href='/wat-is-circulaw'
+                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
+                >
+                  Wat is CircuLaw?
+                </Disclosure.Button>
+                <Disclosure.Button
+                  as='a'
+                  href='/status-en-ambities'
+                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
+                >
+                  Wat vind je nu op CircuLaw?
+                </Disclosure.Button>
+                <Disclosure.Button
+                  as='a'
+                  href='/wetsanalyse-met-circulaire-blik'
+                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
+                >
+                  Wetsanalyse vanuit circulaire blik
+                </Disclosure.Button>
+                <Disclosure.Button
+                  as='a'
+                  href='/wie-maken-circulaw'
+                  className='ml-5 border-transparent text-gray-900 border-b border-blush3 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
+                >
+                  Wie maken CircuLaw?
+                </Disclosure.Button>
+                 */}
+
+                <Disclosure.Button
+                  as='a'
+                  href='/hoe-het-werkt'
+                  className='uppercase text-black-white-800  border-b border-blush3 block pl-3 pr-4 py-5 font-semibold'
+                >
+                  Vraag en Antwoord
                 </Disclosure.Button>
                 {aboutSlugs?.map((slug) => (
                     <Disclosure.Button
@@ -256,7 +303,7 @@ export default function Nav() {
                 <Disclosure.Button
                   as='a'
                   href='/contact'
-                  className='uppercase text-black1  border-b border-blush3 block pl-3 pr-4 py-5 font-semibold'
+                  className='uppercase text-black-white-800  border-b border-blush3 block pl-3 pr-4 py-5 font-semibold'
                 >
                   Contact
                 </Disclosure.Button>
@@ -316,14 +363,14 @@ export default function Nav() {
                                     <>
                                       <Popover.Button
                                         className={classNames(
-                                          open ? 'text-white1' : 'text-white1',
+                                          open ? 'text-black-white-200' : 'text-black-white-200',
                                           'group rounded-md inline-flex items-center text-base font-medium',
                                         )}
                                       >
                                         <span className='uppercase'>Thema&apos;s</span>
                                         <ChevronDownIcon
                                           className={classNames(
-                                            open ? 'text-white1' : 'text-white1',
+                                            open ? 'text-black-white-200' : 'text-black-white-200',
                                             'ml-2 h-5 w-5',
                                           )}
                                           aria-hidden='true'
@@ -367,15 +414,15 @@ export default function Nav() {
                                     <>
                                       <Popover.Button
                                         className={classNames(
-                                          open ? 'text-white1' : 'text-white1',
+                                          open ? 'text-black-white-200' : 'text-black-white-200',
                                           'group rounded-md inline-flex items-center text-base font-medium',
                                         )}
                                       >
                                         <span className='uppercase pl-8'>OVER CIRCULAW</span>
                                         <ChevronDownIcon
                                           className={classNames(
-                                            open ? 'text-white1' : 'text-white1',
-                                            'ml-2 h-5 w-5 group-hover:white1',
+                                            open ? 'text-black-white-200' : 'text-black-white-200',
+                                            'ml-2 h-5 w-5 group-hover:black-white-200',
                                           )}
                                           aria-hidden='true'
                                         />
@@ -414,14 +461,14 @@ export default function Nav() {
                                 </Popover>
                                 <div className='inline-block relative'>
                                       <Link href={`/about/${encodeURIComponent(FAQslug)}`}>
-                                        <span className='uppercase pl-8 text-white1 group rounded-md inline-flex items-center text-base font-medium'>
+                                        <span className='uppercase pl-8 text-black-white-200 group rounded-md inline-flex items-center text-base font-medium'>
                                           VRAAG & ANTWOORD
                                         </span>
                                       </Link>
                                 </div>
                                 <div className='inline-block relative '>
                                   <Link href='/contact'>
-                                    <span className='uppercase pl-8 text-white1 group rounded-md inline-flex items-center text-base font-medium'>
+                                    <span className='uppercase pl-8 text-black-white-200 group rounded-md inline-flex items-center text-base font-medium'>
                                       CONTACT
                                     </span>
                                   </Link>
@@ -439,7 +486,7 @@ export default function Nav() {
                 <div className='pt-2 pb-4 menu-title-mobile'>
                   <Disclosure.Button
                     as='span'
-                    className='uppercase text-black1 border-t block pl-3 pr-4 py-5 font-semibold'
+                    className='uppercase text-black-white-800 border-t block pl-3 pr-4 py-5 font-semibold'
                   >
                     Thema&apos;s
                   </Disclosure.Button>
@@ -459,7 +506,7 @@ export default function Nav() {
                   </Disclosure.Button>
                   <Disclosure.Button
                     as='span'
-                    className='uppercase  text-black1  border-t block pl-3 pr-4 py-5 font-semibold'
+                    className='uppercase  text-black-white-800  border-t block pl-3 pr-4 py-5 font-semibold'
                   >
                     Over CircuLaw
                   </Disclosure.Button>
@@ -479,7 +526,7 @@ export default function Nav() {
                       <Disclosure.Button
                         as='a'
                         href={`/about/${encodeURIComponent(FAQslug)}`}
-                        className='uppercase text-black1  border-b border-blush3 block pl-3 pr-4 py-5 font-semibold'
+                        className='uppercase text-black-white-800  border-b border-blush3 block pl-3 pr-4 py-5 font-semibold'
                       >
                         Vraag en Antwoord
                       </Disclosure.Button>
@@ -487,7 +534,7 @@ export default function Nav() {
                   <Disclosure.Button
                     as='a'
                     href='/contact'
-                    className='uppercase text-black1  border-b border-blush3 block pl-3 pr-4 py-5 font-semibold'
+                    className='uppercase text-black-white-800  border-b border-blush3 block pl-3 pr-4 py-5 font-semibold'
                   >
                     Contact
                   </Disclosure.Button>
@@ -500,10 +547,10 @@ export default function Nav() {
         {/* TODO: move this into header component and out of nav*/}
         <main className='global-margin sm:mt-12'>
           <div className='text-center mx-auto max-w-4xl'>
-            <h1 className='text-6xl homepage-header-title-mobile sm:homepage-header-title text-white1 py-10'>
+            <h1 className='text-6xl homepage-header-title-mobile sm:homepage-header-title text-black-white-200 py-10'>
               <span className='block '>Regelgeving voor een circulaire economie</span>{' '}
             </h1>
-            <p className='mt-3 homepage-header-body text-white1 pb-8'>
+            <p className='mt-3 homepage-header-body text-black-white-200 pb-8'>
               CircuLaw laat zien hoe je met bestaande juridische instrumenten de circulaire economie
               kan versnellen. We helpen beleidsmakers bij het selecteren en toepassen van die
               instrumenten. Ook bieden we inzicht in de samenhang tussen juridische instrumenten en

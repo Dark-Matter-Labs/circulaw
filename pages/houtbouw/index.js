@@ -42,6 +42,10 @@ export default function Houtbouw() {
   return (
     <Layout>
       <ThemeLayout
+       cardLinkList='/measures/houtbouw'
+       cardLinkSamenhang='/houtbouw/samenhang-aantal-houtbouwmaatregelen'
+       cardLinkWaarvoor='/houtbouw/welke-overheid'
+        thema='houtbouw'
         icon={WoodIcon}
         iconAlt='Icon of Wood'
         title='Houtbouw stimuleren'

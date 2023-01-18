@@ -42,6 +42,9 @@ export default function Houtbouw() {
   return (
     <Layout>
       <ThemeLayout
+        cardLinkList='/measures/matrassen'
+        cardLinkSamenhang='/matrassen'
+        cardLinkWaarvoor='/matrassen'
         icon={WoodIcon}
         iconAlt='Icon of Matrassen'
         title='MATRASSEN TITEL stimuleren'

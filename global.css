@@ -13,69 +13,128 @@
     @apply max-w-screen-xl mx-auto;
   }
 
-   
-  h1.urban {
-    font-family: 'Urbanist', 'sans-serif';
-    font-weight: 600;
-    font-size: 54.9px;
-    line-height: 64px;
+  h1.desktop {
+    @apply font-urbanist text-8xl font-semibold leading-17;
   }
 
-  h2.urban {
-    font-family: 'Urbanist', 'sans-serif';
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 32px;
+  h1.mobile {
+    @apply font-urbanist text-5xl font-semibold leading-13; 
   }
 
-  h3.urban {
-    font-family: 'Urbanist', 'sans-serif';
-    font-weight: 600;
-    font-size: 22.5px;
-    line-height: 30px;
+  h2.desktop {
+    @apply font-urbanist text-7xl font-semibold leading-16;
   }
 
-  h4.urban {
-    font-family: 'Urbanist', 'sans-serif';
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 32px;
+  h2.mobile {
+    @apply font-urbanist text-3xl font-semibold leading-13;
   }
 
-  h1.mob-new {
-    font-family: 'Urbanist', 'sans-serif';
-    font-weight: 700;
-    font-size: 24.5px;
-    line-height: 30px;
+  h3.desktop {
+    @apply font-urbanist text-6xl font-semibold leading-14;
   }
 
-  h2.mob-new {
-    font-family: 'Urbanist', 'sans-serif';
-    font-weight: 600;
-    font-size: 21.88px;
-    line-height: 30px;
+  h3.mobile {
+    @apply font-urbanist text-2xl font-semibold leading-10;
   }
 
-  .h3-mob-new {
-    font-family: 'Urbanist', 'sans-serif';
-    font-weight: 600;
-    font-size: 18.75px;
-    line-height: 24px;
-  }
-  .h4-mob-new {
-    font-family: 'Urbanist', 'sans-serif';
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 24px;
+  h4.desktop {
+    @apply font-urbanist text-4xl font-semibold leading-15;
   }
 
-  .sub-mob-new {
-    font-family: 'Manrope';
-    font-size: 15px;
-    line-height: 22px;
-    font-weight: 300;
+  h4.mobile {
+    @apply font-urbanist text-lg font-semibold leading-10;
   }
 
+  h5.desktop {
+    @apply font-urbanist text-xl font-medium leading-14;
+  }
+
+  h5.mobile {
+    @apply font-urbanist text-base font-medium leading-10;
+  }
+
+  h6.desktop {
+    @apply font-manrope text-xs font-semibold leading-9;
+  }
+
+  h6.mobile {
+    @apply font-urbanist text-xs font-medium leading-6;
+  }
+
+  h6.desktop.xb {
+    @apply font-manrope text-xs font-extrabold leading-9;
+  }
+
+  .p-desktop-header {
+    @apply font-urbanist text-3xl font-normal leading-14;
+  }
+
+  .p-mobile-header {
+    @apply font-manrope text-sm font-normal leading-8;
+  }
+
+  .p-desktop-bg {
+    @apply font-manrope text-xl font-normal leading-13;
+  }
+
+  .p-mobile-bg {
+    @apply font-manrope text-lg font-normal leading-12;
+  }
+
+  .p-desktop-md {
+    @apply font-manrope text-base font-normal leading-10;
+  }
+
+  .p-mobile-md {
+    @apply font-manrope text-xs font-normal leading-7;
+  }
+
+  .bullet-desktop {
+    @apply font-manrope text-base font-normal leading-10;
+  }
+
+  .bullet-mobile {
+    @apply font-manrope text-base font-semibold leading-11;
+  }
+
+  .link-desktop {
+    @apply font-manrope text-xl font-semibold leading-13;
+  }
+
+  .link-mobile {
+    @apply font-manrope text-base font-medium leading-11;
+  }
+
+  .button-desktop {
+    @apply font-manrope text-base font-bold leading-10;
+  }
+
+  .button-mobile {
+    @apply font-manrope text-base font-semibold leading-8;
+  }
+
+  .table-desktop {
+    @apply font-manrope text-base font-semibold leading-3;
+  }
+
+  .table-mobile {
+    @apply font-manrope text-xs font-semibold leading-4;
+  }
+
+  .breadcrumb {
+    @apply font-manrope text-xs font-medium leading-5 uppercase;
+  }
+
+  .popup-desktop {
+    @apply font-manrope text-base font-medium leading-8;
+  }
+
+  .popup-mobile {
+    @apply font-manrope text-xs font-medium leading-6;
+  }
+
+
+  /* to be removed */
   .overview-thema {
     font-family: 'Urbanist', 'sans-serif';
     font-weight: 600;
@@ -112,68 +171,11 @@
     font-weight: 300;
   }
 
-  h1.mobile {
-    font-family: 'Public Sans';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 30px;
-    line-height: 130%;
-  }
-
-  h1.main {
-    font-family: 'Public Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 52px;
-    line-height: 62px;
-  }
-
-  h2.main {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 24px;
-    line-height: 150%;
-  }
-
-  h2.mobile {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-size: 20px;
-    line-height: 140%;
-    font-weight: 800;
-  }
-
-  h3 {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 130%;
-  }
-
-  h4 {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 140%;
-  }
-
-  h5 {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 149.19%;
-  }
-
-  h6 {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 149.19%;
+  .body-new {
+    font-family: 'Urbanist', 'sans-serif';
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
   }
 
   .homepage-header-title {
@@ -239,15 +241,6 @@
     text-decoration: underline;
   }
 
-  .link-mobile {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
-    text-decoration: underline;
-  }
-
   .menu-title {
     font-family: 'Manrope';
     font-style: normal;
@@ -304,8 +297,6 @@
     line-height: 15px;
   }
   
-
-
   .dropdown-menu {
     font-family: 'Manrope';
     font-style: normal;
@@ -455,10 +446,15 @@
   background: linear-gradient(rgba(248, 250, 248, 0) 0%, #F8FAF8 30%);
 }
 
+/* RENAME as this is also for Thema Hero */
 .gradient-pdf {
   background: linear-gradient(#042D36 0%, rgba(34, 83, 44, 0) 100%);
- 
 }
+
+.thema-hero-gradient {
+  background: linear-gradient(rgba(34, 83, 44, 0) 0%, #042D36 100%);
+}
+
 
 .measure-bg {
   background: '#F5F5F5';

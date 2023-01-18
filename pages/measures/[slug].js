@@ -40,8 +40,8 @@ const components = {
   types: {
     greenBox: ({ value }) => (
       <div className='-mx-8 sm:mx-0 my-10'>
-        <div className='bg-green6 w-full px-8 py-8'>
-          <h2 className='pb-6 h3-mob-new urban'>{value?.greenBoxTitle}</h2>
+        <div className='bg-green-300 w-full px-8 py-8'>
+          <h2 className='pb-6 mobile sm:desktop'>{value?.greenBoxTitle}</h2>
           <div className='body-text-mobile sm:body-text'>{value?.greenBoxText}</div>
         </div>
       </div>
@@ -67,7 +67,7 @@ const components = {
               fill='#F8FAF8'
             />
           </svg>
-          <div className='inline-block max-w-xs absolute invisible group-hover:visible z-10 py-3 px-6 bg-grey2 text-black1tooltip-hover-text-mob sm:tooltip-hover-text opacity-0 group-hover:opacity-100 transition tooltip'>
+          <div className='inline-block max-w-xs absolute invisible group-hover:visible z-10 py-3 px-6 bg-black-white-300 text-black-white-800tooltip-hover-text-mob sm:tooltip-hover-text opacity-0 group-hover:opacity-100 transition tooltip'>
             {value.hoverText}
           </div>
         </button>
@@ -78,13 +78,13 @@ const components = {
       const [_file, id, extension] = value.asset._ref.split('-');
       return (
         <div className='-mx-8 sm:mx-0'>
-          <div className='bg-green1 '>
-            <div className=' gradient-pdf p-10 my-10 relative overflow-hidden'>
+          <div className='bg-green-600 '>
+            <div className='gradient-pdf p-10 my-10 relative overflow-hidden'>
               <div className='absolute -bottom-44 -right-44 h-96 w-96 invisible md:visible'>
                 <Image src='/pdf-deco.png' alt='decorative image' width={584} height={562} />
               </div>
-              <h2 className='pb-2 h3-mob-new sm:urban text-white'>{value.pdfTitle}</h2>
-              <p className='body-text-mobile sm:body-text text-white1 pb-4'>{value.pdfText}</p>
+              <h2 className='pb-2 mobile sm:desktop text-white'>{value.pdfTitle}</h2>
+              <p className='body-text-mobile sm:body-text text-black-white-200 pb-4'>{value.pdfText}</p>
               <a
                 href={`https://cdn.sanity.io/files/${
                   process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '2vfoxb3h'
@@ -111,7 +111,7 @@ const components = {
     smallPara: ({ value }) => (
       <div className='flex justify-left pl-8 sm:pl-12'>
         <div className='mb-10 pt-10 w-5/6'>
-          <h4 className='h4-mob-new urban'>{value.smallParaTitle}</h4>
+          <h4 className='mobile sm:desktop'>{value.smallParaTitle}</h4>
           <p className='body-text-mobile sm:body-small'>{value.smallParaText}</p>
         </div>
       </div>
@@ -134,9 +134,9 @@ const components = {
     bullet: ({ children }) => <li className='py-0.5'>{children}</li>,
   },
   block: {
-    firstH2: ({ children }) => <h2 className='pb-8 mob-new sm:urban'>{children}</h2>,
-    h2: ({ children }) => <h2 className='py-8 mob-new sm:urban'>{children}</h2>,
-    h3: ({ children }) => <h3 className='py-8 h3-mob-new sm:urban'>{children}</h3>,
+    firstH2: ({ children }) => <h2 className='pb-8 mobile sm:desktop'>{children}</h2>,
+    h2: ({ children }) => <h2 className='py-8 mobile sm:desktop'>{children}</h2>,
+    h3: ({ children }) => <h3 className='py-8 mobile sm:desktop'>{children}</h3>,
     // need to add other styles here
     normal: ({ children }) => (
       <p className='newlineDisplay body-text-mobile sm:body-text py-2'>{children}</p>
@@ -169,7 +169,7 @@ export default function TestMeasure({ data }) {
     <Layout>
       <div className='measure-bg'>
         <div className='global-margin pt-4 sm:pt-10 '>
-          <div className='grid grid-cols 1 sm:grid-cols-12 content-center'>
+          <div className='grid grid-cols-1 sm:grid-cols-12 content-center'>
             <div className='sm:col-span-12 row-span-1 h-12 mt-4'>
               {/* BREADCRUMB */}
               {data?.measure?.thema === 'houtbouw' && (
@@ -189,13 +189,13 @@ export default function TestMeasure({ data }) {
               )}
             </div>
             <div className='sm:col-span-12 row-span-1'>
-              <h1 className='lg:block sm:pt-4 pb-6 sm:pb-10 mob-new sm:urban'>
+              <h1 className='lg:block sm:pt-4 pb-6 sm:pb-10 mobile sm:desktop'>
                 {data?.measure?.titel}
               </h1>
             </div>
             {data?.measure?.subtitel && (
               <div className='sm:col-span-7 row-span-1'>
-                <p className='lg:block sub-mob-new sm:subheading pb-10'>
+                <p className='lg:block p-mobile-header sm:p-desktop-header pb-10'>
                   {data?.measure?.subtitel}
                 </p>
               </div>
