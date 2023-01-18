@@ -2,13 +2,17 @@ import Link from 'next/link';
 import ThemeBottomSection from '../section-bottom-theme-index';
 import ThemeCard from '../theme-card';
 
-export default function ThemeLayout(props) {
-  
+{/* TO DO */}
+// mobile version of header
+// mobile version of bottom section
+
+export default function ThemeLayout({bgHero, ...props}) {
+
   return (
     <>
     <div>
       {/* HEADER */}
-      <div className='w-full h-[28rem] bg-houtbouw-hero bg-center bg-cover relative'>
+      <div className={`w-full h-[28rem] bg-center bg-cover relative ${bgHero}`}>
         <div className='thema-hero-gradient absolute inset-x-0 bottom-0 h-[42rem] z-5'>
           <div className='global-margin h-[28rem] mt-[18rem] z-10'>
             <div className='breadcrumb pt-8 text-greenLink -mt-16'>
@@ -16,7 +20,7 @@ export default function ThemeLayout(props) {
                 &lt; Home
               </Link>
             </div>
-            <div className='grid col-span-8 grid-cols-8 pl-36 pb-14 pt-14 w-4/5'>
+            <div className='grid col-span-8 grid-cols-8 sm:pl-12 sm:pt:12 md:pl-24 lg:pl-36 pb-14 pt-14 w-4/5'>
               <div className='col-span-8'>
                 <h1 className='text-black-white-200 inline-block mobile sm:desktop'>{props.title}</h1>
               </div>

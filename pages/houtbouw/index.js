@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import Layout from '../../components/layouts/layout';
-import HoutbouwHero from '../../public/houtbouwHero.jpeg';
 import ThemeLayout from '../../components/layouts/theme-index-layout';
 import client from '../../lib/sanity';
 
@@ -12,7 +11,6 @@ export default function Houtbouw({laws}) {
   useEffect(() => {
     localStorage.clear();
   });
-console.log(laws)
   return (
     <Layout>
       <ThemeLayout 
@@ -22,9 +20,8 @@ console.log(laws)
       headerSubtitle='We kunnen veel milieuvriendelijker bouwen wanneer we beton (deels) vervangen door houtfont change'
       headerLinkText='meer over nut van houtbouw →' // will be displayed in the same sentence as header subtitle
       headerLinkURL='https://www.ams-institute.org/documents/64/AMS_Institute_Houtbouwmythes_ontkracht.pdf'
-      heroImage={HoutbouwHero}
-      heroImageAlt='hero image for HoutBouw'
-
+      bgHero  = 'bg-houtbouw-hero'
+     
       // number of laws
       numberOfLaws = {laws.length}
 

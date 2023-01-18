@@ -18,7 +18,7 @@ export default function ThemeBottomSection({ props }) {
     <>
       <div className='global-margin'>
       <div className='pb-10 pt-6 global-margin'>
-        <h2 className='mobile sm:desktop'>Uitgelicht: {laws?.length} instrumenten om houtbouw te bevorderen</h2>
+        <h2 className='mobile sm:desktop'>Uitgelicht: {laws?.length} instrumenten om {props.thema} te bevorderen</h2>
         <h4 className='mobile sm:desktop'>Mét voorbeelden en een handige leidraad</h4>
       </div>
       </div>
@@ -43,7 +43,6 @@ export default function ThemeBottomSection({ props }) {
                 </div>
                 <div className='pl-4'>
                   <div className='block py-4 sm:hidden'>
-                    {console.log(urlFor(measure?.featuredImage).url())}
                     <Image
                       src={urlFor(measure?.featuredImage).url()}
                       alt={measure?.featuredImage?.altText}
