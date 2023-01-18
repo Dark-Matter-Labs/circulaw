@@ -12,11 +12,11 @@ export default function OverNav(props) {
 
   const [slugs, setSlugs] = useState();
   useEffect(() => setSlugs(data?.map((page) => page.slug.current)), [data]);
+  const aboutSlugs = slugs?.filter(e => e !== 'vraag-&-antwoord')
 
   return (
     <nav className='space-y-1 sticky top-40' aria-label='Sidebar'>
-      {slugs?.map((slug) => {
-        return slug !== 'vraag-&-antwoord' ?
+      {aboutSlugs?.map((slug) => (
         <a
           key={slug}
           href={`/about/${encodeURIComponent(slug)}`}
@@ -33,8 +33,7 @@ export default function OverNav(props) {
             {slug.replaceAll('-', ' ')}
           </span>
         </a>
-        : <></>
-      })}
+      ))}
     </nav>
   );
 }

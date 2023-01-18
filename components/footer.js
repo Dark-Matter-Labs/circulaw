@@ -51,6 +51,7 @@ export default function Footer() {
 
   const [slugs, setSlugs] = useState();
   useEffect(() => setSlugs(data?.map((page) => page.slug.current)), [data]);
+  const aboutSlugs = slugs?.filter(e => e !== 'vraag-&-antwoord')
 
   return (
     <footer className='' aria-labelledby='footer-heading'>
@@ -84,8 +85,7 @@ export default function Footer() {
                   </p>
                   <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                     <ul role='list' className='mt-4 space-y-4'>
-                      {slugs?.map((slug) => {
-                        return slug !== 'vraag-&-antwoord' ? (
+                      {aboutSlugs?.map((slug) => (
                           <li key={slug}>
                             <a
                               href={`/about/${encodeURIComponent(slug)}`}
@@ -96,10 +96,7 @@ export default function Footer() {
                               </span>
                             </a>
                           </li>
-                        ) : (
-                          <></>
-                        );
-                      })}
+                     ))}
                     </ul>
                   </div>
                 </div>
