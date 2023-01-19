@@ -8,7 +8,7 @@ export default function ActionPanel(props) {
         <h3 className='mobile sm:desktop text-black-white-200'>{props.title}</h3>
         <div className=''>
           <div>
-            <div className='mt-2 max-w-xl body-text-mobile sm:body-text text-black-white-200'>
+            <div className='mt-2 max-w-xl p-mobile-bg sm:p-desktop-bg text-black-white-200'>
               {props.paragraph}
             </div>
           </div>

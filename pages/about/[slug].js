@@ -25,7 +25,7 @@ const components = {
       <div className='-mx-8 sm:mx-0 my-10'>
         <div className='bg-green-300 w-full px-8 py-8'>
           <h2 className='pb-6 mobile sm:desktop'>{value?.greenBoxTitle}</h2>
-          <div className='body-text-mobile sm:body-text'>{value?.greenBoxText}</div>
+          <div className='p-mobile-bg sm:p-desktop-bg'>{value?.greenBoxText}</div>
         </div>
       </div>
     ),
@@ -67,7 +67,7 @@ const components = {
                 <Image src='/pdf-deco.png' alt='decorative image' width={584} height={562} />
               </div>
               <h2 className='pb-2 mobile sm:desktop text-white'>{value.pdfTitle}</h2>
-              <p className='body-text-mobile sm:body-text text-black-white-200 pb-4'>{value.pdfText}</p>
+              <p className='p-mobile-bg sm:p-desktop-bg text-black-white-200 pb-4'>{value.pdfText}</p>
               <a
                 href={`https://cdn.sanity.io/files/${
                   process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '2vfoxb3h'
@@ -95,19 +95,19 @@ const components = {
       <div className='flex justify-left pl-8 sm:pl-12'>
         <div className='mb-10 pt-10 w-5/6'>
           <h4 className='mobile sm:desktop'>{value.smallParaTitle}</h4>
-          <p className='body-text-mobile sm:body-small'>{value.smallParaText}</p>
+          <p className='p-mobile-bg sm:body-small'>{value.smallParaText}</p>
         </div>
       </div>
     ),
   },
   list: {
     bullet: ({ children }) => (
-      <div className='newlineDisplay body-text-mobile sm:body-text truncate'>
+      <div className='newlineDisplay p-mobile-bg sm:p-desktop-bg truncate'>
         <ul className='list-disc pl-6 pb-4 mobile sm:main'>{children}</ul>
       </div>
     ),
     number: ({ children }) => (
-      <div className='newlineDisplay body-text-mobile sm:body-text truncate'>
+      <div className='newlineDisplay p-mobile-bg sm:p-desktop-bg truncate'>
         <ol className='list-decimal pl-6 pb-4 mobile sm:main'>{children}</ol>
       </div>
     ),
@@ -122,7 +122,7 @@ const components = {
     h3: ({ children }) => <h3 className='py-8 mobile sm:desktop'>{children}</h3>,
     // need to add other styles here
     normal: ({ children }) => (
-      <p className='newlineDisplay body-text-mobile sm:body-text py-2'>{children}</p>
+      <p className='newlineDisplay p-mobile-bg sm:p-desktop-bg py-2'>{children}</p>
     ),
   },
   marks: {

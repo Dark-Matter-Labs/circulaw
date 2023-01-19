@@ -9,7 +9,7 @@ const formatDate = (date) => {
 const components = {
   list: {
     bullet: ({ children }) => (
-      <div className='newlineDisplay body-text-mobile sm:body-text truncate'>
+      <div className='newlineDisplay p-mobile-bg sm:p-desktop-bg truncate'>
         <ul className='list-disc pl-6 pb-4 mobile sm:main'>{children}</ul>
       </div>
     ),
@@ -17,7 +17,7 @@ const components = {
   block: {
     // need to add other styles here
     normal: ({ children }) => (
-      <p className='newlineDisplay body-text-mobile sm:body-text pb-4'>{children}</p>
+      <p className='newlineDisplay p-mobile-bg sm:p-desktop-bg pb-4'>{children}</p>
     ),
   },
 };
@@ -28,7 +28,7 @@ export default function MeasureTable({ data }) {
       <div className='grid grid-cols-6'>
         <div className='col-span-6 sm:col-span-4'>
           <div className='pb-5'>
-            <h2 className='pt-6 pb-4 mobile sm:desktop'>Juridische toelichting</h2>
+            <h3 className='pt-6 pb-4 mobile sm:desktop'>Juridische toelichting</h3>
             {data?.measure?.juridischeToelichting && (
               <PortableText components={components} value={data?.measure?.juridischeToelichting} />
             )}

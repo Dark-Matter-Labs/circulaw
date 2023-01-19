@@ -21,7 +21,7 @@ export default function ThemeLayout(props) {
                 <h1 className='text-black-white-200 inline-block mobile sm:desktop'>{props.title} CF </h1>
               </div>
               <div className='col-span-7'>
-                <p className='pt-4 text-black-white-200 body-text-mobile sm:body-text'>
+                <p className='pt-4 text-black-white-200 p-mobile-bg sm:p-desktop-bg'>
                   We kunnen veel milieuvriendelijker bouwen wanneer we beton (deels) vervangen door
                   houtfont change
                   <span className='text-greenLink link-mobile sm:link inline-block pl-1'>
@@ -40,7 +40,7 @@ export default function ThemeLayout(props) {
       <div className=''>
         <div className='global-margin'>
           {/* CREATE COMPONENT */}
-          <div classname='bg-black-white-200'>
+          <div className='bg-black-white-200'>
             <div className='pt-20'>
               <h2 className='mobile sm:desktop'>Overzichten van instrumenten die houtbouw stimuleren </h2>
             </div>
