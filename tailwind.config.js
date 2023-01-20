@@ -21,15 +21,6 @@ module.exports = {
         'green-500': '#028352',
         'green-600': '#035E46',
         'green-800': '#053237',
-        blush1: '#F9D9C8', // will be removed
-        blush2: '#FFF3ED', // will be removed
-        blush3: '#FFD8C4', // will be removed
-        green3: '#AABC97', // will be removed
-        green33: '#659986', // will be removed
-        green4: '#F9FBF9', // will be removed
-        green8: '#0ED28C', // will be removed
-        greenAlpha: 'rgba(109, 159, 107, 0.2)', // will be removed
-        greenLink: '#047857', // will be removed
       },
       fontFamily: {
         urbanist: ['Urbanist', 'sans-serif'],
