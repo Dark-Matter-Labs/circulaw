@@ -14,13 +14,13 @@ export default function Windturbine() {
   return (
     <Layout>
       <ThemeLayout
-      cardLinkList='/measures/windturbines'
-      cardLinkSamenhang='/circulaire-windturbines/samenhang-maatregelen'
-      cardLinkWaarvoor='/circulaire-windturbines/welke-overheid-heeft'
-      // need to go through props and remove old ones. 
-      
-      icon={WindmillIcon}
-      iconAlt='Icon of Windmill'
+        cardLinkList='/measures/windturbines'
+        cardLinkSamenhang='/circulaire-windturbines/samenhang-maatregelen'
+        cardLinkWaarvoor='/circulaire-windturbines/welke-overheid-heeft'
+        // need to go through props and remove old ones.
+
+        icon={WindmillIcon}
+        iconAlt='Icon of Windmill'
         title='Circulaire windturbines'
         shortDescription='Windenergie speelt een cruciale rol in onze duurzame energie-ambities. Daarom vind
       je hier maatregelen die de inzet van windturbines bevorderen en die sturen op

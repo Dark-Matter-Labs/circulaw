@@ -51,7 +51,7 @@ export default function Footer() {
 
   const [slugs, setSlugs] = useState();
   useEffect(() => setSlugs(data?.map((page) => page.slug.current)), [data]);
-  const aboutSlugs = slugs?.filter(e => e !== 'vraag-&-antwoord')
+  const aboutSlugs = slugs?.filter((e) => e !== 'vraag-&-antwoord');
 
   return (
     <footer className='' aria-labelledby='footer-heading'>
@@ -61,7 +61,7 @@ export default function Footer() {
             <div className='grid grid-cols-1 gap-8 sm:col-span-3'>
               <div className='sm:grid sm:grid-cols-4 md:gap-8'>
                 <div className=''>
-                  <p className='text-sm text-green8 font-publicSans font-bold tracking-wider uppercase pb-4 sm:pb-0 '>
+                  <p className='text-sm text-green-300 font-publicSans font-bold tracking-wider uppercase pb-4 sm:pb-0 '>
                     THEMA’S
                   </p>
                   <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
@@ -70,7 +70,7 @@ export default function Footer() {
                         <li key={item.name}>
                           <a
                             href={item.href}
-                            className={`text-base hover:text-green3 ${item.className}`}
+                            className={`text-base hover:text-green-400 ${item.className}`}
                           >
                             {item.name}
                           </a>
@@ -80,7 +80,7 @@ export default function Footer() {
                   </div>
                 </div>
                 <div className=''>
-                  <p className='text-sm text-green8 font-publicSans font-bold tracking-wider uppercase pb-4 sm:pb-0'>
+                  <p className='text-sm text-green-300 font-publicSans font-bold tracking-wider uppercase pb-4 sm:pb-0'>
                     OVER CIRCULAW
                   </p>
                   <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
@@ -89,7 +89,7 @@ export default function Footer() {
                         <li key={slug}>
                           <a
                             href={`/about/${encodeURIComponent(slug)}`}
-                            className='text-base hover:text-green3 text-black-white-200'
+                            className='text-base hover:text-green-400 text-black-white-200'
                           >
                             <span className='inline-block first-letter:uppercase'>
                               {slug.replaceAll('-', ' ')}
@@ -104,7 +104,7 @@ export default function Footer() {
                   <ul role='list' className='mt-4 space-y-4'>
                     {navigation.other.map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className='text-base text-white hover:text-green3'>
+                        <a href={item.href} className='text-base text-white hover:text-green-400'>
                           {item.name}
                         </a>
                       </li>

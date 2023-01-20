@@ -27,7 +27,9 @@ const useSelectedState = createPersistedState('selected');
 
 export default function MeasuresLayout(props) {
   // need to add error check ? or replace the fetcher function in utils/filter funcition
-  const { data } = useSWR(groq`*[_type == "measure"]| order(lower(titel) asc)`, (query) => client.fetch(query));
+  const { data } = useSWR(groq`*[_type == "measure"]| order(lower(titel) asc)`, (query) =>
+    client.fetch(query),
+  );
 
   // creating references to access child component functions
   const wettelijkFilterRef = useRef();
@@ -640,7 +642,7 @@ export default function MeasuresLayout(props) {
                       />
                     </div>
 
-                    <span onClick={reset} className='link-mobile text-greenLink p-8'>
+                    <span onClick={reset} className='link-mobile text-green-500 p-8'>
                       Wis filters
                     </span>
                   </div>
@@ -654,7 +656,7 @@ export default function MeasuresLayout(props) {
         </Transition.Root>
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 '>
-        <div className='hidden sm:block breadcrumb pt-8 text-greenLink'>
+        <div className='hidden sm:block breadcrumb pt-8 text-green-500'>
           <Link href='/'>Home</Link>
           <span className=''> → </span>
           <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`} passHref>
@@ -663,7 +665,7 @@ export default function MeasuresLayout(props) {
             </span>
           </Link>
         </div>
-        <div className='hidden sm:block col-span-2 bg-green3 bg-opacity font-manrope p-5 mt-2 mb-10 max-w-3xl'>
+        <div className='hidden sm:block col-span-2 bg-opacity font-manrope p-5 mt-2 mb-10 max-w-3xl'>
           {props.heading && <h3>{props.heading}</h3>}
           <p>
             {props.introPara}
@@ -815,7 +817,7 @@ export default function MeasuresLayout(props) {
           <span className='text-xl font-manrope font-semibold pr-8'>Filter op:</span>{' '}
           <span
             onClick={reset}
-            className='underline text-greenLink text-lg link-hover font-manrope font-extrabold'
+            className='underline text-green-500 text-lg link-hover font-manrope font-extrabold'
           >
             Wis filters
           </span>

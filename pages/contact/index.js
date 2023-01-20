@@ -69,7 +69,7 @@ export default function Contact() {
       <div className='global-margin'>
         {!submitSuccess ? (
           <>
-            <h1 className='text-green-600 pt-10 mobile sm:main'>Contact</h1>
+            <h2 className='text-green-600 pt-10 mobile sm:desktop'>Contact</h2>
             {showPrivacyError && (
               <p className='p-mobile-bg sm:p-desktop-bg py-2 max-w-2xl text-red-600'>
                 Ga akkoord met de privacyvoorwaarden om te kunnen verzenden
@@ -190,7 +190,7 @@ export default function Contact() {
                       <p className='text-base text-gray-500'>
                         Ik ga akkoord met de{' '}
                         <Link href='/privacy-policy'>
-                          <span className='font-medium text-greenLink font-manrope'>
+                          <span className='font-medium text-green-500 font-manrope'>
                             privacy verklaring
                           </span>
                         </Link>
@@ -208,7 +208,7 @@ export default function Contact() {
           </>
         ) : (
           <>
-            <h1 className='text-green-600 pt-10 mobile sm:main'>Bedankt!</h1>
+            <h2 className='text-green-600 pt-10 mobile sm:desktop'>Bedankt!</h2>
             <p className='p-mobile-bg sm:p-desktop-bg py-10 max-w-2xl text-black-white-800'>
               Bedankt voor je bericht. We nemen zo snel mogelijk contact met je op.
             </p>

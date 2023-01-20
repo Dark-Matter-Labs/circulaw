@@ -15,7 +15,7 @@ export default function WelkeLayout(props) {
   return (
     <>
       <div className='global-margin my-20 max-w-2xl'>
-        <div className='breadcrumb text-greenLink pb-8'>
+        <div className='breadcrumb text-green-500 pb-8'>
           <Link href='/'>Home &gt;</Link>
           <Link href={`/${props.casus.toLowerCase().replace(/ /g, '-')}`}>
             <span className='inline-block lowercase first-letter:uppercase'>
@@ -23,7 +23,7 @@ export default function WelkeLayout(props) {
             </span>
           </Link>
         </div>
-        <h1 className='mobile sm:main text-green-600 pb-2 max-w-3xl mx-auto'>{props.title}</h1>
+        <h2 className='mobile sm:desktop text-green-600 pb-2 max-w-3xl mx-auto'>{props.title}</h2>
       </div>
       <div className='hidden sm:block image-margin'>
         <Image src={props.img} alt='Picture of the case' />

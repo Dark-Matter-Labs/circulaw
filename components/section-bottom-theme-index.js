@@ -12,23 +12,25 @@ export default function ThemeBottomSection({ props }) {
   return (
     <div>
       <div className='pb-10 pt-6 global-margin'>
-        <h2 className='mobile sm:desktop'>Uitgelicht: {data?.length} instrumenten om houtbouw te bevorderen</h2>
-        <h4 className='mobile sm:desktop'>Mét voorbeelden en een handige leidraad</h4>
+        <h3 className='mobile sm:desktop pb-2'>
+          Uitgelicht: {data?.length} instrumenten om houtbouw te bevorderen
+        </h3>
+        <p className='p-mobile-bg sm:p-desktop-bg'>Mét voorbeelden en een handige leidraad</p>
       </div>
 
-      <div className='bg-green3 bg-opacity-10'>
+      <div className=' bg-opacity-10'>
         <div className='pt-5 global-margin  '>
           {data?.map((measure) => (
             <div key={measure._id} className='border-b border-black-white-600 pb-10'>
               <div className='grid grid-cols-1 sm:flex items-center'>
                 <div className='hidden sm:block pt-6 pr-10'>
                   <div className='w-[33rem] h-[16rem]'>
-                  <Image
-                    src={urlFor(measure.featuredImage).url()}
-                    alt={measure.featuredImage.altText}
-                    width={530}
-                    height={400}
-                  />
+                    <Image
+                      src={urlFor(measure.featuredImage).url()}
+                      alt={measure.featuredImage.altText}
+                      width={530}
+                      height={400}
+                    />
                   </div>
                 </div>
                 <div className='pl-4'>
@@ -42,9 +44,7 @@ export default function ThemeBottomSection({ props }) {
                   </div>
 
                   <h3 className='pt-6 mobile sm:desktop'>{measure.titel}</h3>
-                  <p className='p-mobile-bg sm:body-new py-3 max-w-2xl'>
-                    {measure.introText}
-                  </p>
+                  <p className='p-mobile-bg sm:p-desktop-bg py-3 max-w-2xl'>{measure.introText}</p>
                   <div className='flex justify-between pt-20'>
                     <div>
                       {measure?.extraContent && (
@@ -52,7 +52,7 @@ export default function ThemeBottomSection({ props }) {
                           <div className='border-green-600 bg-green-600 text-white r-category py-0.5 px-2 rounded-md'>
                             {measure.extraContent[0]}
                           </div>
-                          <div className='border-green33 bg-green33 text-white r-category p-0.5 px-2 rounded-md ml-4'>
+                          <div className='border-green-500 bg-green-500 text-white r-category p-0.5 px-2 rounded-md ml-4'>
                             {measure.extraContent[1]}
                           </div>
                         </div>
@@ -60,7 +60,7 @@ export default function ThemeBottomSection({ props }) {
                     </div>
                     <div>
                       <Link href={`/measures/${measure.slug.current}`}>
-                        <span className='text-greenLink link-mobile sm:link'>
+                        <span className='text-green-500 link-mobile sm:link-desktop'>
                           Bekijk het instrument{'>'}
                         </span>
                       </Link>

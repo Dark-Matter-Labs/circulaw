@@ -4,8 +4,8 @@ export default function Privacy() {
   return (
     <Layout>
       <div className='global-margin my-20 max-w-2xl text-black-white-800'>
-        <h1 className='mobile sm:main pb-6'>Cookies Info</h1>
-        <h2 className='mobile sm:main py-2'>Hoe gaan we om met cookies?</h2>
+        <h2 className='mobile sm:desktop pb-6'>Cookies Info</h2>
+        <h3 className='mobile sm:desktop py-2'>Hoe gaan we om met cookies?</h3>
         <p className='p-mobile-bg sm:p-desktop-bg pb-6 max-w-4xl'>
           Een cookie is een klein tekstbestand dat onzichtbaar is voor de gebruiker en dat de
           browser opslaat op de computer of het mobiele apparaat van de gebruiker wanneer de
@@ -26,7 +26,7 @@ export default function Privacy() {
         </p>
         <p className='p-mobile-bg sm:p-desktop-bg max-w-4xl pb-6'>
           We are using{' '}
-          <span className='text-greenLink link-mobile sm:link'>
+          <span className='text-green-500 link-mobile sm:link-desktop'>
             <a target='_blank' href='https://www.hotjar.com/' rel='noopener noreferrer'>
               Hotjar
             </a>
@@ -48,7 +48,7 @@ export default function Privacy() {
         </ul>
         <p className='p-mobile-bg sm:p-desktop-bg max-w-4xl pb-6'>
           For more info you can read{' '}
-          <span className='text-greenLink link-mobile sm:link'>
+          <span className='text-green-500 link-mobile sm:link-desktop'>
             <a
               target='_blank'
               href='https://help.hotjar.com/hc/en-us/articles/6952777582999-Cookies-Set-by-the-Hotjar-Tracking-Code'
@@ -64,7 +64,7 @@ export default function Privacy() {
         <p className='p-mobile-bg sm:p-desktop-bg pb-6 max-w-4xl'>
           De gemeente Amsterdam heeft het recht om haar Privacyverklaring te wijzigen. Als er
           inhoudelijke wijzigingen worden doorgevoerd, maken we dit bekend via de website{' '}
-          <span className='text-greenLink link-mobile sm:link'>
+          <span className='text-green-500 link-mobile sm:link-desktop'>
             <a href='https://www.amsterdam.nl/' target='_blank' rel='noopener noreferrer'>
               amsterdam.nl
             </a>
@@ -73,7 +73,7 @@ export default function Privacy() {
         </p>
         <p className='p-mobile-bg sm:p-desktop-bg max-w-4xl pb-6'>
           Heb je vragen naar aanleiding van deze Privacyverklaring? Mail ons dan op{' '}
-          <span className='text-greenLink link-mobile sm:link'>
+          <span className='text-green-500 link-mobile sm:link-desktop'>
             <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
           </span>
         </p>
