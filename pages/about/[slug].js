@@ -50,7 +50,7 @@ const components = {
               fill='#F8FAF8'
             />
           </svg>
-          <div className='inline-block max-w-xs absolute invisible group-hover:visible z-10 py-3 px-6 bg-black-white-300 text-black-white-800tooltip-hover-text-mob sm:tooltip-hover-text opacity-0 group-hover:opacity-100 transition tooltip'>
+          <div className='inline-block max-w-xs absolute invisible group-hover:visible z-10 py-3 px-6 bg-black-white-300 text-black-white-800 popup-mobile sm:popup-desktop opacity-0 group-hover:opacity-100 transition tooltip'>
             {value.hoverText}
           </div>
         </button>
@@ -67,7 +67,9 @@ const components = {
                 <Image src='/pdf-deco.png' alt='decorative image' width={584} height={562} />
               </div>
               <h2 className='pb-2 mobile sm:desktop text-white'>{value.pdfTitle}</h2>
-              <p className='p-mobile-bg sm:p-desktop-bg text-black-white-200 pb-4'>{value.pdfText}</p>
+              <p className='p-mobile-bg sm:p-desktop-bg text-black-white-200 pb-4'>
+                {value.pdfText}
+              </p>
               <a
                 href={`https://cdn.sanity.io/files/${
                   process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '2vfoxb3h'
@@ -95,7 +97,7 @@ const components = {
       <div className='flex justify-left pl-8 sm:pl-12'>
         <div className='mb-10 pt-10 w-5/6'>
           <h4 className='mobile sm:desktop'>{value.smallParaTitle}</h4>
-          <p className='p-mobile-bg sm:body-small'>{value.smallParaText}</p>
+          <p className='p-mobile-md sm:p-desktop-md'>{value.smallParaText}</p>
         </div>
       </div>
     ),
@@ -130,7 +132,7 @@ const components = {
       value.blank == true ? (
         <>
           <a
-            className='text-greenLink link-mobile sm:link inline-flex'
+            className='text-green-500 link-mobile sm:link-desktop inline-flex'
             href={value.href}
             target='_blank'
             rel='noreferrer'
@@ -140,7 +142,7 @@ const components = {
           </a>
         </>
       ) : (
-        <a className='text-greenLink link-mobile sm:link' href={value.href}>
+        <a className='text-green-500 link-mobile sm:link-desktop' href={value.href}>
           {children}
         </a>
       ),
@@ -153,13 +155,13 @@ export default function AboutPage({ data }) {
       <div className='global-margin pb-8 text-black-white-800'>
         <div className='grid grid-cols-1 md:grid-cols-3'>
           <div className='col-span-2'>
-            <div className='breadcrumb pt-8 text-greenLink'>
+            <div className='breadcrumb pt-8 text-green-500'>
               <Link href='/'>Home &gt;</Link>
             </div>
             <div className='max-w-4xl'>
-              <h1 className='lg:block sm:pt-10 py-6 sm:pb-10 mobile sm:desktop'>
+              <h2 className='lg:block sm:pt-10 py-6 sm:pb-10 mobile sm:desktop'>
                 {data?.aboutPage?.pageTitle}
-              </h1>
+              </h2>
               <PortableText value={data?.aboutPage?.aboutPageContent} components={components} />
             </div>
           </div>

@@ -12,7 +12,7 @@ export default function OverNav(props) {
 
   const [slugs, setSlugs] = useState();
   useEffect(() => setSlugs(data?.map((page) => page.slug.current)), [data]);
-  const aboutSlugs = slugs?.filter(e => e !== 'vraag-&-antwoord')
+  const aboutSlugs = slugs?.filter((e) => e !== 'vraag-&-antwoord');
 
   return (
     <nav className='space-y-1 sticky top-40' aria-label='Sidebar'>
@@ -23,7 +23,7 @@ export default function OverNav(props) {
           className={classNames(
             slug === props.pagename
               ? 'text-black-white-800'
-              : 'text-greenLink hover:bg-gray-50 hover:text-gray-900',
+              : 'text-green-500 hover:bg-gray-50 hover:text-gray-900',
             'flex items-center px-3 py-2 breadcrumb bg-black-white-200',
           )}
           aria-current={slug.current ? 'page' : undefined}

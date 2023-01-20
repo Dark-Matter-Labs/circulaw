@@ -16,14 +16,17 @@ export default function Index() {
           <SectionTypes type='home' />
         </div>
       </div>
-      <div className='bbg-black-white-200 py-10'>
+      <div className='bg-black-white-200 py-10'>
         <div className='global-margin'>
-          <h2 className='mobile sm:desktop text-black-white-800 border-b border-black-white-600 pb-4' name='waarom'>
+          <h2
+            className='mobile sm:desktop text-black-white-800 border-b border-black-white-600 pb-4'
+            name='waarom'
+          >
             Over CircuLaw
           </h2>
           <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10'>
             <div>
-              <Image src={watImage} alt='image for wat circulaw' />
+              <Image src={watImage} width={556} alt='image for wat circulaw' />
             </div>
             <div>
               <h2 className='mobile sm:main'>Wat is CircuLaw?</h2>
@@ -34,7 +37,7 @@ export default function Index() {
                 uit te breiden willen we uiteindelijk ook strategen, toezichthouders, juristen en
                 circulaire ondernemers bedienen.
               </p>
-              <span className='text-greenLink link-mobile sm:link'>
+              <span className='text-green-500 link-mobile sm:link-desktop'>
                 <Link href='/wat-is-circulaw'>Meer lezen →</Link>
               </span>
             </div>
@@ -42,7 +45,7 @@ export default function Index() {
 
           <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10'>
             <div>
-              <Image src={waaromImage} alt='image for wararom circulaw' />
+              <Image src={waaromImage} width={556} alt='image for wararom circulaw' />
             </div>
             <div>
               <h2 className='mobile sm:main'>Waarom CircuLaw?</h2>
@@ -56,7 +59,7 @@ export default function Index() {
                 circulaire doelen te halen en zo bij te dragen aan een versnelling van de circulaire
                 transitie.
               </p>
-              <span className='text-greenLink link-mobile sm:link'>
+              <span className='text-green-500 link-mobile sm:link-desktop'>
                 <Link href='/waarom-circulaw'>Meer lezen →</Link>
               </span>
             </div>
@@ -64,7 +67,7 @@ export default function Index() {
 
           <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10'>
             <div>
-              <Image src={hoeverImage} alt='image for hoever' />
+              <Image src={hoeverImage} width={556} alt='image for hoever' />
             </div>
             <div>
               <h2 className='mobile sm:main'>Hoever zijn we?</h2>
@@ -79,7 +82,7 @@ export default function Index() {
                   circulaire houtbouw en circulaire windmolens
                 </li>
               </ul>
-              <span className='text-greenLink link-mobile sm:link'>
+              <span className='text-green-500 link-mobile sm:link-desktop'>
                 <Link href='/waarom-circulaw'>Meer lezen over de volgende stappen →</Link>
               </span>
             </div>
@@ -87,7 +90,7 @@ export default function Index() {
 
           <div className='grid grid-cols-1 lg:grid-cols-2 py-10'>
             <div>
-              <Image src={waaromImage} alt='image for wararom circulaw' />
+              <Image src={waaromImage} width={556} alt='image for wararom circulaw' />
             </div>
             <div>
               <h2 className='mobile sm:main'>Wie maken CircuLaw?</h2>
@@ -98,7 +101,7 @@ export default function Index() {
                 School of LAW, de VU, Wageningen Universiteit ( WUR Law group), Stichting Koninklijk
                 Nederlands Normalisatie Instituut (NEN).
               </p>
-              <span className='text-greenLink link-mobile sm:link'>
+              <span className='text-green-500 link-mobile sm:link-desktop'>
                 <Link href='/wie-maken-circulaw'>Meer over de makers van CircuLaw →</Link>
               </span>
             </div>

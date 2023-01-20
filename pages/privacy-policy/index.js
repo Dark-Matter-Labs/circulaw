@@ -4,7 +4,7 @@ export default function Privacy() {
   return (
     <Layout>
       <div className='global-margin my-20 max-w-2xl text-black-white-800'>
-        <h1 className='mobile sm:main pb-6'>Privacyverklaring</h1>
+        <h2 className='mobile sm:desktop pb-6'>Privacyverklaring</h2>
         <p className='p-mobile-bg sm:p-desktop-bg pt-2 pb-6 max-w-4xl'>
           Het projectteam CircuLaw is verantwoordelijk voor de verwerking van persoonsgegevens zoals
           weergegeven in dit statement. CircuLaw Alfa is een alfaversie van het product CircuLaw.
@@ -12,7 +12,7 @@ export default function Privacy() {
         </p>
         <p className='p-mobile-bg sm:p-desktop-bg pb-10 max-w-4xl'>
           Contactgegevens projectteam CircuLaw:{' '}
-          <span className='text-greenLink link-mobile sm:link'>
+          <span className='text-green-500 link-mobile sm:link-desktop'>
             <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
           </span>
         </p>
@@ -117,7 +117,7 @@ export default function Privacy() {
         <p className='p-mobile-bg sm:p-desktop-bg pb-6 max-w-4xl'>
           De gemeente Amsterdam heeft het recht om haar Privacyverklaring te wijzigen. Als er
           inhoudelijke wijzigingen worden doorgevoerd, maken we dit bekend via de website{' '}
-          <span className='text-greenLink link-mobile sm:link'>
+          <span className='text-green-500 link-mobile sm:link-desktop'>
             <a href='https://www.amsterdam.nl/' target='_blank' rel='noopener noreferrer'>
               amsterdam.nl
             </a>
@@ -126,7 +126,7 @@ export default function Privacy() {
         </p>
         <p className='p-mobile-bg sm:p-desktop-bg max-w-4xl pb-6'>
           Heb je vragen naar aanleiding van deze Privacyverklaring? Mail ons dan op{' '}
-          <span className='text-greenLink link-mobile sm:link'>
+          <span className='text-green-500 link-mobile sm:link-desktop'>
             <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
           </span>
         </p>

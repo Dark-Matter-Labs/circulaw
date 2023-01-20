@@ -8,14 +8,14 @@ export default function BetaBanner() {
           <div className='w-0 flex-1'>
             <p className='ml-3 font-medium text-black-white-800 truncate font-manrope font-normal'>
               <span className='md:hidden'>
-                <span className='font-bold'>Beta</span> versie van CircuLaww -{' '}
-                <span className='link-mobile text-greenLink'>
+                <span className='font-bold'>Beta</span> versie van CircuLaw -{' '}
+                <span className='link-mobile sm:link-desktop text-green-500'>
                   <Link href='/alpha'>Lees meer -&gt;</Link>
                 </span>
               </span>
               <span className='hidden md:inline'>
                 <span className='font-bold'>Beta</span> versie van CircuLaw -{' '}
-                <span className='link-mobile text-greenLink'>
+                <span className='link-mobile sm:link-desktop text-green-500'>
                   <Link href='/alpha'>Lees meer -&gt;</Link>
                 </span>
               </span>
