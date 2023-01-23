@@ -10,6 +10,7 @@ import { groq } from 'next-sanity';
 import client from '../lib/sanity';
 import { useState, useEffect } from 'react';
 
+
 export default function Index() {
   const { data } = useSWR(groq`*[_type == "aboutPage"]|order(order asc)`, (query) =>
     client.fetch(query),
@@ -128,3 +129,4 @@ export default function Index() {
     </Layout>
   );
 }
+

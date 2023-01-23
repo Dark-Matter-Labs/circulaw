@@ -12,6 +12,7 @@ import CustomButton from '../../components/custom-button';
 const pathsQuery = `
 *[_type == "measure" && defined(slug.current)][].slug.current
 `;
+
 const measureQuery = `
 *[_type == "measure" && slug.current == $slug] [0] {
     _id,
