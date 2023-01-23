@@ -11,6 +11,8 @@ export default function Houtbouw({ laws }) {
   useEffect(() => {
     localStorage.clear();
   });
+
+  // content up to date: Mon 23 Jan 15h
   return (
     <Layout>
       <ThemeLayout
@@ -36,6 +38,8 @@ export default function Houtbouw({ laws }) {
         cardLinkList='/measures/houtbouw'
         cardLinkSamenhang='/houtbouw/samenhang-aantal-houtbouwmaatregelen'
         cardLinkWaarvoor='/houtbouw/welke-overheid'
+
+        extendedMeasureHeading='instrumenten om houtbouw te bevorderen'
       />
     </Layout>
   );

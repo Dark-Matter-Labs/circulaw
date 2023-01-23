@@ -32,12 +32,13 @@ export default function ThemeLayout({ bgHero, ...props }) {
                 <div className='col-span-7'>
                   <p className='pt-4 text-black-white-200 p-mobile-bg sm:p-desktop-bg'>
                     {props.headerSubtitle}
+                    {props.headerLinkText && 
                     <span className='text-green-500 link-mobile sm:link-desktop inline-block pl-1'>
                       <a href={props.headerLinkURL} target='_blank' rel='noopener noreferrer'>
                         {' '}
                         {props.headerLinkText}→
                       </a>
-                    </span>
+                    </span>}
                   </p>
                 </div>
               </div>
