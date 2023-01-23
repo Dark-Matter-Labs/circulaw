@@ -95,10 +95,7 @@ export default function Contact() {
                 className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'
               >
                 <div>
-                  <label
-                    htmlFor='first-name'
-                    className='block text-lg font-semibold font-manrope text-black-white-800'
-                  >
+                  <label htmlFor='first-name' className='block text-black-white-800'>
                     Wat is je naam? (niet verplicht)
                   </label>
                   <div className='mt-1'>
@@ -112,10 +109,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
-                  <label
-                    htmlFor='company'
-                    className='block text-lg font-semibold font-manrope text-black-white-800'
-                  >
+                  <label htmlFor='company' className='block  text-black-white-800'>
                     Voor welke organisatie werk je? (niet verplicht)
                   </label>
                   <div className='mt-1'>
@@ -129,10 +123,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
-                  <label
-                    htmlFor='email'
-                    className='block text-lg font-semibold font-manrope text-black-white-800'
-                  >
+                  <label htmlFor='email' className='block  text-black-white-800'>
                     Op welk e-mailadres kunnen we je bereiken?
                   </label>
                   <div className='mt-1'>
@@ -148,10 +139,7 @@ export default function Contact() {
                 </div>
 
                 <div className='sm:col-span-2'>
-                  <label
-                    htmlFor='message'
-                    className='block text-lg font-semibold font-manrope text-black-white-800'
-                  >
+                  <label htmlFor='message' className='block text-black-white-800'>
                     Wat is je vraag of opmerking?
                   </label>
                   <div className='mt-1'>
@@ -187,12 +175,10 @@ export default function Contact() {
                       </Switch>
                     </div>
                     <div className='ml-3'>
-                      <p className='text-base text-gray-500'>
+                      <p className='text-gray-500'>
                         Ik ga akkoord met de{' '}
                         <Link href='/privacy-policy'>
-                          <span className='font-medium text-green-500 font-manrope'>
-                            privacy verklaring
-                          </span>
+                          <span className='text-green-500'>privacy verklaring</span>
                         </Link>
                       </p>
                     </div>

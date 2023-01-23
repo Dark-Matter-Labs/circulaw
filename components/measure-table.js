@@ -103,16 +103,6 @@ export default function MeasureTable({ data }) {
                 </span>
               </td>
             </tr>
-            {/* DELETE 
-            <tr className='my-10 border-b-2'>
-              <td className='w-1/2 font-manrope text-base font-normal'>Type document</td>
-              <td className='w-1/2 font-manrope text-base font-bold'>{data.measure?.type_document}</td>
-            </tr>
-            <tr>
-              <td className='font-manrope text-base font-normal'>Beleidsinstrument</td>
-              <td className='font-manrope text-base font-bold'>{data.measure?.type_beleidsinstrument}</td>
-            </tr>
-            */}
           </tbody>
         </table>
       </div>

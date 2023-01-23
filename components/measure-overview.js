@@ -39,7 +39,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
         <div className='-mt-8 sm:mt-0 sm:pt-5 pb-1 sm:border-t border-black-white-600'>
           <div className='flex pb-2 justify-between items-center'>
             <div className='flex justify-left items-center'>
-              <span className='overview-titles text-black-white-800 pr-3'>R-ladder</span>
+              <span className='text-black-white-800 pr-3'>R-ladder</span>
               <RTooltip>
                 <svg
                   width='24'
@@ -78,7 +78,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
 
         <div className='pt-5 pb-1'>
           <div className='relative border-t border-black-white-600 pt-4'>
-            <div className='overview-titles text-black-white-800 py-2'>Subrechtsgebied</div>
+            <div className='text-black-white-800 py-2'>Subrechtsgebied</div>
           </div>
 
           <div className='p-mobile-bg sm:p-desktop-bg first-letter:capitalize'>
@@ -89,7 +89,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
         <div className='pt-5 pb-1'>
           <div className='relative flex justify-between border-t border-black-white-600 pt-2'>
             <div className='flex py-2'>
-              <span className='overview-titles text-black-white-800 py-2 pr-3'>Invloed</span>
+              <span className='text-black-white-800 py-2 pr-3'>Invloed</span>
               <JITooltip data={data}>
                 <svg
                   width='24'
@@ -118,7 +118,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
         <div className='pt-5 pb-5 border-b border-black-white-600'>
           <div className='relative flex justify-between border-t border-black-white-600 pt-2'>
             <div className='flex py-2'>
-              <span className='overview-titles text-black-white-800 py-2 pr-3'>
+              <span className='text-black-white-800 py-2 pr-3'>
                 Juridische haalbaarheid
               </span>
               <JHTooltip data={data}>

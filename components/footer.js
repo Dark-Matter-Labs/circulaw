@@ -61,16 +61,16 @@ export default function Footer() {
             <div className='grid grid-cols-1 gap-8 sm:col-span-3'>
               <div className='sm:grid sm:grid-cols-4 md:gap-8'>
                 <div className=''>
-                  <p className='text-sm text-green-300 font-publicSans font-bold tracking-wider uppercase pb-4 sm:pb-0 '>
+                  <h4 className='text-green-300 mobile sm:desktop uppercase pb-4 sm:pb-0 '>
                     THEMA’S
-                  </p>
+                  </h4>
                   <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                     <ul role='list' className='mt-4 space-y-4'>
                       {navigation.WAARDEKETENS.map((item) => (
                         <li key={item.name}>
                           <a
                             href={item.href}
-                            className={`text-base hover:text-green-400 ${item.className}`}
+                            className={`bullet-mobile sm:bullet-desktop hover:text-green-400 ${item.className}`}
                           >
                             {item.name}
                           </a>
@@ -80,16 +80,16 @@ export default function Footer() {
                   </div>
                 </div>
                 <div className=''>
-                  <p className='text-sm text-green-300 font-publicSans font-bold tracking-wider uppercase pb-4 sm:pb-0'>
+                  <h4 className='text-green-300 mobile sm:desktop uppercase pb-4 sm:pb-0'>
                     OVER CIRCULAW
-                  </p>
+                  </h4>
                   <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                     <ul role='list' className='mt-4 space-y-4'>
                       {aboutSlugs?.map((slug) => (
                         <li key={slug}>
                           <a
                             href={`/about/${encodeURIComponent(slug)}`}
-                            className='text-base hover:text-green-400 text-black-white-200'
+                            className='bullet-mobile sm:bullet-desktop hover:text-green-400 text-black-white-200'
                           >
                             <span className='inline-block first-letter:uppercase'>
                               {slug.replaceAll('-', ' ')}
@@ -104,7 +104,10 @@ export default function Footer() {
                   <ul role='list' className='mt-4 space-y-4'>
                     {navigation.other.map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className='text-base text-white hover:text-green-400'>
+                        <a
+                          href={item.href}
+                          className='bullet-mobile sm:bullet-desktop text-black-white-200 hover:text-green-400'
+                        >
                           {item.name}
                         </a>
                       </li>
@@ -178,7 +181,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className='global-margin pb-10 text-black-white-200 text-sm'>
+        <div className='global-margin pb-10 text-black-white-200 p-mobile-bg sm:p-desktop-bg'>
           <p className='mx-20'>
             Welkom bij CircuLaw. Deze website is volop in ontwikkeling. In deze versie testen we de
             techniek, opzet en inhoud van de site. Het is mogelijk dat de inhoud van de site

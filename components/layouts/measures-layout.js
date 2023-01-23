@@ -553,7 +553,7 @@ export default function MeasuresLayout(props) {
                     </div>
                   </Transition.Child>
                   <div className='flex-shrink-0 flex items-center px-4'>
-                    <span className='font-manrope font-bold text-lg'>Filters</span>
+                    <span className=''>Filters</span>
                   </div>
                   <div className='flex-1 h-0 overflow-y-auto'>
                     <div className='p-8 '>
@@ -665,7 +665,7 @@ export default function MeasuresLayout(props) {
             </span>
           </Link>
         </div>
-        <div className='hidden sm:block col-span-2 bg-opacity font-manrope p-5 mt-2 mb-10 max-w-3xl'>
+        <div className='hidden sm:block col-span-2 bg-opacity p-5 mt-2 mb-10 max-w-3xl'>
           {props.heading && <h3>{props.heading}</h3>}
           <p>
             {props.introPara}
@@ -692,7 +692,7 @@ export default function MeasuresLayout(props) {
         <div className='col-span-2'>
           <div className='pt-5'>
             <div>
-              <span className='font-manrope font-semibold text-base'>{props.searchTitle}</span>
+              <h5 className='mobile sm:desktop'>{props.searchTitle}</h5>
             </div>
 
             {/* AUTOCOMPLETE */}
@@ -703,7 +703,7 @@ export default function MeasuresLayout(props) {
                   <Combobox.Input
                     onChange={(e) => setSearchValue(e.target.value)}
                     autoComplete={'off'}
-                    className='w-full py-2 px-3 outline-none border-0 rounded-lg focus:ring-0 font-openSans placeholder:text-black-white-600 placeholder:italic'
+                    className='w-full py-2 px-3 outline-none border-0 rounded-lg focus:ring-0 placeholder:text-black-white-600 placeholder:italic'
                     displayValue={() => searchValue}
                     placeholder='Zoek op trefwoord'
                   />
@@ -745,39 +745,56 @@ export default function MeasuresLayout(props) {
 
             {numberOfLaws === 0 && (
               <div>
-                <span className='font-manrope text-lg sm:text-xl'>
-                  <b>0</b> resultaten in{' '}
-                  <b className='inline-block lowercase first-letter:uppercase'>{props.thema}</b>{' '}
-                  voor <b>{searchValue}</b>
+                <span className=''>
+                  <h4 className='mobile sm:desktop inline'>0</h4>{' '}
+                  <span className='p-mobile-bg sm:p-desktop-bg'>resultaten in </span>
+                  <h4 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
+                    {props.thema}
+                  </h4>{' '}
+                  <span className='p-mobile-bg sm:p-desktop-bg'>voor</span>{' '}
+                  <h4 className='mobile sm:desktop inline'>{searchValue}</h4>
                 </span>
               </div>
             )}
             {numberOfLaws > 1 && numberOfLaws < props.totalNumberOfLaws && (
               <div>
-                <span className='font-manrope text-lg sm:text-xl'>
-                  <b>{numberOfLaws}</b> resultaten in{' '}
-                  <b className='inline-block lowercase first-letter:uppercase'>{props.thema}</b>{' '}
-                  voor <b>{searchValue}</b>
+                <span className=''>
+                  <h4 className='mobile sm:desktop inline'>{numberOfLaws}</h4>{' '}
+                  <span className='p-mobile-bg sm:p-desktop-bg'>resultaten in </span>
+                  <h4 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
+                    {props.thema}
+                  </h4>{' '}
+                  <span className='p-mobile-bg sm:p-desktop-bg'>voor</span>{' '}
+                  <h4 className='mobile sm:desktop inline'>{searchValue}</h4>
                 </span>
               </div>
             )}
 
             {searchValue !== '' && numberOfLaws === 1 && (
               <div>
-                <span className='font-manrope text-lg sm:text-xl'>
-                  <b>{numberOfLaws}</b> resultaten in{' '}
-                  <b className='inline-block lowercase first-letter:uppercase'>{props.thema}</b>{' '}
-                  voor <b>{searchValue}</b>
+                <span className=''>
+                  <h4 className='mobile sm:desktop inline'>{numberOfLaws}</h4>{' '}
+                  <span className='p-mobile-bg sm:p-desktop-bg'>resultaten in </span>
+                  <h4 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
+                    {props.thema}
+                  </h4>{' '}
+                  <span className='p-mobile-bg sm:p-desktop-bg'>voor</span>{' '}
+                  <h4 className='mobile sm:desktop inline'>{searchValue}</h4>
                 </span>
               </div>
             )}
 
             {numberOfLaws === props.totalNumberOfLaws && (
               <div>
-                <span className='font-manrope text-lg sm:text-xl'>
-                  <b>{numberOfLaws}</b> resultaten in{' '}
-                  <b className='inline-block lowercase first-letter:uppercase'>{props.thema}</b>{' '}
-                  <b>{searchValue}</b>
+                <span className=''>
+                  <h4 className='mobile sm:desktop inline'>{numberOfLaws}</h4>{' '}
+                  <span className='p-mobile-bg sm:p-desktop-bg'>resultaten in </span>
+                  <h4 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
+                    {props.thema}
+                  </h4>{' '}
+                  <h4 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
+                    {searchValue}
+                  </h4>
                 </span>
               </div>
             )}
@@ -789,7 +806,7 @@ export default function MeasuresLayout(props) {
                   <div className='flex flex-wrap grid-rows-2 sm:grid-rows-1'>
                     {allSelectedValues.map((value, index) => (
                       <div key={index} className='inline'>
-                        <span className='font-manrope text-lg sm:text-xl font-bold'>
+                        <span className=''>
                           {value}
                           {value !== allSelectedValues.slice(-1)[0] && <span>,</span>}&nbsp;
                         </span>
@@ -808,16 +825,16 @@ export default function MeasuresLayout(props) {
             onClick={() => setSidebarOpen(true)}
           >
             <span className='sr-only'>Open sidebar</span>
-            <span className='font-openSans text-black text-base font-semibold'>Filter</span>
+            <span className='text-black'>Filter</span>
             <AdjustmentsIcon className='h-6 w-6' aria-hidden='true' />
           </button>
         </div>
 
         <div className='hidden lg:block mb-3'>
-          <span className='text-xl font-manrope font-semibold pr-8'>Filter op:</span>{' '}
+          <h4 className='mobile sm:desktop pr-8 inline'>Filter op:</h4>{' '}
           <span
             onClick={reset}
-            className='underline text-green-500 text-lg link-hover font-manrope font-extrabold'
+            className='underline text-green-500 text-lg link-hover link-mobile sm:link-desktop '
           >
             Wis filters
           </span>
