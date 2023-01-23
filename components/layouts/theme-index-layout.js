@@ -42,19 +42,15 @@ export default function ThemeLayout({bgHero, ...props}) {
           </div>
         </div>
       </div>
-
-
       <div className=''>
         <div className='global-margin'>
             <div className='pt-20 pb-10'>
               <h2 className='mobile sm:desktop'>Overzichten van instrumenten die {props.thema} stimuleren </h2>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-14 justify-items-center sm:h-auto md:h-[76rem] lg:h-[38rem]'>
-
              <ThemeCard props={props} type='list'/>
              <ThemeCard props={props} type='samenhang'/>
              <ThemeCard props={props} type= 'waarvoor'/>
-
             </div>
         </div>
         <ThemeBottomSection props={props} />

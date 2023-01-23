@@ -23,10 +23,10 @@ export default function Houtbouw({laws}) {
       bgHero  = 'bg-houtbouw-hero'
      
       // number of laws
-      numberOfLaws = {laws.length}
+      numberOfLaws = {laws?.length}
 
       // card titles
-      listTitle={`Lijst van ${laws.length} instrumenten`}
+      listTitle={`Lijst van ${laws?.length} instrumenten`}
       samenhangTitle='Samenhang álle houtbouwinstrumenten in beeld'
       waarvoorTitle='Wie is waarvoor bevoegd?'
 
