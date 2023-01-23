@@ -13,15 +13,13 @@ import { useState, useEffect } from 'react';
 
 export default function Index() {
 
-  const { data } = useSWR(groq`*[_type == "aboutPage"]`, (query) => client.fetch(query));
+  const { data } = useSWR(groq`*[_type == "aboutPage"]|order(order asc)`, (query) => client.fetch(query));
 
   const [slugs, setSlugs] = useState();
   useEffect(() => setSlugs(data?.map((page) => page.slug.current)), [data]);
 
   const aboutSlugs = slugs?.filter((e) => e !== 'vraag-&-antwoord');
   // const FAQslug = 'vraag-&-antwoord';
-  console.log(aboutSlugs)
- // ['wetsanalyse-vanuit-circulaire-blik', 'wat-vind-je-nu-op-circulaw?', 'waarom-circulaw?', 'wat-is-circulaw?', 'wie-maken-circulaw?']
   return (
     <Layout page='home'>
       <div className='bg-black-white-200 pb-20' name='thema'>
@@ -53,7 +51,7 @@ export default function Index() {
                 circulaire ondernemers bedienen.
               </p>
               <span className='text-green-500 link-mobile sm:link-desktop'>
-                <Link href='/wat-is-circulaw'>Meer lezen →</Link>
+                <Link href={`/about/${encodeURIComponent(aboutSlugs?.[0])}`}>Meer lezen →</Link>
               </span>
             </div>
           </div>
@@ -75,7 +73,7 @@ export default function Index() {
                 transitie.
               </p>
               <span className='text-green-500 link-mobile sm:link-desktop'>
-                <Link href='/waarom-circulaw'>Meer lezen →</Link>
+                <Link href={`/about/${encodeURIComponent(aboutSlugs?.[1])}`}>Meer lezen →</Link>
               </span>
             </div>
           </div>
@@ -98,7 +96,7 @@ export default function Index() {
                 </li>
               </ul>
               <span className='text-green-500 link-mobile sm:link-desktop'>
-                <Link href='/waarom-circulaw'>Meer lezen over de volgende stappen →</Link>
+                <Link href={`/about/${encodeURIComponent(aboutSlugs?.[2])}`}>Meer lezen over de volgende stappen →</Link>
               </span>
             </div>
           </div>
@@ -117,7 +115,7 @@ export default function Index() {
                 Nederlands Normalisatie Instituut (NEN).
               </p>
               <span className='text-green-500 link-mobile sm:link-desktop'>
-                <Link href='/wie-maken-circulaw'>Meer over de makers van CircuLaw →</Link>
+                <Link href={`/about/${encodeURIComponent(aboutSlugs?.[3])}`}>Meer over de makers van CircuLaw →</Link>
               </span>
             </div>
           </div>

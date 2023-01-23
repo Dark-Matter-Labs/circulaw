@@ -20,7 +20,7 @@ export default {
     },
     {
       title: 'Order',
-      name: 'Order',
+      name: 'order',
       type: 'number',
       description: 'will order the pages in ascending order'
     },

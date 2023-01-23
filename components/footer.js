@@ -47,7 +47,7 @@ const navigation = {
 };
 
 export default function Footer() {
-  const { data } = useSWR(groq`*[_type == "aboutPage"]`, (query) => client.fetch(query));
+  const { data } = useSWR(groq`*[_type == "aboutPage"]| order(order asc)`, (query) => client.fetch(query));
 
   const [slugs, setSlugs] = useState();
   useEffect(() => setSlugs(data?.map((page) => page.slug.current)), [data]);
