@@ -13,7 +13,6 @@ export default function ThemeBottomSection({ props }) {
 
   const [laws, setLaws] = useState();
   useEffect(() => setLaws(data?.map((law) => law)), [data]);
-  console.log(laws);
   return (
     <>
       {/* need to get gradient working for bg */}

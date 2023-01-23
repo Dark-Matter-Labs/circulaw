@@ -118,9 +118,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
         <div className='pt-5 pb-5 border-b border-black-white-600'>
           <div className='relative flex justify-between border-t border-black-white-600 pt-2'>
             <div className='flex py-2'>
-              <span className='text-black-white-800 py-2 pr-3'>
-                Juridische haalbaarheid
-              </span>
+              <span className='text-black-white-800 py-2 pr-3'>Juridische haalbaarheid</span>
               <JHTooltip data={data}>
                 <svg
                   width='24'
