@@ -13,7 +13,7 @@ export default function ThemeBottomSection({ props }) {
   
   const [laws, setLaws] = useState()
   useEffect(() => setLaws(data?.map((law) => law)), [data])
-
+    console.log(laws)
   return (
     <>
       <div className='global-margin'>
@@ -31,7 +31,7 @@ export default function ThemeBottomSection({ props }) {
       <div className=''>
         <div className='pt-5'>
           {laws?.map((measure) => (
-            <div key={measure?._id} className='border-b border-black-white-600 pb-10'>
+                        <div key={measure?._id} className={`border-black-white-600 pb-10 ${measure === laws?.[2] ? '' : 'border-b'}`}>
               <div className='grid grid-cols-1 lg:flex items-center'>
                 <div className='hidden sm:block pt-6 pr-10'>
                   <div className='w-[33rem] h-[16rem]'>

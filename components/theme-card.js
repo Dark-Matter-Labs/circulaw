@@ -2,6 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import CustomButton from './custom-button'
 
+{/* TO DO - fix bug on middle svg which does not resize */}
+
 export default function ThemeCard({props, type}) {
     return (
         <div className='relative w-full overflow-hidden h-auto py-10 md:py-0  '>
