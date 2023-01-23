@@ -39,24 +39,14 @@ export default function ThemeCard({props, type}) {
         <p className='body-new py-6'>{props.waarvoorText}</p>
       </div>}
       
-      <div className='pb-6 pl-8'>
+      
+        {type ==='list' && 
+        <div className='pb-6 pl-8'>
         <Link href={props.cardLinkList}>
         <CustomButton color='whiteBackground'>
-            {type === 'list' && 
-            <div>
-         {props.listButtonText}
-            </div>
-            }
-            {type === 'samenhang' && 
-            <div>
-         {props.samenhangButtonText}
-            </div>
-            }
-            {type === 'waarvoor' && 
-            <div>
-         {props.waarvoorButtonText}
-            </div>
-            }
+           <div>
+           Naar de lijst
+           </div>
           <span className='pl-2'>
             {' '}
             <svg
@@ -76,9 +66,69 @@ export default function ThemeCard({props, type}) {
           </span>
         </CustomButton>
         </Link>
+        </div>
+        }
+
+        {type ==='samenhang' && 
+                <div className='pb-6 pl-8'>
+
+        <Link href={props.cardLinkSamenhang}>
+        <CustomButton color='whiteBackground'>
+           <div>
+           Bekijk de samenhang
+           </div>
+          <span className='pl-2'>
+            {' '}
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth={1.5}
+              stroke='currentColor'
+              className='w-5  h-5'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3'
+              />
+            </svg>
+          </span>
+        </CustomButton>
+        </Link>
+        </div>
+        }
+
+        {type ==='waarvoor' && 
+        <div className='pb-6 pl-8'>
+        <Link href={props.cardLinkWaarvoor}>
+        <CustomButton color='whiteBackground'>
+           <div>
+            Bekijk de bevoegdheden          
+          </div>
+          <span className='pl-2'>
+            {' '}
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth={1.5}
+              stroke='currentColor'
+              className='w-5  h-5'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3'
+              />
+            </svg>
+          </span>
+        </CustomButton>
+        </Link>
+        </div>
+        }
       </div>
     </div>
     
-</div>
 )
 }

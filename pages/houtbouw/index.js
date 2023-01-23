@@ -35,11 +35,6 @@ export default function Houtbouw({laws}) {
       samenhangText='Hoe meer instrumenten je tegelijk inzet, hoe meer je bereikt.'
       waarvoorText='Zonder samenwerking geen succes. Maar dan moet je wel weten wie voor welk instrument verantwoordelijk is.'
 
-      // card button texts ** THIS COULD BE THE SAME FOR ALL PAGES?
-      listButtonText='Bekijk  de lijst'
-      samenhangButtonText='Bekijk de samenhang'
-      waarvoorButtonText='Bekijk  de bevoegdheden'
-
       // card links
       cardLinkList='/measures/houtbouw'
       cardLinkSamenhang='/houtbouw/samenhang-aantal-houtbouwmaatregelen'

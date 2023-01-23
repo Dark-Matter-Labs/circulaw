@@ -37,11 +37,6 @@ export default function Windturbine({laws}) {
          samenhangText='NEEDHoe meer instrumenten je tegelijk inzet, hoe meer je bereikt.'
          waarvoorText='NEEDZonder samenwerking geen succes. Maar dan moet je wel weten wie voor welk instrument verantwoordelijk is.'
    
-         // card button texts ** THIS COULD BE THE SAME FOR ALL PAGES?
-         listButtonText='Bekijk  de lijst?'
-         samenhangButtonText='Bekijk de samenhang?'
-         waarvoorButtonText='Bekijk  de bevoegdheden?'
-   
          // card links
         cardLinkList='/measures/windturbines'
         cardLinkSamenhang='/circulaire-windturbines/samenhang-maatregelen'
