@@ -6,8 +6,6 @@ import Image from 'next/image';
 {
   /* TO DO */
 }
-// mobile version of header
-// mobile version of bottom section
 
 export default function ThemeLayout({ bgHero, ...props }) {
   return (
@@ -37,7 +35,7 @@ export default function ThemeLayout({ bgHero, ...props }) {
                     <span className='text-green-500 link-mobile sm:link-desktop inline-block pl-1'>
                       <a href={props.headerLinkURL} target='_blank' rel='noopener noreferrer'>
                         {' '}
-                        {props.headerLinkText}
+                        {props.headerLinkText}→
                       </a>
                     </span>
                   </p>
@@ -47,7 +45,7 @@ export default function ThemeLayout({ bgHero, ...props }) {
           </div>
         </div>
 
-        <div className='block global-margin sm:hidden'>
+        <div className='block global-margin sm:hidden pt-5'>
           <div className='py-3'>
             <h1 className='mobile pb-3'>{props.title}</h1>
             <p className='p-mobile-bg pb-3'>
@@ -55,14 +53,14 @@ export default function ThemeLayout({ bgHero, ...props }) {
               <a className='text-green-500 link-mobile'> {props.headerLinkText}</a>
             </p>
           </div>
-          <div className='h-56 w-full bg-thema-hero-gradient flex rounded-md'>
-            <div className='h-56 w-full relative rounded-md'>
+          <div className='h-56 w-full thema-hero-gradient rounded-md'>
+            <div className='h-full w-full rounded-md relative'>
               <Image
                 src={props.heroImage}
                 alt='hero image'
                 objectFit='cover'
                 fill
-                className='rounded-md'
+                className='rounded-md absolute'
               />
             </div>
           </div>

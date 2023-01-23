@@ -18,7 +18,7 @@ export default function Houtbouw({ laws }) {
         title='Houtbouw stimuleren'
         thema='houtbouw'
         headerSubtitle='We kunnen veel milieuvriendelijker bouwen wanneer we beton (deels) vervangen door houtfont change'
-        headerLinkText='meer over nut van houtbouw →' // will be displayed in the same sentence as header subtitle
+        headerLinkText='meer over nut van houtbouw' // will be displayed in the same sentence as header subtitle
         headerLinkURL='https://www.ams-institute.org/documents/64/AMS_Institute_Houtbouwmythes_ontkracht.pdf'
         bgHero='bg-houtbouw-hero'
         heroImage='/houtbouwHero.jpeg'
