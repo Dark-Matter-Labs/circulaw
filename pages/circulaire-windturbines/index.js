@@ -18,7 +18,7 @@ export default function Windturbine({ laws }) {
         // header
         title='Circulaire windturbines'
         thema='Circulaire windturbines'
-        headerSubtitle='NEEDWe kunnen veel milieuvriendelijker bouwen wanneer we beton (deels) vervangen door houtfont change'
+        headerSubtitle='Door meer windturbines in te zetten en door windturbines te ontwikkelen die zelf circulair zijn,  kunnen we grote stappen zetten om onze samenleving circulairder te maken.'
         headerLinkText='NEEDmeer over nut van circular →' // will be displayed in the same sentence as header subtitle
         headerLinkURL='/'
         bgHero='bg-circular-hero'

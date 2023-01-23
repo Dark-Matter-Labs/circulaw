@@ -15,11 +15,11 @@ export default function Matrassen({ laws }) {
     <Layout>
       <ThemeLayout
         // header
-        title='Matrassen stimuleren'
+        title='Circulaire matrasketen'
         thema='matrassen'
-        headerSubtitle='NEEDWe kunnen veel milieuvriendelijker bouwen wanneer we beton (deels) vervangen door houtfont change'
-        headerLinkText='NEEDmeer over nut van houtbouw →' // will be displayed in the same sentence as header subtitle
-        headerLinkURL='https://www.ams-institute.org/documents/64/AMS_Institute_Houtbouwmythes_ontkracht.pdf'
+        headerSubtitle='De hele matrasketen vanaf ontwerp tot aan de verwerking van afgedankte matrassen kan circulairder.'
+        headerLinkText='' // will be displayed in the same sentence as header subtitle
+        headerLinkURL=''
         bgHero='bg-matrassen-hero'
         // number of laws
         numberOfLaws={laws.length}

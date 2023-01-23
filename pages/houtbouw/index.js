@@ -17,8 +17,8 @@ export default function Houtbouw({ laws }) {
         // header
         title='Houtbouw stimuleren'
         thema='houtbouw'
-        headerSubtitle='We kunnen veel milieuvriendelijker bouwen wanneer we beton (deels) vervangen door houtfont change'
-        headerLinkText='meer over nut van houtbouw' // will be displayed in the same sentence as header subtitle
+        headerSubtitle='We kunnen veel milieuvriendelijker bouwen wanneer we beton (deels) vervangen door hout.'
+        headerLinkText='Lees wat het AMS zegt over houtbouw' // will be displayed in the same sentence as header subtitle
         headerLinkURL='https://www.ams-institute.org/documents/64/AMS_Institute_Houtbouwmythes_ontkracht.pdf'
         bgHero='bg-houtbouw-hero'
         heroImage='/houtbouwHero.jpeg'
@@ -31,7 +31,7 @@ export default function Houtbouw({ laws }) {
         // card texts
         listText='Met handige filters om snel te vinden wat je zoekt.'
         samenhangText='Hoe meer instrumenten je tegelijk inzet, hoe meer je bereikt.'
-        waarvoorText='Zonder samenwerking geen succes. Maar dan moet je wel weten wie voor welk instrument verantwoordelijk is.'
+        waarvoorText='Zonder samenwerking geen succes. Maar dan moet je wel weten wie waarvoor bevoegden verantwoordelijk is. '
         // card links
         cardLinkList='/measures/houtbouw'
         cardLinkSamenhang='/houtbouw/samenhang-aantal-houtbouwmaatregelen'
