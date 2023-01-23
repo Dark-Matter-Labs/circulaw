@@ -19,7 +19,7 @@ export default function ToolTips({ children, icon }) {
         <span className='sr-only'>Open ToolTip</span>
         {icon > 0 && (
           <svg
-            className='text-gray-300 w-5 h-5'
+            className='text-black-white-600 w-5 h-5'
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 20 20'
             fill='currentColor'
@@ -83,9 +83,11 @@ export default function ToolTips({ children, icon }) {
                     </Transition.Child>
                     <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
                       <div className='px-4 sm:px-6'>
-                        <Dialog.Title className='text-lg font-medium text-gray-900'>
+                        <Dialog.Title className='text-gray-900'>
                           {' '}
-                          R-ladder: strategieën van circulariteit
+                          <h5 className='mobile sm:desktop'>
+                            R-ladder: strategieën van circulariteit
+                          </h5>
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>

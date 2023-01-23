@@ -27,6 +27,7 @@ module.exports = {
         manrope: ['Manrope', 'sans-serif']
       },
       fontSize: {
+        xxs: '12px',
         xs: '14px',
         sm: '15px',
         base: '16px',

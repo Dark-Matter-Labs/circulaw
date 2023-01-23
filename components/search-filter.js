@@ -4,7 +4,7 @@ import RTooltip from '../components/r-ladder-tooltip';
 import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../components/juridische-invloed-tooltip';
 
-const rLadderLabelStyles = 'bg-green-400 text-white rounded-full p-1 mr-2 block-inline r-category ';
+const rLadderLabelStyles = 'bg-green-600 text-white rounded-full p-1 mr-2 block-inline r-category ';
 
 const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, ref) => {
   const [checkedArray, setCheckedArray] = useState([]);
@@ -50,10 +50,10 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
     <fieldset className='py-4 border-b border-black'>
       <div className='block'>
         <div className='relative flex justify-between'>
-          <legend className='text-base font-manrope font-semibold mr-8'>{title}</legend>
+          <h5 className='mobile sm:desktop mr-8'>{title}</h5>
           {title === 'R - ladder' && (
             <RTooltip>
-              <svg className='w-6 h-6 fill-current text-black mb-2' viewBox='0 0 26 26'>
+              <svg className='w-6 h-6 fill-current text-black-white-200 mb-2' viewBox='0 0 26 26'>
                 <circle cx='12' cy='15' r='10' fill='#979797' />
                 <path
                   d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
@@ -64,7 +64,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
           )}
           {title === 'Juridisch Haalbaarheid' && (
             <JHTooltip>
-              <svg className='w-6 h-6 fill-current text-black mb-2' viewBox='0 0 26 26'>
+              <svg className='w-6 h-6 fill-current text-black-white-20 mb-2' viewBox='0 0 26 26'>
                 <circle cx='12' cy='15' r='10' fill='#979797' />
                 <path
                   d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
@@ -75,7 +75,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
           )}
           {title === 'Juridisch Invloed' && (
             <JITooltip>
-              <svg className='w-6 h-6 fill-current text-black mb-2' viewBox='0 0 26 26'>
+              <svg className='w-6 h-6 fill-current text-black-white-20 mb-2' viewBox='0 0 26 26'>
                 <circle cx='12' cy='15' r='10' fill='#979797' />
                 <path
                   d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
@@ -97,11 +97,11 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                     id={`data-${data.value}-${data.id}`}
                     checked={checkedArray.indexOf(data.id) !== -1}
                     onChange={() => onChangeHandler(data.id)}
-                    className='accent-pink-300 focus:accent-pink-500'
+                    className=''
                   />
                   <label
                     htmlFor={`data-${data.value}-${data.id}`}
-                    className='select-none font-manrope text-sm pl-2'
+                    className='select-none  table-mobile sm:table-desktop pl-2'
                   >
                     {/* RVALUE */}
                     {title === 'R - ladder' && (
@@ -111,10 +111,10 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                       </>
                     )}
                     {/* std design */}
-                    {title !== 'R - ladder' && <span>{data.name}</span>}
+                    {title !== 'R - ladder' && <span className=''>{data.name}</span>}
                   </label>
                 </div>
-                <div className='font-bold font-manrope text-sm text-black'>
+                <div className='table-mobile sm:table-desktop text-black-white-800'>
                   ({filterNumbers[dataIdx]})
                 </div>
               </>
@@ -130,19 +130,23 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                   />
                   <label
                     htmlFor={`data-${data.value}-${data.id}`}
-                    className='select-none font-normal text-gray-500 text-sm pl-2'
+                    className='select-none table-mobile sm:table-desktop text-black-white-600 text-sm pl-2'
                   >
                     {title === 'R - ladder' && (
                       <>
                         <span className={`${rLadderLabelStyles}`}>{data.value} </span>
-                        <span className='font-normal text-gray-500 text-sm'>{data.name}</span>
+                        <span className='table-mobile sm:table-desktopl text-black-white-600 text-sm'>
+                          {data.name}
+                        </span>
                       </>
                     )}
 
                     {title !== 'R - ladder' && <span>{data.name}</span>}
                   </label>
                 </div>
-                <div className='font-normal text-sm text-gray-400'>({filterNumbers[dataIdx]})</div>
+                <div className='table-mobile sm:table-desktop text-black-white-600'>
+                  ({filterNumbers[dataIdx]})
+                </div>
               </>
             )}
           </div>

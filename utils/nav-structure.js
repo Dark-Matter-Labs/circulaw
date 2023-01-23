@@ -3,19 +3,19 @@ const waardeketens = [
       name: 'Houtbouw',
       description: 'description',
       href: '/houtbouw',
-      className: 'font-normal',
+      className: '',
     },
     {
       name: 'Circulaire windturbines',
       description: 'description',
       href: '/circulaire-windturbines',
-      className: 'font-normal',
+      className: '',
     },
     {
       name: 'Matrassen',
       description: 'description',
       href: '/matrassen',
-      className: 'font-normal',
+      className: '',
     },
   ];
   

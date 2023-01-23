@@ -61,8 +61,12 @@
     @apply font-urbanist text-xs font-medium leading-6;
   }
 
-  h6.desktop.xb {
+  h6.xb {
     @apply font-manrope text-xs font-extrabold leading-9;
+  }
+
+  .heading-sm {
+    @apply font-manrope text-xxs font-bold leading-6;
   }
 
   .p-desktop-header {
@@ -133,35 +137,12 @@
     @apply font-manrope text-xs font-medium leading-6;
   }
 
-  .menu-title {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 150%;
-  }
-
-  .menu-title-mobile {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 150%;
-  }
-
   .r-category {
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 700;
     font-size: 12px;
     line-height: 149.19%;
-  }
-
-  .overview-titles {
-    font-family: 'Manrope';
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 15px;
   }
 
   .table-right {
@@ -178,21 +159,20 @@
     font-size: 13px;
     line-height: 150%;
   }
-
-  .tooltip-body {
-    font-family: 'Manrope';
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0em;
-  }
 }
 
-.home-header-bg {
-  background-image: url('./public/2.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
+#background-video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
 }
+
 
 .newlineDisplay {
   white-space: break-spaces;
@@ -201,12 +181,6 @@
 .casus {
   text-transform: uppercase;
   font-size: 12px;
-}
-
-.subrecht-text {
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 18px;
 }
 
 .twoLines {
