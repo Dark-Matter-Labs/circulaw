@@ -19,6 +19,12 @@ export default {
       },
     },
     {
+      title: 'Order',
+      name: 'Order',
+      type: 'number',
+      description: 'will order the pages in ascending order'
+    },
+    {
       title: 'About Content',
       name: 'aboutPageContent',
       type: 'array',

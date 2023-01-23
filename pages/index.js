@@ -5,8 +5,23 @@ import SectionTypes from '/components/section-types-list';
 import waaromImage from '../public/waarom.png';
 import watImage from '../public/wat.png';
 import hoeverImage from '../public/hoever.png';
+import useSWR from 'swr';
+import { groq } from 'next-sanity';
+import client from '../lib/sanity';
+import { useState, useEffect } from 'react';
+
 
 export default function Index() {
+
+  const { data } = useSWR(groq`*[_type == "aboutPage"]`, (query) => client.fetch(query));
+
+  const [slugs, setSlugs] = useState();
+  useEffect(() => setSlugs(data?.map((page) => page.slug.current)), [data]);
+
+  const aboutSlugs = slugs?.filter((e) => e !== 'vraag-&-antwoord');
+  // const FAQslug = 'vraag-&-antwoord';
+  console.log(aboutSlugs)
+ // ['wetsanalyse-vanuit-circulaire-blik', 'wat-vind-je-nu-op-circulaw?', 'waarom-circulaw?', 'wat-is-circulaw?', 'wie-maken-circulaw?']
   return (
     <Layout page='home'>
       <div className='bg-black-white-200 pb-20' name='thema'>
