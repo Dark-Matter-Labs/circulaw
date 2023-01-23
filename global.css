@@ -252,6 +252,12 @@
   background: linear-gradient(rgba(34, 83, 44, 0) 0%, #042D36 100%);
 }
 
+.extended-measures-gradient {
+  background: linear-gradient(rgba(248, 250, 248, 0) 0%, #F8FAF8 100%);
+}
+
+
+
 .measure-bg {
   background: '#F5F5F5';
 }

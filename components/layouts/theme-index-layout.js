@@ -1,175 +1,86 @@
 import Link from 'next/link';
 import ThemeBottomSection from '../section-bottom-theme-index';
+import ThemeCard from '../theme-card';
 import Image from 'next/image';
-import CustomButton from '../custom-button';
 
-export default function ThemeLayout(props) {
+{
+  /* TO DO */
+}
+
+export default function ThemeLayout({ bgHero, ...props }) {
   return (
     <>
-      {/* Create Component with props */}
-      <div className='w-full h-[28rem] bg-houtbouw-hero bg-center bg-cover relative'>
-        <div className='thema-hero-gradient absolute inset-x-0 bottom-0 h-[42rem] z-5'>
-          <div className='global-margin h-[28rem] mt-[18rem] z-10'>
-            <div className='breadcrumb pt-8 text-green-500 -mt-16'>
-              <Link
-                className='bg-black-white-200 border rounded-md border-black-white-200 px-1 py-0.5'
-                href='/'
-              >
-                &lt; Home
-              </Link>
-            </div>
-
-            <div className='grid col-span-8 grid-cols-8 pl-36 pb-14 pt-14 w-4/5'>
-              <div className='col-span-8'>
-                <h2 className='text-black-white-200 inline-block mobile sm:desktop'>
-                  {props.title} CF{' '}
-                </h2>
+      <div>
+        {/* HEADER DESKTOP */}
+        <div className={`hidden sm:block w-full h-[28rem] bg-center bg-cover relative ${bgHero}`}>
+          <div className='thema-hero-gradient absolute inset-x-0 bottom-0 h-[42rem] z-5'>
+            <div className='global-margin h-[28rem] mt-[18rem] z-10'>
+              <div className='breadcrumb pt-8 text-green-500 -mt-16'>
+                <Link
+                  className='bg-black-white-200 border rounded-md border-black-white-200 pl-1 pr-2 py-0.5'
+                  href='/'
+                >
+                  &lt; Home
+                </Link>
               </div>
-              <div className='col-span-7'>
-                <p className='pt-4 text-black-white-200 p-mobile-bg sm:p-desktop-bg'>
-                  We kunnen veel milieuvriendelijker bouwen wanneer we beton (deels) vervangen door
-                  houtfont change
-                  <span className='text-green-500 link-mobile sm:link-desktop inline-block pl-1'>
-                    <a href={props.pdfSource} target='_blank' rel='noopener noreferrer'>
-                      {' '}
-                      meer over nut van houtbouw →
-                    </a>
-                  </span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className=''>
-        <div className='global-margin'>
-          {/* CREATE COMPONENT */}
-          <div className='bg-black-white-200'>
-            <div className='pt-20'>
-              <h3 className='mobile sm:desktop'>
-                Overzichten van instrumenten die houtbouw stimuleren{' '}
-              </h3>
-            </div>
-            <div className='flex gap-14 justify-between items-center h-[34rem]'>
-              <div className='grid grid-rows-6 border-transparent shadow-md rounded-md h-5/6 w-full'>
-                <div className='row-span-3 bg-green-600 rounded-t-md flex items-center justify-center'>
-                  <div className='w-5/6 h-5/6 relative'>
-                    <Image src='../list.svg' alt='' fill />
-                  </div>
+              <div className='grid col-span-8 grid-cols-8 sm:pl-12 sm:pt:12 md:pl-24 lg:pl-36 pb-14 pt-14 w-4/5'>
+                <div className='col-span-8'>
+                  <h1 className='text-black-white-200 inline-block mobile sm:desktop'>
+                    {props.title}
+                  </h1>
                 </div>
-                <div className='row-span-3 px-10'>
-                  <h4 className='mobile sm:desktop pt-6'>Lijst van 36 instrumenten</h4>
-                  <p className='p-mobile-bg sm:p-desktop-bg pt-6'>
-                    Met handige filters om snel te vinden wat je zoekt.
-                  </p>
-                </div>
-                <div className='pb-6 pl-8'>
-                  <Link href={props.cardLinkList}>
-                    <CustomButton color='whiteBackground'>
-                      Bekijk de lijst
-                      <span className='pl-2'>
+                <div className='col-span-7'>
+                  <p className='pt-4 text-black-white-200 p-mobile-bg sm:p-desktop-bg'>
+                    {props.headerSubtitle}
+                    <span className='text-green-500 link-mobile sm:link-desktop inline-block pl-1'>
+                      <a href={props.headerLinkURL} target='_blank' rel='noopener noreferrer'>
                         {' '}
-                        <svg
-                          xmlns='http://www.w3.org/2000/svg'
-                          fill='none'
-                          viewBox='0 0 24 24'
-                          strokeWidth={1.5}
-                          stroke='currentColor'
-                          className='w-5  h-5'
-                        >
-                          <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            d='M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3'
-                          />
-                        </svg>
-                      </span>
-                    </CustomButton>
-                  </Link>
-                </div>
-              </div>
-              <div className='grid grid-rows-6 border border-transparent shadow-md rounded-md h-5/6 w-full'>
-                <div className='row-span-3 bg-green-600 rounded-t-md flex items-center justify-center'>
-                  <div className='w-5/6 h-5/6 relative'>
-                    <Image src='../samenhang.svg' alt='' fill />
-                  </div>
-                </div>
-                <div className='row-span-3 px-10'>
-                  <h4 className='mobile sm:desktop pt-4'>
-                    Samenhang álle houtbouwinstrumenten in beeld
-                  </h4>
-                  <p className='p-mobile-bg sm:p-desktop-bg pt-4'>
-                    Hoe meer instrumenten je tegelijk inzet, hoe meer je bereikt.
+                        {props.headerLinkText}→
+                      </a>
+                    </span>
                   </p>
-                </div>
-                <div className='pb-6 pl-8'>
-                  <Link href={props.cardLinkSamenhang}>
-                    <CustomButton color='whiteBackground'>
-                      Bekijk de samenhang
-                      <span className='pl-2'>
-                        {' '}
-                        <svg
-                          xmlns='http://www.w3.org/2000/svg'
-                          fill='none'
-                          viewBox='0 0 24 24'
-                          strokeWidth={1.5}
-                          stroke='currentColor'
-                          className='w-5  h-5'
-                        >
-                          <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            d='M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3'
-                          />
-                        </svg>
-                      </span>
-                    </CustomButton>
-                  </Link>
-                </div>
-              </div>
-              <div className='grid grid-rows-6 border border-transparent shadow-md rounded-md h-5/6 w-full'>
-                <div className='row-span-3 bg-green-600 rounded-t-md flex items-center justify-center'>
-                  <div className='w-5/6 h-5/6 relative'>
-                    <Image src='../waarvoor.svg' alt='' fill />
-                  </div>
-                </div>
-                <div className='row-span-3 px-10'>
-                  <h4 className='mobile sm:desktop pt-4'>Wie is waarvoor bevoegd?</h4>
-                  <p className='p-mobile-bg sm:p-desktop-bg pt-4'>
-                    Zonder samenwerking geen succes. Maar dan moet je wel weten wie voor welk
-                    instrument verantwoordelijk is.
-                  </p>
-                </div>
-                <div className='pb-6 pl-8'>
-                  <Link href={props.cardLinkWaarvoor}>
-                    <CustomButton color='whiteBackground'>
-                      Bekijk de bevoegdheden
-                      <span className='pl-2'>
-                        {' '}
-                        <svg
-                          xmlns='http://www.w3.org/2000/svg'
-                          fill='none'
-                          viewBox='0 0 24 24'
-                          strokeWidth={1.5}
-                          stroke='currentColor'
-                          className='w-5  h-5'
-                        >
-                          <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            d='M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3'
-                          />
-                        </svg>
-                      </span>
-                    </CustomButton>
-                  </Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <ThemeBottomSection props={props} />
+
+        <div className='block global-margin sm:hidden pt-5'>
+          <div className='py-3'>
+            <h1 className='mobile pb-3'>{props.title}</h1>
+            <p className='p-mobile-bg pb-3'>
+              {props.headerSubtitle}
+              <a className='text-green-500 link-mobile'> {props.headerLinkText}</a>
+            </p>
+          </div>
+          <div className='h-56 w-full thema-hero-gradient rounded-md'>
+            <div className='h-full w-full rounded-md relative'>
+              <Image
+                src={props.heroImage}
+                alt='hero image'
+                objectFit='cover'
+                fill
+                className='rounded-md absolute'
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className=''>
+          <div className='global-margin'>
+            <div className='pt-10 sm:pt-20 sm:pb-10'>
+              <h2 className='mobile sm:desktop'>
+                Overzichten van instrumenten die {props.thema} stimuleren{' '}
+              </h2>
+            </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-14 justify-items-center sm:h-auto md:h-[76rem] lg:h-[38rem]'>
+              <ThemeCard props={props} type='list' />
+              <ThemeCard props={props} type='samenhang' />
+              <ThemeCard props={props} type='waarvoor' />
+            </div>
+          </div>
+          <ThemeBottomSection props={props} />
+        </div>
       </div>
     </>
   );
