@@ -5,10 +5,10 @@ export default function ActionPanel(props) {
   return (
     <div className=''>
       <div className=''>
-        <h3 className='mobile sm:desktop text-black-white-200'>{props.title}</h3>
+        <h4 className='mobile sm:desktop text-black-white-200'>{props.title}</h4>
         <div className=''>
           <div>
-            <div className='mt-2 max-w-xl body-text-mobile sm:body-text text-black-white-200'>
+            <div className='mt-2 max-w-xl p-mobile-md sm:p-desktop-md text-black-white-200'>
               {props.paragraph}
             </div>
           </div>

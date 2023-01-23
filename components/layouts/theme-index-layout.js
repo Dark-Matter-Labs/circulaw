@@ -15,8 +15,11 @@ export default function ThemeLayout({bgHero, ...props}) {
       <div className={`w-full h-[28rem] bg-center bg-cover relative ${bgHero}`}>
         <div className='thema-hero-gradient absolute inset-x-0 bottom-0 h-[42rem] z-5'>
           <div className='global-margin h-[28rem] mt-[18rem] z-10'>
-            <div className='breadcrumb pt-8 text-greenLink -mt-16'>
-              <Link className='bg-black-white-200 border rounded-md border-black-white-200 px-1 py-0.5' href='/'>
+            <div className='breadcrumb pt-8 text-green-500 -mt-16'>
+              <Link
+                className='bg-black-white-200 border rounded-md border-black-white-200 px-1 py-0.5'
+                href='/'
+              >
                 &lt; Home
               </Link>
             </div>
@@ -25,9 +28,9 @@ export default function ThemeLayout({bgHero, ...props}) {
                 <h1 className='text-black-white-200 inline-block mobile sm:desktop'>{props.title}</h1>
               </div>
               <div className='col-span-7'>
-                <p className='pt-4 text-black-white-200 body-text-mobile sm:body-text'>
+                <p className='pt-4 text-black-white-200 p-mobile-bg sm:p-desktop-bg'>
                  {props.headerSubtitle}
-                  <span className='text-greenLink link-mobile sm:link inline-block pl-1'>
+                  <span className='text-green-500 link-mobile sm:link-desktop inline-block pl-1'>
                     <a href={props.headerLinkURL} target='_blank' rel='noopener noreferrer'>
                       {' '}
                       {props.headerLinkText}

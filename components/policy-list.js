@@ -39,7 +39,7 @@ export default function PolicyList(props) {
             </div>
             <div className='block my-1'>
               <Link href={'/measures/' + law.slug.current} key={law.slug.current}>
-                <span className='text-lg font-semibold no-underline hover:text-greenLink'>
+                <span className='text-lg font-semibold no-underline hover:text-green-500'>
                   <h3>{law.titel} </h3>
                 </span>
               </Link>

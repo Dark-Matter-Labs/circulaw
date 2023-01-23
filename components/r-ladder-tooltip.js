@@ -118,7 +118,7 @@ export default function ToolTips({ children, icon }) {
                           <div className='py-4'>
                             <Image src={R1} alt='Picture of the author' />
                           </div>
-                          <div className='card-body'>
+                          <div className='p-mobile-bg sm:p-desktop-bg '>
                             Bron: PBL (Planbureau voor de Leefomgeving)
                           </div>
                           <Link
@@ -126,7 +126,7 @@ export default function ToolTips({ children, icon }) {
                             target='_blank'
                             rel='noopener noreferrer'
                           >
-                            <span className='text-greenLink link-mobile sm:link'>
+                            <span className='text-green-500 link-mobile sm:link-desktop'>
                               Meer over de R ladder op de website van RVO
                             </span>
                           </Link>

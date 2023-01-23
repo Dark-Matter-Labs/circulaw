@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import HoutbouwHero from '../public/houtbouw.png';
 import WindmolensHero from '../public/turbine.png';
-import OverigeHero from '../public/biennekort.png';
+import OverigeHero from '../public/mattress.png';
 
 import HoutbouwDetails1 from '../public/houtbouw1.png';
 import HoutbouwDetails2 from '../public/houtbouw2.png';
@@ -27,7 +27,7 @@ const types = [
     href: '/houtbouw',
   },
   {
-    id: 2,
+    id: 1,
     heroImage: WindmolensHero,
     title: 'Circulaire windturbines',
     tag: '',
@@ -37,13 +37,13 @@ const types = [
     href: '/circulaire-windturbines',
   },
   {
-    id: 3,
+    id: 2,
     heroImage: OverigeHero,
-    title: 'Circulaire matrasketen, en…',
+    title: 'Circulaire matrasketen',
     tag: '',
     description:
-      'Binnenkort starten we met onderzoek en wetsanalyses om circulariteit in de matrasketen te stimuleren. Zijn er thema’s waar jij graag mee aan de slag zou willen? Laat het ons weten!',
-    buttonText: 'Meer over matrassen??',
+      'Binnenkort gaan we starten met het onderzoek en de wetsanalyse om  circulariteit in de matrasketen te stimuleren. Met welk thema wil jij aan de slag? Laat het ons weten! ',
+    buttonText: 'Meer over matrassen',
     href: '/matrassen',
   },
 ];
@@ -114,21 +114,21 @@ export default function SectionTypes(props) {
                 >
                   {file.href !== '' ? (
                     <Link href={file.href}>
-                      <h3 className='mobile sm:desktop mt-2 block text-black pointer-events-none pb-4'>
+                      <h4 className='mobile sm:desktop mt-2 block text-black pointer-events-none pb-4'>
                         {file.title}
-                      </h3>
+                      </h4>
                     </Link>
                   ) : (
-                    <h3 className='mobile sm:desktop mt-2 block text-black pointer-events-none pb-4'>
+                    <h4 className='mobile sm:desktop mt-2 block text-black pointer-events-none pb-4'>
                       {file.title}
-                    </h3>
+                    </h4>
                   )}
                   {/* added height for the description while on home to ensure all the text can be read*/}
                 </div>
                 <p
                   className={classNames(
                     props.type === 'home' ? 'h-[18rem]' : '',
-                    'body-text-mobile sm:card-body block text-black pointer-events-none py-4 w-full',
+                    'p-mobile-md sm:p-desktop-md block text-black pointer-events-none py-4 w-full',
                   )}
                 >
                   {file.description}

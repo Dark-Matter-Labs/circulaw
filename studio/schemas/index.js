@@ -11,7 +11,6 @@ export const schemaTypes = [
   measure,
   aboutPage,
 
-
   // OBJECTS
   greenBox,
   pdfBlock,

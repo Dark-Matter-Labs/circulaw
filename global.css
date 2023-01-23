@@ -98,11 +98,11 @@
   }
 
   .link-desktop {
-    @apply font-manrope text-xl font-semibold leading-13;
+    @apply font-manrope text-xl font-semibold leading-13 underline;
   }
 
   .link-mobile {
-    @apply font-manrope text-base font-medium leading-11;
+    @apply font-manrope text-base font-medium leading-11 underline;
   }
 
   .button-desktop {
@@ -133,114 +133,6 @@
     @apply font-manrope text-xs font-medium leading-6;
   }
 
-
-  /* to be removed */
-  .overview-thema {
-    font-family: 'Urbanist', 'sans-serif';
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 32px;
-  }
-
-  .overview-text {
-    font-family: 'Manrope';
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 400;
-  }
-
-  .tooltip-hover-text {
-    font-family: 'Manrope';
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 500;
-  }
-
-  .tooltip-hover-text-mob {
-    font-family: 'Manrope';
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 500;
-  }
-
-  .subheading {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-size: 22.5px;
-    line-height: 32px;
-    font-weight: 300;
-  }
-
-  .body-new {
-    font-family: 'Urbanist', 'sans-serif';
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 30px;
-  }
-
-  .homepage-header-title {
-    font-family: 'Urbanist', 'sans-serif';
-    font-size: 85.83px;
-    font-weight: 600;
-    line-height: 96px;
-    letter-spacing: 0em;
-  }
-
-  .homepage-header-title-mobile {
-    font-family: 'Urbanist', 'sans-serif';
-    font-weight: 600;
-    font-size: 24.5px;
-    line-height: 30px;
-  }
-
-  .homepage-header-body {
-    font-family:'Urbanist', 'sans-serif';
-    font-size: 22.5px;
-    font-weight: 400;
-    line-height: 30px;
-  }
-
-  .body-text {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 30px;
-  }
-
-  .body-text-mobile {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 25.5px;
-  }
-
-  .body-small {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  .card-body {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 150%;
-  }
-
-  .link {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 30px;
-    text-decoration: underline;
-  }
-
   .menu-title {
     font-family: 'Manrope';
     font-style: normal;
@@ -255,24 +147,6 @@
     font-weight: 600;
     font-size: 18px;
     line-height: 150%;
-  }
-
-  .breadcrumb {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 19px;
-    text-transform: uppercase;
-
-  }
-
-  .button {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
   }
 
   .r-category {
@@ -305,38 +179,6 @@
     line-height: 150%;
   }
 
-  .filter-body {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 19px;
-  }
-
-  .filter-h1 {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 22px;
-  }
-
-  .filter-h1-mobile {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 22px;
-  }
-
-  .filter-body-mobile {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 20px;
-  }
-
   .tooltip-body {
     font-family: 'Manrope';
     font-size: 16px;
@@ -361,10 +203,6 @@
   font-size: 12px;
 }
 
-.bold-text {
-  font-weight: bold;
-}
-
 .subrecht-text {
   font-size: 12px;
   font-weight: 600;
@@ -385,26 +223,6 @@
   cursor: pointer;
 }
 
-.texture-move {
-  transform: translate(30vw, 0);
-  -webkit-transform: translate(30vw, 0);
-  -ms-transform: translate(30vw, 0); /* IE 9 */
-  -o-transform: translate(30vw, 0); /* Opera */
-  -moz-transform: translate(30vw, 0); /* Firefox */
-  z-index: 1;
-  margin-bottom: -40%;
-}
-
-.texture-move2 {
-  transform: translate(30vw, 0);
-  -webkit-transform: translate(60vw, -40vh);
-  -ms-transform: translate(30vw, 0); /* IE 9 */
-  -o-transform: translate(30vw, 0); /* Opera */
-  -moz-transform: translate(30vw, 0); /* Firefox */
-  z-index: 1;
-  margin-bottom: -40%;
-}
-
 .bg-opacity {
   --tw-bg-opacity: 0.13;
 }
@@ -417,29 +235,8 @@
   float: left;
 }
 
-.square {
-  display: inline-block;
-  margin-right: 1rem;
-  width: 25px;
-  height: 25px;
-}
-.score-true {
-  background-color: #6d9f6b;
-  border-color: #6d9f6b;
-  border-width: 1px;
-}
-.score-false {
-  background-color: #ffffff;
-  border-color: #6d9f6b;
-  border-width: 1px;
-}
-
 .wrap {
   word-wrap: break-word;
-}
-
-.gradient-bg {
-  background: linear-gradient(#f9d9c8, 1%, #fff);
 }
 
 .gradient-overview {
@@ -454,7 +251,6 @@
 .thema-hero-gradient {
   background: linear-gradient(rgba(34, 83, 44, 0) 0%, #042D36 100%);
 }
-
 
 .measure-bg {
   background: '#F5F5F5';

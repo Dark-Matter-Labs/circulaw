@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import LinkIcon from '../../components/link-icon';
 import { PortableText } from '@portabletext/react';
-// import Image from 'next/image';
 import MeasureOverview from '../../components/measure-overview';
 import MeasureTable from '../../components/measure-table';
 import CustomButton from '../../components/custom-button';
@@ -41,23 +40,20 @@ const components = {
     greenBox: ({ value }) => (
       <div className='-mx-8 sm:mx-0 my-10'>
         <div className='bg-green-300 w-full px-8 py-8'>
-          <h2 className='pb-6 mobile sm:desktop'>{value?.greenBoxTitle}</h2>
-          <div className='body-text-mobile sm:body-text'>{value?.greenBoxText}</div>
+          <h3 className='pb-6 mobile sm:desktop'>{value?.greenBoxTitle}</h3>
+          <div className='p-mobile-bg sm:p-desktop-bg'>{value?.greenBoxText}</div>{' '}
+          {/* need to change */}
         </div>
       </div>
     ),
     hoverText: ({ value, isInline }) => (
       <>
-        <button
-          type='button'
-          className='group inline-flex static'
-          style={{ display: isInline ? 'inline-block' : 'block' }}
-        >
+        <button type='button' className='' style={{ display: isInline ? 'inline-block' : 'block' }}>
           <svg
             className='inline'
             width='24'
             height='24'
-            viewBox='0 0 24 30'
+            viewBox='0 2 30 30'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
           >
@@ -67,7 +63,7 @@ const components = {
               fill='#F8FAF8'
             />
           </svg>
-          <div className='inline-block max-w-xs absolute invisible group-hover:visible z-10 py-3 px-6 bg-black-white-300 text-black-white-800tooltip-hover-text-mob sm:tooltip-hover-text opacity-0 group-hover:opacity-100 transition tooltip'>
+          <div className='inline-block max-w-xs absolute invisible group-hover:visible z-10 py-3 px-6 bg-black-white-300 text-black-white-800 popup-mobile sm:popup-desktop opacity-0 group-hover:opacity-100 transition tooltip'>
             {value.hoverText}
           </div>
         </button>
@@ -83,8 +79,12 @@ const components = {
               <div className='absolute -bottom-44 -right-44 h-96 w-96 invisible md:visible'>
                 <Image src='/pdf-deco.png' alt='decorative image' width={584} height={562} />
               </div>
-              <h2 className='pb-2 mobile sm:desktop text-white'>{value.pdfTitle}</h2>
-              <p className='body-text-mobile sm:body-text text-black-white-200 pb-4'>{value.pdfText}</p>
+              <h3 className='pb-2 mobile sm:desktop text-white'>{value.pdfTitle}</h3>{' '}
+              {/* need to change text white */}
+              <p className='p-mobile-bg sm:p-desktop-bg text-black-white-200 pb-4'>
+                {value.pdfText}
+              </p>{' '}
+              {/* need to change body text */}
               <a
                 href={`https://cdn.sanity.io/files/${
                   process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '2vfoxb3h'
@@ -111,21 +111,28 @@ const components = {
     smallPara: ({ value }) => (
       <div className='flex justify-left pl-8 sm:pl-12'>
         <div className='mb-10 pt-10 w-5/6'>
-          <h4 className='mobile sm:desktop'>{value.smallParaTitle}</h4>
-          <p className='body-text-mobile sm:body-small'>{value.smallParaText}</p>
+          <h5 className='mobile sm:desktop'>{value.smallParaTitle}</h5>
+          <p className='p-mobile-md sm:p-desktop-md'>{value.smallParaText}</p>{' '}
+          {/* need to change */}
         </div>
       </div>
     ),
   },
   list: {
     bullet: ({ children }) => (
-      <div className='newlineDisplay body-text-mobile sm:body-text truncate'>
-        <ul className='list-disc pl-6 pb-4 mobile sm:main'>{children}</ul>
+      <div className='newlineDisplay bullet-mobile sm:bullet-desktop truncate'>
+        {' '}
+        {/* need to change font */}
+        <ul className='list-disc pl-6 pb-4 mobile sm:main'>{children}</ul>{' '}
+        {/* need to change font */}
       </div>
     ),
     number: ({ children }) => (
-      <div className='newlineDisplay body-text-mobile sm:body-text truncate'>
-        <ol className='list-decimal pl-6 pb-4 mobile sm:main'>{children}</ol>
+      <div className='newlineDisplay bullet-mobile sm:bullet-desktop truncate'>
+        {' '}
+        {/* need to change font */}
+        <ol className='list-decimal pl-6 pb-4 mobile sm:main'>{children}</ol>{' '}
+        {/* need to change font */}
       </div>
     ),
   },
@@ -134,12 +141,12 @@ const components = {
     bullet: ({ children }) => <li className='py-0.5'>{children}</li>,
   },
   block: {
-    firstH2: ({ children }) => <h2 className='pb-8 mobile sm:desktop'>{children}</h2>,
-    h2: ({ children }) => <h2 className='py-8 mobile sm:desktop'>{children}</h2>,
-    h3: ({ children }) => <h3 className='py-8 mobile sm:desktop'>{children}</h3>,
+    firstH2: ({ children }) => <h3 className='pb-8 mobile sm:desktop'>{children}</h3>,
+    h2: ({ children }) => <h3 className='py-8 mobile sm:desktop'>{children}</h3>,
+    h3: ({ children }) => <h4 className='py-8 mobile sm:desktop'>{children}</h4>,
     // need to add other styles here
     normal: ({ children }) => (
-      <p className='newlineDisplay body-text-mobile sm:body-text py-2'>{children}</p>
+      <p className='newlineDisplay p-mobile-bg sm:p-desktop-bg py-2'>{children}</p> // check if this is correct
     ),
   },
   marks: {
@@ -147,7 +154,7 @@ const components = {
       value.blank == true ? (
         <>
           <a
-            className='text-greenLink link-mobile sm:link inline-flex'
+            className='text-green-500 link-mobile sm:link-desktop inline-flex'
             href={value.href}
             target='_blank'
             rel='noreferrer'
@@ -157,45 +164,50 @@ const components = {
           </a>
         </>
       ) : (
-        <a className='text-greenLink link-mobile sm:link' href={value.href}>
+        <a className='text-green-500 link-mobile sm:link-desktop' href={value.href}>
           {children}
         </a>
       ),
   },
 };
 
-export default function TestMeasure({ data }) {
+export default function Measure({ data }) {
   return (
     <Layout>
       <div className='measure-bg'>
-        <div className='global-margin pt-4 sm:pt-10 '>
+        <div className='global-margin sm:pt-10 '>
           <div className='grid grid-cols-1 sm:grid-cols-12 content-center'>
             <div className='sm:col-span-12 row-span-1 h-12 mt-4'>
               {/* BREADCRUMB */}
               {data?.measure?.thema === 'houtbouw' && (
                 <Link href='/measures/houtbouw' className=''>
-                  <span className='breadcrumb'>{'<'} Terug</span>
+                  <span className='breadcrumb'>{'<'} Terug</span>{' '}
+                  {/* should all breadcrumbs be green this is black in figma */}
                 </Link>
               )}
               {data?.measure?.thema === 'circulaire-windturbines' && (
                 <Link href='/measures/windturbines' className=''>
-                  <span className='text-greenLink breadcrumb flex col-span-12'>← Terug</span>
+                  <span className='text-green-500 breadcrumb flex col-span-12'>← Terug</span>{' '}
+                  {/* should all breadcrumbs be green this is black in figma */}
                 </Link>
               )}
               {data?.measure?.thema === 'matrassen' && (
                 <Link href='/measures/matrassen' className=''>
-                  <span className='text-greenLink breadcrumb flex col-span-12'>← Terug</span>
+                  <span className='text-green-500 breadcrumb flex col-span-12'>← Terug</span>{' '}
+                  {/* should all breadcrumbs be green this is black in figma */}
                 </Link>
               )}
             </div>
             <div className='sm:col-span-12 row-span-1'>
-              <h1 className='lg:block sm:pt-4 pb-6 sm:pb-10 mobile sm:desktop'>
+              <h2 className='lg:block sm:pt-4 pb-6 sm:pb-10 mobile sm:desktop'>
                 {data?.measure?.titel}
-              </h1>
+              </h2>
             </div>
             {data?.measure?.subtitel && (
               <div className='sm:col-span-7 row-span-1'>
                 <p className='lg:block p-mobile-header sm:p-desktop-header pb-10'>
+                  {' '}
+                  {/* check font */}
                   {data?.measure?.subtitel}
                 </p>
               </div>
@@ -207,7 +219,6 @@ export default function TestMeasure({ data }) {
             <div className='sm:max-w-3xl pb-20 col-span-2 '>
               <div className='py-4'>
                 <PortableText value={data?.measure?.content} components={components} />
-                {}
               </div>
               <MeasureTable data={data} />
             </div>
