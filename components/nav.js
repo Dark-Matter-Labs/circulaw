@@ -236,7 +236,7 @@ export default function Nav() {
                 </Disclosure.Button>
                 <Disclosure.Button
                   as='a'
-                  href='/matrassens'
+                  href='/matrassen'
                   className='ml-5 border-transparent text-gray-900 border-b border-black-white-300 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5'
                 >
                   Matrassen
