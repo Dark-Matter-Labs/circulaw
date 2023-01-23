@@ -298,7 +298,7 @@ export default function Nav() {
   // returns nav bar that is nested inside the header part of the index page
   return (
     <div className='relative'>
-      <video id='background-video' autoPlay loop muted poster='/2.svg'>
+      <video id='background-video' autoPlay loop muted poster='/bg-poster.png'>
         <source src='/01_circulaw.mov' type='video/mp4' />
       </video>
       <BetaBanner />
