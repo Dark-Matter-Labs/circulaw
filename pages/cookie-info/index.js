@@ -35,7 +35,7 @@ export default function Privacy() {
           not track or collect anything if you click Reject or have Do Not Track enabled.
         </p>
 
-        <h2 className='mobile sm:main py-2'>Cookies used</h2>
+        <h2 className='mobile sm:desktop py-2'>Cookies used</h2>
         <ul className='list-disc pl-6 p-mobile-bg sm:p-desktop-bg max-w-4xl pb-6'>
           <li>_localConsent: Saves your cookie preference, expires in 1 year</li>
           <li>_hjSessionUser: Set when a user first lands on a page, expires in 1 year</li>
@@ -60,7 +60,7 @@ export default function Privacy() {
           .
         </p>
 
-        <h2 className='mobile sm:main py-2'>Wijziging van deze Privacyverklaring</h2>
+        <h2 className='mobile sm:desktop py-2'>Wijziging van deze Privacyverklaring</h2>
         <p className='p-mobile-bg sm:p-desktop-bg pb-6 max-w-4xl'>
           De gemeente Amsterdam heeft het recht om haar Privacyverklaring te wijzigen. Als er
           inhoudelijke wijzigingen worden doorgevoerd, maken we dit bekend via de website{' '}

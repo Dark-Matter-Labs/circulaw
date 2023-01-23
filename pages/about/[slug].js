@@ -105,12 +105,12 @@ const components = {
   list: {
     bullet: ({ children }) => (
       <div className='newlineDisplay p-mobile-bg sm:p-desktop-bg truncate'>
-        <ul className='list-disc pl-6 pb-4 mobile sm:main'>{children}</ul>
+        <ul className='list-disc pl-6 pb-4 mobile sm:desktop'>{children}</ul>
       </div>
     ),
     number: ({ children }) => (
       <div className='newlineDisplay p-mobile-bg sm:p-desktop-bg truncate'>
-        <ol className='list-decimal pl-6 pb-4 mobile sm:main'>{children}</ol>
+        <ol className='list-decimal pl-6 pb-4 mobile sm:desktop'>{children}</ol>
       </div>
     ),
   },

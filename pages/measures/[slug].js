@@ -124,7 +124,7 @@ const components = {
       <div className='newlineDisplay bullet-mobile sm:bullet-desktop truncate'>
         {' '}
         {/* need to change font */}
-        <ul className='list-disc pl-6 pb-4 mobile sm:main'>{children}</ul>{' '}
+        <ul className='list-disc pl-6 pb-4 mobile sm:desktop'>{children}</ul>{' '}
         {/* need to change font */}
       </div>
     ),
@@ -132,7 +132,7 @@ const components = {
       <div className='newlineDisplay bullet-mobile sm:bullet-desktop truncate'>
         {' '}
         {/* need to change font */}
-        <ol className='list-decimal pl-6 pb-4 mobile sm:main'>{children}</ol>{' '}
+        <ol className='list-decimal pl-6 pb-4 mobile sm:desktop'>{children}</ol>{' '}
         {/* need to change font */}
       </div>
     ),

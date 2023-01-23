@@ -59,7 +59,6 @@ export default function ThemeLayout({ bgHero, ...props }) {
               <Image
                 src={props.heroImage}
                 alt='hero image'
-                objectFit='cover'
                 fill
                 className='rounded-md absolute'
               />

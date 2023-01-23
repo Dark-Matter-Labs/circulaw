@@ -16,7 +16,7 @@ export default function Privacy() {
             <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
           </span>
         </p>
-        <h2 className='mobile sm:main py-2'>Wanneer verwerken wij persoonsgegevens</h2>
+        <h2 className='mobile sm:desktop py-2'>Wanneer verwerken wij persoonsgegevens</h2>
         <p className='p-mobile-bg sm:p-desktop-bg pb-10 max-w-4xl'>
           Wanneer je je registreert of aanmeldt voor een van onze producten, diensten of
           activiteiten, je aanmeldt voor een nieuwsbrief, deelneemt aan een bijeenkomst, gebruik
@@ -26,14 +26,14 @@ export default function Privacy() {
           Amsterdam. De gemeente verwerkt deze persoonsgegevens op basis van een gerechtvaardigd
           belang, artikel 6, eerste lid, sub f, van de AVG.
         </p>
-        <h2 className='mobile sm:main py-2'>Welke gegevens verwerken wij</h2>
+        <h2 className='mobile sm:desktop py-2'>Welke gegevens verwerken wij</h2>
         <p className='p-mobile-bg sm:p-desktop-bg pb-10 max-w-4xl'>
           We verwerken jouw registratiegegevens. Dit zijn de gegevens die wij je verzoeken in te
           vullen bij registratie zoals naam, e-mailadres, telefoonnummer, functie, naam
           werkgever/bedrijf en de vestigingsplaats van het bedrijf. Voor de verwerking van jouw
           gegevens maken wij geen gebruik van AI-technieken.
         </p>
-        <h2 className='mobile sm:main py-2'>Met welk doel verwerken wij je persoonsgegevens</h2>
+        <h2 className='mobile sm:desktop py-2'>Met welk doel verwerken wij je persoonsgegevens</h2>
         <div className='p-mobile-bg sm:p-desktop-bg pb-10 max-w-4xl'>
           We verwerken je persoonsgegevens
           <ul className='list-disc pl-6'>
@@ -50,11 +50,11 @@ export default function Privacy() {
             <li>om te voldoen aan een wettelijke verplichting.</li>
           </ul>
         </div>
-        <h2 className='mobile sm:main py-2'>
+        <h2 className='mobile sm:desktop py-2'>
           Wanneer verstrekken wij je persoonsgegevens aan derden
         </h2>
         <p className='p-mobile-bg sm:p-desktop-bg pb-10 max-w-4xl'>Dit doen wij nooit.</p>
-        <h2 className='mobile sm:main py-2'>
+        <h2 className='mobile sm:desktop py-2'>
           Hoe zit het met links naar websites van derde partijen
         </h2>
         <p className='p-mobile-bg sm:p-desktop-bg pb-10 max-w-4xl'>
@@ -66,7 +66,7 @@ export default function Privacy() {
           privacy voorwaarden, beveiliging en reglementen van de derde partij voordat je hun
           (persoonlijke) informatie verschaft.
         </p>
-        <h2 className='mobile sm:main py-2'>Wat zijn jouw rechten?</h2>
+        <h2 className='mobile sm:desktop py-2'>Wat zijn jouw rechten?</h2>
         <p className='p-mobile-bg sm:p-desktop-bg pb-6 max-w-4xl'>
           Je hebt het recht op inzage in je persoonsgegevens en het recht om correctie, verwijdering
           of overdracht van je persoonsgegevens te vragen. Daarnaast heb je het recht bezwaar te
@@ -84,12 +84,12 @@ export default function Privacy() {
           Als je het niet eens zijn met de manier waarop CircuLaw omgaat met je persoonsgegevens dan
           kun je een klacht indienen bij de Autoriteit Persoonsgegevens.
         </p>
-        <h2 className='mobile sm:main py-2'>Hoe lang bewaren we je gegevens?</h2>
+        <h2 className='mobile sm:desktop py-2'>Hoe lang bewaren we je gegevens?</h2>
         <p className='p-mobile-bg sm:p-desktop-bg pb-10 max-w-4xl'>
           CircuLaw bewaart je persoonsgegevens zolang als dat nodig is voor de doelen die hierboven
           zijn genoemd of om te voldoen aan wettelijke (bewaar)verplichtingen.
         </p>
-        <h2 className='mobile sm:main py-2'>Hoe gaan we om met cookies?</h2>
+        <h2 className='mobile sm:desktop py-2'>Hoe gaan we om met cookies?</h2>
         <p className='p-mobile-bg sm:p-desktop-bg pb-6 max-w-4xl'>
           Een cookie is een klein tekstbestand dat onzichtbaar is voor de gebruiker en dat de
           browser opslaat op de computer of het mobiele apparaat van de gebruiker wanneer de
@@ -113,7 +113,7 @@ export default function Privacy() {
           voor gevraagd hoeft te worden.
         </p>
 
-        <h2 className='mobile sm:main py-2'>Wijziging van deze Privacyverklaring</h2>
+        <h2 className='mobile sm:desktop py-2'>Wijziging van deze Privacyverklaring</h2>
         <p className='p-mobile-bg sm:p-desktop-bg pb-6 max-w-4xl'>
           De gemeente Amsterdam heeft het recht om haar Privacyverklaring te wijzigen. Als er
           inhoudelijke wijzigingen worden doorgevoerd, maken we dit bekend via de website{' '}
