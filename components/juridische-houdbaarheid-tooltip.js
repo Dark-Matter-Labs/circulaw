@@ -79,9 +79,9 @@ export default function ToolTips({ children, icon, data }) {
                     </Transition.Child>
                     <div className='flex h-full px-6 flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
                       <div className='px-12 sm:px-6'>
-                        <Dialog.Title className='text-lg font-medium text-gray-900'>
+                        <Dialog.Title className='text-gray-900'>
                           {' '}
-                          Geschatte juridische haalbaarheid
+                          <h5 className='mobile sm:desktop'>Geschatte juridische haalbaarheid</h5>
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1 px-12 sm:px-6'>

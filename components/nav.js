@@ -82,18 +82,18 @@ export default function Nav() {
                     <div className='flex inset-x-0 top-0 pl-5 invisible lg:visible hidden lg:inline '>
                       <div className='flex-1 global-margin'>
                         <div className='content right-0'>
-                          <div className='relative flex items-center justify-between font-manrope font-semibold'>
+                          <div className='relative flex items-center justify-between'>
                             <div className=''>
                               <Popover className='inline-block relative '>
                                 {({ open }) => (
                                   <>
                                     <Popover.Button
                                       className={classNames(
-                                        open ? 'text-black' : 'text-black',
-                                        'group rounded-md inline-flex items-center text-base font-medium',
+                                        open ? 'text-black-white-800' : 'text-black-white-800',
+                                        'group rounded-md inline-flex items-center ',
                                       )}
                                     >
-                                      <span className='uppercase'>Thema&apos;s</span>
+                                      <h6 className='uppercase mobile sm:desktop'>Thema&apos;s</h6>
                                       <ChevronDownIcon
                                         className={classNames(
                                           open ? 'text-gray-600' : 'text-gray-400',
@@ -122,7 +122,7 @@ export default function Nav() {
                                                 className='-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 border-b uppercase dropdown-menu'
                                               >
                                                 <p
-                                                  className={`text-base font-medium text-gray-900 ${item.className}`}
+                                                  className={`popup-mobile sm:popup-desktop text-gray-900 ${item.className}`}
                                                 >
                                                   {item.name}
                                                 </p>
@@ -141,11 +141,13 @@ export default function Nav() {
                                   <>
                                     <Popover.Button
                                       className={classNames(
-                                        open ? 'text-black' : 'text-black',
-                                        'group rounded-md inline-flex items-center text-base font-medium',
+                                        open ? 'text-black-white-800' : 'text-black-white-800',
+                                        'group rounded-md inline-flex items-center',
                                       )}
                                     >
-                                      <span className='uppercase pl-8'>OVER CIRCULAW</span>
+                                      <h6 className='uppercase pl-8 mobile sm:desktop'>
+                                        OVER CIRCULAW
+                                      </h6>
                                       <ChevronDownIcon
                                         className={classNames(
                                           open ? 'text-gray-600' : 'text-gray-400',
@@ -173,7 +175,7 @@ export default function Nav() {
                                                 href={`/about/${encodeURIComponent(slug)}`}
                                                 className='-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase dropdown-menu border-b'
                                               >
-                                                <span className='text-base font-medium text-gray-900'>
+                                                <span className='`popup-mobile sm:popup-desktop text-black-white-800'>
                                                   {slug.replaceAll('-', ' ')}
                                                 </span>
                                               </Link>
@@ -188,16 +190,16 @@ export default function Nav() {
 
                               <div className='inline-block relative'>
                                 <Link href={`/about/${encodeURIComponent(FAQslug)}`}>
-                                  <span className='uppercase pl-8 text-black group rounded-md inline-flex items-center text-base font-medium'>
+                                  <h6 className='uppercase pl-8 text-black-white-800 group rounded-md inline-flex items-center mobile sm:desktop'>
                                     VRAAG & ANTWOORD
-                                  </span>
+                                  </h6>
                                 </Link>
                               </div>
                               <div className='inline-block relative '>
                                 <Link href='/contact'>
-                                  <span className='uppercase pl-8 text-black group rounded-md inline-flex items-center text-base font-medium'>
+                                  <h6 className='uppercase pl-8 text-black-white-800 group rounded-md inline-flex items-center mobile sm:desktop'>
                                     CONTACT
-                                  </span>
+                                  </h6>
                                 </Link>
                               </div>
                             </div>
@@ -210,84 +212,61 @@ export default function Nav() {
               </div>
             </div>
             <Disclosure.Panel className='lg:hidden bg-black-white-200'>
-              <div className='pt-2 pb-4 menu-title-mobile'>
+              <div className='pt-2 pb-4'>
                 <Disclosure.Button
                   as='span'
-                  className='uppercase text-black-white-800 border-t block pl-3 pr-4 py-5 font-semibold'
+                  className='uppercase text-black-white-800 border-t block pl-3 pr-4 py-5'
                 >
                   Thema&apos;s
                 </Disclosure.Button>
                 <Disclosure.Button
                   as='a'
                   href='/houtbouw'
-                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
+                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5'
                 >
                   Houtbouw
                 </Disclosure.Button>
                 <Disclosure.Button
                   as='a'
                   href='/circulaire-windturbines'
-                  className='ml-5 border-transparent text-gray-900 border-b border-black-white-300 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
+                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5'
                 >
                   Circulaire windturbines
                 </Disclosure.Button>
                 <Disclosure.Button
+                  as='a'
+                  href='/matrassens'
+                  className='ml-5 border-transparent text-gray-900 border-b border-black-white-300 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5'
+                >
+                  Matrassen
+                </Disclosure.Button>
+                <Disclosure.Button
                   as='span'
-                  className='uppercase  text-black-white-800  border-t block pl-3 pr-4 py-5 font-semibold'
+                  className='uppercase  text-black-white-800  border-t block pl-3 pr-4 py-5'
                 >
                   Over CircuLaw
                 </Disclosure.Button>
                 {slugs?.map((slug) => (
                   <Disclosure.Button
                     key={slug}
-                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
+                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 '
                   >
                     <Link href={`/about/${encodeURIComponent(slug)}`}>
                       {slug.replaceAll('-', ' ')}
                     </Link>
                   </Disclosure.Button>
                 ))}
-                {/**                <Disclosure.Button
-                  as='a'
-                  href='/wat-is-circulaw'
-                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
-                >
-                  Wat is CircuLaw?
-                </Disclosure.Button>
-                <Disclosure.Button
-                  as='a'
-                  href='/status-en-ambities'
-                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
-                >
-                  Wat vind je nu op CircuLaw?
-                </Disclosure.Button>
-                <Disclosure.Button
-                  as='a'
-                  href='/wetsanalyse-met-circulaire-blik'
-                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
-                >
-                  Wetsanalyse vanuit circulaire blik
-                </Disclosure.Button>
-                <Disclosure.Button
-                  as='a'
-                  href='/wie-maken-circulaw'
-                  className='ml-5 border-transparent text-gray-900 border-b border-black-white-300 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
-                >
-                  Wie maken CircuLaw?
-                </Disclosure.Button>
-                 */}
-
                 <Disclosure.Button
                   as='a'
                   href='/hoe-het-werkt'
-                  className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5 font-semibold'
+                  className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5'
                 >
                   Vraag en Antwoord
                 </Disclosure.Button>
                 {aboutSlugs?.map((slug) => (
                   <Disclosure.Button
                     key={slug}
-                    className='font-semibold ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base first-letter:uppercase'
+                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 first-letter:uppercase'
                   >
                     <Link href={`/about/${encodeURIComponent(slug)}`}>
                       {slug.replaceAll('-', ' ')}
@@ -297,14 +276,14 @@ export default function Nav() {
                 <Disclosure.Button
                   as='a'
                   href={`/about/${encodeURIComponent(FAQslug)}`}
-                  className='uppercase text-black1  border-b border-black-white-300 block pl-3 pr-4 py-5 font-semibold'
+                  className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5'
                 >
                   Vraag & Antwoord
                 </Disclosure.Button>
                 <Disclosure.Button
                   as='a'
                   href='/contact'
-                  className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5 font-semibold'
+                  className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5'
                 >
                   Contact
                 </Disclosure.Button>
@@ -317,7 +296,10 @@ export default function Nav() {
   }
   // returns nav bar that is nested inside the header part of the index page
   return (
-    <div className='relative home-header-bg'>
+    <div className='relative'>
+      <video id='background-video' autoPlay loop muted poster='/2.svg'>
+        <source src='/01_circulaw.mov' type='video/mp4' />
+      </video>
       <BetaBanner />
       <div className='relative pt-6 pb-16 sm:pb-24'>
         <Disclosure as='nav' className=' '>
@@ -357,7 +339,7 @@ export default function Nav() {
                       <div className='flex inset-x-0 top-0 pl-5 invisible lg:visible hidden lg:inline '>
                         <div className='flex-1 global-margin px-2 sm:px-6 lg:px-8'>
                           <div className='content right-0'>
-                            <div className='relative flex items-center justify-between font-manrope font-semibold'>
+                            <div className='relative flex items-center justify-between'>
                               <div className=''>
                                 <Popover className='inline-block relative '>
                                   {({ open }) => (
@@ -365,10 +347,12 @@ export default function Nav() {
                                       <Popover.Button
                                         className={classNames(
                                           open ? 'text-black-white-200' : 'text-black-white-200',
-                                          'group rounded-md inline-flex items-center text-base font-medium',
+                                          'group rounded-md inline-flex items-center',
                                         )}
                                       >
-                                        <span className='uppercase'>Thema&apos;s</span>
+                                        <h6 className='uppercase mobile sm:desktop'>
+                                          Thema&apos;s
+                                        </h6>
                                         <ChevronDownIcon
                                           className={classNames(
                                             open ? 'text-black-white-200' : 'text-black-white-200',
@@ -397,7 +381,7 @@ export default function Nav() {
                                                   className='-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 border-b uppercase dropdown-menu'
                                                 >
                                                   <p
-                                                    className={`text-base font-medium text-gray-900 ${item.className}`}
+                                                    className={`popup-mobile sm:popup-desktop text-gray-900 ${item.className}`}
                                                   >
                                                     {item.name}
                                                   </p>
@@ -416,10 +400,12 @@ export default function Nav() {
                                       <Popover.Button
                                         className={classNames(
                                           open ? 'text-black-white-200' : 'text-black-white-200',
-                                          'group rounded-md inline-flex items-center text-base font-medium',
+                                          'group rounded-md inline-flex items-center',
                                         )}
                                       >
-                                        <span className='uppercase pl-8'>OVER CIRCULAW</span>
+                                        <h6 className='uppercase pl-8 mobile sm:desktop'>
+                                          OVER CIRCULAW
+                                        </h6>
                                         <ChevronDownIcon
                                           className={classNames(
                                             open ? 'text-black-white-200' : 'text-black-white-200',
@@ -445,9 +431,9 @@ export default function Nav() {
                                                 <Link
                                                   key={slug}
                                                   href={`/about/${encodeURIComponent(slug)}`}
-                                                  className='-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase dropdown-menu border-b'
+                                                  className='-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase dropdown-menu border-b'
                                                 >
-                                                  <p className='text-base font-medium text-gray-900'>
+                                                  <p className='popup-mobile sm:popup-desktop text-gray-900'>
                                                     {slug.replaceAll('-', ' ')}
                                                   </p>
                                                 </Link>
@@ -461,16 +447,16 @@ export default function Nav() {
                                 </Popover>
                                 <div className='inline-block relative'>
                                   <Link href={`/about/${encodeURIComponent(FAQslug)}`}>
-                                    <span className='uppercase pl-8 text-black-white-200 group rounded-md inline-flex items-center text-base font-medium'>
+                                    <h6 className='uppercase pl-8 text-black-white-200 group rounded-md inline-flex items-center mobile sm:desktop'>
                                       VRAAG & ANTWOORD
-                                    </span>
+                                    </h6>
                                   </Link>
                                 </div>
                                 <div className='inline-block relative '>
                                   <Link href='/contact'>
-                                    <span className='uppercase pl-8 text-black-white-200 group rounded-md inline-flex items-center text-base font-medium'>
+                                    <h6 className='uppercase pl-8 text-black-white-200 group rounded-md inline-flex items-center  mobile sm:desktop'>
                                       CONTACT
-                                    </span>
+                                    </h6>
                                   </Link>
                                 </div>
                               </div>
@@ -483,30 +469,37 @@ export default function Nav() {
                 </div>
               </div>
               <Disclosure.Panel className='lg:hidden bg-black-white-200'>
-                <div className='pt-2 pb-4 menu-title-mobile'>
+                <div className='pt-2 pb-4'>
                   <Disclosure.Button
                     as='span'
-                    className='uppercase text-black-white-800 border-t block pl-3 pr-4 py-5 font-semibold'
+                    className='uppercase text-black-white-800 border-t block pl-3 pr-4 py-5'
                   >
                     Thema&apos;s
                   </Disclosure.Button>
                   <Disclosure.Button
                     as='a'
                     href='/houtbouw'
-                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
+                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5'
                   >
                     Houtbouw
                   </Disclosure.Button>
                   <Disclosure.Button
                     as='a'
                     href='/circulaire-windturbines'
-                    className='ml-5 border-transparent text-gray-900 border-b border-black-white-300 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base'
+                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5'
                   >
                     Circulaire windturbines
                   </Disclosure.Button>
                   <Disclosure.Button
+                    as='a'
+                    href='/matrassen'
+                    className='ml-5 border-transparent text-gray-900 border-b border-black-white-300 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5'
+                  >
+                    Matrassen
+                  </Disclosure.Button>
+                  <Disclosure.Button
                     as='span'
-                    className='uppercase  text-black-white-800  border-t block pl-3 pr-4 py-5 font-semibold'
+                    className='uppercase  text-black-white-800  border-t block pl-3 pr-4 py-5'
                   >
                     Over CircuLaw
                   </Disclosure.Button>
@@ -514,7 +507,7 @@ export default function Nav() {
                   {aboutSlugs?.map((slug) => (
                     <Disclosure.Button
                       key={slug}
-                      className='font-semibold ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base first-letter:uppercase'
+                      className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base first-letter:uppercase'
                     >
                       <Link href={`/about/${encodeURIComponent(slug)}`}>
                         {slug.replaceAll('-', ' ')}
@@ -525,7 +518,7 @@ export default function Nav() {
                   <Disclosure.Button
                     as='a'
                     href={`/about/${encodeURIComponent(FAQslug)}`}
-                    className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5 font-semibold'
+                    className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5'
                   >
                     Vraag en Antwoord
                   </Disclosure.Button>
@@ -533,7 +526,7 @@ export default function Nav() {
                   <Disclosure.Button
                     as='a'
                     href='/contact'
-                    className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5 font-semibold'
+                    className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5'
                   >
                     Contact
                   </Disclosure.Button>

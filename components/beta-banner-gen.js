@@ -6,15 +6,17 @@ export default function BetaBanner() {
       <div className='global-margin py-4 text-center'>
         <div className='flex justify-between flex-wrap'>
           <div className='w-0 flex-1'>
-            <p className='ml-3 font-medium text-black-white-200 truncate font-manrope font-normal'>
+            <p className='ml-3 text-black-white-200 truncate'>
               <span className='md:hidden'>
-                <span className='font-bold'>Beta</span> versie van CircuLaw -{' '}
+                <h6 className='xb mobile inline'>Beta</h6>{' '}
+                <h6 className='mobile sm:desktop inline'>versie van CircuLaw - </h6>
                 <span className='link-mobile sm:link-desktop text-green-600'>
                   <Link href='/alpha'>Lees meer -&gt;</Link>
                 </span>
               </span>
               <span className='hidden md:inline'>
-                <span className='font-bold'>Beta</span> versie van CircuLaw -{' '}
+                <h6 className='xb mobile inline'>Beta</h6>{' '}
+                <h6 className='mobile sm:desktop inline'>versie van CircuLaw - </h6>
                 <span className='link-mobile sm:link-desktop text-green-600'>
                   <Link href='/alpha'>Lees meer -&gt;</Link>
                 </span>
