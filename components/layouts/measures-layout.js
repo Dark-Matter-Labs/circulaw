@@ -679,11 +679,11 @@ export default function MeasuresLayout(props) {
           </div>
           <div>
             {props.thema === 'circulaire-windturbines' ? (
-              <h2 className='max-w-0 leading-6 pb-1 pl-1 mobile sm:main lowercase first-letter:uppercase'>
+              <h2 className='max-w-0 leading-6 pb-1 pl-1 mobile sm:desktop lowercase first-letter:uppercase'>
                 Circulaire windturbines stimuleren
               </h2>
             ) : (
-              <h2 className='max-w-0 leading-6 pb-1 pl-1 mobile sm:main lowercase first-letter:uppercase'>
+              <h2 className='max-w-0 leading-6 pb-1 pl-1 mobile sm:desktop lowercase first-letter:uppercase'>
                 {props.thema} stimuleren
               </h2>
             )}

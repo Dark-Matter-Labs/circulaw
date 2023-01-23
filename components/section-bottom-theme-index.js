@@ -39,7 +39,6 @@ export default function ThemeBottomSection({ props }) {
                         <Image
                           src={urlFor(measure?.featuredImage).url()}
                           alt={measure?.featuredImage?.altText}
-                          objectFit='cover'
                           fill
                         />
                       </div>
@@ -49,7 +48,6 @@ export default function ThemeBottomSection({ props }) {
                         <Image
                           src={urlFor(measure?.featuredImage).url()}
                           alt={measure?.featuredImage?.altText}
-                          objectFit='contain'
                           fill
                         />
                       </div>

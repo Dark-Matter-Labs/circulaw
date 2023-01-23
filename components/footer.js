@@ -41,7 +41,7 @@ const navigation = {
   other: [
     { name: 'Veel gestelde vragen', href: '/about/vraag-%26-antwoord', className: '' },
     { name: 'Contact', href: '/contact', className: '' },
-    { name: 'Disclaimer/Alpha', href: '/alpha', className: '' },
+    { name: 'Disclaimer/Beta', href: '/beta', className: '' },
     { name: 'Privacy', href: '/privacy-policy', className: '' },
   ],
 };

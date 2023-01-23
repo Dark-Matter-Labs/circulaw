@@ -43,7 +43,7 @@ export default function Index() {
               <Image src={watImage} width={556} alt='image for wat circulaw' />
             </div>
             <div>
-              <h2 className='mobile sm:main'>Wat is CircuLaw?</h2>
+              <h2 className='mobile sm:desktop'>Wat is CircuLaw?</h2>
               <p className='p-mobile-bg sm:p-desktop-bg py-5 max-w-4xl'>
                 CircuLaw is een service waarmee we in de eerste plaats beleidsmakers en
                 transitiemanagers helpen meer en beter gebruik te maken van regelgeving om de
@@ -62,7 +62,7 @@ export default function Index() {
               <Image src={waaromImage} width={556} alt='image for wararom circulaw' />
             </div>
             <div>
-              <h2 className='mobile sm:main'>Waarom CircuLaw?</h2>
+              <h2 className='mobile sm:desktop'>Waarom CircuLaw?</h2>
               <p className='p-mobile-bg sm:p-desktop-bg py-5 max-w-4xl'>
                 Voor het tegengaan van klimaatverandering, het verminderen van vervuiling, het
                 behoud van biodiversiteit en de beschikbaarheid van grondstoffen is een circulaire
@@ -84,7 +84,7 @@ export default function Index() {
               <Image src={hoeverImage} width={556} alt='image for hoever' />
             </div>
             <div>
-              <h2 className='mobile sm:main'>Hoever zijn we?</h2>
+              <h2 className='mobile sm:desktop'>Hoever zijn we?</h2>
               <ul className='p-mobile-bg sm:p-desktop-bg py-5 max-w-4xl list-disc pl-6'>
                 <li>
                   Een overzicht van wet- en regelgeving voor beleidsmakers die aan de slag willen
@@ -109,7 +109,7 @@ export default function Index() {
               <Image src={waaromImage} width={556} alt='image for wararom circulaw' />
             </div>
             <div>
-              <h2 className='mobile sm:main'>Wie maken CircuLaw?</h2>
+              <h2 className='mobile sm:desktop'>Wie maken CircuLaw?</h2>
               <p className='p-mobile-bg sm:p-desktop-bg py-5 max-w-4xl'>
                 Gemeente Amsterdam, Dark Matter Laboratories, EIT Climate KIC, de Provincies
                 Noord-Holland en Flevoland, Rijksdienst voor Ondernemend Nederland (RVO), het MRA
