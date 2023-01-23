@@ -42,7 +42,7 @@ export default function Nav() {
         {({ open }) => (
           <>
             <div className='lg:pb-8 global-margin'>
-            <BetaBannerGen />
+              <BetaBannerGen />
               <div className=''>
                 <div className='inset-y-0 float-right flex items-center lg:hidden'>
                   {/* Mobile menu button */}
