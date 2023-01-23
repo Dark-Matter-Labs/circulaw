@@ -20,11 +20,10 @@ export default function ThemeBottomSection({ props }) {
       <div className='bg-[#F8FAF8] sm:bg-transparent'>
         <div className='sm:pb-10 pt-6 global-margin'>
           <h3 className='mobile sm:desktop pb-2'>
-            Uitgelicht: {laws?.length} instrumenten om {props.thema} te bevorderen
+            Uitgelicht: {laws?.length}{' '}{props.extendedMeasureHeading}
           </h3>
           <p className='p-mobile-bg sm:p-desktop-bg'>Mét voorbeelden en een handige leidraad</p>
         </div>
-
         <div className='bg-[#F8FAF8]'>
           <div className='global-margin'>
             <div className='sm:pt-5'>
