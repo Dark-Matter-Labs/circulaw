@@ -158,9 +158,6 @@ html {
   display: inline-flex;
   align-items: center;
 }
-.container-image {
-  float: left;
-}
 
 .wrap {
   word-wrap: break-word;
