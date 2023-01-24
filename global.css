@@ -13,8 +13,12 @@
     @apply max-w-screen-xl mx-auto;
   }
 
-  h1.desktop {
+  .header {
     @apply font-urbanist text-8xl font-semibold leading-17;
+  }
+
+  h1.desktop {
+    @apply font-urbanist text-7xl font-semibold leading-16;
   }
 
   h1.mobile {
@@ -22,7 +26,7 @@
   }
 
   h2.desktop {
-    @apply font-urbanist text-7xl font-semibold leading-16;
+    @apply font-urbanist text-6xl font-semibold leading-14;
   }
 
   h2.mobile {
@@ -30,7 +34,7 @@
   }
 
   h3.desktop {
-    @apply font-urbanist text-6xl font-semibold leading-14;
+    @apply font-urbanist text-4xl font-semibold leading-13;
   }
 
   h3.mobile {
@@ -38,7 +42,7 @@
   }
 
   h4.desktop {
-    @apply font-urbanist text-4xl font-semibold leading-15;
+    @apply font-urbanist text-xl font-medium leading-10;
   }
 
   h4.mobile {
@@ -46,82 +50,54 @@
   }
 
   h5.desktop {
-    @apply font-urbanist text-xl font-medium leading-14;
+    @apply font-manrope text-xs font-semibold leading-9;
+  }
+
+  h5.bold {
+    @apply font-manrope text-xs font-extrabold leading-9;
   }
 
   h5.mobile {
     @apply font-urbanist text-base font-medium leading-10;
   }
 
-  h6.desktop {
-    @apply font-manrope text-xs font-semibold leading-9;
-  }
-
-  h6.mobile {
-    @apply font-urbanist text-xs font-medium leading-6;
-  }
-
-  h6.xb {
-    @apply font-manrope text-xs font-extrabold leading-9;
-  }
-
-  .heading-sm {
+  h6 {
     @apply font-manrope text-xxs font-bold leading-6;
   }
 
-  .p-desktop-header {
+  .p-xl {
     @apply font-urbanist text-3xl font-normal leading-14;
   }
-
-  .p-mobile-header {
-    @apply font-manrope text-sm font-normal leading-8;
-  }
-
-  .p-desktop-bg {
+  
+  .p-lg {
     @apply font-manrope text-xl font-normal leading-13;
   }
 
-  .p-mobile-bg {
-    @apply font-manrope text-lg font-normal leading-12;
-  }
-
-  .p-desktop-md {
+  .p-base {
     @apply font-manrope text-base font-normal leading-10;
   }
 
-  .p-mobile-md {
+  .p-sm {
     @apply font-manrope text-xs font-normal leading-7;
   }
 
-  .bullet-desktop {
-    @apply font-manrope text-base font-normal leading-10;
-  }
-
-  .bullet-mobile {
-    @apply font-manrope text-base font-semibold leading-11;
-  }
-
-  .link-desktop {
+  .link-lg {
     @apply font-manrope text-xl font-semibold leading-13 underline;
   }
 
-  .link-mobile {
+  .link-base {
     @apply font-manrope text-base font-medium leading-11 underline;
   }
 
-  .button-desktop {
+  .button {
     @apply font-manrope text-base font-bold leading-10;
   }
 
-  .button-mobile {
-    @apply font-manrope text-base font-semibold leading-8;
-  }
-
-  .table-desktop {
+  .table-base {
     @apply font-manrope text-base font-semibold leading-3;
   }
 
-  .table-mobile {
+  .table-sm {
     @apply font-manrope text-xs font-semibold leading-4;
   }
 
@@ -129,35 +105,12 @@
     @apply font-manrope text-xs font-medium leading-5 uppercase;
   }
 
-  .popup-desktop {
+  .popup-base {
     @apply font-manrope text-base font-medium leading-8;
   }
 
-  .popup-mobile {
+  .popup-sm {
     @apply font-manrope text-xs font-medium leading-6;
-  }
-
-  .r-category {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 149.19%;
-  }
-
-  .table-right {
-    font-family: 'Manrope';
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 15px;
-  }
-  
-  .dropdown-menu {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 150%;
   }
 }
 
@@ -181,11 +134,6 @@ html {
 
 .newlineDisplay {
   white-space: break-spaces;
-}
-
-.casus {
-  text-transform: uppercase;
-  font-size: 12px;
 }
 
 .twoLines {
@@ -234,8 +182,6 @@ html {
 .extended-measures-gradient {
   background: linear-gradient(rgba(248, 250, 248, 0) 0%, #F8FAF8 100%);
 }
-
-
 
 .measure-bg {
   background: '#F5F5F5';

@@ -23,7 +23,7 @@ export default function SamenhangLayout(props) {
             </span>
           </Link>
         </div>
-        <h2 className='mobile sm:desktop text-green-600 pb-2 max-w-3xl mx-auto'>{props.title}</h2>
+        <h1 className='mobile sm:desktop text-green-600 pb-2 max-w-3xl mx-auto'>{props.title}</h1>
       </div>
       <div className='hidden sm:block image-margin'>
         <Image src={props.img} alt='Picture of the case' />
@@ -33,13 +33,9 @@ export default function SamenhangLayout(props) {
       </div>
       <div className='global-margin mb-20'>
         <div className='max-w-3xl mx-auto'>
-          <p className='p-mobile-bg sm:p-desktop-bg text-black-white-800 pb-6'>{props.p1}</p>
-          {props.p2 !== '' && (
-            <p className='p-mobile-bg sm:p-desktop-bg text-black-white-800 pb-6'>{props.p2}</p>
-          )}
-          {props.p3 !== '' && (
-            <p className='p-mobile-bg sm:p-desktop-bg text-black-white-800 pb-6'>{props.p3}</p>
-          )}
+          <p className=' p-lg text-black-white-800 pb-6'>{props.p1}</p>
+          {props.p2 !== '' && <p className=' p-lg text-black-white-800 pb-6'>{props.p2}</p>}
+          {props.p3 !== '' && <p className=' p-lg text-black-white-800 pb-6'>{props.p3}</p>}
         </div>
       </div>
     </>

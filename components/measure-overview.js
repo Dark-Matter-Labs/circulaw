@@ -29,9 +29,9 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
           )}
           <div className=''>
             <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()} passHref>
-              <h5 className='mobile sm:desktop underline pl-2 text-green-600 first-letter:uppercase block'>
+              <h4 className='mobile sm:desktop underline pl-2 text-green-600 first-letter:uppercase block'>
                 {data?.measure?.thema}
-              </h5>
+              </h4>
             </Link>
           </div>
         </div>
@@ -58,20 +58,20 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
             </div>
             <div className='flex justify-end items-center visible sm:hidden'>
               <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()} passHref>
-                <h5 className='mobile sm:desktop underline pl-2 text-green-600 first-letter:uppercase block'>
+                <h4 className='mobile sm:desktop underline pl-2 text-green-600 first-letter:uppercase block'>
                   {data?.measure?.thema}
-                </h5>
+                </h4>
               </Link>
             </div>
           </div>
           <span className='block-inline grid grid-rows-1 grid-cols-6'>
             {data?.measure?.rLadder.map((rValue) => (
-              <h6
+              <h5
                 key={rValue}
-                className='bg-green-600 text-black-white-200 mobile sm:desktop rounded-full p-1 mr-2 h-8 w-8 sm:h-7 sm:w-7 md:h-7 md:w-7 lg:h-8 lg:w-8 flex justify-center items-center'
+                className='bg-green-600 text-black-white-200 rounded-full p-1 mr-2 h-8 w-8 sm:h-7 sm:w-7 md:h-7 md:w-7 lg:h-8 lg:w-8 flex justify-center items-center mobile sm:desktop'
               >
                 {rValue}
-              </h6>
+              </h5>
             ))}
           </span>
         </div>
@@ -81,7 +81,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
             <div className='text-black-white-800 py-2'>Subrechtsgebied</div>
           </div>
 
-          <div className='p-mobile-bg sm:p-desktop-bg first-letter:capitalize'>
+          <div className=' p-lg first-letter:capitalize'>
             <p>{data?.measure?.subrechtsgebied}</p>
           </div>
         </div>
@@ -109,7 +109,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
           </div>
 
           <div className='flex items-center'>
-            <span className='p-mobile-bg sm:p-desktop-bg border border-black rounded-xl uppercase px-2'>
+            <span className=' p-lg border border-black rounded-xl uppercase px-2'>
               {data?.measure?.juridischInvloed}
             </span>
           </div>
@@ -137,7 +137,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
             </div>
           </div>
           <div className='flex items-center w-10/12'>
-            <span className='p-mobile-bg sm:p-desktop-bg border border-black rounded-xl px-2 uppercase'>
+            <span className=' p-lg border border-black rounded-xl px-2 uppercase'>
               {data?.measure?.juridischeHaalbaarheid}
             </span>
           </div>

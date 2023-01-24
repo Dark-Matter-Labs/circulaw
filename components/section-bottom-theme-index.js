@@ -18,10 +18,10 @@ export default function ThemeBottomSection({ props }) {
       {/* need to get gradient working for bg */}
       <div className='bg-[#F8FAF8] sm:bg-transparent'>
         <div className='sm:pb-10 pt-6 global-margin'>
-          <h3 className='mobile sm:desktop pb-2'>
-            Uitgelicht: {laws?.length}{' '}{props.extendedMeasureHeading}
-          </h3>
-          <p className='p-mobile-bg sm:p-desktop-bg'>Mét voorbeelden en een handige leidraad</p>
+          <h2 className='mobile sm:desktop pb-2'>
+            Uitgelicht: {laws?.length} {props.extendedMeasureHeading}
+          </h2>
+          <p className=' p-lg'>Mét voorbeelden en een handige leidraad</p>
         </div>
         <div className='bg-[#F8FAF8]'>
           <div className='global-margin'>
@@ -54,42 +54,40 @@ export default function ThemeBottomSection({ props }) {
                       <div className='block pt-4 sm:hidden'>
                         <div className='flex justify-left'>
                           {measure?.extraContent.includes('Leidraad') && (
-                            <div
-                              className='border-green-600 bg-green-600 text-white r-category py-0.5 px-2
+                            <h6
+                              className='border-green-600 bg-green-600 text-white inline py-0.5 px-2
                            rounded-md'
                             >
                               Leidraad
-                            </div>
+                            </h6>
                           )}
                           {measure?.extraContent.includes('Voorbeeld') && (
-                            <div className='border-green-500 bg-green-500 text-white r-category p-0.5 px-2 rounded-md ml-4'>
+                            <h6 className='border-green-500 bg-green-500 text-white inline p-0.5 px-2 rounded-md ml-4'>
                               Voorbeeld
-                            </div>
+                            </h6>
                           )}
                         </div>
                       </div>
                       <h3 className='pt-6 mobile sm:desktop'>{measure?.titel}</h3>
-                      <p className='p-mobile-bg sm:p-desktop-bg py-4 max-w-2xl'>
-                        {measure?.introText}
-                      </p>
+                      <p className=' p-lg py-4 max-w-2xl'>{measure?.introText}</p>
                       <div className='flex sm:justify-between sm:pt-16'>
                         <div className='hidden sm:block'>
                           <div className='flex justify-between'>
                             {measure?.extraContent.includes('Leidraad') && (
-                              <div className='border-green-600 bg-green-600 text-white r-category py-0.5 px-2 rounded-md'>
+                              <h6 className='border-green-600 bg-green-600 text-white inline py-0.5 px-2 rounded-md'>
                                 Leidraad
-                              </div>
+                              </h6>
                             )}
                             {measure?.extraContent.includes('Voorbeeld') && (
-                              <div className='border-green-500 bg-green-500 text-white r-category p-0.5 px-2 rounded-md ml-4'>
+                              <h6 className='border-green-500 bg-green-500 text-white inline p-0.5 px-2 rounded-md ml-4'>
                                 Voorbeeld
-                              </div>
+                              </h6>
                             )}
                           </div>
                         </div>
                         <div>
                           <Link href={`/measures/${measure?.slug.current}`}>
-                            <span className='text-green-500 link-mobile sm:link-desktop'>
+                            <span className='text-green-500  link-lg'>
                               Bekijk het instrument{'>'}
                             </span>
                           </Link>

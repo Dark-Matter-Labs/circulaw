@@ -37,7 +37,6 @@ export default function Windturbine({ laws }) {
         cardLinkList='/measures/windturbines'
         cardLinkSamenhang='/circulaire-windturbines/samenhang-maatregelen'
         cardLinkWaarvoor='/circulaire-windturbines/welke-overheid-heeft'
-
         extendedMeasureHeading='instrumenten om circulariteit van windturbines te bevorderen'
       />
     </Layout>
