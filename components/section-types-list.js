@@ -114,21 +114,21 @@ export default function SectionTypes(props) {
                 >
                   {file.href !== '' ? (
                     <Link href={file.href}>
-                      <h4 className='mobile sm:desktop mt-2 block text-black pointer-events-none pb-4'>
+                      <h3 className='mobile sm:desktop mt-2 block text-black pointer-events-none pb-4'>
                         {file.title}
-                      </h4>
+                      </h3>
                     </Link>
                   ) : (
-                    <h4 className='mobile sm:desktop mt-2 block text-black pointer-events-none pb-4'>
+                    <h3 className='mobile sm:desktop mt-2 block text-black pointer-events-none pb-4'>
                       {file.title}
-                    </h4>
+                    </h3>
                   )}
                   {/* added height for the description while on home to ensure all the text can be read*/}
                 </div>
                 <p
                   className={classNames(
                     props.type === 'home' ? 'h-[18rem]' : '',
-                    'p-mobile-md sm:p-desktop-md block text-black pointer-events-none py-4 w-full',
+                    ' p-base block text-black pointer-events-none py-4 w-full',
                   )}
                 >
                   {file.description}

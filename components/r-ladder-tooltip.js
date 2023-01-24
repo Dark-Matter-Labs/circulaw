@@ -85,9 +85,9 @@ export default function ToolTips({ children, icon }) {
                       <div className='px-4 sm:px-6'>
                         <Dialog.Title className='text-gray-900'>
                           {' '}
-                          <h5 className='mobile sm:desktop'>
+                          <h4 className='mobile sm:desktop'>
                             R-ladder: strategieën van circulariteit
-                          </h5>
+                          </h4>
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>
@@ -120,15 +120,13 @@ export default function ToolTips({ children, icon }) {
                           <div className='py-4'>
                             <Image src={R1} alt='Picture of the author' />
                           </div>
-                          <div className='p-mobile-bg sm:p-desktop-bg '>
-                            Bron: PBL (Planbureau voor de Leefomgeving)
-                          </div>
+                          <div className=' p-lg '>Bron: PBL (Planbureau voor de Leefomgeving)</div>
                           <Link
                             href='https://www.rvo.nl/onderwerpen/duurzaam-ondernemen/circulaire-economie/r-ladder'
                             target='_blank'
                             rel='noopener noreferrer'
                           >
-                            <span className='text-green-500 link-mobile sm:link-desktop'>
+                            <span className='text-green-500  link-lg'>
                               Meer over de R ladder op de website van RVO
                             </span>
                           </Link>

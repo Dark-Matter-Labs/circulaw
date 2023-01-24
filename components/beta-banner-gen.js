@@ -8,16 +8,16 @@ export default function BetaBanner() {
           <div className='w-0 flex-1'>
             <p className='ml-3 text-black-white-200 truncate'>
               <div className='md:hidden'>
-                <h6 className='xb mobile inline'>Beta</h6>{' '}
-                <h6 className='mobile sm:desktop inline'>versie van CircuLaw - </h6>
-                <span className='link-mobile sm:link-desktop text-green-600'>
+                <h5 className='inline mobile sm:desktop'>Beta</h5>{' '}
+                <h5 className='inline mobile sm:desktop'>versie van CircuLaw - </h5>
+                <span className=' link-lg text-green-600'>
                   <Link href='/beta'>Lees meer -&gt;</Link>
                 </span>
               </div>
               <div className='hidden md:inline'>
-                <h6 className='xb mobile inline'>Beta</h6>{' '}
-                <h6 className='mobile sm:desktop inline'>versie van CircuLaw - </h6>
-                <span className='link-mobile sm:link-desktop text-green-600'>
+                <h5 className='inline mobile sm:desktop'>Beta</h5>{' '}
+                <h5 className='inline mobile sm:desktop'>versie van CircuLaw - </h5>
+                <span className=' link-lg text-green-600'>
                   <Link href='/beta'>Lees meer -&gt;</Link>
                 </span>
               </div>

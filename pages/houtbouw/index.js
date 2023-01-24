@@ -38,7 +38,6 @@ export default function Houtbouw({ laws }) {
         cardLinkList='/measures/houtbouw'
         cardLinkSamenhang='/houtbouw/samenhang-aantal-houtbouwmaatregelen'
         cardLinkWaarvoor='/houtbouw/welke-overheid'
-
         extendedMeasureHeading='instrumenten om houtbouw te bevorderen'
       />
     </Layout>

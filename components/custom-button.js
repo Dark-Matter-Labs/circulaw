@@ -13,7 +13,7 @@ export default function CustomButton({ color, children, ...props }) {
     <button
       {...props}
       type='button'
-      className={`inline-flex rounded-full items-center px-4 py-2 border button-mobile sm:button-desktop ${colorClasses}`}
+      className={`inline-flex rounded-full items-center px-4 py-2 border  button ${colorClasses}`}
     >
       {children}
     </button>

@@ -5,17 +5,22 @@ export default function Alpha() {
   return (
     <Layout>
       <div className='global-margin my-20'>
-        <h2 className='mobile sm:desktop text-black-white-800 pb-4'>Betaversie CircuLaw</h2>
-        <p className='p-mobile-bg sm:p-desktop-bg text-black-white-800 pb-6  max-w-2xl'>
-        In deze versie van ons kennisplatform hebben we op basis van feedback van onze gebruikers een aantal verbeteringen aangebracht. Ook hebben we nieuwe inhoud toegevoegd. Maar deze site is nog niet af. Het is mogelijk dat de inhoud van de site incompleet is of fouten bevat. Dat betekent dan ook dat aan de inhoud van deze site geen rechten kunnen worden ontleend.
+        <h1 className='mobile sm:desktop text-black-white-800 pb-4'>Betaversie CircuLaw</h1>
+        <p className=' p-lg text-black-white-800 pb-6  max-w-2xl'>
+          In deze versie van ons kennisplatform hebben we op basis van feedback van onze gebruikers
+          een aantal verbeteringen aangebracht. Ook hebben we nieuwe inhoud toegevoegd. Maar deze
+          site is nog niet af. Het is mogelijk dat de inhoud van de site incompleet is of fouten
+          bevat. Dat betekent dan ook dat aan de inhoud van deze site geen rechten kunnen worden
+          ontleend.
         </p>
-        <p className='p-mobile-bg sm:p-desktop-bg text-black-white-800 pb-6  max-w-2xl'>
-        We horen graag wat je ervan vindt, wat je anders zou willen, wat je mist en natuurlijk horen we ook graag waar je blij van wordt.
+        <p className=' p-lg text-black-white-800 pb-6  max-w-2xl'>
+          We horen graag wat je ervan vindt, wat je anders zou willen, wat je mist en natuurlijk
+          horen we ook graag waar je blij van wordt.
         </p>
-        <p className='text-green-500 link-mobile sm:link-desktop inline'>
+        <p className='text-green-500  link-lg inline'>
           <Link href='/contact'>Stuur je feedback</Link>{' '}
         </p>
-        <span className='p-mobile-bg sm:p-desktop-bg text-black-white-800 max-w-2xl'>op deze Betaversie</span>
+        <span className=' p-lg text-black-white-800 max-w-2xl'>op deze Betaversie</span>
       </div>
     </Layout>
   );

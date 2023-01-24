@@ -41,15 +41,18 @@ const components = {
     greenBox: ({ value }) => (
       <div className='-mx-8 sm:mx-0 my-10'>
         <div className='bg-green-300 w-full px-8 py-8'>
-          <h3 className='pb-6 mobile sm:desktop'>{value?.greenBoxTitle}</h3>
-          <div className='p-mobile-bg sm:p-desktop-bg'>{value?.greenBoxText}</div>{' '}
-          {/* need to change */}
+          <h2 className='pb-6 mobile sm:desktop'>{value?.greenBoxTitle}</h2>
+          <div className=' p-lg'>{value?.greenBoxText}</div> {/* need to change */}
         </div>
       </div>
     ),
     hoverText: ({ value, isInline }) => (
       <>
-        <button type='button' className='group' style={{ display: isInline ? 'inline-block' : 'block' }}>
+        <button
+          type='button'
+          className='group'
+          style={{ display: isInline ? 'inline-block' : 'block' }}
+        >
           <svg
             className='inline'
             width='24'
@@ -64,7 +67,7 @@ const components = {
               fill='#F8FAF8'
             />
           </svg>
-          <div className='text-left inline-block max-w-xs absolute invisible group-hover:visible z-10 py-3 px-6 bg-black-white-300 text-black-white-800 popup-mobile sm:popup-desktop opacity-0 group-hover:opacity-100 transition tooltip'>
+          <div className='text-left inline-block max-w-xs absolute invisible group-hover:visible z-10 py-3 px-6 bg-black-white-300 text-black-white-800  popup-base opacity-0 group-hover:opacity-100 transition tooltip'>
             {value.hoverText}
           </div>
         </button>
@@ -80,11 +83,9 @@ const components = {
               <div className='absolute -bottom-44 -right-44 h-96 w-96 invisible md:visible'>
                 <Image src='/pdf-deco.png' alt='decorative image' width={584} height={562} />
               </div>
-              <h3 className='pb-2 mobile sm:desktop text-white'>{value.pdfTitle}</h3>{' '}
+              <h2 className='pb-2 mobile sm:desktop text-white'>{value.pdfTitle}</h2>{' '}
               {/* need to change text white */}
-              <p className='p-mobile-bg sm:p-desktop-bg text-black-white-200 pb-4'>
-                {value.pdfText}
-              </p>{' '}
+              <p className=' p-lg text-black-white-200 pb-4'>{value.pdfText}</p>{' '}
               {/* need to change body text */}
               <a
                 href={`https://cdn.sanity.io/files/${
@@ -112,16 +113,15 @@ const components = {
     smallPara: ({ value }) => (
       <div className='flex justify-left pl-8 sm:pl-12'>
         <div className='mb-10 pt-10 w-5/6'>
-          <h5 className='mobile sm:desktop'>{value.smallParaTitle}</h5>
-          <p className='p-mobile-md sm:p-desktop-md'>{value.smallParaText}</p>{' '}
-          {/* need to change */}
+          <h4 className='mobile sm:desktop'>{value.smallParaTitle}</h4>
+          <p className=' p-base'>{value.smallParaText}</p> {/* need to change */}
         </div>
       </div>
     ),
   },
   list: {
     bullet: ({ children }) => (
-      <div className='newlineDisplay bullet-mobile sm:bullet-desktop truncate'>
+      <div className='newlineDisplay  p-base truncate'>
         {' '}
         {/* need to change font */}
         <ul className='list-disc pl-6 pb-4 mobile sm:desktop'>{children}</ul>{' '}
@@ -129,7 +129,7 @@ const components = {
       </div>
     ),
     number: ({ children }) => (
-      <div className='newlineDisplay bullet-mobile sm:bullet-desktop truncate'>
+      <div className='newlineDisplay  p-base truncate'>
         {' '}
         {/* need to change font */}
         <ol className='list-decimal pl-6 pb-4 mobile sm:desktop'>{children}</ol>{' '}
@@ -142,12 +142,12 @@ const components = {
     bullet: ({ children }) => <li className='py-0.5'>{children}</li>,
   },
   block: {
-    firstH2: ({ children }) => <h3 className='pb-8 mobile sm:desktop'>{children}</h3>,
-    h2: ({ children }) => <h3 className='py-8 mobile sm:desktop'>{children}</h3>,
-    h3: ({ children }) => <h4 className='py-8 mobile sm:desktop'>{children}</h4>,
+    firstH2: ({ children }) => <h2 className='pb-8 mobile sm:desktop'>{children}</h2>,
+    h2: ({ children }) => <h2 className='py-8 mobile sm:desktop'>{children}</h2>,
+    h3: ({ children }) => <h3 className='py-8 mobile sm:desktop'>{children}</h3>,
     // need to add other styles here
     normal: ({ children }) => (
-      <p className='newlineDisplay p-mobile-bg sm:p-desktop-bg py-2'>{children}</p> // check if this is correct
+      <p className='newlineDisplay  p-lg py-2'>{children}</p> // check if this is correct
     ),
   },
   marks: {
@@ -155,7 +155,7 @@ const components = {
       value.blank == true ? (
         <>
           <a
-            className='text-green-500 link-mobile sm:link-desktop inline-flex'
+            className='text-green-500  link-lg inline-flex'
             href={value.href}
             target='_blank'
             rel='noreferrer'
@@ -165,7 +165,7 @@ const components = {
           </a>
         </>
       ) : (
-        <a className='text-green-500 link-mobile sm:link-desktop' href={value.href}>
+        <a className='text-green-500  link-lg' href={value.href}>
           {children}
         </a>
       ),
@@ -200,13 +200,13 @@ export default function Measure({ data }) {
               )}
             </div>
             <div className='sm:col-span-12 row-span-1'>
-              <h2 className='lg:block sm:pt-4 pb-6 sm:pb-10 mobile sm:desktop'>
+              <h1 className='lg:block sm:pt-4 pb-6 sm:pb-10 mobile sm:desktop'>
                 {data?.measure?.titel}
-              </h2>
+              </h1>
             </div>
             {data?.measure?.subtitel && (
               <div className='sm:col-span-7 row-span-1'>
-                <p className='lg:block p-mobile-header sm:p-desktop-header pb-10'>
+                <p className='lg:block p-xl pb-10'>
                   {' '}
                   {/* check font */}
                   {data?.measure?.subtitel}

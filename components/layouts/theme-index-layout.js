@@ -25,20 +25,19 @@ export default function ThemeLayout({ bgHero, ...props }) {
               </div>
               <div className='grid col-span-8 grid-cols-8 sm:pl-12 sm:pt:12 md:pl-24 lg:pl-36 pb-14 pt-14 w-4/5'>
                 <div className='col-span-8'>
-                  <h1 className='text-black-white-200 inline-block mobile sm:desktop'>
-                    {props.title}
-                  </h1>
+                  <p className='text-black-white-200 inline-block header'>{props.title}</p>
                 </div>
                 <div className='col-span-7'>
-                  <p className='pt-4 text-black-white-200 p-mobile-bg sm:p-desktop-bg'>
+                  <p className='pt-4 text-black-white-200  p-lg'>
                     {props.headerSubtitle}
-                    {props.headerLinkText && 
-                    <span className='text-green-500 link-mobile sm:link-desktop inline-block pl-1'>
-                      <a href={props.headerLinkURL} target='_blank' rel='noopener noreferrer'>
-                        {' '}
-                        {props.headerLinkText}→
-                      </a>
-                    </span>}
+                    {props.headerLinkText && (
+                      <span className='text-green-500  link-lg inline-block pl-1'>
+                        <a href={props.headerLinkURL} target='_blank' rel='noopener noreferrer'>
+                          {' '}
+                          {props.headerLinkText}→
+                        </a>
+                      </span>
+                    )}
                   </p>
                 </div>
               </div>
@@ -48,20 +47,15 @@ export default function ThemeLayout({ bgHero, ...props }) {
 
         <div className='block global-margin sm:hidden pt-5'>
           <div className='py-3'>
-            <h1 className='mobile pb-3'>{props.title}</h1>
-            <p className='p-mobile-bg pb-3'>
+            <h2 className='mobile pb-3'>{props.title}!</h2>
+            <p className=' pb-3'>
               {props.headerSubtitle}
-              <a className='text-green-500 link-mobile'> {props.headerLinkText}</a>
+              <a className='text-green-500 '> {props.headerLinkText}</a>
             </p>
           </div>
           <div className='h-56 w-full thema-hero-gradient rounded-md'>
             <div className='h-full w-full rounded-md relative'>
-              <Image
-                src={props.heroImage}
-                alt='hero image'
-                fill
-                className='rounded-md absolute'
-              />
+              <Image src={props.heroImage} alt='hero image' fill className='rounded-md absolute' />
             </div>
           </div>
         </div>
