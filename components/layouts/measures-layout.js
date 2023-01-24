@@ -4,6 +4,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import createPersistedState from 'use-persisted-state';
 import { SearchIcon, XIcon, AdjustmentsIcon } from '@heroicons/react/outline';
+import { groq } from 'next-sanity';
+import { toPlainText } from '@portabletext/react';
+import Fuse from 'fuse.js';
+import useSWR from 'swr';
+
 import {
   overheidslaag,
   rechtsgebied,
@@ -13,14 +18,11 @@ import {
   extraContent,
   rLadder,
 } from '../../dataFilter';
-
 import SearchFilter from '/components/search-filter';
 import PolicyList from '/components/policy-list';
-import Fuse from 'fuse.js';
-import useSWR from 'swr';
 import client from '../../lib/sanity';
-import { groq } from 'next-sanity';
-import { toPlainText } from '@portabletext/react';
+import MeasureLinks from '../measure-links-dropdown';
+
 
 // creating objects for persisting values
 const useSelectedState = createPersistedState('selected');
@@ -322,14 +324,11 @@ export default function MeasuresLayout(props) {
       });
 
       const results = fuse.search(searchValue);
-      // console.log(results)
       const lawResults = searchValue ? results.map((result) => result.item) : filteredLaws;
       filteredLaws = lawResults;
-      // console.log(lawResults)
 
       // display scores in consol for testing
       // const scores = results.map((result) => result.score);
-      // console.log(scores)
 
       // setting values for autocomplete
       setSelectedResults(filteredLaws);
@@ -564,7 +563,7 @@ export default function MeasuresLayout(props) {
                     <div className='p-8 '>
                       <SearchFilter
                         ref={extraContentFilterRef}
-                        title='Extra Content'
+                        title='Inclusief'
                         list={extraContent}
                         filterNumbers={[numberOfLeidraad, numberOfVoorbeeld]}
                         handleFilters={(checkboxState) =>
@@ -660,42 +659,45 @@ export default function MeasuresLayout(props) {
           </Dialog>
         </Transition.Root>
       </div>
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 '>
-        <div className='hidden sm:block breadcrumb pt-8 text-green-500'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20'>
+        <div className='hidden sm:block breadcrumb pt-8 text-black-white-800 uppercase underline'>
           <Link href='/'>Home</Link>
           <span className=''> → </span>
           <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`} passHref>
-            <span className='inline-block lowercase first-letter:uppercase'>
+            <span className='inline-block underline'>
               {props.thema.replace('-', ' ')}
             </span>
           </Link>
         </div>
-        <div className='hidden sm:block col-span-2 bg-opacity p-5 mt-2 mb-10 max-w-3xl'>
-          {props.heading && <h1>{props.heading}</h1>}
-          <p>
+        <div className='col-span-2'></div>
+        <div>
+          <MeasureLinks />
+        </div>
+        <div className=' mb-2 sm:mb-20 mt-10 col-span-3'>
+          <div className='container pb-2'>
+            <Image src={props.icon} alt={`${props.thema} 'icon'`} />
+            {props.thema === 'circulaire-windturbines' ? (
+              <h1 className='max-w-0 leading-6 pb-1 pl-4 mobile sm:desktop lowercase first-letter:uppercase'>
+                Circulaire windturbines stimuleren
+              </h1>
+            ) : (
+              <h1 className='max-w-0 leading-6 pb-1 pl-4 mobile sm:desktop first-letter:uppercase'>
+                {props.thema} Stimuleren
+              </h1>
+            )}
+          </div>
+          <div className='hidden sm:block max-w-3xl pt-2'>
+          <p className='p-lg'>
             {props.introPara}
             <br />
           </p>
         </div>
 
-        <div className='container mb-2 sm:mb-20 mt-10'>
-          <div className='container-image h-14 w-14'>
-            <Image src={props.icon} alt={`${props.thema} 'icon'`} />
-          </div>
-          <div>
-            {props.thema === 'circulaire-windturbines' ? (
-              <h1 className='max-w-0 leading-6 pb-1 pl-1 mobile sm:desktop lowercase first-letter:uppercase'>
-                Circulaire windturbines stimuleren
-              </h1>
-            ) : (
-              <h1 className='max-w-0 leading-6 pb-1 pl-1 mobile sm:desktop lowercase first-letter:uppercase'>
-                {props.thema} stimuleren
-              </h1>
-            )}
-          </div>
         </div>
-        <div className='col-span-2'>
-          <div className='pt-5'>
+        <div className='col-span-1'></div>
+        <div className='col-span-1'></div>
+        <div className='col-span-2 '>
+          <div className=''>
             <div>
               <h4 className='mobile sm:desktop'>{props.searchTitle}</h4>
             </div>
@@ -823,6 +825,7 @@ export default function MeasuresLayout(props) {
             </div>
           </div>
         </div>
+        <div className='col-span-1'></div>
         <div className='lg:hidden py-5 w-28'>
           <button
             type='button'
@@ -836,17 +839,17 @@ export default function MeasuresLayout(props) {
         </div>
 
         <div className='hidden lg:block mb-3'>
-          <h3 className='mobile sm:desktop pr-8 inline'>Filter op:</h3>{' '}
-          <span onClick={reset} className='underline text-green-500 text-lg link-hover  link-lg '>
+          <h3 className='mobile sm:desktop inline text-black-white-800'>Filter op:</h3>{' '}
+          <span onClick={reset} className='underline text-green-500 link-hover link-lg float-right mr-8'>
             Wis filters
           </span>
         </div>
       </div>
-      <div className='grid grid-cols-1 sm:grid-cols-4'>
+      <div className='grid grid-cols-1 sm:grid-cols-4 md:gap-x-20'>
         <div className='hidden lg:block p-3 my-4'>
           <SearchFilter
             ref={extraContentFilterRef}
-            title='Extra Content'
+            title='Inclusief'
             list={extraContent}
             filterNumbers={[numberOfLeidraad, numberOfVoorbeeld]}
             handleFilters={(checkboxState) => handleFilters(checkboxState, 'extraContent')}
@@ -889,7 +892,7 @@ export default function MeasuresLayout(props) {
 
           <SearchFilter
             ref={rLadderFilterRef}
-            title='R - ladder'
+            title='Circulaire strategie(R-ladder)'
             list={rLadder}
             filterNumbers={[numberOfR1, numberOfR2, numberOfR3, numberOfR4, numberOfR5, numberOfR6]}
             handleFilters={(checkboxState) => handleFilters(checkboxState, 'rLadder')}
@@ -897,7 +900,7 @@ export default function MeasuresLayout(props) {
 
           <SearchFilter
             ref={juridischeHaalbaarheidFilterRef}
-            title='Juridische Haalbaarheid'
+            title='Juridische haalbaarheid'
             list={juridischeHaalbaarheid}
             filterNumbers={[numberOfJHLow, numberOfJHMedium, numberOfJHHigh]}
             handleFilters={(checkboxState) =>
@@ -906,7 +909,7 @@ export default function MeasuresLayout(props) {
           />
           <SearchFilter
             ref={juridischInvloedFilterRef}
-            title='Invloed'
+            title='Subrechtsgebied'
             list={juridischInvloed}
             filterNumbers={[numberOfJILow, numberOfJIMedium, numberOfJIHigh]}
             handleFilters={(checkboxState) => handleFilters(checkboxState, 'juridischInvloed')}
