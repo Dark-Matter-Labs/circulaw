@@ -8,9 +8,9 @@ import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../components/juridische-invloed-tooltip';
 
 const viewportType = {
-  mobile: 'block sm:hidden gradient-overview -m-8 h-[30rem] mb-10',
+  mobile: 'block sm:hidden gradient-overview -m-8 h-[30rem] mb-10 bg-black-white-200',
   desktop:
-    'hidden sm:block float-right pl-4 ml-6 sm:pr-6 md:pr-10 lg:pr-14 gradient-overview h-[38rem] sticky top-40',
+    'hidden sm:block float-right pl-4 ml-6 sm:pr-6 md:pr-10 lg:pr-14 gradient-overview h-[38rem] sticky top-40 mb-20 bg-black-white-200',
 };
 
 export default function MeasureOverview({ viewport, children, data, ...props }) {
@@ -38,9 +38,9 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
 
           <div className=''>
             <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()} passHref>
-              <h4 className='mobile sm:desktop underline pl-2 text-green-600 first-letter:uppercase block'>
+              <h2 className='mobile sm:desktop pl-2 text-green-500 uppercase block'>
                 {data?.measure?.thema}
-              </h4>
+              </h2>
             </Link>
           </div>
         </div>

@@ -43,7 +43,7 @@ const types = [
     tag: '',
     description:
       'Gemiddeld gaat een matras zo’n tien jaar mee. Er valt dus veel winst te behalen als we de hele keten vanaf matrasproductie tot aan verwerking van gedumpte matrassen circulairder maken. Daarom vind je hier instrumenten die aanzetten tot die circulaire matrasketen.',
-    buttonText: 'Meer over circulaire matrassen',
+    buttonText: 'Meer over de matrasketen',
     href: '/matrassen',
   },
 ];

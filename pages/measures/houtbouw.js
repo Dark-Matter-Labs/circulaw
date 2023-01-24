@@ -15,10 +15,8 @@ export default function Measures({ laws }) {
         totalNumberOfLaws={laws.length}
         thema='houtbouw' // must be the same as value in cms
         heading={`${laws.length} houtbouwmaatregelen voor innovatieve beleidsmakers`}
-        introPara={`Wij hebben ${laws.length} kansvolle maatregelen gevonden waarmee je beleid uit kunt voeren om de
-        houtbouwtransitie te versnellen. Met sommige maatregelen is al praktijkervaring
-        opgedaan, met andere nog niet. Durf te pionieren. Jouw ervaringen kunnen dan ook
-        anderen weer verder helpen.`}
+        introPara={`BWij hebben ${laws.length} kansvolle maatregelen gevonden waarmee je beleid uit kunt voeren om de houtbouwtransitie te versnellen. Veel daarvan zijn nog niet eerder toegepast: je gaat er mee pionieren. 
+        In de toekomst gaan we tools aanbieden voor het in praktijk brengen ervan. Tot die tijd hebben de maatregelen alvast op een rij gezet.`}
         icon={IconWood}
         searchTitle='Zoek in houtbouw stimuleren'
       />
