@@ -114,7 +114,7 @@ const components = {
       <div className='flex justify-left pl-8 sm:pl-12'>
         <div className='mb-10 pt-10 w-5/6'>
           <h4 className='mobile sm:desktop'>{value.smallParaTitle}</h4>
-          <p className=' p-base'>{value.smallParaText}</p> {/* need to change */}
+          <p className=' p-base'>{value.smallParaText}</p>
         </div>
       </div>
     ),
@@ -122,18 +122,12 @@ const components = {
   list: {
     bullet: ({ children }) => (
       <div className='newlineDisplay p-lg truncate'>
-        {' '}
-        {/* need to change font */}
-        <ul className='list-disc pl-6 pb-4 p-lg'>{children}</ul>{' '}
-        {/* need to change font */}
+        <ul className='list-disc pl-6 pb-4 p-lg'>{children}</ul>
       </div>
     ),
     number: ({ children }) => (
       <div className='newlineDisplay p-lg truncate'>
-        {' '}
-        {/* need to change font */}
-        <ol className='list-decimal pl-6 pb-4 p-lg'>{children}</ol>{' '}
-        {/* need to change font */}
+        <ol className='list-decimal pl-6 pb-4 p-lg'>{children}</ol>
       </div>
     ),
   },
