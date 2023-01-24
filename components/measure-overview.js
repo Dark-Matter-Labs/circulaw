@@ -9,8 +9,7 @@ import JITooltip from '../components/juridische-invloed-tooltip';
 
 const viewportType = {
   mobile: 'block sm:hidden gradient-overview -m-8 h-[30rem] mb-10',
-  desktop:
-    'hidden sm:block float-right pl-4 ml-6 sm:pr-6 md:pr-10 lg:pr-14 gradient-overview h-[38rem] sticky top-40',};
+  desktop:'hidden sm:block float-right pl-4 ml-6 sm:pr-6 md:pr-10 lg:pr-14 gradient-overview h-[38rem] sticky top-40',};
 
 export default function MeasureOverview({ viewport, children, data, ...props }) {
   let viewportClasses = viewportType[viewport];

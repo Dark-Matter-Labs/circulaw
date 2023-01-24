@@ -39,7 +39,7 @@ export default function MeasureTable({ data }) {
             <tr className='my-10 border-b boder-black-white-300 border-t'>
               <td className='w-1/3 py-1.5 p-mobile-md sm:p-desktop-md'>Rechtsgebied</td>
               <td className='w-2/3 py-1.5 table-right capitalize'>
-                <span className='justify-end sm:justify-start'>
+                <span className='flex justify-end sm:justify-start'>
                   {data?.measure?.rechtsgebied}
                   {'>'}
                   {data?.measure?.subrechtsgebied}
@@ -93,14 +93,15 @@ export default function MeasureTable({ data }) {
             <tr className='border-b boder-black-white-300'>
               <td className='w-1/3 py-1.5 p-mobile-md sm:p-desktop-md'>Overheidslaag</td>
               <td className='w-2/3 py-1.5 table-right'>
-                <span className='flex justify-end sm:justify-start'>
+                <div className='flex justify-end sm:justify-start flex-wrap'>
                   {data?.measure?.overheidslaag?.map((level) => (
                     <span key={level} className='table-right capitalize'>
                       {level}{' '}
-                      {data?.measure?.overheidslaag.slice(-1)[0] !== level && <span>- </span>}
+                      {data?.measure?.overheidslaag.slice(-1)[0] !== level && <span>-</span>}
+                      &nbsp;
                     </span>
                   ))}
-                </span>
+                </div>
               </td>
             </tr>
           </tbody>
