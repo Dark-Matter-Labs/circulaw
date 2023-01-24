@@ -9,14 +9,14 @@ const formatDate = (date) => {
 const components = {
   list: {
     bullet: ({ children }) => (
-      <div className='newlineDisplay  p-lg truncate'>
+      <div className='newlineDisplay p-lg truncate'>
         <ul className='list-disc pl-6 pb-4 mobile sm:desktop'>{children}</ul>
       </div>
     ),
   },
   block: {
     // need to add other styles here
-    normal: ({ children }) => <p className='newlineDisplay  p-lg pb-4'>{children}</p>,
+    normal: ({ children }) => <p className='newlineDisplay p-lg pb-4'>{children}</p>,
   },
 };
 

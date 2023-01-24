@@ -114,40 +114,34 @@ const components = {
       <div className='flex justify-left pl-8 sm:pl-12'>
         <div className='mb-10 pt-10 w-5/6'>
           <h4 className='mobile sm:desktop'>{value.smallParaTitle}</h4>
-          <p className=' p-base'>{value.smallParaText}</p> {/* need to change */}
+          <p className=' p-base'>{value.smallParaText}</p>
         </div>
       </div>
     ),
   },
   list: {
     bullet: ({ children }) => (
-      <div className='newlineDisplay  p-base truncate'>
-        {' '}
-        {/* need to change font */}
-        <ul className='list-disc pl-6 pb-4 mobile sm:desktop'>{children}</ul>{' '}
-        {/* need to change font */}
+      <div className='newlineDisplay p-lg truncate'>
+        <ul className='list-disc pl-6 pb-4 p-lg'>{children}</ul>
       </div>
     ),
     number: ({ children }) => (
-      <div className='newlineDisplay  p-base truncate'>
-        {' '}
-        {/* need to change font */}
-        <ol className='list-decimal pl-6 pb-4 mobile sm:desktop'>{children}</ol>{' '}
-        {/* need to change font */}
+      <div className='newlineDisplay p-lg truncate'>
+        <ol className='list-decimal pl-6 pb-4 p-lg'>{children}</ol>
       </div>
     ),
   },
   listItem: {
-    number: ({ children }) => <li className='py-0.5'>{children}</li>,
-    bullet: ({ children }) => <li className='py-0.5'>{children}</li>,
+    number: ({ children }) => <li className='py-0.5 p-lg'>{children}</li>,
+    bullet: ({ children }) => <li className='py-0.5 p-lg'>{children}</li>,
   },
   block: {
-    firstH2: ({ children }) => <h2 className='pb-8 mobile sm:desktop'>{children}</h2>,
-    h2: ({ children }) => <h2 className='py-8 mobile sm:desktop'>{children}</h2>,
-    h3: ({ children }) => <h3 className='py-8 mobile sm:desktop'>{children}</h3>,
+    firstH2: ({ children }) => <h2 className='pb-[18px] mobile sm:desktop'>{children}</h2>,
+    h2: ({ children }) => <h2 className='pt-14 pb-[18px] mobile sm:desktop'>{children}</h2>,
+    h3: ({ children }) => <h3 className='pt-14 pb-[18px] mobile sm:desktop'>{children}</h3>,
     // need to add other styles here
     normal: ({ children }) => (
-      <p className='newlineDisplay  p-lg py-2'>{children}</p> // check if this is correct
+      <p className='newlineDisplay p-lg py-2'>{children}</p> // check if this is correct
     ),
   },
   marks: {
@@ -206,15 +200,13 @@ export default function Measure({ data }) {
             </div>
             {data?.measure?.subtitel && (
               <div className='sm:col-span-7 row-span-1'>
-                <p className='lg:block p-xl pb-10'>
+                <h2 className='lg:block p-lg sm:p-xl pb-10'>
                   {' '}
-                  {/* check font */}
                   {data?.measure?.subtitel}
-                </p>
+                </h2>
               </div>
             )}
           </div>
-
           <div className='grid grid-cols-1 sm:grid-cols-3 '>
             <MeasureOverview data={data} viewport='mobile' />
             <div className='sm:max-w-3xl pb-20 col-span-2 '>

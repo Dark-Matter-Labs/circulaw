@@ -66,7 +66,7 @@ export default function ToolTips({ children, icon, data }) {
                       leaveFrom='opacity-100'
                       leaveTo='opacity-0'
                     >
-                      <div className='absolute float-right top-0 right-0 flex pt-4 pr-2 sm:-ml-10'>
+                      <div className='absolute float-right top-0 right-0 flex pt-4 pr-8 sm:-ml-10'>
                         <button
                           type='button'
                           className='rounded-md text-green-600'
@@ -78,14 +78,14 @@ export default function ToolTips({ children, icon, data }) {
                       </div>
                     </Transition.Child>
                     <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl px-6'>
-                      <div className='px-4 sm:px-6'>
+                      <div className=''>
                         <Dialog.Title className='text-gray-900'>
                           {' '}
-                          <h4 className='mobile sm:desktop'>Geschatte invloed</h4>
+                          <h2 className='mobile sm:desktop'>Geschatte invloed</h2>
                         </Dialog.Title>
                       </div>
-                      <div className='relative mt-6 flex-1 px-4 sm:px-6'>
-                        <div className='absolute inset-0 px-4 sm:px-6'>
+                      <div className='relative mt-6 flex-1'>
+                        <div className='absolute inset-0'>
                           {data?.measure?.invloedTooltipText && (
                             <p className='tooltip-body'>{data?.measure?.invloedTooltipText}</p>
                           )}
