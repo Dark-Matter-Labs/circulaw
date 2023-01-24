@@ -36,7 +36,7 @@ export default function Index() {
           >
             Over CircuLaw
           </h1>
-          <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10 gap-x-8'>
             <div>
               <Image src={watImage} width={556} alt='image for wat circulaw' />
             </div>
@@ -55,7 +55,7 @@ export default function Index() {
             </div>
           </div>
 
-          <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10 gap-x-8'>
             <div>
               <Image src={waaromImage} width={556} alt='image for wararom circulaw' />
             </div>
@@ -77,7 +77,7 @@ export default function Index() {
             </div>
           </div>
 
-          <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10 gap-x-8'>
             <div>
               <Image src={hoeverImage} width={556} alt='image for hoever' />
             </div>
@@ -102,7 +102,7 @@ export default function Index() {
             </div>
           </div>
 
-          <div className='grid grid-cols-1 lg:grid-cols-2 py-10'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 py-10 gap-x-8'>
             <div>
               <Image src={waaromImage} width={556} alt='image for wararom circulaw' />
             </div>
