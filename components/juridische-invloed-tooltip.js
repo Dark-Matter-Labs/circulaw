@@ -66,7 +66,7 @@ export default function ToolTips({ children, icon, data }) {
                       leaveFrom='opacity-100'
                       leaveTo='opacity-0'
                     >
-                      <div className='absolute float-right top-0 right-0 flex pt-4 pr-2 sm:-ml-10'>
+                      <div className='absolute float-right top-0 right-0 flex pt-4 pr-8 sm:-ml-10'>
                         <button
                           type='button'
                           className='rounded-md text-green-600'
