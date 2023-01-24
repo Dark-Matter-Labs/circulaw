@@ -1,5 +1,5 @@
 import Layout from '/components/layouts/layout';
-import IconWood from '../../public/icons/HoutbouwIconBg.svg';
+import IconWood from '../../public/icons/houtbouwIconBg.svg';
 import MeasuresLayout from '../../components/layouts/measures-layout';
 import client from '../../lib/sanity';
 

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import IconWood from '../public/icons/HoutbouwIconBg.svg';
+import IconWood from '../public/icons/houtbouwIconBg.svg';
 import WindmillIcon from '../public/winturbines.svg';
 import MatrassenIcon from '../public/icons/matressIcon.svg';
 import Link from 'next/link';
