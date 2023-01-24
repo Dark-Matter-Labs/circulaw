@@ -121,25 +121,25 @@ const components = {
   },
   list: {
     bullet: ({ children }) => (
-      <div className='newlineDisplay  p-base truncate'>
+      <div className='newlineDisplay p-lg truncate'>
         {' '}
         {/* need to change font */}
-        <ul className='list-disc pl-6 pb-4 mobile sm:desktop'>{children}</ul>{' '}
+        <ul className='list-disc pl-6 pb-4 p-lg'>{children}</ul>{' '}
         {/* need to change font */}
       </div>
     ),
     number: ({ children }) => (
-      <div className='newlineDisplay  p-base truncate'>
+      <div className='newlineDisplay p-lg truncate'>
         {' '}
         {/* need to change font */}
-        <ol className='list-decimal pl-6 pb-4 mobile sm:desktop'>{children}</ol>{' '}
+        <ol className='list-decimal pl-6 pb-4 p-lg'>{children}</ol>{' '}
         {/* need to change font */}
       </div>
     ),
   },
   listItem: {
-    number: ({ children }) => <li className='py-0.5'>{children}</li>,
-    bullet: ({ children }) => <li className='py-0.5'>{children}</li>,
+    number: ({ children }) => <li className='py-0.5 p-lg'>{children}</li>,
+    bullet: ({ children }) => <li className='py-0.5 p-lg'>{children}</li>,
   },
   block: {
     firstH2: ({ children }) => <h2 className='pb-8 mobile sm:desktop'>{children}</h2>,
