@@ -183,14 +183,14 @@ export const juridischInvloed = [
 export const extraContent = [
   {
     id: '0',
-    name: 'Leidraad',
-    label: 'Leidraad',
-    value: 'Leidraad',
+    name: 'Voorbeelden',
+    label: 'Voorbeelden',
+    value: 'Voorbeeld',
   },
   {
     id: '1',
-    name: 'Voorbeeld',
-    label: 'Voorbeeld',
-    value: 'Voorbeeld',
+    name: 'Leidrade',
+    label: 'Leidraden',
+    value: 'Leidraad',
   }, 
 ]
