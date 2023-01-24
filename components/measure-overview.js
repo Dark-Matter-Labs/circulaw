@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import IcontWood from '../public/icons/houtbouwIconBg.svg';
+import IconWood from '../public/icons/houtbouwIconBg.svg';
 import WindmillIcon from '../public/winturbines.svg';
+import MatrassenIcon from '../public/icons/matressIcon.svg'
 import Link from 'next/link';
 import RTooltip from '../components/r-ladder-tooltip';
 import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
@@ -8,9 +9,8 @@ import JITooltip from '../components/juridische-invloed-tooltip';
 
 const viewportType = {
   mobile: 'block sm:hidden gradient-overview -m-8 h-[30rem] mb-10',
-  desktop:
-    'hidden sm:block float-right pl-4 ml-6 sm:pr-6 md:pr-10 lg:pr-14 gradient-overview h-[38rem] sticky top-40',
-};
+  desktop:'hidden sm:block float-right pl-4 ml-6 sm:pr-6 md:pr-10 lg:pr-14 gradient-overview h-[38rem] sticky top-40',};
+
 export default function MeasureOverview({ viewport, children, data, ...props }) {
   let viewportClasses = viewportType[viewport];
   return (
@@ -18,15 +18,21 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
       <div className='px-8 pb-10 sm:pb-0 sm:px-0 sm:py-12 block h-[30rem] sm:h-[38rem]'>
         {children}
         <div className='invisible sm:visible container pb-2'>
-          {data?.measure?.thema === 'houtbouw' ? (
-            <div className='container-image'>
-              <Image src={IcontWood} alt='Icon of a Wood Log' />
-            </div>
-          ) : (
-            <div className='container-image'>
+          {data?.measure?.thema === 'houtbouw' && 
+            <div className='container-image h-14 w-14'>
+              <Image src={IconWood} alt='Icon of a Wood Log' />
+            </div>}
+            {data?.measure?.thema === 'circulaire-windturbines' &&
+            <div className='container-image h-14 w-14'>
               <Image src={WindmillIcon} alt='Icon of a Wood Log' />
             </div>
-          )}
+            }
+             {data?.measure?.thema === 'matrassen' &&
+            <div className='container-image h-14 w-14'>
+              <Image src={MatrassenIcon} alt='Icon of a Wood Log' />
+            </div>
+            }
+    
           <div className=''>
             <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()} passHref>
               <h4 className='mobile sm:desktop underline pl-2 text-green-600 first-letter:uppercase block'>

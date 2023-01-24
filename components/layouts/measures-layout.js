@@ -313,18 +313,24 @@ export default function MeasuresLayout(props) {
           { name: 'subrechtsgebied', weight: 0.5 },
           { name: 'artikel', weight: 0.5 },
           { name: 'citeertitel', weight: 0.5 },
+
         ],
         includeScore: true,
         threshold: 0.2,
         ignoreLocation: true,
+        // shouldSort: true,
+        // sortFn:(a,b) => a.score < b.score
       });
 
       const results = fuse.search(searchValue);
+      // console.log(results)
       const lawResults = searchValue ? results.map((result) => result.item) : filteredLaws;
       filteredLaws = lawResults;
+      // console.log(lawResults)
 
       // display scores in consol for testing
       // const scores = results.map((result) => result.score);
+      // console.log(scores)
 
       // setting values for autocomplete
       setSelectedResults(filteredLaws);
@@ -674,7 +680,7 @@ export default function MeasuresLayout(props) {
         </div>
 
         <div className='container mb-2 sm:mb-20 mt-10'>
-          <div className='container-image'>
+          <div className='container-image h-14 w-14'>
             <Image src={props.icon} alt={`${props.thema} 'icon'`} />
           </div>
           <div>
