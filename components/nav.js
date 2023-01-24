@@ -15,6 +15,7 @@ import CustomButton from './custom-button';
 import BetaBanner from './beta-banner';
 import BetaBannerGen from './beta-banner-gen';
 import client from '../lib/sanity';
+import NieuwTooltip from '../components/nieuw-tooltip';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -203,6 +204,15 @@ export default function Nav() {
                                   </h5>
                                 </Link>
                               </div>
+                              <div className='inline-block relative ml-8'>
+                              <NieuwTooltip>
+                                  <CustomButton color='nav'>
+                                    <h5 className='uppercase text-black-white-200 group rounded-md inline-flex items-center mobile sm:desktop'>
+                                      NIEUW
+                                    </h5>
+                                  </CustomButton>
+                                  </NieuwTooltip>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -287,6 +297,13 @@ export default function Nav() {
                   className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5'
                 >
                   Contact
+                </Disclosure.Button>
+                <Disclosure.Button
+                  as='a'
+                  href='/'
+                  className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5'
+                >
+                  Nieuw
                 </Disclosure.Button>
               </div>
             </Disclosure.Panel>
@@ -460,6 +477,15 @@ export default function Nav() {
                                     </h5>
                                   </Link>
                                 </div>
+                                <div className='inline-block relative ml-8'>
+                                <NieuwTooltip>
+                                    <CustomButton color='nav'>
+                                      <h5 className='uppercase text-black-white-200 group rounded-md inline-flex items-center mobile sm:desktop'>
+                                        NIEUW
+                                      </h5>
+                                    </CustomButton>
+                                    </NieuwTooltip>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -530,6 +556,13 @@ export default function Nav() {
                     className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5'
                   >
                     Contact
+                  </Disclosure.Button>
+                  <Disclosure.Button
+                    as='a'
+                    href='/'
+                    className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5'
+                  >
+                    Nieuw
                   </Disclosure.Button>
                 </div>
               </Disclosure.Panel>
