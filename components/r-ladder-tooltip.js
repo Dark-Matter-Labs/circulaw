@@ -85,9 +85,9 @@ export default function ToolTips({ children, icon }) {
                       <div className='px-4 sm:px-6'>
                         <Dialog.Title className='text-gray-900'>
                           {' '}
-                          <h4 className='mobile sm:desktop'>
+                          <h2 className='mobile sm:desktop'>
                             R-ladder: strategieën van circulariteit
-                          </h4>
+                          </h2>
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>
