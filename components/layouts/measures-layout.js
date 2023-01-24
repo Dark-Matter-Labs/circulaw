@@ -674,7 +674,7 @@ export default function MeasuresLayout(props) {
         </div>
 
         <div className='container mb-2 sm:mb-20 mt-10'>
-          <div className='container-image'>
+          <div className='container-image h-14 w-14'>
             <Image src={props.icon} alt={`${props.thema} 'icon'`} />
           </div>
           <div>
