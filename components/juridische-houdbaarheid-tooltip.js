@@ -78,14 +78,14 @@ export default function ToolTips({ children, icon, data }) {
                       </div>
                     </Transition.Child>
                     <div className='flex h-full px-6 flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
-                      <div className='px-12 sm:px-6'>
+                      <div className=''>
                         <Dialog.Title className='text-gray-900'>
                           {' '}
                           <h2 className='mobile sm:desktop'>Geschatte juridische haalbaarheid</h2>
                         </Dialog.Title>
                       </div>
-                      <div className='relative mt-6 flex-1 px-12 sm:px-6'>
-                        <div className='absolute inset-0 px-12 sm:px-6'>
+                      <div className='relative mt-6 flex-1'>
+                        <div className='absolute inset-0'>
                           {data?.measure?.JHTooltipText && (
                             <p className='tooltip-body'>{data?.measure?.JHTooltipText}</p>
                           )}
