@@ -2,7 +2,7 @@ import Link from 'next/link';
 import ThemeBottomSection from '../section-bottom-theme-index';
 import ThemeCard from '../theme-card';
 import Image from 'next/image';
-
+import LinkIcon from '../link-icon';
 {
   /* TO DO */
 }
@@ -31,12 +31,11 @@ export default function ThemeLayout({ bgHero, ...props }) {
                 </div>
                 <div className='col-span-7'>
                   <p className='pt-4 text-black-white-200 p-mobile-bg sm:p-desktop-bg'>
-                    {props.headerSubtitle}
+                    {props.headerSubtitle}{' '}
                     {props.headerLinkText && 
                     <span className='text-green-500 link-mobile sm:link-desktop inline-block pl-1'>
                       <a href={props.headerLinkURL} target='_blank' rel='noopener noreferrer'>
-                        {' '}
-                        {props.headerLinkText}→
+                        {props.headerLinkText}<LinkIcon size ='desktop'/>
                       </a>
                     </span>}
                   </p>

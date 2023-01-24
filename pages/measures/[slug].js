@@ -1,6 +1,5 @@
 import Layout from '../../components/layouts/layout';
 import client from '../../lib/sanity';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import LinkIcon from '../../components/link-icon';
@@ -63,8 +62,9 @@ const components = {
               fill='#F8FAF8'
             />
           </svg>
-          <div className='inline-block max-w-xs absolute invisible group-hover:visible z-10 py-3 px-6 bg-black-white-300 text-black-white-800 popup-mobile sm:popup-desktop opacity-0 group-hover:opacity-100 transition tooltip'>
+          <div className='inline-block z-90 max-w-xs absolute invisible group-hover:visible z-10 py-3 px-6 bg-black-white-300 text-black-white-800 popup-mobile sm:popup-desktop opacity-0 group-hover:opacity-100 transition tooltip'>
             {value.hoverText}
+            {console.log(value.hoverText)}
           </div>
         </button>
       </>
