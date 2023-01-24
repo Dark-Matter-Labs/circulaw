@@ -206,15 +206,13 @@ export default function Measure({ data }) {
             </div>
             {data?.measure?.subtitel && (
               <div className='sm:col-span-7 row-span-1'>
-                <p className='lg:block p-xl pb-10'>
+                <h2 className='lg:block p-lg sm:p-xl pb-10'>
                   {' '}
-                  {/* check font */}
                   {data?.measure?.subtitel}
-                </p>
+                </h2>
               </div>
             )}
           </div>
-
           <div className='grid grid-cols-1 sm:grid-cols-3 '>
             <MeasureOverview data={data} viewport='mobile' />
             <div className='sm:max-w-3xl pb-20 col-span-2 '>
