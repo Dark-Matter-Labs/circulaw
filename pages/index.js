@@ -24,33 +24,33 @@ export default function Index() {
     <Layout page='home'>
       <div className='bg-black-white-200 pb-20' name='thema'>
         <div className='global-margin'>
-          <h3 className='pb-6 pt-8 mobile sm:desktop text-black-white-800'>Thema’s</h3>
+          <h2 className='pb-6 pt-8 mobile sm:desktop text-black-white-800'>Thema’s</h2>
 
           <SectionTypes type='home' />
         </div>
       </div>
       <div className='bg-black-white-200 py-10'>
         <div className='global-margin'>
-          <h2
+          <h1
             className='mobile sm:desktop text-black-white-800 border-b border-black-white-600 pb-4'
             name='waarom'
           >
             Over CircuLaw
-          </h2>
+          </h1>
           <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10'>
             <div>
               <Image src={watImage} width={556} alt='image for wat circulaw' />
             </div>
             <div>
-              <h2 className='mobile sm:main'>Wat is CircuLaw?</h2>
-              <p className='p-mobile-bg sm:p-desktop-bg py-5 max-w-4xl'>
+              <h2 className='mobile sm:desktop'>Wat is CircuLaw?</h2>
+              <p className=' p-lg py-5 max-w-4xl'>
                 CircuLaw is een service waarmee we in de eerste plaats beleidsmakers en
                 transitiemanagers helpen meer en beter gebruik te maken van regelgeving om de
                 circulaire economie te bevorderen. Maar CircuLaw is ambitieus. Door stap voor stap
                 uit te breiden willen we uiteindelijk ook strategen, toezichthouders, juristen en
                 circulaire ondernemers bedienen.
               </p>
-              <span className='text-green-500 link-mobile sm:link-desktop'>
+              <span className='text-green-500  link-lg'>
                 <Link href={`/about/${encodeURIComponent(aboutSlugs?.[0])}`}>Meer lezen →</Link>
               </span>
             </div>
@@ -61,8 +61,8 @@ export default function Index() {
               <Image src={waaromImage} width={556} alt='image for wararom circulaw' />
             </div>
             <div>
-              <h2 className='mobile sm:main'>Waarom CircuLaw?</h2>
-              <p className='p-mobile-bg sm:p-desktop-bg py-5 max-w-4xl'>
+              <h2 className='mobile sm:desktop'>Waarom CircuLaw?</h2>
+              <p className=' p-lg py-5 max-w-4xl'>
                 Voor het tegengaan van klimaatverandering, het verminderen van vervuiling, het
                 behoud van biodiversiteit en de beschikbaarheid van grondstoffen is een circulaire
                 economie essentieel. In Nederland hebben we hierin nog een lange weg te gaan. De
@@ -72,7 +72,7 @@ export default function Index() {
                 circulaire doelen te halen en zo bij te dragen aan een versnelling van de circulaire
                 transitie.
               </p>
-              <span className='text-green-500 link-mobile sm:link-desktop'>
+              <span className='text-green-500  link-lg'>
                 <Link href={`/about/${encodeURIComponent(aboutSlugs?.[1])}`}>Meer lezen →</Link>
               </span>
             </div>
@@ -83,8 +83,8 @@ export default function Index() {
               <Image src={hoeverImage} width={556} alt='image for hoever' />
             </div>
             <div>
-              <h2 className='mobile sm:main'>Hoever zijn we?</h2>
-              <ul className='p-mobile-bg sm:p-desktop-bg py-5 max-w-4xl list-disc pl-6'>
+              <h2 className='mobile sm:desktop'>Hoever zijn we?</h2>
+              <ul className=' p-lg py-5 max-w-4xl list-disc pl-6'>
                 <li>
                   Een overzicht van wet- en regelgeving voor beleidsmakers die aan de slag willen
                   met maatregelen voor de thema’s houtbouw en circulaire windmolens
@@ -95,7 +95,7 @@ export default function Index() {
                   circulaire houtbouw en circulaire windmolens
                 </li>
               </ul>
-              <span className='text-green-500 link-mobile sm:link-desktop'>
+              <span className='text-green-500  link-lg'>
                 <Link href={`/about/${encodeURIComponent(aboutSlugs?.[2])}`}>
                   Meer lezen over de volgende stappen →
                 </Link>
@@ -108,15 +108,15 @@ export default function Index() {
               <Image src={waaromImage} width={556} alt='image for wararom circulaw' />
             </div>
             <div>
-              <h2 className='mobile sm:main'>Wie maken CircuLaw?</h2>
-              <p className='p-mobile-bg sm:p-desktop-bg py-5 max-w-4xl'>
+              <h2 className='mobile sm:desktop'>Wie maken CircuLaw?</h2>
+              <p className=' p-lg py-5 max-w-4xl'>
                 Gemeente Amsterdam, Dark Matter Laboratories, EIT Climate KIC, de Provincies
                 Noord-Holland en Flevoland, Rijksdienst voor Ondernemend Nederland (RVO), het MRA
                 (Metropoolregio Amsterdam) Kernteam Houtbouw, Belastingdienst, TU Delft, Erasmus
                 School of LAW, de VU, Wageningen Universiteit ( WUR Law group), Stichting Koninklijk
                 Nederlands Normalisatie Instituut (NEN).
               </p>
-              <span className='text-green-500 link-mobile sm:link-desktop'>
+              <span className='text-green-500  link-lg'>
                 <Link href={`/about/${encodeURIComponent(aboutSlugs?.[3])}`}>
                   Meer over de makers van CircuLaw →
                 </Link>

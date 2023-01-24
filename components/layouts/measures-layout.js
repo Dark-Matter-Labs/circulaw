@@ -648,7 +648,7 @@ export default function MeasuresLayout(props) {
                       />
                     </div>
 
-                    <span onClick={reset} className='link-mobile text-green-500 p-8'>
+                    <span onClick={reset} className=' text-green-500 p-8'>
                       Wis filters
                     </span>
                   </div>
@@ -672,7 +672,7 @@ export default function MeasuresLayout(props) {
           </Link>
         </div>
         <div className='hidden sm:block col-span-2 bg-opacity p-5 mt-2 mb-10 max-w-3xl'>
-          {props.heading && <h3>{props.heading}</h3>}
+          {props.heading && <h1>{props.heading}</h1>}
           <p>
             {props.introPara}
             <br />
@@ -685,20 +685,20 @@ export default function MeasuresLayout(props) {
           </div>
           <div>
             {props.thema === 'circulaire-windturbines' ? (
-              <h2 className='max-w-0 leading-6 pb-1 pl-1 mobile sm:main lowercase first-letter:uppercase'>
+              <h1 className='max-w-0 leading-6 pb-1 pl-1 mobile sm:desktop lowercase first-letter:uppercase'>
                 Circulaire windturbines stimuleren
-              </h2>
+              </h1>
             ) : (
-              <h2 className='max-w-0 leading-6 pb-1 pl-1 mobile sm:main lowercase first-letter:uppercase'>
+              <h1 className='max-w-0 leading-6 pb-1 pl-1 mobile sm:desktop lowercase first-letter:uppercase'>
                 {props.thema} stimuleren
-              </h2>
+              </h1>
             )}
           </div>
         </div>
         <div className='col-span-2'>
           <div className='pt-5'>
             <div>
-              <h5 className='mobile sm:desktop'>{props.searchTitle}</h5>
+              <h4 className='mobile sm:desktop'>{props.searchTitle}</h4>
             </div>
 
             {/* AUTOCOMPLETE */}
@@ -752,26 +752,26 @@ export default function MeasuresLayout(props) {
             {numberOfLaws === 0 && (
               <div>
                 <span className=''>
-                  <h4 className='mobile sm:desktop inline'>0</h4>{' '}
-                  <span className='p-mobile-bg sm:p-desktop-bg'>resultaten in </span>
-                  <h4 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
+                  <h3 className='mobile sm:desktop inline'>0</h3>{' '}
+                  <span className=' p-lg'>resultaten in </span>
+                  <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
                     {props.thema}
-                  </h4>{' '}
-                  <span className='p-mobile-bg sm:p-desktop-bg'>voor</span>{' '}
-                  <h4 className='mobile sm:desktop inline'>{searchValue}</h4>
+                  </h3>{' '}
+                  <span className=' p-lg'>voor</span>{' '}
+                  <h3 className='mobile sm:desktop inline'>{searchValue}</h3>
                 </span>
               </div>
             )}
             {numberOfLaws > 1 && numberOfLaws < props.totalNumberOfLaws && (
               <div>
                 <span className=''>
-                  <h4 className='mobile sm:desktop inline'>{numberOfLaws}</h4>{' '}
-                  <span className='p-mobile-bg sm:p-desktop-bg'>resultaten in </span>
-                  <h4 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
+                  <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
+                  <span className=' p-lg'>resultaten in </span>
+                  <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
                     {props.thema}
-                  </h4>{' '}
-                  <span className='p-mobile-bg sm:p-desktop-bg'>voor</span>{' '}
-                  <h4 className='mobile sm:desktop inline'>{searchValue}</h4>
+                  </h3>{' '}
+                  <span className=' p-lg'>voor</span>{' '}
+                  <h3 className='mobile sm:desktop inline'>{searchValue}</h3>
                 </span>
               </div>
             )}
@@ -779,13 +779,13 @@ export default function MeasuresLayout(props) {
             {searchValue !== '' && numberOfLaws === 1 && (
               <div>
                 <span className=''>
-                  <h4 className='mobile sm:desktop inline'>{numberOfLaws}</h4>{' '}
-                  <span className='p-mobile-bg sm:p-desktop-bg'>resultaten in </span>
-                  <h4 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
+                  <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
+                  <span className=' p-lg'>resultaten in </span>
+                  <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
                     {props.thema}
-                  </h4>{' '}
-                  <span className='p-mobile-bg sm:p-desktop-bg'>voor</span>{' '}
-                  <h4 className='mobile sm:desktop inline'>{searchValue}</h4>
+                  </h3>{' '}
+                  <span className=' p-lg'>voor</span>{' '}
+                  <h3 className='mobile sm:desktop inline'>{searchValue}</h3>
                 </span>
               </div>
             )}
@@ -793,14 +793,14 @@ export default function MeasuresLayout(props) {
             {numberOfLaws === props.totalNumberOfLaws && (
               <div>
                 <span className=''>
-                  <h4 className='mobile sm:desktop inline'>{numberOfLaws}</h4>{' '}
-                  <span className='p-mobile-bg sm:p-desktop-bg'>resultaten in </span>
-                  <h4 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
+                  <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
+                  <span className=' p-lg'>resultaten in </span>
+                  <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
                     {props.thema}
-                  </h4>{' '}
-                  <h4 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
+                  </h3>{' '}
+                  <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
                     {searchValue}
-                  </h4>
+                  </h3>
                 </span>
               </div>
             )}
@@ -837,11 +837,8 @@ export default function MeasuresLayout(props) {
         </div>
 
         <div className='hidden lg:block mb-3'>
-          <h4 className='mobile sm:desktop pr-8 inline'>Filter op:</h4>{' '}
-          <span
-            onClick={reset}
-            className='underline text-green-500 text-lg link-hover link-mobile sm:link-desktop '
-          >
+          <h3 className='mobile sm:desktop pr-8 inline'>Filter op:</h3>{' '}
+          <span onClick={reset} className='underline text-green-500 text-lg link-hover  link-lg '>
             Wis filters
           </span>
         </div>

@@ -9,16 +9,14 @@ const formatDate = (date) => {
 const components = {
   list: {
     bullet: ({ children }) => (
-      <div className='newlineDisplay p-mobile-bg sm:p-desktop-bg truncate'>
-        <ul className='list-disc pl-6 pb-4 mobile sm:main'>{children}</ul>
+      <div className='newlineDisplay  p-lg truncate'>
+        <ul className='list-disc pl-6 pb-4 mobile sm:desktop'>{children}</ul>
       </div>
     ),
   },
   block: {
     // need to add other styles here
-    normal: ({ children }) => (
-      <p className='newlineDisplay p-mobile-bg sm:p-desktop-bg pb-4'>{children}</p>
-    ),
+    normal: ({ children }) => <p className='newlineDisplay  p-lg pb-4'>{children}</p>,
   },
 };
 
@@ -28,7 +26,7 @@ export default function MeasureTable({ data }) {
       <div className='grid grid-cols-6'>
         <div className='col-span-6 sm:col-span-4'>
           <div className='pb-5'>
-            <h3 className='pt-6 pb-4 mobile sm:desktop'>Juridische toelichting</h3>
+            <h2 className='pt-6 pb-4 mobile sm:desktop'>Juridische toelichting</h2>
             {data?.measure?.juridischeToelichting && (
               <PortableText components={components} value={data?.measure?.juridischeToelichting} />
             )}
@@ -37,8 +35,8 @@ export default function MeasureTable({ data }) {
         <table className='table-fixed col-span-6 sm:col-span-4 -m-3 sm:m-0'>
           <tbody>
             <tr className='my-10 border-b boder-black-white-300 border-t'>
-              <td className='w-1/3 py-1.5 p-mobile-md sm:p-desktop-md'>Rechtsgebied</td>
-              <td className='w-2/3 py-1.5 table-right capitalize'>
+              <td className='w-1/3 py-1.5 p-base'>Rechtsgebied</td>
+              <td className='w-2/3 py-1.5 table-base capitalize'>
                 <span className='flex justify-end sm:justify-start'>
                   {data?.measure?.rechtsgebied}
                   {'>'}
@@ -47,16 +45,16 @@ export default function MeasureTable({ data }) {
               </td>
             </tr>
             <tr className=' border-b boder-black-white-300'>
-              <td className='w-1/3 py-1.5 p-mobile-md sm:p-desktop-md'>Citeertitel</td>
-              <td className='w-2/3 py-1.5 table-right first-letter:uppercase'>
+              <td className='w-1/3 py-1.5  p-base'>Citeertitel</td>
+              <td className='w-2/3 py-1.5 table-base first-letter:uppercase'>
                 <span className='flex justify-end sm:justify-start'>
                   {data?.measure?.citeertitel}
                 </span>
               </td>
             </tr>
             <tr className='border-b boder-black-white-300'>
-              <td className='w-1/3 py-1.5 p-mobile-md sm:p-desktop-md'>Artikel</td>
-              <td className='w-2/3 py-1.5 table-right'>
+              <td className='w-1/3 py-1.5  p-base'>Artikel</td>
+              <td className='w-2/3 py-1.5 table-base'>
                 <span className='flex justify-end sm:justify-start'>
                   <a
                     className='text-green-500'
@@ -70,8 +68,8 @@ export default function MeasureTable({ data }) {
                         className=''
                         alt='new tab'
                         src='/icons/Vectorlink-icon.svg'
-                        layout='fill'
-                        objectFit='cover'
+                        width={20}
+                        height={20}
                       />
                     </span>
                   </a>
@@ -79,11 +77,11 @@ export default function MeasureTable({ data }) {
               </td>
             </tr>
             <tr className='border-b boder-black-white-300'>
-              <td className='w-1/3 py-1.5 p-mobile-md sm:p-desktop-md'>Geldig vanaf</td>
-              <td className='w-2/3 py-1.5 table-right'>
+              <td className='w-1/3 py-1.5  p-base'>Geldig vanaf</td>
+              <td className='w-2/3 py-1.5 table-base'>
                 <span className='flex justify-end sm:justify-start'>
                   {!data?.measure?.lawDate ? (
-                    <span className='table-right'>TBD</span>
+                    <span className='table-base'>TBD</span>
                   ) : (
                     formatDate(data?.measure?.lawDate)
                   )}
@@ -91,11 +89,11 @@ export default function MeasureTable({ data }) {
               </td>
             </tr>
             <tr className='border-b boder-black-white-300'>
-              <td className='w-1/3 py-1.5 p-mobile-md sm:p-desktop-md'>Overheidslaag</td>
-              <td className='w-2/3 py-1.5 table-right'>
+              <td className='w-1/3 py-1.5 p-base'>Overheidslaag</td>
+              <td className='w-2/3 py-1.5 table-base'>
                 <div className='flex justify-end sm:justify-start flex-wrap'>
                   {data?.measure?.overheidslaag?.map((level) => (
-                    <span key={level} className='table-right capitalize'>
+                    <span key={level} className='table-base capitalize'>
                       {level}{' '}
                       {data?.measure?.overheidslaag.slice(-1)[0] !== level && <span>-</span>}
                       &nbsp;

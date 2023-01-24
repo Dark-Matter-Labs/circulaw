@@ -4,7 +4,7 @@ import RTooltip from '../components/r-ladder-tooltip';
 import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../components/juridische-invloed-tooltip';
 
-const rLadderLabelStyles = 'bg-green-600 text-white rounded-full p-1 mr-2 block-inline r-category ';
+const rLadderLabelStyles = 'bg-green-600 text-white rounded-full p-1 mr-2 block-inline inline';
 
 const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, ref) => {
   const [checkedArray, setCheckedArray] = useState([]);
@@ -50,7 +50,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
     <fieldset className='py-4 border-b border-black'>
       <div className='block'>
         <div className='relative flex justify-between'>
-          <h5 className='mobile sm:desktop mr-8'>{title}</h5>
+          <h4 className='mobile sm:desktop mr-8'>{title}</h4>
           {title === 'R - ladder' && (
             <RTooltip>
               <svg className='w-6 h-6 fill-current text-black-white-200 mb-2' viewBox='0 0 26 26'>
@@ -101,12 +101,12 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                   />
                   <label
                     htmlFor={`data-${data.value}-${data.id}`}
-                    className='select-none  table-mobile sm:table-desktop pl-2'
+                    className='select-none   table-base pl-2'
                   >
                     {/* RVALUE */}
                     {title === 'R - ladder' && (
                       <>
-                        <span className={`${rLadderLabelStyles}`}>{data.value} </span>
+                        <h6 className={`${rLadderLabelStyles}`}>{data.value} </h6>
                         <span>{data.name}</span>
                       </>
                     )}
@@ -114,9 +114,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                     {title !== 'R - ladder' && <span className=''>{data.name}</span>}
                   </label>
                 </div>
-                <div className='table-mobile sm:table-desktop text-black-white-800'>
-                  ({filterNumbers[dataIdx]})
-                </div>
+                <div className=' table-base text-black-white-800'>({filterNumbers[dataIdx]})</div>
               </>
             ) : (
               <>
@@ -130,12 +128,12 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                   />
                   <label
                     htmlFor={`data-${data.value}-${data.id}`}
-                    className='select-none table-mobile sm:table-desktop text-black-white-600 text-sm pl-2'
+                    className='select-none  table-base text-black-white-600 text-sm pl-2'
                   >
                     {title === 'R - ladder' && (
                       <>
                         <span className={`${rLadderLabelStyles}`}>{data.value} </span>
-                        <span className='table-mobile sm:table-desktopl text-black-white-600 text-sm'>
+                        <span className=' table-basel text-black-white-600 text-sm'>
                           {data.name}
                         </span>
                       </>
@@ -144,9 +142,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                     {title !== 'R - ladder' && <span>{data.name}</span>}
                   </label>
                 </div>
-                <div className='table-mobile sm:table-desktop text-black-white-600'>
-                  ({filterNumbers[dataIdx]})
-                </div>
+                <div className=' table-base text-black-white-600'>({filterNumbers[dataIdx]})</div>
               </>
             )}
           </div>

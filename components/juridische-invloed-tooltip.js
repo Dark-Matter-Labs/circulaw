@@ -81,7 +81,7 @@ export default function ToolTips({ children, icon, data }) {
                       <div className='px-4 sm:px-6'>
                         <Dialog.Title className='text-gray-900'>
                           {' '}
-                          <h5 className='mobile sm:desktop'>Geschatte invloed</h5>
+                          <h4 className='mobile sm:desktop'>Geschatte invloed</h4>
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>

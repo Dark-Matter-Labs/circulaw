@@ -94,7 +94,7 @@ export default function Nav() {
                                         'group rounded-md inline-flex items-center ',
                                       )}
                                     >
-                                      <h6 className='uppercase mobile sm:desktop'>Thema&apos;s</h6>
+                                      <h5 className='uppercase mobile sm:desktop'>Thema&apos;s</h5>
                                       <ChevronDownIcon
                                         className={classNames(
                                           open ? 'text-gray-600' : 'text-gray-400',
@@ -120,13 +120,13 @@ export default function Nav() {
                                               <a
                                                 key={item.name}
                                                 href={item.href}
-                                                className='-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 border-b uppercase dropdown-menu'
+                                                className='-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 border-b uppercase'
                                               >
-                                                <p
-                                                  className={`popup-mobile sm:popup-desktop text-gray-900 ${item.className}`}
+                                                <h6
+                                                  className={` popup-base text-gray-900 ${item.className}`}
                                                 >
                                                   {item.name}
-                                                </p>
+                                                </h6>
                                               </a>
                                             ))}
                                           </div>
@@ -146,9 +146,9 @@ export default function Nav() {
                                         'group rounded-md inline-flex items-center',
                                       )}
                                     >
-                                      <h6 className='uppercase pl-8 mobile sm:desktop'>
+                                      <h5 className='uppercase pl-8 mobile sm:desktop'>
                                         OVER CIRCULAW
-                                      </h6>
+                                      </h5>
                                       <ChevronDownIcon
                                         className={classNames(
                                           open ? 'text-gray-600' : 'text-gray-400',
@@ -174,11 +174,11 @@ export default function Nav() {
                                               <Link
                                                 key={slug}
                                                 href={`/about/${encodeURIComponent(slug)}`}
-                                                className='-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase dropdown-menu border-b'
+                                                className='-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase border-b'
                                               >
-                                                <span className='`popup-mobile sm:popup-desktop text-black-white-800'>
+                                                <h6 className='` popup-base text-black-white-800'>
                                                   {slug.replaceAll('-', ' ')}
-                                                </span>
+                                                </h6>
                                               </Link>
                                             ))}
                                           </div>
@@ -191,16 +191,16 @@ export default function Nav() {
 
                               <div className='inline-block relative'>
                                 <Link href={`/about/${encodeURIComponent(FAQslug)}`}>
-                                  <h6 className='uppercase pl-8 text-black-white-800 group rounded-md inline-flex items-center mobile sm:desktop'>
+                                  <h5 className='uppercase pl-8 text-black-white-800 group rounded-md inline-flex items-center mobile sm:desktop mobile sm:desktop'>
                                     VRAAG & ANTWOORD
-                                  </h6>
+                                  </h5>
                                 </Link>
                               </div>
                               <div className='inline-block relative '>
                                 <Link href='/contact'>
-                                  <h6 className='uppercase pl-8 text-black-white-800 group rounded-md inline-flex items-center mobile sm:desktop'>
+                                  <h5 className='uppercase pl-8 text-black-white-800 group rounded-md inline-flex items-center mobile sm:desktop mobile sm:desktop'>
                                     CONTACT
-                                  </h6>
+                                  </h5>
                                 </Link>
                               </div>
                             </div>
@@ -236,7 +236,7 @@ export default function Nav() {
                 </Disclosure.Button>
                 <Disclosure.Button
                   as='a'
-                  href='/matrassens'
+                  href='/matrassen'
                   className='ml-5 border-transparent text-gray-900 border-b border-black-white-300 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5'
                 >
                   Circulaire matrasketen
@@ -298,7 +298,7 @@ export default function Nav() {
   // returns nav bar that is nested inside the header part of the index page
   return (
     <div className='relative'>
-      <video id='background-video' autoPlay loop muted poster='/2.svg'>
+      <video id='background-video' autoPlay loop muted poster='/bg-poster.png'>
         <source src='/01_circulaw.mov' type='video/mp4' />
       </video>
       <BetaBanner />
@@ -351,9 +351,9 @@ export default function Nav() {
                                           'group rounded-md inline-flex items-center',
                                         )}
                                       >
-                                        <h6 className='uppercase mobile sm:desktop'>
+                                        <h5 className='uppercase mobile sm:desktop'>
                                           Thema&apos;s
-                                        </h6>
+                                        </h5>
                                         <ChevronDownIcon
                                           className={classNames(
                                             open ? 'text-black-white-200' : 'text-black-white-200',
@@ -379,13 +379,13 @@ export default function Nav() {
                                                 <a
                                                   key={item.name}
                                                   href={item.href}
-                                                  className='-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 border-b uppercase dropdown-menu'
+                                                  className='-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 border-b uppercase'
                                                 >
-                                                  <p
-                                                    className={`popup-mobile sm:popup-desktop text-gray-900 ${item.className}`}
+                                                  <h6
+                                                    className={` popup-base text-gray-900 ${item.className}`}
                                                   >
                                                     {item.name}
-                                                  </p>
+                                                  </h6>
                                                 </a>
                                               ))}
                                             </div>
@@ -404,9 +404,9 @@ export default function Nav() {
                                           'group rounded-md inline-flex items-center',
                                         )}
                                       >
-                                        <h6 className='uppercase pl-8 mobile sm:desktop'>
+                                        <h5 className='uppercase pl-8 mobile sm:desktop'>
                                           OVER CIRCULAW
-                                        </h6>
+                                        </h5>
                                         <ChevronDownIcon
                                           className={classNames(
                                             open ? 'text-black-white-200' : 'text-black-white-200',
@@ -432,11 +432,11 @@ export default function Nav() {
                                                 <Link
                                                   key={slug}
                                                   href={`/about/${encodeURIComponent(slug)}`}
-                                                  className='-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase dropdown-menu border-b'
+                                                  className='-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase border-b'
                                                 >
-                                                  <p className='popup-mobile sm:popup-desktop text-gray-900'>
+                                                  <h6 className=' popup-base text-gray-900'>
                                                     {slug.replaceAll('-', ' ')}
-                                                  </p>
+                                                  </h6>
                                                 </Link>
                                               ))}
                                             </div>
@@ -448,16 +448,16 @@ export default function Nav() {
                                 </Popover>
                                 <div className='inline-block relative'>
                                   <Link href={`/about/${encodeURIComponent(FAQslug)}`}>
-                                    <h6 className='uppercase pl-8 text-black-white-200 group rounded-md inline-flex items-center mobile sm:desktop'>
+                                    <h5 className='uppercase pl-8 text-black-white-200 group rounded-md inline-flex items-center mobile sm:desktop'>
                                       VRAAG & ANTWOORD
-                                    </h6>
+                                    </h5>
                                   </Link>
                                 </div>
                                 <div className='inline-block relative '>
                                   <Link href='/contact'>
-                                    <h6 className='uppercase pl-8 text-black-white-200 group rounded-md inline-flex items-center  mobile sm:desktop'>
+                                    <h5 className='uppercase pl-8 text-black-white-200 group rounded-md inline-flex items-center mobile sm:desktop'>
                                       CONTACT
-                                    </h6>
+                                    </h5>
                                   </Link>
                                 </div>
                               </div>
@@ -540,10 +540,13 @@ export default function Nav() {
         {/* TODO: move this into header component and out of nav*/}
         <main className='global-margin sm:mt-12'>
           <div className='text-center mx-auto max-w-4xl'>
-            <h1 className='mobile sm:desktop text-black-white-200 py-10'>
+            <div className='header hidden md:block text-black-white-200 py-10'>
+              <span className='block '>Regelgeving voor een circulaire economie</span>{' '}
+            </div>
+            <h1 className='mobile block md:hidden text-black-white-200 py-4'>
               <span className='block '>Regelgeving voor een circulaire economie</span>{' '}
             </h1>
-            <p className='mt-3 p-mobile-header sm:p-desktop-header text-black-white-200 pb-8'>
+            <p className='mt-3 p-xl text-black-white-200 pb-8'>
               CircuLaw laat zien hoe je met bestaande juridische instrumenten de circulaire economie
               kan versnellen. We helpen beleidsmakers bij het selecteren en toepassen van die
               instrumenten. Ook bieden we inzicht in de samenhang tussen juridische instrumenten en

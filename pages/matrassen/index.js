@@ -25,7 +25,6 @@ export default function Matrassen({ laws }) {
 
         bgHero='bg-matrassen-hero'
         heroImage='/windturbineHero.jpg' // needs replacing
-
         // number of laws
         numberOfLaws={laws.length}
         // card titles
@@ -40,7 +39,6 @@ export default function Matrassen({ laws }) {
         cardLinkList='/measures/matrassen'
         cardLinkSamenhang='/'
         cardLinkWaarvoor='/'
-
         extendedMeasureHeading='instrumenten om de circulariteit van de matrasketen te bevorderen'
       />
     </Layout>

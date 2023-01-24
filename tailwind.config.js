@@ -5,10 +5,11 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
     './public/**/*.html',
   ],
-  darkMode: false, // or 'media' or 'className'
+  darkMode: false,
   theme: {
     extend: {
       colors: {
+        'black-white-100': '#FDFDFD',
         'black-white-200': '#F8FBF8',
         'black-white-300': '#DAD8D8',
         'black-white-400': '#BFC0BF',
