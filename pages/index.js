@@ -25,7 +25,6 @@ export default function Index() {
       <div className='bg-black-white-200 pb-20' name='thema'>
         <div className='global-margin'>
           <h2 className='pb-6 pt-8 mobile sm:desktop text-black-white-800'>Thema’s</h2>
-
           <SectionTypes type='home' />
         </div>
       </div>

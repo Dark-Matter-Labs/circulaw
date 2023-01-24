@@ -3,9 +3,6 @@ import ThemeBottomSection from '../section-bottom-theme-index';
 import ThemeCard from '../theme-card';
 import Image from 'next/image';
 import LinkIcon from '../link-icon';
-{
-  /* TO DO */
-}
 
 export default function ThemeLayout({ bgHero, ...props }) {
   return (
@@ -30,12 +27,14 @@ export default function ThemeLayout({ bgHero, ...props }) {
                 <div className='col-span-7'>
                   <p className='pt-4 text-black-white-200 p-lg'>
                     {props.headerSubtitle}{' '}
-                    {props.headerLinkText && 
-                    <span className='text-green-500 link-mobile sm:link-desktop inline-block pl-1'>
-                      <a href={props.headerLinkURL} target='_blank' rel='noopener noreferrer'>
-                        {props.headerLinkText}<LinkIcon size ='desktop'/>
-                      </a>
-                    </span>}
+                    {props.headerLinkText && (
+                      <span className='text-green-500 link-mobile sm:link-desktop inline-block pl-1'>
+                        <a href={props.headerLinkURL} target='_blank' rel='noopener noreferrer'>
+                          {props.headerLinkText}
+                          <LinkIcon size='desktop' />
+                        </a>
+                      </span>
+                    )}
                   </p>
                 </div>
               </div>
@@ -48,7 +47,14 @@ export default function ThemeLayout({ bgHero, ...props }) {
             <h2 className='mobile pb-3'>{props.title}!</h2>
             <p className=' pb-3'>
               {props.headerSubtitle}
-              <a className='text-green-500 '> {props.headerLinkText}</a>
+              {props.headerLinkText && (
+                <span className='text-green-500 link-mobile sm:link-desktop inline-block pl-1'>
+                  <a href={props.headerLinkURL} target='_blank' rel='noopener noreferrer'>
+                    {props.headerLinkText}
+                    <LinkIcon size='desktop' />
+                  </a>
+                </span>
+              )}
             </p>
           </div>
           <div className='h-56 w-full thema-hero-gradient rounded-md'>

@@ -81,9 +81,9 @@ export const subrechtsgebied = [
   },
   {
     id: '5',
-    name: 'Cultuur recht',
-    label: 'Cultuur recht',
-    value: 'Cultuur recht',
+    name: 'cultureel recht',
+    label: 'cultureel recht',
+    value: 'cultureel recht',
   },
   {
     id: '6',

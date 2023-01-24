@@ -313,7 +313,6 @@ export default function MeasuresLayout(props) {
           { name: 'subrechtsgebied', weight: 0.5 },
           { name: 'artikel', weight: 0.5 },
           { name: 'citeertitel', weight: 0.5 },
-
         ],
         includeScore: true,
         threshold: 0.2,
@@ -380,7 +379,7 @@ export default function MeasuresLayout(props) {
           numCont += 1;
         } else if (measure.subrechtsgebied === 'Gronduitgifte') {
           numGron += 1;
-        } else if (measure.subrechtsgebied === 'Cultuur recht') {
+        } else if (measure.subrechtsgebied === 'cultureel recht') {
           numCultuur += 1;
         } else if (measure.subrechtsgebied === 'Staats-en bestuursrecht') {
           numStaas += 1;

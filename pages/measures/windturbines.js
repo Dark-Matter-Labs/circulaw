@@ -19,7 +19,7 @@ export default function Measures({ laws }) {
           praktijkervaring opgedaan, met andere nog niet. Durf te pionieren. Jouw ervaringen
           kunnen dan ook anderen weer verder helpen.`}
         icon={WindmillIcon}
-        searchTitle='Zoek in windturbines maatregelen'
+        searchTitle='Zoek in circulaire windturbines'
       />
     </Layout>
   );

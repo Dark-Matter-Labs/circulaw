@@ -20,7 +20,7 @@ export default function Measures({ laws }) {
         opgedaan, met andere nog niet. Durf te pionieren. Jouw ervaringen kunnen dan ook
         anderen weer verder helpen.`}
         icon={IconWood}
-        searchTitle='Zoek in houtbouwmaatregelen'
+        searchTitle='Zoek in houtbouw stimuleren'
       />
     </Layout>
   );

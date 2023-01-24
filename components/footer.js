@@ -31,7 +31,7 @@ const navigation = {
       className: 'text-black-white-200',
     },
     {
-      name: 'Matrassen',
+      name: 'Circulaire matrasketen',
       href: '/matrassen',
       className: 'text-black-white-200',
     },
