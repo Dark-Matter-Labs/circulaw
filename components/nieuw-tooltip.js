@@ -2,32 +2,15 @@ import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
 
-export default function ToolTips({ children, icon }) {
+export default function NieuwToolTip() {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <button
-        type='button'
-        className='rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white'
-        onClick={() => setOpen(true)}
-      >
-        <span className='sr-only'>Open ToolTip</span>
-        {icon > 0 && (
-          <svg
-            className='text-black-white-600 w-5 h-5'
-            xmlns='http://www.w3.org/2000/svg'
-            viewBox='0 0 20 20'
-            fill='currentColor'
-          >
-            <path
-              fillRule='evenodd'
-              d='M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z'
-              clipRule='evenodd'
-            />
-          </svg>
-        )}
-        <div className='text-white'>{children}</div>
+      <button className='border-green-500 bg-green-500 hover:bg-transparent text-black-white-200 hover:text-green-600 transition ease-in-out hover:duration-150 focus:outline-none inline-flex rounded-full items-center px-4 py-1 border button'>
+        <h5 className='uppercase text-black-white-200 group rounded-md inline-flex items-center mobile sm:desktop'>
+          NIEUW
+        </h5>
       </button>
 
       <Transition.Root show={open} as={Fragment}>
@@ -77,27 +60,28 @@ export default function ToolTips({ children, icon }) {
                         </button>
                       </div>
                     </Transition.Child>
-                    <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
+                    <div className='flex h-full flex-col bg-white py-6 shadow-xl'>
                       <div className='px-4 sm:px-6'>
                         <Dialog.Title className='text-gray-900'>
                           {' '}
-                          <h4 className='mobile sm:desktop'>
-                          Nieuw in CircuLaw
-                          </h4>
+                          <h4 className='mobile sm:desktop'>Nieuw in CircuLaw</h4>
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>
                         <div className='absolute inset-0 px-4 sm:px-6'>
                           <p className='tooltip-body'>
-                          We hebben nu ook juridische instrumenten geïdentificeerd om de circulariteit van de matrasketen te bevorderen 
+                            We hebben nu ook juridische instrumenten geïdentificeerd om de
+                            circulariteit van de matrasketen te bevorderen
                           </p>
                           <p className='tooltip-body'>
-                          CircuLaw volgt voor de analyse van wet-en regelgeving en het identificeren van juridische instrumenten een standaard werkwijze: deze CircuLaw-methodiek voor wetsanalyse is nu ook voor iedereen beschikbaar.
+                            CircuLaw volgt voor de analyse van wet-en regelgeving en het
+                            identificeren van juridische instrumenten een standaard werkwijze: deze
+                            CircuLaw-methodiek voor wetsanalyse is nu ook voor iedereen beschikbaar.
                           </p>
                           <p className='tooltip-body'>
-                          In deze versie van de website hebben we techniek, ontwerp en copy verbeterd.
+                            In deze versie van de website hebben we techniek, ontwerp en copy
+                            verbeterd.
                           </p>
-                         
                         </div>
                       </div>
                     </div>
