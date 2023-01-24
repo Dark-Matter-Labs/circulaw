@@ -200,10 +200,7 @@ export default function Measure({ data }) {
             </div>
             {data?.measure?.subtitel && (
               <div className='sm:col-span-7 row-span-1'>
-                <h2 className='lg:block p-lg sm:p-xl pb-10'>
-                  {' '}
-                  {data?.measure?.subtitel}
-                </h2>
+                <h2 className='lg:block p-lg sm:p-xl pb-10'> {data?.measure?.subtitel}</h2>
               </div>
             )}
           </div>

@@ -29,7 +29,9 @@ export default function PolicyList(props) {
                   <Image width='30' height='30' src={MatrassenIcon} alt='Icon of Wood' />
                 </div>
               )}
-              <h6 className='inline-block pl-2 inline uppercase text-green-600'>{law?.thema.replace('-', ' ')}</h6>
+              <h6 className='inline-block pl-2 inline uppercase text-green-600'>
+                {law?.thema.replace('-', ' ')}
+              </h6>
               {law?.extraContent &&
                 law?.extraContent.map((content) => (
                   <h6
@@ -77,7 +79,7 @@ export default function PolicyList(props) {
                   </h6>
                 </div>
                 <div className='flex-2 md:mr-5 text-black-white-500'>
-                  <h6 className='inline'>R-ladder:{' '}</h6>
+                  <h6 className='inline'>R-ladder: </h6>
                   <h6 className='block-inline text-black-white-200 inline'>
                     {law.rLadder.map((rValue) => (
                       <span key={rValue} className='bg-green-500 rounded-full p-1 mr-2'>

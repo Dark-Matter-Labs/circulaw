@@ -23,7 +23,6 @@ import PolicyList from '/components/policy-list';
 import client from '../../lib/sanity';
 import MeasureLinks from '../measure-links-dropdown';
 
-
 // creating objects for persisting values
 const useSelectedState = createPersistedState('selected');
 
@@ -664,9 +663,7 @@ export default function MeasuresLayout(props) {
           <Link href='/'>Home</Link>
           <span className=''> → </span>
           <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`} passHref>
-            <span className='inline-block underline'>
-              {props.thema.replace('-', ' ')}
-            </span>
+            <span className='inline-block underline'>{props.thema.replace('-', ' ')}</span>
           </Link>
         </div>
         <div className='col-span-2'></div>
@@ -687,12 +684,11 @@ export default function MeasuresLayout(props) {
             )}
           </div>
           <div className='hidden sm:block max-w-3xl pt-2'>
-          <p className='p-lg'>
-            {props.introPara}
-            <br />
-          </p>
-        </div>
-
+            <p className='p-lg'>
+              {props.introPara}
+              <br />
+            </p>
+          </div>
         </div>
         <div className='col-span-1'></div>
         <div className='col-span-1'></div>
@@ -840,7 +836,10 @@ export default function MeasuresLayout(props) {
 
         <div className='hidden lg:block mb-3'>
           <h3 className='mobile sm:desktop inline text-black-white-800'>Filter op:</h3>{' '}
-          <span onClick={reset} className='underline text-green-500 link-hover link-lg float-right mr-8'>
+          <span
+            onClick={reset}
+            className='underline text-green-500 link-hover link-lg float-right mr-8'
+          >
             Wis filters
           </span>
         </div>

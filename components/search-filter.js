@@ -84,7 +84,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
               </svg>
             </JITooltip>
           )}
-           {title === 'Inclusief' && (
+          {title === 'Inclusief' && (
             <JITooltip>
               <svg className='w-6 h-6 fill-current text-black-white-20 mb-2' viewBox='0 0 26 26'>
                 <circle cx='12' cy='15' r='10' fill='#676868' />
@@ -144,7 +144,9 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                       </>
                     )}
                     {/* std design */}
-                    {title !== 'Circulaire strategie(R-ladder)' && <span className=''>{data.name}</span>}
+                    {title !== 'Circulaire strategie(R-ladder)' && (
+                      <span className=''>{data.name}</span>
+                    )}
                   </label>
                 </div>
                 <div className=' table-base '>({filterNumbers[dataIdx]})</div>
