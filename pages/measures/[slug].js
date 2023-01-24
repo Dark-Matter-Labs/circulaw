@@ -137,8 +137,8 @@ const components = {
   },
   block: {
     firstH2: ({ children }) => <h2 className='pb-[18px] mobile sm:desktop'>{children}</h2>,
-    h2: ({ children }) => <h2 className='pt-[56px] pb-[18px] mobile sm:desktop'>{children}</h2>,
-    h3: ({ children }) => <h3 className='pt-[56px] pb-[18px] mobile sm:desktop'>{children}</h3>,
+    h2: ({ children }) => <h2 className='pt-14 pb-[18px] mobile sm:desktop'>{children}</h2>,
+    h3: ({ children }) => <h3 className='pt-14 pb-[18px] mobile sm:desktop'>{children}</h3>,
     // need to add other styles here
     normal: ({ children }) => (
       <p className='newlineDisplay p-lg py-2'>{children}</p> // check if this is correct
