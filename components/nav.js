@@ -205,13 +205,7 @@ export default function Nav() {
                                 </Link>
                               </div>
                               <div className='inline-block relative ml-8'>
-                              <NieuwTooltip>
-                                  <CustomButton color='nav'>
-                                    <h5 className='uppercase text-black-white-200 group rounded-md inline-flex items-center mobile sm:desktop'>
-                                      NIEUW
-                                    </h5>
-                                  </CustomButton>
-                                  </NieuwTooltip>
+                                <NieuwTooltip />
                               </div>
                             </div>
                           </div>
@@ -478,13 +472,7 @@ export default function Nav() {
                                   </Link>
                                 </div>
                                 <div className='inline-block relative ml-8'>
-                                <NieuwTooltip>
-                                    <CustomButton color='nav'>
-                                      <h5 className='uppercase text-black-white-200 group rounded-md inline-flex items-center mobile sm:desktop'>
-                                        NIEUW
-                                      </h5>
-                                    </CustomButton>
-                                    </NieuwTooltip>
+                                  <NieuwTooltip />
                                 </div>
                               </div>
                             </div>
