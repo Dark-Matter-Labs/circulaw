@@ -22,7 +22,7 @@ const types = [
     title: 'Houtbouw stimuleren',
     tag: '',
     description:
-      'Meer bouwen met hout heeft grote invloed op het klimaat. Daarom vind je hier maatregelen om houtbouw te stimuleren en een leidraad voor de toepassing van een aantal van die maatregelen.',
+      'Bouwen met beton heeft een negatieve impact op het klimaat. Daarom vind je hier instrumenten die de inzet van hout bij de bouw stimuleren.',
     buttonText: 'Meer over houtbouw',
     href: '/houtbouw',
   },
@@ -32,7 +32,7 @@ const types = [
     title: 'Circulaire windturbines',
     tag: '',
     description:
-      'Windenergie speelt een cruciale rol in onze duurzame energie-ambities. Daarom vind je hier maatregelen die de inzet van windturbines bevorderen en die sturen op ontwikkeling en inzet van windturbines die op zich zelf ook circulair zijn.',
+      'Windenergie speelt een grote rol in onze duurzame energie-ambities. Maar ook de circulariteit van deze windturbines is belangrijk. Daarom vind je hier instrumenten die de inzet van (circulaire) windturbines bevorderen.',
     buttonText: 'Meer over windturbines',
     href: '/circulaire-windturbines',
   },
@@ -42,8 +42,8 @@ const types = [
     title: 'Circulaire matrasketen',
     tag: '',
     description:
-      'Binnenkort gaan we starten met het onderzoek en de wetsanalyse om  circulariteit in de matrasketen te stimuleren. Met welk thema wil jij aan de slag? Laat het ons weten! ',
-    buttonText: 'Meer over matrassen',
+      'Gemiddeld gaat een matras zo’n tien jaar mee. Er valt dus veel winst te behalen als we de hele keten vanaf matrasproductie tot aan verwerking van gedumpte matrassen circulairder maken. Daarom vind je hier instrumenten die aanzetten tot die circulaire matrasketen.',
+    buttonText: 'Meer over circulaire matrassen',
     href: '/matrassen',
   },
 ];

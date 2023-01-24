@@ -12,7 +12,7 @@ const waardeketens = [
       className: '',
     },
     {
-      name: 'Matrassen',
+      name: 'Circulaire matrasketen',
       description: 'description',
       href: '/matrassen',
       className: '',

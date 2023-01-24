@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import IconWood from '../public/icons/wood.svg';
 import WindmillIcon from '../public/windmill.svg';
-import MatrassenIcon from '../public/icons/matressIcon.svg'
+import MatrassenIcon from '../public/icons/matressIcon.svg';
 
 export default function PolicyList(props) {
   let lawData = [];
@@ -17,14 +17,16 @@ export default function PolicyList(props) {
           <div className=''>
             <div className='inline-block flex justify-start items-center'>
               {law?.thema === 'houtbouw' && (
-                  <div className='inline-block'><Image width='20' height='20' src={IconWood} alt='Icon of Wood' /></div>
+                <div className='inline-block'>
+                  <Image width='20' height='20' src={IconWood} alt='Icon of Wood' />
+                </div>
               )}
               {law?.thema === 'circulaire-windturbines' && (
                 <Image width='20' height='20' src={WindmillIcon} alt='Icon of Wood' />
               )}
               {law?.thema === 'matrassen' && (
                 <div className='inline-block'>
-                <Image width='20' height='20' src={MatrassenIcon} alt='Icon of Wood' />
+                  <Image width='20' height='20' src={MatrassenIcon} alt='Icon of Wood' />
                 </div>
               )}
               <h6 className='inline-block pl-4 inline uppercase'>{law?.thema.replace('-', ' ')}</h6>
