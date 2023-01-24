@@ -10,14 +10,14 @@ export default function BetaBanner() {
               <div className='md:hidden'>
                 <h5 className='inline bold'>Beta</h5>{' '}
                 <h5 className='inline mobile sm:desktop'>versie van CircuLaw - </h5>
-                <span className=' link-lg text-green-600'>
+                <span className=' link-base text-green-600'>
                   <Link href='/beta'>Lees meer -&gt;</Link>
                 </span>
               </div>
               <div className='hidden md:inline'>
                 <h5 className='inline bold'>Beta</h5>{' '}
                 <h5 className='inline mobile sm:desktop'>versie van CircuLaw - </h5>
-                <span className=' link-lg text-green-600'>
+                <span className=' link-base text-green-600'>
                   <Link href='/beta'>Lees meer -&gt;</Link>
                 </span>
               </div>
