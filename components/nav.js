@@ -251,27 +251,10 @@ export default function Nav() {
                 >
                   Over CircuLaw
                 </Disclosure.Button>
-                {slugs?.map((slug) => (
-                  <Disclosure.Button
-                    key={slug}
-                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 first-letter:uppercase '
-                  >
-                    <Link href={`/about/${encodeURIComponent(slug)}`}>
-                      {slug.replaceAll('-', ' ')}
-                    </Link>
-                  </Disclosure.Button>
-                ))}
-                <Disclosure.Button
-                  as='a'
-                  href='/hoe-het-werkt'
-                  className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5'
-                >
-                  Vraag en Antwoord
-                </Disclosure.Button>
                 {aboutSlugs?.map((slug) => (
                   <Disclosure.Button
                     key={slug}
-                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 first-letter:uppercase'
+                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 first-letter:uppercase '
                   >
                     <Link href={`/about/${encodeURIComponent(slug)}`}>
                       {slug.replaceAll('-', ' ')}
