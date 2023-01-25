@@ -217,69 +217,72 @@ export default function Nav() {
               </div>
             </div>
             <Disclosure.Panel className='lg:hidden bg-black-white-200'>
-              <div className='pt-2 pb-4'>
+              <div className='pt-2 pb-4 ml-5'>
                 <Disclosure.Button
                   as='span'
-                  className='uppercase text-black-white-800 border-t block pl-3 pr-4 py-2'
+                  className='uppercase text-black-white-800  block pl-3 pr-4 py-4'
                 >
                   Thema&apos;s
                 </Disclosure.Button>
                 <Disclosure.Button
                   as='a'
                   href='/houtbouw'
-                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2'
+                  className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
                 >
-                  Houtbouw
+                  Houtbouw stimuleren
                 </Disclosure.Button>
                 <Disclosure.Button
                   as='a'
                   href='/circulaire-windturbines'
-                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2'
+                  className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
                 >
                   Circulaire windturbines
                 </Disclosure.Button>
                 <Disclosure.Button
                   as='a'
                   href='/matrassen'
-                  className='ml-5 border-transparent text-gray-900 border-b border-black-white-300 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2'
+                  className='table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
                 >
                   Circulaire matrasketen
                 </Disclosure.Button>
+                <hr className='my-4 mx-2 border-green-600' />
                 <Disclosure.Button
                   as='span'
-                  className='uppercase  text-black-white-800  border-t block pl-3 pr-4 py-4'
+                  className='uppercase text-black-white-800 block pl-3 pr-4 py-4'
                 >
                   Over CircuLaw
                 </Disclosure.Button>
+
                 {aboutSlugs?.map((slug) => (
                   <Disclosure.Button
                     key={slug}
-                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 first-letter:uppercase '
+                    className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4 first-letter:uppercase'
                   >
                     <Link href={`/about/${encodeURIComponent(slug)}`}>
                       {slug.replaceAll('-', ' ')}
                     </Link>
                   </Disclosure.Button>
                 ))}
+                <hr className='my-4 mx-2 border-green-600' />
                 <Disclosure.Button
                   as='a'
                   href={`/about/${encodeURIComponent(FAQslug)}`}
-                  className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-4'
+                  className='uppercase text-black-white-800  block pl-3 pr-2 py-4'
                 >
-                  Vraag & Antwoord
+                  Vraag en Antwoord
                 </Disclosure.Button>
+                <hr className='my-4 mx-2 border-green-600' />
                 <Disclosure.Button
                   as='a'
                   href='/contact'
-                  className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-2'
+                  className='uppercase text-black-white-800 block pl-3 pr-4 py-4'
                 >
                   Contact
                 </Disclosure.Button>
-                <div className='border-b border-black-white-300 block pl-3 pr-4 py-2'>
-                <NieuwTooltip />
-
+                <hr className='my-4 mx-2 border-green-600' />
+                <div className='block pl-3 pr-4 py-4'>
+                  <NieuwTooltip />
                 </div>
-               
               </div>
             </Disclosure.Panel>
           </>
@@ -465,37 +468,38 @@ export default function Nav() {
                 </div>
               </div>
               <Disclosure.Panel className='lg:hidden bg-black-white-200'>
-                <div className='pt-2 pb-4'>
+                <div className='pt-2 pb-4 ml-5'>
                   <Disclosure.Button
                     as='span'
-                    className='uppercase text-black-white-800 border-t block pl-3 pr-4 py-2'
+                    className='uppercase text-black-white-800  block pl-3 pr-4 py-4'
                   >
                     Thema&apos;s
                   </Disclosure.Button>
                   <Disclosure.Button
                     as='a'
                     href='/houtbouw'
-                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2'
+                    className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
                   >
-                    Houtbouw
+                    Houtbouw stimuleren
                   </Disclosure.Button>
                   <Disclosure.Button
                     as='a'
                     href='/circulaire-windturbines'
-                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2'
+                    className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
                   >
                     Circulaire windturbines
                   </Disclosure.Button>
                   <Disclosure.Button
                     as='a'
                     href='/matrassen'
-                    className='ml-5 border-transparent text-gray-900 border-b border-black-white-300 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2'
+                    className='table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
                   >
                     Circulaire matrasketen
                   </Disclosure.Button>
+                  <hr className='my-4 mx-2 border-green-600' />
                   <Disclosure.Button
                     as='span'
-                    className='uppercase  text-black-white-800  border-t block pl-3 pr-4 py-4'
+                    className='uppercase text-black-white-800 block pl-3 pr-4 py-4'
                   >
                     Over CircuLaw
                   </Disclosure.Button>
@@ -503,33 +507,33 @@ export default function Nav() {
                   {aboutSlugs?.map((slug) => (
                     <Disclosure.Button
                       key={slug}
-                      className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 text-base first-letter:uppercase'
+                      className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4 first-letter:uppercase'
                     >
                       <Link href={`/about/${encodeURIComponent(slug)}`}>
                         {slug.replaceAll('-', ' ')}
                       </Link>
                     </Disclosure.Button>
                   ))}
-
+                  <hr className='my-4 mx-2 border-green-600' />
                   <Disclosure.Button
                     as='a'
                     href={`/about/${encodeURIComponent(FAQslug)}`}
-                    className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-2 py-5'
+                    className='uppercase text-black-white-800  block pl-3 pr-2 py-4'
                   >
                     Vraag en Antwoord
                   </Disclosure.Button>
-
+                  <hr className='my-4 mx-2 border-green-600' />
                   <Disclosure.Button
                     as='a'
                     href='/contact'
-                    className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-2'
+                    className='uppercase text-black-white-800 block pl-3 pr-4 py-4'
                   >
                     Contact
                   </Disclosure.Button>
-                  <div className='border-b border-black-white-300 block pl-3 pr-4 py-2'>
-                  <NieuwTooltip />
+                  <hr className='my-4 mx-2 border-green-600' />
+                  <div className='block pl-3 pr-4 py-4'>
+                    <NieuwTooltip />
                   </div>
-
                 </div>
               </Disclosure.Panel>
             </>
