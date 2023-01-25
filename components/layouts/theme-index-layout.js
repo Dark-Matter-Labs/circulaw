@@ -57,7 +57,8 @@ export default function ThemeLayout({ bgHero, ...props }) {
               )}
             </p>
           </div>
-          <div className='h-56 w-full thema-hero-gradient rounded-md'>
+
+          <div className='h-56 max-w-[380px] mx-auto flex items-center justify-center'>
             <div className='h-full w-full rounded-md relative'>
               <Image src={props.heroImage} alt='hero image' fill className='rounded-md absolute' />
             </div>
