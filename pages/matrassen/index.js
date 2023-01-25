@@ -29,11 +29,11 @@ export default function Matrassen({ laws }) {
         numberOfLaws={laws.length}
         // card titles
         listTitle={`Lijst van ${laws.length} instrumenten`}
-        samenhangTitle='Samenhang álle instrumenten voor de circulaire matrasketen  in beeld'
+        samenhangTitle='Samenhang álle instrumenten voor de circulaire matrasketen in beeld'
         waarvoorTitle='Wie is waarvoor bevoegd?'
         // card texts
-        listText='Met handige filters om snel te vinden wat je zoekt.'
-        samenhangText='Hoe meer instrumenten je tegelijk inzet, hoe meer je bereikt.'
+        listText='Alle instrumenten op een rijtje, met handige filters om snel te vinden wat je zoekt.'
+        samenhangText='Zie hoe instrumenten zich tot elkaar verhouden en hoe je ze met elkaar kunt combineren.'
         waarvoorText='Zonder samenwerking geen succes. Maar dan moet je wel weten wie waarvoor bevoegd en verantwoordelijk is.'
         // card links
         cardLinkList='/measures/matrassen'

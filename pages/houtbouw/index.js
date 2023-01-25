@@ -31,14 +31,14 @@ export default function Houtbouw({ laws }) {
         samenhangTitle='Samenhang álle houtbouwinstrumenten in beeld'
         waarvoorTitle='Wie is waarvoor bevoegd?'
         // card texts
-        listText='Met handige filters om snel te vinden wat je zoekt.'
-        samenhangText='Hoe meer instrumenten je tegelijk inzet, hoe meer je bereikt.'
-        waarvoorText='Zonder samenwerking geen succes. Maar dan moet je wel weten wie waarvoor bevoegden verantwoordelijk is. '
+        listText='Alle instrumenten op een rijtje, met handige filters om snel te vinden wat je zoekt.'
+        samenhangText='Zie hoe instrumenten zich tot elkaar verhouden en hoe je ze met elkaar kunt combineren.'
+        waarvoorText='Zonder samenwerking geen succes. Maar dan moet je wel weten wie waarvoor bevoegd en verantwoordelijk is.'
         // card links
         cardLinkList='/measures/houtbouw'
         cardLinkSamenhang='/houtbouw/samenhang-aantal-houtbouwmaatregelen'
         cardLinkWaarvoor='/houtbouw/welke-overheid'
-        extendedMeasureHeading='instrumenten om houtbouw te bevorderen'
+        extendedMeasureHeading='instrumenten om houtbouw te bevorderen' // starts fron after the number
       />
     </Layout>
   );
