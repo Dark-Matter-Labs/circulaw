@@ -67,7 +67,7 @@ export default function MeasureTable({ data }) {
                       <Image
                         className=''
                         alt='new tab'
-                        src='/icons/Vectorlink-icon.svg'
+                        src='/icons/link-icon.svg'
                         width={20}
                         height={20}
                       />
