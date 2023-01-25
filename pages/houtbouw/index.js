@@ -26,6 +26,8 @@ export default function Houtbouw({ laws }) {
         heroImage='/houtbouwHero.jpeg'
         // number of laws
         numberOfLaws={laws?.length}
+        
+        cardTitle ='Overzichten van instrumenten die houtbouw bevorderen'
         // card titles
         listTitle={`Lijst van ${laws?.length} instrumenten`}
         samenhangTitle='Samenhang álle houtbouwinstrumenten in beeld'
@@ -39,6 +41,8 @@ export default function Houtbouw({ laws }) {
         cardLinkSamenhang='/houtbouw/samenhang-aantal-houtbouwmaatregelen'
         cardLinkWaarvoor='/houtbouw/welke-overheid'
         extendedMeasureHeading='instrumenten om houtbouw te bevorderen' // starts fron after the number
+        extendedMeasureSubtitle='Met voorbeelden en een handige leidraad.'
+
       />
     </Layout>
   );

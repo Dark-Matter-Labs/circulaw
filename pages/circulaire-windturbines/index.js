@@ -17,7 +17,7 @@ export default function Windturbine({ laws }) {
       <ThemeLayout
         // header
         title='Circulaire windturbines'
-        thema='Circulaire windturbines'
+        thema='circulaire-windturbines'
         headerSubtitle='Door meer windturbines in te zetten en door windturbines te ontwikkelen die zelf circulair zijn,  kunnen we grote stappen zetten om onze samenleving circulairder te maken.'
         // headerLinkText='' // will be displayed in the same sentence as header subtitle
         // headerLinkURL='/'
@@ -25,6 +25,10 @@ export default function Windturbine({ laws }) {
         heroImage='/windturbineHero.jpg'
         // number of laws
         numberOfLaws={laws.length}
+
+        cardTitle = 'Overzichten van instrumenten die circulaire windturbines bevorderen'
+
+
         // card titles
         listTitle={`Lijst van ${laws.length} instrumenten`}
         samenhangTitle='Samenhang álle instrumenten voor circulaire windturbines in beeld'
@@ -38,6 +42,8 @@ export default function Windturbine({ laws }) {
         cardLinkSamenhang='/circulaire-windturbines/samenhang-maatregelen'
         cardLinkWaarvoor='/circulaire-windturbines/welke-overheid-heeft'
         extendedMeasureHeading='instrumenten om circulariteit van windturbines te bevorderen'
+        extendedMeasureSubtitle='Met voorbeelden.'
+        
       />
     </Layout>
   );

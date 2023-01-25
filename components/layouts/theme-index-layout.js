@@ -69,7 +69,7 @@ export default function ThemeLayout({ bgHero, ...props }) {
           <div className='global-margin'>
             <div className='pt-10 sm:pt-20 sm:pb-10'>
               <h2 className='mobile sm:desktop'>
-                Overzichten van instrumenten die {props.thema} stimuleren{' '}
+                {props.cardTitle}
               </h2>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-14 justify-items-center sm:h-auto md:h-[76rem] lg:h-[38rem]'>
