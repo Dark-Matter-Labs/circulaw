@@ -115,7 +115,7 @@ export default function Index() {
                 School of LAW, de VU, Wageningen Universiteit ( WUR Law group), Stichting Koninklijk
                 Nederlands Normalisatie Instituut (NEN).
               </p>
-              <span className='text-green-500  link-lg'>
+              <span className='text-green-500 link-lg'>
                 <Link href={`/about/${encodeURIComponent(aboutSlugs?.[3])}`}>
                   Meer over de makers van CircuLaw →
                 </Link>
