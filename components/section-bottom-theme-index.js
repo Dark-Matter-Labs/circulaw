@@ -47,14 +47,14 @@ export default function ThemeBottomSection({ props }) {
                         <div className='flex justify-left'>
                           {measure?.extraContent?.includes('Leidraad') && (
                             <h6
-                              className='border-green-600 bg-green-600 text-white inline py-0.5 px-2
+                              className='border-green-600 bg-green-600 text-white inline py-0.5 px-2 mr-4
                            rounded-md'
                             >
                               Leidraad
                             </h6>
                           )}
                           {measure?.extraContent?.includes('Voorbeeld') && (
-                            <h6 className='border-green-500 bg-green-500 text-white inline p-0.5 px-2 rounded-md ml-4'>
+                            <h6 className='border-green-500 bg-green-500 text-white inline p-0.5 px-2 rounded-md'>
                               Voorbeeld
                             </h6>
                           )}
@@ -66,12 +66,12 @@ export default function ThemeBottomSection({ props }) {
                         <div className='hidden sm:block'>
                           <div className='flex justify-between'>
                             {measure?.extraContent?.includes('Leidraad') && (
-                              <h6 className='border-green-600 bg-green-600 text-white inline py-0.5 px-2 rounded-md'>
+                              <h6 className='border-green-600 bg-green-600 text-white inline py-0.5 px-2 rounded-md mr-4'>
                                 Leidraad
                               </h6>
                             )}
                             {measure?.extraContent?.includes('Voorbeeld') && (
-                              <h6 className='border-green-500 bg-green-500 text-white inline p-0.5 px-2 rounded-md ml-4'>
+                              <h6 className='border-green-500 bg-green-500 text-white inline p-0.5 px-2 rounded-md'>
                                 Voorbeeld
                               </h6>
                             )}
