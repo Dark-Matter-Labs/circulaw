@@ -25,10 +25,7 @@ export default function Windturbine({ laws }) {
         heroImage='/windturbineHero.jpg'
         // number of laws
         numberOfLaws={laws.length}
-
-        cardTitle = 'Overzichten van instrumenten die circulaire windturbines bevorderen'
-
-
+        cardTitle='Overzichten van instrumenten die circulaire windturbines bevorderen'
         // card titles
         listTitle={`Lijst van ${laws.length} instrumenten`}
         samenhangTitle='Samenhang álle instrumenten voor circulaire windturbines in beeld'
@@ -43,7 +40,6 @@ export default function Windturbine({ laws }) {
         cardLinkWaarvoor='/circulaire-windturbines/welke-overheid-heeft'
         extendedMeasureHeading='instrumenten om circulariteit van windturbines te bevorderen'
         extendedMeasureSubtitle='Met voorbeelden.'
-        
       />
     </Layout>
   );

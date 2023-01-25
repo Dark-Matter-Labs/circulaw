@@ -27,10 +27,7 @@ export default function Matrassen({ laws }) {
         heroImage='/windturbineHero.jpg' // needs replacing
         // number of laws
         numberOfLaws={laws.length}
-
-        cardTitle ='Overzichten van instrumenten die circulaire matrasketen bevorderen'
-
-
+        cardTitle='Overzichten van instrumenten die circulaire matrasketen bevorderen'
         // card titles
         listTitle={`Lijst van ${laws.length} instrumenten`}
         samenhangTitle='Samenhang álle instrumenten voor de circulaire matrasketen in beeld'

@@ -13,9 +13,9 @@ export default function ThemeBottomSection({ props }) {
 
   const [laws, setLaws] = useState();
   useEffect(() => setLaws(data?.map((law) => law)), [data]);
+
   return (
     <>
-
       <div className='bg-[#F8FAF8] sm:bg-transparent'>
         <div className='pt-16 global-margin'>
           <h2 className='mobile sm:desktop pb-2'>
@@ -34,13 +34,13 @@ export default function ThemeBottomSection({ props }) {
                   }`}
                 >
                   <div className='grid grid-cols-1 lg:grid-cols-2 py-10 gap-x-8 gap-y-4 '>
-                      <div className=''>
-                        <Image
-                          src={urlFor(measure?.featuredImage).url()}
-                          alt={measure?.featuredImage?.altText}
-                          width={556}
-                          height={278}
-                        />
+                    <div className=''>
+                      <Image
+                        src={urlFor(measure?.featuredImage).url()}
+                        alt={measure?.featuredImage?.altText}
+                        width={556}
+                        height={278}
+                      />
                     </div>
                     <div className='lg:pl-4'>
                       <div className='block pt-4 sm:hidden'>
