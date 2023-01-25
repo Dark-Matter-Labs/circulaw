@@ -24,7 +24,7 @@ export default function MeasureTable({ data }) {
   return (
     <>
       <div className='grid grid-cols-6'>
-        <div className='col-span-6 sm:col-span-4'>
+        <div className='col-span-6 sm:col-span-6'>
           <div className='pb-5'>
             <h2 className='pt-6 pb-4 mobile sm:desktop'>Juridische toelichting</h2>
             {data?.measure?.juridischeToelichting && (
