@@ -171,7 +171,7 @@ export default {
           { title: 'Aanbesteding', value: 'Aanbesteding' },
           { title: 'Contracten', value: 'Contracten' },
           { title: 'Gronduitgifte', value: 'Gronduitgifte' },
-          { title: 'cultureel recht', value: 'cultureel recht' },
+          { title: 'Cultureel recht', value: 'Cultureel recht' },
           { title: 'Staats-en bestuursrecht', value: 'Staats-en bestuursrecht' },
           { title: 'Milieurecht', value: 'Milieurecht' },
           { title: 'Fiscaal recht', value: 'Fiscaal recht' },

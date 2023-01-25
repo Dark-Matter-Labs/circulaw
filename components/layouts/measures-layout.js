@@ -377,7 +377,7 @@ export default function MeasuresLayout(props) {
           numCont += 1;
         } else if (measure.subrechtsgebied === 'Gronduitgifte') {
           numGron += 1;
-        } else if (measure.subrechtsgebied === 'cultureel recht') {
+        } else if (measure.subrechtsgebied === 'Cultureel recht') {
           numCultuur += 1;
         } else if (measure.subrechtsgebied === 'Staats-en bestuursrecht') {
           numStaas += 1;
@@ -760,7 +760,10 @@ export default function MeasuresLayout(props) {
                   <h3 className='mobile sm:desktop inline'>0</h3>{' '}
                   <span className=' p-lg'>resultaten in </span>
                   <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
-                    {props.thema}
+                    {props.thema === 'circulaire-windturbines' ?
+                    'Circulaire windturbines' :
+                    props.thema
+                  }
                   </h3>{' '}
                   <span className=' p-lg'>voor</span>{' '}
                   <h3 className='mobile sm:desktop inline'>{searchValue}</h3>
@@ -773,7 +776,10 @@ export default function MeasuresLayout(props) {
                   <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
                   <span className=' p-lg'>resultaten in </span>
                   <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
-                    {props.thema}
+                  {props.thema === 'circulaire-windturbines' ?
+                    'Circulaire windturbines' :
+                    props.thema
+                  }
                   </h3>{' '}
                   <span className=' p-lg'>voor</span>{' '}
                   <h3 className='mobile sm:desktop inline'>{searchValue}</h3>
@@ -787,7 +793,10 @@ export default function MeasuresLayout(props) {
                   <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
                   <span className=' p-lg'>resultaten in </span>
                   <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
-                    {props.thema}
+                  {props.thema === 'circulaire-windturbines' ?
+                    'Circulaire windturbines' :
+                    props.thema
+                  }
                   </h3>{' '}
                   <span className=' p-lg'>voor</span>{' '}
                   <h3 className='mobile sm:desktop inline'>{searchValue}</h3>
@@ -801,7 +810,10 @@ export default function MeasuresLayout(props) {
                   <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
                   <span className=' p-lg'>resultaten in </span>
                   <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
-                    {props.thema}
+                  {props.thema === 'circulaire-windturbines' ?
+                    'Circulaire windturbines' :
+                    props.thema
+                  }
                   </h3>{' '}
                   <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
                     {searchValue}
