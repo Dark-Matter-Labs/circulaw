@@ -275,13 +275,7 @@ export default function Nav() {
                 >
                   Contact
                 </Disclosure.Button>
-                <Disclosure.Button
-                  as='a'
-                  href='/'
-                  className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5'
-                >
-                  Nieuw
-                </Disclosure.Button>
+                <NieuwTooltip />
               </div>
             </Disclosure.Panel>
           </>
@@ -292,7 +286,7 @@ export default function Nav() {
   // returns nav bar that is nested inside the header part of the index page
   return (
     <div className='relative'>
-      <video id='background-video' autoPlay loop muted poster='/bg-poster.png'>
+      <video id='background-video' autoPlay loop muted playsInline poster='/bg-poster.png'>
         <source src='/01_circulaw.mov' type='video/mp4' />
       </video>
       <BetaBanner />
@@ -528,13 +522,7 @@ export default function Nav() {
                   >
                     Contact
                   </Disclosure.Button>
-                  <Disclosure.Button
-                    as='a'
-                    href='/'
-                    className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5'
-                  >
-                    Nieuw
-                  </Disclosure.Button>
+                  <NieuwTooltip />
                 </div>
               </Disclosure.Panel>
             </>
