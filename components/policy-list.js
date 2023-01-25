@@ -33,7 +33,7 @@ export default function PolicyList(props) {
                 {law?.thema.replace('-', ' ')}
               </h6>
               {law?.extraContent &&
-                law?.extraContent.map((content) => (
+                law?.extraContent?.map((content) => (
                   <h6
                     key={content}
                     className='ml-2 p-1 rounded bg-green-500 text-black-white-200 no-underline'
