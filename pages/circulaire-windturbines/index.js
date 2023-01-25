@@ -30,9 +30,9 @@ export default function Windturbine({ laws }) {
         samenhangTitle='Samenhang álle instrumenten voor circulaire windturbines in beeld'
         waarvoorTitle='Wie is waarvoor bevoegd?'
         // card texts
-        listText='Met handige filters om snel te vinden wat je zoekt.'
-        samenhangText='Hoe meer instrumenten je tegelijk inzet, hoe meer je bereikt.'
-        waarvoorText='Zonder samenwerking geen succes. Maar dan moet je wel weten wie waarvoor bevoegden verantwoordelijk is.'
+        listText='Alle instrumenten op een rijtje, met handige filters om snel te vinden wat je zoekt.'
+        samenhangText='Zie hoe instrumenten zich tot elkaar verhouden en hoe je ze met elkaar kunt combineren.'
+        waarvoorText='Zonder samenwerking geen succes. Maar dan moet je wel weten wie waarvoor bevoegd en verantwoordelijk is.'
         // card links
         cardLinkList='/measures/windturbines'
         cardLinkSamenhang='/circulaire-windturbines/samenhang-maatregelen'
