@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import IconWood from '../public/icons/houtbouwIconBg.svg';
+import IconWood from '../public/icons/woodIcon.svg';
 import WindmillIcon from '../public/winturbines.svg';
 import MatrassenIcon from '../public/icons/matressIcon.svg';
 import RTooltip from '../components/r-ladder-tooltip';
@@ -12,6 +12,7 @@ const viewportType = {
   mobile: 'block sm:hidden gradient-overview -m-8 h-[38rem] pb-12 mb-10 bg-black-white-200',
   desktop: 'hidden sm:block float-right pl-4 ml-6 sm:pr-6 md:pr-10 lg:pr-14 gradient-overview h-[38rem] sticky top-40 mb-20 bg-black-white-200',
 };
+{/* still need to implement the design when design is finished - mainly fonts + colors */}
 
 export default function MeasureOverview({ viewport, children, data, ...props }) {
   let viewportClasses = viewportType[viewport];
