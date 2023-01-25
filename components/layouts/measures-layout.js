@@ -613,7 +613,7 @@ export default function MeasuresLayout(props) {
                       />
                       <SearchFilter
                         ref={rLadderFilterRef}
-                        title='R - ladder'
+                        title='Circulaire strategie(R-ladder)'
                         list={rLadder}
                         filterNumbers={[
                           numberOfR1,
@@ -668,7 +668,7 @@ export default function MeasuresLayout(props) {
         </div>
         <div className='col-span-2'></div>
         <div>
-          <MeasureLinks />
+          <MeasureLinks type={props.thema} />
         </div>
         <div className=' mb-2 sm:mb-20 mt-10 col-span-3'>
           <div className='container pb-2'>
@@ -691,7 +691,15 @@ export default function MeasuresLayout(props) {
           </div>
         </div>
         <div className='col-span-1'></div>
-        <div className='col-span-1'></div>
+        <div className='hidden lg:block mb-3 self-end'>
+          <h3 className='mobile sm:desktop inline text-black-white-800'>Filter op:</h3>{' '}
+          <span
+            onClick={reset}
+            className='underline text-green-500 link-hover link-lg float-right mr-8'
+          >
+            Wis filters
+          </span>
+        </div>
         <div className='col-span-2 '>
           <div className=''>
             <div>
@@ -833,16 +841,6 @@ export default function MeasuresLayout(props) {
             <AdjustmentsIcon className='h-6 w-6' aria-hidden='true' />
           </button>
         </div>
-
-        <div className='hidden lg:block mb-3'>
-          <h3 className='mobile sm:desktop inline text-black-white-800'>Filter op:</h3>{' '}
-          <span
-            onClick={reset}
-            className='underline text-green-500 link-hover link-lg float-right mr-8'
-          >
-            Wis filters
-          </span>
-        </div>
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-4 md:gap-x-20'>
         <div className='hidden lg:block p-3 my-4'>
@@ -873,6 +871,29 @@ export default function MeasuresLayout(props) {
             handleFilters={(checkboxState) => handleFilters(checkboxState, 'rechtsgebied')}
           />
           <SearchFilter
+            ref={rLadderFilterRef}
+            title='Circulaire strategie(R-ladder)'
+            list={rLadder}
+            filterNumbers={[numberOfR1, numberOfR2, numberOfR3, numberOfR4, numberOfR5, numberOfR6]}
+            handleFilters={(checkboxState) => handleFilters(checkboxState, 'rLadder')}
+          />
+          <SearchFilter
+            ref={juridischeHaalbaarheidFilterRef}
+            title='Juridische haalbaarheid'
+            list={juridischeHaalbaarheid}
+            filterNumbers={[numberOfJHLow, numberOfJHMedium, numberOfJHHigh]}
+            handleFilters={(checkboxState) =>
+              handleFilters(checkboxState, 'juridischeHaalbaarheid')
+            }
+          />
+          <SearchFilter
+            ref={juridischInvloedFilterRef}
+            title='Invloed'
+            list={juridischInvloed}
+            filterNumbers={[numberOfJILow, numberOfJIMedium, numberOfJIHigh]}
+            handleFilters={(checkboxState) => handleFilters(checkboxState, 'juridischInvloed')}
+          />
+          <SearchFilter
             ref={subrechtsgebiedFilterRef}
             title='Subrechtsgebied'
             list={subrechtsgebied}
@@ -887,31 +908,6 @@ export default function MeasuresLayout(props) {
               numberOfMilie,
             ]}
             handleFilters={(checkboxState) => handleFilters(checkboxState, 'subrechtsgebied')}
-          />
-
-          <SearchFilter
-            ref={rLadderFilterRef}
-            title='Circulaire strategie(R-ladder)'
-            list={rLadder}
-            filterNumbers={[numberOfR1, numberOfR2, numberOfR3, numberOfR4, numberOfR5, numberOfR6]}
-            handleFilters={(checkboxState) => handleFilters(checkboxState, 'rLadder')}
-          />
-
-          <SearchFilter
-            ref={juridischeHaalbaarheidFilterRef}
-            title='Juridische haalbaarheid'
-            list={juridischeHaalbaarheid}
-            filterNumbers={[numberOfJHLow, numberOfJHMedium, numberOfJHHigh]}
-            handleFilters={(checkboxState) =>
-              handleFilters(checkboxState, 'juridischeHaalbaarheid')
-            }
-          />
-          <SearchFilter
-            ref={juridischInvloedFilterRef}
-            title='Subrechtsgebied'
-            list={juridischInvloed}
-            filterNumbers={[numberOfJILow, numberOfJIMedium, numberOfJIHigh]}
-            handleFilters={(checkboxState) => handleFilters(checkboxState, 'juridischInvloed')}
           />
         </div>
         <div className='mt-10 col-span-3 '>
