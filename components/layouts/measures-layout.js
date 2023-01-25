@@ -760,10 +760,9 @@ export default function MeasuresLayout(props) {
                   <h3 className='mobile sm:desktop inline'>0</h3>{' '}
                   <span className=' p-lg'>resultaten in </span>
                   <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
-                    {props.thema === 'circulaire-windturbines' ?
-                    'Circulaire windturbines' :
-                    props.thema
-                  }
+                    {props.thema === 'circulaire-windturbines'
+                      ? 'Circulaire windturbines'
+                      : props.thema}
                   </h3>{' '}
                   <span className=' p-lg'>voor</span>{' '}
                   <h3 className='mobile sm:desktop inline'>{searchValue}</h3>
@@ -776,10 +775,9 @@ export default function MeasuresLayout(props) {
                   <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
                   <span className=' p-lg'>resultaten in </span>
                   <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
-                  {props.thema === 'circulaire-windturbines' ?
-                    'Circulaire windturbines' :
-                    props.thema
-                  }
+                    {props.thema === 'circulaire-windturbines'
+                      ? 'Circulaire windturbines'
+                      : props.thema}
                   </h3>{' '}
                   <span className=' p-lg'>voor</span>{' '}
                   <h3 className='mobile sm:desktop inline'>{searchValue}</h3>
@@ -793,10 +791,9 @@ export default function MeasuresLayout(props) {
                   <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
                   <span className=' p-lg'>resultaten in </span>
                   <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
-                  {props.thema === 'circulaire-windturbines' ?
-                    'Circulaire windturbines' :
-                    props.thema
-                  }
+                    {props.thema === 'circulaire-windturbines'
+                      ? 'Circulaire windturbines'
+                      : props.thema}
                   </h3>{' '}
                   <span className=' p-lg'>voor</span>{' '}
                   <h3 className='mobile sm:desktop inline'>{searchValue}</h3>
@@ -810,10 +807,9 @@ export default function MeasuresLayout(props) {
                   <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
                   <span className=' p-lg'>resultaten in </span>
                   <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
-                  {props.thema === 'circulaire-windturbines' ?
-                    'Circulaire windturbines' :
-                    props.thema
-                  }
+                    {props.thema === 'circulaire-windturbines'
+                      ? 'Circulaire windturbines'
+                      : props.thema}
                   </h3>{' '}
                   <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
                     {searchValue}
