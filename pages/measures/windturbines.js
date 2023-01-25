@@ -13,11 +13,8 @@ export default function Measures({ laws }) {
       <MeasuresLayout
         totalNumberOfLaws={laws.length}
         thema='circulaire-windturbines'
-        heading=''
-        introPara={`Wij hebben ${laws.length} kansvolle maatregelen gevonden waarmee je beleid uit kunt voeren om de
-          circulariteit van windturbines te versnellen. Met sommige maatregelen is al
-          praktijkervaring opgedaan, met andere nog niet. Durf te pionieren. Jouw ervaringen
-          kunnen dan ook anderen weer verder helpen.`}
+        heading='Instrumenten om de inzet en circulariteit van windturbines te bevorderen'
+        introPara='We hebben x kansrijke instrumenten gevonden die je kunt inzetten als het gaat om circulaire windturbines. Met sommige van deze instrumenten is al praktijkervaring opgedaan, met andere nog niet. Ga aan de slag! Met jouw ervaringen help je anderen weer verder.'
         icon={WindmillIcon}
         searchTitle='Zoek in circulaire windturbines'
       />
