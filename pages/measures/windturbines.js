@@ -1,5 +1,5 @@
 import Layout from '/components/layouts/layout';
-import WindmillIcon from '../../public/windmill.svg';
+import WindmillIcon from '../../public/icons/windmillIconLg.svg';
 import MeasuresLayout from '../../components/layouts/measures-layout';
 import client from '../../lib/sanity';
 
