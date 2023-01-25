@@ -101,20 +101,20 @@ export default function SectionTypes(props) {
               {file.href !== '' ? (
                 <Link href={file.href}>
                   <Image
-                    className='rounded-[10px]'
+                    className='rounded-t-[10px]'
                     src={file.heroImage}
                     alt='Picture of the case'
                   />
                 </Link>
               ) : (
-                <Image className='rounded-[10px]' src={file.heroImage} alt='Picture of the case' />
+                <Image className='rounded-t-[10px]' src={file.heroImage} alt='Picture of the case' />
               )}
             </div>
 
-            <div className='group block w-full p-4 bg-white px-10'>
+            <div className='group block w-full p-4 bg-white px-10 '>
               <div>
                 <div
-                  className={classNames(props.type === 'houtbouw' ? 'h-20' : '', 'inline-block')}
+                  className={classNames(props.type === 'houtbouw' ? 'h-20' : '', 'inline-block ')}
                 >
                   {file.href !== '' ? (
                     <Link href={file.href}>
@@ -139,7 +139,7 @@ export default function SectionTypes(props) {
                 </p>
                 {file.tag && (
                   <div className='md:my-8 mt-8 mb-16 h-16 block'>
-                    <span className='p-2 rounded-md bg-green-800'>{file.tag}!!!</span>
+                    <span className='p-2 rounded-md bg-green-800'>{file.tag}</span>
                   </div>
                 )}
               </div>
