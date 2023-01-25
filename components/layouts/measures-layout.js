@@ -613,7 +613,7 @@ export default function MeasuresLayout(props) {
                       />
                       <SearchFilter
                         ref={rLadderFilterRef}
-                        title='Circulaire strategie(R-ladder)'
+                        title='Circulaire strategie (R-ladder)'
                         list={rLadder}
                         filterNumbers={[
                           numberOfR1,
@@ -658,7 +658,7 @@ export default function MeasuresLayout(props) {
           </Dialog>
         </Transition.Root>
       </div>
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20 border-b border-black-white-500 pb-2'>
         <div className='hidden sm:block breadcrumb pt-8 text-black-white-800 uppercase underline'>
           <Link href='/'>Home</Link>
           <span className=''> → </span>
@@ -667,7 +667,7 @@ export default function MeasuresLayout(props) {
           </Link>
         </div>
         <div className='col-span-2'></div>
-        <div>
+        <div className='hidden sm:block'>
           <MeasureLinks type={props.thema} />
         </div>
         <div className=' mb-2 sm:mb-20 mt-10 col-span-3'>
@@ -690,7 +690,7 @@ export default function MeasuresLayout(props) {
             </p>
           </div>
         </div>
-        <div className='col-span-1'></div>
+        <div className='hidden sm:block col-span-1'></div>
         <div className='hidden lg:block mb-3 self-end'>
           <h3 className='mobile sm:desktop inline text-black-white-800'>Filter op:</h3>{' '}
           <span
@@ -838,7 +838,7 @@ export default function MeasuresLayout(props) {
           </div>
         </div>
         <div className='col-span-1'></div>
-        <div className='lg:hidden py-5 w-28'>
+        <div className='lg:hidden py-5 w-28 justify-self-end'>
           <button
             type='button'
             className='px-4 inline-flex border-2 p-2 w-full border-black-white-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500 lg:hidden'
@@ -880,7 +880,7 @@ export default function MeasuresLayout(props) {
           />
           <SearchFilter
             ref={rLadderFilterRef}
-            title='Circulaire strategie(R-ladder)'
+            title='Circulaire strategie (R-ladder)'
             list={rLadder}
             filterNumbers={[numberOfR1, numberOfR2, numberOfR3, numberOfR4, numberOfR5, numberOfR6]}
             handleFilters={(checkboxState) => handleFilters(checkboxState, 'rLadder')}
@@ -918,7 +918,7 @@ export default function MeasuresLayout(props) {
             handleFilters={(checkboxState) => handleFilters(checkboxState, 'subrechtsgebied')}
           />
         </div>
-        <div className='mt-10 col-span-3 '>
+        <div className='mt-10 col-span-3'>
           {data && (
             <div>
               <PolicyList data={laws} casus={props.thema} />

@@ -47,11 +47,11 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
   }));
 
   return (
-    <fieldset className='py-4 border-b border-black'>
+    <fieldset className='py-4'>
       <div className='block'>
         <div className='relative flex justify-between'>
           <h4 className='mobile sm:desktop mr-8'>{title}</h4>
-          {title === 'Circulaire strategie(R-ladder)' && (
+          {title === 'Circulaire strategie (R-ladder)' && (
             <RTooltip>
               <svg className='w-6 h-6  mb-2' viewBox='0 0 26 26'>
                 <circle cx='12' cy='15' r='10' fill='#676868' />
@@ -104,14 +104,14 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                     className='select-none popup-sm pl-2 text-black-white-800'
                   >
                     {/* RVALUE */}
-                    {title === 'Circulaire strategie(R-ladder)' && (
+                    {title === 'Circulaire strategie (R-ladder)' && (
                       <>
                         <h6 className={`${rLadderLabelStyles}`}>{data.value} </h6>
                         <span>{data.name}</span>
                       </>
                     )}
                     {/* std design */}
-                    {title !== 'Circulaire strategie(R-ladder)' && (
+                    {title !== 'Circulaire strategie (R-ladder)' && (
                       <span className=''>{data.name}</span>
                     )}
                   </label>
@@ -132,7 +132,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                     htmlFor={`data-${data.value}-${data.id}`}
                     className='select-none popup-sm text-black-white-500 pl-2'
                   >
-                    {title === 'Circulaire strategie(R-ladder)' && (
+                    {title === 'Circulaire strategie (R-ladder)' && (
                       <>
                         <span className={`${rLadderLabelStyles}`}>{data.value} </span>
                         <span className=' table-basel text-black-white-600 text-sm'>
@@ -141,7 +141,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                       </>
                     )}
 
-                    {title !== 'Circulaire strategie(R-ladder)' && <span>{data.name}</span>}
+                    {title !== 'Circulaire strategie (R-ladder)' && <span>{data.name}</span>}
                   </label>
                 </div>
                 <div className='table-base text-black-white-500'>({filterNumbers[dataIdx]})</div>
