@@ -21,7 +21,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
         {children}
         <div className='container pb-12 sm:pb-2'>
           {data?.measure?.thema === 'houtbouw' && (
-            <div className='container-image h-14 w-14'>
+            <div className='container-image sm:h-14 sm:w-14 h-12 w-12'>
               <Image src={IconWood} alt='Icon of a Wood Log' />
             </div>
           )}
