@@ -14,14 +14,14 @@ export default function NieuwToolTip() {
         onClick={() => setOpen(true)}
       >
         <span className='sr-only'>Open ToolTip</span>
-        <button
+        <span
           type='button'
           className={
             'inline-flex rounded-full items-center px-4 py-1 shadow border button border-green-600 bg-green-500 hover:bg-transparent text-black-white-200 hover:text-green-600 transition ease-in-out hover:duration-150 focus:outline-none'
           }
         >
           NIEUW
-        </button>
+        </span>
       </button>
       <Transition.Root show={open} as={Fragment}>
         <Dialog as='div' className='relative z-50' onClose={setOpen}>
