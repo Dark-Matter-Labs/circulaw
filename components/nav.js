@@ -220,41 +220,41 @@ export default function Nav() {
               <div className='pt-2 pb-4'>
                 <Disclosure.Button
                   as='span'
-                  className='uppercase text-black-white-800 border-t block pl-3 pr-4 py-5'
+                  className='uppercase text-black-white-800 border-t block pl-3 pr-4 py-2'
                 >
                   Thema&apos;s
                 </Disclosure.Button>
                 <Disclosure.Button
                   as='a'
                   href='/houtbouw'
-                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5'
+                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2'
                 >
                   Houtbouw
                 </Disclosure.Button>
                 <Disclosure.Button
                   as='a'
                   href='/circulaire-windturbines'
-                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5'
+                  className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2'
                 >
                   Circulaire windturbines
                 </Disclosure.Button>
                 <Disclosure.Button
                   as='a'
                   href='/matrassen'
-                  className='ml-5 border-transparent text-gray-900 border-b border-black-white-300 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5'
+                  className='ml-5 border-transparent text-gray-900 border-b border-black-white-300 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2'
                 >
                   Circulaire matrasketen
                 </Disclosure.Button>
                 <Disclosure.Button
                   as='span'
-                  className='uppercase  text-black-white-800  border-t block pl-3 pr-4 py-5'
+                  className='uppercase  text-black-white-800  border-t block pl-3 pr-4 py-4'
                 >
                   Over CircuLaw
                 </Disclosure.Button>
                 {aboutSlugs?.map((slug) => (
                   <Disclosure.Button
                     key={slug}
-                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 first-letter:uppercase '
+                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 first-letter:uppercase '
                   >
                     <Link href={`/about/${encodeURIComponent(slug)}`}>
                       {slug.replaceAll('-', ' ')}
@@ -264,18 +264,22 @@ export default function Nav() {
                 <Disclosure.Button
                   as='a'
                   href={`/about/${encodeURIComponent(FAQslug)}`}
-                  className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5'
+                  className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-4'
                 >
                   Vraag & Antwoord
                 </Disclosure.Button>
                 <Disclosure.Button
                   as='a'
                   href='/contact'
-                  className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5'
+                  className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-2'
                 >
                   Contact
                 </Disclosure.Button>
+                <div className='border-b border-black-white-300 block pl-3 pr-4 py-2'>
                 <NieuwTooltip />
+
+                </div>
+               
               </div>
             </Disclosure.Panel>
           </>
@@ -464,34 +468,34 @@ export default function Nav() {
                 <div className='pt-2 pb-4'>
                   <Disclosure.Button
                     as='span'
-                    className='uppercase text-black-white-800 border-t block pl-3 pr-4 py-5'
+                    className='uppercase text-black-white-800 border-t block pl-3 pr-4 py-2'
                   >
                     Thema&apos;s
                   </Disclosure.Button>
                   <Disclosure.Button
                     as='a'
                     href='/houtbouw'
-                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5'
+                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2'
                   >
                     Houtbouw
                   </Disclosure.Button>
                   <Disclosure.Button
                     as='a'
                     href='/circulaire-windturbines'
-                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5'
+                    className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2'
                   >
                     Circulaire windturbines
                   </Disclosure.Button>
                   <Disclosure.Button
                     as='a'
                     href='/matrassen'
-                    className='ml-5 border-transparent text-gray-900 border-b border-black-white-300 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5'
+                    className='ml-5 border-transparent text-gray-900 border-b border-black-white-300 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2'
                   >
                     Circulaire matrasketen
                   </Disclosure.Button>
                   <Disclosure.Button
                     as='span'
-                    className='uppercase  text-black-white-800  border-t block pl-3 pr-4 py-5'
+                    className='uppercase  text-black-white-800  border-t block pl-3 pr-4 py-4'
                   >
                     Over CircuLaw
                   </Disclosure.Button>
@@ -499,7 +503,7 @@ export default function Nav() {
                   {aboutSlugs?.map((slug) => (
                     <Disclosure.Button
                       key={slug}
-                      className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-5 text-base first-letter:uppercase'
+                      className='ml-5 border-transparent text-gray-900 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 text-base first-letter:uppercase'
                     >
                       <Link href={`/about/${encodeURIComponent(slug)}`}>
                         {slug.replaceAll('-', ' ')}
@@ -510,7 +514,7 @@ export default function Nav() {
                   <Disclosure.Button
                     as='a'
                     href={`/about/${encodeURIComponent(FAQslug)}`}
-                    className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5'
+                    className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-2 py-5'
                   >
                     Vraag en Antwoord
                   </Disclosure.Button>
@@ -518,11 +522,14 @@ export default function Nav() {
                   <Disclosure.Button
                     as='a'
                     href='/contact'
-                    className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-5'
+                    className='uppercase text-black-white-800  border-b border-black-white-300 block pl-3 pr-4 py-2'
                   >
                     Contact
                   </Disclosure.Button>
+                  <div className='border-b border-black-white-300 block pl-3 pr-4 py-2'>
                   <NieuwTooltip />
+                  </div>
+
                 </div>
               </Disclosure.Panel>
             </>
@@ -530,7 +537,7 @@ export default function Nav() {
         </Disclosure>
 
         {/* TODO: move this into header component and out of nav*/}
-        <main className='global-margin sm:mt-12'>
+        <main className='global-margin sm:mt-2'>
           <div className='text-center mx-auto max-w-4xl'>
             <div className='header hidden md:block text-black-white-200 py-10'>
               <span className='block '>Regelgeving voor een circulaire economie</span>{' '}
@@ -538,13 +545,13 @@ export default function Nav() {
             <h1 className='mobile block md:hidden text-black-white-200 py-4'>
               <span className='block '>Regelgeving voor een circulaire economie</span>{' '}
             </h1>
-            <p className='mt-3 p-xl text-black-white-200 pb-8'>
+            <p className='text-left sm:text-center mt-2 p-xl text-black-white-200 pb-8'>
               CircuLaw laat zien hoe je met bestaande juridische instrumenten de circulaire economie
               kan versnellen. We helpen beleidsmakers bij het selecteren en toepassen van die
               instrumenten. Ook bieden we inzicht in de samenhang tussen juridische instrumenten en
               overzicht over de verdeling van veratwoordelijkheden.
             </p>
-            <div className='mt-5 sm:flex sm:justify-center md:mt-8'>
+            <div className='mt-2 sm:flex sm:justify-center md:mt-2'>
               <div className='rounded-md'>
                 <CustomButton color='home'>
                   <ScrollLink to='thema' smooth={true}>
