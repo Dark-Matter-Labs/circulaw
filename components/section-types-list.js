@@ -96,14 +96,18 @@ export default function SectionTypes(props) {
         className='grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 sm:gap-x-10 max-w-8xl'
       >
         {type.map((file) => (
-          <li key={file.id} className='relative shadow bg-white w-full'>
-            <div className='object-cover'>
+          <li key={file.id} className='relative drop-shadow-sm bg-white w-full'>
+            <div className='object-cover rounded-[10px]'>
               {file.href !== '' ? (
                 <Link href={file.href}>
-                  <Image src={file.heroImage} alt='Picture of the case' />
+                  <Image
+                    className='rounded-[10px]'
+                    src={file.heroImage}
+                    alt='Picture of the case'
+                  />
                 </Link>
               ) : (
-                <Image src={file.heroImage} alt='Picture of the case' />
+                <Image className='rounded-[10px]' src={file.heroImage} alt='Picture of the case' />
               )}
             </div>
 
