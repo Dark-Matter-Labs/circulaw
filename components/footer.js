@@ -2,8 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import useSWR from 'swr';
 import { useEffect, useState } from 'react';
-import client from '../lib/sanity';
 import { groq } from 'next-sanity';
+import client from '../lib/sanity';
+import NieuwTooltip from '../components/nieuw-tooltip';
 
 import ActionPanel from '../components/section-action-panel';
 import logo1 from '../public/logo_partners/CircuLawPartners-01.png';
@@ -102,7 +103,8 @@ export default function Footer() {
                     </ul>
                   </div>
                 </div>
-                <div className='mt-5'>
+                <div className='mt-8'>
+                  <NieuwTooltip />
                   <ul role='list' className='mt-4 space-y-4'>
                     {navigation.other.map((item) => (
                       <li key={item.name}>
