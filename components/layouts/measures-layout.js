@@ -679,7 +679,7 @@ export default function MeasuresLayout(props) {
               </h1>
             ) : (
               <h1 className='max-w-0 leading-6 pb-1 pl-4 mobile sm:desktop first-letter:uppercase'>
-                {props.thema} Stimuleren
+                {props.thema} stimuleren
               </h1>
             )}
           </div>
