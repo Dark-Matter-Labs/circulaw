@@ -36,7 +36,7 @@ export default function PolicyList(props) {
                 {law?.thema.replace('-', ' ')}
               </h4>
               {law?.extraContent &&
-                law?.extraContent.map((content) => {
+                law?.extraContent?.map((content) => {
                   if (content === 'Leidraad') {
                     return (
                       <h6

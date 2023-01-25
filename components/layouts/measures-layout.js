@@ -31,7 +31,6 @@ export default function MeasuresLayout(props) {
   const { data } = useSWR(groq`*[_type == "measure"]| order(lower(titel) asc)`, (query) =>
     client.fetch(query),
   );
-
   // creating references to access child component functions
   const wettelijkFilterRef = useRef();
   const rechtsgebiedFilterRef = useRef();
@@ -195,14 +194,14 @@ export default function MeasuresLayout(props) {
 
       // FILTER LOGIC FOR MULTICHOICE ATTRIBUTES
       if (selected.extraContent.length > 0) {
-        if (selected.extraContent.includes('Leidraad')) {
+        if (selected.extraContent?.includes('Leidraad')) {
           filteredLaws = filteredLaws.filter((element) => {
-            return element.extraContent.includes('Leidraad');
+            return element.extraContent?.includes('Leidraad');
           });
         }
-        if (selected.extraContent.includes('Voorbeeld')) {
+        if (selected.extraContent?.includes('Voorbeeld')) {
           filteredLaws = filteredLaws.filter((element) => {
-            return element.extraContent.includes('Voorbeeld');
+            return element.extraContent?.includes('Voorbeeld');
           });
         }
       }
@@ -426,7 +425,6 @@ export default function MeasuresLayout(props) {
 
       setNumberOfLeidraad(numLeidraad);
       setNumberOfVoorbeeld(numVoorbeeld);
-
       setNumberOfEuropee(numEuropee);
       setNumberOfNationaal(numNationaal);
       setNumberOfProvinciaal(numProvinciaal);
@@ -564,7 +562,7 @@ export default function MeasuresLayout(props) {
                         ref={extraContentFilterRef}
                         title='Inclusief'
                         list={extraContent}
-                        filterNumbers={[numberOfLeidraad, numberOfVoorbeeld]}
+                        filterNumbers={[numberOfVoorbeeld, numberOfLeidraad]}
                         handleFilters={(checkboxState) =>
                           handleFilters(checkboxState, 'extraContent')
                         }
@@ -856,7 +854,7 @@ export default function MeasuresLayout(props) {
             ref={extraContentFilterRef}
             title='Inclusief'
             list={extraContent}
-            filterNumbers={[numberOfLeidraad, numberOfVoorbeeld]}
+            filterNumbers={[numberOfVoorbeeld, numberOfLeidraad]}
             handleFilters={(checkboxState) => handleFilters(checkboxState, 'extraContent')}
           />
           <SearchFilter
