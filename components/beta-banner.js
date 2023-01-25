@@ -6,7 +6,7 @@ export default function BetaBanner() {
       <div className='global-margin py-2 text-center'>
         <div className='flex justify-between flex-wrap'>
           <div className='w-0 flex-1'>
-            <p className='ml-3  text-black-white-800 truncate'>
+            <div className='ml-3  text-black-white-800 truncate'>
               <div className='md:hidden'>
                 <h5 className='inline bold'>Beta</h5>{' '}
                 <h5 className='inline mobile sm:desktop'>versie van CircuLaw - </h5>
@@ -21,7 +21,7 @@ export default function BetaBanner() {
                   <Link href='/beta'>Lees meer -&gt;</Link>
                 </span>
               </div>
-            </p>
+            </div>
           </div>
         </div>
       </div>
