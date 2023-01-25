@@ -33,19 +33,19 @@ export default function ThemeCard({ props, type }) {
         </div>
         {type === 'list' && (
           <div className='row-span-3 px-10'>
-            <h2 className='mobile sm:desktop pt-6'>{props.listTitle}</h2>
+            <h3 className='mobile sm:desktop pt-6'>{props.listTitle}</h3>
             <p className='body-new py-6'>{props.listText}</p>
           </div>
         )}
         {type === 'samenhang' && (
           <div className='row-span-3 px-10'>
-            <h2 className='mobile sm:desktop pt-6'>{props.samenhangTitle}</h2>
+            <h3 className='mobile sm:desktop pt-6'>{props.samenhangTitle}</h3>
             <p className='body-new py-6'>{props.samenhangText}</p>
           </div>
         )}
         {type === 'waarvoor' && (
           <div className='row-span-3 px-10'>
-            <h2 className='mobile sm:desktop pt-6'>{props.waarvoorTitle}</h2>
+            <h3 className='mobile sm:desktop pt-6'>{props.waarvoorTitle}</h3>
             <p className='body-new py-6'>{props.waarvoorText}</p>
           </div>
         )}
