@@ -76,7 +76,7 @@ const components = {
                 rel='noreferrer'
               >
                 <CustomButton color='toPdf'>
-                  Bekijk de leidraad &nbsp;
+                  Bekijk de methodiek &nbsp;
                   <Image
                     src='/icons/pdf-icon.svg'
                     width={23}
@@ -143,7 +143,7 @@ const components = {
         </a>
       ),
   },
-};
+};  
 
 export default function AboutPage({ data }) {
   return (
@@ -162,7 +162,7 @@ export default function AboutPage({ data }) {
             </div>
           </div>
           {data?.aboutPage?.pageTitle !== 'VRAAG & ANTWOORD' && (
-            <div className='md:ml-5 lg:mx-5 lg:my-20 max-w-sm col-span-1'>
+            <div className='mt-3 md:ml-5 lg:mx-5 lg:my-20 max-w-sm col-span-1'>
               <OverNav pagename={data?.aboutPage?.slug.current} />
             </div>
           )}
