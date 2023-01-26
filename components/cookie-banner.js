@@ -25,30 +25,30 @@ const CookieConsent = () => {
 
   return (
     <section className={`fixed bottom-0 left-0 w-full py-2 md:py-4 ${consent ? 'hidden' : ''}`}>
-      <div className='flex flex-col items-start px-5 py-3 space-y-2 bg-black-white-300 md:flex-row md:space-y-0 md:items-stretch md:space-x-2'>
-        <div className='flex items-center flex-grow text-black-white-800'>
-          <p className='p-sm'>
+      <div className='flex flex-col items-start px-20 py-6 space-y-2 bg-green-600 md:flex-row md:space-y-0 md:items-stretch md:space-x-2'>
+        <div className='flex items-center flex-grow text-black-white-200'>
+          <p className='p-base sm:p-lg'>
             Op deze site gebruiken we cookies om te analyseren hoe jij de site gebruikt en om de
             site vervolgens te kunnen verbeteren. Altijd met respect voor jouw privacy. Lees voor
             meer informatie onze{' '}
             <Link href='/privacy-policy'>
-              <span className='text-sm underline hover:text-lightAccent'>Privacyverklaring</span>
+              <span className='link-lg underline hover:text-lightAccent'>Privacyverklaring</span>
             </Link>{' '}
             en ons{' '}
             <Link href='/cookie-info'>
-              <span className='text-sm underline hover:text-lightAccent'>Cookiebeleid.</span>
+              <span className='link-lg underline hover:text-lightAccent'>Cookiebeleid.</span>
             </Link>
           </p>
         </div>
         <div className='flex items-center'>
           <button
-            className='inline-flex rounded-full items-center px-4 py-2 border button border-green-600 bg-transparent hover:bg-green-600 text-green-600 hover:text-black-white-200 transition ease-in-out hover:duration-150 focus:outline-none'
+            className='inline-flex rounded-full items-center px-4 py-4 border button mr-2 border-black-white-200 bg-transparent hover:bg-green-600 text-black-white-200 hover:text-black-white-200 transition ease-in-out hover:duration-150 focus:outline-none'
             onClick={() => denyCookie()}
           >
             Weiger
           </button>
           <button
-            className='inline-flex rounded-full items-center px-4 py-2 border button ml-2 border-green-600 bg-green-600 hover:bg-transparent text-black-white-200 hover:text-green-600 transition ease-in-out hover:duration-150 focus:outline-none'
+            className='inline-flex rounded-full items-center px-4 py-4 border button ml-2 border-green-600 bg-black-white-200 hover:bg-transparent text-green-600 hover:text-green-600 transition ease-in-out hover:duration-150 focus:outline-none'
             onClick={() => {
               acceptCookie();
             }}
