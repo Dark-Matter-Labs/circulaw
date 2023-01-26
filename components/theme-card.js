@@ -6,30 +6,38 @@ export default function ThemeCard({ props, type }) {
   return (
     <div className='relative shadow rounded-md overflow-hidden h-auto my-6 md:py-0 md:h-5/6 lg:h-[95%] max-w-[380px] min-h-[550px] '>
       <div className='grid grid-rows-6 shadow rounded-md h-full w-full'>
-        <div className='row-span-3 shadow bg-green-600 rounded-t-md'>
-          <div className='gradient-pdf shadow z-5 w-full rounded-t-md h-full flex items-center justify-center'>
+        <div className='row-span-3 shadow rounded-t-md'>
+        <div className=' shadow z-5 w-full rounded-t-md h-full flex items-center justify-center'>
+
             {type === 'list' && (
+            <div className='bg-list-card bg-cover bg-center shadow z-5 w-full rounded-t-md h-full flex items-center justify-center'>
               <div className='w-5/6 h-5/6 relative'>
                 <Link href={props.cardLinkList}>
                   <Image src='../list.svg' alt='' fill />
                 </Link>
               </div>
+              </div>
+
             )}
             {type === 'samenhang' && (
+            <div className='bg-samenhang-card bg-cover bg-center shadow z-5 w-full rounded-t-md h-full flex items-center justify-center'>
               <div className='w-5/6 h-5/6 relative'>
                 <Link href={props.cardLinkSamenhang}>
                   <Image src='../samenhang.svg' alt='' fill />
                 </Link>
               </div>
+              </div>
             )}
             {type === 'waarvoor' && (
+              <div className='bg-waarvoor-card bg-cover bg-center shadow z-5 w-full rounded-t-md h-full flex items-center justify-center'>
               <div className='w-5/6 h-5/6 relative'>
                 <Link href={props.cardLinkWaarvoor}>
                   <Image src='../waarvoor.svg' alt='' fill />
                 </Link>
               </div>
+              </div>
             )}
-          </div>
+        </div>
         </div>
         {type === 'list' && (
           <div className='row-span-3'>
