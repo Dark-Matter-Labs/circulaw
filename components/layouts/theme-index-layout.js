@@ -31,7 +31,7 @@ export default function ThemeLayout({ bgHero, ...props }) {
                           {props.headerLinkText}
                           <span className='inline-block h-4 w-4 text-green-300'>
                           <svg width="24" height="24" viewBox="0 3 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14" stroke="#25C38B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14" stroke="#25C38B" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                           </span>
 
@@ -61,8 +61,9 @@ export default function ThemeLayout({ bgHero, ...props }) {
           </div>
 
           <div className='h-56 max-w-[380px] mx-auto flex items-center justify-center'>
-            <div className='h-full w-full rounded-md relative'>
-              <Image src={props.heroImage} alt='hero image' fill className='rounded-md absolute' />
+            <div className='flex items-center justify-center h-full w-full rounded-md relative z-10'>
+            <Image src={props.heroImage} alt='hero image' fill className='rounded-md absolute' />
+            <div className='w-full h-full thema-hero-gradient z-10 rounded-md'></div>
             </div>
           </div>
         </div>

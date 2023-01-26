@@ -23,7 +23,7 @@ export default function ThemeCard({ props, type }) {
             <div className='bg-samenhang-card bg-cover bg-center shadow z-5 w-full rounded-t-md h-full flex items-center justify-center'>
               <div className='w-5/6 h-5/6 relative'>
                 <Link href={props.cardLinkSamenhang}>
-                  <Image src='../samenhang.svg' alt='' fill />
+                  <Image src='../samenhang.svg' alt='' fill/>
                 </Link>
               </div>
               </div>

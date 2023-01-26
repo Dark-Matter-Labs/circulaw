@@ -23,7 +23,7 @@ export default function Houtbouw({ laws }) {
         headerLinkText='Lees wat het AMS zegt over houtbouw' // will be displayed in the same sentence as header subtitle
         headerLinkURL='https://www.ams-institute.org/documents/64/AMS_Institute_Houtbouwmythes_ontkracht.pdf'
         bgHero='bg-houtbouw-hero'
-        heroImage='/houtbouwHero.jpeg'
+        heroImage='/hero-images/houtbouw.jpeg'
         // number of laws
         numberOfLaws={laws?.length}
         cardTitle='Overzichten van instrumenten die houtbouw bevorderen'

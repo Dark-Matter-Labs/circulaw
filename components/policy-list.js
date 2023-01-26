@@ -12,9 +12,9 @@ export default function PolicyList(props) {
   }
   return (
     <>
-      {lawData.map((law, index) => (
+      {lawData.map((law) => (
         <Link href={'/measures/' + law.slug.current} key={law.slug.current}>
-          <div key={index} className='block sm:ml-0 pb-8 sm:pb-10'>
+          <div className='block sm:ml-0 pb-8 sm:pb-10'>
             <div className=''>
               <div className='inline-block flex justify-start items-center'>
                 {law?.thema === 'houtbouw' && (

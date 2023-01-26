@@ -22,9 +22,8 @@ export default function Matrassen({ laws }) {
         headerSubtitle='De hele matrasketen vanaf ontwerp tot aan de verwerking van afgedankte matrassen kan circulairder.'
         // headerLinkText='' // will be displayed in the same sentence as header subtitle
         // headerLinkURL=''
-
         bgHero='bg-matrassen-hero'
-        heroImage='/windturbineHero.jpg' // needs replacing
+        heroImage='/hero-images/matrassen.jpeg' // needs replacing
         // number of laws
         numberOfLaws={laws.length}
         cardTitle='Overzichten van instrumenten die de circulaire matrasketen bevorderen'
