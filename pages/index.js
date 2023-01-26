@@ -36,6 +36,7 @@ export default function Index() {
           >
             Over CircuLaw
           </h1>
+          <Link href={`/about/${encodeURIComponent(aboutSlugs?.[0])}`}>
           <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10 gap-x-8 gap-y-4'>
             <div>
               <Image src={watImage} width={556} alt='image for wat circulaw' />
@@ -50,10 +51,12 @@ export default function Index() {
                 circulaire ondernemers bedienen.
               </p>
               <span className='text-green-500  link-lg'>
-                <Link href={`/about/${encodeURIComponent(aboutSlugs?.[0])}`}>Meer lezen →</Link>
+               Meer lezen →
               </span>
             </div>
           </div>
+          </Link>
+        <Link href={`/about/${encodeURIComponent(aboutSlugs?.[1])}`}>
 
           <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10 gap-x-8 gap-y-4'>
             <div>
@@ -73,13 +76,12 @@ export default function Index() {
                 </li>
               </ul>
               <span className='text-green-500  link-lg'>
-                <Link href={`/about/${encodeURIComponent(aboutSlugs?.[2])}`}>
                   Meer lezen over de volgende stappen →
-                </Link>
               </span>
             </div>
           </div>
-
+          </Link>
+          <Link href={`/about/${encodeURIComponent(aboutSlugs?.[2])}`}>
           <div className='grid grid-cols-1 lg:grid-cols-2 py-10 gap-x-8 gap-y-4'>
             <div>
               <Image src={waaromImage} width={556} alt='image for wararom circulaw' />
@@ -94,12 +96,12 @@ export default function Index() {
                 Nederlands Normalisatie Instituut (NEN).
               </p>
               <span className='text-green-500 link-lg'>
-                <Link href={`/about/${encodeURIComponent(aboutSlugs?.[3])}`}>
                   Meer over de makers van CircuLaw →
-                </Link>
               </span>
             </div>
           </div>
+          </Link>
+
         </div>
       </div>
     </Layout>
