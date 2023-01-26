@@ -8,6 +8,7 @@ import CustomButton from './custom-button';
 
 export default function ThemeCard({ props, type }) {
   return (
+    
     <div className='relative shadow rounded-md overflow-hidden h-auto my-6 md:py-0 md:h-5/6 lg:h-[95%] max-w-[380px] min-h-[550px] '>
       <div className='grid grid-rows-6 shadow rounded-md h-full w-full'>
         <div className='row-span-3 shadow bg-green-600 rounded-t-md'>
@@ -19,8 +20,6 @@ export default function ThemeCard({ props, type }) {
             )}
             {type === 'samenhang' && (
               <div className='w-5/6 h-5/6 relative'>
-                {' '}
-                {/* cannot work out why this image is not resizing */}
                 <Image src='../samenhang.svg' alt='' fill />
               </div>
             )}

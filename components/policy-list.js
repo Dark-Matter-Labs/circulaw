@@ -13,6 +13,8 @@ export default function PolicyList(props) {
   return (
     <>
       {lawData.map((law, index) => (
+              <Link href={'/measures/' + law.slug.current} key={law.slug.current}>
+
         <div key={index} className='block sm:ml-0 pb-8 sm:pb-10'>
           <div className=''>
             <div className='inline-block flex justify-start items-center'>
@@ -59,11 +61,9 @@ export default function PolicyList(props) {
                 })}
             </div>
             <div className='block my-1 max-w-3xl'>
-              <Link href={'/measures/' + law.slug.current} key={law.slug.current}>
                 <span className='no-underline hover:text-green-500'>
                   <h3 className='desktop text-black-white-800'>{law.titel} </h3>
                 </span>
-              </Link>
               <div className='block pb-1'>
                 {law?.overheidslaag?.map((level) => (
                   <>
@@ -81,9 +81,8 @@ export default function PolicyList(props) {
               </div>
 
               <div className='block newlineDisplay p-base text-black-white-800 mb-4'>
-                <Link href={'/measures/' + law.slug.current} key={law.slug.current} passHref>
                   <p className=''>{law.introText}</p>
-                </Link>
+                
               </div>
 
               <div className='lg:flex space-x-0 lg:space-x-8 space-y-2 sm:space-y-0 pt-2 pb-3 sm:py-1 border-b border-t border-black-white-500 mb-2 items-center'>
@@ -126,6 +125,8 @@ export default function PolicyList(props) {
             </div>
           </div>
         </div>
+        </Link>
+
       ))}
     </>
   );
