@@ -9,9 +9,9 @@ import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../components/juridische-invloed-tooltip';
 
 const viewportType = {
-  mobile: 'block sm:hidden bg-black-white-200 -m-8 h-[28rem] pb-12 mb-10 mt-4 bg-black-white-200',
+  mobile: 'block sm:hidden bg-black-white-200 h-[26rem] pb-12 my-4 bg-black-white-200',
   desktop:
-    'hidden sm:block float-right pl-4 ml-6 sm:pr-6 md:pr-10 lg:pr-14 bg-black-white-200 h-[28rem] sticky top-40 mb-20 bg-black-white-200',
+    'hidden sm:block float-right px-8 ml-6 bg-black-white-200 h-[26rem] sticky top-40 mb-20 bg-black-white-200',
 };
 {
   /* still need to implement the design when design is finished - mainly fonts + colors */
@@ -21,13 +21,13 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
   let viewportClasses = viewportType[viewport];
   return (
     <div {...props} className={`${viewportClasses}`}>
-      <div className='px-8 pb-10 sm:pb-0 sm:px-0 py-6 block h-[28rem]'>
+      <div className='px-8 pb-10 sm:pb-0 sm:px-0 py-6 block h-[26rem]'>
         {children}
 
         <div className='container pb-12 sm:pb-1 flex justify-between'>
           <div className=''>
             <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()} passHref>
-              <h2 className='link-base pl-2 text-green-500 first-letter:uppercase block underline'>
+              <h2 className='link-base text-green-500 first-letter:uppercase block underline'>
                 {data?.measure?.thema.replace('-', ' ')}
               </h2>
             </Link>
@@ -73,7 +73,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
             {data?.measure?.rLadder.map((rValue) => (
               <h5
                 key={rValue}
-                className='bg-green-500 text-black-white-200 mr-2 rounded-full p-1 h-10 w-10 flex justify-center items-center mobile sm:desktop'
+                className='bg-green-500 text-black-white-200 mr-2 rounded-full p-1 h-8 w-8 sm:h-10 sm:w-10 flex justify-center items-center mobile sm:desktop'
               >
                 {rValue}
               </h5>
@@ -116,9 +116,9 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
           </div>
 
           <div className='flex items-center'>
-            <h3 className='mobile sm:desktop text-green-500 uppercase'>
+            <h4 className='mobile sm:desktop text-green-500 uppercase'>
               {data?.measure?.juridischInvloed}
-            </h3>
+            </h4>
           </div>
         </div>
 
@@ -146,9 +146,9 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
             </div>
           </div>
           <div className='flex items-center w-10/12'>
-            <h3 className='mobile sm:desktop text-green-500 uppercase'>
+            <h4 className='mobile sm:desktop text-green-500 uppercase'>
               {data?.measure?.juridischeHaalbaarheid}
-            </h3>
+            </h4>
           </div>
         </div>
       </div>

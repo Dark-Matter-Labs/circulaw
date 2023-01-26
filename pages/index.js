@@ -52,7 +52,7 @@ export default function Index() {
                   circulaire ondernemers bedienen.
                 </p>
                 <span className='text-green-500  link-lg'>
-                  Meer lezen <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                  Lees verder <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                 </span>
               </div>
             </div>
@@ -63,7 +63,7 @@ export default function Index() {
                 <Image src={hoeverImage} width={556} alt='image for hoever' />
               </div>
               <div>
-                <h2 className='mobile sm:desktop'>Hoever zijn we?</h2>
+                <h2 className='mobile sm:desktop'>Wat vind je nu op CircuLaw?</h2>
                 <ul className=' p-lg py-5 max-w-4xl list-disc pl-6'>
                   <li>
                     Een overzicht van wet- en regelgeving voor beleidsmakers die aan de slag willen
@@ -77,8 +77,7 @@ export default function Index() {
                   </li>
                 </ul>
                 <span className='text-green-500  link-lg'>
-                  Meer lezen over de volgende stappen{' '}
-                  <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                  Lees verder <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                 </span>
               </div>
             </div>
@@ -91,15 +90,14 @@ export default function Index() {
               <div>
                 <h2 className='mobile sm:desktop'>Wie maken CircuLaw?</h2>
                 <p className=' p-lg py-5 max-w-4xl'>
-                  Gemeente Amsterdam, Dark Matter Laboratories, EIT Climate KIC, de Provincies
+                  Gemeente Amsterdam, Dark Matter Laboratories, EIT Climate-KIC, de Provincies
                   Noord-Holland en Flevoland, Rijksdienst voor Ondernemend Nederland (RVO), het MRA
                   (Metropoolregio Amsterdam) Kernteam Houtbouw, Belastingdienst, TU Delft, Erasmus
                   School of LAW, de VU, Wageningen Universiteit (WUR Law group), Stichting
                   Koninklijk Nederlands Normalisatie Instituut (NEN).
                 </p>
                 <span className='text-green-500 link-lg'>
-                  Meer over de makers van CircuLaw{' '}
-                  <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                  Lees verder <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                 </span>
               </div>
             </div>
