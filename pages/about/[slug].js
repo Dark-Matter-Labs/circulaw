@@ -143,7 +143,7 @@ const components = {
         </a>
       ),
   },
-};  
+};
 
 export default function AboutPage({ data }) {
   return (
