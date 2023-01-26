@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/dist/client/router';
 import { Fragment, useEffect, useState } from 'react';
 import { Popover, Disclosure, Transition } from '@headlessui/react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import { MenuIcon, XIcon, ArrowDownIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { Link as ScrollLink } from 'react-scroll';
 import { groq } from 'next-sanity';
@@ -16,6 +16,7 @@ import BetaBanner from './beta-banner';
 import BetaBannerGen from './beta-banner-gen';
 import client from '../lib/sanity';
 import NieuwTooltip from '../components/nieuw-tooltip';
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -559,14 +560,14 @@ export default function Nav() {
               <div className='rounded-md'>
                 <CustomButton color='home'>
                   <ScrollLink to='thema' smooth={true}>
-                    Bekijk de thema&rsquo;s ↓
+                    Bekijk de thema&rsquo;s  <ArrowDownIcon className='inline-block h-4 w-4' aria-hidden='true' />
                   </ScrollLink>
                 </CustomButton>
               </div>
               <div className='mt-3 rounded-md sm:mt-0 sm:ml-3'>
                 <CustomButton color='home'>
                   <ScrollLink to='waarom' smooth={true}>
-                    Meer over CircuLaw? ↓
+                    Meer over CircuLaw?  <ArrowDownIcon className='inline-block h-4 w-4' aria-hidden='true' />
                   </ScrollLink>
                 </CustomButton>
               </div>
