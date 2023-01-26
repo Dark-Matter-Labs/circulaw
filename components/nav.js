@@ -40,7 +40,7 @@ export default function Nav() {
       /* I used the router.pathname to display the two different nav on the home page was nested in the div containing the background image and text 'regelgeving voor een...'*/
       /* The alternative would be to remove the navbar completely from the div containing the background image but then need to play around with the css a bit more */
       /* The navbar from the homepage starts at line 287 */
-      <Disclosure as='nav' className='sticky top-0 z-40 bg-black-white-200'>
+      <Disclosure as='nav' className='sticky top-0 z-40 bg-black-white-200 shadow-lg'>
         {({ open }) => (
           <>
             <div className='lg:pb-8 global-margin'>
@@ -535,10 +535,10 @@ export default function Nav() {
             <div className='header hidden md:block text-black-white-200 py-10'>
               <span className='block '>Regelgeving voor een circulaire economie</span>{' '}
             </div>
-            <h1 className='mobile block md:hidden text-black-white-200 py-4'>
+            <h1 className='text-left mobile block md:hidden text-black-white-200 py-4'>
               <span className='block '>Regelgeving voor een circulaire economie</span>{' '}
             </h1>
-            <p className='text-left sm:text-center mt-2 p-xl text-black-white-200 pb-8'>
+            <p className='text-left sm:text-center mt-2 p-base max-w-sm sm:max-w-full sm:p-xl text-black-white-200 pb-8'>
               CircuLaw laat zien hoe je met bestaande juridische instrumenten de circulaire economie
               kan versnellen. We helpen beleidsmakers bij het selecteren en toepassen van die
               instrumenten. Ook bieden we inzicht in de samenhang tussen juridische instrumenten en
