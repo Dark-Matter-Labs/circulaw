@@ -669,7 +669,7 @@ export default function MeasuresLayout(props) {
         </div>
         <div className='col-span-2'></div>
         <div className='hidden sm:block'>
-          <MeasureLinks type={props.thema} />
+          <MeasureLinks type={props.thema} page='list' />
         </div>
         <div className=' mb-2 sm:mb-20 mt-10 col-span-3'>
           <div className='container pb-2'>

@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+import MeasureLinks from '../measure-links-dropdown';
+
 /* list of props
 casus
 title
@@ -24,6 +26,9 @@ export default function WelkeLayout(props) {
           </Link>
         </div>
         <h1 className='mobile sm:desktop text-green-600 pb-2 max-w-3xl mx-auto'>{props.title}</h1>
+        <div className='hidden sm:block float-right'>
+          <MeasureLinks type={props.casus} page='welke' />
+        </div>
       </div>
       <div className='hidden sm:block image-margin'>
         <Image src={props.img} alt='Picture of the case' />
