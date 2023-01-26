@@ -24,8 +24,8 @@ const CookieConsent = () => {
   }
 
   return (
-    <section className={`fixed bottom-0 left-0 w-full py-2 md:py-4 ${consent ? 'hidden' : ''}`}>
-      <div className='flex flex-col items-start px-20 py-6 space-y-2 bg-green-600 md:flex-row md:space-y-0 md:items-stretch md:space-x-2'>
+    <section className={`fixed bottom-0 left-0 w-full pb-2 shadow-top ${consent ? 'hidden' : ''}`}>
+      <div className='flex flex-col items-start px-20 py-6 space-y-2 bg-green-600 md:flex-row md:space-y-0 md:items-stretch md:space-x-2  '>
         <div className='flex items-center flex-grow text-black-white-200'>
           <p className='p-base sm:p-lg'>
             Op deze site gebruiken we cookies om te analyseren hoe jij de site gebruikt en om de
@@ -48,7 +48,7 @@ const CookieConsent = () => {
             Weiger
           </button>
           <button
-            className='inline-flex rounded-full items-center px-4 py-4 border button ml-2 border-green-600 bg-black-white-200 hover:bg-transparent text-green-600 hover:text-green-600 transition ease-in-out hover:duration-150 focus:outline-none'
+            className='inline-flex rounded-full items-center px-4 py-4 border button ml-2 border-green-600 bg-black-white-200 hover:bg-green-600 text-green-600 hover:text-black-white-200 hover:border-black-white-200 transition ease-in-out hover:duration-150 focus:outline-none'
             onClick={() => {
               acceptCookie();
             }}

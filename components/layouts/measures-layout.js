@@ -625,7 +625,7 @@ export default function MeasuresLayout(props) {
                       />
                       <SearchFilter
                         ref={juridischeHaalbaarheidFilterRef}
-                        title='Juridische Haalbaarheid'
+                        title='Juridische haalbaarheid'
                         list={juridischeHaalbaarheid}
                         filterNumbers={[numberOfJHLow, numberOfJHMedium, numberOfJHHigh]}
                         handleFilters={(checkboxState) =>

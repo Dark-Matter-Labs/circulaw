@@ -123,14 +123,22 @@ export default function SectionTypes(props) {
                 >
                   {file.href !== '' ? (
                     <Link href={file.href}>
-                      <h3 className='mobile sm:desktop mt-2 block text-black pointer-events-none pb-4'>
+                      <h3 className='desktop mt-2 block text-black pointer-events-none pb-4 hidden sm:inline'>
                         {file.title}
                       </h3>
+                      <h2 className='mobile mt-2 block text-black pointer-events-none pb-4 inline sm:hidden'>
+                        {file.title}
+                      </h2>
                     </Link>
                   ) : (
-                    <h3 className='mobile sm:desktop mt-2 block text-black pointer-events-none pb-4'>
-                      {file.title}
-                    </h3>
+                    <>
+                      <h3 className='desktop mt-2 block text-black pointer-events-none pb-4 hidden sm:inline'>
+                        {file.title}
+                      </h3>
+                      <h2 className='mobile mt-2 block text-black pointer-events-none pb-4 inline sm:hidden'>
+                        {file.title}
+                      </h2>
+                    </>
                   )}
                   {/* added height for the description while on home to ensure all the text can be read*/}
                 </div>
