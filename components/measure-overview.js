@@ -12,7 +12,9 @@ const viewportType = {
   mobile: 'block sm:hidden bg-black-white-200 h-[26rem] pb-12 my-4 bg-black-white-200',
   desktop: 'hidden sm:block float-right px-8 ml-6  bg-black-white-200 h-[26rem] sticky top-40 mb-20 bg-black-white-200',
 };
-{/* still need to implement the design when design is finished - mainly fonts + colors */}
+{
+  /* still need to implement the design when design is finished - mainly fonts + colors */
+}
 
 export default function MeasureOverview({ viewport, children, data, ...props }) {
   let viewportClasses = viewportType[viewport];
@@ -21,9 +23,8 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
       <div className='px-8 pb-10 sm:pb-0 sm:px-0 py-6 block h-[26rem]'>
         {children}
 
-
         <div className='container pb-12 sm:pb-1 flex justify-between'>
-        <div className=''>
+          <div className=''>
             <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()} passHref>
               <h2 className='link-base text-green-500 first-letter:uppercase block underline'>
                 {data?.measure?.thema.replace('-', ' ')}
@@ -45,8 +46,6 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
               <Image src={MatrassenIcon} alt='Icon of a Wood Log' />
             </div>
           )}
-
-         
         </div>
         <div className='-mt-8 sm:mt-0 pt-2 pb-1 border-t border-black-white-600'>
           <div className='flex pb-2 justify-between items-center'>
@@ -87,7 +86,9 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
           </div>
 
           <div className='p-lg pb-2 first-letter:capitalize flex items-center justify-start'>
-            <h5 className='px-2 mobile sm:desktoop border rounded-md border-black-white-300 bg-black-white-300 text-black-white-800'>{data?.measure?.subrechtsgebied}</h5>
+            <h5 className='px-2 mobile sm:desktoop border rounded-md border-black-white-300 bg-black-white-300 text-black-white-800'>
+              {data?.measure?.subrechtsgebied}
+            </h5>
           </div>
         </div>
 
@@ -123,7 +124,9 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
         <div className='pb-1 border-b border-black-white-600'>
           <div className='relative flex justify-between border-t border-black-white-600'>
             <div className='flex'>
-              <h5 className='text-black-white-500 mobile sm:desktop py-2 pr-3'>Juridische haalbaarheid</h5>
+              <h5 className='text-black-white-500 mobile sm:desktop py-2 pr-3'>
+                Juridische haalbaarheid
+              </h5>
               <JHTooltip data={data}>
                 <svg
                   width='24'
