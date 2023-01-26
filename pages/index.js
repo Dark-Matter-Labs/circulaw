@@ -63,8 +63,7 @@ export default function Index() {
                 <h2 className='mobile sm:desktop'>Hoever zijn we?</h2>
                 <ul className=' p-lg py-5 max-w-4xl list-disc pl-6'>
                   <li>
-                    Een overzicht van wet- en regelgeving voor beleidsmakers die aan de slag willen
-                    met maatregelen voor de thema’s houtbouw en circulaire windmolens
+                  Een overzicht van wet- en regelgeving voor beleidsmakers die aan de slag willen met instrumenten voor de thema’s houtbouw, circulaire windturbines en de circulaire matrasketen
                   </li>
                   <li>Een leidraad voor 3 maatregelen die houtbouw stimuleren</li>
                   <li>
