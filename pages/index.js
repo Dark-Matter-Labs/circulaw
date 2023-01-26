@@ -52,7 +52,7 @@ export default function Index() {
                   circulaire ondernemers bedienen.
                 </p>
                 <span className='text-green-500  link-lg'>
-                Lees verder <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                  Lees verder <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                 </span>
               </div>
             </div>
@@ -77,8 +77,7 @@ export default function Index() {
                   </li>
                 </ul>
                 <span className='text-green-500  link-lg'>
-                Lees verder{' '}
-                  <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                  Lees verder <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                 </span>
               </div>
             </div>
@@ -98,8 +97,7 @@ export default function Index() {
                   Koninklijk Nederlands Normalisatie Instituut (NEN).
                 </p>
                 <span className='text-green-500 link-lg'>
-                Lees verder{' '}
-                  <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                  Lees verder <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                 </span>
               </div>
             </div>

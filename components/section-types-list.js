@@ -143,21 +143,19 @@ export default function SectionTypes(props) {
                   {/* added height for the description while on home to ensure all the text can be read*/}
                 </div>
                 <Link href={file.href}>
-                <p
-                  className={classNames(
-                    props.type === 'home' ? 'h-[18rem]' : '',
-                    ' p-base block text-black pointer-events-none py-4 w-full',
-                  )}
-                >
-                  {file.description}
-
-                </p>
+                  <p
+                    className={classNames(
+                      props.type === 'home' ? 'h-[18rem]' : '',
+                      ' p-base block text-black pointer-events-none py-4 w-full',
+                    )}
+                  >
+                    {file.description}
+                  </p>
                 </Link>
                 {file.tag && (
                   <div className='md:my-8 mt-8 mb-16 h-16 block'>
                     <span className='p-2 rounded-md bg-green-800'>{file.tag}</span>
                   </div>
-
                 )}
               </div>
               {/* wrapped button in div to seperate it from description */}

@@ -10,7 +10,8 @@ import JITooltip from '../components/juridische-invloed-tooltip';
 
 const viewportType = {
   mobile: 'block sm:hidden bg-black-white-200 h-[26rem] pb-12 my-4 bg-black-white-200',
-  desktop: 'hidden sm:block float-right px-8 ml-6  bg-black-white-200 h-[26rem] sticky top-40 mb-20 bg-black-white-200',
+  desktop:
+    'hidden sm:block float-right px-8 ml-6 bg-black-white-200 h-[26rem] sticky top-40 mb-20 bg-black-white-200',
 };
 {
   /* still need to implement the design when design is finished - mainly fonts + colors */

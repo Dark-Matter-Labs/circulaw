@@ -45,8 +45,6 @@ export default function ThemeBottomSection({ props }) {
                       </div>
                       <div className='lg:pl-4 flex flex-wrap'>
                         <div className='block pt-4 sm:hidden'>
-                         
-                         
                           <div className='flex justify-left'>
                             {measure?.extraContent?.includes('Leidraad') && (
                               <h6
@@ -62,12 +60,10 @@ export default function ThemeBottomSection({ props }) {
                               </h6>
                             )}
                           </div>
-
-
                         </div>
                         <div>
-                        <h3 className='pt-4 sm:pt-0 mobile sm:desktop'>{measure?.titel}</h3>
-                        <p className=' p-base py-4 max-w-2xl'>{measure?.introText}</p>
+                          <h3 className='pt-4 sm:pt-0 mobile sm:desktop'>{measure?.titel}</h3>
+                          <p className=' p-base py-4 max-w-2xl'>{measure?.introText}</p>
                         </div>
                         <div className='flex sm:justify-between w-full sm:pt-14'>
                           <div className='hidden sm:block'>
