@@ -91,7 +91,7 @@ export default function Index() {
               <div>
                 <h2 className='mobile sm:desktop'>Wie maken CircuLaw?</h2>
                 <p className=' p-lg py-5 max-w-4xl'>
-                  Gemeente Amsterdam, Dark Matter Laboratories, EIT Climate KIC, de Provincies
+                  Gemeente Amsterdam, Dark Matter Laboratories, EIT Climate-KIC, de Provincies
                   Noord-Holland en Flevoland, Rijksdienst voor Ondernemend Nederland (RVO), het MRA
                   (Metropoolregio Amsterdam) Kernteam Houtbouw, Belastingdienst, TU Delft, Erasmus
                   School of LAW, de VU, Wageningen Universiteit (WUR Law group), Stichting
