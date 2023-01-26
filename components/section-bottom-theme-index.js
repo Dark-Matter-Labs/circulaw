@@ -27,12 +27,15 @@ export default function ThemeBottomSection({ props }) {
           <div className='global-margin'>
             <div className='sm:pt-5'>
               {laws?.map((measure) => (
+
                 <div
                   key={measure?._id}
                   className={`border-black-white-600 ${
                     measure === laws?.[2] ? 'border-b border-transparent' : 'border-b'
                   }`}
                 >
+                          <Link href={`/measures/${measure?.slug.current}`}>
+
                   <div className='grid grid-cols-1 lg:grid-cols-2 py-10 gap-x-8 gap-y-4 '>
                     <div className=''>
                       <Image
@@ -78,15 +81,16 @@ export default function ThemeBottomSection({ props }) {
                           </div>
                         </div>
                         <div>
-                          <Link href={`/measures/${measure?.slug.current}`}>
                             <span className='text-green-500  link-lg'>
                               Bekijk het instrument{'>'}
                             </span>
-                          </Link>
                         </div>
                       </div>
                     </div>
                   </div>
+
+                  </Link>
+
                 </div>
               ))}
             </div>
