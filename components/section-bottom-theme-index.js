@@ -27,49 +27,30 @@ export default function ThemeBottomSection({ props }) {
           <div className='global-margin'>
             <div className='sm:pt-5'>
               {laws?.map((measure) => (
-
                 <div
                   key={measure?._id}
                   className={`border-black-white-600 ${
                     measure === laws?.[2] ? 'border-b border-transparent' : 'border-b'
                   }`}
                 >
-                          <Link href={`/measures/${measure?.slug.current}`}>
-
-                  <div className='grid grid-cols-1 lg:grid-cols-2 py-10 gap-x-8 gap-y-4 '>
-                    <div className=''>
-                      <Image
-                        src={urlFor(measure?.featuredImage).url()}
-                        alt={measure?.featuredImage?.altText}
-                        width={556}
-                        height={278}
-                      />
-                    </div>
-                    <div className='lg:pl-4'>
-                      <div className='block pt-4 sm:hidden'>
-                        <div className='flex justify-left'>
-                          {measure?.extraContent?.includes('Leidraad') && (
-                            <h6
-                              className='border-green-600 bg-green-600 text-white inline py-0.5 px-2 mr-4
-                           rounded-md'
-                            >
-                              Leidraad
-                            </h6>
-                          )}
-                          {measure?.extraContent?.includes('Voorbeeld') && (
-                            <h6 className='border-green-500 bg-green-500 text-white inline p-0.5 px-2 rounded-md'>
-                              Voorbeeld
-                            </h6>
-                          )}
-                        </div>
+                  <Link href={`/measures/${measure?.slug.current}`}>
+                    <div className='grid grid-cols-1 lg:grid-cols-2 py-10 gap-x-8 gap-y-4 '>
+                      <div className=''>
+                        <Image
+                          src={urlFor(measure?.featuredImage).url()}
+                          alt={measure?.featuredImage?.altText}
+                          width={556}
+                          height={278}
+                        />
                       </div>
-                      <h3 className='pt-4 sm:pt-0 mobile sm:desktop'>{measure?.titel}</h3>
-                      <p className=' p-base py-4 max-w-2xl'>{measure?.introText}</p>
-                      <div className='flex sm:justify-between sm:pt-10'>
-                        <div className='hidden sm:block'>
-                          <div className='flex justify-between'>
+                      <div className='lg:pl-4'>
+                        <div className='block pt-4 sm:hidden'>
+                          <div className='flex justify-left'>
                             {measure?.extraContent?.includes('Leidraad') && (
-                              <h6 className='border-green-600 bg-green-600 text-white inline py-0.5 px-2 rounded-md mr-4'>
+                              <h6
+                                className='border-green-600 bg-green-600 text-white inline py-0.5 px-2 mr-4
+                           rounded-md'
+                              >
                                 Leidraad
                               </h6>
                             )}
@@ -80,17 +61,32 @@ export default function ThemeBottomSection({ props }) {
                             )}
                           </div>
                         </div>
-                        <div>
+                        <h3 className='pt-4 sm:pt-0 mobile sm:desktop'>{measure?.titel}</h3>
+                        <p className=' p-base py-4 max-w-2xl'>{measure?.introText}</p>
+                        <div className='flex sm:justify-between sm:pt-10'>
+                          <div className='hidden sm:block'>
+                            <div className='flex justify-between'>
+                              {measure?.extraContent?.includes('Leidraad') && (
+                                <h6 className='border-green-600 bg-green-600 text-white inline py-0.5 px-2 rounded-md mr-4'>
+                                  Leidraad
+                                </h6>
+                              )}
+                              {measure?.extraContent?.includes('Voorbeeld') && (
+                                <h6 className='border-green-500 bg-green-500 text-white inline p-0.5 px-2 rounded-md'>
+                                  Voorbeeld
+                                </h6>
+                              )}
+                            </div>
+                          </div>
+                          <div>
                             <span className='text-green-500  link-lg'>
                               Bekijk het instrument{'>'}
                             </span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-
                   </Link>
-
                 </div>
               ))}
             </div>
