@@ -1,9 +1,11 @@
-import Layout from '../../components/layouts/layout';
-import client from '../../lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
-import LinkIcon from '../../components/link-icon';
 import { PortableText } from '@portabletext/react';
+import { ArrowLeftIcon } from '@heroicons/react/outline';
+
+import Layout from '../../components/layouts/layout';
+import client from '../../lib/sanity';
+import LinkIcon from '../../components/link-icon';
 import MeasureOverview from '../../components/measure-overview';
 import MeasureTable from '../../components/measure-table';
 import CustomButton from '../../components/custom-button';
@@ -181,13 +183,17 @@ export default function Measure({ data }) {
               )}
               {data?.measure?.thema === 'circulaire-windturbines' && (
                 <Link href='/measures/windturbines' className=''>
-                  <span className='text-green-500 breadcrumb flex col-span-12'>← Terug</span>{' '}
+                  <span className='text-green-500 breadcrumb flex col-span-12'>
+                    <ArrowLeftIcon className='inline-block h-4 w-4' aria-hidden='true' /> Terug
+                  </span>{' '}
                   {/* should all breadcrumbs be green this is black in figma */}
                 </Link>
               )}
               {data?.measure?.thema === 'matrassen' && (
                 <Link href='/measures/matrassen' className=''>
-                  <span className='text-green-500 breadcrumb flex col-span-12'>← Terug</span>{' '}
+                  <span className='text-green-500 breadcrumb flex col-span-12'>
+                    <ArrowLeftIcon className='inline-block h-4 w-4' aria-hidden='true' /> Terug
+                  </span>{' '}
                   {/* should all breadcrumbs be green this is black in figma */}
                 </Link>
               )}

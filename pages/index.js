@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Layout from '/components/layouts/layout';
+import { ArrowRightIcon } from '@heroicons/react/outline';
 import SectionTypes from '/components/section-types-list';
 import waaromImage from '../public/waarom.png';
 import watImage from '../public/wat.png';
@@ -50,7 +51,7 @@ export default function Index() {
                   uit te breiden willen we uiteindelijk ook strategen, toezichthouders, juristen en
                   circulaire ondernemers bedienen.
                 </p>
-                <span className='text-green-500  link-lg'>Meer lezen →</span>
+                <span className='text-green-500  link-lg'>Meer lezen <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' /></span>
               </div>
             </div>
           </Link>
@@ -72,7 +73,7 @@ export default function Index() {
                   </li>
                 </ul>
                 <span className='text-green-500  link-lg'>
-                  Meer lezen over de volgende stappen →
+                  Meer lezen over de volgende stappen <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                 </span>
               </div>
             </div>
@@ -91,7 +92,7 @@ export default function Index() {
                   School of LAW, de VU, Wageningen Universiteit (WUR Law group), Stichting
                   Koninklijk Nederlands Normalisatie Instituut (NEN).
                 </p>
-                <span className='text-green-500 link-lg'>Meer over de makers van CircuLaw →</span>
+                <span className='text-green-500 link-lg'>Meer over de makers van CircuLaw <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' /></span>
               </div>
             </div>
           </Link>
