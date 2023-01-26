@@ -40,7 +40,7 @@ export default function Houtbouw({ laws }) {
         cardLinkSamenhang='/houtbouw/samenhang-aantal-houtbouwmaatregelen'
         cardLinkWaarvoor='/houtbouw/welke-overheid'
         extendedMeasureHeading='instrumenten om houtbouw te bevorderen' // starts fron after the number
-        extendedMeasureSubtitle='Met voorbeelden en een handige leidraad.'
+        extendedMeasureSubtitle='Met voorbeelden en handige leidraden.'
       />
     </Layout>
   );
