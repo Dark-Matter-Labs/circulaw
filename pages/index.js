@@ -88,7 +88,7 @@ export default function Index() {
                   Gemeente Amsterdam, Dark Matter Laboratories, EIT Climate KIC, de Provincies
                   Noord-Holland en Flevoland, Rijksdienst voor Ondernemend Nederland (RVO), het MRA
                   (Metropoolregio Amsterdam) Kernteam Houtbouw, Belastingdienst, TU Delft, Erasmus
-                  School of LAW, de VU, Wageningen Universiteit ( WUR Law group), Stichting
+                  School of LAW, de VU, Wageningen Universiteit (WUR Law group), Stichting
                   Koninklijk Nederlands Normalisatie Instituut (NEN).
                 </p>
                 <span className='text-green-500 link-lg'>Meer over de makers van CircuLaw →</span>
