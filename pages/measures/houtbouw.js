@@ -1,6 +1,7 @@
 import Layout from '/components/layouts/layout';
-import IconWood from '../../public/icons/houtbouwIconBg.svg';
 import MeasuresLayout from '../../components/layouts/measures-layout';
+import IconWood from '../../public/icons/woodIcon.svg';
+
 import client from '../../lib/sanity';
 
 const lawsQuery = `

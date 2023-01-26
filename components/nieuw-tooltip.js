@@ -1,18 +1,28 @@
 import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
+import Link from 'next/link';
 
 export default function NieuwToolTip() {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <button className='border-green-500 bg-green-500 hover:bg-transparent text-black-white-200 hover:text-green-600 transition ease-in-out hover:duration-150 focus:outline-none inline-flex rounded-full items-center px-4 py-1 border button'>
-        <h5 className='uppercase text-black-white-200 group rounded-md inline-flex items-center mobile sm:desktop'>
+      <button
+        type='button'
+        className='rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white'
+        onClick={() => setOpen(true)}
+      >
+        <span className='sr-only'>Open ToolTip</span>
+        <span
+          type='button'
+          className={
+            'inline-flex rounded-full items-center px-4 py-1 shadow border button border-green-600 bg-green-500 hover:bg-transparent text-black-white-200 hover:text-green-600 transition ease-in-out hover:duration-150 focus:outline-none'
+          }
+        >
           NIEUW
-        </h5>
+        </span>
       </button>
-
       <Transition.Root show={open} as={Fragment}>
         <Dialog as='div' className='relative z-50' onClose={setOpen}>
           <Transition.Child
@@ -49,7 +59,7 @@ export default function NieuwToolTip() {
                       leaveFrom='opacity-100'
                       leaveTo='opacity-0'
                     >
-                      <div className='absolute float-right top-0 right-0 flex pt-4 pr-2 sm:-ml-10'>
+                      <div className='absolute float-right top-0 right-0 flex pt-4 pr-8 sm:-ml-10'>
                         <button
                           type='button'
                           className='rounded-md text-green-600'
@@ -60,20 +70,23 @@ export default function NieuwToolTip() {
                         </button>
                       </div>
                     </Transition.Child>
-                    <div className='flex h-full flex-col bg-white py-6 shadow-xl'>
+                    <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
                       <div className='px-4 sm:px-6'>
                         <Dialog.Title className='text-gray-900'>
                           {' '}
-                          <h4 className='mobile sm:desktop'>Nieuw in CircuLaw</h4>
+                          <h2 className='mobile sm:desktop'>Nieuw in CircuLaw</h2>
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>
                         <div className='absolute inset-0 px-4 sm:px-6'>
-                          <p className='tooltip-body'>
-                            We hebben nu ook juridische instrumenten geïdentificeerd om de
-                            circulariteit van de matrasketen te bevorderen
+                          <p className='tooltip-body pb-6'>
+                            We hebben nu ook{' '}
+                            <Link className='link-base' href='/matrassen'>
+                              juridische instrumenten geïdentificeerd om de circulariteit van de
+                              matrasketen te bevorderen
+                            </Link>
                           </p>
-                          <p className='tooltip-body'>
+                          <p className='tooltip-body pb-6'>
                             CircuLaw volgt voor de analyse van wet-en regelgeving en het
                             identificeren van juridische instrumenten een standaard werkwijze: deze
                             CircuLaw-methodiek voor wetsanalyse is nu ook voor iedereen beschikbaar.

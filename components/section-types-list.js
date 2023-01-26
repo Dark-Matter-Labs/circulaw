@@ -96,21 +96,25 @@ export default function SectionTypes(props) {
         className='grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 sm:gap-x-10 max-w-8xl'
       >
         {type.map((file) => (
-          <li key={file.id} className='relative shadow bg-white w-full'>
-            <div className='object-cover'>
+          <li key={file.id} className='relative drop-shadow-sm bg-white w-full'>
+            <div className='object-cover rounded-[10px]'>
               {file.href !== '' ? (
                 <Link href={file.href}>
-                  <Image src={file.heroImage} alt='Picture of the case' />
+                  <Image
+                    className='rounded-t-[10px]'
+                    src={file.heroImage}
+                    alt='Picture of the case'
+                  />
                 </Link>
               ) : (
-                <Image src={file.heroImage} alt='Picture of the case' />
+                <Image className='rounded-t-[10px]' src={file.heroImage} alt='Picture of the case' />
               )}
             </div>
 
-            <div className='group block w-full p-4 bg-white px-10'>
+            <div className='group block w-full p-4 bg-white px-10 '>
               <div>
                 <div
-                  className={classNames(props.type === 'houtbouw' ? 'h-20' : '', 'inline-block')}
+                  className={classNames(props.type === 'houtbouw' ? 'h-20' : '', 'inline-block ')}
                 >
                   {file.href !== '' ? (
                     <Link href={file.href}>
@@ -135,7 +139,7 @@ export default function SectionTypes(props) {
                 </p>
                 {file.tag && (
                   <div className='md:my-8 mt-8 mb-16 h-16 block'>
-                    <span className='p-2 rounded-md bg-green-800'>{file.tag}!!!</span>
+                    <span className='p-2 rounded-md bg-green-800'>{file.tag}</span>
                   </div>
                 )}
               </div>

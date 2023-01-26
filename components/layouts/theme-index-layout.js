@@ -57,7 +57,8 @@ export default function ThemeLayout({ bgHero, ...props }) {
               )}
             </p>
           </div>
-          <div className='h-56 w-full thema-hero-gradient rounded-md'>
+
+          <div className='h-56 max-w-[380px] mx-auto flex items-center justify-center'>
             <div className='h-full w-full rounded-md relative'>
               <Image src={props.heroImage} alt='hero image' fill className='rounded-md absolute' />
             </div>
@@ -67,9 +68,7 @@ export default function ThemeLayout({ bgHero, ...props }) {
         <div className=''>
           <div className='global-margin'>
             <div className='pt-10 sm:pt-20 sm:pb-10'>
-              <h2 className='mobile sm:desktop'>
-                Overzichten van instrumenten die {props.thema} stimuleren{' '}
-              </h2>
+              <h2 className='mobile sm:desktop'>{props.cardTitle}</h2>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-14 justify-items-center sm:h-auto md:h-[76rem] lg:h-[38rem]'>
               <ThemeCard props={props} type='list' />

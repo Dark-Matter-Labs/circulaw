@@ -68,7 +68,6 @@ const components = {
           </svg>
           <div className='inline-block z-90 max-w-xs absolute invisible group-hover:visible z-10 py-3 px-6 bg-black-white-300 text-black-white-800 popup-base opacity-0 group-hover:opacity-100 transition tooltip'>
             {value.hoverText}
-            {console.log(value.hoverText)}
           </div>
         </button>
       </>

@@ -40,7 +40,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
           <div className=''>
             <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()} passHref>
               <h2 className='mobile sm:desktop pl-2 text-green-500 uppercase block underline'>
-                {data?.measure?.thema}
+                {data?.measure?.thema.replace('-', ' ')}
               </h2>
             </Link>
           </div>

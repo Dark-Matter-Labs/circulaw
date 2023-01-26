@@ -22,12 +22,6 @@ const waardeketens = [
   
   const over = [
     {
-      name: 'Waarom CircuLaw?',
-      description: 'description',
-      href: '/waarom-circulaw',
-      className: '',
-    },
-    {
       name: 'Wat is CircuLaw?',
       description: 'description',
       href: '/wat-is-circulaw',

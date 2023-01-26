@@ -2,8 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import useSWR from 'swr';
 import { useEffect, useState } from 'react';
-import client from '../lib/sanity';
 import { groq } from 'next-sanity';
+import client from '../lib/sanity';
+import NieuwTooltip from '../components/nieuw-tooltip';
 
 import ActionPanel from '../components/section-action-panel';
 import logo1 from '../public/logo_partners/CircuLawPartners-01.png';
@@ -24,7 +25,7 @@ import logo15 from '../public/logo_partners/CircuLawPartners-14.png';
 
 const navigation = {
   WAARDEKETENS: [
-    { name: 'Houtbouw', href: '/houtbouw', className: 'text-black-white-200' },
+    { name: 'Houtbouw stimuleren', href: '/houtbouw', className: 'text-black-white-200' },
     {
       name: 'Circulaire windturbines',
       href: '/circulaire-windturbines',
@@ -39,10 +40,11 @@ const navigation = {
 
   // FAQ href is linked to CMS.
   other: [
-    { name: 'Veel gestelde vragen', href: '/about/vraag-%26-antwoord', className: '' },
+    { name: 'Vraag en antwoord', href: '/about/vraag-%26-antwoord', className: '' },
     { name: 'Contact', href: '/contact', className: '' },
     { name: 'Disclaimer/Beta', href: '/beta', className: '' },
     { name: 'Privacy', href: '/privacy-policy', className: '' },
+    { name: 'Cookies', href: '/cookie-info', className: '' },
   ],
 };
 
@@ -60,13 +62,19 @@ export default function Footer() {
       <div className='bg-green-600'>
         <div className='global-margin pt-12 lg:pt-16 lg:px-8'>
           <div className='pb-20'>
-            <div className='grid grid-cols-1 gap-8 sm:col-span-3'>
-              <div className='sm:grid sm:grid-cols-4 md:gap-8'>
-                <div className=''>
-                  <h3 className='text-green-300 mobile sm:desktop uppercase pb-4 sm:pb-0 '>
-                    THEMA’S
-                  </h3>
-                  <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
+            <div className=''>
+              <div className='grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-8'>
+                <div className='sm:hidden block border-b border-black-white-200 pb-4'>
+                  <ActionPanel
+                    title='Doe met ons mee'
+                    paragraph='Heb je vragen, wil je je ervaringen delen of wil je een wetsanalyse laten uitvoeren op een circulair  thema of casus?'
+                    buttonText='Neem contact op'
+                    buttonLink='/contact'
+                  />
+                </div>
+                <div className=' border-b border-black-white-200 sm:border-0 py-2 sm:py-0'>
+                  <h4 className='text-green-300 mobile sm:desktop uppercase'>THEMA’S</h4>
+                  <div className='grid grid-cols-1 gap-8 py-2 sm:py-0'>
                     <ul role='list' className='mt-4 space-y-4'>
                       {navigation.WAARDEKETENS.map((item) => (
                         <li key={item.name}>
@@ -81,10 +89,8 @@ export default function Footer() {
                     </ul>
                   </div>
                 </div>
-                <div className=''>
-                  <h3 className='text-green-300 mobile sm:desktop uppercase pb-4 sm:pb-0'>
-                    OVER CIRCULAW
-                  </h3>
+                <div className=' border-b border-black-white-200 sm:border-0 py-2 sm:py-0'>
+                  <h4 className='text-green-300 mobile sm:desktop uppercase'>OVER CIRCULAW</h4>
                   <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                     <ul role='list' className='mt-4 space-y-4'>
                       {aboutSlugs?.map((slug) => (
@@ -102,7 +108,8 @@ export default function Footer() {
                     </ul>
                   </div>
                 </div>
-                <div className='mt-5'>
+                <div className='py-2 sm:py-0'>
+                  <NieuwTooltip />
                   <ul role='list' className='mt-4 space-y-4'>
                     {navigation.other.map((item) => (
                       <li key={item.name}>
@@ -116,7 +123,7 @@ export default function Footer() {
                     ))}
                   </ul>
                 </div>
-                <div>
+                <div className='hidden sm:block'>
                   <ActionPanel
                     title='Doe met ons mee'
                     paragraph='Heb je vragen, wil je je ervaringen delen of wil je een wetsanalyse laten uitvoeren op een circulair  thema of casus?'

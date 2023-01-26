@@ -1,12 +1,27 @@
 import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/outline';
+import Link from 'next/link';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function MeasureLinks() {
+const links = {
+  houtbouw: [
+    '/houtbouw/samenhang-aantal-houtbouwmaatregelen',
+    '/measures/houtbouw',
+    '/houtbouw/welke-overheid',
+  ],
+  circulaireWindturbines: [
+    '/circulaire-windturbines/samenhang-maatregelen',
+    '/measures/windturbines',
+    '/circulaire-windturbines/welke-overheid-heeft',
+  ],
+  matrassen: ['#', '/measures/matrassen', '#'],
+};
+
+export default function MeasureLinks({ type }) {
   return (
     <Menu as='div' className='relative inline-block text-left pt-8'>
       <div>
@@ -27,45 +42,95 @@ export default function MeasureLinks() {
       >
         <Menu.Items className='absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
           <div className='py-1'>
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href='#'
-                  className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm',
-                  )}
-                >
-                  In samenhang
-                </a>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href='#'
-                  className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm',
-                  )}
-                >
-                  In lijst met filters
-                </a>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href='#'
-                  className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm',
-                  )}
-                >
-                  Per overheidsbevoegdheid
-                </a>
-              )}
-            </Menu.Item>
+            {type === 'circulaire-windturbines' ? (
+              <Menu.Item>
+                {({ active }) => (
+                  <Link
+                    href={links['circulaireWindturbines'][0]}
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm',
+                    )}
+                  >
+                    In samenhang
+                  </Link>
+                )}
+              </Menu.Item>
+            ) : (
+              <Menu.Item>
+                {({ active }) => (
+                  <Link
+                    href={links[type][0]}
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm',
+                    )}
+                  >
+                    In samenhang
+                  </Link>
+                )}
+              </Menu.Item>
+            )}
+
+            {type === 'circulaire-windturbines' ? (
+              <Menu.Item>
+                {({ active }) => (
+                  <Link
+                    href={links['circulaireWindturbines'][1]}
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm',
+                    )}
+                  >
+                    In lijst met filters
+                  </Link>
+                )}
+              </Menu.Item>
+            ) : (
+              <Menu.Item>
+                {({ active }) => (
+                  <Link
+                    href={links[type][1]}
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm',
+                    )}
+                  >
+                    In lijst met filters
+                  </Link>
+                )}
+              </Menu.Item>
+            )}
+
+            {type === 'circulaire-windturbines' ? (
+              <Menu.Item>
+                {({ active }) => (
+                  <Link
+                    href={links['circulaireWindturbines'][2]}
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm',
+                    )}
+                  >
+                    Per overheidsbevoegdheid
+                  </Link>
+                )}
+              </Menu.Item>
+            ) : (
+              <Menu.Item>
+                {({ active }) => (
+                  <Link
+                    href={links[type][2]}
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm',
+                    )}
+                  >
+                    Per overheidsbevoegdheid
+                  </Link>
+                )}
+              </Menu.Item>
+            )}
           </div>
         </Menu.Items>
       </Transition>

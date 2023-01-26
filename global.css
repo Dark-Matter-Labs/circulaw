@@ -193,3 +193,7 @@ html {
   border-color: #22532c !important;
 }
 
+[type='checkbox']:not(:checked)  {
+  border-color: #DAD8D8 !important;
+  background-color: #F8FBF8 !important;
+}

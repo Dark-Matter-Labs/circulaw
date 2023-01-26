@@ -15,7 +15,7 @@ export default {
       options: {
         source: 'pageTitle',
         inUnique: 'true',
-        slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
+        slugify: (input) => input.replace(/\s+/g, '-').slice(0, 200),
       },
     },
     {

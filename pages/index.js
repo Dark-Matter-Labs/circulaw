@@ -57,28 +57,6 @@ export default function Index() {
 
           <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10 gap-x-8 gap-y-4'>
             <div>
-              <Image src={waaromImage} width={556} alt='image for wararom circulaw' />
-            </div>
-            <div>
-              <h2 className='mobile sm:desktop'>Waarom CircuLaw?</h2>
-              <p className=' p-lg py-5 max-w-4xl'>
-                Voor het tegengaan van klimaatverandering, het verminderen van vervuiling, het
-                behoud van biodiversiteit en de beschikbaarheid van grondstoffen is een circulaire
-                economie essentieel. In Nederland hebben we hierin nog een lange weg te gaan. De
-                wet-en regelgeving die hierbij kan helpen is complex, ontoegankelijk, moeilijk
-                vindbaar, onbekend. Gevolg: er worden oplossingen gezocht die vaak te vrijblijvend
-                zijn. CircuLaw laat daarom zien waar en hoe regelgeving mogelijkheden biedt om
-                circulaire doelen te halen en zo bij te dragen aan een versnelling van de circulaire
-                transitie.
-              </p>
-              <span className='text-green-500  link-lg'>
-                <Link href={`/about/${encodeURIComponent(aboutSlugs?.[1])}`}>Meer lezen →</Link>
-              </span>
-            </div>
-          </div>
-
-          <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10 gap-x-8 gap-y-4'>
-            <div>
               <Image src={hoeverImage} width={556} alt='image for hoever' />
             </div>
             <div>
@@ -115,7 +93,7 @@ export default function Index() {
                 School of LAW, de VU, Wageningen Universiteit ( WUR Law group), Stichting Koninklijk
                 Nederlands Normalisatie Instituut (NEN).
               </p>
-              <span className='text-green-500  link-lg'>
+              <span className='text-green-500 link-lg'>
                 <Link href={`/about/${encodeURIComponent(aboutSlugs?.[3])}`}>
                   Meer over de makers van CircuLaw →
                 </Link>

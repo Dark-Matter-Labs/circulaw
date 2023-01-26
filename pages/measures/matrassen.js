@@ -14,7 +14,7 @@ export default function Measures({ laws }) {
         totalNumberOfLaws={laws.length}
         thema='matrassen'
         heading='Instrumenten om de circulariteit van de matrasketen te bevorderen'
-        introPara='We hebben x kansrijke instrumenten gevonden die je kunt inzetten als het gaat om matrassen. Met sommige van deze instrumenten is al praktijkervaring opgedaan, met andere nog niet. Ga aan de slag! Met jouw ervaringen help je anderen weer verder.'
+        introPara={`We hebben ${laws.length} kansrijke instrumenten gevonden die je kunt inzetten als het gaat om matrassen. Met sommige van deze instrumenten is al praktijkervaring opgedaan, met andere nog niet. Ga aan de slag! Met jouw ervaringen help je anderen weer verder.`}
         icon={MatrassenIcon} // need to create a new icon for matress case
         searchTitle='Zoek in circulaire matrasketen'
       />
