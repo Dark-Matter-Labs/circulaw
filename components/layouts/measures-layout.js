@@ -673,7 +673,7 @@ export default function MeasuresLayout(props) {
         </div>
         <div className=' mb-2 sm:mb-20 mt-10 col-span-3'>
           <div className='container pb-2'>
-            <Image src={props.icon} alt={`${props.thema} 'icon'`} />
+            <Image src={props.icon} alt={`${props.thema} 'icon'`} width={100} height={100} />
             {props.thema === 'circulaire-windturbines' && (
               <h1 className='max-w-0 leading-6 pb-1 pl-4 mobile sm:desktop lowercase first-letter:uppercase'>
                 Circulaire windturbines stimuleren
