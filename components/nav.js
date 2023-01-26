@@ -268,7 +268,7 @@ export default function Nav() {
                 </Disclosure.Button>
                 <hr className='my-4 mx-2 border-green-600' />
                 <Disclosure.Button
-                  as='spam'
+                  as='span'
                   className='uppercase text-black-white-800 block pl-3 pr-4 py-4'
                 >
                   <Link href='/contact'>Contact</Link>
