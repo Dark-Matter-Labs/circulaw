@@ -17,7 +17,6 @@ import BetaBannerGen from './beta-banner-gen';
 import client from '../lib/sanity';
 import NieuwTooltip from '../components/nieuw-tooltip';
 
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
@@ -138,7 +137,6 @@ export default function Nav() {
                                   </>
                                 )}
                               </Popover>
-                              {/* TESST NAV */}
                               <Popover className='inline-block relative '>
                                 {({ open }) => (
                                   <>
@@ -226,25 +224,22 @@ export default function Nav() {
                   Thema&apos;s
                 </Disclosure.Button>
                 <Disclosure.Button
-                  as='a'
-                  href='/houtbouw'
+                  as='span'
                   className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
                 >
-                  Houtbouw stimuleren
+                  <Link href='/houtbouw'>Houtbouw stimuleren</Link>
                 </Disclosure.Button>
                 <Disclosure.Button
-                  as='a'
-                  href='/circulaire-windturbines'
+                  as='span'
                   className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
                 >
-                  Circulaire windturbines
+                  <Link href='/circulaire-windturbines'>Circulaire windturbines</Link>
                 </Disclosure.Button>
                 <Disclosure.Button
-                  as='a'
-                  href='/matrassen'
+                  as='span'
                   className='table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
                 >
-                  Circulaire matrasketen
+                  <Link href='/matrassen'>Circulaire matrasketen</Link>
                 </Disclosure.Button>
                 <hr className='my-4 mx-2 border-green-600' />
                 <Disclosure.Button
@@ -253,9 +248,9 @@ export default function Nav() {
                 >
                   Over CircuLaw
                 </Disclosure.Button>
-
                 {aboutSlugs?.map((slug) => (
                   <Disclosure.Button
+                    as='span'
                     key={slug}
                     className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4 first-letter:uppercase'
                   >
@@ -266,19 +261,17 @@ export default function Nav() {
                 ))}
                 <hr className='my-4 mx-2 border-green-600' />
                 <Disclosure.Button
-                  as='a'
-                  href={`/about/${encodeURIComponent(FAQslug)}`}
+                  as='span'
                   className='uppercase text-black-white-800  block pl-3 pr-2 py-4'
                 >
-                  Vraag en Antwoord
+                  <Link href={`/about/${encodeURIComponent(FAQslug)}`}>Vraag en Antwoord</Link>
                 </Disclosure.Button>
                 <hr className='my-4 mx-2 border-green-600' />
                 <Disclosure.Button
-                  as='a'
-                  href='/contact'
+                  as='spam'
                   className='uppercase text-black-white-800 block pl-3 pr-4 py-4'
                 >
-                  Contact
+                  <Link href='/contact'>Contact</Link>
                 </Disclosure.Button>
                 <hr className='my-4 mx-2 border-green-600' />
                 <div className='block pl-3 pr-4 py-4'>
@@ -477,25 +470,22 @@ export default function Nav() {
                     Thema&apos;s
                   </Disclosure.Button>
                   <Disclosure.Button
-                    as='a'
-                    href='/houtbouw'
+                    as='span'
                     className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
                   >
-                    Houtbouw stimuleren
+                    <Link href='/houtbouw'>Houtbouw stimuleren</Link>
                   </Disclosure.Button>
                   <Disclosure.Button
-                    as='a'
-                    href='/circulaire-windturbines'
+                    as='span'
                     className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
                   >
-                    Circulaire windturbines
+                    <Link href='/circulaire-windturbines'>Circulaire windturbines</Link>
                   </Disclosure.Button>
                   <Disclosure.Button
-                    as='a'
-                    href='/matrassen'
+                    as='span'
                     className='table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
                   >
-                    Circulaire matrasketen
+                    <Link href='/matrassen'>Circulaire matrasketen</Link>
                   </Disclosure.Button>
                   <hr className='my-4 mx-2 border-green-600' />
                   <Disclosure.Button
@@ -504,10 +494,10 @@ export default function Nav() {
                   >
                     Over CircuLaw
                   </Disclosure.Button>
-
                   {aboutSlugs?.map((slug) => (
                     <Disclosure.Button
                       key={slug}
+                      as='span'
                       className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4 first-letter:uppercase'
                     >
                       <Link href={`/about/${encodeURIComponent(slug)}`}>
@@ -517,19 +507,17 @@ export default function Nav() {
                   ))}
                   <hr className='my-4 mx-2 border-green-600' />
                   <Disclosure.Button
-                    as='a'
-                    href={`/about/${encodeURIComponent(FAQslug)}`}
+                    as='span'
                     className='uppercase text-black-white-800  block pl-3 pr-2 py-4'
                   >
-                    Vraag en Antwoord
+                    <Link href={`/about/${encodeURIComponent(FAQslug)}`}>Vraag en Antwoord</Link>
                   </Disclosure.Button>
                   <hr className='my-4 mx-2 border-green-600' />
                   <Disclosure.Button
-                    as='a'
-                    href='/contact'
+                    as='span'
                     className='uppercase text-black-white-800 block pl-3 pr-4 py-4'
                   >
-                    Contact
+                    <Link href='/contact'>Contact</Link>
                   </Disclosure.Button>
                   <hr className='my-4 mx-2 border-green-600' />
                   <div className='block pl-3 pr-4 py-4'>
@@ -560,14 +548,16 @@ export default function Nav() {
               <div className='rounded-md'>
                 <CustomButton color='home'>
                   <ScrollLink to='thema' smooth={true}>
-                    Bekijk de thema&rsquo;s  <ArrowDownIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                    Bekijk de thema&rsquo;s{' '}
+                    <ArrowDownIcon className='inline-block h-4 w-4' aria-hidden='true' />
                   </ScrollLink>
                 </CustomButton>
               </div>
               <div className='mt-3 rounded-md sm:mt-0 sm:ml-3'>
                 <CustomButton color='home'>
                   <ScrollLink to='waarom' smooth={true}>
-                    Meer over CircuLaw?  <ArrowDownIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                    Meer over CircuLaw?{' '}
+                    <ArrowDownIcon className='inline-block h-4 w-4' aria-hidden='true' />
                   </ScrollLink>
                 </CustomButton>
               </div>
