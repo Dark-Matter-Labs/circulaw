@@ -13,7 +13,7 @@ export default function PolicyList(props) {
   return (
     <>
       {lawData.map((law) => (
-        <Link href={'/measures/' + law.slug.current} key={law.slug.current}>
+        <Link href={'/measures/' + law.slug.current} key={law.titel}>
           <div className='block sm:ml-0 pb-8 sm:pb-10'>
             <div className=''>
               <div className='inline-block flex justify-start items-center'>
@@ -41,7 +41,7 @@ export default function PolicyList(props) {
                     if (content === 'Leidraad') {
                       return (
                         <h6
-                          key={content}
+                          key={content + law.titel}
                           className='ml-2 px-2 py-0.5 rounded bg-green-600 text-black-white-200 no-underline'
                         >
                           {content}
@@ -50,7 +50,7 @@ export default function PolicyList(props) {
                     } else {
                       return (
                         <h6
-                          key={content}
+                          key={content + law.titel}
                           className='ml-2 px-2 py-0.5 rounded bg-green-500 text-black-white-200 no-underline'
                         >
                           {content}
@@ -66,11 +66,14 @@ export default function PolicyList(props) {
                 <div className='block pb-1'>
                   {law?.overheidslaag?.map((level) => (
                     <>
-                      <h6 key={level} className='capitalize text-green-500 hidden sm:inline'>
+                      <h6
+                        key={level + law.titel + 'heading6'}
+                        className='capitalize text-green-500 hidden sm:inline'
+                      >
                         {level} {law?.overheidslaag.slice(-1)[0] !== level && <span>- </span>}
                       </h6>
                       <h4
-                        key={level}
+                        key={level + law.titel + 'heading4'}
                         className='capitalize mobile text-green-500 inline sm:hidden block'
                       >
                         {level} {law?.overheidslaag.slice(-1)[0] !== level && <span>- </span>}
@@ -103,7 +106,10 @@ export default function PolicyList(props) {
                     <h6 className='inline'>R-ladder: </h6>
                     <h6 className='block-inline text-black-white-200 inline'>
                       {law.rLadder.map((rValue) => (
-                        <span key={rValue} className='bg-green-500 rounded-full p-1 mr-2'>
+                        <span
+                          key={law.titel + rValue}
+                          className='bg-green-500 rounded-full p-1 mr-2'
+                        >
                           {rValue}{' '}
                         </span>
                       ))}

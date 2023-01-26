@@ -3,7 +3,7 @@ import { Dialog, Transition, Combobox } from '@headlessui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import createPersistedState from 'use-persisted-state';
-import { SearchIcon, XIcon, AdjustmentsIcon } from '@heroicons/react/outline';
+import { SearchIcon, XIcon, AdjustmentsIcon, ArrowRightIcon } from '@heroicons/react/outline';
 import { groq } from 'next-sanity';
 import { toPlainText } from '@portabletext/react';
 import Fuse from 'fuse.js';
@@ -659,14 +659,17 @@ export default function MeasuresLayout(props) {
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20 border-b border-black-white-500 pb-2'>
         <div className='hidden sm:block breadcrumb pt-8 text-black-white-800 uppercase underline'>
           <Link href='/'>Home</Link>
-          <span className=''> → </span>
+          <span className=''>
+            {' '}
+            <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />{' '}
+          </span>
           <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`} passHref>
             <span className='inline-block underline'>{props.thema.replace('-', ' ')}</span>
           </Link>
         </div>
         <div className='col-span-2'></div>
         <div className='hidden sm:block'>
-          <MeasureLinks type={props.thema} />
+          <MeasureLinks type={props.thema} page='list' />
         </div>
         <div className=' mb-2 sm:mb-20 mt-10 col-span-3'>
           <div className='container pb-2'>

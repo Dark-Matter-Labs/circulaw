@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ArrowRightIcon } from '@heroicons/react/outline';
 
 import HoutbouwHero from '../public/houtbouw.png';
 import WindmolensHero from '../public/turbine.png';
@@ -107,7 +108,11 @@ export default function SectionTypes(props) {
                   />
                 </Link>
               ) : (
-                <Image className='rounded-t-[10px]' src={file.heroImage} alt='Picture of the case' />
+                <Image
+                  className='rounded-t-[10px]'
+                  src={file.heroImage}
+                  alt='Picture of the case'
+                />
               )}
             </div>
 
@@ -147,7 +152,10 @@ export default function SectionTypes(props) {
               <div className='group block w-full py-4 bg-white px-10 absolute inset-x-0 bottom-0'>
                 {file.buttonText && (
                   <CustomButton color='whiteBackground'>
-                    <Link href={file.href}>{file.buttonText} →</Link>
+                    <Link href={file.href}>
+                      {file.buttonText}{' '}
+                      <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                    </Link>
                   </CustomButton>
                 )}
               </div>
