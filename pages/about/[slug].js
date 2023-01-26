@@ -22,9 +22,9 @@ const pageQuery = `
 const components = {
   types: {
     greenBox: ({ value }) => (
-      <div className='-mx-8 sm:mx-0 my-10'>
+      <div className='my-10'>
         <div className='bg-green-300 w-full px-8 py-8'>
-          <h1 className='pb-6 mobile sm:desktop'>{value?.greenBoxTitle}</h1>
+          <h2 className='pb-6 mobile sm:desktop'>{value?.greenBoxTitle}</h2>
           <div className=' p-lg'>{value?.greenBoxText}</div>
         </div>
       </div>
@@ -60,7 +60,7 @@ const components = {
       // eslint-disable-next-line
       const [_file, id, extension] = value.asset._ref.split('-');
       return (
-        <div className='-mx-8 sm:mx-0'>
+        <div className=''>
           <div className='bg-green-600 '>
             <div className=' gradient-pdf p-10 my-10 relative overflow-hidden'>
               <div className='absolute -bottom-44 -right-44 h-96 w-96 invisible md:visible'>
@@ -76,7 +76,7 @@ const components = {
                 rel='noreferrer'
               >
                 <CustomButton color='toPdf'>
-                  Bekijk de leidraad &nbsp;
+                  Bekijk de methodiek &nbsp;
                   <Image
                     src='/icons/pdf-icon.svg'
                     width={23}
@@ -94,8 +94,8 @@ const components = {
     smallPara: ({ value }) => (
       <div className='flex justify-left pl-8 sm:pl-12'>
         <div className='mb-10 pt-10 w-5/6'>
-          <h3 className='mobile sm:desktop'>{value.smallParaTitle}</h3>
-          <p className=' p-base'>{value.smallParaText}</p>
+          <h4 className='mobile sm:desktop'>{value.smallParaTitle}</h4>
+          <p className='p-base'>{value.smallParaText}</p>
         </div>
       </div>
     ),
@@ -103,7 +103,7 @@ const components = {
   list: {
     bullet: ({ children }) => (
       <div className='newlineDisplay  p-lg truncate'>
-        <ul className='list-disc pl-6 pb-4 mobile sm:desktop'>{children}</ul>
+        <ul className='list-disc pl-6 mobile sm:desktop'>{children}</ul>
       </div>
     ),
     number: ({ children }) => (
@@ -121,7 +121,7 @@ const components = {
     h2: ({ children }) => <h2 className='py-2 mobile sm:desktop'>{children}</h2>,
     h3: ({ children }) => <h3 className='py-2 mobile sm:desktop'>{children}</h3>,
     // need to add other styles here
-    normal: ({ children }) => <p className='newlineDisplay  p-lg py-2'>{children}</p>,
+    normal: ({ children }) => <p className='newlineDisplay p-lg py-2'>{children}</p>,
   },
   marks: {
     link: ({ children, value }) =>
@@ -143,7 +143,7 @@ const components = {
         </a>
       ),
   },
-};
+};  
 
 export default function AboutPage({ data }) {
   return (
@@ -162,7 +162,7 @@ export default function AboutPage({ data }) {
             </div>
           </div>
           {data?.aboutPage?.pageTitle !== 'VRAAG & ANTWOORD' && (
-            <div className='md:ml-5 lg:mx-5 lg:my-20 max-w-sm col-span-1'>
+            <div className='mt-3 md:ml-5 lg:mx-5 lg:my-20 max-w-sm col-span-1'>
               <OverNav pagename={data?.aboutPage?.slug.current} />
             </div>
           )}

@@ -10,9 +10,13 @@ const components = {
   list: {
     bullet: ({ children }) => (
       <div className='newlineDisplay p-lg truncate'>
-        <ul className='list-disc pl-6 pb-4 mobile sm:desktop'>{children}</ul>
+        <ul className='list-disc pl-6 mobile sm:desktop'>{children}</ul>
       </div>
     ),
+  },
+  listItem: {
+    number: ({ children }) => <li className='py-0.5 p-lg'>{children}</li>,
+    bullet: ({ children }) => <li className='py-0.5 p-lg'>{children}</li>,
   },
   block: {
     // need to add other styles here
