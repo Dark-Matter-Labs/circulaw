@@ -40,7 +40,7 @@ const measureQuery = `
 const components = {
   types: {
     greenBox: ({ value }) => (
-      <div className='-mx-8 sm:mx-0 my-10'>
+      <div className='my-10'>
         <div className='bg-green-300 w-full px-8 py-8'>
           <h2 className='pb-6 mobile sm:desktop'>{value?.greenBoxTitle}</h2>
           <div className=' p-lg'>{value?.greenBoxText}</div> {/* need to change */}
@@ -78,7 +78,7 @@ const components = {
       // eslint-disable-next-line
       const [_file, id, extension] = value.asset._ref.split('-');
       return (
-        <div className='-mx-8 sm:mx-0'>
+        <div className=''>
           <div className='bg-green-600 '>
             <div className='gradient-pdf p-10 my-10 relative overflow-hidden'>
               <div className='absolute -bottom-44 -right-44 h-96 w-96 invisible md:visible'>
@@ -115,7 +115,7 @@ const components = {
       <div className='flex justify-left pl-8 sm:pl-12'>
         <div className='mb-10 pt-10 w-5/6'>
           <h4 className='mobile sm:desktop'>{value.smallParaTitle}</h4>
-          <p className=' p-base'>{value.smallParaText}</p>
+          <p className='p-base'>{value.smallParaText}</p>
         </div>
       </div>
     ),
@@ -123,7 +123,7 @@ const components = {
   list: {
     bullet: ({ children }) => (
       <div className='newlineDisplay p-lg truncate'>
-        <ul className='list-disc pl-6 pb-4 p-lg'>{children}</ul>
+        <ul className='list-disc pl-6 p-lg'>{children}</ul>
       </div>
     ),
     number: ({ children }) => (

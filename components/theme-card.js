@@ -2,10 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import CustomButton from './custom-button';
 
-{
-  /* TO DO - fix bug on middle svg which does not resize */
-}
-
 export default function ThemeCard({ props, type }) {
   return (
     <div className='relative shadow rounded-md overflow-hidden h-auto my-6 md:py-0 md:h-5/6 lg:h-[95%] max-w-[380px] min-h-[550px] '>
@@ -14,45 +10,61 @@ export default function ThemeCard({ props, type }) {
           <div className='gradient-pdf shadow z-5 w-full rounded-t-md h-full flex items-center justify-center'>
             {type === 'list' && (
               <div className='w-5/6 h-5/6 relative'>
-                <Image src='../list.svg' alt='' fill />
+                <Link href={props.cardLinkList}>
+                  <Image src='../list.svg' alt='' fill />
+                </Link>
               </div>
             )}
             {type === 'samenhang' && (
               <div className='w-5/6 h-5/6 relative'>
-                {' '}
-                {/* cannot work out why this image is not resizing */}
-                <Image src='../samenhang.svg' alt='' fill />
+                <Link href={props.cardLinkSamenhang}>
+                  <Image src='../samenhang.svg' alt='' fill />
+                </Link>
               </div>
             )}
             {type === 'waarvoor' && (
               <div className='w-5/6 h-5/6 relative'>
-                <Image src='../waarvoor.svg' alt='' fill />
+                <Link href={props.cardLinkWaarvoor}>
+                  <Image src='../waarvoor.svg' alt='' fill />
+                </Link>
               </div>
             )}
           </div>
         </div>
         {type === 'list' && (
-          <div className='row-span-3 px-10'>
-            <h2 className='mobile sm:desktop pt-6'>{props.listTitle}</h2>
-            <p className='body-new py-6'>{props.listText}</p>
+          <div className='row-span-3'>
+            <Link href={props.cardLinkList} className='w-full h-full'>
+              <div className='row-span-3 px-10'>
+                <h3 className='mobile sm:desktop pt-6'>{props.listTitle}</h3>
+                <p className='body-new py-6'>{props.listText}</p>
+              </div>
+            </Link>
           </div>
         )}
         {type === 'samenhang' && (
-          <div className='row-span-3 px-10'>
-            <h2 className='mobile sm:desktop pt-6'>{props.samenhangTitle}</h2>
-            <p className='body-new py-6'>{props.samenhangText}</p>
+          <div className='row-span-3'>
+            <Link href={props.cardLinkSamenhang} className='w-full h-full'>
+              <div className='row-span-3 px-10'>
+                <h3 className='mobile sm:desktop pt-6'>{props.samenhangTitle}</h3>
+                <p className='body-new py-6'>{props.samenhangText}</p>
+              </div>
+            </Link>
           </div>
         )}
         {type === 'waarvoor' && (
-          <div className='row-span-3 px-10'>
-            <h2 className='mobile sm:desktop pt-6'>{props.waarvoorTitle}</h2>
-            <p className='body-new py-6'>{props.waarvoorText}</p>
+          <div className='row-span-3'>
+            <Link href={props.cardLinkWaarvoor}>
+              <div className='row-span-3 px-10'>
+                <h3 className='mobile sm:desktop pt-6'>{props.waarvoorTitle}</h3>
+                <p className='body-new py-6'>{props.waarvoorText}</p>
+              </div>
+            </Link>
           </div>
         )}
 
         {type === 'list' && (
-          <div className='pb-6 pl-8'>
-            <Link href={props.cardLinkList}>
+          <Link href={props.cardLinkList}>
+            <div className='pb-6 pl-8'>
               <CustomButton color='whiteBackground'>
                 <div>Naar de lijst</div>
                 <span className='pl-2'>
@@ -73,13 +85,13 @@ export default function ThemeCard({ props, type }) {
                   </svg>
                 </span>
               </CustomButton>
-            </Link>
-          </div>
+            </div>
+          </Link>
         )}
 
         {type === 'samenhang' && (
-          <div className='pb-6 pl-8'>
-            <Link href={props.cardLinkSamenhang}>
+          <Link href={props.cardLinkSamenhang}>
+            <div className='pb-6 pl-8'>
               <CustomButton color='whiteBackground'>
                 <div>Bekijk de samenhang</div>
                 <span className='pl-2'>
@@ -100,13 +112,13 @@ export default function ThemeCard({ props, type }) {
                   </svg>
                 </span>
               </CustomButton>
-            </Link>
-          </div>
+            </div>
+          </Link>
         )}
 
         {type === 'waarvoor' && (
-          <div className='pb-6 pl-8'>
-            <Link href={props.cardLinkWaarvoor}>
+          <Link href={props.cardLinkWaarvoor}>
+            <div className='pb-6 pl-8'>
               <CustomButton color='whiteBackground'>
                 <div>Bekijk de bevoegdheden</div>
                 <span className='pl-2'>
@@ -127,8 +139,8 @@ export default function ThemeCard({ props, type }) {
                   </svg>
                 </span>
               </CustomButton>
-            </Link>
-          </div>
+            </div>
+          </Link>
         )}
       </div>
     </div>

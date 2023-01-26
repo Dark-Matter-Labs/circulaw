@@ -79,19 +79,19 @@ export default function NieuwToolTip() {
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>
                         <div className='absolute inset-0 px-4 sm:px-6'>
-                          <p className='tooltip-body pb-6'>
+                          <p className='p-base pb-6'>
                             We hebben nu ook{' '}
                             <Link className='link-base' href='/matrassen'>
                               juridische instrumenten geïdentificeerd om de circulariteit van de
                               matrasketen te bevorderen
                             </Link>
                           </p>
-                          <p className='tooltip-body pb-6'>
+                          <p className='p-base pb-6'>
                             CircuLaw volgt voor de analyse van wet-en regelgeving en het
                             identificeren van juridische instrumenten een standaard werkwijze: deze
                             CircuLaw-methodiek voor wetsanalyse is nu ook voor iedereen beschikbaar.
                           </p>
-                          <p className='tooltip-body'>
+                          <p className='p-base'>
                             In deze versie van de website hebben we techniek, ontwerp en copy
                             verbeterd.
                           </p>

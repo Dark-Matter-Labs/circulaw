@@ -44,7 +44,7 @@ export default function ThemeLayout({ bgHero, ...props }) {
 
         <div className='block global-margin sm:hidden pt-5'>
           <div className='py-3'>
-            <h2 className='mobile pb-3'>{props.title}!</h2>
+            <h2 className='mobile pb-3'>{props.title}</h2>
             <p className=' pb-3'>
               {props.headerSubtitle}
               {props.headerLinkText && (

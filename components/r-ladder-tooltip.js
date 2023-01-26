@@ -92,16 +92,16 @@ export default function ToolTips({ children, icon }) {
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>
                         <div className='absolute inset-0 px-4 sm:px-6'>
-                          <p className='tooltip-body'>
+                          <p className='p-base'>
                             CircuLaw heeft voor elke maatregel een inschatting gemaakt binnen welke
                             circulaire strategie deze past op de zogenaamde R-ladder.
                           </p>
-                          <p className='tooltip-body'>
+                          <p className='p-base'>
                             Deze R-ladder geeft de mate van circulariteit aan: hoe hoger een
                             strategie op de R-ladder staat, hoe efficiënter met materiaal wordt
                             omgegaan.
                           </p>
-                          <p className='tooltip-body'>
+                          <p className='p-base'>
                             De R-ladder heeft 6 treden: R1 is de hoogste, R6 de laagste.
                             <br />
                             Een paar voorbeelden:
