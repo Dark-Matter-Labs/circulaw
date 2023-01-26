@@ -66,9 +66,9 @@ module.exports = {
         '128': '32rem',
       },
       backgroundImage: {
-        'houtbouw-hero' : 'url("/houtbouwHero.jpeg")',
-        'circular-hero' : 'url("/windturbineHero.jpg")',
-        'matrassen-hero' : 'url("/windturbineHero.jpg")'
+        'houtbouw-hero' : 'url("/hero-images/houtbouwHero.png")',
+        'windmill-hero' : 'url("/hero-images/windmillHero.png")',
+        'matrassen-hero' : 'url("/hero-images/matrassenHero.png")'
 
       },
     },

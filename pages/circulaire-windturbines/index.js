@@ -21,7 +21,7 @@ export default function Windturbine({ laws }) {
         headerSubtitle='Door meer windturbines in te zetten en door windturbines te ontwikkelen die zelf circulair zijn,  kunnen we grote stappen zetten om onze samenleving circulairder te maken.'
         // headerLinkText='' // will be displayed in the same sentence as header subtitle
         // headerLinkURL='/'
-        bgHero='bg-circular-hero'
+        bgHero='bg-windmill-hero'
         heroImage='/windturbineHero.jpg'
         // number of laws
         numberOfLaws={laws.length}
