@@ -15,19 +15,31 @@ export default function NotFound() {
           Zoek verder:
           <ul className=''>
             <li className='text-green-500  link-lg'>
-              <Link href='/'>Home <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' /></Link>
+              <Link href='/'>
+                Home <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+              </Link>
             </li>
             <li className='text-green-500  link-lg'>
-              <Link href='/houtbouw'>Houtbouw <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' /></Link>{' '}
+              <Link href='/houtbouw'>
+                Houtbouw <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+              </Link>{' '}
             </li>
             <li className='text-green-500  link-lg'>
-              <Link href='/circulaire-windturbines'>Circulaire windturbines <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' /></Link>{' '}
+              <Link href='/circulaire-windturbines'>
+                Circulaire windturbines{' '}
+                <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+              </Link>{' '}
             </li>
             <li className='text-green-500  link-lg'>
-              <Link href='/wat-is-circulaw'>Wat is CircuLaw? <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' /></Link>{' '}
+              <Link href='/wat-is-circulaw'>
+                Wat is CircuLaw?{' '}
+                <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+              </Link>{' '}
             </li>
             <li className='text-green-500  link-lg'>
-              <Link href='/contact'>Contact <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' /></Link>{' '}
+              <Link href='/contact'>
+                Contact <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+              </Link>{' '}
             </li>
           </ul>
         </p>

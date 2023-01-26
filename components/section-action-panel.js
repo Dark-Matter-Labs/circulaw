@@ -13,7 +13,10 @@ export default function ActionPanel(props) {
           </div>
           <div className='mt-5'>
             <Link href={props.buttonLink}>
-              <CustomButton color='home'>{props.buttonText} <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' /></CustomButton>
+              <CustomButton color='home'>
+                {props.buttonText}{' '}
+                <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+              </CustomButton>
             </Link>
           </div>
         </div>

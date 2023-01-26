@@ -152,7 +152,10 @@ export default function SectionTypes(props) {
               <div className='group block w-full py-4 bg-white px-10 absolute inset-x-0 bottom-0'>
                 {file.buttonText && (
                   <CustomButton color='whiteBackground'>
-                    <Link href={file.href}>{file.buttonText} <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' /></Link>
+                    <Link href={file.href}>
+                      {file.buttonText}{' '}
+                      <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                    </Link>
                   </CustomButton>
                 )}
               </div>

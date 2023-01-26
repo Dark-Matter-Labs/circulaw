@@ -183,13 +183,17 @@ export default function Measure({ data }) {
               )}
               {data?.measure?.thema === 'circulaire-windturbines' && (
                 <Link href='/measures/windturbines' className=''>
-                  <span className='text-green-500 breadcrumb flex col-span-12'><ArrowLeftIcon className='inline-block h-4 w-4' aria-hidden='true' /> Terug</span>{' '}
+                  <span className='text-green-500 breadcrumb flex col-span-12'>
+                    <ArrowLeftIcon className='inline-block h-4 w-4' aria-hidden='true' /> Terug
+                  </span>{' '}
                   {/* should all breadcrumbs be green this is black in figma */}
                 </Link>
               )}
               {data?.measure?.thema === 'matrassen' && (
                 <Link href='/measures/matrassen' className=''>
-                  <span className='text-green-500 breadcrumb flex col-span-12'><ArrowLeftIcon className='inline-block h-4 w-4' aria-hidden='true' /> Terug</span>{' '}
+                  <span className='text-green-500 breadcrumb flex col-span-12'>
+                    <ArrowLeftIcon className='inline-block h-4 w-4' aria-hidden='true' /> Terug
+                  </span>{' '}
                   {/* should all breadcrumbs be green this is black in figma */}
                 </Link>
               )}
