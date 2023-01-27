@@ -19,7 +19,7 @@ export default function ToolTips({ children, icon }) {
         <span className='sr-only'>Open ToolTip</span>
         {icon > 0 && (
           <svg
-            className='text-gray-300 w-5 h-5'
+            className='text-black-white-600 w-5 h-5'
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 20 20'
             fill='currentColor'
@@ -70,10 +70,10 @@ export default function ToolTips({ children, icon }) {
                       leaveFrom='opacity-100'
                       leaveTo='opacity-0'
                     >
-                      <div className='absolute float-right top-0 right-0 flex pt-4 pr-2 sm:-ml-10'>
+                      <div className='absolute float-right top-0 right-0 flex pt-4 pr-8 sm:-ml-10'>
                         <button
                           type='button'
-                          className='rounded-md text-green1'
+                          className='rounded-md text-green-600'
                           onClick={() => setOpen(false)}
                         >
                           <span className='sr-only'>Close panel</span>
@@ -83,23 +83,25 @@ export default function ToolTips({ children, icon }) {
                     </Transition.Child>
                     <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
                       <div className='px-4 sm:px-6'>
-                        <Dialog.Title className='text-lg font-medium text-gray-900'>
+                        <Dialog.Title className='text-gray-900'>
                           {' '}
-                          R-ladder: strategieën van circulariteit
+                          <h2 className='mobile sm:desktop'>
+                            R-ladder: strategieën van circulariteit
+                          </h2>
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>
                         <div className='absolute inset-0 px-4 sm:px-6'>
-                          <p className='tooltip-body'>
+                          <p className='p-base'>
                             CircuLaw heeft voor elke maatregel een inschatting gemaakt binnen welke
                             circulaire strategie deze past op de zogenaamde R-ladder.
                           </p>
-                          <p className='tooltip-body'>
+                          <p className='p-base'>
                             Deze R-ladder geeft de mate van circulariteit aan: hoe hoger een
                             strategie op de R-ladder staat, hoe efficiënter met materiaal wordt
                             omgegaan.
                           </p>
-                          <p className='tooltip-body'>
+                          <p className='p-base'>
                             De R-ladder heeft 6 treden: R1 is de hoogste, R6 de laagste.
                             <br />
                             Een paar voorbeelden:
@@ -118,17 +120,15 @@ export default function ToolTips({ children, icon }) {
                           <div className='py-4'>
                             <Image src={R1} alt='Picture of the author' />
                           </div>
-                          <div className='card-body'>
-                            Bron: PBL (Planbureau voor de Leefomgeving)
-                          </div>
-                          <Link href='https://www.rvo.nl/onderwerpen/duurzaam-ondernemen/circulaire-economie/r-ladder'>
-                            <a
-                              target='_blank'
-                              rel='noopener noreferrer'
-                              className='text-greenLink link-mobile sm:link'
-                            >
+                          <div className=' p-lg '>Bron: PBL (Planbureau voor de Leefomgeving)</div>
+                          <Link
+                            href='https://www.rvo.nl/onderwerpen/duurzaam-ondernemen/circulaire-economie/r-ladder'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                          >
+                            <span className='text-green-500  link-lg'>
                               Meer over de R ladder op de website van RVO
-                            </a>
+                            </span>
                           </Link>
                         </div>
                       </div>

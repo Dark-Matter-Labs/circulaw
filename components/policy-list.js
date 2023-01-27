@@ -1,12 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import IconWood from '../public/icons/wood.svg';
-import WindmillIcon from '../public/windmill.svg';
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
-}
+import IconWood from '../public/icons/houtbuowSm.svg';
+import WindmillIcon from '../public/icons/windmillIconSm.svg';
+import MatrassenIcon from '../public/icons/matressIcon.svg';
 
 export default function PolicyList(props) {
   let lawData = [];
@@ -15,158 +12,125 @@ export default function PolicyList(props) {
   }
   return (
     <>
-      <div className=''>
-        {lawData.map((lawData, lawDataIdx) => {
-          const {
-            id,
-            titel,
-            casus,
-            subrechtsgebied,
-            is_er_een_praktijk_voorbeeld,
-            europees,
-            nationaal,
-            provinciaal,
-            waterschappen,
-            gemeentelijk,
-            introductie_juridische_maatregel,
-            juridische_invloed,
-            juridische_houdbaarheid,
-            R1,
-            R2,
-            R3,
-            R4,
-            R5,
-            R6,
-          } = lawData;
-          return (
-            <div key={lawDataIdx} className='block sm:ml-0 lg:ml-28 pb-8 sm:pb-10'>
-              <div className=''>
-                <div className='inline-block'>
-                  {casus === 'Houtbouw' ? (
-                    <Image width='20' height='20' src={IconWood} alt='Icon of Wood' />
-                  ) : (
-                    <Image width='40' height='40' src={WindmillIcon} alt='Icon of Wood' />
-                  )}
-                </div>
-                <span className='inline-block pl-4 font-openSans casus'>{casus}</span>
-                {is_er_een_praktijk_voorbeeld && (
-                  <span className='ml-2 p-1 text-normal rounded font-semibold text-sm bg-green2 text-white no-underline'>
-                    Voorbeeld
-                  </span>
+      {lawData.map((law) => (
+        <Link href={'/measures/' + law.slug.current} key={law.titel}>
+          <div className='block sm:ml-0 pb-8 sm:pb-10'>
+            <div className=''>
+              <div className='inline-block flex justify-start items-center'>
+                {law?.thema === 'houtbouw' && (
+                  <div className='inline-block'>
+                    <Image width='30' height='30' src={IconWood} alt='Icon of Wood' />
+                  </div>
                 )}
+                {law?.thema === 'circulaire-windturbines' && (
+                  <Image width='30' height='30' src={WindmillIcon} alt='Icon of Wood' />
+                )}
+                {law?.thema === 'matrassen' && (
+                  <div className='inline-block'>
+                    <Image width='30' height='30' src={MatrassenIcon} alt='Icon of Wood' />
+                  </div>
+                )}
+                <h6 className=' pl-2 inline uppercase text-green-600 hidden sm:inline-block'>
+                  {law?.thema.replace('-', ' ')}
+                </h6>
+                <h4 className='mobile inline-block pl-2 inline uppercase text-green-600 sm:hidden'>
+                  {law?.thema.replace('-', ' ')}
+                </h4>
+                {law?.extraContent &&
+                  law?.extraContent?.map((content) => {
+                    if (content === 'Leidraad') {
+                      return (
+                        <h6
+                          key={content + law.titel}
+                          className='ml-2 px-2 py-0.5 rounded bg-green-600 text-black-white-200 no-underline'
+                        >
+                          {content}
+                        </h6>
+                      );
+                    } else {
+                      return (
+                        <h6
+                          key={content + law.titel}
+                          className='ml-2 px-2 py-0.5 rounded bg-green-500 text-black-white-200 no-underline'
+                        >
+                          {content}
+                        </h6>
+                      );
+                    }
+                  })}
               </div>
-              <div className='block my-1'>
-                {(function () {
-                  if (titel === 'Sloopmelding') {
-                    return (
-                      <Link href='/houtbouw/sloopmelding/' key={lawDataIdx}>
-                        <a className='underline text-lg font-semibold no-underline hover:text-greenLink'>
-                          <h3>{titel} </h3>
-                        </a>
-                      </Link>
-                    );
-                  } else if (
-                    titel === 'Houtbouw een plek geven in de gemeentelijke omgevingsvisie'
-                  ) {
-                    return (
-                      <Link href='/houtbouw/gemeentelijke-omgevingsvisie/' key={lawDataIdx}>
-                        <a className='underline text-lg font-semibold no-underline hover:text-greenLink'>
-                          <h3>{titel} </h3>
-                        </a>
-                      </Link>
-                    );
-                  } else if (titel === 'MPG als subselectiecriterium bij gronduitgifte') {
-                    return (
-                      <Link
-                        href='/houtbouw/mpg-als-subselectiecriterium-bij-gronduitgifte/'
-                        key={lawDataIdx}
+              <div className='block my-1 max-w-3xl'>
+                <span className='no-underline hover:text-green-500'>
+                  <h3 className='desktop text-black-white-800'>{law.titel} </h3>
+                </span>
+                <div className='block pb-1'>
+                  {law?.overheidslaag?.map((level) => (
+                    <>
+                      <h6
+                        key={level + law.titel + 'heading6'}
+                        className='capitalize text-green-500 hidden sm:inline'
                       >
-                        <a className='underline text-lg font-semibold no-underline hover:text-greenLink'>
-                          <h3>{titel} </h3>
-                        </a>
-                      </Link>
-                    );
-                  } else {
-                    return (
-                      <Link href={'/measures/' + id} key={lawDataIdx}>
-                        <a className='underline text-lg font-semibold no-underline hover:text-greenLink'>
-                          <h3>{titel} </h3>
-                        </a>
-                      </Link>
-                    );
-                  }
-                })()}
-              </div>
-              <div className='block font-manrope font-bold text-xs pb-1'>
-                {europees && <span>Europees - </span>}
-                {nationaal && <span>Nationaal {provinciaal && <span> - </span>} </span>}{' '}
-                {/* added extra conditional statements to remove the - when there is only one region */}
-                {provinciaal && <span>Provinciaal {gemeentelijk && <span> - </span>} </span>}
-                {waterschappen && <span>Waterschappen - </span>}
-                {gemeentelijk && <span>Gemeentelijk</span>}
-              </div>
-              <div className='block newlineDisplay twoLines font-manrope font-normal font-base mb-4'>
-                <Link href={'/measures/' + id} key={lawDataIdx}>
-                  <a>
-                    <p className='max-w-xs sm:max-w-5xl'>{introductie_juridische_maatregel}</p>
-                  </a>
-                </Link>
-              </div>
-
-              <div className='grid grid-cols-1 lg:flex space-x-0 lg:space-x-8 space-y-4 sm:space-y-0  py-2 sm:py-0'>
-                <div className='flex-2 mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 '>
-                  <span className='block-inline flex items-center'>
-                    Juridische invloed:{' '}
-                    {[0, 1, 2, 3, 4].map((rating) => (
-                      <div
-                        key={rating}
-                        className={classNames(
-                          juridische_invloed > rating ? 'score-true' : 'score-false',
-                          'mx-1 h-4 w-4 flex-shrink-0 rounded-full',
-                        )}
-                        aria-hidden='true'
-                      />
-                    ))}
-                  </span>
+                        {level} {law?.overheidslaag.slice(-1)[0] !== level && <span>- </span>}
+                      </h6>
+                      <h4
+                        key={level + law.titel + 'heading4'}
+                        className='capitalize mobile text-green-500 inline sm:hidden block'
+                      >
+                        {level} {law?.overheidslaag.slice(-1)[0] !== level && <span>- </span>}
+                      </h4>
+                    </>
+                  ))}
                 </div>
 
-                <div className='flex-2 mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400'>
-                  <span className='block-inline flex items-center'>
-                    Juridische houdbaarheid:{' '}
-                    {[0, 1, 2, 3, 4].map((rating) => (
-                      <div
-                        key={rating}
-                        className={classNames(
-                          juridische_houdbaarheid > rating ? 'score-true' : 'score-false',
-                          'mx-1 h-4 w-4 flex-shrink-0 rounded-full',
-                        )}
-                        aria-hidden='true'
-                      />
-                    ))}
-                  </span>
+                <div className='block newlineDisplay p-base text-black-white-800 mb-4'>
+                  <p className=''>{law.introText}</p>
                 </div>
-                <div className='flex-2 md:mr-5 text-normal font-openSans text-xs text-black1 sm:text-gray-400 '>
-                  R-ladder:{' '}
-                  <span className='block-inline text-gray-900 r-category'>
-                    {R1 && <span className='bg-green2 text-white rounded-full p-1 mr-2'>R1 </span>}
-                    {R2 && <span className='bg-green2 text-white rounded-full p-1 mr-2'>R2 </span>}
-                    {R3 && <span className='bg-green2 text-white rounded-full p-1 mr-2'>R3 </span>}
-                    {R4 && <span className='bg-green2 text-white rounded-full p-1 mr-2'>R4 </span>}
-                    {R5 && <span className='bg-green2 text-white rounded-full p-1 mr-2'>R5 </span>}
-                    {R6 && <span className='bg-green2 text-white rounded-full p-1 mr-2'>R6</span>}
-                  </span>
-                </div>
-              </div>
 
-              <div className='flex space-x-8'>
-                <div className='p-1 subrecht-text rounded text-sm font-openSans bg-grey3 bg-opacity-50 '>
-                  {subrechtsgebied}
+                <div className='lg:flex space-x-0 lg:space-x-8 space-y-2 sm:space-y-0 pt-2 pb-3 sm:py-1 border-b border-t border-black-white-500 mb-2 items-center'>
+                  <div className='flex-2 mr-5'>
+                    <h6 className='block-inline flex items-center text-black-white-500'>
+                      Invloed:{' '}
+                      <span className='text-green-500 uppercase pl-1'>{law.juridischInvloed}</span>
+                    </h6>
+                  </div>
+
+                  <div className='flex-2 mr-5 '>
+                    <h6 className='block-inline flex items-center text-black-white-500'>
+                      Juridische Haalbaarheid:{' '}
+                      <span className='text-green-500 uppercase pl-1'>
+                        {law.juridischeHaalbaarheid}
+                      </span>
+                    </h6>
+                  </div>
+                  <div className='flex-2 md:mr-5 text-black-white-500'>
+                    <h6 className='inline'>R-ladder: </h6>
+                    <h6 className='block-inline text-black-white-200 inline'>
+                      {law.rLadder.map((rValue) => (
+                        <span
+                          key={law.titel + rValue}
+                          className='bg-green-500 rounded-full p-1 mr-2'
+                        >
+                          {rValue}{' '}
+                        </span>
+                      ))}
+                    </h6>
+                  </div>
+                  <div className='flex space-x-8 block sm:hidden'>
+                    <h6 className='p-1 rounded bg-black-white-300 text-black-white-800 '>
+                      {law.subrechtsgebied}
+                    </h6>
+                  </div>
+                </div>
+                <div className=' space-x-8 hidden sm:flex'>
+                  <h6 className='p-1 rounded bg-black-white-300 text-black-white-800 '>
+                    {law.subrechtsgebied}
+                  </h6>
                 </div>
               </div>
             </div>
-          );
-        })}
-      </div>
+          </div>
+        </Link>
+      ))}
     </>
   );
 }

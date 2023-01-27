@@ -1,28 +1,30 @@
-export const wettelijk_bevoegdheidsniveau = [
+export const overheidslaag = [
   {
     id: '0',
     name: 'Europees',
     label: 'Europees',
-    value: 'europees',
+    value: 'Europees',
   },
   {
     id: '1',
     name: 'Nationaal',
     label: 'Nationaal',
-    value: 'nationaal',
+    value: 'Nationaal',
   },
   {
     id: '2',
     name: 'Provinciaal',
     label: 'Provinciaal',
-    value: 'provinciaal',
+    value: 'Provinciaal',
   },
+  
   {
     id: '3',
     name: 'Gemeentelijk',
     label: 'Gemeentelijk',
-    value: 'gemeentelijk',
+    value: 'Gemeentelijk',
   },
+
 ];
 
 export const rechtsgebied = [
@@ -40,9 +42,9 @@ export const rechtsgebied = [
   },
   {
     id: '2',
-    name: 'Fiscaalrecht',
-    label: 'Fiscaalrecht',
-    value: 'Fiscaalrecht',
+    name: 'Fiscaal recht',
+    label: 'Fiscaal recht',
+    value: 'Fiscaal recht',
   },
 ];
 
@@ -77,76 +79,118 @@ export const subrechtsgebied = [
     label: 'Gronduitgifte',
     value: 'Gronduitgifte',
   },
+  {
+    id: '5',
+    name: 'Cultureel recht',
+    label: 'Cultureel recht',
+    value: 'Cultureel recht',
+  },
+  {
+    id: '6',
+    name: 'Staats-en bestuursrecht',
+    label: 'Staats-en bestuursrecht',
+    value: 'Staats-en bestuursrecht',
+  },
+  {
+    id: '7',
+    name: 'Milieurecht',
+    label: 'Milieurecht',
+    value: 'Milieurecht',
+  },
 ];
 
-export const r_ladder = [
+export const rLadder = [
   {
     id: '0',
-    name: 'R1 Refuse/rethink',
+    name: 'Refuse/rethink',
     label: 'R1',
     value: 'R1',
   },
   {
     id: '1',
-    name: 'R2 Reduce',
+    name: 'Reduce',
     label: 'R2',
     value: 'R2',
   },
   {
     id: '2',
-    name: 'R3 Re-use',
+    name: 'Re-use',
     label: 'R3',
     value: 'R3',
   },
   {
     id: '3',
-    name: 'R4 Repair/remanufacture',
+    name: 'Repair/remanufacture',
     label: 'R4',
     value: 'R4',
   },
   {
     id: '4',
-    name: 'R5 Recycling',
+    name: 'Recycling',
     label: 'R5',
     value: 'R5',
   },
   {
     id: '5',
-    name: 'R6 Recover',
+    name: 'Recover',
     label: 'R6',
     value: 'R6',
   },
 ];
 
-export const juridische_houdbaarheid = [
+export const juridischeHaalbaarheid = [
   {
     id: '0',
-    name: '1',
-    label: '1',
-    value: 1,
+    name: 'Beperkt',
+    label: 'Beperkt',
+    value: 'Beperkt',
   },
   {
     id: '1',
-    name: '2',
-    label: '2',
-    value: 2,
+    name: 'Gemiddeld',
+    label: 'Gemiddeld',
+    value: 'Gemiddeld',
   },
   {
     id: '2',
-    name: '3',
-    label: '3',
-    value: 3,
-  },
-  {
-    id: '3',
-    name: '4',
-    label: '4',
-    value: 4,
-  },
-  {
-    id: '4',
-    name: '5',
-    label: '5',
-    value: 5,
+    name: 'Hoog',
+    label: 'Hoog',
+    value: 'Hoog',
   },
 ];
+
+export const juridischInvloed = [
+  {
+    id: '0',
+    name: 'Beperkt',
+    label: 'Beperkt',
+    value: 'Beperkt',
+  },
+  {
+    id: '1',
+    name: 'Gemiddeld',
+    label: 'Gemiddeld',
+    value: 'Gemiddeld',
+  },
+  {
+    id: '2',
+    name: 'Hoog',
+    label: 'Hoog',
+    value: 'Hoog',
+  },
+]
+
+export const extraContent = [
+  {
+    id: '0',
+    name: 'Voorbeelden',
+    label: 'Voorbeelden',
+    value: 'Voorbeeld',
+  },
+  {
+    id: '1',
+    name: 'Leidraad',
+    label: 'Leidraad',
+    value: 'Leidraad',
+  }, 
+]

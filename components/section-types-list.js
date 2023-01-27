@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ArrowRightIcon } from '@heroicons/react/outline';
 
 import HoutbouwHero from '../public/houtbouw.png';
 import WindmolensHero from '../public/turbine.png';
-import OverigeHero from '../public/biennekort.png';
+import OverigeHero from '../public/mattress.png';
 
 import HoutbouwDetails1 from '../public/houtbouw1.png';
 import HoutbouwDetails2 from '../public/houtbouw2.png';
@@ -22,29 +23,29 @@ const types = [
     title: 'Houtbouw stimuleren',
     tag: '',
     description:
-      'Meer bouwen met hout heeft grote invloed op het klimaat. Daarom vind je hier maatregelen om houtbouw te stimuleren en een leidraad voor de toepassing van een aantal van die maatregelen.',
+      'Bouwen met beton heeft een negatieve impact op het klimaat. Daarom vind je hier instrumenten die de inzet van hout bij de bouw stimuleren.',
     buttonText: 'Meer over houtbouw',
     href: '/houtbouw',
   },
   {
-    id: 2,
+    id: 1,
     heroImage: WindmolensHero,
     title: 'Circulaire windturbines',
     tag: '',
     description:
-      'Windenergie speelt een cruciale rol in onze duurzame energie-ambities. Daarom vind je hier maatregelen die de inzet van windturbines bevorderen en die sturen op ontwikkeling en inzet van windturbines die op zich zelf ook circulair zijn.',
+      'Windenergie speelt een grote rol in onze duurzame energie-ambities. Maar ook de circulariteit van deze windturbines is belangrijk. Daarom vind je hier instrumenten die de inzet van (circulaire) windturbines bevorderen.',
     buttonText: 'Meer over windturbines',
     href: '/circulaire-windturbines',
   },
   {
-    id: 3,
+    id: 2,
     heroImage: OverigeHero,
-    title: 'Circulaire matrasketen, en…',
+    title: 'Circulaire matrasketen',
     tag: '',
     description:
-      'Binnenkort starten we met onderzoek en wetsanalyses om circulariteit in de matrasketen te stimuleren. Zijn er thema’s waar jij graag mee aan de slag zou willen? Laat het ons weten!',
-    buttonText: '',
-    href: '',
+      'Gemiddeld gaat een matras zo’n tien jaar mee. Er valt dus veel winst te behalen als we de hele keten vanaf matrasproductie tot aan verwerking van gedumpte matrassen circulairder maken. Daarom vind je hier instrumenten die aanzetten tot die circulaire matrasketen.',
+    buttonText: 'Meer over de matrasketen',
+    href: '/matrassen',
   },
 ];
 
@@ -90,56 +91,70 @@ export default function SectionTypes(props) {
   }, [props.type]);
 
   return (
-    <div className='pb-20'>
+    <div className=''>
       <ul
         role='list'
         className='grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 sm:gap-x-10 max-w-8xl'
       >
         {type.map((file) => (
-          <li key={file.id} className='relative shadow bg-white w-full'>
-            <div className='object-cover'>
+          <li key={file.id} className='relative drop-shadow-sm bg-white w-full'>
+            <div className='object-cover rounded-[10px]'>
               {file.href !== '' ? (
                 <Link href={file.href}>
-                  <a>
-                    <Image src={file.heroImage} layout='responsive' alt='Picture of the case' />
-                  </a>
+                  <Image
+                    className='rounded-t-[10px]'
+                    src={file.heroImage}
+                    alt='Picture of the case'
+                  />
                 </Link>
               ) : (
-                <Image src={file.heroImage} layout='responsive' alt='Picture of the case' />
+                <Image
+                  className='rounded-t-[10px]'
+                  src={file.heroImage}
+                  alt='Picture of the case'
+                />
               )}
             </div>
 
-            <div className='group block w-full p-4 bg-white px-10'>
+            <div className='group block w-full p-4 bg-white px-10 '>
               <div>
                 <div
-                  className={classNames(props.type === 'houtbouw' ? 'h-20' : '', 'inline-block')}
+                  className={classNames(props.type === 'houtbouw' ? 'h-20' : '', 'inline-block ')}
                 >
                   {file.href !== '' ? (
                     <Link href={file.href}>
-                      <a>
-                        <h3 className='mt-2 block text-black pointer-events-none pb-4'>
-                          {file.title}
-                        </h3>
-                      </a>
+                      <h3 className='desktop mt-2 block text-black pointer-events-none pb-4 hidden sm:inline'>
+                        {file.title}
+                      </h3>
+                      <h2 className='mobile mt-2 block text-black pointer-events-none pb-4 inline sm:hidden'>
+                        {file.title}
+                      </h2>
                     </Link>
                   ) : (
-                    <h3 className='mt-2 block text-black pointer-events-none pb-4'>{file.title}</h3>
+                    <>
+                      <h3 className='desktop mt-2 block text-black pointer-events-none pb-4 hidden sm:inline'>
+                        {file.title}
+                      </h3>
+                      <h2 className='mobile mt-2 block text-black pointer-events-none pb-4 inline sm:hidden'>
+                        {file.title}
+                      </h2>
+                    </>
                   )}
                   {/* added height for the description while on home to ensure all the text can be read*/}
                 </div>
-                <p
-                  className={classNames(
-                    props.type === 'home' ? 'h-[18rem]' : '',
-                    'body-text-mobile sm:card-body block text-black pointer-events-none py-4 w-full',
-                  )}
-                >
-                  {file.description}
-                </p>
+                <Link href={file.href}>
+                  <p
+                    className={classNames(
+                      props.type === 'home' ? 'h-[18rem]' : '',
+                      ' p-base block text-black pointer-events-none py-4 w-full',
+                    )}
+                  >
+                    {file.description}
+                  </p>
+                </Link>
                 {file.tag && (
                   <div className='md:my-8 mt-8 mb-16 h-16 block'>
-                    <span className='p-2 rounded-md bg-grey3 font-openSans text-xs'>
-                      {file.tag}
-                    </span>
+                    <span className='p-2 rounded-md bg-green-800'>{file.tag}</span>
                   </div>
                 )}
               </div>
@@ -148,7 +163,8 @@ export default function SectionTypes(props) {
                 {file.buttonText && (
                   <CustomButton color='whiteBackground'>
                     <Link href={file.href}>
-                      <a>{file.buttonText} →</a>
+                      {file.buttonText}{' '}
+                      <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                     </Link>
                   </CustomButton>
                 )}

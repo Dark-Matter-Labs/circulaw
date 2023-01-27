@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
 
-export default function ToolTips({ children, icon }) {
+export default function ToolTips({ children, icon, data }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -66,10 +66,10 @@ export default function ToolTips({ children, icon }) {
                       leaveFrom='opacity-100'
                       leaveTo='opacity-0'
                     >
-                      <div className='absolute float-right top-0 right-0 flex pt-4 pr-2 sm:-ml-10'>
+                      <div className='absolute float-right top-0 right-0 flex pt-4 pr-8 sm:-ml-10'>
                         <button
                           type='button'
-                          className='rounded-md text-green1'
+                          className='rounded-md text-green-600'
                           onClick={() => setOpen(false)}
                         >
                           <span className='sr-only'>Close panel</span>
@@ -77,41 +77,30 @@ export default function ToolTips({ children, icon }) {
                         </button>
                       </div>
                     </Transition.Child>
-                    <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
-                      <div className='px-4 sm:px-6'>
-                        <Dialog.Title className='text-lg font-medium text-gray-900'>
+                    <div className='flex h-full px-6 flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
+                      <div className=''>
+                        <Dialog.Title className='text-gray-900'>
                           {' '}
-                          Juridische houdbaarheid
+                          <h2 className='mobile sm:desktop'>Geschatte juridische haalbaarheid</h2>
                         </Dialog.Title>
                       </div>
-                      <div className='relative mt-6 flex-1 px-4 sm:px-6'>
-                        <div className='absolute inset-0 px-4 sm:px-6'>
-                          <p className='tooltip-body'>
-                            CircuLaw heeft per maatregel een inschatting gemaakt van de juridische
-                            houdbaarheid. Dit is een totaalscore gebaseerd op 3 factoren:
-                          </p>
-                          <br />
-                          <p className='tooltip-body'>
-                            <b>Duidelijkheid wet:</b>
-                          </p>
-                          <p className='tooltip-body'>
-                            Hoe duidelijk is de tekst, toelichting en het commentaar van de wet?
-                          </p>
-                          <br />
-                          <p className='tooltip-body font-bold'>
-                            <b>Eenduidigheid jurisprudentie:</b>
-                          </p>
-                          <p className='tooltip-body'>
-                            Zijn de juridische uitspraken duidelijk en niet dubbelzinnig?
-                          </p>
-                          <br />
-                          <p className='tooltip-body font-bold'>
-                            <b>Beschikbare juridische literatuur:</b>
-                          </p>
-                          <p className='tooltip-body'>
-                            Hoeveel is er al over de maatregel geschreven in niet-juridische
-                            bronnen?
-                          </p>
+                      <div className='relative mt-6 flex-1'>
+                        <div className='absolute inset-0'>
+                          {data?.measure?.JHTooltipText && (
+                            <p className='p-base'>{data?.measure?.JHTooltipText}</p>
+                          )}
+                          <div className='bg-black-white-200 mt-6 p-6'>
+                            <p className='p-base'>
+                              Met de waardering ‘Juridische haalbaarheid’ laten we zien hoe
+                              risicovol een instrument is: wat is het afbreukrisico of de kans dat
+                              het instrument onderuit gaat bij de rechter.
+                            </p>
+                            <br />
+                            <p className='p-base'>
+                              We maken hiervan een globale inschatting, 1: beperkt, 2: gemiddeld, 3:
+                              hoog.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>

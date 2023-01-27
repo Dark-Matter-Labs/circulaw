@@ -3,23 +3,24 @@ const waardeketens = [
       name: 'Houtbouw',
       description: 'description',
       href: '/houtbouw',
-      className: 'font-normal',
+      className: '',
     },
     {
       name: 'Circulaire windturbines',
       description: 'description',
       href: '/circulaire-windturbines',
-      className: 'font-normal',
+      className: '',
+    },
+    {
+      name: 'Circulaire matrasketen',
+      description: 'description',
+      href: '/matrassen',
+      className: '',
     },
   ];
   
+  
   const over = [
-    {
-      name: 'Waarom CircuLaw?',
-      description: 'description',
-      href: '/waarom-circulaw',
-      className: '',
-    },
     {
       name: 'Wat is CircuLaw?',
       description: 'description',
@@ -45,6 +46,7 @@ const waardeketens = [
       className: '',
     },
   ];
+
 
 export function get_waardeketens() {
     return waardeketens;

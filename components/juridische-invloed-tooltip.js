@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
 
-export default function ToolTips({ children, icon }) {
+export default function ToolTips({ children, icon, data }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -66,10 +66,10 @@ export default function ToolTips({ children, icon }) {
                       leaveFrom='opacity-100'
                       leaveTo='opacity-0'
                     >
-                      <div className='absolute float-right top-0 right-0 flex pt-4 pr-2 sm:-ml-10'>
+                      <div className='absolute float-right top-0 right-0 flex pt-4 pr-8 sm:-ml-10'>
                         <button
                           type='button'
-                          className='rounded-md text-green1'
+                          className='rounded-md text-green-600'
                           onClick={() => setOpen(false)}
                         >
                           <span className='sr-only'>Close panel</span>
@@ -77,50 +77,35 @@ export default function ToolTips({ children, icon }) {
                         </button>
                       </div>
                     </Transition.Child>
-                    <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
-                      <div className='px-4 sm:px-6'>
-                        <Dialog.Title className='text-lg font-medium text-gray-900'>
+                    <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl px-6'>
+                      <div className=''>
+                        <Dialog.Title className='text-gray-900'>
                           {' '}
-                          Juridische invloed
+                          <h2 className='mobile sm:desktop'>Geschatte invloed</h2>
                         </Dialog.Title>
                       </div>
-                      <div className='relative mt-6 flex-1 px-4 sm:px-6'>
-                        <div className='absolute inset-0 px-4 sm:px-6'>
-                          <p className='tooltip-body'>
-                            De juridische invloed geeft een indicatie van de grootte van een
-                            maatregel. De totaalscore is het gemiddelde van de score van:
-                          </p>
-                          <br />
-                          <p className='tooltip-body'>
-                            <b>Bereik</b>
-                          </p>
-                          <p className='tooltip-body'>
-                            Hoe groot is de doelgroep, dus gaat het om bijvoorbeeld een beschikking,
-                            besluit of overeenkomst?
-                          </p>
-                          <br />
-                          <p className='tooltip-body font-bold'>
-                            <b>Duur</b>
-                          </p>
-                          <p className='tooltip-body'>
-                            Bijvoorbeeld een tijdelijke of blijvende maatregel
-                          </p>
-                          <br />
-                          <p className='tooltip-body font-bold'>
-                            <b>Frequentie</b>
-                          </p>
-                          <p className='tooltip-body'>
-                            Hoe vaak de maatregel voorkomt, bijvoorbeeld weinig of juist
-                            stelselmatig
-                          </p>
-                          <br />
-                          <p className='tooltip-body font-bold'>
-                            <b>Omvang</b>
-                          </p>
-                          <p className='tooltip-body'>
-                            Grootte van het gebied, bijvoorbeeld gemeentelijk, provinciaal of
-                            landelijk
-                          </p>
+                      <div className='relative mt-6 flex-1'>
+                        <div className='absolute inset-0'>
+                          {data?.measure?.invloedTooltipText && (
+                            <p className='p-base'>{data?.measure?.invloedTooltipText}</p>
+                          )}
+                          <div className='bg-black-white-200 mt-6 p-6'>
+                            <p className='p-base'>
+                              Met ‘invloed’ bedoelen wij de invloed van het instrument in de
+                              praktijk. We kijken hiervoor onder andere naar:
+                            </p>
+                            <ul className='list-disc pl-6 p-base'>
+                              <li>de afdwingbaarheid,</li>
+                              <li>hoeveel dírecte invloed het instrument heeft,</li>
+                              <li>hoe lang het doorwerkt,</li>
+                              <li>op hoeveel personen het betrekking heeft.</li>
+                            </ul>
+                            <br />
+                            <p className='p-base'>
+                              We maken hiervan een globale inschatting: 1: beperkt, 2: gemiddeld, 3:
+                              hoog.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>

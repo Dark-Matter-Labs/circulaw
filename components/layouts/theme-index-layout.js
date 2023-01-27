@@ -1,145 +1,98 @@
 import Link from 'next/link';
+import ThemeBottomSection from '../section-bottom-theme-index';
+import ThemeCard from '../theme-card';
 import Image from 'next/image';
-import SectionTypes from '../../components/section-types-list';
+import LinkIcon from '../link-icon';
 
-export default function ThemeLayout(props) {
+export default function ThemeLayout({ bgHero, ...props }) {
   return (
-    <div className='gradient-bg'>
-      <div className='global-margin'>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-20 mb-10'>
-          <div className='max-w-2xl'>
-            <div className='breadcrumb pt-8 text-greenLink'>
-              <Link href='/'>
-                <a>Home &gt; </a>
-              </Link>
-            </div>
-            <div className='pb-14 pt-14 '>
-              {/* maybe make the icon closer to the home link.
-                may need to re-jig the top and bottom paddings here
-                I find it a bit to much */}
-              <div className='pr-4 inline-block'>
-                <Image src={props.icon} alt={props.iconAlt} width={48} />
-              </div>
-              <h1 className='text-green1 inline-block mobile sm:main'>{props.title} </h1>
-              <p className='pt-4 body-text-mobile sm:body-text'>{props.shortDescription}</p>
-              {props.shortDescription2 !== '' && (
-                <p className='body-text-mobile sm:body-text'>{props.shortDescription2}</p>
-              )}
-            </div>
-            {props.pdfSource !== '' && (
-              <span className='text-greenLink link-mobile sm:link pt-10'>
-                <a href={props.pdfSource} target='_blank' rel='noopener noreferrer'>
-                  Meer over nut van houtbouw →
-                </a>
-              </span>
-            )}
-          </div>
-          <div className='sm:justify-self-center lg:justify-self-end'>
-            <div className='hidden lg:block'>
-              <Image src={props.heroImage} alt={props.heroImageAlt} height='549px' width='597px' />
-            </div>
-            <div className='block lg:hidden'>
-              <Image src={props.heroImage} alt={props.heroImageAlt} height='549px' width='597px' />
-            </div>
-          </div>
-        </div>
-        {/* using the prop isSpecialMeasures to conditionally render this section
-          if there is not special measure set this to '' and the section will not render*/}
-        {props.isSpecialMeasures !== '' && (
-          <div className='my-20'>
-            <h2 className='pb-8 mobile sm:main'>{props.isSpecialMeasures}</h2>
-            <SectionTypes type={props.type} />
-          </div>
-        )}
-      </div>
+    <>
+      <div>
+        {/* HEADER DESKTOP */}
+        <div className={`hidden sm:block w-full h-[28rem] bg-center bg-cover relative ${bgHero}`}>
+          <div className='global-margin h-[28rem] z-10 pt-10'>
+            <Link
+              className='bg-black-white-200 border rounded-md border-black-white-200 pl-1 pr-2 py-0.5 breadcrumb text-green-500'
+              href='/'
+            >
+              &lt; Home
+            </Link>
 
-      <div className='bg-green3 bg-opacity-10'>
-        <div className='pt-5 global-margin  '>
-          <div className='border-b border-grey1 pb-10'>
-            <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
-              <div className='col-span-2'>
-                <h2 className='pt-10 mobile sm:main'>{props.seeMeasuresTitle}</h2>
-                <div className='block py-4 sm:hidden'>
-                  <Image
-                    src={props.seeMeasuresImage}
-                    alt={props.seeMeasuresImageAlt}
-                    layout='responsive'
-                  />
-                </div>
-                <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
-                  {props.seeMeasuresText}
+            <div className='grid col-span-8 grid-cols-8 sm:pl-12 sm:pt:12 md:pl-24 lg:pl-36 pb-14 pt-14 w-4/5'>
+              <div className='col-span-8'>
+                <p className='text-black-white-200 inline-block header'>{props.title}</p>
+              </div>
+              <div className='col-span-7'>
+                <p className='pt-4 text-black-white-200 p-lg'>
+                  {props.headerSubtitle}{' '}
+                  {props.headerLinkText && (
+                    <span className='text-green-300 link-mobile sm:link-desktop inline-block  '>
+                      <Link href={props.headerLinkURL} target='_blank' rel='noopener noreferrer'>
+                        {props.headerLinkText}
+                        <span className='inline-block h-4 w-4 text-green-300'>
+                          <svg
+                            width='24'
+                            height='24'
+                            viewBox='0 3 24 24'
+                            fill='none'
+                            xmlns='http://www.w3.org/2000/svg'
+                          >
+                            <path
+                              d='M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14'
+                              stroke='#25C38B'
+                              strokeWidth='1.3'
+                              strokeLinecap='round'
+                              strokeLinejoin='round'
+                            />
+                          </svg>
+                        </span>
+                      </Link>
+                    </span>
+                  )}
                 </p>
-                <Link href={props.seeMeasuresLink}>
-                  <a>
-                    <span className='text-greenLink link-mobile sm:link'>
-                      {props.seeMeasuresLinkText}
-                    </span>
-                  </a>
-                </Link>
-              </div>
-              <div className='hidden sm:block'>
-                <Image
-                  src={props.seeMeasuresImage}
-                  alt={props.seeMeasuresImageAlt}
-                  layout='responsive'
-                />
-              </div>
-            </div>
-          </div>
-          <div className='border-b border-grey1 pb-10'>
-            <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
-              <div className='col-span-2'>
-                <h2 className='pt-10 mobile sm:main'>{props.samenhangTitle}</h2>
-                <div className='block py-4 sm:hidden'>
-                  <Image
-                    src={props.samenhangImage}
-                    alt={props.samenhangImageAlt}
-                    layout='responsive'
-                  />
-                </div>
-                <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>
-                  {props.samenhangText}
-                </p>
-                <Link href={props.samenhangLink}>
-                  <a>
-                    <span className='text-greenLink link-mobile sm:link'>
-                      {props.samenhangLinkText}
-                    </span>
-                  </a>
-                </Link>
-              </div>
-              <div className='hidden sm:block'>
-                <Image
-                  src={props.samenhangImage}
-                  alt={props.samenhangImageAlt}
-                  layout='responsive'
-                />
-              </div>
-            </div>
-          </div>
-          <div className='border-b border-grey1 pb-40 pt-10'>
-            <div className='grid grid-cols-1 sm:grid-cols-3 items-center'>
-              <div className='col-span-2'>
-                <h2 className='pt-10 mobile sm:main'>{props.welkeTitle}</h2>
-                <div className='block py-4 sm:hidden'>
-                  <Image src={props.welkeImage} alt={props.welkeImageAlt} layout='responsive' />
-                </div>
-                <p className='body-text-mobile sm:body-text py-5 max-w-2xl'>{props.welkeText}</p>
-                <Link href={props.welkeLink}>
-                  <a>
-                    <span className='text-greenLink link-mobile sm:link'>
-                      {props.welkeLinkText}
-                    </span>
-                  </a>
-                </Link>
-              </div>
-              <div className='hidden sm:block'>
-                <Image src={props.welkeImage} alt={props.welkeImageAlt} layout='responsive' />
               </div>
             </div>
           </div>
         </div>
+
+        <div className='block global-margin sm:hidden pt-5'>
+          <div className='py-3'>
+            <h2 className='mobile pb-3'>{props.title}</h2>
+            <p className=' pb-3'>
+              {props.headerSubtitle}
+              {props.headerLinkText && (
+                <span className='text-green-500 link-mobile sm:link-desktop inline-block'>
+                  <a href={props.headerLinkURL} target='_blank' rel='noopener noreferrer'>
+                    {props.headerLinkText}
+                    <LinkIcon size='desktop' />
+                  </a>
+                </span>
+              )}
+            </p>
+          </div>
+
+          <div className='h-56 max-w-[380px] mx-auto flex items-center justify-center'>
+            <div className='flex items-center justify-center h-full w-full rounded-md relative z-10'>
+              <Image src={props.heroImage} alt='hero image' fill className='rounded-md absolute' />
+              <div className='w-full h-full thema-hero-gradient z-10 rounded-md'></div>
+            </div>
+          </div>
+        </div>
+
+        <div className=''>
+          <div className='global-margin'>
+            <div className='pt-10 sm:pt-20 sm:pb-10'>
+              <h2 className='mobile sm:desktop'>{props.cardTitle}</h2>
+            </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-14 justify-items-center sm:h-auto md:h-[76rem] lg:h-[38rem]'>
+              <ThemeCard props={props} type='list' />
+              <ThemeCard props={props} type='samenhang' />
+              <ThemeCard props={props} type='waarvoor' />
+            </div>
+          </div>
+          <ThemeBottomSection props={props} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

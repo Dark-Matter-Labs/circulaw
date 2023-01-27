@@ -13,250 +13,127 @@
     @apply max-w-screen-xl mx-auto;
   }
 
+  .header {
+    @apply font-urbanist text-8xl font-semibold leading-17;
+  }
+
+  h1.desktop {
+    @apply font-urbanist text-7xl font-semibold leading-16;
+  }
+
   h1.mobile {
-    font-family: 'Public Sans';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 30px;
-    line-height: 130%;
+    @apply font-urbanist text-5xl font-semibold leading-13; 
   }
 
-  h1.main {
-    font-family: 'Public Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 52px;
-    line-height: 62px;
-  }
-
-  h2.main {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 24px;
-    line-height: 150%;
+  h2.desktop {
+    @apply font-urbanist text-6xl font-semibold leading-14;
   }
 
   h2.mobile {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-size: 20px;
-    line-height: 140%;
-    font-weight: 800;
+    @apply font-urbanist text-3xl font-semibold leading-13;
   }
 
-  h3 {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 130%;
+  h3.desktop {
+    @apply font-urbanist text-4xl font-semibold leading-13;
   }
 
-  h4 {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 140%;
+  h3.mobile {
+    @apply font-urbanist text-2xl font-semibold leading-10;
   }
 
-  h5 {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 149.19%;
+  h4.desktop {
+    @apply font-urbanist text-xl font-medium leading-10;
+  }
+
+  h4.mobile {
+    @apply font-urbanist text-lg font-semibold leading-10;
+  }
+
+  h5.desktop {
+    @apply font-manrope text-xs font-semibold leading-9;
+  }
+
+  h5.bold {
+    @apply font-manrope text-xs font-extrabold leading-9;
+  }
+
+  h5.mobile {
+    @apply font-urbanist text-base font-medium leading-10;
   }
 
   h6 {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 149.19%;
+    @apply font-manrope text-xxs font-bold leading-6;
   }
 
-  .homepage-header-title {
-    font-family: 'Public Sans';
-    font-size: 83px;
-    font-weight: 700;
-    line-height: 96px;
-    letter-spacing: 0em;
+  .p-xl {
+    @apply font-urbanist text-3xl font-normal leading-14;
   }
-
-  .homepage-header-title-mobile {
-    font-family: 'Public Sans';
-    font-weight: 700;
-    font-size: 42px;
   
+  .p-lg {
+    @apply font-manrope text-xl font-normal leading-13;
   }
 
-  .homepage-header-body {
-    font-family: 'Public Sans';
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 30px;
-    letter-spacing: 0em;
+  .p-base {
+    @apply font-manrope text-base font-normal leading-10;
   }
 
-  .body-text {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 35px;
+  .p-sm {
+    @apply font-manrope text-xs font-normal leading-7;
   }
 
-  .body-text-mobile {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 170%;
+  .link-lg {
+    @apply font-manrope text-xl font-semibold leading-13 underline;
   }
 
-  .card-body {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 150%;
-  }
-
-  .link {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 35px;
-    text-decoration-line: underline;
-  }
-
-  .link-mobile {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
-    text-decoration-line: underline;
-  }
-
-  .menu-title {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 150%;
-  }
-
-  .menu-title-mobile {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 150%;
-  }
-
-  .breadcrumb {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 14px;
-    line-height: 19px;
+  .link-base {
+    @apply font-manrope text-base font-medium leading-11 underline;
   }
 
   .button {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 27px;
+    @apply font-manrope text-base font-bold leading-10;
   }
 
-  .r-category {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 149.19%;
+  .table-base {
+    @apply font-manrope text-base font-semibold leading-3;
   }
 
-  .dropdown-menu {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 150%;
+  .table-sm {
+    @apply font-manrope text-xs font-semibold leading-4;
   }
 
-  .filter-body {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 19px;
+  .breadcrumb {
+    @apply font-manrope text-xs font-medium leading-5 uppercase;
   }
 
-  .filter-h1 {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 22px;
+  .popup-base {
+    @apply font-manrope text-base font-medium leading-8;
   }
 
-  .filter-h1-mobile {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 22px;
-  }
-
-  .filter-body-mobile {
-    font-family: 'Manrope';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 20px;
-  }
-
-  .tooltip-body {
-    font-family: 'Manrope';
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0em;
-
+  .popup-sm {
+    @apply font-manrope text-xs font-medium leading-6;
   }
 }
 
-.home-header-bg {
-  background-image: url('./public/Landing_pg_texture.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+#background-video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
 
 
 .newlineDisplay {
   white-space: break-spaces;
-}
-
-.casus {
-  text-transform: uppercase;
-  font-size: 12px;
-}
-
-.bold-text {
-  font-weight: bold;
-}
-
-.subrecht-text {
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 18px;
 }
 
 .twoLines {
@@ -269,29 +146,8 @@
   -webkit-box-orient: vertical;
 }
 
-
 .link-hover:hover {
   cursor: pointer;
-}
-
-.texture-move {
-  transform: translate(30vw, 0);
-  -webkit-transform: translate(30vw, 0);
-  -ms-transform: translate(30vw, 0); /* IE 9 */
-  -o-transform: translate(30vw, 0); /* Opera */
-  -moz-transform: translate(30vw, 0); /* Firefox */
-  z-index: 1;
-  margin-bottom: -40%;
-}
-
-.texture-move2 {
-  transform: translate(30vw, 0);
-  -webkit-transform: translate(60vw, -40vh);
-  -ms-transform: translate(30vw, 0); /* IE 9 */
-  -o-transform: translate(30vw, 0); /* Opera */
-  -moz-transform: translate(30vw, 0); /* Firefox */
-  z-index: 1;
-  margin-bottom: -40%;
 }
 
 .bg-opacity {
@@ -302,33 +158,30 @@
   display: inline-flex;
   align-items: center;
 }
-.container-image {
-  float: left;
-}
-
-.square {
-  display: inline-block;
-  margin-right: 1rem;
-  width: 25px;
-  height: 25px;
-}
-.score-true {
-  background-color: #6d9f6b;
-  border-color: #6d9f6b;
-  border-width: 1px;
-}
-.score-false {
-  background-color: #ffffff;
-  border-color: #6d9f6b;
-  border-width: 1px;
-}
 
 .wrap {
   word-wrap: break-word;
 }
 
-.gradient-bg {
-  background: linear-gradient(#f9d9c8, 1%, #fff);
+.gradient-overview {
+  background: linear-gradient(rgba(248, 250, 248, 0) 0%, #F8FAF8 30%);
+}
+
+/* RENAME as this is also for Thema Hero */
+.gradient-pdf {
+  background: linear-gradient(#042D36 0%, rgba(34, 83, 44, 0) 100%);
+}
+
+.thema-hero-gradient {
+  background: linear-gradient(rgba(34, 83, 44, 0) 0%, #042D36 100%);
+}
+
+.extended-measures-gradient {
+  background: linear-gradient(rgba(248, 250, 248, 0) 0%, #F8FAF8 100%);
+}
+
+.measure-bg {
+  background: '#F5F5F5';
 }
 
 [type='checkbox']:checked {
@@ -340,4 +193,20 @@
   border-color: #22532c !important;
 }
 
+[type='checkbox']:not(:checked)  {
+  border-color: #DAD8D8 !important;
+  background-color: #F8FBF8 !important;
+}
 
+.shadow-top {
+  -webkit-box-shadow: 0px -3px 3px rgb(0 0 0 / 0.06);
+  -moz-box-shadow: 0px -3px 3px rgb(0 0 0 / 0.06);
+  box-shadow: 0px -3px 3px rgb(0 0 0 / 0.06);
+}
+
+#nprogress .spinner-icon {
+
+  border-top-color: #22532c;
+    border-left-color: #22532c;
+    
+  }

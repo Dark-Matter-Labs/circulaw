@@ -69,23 +69,19 @@ export default function Contact() {
       <div className='global-margin'>
         {!submitSuccess ? (
           <>
-            <h1 className='text-green1 pt-10 mobile sm:main'>Contact</h1>
+            <h1 className='text-green-600 pt-10 mobile sm:desktop'>Contact</h1>
             {showPrivacyError && (
-              <p className='body-text-mobile sm:body-text py-2 max-w-2xl text-red-600'>
+              <p className=' p-lg py-2 max-w-2xl text-red-600'>
                 Ga akkoord met de privacyvoorwaarden om te kunnen verzenden
               </p>
             )}
 
             {showEmailError && (
-              <p className='body-text-mobile sm:body-text py-2 max-w-2xl text-red-600'>
-                Vul een geldig e-mail adres in
-              </p>
+              <p className=' p-lg py-2 max-w-2xl text-red-600'>Vul een geldig e-mail adres in</p>
             )}
 
             {showTextError && (
-              <p className='body-text-mobile sm:body-text py-2 max-w-2xl text-red-600'>
-                Vul een vraag of opmerking in
-              </p>
+              <p className=' p-lg py-2 max-w-2xl text-red-600'>Vul een vraag of opmerking in</p>
             )}
 
             <div className='mt-8 max-w-3xl mb-20'>
@@ -95,10 +91,7 @@ export default function Contact() {
                 className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'
               >
                 <div>
-                  <label
-                    htmlFor='first-name'
-                    className='block text-lg font-semibold font-manrope text-black1'
-                  >
+                  <label htmlFor='first-name' className='block text-black-white-800'>
                     Wat is je naam? (niet verplicht)
                   </label>
                   <div className='mt-1'>
@@ -107,15 +100,12 @@ export default function Contact() {
                       name='name'
                       id='first-name'
                       autoComplete='given-name'
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green1 focus:border-green1 border-gray-300 rounded-md'
+                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-md'
                     />
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
-                  <label
-                    htmlFor='company'
-                    className='block text-lg font-semibold font-manrope text-black1'
-                  >
+                  <label htmlFor='company' className='block  text-black-white-800'>
                     Voor welke organisatie werk je? (niet verplicht)
                   </label>
                   <div className='mt-1'>
@@ -124,15 +114,12 @@ export default function Contact() {
                       name='org'
                       id='company'
                       autoComplete='organization'
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green1 focus:border-green1 border-gray-300 rounded-md'
+                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-md'
                     />
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
-                  <label
-                    htmlFor='email'
-                    className='block text-lg font-semibold font-manrope text-black1'
-                  >
+                  <label htmlFor='email' className='block  text-black-white-800'>
                     Op welk e-mailadres kunnen we je bereiken?
                   </label>
                   <div className='mt-1'>
@@ -141,17 +128,14 @@ export default function Contact() {
                       name='email'
                       type='email'
                       autoComplete='email'
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green1 focus:border-green1 border-gray-300 rounded-md'
+                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-md'
                       onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                 </div>
 
                 <div className='sm:col-span-2'>
-                  <label
-                    htmlFor='message'
-                    className='block text-lg font-semibold font-manrope text-black1'
-                  >
+                  <label htmlFor='message' className='block text-black-white-800'>
                     Wat is je vraag of opmerking?
                   </label>
                   <div className='mt-1'>
@@ -159,7 +143,7 @@ export default function Contact() {
                       id='message'
                       name='message'
                       rows={4}
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green1 focus:border-green1 border border-gray-300 rounded-md'
+                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border border-gray-300 rounded-md'
                       defaultValue={''}
                       onChange={(e) => setText(e.target.value)}
                     />
@@ -172,8 +156,8 @@ export default function Contact() {
                         checked={agreed}
                         onChange={setAgreed}
                         className={classNames(
-                          agreed ? 'bg-green1' : 'bg-gray-200',
-                          'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green1',
+                          agreed ? 'bg-green-600' : 'bg-gray-200',
+                          'relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600',
                         )}
                       >
                         <span className='sr-only'>Agree to policies</span>
@@ -187,12 +171,10 @@ export default function Contact() {
                       </Switch>
                     </div>
                     <div className='ml-3'>
-                      <p className='text-base text-gray-500'>
+                      <p className='text-gray-500'>
                         Ik ga akkoord met de{' '}
                         <Link href='/privacy-policy'>
-                          <a className='font-medium text-greenLink font-manrope'>
-                            privacy verklaring
-                          </a>
+                          <span className='text-green-500'>privacy verklaring</span>
                         </Link>
                       </p>
                     </div>
@@ -208,15 +190,13 @@ export default function Contact() {
           </>
         ) : (
           <>
-            <h1 className='text-green1 pt-10 mobile sm:main'>Bedankt!</h1>
-            <p className='body-text-mobile sm:body-text py-10 max-w-2xl text-black1'>
+            <h1 className='text-green-600 pt-10 mobile sm:desktop'>Bedankt!</h1>
+            <p className=' p-lg py-10 max-w-2xl text-black-white-800'>
               Bedankt voor je bericht. We nemen zo snel mogelijk contact met je op.
             </p>
             <div className='sm:col-span-2 pb-20'>
               <Link href='/'>
-                <a>
-                  <CustomButton color='whiteBackground'>Naar de homepage &rarr;</CustomButton>
-                </a>
+                <CustomButton color='whiteBackground'>Naar de homepage &rarr;</CustomButton>
               </Link>
             </div>
           </>
