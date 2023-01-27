@@ -203,3 +203,10 @@ html {
   -moz-box-shadow: 0px -3px 3px rgb(0 0 0 / 0.06);
   box-shadow: 0px -3px 3px rgb(0 0 0 / 0.06);
 }
+
+#nprogress .spinner-icon {
+
+  border-top-color: #22532c;
+    border-left-color: #22532c;
+    
+  }
