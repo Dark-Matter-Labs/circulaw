@@ -6,7 +6,7 @@ import logo3 from '../public/logo_partners/CircuLawPartners-03.svg';
 import logo4 from '../public/logo_partners/CircuLawPartners-04.svg';
 import logo5 from '../public/logo_partners/CircuLawPartners-05.svg';
 import logo6 from '../public/logo_partners/CircuLawPartners-06.svg';
-import logo7 from '../public/logo_partners/CircuLawPartners-07.svg';
+import logo7 from '../public/logo_partners/Partner CircuLaw logo_s-23.png';
 import logo8 from '../public/logo_partners/CircuLawPartners-08.svg';
 import logo9 from '../public/logo_partners/CircuLawPartners-09.svg';
 import logo10 from '../public/logo_partners/CircuLawPartners-10.svg';
@@ -69,7 +69,7 @@ export default function FooterTemp() {
             <div className='col-span-3 block lg:hidden'>
               <hr className='border-black-white-200' />
             </div>
-            <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200'>
+            <div className='col-span-1 flex justify-center py-4 px-2 lg:py-8 lg:px-8 border-r border-black-white-200'>
               <a target='_blank' href='https://www.noord-holland.nl/' rel='noopener noreferrer'>
                 <Image src={logo7} alt='Provincie Noord-Holland logo' />
               </a>

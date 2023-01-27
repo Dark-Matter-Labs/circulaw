@@ -13,7 +13,7 @@ import logo3 from '../public/logo_partners/CircuLawPartners-03.svg';
 import logo4 from '../public/logo_partners/CircuLawPartners-04.svg';
 import logo5 from '../public/logo_partners/CircuLawPartners-05.svg';
 import logo6 from '../public/logo_partners/CircuLawPartners-06.svg';
-import logo7 from '../public/logo_partners/CircuLawPartners-07.svg';
+import logo7 from '../public/logo_partners/Partner CircuLaw logo_s-23.png';
 import logo8 from '../public/logo_partners/CircuLawPartners-08.svg';
 import logo9 from '../public/logo_partners/CircuLawPartners-09.svg';
 import logo10 from '../public/logo_partners/CircuLawPartners-10.svg';
