@@ -6,23 +6,19 @@ export default function AlphaBanner() {
           <div className='w-0 flex-1'>
             <div className='ml-3 text-black-white-800 truncate'>
               <div className='md:hidden'>
-              <a href='https://circulaw-alpha.vercel.app/'>
-                <h5 className='inline mobile sm:desktop'>Bekijk de </h5>
-                <h5 className='inline bold'>Alpha</h5>{' '}
-                <h5 className='inline mobile sm:desktop'>versie van CircuLaw</h5>
-                <span className=' link-base text-green-500'>
-                 -&gt;
-                </span>
+                <a href='https://circulaw-alpha.vercel.app/'>
+                  <h5 className='inline mobile sm:desktop'>Bekijk de </h5>
+                  <h5 className='inline bold'>Alpha</h5>{' '}
+                  <h5 className='inline mobile sm:desktop'>versie van CircuLaw</h5>
+                  <span className=' link-base text-green-500'>-&gt;</span>
                 </a>
               </div>
               <div className='hidden md:inline'>
-              <a href='https://circulaw-alpha.vercel.app/'>
-                <h5 className='inline mobile sm:desktop'>Bekijk de </h5>
-                <h5 className='inline bold'>Alpha</h5>{' '}
-                <h5 className='inline mobile sm:desktop'>versie van CircuLaw</h5>
-                <span className='link-base text-green-500'>
-                 -&gt;
-                </span>
+                <a href='https://circulaw-alpha.vercel.app/'>
+                  <h5 className='inline mobile sm:desktop'>Bekijk de </h5>
+                  <h5 className='inline bold'>Alpha</h5>{' '}
+                  <h5 className='inline mobile sm:desktop'>versie van CircuLaw</h5>
+                  <span className='link-base text-green-500'>-&gt;</span>
                 </a>
               </div>
             </div>

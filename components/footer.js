@@ -218,11 +218,7 @@ export default function Footer() {
               <hr className='border-black-white-200' />
             </div>
             <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200'>
-              <a
-                target='_blank'
-                href='https://vu.nl/nl '
-                rel='noopener noreferrer'
-              >
+              <a target='_blank' href='https://vu.nl/nl ' rel='noopener noreferrer'>
                 <Image src={logo11} alt='Wageningen University & Research logo' />
               </a>
             </div>
@@ -235,7 +231,11 @@ export default function Footer() {
               <hr className='border-black-white-200' />
             </div>
             <div className='col-span-1 flex justify-centerpy-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200'>
-              <a target='_blank' href='https://www.wur.nl/nl/wageningen-university.htm' rel='noopener noreferrer'>
+              <a
+                target='_blank'
+                href='https://www.wur.nl/nl/wageningen-university.htm'
+                rel='noopener noreferrer'
+              >
                 <Image src={logo13} alt='Erasmus Universiteit Rotterdam logo' />
               </a>
             </div>
