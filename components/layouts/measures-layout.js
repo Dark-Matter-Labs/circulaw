@@ -698,7 +698,7 @@ export default function MeasuresLayout(props) {
           </div>
         </div>
         <div className='hidden sm:block col-span-1'></div>
-        <div className='hidden lg:block mb-3 self-end'>
+        <div className='hidden lg:block  mb-6 self-end'>
           <h3 className='mobile sm:desktop inline text-black-white-800'>Filter op:</h3>{' '}
           <span
             onClick={reset}
@@ -828,7 +828,7 @@ export default function MeasuresLayout(props) {
             {/* display selected values */}
             <div className=''>
               <div>
-                {allSelectedValues != 0 && (
+                {allSelectedValues != 0 ? (
                   <div className='flex flex-wrap grid-rows-2 sm:grid-rows-1'>
                     {allSelectedValues.map((value, index) => (
                       <div key={index} className='inline'>
@@ -838,6 +838,10 @@ export default function MeasuresLayout(props) {
                         </span>
                       </div>
                     ))}
+                  </div>
+                ) : (
+                  <div className='inline'>
+                    <span>&nbsp;</span>
                   </div>
                 )}
               </div>
