@@ -220,14 +220,14 @@ export default function Footer() {
             <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200'>
               <a
                 target='_blank'
-                href='https://www.wur.nl/nl/wageningen-university.htm'
+                href='https://vu.nl/nl '
                 rel='noopener noreferrer'
               >
                 <Image src={logo11} alt='Wageningen University & Research logo' />
               </a>
             </div>
             <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 lg:border-r border-black-white-200'>
-              <a target='_blank' href='http://tudelft.nl/' rel='noopener noreferrer'>
+              <a target='_blank' href='https://www.uva.nl/' rel='noopener noreferrer'>
                 <Image src={logo12} alt='TU Delft logo' />
               </a>
             </div>
@@ -235,17 +235,17 @@ export default function Footer() {
               <hr className='border-black-white-200' />
             </div>
             <div className='col-span-1 flex justify-centerpy-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200'>
-              <a target='_blank' href='https://www.eur.nl/' rel='noopener noreferrer'>
+              <a target='_blank' href='https://www.wur.nl/nl/wageningen-university.htm' rel='noopener noreferrer'>
                 <Image src={logo13} alt='Erasmus Universiteit Rotterdam logo' />
               </a>
             </div>
             <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200'>
-              <a target='_blank' href='https://vu.nl/nl' rel='noopener noreferrer'>
+              <a target='_blank' href='http://tudelft.nl/' rel='noopener noreferrer'>
                 <Image src={logo14} alt='Vrije Universiteit Amsterdam logo' />
               </a>
             </div>
             <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 '>
-              <a target='_blank' href='https://www.uva.nl/' rel='noopener noreferrer'>
+              <a target='_blank' href='https://www.eur.nl/' rel='noopener noreferrer'>
                 <Image src={logo15} alt='Universiteit van Amsterdam logo' />
               </a>
             </div>
