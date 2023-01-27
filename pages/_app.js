@@ -1,10 +1,17 @@
 import Script from 'next/script';
+import { hotjar } from 'react-hotjar';
+import { useEffect } from 'react';
+import Router from 'next/router';
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
+import { getCookie } from 'cookies-next';
 import 'tailwindcss/tailwind.css';
 import 'next-pagination/dist/index.css';
 import '../global.css';
-import { hotjar } from 'react-hotjar';
-import { useEffect } from 'react';
-import { getCookie } from 'cookies-next';
+
+Router.events.on('routeChangeStart', () => NProgress.start());
+Router.events.on('routeChangeComplete', () => NProgress.done());
+Router.events.on('routeChangeError', () => NProgress.done());
 
 export default function MyApp({ Component, pageProps }) {
   // Use the layout defined at the page level, if available
