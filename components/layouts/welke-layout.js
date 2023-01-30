@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import Xarrow from 'react-xarrows'
 
 import MeasureLinks from '../measure-links-dropdown';
 
@@ -42,7 +43,7 @@ export default function WelkeLayout(props) {
         <div className='flex grid-cols-3 items-start justify-center'>
           {/* LEFT HAND SIDE */}
           <div className='grid col-span-1 items-start justify-center h-full w-80 mt-10'>
-            <div className='w-80 h-10 border border-green-800 rounded-full text-black-white-800 bg-black-white-200 flex items-center justify-left'>
+            <div id='allStart' className='w-80 h-10 border border-green-800 rounded-full text-black-white-800 bg-black-white-200 flex items-center justify-left'>
               <div className='h-10 w-10 border-r border-t border-b border-green-800 rounded-full flex items-center justify-center'>
                 <h5 className='mobile sm:desktop'>A</h5>
               </div>
@@ -81,7 +82,7 @@ export default function WelkeLayout(props) {
           </div>
 
           {/* DIAGRAM */}
-          <div className='w-[34rem] h-[34rem] min-w-[34rem] min-h-[34rem] flex items-center justify-center mx-4'>
+          <div className='w-[34rem] h-[34rem] min-w-[34rem] min-h-[34rem] flex items-center justify-center mx-4 relative'>
             <div className='w-full h-full border-1 border-green-800 bg-green-800 rounded-full flex items-end justify-center'>
               <div className='w-5/6 h-5/6 border-1 border-green-500 bg-green-500 rounded-full flex items-end justify-center'>
                 <div className='w-[70%] h-[70%] border-1 border-green-400 bg-green-400 rounded-full flex items-end justify-center'>
@@ -89,6 +90,15 @@ export default function WelkeLayout(props) {
                 </div>
               </div>
             </div>
+            <div id='allEnd' className='absolute top-20 left-50 h-[1rem] w-[1rem]'></div>
+            <div id='nationalEnd' className='absolute top-24 right-40 h-[1rem] w-[1rem]'></div>
+            <div id='provEnd' className='absolute top-60 right-32 h-[1rem] w-[1rem]'></div>
+            <div id='gemEnd' className='absolute bottom-20 right-40 h-[1rem] w-[1rem]'></div>
+            <Xarrow start ='allStart' end='allEnd' endAnchor='top' strokeWidth={2} showHead = {false} path='grid' gridBreak='90%' lineColor='#25C38B' />
+            <Xarrow start ='nationalStart' end='nationalEnd' endAnchor='top' strokeWidth={2} showHead = {false} path='grid' lineColor='#25C38B' />
+            <Xarrow start ='provStart' end='provEnd' endAnchor='top' strokeWidth={2} showHead = {false} path='grid' lineColor='#25C38B' />
+            <Xarrow start ='gemStart' end='gemEnd' endAnchor='top' strokeWidth={2} showHead = {false} path='grid' lineColor='#25C38B' />
+
           </div>
 
           {/* RIGHT HAND SIDE */}
@@ -96,7 +106,7 @@ export default function WelkeLayout(props) {
             {/* National */}
             {natLaws && (
               <div className='pb-3'>
-                <div className='w-80 h-10 bg-green-800 text-white rounded-full flex items-center justify-left'>
+                <div id='nationalStart' className='w-80 h-10 bg-green-800 text-white rounded-full flex items-center justify-left'>
                   <div className='flex items-center justify-center w-full h-full -ml-10'>
                     <h4 className='mobile sm:desktop'>National</h4>
                   </div>
@@ -136,7 +146,7 @@ export default function WelkeLayout(props) {
             {/* Provinciaal */}
             {provLaws && (
               <div className='pb-3'>
-                <div className='w-80 h-10 rounded-full text-white bg-green-500 flex items-center justify-left'>
+                <div id='provStart' className='w-80 h-10 rounded-full text-white bg-green-500 flex items-center justify-left'>
                   <div className='flex items-center justify-center w-full h-full -ml-10'>
                     <h4 className='mobile sm:desktop'>Provinciaal</h4>
                   </div>
@@ -176,7 +186,8 @@ export default function WelkeLayout(props) {
             {/* Gemeentelijk */}
             {gemLaws && (
               <div>
-                <div className='w-80 h-10 rounded-full bg-green-400 text-white flex items-center justify-right'>
+                <div id='gemStart' className='w-80 h-10 rounded-full bg-green-400 text-white flex items-center justify-right'>
+
                   <div className='flex items-center justify-center w-full h-full -ml-10'>
                     <h4 className='mobile sm:desktop'>Gemeentelijk</h4>
                   </div>
