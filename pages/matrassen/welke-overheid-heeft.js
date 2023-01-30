@@ -2,16 +2,16 @@ import { useState, useEffect } from 'react';
 import client from '../../lib/sanity';
 import Layout from '../../components/layouts/layout';
 import WelkeLayout from '../../components/layouts/welke-layout';
-import mattressIcon from '../../public/icons/matressIcon.svg'
+import mattressIcon from '../../public/icons/matressIcon.svg';
 
 export default function InfoPage() {
   const [allRegionLaws, setAllRegionLaws] = useState();
-  const [natLaws, setNatLaws] = useState()
-  const [provLaws, setProvLaws] = useState()
-  const [gemLaws, setGemLaws] = useState()
+  const [natLaws, setNatLaws] = useState();
+  const [provLaws, setProvLaws] = useState();
+  const [gemLaws, setGemLaws] = useState();
 
-   // fetch all laws with National + Provinciaal + Nationaal
-   useEffect(() => {
+  // fetch all laws with National + Provinciaal + Nationaal
+  useEffect(() => {
     client
       .fetch(
         `
@@ -32,7 +32,7 @@ export default function InfoPage() {
       .then((data) => setNatLaws(data));
   }, []);
 
-  // fetch all laws with only Provincial 
+  // fetch all laws with only Provincial
   useEffect(() => {
     client
       .fetch(
@@ -42,7 +42,7 @@ export default function InfoPage() {
       )
       .then((data) => setProvLaws(data));
   }, []);
-  
+
   // fetch all laws with only Gemeentelijk
   useEffect(() => {
     client
