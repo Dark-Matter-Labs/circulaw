@@ -180,6 +180,11 @@ html {
   background: linear-gradient(rgba(248, 250, 248, 0) 0%, #F8FAF8 100%);
 }
 
+.overview-radial-gradient {
+  background: radial-gradient(rgba(246, 214, 197, 0.3) 100%, rgba(247, 220, 206, 0.41) 89%, rgba(250, 232, 223, 0.62) 66%, 
+  rgba(252, 242, 237, 0.78) 45%, rgba(253, 249, 246, 0.9) 26%, rgba(254, 253, 252, 0.97) 10%, #FFFFFF 0%);
+}
+
 .measure-bg {
   background: '#F5F5F5';
 }
