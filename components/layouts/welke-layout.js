@@ -37,7 +37,6 @@ export default function WelkeLayout(props) {
           </div>
         </div>
       </div>
-
       {/* DYNAMIC IMAGE */}
       <div className='global-margin mb-20'>
         <div className='flex grid-cols-3 items-start justify-center'>
@@ -54,29 +53,34 @@ export default function WelkeLayout(props) {
             <div className='pl-4 pt-3'>
               {allRegionLaws &&
                 allRegionLaws.map((law) => (
-                  <Link key={law.titel} href={`/measures/${law.slug.current}`} className='inline-block'>
-                  <div  className='flex items-center justify-start max-w-80'>
-                    <span className='pr-2 inline-block'>
-                      {' '}
-                      <svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        fill='none'
-                        viewBox='0 0 24 24'
-                        strokeWidth={2}
-                        stroke='#028352'
-                        className='w-4  h-4'
-                      >
-                        <path
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
-                          d='M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3'
-                        />
-                      </svg>
-                    </span>
-                    <h5 className='py-1 inline-block mobile sm:desktop hover:underline'>{law.titel}</h5>
-                
-                  </div>
-                      </Link>
+                  <Link
+                    key={law.titel}
+                    href={`/measures/${law.slug.current}`}
+                    className='inline-block'
+                  >
+                    <div className='flex items-center justify-start max-w-80'>
+                      <span className='pr-2 inline-block'>
+                        {' '}
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          fill='none'
+                          viewBox='0 0 24 24'
+                          strokeWidth={2}
+                          stroke='#028352'
+                          className='w-4  h-4'
+                        >
+                          <path
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                            d='M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3'
+                          />
+                        </svg>
+                      </span>
+                      <h5 className='py-1 inline-block mobile sm:desktop hover:underline'>
+                        {law.titel}
+                      </h5>
+                    </div>
+                  </Link>
                 ))}
             </div>
           </div>
@@ -117,47 +121,6 @@ export default function WelkeLayout(props) {
                 <div className='pl-4 pt-3'>
                   {natLaws.map((law) => (
                     <Link key={law.titel} href={`/measures/${law.slug.current}`}>
-                    <div  className='flex items-center justify-start max-w-80'>
-                      <span className='pr-2 inline-block'>
-                        {' '}
-                        <svg
-                          xmlns='http://www.w3.org/2000/svg'
-                          fill='none'
-                          viewBox='0 0 24 24'
-                          strokeWidth={2}
-                          stroke='#028352'
-                          className='w-4  h-4'
-                        >
-                          <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            d='M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3'
-                          />
-                        </svg>
-                      </span>
-                      <h5 className='py-1 inline-block mobile sm:desktop hover:underline'>{law.titel}</h5>
-                    </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Provinciaal */}
-            {provLaws && (
-              <div className='pb-3'>
-                <div id='provStart' className='w-80 h-10 rounded-full text-white bg-green-500 flex items-center justify-left'>
-                  <div className='flex items-center justify-center w-full h-full -ml-10'>
-                    <h4 className='mobile sm:desktop'>Provinciaal</h4>
-                  </div>
-                  <div className='h-10 w-10 border-l border-t border-b border-white rounded-full flex items-center justify-center'>
-                    <h5 className='mobile sm:desktop'>Pr</h5>
-                  </div>
-                </div>
-                <div className='pl-4 pt-3'>
-                 
-                    {provLaws.map((law) => (
-                      <Link key={law.titel} href={`/measures/${law.slug.current}`}>
                       <div className='flex items-center justify-start max-w-80'>
                         <span className='pr-2 inline-block'>
                           {' '}
@@ -176,10 +139,54 @@ export default function WelkeLayout(props) {
                             />
                           </svg>
                         </span>
-                        <h5 className='py-1 inline-block mobile sm:desktop hover:underline'>{law.titel}</h5>
+                        <h5 className='py-1 inline-block mobile sm:desktop hover:underline'>
+                          {law.titel}
+                        </h5>
                       </div>
-                      </Link>
-                    ))}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Provinciaal */}
+            {provLaws && (
+              <div className='pb-3'>
+                <div id='provStart' className='w-80 h-10 rounded-full text-white bg-green-500 flex items-center justify-left'>
+                  <div className='flex items-center justify-center w-full h-full -ml-10'>
+                    <h4 className='mobile sm:desktop'>Provinciaal</h4>
+                  </div>
+                  <div className='h-10 w-10 border-l border-t border-b border-white rounded-full flex items-center justify-center'>
+                    <h5 className='mobile sm:desktop'>Pr</h5>
+                  </div>
+                </div>
+                <div className='pl-4 pt-3'>
+                  {provLaws.map((law) => (
+                    <Link key={law.titel} href={`/measures/${law.slug.current}`}>
+                      <div className='flex items-center justify-start max-w-80'>
+                        <span className='pr-2 inline-block'>
+                          {' '}
+                          <svg
+                            xmlns='http://www.w3.org/2000/svg'
+                            fill='none'
+                            viewBox='0 0 24 24'
+                            strokeWidth={2}
+                            stroke='#028352'
+                            className='w-4  h-4'
+                          >
+                            <path
+                              strokeLinecap='round'
+                              strokeLinejoin='round'
+                              d='M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3'
+                            />
+                          </svg>
+                        </span>
+                        <h5 className='py-1 inline-block mobile sm:desktop hover:underline'>
+                          {law.titel}
+                        </h5>
+                      </div>
+                    </Link>
+                  ))}
                 </div>
               </div>
             )}
@@ -198,26 +205,28 @@ export default function WelkeLayout(props) {
                 <div className='pl-4 pt-3'>
                   {gemLaws.map((law) => (
                     <Link key={law.titel} href={`/measures/${law.slug.current}`}>
-                    <div key={law.titel} className='flex items-center justify-start max-w-80'>
-                      <span className='pr-2 inline-block'>
-                        {' '}
-                        <svg
-                          xmlns='http://www.w3.org/2000/svg'
-                          fill='none'
-                          viewBox='0 0 24 24'
-                          strokeWidth={2}
-                          stroke='#028352'
-                          className='w-4  h-4'
-                        >
-                          <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            d='M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3'
-                          />
-                        </svg>
-                      </span>
-                      <h5 className='py-1 inline-block mobile sm:desktop hover:underline'>{law.titel}</h5>
-                    </div>
+                      <div key={law.titel} className='flex items-center justify-start max-w-80'>
+                        <span className='pr-2 inline-block'>
+                          {' '}
+                          <svg
+                            xmlns='http://www.w3.org/2000/svg'
+                            fill='none'
+                            viewBox='0 0 24 24'
+                            strokeWidth={2}
+                            stroke='#028352'
+                            className='w-4  h-4'
+                          >
+                            <path
+                              strokeLinecap='round'
+                              strokeLinejoin='round'
+                              d='M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3'
+                            />
+                          </svg>
+                        </span>
+                        <h5 className='py-1 inline-block mobile sm:desktop hover:underline'>
+                          {law.titel}
+                        </h5>
+                      </div>
                     </Link>
                   ))}
                 </div>
@@ -226,7 +235,6 @@ export default function WelkeLayout(props) {
           </div>
         </div>
       </div>
-
       {/* TEXT COMPONENT */} {/* NEED TO CHECK FINAL CONTENT */}
       <div className='global-margin mb-20'>
         <div className='max-w-3xl mx-auto'>

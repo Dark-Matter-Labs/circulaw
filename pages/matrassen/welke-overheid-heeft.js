@@ -2,56 +2,37 @@ import { useState, useEffect } from 'react';
 import client from '../../lib/sanity';
 import Layout from '../../components/layouts/layout';
 import WelkeLayout from '../../components/layouts/welke-layout';
-import mattressIcon from '../../public/icons/matressIcon.svg'
+import mattressIcon from '../../public/icons/matressIcon.svg';
 
 export default function InfoPage() {
   const [allRegionLaws, setAllRegionLaws] = useState();
-  const [natLaws, setNatLaws] = useState()
-  const [provLaws, setProvLaws] = useState()
-  const [gemLaws, setGemLaws] = useState()
+  const [natLaws, setNatLaws] = useState();
+  const [provLaws, setProvLaws] = useState();
+  const [gemLaws, setGemLaws] = useState();
 
-   // fetch all laws with National + Provinciaal + Nationaal
-   useEffect(() => {
-    client
-      .fetch(
-        `
-    *[_type == "measure" && thema == "matrassen" && "Gemeentelijk" in overheidslaag && "Provinciaal" in overheidslaag && "Nationaal" in overheidslaag]| order(lower(titel) asc)
-    `,
-      )
-      .then((data) => setAllRegionLaws(data));
-  }, []);
-
-  // fetch all laws with only National
   useEffect(() => {
-    client
-      .fetch(
-        `
-        *[_type == "measure" && thema == "matrassen" && length(overheidslaag) < 3 && "Nationaal" in overheidslaag]| order(lower(titel) asc)
-    `,
+    const urls = [
+      `
+    *[_type == "measure" && thema == "matrassen" && "Gemeentelijk" in overheidslaag && "Provinciaal" in overheidslaag && "Nationaal" in overheidslaag]| order(lower(titel) asc)`,
+      `
+    *[_type == "measure" && thema == "matrassen" && length(overheidslaag) < 3 && "Nationaal" in overheidslaag]| order(lower(titel) asc)`,
+      `
+    *[_type == "measure" && thema == "matrassen" && length(overheidslaag) < 3  && "Provinciaal" in overheidslaag]| order(lower(titel) asc)`,
+      `
+    *[_type == "measure" && thema == "matrassen" && length(overheidslaag) < 3 && "Gemeentelijk" in overheidslaag]| order(lower(titel) asc)`,
+    ];
+    // eslint-disable-next-line
+    Promise.all(urls.map((u) => client.fetch(u)))
+      .then((responses) =>
+        // eslint-disable-next-line
+        Promise.all(responses.map((res) => res)),
       )
-      .then((data) => setNatLaws(data));
-  }, []);
-
-  // fetch all laws with only Provincial 
-  useEffect(() => {
-    client
-      .fetch(
-        `
-        *[_type == "measure" && thema == "matrassen" && length(overheidslaag) < 3  && "Provinciaal" in overheidslaag]| order(lower(titel) asc)
-    `,
-      )
-      .then((data) => setProvLaws(data));
-  }, []);
-  
-  // fetch all laws with only Gemeentelijk
-  useEffect(() => {
-    client
-      .fetch(
-        `
-        *[_type == "measure" && thema == "matrassen" && length(overheidslaag) < 3 && "Gemeentelijk" in overheidslaag]| order(lower(titel) asc)
-    `,
-      )
-      .then((data) => setGemLaws(data));
+      .then((measures) => {
+        setAllRegionLaws(measures[0]);
+        setNatLaws(measures[1]);
+        setProvLaws(measures[2]);
+        setGemLaws(measures[3]);
+      });
   }, []);
 
   return (
