@@ -38,7 +38,7 @@ export default function Matrassen({ laws }) {
         // card links
         cardLinkList='/measures/matrassen'
         cardLinkSamenhang='#'
-        cardLinkWaarvoor='#'
+        cardLinkWaarvoor='/matrassen/welke-overheid-heeft'
         extendedMeasureHeading='instrumenten om de circulariteit van de matrasketen te bevorderen'
         extendedMeasureSubtitle='Met voorbeelden en handige leidraden.'
       />

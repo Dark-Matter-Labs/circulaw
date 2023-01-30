@@ -13,7 +13,7 @@ export default function WelkeLayout(props) {
     <>
       {/* Header */}
       <div className='global-margin mt-10 mb-20 max-w-2xl'>
-        <div className='flex justify-between items-center  pb-8'>
+        <div className='flex justify-between items-center pb-8'>
           <div className='breadcrumb text-green-500'>
             <Link href='/'>Home &gt;</Link>
             <Link href={`/${props.casus.toLowerCase().replace(/ /g, '-')}`}>
@@ -32,13 +32,13 @@ export default function WelkeLayout(props) {
             <Image src={props.iconPath} alt='Thema icon' width={107} height={107} />
           </div>
           <div className='col-span-9'>
-            <h1 className='mobile sm:desktop text-black pb-2 max-w-3xl pl-6'>{props.title}</h1>
+            <h1 className='mobile sm:desktop text-black py-1 max-w-3xl pl-6'>{props.title}</h1>
           </div>
         </div>
       </div>
 
       {/* DYNAMIC IMAGE */}
-      <div className='global-margin'>
+      <div className='global-margin mb-20'>
         <div className='flex grid-cols-3 items-start justify-center'>
           {/* LEFT HAND SIDE */}
           <div className='grid col-span-1 items-start justify-center h-full w-80 mt-10'>
@@ -50,10 +50,11 @@ export default function WelkeLayout(props) {
                 <h4 className='mobile sm:desktop'>Alle overheidslagen</h4>
               </div>
             </div>
-            <div className='pl-4 pt-6'>
+            <div className='pl-4 pt-3'>
               {allRegionLaws &&
-                allRegionLaws.map((gemLaw) => (
-                  <div key={gemLaw.titel} className='flex items-center justify-start max-w-80'>
+                allRegionLaws.map((law) => (
+                  <Link key={law.titel} href={`/measures/${law.slug.current}`} className='inline-block'>
+                  <div  className='flex items-center justify-start max-w-80'>
                     <span className='pr-2 inline-block'>
                       {' '}
                       <svg
@@ -71,8 +72,10 @@ export default function WelkeLayout(props) {
                         />
                       </svg>
                     </span>
-                    <h5 className='py-2 inline-block mobile sm:desktop'>{gemLaw.titel}</h5>
+                    <h5 className='py-1 inline-block mobile sm:desktop hover:underline'>{law.titel}</h5>
+                
                   </div>
+                      </Link>
                 ))}
             </div>
           </div>
@@ -92,7 +95,7 @@ export default function WelkeLayout(props) {
           <div className='grid col-span-1 items-start justify-center h-full w-80 mt-10'>
             {/* National */}
             {natLaws && (
-              <div className='pb-6'>
+              <div className='pb-3'>
                 <div className='w-80 h-10 bg-green-800 text-white rounded-full flex items-center justify-left'>
                   <div className='flex items-center justify-center w-full h-full -ml-10'>
                     <h4 className='mobile sm:desktop'>National</h4>
@@ -101,9 +104,10 @@ export default function WelkeLayout(props) {
                     <h5 className='mobile sm:desktop'>Nat</h5>
                   </div>
                 </div>
-                <div className='pl-4 pt-6'>
-                  {natLaws?.map((law) => (
-                    <div key={law.titel} className='flex items-center justify-start max-w-80'>
+                <div className='pl-4 pt-3'>
+                  {natLaws.map((law) => (
+                    <Link key={law.titel} href={`/measures/${law.slug.current}`}>
+                    <div  className='flex items-center justify-start max-w-80'>
                       <span className='pr-2 inline-block'>
                         {' '}
                         <svg
@@ -121,8 +125,9 @@ export default function WelkeLayout(props) {
                           />
                         </svg>
                       </span>
-                      <h5 className='py-2 inline-block mobile sm:desktop'>{law.titel}</h5>
+                      <h5 className='py-1 inline-block mobile sm:desktop hover:underline'>{law.titel}</h5>
                     </div>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -130,7 +135,7 @@ export default function WelkeLayout(props) {
 
             {/* Provinciaal */}
             {provLaws && (
-              <div className='pb-6'>
+              <div className='pb-3'>
                 <div className='w-80 h-10 rounded-full text-white bg-green-500 flex items-center justify-left'>
                   <div className='flex items-center justify-center w-full h-full -ml-10'>
                     <h4 className='mobile sm:desktop'>Provinciaal</h4>
@@ -139,10 +144,11 @@ export default function WelkeLayout(props) {
                     <h5 className='mobile sm:desktop'>Pr</h5>
                   </div>
                 </div>
-                <div className='pl-4 pt-6'>
-                  {provLaws &&
-                    provLaws.map((law) => (
-                      <div key={law.titel} className='flex items-center justify-start max-w-80'>
+                <div className='pl-4 pt-3'>
+                 
+                    {provLaws.map((law) => (
+                      <Link key={law.titel} href={`/measures/${law.slug.current}`}>
+                      <div className='flex items-center justify-start max-w-80'>
                         <span className='pr-2 inline-block'>
                           {' '}
                           <svg
@@ -160,8 +166,9 @@ export default function WelkeLayout(props) {
                             />
                           </svg>
                         </span>
-                        <h5 className='py-2 inline-block mobile sm:desktop'>{law.titel}</h5>
+                        <h5 className='py-1 inline-block mobile sm:desktop hover:underline'>{law.titel}</h5>
                       </div>
+                      </Link>
                     ))}
                 </div>
               </div>
@@ -177,8 +184,9 @@ export default function WelkeLayout(props) {
                     <h5 className='mobile sm:desktop'>Gem</h5>
                   </div>
                 </div>
-                <div className='pl-4 pt-6'>
+                <div className='pl-4 pt-3'>
                   {gemLaws.map((law) => (
+                    <Link key={law.titel} href={`/measures/${law.slug.current}`}>
                     <div key={law.titel} className='flex items-center justify-start max-w-80'>
                       <span className='pr-2 inline-block'>
                         {' '}
@@ -197,8 +205,9 @@ export default function WelkeLayout(props) {
                           />
                         </svg>
                       </span>
-                      <h5 className='py-2 inline-block mobile sm:desktop'>{law.titel}</h5>
+                      <h5 className='py-1 inline-block mobile sm:desktop hover:underline'>{law.titel}</h5>
                     </div>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -207,7 +216,7 @@ export default function WelkeLayout(props) {
         </div>
       </div>
 
-      {/* TEXT COMPONENT */}
+      {/* TEXT COMPONENT */} {/* NEED TO CHECK FINAL CONTENT */}
       <div className='global-margin mb-20'>
         <div className='max-w-3xl mx-auto'>
           <p className=' p-lg text-black-white-800 pb-6'>{props.p1}</p>
