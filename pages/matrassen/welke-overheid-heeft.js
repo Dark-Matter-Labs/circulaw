@@ -1,8 +1,6 @@
 import Layout from '../../components/layouts/layout';
 import WelkeLayout from '../../components/layouts/welke-layout';
 
-
-
 export default function InfoPage() {
   return (
     <Layout>

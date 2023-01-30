@@ -1,7 +1,7 @@
 import Layout from '/components/layouts/layout';
-import WindmillIcon from '../../public/windmill.svg';
 import MeasuresLayout from '../../components/layouts/measures-layout';
 import client from '../../lib/sanity';
+import WindmillIcon from '../../public/windmill.svg';
 
 const lawsQuery = `
 *[_type == "measure" && thema == "circulaire-windturbines"]
