@@ -10,23 +10,21 @@ export default function InfoPage() {
   const [provLaws, setProvLaws] = useState();
   const [gemLaws, setGemLaws] = useState();
 
-  const urls = [
-    `
-  *[_type == "measure" && thema == "houtbouw" && "Gemeentelijk" in overheidslaag && "Provinciaal" in overheidslaag && "Nationaal" in overheidslaag]| order(lower(titel) asc)
-  `,
-    `
-        *[_type == "measure" && thema == "houtbouw" && length(overheidslaag) < 3 && "Nationaal" in overheidslaag]| order(lower(titel) asc)
-    `,
-    `
-    *[_type == "measure" && thema == "houtbouw" && length(overheidslaag) < 3  && "Provinciaal" in overheidslaag]| order(lower(titel) asc)
-`,
-    `
-        *[_type == "measure" && thema == "houtbouw" && length(overheidslaag) < 3 && "Gemeentelijk" in overheidslaag]| order(lower(titel) asc)
-    `,
-  ];
-
-  // fetch all laws with National + Provinciaal + Nationaal
   useEffect(() => {
+    const urls = [
+      `
+    *[_type == "measure" && thema == "houtbouw" && "Gemeentelijk" in overheidslaag && "Provinciaal" in overheidslaag && "Nationaal" in overheidslaag]| order(lower(titel) asc)
+    `,
+      `
+          *[_type == "measure" && thema == "houtbouw" && length(overheidslaag) < 3 && "Nationaal" in overheidslaag]| order(lower(titel) asc)
+      `,
+      `
+      *[_type == "measure" && thema == "houtbouw" && length(overheidslaag) < 3  && "Provinciaal" in overheidslaag]| order(lower(titel) asc)
+  `,
+      `
+          *[_type == "measure" && thema == "houtbouw" && length(overheidslaag) < 3 && "Gemeentelijk" in overheidslaag]| order(lower(titel) asc)
+      `,
+    ];
     // eslint-disable-next-line
     Promise.all(urls.map((u) => client.fetch(u)))
       .then((responses) =>
