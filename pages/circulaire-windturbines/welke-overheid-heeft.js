@@ -1,7 +1,5 @@
 import Layout from '../../components/layouts/layout';
 import WelkeLayout from '../../components/layouts/welke-layout';
-import WindmillImage from '../../public/Windmill_Measures_Web.png';
-import WindmillImageMob from '../../public/Windmill_Measures_Mob.png';
 
 export default function InfoPage() {
   return (
@@ -9,8 +7,6 @@ export default function InfoPage() {
       <WelkeLayout
         casus='circulaire Windturbines'
         title='Welke overheid heeft welke bevoegdheid voor maatregelen circulaire windturbines?'
-        img={WindmillImage}
-        imgMob={WindmillImageMob}
         p1='Provincies en gemeenten kunnen circulaire windturbines opnemen in hun omgevingsvisie om
       dit beleidsdoel kenbaar te maken. Het vergroten van het aandeel publieke grond van
       provincies en gemeenten zorgt ervoor dat circulaire eisen kunnen worden gesteld bij de
