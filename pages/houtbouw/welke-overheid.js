@@ -15,7 +15,7 @@ export default function InfoPage() {
     client
       .fetch(
         `
-    *[_type == "measure" && thema == "houtbouw" && "Gemeentelijk" in overheidslaag && "Provinciaal" in overheidslaag && "Nationaal" in overheidslaag]
+    *[_type == "measure" && thema == "houtbouw" && "Gemeentelijk" in overheidslaag && "Provinciaal" in overheidslaag && "Nationaal" in overheidslaag]| order(lower(titel) asc)
     `,
       )
       .then((data) => setAllRegionLaws(data));
@@ -26,7 +26,7 @@ export default function InfoPage() {
     client
       .fetch(
         `
-        *[_type == "measure" && thema == "houtbouw" && length(overheidslaag) < 3 && "Nationaal" in overheidslaag]
+        *[_type == "measure" && thema == "houtbouw" && length(overheidslaag) < 3 && "Nationaal" in overheidslaag]| order(lower(titel) asc)
     `,
       )
       .then((data) => setNatLaws(data));
@@ -37,7 +37,7 @@ export default function InfoPage() {
     client
       .fetch(
         `
-        *[_type == "measure" && thema == "houtbouw" && length(overheidslaag) < 3  && "Provinciaal" in overheidslaag]
+        *[_type == "measure" && thema == "houtbouw" && length(overheidslaag) < 3  && "Provinciaal" in overheidslaag]| order(lower(titel) asc)
     `,
       )
       .then((data) => setProvLaws(data));
@@ -48,7 +48,7 @@ export default function InfoPage() {
     client
       .fetch(
         `
-        *[_type == "measure" && thema == "houtbouw" && length(overheidslaag) < 3 && "Gemeentelijk" in overheidslaag]
+        *[_type == "measure" && thema == "houtbouw" && length(overheidslaag) < 3 && "Gemeentelijk" in overheidslaag]| order(lower(titel) asc)
     `,
       )
       .then((data) => setGemLaws(data));
