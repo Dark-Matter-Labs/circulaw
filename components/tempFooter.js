@@ -2,19 +2,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import logo1 from '../public/logo_partners/CircuLawPartners-01.svg';
 import logo2 from '../public/logo_partners/CircuLawPartners-02.svg';
-import logo3 from '../public/logo_partners/CircuLawPartners-03.svg';
+import logo3 from '../public/logo_partners/CircuLawPartners-03.png';
 import logo4 from '../public/logo_partners/CircuLawPartners-04.svg';
-import logo5 from '../public/logo_partners/CircuLawPartners-05.svg';
-import logo6 from '../public/logo_partners/CircuLawPartners-06.svg';
+import logo5 from '../public/logo_partners/CircuLawPartners-05.png';
+import logo6 from '../public/logo_partners/CircuLawPartners-06.png';
 import logo7 from '../public/logo_partners/Partner CircuLaw logo_s-23.png';
-import logo8 from '../public/logo_partners/CircuLawPartners-08.svg';
+import logo8 from '../public/logo_partners/CircuLawPartners-08.png';
 import logo9 from '../public/logo_partners/CircuLawPartners-09.svg';
-import logo10 from '../public/logo_partners/CircuLawPartners-10.svg';
+import logo10 from '../public/logo_partners/CircuLawPartners-10.png';
 import logo11 from '../public/logo_partners/CircuLawPartners-15.svg';
 import logo12 from '../public/logo_partners/CircuLawPartners-11.svg';
 import logo13 from '../public/logo_partners/CircuLawPartners-12.svg';
 import logo14 from '../public/logo_partners/CircuLawPartners-13.svg';
-import logo15 from '../public/logo_partners/CircuLawPartners-14.svg';
+import logo15 from '../public/logo_partners/CircuLawPartners-14.png';
 
 export default function FooterTemp() {
   return (
@@ -57,7 +57,7 @@ export default function FooterTemp() {
             <div className='col-span-5  hidden lg:block'>
               <hr className='border-black-white-200' />
             </div>
-            <div className='col-span-1 flex justify-centerpy-4 px-4 lg:py-8 lg:px-8 lg:border-r border-black-white-200'>
+            <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 lg:border-r border-black-white-200'>
               <a
                 target='_blank'
                 href='https://circulairebouweconomie.nl/'
@@ -133,7 +133,7 @@ export default function FooterTemp() {
             </div>
           </div>
         </div>
-        <div className='global-margin pb-2 text-black-white-200  p-lg'>
+        <div className='global-margin pb-2 text-black-white-200 p-base'>
           <p className='pb-8'>
             Welkom bij CircuLaw. Deze website is volop in ontwikkeling. In deze versie testen we de
             techniek, opzet en inhoud van de site. Het is mogelijk dat de inhoud van de site
