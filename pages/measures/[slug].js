@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { PortableText } from '@portabletext/react';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
 
@@ -168,6 +168,8 @@ const components = {
 };
 
 export default function Measure({ data }) {
+
+  const router = useRouter()
   return (
     <Layout>
       <div className='measure-bg'>
@@ -175,28 +177,13 @@ export default function Measure({ data }) {
           <div className='grid grid-cols-1 sm:grid-cols-12 content-center'>
             <div className='sm:col-span-12 row-span-1 h-12 mt-4'>
               {/* BREADCRUMB */}
-              {data?.measure?.thema === 'houtbouw' && (
-                <Link href='/measures/houtbouw' className=''>
-                  <span className='breadcrumb'>{'<'} Terug</span>{' '}
-                  {/* should all breadcrumbs be green this is black in figma */}
-                </Link>
-              )}
-              {data?.measure?.thema === 'circulaire-windturbines' && (
-                <Link href='/measures/windturbines' className=''>
-                  <span className='text-green-500 breadcrumb flex col-span-12'>
-                    <ArrowLeftIcon className='inline-block h-4 w-4' aria-hidden='true' /> Terug
+                  <button type="button" onClick={() => router.back()}>
+                  <span className='breadcrumb flex justify-center items-center'>
+                  <ArrowLeftIcon className='inline-block h-4 w-4 pr-1' aria-hidden='true' /> Terug
                   </span>{' '}
                   {/* should all breadcrumbs be green this is black in figma */}
-                </Link>
-              )}
-              {data?.measure?.thema === 'matrassen' && (
-                <Link href='/measures/matrassen' className=''>
-                  <span className='text-green-500 breadcrumb flex col-span-12'>
-                    <ArrowLeftIcon className='inline-block h-4 w-4' aria-hidden='true' /> Terug
-                  </span>{' '}
-                  {/* should all breadcrumbs be green this is black in figma */}
-                </Link>
-              )}
+                  </button>
+            
             </div>
             <div className='sm:col-span-12 row-span-1'>
               <h1 className='lg:block sm:pt-4 pb-6 sm:pb-10 mobile sm:desktop'>
