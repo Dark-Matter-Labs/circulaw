@@ -21,12 +21,8 @@ export default function InfoPage() {
       `
     *[_type == "measure" && thema == "matrassen" && length(overheidslaag) < 3 && "Gemeentelijk" in overheidslaag]| order(lower(titel) asc)`,
     ];
-    // eslint-disable-next-line
     Promise.all(urls.map((u) => client.fetch(u)))
-      .then((responses) =>
-        // eslint-disable-next-line
-        Promise.all(responses.map((res) => res)),
-      )
+      .then((responses) => Promise.all(responses.map((res) => res)))
       .then((measures) => {
         setAllRegionLaws(measures[0]);
         setNatLaws(measures[1]);
