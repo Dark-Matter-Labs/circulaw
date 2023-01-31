@@ -42,7 +42,7 @@ export default function InfoPage() {
   return (
     <Layout>
       <WelkeLayout
-        casus='Houtbouw'
+        thema='houtbouw'
         title='Welke overheid heeft welke bevoegdheid voor houtbouwmaatregelen?'
         iconPath={woodIcon}
         p1='Op rijksniveau kunnen regels gesteld worden ten aanzien van hergebruik van producten en
