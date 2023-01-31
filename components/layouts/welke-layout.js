@@ -20,11 +20,11 @@ export default function WelkeLayout(props) {
       {/* Header */}
       <div className='global-margin mt-10 mb-20 max-w-2xl'>
         <div className='flex justify-between items-center pb-8'>
-          <div className='breadcrumb text-green-500'>
+          <div className='breadcrumb uppercase'>
             <Link href='/'>Home &gt;</Link>
             <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`}>
-              <span className='inline-block lowercase first-letter:uppercase'>
-                {props.casus} &gt;{' '}
+              <span className='inline-block pl-1'>
+                {' '}{props.thema.replace('-', ' ')} &gt;{' '}
               </span>
             </Link>
           </div>
