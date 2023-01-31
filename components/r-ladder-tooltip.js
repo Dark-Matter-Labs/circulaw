@@ -2,9 +2,7 @@ import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
-import Image from 'next/image';
-
-import R1 from '../public/r1.png';
+import LinkIcon from './link-icon';
 
 export default function ToolTips({ children, icon }) {
   const [open, setOpen] = useState(false);
@@ -93,43 +91,27 @@ export default function ToolTips({ children, icon }) {
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>
                         <div className='absolute inset-0 px-4 sm:px-6'>
                           <p className='p-base'>
-                            CircuLaw heeft voor elke maatregel een inschatting gemaakt binnen welke
-                            circulaire strategie deze past op de zogenaamde R-ladder.
+                          Met de R-ladder geven we per instrument een schatting van de mate van circulariteit aan. De R-ladder heeft 6 tredes (R1 tot en met R6) die verschillende strategieën van circulariteit weergeven. Strategieën hoger op de ladder besparen meer grondstoffen. R1 is de hoogste trede. De strategieën kunnen samengaan met innovaties in de vorm van vernieuwende productontwerpen, technologieën of businessmodellen.
                           </p>
-                          <p className='p-base'>
-                            Deze R-ladder geeft de mate van circulariteit aan: hoe hoger een
-                            strategie op de R-ladder staat, hoe efficiënter met materiaal wordt
-                            omgegaan.
-                          </p>
-                          <p className='p-base'>
-                            De R-ladder heeft 6 treden: R1 is de hoogste, R6 de laagste.
-                            <br />
-                            Een paar voorbeelden:
-                            <ul className='list-disc pl-6'>
-                              <li>
-                                Neem je je eigen biobakje mee naar een afhaalrestaurant? Dat scoort
-                                R1.
-                              </li>
-                              <li>Draag je tweedehands kleding? Dat scoort R3. </li>
-                              <li>
-                                Het recyclen van glas kost veel energie en is niet erg efficiënt.
-                                Het scoort daarom R5.
-                              </li>
+                          <p className='p-base py-6'>
+                            De 6 tredes zijn:
+                            <ul className='list-disc pl-6 pt-2'>
+                              <li>R1. Refuse en rethink: afzien van producten of producten intensiever gebruiken</li>
+                              <li>R2. Reduce: producten efficiënter fabriceren of efficiënter maken in het gebruik</li>
+                              <li>R3. Reuse: hergebruik van een product</li>
+                              <li>R4. Repair, refurbish, remanufacturing en repurpose: reparatie en hergebruik van productonderdelen</li>
+                              <li>R5. Recycling: verwerken en hergebruiken van materialen</li>
+                              <li>R6. Recover: energie terugwinnen uit materialen</li>
                             </ul>
                           </p>
-                          <div className='py-4'>
-                            <Image src={R1} alt='Picture of the author' />
-                          </div>
-                          <div className=' p-lg '>Bron: PBL (Planbureau voor de Leefomgeving)</div>
-                          <Link
-                            href='https://www.rvo.nl/onderwerpen/duurzaam-ondernemen/circulaire-economie/r-ladder'
+                            <span className='p-base py-2'>
+                            Bron en meer over de de R-ladder op de {' '}
+                            <Link
+                            href='https://www.rvo.nl/onderwerpen/r-ladder'
                             target='_blank'
-                            rel='noopener noreferrer'
-                          >
-                            <span className='text-green-500  link-lg'>
-                              Meer over de R ladder op de website van RVO
+                            rel='noopener noreferrer'><span className='link-lg underline text-green-500'>website van RVO</span><LinkIcon /></Link> 
                             </span>
-                          </Link>
+                          
                         </div>
                       </div>
                     </div>

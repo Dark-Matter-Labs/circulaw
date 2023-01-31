@@ -150,7 +150,7 @@ const components = {
       value.blank == true ? (
         <>
           <a
-            className='text-green-500  link-lg inline-flex'
+            className='text-green-500 link-lg inline-flex'
             href={value.href}
             target='_blank'
             rel='noreferrer'
