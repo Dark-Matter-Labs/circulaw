@@ -11,6 +11,8 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
 }
 
+
+
 console.log(getRandomInt(30,60))
 
 export default function WelkeLayout(props) {
@@ -23,6 +25,17 @@ export default function WelkeLayout(props) {
   const provRef = useRef()
   const gemRef = useRef()
 
+
+  const allRegionBottomCoordinates = []
+  const allRegionRightCoordinates = []
+  for (let i=0; i < allRegionLaws?.length; i++) {
+    allRegionBottomCoordinates.push(getRandomInt(11,87))
+    allRegionRightCoordinates.push(getRandomInt(44, 54))
+  }
+  console.log(allRegionBottomCoordinates, allRegionRightCoordinates)
+
+  const coordinatesAllRegions = allRegionBottomCoordinates.map((el, i) => ({bottom: el, right: allRegionRightCoordinates[i]}))
+  console.log(coordinatesAllRegions, 'coordinates')
 
   return (
     <>
@@ -65,8 +78,8 @@ export default function WelkeLayout(props) {
               </div>
             </div>
             <div className='pl-4 pt-3'>
-              {allRegionLaws &&
-                allRegionLaws.map((law) => (
+              {allRegionLaws?.length !=0  &&
+                allRegionLaws?.map((law) => (
                   <Link
                     key={law.titel}
                     href={`/measures/${law.slug.current}`}
@@ -104,34 +117,45 @@ export default function WelkeLayout(props) {
             <div className='w-full h-full border-1 border-green-800 bg-green-800 rounded-full flex items-end justify-center'>
               <div className='w-5/6 h-5/6 border-1 border-green-500 bg-green-500 rounded-full flex items-end justify-center'>
                 <div className='w-[70%] h-[70%] border-1 border-green-400 bg-green-400 rounded-full flex items-end justify-center'>
-                  <div className='w-[33%] h-[34rem] rounded-[50%] overview-radial-gradient'></div>
+                  <div className='w-[33%] h-[34rem] rounded-[50%] overview-radial-gradient'>
+                  </div>
                 </div>
               </div>
             </div>
-            {props.casus === 'circulaire Windturbines' &&
-            <>
-            <div className='absolute top-10  h-3 w-3 rounded-full bg-white'></div>
-            <div className='absolute top-20 left-44 h-3 w-3 rounded-full bg-white'></div>
-            <div className='absolute top-40 left-40 h-3 w-3 rounded-full bg-white'></div>
-            <div className='absolute top-44 left-72 h-3 w-3 rounded-full bg-white'></div>
-            <div className='absolute top-32 right-48 h-3 w-3 rounded-full bg-white'></div>
-            <div className='absolute top-64 right-32 h-3 w-3 rounded-full bg-white'></div>
-            <div className='absolute bottom-28 left-1/2 h-3 w-3 rounded-full bg-white'></div>
-            <div className='absolute bottom-38 left-[55%] h-3 w-3 rounded-full bg-white'></div>
-            <div className='absolute bottom-52 left-[45%] h-3 w-3 rounded-full bg-white'></div>
-            <div className='absolute bottom-44 left-36 h-3 w-3 rounded-full bg-white'></div>
-            <div className='absolute bottom-32 right-44 h-3 w-3 rounded-full bg-white'></div>
-            <div className='absolute bottom-44 right-48 h-3 w-3 rounded-full bg-white'></div>
-            <div className='absolute bottom-44 right-48 h-3 w-3 rounded-full bg-red-600'></div>
-            </>
-            }
+            
+            <div className='absolute top-20 left-44 h-3 w-3 rounded-full bg-red-500'></div>
+            <div className='absolute top-40 left-40 h-3 w-3 rounded-full bg-red-500'></div>
+            
+            <div className='absolute top-32 right-48 h-3 w-3 rounded-full bg-red-500'></div>
+            <div className='absolute top-64 right-32 h-3 w-3 rounded-full bg-red-500'></div>
+           {/* <div className='absolute bottom-28 left-1/2 h-3 w-3 rounded-full bg-black'></div>
+            <div className='absolute bottom-38 left-[55%] h-3 w-3 rounded-full bg-black'></div>
+                <div className='absolute bottom-52 left-[45%] h-3 w-3 rounded-full bg-black'></div> 
+                <div className='absolute top-44 left-72 h-3 w-3 rounded-full bg-black'></div>
+            <div className='absolute top-10  h-3 w-3 rounded-full bg-black'></div>
+                */}
+
+            <div className='absolute bottom-44 left-36 h-3 w-3 rounded-full bg-red-500'></div>
+            <div className='absolute bottom-32 right-44 h-3 w-3 rounded-full bg-red-500'></div>
+            <div className='absolute bottom-44 right-48 h-3 w-3 rounded-full bg-red-500'></div>
+            
+            {/* <div className='absolute bottom-[11%] right-[44%] h-3 w-3 rounded-full bg-red-500'></div>
+            <div className='absolute bottom-[11%] right-[54%] h-3 w-3 rounded-full bg-red-500'></div>
+            <div className='absolute bottom-[87%] right-[44%] h-3 w-3 rounded-full bg-red-500'></div>
+            <div className='absolute bottom-[87%] right-[54%] h-3 w-3 rounded-full bg-red-500'></div>*/}
+
+
+            {coordinatesAllRegions.map((x) => (
+              <span key={x.bottom} className='absolute h-3 w-3 m-3 overflow-hidden rounded-full bg-white' style={{bottom: `${x.bottom}%`, right: `${x.right}%`}}>{console.log(x.right)}</span>
+            ))}
+            </div>
 
             {/* 
             <div id='allEnd' className='absolute top-20 left-50 h-[1rem] w-[1rem] bg-black'></div>
             <div id='nationalEnd' className='absolute top-24 right-40 h-[1rem] w-[1rem] bg-black'></div>
             <div id='provEnd' className='absolute top-60 right-32 h-[1rem] w-[1rem] bg-black'></div>
             <div id='gemEnd' className='absolute bottom-20 right-40 h-[1rem] w-[1rem] bg-black'></div>*/}
-          </div>
+     
           {/* 
           <Xarrow start ={allRef} startAnchor='right' end='allEnd' endAnchor='top' strokeWidth={2} showHead = {false} path='smooth' gridBreak='90%' lineColor='#25C38B' />
           <Xarrow start ={natRef} startAnchor='left' end='nationalEnd' endAnchor='top' strokeWidth={2} showHead = {false} path='smooth' lineColor='#25C38B' />
@@ -141,7 +165,7 @@ export default function WelkeLayout(props) {
           {/* RIGHT HAND SIDE */}
           <div className='grid col-span-1 items-start justify-center h-full w-80 mt-10'>
             {/* National */}
-            {natLaws && (
+            {natLaws?.length != 0 && (
               <div className='pb-3'>
                 <div ref={natRef} className='w-80 h-10 bg-green-800 text-white rounded-full flex items-center justify-left'>
                   <div className='flex items-center justify-center w-full h-full -ml-10'>
@@ -152,7 +176,7 @@ export default function WelkeLayout(props) {
                   </div>
                 </div>
                 <div className='pl-4 pt-3'>
-                  {natLaws.map((law) => (
+                  {natLaws?.map((law) => (
                     <Link key={law.titel} href={`/measures/${law.slug.current}`}>
                       <div className='flex items-center justify-start max-w-80'>
                         <span className='pr-2 inline-block'>
@@ -183,7 +207,7 @@ export default function WelkeLayout(props) {
             )}
 
             {/* Provinciaal */}
-            {provLaws && (
+            {provLaws?.length != 0 && (
               <div className='pb-3'>
                 <div ref={provRef} className='w-80 h-10 rounded-full text-white bg-green-500 flex items-center justify-left'>
                   <div className='flex items-center justify-center w-full h-full -ml-10'>
@@ -194,7 +218,7 @@ export default function WelkeLayout(props) {
                   </div>
                 </div>
                 <div className='pl-4 pt-3'>
-                  {provLaws.map((law) => (
+                  {provLaws?.map((law) => (
                     <Link key={law.titel} href={`/measures/${law.slug.current}`}>
                       <div className='flex items-center justify-start max-w-80'>
                         <span className='pr-2 inline-block'>
@@ -224,7 +248,7 @@ export default function WelkeLayout(props) {
               </div>
             )}
             {/* Gemeentelijk */}
-            {gemLaws && (
+            {gemLaws?.length !=0 && (
               <div>
                 <div ref={gemRef} className='w-80 h-10 rounded-full bg-green-400 text-white flex items-center justify-right'>
 
@@ -236,7 +260,7 @@ export default function WelkeLayout(props) {
                   </div>
                 </div>
                 <div className='pl-4 pt-3'>
-                  {gemLaws.map((law) => (
+                  {gemLaws?.map((law) => (
                     <Link key={law.titel} href={`/measures/${law.slug.current}`}>
                       <div key={law.titel} className='flex items-center justify-start max-w-80'>
                         <span className='pr-2 inline-block'>
