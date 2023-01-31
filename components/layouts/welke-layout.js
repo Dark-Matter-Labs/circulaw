@@ -1,14 +1,28 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import Xarrow from 'react-xarrows'
+// import Xarrow, { Xwrapper } from 'react-xarrows'
+import { useRef } from 'react';
 
 import MeasureLinks from '../measure-links-dropdown';
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+}
+
+console.log(getRandomInt(30,60))
 
 export default function WelkeLayout(props) {
   const allRegionLaws = props.allRegionLaws;
   const provLaws = props.provLaws;
   const gemLaws = props.gemLaws;
   const natLaws = props.natLaws;
+  const allRef = useRef()
+  const natRef = useRef()
+  const provRef = useRef()
+  const gemRef = useRef()
+
 
   return (
     <>
@@ -42,7 +56,7 @@ export default function WelkeLayout(props) {
         <div className='flex grid-cols-3 items-start justify-center'>
           {/* LEFT HAND SIDE */}
           <div className='grid col-span-1 items-start justify-center h-full w-80 mt-10'>
-            <div id='allStart' className='w-80 h-10 border border-green-800 rounded-full text-black-white-800 bg-black-white-200 flex items-center justify-left'>
+            <div ref={allRef} className='w-80 h-10 border border-green-800 rounded-full text-black-white-800 bg-black-white-200 flex items-center justify-left'>
               <div className='h-10 w-10 border-r border-t border-b border-green-800 rounded-full flex items-center justify-center'>
                 <h5 className='mobile sm:desktop'>A</h5>
               </div>
@@ -94,23 +108,42 @@ export default function WelkeLayout(props) {
                 </div>
               </div>
             </div>
-            <div id='allEnd' className='absolute top-20 left-50 h-[1rem] w-[1rem]'></div>
-            <div id='nationalEnd' className='absolute top-24 right-40 h-[1rem] w-[1rem]'></div>
-            <div id='provEnd' className='absolute top-60 right-32 h-[1rem] w-[1rem]'></div>
-            <div id='gemEnd' className='absolute bottom-20 right-40 h-[1rem] w-[1rem]'></div>
-            <Xarrow start ='allStart' end='allEnd' endAnchor='top' strokeWidth={2} showHead = {false} path='grid' gridBreak='90%' lineColor='#25C38B' />
-            <Xarrow start ='nationalStart' end='nationalEnd' endAnchor='top' strokeWidth={2} showHead = {false} path='grid' lineColor='#25C38B' />
-            <Xarrow start ='provStart' end='provEnd' endAnchor='top' strokeWidth={2} showHead = {false} path='grid' lineColor='#25C38B' />
-            <Xarrow start ='gemStart' end='gemEnd' endAnchor='top' strokeWidth={2} showHead = {false} path='grid' lineColor='#25C38B' />
+            {props.casus === 'circulaire Windturbines' &&
+            <>
+            <div className='absolute top-10  h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute top-20 left-44 h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute top-40 left-40 h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute top-44 left-72 h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute top-32 right-48 h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute top-64 right-32 h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-28 left-1/2 h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-38 left-[55%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-52 left-[45%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-44 left-36 h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-32 right-44 h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-44 right-48 h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-44 right-48 h-3 w-3 rounded-full bg-red-600'></div>
+            </>
+            }
 
+            {/* 
+            <div id='allEnd' className='absolute top-20 left-50 h-[1rem] w-[1rem] bg-black'></div>
+            <div id='nationalEnd' className='absolute top-24 right-40 h-[1rem] w-[1rem] bg-black'></div>
+            <div id='provEnd' className='absolute top-60 right-32 h-[1rem] w-[1rem] bg-black'></div>
+            <div id='gemEnd' className='absolute bottom-20 right-40 h-[1rem] w-[1rem] bg-black'></div>*/}
           </div>
+          {/* 
+          <Xarrow start ={allRef} startAnchor='right' end='allEnd' endAnchor='top' strokeWidth={2} showHead = {false} path='smooth' gridBreak='90%' lineColor='#25C38B' />
+          <Xarrow start ={natRef} startAnchor='left' end='nationalEnd' endAnchor='top' strokeWidth={2} showHead = {false} path='smooth' lineColor='#25C38B' />
+          <Xarrow start ={provRef} startAnchor='left' end='provEnd' endAnchor='top' strokeWidth={2} showHead = {false} path='smooth' lineColor='#25C38B' />
+          <Xarrow start ={gemRef} startAnchor='left' end='gemEnd' endAnchor='top' strokeWidth={2} showHead = {false} path='smooth' lineColor='#25C38B' />*/}
 
           {/* RIGHT HAND SIDE */}
           <div className='grid col-span-1 items-start justify-center h-full w-80 mt-10'>
             {/* National */}
             {natLaws && (
               <div className='pb-3'>
-                <div id='nationalStart' className='w-80 h-10 bg-green-800 text-white rounded-full flex items-center justify-left'>
+                <div ref={natRef} className='w-80 h-10 bg-green-800 text-white rounded-full flex items-center justify-left'>
                   <div className='flex items-center justify-center w-full h-full -ml-10'>
                     <h4 className='mobile sm:desktop'>National</h4>
                   </div>
@@ -152,7 +185,7 @@ export default function WelkeLayout(props) {
             {/* Provinciaal */}
             {provLaws && (
               <div className='pb-3'>
-                <div id='provStart' className='w-80 h-10 rounded-full text-white bg-green-500 flex items-center justify-left'>
+                <div ref={provRef} className='w-80 h-10 rounded-full text-white bg-green-500 flex items-center justify-left'>
                   <div className='flex items-center justify-center w-full h-full -ml-10'>
                     <h4 className='mobile sm:desktop'>Provinciaal</h4>
                   </div>
@@ -193,7 +226,7 @@ export default function WelkeLayout(props) {
             {/* Gemeentelijk */}
             {gemLaws && (
               <div>
-                <div id='gemStart' className='w-80 h-10 rounded-full bg-green-400 text-white flex items-center justify-right'>
+                <div ref={gemRef} className='w-80 h-10 rounded-full bg-green-400 text-white flex items-center justify-right'>
 
                   <div className='flex items-center justify-center w-full h-full -ml-10'>
                     <h4 className='mobile sm:desktop'>Gemeentelijk</h4>
