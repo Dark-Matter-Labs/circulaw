@@ -18,7 +18,7 @@ const links = {
     '/measures/windturbines',
     '/circulaire-windturbines/welke-overheid-heeft',
   ],
-  matrassen: ['#', '/measures/matrassen', '#'],
+  matrassen: ['#', '/measures/matrassen', '/matrassen/welke-overheid-heeft'],
 };
 
 export default function MeasureLinks({ type, page }) {

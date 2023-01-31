@@ -50,7 +50,7 @@ export default function WelkeLayout(props) {
   return (
     <div onLoad={useXarrow()}>
       {/* Header */}
-      <div className='global-margin mt-10 mb-20 max-w-2xl'>
+      <div className='global-margin mb-20 max-w-2xl'>
         <div className='flex justify-between items-center pb-8'>
           <div className='breadcrumb uppercase'>
             <Link href='/'>Home &gt;</Link>
@@ -59,7 +59,7 @@ export default function WelkeLayout(props) {
             </Link>
           </div>
           <div className='hidden sm:block float-right'>
-            <MeasureLinks type={props.casus} page='welke' />
+            <MeasureLinks type={props.thema} page='welke' />
           </div>
         </div>
 
