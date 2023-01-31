@@ -34,6 +34,7 @@
     "react-dom": "^18.2.0",
     "react-hotjar": "^5.1.0",
     "react-scroll": "^1.8.7",
+    "react-xarrows": "^2.0.2",
     "swr": "^1.0.1",
     "use-persisted-state": "^0.3.3"
   },

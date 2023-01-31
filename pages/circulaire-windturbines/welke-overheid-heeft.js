@@ -41,7 +41,7 @@ export default function InfoPage() {
   return (
     <Layout>
       <WelkeLayout
-        casus='circulaire Windturbines'
+        thema='circulaire-windturbines'
         title='Welke overheid heeft welke bevoegdheid voor maatregelen circulaire windturbines?'
         iconPath={WindmillIcon}
         p1='Provincies en gemeenten kunnen circulaire windturbines opnemen in hun omgevingsvisie om

@@ -38,7 +38,7 @@ export default function InfoPage() {
   return (
     <Layout>
       <WelkeLayout
-        casus='matrassen'
+        thema='matrassen'
         title='Welke overheid kan welk instrument gebruiken voor circulaire matrassen?'
         iconPath={mattressIcon}
         p1='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque dolor quis felis viverra, id tincidunt lacus mattis. Proin viverra nulla sed dui luctus euismod. Nulla finibus vestibulum justo, ac dictum purus vehicula a. Sed varius dignissim nunc, a maximus elit dapibus vel. Vivamus blandit volutpat interdum. Nullam quis libero massa. Pellentesque viverra sem at tortor fermentum, volutpat sodales libero maximus. Proin malesuada facilisis lectus, id vestibulum ex semper vel. Fusce in pulvinar mi. Vestibulum et est diam.'
