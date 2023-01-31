@@ -13,7 +13,6 @@ function getRandomInt(min, max) {
 
 
 
-console.log(getRandomInt(30,60))
 
 export default function WelkeLayout(props) {
   const allRegionLaws = props.allRegionLaws;
@@ -32,10 +31,8 @@ export default function WelkeLayout(props) {
     allRegionBottomCoordinates.push(getRandomInt(11,87))
     allRegionRightCoordinates.push(getRandomInt(44, 54))
   }
-  console.log(allRegionBottomCoordinates, allRegionRightCoordinates)
 
-  const coordinatesAllRegions = allRegionBottomCoordinates.map((el, i) => ({bottom: el, right: allRegionRightCoordinates[i]}))
-  console.log(coordinatesAllRegions, 'coordinates')
+ // const coordinatesAllRegions = allRegionBottomCoordinates.map((el, i) => ({bottom: el, right: allRegionRightCoordinates[i]}))
 
   return (
     <>
@@ -122,32 +119,72 @@ export default function WelkeLayout(props) {
                 </div>
               </div>
             </div>
-            
-            <div className='absolute top-20 left-44 h-3 w-3 rounded-full bg-red-500'></div>
-            <div className='absolute top-40 left-40 h-3 w-3 rounded-full bg-red-500'></div>
-            
-            <div className='absolute top-32 right-48 h-3 w-3 rounded-full bg-red-500'></div>
-            <div className='absolute top-64 right-32 h-3 w-3 rounded-full bg-red-500'></div>
-           {/* <div className='absolute bottom-28 left-1/2 h-3 w-3 rounded-full bg-black'></div>
-            <div className='absolute bottom-38 left-[55%] h-3 w-3 rounded-full bg-black'></div>
-                <div className='absolute bottom-52 left-[45%] h-3 w-3 rounded-full bg-black'></div> 
-                <div className='absolute top-44 left-72 h-3 w-3 rounded-full bg-black'></div>
-            <div className='absolute top-10  h-3 w-3 rounded-full bg-black'></div>
-                */}
 
-            <div className='absolute bottom-44 left-36 h-3 w-3 rounded-full bg-red-500'></div>
-            <div className='absolute bottom-32 right-44 h-3 w-3 rounded-full bg-red-500'></div>
-            <div className='absolute bottom-44 right-48 h-3 w-3 rounded-full bg-red-500'></div>
+            {/* National */}
+            <div id={1} className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-white'></div>
+            <div id={2} className='absolute bottom-[80%] right-[20%] h-3 w-3 rounded-full bg-white'></div>
+            <div id={3} className='absolute bottom-[80%] right-[70%] h-3 w-3 rounded-full bg-white'></div>
+            <div id={4} className='absolute bottom-[70%] right-[85%] h-3 w-3 rounded-full bg-white'></div>
+            <div id={5} className='absolute bottom-[85%] right-[75%] h-3 w-3 rounded-full bg-white'></div>
+            <div id={6} className='absolute bottom-[75%] right-[13%] h-3 w-3 rounded-full bg-white'></div>
+            <div id={7} className='absolute bottom-[95%] right-[60%] h-3 w-3 rounded-full bg-white'></div>
+            <div id={8} className='absolute bottom-[88%] right-[40%] h-3 w-3 rounded-full bg-white'></div>
+
+            {/* Provincial */}
+            <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[65%] right-[30%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[65%] right-[70%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[75%] right-[35%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[60%] right-[80%] h-3 w-3 rounded-full bg-white'></div>
+            {/* ALL Regions */}
+            <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-white'></div> 
+            <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[24%] right-[52%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[36%] right-[46%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[46%] right-[51%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[56%] right-[47%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[84%] right-[50%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[74%] right-[47%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[65%] right-[51%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[42%] right-[46%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[40%] right-[52%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[70%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[70%] right-[53%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[28%] right-[52%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[39%] right-[44%] h-3 w-3 rounded-full bg-white'></div>
+
+            {/* Local */}
+            <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[45%] right-[33%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[15%] right-[33%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[45%] right-[65%] h-3 w-3 rounded-full bg-white'></div>
+            <div className='absolute bottom-[30%] right-[38%] h-3 w-3 rounded-full bg-white'></div>
             
+           
+           
+           
+           
+           
+           
             {/* <div className='absolute bottom-[11%] right-[44%] h-3 w-3 rounded-full bg-red-500'></div>
             <div className='absolute bottom-[11%] right-[54%] h-3 w-3 rounded-full bg-red-500'></div>
             <div className='absolute bottom-[87%] right-[44%] h-3 w-3 rounded-full bg-red-500'></div>
             <div className='absolute bottom-[87%] right-[54%] h-3 w-3 rounded-full bg-red-500'></div>*/}
-
-
+            {/* 
             {coordinatesAllRegions.map((x) => (
-              <span key={x.bottom} className='absolute h-3 w-3 m-3 overflow-hidden rounded-full bg-white' style={{bottom: `${x.bottom}%`, right: `${x.right}%`}}>{console.log(x.right)}</span>
-            ))}
+              <div key={x.bottom} className='absolute h-3 w-3 m-3 overflow-hidden rounded-full bg-white' style={{bottom: `${x.bottom}%`, right: `${x.right}%`}}>{console.log(x.right)}</div>
+            ))}*/}
+
+
             </div>
 
             {/* 
