@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-// import Xarrow, { Xwrapper } from 'react-xarrows'
 import Xarrow, { useXarrow } from 'react-xarrows';
 
 import MeasureLinks from '../measure-links-dropdown';
