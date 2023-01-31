@@ -168,8 +168,7 @@ const components = {
 };
 
 export default function Measure({ data }) {
-
-  const router = useRouter()
+  const router = useRouter();
   return (
     <Layout>
       <div className='measure-bg'>
@@ -177,13 +176,12 @@ export default function Measure({ data }) {
           <div className='grid grid-cols-1 sm:grid-cols-12 content-center'>
             <div className='sm:col-span-12 row-span-1 h-12 mt-4'>
               {/* BREADCRUMB */}
-                  <button type="button" onClick={() => router.back()}>
-                  <span className='breadcrumb flex justify-center items-center'>
+              <button type='button' onClick={() => router.back()}>
+                <span className='breadcrumb flex justify-center items-center'>
                   <ArrowLeftIcon className='inline-block h-4 w-4 pr-1' aria-hidden='true' /> Terug
-                  </span>{' '}
-                  {/* should all breadcrumbs be green this is black in figma */}
-                  </button>
-            
+                </span>{' '}
+                {/* should all breadcrumbs be green this is black in figma */}
+              </button>
             </div>
             <div className='sm:col-span-12 row-span-1'>
               <h1 className='lg:block sm:pt-4 pb-6 sm:pb-10 mobile sm:desktop'>

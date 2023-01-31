@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 // import Xarrow, { Xwrapper } from 'react-xarrows'
-import { useRef } from 'react';
+import Xarrow, { useXarrow } from 'react-xarrows';
 
 import MeasureLinks from '../measure-links-dropdown';
 
@@ -10,22 +10,52 @@ export default function WelkeLayout(props) {
   const provLaws = props.provLaws;
   const gemLaws = props.gemLaws;
   const natLaws = props.natLaws;
-  const allRef = useRef();
-  const natRef = useRef();
-  const provRef = useRef();
-  const gemRef = useRef();
+
+  const lines = [
+    {
+      start: 'allId',
+      startAnchor: 'right',
+      end: 'allEnd',
+      endAnchor: 'top',
+      strokeWidth: 2,
+      showHead: false,
+      path: 'grid',
+      gridBreak: '90%',
+      lineColor: '#25C38B',
+    },
+    {
+      start: 'natId',
+      startAnchor: 'left',
+      end: 'natEnd',
+      endAnchor: 'top',
+      strokeWidth: 2,
+      showHead: false,
+      path: 'grid',
+      gridBreak: '90%',
+      lineColor: '#25C38B',
+    },
+    {
+      start: 'gemId',
+      startAnchor: 'left',
+      end: 'gemEnd',
+      endAnchor: 'top',
+      strokeWidth: 2,
+      showHead: false,
+      path: 'grid',
+      gridBreak: '90%',
+      lineColor: '#25C38B',
+    },
+  ];
 
   return (
-    <>
+    <div onLoad={useXarrow()}>
       {/* Header */}
       <div className='global-margin mt-10 mb-20 max-w-2xl'>
         <div className='flex justify-between items-center pb-8'>
           <div className='breadcrumb uppercase'>
             <Link href='/'>Home &gt;</Link>
             <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`}>
-              <span className='inline-block pl-1'>
-                {' '}{props.thema.replace('-', ' ')} &gt;{' '}
-              </span>
+              <span className='inline-block pl-1'> {props.thema.replace('-', ' ')} &gt; </span>
             </Link>
           </div>
           <div className='hidden sm:block float-right'>
@@ -48,7 +78,7 @@ export default function WelkeLayout(props) {
           {/* LEFT HAND SIDE */}
           <div className='grid col-span-1 items-start justify-center h-full w-80 mt-10'>
             <div
-              ref={allRef}
+              id='allId'
               className='w-80 h-10 border border-green-800 rounded-full text-black-white-800 bg-black-white-200 flex items-center justify-left'
             >
               <div className='h-10 w-10 border-r border-t border-b border-green-800 rounded-full flex items-center justify-center'>
@@ -94,7 +124,10 @@ export default function WelkeLayout(props) {
           </div>
 
           {/* DIAGRAM */}
-          <div className='w-[34rem] h-[34rem] min-w-[34rem] min-h-[34rem] flex items-center justify-center mx-4 relative'>
+          <div
+            onLoad={useXarrow()}
+            className='w-[34rem] h-[34rem] min-w-[34rem] min-h-[34rem] flex items-center justify-center mx-4 relative'
+          >
             <div className='w-full h-full border-1 border-green-800 bg-green-800 rounded-full flex items-end justify-center'>
               <div className='w-5/6 h-5/6 border-1 border-green-500 bg-green-500 rounded-full flex items-end justify-center'>
                 <div className='w-[70%] h-[70%] border-1 border-green-400 bg-green-400 rounded-full flex items-end justify-center'>
@@ -256,19 +289,34 @@ export default function WelkeLayout(props) {
             <div className='absolute bottom-[15%] right-[33%] h-3 w-3 rounded-full bg-white'></div>
             <div className='absolute bottom-[45%] right-[65%] h-3 w-3 rounded-full bg-white'></div>
             <div className='absolute bottom-[30%] right-[38%] h-3 w-3 rounded-full bg-white'></div>*/}
+
+            {allRegionLaws && (
+              <div>
+                <div id='allEnd' className='absolute bottom-[85%] right-[50%] h-3 w-3'></div>
+                <div id='natEnd' className='absolute top-24 right-40 h-3 w-3'></div>
+                <div id='gemEnd' className='absolute bottom-[15%] right-[30%] h-3 w-3'></div>
+                {lines.map((line, i) => (
+                  <Xarrow key={i} {...line} />
+                ))}
+              </div>
+            )}
+
+            {provLaws?.length > 0 && (
+              <div>
+                <div id='provEnd' className='absolute top-60 right-32 h-[1rem] w-[1rem]'></div>
+                <Xarrow
+                  start='provStart'
+                  startAnchor='left'
+                  end='provEnd'
+                  endAnchor='top'
+                  strokeWidth={2}
+                  showHead={false}
+                  path='grid'
+                  lineColor='#25C38B'
+                />
+              </div>
+            )}
           </div>
-
-          {/* 
-            <div id='allEnd' className='absolute top-20 left-50 h-[1rem] w-[1rem] bg-black'></div>
-            <div id='nationalEnd' className='absolute top-24 right-40 h-[1rem] w-[1rem] bg-black'></div>
-            <div id='provEnd' className='absolute top-60 right-32 h-[1rem] w-[1rem] bg-black'></div>
-            <div id='gemEnd' className='absolute bottom-20 right-40 h-[1rem] w-[1rem] bg-black'></div>*/}
-
-          {/* 
-          <Xarrow start ={allRef} startAnchor='right' end='allEnd' endAnchor='top' strokeWidth={2} showHead = {false} path='smooth' gridBreak='90%' lineColor='#25C38B' />
-          <Xarrow start ={natRef} startAnchor='left' end='nationalEnd' endAnchor='top' strokeWidth={2} showHead = {false} path='smooth' lineColor='#25C38B' />
-          <Xarrow start ={provRef} startAnchor='left' end='provEnd' endAnchor='top' strokeWidth={2} showHead = {false} path='smooth' lineColor='#25C38B' />
-          <Xarrow start ={gemRef} startAnchor='left' end='gemEnd' endAnchor='top' strokeWidth={2} showHead = {false} path='smooth' lineColor='#25C38B' />*/}
 
           {/* RIGHT HAND SIDE */}
           <div className='grid col-span-1 items-start justify-center h-full w-80 mt-10'>
@@ -276,7 +324,7 @@ export default function WelkeLayout(props) {
             {natLaws?.length != 0 && (
               <div className='pb-3'>
                 <div
-                  ref={natRef}
+                  id='natId'
                   className='w-80 h-10 bg-green-800 text-white rounded-full flex items-center justify-left'
                 >
                   <div className='flex items-center justify-center w-full h-full -ml-10'>
@@ -321,7 +369,7 @@ export default function WelkeLayout(props) {
             {provLaws?.length != 0 && (
               <div className='pb-3'>
                 <div
-                  ref={provRef}
+                  id='provStart'
                   className='w-80 h-10 rounded-full text-white bg-green-500 flex items-center justify-left'
                 >
                   <div className='flex items-center justify-center w-full h-full -ml-10'>
@@ -365,7 +413,7 @@ export default function WelkeLayout(props) {
             {gemLaws?.length != 0 && (
               <div>
                 <div
-                  ref={gemRef}
+                  id='gemId'
                   className='w-80 h-10 rounded-full bg-green-400 text-white flex items-center justify-right'
                 >
                   <div className='flex items-center justify-center w-full h-full -ml-10'>
@@ -417,6 +465,6 @@ export default function WelkeLayout(props) {
           {props.p4 !== '' && <p className=' p-lg text-black-white-800 pb-6'>{props.p4}</p>}
         </div>
       </div>
-    </>
+    </div>
   );
 }
