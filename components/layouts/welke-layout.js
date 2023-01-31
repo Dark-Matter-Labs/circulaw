@@ -145,7 +145,7 @@ export default function WelkeLayout(props) {
               <div className='pb-3'>
                 <div ref={natRef} className='w-80 h-10 bg-green-800 text-white rounded-full flex items-center justify-left'>
                   <div className='flex items-center justify-center w-full h-full -ml-10'>
-                    <h4 className='mobile sm:desktop'>National</h4>
+                    <h4 className='mobile sm:desktop'>Nationaal</h4>
                   </div>
                   <div className='h-10 w-10 border-l border-t border-b border-white rounded-full flex items-center justify-center'>
                     <h5 className='mobile sm:desktop'>Nat</h5>
