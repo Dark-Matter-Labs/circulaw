@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Layout from '../../components/layouts/layout';
 
 export default function Privacy() {
@@ -6,8 +7,8 @@ export default function Privacy() {
       <div className='global-margin my-20 max-w-2xl text-black-white-800'>
         <h1 className='mobile sm:desktop pb-6'>Privacyverklaring</h1>
         <p className=' p-lg pt-2 pb-6 max-w-4xl'>
-          Het projectteam CircuLaw is verantwoordelijk voor de verwerking van persoonsgegevens zoals
-          weergegeven in dit statement. CircuLaw Alfa is een alfaversie van het product CircuLaw.
+          Het team CircuLaw is verantwoordelijk voor de verwerking van persoonsgegevens zoals
+          weergegeven in deze verklaring. CircuLaw Bèta is een bètaversie van de website CircuLaw.
           CircuLaw valt onder het beheer van de gemeente Amsterdam.
         </p>
         <p className=' p-lg pb-10 max-w-4xl'>
@@ -16,57 +17,56 @@ export default function Privacy() {
             <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
           </span>
         </p>
-        <h1 className='mobile sm:desktop py-2'>Wanneer verwerken wij persoonsgegevens</h1>
+        <h2 className='mobile sm:desktop py-2'>Wanneer verwerken wij persoonsgegevens</h2>
         <p className=' p-lg pb-10 max-w-4xl'>
           Wanneer je je registreert of aanmeldt voor een van onze producten, diensten of
-          activiteiten, je aanmeldt voor een nieuwsbrief, deelneemt aan een bijeenkomst, gebruik
-          maakt van onze digitale diensten, contact opneemt met het projectteam van CircuLaw of op
-          een andere manier gebruik maakt van onze diensten, worden de door jou verstrekte
-          persoonsgegevens vastgelegd en verwerkt onder de verantwoordelijkheid van de gemeente
-          Amsterdam. De gemeente verwerkt deze persoonsgegevens op basis van een gerechtvaardigd
-          belang, artikel 6, eerste lid, sub f, van de AVG.
+          activiteiten, voor een nieuwsbrief, of deelneemt aan een bijeenkomst, gebruik maakt van
+          onze digitale diensten, contact opneemt met het team van CircuLaw of op een andere manier
+          gebruik maakt van onze diensten, worden de persoonsgegevens die je hebt verstrekt,
+          vastgelegd en verwerkt onder de verantwoordelijkheid van de gemeente Amsterdam. De
+          gemeente verwerkt deze persoonsgegevens op basis van een gerechtvaardigd belang, artikel
+          6, eerste lid, sub f, van de AVG.
         </p>
-        <h1 className='mobile sm:desktop py-2'>Welke gegevens verwerken wij</h1>
+        <h2 className='mobile sm:desktop py-2'>Welke gegevens verwerken wij?</h2>
         <p className=' p-lg pb-10 max-w-4xl'>
-          We verwerken jouw registratiegegevens. Dit zijn de gegevens die wij je verzoeken in te
-          vullen bij registratie zoals naam, e-mailadres, telefoonnummer, functie, naam
-          werkgever/bedrijf en de vestigingsplaats van het bedrijf. Voor de verwerking van jouw
-          gegevens maken wij geen gebruik van AI-technieken.
+          We verwerken jouw registratiegegevens. Dit zijn de gegevens waarnaar we je vragen bij
+          registratie zoals je naam, e-mailadres, telefoonnummer, functie, naam werkgever/bedrijf en
+          de vestigingsplaats van het bedrijf. Voor de verwerking van je gegevens maken wij géén
+          gebruik van AI-technieken.
         </p>
-        <h1 className='mobile sm:desktop py-2'>Met welk doel verwerken wij je persoonsgegevens</h1>
+        <h2 className='mobile sm:desktop py-2'>Met welk doel verwerken wij je persoonsgegevens?</h2>
         <div className=' p-lg pb-10 max-w-4xl'>
-          We verwerken je persoonsgegevens
           <ul className='list-disc pl-6'>
-            <li>om je te informeren over ons product;</li>
-            <li>om je nieuwsbrieven, onderzoeken en andere notificaties te sturen;</li>
+            <li>We verwerken je persoonsgegevens om je te informeren over ons product</li>
+            <li>om je nieuwsbrieven, onderzoeken en andere berichten te sturen</li>
             <li>
               om contact met je op te nemen om te vragen hoe wij de producten en diensten van
-              CircuLaw kunnen verbeteren;
+              CircuLaw kunnen verbeteren
             </li>
             <li>
-              om het gebruik van de website te analyseren en daarmee de website te verbeteren, het
-              product te verbeteren en af te stemmen op jouw voorkeuren;
+              om het gebruik van de website te analyseren en daarmee te verbeteren, het product te
+              verbeteren en af te stemmen op jouw voorkeuren
             </li>
             <li>om te voldoen aan een wettelijke verplichting.</li>
           </ul>
         </div>
-        <h1 className='mobile sm:desktop py-2'>
-          Wanneer verstrekken wij je persoonsgegevens aan derden
-        </h1>
+        <h2 className='mobile sm:desktop py-2'>
+          Wanneer verstrekken wij je persoonsgegevens aan derden?
+        </h2>
         <p className=' p-lg pb-10 max-w-4xl'>Dit doen wij nooit.</p>
-        <h1 className='mobile sm:desktop py-2'>
-          Hoe zit het met links naar websites van derde partijen
-        </h1>
+        <h2 className='mobile sm:desktop py-2'>
+          Hoe zit het met links naar websites van derde partijen?
+        </h2>
         <p className=' p-lg pb-10 max-w-4xl'>
           Als je via de website of andere diensten of producten van CircuLaw terecht komt op de
-          website van een derde, zijn de voorwaarden en privacyregels van de betreffende derde van
+          website van een derde, zijn de voorwaarden en privacyregels van die betreffende derde van
           toepassing. CircuLaw controleert de activiteiten van dergelijke websites of derde partijen
           niet en is niet aansprakelijk voor de content, privacy, beveiliging en reglementen van de
           websites waar CircuLaw naar linkt. CircuLaw adviseert je daarom je bekend te maken met de
           privacy voorwaarden, beveiliging en reglementen van de derde partij voordat je hun
           (persoonlijke) informatie verschaft.
         </p>
-        <h1 className='mobile sm:desktop py-2'>Wat zijn jouw rechten?</h1>
+        <h2 className='mobile sm:desktop py-2'>Wat zijn jouw rechten?</h2>
         <p className=' p-lg pb-6 max-w-4xl'>
           Je hebt het recht op inzage in je persoonsgegevens en het recht om correctie, verwijdering
           of overdracht van je persoonsgegevens te vragen. Daarnaast heb je het recht bezwaar te
@@ -82,38 +82,14 @@ export default function Privacy() {
         </p>
         <p className=' p-lg pb-10 max-w-4xl'>
           Als je het niet eens zijn met de manier waarop CircuLaw omgaat met je persoonsgegevens dan
-          kun je een klacht indienen bij de Autoriteit Persoonsgegevens.
+          kun je een klacht indienen bij de <u>Autoriteit Persoonsgegevens</u>.
         </p>
-        <h1 className='mobile sm:desktop py-2'>Hoe lang bewaren we je gegevens?</h1>
+        <h2 className='mobile sm:desktop py-2'>Hoe lang bewaren we je gegevens?</h2>
         <p className=' p-lg pb-10 max-w-4xl'>
           CircuLaw bewaart je persoonsgegevens zolang als dat nodig is voor de doelen die hierboven
           zijn genoemd of om te voldoen aan wettelijke (bewaar)verplichtingen.
         </p>
-        <h1 className='mobile sm:desktop py-2'>Hoe gaan we om met cookies?</h1>
-        <p className=' p-lg pb-6 max-w-4xl'>
-          Een cookie is een klein tekstbestand dat onzichtbaar is voor de gebruiker en dat de
-          browser opslaat op de computer of het mobiele apparaat van de gebruiker wanneer de
-          gebruiker een website bezoekt.
-        </p>
-        <p className=' p-lg pb-6 max-w-4xl'>
-          Op grond van artikel 11.7a van de Telecommunicatiewet (Tw) moeten de bezoekers van de
-          website geïnformeerd worden over en toestemming geven voor het plaatsen en/of uitlezen van
-          cookies op hun apparaat (zoals hun computer, laptop of smartphone).
-        </p>
-        <p className=' p-lg pb-6 max-w-4xl'>
-          Er zijn uitzonderingen op het toestemmingsvereiste. Bijvoorbeeld als de cookies technisch
-          noodzakelijk zijn om de website goed te laten werken. Dit noemen we functionele cookies.
-          Ook is er een uitzondering voor bepaalde analytische cookies. Er is bijvoorbeeld geen
-          toestemming nodig voor het plaatsen van analytische cookies, mits die cookies alleen
-          gebruikt worden om bezoekers te tellen. Met analytische cookies krijgen wij beter inzicht
-          in het functioneren van onze website.
-        </p>
-        <p className=' p-lg pb-10 max-w-4xl'>
-          CircuLaw maakt alleen gebruik van functionele en analytische cookies waar geen toestemming
-          voor gevraagd hoeft te worden.
-        </p>
-
-        <h1 className='mobile sm:desktop py-2'>Wijziging van deze Privacyverklaring</h1>
+        <h2 className='mobile sm:desktop py-2'>Wijziging van deze Privacyverklaring</h2>
         <p className=' p-lg pb-6 max-w-4xl'>
           De gemeente Amsterdam heeft het recht om haar Privacyverklaring te wijzigen. Als er
           inhoudelijke wijzigingen worden doorgevoerd, maken we dit bekend via de website{' '}
@@ -125,10 +101,18 @@ export default function Privacy() {
           .{' '}
         </p>
         <p className=' p-lg max-w-4xl pb-6'>
-          Heb je vragen naar aanleiding van deze Privacyverklaring? Mail ons dan op{' '}
+          Heb je vragen naar aanleiding van deze Privacyverklaring? Mail{' '}
           <span className='text-green-500  link-lg'>
             <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
           </span>
+        </p>
+        <h2 className='mobile sm:desktop py-2'>Cookies</h2>
+        <p className=' p-lg pb-6 max-w-4xl'>
+          Bekijk ons{' '}
+          <span className='text-green-500 link-lg'>
+            <Link href='/cookie-info'>Cookiebeleid</Link>
+          </span>
+          .
         </p>
       </div>
     </Layout>
