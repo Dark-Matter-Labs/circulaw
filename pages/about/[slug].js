@@ -76,7 +76,10 @@ const components = {
                 rel='noreferrer'
               >
                 <CustomButton color='toPdf'>
-                  Bekijk de methodiek &nbsp;
+                {value.buttonText ? 
+                <span>{value.buttonText} &nbsp;</span>  :
+                <span>Bekijk de methodiek &nbsp;</span>  
+                }
                   <Image
                     src='/icons/pdf-icon.svg'
                     width={23}

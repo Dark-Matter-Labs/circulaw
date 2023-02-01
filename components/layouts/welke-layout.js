@@ -49,7 +49,7 @@ export default function WelkeLayout(props) {
   return (
     <div onLoad={useXarrow()}>
       {/* Header */}
-      <div className='global-margin mb-20 max-w-2xl'>
+      <div className='global-margin mb-5 mt-5 sm:mt-0 sm:mb-20 max-w-2xl'>
         <div className='flex justify-between items-center pb-8'>
           <div className='breadcrumb uppercase'>
             <Link href='/'>Home &gt;</Link>
@@ -72,7 +72,9 @@ export default function WelkeLayout(props) {
         </div>
       </div>
       {/* DYNAMIC IMAGE */}
-      <div className='global-margin mb-20'>
+      
+
+      <div className='global-margin mb-20 hidden sm:block'>
         <div className='flex grid-cols-3 items-start justify-center'>
           {/* LEFT HAND SIDE */}
           <div className='grid col-span-1 items-start justify-center h-full w-80 mt-10'>
@@ -95,7 +97,7 @@ export default function WelkeLayout(props) {
                     href={`/measures/${law.slug.current}`}
                     className='inline-block'
                   >
-                    <div className='flex items-center justify-start max-w-80'>
+                    <div className='flex items-start justify-start max-w-80 py-1'>
                       <span className='pr-2 inline-block'>
                         {' '}
                         <svg
@@ -104,7 +106,7 @@ export default function WelkeLayout(props) {
                           viewBox='0 0 24 24'
                           strokeWidth={2}
                           stroke='#028352'
-                          className='w-4  h-4'
+                          className='w-4  h-4 mt-1'
                         >
                           <path
                             strokeLinecap='round'
@@ -113,7 +115,7 @@ export default function WelkeLayout(props) {
                           />
                         </svg>
                       </span>
-                      <h5 className='py-1 inline-block mobile sm:desktop hover:underline'>
+                      <h5 className=' inline-block mobile sm:desktop hover:underline'>
                         {law.titel}
                       </h5>
                     </div>
@@ -463,6 +465,10 @@ export default function WelkeLayout(props) {
           {props.p3 !== '' && <p className=' p-lg text-black-white-800 pb-6'>{props.p3}</p>}
           {props.p4 !== '' && <p className=' p-lg text-black-white-800 pb-6'>{props.p4}</p>}
         </div>
+        <div className='sm:hidden'>
+          <div className='pb-6'><p className='p-base italic'>Bekijk deze afbeelding door in te zoomen of bekijk de site op een groter scherm</p></div>
+        <Image src={props.imageMob} alt='image of bevoegdheden' />
+      </div>
       </div>
     </div>
   );
