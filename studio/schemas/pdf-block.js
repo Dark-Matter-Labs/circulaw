@@ -14,5 +14,10 @@ export default {
       name: 'pdfText',
       type: 'text',
     },
+    {
+      title: 'Button Text',
+      name: 'buttonText',
+      type: 'string',
+    },
   ],
 };
