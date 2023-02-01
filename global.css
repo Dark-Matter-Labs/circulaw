@@ -210,8 +210,27 @@ html {
 }
 
 #nprogress .spinner-icon {
-
   border-top-color: #22532c;
-    border-left-color: #22532c;
-    
-  }
+  border-left-color: #22532c;
+}
+
+.samenhangLine {
+  border-left: thick solid #F8FBF8;
+  border-top: thick solid #F8FBF8;
+  border-top-left-radius: 1.5rem; 
+}
+
+.samenhangLine2 {
+  border-right: thick solid #F8FBF8;
+  border-top: thick solid #F8FBF8;
+  border-top-right-radius: 1.5rem; 
+}
+
+.samenhangLine3 {
+  border-left: thick solid #F8FBF8;
+}
+
+.samenhangLine4 {
+  border-top: thick solid #F8FBF8;
+}
+
