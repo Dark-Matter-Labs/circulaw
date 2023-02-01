@@ -40,20 +40,12 @@ export default function InfoPage() {
     <Layout>
       <WelkeLayout
         thema='circulaire-windturbines'
-        title='Welke overheid heeft welke bevoegdheid voor maatregelen circulaire windturbines?'
+        title='Welk instrument kan welke overheid gebruiken voor circulaire windturbines?'
         iconPath={WindmillIcon}
-        p1='Provincies en gemeenten kunnen circulaire windturbines opnemen in hun omgevingsvisie om
-      dit beleidsdoel kenbaar te maken. Het vergroten van het aandeel publieke grond van
-      provincies en gemeenten zorgt ervoor dat circulaire eisen kunnen worden gesteld bij de
-      uitgifte van de gronden.'
-        p2='Gemeenten kunnen daarnaast circulariteit opnemen in hun omgevingsplan en zodoende
-      aanvullende eisen stellen bij de vergunningverlening. In een anterieure overeenkomst
-      worden kosten voor gebiedsontwikkeling vastgelegd en daar kan circulariteit ook bij
-      betrokken worden.'
-        p3='Gemeenten, provincies en Rijk hebben ook nog gedeelde bevoegdheden: door circulaire
-      eisen te stellen bij gronduitgifte - door verkoop, erfpacht en huurovereenkomsten -
-      wordt het plaatsen van circulaire windturbines aangemoedigd.'
-        p4=''
+        p1='Rijk, provincies en gemeenten kunnen circulaire windturbines opnemen in hun omgevingsvisie om kenbaar te maken dat zij hiermee aan de slag willen. Het vergroten van het aandeel publieke grond van provincies en gemeenten maakt het mogelijk om circulaire eisen te stellen bij de uitgifte van grond. Dit kan bijvoorbeeld door middel van tenders of het sluiten van huurovereenkomsten. Daarnaast helpen subsidies om bijvoorbeeld de productie, het aanschaffen of recyclen van circulaire windturbines aan te moedigen.'
+        p2='Ook kunnen Rijk en provincie met een projectbesluit het omgevingsplan wijzigen om  daarmee de ontwikkeling van circulaire windturbineparken te borgen en te stimuleren.'
+        p3='Provincies en gemeenten kunnen hun grondpositie versterken door beschikbare grond op te kopen. Ook kunnen zij in lokale verordeningen en plannen, eisen opnemen die circulariteit van windturbines aanmoedigen.'
+        p4='En ten slotte kunnen gemeenten in een anterieure overeenkomst kosten voor gebiedsontwikkeling vastleggen en daar ook circulariteit bij betrekken.'
         allRegionLaws={allRegionLaws}
         natLaws={natLaws}
         provLaws={provLaws}
