@@ -3,8 +3,7 @@ import client from '../../lib/sanity';
 import Layout from '../../components/layouts/layout';
 import WelkeLayout from '../../components/layouts/welke-layout';
 import WindmillIcon from '../../public/windmill.svg';
-import windmillImageMob from '../../public/bevoegdheden/bevoegdheden-windmill.png'
-
+import windmillImageMob from '../../public/bevoegdheden/bevoegdheden-windmill.png';
 
 export default function InfoPage() {
   const [allRegionLaws, setAllRegionLaws] = useState();
