@@ -3,7 +3,7 @@ import client from '../../lib/sanity';
 import Layout from '../../components/layouts/layout';
 import WelkeLayout from '../../components/layouts/welke-layout';
 import mattressIcon from '../../public/icons/matressIcon.svg';
-import matrassenImageMob from '../../public/bevoegdheden/bevoegdheden-matrassen.png'
+import matrassenImageMob from '../../public/bevoegdheden/bevoegdheden-matrassen.png';
 
 export default function InfoPage() {
   const [allRegionLaws, setAllRegionLaws] = useState();

@@ -3,7 +3,7 @@ import Layout from '../../components/layouts/layout';
 import WelkeLayout from '../../components/layouts/welke-layout';
 import client from '../../lib/sanity';
 import woodIcon from '../../public/icons/woodIcon.svg';
-import houtbouwImageMob from '../../public/bevoegdheden/bevoegdheden-houtbouw-mob.png'
+import houtbouwImageMob from '../../public/bevoegdheden/bevoegdheden-houtbouw-mob.png';
 
 export default function InfoPage() {
   const [allRegionLaws, setAllRegionLaws] = useState();

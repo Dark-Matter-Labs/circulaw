@@ -707,7 +707,7 @@ export default function MeasuresLayout(props) {
             Wis filters
           </span>
         </div>
-        <div className='col-span-2 '>
+        <div className='col-span-3 flex-wrap'>
           <div className=''>
             <div>
               <h4 className='mobile sm:desktop'>{props.searchTitle}</h4>
@@ -761,37 +761,112 @@ export default function MeasuresLayout(props) {
             </div>
             {/* clear search and clear filters have the same effect. Should there maybe be a Reset? which resets all search parameters. Clear search button removed for now*/}
 
-            {numberOfLaws === 0 && (
-              <div>
-                <span className=''>
-                  <h3 className='mobile sm:desktop inline'>0</h3>{' '}
-                  <span className=' p-lg'>resultaten in </span>
-                  <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
-                    {props.thema === 'circulaire-windturbines'
-                      ? 'Circulaire windturbines'
-                      : props.thema}
-                  </h3>{' '}
-                  <span className=' p-lg'>voor</span>{' '}
-                  <h3 className='mobile sm:desktop inline'>{searchValue}</h3>
-                </span>
-              </div>
-            )}
-            {numberOfLaws > 1 && numberOfLaws < props.totalNumberOfLaws && (
-              <div>
-                <span className=''>
-                  <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
-                  <span className=' p-lg'>resultaten in </span>
-                  <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
-                    {props.thema === 'circulaire-windturbines'
-                      ? 'Circulaire windturbines'
-                      : props.thema}
-                  </h3>{' '}
-                  <span className=' p-lg'>voor</span>{' '}
-                  <h3 className='mobile sm:desktop inline'>{searchValue}</h3>
-                </span>
-              </div>
-            )}
+            <div className='flex felx-wrap items-center justify-start'>
+              {/* no laws */}
+              {numberOfLaws === 0 && (
+                <div>
+                  <div className='inline'>
+                    <h3 className='mobile sm:desktop inline'>0 &nbsp;</h3>
+                    <span className=' p-lg'>resultaten in </span>
+                    <h3 className='inline-block lowercase mobile sm:desktop'>
+                      {props.thema === 'circulaire-windturbines'
+                        ? 'circulaire windturbines'
+                        : props.thema}
+                      &nbsp;
+                    </h3>
+                    {searchValue != '' && <span className='p-lg'>voor&nbsp;</span>}
 
+                    <h3 className='mobile sm:desktop inline'>
+                      {searchValue}&nbsp;
+                      {allSelectedValues.length != 0 && <span className='p-lg'>en</span>}&nbsp;
+                    </h3>
+                  </div>
+
+                  {allSelectedValues != 0 && (
+                    <div className='sm:inline-block flex flex-wrap items-center'>
+                      {allSelectedValues.map((value, index) => (
+                        <div key={index} className='inline'>
+                          <h3 className='inline mobile sm:desktop'>
+                            {value}
+                            {value !== allSelectedValues.slice(-1)[0] && <span>,</span>}&nbsp;
+                          </h3>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+              {/* number of laws = total number of laws */}
+              {numberOfLaws === props.totalNumberOfLaws && (
+                <div>
+                  <span className=''>
+                    <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
+                    <span className=' p-lg'>resultaten in </span>
+                    <h3 className='lowercase first-letter:uppercase mobile sm:desktop inline'>
+                      {props.thema === 'circulaire-windturbines'
+                        ? 'circulaire windturbines'
+                        : props.thema.toLowerCase()}
+                    </h3>{' '}
+                    {searchValue != '' && <span className='p-lg'>voor&nbsp;</span>}
+                    <h3 className='lowercase first-letter:uppercase mobile sm:desktop inline'>
+                      {searchValue} {allSelectedValues.length != 0 && <span>,</span>} &nbsp;
+                    </h3>
+                  </span>
+                  {allSelectedValues != 0 && (
+                    <div className='sm:inline-block flex flex-wrap items-center'>
+                      {allSelectedValues.map((value, index) => (
+                        <div key={index} className='inline'>
+                          <h3 className='inline mobile sm:desktop'>
+                            {value}
+                            {value !== allSelectedValues.slice(-1)[0] && <span>,</span>}&nbsp;
+                          </h3>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* one or more law */}
+              {numberOfLaws > 0 && numberOfLaws != props.totalNumberOfLaws && (
+                <div>
+                  <div className=''>
+                    <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
+                    <span className=' p-lg'>resultaten in </span>
+                    <h3 className='inline lowercase first-letter:uppercase mobile sm:desktop'>
+                      {props.thema === 'circulaire-windturbines'
+                        ? 'circulaire windturbines'
+                        : props.thema.toLowerCase()} 
+                    </h3>
+                    {searchValue != '' && <span className=' p-lg'>&nbsp;voor&nbsp;</span>}
+                    <h3 className='mobile sm:desktop inline'>
+                      {searchValue}
+                      {searchValue != '' && <span>&nbsp;</span>}
+                      {allSelectedValues.length != 0 && searchValue != '' && (
+                        <span className='p-lg'>en</span>
+                      )}
+                      &nbsp;
+                    </h3>
+                  </div>
+
+                  {allSelectedValues != 0 && (
+                    <div className='sm:inline-block flex flex-wrap items-center'>
+                      {allSelectedValues > 0 ||
+                        (searchValue == '' && <span className='p-lg'>voor&nbsp;</span>)}
+                      {allSelectedValues.map((value, index) => (
+                        <div key={index} className='inline'>
+                          <h3 className='inline mobile sm:desktop'>
+                            {value}
+                            {value !== allSelectedValues.slice(-1)[0] && <span>,</span>}&nbsp;
+                          </h3>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* if there is a search value and only 1 law ?? REMOVE 
             {searchValue !== '' && numberOfLaws === 1 && (
               <div>
                 <span className=''>
@@ -803,48 +878,18 @@ export default function MeasuresLayout(props) {
                       : props.thema}
                   </h3>{' '}
                   <span className=' p-lg'>voor</span>{' '}
-                  <h3 className='mobile sm:desktop inline'>{searchValue}</h3>
+                  <h3 className='mobile sm:desktop inline'>{searchValue}
+                  {allSelectedValues.length != 0 && <span>,</span>} &nbsp;</h3>
                 </span>
               </div>
-            )}
+            )} */}
 
-            {numberOfLaws === props.totalNumberOfLaws && (
-              <div>
-                <span className=''>
-                  <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
-                  <span className=' p-lg'>resultaten in </span>
-                  <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
-                    {props.thema === 'circulaire-windturbines'
-                      ? 'Circulaire windturbines'
-                      : props.thema}
-                  </h3>{' '}
-                  <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
-                    {searchValue}
-                  </h3>
-                </span>
-              </div>
-            )}
+              {/* if all laws are there ?? REMOVE
+            
+            */}
 
-            {/* display selected values */}
-            <div className=''>
-              <div>
-                {allSelectedValues != 0 ? (
-                  <div className='flex flex-wrap grid-rows-2 sm:grid-rows-1'>
-                    {allSelectedValues.map((value, index) => (
-                      <div key={index} className='inline'>
-                        <span className=''>
-                          {value}
-                          {value !== allSelectedValues.slice(-1)[0] && <span>,</span>}&nbsp;
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className='inline'>
-                    <span>&nbsp;</span>
-                  </div>
-                )}
-              </div>
+              {/* display selected values */}
+              <div className=''></div>
             </div>
           </div>
         </div>

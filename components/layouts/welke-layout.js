@@ -72,8 +72,6 @@ export default function WelkeLayout(props) {
         </div>
       </div>
       {/* DYNAMIC IMAGE */}
-      
-
       <div className='global-margin mb-20 hidden sm:block'>
         <div className='flex grid-cols-3 items-start justify-center'>
           {/* LEFT HAND SIDE */}
@@ -466,9 +464,13 @@ export default function WelkeLayout(props) {
           {props.p4 !== '' && <p className=' p-lg text-black-white-800 pb-6'>{props.p4}</p>}
         </div>
         <div className='sm:hidden'>
-          <div className='pb-6'><p className='p-base italic'>Bekijk deze afbeelding door in te zoomen of bekijk de site op een groter scherm</p></div>
-        <Image src={props.imageMob} alt='image of bevoegdheden' />
-      </div>
+          <div className='pb-6'>
+            <p className='p-base italic'>
+              Bekijk deze afbeelding door in te zoomen of bekijk de site op een groter scherm
+            </p>
+          </div>
+          <Image src={props.imageMob} alt='image of bevoegdheden' />
+        </div>
       </div>
     </div>
   );
