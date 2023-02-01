@@ -6,10 +6,36 @@ import beleIcon from '../../public/icons/Beleidsvorming.svg';
 import planIcon from '../../public/icons/plan.svg';
 import subIcon from '../../public/icons/sub.svg';
 import grandIcon from '../../public/icons/grand.svg';
+import MeasureLinks from '../../components/measure-links-dropdown';
+import WindmillIcon from '../../public/windmill.svg';
 
 export default function InfoPage() {
   return (
     <Layout>
+      <div className='global-margin mb-20 max-w-2xl'>
+        <div className='flex justify-between items-center pb-8'>
+          <div className='breadcrumb uppercase'>
+            <Link href='/'>Home &gt;</Link>
+            <Link href={'/circulaire-windturbines'}>
+              <span className='inline-block pl-1'>Circulaire Windturbines &gt; </span>
+            </Link>
+          </div>
+          <div className='hidden sm:block float-right'>
+            <MeasureLinks type='circulaire-windturbines' page='samenhang' />
+          </div>
+        </div>
+
+        <div className='items-center justify-start grid grid-cols-10'>
+          <div className='col-span-1 flex h-full w-full items-start pt-2'>
+            <Image src={WindmillIcon} alt='Thema icon' width={107} height={107} />
+          </div>
+          <div className='col-span-9'>
+            <h1 className='mobile sm:desktop text-black py-1 max-w-3xl pl-6'>
+              Samenhang instrumenten circulaire windturbines
+            </h1>
+          </div>
+        </div>
+      </div>
       <div className='grid grid-cols-1 lg:grid-cols-3 bg-green-800 py-40 gap-0'>
         <div>
           <div className='samenhangLine ml-80 pt-20 mt-20'></div>
