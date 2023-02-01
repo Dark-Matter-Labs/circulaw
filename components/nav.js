@@ -16,6 +16,7 @@ import BetaBanner from './beta-banner';
 import BetaBannerGen from './beta-banner-gen';
 import client from '../lib/sanity';
 import NieuwTooltip from '../components/nieuw-tooltip';
+import oldLogo from '../public/Circulaw_logotype_home_old.png'
 
 // temp imports
 import AlphaBanner from './alpha-banner';
@@ -299,12 +300,12 @@ export default function Nav() {
           <div className='flex items-baseline sm:justify-start '>
             <div className='hidden lg:block md:py-5 lg:py-0 pl-40'>
               <Link href='/'>
-                <Image height={46} width={250} src={logo} alt='CircuLaw logo' />
+                <Image height={46} width={250} src={oldLogo} alt='CircuLaw logo' />
               </Link>
             </div>
             <div className='block lg:hidden py-4 pl-8'>
               <Link href='/'>
-                <Image height={24} width={120} src={logo} alt='CircuLaw logo' quality={100} />
+                <Image height={24} width={120} src={oldLogo} alt='CircuLaw logo' quality={100} />
               </Link>
             </div>
           </div>
