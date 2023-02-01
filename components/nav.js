@@ -16,7 +16,7 @@ import BetaBanner from './beta-banner';
 import BetaBannerGen from './beta-banner-gen';
 import client from '../lib/sanity';
 import NieuwTooltip from '../components/nieuw-tooltip';
-import oldLogo from '../public/Circulaw_logotype_home_old.png'
+import oldLogo from '../public/Circulaw_logotype_home_old.png';
 
 // temp imports
 import AlphaBanner from './alpha-banner';
@@ -84,7 +84,7 @@ export default function Nav() {
                       />
                     </Link>
                   </div>
-                  <div className='hidden lg:ml-6 lg:flex lg:mt-4'>
+                  <div className='hidden lg:ml-10 xl:ml-24 lg:flex lg:mt-4'>
                     <div className='flex inset-x-0 top-0 pl-5 invisible lg:visible hidden lg:inline '>
                       <div className='flex-1 global-margin'>
                         <div className='content right-0'>
@@ -375,7 +375,7 @@ export default function Nav() {
                         />
                       </Link>
                     </div>
-                    <div className='hidden lg:ml-6 lg:flex lg:mt-4'>
+                    <div className='hidden lg:ml-10 xl:ml-24 lg:flex lg:mt-4'>
                       <div className='flex inset-x-0 top-0 pl-5 invisible lg:visible hidden lg:inline '>
                         <div className='flex-1 global-margin px-2 sm:px-6 lg:px-8'>
                           <div className='content right-0'>
