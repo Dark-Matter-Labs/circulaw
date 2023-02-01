@@ -46,7 +46,7 @@ export default function Nav() {
       <Disclosure as='nav' className='sticky top-0 z-40 bg-black-white-200 shadow-lg'>
         {({ open }) => (
           <>
-            <div className='lg:pb-8 global-margin'>
+            <div className='lg:pb-4 global-margin'>
               <BetaBannerGen />
               <div className=''>
                 <div className='inset-y-0 float-right flex items-center lg:hidden'>
@@ -56,16 +56,16 @@ export default function Nav() {
                     {open ? (
                       <XIcon className='block h-10 w-10' aria-hidden='true' />
                     ) : (
-                      <MenuIcon className='block h-10 w-10' aria-hidden='true' />
+                      <MenuIcon className='block h-10 w-10 mt-6' aria-hidden='true' />
                     )}
                   </Disclosure.Button>
                 </div>
-                <div className='flex items-baseline sm:justify-start '>
-                  <div className='hidden lg:block md:py-5 lg:py-0'>
+                <div className='flex items-center'>
+                  <div className='hidden lg:block '>
                     <Link href='/'>
                       <Image
-                        height={46}
-                        width={250}
+                        height={86}
+                        width={162}
                         src={CirculawLogo}
                         alt='CircuLaw logo'
                         quality={100}
@@ -83,7 +83,7 @@ export default function Nav() {
                       />
                     </Link>
                   </div>
-                  <div className='hidden lg:ml-6 lg:flex'>
+                  <div className='hidden lg:ml-6 lg:flex lg:mt-4'>
                     <div className='flex inset-x-0 top-0 pl-5 invisible lg:visible hidden lg:inline '>
                       <div className='flex-1 global-margin'>
                         <div className='content right-0'>
@@ -353,14 +353,14 @@ export default function Nav() {
                       {open ? (
                         <XIcon className='block h-10 w-10' aria-hidden='true' />
                       ) : (
-                        <MenuIcon className='block h-10 w-10' aria-hidden='true' />
+                        <MenuIcon className='block h-10 w-10 mt-6' aria-hidden='true' />
                       )}
                     </Disclosure.Button>
                   </div>
-                  <div className='flex items-baseline sm:justify-start '>
+                  <div className='flex items-center sm:justify-start '>
                     <div className='hidden lg:block md:py-5 lg:py-0'>
                       <Link href='/'>
-                        <Image height={46} width={250} src={logo} alt='CircuLaw logo' />
+                        <Image height={86} width={162} src={logo} alt='CircuLaw logo' />
                       </Link>
                     </div>
                     <div className='block lg:hidden py-4'>
@@ -374,7 +374,7 @@ export default function Nav() {
                         />
                       </Link>
                     </div>
-                    <div className='hidden lg:ml-6 lg:flex'>
+                    <div className='hidden lg:ml-6 lg:flex lg:mt-4'>
                       <div className='flex inset-x-0 top-0 pl-5 invisible lg:visible hidden lg:inline '>
                         <div className='flex-1 global-margin px-2 sm:px-6 lg:px-8'>
                           <div className='content right-0'>
