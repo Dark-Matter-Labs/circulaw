@@ -57,11 +57,11 @@ export default function Nav() {
                     {open ? (
                       <XIcon className='block h-10 w-10' aria-hidden='true' />
                     ) : (
-                      <MenuIcon className='block h-10 w-10 mt-6' aria-hidden='true' />
+                      <MenuIcon className='block h-10 w-10 mt-7' aria-hidden='true' />
                     )}
                   </Disclosure.Button>
                 </div>
-                <div className='flex items-center'>
+                <div className='flex items-center justify-between'>
                   <div className='hidden lg:block '>
                     <Link href='/'>
                       <Image
@@ -84,7 +84,7 @@ export default function Nav() {
                       />
                     </Link>
                   </div>
-                  <div className='hidden lg:ml-10 xl:ml-24 lg:flex lg:mt-4'>
+                  <div className='hidden lg:ml-10 xl:ml-32 lg:flex lg:mt-6'>
                     <div className='flex inset-x-0 top-0 pl-5 invisible lg:visible hidden lg:inline '>
                       <div className='flex-1 global-margin'>
                         <div className='content right-0'>
@@ -341,7 +341,7 @@ export default function Nav() {
         <source src='/01_circulaw.mov' type='video/mp4' />
       </video>
       <BetaBanner />
-      <div className='relative pt-6 pb-16 sm:pb-24'>
+      <div className='relative pb-16 sm:pb-24'>
         <Disclosure as='nav' className=' '>
           {({ open }) => (
             <>
@@ -358,7 +358,7 @@ export default function Nav() {
                       )}
                     </Disclosure.Button>
                   </div>
-                  <div className='flex items-center sm:justify-start '>
+                  <div className='flex items-center  '>
                     <div className='hidden lg:block md:py-5 lg:py-0'>
                       <Link href='/'>
                         <Image height={86} width={162} src={logo} alt='CircuLaw logo' />
@@ -375,7 +375,7 @@ export default function Nav() {
                         />
                       </Link>
                     </div>
-                    <div className='hidden lg:ml-10 xl:ml-24 lg:flex lg:mt-4'>
+                    <div className='hidden lg:ml-10 xl:ml-32 lg:flex lg:mt-6'>
                       <div className='flex inset-x-0 top-0 pl-5 invisible lg:visible hidden lg:inline '>
                         <div className='flex-1 global-margin px-2 sm:px-6 lg:px-8'>
                           <div className='content right-0'>
