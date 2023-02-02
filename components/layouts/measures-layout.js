@@ -836,7 +836,7 @@ export default function MeasuresLayout(props) {
                     <h3 className='inline lowercase first-letter:uppercase mobile sm:desktop'>
                       {props.thema === 'circulaire-windturbines'
                         ? 'circulaire windturbines'
-                        : props.thema.toLowerCase()} 
+                        : props.thema.toLowerCase()}
                     </h3>
                     {searchValue != '' && <span className=' p-lg'>&nbsp;voor&nbsp;</span>}
                     <h3 className='mobile sm:desktop inline'>
