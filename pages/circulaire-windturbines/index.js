@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import Layout from '../../components/layouts/layout';
 import ThemeLayout from '../../components/layouts/theme-index-layout';
 import client from '../../lib/sanity';
+import LinkIcon from '../../components/link-icon';
 
 const windQuery = `
 *[_type == "measure" && thema == "circulaire-windturbines"]
@@ -41,6 +42,26 @@ export default function Windturbine({ laws }) {
         extendedMeasureHeading='instrumenten om circulariteit van windturbines te bevorderen'
         extendedMeasureSubtitle='Met voorbeelden.'
       />
+      <div className='global-margin pt-10 pb-20'>
+        <p className='p-lg'>
+          De informatie over windturbines is mede tot stand gekomen door nauwe samenwerking met de{' '}
+          <span className='text-green-500 link-lg inline-block'>
+            <a href='https://www.noord-holland.nl/' target='_blank' rel='noopener noreferrer'>
+              Provincie Noord-Holland
+              <LinkIcon />
+            </a>
+          </span>
+          {/* TODO: unhide div when PDF is ready */}
+          <div className='hidden'>
+            {' '}
+            Zie het{' '}
+            <span className='text-green-500 link-lg inline-block'>
+              rapport-Analyse CircuLaw: Circulaire Windturbines (download pdf)
+            </span>
+            .{' '}
+          </div>{' '}
+        </p>
+      </div>
     </Layout>
   );
 }

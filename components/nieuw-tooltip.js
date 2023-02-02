@@ -88,8 +88,14 @@ export default function NieuwToolTip() {
                           </p>
                           <p className='p-base pb-6'>
                             CircuLaw volgt voor de analyse van wet-en regelgeving en het
-                            identificeren van juridische instrumenten een standaard werkwijze: deze
-                            CircuLaw-methodiek voor wetsanalyse is nu ook voor iedereen beschikbaar.
+                            identificeren van juridische instrumenten een standaard werkwijze: deze{' '}
+                            <Link
+                              className='link-base'
+                              href='/about/Wetsanalyse-vanuit-circulaire-blik'
+                            >
+                              CircuLaw-methodiek voor wetsanalyse
+                            </Link>{' '}
+                            is nu ook voor iedereen beschikbaar.
                           </p>
                           <p className='p-base'>
                             In deze versie van de website hebben we techniek, ontwerp en copy
