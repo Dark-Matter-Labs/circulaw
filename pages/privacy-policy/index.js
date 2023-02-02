@@ -82,7 +82,17 @@ export default function Privacy() {
         </p>
         <p className=' p-lg pb-10 max-w-4xl'>
           Als je het niet eens zijn met de manier waarop CircuLaw omgaat met je persoonsgegevens dan
-          kun je een klacht indienen bij de <u>Autoriteit Persoonsgegevens</u>.
+          kun je een klacht indienen bij de{' '}
+          <span className='text-green-500 link-lg'>
+            <a
+              href='https://autoriteitpersoonsgegevens.nl/nl/zelf-doen/gebruik-uw-privacyrechten/klacht-melden-bij-de-ap'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Autoriteit Persoonsgegevens
+            </a>
+          </span>
+          .
         </p>
         <h2 className='mobile sm:desktop py-2'>Hoe lang bewaren we je gegevens?</h2>
         <p className=' p-lg pb-10 max-w-4xl'>
@@ -93,7 +103,7 @@ export default function Privacy() {
         <p className=' p-lg pb-6 max-w-4xl'>
           De gemeente Amsterdam heeft het recht om haar Privacyverklaring te wijzigen. Als er
           inhoudelijke wijzigingen worden doorgevoerd, maken we dit bekend via de website{' '}
-          <span className='text-green-500  link-lg'>
+          <span className='text-green-500 link-lg'>
             <a href='https://www.amsterdam.nl/' target='_blank' rel='noopener noreferrer'>
               amsterdam.nl
             </a>
@@ -102,7 +112,7 @@ export default function Privacy() {
         </p>
         <p className=' p-lg max-w-4xl pb-6'>
           Heb je vragen naar aanleiding van deze Privacyverklaring? Mail{' '}
-          <span className='text-green-500  link-lg'>
+          <span className='text-green-500 link-lg'>
             <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
           </span>
         </p>
