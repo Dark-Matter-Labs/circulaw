@@ -8,6 +8,7 @@ import { ChevronDownIcon } from '@heroicons/react/solid';
 import { Link as ScrollLink } from 'react-scroll';
 import { groq } from 'next-sanity';
 import useSWR from 'swr';
+import Lottie from 'react-lottie';
 import { get_waardeketens } from '../utils/nav-structure';
 import CirculawLogo from '../public/Circulaw_logotype.png';
 import logo from '../public/Circulaw_logotype_home.png';
@@ -17,6 +18,7 @@ import BetaBannerGen from './beta-banner-gen';
 import client from '../lib/sanity';
 import NieuwTooltip from '../components/nieuw-tooltip';
 import oldLogo from '../public/Circulaw_logotype_home_old.png';
+import animationData from '../public/CL_Logo_Animation';
 
 // temp imports
 import AlphaBanner from './alpha-banner';
@@ -24,6 +26,15 @@ import AlphaBanner from './alpha-banner';
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
+
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: animationData,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice',
+  },
+};
 
 const waardeketens = get_waardeketens();
 
@@ -336,12 +347,9 @@ export default function Nav() {
     );
   }
   return (
-    <div className='relative'>
-      <video id='background-video' autoPlay loop muted playsInline poster='/bg-poster.png'>
-        <source src='/01_circulaw.mov' type='video/mp4' />
-      </video>
+    <div className='bg-header'>
       <BetaBanner />
-      <div className='relative pb-16 sm:pb-24'>
+      <div className=' pb-16 sm:pb-24'>
         <Disclosure as='nav' className=' '>
           {({ open }) => (
             <>
@@ -358,10 +366,10 @@ export default function Nav() {
                       )}
                     </Disclosure.Button>
                   </div>
-                  <div className='flex items-center  '>
+                  <div className='flex items-center'>
                     <div className='hidden lg:block md:py-5 lg:py-0'>
                       <Link href='/'>
-                        <Image height={86} width={162} src={logo} alt='CircuLaw logo' />
+                        <Lottie options={defaultOptions} height={150} width={250} />
                       </Link>
                     </div>
                     <div className='block lg:hidden py-4'>
