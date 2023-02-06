@@ -8,8 +8,8 @@ export default function InfoPage() {
   return (
     <Layout>
       <SamenhangLayout
-        casus='houtbouw'
-        title='Samenhang instrumenten houtbouw'
+        casus='circulaire-windturbines'
+        title='Samenhang instrumenten circulaire windturbines'
         icon={WindmillIcon}
         p1='Beleid rondom circulaire windturbines kun je opnemen in een omgevingsvisie, zodat je een subsidie daarvoor kunt vaststellen. Ook kun je als overheden proberen meer grond te kopen om die vervolgens uit te geven met circulaire eisen. Verder kun je als overheid met het omgevingsplan of een projectbesluit vergunningen verlenen voor circulaire windturbines. Afspraken over de kosten van circulaire windturbines op grond van het omgevingsplan kun je vastleggen in een anterieure overeenkomst.'
       />
