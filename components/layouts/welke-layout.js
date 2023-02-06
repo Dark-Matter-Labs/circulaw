@@ -336,7 +336,7 @@ export default function WelkeLayout(props) {
                 <div className='pl-4 pt-3'>
                   {natLaws?.map((law) => (
                     <Link key={law.titel} href={`/measures/${law.slug.current}`}>
-                      <div className='flex items-center justify-start max-w-80'>
+                      <div className='flex items-start justify-start max-w-80 py-1'>
                         <span className='pr-2 inline-block'>
                           {' '}
                           <svg
@@ -345,7 +345,7 @@ export default function WelkeLayout(props) {
                             viewBox='0 0 24 24'
                             strokeWidth={2}
                             stroke='#028352'
-                            className='w-4  h-4'
+                            className='w-4  h-4 mt-1'
                           >
                             <path
                               strokeLinecap='round'
@@ -354,7 +354,7 @@ export default function WelkeLayout(props) {
                             />
                           </svg>
                         </span>
-                        <h5 className='py-1 inline-block mobile sm:desktop hover:underline'>
+                        <h5 className='inline-block mobile sm:desktop hover:underline'>
                           {law.titel}
                         </h5>
                       </div>
@@ -381,7 +381,7 @@ export default function WelkeLayout(props) {
                 <div className='pl-4 pt-3'>
                   {provLaws?.map((law) => (
                     <Link key={law.titel} href={`/measures/${law.slug.current}`}>
-                      <div className='flex items-center justify-start max-w-80'>
+                      <div className='flex items-start justify-start max-w-80 py-1'>
                         <span className='pr-2 inline-block'>
                           {' '}
                           <svg
@@ -390,7 +390,7 @@ export default function WelkeLayout(props) {
                             viewBox='0 0 24 24'
                             strokeWidth={2}
                             stroke='#028352'
-                            className='w-4  h-4'
+                            className='w-4  h-4 mt-1'
                           >
                             <path
                               strokeLinecap='round'
@@ -399,7 +399,7 @@ export default function WelkeLayout(props) {
                             />
                           </svg>
                         </span>
-                        <h5 className='py-1 inline-block mobile sm:desktop hover:underline'>
+                        <h5 className='inline-block mobile sm:desktop hover:underline'>
                           {law.titel}
                         </h5>
                       </div>
@@ -425,7 +425,7 @@ export default function WelkeLayout(props) {
                 <div className='pl-4 pt-3'>
                   {gemLaws?.map((law) => (
                     <Link key={law.titel} href={`/measures/${law.slug.current}`}>
-                      <div key={law.titel} className='flex items-center justify-start max-w-80'>
+                      <div key={law.titel} className='flex items-start justify-start max-w-80 py-1'>
                         <span className='pr-2 inline-block'>
                           {' '}
                           <svg
@@ -434,7 +434,7 @@ export default function WelkeLayout(props) {
                             viewBox='0 0 24 24'
                             strokeWidth={2}
                             stroke='#028352'
-                            className='w-4  h-4'
+                            className='w-4  h-4 mt-1'
                           >
                             <path
                               strokeLinecap='round'
@@ -443,7 +443,7 @@ export default function WelkeLayout(props) {
                             />
                           </svg>
                         </span>
-                        <h5 className='py-1 inline-block mobile sm:desktop hover:underline'>
+                        <h5 className='inline-block mobile sm:desktop hover:underline'>
                           {law.titel}
                         </h5>
                       </div>
