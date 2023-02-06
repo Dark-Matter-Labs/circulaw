@@ -43,26 +43,26 @@ export default function Windturbine({ laws }) {
         extendedMeasureSubtitle='Met voorbeelden.'
       />
       <div className='bg-[#F8FAF8]'>
-      <div className='global-margin pt-10 pb-20 '>
-        <div className='p-lg'>
-          De informatie over windturbines is mede tot stand gekomen door nauwe samenwerking met de{' '}
-          <span className='text-green-500 link-lg inline-block'>
-            <a href='https://www.noord-holland.nl/' target='_blank' rel='noopener noreferrer'>
-              Provincie Noord-Holland
-              <LinkIcon />
-            </a>
-          </span>
-          {/* TODO: unhide div when PDF is ready */}
-          <div className='hidden'>
-            {' '}
-            Zie het{' '}
+        <div className='global-margin pt-10 pb-20 '>
+          <div className='p-lg'>
+            De informatie over windturbines is mede tot stand gekomen door nauwe samenwerking met de{' '}
             <span className='text-green-500 link-lg inline-block'>
-              rapport-Analyse CircuLaw: Circulaire Windturbines (download pdf)
+              <a href='https://www.noord-holland.nl/' target='_blank' rel='noopener noreferrer'>
+                Provincie Noord-Holland
+                <LinkIcon />
+              </a>
             </span>
-            .{' '}
-          </div>{' '}
+            {/* TODO: unhide div when PDF is ready */}
+            <div className='hidden'>
+              {' '}
+              Zie het{' '}
+              <span className='text-green-500 link-lg inline-block'>
+                rapport-Analyse CircuLaw: Circulaire Windturbines (download pdf)
+              </span>
+              .{' '}
+            </div>{' '}
+          </div>
         </div>
-      </div>
       </div>
     </Layout>
   );
