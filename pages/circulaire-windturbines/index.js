@@ -23,7 +23,7 @@ export default function Windturbine({ laws }) {
         // headerLinkText='' // will be displayed in the same sentence as header subtitle
         // headerLinkURL='/'
         bgHero='bg-windmill-hero'
-        heroImage='/windturbineHero.jpg'
+        heroImage='/hero-images/windmill.jpg'
         // number of laws
         numberOfLaws={laws.length}
         cardTitle='Overzichten van instrumenten die circulaire windturbines bevorderen'
