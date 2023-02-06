@@ -65,10 +65,10 @@ export default function WelkeLayout(props) {
         </div>
 
         <div className='items-center justify-start grid grid-cols-10'>
-          <div className='col-span-1 flex h-full w-full items-start pt-2'>
+          <div className='col-span-2 sm:col-span-1 flex h-full w-full items-center sm:pt-2'>
             <Image src={props.iconPath} alt='Thema icon' width={107} height={107} />
           </div>
-          <div className='col-span-9'>
+          <div className='col-span-8 sm:col-span-9'>
             <h1 className='mobile sm:desktop text-black py-1 max-w-3xl pl-6'>{props.title}</h1>
           </div>
         </div>
