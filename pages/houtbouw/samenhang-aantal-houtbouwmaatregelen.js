@@ -168,7 +168,7 @@ export default function InfoPage() {
               target=''
               alt='Melding ontvangst afvalstoffen'
               title='Melding ontvangst afvalstoffen'
-              href='https://www.circulaw.nl/measures/meer-materiaalgroepen-eisen-bij-sloopwerkzaamheden'
+              href='https://www.circulaw.nl/measures/meldingsplicht-ontvangst-afvalstoffen'
               coords='80,1019,436,1052'
               shape='rect'
             />
@@ -336,7 +336,7 @@ export default function InfoPage() {
               target=''
               alt='Subsgunningscriteria'
               title='Subsgunningscriteria'
-              href='https://www.circulaw.nl/measures/mpg-als-subselectiecriterium-bij-gronduitgifte'
+              href='https://www.circulaw.nl/measures/houtbouw-uitvragen-via-subgunningscriteria'
               coords='78,2624,436,2659'
               shape='rect'
             />
@@ -384,7 +384,7 @@ export default function InfoPage() {
               target=''
               alt='Subsgunningscriteria'
               title='Subsgunningscriteria'
-              href='https://www.circulaw.nl/measures/mpg-als-subselectiecriterium-bij-gronduitgifte'
+              href='https://www.circulaw.nl/measures/houtbouw-uitvragen-via-subgunningscriteria'
               coords='80,2928,435,2964'
               shape='rect'
             />
@@ -432,7 +432,7 @@ export default function InfoPage() {
               target=''
               alt='Subsgunningscriteria'
               title='Subsgunningscriteria'
-              href='https://www.circulaw.nl/measures/mpg-als-subselectiecriterium-bij-gronduitgifte'
+              href='https://www.circulaw.nl/measures/houtbouw-uitvragen-via-subgunningscriteria'
               coords='81,3229,435,3264'
               shape='rect'
             />

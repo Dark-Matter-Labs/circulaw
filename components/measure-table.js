@@ -26,10 +26,10 @@ const components = {
 };
 
 export default function MeasureTable({ data }) {
-  const [date, setDate] = useState()
+  const [date, setDate] = useState();
   useEffect(() => {
-    setDate(data?.measure?.lawDate)
-  }, [data?.measure?.lawDate])
+    setDate(data?.measure?.lawDate);
+  }, [data?.measure?.lawDate]);
 
   return (
     <>
