@@ -40,7 +40,7 @@ export default function SamenhangLayout(props) {
             <h1 className='mobile sm:desktop text-black py-1 max-w-3xl pl-6'>{props.title}</h1>
           </div>
         </div>
-        <div className='grid grid-cols-1 sm:grid-cols-3 mt-10 justify-items-end'>
+        <div className='grid grid-cols-1 sm:grid-cols-3 mt-10 sm:justify-items-end mb-10 sm:mb-0'>
           <div className='col-span-2'>
             <p className=' p-lg text-black-white-800 pb-6'>{props.p1}</p>
           </div>
@@ -75,6 +75,13 @@ export default function SamenhangLayout(props) {
                 <h4 className='mobile sm:desktop'>Gemeente</h4>
               </div>
             </div>
+          </div>
+        </div>
+        <div className='sm:hidden'>
+          <div className='pb-6'>
+            <p className='p-base italic'>
+              Bekijk deze afbeelding door in te zoomen of bekijk de site op een groter scherm
+            </p>
           </div>
         </div>
       </div>
