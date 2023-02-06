@@ -23,7 +23,7 @@ export default function Windturbine({ laws }) {
         // headerLinkText='' // will be displayed in the same sentence as header subtitle
         // headerLinkURL='/'
         bgHero='bg-windmill-hero'
-        heroImage='/windturbineHero.jpg'
+        heroImage='/hero-images/windmill.jpg'
         // number of laws
         numberOfLaws={laws.length}
         cardTitle='Overzichten van instrumenten die circulaire windturbines bevorderen'
@@ -42,8 +42,9 @@ export default function Windturbine({ laws }) {
         extendedMeasureHeading='instrumenten om circulariteit van windturbines te bevorderen'
         extendedMeasureSubtitle='Met voorbeelden.'
       />
-      <div className='global-margin pt-10 pb-20'>
-        <p className='p-lg'>
+      <div className='bg-[#F8FAF8]'>
+      <div className='global-margin pt-10 pb-20 '>
+        <div className='p-lg'>
           De informatie over windturbines is mede tot stand gekomen door nauwe samenwerking met de{' '}
           <span className='text-green-500 link-lg inline-block'>
             <a href='https://www.noord-holland.nl/' target='_blank' rel='noopener noreferrer'>
@@ -60,7 +61,8 @@ export default function Windturbine({ laws }) {
             </span>
             .{' '}
           </div>{' '}
-        </p>
+        </div>
+      </div>
       </div>
     </Layout>
   );

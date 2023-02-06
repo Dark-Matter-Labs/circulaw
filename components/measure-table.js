@@ -1,5 +1,6 @@
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 const formatDate = (date) => {
   let dateObject = new Date(date);
@@ -25,6 +26,11 @@ const components = {
 };
 
 export default function MeasureTable({ data }) {
+  const [date, setDate] = useState()
+  useEffect(() => {
+    setDate(data?.measure?.lawDate)
+  }, [data?.measure?.lawDate])
+
   return (
     <>
       <div className='grid grid-cols-6'>
@@ -87,7 +93,7 @@ export default function MeasureTable({ data }) {
                   {!data?.measure?.lawDate ? (
                     <span className='table-base'>TBD</span>
                   ) : (
-                    formatDate(data?.measure?.lawDate)
+                    formatDate(date)
                   )}
                 </span>
               </td>
