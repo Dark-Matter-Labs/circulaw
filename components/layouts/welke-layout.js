@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Xarrow, { useXarrow } from 'react-xarrows';
 
 import MeasureLinks from '../measure-links-dropdown';
+import { ArrowRightIcon } from '@heroicons/react/outline';
 
 export default function WelkeLayout(props) {
   const allRegionLaws = props.allRegionLaws;
@@ -49,12 +50,13 @@ export default function WelkeLayout(props) {
   return (
     <div onLoad={useXarrow()}>
       {/* Header */}
-      <div className='global-margin mb-5 mt-5 sm:mt-0 sm:mb-20 max-w-2xl'>
+      <div className='global-margin mb-5 mt-8 sm:mt-0 sm:mb-20 max-w-2xl'>
         <div className='flex justify-between items-center pb-8'>
           <div className='breadcrumb uppercase'>
-            <Link href='/'>Home &gt;</Link>
+            <Link className='underline' href='/'>Home  &nbsp;</Link>
+            <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />{' '}
             <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`}>
-              <span className='inline-block pl-1'> {props.thema.replace('-', ' ')} &gt; </span>
+              <span className='inline-block underline'> {props.thema.replace('-', ' ')} </span>
             </Link>
           </div>
           <div className='hidden sm:block float-right'>

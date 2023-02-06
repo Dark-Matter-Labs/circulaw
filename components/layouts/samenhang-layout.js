@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import MeasureLinks from '../measure-links-dropdown';
+import { ArrowRightIcon } from '@heroicons/react/outline';
 
 /* list of props
 casus
@@ -16,12 +17,13 @@ p3
 export default function SamenhangLayout(props) {
   return (
     <>
-      <div className='global-margin mt-20'>
-        <div className='breadcrumb text-green-500 pb-8'>
-          <Link href='/'>Home &gt;</Link>
+      <div className='global-margin mt-8'>
+        <div className='breadcrumb uppercase pb-8'>
+          <Link className='underline' href='/'>Home &nbsp;</Link>
+          <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />{' '}
           <Link href={`/${props.casus.toLowerCase().replace(/ /g, '-')}`}>
-            <span className=' inline-block lowercase first-letter:uppercase'>
-              {props.casus} &gt;{' '}
+            <span className='underline inline-block uppercase'>
+              {props.casus}
             </span>
           </Link>
         </div>
