@@ -53,7 +53,9 @@ export default function WelkeLayout(props) {
       <div className='global-margin mb-5 mt-8 sm:mt-0 sm:mb-20 max-w-2xl'>
         <div className='flex justify-between items-center pb-8'>
           <div className='breadcrumb uppercase'>
-            <Link className='underline' href='/'>Home  &nbsp;</Link>
+            <Link className='underline' href='/'>
+              Home &nbsp;
+            </Link>
             <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />{' '}
             <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`}>
               <span className='inline-block underline'> {props.thema.replace('-', ' ')} </span>
