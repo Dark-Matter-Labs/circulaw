@@ -234,3 +234,14 @@ html {
   border-top: thick solid #F8FBF8;
 }
 
+.samenhangIcon {
+  left: -60px;
+  top: -40px;
+}
+
+.bg-header {
+  background-image: url('/final-bg.svg');
+  background-size: cover;
+  background-position: center;
+  margin-top: -3px;
+}

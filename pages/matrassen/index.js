@@ -37,7 +37,7 @@ export default function Matrassen({ laws }) {
         waarvoorText='Zonder samenwerking geen succes. Maar dan moet je wel weten wie waarvoor bevoegd en verantwoordelijk is.'
         // card links
         cardLinkList='/measures/matrassen'
-        cardLinkSamenhang='#'
+        cardLinkSamenhang='/matrassen/samenhang-matrassen'
         cardLinkWaarvoor='/matrassen/welke-overheid-heeft'
         extendedMeasureHeading='instrumenten om de circulariteit van de matrasketen te bevorderen'
         extendedMeasureSubtitle='Met voorbeelden en handige leidraden.'
