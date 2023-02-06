@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Xarrow, { useXarrow } from 'react-xarrows';
 
 import MeasureLinks from '../measure-links-dropdown';
+import { ArrowRightIcon } from '@heroicons/react/outline';
 
 export default function WelkeLayout(props) {
   const allRegionLaws = props.allRegionLaws;
@@ -49,12 +50,13 @@ export default function WelkeLayout(props) {
   return (
     <div onLoad={useXarrow()}>
       {/* Header */}
-      <div className='global-margin mb-5 mt-5 sm:mt-0 sm:mb-20 max-w-2xl'>
+      <div className='global-margin mb-5 mt-8 sm:mt-0 sm:mb-20 max-w-2xl'>
         <div className='flex justify-between items-center pb-8'>
           <div className='breadcrumb uppercase'>
-            <Link href='/'>Home &gt;</Link>
+            <Link className='underline' href='/'>Home  &nbsp;</Link>
+            <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />{' '}
             <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`}>
-              <span className='inline-block pl-1'> {props.thema.replace('-', ' ')} &gt; </span>
+              <span className='inline-block underline'> {props.thema.replace('-', ' ')} </span>
             </Link>
           </div>
           <div className='hidden sm:block float-right'>
@@ -336,7 +338,7 @@ export default function WelkeLayout(props) {
                 <div className='pl-4 pt-3'>
                   {natLaws?.map((law) => (
                     <Link key={law.titel} href={`/measures/${law.slug.current}`}>
-                      <div className='flex items-center justify-start max-w-80'>
+                      <div className='flex items-start justify-start max-w-80 py-1'>
                         <span className='pr-2 inline-block'>
                           {' '}
                           <svg
@@ -345,7 +347,7 @@ export default function WelkeLayout(props) {
                             viewBox='0 0 24 24'
                             strokeWidth={2}
                             stroke='#028352'
-                            className='w-4  h-4'
+                            className='w-4  h-4 mt-1'
                           >
                             <path
                               strokeLinecap='round'
@@ -354,7 +356,7 @@ export default function WelkeLayout(props) {
                             />
                           </svg>
                         </span>
-                        <h5 className='py-1 inline-block mobile sm:desktop hover:underline'>
+                        <h5 className='inline-block mobile sm:desktop hover:underline'>
                           {law.titel}
                         </h5>
                       </div>
@@ -381,7 +383,7 @@ export default function WelkeLayout(props) {
                 <div className='pl-4 pt-3'>
                   {provLaws?.map((law) => (
                     <Link key={law.titel} href={`/measures/${law.slug.current}`}>
-                      <div className='flex items-center justify-start max-w-80'>
+                      <div className='flex items-start justify-start max-w-80 py-1'>
                         <span className='pr-2 inline-block'>
                           {' '}
                           <svg
@@ -390,7 +392,7 @@ export default function WelkeLayout(props) {
                             viewBox='0 0 24 24'
                             strokeWidth={2}
                             stroke='#028352'
-                            className='w-4  h-4'
+                            className='w-4  h-4 mt-1'
                           >
                             <path
                               strokeLinecap='round'
@@ -399,7 +401,7 @@ export default function WelkeLayout(props) {
                             />
                           </svg>
                         </span>
-                        <h5 className='py-1 inline-block mobile sm:desktop hover:underline'>
+                        <h5 className='inline-block mobile sm:desktop hover:underline'>
                           {law.titel}
                         </h5>
                       </div>
@@ -425,7 +427,7 @@ export default function WelkeLayout(props) {
                 <div className='pl-4 pt-3'>
                   {gemLaws?.map((law) => (
                     <Link key={law.titel} href={`/measures/${law.slug.current}`}>
-                      <div key={law.titel} className='flex items-center justify-start max-w-80'>
+                      <div key={law.titel} className='flex items-start justify-start max-w-80 py-1'>
                         <span className='pr-2 inline-block'>
                           {' '}
                           <svg
@@ -434,7 +436,7 @@ export default function WelkeLayout(props) {
                             viewBox='0 0 24 24'
                             strokeWidth={2}
                             stroke='#028352'
-                            className='w-4  h-4'
+                            className='w-4  h-4 mt-1'
                           >
                             <path
                               strokeLinecap='round'
@@ -443,7 +445,7 @@ export default function WelkeLayout(props) {
                             />
                           </svg>
                         </span>
-                        <h5 className='py-1 inline-block mobile sm:desktop hover:underline'>
+                        <h5 className='inline-block mobile sm:desktop hover:underline'>
                           {law.titel}
                         </h5>
                       </div>

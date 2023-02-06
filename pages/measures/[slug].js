@@ -182,7 +182,7 @@ export default function Measure({ data }) {
             <div className='sm:col-span-12 row-span-1 h-12 mt-4'>
               {/* BREADCRUMB */}
               <button type='button' onClick={() => router.back()}>
-                <span className='breadcrumb flex justify-center items-center'>
+                <span className='breadcrumb flex justify-center items-center underline'>
                   <ArrowLeftIcon className='inline-block h-4 w-4 pr-1' aria-hidden='true' /> Terug
                 </span>{' '}
                 {/* should all breadcrumbs be green this is black in figma */}

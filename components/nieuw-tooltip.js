@@ -17,7 +17,7 @@ export default function NieuwToolTip() {
         <span
           type='button'
           className={
-            'inline-flex rounded-full items-center px-4 py-1 shadow border button border-green-600 bg-green-500 hover:bg-transparent text-black-white-200 hover:text-green-600 transition ease-in-out hover:duration-150 focus:outline-none'
+            'inline-flex rounded-full items-center px-4 py-1 shadow border button border-green-600 bg-green-500 hover:bg-black-white-200 text-black-white-200 hover:text-green-600 transition ease-in-out hover:duration-150 focus:outline-none'
           }
         >
           NIEUW

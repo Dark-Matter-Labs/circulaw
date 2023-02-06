@@ -657,7 +657,7 @@ export default function MeasuresLayout(props) {
         </Transition.Root>
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20 border-b border-black-white-500 pb-2'>
-        <div className='hidden sm:block breadcrumb pt-8 text-black-white-800 uppercase underline'>
+        <div className='block breadcrumb pt-8 text-black-white-800 uppercase underline'>
           <Link href='/'>Home</Link>
           <span className=''>
             {' '}
