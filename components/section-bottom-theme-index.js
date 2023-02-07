@@ -4,17 +4,17 @@ import { urlFor } from '../lib/sanity';
 import { useEffect, useState } from 'react';
 
 export default function ThemeBottomSection({ props }) {
-  const data = props.laws
-  const [laws, setLaws] = useState()
- 
+  const data = props.laws;
+  const [laws, setLaws] = useState();
+
   useEffect(() => {
     if (data.length > 0) {
-      const extended  = data.filter((e) => {
-        return e.isFeatured === true
-      })
-      setLaws(extended)
+      const extended = data.filter((e) => {
+        return e.isFeatured === true;
+      });
+      setLaws(extended);
     }
-  }, [data])
+  }, [data]);
 
   return (
     <>

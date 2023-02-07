@@ -11,7 +11,9 @@ export default function InfoPage() {
   const [provLaws, setProvLaws] = useState();
   const [gemLaws, setGemLaws] = useState();
 
-  {/* it would be possible here to fetch all the data with get static props then filter it inside a use effect. */}
+  {
+    /* it would be possible here to fetch all the data with get static props then filter it inside a use effect. */
+  }
   useEffect(() => {
     const urls = [
       `
