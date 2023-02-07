@@ -3,6 +3,7 @@ import { deskTool } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './schemas';
 import { Structure } from './desk-structure';
+import Logo from './components/logo';
 
 export default defineConfig({
   name: 'CircuLaw',
@@ -23,4 +24,11 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
+
+  studio: {
+    components: {
+      logo: Logo
+    }
+  }
+
 });
