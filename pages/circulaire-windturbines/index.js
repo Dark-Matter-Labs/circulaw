@@ -55,11 +55,11 @@ export default function Windturbine({ laws }) {
               </a>
             </span>
             {/* TODO: unhide div when PDF is ready */}
-            <div className='hidden'>
+            <div className=''>
               {' '}
               Zie het{' '}
               <span className='text-green-500 link-lg inline-block'>
-                <Link href='/2_PNH_Report_Dec22.pdf' target='_blank'>
+                <Link href='/2_PNH_Report_Dec2022.pdf' target='_blank'>
                   rapport-Analyse CircuLaw: Circulaire Windturbines (download pdf).
                 </Link>
                 <LinkIcon />
