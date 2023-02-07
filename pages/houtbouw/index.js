@@ -16,6 +16,7 @@ export default function Houtbouw({ laws }) {
   return (
     <Layout>
       <ThemeLayout
+        laws={laws}
         // header
         title='Houtbouw stimuleren'
         thema='houtbouw'

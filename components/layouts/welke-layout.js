@@ -142,9 +142,7 @@ export default function WelkeLayout(props) {
             {props.thema === 'circulaire-windturbines' && (
               <>
                 {/* All regions = 5 */}
-                <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-white'>
-                  {console.log(props.thema)}
-                </div>
+                <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-white'></div>
                 <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
                 <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
                 <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-white'></div>

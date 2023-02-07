@@ -16,6 +16,7 @@ export default function Matrassen({ laws }) {
   return (
     <Layout>
       <ThemeLayout
+        laws={laws}
         // header
         title='Circulaire matrasketen'
         thema='matrassen'
@@ -40,7 +41,7 @@ export default function Matrassen({ laws }) {
         cardLinkSamenhang='/matrassen/samenhang-matrassen'
         cardLinkWaarvoor='/matrassen/welke-overheid-heeft'
         extendedMeasureHeading='instrumenten om de circulariteit van de matrasketen te bevorderen'
-        extendedMeasureSubtitle='Met voorbeelden en handige leidraden.'
+        extendedMeasureSubtitle='Met voorbeelden.'
       />
     </Layout>
   );
