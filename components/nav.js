@@ -17,11 +17,7 @@ import BetaBanner from './beta-banner';
 import BetaBannerGen from './beta-banner-gen';
 import client from '../lib/sanity';
 import NieuwTooltip from '../components/nieuw-tooltip';
-import oldLogo from '../public/Circulaw_logotype_home_old.png';
 import animationData from '../public/CL_Home_Logo_Loop';
-
-// temp imports
-import AlphaBanner from './alpha-banner';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -297,53 +293,6 @@ export default function Nav() {
           </>
         )}
       </Disclosure>
-    );
-  }
-  // returns nav bar that is nested inside the header part of the index page
-  else if (router.pathname == '/') {
-    return (
-      <div className='relative'>
-        <video id='background-video' autoPlay loop muted playsInline poster='/bg-poster.png'>
-          <source src='/01_circulaw.mov' type='video/mp4' />
-        </video>
-        <AlphaBanner />
-        <div className='relative pt-6 pb-16 sm:pb-24'>
-          <div className='flex items-baseline sm:justify-start '>
-            <div className='hidden lg:block md:py-5 lg:py-0 pl-40'>
-              <Link href='/'>
-                <Image height={46} width={250} src={oldLogo} alt='CircuLaw logo' />
-              </Link>
-            </div>
-            <div className='block lg:hidden py-4 pl-8'>
-              <Link href='/'>
-                <Image height={24} width={120} src={oldLogo} alt='CircuLaw logo' quality={100} />
-              </Link>
-            </div>
-          </div>
-
-          {/* TODO: move this into header component and out of nav*/}
-          <main className='global-margin sm:mt-2'>
-            <div className='text-center mx-auto max-w-4xl'>
-              <div className='header hidden md:block text-black-white-200 py-10'>
-                <span className='block '>
-                  Lancering CircuLaw <br />8 Februari
-                </span>{' '}
-              </div>
-              <h1 className='text-left mobile block md:hidden text-black-white-200 py-4'>
-                <span className='block '>
-                  Lancering CircuLaw <br />8 Februari
-                </span>{' '}
-              </h1>
-              <p className='text-left sm:text-center mt-2 p-base max-w-sm sm:max-w-full sm:p-xl text-black-white-200 pb-8'>
-                De afgelopen twee jaar is uit de samenwerking van een breed consortium aan partners
-                CircuLaw ontstaan. Het doel van CircuLaw: meer en beter gebruikmaken van bestaande
-                wet- en regelgeving door overheden. Tijdens de Week van de Circulaire Economie is
-                het zover: samen met wethouder Zita Pels lanceren wij dit nieuwe kennisplatform!
-              </p>
-            </div>
-          </main>
-        </div>
-      </div>
     );
   }
   return (
