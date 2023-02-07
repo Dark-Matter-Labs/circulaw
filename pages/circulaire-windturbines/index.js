@@ -58,12 +58,11 @@ export default function Windturbine({ laws }) {
               {' '}
               Zie het{' '}
               <span className='text-green-500 link-lg inline-block'>
-                <Link href = '/2_PNH_Report_Dec22.pdf' target = '_blank'>
-                rapport-Analyse CircuLaw: Circulaire Windturbines (download pdf).
+                <Link href='/2_PNH_Report_Dec22.pdf' target='_blank'>
+                  rapport-Analyse CircuLaw: Circulaire Windturbines (download pdf).
                 </Link>
                 <LinkIcon />
-              </span>
-              {' '}
+              </span>{' '}
             </div>{' '}
           </div>
         </div>

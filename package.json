@@ -24,6 +24,7 @@
     "@tailwindcss/forms": "^0.5.2",
     "cookies-next": "^2.1.1",
     "fuse.js": "^6.6.2",
+    "image-map-resizer": "^1.0.10",
     "next": "^13.1.1",
     "next-pagination": "^3.1.0",
     "next-sanity": "^3.1.3",
