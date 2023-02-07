@@ -17,6 +17,7 @@ export default function Windturbine({ laws }) {
   return (
     <Layout>
       <ThemeLayout
+        laws = {laws}
         // header
         title='Circulaire windturbines'
         thema='circulaire-windturbines'
@@ -54,7 +55,7 @@ export default function Windturbine({ laws }) {
               </a>
             </span>
             {/* TODO: unhide div when PDF is ready */}
-            <div className=''>
+            <div className='hidden'>
               {' '}
               Zie het{' '}
               <span className='text-green-500 link-lg inline-block'>

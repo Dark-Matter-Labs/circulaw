@@ -16,6 +16,7 @@ export default function Matrassen({ laws }) {
   return (
     <Layout>
       <ThemeLayout
+        laws = {laws}
         // header
         title='Circulaire matrasketen'
         thema='matrassen'
