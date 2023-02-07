@@ -16,7 +16,7 @@ export default function InfoPage() {
         casus='matrassen'
         title='Samenhang instrumenten circulaire matrassen'
         icon={mattressIcon}
-        p1='Beleid rondom circulaire windturbines kun je opnemen in een omgevingsvisie, zodat je een subsidie daarvoor kunt vaststellen. Ook kun je als overheden proberen meer grond te kopen om die vervolgens uit te geven met circulaire eisen. Verder kun je als overheid met het omgevingsplan of een projectbesluit vergunningen verlenen voor circulaire windturbines. Afspraken over de kosten van circulaire windturbines op grond van het omgevingsplan kun je vastleggen in een anterieure overeenkomst.'
+        p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
       />
       <div className='bg-green-600 border-b border-black-white-100'>
         <div className='flex justify-center'>

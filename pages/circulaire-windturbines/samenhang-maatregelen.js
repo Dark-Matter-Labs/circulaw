@@ -15,18 +15,19 @@ export default function InfoPage() {
         casus='circulaire-windturbines'
         title='Samenhang instrumenten circulaire windturbines'
         icon={WindmillIcon}
-        p1='Beleid rondom circulaire windturbines kun je opnemen in een omgevingsvisie, zodat je een subsidie daarvoor kunt vaststellen. Ook kun je als overheden proberen meer grond te kopen om die vervolgens uit te geven met circulaire eisen. Verder kun je als overheid met het omgevingsplan of een projectbesluit vergunningen verlenen voor circulaire windturbines. Afspraken over de kosten van circulaire windturbines op grond van het omgevingsplan kun je vastleggen in een anterieure overeenkomst.'
+        p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
       />
       <div className='bg-green-600 border-b border-black-white-100'>
         <div className='flex justify-center'>
           <Image src={diagram} alt='diagram' useMap='#image-map' />
+
           <map name='image-map'>
             <area
               target=''
               alt='Projectbesluit'
               title='Projectbesluit'
               href='https://www.circulaw.nl/measures/projectbesluit'
-              coords='83,362,434,397'
+              coords='78,383,434,427'
               shape='rect'
             />
             <area
@@ -34,7 +35,7 @@ export default function InfoPage() {
               alt='Projectbesluit'
               title='Projectbesluit'
               href='https://www.circulaw.nl/measures/projectbesluit'
-              coords='83,415,436,446'
+              coords='75,440,436,473'
               shape='rect'
             />
             <area
@@ -42,7 +43,7 @@ export default function InfoPage() {
               alt='Omgevingsverordening'
               title='Omgevingsverordening'
               href='https://www.circulaw.nl/measures/circulaire-windturbines-via-de-omgevingsverordening'
-              coords='83,465,432,499'
+              coords='78,490,434,525'
               shape='rect'
             />
             <area
@@ -50,31 +51,31 @@ export default function InfoPage() {
               alt='Omgevingsplan'
               title='Omgevingsplan'
               href='https://www.circulaw.nl/measures/circulaire-windturbines-via-het-omgevingsplan'
-              coords='84,513,436,549'
+              coords='78,541,436,578'
+              shape='rect'
+            />
+            <area
+              target=''
+              alt='Omgevingsplan'
+              title='Omgevingsplan'
+              href='https://www.circulaw.nl/measures/circulaire-windturbines-via-het-omgevingsplan'
+              coords='535,307,894,347'
               shape='rect'
             />
             <area
               target=''
               alt='Omgevingsvisie'
               title='Omgevingsvisie'
-              href='https://www.circulaw.nl/measures/circulaire-windturbines-in-de-omgevingsvisie'
-              coords='540,282,889,319'
+              href='https://www.circulaw.nl/measures/circulaire-windturbines-via-het-omgevingsplan'
+              coords='534,362,894,397'
               shape='rect'
             />
             <area
               target=''
               alt='Omgevingsvisie'
               title='Omgevingsvisie'
-              href='https://www.circulaw.nl/measures/circulaire-windturbines-in-de-omgevingsvisie'
-              coords='536,337,887,370'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Omgevingsvisie'
-              title='Omgevingsvisie'
-              href='https://www.circulaw.nl/measures/circulaire-windturbines-in-de-omgevingsvisie'
-              coords='534,387,891,422'
+              href='https://www.circulaw.nl/measures/circulaire-windturbines-via-het-omgevingsplan'
+              coords='535,414,894,450'
               shape='rect'
             />
             <area
@@ -82,7 +83,7 @@ export default function InfoPage() {
               alt='Subsidie'
               title='Subsidie'
               href='https://www.circulaw.nl/measures/subsidie-voor-circulaire-windturbines'
-              coords='992,403,1342,439'
+              coords='993,430,1350,467'
               shape='rect'
             />
             <area
@@ -90,7 +91,7 @@ export default function InfoPage() {
               alt='Subsidie'
               title='Subsidie'
               href='https://www.circulaw.nl/measures/subsidie-voor-circulaire-windturbines'
-              coords='993,455,1343,491'
+              coords='995,480,1350,518'
               shape='rect'
             />
             <area
@@ -98,7 +99,7 @@ export default function InfoPage() {
               alt='Subsidie'
               title='Subsidie'
               href='https://www.circulaw.nl/measures/subsidie-voor-circulaire-windturbines'
-              coords='990,507,1344,542'
+              coords='994,533,1349,570'
               shape='rect'
             />
             <area
@@ -106,7 +107,7 @@ export default function InfoPage() {
               alt='Anterieure overeenkomst'
               title='Anterieure overeenkomst'
               href='https://www.circulaw.nl/measures/duurzaamheidseisen-in-een-anterieure-overeenkomst'
-              coords='83,769,436,803'
+              coords='75,795,436,837'
               shape='rect'
             />
             <area
@@ -114,7 +115,7 @@ export default function InfoPage() {
               alt='Onteigening'
               title='Onteigening'
               href='https://www.circulaw.nl/measures/onteigening-en-circulaire-windturbines'
-              coords='539,828,891,862'
+              coords='537,857,892,895'
               shape='rect'
             />
             <area
@@ -122,7 +123,7 @@ export default function InfoPage() {
               alt='Onteigening'
               title='Onteigening'
               href='https://www.circulaw.nl/measures/onteigening-en-circulaire-windturbines'
-              coords='540,878,885,911'
+              coords='534,908,892,943'
               shape='rect'
             />
             <area
@@ -130,7 +131,7 @@ export default function InfoPage() {
               alt='Voorkeursrecht'
               title='Voorkeursrecht'
               href='https://www.circulaw.nl/measures/een-voorkeursrecht-vestigen-om-circulaire-windturbines-te-bevorderen'
-              coords='543,932,889,965'
+              coords='535,962,894,996'
               shape='rect'
             />
             <area
@@ -138,7 +139,7 @@ export default function InfoPage() {
               alt='Onteigening'
               title='Onteigening'
               href='https://www.circulaw.nl/measures/onteigening-en-circulaire-windturbines'
-              coords='539,986,890,1019'
+              coords='536,1016,895,1054'
               shape='rect'
             />
             <area
@@ -146,79 +147,79 @@ export default function InfoPage() {
               alt='Voorkeursrecht'
               title='Voorkeursrecht'
               href='https://www.circulaw.nl/measures/een-voorkeursrecht-vestigen-om-circulaire-windturbines-te-bevorderen'
-              coords='536,1042,891,1076'
+              coords='537,1074,892,1111'
               shape='rect'
             />
             <area
               target=''
               alt='Verkoop'
               title='Verkoop'
-              href='https://www.circulaw.nl/measures/een-voorkeursrecht-vestigen-om-circulaire-windturbines-te-bevorderen'
-              coords='1003,800,1354,838'
+              href='https://www.circulaw.nl/measures/circulaire-windturbines-bevorderen-door-tenders-bij-gronduitgifte-'
+              coords='1003,831,1359,868'
               shape='rect'
             />
             <area
               target=''
-              alt='Erpacht'
-              title='Erpacht'
-              href='https://www.circulaw.nl/measures/een-voorkeursrecht-vestigen-om-circulaire-windturbines-te-bevorderen'
-              coords='1003,851,1352,887'
+              alt='Erfpacht'
+              title='Erfpacht'
+              href='https://www.circulaw.nl/measures/circulaire-windturbines-bevorderen-door-tenders-bij-gronduitgifte-'
+              coords='1001,884,1360,919'
               shape='rect'
             />
             <area
               target=''
               alt='Huren'
               title='Huren'
-              href='https://www.circulaw.nl/measures/een-voorkeursrecht-vestigen-om-circulaire-windturbines-te-bevorderen'
-              coords='994,900,1354,939'
+              href='https://www.circulaw.nl/measures/circulaire-windturbines-bevorderen-door-het-sluiten-van-huurovereenkomsten'
+              coords='1002,932,1358,971'
               shape='rect'
             />
             <area
               target=''
               alt='Verkoop'
               title='Verkoop'
-              href='https://www.circulaw.nl/measures/een-voorkeursrecht-vestigen-om-circulaire-windturbines-te-bevorderen'
-              coords='1001,953,1353,988'
+              href='https://www.circulaw.nl/measures/circulaire-windturbines-bevorderen-door-tenders-bij-gronduitgifte-'
+              coords='1002,986,1358,1022'
               shape='rect'
             />
             <area
               target=''
-              alt='Erpacht'
-              title='Erpacht'
-              href='https://www.circulaw.nl/measures/een-voorkeursrecht-vestigen-om-circulaire-windturbines-te-bevorderen'
-              coords='1003,1003,1353,1037'
+              alt='Erfpacht'
+              title='Erfpacht'
+              href='https://www.circulaw.nl/measures/circulaire-windturbines-bevorderen-door-tenders-bij-gronduitgifte-'
+              coords='1002,1034,1358,1073'
               shape='rect'
             />
             <area
               target=''
               alt='Huren'
               title='Huren'
-              href='https://www.circulaw.nl/measures/een-voorkeursrecht-vestigen-om-circulaire-windturbines-te-bevorderen'
-              coords='1002,1053,1353,1087'
+              href='https://www.circulaw.nl/measures/circulaire-windturbines-bevorderen-door-het-sluiten-van-huurovereenkomsten'
+              coords='1001,1086,1360,1122'
               shape='rect'
             />
             <area
               target=''
               alt='Verkoop'
               title='Verkoop'
-              href='https://www.circulaw.nl/measures/een-voorkeursrecht-vestigen-om-circulaire-windturbines-te-bevorderen'
-              coords='1003,1104,1352,1137'
+              href='https://www.circulaw.nl/measures/circulaire-windturbines-bevorderen-door-tenders-bij-gronduitgifte-'
+              coords='1002,1135,1360,1174'
               shape='rect'
             />
             <area
               target=''
-              alt='Erpacht'
-              title='Erpacht'
-              href='https://www.circulaw.nl/measures/een-voorkeursrecht-vestigen-om-circulaire-windturbines-te-bevorderen'
-              coords='1002,1154,1347,1187'
+              alt='Erfpacht'
+              title='Erfpacht'
+              href='https://www.circulaw.nl/measures/circulaire-windturbines-bevorderen-door-tenders-bij-gronduitgifte-'
+              coords=''
               shape='rect'
             />
             <area
               target=''
               alt='Huren'
               title='Huren'
-              href='https://www.circulaw.nl/measures/een-voorkeursrecht-vestigen-om-circulaire-windturbines-te-bevorderen'
-              coords='1005,1205,1352,1237'
+              href='https://www.circulaw.nl/measures/circulaire-windturbines-bevorderen-door-het-sluiten-van-huurovereenkomsten'
+              coords=''
               shape='rect'
             />
           </map>
