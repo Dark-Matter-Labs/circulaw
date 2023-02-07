@@ -1,20 +1,14 @@
 # CircuLaw
 
-A project for exploring circular economy laws in the Netherlands.
+Unlocking regulatory innovation for the circular economy transition
 
-## Branching and Links
+This is a [Next.js](https://nextjs.org/) project hosted on [Vercel](https://vercel.com) and data is created and hosted using [Sanity](https://www.sanity.io/).
 
-main/
+## Status
 
-preview/
-
-### Creating new Branches
-
-New branches should use the `FirstName/Task` structure and when merged should like back to the [trello board ticket](https://trello.com/c/rjQCtTNQ/).
+CircuLaw is currently in beta stage. 
 
 ## Getting Started
-
-Where are using [Next.js](https://nextjs.org) as our JS framework and out CSS library is [Tailwind](https://tailwindui.com/). The project is hosted on [Vercel](https://vercel.com) at the moment and all of the data is currently being stored in a static JSON file called `/data.js`
 
 You can get started by installing the dependencies by running:
 
@@ -34,25 +28,20 @@ For cleaning up the code run:
 yarn clean
 ```
 
+For running Sanity CMS locally along with dev build:
+
+```
+yarn cms
+```
+
 ## Vercel Overview
 
-To publish or test any code you can push directly to vercel by running and following the flow in terminal.
+Vercel picks up and builds `main` and `staging` branches automatically, please make a pull request to deploy any changes.
 
-```
-Vercel link
-```
+## Sanity Overview
 
-## ENV
+Navigate to /studio folder and run `sanity deploy` to deploy changes to CMS system. This will only work if you have the needed authentication token.
 
-Added temp auth variables for testing
-
-```
-NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_USERNAME=darkmatter
-NEXTAUTH_PASSWORD="circular"
-```
-
----
 
 ## Languages & tools
 
@@ -61,6 +50,22 @@ NEXTAUTH_PASSWORD="circular"
 - [Next.js](https://nextjs.org) is used app rendering and links.
 - [React](http://facebook.github.io/react) is used for interactive UI.
 
-### CSS
+### CSS and UI
 
-- [Tailwind](https://tailwindui.com/) is used to write futureproof CSS for CSS vendor prefix under the hood).
+- [Tailwind](https://tailwindui.com/) is used to write styles and create the design system
+- [HeadlessUI](https://headlessui.com/) is used for UI components
+
+### Analytics
+
+- [SimpleAnalytics](https://www.simpleanalytics.com/) for basic privacy centric analytics
+- [Hotjar](https://www.hotjar.com/) for more detailed testing for the beta
+
+## License
+
+GPLv3 license
+
+## Learn More
+
+To learn more about the project take a look at the following resources:
+
+- [Dm project page](https://darkmatterlabs.org/CircuLaw)
