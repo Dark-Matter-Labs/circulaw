@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Image from 'next/image';
 import Layout from '../../components/layouts/layout';
 import mattressIcon from '../../public/icons/matressIcon.svg';
@@ -5,6 +6,10 @@ import SamenhangLayout from '../../components/layouts/samenhang-layout';
 import diagram from '../../public/Matress_page.svg';
 
 export default function InfoPage() {
+  useEffect(() => {
+    import('image-map-resizer').then((module) => module.default());
+  }, []);
+
   return (
     <Layout>
       <SamenhangLayout
