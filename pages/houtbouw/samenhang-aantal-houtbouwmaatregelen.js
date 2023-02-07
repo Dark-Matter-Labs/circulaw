@@ -18,7 +18,7 @@ export default function InfoPage() {
         icon={woodIcon}
         p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
       />
-      <div className='bg-green-600 border-b border-black-white-100'>
+      <div className='bg-green-600 border-b border-black-white-100 mt-10'>
         <div className='flex justify-center'>
           <Image src={diagram} alt='diagram' className='' useMap='#image-map' />
 

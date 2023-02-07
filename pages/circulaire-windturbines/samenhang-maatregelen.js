@@ -17,7 +17,7 @@ export default function InfoPage() {
         icon={WindmillIcon}
         p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
       />
-      <div className='bg-green-600 border-b border-black-white-100'>
+      <div className='bg-green-600 border-b border-black-white-100 mt-10'>
         <div className='flex justify-center'>
           <Image src={diagram} alt='diagram' useMap='#image-map' />
 
@@ -220,6 +220,22 @@ export default function InfoPage() {
               title='Huren'
               href='https://www.circulaw.nl/measures/circulaire-windturbines-bevorderen-door-het-sluiten-van-huurovereenkomsten'
               coords=''
+              shape='rect'
+            />
+            <area
+              target=''
+              alt='Erfpacht'
+              title='Erfpacht'
+              href='https://www.circulaw.nl/measures/circulaire-windturbines-bevorderen-door-tenders-bij-gronduitgifte-'
+              coords='1003,1187,1360,1223'
+              shape='rect'
+            />
+            <area
+              target=''
+              alt='Huren'
+              title='Huren'
+              href='https://www.circulaw.nl/measures/circulaire-windturbines-bevorderen-door-het-sluiten-van-huurovereenkomsten'
+              coords='1003,1235,1355,1272'
               shape='rect'
             />
           </map>
