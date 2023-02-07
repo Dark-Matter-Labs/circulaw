@@ -18,7 +18,7 @@ import BetaBannerGen from './beta-banner-gen';
 import client from '../lib/sanity';
 import NieuwTooltip from '../components/nieuw-tooltip';
 import oldLogo from '../public/Circulaw_logotype_home_old.png';
-import animationData from '../public/CL_Logo_Animation';
+import animationData from '../public/CL_Home_Logo_Loop';
 
 // temp imports
 import AlphaBanner from './alpha-banner';
