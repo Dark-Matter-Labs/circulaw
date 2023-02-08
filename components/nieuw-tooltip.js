@@ -14,7 +14,7 @@ export default function NieuwToolTip() {
         onClick={() => setOpen(true)}
       >
         <span className='sr-only'>Open ToolTip</span>
-          NIEUW
+        NIEUW
       </button>
       <Transition.Root show={open} as={Fragment}>
         <Dialog as='div' className='relative z-50' onClose={setOpen}>
