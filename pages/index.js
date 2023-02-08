@@ -45,11 +45,14 @@ export default function Index() {
               <div>
                 <h2 className='mobile sm:desktop'>Wat is CircuLaw?</h2>
                 <p className=' p-lg py-5 max-w-4xl'>
-                  CircuLaw is een service waarmee we in de eerste plaats beleidsmakers en
-                  transitiemanagers helpen meer en beter gebruik te maken van regelgeving om de
-                  circulaire economie te bevorderen. Maar CircuLaw is ambitieus. Door stap voor stap
-                  uit te breiden willen we uiteindelijk ook strategen, toezichthouders, juristen en
-                  circulaire ondernemers bedienen.
+                  CircuLaw is een kennisplatform waarmee we beleidsmakers, projectleiders en
+                  inkopers helpen meer en beter gebruik te maken van regelgeving om zo de circulaire
+                  economie te bevorderen. Wet-en regelgeving biedt goede mogelijkheden om effectief
+                  circulair beleid te maken. CircuLaw ontsluit die complexe wet-en regelgeving zodat
+                  beleidsmakers er mee aan de slag kunnen. Zo kunnen we de overstap van het lineaire
+                  systeem naar een circulair systeem bevorderen. En die stap is essentieel om
+                  versnelde klimaatverandering tegen te gaan, vervuiling te verminderen, de
+                  biodiversiteit te behouden en om te zorgen dat grondstoffen beschikbaar blijven.
                 </p>
                 <span className='text-green-500  link-lg'>
                   Lees verder <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
