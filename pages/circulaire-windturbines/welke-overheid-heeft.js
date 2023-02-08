@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import client from '../../lib/sanity';
 import Layout from '../../components/layouts/layout';
 import WelkeLayout from '../../components/layouts/welke-layout';
-import WindmillIcon from '../../public/windmill.svg';
+import WindmillIcon from '../../public/windmill.png';
 import windmillImageMob from '../../public/bevoegdheden/bevoegdheden-windmill.png';
 
 export default function InfoPage() {
