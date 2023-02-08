@@ -272,10 +272,13 @@ export default function Nav() {
               ))}
               <hr className='my-4 mx-2 border-green-600' />
               <Disclosure.Button
-                as='span'
-                className='uppercase text-black-white-800  block pl-3 pr-2 py-4'
+                as='a'
+                onClick={() => {
+                  router.push(`/about/${encodeURIComponent(FAQslug)}`);
+                }}
+                className='cursor-pointer uppercase text-black-white-800  block pl-3 pr-2 py-4'
               >
-                <Link href={`/about/${encodeURIComponent(FAQslug)}`}>Vraag en Antwoord</Link>
+                Vraag en Antwoord
               </Disclosure.Button>
               <hr className='my-4 mx-2 border-green-600' />
               <Disclosure.Button
