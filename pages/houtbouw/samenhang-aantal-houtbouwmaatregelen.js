@@ -115,7 +115,7 @@ export default function InfoPage() {
               target=''
               alt='Omgevingsvisie'
               title='Omgevingsvisie'
-              href='https://www.circulaw.nl/measures/houtbouw-een-plek-geven-in-de-nationale-omgevingsvisie'
+              href='https://www.circulaw.nl/measures/houtbouw-een-plek-geven-in-de-provinciale-omgevingsvisie'
               coords='848,804,1207,838'
               shape='rect'
             />
@@ -131,7 +131,7 @@ export default function InfoPage() {
               target=''
               alt='Omgevingsvisie'
               title='Omgevingsvisie'
-              href='https://www.circulaw.nl/measures/houtbouw-een-plek-geven-in-de-nationale-omgevingsvisie'
+              href='https://www.circulaw.nl/measures/houtbouw-een-plek-geven-in-de-gemeentelijke-omgevingsvisie'
               coords='849,905,1208,938'
               shape='rect'
             />

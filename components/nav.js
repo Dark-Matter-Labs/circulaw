@@ -226,68 +226,67 @@ export default function Nav() {
                 </div>
               </div>
             </div>
-            <Disclosure.Panel className='lg:hidden bg-black-white-200'>
-              <div className='pt-2 pb-4 ml-5'>
+            <Disclosure.Panel className='lg:hidden bg-black-white-200 pt-2 pb-4 ml-5'>
+              <Disclosure.Button
+                as='span'
+                className='uppercase text-black-white-800  block pl-3 pr-4 py-4'
+              >
+                Thema&apos;s
+              </Disclosure.Button>
+              <Disclosure.Button
+                as='span'
+                className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
+              >
+                <Link href='/houtbouw'>Houtbouw stimuleren</Link>
+              </Disclosure.Button>
+              <Disclosure.Button
+                as='span'
+                className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
+              >
+                <Link href='/circulaire-windturbines'>Circulaire windturbines</Link>
+              </Disclosure.Button>
+              <Disclosure.Button
+                as='span'
+                className='table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
+              >
+                <Link href='/matrassen'>Circulaire matrasketen</Link>
+              </Disclosure.Button>
+              <hr className='my-4 mx-2 border-green-600' />
+              <Disclosure.Button
+                as='span'
+                className='uppercase text-black-white-800 block pl-3 pr-4 py-4'
+              >
+                Over CircuLaw
+              </Disclosure.Button>
+              {aboutSlugs?.map((slug) => (
                 <Disclosure.Button
-                  as='span'
-                  className='uppercase text-black-white-800  block pl-3 pr-4 py-4'
+                  as='a'
+                  key={slug}
+                  onClick={() => {
+                    router.push(`/about/${encodeURIComponent(slug)}`);
+                  }}
+                  className='cursor-pointer border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4 first-letter:uppercase'
                 >
-                  Thema&apos;s
+                  {slug.replaceAll('-', ' ')}
                 </Disclosure.Button>
-                <Disclosure.Button
-                  as='span'
-                  className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
-                >
-                  <Link href='/houtbouw'>Houtbouw stimuleren</Link>
-                </Disclosure.Button>
-                <Disclosure.Button
-                  as='span'
-                  className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
-                >
-                  <Link href='/circulaire-windturbines'>Circulaire windturbines</Link>
-                </Disclosure.Button>
-                <Disclosure.Button
-                  as='span'
-                  className='table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
-                >
-                  <Link href='/matrassen'>Circulaire matrasketen</Link>
-                </Disclosure.Button>
-                <hr className='my-4 mx-2 border-green-600' />
-                <Disclosure.Button
-                  as='span'
-                  className='uppercase text-black-white-800 block pl-3 pr-4 py-4'
-                >
-                  Over CircuLaw
-                </Disclosure.Button>
-                {aboutSlugs?.map((slug) => (
-                  <Disclosure.Button
-                    as='span'
-                    key={slug}
-                    className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4 first-letter:uppercase'
-                  >
-                    <Link href={`/about/${encodeURIComponent(slug)}`}>
-                      {slug.replaceAll('-', ' ')}
-                    </Link>
-                  </Disclosure.Button>
-                ))}
-                <hr className='my-4 mx-2 border-green-600' />
-                <Disclosure.Button
-                  as='span'
-                  className='uppercase text-black-white-800  block pl-3 pr-2 py-4'
-                >
-                  <Link href={`/about/${encodeURIComponent(FAQslug)}`}>Vraag en Antwoord</Link>
-                </Disclosure.Button>
-                <hr className='my-4 mx-2 border-green-600' />
-                <Disclosure.Button
-                  as='span'
-                  className='uppercase text-black-white-800 block pl-3 pr-4 py-4'
-                >
-                  <Link href='/contact'>Contact</Link>
-                </Disclosure.Button>
-                <hr className='my-4 mx-2 border-green-600' />
-                <div className='block pl-3 pr-4 py-4'>
-                  <NieuwTooltip />
-                </div>
+              ))}
+              <hr className='my-4 mx-2 border-green-600' />
+              <Disclosure.Button
+                as='span'
+                className='uppercase text-black-white-800  block pl-3 pr-2 py-4'
+              >
+                <Link href={`/about/${encodeURIComponent(FAQslug)}`}>Vraag en Antwoord</Link>
+              </Disclosure.Button>
+              <hr className='my-4 mx-2 border-green-600' />
+              <Disclosure.Button
+                as='span'
+                className='uppercase text-black-white-800 block pl-3 pr-4 py-4'
+              >
+                <Link href='/contact'>Contact</Link>
+              </Disclosure.Button>
+              <hr className='my-4 mx-2 border-green-600' />
+              <div className='block pl-3 pr-4 py-4'>
+                <NieuwTooltip />
               </div>
             </Disclosure.Panel>
           </>
