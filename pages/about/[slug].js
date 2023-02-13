@@ -50,7 +50,7 @@ const components = {
               fill='#F8FAF8'
             />
           </svg>
-          <div className='inline-block max-w-xs absolute invisible group-hover:visible z-10 py-3 px-6 bg-black-white-300 text-black-white-800  popup-base opacity-0 group-hover:opacity-100 transition tooltip'>
+          <div className='inline-block text-left max-w-xs absolute invisible group-hover:visible z-10 py-3 px-6 bg-black-white-300 text-black-white-800  popup-base opacity-0 group-hover:opacity-100 transition tooltip'>
             {value.hoverText}
           </div>
         </button>
@@ -76,7 +76,11 @@ const components = {
                 rel='noreferrer'
               >
                 <CustomButton color='toPdf'>
-                  Bekijk de methodiek &nbsp;
+                  {value.buttonText ? (
+                    <span>{value.buttonText} &nbsp;</span>
+                  ) : (
+                    <span>Bekijk de methodiek &nbsp;</span>
+                  )}
                   <Image
                     src='/icons/pdf-icon.svg'
                     width={23}
@@ -102,26 +106,28 @@ const components = {
   },
   list: {
     bullet: ({ children }) => (
-      <div className='newlineDisplay  p-lg truncate'>
-        <ul className='list-disc pl-6 mobile sm:desktop'>{children}</ul>
+      <div className='newlineDisplay p-lg truncate'>
+        <ul className='list-disc pl-6 p-lg'>{children}</ul>
       </div>
     ),
     number: ({ children }) => (
-      <div className='newlineDisplay  p-lg truncate'>
-        <ol className='list-decimal pl-6 pb-4 mobile sm:desktop'>{children}</ol>
+      <div className='newlineDisplay p-lg truncate'>
+        <ol className='list-decimal pl-6 pb-4 p-lg'>{children}</ol>
       </div>
     ),
   },
   listItem: {
-    number: ({ children }) => <li className='py-0.5'>{children}</li>,
-    bullet: ({ children }) => <li className='py-0.5'>{children}</li>,
+    number: ({ children }) => <li className='py-0.5 p-lg'>{children}</li>,
+    bullet: ({ children }) => <li className='py-0.5 p-lg'>{children}</li>,
   },
   block: {
-    firstH2: ({ children }) => <h2 className='pb-2 mobile sm:desktop'>{children}</h2>,
-    h2: ({ children }) => <h2 className='py-2 mobile sm:desktop'>{children}</h2>,
-    h3: ({ children }) => <h3 className='py-2 mobile sm:desktop'>{children}</h3>,
+    firstH2: ({ children }) => <h2 className='pb-[18px] mobile sm:desktop'>{children}</h2>,
+    h2: ({ children }) => <h2 className='pt-14 pb-[18px] mobile sm:desktop'>{children}</h2>,
+    h3: ({ children }) => <h3 className='pt-14 pb-[18px] mobile sm:desktop'>{children}</h3>,
     // need to add other styles here
-    normal: ({ children }) => <p className='newlineDisplay p-lg py-2'>{children}</p>,
+    normal: ({ children }) => (
+      <p className='newlineDisplay p-lg py-2'>{children}</p> // check if this is correct
+    ),
   },
   marks: {
     link: ({ children, value }) =>
@@ -138,7 +144,7 @@ const components = {
           </a>
         </>
       ) : (
-        <a className='text-green-500  link-lg' href={value.href}>
+        <a className='text-green-500 link-lg' href={value.href}>
           {children}
         </a>
       ),

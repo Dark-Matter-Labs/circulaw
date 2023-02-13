@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import Layout from '../../components/layouts/layout';
 import ThemeLayout from '../../components/layouts/theme-index-layout';
 import client from '../../lib/sanity';
+import LinkIcon from '../../components/link-icon';
+import Link from 'next/link';
 
 const windQuery = `
 *[_type == "measure" && thema == "circulaire-windturbines"]
@@ -15,6 +17,7 @@ export default function Windturbine({ laws }) {
   return (
     <Layout>
       <ThemeLayout
+        laws={laws}
         // header
         title='Circulaire windturbines'
         thema='circulaire-windturbines'
@@ -22,7 +25,7 @@ export default function Windturbine({ laws }) {
         // headerLinkText='' // will be displayed in the same sentence as header subtitle
         // headerLinkURL='/'
         bgHero='bg-windmill-hero'
-        heroImage='/windturbineHero.jpg'
+        heroImage='/hero-images/windmill.jpg'
         // number of laws
         numberOfLaws={laws.length}
         cardTitle='Overzichten van instrumenten die circulaire windturbines bevorderen'
@@ -41,6 +44,30 @@ export default function Windturbine({ laws }) {
         extendedMeasureHeading='instrumenten om circulariteit van windturbines te bevorderen'
         extendedMeasureSubtitle='Met voorbeelden.'
       />
+      <div className='bg-[#F8FAF8]'>
+        <div className='global-margin pt-10 pb-20 '>
+          <div className='p-lg'>
+            De informatie over windturbines is mede tot stand gekomen door nauwe samenwerking met de{' '}
+            <span className='text-green-500 link-lg inline-block'>
+              <a href='https://www.noord-holland.nl/' target='_blank' rel='noopener noreferrer'>
+                Provincie Noord-Holland
+                <LinkIcon />
+              </a>
+            </span>
+            {/* TODO: unhide div when PDF is ready */}
+            <div className=''>
+              {' '}
+              Zie het{' '}
+              <span className='text-green-500 link-lg inline-block'>
+                <Link href='/Analyse circulaire windturbines_PNH.pdf' target='_blank'>
+                  rapport-Analyse CircuLaw: Circulaire Windturbines (download pdf).
+                </Link>
+                <LinkIcon />
+              </span>{' '}
+            </div>{' '}
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 }

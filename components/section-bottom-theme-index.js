@@ -1,18 +1,20 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { groq } from 'next-sanity';
-import useSWR from 'swr';
-import client, { urlFor } from '../lib/sanity';
+import { urlFor } from '../lib/sanity';
 import { useEffect, useState } from 'react';
 
 export default function ThemeBottomSection({ props }) {
-  const { data } = useSWR(
-    groq`*[_type == "measure" && thema == "${props.thema}" && isFeatured == true]`,
-    (query) => client.fetch(query),
-  );
-
+  const data = props.laws;
   const [laws, setLaws] = useState();
-  useEffect(() => setLaws(data?.map((law) => law)), [data]);
+
+  useEffect(() => {
+    if (data.length > 0) {
+      const extended = data.filter((e) => {
+        return e.isFeatured === true;
+      });
+      setLaws(extended);
+    }
+  }, [data]);
 
   return (
     <>
@@ -37,7 +39,7 @@ export default function ThemeBottomSection({ props }) {
                     <div className='grid grid-cols-1 lg:grid-cols-2 py-10 gap-x-8 gap-y-4 '>
                       <div className=''>
                         <Image
-                          src={urlFor(measure?.featuredImage).url()}
+                          src={urlFor(measure?.featuredImage)?.url()}
                           alt={measure?.featuredImage?.altText}
                           width={556}
                           height={278}

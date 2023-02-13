@@ -10,18 +10,11 @@ export default function NieuwToolTip() {
     <>
       <button
         type='button'
-        className='rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white'
+        className='inline-flex rounded-full px-4 py-1 items-centershadow border button border-green-600 bg-green-500 hover:bg-black-white-200 text-black-white-200 hover:text-green-600 transition ease-in-out hover:duration-150 focus:outline-none'
         onClick={() => setOpen(true)}
       >
         <span className='sr-only'>Open ToolTip</span>
-        <span
-          type='button'
-          className={
-            'inline-flex rounded-full items-center px-4 py-1 shadow border button border-green-600 bg-green-500 hover:bg-transparent text-black-white-200 hover:text-green-600 transition ease-in-out hover:duration-150 focus:outline-none'
-          }
-        >
-          NIEUW
-        </span>
+        NIEUW
       </button>
       <Transition.Root show={open} as={Fragment}>
         <Dialog as='div' className='relative z-50' onClose={setOpen}>
@@ -88,8 +81,14 @@ export default function NieuwToolTip() {
                           </p>
                           <p className='p-base pb-6'>
                             CircuLaw volgt voor de analyse van wet-en regelgeving en het
-                            identificeren van juridische instrumenten een standaard werkwijze: deze
-                            CircuLaw-methodiek voor wetsanalyse is nu ook voor iedereen beschikbaar.
+                            identificeren van juridische instrumenten een standaard werkwijze: deze{' '}
+                            <Link
+                              className='link-base'
+                              href='/about/Wetsanalyse-vanuit-circulaire-blik'
+                            >
+                              CircuLaw-methodiek voor wetsanalyse
+                            </Link>{' '}
+                            is nu ook voor iedereen beschikbaar.
                           </p>
                           <p className='p-base'>
                             In deze versie van de website hebben we techniek, ontwerp en copy

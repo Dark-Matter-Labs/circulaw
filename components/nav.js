@@ -8,6 +8,7 @@ import { ChevronDownIcon } from '@heroicons/react/solid';
 import { Link as ScrollLink } from 'react-scroll';
 import { groq } from 'next-sanity';
 import useSWR from 'swr';
+import Lottie from 'react-lottie';
 import { get_waardeketens } from '../utils/nav-structure';
 import CirculawLogo from '../public/Circulaw_logotype.png';
 import logo from '../public/Circulaw_logotype_home.png';
@@ -16,13 +17,20 @@ import BetaBanner from './beta-banner';
 import BetaBannerGen from './beta-banner-gen';
 import client from '../lib/sanity';
 import NieuwTooltip from '../components/nieuw-tooltip';
-
-// temp imports
-import AlphaBanner from './alpha-banner';
+import animationData from '../public/CL_Home_Logo_Loop';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
+
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: animationData,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice',
+  },
+};
 
 const waardeketens = get_waardeketens();
 
@@ -46,7 +54,7 @@ export default function Nav() {
       <Disclosure as='nav' className='sticky top-0 z-40 bg-black-white-200 shadow-lg'>
         {({ open }) => (
           <>
-            <div className='lg:pb-8 global-margin'>
+            <div className='lg:pb-4 global-margin'>
               <BetaBannerGen />
               <div className=''>
                 <div className='inset-y-0 float-right flex items-center lg:hidden'>
@@ -56,16 +64,16 @@ export default function Nav() {
                     {open ? (
                       <XIcon className='block h-10 w-10' aria-hidden='true' />
                     ) : (
-                      <MenuIcon className='block h-10 w-10' aria-hidden='true' />
+                      <MenuIcon className='block h-10 w-10 mt-7' aria-hidden='true' />
                     )}
                   </Disclosure.Button>
                 </div>
-                <div className='flex items-baseline sm:justify-start '>
-                  <div className='hidden lg:block md:py-5 lg:py-0'>
+                <div className='flex items-center justify-between'>
+                  <div className='hidden lg:block '>
                     <Link href='/'>
                       <Image
-                        height={46}
-                        width={250}
+                        height={86}
+                        width={162}
                         src={CirculawLogo}
                         alt='CircuLaw logo'
                         quality={100}
@@ -83,7 +91,7 @@ export default function Nav() {
                       />
                     </Link>
                   </div>
-                  <div className='hidden lg:ml-6 lg:flex'>
+                  <div className='hidden lg:ml-10 xl:ml-32 lg:flex lg:mt-6'>
                     <div className='flex inset-x-0 top-0 pl-5 invisible lg:visible hidden lg:inline '>
                       <div className='flex-1 global-margin'>
                         <div className='content right-0'>
@@ -218,68 +226,70 @@ export default function Nav() {
                 </div>
               </div>
             </div>
-            <Disclosure.Panel className='lg:hidden bg-black-white-200'>
-              <div className='pt-2 pb-4 ml-5'>
+            <Disclosure.Panel className='lg:hidden bg-black-white-200 pt-2 pb-4 ml-5'>
+              <Disclosure.Button
+                as='span'
+                className='uppercase text-black-white-800  block pl-3 pr-4 py-4'
+              >
+                Thema&apos;s
+              </Disclosure.Button>
+              <Disclosure.Button
+                as='span'
+                className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
+              >
+                <Link href='/houtbouw'>Houtbouw stimuleren</Link>
+              </Disclosure.Button>
+              <Disclosure.Button
+                as='span'
+                className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
+              >
+                <Link href='/circulaire-windturbines'>Circulaire windturbines</Link>
+              </Disclosure.Button>
+              <Disclosure.Button
+                as='span'
+                className='table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
+              >
+                <Link href='/matrassen'>Circulaire matrasketen</Link>
+              </Disclosure.Button>
+              <hr className='my-4 mx-2 border-green-600' />
+              <Disclosure.Button
+                as='span'
+                className='uppercase text-black-white-800 block pl-3 pr-4 py-4'
+              >
+                Over CircuLaw
+              </Disclosure.Button>
+              {aboutSlugs?.map((slug) => (
                 <Disclosure.Button
-                  as='span'
-                  className='uppercase text-black-white-800  block pl-3 pr-4 py-4'
+                  as='a'
+                  key={slug}
+                  onClick={() => {
+                    router.push(`/about/${encodeURIComponent(slug)}`);
+                  }}
+                  className='cursor-pointer border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4 first-letter:uppercase'
                 >
-                  Thema&apos;s
+                  {slug.replaceAll('-', ' ')}
                 </Disclosure.Button>
-                <Disclosure.Button
-                  as='span'
-                  className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
-                >
-                  <Link href='/houtbouw'>Houtbouw stimuleren</Link>
-                </Disclosure.Button>
-                <Disclosure.Button
-                  as='span'
-                  className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
-                >
-                  <Link href='/circulaire-windturbines'>Circulaire windturbines</Link>
-                </Disclosure.Button>
-                <Disclosure.Button
-                  as='span'
-                  className='table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
-                >
-                  <Link href='/matrassen'>Circulaire matrasketen</Link>
-                </Disclosure.Button>
-                <hr className='my-4 mx-2 border-green-600' />
-                <Disclosure.Button
-                  as='span'
-                  className='uppercase text-black-white-800 block pl-3 pr-4 py-4'
-                >
-                  Over CircuLaw
-                </Disclosure.Button>
-                {aboutSlugs?.map((slug) => (
-                  <Disclosure.Button
-                    as='span'
-                    key={slug}
-                    className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4 first-letter:uppercase'
-                  >
-                    <Link href={`/about/${encodeURIComponent(slug)}`}>
-                      {slug.replaceAll('-', ' ')}
-                    </Link>
-                  </Disclosure.Button>
-                ))}
-                <hr className='my-4 mx-2 border-green-600' />
-                <Disclosure.Button
-                  as='span'
-                  className='uppercase text-black-white-800  block pl-3 pr-2 py-4'
-                >
-                  <Link href={`/about/${encodeURIComponent(FAQslug)}`}>Vraag en Antwoord</Link>
-                </Disclosure.Button>
-                <hr className='my-4 mx-2 border-green-600' />
-                <Disclosure.Button
-                  as='span'
-                  className='uppercase text-black-white-800 block pl-3 pr-4 py-4'
-                >
-                  <Link href='/contact'>Contact</Link>
-                </Disclosure.Button>
-                <hr className='my-4 mx-2 border-green-600' />
-                <div className='block pl-3 pr-4 py-4'>
-                  <NieuwTooltip />
-                </div>
+              ))}
+              <hr className='my-4 mx-2 border-green-600' />
+              <Disclosure.Button
+                as='a'
+                onClick={() => {
+                  router.push(`/about/${encodeURIComponent(FAQslug)}`);
+                }}
+                className='cursor-pointer uppercase text-black-white-800  block pl-3 pr-2 py-4'
+              >
+                Vraag en Antwoord
+              </Disclosure.Button>
+              <hr className='my-4 mx-2 border-green-600' />
+              <Disclosure.Button
+                as='span'
+                className='uppercase text-black-white-800 block pl-3 pr-4 py-4'
+              >
+                <Link href='/contact'>Contact</Link>
+              </Disclosure.Button>
+              <hr className='my-4 mx-2 border-green-600' />
+              <div className='block pl-3 pr-4 py-4'>
+                <NieuwTooltip />
               </div>
             </Disclosure.Panel>
           </>
@@ -287,60 +297,10 @@ export default function Nav() {
       </Disclosure>
     );
   }
-  // returns nav bar that is nested inside the header part of the index page
-  else if (router.pathname == '/') {
-    return (
-      <div className='relative'>
-        <video id='background-video' autoPlay loop muted playsInline poster='/bg-poster.png'>
-          <source src='/01_circulaw.mov' type='video/mp4' />
-        </video>
-        <AlphaBanner />
-        <div className='relative pt-6 pb-16 sm:pb-24'>
-          <div className='flex items-baseline sm:justify-start '>
-            <div className='hidden lg:block md:py-5 lg:py-0 pl-40'>
-              <Link href='/'>
-                <Image height={46} width={250} src={logo} alt='CircuLaw logo' />
-              </Link>
-            </div>
-            <div className='block lg:hidden py-4 pl-8'>
-              <Link href='/'>
-                <Image height={24} width={120} src={logo} alt='CircuLaw logo' quality={100} />
-              </Link>
-            </div>
-          </div>
-
-          {/* TODO: move this into header component and out of nav*/}
-          <main className='global-margin sm:mt-2'>
-            <div className='text-center mx-auto max-w-4xl'>
-              <div className='header hidden md:block text-black-white-200 py-10'>
-                <span className='block '>
-                  Lancering CircuLaw <br />8 Februari
-                </span>{' '}
-              </div>
-              <h1 className='text-left mobile block md:hidden text-black-white-200 py-4'>
-                <span className='block '>
-                  Lancering CircuLaw <br />8 Februari
-                </span>{' '}
-              </h1>
-              <p className='text-left sm:text-center mt-2 p-base max-w-sm sm:max-w-full sm:p-xl text-black-white-200 pb-8'>
-                De afgelopen twee jaar is uit de samenwerking van een breed consortium aan partners
-                CircuLaw ontstaan. Het doel van CircuLaw: meer en beter gebruikmaken van bestaande
-                wet- en regelgeving door overheden. Tijdens de Week van de Circulaire Economie is
-                het zover: samen met wethouder Zita Pels lanceren wij dit nieuwe kennisplatform!
-              </p>
-            </div>
-          </main>
-        </div>
-      </div>
-    );
-  }
   return (
-    <div className='relative'>
-      <video id='background-video' autoPlay loop muted playsInline poster='/bg-poster.png'>
-        <source src='/01_circulaw.mov' type='video/mp4' />
-      </video>
+    <div className='bg-header'>
       <BetaBanner />
-      <div className='relative pt-6 pb-16 sm:pb-24'>
+      <div className=' pb-16 sm:pb-24'>
         <Disclosure as='nav' className=' '>
           {({ open }) => (
             <>
@@ -353,14 +313,14 @@ export default function Nav() {
                       {open ? (
                         <XIcon className='block h-10 w-10' aria-hidden='true' />
                       ) : (
-                        <MenuIcon className='block h-10 w-10' aria-hidden='true' />
+                        <MenuIcon className='block h-10 w-10 mt-6' aria-hidden='true' />
                       )}
                     </Disclosure.Button>
                   </div>
-                  <div className='flex items-baseline sm:justify-start '>
+                  <div className='flex items-center'>
                     <div className='hidden lg:block md:py-5 lg:py-0'>
                       <Link href='/'>
-                        <Image height={46} width={250} src={logo} alt='CircuLaw logo' />
+                        <Lottie options={defaultOptions} height={150} width={250} />
                       </Link>
                     </div>
                     <div className='block lg:hidden py-4'>
@@ -374,7 +334,7 @@ export default function Nav() {
                         />
                       </Link>
                     </div>
-                    <div className='hidden lg:ml-6 lg:flex'>
+                    <div className='hidden lg:ml-10 xl:ml-32 lg:flex lg:mt-6'>
                       <div className='flex inset-x-0 top-0 pl-5 invisible lg:visible hidden lg:inline '>
                         <div className='flex-1 global-margin px-2 sm:px-6 lg:px-8'>
                           <div className='content right-0'>

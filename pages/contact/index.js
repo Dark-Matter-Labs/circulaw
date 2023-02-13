@@ -70,19 +70,6 @@ export default function Contact() {
         {!submitSuccess ? (
           <>
             <h1 className='text-green-600 pt-10 mobile sm:desktop'>Contact</h1>
-            {showPrivacyError && (
-              <p className=' p-lg py-2 max-w-2xl text-red-600'>
-                Ga akkoord met de privacyvoorwaarden om te kunnen verzenden
-              </p>
-            )}
-
-            {showEmailError && (
-              <p className=' p-lg py-2 max-w-2xl text-red-600'>Vul een geldig e-mail adres in</p>
-            )}
-
-            {showTextError && (
-              <p className=' p-lg py-2 max-w-2xl text-red-600'>Vul een vraag of opmerking in</p>
-            )}
 
             <div className='mt-8 max-w-3xl mb-20'>
               <form
@@ -179,6 +166,25 @@ export default function Contact() {
                       </p>
                     </div>
                   </div>
+                </div>
+                <div>
+                  {showPrivacyError && (
+                    <p className=' p-lg py-2 max-w-2xl text-red-600'>
+                      Ga akkoord met de privacyvoorwaarden om te kunnen verzenden
+                    </p>
+                  )}
+
+                  {showEmailError && (
+                    <p className=' p-lg py-2 max-w-2xl text-red-600'>
+                      Vul een geldig e-mail adres in
+                    </p>
+                  )}
+
+                  {showTextError && (
+                    <p className=' p-lg py-2 max-w-2xl text-red-600'>
+                      Vul een vraag of opmerking in
+                    </p>
+                  )}
                 </div>
                 <div className='sm:col-span-2'>
                   <CustomButton onClick={sendMessage} color='whiteBackground'>
