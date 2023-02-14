@@ -3,7 +3,7 @@ import Layout from '../../components/layouts/layout';
 import WelkeLayout from '../../components/layouts/welke-layout';
 import WindmillIcon from '../../public/windmill.png';
 import windmillImageMob from '../../public/bevoegdheden/bevoegdheden-windmill.png';
-import {welkQueriesWind} from '../../lib/querys'
+import {creatQuery} from '../../lib/querys'
 
 const thema = 'circulaire-windturbines'
 
@@ -29,10 +29,10 @@ export default function InfoPage({...props}) {
 }
 
 export async function getStaticProps() {
-  const allRegionLaws  = await client.fetch(welkQueriesWind.allRegions)
-  const natLaws = await client.fetch(welkQueriesWind.national)
-  const provLaws = await client.fetch(welkQueriesWind.provincial)
-  const gemLaws = await client.fetch(welkQueriesWind.local)
+  const allRegionLaws  = await client.fetch(creatQuery(thema).allRegions)
+  const natLaws = await client.fetch(creatQuery(thema).national)
+  const provLaws = await client.fetch(creatQuery(thema).provincial)
+  const gemLaws = await client.fetch(creatQuery(thema).local)
   return {
     props: {
       allRegionLaws: allRegionLaws, 
