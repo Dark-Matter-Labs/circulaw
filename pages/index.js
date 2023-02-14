@@ -10,12 +10,10 @@ import client from '../lib/sanity';
 import { siteSettingsQuerys } from '../lib/querys';
 
 
-
 export default function Index({...props}) {
   const aboutSlugs = props.overCirculaw.slugs
-  const vraagSlug = props.vraagAntwoord.slug
   return (
-    <Layout page='home' vraagSlug = {vraagSlug} aboutSlugs = {aboutSlugs}>
+    <Layout page='home'>
       <div className='bg-black-white-200 pb-20' name='thema'>
         <div className='global-margin'>
           <h2 className='pb-6 pt-8 mobile sm:desktop text-black-white-800'>Thema’s</h2>
@@ -107,14 +105,10 @@ export default function Index({...props}) {
 
 
 export async function getStaticProps() {
-  const siteSettings = await client.fetch(siteSettingsQuerys.mainSettings)
   const overCirculaw = await client.fetch(siteSettingsQuerys.overCirulaw)
-  const vraagAntwoord = await client.fetch(siteSettingsQuerys.vraagAntwoord)
   return {
     props: {
-      siteSettings,
       overCirculaw,
-      vraagAntwoord,
     }
   }
 }

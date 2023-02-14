@@ -32,14 +32,18 @@ const defaultOptions = {
 const waardeketens = get_waardeketens();
 
 export default function Nav(props) {
-  console.log(props, 'inside Nav')
-
-
-  const aboutSlugs = props.aboutSlugs
-  const FAQslug = props.vraagSlug
+  let aboutSlugs = [];
+  if (props.aboutSlugs) {
+    aboutSlugs = props.aboutSlugs;
+  }
+  
+  let FAQslug = [];
+  if (props.FAQslug) {
+    FAQslug = props.vraagSlug
+  } 
 
   const router = useRouter();
-  if (router.pathname !== '/' && router.pathname !== '/thesecretpassageinthewardrobe') {
+  if (router.pathname !== '/') {
     return (
       /* TODO: add case for navbar to work on homepage and remove the custom navbar on homepage */
       /* I used the router.pathname to display the two different nav on the home page was nested in the div containing the background image and text 'regelgeving voor een...'*/
