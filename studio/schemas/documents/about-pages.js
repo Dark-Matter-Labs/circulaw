@@ -1,4 +1,4 @@
-import { FcAbout } from 'react-icons/fc'
+import { FcAbout } from 'react-icons/fc';
 
 export default {
   title: 'About Pages',

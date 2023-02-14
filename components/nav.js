@@ -36,11 +36,11 @@ export default function Nav(props) {
   if (props.aboutSlugs) {
     aboutSlugs = props.aboutSlugs;
   }
-  
+
   let FAQslug = [];
   if (props.FAQslug) {
-    FAQslug = props.vraagSlug
-  } 
+    FAQslug = props.vraagSlug;
+  }
 
   const router = useRouter();
   if (router.pathname !== '/') {

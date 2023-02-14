@@ -11,13 +11,11 @@ import smallPara from './objects/small-paragraph';
 import link from './objects/link';
 import navItem from './objects/nav-item';
 
-
 export const schemaTypes = [
   // DOCUMENT TYPES
   measure,
   aboutPage,
   navigation,
-
 
   // OBJECTS
   greenBox,
@@ -25,7 +23,7 @@ export const schemaTypes = [
   imageBlock,
   hoverText,
   smallPara,
-  link, 
+  link,
   navItem,
   siteConfig,
 ];

@@ -7,11 +7,10 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-
 export default function OverNav(props) {
-  const {data: aboutPageSlugs} = useSWR(groq`${siteSettingsQuerys.overCirulaw}`, fetcher )
-  const aboutSlugs = aboutPageSlugs?.slugs
-  
+  const { data: aboutPageSlugs } = useSWR(groq`${siteSettingsQuerys.overCirulaw}`, fetcher);
+  const aboutSlugs = aboutPageSlugs?.slugs;
+
   return (
     <nav className='space-y-1 sticky top-40' aria-label='Sidebar'>
       {aboutSlugs?.map((slug) => (

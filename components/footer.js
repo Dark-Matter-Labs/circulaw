@@ -49,11 +49,11 @@ export default function Footer(props) {
   if (props.aboutSlugs) {
     aboutSlugs = props.aboutSlugs;
   }
-  
+
   let FAQslug = [];
   if (props.FAQslug) {
-    FAQslug = props.vraagSlug
-  } 
+    FAQslug = props.vraagSlug;
+  }
 
   return (
     <footer className='' aria-labelledby='footer-heading'>
@@ -89,7 +89,9 @@ export default function Footer(props) {
                 </div>
                 <div className=' border-b border-black-white-200 sm:border-0 py-2 sm:py-0'>
                   <h4 className='text-green-300 mobile sm:desktop uppercase'>OVER CIRCULAW</h4>
-                  <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>                        \
+                  <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
+                    {' '}
+                    \
                     <ul role='list' className='mt-4 space-y-4'>
                       {aboutSlugs?.map((slug) => (
                         <li key={slug}>
@@ -110,10 +112,11 @@ export default function Footer(props) {
                   <NieuwTooltip />
                   <ul role='list' className='mt-4 space-y-4'>
                     <li>
-                      <a className='p-base text-black-white-200 hover:text-green-400'
-                          href={`/about/${encodeURIComponent(FAQslug)}`}>
-                            <span className='inline-block first-letter:uppercase'>XXX
-                            </span>
+                      <a
+                        className='p-base text-black-white-200 hover:text-green-400'
+                        href={`/about/${encodeURIComponent(FAQslug)}`}
+                      >
+                        <span className='inline-block first-letter:uppercase'>XXX</span>
                       </a>
                     </li>
                     {navigation.other.map((item) => (

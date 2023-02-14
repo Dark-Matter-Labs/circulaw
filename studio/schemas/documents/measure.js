@@ -1,4 +1,4 @@
-import { VscLaw } from 'react-icons/vsc'
+import { VscLaw } from 'react-icons/vsc';
 
 export default {
   title: 'Measure',

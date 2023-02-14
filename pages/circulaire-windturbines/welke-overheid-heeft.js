@@ -3,11 +3,11 @@ import Layout from '../../components/layouts/layout';
 import WelkeLayout from '../../components/layouts/welke-layout';
 import WindmillIcon from '../../public/windmill.png';
 import windmillImageMob from '../../public/bevoegdheden/bevoegdheden-windmill.png';
-import {creatQuery} from '../../lib/querys'
+import { creatQuery } from '../../lib/querys';
 
-const thema = 'circulaire-windturbines'
+const thema = 'circulaire-windturbines';
 
-export default function InfoPage({...props}) {
+export default function InfoPage({ ...props }) {
   return (
     <Layout>
       <WelkeLayout
@@ -18,9 +18,9 @@ export default function InfoPage({...props}) {
         p2='Ook kunnen Rijk en provincie met een projectbesluit het omgevingsplan wijzigen om  daarmee de ontwikkeling van circulaire windturbineparken te borgen en te stimuleren.'
         p3='Provincies en gemeenten kunnen hun grondpositie versterken door beschikbare grond op te kopen. Ook kunnen zij in lokale verordeningen en plannen, eisen opnemen die circulariteit van windturbines aanmoedigen.'
         p4='En ten slotte kunnen gemeenten in een anterieure overeenkomst kosten voor gebiedsontwikkeling vastleggen en daar ook circulariteit bij betrekken.'
-        allRegionLaws= {props.allRegionLaws}
-        natLaws= {props.natLaws}
-        provLaws= {props.provLaws}
+        allRegionLaws={props.allRegionLaws}
+        natLaws={props.natLaws}
+        provLaws={props.provLaws}
         gemLaws={props.gemLaws}
         imageMob={windmillImageMob}
       />
@@ -29,18 +29,17 @@ export default function InfoPage({...props}) {
 }
 
 export async function getStaticProps() {
-  const allRegionLaws  = await client.fetch(creatQuery(thema).allRegions)
-  const natLaws = await client.fetch(creatQuery(thema).national)
-  const provLaws = await client.fetch(creatQuery(thema).provincial)
-  const gemLaws = await client.fetch(creatQuery(thema).local)
+  const allRegionLaws = await client.fetch(creatQuery(thema).allRegions);
+  const natLaws = await client.fetch(creatQuery(thema).national);
+  const provLaws = await client.fetch(creatQuery(thema).provincial);
+  const gemLaws = await client.fetch(creatQuery(thema).local);
   return {
     props: {
-      allRegionLaws: allRegionLaws, 
+      allRegionLaws: allRegionLaws,
       natLaws: natLaws,
       provLaws: provLaws,
-      gemLaws: gemLaws
-    }, 
+      gemLaws: gemLaws,
+    },
     revalidate: 1,
-  }
+  };
 }
-

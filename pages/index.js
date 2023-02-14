@@ -9,9 +9,8 @@ import hoeverImage from '../public/hoever.png';
 import client from '../lib/sanity';
 import { siteSettingsQuerys } from '../lib/querys';
 
-
-export default function Index({...props}) {
-  const aboutSlugs = props.overCirculaw.slugs
+export default function Index({ ...props }) {
+  const aboutSlugs = props.overCirculaw.slugs;
   return (
     <Layout page='home'>
       <div className='bg-black-white-200 pb-20' name='thema'>
@@ -103,14 +102,11 @@ export default function Index({...props}) {
   );
 }
 
-
 export async function getStaticProps() {
-  const overCirculaw = await client.fetch(siteSettingsQuerys.overCirulaw)
+  const overCirculaw = await client.fetch(siteSettingsQuerys.overCirulaw);
   return {
     props: {
       overCirculaw,
-    }
-  }
+    },
+  };
 }
-
-

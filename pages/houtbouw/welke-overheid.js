@@ -5,9 +5,9 @@ import woodIcon from '../../public/icons/woodIcon.svg';
 import houtbouwImageMob from '../../public/bevoegdheden/bevoegdheden-houtbouw-mob.png';
 import { creatQuery } from '../../lib/querys';
 
-const thema = 'houtbouw'
+const thema = 'houtbouw';
 
-export default function InfoPage({...props}) {
+export default function InfoPage({ ...props }) {
   return (
     <Layout>
       <WelkeLayout
@@ -28,17 +28,17 @@ export default function InfoPage({...props}) {
   );
 }
 export async function getStaticProps() {
-  const allRegionLaws  = await client.fetch(creatQuery(thema).allRegions)
-  const natLaws = await client.fetch(creatQuery(thema).national)
-  const provLaws = await client.fetch(creatQuery(thema).provincial)
-  const gemLaws = await client.fetch(creatQuery(thema).local)
+  const allRegionLaws = await client.fetch(creatQuery(thema).allRegions);
+  const natLaws = await client.fetch(creatQuery(thema).national);
+  const provLaws = await client.fetch(creatQuery(thema).provincial);
+  const gemLaws = await client.fetch(creatQuery(thema).local);
   return {
     props: {
-      allRegionLaws: allRegionLaws, 
+      allRegionLaws: allRegionLaws,
       natLaws: natLaws,
       provLaws: provLaws,
-      gemLaws: gemLaws
-    }, 
+      gemLaws: gemLaws,
+    },
     revalidate: 1,
-  }
+  };
 }

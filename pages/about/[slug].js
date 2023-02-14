@@ -154,7 +154,6 @@ const components = {
 export default function AboutPage({ data }) {
   return (
     <Layout>
-
       <div className='global-margin pb-8 text-black-white-800'>
         <div className='grid grid-cols-1 w-full md:grid-cols-3'>
           <div className='col-span-2'>
