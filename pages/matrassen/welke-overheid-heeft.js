@@ -28,7 +28,6 @@ export default function InfoPage({...props}) {
   );
 }
 
-
 export async function getStaticProps() {
   const allRegionLaws  = await client.fetch(creatQuery(thema).allRegions)
   const natLaws = await client.fetch(creatQuery(thema).national)

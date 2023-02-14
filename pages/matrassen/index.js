@@ -46,6 +46,8 @@ export default function Matrassen({ laws }) {
     </Layout>
   );
 }
+
+
 export async function getStaticProps() {
   const laws = await client.fetch(matrassenQuery);
   return { props: { laws: laws } };

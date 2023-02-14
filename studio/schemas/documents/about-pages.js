@@ -1,7 +1,10 @@
+import { FcAbout } from 'react-icons/fc'
+
 export default {
   title: 'About Pages',
   name: 'aboutPage',
   type: 'document',
+  icon: FcAbout,
   fields: [
     {
       title: 'Page Title',

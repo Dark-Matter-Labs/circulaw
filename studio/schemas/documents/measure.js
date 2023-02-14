@@ -1,7 +1,10 @@
+import { VscLaw } from 'react-icons/vsc'
+
 export default {
   title: 'Measure',
   name: 'measure',
   type: 'document',
+  icon: VscLaw,
   // GROUPS
   groups: [
     {
