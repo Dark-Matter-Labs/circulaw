@@ -2,6 +2,7 @@ import { VscLaw } from 'react-icons/vsc'
 import {GiDeadWood, GiBed, GiWindmill} from 'react-icons/gi'
 import { GrNavigate } from "react-icons/gr";
 import { FcAbout } from 'react-icons/fc'
+import {MdSettingsSuggest} from 'react-icons/md'
 
 
 export const Structure = (S) =>
@@ -48,5 +49,12 @@ export const Structure = (S) =>
       S.listItem()
         .title('Navigation')
         .icon(GrNavigate)
-        .child(S.documentList().title('Navigation').filter('_type == "navigation"'))
+        .child(S.documentList().title('Navigation').filter('_type == "navigation"')), 
+      S.listItem()
+        .title('Site Settings')
+        .icon(MdSettingsSuggest)
+        .child(S.document()
+          .schemaType('siteConfig')
+          .documentId('siteSettings')
+          ),
     ]);
