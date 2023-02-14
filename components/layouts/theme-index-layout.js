@@ -17,7 +17,6 @@ export default function ThemeLayout({ bgHero, ...props }) {
             >
               &lt; Home
             </Link>
-
             <div className='grid col-span-8 grid-cols-8 sm:pl-12 sm:pt:12 md:pl-24 lg:pl-36 pb-14 pt-14 w-4/5'>
               <div className='col-span-8'>
                 <p className='text-black-white-200 inline-block header'>{props.title}</p>
