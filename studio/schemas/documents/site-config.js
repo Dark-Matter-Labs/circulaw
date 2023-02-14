@@ -23,7 +23,7 @@ export default {
       },
       {
         title: 'Vraag & antwoord',
-        name: 'VraagAntwoord',
+        name: 'vraagAntwoord',
         description: 'Select menu for social navigation',
         type: 'reference',
         to: {type: 'navigation'},

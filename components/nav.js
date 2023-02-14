@@ -1,13 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/dist/client/router';
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment } from 'react';
 import { Popover, Disclosure, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon, ArrowDownIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { Link as ScrollLink } from 'react-scroll';
-import { groq } from 'next-sanity';
-import useSWR from 'swr';
 import Lottie from 'react-lottie';
 import { get_waardeketens } from '../utils/nav-structure';
 import CirculawLogo from '../public/Circulaw_logotype.png';
@@ -15,7 +13,6 @@ import logo from '../public/Circulaw_logotype_home.png';
 import CustomButton from './custom-button';
 import BetaBanner from './beta-banner';
 import BetaBannerGen from './beta-banner-gen';
-import client from '../lib/sanity';
 import NieuwTooltip from '../components/nieuw-tooltip';
 import animationData from '../public/CL_Home_Logo_Loop';
 
@@ -34,15 +31,12 @@ const defaultOptions = {
 
 const waardeketens = get_waardeketens();
 
-export default function Nav() {
-  const { data } = useSWR(groq`*[_type == "aboutPage"] | order(order asc)`, (query) =>
-    client.fetch(query),
-  );
-  const [slugs, setSlugs] = useState();
-  useEffect(() => setSlugs(data?.map((page) => page.slug.current)), [data]);
+export default function Nav(props) {
+  console.log(props, 'inside Nav')
 
-  const aboutSlugs = slugs?.filter((e) => e !== 'vraag-&-antwoord');
-  const FAQslug = 'vraag-&-antwoord';
+
+  const aboutSlugs = props.aboutSlugs
+  const FAQslug = props.vraagSlug
 
   const router = useRouter();
   if (router.pathname !== '/' && router.pathname !== '/thesecretpassageinthewardrobe') {
