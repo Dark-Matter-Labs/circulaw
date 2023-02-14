@@ -15,6 +15,12 @@ export default {
             name: 'navId',
             type: 'slug',
             title: "Navigation Id"
-          }         
+          },
+          {
+            name: "items",
+            type: "array",
+            title: "Navigation items",
+            of: [{ type: "navigationItem" }]
+          }       
     ]
 }
