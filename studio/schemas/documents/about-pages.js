@@ -1,7 +1,10 @@
+import { FcAbout } from 'react-icons/fc';
+
 export default {
   title: 'About Pages',
   name: 'aboutPage',
   type: 'document',
+  icon: FcAbout,
   fields: [
     {
       title: 'Page Title',
@@ -17,12 +20,6 @@ export default {
         inUnique: 'true',
         slugify: (input) => input.replace(/\s+/g, '-').slice(0, 200),
       },
-    },
-    {
-      title: 'Order',
-      name: 'order',
-      type: 'number',
-      description: 'will order the pages in ascending order',
     },
     {
       title: 'About Content',
