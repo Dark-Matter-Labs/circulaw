@@ -14,7 +14,7 @@ export default function OverviewPageHeader({props, page}) {
             </Link>
             <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />{' '}
             <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`}>
-              <span className='underline inline-block uppercase'>{props.thema}</span>
+              <span className='underline inline-block uppercase'>{props.thema.replace('-', ' ')}</span>
             </Link>
           </div>
           <div className='hidden sm:block float-right'>
