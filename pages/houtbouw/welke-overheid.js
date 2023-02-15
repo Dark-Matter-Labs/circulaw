@@ -3,7 +3,7 @@ import WelkeLayout from '../../components/layouts/welke-layout';
 import client from '../../lib/sanity';
 import woodIcon from '../../public/icons/woodIcon.svg';
 import houtbouwImageMob from '../../public/bevoegdheden/bevoegdheden-houtbouw-mob.png';
-import { creatQuery } from '../../lib/querys';
+import { creatQuery } from '../../lib/queries';
 
 const thema = 'houtbouw';
 

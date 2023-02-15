@@ -25,7 +25,7 @@ import {
   normalTextComponent,
 } from '../../lib/portable-text/portable-text-blocks';
 import { linkComponent } from '../../lib/portable-text/portable-text-marks';
-import { measurePagePathsQuery, measureQuery } from '../../lib/querys';
+import { measurePagePathsQuery, measureQuery } from '../../lib/queries';
 
 
 const components = {

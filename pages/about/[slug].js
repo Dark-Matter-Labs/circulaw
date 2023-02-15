@@ -22,7 +22,7 @@ import {
   normalTextComponent,
 } from '../../lib/portable-text/portable-text-blocks';
 import { linkComponent } from '../../lib/portable-text/portable-text-marks';
-import { aboutPagePathsQuery, aboutPageQuery } from '../../lib/querys';
+import { aboutPagePathsQuery, aboutPageQuery } from '../../lib/queries';
 
 const components = {
   types: {
