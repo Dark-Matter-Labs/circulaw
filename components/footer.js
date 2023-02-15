@@ -51,10 +51,9 @@ export default function Footer(props) {
   }
 
   let FAQslug = [];
-  if (props.FAQslug) {
+  if (props.vraagSlug) {
     FAQslug = props.vraagSlug;
   }
-
   return (
     <footer className='' aria-labelledby='footer-heading'>
       <div className='bg-green-600'>
@@ -91,7 +90,6 @@ export default function Footer(props) {
                   <h4 className='text-green-300 mobile sm:desktop uppercase'>OVER CIRCULAW</h4>
                   <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                     {' '}
-                    \
                     <ul role='list' className='mt-4 space-y-4'>
                       {aboutSlugs?.map((slug) => (
                         <li key={slug}>
@@ -116,7 +114,8 @@ export default function Footer(props) {
                         className='p-base text-black-white-200 hover:text-green-400'
                         href={`/about/${encodeURIComponent(FAQslug)}`}
                       >
-                        <span className='inline-block first-letter:uppercase'>XXX</span>
+                        {FAQslug.length > 0 && 
+                        <span className='inline-block first-letter:uppercase'>{FAQslug.replaceAll('-', ' ')}</span>}
                       </a>
                     </li>
                     {navigation.other.map((item) => (

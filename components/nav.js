@@ -38,7 +38,7 @@ export default function Nav(props) {
   }
 
   let FAQslug = [];
-  if (props.FAQslug) {
+  if (props.vraagSlug) {
     FAQslug = props.vraagSlug;
   }
 
