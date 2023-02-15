@@ -6,7 +6,7 @@ import OverNav from '../../components/over-nav';
 import {
   greenBoxComponent,
   hoverTextComponent,
-  pdfBlockComponent,
+  pdfBlockComponentAboutPage,
   smallParaComponent,
 } from '../../lib/portable-text/portable-text-types';
 import {
@@ -28,7 +28,7 @@ const components = {
   types: {
     greenBox: greenBoxComponent,
     hoverText: hoverTextComponent,
-    pdfBlock: pdfBlockComponent,
+    pdfBlock: pdfBlockComponentAboutPage,
     smallPara: smallParaComponent,
   },
   list: {
