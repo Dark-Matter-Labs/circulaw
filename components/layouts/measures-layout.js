@@ -654,6 +654,8 @@ export default function MeasuresLayout(props) {
           </Dialog>
         </Transition.Root>
       </div>
+
+
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20 border-b border-black-white-500 pb-2'>
         <div className='block breadcrumb pt-8 text-black-white-800 uppercase underline'>
           <Link href='/'>Home</Link>
@@ -665,6 +667,8 @@ export default function MeasuresLayout(props) {
             <span className='inline-block underline'>{props.thema.replace('-', ' ')}</span>
           </Link>
         </div>
+
+        {/* HEADER */}
         <div className='col-span-2'></div>
         <div className='hidden sm:block'>
           <MeasureLinks type={props.thema} page='list' />
@@ -688,6 +692,7 @@ export default function MeasuresLayout(props) {
               </h1>
             )}
           </div>
+          {/* REMOVE THE INTRO PARA FROM HEADER */}
           <div className='hidden sm:block max-w-3xl pt-2'>
             <p className='p-lg'>
               {props.introPara}
@@ -695,6 +700,9 @@ export default function MeasuresLayout(props) {
             </p>
           </div>
         </div>
+        {/* END HEADER */}
+
+
         <div className='hidden sm:block col-span-1'></div>
         <div className='hidden lg:block  mb-6 self-end'>
           <h3 className='mobile sm:desktop inline text-black-white-800'>Filter op:</h3>{' '}

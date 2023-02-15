@@ -49,8 +49,11 @@ export default function WelkeLayout(props) {
 
   return (
     <div onLoad={useXarrow()}>
+      <div className='global-margin mt-8 max-w-2xl'>
+      
+      
       {/* Header */}
-      <div className='global-margin mb-5 mt-8 sm:mt-0 sm:mb-20 max-w-2xl'>
+      <div className='mb-5 sm:mt-0 sm:mb-20 '>
         <div className='flex justify-between items-center pb-8'>
           <div className='breadcrumb uppercase'>
             <Link className='underline' href='/'>
@@ -65,7 +68,6 @@ export default function WelkeLayout(props) {
             <MeasureLinks type={props.thema} page='welke' />
           </div>
         </div>
-
         <div className='items-center justify-start grid grid-cols-10'>
           <div className='col-span-2 sm:col-span-1 flex h-full w-full items-center sm:pt-2'>
             <Image src={props.iconPath} alt='Thema icon' width={107} height={107} />
@@ -75,8 +77,15 @@ export default function WelkeLayout(props) {
           </div>
         </div>
       </div>
+      {/* END HEADER */}
+
+
+
+
+
+
       {/* DYNAMIC IMAGE */}
-      <div className='global-margin mb-20 hidden sm:block'>
+      <div className='mb-20 hidden sm:block'>
         <div className='flex grid-cols-3 items-start justify-center'>
           {/* LEFT HAND SIDE */}
           <div className='grid col-span-1 items-start justify-center h-full w-80 mt-10'>
@@ -457,7 +466,10 @@ export default function WelkeLayout(props) {
           </div>
         </div>
       </div>
-      {/* TEXT COMPONENT */} {/* NEED TO CHECK FINAL CONTENT */}
+      </div>
+
+
+      {/* TEXT COMPONENT */}
       <div className='global-margin mb-20'>
         <div className='max-w-3xl mx-auto'>
           <p className=' p-lg text-black-white-800 pb-6'>{props.p1}</p>

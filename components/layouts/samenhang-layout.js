@@ -1,45 +1,12 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/outline';
+import OverviewPageHeader from '../overview-page-header';
 
-import MeasureLinks from '../measure-links-dropdown';
 
-/* list of props
-casus
-title
-img
-imgMob
-p1
-p2
-p3
-*/
-
-export default function SamenhangLayout(props) {
+export default function SamenhangLayout({...props}) {
   return (
     <>
       <div className='global-margin mt-8'>
-        <div className='flex justify-between items-center pb-8'>
-          <div className='breadcrumb uppercase'>
-            <Link className='underline' href='/'>
-              Home &nbsp;
-            </Link>
-            <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />{' '}
-            <Link href={`/${props.casus.toLowerCase().replace(/ /g, '-')}`}>
-              <span className='underline inline-block uppercase'>{props.casus}</span>
-            </Link>
-          </div>
-          <div className='hidden sm:block float-right'>
-            <MeasureLinks type={props.casus} page='samenhang' />
-          </div>
-        </div>
-        <div className='items-center justify-start grid grid-cols-10'>
-          <div className='col-span-1 flex h-full w-full items-start pt-2'>
-            <Image src={props.icon} alt='Thema icon' width={107} height={107} />
-          </div>
-          <div className='col-span-9'>
-            <h1 className='mobile sm:desktop text-black py-1 max-w-3xl pl-6'>{props.title}</h1>
-          </div>
-        </div>
+        <OverviewPageHeader props= {props} page = 'sanemhang'/>
         <div className='grid grid-cols-1 sm:grid-cols-3 mt-10 sm:justify-items-end mb-10 sm:mb-0'>
           <div className='col-span-2'>
             <p className=' p-lg text-black-white-800 pb-6'>{props.p1}</p>
