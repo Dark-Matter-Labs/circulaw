@@ -7,13 +7,13 @@ import { creatQuery } from '../../lib/querys';
 
 const thema = 'houtbouw';
 
-export default function InfoPage({ ...props }) {
+export default function InfoPage({...props }) {
   return (
     <Layout>
       <WelkeLayout
         thema={thema}
         title='Welke overheid kan welk instrument gebruiken voor houtbouw?'
-        iconPath={woodIcon}
+        icon={woodIcon}
         p1='Je kunt op rijksniveau regels bepalen voor het hergebruik van producten. Ook kan het Rijk financieel bijdragen aan doelen die worden gesteld in een omgevingsvisie en/of een programma over houtbouw.'
         p2='Provincies kunnen houtbouw integreren in hun omgevingsverordening door de houtopstanden in het gebied te vergroten. Het vaststellen van omgevingswaarden (instrumenten uit de Omgevingswet die provincies en gemeenten kunnen inzetten om beleid uit de omgevingsvisie uit te voeren),  kan hierbij helpen. Zo zou je een maximumwaarde voor CO₂ kunnen vaststellen.'
         p3='Gemeenten kunnen ook veel doen. Zo kunnen gemeenten regels bepalen voor sloopwerkzaamheden, afvalstoffen en recycling. Ook kunnen ze houtbouw opnemen in het omgevingsplan om de vergunningverlening hierop aan te passen. Ook hierbij kunnen omgevingswaarden een rol spelen.'

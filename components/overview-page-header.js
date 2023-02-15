@@ -13,12 +13,12 @@ export default function OverviewPageHeader({props, page}) {
               Home &nbsp;
             </Link>
             <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />{' '}
-            <Link href={`/${props.casus.toLowerCase().replace(/ /g, '-')}`}>
-              <span className='underline inline-block uppercase'>{props.casus}</span>
+            <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`}>
+              <span className='underline inline-block uppercase'>{props.thema}</span>
             </Link>
           </div>
           <div className='hidden sm:block float-right'>
-            <MeasureLinks type={props.casus} page={page} />
+            <MeasureLinks type={props.thema} page={page} />
           </div>
         </div>
         <div className='items-center justify-start grid grid-cols-10'>

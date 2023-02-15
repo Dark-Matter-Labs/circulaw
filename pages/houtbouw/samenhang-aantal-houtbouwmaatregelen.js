@@ -13,7 +13,7 @@ export default function InfoPage() {
   return (
     <Layout>
       <SamenhangLayout
-        casus='houtbouw'
+        thema='houtbouw'
         title='Samenhang instrumenten houtbouw'
         icon={woodIcon}
         p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'

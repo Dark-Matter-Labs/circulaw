@@ -1,11 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Xarrow, { useXarrow } from 'react-xarrows';
+import OverviewPageHeader from '../overview-page-header'
 
-import MeasureLinks from '../measure-links-dropdown';
-import { ArrowRightIcon } from '@heroicons/react/outline';
-
-export default function WelkeLayout(props) {
+export default function WelkeLayout({...props}) {
   const allRegionLaws = props.allRegionLaws;
   const provLaws = props.provLaws;
   const gemLaws = props.gemLaws;
@@ -50,42 +48,9 @@ export default function WelkeLayout(props) {
   return (
     <div onLoad={useXarrow()}>
       <div className='global-margin mt-8 max-w-2xl'>
-      
-      
-      {/* Header */}
-      <div className='mb-5 sm:mt-0 sm:mb-20 '>
-        <div className='flex justify-between items-center pb-8'>
-          <div className='breadcrumb uppercase'>
-            <Link className='underline' href='/'>
-              Home &nbsp;
-            </Link>
-            <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />{' '}
-            <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`}>
-              <span className='inline-block underline'> {props.thema.replace('-', ' ')} </span>
-            </Link>
-          </div>
-          <div className='hidden sm:block float-right'>
-            <MeasureLinks type={props.thema} page='welke' />
-          </div>
-        </div>
-        <div className='items-center justify-start grid grid-cols-10'>
-          <div className='col-span-2 sm:col-span-1 flex h-full w-full items-center sm:pt-2'>
-            <Image src={props.iconPath} alt='Thema icon' width={107} height={107} />
-          </div>
-          <div className='col-span-8 sm:col-span-9'>
-            <h1 className='mobile sm:desktop text-black py-1 max-w-3xl pl-6'>{props.title}</h1>
-          </div>
-        </div>
-      </div>
-      {/* END HEADER */}
-
-
-
-
-
-
+    <OverviewPageHeader props={props} page = 'welke'/>
       {/* DYNAMIC IMAGE */}
-      <div className='mb-20 hidden sm:block'>
+      <div className='mb-20 mt-5 sm:mt-20 hidden sm:block'>
         <div className='flex grid-cols-3 items-start justify-center'>
           {/* LEFT HAND SIDE */}
           <div className='grid col-span-1 items-start justify-center h-full w-80 mt-10'>
