@@ -1,20 +1,15 @@
 import useSWR from 'swr';
 import { groq } from 'next-sanity';
-import client from '../lib/sanity';
-import { useState, useEffect } from 'react';
+import { fetcher } from '../utils/swr-fetcher';
+import { siteSettingsQuerys } from '../lib/querys';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
 export default function OverNav(props) {
-  const { data } = useSWR(groq`*[_type == "aboutPage"] | order(order asc)`, (query) =>
-    client.fetch(query),
-  );
-
-  const [slugs, setSlugs] = useState();
-  useEffect(() => setSlugs(data?.map((page) => page.slug.current)), [data]);
-  const aboutSlugs = slugs?.filter((e) => e !== 'vraag-&-antwoord');
+  const { data: aboutPageSlugs } = useSWR(groq`${siteSettingsQuerys.overCirulaw}`, fetcher);
+  const aboutSlugs = aboutPageSlugs?.slugs;
 
   return (
     <nav className='space-y-1 sticky top-40' aria-label='Sidebar'>

@@ -1,9 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import useSWR from 'swr';
-import { useEffect, useState } from 'react';
-import { groq } from 'next-sanity';
-import client from '../lib/sanity';
 import NieuwTooltip from '../components/nieuw-tooltip';
 
 import ActionPanel from '../components/section-action-panel';
@@ -41,7 +37,6 @@ const navigation = {
 
   // FAQ href is linked to CMS.
   other: [
-    { name: 'Vraag en antwoord', href: '/about/vraag-%26-antwoord', className: '' },
     { name: 'Contact', href: '/contact', className: '' },
     { name: 'Disclaimer/Beta', href: '/beta', className: '' },
     { name: 'Privacy', href: '/privacy-policy', className: '' },
@@ -49,15 +44,16 @@ const navigation = {
   ],
 };
 
-export default function Footer() {
-  const { data } = useSWR(groq`*[_type == "aboutPage"]| order(order asc)`, (query) =>
-    client.fetch(query),
-  );
+export default function Footer(props) {
+  let aboutSlugs = [];
+  if (props.aboutSlugs) {
+    aboutSlugs = props.aboutSlugs;
+  }
 
-  const [slugs, setSlugs] = useState();
-  useEffect(() => setSlugs(data?.map((page) => page.slug.current)), [data]);
-  const aboutSlugs = slugs?.filter((e) => e !== 'vraag-&-antwoord');
-
+  let FAQslug = [];
+  if (props.vraagSlug) {
+    FAQslug = props.vraagSlug;
+  }
   return (
     <footer className='' aria-labelledby='footer-heading'>
       <div className='bg-green-600'>
@@ -93,6 +89,7 @@ export default function Footer() {
                 <div className=' border-b border-black-white-200 sm:border-0 py-2 sm:py-0'>
                   <h4 className='text-green-300 mobile sm:desktop uppercase'>OVER CIRCULAW</h4>
                   <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
+                    {' '}
                     <ul role='list' className='mt-4 space-y-4'>
                       {aboutSlugs?.map((slug) => (
                         <li key={slug}>
@@ -112,6 +109,15 @@ export default function Footer() {
                 <div className='py-2 sm:py-0'>
                   <NieuwTooltip />
                   <ul role='list' className='mt-4 space-y-4'>
+                    <li>
+                      <a
+                        className='p-base text-black-white-200 hover:text-green-400'
+                        href={`/about/${encodeURIComponent(FAQslug)}`}
+                      >
+                        {FAQslug.length > 0 && 
+                        <span className='inline-block first-letter:uppercase'>{FAQslug.replaceAll('-', ' ')}</span>}
+                      </a>
+                    </li>
                     {navigation.other.map((item) => (
                       <li key={item.name}>
                         <a

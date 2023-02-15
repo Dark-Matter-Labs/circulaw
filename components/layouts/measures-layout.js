@@ -20,17 +20,15 @@ import {
 } from '../../dataFilter';
 import SearchFilter from '/components/search-filter';
 import PolicyList from '/components/policy-list';
-import client from '../../lib/sanity';
 import MeasureLinks from '../measure-links-dropdown';
-
+import { fetcher } from '../../utils/swr-fetcher';
+import { measureLayoutQuery } from '../../lib/querys';
 // creating objects for persisting values
 const useSelectedState = createPersistedState('selected');
 
 export default function MeasuresLayout(props) {
   // need to add error check ? or replace the fetcher function in utils/filter funcition
-  const { data } = useSWR(groq`*[_type == "measure"]| order(lower(titel) asc)`, (query) =>
-    client.fetch(query),
-  );
+  const { data } = useSWR(groq`${measureLayoutQuery}`, fetcher);
   // creating references to access child component functions
   const wettelijkFilterRef = useRef();
   const rechtsgebiedFilterRef = useRef();
