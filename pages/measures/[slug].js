@@ -25,36 +25,8 @@ import {
   normalTextComponent,
 } from '../../lib/portable-text/portable-text-blocks';
 import { linkComponent } from '../../lib/portable-text/portable-text-marks';
+import { measurePagePathsQuery, measureQuery } from '../../lib/querys';
 
-
-
-
-const pathsQuery = `
-*[_type == "measure" && defined(slug.current)][].slug.current
-`;
-
-const measureQuery = `
-*[_type == "measure" && slug.current == $slug] [0] {
-    _id,
-    titel,
-    subtitel,
-    thema,
-    rLadder,
-    subrechtsgebied,
-    juridischInvloed,
-    invloedTooltipText,
-    juridischeHaalbaarheid,
-    JHTooltipText,
-    rechtsgebied,
-    citeertitel,
-    artikel,
-    artikelLink,
-    lawDate,
-    overheidslaag,
-    content,
-    juridischeToelichting,
-}
-`;
 
 const components = {
   types: {
@@ -127,7 +99,7 @@ export default function Measure({ data }) {
 }
 
 export async function getStaticPaths() {
-  const paths = await client.fetch(pathsQuery);
+  const paths = await client.fetch(measurePagePathsQuery);
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
     fallback: true,
