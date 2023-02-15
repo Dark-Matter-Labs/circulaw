@@ -3,22 +3,26 @@ import Layout from '../../components/layouts/layout';
 import client from '../../lib/sanity';
 import Link from 'next/link';
 import OverNav from '../../components/over-nav';
-import { greenBoxComponent, hoverTextComponent, pdfBlockComponent, smallParaComponent } from '../../lib/portable-text/portable-text-types';
-import { bulletComponent, numberComponent, bulletItemComponent, numberItemComponent} from '../../lib/portable-text/portable-text-lists';
-import { firstH2Component, h2Component, h3Component, normalTextComponent} from '../../lib/portable-text/portable-text-blocks'
+import {
+  greenBoxComponent,
+  hoverTextComponent,
+  pdfBlockComponent,
+  smallParaComponent,
+} from '../../lib/portable-text/portable-text-types';
+import {
+  bulletComponent,
+  numberComponent,
+  bulletItemComponent,
+  numberItemComponent,
+} from '../../lib/portable-text/portable-text-lists';
+import {
+  firstH2Component,
+  h2Component,
+  h3Component,
+  normalTextComponent,
+} from '../../lib/portable-text/portable-text-blocks';
 import { linkComponent } from '../../lib/portable-text/portable-text-marks';
-
-const pathsQuery = `
-*[_type == "aboutPage" && defined(slug.current)][].slug.current
-`;
-
-const pageQuery = `
-*[_type == "aboutPage" && slug.current == $slug][0]{
-    pageTitle,
-    aboutPageContent,
-    slug,
-}
-`;
+import { aboutPagePathsQuery, aboutPageQuery } from '../../lib/querys';
 
 const components = {
   types: {
@@ -34,7 +38,6 @@ const components = {
   listItem: {
     bullet: bulletItemComponent,
     number: numberItemComponent,
-   
   },
   block: {
     firstH2: firstH2Component,
@@ -75,7 +78,7 @@ export default function AboutPage({ data }) {
 }
 
 export async function getStaticPaths() {
-  const paths = await client.fetch(pathsQuery);
+  const paths = await client.fetch(aboutPagePathsQuery);
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
     fallback: true,
@@ -85,7 +88,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
   const { slug = '' } = context.params;
-  const aboutPage = await client.fetch(pageQuery, { slug });
+  const aboutPage = await client.fetch(aboutPageQuery, { slug });
   return {
     props: { data: { aboutPage } },
     revalidate: 1,
