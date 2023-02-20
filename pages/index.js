@@ -7,7 +7,7 @@ import waaromImage from '../public/waarom.png';
 import watImage from '../public/wat.png';
 import hoeverImage from '../public/hoever.png';
 import client from '../lib/sanity';
-import { siteSettingsQuerys } from '../lib/querys';
+import { siteSettingsQuerys } from '../lib/queries';
 
 export default function Index({ ...props }) {
   const aboutSlugs = props.overCirculaw.slugs;

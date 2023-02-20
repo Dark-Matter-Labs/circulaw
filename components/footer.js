@@ -114,8 +114,11 @@ export default function Footer(props) {
                         className='p-base text-black-white-200 hover:text-green-400'
                         href={`/about/${encodeURIComponent(FAQslug)}`}
                       >
-                        {FAQslug.length > 0 && 
-                        <span className='inline-block first-letter:uppercase'>{FAQslug.replaceAll('-', ' ')}</span>}
+                        {FAQslug.length > 0 && (
+                          <span className='inline-block first-letter:uppercase'>
+                            {FAQslug.replaceAll('-', ' ')}
+                          </span>
+                        )}
                       </a>
                     </li>
                     {navigation.other.map((item) => (

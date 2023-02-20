@@ -5,7 +5,7 @@ import useSWR from 'swr';
 import Footer from '../../components/footer';
 import Nav from '../../components/nav';
 import CookieConsent from '../../components/cookie-banner';
-import { siteSettingsQuerys } from '../../lib/querys';
+import { siteSettingsQuerys } from '../../lib/queries';
 import { fetcher } from '../../utils/swr-fetcher';
 
 export default function Layout(props) {

@@ -19,9 +19,7 @@ import {
 import SearchFilter from '/components/search-filter';
 import PolicyList from '/components/policy-list';
 import { fetcher } from '../../utils/swr-fetcher';
-import { measureLayoutQuery } from '../../lib/querys';
-import OverviewPageHeader from '../overview-page-header'
-
+import { measureLayoutQuery } from '../../lib/queries';
 // creating objects for persisting values
 const useSelectedState = createPersistedState('selected');
 

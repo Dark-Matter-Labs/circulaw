@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 import { groq } from 'next-sanity';
 import { fetcher } from '../utils/swr-fetcher';
-import { siteSettingsQuerys } from '../lib/querys';
+import { siteSettingsQuerys } from '../lib/queries';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
