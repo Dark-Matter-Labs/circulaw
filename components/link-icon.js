@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import linkIcon from '../public/icons/link-icon.svg';
 
-// this should work but only after next 12.2
 const sizes = {
   mob: 'relative',
   desktop: 'relative',

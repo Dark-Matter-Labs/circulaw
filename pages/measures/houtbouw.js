@@ -8,7 +8,6 @@ const lawsQuery = `
 `;
 
 export default function Measures({ laws }) {
-  // casus must be exactly as written in data.js
   return (
     <Layout>
       <MeasuresLayout
