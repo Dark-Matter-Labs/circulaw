@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Layout from '../../components/layouts/layout';
 import woodIcon from '../../public/icons/woodIcon.svg';
 import SamenhangLayout from '../../components/layouts/samenhang-layout';
-import diagram from '../../public/Timber_page.svg';
+import diagram from '../../public/samenhang/Timber_page.svg';
 
 export default function InfoPage() {
   useEffect(() => {

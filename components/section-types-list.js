@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
 import HoutbouwHero from '../public/houtbouw.png';
-import WindmolensHero from '../public/turbine.png';
-import OverigeHero from '../public/mattress.png';
+import WindmillHero from '../public/home-page/turbine.png';
+import OverigeHero from '../public/home-page/mattress.png';
 
 import HoutbouwDetails1 from '../public/houtbouw1.png';
 import HoutbouwDetails2 from '../public/houtbouw2.png';
@@ -29,7 +29,7 @@ const types = [
   },
   {
     id: 1,
-    heroImage: WindmolensHero,
+    heroImage: WindmillHero,
     title: 'Circulaire windturbines',
     tag: '',
     description:
