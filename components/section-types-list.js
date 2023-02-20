@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
-import HoutbouwHero from '../public/houtbouw.png';
+import HoutbouwHero from '../public/home-page/houtbouw.png';
 import WindmillHero from '../public/home-page/turbine.png';
 import OverigeHero from '../public/home-page/mattress.png';
 
