@@ -137,50 +137,53 @@ export default function Footer(props) {
         <div className='global-margin pb-12 px-4 lg:pb-16'>
           <div className='grid grid-cols-3 gap-x-0.5 gap-y-4 lg:grid-cols-5'>
             {partners.map((partner, index) => {
-              return(
-              <>
-             <div key={partner.name} className={`col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 ${partner.className}`}>
-             <a target='_blank' href={partner.link} rel='noopener noreferrer'>
-               <Image src={partner.image} alt={partner.name} />
-             </a>
-           </div>
+              return (
+                <>
+                  <div
+                    key={partner.name}
+                    className={`col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 ${partner.className}`}
+                  >
+                    <a target='_blank' href={partner.link} rel='noopener noreferrer'>
+                      <Image src={partner.image} alt={partner.name} />
+                    </a>
+                  </div>
 
-                {index === 2 &&
-                <div className='col-span-3 block lg:hidden'>
-                  <hr className='border-black-white-200' />
-                </div>
-              }
+                  {index === 2 && (
+                    <div className='col-span-3 block lg:hidden'>
+                      <hr className='border-black-white-200' />
+                    </div>
+                  )}
 
-              {index === 4 &&
-                <div className='col-span-5 hidden lg:block'>
-                  <hr className='border-black-white-200' />
-                </div>
-              }
+                  {index === 4 && (
+                    <div className='col-span-5 hidden lg:block'>
+                      <hr className='border-black-white-200' />
+                    </div>
+                  )}
 
-              {index === 5 &&
-                <div className='col-span-3 block lg:hidden'>
-                  <hr className='border-black-white-200' />
-                </div>
-              }
+                  {index === 5 && (
+                    <div className='col-span-3 block lg:hidden'>
+                      <hr className='border-black-white-200' />
+                    </div>
+                  )}
 
-              {index === 8 &&
-                <div className='col-span-3 block lg:hidden'>
-                  <hr className='border-black-white-200' />
-                </div>
-              }
+                  {index === 8 && (
+                    <div className='col-span-3 block lg:hidden'>
+                      <hr className='border-black-white-200' />
+                    </div>
+                  )}
 
-              {index === 9 &&
-                <div className='col-span-5 hidden lg:block'>
-                  <hr className='border-black-white-200' />
-                </div>
-              }
+                  {index === 9 && (
+                    <div className='col-span-5 hidden lg:block'>
+                      <hr className='border-black-white-200' />
+                    </div>
+                  )}
 
-              {index === 11 &&
-                <div className='col-span-3 block lg:hidden'>
-                  <hr className='border-black-white-200' />
-                </div>
-              }
-              </>
+                  {index === 11 && (
+                    <div className='col-span-3 block lg:hidden'>
+                      <hr className='border-black-white-200' />
+                    </div>
+                  )}
+                </>
               );
             })}
           </div>
