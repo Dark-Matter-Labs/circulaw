@@ -27,7 +27,6 @@ import {
 import { linkComponent } from '../../lib/portable-text/portable-text-marks';
 import { measurePagePathsQuery, measureQuery } from '../../lib/queries';
 
-
 const components = {
   types: {
     greenBox: greenBoxComponent,

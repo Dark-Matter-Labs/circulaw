@@ -7,7 +7,7 @@ import { creatQuery } from '../../lib/queries';
 
 const thema = 'houtbouw';
 
-export default function InfoPage({...props }) {
+export default function InfoPage({ ...props }) {
   return (
     <Layout>
       <WelkeLayout
