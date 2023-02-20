@@ -3,7 +3,7 @@ import Layout from '../../components/layouts/layout';
 import WelkeLayout from '../../components/layouts/welke-layout';
 import WindmillIcon from '../../public/windmill.png';
 import windmillImageMob from '../../public/bevoegdheden/bevoegdheden-windmill.png';
-import { creatQuery } from '../../lib/querys';
+import { creatQuery } from '../../lib/queries';
 
 const thema = 'circulaire-windturbines';
 

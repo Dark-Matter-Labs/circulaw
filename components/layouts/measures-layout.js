@@ -22,7 +22,7 @@ import SearchFilter from '/components/search-filter';
 import PolicyList from '/components/policy-list';
 import MeasureLinks from '../measure-links-dropdown';
 import { fetcher } from '../../utils/swr-fetcher';
-import { measureLayoutQuery } from '../../lib/querys';
+import { measureLayoutQuery } from '../../lib/queries';
 // creating objects for persisting values
 const useSelectedState = createPersistedState('selected');
 
