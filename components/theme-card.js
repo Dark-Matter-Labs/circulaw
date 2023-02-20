@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import CustomButton from './custom-button';
+import waarvoor from '../public/thema-card-background/waarvoor.svg'
 
 export default function ThemeCard({ props, type }) {
   return (
@@ -30,7 +31,7 @@ export default function ThemeCard({ props, type }) {
               <div className='bg-waarvoor-card bg-cover bg-center shadow z-5 w-full rounded-t-md h-full flex items-center justify-center'>
                 <div className='w-5/6 h-5/6 relative'>
                   <Link href={props.cardLinkWaarvoor}>
-                    <Image src='../waarvoor.svg' alt='' fill />
+                    <Image src={waarvoor} alt='' fill />
                   </Link>
                 </div>
               </div>
