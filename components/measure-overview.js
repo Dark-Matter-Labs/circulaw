@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import IconWood from '../public/icons/woodIcon.svg';
-import WindmillIcon from '../public/winturbines.svg';
+import WindmillIcon from '../public/windmill.png'
 import MatrassenIcon from '../public/icons/matressIcon.svg';
 import RTooltip from '../components/r-ladder-tooltip';
 import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
