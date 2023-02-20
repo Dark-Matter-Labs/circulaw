@@ -1,23 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import NieuwTooltip from '../components/nieuw-tooltip';
-
+import { get_partners } from '../utils/footer-partners';
 import ActionPanel from '../components/section-action-panel';
-import logo1 from '../public/logo_partners/CircuLawPartners-01.svg';
-import logo2 from '../public/logo_partners/CircuLawPartners-02.svg';
-import logo3 from '../public/logo_partners/CircuLawPartners-03.png';
-import logo4 from '../public/logo_partners/CircuLawPartners-04.svg';
-import logo5 from '../public/logo_partners/CircuLawPartners-05.png';
-import logo6 from '../public/logo_partners/CircuLawPartners-06.png';
-import logo7 from '../public/logo_partners/Partner CircuLaw logo_s-23.png';
-import logo8 from '../public/logo_partners/CircuLawPartners-08.png';
-import logo9 from '../public/logo_partners/CircuLawPartners-09.svg';
-import logo10 from '../public/logo_partners/CircuLawPartners-10.png';
-import logo11 from '../public/logo_partners/CircuLawPartners-15.svg';
-import logo12 from '../public/logo_partners/CircuLawPartners-11.svg';
-import logo13 from '../public/logo_partners/CircuLawPartners-12.svg';
-import logo14 from '../public/logo_partners/CircuLawPartners-13.svg';
-import logo15 from '../public/logo_partners/CircuLawPartners-14.png';
 import sanityLogo from '../public/logo_partners/sanity-logo.svg';
 
 const navigation = {
@@ -43,6 +28,8 @@ const navigation = {
     { name: 'Cookies', href: '/cookie-info', className: '' },
   ],
 };
+
+const partners = get_partners();
 
 export default function Footer(props) {
   let aboutSlugs = [];
@@ -147,117 +134,55 @@ export default function Footer(props) {
         </div>
       </div>
       <div className='bg-green-800 pt-10 pb-2'>
-        {/* TODO: add image alt tags */}
         <div className='global-margin pb-12 px-4 lg:pb-16'>
           <div className='grid grid-cols-3 gap-x-0.5 gap-y-4 lg:grid-cols-5'>
-            <div className='col-span-1 flex justify-center  py-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200'>
-              <a target='_blank' href='https://www.amsterdam.nl/' rel='noopener noreferrer'>
-                <Image src={logo1} alt='Gemeente Amsterdam logo' />
-              </a>
-            </div>
-            <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200'>
-              <a target='_blank' href='https://darkmatterlabs.org/' rel='noopener noreferrer'>
-                <Image src={logo2} alt='Dark Matter Labs logo' />
-              </a>
-            </div>
-            <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 lg:border-r border-black-white-200'>
-              <a target='_blank' href='https://www.climate-kic.org/' rel='noopener noreferrer'>
-                <Image src={logo3} alt='Climate-KIC logo' />
-              </a>
-            </div>
-            <div className='col-span-3 block lg:hidden'>
-              <hr className='border-black-white-200' />
-            </div>
-            <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200'>
-              <a target='_blank' href='https://builtbn.org/' rel='noopener noreferrer'>
-                <Image src={logo4} alt='Built by Nature logo' />
-              </a>
-            </div>
-            <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200 lg:border-0'>
-              <a target='_blank' href='https://www.ams-institute.org/' rel='noopener noreferrer'>
-                <Image
-                  src={logo5}
-                  alt='Amsterdam Institute for Advanced Metropolitan Solutions logo'
-                />
-              </a>
-            </div>
-            <div className='col-span-5  hidden lg:block'>
-              <hr className='border-black-white-200' />
-            </div>
-            <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 lg:border-r border-black-white-200'>
-              <a
-                target='_blank'
-                href='https://circulairebouweconomie.nl/'
-                rel='noopener noreferrer'
-              >
-                <Image src={logo6} alt='De Circulaire Bouweconomie logo' />
-              </a>
-            </div>
-            <div className='col-span-3 block lg:hidden'>
-              <hr className='border-black-white-200' />
-            </div>
-            <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200'>
-              <a target='_blank' href='https://www.noord-holland.nl/' rel='noopener noreferrer'>
-                <Image src={logo7} alt='Provincie Noord-Holland logo' />
-              </a>
-            </div>
-            <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200'>
-              <a target='_blank' href='https://www.flevoland.nl/' rel='noopener noreferrer'>
-                <Image src={logo8} alt='Provincie Flevoland logo' />
-              </a>
-            </div>
-            <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 lg:border-r border-black-white-200'>
-              <a target='_blank' href='https://www.rvo.nl/' rel='noopener noreferrer'>
-                <Image src={logo9} alt='Rijksdienst voor Ondernemend logo' />
-              </a>
-            </div>
-            <div className='col-span-3 block lg:hidden'>
-              <hr className='border-black-white-200' />
-            </div>
-            <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200 lg:border-0'>
-              <a
-                target='_blank'
-                href='https://www.rijksoverheid.nl/ministeries/ministerie-van-financien'
-                rel='noopener noreferrer'
-              >
-                <Image src={logo10} alt='Ministerie van Financiën logo' />
-              </a>
-            </div>
-            <div className='col-span-5 hidden lg:block'>
-              <hr className='border-black-white-200' />
-            </div>
-            <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200'>
-              <a target='_blank' href='https://vu.nl/nl ' rel='noopener noreferrer'>
-                <Image src={logo11} alt='Vrije Universiteit Amsterdam logo' />
-              </a>
-            </div>
-            <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 lg:border-r border-black-white-200'>
-              <a target='_blank' href='https://www.uva.nl/' rel='noopener noreferrer'>
-                <Image src={logo12} alt='Universiteit van Amsterdam logo' />
-              </a>
-            </div>
-            <div className='col-span-3 block lg:hidden'>
-              <hr className='border-black-white-200' />
-            </div>
-            <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200'>
-              <a
-                target='_blank'
-                href='https://www.wur.nl/nl/wageningen-university.htm'
-                rel='noopener noreferrer'
-              >
-                <Image src={logo13} alt='Wageningen University & Research logo' />
-              </a>
-            </div>
-            <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200'>
-              <a target='_blank' href='http://tudelft.nl/' rel='noopener noreferrer'>
-                <Image src={logo14} alt='TU Delft logo' />
-              </a>
-            </div>
-            <div className='col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 '>
-              <a target='_blank' href='https://www.eur.nl/' rel='noopener noreferrer'>
-                <Image src={logo15} alt='Erasmus Universiteit Rotterdam logo' />
-              </a>
-            </div>
+            {partners.map((partner, index) => {
+              return(
+              <>
+             <div key={partner.name} className={`col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 ${partner.className}`}>
+             <a target='_blank' href={partner.link} rel='noopener noreferrer'>
+               <Image src={partner.image} alt={partner.name} />
+             </a>
+           </div>
+
+                {index === 2 &&
+                <div className='col-span-3 block lg:hidden'>
+                  <hr className='border-black-white-200' />
+                </div>
+              }
+
+              {index === 4 &&
+                <div className='col-span-5 hidden lg:block'>
+                  <hr className='border-black-white-200' />
+                </div>
+              }
+
+              {index === 5 &&
+                <div className='col-span-3 block lg:hidden'>
+                  <hr className='border-black-white-200' />
+                </div>
+              }
+
+              {index === 8 &&
+                <div className='col-span-3 block lg:hidden'>
+                  <hr className='border-black-white-200' />
+                </div>
+              }
+
+              {index === 9 &&
+                <div className='col-span-5 hidden lg:block'>
+                  <hr className='border-black-white-200' />
+                </div>
+              }
+
+              {index === 11 &&
+                <div className='col-span-3 block lg:hidden'>
+                  <hr className='border-black-white-200' />
+                </div>
+              }
+              </>
+              );
+            })}
           </div>
         </div>
         <div className='global-margin pb-2 text-black-white-200 p-base'>
