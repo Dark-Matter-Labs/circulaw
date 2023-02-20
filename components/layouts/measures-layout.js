@@ -15,16 +15,16 @@ import {
   juridischInvloed,
   extraContent,
   rLadder,
-} from '../../dataFilter';
+} from '../../utils/data-filter';
 import SearchFilter from '/components/search-filter';
 import PolicyList from '/components/policy-list';
 import { fetcher } from '../../utils/swr-fetcher';
 import { measureLayoutQuery } from '../../lib/queries';
-import OverviewPageHeader from '../overview-page-header'
+import OverviewPageHeader from '../overview-page-header';
 // creating objects for persisting values
 const useSelectedState = createPersistedState('selected');
 
-export default function MeasuresLayout({...props}) {
+export default function MeasuresLayout({ ...props }) {
   // need to add error check ? or replace the fetcher function in utils/filter funcition
   const { data } = useSWR(groq`${measureLayoutQuery}`, fetcher);
   // creating references to access child component functions
@@ -654,17 +654,14 @@ export default function MeasuresLayout({...props}) {
       </div>
 
       <div>
-
-
         <OverviewPageHeader props={props} page='list' />
         <div className='hidden sm:block max-w-3xl pt-2 mb-2 sm:mb-20'>
-            <p className='p-lg'>
-              {props.introPara}
-              <br />
+          <p className='p-lg'>
+            {props.introPara}
+            <br />
           </p>
         </div>
-        </div>
-
+      </div>
 
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20 border-b border-black-white-500 pb-2'>
         <div className='hidden lg:block mb-6 self-end'>
@@ -727,7 +724,6 @@ export default function MeasuresLayout({...props}) {
                 )}
               </Combobox>
             </div>
-
 
             {/* clear search and clear filters have the same effect. Should there maybe be a Reset? which resets all search parameters. Clear search button removed for now*/}
 
