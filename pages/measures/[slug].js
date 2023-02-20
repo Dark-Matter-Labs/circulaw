@@ -11,6 +11,7 @@ import {
   hoverTextComponent,
   pdfBlockComponentMeasurePage,
   smallParaComponent,
+  dropDownComponent
 } from '../../lib/portable-text/portable-text-types';
 import {
   bulletComponent,
@@ -34,6 +35,7 @@ const components = {
     hoverText: hoverTextComponent,
     pdfBlock: pdfBlockComponentMeasurePage,
     smallPara: smallParaComponent,
+    dropDown: dropDownComponent,
   },
   list: {
     bullet: bulletComponent,

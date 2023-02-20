@@ -14,7 +14,7 @@ export default {
       },
       {
         title: 'Drop Down Text',
-        name: 'hoverdropDownTextText',
+        name: 'dropDownTextText',
         type: 'text',
       },
     ],
