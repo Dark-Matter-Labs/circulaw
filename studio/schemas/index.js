@@ -10,6 +10,7 @@ import hoverText from './objects/hover-text';
 import smallPara from './objects/small-paragraph';
 import link from './objects/link';
 import navItem from './objects/nav-item';
+import dropDown from './objects/drop-down';
 
 export const schemaTypes = [
   // DOCUMENT TYPES
@@ -26,4 +27,5 @@ export const schemaTypes = [
   link,
   navItem,
   siteConfig,
+  dropDown,
 ];
