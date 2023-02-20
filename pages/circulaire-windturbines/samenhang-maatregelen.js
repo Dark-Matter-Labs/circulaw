@@ -12,7 +12,7 @@ export default function InfoPage() {
   return (
     <Layout>
       <SamenhangLayout
-        casus='circulaire-windturbines'
+        thema='circulaire-windturbines'
         title='Samenhang instrumenten circulaire windturbines'
         icon={WindmillIcon}
         p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
