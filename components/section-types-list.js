@@ -7,9 +7,6 @@ import HoutbouwHero from '../public/houtbouw.png';
 import WindmillHero from '../public/home-page/turbine.png';
 import OverigeHero from '../public/home-page/mattress.png';
 
-import HoutbouwDetails1 from '../public/houtbouw1.png';
-import HoutbouwDetails2 from '../public/houtbouw2.png';
-import HoutbouwDetails3 from '../public/houtbouw3.png';
 import CustomButton from './custom-button';
 
 function classNames(...classes) {
@@ -49,35 +46,7 @@ const types = [
   },
 ];
 
-const houtbouwTypes = [
-  {
-    id: 0,
-    heroImage: HoutbouwDetails1,
-    title: 'Stimuleren van houtbouw binnen de gemeentelijke omgevingsvisie',
-    description: '',
-    tag: 'Omgevingswet',
-    buttonText: 'Bekijk de maatregel',
-    href: 'houtbouw/gemeentelijke-omgevingsvisie',
-  },
-  {
-    id: 1,
-    heroImage: HoutbouwDetails2,
-    title: 'Gebruiken van sloopmelding voor het hergebruiken van hout',
-    description: '',
-    tag: 'Omgevingswet',
-    buttonText: 'Bekijk de maatregel',
-    href: 'houtbouw/sloopmelding',
-  },
-  {
-    id: 3,
-    heroImage: HoutbouwDetails3,
-    title: 'Inzetten van de MPG als subselectiecriterium bij gronduitgifte',
-    description: '',
-    tag: 'Aanbesteding',
-    buttonText: 'Bekijk de maatregel',
-    href: 'houtbouw/mpg-als-subselectiecriterium-bij-gronduitgifte',
-  },
-];
+
 
 export default function SectionTypes(props) {
   const [type, setType] = useState([]);
@@ -85,9 +54,7 @@ export default function SectionTypes(props) {
   useEffect(() => {
     if (props.type === 'home') {
       setType(types);
-    } else if (props.type === 'houtbouw') {
-      setType(houtbouwTypes);
-    }
+    } 
   }, [props.type]);
 
   return (
