@@ -60,7 +60,7 @@ module.exports = {
         17: '96px'
       },
       screens: {
-        lg: '1145px',
+        lg: '1430px',
       },
       spacing: {
         '128': '32rem',

@@ -1,5 +1,5 @@
 import { useState, forwardRef, useImperativeHandle } from 'react';
-import { handleToggle } from '../utils';
+import { handleToggle } from '../utils/checkbox-utils';
 import RTooltip from '../components/r-ladder-tooltip';
 import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../components/juridische-invloed-tooltip';
