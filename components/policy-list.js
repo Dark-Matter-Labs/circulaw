@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import IconWood from '../public/icons/houtbuowSm.svg';
-import WindmillIcon from '../public/icons/windmillIconSm.svg';
+import WindmillIcon from '../public/icons/windmill.png';
 import MatrassenIcon from '../public/icons/matressIcon.svg';
 
 export default function PolicyList(props) {

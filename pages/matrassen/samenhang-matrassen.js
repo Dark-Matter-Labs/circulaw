@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Layout from '../../components/layouts/layout';
 import mattressIcon from '../../public/icons/matressIcon.svg';
 import SamenhangLayout from '../../components/layouts/samenhang-layout';
-import diagram from '../../public/Matress_page.svg';
+import diagram from '../../public/samenhang/Matress_page.svg';
 
 export default function InfoPage() {
   useEffect(() => {

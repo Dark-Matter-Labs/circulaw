@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import CustomButton from './custom-button';
+import waarvoor from '../public/thema-card-background/waarvoor.svg'
+import samenhang from '../public/thema-card-background/samenhang.svg'
+import list from '../public/thema-card-background/list.svg'
 
 export default function ThemeCard({ props, type }) {
   return (
@@ -12,7 +15,7 @@ export default function ThemeCard({ props, type }) {
               <div className='bg-list-card bg-cover bg-center shadow z-5 w-full rounded-t-md h-full flex items-center justify-center'>
                 <div className='w-5/6 h-5/6 relative'>
                   <Link href={props.cardLinkList}>
-                    <Image src='../list.svg' alt='' fill />
+                    <Image src={list} alt='' fill />
                   </Link>
                 </div>
               </div>
@@ -21,7 +24,7 @@ export default function ThemeCard({ props, type }) {
               <div className='bg-samenhang-card bg-cover bg-center shadow z-5 w-full rounded-t-md h-full flex items-center justify-center'>
                 <div className='w-5/6 h-5/6 relative'>
                   <Link href={props.cardLinkSamenhang}>
-                    <Image src='../samenhang.svg' alt='' fill />
+                    <Image src={samenhang} alt='' fill />
                   </Link>
                 </div>
               </div>
@@ -30,7 +33,7 @@ export default function ThemeCard({ props, type }) {
               <div className='bg-waarvoor-card bg-cover bg-center shadow z-5 w-full rounded-t-md h-full flex items-center justify-center'>
                 <div className='w-5/6 h-5/6 relative'>
                   <Link href={props.cardLinkWaarvoor}>
-                    <Image src='../waarvoor.svg' alt='' fill />
+                    <Image src={waarvoor} alt='' fill />
                   </Link>
                 </div>
               </div>

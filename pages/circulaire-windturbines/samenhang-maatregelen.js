@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import Layout from '../../components/layouts/layout';
 import SamenhangLayout from '../../components/layouts/samenhang-layout';
-import WindmillIcon from '../../public/windmill.png';
-import diagram from '../../public/windmill-samg.svg';
+import WindmillIcon from '../../public/icons/windmill.png';
+import diagram from '../../public/samenhang/windmill-samg.svg';
 
 export default function InfoPage() {
   useEffect(() => {
