@@ -1,9 +1,7 @@
 import { useState, useEffect, useRef, Fragment, useCallback } from 'react';
 import { Dialog, Transition, Combobox } from '@headlessui/react';
-import Image from 'next/image';
-import Link from 'next/link';
 import createPersistedState from 'use-persisted-state';
-import { SearchIcon, XIcon, AdjustmentsIcon, ArrowRightIcon } from '@heroicons/react/outline';
+import { SearchIcon, XIcon, AdjustmentsIcon } from '@heroicons/react/outline';
 import { groq } from 'next-sanity';
 import { toPlainText } from '@portabletext/react';
 import Fuse from 'fuse.js';
@@ -17,16 +15,16 @@ import {
   juridischInvloed,
   extraContent,
   rLadder,
-} from '../../dataFilter';
+} from '../../utils/data-filter';
 import SearchFilter from '/components/search-filter';
 import PolicyList from '/components/policy-list';
-import MeasureLinks from '../measure-links-dropdown';
 import { fetcher } from '../../utils/swr-fetcher';
 import { measureLayoutQuery } from '../../lib/queries';
+import OverviewPageHeader from '../overview-page-header';
 // creating objects for persisting values
 const useSelectedState = createPersistedState('selected');
 
-export default function MeasuresLayout(props) {
+export default function MeasuresLayout({ ...props }) {
   // need to add error check ? or replace the fetcher function in utils/filter funcition
   const { data } = useSWR(groq`${measureLayoutQuery}`, fetcher);
   // creating references to access child component functions
@@ -654,49 +652,19 @@ export default function MeasuresLayout(props) {
           </Dialog>
         </Transition.Root>
       </div>
+
+      <div>
+        <OverviewPageHeader props={props} page='list' />
+        <div className='hidden sm:block max-w-3xl pt-2 mb-2 sm:mb-20'>
+          <p className='p-lg'>
+            {props.introPara}
+            <br />
+          </p>
+        </div>
+      </div>
+
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20 border-b border-black-white-500 pb-2'>
-        <div className='block breadcrumb pt-8 text-black-white-800 uppercase underline'>
-          <Link href='/'>Home</Link>
-          <span className=''>
-            {' '}
-            <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />{' '}
-          </span>
-          <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`} passHref>
-            <span className='inline-block underline'>{props.thema.replace('-', ' ')}</span>
-          </Link>
-        </div>
-        <div className='col-span-2'></div>
-        <div className='hidden sm:block'>
-          <MeasureLinks type={props.thema} page='list' />
-        </div>
-        <div className=' mb-2 sm:mb-20 mt-10 col-span-3'>
-          <div className='container pb-2'>
-            <Image src={props.icon} alt={`${props.thema} 'icon'`} width={100} height={100} />
-            {props.thema === 'circulaire-windturbines' && (
-              <h1 className='max-w-0 leading-6 pb-1 pl-4 mobile sm:desktop lowercase first-letter:uppercase'>
-                Circulaire windturbines
-              </h1>
-            )}
-            {props.thema === 'houtbouw' && (
-              <h1 className='max-w-0 leading-6 pb-1 pl-4 mobile sm:desktop lowercase first-letter:uppercase'>
-                Houtbouw stimuleren
-              </h1>
-            )}
-            {props.thema === 'matrassen' && (
-              <h1 className='max-w-0 leading-6 pb-1 pl-4 mobile sm:desktop lowercase first-letter:uppercase'>
-                Circulaire matrasketen
-              </h1>
-            )}
-          </div>
-          <div className='hidden sm:block max-w-3xl pt-2'>
-            <p className='p-lg'>
-              {props.introPara}
-              <br />
-            </p>
-          </div>
-        </div>
-        <div className='hidden sm:block col-span-1'></div>
-        <div className='hidden lg:block  mb-6 self-end'>
+        <div className='hidden lg:block mb-6 self-end'>
           <h3 className='mobile sm:desktop inline text-black-white-800'>Filter op:</h3>{' '}
           <span
             onClick={reset}
@@ -734,7 +702,6 @@ export default function MeasuresLayout(props) {
                         onClick={() => setSearchValue(law.titel)}
                         as={Fragment}
                       >
-                        {/* need to redo style here */}
                         {({ active }) => (
                           <li
                             className={`${
@@ -757,6 +724,7 @@ export default function MeasuresLayout(props) {
                 )}
               </Combobox>
             </div>
+
             {/* clear search and clear filters have the same effect. Should there maybe be a Reset? which resets all search parameters. Clear search button removed for now*/}
 
             <div className='flex felx-wrap items-center justify-start'>
@@ -863,28 +831,6 @@ export default function MeasuresLayout(props) {
                   )}
                 </div>
               )}
-
-              {/* if there is a search value and only 1 law ?? REMOVE 
-            {searchValue !== '' && numberOfLaws === 1 && (
-              <div>
-                <span className=''>
-                  <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
-                  <span className=' p-lg'>resultaten in </span>
-                  <h3 className='inline-block lowercase first-letter:uppercase mobile sm:desktop inline'>
-                    {props.thema === 'circulaire-windturbines'
-                      ? 'Circulaire windturbines'
-                      : props.thema}
-                  </h3>{' '}
-                  <span className=' p-lg'>voor</span>{' '}
-                  <h3 className='mobile sm:desktop inline'>{searchValue}
-                  {allSelectedValues.length != 0 && <span>,</span>} &nbsp;</h3>
-                </span>
-              </div>
-            )} */}
-
-              {/* if all laws are there ?? REMOVE
-            
-            */}
 
               {/* display selected values */}
               <div className=''></div>

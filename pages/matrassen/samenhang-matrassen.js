@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Layout from '../../components/layouts/layout';
 import mattressIcon from '../../public/icons/matressIcon.svg';
 import SamenhangLayout from '../../components/layouts/samenhang-layout';
-import diagram from '../../public/Matress_page.svg';
+import diagram from '../../public/samenhang/Matress_page.svg';
 
 export default function InfoPage() {
   useEffect(() => {
@@ -13,7 +13,7 @@ export default function InfoPage() {
   return (
     <Layout>
       <SamenhangLayout
-        casus='matrassen'
+        thema='matrassen'
         title='Samenhang instrumenten circulaire matrassen'
         icon={mattressIcon}
         p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'

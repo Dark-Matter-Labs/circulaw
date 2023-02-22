@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import Layout from '../../components/layouts/layout';
 import SamenhangLayout from '../../components/layouts/samenhang-layout';
-import WindmillIcon from '../../public/windmill.png';
-import diagram from '../../public/windmill-samg.svg';
+import WindmillIcon from '../../public/icons/windmill.png';
+import diagram from '../../public/samenhang/windmill-samg.svg';
 
 export default function InfoPage() {
   useEffect(() => {
@@ -12,7 +12,7 @@ export default function InfoPage() {
   return (
     <Layout>
       <SamenhangLayout
-        casus='circulaire-windturbines'
+        thema='circulaire-windturbines'
         title='Samenhang instrumenten circulaire windturbines'
         icon={WindmillIcon}
         p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'

@@ -3,16 +3,15 @@ import Image from 'next/image';
 import { useRouter } from 'next/dist/client/router';
 import { Fragment } from 'react';
 import { Popover, Disclosure, Transition } from '@headlessui/react';
-import { MenuIcon, XIcon, ArrowDownIcon } from '@heroicons/react/outline';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
-import { Link as ScrollLink } from 'react-scroll';
 import Lottie from 'react-lottie';
+import HomepageHeader from './homepage-header';
 import { get_waardeketens } from '../utils/nav-structure';
 import CirculawLogo from '../public/Circulaw_logotype.png';
 import logo from '../public/Circulaw_logotype_home.png';
-import CustomButton from './custom-button';
+
 import BetaBanner from './beta-banner';
-import BetaBannerGen from './beta-banner-gen';
 import NieuwTooltip from '../components/nieuw-tooltip';
 import animationData from '../public/CL_Home_Logo_Loop';
 
@@ -53,7 +52,7 @@ export default function Nav(props) {
         {({ open }) => (
           <>
             <div className='lg:pb-4 global-margin'>
-              <BetaBannerGen />
+              <BetaBanner type='gen' />
               <div className=''>
                 <div className='inset-y-0 float-right flex items-center lg:hidden'>
                   {/* Mobile menu button */}
@@ -231,24 +230,16 @@ export default function Nav(props) {
               >
                 Thema&apos;s
               </Disclosure.Button>
-              <Disclosure.Button
-                as='span'
-                className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
-              >
-                <Link href='/houtbouw'>Houtbouw stimuleren</Link>
-              </Disclosure.Button>
-              <Disclosure.Button
-                as='span'
-                className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
-              >
-                <Link href='/circulaire-windturbines'>Circulaire windturbines</Link>
-              </Disclosure.Button>
-              <Disclosure.Button
-                as='span'
-                className='table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
-              >
-                <Link href='/matrassen'>Circulaire matrasketen</Link>
-              </Disclosure.Button>
+              {waardeketens.map((item) => (
+                <>
+                  <Disclosure.Button
+                    as='span'
+                    className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
+                  >
+                    <Link href={item.href}>{item.name}</Link>
+                  </Disclosure.Button>
+                </>
+              ))}
               <hr className='my-4 mx-2 border-green-600' />
               <Disclosure.Button
                 as='span'
@@ -297,7 +288,7 @@ export default function Nav(props) {
   }
   return (
     <div className='bg-header'>
-      <BetaBanner />
+      <BetaBanner type='home' />
       <div className=' pb-16 sm:pb-24'>
         <Disclosure as='nav' className=' '>
           {({ open }) => (
@@ -476,25 +467,17 @@ export default function Nav(props) {
                   >
                     Thema&apos;s
                   </Disclosure.Button>
-                  <Disclosure.Button
-                    as='span'
-                    className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
-                  >
-                    <Link href='/houtbouw'>Houtbouw stimuleren</Link>
-                  </Disclosure.Button>
-                  <Disclosure.Button
-                    as='span'
-                    className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
-                  >
-                    <Link href='/circulaire-windturbines'>Circulaire windturbines</Link>
-                  </Disclosure.Button>
-                  <Disclosure.Button
-                    as='span'
-                    className='table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
-                  >
-                    <Link href='/matrassen'>Circulaire matrasketen</Link>
-                  </Disclosure.Button>
-                  <hr className='my-4 mx-2 border-green-600' />
+
+                  {waardeketens.map((item) => (
+                    <>
+                      <Disclosure.Button
+                        as='span'
+                        className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
+                      >
+                        <Link href={item.href}>{item.name}</Link>
+                      </Disclosure.Button>
+                    </>
+                  ))}
                   <Disclosure.Button
                     as='span'
                     className='uppercase text-black-white-800 block pl-3 pr-4 py-4'
@@ -536,41 +519,7 @@ export default function Nav(props) {
           )}
         </Disclosure>
 
-        {/* TODO: move this into header component and out of nav*/}
-        <main className='global-margin sm:mt-2'>
-          <div className='text-center mx-auto max-w-4xl'>
-            <div className='header hidden md:block text-black-white-200 py-10'>
-              <span className='block '>Regelgeving voor een circulaire economie</span>{' '}
-            </div>
-            <h1 className='text-left mobile block md:hidden text-black-white-200 py-4'>
-              <span className='block '>Regelgeving voor een circulaire economie</span>{' '}
-            </h1>
-            <p className='text-left sm:text-center mt-2 p-base max-w-sm sm:max-w-full sm:p-xl text-black-white-200 pb-8'>
-              CircuLaw laat zien hoe je met bestaande juridische instrumenten de circulaire economie
-              kan versnellen. We helpen beleidsmakers bij het selecteren en toepassen van die
-              instrumenten. Ook bieden we inzicht in de samenhang tussen juridische instrumenten en
-              overzicht over de verdeling van verantwoordelijkheden.
-            </p>
-            <div className='mt-2 sm:flex sm:justify-center md:mt-2'>
-              <div className='rounded-md'>
-                <CustomButton color='home'>
-                  <ScrollLink to='thema' smooth={true}>
-                    Bekijk de thema&rsquo;s{' '}
-                    <ArrowDownIcon className='inline-block h-4 w-4' aria-hidden='true' />
-                  </ScrollLink>
-                </CustomButton>
-              </div>
-              <div className='mt-3 rounded-md sm:mt-0 sm:ml-3'>
-                <CustomButton color='home'>
-                  <ScrollLink to='waarom' smooth={true}>
-                    Meer over CircuLaw?{' '}
-                    <ArrowDownIcon className='inline-block h-4 w-4' aria-hidden='true' />
-                  </ScrollLink>
-                </CustomButton>
-              </div>
-            </div>
-          </div>
-        </main>
+        <HomepageHeader />
       </div>
     </div>
   );

@@ -3,9 +3,9 @@ import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import Layout from '../components/layouts/layout';
 import SectionTypes from '../components/section-types-list';
-import waaromImage from '../public/waarom.png';
-import watImage from '../public/wat.png';
-import hoeverImage from '../public/hoever.png';
+import waaromImage from '../public/home-page/waarom.png';
+import watImage from '../public/home-page/wat.png';
+import hoeverImage from '../public/home-page/hoever.png';
 import client from '../lib/sanity';
 import { siteSettingsQuerys } from '../lib/queries';
 
