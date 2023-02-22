@@ -11,7 +11,7 @@ import {
   hoverTextComponent,
   pdfBlockComponentMeasurePage,
   smallParaComponent,
-  dropDownComponent
+  dropDownComponent,
 } from '../../lib/portable-text/portable-text-types';
 import {
   bulletComponent,
@@ -27,7 +27,6 @@ import {
 } from '../../lib/portable-text/portable-text-blocks';
 import { linkComponent } from '../../lib/portable-text/portable-text-marks';
 import { measurePagePathsQuery, measureQuery } from '../../lib/queries';
-
 
 const components = {
   types: {
