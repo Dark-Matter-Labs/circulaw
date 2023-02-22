@@ -346,6 +346,9 @@ export default {
             {
               type: 'hoverText',
             },
+            {
+              type: 'dropDown',
+            },
           ],
           lists: [
             { title: 'Bullet', value: 'bullet' },
