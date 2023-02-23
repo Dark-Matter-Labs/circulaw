@@ -53,4 +53,7 @@ export const Structure = (S) =>
         .title('Site Settings')
         .icon(MdSettingsSuggest)
         .child(S.document().schemaType('siteConfig').documentId('siteSettings')),
+      S.listItem()
+      .title('Partners')
+      .child(S.document().schemaType('partners').documentId('hello')), // need to work out what is wrong here. 
     ]);

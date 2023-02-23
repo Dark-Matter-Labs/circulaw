@@ -105,6 +105,7 @@ const partners = [
         image: logo15,
         className: '',
     },
+    
    
   ];
 

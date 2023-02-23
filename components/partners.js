@@ -1,28 +1,34 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { get_partners } from '../utils/footer-partners';
+import { fetcher } from '../utils/swr-fetcher';
+import useSWR from 'swr';
 import sanityLogo from '../public/logo_partners/sanity-logo.svg';
-
-const partners = get_partners();
+import { groq } from 'next-sanity';
+import { urlFor } from '../lib/sanity';
 
 const bordersDesktop = 'lg:[&:nth-child(6)]:border-r-0 lg:[&:nth-child(14)]:border-r-0 lg:[&:nth-child(21)]:border-r-0 lg:[&:nth-child(3)]:border-r lg:[&:nth-child(8)]:border-r lg:[&:nth-child(12)]:border-r lg:[&:nth-child(17)]:border-r'
 const bordersSmall = '[&:nth-child(3)]:border-r-0 [&:nth-child(8)]:border-r-0 [&:nth-child(12)]:border-r-0 [&:nth-child(17)]:border-r-0 [&:nth-child(21)]:border-r-0'
 
 export default function Partners() {
+    const partners = useSWR(groq`*[_type == "partners"][0]{
+        partners[]{...}
+      }`, fetcher)
+
+      
   return (
     <div className='bg-green-800 pt-10 pb-2'>
       <div className='global-margin pb-12 px-4 lg:pb-16'>
         <div className='grid grid-cols-3 gap-x-0.5 gap-y-4 lg:grid-cols-5 '>
-          {partners.map((partner, index) => {
+          {partners.data?.partners?.map((partner, index) => {
             return (
               <>
                 <div
-                  key={partner.name}
+                  key={partner.partnerName}
                   className={`col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200  ${bordersDesktop} ${bordersSmall}`}
                 >
-                  <a target='_blank' href={partner.link} rel='noopener noreferrer'>
-                    <Image src={partner.image} alt={partner.name} />
-                  </a>
+                  <Link target='_blank' href={partner.partnerLink} rel='noopener noreferrer'>
+                    <Image src={urlFor(partner.logo).url()} alt={partner.partnerName} width={170} height={170}/>
+                  </Link>
                 </div>
 
                 {index === 2 && (
@@ -48,6 +54,7 @@ export default function Partners() {
                 {index === 11 && (
                     <hr className='border-black-white-200 col-span-3 block lg:hidden' />
                 )}
+              {/* need to add in an extra line for the pissibility to add in more partners. removing partners works */}
               </>
             );
           })}
