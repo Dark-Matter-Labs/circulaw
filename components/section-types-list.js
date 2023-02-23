@@ -46,15 +46,13 @@ const types = [
   },
 ];
 
-
-
 export default function SectionTypes(props) {
   const [type, setType] = useState([]);
 
   useEffect(() => {
     if (props.type === 'home') {
       setType(types);
-    } 
+    }
   }, [props.type]);
 
   return (

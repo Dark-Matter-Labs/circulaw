@@ -19,7 +19,7 @@ const partners = [
       name: 'Gemeente Amsterdam',
       link: 'https://www.amsterdam.nl/',
       image: logo1,
-      className: 'border-r border-black-white-200',
+      className: 'border-r border-black-white-200', 
     },
     {
         name: 'Dark Matter Labs',
