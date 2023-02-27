@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import {useRouter} from 'next/router';
 import NieuwTooltip from '../components/nieuw-tooltip';
 import { get_partners } from '../utils/footer-partners';
 import ActionPanel from '../components/section-action-panel';
@@ -41,8 +42,12 @@ export default function Footer(props) {
   if (props.vraagSlug) {
     FAQslug = props.vraagSlug;
   }
+
+  const router = useRouter()
   return (
     <footer className='' aria-labelledby='footer-heading'>
+
+      {router.pathname !== '/en' &&
       <div className='bg-green-600'>
         <div className='global-margin pt-12 lg:pt-16 lg:px-8'>
           <div className='pb-20'>
@@ -133,6 +138,10 @@ export default function Footer(props) {
           </div>
         </div>
       </div>
+
+                    }
+
+
       <div className='bg-green-800 pt-10 pb-2'>
         <div className='global-margin pb-12 px-4 lg:pb-16'>
           <div className='grid grid-cols-3 gap-x-0.5 gap-y-4 lg:grid-cols-5'>
