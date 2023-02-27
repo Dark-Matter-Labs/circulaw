@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import CustomButton from './custom-button';
-import waarvoor from '../public/thema-card-background/waarvoor.svg'
-import samenhang from '../public/thema-card-background/samenhang.svg'
-import list from '../public/thema-card-background/list.svg'
+import waarvoor from '../public/thema-card-background/waarvoor.svg';
+import samenhang from '../public/thema-card-background/samenhang.svg';
+import list from '../public/thema-card-background/list.svg';
 
 export default function ThemeCard({ props, type }) {
   return (
