@@ -42,6 +42,42 @@ export default function Nav(props) {
   }
 
   const router = useRouter();
+  if (router.pathname === '/en') {
+    return (
+      <>
+      <div className='w-full bg-green-800'>
+      
+      <BetaBanner  type = 'home'/>
+          <div className='pb-4 global-margin flex justify-start items-center'>
+          <div className='hidden lg:block'>
+                    <Link href='/'>
+                        <Image
+                          height={86}
+                          width={162}
+                          src={logo}
+                          alt='CircuLaw logo'
+                          quality={100}
+                        />
+                      </Link>
+                      </div>
+                    <div className='block lg:hidden'>
+                    <Link href='/'>
+                        <Image
+                          height={24}
+                          width={120}
+                          src={logo}
+                          alt='CircuLaw logo'
+                          quality={100}
+                        />
+                      </Link>
+                      </div>
+                      </div>
+      </div>
+      </>
+    )
+  }
+  
+  
   if (router.pathname !== '/') {
     return (
       /* TODO: add case for navbar to work on homepage and remove the custom navbar on homepage */
