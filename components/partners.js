@@ -5,21 +5,20 @@ import useSWR from 'swr';
 import sanityLogo from '../public/logo_partners/sanity-logo.svg';
 import { groq } from 'next-sanity';
 import { urlFor } from '../lib/sanity';
+import { partnersQuery } from '../lib/queries';
 
 const bordersDesktop = 'lg:[&:nth-child(6)]:border-r-0 lg:[&:nth-child(14)]:border-r-0 lg:[&:nth-child(21)]:border-r-0 lg:[&:nth-child(3)]:border-r lg:[&:nth-child(8)]:border-r lg:[&:nth-child(12)]:border-r lg:[&:nth-child(17)]:border-r'
 const bordersSmall = '[&:nth-child(3)]:border-r-0 [&:nth-child(8)]:border-r-0 [&:nth-child(12)]:border-r-0 [&:nth-child(17)]:border-r-0 [&:nth-child(21)]:border-r-0'
-
+// fix query to receive the array and not an object 
 export default function Partners() {
-    const partners = useSWR(groq`*[_type == "partners"][0]{
-        partners[]{...}
-      }`, fetcher)
+    const { data } = useSWR(groq`${partnersQuery}`, fetcher)
+    const partners = data?.partners
 
-      
   return (
     <div className='bg-green-800 pt-10 pb-2'>
       <div className='global-margin pb-12 px-4 lg:pb-16'>
         <div className='grid grid-cols-3 gap-x-0.5 gap-y-4 lg:grid-cols-5 '>
-          {partners.data?.partners?.map((partner, index) => {
+          {partners?.map((partner, index) => {
             return (
               <>
                 <div
