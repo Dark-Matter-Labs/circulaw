@@ -14,8 +14,6 @@ import navItem from './objects/nav-item';
 import dropDown from './objects/drop-down';
 import partner from './objects/partner';
 
-
-
 export const schemaTypes = [
   // DOCUMENT TYPES
   measure,

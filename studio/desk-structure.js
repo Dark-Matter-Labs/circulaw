@@ -7,7 +7,7 @@ import { MdSettingsSuggest } from 'react-icons/md';
 export const Structure = (S) =>
   S.list()
     .title('Content Types')
-    .items([  
+    .items([
       S.listItem()
         .title('Measures')
         .icon(VscLaw)

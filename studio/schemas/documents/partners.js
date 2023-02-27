@@ -1,4 +1,3 @@
-
 export default {
   name: 'partners',
   title: 'Partners',
@@ -7,7 +6,7 @@ export default {
     {
       name: 'title',
       title: 'Title',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'partners',
@@ -15,7 +14,5 @@ export default {
       title: 'Partner Logo',
       of: [{ type: 'partner' }],
     },
-  
   ],
-
 };
