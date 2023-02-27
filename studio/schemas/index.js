@@ -2,6 +2,7 @@ import measure from './documents/measure';
 import aboutPage from './documents/about-pages';
 import navigation from './documents/navigation';
 import siteConfig from './documents/site-config';
+import englishPage from './documents/english-page';
 
 import greenBox from './objects/green-box';
 import pdfBlock from './objects/pdf-block';
@@ -17,6 +18,7 @@ export const schemaTypes = [
   measure,
   aboutPage,
   navigation,
+  englishPage,
 
   // OBJECTS
   greenBox,
