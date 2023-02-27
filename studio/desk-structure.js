@@ -7,7 +7,7 @@ import { MdSettingsSuggest } from 'react-icons/md';
 export const Structure = (S) =>
   S.list()
     .title('Content Types')
-    .items([
+    .items([  
       S.listItem()
         .title('Measures')
         .icon(VscLaw)
@@ -47,13 +47,13 @@ export const Structure = (S) =>
         .child(S.documentList().title('About Pages').filter('_type == "aboutPage"')),
       S.listItem()
         .title('Navigation')
+        .id('NavigationList')
         .icon(GrNavigate)
         .child(S.documentList().title('Navigation').filter('_type == "navigation"')),
       S.listItem()
         .title('Site Settings')
         .icon(MdSettingsSuggest)
         .child(S.document().schemaType('siteConfig').documentId('siteSettings')),
-      S.listItem()
-      .title('Partners')
-      .child(S.document().schemaType('partners').documentId('hello')), // need to work out what is wrong here. 
+      S.documentListItem().schemaType('partners').title('Partners').id('PartnersList'),
+      S.divider(),
     ]);

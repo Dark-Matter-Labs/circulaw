@@ -5,15 +5,17 @@ export default {
   type: 'document',
   fields: [
     {
-        name: 'title',
-        type: 'string',
-        title: 'Title',
-      },
+      name: 'title',
+      title: 'Title',
+      type: 'string'
+    },
     {
       name: 'partners',
       type: 'array',
       title: 'Partner Logo',
       of: [{ type: 'partner' }],
     },
+  
   ],
+
 };
