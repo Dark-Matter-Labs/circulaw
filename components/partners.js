@@ -7,8 +7,8 @@ import { groq } from 'next-sanity';
 import { urlFor } from '../lib/sanity';
 import { partnersQuery } from '../lib/queries';
 
-const bordersDesktop = 'lg:[&:nth-child(6)]:border-r-0 lg:[&:nth-child(14)]:border-r-0 lg:[&:nth-child(21)]:border-r-0 lg:[&:nth-child(3)]:border-r lg:[&:nth-child(8)]:border-r lg:[&:nth-child(12)]:border-r lg:[&:nth-child(17)]:border-r'
-const bordersSmall = '[&:nth-child(3)]:border-r-0 [&:nth-child(8)]:border-r-0 [&:nth-child(12)]:border-r-0 [&:nth-child(17)]:border-r-0 [&:nth-child(21)]:border-r-0'
+const bordersDesktop = 'lg:[&:nth-child(6)]:border-r-0 lg:[&:nth-child(14)]:border-r-0 lg:[&:nth-child(21)]:border-r-0 lg:[&:nth-child(29)]:border-r-0 lg:[&:nth-child(3)]:border-r lg:[&:nth-child(8)]:border-r lg:[&:nth-child(12)]:border-r lg:[&:nth-child(17)]:border-r lg:[&:nth-child(26)]:border-r'
+const bordersSmall = '[&:nth-child(3)]:border-r-0 [&:nth-child(8)]:border-r-0 [&:nth-child(12)]:border-r-0 [&:nth-child(17)]:border-r-0 [&:nth-child(21)]:border-r-0 [&:nth-child(26)]:border-r-0'
 // fix query to receive the array and not an object 
 export default function Partners() {
     const { data } = useSWR(groq`${partnersQuery}`, fetcher)
@@ -26,7 +26,7 @@ export default function Partners() {
                   className={`col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200  ${bordersDesktop} ${bordersSmall}`}
                 >
                   <Link target='_blank' href={partner.partnerLink} rel='noopener noreferrer'>
-                    <Image src={urlFor(partner.logo).url()} alt={partner.partnerName} width={170} height={170}/>
+                    <Image src={urlFor(partner.logo).url()} alt={partner.partnerName} width={190} height={190}/>
                   </Link>
                 </div>
 
@@ -52,8 +52,17 @@ export default function Partners() {
 
                 {index === 11 && (
                     <hr className='border-black-white-200 col-span-3 block lg:hidden' />
+                )}  
+                
+                {partners.length > 15 && index === 14 && (
+                    <hr className='border-black-white-200 col-span-3 block lg:hidden' />
                 )}
-              {/* need to add in an extra line for the pissibility to add in more partners. removing partners works */}
+                 {partners.length > 15 && index === 14 && (
+                    <hr className='border-black-white-200 col-span-5 hidden lg:block' />
+                )}
+                 {partners.length > 15 && index === 17 && (
+                    <hr className='border-black-white-200 col-span-3 block lg:hidden' />
+                )}
               </>
             );
           })}
