@@ -1,5 +1,3 @@
-
-
 module.exports = {
   mode: 'jit',
   purge: [
@@ -8,7 +6,6 @@ module.exports = {
     './public/**/*.html',
     './lib/**/*.{js,ts,jsx,tsx}',
     './utils/**/*.{js,ts,jsx,tsx}',
-    
   ],
   theme: {
     extend: {
@@ -29,7 +26,7 @@ module.exports = {
       },
       fontFamily: {
         urbanist: ['Urbanist', 'sans-serif'],
-        manrope: ['Manrope', 'sans-serif']
+        manrope: ['Manrope', 'sans-serif'],
       },
       fontSize: {
         xxs: '12px',
@@ -44,7 +41,7 @@ module.exports = {
         '5xl': '25px',
         '6xl': '29px',
         '7xl': '55px',
-        '8xl': '85px'
+        '8xl': '85px',
       },
       lineHeight: {
         3: '15px',
@@ -61,18 +58,18 @@ module.exports = {
         14: '32px',
         15: '36px',
         16: '64px',
-        17: '96px'
+        17: '96px',
       },
       screens: {
         lg: '1430px',
       },
       spacing: {
-        '128': '32rem',
+        128: '32rem',
       },
       backgroundImage: {
-        'houtbouw-hero' : 'url("/hero-images/houtbouwHero.png")',
-        'windmill-hero' : 'url("/hero-images/windmillHero.png")',
-        'matrassen-hero' : 'url("/hero-images/matrassenHero.png")',
+        'houtbouw-hero': 'url("/hero-images/houtbouwHero.png")',
+        'windmill-hero': 'url("/hero-images/windmillHero.png")',
+        'matrassen-hero': 'url("/hero-images/matrassenHero.png")',
         'list-card': 'url("/thema-card-background/list-bg.png")',
         'samenhang-card': 'url("/thema-card-background/samenhang-bg.png")',
         'waarvoor-card': 'url("/thema-card-background/waaroov-bg.png")',
