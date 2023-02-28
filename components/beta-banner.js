@@ -6,9 +6,9 @@ export default function BetaBanner({ type }) {
   if (type === 'home') {
     return (
       <div className='flex grid-cols-1 lg:grid-cols-3 justify-between global-margin'>
-        <div className='min-w-[10%]'></div>
-        <div className='bg-black-white-300 border border-black-white-600 rounded-b-[20px] md:max-w-sm 2xl:max-w-sm mx-5 w-full'>
-          <div className='global-margin py-2 text-center'>
+        <div className='hidden sm:block min-w-[10%]'></div>
+        <div className='bg-black-white-300 border border-black-white-600 rounded-b-[20px] md:max-w-sm 2xl:max-w-sm sm:mx-5 w-full'>
+          <div className=' py-2 text-center'>
             <div className='flex justify-between flex-wrap'>
               <div className='w-0 flex-1'>
                 <div className=' text-black-white-800 truncate'>
@@ -31,8 +31,8 @@ export default function BetaBanner({ type }) {
             </div>
           </div>
         </div>
-        {/* can put this into component */}
-        <div className='text-black-white-200 flex justify-center items-center min-w-[10%] pt-2 pr-4'>
+        {/* can put this into component NEED TO ADD THIS SOMEHWERE ON MOB block sm:hidder - after sm it is in the beta banner */}
+        <div className='hidden sm:block text-black-white-200 flex justify-center items-center min-w-[10%] pt-2 pr-4'>
           <span
             className={`hover:underline ${router.pathname === '/en' ? 'enLink' : 'enLinkSelected'}`}
           >

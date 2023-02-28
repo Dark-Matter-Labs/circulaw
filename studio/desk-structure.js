@@ -53,5 +53,5 @@ export const Structure = (S) =>
         .title('Site Settings')
         .icon(MdSettingsSuggest)
         .child(S.document().schemaType('siteConfig').documentId('siteSettings')),
-        S.documentListItem().schemaType('englishPage').title('English Page'),
-      ]);
+      S.documentListItem().schemaType('englishPage').title('English Page'),
+    ]);
