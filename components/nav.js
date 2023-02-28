@@ -46,8 +46,10 @@ export default function Nav(props) {
     return (
       <>
         <div className='w-full bg-green-800'>
+
           <BetaBanner type='home' />
-          <div className='py-4 global-margin flex justify-start items-center'>
+          <div className='flex justify-between global-margin'>
+          <div className='py-4 flex justify-start items-center'>
             <div className='hidden lg:block'>
               <Link href='/'>
                 <Image height={86} width={162} src={logo} alt='CircuLaw logo' quality={100} />
@@ -59,6 +61,23 @@ export default function Nav(props) {
               </Link>
             </div>
           </div>
+
+
+          <div className='sm:hidden text-black-white-200 flex justify-center items-center min-w-[10%] pt-2 pr-4'>
+          <span
+            className={`hover:underline ${router.pathname === '/en' ? 'enLink' : 'enLinkSelected'}`}
+          >
+            <Link href='/'>NL</Link>
+          </span>
+          <span className='px-1 enLink'>|</span>
+          <span
+            className={`hover:underline ${router.pathname === '/en' ? 'enLinkSelected' : 'enLink'}`}
+          >
+            <Link href='/en'>EN</Link>
+          </span>
+        </div>
+        </div>
+
         </div>
       </>
     );
