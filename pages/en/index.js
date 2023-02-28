@@ -26,7 +26,7 @@ import {
 import { linkComponent } from '../../lib/portable-text/portable-text-marks';
 import CustomButton from '../../components/custom-button';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import heroImage from '../../public/hero-images/houtbouw.jpeg'
+import heroImage from '../../public/hero-images/houtbouw.jpeg';
 
 const components = {
   types: {
@@ -83,15 +83,16 @@ export default function English({ data }) {
           <div className='py-3'>
             <h2 className='mobile pb-3'>Regulations for a circular economy</h2>
             <p className='pb-3'>
-            CircuLaw is a knowledge platform dedicated to enabling the transition to a circular economy by identifying opportunities in current law to support a circular future.
+              CircuLaw is a knowledge platform dedicated to enabling the transition to a circular
+              economy by identifying opportunities in current law to support a circular future.
             </p>
             <p className='p-base sm:p-lg'>
-                For now, CircuLaw is available{' '}
-                <Link href='/'>
-                  <span className='text-green-300 hover:underline inline-block'>in Dutch</span>
-                </Link>{' '}
-                only.{' '}
-              </p>
+              For now, CircuLaw is available{' '}
+              <Link href='/'>
+                <span className='text-green-300 hover:underline inline-block'>in Dutch</span>
+              </Link>{' '}
+              only.{' '}
+            </p>
           </div>
 
           <div className='h-56 max-w-[380px] mx-auto flex items-center justify-center pt-6'>
@@ -102,12 +103,10 @@ export default function English({ data }) {
           </div>
         </div>
 
-
         <div className='grid grid-cols-1 sm:grid-cols-3 global-margin justify-start pb-20 pt-10 sm:py-20'>
           <div className='col-span-2'>
             <PortableText components={components} value={data?.englishContent} />
           </div>
-
 
           <div className='col-span-1 block w-full float-right px-8 lg:ml-6 bg-black-white-200 h-[32.5rem] md:h-[36rem] lg:h-[30rem] sticky top-40 lg:mb-20'>
             <div className='w-full h-full grid grid-cols-1 items-center'>
@@ -143,7 +142,6 @@ export default function English({ data }) {
             </div>
           </div>
         </div>
-
 
         <div className='hidden lg:block relative h-72'>
           <Image
