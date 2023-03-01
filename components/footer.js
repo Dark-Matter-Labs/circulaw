@@ -1,6 +1,8 @@
 import NieuwTooltip from '../components/nieuw-tooltip';
 import ActionPanel from '../components/section-action-panel';
+import { useRouter } from 'next/router';
 import Partners from './partners';
+
 
 const navigation = {
   WAARDEKETENS: [
@@ -133,83 +135,7 @@ export default function Footer(props) {
         </div>
       )}
 
-      <div className='bg-green-800 pt-10 pb-2'>
-        <div className='global-margin pb-12 px-4 lg:pb-16'>
-          <div className='grid grid-cols-3 gap-x-0.5 gap-y-4 lg:grid-cols-5'>
-            {partners.map((partner, index) => {
-              return (
-                <>
-                  <div
-                    key={partner.name}
-                    className={`col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 ${partner.className}`}
-                  >
-                    <a target='_blank' href={partner.link} rel='noopener noreferrer'>
-                      <Image src={partner.image} alt={partner.name} />
-                    </a>
-                  </div>
-
-                  {index === 2 && (
-                    <div className='col-span-3 block lg:hidden'>
-                      <hr className='border-black-white-200' />
-                    </div>
-                  )}
-
-                  {index === 4 && (
-                    <div className='col-span-5 hidden lg:block'>
-                      <hr className='border-black-white-200' />
-                    </div>
-                  )}
-
-                  {index === 5 && (
-                    <div className='col-span-3 block lg:hidden'>
-                      <hr className='border-black-white-200' />
-                    </div>
-                  )}
-
-                  {index === 8 && (
-                    <div className='col-span-3 block lg:hidden'>
-                      <hr className='border-black-white-200' />
-                    </div>
-                  )}
-
-                  {index === 9 && (
-                    <div className='col-span-5 hidden lg:block'>
-                      <hr className='border-black-white-200' />
-                    </div>
-                  )}
-
-                  {index === 11 && (
-                    <div className='col-span-3 block lg:hidden'>
-                      <hr className='border-black-white-200' />
-                    </div>
-                  )}
-                </>
-              );
-            })}
-          </div>
-        </div>
-        <div className='global-margin pb-2 text-black-white-200 p-base'>
-          <p className='pb-8'>
-            Welkom bij CircuLaw. Deze website is volop in ontwikkeling. In deze versie testen we de
-            techniek, opzet en inhoud van de site. Het is mogelijk dat de inhoud van de site
-            incompleet is of fouten bevat. Dat betekent dan ook dat aan de inhoud van deze site geen
-            rechten kunnen worden ontleend. We horen graag wat je ervan vindt, wat je anders zou
-            willen, wat je mist en natuurlijk horen we ook graag waar je blij van wordt.{' '}
-            <Link href='/contact'>
-              <span className='underline'>Stuur je feedback op deze testversie.</span>
-            </Link>
-          </p>
-          <hr className='border-black-white-200 ' />
-          <div className='text-center py-2'>
-            <span className='text-black-white-100 p-sm'>
-              Legal data & content managed with support from
-            </span>
-            <a target='_blank' href='https://www.sanity.io/' rel='noopener noreferrer'>
-              <Image className='inline mx-2 my-2' src={sanityLogo} alt='Sanity logo' />
-            </a>
-          </div>
-        </div>
-      </div>
+  <Partners />
     </footer>
   );
 }

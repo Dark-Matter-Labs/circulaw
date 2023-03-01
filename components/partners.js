@@ -15,7 +15,6 @@ const bordersSmall =
 export default function Partners() {
   const { data } = useSWR(groq`${partnersQuery}`, fetcher);
   const partners = data?.partners;
-
   return (
     <div className='bg-green-800 pt-10 pb-2'>
       <div className='global-margin pb-12 px-4 lg:pb-16'>
