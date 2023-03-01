@@ -73,7 +73,7 @@ export default function MeasureTable({ data }) {
                     rel='noreferrer'
                   >
                     {data?.measure?.artikel}
-                    <span className='pl-0.5 inline-block h-5 w-5 relative'>
+                    <span className='pl-0.5 inline-block h-5 w-5 -mb-0.5 relative'>
                       <Image
                         className=''
                         alt='new tab'
