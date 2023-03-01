@@ -42,6 +42,48 @@ export default function Nav(props) {
   }
 
   const router = useRouter();
+  if (router.pathname === '/en') {
+    return (
+      <>
+        <div className='w-full bg-green-800'>
+          <BetaBanner type='home' />
+          <div className='flex justify-between global-margin sm:-mt-6'>
+            <div className='py-4 flex justify-start items-center'>
+              <div className='hidden lg:block'>
+                <Link href='/'>
+                  <Image height={86} width={162} src={logo} alt='CircuLaw logo' quality={100} />
+                </Link>
+              </div>
+              <div className='block lg:hidden'>
+                <Link href='/'>
+                  <Image height={24} width={120} src={logo} alt='CircuLaw logo' quality={100} />
+                </Link>
+              </div>
+            </div>
+
+            <div className='sm:hidden text-black-white-200 flex justify-center items-center min-w-[10%] pt-2 pr-4'>
+              <span
+                className={`hover:underline ${
+                  router.pathname === '/en' ? 'enLink' : 'enLinkSelected'
+                }`}
+              >
+                <Link href='/'>NL</Link>
+              </span>
+              <span className='px-1 enLink'>|</span>
+              <span
+                className={`hover:underline ${
+                  router.pathname === '/en' ? 'enLinkSelected' : 'enLink'
+                }`}
+              >
+                <Link href='/en'>EN</Link>
+              </span>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+
   if (router.pathname !== '/') {
     return (
       /* TODO: add case for navbar to work on homepage and remove the custom navbar on homepage */
@@ -224,6 +266,19 @@ export default function Nav(props) {
               </div>
             </div>
             <Disclosure.Panel className='lg:hidden bg-black-white-200 pt-2 pb-4 ml-5'>
+              <Disclosure.Button as='span' className='flex justify-end items-center pr-6'>
+                <span
+                  className={`hover:underline ${router.pathname === '/en' ? '' : 'font-semibold'}`}
+                >
+                  <Link href='/'>NL</Link>
+                </span>
+                <span className='px-1 enLink'>|</span>
+                <span
+                  className={`hover:underline ${router.pathname === '/en' ? 'font-semibold' : ''}`}
+                >
+                  <Link href='/en'>EN</Link>
+                </span>
+              </Disclosure.Button>
               <Disclosure.Button
                 as='span'
                 className='uppercase text-black-white-800  block pl-3 pr-4 py-4'
@@ -461,6 +516,23 @@ export default function Nav(props) {
               </div>
               <Disclosure.Panel className='lg:hidden bg-black-white-200'>
                 <div className='pt-2 pb-4 ml-5'>
+                  <Disclosure.Button as='span' className='flex justify-end items-center pt-2 pr-6'>
+                    <span
+                      className={`hover:underline ${
+                        router.pathname === '/en' ? '' : 'font-semibold'
+                      }`}
+                    >
+                      <Link href='/'>NL</Link>
+                    </span>
+                    <span className='px-1 enLink'>|</span>
+                    <span
+                      className={`hover:underline ${
+                        router.pathname === '/en' ? 'font-semibold' : ''
+                      }`}
+                    >
+                      <Link href='/en'>EN</Link>
+                    </span>
+                  </Disclosure.Button>
                   <Disclosure.Button
                     as='span'
                     className='uppercase text-black-white-800  block pl-3 pr-4 py-4'

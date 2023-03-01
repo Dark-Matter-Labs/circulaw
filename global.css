@@ -112,6 +112,14 @@
   .popup-sm {
     @apply font-manrope text-xs font-medium leading-6;
   }
+
+  .enLink {
+    @apply font-manrope text-xs font-semibold leading-9;
+  }
+
+  .enLinkSelected {
+    @apply font-manrope text-xs font-extrabold leading-9;
+  }
 }
 
 html {

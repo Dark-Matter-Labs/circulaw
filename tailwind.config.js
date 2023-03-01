@@ -76,6 +76,8 @@ module.exports = {
         'list-card': 'url("/thema-card-background/list-bg.png")',
         'samenhang-card': 'url("/thema-card-background/samenhang-bg.png")',
         'waarvoor-card': 'url("/thema-card-background/waaroov-bg.png")',
+        'en-background': 'url("/Background-en-page.png")',
+        'en-header': 'url("/en-deco-header.png")',
       },
     },
   },

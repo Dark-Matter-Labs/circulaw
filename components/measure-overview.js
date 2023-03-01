@@ -13,9 +13,6 @@ const viewportType = {
   desktop:
     'hidden sm:block float-right px-8 ml-6 bg-black-white-200 h-[26rem] sticky top-40 mb-20 bg-black-white-200',
 };
-{
-  /* still need to implement the design when design is finished - mainly fonts + colors */
-}
 
 export default function MeasureOverview({ viewport, children, data, ...props }) {
   let viewportClasses = viewportType[viewport];

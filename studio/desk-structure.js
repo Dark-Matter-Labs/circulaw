@@ -56,4 +56,5 @@ export const Structure = (S) =>
         .child(S.document().schemaType('siteConfig').documentId('siteSettings')),
       S.documentListItem().schemaType('partners').title('Partners').id('PartnersList'),
       S.divider(),
+      S.documentListItem().schemaType('englishPage').title('English Page'),
     ]);
