@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { fetcher } from '../utils/swr-fetcher';
 import useSWR from 'swr';
-import sanityLogo from '../public/logo_partners/sanity-logo.svg';
+import { useRouter } from 'next/router';
 import { groq } from 'next-sanity';
 import { urlFor } from '../lib/sanity';
 import { partnersQuery } from '../lib/queries';
+import sanityLogo from '../public/logo_partners/sanity-logo.svg';
+import { fetcher } from '../utils/swr-fetcher';
 
 const bordersDesktop =
   'lg:[&:nth-child(6)]:border-r-0 lg:[&:nth-child(14)]:border-r-0 lg:[&:nth-child(21)]:border-r-0 lg:[&:nth-child(29)]:border-r-0 lg:[&:nth-child(3)]:border-r lg:[&:nth-child(8)]:border-r lg:[&:nth-child(12)]:border-r lg:[&:nth-child(17)]:border-r lg:[&:nth-child(26)]:border-r';
@@ -15,6 +16,8 @@ const bordersSmall =
 export default function Partners() {
   const { data } = useSWR(groq`${partnersQuery}`, fetcher);
   const partners = data?.partners;
+
+  const router = useRouter();
   return (
     <div className='bg-green-800 pt-10 pb-2'>
       <div className='global-margin pb-12 px-4 lg:pb-16'>
@@ -75,16 +78,31 @@ export default function Partners() {
         </div>
       </div>
       <div className='global-margin pb-2 text-black-white-200 p-base'>
-        <p className='pb-8'>
-          Welkom bij CircuLaw. Deze website is volop in ontwikkeling. In deze versie testen we de
-          techniek, opzet en inhoud van de site. Het is mogelijk dat de inhoud van de site
-          incompleet is of fouten bevat. Dat betekent dan ook dat aan de inhoud van deze site geen
-          rechten kunnen worden ontleend. We horen graag wat je ervan vindt, wat je anders zou
-          willen, wat je mist en natuurlijk horen we ook graag waar je blij van wordt.{' '}
-          <Link href='/contact'>
-            <span className='underline'>Stuur je feedback op deze testversie.</span>
-          </Link>
-        </p>
+        {router.pathname === '/en' && (
+          <p className='pb-8'>
+            Welcome to CircuLaw. This website is currently under development and in this version we
+            are testing the technology, design, and content of the site. The content of the site may
+            be incomplete or contain errors. This means that no rights can be derived from the
+            content of this site. We would like to hear what you think, what you would like
+            differently, what you think is missing, and of course, we would also like to hear what
+            makes you happy.{' '}
+            <Link href='/contact'>
+              <span className='underline'>Please send your feedback on this beta version.</span>
+            </Link>
+          </p>
+        )}
+        {router.pathname !== '/en' && (
+          <p className='pb-8'>
+            Welkom bij CircuLaw. Deze website is volop in ontwikkeling. In deze versie testen we de
+            techniek, opzet en inhoud van de site. Het is mogelijk dat de inhoud van de site
+            incompleet is of fouten bevat. Dat betekent dan ook dat aan de inhoud van deze site geen
+            rechten kunnen worden ontleend. We horen graag wat je ervan vindt, wat je anders zou
+            willen, wat je mist en natuurlijk horen we ook graag waar je blij van wordt.{' '}
+            <Link href='/contact'>
+              <span className='underline'>Stuur je feedback op deze testversie.</span>
+            </Link>
+          </p>
+        )}
         <hr className='border-black-white-200 ' />
         <div className='text-center py-2'>
           <span className='text-black-white-100 p-sm'>

@@ -92,7 +92,9 @@ export default function English({ data }) {
                 <p className='p-base sm:p-lg'>
                   For now, CircuLaw is available{' '}
                   <Link href='/'>
-                    <span className='text-green-300 hover:underline link-base inline-block'>in Dutch</span>
+                    <span className='text-green-300 hover:underline link-base inline-block'>
+                      in Dutch
+                    </span>
                   </Link>{' '}
                   only.{' '}
                 </p>
@@ -126,7 +128,10 @@ export default function English({ data }) {
                   </p>
                 </div>
                 <div className='pb-6'>
-                  <Link href='https://openresearch.amsterdam/en/page/90992/europese-wet--en-regelgeving-circulaire-economie' target='_blank'>
+                  <Link
+                    href='https://openresearch.amsterdam/en/page/90992/europese-wet--en-regelgeving-circulaire-economie'
+                    target='_blank'
+                  >
                     <CustomButton color='whiteShaddow'>
                       View whitepapers (English)&nbsp;
                       <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
