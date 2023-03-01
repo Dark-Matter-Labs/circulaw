@@ -267,17 +267,17 @@ export default function Nav(props) {
             </div>
             <Disclosure.Panel className='lg:hidden bg-black-white-200 pt-2 pb-4 ml-5'>
               <Disclosure.Button as='span' className='flex justify-end items-center pr-6'>
-              <span
-            className={`hover:underline ${router.pathname === '/en' ? '' : 'font-semibold'}`}
-          >
-            <Link href='/'>NL</Link>
-          </span>
-          <span className='px-1 enLink'>|</span>
-          <span
-            className={`hover:underline ${router.pathname === '/en' ? 'font-semibold' : ''}`}
-          >
-            <Link href='/en'>EN</Link>
-          </span>
+                <span
+                  className={`hover:underline ${router.pathname === '/en' ? '' : 'font-semibold'}`}
+                >
+                  <Link href='/'>NL</Link>
+                </span>
+                <span className='px-1 enLink'>|</span>
+                <span
+                  className={`hover:underline ${router.pathname === '/en' ? 'font-semibold' : ''}`}
+                >
+                  <Link href='/en'>EN</Link>
+                </span>
               </Disclosure.Button>
               <Disclosure.Button
                 as='span'
@@ -516,19 +516,23 @@ export default function Nav(props) {
               </div>
               <Disclosure.Panel className='lg:hidden bg-black-white-200'>
                 <div className='pt-2 pb-4 ml-5'>
-                <Disclosure.Button as='span' className='flex justify-end items-center pt-2 pr-6'>
-              <span
-            className={`hover:underline ${router.pathname === '/en' ? '' : 'font-semibold'}`}
-          >
-            <Link href='/'>NL</Link>
-          </span>
-          <span className='px-1 enLink'>|</span>
-          <span
-            className={`hover:underline ${router.pathname === '/en' ? 'font-semibold' : ''}`}
-          >
-            <Link href='/en'>EN</Link>
-          </span>
-              </Disclosure.Button>
+                  <Disclosure.Button as='span' className='flex justify-end items-center pt-2 pr-6'>
+                    <span
+                      className={`hover:underline ${
+                        router.pathname === '/en' ? '' : 'font-semibold'
+                      }`}
+                    >
+                      <Link href='/'>NL</Link>
+                    </span>
+                    <span className='px-1 enLink'>|</span>
+                    <span
+                      className={`hover:underline ${
+                        router.pathname === '/en' ? 'font-semibold' : ''
+                      }`}
+                    >
+                      <Link href='/en'>EN</Link>
+                    </span>
+                  </Disclosure.Button>
                   <Disclosure.Button
                     as='span'
                     className='uppercase text-black-white-800  block pl-3 pr-4 py-4'

@@ -3,7 +3,6 @@ import ActionPanel from '../components/section-action-panel';
 import { useRouter } from 'next/router';
 import Partners from './partners';
 
-
 const navigation = {
   WAARDEKETENS: [
     { name: 'Houtbouw stimuleren', href: '/houtbouw', className: 'text-black-white-200' },
@@ -135,7 +134,7 @@ export default function Footer(props) {
         </div>
       )}
 
-  <Partners />
+      <Partners />
     </footer>
   );
 }
