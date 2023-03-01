@@ -26,7 +26,6 @@ import {
 import { linkComponent } from '../../lib/portable-text/portable-text-marks';
 import CustomButton from '../../components/custom-button';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import heroImage from '../../public/hero-images/houtbouw.jpeg';
 
 const components = {
   types: {
@@ -62,7 +61,7 @@ export default function English({ data }) {
         <div className='hidden sm:block h-[60vh] bg-en-header bg-center bg-cover'>
           <div className='global-margin flex h-full'>
             <div className='flex items-center justify-center flex-wrap text-center text-black-white-200 w-3/5 mx-auto py-12'>
-              <h1 className='mobile sm:desktop text-black-white-200 py-10'>
+              <h1 className='sm:header text-black-white-200 py-10'>
                 Regulations for a circular economy
               </h1>
               <p className='p-base sm:p-lg'>
@@ -80,9 +79,10 @@ export default function English({ data }) {
           </div>
         </div>
 
+        <div className='w-full bg-en-header bg-cover bg-center'>
         <div className='block global-margin sm:hidden pt-5'>
-          <div className='py-3'>
-            <h2 className='mobile pb-3'>Regulations for a circular economy</h2>
+          <div className='py-3 text-black-white-200'>
+            <h1 className='mobile pb-3'>Regulations for a circular economy</h1>
             <p className='pb-3'>
               CircuLaw is a knowledge platform dedicated to enabling the transition to a circular
               economy by identifying opportunities in current law to support a circular future.
@@ -95,13 +95,7 @@ export default function English({ data }) {
               only.{' '}
             </p>
           </div>
-
-          <div className='h-56 max-w-[380px] mx-auto flex items-center justify-center pt-6'>
-            <div className='flex items-center justify-center h-full w-full rounded-md relative z-10'>
-              <Image src={heroImage} alt='hero image' fill className='rounded-md absolute' />
-              <div className='w-full h-full thema-hero-gradient z-10 rounded-md'></div>
-            </div>
-          </div>
+        </div>
         </div>
 
         <div className='grid grid-cols-1 sm:grid-cols-3 global-margin justify-start pb-20 pt-10 sm:py-20'>
