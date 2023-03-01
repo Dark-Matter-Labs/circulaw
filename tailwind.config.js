@@ -64,7 +64,7 @@ module.exports = {
         17: '96px'
       },
       screens: {
-        lg: '1430px',
+        lgNav: '1430px',
       },
       spacing: {
         '128': '32rem',

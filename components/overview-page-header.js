@@ -7,7 +7,7 @@ export default function OverviewPageHeader({ props, page }) {
   return (
     <>
       <div>
-        <div className='flex justify-between items-center pb-8'>
+        <div className='flex justify-between items-center pt-8 sm:pt-0 pb-8'>
           <div className='breadcrumb uppercase'>
             <Link className='underline' href='/'>
               Home &nbsp;

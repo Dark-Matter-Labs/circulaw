@@ -49,12 +49,12 @@ export default function Nav(props) {
           <BetaBanner type='home' />
           <div className='flex justify-between global-margin sm:-mt-6'>
             <div className='py-4 flex justify-start items-center'>
-              <div className='hidden lg:block'>
+              <div className='hidden lgNav:block'>
                 <Link href='/'>
                   <Image height={86} width={162} src={logo} alt='CircuLaw logo' quality={100} />
                 </Link>
               </div>
-              <div className='block lg:hidden'>
+              <div className='block lgNav:hidden'>
                 <Link href='/'>
                   <Image height={24} width={120} src={logo} alt='CircuLaw logo' quality={100} />
                 </Link>
@@ -93,10 +93,10 @@ export default function Nav(props) {
       <Disclosure as='nav' className='sticky top-0 z-40 bg-black-white-200 shadow-lg'>
         {({ open }) => (
           <>
-            <div className='lg:pb-4 global-margin'>
+            <div className='lgNav:pb-4 global-margin'>
               <BetaBanner type='gen' />
               <div className=''>
-                <div className='inset-y-0 float-right flex items-center lg:hidden'>
+                <div className='inset-y-0 float-right flex items-center lgNav:hidden'>
                   {/* Mobile menu button */}
                   <Disclosure.Button className=' p-2 rounded-md text-green-600 '>
                     <span className='sr-only'>Open main menu</span>
@@ -108,7 +108,7 @@ export default function Nav(props) {
                   </Disclosure.Button>
                 </div>
                 <div className='flex items-center justify-between'>
-                  <div className='hidden lg:block '>
+                  <div className='hidden lgNav:block '>
                     <Link href='/'>
                       <Image
                         height={86}
@@ -119,7 +119,7 @@ export default function Nav(props) {
                       />
                     </Link>
                   </div>
-                  <div className='block lg:hidden py-4 '>
+                  <div className='block lgNav:hidden py-4 '>
                     <Link href='/'>
                       <Image
                         height={24}
@@ -130,8 +130,8 @@ export default function Nav(props) {
                       />
                     </Link>
                   </div>
-                  <div className='hidden lg:ml-10 xl:ml-32 lg:flex lg:mt-6'>
-                    <div className='flex inset-x-0 top-0 pl-5 invisible lg:visible hidden lg:inline '>
+                  <div className='hidden lgNav:ml-10 xl:ml-32 lgNav:flex lgNav:mt-6'>
+                    <div className='flex inset-x-0 top-0 pl-5 invisible lgNav:visible hidden lgNav:inline '>
                       <div className='flex-1 global-margin'>
                         <div className='content right-0'>
                           <div className='relative flex items-center justify-between'>
@@ -265,7 +265,7 @@ export default function Nav(props) {
                 </div>
               </div>
             </div>
-            <Disclosure.Panel className='lg:hidden bg-black-white-200 pt-2 pb-4 ml-5'>
+            <Disclosure.Panel className='lgNav:hidden bg-black-white-200 pt-2 pb-4 ml-5'>
               <Disclosure.Button as='span' className='flex justify-end items-center pr-6'>
                 <span
                   className={`hover:underline ${router.pathname === '/en' ? '' : 'font-semibold'}`}
@@ -350,7 +350,7 @@ export default function Nav(props) {
             <>
               <div className='global-margin'>
                 <div className=''>
-                  <div className='inset-y-0 float-right flex items-center lg:hidden'>
+                  <div className='inset-y-0 float-right flex items-center lgNav:hidden'>
                     {/* Mobile menu button */}
                     <Disclosure.Button className='p-2 rounded-md text-black-white-200 '>
                       <span className='sr-only'>Open main menu</span>
@@ -362,12 +362,12 @@ export default function Nav(props) {
                     </Disclosure.Button>
                   </div>
                   <div className='flex items-center'>
-                    <div className='hidden lg:block md:py-5 lg:py-0'>
+                    <div className='hidden lgNav:block md:py-5 lgNav:py-0'>
                       <Link href='/'>
                         <Lottie options={defaultOptions} height={150} width={250} />
                       </Link>
                     </div>
-                    <div className='block lg:hidden py-4'>
+                    <div className='block lgNav:hidden py-4'>
                       <Link href='/'>
                         <Image
                           height={24}
@@ -378,9 +378,9 @@ export default function Nav(props) {
                         />
                       </Link>
                     </div>
-                    <div className='hidden lg:ml-10 xl:ml-32 lg:flex lg:mt-6'>
-                      <div className='flex inset-x-0 top-0 pl-5 invisible lg:visible hidden lg:inline '>
-                        <div className='flex-1 global-margin px-2 sm:px-6 lg:px-8'>
+                    <div className='hidden lgNav:ml-10 xl:ml-32 lgNav:flex lgNav:mt-6'>
+                      <div className='flex inset-x-0 top-0 pl-5 invisible lgNav:visible hidden lgNav:inline '>
+                        <div className='flex-1 global-margin px-2 sm:px-6 lgNav:px-8'>
                           <div className='content right-0'>
                             <div className='relative flex items-center justify-between'>
                               <div className=''>
@@ -514,7 +514,7 @@ export default function Nav(props) {
                   </div>
                 </div>
               </div>
-              <Disclosure.Panel className='lg:hidden bg-black-white-200'>
+              <Disclosure.Panel className='lgNav:hidden bg-black-white-200'>
                 <div className='pt-2 pb-4 ml-5'>
                   <Disclosure.Button as='span' className='flex justify-end items-center pt-2 pr-6'>
                     <span

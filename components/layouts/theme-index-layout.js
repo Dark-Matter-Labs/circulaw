@@ -63,7 +63,7 @@ export default function ThemeLayout({ bgHero, ...props }) {
                 <span className='text-green-500 link-base inline-block'>
                   <a href={props.headerLinkURL} target='_blank' rel='noopener noreferrer'>
                     {props.headerLinkText}
-                    <LinkIcon size='desktop' />
+                    <LinkIcon  />
                   </a>
                 </span>
               )}
