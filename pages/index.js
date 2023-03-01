@@ -87,8 +87,7 @@ export default function Index({ ...props }) {
                   Gemeente Amsterdam, Dark Matter Laboratories, EIT Climate-KIC, de Provincies
                   Noord-Holland en Flevoland, Rijksdienst voor Ondernemend Nederland (RVO), het MRA
                   (Metropoolregio Amsterdam) Kernteam Houtbouw, Belastingdienst, TU Delft, Erasmus
-                  School of LAW, de VU, Wageningen Universiteit (WUR Law group), Stichting
-                  Koninklijk Nederlands Normalisatie Instituut (NEN).
+                  School of LAW, de VU, Wageningen Universiteit (WUR Law group).
                 </p>
                 <span className='text-green-500 link-lg'>
                   Lees verder <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
