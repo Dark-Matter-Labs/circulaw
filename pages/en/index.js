@@ -23,7 +23,7 @@ import {
   bulletItemComponent,
   numberItemComponent,
 } from '../../lib/portable-text/portable-text-lists';
-import { linkComponent } from '../../lib/portable-text/portable-text-marks';
+import { linkBGDarkComponent } from '../../lib/portable-text/portable-text-marks';
 import CustomButton from '../../components/custom-button';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
@@ -49,7 +49,7 @@ const components = {
     normal: normalTextComponent,
   },
   marks: {
-    link: linkComponent,
+    link: linkBGDarkComponent,
   },
 };
 
@@ -57,7 +57,7 @@ export default function English({ data }) {
   return (
     <>
       <Layout>
-        <div className='bg-en-background  bg-center bg-cover'>
+        <div className='bg-en-background bg-center bg-cover'>
           <div className='hidden sm:block h-[60vh] bg-en-header bg-center bg-cover'>
             <div className='global-margin flex h-full'>
               <div className='flex items-center justify-center flex-wrap text-center text-black-white-200 w-3/5 mx-auto py-12'>
@@ -72,7 +72,7 @@ export default function English({ data }) {
                 <p className='p-base sm:p-lg pb-3'>
                   For now, CircuLaw is available{' '}
                   <Link href='/'>
-                    <span className='text-green-300 hover:underline inline-block'>in Dutch</span>
+                    <span className='text-green-300 sm:link-lg inline-block'>in Dutch</span>
                   </Link>{' '}
                   only.{' '}
                 </p>
@@ -84,7 +84,7 @@ export default function English({ data }) {
             <div className='block global-margin sm:hidden pt-5'>
               <div className='py-3 text-black-white-200'>
                 <h1 className='mobile pb-3'>Regulations for a circular economy</h1>
-                <p className='pb-3'>
+                <p className='pb-3 p-base'>
                   CircuLaw is a knowledge platform dedicated to enabling the transition to a
                   circular economy by identifying opportunities in current law to support a circular
                   future.
@@ -92,7 +92,9 @@ export default function English({ data }) {
                 <p className='p-base sm:p-lg'>
                   For now, CircuLaw is available{' '}
                   <Link href='/'>
-                    <span className='text-green-300 hover:underline inline-block'>in Dutch</span>
+                    <span className='text-green-300 hover:underline link-base inline-block'>
+                      in Dutch
+                    </span>
                   </Link>{' '}
                   only.{' '}
                 </p>
@@ -101,20 +103,22 @@ export default function English({ data }) {
           </div>
 
           <div className='grid grid-cols-1 sm:grid-cols-3 global-margin justify-start pb-20 pt-10 sm:py-20'>
-            <div className='col-span-2 text-black-white-200'>
+            <div className='col-span-2 text-black-white-200 sm:max-w-3xl'>
               <PortableText components={components} value={data?.englishContent} />
             </div>
 
-            <div className='col-span-1 block w-full float-right px-8 lg:ml-6 bg-green-800 text-black-white-200 h-[32.5rem] md:h-[36rem] lg:h-[30rem] sticky top-40 lg:mb-20'>
+            <div className='col-span-1 block w-full float-right px-8 sm:ml-6 bg-green-800 text-black-white-200 h-[32.5rem] md:h-[36rem] lg:h-[30rem] sticky top-40 lg:mb-20'>
               <div className='w-full h-full grid grid-cols-1 items-center'>
                 <div className='py-6 p-base sm:p-lg'>
                   <p>For now, CircuLaw is available in Dutch only</p>
                 </div>
                 <div className='pb-6'>
-                  <CustomButton color='whiteShaddow'>
-                    View website (dutch)&nbsp;
-                    <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
-                  </CustomButton>
+                  <Link href='/'>
+                    <CustomButton color='whiteShaddow'>
+                      View website (dutch)&nbsp;
+                      <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                    </CustomButton>
+                  </Link>
                 </div>
                 <hr />
                 <div className='py-6'>
@@ -124,16 +128,21 @@ export default function English({ data }) {
                   </p>
                 </div>
                 <div className='pb-6'>
-                  <CustomButton color='whiteShaddow'>
-                    View whitepapers (English)&nbsp;
-                    <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
-                  </CustomButton>
+                  <Link
+                    href='https://openresearch.amsterdam/en/page/90992/europese-wet--en-regelgeving-circulaire-economie'
+                    target='_blank'
+                  >
+                    <CustomButton color='whiteShaddow'>
+                      View whitepapers (English)&nbsp;
+                      <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                    </CustomButton>
+                  </Link>
                 </div>
                 <hr />
                 <div className='py-6'>
                   <p className='p-base sm:p-lg'>
                     Questions? Contact us:
-                    <span className='block underline font-semibold'>info@Circulaw.nl</span>
+                    <a href='mailto:info@circulaw.nl'> <span className='block underline font-semibold'>info@Circulaw.nl</span></a>
                   </p>
                 </div>
               </div>
