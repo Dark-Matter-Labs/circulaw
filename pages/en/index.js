@@ -1,7 +1,6 @@
 import { PortableText } from '@portabletext/react';
 import { groq } from 'next-sanity';
 import Link from 'next/link';
-import Image from 'next/image';
 import Layout from '../../components/layouts/layout';
 import client from '../../lib/sanity';
 import { fetcher } from '../../utils/swr-fetcher';
@@ -58,7 +57,7 @@ export default function English({ data }) {
     <>
       <Layout>
         <div className='bg-en-background bg-center bg-cover'>
-          <div className='hidden sm:block h-[60vh] bg-en-header bg-center bg-cover'>
+          <div className='hidden sm:block h-[70vh] lg:h-[60vh] bg-en-header bg-left bg-cover'>
             <div className='global-margin flex h-full'>
               <div className='flex items-center justify-center flex-wrap text-center text-black-white-200 w-3/5 mx-auto py-12'>
                 <h1 className='sm:header text-black-white-200 py-10'>
@@ -102,12 +101,12 @@ export default function English({ data }) {
             </div>
           </div>
 
-          <div className='grid grid-cols-1 sm:grid-cols-3 global-margin justify-start pb-20 pt-10 sm:py-20'>
+          <div className='grid grid-cols-1 lg:grid-cols-3 global-margin justify-start pb-20 pt-10 sm:py-20'>
             <div className='col-span-2 text-black-white-200 sm:max-w-3xl'>
               <PortableText components={components} value={data?.englishContent} />
             </div>
 
-            <div className='col-span-1 block w-full float-right px-8 sm:ml-6 bg-green-800 text-black-white-200 h-[32.5rem] md:h-[36rem] lg:h-[30rem] sticky top-40 lg:mb-20'>
+            <div className='col-span-1 max-w-md block w-full float-right px-8 lg:ml-6 bg-green-800 text-black-white-200 h-[30rem] lg:h-[30rem] sticky top-40 lg:mb-20'>
               <div className='w-full h-full grid grid-cols-1 items-center'>
                 <div className='py-6 p-base sm:p-lg'>
                   <p>For now, CircuLaw is available in Dutch only</p>
@@ -147,16 +146,6 @@ export default function English({ data }) {
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className='hidden lg:block relative h-72'>
-            <Image
-              src='/en-page-deco.png'
-              alt='page decoration'
-              width={600}
-              height={1200}
-              className='absolute hidden -right-24 -bottom-44 -z-10 rotate-45'
-            />
           </div>
         </div>
       </Layout>
