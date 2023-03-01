@@ -20,7 +20,6 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
     <div {...props} className={`${viewportClasses}`}>
       <div className='px-8 pb-10 sm:pb-0 sm:px-0 py-6 block h-[26rem]'>
         {children}
-
         <div className='container pb-12 sm:pb-1 flex justify-between'>
           <div className=''>
             <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()} passHref>

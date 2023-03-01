@@ -1,6 +1,7 @@
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 import NieuwTooltip from '../components/nieuw-tooltip';
 import ActionPanel from '../components/section-action-panel';
-import { useRouter } from 'next/router';
 import Partners from './partners';
 
 const navigation = {
@@ -117,6 +118,23 @@ export default function Footer(props) {
                           </a>
                         </li>
                       ))}
+                      <li className='flex justify-start text-black-white-200 items-center'>
+                        <span
+                          className={`hover:underline ${
+                            router.pathname === '/en' ? '' : 'font-semibold'
+                          }`}
+                        >
+                          <Link href='/'>NL</Link>
+                        </span>
+                        <span className='px-1 enLink'>|</span>
+                        <span
+                          className={`hover:underline ${
+                            router.pathname === '/en' ? 'font-semibold' : ''
+                          }`}
+                        >
+                          <Link href='/en'>EN</Link>
+                        </span>{' '}
+                      </li>
                     </ul>
                   </div>
                   <div className='hidden sm:block'>
