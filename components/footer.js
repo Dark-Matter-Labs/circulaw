@@ -1,10 +1,6 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 import NieuwTooltip from '../components/nieuw-tooltip';
-import { get_partners } from '../utils/footer-partners';
 import ActionPanel from '../components/section-action-panel';
-import sanityLogo from '../public/logo_partners/sanity-logo.svg';
+import Partners from './partners';
 
 const navigation = {
   WAARDEKETENS: [
@@ -29,8 +25,6 @@ const navigation = {
     { name: 'Cookies', href: '/cookie-info', className: '' },
   ],
 };
-
-const partners = get_partners();
 
 export default function Footer(props) {
   let aboutSlugs = [];

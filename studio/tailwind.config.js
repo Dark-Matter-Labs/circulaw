@@ -7,7 +7,6 @@ module.exports = {
     './lib/**/*.{js,ts,jsx,tsx}',
     './utils/**/*.{js,ts,jsx,tsx}',
   ],
-  darkMode: false,
   theme: {
     extend: {
       colors: {

@@ -1,3 +1,5 @@
+
+
 module.exports = {
   mode: 'jit',
   purge: [
@@ -6,8 +8,8 @@ module.exports = {
     './public/**/*.html',
     './lib/**/*.{js,ts,jsx,tsx}',
     './utils/**/*.{js,ts,jsx,tsx}',
+    
   ],
-  darkMode: false,
   theme: {
     extend: {
       colors: {
