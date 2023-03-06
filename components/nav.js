@@ -49,14 +49,14 @@ export default function Nav(props) {
           <div className='flex justify-between global-margin '>
             <div className=' flex justify-start items-center'>
               <div className='hidden lgNav:block -ml-6'>
-                      <Link href='/'>
-                        <Lottie options={defaultOptions} height={86} width={162} />
-                      </Link>
-                    </div>
-                  <div className='block lgNav:hidden -ml-6'>
-                    <Link href='/'>
-                        <Lottie options={defaultOptions} height={86} width={162} />
-                      </Link>
+                <Link href='/'>
+                  <Lottie options={defaultOptions} height={86} width={162} />
+                </Link>
+              </div>
+              <div className='block lgNav:hidden -ml-6'>
+                <Link href='/'>
+                  <Lottie options={defaultOptions} height={86} width={162} />
+                </Link>
               </div>
             </div>
 

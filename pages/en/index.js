@@ -141,7 +141,10 @@ export default function English({ data }) {
                 <div className='py-6'>
                   <p className='p-base sm:p-lg'>
                     Questions? Contact us:
-                    <a href='mailto:info@circulaw.nl'> <span className='block underline font-semibold'>info@Circulaw.nl</span></a>
+                    <a href='mailto:info@circulaw.nl'>
+                      {' '}
+                      <span className='block underline font-semibold'>info@Circulaw.nl</span>
+                    </a>
                   </p>
                 </div>
               </div>
