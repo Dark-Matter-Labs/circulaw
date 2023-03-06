@@ -270,13 +270,13 @@ export default function Nav(props) {
                 <span
                   className={`hover:underline ${router.pathname === '/en' ? '' : 'font-semibold'}`}
                 >
-                  <Link href='/'>NL</Link>
+                  <Link href='/'>NL&nbsp;</Link>
                 </span>
                 <span className='px-1 enLink'>|</span>
                 <span
                   className={`hover:underline ${router.pathname === '/en' ? 'font-semibold' : ''}`}
                 >
-                  <Link href='/en'>EN</Link>
+                  <Link href='/en'>&nbsp;EN</Link>
                 </span>
               </Disclosure.Button>
               <Disclosure.Button
@@ -522,7 +522,7 @@ export default function Nav(props) {
                         router.pathname === '/en' ? '' : 'font-semibold'
                       }`}
                     >
-                      <Link href='/'>NL</Link>
+                      <Link href='/'>NL&nbsp;</Link>
                     </span>
                     <span className='px-1 enLink'>|</span>
                     <span
@@ -530,7 +530,7 @@ export default function Nav(props) {
                         router.pathname === '/en' ? 'font-semibold' : ''
                       }`}
                     >
-                      <Link href='/en'>EN</Link>
+                      <Link href='/en'>&nbsp;EN</Link>
                     </span>
                   </Disclosure.Button>
                   <Disclosure.Button
