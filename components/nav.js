@@ -46,22 +46,21 @@ export default function Nav(props) {
     return (
       <>
         <div className='w-full bg-green-800'>
-          <BetaBanner type='home' />
-          <div className='flex justify-between global-margin sm:-mt-6'>
+          <div className='flex justify-between global-margin '>
             <div className=' flex justify-start items-center'>
-              <div className='hidden lgNav:block py-4 lgNav:py-0'>
+              <div className='hidden lgNav:block -ml-6'>
                       <Link href='/'>
                         <Lottie options={defaultOptions} height={86} width={162} />
                       </Link>
                     </div>
-                  <div className='block lgNav:hidden -mt-2.5 -ml-5 sm:mt-4'>
+                  <div className='block lgNav:hidden -ml-6'>
                     <Link href='/'>
                         <Lottie options={defaultOptions} height={86} width={162} />
                       </Link>
               </div>
             </div>
 
-            <div className='sm:hidden text-black-white-200 flex justify-center items-center min-w-[10%] pt-2 pr-4'>
+            <div className='text-black-white-200 flex justify-center items-center min-w-[10%] pt-2 pr-4'>
               <span
                 className={`hover:underline ${
                   router.pathname === '/en' ? 'enLink' : 'enLinkSelected'
