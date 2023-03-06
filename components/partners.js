@@ -86,7 +86,7 @@ export default function Partners() {
             content of this site. We would like to hear what you think, what you would like
             differently, what you think is missing, and of course, we would also like to hear what
             makes you happy.{' '}
-            <Link href='/contact'>
+            <Link href='mailto:info@circulaw.nl'>
               <span className='underline'>Please send your feedback on this beta version.</span>
             </Link>
           </p>
