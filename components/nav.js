@@ -46,22 +46,21 @@ export default function Nav(props) {
     return (
       <>
         <div className='w-full bg-green-800'>
-          <BetaBanner type='home' />
-          <div className='flex justify-between global-margin sm:-mt-6'>
-            <div className='py-4 flex justify-start items-center'>
-              <div className='hidden lgNav:block'>
+          <div className='flex justify-between global-margin '>
+            <div className=' flex justify-start items-center'>
+              <div className='hidden lgNav:block -ml-6'>
                 <Link href='/'>
-                  <Image height={86} width={162} src={logo} alt='CircuLaw logo' quality={100} />
+                  <Lottie options={defaultOptions} height={86} width={162} />
                 </Link>
               </div>
-              <div className='block lgNav:hidden'>
+              <div className='block lgNav:hidden -ml-6'>
                 <Link href='/'>
-                  <Image height={24} width={120} src={logo} alt='CircuLaw logo' quality={100} />
+                  <Lottie options={defaultOptions} height={86} width={162} />
                 </Link>
               </div>
             </div>
 
-            <div className='sm:hidden text-black-white-200 flex justify-center items-center min-w-[10%] pt-2 pr-4'>
+            <div className='text-black-white-200 flex justify-center items-center min-w-[10%] pt-2 pr-4'>
               <span
                 className={`hover:underline ${
                   router.pathname === '/en' ? 'enLink' : 'enLinkSelected'
@@ -98,10 +97,10 @@ export default function Nav(props) {
               <div className=''>
                 <div className='inset-y-0 float-right flex items-center lgNav:hidden'>
                   {/* Mobile menu button */}
-                  <Disclosure.Button className=' p-2 rounded-md text-green-600 '>
+                  <Disclosure.Button className='p-2 rounded-md text-green-600'>
                     <span className='sr-only'>Open main menu</span>
                     {open ? (
-                      <XIcon className='block h-10 w-10' aria-hidden='true' />
+                      <XIcon className='block h-10 w-10 mt-7' aria-hidden='true' />
                     ) : (
                       <MenuIcon className='block h-10 w-10 mt-7' aria-hidden='true' />
                     )}
@@ -266,17 +265,17 @@ export default function Nav(props) {
               </div>
             </div>
             <Disclosure.Panel className='lgNav:hidden bg-black-white-200 pt-2 pb-4 ml-5'>
-              <Disclosure.Button as='span' className='flex justify-end items-center pr-6'>
+              <Disclosure.Button as='span' className='flex justify-end items-center pr-8'>
                 <span
                   className={`hover:underline ${router.pathname === '/en' ? '' : 'font-semibold'}`}
                 >
-                  <Link href='/'>NL</Link>
+                  <Link href='/'>NL&nbsp;</Link>
                 </span>
                 <span className='px-1 enLink'>|</span>
                 <span
                   className={`hover:underline ${router.pathname === '/en' ? 'font-semibold' : ''}`}
                 >
-                  <Link href='/en'>EN</Link>
+                  <Link href='/en'>&nbsp;EN</Link>
                 </span>
               </Disclosure.Button>
               <Disclosure.Button
@@ -355,9 +354,9 @@ export default function Nav(props) {
                     <Disclosure.Button className='p-2 rounded-md text-black-white-200 '>
                       <span className='sr-only'>Open main menu</span>
                       {open ? (
-                        <XIcon className='block h-10 w-10' aria-hidden='true' />
+                        <XIcon className='block h-10 w-10 mt-7' aria-hidden='true' />
                       ) : (
-                        <MenuIcon className='block h-10 w-10 mt-6' aria-hidden='true' />
+                        <MenuIcon className='block h-10 w-10 mt-7' aria-hidden='true' />
                       )}
                     </Disclosure.Button>
                   </div>
@@ -516,13 +515,13 @@ export default function Nav(props) {
               </div>
               <Disclosure.Panel className='lgNav:hidden bg-black-white-200'>
                 <div className='pt-2 pb-4 ml-5'>
-                  <Disclosure.Button as='span' className='flex justify-end items-center pt-2 pr-6'>
+                  <Disclosure.Button as='span' className='flex justify-end items-center pt-2 pr-8'>
                     <span
                       className={`hover:underline ${
                         router.pathname === '/en' ? '' : 'font-semibold'
                       }`}
                     >
-                      <Link href='/'>NL</Link>
+                      <Link href='/'>NL&nbsp;</Link>
                     </span>
                     <span className='px-1 enLink'>|</span>
                     <span
@@ -530,7 +529,7 @@ export default function Nav(props) {
                         router.pathname === '/en' ? 'font-semibold' : ''
                       }`}
                     >
-                      <Link href='/en'>EN</Link>
+                      <Link href='/en'>&nbsp;EN</Link>
                     </span>
                   </Disclosure.Button>
                   <Disclosure.Button

@@ -114,7 +114,7 @@ export default function English({ data }) {
                 <div className='pb-6'>
                   <Link href='/'>
                     <CustomButton color='whiteShaddow'>
-                      View website (dutch)&nbsp;
+                      View website (Dutch)&nbsp;
                       <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                     </CustomButton>
                   </Link>
@@ -141,7 +141,10 @@ export default function English({ data }) {
                 <div className='py-6'>
                   <p className='p-base sm:p-lg'>
                     Questions? Contact us:
-                    <a href='mailto:info@circulaw.nl'> <span className='block underline font-semibold'>info@Circulaw.nl</span></a>
+                    <a href='mailto:info@circulaw.nl'>
+                      {' '}
+                      <span className='block underline font-semibold'>info@Circulaw.nl</span>
+                    </a>
                   </p>
                 </div>
               </div>
