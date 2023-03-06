@@ -48,16 +48,16 @@ export default function Nav(props) {
         <div className='w-full bg-green-800'>
           <BetaBanner type='home' />
           <div className='flex justify-between global-margin sm:-mt-6'>
-            <div className='py-4 flex justify-start items-center'>
-              <div className='hidden lgNav:block'>
-                <Link href='/'>
-                  <Image height={86} width={162} src={logo} alt='CircuLaw logo' quality={100} />
-                </Link>
-              </div>
-              <div className='block lgNav:hidden'>
-                <Link href='/'>
-                  <Image height={24} width={120} src={logo} alt='CircuLaw logo' quality={100} />
-                </Link>
+            <div className=' flex justify-start items-center'>
+              <div className='hidden lgNav:block py-4 lgNav:py-0'>
+                      <Link href='/'>
+                        <Lottie options={defaultOptions} height={86} width={162} />
+                      </Link>
+                    </div>
+              <div className='block lgNav:hidden py-4'>
+              <Link href='/'>
+                        <Lottie options={defaultOptions} height={86} width={162} />
+                      </Link>
               </div>
             </div>
 
