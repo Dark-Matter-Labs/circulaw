@@ -54,8 +54,8 @@ export default function Nav(props) {
                         <Lottie options={defaultOptions} height={86} width={162} />
                       </Link>
                     </div>
-              <div className='block lgNav:hidden pt-4'>
-              <Link href='/'>
+                  <div className='block lgNav:hidden -mt-2.5 -ml-5 sm:mt-4'>
+                    <Link href='/'>
                         <Lottie options={defaultOptions} height={86} width={162} />
                       </Link>
               </div>
