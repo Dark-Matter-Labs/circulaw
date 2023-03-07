@@ -57,7 +57,7 @@ export default function English({ data }) {
     <>
       <Layout>
         <div className='bg-en-background bg-center bg-cover'>
-          <div className='hidden sm:block h-[70vh] lg:h-[60vh] bg-en-header bg-left bg-cover'>
+          <div className='hidden sm:block h-auto bg-en-header bg-left bg-cover'>
             <div className='global-margin flex h-full'>
               <div className='flex items-center justify-center flex-wrap text-center text-black-white-200 w-3/5 mx-auto py-12'>
                 <h1 className='sm:header text-black-white-200 py-10'>
