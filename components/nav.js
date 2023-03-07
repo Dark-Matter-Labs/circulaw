@@ -80,7 +80,7 @@ export default function Nav(props) {
   }
   return (
     <div className={`${router.pathname === '/' ? 'bg-header' : ''}`}>
-      <div className='pb-16 lgNav:pb-24'>
+      <div className={`${router.pathname === '/' ? 'pb-16 lgNav:pb-24' : ''}`}>
         <Disclosure
           as='nav'
           className={`${
