@@ -23,12 +23,12 @@ export default function OverviewPageHeader({ props, page }) {
             <MeasureLinks type={props.thema} page={page} />
           </div>
         </div>
-        <div className='items-center justify-start grid grid-cols-10'>
-          <div className='col-span-1 flex h-full w-full items-start pt-2'>
+        <div className='items-center justify-center grid grid-cols-10 pb-2'>
+          <div className='col-span-1 flex h-12 w-12 sm:h-full sm:w-full items-center'>
             <Image src={props.icon} alt='Thema icon' width={107} height={107} />
           </div>
           <div className='col-span-9'>
-            <h1 className='mobile sm:desktop text-black py-1 max-w-3xl pl-6'>{props.title}</h1>
+            <h1 className='mobile sm:desktop text-black max-w-3xl pl-6'>{props.title}</h1>
           </div>
         </div>
       </div>
