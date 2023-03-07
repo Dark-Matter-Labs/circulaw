@@ -4,9 +4,9 @@ import { ArrowDownIcon } from '@heroicons/react/outline';
 
 export default function HomepageHeader() {
   return (
-    <main className='h-auto -mt-[23vh] global-margin'>
+    <main className='h-auto global-margin'>
       <div className='h-full mx-auto max-w-4xl'>
-        <div className='text-center  pt-[22vh] '>
+        <div className='text-center'>
           <div className='header hidden md:block text-black-white-200 py-10'>
             <span className='block '>Regelgeving voor een circulaire economie</span>{' '}
           </div>
