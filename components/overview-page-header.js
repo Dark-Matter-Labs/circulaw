@@ -24,7 +24,7 @@ export default function OverviewPageHeader({ props, page }) {
           </div>
         </div>
         <div className='items-center justify-center grid grid-cols-10 pb-2'>
-          <div className='col-span-1 flex h-full w-full items-center'>
+          <div className='col-span-1 flex h-12 w-12 sm:h-full sm:w-full items-center'>
             <Image src={props.icon} alt='Thema icon' width={107} height={107} />
           </div>
           <div className='col-span-9'>
