@@ -4,36 +4,38 @@ import { ArrowDownIcon } from '@heroicons/react/outline';
 
 export default function HomepageHeader() {
   return (
-    <main className='global-margin sm:mt-2'>
-      <div className='text-center mx-auto max-w-4xl'>
-        <div className='header hidden md:block text-black-white-200 py-10'>
-          <span className='block '>Regelgeving voor een circulaire economie</span>{' '}
-        </div>
-        <h1 className='text-left mobile block md:hidden text-black-white-200 py-4'>
-          <span className='block '>Regelgeving voor een circulaire economie</span>{' '}
-        </h1>
-        <p className='text-left sm:text-center mt-2 p-base max-w-sm sm:max-w-full sm:p-xl text-black-white-200 pb-8'>
-          CircuLaw laat zien hoe je met bestaande juridische instrumenten de circulaire economie kan
-          versnellen. We helpen beleidsmakers bij het selecteren en toepassen van die instrumenten.
-          Ook bieden we inzicht in de samenhang tussen juridische instrumenten en overzicht over de
-          verdeling van verantwoordelijkheden.
-        </p>
-        <div className='mt-2 sm:flex sm:justify-center md:mt-2'>
-          <div className='rounded-md'>
-            <CustomButton color='home'>
-              <ScrollLink to='thema' smooth={true}>
-                Bekijk de thema&rsquo;s{' '}
-                <ArrowDownIcon className='inline-block h-4 w-4' aria-hidden='true' />
-              </ScrollLink>
-            </CustomButton>
+    <main className='h-auto -mt-[23vh] global-margin'>
+      <div className='h-full mx-auto max-w-4xl'>
+        <div className='text-center  pt-[22vh] '>
+          <div className='header hidden md:block text-black-white-200 py-10'>
+            <span className='block '>Regelgeving voor een circulaire economie</span>{' '}
           </div>
-          <div className='mt-3 rounded-md sm:mt-0 sm:ml-3'>
-            <CustomButton color='home'>
-              <ScrollLink to='waarom' smooth={true}>
-                Meer over CircuLaw?{' '}
-                <ArrowDownIcon className='inline-block h-4 w-4' aria-hidden='true' />
-              </ScrollLink>
-            </CustomButton>
+          <h1 className='text-left mobile block md:hidden text-black-white-200 py-4'>
+            <span className='block '>Regelgeving voor een circulaire economie</span>{' '}
+          </h1>
+          <p className='text-left sm:text-center mt-2 p-base max-w-sm sm:max-w-full sm:p-xl text-black-white-200 pb-8'>
+            CircuLaw laat zien hoe je met bestaande juridische instrumenten de circulaire economie
+            kan versnellen. We helpen beleidsmakers bij het selecteren en toepassen van die
+            instrumenten. Ook bieden we inzicht in de samenhang tussen juridische instrumenten en
+            overzicht over de verdeling van verantwoordelijkheden.
+          </p>
+          <div className='mt-2 sm:flex sm:justify-center md:mt-2'>
+            <div className='rounded-md'>
+              <CustomButton color='home'>
+                <ScrollLink to='thema' smooth={true}>
+                  Bekijk de thema&rsquo;s{' '}
+                  <ArrowDownIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                </ScrollLink>
+              </CustomButton>
+            </div>
+            <div className='mt-3 rounded-md sm:mt-0 sm:ml-3'>
+              <CustomButton color='home'>
+                <ScrollLink to='waarom' smooth={true}>
+                  Meer over CircuLaw?{' '}
+                  <ArrowDownIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                </ScrollLink>
+              </CustomButton>
+            </div>
           </div>
         </div>
       </div>

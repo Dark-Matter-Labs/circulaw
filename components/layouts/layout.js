@@ -13,6 +13,7 @@ export default function Layout(props) {
   const { data: vraagAntwoordSlug } = useSWR(groq`${siteSettingsQuerys.vraagAntwoord}`, fetcher);
   const aboutSlugs = aboutPageSlugs?.slugs;
   const vraagSlug = vraagAntwoordSlug?.slug;
+  
   return (
     <>
       <Nav vraagSlug={vraagSlug} aboutSlugs={aboutSlugs} />
