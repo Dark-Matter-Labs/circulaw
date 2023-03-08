@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import IconWood from '../public/icons/woodIcon.svg';
-import WindmillIcon from '../public/winturbines.svg';
+import WindmillIcon from '../public/icons/windmill.png';
 import MatrassenIcon from '../public/icons/matressIcon.svg';
 import RTooltip from '../components/r-ladder-tooltip';
 import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
@@ -13,9 +13,6 @@ const viewportType = {
   desktop:
     'hidden sm:block float-right px-8 ml-6 bg-black-white-200 h-[26rem] sticky top-40 mb-20 bg-black-white-200',
 };
-{
-  /* still need to implement the design when design is finished - mainly fonts + colors */
-}
 
 export default function MeasureOverview({ viewport, children, data, ...props }) {
   let viewportClasses = viewportType[viewport];
@@ -23,7 +20,6 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
     <div {...props} className={`${viewportClasses}`}>
       <div className='px-8 pb-10 sm:pb-0 sm:px-0 py-6 block h-[26rem]'>
         {children}
-
         <div className='container pb-12 sm:pb-1 flex justify-between'>
           <div className=''>
             <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()} passHref>

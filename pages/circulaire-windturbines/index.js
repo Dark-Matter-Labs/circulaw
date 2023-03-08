@@ -54,7 +54,6 @@ export default function Windturbine({ laws }) {
                 <LinkIcon />
               </a>
             </span>
-            {/* TODO: unhide div when PDF is ready */}
             <div className=''>
               {' '}
               Zie het{' '}

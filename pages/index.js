@@ -3,11 +3,11 @@ import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import Layout from '../components/layouts/layout';
 import SectionTypes from '../components/section-types-list';
-import waaromImage from '../public/waarom.png';
-import watImage from '../public/wat.png';
-import hoeverImage from '../public/hoever.png';
+import waaromImage from '../public/home-page/waarom.png';
+import watImage from '../public/home-page/wat.png';
+import hoeverImage from '../public/home-page/hoever.png';
 import client from '../lib/sanity';
-import { siteSettingsQuerys } from '../lib/querys';
+import { siteSettingsQuerys } from '../lib/queries';
 
 export default function Index({ ...props }) {
   const aboutSlugs = props.overCirculaw.slugs;
@@ -87,8 +87,7 @@ export default function Index({ ...props }) {
                   Gemeente Amsterdam, Dark Matter Laboratories, EIT Climate-KIC, de Provincies
                   Noord-Holland en Flevoland, Rijksdienst voor Ondernemend Nederland (RVO), het MRA
                   (Metropoolregio Amsterdam) Kernteam Houtbouw, Belastingdienst, TU Delft, Erasmus
-                  School of LAW, de VU, Wageningen Universiteit (WUR Law group), Stichting
-                  Koninklijk Nederlands Normalisatie Instituut (NEN).
+                  School of LAW, de VU, Wageningen Universiteit (WUR Law group).
                 </p>
                 <span className='text-green-500 link-lg'>
                   Lees verder <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />

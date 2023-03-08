@@ -1,174 +1,58 @@
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { PortableText } from '@portabletext/react';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
 
 import Layout from '../../components/layouts/layout';
 import client from '../../lib/sanity';
-import LinkIcon from '../../components/link-icon';
 import MeasureOverview from '../../components/measure-overview';
 import MeasureTable from '../../components/measure-table';
-import CustomButton from '../../components/custom-button';
-
-const pathsQuery = `
-*[_type == "measure" && defined(slug.current)][].slug.current
-`;
-
-const measureQuery = `
-*[_type == "measure" && slug.current == $slug] [0] {
-    _id,
-    titel,
-    subtitel,
-    thema,
-    rLadder,
-    subrechtsgebied,
-    juridischInvloed,
-    invloedTooltipText,
-    juridischeHaalbaarheid,
-    JHTooltipText,
-    rechtsgebied,
-    citeertitel,
-    artikel,
-    artikelLink,
-    lawDate,
-    overheidslaag,
-    content,
-    juridischeToelichting,
-}
-`;
+import {
+  greenBoxComponent,
+  hoverTextComponent,
+  pdfBlockComponentMeasurePage,
+  smallParaComponent,
+  dropDownComponent,
+} from '../../lib/portable-text/portable-text-types';
+import {
+  bulletComponent,
+  numberComponent,
+  bulletItemComponent,
+  numberItemComponent,
+} from '../../lib/portable-text/portable-text-lists';
+import {
+  firstH2Component,
+  h2Component,
+  h3Component,
+  normalTextComponent,
+} from '../../lib/portable-text/portable-text-blocks';
+import { linkComponent } from '../../lib/portable-text/portable-text-marks';
+import { measurePagePathsQuery, measureQuery } from '../../lib/queries';
 
 const components = {
   types: {
-    greenBox: ({ value }) => (
-      <div className='my-10'>
-        <div className='bg-green-300 w-full px-8 py-8'>
-          <h2 className='pb-6 mobile sm:desktop'>{value?.greenBoxTitle}</h2>
-          <div className=' p-lg'>{value?.greenBoxText}</div> {/* need to change */}
-        </div>
-      </div>
-    ),
-    hoverText: ({ value, isInline }) => (
-      <>
-        <button
-          type='button'
-          className='group'
-          style={{ display: isInline ? 'inline-block' : 'block' }}
-        >
-          <svg
-            className='inline'
-            width='24'
-            height='24'
-            viewBox='0 2 30 30'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <circle cx='12' cy='15' r='12' fill='#676868' />
-            <path
-              d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
-              fill='#F8FAF8'
-            />
-          </svg>
-          <div className='inline-block text-left z-90 max-w-xs absolute invisible group-hover:visible z-10 py-3 px-6 bg-black-white-300 text-black-white-800 popup-base opacity-0 group-hover:opacity-100 transition tooltip'>
-            {value.hoverText}
-          </div>
-        </button>
-      </>
-    ),
-    pdfBlock: ({ value }) => {
-      // eslint-disable-next-line
-      const [_file, id, extension] = value.asset._ref.split('-');
-      return (
-        <div className=''>
-          <div className='bg-green-600 '>
-            <div className='gradient-pdf p-10 my-10 relative overflow-hidden'>
-              <div className='absolute -bottom-44 -right-44 h-96 w-96 invisible md:visible'>
-                <Image src='/pdf-deco.png' alt='decorative image' width={584} height={562} />
-              </div>
-              <h2 className='pb-2 mobile sm:desktop text-white'>{value.pdfTitle}</h2>{' '}
-              {/* need to change text white */}
-              <p className=' p-lg text-black-white-200 pb-4'>{value.pdfText}</p>{' '}
-              {/* need to change body text */}
-              <a
-                href={`https://cdn.sanity.io/files/${
-                  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '2vfoxb3h'
-                }/${process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'}/${id}.${extension}`}
-                target='_blank'
-                rel='noreferrer'
-              >
-                <CustomButton color='toPdf'>
-                  {value.buttonText ? (
-                    <span>{value.buttonText} &nbsp;</span>
-                  ) : (
-                    <span>Bekijk de leidraad &nbsp;</span>
-                  )}
-
-                  <Image
-                    src='/icons/pdf-icon.svg'
-                    width={23}
-                    height={23}
-                    alt='icon of pdf'
-                    className='ml-2'
-                  />
-                </CustomButton>
-              </a>
-            </div>
-          </div>
-        </div>
-      );
-    },
-    smallPara: ({ value }) => (
-      <div className='flex justify-left pl-8 sm:pl-12'>
-        <div className='mb-10 pt-10 w-5/6'>
-          <h4 className='mobile sm:desktop'>{value.smallParaTitle}</h4>
-          <p className='p-base'>{value.smallParaText}</p>
-        </div>
-      </div>
-    ),
+    greenBox: greenBoxComponent,
+    hoverText: hoverTextComponent,
+    pdfBlock: pdfBlockComponentMeasurePage,
+    smallPara: smallParaComponent,
+    dropDown: dropDownComponent,
   },
   list: {
-    bullet: ({ children }) => (
-      <div className='newlineDisplay p-lg truncate'>
-        <ul className='list-disc pl-6 p-lg'>{children}</ul>
-      </div>
-    ),
-    number: ({ children }) => (
-      <div className='newlineDisplay p-lg truncate'>
-        <ol className='list-decimal pl-6 pb-4 p-lg'>{children}</ol>
-      </div>
-    ),
+    bullet: bulletComponent,
+    number: numberComponent,
   },
   listItem: {
-    number: ({ children }) => <li className='py-0.5 p-lg'>{children}</li>,
-    bullet: ({ children }) => <li className='py-0.5 p-lg'>{children}</li>,
+    number: bulletItemComponent,
+    bullet: numberItemComponent,
   },
   block: {
-    firstH2: ({ children }) => <h2 className='pb-[18px] mobile sm:desktop'>{children}</h2>,
-    h2: ({ children }) => <h2 className='pt-14 pb-[18px] mobile sm:desktop'>{children}</h2>,
-    h3: ({ children }) => <h3 className='pt-14 pb-[18px] mobile sm:desktop'>{children}</h3>,
+    firstH2: firstH2Component,
+    h2: h2Component,
+    h3: h3Component,
     // need to add other styles here
-    normal: ({ children }) => (
-      <p className='newlineDisplay p-lg py-2'>{children}</p> // check if this is correct
-    ),
+    normal: normalTextComponent,
   },
   marks: {
-    link: ({ children, value }) =>
-      value.blank == true ? (
-        <>
-          <a
-            className='text-green-500 link-lg inline-flex'
-            href={value.href}
-            target='_blank'
-            rel='noreferrer'
-          >
-            <span>{children}</span>
-            <LinkIcon size='desktop' />
-          </a>
-        </>
-      ) : (
-        <a className='text-green-500  link-lg' href={value.href}>
-          {children}
-        </a>
-      ),
+    link: linkComponent,
   },
 };
 
@@ -216,7 +100,7 @@ export default function Measure({ data }) {
 }
 
 export async function getStaticPaths() {
-  const paths = await client.fetch(pathsQuery);
+  const paths = await client.fetch(measurePagePathsQuery);
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
     fallback: true,

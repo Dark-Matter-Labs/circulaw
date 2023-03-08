@@ -5,9 +5,14 @@
   "license": "GPL-3.0-or-later",
   "scripts": {
     "dev": "next dev",
-    "cms": "concurrently \"next dev\" \"cd studio && yarn && yarn dev\"",
+    "dev:staging": "env-cmd -e staging next dev",
+    "dev:prod": "env-cmd -e production next dev",
+    "cms:staging": "env-cmd -e staging concurrently \"next dev\" \"cd studio && yarn && yarn dev\"",
+    "cms:prod": "env-cmd -e production concurrently \"next dev\" \"cd studio && yarn && yarn dev\"",
     "prebuild": "echo 'Building Sanity to public/studio' && cd studio && yarn && npx @sanity/cli build ../public/studio -y && echo 'Done'",
     "build": "next build",
+    "build:staging": "env-cmd -e staging next build",
+    "build:prod": "env-cmd -e production next build",
     "start": "next start",
     "clean": "prettier --write \"(pages|components|studio)/**/*.+(js|jsx|json|css|md)\" --config ./.prettier.json",
     "lint": "next lint",
@@ -42,14 +47,15 @@
     "use-persisted-state": "^0.3.3"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.6",
+    "autoprefixer": "^10.4.13",
     "concurrently": "^7.6.0",
+    "env-cmd": "^10.1.0",
     "eslint": "8.4.1",
     "eslint-config-next": "^13.1.1",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^8.0.2",
-    "postcss": "^8.3.5",
+    "postcss": "^8.4.21",
     "prettier": "2.5.1",
-    "tailwindcss": "^2.2.4"
+    "tailwindcss": "^3.2.7"
   }
 }

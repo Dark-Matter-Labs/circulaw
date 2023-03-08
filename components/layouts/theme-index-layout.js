@@ -25,7 +25,7 @@ export default function ThemeLayout({ bgHero, ...props }) {
                 <p className='pt-4 text-black-white-200 p-lg'>
                   {props.headerSubtitle}{' '}
                   {props.headerLinkText && (
-                    <span className='text-green-300 link-mobile sm:link-desktop inline-block  '>
+                    <span className='text-green-300 link-base inline-block  '>
                       <Link href={props.headerLinkURL} target='_blank' rel='noopener noreferrer'>
                         {props.headerLinkText}
                         <span className='inline-block h-4 w-4 text-green-300'>
@@ -60,10 +60,10 @@ export default function ThemeLayout({ bgHero, ...props }) {
             <p className=' pb-3'>
               {props.headerSubtitle}
               {props.headerLinkText && (
-                <span className='text-green-500 link-mobile sm:link-desktop inline-block'>
+                <span className='text-green-500 link-base inline-block'>
                   <a href={props.headerLinkURL} target='_blank' rel='noopener noreferrer'>
                     {props.headerLinkText}
-                    <LinkIcon size='desktop' />
+                    <LinkIcon />
                   </a>
                 </span>
               )}

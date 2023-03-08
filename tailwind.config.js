@@ -1,11 +1,15 @@
+
+
 module.exports = {
   mode: 'jit',
   purge: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
     './public/**/*.html',
+    './lib/**/*.{js,ts,jsx,tsx}',
+    './utils/**/*.{js,ts,jsx,tsx}',
+    
   ],
-  darkMode: false,
   theme: {
     extend: {
       colors: {
@@ -60,7 +64,7 @@ module.exports = {
         17: '96px'
       },
       screens: {
-        lg: '1145px',
+        lgNav: '1430px',
       },
       spacing: {
         '128': '32rem',
@@ -72,6 +76,8 @@ module.exports = {
         'list-card': 'url("/thema-card-background/list-bg.png")',
         'samenhang-card': 'url("/thema-card-background/samenhang-bg.png")',
         'waarvoor-card': 'url("/thema-card-background/waaroov-bg.png")',
+        'en-background': 'url("/Background-en-page.png")',
+        'en-header': 'url("/en-deco-header.png")',
       },
     },
   },

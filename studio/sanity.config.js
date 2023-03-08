@@ -5,29 +5,42 @@ import { schemaTypes } from './schemas';
 import { Structure } from './desk-structure';
 import Logo from './components/logo';
 
-export default defineConfig({
-  name: 'CircuLaw',
-  title: 'CircuLaw',
-
-  projectId: '2vfoxb3h',
-  dataset: 'production',
-
-  basePath: '/studio',
-
-  plugins: [
-    deskTool({
-      structure: Structure,
-    }),
-    visionTool(),
-  ],
-
-  schema: {
-    types: schemaTypes,
-  },
-
-  studio: {
-    components: {
-      logo: Logo,
+export default defineConfig([
+  {
+    name: 'CircuLaw',
+    title: 'CircuLaw',
+    projectId: '2vfoxb3h',
+    dataset: 'production',
+    basePath: '/studio',
+    plugins: [
+      deskTool({
+        structure: Structure,
+      }),
+      visionTool(),
+    ],
+    schema: {
+      types: schemaTypes,
+    },
+    studio: {
+      components: {
+        logo: Logo,
+      },
     },
   },
-});
+  {
+    name: 'CircuLawStaging',
+    title: 'CircuLaw Staging',
+    projectId: '2vfoxb3h',
+    dataset: 'staging',
+    basePath: '/staging',
+    plugins: [
+      deskTool({
+        structure: Structure,
+      }),
+      visionTool(),
+    ],
+    schema: {
+      types: schemaTypes,
+    },
+  },
+]);
