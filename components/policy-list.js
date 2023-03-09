@@ -4,6 +4,7 @@ import Image from 'next/image';
 import IconWood from '../public/icons/houtbuowSm.svg';
 import WindmillIcon from '../public/icons/windmill.png';
 import MatrassenIcon from '../public/icons/matressIcon.svg';
+import { Fragment } from 'react';
 
 export default function PolicyList(props) {
   let lawData = [];
@@ -65,7 +66,7 @@ export default function PolicyList(props) {
                 </span>
                 <div className='block pb-1'>
                   {law?.overheidslaag?.map((level) => (
-                    <>
+                    <Fragment key={level + law.titel}>
                       <h6
                         key={level + law.titel + 'heading6'}
                         className='capitalize text-green-500 hidden sm:inline'
@@ -78,7 +79,7 @@ export default function PolicyList(props) {
                       >
                         {level} {law?.overheidslaag.slice(-1)[0] !== level && <span>- </span>}
                       </h4>
-                    </>
+                    </Fragment>
                   ))}
                 </div>
 
