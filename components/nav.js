@@ -355,14 +355,14 @@ export default function Nav(props) {
                     Thema&apos;s
                   </Disclosure.Button>
                   {waardeketens.map((item) => (
-                    <>
+                    <div key={item.name}>
                       <Disclosure.Button
                         as='span'
                         className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
                       >
                         <Link href={item.href}>{item.name}</Link>
                       </Disclosure.Button>
-                    </>
+                    </div>
                   ))}
                   <hr className='my-4 mx-2 border-green-600' />
                   <Disclosure.Button
