@@ -1,15 +1,8 @@
-import { useEffect } from 'react';
-import Image from 'next/image';
 import Layout from '../../components/layouts/layout';
 import mattressIcon from '../../public/icons/matressIcon.svg';
 import SamenhangLayout from '../../components/layouts/samenhang-layout';
-import diagram from '../../public/samenhang/Matress_page.svg';
 
 export default function InfoPage() {
-  useEffect(() => {
-    import('image-map-resizer').then((module) => module.default());
-  }, []);
-
   return (
     <Layout>
       <SamenhangLayout
@@ -19,386 +12,151 @@ export default function InfoPage() {
         p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
       />
       <div className='bg-green-600 border-b border-black-white-100 mt-10'>
-        <div className='flex justify-center'>
-          <Image src={diagram} alt='diagram' useMap='#image-map' />
-          <map name='image-map'>
-            <area
-              target=''
-              alt='MIA'
-              title='MIA'
-              href='https://www.circulaw.nl/measures/de-milieu-investeringsaftrek-(mia)'
-              coords='102,311,456,347'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Omzetbelasting'
-              title='Omzetbelasting'
-              href='https://www.circulaw.nl/measures/verlaging-omzetbelasting-bij-matras-als-dienst'
-              coords='102,360,457,396'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='VAMIL'
-              title='VAMIL'
-              href='https://www.circulaw.nl/measures/willekeurige-afschrijving-op-milieu-investeringen-inzetten-(vamil)'
-              coords='102,411,459,446'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Landelijk afvalbeheerplan'
-              title='Landelijk afvalbeheerplan'
-              href='https://www.circulaw.nl/measures/circulariteit-bevorderen-via-het-landelijk-afvalbeheerplan'
-              coords='997,273,1349,312'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Statiegeld'
-              title='Statiegeld'
-              href='https://www.circulaw.nl/measures/statiegeld-en-matrassen'
-              coords='997,327,1349,363'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Terugnamegarantie'
-              title='Terugnamegarantie'
-              href='https://www.circulaw.nl/measures/terugnamegarantie-voor-matrassen'
-              coords='994,378,1349,415'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Terugnamegarantie'
-              title='Terugnamegarantie'
-              href='https://www.circulaw.nl/measures/terugnamegarantie-voor-matrassen'
-              coords='995,432,1349,467'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Heffing'
-              title='Heffing'
-              href='https://www.circulaw.nl/measures/afvalstoffenheffing-gemeenten'
-              coords='994,484,1350,522'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Afvalbeheer'
-              title='Afvalbeheer'
-              href='https://www.circulaw.nl/measures/circulariteit-bevorderen-via-het-landelijk-afvalbeheerplan'
-              coords='994,538,1349,570'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Afvalstoffenverordening'
-              title='Afvalstoffenverordening'
-              href='https://www.circulaw.nl/measures/circulariteit-bevorderen-via-de-afvalstoffenverordening'
-              coords='995,586,1349,621'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Terugnamegarantie'
-              title='Terugnamegarantie'
-              href='https://www.circulaw.nl/measures/terugnamegarantie-voor-matrassen'
-              coords='992,636,1349,673'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Subsidie'
-              title='Subsidie'
-              href='https://www.circulaw.nl/measures/subsidie-voor-circulaire-matrassen'
-              coords='87,1047,445,1086'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Subsidie'
-              title='Subsidie'
-              href='https://www.circulaw.nl/measures/subsidie-voor-circulaire-matrassen'
-              coords='87,1104,442,1140'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Subsidie'
-              title='Subsidie'
-              href='https://www.circulaw.nl/measures/subsidie-voor-circulaire-matrassen'
-              coords='87,1155,443,1188'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Inkoop'
-              title='Inkoop'
-              href='https://www.circulaw.nl/measures/inkoop-van-circulaire-matrassen'
-              coords='542,1068,895,1105'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Inkoop'
-              title='Inkoop'
-              href='https://www.circulaw.nl/measures/inkoop-van-circulaire-matrassen'
-              coords='540,1124,894,1156'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Inkoop'
-              title='Inkoop'
-              href='https://www.circulaw.nl/measures/inkoop-van-circulaire-matrassen'
-              coords='540,1174,896,1210'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Sponsoring'
-              title='Sponsoring'
-              href='https://www.circulaw.nl/measures/sponsoring-door-matrasproducenten---commerci%C3%ABle-mediadiensten'
-              coords='990,1081,1339,1116'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Buitenreclame'
-              title='Buitenreclame'
-              href='https://www.circulaw.nl/measures/circulaire-matrassen-in-buitenreclame'
-              coords='983,1132,1340,1165'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Commercieel reclameverbod'
-              title='Commercieel reclameverbod'
-              href='https://www.circulaw.nl/measures/sponsoring-door-matrasproducenten---commerci%C3%ABle-mediadiensten'
-              coords='987,1180,1343,1216'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Financieel reclameverbod'
-              title='Financieel reclameverbod'
-              href='https://www.circulaw.nl/measures/subsidie-voor-circulaire-matrassen'
-              coords='985,1233,1343,1268'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Buitenreclame'
-              title='Buitenreclame'
-              href='https://www.circulaw.nl/measures/circulaire-matrassen-in-buitenreclame'
-              coords='988,1287,1341,1322'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Buitenreclame'
-              title='Buitenreclame'
-              href='https://www.circulaw.nl/measures/circulaire-matrassen-in-buitenreclame'
-              coords='989,1339,1343,1371'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='PAAS'
-              title='PAAS'
-              href='https://www.circulaw.nl/measures/matrassen-inkopen-als-dienst---product-as-a-service'
-              coords='87,1695,442,1731'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='PAAS'
-              title='PAAS'
-              href='https://www.circulaw.nl/measures/matrassen-inkopen-als-dienst---product-as-a-service'
-              coords='88,1751,440,1784'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='PAAS'
-              title='PAAS'
-              href='https://www.circulaw.nl/measures/matrassen-inkopen-als-dienst---product-as-a-service'
-              coords='90,1802,440,1836'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Concurrentiegerichte dialoog'
-              title='Concurrentiegerichte dialoog'
-              href='https://www.circulaw.nl/measures/procedure-van-de-concurrentiegerichte-dialoog-'
-              coords='528,1694,889,1733'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Mededingingsprocedure'
-              title='Mededingingsprocedure'
-              href='https://www.circulaw.nl/measures/mededingingsprocedure-met-onderhandeling-'
-              coords='532,1744,885,1781'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Innovatiepartnerschap'
-              title='Innovatiepartnerschap'
-              href='https://www.circulaw.nl/measures/stimuleer-de-circulariteit-van-matrassen-met-een-innovatiepartnerschap-'
-              coords='532,1795,886,1833'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Concurrentiegerichte dialoog'
-              title='Concurrentiegerichte dialoog'
-              href='https://www.circulaw.nl/measures/procedure-van-de-concurrentiegerichte-dialoog-'
-              coords='531,1847,886,1881'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Mededingingsprocedure'
-              title='Mededingingsprocedure'
-              href='https://www.circulaw.nl/measures/mededingingsprocedure-met-onderhandeling-'
-              coords='532,1899,886,1934'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Innovatiepartnerschap'
-              title='Innovatiepartnerschap'
-              href='https://www.circulaw.nl/measures/stimuleer-de-circulariteit-van-matrassen-met-een-innovatiepartnerschap-'
-              coords='534,1949,885,1984'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Concurrentiegerichte dialoog'
-              title='Concurrentiegerichte dialoog'
-              href='https://www.circulaw.nl/measures/procedure-van-de-concurrentiegerichte-dialoog-'
-              coords='532,2003,886,2038'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Mededingingsprocedure'
-              title='Mededingingsprocedure'
-              href='https://www.circulaw.nl/measures/mededingingsprocedure-met-onderhandeling-'
-              coords='530,2056,886,2090'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Innovatiepartnerschap'
-              title='Innovatiepartnerschap'
-              href='https://www.circulaw.nl/measures/stimuleer-de-circulariteit-van-matrassen-met-een-innovatiepartnerschap-'
-              coords='531,2105,883,2141'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Subgunningscriteria'
-              title='Subgunningscriteria'
-              href='https://www.circulaw.nl/measures/circulariteit-uitvragen-via-subgunningscriteria-'
-              coords='995,1716,1348,1749'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Uitvoeringsvoorwaarden'
-              title='Uitvoeringsvoorwaarden'
-              href='https://www.circulaw.nl/measures/circulariteit-verwerken-in-de-bijzondere-uitvoeringsvoorwaarden-'
-              coords='993,1768,1347,1802'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Geschiktheidseisen'
-              title='Geschiktheidseisen'
-              href='https://www.circulaw.nl/measures/circulariteit-verwerken-in-geschiktheidseisen'
-              coords='995,1818,1348,1855'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Technische specificaties'
-              title='Technische specificaties'
-              href='https://www.circulaw.nl/measures/stimuleer-de-circulariteit-van-matrassen-met-technische-specificaties-'
-              coords='990,1870,1350,1904'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Subgunningscriteria'
-              title='Subgunningscriteria'
-              href='https://www.circulaw.nl/measures/circulariteit-uitvragen-via-subgunningscriteria-'
-              coords='997,1922,1345,1955'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Uitvoeringsvoorwaarden'
-              title='Uitvoeringsvoorwaarden'
-              href='https://www.circulaw.nl/measures/circulariteit-verwerken-in-de-bijzondere-uitvoeringsvoorwaarden-'
-              coords='999,1974,1345,2005'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Geschiktheidseisen'
-              title='Geschiktheidseisen'
-              href='https://www.circulaw.nl/measures/circulariteit-verwerken-in-geschiktheidseisen'
-              coords='999,2025,1347,2056'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Technische specificaties'
-              title='Technische specificaties'
-              href='https://www.circulaw.nl/measures/stimuleer-de-circulariteit-van-matrassen-met-technische-specificaties-'
-              coords='998,2072,1349,2106'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Subgunningscriteria'
-              title='Subgunningscriteria'
-              href='https://www.circulaw.nl/measures/circulariteit-uitvragen-via-subgunningscriteria-'
-              coords='997,2126,1348,2157'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Uitvoeringsvoorwaarden'
-              title='Uitvoeringsvoorwaarden'
-              href='https://www.circulaw.nl/measures/circulariteit-verwerken-in-de-bijzondere-uitvoeringsvoorwaarden-'
-              coords='996,2173,1344,2208'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Geschiktheidseisen'
-              title='Geschiktheidseisen'
-              href='https://www.circulaw.nl/measures/circulariteit-verwerken-in-geschiktheidseisen'
-              coords='994,2224,1346,2258'
-              shape='rect'
-            />
-            <area
-              target=''
-              alt='Technische specificaties'
-              title='Technische specificaties'
-              href='https://www.circulaw.nl/measures/stimuleer-de-circulariteit-van-matrassen-met-technische-specificaties-'
-              coords='998,2276,1348,2310'
-              shape='rect'
-            />
-          </map>
+        <div className='global-margin'>
+          <svg viewBox='0 0 2908 5048'>
+            <image width='2908' height='5048' xlinkHref='/samenhang/samh-matress.png'></image>{' '}
+            <a xlinkHref='https://www.circulaw.nl/measures/de-milieu-investeringsaftrek-(mia)'>
+              <rect x='218' y='622' fill='#fff' opacity='0' width='717' height='80'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/verlaging-omzetbelasting-bij-matras-als-dienst'>
+              <rect x='217' y='726' fill='#fff' opacity='0' width='717' height='75'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/willekeurige-afschrijving-op-milieu-investeringen-inzetten-(vamil)'>
+              <rect x='218' y='826' fill='#fff' opacity='0' width='718' height='76'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/subsidie-voor-circulaire-matrassen'>
+              <rect x='187' y='2104' fill='#fff' opacity='0' width='715' height='76'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/subsidie-voor-circulaire-matrassen'>
+              <rect x='186' y='2211' fill='#fff' opacity='0' width='719' height='78'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/subsidie-voor-circulaire-matrassen'>
+              <rect x='187' y='2315' fill='#fff' opacity='0' width='714' height='76'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/matrassen-inkopen-als-dienst---product-as-a-service'>
+              <rect x='186' y='3396' fill='#fff' opacity='0' width='715' height='76'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/matrassen-inkopen-als-dienst---product-as-a-service'>
+              <rect x='184' y='3503' fill='#fff' opacity='0' width='718' height='78'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/matrassen-inkopen-als-dienst---product-as-a-service'>
+              <rect x='183' y='3602' fill='#fff' opacity='0' width='721' height='81'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/inkoop-van-circulaire-matrassen'>
+              <rect x='1092' y='2139' fill='#fff' opacity='0' width='719' height='81'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/inkoop-van-circulaire-matrassen'>
+              <rect x='1095' y='2252' fill='#fff' opacity='0' width='717' height='76'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/inkoop-van-circulaire-matrassen'>
+              <rect x='1094' y='2352' fill='#fff' opacity='0' width='716' height='77'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/procedure-van-de-concurrentiegerichte-dialoog-'>
+              <rect x='1078' y='3395' fill='#fff' opacity='0' width='716' height='77'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/mededingingsprocedure-met-onderhandeling-'>
+              <rect x='1077' y='3495' fill='#fff' opacity='0' width='717' height='74'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/stimuleer-de-circulariteit-van-matrassen-met-een-innovatiepartnerschap-'>
+              <rect x='1078' y='3595' fill='#fff' opacity='0' width='716' height='75'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/procedure-van-de-concurrentiegerichte-dialoog-'>
+              <rect x='1079' y='3699' fill='#fff' opacity='0' width='714' height='77'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/mededingingsprocedure-met-onderhandeling-'>
+              <rect x='1077' y='3800' fill='#fff' opacity='0' width='720' height='77'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/stimuleer-de-circulariteit-van-matrassen-met-een-innovatiepartnerschap-'>
+              <rect x='1079' y='3901' fill='#fff' opacity='0' width='721' height='78'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/procedure-van-de-concurrentiegerichte-dialoog-'>
+              <rect x='1079' y='4007' fill='#fff' opacity='0' width='718' height='79'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/mededingingsprocedure-met-onderhandeling-'>
+              <rect x='1077' y='4117' fill='#fff' opacity='0' width='716' height='75'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/stimuleer-de-circulariteit-van-matrassen-met-een-innovatiepartnerschap-'>
+              <rect x='1078' y='4216' fill='#fff' opacity='0' width='718' height='79'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/circulariteit-bevorderen-via-het-landelijk-afvalbeheerplan'>
+              <rect x='1998' y='555' fill='#fff' opacity='0' width='723' height='82'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/statiegeld-en-matrassen'>
+              <rect x='2000' y='654' fill='#fff' opacity='0' width='717' height='80'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/terugnamegarantie-voor-matrassen'>
+              <rect x='2002' y='761' fill='#fff' opacity='0' width='715' height='77'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/terugnamegarantie-voor-matrassen'>
+              <rect x='2001' y='866' fill='#fff' opacity='0' width='712' height='81'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/afvalstoffenheffing-gemeenten'>
+              <rect x='1998' y='972' fill='#fff' opacity='0' width='718' height='85'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/circulariteit-bevorderen-via-het-landelijk-afvalbeheerplan'>
+              <rect x='1998' y='1072' fill='#fff' opacity='0' width='722' height='81'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/circulariteit-bevorderen-via-de-afvalstoffenverordening'>
+              <rect x='2001' y='1174' fill='#fff' opacity='0' width='722' height='80'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/terugnamegarantie-voor-matrassen'>
+              <rect x='1992' y='1274' fill='#fff' opacity='0' width='722' height='80'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/sponsoring-door-matrasproducenten---commerci%C3%ABle-mediadiensten'>
+              <rect x='1982' y='2165' fill='#fff' opacity='0' width='723' height='77'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/circulaire-matrassen-in-buitenreclame'>
+              <rect x='1987' y='2262' fill='#fff' opacity='0' width='714' height='79'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/sponsoring-door-matrasproducenten---commerci%C3%ABle-mediadiensten'>
+              <rect x='1990' y='2363' fill='#fff' opacity='0' width='714' height='79'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/subsidie-voor-circulaire-matrassen'>
+              <rect x='1988' y='2464' fill='#fff' opacity='0' width='716' height='86'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/circulaire-matrassen-in-buitenreclame'>
+              <rect x='1986' y='2574' fill='#fff' opacity='0' width='721' height='80'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/circulaire-matrassen-in-buitenreclame'>
+              <rect x='1985' y='2678' fill='#fff' opacity='0' width='722' height='79'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/circulariteit-uitvragen-via-subgunningscriteria-'>
+              <rect x='2001' y='3431' fill='#fff' opacity='0' width='717' height='94'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/circulariteit-verwerken-in-de-bijzondere-uitvoeringsvoorwaarden-'>
+              <rect x='2006' y='3541' fill='#fff' opacity='0' width='713' height='75'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/circulariteit-verwerken-in-geschiktheidseisen'>
+              <rect x='2001' y='3643' fill='#fff' opacity='0' width='716' height='76'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/stimuleer-de-circulariteit-van-matrassen-met-technische-specificaties-'>
+              <rect x='2003' y='3740' fill='#fff' opacity='0' width='716' height='80'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/circulariteit-uitvragen-via-subgunningscriteria-'>
+              <rect x='2001' y='3844' fill='#fff' opacity='0' width='717' height='83'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/circulariteit-verwerken-in-de-bijzondere-uitvoeringsvoorwaarden-'>
+              <rect x='2005' y='3951' fill='#fff' opacity='0' width='708' height='75'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/circulariteit-verwerken-in-geschiktheidseisen'>
+              <rect x='2001' y='4046' fill='#fff' opacity='0' width='716' height='81'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/stimuleer-de-circulariteit-van-matrassen-met-technische-specificaties-'>
+              <rect x='1995' y='4146' fill='#fff' opacity='0' width='721' height='79'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/circulariteit-uitvragen-via-subgunningscriteria-'>
+              <rect x='2000' y='4251' fill='#fff' opacity='0' width='718' height='77'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/circulariteit-verwerken-in-de-bijzondere-uitvoeringsvoorwaarden-'>
+              <rect x='1994' y='4349' fill='#fff' opacity='0' width='720' height='80'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/circulariteit-verwerken-in-geschiktheidseisen'>
+              <rect x='1997' y='4448' fill='#fff' opacity='0' width='723' height='82'></rect>
+            </a>
+            <a xlinkHref='https://www.circulaw.nl/measures/stimuleer-de-circulariteit-van-matrassen-met-technische-specificaties-'>
+              <rect x='2001' y='4552' fill='#fff' opacity='0' width='721' height='74'></rect>
+            </a>
+          </svg>
         </div>
       </div>
     </Layout>
