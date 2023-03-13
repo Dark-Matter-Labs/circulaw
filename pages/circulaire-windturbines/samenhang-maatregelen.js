@@ -30,13 +30,13 @@ export default function InfoPage() {
             <a xlinkHref='https://www.circulaw.nl/measures/duurzaamheidseisen-in-een-anterieure-overeenkomst'>
               <rect x='165' y='1495' fill='#fff' opacity='0' width='717' height='79'></rect>
             </a>
-            <a xlinkHref='https://www.circulaw.nl/measures/circulaire-windturbines-via-het-omgevingsplan'>
+            <a xlinkHref='https://www.circulaw.nl/measures/circulaire-windturbines-in-de-omgevingsvisie'>
               <rect x='1079' y='516' fill='#fff' opacity='0' width='719' height='79'></rect>
             </a>
-            <a xlinkHref='https://www.circulaw.nl/measures/circulaire-windturbines-via-het-omgevingsplan'>
+            <a xlinkHref='https://www.circulaw.nl/measures/circulaire-windturbines-in-de-omgevingsvisie'>
               <rect x='1075' y='621' fill='#fff' opacity='0' width='721' height='76'></rect>
             </a>
-            <a xlinkHref='https://www.circulaw.nl/measures/circulaire-windturbines-via-het-omgevingsplan'>
+            <a xlinkHref='https://www.circulaw.nl/measures/circulaire-windturbines-in-de-omgevingsvisie'>
               <rect x='1083' y='726' fill='#fff' opacity='0' width='716' height='78'></rect>
             </a>
             <a xlinkHref='https://www.circulaw.nl/measures/onteigening-en-circulaire-windturbines'>
