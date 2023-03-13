@@ -5,6 +5,7 @@ import Image from 'next/image';
 import LinkIcon from '../link-icon';
 
 export default function ThemeLayout({ bgHero, ...props }) {
+  const themaData = props.thema
   return (
     <>
       <div>
@@ -19,15 +20,15 @@ export default function ThemeLayout({ bgHero, ...props }) {
             </Link>
             <div className='grid col-span-8 grid-cols-8 sm:pl-12 sm:pt:12 md:pl-24 lg:pl-36 pb-14 pt-14 w-4/5'>
               <div className='col-span-8'>
-                <p className='text-black-white-200 inline-block header'>{props.title}</p>
+                <h1 className='text-black-white-200 inline-block header'>{themaData?.themaName}</h1>
               </div>
               <div className='col-span-7'>
                 <p className='pt-4 text-black-white-200 p-lg'>
-                  {props.headerSubtitle}{' '}
-                  {props.headerLinkText && (
+                  {themaData?.themaSubtitle}{' '}
+                  {themaData?.linkText && (
                     <span className='text-green-300 link-base inline-block  '>
-                      <Link href={props.headerLinkURL} target='_blank' rel='noopener noreferrer'>
-                        {props.headerLinkText}
+                      <Link href={themaData?.headerLink} target='_blank' rel='noopener noreferrer'>
+                        {themaData?.linkText}
                         <span className='inline-block h-4 w-4 text-green-300'>
                           <svg
                             width='24'
@@ -56,13 +57,13 @@ export default function ThemeLayout({ bgHero, ...props }) {
 
         <div className='block global-margin sm:hidden pt-5'>
           <div className='py-3'>
-            <h2 className='mobile pb-3'>{props.title}</h2>
+            <h2 className='mobile pb-3'>{themaData?.themaName}</h2>
             <p className=' pb-3'>
-              {props.headerSubtitle}
-              {props.headerLinkText && (
+              {themaData?.themaSubtitle}
+              {themaData?.linkText && (
                 <span className='text-green-500 link-base inline-block'>
-                  <a href={props.headerLinkURL} target='_blank' rel='noopener noreferrer'>
-                    {props.headerLinkText}
+                  <a href={themaData?.headerLinkURL} target='_blank' rel='noopener noreferrer'>
+                    {themaData?.linkText}
                     <LinkIcon />
                   </a>
                 </span>
@@ -81,7 +82,7 @@ export default function ThemeLayout({ bgHero, ...props }) {
         <div className=''>
           <div className='global-margin'>
             <div className='pt-10 sm:pt-20 sm:pb-10'>
-              <h2 className='mobile sm:desktop'>{props.cardTitle}</h2>
+              <h2 className='mobile sm:desktop'>{themaData?.overviewsTitle}</h2>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-14 justify-items-center sm:h-auto md:h-[76rem] lg:h-[38rem]'>
               <ThemeCard props={props} type='list' />

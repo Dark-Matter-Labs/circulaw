@@ -1,29 +1,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { urlFor } from '../lib/sanity';
-import { useEffect, useState } from 'react';
 
 export default function ThemeBottomSection({ props }) {
-  const data = props.laws;
-  const [laws, setLaws] = useState();
-
-  useEffect(() => {
-    if (data.length > 0) {
-      const extended = data.filter((e) => {
-        return e.isFeatured === true;
-      });
-      setLaws(extended);
-    }
-  }, [data]);
+  const laws = props.featuredLaws;
 
   return (
     <>
       <div className='bg-[#F8FAF8] sm:bg-transparent'>
         <div className='pt-16 global-margin'>
           <h2 className='mobile sm:desktop pb-2'>
-            Uitgelicht: {laws?.length} {props.extendedMeasureHeading}
+            Uitgelicht: {laws?.length} {props.thema.featuredInstrumentTitle}
           </h2>
-          <p className='pb-6 p-lg'>{props.extendedMeasureSubtitle}</p>
+          <p className='pb-6 p-lg'>{props.thema.featureInstrumentSubtitle}</p>
         </div>
         <div className='bg-[#F8FAF8]'>
           <div className='global-margin'>
@@ -32,7 +21,7 @@ export default function ThemeBottomSection({ props }) {
                 <div
                   key={measure?._id}
                   className={`border-black-white-600 ${
-                    measure === laws?.[2] ? 'border-b border-transparent' : 'border-b'
+                    measure === laws?.[-1] ? 'border-b border-transparent' : 'border-b'
                   }`}
                 >
                   <Link href={`/measures/${measure?.slug.current}`}>
