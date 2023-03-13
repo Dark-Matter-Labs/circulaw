@@ -6,7 +6,6 @@ import LinkIcon from '../../components/link-icon';
 import Link from 'next/link';
 import { windQueries } from '../../lib/queries';
 
-
 export default function Windturbine({ featuredLaws, length, thema }) {
   useEffect(() => {
     localStorage.clear();

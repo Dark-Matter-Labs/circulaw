@@ -4,7 +4,6 @@ import ThemeLayout from '../../components/layouts/theme-index-layout';
 import client from '../../lib/sanity';
 import { matrassenQueries } from '../../lib/queries';
 
-
 export default function Matrassen({ featuredLaws, thema, length }) {
   useEffect(() => {
     localStorage.clear();

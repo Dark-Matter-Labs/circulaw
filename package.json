@@ -14,7 +14,7 @@
     "build:staging": "env-cmd -e staging next build",
     "build:prod": "env-cmd -e production next build",
     "start": "next start",
-    "clean": "prettier --write \"(pages|components|studio)/**/*.+(js|jsx|json|css|md)\" --config ./.prettier.json",
+    "clean": "prettier --write \"(pages|components|studio|lib)/**/*.+(js|jsx|json|css|md)\" --config ./.prettier.json",
     "lint": "next lint",
     "prepare": "husky install",
     "pre-commit": "next lint --fix"
