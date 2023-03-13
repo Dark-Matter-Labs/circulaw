@@ -150,7 +150,7 @@ export default function InfoPage() {
             <a xlinkHref='https://www.circulaw.nl/measures/omgevingswaarden-in-de-omgevingsverordening'>
               <rect x='1075' y='3632' fill='#fff' opacity='0' width='719' height='76'></rect>
             </a>
-            <a xlinkHref='https://www.circulaw.nl/measures/omgevingswaarden-in-de-omgevingsverordening'>
+            <a xlinkHref='https://www.circulaw.nl/measures/omgevingswaarden-in-het-omgevingsplan'>
               <rect x='1076' y='3752' fill='#fff' opacity='0' width='720' height='75'></rect>
             </a>
             <a xlinkHref='https://www.circulaw.nl/measures/financiele-bijdrage-voor-houten-bouwwerken-op-basis-van-een-omgevingsvisie-of-programma'>
