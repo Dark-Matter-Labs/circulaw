@@ -4,18 +4,8 @@ import ThemeLayout from '../../components/layouts/theme-index-layout';
 import client from '../../lib/sanity';
 import LinkIcon from '../../components/link-icon';
 import Link from 'next/link';
+import { windQueries } from '../../lib/queries';
 
-const windFeatured = `
-*[_type == "measure" && thema == "circulaire-windturbines" && isFeatured == true]
-`;
-
-const windLength = `
-count(*[_type == "measure" && thema == "circulaire-windturbines"])
-`;
-
-const windThemaQuery = `
-*[_type == "thema" && themaName == "Circulaire windturbines"][0]
-`;
 
 export default function Windturbine({ featuredLaws, length, thema }) {
   useEffect(() => {
@@ -61,9 +51,9 @@ export default function Windturbine({ featuredLaws, length, thema }) {
 }
 
 export async function getStaticProps() {
-  const featuredLaws = await client.fetch(windFeatured);
-  const length = await client.fetch(windLength);
-  const thema = await client.fetch(windThemaQuery);
+  const featuredLaws = await client.fetch(windQueries.windFeatured);
+  const length = await client.fetch(windQueries.windLength);
+  const thema = await client.fetch(windQueries.windThemaQuery);
   return {
     props: {
       featuredLaws,
