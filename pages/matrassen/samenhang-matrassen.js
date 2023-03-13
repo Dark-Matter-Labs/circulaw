@@ -108,10 +108,10 @@ export default function InfoPage() {
             <a xlinkHref='https://www.circulaw.nl/measures/circulaire-matrassen-in-buitenreclame'>
               <rect x='1987' y='2262' fill='#fff' opacity='0' width='714' height='79'></rect>
             </a>
-            <a xlinkHref='https://www.circulaw.nl/measures/sponsoring-door-matrasproducenten---commerci%C3%ABle-mediadiensten'>
+            <a xlinkHref='https://circulaw-staging.vercel.app/measures/reclameverbod-matrassen---commerci%C3%ABle-mediadiensten-'>
               <rect x='1990' y='2363' fill='#fff' opacity='0' width='714' height='79'></rect>
             </a>
-            <a xlinkHref='https://www.circulaw.nl/measures/subsidie-voor-circulaire-matrassen'>
+            <a xlinkHref='https://www.circulaw.nl/measures/reclameverbod-matrassen---publieke-mediadiensten'>
               <rect x='1988' y='2464' fill='#fff' opacity='0' width='716' height='86'></rect>
             </a>
             <a xlinkHref='https://www.circulaw.nl/measures/circulaire-matrassen-in-buitenreclame'>
