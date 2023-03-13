@@ -3,8 +3,8 @@ import { GiDeadWood, GiBed, GiWindmill } from 'react-icons/gi';
 import { GrNavigate } from 'react-icons/gr';
 import { FcAbout } from 'react-icons/fc';
 import { MdSettingsSuggest } from 'react-icons/md';
-import { FaLanguage, FaHandshake } from 'react-icons/fa'
-import { BsCircle } from 'react-icons/bs'
+import { FaLanguage, FaHandshake } from 'react-icons/fa';
+import { BsCircle } from 'react-icons/bs';
 
 export const Structure = (S) =>
   S.list()
@@ -46,7 +46,7 @@ export const Structure = (S) =>
       S.listItem()
         .title("Thema's")
         .icon(BsCircle)
-        .child(S.documentList().title("Thema's").filter('_type == "thema"')),  
+        .child(S.documentList().title("Thema's").filter('_type == "thema"')),
       S.listItem()
         .title('About Pages')
         .icon(FcAbout)
@@ -58,10 +58,14 @@ export const Structure = (S) =>
         .id('NavigationList')
         .icon(GrNavigate)
         .child(S.documentList().title('Navigation').filter('_type == "navigation"')),
-      S.documentListItem().schemaType('partners').title('Partners').id('PartnersList').icon(FaHandshake),
+      S.documentListItem()
+        .schemaType('partners')
+        .title('Partners')
+        .id('PartnersList')
+        .icon(FaHandshake),
       S.divider(),
       S.listItem()
-      .title('Site Settings')
-      .icon(MdSettingsSuggest)
-      .child(S.document().schemaType('siteConfig').documentId('siteSettings')),
+        .title('Site Settings')
+        .icon(MdSettingsSuggest)
+        .child(S.document().schemaType('siteConfig').documentId('siteSettings')),
     ]);

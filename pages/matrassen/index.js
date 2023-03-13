@@ -13,7 +13,7 @@ count(*[_type == "measure" && thema == "matrassen"])
 
 const matressThemaQuery = `
 *[_type == "thema" && themaName == "Circulaire matrasketen"][0]
-`
+`;
 
 export default function Matrassen({ featuredLaws, thema, length }) {
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function Matrassen({ featuredLaws, thema, length }) {
     <Layout>
       <ThemeLayout
         featuredLaws={featuredLaws}
-        thema={thema}        
+        thema={thema}
         bgHero='bg-matrassen-hero'
         heroImage='/hero-images/matrassen.jpeg' // needs replacing
         numberOfLaws={length}
@@ -36,7 +36,7 @@ export default function Matrassen({ featuredLaws, thema, length }) {
 
 export async function getStaticProps() {
   const featuredLaws = await client.fetch(matrassenFeatured);
-  const thema = await client.fetch(matressThemaQuery)
-  const length = await client.fetch(matrassenLength)
+  const thema = await client.fetch(matressThemaQuery);
+  const length = await client.fetch(matrassenLength);
   return { props: { featuredLaws, thema, length } };
 }

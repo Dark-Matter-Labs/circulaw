@@ -6,7 +6,7 @@ import samenhang from '../public/thema-card-background/samenhang.svg';
 import list from '../public/thema-card-background/list.svg';
 
 export default function ThemeCard({ props, type }) {
-  const cardData = props.thema
+  const cardData = props.thema;
   return (
     <div className='relative shadow rounded-md overflow-hidden h-auto my-6 md:py-0 md:h-5/6 lg:h-[95%] max-w-[380px] min-h-[550px] '>
       <div className='grid grid-rows-6 shadow rounded-md h-full w-full'>

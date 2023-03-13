@@ -13,18 +13,17 @@ count(*[_type == "measure" && thema == "houtbouw"])
 
 const houtbouwThemaQuery = `
 *[_type == "thema" && themaName == "Houtbouw stimuleren"][0]
-`
-
+`;
 
 export default function Houtbouw({ featuredLaws, thema, length }) {
   useEffect(() => {
     localStorage.clear();
   });
-  
+
   return (
     <Layout>
       <ThemeLayout
-        featuredLaws={featuredLaws} 
+        featuredLaws={featuredLaws}
         thema={thema}
         bgHero='bg-houtbouw-hero'
         heroImage='/hero-images/houtbouw.jpeg'
@@ -37,12 +36,13 @@ export default function Houtbouw({ featuredLaws, thema, length }) {
 
 export async function getStaticProps() {
   const featuredLaws = await client.fetch(houtbouwFeatured);
-  const length = await client.fetch(houtbouwLength)
-  const thema  = await client.fetch(houtbouwThemaQuery)  
-  return { 
-    props: { 
+  const length = await client.fetch(houtbouwLength);
+  const thema = await client.fetch(houtbouwThemaQuery);
+  return {
+    props: {
       featuredLaws,
       thema,
-      length 
-    }, };
-} 
+      length,
+    },
+  };
+}

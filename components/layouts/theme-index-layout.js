@@ -5,7 +5,7 @@ import Image from 'next/image';
 import LinkIcon from '../link-icon';
 
 export default function ThemeLayout({ bgHero, ...props }) {
-  const themaData = props.thema
+  const themaData = props.thema;
   return (
     <>
       <div>

@@ -15,9 +15,9 @@ count(*[_type == "measure" && thema == "circulaire-windturbines"])
 
 const windThemaQuery = `
 *[_type == "thema" && themaName == "Circulaire windturbines"][0]
-`
+`;
 
-export default function Windturbine({featuredLaws, length ,thema }) {
+export default function Windturbine({ featuredLaws, length, thema }) {
   useEffect(() => {
     localStorage.clear();
   });
@@ -28,12 +28,10 @@ export default function Windturbine({featuredLaws, length ,thema }) {
         featuredLaws={featuredLaws}
         // header
         thema={thema}
- 
         bgHero='bg-windmill-hero'
         heroImage='/hero-images/windmill.jpg'
         numberOfLaws={length}
         listTitle={`Lijst van ${length} instrumenten`}
-      
       />
       <div className='bg-[#F8FAF8]'>
         <div className='global-margin pt-10 pb-20 '>
@@ -64,13 +62,13 @@ export default function Windturbine({featuredLaws, length ,thema }) {
 
 export async function getStaticProps() {
   const featuredLaws = await client.fetch(windFeatured);
-  const length = await client.fetch(windLength)
-  const thema  = await client.fetch(windThemaQuery)
-  return { 
+  const length = await client.fetch(windLength);
+  const thema = await client.fetch(windThemaQuery);
+  return {
     props: {
       featuredLaws,
       length,
       thema,
-      } 
-    };
+    },
+  };
 }

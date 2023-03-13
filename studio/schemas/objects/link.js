@@ -9,7 +9,7 @@ export default {
       description: 'Select pages for navigation',
       type: 'reference',
       to: [{ type: 'aboutPage' }],
-    }, 
+    },
     // NEED TO DELETE EXTERNAL LINK AS THERE WILL NEVER BE IN NAV
     {
       name: 'externalUrl',
