@@ -144,7 +144,7 @@ export default function InfoPage() {
             <a xlinkHref='https://www.circulaw.nl/measures/houtbouw-in-de-omgevingsverordening'>
               <rect x='1075' y='2537' fill='#fff' opacity='0' width='715' height='77'></rect>
             </a>
-            <a xlinkHref='https://www.circulaw.nl/measures/omgevingswaarden-in-het-omgevingsplan'>
+            <a xlinkHref='https://www.circulaw.nl/measures/houtbouw-in-het-omgevingsplan'>
               <rect x='1075' y='2640' fill='#fff' opacity='0' width='715' height='73'></rect>
             </a>
             <a xlinkHref='https://www.circulaw.nl/measures/omgevingswaarden-in-de-omgevingsverordening'>
