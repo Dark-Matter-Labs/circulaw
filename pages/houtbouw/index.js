@@ -16,7 +16,7 @@ export default function Houtbouw({ laws }) {
   return (
     <Layout>
       <ThemeLayout
-        laws={laws}
+        laws={laws} 
         // header
         title='Houtbouw stimuleren'
         thema='houtbouw'
@@ -32,7 +32,7 @@ export default function Houtbouw({ laws }) {
         listTitle={`Lijst van ${laws?.length} instrumenten`}
         samenhangTitle='Samenhang álle houtbouwinstrumenten in beeld'
         waarvoorTitle='Wie is waarvoor bevoegd?'
-        // card texts
+        // card texts 
         listText='Alle instrumenten op een rijtje, met handige filters om snel te vinden wat je zoekt.'
         samenhangText='Zie hoe instrumenten zich tot elkaar verhouden en hoe je ze met elkaar kunt combineren.'
         waarvoorText='Zonder samenwerking geen succes. Maar dan moet je wel weten wie waarvoor bevoegd en verantwoordelijk is.'

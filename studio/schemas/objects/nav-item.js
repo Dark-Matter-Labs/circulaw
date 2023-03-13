@@ -11,6 +11,7 @@ export default {
       type: 'string',
       title: 'Navigation Text',
     },
+    // change to aboutLink + add Thema Link
     {
       name: 'navigationItemUrl',
       type: 'link',
