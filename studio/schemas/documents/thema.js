@@ -22,7 +22,7 @@ export default {
       name: 'themaName',
       type: 'string',
       validation: (Rule) => Rule.required(),
-      description: 'This will be displayed in the Navigation, Footer, Thema Card etc',
+      description: 'DO NOT CHANGE This will be displayed in the Navigation, Footer, Thema Card etc',
       group: 'devOnly',
     },
     {
@@ -30,6 +30,7 @@ export default {
       name: 'slug',
       type: 'slug',
       group: 'devOnly',
+      description: 'DO NOT CHANGE',
       options: {
         source: 'themaName',
         inUnique: 'true',
