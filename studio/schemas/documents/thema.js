@@ -23,13 +23,13 @@ export default {
       type: 'string',
       validation: (Rule) => Rule.required(),
       description: 'This will be displayed in the Navigation, Footer, Thema Card etc',
-      group: 'editableContent',
+      group: 'devOnly',
     },
     {
       title: 'Slug',
       name: 'slug',
       type: 'slug',
-      group: 'editableContent',
+      group: 'devOnly',
       options: {
         source: 'themaName',
         inUnique: 'true',
