@@ -6,7 +6,6 @@ import { Popover, Disclosure, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import Lottie from 'react-lottie';
-import { get_waardeketens } from '../utils/nav-structure';
 import CirculawLogo from '../public/Circulaw_logotype.png';
 import logo from '../public/Circulaw_logotype_home.png';
 
@@ -24,9 +23,13 @@ const defaultOptions = {
   },
 };
 
-const waardeketens = get_waardeketens();
 
 export default function Nav(props) {
+  let themaSlugs = [];
+  if (props.themaSlugs) {
+    themaSlugs = props.themaSlugs
+  }
+  
   let aboutSlugs = [];
   if (props.aboutSlugs) {
     aboutSlugs = props.aboutSlugs;
@@ -208,16 +211,16 @@ export default function Nav(props) {
                                         <Popover.Panel className='absolute z-10  transform w-screen max-w-xs sm:px-0'>
                                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                                             <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
-                                              {waardeketens.map((item) => (
+                                              {themaSlugs.map((slug) => (
                                                 <a
-                                                  key={item.name}
-                                                  href={item.href}
+                                                  key={slug}
+                                                  href={`/${encodeURIComponent(slug)}`}
                                                   className='-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 border-b uppercase'
                                                 >
                                                   <h6
-                                                    className={`popup-base text-gray-900 ${item.className}`}
+                                                    className= 'popup-base text-gray-900'
                                                   >
-                                                    {item.name}
+                                                    {slug.replaceAll('-', ' ')}
                                                   </h6>
                                                 </a>
                                               ))}
@@ -354,13 +357,13 @@ export default function Nav(props) {
                   >
                     Thema&apos;s
                   </Disclosure.Button>
-                  {waardeketens.map((item) => (
+                  {themaSlugs.map((slug) => (
                     <>
                       <Disclosure.Button
                         as='span'
-                        className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4'
+                        className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4 first-letter:uppercase'
                       >
-                        <Link href={item.href}>{item.name}</Link>
+                        <Link href={`/${encodeURIComponent(slug)}`}>{slug.replaceAll('-', ' ')}</Link>
                       </Disclosure.Button>
                     </>
                   ))}
