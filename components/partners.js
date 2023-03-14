@@ -7,6 +7,7 @@ import { urlFor } from '../lib/sanity';
 import { partnersQuery } from '../lib/queries';
 import sanityLogo from '../public/logo_partners/sanity-logo.svg';
 import { fetcher } from '../utils/swr-fetcher';
+import { Fragment } from 'react';
 
 const bordersDesktop =
   'lg:[&:nth-child(6)]:border-r-0 lg:[&:nth-child(14)]:border-r-0 lg:[&:nth-child(21)]:border-r-0 lg:[&:nth-child(29)]:border-r-0 lg:[&:nth-child(3)]:border-r lg:[&:nth-child(8)]:border-r lg:[&:nth-child(12)]:border-r lg:[&:nth-child(17)]:border-r lg:[&:nth-child(26)]:border-r';
@@ -24,7 +25,7 @@ export default function Partners() {
         <div className='grid grid-cols-3 gap-x-0.5 gap-y-4 lg:grid-cols-5 '>
           {partners?.map((partner, index) => {
             return (
-              <>
+              <Fragment key={partner.partnerName}>
                 <div
                   key={partner.partnerName}
                   className={`col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200  ${bordersDesktop} ${bordersSmall}`}
@@ -72,7 +73,7 @@ export default function Partners() {
                 {partners.length > 15 && index === 17 && (
                   <hr className='border-black-white-200 col-span-3 block lg:hidden' />
                 )}
-              </>
+              </Fragment>
             );
           })}
         </div>
