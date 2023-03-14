@@ -22,7 +22,7 @@ const types = [
     description:
       'Bouwen met beton heeft een negatieve impact op het klimaat. Daarom vind je hier instrumenten die de inzet van hout bij de bouw stimuleren.',
     buttonText: 'Meer over houtbouw',
-    href: '/houtbouw',
+    href: '/houtbouw-stimuleren',
   },
   {
     id: 1,
@@ -42,7 +42,7 @@ const types = [
     description:
       'Gemiddeld gaat een matras zo’n tien jaar mee. Er valt dus veel winst te behalen als we de hele keten vanaf matrasproductie tot aan verwerking van gedumpte matrassen circulairder maken. Daarom vind je hier instrumenten die aanzetten tot die circulaire matrasketen.',
     buttonText: 'Meer over de matrasketen',
-    href: '/matrassen',
+    href: '/circulaire-matrasketen',
   },
 ];
 

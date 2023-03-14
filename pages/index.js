@@ -11,12 +11,13 @@ import { siteSettingsQuerys } from '../lib/queries';
 
 export default function Index({ ...props }) {
   const aboutSlugs = props.overCirculaw.slugs;
+  
   return (
     <Layout page='home'>
       <div className='bg-black-white-200 pb-20' name='thema'>
         <div className='global-margin'>
           <h2 className='pb-6 pt-8 mobile sm:desktop text-black-white-800'>Thema’s</h2>
-          <SectionTypes type='home' />
+          <SectionTypes type='home'/>
         </div>
       </div>
       <div className='bg-black-white-200 py-10'>

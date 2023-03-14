@@ -5,7 +5,7 @@ import mattressIcon from '../../public/icons/matressIcon.svg';
 import matrassenImageMob from '../../public/bevoegdheden/bevoegdheden-matrassen.png';
 import { creatQuery } from '../../lib/queries';
 
-const thema = 'matrassen';
+const thema = 'circulaire-matrasketen';
 
 export default function InfoPage({ ...props }) {
   return (

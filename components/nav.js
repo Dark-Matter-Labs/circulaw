@@ -23,7 +23,6 @@ const defaultOptions = {
   },
 };
 
-
 export default function Nav(props) {
   let themaSlugs = [];
   if (props.themaSlugs) {

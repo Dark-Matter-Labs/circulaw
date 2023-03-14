@@ -9,9 +9,9 @@ function classNames(...classes) {
 
 const links = {
   houtbouw: [
-    '/houtbouw/samenhang-aantal-houtbouwmaatregelen',
+    '/houtbouw-stimuleren/samenhang-aantal-houtbouwmaatregelen',
     '/measures/houtbouw',
-    '/houtbouw/welke-overheid',
+    '/houtbouw-stimuleren/welke-overheid',
   ],
   circulaireWindturbines: [
     '/circulaire-windturbines/samenhang-maatregelen',
@@ -19,13 +19,14 @@ const links = {
     '/circulaire-windturbines/welke-overheid-heeft',
   ],
   matrassen: [
-    '/matrassen/samenhang-matrassen',
+    '/circulaire-matrasketen/samenhang-matrassen',
     '/measures/matrassen',
-    '/matrassen/welke-overheid-heeft',
+    '/circulaire-matrasketen/welke-overheid-heeft',
   ],
 };
 
 export default function MeasureLinks({ type, page }) {
+  console.log(type, 'hi')
   if (page === 'list') {
     return (
       <Menu as='div' className='relative inline-block text-left pt-8'>

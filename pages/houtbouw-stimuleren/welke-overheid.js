@@ -5,7 +5,7 @@ import woodIcon from '../../public/icons/woodIcon.svg';
 import houtbouwImageMob from '../../public/bevoegdheden/bevoegdheden-houtbouw-mob.png';
 import { creatQuery } from '../../lib/queries';
 
-const thema = 'houtbouw';
+const thema = 'houtbouw-stimuleren';
 
 export default function InfoPage({ ...props }) {
   return (

@@ -13,7 +13,7 @@ export default function Measures({ laws }) {
       <MeasuresLayout
         totalNumberOfLaws={laws.length}
         title='Circulaire matrasketen'
-        thema='matrassen'
+        thema='circulaire-matrasketen'
         heading='Instrumenten om de circulariteit van de matrasketen te bevorderen'
         introPara={`We hebben ${laws.length} kansrijke instrumenten gevonden die je kunt inzetten als het gaat om matrassen. Met sommige van deze instrumenten is al praktijkervaring opgedaan, met andere nog niet. Ga aan de slag! Met jouw ervaringen help je anderen weer verder.`}
         icon={MatrassenIcon}
