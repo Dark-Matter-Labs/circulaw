@@ -15,7 +15,6 @@ export default function Layout(props) {
   const aboutSlugs = aboutPageSlugs?.slugs;
   const vraagSlug = vraagAntwoordSlug?.slug;
   const themaSlugs = themaPageSlugs?.slugs
-  console.log(themaSlugs)
 
   return (
     <>

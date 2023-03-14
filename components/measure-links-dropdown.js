@@ -8,25 +8,24 @@ function classNames(...classes) {
 }
 
 const links = {
-  houtbouw: [
+  'houtbouw-stimuleren': [
     '/houtbouw-stimuleren/samenhang-aantal-houtbouwmaatregelen',
     '/measures/houtbouw',
     '/houtbouw-stimuleren/welke-overheid',
   ],
-  circulaireWindturbines: [
+  'circulaire-windturbines': [
     '/circulaire-windturbines/samenhang-maatregelen',
     '/measures/windturbines',
     '/circulaire-windturbines/welke-overheid-heeft',
   ],
-  matrassen: [
+  'circulaire-matrasketen': [
     '/circulaire-matrasketen/samenhang-matrassen',
     '/measures/matrassen',
     '/circulaire-matrasketen/welke-overheid-heeft',
   ],
 };
 
-export default function MeasureLinks({ type, page }) {
-  console.log(type, 'hi')
+export default function MeasureLinks({type, page }) {
   if (page === 'list') {
     return (
       <Menu as='div' className='relative inline-block text-left pt-8'>
@@ -49,21 +48,6 @@ export default function MeasureLinks({ type, page }) {
         >
           <Menu.Items className='absolute right-0 z-10 mt-2 w-64 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
             <div className='py-1'>
-              {type === 'circulaire-windturbines' ? (
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      href={links['circulaireWindturbines'][0]}
-                      className={classNames(
-                        active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
-                        'block px-4 py-2 p-base',
-                      )}
-                    >
-                      In samenhang
-                    </Link>
-                  )}
-                </Menu.Item>
-              ) : (
                 <Menu.Item>
                   {({ active }) => (
                     <Link
@@ -77,22 +61,6 @@ export default function MeasureLinks({ type, page }) {
                     </Link>
                   )}
                 </Menu.Item>
-              )}
-              {type === 'circulaire-windturbines' ? (
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      href={links['circulaireWindturbines'][2]}
-                      className={classNames(
-                        active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
-                        'block px-4 py-2 p-base',
-                      )}
-                    >
-                      Per overheidsbevoegdheid
-                    </Link>
-                  )}
-                </Menu.Item>
-              ) : (
                 <Menu.Item>
                   {({ active }) => (
                     <Link
@@ -106,7 +74,8 @@ export default function MeasureLinks({ type, page }) {
                     </Link>
                   )}
                 </Menu.Item>
-              )}
+                  
+              
             </div>
           </Menu.Items>
         </Transition>
@@ -134,11 +103,10 @@ export default function MeasureLinks({ type, page }) {
         >
           <Menu.Items className='absolute right-0 z-10 mt-2 w-64 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
             <div className='py-1'>
-              {type === 'circulaire-windturbines' || type === 'circulaire Windturbines' ? (
-                <Menu.Item>
+              <Menu.Item>
                   {({ active }) => (
                     <Link
-                      href={links['circulaireWindturbines'][1]}
+                      href={links[type][1]}
                       className={classNames(
                         active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
                         'block px-4 py-2 p-base',
@@ -148,27 +116,10 @@ export default function MeasureLinks({ type, page }) {
                     </Link>
                   )}
                 </Menu.Item>
-              ) : (
                 <Menu.Item>
                   {({ active }) => (
                     <Link
-                      href={links[type.toLowerCase()][1]}
-                      className={classNames(
-                        active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
-                        'block px-4 py-2 p-base',
-                      )}
-                    >
-                      In lijst met filters
-                    </Link>
-                  )}
-                </Menu.Item>
-              )}
-
-              {type === 'circulaire-windturbines' || type === 'circulaire Windturbines' ? (
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      href={links['circulaireWindturbines'][2]}
+                      href={links[type][2]}
                       className={classNames(
                         active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
                         'block px-4 py-2 p-base',
@@ -178,21 +129,6 @@ export default function MeasureLinks({ type, page }) {
                     </Link>
                   )}
                 </Menu.Item>
-              ) : (
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      href={links[type.toLowerCase()][2]}
-                      className={classNames(
-                        active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
-                        'block px-4 py-2 p-base',
-                      )}
-                    >
-                      Per overheidsbevoegdheid
-                    </Link>
-                  )}
-                </Menu.Item>
-              )}
             </div>
           </Menu.Items>
         </Transition>
@@ -220,11 +156,10 @@ export default function MeasureLinks({ type, page }) {
         >
           <Menu.Items className='absolute right-0 z-10 mt-2 w-64 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
             <div className='py-1'>
-              {type === 'circulaire-windturbines' || type === 'circulaire Windturbines' ? (
                 <Menu.Item>
                   {({ active }) => (
                     <Link
-                      href={links['circulaireWindturbines'][0]}
+                      href={links[type][0]}
                       className={classNames(
                         active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
                         'block px-4 py-2 p-base',
@@ -234,27 +169,11 @@ export default function MeasureLinks({ type, page }) {
                     </Link>
                   )}
                 </Menu.Item>
-              ) : (
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      href={links[type.toLowerCase()][0]}
-                      className={classNames(
-                        active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
-                        'block px-4 py-2 p-base',
-                      )}
-                    >
-                      In samenhang
-                    </Link>
-                  )}
-                </Menu.Item>
-              )}
 
-              {type === 'circulaire-windturbines' || type === 'circulaire Windturbines' ? (
                 <Menu.Item>
                   {({ active }) => (
                     <Link
-                      href={links['circulaireWindturbines'][1]}
+                      href={links[type][1]}
                       className={classNames(
                         active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
                         'block px-4 py-2 p-base',
@@ -264,21 +183,6 @@ export default function MeasureLinks({ type, page }) {
                     </Link>
                   )}
                 </Menu.Item>
-              ) : (
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      href={links[type.toLowerCase()][1]}
-                      className={classNames(
-                        active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
-                        'block px-4 py-2 p-base',
-                      )}
-                    >
-                      In lijst met filters
-                    </Link>
-                  )}
-                </Menu.Item>
-              )}
             </div>
           </Menu.Items>
         </Transition>

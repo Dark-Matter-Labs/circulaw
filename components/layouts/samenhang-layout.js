@@ -2,7 +2,6 @@ import { ArrowRightIcon } from '@heroicons/react/outline';
 import OverviewPageHeader from '../overview-page-header';
 
 export default function SamenhangLayout({ ...props }) {
-  console.log(props)
   return (
     <>
       <div className='global-margin mt-8'>
