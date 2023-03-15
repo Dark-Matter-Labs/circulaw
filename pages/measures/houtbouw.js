@@ -3,8 +3,9 @@ import MeasuresLayout from '../../components/layouts/measures-layout';
 import IconWood from '../../public/icons/woodIcon.svg';
 import client from '../../lib/sanity';
 
+// move to queries
 const lawsQuery = `
-*[_type == "measure" && thema == "houtbouw"]
+*[_type == "measure" && thema == "houtbouw-stimuleren"]
 `;
 
 export default function Measures({ laws }) {

@@ -3,8 +3,9 @@ import MatrassenIcon from '../../public/icons/matressIcon.svg';
 import MeasuresLayout from '../../components/layouts/measures-layout';
 import client from '../../lib/sanity';
 
+// move to queries
 const lawsQuery = `
-*[_type == "measure" && thema == "matrassen"]
+*[_type == "measure" && thema == "circulaire-matrasketen"]
 `;
 
 export default function Measures({ laws }) {

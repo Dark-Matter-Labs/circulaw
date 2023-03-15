@@ -3,6 +3,7 @@ import MeasuresLayout from '../../components/layouts/measures-layout';
 import client from '../../lib/sanity';
 import WindmillIcon from '../../public/icons/windmill.png';
 
+// move to queries
 const lawsQuery = `
 *[_type == "measure" && thema == "circulaire-windturbines"]
 `;

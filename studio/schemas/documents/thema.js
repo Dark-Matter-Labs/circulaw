@@ -156,15 +156,28 @@ export default {
     },
     // Home Page content Linked to Thema - perhaps this should be in the homepage schema and reference a thema.
     {
-      title: 'Home Page Card Title',
-      name: 'homePageCardTitle',
+      title: 'Home Page Card Text', // need to add max length
+      name: 'homePageCardText',
+      type: 'text',
+      group: 'editableContent',
+    },
+    {
+      title: 'Home Page Card Button Text', // need to add max length
+      name: 'homePageCardButtonText',
       type: 'string',
       group: 'editableContent',
     },
     {
-      title: 'Home Page Card Text', // need to add max length
-      name: 'homePageCardText',
-      type: 'text',
+      title: 'Home Page Order', // need to add max length
+      name: 'homePageOrder',
+      type: 'number',
+      group: 'editableContent',
+    },
+    {
+      title: 'Home Page Card Image', // need to add max length
+      name: 'homePageCardImage',
+      type: 'image',
+      description: 'image must include Icon',
       group: 'editableContent',
     },
   ],

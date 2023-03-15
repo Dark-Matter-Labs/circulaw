@@ -7,17 +7,17 @@ import waaromImage from '../public/home-page/waarom.png';
 import watImage from '../public/home-page/wat.png';
 import hoeverImage from '../public/home-page/hoever.png';
 import client from '../lib/sanity';
-import { siteSettingsQuerys } from '../lib/queries';
+import { siteSettingsQuerys, homePageThemaQuery } from '../lib/queries';
 
 export default function Index({ ...props }) {
   const aboutSlugs = props.overCirculaw.slugs;
-  
+  const themaCards = props.homePageThemaData
   return (
     <Layout page='home'>
       <div className='bg-black-white-200 pb-20' name='thema'>
         <div className='global-margin'>
           <h2 className='pb-6 pt-8 mobile sm:desktop text-black-white-800'>Thema’s</h2>
-          <SectionTypes type='home'/>
+          <SectionTypes type='home' themaCards={themaCards}/>
         </div>
       </div>
       <div className='bg-black-white-200 py-10'>
@@ -104,9 +104,11 @@ export default function Index({ ...props }) {
 
 export async function getStaticProps() {
   const overCirculaw = await client.fetch(siteSettingsQuerys.overCirulaw);
+  const homePageThemaData = await client.fetch(homePageThemaQuery)
   return {
     props: {
       overCirculaw,
+      homePageThemaData,
     },
   };
 }
