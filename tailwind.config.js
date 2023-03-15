@@ -1,8 +1,7 @@
 
 
 module.exports = {
-  mode: 'jit',
-  purge: [
+  content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
     './public/**/*.html',
@@ -80,9 +79,6 @@ module.exports = {
         'en-header': 'url("/en-deco-header.png")',
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [require('@tailwindcss/forms')],
 };
