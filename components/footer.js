@@ -1,15 +1,5 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import {
-  EmailShareButton,
-  EmailIcon,
-  LinkedinShareButton,
-  LinkedinIcon,
-  TwitterShareButton,
-  TwitterIcon,
-  WhatsappShareButton,
-  WhatsappIcon,
-} from 'next-share';
 import NieuwTooltip from '../components/nieuw-tooltip';
 import ActionPanel from '../components/section-action-panel';
 import Partners from './partners';
@@ -50,7 +40,6 @@ export default function Footer(props) {
   }
 
   const router = useRouter();
-  const { asPath } = useRouter();
   return (
     <footer className='' aria-labelledby='footer-heading'>
       {router.pathname !== '/en' && (
@@ -105,33 +94,6 @@ export default function Footer(props) {
                     </div>
                   </div>
                   <div className='py-2 sm:py-0'>
-                    <div className='grid grid-cols-4 mb-2'>
-                      <LinkedinShareButton url={'https://circulaw.nl' + asPath}>
-                        <LinkedinIcon size={32} round />
-                      </LinkedinShareButton>
-                      <TwitterShareButton
-                        url={'https://circulaw.nl' + asPath}
-                        title={'Check out CircuLaw lorem ipsum'}
-                      >
-                        <TwitterIcon size={32} round />
-                      </TwitterShareButton>
-
-                      <WhatsappShareButton
-                        url={'https://circulaw.nl' + asPath}
-                        title={'Check out CircuLaw lorem ipsum'}
-                        separator=':: '
-                      >
-                        <WhatsappIcon size={32} round />
-                      </WhatsappShareButton>
-
-                      <EmailShareButton
-                        url={'https://circulaw.nl' + asPath}
-                        subject={'Check out CircuLaw lorem ipsum'}
-                        body='Check out CircuLaw lorem ipsum'
-                      >
-                        <EmailIcon size={32} round />
-                      </EmailShareButton>
-                    </div>
                     <NieuwTooltip />
                     <ul role='list' className='mt-4 space-y-4'>
                       <li>
