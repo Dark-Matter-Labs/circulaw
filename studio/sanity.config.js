@@ -2,6 +2,7 @@ import { defineConfig, isSanityDocument } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './schemas';
+import { stagingSchemaTypes } from './schemas-staging';
 import { Structure } from './desk-structure';
 import Logo from './components/logo';
 
@@ -40,7 +41,7 @@ export default defineConfig([
       visionTool(),
     ],
     schema: {
-      types: schemaTypes,
+      types: stagingSchemaTypes,
     },
   },
 ]);
