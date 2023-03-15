@@ -28,12 +28,5 @@ export default {
       type: 'reference',
       to: { type: 'navigation' },
     },
-    {
-      title: "Thema's",
-      name: 'themas',
-      description: 'Select menu for social navigation',
-      type: 'reference',
-      to: { type: 'navigation' },
-    },
   ],
 };
