@@ -1,6 +1,14 @@
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { PortableText } from '@portabletext/react';
-import { ArrowLeftIcon } from '@heroicons/react/outline';
+import { ArrowLeftIcon, LinkIcon } from '@heroicons/react/outline';
+import {
+  EmailShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+} from 'next-share';
+import { SocialIcon } from 'react-social-icons';
 
 import Layout from '../../components/layouts/layout';
 import client from '../../lib/sanity';
@@ -58,6 +66,9 @@ const components = {
 
 export default function Measure({ data }) {
   const router = useRouter();
+  const { asPath } = useRouter();
+  const [showLinkCopied, setShowLinkCopied] = useState(false);
+
   return (
     <Layout>
       <div className='measure-bg'>
@@ -91,7 +102,82 @@ export default function Measure({ data }) {
               </div>
               <MeasureTable data={data} />
             </div>
-            <MeasureOverview data={data} viewport='desktop' />
+            <div>
+              <div className='float-right pb-2'>
+                <span className='pr-2' title='Share link on LinkedIn'>
+                  <LinkedinShareButton
+                    url={'https://circulaw.nl' + asPath}
+                    title={'Check out this page on CircuLaw: ' + data?.measure?.titel}
+                  >
+                    <SocialIcon
+                      url={'https://circulaw.nl' + asPath}
+                      network='linkedin'
+                      style={{ height: 32, width: 32 }}
+                      bgColor='#035E46'
+                      fgColor='#F8FAF8'
+                    />
+                  </LinkedinShareButton>
+                </span>
+                <span className='pr-2' title='Share link on Twitter'>
+                  <TwitterShareButton
+                    url={'https://circulaw.nl' + asPath}
+                    title={'Check out this page on CircuLaw: ' + data?.measure?.titel}
+                  >
+                    <SocialIcon
+                      url={'https://circulaw.nl' + asPath}
+                      network='twitter'
+                      style={{ height: 32, width: 32 }}
+                      bgColor='#035E46'
+                      fgColor='#F8FAF8'
+                    />
+                  </TwitterShareButton>
+                </span>
+                <span className='pr-2' title='Share link on Whatsapp'>
+                  <WhatsappShareButton
+                    url={'https://circulaw.nl' + asPath}
+                    title={'Check out this page on CircuLaw: ' + data?.measure?.titel}
+                    separator=':: '
+                  >
+                    <SocialIcon
+                      url={'https://circulaw.nl' + asPath}
+                      network='whatsapp'
+                      style={{ height: 32, width: 32 }}
+                      bgColor='#035E46'
+                      fgColor='#F8FAF8'
+                    />
+                  </WhatsappShareButton>
+                </span>
+                <span className='pr-2' title='Share link as email'>
+                  <EmailShareButton
+                    url={'https://circulaw.nl' + asPath}
+                    subject={'Check out CircuLaw'}
+                    title={'Check out this page on CircuLaw: ' + data?.measure?.titel}
+                  >
+                    <SocialIcon
+                      url={'https://circulaw.nl' + asPath}
+                      network='email'
+                      style={{ height: 32, width: 32 }}
+                      bgColor='#035E46'
+                      fgColor='#F8FAF8'
+                    />
+                  </EmailShareButton>
+                </span>
+                <span className='pr-2' title='Copy link to clipboard'>
+                  <LinkIcon
+                    className='inline-block p-1 h-8 w-8 bg-green-600 rounded-full text-white hover:cursor-pointer'
+                    onClick={() => {
+                      navigator.clipboard.writeText('https://circulaw.nl' + asPath);
+                      setShowLinkCopied(true);
+                      setTimeout(() => {
+                        setShowLinkCopied(false);
+                      }, 2000);
+                    }}
+                  />
+                </span>
+              </div>
+              {showLinkCopied && <p>Link copied!</p>}
+              <MeasureOverview data={data} viewport='desktop' />
+            </div>
           </div>
         </div>
       </div>
