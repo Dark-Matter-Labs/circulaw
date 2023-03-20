@@ -3,15 +3,18 @@ import ThemeBottomSection from '../section-bottom-theme-index';
 import ThemeCard from '../theme-card';
 import Image from 'next/image';
 import LinkIcon from '../link-icon';
+import { urlFor } from '../../lib/sanity';
 
-export default function ThemeLayout({ bgHero, ...props }) {
+export default function ThemeLayout({ ...props }) {
   const themaData = props.thema;
   return (
     <>
       <div>
         {/* HEADER DESKTOP */}
-        <div className={`hidden sm:block w-full h-[28rem] bg-center bg-cover relative ${bgHero}`}>
-          <div className='global-margin h-[28rem] z-10 pt-10'>
+        <div className='hidden sm:block w-full h-[28rem]'>
+          <div className='relative object-cover w-full h-full'>
+          <Image src={urlFor(themaData?.heroImage).url()} alt={`${themaData.themaName} + 'hero image'`} fill className='z-0' priority/>
+          <div className='global-margin h-[28rem] z-10 pt-10 relative'>
             <Link
               className='bg-black-white-200 border rounded-md border-black-white-200 pl-1 pr-2 py-0.5 breadcrumb text-green-500'
               href='/'
@@ -53,6 +56,7 @@ export default function ThemeLayout({ bgHero, ...props }) {
               </div>
             </div>
           </div>
+          </div>
         </div>
 
         <div className='block global-margin sm:hidden pt-5'>
@@ -72,8 +76,8 @@ export default function ThemeLayout({ bgHero, ...props }) {
           </div>
 
           <div className='h-56 max-w-[380px] mx-auto flex items-center justify-center'>
-            <div className='flex items-center justify-center h-full w-full rounded-md relative z-10'>
-              <Image src={props.heroImage} alt='hero image' fill className='rounded-md absolute' />
+            <div className='flex items-center justify-center h-full w-full rounded-md relative z-10 object-cover'>
+              <Image src={urlFor(themaData?.heroImageMobile).url()} alt={`${themaData.themaName} + 'hero image'`} fill className='rounded-md absolute' />
               <div className='w-full h-full thema-hero-gradient z-10 rounded-md'></div>
             </div>
           </div>

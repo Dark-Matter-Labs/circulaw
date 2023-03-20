@@ -60,8 +60,15 @@ export default {
     {
       title: 'Hero Image',
       name: 'heroImage',
-      type: 'image', // need to think about how to incorporate this as at the moment it is a tailwind background but we cannot import from sanity into tw.config.
+      type: 'image',
       description: 'This image must already have the gradient',
+      group: 'editableContent',
+    },
+    {
+      title: 'Hero Image Mobile',
+      name: 'heroImageMobile',
+      type: 'image', 
+      description: 'This must be the original image',
       group: 'editableContent',
     },
     {
