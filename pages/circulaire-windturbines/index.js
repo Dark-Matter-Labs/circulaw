@@ -57,5 +57,6 @@ export async function getStaticProps() {
       length,
       thema,
     },
+    revalidate: 1,
   };
 }

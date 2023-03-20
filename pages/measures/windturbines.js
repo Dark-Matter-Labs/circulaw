@@ -26,5 +26,6 @@ export default function Measures({ laws }) {
 
 export async function getStaticProps() {
   const laws = await client.fetch(lawsQuery);
-  return { props: { laws: laws } };
+  return { props: { laws: laws },
+  revalidate: 1, };
 }
