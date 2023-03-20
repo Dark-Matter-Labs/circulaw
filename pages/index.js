@@ -114,5 +114,6 @@ export async function getStaticProps() {
       overCirculaw,
       homePageThemaData,
     },
+    revalidate: 1,
   };
 }
