@@ -154,7 +154,6 @@ export default {
       validation: (Rule) => Rule.required(),
       group: 'devOnly',
     },
-    // Home Page content Linked to Thema - perhaps this should be in the homepage schema and reference a thema.
     {
       title: 'Home Page Card Text', // need to add max length
       name: 'homePageCardText',

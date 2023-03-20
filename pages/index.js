@@ -28,6 +28,8 @@ export default function Index({ ...props }) {
           >
             Over CircuLaw
           </h1>
+
+          {/* ADD THIS TO SANITY ABOUT PAGES */}
           <Link href={`/about/${encodeURIComponent(aboutSlugs?.[0])}`}>
             <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10 gap-x-8 gap-y-4'>
               <div>
@@ -51,6 +53,8 @@ export default function Index({ ...props }) {
               </div>
             </div>
           </Link>
+
+
           <Link href={`/about/${encodeURIComponent(aboutSlugs?.[1])}`}>
             <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10 gap-x-8 gap-y-4'>
               <div>

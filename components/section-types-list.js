@@ -5,8 +5,9 @@ import { ArrowRightIcon } from '@heroicons/react/outline';
 import CustomButton from './custom-button';
 import { urlFor } from '../lib/sanity';
 
+// 
+
 export default function SectionTypes({themaCards}) {
-  console.log(themaCards?.image, 'hi')
   return (
     <div className=''>
       <ul
@@ -14,7 +15,7 @@ export default function SectionTypes({themaCards}) {
         className='grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 sm:gap-x-10 max-w-8xl'
       >
         {themaCards.map((thema) => (
-          <li key={thema.slug} className='relative drop-shadow-sm bg-white w-full'>
+          <li key={thema.slug} className='relative drop-shadow-sm bg-white w-full rounded-[10px]'>
             <div className='object-cover rounded-[10px]'>
                 <Link href={`/${thema.slug}`}>
                   {thema?.image &&
@@ -25,11 +26,9 @@ export default function SectionTypes({themaCards}) {
                     width={1440}
                     height={720}
                   />}
-
                 </Link>
             </div>
-
-            <div className='group block w-full p-4 bg-white px-10 '>
+            <div className='group block w-full p-4 bg-white px-10 rounded-[10px]'>
               <div>
                 <div
                   className='inline-block'
@@ -51,7 +50,7 @@ export default function SectionTypes({themaCards}) {
                 </Link>
               </div>
               {/* wrapped button in div to seperate it from description */}
-              <div className='group block w-full py-4 bg-white px-10 absolute inset-x-0 bottom-0'>
+              <div className='group block w-full py-4 bg-white px-10 absolute inset-x-0 bottom-0 rounded-[10px]'>
                 {thema.homePageCardButtonText && (
                   <CustomButton color='whiteBackground'>
                     <Link href={`/${thema.slug}`}>
