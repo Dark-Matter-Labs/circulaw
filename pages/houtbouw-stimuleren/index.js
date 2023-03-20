@@ -14,8 +14,6 @@ export default function Houtbouw({ featuredLaws, thema, length }) {
       <ThemeLayout
         featuredLaws={featuredLaws}
         thema={thema}
-        bgHero='bg-houtbouw-hero'
-        heroImage='/hero-images/houtbouw.jpeg'
         numberOfLaws={length}
         listTitle={`Lijst van ${length} instrumenten`}
       />

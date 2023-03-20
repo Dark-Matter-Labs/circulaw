@@ -17,8 +17,6 @@ export default function Windturbine({ featuredLaws, length, thema }) {
         featuredLaws={featuredLaws}
         // header
         thema={thema}
-        bgHero='bg-windmill-hero'
-        heroImage='/hero-images/windmill.jpg'
         numberOfLaws={length}
         listTitle={`Lijst van ${length} instrumenten`}
       />

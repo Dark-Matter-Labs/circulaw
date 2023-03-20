@@ -14,8 +14,6 @@ export default function Matrassen({ featuredLaws, thema, length }) {
       <ThemeLayout
         featuredLaws={featuredLaws}
         thema={thema}
-        bgHero='bg-matrassen-hero'
-        heroImage='/hero-images/matrassen.jpeg' // needs replacing
         numberOfLaws={length}
         listTitle={`Lijst van ${length} instrumenten`}
       />
