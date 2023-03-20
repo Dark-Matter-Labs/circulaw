@@ -24,7 +24,7 @@ export default function InfoPage({ ...props }) {
         gemLaws={props.gemLaws}
         imageMob={houtbouwImageMob}
       />
-    </Layout> 
+    </Layout>
   );
 }
 export async function getStaticProps() {

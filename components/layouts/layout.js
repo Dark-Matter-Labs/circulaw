@@ -11,10 +11,10 @@ import { fetcher } from '../../utils/swr-fetcher';
 export default function Layout(props) {
   const { data: aboutPageSlugs } = useSWR(groq`${siteSettingsQuerys.overCirulaw}`, fetcher);
   const { data: vraagAntwoordSlug } = useSWR(groq`${siteSettingsQuerys.vraagAntwoord}`, fetcher);
-  const { data : themaPageSlugs } = useSWR(groq`${siteSettingsQuerys.thema}`, fetcher)
+  const { data: themaPageSlugs } = useSWR(groq`${siteSettingsQuerys.thema}`, fetcher);
   const aboutSlugs = aboutPageSlugs?.slugs;
   const vraagSlug = vraagAntwoordSlug?.slug;
-  const themaSlugs = themaPageSlugs?.slugs
+  const themaSlugs = themaPageSlugs?.slugs;
 
   return (
     <>
@@ -24,7 +24,7 @@ export default function Layout(props) {
       </Head>
       <main className=''>{props.children}</main>
       <CookieConsent />
-      <Footer vraagSlug={vraagSlug} aboutSlugs={aboutSlugs} themaSlugs={themaSlugs}  />
+      <Footer vraagSlug={vraagSlug} aboutSlugs={aboutSlugs} themaSlugs={themaSlugs} />
     </>
   );
 }

@@ -25,7 +25,7 @@ const links = {
   ],
 };
 
-export default function MeasureLinks({type, page }) {
+export default function MeasureLinks({ type, page }) {
   if (page === 'list') {
     return (
       <Menu as='div' className='relative inline-block text-left pt-8'>
@@ -48,34 +48,32 @@ export default function MeasureLinks({type, page }) {
         >
           <Menu.Items className='absolute right-0 z-10 mt-2 w-64 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
             <div className='py-1'>
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      href={links[type][0]}
-                      className={classNames(
-                        active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
-                        'block px-4 py-2 p-base',
-                      )}
-                    >
-                      In samenhang
-                    </Link>
-                  )}
-                </Menu.Item>
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      href={links[type][2]}
-                      className={classNames(
-                        active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
-                        'block px-4 py-2 p-base',
-                      )}
-                    >
-                      Per overheidsbevoegdheid
-                    </Link>
-                  )}
-                </Menu.Item>
-                  
-              
+              <Menu.Item>
+                {({ active }) => (
+                  <Link
+                    href={links[type][0]}
+                    className={classNames(
+                      active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
+                      'block px-4 py-2 p-base',
+                    )}
+                  >
+                    In samenhang
+                  </Link>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <Link
+                    href={links[type][2]}
+                    className={classNames(
+                      active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
+                      'block px-4 py-2 p-base',
+                    )}
+                  >
+                    Per overheidsbevoegdheid
+                  </Link>
+                )}
+              </Menu.Item>
             </div>
           </Menu.Items>
         </Transition>
@@ -104,31 +102,31 @@ export default function MeasureLinks({type, page }) {
           <Menu.Items className='absolute right-0 z-10 mt-2 w-64 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
             <div className='py-1'>
               <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      href={links[type][1]}
-                      className={classNames(
-                        active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
-                        'block px-4 py-2 p-base',
-                      )}
-                    >
-                      In lijst met filters
-                    </Link>
-                  )}
-                </Menu.Item>
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      href={links[type][2]}
-                      className={classNames(
-                        active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
-                        'block px-4 py-2 p-base',
-                      )}
-                    >
-                      Per overheidsbevoegdheid
-                    </Link>
-                  )}
-                </Menu.Item>
+                {({ active }) => (
+                  <Link
+                    href={links[type][1]}
+                    className={classNames(
+                      active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
+                      'block px-4 py-2 p-base',
+                    )}
+                  >
+                    In lijst met filters
+                  </Link>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <Link
+                    href={links[type][2]}
+                    className={classNames(
+                      active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
+                      'block px-4 py-2 p-base',
+                    )}
+                  >
+                    Per overheidsbevoegdheid
+                  </Link>
+                )}
+              </Menu.Item>
             </div>
           </Menu.Items>
         </Transition>
@@ -156,33 +154,33 @@ export default function MeasureLinks({type, page }) {
         >
           <Menu.Items className='absolute right-0 z-10 mt-2 w-64 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
             <div className='py-1'>
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      href={links[type][0]}
-                      className={classNames(
-                        active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
-                        'block px-4 py-2 p-base',
-                      )}
-                    >
-                      In samenhang
-                    </Link>
-                  )}
-                </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <Link
+                    href={links[type][0]}
+                    className={classNames(
+                      active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
+                      'block px-4 py-2 p-base',
+                    )}
+                  >
+                    In samenhang
+                  </Link>
+                )}
+              </Menu.Item>
 
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      href={links[type][1]}
-                      className={classNames(
-                        active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
-                        'block px-4 py-2 p-base',
-                      )}
-                    >
-                      In lijst met filters
-                    </Link>
-                  )}
-                </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <Link
+                    href={links[type][1]}
+                    className={classNames(
+                      active ? 'bg-gray-100 text-black-white-800' : 'text-black-white-800',
+                      'block px-4 py-2 p-base',
+                    )}
+                  >
+                    In lijst met filters
+                  </Link>
+                )}
+              </Menu.Item>
             </div>
           </Menu.Items>
         </Transition>

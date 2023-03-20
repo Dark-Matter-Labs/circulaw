@@ -5,9 +5,9 @@ import { ArrowRightIcon } from '@heroicons/react/outline';
 import CustomButton from './custom-button';
 import { urlFor } from '../lib/sanity';
 
-// 
+//
 
-export default function SectionTypes({themaCards}) {
+export default function SectionTypes({ themaCards }) {
   return (
     <div className=''>
       <ul
@@ -17,30 +17,29 @@ export default function SectionTypes({themaCards}) {
         {themaCards.map((thema) => (
           <li key={thema.slug} className='relative drop-shadow-sm bg-white w-full rounded-[10px]'>
             <div className='object-cover rounded-[10px]'>
-                <Link href={`/${thema.slug}`}>
-                  {thema?.image &&
+              <Link href={`/${thema.slug}`}>
+                {thema?.image && (
                   <Image
                     className='rounded-t-[10px] fill'
                     src={urlFor(thema?.image).url()}
                     alt={thema?.themaName + 'image'}
                     width={1440}
                     height={720}
-                  />}
-                </Link>
+                  />
+                )}
+              </Link>
             </div>
             <div className='group block w-full p-4 bg-white px-10 rounded-[10px]'>
               <div>
-                <div
-                  className='inline-block'
-                >
-                    <Link href={`/${thema.slug}`}>
-                      <h3 className='desktop mt-2 block text-black pointer-events-none pb-4 hidden sm:inline'>
-                        {thema.themaName}
-                      </h3>
-                      <h2 className='mobile mt-2 block text-black pointer-events-none pb-4 inline sm:hidden'>
-                        {thema.themaName}
-                      </h2>
-                    </Link>
+                <div className='inline-block'>
+                  <Link href={`/${thema.slug}`}>
+                    <h3 className='desktop mt-2 block text-black pointer-events-none pb-4 hidden sm:inline'>
+                      {thema.themaName}
+                    </h3>
+                    <h2 className='mobile mt-2 block text-black pointer-events-none pb-4 inline sm:hidden'>
+                      {thema.themaName}
+                    </h2>
+                  </Link>
                   {/* added height for the description while on home to ensure all the text can be read*/}
                 </div>
                 <Link href={`/${thema.slug}`}>

@@ -32,9 +32,9 @@ export default function ThemeBottomSection({ props }) {
                           alt={measure?.featuredImage?.altText}
                           width={828}
                           height={400}
-                          sizes="(max-width: 768px) 100vw,
+                          sizes='(max-width: 768px) 100vw,
                                   (max-width: 1200px) 50vw,
-                                   33vw"
+                                   33vw'
                         />
                       </div>
                       <div className='lg:pl-4 flex flex-wrap'>

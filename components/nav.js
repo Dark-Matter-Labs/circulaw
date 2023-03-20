@@ -26,9 +26,9 @@ const defaultOptions = {
 export default function Nav(props) {
   let themaSlugs = [];
   if (props.themaSlugs) {
-    themaSlugs = props.themaSlugs
+    themaSlugs = props.themaSlugs;
   }
-  
+
   let aboutSlugs = [];
   if (props.aboutSlugs) {
     aboutSlugs = props.aboutSlugs;
@@ -216,9 +216,7 @@ export default function Nav(props) {
                                                   href={`/${encodeURIComponent(slug)}`}
                                                   className='-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 border-b uppercase'
                                                 >
-                                                  <h6
-                                                    className= 'popup-base text-gray-900'
-                                                  >
+                                                  <h6 className='popup-base text-gray-900'>
                                                     {slug.replaceAll('-', ' ')}
                                                   </h6>
                                                 </a>
@@ -362,7 +360,9 @@ export default function Nav(props) {
                         as='span'
                         className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4 first-letter:uppercase'
                       >
-                        <Link href={`/${encodeURIComponent(slug)}`}>{slug.replaceAll('-', ' ')}</Link>
+                        <Link href={`/${encodeURIComponent(slug)}`}>
+                          {slug.replaceAll('-', ' ')}
+                        </Link>
                       </Disclosure.Button>
                     </div>
                   ))}

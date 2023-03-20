@@ -17,9 +17,9 @@ const navigation = {
 export default function Footer(props) {
   let themaSlugs = [];
   if (props.themaSlugs) {
-    themaSlugs = props.themaSlugs
+    themaSlugs = props.themaSlugs;
   }
-  
+
   let aboutSlugs = [];
   if (props.aboutSlugs) {
     aboutSlugs = props.aboutSlugs;
@@ -57,8 +57,8 @@ export default function Footer(props) {
                               href={`/${encodeURIComponent(slug)}`}
                               className='p-base hover:text-green-400 text-black-white-200'
                             >
-                            <span className='inline-block first-letter:uppercase'>
-                              {slug.replaceAll('-', ' ')}
+                              <span className='inline-block first-letter:uppercase'>
+                                {slug.replaceAll('-', ' ')}
                               </span>
                             </a>
                           </li>
