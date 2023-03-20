@@ -87,7 +87,7 @@ export default {
         layout: 'dropdown',
       },
       group: 'overview',
-    }, 
+    },
     {
       title: 'Transitie-agenda',
       name: 'transitionAgenda',

@@ -67,7 +67,7 @@ export default {
     {
       title: 'Hero Image Mobile',
       name: 'heroImageMobile',
-      type: 'image', 
+      type: 'image',
       description: 'This must be the original image',
       group: 'editableContent',
     },
