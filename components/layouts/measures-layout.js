@@ -735,9 +735,7 @@ export default function MeasuresLayout({ ...props }) {
                     <h3 className='mobile sm:desktop inline'>0 &nbsp;</h3>
                     <span className=' p-lg'>resultaten in </span>
                     <h3 className='inline-block lowercase mobile sm:desktop'>
-                      {props.thema === 'circulaire-windturbines'
-                        ? 'circulaire windturbines'
-                        : props.thema}
+                      {props.thema.replace('-', ' ')}
                       &nbsp;
                     </h3>
                     {searchValue != '' && <span className='p-lg'>voor&nbsp;</span>}
@@ -769,9 +767,7 @@ export default function MeasuresLayout({ ...props }) {
                     <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
                     <span className=' p-lg'>resultaten in </span>
                     <h3 className='lowercase first-letter:uppercase mobile sm:desktop inline'>
-                      {props.thema === 'circulaire-windturbines'
-                        ? 'circulaire windturbines'
-                        : props.thema.toLowerCase()}
+                      {props.thema.replace('-', ' ')}
                     </h3>{' '}
                     {searchValue != '' && <span className='p-lg'>voor&nbsp;</span>}
                     <h3 className='lowercase first-letter:uppercase mobile sm:desktop inline'>
@@ -800,9 +796,7 @@ export default function MeasuresLayout({ ...props }) {
                     <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
                     <span className=' p-lg'>resultaten in </span>
                     <h3 className='inline lowercase first-letter:uppercase mobile sm:desktop'>
-                      {props.thema === 'circulaire-windturbines'
-                        ? 'circulaire windturbines'
-                        : props.thema.toLowerCase()}
+                      {props.thema.replace('-', ' ')}
                     </h3>
                     {searchValue != '' && <span className=' p-lg'>&nbsp;voor&nbsp;</span>}
                     <h3 className='mobile sm:desktop inline'>

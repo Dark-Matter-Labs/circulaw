@@ -23,7 +23,9 @@ export const Structure = (S) =>
                 .child(
                   S.documentList()
                     .title('Houtbouw Measures')
-                    .filter('_type == "measure" &&  thema == "houtbouw-stimuleren" || thema == "houtbouw"'),
+                    .filter(
+                      '_type == "measure" &&  thema == "houtbouw-stimuleren" || thema == "houtbouw"',
+                    ),
                 ),
               S.listItem()
                 .title('Circulaire windturbines')
@@ -39,7 +41,9 @@ export const Structure = (S) =>
                 .child(
                   S.documentList()
                     .title('Matrassen measures')
-                    .filter('_type == "measure" && thema == "circulaire-matrasketen" || thema == "matrassen"'),
+                    .filter(
+                      '_type == "measure" && thema == "circulaire-matrasketen" || thema == "matrassen"',
+                    ),
                 ),
             ]),
         ),
