@@ -28,7 +28,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
               </h2>
             </Link>
           </div>
-          {data?.measure?.thema === 'houtbouw' && (
+          {data?.measure?.thema === 'houtbouw-stimuleren' && (
             <div className='container-image h-10 w-10'>
               <Image src={IconWood} alt='Icon of a Wood Log' />
             </div>
@@ -38,7 +38,7 @@ export default function MeasureOverview({ viewport, children, data, ...props }) 
               <Image src={WindmillIcon} alt='Icon of a Wood Log' />
             </div>
           )}
-          {data?.measure?.thema === 'matrassen' && (
+          {data?.measure?.thema === 'circulaire-matrasketen' && (
             <div className='container-image h-10 w-10'>
               <Image src={MatrassenIcon} alt='Icon of a Wood Log' />
             </div>
