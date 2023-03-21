@@ -58,7 +58,7 @@ export default function Footer(props) {
                       buttonLink='/contact'
                     />
                      <div className='block sm:hidden pt-6 p-base text-black-white-200 '>
-                     <span className='font-semibold'>Volg ons op:</span>
+                     <h3 className='mobile sm:desktop inline-block'>Volg ons op:</h3>
                         <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
                         <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
                         </Link>
@@ -156,7 +156,7 @@ export default function Footer(props) {
                       buttonLink='/contact'
                     />
                     <div className='hidden sm:block py-6 p-base text-black-white-200 flex items-center justify-center'>
-                        <span className='font-semibold'>Volg ons op:</span>
+                        <h3 className='inline-block mobile sm:desktop'>Volg ons op:</h3>
                         <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
                         <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
                         </Link>
