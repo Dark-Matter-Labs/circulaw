@@ -137,7 +137,7 @@ export default function WelkeLayout({ ...props }) {
                 </>
               )}
 
-              {props.thema === 'matrassen' && (
+              {props.thema === 'circulaire-matrasketen' && (
                 <>
                   {/* All regions = 12 */}
                   <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-white'></div>
@@ -171,7 +171,7 @@ export default function WelkeLayout({ ...props }) {
                 </>
               )}
 
-              {props.thema == 'houtbouw' && (
+              {props.thema == 'houtbouw-stimuleren' && (
                 <>
                   {/* All regions = 18 */}
                   <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-white'></div>

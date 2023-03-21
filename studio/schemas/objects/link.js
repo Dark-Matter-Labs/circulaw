@@ -8,8 +8,9 @@ export default {
       name: 'internalLink',
       description: 'Select pages for navigation',
       type: 'reference',
-      to: [{ type: 'aboutPage' }],
+      to: [{ type: 'aboutPage' }, { type: 'thema' }],
     },
+    // NEED TO DELETE EXTERNAL LINK AS THERE WILL NEVER BE IN NAV
     {
       name: 'externalUrl',
       title: 'External URL',

@@ -4,6 +4,7 @@ import navigation from './documents/navigation';
 import siteConfig from './documents/site-config';
 import partners from './documents/partners';
 import englishPage from './documents/english-page';
+import thema from './documents/thema';
 
 import greenBox from './objects/green-box';
 import pdfBlock from './objects/pdf-block';
@@ -22,6 +23,7 @@ export const schemaTypes = [
   navigation,
   englishPage,
   partners,
+  thema,
 
   // OBJECTS
   greenBox,
