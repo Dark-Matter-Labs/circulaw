@@ -12,7 +12,7 @@ import { siteSettingsQuerys, homePageThemaQuery } from '../lib/queries';
 export default function Index({ ...props }) {
   const aboutSlugs = props.overCirculaw.slugs;
   const themaCards = props.homePageThemaData;
-  console.log(themaCards, 'test on new ')
+  console.log(themaCards, 'test on new ');
   return (
     <Layout page='home'>
       <div className='bg-black-white-200 pb-20' name='thema'>

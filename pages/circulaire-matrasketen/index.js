@@ -25,6 +25,5 @@ export async function getStaticProps() {
   const featuredLaws = await client.fetch(matrassenQueries.matrassenFeatured);
   const thema = await client.fetch(matrassenQueries.matressThemaQuery);
   const length = await client.fetch(matrassenQueries.matrassenLength);
-  return { props: { featuredLaws, thema, length },
-  revalidate: 1, };
+  return { props: { featuredLaws, thema, length }, revalidate: 1 };
 }
