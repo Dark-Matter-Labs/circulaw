@@ -2,23 +2,20 @@ name: Backup Routine
 on:
   schedule:
     # Runs at 04:00 UTC on the 1st and 17th of every month
-    - cron: "0 4 */2 * *"
+    - cron: "0 10 */30 * *"
 jobs:
   backup-dataset:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     name: Backup dataset
     steps:
       - uses: actions/checkout@v2
-      - name: Export dataset
-        uses: sanity-io/github-action-sanity@v0.3
-        env:
+      - run: npx @sanity/cli dataset export production backup.tar.gz
+        working-directory: studio
+        env: 
+          SANITY_STUDIO_API_PROJECT_ID: 2vfoxb3h
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
+      - uses: actions/upload-artifact@v2
         with:
-          args: dataset export production backups/backup.tar.gz
-      - name: Upload backup.tar.gz
-        uses: actions/upload-artifact@v2
-        with:
-          name: backup-tarball
-          path: backups/backup.tar.gz
-          # Fails the workflow if no files are found; defaults to 'warn'
-          if-no-files-found: error
+          name: production
+          path: studio/backup.tar.gz
+          retention-days: 5

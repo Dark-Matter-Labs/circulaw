@@ -14,7 +14,7 @@
     "build:staging": "env-cmd -e staging next build",
     "build:prod": "env-cmd -e production next build",
     "start": "next start",
-    "clean": "prettier --write \"(pages|components|studio)/**/*.+(js|jsx|json|css|md)\" --config ./.prettier.json",
+    "clean": "prettier --write \"(pages|components|studio|lib)/**/*.+(js|jsx|json|css|md)\" --config ./.prettier.json",
     "lint": "next lint",
     "prepare": "husky install",
     "pre-commit": "next lint --fix"
@@ -29,7 +29,6 @@
     "@tailwindcss/forms": "^0.5.2",
     "cookies-next": "^2.1.1",
     "fuse.js": "^6.6.2",
-    "image-map-resizer": "^1.0.10",
     "next": "^13.1.1",
     "next-pagination": "^3.1.0",
     "next-sanity": "^3.1.3",

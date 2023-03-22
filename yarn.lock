@@ -1854,11 +1854,6 @@ ignore@^5.2.0:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.2.0.tgz#6d3bac8fa7fe0d45d9f9be7bac2fc279577e345a"
   integrity sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==
 
-image-map-resizer@^1.0.10:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/image-map-resizer/-/image-map-resizer-1.0.10.tgz#06e2abccd86d739d78718d478d3b77a9906d28c0"
-  integrity sha512-e1dhQAIqBx1MUrUpwXfM4TGtVt1Q/YRnJAUxLPDnNG9TOIVf57TCP5PrDzvoy085ZdxZGxdDCSiaWyQfOPTdpA==
-
 import-fresh@^3.0.0, import-fresh@^3.2.1:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/import-fresh/-/import-fresh-3.3.0.tgz#37162c25fcb9ebaa2e6e53d5b4d88ce17d9e0c2b"

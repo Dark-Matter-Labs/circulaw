@@ -18,7 +18,7 @@ export default function PolicyList(props) {
           <div className='block sm:ml-0 pb-8 sm:pb-10'>
             <div className=''>
               <div className='inline-block flex justify-start items-center'>
-                {law?.thema === 'houtbouw' && (
+                {law?.thema === 'houtbouw-stimuleren' && (
                   <div className='inline-block'>
                     <Image width='30' height='30' src={IconWood} alt='Icon of Wood' />
                   </div>
@@ -26,7 +26,7 @@ export default function PolicyList(props) {
                 {law?.thema === 'circulaire-windturbines' && (
                   <Image width='30' height='30' src={WindmillIcon} alt='Icon of Wood' />
                 )}
-                {law?.thema === 'matrassen' && (
+                {law?.thema === 'circulaire-matrasketen' && (
                   <div className='inline-block'>
                     <Image width='30' height='30' src={MatrassenIcon} alt='Icon of Wood' />
                   </div>
