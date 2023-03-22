@@ -2,21 +2,18 @@ import Layout from '/components/layouts/layout';
 import MeasuresLayout from '../../components/layouts/measures-layout';
 import client from '../../lib/sanity';
 import WindmillIcon from '../../public/icons/windmill.png';
-
+import { windQueries } from '../../lib/queries'
 // move to queries
-const lawsQuery = `
-*[_type == "measure" && thema == "circulaire-windturbines"]
-`;
 
-export default function Measures({ laws }) {
+export default function Measures({ totalNumberOfLaws }) {
   return (
     <Layout>
       <MeasuresLayout
-        totalNumberOfLaws={laws.length}
+        totalNumberOfLaws={totalNumberOfLaws}
         title='Circulaire windturbines'
         thema='circulaire-windturbines'
         heading='Instrumenten om de inzet en circulariteit van windturbines te bevorderen'
-        introPara={`We hebben ${laws.length} kansrijke instrumenten gevonden die je kunt inzetten als het gaat om circulaire windturbines. Met sommige van deze instrumenten is al praktijkervaring opgedaan, met andere nog niet. Ga aan de slag! Met jouw ervaringen help je anderen weer verder.`}
+        introPara={`We hebben ${totalNumberOfLaws} kansrijke instrumenten gevonden die je kunt inzetten als het gaat om circulaire windturbines. Met sommige van deze instrumenten is al praktijkervaring opgedaan, met andere nog niet. Ga aan de slag! Met jouw ervaringen help je anderen weer verder.`}
         icon={WindmillIcon}
         searchTitle='Zoek in circulaire windturbines'
       />
@@ -25,6 +22,6 @@ export default function Measures({ laws }) {
 }
 
 export async function getStaticProps() {
-  const laws = await client.fetch(lawsQuery);
-  return { props: { laws: laws }, revalidate: 1 };
+  const totalNumberOfLaws = await client.fetch(windQueries.windLength);
+  return { props: { totalNumberOfLaws }, revalidate: 1 };
 }
