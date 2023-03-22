@@ -2,21 +2,19 @@ import Layout from '/components/layouts/layout';
 import MeasuresLayout from '../../components/layouts/measures-layout';
 import IconWood from '../../public/icons/woodIcon.svg';
 import client from '../../lib/sanity';
+import {houtbouwQueries} from '../../lib/queries'
 
 // move to queries
-const lawsQuery = `
-*[_type == "measure" && thema == "houtbouw-stimuleren"]
-`;
 
-export default function Measures({ laws }) {
+export default function Measures({ numberOfInstruments }) {
   return (
     <Layout>
       <MeasuresLayout
-        totalNumberOfLaws={laws.length}
+        totalNumberOfLaws={numberOfInstruments}
         title='Houtbouw stimuleren'
         thema='houtbouw-stimuleren' // must be the same as value in cms
         heading='Instrumenten om de inzet van hout in de bouw te bevorderen'
-        introPara={`We hebben ${laws.length} kansrijke instrumenten gevonden die je kunt inzetten om de houtbouwtransitie te versnellen. Sommige van deze instrumenten zijn al eerder toegepast, andere nog niet. Ga aan de slag! Met jouw ervaringen help je ook anderen weer verder.`}
+        introPara={`We hebben ${numberOfInstruments} kansrijke instrumenten gevonden die je kunt inzetten om de houtbouwtransitie te versnellen. Sommige van deze instrumenten zijn al eerder toegepast, andere nog niet. Ga aan de slag! Met jouw ervaringen help je ook anderen weer verder.`}
         icon={IconWood}
         searchTitle='Zoek in houtbouw stimuleren'
       />
@@ -25,6 +23,6 @@ export default function Measures({ laws }) {
 }
 
 export async function getStaticProps() {
-  const laws = await client.fetch(lawsQuery);
-  return { props: { laws: laws }, revalidate: 1 };
+  const numberOfInstruments = await client.fetch(houtbouwQueries.houtbouwLength);
+  return { props: { numberOfInstruments }, revalidate: 1 };
 }
