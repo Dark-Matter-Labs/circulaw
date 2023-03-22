@@ -3,6 +3,7 @@ import MeasuresLayout from '../../components/layouts/measures-layout';
 import client from '../../lib/sanity';
 import WindmillIcon from '../../public/icons/windmill.png';
 
+// move to queries
 const lawsQuery = `
 *[_type == "measure" && thema == "circulaire-windturbines"]
 `;
@@ -25,5 +26,5 @@ export default function Measures({ laws }) {
 
 export async function getStaticProps() {
   const laws = await client.fetch(lawsQuery);
-  return { props: { laws: laws } };
+  return { props: { laws: laws }, revalidate: 1 };
 }

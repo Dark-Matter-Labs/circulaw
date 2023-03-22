@@ -7,20 +7,6 @@ import { RiLinkedinFill } from 'react-icons/ri'
 import { AiFillGithub } from 'react-icons/ai'
 
 const navigation = {
-  WAARDEKETENS: [
-    { name: 'Houtbouw stimuleren', href: '/houtbouw', className: 'text-black-white-200' },
-    {
-      name: 'Circulaire windturbines',
-      href: '/circulaire-windturbines',
-      className: 'text-black-white-200',
-    },
-    {
-      name: 'Circulaire matrasketen',
-      href: '/matrassen',
-      className: 'text-black-white-200',
-    },
-  ], 
-
   // FAQ href is linked to CMS.
   other: [
     { name: 'Contact', href: '/contact', className: '' },
@@ -31,6 +17,11 @@ const navigation = {
 };
 
 export default function Footer(props) {
+  let themaSlugs = [];
+  if (props.themaSlugs) {
+    themaSlugs = props.themaSlugs;
+  }
+
   let aboutSlugs = [];
   if (props.aboutSlugs) {
     aboutSlugs = props.aboutSlugs;
@@ -71,13 +62,15 @@ export default function Footer(props) {
                     <h4 className='text-green-300 mobile sm:desktop uppercase'>THEMA’S</h4>
                     <div className='grid grid-cols-1 gap-8 py-2 sm:py-0'>
                       <ul role='list' className='mt-4 space-y-4'>
-                        {navigation.WAARDEKETENS.map((item) => (
-                          <li key={item.name}>
+                        {themaSlugs?.map((slug) => (
+                          <li key={slug}>
                             <a
-                              href={item.href}
-                              className={` p-base hover:text-green-400 ${item.className}`}
+                              href={`/${encodeURIComponent(slug)}`}
+                              className='p-base hover:text-green-400 text-black-white-200'
                             >
-                              {item.name}
+                              <span className='inline-block first-letter:uppercase'>
+                                {slug.replaceAll('-', ' ')}
+                              </span>
                             </a>
                           </li>
                         ))}

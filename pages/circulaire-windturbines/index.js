@@ -4,12 +4,9 @@ import ThemeLayout from '../../components/layouts/theme-index-layout';
 import client from '../../lib/sanity';
 import LinkIcon from '../../components/link-icon';
 import Link from 'next/link';
+import { windQueries } from '../../lib/queries';
 
-const windQuery = `
-*[_type == "measure" && thema == "circulaire-windturbines"]
-`;
-
-export default function Windturbine({ laws }) {
+export default function Windturbine({ featuredLaws, length, thema }) {
   useEffect(() => {
     localStorage.clear();
   });
@@ -17,32 +14,11 @@ export default function Windturbine({ laws }) {
   return (
     <Layout>
       <ThemeLayout
-        laws={laws}
+        featuredLaws={featuredLaws}
         // header
-        title='Circulaire windturbines'
-        thema='circulaire-windturbines'
-        headerSubtitle='Door meer windturbines in te zetten en door windturbines te ontwikkelen die zelf circulair zijn,  kunnen we grote stappen zetten om onze samenleving circulairder te maken.'
-        // headerLinkText='' // will be displayed in the same sentence as header subtitle
-        // headerLinkURL='/'
-        bgHero='bg-windmill-hero'
-        heroImage='/hero-images/windmill.jpg'
-        // number of laws
-        numberOfLaws={laws.length}
-        cardTitle='Overzichten van instrumenten die circulaire windturbines bevorderen'
-        // card titles
-        listTitle={`Lijst van ${laws.length} instrumenten`}
-        samenhangTitle='Samenhang álle instrumenten voor circulaire windturbines in beeld'
-        waarvoorTitle='Wie is waarvoor bevoegd?'
-        // card texts
-        listText='Alle instrumenten op een rijtje, met handige filters om snel te vinden wat je zoekt.'
-        samenhangText='Zie hoe instrumenten zich tot elkaar verhouden en hoe je ze met elkaar kunt combineren.'
-        waarvoorText='Zonder samenwerking geen succes. Maar dan moet je wel weten wie waarvoor bevoegd en verantwoordelijk is.'
-        // card links
-        cardLinkList='/measures/windturbines'
-        cardLinkSamenhang='/circulaire-windturbines/samenhang-maatregelen'
-        cardLinkWaarvoor='/circulaire-windturbines/welke-overheid-heeft'
-        extendedMeasureHeading='instrumenten om circulariteit van windturbines te bevorderen'
-        extendedMeasureSubtitle='Met voorbeelden.'
+        thema={thema}
+        numberOfLaws={length}
+        listTitle={`Lijst van ${length} instrumenten`}
       />
       <div className='bg-[#F8FAF8]'>
         <div className='global-margin pt-10 pb-20 '>
@@ -72,6 +48,15 @@ export default function Windturbine({ laws }) {
 }
 
 export async function getStaticProps() {
-  const laws = await client.fetch(windQuery);
-  return { props: { laws: laws } };
+  const featuredLaws = await client.fetch(windQueries.windFeatured);
+  const length = await client.fetch(windQueries.windLength);
+  const thema = await client.fetch(windQueries.windThemaQuery);
+  return {
+    props: {
+      featuredLaws,
+      length,
+      thema,
+    },
+    revalidate: 1,
+  };
 }

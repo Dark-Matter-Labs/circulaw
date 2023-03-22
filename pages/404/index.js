@@ -20,7 +20,7 @@ export default function NotFound() {
               </Link>
             </li>
             <li className='text-green-500  link-lg'>
-              <Link href='/houtbouw'>
+              <Link href='/houtbouw-stimuleren'>
                 Houtbouw <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
               </Link>{' '}
             </li>
