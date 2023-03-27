@@ -91,7 +91,7 @@ export default function Privacy() {
               rel='noopener noreferrer'
             >
               Autoriteit Persoonsgegevens
-            </a>  
+            </a>
             <LinkIcon />
           </span>
           .
