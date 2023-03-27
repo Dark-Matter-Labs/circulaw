@@ -70,7 +70,6 @@ import {
                 <span className='breadcrumb flex justify-center items-center underline'>
                   <ArrowLeftIcon className='inline-block h-4 w-4 pr-1' aria-hidden='true' /> Terug
                 </span>{' '}
-                {/* should all breadcrumbs be green this is black in figma */}
               </button>
             </div>
             <div className='sm:col-span-12 row-span-1'>
