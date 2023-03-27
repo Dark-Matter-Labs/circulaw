@@ -54,7 +54,6 @@ import {
   };
 
 export default function Instrument({data}) {
-    console.log(data.measure, 'non preview')
     const router = useRouter();
     return (
         <div className='measure-bg'>
