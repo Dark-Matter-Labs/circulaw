@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Layout from '../../components/layouts/layout';
+import LinkIcon from '../../components/link-icon';
 
 export default function Privacy() {
   return (
@@ -90,7 +91,8 @@ export default function Privacy() {
               rel='noopener noreferrer'
             >
               Autoriteit Persoonsgegevens
-            </a>
+            </a>  
+            <LinkIcon />
           </span>
           .
         </p>
@@ -107,6 +109,7 @@ export default function Privacy() {
             <a href='https://www.amsterdam.nl/' target='_blank' rel='noopener noreferrer'>
               amsterdam.nl
             </a>
+            <LinkIcon />
           </span>
           .{' '}
         </p>
