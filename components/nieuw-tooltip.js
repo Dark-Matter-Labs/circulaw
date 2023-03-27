@@ -74,7 +74,7 @@ export default function NieuwToolTip() {
                         <div className='absolute inset-0 px-4 sm:px-6'>
                           <p className='p-base pb-6'>
                             We hebben nu ook{' '}
-                            <Link className='link-base' href='/matrassen'>
+                            <Link className='link-base' href='/circulaire-matrasketen'>
                               juridische instrumenten geïdentificeerd om de circulariteit van de
                               matrasketen te bevorderen
                             </Link>
