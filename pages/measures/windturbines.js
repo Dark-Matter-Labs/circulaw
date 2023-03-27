@@ -2,8 +2,7 @@ import Layout from '/components/layouts/layout';
 import MeasuresLayout from '../../components/layouts/measures-layout';
 import client from '../../lib/sanity';
 import WindmillIcon from '../../public/icons/windmill.png';
-import { windQueries } from '../../lib/queries'
-// move to queries
+import { windQueries } from '../../lib/queries';
 
 export default function Measures({ totalNumberOfLaws }) {
   return (
