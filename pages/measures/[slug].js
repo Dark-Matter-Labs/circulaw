@@ -1,13 +1,26 @@
+import { lazy } from 'react';
+import { PreviewSuspense } from 'next-sanity/preview'
+
 
 import Layout from '../../components/layouts/layout';
 import client from '../../lib/sanity';
 import { measurePagePathsQuery, measureQuery } from '../../lib/queries';
 import Instrument from '../../components/instrument'
 
+const PreviewInstrument = lazy(() => import('../../components/instrument-preview'))
 
-export default function Measure({ data }) {
-  return (
+
+
+export default function Measure({ preview, data }) {
+
+  return preview ? (
+    <PreviewSuspense>
     <Layout>
+      <PreviewInstrument query={measureQuery} queryParams={data.slug}/>
+    </Layout>
+    </PreviewSuspense>
+  ) : (
+    <Layout>  
       <Instrument data={data} />
     </Layout>
   );
@@ -21,12 +34,19 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps({ params, preview = false}) {
   // It's important to default the slug so that it doesn't return "undefined"
-  const { slug = '' } = context.params;
-  const measure = await client.fetch(measureQuery, { slug });
+  const slug  = {slug: params?.slug ?? ''}
+  if (preview) {
+    return {props: {preview, data: {slug}}}
+  }
+  
+  const measure = await client.fetch(measureQuery, slug);
+
+
   return {
-    props: { data: { measure } },
+    props: {preview,
+            data: { measure, slug } },
     revalidate: 1,
   };
 }

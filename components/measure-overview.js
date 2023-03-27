@@ -14,10 +14,10 @@ const viewportType = {
     'hidden sm:block float-right px-8 ml-6 bg-black-white-200 h-[26rem] sticky top-40 mb-20 bg-black-white-200',
 };
 
-export default function MeasureOverview({ viewport, children, data, ...props }) {
+export default function MeasureOverview({ viewport, children, data}) {
   let viewportClasses = viewportType[viewport];
   return (
-    <div {...props} className={`${viewportClasses}`}>
+    <div className={`${viewportClasses}`}>
       <div className='px-8 pb-10 sm:pb-0 sm:px-0 py-6 block h-[26rem]'>
         {children}
         <div className='container pb-12 sm:pb-1 flex justify-between'>

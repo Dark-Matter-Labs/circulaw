@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { PortableText } from '@portabletext/react';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
 import MeasureOverview from '../components/measure-overview';
@@ -24,6 +25,8 @@ import {
     normalTextComponent,
   } from '../lib/portable-text/portable-text-blocks';
   import { linkComponent } from '../lib/portable-text/portable-text-marks';
+
+  import { usePreview } from '../lib/sanity.preview';
 
   const components = {
     types: {
@@ -53,8 +56,9 @@ import {
     },
   };
 
-export default function Instrument({data}) {
-    console.log(data.measure, 'non preview')
+
+  export default function InstrumentPreview({query, queryParams}) {
+    const data = {'measure': usePreview(null, query, queryParams)}
     const router = useRouter();
     return (
         <div className='measure-bg'>
@@ -84,13 +88,19 @@ export default function Instrument({data}) {
             <MeasureOverview data={data} viewport='mobile' />
             <div className='sm:max-w-3xl pb-20 col-span-2 '>
               <div className='py-4'>
-                <PortableText value={data?.measure?.content} components={components} />
+                <PortableText value={data?.measure.content} components={components} />
               </div>
               <MeasureTable data={data} />
             </div>
             <MeasureOverview data={data} viewport='desktop' />
           </div>
+          <Link
+        className="bg-blue-500 p-6 text-white font-bold fixed bottom-0 right-0"
+        href="/api/exit-preview"
+      >
+        Exit Preview
+      </Link>
         </div>
       </div>
     )
-}
+}   
