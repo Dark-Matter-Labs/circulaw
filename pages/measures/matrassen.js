@@ -2,7 +2,7 @@ import Layout from '/components/layouts/layout';
 import MatrassenIcon from '../../public/icons/matressIcon.svg';
 import MeasuresLayout from '../../components/layouts/measures-layout';
 import client from '../../lib/sanity';
-import { matrassenQueries } from '../../lib/queries'
+import { matrassenQueries } from '../../lib/queries';
 
 export default function Measures({ totalNumberOfLaws }) {
   return (
