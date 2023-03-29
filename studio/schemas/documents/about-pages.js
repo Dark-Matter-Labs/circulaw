@@ -30,6 +30,9 @@ export default {
           type: 'greenBox',
         },
         {
+          type: 'imageBlock'
+        },
+        {
           type: 'pdfBlock',
         },
         {
