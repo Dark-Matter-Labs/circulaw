@@ -2,7 +2,7 @@ import { lazy } from 'react';
 import { PreviewSuspense } from 'next-sanity/preview';
 
 import Layout from '../../components/layouts/layout';
-import client from '../../lib/sanity';
+import { client } from '../../lib/sanity';
 import { aboutPagePathsQuery, aboutPageQuery } from '../../lib/queries';
 import AboutPageComponent from '../../components/about-page';
 

@@ -1,4 +1,4 @@
-import client from '../../lib/sanity';
+import { client } from '../../lib/sanity';
 import Layout from '../../components/layouts/layout';
 import WelkeLayout from '../../components/layouts/welke-layout';
 import WindmillIcon from '../../public/icons/windmill.png';

@@ -1,6 +1,6 @@
 import Layout from '/components/layouts/layout';
 import MeasuresLayout from '../../components/layouts/measures-layout';
-import client from '../../lib/sanity';
+import { client } from '../../lib/sanity';
 import WindmillIcon from '../../public/icons/windmill.png';
 import { matrassenQueries } from '../../lib/queries';
 

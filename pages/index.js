@@ -6,7 +6,7 @@ import SectionTypes from '../components/section-types-list';
 import waaromImage from '../public/home-page/waarom.png';
 import watImage from '../public/home-page/wat.png';
 import hoeverImage from '../public/home-page/hoever.png';
-import client from '../lib/sanity';
+import { client } from '../lib/sanity';
 import { siteSettingsQuerys, homePageThemaQuery } from '../lib/queries';
 
 export default function Index({ ...props }) {
@@ -108,6 +108,7 @@ export default function Index({ ...props }) {
 export async function getStaticProps() {
   const overCirculaw = await client.fetch(siteSettingsQuerys.overCirulaw);
   const homePageThemaData = await client.fetch(homePageThemaQuery);
+  console.log(overCirculaw)
   return {
     props: {
       overCirculaw,

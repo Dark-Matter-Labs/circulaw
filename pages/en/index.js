@@ -2,7 +2,7 @@ import { PortableText } from '@portabletext/react';
 import { groq } from 'next-sanity';
 import Link from 'next/link';
 import Layout from '../../components/layouts/layout';
-import client from '../../lib/sanity';
+import { client } from '../../lib/sanity';
 import { fetcher } from '../../utils/swr-fetcher';
 import {
   h1Component,
