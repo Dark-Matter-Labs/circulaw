@@ -5,7 +5,6 @@ import { aboutPagePTComponents } from '../lib/portable-text/pt-components'
 
 
 export default function AboutPageComponent({data}) {
-  console.log(data)
     return (
         <div className='global-margin pb-8 text-black-white-800'>
         <div className='grid grid-cols-1 w-full md:grid-cols-3'>

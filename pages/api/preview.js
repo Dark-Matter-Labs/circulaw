@@ -1,4 +1,4 @@
-import { measureQuery } from '../../lib/queries';
+import { aboutPageQuery, measureQuery } from '../../lib/queries';
 import client from '../../lib/sanity';
 
 // need to edit this to be able to set location to slug:
@@ -15,5 +15,13 @@ export default async function preview(req, res) {
   const instrument = await client.fetch(measureQuery, {
     slug: req.query.slug,
   });
-  redirectToPreview(res, previewData, `/measures/${instrument.slug.current}`); // change measures to ${instrument.thema}
+  const aboutPage = await client.fetch(aboutPageQuery, {
+    slug: req.query.slug
+  })
+  if (instrument) {
+    return redirectToPreview(res, previewData, `/measures/${instrument.slug.current}`)
+  } 
+  if (aboutPage) {
+    return   redirectToPreview(res, previewData, `/about/${aboutPage.slug.current}`); // change measures to ${instrument.thema}
+  }
 }
