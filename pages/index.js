@@ -108,7 +108,6 @@ export default function Index({ ...props }) {
 export async function getStaticProps() {
   const overCirculaw = await client.fetch(siteSettingsQuerys.overCirulaw);
   const homePageThemaData = await client.fetch(homePageThemaQuery);
-  console.log(overCirculaw)
   return {
     props: {
       overCirculaw,

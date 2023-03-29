@@ -288,7 +288,7 @@ export default function Nav(props) {
                                   )}
                                 </Popover>
                                 <div className='inline-block relative'>
-                                  <Link href={`/about/${encodeURIComponent(FAQslug)}`}>
+                                  <Link href={`/${encodeURIComponent(FAQslug)}`}>
                                     <h5
                                       className={`${
                                         router.pathname !== '/'
@@ -389,7 +389,7 @@ export default function Nav(props) {
                   <Disclosure.Button
                     as='a'
                     onClick={() => {
-                      router.push(`/about/${encodeURIComponent(FAQslug)}`);
+                      router.push(`/${encodeURIComponent(FAQslug)}`);
                     }}
                     className='cursor-pointer uppercase text-black-white-800  block pl-3 pr-2 py-4'
                   >
