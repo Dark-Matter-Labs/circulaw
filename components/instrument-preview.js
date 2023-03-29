@@ -3,57 +3,11 @@ import { PortableText } from '@portabletext/react';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
 import MeasureOverview from '../components/measure-overview';
 import MeasureTable from '../components/measure-table';
-
-import {
-  greenBoxComponent,
-  hoverTextComponent,
-  pdfBlockComponentMeasurePage,
-  smallParaComponent,
-  dropDownComponent,
-} from '../lib/portable-text/portable-text-types';
-import {
-  bulletComponent,
-  numberComponent,
-  bulletItemComponent,
-  numberItemComponent,
-} from '../lib/portable-text/portable-text-lists';
-import {
-  firstH2Component,
-  h2Component,
-  h3Component,
-  normalTextComponent,
-} from '../lib/portable-text/portable-text-blocks';
-import { linkComponent } from '../lib/portable-text/portable-text-marks';
+import { aboutPageComponents } from '../lib/portable-text/pt-components';
 
 import { usePreview } from '../lib/sanity.preview';
 
-const components = {
-  types: {
-    greenBox: greenBoxComponent,
-    hoverText: hoverTextComponent,
-    pdfBlock: pdfBlockComponentMeasurePage,
-    smallPara: smallParaComponent,
-    dropDown: dropDownComponent,
-  },
-  list: {
-    bullet: bulletComponent,
-    number: numberComponent,
-  },
-  listItem: {
-    number: bulletItemComponent,
-    bullet: numberItemComponent,
-  },
-  block: {
-    firstH2: firstH2Component,
-    h2: h2Component,
-    h3: h3Component,
-    // need to add other styles here
-    normal: normalTextComponent,
-  },
-  marks: {
-    link: linkComponent,
-  },
-};
+// get query and params form slug.js
 
 export default function InstrumentPreview({ query, queryParams }) {
   const data = { measure: usePreview(null, query, queryParams) };
@@ -85,7 +39,7 @@ export default function InstrumentPreview({ query, queryParams }) {
           <MeasureOverview data={data} viewport='mobile' />
           <div className='sm:max-w-3xl pb-20 col-span-2 '>
             <div className='py-4'>
-              <PortableText value={data?.measure.content} components={components} />
+              <PortableText value={data?.measure.content} components={aboutPageComponents} />
             </div>
             <MeasureTable data={data} />
           </div>
@@ -93,5 +47,5 @@ export default function InstrumentPreview({ query, queryParams }) {
         </div>
       </div>
     </div>
-  );
+  );  
 }
