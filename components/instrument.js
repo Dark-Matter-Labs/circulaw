@@ -3,55 +3,7 @@ import { PortableText } from '@portabletext/react';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
 import MeasureOverview from '../components/measure-overview';
 import MeasureTable from '../components/measure-table';
-
-import {
-  greenBoxComponent,
-  hoverTextComponent,
-  pdfBlockComponentMeasurePage,
-  smallParaComponent,
-  dropDownComponent,
-} from '../lib/portable-text/portable-text-types';
-import {
-  bulletComponent,
-  numberComponent,
-  bulletItemComponent,
-  numberItemComponent,
-} from '../lib/portable-text/portable-text-lists';
-import {
-  firstH2Component,
-  h2Component,
-  h3Component,
-  normalTextComponent,
-} from '../lib/portable-text/portable-text-blocks';
-import { linkComponent } from '../lib/portable-text/portable-text-marks';
-
-const components = {
-  types: {
-    greenBox: greenBoxComponent,
-    hoverText: hoverTextComponent,
-    pdfBlock: pdfBlockComponentMeasurePage,
-    smallPara: smallParaComponent,
-    dropDown: dropDownComponent,
-  },
-  list: {
-    bullet: bulletComponent,
-    number: numberComponent,
-  },
-  listItem: {
-    number: bulletItemComponent,
-    bullet: numberItemComponent,
-  },
-  block: {
-    firstH2: firstH2Component,
-    h2: h2Component,
-    h3: h3Component,
-    // need to add other styles here
-    normal: normalTextComponent,
-  },
-  marks: {
-    link: linkComponent,
-  },
-};
+import {instrumentPTComponents} from '../lib/portable-text/pt-components'
 
 export default function Instrument({ data }) {
   const router = useRouter();
@@ -83,7 +35,7 @@ export default function Instrument({ data }) {
           <MeasureOverview data={data} viewport='mobile' />
           <div className='sm:max-w-3xl pb-20 col-span-2 '>
             <div className='py-4'>
-              <PortableText value={data?.measure?.content} components={components} />
+              <PortableText value={data?.measure?.content} components={instrumentPTComponents} />
             </div>
             <MeasureTable data={data} />
           </div>

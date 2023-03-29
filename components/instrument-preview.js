@@ -3,7 +3,7 @@ import { PortableText } from '@portabletext/react';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
 import MeasureOverview from '../components/measure-overview';
 import MeasureTable from '../components/measure-table';
-import { aboutPageComponents } from '../lib/portable-text/pt-components';
+import { instrumentPTComponents } from '../lib/portable-text/pt-components';
 
 import { usePreview } from '../lib/sanity.preview';
 
@@ -39,7 +39,7 @@ export default function InstrumentPreview({ query, queryParams }) {
           <MeasureOverview data={data} viewport='mobile' />
           <div className='sm:max-w-3xl pb-20 col-span-2 '>
             <div className='py-4'>
-              <PortableText value={data?.measure.content} components={aboutPageComponents} />
+              <PortableText value={data?.measure.content} components={instrumentPTComponents} />
             </div>
             <MeasureTable data={data} />
           </div>
