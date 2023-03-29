@@ -1,15 +1,12 @@
 import { DefaultDocumentNodeResolver } from 'sanity/desk'
 import Iframe from 'sanity-plugin-iframe-pane'
-import {SanityDocument} from 'sanity'
 
 
-function getPreviewUrl(doc: SanityDocument) {
-    return doc?.slug?.current
-      ? `http://localhost:3000/measures/${doc.slug.current}`
-      : `${window.location.host}`
-  }
+// need to get local host to change to where ever we are. 
 
 export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType}) => {
+  
+   
     switch(schemaType) {
         case 'measure':
             return S.document().views([
@@ -17,7 +14,9 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType}
                 S.view
                     .component(Iframe)
                     .options({
-                        url: (doc: SanityDocument) => getPreviewUrl(doc),   
+                       url: (doc) => doc?.slug?.current 
+                       ? `http://localhost:3000/api/preview?slug=${doc.slug.current}`
+                       : `http://localhost:3000/api/preview`,
                     })
                     .title('Preview')
             ])

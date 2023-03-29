@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import { PortableText } from '@portabletext/react';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
 import MeasureOverview from '../components/measure-overview';
@@ -92,12 +91,6 @@ export default function InstrumentPreview({ query, queryParams }) {
           </div>
           <MeasureOverview data={data} viewport='desktop' />
         </div>
-        <Link
-          className='bg-blue-500 p-6 text-white font-bold fixed bottom-0 right-0'
-          href='/api/exit-preview'
-        >
-          Exit Preview
-        </Link>
       </div>
     </div>
   );
