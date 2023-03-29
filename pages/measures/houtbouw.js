@@ -3,6 +3,7 @@ import MeasuresLayout from '../../components/layouts/measures-layout';
 import IconWood from '../../public/icons/woodIcon.svg';
 import { client } from '../../lib/sanity';
 import { houtbouwQueries } from '../../lib/queries';
+import { houtbouwQueries } from '../../lib/queries';
 
 export default function Measures({ numberOfInstruments }) {
   return (
