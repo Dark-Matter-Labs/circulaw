@@ -7,8 +7,6 @@ import { instrumentPTComponents } from '../lib/portable-text/pt-components';
 
 import { usePreview } from '../lib/sanity.preview';
 
-// get query and params form slug.js
-
 export default function InstrumentPreview({ query, queryParams }) {
   const data = { measure: usePreview(null, query, queryParams) };
   const router = useRouter();

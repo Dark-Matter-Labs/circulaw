@@ -1,10 +1,11 @@
 import Link from 'next/link'
 import { PortableText } from '@portabletext/react'
 import OverNav from './over-nav'
-import { aboutPageComponents } from '../lib/portable-text/pt-components'
+import { aboutPagePTComponents } from '../lib/portable-text/pt-components'
 
 
 export default function AboutPageComponent({data}) {
+  console.log(data)
     return (
         <div className='global-margin pb-8 text-black-white-800'>
         <div className='grid grid-cols-1 w-full md:grid-cols-3'>
@@ -16,7 +17,7 @@ export default function AboutPageComponent({data}) {
               <h1 className='lg:block sm:pt-10 py-6 sm:pb-10 mobile sm:desktop'>
                 {data?.aboutPage?.pageTitle}
               </h1>
-              <PortableText value={data?.aboutPage?.aboutPageContent} components={aboutPageComponents} />
+              <PortableText value={data?.aboutPage?.aboutPageContent} components={aboutPagePTComponents} />
             </div>
           </div>
           {data?.aboutPage?.pageTitle !== 'VRAAG & ANTWOORD' && (
