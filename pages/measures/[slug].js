@@ -25,7 +25,7 @@ export default function Measure({ preview, data }) {
 export async function getStaticPaths() {
   const paths = await client.fetch(measurePagePathsQuery);
   return {
-    paths: paths.map((slug) => ( {params:  {slug}}  )), // SOMETHING WRONG HERE
+    paths: paths.map((slug) => ({ params: { slug } })), // SOMETHING WRONG HERE
     fallback: true,
   };
 }
@@ -34,7 +34,7 @@ export async function getStaticProps({ params, preview = false }) {
   // It's important to default the slug so that it doesn't return "undefined"
   const slug = { slug: params?.slug ?? '' };
   if (preview) {
-    return { props: { preview, data:  {slug}  } };
+    return { props: { preview, data: { slug } } };
   }
   const measure = await client.fetch(measureQuery, slug);
   return {
