@@ -4,7 +4,7 @@ import { client } from '../../lib/sanity';
 import WindmillIcon from '../../public/icons/windmill.png';
 import { matrassenQueries } from '../../lib/queries';
 
-export default function Measures({ laws }) {
+export default function Measures({ totalNumberOfLaws }) {
   return (
     <Layout>
       <MeasuresLayout
@@ -21,6 +21,6 @@ export default function Measures({ laws }) {
 }
 
 export async function getStaticProps() {
-  const laws = await client.fetch(matrassenQueries.matrassenLength);
-  return { props: { laws: laws }, revalidate: 1 };
+  const totalNumberOfLaws = await client.fetch(matrassenQueries.matrassenLength);
+  return { props: { totalNumberOfLaws: totalNumberOfLaws }, revalidate: 1 };
 }
