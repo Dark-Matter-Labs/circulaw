@@ -2,11 +2,7 @@ import Layout from '/components/layouts/layout';
 import MeasuresLayout from '../../components/layouts/measures-layout';
 import client from '../../lib/sanity';
 import WindmillIcon from '../../public/icons/windmill.png';
-
-// move to queries
-const lawsQuery = `
-*[_type == "measure" && thema == "circulaire-windturbines"]
-`;
+import { matrassenQueries } from '../../lib/queries';
 
 export default function Measures({ laws }) {
   return (
@@ -25,6 +21,6 @@ export default function Measures({ laws }) {
 }
 
 export async function getStaticProps() {
-  const laws = await client.fetch(lawsQuery);
+  const laws = await client.fetch(matrassenQueries.matrassenLength);
   return { props: { laws: laws }, revalidate: 1 };
 }

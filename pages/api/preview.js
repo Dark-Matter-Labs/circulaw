@@ -15,5 +15,5 @@ export default async function preview(req, res) {
   const instrument = await client.fetch(measureQuery, {
     slug: req.query.slug,
   });
-  redirectToPreview(res, previewData, `/measures/${instrument.slug.current}`);
+  redirectToPreview(res, previewData, `/measures/${instrument.slug.current}`); // change measures to ${instrument.thema}
 }
