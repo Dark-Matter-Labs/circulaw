@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Backup dataset
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: npx @sanity/cli dataset export production backup.tar.gz
         working-directory: studio
         env: 
