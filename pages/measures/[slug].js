@@ -107,7 +107,7 @@ export default function Measure({ data }) {
                 <span className='pr-2' title='Share link on LinkedIn'>
                   <LinkedinShareButton
                     url={'https://circulaw.nl' + asPath}
-                    title={'Check out this page on CircuLaw: ' + data?.measure?.titel}
+                    title={'Graag deel ik met jou deze informatie van CircuLaw.nl: ' + data?.measure?.titel}
                   >
                     <SocialIcon
                       url={'https://circulaw.nl' + asPath}
@@ -121,7 +121,7 @@ export default function Measure({ data }) {
                 <span className='pr-2' title='Share link on Twitter'>
                   <TwitterShareButton
                     url={'https://circulaw.nl' + asPath}
-                    title={'Check out this page on CircuLaw: ' + data?.measure?.titel}
+                    title={'Graag deel ik met jou deze informatie van CircuLaw.nl: ' + data?.measure?.titel}
                   >
                     <SocialIcon
                       url={'https://circulaw.nl' + asPath}
@@ -135,7 +135,7 @@ export default function Measure({ data }) {
                 <span className='pr-2' title='Share link on Whatsapp'>
                   <WhatsappShareButton
                     url={'https://circulaw.nl' + asPath}
-                    title={'Check out this page on CircuLaw: ' + data?.measure?.titel}
+                    title={'Graag deel ik met jou deze informatie van CircuLaw.nl: ' + data?.measure?.titel}
                     separator=':: '
                   >
                     <SocialIcon
@@ -150,8 +150,8 @@ export default function Measure({ data }) {
                 <span className='pr-2' title='Share link as email'>
                   <EmailShareButton
                     url={'https://circulaw.nl' + asPath}
-                    subject={'Check out CircuLaw'}
-                    title={'Check out this page on CircuLaw: ' + data?.measure?.titel}
+                    subject={'Graag deel ik met jou deze informatie van CircuLaw.nl'}
+                    title={'Voeg eigen boodschap toe. ' + data?.measure?.titel}
                   >
                     <SocialIcon
                       url={'https://circulaw.nl' + asPath}
