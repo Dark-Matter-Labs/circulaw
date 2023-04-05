@@ -24,21 +24,20 @@ const defaultOptions = {
 };
 
 export default function Nav(props) {
-  let themaSlugs = [];
+  let themaSlugs = [];  
   if (props.themaSlugs) {
     themaSlugs = props.themaSlugs;
   }
 
   let aboutSlugs = [];
   if (props.aboutSlugs) {
-    aboutSlugs = props.aboutSlugs;
+    aboutSlugs = props.aboutSlugs.aboutNavItems;
   }
 
   let FAQslug = [];
   if (props.vraagSlug) {
     FAQslug = props.vraagSlug;
   }
-
   const router = useRouter();
 
   if (router.pathname === '/en') {
@@ -269,14 +268,15 @@ export default function Nav(props) {
                                         <Popover.Panel className='absolute z-10  transform w-screen max-w-xs sm:px-0'>
                                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                                             <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
+                                              
                                               {aboutSlugs?.map((slug) => (
                                                 <Link
-                                                  key={slug}
-                                                  href={`/about/${encodeURIComponent(slug)}`}
+                                                  key={slug.slug}
+                                                  href={`/about/${encodeURIComponent(slug.slug)}`}
                                                   className='-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase border-b'
                                                 >
                                                   <h6 className='` popup-base text-black-white-800'>
-                                                    {slug.replaceAll('-', ' ')}
+                                                    {slug.title.replaceAll('-', ' ')}
                                                   </h6>
                                                 </Link>
                                               ))}
@@ -376,13 +376,13 @@ export default function Nav(props) {
                   {aboutSlugs?.map((slug) => (
                     <Disclosure.Button
                       as='a'
-                      key={slug}
+                      key={slug.slug}
                       onClick={() => {
-                        router.push(`/about/${encodeURIComponent(slug)}`);
+                        router.push(`/about/${encodeURIComponent(slug.slug)}`);
                       }}
                       className='cursor-pointer border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4 first-letter:uppercase'
                     >
-                      {slug.replaceAll('-', ' ')}
+                      {slug.title.replaceAll('-', ' ')}
                     </Disclosure.Button>
                   ))}
                   <hr className='my-4 mx-2 border-green-600' />

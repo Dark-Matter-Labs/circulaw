@@ -22,7 +22,7 @@ export default function Footer(props) {
 
   let aboutSlugs = [];
   if (props.aboutSlugs) {
-    aboutSlugs = props.aboutSlugs;
+    aboutSlugs = props.aboutSlugs.aboutNavItems;
   }
 
   let FAQslug = [];
@@ -71,14 +71,15 @@ export default function Footer(props) {
                     <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                       {' '}
                       <ul role='list' className='mt-4 space-y-4'>
-                        {aboutSlugs?.map((slug) => (
-                          <li key={slug}>
+                      {aboutSlugs && 
+                        aboutSlugs?.map((slug) => (
+                          <li key={slug.slug}>
                             <a
-                              href={`/about/${encodeURIComponent(slug)}`}
+                              href={`/about/${encodeURIComponent(slug.slug)}`}
                               className=' p-base hover:text-green-400 text-black-white-200'
                             >
                               <span className='inline-block first-letter:uppercase'>
-                                {slug.replaceAll('-', ' ')}
+                                {slug.title.replaceAll('-', ' ')}
                               </span>
                             </a>
                           </li>
