@@ -3,7 +3,7 @@ import { PortableText } from '@portabletext/react';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
 import MeasureOverview from '../components/measure-overview';
 import MeasureTable from '../components/measure-table';
-import {instrumentPTComponents} from '../lib/portable-text/pt-components'
+import { instrumentPTComponents } from '../lib/portable-text/pt-components';
 
 export default function Instrument({ data }) {
   const router = useRouter();

@@ -45,5 +45,5 @@ export default function InstrumentPreview({ query, queryParams }) {
         </div>
       </div>
     </div>
-  );  
+  );
 }
