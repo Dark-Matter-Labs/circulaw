@@ -6,10 +6,27 @@ import Iframe from 'sanity-plugin-iframe-pane'
 // https://circulaw.sanity.studio/studio/desk prod -> circulaw.nl
 // https://circulaw-staging-studio.vercel.app/studio/desk staging - clirc staging
 
+function getPreviewUrl(doc) {
+    if (window.location.origin === 'http://localhost:3333') {
+        return doc?.slug?.current 
+        ? `http://localhost:3000/api/preview?slug=${doc.slug.current}`
+        : 'http://localhost:3000/api/preview'
+    } else if (
+        window.location.origin === 'https://circulaw-staging-studio.vercel.app'
+    ) {
+        return doc?.slug?.current 
+        ?  `https://circulaw-staging.vercel.app/api/preview?slug=${doc.slug.current}`
+        : `https://circulaw-staging.vercel.app/api/preview`
+    } else (
+        window.location.origin === 'https://circulaw.sanity.studio'
+    ) 
+        return doc?.slug?.current
+        ? `https://www.circulaw.nl/api/preview?slug=${doc.slug.current}`
+        : `https://www.circulaw.nl/api/preview`
+}
 
 export const defaultDocumentNode = (S, {schemaType}) => {
   
-   
     switch(schemaType) {
 
         case 'measure':
@@ -18,9 +35,7 @@ export const defaultDocumentNode = (S, {schemaType}) => {
                 S.view
                     .component(Iframe)
                     .options({
-                       url: (doc) => doc?.slug?.current 
-                       ? `http://localhost:3000/api/preview?slug=${doc.slug.current}`
-                       : `http://localhost:3000/api/preview`,
+                       url: (doc) => getPreviewUrl(doc)
                     })
                     .title('Preview')
             ])
@@ -31,9 +46,7 @@ export const defaultDocumentNode = (S, {schemaType}) => {
                 S.view
                     .component(Iframe)
                     .options({
-                       url: (doc) => doc?.slug?.current 
-                       ? `http://localhost:3000/api/preview?slug=${doc.slug.current}`
-                       : `http://localhost:3000/api/preview`,
+                       url: (doc) => getPreviewUrl(doc)
                     })
                     .title('Preview')
             ])
