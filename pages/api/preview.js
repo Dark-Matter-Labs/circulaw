@@ -21,6 +21,6 @@ export default async function preview(req, res) {
     return redirectToPreview(res, previewData, `/measures/${instrument.slug.current}`)
   } 
   if (aboutPage) {
-    return   redirectToPreview(res, previewData, `/about/${aboutPage.slug.current}`); // change measures to ${instrument.thema}
+    return   redirectToPreview(res, previewData, `/about/${aboutPage.slug.current}`);
   }
 }

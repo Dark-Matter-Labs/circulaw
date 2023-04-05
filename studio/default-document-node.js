@@ -1,10 +1,13 @@
-import { DefaultDocumentNodeResolver } from 'sanity/desk'
+// import { DefaultDocumentNodeResolver } from 'sanity/desk'
 import Iframe from 'sanity-plugin-iframe-pane'
 
 
 // need to get local host to change to where ever we are. 
+// https://circulaw.sanity.studio/studio/desk prod -> circulaw.nl
+// https://circulaw-staging-studio.vercel.app/studio/desk staging - clirc staging
 
-export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType}) => {
+
+export const defaultDocumentNode = (S, {schemaType}) => {
   
    
     switch(schemaType) {
