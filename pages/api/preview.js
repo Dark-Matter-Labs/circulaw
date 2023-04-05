@@ -15,12 +15,12 @@ export default async function preview(req, res) {
     slug: req.query.slug,
   });
   const aboutPage = await client.fetch(aboutPageQuery, {
-    slug: req.query.slug
-  })
+    slug: req.query.slug,
+  });
   if (instrument) {
-    return redirectToPreview(res, previewData, `/measures/${instrument.slug.current}`)
-  } 
+    return redirectToPreview(res, previewData, `/measures/${instrument.slug.current}`);
+  }
   if (aboutPage) {
-    return   redirectToPreview(res, previewData, `/about/${aboutPage.slug.current}`); // change measures to ${instrument.thema}
+    return redirectToPreview(res, previewData, `/about/${aboutPage.slug.current}`);
   }
 }

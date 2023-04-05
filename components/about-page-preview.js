@@ -1,8 +1,8 @@
-import Link from 'next/link'
-import { PortableText } from '@portabletext/react'
-import OverNav from './over-nav'
-import { usePreview } from '../lib/sanity.preview'
-import { aboutPagePTComponents } from '../lib/portable-text/pt-components'
+import Link from 'next/link';
+import { PortableText } from '@portabletext/react';
+import OverNav from './over-nav';
+import { usePreview } from '../lib/sanity.preview';
+import { aboutPagePTComponents } from '../lib/portable-text/pt-components';
 
 
 export default function AboutPagepreview({query, queryParams}) {
