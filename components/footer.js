@@ -92,7 +92,7 @@ export default function Footer(props) {
                       <li>
                         <a
                           className='p-base text-black-white-200 hover:text-green-400'
-                          href={`/about/${encodeURIComponent(FAQslug)}`}
+                          href={`/${encodeURIComponent(FAQslug)}`}
                         >
                           {FAQslug.length > 0 && (
                             <span className='inline-block first-letter:uppercase'>

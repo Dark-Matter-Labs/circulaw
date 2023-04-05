@@ -5,6 +5,7 @@ import siteConfig from './documents/site-config';
 import partners from './documents/partners';
 import englishPage from './documents/english-page';
 import thema from './documents/thema';
+import faq from './documents/faq';
 
 import greenBox from './objects/green-box';
 import pdfBlock from './objects/pdf-block';
@@ -24,6 +25,7 @@ export const schemaTypes = [
   englishPage,
   partners,
   thema,
+  faq,
 
   // OBJECTS
   greenBox,
