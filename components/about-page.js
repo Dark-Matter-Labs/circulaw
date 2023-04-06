@@ -7,8 +7,7 @@ import { aboutPagePTComponents } from '../lib/portable-text/pt-components';
 export default function AboutPageComponent({data}) {
     return (
       <div>
-      <div className='bg-green-500 h-40'>
-          change me to correct bg
+      <div className='bg-about-header bg-cover h-40'>
       </div>
         <div className='global-margin pb-8 text-black-white-800'>
         <div className='grid grid-cols-1 w-full lg:grid-cols-3'>

@@ -9,8 +9,7 @@ export default function AboutPagepreview({query, queryParams}) {
     const data = {aboutPage: usePreview(null, query, queryParams)}
     return (
       <div>
-      <div className='bg-green-400 h-40'>
-          change me to correct bg
+      <div className='bg-about-header bg-cover h-40'>
       </div>
         <div className='global-margin pb-8 text-black-white-800'>
         <div className='grid grid-cols-1 w-full md:grid-cols-3'>
