@@ -9,15 +9,15 @@ function classNames(...classes) {
 
 export default function OverNav(props) {
   const { data: aboutPageSlugs } = useSWR(groq`${siteSettingsQuerys.overCirulaw}`, fetcher);
-  const aboutSlugs = aboutPageSlugs?.slugs;
+  const aboutSlugs = aboutPageSlugs
 
   return (
     <nav className='space-y-1 sticky top-64' aria-label='Sidebar'>
       <h3 className='mobile sm:desktop text-green-500 pl-5 pb-2'>Over Circulaw</h3>
       {aboutSlugs?.map((slug) => (
         <a
-          key={slug}
-          href={`/about/${encodeURIComponent(slug)}`}
+          key={slug.slug}
+          href={`/about/${encodeURIComponent(slug.slug)}`}
           className={classNames(
             slug === props.pagename
               ? 'text-black-white-800'
@@ -28,7 +28,7 @@ export default function OverNav(props) {
         >
           <span className='truncate'>
             {'>'}
-            {slug.replaceAll('-', ' ')}
+            {slug.title.replaceAll('-', ' ')}
           </span>
         </a>
       ))}

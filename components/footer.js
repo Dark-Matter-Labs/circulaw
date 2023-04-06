@@ -22,7 +22,7 @@ export default function Footer(props) {
 
   let aboutSlugs = [];
   if (props.aboutSlugs) {
-    aboutSlugs = props.aboutSlugs.aboutNavItems;
+    aboutSlugs = props.aboutSlugs;
   }
 
   let FAQslug = [];

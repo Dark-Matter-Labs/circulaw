@@ -31,7 +31,7 @@ export default function Nav(props) {
 
   let aboutSlugs = [];
   if (props.aboutSlugs) {
-    aboutSlugs = props.aboutSlugs.aboutNavItems;
+    aboutSlugs = props.aboutSlugs;
   }
 
   let FAQslug = [];
@@ -39,7 +39,6 @@ export default function Nav(props) {
     FAQslug = props.vraagSlug;
   }
   const router = useRouter();
-
   if (router.pathname === '/en') {
     return (
       <>
