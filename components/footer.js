@@ -71,19 +71,19 @@ export default function Footer(props) {
                     <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                       {' '}
                       <ul role='list' className='mt-4 space-y-4'>
-                      {aboutSlugs && 
-                        aboutSlugs?.map((slug) => (
-                          <li key={slug.slug}>
-                            <a
-                              href={`/about/${encodeURIComponent(slug.slug)}`}
-                              className=' p-base hover:text-green-400 text-black-white-200'
-                            >
-                              <span className='inline-block first-letter:uppercase'>
-                                {slug.title.replaceAll('-', ' ')}
-                              </span>
-                            </a>
-                          </li>
-                        ))}
+                        {aboutSlugs &&
+                          aboutSlugs?.map((slug) => (
+                            <li key={slug.slug}>
+                              <a
+                                href={`/about/${encodeURIComponent(slug.slug)}`}
+                                className=' p-base hover:text-green-400 text-black-white-200'
+                              >
+                                <span className='inline-block first-letter:uppercase'>
+                                  {slug.title.replaceAll('-', ' ')}
+                                </span>
+                              </a>
+                            </li>
+                          ))}
                       </ul>
                     </div>
                   </div>

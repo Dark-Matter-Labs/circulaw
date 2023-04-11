@@ -8,7 +8,9 @@ function getPreviewUrl(doc) {
       : 'http://localhost:3000/api/preview';
   } else if (window.location.origin === 'https://circulaw-staging-studio.vercel.app') {
     return doc?.slug?.current
-      ? `https://circulaw-staging.vercel.app/api/preview?slug=${encodeURIComponent(doc.slug.current)}`
+      ? `https://circulaw-staging.vercel.app/api/preview?slug=${encodeURIComponent(
+          doc.slug.current,
+        )}`
       : `https://circulaw-staging.vercel.app/api/preview`;
   } else window.location.origin === 'https://circulaw.sanity.studio';
   {

@@ -12,8 +12,8 @@ export default function Layout(props) {
   const { data: aboutPageSlugs } = useSWR(groq`${siteSettingsQuerys.overCirulaw}`, fetcher);
   const { data: vraagAntwoordSlug } = useSWR(groq`${siteSettingsQuerys.vraagAntwoord}`, fetcher);
   const { data: themaPageSlugs } = useSWR(groq`${siteSettingsQuerys.thema}`, fetcher);
-  
-  const aboutNavItems = aboutPageSlugs
+
+  const aboutNavItems = aboutPageSlugs;
   const vraagSlug = vraagAntwoordSlug?.slug;
   const themaSlugs = themaPageSlugs?.slugs;
   return (
