@@ -4,12 +4,15 @@ import OverNav from './over-nav';
 import { usePreview } from '../lib/sanity.preview';
 import { aboutPagePTComponents } from '../lib/portable-text/pt-components';
 
+const margins = 'mx-8 md:mx-10 lg:ml-10 lg:mr-0 xl:ml-20 xl:mr-0 2xl:max-w-7xl 2xl:mx-auto'
+
+
 export default function AboutPagepreview({ query, queryParams }) {
   const data = { aboutPage: usePreview(null, query, queryParams) };
   return (
     <div>
       <div className='bg-about-header bg-cover bg-center h-40'></div>
-      <div className='global-margin pb-8 text-black-white-800'>
+      <div className={`${margins} pb-8 text-black-white-800`}>
         <div className='grid grid-cols-1 w-full md:grid-cols-3'>
           <div className='col-span-2'>
             <div className='breadcrumb pt-8 text-green-500'>

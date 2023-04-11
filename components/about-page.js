@@ -3,12 +3,14 @@ import { PortableText } from '@portabletext/react';
 import OverNav from './over-nav';
 import { aboutPagePTComponents } from '../lib/portable-text/pt-components';
 
+const margins = 'mx-8 md:mx-10 lg:ml-10 lg:mr-0 xl:ml-20 xl:mr-0 2xl:max-w-7xl 2xl:mx-auto'
+
 export default function AboutPageComponent({ data }) {
   return (
     <div>
       <div className='bg-about-header bg-cover bg-center h-40'></div>
-      <div className='global-margin pb-8 text-black-white-800'>
-        <div className='grid grid-cols-1 w-full lg:grid-cols-3'>
+      <div className={`${margins} pb-8 text-black-white-800`}>
+        <div className='grid grid-cols-1 w-full lg:grid-cols-3 max-w-8xl'>
           <div className='lg:col-span-2'>
             <div className='breadcrumb pt-8 text-green-500'>
               <Link href='/'>Home &gt;</Link>
@@ -23,7 +25,7 @@ export default function AboutPageComponent({ data }) {
               />
             </div>
           </div>
-          <div className='mt-3  max-w-3xl lg:ml-12 lg:mb-20 lg:mt-32 col-span-1'>
+          <div className='mt-3 lg:ml-12 lg:mb-20 lg:mt-32 col-span-1'>
             <OverNav pagename={data?.aboutPage?.slug.current} />
           </div>
         </div>
