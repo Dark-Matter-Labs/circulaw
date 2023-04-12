@@ -8,8 +8,9 @@ function classNames(...classes) {
 }
 
 export default function OverNav(props) {
-  const { data: aboutPageSlugs } = useSWR(groq`${siteSettingsQuerys.overCirulaw}`, fetcher);
+  const { data: aboutPageSlugs } = useSWR(groq`${siteSettingsQuerys.overCirulaw}`, fetcher); // change this to same data fetching as about page dropdown
   const aboutSlugs = aboutPageSlugs;
+
   return (
     <nav className='space-y-1 sticky top-64' aria-label='Sidebar'>
       <h3 className='mobile sm:desktop text-green-500 pl-5 pb-2'>Over Circulaw</h3>

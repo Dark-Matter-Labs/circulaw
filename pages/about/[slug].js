@@ -3,7 +3,7 @@ import { PreviewSuspense } from 'next-sanity/preview';
 
 import Layout from '../../components/layouts/layout';
 import { client } from '../../lib/sanity';
-import { aboutPagePathsQuery, aboutPageQuery } from '../../lib/queries';
+import { aboutPagePathsQuery, aboutPageQuery, siteSettingsQuerys } from '../../lib/queries';
 import AboutPageComponent from '../../components/about-page';
 
 const AboutPagepreview = lazy(() => import('../../components/about-page-preview'));
@@ -12,12 +12,12 @@ export default function AboutPage({ preview, data }) {
   return preview ? (
     <PreviewSuspense>
       <Layout>
-        <AboutPagepreview query={aboutPageQuery} queryParams={data.slug} />
+        <AboutPagepreview query={aboutPageQuery} queryParams={data.slug} aboutPageSlugs={data.aboutPageSlugs} />
       </Layout>
     </PreviewSuspense>
   ) : (
     <Layout>
-      <AboutPageComponent data={data} />
+      <AboutPageComponent data={data} aboutPageSlugs={data.aboutPageSlugs} />
     </Layout>
   );
 }
@@ -38,8 +38,9 @@ export async function getStaticProps({ params, preview = false }) {
     return { props: { preview, data: { slug } } };
   }
   const aboutPage = await client.fetch(aboutPageQuery, slug);
+  const aboutPageSlugs = await client.fetch(siteSettingsQuerys.overCirulaw)
   return {
-    props: { preview, data: { aboutPage, slug } },
+    props: { preview, data: { aboutPage, slug, aboutPageSlugs } },
     revalidate: 1,
   };
 }
