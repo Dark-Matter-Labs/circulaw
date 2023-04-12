@@ -13,7 +13,7 @@ export default function AboutPageDropdown({currentSlug, slugs}) {
         <>
           <Disclosure.Button className={`${open ? 'rounded-t-md' : 'rounded-md'} text-black bg-green-500 hover:text-green-500 flex justify-between items-center border border-green-500 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}>
             <div className={`${open ? 'rounded-tl-md' : 'rounded-l-md'} h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}>
-            <span className='inline text-left '>{currentPage[0].title}</span>
+            <span className='inline text-left '>{currentPage[0]?.title}</span>
             </div>
             <div className='w-1/12 px-5 h-full pr-5 bg-green-500 grid items-center justify-center rounded-r-md border border-green-500'>
             <ChevronUpIcon
