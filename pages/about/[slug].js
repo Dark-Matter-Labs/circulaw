@@ -3,7 +3,12 @@ import { PreviewSuspense } from 'next-sanity/preview';
 
 import Layout from '../../components/layouts/layout';
 import { client } from '../../lib/sanity';
-import { aboutPagePathsQuery, aboutPageQuery, siteSettingsQuerys, aboutPagePreviewQuery } from '../../lib/queries';
+import {
+  aboutPagePathsQuery,
+  aboutPageQuery,
+  siteSettingsQuerys,
+  aboutPagePreviewQuery,
+} from '../../lib/queries';
 import AboutPageComponent from '../../components/about-page';
 
 const AboutPagepreview = lazy(() => import('../../components/about-page-preview'));
@@ -38,9 +43,9 @@ export async function getStaticProps({ params, preview = false }) {
     return { props: { preview, data: { slug } } };
   }
   const aboutPage = await client.fetch(aboutPageQuery, slug);
-  const aboutPageSlugs = await client.fetch(siteSettingsQuerys.overCirulaw)
+  const aboutPageSlugs = await client.fetch(siteSettingsQuerys.overCirulaw);
   return {
-    props: { preview, data: { aboutPage, slug, aboutPageSlugs }  },
+    props: { preview, data: { aboutPage, slug, aboutPageSlugs } },
     revalidate: 1,
   };
 }
