@@ -16,7 +16,7 @@ export default function AboutPagepreview({ query, queryParams }) {
           <div className='block lg:hidden w-full'>
           <AboutPageDropdown currentSlug={data?.aboutPage?.slug.current} slugs={data.aboutPage.aboutPageSlugs} />
         </div>
-        <div className='grid grid-cols-1 w-full md:grid-cols-3'>
+        <div className='grid grid-cols-1 w-full lg:grid-cols-3'>
           <div className='col-span-2'>
             <div className='breadcrumb pt-8 text-green-500'>
               <Link href='/'>Home &gt;</Link>
