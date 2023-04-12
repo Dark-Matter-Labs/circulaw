@@ -25,18 +25,18 @@ export default function AboutPageDropdown({currentSlug, slugs}) {
           <Disclosure.Panel>
                     <Disclosure.Button  as='a' href={`/about/${remainingTitles[0]?.slug}`}>
                     <div className='bg-white text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
-                    <span className='block pl-3 truncate'>{remainingTitles[0].title}</span>
+                    <span className='block pl-3 truncate'>{remainingTitles[0]?.title}</span>
                     </div>
                     </Disclosure.Button>
                     <Disclosure.Button  as='a' href={`/about/${remainingTitles[1]?.slug}`}>
                     <div className='bg-white text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
-                    <span className='block pl-3 truncate'>{remainingTitles[1].title}</span>
+                    <span className='block pl-3 truncate'>{remainingTitles[1]?.title}</span>
                     </div>
                     </Disclosure.Button>
                     
                     <Disclosure.Button  as='a' href={`/about/${remainingTitles[2]?.slug}`}>
                     <div className={`${remainingTitles[2] === remainingTitles[-1] ? '' : 'rounded-b-md'} bg-white text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500`}>
-                    <span className='block pl-3 truncate'>{remainingTitles[2].title}</span>
+                    <span className='block pl-3 truncate'>{remainingTitles[2]?.title}</span>
                     </div>
                     </Disclosure.Button>
                     {remainingTitles[3] && 
