@@ -12,12 +12,12 @@ export default function AboutPage({ preview, data }) {
   return preview ? (
     <PreviewSuspense>
       <Layout>
-        <AboutPagepreview query={aboutPageQuery} queryParams={data.slug} aboutPageSlugs={data.aboutPageSlugs} />
+        <AboutPagepreview query={aboutPageQuery} queryParams={data?.slug} aboutPageSlugs={data?.aboutPageSlugs} />
       </Layout>
     </PreviewSuspense>
   ) : (
     <Layout>
-      <AboutPageComponent data={data} aboutPageSlugs={data.aboutPageSlugs} />
+      <AboutPageComponent data={data} aboutPageSlugs={data?.aboutPageSlugs} />
     </Layout>
   );
 }

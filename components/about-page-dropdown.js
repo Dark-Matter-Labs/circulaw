@@ -5,6 +5,7 @@ export default function AboutPageDropdown({currentSlug, slugs}) {
 
     const remainingTitles = slugs.filter(el => el.slug !== currentSlug) 
     const currentPage = slugs.filter(el => el.slug === currentSlug)
+
     return (
         <div className='pt-8 w-full'>
         <Disclosure>
