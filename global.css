@@ -9,6 +9,17 @@
     @apply 2xl:mx-auto;
   }
 
+  .global-margin-alternative {
+    @apply mx-8;
+    @apply md:mx-10;
+    @apply lg:ml-10;
+    @apply lg:mr-0;
+    @apply xl:ml-20; 
+    @apply xl:mr-0;
+    @apply 2xl:max-w-7xl; 
+    @apply 2xl:mx-auto;
+  }
+
   .image-margin {
     @apply max-w-screen-xl mx-auto;
   }

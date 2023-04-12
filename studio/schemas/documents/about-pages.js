@@ -18,7 +18,7 @@ export default {
       options: {
         source: 'pageTitle',
         inUnique: 'true',
-        slugify: (input) => input.replace(/\s+/g, '-').slice(0, 200),
+        slugify: (input) => input.replace(/\s+/g, '-').replace('?', '').slice(0, 200),
       },
     },
     {
@@ -28,6 +28,9 @@ export default {
       of: [
         {
           type: 'greenBox',
+        },
+        {
+          type: 'imageBlock',
         },
         {
           type: 'pdfBlock',

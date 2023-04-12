@@ -12,19 +12,19 @@ export default function Layout(props) {
   const { data: aboutPageSlugs } = useSWR(groq`${siteSettingsQuerys.overCirulaw}`, fetcher);
   const { data: vraagAntwoordSlug } = useSWR(groq`${siteSettingsQuerys.vraagAntwoord}`, fetcher);
   const { data: themaPageSlugs } = useSWR(groq`${siteSettingsQuerys.thema}`, fetcher);
-  const aboutSlugs = aboutPageSlugs?.slugs;
-  const vraagSlug = vraagAntwoordSlug?.slug;
 
+  const aboutNavItems = aboutPageSlugs;
+  const vraagSlug = vraagAntwoordSlug?.slug;
   const themaSlugs = themaPageSlugs?.slugs;
   return (
     <>
-      <Nav vraagSlug={vraagSlug} aboutSlugs={aboutSlugs} themaSlugs={themaSlugs} />
+      <Nav vraagSlug={vraagSlug} aboutSlugs={aboutNavItems} themaSlugs={themaSlugs} />
       <Head>
         <title>CircuLaw</title>
       </Head>
       <main className=''>{props.children}</main>
       <CookieConsent />
-      <Footer vraagSlug={vraagSlug} aboutSlugs={aboutSlugs} themaSlugs={themaSlugs} />
+      <Footer vraagSlug={vraagSlug} aboutSlugs={aboutNavItems} themaSlugs={themaSlugs} />
     </>
   );
 }
