@@ -28,7 +28,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                 />
               </div>
             </Disclosure.Button>
-            
+
             <Disclosure.Panel>
               <Disclosure.Button as='a' href={`/about/${remainingTitles[0]?.slug}`}>
                 <div className='bg-white text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
