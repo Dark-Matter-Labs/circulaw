@@ -29,7 +29,6 @@ export default function AboutPage({ preview, data }) {
 
 export async function getStaticPaths() {
   const paths = await client.fetch(aboutPagePathsQuery);
-  // add function to encode ?
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
     fallback: true,
@@ -37,7 +36,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  // It's important to default the slug so that it doesn't return "undefined"
   const slug = { slug: params?.slug.toString() };
   if (preview) {
     return { props: { preview, data: { slug } } };

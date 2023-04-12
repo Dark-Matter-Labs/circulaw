@@ -33,7 +33,8 @@ export default function AboutPageComponent({ data }) {
             </div>
           </div>
           <div className='hidden lg:block mt-3 lg:ml-12 lg:mb-20 lg:mt-32 col-span-1'>
-            <OverNav pagename={data?.aboutPage?.slug.current} />
+            <OverNav pagename={data?.aboutPage?.slug.current} currentSlug={data?.aboutPage?.slug.current}
+              slugs={data?.aboutPageSlugs} />
           </div>
           <div className='block lg:hidden'>
             <AboutPageDropdown
