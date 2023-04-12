@@ -4,14 +4,13 @@ import OverNav from './over-nav';
 import { usePreview } from '../lib/sanity.preview';
 import { aboutPagePTComponents } from '../lib/portable-text/pt-components';
 import AboutPageDropdown from './about-page-dropdown';
-const margins = 'mx-8 md:mx-10 lg:ml-10 lg:mr-0 xl:ml-20 xl:mr-0 2xl:max-w-7xl 2xl:mx-auto';
 
 export default function AboutPagepreview({ query, queryParams }) {
   const data = { aboutPage: usePreview(null, query, queryParams) };
   return (
     <div>
       <div className='bg-about-header bg-cover bg-center h-40'></div>
-      <div className={`${margins} pb-8 text-black-white-800`}>
+      <div className='pb-8 text-black-white-800 global-margin-alternative'>
         <div className='block lg:hidden w-full'>
           <AboutPageDropdown
             currentSlug={data?.aboutPage?.slug.current}
