@@ -165,17 +165,17 @@ export default function Footer(props) {
                     />
                     <div className='hidden sm:block py-6 p-base text-black-white-200 flex items-center justify-center'>
                       <h3 className='inline-block mobile sm:desktop'>Volg ons op:</h3>
-                      <span data-text='Volg ons op LinkedIn' class='tooltip p-base z-40'>
+                      <span data-text='Volg ons op LinkedIn' className='tooltip p-base z-40'>
                         <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
                           <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
                         </Link>
                       </span>
-                      <span data-text='Volg ons op GitHub' class='tooltip p-base z-30'>
+                      <span data-text='Volg ons op GitHub' className='tooltip p-base z-30'>
                         <Link href='https://github.com/Dark-Matter-Labs/circulaw' target='_blank'>
                           <AiFillGithub className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
                         </Link>
                       </span>
-                      <span data-text='Volg ons op OpenResearch' class='tooltip p-base'>
+                      <span data-text='Volg ons op OpenResearch' className='tooltip p-base'>
                         <Link
                           href='https://openresearch.amsterdam/nl/page/89270/circulaw---circulaire-regelgevingstool'
                           target='_blank'

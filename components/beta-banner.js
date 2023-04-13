@@ -13,7 +13,7 @@ export default function BetaBanner({ type }) {
                 <div className=' text-black-white-800 truncate'>
                   <div className='md:hidden'>
                     <h5 className='inline bold'>Beta</h5>{' '}
-                    <h5 className='inline mobile sm:desktop'>versie van CircuLaw - </h5>
+                    <h5 className='inline mobile sm:desktop'>versie - </h5>
                     <span className='link-base text-green-500'>
                       <Link href='/beta'>Lees meer -&gt;</Link>
                     </span>
@@ -44,7 +44,7 @@ export default function BetaBanner({ type }) {
                 <div className=' text-black-white-200 truncate'>
                   <div className='md:hidden'>
                     <h5 className='inline bold'>Beta</h5>{' '}
-                    <h5 className='inline mobile sm:desktop'>versie van CircuLaw - </h5>
+                    <h5 className='inline mobile sm:desktop'>versie - </h5>
                     <span className='link-base text-green-600'>
                       <Link href='/beta'>Lees meer -&gt;</Link>
                     </span>
