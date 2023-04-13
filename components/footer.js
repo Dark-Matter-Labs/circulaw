@@ -1,8 +1,12 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Image from 'next/image';
+import { RiLinkedinFill } from 'react-icons/ri';
+import { AiFillGithub } from 'react-icons/ai';
 import NieuwTooltip from '../components/nieuw-tooltip';
 import ActionPanel from '../components/section-action-panel';
 import Partners from './partners';
+import ORicon from '../public/icons/openResearch.svg';
 
 const navigation = {
   // FAQ href is linked to CMS.
@@ -46,6 +50,27 @@ export default function Footer(props) {
                       buttonText='Neem contact op'
                       buttonLink='/contact'
                     />
+                    <div className='block sm:hidden pt-6 p-base text-black-white-200 '>
+                      <h3 className='mobile sm:desktop inline-block'>Volg ons op:</h3>
+                      <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
+                        <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
+                      </Link>
+                      <Link href='https://github.com/Dark-Matter-Labs/circulaw' target='_blank'>
+                        <AiFillGithub className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
+                      </Link>
+                      <Link
+                        href='https://openresearch.amsterdam/nl/page/89270/circulaw---circulaire-regelgevingstool'
+                        target='_blank'
+                      >
+                        <Image
+                          className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5'
+                          alt='Open Research icon'
+                          src={ORicon}
+                          width={6}
+                          height={6}
+                        />
+                      </Link>
+                    </div>
                   </div>
                   <div className=' border-b border-black-white-200 sm:border-0 py-2 sm:py-0'>
                     <h4 className='text-green-300 mobile sm:desktop uppercase'>THEMA’S</h4>
@@ -138,6 +163,31 @@ export default function Footer(props) {
                       buttonText='Neem contact op'
                       buttonLink='/contact'
                     />
+                    <div className='hidden sm:block py-6 p-base text-black-white-200 flex items-center justify-center'>
+                      <h3 className='inline-block mobile sm:desktop'>Volg ons op:</h3>
+                      <span data-text='Volg ons op LinkedIn' class='tooltip p-base z-40'>
+                        <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
+                          <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
+                        </Link>
+                      </span>
+                      <span data-text='Volg ons op GitHub' class='tooltip p-base z-30'>
+                        <Link href='https://github.com/Dark-Matter-Labs/circulaw' target='_blank'>
+                          <AiFillGithub className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
+                        </Link>
+                      </span>
+                      <span data-text='Volg ons op OpenResearch' class='tooltip p-base'>
+                        <Link
+                          href='https://openresearch.amsterdam/nl/page/89270/circulaw---circulaire-regelgevingstool'
+                          target='_blank'
+                        >
+                          <Image
+                            className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5'
+                            alt='Open Research icon'
+                            src={ORicon}
+                          />
+                        </Link>
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>

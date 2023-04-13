@@ -264,3 +264,31 @@ html {
   background-position: center;
   margin-top: -3px;
 }
+
+.tooltip {
+  position:relative;
+}
+
+.tooltip:before {
+  content: attr(data-text);
+  position: absolute;
+  
+  top:50%;
+  transform:translateY(-50%);
+  
+  left:100%;
+  margin-left:15px;
+  
+  width:200px;
+  padding:10px;
+  border-radius:10px;
+  background:#000;
+  color: #fff;
+  text-align:center;
+
+  display:none;
+}
+
+.tooltip:hover:before {
+  display:block;
+}
