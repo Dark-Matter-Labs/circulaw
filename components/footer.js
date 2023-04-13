@@ -3,8 +3,8 @@ import Link from 'next/link';
 import NieuwTooltip from '../components/nieuw-tooltip';
 import ActionPanel from '../components/section-action-panel';
 import Partners from './partners';
-import { RiLinkedinFill } from 'react-icons/ri'
-import { AiFillGithub } from 'react-icons/ai'
+import { RiLinkedinFill } from 'react-icons/ri';
+import { AiFillGithub } from 'react-icons/ai';
 
 const navigation = {
   // FAQ href is linked to CMS.
@@ -48,14 +48,14 @@ export default function Footer(props) {
                       buttonText='Neem contact op'
                       buttonLink='/contact'
                     />
-                     <div className='block sm:hidden pt-6 p-base text-black-white-200 '>
-                     <h3 className='mobile sm:desktop inline-block'>Volg ons op:</h3>
-                        <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
+                    <div className='block sm:hidden pt-6 p-base text-black-white-200 '>
+                      <h3 className='mobile sm:desktop inline-block'>Volg ons op:</h3>
+                      <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
                         <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
-                        </Link>
-                        <Link href='https://github.com/Dark-Matter-Labs/circulaw' target='_blank'> 
-                        <AiFillGithub className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5'/>
-                        </Link>
+                      </Link>
+                      <Link href='https://github.com/Dark-Matter-Labs/circulaw' target='_blank'>
+                        <AiFillGithub className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
+                      </Link>
                     </div>
                   </div>
                   <div className=' border-b border-black-white-200 sm:border-0 py-2 sm:py-0'>
@@ -150,13 +150,13 @@ export default function Footer(props) {
                       buttonLink='/contact'
                     />
                     <div className='hidden sm:block py-6 p-base text-black-white-200 flex items-center justify-center'>
-                        <h3 className='inline-block mobile sm:desktop'>Volg ons op:</h3>
-                        <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
+                      <h3 className='inline-block mobile sm:desktop'>Volg ons op:</h3>
+                      <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
                         <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
-                        </Link>
-                        <Link href='https://github.com/Dark-Matter-Labs/circulaw' target='_blank'> 
-                        <AiFillGithub className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5'/>
-                        </Link>
+                      </Link>
+                      <Link href='https://github.com/Dark-Matter-Labs/circulaw' target='_blank'>
+                        <AiFillGithub className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
+                      </Link>
                     </div>
                   </div>
                 </div>
