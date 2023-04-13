@@ -72,27 +72,31 @@ export default function NieuwToolTip() {
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>
                         <div className='absolute inset-0 px-4 sm:px-6'>
+                          <h4 className='mobile sm:desktop'>Nieuw in CircuLaw</h4>
                           <p className='p-base pb-6'>
-                            We hebben nu ook{' '}
-                            <Link className='link-base' href='/circulaire-matrasketen'>
-                              juridische instrumenten geïdentificeerd om de circulariteit van de
-                              matrasketen te bevorderen
-                            </Link>
+                            Waar loop je nou in de praktijk tegen aan als je de circulariteit van de
+                            matrasketen wilt bevorderen? We hebben{' '}
+                            <a
+                              className='link-base'
+                              href='https://cdn.sanity.io/files/2vfoxb3h/production/947637ee3b34288c1b68867902c339ad28641756.pdf'
+                              target='_blank'
+                              rel='noopener noreferrer'
+                            >
+                              2 voorbeelden toegevoegd die duidelijk maken welke beslissingen een
+                              rol kunnen spelen bij inkoop.
+                            </a>
                           </p>
+                          <h4 className='mobile sm:desktop'> Methodiek voor wetsanalyse</h4>
                           <p className='p-base pb-6'>
                             CircuLaw volgt voor de analyse van wet-en regelgeving en het
                             identificeren van juridische instrumenten een standaard werkwijze: deze{' '}
                             <Link
                               className='link-base'
-                              href='/about/Wetsanalyse-vanuit-circulaire-blik'
+                              href='about/Wetsanalyse-vanuit-circulaire-blik'
                             >
                               CircuLaw-methodiek voor wetsanalyse
                             </Link>{' '}
                             is nu ook voor iedereen beschikbaar.
-                          </p>
-                          <p className='p-base'>
-                            In deze versie van de website hebben we techniek, ontwerp en copy
-                            verbeterd.
                           </p>
                         </div>
                       </div>
