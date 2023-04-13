@@ -113,7 +113,7 @@ export default function English({ data }) {
                 </div>
                 <div className='pb-6'>
                   <Link href='/'>
-                    <CustomButton color='whiteShaddow'>
+                    <CustomButton color='home'>
                       View website (Dutch)&nbsp;
                       <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                     </CustomButton>
@@ -131,7 +131,7 @@ export default function English({ data }) {
                     href='https://openresearch.amsterdam/en/page/90992/europese-wet--en-regelgeving-circulaire-economie'
                     target='_blank'
                   >
-                    <CustomButton color='whiteShaddow'>
+                    <CustomButton color='home'>
                       View whitepapers (English)&nbsp;
                       <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                     </CustomButton>

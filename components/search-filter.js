@@ -97,7 +97,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                     id={`data-${data.value}-${data.id}`}
                     checked={checkedArray.indexOf(data.id) !== -1}
                     onChange={() => onChangeHandler(data.id)}
-                    className=''
+                    className='rounded-[3px]'
                   />
                   <label
                     htmlFor={`data-${data.value}-${data.id}`}
@@ -127,6 +127,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                     id={`data-${data.value}-${data.id}`}
                     checked={checkedArray.indexOf(data.id) !== -1}
                     onChange={() => onChangeHandler(data.id)}
+                    className='rounded-[3px]'
                   />
                   <label
                     htmlFor={`data-${data.value}-${data.id}`}

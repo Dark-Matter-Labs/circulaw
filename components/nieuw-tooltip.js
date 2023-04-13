@@ -10,7 +10,7 @@ export default function NieuwToolTip() {
     <>
       <button
         type='button'
-        className='inline-flex rounded-full px-4 py-1 items-centershadow border button border-green-600 bg-green-500 hover:bg-black-white-200 text-black-white-200 hover:text-green-600 transition ease-in-out hover:duration-150 focus:outline-none'
+        className='inline-flex rounded-full px-4 py-1 items-centershadow border button border-green-600 bg-green-500 hover:bg-black-white-200 text-black-white-200 hover:text-green-600 focus:outline-none'
         onClick={() => setOpen(true)}
       >
         <span className='sr-only'>Open ToolTip</span>
@@ -72,7 +72,7 @@ export default function NieuwToolTip() {
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>
                         <div className='absolute inset-0 px-4 sm:px-6'>
-                          <h4 className='mobile sm:desktop'>Nieuw in CircuLaw</h4>
+                          <h3 className='mobile sm:desktop'>Nieuwe voorbeelden</h3>
                           <p className='p-base pb-6'>
                             Waar loop je nou in de praktijk tegen aan als je de circulariteit van de
                             matrasketen wilt bevorderen? We hebben{' '}
@@ -86,7 +86,7 @@ export default function NieuwToolTip() {
                               rol kunnen spelen bij inkoop.
                             </a>
                           </p>
-                          <h4 className='mobile sm:desktop'> Methodiek voor wetsanalyse</h4>
+                          <h3 className='mobile sm:desktop'>Methodiek voor wetsanalyse</h3>
                           <p className='p-base pb-6'>
                             CircuLaw volgt voor de analyse van wet-en regelgeving en het
                             identificeren van juridische instrumenten een standaard werkwijze: deze{' '}
