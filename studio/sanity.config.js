@@ -3,6 +3,7 @@ import { deskTool } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './schemas';
 import { Structure } from './desk-structure';
+import { defaultDocumentNode } from './default-document-node';
 import Logo from './components/logo';
 
 export default defineConfig([
@@ -15,6 +16,7 @@ export default defineConfig([
     plugins: [
       deskTool({
         structure: Structure,
+        defaultDocumentNode,
       }),
       visionTool(),
     ],
@@ -36,6 +38,7 @@ export default defineConfig([
     plugins: [
       deskTool({
         structure: Structure,
+        defaultDocumentNode,
       }),
       visionTool(),
     ],

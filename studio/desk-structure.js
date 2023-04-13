@@ -3,7 +3,7 @@ import { GiDeadWood, GiBed, GiWindmill } from 'react-icons/gi';
 import { GrNavigate } from 'react-icons/gr';
 import { FcAbout } from 'react-icons/fc';
 import { MdSettingsSuggest } from 'react-icons/md';
-import { FaLanguage, FaHandshake } from 'react-icons/fa';
+import { FaLanguage, FaHandshake, FaQuestion } from 'react-icons/fa';
 import { BsCircle } from 'react-icons/bs';
 
 export const Structure = (S) =>
@@ -55,6 +55,7 @@ export const Structure = (S) =>
         .title('About Pages')
         .icon(FcAbout)
         .child(S.documentList().title('About Pages').filter('_type == "aboutPage"')),
+      S.documentListItem().schemaType('FAQpage').title('FAQ Page').icon(FaQuestion),
       S.documentListItem().schemaType('englishPage').title('English Page').icon(FaLanguage),
       S.divider(),
       S.listItem()

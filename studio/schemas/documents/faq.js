@@ -1,10 +1,10 @@
-import { FcAbout } from 'react-icons/fc';
+import { FaQuestion } from 'react-icons/fa';
 
 export default {
-  title: 'About Pages',
-  name: 'aboutPage',
+  title: 'FAQ Pages',
+  name: 'FAQpage',
   type: 'document',
-  icon: FcAbout,
+  icon: FaQuestion,
   fields: [
     {
       title: 'Page Title',
@@ -18,19 +18,16 @@ export default {
       options: {
         source: 'pageTitle',
         inUnique: 'true',
-        slugify: (input) => input.replace(/\s+/g, '-').replace('?', '').slice(0, 200),
+        slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
       },
     },
     {
-      title: 'About Content',
-      name: 'aboutPageContent',
+      title: 'FAQ Content',
+      name: 'FAQPageContent',
       type: 'array',
       of: [
         {
           type: 'greenBox',
-        },
-        {
-          type: 'imageBlock',
         },
         {
           type: 'pdfBlock',

@@ -6,13 +6,12 @@ import SectionTypes from '../components/section-types-list';
 import waaromImage from '../public/home-page/waarom.png';
 import watImage from '../public/home-page/wat.png';
 import hoeverImage from '../public/home-page/hoever.png';
-import client from '../lib/sanity';
+import { client } from '../lib/sanity';
 import { siteSettingsQuerys, homePageThemaQuery } from '../lib/queries';
 
 export default function Index({ ...props }) {
   const aboutSlugs = props.overCirculaw.slugs;
   const themaCards = props.homePageThemaData;
-  console.log(themaCards, 'test on new ');
   return (
     <Layout page='home'>
       <div className='bg-black-white-200 pb-20' name='thema'>
