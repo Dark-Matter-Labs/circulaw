@@ -10,7 +10,7 @@ export default function NieuwToolTip() {
     <>
       <button
         type='button'
-        className='inline-flex rounded-full px-4 py-1 items-centershadow border button border-green-600 bg-green-500 hover:bg-black-white-200 text-black-white-200 hover:text-green-600 focus:outline-none'
+        className='inline-flex rounded-full px-4 py-1 items-center shadow border button border-green-600 bg-green-500 hover:bg-green-200 text-black-white-200 hover:text-green-600 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white active:bg-green-300'
         onClick={() => setOpen(true)}
       >
         <span className='sr-only'>Open ToolTip</span>
