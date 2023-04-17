@@ -107,12 +107,12 @@ export default function PolicyList(props) {
                     <h6 className='inline'>R-ladder: </h6>
                     <h6 className='block-inline text-black-white-200 inline'>
                       {law.rLadder.map((rValue) => (
+                        <div key={law.titel + rValue} className='inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-500 mr-2'>
                         <span
-                          key={law.titel + rValue}
-                          className='bg-green-500 rounded-full p-1 mr-2'
+                          className='text-white'
                         >
                           {rValue}{' '}
-                        </span>
+                        </span></div>
                       ))}
                     </h6>
                   </div>
