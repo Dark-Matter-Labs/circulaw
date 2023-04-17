@@ -78,4 +78,4 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
       </Disclosure>
     </div>
   );
-}
+} 
