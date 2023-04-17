@@ -1,10 +1,13 @@
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
+
 
 export default function AboutPageDropdown({ currentSlug, slugs }) {
   const remainingTitles = slugs?.filter((el) => el.slug !== currentSlug) ?? [];
   const currentPage = slugs?.filter((el) => el.slug === currentSlug) ?? [];
+  const router = useRouter()
+  // add on click close to close the disclosure. 
   return (
     <div className='pt-8 w-full'>
       <Disclosure>
@@ -30,23 +33,17 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
             </Disclosure.Button>
 
             <Disclosure.Panel>
-
-              <Disclosure.Button as='div'>
-                <Link href={`/about/${remainingTitles[0]?.slug}`}>
+              <Disclosure.Button as='div' onClick={() => {router.push(`/about/${remainingTitles[0]?.slug}`)}}>
                 <div className='bg-white w-full text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
                   <span className='block pl-3 truncate'>{remainingTitles[0]?.title}</span>
                 </div>
-                </Link>
               </Disclosure.Button>
-              <Disclosure.Button as='div'>
-                <Link href={`/about/${remainingTitles[1]?.slug}`}>
+              <Disclosure.Button as='div' onClick={() => {router.push(`/about/${remainingTitles[1]?.slug}`)}}>
                 <div className='bg-white w-full text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
                   <span className='block pl-3 truncate'>{remainingTitles[1]?.title}</span>
                 </div>
-                </Link>
               </Disclosure.Button>
-              <Disclosure.Button as='div'>
-                <Link href={`/about/${remainingTitles[2]?.slug}`}>
+              <Disclosure.Button as='div' onClick={() => {router.push(`/about/${remainingTitles[2]?.slug}`)}}>
                 <div
                   className={`${
                     remainingTitles[2]?.slug === remainingTitles?.slice(-1)[0].slug ? 'rounded-b-md' : ''
@@ -54,11 +51,9 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                 >
                   <span className='block pl-3 truncate'>{remainingTitles[2]?.title}</span>
                 </div>
-                </Link>
               </Disclosure.Button>
               {remainingTitles[3] && (
-                <Disclosure.Button as='div' >
-                  <Link href={`/about/${remainingTitles[3]?.slug}`}>
+                <Disclosure.Button as='div' onClick={() => {router.push(`/about/${remainingTitles[3]?.slug}`)}}>
                   <div
                     className={`${
                       remainingTitles[3]?.slug === remainingTitles?.slice(-1)[0].slug ? 'rounded-b-md' : ''
@@ -66,12 +61,10 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                   >
                     <span className='block pl-3 truncate'>{remainingTitles[3]?.title}</span>
                   </div>
-                  </Link>
                 </Disclosure.Button>
               )}
               {remainingTitles[4] && (
-                <Disclosure.Button as='div'>
-                  <Link href={`/about/${remainingTitles[4]?.slug}`}>
+                <Disclosure.Button as='div' onClick={() => {router.push(`/about/${remainingTitles[4]?.slug}`)}}>
                   <div
                     className={`${
                       remainingTitles[4]?.slug === remainingTitles?.slice(-1)[0].slug ? 'rounded-b-md' : ''
@@ -79,7 +72,6 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                   >
                     <span className='block pl-3 truncate'>{remainingTitles[4]?.title}</span>
                   </div>
-                  </Link>
                 </Disclosure.Button>
               )}
             </Disclosure.Panel>
