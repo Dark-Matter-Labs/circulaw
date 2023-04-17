@@ -46,7 +46,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
               <Disclosure.Button as='div' onClick={() => {router.push(`/about/${remainingTitles[2]?.slug}`)}}>
                 <div
                   className={`${
-                    remainingTitles[2]?.slug === remainingTitles?.slice(-1)[0].slug ? 'rounded-b-md' : ''
+                    remainingTitles[2]?.slug === remainingTitles?.slice(-1)[0]?.slug ? 'rounded-b-md' : ''
                   } bg-white w-full text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500`}
                 >
                   <span className='block pl-3 truncate'>{remainingTitles[2]?.title}</span>
@@ -56,7 +56,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                 <Disclosure.Button as='div' onClick={() => {router.push(`/about/${remainingTitles[3]?.slug}`)}}>
                   <div
                     className={`${
-                      remainingTitles[3]?.slug === remainingTitles?.slice(-1)[0].slug ? 'rounded-b-md' : ''
+                      remainingTitles[3]?.slug === remainingTitles?.slice(-1)[0]?.slug ? 'rounded-b-md' : ''
                     } bg-white text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500`}
                   >
                     <span className='block pl-3 truncate'>{remainingTitles[3]?.title}</span>
@@ -67,7 +67,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                 <Disclosure.Button as='div' onClick={() => {router.push(`/about/${remainingTitles[4]?.slug}`)}}>
                   <div
                     className={`${
-                      remainingTitles[4]?.slug === remainingTitles?.slice(-1)[0].slug ? 'rounded-b-md' : ''
+                      remainingTitles[4]?.slug === remainingTitles?.slice(-1)[0]?.slug ? 'rounded-b-md' : ''
                     } bg-white text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500`}
                   >
                     <span className='block pl-3 truncate'>{remainingTitles[4]?.title}</span>
