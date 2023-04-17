@@ -8,7 +8,7 @@ import { instrumentPTComponents } from '../lib/portable-text/pt-components';
 export default function Instrument({ data }) {
   const router = useRouter();
   return (
-    <div className='measure-bg'>
+    <div className='bg-black-white-100'>
       <div className='global-margin sm:pt-10 '>
         <div className='grid grid-cols-1 sm:grid-cols-12 content-center'>
           <div className='sm:col-span-12 row-span-1 h-12 mt-4'>
