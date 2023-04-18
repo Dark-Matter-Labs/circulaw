@@ -14,7 +14,7 @@ export default function Privacy() {
         </p>
         <p className=' p-lg pb-10 max-w-4xl'>
           Contactgegevens projectteam CircuLaw:{' '}
-          <span className='text-green-500  link-lg'>
+          <span className='text-green-500 link-lg link-interaction'>
             <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
           </span>
         </p>
@@ -84,7 +84,7 @@ export default function Privacy() {
         <p className=' p-lg pb-10 max-w-4xl'>
           Als je het niet eens zijn met de manier waarop CircuLaw omgaat met je persoonsgegevens dan
           kun je een klacht indienen bij de{' '}
-          <span className='text-green-500 link-lg'>
+          <span className='text-green-500 link-lg link-interaction'>
             <a
               href='https://autoriteitpersoonsgegevens.nl/nl/zelf-doen/gebruik-uw-privacyrechten/klacht-melden-bij-de-ap'
               target='_blank'
@@ -115,14 +115,14 @@ export default function Privacy() {
         </p>
         <p className=' p-lg max-w-4xl pb-6'>
           Heb je vragen naar aanleiding van deze Privacyverklaring? Mail{' '}
-          <span className='text-green-500 link-lg'>
+          <span className='text-green-500 link-lg link-interaction'>
             <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
           </span>
         </p>
         <h2 className='mobile sm:desktop py-2'>Cookies</h2>
         <p className=' p-lg pb-6 max-w-4xl'>
           Bekijk ons{' '}
-          <span className='text-green-500 link-lg'>
+          <span className='text-green-500 link-lg link-interaction'>
             <Link href='/cookie-info'>Cookiebeleid</Link>
           </span>
           .

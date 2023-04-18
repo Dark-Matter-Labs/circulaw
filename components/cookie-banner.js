@@ -32,11 +32,11 @@ const CookieConsent = () => {
             site vervolgens te kunnen verbeteren. Altijd met respect voor jouw privacy. Lees voor
             meer informatie onze{' '}
             <Link href='/privacy-policy'>
-              <span className='link-lg underline hover:text-lightAccent'>Privacyverklaring</span>
+              <span className='link-lg underline link-interaction'>Privacyverklaring</span>
             </Link>{' '}
             en ons{' '}
             <Link href='/cookie-info'>
-              <span className='link-lg underline hover:text-lightAccent'>Cookiebeleid.</span>
+              <span className='link-lg underline link-interaction'>Cookiebeleid.</span>
             </Link>
           </p>
         </div>

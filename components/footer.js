@@ -80,7 +80,7 @@ export default function Footer(props) {
                           <li key={slug}>
                             <a
                               href={`/${encodeURIComponent(slug)}`}
-                              className='p-base hover:text-green-400 text-black-white-200'
+                              className='p-base link-interaction text-black-white-200'
                             >
                               <span className='inline-block first-letter:uppercase'>
                                 {slug.replaceAll('-', ' ')}
@@ -101,7 +101,7 @@ export default function Footer(props) {
                             <li key={slug.slug}>
                               <a
                                 href={`/about/${encodeURIComponent(slug.slug)}`}
-                                className=' p-base hover:text-green-400 text-black-white-200'
+                                className='p-base link-interaction text-black-white-200'
                               >
                                 <span className='inline-block first-letter:uppercase'>
                                   {slug.title.replaceAll('-', ' ')}
@@ -117,7 +117,7 @@ export default function Footer(props) {
                     <ul role='list' className='mt-4 space-y-4'>
                       <li>
                         <a
-                          className='p-base text-black-white-200 hover:text-green-400'
+                          className='p-base text-black-white-200 link-interaction'
                           href={`/${encodeURIComponent(FAQslug)}`}
                         >
                           {FAQslug.length > 0 && (
@@ -131,7 +131,7 @@ export default function Footer(props) {
                         <li key={item.name}>
                           <a
                             href={item.href}
-                            className=' p-base text-black-white-200 hover:text-green-400'
+                            className=' p-base text-black-white-200 link-interaction'
                           >
                             {item.name}
                           </a>
@@ -139,7 +139,7 @@ export default function Footer(props) {
                       ))}
                       <li className='flex justify-start text-black-white-200 items-center'>
                         <span
-                          className={`hover:underline ${
+                          className={`link-interaction ${
                             router.pathname === '/en' ? '' : 'font-semibold'
                           }`}
                         >
@@ -147,7 +147,7 @@ export default function Footer(props) {
                         </span>
                         <span className='px-1 enLink'>|</span>
                         <span
-                          className={`hover:underline ${
+                          className={`link-interaction ${
                             router.pathname === '/en' ? 'font-semibold' : ''
                           }`}
                         >

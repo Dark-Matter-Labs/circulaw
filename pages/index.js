@@ -47,7 +47,7 @@ export default function Index({ ...props }) {
                   versnelde klimaatverandering tegen te gaan, vervuiling te verminderen, de
                   biodiversiteit te behouden en om te zorgen dat grondstoffen beschikbaar blijven.
                 </p>
-                <span className='text-green-500  link-lg'>
+                <span className='text-green-500 link-lg link-interaction'>
                   Lees verder <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                 </span>
               </div>
@@ -73,7 +73,7 @@ export default function Index({ ...props }) {
                     circulaire houtbouw en circulaire windmolens
                   </li>
                 </ul>
-                <span className='text-green-500  link-lg'>
+                <span className='text-green-500 link-lg link-interaction'>
                   Lees verder
                   <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                 </span>
@@ -93,7 +93,7 @@ export default function Index({ ...props }) {
                   (Metropoolregio Amsterdam) Kernteam Houtbouw, Belastingdienst, TU Delft, Erasmus
                   School of LAW, de VU, Wageningen Universiteit (WUR Law group).
                 </p>
-                <span className='text-green-500 link-lg'>
+                <span className='text-green-500 link-lg link-interaction'>
                   Lees verder <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                 </span>
               </div>

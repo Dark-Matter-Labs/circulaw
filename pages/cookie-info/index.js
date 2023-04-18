@@ -101,13 +101,13 @@ export default function Privacy() {
 
         <p className=' p-lg max-w-4xl pb-6'>
           Heb je vragen naar aanleiding van deze cookiebeleid? Mail ons:{' '}
-          <span className='text-green-500  link-lg'>
+          <span className='text-green-500 link-lg link-interaction'>
             <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
           </span>
         </p>
         <p className=' p-lg pb-6 max-w-4xl'>
           Zie ook onze{' '}
-          <span className='text-green-500 link-lg'>
+          <span className='text-green-500 link-lg link-interaction'>
             <Link href='/privacy-policy'>Privacyverklaring.</Link>
           </span>
         </p>

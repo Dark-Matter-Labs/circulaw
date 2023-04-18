@@ -10,13 +10,13 @@ export default function LangSwitch() {
       }`}
     >
       <span
-        className={`hover:underline ${router.pathname === '/en' ? 'enLink' : 'enLinkSelected'}`}
+        className={`link-interaction ${router.pathname === '/en' ? 'enLink' : 'enLinkSelected'}`}
       >
         <Link href='/'>NL</Link>
       </span>
       <span className='px-1 enLink'>|</span>
       <span
-        className={`hover:underline ${router.pathname === '/en' ? 'enLinkSelected' : 'enLink'}`}
+        className={`link-interaction ${router.pathname === '/en' ? 'enLinkSelected' : 'enLink'}`}
       >
         <Link href='/en'>EN</Link>
       </span>
