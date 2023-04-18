@@ -680,14 +680,14 @@ export default function MeasuresLayout({ ...props }) {
             </div>
 
             {/* AUTOCOMPLETE */}
-            <div className='sm:w-9/12 my-5 focus-within:ring-2 focus-within:border-0 focus-within:ring-green-600 border outline-none rounded-lg'>
+            <div className='sm:w-9/12 my-5 focus-within:ring-2 focus-within:border-0 focus-within:ring-green-600 border outline-none rounded-cl'>
               <Combobox value={firstLaw} onChange={setFirstLaw}>
                 <div className='flex items-center px-3'>
                   <SearchIcon className='h-5 w-5 text-gray-500 inline-block' />
                   <Combobox.Input
                     onChange={(e) => setSearchValue(e.target.value)}
                     autoComplete={'off'}
-                    className='w-full py-2 px-3 outline-none border-0 rounded-lg focus:ring-0 placeholder:text-black-white-600 placeholder:italic'
+                    className='w-full py-2 px-3 outline-none border-0 rounded-cl focus:ring-0 placeholder:text-black-white-600 placeholder:italic'
                     displayValue={() => searchValue}
                     placeholder='Zoek op trefwoord'
                   />
@@ -707,7 +707,7 @@ export default function MeasuresLayout({ ...props }) {
                             className={`${
                               selectedResults?.slice(0, 10).slice(-1)[0].titel === law.titel &&
                               active === true
-                                ? 'rounded-b-lg'
+                                ? 'rounded-b-cl'
                                 : ''
                             } ${
                               active
@@ -835,7 +835,7 @@ export default function MeasuresLayout({ ...props }) {
         <div className='lg:hidden py-5 w-28 justify-self-end'>
           <button
             type='button'
-            className='px-4 inline-flex border-2 p-2 w-full border-black-white-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500 lg:hidden'
+            className='px-4 inline-flex border-2 p-2 w-full border-black-white-800 rounded-cl focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500 lg:hidden'
             onClick={() => setSidebarOpen(true)}
           >
             <span className='sr-only'>Open sidebar</span>

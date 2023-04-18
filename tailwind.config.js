@@ -79,6 +79,9 @@ module.exports = {
         'en-header': 'url("/en-deco-header.png")',
         'about-header': 'url("/about-header.png")'
       },
+      borderRadius: {
+          'cl': '10px',
+      },
     },
   },
   plugins: [require('@tailwindcss/forms')],

@@ -20,7 +20,7 @@ export default function HomepageHeader() {
             overzicht over de verdeling van verantwoordelijkheden.
           </p>
           <div className='mt-2 sm:flex sm:justify-center md:mt-2'>
-            <div className='rounded-md'>
+            <div className=''>
               <CustomButton color='home'>
                 <ScrollLink to='thema' smooth={true}>
                   Bekijk de thema&rsquo;s{' '}
