@@ -88,7 +88,7 @@ export default function Partners() {
             differently, what you think is missing, and of course, we would also like to hear what
             makes you happy.{' '}
             <Link href='mailto:info@circulaw.nl'>
-              <span className='underline'>Please send your feedback on this beta version.</span>
+              <span className='underline link-interaction'>Please send your feedback on this beta version.</span>
             </Link>
           </p>
         )}
@@ -100,7 +100,7 @@ export default function Partners() {
             rechten kunnen worden ontleend. We horen graag wat je ervan vindt, wat je anders zou
             willen, wat je mist en natuurlijk horen we ook graag waar je blij van wordt.{' '}
             <Link href='/contact'>
-              <span className='underline'>Stuur je feedback op deze testversie.</span>
+              <span className='underline link-interaction'>Stuur je feedback op deze testversie.</span>
             </Link>
           </p>
         )}

@@ -100,6 +100,10 @@
     @apply font-manrope text-base font-medium leading-11 underline;
   }
 
+  .link-interaction {
+    @apply hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white;
+  }
+
   .button {
     @apply font-manrope text-base font-bold leading-10;
   }

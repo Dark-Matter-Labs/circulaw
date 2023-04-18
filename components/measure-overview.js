@@ -23,7 +23,7 @@ export default function MeasureOverview({ viewport, children, data }) {
         <div className='container pb-12 sm:pb-1 flex justify-between'>
           <div className=''>
             <Link href={'/' + data?.measure?.thema.replace(/\s+/g, '-').toLowerCase()} passHref>
-              <h2 className='link-base text-green-500 first-letter:uppercase block underline'>
+              <h2 className='link-base text-green-500 first-letter:uppercase block underline link-interaction'>
                 {data?.measure?.thema.replace('-', ' ')}
               </h2>
             </Link>
