@@ -36,6 +36,9 @@ export default {
           type: 'smallPara',
         },
         {
+          type: 'dropDown',
+        },
+        {
           type: 'block',
           of: [
             {
