@@ -1,7 +1,7 @@
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { juridischeToelichtingComponernts } from '../lib/portable-text/pt-components'
+import { juridischeToelichtingComponernts } from '../lib/portable-text/pt-components';
 
 const formatDate = (date) => {
   let dateObject = new Date(date);
@@ -21,7 +21,10 @@ export default function MeasureTable({ data }) {
           <div className='pb-5'>
             <h2 className='pt-6 pb-4 mobile sm:desktop'>Juridische toelichting</h2>
             {data?.measure?.juridischeToelichting && (
-              <PortableText components={juridischeToelichtingComponernts} value={data?.measure?.juridischeToelichting} />
+              <PortableText
+                components={juridischeToelichtingComponernts}
+                value={data?.measure?.juridischeToelichting}
+              />
             )}
           </div>
         </div>

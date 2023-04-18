@@ -10,7 +10,7 @@ import { client } from '../lib/sanity';
 import { siteSettingsQuerys, homePageThemaQuery } from '../lib/queries';
 
 export default function Index({ ...props }) {
-  const aboutSlugs = props.overCirculaw ?? []
+  const aboutSlugs = props.overCirculaw ?? [];
   const themaCards = props.homePageThemaData;
   return (
     <Layout page='home'>

@@ -1,7 +1,3 @@
-
-
 export const lineBreak = () => {
-    return <hr />
-  }
-  
-  
+  return <hr />;
+};
