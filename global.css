@@ -104,6 +104,10 @@
     @apply hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white;
   }
 
+  .link-icon-interaction {
+    @apply hover:stroke-green-300 active:stroke-green-800 focus:stroke-green-200;
+  }
+
   .button {
     @apply font-manrope text-base font-bold leading-10;
   }
