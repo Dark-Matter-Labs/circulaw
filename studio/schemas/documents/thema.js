@@ -1,4 +1,5 @@
 import { BsCircle } from 'react-icons/bs';
+import { lineBreak } from '../../components/headerInput';
 
 export default {
   title: 'Thema',
@@ -17,6 +18,15 @@ export default {
     },
   ],
   fields: [
+    {
+      name: 'General',
+      title: 'GENERAL',
+      type: 'text',
+      components: {
+        input: lineBreak,
+      },
+      group: 'editableContent',
+    },
     {
       title: 'Thema Titel',
       name: 'themaName',
@@ -45,7 +55,7 @@ export default {
       group: 'editableContent',
     },
     {
-      title: 'Link Text',
+      title: 'Header Link Text',
       name: 'linkText',
       type: 'string',
       group: 'editableContent',
@@ -71,6 +81,7 @@ export default {
       description: 'This must be the original image',
       group: 'editableContent',
     },
+
     {
       title: 'Overviews Title',
       name: 'overviewsTitle',
@@ -105,6 +116,16 @@ export default {
     // validation: (Rule) => Rule.required().max(50),
     // group: 'editableContent',
     // },
+
+    {
+      name: 'overviewCards',
+      title: 'OVERVIEW CARDS',
+      type: 'text',
+      components: {
+        input: lineBreak,
+      },
+      group: 'editableContent',
+    },
     {
       title: 'List Card Text',
       name: 'listText',
@@ -160,6 +181,15 @@ export default {
       type: 'string',
       validation: (Rule) => Rule.required(),
       group: 'devOnly',
+    },
+    {
+      name: 'homePageCards',
+      title: 'HOMEPAGE CARDS',
+      type: 'text',
+      components: {
+        input: lineBreak,
+      },
+      group: 'editableContent',
     },
     {
       title: 'Home Page Card Text', // need to add max length

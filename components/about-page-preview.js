@@ -14,7 +14,7 @@ export default function AboutPagepreview({ query, queryParams }) {
         <div className='block lg:hidden w-full'>
           <AboutPageDropdown
             currentSlug={data?.aboutPage?.slug.current}
-            slugs={data.aboutPage.aboutPageSlugs}
+            slugs={data?.aboutPage?.aboutPageSlugs}
           />
         </div>
         <div className='grid grid-cols-1 w-full lg:grid-cols-3'>
@@ -35,13 +35,13 @@ export default function AboutPagepreview({ query, queryParams }) {
           <div className='hidden lg:block mt-3 max-w-3xl lg:ml-12 lg:mb-20 lg:mt-32 col-span-1'>
             <OverNav
               currentSlug={data?.aboutPage?.slug.current}
-              slugs={data.aboutPage.aboutPageSlugs}
+              slugs={data?.aboutPage?.aboutPageSlugs}
             />
           </div>
           <div className='block lg:hidden'>
             <AboutPageDropdown
               currentSlug={data?.aboutPage?.slug.current}
-              slugs={data.aboutPage.aboutPageSlugs}
+              slugs={data?.aboutPage?.aboutPageSlugs}
             />
           </div>
         </div>

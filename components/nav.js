@@ -356,7 +356,7 @@ export default function Nav(props) {
                     <div key={slug.name}>
                       <Disclosure.Button
                         as='span'
-                        className='border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4 first-letter:uppercase'
+                        className='border-transparent table-base text-green-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4 first-letter:uppercase'
                       >
                         <Link href={`/${encodeURIComponent(slug)}`}>
                           {slug.replaceAll('-', ' ')}
@@ -378,7 +378,7 @@ export default function Nav(props) {
                       onClick={() => {
                         router.push(`/about/${encodeURIComponent(slug.slug)}`);
                       }}
-                      className='cursor-pointer border-transparent table-base text-green-600 pl-8 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4 first-letter:uppercase'
+                      className='cursor-pointer border-transparent table-base text-green-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4 first-letter:uppercase'
                     >
                       {slug.title.replaceAll('-', ' ')}
                     </Disclosure.Button>

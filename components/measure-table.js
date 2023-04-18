@@ -1,28 +1,11 @@
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { juridischeToelichtingComponernts } from '../lib/portable-text/pt-components';
 
 const formatDate = (date) => {
   let dateObject = new Date(date);
   return dateObject.toLocaleDateString();
-};
-
-const components = {
-  list: {
-    bullet: ({ children }) => (
-      <div className='newlineDisplay p-lg truncate'>
-        <ul className='list-disc pl-6 mobile sm:desktop'>{children}</ul>
-      </div>
-    ),
-  },
-  listItem: {
-    number: ({ children }) => <li className='py-0.5 p-lg'>{children}</li>,
-    bullet: ({ children }) => <li className='py-0.5 p-lg'>{children}</li>,
-  },
-  block: {
-    // need to add other styles here
-    normal: ({ children }) => <p className='newlineDisplay p-lg pb-4'>{children}</p>,
-  },
 };
 
 export default function MeasureTable({ data }) {
@@ -38,7 +21,10 @@ export default function MeasureTable({ data }) {
           <div className='pb-5'>
             <h2 className='pt-6 pb-4 mobile sm:desktop'>Juridische toelichting</h2>
             {data?.measure?.juridischeToelichting && (
-              <PortableText components={components} value={data?.measure?.juridischeToelichting} />
+              <PortableText
+                components={juridischeToelichtingComponernts}
+                value={data?.measure?.juridischeToelichting}
+              />
             )}
           </div>
         </div>

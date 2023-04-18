@@ -4,8 +4,6 @@ import RTooltip from '../components/r-ladder-tooltip';
 import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../components/juridische-invloed-tooltip';
 
-const rLadderLabelStyles = 'bg-green-600 text-white rounded-full p-1 mr-2 block-inline inline';
-
 const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, ref) => {
   const [checkedArray, setCheckedArray] = useState([]);
 
@@ -106,7 +104,9 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                     {/* RVALUE */}
                     {title === 'Circulaire strategie (R-ladder)' && (
                       <>
-                        <h6 className={`${rLadderLabelStyles}`}>{data.value} </h6>
+                        <div className='h-6 w-6 mr-2 bg-green-600 rounded-full inline-flex justify-center items-center'>
+                          <h6 className='text-white text-center'>{data.value} </h6>
+                        </div>
                         <span>{data.name}</span>
                       </>
                     )}
@@ -135,8 +135,10 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                   >
                     {title === 'Circulaire strategie (R-ladder)' && (
                       <>
-                        <span className={`${rLadderLabelStyles}`}>{data.value} </span>
-                        <span className=' table-basel text-black-white-600 text-sm'>
+                        <div className='h-6 w-6 mr-2 bg-green-600 rounded-full inline-flex justify-center items-center'>
+                          <span className='text-white text-center'>{data.value}</span>
+                        </div>
+                        <span className='table-basel text-black-white-600 text-sm'>
                           {data.name}
                         </span>
                       </>

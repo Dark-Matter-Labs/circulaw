@@ -10,7 +10,7 @@ import { client } from '../lib/sanity';
 import { siteSettingsQuerys, homePageThemaQuery } from '../lib/queries';
 
 export default function Index({ ...props }) {
-  const aboutSlugs = props.overCirculaw.slugs;
+  const aboutSlugs = props.overCirculaw ?? [];
   const themaCards = props.homePageThemaData;
   return (
     <Layout page='home'>
@@ -30,7 +30,7 @@ export default function Index({ ...props }) {
           </h1>
 
           {/* ADD THIS TO SANITY ABOUT PAGES */}
-          <Link href={`/about/${encodeURIComponent(aboutSlugs?.[0])}`}>
+          <Link href={`/about/${encodeURIComponent(aboutSlugs?.[0]?.slug)}`}>
             <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10 gap-x-8 gap-y-4'>
               <div>
                 <Image src={watImage} width={556} alt='image for wat circulaw' />
@@ -54,7 +54,7 @@ export default function Index({ ...props }) {
             </div>
           </Link>
 
-          <Link href={`/about/${encodeURIComponent(aboutSlugs?.[1])}`}>
+          <Link href={`/about/${encodeURIComponent(aboutSlugs?.[1]?.slug)}`}>
             <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10 gap-x-8 gap-y-4'>
               <div>
                 <Image src={hoeverImage} width={556} alt='image for hoever' />
@@ -80,7 +80,7 @@ export default function Index({ ...props }) {
               </div>
             </div>
           </Link>
-          <Link href={`/about/${encodeURIComponent(aboutSlugs?.[2])}`}>
+          <Link href={`/about/${encodeURIComponent(aboutSlugs?.[2]?.slug)}`}>
             <div className='grid grid-cols-1 lg:grid-cols-2 py-10 gap-x-8 gap-y-4'>
               <div>
                 <Image src={waaromImage} width={556} alt='image for wararom circulaw' />
