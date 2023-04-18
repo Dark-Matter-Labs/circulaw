@@ -39,6 +39,9 @@ export default {
           type: 'smallPara',
         },
         {
+          type: 'dropDown',
+        },
+        {
           type: 'block',
           of: [
             {
@@ -59,7 +62,7 @@ export default {
             decorators: [],
             annotations: [
               {
-                title: 'URL',
+                title: 'URL', 
                 name: 'link',
                 type: 'object',
                 fields: [
