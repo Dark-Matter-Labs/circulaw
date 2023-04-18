@@ -668,7 +668,7 @@ export default function MeasuresLayout({ ...props }) {
           <h3 className='mobile sm:desktop inline text-black-white-800'>Filter op:</h3>{' '}
           <span
             onClick={reset}
-            className='underline text-green-500 link-hover link-lg float-right mr-8'
+            className='underline text-green-500 link-hover link-lg float-right mr-8 link-interaction'
           >
             Wis filters
           </span>

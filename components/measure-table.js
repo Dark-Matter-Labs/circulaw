@@ -49,11 +49,11 @@ export default function MeasureTable({ data }) {
               </td>
             </tr>
             <tr className='border-b boder-black-white-300'>
-              <td className='w-1/3 py-1.5  p-base'>Artikel</td>
+              <td className='w-1/3 py-1.5 p-base'>Artikel</td>
               <td className='w-2/3 py-1.5 table-base'>
-                <span className='flex justify-end sm:justify-start'>
+                <span className='flex justify-end sm:justify-start link-interaction text-green-500'>
                   <a
-                    className='text-green-500'
+                    className=''
                     target='_blank'
                     href={data?.measure?.artikelLink}
                     rel='noreferrer'
