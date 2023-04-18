@@ -62,7 +62,7 @@ export default function Privacy() {
         <div className='mt-8 flex flex-col p-lg pb-6 max-w-4xl'>
           <div className='-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8'>
             <div className='inline-block min-w-full py-2 align-middle md:px-6 lg:px-8'>
-              <div className='overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg'>
+              <div className='overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-cl'>
                 <table className='min-w-full divide-y divide-green-800'>
                   <thead className='bg-gray-50'>
                     <tr className='divide-x divide-gray-200'>

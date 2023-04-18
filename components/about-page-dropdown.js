@@ -14,17 +14,17 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
           <>
             <Disclosure.Button
               className={`${
-                open ? 'rounded-t-md' : 'rounded-md'
+                open ? 'rounded-t-cl' : 'rounded-cl'
               } text-black bg-green-500 hover:text-green-500 flex justify-between items-center border border-green-500 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
             >
               <div
                 className={`${
-                  open ? 'rounded-tl-md' : 'rounded-l-md'
+                  open ? 'rounded-tl-cl' : 'rounded-l-cl'
                 } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
               >
                 <span className='inline text-left '>{currentPage[0]?.title}</span>
               </div>
-              <div className='w-1/12 px-5 h-full pr-5 bg-green-500 grid items-center justify-center rounded-r-md border border-green-500'>
+              <div className='w-1/12 px-5 h-full pr-5 bg-green-500 grid items-center justify-center rounded-r-cl border border-green-500'>
                 <ChevronUpIcon
                   className={`${open ? '' : 'rotate-180 transform'} h-5 w-5 text-white z-10`}
                 />
@@ -61,7 +61,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                 <div
                   className={`${
                     remainingTitles[2]?.slug === remainingTitles?.slice(-1)[0]?.slug
-                      ? 'rounded-b-md'
+                      ? 'rounded-b-cl'
                       : ''
                   } bg-white w-full text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500`}
                 >
@@ -78,7 +78,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                   <div
                     className={`${
                       remainingTitles[3]?.slug === remainingTitles?.slice(-1)[0]?.slug
-                        ? 'rounded-b-md'
+                        ? 'rounded-b-cl'
                         : ''
                     } bg-white text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500`}
                   >
@@ -96,7 +96,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                   <div
                     className={`${
                       remainingTitles[4]?.slug === remainingTitles?.slice(-1)[0]?.slug
-                        ? 'rounded-b-md'
+                        ? 'rounded-b-cl'
                         : ''
                     } bg-white text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500`}
                   >

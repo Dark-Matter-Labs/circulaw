@@ -88,14 +88,14 @@ export default function ThemeLayout({ ...props }) {
           </div>
 
           <div className='h-56 max-w-[380px] mx-auto flex items-center justify-center'>
-            <div className='flex items-center justify-center h-full w-full rounded-md relative z-10 object-cover'>
+            <div className='flex items-center justify-center h-full w-full rounded-cl relative z-10 object-cover'>
               <Image
                 src={urlFor(themaData?.heroImageMobile).url()}
                 alt={`${themaData.themaName} + 'hero image'`}
                 fill
-                className='rounded-md absolute'
+                className='rounded-cl absolute'
               />
-              <div className='w-full h-full thema-hero-gradient z-10 rounded-md'></div>
+              <div className='w-full h-full thema-hero-gradient z-10 rounded-cl'></div>
             </div>
           </div>
         </div>
