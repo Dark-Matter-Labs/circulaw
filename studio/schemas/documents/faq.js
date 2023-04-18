@@ -34,7 +34,7 @@ export default {
         },
         {
           type: 'smallPara',
-        }, 
+        },
         {
           type: 'dropDown',
         },
