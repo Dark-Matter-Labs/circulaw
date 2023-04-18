@@ -1,6 +1,5 @@
 module.exports = {
-  mode: 'jit',
-  purge: [
+  content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
     './public/**/*.html',
@@ -61,7 +60,7 @@ module.exports = {
         17: '96px',
       },
       screens: {
-        lg: '1430px',
+        lgNav: '1430px',
       },
       spacing: {
         128: '32rem',
@@ -73,11 +72,14 @@ module.exports = {
         'list-card': 'url("/thema-card-background/list-bg.png")',
         'samenhang-card': 'url("/thema-card-background/samenhang-bg.png")',
         'waarvoor-card': 'url("/thema-card-background/waaroov-bg.png")',
+        'en-background': 'url("/Background-en-page.png")',
+        'en-header': 'url("/en-deco-header.png")',
+        'about-header': 'url("/about-header.png")',
+      },
+      borderRadius: {
+        cl: '10px',
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [require('@tailwindcss/forms')],
 };
