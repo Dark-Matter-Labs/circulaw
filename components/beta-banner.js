@@ -6,7 +6,7 @@ export default function BetaBanner({ type }) {
     return (
       <div className='flex grid-cols-1 lg:grid-cols-3 justify-between items-center global-margin'>
         <div className='hidden sm:block min-w-[10%]'></div>
-        <div className='bg-black-white-300 border border-black-white-600 rounded-b-cl md:max-w-sm 2xl:max-w-sm sm:mx-5 w-full'>
+        <div className='bg-black-white-300 border border-black-white-600 rounded-b-[20px] md:max-w-sm 2xl:max-w-sm sm:mx-5 w-full'>
           <div className=' py-2 text-center'>
             <div className='flex justify-between flex-wrap mx-2'>
               <div className='w-0 flex-1'>
@@ -37,7 +37,7 @@ export default function BetaBanner({ type }) {
     return (
       <div className='flex grid-cols-1 lg:grid-cols-3 justify-between items-center'>
         <div className='hidden sm:block min-w-[10%]'></div>
-        <div className='bg-green-400 rounded-b-cl md:max-w-sm 2xl:max-w-sm sm:mx-5 w-full'>
+        <div className='bg-green-400 rounded-b-[20px] md:max-w-sm 2xl:max-w-sm sm:mx-5 w-full'>
           <div className='py-2 text-center'>
             <div className='flex justify-between flex-wrap mx-2'>
               <div className='w-0 flex-1'>
