@@ -1,6 +1,6 @@
 import { defineCliConfig } from 'sanity/cli';
 
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
+const dataset = process.env.SANITY_STUDIO_DATASET;
 
 export default defineCliConfig({
   api: {

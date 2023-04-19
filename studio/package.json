@@ -5,10 +5,12 @@
   "main": "package.json",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "sanity dev",
+    "dev:staging": "SANITY_ACTIVE_ENV=staging sanity dev",
+    "dev:prod": "SANITY_ACTIVE_ENV=production sanity dev",
     "start": "sanity start",
     "build": "sanity build",
-    "deploy:staging": "npx vercel --prod",
+    "build:staging": "SANITY_ACTIVE_ENV=staging sanity build",
+    "deploy:staging": "SANITY_ACTIVE_ENV=staging npx vercel --prod",
     "deploy:prod": "sanity deploy",
     "deploy-graphql": "sanity graphql deploy"
   },
