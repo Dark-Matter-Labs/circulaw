@@ -62,7 +62,7 @@ export default function Privacy() {
         <div className='mt-8 flex flex-col p-lg pb-6 max-w-4xl'>
           <div className='-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8'>
             <div className='inline-block min-w-full py-2 align-middle md:px-6 lg:px-8'>
-              <div className='overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg'>
+              <div className='overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-cl'>
                 <table className='min-w-full divide-y divide-green-800'>
                   <thead className='bg-gray-50'>
                     <tr className='divide-x divide-gray-200'>
@@ -101,13 +101,13 @@ export default function Privacy() {
 
         <p className=' p-lg max-w-4xl pb-6'>
           Heb je vragen naar aanleiding van deze cookiebeleid? Mail ons:{' '}
-          <span className='text-green-500  link-lg'>
+          <span className='text-green-500 link-lg link-interaction'>
             <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
           </span>
         </p>
         <p className=' p-lg pb-6 max-w-4xl'>
           Zie ook onze{' '}
-          <span className='text-green-500 link-lg'>
+          <span className='text-green-500 link-lg link-interaction'>
             <Link href='/privacy-policy'>Privacyverklaring.</Link>
           </span>
         </p>

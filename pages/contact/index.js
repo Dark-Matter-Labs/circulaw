@@ -87,7 +87,7 @@ export default function Contact() {
                       name='name'
                       id='first-name'
                       autoComplete='given-name'
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-md'
+                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
                     />
                   </div>
                 </div>
@@ -101,7 +101,7 @@ export default function Contact() {
                       name='org'
                       id='company'
                       autoComplete='organization'
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-md'
+                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
                     />
                   </div>
                 </div>
@@ -115,7 +115,7 @@ export default function Contact() {
                       name='email'
                       type='email'
                       autoComplete='email'
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-md'
+                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
                       onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
@@ -130,7 +130,7 @@ export default function Contact() {
                       id='message'
                       name='message'
                       rows={4}
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border border-gray-300 rounded-md'
+                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border border-gray-300 rounded-cl'
                       defaultValue={''}
                       onChange={(e) => setText(e.target.value)}
                     />

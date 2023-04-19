@@ -2,7 +2,7 @@ import { PortableText } from '@portabletext/react';
 import { groq } from 'next-sanity';
 import Link from 'next/link';
 import Layout from '../../components/layouts/layout';
-import client from '../../lib/sanity';
+import { client } from '../../lib/sanity';
 import { fetcher } from '../../utils/swr-fetcher';
 import {
   h1Component,
@@ -113,7 +113,7 @@ export default function English({ data }) {
                 </div>
                 <div className='pb-6'>
                   <Link href='/'>
-                    <CustomButton color='whiteShaddow'>
+                    <CustomButton color='home'>
                       View website (Dutch)&nbsp;
                       <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                     </CustomButton>
@@ -131,7 +131,7 @@ export default function English({ data }) {
                     href='https://openresearch.amsterdam/en/page/90992/europese-wet--en-regelgeving-circulaire-economie'
                     target='_blank'
                   >
-                    <CustomButton color='whiteShaddow'>
+                    <CustomButton color='home'>
                       View whitepapers (English)&nbsp;
                       <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                     </CustomButton>

@@ -14,29 +14,29 @@ export default function NotFound() {
         <p className=' p-lg text-black-white-800'>
           Zoek verder:
           <ul className=''>
-            <li className='text-green-500  link-lg'>
+            <li className='text-green-500  link-lg link-interaction'>
               <Link href='/'>
                 Home <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
               </Link>
             </li>
-            <li className='text-green-500  link-lg'>
+            <li className='text-green-500  link-lg link-interaction'>
               <Link href='/houtbouw-stimuleren'>
                 Houtbouw <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
               </Link>{' '}
             </li>
-            <li className='text-green-500  link-lg'>
+            <li className='text-green-500  link-lg link-interaction'>
               <Link href='/circulaire-windturbines'>
                 Circulaire windturbines{' '}
                 <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
               </Link>{' '}
             </li>
-            <li className='text-green-500  link-lg'>
+            <li className='text-green-500  link-lg link-interaction'>
               <Link href='/about/Wat-is-CircuLaw%3F'>
                 Wat is CircuLaw?{' '}
                 <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
               </Link>{' '}
             </li>
-            <li className='text-green-500  link-lg'>
+            <li className='text-green-500  link-lg link-interaction'>
               <Link href='/contact'>
                 Contact <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
               </Link>{' '}

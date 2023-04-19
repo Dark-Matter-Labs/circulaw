@@ -9,12 +9,12 @@ export default function OverviewPageHeader({ props, page }) {
       <div>
         <div className='flex justify-between items-center pt-8 sm:pt-0 pb-8'>
           <div className='breadcrumb uppercase'>
-            <Link className='underline' href='/'>
+            <Link className='underline link-interaction' href='/'>
               Home &nbsp;
             </Link>
             <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />{' '}
             <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`}>
-              <span className='underline inline-block uppercase'>
+              <span className='underline inline-block uppercase link-interaction'>
                 {props.thema.replace('-', ' ')}
               </span>
             </Link>

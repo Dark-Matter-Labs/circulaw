@@ -1,28 +1,10 @@
 import { PortableText } from '@portabletext/react';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { juridischeToelichtingComponernts } from '../lib/portable-text/pt-components';
 
 const formatDate = (date) => {
   let dateObject = new Date(date);
   return dateObject.toLocaleDateString();
-};
-
-const components = {
-  list: {
-    bullet: ({ children }) => (
-      <div className='newlineDisplay p-lg truncate'>
-        <ul className='list-disc pl-6 mobile sm:desktop'>{children}</ul>
-      </div>
-    ),
-  },
-  listItem: {
-    number: ({ children }) => <li className='py-0.5 p-lg'>{children}</li>,
-    bullet: ({ children }) => <li className='py-0.5 p-lg'>{children}</li>,
-  },
-  block: {
-    // need to add other styles here
-    normal: ({ children }) => <p className='newlineDisplay p-lg pb-4'>{children}</p>,
-  },
 };
 
 export default function MeasureTable({ data }) {
@@ -38,7 +20,10 @@ export default function MeasureTable({ data }) {
           <div className='pb-5'>
             <h2 className='pt-6 pb-4 mobile sm:desktop'>Juridische toelichting</h2>
             {data?.measure?.juridischeToelichting && (
-              <PortableText components={components} value={data?.measure?.juridischeToelichting} />
+              <PortableText
+                components={juridischeToelichtingComponernts}
+                value={data?.measure?.juridischeToelichting}
+              />
             )}
           </div>
         </div>
@@ -63,24 +48,33 @@ export default function MeasureTable({ data }) {
               </td>
             </tr>
             <tr className='border-b boder-black-white-300'>
-              <td className='w-1/3 py-1.5  p-base'>Artikel</td>
+              <td className='w-1/3 py-1.5 p-base'>Artikel</td>
               <td className='w-2/3 py-1.5 table-base'>
-                <span className='flex justify-end sm:justify-start'>
+                <span className='flex justify-end sm:justify-start link-interaction text-green-500'>
                   <a
-                    className='text-green-500'
+                    className=''
                     target='_blank'
                     href={data?.measure?.artikelLink}
                     rel='noreferrer'
                   >
                     {data?.measure?.artikel}
-                    <span className='pl-0.5 inline-block h-5 w-5 -mb-0.5 relative'>
-                      <Image
-                        className=''
-                        alt='new tab'
-                        src='/icons/link-icon.svg'
-                        width={20}
-                        height={20}
-                      />
+                    <span className='pl-0.5 inline-block -mb-0.5 h-5 w-5 relative'>
+                      <svg
+                        className='stroke-current'
+                        width='20'
+                        height='20'
+                        viewBox='0 -1 24 24'
+                        fill='none'
+                        xmlns='http://www.w3.org/2000/svg'
+                      >
+                        <path
+                          d='M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14'
+                          stroke=''
+                          stroke-width='2'
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                        />
+                      </svg>
                     </span>
                   </a>
                 </span>

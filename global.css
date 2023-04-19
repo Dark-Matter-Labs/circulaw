@@ -9,6 +9,17 @@
     @apply 2xl:mx-auto;
   }
 
+  .global-margin-alternative {
+    @apply mx-8;
+    @apply md:mx-10;
+    @apply lg:ml-10;
+    @apply lg:mr-0;
+    @apply xl:ml-20; 
+    @apply xl:mr-0;
+    @apply 2xl:max-w-7xl; 
+    @apply 2xl:mx-auto;
+  }
+
   .image-margin {
     @apply max-w-screen-xl mx-auto;
   }
@@ -87,6 +98,10 @@
 
   .link-base {
     @apply font-manrope text-base font-medium leading-11 underline;
+  }
+
+  .link-interaction {
+    @apply hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white;
   }
 
   .button {
@@ -193,10 +208,6 @@ html {
   rgba(252, 242, 237, 0.78) 45%, rgba(253, 249, 246, 0.9) 26%, rgba(254, 253, 252, 0.97) 10%, #FFFFFF 0%);
 }
 
-.measure-bg {
-  background: '#F5F5F5';
-}
-
 [type='checkbox']:checked {
   background-color: #22532c !important;
   border: 1px solid #22532c !important;
@@ -206,7 +217,13 @@ html {
   border-color: #22532c !important;
 }
 
+
 [type='checkbox']:not(:checked)  {
+  border-color: #DAD8D8 !important;
+  background-color: #FFFFFF !important;
+}
+
+[type='checkbox']:disabled {
   border-color: #DAD8D8 !important;
   background-color: #F8FBF8 !important;
 }
@@ -252,4 +269,32 @@ html {
   background-size: cover;
   background-position: center;
   margin-top: -3px;
+}
+
+.tooltip {
+  position:relative;
+}
+
+.tooltip:before {
+  content: attr(data-text);
+  position: absolute;
+  
+  top:50%;
+  transform:translateY(-50%);
+  
+  left:100%;
+  margin-left:15px;
+  
+  width:200px;
+  padding:10px;
+  border-radius:10px;
+  background:#000;
+  color: #fff;
+  text-align:center;
+
+  display:none;
+}
+
+.tooltip:hover:before {
+  display:block;
 }

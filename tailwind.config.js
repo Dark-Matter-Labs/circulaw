@@ -77,6 +77,10 @@ module.exports = {
         'waarvoor-card': 'url("/thema-card-background/waaroov-bg.png")',
         'en-background': 'url("/Background-en-page.png")',
         'en-header': 'url("/en-deco-header.png")',
+        'about-header': 'url("/about-header.png")'
+      },
+      borderRadius: {
+          'cl': '10px',
       },
     },
   },

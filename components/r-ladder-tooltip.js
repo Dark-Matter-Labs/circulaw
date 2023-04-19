@@ -125,7 +125,7 @@ export default function ToolTips({ children, icon }) {
                               target='_blank'
                               rel='noopener noreferrer'
                             >
-                              <span className='link-lg underline text-green-500'>
+                              <span className='link-lg underline text-green-500 link-interaction'>
                                 website van RVO
                               </span>
                               <LinkIcon />

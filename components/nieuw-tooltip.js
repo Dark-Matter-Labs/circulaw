@@ -10,7 +10,7 @@ export default function NieuwToolTip() {
     <>
       <button
         type='button'
-        className='inline-flex rounded-full px-4 py-1 items-centershadow border button border-green-600 bg-green-500 hover:bg-black-white-200 text-black-white-200 hover:text-green-600 transition ease-in-out hover:duration-150 focus:outline-none'
+        className='inline-flex rounded-full px-4 py-1 items-center shadow border button border-green-600 bg-green-500 hover:bg-green-200 text-black-white-200 hover:text-green-600 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white active:bg-green-300'
         onClick={() => setOpen(true)}
       >
         <span className='sr-only'>Open ToolTip</span>
@@ -72,27 +72,31 @@ export default function NieuwToolTip() {
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>
                         <div className='absolute inset-0 px-4 sm:px-6'>
+                          <h3 className='mobile sm:desktop'>Nieuwe voorbeelden</h3>
                           <p className='p-base pb-6'>
-                            We hebben nu ook{' '}
-                            <Link className='link-base' href='/circulaire-matrasketen'>
-                              juridische instrumenten geïdentificeerd om de circulariteit van de
-                              matrasketen te bevorderen
-                            </Link>
+                            Waar loop je nou in de praktijk tegen aan als je de circulariteit van de
+                            matrasketen wilt bevorderen? We hebben{' '}
+                            <a
+                              className='link-base'
+                              href='https://cdn.sanity.io/files/2vfoxb3h/production/947637ee3b34288c1b68867902c339ad28641756.pdf'
+                              target='_blank'
+                              rel='noopener noreferrer'
+                            >
+                              2 voorbeelden toegevoegd die duidelijk maken welke beslissingen een
+                              rol kunnen spelen bij inkoop.
+                            </a>
                           </p>
+                          <h3 className='mobile sm:desktop'>Methodiek voor wetsanalyse</h3>
                           <p className='p-base pb-6'>
                             CircuLaw volgt voor de analyse van wet-en regelgeving en het
                             identificeren van juridische instrumenten een standaard werkwijze: deze{' '}
                             <Link
                               className='link-base'
-                              href='/about/Wetsanalyse-vanuit-circulaire-blik'
+                              href='about/Wetsanalyse-vanuit-circulaire-blik'
                             >
                               CircuLaw-methodiek voor wetsanalyse
                             </Link>{' '}
                             is nu ook voor iedereen beschikbaar.
-                          </p>
-                          <p className='p-base'>
-                            In deze versie van de website hebben we techniek, ontwerp en copy
-                            verbeterd.
                           </p>
                         </div>
                       </div>

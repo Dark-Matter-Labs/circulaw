@@ -355,12 +355,9 @@ export default {
             { title: 'Number', value: 'number' },
           ],
           styles: [
-            { title: 'H1', value: 'h1' },
             { title: 'H2', value: 'h2' },
             { title: 'firstH2', value: 'firstH2' },
             { title: 'H3', value: 'h3' },
-            { title: 'H4', value: 'h4' },
-            { title: 'H5', value: 'h5' },
             { title: 'normal', value: 'normal' },
           ],
           marks: {
@@ -393,7 +390,7 @@ export default {
       title: 'Juridische toelichting',
       name: 'juridischeToelichting',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [{ type: 'block', styles: [{ title: 'normal', value: 'normal' }] }],
       group: ['copy', 'table'],
     },
   ],

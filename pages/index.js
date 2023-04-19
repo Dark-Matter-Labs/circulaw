@@ -6,11 +6,11 @@ import SectionTypes from '../components/section-types-list';
 import waaromImage from '../public/home-page/waarom.png';
 import watImage from '../public/home-page/wat.png';
 import hoeverImage from '../public/home-page/hoever.png';
-import client from '../lib/sanity';
+import { client } from '../lib/sanity';
 import { siteSettingsQuerys, homePageThemaQuery } from '../lib/queries';
 
 export default function Index({ ...props }) {
-  const aboutSlugs = props.overCirculaw.slugs;
+  const aboutSlugs = props.overCirculaw ?? [];
   const themaCards = props.homePageThemaData;
   return (
     <Layout page='home'>
@@ -30,7 +30,7 @@ export default function Index({ ...props }) {
           </h1>
 
           {/* ADD THIS TO SANITY ABOUT PAGES */}
-          <Link href={`/about/${encodeURIComponent(aboutSlugs?.[0])}`}>
+          <Link href={`/about/${encodeURIComponent(aboutSlugs?.[0]?.slug)}`}>
             <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10 gap-x-8 gap-y-4'>
               <div>
                 <Image src={watImage} width={556} alt='image for wat circulaw' />
@@ -47,14 +47,14 @@ export default function Index({ ...props }) {
                   versnelde klimaatverandering tegen te gaan, vervuiling te verminderen, de
                   biodiversiteit te behouden en om te zorgen dat grondstoffen beschikbaar blijven.
                 </p>
-                <span className='text-green-500  link-lg'>
+                <span className='text-green-500 link-lg link-interaction'>
                   Lees verder <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                 </span>
               </div>
             </div>
           </Link>
 
-          <Link href={`/about/${encodeURIComponent(aboutSlugs?.[1])}`}>
+          <Link href={`/about/${encodeURIComponent(aboutSlugs?.[1]?.slug)}`}>
             <div className='grid grid-cols-1 lg:grid-cols-2 border-b border-black-white-600 py-10 gap-x-8 gap-y-4'>
               <div>
                 <Image src={hoeverImage} width={556} alt='image for hoever' />
@@ -73,14 +73,14 @@ export default function Index({ ...props }) {
                     circulaire houtbouw en circulaire windmolens
                   </li>
                 </ul>
-                <span className='text-green-500  link-lg'>
+                <span className='text-green-500 link-lg link-interaction'>
                   Lees verder
                   <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                 </span>
               </div>
             </div>
           </Link>
-          <Link href={`/about/${encodeURIComponent(aboutSlugs?.[2])}`}>
+          <Link href={`/about/${encodeURIComponent(aboutSlugs?.[2]?.slug)}`}>
             <div className='grid grid-cols-1 lg:grid-cols-2 py-10 gap-x-8 gap-y-4'>
               <div>
                 <Image src={waaromImage} width={556} alt='image for wararom circulaw' />
@@ -93,7 +93,7 @@ export default function Index({ ...props }) {
                   (Metropoolregio Amsterdam) Kernteam Houtbouw, Belastingdienst, TU Delft, Erasmus
                   School of LAW, de VU, Wageningen Universiteit (WUR Law group).
                 </p>
-                <span className='text-green-500 link-lg'>
+                <span className='text-green-500 link-lg link-interaction'>
                   Lees verder <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                 </span>
               </div>

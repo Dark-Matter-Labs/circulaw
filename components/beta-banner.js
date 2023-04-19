@@ -13,15 +13,15 @@ export default function BetaBanner({ type }) {
                 <div className=' text-black-white-800 truncate'>
                   <div className='md:hidden'>
                     <h5 className='inline bold'>Beta</h5>{' '}
-                    <h5 className='inline mobile sm:desktop'>versie van CircuLaw - </h5>
-                    <span className='link-base text-green-500'>
+                    <h5 className='inline mobile sm:desktop'>versie - </h5>
+                    <span className='link-base text-green-500 link-interaction'>
                       <Link href='/beta'>Lees meer -&gt;</Link>
                     </span>
                   </div>
                   <div className='hidden md:inline'>
                     <h5 className='inline bold'>Beta</h5>{' '}
                     <h5 className='inline mobile sm:desktop'>versie van CircuLaw - </h5>
-                    <span className='link-base text-green-500'>
+                    <span className='link-base text-green-500 link-interaction'>
                       <Link href='/beta'>Lees meer -&gt;</Link>
                     </span>
                   </div>
@@ -44,15 +44,15 @@ export default function BetaBanner({ type }) {
                 <div className=' text-black-white-200 truncate'>
                   <div className='md:hidden'>
                     <h5 className='inline bold'>Beta</h5>{' '}
-                    <h5 className='inline mobile sm:desktop'>versie van CircuLaw - </h5>
-                    <span className='link-base text-green-600'>
+                    <h5 className='inline mobile sm:desktop'>versie - </h5>
+                    <span className='link-base text-green-600 link-interaction'>
                       <Link href='/beta'>Lees meer -&gt;</Link>
                     </span>
                   </div>
                   <div className='hidden md:inline'>
                     <h5 className='inline bold'>Beta</h5>{' '}
                     <h5 className='inline mobile sm:desktop'>versie van CircuLaw - </h5>
-                    <span className='link-base text-green-600'>
+                    <span className='link-base text-green-600 link-interaction'>
                       <Link href='/beta'>Lees meer -&gt;</Link>
                     </span>
                   </div>

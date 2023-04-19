@@ -18,7 +18,7 @@ export default {
       options: {
         source: 'pageTitle',
         inUnique: 'true',
-        slugify: (input) => input.replace(/\s+/g, '-').slice(0, 200),
+        slugify: (input) => input.replace(/\s+/g, '-').replace('?', '').slice(0, 200),
       },
     },
     {
@@ -30,10 +30,16 @@ export default {
           type: 'greenBox',
         },
         {
+          type: 'imageBlock',
+        },
+        {
           type: 'pdfBlock',
         },
         {
           type: 'smallPara',
+        },
+        {
+          type: 'dropDown',
         },
         {
           type: 'block',
@@ -47,12 +53,9 @@ export default {
             { title: 'Number', value: 'number' },
           ],
           styles: [
-            { title: 'H1', value: 'h1' },
             { title: 'H2', value: 'h2' },
             { title: 'firstH2', value: 'firstH2' },
             { title: 'H3', value: 'h3' },
-            { title: 'H4', value: 'h4' },
-            { title: 'H5', value: 'h5' },
             { title: 'normal', value: 'normal' },
           ],
           marks: {

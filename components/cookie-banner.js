@@ -32,23 +32,23 @@ const CookieConsent = () => {
             site vervolgens te kunnen verbeteren. Altijd met respect voor jouw privacy. Lees voor
             meer informatie onze{' '}
             <Link href='/privacy-policy'>
-              <span className='link-lg underline hover:text-lightAccent'>Privacyverklaring</span>
+              <span className='link-lg underline link-interaction'>Privacyverklaring</span>
             </Link>{' '}
             en ons{' '}
             <Link href='/cookie-info'>
-              <span className='link-lg underline hover:text-lightAccent'>Cookiebeleid.</span>
+              <span className='link-lg underline link-interaction'>Cookiebeleid.</span>
             </Link>
           </p>
         </div>
         <div className='flex items-center'>
           <button
-            className='inline-flex rounded-full items-center px-4 py-4 border button mr-2 border-black-white-200 bg-transparent hover:bg-green-600 text-black-white-200 hover:text-black-white-200 transition ease-in-out hover:duration-150 focus:outline-none'
+            className='inline-flex rounded-full items-center px-4 py-4 border button mr-2 border-black-white-200 bg-transparent hover:bg-green-200 text-black-white-200 hover:text-green-600 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white active:bg-green-800 active:text-black-white-200'
             onClick={() => denyCookie()}
           >
             Weiger
           </button>
           <button
-            className='inline-flex rounded-full items-center px-4 py-4 border button ml-2 border-green-600 bg-black-white-200 hover:bg-green-600 text-green-600 hover:text-black-white-200 hover:border-black-white-200 transition ease-in-out hover:duration-150 focus:outline-none'
+            className='inline-flex rounded-full items-center px-4 py-4 border button ml-2 border-green-600 bg-black-white-200 hover:bg-green-200 text-green-600 hover:border-black-white-200 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white active:bg-green-300 active:text-green-600'
             onClick={() => {
               acceptCookie();
             }}
