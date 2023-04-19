@@ -19,7 +19,7 @@ const CookieConsent = () => {
     setConsent(true);
     setCookie('localConsent', 'false', { maxAge: 60 * 60 * 24 * 365 });
   };
-  if (consent === true || router.pathname.includes('api/preview')) {
+  if (consent === true || window.location.host.includes('staging')) {
     return null;
   }
 
