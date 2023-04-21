@@ -16,10 +16,10 @@ You can get started by installing the dependencies by running:
 yarn
 ```
 
-Than run and watch the dev environment with:
+Then run and watch the dev environment with:
 
 ```
-yarn dev
+yarn dev:staging
 ```
 
 For cleaning up the code run:
@@ -31,7 +31,7 @@ yarn clean
 For running Sanity CMS locally along with dev build:
 
 ```
-yarn cms
+yarn cms:staging
 ```
 
 ## Vercel Overview
