@@ -1,17 +1,13 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import LinkIcon  from '../components/link-icon';
+import LinkIcon from '../components/link-icon';
 import CustomButton from './custom-button';
 
-
-
-
 export default function NewsItems({ newsItems }) {
-
-    const formatDate = (date) => {
-        let dateObject = new Date(date);
-        return dateObject.toLocaleDateString('en', {day:'numeric' , month:'short', year:'numeric'});
-      };
+  const formatDate = (date) => {
+    let dateObject = new Date(date);
+    return dateObject.toLocaleDateString('en', { day: 'numeric', month: 'short', year: 'numeric' });
+  };
   return (
     <>
       <div className='flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center justify-between gap-x-4 gap-y-8 overflow-hidden'>
@@ -33,7 +29,7 @@ export default function NewsItems({ newsItems }) {
                 />
               </div>
             )} */}
-                <div className='w-full h-full p-6 flex flex-col items-start'>
+            <div className='w-full h-full p-6 flex flex-col items-start'>
               {item?.date && <div className='capitilize pb-1'>{formatDate(item?.date)}</div>}
               <div className='pb-4'>
                 <h3 className='mobile sm:desctop'>{item?.title}</h3>
@@ -41,25 +37,31 @@ export default function NewsItems({ newsItems }) {
               <div>
                 <p className='mobile sm:desktop pb-4'>{item?.text}</p>
               </div>
-              {item?.internalLink && 
-              <div className='flex grow'>
-                <Link href={item?.internalLink} className='self-end'>
-                <CustomButton color='home'>{item?.internalLinkText}<ArrowRightIcon className='inline-block h-4 w-4 ml-1 place-self-end' aria-hidden='true' />
-                
-                </CustomButton>
-                </Link>
-              </div>}
-              {item.externalLink && 
+              {item?.internalLink && (
                 <div className='flex grow'>
-                    <Link href={item.externalLink} target='_blank' className='self-end'>
-                        <span className='text-green-500 inline link-base sm:link-lg link-interaction break-words'>{item.externalLinkText}
-                        <LinkIcon />
-                        </span>
-                    </Link>
+                  <Link href={item?.internalLink} className='self-end'>
+                    <CustomButton color='home'>
+                      {item?.internalLinkText}
+                      <ArrowRightIcon
+                        className='inline-block h-4 w-4 ml-1 place-self-end'
+                        aria-hidden='true'
+                      />
+                    </CustomButton>
+                  </Link>
                 </div>
-              }
+              )}
+              {item.externalLink && (
+                <div className='flex grow'>
+                  <Link href={item.externalLink} target='_blank' className='self-end'>
+                    <span className='text-green-500 inline link-base sm:link-lg link-interaction break-words'>
+                      {item.externalLinkText}
+                      <LinkIcon />
+                    </span>
+                  </Link>
+                </div>
+              )}
             </div>
-            </div>
+          </div>
         ))}
       </div>
     </>
