@@ -1,12 +1,4 @@
-import CustomButton from './custom-button'
-import { ArrowRightIcon } from '@heroicons/react/outline'
-
-export default function NewThemaSuggestion() {
-    return (
-        <>
-        <div className="h-32 w-[728px] hidden bg-green-500 rounded-cl sm:flex flex-row items-center justify-between shadow">
-            <div className='ml-8'>
-            <svg width="98" height="98" viewBox="0 0 98 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="98" height="98" viewBox="0 0 98 98" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="49" cy="49" r="48.5" fill="#035E46" stroke="#FDFDFD"/>
 <path d="M48.1723 27.0327C47.973 27.0327 47.8164 26.8761 47.8164 26.6769V13.5033C47.8164 13.304 47.973 13.1475 48.1723 13.1475C48.3715 13.1475 48.5281 13.304 48.5281 13.5033V26.6769C48.5281 26.8761 48.3715 27.0327 48.1723 27.0327Z" fill="#F8FBF8"/>
 <path d="M48.1723 10.9907L49.617 14.535L48.1723 13.6881L46.7275 14.535L48.1723 10.9907Z" fill="#F8FBF8"/>
@@ -38,18 +30,3 @@ export default function NewThemaSuggestion() {
 <path d="M55.9358 56.5541H45.0682C44.876 56.5541 44.7266 56.3975 44.7266 56.2125C44.7266 56.0274 44.8831 55.8708 45.0682 55.8708H55.9358C56.128 55.8708 56.2774 56.0274 56.2774 56.2125C56.2774 56.3975 56.1209 56.5541 55.9358 56.5541Z" fill="#F8FBF8"/>
 <path d="M55.9358 63.2155H45.0682C44.876 63.2155 44.7266 63.0589 44.7266 62.8738C44.7266 62.6888 44.8831 62.5322 45.0682 62.5322H55.9358C56.128 62.5322 56.2774 62.6888 56.2774 62.8738C56.2774 63.0589 56.1209 63.2155 55.9358 63.2155Z" fill="#F8FBF8"/>
 </svg>
-
-            </div>
-            <div>
-                tex
-            </div>
-            <div className='mr-12'>
-            <CustomButton color='home'> hello
-            <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
-            </CustomButton>
-            </div>
-            
-        </div>
-        </>
-    )
-}
