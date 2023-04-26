@@ -56,9 +56,17 @@ export default function Index({ ...props }) {
                   Lees verder <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                 </span>
               </div>
+              <div className=''>
+          <h1 className='pt-8 mobile sm:desktop text-green-600 border-black-white-600 border-b pb-4'>
+            News and updates
+          </h1>
+          <div className='pt-4 sm:pt-8'>
+            content here make component
+          </div>
+        </div>
             </div>
           </Link>
-        </div>
+        </div> 
       </div>
     </Layout>
   );
