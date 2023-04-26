@@ -79,6 +79,10 @@
   .p-xl {
     @apply font-urbanist text-3xl font-normal leading-14;
   }
+
+  .p-xl-header {
+    @apply font-urbanist text-3xl font-semibold leading-14;
+  }
   
   .p-lg {
     @apply font-manrope text-xl font-normal leading-13;
@@ -265,7 +269,7 @@ html {
 }
 
 .bg-header {
-  background-image: url('/final-bg.svg');
+  background-image: url('/home-page/CL_header_new2.png');
   background-size: cover;
   background-position: center;
   margin-top: -3px;

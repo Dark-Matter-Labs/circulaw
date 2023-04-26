@@ -30,7 +30,7 @@ export default function Index({ newsItems, overCirculaw, ...props }) {
         <div className='global-margin'>
           {/* ADD THIS TO SANITY ABOUT PAGES */}
           <HomePageAboutSection slug={overCirculaw} />
-          <div className=''>
+          <div className='' name='news'>
             <h1 className='pt-8 mobile sm:desktop text-green-600 border-black-white-600 border-b pb-4'>
               News and updates
             </h1>

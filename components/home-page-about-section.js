@@ -6,7 +6,7 @@ import aboutImage from '../public/home-page/homepageAboutDeco.png';
 
 export default function HomePageAboutSection({ slug }) {
   return (
-    <Link href={`/about/${encodeURIComponent(slug?.[0]?.slug)}`}>
+    <Link href={`/about/${encodeURIComponent(slug?.[0]?.slug)}`} name='about'>
       <div className='w-full sm:w-3/5 flex items-center justify-start border-b border-black-white-800 pb-4'>
         <div className='sm:hidden'>
           <svg
@@ -159,7 +159,7 @@ export default function HomePageAboutSection({ slug }) {
           </span>
         </div>
         <div className='lg:col-span-2'>
-          <div className='relative h-96 w-96 ml-4 flex items-center justify-center hidden sm:block'>
+          <div className='relative h-96 w-96 ml-4 lg:-mt-10 flex items-center justify-center hidden sm:block'>
             <Image src={aboutImage} fill alt='image for wat circulaw' />
           </div>
         </div>

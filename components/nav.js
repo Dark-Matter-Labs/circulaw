@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import { Link as ScrollLink } from 'react-scroll';
 import Image from 'next/image';
 import { useRouter } from 'next/dist/client/router';
 import { Fragment } from 'react';
 import { Popover, Disclosure, Transition } from '@headlessui/react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import { MenuIcon, XIcon, ArrowDownIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import Lottie from 'react-lottie';
 import CirculawLogo from '../public/Circulaw_logotype.png';
@@ -13,6 +14,7 @@ import BetaBanner from './beta-banner';
 import NieuwTooltip from '../components/nieuw-tooltip';
 import animationData from '../public/CL_Home_Logo_Loop';
 import HomepageHeader from '../components/homepage-header';
+import CustomButton from './custom-button';
 
 const defaultOptions = {
   loop: true,
@@ -80,7 +82,7 @@ export default function Nav(props) {
   }
   return (
     <div className={`${router.pathname === '/' ? 'bg-header' : ''}`}>
-      <div className={`${router.pathname === '/' ? 'pb-16 lgNav:pb-24' : ''}`}>
+      <div className={`${router.pathname === '/' ? 'pb-16 lgNav:pb-16' : ''}`}>
         <Disclosure
           as='nav'
           className={`${
@@ -312,7 +314,12 @@ export default function Nav(props) {
                                   </Link>
                                 </div>
                                 <div className='inline-block relative ml-8'>
-                                  <NieuwTooltip />
+                                <ScrollLink to='news' smooth={true}>
+                                  <CustomButton color='home'>
+                                    NIEUW
+                                    <ArrowDownIcon className='inline h-4 w-4 ml-1' aria-hidden='true'/>
+                                  </CustomButton>
+                                  </ScrollLink>
                                 </div>
                               </div>
                             </div>
