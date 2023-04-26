@@ -64,7 +64,7 @@ export default function SectionTypes({ themaCards }) {
       </div>
       <div className='block sm:hidden'>
         {themaCards.map((thema) => (
-          <div key={thema.slug} className='h-24 w-full rounded-cl bg-black-white-100 shadow  my-6'>
+          <div key={thema.slug} className='h-24 w-full rounded-cl bg-black-white-100 shadow my-6'>
             <div className='flex items-center justify-start'>
               <div className='h-24 w-24 relative'>
                 <Image
@@ -77,7 +77,7 @@ export default function SectionTypes({ themaCards }) {
               <div className='text-black-white-800 pl-8'>
                 <h3 className='mobile sm:desktop'>{thema.themaName}</h3>
                 <ArrowRightIcon className='block h-4 w-4 text-green-600 mt-1' aria-hidden='true' />
-                </div>
+              </div>
             </div>
           </div>
         ))}

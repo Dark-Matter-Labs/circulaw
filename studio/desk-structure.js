@@ -5,7 +5,7 @@ import { FcAbout } from 'react-icons/fc';
 import { MdSettingsSuggest } from 'react-icons/md';
 import { FaLanguage, FaHandshake, FaQuestion } from 'react-icons/fa';
 import { BsCircle } from 'react-icons/bs';
-import {BiNews} from 'react-icons/bi'
+import { BiNews } from 'react-icons/bi';
 
 export const Structure = (S) =>
   S.list()

@@ -5,10 +5,12 @@ import Layout from '../components/layouts/layout';
 import SectionTypes from '../components/section-types-list';
 import watImage from '../public/home-page/wat.png';
 import { client } from '../lib/sanity';
-import { siteSettingsQuerys, homePageThemaQuery } from '../lib/queries';
+import { siteSettingsQuerys, homePageThemaQuery, newsItemsQuery } from '../lib/queries';
 import NewThemaSuggestion from '../components/new-thema-suggestion';
+import NewsItems from '../components/news-items';
 
-export default function Index({ ...props }) {
+export default function Index({ newsItems, ...props }) {
+  // refactor this and pass props individualy
   const aboutSlugs = props.overCirculaw ?? [];
   const themaCards = props.homePageThemaData;
   return (
@@ -56,17 +58,17 @@ export default function Index({ ...props }) {
                   Lees verder <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                 </span>
               </div>
-              <div className=''>
-          <h1 className='pt-8 mobile sm:desktop text-green-600 border-black-white-600 border-b pb-4'>
-            News and updates
-          </h1>
-          <div className='pt-4 sm:pt-8'>
-            content here make component
-          </div>
-        </div>
             </div>
           </Link>
-        </div> 
+          <div className=''>
+            <h1 className='pt-8 mobile sm:desktop text-green-600 border-black-white-600 border-b pb-4'>
+              News and updates
+            </h1>
+            <div className='pt-4 sm:pt-8'>
+              <NewsItems newsItems={newsItems} />
+            </div>
+          </div>
+        </div>
       </div>
     </Layout>
   );
@@ -75,10 +77,12 @@ export default function Index({ ...props }) {
 export async function getStaticProps() {
   const overCirculaw = await client.fetch(siteSettingsQuerys.overCirulaw);
   const homePageThemaData = await client.fetch(homePageThemaQuery);
+  const newsItems = await client.fetch(newsItemsQuery);
   return {
     props: {
       overCirculaw,
       homePageThemaData,
+      newsItems,
     },
     revalidate: 1,
   };
