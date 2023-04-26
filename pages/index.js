@@ -15,21 +15,21 @@ export default function Index({ ...props }) {
   const themaCards = props.homePageThemaData;
   return (
     <Layout page='home'>
-      <div className='bg-black-white-200 pb-20' name='thema'>
+      <div className='bg-black-white-200 pb-14' name='thema'>
         <div className='global-margin'>
-          <h2 className='pb-6 pt-8 mobile sm:desktop text-black-white-800'>Thema’s</h2>
+          <h1 className='pt-8 mobile sm:desktop text-green-600 border-black-white-600 border-b pb-4'>Thema’s</h1>
+          <div className='pt-8'>
           <SectionTypes type='home' themaCards={themaCards} />
+          </div>
         </div>
       </div>
-      <div className='bg-black-white-200'>
+      <div className='bg-black-white-200 global-margin pb-4 flex items-center justify-center'>
         <NewThemaSuggestion />
       </div>
       <div className='bg-black-white-200 py-10'>
         <div className='global-margin'>
           <h1
-            className='mobile sm:desktop text-black-white-800 border-b border-black-white-600 pb-4'
-            name='waarom'
-          >
+            className='mobile sm:desktop text-green-600 border-b border-black-white-600 pb-4'>
             Over CircuLaw
           </h1>
 
