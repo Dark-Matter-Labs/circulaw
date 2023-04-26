@@ -93,6 +93,7 @@ export default function NieuwToolTip() {
                             <Link
                               className='link-base'
                               href='/about/Wetsanalyse-vanuit-circulaire-blik'
+                              onClick={() => setOpen(false)}
                             >
                               CircuLaw-methodiek voor wetsanalyse
                             </Link>{' '}
