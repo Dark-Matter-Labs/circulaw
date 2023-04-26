@@ -21,7 +21,7 @@ module.exports = {
         'black-white-800': '#1F2223',
         'green-200': '#84E9C5',
         'green-300': '#25C38B',
-        'green-400': '#6D9F6B',
+        'green-400': '#07B071',
         'green-500': '#028352',
         'green-600': '#035E46',
         'green-800': '#053237',
