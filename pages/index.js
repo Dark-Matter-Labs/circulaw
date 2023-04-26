@@ -8,6 +8,7 @@ import watImage from '../public/home-page/wat.png';
 import hoeverImage from '../public/home-page/hoever.png';
 import { client } from '../lib/sanity';
 import { siteSettingsQuerys, homePageThemaQuery } from '../lib/queries';
+import NewThemaSuggestion from '../components/new-thema-suggestion';
 
 export default function Index({ ...props }) {
   const aboutSlugs = props.overCirculaw ?? [];
@@ -19,6 +20,9 @@ export default function Index({ ...props }) {
           <h2 className='pb-6 pt-8 mobile sm:desktop text-black-white-800'>Thema’s</h2>
           <SectionTypes type='home' themaCards={themaCards} />
         </div>
+      </div>
+      <div className='bg-black-white-200'>
+        <NewThemaSuggestion />
       </div>
       <div className='bg-black-white-200 py-10'>
         <div className='global-margin'>
