@@ -17,21 +17,22 @@ export default function Index({ ...props }) {
     <Layout page='home'>
       <div className='bg-black-white-200 pb-14' name='thema'>
         <div className='global-margin'>
-          <h1 className='pt-8 mobile sm:desktop text-green-600 border-black-white-600 border-b pb-4'>Thema’s</h1>
+          <h1 className='pt-8 mobile sm:desktop text-green-600 border-black-white-600 border-b pb-4'>
+            Thema’s
+          </h1>
           <div className='pt-8'>
-          <SectionTypes type='home' themaCards={themaCards} />
+            <SectionTypes type='home' themaCards={themaCards} />
           </div>
         </div>
       </div>
       <div className='bg-black-white-200'>
-      <div className=' global-margin pb-4 flex items-center justify-center'>
-        <NewThemaSuggestion />
-      </div>
+        <div className=' global-margin pb-4 flex items-center justify-center'>
+          <NewThemaSuggestion />
+        </div>
       </div>
       <div className='bg-black-white-200 py-10'>
         <div className='global-margin'>
-          <h1
-            className='mobile sm:desktop text-green-600 border-b border-black-white-600 pb-4'>
+          <h1 className='mobile sm:desktop text-green-600 border-b border-black-white-600 pb-4'>
             Over CircuLaw
           </h1>
 
