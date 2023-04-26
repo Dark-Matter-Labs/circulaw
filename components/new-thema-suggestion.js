@@ -40,12 +40,12 @@ export default function NewThemaSuggestion() {
 </svg>
 
             </div>
-            <div>
-                tex
+            <div className=' max-w-xs'>
+                <h3 className='mobile sm:desktop text-black-white-100'>Mis je instrumenten? Interessante praktijkvoorbeelden?</h3>
             </div>
             <div className='mr-12'>
-            <CustomButton color='home'> hello
-            <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+            <CustomButton color='home'><span className='whitespace-nowrap pr-1'>Deel je kennis!</span>  
+            <ArrowRightIcon className='inline-block h-4 w-4 ' aria-hidden='true' />
             </CustomButton>
             </div>
             

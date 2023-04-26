@@ -23,8 +23,10 @@ export default function Index({ ...props }) {
           </div>
         </div>
       </div>
-      <div className='bg-black-white-200 global-margin pb-4 flex items-center justify-center'>
+      <div className='bg-black-white-200'>
+      <div className=' global-margin pb-4 flex items-center justify-center'>
         <NewThemaSuggestion />
+      </div>
       </div>
       <div className='bg-black-white-200 py-10'>
         <div className='global-margin'>
