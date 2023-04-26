@@ -1,14 +1,10 @@
-// title
-// text
-// date date created? date published?
-// image
-// link - internal/external
-// button
+import {BiNews} from 'react-icons/bi'
 
 export default {
     title: 'News Item',
     name: 'newsItem',
     type: 'document',
+    icon: BiNews,
     fields: [
         {
             title:'Title',
@@ -25,12 +21,14 @@ export default {
             title:'External Link',
             name: 'externalLink',
             type: 'url',
+            validation: (Rule) => Rule.uri({ scheme: ['http', 'https'] }),
             // validation
         },
         {
             title:'Internal Link',
             name: 'internalLink',
-            type: 'ref',
+            type: 'reference',
+            to: [{ type: 'aboutPage' }, { type: 'thema' }, { type: 'FAQpage' }, { type: 'englishPage'}],
             // do we want to ref this?
         },
         {
