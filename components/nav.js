@@ -11,7 +11,6 @@ import CirculawLogo from '../public/Circulaw_logotype.png';
 import logo from '../public/Circulaw_logotype_home.png';
 
 import BetaBanner from './beta-banner';
-import NieuwTooltip from '../components/nieuw-tooltip';
 import animationData from '../public/CL_Home_Logo_Loop';
 import HomepageHeader from '../components/homepage-header';
 import CustomButton from './custom-button';
@@ -313,6 +312,7 @@ export default function Nav(props) {
                                     </h5>
                                   </Link>
                                 </div>
+                                {router.pathname == '/' &&  
                                 <div className='inline-block relative ml-8'>
                                 <ScrollLink to='news' smooth={true}>
                                   <CustomButton color='home'>
@@ -320,7 +320,7 @@ export default function Nav(props) {
                                     <ArrowDownIcon className='inline h-4 w-4 ml-1' aria-hidden='true'/>
                                   </CustomButton>
                                   </ScrollLink>
-                                </div>
+                                </div>}
                               </div>
                             </div>
                           </div>
@@ -407,10 +407,20 @@ export default function Nav(props) {
                   >
                     <Link href='/contact'>Contact</Link>
                   </Disclosure.Button>
+                 
+                  {router.pathname == '/' &&  
+                  <>
                   <hr className='my-4 mx-2 border-green-600' />
+                  
                   <div className='block pl-3 pr-4 py-4'>
-                    <NieuwTooltip />
+                  <ScrollLink to='news' smooth={true}>
+                                  <CustomButton color='toPdf'>
+                                    NIEUW
+                                    <ArrowDownIcon className='inline h-4 w-4 ml-1' aria-hidden='true'/>
+                                  </CustomButton>
+                                  </ScrollLink>
                   </div>
+                  </>}
                 </div>
               </Disclosure.Panel>
             </>
