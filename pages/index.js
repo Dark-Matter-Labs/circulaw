@@ -13,18 +13,18 @@ export default function Index({ ...props }) {
   const themaCards = props.homePageThemaData;
   return (
     <Layout page='home'>
-      <div className='bg-black-white-200 pb-14' name='thema'>
+      <div className='bg-black-white-200 sm:pb-14' name='thema'>
         <div className='global-margin'>
           <h1 className='pt-8 mobile sm:desktop text-green-600 border-black-white-600 border-b pb-4'>
             Thema’s
           </h1>
-          <div className='pt-8'>
+          <div className='pt-4 sm:pt-8'>
             <SectionTypes type='home' themaCards={themaCards} />
           </div>
         </div>
       </div>
       <div className='bg-black-white-200'>
-        <div className=' global-margin pb-4 flex items-center justify-center'>
+        <div className='global-margin pb-4 flex items-center justify-center'>
           <NewThemaSuggestion />
         </div>
       </div>
@@ -58,9 +58,6 @@ export default function Index({ ...props }) {
               </div>
             </div>
           </Link>
-
-         
-       
         </div>
       </div>
     </Layout>
