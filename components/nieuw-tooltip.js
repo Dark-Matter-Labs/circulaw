@@ -92,7 +92,7 @@ export default function NieuwToolTip() {
                             identificeren van juridische instrumenten een standaard werkwijze: deze{' '}
                             <Link
                               className='link-base'
-                              href='about/Wetsanalyse-vanuit-circulaire-blik'
+                              href='/about/Wetsanalyse-vanuit-circulaire-blik'
                             >
                               CircuLaw-methodiek voor wetsanalyse
                             </Link>{' '}
