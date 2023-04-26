@@ -16,6 +16,7 @@ export default {
       title: 'Text Content',
       name: 'text',
       type: 'text',
+      validation: (Rule) => Rule.required().max(200),
     },
     {
       title: 'External Link',
@@ -25,16 +26,23 @@ export default {
       // validation
     },
     {
-      title: 'Internal Link',
-      name: 'internalLink',
-      type: 'reference',
-      to: [{ type: 'aboutPage' }, { type: 'thema' }, { type: 'FAQpage' }, { type: 'englishPage' }],
-      // do we want to ref this?
+      title: 'External Link Text',
+      name: 'externalLinkText',
+      type: 'string',
+      description: 'if you add an external link you must also write some text to explain the link. If not the link will not display'
+      // validation if external link make required?
     },
     {
-      title: 'Image',
-      name: 'image',
-      type: 'image',
+      title: 'Internal Link',
+      name: 'internalLink',
+      type: 'string',
+      description: 'please copy the slug of the CL page you want to link to. all text coming after .nl this will allow us to make the links work on staging environment also. must start with /'
+    },
+    {
+      title: 'Internal Link Text',
+      name: 'internalLinkText',
+      type: 'string',
+      description: 'to be displayed inside button'
     },
     {
       title: 'Date',
