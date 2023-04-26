@@ -14,7 +14,8 @@ export default function HomepageHeader() {
             <span className='block '>Regelgeving voor een circulaire economie</span>{' '}
           </h1>
           <p className='text-left sm:text-center mt-2 p-base max-w-sm sm:max-w-full sm:p-xl-header text-black-white-200 pb-8'>
-          CircuLaw laat decentrale overheden zien hoe je met bestaande juridische instrumenten de circulaire transitie kunt versnellen.
+            CircuLaw laat decentrale overheden zien hoe je met bestaande juridische instrumenten de
+            circulaire transitie kunt versnellen.
           </p>
           <div className='mt-2 sm:flex sm:justify-center md:mt-2'>
             <div className=''>

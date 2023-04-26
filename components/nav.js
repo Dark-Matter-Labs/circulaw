@@ -312,15 +312,19 @@ export default function Nav(props) {
                                     </h5>
                                   </Link>
                                 </div>
-                                {router.pathname == '/' &&  
-                                <div className='inline-block relative ml-8'>
-                                <ScrollLink to='news' smooth={true}>
-                                  <CustomButton color='home'>
-                                    NIEUW
-                                    <ArrowDownIcon className='inline h-4 w-4 ml-1' aria-hidden='true'/>
-                                  </CustomButton>
-                                  </ScrollLink>
-                                </div>}
+                                {router.pathname == '/' && (
+                                  <div className='inline-block relative ml-8'>
+                                    <ScrollLink to='news' smooth={true}>
+                                      <CustomButton color='home'>
+                                        NIEUW
+                                        <ArrowDownIcon
+                                          className='inline h-4 w-4 ml-1'
+                                          aria-hidden='true'
+                                        />
+                                      </CustomButton>
+                                    </ScrollLink>
+                                  </div>
+                                )}
                               </div>
                             </div>
                           </div>
@@ -407,20 +411,21 @@ export default function Nav(props) {
                   >
                     <Link href='/contact'>Contact</Link>
                   </Disclosure.Button>
-                 
-                  {router.pathname == '/' &&  
-                  <>
-                  <hr className='my-4 mx-2 border-green-600' />
-                  
-                  <div className='block pl-3 pr-4 py-4'>
-                  <ScrollLink to='news' smooth={true}>
-                                  <CustomButton color='toPdf'>
-                                    NIEUW
-                                    <ArrowDownIcon className='inline h-4 w-4 ml-1' aria-hidden='true'/>
-                                  </CustomButton>
-                                  </ScrollLink>
-                  </div>
-                  </>}
+
+                  {router.pathname == '/' && (
+                    <>
+                      <hr className='my-4 mx-2 border-green-600' />
+
+                      <div className='block pl-3 pr-4 py-4'>
+                        <ScrollLink to='news' smooth={true}>
+                          <CustomButton color='toPdf'>
+                            NIEUW
+                            <ArrowDownIcon className='inline h-4 w-4 ml-1' aria-hidden='true' />
+                          </CustomButton>
+                        </ScrollLink>
+                      </div>
+                    </>
+                  )}
                 </div>
               </Disclosure.Panel>
             </>
