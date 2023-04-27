@@ -147,7 +147,7 @@ export default function NewThemaSuggestion() {
       </div>
 
       <div className='sm:hidden h-24 bg-green-500 rounded-cl w-full'>
-        <Link href='/'>
+        <Link href='/contact'>
           <div className='flex h-full w-full items-center justify-start'>
             <div className='pl-4'>
               <svg
@@ -276,7 +276,7 @@ export default function NewThemaSuggestion() {
                 />
               </svg>
             </div>
-            <div className='text-black-white-100 pl-8'>
+            <div className='text-black-white-100 pl-6 sm:pl-8'>
               <h3 className='mobile sm:desktop'>Nieuw thema?</h3>
               <ArrowRightIcon className='block h-4 w-4 mt-1' aria-hidden='true' />
             </div>
