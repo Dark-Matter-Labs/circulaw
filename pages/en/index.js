@@ -143,7 +143,7 @@ export default function English({ data }) {
                     Questions? Contact us:
                     <a href='mailto:info@circulaw.nl'>
                       {' '}
-                      <span className='block underline font-semibold'>info@Circulaw.nl</span>
+                      <span className='block underline font-semibold link-interaction-dark-bg text-green-300'>info@Circulaw.nl</span>
                     </a>
                   </p>
                 </div>

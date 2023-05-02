@@ -88,7 +88,7 @@ export default function Partners() {
             differently, what you think is missing, and of course, we would also like to hear what
             makes you happy.{' '}
             <Link href='mailto:info@circulaw.nl'>
-              <span className='underline link-interaction'>
+              <span className='text-green-300 link-interaction-dark-bg'>
                 Please send your feedback on this beta version.
               </span>
             </Link>
