@@ -142,10 +142,7 @@ export default function HomePageAboutSection({ slug }) {
             helpen meer en beter gebruik te maken van regelgeving om zo de circulaire economie te
             bevorderen. Wet-en regelgeving biedt goede mogelijkheden om effectief circulair beleid
             te maken. CircuLaw ontsluit die complexe wet-en regelgeving zodat beleidsmakers er mee
-            aan de slag kunnen. Zo kunnen we de overstap van het lineaire systeem naar een circulair
-            systeem bevorderen. En die stap is essentieel om versnelde klimaatverandering tegen te
-            gaan, vervuiling te verminderen, de biodiversiteit te behouden en om te zorgen dat
-            grondstoffen beschikbaar blijven.
+            aan de slag kunnen.
           </p>
           <p className='p-lg py-5 max-w-4xl block sm:hidden'>
             CircuLaw is een kennisplatform waarmee we beleidsmakers, projectleiders en inkopers
