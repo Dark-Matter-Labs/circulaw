@@ -1,12 +1,11 @@
 import { PortableText } from '@portabletext/react';
-import { groq } from 'next-sanity';
 import Link from 'next/link';
 import Layout from '../../components/layouts/layout';
 import { client } from '../../lib/sanity';
-import { fetcher } from '../../utils/swr-fetcher';
 import { enPageComponents } from '../../lib/portable-text/pt-components'
 import CustomButton from '../../components/custom-button';
 import { ArrowRightIcon } from '@heroicons/react/outline';
+import { enPageQuery } from '../../lib/queries'
 
 
 export default function English({ data }) {
@@ -119,7 +118,7 @@ export default function English({ data }) {
 }
 
 export async function getStaticProps() {
-  const data = await client.fetch(groq`*[_type == "englishPage"][0]{englishContent}`, fetcher);
+  const data = await client.fetch(enPageQuery);
   return {
     props: {
       data: data,
