@@ -59,7 +59,7 @@ export default function Nav(props) {
             </div>
             <div className='text-black-white-200 flex justify-center items-center min-w-[10%] pt-2 pr-4'>
               <span
-                className={`hover:underline ${
+                className={`link-interaction-dark-bg ${
                   router.pathname === '/en' ? 'enLink' : 'enLinkSelected'
                 }`}
               >
@@ -67,7 +67,7 @@ export default function Nav(props) {
               </span>
               <span className='px-1 enLink'>|</span>
               <span
-                className={`hover:underline ${
+                className={`link-interaction-dark-bg ${
                   router.pathname === '/en' ? 'enLinkSelected' : 'enLink'
                 }`}
               >
