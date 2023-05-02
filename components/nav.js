@@ -269,7 +269,7 @@ export default function Nav(props) {
                                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                                             <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
                                               {aboutSlugs?.map((slug) => (
-                                                <Link
+                                                <a
                                                   key={slug.slug}
                                                   href={`/about/${encodeURIComponent(slug.slug)}`}
                                                   className='-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase border-b'
@@ -277,7 +277,7 @@ export default function Nav(props) {
                                                   <h6 className='` popup-base text-black-white-800'>
                                                     {slug.title.replaceAll('-', ' ')}
                                                   </h6>
-                                                </Link>
+                                                </a>
                                               ))}
                                             </div>
                                           </div>
