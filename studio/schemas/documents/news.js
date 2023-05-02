@@ -16,7 +16,8 @@ export default {
       title: 'Text Content',
       name: 'text',
       type: 'text',
-      validation: (Rule) => Rule.required().max(200),
+      description: 'text is limited to 220 characters',
+      validation: (Rule) => Rule.required().max(220),
     },
     {
       title: 'External Link',
