@@ -15,7 +15,13 @@ export default function NewsItems({ newsItems }) {
           <div
             key={item?._id}
             className={`${
-              newsItems[1] === item || newsItems[3] === item || newsItems[4] === item || newsItems[6] === item || newsItems[8] === item ? 'bg-green-600' : 'bg-green-800'
+              newsItems[1] === item ||
+              newsItems[3] === item ||
+              newsItems[4] === item ||
+              newsItems[6] === item ||
+              newsItems[8] === item
+                ? 'bg-green-600'
+                : 'bg-green-800'
             } h-[335px] w-full min-w-[270px] max-w-full sm:max-w-[310px] rounded-cl text-black-white-100`}
           >
             {/*  
