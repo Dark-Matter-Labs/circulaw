@@ -4,11 +4,6 @@ export default {
   title: 'Site Settings',
   fields: [
     {
-      name: 'title',
-      type: 'string',
-      title: 'Site title',
-    },
-    {
       title: 'URL',
       name: 'url',
       type: 'url',
