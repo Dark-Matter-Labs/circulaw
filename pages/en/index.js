@@ -104,8 +104,13 @@ export default function English({ data }) {
           <div className='grid grid-cols-1 lg:grid-cols-3 global-margin justify-start pb-20 pt-10 sm:py-20'>
             <div className='col-span-2 text-black-white-200 sm:max-w-3xl'>
               <PortableText components={components} value={data?.englishContent} />
+              <div>
+              <Link href='/' className='text-green-300 link-base sm:link-lg link-interaction-dark-bg hidden lg:block'>
+              Check out the website in Dutch
+              </Link>
+              </div>
             </div>
-            {/* I added a new screen size to tw-config - I think we need to update this. lg2 = lg (tailwind lg) */}
+            
             <div className='col-span-1 max-w-md block w-full float-right px-8 lg:ml-6 bg-green-800 text-black-white-200 h-[30rem] lg:h-[40rem] xl:h-[32rem] sticky top-40 lg:mb-20'>
               <div className='w-full h-full grid grid-cols-1 items-center'>
                 <div className='py-6 p-base sm:p-lg'>
