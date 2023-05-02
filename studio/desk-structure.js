@@ -23,9 +23,7 @@ export const Structure = (S) =>
                 .child(
                   S.documentList()
                     .title('Houtbouw Measures')
-                    .filter(
-                      '_type == "measure" &&  thema == "houtbouw-stimuleren"',
-                    ),
+                    .filter('_type == "measure" &&  thema == "houtbouw-stimuleren"'),
                 ),
               S.listItem()
                 .title('Circulaire windturbines')
@@ -41,9 +39,7 @@ export const Structure = (S) =>
                 .child(
                   S.documentList()
                     .title('Matrassen measures')
-                    .filter(
-                      '_type == "measure" && thema == "circulaire-matrasketen"',
-                    ),
+                    .filter('_type == "measure" && thema == "circulaire-matrasketen"'),
                 ),
             ]),
         ),
@@ -60,27 +56,25 @@ export const Structure = (S) =>
         .title('English Page')
         .id('englishPage')
         .icon(FaLanguage)
-        .child(S.document()
-                  .title('English Page')
-                  .schemaType('englishPage')
-                  .documentId('englishPage')),
+        .child(
+          S.document().title('English Page').schemaType('englishPage').documentId('englishPage'),
+        ),
       S.listItem()
-      .title('Partners')
-      .id('PartnersList')
-      .icon(FaHandshake)
-      .child(S.document()
         .title('Partners')
-        .schemaType('partners')
-        .documentId('PartnersList')),
+        .id('PartnersList')
+        .icon(FaHandshake)
+        .child(S.document().title('Partners').schemaType('partners').documentId('PartnersList')),
       S.divider(),
       S.listItem()
-      .title('Navigation')
-      .id('NavigationList')
-      .icon(GrNavigate)
-      .child(S.documentList().title('Navigation').filter('_type == "navigation"')),
+        .title('Navigation')
+        .id('NavigationList')
+        .icon(GrNavigate)
+        .child(S.documentList().title('Navigation').filter('_type == "navigation"')),
       S.listItem()
         .title('Site Settings')
         .id('siteSettings')
         .icon(MdSettingsSuggest)
-        .child(S.document().title('Site Settings').schemaType('siteConfig').documentId('siteSettings')),
+        .child(
+          S.document().title('Site Settings').schemaType('siteConfig').documentId('siteSettings'),
+        ),
     ]);
