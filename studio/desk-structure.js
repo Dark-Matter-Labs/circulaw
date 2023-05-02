@@ -24,7 +24,7 @@ export const Structure = (S) =>
                   S.documentList()
                     .title('Houtbouw Measures')
                     .filter(
-                      '_type == "measure" &&  thema == "houtbouw-stimuleren" || thema == "houtbouw"',
+                      '_type == "measure" &&  thema == "houtbouw-stimuleren"',
                     ),
                 ),
               S.listItem()
@@ -42,7 +42,7 @@ export const Structure = (S) =>
                   S.documentList()
                     .title('Matrassen measures')
                     .filter(
-                      '_type == "measure" && thema == "circulaire-matrasketen" || thema == "matrassen"',
+                      '_type == "measure" && thema == "circulaire-matrasketen"',
                     ),
                 ),
             ]),
