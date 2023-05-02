@@ -1,10 +1,14 @@
 import Layout from '../components/layouts/layout';
 import SectionTypes from '../components/section-types-list';
 import { client } from '../lib/sanity';
+import { Link as ScrollLink } from 'react-scroll';
+import { ArrowUpIcon } from '@heroicons/react/outline';
+
 import { siteSettingsQuerys, homePageThemaQuery, newsItemsQuery } from '../lib/queries';
 import NewThemaSuggestion from '../components/new-thema-suggestion';
 import NewsItems from '../components/news-items';
 import HomePageAboutSection from '../components/home-page-about-section';
+import CustomButton from '../components/custom-button';
 
 export default function Index({ newsItems, overCirculaw, ...props }) {
   // refactor this and pass props individualy
@@ -37,7 +41,16 @@ export default function Index({ newsItems, overCirculaw, ...props }) {
             <div className='pt-4 sm:pt-8'>
               <NewsItems newsItems={newsItems} />
             </div>
+           
           </div>
+          <div className='block sm:hidden w-full flex items-center justify-center pt-8'>
+              <CustomButton color='whiteBackground'>
+                <ScrollLink to='top' smooth={true}>
+               <span>go back to the top
+                <ArrowUpIcon className='h-4 w-4 inline-block'/></span>
+                </ScrollLink>
+              </CustomButton>
+            </div>
         </div>
       </div>
     </Layout>
