@@ -56,7 +56,14 @@ export const Structure = (S) =>
         .icon(FcAbout)
         .child(S.documentList().title('About Pages').filter('_type == "aboutPage"')),
       S.documentListItem().schemaType('FAQpage').title('FAQ Page').icon(FaQuestion),
-      S.documentListItem().schemaType('englishPage').title('English Page').icon(FaLanguage),
+      S.listItem()
+        .title('English Page')
+        .id('englishPage')
+        .icon(FaLanguage)
+        .child(S.document()
+                  .title('English Page')
+                  .schemaType('englishPage')
+                  .documentId('englishPage')),
       S.divider(),
       S.listItem()
       .title('Navigation')
