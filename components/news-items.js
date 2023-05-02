@@ -22,7 +22,7 @@ export default function NewsItems({ newsItems }) {
               newsItems[8] === item
                 ? 'bg-green-600'
                 : 'bg-green-800'
-            } h-[335px] w-full min-w-[270px] max-w-full sm:max-w-[310px] rounded-cl text-black-white-100`}
+            } h-auto sm:h-[335px] w-full min-w-[270px] max-w-full sm:max-w-[310px] rounded-cl text-black-white-100`}
           >
             {/*  
             {item?.image && (
