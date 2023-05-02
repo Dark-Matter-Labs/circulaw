@@ -4,53 +4,10 @@ import Link from 'next/link';
 import Layout from '../../components/layouts/layout';
 import { client } from '../../lib/sanity';
 import { fetcher } from '../../utils/swr-fetcher';
-import {
-  h1Component,
-  h2Component,
-  h3Component,
-  normalTextComponent,
-} from '../../lib/portable-text/portable-text-blocks';
-import {
-  greenBoxComponent,
-  hoverTextComponent,
-  pdfBlockComponentAboutPage,
-  smallParaComponent,
-} from '../../lib/portable-text/portable-text-types';
-import {
-  bulletComponent,
-  numberComponent,
-  bulletItemComponent,
-  numberItemComponent,
-} from '../../lib/portable-text/portable-text-lists';
-import { linkBGDarkComponent } from '../../lib/portable-text/portable-text-marks';
+import { enPageComponents } from '../../lib/portable-text/pt-components'
 import CustomButton from '../../components/custom-button';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
-const components = {
-  types: {
-    greenBox: greenBoxComponent,
-    hoverText: hoverTextComponent,
-    pdfBlock: pdfBlockComponentAboutPage,
-    smallPara: smallParaComponent,
-  },
-  list: {
-    bullet: bulletComponent,
-    number: numberComponent,
-  },
-  listItem: {
-    bullet: bulletItemComponent,
-    number: numberItemComponent,
-  },
-  block: {
-    h1: h1Component,
-    h2: h2Component,
-    h3: h3Component,
-    normal: normalTextComponent,
-  },
-  marks: {
-    link: linkBGDarkComponent,
-  },
-};
 
 export default function English({ data }) {
   return (
@@ -103,14 +60,14 @@ export default function English({ data }) {
 
           <div className='grid grid-cols-1 lg:grid-cols-3 global-margin justify-start pb-20 pt-10 sm:py-20'>
             <div className='col-span-2 text-black-white-200 sm:max-w-3xl'>
-              <PortableText components={components} value={data?.englishContent} />
+              <PortableText components={enPageComponents} value={data?.englishContent} />
               <div>
               <Link href='/' className='text-green-300 link-base sm:link-lg link-interaction-dark-bg hidden lg:block'>
               Check out the website in Dutch
               </Link>
               </div>
             </div>
-            
+        
             <div className='col-span-1 max-w-md block w-full float-right px-8 lg:ml-6 bg-green-800 text-black-white-200 h-[30rem] lg:h-[40rem] xl:h-[32rem] sticky top-40 lg:mb-20'>
               <div className='w-full h-full grid grid-cols-1 items-center'>
                 <div className='py-6 p-base sm:p-lg'>
