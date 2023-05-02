@@ -64,21 +64,20 @@ export const Structure = (S) =>
                   .title('English Page')
                   .schemaType('englishPage')
                   .documentId('englishPage')),
+      S.listItem()
+      .title('Partners')
+      .id('PartnersList')
+      .icon(FaHandshake)
+      .child(S.document()
+        .title('Partners')
+        .schemaType('partners')
+        .documentId('PartnersList')),
       S.divider(),
       S.listItem()
       .title('Navigation')
       .id('NavigationList')
       .icon(GrNavigate)
       .child(S.documentList().title('Navigation').filter('_type == "navigation"')),
-      S.listItem()
-        .title('Partners')
-        .id('PartnersList')
-        .icon(FaHandshake)
-        .child(S.document()
-          .title('Partners')
-          .schemaType('partners')
-          .documentId('PartnersList')),
-      S.divider(),
       S.listItem()
         .title('Site Settings')
         .id('siteSettings')
