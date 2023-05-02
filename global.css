@@ -108,6 +108,10 @@
     @apply hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white;
   }
 
+  .link-interaction-dark-bg {
+    @apply hover:text-green-200 active:text-black-white-100 focus:text-green-100 focus:right-2 focus:ring-white
+  }
+
   .button {
     @apply font-manrope text-base font-bold leading-10;
   }
