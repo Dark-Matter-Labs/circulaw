@@ -59,18 +59,22 @@ export const Structure = (S) =>
       S.documentListItem().schemaType('englishPage').title('English Page').icon(FaLanguage),
       S.divider(),
       S.listItem()
-        .title('Navigation')
-        .id('NavigationList')
-        .icon(GrNavigate)
-        .child(S.documentList().title('Navigation').filter('_type == "navigation"')),
-      S.documentListItem()
-        .schemaType('partners')
+      .title('Navigation')
+      .id('NavigationList')
+      .icon(GrNavigate)
+      .child(S.documentList().title('Navigation').filter('_type == "navigation"')),
+      S.listItem()
         .title('Partners')
         .id('PartnersList')
-        .icon(FaHandshake),
+        .icon(FaHandshake)
+        .child(S.document()
+          .title('Partners')
+          .schemaType('partners')
+          .documentId('PartnersList')),
       S.divider(),
       S.listItem()
         .title('Site Settings')
+        .id('siteSettings')
         .icon(MdSettingsSuggest)
-        .child(S.document().schemaType('siteConfig').documentId('siteSettings')),
+        .child(S.document().title('Site Settings').schemaType('siteConfig').documentId('siteSettings')),
     ]);

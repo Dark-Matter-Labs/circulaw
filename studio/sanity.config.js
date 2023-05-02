@@ -5,6 +5,11 @@ import { schemaTypes } from './schemas';
 import { Structure } from './desk-structure';
 import { defaultDocumentNode } from './default-document-node';
 
+const singletonActions = new Set(["publish", "discardChanges", "restore"])
+
+const singletonTypes = new Set(["siteConfig"])
+
+
 let name = '',
   path = '';
 
