@@ -7,7 +7,14 @@ import { defaultDocumentNode } from './default-document-node';
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
 
-const singletonTypes = new Set(['siteConfig', 'englishPage', 'partners', 'navigation', 'FAQpage', 'thema']);
+const singletonTypes = new Set([
+  'siteConfig',
+  'englishPage',
+  'partners',
+  'navigation',
+  'FAQpage',
+  'thema',
+]);
 
 let name = '',
   path = '';
