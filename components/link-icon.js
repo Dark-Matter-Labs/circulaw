@@ -2,9 +2,7 @@ export default function LinkIcon() {
   return (
     <span className='pl-0.5 inline-block h-5 w-5 sm:h-6 sm:w-6 -mb-1 relative '>
       <svg
-        className='stroke-current'
-        width='24'
-        height='24'
+        className='stroke-current h-5 w-5 sm:h-6 sm:w-6'
         viewBox='0 -1 24 24'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'

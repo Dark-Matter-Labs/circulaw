@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { setCookie, hasCookie } from 'cookies-next';
 import { useRouter } from 'next/router';
 
+
+
 const CookieConsent = () => {
   const [consent, setConsent] = useState(true);
   const router = useRouter();
