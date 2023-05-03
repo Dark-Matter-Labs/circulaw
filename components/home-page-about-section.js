@@ -130,7 +130,7 @@ export default function HomePageAboutSection({ aboutSection }) {
         <h1 className='mobile sm:desktop pl-4 sm:pl-8 text-green-600 '>{aboutSection?.aboutSectionTitle}</h1>
       </div>
 
-      <div className='grid grid-cols-1 lg:grid-cols-5 py-4 gap-x-8 gap-y-4'>
+      <div className='grid grid-cols-1 lg:grid-cols-5 py-4 gap-x-8 gap-y-4 justify-between'>
         <div className='lg:col-span-3'>
           <div className='flex items-center justify-center block sm:hidden'>
             <div className='relative h-48 w-48 pt-4'>
@@ -149,8 +149,8 @@ export default function HomePageAboutSection({ aboutSection }) {
             </CustomButton>
           </span>
         </div>
-        <div className='lg:col-span-2'>
-          <div className='relative h-96 w-96 ml-4 lg:-mt-10 flex items-center justify-center hidden sm:block'>
+        <div className='lg:col-span-2 lg:justify-self-end'>
+          <div className='relative h-96 w-96 ml-4 lg:-mt-32 flex items-center justify-center hidden sm:block'>
             <Image src={aboutImage} fill alt='image for wat circulaw' />
           </div>
         </div>

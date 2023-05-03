@@ -6,7 +6,7 @@ export default function NewThemaSuggestion() {
   return (
     <>
     <Link href='/contact'>
-      <div className='h-32 w-[728px] hidden bg-green-500 rounded-cl md:flex flex-row items-center justify-between shadow '>
+      <div className='h-32 w-[728px] hidden bg-green-500 rounded-cl md:flex flex-row items-center justify-between shadow'>
         
         <div className='ml-8'>
           <svg
@@ -135,7 +135,7 @@ export default function NewThemaSuggestion() {
             />
           </svg>
         </div>
-        <div className=' max-w-xs'>
+        <div className='max-w-xs'>
           <h3 className='mobile sm:desktop text-black-white-100'>
             <span className='whitespace-nowrap'>Mis je instrumenten?</span>
             <span className='whitespace-nowrap'>Interessante praktijkvoorbeelden?</span>

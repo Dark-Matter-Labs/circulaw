@@ -24,13 +24,12 @@ export default function Index({ newsItems, aboutSection, homePageThemaData }) {
         </div>
       </div>
       <div className='bg-black-white-200'>
-        <div className='global-margin pb-4 flex items-center justify-center'>
+        <div className='global-margin pb-24 flex items-center justify-center'>
           <NewThemaSuggestion />
         </div>
       </div>
       <div className='bg-black-white-200 py-10'>
         <div className='global-margin'>
-          {/* ADD THIS TO SANITY ABOUT PAGES */}
           <HomePageAboutSection aboutSection={aboutSection} />
           <div className='' name='news'>
             <h1 className='pt-8 mobile sm:desktop text-green-600 border-black-white-600 border-b pb-4'>
