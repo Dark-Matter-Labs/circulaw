@@ -6,7 +6,7 @@ export default function NewThemaSuggestion() {
   return (
     <>
     <Link href='/contact'>
-      <div className='h-32 w-[728px] hidden bg-green-500 rounded-cl sm:flex flex-row items-center justify-between shadow'>
+      <div className='h-32 w-[728px] hidden bg-green-500 rounded-cl md:flex flex-row items-center justify-between shadow '>
         
         <div className='ml-8'>
           <svg
@@ -137,10 +137,11 @@ export default function NewThemaSuggestion() {
         </div>
         <div className=' max-w-xs'>
           <h3 className='mobile sm:desktop text-black-white-100'>
-            Mis je instrumenten? Interessante praktijkvoorbeelden?
+            <span className='whitespace-nowrap'>Mis je instrumenten?</span>
+            <span className='whitespace-nowrap'>Interessante praktijkvoorbeelden?</span>
           </h3>
         </div>
-        <div className='mr-12'>
+        <div className='mr-8'>
           <CustomButton color='home'>
             <span className='whitespace-nowrap pr-1'>Deel je kennis!</span>
             <ArrowRightIcon className='inline-block h-4 w-4 ' aria-hidden='true' />
@@ -150,7 +151,7 @@ export default function NewThemaSuggestion() {
       </Link>
 
 
-      <div className='sm:hidden h-24 bg-green-500 rounded-cl w-full'>
+      <div className='md:hidden h-24 bg-green-500 rounded-cl w-full'>
         <Link href='/contact'>
           <div className='flex h-full w-full items-center justify-start'>
             <div className='pl-4'>
