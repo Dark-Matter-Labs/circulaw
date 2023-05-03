@@ -4,15 +4,13 @@ import { client } from '../lib/sanity';
 import { Link as ScrollLink } from 'react-scroll';
 import { ArrowUpIcon } from '@heroicons/react/outline';
 
-import { siteSettingsQuerys, homePageThemaQuery, newsItemsQuery } from '../lib/queries';
+import { aboutSectionQuerie, homePageThemaQuery, newsItemsQuery } from '../lib/queries';
 import NewThemaSuggestion from '../components/new-thema-suggestion';
 import NewsItems from '../components/news-items';
 import HomePageAboutSection from '../components/home-page-about-section';
 import CustomButton from '../components/custom-button';
 
-export default function Index({ newsItems, overCirculaw, ...props }) {
-  // refactor this and pass props individualy
-  const themaCards = props.homePageThemaData;
+export default function Index({ newsItems, aboutSection, homePageThemaData }) {
   return (
     <Layout page='home'>
       <div className='bg-black-white-200 sm:pb-14' name='thema'>
@@ -21,7 +19,7 @@ export default function Index({ newsItems, overCirculaw, ...props }) {
             Thema’s
           </h1>
           <div className='pt-4 sm:pt-8'>
-            <SectionTypes type='home' themaCards={themaCards} />
+            <SectionTypes type='home' themaCards={homePageThemaData} />
           </div>
         </div>
       </div>
@@ -33,7 +31,7 @@ export default function Index({ newsItems, overCirculaw, ...props }) {
       <div className='bg-black-white-200 py-10'>
         <div className='global-margin'>
           {/* ADD THIS TO SANITY ABOUT PAGES */}
-          <HomePageAboutSection slug={overCirculaw} />
+          <HomePageAboutSection aboutSection={aboutSection} />
           <div className='' name='news'>
             <h1 className='pt-8 mobile sm:desktop text-green-600 border-black-white-600 border-b pb-4'>
               Nieuws and updates
@@ -58,14 +56,14 @@ export default function Index({ newsItems, overCirculaw, ...props }) {
 }
 
 export async function getStaticProps() {
-  const overCirculaw = await client.fetch(siteSettingsQuerys.overCirulaw);
+  const aboutSection = await client.fetch(aboutSectionQuerie);
   const homePageThemaData = await client.fetch(homePageThemaQuery);
   const newsItems = await client.fetch(newsItemsQuery);
   return {
     props: {
-      overCirculaw,
       homePageThemaData,
       newsItems,
+      aboutSection,
     },
     revalidate: 1,
   };

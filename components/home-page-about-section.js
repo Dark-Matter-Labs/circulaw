@@ -4,9 +4,9 @@ import { ArrowRightIcon } from '@heroicons/react/outline';
 import CustomButton from './custom-button';
 import aboutImage from '../public/home-page/homepageAboutDeco.png';
 
-export default function HomePageAboutSection({ slug }) {
+export default function HomePageAboutSection({ aboutSection }) {
   return (
-    <Link href={`/about/${encodeURIComponent(slug?.[0]?.slug)}`} name='about'>
+    <Link href={`/about/${encodeURIComponent(aboutSection?.aboutSectionSlug)}`} name='about'>
       <div className='w-full sm:w-3/5 flex items-center justify-start border-b border-black-white-800 pb-4'>
         <div className='sm:hidden'>
           <svg
@@ -127,7 +127,7 @@ export default function HomePageAboutSection({ slug }) {
           </svg>
         </div>
 
-        <h1 className='mobile sm:desktop pl-4 sm:pl-8 text-green-600 '>Wat is CircuLaw?</h1>
+        <h1 className='mobile sm:desktop pl-4 sm:pl-8 text-green-600 '>{aboutSection?.aboutSectionTitle}</h1>
       </div>
 
       <div className='grid grid-cols-1 lg:grid-cols-5 py-4 gap-x-8 gap-y-4'>
@@ -138,16 +138,10 @@ export default function HomePageAboutSection({ slug }) {
             </div>
           </div>
           <p className='p-lg py-5 max-w-4xl hidden sm:block'>
-            CircuLaw is een kennisplatform waarmee we beleidsmakers, projectleiders en inkopers
-            helpen meer en beter gebruik te maken van regelgeving om zo de circulaire economie te
-            bevorderen. Wet-en regelgeving biedt goede mogelijkheden om effectief circulair beleid
-            te maken. CircuLaw ontsluit die complexe wet-en regelgeving zodat beleidsmakers er mee
-            aan de slag kunnen.
+            {aboutSection?.aboutSectionText}
           </p>
           <p className='p-lg py-5 max-w-4xl block sm:hidden'>
-            CircuLaw is een kennisplatform waarmee we beleidsmakers, projectleiders en inkopers
-            helpen meer en beter gebruik te maken van regelgeving om zo de circulaire economie te
-            bevorderen.
+           {aboutSection?.aboutSectionMobileText}
           </p>
           <span className='text-green-500 link-lg link-interaction'>
             <CustomButton color='whiteBackground'>
