@@ -47,8 +47,8 @@ export const Structure = (S) =>
         .title('About Pages')
         .icon(FcAbout)
         .child(S.documentList().title('About Pages').filter('_type == "aboutPage"')),
-        S.divider(),
-        S.listItem()
+      S.divider(),
+      S.listItem()
         .title("Thema's")
         .icon(BsCircle)
         .child(S.documentList().title("Thema's").filter('_type == "thema"')),
