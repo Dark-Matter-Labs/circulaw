@@ -20,37 +20,33 @@ export default {
       of: [
         {
           type: 'block',
-          of: [
-            {
-              styles: [{ title: 'normal', value: 'normal' }],
-              lists: [
-                { title: 'Bullet', value: 'bullet' },
-                { title: 'Number', value: 'number' },
-              ],
-              marks: {
-                decorators: [],
-                annotations: [
+          styles: [{ title: 'normal', value: 'normal' }],
+          lists: [
+            { title: 'Bullet', value: 'bullet' },
+            { title: 'Number', value: 'number' },
+          ],
+          marks: {
+            decorators: [],
+            annotations: [
+              {
+                title: 'URL',
+                name: 'link',
+                type: 'object',
+                fields: [
                   {
                     title: 'URL',
-                    name: 'link',
-                    type: 'object',
-                    fields: [
-                      {
-                        title: 'URL',
-                        name: 'href',
-                        type: 'url',
-                      },
-                      {
-                        title: 'Open in new window',
-                        name: 'blank',
-                        type: 'boolean',
-                      },
-                    ],
+                    name: 'href',
+                    type: 'url',
+                  },
+                  {
+                    title: 'Open in new window',
+                    name: 'blank',
+                    type: 'boolean',
                   },
                 ],
               },
-            },
-          ],
+            ],
+          },
         },
       ],
     },

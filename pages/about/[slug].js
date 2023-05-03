@@ -14,6 +14,7 @@ import AboutPageComponent from '../../components/about-page';
 const AboutPagepreview = lazy(() => import('../../components/about-page-preview'));
 
 export default function AboutPage({ preview, data }) {
+  console.log(data);
   return preview ? (
     <PreviewSuspense>
       <Layout>
