@@ -39,13 +39,10 @@ export default {
           type: 'smallPara',
         },
         {
-          type: 'dropDown',
-        },
-        {
           type: 'block',
           of: [
             {
-              type: 'hoverText',
+              type: 'dropDown',
             },
           ],
           lists: [

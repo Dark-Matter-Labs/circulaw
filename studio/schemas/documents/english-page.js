@@ -21,7 +21,7 @@ export default {
           type: 'block',
           of: [
             {
-              type: 'hoverText',
+              type: 'dropDown',
             },
           ],
           lists: [
