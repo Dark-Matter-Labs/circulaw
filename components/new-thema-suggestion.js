@@ -5,7 +5,9 @@ import { ArrowRightIcon } from '@heroicons/react/outline';
 export default function NewThemaSuggestion() {
   return (
     <>
+    <Link href='/contact'>
       <div className='h-32 w-[728px] hidden bg-green-500 rounded-cl sm:flex flex-row items-center justify-between shadow'>
+        
         <div className='ml-8'>
           <svg
             width='98'
@@ -145,6 +147,8 @@ export default function NewThemaSuggestion() {
           </CustomButton>
         </div>
       </div>
+      </Link>
+
 
       <div className='sm:hidden h-24 bg-green-500 rounded-cl w-full'>
         <Link href='/contact'>
