@@ -44,13 +44,14 @@ export const Structure = (S) =>
             ]),
         ),
       S.listItem()
-        .title("Thema's")
-        .icon(BsCircle)
-        .child(S.documentList().title("Thema's").filter('_type == "thema"')),
-      S.listItem()
         .title('About Pages')
         .icon(FcAbout)
         .child(S.documentList().title('About Pages').filter('_type == "aboutPage"')),
+        S.divider(),
+        S.listItem()
+        .title("Thema's")
+        .icon(BsCircle)
+        .child(S.documentList().title("Thema's").filter('_type == "thema"')),
       S.documentListItem().schemaType('FAQpage').title('FAQ Page').icon(FaQuestion),
       S.listItem()
         .title('English Page')
