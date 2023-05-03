@@ -45,7 +45,7 @@ export default function Index({ newsItems, aboutSection, homePageThemaData }) {
               <CustomButton color='whiteBackground'>
                 <ScrollLink to='top' smooth={true}>
                <span>go back to the top
-                <ArrowUpIcon className='h-4 w-4 inline-block'/></span>
+                <ArrowUpIcon className='h-4 w-4 inline-block ml-1'/></span>
                 </ScrollLink>
               </CustomButton>
             </div>

@@ -145,7 +145,7 @@ export default function HomePageAboutSection({ aboutSection }) {
           </p>
           <span className='text-green-500 link-lg link-interaction'>
             <CustomButton color='whiteBackground'>
-              Lees verder <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+              Lees verder <ArrowRightIcon className='inline-block h-4 w-4 ml-1' aria-hidden='true' />
             </CustomButton>
           </span>
         </div>

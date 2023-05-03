@@ -144,7 +144,7 @@ export default function NewThemaSuggestion() {
         <div className='mr-8'>
           <CustomButton color='home'>
             <span className='whitespace-nowrap pr-1'>Deel je kennis!</span>
-            <ArrowRightIcon className='inline-block h-4 w-4 ' aria-hidden='true' />
+            <ArrowRightIcon className='inline-block h-4 w-4 ml-1' aria-hidden='true' />
           </CustomButton>
         </div>
       </div>
