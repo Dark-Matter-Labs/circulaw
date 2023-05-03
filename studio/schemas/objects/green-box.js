@@ -14,5 +14,46 @@ export default {
       name: 'greenBoxText',
       type: 'text',
     },
+    {
+      title: 'Kader highlight PT',
+      name: 'greenBoxPText',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          of: [
+            {
+              styles: [{ title: 'normal', value: 'normal' }],
+              lists: [
+                { title: 'Bullet', value: 'bullet' },
+                { title: 'Number', value: 'number' },
+              ],
+              marks: {
+                decorators: [],
+                annotations: [
+                  {
+                    title: 'URL',
+                    name: 'link',
+                    type: 'object',
+                    fields: [
+                      {
+                        title: 'URL',
+                        name: 'href',
+                        type: 'url',
+                      },
+                      {
+                        title: 'Open in new window',
+                        name: 'blank',
+                        type: 'boolean',
+                      },
+                    ],
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      ],
+    },
   ],
 };
