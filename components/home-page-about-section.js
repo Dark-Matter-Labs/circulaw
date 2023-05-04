@@ -127,7 +127,9 @@ export default function HomePageAboutSection({ aboutSection }) {
           </svg>
         </div>
 
-        <h1 className='mobile sm:desktop pl-4 sm:pl-8 text-green-600 '>{aboutSection?.aboutSectionTitle}</h1>
+        <h1 className='mobile sm:desktop pl-4 sm:pl-8 text-green-600 '>
+          {aboutSection?.aboutSectionTitle}
+        </h1>
       </div>
 
       <div className='grid grid-cols-1 lg:grid-cols-5 py-4 gap-x-8 gap-y-4 justify-between'>
@@ -137,15 +139,14 @@ export default function HomePageAboutSection({ aboutSection }) {
               <Image src={aboutImage} fill alt='image for wat circulaw' />
             </div>
           </div>
-          <p className='p-lg py-5 max-w-4xl hidden sm:block'>
-            {aboutSection?.aboutSectionText}
-          </p>
+          <p className='p-lg py-5 max-w-4xl hidden sm:block'>{aboutSection?.aboutSectionText}</p>
           <p className='p-lg py-5 max-w-4xl block sm:hidden'>
-           {aboutSection?.aboutSectionMobileText}
+            {aboutSection?.aboutSectionMobileText}
           </p>
           <span className='text-green-500 link-lg link-interaction'>
             <CustomButton color='whiteBackground'>
-              Lees verder <ArrowRightIcon className='inline-block h-4 w-4 ml-1' aria-hidden='true' />
+              Lees verder{' '}
+              <ArrowRightIcon className='inline-block h-4 w-4 ml-1' aria-hidden='true' />
             </CustomButton>
           </span>
         </div>

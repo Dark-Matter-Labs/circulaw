@@ -28,26 +28,27 @@ export default function Index({ newsItems, aboutSection, homePageThemaData }) {
           <NewThemaSuggestion />
         </div>
       </div>
-      <div className='bg-black-white-200 py-10'>
+      <div className='bg-black-white-200 py-20'>
         <div className='global-margin'>
           <HomePageAboutSection aboutSection={aboutSection} />
           <div className='' name='news'>
             <h1 className='pt-8 mobile sm:desktop text-green-600 border-black-white-600 border-b pb-4'>
-              Nieuws and updates
+              Nieuws en updates
             </h1>
             <div className='pt-4 sm:pt-8'>
               <NewsItems newsItems={newsItems} />
             </div>
-           
           </div>
           <div className='block sm:hidden w-full flex items-center justify-center pt-8'>
-              <CustomButton color='whiteBackground'>
-                <ScrollLink to='top' smooth={true}>
-               <span>go back to the top
-                <ArrowUpIcon className='h-4 w-4 inline-block ml-1'/></span>
-                </ScrollLink>
-              </CustomButton>
-            </div>
+            <CustomButton color='whiteBackground'>
+              <ScrollLink to='top' smooth={true}>
+                <span>
+                  ga terug naar boven
+                  <ArrowUpIcon className='h-4 w-4 inline-block ml-1' />
+                </span>
+              </ScrollLink>
+            </CustomButton>
+          </div>
         </div>
       </div>
     </Layout>
