@@ -30,5 +30,27 @@ export default {
       type: 'reference',
       to: { type: 'navigation' },
     },
+    {
+      title: 'About Section Title',
+      name: 'aboutSectionTitle',
+      type: 'string',
+      description: 'The title of the about section on the home page'
+    },
+    {
+      title: 'About Section Text',
+      name: 'aboutSectionText',
+      type: 'text',
+    },
+    {
+      title: 'About Section Mobile Text',
+      name: 'aboutSectionMobileText',
+      type: 'text',
+    },
+    {
+      title: 'About Section Page',
+      name: 'aboutSectionPage',
+      type: 'reference',
+      to: [{type: 'aboutPage'}]
+    },
   ],
 };

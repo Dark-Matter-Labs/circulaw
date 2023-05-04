@@ -1,18 +1,19 @@
 import Link from 'next/link';
+import { Link as ScrollLink } from 'react-scroll';
 import Image from 'next/image';
 import { useRouter } from 'next/dist/client/router';
 import { Fragment } from 'react';
 import { Popover, Disclosure, Transition } from '@headlessui/react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import { MenuIcon, XIcon, ArrowDownIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import Lottie from 'react-lottie';
 import CirculawLogo from '../public/Circulaw_logotype.png';
 import logo from '../public/Circulaw_logotype_home.png';
 
 import BetaBanner from './beta-banner';
-import NieuwTooltip from '../components/nieuw-tooltip';
 import animationData from '../public/CL_Home_Logo_Loop';
 import HomepageHeader from '../components/homepage-header';
+import CustomButton from './custom-button';
 
 const defaultOptions = {
   loop: true,
@@ -58,7 +59,7 @@ export default function Nav(props) {
             </div>
             <div className='text-black-white-200 flex justify-center items-center min-w-[10%] pt-2 pr-4'>
               <span
-                className={`hover:underline ${
+                className={`link-interaction-dark-bg ${
                   router.pathname === '/en' ? 'enLink' : 'enLinkSelected'
                 }`}
               >
@@ -66,7 +67,7 @@ export default function Nav(props) {
               </span>
               <span className='px-1 enLink'>|</span>
               <span
-                className={`hover:underline ${
+                className={`link-interaction-dark-bg ${
                   router.pathname === '/en' ? 'enLinkSelected' : 'enLink'
                 }`}
               >
@@ -80,7 +81,7 @@ export default function Nav(props) {
   }
   return (
     <div className={`${router.pathname === '/' ? 'bg-header' : ''}`}>
-      <div className={`${router.pathname === '/' ? 'pb-16 lgNav:pb-24' : ''}`}>
+      <div className={`${router.pathname === '/' ? 'pb-16 lgNav:pb-16' : ''}`}>
         <Disclosure
           as='nav'
           className={`${
@@ -311,9 +312,19 @@ export default function Nav(props) {
                                     </h5>
                                   </Link>
                                 </div>
-                                <div className='inline-block relative ml-8'>
-                                  <NieuwTooltip />
-                                </div>
+                                {router.pathname == '/' && (
+                                  <div className='inline-block relative ml-8'>
+                                    <ScrollLink to='news' smooth={true}>
+                                      <CustomButton color='home'>
+                                        NIEUW
+                                        <ArrowDownIcon
+                                          className='inline h-4 w-4 ml-1'
+                                          aria-hidden='true'
+                                        />
+                                      </CustomButton>
+                                    </ScrollLink>
+                                  </div>
+                                )}
                               </div>
                             </div>
                           </div>
@@ -400,10 +411,21 @@ export default function Nav(props) {
                   >
                     <Link href='/contact'>Contact</Link>
                   </Disclosure.Button>
-                  <hr className='my-4 mx-2 border-green-600' />
-                  <div className='block pl-3 pr-4 py-4'>
-                    <NieuwTooltip />
-                  </div>
+
+                  {router.pathname == '/' && (
+                    <>
+                      <hr className='my-4 mx-2 border-green-600' />
+
+                      <div className='block pl-3 pr-4 py-4'>
+                        <ScrollLink to='news' smooth={true}>
+                          <CustomButton color='toPdf'>
+                            NIEUW
+                            <ArrowDownIcon className='inline h-4 w-4 ml-1' aria-hidden='true' />
+                          </CustomButton>
+                        </ScrollLink>
+                      </div>
+                    </>
+                  )}
                 </div>
               </Disclosure.Panel>
             </>

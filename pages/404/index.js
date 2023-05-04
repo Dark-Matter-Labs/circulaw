@@ -31,7 +31,7 @@ export default function NotFound() {
               </Link>{' '}
             </li>
             <li className='text-green-500  link-lg link-interaction'>
-              <Link href='/about/Wat-is-CircuLaw%3F'>
+              <Link href='/about/Wat-is-CircuLaw'>
                 Wat is CircuLaw?{' '}
                 <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
               </Link>{' '}
