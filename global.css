@@ -79,6 +79,10 @@
   .p-xl {
     @apply font-urbanist text-3xl font-normal leading-14;
   }
+
+  .p-xl-header {
+    @apply font-urbanist text-3xl font-semibold leading-14;
+  }
   
   .p-lg {
     @apply font-manrope text-xl font-normal leading-13;
@@ -102,6 +106,10 @@
 
   .link-interaction {
     @apply hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white;
+  }
+
+  .link-interaction-dark-bg {
+    @apply hover:text-green-200 active:text-black-white-100 focus:text-green-100 focus:right-2 focus:ring-white
   }
 
   .button {
@@ -265,7 +273,7 @@ html {
 }
 
 .bg-header {
-  background-image: url('/final-bg.svg');
+  background-image: url('/home-page/CL_header_new2.png');
   background-size: cover;
   background-position: center;
   margin-top: -3px;
