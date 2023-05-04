@@ -25,7 +25,6 @@ import OverviewPageHeader from '../overview-page-header';
 const useSelectedState = createPersistedState('selected');
 
 export default function MeasuresLayout({ ...props }) {
-
   // TODO: import the data staticly with getStaticProps when we implement link structure changes
   const { data } = useSWR(groq`${measureLayoutQuery}`, fetcher);
   // creating references to access child component functions

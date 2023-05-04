@@ -2,11 +2,10 @@ import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
 import Layout from '../../components/layouts/layout';
 import { client } from '../../lib/sanity';
-import { enPageComponents } from '../../lib/portable-text/pt-components'
+import { enPageComponents } from '../../lib/portable-text/pt-components';
 import CustomButton from '../../components/custom-button';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import { enPageQuery } from '../../lib/queries'
-
+import { enPageQuery } from '../../lib/queries';
 
 export default function English({ data }) {
   return (
@@ -61,12 +60,15 @@ export default function English({ data }) {
             <div className='col-span-2 text-black-white-200 sm:max-w-3xl'>
               <PortableText components={enPageComponents} value={data?.englishContent} />
               <div>
-              <Link href='/' className='text-green-300 link-base sm:link-lg link-interaction-dark-bg hidden lg:block'>
-              Check out the website in Dutch
-              </Link>
+                <Link
+                  href='/'
+                  className='text-green-300 link-base sm:link-lg link-interaction-dark-bg hidden lg:block'
+                >
+                  Check out the website in Dutch
+                </Link>
               </div>
             </div>
-        
+
             <div className='col-span-1 max-w-md block w-full float-right px-8 lg:ml-6 bg-green-800 text-black-white-200 h-[30rem] lg:h-[40rem] xl:h-[32rem] sticky top-40 lg:mb-20'>
               <div className='w-full h-full grid grid-cols-1 items-center'>
                 <div className='py-6 p-base sm:p-lg'>
@@ -104,7 +106,9 @@ export default function English({ data }) {
                     Questions? Contact us:
                     <a href='mailto:info@circulaw.nl'>
                       {' '}
-                      <span className='block underline font-semibold link-interaction-dark-bg text-green-300'>info@Circulaw.nl</span>
+                      <span className='block underline font-semibold link-interaction-dark-bg text-green-300'>
+                        info@Circulaw.nl
+                      </span>
                     </a>
                   </p>
                 </div>
