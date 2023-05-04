@@ -10,11 +10,6 @@ export default {
       type: 'string',
     },
     {
-      title: 'Kader highlight text',
-      name: 'greenBoxText',
-      type: 'text',
-    },
-    {
       title: 'Kader highlight PT',
       name: 'greenBoxPText',
       type: 'array',

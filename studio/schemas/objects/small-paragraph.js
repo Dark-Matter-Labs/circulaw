@@ -9,11 +9,6 @@ export default {
       type: 'string',
     },
     {
-      title: 'Kader secundaire info Text',
-      name: 'smallParaText',
-      type: 'text',
-    },
-    {
       title: 'Kader secundaire PT',
       name: 'smallParaPText',
       type: 'array',
