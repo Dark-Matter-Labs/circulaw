@@ -24,7 +24,7 @@ export default function Index({ newsItems, aboutSection, homePageThemaData }) {
         </div>
       </div>
       <div className='bg-black-white-200'>
-        <div className='global-margin pb-24 flex items-center justify-center'>
+        <div className='global-margin pb-16 flex items-center justify-center'>
           <NewThemaSuggestion />
         </div>
       </div>
