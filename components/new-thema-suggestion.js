@@ -284,7 +284,6 @@ export default function NewThemaSuggestion() {
               <h3 className='mobile sm:desktop'>Deel je kennis! <span>
               <ArrowRightIcon className='inline h-4 w-4' aria-hidden='true' />
                 </span></h3>
-              
             </div>
           </div>
         </Link>
