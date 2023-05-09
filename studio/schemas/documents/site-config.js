@@ -1,7 +1,7 @@
 export default {
   name: 'siteConfig',
   type: 'document',
-  title: 'Site Settings',
+  title: 'Home Page',
   fields: [
     {
       title: 'URL',

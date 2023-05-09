@@ -2,10 +2,10 @@ import { VscLaw } from 'react-icons/vsc';
 import { GiDeadWood, GiBed, GiWindmill } from 'react-icons/gi';
 import { GrNavigate } from 'react-icons/gr';
 import { FcAbout } from 'react-icons/fc';
-import { MdSettingsSuggest } from 'react-icons/md';
 import { FaLanguage, FaHandshake, FaQuestion } from 'react-icons/fa';
 import { BsCircle } from 'react-icons/bs';
 import { BiNews } from 'react-icons/bi';
+import { AiOutlineHome } from 'react-icons/ai'
 
 export const Structure = (S) =>
   S.list()
@@ -77,10 +77,10 @@ export const Structure = (S) =>
         .icon(GrNavigate)
         .child(S.documentList().title('Navigation').filter('_type == "navigation"')),
       S.listItem()
-        .title('Site Settings')
+        .title('Home Page')
         .id('siteSettings')
-        .icon(MdSettingsSuggest)
+        .icon(AiOutlineHome)
         .child(
-          S.document().title('Site Settings').schemaType('siteConfig').documentId('siteSettings'),
+          S.document().title('Home Page').schemaType('siteConfig').documentId('siteSettings'),
         ),
     ]);
