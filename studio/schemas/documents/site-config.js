@@ -34,7 +34,7 @@ export default {
       title: 'About Section Title',
       name: 'aboutSectionTitle',
       type: 'string',
-      description: 'The title of the about section on the home page'
+      description: 'The title of the about section on the home page',
     },
     {
       title: 'About Section Text',
@@ -50,7 +50,7 @@ export default {
       title: 'About Section Page',
       name: 'aboutSectionPage',
       type: 'reference',
-      to: [{type: 'aboutPage'}]
+      to: [{ type: 'aboutPage' }],
     },
   ],
 };
