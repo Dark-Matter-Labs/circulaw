@@ -33,7 +33,7 @@ export default function Index({ newsItems, aboutSection, homePageThemaData }) {
           <HomePageAboutSection aboutSection={aboutSection} />
           <div className='' name='news'>
             <h1 className='pt-8 mobile sm:desktop text-green-600 border-black-white-600 border-b pb-4'>
-              Nieuws en updates
+              Nieuws
             </h1>
             <div className='pt-4 sm:pt-8'>
               <NewsItems newsItems={newsItems} />
@@ -43,7 +43,7 @@ export default function Index({ newsItems, aboutSection, homePageThemaData }) {
             <CustomButton color='whiteBackground'>
               <ScrollLink to='top' smooth={true}>
                 <span>
-                  ga terug naar boven
+                  Top
                   <ArrowUpIcon className='h-4 w-4 inline-block ml-1' />
                 </span>
               </ScrollLink>
