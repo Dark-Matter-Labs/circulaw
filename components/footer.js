@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { RiLinkedinFill } from 'react-icons/ri';
 import { AiFillGithub } from 'react-icons/ai';
-import NieuwTooltip from '../components/nieuw-tooltip';
 import ActionPanel from '../components/section-action-panel';
 import Partners from './partners';
 import ORicon from '../public/icons/openResearch.svg';
@@ -113,8 +112,7 @@ export default function Footer(props) {
                     </div>
                   </div>
                   <div className='py-2 sm:py-0'>
-                    <NieuwTooltip />
-                    <ul role='list' className='mt-4 space-y-4'>
+                    <ul role='list' className='space-y-4'>
                       <li>
                         <a
                           className='p-base text-black-white-200 link-interaction'

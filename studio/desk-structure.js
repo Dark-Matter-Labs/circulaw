@@ -5,6 +5,7 @@ import { FcAbout } from 'react-icons/fc';
 import { MdSettingsSuggest } from 'react-icons/md';
 import { FaLanguage, FaHandshake, FaQuestion } from 'react-icons/fa';
 import { BsCircle } from 'react-icons/bs';
+import { BiNews } from 'react-icons/bi';
 
 export const Structure = (S) =>
   S.list()
@@ -57,6 +58,10 @@ export const Structure = (S) =>
         .child(S.documentList().title('About Pages').filter('_type == "aboutPage"')),
       S.documentListItem().schemaType('FAQpage').title('FAQ Page').icon(FaQuestion),
       S.documentListItem().schemaType('englishPage').title('English Page').icon(FaLanguage),
+      S.listItem()
+        .title('News and Updates')
+        .icon(BiNews)
+        .child(S.documentList().title('News and Updates').filter('_type == "newsItem"')),
       S.divider(),
       S.listItem()
         .title('Navigation')
