@@ -66,7 +66,7 @@ export default function Contact() {
               >
                 <div>
                   <label htmlFor='first-name' className='block text-black-white-800'>
-                    Wat is je naam? (niet verplicht)
+                    Wat is je naam?
                   </label>
                   <div className='mt-1'>
                     <input
