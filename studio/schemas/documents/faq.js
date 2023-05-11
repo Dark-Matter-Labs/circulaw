@@ -1,5 +1,9 @@
 import { FaQuestion } from 'react-icons/fa';
 
+// Refactor - here we do not need the page title of the slug as it is a singleton
+// refactor this when we re-do the design of the FAQ page. 
+// will need to update nav, footer, queries... 
+
 export default {
   title: 'FAQ Pages',
   name: 'FAQpage',
@@ -36,13 +40,10 @@ export default {
           type: 'smallPara',
         },
         {
-          type: 'dropDown',
-        },
-        {
           type: 'block',
           of: [
             {
-              type: 'hoverText',
+              type: 'dropDown',
             },
           ],
           lists: [

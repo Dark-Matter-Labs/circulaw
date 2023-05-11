@@ -5,6 +5,17 @@ import { schemaTypes } from './schemas';
 import { Structure } from './desk-structure';
 import { defaultDocumentNode } from './default-document-node';
 
+const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
+
+const singletonTypes = new Set([
+  'siteConfig',
+  'englishPage',
+  'partners',
+  'navigation',
+  'FAQpage',
+  'thema',
+]);
+
 let name = '',
   path = '';
 
@@ -31,5 +42,15 @@ export default defineConfig({
   ],
   schema: {
     types: schemaTypes,
+    templates: (templates) => templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),
+
+    document: {
+      // For singleton types, filter out actions that are not explicitly included
+      // in the `singletonActions` list defined above
+      actions: (input, context) =>
+        singletonTypes.has(context.schemaType)
+          ? input.filter(({ action }) => action && singletonActions.has(action))
+          : input,
+    },
   },
 });

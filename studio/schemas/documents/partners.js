@@ -4,11 +4,6 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-    },
-    {
       name: 'partners',
       type: 'array',
       title: 'Partner Logo',

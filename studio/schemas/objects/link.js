@@ -10,12 +10,5 @@ export default {
       type: 'reference',
       to: [{ type: 'aboutPage' }, { type: 'thema' }, { type: 'FAQpage' }],
     },
-    // NEED TO DELETE EXTERNAL LINK AS THERE WILL NEVER BE IN NAV
-    {
-      name: 'externalUrl',
-      title: 'External URL',
-      description: 'Use fully qualified URLS for external link',
-      type: 'url',
-    },
   ],
 };
