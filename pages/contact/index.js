@@ -77,7 +77,7 @@ export default function Contact() {
                       className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
                       value={query.name}
                       onChange={handleChange()}
-                      placeholder='John Rossi'
+                      required
                     />
                   </div>
                 </div>
@@ -92,7 +92,6 @@ export default function Contact() {
                       id='company'
                       autoComplete='organization'
                       className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
-                      placeholder='Organisation name'
                       value={query.org}
                       onChange={handleChange()}
                     />
@@ -110,7 +109,6 @@ export default function Contact() {
                       autoComplete='email'
                       className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
                       aria-describedby='emailHelp'
-                      placeholder='JohnRossi@gmail.com '
                       required
                       value={query.email}
                       onChange={handleChange()}
@@ -139,9 +137,9 @@ export default function Contact() {
                     <p className='text-gray-500'>
                       Door verzenden geef je akkoord dat we je mogen benaderen als we meer vragen
                       hebben of je op de hoogte willen houden van dit instrument. Je gegevens zullen
-                      nooit gebruikt worden voor andere doeleinden. Lees onze
+                      nooit gebruikt worden voor andere doeleinden. Lees onze{' '}
                       <Link href='/privacy-policy'>
-                        <span className='text-green-500'>privacy verklaring</span>
+                        <span className='text-green-500'>privacy verklaring.</span>
                       </Link>
                     </p>
                   </div>
