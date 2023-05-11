@@ -281,9 +281,12 @@ export default function NewThemaSuggestion() {
             </div>
             <div className='text-black-white-100 pl-6 sm:pl-8'>
               <h3 className='mobile sm:desktop'>Mis je instrumenten? Praktijkvoorbeelden?</h3>
-              <h3 className='mobile sm:desktop'>Deel je kennis! <span>
-              <ArrowRightIcon className='inline h-4 w-4' aria-hidden='true' />
-                </span></h3>
+              <h3 className='mobile sm:desktop'>
+                Deel je kennis!{' '}
+                <span>
+                  <ArrowRightIcon className='inline h-4 w-4' aria-hidden='true' />
+                </span>
+              </h3>
             </div>
           </div>
         </Link>
