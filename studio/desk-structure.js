@@ -5,7 +5,7 @@ import { FcAbout } from 'react-icons/fc';
 import { FaLanguage, FaHandshake, FaQuestion } from 'react-icons/fa';
 import { BsCircle } from 'react-icons/bs';
 import { BiNews } from 'react-icons/bi';
-import { AiOutlineHome } from 'react-icons/ai'
+import { AiOutlineHome } from 'react-icons/ai';
 
 export const Structure = (S) =>
   S.list()
@@ -49,9 +49,9 @@ export const Structure = (S) =>
         .icon(FcAbout)
         .child(S.documentList().title('About Pages').filter('_type == "aboutPage"')),
       S.listItem()
-            .title('News and Updates')
-            .icon(BiNews)
-            .child(S.documentList().title('News and Updates').filter('_type == "newsItem"')),
+        .title('News and Updates')
+        .icon(BiNews)
+        .child(S.documentList().title('News and Updates').filter('_type == "newsItem"')),
       S.divider(),
       S.listItem()
         .title("Thema's")
@@ -80,7 +80,5 @@ export const Structure = (S) =>
         .title('Home Page')
         .id('siteSettings')
         .icon(AiOutlineHome)
-        .child(
-          S.document().title('Home Page').schemaType('siteConfig').documentId('siteSettings'),
-        ),
+        .child(S.document().title('Home Page').schemaType('siteConfig').documentId('siteSettings')),
     ]);
