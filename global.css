@@ -306,3 +306,7 @@ html {
 .tooltip:hover:before {
   display:block;
 }
+
+.social-svg-mask:hover {
+  fill:#25C38B !important;
+}
