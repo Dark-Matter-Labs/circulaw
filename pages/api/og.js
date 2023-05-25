@@ -4,19 +4,24 @@ export const config = {
   runtime: 'edge',
 };
 
-export default function handler(request) {
+const image = fetch(new URL('../../public/Circulaw_logotype_home.png', import.meta.url)).then((res) =>
+  res.arrayBuffer(),
+);
+
+export default async function handler(request) {
+  const imageData = await image;
   try {
     const { searchParams } = new URL(request.url);
 
     // ?title=<title>
     const hasTitle = searchParams.has('title');
-    const title = hasTitle ? searchParams.get('title')?.slice(0, 100) : 'My default title';
+    const title = hasTitle ? searchParams.get('title')?.slice(0, 100) : 'CircuLaw - Regelgeving voor een circulaire economie';
 
     return new ImageResponse(
       (
         <div
           style={{
-            backgroundColor: 'black',
+            backgroundColor: '#035E46',
             backgroundSize: '150px 150px',
             height: '100%',
             width: '100%',
@@ -36,17 +41,11 @@ export default function handler(request) {
               justifyItems: 'center',
             }}
           >
-            <img
-              alt='Vercel'
-              height={200}
-              src="data:image/svg+xml,%3Csvg width='116' height='100' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M57.5 0L115 100H0L57.5 0z' /%3E%3C/svg%3E"
-              style={{ margin: '0 30px' }}
-              width={232}
-            />
+            <img width="674.79" height="357.84" src={imageData} />
           </div>
           <div
             style={{
-              fontSize: 60,
+              fontSize: 40,
               fontStyle: 'normal',
               letterSpacing: '-0.025em',
               color: 'white',
