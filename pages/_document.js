@@ -12,7 +12,7 @@ export default function Document() {
         />
         <meta
           property='og:image'
-          content='https://circulaw-gtg617gcp-dark-matter-labs.vercel.app/api/og'
+          content='https://circulaw-staging.vercel.app/api/og'
         />
         <meta
           name='description'
