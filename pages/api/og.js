@@ -4,8 +4,8 @@ export const config = {
   runtime: 'edge',
 };
 
-const image = fetch(new URL('../../public/Circulaw_logotype_home.png', import.meta.url)).then((res) =>
-  res.arrayBuffer(),
+const image = fetch(new URL('../../public/Circulaw_logotype_home.png', import.meta.url)).then(
+  (res) => res.arrayBuffer(),
 );
 
 export default async function handler(request) {
@@ -15,7 +15,9 @@ export default async function handler(request) {
 
     // ?title=<title>
     const hasTitle = searchParams.has('title');
-    const title = hasTitle ? searchParams.get('title')?.slice(0, 100) : 'CircuLaw - Regelgeving voor een circulaire economie';
+    const title = hasTitle
+      ? searchParams.get('title')?.slice(0, 100)
+      : 'CircuLaw - Regelgeving voor een circulaire economie';
 
     return new ImageResponse(
       (
@@ -41,7 +43,7 @@ export default async function handler(request) {
               justifyItems: 'center',
             }}
           >
-            <img width="674.79" height="357.84" src={imageData} />
+            <img width='674.79' height='357.84' src={imageData} />
           </div>
           <div
             style={{

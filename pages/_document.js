@@ -11,8 +11,8 @@ export default function Document() {
           rel='stylesheet'
         />
         <meta
-          property="og:image"
-          content="https://circulaw-gtg617gcp-dark-matter-labs.vercel.app/api/og"
+          property='og:image'
+          content='https://circulaw-gtg617gcp-dark-matter-labs.vercel.app/api/og'
         />
         <meta
           name='description'
