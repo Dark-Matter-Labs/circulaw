@@ -92,7 +92,7 @@ export default function Nav(props) {
             <>
               <div className='lgNav:pb-4 global-margin'>
                 <BetaBanner type={`${router.pathname !== '/' ? 'gen' : 'home'}`} />
-                <div className=''>
+                <div className={`${router.pathname === '/' ? 'lgNav:-mt-10 -mt-4' : 'lgNav:-mt-4'}`}>
                   <div className='inset-y-0 float-right flex items-center lgNav:hidden'>
                     {/* Mobile menu button */}
                     <Disclosure.Button
@@ -120,7 +120,7 @@ export default function Nav(props) {
                             <Lottie options={defaultOptions} height={150} width={250} />
                           </Link>
                         </div>
-                        <div className='block lgNav:hidden py-4 '>
+                        <div className='block lgNav:hidden py-4'>
                           <Link href='/'>
                             <Image
                               height={24}
