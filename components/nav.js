@@ -46,12 +46,12 @@ export default function Nav(props) {
         <div className='w-full bg-green-800'>
           <div className='flex justify-between global-margin '>
             <div className=' flex justify-start items-center'>
-              <div className='hidden lgNav:block -ml-6'>
+              <div className='hidden sm:block -ml-6'>
                 <Link href='/'>
-                  <Lottie options={defaultOptions} height={86} width={162} />
+                  <Lottie options={defaultOptions} height={150} width={250} />
                 </Link>
               </div>
-              <div className='block lgNav:hidden -ml-6'>
+              <div className='block sm:hidden -ml-6'>
                 <Link href='/'>
                   <Lottie options={defaultOptions} height={86} width={162} />
                 </Link>
