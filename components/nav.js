@@ -336,7 +336,7 @@ export default function Nav(props) {
               </div>
 
               <Disclosure.Panel className='lgNav:hidden bg-black-white-200'>
-                <div className='pt-2 pb-4 ml-5'>
+                <div className='pt-2 pb-4'>
                   <Disclosure.Button
                     as='span'
                     className='flex justify-end items-center pr-8 sm:hidden'
