@@ -272,13 +272,6 @@ html {
   top: -40px;
 }
 
-.bg-header {
-  background-image: url('/home-page/CL_header_new2.png');
-  background-size: cover;
-  background-position: center;
-  margin-top: -3px;
-}
-
 .tooltip {
   position:relative;
 }
