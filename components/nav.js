@@ -431,7 +431,7 @@ export default function Nav(props) {
             </>
           )}
         </Disclosure>
-        {router.pathname === '/' && <HomepageHeader />}
+        {router.pathname === '/' && <HomepageHeader homePageHeader={props.homePageHeader} />}
       </div>
     </div>
   );

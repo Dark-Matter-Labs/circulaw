@@ -18,7 +18,7 @@ export default function Layout(props) {
   const themaSlugs = themaPageSlugs?.slugs;
   return (
     <>
-      <Nav vraagSlug={vraagSlug} aboutSlugs={aboutNavItems} themaSlugs={themaSlugs} />
+      <Nav vraagSlug={vraagSlug} aboutSlugs={aboutNavItems} themaSlugs={themaSlugs} homePageHeader={props.homePageHeader} />
       <Head>
         <title>CircuLaw</title>
       </Head>
