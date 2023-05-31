@@ -24,7 +24,7 @@ export default function Layout(props) {
       </Head>
       <main className=''>{props.children}</main>
       <CookieConsent />
-      <Footer vraagSlug={vraagSlug} aboutSlugs={aboutNavItems} themaSlugs={themaSlugs} />
+      <Footer vraagSlug={vraagSlug} aboutSlugs={aboutNavItems} themaSlugs={themaSlugs} footerText={props.footerText} />
     </>
   );
 }

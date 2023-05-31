@@ -4,15 +4,15 @@ import { client } from '../lib/sanity';
 import { Link as ScrollLink } from 'react-scroll';
 import { ArrowUpIcon } from '@heroicons/react/outline';
 
-import { aboutSectionQuerie, homePageThemaQuery, newsItemsQuery, homePageHeaderQuery } from '../lib/queries';
+import { aboutSectionQuerie, homePageThemaQuery, newsItemsQuery, homePageHeaderQuery, footerQuery } from '../lib/queries';
 import NewThemaSuggestion from '../components/new-thema-suggestion';
 import NewsItems from '../components/news-items';
 import HomePageAboutSection from '../components/home-page-about-section';
 import CustomButton from '../components/custom-button';
 
-export default function Index({ newsItems, aboutSection, homePageThemaData, homePageHeader }) {
+export default function Index({ newsItems, aboutSection, homePageThemaData, homePageHeader, footerText }) {
   return (
-    <Layout page='home' homePageHeader={homePageHeader}>
+    <Layout page='home' homePageHeader={homePageHeader} footerText={footerText}>
       <div className='bg-black-white-200 sm:pb-14' name='thema'>
         <div className='global-margin'>
           <h1 className='pt-8 mobile sm:desktop text-green-600 border-black-white-600 border-b pb-4'>
@@ -60,12 +60,14 @@ export async function getStaticProps() {
   const homePageThemaData = await client.fetch(homePageThemaQuery);
   const newsItems = await client.fetch(newsItemsQuery);
   const homePageHeader = await client.fetch(homePageHeaderQuery)
+  const footerText = await client.fetch(footerQuery)
   return {
     props: {
       homePageThemaData,
       newsItems,
       aboutSection,
       homePageHeader,
+      footerText,
     },
     revalidate: 1,
   };
