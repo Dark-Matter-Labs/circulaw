@@ -19,7 +19,7 @@ export default async function handler(request) {
     const title = hasTitle
       ? searchParams.get('title')?.slice(0, 100)
       : 'CircuLaw - Regelgeving voor een circulaire economie';
-      return new ImageResponse(
+    return new ImageResponse(
       (
         <div
           style={{

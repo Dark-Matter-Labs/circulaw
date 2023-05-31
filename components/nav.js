@@ -92,7 +92,9 @@ export default function Nav(props) {
             <>
               <div className='lgNav:pb-4 global-margin'>
                 <BetaBanner type={`${router.pathname !== '/' ? 'gen' : 'home'}`} />
-                <div className={`${router.pathname === '/' ? 'lgNav:-mt-10 -mt-4' : 'lgNav:-mt-4'}`}>
+                <div
+                  className={`${router.pathname === '/' ? 'lgNav:-mt-10 -mt-4' : 'lgNav:-mt-4'}`}
+                >
                   <div className='inset-y-0 float-right flex items-center lgNav:hidden'>
                     {/* Mobile menu button */}
                     <Disclosure.Button

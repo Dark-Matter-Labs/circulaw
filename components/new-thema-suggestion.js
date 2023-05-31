@@ -10,12 +10,12 @@ export default function NewThemaSuggestion() {
             <div className='text-black h-auto flex flex-col justify-between items-start p-4'>
               <h3 className='mobile sm:desktop pb-2'>Nieuw thema?</h3>
               <p className='mobile'>
-              Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
+                Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
               </p>
-                <Link href='/contact' className='link-interaction link-base pt-4'>
-                Houd me op de hoogte {' '}
-                  <ArrowRightIcon className='inline h-4 w-4' aria-hidden='true' />
-                  </Link>            
+              <Link href='/contact' className='link-interaction link-base pt-4'>
+                Houd me op de hoogte{' '}
+                <ArrowRightIcon className='inline h-4 w-4' aria-hidden='true' />
+              </Link>
             </div>
           </div>
         </Link>
