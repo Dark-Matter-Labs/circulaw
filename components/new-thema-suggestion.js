@@ -6,15 +6,16 @@ export default function NewThemaSuggestion() {
     <>
       <div className='md:hidden h-40 cl-gradient-400 shadow rounded-cl w-full'>
         <Link href='/contact'>
-          <div className='flex h-full w-full items-center justify-start'>
-            <div className='text-black-white-100 pl-6 sm:pl-8'>
-              <h3 className='mobile sm:desktop'>Mis je instrumenten? Praktijkvoorbeelden?</h3>
-              <h3 className='mobile sm:desktop'>
-                Deel je kennis!{' '}
-                <span>
+          <div className='flex h-full w-full items-center justify-between'>
+            <div className='text-black h-auto flex flex-col justify-between items-start p-4'>
+              <h3 className='mobile sm:desktop pb-2'>Nieuw thema?</h3>
+              <p className='mobile'>
+              Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
+              </p>
+                <Link href='/contact' className='link-interaction link-base pt-4'>
+                Houd me op de hoogte {' '}
                   <ArrowRightIcon className='inline h-4 w-4' aria-hidden='true' />
-                </span>
-              </h3>
+                  </Link>            
             </div>
           </div>
         </Link>
