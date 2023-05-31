@@ -65,11 +65,11 @@ export default function SectionTypes({ themaCards }) {
                   Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
                 </p>
                 <div className='flex grow self-baseline	'>
-                  <Link href='/contact' target='_blank' className='self-end'>
+                  <div href='/contact' target='_blank' className='self-end'>
                     <span className='text-black inline link-base sm:link-lg link-interaction break-words'>
                       Houd me op de hoogte
                     </span>
-                  </Link>
+                  </div>
                 </div>
               </div>
             </Link>
