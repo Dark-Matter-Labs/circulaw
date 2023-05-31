@@ -216,6 +216,11 @@ html {
   rgba(252, 242, 237, 0.78) 45%, rgba(253, 249, 246, 0.9) 26%, rgba(254, 253, 252, 0.97) 10%, #FFFFFF 0%);
 }
 
+.cl-gradient-400 {
+  background: linear-gradient(#CBE0CB 30.21%, rgba(199, 211, 199, 0) );
+}
+
+
 [type='checkbox']:checked {
   background-color: #22532c !important;
   border: 1px solid #22532c !important;
