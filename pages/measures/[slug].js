@@ -16,7 +16,7 @@ export default function Measure({ preview, data }) {
       </Layout>
     </PreviewSuspense>
   ) : (
-    <Layout>
+    <Layout title={data?.measure?.titel} canonicalUrl={data?.measure?.slug}>
       <Instrument data={data} />
     </Layout>
   );

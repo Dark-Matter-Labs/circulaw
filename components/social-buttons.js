@@ -49,11 +49,7 @@ export default function SocialButtons({ title }) {
         </TwitterShareButton>
       </span>
       <span className='pr-2' title='Share link on Whatsapp'>
-        <WhatsappShareButton
-          url={url+ asPath}
-          title={'' + title}
-          separator=':: '
-        >
+        <WhatsappShareButton url={url + asPath} title={'' + title} separator=':: '>
           <SocialIcon
             url={url + asPath}
             network='whatsapp'

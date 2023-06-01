@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { ImageResponse } from '@vercel/og';
 
 export const config = {
@@ -14,11 +13,7 @@ export default async function handler(request) {
   try {
     const { searchParams } = new URL(request.url);
 
-    // ?title=<title>
-    const hasTitle = searchParams.has('title');
-    const title = hasTitle
-      ? searchParams.get('title')?.slice(0, 100)
-      : 'CircuLaw - Regelgeving voor een circulaire economie';
+    const title = searchParams.get('title');
     return new ImageResponse(
       (
         <div
