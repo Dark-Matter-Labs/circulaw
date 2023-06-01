@@ -8,7 +8,7 @@ export default function NewThemaSuggestion() {
         <Link href='/contact'>
           <div className='flex h-full w-full items-center justify-between'>
             <div className='text-black h-auto flex flex-col justify-between items-start p-4'>
-              <h3 className='mobile sm:desktop pb-2'>Nieuw thema?</h3>
+              <h3 className='mobile sm:desktop pb-2'>Nieuw thema</h3>
               <p className='mobile'>
                 Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
               </p>

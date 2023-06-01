@@ -1,15 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
-import { ArrowRightIcon, LinkIcon } from '@heroicons/react/outline';
-import {
-  EmailShareButton,
-  LinkedinShareButton,
-  TwitterShareButton,
-  WhatsappShareButton,
-} from 'next-share';
-import { SocialIcon } from 'react-social-icons';
 
 import IconWood from '../public/icons/woodIcon.svg';
 import WindmillIcon from '../public/icons/windmill.png';
@@ -17,21 +7,18 @@ import MatrassenIcon from '../public/icons/matressIcon.svg';
 import RTooltip from '../components/r-ladder-tooltip';
 import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../components/juridische-invloed-tooltip';
-import CustomButton from '../components/custom-button';
 
 const viewportType = {
   mobile: 'block sm:hidden pb-12 my-4 ',
-  desktop: 'hidden sm:block mb-20 ',
+  desktop: 'hidden sm:block mb-8 ',
 };
 
 export default function MeasureOverview({ viewport, children, data }) {
-  const { asPath } = useRouter();
-  const [showLinkCopied, setShowLinkCopied] = useState(false);
   let viewportClasses = viewportType[viewport];
 
   return (
     <div className={`${viewportClasses}`}>
-      <div className='bg-black-white-200  rounded-cl'>
+      <div className='bg-black-white-200 rounded-cl'>
         <div className='px-8 pb-10 sm:pb-0 py-6 block h-[26rem]'>
           {children}
           <div className='container pb-12 sm:pb-1 flex justify-between'>
@@ -162,106 +149,6 @@ export default function MeasureOverview({ viewport, children, data }) {
             </div>
           </div>
         </div>
-      </div>
-      <div className='bg-gradient-to-t from-[#C7D3C700] to-[#CBE0CB] rounded-cl mt-10 pb-10'>
-        <div className='pt-4 px-8 pb-10 sm:pb-0 py-6 block'>
-          <h3 className='mobile sm:desktop text-green-800 pb-4'>Help ons CircuLaw te verbeteren</h3>
-          <p className='p-base'>Deel met ons: </p>
-          <ul className='pb-10'>
-            <li>- voorbeelden uit jouw praktijk</li>
-            <li>- je tips om toepassing makkelijker te maken</li>
-            <li>- de ervaring van jou of andere organisaties met een soortgelijk instrument</li>
-          </ul>
-          <Link href={{ pathname: '/feedback', query: { instrument: data?.measure?.titel } }}>
-            <CustomButton color='greenBackground'>
-              Ik deel mijn kennis{' '}
-              <ArrowRightIcon className='inline-block h-4 w-4 ml-1' aria-hidden='true' />
-            </CustomButton>
-          </Link>
-        </div>
-      </div>
-
-      <div>
-        <div className='flex flex-row justify-center items-center pb-2'>
-          <span className='p-lg text-black-white-500 pr-2'>Delen: </span>
-          <span className='pr-2 test' title='Share link on LinkedIn'>
-            <LinkedinShareButton
-              url={'https://circulaw-staging.vercel.app' + asPath}
-              title={
-                'Graag deel ik met jou deze informatie van CircuLaw.nl: ' + data?.measure?.titel
-              }
-            >
-              <SocialIcon
-                url={'https://circulaw-staging.vercel.app' + asPath}
-                network='linkedin'
-                style={{ height: 32, width: 32 }}
-                bgColor='#A2A3A2'
-                fgColor='#F8FAF8'
-              />
-            </LinkedinShareButton>
-          </span>
-          <span className='pr-2' title='Share link on Twitter'>
-            <TwitterShareButton
-              url={'https://circulaw-staging.vercel.app' + asPath}
-              title={
-                'Graag deel ik met jou deze informatie van CircuLaw.nl: ' + data?.measure?.titel
-              }
-            >
-              <SocialIcon
-                url={'https://circulaw-staging.vercel.app' + asPath}
-                network='twitter'
-                style={{ height: 32, width: 32 }}
-                bgColor='#A2A3A2'
-                fgColor='#F8FAF8'
-              />
-            </TwitterShareButton>
-          </span>
-          <span className='pr-2' title='Share link on Whatsapp'>
-            <WhatsappShareButton
-              url={'https://circulaw-staging.vercel.app' + asPath}
-              title={
-                'Graag deel ik met jou deze informatie van CircuLaw.nl: ' + data?.measure?.titel
-              }
-              separator=':: '
-            >
-              <SocialIcon
-                url={'https://circulaw-staging.vercel.app' + asPath}
-                network='whatsapp'
-                style={{ height: 32, width: 32 }}
-                bgColor='#A2A3A2'
-                fgColor='#F8FAF8'
-              />
-            </WhatsappShareButton>
-          </span>
-          <span className='pr-2' title='Share link as email'>
-            <EmailShareButton
-              url={'https://circulaw-staging.vercel.app' + asPath}
-              subject={'Graag deel ik met jou deze informatie van CircuLaw.nl'}
-              title={'Voeg eigen boodschap toe. ' + data?.measure?.titel}
-            >
-              <SocialIcon
-                url={'https://circulaw-staging.vercel.app' + asPath}
-                network='email'
-                style={{ height: 32, width: 32 }}
-                bgColor='#A2A3A2'
-                fgColor='#F8FAF8'
-              />
-            </EmailShareButton>
-          </span>
-          <span className='pr-2' title='Copy link to clipboard'>
-            <LinkIcon
-              className='inline-block p-1 h-8 w-8 bg-black-white-500 rounded-full text-white hover:cursor-pointer hover:bg-green-300'
-              onClick={() => {
-                navigator.clipboard.writeText('https://circulaw-staging.vercel.app' + asPath);
-                setShowLinkCopied(true);
-                setTimeout(() => {
-                  setShowLinkCopied(false);
-                }, 2000);
-              }}
-            />
-          </span>
-        </div>
-        {showLinkCopied && <p>Link copied!</p>}
       </div>
     </div>
   );
