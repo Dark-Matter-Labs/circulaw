@@ -12,10 +12,10 @@ export default function NewThemaSuggestion() {
               <p className='mobile'>
                 Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
               </p>
-              <Link href='/contact' className='link-interaction link-base pt-4'>
+              <span className='link-interaction link-base pt-4'>
                 Houd me op de hoogte{' '}
                 <ArrowRightIcon className='inline h-4 w-4' aria-hidden='true' />
-              </Link>
+              </span>
             </div>
           </div>
         </Link>
