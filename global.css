@@ -308,3 +308,10 @@ html {
 .social-svg-mask:hover {
   fill:#25C38B !important;
 }
+
+.bg-device {
+    background: url(./public/CL_logo_graphic\ device.svg)
+    top right
+    no-repeat;
+    background-color: #F8FBF8;
+}
