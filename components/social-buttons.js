@@ -38,9 +38,9 @@ export default function SocialButtons({ title }) {
         </LinkedinShareButton>
       </span>
       <span className='pr-2' title='Share link on Twitter'>
-        <TwitterShareButton url={'https://circulaw-staging.vercel.app' + asPath} title={'' + title}>
+        <TwitterShareButton url={url + asPath} title={'' + title}>
           <SocialIcon
-            url={'https://circulaw-staging.vercel.app' + asPath}
+            url={url + asPath}
             network='twitter'
             style={{ height: 32, width: 32 }}
             bgColor='#A2A3A2'
@@ -50,12 +50,12 @@ export default function SocialButtons({ title }) {
       </span>
       <span className='pr-2' title='Share link on Whatsapp'>
         <WhatsappShareButton
-          url={'https://circulaw-staging.vercel.app' + asPath}
-          title={'Graag deel ik met jou deze informatie van CircuLaw.nl: ' + title}
+          url={url+ asPath}
+          title={'' + title}
           separator=':: '
         >
           <SocialIcon
-            url={'https://circulaw-staging.vercel.app' + asPath}
+            url={url + asPath}
             network='whatsapp'
             style={{ height: 32, width: 32 }}
             bgColor='#A2A3A2'
@@ -65,7 +65,7 @@ export default function SocialButtons({ title }) {
       </span>
       <span className='pr-2' title='Share link as email'>
         <EmailShareButton
-          url={'https://circulaw-staging.vercel.app' + asPath}
+          url={url + asPath}
           subject={'Graag deel ik met jou deze informatie van CircuLaw.nl'}
           title={'Voeg eigen boodschap toe. ' + title}
         >
@@ -82,7 +82,7 @@ export default function SocialButtons({ title }) {
         <LinkIcon
           className='inline-block p-1 h-8 w-8 bg-black-white-500 rounded-full text-white hover:cursor-pointer hover:bg-green-300'
           onClick={() => {
-            navigator.clipboard.writeText('https://circulaw-staging.vercel.app' + asPath);
+            navigator.clipboard.writeText(url + asPath);
             setShowLinkCopied(true);
             setTimeout(() => {
               setShowLinkCopied(false);
