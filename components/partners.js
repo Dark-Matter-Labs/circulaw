@@ -102,7 +102,7 @@ export default function Partners() {
             rechten kunnen worden ontleend. We horen graag wat je ervan vindt, wat je anders zou
             willen, wat je mist en natuurlijk horen we ook graag waar je blij van wordt.{' '}
             <Link href='/contact'>
-              <span className='underline link-interaction'>
+              <span className='underline link-interaction-dark-bg'>
                 Stuur je feedback op deze testversie.
               </span>
             </Link>

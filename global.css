@@ -109,7 +109,7 @@
   }
 
   .link-interaction-dark-bg {
-    @apply hover:text-green-200 active:text-black-white-100 focus:text-green-100 focus:right-2 focus:ring-white
+    @apply text-black-white-100 hover:text-green-200 active:text-green-800 focus:text-green-100 focus:right-2 focus:ring-white
   }
 
   .button {
@@ -270,13 +270,6 @@ html {
 .samenhangIcon {
   left: -60px;
   top: -40px;
-}
-
-.bg-header {
-  background-image: url('/home-page/CL_header_new2.png');
-  background-size: cover;
-  background-position: center;
-  margin-top: -3px;
 }
 
 .tooltip {
