@@ -16,7 +16,7 @@ export default function Measure({ preview, data }) {
       </Layout>
     </PreviewSuspense>
   ) : (
-    <Layout title={data?.measure?.titel} canonicalUrl={data?.measure?.slug}>
+    <Layout title={data?.measure?.titel}>
       <Instrument data={data} />
     </Layout>
   );
@@ -26,7 +26,7 @@ export async function getStaticPaths() {
   const paths = await client.fetch(measurePagePathsQuery);
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: 'blocking',
+    fallback: true,
   };
 }
 
