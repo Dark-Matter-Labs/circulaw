@@ -5,6 +5,7 @@ import Layout from '../../components/layouts/layout';
 import { client } from '../../lib/sanity';
 import { measurePagePathsQuery, measureQuery } from '../../lib/queries';
 import Instrument from '../../components/instrument';
+import globalMeta from '../../utils/global-meta';
 
 const PreviewInstrument = lazy(() => import('../../components/instrument-preview'));
 
@@ -16,7 +17,7 @@ export default function Measure({ preview, data }) {
       </Layout>
     </PreviewSuspense>
   ) : (
-    <Layout>
+    <Layout title={data?.measure?.titel} canonicalUrl={globalMeta.siteUrl+data?.measure?.slug}>
       <Instrument data={data} />
     </Layout>
   );
