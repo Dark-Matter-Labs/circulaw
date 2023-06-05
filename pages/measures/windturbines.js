@@ -6,7 +6,7 @@ import { windQueries } from '../../lib/queries';
 
 export default function Measures({ totalNumberOfLaws }) {
   return (
-    <Layout>
+    <Layout title='CircuLaw - Circulaire windturbines'>
       <MeasuresLayout
         totalNumberOfLaws={totalNumberOfLaws}
         title='Circulaire windturbines'

@@ -10,7 +10,7 @@ import { enPageQuery } from '../../lib/queries';
 export default function English({ data }) {
   return (
     <>
-      <Layout>
+      <Layout title='CircuLaw - Regulations for a circular economy'>
         <div className='bg-en-background bg-center bg-cover'>
           <div className='hidden sm:block h-auto bg-en-header bg-left bg-cover'>
             <div className='global-margin flex h-full'>

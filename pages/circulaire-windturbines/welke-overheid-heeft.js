@@ -9,7 +9,7 @@ const thema = 'circulaire-windturbines';
 
 export default function InfoPage({ ...props }) {
   return (
-    <Layout>
+    <Layout title='CircuLaw - Welke Overheid Heeft Windturbines'>
       <WelkeLayout
         thema={thema}
         title='Welk instrument kan welke overheid gebruiken voor circulaire windturbines?'

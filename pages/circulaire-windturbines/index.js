@@ -12,10 +12,9 @@ export default function Windturbine({ featuredLaws, length, thema }) {
   });
 
   return (
-    <Layout>
+    <Layout title='CircuLaw - Circulaire Windturbines'>
       <ThemeLayout
         featuredLaws={featuredLaws}
-        // header
         thema={thema}
         numberOfLaws={length}
         listTitle={`Lijst van ${length} instrumenten`}

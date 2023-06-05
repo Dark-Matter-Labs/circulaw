@@ -4,7 +4,7 @@ import SamenhangLayout from '../../components/layouts/samenhang-layout';
 
 export default function InfoPage() {
   return (
-    <Layout>
+    <Layout title='CircuLaw - Samenhang Matrassen'>
       <SamenhangLayout
         thema='circulaire-matrasketen'
         title='Samenhang instrumenten circulaire matrassen'
