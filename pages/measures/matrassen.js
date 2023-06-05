@@ -6,7 +6,7 @@ import { matrassenQueries } from '../../lib/queries';
 
 export default function Measures({ totalNumberOfLaws }) {
   return (
-    <Layout>
+    <Layout title='CircuLaw - Circulaire matrasketen'>
       <MeasuresLayout
         totalNumberOfLaws={totalNumberOfLaws}
         title='Circulaire matrasketen'

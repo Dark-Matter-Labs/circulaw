@@ -51,7 +51,7 @@ export default function Contact() {
   };
 
   return (
-    <Layout>
+    <Layout title='CircuLaw - Contact'>
       <div className='global-margin'>
         {!formStatus ? (
           <>

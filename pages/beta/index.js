@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import Layout from '../../components/layouts/layout';
 
-export default function Alpha() {
+export default function Beta() {
   return (
-    <Layout>
+    <Layout title='CircuLaw - Beta'>
       <div className='global-margin my-20'>
         <h1 className='mobile sm:desktop text-black-white-800 pb-4'>Betaversie CircuLaw</h1>
         <p className=' p-lg text-black-white-800 pb-6  max-w-2xl'>

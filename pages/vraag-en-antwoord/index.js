@@ -5,7 +5,7 @@ import Layout from '../../components/layouts/layout';
 
 export default function FAQ({ FAQ }) {
   return (
-    <Layout>
+    <Layout title='CircuLaw - Vraag en antwoord'>
       <FAQPageComponent data={FAQ} />
     </Layout>
   );

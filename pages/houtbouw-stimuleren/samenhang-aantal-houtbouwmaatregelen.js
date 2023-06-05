@@ -4,7 +4,7 @@ import SamenhangLayout from '../../components/layouts/samenhang-layout';
 
 export default function InfoPage() {
   return (
-    <Layout>
+    <Layout title='CircuLaw - Samenhang Aantal Houtbouwmaatregelen'>
       <SamenhangLayout
         thema='houtbouw-stimuleren'
         title='Samenhang instrumenten houtbouw'

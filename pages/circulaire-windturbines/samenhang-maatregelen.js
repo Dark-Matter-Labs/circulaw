@@ -4,7 +4,7 @@ import WindmillIcon from '../../public/icons/windmill.png';
 
 export default function InfoPage() {
   return (
-    <Layout>
+    <Layout title='CircuLaw - Samenhang Matrassen'>
       <SamenhangLayout
         thema='circulaire-windturbines'
         title='Samenhang instrumenten circulaire windturbines'
