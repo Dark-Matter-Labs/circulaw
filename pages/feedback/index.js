@@ -270,7 +270,15 @@ export default function Feedback() {
                 Samen met jou kunnen we CircuLaw blijven verbeteren, en dat is hard nodig! We gaan
                 je feedback bekijken en zullen je eventueel benaderen als we nog vragen hebben of
                 antwoorden op jouw vraag. Wil je op de hoogte blijven van CircuLaw?{' '}
-                <span className='link-lg text-green-500'>Volg on das op LinkedIn</span>
+                <span className='link-lg text-green-500'>
+                  <a
+                    href='https://www.linkedin.com/company/circulaw/'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    Volg ons dan op LinkedIn
+                  </a>
+                </span>
               </p>
               <div className='sm:col-span-2 pb-20'>
                 <Link href='/'>

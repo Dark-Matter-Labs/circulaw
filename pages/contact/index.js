@@ -146,7 +146,7 @@ export default function Contact() {
                     <p className='text-gray-500'>
                       Door verzenden geef je akkoord dat we je mogen benaderen als we meer vragen
                       hebben of je op de hoogte willen houden van je vraag of opmerking. Je gegevens
-                      zullen nooit gebruikt worden voor andere doeleinden. Lees onz{' '}
+                      zullen nooit gebruikt worden voor andere doeleinden. Lees onze{' '}
                       <Link href='/privacy-policy'>
                         <span className='text-green-500'>privacy verklaring.</span>
                       </Link>

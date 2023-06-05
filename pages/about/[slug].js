@@ -21,7 +21,7 @@ export default function AboutPage({ preview, data }) {
       </Layout>
     </PreviewSuspense>
   ) : (
-    <Layout title={'Over CircuLaw - '+data?.aboutPage?.pageTitle}>
+    <Layout title={'Over CircuLaw - ' + data?.aboutPage?.pageTitle}>
       <AboutPageComponent data={data} aboutPageSlugs={data?.aboutPageSlugs} />
     </Layout>
   );
