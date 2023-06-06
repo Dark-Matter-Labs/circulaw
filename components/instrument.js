@@ -22,7 +22,7 @@ export default function Instrument({ data }) {
               {/* should all breadcrumbs be green this is black in figma */}
             </button>
             <div className='hidden sm:block float-right'>
-              <SocialButtons title={data?.measure?.titel} />
+              <SocialButtons title={data?.measure?.titel}  viewport='desktop'/>
             </div>
           </div>
           <div className='sm:col-span-12 row-span-1'>
@@ -50,7 +50,7 @@ export default function Instrument({ data }) {
           </div>
         </div>
         <div className='block sm:hidden pb-10'>
-          <SocialButtons title={data?.measure?.titel} />
+          <SocialButtons title={data?.measure?.titel}  viewport='mobile' />
         </div>
       </div>
     </div>
