@@ -9,9 +9,17 @@ import {
 import { SocialIcon } from 'react-social-icons';
 import { LinkIcon } from '@heroicons/react/outline';
 
-export default function SocialButtons({ title }) {
+
+const viewportType = {
+  mobile: 'flex flex-row justify-between items-center pb-2 px-2',
+  desktop: 'flex flex-row justify-center items-center pb-2',
+};
+
+export default function SocialButtons({ title, viewport }) {
   const { asPath } = useRouter();
   const [showLinkCopied, setShowLinkCopied] = useState(false);
+  let viewportClasses = viewportType[viewport];
+
   let url = 'https://circulaw-staging.vercel.app';
 
   if (process.env.NEXT_PUBLIC_SANITY_DATASET === 'staging') {
@@ -21,7 +29,7 @@ export default function SocialButtons({ title }) {
   }
 
   return (
-    <div className='flex flex-row justify-center items-center pb-2'>
+    <div className={`${viewportClasses}`}> 
       <span className='p-lg text-black-white-500 pr-2'>Delen: </span>
       <span className='pr-2 test' title='Share link on LinkedIn'>
         <LinkedinShareButton
@@ -66,7 +74,7 @@ export default function SocialButtons({ title }) {
           title={'Voeg eigen boodschap toe. ' + title}
         >
           <SocialIcon
-            url={'https://circulaw-staging.vercel.app' + asPath}
+            url={url + asPath}
             network='email'
             style={{ height: 32, width: 32 }}
             bgColor='#A2A3A2'
