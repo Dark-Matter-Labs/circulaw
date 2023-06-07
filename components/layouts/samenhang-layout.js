@@ -32,7 +32,7 @@ export default function SamenhangLayout({ ...props }) {
               </div>
             </div>
 
-            <div className='h-10 rounded-full text-white bg-green-400 flex items-center justify-left'>
+            <div className='h-10 rounded-full text-white bg-[#6d9f6b] flex items-center justify-left'>
               <div className='h-10 w-10 border border-white rounded-full flex items-center justify-center'>
                 <h5 className='mobile sm:desktop'>Gem</h5>
               </div>

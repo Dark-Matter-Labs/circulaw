@@ -6,7 +6,7 @@ import { houtbouwQueries } from '../../lib/queries';
 
 export default function Measures({ numberOfInstruments }) {
   return (
-    <Layout>
+    <Layout title='CircuLaw - Houtbouw stimuleren'>
       <MeasuresLayout
         totalNumberOfLaws={numberOfInstruments}
         title='Houtbouw stimuleren'

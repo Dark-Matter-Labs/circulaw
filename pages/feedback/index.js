@@ -8,10 +8,18 @@ import CustomButton from '../../components/custom-button';
 
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/929e2e8c-bdf9-4c5f-a293-699dd63de422';
 
+const isBrowser = () => typeof window !== 'undefined';
+
+function scrollToTop() {
+  if (!isBrowser()) return;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 export default function Feedback() {
   const router = useRouter();
   const hiddenFileInput = useRef(null);
   const [formStatus, setFormStatus] = useState(false);
+
   const [query, setQuery] = useState({
     message: '',
     files: '',
@@ -20,6 +28,7 @@ export default function Feedback() {
     org: '',
     role: '',
     instrument: router.query.instrument,
+    subscribe: 'no',
   });
 
   const handleChange = () => (e) => {
@@ -61,6 +70,7 @@ export default function Feedback() {
           org: '',
           role: '',
           instrument: router.query.instrument,
+          subscribe: 'no',
         });
       })
       .catch(function (error) {
@@ -69,8 +79,8 @@ export default function Feedback() {
   };
 
   return (
-    <Layout>
-      <div className=' bg-black-white-200'>
+    <Layout title='CircuLaw - Met jouw hulp maken we CircuLaw beter'>
+      <div className='bg-black-white-200 sm:bg-device'>
         <div className='global-margin'>
           {!formStatus ? (
             <>
@@ -92,7 +102,7 @@ export default function Feedback() {
                 <li>- voorbeelden uit jouw praktijk</li>
                 <li>- de ervaring van jou of andere organisaties met een soortgelijk instrument</li>
               </ul>
-              <div className='mt-20 max-w-3xl mb-20'>
+              <div className='mt-20 max-w-3xl pb-20'>
                 <form
                   acceptCharset='UTF-8'
                   method='POST'
@@ -103,7 +113,9 @@ export default function Feedback() {
                 >
                   <div className='sm:col-span-2'>
                     <label htmlFor='message' className='block text-black-white-800'>
-                      <h3 className='mobile sm:desktop'>Tip, voorbeeld, vraag *</h3>
+                      <h3 className='mobile sm:desktop'>
+                        Tip, voorbeeld, vraag <span className='text-green-400'>*</span>
+                      </h3>
                     </label>
                     <div className='mt-1'>
                       <textarea
@@ -121,7 +133,7 @@ export default function Feedback() {
                     <label htmlFor='file' className='block text-black-white-800'>
                       <h3 className='mobile sm:desktop pb-2'>Bijlagen</h3>
                     </label>
-                    <CustomButton color='greenBackground' onClick={handleClick}>
+                    <CustomButton color='greenBackgroundLessRound' onClick={handleClick}>
                       Upload bestand
                     </CustomButton>
                     {query.files !== '' && <p>{query.files.name}</p>}
@@ -140,7 +152,9 @@ export default function Feedback() {
                   </div>
                   <div>
                     <label htmlFor='first-name' className='block text-black-white-800'>
-                      <h3 className='mobile sm:desktop'>Je voor- en achternaam *</h3>
+                      <h3 className='mobile sm:desktop'>
+                        Je voor- en achternaam <span className='text-green-400'>*</span>
+                      </h3>
                     </label>
                     <div className='mt-1'>
                       <input
@@ -157,7 +171,9 @@ export default function Feedback() {
                   </div>
                   <div className='sm:col-span-2'>
                     <label htmlFor='email' className='block  text-black-white-800'>
-                      <h3 className='mobile sm:desktop'>Je e-mail *</h3>
+                      <h3 className='mobile sm:desktop'>
+                        Je e-mail <span className='text-green-400'>*</span>
+                      </h3>
                     </label>
                     <div className='mt-1'>
                       <input
@@ -178,7 +194,9 @@ export default function Feedback() {
                   </div>
                   <div className='sm:col-span-2'>
                     <label htmlFor='company' className='block  text-black-white-800'>
-                      <h3 className='mobile sm:desktop'>Je organisatie / bedrijf *</h3>
+                      <h3 className='mobile sm:desktop'>
+                        Je organisatie / bedrijf <span className='text-green-400'>*</span>
+                      </h3>
                     </label>
                     <div className='mt-1'>
                       <input
@@ -195,7 +213,9 @@ export default function Feedback() {
                   </div>
                   <div className='sm:col-span-2'>
                     <label htmlFor='company' className='block  text-black-white-800'>
-                      <h3 className='mobile sm:desktop'>Je functie / rol *</h3>
+                      <h3 className='mobile sm:desktop'>
+                        Je functie / rol <span className='text-green-400'>*</span>
+                      </h3>
                     </label>
                     <div className='mt-1'>
                       <input
@@ -210,7 +230,11 @@ export default function Feedback() {
                       />
                     </div>
                   </div>
-
+                  <div className='mt-1 flex items-baseline'>
+                    <input type='hidden' name='subscribe' value='no' />
+                    <input type='checkbox' name='subscribe' value='yes' onChange={handleChange()} />
+                    <h3 className='mobile sm:desktop pl-2'>Abonneren op de nieuwsbrief</h3>
+                  </div>
                   <div className='sm:col-span-2'>
                     <div className=''>
                       <p className='text-gray-500'>
@@ -227,14 +251,16 @@ export default function Feedback() {
                   <div className='sm:col-span-2'>
                     <button
                       type='submit'
+                      onClick={scrollToTop}
                       className={
-                        'inline-flex rounded-full items-center px-4 py-2 button border-2 border-green-600 bg-transparent hover:bg-green-200 text-green-600 active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white'
+                        'bg-green-600 hover:bg-green-200 hover:text-green-600 text-black-white-100 active:bg-green-800 active:text-black-white-200 focus:outline-none focus:ring-2 focus:ring-white rounded-full inline-flex items-center px-4 py-2 button '
                       }
                     >
                       Verzenden &rarr;
                     </button>
                   </div>
                 </form>
+                <h4 className='pt-8 mobile sm:desktop text-green-400'>* dit veld is verplicht</h4>
               </div>
             </>
           ) : (
@@ -244,7 +270,15 @@ export default function Feedback() {
                 Samen met jou kunnen we CircuLaw blijven verbeteren, en dat is hard nodig! We gaan
                 je feedback bekijken en zullen je eventueel benaderen als we nog vragen hebben of
                 antwoorden op jouw vraag. Wil je op de hoogte blijven van CircuLaw?{' '}
-                <span className='link-lg text-green-500'>Volg on das op LinkedIn</span>
+                <span className='link-lg text-green-500'>
+                  <a
+                    href='https://www.linkedin.com/company/circulaw/'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    Volg ons dan op LinkedIn
+                  </a>
+                </span>
               </p>
               <div className='sm:col-span-2 pb-20'>
                 <Link href='/'>

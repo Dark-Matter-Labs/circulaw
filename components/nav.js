@@ -46,12 +46,12 @@ export default function Nav(props) {
         <div className='w-full bg-green-800'>
           <div className='flex justify-between global-margin '>
             <div className=' flex justify-start items-center'>
-              <div className='hidden lgNav:block -ml-6'>
+              <div className='hidden sm:block -ml-6'>
                 <Link href='/'>
-                  <Lottie options={defaultOptions} height={86} width={162} />
+                  <Lottie options={defaultOptions} height={150} width={250} />
                 </Link>
               </div>
-              <div className='block lgNav:hidden -ml-6'>
+              <div className='block sm:hidden -ml-6'>
                 <Link href='/'>
                   <Lottie options={defaultOptions} height={86} width={162} />
                 </Link>
@@ -80,8 +80,8 @@ export default function Nav(props) {
     );
   }
   return (
-    <div className={`${router.pathname === '/' ? 'bg-header' : ''}`}>
-      <div className={`${router.pathname === '/' ? 'pb-16 lgNav:pb-16' : ''}`}>
+    <div className={`${router.pathname === '/' ? 'bg-header bg-cover sm:bg-center' : ''}`}>
+      <div className={`${router.pathname === '/' ? 'pb-16' : ''}`}>
         <Disclosure
           as='nav'
           className={`${
@@ -92,7 +92,9 @@ export default function Nav(props) {
             <>
               <div className='lgNav:pb-4 global-margin'>
                 <BetaBanner type={`${router.pathname !== '/' ? 'gen' : 'home'}`} />
-                <div className=''>
+                <div
+                  className={`${router.pathname === '/' ? 'lgNav:-mt-10 -mt-4' : 'lgNav:-mt-4'}`}
+                >
                   <div className='inset-y-0 float-right flex items-center lgNav:hidden'>
                     {/* Mobile menu button */}
                     <Disclosure.Button
@@ -120,7 +122,7 @@ export default function Nav(props) {
                             <Lottie options={defaultOptions} height={150} width={250} />
                           </Link>
                         </div>
-                        <div className='block lgNav:hidden py-4 '>
+                        <div className='block lgNav:hidden py-4'>
                           <Link href='/'>
                             <Image
                               height={24}
@@ -336,7 +338,7 @@ export default function Nav(props) {
               </div>
 
               <Disclosure.Panel className='lgNav:hidden bg-black-white-200'>
-                <div className='pt-2 pb-4 ml-5'>
+                <div className='pt-2 pb-4'>
                   <Disclosure.Button
                     as='span'
                     className='flex justify-end items-center pr-8 sm:hidden'
