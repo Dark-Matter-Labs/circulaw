@@ -16,6 +16,7 @@ export default function Layout({
   ogType,
   ogImgUrl = globalMeta.siteLogo,
   children,
+  props
 }) {
   const { data: aboutPageSlugs } = useSWR(groq`${siteSettingsQuerys.overCirulaw}`, fetcher);
   const { data: vraagAntwoordSlug } = useSWR(groq`${siteSettingsQuerys.vraagAntwoord}`, fetcher);
