@@ -16,20 +16,20 @@ export default function Layout({
   ogType,
   ogImgUrl = globalMeta.siteLogo,
   children,
-  props
+  homePageHeader,
 }) {
   const { data: aboutPageSlugs } = useSWR(groq`${siteSettingsQuerys.overCirulaw}`, fetcher);
   const { data: vraagAntwoordSlug } = useSWR(groq`${siteSettingsQuerys.vraagAntwoord}`, fetcher);
   const { data: themaPageSlugs } = useSWR(groq`${siteSettingsQuerys.thema}`, fetcher);
   const {data: footerTextData } = useSWR(groq`${footerQuery}`, fetcher)
-  
   const footerText = footerTextData
   const aboutNavItems = aboutPageSlugs;
   const vraagSlug = vraagAntwoordSlug?.slug;
   const themaSlugs = themaPageSlugs?.slugs;
+
   return (
     <>
-      <Nav vraagSlug={vraagSlug} aboutSlugs={aboutNavItems} themaSlugs={themaSlugs} homePageHeader={props.homePageHeader} />
+      <Nav vraagSlug={vraagSlug} aboutSlugs={aboutNavItems} themaSlugs={themaSlugs} homePageHeader={homePageHeader} />
       <Head>
         <title>{title} </title>
         <meta name='description' content={description} />
