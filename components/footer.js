@@ -8,7 +8,6 @@ import Partners from './partners';
 import ORicon from '../public/icons/openResearch.svg';
 
 const navigation = {
-  // FAQ href is linked to CMS.
   other: [
     { name: 'Contact', href: '/contact', className: '' },
     { name: 'Disclaimer/Beta', href: '/beta', className: '' },
@@ -236,7 +235,7 @@ export default function Footer(props) {
         </div>
       )}
 
-      <Partners />
+      <Partners footerText={props.footerText} />
     </footer>
   );
 }

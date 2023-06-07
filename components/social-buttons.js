@@ -9,7 +9,6 @@ import {
 import { SocialIcon } from 'react-social-icons';
 import { LinkIcon } from '@heroicons/react/outline';
 
-
 const viewportType = {
   mobile: 'flex flex-row justify-between items-center pb-2 px-2',
   desktop: 'flex flex-row justify-center items-center pb-2',
@@ -29,7 +28,7 @@ export default function SocialButtons({ title, viewport }) {
   }
 
   return (
-    <div className={`${viewportClasses}`}> 
+    <div className={`${viewportClasses}`}>
       <span className='p-lg text-black-white-500 pr-2'>Delen: </span>
       <span className='pr-2 test' title='Share link on LinkedIn'>
         <LinkedinShareButton

@@ -22,7 +22,6 @@ const links = {
 
 export default function MeasureLinksDropdown({ page, type }) {
   const router = useRouter();
-  console.log(page, type);
   // add on click close to close the disclosure.
   if (page === 'list') {
     return (
