@@ -21,15 +21,20 @@ export default function Layout({
   const { data: aboutPageSlugs } = useSWR(groq`${siteSettingsQuerys.overCirulaw}`, fetcher);
   const { data: vraagAntwoordSlug } = useSWR(groq`${siteSettingsQuerys.vraagAntwoord}`, fetcher);
   const { data: themaPageSlugs } = useSWR(groq`${siteSettingsQuerys.thema}`, fetcher);
-  const {data: footerTextData } = useSWR(groq`${footerQuery}`, fetcher)
-  const footerText = footerTextData
+  const { data: footerTextData } = useSWR(groq`${footerQuery}`, fetcher);
+  const footerText = footerTextData;
   const aboutNavItems = aboutPageSlugs;
   const vraagSlug = vraagAntwoordSlug?.slug;
   const themaSlugs = themaPageSlugs?.slugs;
 
   return (
     <>
-      <Nav vraagSlug={vraagSlug} aboutSlugs={aboutNavItems} themaSlugs={themaSlugs} homePageHeader={homePageHeader} />
+      <Nav
+        vraagSlug={vraagSlug}
+        aboutSlugs={aboutNavItems}
+        themaSlugs={themaSlugs}
+        homePageHeader={homePageHeader}
+      />
       <Head>
         <title>{title} </title>
         <meta name='description' content={description} />
@@ -46,7 +51,12 @@ export default function Layout({
       </Head>
       <main className=''>{children}</main>
       <CookieConsent />
-      <Footer vraagSlug={vraagSlug} aboutSlugs={aboutNavItems} themaSlugs={themaSlugs} footerText={footerText } />
+      <Footer
+        vraagSlug={vraagSlug}
+        aboutSlugs={aboutNavItems}
+        themaSlugs={themaSlugs}
+        footerText={footerText}
+      />
     </>
   );
 }

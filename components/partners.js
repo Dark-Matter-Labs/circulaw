@@ -14,7 +14,7 @@ const bordersDesktop =
 const bordersSmall =
   '[&:nth-child(3)]:border-r-0 [&:nth-child(8)]:border-r-0 [&:nth-child(12)]:border-r-0 [&:nth-child(17)]:border-r-0 [&:nth-child(21)]:border-r-0 [&:nth-child(26)]:border-r-0';
 // fix query to receive the array and not an object
-export default function Partners({footerText}) {
+export default function Partners({ footerText }) {
   const { data } = useSWR(groq`${partnersQuery}`, fetcher);
   const partners = data?.partners;
 
@@ -98,9 +98,7 @@ export default function Partners({footerText}) {
           <p className='pb-8'>
             {footerText?.footerText}&nbsp;
             <Link href='/contact'>
-              <span className='underline link-interaction'>
-                {footerText?.footerLinkText}
-              </span>
+              <span className='underline link-interaction'>{footerText?.footerLinkText}</span>
             </Link>
           </p>
         )}

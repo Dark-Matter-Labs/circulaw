@@ -2,7 +2,7 @@ import CustomButton from './custom-button';
 import { Link as ScrollLink } from 'react-scroll';
 import { ArrowDownIcon } from '@heroicons/react/outline';
 
-export default function HomepageHeader({homePageHeader}) {
+export default function HomepageHeader({ homePageHeader }) {
   return (
     <main className='h-auto global-margin'>
       <div className='h-full mx-auto max-w-4xl'>

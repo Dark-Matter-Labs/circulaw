@@ -25,7 +25,7 @@ export default {
     {
       name: 'siteSettings',
       title: 'Site Settings',
-    }, 
+    },
   ],
   fields: [
     {
@@ -89,26 +89,26 @@ export default {
       title: 'Header Text',
       name: 'headerText',
       type: 'string',
-      group: 'header'
+      group: 'header',
     },
     {
       title: 'Sub Header Text',
       name: 'subHeader',
       type: 'string',
-      group: 'header'
+      group: 'header',
     },
     {
       title: 'Footer Text',
       name: 'footerText',
       type: 'text',
-      group: 'footer'
+      group: 'footer',
     },
     {
       title: 'Footer link text',
       name: 'footerLinkText',
       description: 'this will link to the contact page on the website.',
       type: 'string',
-      group: 'footer'
+      group: 'footer',
     },
   ],
 };
