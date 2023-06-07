@@ -98,7 +98,7 @@ export default function Partners({ footerText }) {
           <p className='pb-8'>
             {footerText?.footerText}&nbsp;
             <Link href='/contact'>
-              <span className='underline link-interaction'>{footerText?.footerLinkText}</span>
+              <span className='underline link-interaction-dark-bg'>{footerText?.footerLinkText}</span>
             </Link>
           </p>
         )}
