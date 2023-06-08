@@ -14,7 +14,7 @@ const bordersDesktop =
 const bordersSmall =
   '[&:nth-child(3)]:border-r-0 [&:nth-child(8)]:border-r-0 [&:nth-child(12)]:border-r-0 [&:nth-child(17)]:border-r-0 [&:nth-child(21)]:border-r-0 [&:nth-child(26)]:border-r-0';
 // fix query to receive the array and not an object
-export default function Partners() {
+export default function Partners({ footerText }) {
   const { data } = useSWR(groq`${partnersQuery}`, fetcher);
   const partners = data?.partners;
 
@@ -96,15 +96,9 @@ export default function Partners() {
         )}
         {router.pathname !== '/en' && (
           <p className='pb-8'>
-            Welkom bij CircuLaw. Deze website is volop in ontwikkeling. In deze versie testen we de
-            techniek, opzet en inhoud van de site. Het is mogelijk dat de inhoud van de site
-            incompleet is of fouten bevat. Dat betekent dan ook dat aan de inhoud van deze site geen
-            rechten kunnen worden ontleend. We horen graag wat je ervan vindt, wat je anders zou
-            willen, wat je mist en natuurlijk horen we ook graag waar je blij van wordt.{' '}
+            {footerText?.footerText}&nbsp;
             <Link href='/contact'>
-              <span className='underline link-interaction'>
-                Stuur je feedback op deze testversie.
-              </span>
+              <span className='underline link-interaction-dark-bg'>{footerText?.footerLinkText}</span>
             </Link>
           </p>
         )}

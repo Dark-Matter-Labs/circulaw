@@ -4,7 +4,7 @@ import Layout from '../../components/layouts/layout';
 
 export default function NotFound() {
   return (
-    <Layout>
+    <Layout title='CircuLaw - 404'>
       <div className='global-margin my-20 max-w-2xl text-center'>
         <h1 className='mobile sm:desktop text-black-white-800 pb-2 text-green-400'>404</h1>
         <p className=' p-lg text-black-white-800'>

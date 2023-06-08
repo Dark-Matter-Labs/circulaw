@@ -108,9 +108,15 @@
     @apply hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white;
   }
 
-  .link-interaction-dark-bg {
-    @apply hover:text-green-200 active:text-black-white-100 focus:text-green-100 focus:right-2 focus:ring-white
+  .link-interaction-light-green-bg {
+    @apply text-black-white-100 hover:text-green-200 active:text-green-800 focus:text-green-100 focus:right-2 focus:ring-white
   }
+
+  .link-interaction-dark-bg {
+    @apply text-black-white-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white
+  }
+
+
 
   .button {
     @apply font-manrope text-base font-bold leading-10;
@@ -216,6 +222,11 @@ html {
   rgba(252, 242, 237, 0.78) 45%, rgba(253, 249, 246, 0.9) 26%, rgba(254, 253, 252, 0.97) 10%, #FFFFFF 0%);
 }
 
+.cl-gradient-400 {
+  background: linear-gradient(#CBE0CB 30.21%, rgba(199, 211, 199, 0) );
+}
+
+
 [type='checkbox']:checked {
   background-color: #22532c !important;
   border: 1px solid #22532c !important;
@@ -272,13 +283,6 @@ html {
   top: -40px;
 }
 
-.bg-header {
-  background-image: url('/home-page/CL_header_new2.png');
-  background-size: cover;
-  background-position: center;
-  margin-top: -3px;
-}
-
 .tooltip {
   position:relative;
 }
@@ -305,4 +309,15 @@ html {
 
 .tooltip:hover:before {
   display:block;
+}
+
+.social-svg-mask:hover {
+  fill:#25C38B !important;
+}
+
+.bg-device {
+    background: url(./public/CL_logo_graphic\ device.svg)
+    top right
+    no-repeat;
+    background-color: #F8FBF8;
 }

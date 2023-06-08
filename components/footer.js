@@ -8,7 +8,6 @@ import Partners from './partners';
 import ORicon from '../public/icons/openResearch.svg';
 
 const navigation = {
-  // FAQ href is linked to CMS.
   other: [
     { name: 'Contact', href: '/contact', className: '' },
     { name: 'Disclaimer/Beta', href: '/beta', className: '' },
@@ -49,7 +48,7 @@ export default function Footer(props) {
                       buttonText='Neem contact op'
                       buttonLink='/contact'
                     />
-                    <div className='block sm:hidden pt-6 p-base text-black-white-200 '>
+                    <div className='block sm:hidden pt-6 p-base text-black-white-100 '>
                       <h3 className='mobile sm:desktop inline-block'>Volg ons op:</h3>
                       <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
                         <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
@@ -72,14 +71,14 @@ export default function Footer(props) {
                     </div>
                   </div>
                   <div className=' border-b border-black-white-200 sm:border-0 py-2 sm:py-0'>
-                    <h4 className='text-green-300 mobile sm:desktop uppercase'>THEMA’S</h4>
+                    <h4 className='text-black-white-100 mobile sm:desktop uppercase'>THEMA’S</h4>
                     <div className='grid grid-cols-1 gap-8 py-2 sm:py-0'>
                       <ul role='list' className='mt-4 space-y-4'>
                         {themaSlugs?.map((slug) => (
                           <li key={slug}>
                             <a
                               href={`/${encodeURIComponent(slug)}`}
-                              className='p-base link-interaction text-black-white-200'
+                              className='p-base link-interaction text-black-white-100'
                             >
                               <span className='inline-block first-letter:uppercase'>
                                 {slug.replaceAll('-', ' ')}
@@ -91,7 +90,9 @@ export default function Footer(props) {
                     </div>
                   </div>
                   <div className=' border-b border-black-white-200 sm:border-0 py-2 sm:py-0'>
-                    <h4 className='text-green-300 mobile sm:desktop uppercase'>OVER CIRCULAW</h4>
+                    <h4 className='text-black-white-100 mobile sm:desktop uppercase'>
+                      OVER CIRCULAW
+                    </h4>
                     <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                       {' '}
                       <ul role='list' className='mt-4 space-y-4'>
@@ -100,7 +101,7 @@ export default function Footer(props) {
                             <li key={slug.slug}>
                               <a
                                 href={`/about/${encodeURIComponent(slug.slug)}`}
-                                className='p-base link-interaction text-black-white-200'
+                                className='p-base link-interaction text-black-white-100'
                               >
                                 <span className='inline-block first-letter:uppercase'>
                                   {slug.title.replaceAll('-', ' ')}
@@ -115,7 +116,7 @@ export default function Footer(props) {
                     <ul role='list' className='space-y-4'>
                       <li>
                         <a
-                          className='p-base text-black-white-200 link-interaction'
+                          className='p-base text-black-white-100 link-interaction'
                           href={`/${encodeURIComponent(FAQslug)}`}
                         >
                           {FAQslug.length > 0 && (
@@ -129,13 +130,13 @@ export default function Footer(props) {
                         <li key={item.name}>
                           <a
                             href={item.href}
-                            className=' p-base text-black-white-200 link-interaction'
+                            className=' p-base text-black-white-100 link-interaction'
                           >
                             {item.name}
                           </a>
                         </li>
                       ))}
-                      <li className='flex justify-start text-black-white-200 items-center'>
+                      <li className='flex justify-start text-black-white-100 items-center'>
                         <span
                           className={`link-interaction ${
                             router.pathname === '/en' ? '' : 'font-semibold'
@@ -161,7 +162,7 @@ export default function Footer(props) {
                       buttonText='Neem contact op'
                       buttonLink='/contact'
                     />
-                    <div className='hidden sm:block py-6 p-base text-black-white-200 flex items-center justify-center'>
+                    <div className='hidden sm:block py-6 p-base text-black-white-100 flex items-center justify-center'>
                       <h3 className='inline-block mobile sm:desktop'>Volg ons op:</h3>
                       <span data-text='Volg ons op LinkedIn' className='tooltip p-base z-40'>
                         <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
@@ -234,7 +235,7 @@ export default function Footer(props) {
         </div>
       )}
 
-      <Partners />
+      <Partners footerText={props.footerText} />
     </footer>
   );
 }

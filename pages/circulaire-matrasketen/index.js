@@ -10,7 +10,7 @@ export default function Matrassen({ featuredLaws, thema, length }) {
   });
 
   return (
-    <Layout>
+    <Layout title='CircuLaw - Circulaire Matrasketen'>
       <ThemeLayout
         featuredLaws={featuredLaws}
         thema={thema}

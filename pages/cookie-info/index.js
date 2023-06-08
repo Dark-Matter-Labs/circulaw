@@ -29,7 +29,7 @@ const cookies = [
 
 export default function Privacy() {
   return (
-    <Layout>
+    <Layout title='CircuLaw - Cookiebeleid'>
       <div className='global-margin my-20 max-w-2xl text-black-white-800'>
         <h1 className='mobile sm:desktop pb-6'>Cookiebeleid CircuLaw</h1>
         <h2 className='mobile sm:desktop py-2'>Wat zijn cookies?</h2>

@@ -4,11 +4,6 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-    },
-    {
       name: 'englishContent',
       title: 'English Content',
       type: 'array',
@@ -26,7 +21,7 @@ export default {
           type: 'block',
           of: [
             {
-              type: 'hoverText',
+              type: 'dropDown',
             },
           ],
           lists: [

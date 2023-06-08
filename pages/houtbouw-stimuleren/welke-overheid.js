@@ -9,7 +9,7 @@ const thema = 'houtbouw-stimuleren';
 
 export default function InfoPage({ ...props }) {
   return (
-    <Layout>
+    <Layout title='CircuLaw - Welke Overheid Heeft Houtbouw Stimuleren'>
       <WelkeLayout
         thema={thema}
         title='Welke overheid kan welk instrument gebruiken voor houtbouw?'

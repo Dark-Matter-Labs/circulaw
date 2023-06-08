@@ -3,6 +3,8 @@ import { PortableText } from '@portabletext/react';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
 import MeasureOverview from '../components/measure-overview';
 import MeasureTable from '../components/measure-table';
+import SocialButtons from '../components/social-buttons';
+import FeedbackBlock from './feedback-block';
 import { instrumentPTComponents } from '../lib/portable-text/pt-components';
 
 export default function Instrument({ data }) {
@@ -19,6 +21,9 @@ export default function Instrument({ data }) {
               </span>{' '}
               {/* should all breadcrumbs be green this is black in figma */}
             </button>
+            <div className='hidden sm:block float-right'>
+              <SocialButtons title={data?.measure?.titel} viewport='desktop' />
+            </div>
           </div>
           <div className='sm:col-span-12 row-span-1'>
             <h1 className='lg:block sm:pt-4 pb-6 sm:pb-10 mobile sm:desktop'>
@@ -39,7 +44,13 @@ export default function Instrument({ data }) {
             </div>
             <MeasureTable data={data} />
           </div>
-          <MeasureOverview data={data} viewport='desktop' />
+          <div>
+            <MeasureOverview data={data} viewport='desktop' />
+            <FeedbackBlock title={data?.measure?.titel} />
+          </div>
+        </div>
+        <div className='block sm:hidden pb-10'>
+          <SocialButtons title={data?.measure?.titel} viewport='mobile' />
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@ export default {
     {
       name: 'text',
       type: 'string',
-      title: 'Navigation Text',
+      title: 'Navigation Item Title',
     },
     // change to aboutLink + add Thema Link
     {

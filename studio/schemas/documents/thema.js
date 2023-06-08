@@ -97,7 +97,7 @@ export default {
       type: 'string',
       validation: (Rule) => Rule.required(),
       description:
-        'This will be displayed about the legal instruments that are featured on the Thema page (Uitgelicht: X ...) start from after the number',
+        'This will be displayed above the legal instruments that are featured on the Thema page (Uitgelicht: X ...) start from after the number',
       group: 'editableContent',
     },
     {
