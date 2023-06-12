@@ -28,7 +28,7 @@ export default {
       group: 'editableContent',
     },
     {
-      title: 'Thema Titel',
+      title: 'Titel thema',
       name: 'themaName',
       type: 'string',
       validation: (Rule) => Rule.required(),
@@ -48,84 +48,78 @@ export default {
       },
     },
     {
-      title: 'Thema Subtitle',
+      title: 'Thema intro',
       name: 'themaSubtitle',
       type: 'string',
+      description:'Kort intro onder de thematitel',
       validation: (Rule) => Rule.required(), // how do we handle links? Seems a bit much to put in a PT block.
       group: 'editableContent',
     },
     {
-      title: 'Header Link Text',
+      title: 'Link introtekst',
       name: 'linkText',
       type: 'string',
+      description:'Niet verplicht',
       group: 'editableContent',
     },
     {
-      title: 'Header Link',
+      title: 'Url introtekst',
       name: 'headerLink',
       type: 'url',
       validation: (Rule) => Rule.uri({ scheme: ['http', 'https'] }),
       group: 'editableContent',
     },
     {
-      title: 'Hero Image',
+      title: 'Hoofdafbeelding',
       name: 'heroImage',
       type: 'image',
-      description: 'This image must already have the gradient',
+      description: 'Gebruik alleen beeld met verloop en in formaat 1440ppx x 440px',
       group: 'editableContent',
     },
     {
-      title: 'Hero Image Mobile',
+      title: 'Hoofdafbeelding mobiel',
       name: 'heroImageMobile',
       type: 'image',
-      description: 'This must be the original image',
+      description: 'Gebruik originele formaat',
       group: 'editableContent',
     },
 
     {
-      title: 'Overviews Title',
+      title: 'Titel overzichten',
       name: 'overviewsTitle',
       type: 'string',
       validation: (Rule) => Rule.required(),
       description:
-        'This will be displayed above the 3 cards leading to the overviews on the Thema page',
+        'Titel die boven de 3 kaarten met instrumenten en overzichten',
       group: 'editableContent',
     },
     {
-      title: 'Featured Instrument Title',
+      title: 'Titel uitgelichte instrumenten',
       name: 'featuredInstrumentTitle',
       type: 'string',
       validation: (Rule) => Rule.required(),
       description:
-        'This will be displayed above the legal instruments that are featured on the Thema page (Uitgelicht: X ...) start from after the number',
+        'Is de titel die in kop komt: Uitgelicht: 3 [titel]',
       group: 'editableContent',
     },
     {
-      title: 'Featured Instrument Subtitle',
+      title: 'Subkop onder uitgelichte instrumenten',
       name: 'featureInstrumentSubtitle',
       type: 'string',
+      description:'Subkop onder de kop Uitgelicht: 3 [titel]',
       validation: (Rule) => Rule.required(),
       group: 'editableContent',
     },
-
-    // the info for the 3 cards on the thema page - all need a max Length
-    //  {
-    //    title: 'List Title', // max length
-    //  name: 'listTitle',
-    // type: 'string',
-    // validation: (Rule) => Rule.required().max(50),
-    // group: 'editableContent',
-    // },
-
     {
       name: 'overviewCards',
-      title: 'OVERVIEW CARDS',
+      title: 'OVERZICHTSKAARTEN',
       type: 'text',
       components: {
         input: lineBreak,
       },
       group: 'editableContent',
     },
+    //to check with marlies
     {
       title: 'List Card Text',
       name: 'listText',
@@ -141,14 +135,14 @@ export default {
       group: 'devOnly',
     },
     {
-      title: 'Samenhang Card Title',
+      title: 'Titel samenhang-kaart',
       name: 'samenhangTitle',
       type: 'string',
       validation: (Rule) => Rule.required().max(70),
       group: 'editableContent',
     },
     {
-      title: 'Samenhang Card Text',
+      title: 'Intro samenhang-kaart',
       name: 'samenhangText',
       type: 'text',
       validation: (Rule) => Rule.required(),
@@ -162,14 +156,14 @@ export default {
       group: 'devOnly',
     },
     {
-      title: 'Welke Overheid Card Title',
+      title: 'Titel bevoegdheden-kaart',
       name: 'welkeTitle',
       type: 'string',
       validation: (Rule) => Rule.required().max(70),
       group: 'editableContent',
     },
     {
-      title: 'Welke Overheid Card Text',
+      title: 'Intro bevoegdhedenkaart',
       name: 'welkeText',
       type: 'text',
       validation: (Rule) => Rule.required(),
@@ -184,7 +178,7 @@ export default {
     },
     {
       name: 'homePageCards',
-      title: 'HOMEPAGE CARDS',
+      title: 'HOMEPAGE KAARTEN',
       type: 'text',
       components: {
         input: lineBreak,
@@ -192,7 +186,7 @@ export default {
       group: 'editableContent',
     },
     {
-      title: 'Home Page Card Text', // need to add max length
+      title: 'Tekst homepage-themakaart', // need to add max length
       name: 'homePageCardText',
       type: 'text',
       group: 'editableContent',
@@ -203,6 +197,7 @@ export default {
       type: 'string',
       group: 'editableContent',
     },
+    // check with marlies
     {
       title: 'Home Page Order', // need to add max length
       name: 'homePageOrder',
@@ -210,10 +205,10 @@ export default {
       group: 'editableContent',
     },
     {
-      title: 'Home Page Card Image', // need to add max length
+      title: 'Beeld homepage thema-kaart', // need to add max length
       name: 'homePageCardImage',
       type: 'image',
-      description: 'image must include Icon',
+      description: 'Beeld moet altijd icoon van thema bevatten. Bij nieuw thema banner ‘NIEUW’ toevoegen.',
       group: 'editableContent',
     },
   ],
