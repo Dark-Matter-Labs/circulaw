@@ -5,7 +5,8 @@ export default {
   fields: [
     {
       name: 'englishContent',
-      title: 'English Content',
+      title: 'Inhoud',
+      description: 'Voer hier de tekst in (geef zelf subkoppen, alinea-indeling enz. aan).',
       type: 'array',
       of: [
         {
