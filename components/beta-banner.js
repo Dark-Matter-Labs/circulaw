@@ -38,8 +38,7 @@ export default function BetaBanner({ type }) {
     );
   } else {
     return (
-      <div className='flex grid-cols-1 lg:grid-cols-3 justify-between items-center' name='top'
-      >
+      <div className='flex grid-cols-1 lg:grid-cols-3 justify-between items-center' name='top'>
         <div className='hidden sm:block min-w-[10%]'></div>
         <div className='bg-green-400 rounded-b-[20px] md:max-w-sm 2xl:max-w-sm sm:mx-5 w-full'>
           <div className='py-2 text-center'>

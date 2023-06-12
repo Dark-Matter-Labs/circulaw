@@ -2,7 +2,6 @@ import Layout from '../components/layouts/layout';
 import SectionTypes from '../components/section-types-list';
 import { client } from '../lib/sanity';
 
-
 import {
   aboutSectionQuerie,
   homePageThemaQuery,
