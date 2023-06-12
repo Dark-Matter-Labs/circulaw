@@ -7,52 +7,51 @@ export default {
   icon: BiNews,
   fields: [
     {
-      title: 'Title',
+      title: 'Titel',
       name: 'title',
       type: 'string',
+      description: 'Titel op kaart nieuw onderwerp',
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Text Content',
+      title: 'Inhoud',
       name: 'text',
       type: 'text',
-      description: 'text is limited to 220 characters',
+      description: 'Tekst exclusief titel max 220 tekens.',
       validation: (Rule) => Rule.required().max(220),
     },
     {
-      title: 'External Link',
+      title: 'Externe link',
       name: 'externalLink',
       type: 'url',
+      description:'De url waarnaar je wilt linken',
       validation: (Rule) => Rule.uri({ scheme: ['http', 'https'] }),
       // validation
     },
     {
-      title: 'External Link Text',
+      title: 'Tekst die linkt',
       name: 'externalLinkText',
       type: 'string',
-      description:
-        'if you add an external link you must also write some text to explain the link. If not the link will not display',
-      // validation if external link make required?
+      description:'De tekst waar de link aan gekoppeld wordt. Link opent in een nieuwe tab.',
     },
     {
-      title: 'Internal Link',
+      title: 'Interne link',
       name: 'internalLink',
       type: 'string',
       description:
-        'please copy the slug of the CL page you want to link to. all text coming after .nl this will allow us to make the links work on staging environment also. must start with /',
+        'Kopieer de slug (het deel van de URL na de domeinnaam/punt) waarnaar je wilt linken.',
     },
     {
-      title: 'Internal Link Text',
+      title: 'Tekst die linkt',
       name: 'internalLinkText',
       type: 'string',
-      description: 'to be displayed inside button',
+      description: 'De tekst die op de knop komt.',
     },
     {
       title: 'Date',
       name: 'date',
       type: 'date',
-      description:
-        'Date that will be displayed on the card. This will not affect the order of the card',
-    },
+      description: 'De datum wordt op de kaart getoond, maar bepaalt niet de volgorde van de kaarten.',
+        },
   ],
 };
