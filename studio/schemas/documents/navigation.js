@@ -9,12 +9,14 @@ export default {
     {
       name: 'title',
       type: 'string',
-      title: 'Title',
+      title: 'Titel',
+      description: 'Titel is alleen zichtbaar in Sanity.'
     },
     {
       name: 'items',
       type: 'array',
-      title: 'Navigation items',
+      title: 'Navigatielinks',
+      description:'Lijst met links is zichtbaar in de navigatie op de website. Volgorde is gelijk aan volgorde op de site. Links zijn gelijk aan titel. Klik op toevoegen om een link toe te voegen.',
       of: [{ type: 'navigationItem' }],
     },
   ],

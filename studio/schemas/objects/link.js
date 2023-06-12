@@ -4,9 +4,9 @@ export default {
   title: 'Link',
   fields: [
     {
-      title: 'Internal Link',
+      title: 'Titel navigatiepagina',
       name: 'internalLink',
-      description: 'Select pages for navigation',
+      description: 'Selecteer hier de pagina waarnaar je wilt linken',
       type: 'reference',
       to: [{ type: 'aboutPage' }, { type: 'thema' }, { type: 'FAQpage' }],
     },

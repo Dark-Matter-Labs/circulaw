@@ -9,13 +9,15 @@ export default {
     {
       name: 'text',
       type: 'string',
-      title: 'Navigation Item Title',
+      title: 'Navigatietitel',
+      description: 'Alleen zichtbaar in Sanity. Moet gelijk zijn aan de links/titels.'
     },
     // change to aboutLink + add Thema Link
     {
       name: 'navigationItemUrl',
       type: 'link',
-      title: 'Navigation Item URL',
+      title: 'Url navigatietitel',
+      description: 'Selecteer hier de url waarnaar je wilt linken'
     },
   ],
 };
