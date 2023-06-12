@@ -1,8 +1,7 @@
 import Layout from '../components/layouts/layout';
 import SectionTypes from '../components/section-types-list';
 import { client } from '../lib/sanity';
-import { Link as ScrollLink } from 'react-scroll';
-import { ArrowUpIcon } from '@heroicons/react/outline';
+
 
 import {
   aboutSectionQuerie,
@@ -13,7 +12,6 @@ import {
 import NewThemaSuggestion from '../components/new-thema-suggestion';
 import NewsItems from '../components/news-items';
 import HomePageAboutSection from '../components/home-page-about-section';
-import CustomButton from '../components/custom-button';
 
 export default function Index({
   newsItems,
@@ -49,16 +47,6 @@ export default function Index({
             <div className='pt-4 sm:pt-8'>
               <NewsItems newsItems={newsItems} />
             </div>
-          </div>
-          <div className='block sm:hidden w-full flex items-center justify-center pt-8'>
-            <CustomButton color='whiteBackground'>
-              <ScrollLink to='top' smooth={true}>
-                <span>
-                  Top
-                  <ArrowUpIcon className='h-4 w-4 inline-block ml-1' />
-                </span>
-              </ScrollLink>
-            </CustomButton>
           </div>
         </div>
       </div>

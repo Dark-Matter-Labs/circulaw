@@ -3,8 +3,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { RiLinkedinFill } from 'react-icons/ri';
 import { AiFillGithub } from 'react-icons/ai';
+import { Link as ScrollLink } from 'react-scroll';
+import { ArrowUpIcon } from '@heroicons/react/outline';
 import ActionPanel from '../components/section-action-panel';
 import Partners from './partners';
+import CustomButton from './custom-button';
 import ORicon from '../public/icons/openResearch.svg';
 
 const navigation = {
@@ -34,6 +37,19 @@ export default function Footer(props) {
 
   const router = useRouter();
   return (
+    <>
+    <div>
+         <div className='flex sm:hidden w-full items-center justify-center pt-8 bg-green-600 -mb-1'>
+            <CustomButton color='home'>
+              <ScrollLink to='top' smooth={true}>
+                <span>
+                  Top
+                  <ArrowUpIcon className='h-4 w-4 inline-block ml-1' />
+                </span>
+              </ScrollLink>
+            </CustomButton>
+          </div>
+    </div>
     <footer className='' aria-labelledby='footer-heading'>
       {router.pathname !== '/en' && (
         <div className='bg-green-600'>
@@ -233,9 +249,11 @@ export default function Footer(props) {
             </div>
           </div>
         </div>
+        
       )}
 
       <Partners footerText={props.footerText} />
     </footer>
+    </>
   );
 }
