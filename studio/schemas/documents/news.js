@@ -24,7 +24,7 @@ export default {
       title: 'Externe link',
       name: 'externalLink',
       type: 'url',
-      description:'De url waarnaar je wilt linken',
+      description: 'De url waarnaar je wilt linken',
       validation: (Rule) => Rule.uri({ scheme: ['http', 'https'] }),
       // validation
     },
@@ -32,7 +32,7 @@ export default {
       title: 'Tekst die linkt',
       name: 'externalLinkText',
       type: 'string',
-      description:'De tekst waar de link aan gekoppeld wordt. Link opent in een nieuwe tab.',
+      description: 'De tekst waar de link aan gekoppeld wordt. Link opent in een nieuwe tab.',
     },
     {
       title: 'Interne link',
@@ -51,7 +51,8 @@ export default {
       title: 'Date',
       name: 'date',
       type: 'date',
-      description: 'De datum wordt op de kaart getoond, maar bepaalt niet de volgorde van de kaarten.',
-        },
+      description:
+        'De datum wordt op de kaart getoond, maar bepaalt niet de volgorde van de kaarten.',
+    },
   ],
 };

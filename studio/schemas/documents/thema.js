@@ -51,7 +51,7 @@ export default {
       title: 'Thema intro',
       name: 'themaSubtitle',
       type: 'string',
-      description:'Kort intro onder de thematitel',
+      description: 'Kort intro onder de thematitel',
       validation: (Rule) => Rule.required(), // how do we handle links? Seems a bit much to put in a PT block.
       group: 'editableContent',
     },
@@ -59,7 +59,7 @@ export default {
       title: 'Link introtekst',
       name: 'linkText',
       type: 'string',
-      description:'Niet verplicht',
+      description: 'Niet verplicht',
       group: 'editableContent',
     },
     {
@@ -89,8 +89,7 @@ export default {
       name: 'overviewsTitle',
       type: 'string',
       validation: (Rule) => Rule.required(),
-      description:
-        'Titel die boven de 3 kaarten met instrumenten en overzichten',
+      description: 'Titel die boven de 3 kaarten met instrumenten en overzichten',
       group: 'editableContent',
     },
     {
@@ -98,15 +97,14 @@ export default {
       name: 'featuredInstrumentTitle',
       type: 'string',
       validation: (Rule) => Rule.required(),
-      description:
-        'Is de titel die in kop komt: Uitgelicht: 3 [titel]',
+      description: 'Is de titel die in kop komt: Uitgelicht: 3 [titel]',
       group: 'editableContent',
     },
     {
       title: 'Subkop onder uitgelichte instrumenten',
       name: 'featureInstrumentSubtitle',
       type: 'string',
-      description:'Subkop onder de kop Uitgelicht: 3 [titel]',
+      description: 'Subkop onder de kop Uitgelicht: 3 [titel]',
       validation: (Rule) => Rule.required(),
       group: 'editableContent',
     },
@@ -208,7 +206,8 @@ export default {
       title: 'Beeld homepage thema-kaart', // need to add max length
       name: 'homePageCardImage',
       type: 'image',
-      description: 'Beeld moet altijd icoon van thema bevatten. Bij nieuw thema banner ‘NIEUW’ toevoegen.',
+      description:
+        'Beeld moet altijd icoon van thema bevatten. Bij nieuw thema banner ‘NIEUW’ toevoegen.',
       group: 'editableContent',
     },
   ],

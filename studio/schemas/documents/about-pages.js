@@ -10,13 +10,15 @@ export default {
       title: 'Titel',
       name: 'pageTitle',
       type: 'string',
-      description: 'Voer de titel in. De titel komt terug in de slug (het deel van de URL na de domeinnaam - zichtbaar in de navigatie en footer)'
+      description:
+        'Voer de titel in. De titel komt terug in de slug (het deel van de URL na de domeinnaam - zichtbaar in de navigatie en footer)',
     },
     {
       title: 'Slug',
       name: 'slug',
       type: 'slug',
-      description: 'Klik op ‘aanmaken’ (Slug is het het deel van de URL na de domeinnaam - zichtbaar in de navigatie en footer).',
+      description:
+        'Klik op ‘aanmaken’ (Slug is het het deel van de URL na de domeinnaam - zichtbaar in de navigatie en footer).',
       options: {
         source: 'pageTitle',
         inUnique: 'true',
@@ -27,7 +29,8 @@ export default {
       title: 'Copy',
       name: 'aboutPageContent',
       type: 'array',
-      description: 'Voer hier de tekst in (maak gebruik van voorgestelde subkoppen, alinea-indeling,  enz.).',
+      description:
+        'Voer hier de tekst in (maak gebruik van voorgestelde subkoppen, alinea-indeling,  enz.).',
       of: [
         {
           type: 'greenBox',
