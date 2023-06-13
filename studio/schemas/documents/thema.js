@@ -117,11 +117,11 @@ export default {
       },
       group: 'editableContent',
     },
-    //to check with marlies
     {
-      title: 'List Card Text',
+      title: 'Intro op lijstkaart',
       name: 'listText',
       type: 'text',
+      description: 'Tekst over de instrumentenlijst. Titel op deze kaart wordt automatisch gegenereerd.',
       validation: (Rule) => Rule.required(),
       group: 'editableContent',
     },
@@ -195,11 +195,11 @@ export default {
       type: 'string',
       group: 'editableContent',
     },
-    // check with marlies
     {
-      title: 'Home Page Order', // need to add max length
+      title: 'Volgorde presentatie thema’s', // need to add max length
       name: 'homePageOrder',
       type: 'number',
+      description: 'Elk thema moet een eigen nummer krijgen. Nummer bepaalt de volgorde van presentatie.',
       group: 'editableContent',
     },
     {
