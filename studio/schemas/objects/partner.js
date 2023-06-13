@@ -6,18 +6,19 @@ export default {
     {
       name: 'partnerName',
       type: 'string',
-      title: 'Partner Name',
+      title: 'Naam partner-organisatie',
     },
     {
       name: 'partnerLink',
       type: 'url',
-      title: 'Partner Link',
+      title: 'Naam partner-organisatie',
       validation: (Rule) => Rule.required().uri({ scheme: ['http', 'https'] }),
     },
     {
       name: 'logo',
       type: 'image',
-      title: 'Partner Image',
+      title: 'Partner logo',
+      description: 'Hier het logo van de partnerorganisatie uploaden',
     },
   ],
 };
