@@ -1,7 +1,7 @@
 name: Backup Routine
 on:
   schedule:
-    # Runs at 04:00 UTC on the 1st and 17th of every month
+    # Runs at 10:00 UTC on every day-of-month divisible by 30
     - cron: "0 10 */30 * *"
 jobs:
   backup-dataset:
