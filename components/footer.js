@@ -39,7 +39,7 @@ export default function Footer(props) {
   return (
     <>
       <div>
-        <div className='flex sm:hidden w-full items-center justify-center py-8 bg-green-800 border-b-2 border-black-white-200 '>
+        <div className='flex lgNav:hidden w-full items-center justify-center py-8 bg-green-800 border-y-2 border-black-white-200 '>
           <CustomButton color='home'>
             <ScrollLink to='top' smooth={true}>
               <span>

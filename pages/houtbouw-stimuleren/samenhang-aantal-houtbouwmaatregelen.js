@@ -11,7 +11,7 @@ export default function InfoPage() {
         icon={woodIcon}
         p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
       />
-      <div className='bg-green-600 border-b border-black-white-100 mt-10'>
+      <div className='bg-green-600 lgNav:border-b border-black-white-100 mt-10'>
         <div className='global-margin'>
           <svg viewBox='0 0 3098 7296'>
             <image width='3098' height='7296' xlinkHref='/samenhang/samh-hou.png'></image>{' '}

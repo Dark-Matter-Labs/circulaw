@@ -96,7 +96,7 @@ export default function Nav(props) {
   return (
     <>
       {/* ONE DIV TO HAVE BG COLOR*/}
-      <div className='w-fill flex justify-center -mb-8 relative z-50'>
+      <div className='w-fill flex justify-center -mb-8 relative z-50' name='top'>
         <BetaBanner scrollEffect={scrollEffect} />
       </div>
       <div
