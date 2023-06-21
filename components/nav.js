@@ -126,7 +126,7 @@ export default function Nav(props) {
               <div
                 className={`${
                   scrollEffect ? 'py-2' : 'pt-5 pb-2'
-                } flex justify-between items-center w-auto lgNav:py-0 global-margin`}
+                } flex justify-between items-center w-auto lgNav:py-0 global-margin transition-all duration-150`}
               >
                 {router.pathname === '/' && (
                   <>
@@ -463,7 +463,7 @@ export default function Nav(props) {
         </Popover>
       </div>
       {router.pathname === '/' && (
-        <div className='-mt-36'>
+        <div className='-mt-36 bg-header bg-cover bg-center'>
           <HomepageHeader homePageHeader={props.homePageHeader} />
         </div>
       )}
