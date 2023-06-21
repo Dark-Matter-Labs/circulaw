@@ -1,5 +1,5 @@
 const buttonColors = {
-  home: 'bg-black-white-200 hover:bg-green-200 text-green-600 focus:outline-none shadow-md active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white rounded-full',
+  home: 'bg-black-white-200 hover:bg-green-200 text-green-600 shadow-md active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white rounded-full',
   whiteBackground:
     'border-2 border-green-600 bg-transparent hover:bg-green-200 text-green-600 active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white rounded-full',
   toPdf:

@@ -21,12 +21,12 @@ export default function Index({
 }) {
   return (
     <Layout page='home' homePageHeader={homePageHeader} footerText={footerText}>
-      <div className='bg-black-white-200 sm:pb-14' name='thema'>
-        <div className='global-margin'>
+      <div className='bg-black-white-200 sm:pb-14 -z-50' name='thema'>
+        <div className='global-margin -z-20'>
           <h1 className='pt-8 mobile sm:desktop text-green-600 border-black-white-600 border-b pb-4'>
             Thema’s
           </h1>
-          <div className='pt-4 sm:pt-8'>
+          <div className='pt-4 sm:pt-8 -z-20'>
             <SectionTypes type='home' themaCards={homePageThemaData} />
           </div>
         </div>
