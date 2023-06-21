@@ -28,7 +28,7 @@ export default function Nav(props) {
   const [scrollEffect, setScrollEffect] = useState(false);
   useEffect(() => {
     const changeEffect = () => {
-      if (window.scrollY >= 50) {
+      if (window.scrollY >= 32) {
         setScrollEffect(true);
       } else {
         setScrollEffect(false);
@@ -94,26 +94,27 @@ export default function Nav(props) {
   }
   return (
     <>
+
+
+    {/* ONE DIV TO HAVE BG COLOR*/}
+    <div className='w-fill flex justify-center -mb-8 relative z-50'>
+    <BetaBanner scrollEffect={scrollEffect} />
+    </div>
       <div
         className={`${
-          scrollEffect && router.pathname === '/'
-            ? 'bg-green-600 shadow-lg -top-8 lgNavh-32 transition-all duration-150 pt-4 pb-2 lgNav:py-0'
-            : `${router.pathname === '/' ? 'bg-transparent' : ''} top-0 lgNav:h-24 transition-all duration-150`
-        } w-full sticky z-10`}
-        
-     
-      >
-        <div className='global-margin'>
-          <div className='flex items-center justify-center'>
-            <BetaBanner scrollEffect={scrollEffect} />
-          </div>
+          scrollEffect
+            ? [`${router.pathname === '/' ? 'bg-green-600 shadow-lg transition-all duration-150' : 'bg-black-white-200 shadow-lg transition-all duration-150' }`]
+            : [`${router.pathname === '/' ? 'bg-transparent transition-all duration-150' : 'bg-black-white-200 shadow-lg transition-all duration-150' }`]
+        } w-full sticky top-0 z-10 h-auto`}>
+          
 
           {/* Negative margin is to counter the beta banner */}
-            <Disclosure as='nav'>
+            <Disclosure as='nav' className={`${scrollEffect ? '' : ''} global-margin z-20 relative`}>
               {({ open }) => (
                 <>
                   {/* BEGIN NAV FLEX BOX - LEFT = logo, RIGHT = nav Items */}
-                  <div className='flex justify-between items-center w-full'>
+                  <div className='flex justify-between items-center w-full py-2 lgNav:py-0'>
+
                     {router.pathname === '/' && (
                       <>
                         {/* LOGO DESKTOP HP */}
@@ -140,7 +141,7 @@ export default function Nav(props) {
                     {/* LOGO ALL OTHER PAGES */}
                     {router.pathname !== '/' && (
                       <>
-                        <div className='hidden lgNav:block mt-2'>
+                        <div className='hidden lgNav:block py-3'>
                           <Link href='/'>
                             <Image
                               height={75}
@@ -148,7 +149,7 @@ export default function Nav(props) {
                               src={CirculawLogo}
                               alt='CircuLaw logo'
                               quality={100}
-                              className='py-2'
+                              className=''
                             />
                           </Link>
                         </div>
@@ -165,6 +166,8 @@ export default function Nav(props) {
                         </div>
                       </>
                     )}
+
+
 
                     {/* Mobile menu button */}
                     <div className='inset-y-0 float-right flex items-center pt-3 lgNav:hidden'>
@@ -347,10 +350,9 @@ export default function Nav(props) {
                 </>
               )}
             </Disclosure>
-          </div>
         </div>
       {router.pathname === '/' && (
-        <div className='-mt-24'>
+        <div className='-mt-36'>
           <HomepageHeader homePageHeader={props.homePageHeader} />
         </div>
       )}

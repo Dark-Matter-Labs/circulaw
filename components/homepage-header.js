@@ -4,7 +4,7 @@ import { ArrowDownIcon } from '@heroicons/react/outline';
 
 export default function HomepageHeader({ homePageHeader }) {
   return (
-    <main className='h-auto bg-header bg-cover pb-16 pt-44'>
+    <main className='h-auto bg-header bg-cover pb-16 pt-56'>
       <div className='global-margin'>
         <div className='text-center max-w-4xl mx-auto'>
           <div className='header hidden sm:block text-black-white-200 pb-10'>
