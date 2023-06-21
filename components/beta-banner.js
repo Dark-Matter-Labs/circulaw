@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
 export default function BetaBanner({ scrollEffect }) {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <div
       className={`${
@@ -15,7 +15,9 @@ export default function BetaBanner({ scrollEffect }) {
       <div
         className={`${
           scrollEffect
-            ?  `${router.pathname === '/' ? 'text-green-600' : 'text-black-white-200'} transition-colors duration-300`
+            ? `${
+                router.pathname === '/' ? 'text-green-600' : 'text-black-white-200'
+              } transition-colors duration-300`
             : 'text-black-white-800 transition-colors duration-300'
         }`}
       >
