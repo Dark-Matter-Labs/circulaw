@@ -95,7 +95,6 @@ export default function Nav(props) {
   }
   return (
     <>
-      {/* ONE DIV TO HAVE BG COLOR*/}
       <div className='w-fill flex justify-center -mb-8 relative z-50' name='top'>
         <BetaBanner scrollEffect={scrollEffect} />
       </div>
@@ -118,11 +117,9 @@ export default function Nav(props) {
               ]
         } w-full sticky top-0 z-10 h-auto`}
       >
-        {/* Negative margin is to counter the beta banner */}
         <Popover as='nav' className={`${scrollEffect ? '' : ''} z-20 relative`}>
           {({ open }) => (
             <>
-              {/* BEGIN NAV FLEX BOX - LEFT = logo, RIGHT = nav Items */}
               <div
                 className={`${
                   scrollEffect ? 'py-2' : 'pt-5 pb-2'
@@ -194,7 +191,7 @@ export default function Nav(props) {
                   </Popover.Button>
                 </div>
 
-                {/* WHERE NAV ITEMS ARE */}
+                {/* DESKTOP NAV */}
                 <div className='hidden lgNav:block pt-5'>
                   <div className='content right-0'>
                     <div className='relative flex items-center justify-between'>
@@ -351,7 +348,7 @@ export default function Nav(props) {
                 </div>
               </div>
 
-              {/* MOBILE MENU FROM HERE ON */}
+              {/* MOBILE MENU */}
               <Transition
                 as={Fragment}
                 enter='transition ease-out duration-200'
@@ -469,12 +466,4 @@ export default function Nav(props) {
       )}
     </>
   );
-}
-
-{
-  /* 
-        ${
-          scrollEffect && router.pathname !== '/' ? 'bg-black-white-200 shadow-lg -top-8 h-32 transition-all duration-150' : 'bg-black-white-200 shadow-lg top-0 h-24 transition-all duration-150'
-        } 
-      */
 }
