@@ -58,7 +58,7 @@ export default function Nav(props) {
     return (
       <>
         <div className='w-full bg-green-800 sticky top-0 z-50 shadow-lg'>
-          <div className='flex justify-between global-margin '>
+          <div className='flex justify-between global-margin'>
             <div className=' flex justify-start items-center'>
               <div className='hidden sm:block -ml-6'>
                 <Link href='/'>

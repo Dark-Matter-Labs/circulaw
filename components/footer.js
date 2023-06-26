@@ -38,20 +38,22 @@ export default function Footer(props) {
   const router = useRouter();
   return (
     <>
-      <div>
-        <div className='flex lgNav:hidden w-full items-center justify-center py-8 bg-green-800 border-y-2 border-black-white-200 '>
-          <CustomButton color='home'>
-            <ScrollLink to='top' smooth={true}>
-              <span>
-                Top
-                <ArrowUpIcon className='h-4 w-4 inline-block ml-1' />
-              </span>
-            </ScrollLink>
-          </CustomButton>
-        </div>
-      </div>
+   
       <footer className='' aria-labelledby='footer-heading'>
+     
         {router.pathname !== '/en' && (
+
+           <div>
+           <div className='flex lgNav:hidden w-full items-center justify-center py-8 bg-green-800 border-y-2 border-black-white-200 '>
+             <CustomButton color='home'>
+               <ScrollLink to='top' smooth={true}>
+                 <span>
+                   Top
+                   <ArrowUpIcon className='h-4 w-4 inline-block ml-1' />
+                 </span>
+               </ScrollLink>
+             </CustomButton>
+           </div>
           <div className='bg-green-600'>
             <div className='global-margin pt-8 lg:pt-16 lg:px-8'>
               <div className='pb-20'>
@@ -248,7 +250,9 @@ export default function Footer(props) {
                 </div>
               </div>
             </div>
+          </div>         
           </div>
+
         )}
 
         <Partners footerText={props.footerText} />
