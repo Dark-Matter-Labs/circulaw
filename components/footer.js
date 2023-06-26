@@ -178,7 +178,7 @@ export default function Footer(props) {
                         buttonText='Neem contact op'
                         buttonLink='/contact'
                       />
-                      <div className='hidden sm:block py-6 p-base text-black-white-100 flex items-center justify-center'>
+                      <div className='hidden sm:block py-6 p-base text-black-white-100 flex items-center justify-center z-0 relative'>
                         <h3 className='inline-block mobile sm:desktop'>Volg ons op:</h3>
                         <span data-text='Volg ons op LinkedIn' className='tooltip p-base z-40'>
                           <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
