@@ -194,9 +194,9 @@ export default function Nav(props) {
 
                 {/* DESKTOP NAV */}
                 <div className='hidden lgNav:block flex flex-row'>
-                    <div className='place-self-end flex justify-end -mt-6 pb-4'>
+                  <div className='place-self-end flex justify-end -mt-6 pb-4'>
                     <LangSwitch />
-                    </div>
+                  </div>
                   <div className='content right-0'>
                     <div className='relative flex items-center justify-between'>
                       <div className=''>
