@@ -20,7 +20,7 @@ export default function ThemeLayout({ ...props }) {
               className='z-0'
               priority
             />
-            <div className='global-margin h-[28rem] z-10 pt-10 relative'>
+            <div className='global-margin h-[28rem] z-5 pt-10 relative'>
               <Link
                 className='bg-black-white-200 border rounded-md border-black-white-200 pl-1 pr-2 py-0.5 breadcrumb text-green-500'
                 href='/'
