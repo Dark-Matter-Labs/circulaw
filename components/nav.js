@@ -14,6 +14,7 @@ import BetaBanner from './beta-banner';
 import animationData from '../public/CL_Home_Logo_Loop';
 import HomepageHeader from '../components/homepage-header';
 import CustomButton from './custom-button';
+import LangSwitch from './lang-switch';
 
 const defaultOptions = {
   loop: true,
@@ -95,7 +96,7 @@ export default function Nav(props) {
   }
   return (
     <>
-      <div className='w-fill flex justify-center -mb-8 relative z-50' name='top'>
+      <div className='flex justify-center -mb-8 relative z-50' name='top'>
         <BetaBanner scrollEffect={scrollEffect} />
       </div>
       <div
@@ -192,7 +193,10 @@ export default function Nav(props) {
                 </div>
 
                 {/* DESKTOP NAV */}
-                <div className='hidden lgNav:block pt-5'>
+                <div className='hidden lgNav:block flex flex-row'>
+                    <div className='place-self-end flex justify-end -mt-6 pb-4'>
+                    <LangSwitch />
+                    </div>
                   <div className='content right-0'>
                     <div className='relative flex items-center justify-between'>
                       <div className=''>
