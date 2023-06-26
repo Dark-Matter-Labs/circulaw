@@ -57,12 +57,12 @@ export default function Nav(props) {
   if (router.pathname === '/en') {
     return (
       <>
-        <div className='w-full bg-green-800'>
+        <div className='w-full bg-green-800 sticky top-0'>
           <div className='flex justify-between global-margin '>
             <div className=' flex justify-start items-center'>
               <div className='hidden sm:block -ml-6'>
                 <Link href='/'>
-                  <Lottie options={defaultOptions} height={150} width={250} />
+                  <Lottie options={defaultOptions} height={110} width={183} />
                 </Link>
               </div>
               <div className='block sm:hidden -ml-6'>
