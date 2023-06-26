@@ -9,7 +9,7 @@ export default function SectionTypes({ themaCards }) {
       <div className='hidden sm:block'>
         <ul
           role='list'
-          className='grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4 sm:gap-x-10 max-w-8xl'
+          className='grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4 sm:gap-x-10 max-w-8xl relative z-0'
         >
           {themaCards.map((thema) => (
             <li

@@ -21,7 +21,7 @@ export default function ThemeBottomSection({ props }) {
                 <div
                   key={measure?._id}
                   className={`border-black-white-600 ${
-                    measure === laws?.[-1] ? 'border-b border-transparent' : 'border-b'
+                    measure === laws?.[0] ? 'border-t border-transparent' : 'border-t'
                   }`}
                 >
                   <Link href={`/measures/${measure?.slug.current}`}>
