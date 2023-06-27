@@ -1,4 +1,4 @@
-export default{
+export default {
     title: 'FAQ Item',
     name: 'faqItem',
     type: 'object',
@@ -7,7 +7,7 @@ export default{
         {
             title: 'Question',
             name: 'question',
-            type: 'text', 
+            type: 'string', 
             validation: (Rule) => Rule.required().max(100),
             description: 'Enter the question'
         },

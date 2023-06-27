@@ -6,7 +6,7 @@ export default {
         {
             title: 'Section Title',
             name: 'sectionTitle',
-            type: 'text',
+            type: 'string',
             validation: (Rule) => Rule.required().max(100),
         }
     ]
