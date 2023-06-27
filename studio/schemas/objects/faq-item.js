@@ -8,7 +8,7 @@ export default {
             title: 'Question',
             name: 'question',
             type: 'string', 
-            validation: (Rule) => Rule.required().max(100),
+            validation: (Rule) => Rule.required().max(110),
             description: 'Enter the question'
         },
         {
