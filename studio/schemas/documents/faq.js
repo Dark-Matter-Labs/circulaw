@@ -32,6 +32,9 @@ export default {
         {
           type: 'faqItem',
         },
+        {
+          type: 'pdfBlock'
+        }
       ],
     },
   ],
