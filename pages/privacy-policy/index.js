@@ -82,7 +82,7 @@ export default function Privacy() {
           bericht te sturen naar het projectteam van CircuLaw.
         </p>
         <p className=' p-lg pb-10 max-w-4xl'>
-          Als je het niet eens zijn met de manier waarop CircuLaw omgaat met je persoonsgegevens dan
+          Als je het niet eens bent met de manier waarop CircuLaw omgaat met je persoonsgegevens dan
           kun je een klacht indienen bij de{' '}
           <span className='text-green-500 link-lg link-interaction'>
             <a

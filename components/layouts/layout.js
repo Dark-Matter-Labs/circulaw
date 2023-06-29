@@ -36,7 +36,7 @@ export default function Layout({
         homePageHeader={homePageHeader}
       />
       <Head>
-        <title>{title} </title>
+        <title>{`CircuLaw - ${title}`}</title>
         <meta name='description' content={description} />
         <link rel='canonical' href={canonicalUrl} />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
