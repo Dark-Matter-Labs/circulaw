@@ -17,6 +17,9 @@ export default {
       type: 'array',
       of: [
         {
+          type: 'pdfBlock',
+        },
+        {
           type: 'block',
           styles: [{ title: 'normal', value: 'normal' }],
           lists: [
