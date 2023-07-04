@@ -32,10 +32,17 @@ export default {
         {
           type: 'faqItem',
         },
+      ],
+    },
+    {
+      title: 'FAQ Pdf',
+      name: 'faqPdf',
+      type: 'array',
+      of: [
         {
           type: 'pdfBlock'
         }
-      ],
-    },
+      ]
+    }
   ],
 };
