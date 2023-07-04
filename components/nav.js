@@ -96,7 +96,7 @@ export default function Nav(props) {
   }
   return (
     <>
-      <div className='flex justify-center relative z-50' name='top'>
+      <div className='flex justify-center -mb-9 relative z-50' name='top'>
         <BetaBanner scrollEffect={scrollEffect} />
       </div>
       <div
