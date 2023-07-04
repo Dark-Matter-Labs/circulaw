@@ -34,16 +34,5 @@ export default {
         },
       ],
     },
-    {
-      title: 'FAQ Pdf',
-      name: 'faqPdf',
-      type: 'array',
-      description: 'Only one PDF can be rendered on this page',
-      of: [
-        {
-          type: 'pdfBlock',
-        },
-      ],
-    },
   ],
 };
