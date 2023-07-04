@@ -96,7 +96,7 @@ export default function Nav(props) {
   }
   return (
     <>
-      <div className='flex justify-center -mb-8 relative z-50' name='top'>
+      <div className='flex justify-center relative z-50' name='top'>
         <BetaBanner scrollEffect={scrollEffect} />
       </div>
       <div
@@ -464,7 +464,7 @@ export default function Nav(props) {
         </Popover>
       </div>
       {router.pathname === '/' && (
-        <div className='-mt-36 bg-header bg-cover bg-center'>
+        <div className='-mt-[9.5rem] bg-header bg-cover bg-center'>
           <HomepageHeader homePageHeader={props.homePageHeader} />
         </div>
       )}

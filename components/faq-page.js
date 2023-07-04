@@ -28,7 +28,6 @@ export default function FAQPageComponent({ data }) {
                       </h2>
                     </div>
                   )}
-
                   {item?.question && (
                     <div>
                       <Disclosure>
