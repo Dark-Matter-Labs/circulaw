@@ -46,7 +46,72 @@ export default function FAQPageComponent({ data }) {
                      
                             /> </span>
                               }
+
                               </h3>
+
+                      
+
+                            </Disclosure.Button>
+                            <Disclosure.Panel className='mb-4 -mt-2'>
+                              <PortableText
+                                value={item.response}
+                                components={FAQPagePTComponents}
+                              />
+                            </Disclosure.Panel>
+                          </>
+                        )}
+                      </Disclosure>
+                    </div>
+                  )}
+                </div>
+              ))}
+            
+            </div>
+
+           <h1 className='mobile sm:desktop text-red-500 py-40'>Option 2</h1> 
+
+            <div className=''>
+              {data.FAQPageContent.map((item) => (
+                <div key={item._key}>
+                  {item?.sectionTitle && (
+                    <div>
+                      <h2 className='mobile sm:desktop text-green-500 pt-6 pb-10'>
+                        {' '}
+                        {item?.sectionTitle}
+                      </h2>
+                    </div>
+                  )}
+                  {item?.question && (
+                    <div>
+                      <Disclosure>
+                        {({ open }) => (
+                          <>
+                            <Disclosure.Button className='w-full border-t border-green-500'>
+                              <h3 className='mobile sm:desktop text-green-500 flex justify-between py-4 text-left w-full break-words'>{item?.question}  
+                              {open === true && 
+                              <span className='h-6 w-6 text-green-500 inline-block relative shrink-0	'>
+                              <MinusIcon
+           
+                              /> </span> }
+                              {open === false && 
+                              <span className='h-6 w-6 text-green-500 inline-block relative shrink-0	'>
+                              <PlusIcon
+                     
+                            /> </span>
+                              }
+
+                              </h3>
+
+                              
+                              {open === false && 
+                              <div className='text-ellipsis truncate h-8 first-line:text-black-white-400 -mt-2 mb-4 text-left'>
+                              <PortableText
+                                value={item.response}
+                                components={FAQPagePTComponents}
+                              />
+                              </div>}
+
+
                             </Disclosure.Button>
                             <Disclosure.Panel className='mb-4 -mt-2'>
                               <PortableText
