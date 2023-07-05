@@ -9,8 +9,8 @@ import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../components/juridische-invloed-tooltip';
 
 const viewportType = {
-  mobile: 'block sm:hidden pb-12 my-4 ',
-  desktop: 'hidden sm:block mb-8 ',
+  mobile: 'block md:hidden pb-12 my-4 ',
+  desktop: 'hidden md:block mb-8 ',
 };
 
 export default function MeasureOverview({ viewport, children, data }) {
@@ -18,8 +18,8 @@ export default function MeasureOverview({ viewport, children, data }) {
 
   return (
     <div className={`${viewportClasses}`}>
-      <div className='bg-black-white-200 rounded-cl'>
-        <div className='px-8 pb-10 sm:pb-0 py-6 block h-[26rem]'>
+      <div className='bg-black-white-200 rounded-cl h-auto pb-8 max-w-sm'>
+        <div className='px-8 pb-10 sm:pb-0 py-6 block h-auto'>
           {children}
           <div className='container pb-12 sm:pb-1 flex justify-between'>
             <div className=''>
@@ -93,6 +93,28 @@ export default function MeasureOverview({ viewport, children, data }) {
           <div className=' pb-1'>
             <div className='relative flex justify-between border-t border-black-white-600'>
               <div className='flex'>
+                <h5 className='text-black-white-500 mobile sm:desktop py-2 pr-3'>Overheidslaag</h5>
+              
+              </div>
+            </div>
+
+            <div className='flex items-center'>
+              <h4 className='mobile sm:desktop text-green-500 uppercase'>
+              {data?.measure?.overheidslaag?.map((level) => (
+                    <span key={level} className=''>
+                      {level}{' '}
+                      {data?.measure?.overheidslaag.slice(-1)[0] !== level && <span>-</span>}
+                      &nbsp;
+                    </span>
+                  ))}
+              </h4>
+            </div>
+          </div>
+
+
+          <div className=' pb-1'>
+            <div className='relative flex justify-between border-t border-black-white-600'>
+              <div className='flex'>
                 <h5 className='text-black-white-500 mobile sm:desktop py-2 pr-3'>Invloed</h5>
                 <JITooltip data={data}>
                   <svg
@@ -145,9 +167,12 @@ export default function MeasureOverview({ viewport, children, data }) {
             <div className='flex items-center w-10/12'>
               <h4 className='mobile sm:desktop text-green-500 uppercase'>
                 {data?.measure?.juridischeHaalbaarheid}
+                
               </h4>
             </div>
           </div>
+
+          
         </div>
       </div>
     </div>
