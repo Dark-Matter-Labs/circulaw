@@ -9,7 +9,7 @@ import JHTooltip from '../components/juridische-houdbaarheid-tooltip';
 import JITooltip from '../components/juridische-invloed-tooltip';
 
 const viewportType = {
-  mobile: 'block md:hidden pb-12 my-4 ',
+  mobile: 'block md:hidden ',
   desktop: 'hidden md:block mb-8 ',
 };
 
@@ -18,7 +18,7 @@ export default function MeasureOverview({ viewport, children, data }) {
 
   return (
     <div className={`${viewportClasses}`}>
-      <div className='bg-black-white-200 rounded-cl h-auto pb-8 max-w-sm'>
+      <div className='bg-black-white-200 rounded-cl h-auto md:pb-8 mx-auto max-w-sm'>
         <div className='px-8 pb-10 sm:pb-0 py-6 block h-auto'>
           {children}
           <div className='container pb-12 sm:pb-1 flex justify-between'>
