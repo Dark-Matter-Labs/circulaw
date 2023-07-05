@@ -5,7 +5,7 @@ import CustomButton from '../components/custom-button';
 
 export default function FeedbackBlock({ title }) {
   return (
-    <div className='bg-gradient-to-t from-[#C7D3C700] to-[#CBE0CB] rounded-cl pb-10 md:max-w-sm'>
+    <div className='bg-gradient-to-t from-[#C7D3C700] to-[#CBE0CB] rounded-cl pb-1 mx-auto md:max-w-sm'>
       <div className='pt-4 px-8 pb-10 sm:pb-0 py-6 block'>
         <h3 className='mobile sm:desktop text-green-800 pb-4'>Help ons CircuLaw te verbeteren</h3>
         <p className='p-base'>Deel met ons: </p>
