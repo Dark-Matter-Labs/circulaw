@@ -28,6 +28,9 @@ export default function FAQPageComponent({ data }) {
                       </h2>
                     </div>
                   )}
+
+                  {/* ADD LOGIC FOR OPEN / CLOSE */}
+
                   {item?.question && (
                     <div>
                       <Disclosure>
@@ -50,67 +53,6 @@ export default function FAQPageComponent({ data }) {
                               </h3>
 
                       
-
-                            </Disclosure.Button>
-                            <Disclosure.Panel className='mb-4 -mt-2'>
-                              <PortableText
-                                value={item.response}
-                                components={FAQPagePTComponents}
-                              />
-                            </Disclosure.Panel>
-                          </>
-                        )}
-                      </Disclosure>
-                    </div>
-                  )}
-                </div>
-              ))}
-            
-            </div>
-
-           <h1 className='mobile sm:desktop text-red-500 py-40'>Option 2</h1> 
-
-            <div className=''>
-              {data.FAQPageContent.map((item) => (
-                <div key={item._key}>
-                  {item?.sectionTitle && (
-                    <div>
-                      <h2 className='mobile sm:desktop text-green-600 pt-6 pb-10'>
-                        {' '}
-                        {item?.sectionTitle}
-                      </h2>
-                    </div>
-                  )}
-                  {item?.question && (
-                    <div>
-                      <Disclosure>
-                        {({ open }) => (
-                          <>
-                            <Disclosure.Button className='w-full border-t border-green-600'>
-                              <h3 className='mobile sm:desktop text-green-600 flex justify-between pt-4 pb-12 text-left w-full break-words'>{item?.question}  
-                              {open === true && 
-                              <span className='h-6 w-6 text-green-600 inline-block relative shrink-0	'>
-                              <MinusIcon
-           
-                              /> </span> }
-                              {open === false && 
-                              <span className='h-6 w-6 text-green-600 inline-block relative shrink-0	'>
-                              <PlusIcon
-                     
-                            /> </span>
-                              }
-
-                              </h3>
-
-                              
-                              {open === false && 
-                              <div className='truncate h-8 first-line:text-black-white-400 -mt-12 mb-12 text-left'>
-                              <PortableText
-                                value={item.response}
-                                components={FAQPagePTComponents}
-                              />
-                              </div>}
-
 
                             </Disclosure.Button>
                             <Disclosure.Panel className='mb-4 -mt-2'>
