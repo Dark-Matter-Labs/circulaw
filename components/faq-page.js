@@ -1,7 +1,7 @@
 import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
 import { FAQPagePTComponents } from '../lib/portable-text/pt-components';
-import { Disclosure } from '@headlessui/react';
+import { Disclosure, Transition } from '@headlessui/react';
 import { PlusIcon, MinusIcon } from '@heroicons/react/outline';
 
 export default function FAQPageComponent({ data }) {
@@ -32,19 +32,21 @@ export default function FAQPageComponent({ data }) {
                   {/* ADD LOGIC FOR OPEN / CLOSE */}
 
                   {item?.question && (
-                    <div>
+                    <div className=''>
+                               
                       <Disclosure>
                         {({ open }) => (
+                      
                           <>
                             <Disclosure.Button className='w-full border-t border-green-600'>
                               <h3 className='mobile sm:desktop text-green-600 flex justify-between pt-4 pb-12  text-left w-full break-words'>{item?.question}  
                               {open === true && 
-                              <span className='h-6 w-6 text-green-600 inline-block relative shrink-0	'>
+                              <span className='h-6 w-6 text-green-600 inline-block relative shrink-0	ml-4'>
                               <MinusIcon
            
                               /> </span> }
                               {open === false && 
-                              <span className='h-6 w-6 text-green-600 inline-block relative shrink-0	'>
+                              <span className='h-6 w-6 text-green-600 inline-block relative shrink-0	ml-4'>
                               <PlusIcon
                      
                             /> </span>
@@ -55,20 +57,33 @@ export default function FAQPageComponent({ data }) {
                       
 
                             </Disclosure.Button>
+                
+                            <Transition
+                             show={open}
+                              enter="transition ease-linear	 duration-500 transform"
+                              enterFrom="opacity-0 -translate-y-12"
+                              enterTo="opacity-100 translate-y-0"
+                              leave="transition ease duration-300 transform"
+                              leaveFrom="opacity-100 translate-y-0"
+                              leaveTo="opacity-0 -translate-y-12"
+      >
                             <Disclosure.Panel className='mb-4 -mt-2'>
                               <PortableText
                                 value={item.response}
                                 components={FAQPagePTComponents}
                               />
                             </Disclosure.Panel>
+                            </Transition>
                           </>
+                     
                         )}
                       </Disclosure>
+                    
                     </div>
                   )}
                 </div>
               ))}
-            
+        
             </div>
           </div>
         </div>
