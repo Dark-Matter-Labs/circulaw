@@ -62,7 +62,7 @@ export default function FAQPageComponent({ data }) {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography as='div'>
+          <Typography as='div' className='w-4/5'>
           <PortableText
               value={item.response}
               components={FAQPagePTComponents}
