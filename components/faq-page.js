@@ -1,10 +1,24 @@
 import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
 import { FAQPagePTComponents } from '../lib/portable-text/pt-components';
-import { Disclosure, Transition } from '@headlessui/react';
 import { PlusIcon, MinusIcon } from '@heroicons/react/outline';
+import { useState } from 'react';
+
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import Typography from '@mui/material/Typography';
+// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 
 export default function FAQPageComponent({ data }) {
+
+  const [expanded, setExpanded] = useState(false);
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+
   return (
     <div className='global-margin pb-8 text-black-white-800'>
       <div className='grid grid-cols-1 w-full justify-center '>
@@ -16,75 +30,51 @@ export default function FAQPageComponent({ data }) {
             <h1 className='lg:block sm:pt-10 py-6 sm:pb-10 mobile sm:desktop text-black-white-800'>
               {data?.pageTitle}
             </h1>
+            <div>
 
-            <div className=''>
-              {data.FAQPageContent.map((item) => (
-                <div key={item._key}>
-                  {item?.sectionTitle && (
-                    <div>
-                      <h2 className='mobile sm:desktop text-green-600 pt-6 pb-20'>
-                        {' '}
-                        {item?.sectionTitle}
-                      </h2>
-                    </div>
-                  )}
 
-                  {/* ADD LOGIC FOR OPEN / CLOSE */}
+    {data.FAQPageContent.map((item, i) => ( 
 
-                  {item?.question && (
-                    <div className=''>
-                               
-                      <Disclosure>
-                        {({ open }) => (
-                      
-                          <>
-                            <Disclosure.Button className='w-full border-t border-green-600'>
-                              <h3 className='mobile sm:desktop text-green-600 flex justify-between pt-4 pb-12  text-left w-full break-words'>{item?.question}  
-                              {open === true && 
-                              <span className='h-6 w-6 text-green-600 inline-block relative shrink-0	ml-4'>
-                              <MinusIcon
+    
+
+      <div key={i}>
+          {item?.sectionTitle && (
+        <div>
+          <h2 className='mobile sm:desktop text-green-500 pt-6 pb-10'>
+            {' '}
+            {item?.sectionTitle}
+          </h2>
+        </div>
+      )}
+
+      {item?.question && 
+      <Accordion  expanded={expanded === `panel_${i}`} onChange={handleChange(`panel_${i}`)} className='border-t pb-12 pt-4 border-green-600 border-b-0 rounded-0 shadow-none my-0' disableGutters={true} square={true}>
+        <AccordionSummary
+          expandIcon={expanded === `panel_${i}` ?  <MinusIcon className='h-5 w-6 text-green-600' /> : <PlusIcon className='h-6 w-6 text-green-600'/>}
+          aria-controls={`panel_${i}_bh-content`}
+          id={`panel_${i}_bh-header`}
+        >
+          <Typography as='h3' className='width-1/3 mobile sm:desktop text-green-600 mr-4'>
+       
+            {item.question}
+            
            
-                              /> </span> }
-                              {open === false && 
-                              <span className='h-6 w-6 text-green-600 inline-block relative shrink-0	ml-4'>
-                              <PlusIcon
-                     
-                            /> </span>
-                              }
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography as='div'>
+          <PortableText
+              value={item.response}
+              components={FAQPagePTComponents}
+            />
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      }
+      </div>
+))}
 
-                              </h3>
-
-                      
-
-                            </Disclosure.Button>
-                
-                            <Transition
-                             show={open}
-                              enter="transition ease-linear	 duration-500 transform"
-                              enterFrom="opacity-0 -translate-y-12"
-                              enterTo="opacity-100 translate-y-0"
-                              leave="transition ease duration-300 transform"
-                              leaveFrom="opacity-100 translate-y-0"
-                              leaveTo="opacity-0 -translate-y-12"
-      >
-                            <Disclosure.Panel className='mb-4 -mt-2'>
-                              <PortableText
-                                value={item.response}
-                                components={FAQPagePTComponents}
-                              />
-                            </Disclosure.Panel>
-                            </Transition>
-                          </>
-                     
-                        )}
-                      </Disclosure>
-                    
-                    </div>
-                  )}
-                </div>
-              ))}
-        
-            </div>
+    </div>
           </div>
         </div>
       </div>
