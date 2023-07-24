@@ -9,6 +9,7 @@ module.exports = {
     './utils/**/*.{js,ts,jsx,tsx}',
     
   ],
+  important: true,
   theme: {
     extend: {
       colors: {
@@ -86,4 +87,5 @@ module.exports = {
     },
   },
   plugins: [require('@tailwindcss/forms')],
+  
 };

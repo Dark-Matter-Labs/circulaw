@@ -48,7 +48,7 @@ export default function FAQPageComponent({ data }) {
       )}
 
       {item?.question && 
-      <Accordion  expanded={expanded === `panel_${i}`} onChange={handleChange(`panel_${i}`)} className='border-t pb-12 pt-4 border-green-600 border-0 rounded-0 shadow-none my-0' disableGutters={true} square={true}>
+      <Accordion  expanded={expanded === `panel_${i}`} onChange={handleChange(`panel_${i}`)} className='border-t pb-12 pt-4 border-green-600 border-0 rounded-0 shadow-none my-0' disableGutters={true} square={true}> 
         <AccordionSummary
           expandIcon={expanded === `panel_${i}` ?  <MinusIcon className='h-5 w-6 text-green-600' /> : <PlusIcon className='h-6 w-6 text-green-600'/>}
           aria-controls={`panel_${i}_bh-content`}
