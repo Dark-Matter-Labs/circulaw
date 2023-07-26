@@ -17,6 +17,8 @@ import link from './objects/link';
 import navItem from './objects/nav-item';
 import dropDown from './objects/drop-down';
 import partner from './objects/partner';
+import faqItem from './objects/faq-item';
+import faqSection from './objects/faq-section';
 
 export const schemaTypes = [
   // DOCUMENT TYPES
@@ -40,4 +42,6 @@ export const schemaTypes = [
   siteConfig,
   dropDown,
   partner,
+  faqItem,
+  faqSection,
 ];
