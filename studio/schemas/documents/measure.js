@@ -1,4 +1,5 @@
 import { VscLaw } from 'react-icons/vsc';
+import { MyCustomStringInput } from '../../components/customString';
 
 export default {
   title: 'Measure',
@@ -73,27 +74,12 @@ export default {
       },
     },
     {
-      title: 'Thema',
-      name: 'thema',
-      type: 'string',
-      description: 'Selecteer het thema waaronder dit instrument valt.',
-      validation: (Rule) => Rule.required(),
-      options: {
-        list: [
-          { title: 'Houtbouw', value: 'houtbouw-stimuleren' }, // need to change to refernece
-          { title: 'Circulaire windturbines', value: 'circulaire-windturbines' }, // need to change to reference
-          { title: 'Matrassen', value: 'circulaire-matrasketen' }, // need to change to reference
-        ], // <-- predefined values - can store these elsewhere if we want
-        layout: 'dropdown',
-      },
-      group: 'overview',
-    },
-    {
       title: 'Transitie-agenda',
       name: 'transitionAgenda',
       type: 'string',
       description:
         'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
+      validation: (Rule) => Rule.required(),
       options: {
         list: [
           { title: 'Biomassa en voedsel', value: 'biomassa-en-voedsel' },
@@ -105,41 +91,53 @@ export default {
         layout: 'dropdown', // <-- defaults to 'dropdown'
       },
     },
+    // add logic here - is this a special or a product group?
+
     {
-      title: 'Productgroep',
-      name: 'productGroup',
+      title: 'Is this measure part of a thema or product group?',
+      name: 'themaOrProductGroup',
       type: 'string',
-      description: 'Productgroep',
+      validation: (Rule) => Rule.required(),
       options: {
         list: [
-          { title: 'Plastic verpakkingen', value: 'plastic-verpakkingen' },
-          { title: 'Plastic (afval) in de bouw', value: 'pastic-afval-in-de-bouw' },
-          { title: 'Landbouwfolie', value: 'landbouwfolie' },
-          {
-            title: 'Plastic verpakkingen en verbruiksartikelen',
-            value: 'plastic-verpakkingen-en-verbruiksartikelen',
-          },
-          { title: 'Chemische producten', value: 'chemische-producten' },
-          { title: 'Textiel (incl. kleding)', value: 'textiel-inc-kleding)' },
-          { title: 'Elektrische apparaten', value: 'elektrische-apparaten' },
-          { title: 'Elektrische apparaten', value: 'elektrische apparaten' },
-          { title: 'Meubels', value: 'meubels' },
-          {
-            title: 'Kunstwerken (gestart met viaducten)',
-            value: 'unstwerken-gestart-met-viaducten',
-          },
-          { title: 'Wegen (gestart met asfalt)', value: 'wegen-gestart-met-asfalt)' },
-          { title: 'Woningen', value: 'woningen' },
-          { title: 'Bedrijfsruimte/kantoren', value: 'bedrijfsruimte-kantoren' },
-          { title: 'Capital Equipment', value: 'capital-equipment' },
-          { title: 'Windparken', value: 'windparken' },
-          { title: 'Zonneparken', value: 'zonneparken' },
-          { title: 'Klimaatinstallaties', value: 'klimaatinstallaties' },
-          { title: 'Matrassen', value: 'matrassen' },
-        ], // <-- predefined values
-        layout: 'dropdown', // <-- defaults to 'dropdown'
+          { title: 'Thema', value: 'theme' },
+          { title: 'Product Group', value: 'productGroup' },
+        ],
+        layout: 'radio',
       },
     },
+
+    {
+      name: 'customString',
+      title: 'Product Group',
+      description: 'Selecteer het product group waaronder dit instrument valt.',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+      hidden: ({ document }) => document.themaOrProductGroup !== 'productGroup',
+      components: {
+        input: MyCustomStringInput,
+      },
+    },
+
+    {
+      title: 'Thema',
+      name: 'thema',
+      type: 'string',
+      description: 'Selecteer het thema waaronder dit instrument valt.',
+      validation: (Rule) => Rule.required(),
+      hidden: ({ document }) => document.themaOrProductGroup !== 'theme',
+
+      options: {
+        list: [
+          { title: 'Houtbouw', value: 'houtbouw-stimuleren' }, // need to change to refernece
+          { title: 'Circulaire windturbines', value: 'circulaire-windturbines' }, // need to change to reference
+          { title: 'Matrassen', value: 'circulaire-matrasketen' }, // need to change to reference
+        ], // <-- predefined values - can store these elsewhere if we want
+        layout: 'dropdown',
+      },
+      group: 'overview',
+    },
+
     // ITEMS ONLY IN OVERVIEW/FILTER
     {
       title: 'R-Ladder',
