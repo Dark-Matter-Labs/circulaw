@@ -1,5 +1,7 @@
 import { Card, Stack, Select } from '@sanity/ui';
 import { useFormValue } from 'sanity';
+import { useCallback } from 'react';
+import { set, unset } from 'sanity'
 
 // should we be making these variables in dutch ?  do other countries have the same structure ?
 const bouw = [
@@ -43,14 +45,23 @@ const kunststoffen = [
   { title: 'Land- en tuinbouwplastic', value: 'land-en-tuinbouwplastic' },
 ];
 
-export const MyCustomStringInput = (props) => {
+export const ProductGroupInput = (props) => {
+  const {elementProps, onChange, value = ''} = props
+
+  const handleChange = (e) => {
+    const nextValue = e.currentTarget.value
+    onChange(nextValue ? set(nextValue) : unset())
+  }
   // this returns the value of product group.
   const transitionAgenda = String(useFormValue(['transitionAgenda']));
   return (
     <>
       <Card padding={0}>
         <Stack>
-          <Select>
+          <Select
+           onChange={handleChange}
+           value={value}
+          >
             {transitionAgenda === 'bouw' &&
               bouw.map((productGrp) => <option>{productGrp.title}</option>)}
             {transitionAgenda === 'consumptiegoederen' &&

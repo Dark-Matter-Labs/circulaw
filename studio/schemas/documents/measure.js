@@ -1,5 +1,5 @@
 import { VscLaw } from 'react-icons/vsc';
-import { MyCustomStringInput } from '../../components/customString';
+import { ProductGroupInput } from '../../components/product-group-input';
 
 export default {
   title: 'Measure',
@@ -108,14 +108,14 @@ export default {
     },
 
     {
-      name: 'customString',
+      name: 'productGroup',
       title: 'Product Group',
       description: 'Selecteer het product group waaronder dit instrument valt.',
       type: 'string',
       validation: (Rule) => Rule.required(),
       hidden: ({ document }) => document.themaOrProductGroup !== 'productGroup',
       components: {
-        input: MyCustomStringInput,
+        input: ProductGroupInput,
       },
     },
 
