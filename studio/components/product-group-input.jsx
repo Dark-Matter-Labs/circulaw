@@ -48,10 +48,10 @@ const kunststoffen = [
 export const ProductGroupInput = (props) => {
   const {elementProps, onChange, value = ''} = props
 
-  const handleChange = (e) => {
-    const nextValue = e.currentTarget.value
+  const handleChange = useCallback((event) => {
+    const nextValue = event.currentTarget.value
     onChange(nextValue ? set(nextValue) : unset())
-  }
+	}, [onChange])
   // this returns the value of product group.
   const transitionAgenda = String(useFormValue(['transitionAgenda']));
   return (
@@ -59,6 +59,7 @@ export const ProductGroupInput = (props) => {
       <Card padding={0}>
         <Stack>
           <Select
+          {...elementProps}
            onChange={handleChange}
            value={value}
           >
