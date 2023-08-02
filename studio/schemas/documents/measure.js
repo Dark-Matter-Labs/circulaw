@@ -82,10 +82,10 @@ export default {
       validation: (Rule) => Rule.required(),
       options: {
         list: [
-          { title: 'Biomassa en voedsel', value: 'biomassa-en-voedsel' },
+          { title: 'Bouw', value: 'bouw' },
+          { title: 'Biomassa en voedsel', value: 'biomassaEnVoedsel' },
           { title: 'Kunststoffen', value: 'kunststoffen' },
           { title: 'Consumptiegoederen', value: 'consumptiegoederen' },
-          { title: 'Bouw', value: 'bouw' },
           { title: 'Maakindustrie', value: 'maakindustrie' },
         ], // <-- predefined values
         layout: 'dropdown', // <-- defaults to 'dropdown'

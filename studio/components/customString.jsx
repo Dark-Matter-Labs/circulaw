@@ -1,33 +1,46 @@
 import { Card, Stack, Select } from '@sanity/ui';
 import { useFormValue } from 'sanity';
 
+// should we be making these variables in dutch ?  do other countries have the same structure ?
 const bouw = [
   { title: '', value: '' }, // placeholder to avoid sanity autoselecting the first.
-  { title: 'Plastic verpakkingen', value: 'plastic-verpakkingen' },
-  { title: 'Plastic (afval) in de bouw', value: 'pastic-afval-in-de-bouw' },
-  { title: 'Landbouwfolie', value: 'landbouwfolie' },
+  { title: 'Woningen', value: 'woningen' },
+  { title: 'Kantoren & bedrijfsruimten', value: 'Kantoren-en-bedrijfsruimten' },
+  { title: 'Kunstwerken & infra', value: 'Kunstwerken-en-infra' },
+  { title: 'Wegen', value: 'wegen' },
+];
+
+const consumptiegoederen = [
+  { title: '', value: '' }, // placeholder to avoid sanity autoselecting the first.
   {
-    title: 'Plastic verpakkingen en verbruiksartikelen',
-    value: 'plastic-verpakkingen-en-verbruiksartikelen',
+    title: 'Elektrische en elektronische apparaten',
+    value: 'Elektrische-en-elektronische-apparaten',
   },
-  { title: 'Chemische producten', value: 'chemische-producten' },
-  { title: 'Textiel (incl. kleding)', value: 'textiel-inc-kleding)' },
+  { title: 'Textiel (incl. kleding)', value: 'Textiel-incl-kleding)' },
+  { title: 'Meubels', value: 'meubels' },
+  { title: 'Verpakkingen en wegwerpproducten', value: 'verpakkingen-en-wegwerpproducten' },
+];
+
+const maakindustrie = [
+  { title: '', value: '' }, // placeholder to avoid sanity autoselecting the first.
+  { title: 'Capital equipment', value: 'capital-equipment' },
+  { title: 'Circulaire windparken', value: 'circulaire-windparken' },
+  { title: 'Circulaire zon- PV systemen', value: 'circulaire-zon-PV-systemen' },
+  { title: 'Circulaire Klimaatinstallaties', value: 'circulaire-klimaatinstallaties' },
+];
+
+const biomassaEnVoedsel = [
+  { title: '', value: '' }, // placeholder to avoid sanity autoselecting the first.
+  { title: 'Plantaardig voedsel', value: 'plantaardig-voedsel' },
+  { title: 'Dierlijk voedsel', value: 'dierlijk-voedsel' },
+  { title: 'Bewerkt voedsel', value: 'bewerkt-voedsel' },
 ];
 
 const kunststoffen = [
   { title: '', value: '' }, // placeholder to avoid sanity autoselecting the first.
-  { title: 'Elektrische apparaten', value: 'elektrische-apparaten' },
-  { title: 'Elektrische apparaten', value: 'elektrische apparaten' },
-  { title: 'Meubels', value: 'meubels' },
-  { title: 'Kunstwerken (gestart met viaducten)', value: 'unstwerken-gestart-met-viaducten' },
-  { title: 'Wegen (gestart met asfalt)', value: 'wegen-gestart-met-asfalt)' },
-  { title: 'Woningen', value: 'woningen' },
-  { title: 'Bedrijfsruimte/kantoren', value: 'bedrijfsruimte-kantoren' },
-  { title: 'Capital Equipment', value: 'capital-equipment' },
-  { title: 'Windparken', value: 'windparken' },
-  { title: 'Zonneparken', value: 'zonneparken' },
-  { title: 'Klimaatinstallaties', value: 'klimaatinstallaties' },
-  { title: 'Matrassen', value: 'matrassen' },
+  { title: 'Plastic verpakkingen', value: 'plastic-verpakkingen' },
+  { title: 'Plastic (afval) in de bouw', value: 'Plastic-afval-in-de-bouw' },
+  { title: 'Land- en tuinbouwplastic', value: 'land-en-tuinbouwplastic' },
 ];
 
 export const MyCustomStringInput = (props) => {
@@ -40,6 +53,12 @@ export const MyCustomStringInput = (props) => {
           <Select>
             {transitionAgenda === 'bouw' &&
               bouw.map((productGrp) => <option>{productGrp.title}</option>)}
+            {transitionAgenda === 'consumptiegoederen' &&
+              consumptiegoederen.map((productGrp) => <option>{productGrp.title}</option>)}
+            {transitionAgenda === 'maakindustrie' &&
+              maakindustrie.map((productGrp) => <option>{productGrp.title}</option>)}
+            {transitionAgenda === 'biomassaEnVoedsel' &&
+              biomassaEnVoedsel.map((productGrp) => <option>{productGrp.title}</option>)}
             {transitionAgenda === 'kunststoffen' &&
               kunststoffen.map((productGrp) => <option>{productGrp.title}</option>)}
           </Select>
