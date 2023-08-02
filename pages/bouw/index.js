@@ -10,7 +10,6 @@ import { client } from '../../lib/sanity';
 import { homePageThemaQuery } from '../../lib/queries';
 
 export default function Bouw({homePageThemaData}) {
-    console.log(homePageThemaData, '')
     return (
 <Layout>
     <TransitionAgendaLayout themeData = {homePageThemaData}>

@@ -32,7 +32,7 @@ const transitionAgendas = ['Bouw', 'Biomassa en voedsel', 'Kunststoffen', 'Consu
                     </h2>
                   </Link>
                 </div>
-                <Link href='/'>
+                <Link href='/bouw'>
                   <p className='p-base block text-black pointer-events-none py-4 w-full'>
                     {agenda}
                   </p>

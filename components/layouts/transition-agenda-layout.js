@@ -3,7 +3,6 @@ import SectionTypes from '../section-types-list'
 
 export default function TransitionAgendaLayout(props) {
     
-    console.log(props.themeData, 'pls')
     const themaData = [props.themeData[0]]
     return (
         <>
