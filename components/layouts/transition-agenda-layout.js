@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import SectionTypes from '../section-types-list'
-
 export default function TransitionAgendaLayout(props) {
-    
     const themaData = [props.themeData[0]]
     return (
         <>
