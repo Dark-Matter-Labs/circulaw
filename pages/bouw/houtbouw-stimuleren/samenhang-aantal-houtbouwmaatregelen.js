@@ -1,6 +1,6 @@
-import Layout from '../../components/layouts/layout';
-import woodIcon from '../../public/icons/woodIcon.svg';
-import SamenhangLayout from '../../components/layouts/samenhang-layout';
+import Layout from '../../../components/layouts/layout';
+import woodIcon from '../../../public/icons/woodIcon.svg';
+import SamenhangLayout from '../../../components/layouts/samenhang-layout';
 
 export default function InfoPage() {
   let url = 'https://circulaw-staging.vercel.app';
