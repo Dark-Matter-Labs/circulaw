@@ -36,7 +36,7 @@ export default function Instrument({ data }) {
             </div>
           )}
         </div>
-        <div className='grid grid-cols-1 sm:grid-cols-3 '>
+        <div className='grid grid-cols-1 md:grid-cols-3 '>
           <MeasureOverview data={data} viewport='mobile' />
           <div className='sm:max-w-3xl pb-20 col-span-2 '>
             <div className='py-4'>
