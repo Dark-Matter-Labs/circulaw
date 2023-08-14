@@ -20,7 +20,7 @@ export default function ThemeLayout({ ...props }) {
               className='z-0'
               priority
             />
-            <div className='global-margin h-[28rem] z-10 pt-10 relative'>
+            <div className='global-margin h-[28rem] z-5 pt-10 relative'>
               <Link
                 className='bg-black-white-200 border rounded-md border-black-white-200 pl-1 pr-2 py-0.5 breadcrumb text-green-500'
                 href='/'
@@ -88,14 +88,14 @@ export default function ThemeLayout({ ...props }) {
           </div>
 
           <div className='h-56 max-w-[380px] mx-auto flex items-center justify-center'>
-            <div className='flex items-center justify-center h-full w-full rounded-cl relative z-10 object-cover'>
+            <div className='flex items-center justify-center h-full w-full rounded-cl relative z-0 object-cover'>
               <Image
                 src={urlFor(themaData?.heroImageMobile).url()}
                 alt={`${themaData.themaName} + 'hero image'`}
                 fill
                 className='rounded-cl absolute'
               />
-              <div className='w-full h-full thema-hero-gradient z-10 rounded-cl'></div>
+              <div className='w-full h-full thema-hero-gradient z-0 rounded-cl'></div>
             </div>
           </div>
         </div>
@@ -106,8 +106,8 @@ export default function ThemeLayout({ ...props }) {
               <h2 className='mobile sm:desktop'>{themaData?.overviewsTitle}</h2>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-14 justify-items-center sm:h-auto md:h-[76rem] lg:h-[38rem]'>
-              <ThemeCard props={props} type='list' />
               <ThemeCard props={props} type='samenhang' />
+              <ThemeCard props={props} type='list' />
               <ThemeCard props={props} type='waarvoor' />
             </div>
           </div>

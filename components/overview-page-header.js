@@ -7,7 +7,7 @@ export default function OverviewPageHeader({ props, page }) {
   return (
     <>
       <div>
-        <div className='flex justify-between items-center pt-8 sm:pt-0 pb-8'>
+        <div className='flex flex-col sm:flex-row sm:justify-between sm:items-center pt-8 sm:pt-0 pb-8'>
           <div className='breadcrumb uppercase'>
             <Link className='underline link-interaction' href='/'>
               Home &nbsp;
@@ -19,7 +19,7 @@ export default function OverviewPageHeader({ props, page }) {
               </span>
             </Link>
           </div>
-          <div className='hidden sm:block float-right'>
+          <div className='block sm:float-right'>
             <MeasureLinksDropdown type={props.thema} page={page} />
           </div>
         </div>

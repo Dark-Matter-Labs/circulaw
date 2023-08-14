@@ -1,8 +1,6 @@
 import Layout from '../components/layouts/layout';
 import SectionTypes from '../components/section-types-list';
 import { client } from '../lib/sanity';
-import { Link as ScrollLink } from 'react-scroll';
-import { ArrowUpIcon } from '@heroicons/react/outline';
 
 import {
   aboutSectionQuerie,
@@ -13,7 +11,6 @@ import {
 import NewThemaSuggestion from '../components/new-thema-suggestion';
 import NewsItems from '../components/news-items';
 import HomePageAboutSection from '../components/home-page-about-section';
-import CustomButton from '../components/custom-button';
 
 export default function Index({
   newsItems,
@@ -24,12 +21,12 @@ export default function Index({
 }) {
   return (
     <Layout page='home' homePageHeader={homePageHeader} footerText={footerText}>
-      <div className='bg-black-white-200 sm:pb-14' name='thema'>
-        <div className='global-margin'>
+      <div className='bg-black-white-200 sm:pb-14 -z-50' name='thema'>
+        <div className='global-margin -z-20'>
           <h1 className='pt-8 mobile sm:desktop text-green-600 border-black-white-600 border-b pb-4'>
             Thema’s
           </h1>
-          <div className='pt-4 sm:pt-8'>
+          <div className='pt-4 sm:pt-8 -z-20'>
             <SectionTypes type='home' themaCards={homePageThemaData} />
           </div>
         </div>
@@ -49,16 +46,6 @@ export default function Index({
             <div className='pt-4 sm:pt-8'>
               <NewsItems newsItems={newsItems} />
             </div>
-          </div>
-          <div className='block sm:hidden w-full flex items-center justify-center pt-8'>
-            <CustomButton color='whiteBackground'>
-              <ScrollLink to='top' smooth={true}>
-                <span>
-                  Top
-                  <ArrowUpIcon className='h-4 w-4 inline-block ml-1' />
-                </span>
-              </ScrollLink>
-            </CustomButton>
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ export default function LangSwitch() {
   const router = useRouter();
   return (
     <div
-      className={`hidden sm:block flex justify-center items-center min-w-[10%] pt-2 pr-4 ${
+      className={`hidden sm:block flex justify-center items-center min-w-[10%] pt-2 ${
         router.pathname === '/en' || router.pathname === '/' ? 'text-black-white-200' : 'text-black'
       }`}
     >

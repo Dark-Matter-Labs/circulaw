@@ -1,38 +1,30 @@
 export default {
-  name: 'englishPage',
-  title: 'English Page',
-  type: 'document',
+  title: 'FAQ Item',
+  name: 'faqItem',
+  type: 'object',
+  description: 'Add a new faq item to the faq page',
   fields: [
     {
-      name: 'englishContent',
-      title: 'Inhoud',
-      description: 'Voer hier de tekst in (geef zelf subkoppen, alinea-indeling enz. aan).',
+      title: 'Question',
+      name: 'question',
+      type: 'string',
+      validation: (Rule) => Rule.required().max(110),
+      description: 'Enter the question',
+    },
+    {
+      title: 'Response',
+      name: 'response',
       type: 'array',
       of: [
-        {
-          type: 'greenBox',
-        },
         {
           type: 'pdfBlock',
         },
         {
-          type: 'smallPara',
-        },
-        {
           type: 'block',
-          of: [
-            {
-              type: 'dropDown',
-            },
-          ],
+          styles: [{ title: 'normal', value: 'normal' }],
           lists: [
             { title: 'Bullet', value: 'bullet' },
             { title: 'Number', value: 'number' },
-          ],
-          styles: [
-            { title: 'H1', value: 'h1' },
-            { title: 'H2', value: 'h2' },
-            { title: 'normal', value: 'normal' },
           ],
           marks: {
             decorators: [],

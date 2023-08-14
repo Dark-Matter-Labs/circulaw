@@ -9,6 +9,7 @@ module.exports = {
     './utils/**/*.{js,ts,jsx,tsx}',
     
   ],
+  important: true,
   theme: {
     extend: {
       colors: {
@@ -63,7 +64,7 @@ module.exports = {
         17: '96px'
       },
       screens: {
-        lgNav: '1360px',
+        lgNav: '910px',
       },
       spacing: {
         '128': '32rem',
@@ -86,4 +87,5 @@ module.exports = {
     },
   },
   plugins: [require('@tailwindcss/forms')],
+  
 };

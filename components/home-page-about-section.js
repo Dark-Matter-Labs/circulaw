@@ -136,7 +136,7 @@ export default function HomePageAboutSection({ aboutSection }) {
         <div className='lg:col-span-3'>
           <div className='flex items-center justify-center block sm:hidden'>
             <div className='relative h-[11rem] w-48 pt-4'>
-              <Image src={aboutImage} fill alt='image for wat circulaw' />
+              <Image src={aboutImage} alt='image for wat circulaw' />
             </div>
           </div>
           <p className='p-lg py-5 max-w-4xl hidden sm:block'>{aboutSection?.aboutSectionText}</p>
@@ -151,7 +151,7 @@ export default function HomePageAboutSection({ aboutSection }) {
           </span>
         </div>
         <div className='lg:col-span-2 lg:justify-self-end'>
-          <div className='relative w-96 h-[22rem] ml-4 lg:-mt-32 flex items-center justify-center hidden sm:block'>
+          <div className='relative w-96 h-[22rem] ml-4 lg:-mt-32 flex items-center justify-center hidden sm:block z-0'>
             <Image src={aboutImage} fill alt='image for wat circulaw' />
           </div>
         </div>
