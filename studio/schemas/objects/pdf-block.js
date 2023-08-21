@@ -4,12 +4,13 @@ export default {
   name: 'pdfBlock',
   type: 'file',
   validation: (rule) =>
-  rule.custom((value) => {
-    console.log(value)
-    if (!value.asset) {
-      return 'You must add a pdf in order to publish'
-    }
-    return true}),
+    rule.custom((value) => {
+      console.log(value);
+      if (!value.asset) {
+        return 'You must add a pdf in order to publish';
+      }
+      return true;
+    }),
   fields: [
     {
       title: 'Leidraad Titel',
