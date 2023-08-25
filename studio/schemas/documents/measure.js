@@ -24,6 +24,10 @@ export default {
       name: 'filter',
       title: 'Filter Content',
     },
+    {
+      name: 'samenhang',
+      title: 'NEW SAMENHANG',
+    },
   ],
   // FIELDS
   fields: [
@@ -112,7 +116,13 @@ export default {
       title: 'Product Group',
       description: 'Selecteer het product group waaronder dit instrument valt.',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      // checks if measure is part of thema or product group and makes product group required only if it had been previously selected. 
+      validation: (Rule) =>
+        Rule.custom((currentValue, { parent }) => {
+          return parent?.themaOrProductGroup === "productGroup" && !currentValue
+            ? "A value is required."
+            : true
+        }),
       hidden: ({ document }) => document.themaOrProductGroup !== 'productGroup',
       components: {
         input: ProductGroupInput,
@@ -387,6 +397,42 @@ export default {
       type: 'array',
       of: [{ type: 'block', styles: [{ title: 'normal', value: 'normal' }] }],
       group: ['copy', 'table'],
+    },
+
+
+    
+    // SAMENHANG NEW METADATA
+    {
+      title: 'Level 1',
+      name: 'level1',
+      type: 'array',
+      of: [{type: 'string'}],
+      options: {
+        list: [
+          { title: 'beleidsinstrumenten en vergunningen', value: 'beleidsinstrumenten-en-vergunningen' },
+          { title: 'verkoop', value: 'verkoop' },
+          { title: 'inkoop', value: 'inkoop' },
+          { title: 'financiering', value: 'financiering' },
+          { title: 'fiscaal', value: 'fiscaal' },
+        ],
+        layout: 'grid',
+      },
+      group: 'samenhang'
+    },
+    {
+      title: 'Level 2',
+      name: 'level2',
+      type: 'array',
+      of: [{type: 'string'}],
+      options: {
+        list: [
+          { title: 'Beleid', value: 'beleid' },
+          { title: 'Strategie', value: 'strategie' },
+          { title: 'Contracten', value: 'contracten' },
+        ],
+        layout: 'grid',
+      },
+      group: 'samenhang'
     },
   ],
 };
