@@ -6,15 +6,15 @@ import WindmillIcon from '../public/icons/windmill.png';
 import MatrassenIcon from '../public/icons/matressIcon.svg';
 import { Fragment } from 'react';
 
-export default function PolicyList(props) {
-  let lawData = [];
-  if (props.data) {
-    lawData = props.data;
-  }
+export default function PolicyList({laws}) {
+  
+  const thema = laws[0].thema
+  const transitionAgenda = laws[0].transitionAgenda
+
   return (
     <>
-      {lawData.map((law) => (
-        <Link href={'/measures/' + law.slug.current} key={law.titel}>
+      {laws.map((law) => (
+        <Link href={`/${transitionAgenda}/${thema}/instruments/` + law.slug.current} key={law.titel}>
           <div className='block sm:ml-0 pb-8 sm:pb-10'>
             <div className=''>
               <div className='inline-block flex justify-start items-center'>
