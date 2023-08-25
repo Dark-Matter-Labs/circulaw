@@ -7,12 +7,13 @@
 import Layout from '../../components/layouts/layout';
 import TransitionAgendaLayout from '../../components/layouts/transition-agenda-layout';
 import { client } from '../../lib/sanity';
-import { homePageThemaQuery } from '../../lib/queries';
+import { homePageThemaQuery, bouwTranisionAgendaQuery } from '../../lib/queries';
+// update homepage thema query to get only themas within the 
 
-export default function Bouw({homePageThemaData}) {
+export default function Bouw({homePageThemaData, bouwTransitionAgenda}) {
     return (
 <Layout>
-    <TransitionAgendaLayout themeData = {homePageThemaData}>
+    <TransitionAgendaLayout themeData = {homePageThemaData} bouwTransitionAgenda={bouwTransitionAgenda}>
 
 
     </TransitionAgendaLayout>
@@ -24,9 +25,11 @@ export default function Bouw({homePageThemaData}) {
 
 export async function getStaticProps() {
     const homePageThemaData = await client.fetch(homePageThemaQuery);
+    const bouwTransitionAgenda = await client.fetch(bouwTranisionAgendaQuery)
     return {
       props: {
         homePageThemaData,
+        bouwTransitionAgenda
       },
       revalidate: 1,
     };
