@@ -4,7 +4,6 @@ import { complexPortableTextComponents } from '../../lib/portable-text/pt-compon
 
 
 export default function TransitionAgendaLayout({themaCardData, transitionAgendaData}) {
-    console.log(transitionAgendaData.pageObjects)
     return (
         <>
         <div className="global-margin">
@@ -21,7 +20,6 @@ export default function TransitionAgendaLayout({themaCardData, transitionAgendaD
             <div className='py-10'>
                 {transitionAgendaData?.pageObjects.map((object) => (
                     <>
-                    {console.log(object.blockTitle)}
                     <h2 className='mobile sm:desktop py-10'>{object?.blockTitle}</h2>
                     <PortableText value={object?.complexPortableTextBloclk} components={complexPortableTextComponents}/>            
                     </>

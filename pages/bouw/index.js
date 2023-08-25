@@ -14,7 +14,6 @@ import { getThemaCardData, getTransitionAgendaData } from '../../lib/queries';
 const transtionAgenda = 'bouw'
 
 export default function Bouw({themaCardData, transitionAgendaData}) {
-  console.log(transitionAgendaData, 'hello')
   return (
 <Layout>
     <TransitionAgendaLayout themaCardData={themaCardData} transitionAgendaData={transitionAgendaData}>
