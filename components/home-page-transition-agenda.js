@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/outline';
+// dummy component to delete. 
 
 
 
