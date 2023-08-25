@@ -57,7 +57,7 @@ export default {
         options: {
           list: [
             { title: 'Bouw', value: 'bouw' },
-            { title: 'Biomassa en voedsel', value: 'biomassaEnVoedsel' },
+            { title: 'Biomassa en voedsel', value: 'biomassa-en-voedsel' }, // using - as it matches the slug of the transition agenda
             { title: 'Kunststoffen', value: 'kunststoffen' },
             { title: 'Consumptiegoederen', value: 'consumptiegoederen' },
             { title: 'Maakindustrie', value: 'maakindustrie' },
