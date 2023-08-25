@@ -20,9 +20,8 @@ import OverviewPageHeader from '../overview-page-header';
 // creating objects for persisting values
 const useSelectedState = createPersistedState('selected');
 
-
 export default function MeasuresLayout({ ...props }) {
-  const data = props?.instruments
+  const data = props?.instruments;
   // creating references to access child component functions
   const wettelijkFilterRef = useRef();
   const rechtsgebiedFilterRef = useRef();

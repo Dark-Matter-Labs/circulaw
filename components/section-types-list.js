@@ -4,7 +4,6 @@ import { ArrowRightIcon } from '@heroicons/react/outline';
 import { urlFor } from '../lib/sanity';
 
 export default function SectionTypes({ themaCards }) {
-  console.log(themaCards, 'card data')
   return (
     <>
       <div className='hidden sm:block'>

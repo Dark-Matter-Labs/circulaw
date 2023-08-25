@@ -47,24 +47,24 @@ export default {
         slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
       },
     },
-      {
-        title: 'Transitie-agenda',
-        name: 'transitionAgenda',
-        type: 'string',
-        description:
-          'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
-        validation: (Rule) => Rule.required(),
-        options: {
-          list: [
-            { title: 'Bouw', value: 'bouw' },
-            { title: 'Biomassa en voedsel', value: 'biomassa-en-voedsel' }, // using - as it matches the slug of the transition agenda
-            { title: 'Kunststoffen', value: 'kunststoffen' },
-            { title: 'Consumptiegoederen', value: 'consumptiegoederen' },
-            { title: 'Maakindustrie', value: 'maakindustrie' },
-          ], // <-- predefined values
-          layout: 'dropdown', // <-- defaults to 'dropdown'
-        },
+    {
+      title: 'Transitie-agenda',
+      name: 'transitionAgenda',
+      type: 'string',
+      description:
+        'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
+      validation: (Rule) => Rule.required(),
+      options: {
+        list: [
+          { title: 'Bouw', value: 'bouw' },
+          { title: 'Biomassa en voedsel', value: 'biomassa-en-voedsel' }, // using - as it matches the slug of the transition agenda
+          { title: 'Kunststoffen', value: 'kunststoffen' },
+          { title: 'Consumptiegoederen', value: 'consumptiegoederen' },
+          { title: 'Maakindustrie', value: 'maakindustrie' },
+        ], // <-- predefined values
+        layout: 'dropdown', // <-- defaults to 'dropdown'
       },
+    },
     {
       title: 'Thema intro',
       name: 'themaSubtitle',

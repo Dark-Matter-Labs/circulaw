@@ -6,7 +6,7 @@ import { FaLanguage, FaHandshake, FaQuestion } from 'react-icons/fa';
 import { BsCircle } from 'react-icons/bs';
 import { BiNews } from 'react-icons/bi';
 import { AiOutlineHome } from 'react-icons/ai';
-import { MdOutlineViewAgenda } from 'react-icons/md'
+import { MdOutlineViewAgenda } from 'react-icons/md';
 
 export const Structure = (S) =>
   S.list()

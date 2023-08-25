@@ -4,7 +4,7 @@ import IconWood from '../../../../public/icons/woodIcon.svg';
 import { client } from '../../../../lib/sanity';
 import { houtbouwQueries, getListPageData } from '../../../../lib/queries';
 
-const thema = 'houtbouw-stimuleren'
+const thema = 'houtbouw-stimuleren';
 
 export default function Measures({ numberOfInstruments, instruments }) {
   return (
@@ -17,7 +17,7 @@ export default function Measures({ numberOfInstruments, instruments }) {
         introPara={`We hebben ${numberOfInstruments} kansrijke instrumenten gevonden die je kunt inzetten om de houtbouwtransitie te versnellen. Sommige van deze instrumenten zijn al eerder toegepast, andere nog niet. Ga aan de slag! Met jouw ervaringen help je ook anderen weer verder.`}
         icon={IconWood}
         searchTitle='Zoek in houtbouw stimuleren'
-        instruments = {instruments}
+        instruments={instruments}
       />
     </Layout>
   );
@@ -26,6 +26,6 @@ export default function Measures({ numberOfInstruments, instruments }) {
 export async function getStaticProps() {
   // can change this to len(instruments)
   const numberOfInstruments = await client.fetch(houtbouwQueries.houtbouwLength);
-  const instruments = await client.fetch(getListPageData(thema))
+  const instruments = await client.fetch(getListPageData(thema));
   return { props: { numberOfInstruments, instruments }, revalidate: 1 };
 }

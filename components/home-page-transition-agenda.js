@@ -1,11 +1,15 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-// dummy component to delete. 
-
-
+// dummy component to delete.
 
 export default function TransitionAgendas() {
-const transitionAgendas = ['Bouw', 'Biomassa en voedsel', 'Kunststoffen', 'Consumptiegoederen', 'Maakindustrie']
+  const transitionAgendas = [
+    'Bouw',
+    'Biomassa en voedsel',
+    'Kunststoffen',
+    'Consumptiegoederen',
+    'Maakindustrie',
+  ];
 
   return (
     <>
@@ -19,9 +23,7 @@ const transitionAgendas = ['Bouw', 'Biomassa en voedsel', 'Kunststoffen', 'Consu
               key={agenda}
               className='relative drop-shadow-sm bg-white w-full rounded-cl h-auto min-h-[25rem]'
             >
-              <div className='object-cover rounded-cl w-full max-h-[200px]'>
-               
-              </div>
+              <div className='object-cover rounded-cl w-full max-h-[200px]'></div>
               <div className='group block w-full p-4 bg-white rounded-cl'>
                 <div className='inline-block'>
                   <Link href='/bouw'>
@@ -39,17 +41,15 @@ const transitionAgendas = ['Bouw', 'Biomassa en voedsel', 'Kunststoffen', 'Consu
                   </p>
                 </Link>
                 <div className='group flex justify-end w-full pb-4 pr-4 bg-white absolute inset-x-0 bottom-0 right-0 rounded-cl'>
-                    <div className='h-12 w-12 rounded-full flex items-center justify-center border-2 border-green-600 bg-transparent hover:bg-green-200 text-green-600 active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white self-end'>
-                      <Link href='/'>
-                        <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
-                      </Link>
-                    </div>
-                
+                  <div className='h-12 w-12 rounded-full flex items-center justify-center border-2 border-green-600 bg-transparent hover:bg-green-200 text-green-600 active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white self-end'>
+                    <Link href='/'>
+                      <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </li>
           ))}
-    
         </ul>
       </div>
       <div className='block sm:hidden'>
@@ -57,9 +57,7 @@ const transitionAgendas = ['Bouw', 'Biomassa en voedsel', 'Kunststoffen', 'Consu
           <Link key={agenda} href='/'>
             <div className='h-24 w-full rounded-cl bg-black-white-100 shadow my-6'>
               <div className='flex items-center justify-start'>
-                <div className='h-24 w-24 relative'>
-                  
-                </div>
+                <div className='h-24 w-24 relative'></div>
                 <div className='text-black-white-800 pl-4'>
                   <h3 className='mobile sm:desktop'>{agenda}</h3>
                   <ArrowRightIcon

@@ -34,7 +34,6 @@ export const schemaTypes = [
   newsItem,
   transitionAgenda,
 
-
   // OBJECTS
   greenBox,
   pdfBlock,
