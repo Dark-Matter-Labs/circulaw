@@ -1,22 +1,20 @@
-// import Link from 'next/link'
 import SectionTypes from '../section-types-list'
-export default function TransitionAgendaLayout(props) {
-    const themaData = [props.themeData[0]]
-    const bouwTransitionAgenda = props?.bouwTransitionAgenda
-    // this needs to be generic and not bouw related
-    console.log(themaData, 'check')
+
+
+
+export default function TransitionAgendaLayout({themaCardData, transitionAgendaData}) {
     return (
         <>
         <div className="global-margin">
             <div className=" pt-20 pb-20">
-                <h1 className="mobile sm:desktop">{bouwTransitionAgenda?.transitionAgendaTitle}</h1>
-                <h2 className='mobile sm:desktop'>{bouwTransitionAgenda?.subtitle}</h2>
+                <h1 className="mobile sm:desktop">{transitionAgendaData?.transitionAgendaTitle}</h1>
+                <h2 className='mobile sm:desktop'>{transitionAgendaData?.subtitle}</h2>
             </div>
             <h2 className='mobile sm:desktop py-10'>
-                Bouw Themas and Specials
+                {transitionAgendaData?.transitionAgendaTitle} Themas and Specials
             </h2>
             <div className='py-10'>
-            <SectionTypes themaCards={themaData}/>
+            <SectionTypes themaCards={themaCardData}/>
             </div>
             <div className='py-10'>
                 <h2 className='mobile sm:desktop py-10'>European Law</h2>               
