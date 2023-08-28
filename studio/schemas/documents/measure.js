@@ -116,12 +116,12 @@ export default {
       title: 'Product Group',
       description: 'Selecteer het product group waaronder dit instrument valt.',
       type: 'string',
-      // checks if measure is part of thema or product group and makes product group required only if it had been previously selected. 
+      // checks if measure is part of thema or product group and makes product group required only if it had been previously selected.
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
-          return parent?.themaOrProductGroup === "productGroup" && !currentValue
-            ? "A value is required."
-            : true
+          return parent?.themaOrProductGroup === 'productGroup' && !currentValue
+            ? 'A value is required.'
+            : true;
         }),
       hidden: ({ document }) => document.themaOrProductGroup !== 'productGroup',
       components: {
@@ -399,31 +399,20 @@ export default {
       group: ['copy', 'table'],
     },
 
-
-    
     // SAMENHANG NEW METADATA
     {
-      title: 'Level 1',
-      name: 'level1',
-      type: 'array',
-      of: [{type: 'string'}],
-      options: {
-        list: [
-          { title: 'beleidsinstrumenten en vergunningen', value: 'beleidsinstrumenten-en-vergunningen' },
-          { title: 'verkoop', value: 'verkoop' },
-          { title: 'inkoop', value: 'inkoop' },
-          { title: 'financiering', value: 'financiering' },
-          { title: 'fiscaal', value: 'fiscaal' },
-        ],
-        layout: 'grid',
-      },
-      group: 'samenhang'
+      title: 'beleidsinstrumenten en vergunningen',
+      name: 'beleidsinstrumentenEnVergunningen',
+      type: 'boolean',
+      initialValue: false,
+      group: 'samenhang',
     },
     {
-      title: 'Level 2',
-      name: 'level2',
+      title: 'beleidsinstrumenten en vergunningen sub category',
+      name: 'beleidsinstrumentenEnVergunningenSubCategory',
       type: 'array',
-      of: [{type: 'string'}],
+      hidden: ({ document }) => document.beleidsinstrumentenEnVergunningen === false,
+      of: [{ type: 'string' }],
       options: {
         list: [
           { title: 'Beleid', value: 'beleid' },
@@ -432,7 +421,103 @@ export default {
         ],
         layout: 'grid',
       },
-      group: 'samenhang'
+      group: 'samenhang',
+    },
+
+    {
+      title: 'verkoop',
+      name: 'verkoop',
+      type: 'boolean',
+      initialValue: false,
+      group: 'samenhang',
+    },
+    {
+      title: 'verkoop sub category',
+      name: 'verkoopSubCategory',
+      type: 'array',
+      hidden: ({ document }) => document.verkoop === false,
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Beleid', value: 'beleid' },
+          { title: 'Strategie', value: 'strategie' },
+          { title: 'Contracten', value: 'contracten' },
+        ],
+        layout: 'grid',
+      },
+      group: 'samenhang',
+    },
+
+    {
+      title: 'inkoop',
+      name: 'inkoop',
+      type: 'boolean',
+      initialValue: false,
+      group: 'samenhang',
+    },
+
+    {
+      title: 'inkoop sub category',
+      name: 'vinkoopSubCategory', // remo
+      type: 'array',
+      hidden: ({ document }) => document.inkoop === false,
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Beleid', value: 'beleid' },
+          { title: 'Strategie', value: 'strategie' },
+          { title: 'Contracten', value: 'contracten' },
+        ],
+        layout: 'grid',
+      },
+      group: 'samenhang',
+    },
+
+    {
+      title: 'financiering',
+      name: 'financiering',
+      type: 'boolean',
+      initialValue: false,
+      group: 'samenhang',
+    },
+    {
+      title: 'financiering sub category',
+      name: 'financieringSubCategory',
+      type: 'array',
+      hidden: ({ document }) => document.financiering === false,
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Beleid', value: 'beleid' },
+          { title: 'Strategie', value: 'strategie' },
+          { title: 'Contracten', value: 'contracten' },
+        ],
+        layout: 'grid',
+      },
+      group: 'samenhang',
+    },
+    {
+      title: 'fiscaal',
+      name: 'fiscaal',
+      type: 'boolean',
+      initialValue: false,
+      group: 'samenhang',
+    },
+    {
+      title: 'fiscaal sub category',
+      name: 'fiscaalSubCategory',
+      type: 'array',
+      hidden: ({ document }) => document.fiscaal === false,
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Beleid', value: 'beleid' },
+          { title: 'Strategie', value: 'strategie' },
+          { title: 'Contracten', value: 'contracten' },
+        ],
+        layout: 'grid',
+      },
+      group: 'samenhang',
     },
   ],
 };
