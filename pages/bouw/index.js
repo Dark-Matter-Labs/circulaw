@@ -8,8 +8,7 @@ import TransitionAgendaLayout from '../../components/layouts/transition-agenda-l
 import { client } from '../../lib/sanity';
 import { getThemaCardData, getTransitionAgendaData } from '../../lib/queries';
 
-
-// need to add breadcrumb on this page. Not sure if we want the HOME option as it was on the thema page. 
+// need to add breadcrumb on this page. Not sure if we want the HOME option as it was on the thema page.
 const transtionAgenda = 'bouw';
 
 export default function Bouw({ themaCardData, transitionAgendaData }) {
