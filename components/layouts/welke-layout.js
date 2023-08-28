@@ -4,10 +4,8 @@ import Xarrow, { useXarrow } from 'react-xarrows';
 import OverviewPageHeader from '../overview-page-header';
 
 export default function WelkeLayout({ ...props }) {
-
-  console.log(props, 'welke layout')
+  console.log(props, 'welke layout');
   // title, thema, transitionAgenda, icon, page
-
 
   const allRegionLaws = props.allRegionLaws;
   const provLaws = props.provLaws;

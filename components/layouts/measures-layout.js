@@ -649,7 +649,13 @@ export default function MeasuresLayout({ ...props }) {
       </div>
 
       <div>
-        <OverviewPageHeader title={props.title} icon = {props.icon} thema = {props.thema} transitionAgenda = {props.instruments[0].transitionAgenda} page='list' />
+        <OverviewPageHeader
+          title={props.title}
+          icon={props.icon}
+          thema={props.thema}
+          transitionAgenda={props?.instruments[0]?.transitionAgenda}
+          page='list'
+        />
         <div className='hidden sm:block max-w-3xl pt-2 mb-2 sm:mb-20'>
           <p className='p-lg'>
             {props.introPara}

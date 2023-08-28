@@ -3,8 +3,8 @@ import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import MeasureLinksDropdown from './measure-links-dropdown';
 
-export default function OverviewPageHeader({title, thema, transitionAgenda, icon, page}) {
-  console.log(icon, title)
+export default function OverviewPageHeader({ title, thema, transitionAgenda, icon, page }) {
+  console.log(icon, title);
   return (
     <>
       <div>

@@ -2,15 +2,19 @@ import { ArrowRightIcon } from '@heroicons/react/outline';
 import OverviewPageHeader from '../overview-page-header';
 
 export default function SamenhangLayout({ ...props }) {
-  console.log(props, 'samenhang layout')
-  // title, icon, thema, transitionAgenda page 
+  // title, icon, thema, transitionAgenda page
 
   return (
     <>
       <div className='global-margin mt-8'>
-        <OverviewPageHeader title={props.title} icon = {props.icon} thema = {props.thema} transitionAgenda='' props={props} page='samenhang' />
-
-
+        <OverviewPageHeader
+          title={props.title}
+          icon={props.icon}
+          thema={props.thema}
+          transitionAgenda=''
+          props={props}
+          page='samenhang'
+        />
         <div className='grid grid-cols-1 sm:grid-cols-3 mt-10 sm:justify-items-end mb-10 sm:mb-0'>
           <div className='col-span-2'>
             <p className=' p-lg text-black-white-800 pb-6'>{props.p1}</p>

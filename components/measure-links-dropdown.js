@@ -21,7 +21,7 @@ const links = {
 };
 
 export default function MeasureLinksDropdown({ page, type, transitionAgenda }) {
-  console.log(transitionAgenda)
+  console.log(transitionAgenda);
   const router = useRouter();
   // add on click close to close the disclosure.
   if (page === 'list') {
