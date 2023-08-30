@@ -17,17 +17,23 @@ function getSamenhangData(thema, category, subCategory) {
       titel,
       ${category},
       ${subCategory},
+      overheidslaag,
+      "slug": slug.current,
     }
     `,
     strategie: `*[_type == "measure" && thema == "${thema}" && ${category} == true && "strategie" in ${subCategory}][]{
       titel,
       ${category},
       ${subCategory},
+      overheidslaag,
+      "slug": slug.current,
     }`,
     contracten: `*[_type == "measure" && thema == "${thema}" && ${category} == true && "contracten" in ${subCategory}][]{
       titel,
       ${category},
       ${subCategory},
+      overheidslaag,
+      "slug": slug.current
     }`,
   };
   return queries;
@@ -93,7 +99,12 @@ export default function InfoPage({
           <div className='hidden sm:grid col-span-1 grid-rows-5 gap-4'>
             <ul>
               {tabCategories.map((cat) => (
-                <li key={cat.name} className='h-44 border border-green-800'>
+                <li
+                  key={cat.name}
+                  className={`h-44 border  border-none mr-8 ${
+                    selected === cat.name ? 'bg-green-100' : 'bg-green-400'
+                  }`}
+                >
                   <button className='w-full h-full' onClick={() => setSelected(cat.name)}>
                     <h3 className='desktop p-4'>{cat.title}</h3>
                   </button>
@@ -185,18 +196,4 @@ export async function getStaticProps() {
     },
     revalidate: 1,
   };
-}
-
-{
-  /* filter option for govt level ? although it is multiple filters here - assuming we do not need number of instruments. 
-if (selected.rLadder.length > 0) {
-      let temparr = [];
-      for (let i = 0; i < filteredLaws.length; i++) {
-        if (filteredLaws[i].rLadder.some((rValue) => selected.rLadder.includes(rValue)) === true)
-          temparr.push(filteredLaws[i]);
-      }
-      filteredLaws = temparr;
-    }
-  
-*/
 }
