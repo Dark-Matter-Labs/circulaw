@@ -4,7 +4,6 @@ import { ArrowRightIcon } from '@heroicons/react/outline';
 import MeasureLinksDropdown from './measure-links-dropdown';
 
 export default function OverviewPageHeader({ title, thema, transitionAgenda, icon, page }) {
-  console.log(icon, title);
   return (
     <>
       <div>
@@ -20,7 +19,7 @@ export default function OverviewPageHeader({ title, thema, transitionAgenda, ico
               </span>
             </Link>
             <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />{' '}
-            <Link href={`/${transitionAgenda}/${thema?.toLowerCase().replace(/ /g, '-')}`}>
+            <Link href={`/${transitionAgenda}/${thema}`}>
               <span className='underline inline-block uppercase link-interaction'>
                 {thema?.replace('-', ' ')}
               </span>
