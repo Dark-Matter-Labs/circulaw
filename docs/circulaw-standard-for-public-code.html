@@ -4,7 +4,7 @@
 <!-- SPDX-FileCopyrightText: 2022-2023 by The Foundation for Public Code <info@publiccode.net>, https://standard.publiccode.net/AUTHORS -->
 <head>
 <meta charset="UTF-8">
-<title>________ and the Standard for Public Code</title>
+<title>CircuLaw and the Standard for Public Code</title>
 <style>
 html, body {
 font-family: Mulish;
@@ -45,7 +45,7 @@ background-color: #f6f8fa;
 </style>
 </head>
 <body>
-<h1>CircuLaw and the Standard for Public Code version 0.7.0</h1>
+<h1>CircuLaw and the Standard for Public Code version <span class="standard-version">0.7.1</span></h1>
 
 Link to commitment to meet the Standard for Public Code:
 
@@ -173,11 +173,11 @@ Continuous integration tests SHOULD validate that the source code and the policy
 
 </table>
 
-<h2><a href="https://standard.publiccode.net/criteria/create-reusable-and-portable-code.html">Create reusable and portable code</a></h2>
+<h2><a href="https://standard.publiccode.net/criteria/make-the-codebase-reusable-and-portable.html">Make the codebase reusable and portable</a></h2>
 
 &#9744;<!-- &#9745; --> criterion met.
 
-<table id="create-reusable-and-portable-code" style="width:100%">
+<table id="make-the-codebase-reusable-and-portable" style="width:100%">
 <tr><th>Meets</th><th>Requirement</th><th style="width:25%">Notes and links</th></tr>
 <tr>
 <td>
@@ -196,7 +196,7 @@ Currently tied to the Dutch context (and modular within it), but there is ambiti
 
 </td>
 <td>
-The codebase MUST be independent from any secret, undisclosed, proprietary or non-open licensed code or services for execution and understanding.
+The codebase MUST be independent from any secret, undisclosed, proprietary or non-open licensed software or services for execution and understanding.
 </td>
 <td>
 We are using some known blockers: Hotjar, GetForm as they are paid and non-open licensed services which we will remove and replace.
@@ -244,7 +244,7 @@ Multiple <a href="https://www.circulaw.nl/about/Wie-maken-CircuLaw">partners</a>
 
 </td>
 <td>
-Configuration SHOULD be used to make code adapt to context specific needs.
+Configuration SHOULD be used to make source code adapt to context specific needs.
 </td>
 <td>
 Currently created for one context but aspiration to make it configurable.
@@ -268,7 +268,7 @@ The codebase SHOULD be localizable.
 
 </td>
 <td>
-Code and its documentation SHOULD NOT contain situation-specific information.
+Source code and its documentation SHOULD NOT contain situation-specific information.
 </td>
 <td>
 
@@ -292,7 +292,7 @@ Codebase modules SHOULD be documented in such a way as to enable reuse in codeba
 
 </td>
 <td>
-The code SHOULD NOT require services or platforms available from only a single vendor.
+The software SHOULD NOT require services or platforms available from only a single vendor.
 </td>
 <td>
 Once the proprietary pieces are removed this will be met.
@@ -636,7 +636,7 @@ Documenting the process can be clearer.
 Ok
 </td>
 <td>
-Reviews SHOULD include running both the code and the tests of the codebase.
+Reviews SHOULD include running both the software and the tests of the codebase.
 </td>
 <td>
 The process to review and test the code exists however the scope of the testing can be broadened. 
@@ -748,7 +748,7 @@ Documenting the objectives of the codebase for the general public is OPTIONAL.
 
 </td>
 <td>
-All of the functionality of the codebase, policy as well as source, MUST be described in language clearly understandable for those that understand the purpose of the code.
+All of the functionality of the codebase, policy as well as source code, MUST be described in language clearly understandable for those that understand the purpose of the codebase.
 </td>
 <td>
 
@@ -760,7 +760,7 @@ All of the functionality of the codebase, policy as well as source, MUST be desc
 
 </td>
 <td>
-The documentation of the codebase MUST contain a description of how to install and run the source code.
+The documentation of the codebase MUST contain a description of how to install and run the software.
 </td>
 <td>
 The Getting Started section needs to have dependencies, otherwise good.
@@ -877,7 +877,7 @@ All codebase documentation MUST be in English.
 
 </td>
 <td>
-All code MUST be in English, except where policy is machine interpreted as code.
+All source code MUST be in English, except where policy is machine interpreted as code.
 </td>
 <td>
 We will create a glossary for Dutch and legal instrument specific terms in the codebase.
@@ -1157,7 +1157,7 @@ Testing policy and documentation for style and broken links is OPTIONAL.
 
 </td>
 <td>
-Testing the code by using examples in the documentation is OPTIONAL.
+Testing the software by using examples in the documentation is OPTIONAL.
 </td>
 <td>
 Once we add the examples, we will link them into test script.
@@ -1177,7 +1177,7 @@ Once we add the examples, we will link them into test script.
 Ok
 </td>
 <td>
-All code and documentation MUST be licensed such that it may be freely reusable, changeable and redistributable.
+All source code and documentation MUST be licensed such that it may be freely reusable, changeable and redistributable.
 </td>
 <td>
 
@@ -1201,7 +1201,7 @@ Software source code MUST be licensed under an <a href="https://spdx.org/license
 Ok
 </td>
 <td>
-All code MUST be published with a license file.
+All source code MUST be published with a license file.
 </td>
 <td>
 <a href="https://github.com/Dark-Matter-Labs/circulaw/blob/main/LICENSE.md">LICENSE-md</a>
@@ -1237,7 +1237,7 @@ We do not hold any copyright yet but are in the process to get one and we will d
 
 </td>
 <td>
-Having multiple licenses for different types of code and documentation is OPTIONAL.
+Having multiple licenses for different types of source code and documentation is OPTIONAL.
 </td>
 <td>
 
