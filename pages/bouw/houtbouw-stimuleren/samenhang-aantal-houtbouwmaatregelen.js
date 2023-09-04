@@ -5,39 +5,12 @@ import woodIcon from '../../../public/icons/woodIcon.svg';
 import SamenhangLayout from '../../../components/layouts/samenhang-layout';
 import { client } from '../../../lib/sanity';
 import SamenhagInstruments from '../../../components/samenhang-instruments';
-
+import { getSamenhangData } from '../../../lib/queries';
 // definging thema as that way we can keep the one getSamenhangData function for all samenhang pages.
 // thema can also be product group.
 const thema = 'houtbouw-stimuleren';
 
-function getSamenhangData(thema, category, subCategory) {
-  const queries = {
-    beleid: `
-    *[_type == "measure" && thema == "${thema}" && ${category} == true && "beleid" in ${subCategory}][]{
-      titel,
-      ${category},
-      ${subCategory},
-      overheidslaag,
-      "slug": slug.current,
-    }
-    `,
-    strategie: `*[_type == "measure" && thema == "${thema}" && ${category} == true && "strategie" in ${subCategory}][]{
-      titel,
-      ${category},
-      ${subCategory},
-      overheidslaag,
-      "slug": slug.current,
-    }`,
-    contracten: `*[_type == "measure" && thema == "${thema}" && ${category} == true && "contracten" in ${subCategory}][]{
-      titel,
-      ${category},
-      ${subCategory},
-      overheidslaag,
-      "slug": slug.current
-    }`,
-  };
-  return queries;
-}
+
 
 const tabCategories = [
   {
