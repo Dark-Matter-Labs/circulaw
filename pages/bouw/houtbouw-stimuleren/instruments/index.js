@@ -12,7 +12,7 @@ export default function Measures({ numberOfInstruments, instruments }) {
       <MeasuresLayout
         totalNumberOfLaws={numberOfInstruments}
         title='Houtbouw stimuleren'
-        thema={thema} // must be the same as value in cms
+        thema={thema}
         heading='Instrumenten om de inzet van hout in de bouw te bevorderen'
         introPara={`We hebben ${numberOfInstruments} kansrijke instrumenten gevonden die je kunt inzetten om de houtbouwtransitie te versnellen. Sommige van deze instrumenten zijn al eerder toegepast, andere nog niet. Ga aan de slag! Met jouw ervaringen help je ook anderen weer verder.`}
         icon={IconWood}

@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 const links = {
   'houtbouw-stimuleren': [
     '/bouw/houtbouw-stimuleren/samenhang-aantal-houtbouwmaatregelen',
-    '/bouw/houtbouw-stimuleren/instruments', // maybe need to change this to instrumenten?
+    '/bouw/houtbouw-stimuleren/instruments',
     '/bouw/houtbouw-stimuleren/welke-overheid',
   ],
   'circulaire-windturbines': [
