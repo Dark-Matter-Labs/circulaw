@@ -5,8 +5,8 @@ import { useRouter } from 'next/router';
 const links = {
   'houtbouw-stimuleren': [
     '/bouw/houtbouw-stimuleren/samenhang-aantal-houtbouwmaatregelen',
-    '/measures/houtbouw',
-    '/houtbouw-stimuleren/welke-overheid',
+    '/bouw/houtbouw-stimuleren/instruments', // maybe need to change this to instrumenten?
+    '/bouw/houtbouw-stimuleren/welke-overheid',
   ],
   'circulaire-windturbines': [
     '/circulaire-windturbines/samenhang-maatregelen',
@@ -20,8 +20,7 @@ const links = {
   ],
 };
 
-export default function MeasureLinksDropdown({ page, type, transitionAgenda }) {
-  console.log(transitionAgenda);
+export default function MeasureLinksDropdown({ page, type }) {
   const router = useRouter();
   // add on click close to close the disclosure.
   if (page === 'list') {
