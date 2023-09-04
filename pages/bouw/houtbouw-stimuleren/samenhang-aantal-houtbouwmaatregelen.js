@@ -39,7 +39,6 @@ function getSamenhangData(thema, category, subCategory) {
   return queries;
 }
 
-// need to fix vinkoop as it is meant to be inkoop.
 const tabCategories = [
   {
     name: 'beleidsinstrumentenEnVergunningen',
@@ -47,7 +46,7 @@ const tabCategories = [
     subCategory: 'beleidsinstrumentenEnVergunningenSubCategory',
   },
   { name: 'verkoop', title: 'Verkoop', subCategory: 'verkoopSubCategory' },
-  { name: 'inkoop', title: 'Inkoop', subCategory: 'vinkoopSubCategory' },
+  { name: 'inkoop', title: 'Inkoop', subCategory: 'inkoopSubCategory' },
   { name: 'financiering', title: 'Financiering', subCategory: 'financieringSubCategory' },
   { name: 'fiscaal', title: 'Fiscaal', subCategory: 'fiscaalSubCategory' },
 ];
