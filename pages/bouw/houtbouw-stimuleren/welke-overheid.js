@@ -13,6 +13,7 @@ export default function InfoPage({ ...props }) {
       <WelkeLayout
         thema={thema}
         title='Welke overheid kan welk instrument gebruiken voor houtbouw?'
+        transitionAgenda='bouw'
         icon={woodIcon}
         p1='Je kunt op rijksniveau regels bepalen voor het hergebruik van producten. Ook kan het Rijk financieel bijdragen aan doelen die worden gesteld in een omgevingsvisie en/of een programma over houtbouw.'
         p2='Provincies kunnen houtbouw integreren in hun omgevingsverordening door de houtopstanden in het gebied te vergroten. Het vaststellen van omgevingswaarden (instrumenten uit de Omgevingswet die provincies en gemeenten kunnen inzetten om beleid uit de omgevingsvisie uit te voeren),  kan hierbij helpen. Zo zou je een maximumwaarde voor CO₂ kunnen vaststellen.'

@@ -3,9 +3,7 @@ import Image from 'next/image';
 import Xarrow, { useXarrow } from 'react-xarrows';
 import OverviewPageHeader from '../overview-page-header';
 
-export default function WelkeLayout({ ...props }) {
-  // title, thema, transitionAgenda, icon, page
-
+export default function WelkeLayout({ title, thema, transitionAgenda, icon, ...props }) {
   const allRegionLaws = props.allRegionLaws;
   const provLaws = props.provLaws;
   const gemLaws = props.gemLaws;
@@ -49,8 +47,8 @@ export default function WelkeLayout({ ...props }) {
 
   return (
     <div onLoad={useXarrow()}>
-      <div className='global-margin mt-8 max-w-2xl'>
-        <OverviewPageHeader props={props} page='welke' />
+      <div className='global-margin mt-8'>
+        <OverviewPageHeader props={props} page='welke' icon={icon} transitionAgenda={transitionAgenda} thema={thema} title={title} />
         {/* DYNAMIC IMAGE */}
         <div className='mb-20 mt-5 sm:mt-20 hidden sm:block'>
           <div className='flex grid-cols-3 items-start justify-center'>

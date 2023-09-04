@@ -1,7 +1,7 @@
 // create new page in cms and front end.
 // Product Chain layout.
 // on product chain pages we need following components.
-//
+
 
 import Layout from '../../components/layouts/layout';
 import TransitionAgendaLayout from '../../components/layouts/transition-agenda-layout';
