@@ -7,7 +7,6 @@ import { getListPageData } from '../../../../lib/queries';
 const thema = 'houtbouw-stimuleren';
 
 export default function Measures({ instruments }) {
-  console.log(instruments)
   return (
     <Layout title='CircuLaw - Houtbouw stimuleren'>
       <MeasuresLayout
