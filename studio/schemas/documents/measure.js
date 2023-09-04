@@ -26,7 +26,7 @@ export default {
     },
     {
       name: 'samenhang',
-      title: 'NEW SAMENHANG',
+      title: 'Samenhang',
     },
   ],
   // FIELDS
@@ -412,11 +412,12 @@ export default {
       name: 'beleidsinstrumentenEnVergunningenSubCategory',
       type: 'array',
       validation: (Rule) =>
-      Rule.custom((currentValue, { parent }) => {
-        return parent?.beleidsinstrumentenEnVergunningen === true && typeof(currentValue) === 'undefined'
-          ? 'A value is required.'
-          : true;
-      }),
+        Rule.custom((currentValue, { parent }) => {
+          return parent?.beleidsinstrumentenEnVergunningen === true &&
+            typeof currentValue === 'undefined'
+            ? 'A value is required.'
+            : true;
+        }),
       hidden: ({ document }) => document.beleidsinstrumentenEnVergunningen === false,
       of: [{ type: 'string' }],
       options: {
@@ -442,11 +443,11 @@ export default {
       name: 'verkoopSubCategory',
       type: 'array',
       validation: (Rule) =>
-      Rule.custom((currentValue, { parent }) => {
-        return parent?.verkoop === true && typeof(currentValue) === 'undefined'
-          ? 'A value is required.'
-          : true;
-      }),
+        Rule.custom((currentValue, { parent }) => {
+          return parent?.verkoop === true && typeof currentValue === 'undefined'
+            ? 'A value is required.'
+            : true;
+        }),
       hidden: ({ document }) => document.verkoop === false,
       of: [{ type: 'string' }],
       options: {
@@ -459,8 +460,6 @@ export default {
       },
       group: 'samenhang',
     },
-
-
 
     {
       title: 'inkoop',
@@ -475,11 +474,11 @@ export default {
       name: 'inkoopSubCategory', // remo
       type: 'array',
       validation: (Rule) =>
-      Rule.custom((currentValue, { parent }) => {
-        return parent?.inkoop === true && typeof(currentValue) === 'undefined'
-          ? 'A value is required.'
-          : true;
-      }),
+        Rule.custom((currentValue, { parent }) => {
+          return parent?.inkoop === true && typeof currentValue === 'undefined'
+            ? 'A value is required.'
+            : true;
+        }),
       hidden: ({ document }) => document.inkoop === false,
       of: [{ type: 'string' }],
       options: {
@@ -505,11 +504,11 @@ export default {
       name: 'financieringSubCategory',
       type: 'array',
       validation: (Rule) =>
-      Rule.custom((currentValue, { parent }) => {
-        return parent?.financiering === true && typeof(currentValue) === 'undefined'
-          ? 'A value is required.'
-          : true;
-      }),
+        Rule.custom((currentValue, { parent }) => {
+          return parent?.financiering === true && typeof currentValue === 'undefined'
+            ? 'A value is required.'
+            : true;
+        }),
       hidden: ({ document }) => document.financiering === false,
       of: [{ type: 'string' }],
       options: {
@@ -534,11 +533,11 @@ export default {
       name: 'fiscaalSubCategory',
       type: 'array',
       validation: (Rule) =>
-      Rule.custom((currentValue, { parent }) => {
-        return parent?.fiscaal === true && typeof(currentValue) === 'undefined'
-          ? 'A value is required.'
-          : true;
-      }),
+        Rule.custom((currentValue, { parent }) => {
+          return parent?.fiscaal === true && typeof currentValue === 'undefined'
+            ? 'A value is required.'
+            : true;
+        }),
       hidden: ({ document }) => document.fiscaal === false,
       of: [{ type: 'string' }],
       options: {
