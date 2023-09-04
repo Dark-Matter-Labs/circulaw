@@ -21,7 +21,10 @@ import OverviewPageHeader from '../overview-page-header';
 const useSelectedState = createPersistedState('selected');
 
 export default function MeasuresLayout({ ...props }) {
+  
   const data = props?.instruments;
+  const transitionAgenda = props?.instruments[0]?.transitionAgenda
+
   // creating references to access child component functions
   const wettelijkFilterRef = useRef();
   const rechtsgebiedFilterRef = useRef();
@@ -653,7 +656,7 @@ export default function MeasuresLayout({ ...props }) {
           title={props.title}
           icon={props.icon}
           thema={props.thema}
-          transitionAgenda={props?.instruments[0]?.transitionAgenda}
+          transitionAgenda={transitionAgenda}
           page='list'
         />
         <div className='hidden sm:block max-w-3xl pt-2 mb-2 sm:mb-20'>

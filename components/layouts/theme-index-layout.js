@@ -7,6 +7,7 @@ import { urlFor } from '../../lib/sanity';
 
 export default function ThemeLayout({ ...props }) {
   const themaData = props.thema;
+  console.log()
   return (
     <>
       <div>
@@ -22,10 +23,16 @@ export default function ThemeLayout({ ...props }) {
             />
             <div className='global-margin h-[28rem] z-5 pt-10 relative'>
               <Link
-                className='bg-black-white-200 border rounded-md border-black-white-200 pl-1 pr-2 py-0.5 breadcrumb text-green-500'
+                className='bg-black-white-200 border rounded-l-md border-black-white-200 pl-1 pr-2 py-0.5 breadcrumb text-green-500'
                 href='/'
               >
                 &lt; Home
+              </Link>
+              <Link
+                className='bg-black-white-200 border rounded-r-md border-black-white-200 pl-1 pr-2 py-0.5 breadcrumb text-green-500'
+                href={`/${props?.thema?.transitionAgenda}`}
+              >
+                &lt; {props?.thema?.transitionAgenda}
               </Link>
               {/** * THIS LINK NEEDS UPDATING transition agenda > thema ? ***/}
               <div className='grid col-span-8 grid-cols-8 sm:pl-12 sm:pt:12 md:pl-24 lg:pl-36 pb-14 pt-14 w-4/5'>

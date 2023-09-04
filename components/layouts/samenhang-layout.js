@@ -3,7 +3,7 @@ import OverviewPageHeader from '../overview-page-header';
 
 export default function SamenhangLayout({ ...props }) {
   // title, icon, thema, transitionAgenda page
-
+  console.log(props)
   return (
     <>
       <div className='global-margin mt-8'>
@@ -11,7 +11,7 @@ export default function SamenhangLayout({ ...props }) {
           title={props.title}
           icon={props.icon}
           thema={props.thema}
-          transitionAgenda=''
+          transitionAgenda={props.transitionAgenda}
           props={props}
           page='samenhang'
         />
