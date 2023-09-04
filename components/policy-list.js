@@ -7,8 +7,9 @@ import MatrassenIcon from '../public/icons/matressIcon.svg';
 import { Fragment } from 'react';
 
 export default function PolicyList({ laws }) {
-  const thema = laws[0].thema;
-  const transitionAgenda = laws[0].transitionAgenda;
+  
+  const thema = laws[0]?.thema;
+  const transitionAgenda = laws[0]?.transitionAgenda;
 
   return (
     <>
