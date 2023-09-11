@@ -58,7 +58,7 @@ export default {
       name: 'subtitel',
       type: 'text',
       description: 'Subtitel en/of intro-tekst  -  komt direct onder de titel.',
-      validation: (Rule) => Rule.max(130),
+      validation: (Rule) => Rule.max(300),
     },
     {
       title: 'Slug',
