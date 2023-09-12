@@ -15,6 +15,7 @@ module.exports = {
       colors: {
         'black-white-100': '#FDFDFD',
         'black-white-200': '#F8FBF8',
+        'black-white-250': '#F0F0F0',
         'black-white-300': '#DAD8D8',
         'black-white-400': '#BFC0BF',
         'black-white-500': '#A2A3A2',
@@ -83,6 +84,7 @@ module.exports = {
       },
       borderRadius: {
           'cl': '10px',
+          'clSm': '5px'
       },
     },
   },
