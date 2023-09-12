@@ -3,7 +3,6 @@ import JHTooltip from './juridische-houdbaarheid-tooltip';
 import JITooltip from './juridische-invloed-tooltip';
 
 export default function InstrumentMetaData({ data }) {
-  console.log(data);
   return (
     <div className='sm:grid-cols-1 md:grid-cols-1 hidden sm:grid'>
       <div className='h-auto border-b border-t mb-6 flex flex-row justify-between items-center w-11/12 max-w-[854px] justify-self-center '>
