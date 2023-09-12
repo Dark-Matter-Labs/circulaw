@@ -51,7 +51,7 @@ export default function Instrument({ data }) {
         <div className='grid grid-cols-1'>
           {data?.measure?.subtitel && (
             <div className='w-11/12 justify-self-center max-w-[760px]'>
-              <h2 className='lg:block p-lg sm:p-xl pb-10'> {data?.measure?.subtitel}</h2>
+              <h2 className='lg:block p-lg sm:p-xl mb-4'> {data?.measure?.subtitel}</h2>
             </div>
           )}
         </div>
@@ -59,7 +59,7 @@ export default function Instrument({ data }) {
         {/* Content */}
         <div className='grid grid-cols-1'>
           <div className='pb-20 w-11/12 justify-self-center max-w-[760px]'>
-            <div className='py-4'>
+            <div className=''>
               <PortableText value={data?.measure?.content} components={instrumentPTComponents} />
             </div>
             <MeasureTable data={data} />
