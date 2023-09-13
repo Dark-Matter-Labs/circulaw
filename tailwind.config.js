@@ -84,7 +84,7 @@ module.exports = {
       },
       borderRadius: {
           'cl': '10px',
-          'clSm': '5px'
+          'clSm': '4px'
       },
     },
   },
