@@ -49,7 +49,6 @@
     "react-scroll": "^1.8.7",
     "react-social-icons": "^5.15.0",
     "react-xarrows": "^2.0.2",
-    "sanity-plugin-vercel-deploy": "^3.3.4",
     "swr": "^1.0.1",
     "use-persisted-state": "^0.3.3"
   },
