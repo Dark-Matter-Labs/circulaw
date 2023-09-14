@@ -19,20 +19,20 @@ export default function Instrument({ data }) {
   return (
     <div className='bg-black-white-100 relative'>
       {/* can move this into a component */}
-      <Popover className='fixed inset-y-1/3 right-0 z-10 h-96 w-16 hidden md:block'>
+      <Popover className='fixed inset-y-1/3 right-0 z-10 h-96 w-16 hidden sm:block'>
         {({ open }) => (
           <>
             <Popover.Button
               className={`${
                 open ? '-translate-x-56' : ''
-              } bg-green-500 rounded-l-clSm h-full w-full flex-col items-center justify-between text-black-white-100`}
+              } bg-green-500 rounded-l-clSm h-full w-full flex flex-col items-center justify-between text-black-white-100`}
             >
               <ArrowLeftIcon
                 className={`${
                   open ? 'rotate-180 transform' : ''
                 } h-6 w-6 text-black-white-100 mt-10`}
               />
-              <div className='[writing-mode:vertical-lr] rotate-180 flex items-center justify-between pt-10 p-lg'>
+              <div className='[writing-mode:vertical-lr] rotate-180 p-lg pt-10'>
                 Help ons circulaw te verbeteren
               </div>
             </Popover.Button>
