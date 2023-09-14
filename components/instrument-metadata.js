@@ -99,7 +99,7 @@ export default function InstrumentMetaData({ data }) {
       </div>
       {/* MOBILE */}
       <div className='flex flex-col sm:hidden justify-center mb-4'>
-        <div className='flex flex-row justify-between h-20 border-t border-b border-black-white-500'>
+        <div className='flex flex-row justify-between h-[4.5rem] py-1 border-t border-b border-black-white-500'>
           <div className='flex flex-col justify-center'>
             <h4 className='mobile sm:desktop py-1 text-black-white-600'>Juridische houdbaarheid</h4>
             <div className='flex items-center'>
@@ -148,7 +148,7 @@ export default function InstrumentMetaData({ data }) {
             </div>
           </div>
         </div>
-        <div className='flex h-20 border-b border-black-white-500'>
+        <div className='flex h-[4.5rem] py-1 border-b border-black-white-500'>
           <div className='flex flex-col justify-center'>
             <h4 className='mobile sm:desktop py-1 text-black-white-600'>Overheidslaag</h4>
             <h5 className='mobile sm:desktop text-green-500'>
@@ -161,7 +161,7 @@ export default function InstrumentMetaData({ data }) {
             </h5>
           </div>
         </div>
-        <div className='flex h-20 border-b border-black-white-500'>
+        <div className='flex h-[4.5rem] py-1 border-b border-black-white-500'>
           <div className='flex flex-col justify-center'>
             <h4 className='mobile sm:desktop py-1 text-black-white-600'>R-ladder</h4>
             <div className='flex items-center'>
