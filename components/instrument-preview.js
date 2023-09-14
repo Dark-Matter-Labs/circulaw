@@ -5,7 +5,6 @@ import { ArrowLeftIcon } from '@heroicons/react/outline';
 import { Popover } from '@headlessui/react';
 import { usePreview } from '../lib/sanity.preview';
 
-
 import MeasureTable from '../components/measure-table';
 import SocialButtons from '../components/social-buttons';
 import { instrumentPTComponents } from '../lib/portable-text/pt-components';
@@ -47,7 +46,10 @@ export default function Instrument({ query, queryParams }) {
                     </li>
                   </ul>
                 </div>
-                <Link className='' href={{ pathname: '/feedback', query: { instrument: data?.measure?.titel } }}>
+                <Link
+                  className=''
+                  href={{ pathname: '/feedback', query: { instrument: data?.measure?.titel } }}
+                >
                   <CustomButton color='greenBackground'>Ik deel mijn kennis </CustomButton>
                 </Link>
               </div>
@@ -76,7 +78,7 @@ export default function Instrument({ query, queryParams }) {
           <div className='sm:w-11/12 max-w-[760px] sm:justify-self-center flex items-center'>
             {/* NOT GOOD TO HAVE H4 BEFORE H1 ??? */}
             <h4 className='uppercase mobile sm:desktop text-green-500'>
-              {data.measure.thema.replace('-', ' ')}
+              {data?.measure?.thema.replace('-', ' ')}
             </h4>
 
             {/* this will need to be added once samenhang structure is confirmed */}

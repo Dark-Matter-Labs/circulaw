@@ -38,6 +38,7 @@ export async function getStaticProps({ params, preview = false }) {
     return { props: { preview, data: { slug } } };
   }
   const measure = await client.fetch(measureQuery, slug);
+  console.log(measure)
   return {
     props: { preview, data: { measure, slug } },
     revalidate: 1,
