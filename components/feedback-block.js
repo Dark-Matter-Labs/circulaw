@@ -1,3 +1,5 @@
+// UNUSED COMPONENT
+
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
