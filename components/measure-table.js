@@ -27,7 +27,7 @@ export default function MeasureTable({ data }) {
             )}
           </div>
         </div>
-        <table className='table-fixed col-span-6 sm:col-span-4 -m-3 sm:m-0'>
+        <table className='table-fixed col-span-6 sm:col-span-4 sm:m-0'>
           <tbody>
             <tr className='my-10 border-b boder-black-white-300 border-t'>
               <td className='w-1/3 py-1.5 p-base'>Rechtsgebied</td>
