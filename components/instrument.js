@@ -18,7 +18,7 @@ export default function Instrument({ data }) {
   const router = useRouter();
   return (
     <div className='bg-black-white-100 relative'>
-      {/* can move this into a component also */}
+      {/* can move this into a component */}
       <Popover className='fixed inset-y-1/3 right-0 z-10 h-96 w-16 hidden md:block'>
         {({ open }) => (
           <>
@@ -58,8 +58,8 @@ export default function Instrument({ data }) {
       </Popover>
 
       <div className='global-margin sm:pt-10 '>
-        <div className='grid grid-cols-1 content-center mb-8'>
-          <div className='sm:col-span-12 row-span-1 h-12 mt-4 w-11/12 max-w-[854px] justify-self-center'>
+        <div className='grid grid-cols-1 sm:content-center mb-8'>
+          <div className='row-span-1 h-12 mt-4 sm:w-11/12 max-w-[854px] sm:justify-self-center'>
             {/* BREADCRUMB */}
             <button type='button' onClick={() => router.back()}>
               <span className='breadcrumb text-green-600 flex justify-center items-center underline'>
@@ -74,14 +74,11 @@ export default function Instrument({ data }) {
         </div>
 
         <div className='grid grid-cols-1'>
-          <div className='w-11/12 max-w-[760px] justify-self-center flex items-center'>
-           
-           
+          <div className='sm:w-11/12 max-w-[760px] sm:justify-self-center flex items-center'>
             {/* NOT GOOD TO HAVE H4 BEFORE H1 ??? */}
             <h4 className='uppercase mobile sm:desktop text-green-500'>
               {data.measure.thema.replace('-', ' ')}
             </h4>
-
 
             {/* this will need to be added once samenhang structure is confirmed */}
             {/*
@@ -90,7 +87,7 @@ export default function Instrument({ data }) {
             </div> */}
           </div>
 
-          <div className='w-11/12 max-w-[760px] justify-self-center '>
+          <div className='sm:w-11/12 max-w-[760px] sm:justify-self-center '>
             <h1 className='lg:block sm:pt-4 pb-6 sm:pb-10 mobile sm:desktop'>
               {data?.measure?.titel}
             </h1>
@@ -102,7 +99,7 @@ export default function Instrument({ data }) {
         {/* Subtitle */}
         <div className='grid grid-cols-1'>
           {data?.measure?.subtitel && (
-            <div className='w-11/12 justify-self-center max-w-[760px]'>
+            <div className='sm:w-11/12 sm:justify-self-center max-w-[760px]'>
               <h2 className='lg:block p-lg sm:p-xl mb-4'> {data?.measure?.subtitel}</h2>
             </div>
           )}
@@ -110,7 +107,7 @@ export default function Instrument({ data }) {
 
         {/* Content */}
         <div className='grid grid-cols-1'>
-          <div className='pb-20 w-11/12 justify-self-center max-w-[760px]'>
+          <div className='pb-20 sm:w-11/12 sm:justify-self-center max-w-[760px]'>
             <div className=''>
               <PortableText value={data?.measure?.content} components={instrumentPTComponents} />
             </div>
