@@ -14,7 +14,6 @@ import CustomButton from './custom-button';
 // import FeedbackBlock from './feedback-block';
 
 export default function Instrument({ data }) {
-  const title = data.measure.titel;
   const router = useRouter();
   return (
     <div className='bg-black-white-100 relative'>
@@ -48,7 +47,7 @@ export default function Instrument({ data }) {
                     </li>
                   </ul>
                 </div>
-                <Link className='' href={{ pathname: '/feedback', query: { instrument: title } }}>
+                <Link className='' href={{ pathname: '/feedback', query: { instrument: data?.measure?.titel } }}>
                   <CustomButton color='greenBackground'>Ik deel mijn kennis </CustomButton>
                 </Link>
               </div>
