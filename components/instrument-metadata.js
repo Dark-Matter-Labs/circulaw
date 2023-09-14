@@ -21,10 +21,10 @@ export default function InstrumentMetaData({ data }) {
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
                 >
-                  <circle cx='12' cy='15' r='12' fill='#BFC0BF' />
+                 <circle cx='12' cy='15' r='12' fill='#676868' />
                   <path
                     d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
-                    fill='#1F2223'
+                    fill='#FDFDFD'
                   />
                 </svg>
               </JHTooltip>
@@ -45,10 +45,10 @@ export default function InstrumentMetaData({ data }) {
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
                 >
-                  <circle cx='12' cy='15' r='12' fill='#BFC0BF' />
+                   <circle cx='12' cy='15' r='12' fill='#676868' />
                   <path
                     d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
-                    fill='#1F2223'
+                    fill='#FDFDFD'
                   />
                 </svg>
               </JITooltip>
@@ -85,11 +85,11 @@ export default function InstrumentMetaData({ data }) {
                     xmlns='http://www.w3.org/2000/svg'
                     className='ml-2'
                   >
-                    <circle cx='12' cy='15' r='12' fill='#BFC0BF' />
-                    <path
-                      d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
-                      fill='#1F2223'
-                    />
+                    <circle cx='12' cy='15' r='12' fill='#676868' />
+                  <path
+                    d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
+                    fill='#FDFDFD'
+                  />
                   </svg>
                 </RTooltip>
               </div>
@@ -98,7 +98,7 @@ export default function InstrumentMetaData({ data }) {
         </div>
       </div>
       {/* MOBILE */}
-      <div className='flex flex-col sm:hidden global-margin justify-center'>
+      <div className='flex flex-col sm:hidden justify-center mb-4'>
         <div className='flex flex-row justify-between h-20 border-t border-b border-black-white-500'>
           <div className='flex flex-col justify-center'>
             <h4 className='mobile sm:desktop py-1 text-black-white-600'>Juridische houdbaarheid</h4>
@@ -114,10 +114,10 @@ export default function InstrumentMetaData({ data }) {
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
                 >
-                  <circle cx='12' cy='15' r='12' fill='#BFC0BF' />
+                  <circle cx='12' cy='15' r='12' fill='#676868' />
                   <path
                     d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
-                    fill='#1F2223'
+                    fill='#FDFDFD'
                   />
                 </svg>
               </JHTooltip>
@@ -138,10 +138,10 @@ export default function InstrumentMetaData({ data }) {
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
                 >
-                  <circle cx='12' cy='15' r='12' fill='#BFC0BF' />
+                   <circle cx='12' cy='15' r='12' fill='#676868' />
                   <path
                     d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
-                    fill='#1F2223'
+                    fill='#FDFDFD'
                   />
                 </svg>
               </JITooltip>
@@ -182,11 +182,11 @@ export default function InstrumentMetaData({ data }) {
                     xmlns='http://www.w3.org/2000/svg'
                     className='ml-2'
                   >
-                    <circle cx='12' cy='15' r='12' fill='#BFC0BF' />
-                    <path
-                      d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
-                      fill='#1F2223'
-                    />
+                    <circle cx='12' cy='15' r='12' fill='#676868' />
+                  <path
+                    d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
+                    fill='#FDFDFD'
+                  />
                   </svg>
                 </RTooltip>
               </div>
