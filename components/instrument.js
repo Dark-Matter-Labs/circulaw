@@ -4,14 +4,11 @@ import { PortableText } from '@portabletext/react';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
 import { Popover } from '@headlessui/react';
 
-// import MeasureOverview from '../components/measure-overview';
 import MeasureTable from '../components/measure-table';
 import SocialButtons from '../components/social-buttons';
 import { instrumentPTComponents } from '../lib/portable-text/pt-components';
 import InstrumentMetaData from './instrument-metadata';
 import CustomButton from './custom-button';
-
-// import FeedbackBlock from './feedback-block';
 
 export default function Instrument({ data }) {
   const router = useRouter();
