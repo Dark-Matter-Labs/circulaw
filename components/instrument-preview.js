@@ -2,54 +2,120 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { PortableText } from '@portabletext/react';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
-import MeasureOverview from '../components/measure-overview';
-import MeasureTable from '../components/measure-table';
-import { instrumentPTComponents } from '../lib/portable-text/pt-components';
-
+import { Popover } from '@headlessui/react';
 import { usePreview } from '../lib/sanity.preview';
 
-export default function InstrumentPreview({ query, queryParams }) {
+
+import MeasureTable from '../components/measure-table';
+import SocialButtons from '../components/social-buttons';
+import { instrumentPTComponents } from '../lib/portable-text/pt-components';
+import InstrumentMetaData from './instrument-metadata';
+import CustomButton from './custom-button';
+
+export default function Instrument({ query, queryParams }) {
   const data = { measure: usePreview(null, query, queryParams) };
   const router = useRouter();
   return (
-    <div className='bg-black-white-100'>
+    <div className='bg-black-white-100 relative'>
+      {/* can move this into a component */}
+      <Popover className='fixed inset-y-1/3 right-0 z-10 h-96 w-16 hidden sm:block'>
+        {({ open }) => (
+          <>
+            <Popover.Button
+              className={`${
+                open ? '-translate-x-56' : ''
+              } bg-green-500 rounded-l-clSm h-full w-full flex flex-col items-center justify-between text-black-white-100`}
+            >
+              <ArrowLeftIcon
+                className={`${
+                  open ? 'rotate-180 transform' : ''
+                } h-6 w-6 text-black-white-100 mt-10`}
+              />
+              <div className='[writing-mode:vertical-lr] rotate-180 p-lg pt-10'>
+                Help ons circulaw te verbeteren
+              </div>
+            </Popover.Button>
+            <Popover.Panel className=''>
+              <div className='w-56 h-96 bg-black-white-250 -translate-y-96 -translate-x-40 flex flex-col items-center'>
+                <div className='px-8 py-6'>
+                  <h4 className='desktop'>Deel met ons:</h4>
+                  <ul className='pb-10 list-disc	'>
+                    <li>voorbeelden uit jouw praktijk</li>
+                    <li>je tips om toepassing makkelijker te maken</li>
+                    <li>
+                      de ervaring van jou of andere organisaties met een soortgelijk instrument
+                    </li>
+                  </ul>
+                </div>
+                <Link className='' href={{ pathname: '/feedback', query: { instrument: data?.measure?.titel } }}>
+                  <CustomButton color='greenBackground'>Ik deel mijn kennis </CustomButton>
+                </Link>
+              </div>
+            </Popover.Panel>
+          </>
+        )}
+      </Popover>
+
       <div className='global-margin sm:pt-10 '>
-        <div className='grid grid-cols-1 sm:grid-cols-12 content-center'>
-          <div className='sm:col-span-12 row-span-1 h-12 mt-4'>
+        <div className='grid grid-cols-1 sm:content-center mb-8'>
+          <div className='row-span-1 h-12 mt-4 sm:w-11/12 max-w-[854px] sm:justify-self-center'>
             {/* BREADCRUMB */}
             <button type='button' onClick={() => router.back()}>
-              <span className='breadcrumb flex justify-center items-center underline'>
+              <span className='breadcrumb text-green-600 flex justify-center items-center underline'>
                 <ArrowLeftIcon className='inline-block h-4 w-4 pr-1' aria-hidden='true' /> Terug
               </span>{' '}
+              {/* should all breadcrumbs be green this is black in figma */}
             </button>
+            <div className='hidden sm:block float-right'>
+              <SocialButtons title={data?.measure?.titel} viewport='desktop' />
+            </div>
           </div>
-          <div className='sm:col-span-12 row-span-1'>
+        </div>
+
+        <div className='grid grid-cols-1'>
+          <div className='sm:w-11/12 max-w-[760px] sm:justify-self-center flex items-center'>
+            {/* NOT GOOD TO HAVE H4 BEFORE H1 ??? */}
+            <h4 className='uppercase mobile sm:desktop text-green-500'>
+              {data.measure.thema.replace('-', ' ')}
+            </h4>
+
+            {/* this will need to be added once samenhang structure is confirmed */}
+            {/*
+            <div className='ml-4 py-0.5 px-2 rounded-[5px] text-black-white-200 bg-black-white-600'>
+              verkoop
+            </div> */}
+          </div>
+
+          <div className='sm:w-11/12 max-w-[760px] sm:justify-self-center '>
             <h1 className='lg:block sm:pt-4 pb-6 sm:pb-10 mobile sm:desktop'>
               {data?.measure?.titel}
             </h1>
           </div>
+        </div>
+
+        {/* Metadata */}
+        <InstrumentMetaData data={data} />
+        {/* Subtitle */}
+        <div className='grid grid-cols-1'>
           {data?.measure?.subtitel && (
-            <div className='sm:col-span-7 row-span-1'>
-              <h2 className='lg:block p-lg sm:p-xl pb-10'> {data?.measure?.subtitel}</h2>
+            <div className='sm:w-11/12 sm:justify-self-center max-w-[760px]'>
+              <h2 className='lg:block p-lg sm:p-xl mb-4'> {data?.measure?.subtitel}</h2>
             </div>
           )}
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-3 '>
-          <MeasureOverview data={data} viewport='mobile' />
-          <div className='sm:max-w-3xl pb-20 col-span-2 '>
-            <div className='py-4'>
-              <PortableText value={data?.measure.content} components={instrumentPTComponents} />
+
+        {/* Content */}
+        <div className='grid grid-cols-1'>
+          <div className='pb-20 sm:w-11/12 sm:justify-self-center max-w-[760px]'>
+            <div className=''>
+              <PortableText value={data?.measure?.content} components={instrumentPTComponents} />
             </div>
             <MeasureTable data={data} />
           </div>
-          <MeasureOverview data={data} viewport='desktop' />
         </div>
-        <Link
-          className='bg-blue-500 p-6 text-white font-bold fixed bottom-0 right-0'
-          href='/api/exit-preview'
-        >
-          Exit Preview
-        </Link>
+        <div className='block sm:hidden pb-10'>
+          <SocialButtons title={data?.measure?.titel} viewport='mobile' />
+        </div>
       </div>
     </div>
   );
