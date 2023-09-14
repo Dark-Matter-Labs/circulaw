@@ -6,7 +6,7 @@ export default function InstrumentMetaData({ data }) {
   return (
     <>
       <div className='sm:grid-cols-1 hidden sm:grid'>
-        <div className='h-auto border-b border-t mb-6 flex flex-row justify-between items-center w-11/12 max-w-[854px] justify-self-center '>
+        <div className='h-auto border-b border-t mb-6 flex flex-row justify-between items-center w-11/12 max-w-[854px] justify-self-center py-1'>
           <div className='flex flex-col'>
             <h4 className='mobile sm:desktop py-1 text-black-white-600'>Juridische houdbaarheid</h4>
             <div className='flex items-center'>
@@ -16,7 +16,7 @@ export default function InstrumentMetaData({ data }) {
               <JHTooltip data={data}>
                 <svg
                   width='24'
-                  height='30'
+                  height='24'
                   viewBox='0 0 24 30'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
@@ -40,7 +40,7 @@ export default function InstrumentMetaData({ data }) {
               <JITooltip data={data}>
                 <svg
                   width='24'
-                  height='30'
+                  height='24'
                   viewBox='0 0 24 30'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
@@ -79,7 +79,7 @@ export default function InstrumentMetaData({ data }) {
                 <RTooltip>
                   <svg
                     width='24'
-                    height='30'
+                    height='24'
                     viewBox='0 0 24 30'
                     fill='none'
                     xmlns='http://www.w3.org/2000/svg'
@@ -109,7 +109,7 @@ export default function InstrumentMetaData({ data }) {
               <JHTooltip data={data}>
                 <svg
                   width='24'
-                  height='30'
+                  height='24'
                   viewBox='0 0 24 30'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
@@ -133,7 +133,7 @@ export default function InstrumentMetaData({ data }) {
               <JITooltip data={data}>
                 <svg
                   width='24'
-                  height='30'
+                  height='24'
                   viewBox='0 0 24 30'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
@@ -176,7 +176,7 @@ export default function InstrumentMetaData({ data }) {
                 <RTooltip>
                   <svg
                     width='24'
-                    height='30'
+                    height='24'
                     viewBox='0 0 24 30'
                     fill='none'
                     xmlns='http://www.w3.org/2000/svg'
