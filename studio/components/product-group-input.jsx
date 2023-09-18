@@ -57,21 +57,22 @@ export const ProductGroupInput = (props) => {
   );
   // this returns the value of product group.
   const transitionAgenda = String(useFormValue(['transitionAgenda']));
+  console.log(transitionAgenda)
   return (
     <>
       <Card padding={0}>
         <Stack>
           <Select {...elementProps} onChange={handleChange} value={value}>
             {transitionAgenda === 'bouw' &&
-              bouw.map((productGrp) => <option>{productGrp.title}</option>)}
+              bouw.map((productGrp) => <option key={productGrp.title}>{productGrp.title}</option>)}
             {transitionAgenda === 'consumptiegoederen' &&
-              consumptiegoederen.map((productGrp) => <option>{productGrp.title}</option>)}
+              consumptiegoederen.map((productGrp) => <option key={productGrp.title}>{productGrp.title}{console.log(productGrp)}</option>)}
             {transitionAgenda === 'maakindustrie' &&
-              maakindustrie.map((productGrp) => <option>{productGrp.title}</option>)}
-            {transitionAgenda === 'biomassaEnVoedsel' &&
-              biomassaEnVoedsel.map((productGrp) => <option>{productGrp.title}</option>)}
+              maakindustrie.map((productGrp) => <option key={productGrp.title}>{productGrp.title}</option>)}
+            {transitionAgenda === 'biomassa-en-voedsel' &&
+              biomassaEnVoedsel.map((productGrp) => <option key={productGrp.title}>{productGrp.title}</option>)}
             {transitionAgenda === 'kunststoffen' &&
-              kunststoffen.map((productGrp) => <option>{productGrp.title}</option>)}
+              kunststoffen.map((productGrp) => <option key={productGrp.title}>{productGrp.title}</option>)}
           </Select>
         </Stack>
       </Card>
