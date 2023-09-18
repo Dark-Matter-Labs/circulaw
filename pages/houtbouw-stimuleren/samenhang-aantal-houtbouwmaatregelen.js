@@ -5,7 +5,7 @@ import SamenhangLayout from '../../components/layouts/samenhang-layout';
 export default function InfoPage() {
   let url = 'https://circulaw-staging.vercel.app';
 
-  if (process.env.NEXT_PUBLIC_SANITY_DATASET === 'staging') {
+  if (process.env.NEXT_PUBLIC_SANITY_DATASET === 'staging' || process.env.NEXT_PUBLIC_SANITY_DATASET === 'dev' ) {
     url = 'https://circulaw-staging.vercel.app';
   } else {
     url = 'https://circulaw.nl';
