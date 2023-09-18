@@ -23,9 +23,12 @@ let name = '',
 if (process.env.SANITY_STUDIO_DATASET === 'production') {
   name = 'CircuLaw';
   path = '/studio';
-} else {
+} else if (process.env.SANITY_STUDIO_DATASET === 'staging') {
   name = 'CircuLawStaging';
   path = '/staging';
+} else {
+  name = 'CircuLawDev';
+  path = '/dev';
 }
 
 export default defineConfig({
