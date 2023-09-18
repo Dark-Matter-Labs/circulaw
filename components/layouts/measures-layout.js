@@ -2,10 +2,8 @@ import { useState, useEffect, useRef, Fragment, useCallback } from 'react';
 import { Dialog, Transition, Combobox } from '@headlessui/react';
 import createPersistedState from 'use-persisted-state';
 import { SearchIcon, XIcon, AdjustmentsIcon } from '@heroicons/react/outline';
-import { groq } from 'next-sanity';
 import { toPlainText } from '@portabletext/react';
 import Fuse from 'fuse.js';
-import useSWR from 'swr';
 
 import {
   overheidslaag,
@@ -18,15 +16,15 @@ import {
 } from '../../utils/data-filter';
 import SearchFilter from '/components/search-filter';
 import PolicyList from '/components/policy-list';
-import { fetcher } from '../../utils/swr-fetcher';
-import { measureLayoutQuery } from '../../lib/queries';
 import OverviewPageHeader from '../overview-page-header';
 // creating objects for persisting values
 const useSelectedState = createPersistedState('selected');
 
 export default function MeasuresLayout({ ...props }) {
-  // TODO: import the data staticly with getStaticProps when we implement link structure changes
-  const { data } = useSWR(groq`${measureLayoutQuery}`, fetcher);
+  
+  const data = props?.instruments;
+  const transitionAgenda = props?.instruments[0]?.transitionAgenda
+
   // creating references to access child component functions
   const wettelijkFilterRef = useRef();
   const rechtsgebiedFilterRef = useRef();
@@ -654,7 +652,13 @@ export default function MeasuresLayout({ ...props }) {
       </div>
 
       <div>
-        <OverviewPageHeader props={props} page='list' />
+        <OverviewPageHeader
+          title={props.title}
+          icon={props.icon}
+          thema={props.thema}
+          transitionAgenda={transitionAgenda}
+          page='list'
+        />
         <div className='hidden sm:block max-w-3xl pt-2 mb-2 sm:mb-20'>
           <p className='p-lg'>
             {props.introPara}
@@ -915,7 +919,7 @@ export default function MeasuresLayout({ ...props }) {
         <div className='mt-10 col-span-3'>
           {data && (
             <div>
-              <PolicyList data={laws} casus={props.thema} />
+              <PolicyList laws={laws} thema={props.thema} />
             </div>
           )}
         </div>

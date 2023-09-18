@@ -11,6 +11,7 @@ import {
 import NewThemaSuggestion from '../components/new-thema-suggestion';
 import NewsItems from '../components/news-items';
 import HomePageAboutSection from '../components/home-page-about-section';
+import TransitionAgendas from '../components/home-page-transition-agenda';
 
 export default function Index({
   newsItems,
@@ -22,6 +23,14 @@ export default function Index({
   return (
     <Layout page='home' homePageHeader={homePageHeader} footerText={footerText}>
       <div className='bg-black-white-200 sm:pb-14 -z-50' name='thema'>
+        <div className='global-margin -z-20'>
+          <h1 className='pt-8 mobile sm:desktop text-green-600 border-black-white-600 border-b pb-4'>
+            Transition Agendas
+          </h1>
+          <div className='pt-4 sm:pt-8 -z-20'>
+            <TransitionAgendas />
+          </div>
+        </div>
         <div className='global-margin -z-20'>
           <h1 className='pt-8 mobile sm:desktop text-green-600 border-black-white-600 border-b pb-4'>
             Thema’s

@@ -1,4 +1,5 @@
 import { VscLaw } from 'react-icons/vsc';
+import { ProductGroupInput } from '../../components/product-group-input';
 
 export default {
   title: 'Measure',
@@ -22,6 +23,10 @@ export default {
     {
       name: 'filter',
       title: 'Filter Content',
+    },
+    {
+      name: 'samenhang',
+      title: 'Samenhang',
     },
   ],
   // FIELDS
@@ -73,11 +78,65 @@ export default {
       },
     },
     {
+      title: 'Transitie-agenda',
+      name: 'transitionAgenda',
+      type: 'string',
+      description:
+        'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
+      validation: (Rule) => Rule.required(),
+      options: {
+        list: [
+          { title: 'Bouw', value: 'bouw' },
+          { title: 'Biomassa en voedsel', value: 'biomassa-en-voedsel' },
+          { title: 'Kunststoffen', value: 'kunststoffen' },
+          { title: 'Consumptiegoederen', value: 'consumptiegoederen' },
+          { title: 'Maakindustrie', value: 'maakindustrie' },
+        ], // <-- predefined values
+        layout: 'dropdown', // <-- defaults to 'dropdown'
+      },
+    },
+    // add logic here - is this a special or a product group?
+
+    {
+      title: 'Is this measure part of a thema or product group?',
+      name: 'themaOrProductGroup',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+      options: {
+        list: [
+          { title: 'Thema', value: 'theme' },
+          { title: 'Product Group', value: 'productGroup' },
+        ],
+        layout: 'radio',
+      },
+    },
+
+    {
+      name: 'productGroup',
+      title: 'Product Group',
+      description: 'Selecteer het product group waaronder dit instrument valt.',
+      type: 'string',
+      // checks if measure is part of thema or product group and makes product group required only if it had been previously selected.
+      validation: (Rule) =>
+        Rule.custom((currentValue, { parent }) => {
+          return parent?.themaOrProductGroup === 'productGroup' && !currentValue
+            ? 'A value is required.'
+            : true;
+        }),
+      hidden: ({ document }) => document.themaOrProductGroup !== 'productGroup',
+      components: {
+        input: ProductGroupInput,
+      },
+    },
+
+    {
       title: 'Thema',
       name: 'thema',
       type: 'string',
       description: 'Selecteer het thema waaronder dit instrument valt.',
       validation: (Rule) => Rule.required(),
+      hidden: ({ document }) => document.themaOrProductGroup !== 'theme',
+
       options: {
         list: [
           { title: 'Houtbouw', value: 'houtbouw-stimuleren' }, // need to change to refernece
@@ -88,58 +147,7 @@ export default {
       },
       group: 'overview',
     },
-    {
-      title: 'Transitie-agenda',
-      name: 'transitionAgenda',
-      type: 'string',
-      description:
-        'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
-      options: {
-        list: [
-          { title: 'Biomassa en voedsel', value: 'biomassa-en-voedsel' },
-          { title: 'Kunststoffen', value: 'kunststoffen' },
-          { title: 'Consumptiegoederen', value: 'consumptiegoederen' },
-          { title: 'Bouw', value: 'bouw' },
-          { title: 'Maakindustrie', value: 'maakindustrie' },
-        ], // <-- predefined values
-        layout: 'dropdown', // <-- defaults to 'dropdown'
-      },
-    },
-    {
-      title: 'Productgroep',
-      name: 'productGroup',
-      type: 'string',
-      description: 'Productgroep',
-      options: {
-        list: [
-          { title: 'Plastic verpakkingen', value: 'plastic-verpakkingen' },
-          { title: 'Plastic (afval) in de bouw', value: 'pastic-afval-in-de-bouw' },
-          { title: 'Landbouwfolie', value: 'landbouwfolie' },
-          {
-            title: 'Plastic verpakkingen en verbruiksartikelen',
-            value: 'plastic-verpakkingen-en-verbruiksartikelen',
-          },
-          { title: 'Chemische producten', value: 'chemische-producten' },
-          { title: 'Textiel (incl. kleding)', value: 'textiel-inc-kleding)' },
-          { title: 'Elektrische apparaten', value: 'elektrische-apparaten' },
-          { title: 'Elektrische apparaten', value: 'elektrische apparaten' },
-          { title: 'Meubels', value: 'meubels' },
-          {
-            title: 'Kunstwerken (gestart met viaducten)',
-            value: 'unstwerken-gestart-met-viaducten',
-          },
-          { title: 'Wegen (gestart met asfalt)', value: 'wegen-gestart-met-asfalt)' },
-          { title: 'Woningen', value: 'woningen' },
-          { title: 'Bedrijfsruimte/kantoren', value: 'bedrijfsruimte-kantoren' },
-          { title: 'Capital Equipment', value: 'capital-equipment' },
-          { title: 'Windparken', value: 'windparken' },
-          { title: 'Zonneparken', value: 'zonneparken' },
-          { title: 'Klimaatinstallaties', value: 'klimaatinstallaties' },
-          { title: 'Matrassen', value: 'matrassen' },
-        ], // <-- predefined values
-        layout: 'dropdown', // <-- defaults to 'dropdown'
-      },
-    },
+
     // ITEMS ONLY IN OVERVIEW/FILTER
     {
       title: 'R-Ladder',
@@ -389,6 +397,158 @@ export default {
       type: 'array',
       of: [{ type: 'block', styles: [{ title: 'normal', value: 'normal' }] }],
       group: ['copy', 'table'],
+    },
+
+    // SAMENHANG NEW METADATA
+    {
+      title: 'beleidsinstrumenten en vergunningen',
+      name: 'beleidsinstrumentenEnVergunningen',
+      type: 'boolean',
+      initialValue: false,
+      group: 'samenhang',
+    },
+    {
+      title: 'beleidsinstrumenten en vergunningen sub category',
+      name: 'beleidsinstrumentenEnVergunningenSubCategory',
+      type: 'array',
+      validation: (Rule) =>
+        Rule.custom((currentValue, { parent }) => {
+          return parent?.beleidsinstrumentenEnVergunningen === true &&
+            typeof currentValue === 'undefined'
+            ? 'A value is required.'
+            : true;
+        }),
+      hidden: ({ document }) => document.beleidsinstrumentenEnVergunningen === false,
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Beleid', value: 'beleid' },
+          { title: 'Strategie', value: 'strategie' },
+          { title: 'Contracten', value: 'contracten' },
+        ],
+        layout: 'grid',
+      },
+      group: 'samenhang',
+    },
+
+    {
+      title: 'verkoop',
+      name: 'verkoop',
+      type: 'boolean',
+      initialValue: false,
+      group: 'samenhang',
+    },
+    {
+      title: 'verkoop sub category',
+      name: 'verkoopSubCategory',
+      type: 'array',
+      validation: (Rule) =>
+        Rule.custom((currentValue, { parent }) => {
+          return parent?.verkoop === true && typeof currentValue === 'undefined'
+            ? 'A value is required.'
+            : true;
+        }),
+      hidden: ({ document }) => document.verkoop === false,
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Beleid', value: 'beleid' },
+          { title: 'Strategie', value: 'strategie' },
+          { title: 'Contracten', value: 'contracten' },
+        ],
+        layout: 'grid',
+      },
+      group: 'samenhang',
+    },
+
+    {
+      title: 'inkoop',
+      name: 'inkoop',
+      type: 'boolean',
+      initialValue: false,
+      group: 'samenhang',
+    },
+
+    {
+      title: 'inkoop sub category',
+      name: 'inkoopSubCategory', // remo
+      type: 'array',
+      validation: (Rule) =>
+        Rule.custom((currentValue, { parent }) => {
+          return parent?.inkoop === true && typeof currentValue === 'undefined'
+            ? 'A value is required.'
+            : true;
+        }),
+      hidden: ({ document }) => document.inkoop === false,
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Beleid', value: 'beleid' },
+          { title: 'Strategie', value: 'strategie' },
+          { title: 'Contracten', value: 'contracten' },
+        ],
+        layout: 'grid',
+      },
+      group: 'samenhang',
+    },
+
+    {
+      title: 'financiering',
+      name: 'financiering',
+      type: 'boolean',
+      initialValue: false,
+      group: 'samenhang',
+    },
+    {
+      title: 'financiering sub category',
+      name: 'financieringSubCategory',
+      type: 'array',
+      validation: (Rule) =>
+        Rule.custom((currentValue, { parent }) => {
+          return parent?.financiering === true && typeof currentValue === 'undefined'
+            ? 'A value is required.'
+            : true;
+        }),
+      hidden: ({ document }) => document.financiering === false,
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Beleid', value: 'beleid' },
+          { title: 'Strategie', value: 'strategie' },
+          { title: 'Contracten', value: 'contracten' },
+        ],
+        layout: 'grid',
+      },
+      group: 'samenhang',
+    },
+    {
+      title: 'fiscaal',
+      name: 'fiscaal',
+      type: 'boolean',
+      initialValue: false,
+      group: 'samenhang',
+    },
+    {
+      title: 'fiscaal sub category',
+      name: 'fiscaalSubCategory',
+      type: 'array',
+      validation: (Rule) =>
+        Rule.custom((currentValue, { parent }) => {
+          return parent?.fiscaal === true && typeof currentValue === 'undefined'
+            ? 'A value is required.'
+            : true;
+        }),
+      hidden: ({ document }) => document.fiscaal === false,
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Beleid', value: 'beleid' },
+          { title: 'Strategie', value: 'strategie' },
+          { title: 'Contracten', value: 'contracten' },
+        ],
+        layout: 'grid',
+      },
+      group: 'samenhang',
     },
   ],
 };

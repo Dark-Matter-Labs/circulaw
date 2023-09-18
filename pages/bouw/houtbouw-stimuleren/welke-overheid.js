@@ -1,9 +1,9 @@
-import Layout from '../../components/layouts/layout';
-import WelkeLayout from '../../components/layouts/welke-layout';
-import { client } from '../../lib/sanity';
-import woodIcon from '../../public/icons/woodIcon.svg';
-import houtbouwImageMob from '../../public/bevoegdheden/bevoegdheden-houtbouw-mob.png';
-import { creatQuery } from '../../lib/queries';
+import Layout from '../../../components/layouts/layout';
+import WelkeLayout from '../../../components/layouts/welke-layout';
+import { client } from '../../../lib/sanity';
+import woodIcon from '../../../public/icons/woodIcon.svg';
+import houtbouwImageMob from '../../../public/bevoegdheden/bevoegdheden-houtbouw-mob.png';
+import { creatQuery } from '../../../lib/queries';
 
 const thema = 'houtbouw-stimuleren';
 
@@ -13,6 +13,7 @@ export default function InfoPage({ ...props }) {
       <WelkeLayout
         thema={thema}
         title='Welke overheid kan welk instrument gebruiken voor houtbouw?'
+        transitionAgenda='bouw'
         icon={woodIcon}
         p1='Je kunt op rijksniveau regels bepalen voor het hergebruik van producten. Ook kan het Rijk financieel bijdragen aan doelen die worden gesteld in een omgevingsvisie en/of een programma over houtbouw.'
         p2='Provincies kunnen houtbouw integreren in hun omgevingsverordening door de houtopstanden in het gebied te vergroten. Het vaststellen van omgevingswaarden (instrumenten uit de Omgevingswet die provincies en gemeenten kunnen inzetten om beleid uit de omgevingsvisie uit te voeren),  kan hierbij helpen. Zo zou je een maximumwaarde voor CO₂ kunnen vaststellen.'

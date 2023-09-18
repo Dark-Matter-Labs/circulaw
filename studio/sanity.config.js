@@ -15,6 +15,7 @@ const singletonTypes = new Set([
   'navigation',
   'FAQpage',
   'thema',
+  'transitionAgenda',
 ]);
 
 let name = '',

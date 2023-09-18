@@ -7,6 +7,7 @@ import englishPage from './documents/english-page';
 import thema from './documents/thema';
 import faq from './documents/faq';
 import newsItem from './documents/news';
+import transitionAgenda from './documents/transition-agenda';
 
 import greenBox from './objects/green-box';
 import pdfBlock from './objects/pdf-block';
@@ -19,6 +20,7 @@ import dropDown from './objects/drop-down';
 import partner from './objects/partner';
 import faqItem from './objects/faq-item';
 import faqSection from './objects/faq-section';
+import complexPortableText from './objects/complex-portable-text';
 
 export const schemaTypes = [
   // DOCUMENT TYPES
@@ -30,6 +32,7 @@ export const schemaTypes = [
   thema,
   faq,
   newsItem,
+  transitionAgenda,
 
   // OBJECTS
   greenBox,
@@ -44,4 +47,5 @@ export const schemaTypes = [
   partner,
   faqItem,
   faqSection,
+  complexPortableText,
 ];
