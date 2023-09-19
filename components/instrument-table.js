@@ -1,13 +1,11 @@
-import { PortableText } from '@portabletext/react';
 import { useEffect, useState } from 'react';
-import { juridischeToelichtingComponernts } from '../lib/portable-text/pt-components';
 
 const formatDate = (date) => {
   let dateObject = new Date(date);
   return dateObject.toLocaleDateString();
 };
 
-export default function MeasureTable({ data }) {
+export default function InstrumentTable({ data }) {
   const [date, setDate] = useState();
   useEffect(() => {
     setDate(data?.measure?.lawDate);
@@ -15,18 +13,7 @@ export default function MeasureTable({ data }) {
 
   return (
     <>
-      <div className='grid grid-cols-6'>
-        <div className='col-span-6 sm:col-span-6'>
-          <div className='pb-5'>
-            <h2 className='pt-6 pb-4 mobile sm:desktop'>Juridische toelichting</h2>
-            {data?.measure?.juridischeToelichting && (
-              <PortableText
-                components={juridischeToelichtingComponernts}
-                value={data?.measure?.juridischeToelichting}
-              />
-            )}
-          </div>
-        </div>
+      <div className='grid grid-cols-6 mt-12'>
         <table className='table-fixed col-span-6 sm:col-span-4 sm:m-0'>
           <tbody>
             <tr className='my-10 border-b boder-black-white-300 border-t'>
