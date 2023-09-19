@@ -20,7 +20,7 @@ export default function SocialButtons({ title, viewport }) {
   let viewportClasses = viewportType[viewport];
 
   let url = 'https://circulaw-staging.vercel.app';
-
+console.log(process.env.NEXT_PUBLIC_SANITY_DATASET)
   if (process.env.NEXT_PUBLIC_SANITY_DATASET === 'staging' || process.env.NEXT_PUBLIC_SANITY_DATASET === 'dev') {
     url = 'https://circulaw-staging.vercel.app';
   } else {
