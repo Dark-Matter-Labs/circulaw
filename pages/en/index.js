@@ -14,8 +14,8 @@ export default function English({ data }) {
         <div className='bg-en-background bg-center bg-cover relative z-0'>
           <div className='hidden sm:block h-auto bg-en-header bg-left bg-cover'>
             <div className='global-margin flex h-full'>
-              <div className='flex items-center justify-center flex-wrap text-center text-black-white-200 w-3/5 mx-auto py-12'>
-                <h1 className='sm:header text-black-white-200 py-10'>
+              <div className='flex items-center justify-center flex-wrap text-center text-black-white-100 w-3/5 mx-auto py-12'>
+                <h1 className='sm:header text-black-white-100 py-10'>
                   Regulations for a circular economy
                 </h1>
                 <p className='p-base sm:p-lg'>
@@ -36,7 +36,7 @@ export default function English({ data }) {
 
           <div className='w-full bg-en-header bg-cover bg-center'>
             <div className='block global-margin sm:hidden pt-5'>
-              <div className='py-3 text-black-white-200'>
+              <div className='py-3 text-black-white-100'>
                 <h1 className='mobile pb-3'>Regulations for a circular economy</h1>
                 <p className='pb-3 p-base'>
                   CircuLaw is a knowledge platform dedicated to enabling the transition to a
@@ -57,7 +57,7 @@ export default function English({ data }) {
           </div>
 
           <div className='grid grid-cols-1 lg:grid-cols-3 global-margin justify-start pb-20 pt-10 sm:py-20'>
-            <div className='col-span-2 text-black-white-200 sm:max-w-3xl'>
+            <div className='col-span-2 text-black-white-100 sm:max-w-3xl'>
               <PortableText components={enPageComponents} value={data?.englishContent} />
               <div>
                 <Link
@@ -69,7 +69,7 @@ export default function English({ data }) {
               </div>
             </div>
 
-            <div className='col-span-1 max-w-md block w-full float-right px-8 lg:ml-6 bg-green-800 text-black-white-200 h-[30rem] lg:h-[40rem] xl:h-[32rem] sticky top-40 lg:mb-20'>
+            <div className='col-span-1 max-w-md block w-full float-right px-8 lg:ml-6 bg-green-800 text-black-white-100 h-[30rem] lg:h-[40rem] xl:h-[32rem] sticky top-40 lg:mb-20'>
               <div className='w-full h-full grid grid-cols-1 items-center'>
                 <div className='py-6 p-base sm:p-lg'>
                   <p>For now, CircuLaw is available in Dutch only</p>

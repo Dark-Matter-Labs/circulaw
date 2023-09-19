@@ -6,7 +6,7 @@ export default function LangSwitch() {
   return (
     <div
       className={`hidden sm:block flex justify-center items-center min-w-[10%] pt-2 ${
-        router.pathname === '/en' || router.pathname === '/' ? 'text-black-white-200' : 'text-black'
+        router.pathname === '/en' || router.pathname === '/' ? 'text-black-white-100' : 'text-black'
       }`}
     >
       <span

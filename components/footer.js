@@ -41,7 +41,7 @@ export default function Footer(props) {
       <footer className='' aria-labelledby='footer-heading'>
         {router.pathname !== '/en' && (
           <div>
-            <div className='flex lgNav:hidden w-full items-center justify-center py-8 bg-green-800 border-y-2 border-black-white-200 '>
+            <div className='flex lgNav:hidden w-full items-center justify-center py-8 bg-green-800 border-y-2 border-black-white-100 '>
               <CustomButton color='home'>
                 <ScrollLink to='top' smooth={true}>
                   <span>
@@ -56,7 +56,7 @@ export default function Footer(props) {
                 <div className='pb-20'>
                   <div className=''>
                     <div className='grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-8'>
-                      <div className='sm:hidden block border-b border-black-white-200 pb-4'>
+                      <div className='sm:hidden block border-b border-black-white-100 pb-4'>
                         <ActionPanel
                           title='Doe met ons mee'
                           paragraph='Heb je vragen, wil je je ervaringen delen of wil je een wetsanalyse laten uitvoeren op een circulair  thema of casus?'
@@ -85,7 +85,7 @@ export default function Footer(props) {
                           </Link>
                         </div>
                       </div>
-                      <div className=' border-b border-black-white-200 sm:border-0 py-2 sm:py-0'>
+                      <div className=' border-b border-black-white-100 sm:border-0 py-2 sm:py-0'>
                         <h4 className='text-black-white-100 mobile sm:desktop uppercase'>
                           THEMA’S
                         </h4>
@@ -106,7 +106,7 @@ export default function Footer(props) {
                           </ul>
                         </div>
                       </div>
-                      <div className=' border-b border-black-white-200 sm:border-0 py-2 sm:py-0'>
+                      <div className=' border-b border-black-white-100 sm:border-0 py-2 sm:py-0'>
                         <h4 className='text-black-white-100 mobile sm:desktop uppercase'>
                           OVER CIRCULAW
                         </h4>

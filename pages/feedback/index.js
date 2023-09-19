@@ -80,7 +80,7 @@ export default function Feedback() {
 
   return (
     <Layout title='CircuLaw - Met jouw hulp maken we CircuLaw beter'>
-      <div className='bg-black-white-200 sm:bg-device'>
+      <div className='bg-black-white-100 sm:bg-device'>
         <div className='global-margin'>
           {!formStatus ? (
             <>
@@ -253,7 +253,7 @@ export default function Feedback() {
                       type='submit'
                       onClick={scrollToTop}
                       className={
-                        'bg-green-600 hover:bg-green-200 hover:text-green-600 text-black-white-100 active:bg-green-800 active:text-black-white-200 focus:outline-none focus:ring-2 focus:ring-white rounded-full inline-flex items-center px-4 py-2 button '
+                        'bg-green-600 hover:bg-green-200 hover:text-green-600 text-black-white-100 active:bg-green-800 active:text-black-white-100 focus:outline-none focus:ring-2 focus:ring-white rounded-full inline-flex items-center px-4 py-2 button '
                       }
                     >
                       Verzenden &rarr;

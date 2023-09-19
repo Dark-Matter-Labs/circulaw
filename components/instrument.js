@@ -33,7 +33,7 @@ export default function Instrument({ data }) {
               </div>
             </Popover.Button>
             <Popover.Panel className=''>
-              <div className='w-56 h-96 bg-black-white-250 -translate-y-96 -translate-x-40 flex flex-col items-center'>
+              <div className='w-56 h-96 bg-black-white-200 -translate-y-96 -translate-x-40 flex flex-col items-center'>
                 <div className='px-8 py-6'>
                   <h4 className='desktop'>Deel met ons:</h4>
                   <ul className='pb-10 list-disc	'>
@@ -81,7 +81,7 @@ export default function Instrument({ data }) {
 
             {/* this will need to be added once samenhang structure is confirmed */}
             {/*
-            <div className='ml-4 py-0.5 px-2 rounded-[5px] text-black-white-200 bg-black-white-600'>
+            <div className='ml-4 py-0.5 px-2 rounded-[5px] text-black-white-100 bg-black-white-600'>
               verkoop
             </div> */}
           </div>

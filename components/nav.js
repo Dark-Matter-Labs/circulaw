@@ -72,7 +72,7 @@ export default function Nav(props) {
                 </Link>
               </div>
             </div>
-            <div className='text-black-white-200 flex justify-center items-center min-w-[10%] pt-2 pr-4'>
+            <div className='text-black-white-100 flex justify-center items-center min-w-[10%] pt-2 pr-4'>
               <span
                 className={`link-interaction-dark-bg ${
                   router.pathname === '/en' ? 'enLink' : 'enLinkSelected'
@@ -106,14 +106,14 @@ export default function Nav(props) {
                 `${
                   router.pathname === '/'
                     ? 'bg-green-600 shadow-lg transition-all duration-150'
-                    : 'bg-black-white-200 shadow-lg transition-all duration-150'
+                    : 'bg-black-white-100 shadow-lg transition-all duration-150'
                 }`,
               ]
             : [
                 `${
                   router.pathname === '/'
                     ? 'bg-transparent transition-all duration-150'
-                    : 'bg-black-white-200 shadow-lg transition-all duration-150'
+                    : 'bg-black-white-100 shadow-lg transition-all duration-150'
                 }`,
               ]
         } w-full sticky top-0 z-10 h-auto`}
@@ -180,7 +180,7 @@ export default function Nav(props) {
                 <div className='inset-y-0 float-right flex items-center pt-3 lgNav:hidden'>
                   <Popover.Button
                     className={`${
-                      router.pathname !== '/' ? 'text-green-600' : 'text-black-white-200'
+                      router.pathname !== '/' ? 'text-green-600' : 'text-black-white-100'
                     } 'p-2 rounded-md`}
                   >
                     <span className='sr-only'>Open main menu</span>
@@ -261,7 +261,7 @@ export default function Nav(props) {
                                 className={`${
                                   router.pathname !== '/'
                                     ? 'text-black-white-800'
-                                    : 'text-black-white-200'
+                                    : 'text-black-white-100'
                                 } group rounded-md inline-flex items-center`}
                               >
                                 <h5 className='uppercase mobile sm:desktop'>OVER CIRCULAW</h5>
@@ -316,7 +316,7 @@ export default function Nav(props) {
                               className={`${
                                 router.pathname !== '/'
                                   ? 'text-black-white-800'
-                                  : 'text-black-white-200'
+                                  : 'text-black-white-100'
                               } uppercase group rounded-md inline-flex items-center mobile sm:desktop mobile sm:desktop`}
                             >
                               VRAAG & ANTWOORD
@@ -329,7 +329,7 @@ export default function Nav(props) {
                               className={`${
                                 router.pathname !== '/'
                                   ? 'text-black-white-800'
-                                  : 'text-black-white-200'
+                                  : 'text-black-white-100'
                               } uppercase group rounded-md inline-flex items-center mobile sm:desktop mobile sm:desktop`}
                             >
                               CONTACT
@@ -339,7 +339,7 @@ export default function Nav(props) {
                         {router.pathname == '/' && (
                           <div className='inline-block relative pl-6'>
                             <ScrollLink to='news' smooth={true}>
-                              <button className='inline-flex items-center px-4 py-0.5 button bg-black-white-200 hover:bg-green-200 text-green-600 shadow-md active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white rounded-full'>
+                              <button className='inline-flex items-center px-4 py-0.5 button bg-black-white-100 hover:bg-green-200 text-green-600 shadow-md active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white rounded-full'>
                                 Nieuw
                                 <ArrowDownIcon className='inline h-4 w-4 ml-1' aria-hidden='true' />
                               </button>
@@ -362,7 +362,7 @@ export default function Nav(props) {
                 leaveFrom='opacity-100 translate-y-0'
                 leaveTo='opacity-0 translate-y-1'
               >
-                <Popover.Panel className='lgNav:hidden bg-black-white-200 w-full absolute z-50'>
+                <Popover.Panel className='lgNav:hidden bg-black-white-100 w-full absolute z-50'>
                   <div className='pt-2 pb-4 global-margin'>
                     {/* LANG SWITCH */}
                     <Popover.Button

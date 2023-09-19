@@ -89,7 +89,7 @@ export default function ToolTips({ children, icon, data }) {
                           {data?.measure?.invloedTooltipText && (
                             <p className='p-base'>{data?.measure?.invloedTooltipText}</p>
                           )}
-                          <div className='bg-black-white-200 mt-6 p-6'>
+                          <div className='bg-black-white-100 mt-6 p-6'>
                             <p className='p-base'>
                               Met ‘invloed’ bedoelen wij de invloed van het instrument in de
                               praktijk. We kijken hiervoor onder andere naar:

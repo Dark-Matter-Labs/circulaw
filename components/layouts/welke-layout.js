@@ -56,7 +56,7 @@ export default function WelkeLayout({ ...props }) {
             <div className='grid col-span-1 items-start justify-center h-full w-80 mt-10'>
               <div
                 id='allId'
-                className='w-80 h-10 border border-green-800 rounded-full text-black-white-800 bg-black-white-200 flex items-center justify-left'
+                className='w-80 h-10 border border-green-800 rounded-full text-black-white-800 bg-black-white-100 flex items-center justify-left'
               >
                 <div className='h-10 w-10 border-r border-t border-b border-green-800 rounded-full flex items-center justify-center'>
                   <h5 className='mobile sm:desktop'>A</h5>

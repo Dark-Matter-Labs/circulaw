@@ -43,7 +43,7 @@ export default function PolicyList(props) {
                       return (
                         <h6
                           key={content + law.titel}
-                          className='ml-2 px-2 py-0.5 rounded bg-green-600 text-black-white-200 no-underline'
+                          className='ml-2 px-2 py-0.5 rounded bg-green-600 text-black-white-100 no-underline'
                         >
                           {content}
                         </h6>
@@ -52,7 +52,7 @@ export default function PolicyList(props) {
                       return (
                         <h6
                           key={content + law.titel}
-                          className='ml-2 px-2 py-0.5 rounded bg-green-500 text-black-white-200 no-underline'
+                          className='ml-2 px-2 py-0.5 rounded bg-green-500 text-black-white-100 no-underline'
                         >
                           {content}
                         </h6>
@@ -105,7 +105,7 @@ export default function PolicyList(props) {
                   </div>
                   <div className='flex-2 md:mr-5 text-black-white-500'>
                     <h6 className='inline'>R-ladder: </h6>
-                    <h6 className='block-inline text-black-white-200 inline'>
+                    <h6 className='block-inline text-black-white-100 inline'>
                       {law.rLadder.map((rValue) => (
                         <div
                           key={law.titel + rValue}

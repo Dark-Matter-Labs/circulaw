@@ -89,7 +89,7 @@ export default function ToolTips({ children, icon, data }) {
                           {data?.measure?.JHTooltipText && (
                             <p className='p-base'>{data?.measure?.JHTooltipText}</p>
                           )}
-                          <div className='bg-black-white-200 mt-6 p-6'>
+                          <div className='bg-black-white-100 mt-6 p-6'>
                             <p className='p-base'>
                               Met de waardering ‘Juridische haalbaarheid’ laten we zien hoe
                               risicovol een instrument is: wat is het afbreukrisico of de kans dat

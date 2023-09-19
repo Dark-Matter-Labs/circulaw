@@ -21,7 +21,7 @@ export default function Index({
 }) {
   return (
     <Layout page='home' homePageHeader={homePageHeader} footerText={footerText}>
-      <div className='bg-black-white-200 sm:pb-14 -z-50' name='thema'>
+      <div className='bg-black-white-100 sm:pb-14 -z-50' name='thema'>
         <div className='global-margin -z-20'>
           <h1 className='pt-8 mobile sm:desktop text-green-600 border-black-white-600 border-b pb-4'>
             Thema’s
@@ -31,12 +31,12 @@ export default function Index({
           </div>
         </div>
       </div>
-      <div className='bg-black-white-200 sm:hidden'>
+      <div className='bg-black-white-100 sm:hidden'>
         <div className='global-margin flex items-center justify-center'>
           <NewThemaSuggestion />
         </div>
       </div>
-      <div className='bg-black-white-200 py-20'>
+      <div className='bg-black-white-100 py-20'>
         <div className='global-margin'>
           <HomePageAboutSection aboutSection={aboutSection} />
           <div className='' name='news'>
