@@ -383,12 +383,5 @@ export default {
       ],
       group: 'copy',
     },
-    {
-      title: 'Juridische toelichting',
-      name: 'juridischeToelichting',
-      type: 'array',
-      of: [{ type: 'block', styles: [{ title: 'normal', value: 'normal' }] }],
-      group: ['copy', 'table'],
-    },
   ],
 };
