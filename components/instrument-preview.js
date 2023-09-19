@@ -5,7 +5,7 @@ import { ArrowLeftIcon } from '@heroicons/react/outline';
 import { Popover } from '@headlessui/react';
 import { usePreview } from '../lib/sanity.preview';
 
-import MeasureTable from '../components/measure-table';
+import InstrumentTable from '../components/instrument-table';
 import SocialButtons from '../components/social-buttons';
 import { instrumentPTComponents } from '../lib/portable-text/pt-components';
 import InstrumentMetaData from './instrument-metadata';
@@ -112,7 +112,7 @@ export default function Instrument({ query, queryParams }) {
             <div className=''>
               <PortableText value={data?.measure?.content} components={instrumentPTComponents} />
             </div>
-            <MeasureTable data={data} />
+            <InstrumentTable data={data} />
           </div>
         </div>
         <div className='block sm:hidden pb-10'>
