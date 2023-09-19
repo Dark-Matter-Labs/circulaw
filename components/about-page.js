@@ -8,7 +8,7 @@ export default function AboutPageComponent({ data }) {
   return (
     <div>
       <div className='bg-about-header bg-cover bg-center h-40'></div>
-      <div className='pb-8 text-black-white-800 global-margin-alternative'>
+      <div className='pb-8 text-grey-800 global-margin-alternative'>
         <div className='block lg:hidden w-full'>
           <AboutPageDropdown
             currentSlug={data?.aboutPage?.slug.current}
@@ -21,7 +21,7 @@ export default function AboutPageComponent({ data }) {
               <Link href='/'>Home &gt;</Link>
             </div>
             <div className='max-w-3xl'>
-              <h1 className='lg:block sm:pt-10 py-6 sm:pb-10 mobile sm:desktop text-black-white-800'>
+              <h1 className='lg:block sm:pt-10 py-6 sm:pb-10 mobile sm:desktop text-grey-800'>
                 {data?.aboutPage?.pageTitle}
               </h1>
               <PortableText

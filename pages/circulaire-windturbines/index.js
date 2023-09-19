@@ -20,7 +20,7 @@ export default function Windturbine({ featuredLaws, length, thema }) {
         listTitle={`Lijst van ${length} instrumenten`}
       />
       <div className='bg-[#F8FAF8]'>
-        <div className='global-margin pt-10 pb-20 border-t border-black-white-800'>
+        <div className='global-margin pt-10 pb-20 border-t border-grey-800'>
           <div className='p-lg'>
             De informatie over windturbines is mede tot stand gekomen door nauwe samenwerking met de{' '}
             <span className='text-green-500 link-lg inline-block link-interaction'>

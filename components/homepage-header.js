@@ -7,13 +7,13 @@ export default function HomepageHeader({ homePageHeader }) {
     <main className='pb-16 pt-56'>
       <div className='global-margin'>
         <div className='text-center max-w-4xl mx-auto'>
-          <div className='header hidden sm:block text-black-white-100 pb-10'>
+          <div className='header hidden sm:block text-grey-100 pb-10'>
             <span className='block '>{homePageHeader.headerText}</span>{' '}
           </div>
-          <h1 className='text-left mobile block sm:hidden text-black-white-100 py-4'>
+          <h1 className='text-left mobile block sm:hidden text-grey-100 py-4'>
             <span className='block '>{homePageHeader.headerText}</span>{' '}
           </h1>
-          <p className='text-left sm:text-center mt-2 p-base max-w-sm sm:max-w-full sm:p-xl-header text-black-white-100 pb-8'>
+          <p className='text-left sm:text-center mt-2 p-base max-w-sm sm:max-w-full sm:p-xl-header text-grey-100 pb-8'>
             {homePageHeader.subHeader}
           </p>
           <div className='mt-2 sm:flex sm:justify-center md:mt-2'>

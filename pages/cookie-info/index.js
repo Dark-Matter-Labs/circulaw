@@ -30,7 +30,7 @@ const cookies = [
 export default function Privacy() {
   return (
     <Layout title='CircuLaw - Cookiebeleid'>
-      <div className='global-margin my-20 max-w-2xl text-black-white-800'>
+      <div className='global-margin my-20 max-w-2xl text-grey-800'>
         <h1 className='mobile sm:desktop pb-6'>Cookiebeleid CircuLaw</h1>
         <h2 className='mobile sm:desktop py-2'>Wat zijn cookies?</h2>
         <p className=' p-lg pb-6 max-w-4xl'>
@@ -68,7 +68,7 @@ export default function Privacy() {
                     <tr className='divide-x divide-gray-200'>
                       <th
                         scope='col'
-                        className='py-3.5 pl-4 pr-4 text-left text-black-white-800 sm:pl-6'
+                        className='py-3.5 pl-4 pr-4 text-left text-grey-800 sm:pl-6'
                       >
                         Cookie naam
                       </th>
@@ -83,11 +83,11 @@ export default function Privacy() {
                   <tbody className='divide-y divide-gray-200 bg-white'>
                     {cookies.map((cookie) => (
                       <tr key={cookie.email} className='divide-x divide-gray-200'>
-                        <td className='whitespace-nowrap py-4 pl-4 pr-4 text-black-white-800 sm:pl-6'>
+                        <td className='whitespace-nowrap py-4 pl-4 pr-4 text-grey-800 sm:pl-6'>
                           {cookie.name}
                         </td>
-                        <td className=' p-4 text-black-white-800 '>{cookie.description}</td>
-                        <td className='whitespace-nowrap p-4 text-black-white-800'>
+                        <td className=' p-4 text-grey-800 '>{cookie.description}</td>
+                        <td className='whitespace-nowrap p-4 text-grey-800'>
                           {cookie.valid}
                         </td>
                       </tr>

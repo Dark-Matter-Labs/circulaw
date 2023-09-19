@@ -13,7 +13,7 @@ import CustomButton from './custom-button';
 export default function Instrument({ data }) {
   const router = useRouter();
   return (
-    <div className='bg-black-white-100 relative'>
+    <div className='bg-grey-100 relative'>
       {/* can move this into a component */}
       <Popover className='fixed inset-y-1/3 right-0 z-10 h-96 w-16 hidden sm:block'>
         {({ open }) => (
@@ -21,19 +21,19 @@ export default function Instrument({ data }) {
             <Popover.Button
               className={`${
                 open ? '-translate-x-56' : ''
-              } bg-green-500 rounded-l-clSm h-full w-full flex flex-col items-center justify-between text-black-white-100`}
+              } bg-green-500 rounded-l-clSm h-full w-full flex flex-col items-center justify-between text-grey-100`}
             >
               <ArrowLeftIcon
                 className={`${
                   open ? 'rotate-180 transform' : ''
-                } h-6 w-6 text-black-white-100 mt-10`}
+                } h-6 w-6 text-grey-100 mt-10`}
               />
               <div className='[writing-mode:vertical-lr] rotate-180 p-lg pt-10'>
                 Help ons circulaw te verbeteren
               </div>
             </Popover.Button>
             <Popover.Panel className=''>
-              <div className='w-56 h-96 bg-black-white-200 -translate-y-96 -translate-x-40 flex flex-col items-center'>
+              <div className='w-56 h-96 bg-grey-200 -translate-y-96 -translate-x-40 flex flex-col items-center'>
                 <div className='px-8 py-6'>
                   <h4 className='desktop'>Deel met ons:</h4>
                   <ul className='pb-10 list-disc	'>
@@ -81,7 +81,7 @@ export default function Instrument({ data }) {
 
             {/* this will need to be added once samenhang structure is confirmed */}
             {/*
-            <div className='ml-4 py-0.5 px-2 rounded-[5px] text-black-white-100 bg-black-white-600'>
+            <div className='ml-4 py-0.5 px-2 rounded-[5px] text-grey-100 bg-grey-600'>
               verkoop
             </div> */}
           </div>

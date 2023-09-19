@@ -10,7 +10,7 @@ export default function AboutPagepreview({ query, queryParams }) {
   return (
     <div>
       <div className='bg-about-header bg-cover bg-center h-40'></div>
-      <div className='pb-8 text-black-white-800 global-margin-alternative'>
+      <div className='pb-8 text-grey-800 global-margin-alternative'>
         <div className='block lg:hidden w-full'>
           <AboutPageDropdown
             currentSlug={data?.aboutPage?.slug.current}

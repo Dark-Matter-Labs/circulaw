@@ -6,10 +6,10 @@ export default function ActionPanel(props) {
   return (
     <div className=''>
       <div className=''>
-        <h3 className='mobile sm:desktop text-black-white-100'>{props.title}</h3>
+        <h3 className='mobile sm:desktop text-grey-100'>{props.title}</h3>
         <div className=''>
           <div>
-            <div className='mt-2 max-w-xl  p-base text-black-white-100'>{props.paragraph}</div>
+            <div className='mt-2 max-w-xl  p-base text-grey-100'>{props.paragraph}</div>
           </div>
           <div className='mt-5'>
             <Link href={props.buttonLink}>

@@ -8,9 +8,9 @@ export default function OverNav({ currentSlug, slugs }) {
           href={`/about/${encodeURIComponent(slug.slug)}`}
           className={`${
             slug.slug === currentSlug
-              ? 'text-black-white-800'
+              ? 'text-grey-800'
               : 'text-green-500 hover:bg-gray-50 hover:text-gray-900'
-          } flex items-center px-3 py-2 breadcrumb bg-black-white-100`}
+          } flex items-center px-3 py-2 breadcrumb bg-grey-100`}
           aria-current={slug.slug ? 'page' : undefined}
         >
           <span className='truncate'>

@@ -663,9 +663,9 @@ export default function MeasuresLayout({ ...props }) {
         </div>
       </div>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20 border-b border-black-white-500 pb-2'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20 border-b border-grey-500 pb-2'>
         <div className='hidden lg:block mb-6 self-end'>
-          <h3 className='mobile sm:desktop inline text-black-white-800'>Filter op:</h3>{' '}
+          <h3 className='mobile sm:desktop inline text-grey-800'>Filter op:</h3>{' '}
           <span
             onClick={reset}
             className='underline text-green-500 link-hover link-lg float-right mr-8 link-interaction'
@@ -687,7 +687,7 @@ export default function MeasuresLayout({ ...props }) {
                   <Combobox.Input
                     onChange={(e) => setSearchValue(e.target.value)}
                     autoComplete={'off'}
-                    className='w-full py-2 px-3 outline-none border-0 rounded-cl focus:ring-0 placeholder:text-black-white-600 placeholder:italic'
+                    className='w-full py-2 px-3 outline-none border-0 rounded-cl focus:ring-0 placeholder:text-grey-600 placeholder:italic'
                     displayValue={() => searchValue}
                     placeholder='Zoek op trefwoord'
                   />
@@ -835,7 +835,7 @@ export default function MeasuresLayout({ ...props }) {
         <div className='lg:hidden py-5 w-28 justify-self-end'>
           <button
             type='button'
-            className='px-4 inline-flex border-2 p-2 w-full border-black-white-800 rounded-cl focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500 lg:hidden'
+            className='px-4 inline-flex border-2 p-2 w-full border-grey-800 rounded-cl focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500 lg:hidden'
             onClick={() => setSidebarOpen(true)}
           >
             <span className='sr-only'>Open sidebar</span>

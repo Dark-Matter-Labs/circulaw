@@ -8,7 +8,7 @@ export default function InstrumentMetaData({ data }) {
       <div className='sm:grid-cols-1 hidden sm:grid'>
         <div className='h-auto border-b border-t mb-6 flex flex-row justify-between items-center w-11/12 max-w-[854px] justify-self-center py-1'>
           <div className='flex flex-col'>
-            <h4 className='mobile sm:desktop py-1 text-black-white-600'>Juridische houdbaarheid</h4>
+            <h4 className='mobile sm:desktop py-1 text-grey-600'>Juridische houdbaarheid</h4>
             <div className='flex items-center'>
               <h5 className='mobile sm:desktop text-green-500 pr-2'>
                 {data?.measure?.juridischeHaalbaarheid}
@@ -31,7 +31,7 @@ export default function InstrumentMetaData({ data }) {
             </div>
           </div>
           <div className='flex flex-col'>
-            <h4 className='mobile sm:desktop py-1 text-black-white-600'>Invloed</h4>
+            <h4 className='mobile sm:desktop py-1 text-grey-600'>Invloed</h4>
             <div className='flex items-center'>
               <h5 className='mobile sm:desktop text-green-500 pr-2'>
                 {data?.measure?.juridischInvloed}
@@ -55,7 +55,7 @@ export default function InstrumentMetaData({ data }) {
             </div>
           </div>
           <div className='flex flex-col'>
-            <h4 className='mobile sm:desktop py-1 text-black-white-600'>Overheidslaag</h4>
+            <h4 className='mobile sm:desktop py-1 text-grey-600'>Overheidslaag</h4>
             <h5 className='mobile sm:desktop text-green-500'>
               {data?.measure?.overheidslaag?.map((level) => (
                 <span key={level} className=''>
@@ -66,7 +66,7 @@ export default function InstrumentMetaData({ data }) {
             </h5>
           </div>
           <div className='flex flex-col'>
-            <h4 className='mobile sm:desktop py-1 text-black-white-600'>R-ladder</h4>
+            <h4 className='mobile sm:desktop py-1 text-grey-600'>R-ladder</h4>
             <div className='flex items-center'>
               <div className='flex flex-row items-center'>
                 {data?.measure?.rLadder.map((rValue) => (
@@ -99,9 +99,9 @@ export default function InstrumentMetaData({ data }) {
       </div>
       {/* MOBILE */}
       <div className='flex flex-col sm:hidden justify-center mb-4'>
-        <div className='flex flex-row justify-between h-[4.5rem] py-1 border-t border-b border-black-white-500'>
+        <div className='flex flex-row justify-between h-[4.5rem] py-1 border-t border-b border-grey-500'>
           <div className='flex flex-col justify-center'>
-            <h4 className='mobile sm:desktop py-1 text-black-white-600'>Juridische houdbaarheid</h4>
+            <h4 className='mobile sm:desktop py-1 text-grey-600'>Juridische houdbaarheid</h4>
             <div className='flex items-center'>
               <h5 className='mobile sm:desktop text-green-500 pr-2'>
                 {data?.measure?.juridischeHaalbaarheid}
@@ -124,7 +124,7 @@ export default function InstrumentMetaData({ data }) {
             </div>
           </div>
           <div className='flex flex-col justify-center'>
-            <h4 className='mobile sm:desktop py-1 text-black-white-600'>Invloed</h4>
+            <h4 className='mobile sm:desktop py-1 text-grey-600'>Invloed</h4>
             <div className='flex items-center'>
               <h5 className='mobile sm:desktop text-green-500 pr-2'>
                 {data?.measure?.juridischInvloed}
@@ -148,9 +148,9 @@ export default function InstrumentMetaData({ data }) {
             </div>
           </div>
         </div>
-        <div className='flex h-[4.5rem] py-1 border-b border-black-white-500'>
+        <div className='flex h-[4.5rem] py-1 border-b border-grey-500'>
           <div className='flex flex-col justify-center'>
-            <h4 className='mobile sm:desktop py-1 text-black-white-600'>Overheidslaag</h4>
+            <h4 className='mobile sm:desktop py-1 text-grey-600'>Overheidslaag</h4>
             <h5 className='mobile sm:desktop text-green-500'>
               {data?.measure?.overheidslaag?.map((level) => (
                 <span key={level} className=''>
@@ -161,9 +161,9 @@ export default function InstrumentMetaData({ data }) {
             </h5>
           </div>
         </div>
-        <div className='flex h-[4.5rem] py-1 border-b border-black-white-500'>
+        <div className='flex h-[4.5rem] py-1 border-b border-grey-500'>
           <div className='flex flex-col justify-center'>
-            <h4 className='mobile sm:desktop py-1 text-black-white-600'>R-ladder</h4>
+            <h4 className='mobile sm:desktop py-1 text-grey-600'>R-ladder</h4>
             <div className='flex items-center'>
               <div className='flex flex-row items-center'>
                 {data?.measure?.rLadder.map((rValue) => (

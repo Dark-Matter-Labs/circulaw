@@ -17,7 +17,7 @@ export default function ToolTips({ children, icon }) {
         <span className='sr-only'>Open ToolTip</span>
         {icon > 0 && (
           <svg
-            className='text-black-white-600 w-5 h-5'
+            className='text-grey-600 w-5 h-5'
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 20 20'
             fill='currentColor'

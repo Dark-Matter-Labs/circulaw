@@ -29,7 +29,7 @@ export default function SocialButtons({ title, viewport }) {
 
   return (
     <div className={`${viewportClasses}`}>
-      <span className='p-lg text-black-white-500 pr-2'>Delen: </span>
+      <span className='p-lg text-grey-500 pr-2'>Delen: </span>
       <span className='pr-2 test' title='Share link on LinkedIn'>
         <LinkedinShareButton
           url={url + asPath}
@@ -83,7 +83,7 @@ export default function SocialButtons({ title, viewport }) {
       </span>
       <span className='pr-2' title='Copy link to clipboard'>
         <LinkIcon
-          className='inline-block p-1 h-8 w-8 bg-black-white-500 rounded-full text-white hover:cursor-pointer hover:bg-green-300'
+          className='inline-block p-1 h-8 w-8 bg-grey-500 rounded-full text-white hover:cursor-pointer hover:bg-green-300'
           onClick={() => {
             navigator.clipboard.writeText(url + asPath);
             setShowLinkCopied(true);
