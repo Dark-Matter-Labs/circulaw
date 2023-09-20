@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import MeasureLinksDropdown from './measure-links-dropdown';
+import InstrumentLinksDropdown from './measure-links-dropdown';
 
 export default function OverviewPageHeader({ props, page }) {
   return (
@@ -20,7 +20,7 @@ export default function OverviewPageHeader({ props, page }) {
             </Link>
           </div>
           <div className='block sm:float-right'>
-            <MeasureLinksDropdown type={props.thema} page={page} />
+            <InstrumentLinksDropdown type={props.thema} page={page} />
           </div>
         </div>
         <div className='items-center justify-center grid grid-cols-10 pb-2'>
