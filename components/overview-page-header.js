@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import InstrumentLinksDropdown from './measure-links-dropdown';
+import InstrumentLinksDropdown from '../components/instrument/instrument-links-dropdown';
 
 export default function OverviewPageHeader({ props, page }) {
   return (
