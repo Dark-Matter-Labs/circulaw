@@ -2,9 +2,9 @@ import { useRouter } from 'next/router';
 import { PortableText } from '@portabletext/react';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
 
-import InstrumentTable from '../components/instrument-table';
-import SocialButtons from '../components/social-buttons';
-import { instrumentPTComponents } from '../lib/portable-text/pt-components';
+import InstrumentTable from './instrument-table';
+import SocialButtons from '../../components/social-buttons';
+import { instrumentPTComponents } from '../../lib/portable-text/pt-components';
 import InstrumentMetaData from './instrument-metadata';
 import InstrumentFeedbackBlock from './instrument-feedback-block';
 

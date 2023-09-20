@@ -20,7 +20,7 @@ const links = {
   ],
 };
 
-export default function MeasureLinksDropdown({ page, type }) {
+export default function InstrumentLinksDropdown({ page, type }) {
   const router = useRouter();
   // add on click close to close the disclosure.
   if (page === 'list') {

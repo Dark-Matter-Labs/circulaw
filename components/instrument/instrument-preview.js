@@ -3,15 +3,15 @@ import Link from 'next/link';
 import { PortableText } from '@portabletext/react';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
 import { Popover } from '@headlessui/react';
-import { usePreview } from '../lib/sanity.preview';
+import { usePreview } from '../../lib/sanity.preview';
 
-import InstrumentTable from '../components/instrument-table';
-import SocialButtons from '../components/social-buttons';
-import { instrumentPTComponents } from '../lib/portable-text/pt-components';
+import InstrumentTable from './instrument-table';
+import SocialButtons from '../../components/social-buttons';
+import { instrumentPTComponents } from '../../lib/portable-text/pt-components';
 import InstrumentMetaData from './instrument-metadata';
-import CustomButton from './custom-button';
+import CustomButton from './../custom-button';
 
-export default function Instrument({ query, queryParams }) {
+export default function InstrumentPreview({ query, queryParams }) {
   const data = { measure: usePreview(null, query, queryParams) };
   const router = useRouter();
   return (
