@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { PortableText } from '@portabletext/react';
-import OverNav from './over-nav';
+import AboutPageNav from './about-page-nav';
 import { aboutPagePTComponents } from '../lib/portable-text/pt-components';
 import AboutPageDropdown from './about-page-dropdown';
 
@@ -31,7 +31,7 @@ export default function AboutPageComponent({ data }) {
             </div>
           </div>
           <div className='hidden lg:block mt-3 lg:ml-12 lg:mb-20 lg:mt-32 col-span-1'>
-            <OverNav currentSlug={data?.aboutPage?.slug.current} slugs={data?.aboutPageSlugs} />
+            <AboutPageNav currentSlug={data?.aboutPage?.slug.current} slugs={data?.aboutPageSlugs} />
           </div>
           <div className='block lg:hidden'>
             <AboutPageDropdown
