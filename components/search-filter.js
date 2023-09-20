@@ -138,9 +138,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                         <div className='h-6 w-6 mr-2 bg-green-600 rounded-full inline-flex justify-center items-center'>
                           <span className='text-white text-center'>{data.value}</span>
                         </div>
-                        <span className='table-basel text-grey-600 text-sm'>
-                          {data.name}
-                        </span>
+                        <span className='table-basel text-grey-600 text-sm'>{data.name}</span>
                       </>
                     )}
 

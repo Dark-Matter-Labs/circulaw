@@ -123,9 +123,7 @@ export default function PolicyList(props) {
                   </div>
                 </div>
                 <div className=' space-x-8 hidden sm:flex'>
-                  <h6 className='p-1 rounded bg-grey-300 text-grey-800 '>
-                    {law.subrechtsgebied}
-                  </h6>
+                  <h6 className='p-1 rounded bg-grey-300 text-grey-800 '>{law.subrechtsgebied}</h6>
                 </div>
               </div>
             </div>

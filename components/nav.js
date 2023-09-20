@@ -259,9 +259,7 @@ export default function Nav(props) {
                             <>
                               <Popover.Button
                                 className={`${
-                                  router.pathname !== '/'
-                                    ? 'text-grey-800'
-                                    : 'text-grey-100'
+                                  router.pathname !== '/' ? 'text-grey-800' : 'text-grey-100'
                                 } group rounded-md inline-flex items-center`}
                               >
                                 <h5 className='uppercase mobile sm:desktop'>OVER CIRCULAW</h5>
@@ -314,9 +312,7 @@ export default function Nav(props) {
                           <Link href={`/${encodeURIComponent(FAQslug)}`}>
                             <h5
                               className={`${
-                                router.pathname !== '/'
-                                  ? 'text-grey-800'
-                                  : 'text-grey-100'
+                                router.pathname !== '/' ? 'text-grey-800' : 'text-grey-100'
                               } uppercase group rounded-md inline-flex items-center mobile sm:desktop mobile sm:desktop`}
                             >
                               VRAAG & ANTWOORD
@@ -327,9 +323,7 @@ export default function Nav(props) {
                           <Link href='/contact'>
                             <h5
                               className={`${
-                                router.pathname !== '/'
-                                  ? 'text-grey-800'
-                                  : 'text-grey-100'
+                                router.pathname !== '/' ? 'text-grey-800' : 'text-grey-100'
                               } uppercase group rounded-md inline-flex items-center mobile sm:desktop mobile sm:desktop`}
                             >
                               CONTACT
@@ -386,10 +380,7 @@ export default function Nav(props) {
                       </span>
                     </Popover.Button>
 
-                    <Popover.Button
-                      as='span'
-                      className='uppercase text-grey-800  pl-3 pr-4 py-4'
-                    >
+                    <Popover.Button as='span' className='uppercase text-grey-800  pl-3 pr-4 py-4'>
                       Thema&apos;s
                     </Popover.Button>
 

@@ -29,9 +29,7 @@ export default function ThemeLayout({ ...props }) {
               </Link>
               <div className='grid col-span-8 grid-cols-8 sm:pl-12 sm:pt:12 md:pl-24 lg:pl-36 pb-14 pt-14 w-4/5'>
                 <div className='col-span-8'>
-                  <h1 className='text-grey-100 inline-block header'>
-                    {themaData?.themaName}
-                  </h1>
+                  <h1 className='text-grey-100 inline-block header'>{themaData?.themaName}</h1>
                 </div>
                 <div className='col-span-7'>
                   <p className='pt-4 text-grey-100 p-lg'>

@@ -26,9 +26,7 @@ export default function InstrumentPreview({ query, queryParams }) {
               } bg-green-500 rounded-l-clSm h-full w-full flex flex-col items-center justify-between text-grey-100`}
             >
               <ArrowLeftIcon
-                className={`${
-                  open ? 'rotate-180 transform' : ''
-                } h-6 w-6 text-grey-100 mt-10`}
+                className={`${open ? 'rotate-180 transform' : ''} h-6 w-6 text-grey-100 mt-10`}
               />
               <div className='[writing-mode:vertical-lr] rotate-180 p-lg pt-10'>
                 Help ons circulaw te verbeteren

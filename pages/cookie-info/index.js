@@ -66,10 +66,7 @@ export default function Privacy() {
                 <table className='min-w-full divide-y divide-green-800'>
                   <thead className='bg-gray-50'>
                     <tr className='divide-x divide-gray-200'>
-                      <th
-                        scope='col'
-                        className='py-3.5 pl-4 pr-4 text-left text-grey-800 sm:pl-6'
-                      >
+                      <th scope='col' className='py-3.5 pl-4 pr-4 text-left text-grey-800 sm:pl-6'>
                         Cookie naam
                       </th>
                       <th scope='col' className='px-4 py-3.5 text-left text-gray-900'>
@@ -87,9 +84,7 @@ export default function Privacy() {
                           {cookie.name}
                         </td>
                         <td className=' p-4 text-grey-800 '>{cookie.description}</td>
-                        <td className='whitespace-nowrap p-4 text-grey-800'>
-                          {cookie.valid}
-                        </td>
+                        <td className='whitespace-nowrap p-4 text-grey-800'>{cookie.valid}</td>
                       </tr>
                     ))}
                   </tbody>

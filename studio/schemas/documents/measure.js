@@ -9,7 +9,7 @@ export default {
   groups: [
     {
       name: 'high-level',
-      title: 'High level content'
+      title: 'High level content',
     },
     {
       name: 'mete-data',
@@ -28,7 +28,7 @@ export default {
       type: 'boolean',
       description: 'Moet dit instrument op de thema-pagina worden uitgelicht?',
       validation: (Rule) => Rule.required(),
-      group: 'high-level'
+      group: 'high-level',
     },
     {
       title: 'Featured Image',
@@ -42,7 +42,7 @@ export default {
           type: 'string',
         },
       ],
-      group: 'high-level'
+      group: 'high-level',
     },
     {
       title: 'Titel',
@@ -50,7 +50,7 @@ export default {
       type: 'string',
       description: 'Titel van het instrument. Zorg dat deze titel uniek is.',
       validation: (Rule) => Rule.required(),
-      group: 'high-level'
+      group: 'high-level',
     },
     {
       title: 'Subtitel',
@@ -58,7 +58,7 @@ export default {
       type: 'text',
       description: 'Subtitel en/of intro-tekst  -  komt direct onder de titel.',
       validation: (Rule) => Rule.max(300),
-      group: 'high-level'
+      group: 'high-level',
     },
     {
       title: 'Slug',
@@ -71,7 +71,7 @@ export default {
         inUnique: 'true',
         slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
       },
-      group: 'high-level'
+      group: 'high-level',
     },
     {
       title: 'Thema',
@@ -87,7 +87,7 @@ export default {
         ], // <-- predefined values - can store these elsewhere if we want
         layout: 'dropdown',
       },
-      group: 'high-level'
+      group: 'high-level',
     },
     {
       title: 'Transitie-agenda',
@@ -105,7 +105,7 @@ export default {
         ], // <-- predefined values
         layout: 'dropdown', // <-- defaults to 'dropdown'
       },
-      group: 'high-level'
+      group: 'high-level',
     },
     {
       title: 'Productgroep',
@@ -141,7 +141,7 @@ export default {
         ], // <-- predefined values
         layout: 'dropdown', // <-- defaults to 'dropdown'
       },
-      group: 'high-level'
+      group: 'high-level',
     },
     // ITEMS ONLY IN OVERVIEW/FILTER
     {

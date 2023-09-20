@@ -137,9 +137,7 @@ export default function Contact() {
                 <div className='mt-1 flex items-baseline'>
                   <input type='hidden' name='subscribe' value='no' />
                   <input type='checkbox' name='subscribe' value='yes' onChange={handleChange()} />
-                  <label className='block text-grey-800 pl-2'>
-                    Abonneren op de nieuwsbrief
-                  </label>
+                  <label className='block text-grey-800 pl-2'>Abonneren op de nieuwsbrief</label>
                 </div>
                 <div className='sm:col-span-2'>
                   <div className=''>

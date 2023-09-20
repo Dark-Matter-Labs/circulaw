@@ -40,29 +40,17 @@ export default function Partners({ footerText }) {
                   </Link>
                 </div>
 
-                {index === 2 && (
-                  <hr className='border-grey-100 col-span-3 block lg:hidden' />
-                )}
+                {index === 2 && <hr className='border-grey-100 col-span-3 block lg:hidden' />}
 
-                {index === 4 && (
-                  <hr className='border-grey-100 col-span-5 hidden lg:block' />
-                )}
+                {index === 4 && <hr className='border-grey-100 col-span-5 hidden lg:block' />}
 
-                {index === 5 && (
-                  <hr className='border-grey-100 col-span-3 block lg:hidden' />
-                )}
+                {index === 5 && <hr className='border-grey-100 col-span-3 block lg:hidden' />}
 
-                {index === 8 && (
-                  <hr className='border-grey-100 col-span-3 block lg:hidden' />
-                )}
+                {index === 8 && <hr className='border-grey-100 col-span-3 block lg:hidden' />}
 
-                {index === 9 && (
-                  <hr className='border-grey-100 col-span-5 hidden lg:block' />
-                )}
+                {index === 9 && <hr className='border-grey-100 col-span-5 hidden lg:block' />}
 
-                {index === 11 && (
-                  <hr className='border-grey-100 col-span-3 block lg:hidden' />
-                )}
+                {index === 11 && <hr className='border-grey-100 col-span-3 block lg:hidden' />}
 
                 {partners.length > 15 && index === 14 && (
                   <hr className='border-grey-100 col-span-3 block lg:hidden' />
@@ -106,9 +94,7 @@ export default function Partners({ footerText }) {
         )}
         <hr className='border-grey-100 ' />
         <div className='text-center py-2'>
-          <span className='text-grey-100 p-sm'>
-            Legal data & content managed with support from
-          </span>
+          <span className='text-grey-100 p-sm'>Legal data & content managed with support from</span>
           <a target='_blank' href='https://www.sanity.io/' rel='noopener noreferrer'>
             <Image className='inline mx-2 my-2' src={sanityLogo} alt='Sanity logo' />
           </a>

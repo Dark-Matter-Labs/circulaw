@@ -12,7 +12,7 @@ export default function Instrument({ data }) {
   const router = useRouter();
   return (
     <div className='bg-grey-100 relative'>
-    <InstrumentFeedbackBlock data={data} />
+      <InstrumentFeedbackBlock data={data} />
       <div className='global-margin sm:pt-10 '>
         <div className='grid grid-cols-1 sm:content-center mb-8'>
           <div className='row-span-1 h-12 mt-4 sm:w-11/12 max-w-[854px] sm:justify-self-center'>
