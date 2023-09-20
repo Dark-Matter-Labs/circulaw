@@ -1,6 +1,6 @@
-import RTooltip from './../r-ladder-tooltip';
-import JHTooltip from './../juridische-houdbaarheid-tooltip';
-import JITooltip from './../juridische-invloed-tooltip';
+import RTooltip from '../tooltip-r-ladder';
+import JHTooltip from '../tooltip-juridische-houdbaarheid';
+import JITooltip from '../tooltip-juridische-invloed';
 
 export default function InstrumentMetaData({ data }) {
   return (
