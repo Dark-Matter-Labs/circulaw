@@ -51,7 +51,7 @@ export default function WelkeLayout({ ...props }) {
         <OverviewPageHeader props={props} page='welke' />
         {/* DYNAMIC IMAGE */}
         <div className='mb-20 mt-5 sm:mt-20 hidden sm:block'>
-          <div className='flex grid-cols-3 items-start justify-center'>
+          <div className='flex grid-cols-3 items-start 2xl:justify-center'>
             {/* LEFT HAND SIDE */}
             <div className='grid col-span-1 items-start justify-center h-full w-80 mt-10'>
               <div
