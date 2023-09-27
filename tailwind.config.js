@@ -86,6 +86,6 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [require('tailwind-utopia'), require('@tailwindcss/forms')],
   
 };
