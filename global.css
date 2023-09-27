@@ -25,7 +25,7 @@
   }
 
   .header {
-    @apply font-urbanist text-8xl font-semibold leading-17;
+    @apply font-urbanist fl-text-step-5 font-semibold;
   }
 
   h1.desktop {
@@ -73,7 +73,7 @@
   }
 
   h6 {
-    @apply font-manrope text-xxs font-bold leading-6;
+    @apply font-manrope text-xs font-bold leading-6;
   }
 
   .p-xl {
@@ -89,7 +89,7 @@
   }
 
   .p-base {
-    @apply font-manrope text-base font-normal leading-10;
+    @apply font-manrope fl-text-step--1 font-normal;
   }
 
   .p-sm {
