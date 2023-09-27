@@ -6,7 +6,7 @@ import CustomButton from '../custom-button';
 
 export default function InstrumentFeedbackBlock({ data }) {
   return (
-    <Popover className='fixed inset-y-1/3 right-0 z-10 h-96 w-16 hidden sm:block'>
+    <Popover className='fixed inset-y-1/3 right-0 z-10 h-72 w-8 sm:h-96 sm:w-16'>
       {({ open }) => (
         <>
           <Popover.Button
@@ -15,16 +15,16 @@ export default function InstrumentFeedbackBlock({ data }) {
             } bg-green-500 rounded-l-clSm h-full w-full flex flex-col items-center justify-between text-grey-100`}
           >
             <ArrowLeftIcon
-              className={`${open ? 'rotate-180 transform' : ''} h-6 w-6 text-grey-100 mt-10`}
+              className={`${open ? 'rotate-180 transform' : ''} h-4 sm:h-6 w-4 sm:w-6 text-grey-100 mt-3 sm:mt-10`}
             />
-            <div className='[writing-mode:vertical-lr] rotate-180 p-lg pt-10'>
+            <div className='[writing-mode:vertical-lr] rotate-180 pt-3 sm:pt-10 p-base sm:p-lg'>
               Help ons circulaw te verbeteren
             </div>
           </Popover.Button>
           <Popover.Panel className=''>
             <div className='w-56 h-96 bg-grey-200 -translate-y-96 -translate-x-40 flex flex-col items-center'>
               <div className='px-8 py-6'>
-                <h4 className='desktop'>Deel met ons:</h4>
+                <h4 className='mobile sm:desktop'>Deel met ons:</h4>
                 <ul className='pb-10 list-disc	'>
                   <li>voorbeelden uit jouw praktijk</li>
                   <li>je tips om toepassing makkelijker te maken</li>
