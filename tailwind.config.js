@@ -12,6 +12,18 @@ module.exports = {
   important: true,
   theme: {
     extend: {
+      utopia: {
+        minScreen: '320px',
+        minSize: 22,
+        minScale: 1.2,
+        maxScreen: '1140px',
+        maxSize: 26,
+        maxScale: 1.25,
+        textSizes: [],
+        spacingSizes: {},
+        spacingPairs: {},
+        spacingCustomPairs: [],
+    },
       colors: {
         'grey-100': '#FDFDFD',
         'grey-200': '#F0F0F0',
@@ -28,8 +40,7 @@ module.exports = {
         'green-800': '#053237',
       },
       fontFamily: {
-        urbanist: ['Urbanist', 'sans-serif'],
-        manrope: ['Manrope', 'sans-serif']
+        jakarta: ['Plus Jakarta Sans', 'sans-serif']
       },
       fontSize: {
         xxs: '12px',
