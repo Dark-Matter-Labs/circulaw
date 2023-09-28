@@ -22,19 +22,17 @@ export default function ThemeLayout({ ...props }) {
             />
             <div className='global-margin h-[28rem] z-5 pt-10 relative'>
               <Link
-                className='bg-black-white-200 border rounded-md border-black-white-200 pl-1 pr-2 py-0.5 breadcrumb text-green-500'
+                className='bg-grey-100 border rounded-md border-grey-100 pl-1 pr-2 py-0.5 breadcrumb text-green-500'
                 href='/'
               >
                 &lt; Home
               </Link>
               <div className='grid col-span-8 grid-cols-8 sm:pl-12 sm:pt:12 md:pl-24 lg:pl-36 pb-14 pt-14 w-4/5'>
                 <div className='col-span-8'>
-                  <h1 className='text-black-white-200 inline-block header'>
-                    {themaData?.themaName}
-                  </h1>
+                  <h1 className='text-grey-100 inline-block header'>{themaData?.themaName}</h1>
                 </div>
                 <div className='col-span-7'>
-                  <p className='pt-4 text-black-white-200 p-lg'>
+                  <p className='pt-4 text-grey-100 p-lg'>
                     {themaData?.themaSubtitle}{' '}
                     {themaData?.linkText && (
                       <span className='text-green-300 link-base inline-block  '>

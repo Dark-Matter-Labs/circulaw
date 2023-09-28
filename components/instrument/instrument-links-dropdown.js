@@ -20,7 +20,7 @@ const links = {
   ],
 };
 
-export default function MeasureLinksDropdown({ page, type }) {
+export default function InstrumentLinksDropdown({ page, type }) {
   const router = useRouter();
   // add on click close to close the disclosure.
   if (page === 'list') {
@@ -54,7 +54,7 @@ export default function MeasureLinksDropdown({ page, type }) {
                     router.push(`${links[type][0]}`);
                   }}
                 >
-                  <div className='bg-white w-full text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
+                  <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
                     <span className='block pl-3 truncate'>In samenhang</span>
                   </div>
                 </Disclosure.Button>
@@ -64,7 +64,7 @@ export default function MeasureLinksDropdown({ page, type }) {
                     router.push(`${links[type][2]}`);
                   }}
                 >
-                  <div className='bg-white w-full text-black-white-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500'>
+                  <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500'>
                     <span className='block pl-3 truncate'>Per overheidsbevoegdheid</span>
                   </div>
                 </Disclosure.Button>
@@ -105,7 +105,7 @@ export default function MeasureLinksDropdown({ page, type }) {
                     router.push(`${links[type][1]}`);
                   }}
                 >
-                  <div className='bg-white w-full text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
+                  <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
                     <span className='block pl-3 truncate'>In lijst met filters</span>
                   </div>
                 </Disclosure.Button>
@@ -115,7 +115,7 @@ export default function MeasureLinksDropdown({ page, type }) {
                     router.push(`${links[type][2]}`);
                   }}
                 >
-                  <div className='bg-white w-full text-black-white-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
+                  <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
                     <span className='block pl-3 truncate'>Per overheidsbevoegdheid</span>
                   </div>
                 </Disclosure.Button>
@@ -156,7 +156,7 @@ export default function MeasureLinksDropdown({ page, type }) {
                     router.push(`${links[type][0]}`);
                   }}
                 >
-                  <div className='bg-white w-full text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
+                  <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
                     <span className='block pl-3 truncate'>In samenhang</span>
                   </div>
                 </Disclosure.Button>
@@ -166,7 +166,7 @@ export default function MeasureLinksDropdown({ page, type }) {
                     router.push(`${links[type][1]}`);
                   }}
                 >
-                  <div className='bg-white w-full text-black-white-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
+                  <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
                     <span className='block pl-3 truncate'>In lijst met filters</span>
                   </div>
                 </Disclosure.Button>

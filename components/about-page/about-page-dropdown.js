@@ -38,7 +38,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                   router.push(`/about/${encodeURIComponent(remainingTitles[0]?.slug)}`);
                 }}
               >
-                <div className='bg-white w-full text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
+                <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
                   <span className='block pl-3 truncate'>{remainingTitles[0]?.title}</span>
                 </div>
               </Disclosure.Button>
@@ -48,7 +48,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                   router.push(`/about/${encodeURIComponent(remainingTitles[1]?.slug)}`);
                 }}
               >
-                <div className='bg-white w-full text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
+                <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
                   <span className='block pl-3 truncate'>{remainingTitles[1]?.title}</span>
                 </div>
               </Disclosure.Button>
@@ -63,7 +63,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                     remainingTitles[2]?.slug === remainingTitles?.slice(-1)[0]?.slug
                       ? 'rounded-b-cl'
                       : ''
-                  } bg-white w-full text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500`}
+                  } bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500`}
                 >
                   <span className='block pl-3 truncate'>{remainingTitles[2]?.title}</span>
                 </div>
@@ -80,7 +80,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                       remainingTitles[3]?.slug === remainingTitles?.slice(-1)[0]?.slug
                         ? 'rounded-b-cl'
                         : ''
-                    } bg-white text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500`}
+                    } bg-white text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500`}
                   >
                     <span className='block pl-3 truncate'>{remainingTitles[3]?.title}</span>
                   </div>
@@ -98,7 +98,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                       remainingTitles[4]?.slug === remainingTitles?.slice(-1)[0]?.slug
                         ? 'rounded-b-cl'
                         : ''
-                    } bg-white text-black-white-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500`}
+                    } bg-white text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500`}
                   >
                     <span className='block pl-3 truncate'>{remainingTitles[4]?.title}</span>
                   </div>

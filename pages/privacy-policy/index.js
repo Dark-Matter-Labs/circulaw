@@ -5,7 +5,7 @@ import LinkIcon from '../../components/link-icon';
 export default function Privacy() {
   return (
     <Layout title='CircuLaw - Privacyverklaring'>
-      <div className='global-margin my-20 max-w-2xl text-black-white-800'>
+      <div className='global-margin my-20 max-w-2xl text-grey-800'>
         <h1 className='mobile sm:desktop pb-6'>Privacyverklaring</h1>
         <p className=' p-lg pt-2 pb-6 max-w-4xl'>
           Het team CircuLaw is verantwoordelijk voor de verwerking van persoonsgegevens zoals

@@ -4,16 +4,17 @@ import { PreviewSuspense } from 'next-sanity/preview';
 import Layout from '../../components/layouts/layout';
 import { client } from '../../lib/sanity';
 import { measurePagePathsQuery, measureQuery } from '../../lib/queries';
-import Instrument from '../../components/instrument';
+import Instrument from '../../components/instrument/instrument';
+
 import globalMeta from '../../utils/global-meta';
 
-const PreviewInstrument = lazy(() => import('../../components/instrument-preview'));
+const InstrumentPreview = lazy(() => import('../../components/instrument/instrument-preview'));
 
 export default function Measure({ preview, data }) {
   return preview ? (
     <PreviewSuspense>
       <Layout>
-        <PreviewInstrument query={measureQuery} queryParams={data.slug} />
+        <InstrumentPreview query={measureQuery} queryParams={data.slug} />
       </Layout>
     </PreviewSuspense>
   ) : (

@@ -20,7 +20,7 @@ export default function ThemeBottomSection({ props }) {
               {laws?.map((measure) => (
                 <div
                   key={measure?._id}
-                  className={`border-black-white-600 ${
+                  className={`border-grey-600 ${
                     measure === laws?.[0] ? 'border-t border-transparent' : 'border-t'
                   }`}
                 >

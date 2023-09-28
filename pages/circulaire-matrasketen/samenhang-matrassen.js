@@ -19,7 +19,7 @@ export default function InfoPage() {
         icon={mattressIcon}
         p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
       />
-      <div className='bg-green-600 lgNav:border-b-0 border-black-white-100 mt-10'>
+      <div className='bg-green-600 lgNav:border-b-0 border-grey-100 mt-10'>
         <div className='global-margin'>
           <svg viewBox='0 0 2908 5048'>
             <image width='2908' height='5048' xlinkHref='/samenhang/samh-matress.png'></image>{' '}

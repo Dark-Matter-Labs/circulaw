@@ -8,7 +8,7 @@ export default function SamenhangLayout({ ...props }) {
         <OverviewPageHeader props={props} page='samenhang' />
         <div className='grid grid-cols-1 sm:grid-cols-3 mt-10 sm:justify-items-end mb-10 sm:mb-0'>
           <div className='col-span-2'>
-            <p className=' p-lg text-black-white-800 pb-6'>{props.p1}</p>
+            <p className=' p-lg text-grey-800 pb-6'>{props.p1}</p>
           </div>
           <div className=''>
             <h3 className='mobile text-black mx-20 mb-4'>Legenda</h3>

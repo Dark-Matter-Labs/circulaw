@@ -7,7 +7,7 @@ import aboutImage from '../public/home-page/homepageAboutDeco.png';
 export default function HomePageAboutSection({ aboutSection }) {
   return (
     <Link href={`/about/${encodeURIComponent(aboutSection?.aboutSectionSlug)}`} name='about'>
-      <div className='w-full sm:w-3/5 flex items-center justify-start border-b border-black-white-800 pb-4'>
+      <div className='w-full sm:w-3/5 flex items-center justify-start border-b border-grey-800 pb-4'>
         <div className='sm:hidden'>
           <svg
             width='42'

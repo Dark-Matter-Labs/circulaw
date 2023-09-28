@@ -1,10 +1,8 @@
 import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
-import Link from 'next/link';
-import LinkIcon from './link-icon';
 
-export default function ToolTips({ children, icon }) {
+export default function ToolTips({ children, icon, data }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -17,7 +15,7 @@ export default function ToolTips({ children, icon }) {
         <span className='sr-only'>Open ToolTip</span>
         {icon > 0 && (
           <svg
-            className='text-black-white-600 w-5 h-5'
+            className='text-gray-300 w-5 h-5'
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 20 20'
             fill='currentColor'
@@ -79,58 +77,30 @@ export default function ToolTips({ children, icon }) {
                         </button>
                       </div>
                     </Transition.Child>
-                    <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
-                      <div className='px-4 sm:px-6'>
+                    <div className='flex h-full px-6 flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
+                      <div className=''>
                         <Dialog.Title className='text-gray-900'>
                           {' '}
-                          <h2 className='mobile sm:desktop'>
-                            R-ladder: strategieën van circulariteit
-                          </h2>
+                          <h2 className='mobile sm:desktop'>Geschatte juridische haalbaarheid</h2>
                         </Dialog.Title>
                       </div>
-                      <div className='relative mt-6 flex-1 px-4 sm:px-6'>
-                        <div className='absolute inset-0 px-4 sm:px-6'>
-                          <p className='p-base'>
-                            Met de R-ladder geven we per instrument een schatting van de mate van
-                            circulariteit aan. De R-ladder heeft 6 tredes (R1 tot en met R6) die
-                            verschillende strategieën van circulariteit weergeven. Strategieën hoger
-                            op de ladder besparen meer grondstoffen. R1 is de hoogste trede. De
-                            strategieën kunnen samengaan met innovaties in de vorm van vernieuwende
-                            productontwerpen, technologieën of businessmodellen.
-                          </p>
-                          <p className='p-base py-6'>
-                            De 6 tredes zijn:
-                            <ul className='list-disc pl-6 pt-2'>
-                              <li>
-                                R1. Refuse en rethink: afzien van producten of producten intensiever
-                                gebruiken
-                              </li>
-                              <li>
-                                R2. Reduce: producten efficiënter fabriceren of efficiënter maken in
-                                het gebruik
-                              </li>
-                              <li>R3. Reuse: hergebruik van een product</li>
-                              <li>
-                                R4. Repair, refurbish, remanufacturing en repurpose: reparatie en
-                                hergebruik van productonderdelen
-                              </li>
-                              <li>R5. Recycling: verwerken en hergebruiken van materialen</li>
-                              <li>R6. Recover: energie terugwinnen uit materialen</li>
-                            </ul>
-                          </p>
-                          <span className='p-base py-2'>
-                            Bron en meer over de de R-ladder op de{' '}
-                            <Link
-                              href='https://www.rvo.nl/onderwerpen/r-ladder'
-                              target='_blank'
-                              rel='noopener noreferrer'
-                            >
-                              <span className='link-lg underline text-green-500 link-interaction'>
-                                website van RVO
-                              </span>
-                              <LinkIcon />
-                            </Link>
-                          </span>
+                      <div className='relative mt-6 flex-1'>
+                        <div className='absolute inset-0'>
+                          {data?.measure?.JHTooltipText && (
+                            <p className='p-base'>{data?.measure?.JHTooltipText}</p>
+                          )}
+                          <div className='bg-grey-100 mt-6 p-6'>
+                            <p className='p-base'>
+                              Met de waardering ‘Juridische haalbaarheid’ laten we zien hoe
+                              risicovol een instrument is: wat is het afbreukrisico of de kans dat
+                              het instrument onderuit gaat bij de rechter.
+                            </p>
+                            <br />
+                            <p className='p-base'>
+                              We maken hiervan een globale inschatting, 1: beperkt, 2: gemiddeld, 3:
+                              hoog.
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
