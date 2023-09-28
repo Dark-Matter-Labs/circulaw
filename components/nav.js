@@ -106,14 +106,14 @@ export default function Nav(props) {
                 `${
                   router.pathname === '/'
                     ? 'bg-green-600 shadow-lg transition-all duration-150'
-                    : 'bg-grey-100 shadow-lg transition-all duration-150'
+                    : 'bg-[#F8FBF8] shadow-lg transition-all duration-150'
                 }`,
               ]
             : [
                 `${
                   router.pathname === '/'
                     ? 'bg-transparent transition-all duration-150'
-                    : 'bg-grey-100 shadow-lg transition-all duration-150'
+                    : 'bg-[#F8FBF8] shadow-lg transition-all duration-150'
                 }`,
               ]
         } w-full sticky top-0 z-10 h-auto`}
