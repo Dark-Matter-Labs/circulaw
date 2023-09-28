@@ -15,7 +15,9 @@ export default function InstrumentFeedbackBlock({ data }) {
             } bg-green-500 rounded-l-clSm h-full w-full flex flex-col items-center justify-between text-grey-100`}
           >
             <ArrowLeftIcon
-              className={`${open ? 'rotate-180 transform' : ''} h-4 w-4 sm:h-6 sm:w-6 text-grey-100 mt-3 sm:mt-10`}
+              className={`${
+                open ? 'rotate-180 transform' : ''
+              } h-4 w-4 sm:h-6 sm:w-6 text-grey-100 mt-3 sm:mt-10`}
             />
             <div className='[writing-mode:vertical-lr] rotate-180 pt-3 sm:pt-10 p-base sm:p-lg'>
               Help ons circulaw te verbeteren
@@ -35,7 +37,9 @@ export default function InstrumentFeedbackBlock({ data }) {
                 className=''
                 href={{ pathname: '/feedback', query: { instrument: data?.measure?.titel } }}
               >
-                <CustomButton color='greenBackground'><span className='p-sm font-bold sm:p-base'>Ik deel mijn kennis</span></CustomButton>
+                <CustomButton color='greenBackground'>
+                  <span className='p-sm font-bold sm:p-base'>Ik deel mijn kennis</span>
+                </CustomButton>
               </Link>
             </div>
           </Popover.Panel>
