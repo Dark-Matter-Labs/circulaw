@@ -25,83 +25,71 @@
   }
 
   .header {
-    @apply font-urbanist fl-text-step-5 font-semibold;
+    @apply font-jakarta fl-text-step-5 font-semibold leading-17;
   }
 
-  h1.desktop {
-    @apply font-urbanist text-7xl font-semibold leading-16;
+  h1 {
+    @apply font-jakarta fl-text-step-3 font-semibold;
   }
 
-  h1.mobile {
-    @apply font-urbanist text-5xl font-semibold leading-13; 
+  h2 {
+    @apply font-jakarta fl-text-step-1 font-semibold;
   }
 
-  h2.desktop {
-    @apply font-urbanist text-6xl font-semibold leading-14;
-  }
-
-  h2.mobile {
-    @apply font-urbanist text-3xl font-semibold leading-13;
-  }
-
-  h3.desktop {
-    @apply font-urbanist text-4xl font-semibold leading-13;
-  }
-
-  h3.mobile {
-    @apply font-urbanist text-2xl font-semibold leading-10;
+  h3 {
+    @apply font-jakarta fl-text-step--1 font-semibold leading-13;
   }
 
   h4.desktop {
-    @apply font-urbanist text-xl font-medium leading-10;
+    @apply font-jakarta text-xl font-medium leading-10;
   }
 
   h4.mobile {
-    @apply font-urbanist text-lg font-semibold leading-10;
+    @apply font-jakarta text-lg font-semibold leading-10;
   }
 
   h5.desktop {
-    @apply font-manrope text-xs font-semibold leading-9;
+    @apply font-jakarta text-xs font-semibold leading-9;
   }
 
   h5.bold {
-    @apply font-manrope text-xs font-extrabold leading-9;
+    @apply font-jakarta text-xs font-extrabold leading-9;
   }
 
   h5.mobile {
-    @apply font-urbanist text-base font-medium leading-10;
+    @apply font-jakarta text-base font-medium leading-10;
   }
 
   h6 {
-    @apply font-manrope text-xs font-bold leading-6;
+    @apply font-jakarta text-xs font-bold leading-6;
   }
 
   .p-xl {
-    @apply font-urbanist text-3xl font-normal leading-14;
+    @apply font-jakarta text-3xl font-normal leading-14;
   }
 
   .p-xl-header {
-    @apply font-urbanist text-3xl font-semibold leading-14;
+    @apply font-jakarta text-3xl font-semibold leading-14;
   }
   
   .p-lg {
-    @apply font-manrope text-xl font-normal leading-13;
+    @apply font-jakarta text-xl font-normal leading-13;
   }
 
   .p-base {
-    @apply font-manrope fl-text-step--1 font-normal;
+    @apply font-jakarta fl-text-step--2 font-normal;
   }
 
   .p-sm {
-    @apply font-manrope text-xs font-normal leading-7;
+    @apply font-jakarta text-xs font-normal leading-7;
   }
 
   .link-lg {
-    @apply font-manrope text-xl font-semibold leading-13 underline;
+    @apply font-jakarta text-xl font-semibold leading-13 underline;
   }
 
   .link-base {
-    @apply font-manrope text-base font-medium leading-11 underline;
+    @apply font-jakarta text-base font-medium leading-11 underline;
   }
 
   .link-interaction {
@@ -119,35 +107,35 @@
 
 
   .button {
-    @apply font-manrope text-base font-bold leading-10;
+    @apply font-jakarta text-base font-bold leading-10;
   }
 
   .table-base {
-    @apply font-manrope text-base font-semibold leading-3;
+    @apply font-jakarta text-base font-semibold leading-3;
   }
 
   .table-sm {
-    @apply font-manrope text-xs font-semibold leading-4;
+    @apply font-jakarta text-xs font-semibold leading-4;
   }
 
   .breadcrumb {
-    @apply font-manrope text-xs font-medium leading-5 uppercase;
+    @apply font-jakarta text-xs font-medium leading-5 uppercase;
   }
 
   .popup-base {
-    @apply font-manrope text-base font-medium leading-8;
+    @apply font-jakarta text-base font-medium leading-8;
   }
 
   .popup-sm {
-    @apply font-manrope text-xs font-medium leading-6;
+    @apply font-jakarta text-xs font-medium leading-6;
   }
 
   .enLink {
-    @apply font-manrope text-xs font-semibold leading-9;
+    @apply font-jakarta text-xs font-semibold leading-9;
   }
 
   .enLinkSelected {
-    @apply font-manrope text-xs font-extrabold leading-9;
+    @apply font-jakarta text-xs font-extrabold leading-9;
   }
 }
 
