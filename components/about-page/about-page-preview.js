@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { PortableText } from '@portabletext/react';
-import OverNav from './over-nav';
-import { usePreview } from '../lib/sanity.preview';
-import { aboutPagePTComponents } from '../lib/portable-text/pt-components';
+import AboutPageNav from './about-page-nav';
+import { usePreview } from '../../lib/sanity.preview';
+import { aboutPagePTComponents } from '../../lib/portable-text/pt-components';
 import AboutPageDropdown from './about-page-dropdown';
 
 export default function AboutPagepreview({ query, queryParams }) {
@@ -10,7 +10,7 @@ export default function AboutPagepreview({ query, queryParams }) {
   return (
     <div>
       <div className='bg-about-header bg-cover bg-center h-40'></div>
-      <div className='pb-8 text-black-white-800 global-margin-alternative'>
+      <div className='pb-8 text-grey-800 global-margin-alternative'>
         <div className='block lg:hidden w-full'>
           <AboutPageDropdown
             currentSlug={data?.aboutPage?.slug.current}
@@ -33,7 +33,7 @@ export default function AboutPagepreview({ query, queryParams }) {
             </div>
           </div>
           <div className='hidden lg:block mt-3 max-w-3xl lg:ml-12 lg:mb-20 lg:mt-32 col-span-1'>
-            <OverNav
+            <AboutPageNav
               currentSlug={data?.aboutPage?.slug.current}
               slugs={data?.aboutPage?.aboutPageSlugs}
             />

@@ -8,20 +8,16 @@ export default {
   // GROUPS
   groups: [
     {
-      name: 'overview',
-      title: 'Overview Content',
+      name: 'high-level',
+      title: 'High level content',
     },
     {
-      name: 'table',
-      title: 'Table Content',
+      name: 'mete-data',
+      title: 'Meta Data',
     },
     {
       name: 'copy',
       title: 'Copy Content',
-    },
-    {
-      name: 'filter',
-      title: 'Filter Content',
     },
   ],
   // FIELDS
@@ -32,6 +28,7 @@ export default {
       type: 'boolean',
       description: 'Moet dit instrument op de thema-pagina worden uitgelicht?',
       validation: (Rule) => Rule.required(),
+      group: 'high-level',
     },
     {
       title: 'Featured Image',
@@ -45,6 +42,7 @@ export default {
           type: 'string',
         },
       ],
+      group: 'high-level',
     },
     {
       title: 'Titel',
@@ -52,13 +50,15 @@ export default {
       type: 'string',
       description: 'Titel van het instrument. Zorg dat deze titel uniek is.',
       validation: (Rule) => Rule.required(),
+      group: 'high-level',
     },
     {
       title: 'Subtitel',
       name: 'subtitel',
       type: 'text',
       description: 'Subtitel en/of intro-tekst  -  komt direct onder de titel.',
-      validation: (Rule) => Rule.max(130),
+      validation: (Rule) => Rule.max(300),
+      group: 'high-level',
     },
     {
       title: 'Slug',
@@ -71,6 +71,7 @@ export default {
         inUnique: 'true',
         slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
       },
+      group: 'high-level',
     },
     {
       title: 'Thema',
@@ -86,7 +87,7 @@ export default {
         ], // <-- predefined values - can store these elsewhere if we want
         layout: 'dropdown',
       },
-      group: 'overview',
+      group: 'high-level',
     },
     {
       title: 'Transitie-agenda',
@@ -104,6 +105,7 @@ export default {
         ], // <-- predefined values
         layout: 'dropdown', // <-- defaults to 'dropdown'
       },
+      group: 'high-level',
     },
     {
       title: 'Productgroep',
@@ -139,6 +141,7 @@ export default {
         ], // <-- predefined values
         layout: 'dropdown', // <-- defaults to 'dropdown'
       },
+      group: 'high-level',
     },
     // ITEMS ONLY IN OVERVIEW/FILTER
     {
@@ -159,7 +162,7 @@ export default {
         ],
         layout: 'grid',
       },
-      group: ['overview', 'filter'],
+      group: ['mete-data'],
     },
     {
       title: 'Subrechtsgebied',
@@ -181,7 +184,7 @@ export default {
         ],
         layout: 'dropdown',
       },
-      group: ['overview', 'filter'],
+      group: ['mete-data'],
     },
     {
       title: 'Invloed',
@@ -198,14 +201,14 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      group: ['overview'],
+      group: ['mete-data'],
     },
     {
       title: 'Toelichting invloed',
       name: 'invloedTooltipText',
       type: 'string',
       description: 'Beschrijf kort waarom dit beperkt, gemiddeld of hoog is',
-      group: 'overview',
+      group: 'mete-data',
     },
     {
       title: 'Juridische Haalbaarheid',
@@ -222,14 +225,14 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      group: ['overview', 'filter'],
+      group: ['mete-data'],
     },
     {
       title: 'Toelichting juridische haalbaarheid',
       name: 'JHTooltipText',
       type: 'string',
       description: 'Beschrijf kort waarom dit beperkt, gemiddeld of hoog is',
-      group: 'overview',
+      group: 'mete-data',
     },
     {
       title: 'Overheidslaag',
@@ -247,7 +250,7 @@ export default {
         ],
         layout: 'grid',
       },
-      group: ['filter', 'table'],
+      group: ['mete-data'],
     },
     {
       title: 'Rechtsgebied',
@@ -264,7 +267,7 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      group: ['filter', 'table'],
+      group: ['mete-data'],
     },
     {
       title: 'Bevat extra info',
@@ -279,7 +282,7 @@ export default {
         ],
         layout: 'grid',
       },
-      group: ['filter'],
+      group: ['mete-data'],
     },
     // ITEMS ONLY IN TABLE
     {
@@ -288,7 +291,7 @@ export default {
       type: 'string',
       description: 'De naam van de relevante wet (bv Aanbestedingswet 2012)',
       validation: (Rule) => Rule.required(),
-      group: 'table',
+      group: 'mete-data',
     },
     {
       title: 'Wetsartikel-nummer',
@@ -296,7 +299,7 @@ export default {
       type: 'string',
       description: 'Geef het nummer van het wetsartikel op (bv 2.8a).',
       validation: (Rule) => Rule.required(),
-      group: 'table',
+      group: 'mete-data',
     },
     {
       title: 'Link wetsartikel',
@@ -304,14 +307,14 @@ export default {
       type: 'url',
       description: 'De link naar een wetsartikel moet altijd beginnen met http of https.',
       validation: (Rule) => Rule.required().uri({ scheme: ['http', 'https'] }),
-      group: 'table',
+      group: 'mete-data',
     },
     {
       title: 'Ingangsdatum wet',
       name: 'lawDate',
       type: 'date',
       description: 'Ingangsdatum wet (laat open als wet nog niet van kracht is)',
-      group: 'table',
+      group: 'mete-data',
       options: {
         dateFormat: 'DD-MM-YYYY',
       },
@@ -382,13 +385,6 @@ export default {
         },
       ],
       group: 'copy',
-    },
-    {
-      title: 'Juridische toelichting',
-      name: 'juridischeToelichting',
-      type: 'array',
-      of: [{ type: 'block', styles: [{ title: 'normal', value: 'normal' }] }],
-      group: ['copy', 'table'],
     },
   ],
 };
