@@ -14,7 +14,7 @@ export default function Instrument({ data }) {
     <div className='bg-grey-100 relative'>
       <InstrumentFeedbackBlock data={data} />
       <div className='global-margin sm:pt-10 '>
-        <div className='grid grid-cols-1 sm:content-center mb-8'>
+        <div className='grid grid-cols-1 sm:content-center mb-4'>
           <div className='row-span-1 h-12 mt-4 sm:w-11/12 max-w-[854px] sm:justify-self-center'>
             {/* BREADCRUMB */}
             <button type='button' onClick={() => router.back()}>
@@ -44,7 +44,7 @@ export default function Instrument({ data }) {
           </div>
 
           <div className='sm:w-11/12 max-w-[760px] sm:justify-self-center '>
-            <h1 className='lg:block sm:pt-4 pb-6 sm:pb-10 mobile sm:desktop'>
+            <h1 className='lg:block pb-4 pt-6 mobile sm:desktop'>
               {data?.measure?.titel}
             </h1>
           </div>
