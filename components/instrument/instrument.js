@@ -56,7 +56,7 @@ export default function Instrument({ data }) {
         <div className='grid grid-cols-1'>
           {data?.measure?.subtitel && (
             <div className='sm:w-11/12 sm:justify-self-center max-w-[760px]'>
-              <h2 className='lg:block p-lg sm:p-xl mb-4'> {data?.measure?.subtitel}</h2>
+              <h2 className='lg:block p-lg sm:p-xl  '> {data?.measure?.subtitel}</h2>
             </div>
           )}
         </div>
