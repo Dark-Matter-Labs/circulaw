@@ -94,23 +94,20 @@ export default function MeasureOverview({ viewport, children, data }) {
             <div className='relative flex justify-between border-t border-black-white-600'>
               <div className='flex'>
                 <h5 className='text-black-white-500 mobile sm:desktop py-2 pr-3'>Overheidslaag</h5>
-              
               </div>
             </div>
 
             <div className='flex items-center'>
               <h4 className='mobile sm:desktop text-green-500 uppercase'>
-              {data?.measure?.overheidslaag?.map((level) => (
-                    <span key={level} className=''>
-                      {level}{' '}
-                      {data?.measure?.overheidslaag.slice(-1)[0] !== level && <span>-</span>}
-                      &nbsp;
-                    </span>
-                  ))}
+                {data?.measure?.overheidslaag?.map((level) => (
+                  <span key={level} className=''>
+                    {level} {data?.measure?.overheidslaag.slice(-1)[0] !== level && <span>-</span>}
+                    &nbsp;
+                  </span>
+                ))}
               </h4>
             </div>
           </div>
-
 
           <div className=' pb-1'>
             <div className='relative flex justify-between border-t border-black-white-600'>
@@ -167,12 +164,9 @@ export default function MeasureOverview({ viewport, children, data }) {
             <div className='flex items-center w-10/12'>
               <h4 className='mobile sm:desktop text-green-500 uppercase'>
                 {data?.measure?.juridischeHaalbaarheid}
-                
               </h4>
             </div>
           </div>
-
-          
         </div>
       </div>
     </div>
