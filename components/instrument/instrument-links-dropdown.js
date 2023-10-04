@@ -25,7 +25,7 @@ export default function InstrumentLinksDropdown({ page, type }) {
   // add on click close to close the disclosure.
   if (page === 'list') {
     return (
-      <div className='w-full min-w-[260px]'>
+      <div className='w-full min-w-[260px] pt-4 sm:pt-0'>
         <Disclosure>
           {({ open }) => (
             <>
