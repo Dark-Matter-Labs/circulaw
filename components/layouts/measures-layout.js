@@ -915,7 +915,7 @@ export default function MeasuresLayout({ ...props }) {
         <div className='mt-10 col-span-3'>
           {data && (
             <div>
-              <PolicyList data={laws} casus={props.thema} />
+              <PolicyList data={laws}/>
             </div>
           )}
         </div>
