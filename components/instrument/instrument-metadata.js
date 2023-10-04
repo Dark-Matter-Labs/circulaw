@@ -80,7 +80,7 @@ export default function InstrumentMetaData({ data }) {
             <h4 className='mobile sm:desktop py-1 text-grey-600'>R-ladder</h4>
             <div className='flex items-center'>
               <div className='flex flex-row items-center'>
-                {data?.measure?.rLadder.map((rValue) => (
+                {data?.measure?.rLadder?.map((rValue) => (
                   <h5 key={rValue} className='text-green-500 mobile sm:desktop'>
                     {rValue} {data?.measure?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                     &nbsp;
@@ -193,13 +193,13 @@ export default function InstrumentMetaData({ data }) {
             <h4 className='mobile sm:desktop py-1 text-grey-600'>R-ladder</h4>
             <div className='flex items-center'>
               <div className='flex flex-row items-center'>
-                {data?.measure?.rLadder.map((rValue) => (
+                {data?.measure?.rLadder?.map((rValue) => (
                   <h5 key={rValue} className='text-green-500 mobile sm:desktop'>
                     {rValue} {data?.measure?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                     &nbsp;
                   </h5>
                 ))}
-                {data?.rLadder.map((rValue) => (
+                {data?.rLadder?.map((rValue) => (
                    <h5 key={rValue} className='text-green-500 mobile sm:desktop'>
                    {rValue} {data?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                    &nbsp;
