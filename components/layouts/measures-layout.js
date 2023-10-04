@@ -305,7 +305,6 @@ export default function MeasuresLayout({ ...props }) {
           numGemeentelijk += 1;
         }
 
-
         if (measure.juridischeHaalbaarheid === 'Beperkt') {
           numJHLow += 1;
         } else if (measure.juridischeHaalbaarheid === 'Gemiddeld') {
@@ -340,7 +339,6 @@ export default function MeasuresLayout({ ...props }) {
       setNumberOfJILow(numJILow);
       setNumberOfJIMedium(numJIMedium);
       setNumberOfJIHigh(numJIHigh);
-
     } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, selected, searchValue, props.thema]);
 
@@ -356,7 +354,7 @@ export default function MeasuresLayout({ ...props }) {
     if (selected.overheidslaag.length !== 0 && typeof wettelijkFilterRef.current !== 'undefined') {
       wettelijkFilterRef.current.set(selected.overheidslaag);
     }
- 
+
     if (
       selected.juridischeHaalbaarheid?.length !== 0 &&
       typeof juridischeHaalbaarheidFilterRef.current !== 'undefined'
@@ -447,8 +445,8 @@ export default function MeasuresLayout({ ...props }) {
                           handleFilters(checkboxState, 'overheidslaag')
                         }
                       />
-                  
-                        <SearchFilter
+
+                      <SearchFilter
                         ref={juridischInvloedFilterRef}
                         title='Invloed'
                         list={juridischInvloed}
@@ -466,7 +464,6 @@ export default function MeasuresLayout({ ...props }) {
                           handleFilters(checkboxState, 'juridischeHaalbaarheid')
                         }
                       />
-                  
                     </div>
 
                     <span onClick={reset} className=' text-green-500 p-8'>
@@ -554,7 +551,6 @@ export default function MeasuresLayout({ ...props }) {
                 )}
               </Combobox>
             </div>
-
 
             <div className='flex w-full items-center justify-start max-w-3xl'>
               {/* no laws */}
@@ -657,18 +653,18 @@ export default function MeasuresLayout({ ...props }) {
           </div>
         </div>
       </div>
-        <div className='lg:hidden py-5 border-b border-grey-500'>
-          <button
-            type='button'
-            className='px-4 max-w-sm inline-flex items-center justify-center border-2 p-2 w-full border-grey-800 rounded-cl focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500 lg:hidden'
-            onClick={() => setSidebarOpen(true)}
-          >
-            <span className='sr-only'>Open sidebar</span>
-            <span className='text-black'>Filter</span>
-            <AdjustmentsIcon className='h-6 w-6' aria-hidden='true' />
-          </button>
-        </div>
-        
+      <div className='lg:hidden py-5 border-b border-grey-500'>
+        <button
+          type='button'
+          className='px-4 max-w-sm inline-flex items-center justify-center border-2 p-2 w-full border-grey-800 rounded-cl focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500 lg:hidden'
+          onClick={() => setSidebarOpen(true)}
+        >
+          <span className='sr-only'>Open sidebar</span>
+          <span className='text-black'>Filter</span>
+          <AdjustmentsIcon className='h-6 w-6' aria-hidden='true' />
+        </button>
+      </div>
+
       <div className='grid grid-cols-1 sm:grid-cols-4 md:gap-x-20'>
         <div className='hidden lg:block p-3 my-4'>
           <SearchFilter
@@ -690,7 +686,7 @@ export default function MeasuresLayout({ ...props }) {
             ]}
             handleFilters={(checkboxState) => handleFilters(checkboxState, 'overheidslaag')}
           />
-           <SearchFilter
+          <SearchFilter
             ref={juridischInvloedFilterRef}
             title='Invloed'
             list={juridischInvloed}
