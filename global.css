@@ -29,11 +29,11 @@
   }
 
   h1 {
-    @apply font-jakarta fl-text-step-3 font-semibold;
+    @apply font-jakarta fl-text-step-3 font-semibold leading-16;
   }
 
   h2 {
-    @apply font-jakarta fl-text-step-1 font-semibold;
+    @apply font-jakarta fl-text-step-1 font-semibold leading-14;
   }
 
   h3 {
