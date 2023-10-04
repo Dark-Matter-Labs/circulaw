@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import InstrumentLinksDropdown from '../components/instrument/instrument-links-dropdown';
 
@@ -7,7 +6,7 @@ export default function OverviewPageHeader({ props, page }) {
   return (
     <>
       <div>
-        <div className='flex flex-col sm:flex-row sm:justify-between sm:items-center pt-8 sm:pt-0 pb-8'>
+        <div className='flex flex-col sm:flex-row sm:justify-between sm:items-center mt-12 sm:pt-0 pb-12'>
           <div className='breadcrumb uppercase'>
             <Link className='underline link-interaction' href='/'>
               Home &nbsp;
@@ -24,11 +23,8 @@ export default function OverviewPageHeader({ props, page }) {
           </div>
         </div>
         <div className='items-center justify-center grid grid-cols-10 pb-2'>
-          <div className='col-span-1 flex h-12 w-12 sm:h-full sm:w-full items-center'>
-            <Image src={props.icon} alt='Thema icon' width={107} height={107} />
-          </div>
           <div className='col-span-9'>
-            <h1 className='mobile sm:desktop text-black max-w-3xl pl-6'>{props.title}</h1>
+            <h1 className='mobile sm:desktop text-black max-w-3xl'>{props.title}</h1>
           </div>
         </div>
       </div>

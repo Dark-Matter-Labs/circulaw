@@ -9,12 +9,9 @@ import useSWR from 'swr';
 
 import {
   overheidslaag,
-  rechtsgebied,
-  subrechtsgebied,
   juridischeHaalbaarheid,
   juridischInvloed,
   extraContent,
-  rLadder,
 } from '../../utils/data-filter';
 import SearchFilter from '/components/search-filter';
 import PolicyList from '/components/policy-list';
@@ -29,9 +26,6 @@ export default function MeasuresLayout({ ...props }) {
   const { data } = useSWR(groq`${measureLayoutQuery}`, fetcher);
   // creating references to access child component functions
   const wettelijkFilterRef = useRef();
-  const rechtsgebiedFilterRef = useRef();
-  const subrechtsgebiedFilterRef = useRef();
-  const rLadderFilterRef = useRef();
   const juridischeHaalbaarheidFilterRef = useRef();
   const juridischInvloedFilterRef = useRef();
   const extraContentFilterRef = useRef();
@@ -79,17 +73,6 @@ export default function MeasuresLayout({ ...props }) {
   const [numberOfProvinciaal, setNumberOfProvinciaal] = useState(0);
   const [numberOfGemeentelijk, setNumberOfGemeentelijk] = useState(0);
 
-  const [numberOfPubliek, setNumberOfPubliek] = useState(0);
-  const [numberOfPrivaat, setNumberOfPrivaat] = useState(0);
-  const [numberOfFiscaal, setNumberOfFiscaal] = useState(0);
-
-  const [numberOfR1, setNumberOfR1] = useState(0);
-  const [numberOfR2, setNumberOfR2] = useState(0);
-  const [numberOfR3, setNumberOfR3] = useState(0);
-  const [numberOfR4, setNumberOfR4] = useState(0);
-  const [numberOfR5, setNumberOfR5] = useState(0);
-  const [numberOfR6, setNumberOfR6] = useState(0);
-
   const [numberOfJHLow, setNumberOfJ1] = useState(0);
   const [numberOfJHMedium, setNumberOfJ2] = useState(0);
   const [numberOfJHHigh, setNumberOfJ3] = useState(0);
@@ -97,15 +80,6 @@ export default function MeasuresLayout({ ...props }) {
   const [numberOfJILow, setNumberOfJILow] = useState(0);
   const [numberOfJIMedium, setNumberOfJIMedium] = useState(0);
   const [numberOfJIHigh, setNumberOfJIHigh] = useState(0);
-
-  const [numberOfErp, setNumberOfErp] = useState(0);
-  const [numberOfOmg, setNumberOfOmg] = useState(0);
-  const [numberOfAan, setNumberOfAan] = useState(0);
-  const [numberOfCont, setNumberOfCont] = useState(0);
-  const [numberOfGron, setNumberOfGron] = useState(0);
-  const [numberOfCultuur, setNumberOfCultuur] = useState(0);
-  const [numberOfStaas, setNumberOfStaas] = useState(0);
-  const [numberOfMilie, setNumberOfMilie] = useState(0);
 
   const [numberOfLeidraad, setNumberOfLeidraad] = useState(0);
   const [numberOfVoorbeeld, setNumberOfVoorbeeld] = useState(0);
@@ -131,9 +105,6 @@ export default function MeasuresLayout({ ...props }) {
     });
 
     wettelijkFilterRef.current.reset();
-    rechtsgebiedFilterRef.current.reset();
-    subrechtsgebiedFilterRef.current.reset();
-    rLadderFilterRef.current.reset();
     juridischeHaalbaarheidFilterRef.current.reset();
     juridischInvloedFilterRef.current.reset();
     extraContentFilterRef.current.reset();
@@ -157,13 +128,6 @@ export default function MeasuresLayout({ ...props }) {
       let numProvinciaal = 0;
       let numGemeentelijk = 0;
 
-      let numR1 = 0;
-      let numR2 = 0;
-      let numR3 = 0;
-      let numR4 = 0;
-      let numR5 = 0;
-      let numR6 = 0;
-
       let numLeidraad = 0;
       let numVoorbeeld = 0;
 
@@ -174,19 +138,6 @@ export default function MeasuresLayout({ ...props }) {
       let numJILow = 0;
       let numJIMedium = 0;
       let numJIHigh = 0;
-
-      let numPubliek = 0;
-      let numPrivaat = 0;
-      let numFiscaal = 0;
-
-      let numErp = 0;
-      let numOmg = 0;
-      let numAan = 0;
-      let numCont = 0;
-      let numGron = 0;
-      let numCultuur = 0;
-      let numStaas = 0;
-      let numMilie = 0;
 
       // FILTER LOGIC FOR MULTICHOICE ATTRIBUTES
       if (selected.extraContent.length > 0) {
@@ -354,50 +305,6 @@ export default function MeasuresLayout({ ...props }) {
           numGemeentelijk += 1;
         }
 
-        if (measure.rechtsgebied === 'Publiekrecht') {
-          numPubliek += 1;
-        } else if (measure.rechtsgebied === 'Privaatrecht') {
-          numPrivaat += 1;
-        } else if (measure.rechtsgebied === 'Fiscaal recht') {
-          numFiscaal += 1;
-        }
-
-        if (measure.subrechtsgebied === 'Erfpacht') {
-          numErp += 1;
-        } else if (measure.subrechtsgebied === 'Omgevingsrecht') {
-          numOmg += 1;
-        } else if (measure.subrechtsgebied === 'Aanbesteding') {
-          numAan += 1;
-        } else if (measure.subrechtsgebied === 'Contracten') {
-          numCont += 1;
-        } else if (measure.subrechtsgebied === 'Gronduitgifte') {
-          numGron += 1;
-        } else if (measure.subrechtsgebied === 'Cultureel recht') {
-          numCultuur += 1;
-        } else if (measure.subrechtsgebied === 'Staats-en bestuursrecht') {
-          numStaas += 1;
-        } else if (measure.subrechtsgebied === 'Milieurecht') {
-          numMilie += 1;
-        }
-
-        if (measure.rLadder.includes('R1')) {
-          numR1 += 1;
-        }
-        if (measure.rLadder.includes('R2')) {
-          numR2 += 1;
-        }
-        if (measure.rLadder.includes('R3')) {
-          numR3 += 1;
-        }
-        if (measure.rLadder.includes('R4')) {
-          numR4 += 1;
-        }
-        if (measure.rLadder.includes('R5')) {
-          numR5 += 1;
-        }
-        if (measure.rLadder.includes('R6')) {
-          numR6 += 1;
-        }
 
         if (measure.juridischeHaalbaarheid === 'Beperkt') {
           numJHLow += 1;
@@ -426,17 +333,6 @@ export default function MeasuresLayout({ ...props }) {
       setNumberOfProvinciaal(numProvinciaal);
       setNumberOfGemeentelijk(numGemeentelijk);
 
-      setNumberOfPubliek(numPubliek);
-      setNumberOfPrivaat(numPrivaat);
-      setNumberOfFiscaal(numFiscaal);
-
-      setNumberOfR1(numR1);
-      setNumberOfR2(numR2);
-      setNumberOfR3(numR3);
-      setNumberOfR4(numR4);
-      setNumberOfR5(numR5);
-      setNumberOfR6(numR6);
-
       setNumberOfJ1(numJHLow);
       setNumberOfJ2(numJHMedium);
       setNumberOfJ3(numJHHigh);
@@ -445,14 +341,6 @@ export default function MeasuresLayout({ ...props }) {
       setNumberOfJIMedium(numJIMedium);
       setNumberOfJIHigh(numJIHigh);
 
-      setNumberOfErp(numErp);
-      setNumberOfOmg(numOmg);
-      setNumberOfAan(numAan);
-      setNumberOfCont(numCont);
-      setNumberOfGron(numGron);
-      setNumberOfCultuur(numCultuur);
-      setNumberOfStaas(numStaas);
-      setNumberOfMilie(numMilie);
     } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, selected, searchValue, props.thema]);
 
@@ -468,25 +356,7 @@ export default function MeasuresLayout({ ...props }) {
     if (selected.overheidslaag.length !== 0 && typeof wettelijkFilterRef.current !== 'undefined') {
       wettelijkFilterRef.current.set(selected.overheidslaag);
     }
-
-    if (
-      selected.rechtsgebied.length !== 0 &&
-      typeof rechtsgebiedFilterRef.current !== 'undefined'
-    ) {
-      rechtsgebiedFilterRef.current.set(selected.rechtsgebied);
-    }
-
-    if (
-      selected.subrechtsgebied.length !== 0 &&
-      typeof subrechtsgebiedFilterRef.current !== 'undefined'
-    ) {
-      subrechtsgebiedFilterRef.current.set(selected.subrechtsgebied);
-    }
-
-    if (selected.rLadder.length !== 0 && typeof rLadderFilterRef.current !== 'undefined') {
-      rLadderFilterRef.current.set(selected.rLadder);
-    }
-
+ 
     if (
       selected.juridischeHaalbaarheid?.length !== 0 &&
       typeof juridischeHaalbaarheidFilterRef.current !== 'undefined'
@@ -577,47 +447,15 @@ export default function MeasuresLayout({ ...props }) {
                           handleFilters(checkboxState, 'overheidslaag')
                         }
                       />
-                      <SearchFilter
-                        ref={rechtsgebiedFilterRef}
-                        title='Rechtsgebied'
-                        list={rechtsgebied}
-                        filterNumbers={[numberOfPubliek, numberOfPrivaat, numberOfFiscaal]}
+                  
+                        <SearchFilter
+                        ref={juridischInvloedFilterRef}
+                        title='Invloed'
+                        list={juridischInvloed}
+                        filterNumbers={[numberOfJILow, numberOfJIMedium, numberOfJIHigh]}
                         handleFilters={(checkboxState) =>
-                          handleFilters(checkboxState, 'rechtsgebied')
+                          handleFilters(checkboxState, 'juridischInvloed')
                         }
-                      />
-
-                      <SearchFilter
-                        ref={subrechtsgebiedFilterRef}
-                        title='Subrechtsgebied'
-                        list={subrechtsgebied}
-                        filterNumbers={[
-                          numberOfErp,
-                          numberOfOmg,
-                          numberOfAan,
-                          numberOfCont,
-                          numberOfGron,
-                          numberOfCultuur,
-                          numberOfStaas,
-                          numberOfMilie,
-                        ]}
-                        handleFilters={(checkboxState) =>
-                          handleFilters(checkboxState, 'subrechtsgebied')
-                        }
-                      />
-                      <SearchFilter
-                        ref={rLadderFilterRef}
-                        title='Circulaire strategie (R-ladder)'
-                        list={rLadder}
-                        filterNumbers={[
-                          numberOfR1,
-                          numberOfR2,
-                          numberOfR3,
-                          numberOfR4,
-                          numberOfR5,
-                          numberOfR6,
-                        ]}
-                        handleFilters={(checkboxState) => handleFilters(checkboxState, 'rLadder')}
                       />
                       <SearchFilter
                         ref={juridischeHaalbaarheidFilterRef}
@@ -628,15 +466,7 @@ export default function MeasuresLayout({ ...props }) {
                           handleFilters(checkboxState, 'juridischeHaalbaarheid')
                         }
                       />
-                      <SearchFilter
-                        ref={juridischInvloedFilterRef}
-                        title='Invloed'
-                        list={juridischInvloed}
-                        filterNumbers={[numberOfJILow, numberOfJIMedium, numberOfJIHigh]}
-                        handleFilters={(checkboxState) =>
-                          handleFilters(checkboxState, 'juridischInvloed')
-                        }
-                      />
+                  
                     </div>
 
                     <span onClick={reset} className=' text-green-500 p-8'>
@@ -663,7 +493,7 @@ export default function MeasuresLayout({ ...props }) {
         </div>
       </div>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20 border-b border-grey-500 pb-2'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20 lg:border-b lg:border-grey-500'>
         <div className='hidden lg:block mb-6 self-end'>
           <h3 className='mobile sm:desktop inline text-grey-800'>Filter op:</h3>{' '}
           <span
@@ -680,7 +510,7 @@ export default function MeasuresLayout({ ...props }) {
             </div>
 
             {/* AUTOCOMPLETE */}
-            <div className='sm:w-9/12 my-5 focus-within:ring-2 focus-within:border-0 focus-within:ring-green-600 border outline-none rounded-cl'>
+            <div className='max-w-3xl my-5 focus-within:ring-2 focus-within:border-0 focus-within:ring-green-600 border outline-none rounded-cl'>
               <Combobox value={firstLaw} onChange={setFirstLaw}>
                 <div className='flex items-center px-3'>
                   <SearchIcon className='h-5 w-5 text-gray-500 inline-block' />
@@ -725,12 +555,11 @@ export default function MeasuresLayout({ ...props }) {
               </Combobox>
             </div>
 
-            {/* clear search and clear filters have the same effect. Should there maybe be a Reset? which resets all search parameters. Clear search button removed for now*/}
 
-            <div className='flex felx-wrap items-center justify-start'>
+            <div className='flex w-full items-center justify-start max-w-3xl'>
               {/* no laws */}
               {numberOfLaws === 0 && (
-                <div>
+                <div className='inline'>
                   <div className='inline'>
                     <h3 className='mobile sm:desktop inline'>0 &nbsp;</h3>
                     <span className=' p-lg'>resultaten in </span>
@@ -739,7 +568,6 @@ export default function MeasuresLayout({ ...props }) {
                       &nbsp;
                     </h3>
                     {searchValue != '' && <span className='p-lg'>voor&nbsp;</span>}
-
                     <h3 className='mobile sm:desktop inline'>
                       {searchValue}&nbsp;
                       {allSelectedValues.length != 0 && <span className='p-lg'>en</span>}&nbsp;
@@ -762,8 +590,8 @@ export default function MeasuresLayout({ ...props }) {
               )}
               {/* number of laws = total number of laws */}
               {numberOfLaws === props.totalNumberOfLaws && (
-                <div>
-                  <span className=''>
+                <div className='inline'>
+                  <span className='inline'>
                     <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
                     <span className=' p-lg'>resultaten in </span>
                     <h3 className='lowercase first-letter:uppercase mobile sm:desktop inline'>
@@ -791,8 +619,8 @@ export default function MeasuresLayout({ ...props }) {
 
               {/* one or more law */}
               {numberOfLaws > 0 && numberOfLaws != props.totalNumberOfLaws && (
-                <div>
-                  <div className=''>
+                <div className='inline'>
+                  <div className='inline'>
                     <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
                     <span className=' p-lg'>resultaten in </span>
                     <h3 className='inline lowercase first-letter:uppercase mobile sm:desktop'>
@@ -825,17 +653,14 @@ export default function MeasuresLayout({ ...props }) {
                   )}
                 </div>
               )}
-
-              {/* display selected values */}
-              <div className=''></div>
             </div>
           </div>
         </div>
-        <div className='col-span-1'></div>
-        <div className='lg:hidden py-5 w-28 justify-self-end'>
+      </div>
+        <div className='lg:hidden py-5 border-b border-grey-500'>
           <button
             type='button'
-            className='px-4 inline-flex border-2 p-2 w-full border-grey-800 rounded-cl focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500 lg:hidden'
+            className='px-4 max-w-sm inline-flex items-center justify-center border-2 p-2 w-full border-grey-800 rounded-cl focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500 lg:hidden'
             onClick={() => setSidebarOpen(true)}
           >
             <span className='sr-only'>Open sidebar</span>
@@ -843,7 +668,7 @@ export default function MeasuresLayout({ ...props }) {
             <AdjustmentsIcon className='h-6 w-6' aria-hidden='true' />
           </button>
         </div>
-      </div>
+        
       <div className='grid grid-cols-1 sm:grid-cols-4 md:gap-x-20'>
         <div className='hidden lg:block p-3 my-4'>
           <SearchFilter
@@ -865,19 +690,12 @@ export default function MeasuresLayout({ ...props }) {
             ]}
             handleFilters={(checkboxState) => handleFilters(checkboxState, 'overheidslaag')}
           />
-          <SearchFilter
-            ref={rechtsgebiedFilterRef}
-            title='Rechtsgebied'
-            list={rechtsgebied}
-            filterNumbers={[numberOfPubliek, numberOfPrivaat, numberOfFiscaal]}
-            handleFilters={(checkboxState) => handleFilters(checkboxState, 'rechtsgebied')}
-          />
-          <SearchFilter
-            ref={rLadderFilterRef}
-            title='Circulaire strategie (R-ladder)'
-            list={rLadder}
-            filterNumbers={[numberOfR1, numberOfR2, numberOfR3, numberOfR4, numberOfR5, numberOfR6]}
-            handleFilters={(checkboxState) => handleFilters(checkboxState, 'rLadder')}
+           <SearchFilter
+            ref={juridischInvloedFilterRef}
+            title='Invloed'
+            list={juridischInvloed}
+            filterNumbers={[numberOfJILow, numberOfJIMedium, numberOfJIHigh]}
+            handleFilters={(checkboxState) => handleFilters(checkboxState, 'juridischInvloed')}
           />
           <SearchFilter
             ref={juridischeHaalbaarheidFilterRef}
@@ -888,34 +706,11 @@ export default function MeasuresLayout({ ...props }) {
               handleFilters(checkboxState, 'juridischeHaalbaarheid')
             }
           />
-          <SearchFilter
-            ref={juridischInvloedFilterRef}
-            title='Invloed'
-            list={juridischInvloed}
-            filterNumbers={[numberOfJILow, numberOfJIMedium, numberOfJIHigh]}
-            handleFilters={(checkboxState) => handleFilters(checkboxState, 'juridischInvloed')}
-          />
-          <SearchFilter
-            ref={subrechtsgebiedFilterRef}
-            title='Subrechtsgebied'
-            list={subrechtsgebied}
-            filterNumbers={[
-              numberOfErp,
-              numberOfOmg,
-              numberOfAan,
-              numberOfCont,
-              numberOfGron,
-              numberOfCultuur,
-              numberOfStaas,
-              numberOfMilie,
-            ]}
-            handleFilters={(checkboxState) => handleFilters(checkboxState, 'subrechtsgebied')}
-          />
         </div>
         <div className='mt-10 col-span-3'>
           {data && (
             <div>
-              <PolicyList data={laws}/>
+              <PolicyList data={laws} />
             </div>
           )}
         </div>
