@@ -319,30 +319,31 @@ export default {
       },
     },
     {
-      title: 'Beleidsinstrumenten en Vergunningen',
-      name: 'beleidsinstrumentenEnVergunningen',
+      title: 'Beleid',
+      name: 'beleid',
       type: 'boolean',
       initialValue: false,
       group: 'meta-data',
+      validation: (Rule) => Rule.required()
     },
     {
-      title: 'beleidsinstrumenten en vergunningen sub category',
-      name: 'beleidsinstrumentenEnVergunningenSubCategory',
+      title: 'Beleid sub category',
+      name: 'beleidSubCategory',
       type: 'array',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
-          return parent?.beleidsinstrumentenEnVergunningen === true &&
-            typeof currentValue === 'undefined'
+          return parent?.beleid === true &&
+            typeof currentValue === 'undefined' && parent.transitionAgenda == 'bouw'
             ? 'A value is required.'
             : true;
         }),
-      hidden: ({ document }) => document.beleidsinstrumentenEnVergunningen === false,
+      hidden: ({ document }) => document.beleid === false || document.transitionAgenda !== 'bouw',
       of: [{ type: 'string' }],
       options: {
         list: [
-          { title: 'Beleid', value: 'beleid' },
           { title: 'Strategie', value: 'strategie' },
-          { title: 'Contracten', value: 'contracten' },
+          { title: 'Beleidsdoorwerking', value: 'beleidsdoorwerking' },
+          { title: 'Beleidsuitvoering', value: 'beleidsuitvoering' },
         ],
         layout: 'grid',
       },
@@ -350,49 +351,20 @@ export default {
     },
 
     {
-      title: 'verkoop',
-      name: 'verkoop',
-      type: 'boolean',
-      initialValue: false,
-      group: 'meta-data',
-    },
-    {
-      title: 'verkoop sub category',
-      name: 'verkoopSubCategory',
-      type: 'array',
-      validation: (Rule) =>
-        Rule.custom((currentValue, { parent }) => {
-          return parent?.verkoop === true && typeof currentValue === 'undefined'
-            ? 'A value is required.'
-            : true;
-        }),
-      hidden: ({ document }) => document.verkoop === false,
-      of: [{ type: 'string' }],
-      options: {
-        list: [
-          { title: 'Beleid', value: 'beleid' },
-          { title: 'Strategie', value: 'strategie' },
-          { title: 'Contracten', value: 'contracten' },
-        ],
-        layout: 'grid',
-      },
-      group: 'meta-data',
-    },
-
-    {
-      title: 'inkoop',
+      title: 'Inkoop',
       name: 'inkoop',
       type: 'boolean',
       initialValue: false,
       group: 'meta-data',
+      validation: (Rule) => Rule.required()
     },
-
     {
       title: 'inkoop sub category',
-      name: 'inkoopSubCategory', // remo
+      name: 'inkoopSubCategory',
       type: 'array',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
+          console.log(parent?.inkoop === true && typeof currentValue === 'undefined')
           return parent?.inkoop === true && typeof currentValue === 'undefined'
             ? 'A value is required.'
             : true;
@@ -403,41 +375,60 @@ export default {
         list: [
           { title: 'Beleid', value: 'beleid' },
           { title: 'Strategie', value: 'strategie' },
-          { title: 'Contracten', value: 'contracten' },
+          { title: 'Bijzondere procedures', value: 'bijzondere-procedures' },
+          { title: 'Selectiecriteria', value: 'selectiecriteria' },
+          { title: 'Gunningscriteria', value: 'gunningscriteria' },
+          { title: 'Contracteisen', value: 'contracteisen' },
         ],
         layout: 'grid',
       },
       group: 'meta-data',
     },
-
     {
-      title: 'financiering',
-      name: 'financiering',
+      title: 'Grondpositie',
+      name: 'grondpositie',
       type: 'boolean',
       initialValue: false,
       group: 'meta-data',
-    },
-    {
-      title: 'financiering sub category',
-      name: 'financieringSubCategory',
-      type: 'array',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
-          return parent?.financiering === true && typeof currentValue === 'undefined'
+          {console.log(currentValue)}
+          return parent?.transitionAgenda === 'bouw' && typeof currentValue === 'undefined'
             ? 'A value is required.'
             : true;
         }),
-      hidden: ({ document }) => document.financiering === false,
+        hidden: ({ document }) => document.transitionAgenda !== 'bouw',
+    },
+    {
+      title: 'Grondpositie sub category',
+      name: 'grondpositieSubCategory', // remo
+      type: 'array',
+      validation: (Rule) =>
+        Rule.custom((currentValue, { parent }) => {
+          return parent?.grondpositie === true && typeof currentValue === 'undefined' && parent?.transitionAgenda === 'bouw'
+            ? 'A value is required.'
+            : true;
+        }),
+      hidden: ({ document }) => document.grondpositie === false || document.transitionAgenda !== 'bouw',
       of: [{ type: 'string' }],
       options: {
         list: [
-          { title: 'Beleid', value: 'beleid' },
           { title: 'Strategie', value: 'strategie' },
-          { title: 'Contracten', value: 'contracten' },
+          { title: 'Selectiecriteria', value: 'selectiecriteria' },
+          { title: 'Gunningscriteria', value: 'gunningscriteria' },
+          { title: 'Contracteisen', value: 'contracteisen' },
         ],
         layout: 'grid',
       },
       group: 'meta-data',
+    },
+    {
+      title: 'Subsidie',
+      name: 'subsidie',
+      type: 'boolean',
+      initialValue: false,
+      group: 'meta-data',
+      validation: (Rule) => Rule.required()
     },
     {
       title: 'fiscaal',
@@ -445,29 +436,9 @@ export default {
       type: 'boolean',
       initialValue: false,
       group: 'meta-data',
+      validation: (Rule) => Rule.required()
     },
-    {
-      title: 'fiscaal sub category',
-      name: 'fiscaalSubCategory',
-      type: 'array',
-      validation: (Rule) =>
-        Rule.custom((currentValue, { parent }) => {
-          return parent?.fiscaal === true && typeof currentValue === 'undefined'
-            ? 'A value is required.'
-            : true;
-        }),
-      hidden: ({ document }) => document.fiscaal === false,
-      of: [{ type: 'string' }],
-      options: {
-        list: [
-          { title: 'Beleid', value: 'beleid' },
-          { title: 'Strategie', value: 'strategie' },
-          { title: 'Contracten', value: 'contracten' },
-        ],
-        layout: 'grid',
-      },
-      group: 'meta-data',
-    },
+    
     // COPY CONTENT
     {
       title: 'Intro-regels',
