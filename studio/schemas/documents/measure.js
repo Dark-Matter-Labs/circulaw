@@ -13,12 +13,16 @@ export default {
       title: 'High level content',
     },
     {
+      name: 'copy',
+      title: 'Copy Content',
+    },
+    {
       name: 'meta-data',
       title: 'Meta Data',
     },
     {
-      name: 'copy',
-      title: 'Copy Content',
+      name: 'expertise',
+      title: 'Expertise Page',
     },
   ],
   // FIELDS
@@ -323,7 +327,7 @@ export default {
       name: 'beleid',
       type: 'boolean',
       initialValue: false,
-      group: 'meta-data',
+      group: 'expertise',
       validation: (Rule) => Rule.required()
     },
     {
@@ -347,7 +351,7 @@ export default {
         ],
         layout: 'grid',
       },
-      group: 'meta-data',
+      group: 'expertise',
     },
 
     {
@@ -355,7 +359,7 @@ export default {
       name: 'inkoop',
       type: 'boolean',
       initialValue: false,
-      group: 'meta-data',
+      group: 'expertise',
       validation: (Rule) => Rule.required()
     },
     {
@@ -382,14 +386,14 @@ export default {
         ],
         layout: 'grid',
       },
-      group: 'meta-data',
+      group: 'expertise',
     },
     {
       title: 'Grondpositie',
       name: 'grondpositie',
       type: 'boolean',
       initialValue: false,
-      group: 'meta-data',
+      group: 'expertise',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
           {console.log(currentValue)}
@@ -420,14 +424,14 @@ export default {
         ],
         layout: 'grid',
       },
-      group: 'meta-data',
+      group: 'expertise',
     },
     {
       title: 'Subsidie',
       name: 'subsidie',
       type: 'boolean',
       initialValue: false,
-      group: 'meta-data',
+      group: 'expertise',
       validation: (Rule) => Rule.required()
     },
     {
@@ -435,10 +439,9 @@ export default {
       name: 'fiscaal',
       type: 'boolean',
       initialValue: false,
-      group: 'meta-data',
+      group: 'expertise',
       validation: (Rule) => Rule.required()
     },
-    
     // COPY CONTENT
     {
       title: 'Intro-regels',
