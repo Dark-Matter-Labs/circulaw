@@ -16,9 +16,9 @@ const expertiseDataQuerie = `
   subsidie,
   fiscaal,
 }
-`
+`;
 
-export default function InfoPage({expertiseData}) {
+export default function InfoPage({ expertiseData }) {
   return (
     <Layout title='CircuLaw - Samenhang Aantal Houtbouwmaatregelen'>
       <SamenhangLayout
@@ -31,12 +31,11 @@ export default function InfoPage({expertiseData}) {
   );
 }
 
-
 export async function getStaticProps() {
   const expertiseData = await client.fetch(expertiseDataQuerie);
   return {
     props: {
-      expertiseData
+      expertiseData,
     },
     revalidate: 1,
   };

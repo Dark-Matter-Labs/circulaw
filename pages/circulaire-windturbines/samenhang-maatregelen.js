@@ -3,7 +3,6 @@ import SamenhangLayout from '../../components/layouts/samenhang-layout';
 import WindmillIcon from '../../public/icons/windmill.png';
 
 export default function InfoPage() {
-
   return (
     <Layout title='CircuLaw - Samenhang Matrassen'>
       <SamenhangLayout
@@ -13,8 +12,7 @@ export default function InfoPage() {
         p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
       />
       <div className=''>
-        <div className='global-margin'>
-                 </div>
+        <div className='global-margin'></div>
       </div>
     </Layout>
   );
