@@ -5,7 +5,6 @@ export default {
   type: 'file',
   validation: (rule) =>
     rule.custom((value) => {
-      console.log(value);
       if (!value.asset) {
         return 'You must add a pdf in order to publish';
       }

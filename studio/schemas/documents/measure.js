@@ -1,4 +1,5 @@
 import { VscLaw } from 'react-icons/vsc';
+import { ProductGroupInput } from '../../components/product-group-input';
 
 export default {
   title: 'Measure',
@@ -12,12 +13,16 @@ export default {
       title: 'High level content',
     },
     {
-      name: 'mete-data',
+      name: 'copy',
+      title: 'Copy Content',
+    },
+    {
+      name: 'meta-data',
       title: 'Meta Data',
     },
     {
-      name: 'copy',
-      title: 'Copy Content',
+      name: 'expertise',
+      title: 'Expertise Page',
     },
   ],
   // FIELDS
@@ -74,22 +79,6 @@ export default {
       group: 'high-level',
     },
     {
-      title: 'Thema',
-      name: 'thema',
-      type: 'string',
-      description: 'Selecteer het thema waaronder dit instrument valt.',
-      validation: (Rule) => Rule.required(),
-      options: {
-        list: [
-          { title: 'Houtbouw', value: 'houtbouw-stimuleren' }, // need to change to refernece
-          { title: 'Circulaire windturbines', value: 'circulaire-windturbines' }, // need to change to reference
-          { title: 'Matrassen', value: 'circulaire-matrasketen' }, // need to change to reference
-        ], // <-- predefined values - can store these elsewhere if we want
-        layout: 'dropdown',
-      },
-      group: 'high-level',
-    },
-    {
       title: 'Transitie-agenda',
       name: 'transitionAgenda',
       type: 'string',
@@ -108,42 +97,56 @@ export default {
       group: 'high-level',
     },
     {
-      title: 'Productgroep',
-      name: 'productGroup',
+      title: 'Is this measure part of a thema or product group?',
+      name: 'themaOrProductGroup',
       type: 'string',
-      description: 'Productgroep',
+      validation: (Rule) => Rule.required(),
       options: {
         list: [
-          { title: 'Plastic verpakkingen', value: 'plastic-verpakkingen' },
-          { title: 'Plastic (afval) in de bouw', value: 'pastic-afval-in-de-bouw' },
-          { title: 'Landbouwfolie', value: 'landbouwfolie' },
-          {
-            title: 'Plastic verpakkingen en verbruiksartikelen',
-            value: 'plastic-verpakkingen-en-verbruiksartikelen',
-          },
-          { title: 'Chemische producten', value: 'chemische-producten' },
-          { title: 'Textiel (incl. kleding)', value: 'textiel-inc-kleding)' },
-          { title: 'Elektrische apparaten', value: 'elektrische-apparaten' },
-          { title: 'Elektrische apparaten', value: 'elektrische apparaten' },
-          { title: 'Meubels', value: 'meubels' },
-          {
-            title: 'Kunstwerken (gestart met viaducten)',
-            value: 'unstwerken-gestart-met-viaducten',
-          },
-          { title: 'Wegen (gestart met asfalt)', value: 'wegen-gestart-met-asfalt)' },
-          { title: 'Woningen', value: 'woningen' },
-          { title: 'Bedrijfsruimte/kantoren', value: 'bedrijfsruimte-kantoren' },
-          { title: 'Capital Equipment', value: 'capital-equipment' },
-          { title: 'Windparken', value: 'windparken' },
-          { title: 'Zonneparken', value: 'zonneparken' },
-          { title: 'Klimaatinstallaties', value: 'klimaatinstallaties' },
-          { title: 'Matrassen', value: 'matrassen' },
-        ], // <-- predefined values
-        layout: 'dropdown', // <-- defaults to 'dropdown'
+          { title: 'Thema', value: 'theme' },
+          { title: 'Product Group', value: 'productGroup' },
+        ],
+        layout: 'radio',
       },
       group: 'high-level',
     },
-    // ITEMS ONLY IN OVERVIEW/FILTER
+    {
+      title: 'Thema',
+      name: 'thema',
+      type: 'string',
+      description: 'Selecteer het thema waaronder dit instrument valt.',
+      validation: (Rule) => Rule.required(),
+      hidden: ({ document }) => document.themaOrProductGroup !== 'theme',
+
+      options: {
+        list: [
+          { title: 'Houtbouw', value: 'houtbouw-stimuleren' }, // need to change to refernece
+          { title: 'Circulaire windturbines', value: 'circulaire-windturbines' }, // need to change to reference
+          { title: 'Matrassen', value: 'circulaire-matrasketen' }, // need to change to reference
+        ], // <-- predefined values - can store these elsewhere if we want
+        layout: 'dropdown',
+      },
+      group: 'high-level',
+    },
+    {
+      name: 'productGroup',
+      title: 'Product Group',
+      description: 'Selecteer het product group waaronder dit instrument valt.',
+      type: 'string',
+      // checks if measure is part of thema or product group and makes product group required only if it had been previously selected.
+      validation: (Rule) =>
+        Rule.custom((currentValue, { parent }) => {
+          return parent?.themaOrProductGroup === 'productGroup' && !currentValue
+            ? 'A value is required.'
+            : true;
+        }),
+      hidden: ({ document }) => document.themaOrProductGroup !== 'productGroup',
+      components: {
+        input: ProductGroupInput,
+      },
+      group: 'high-level',
+    },
+    // ITEMS ONLY IN MetaData
     {
       title: 'R-Ladder',
       name: 'rLadder',
@@ -162,7 +165,7 @@ export default {
         ],
         layout: 'grid',
       },
-      group: ['mete-data'],
+      group: ['meta-data'],
     },
     {
       title: 'Subrechtsgebied',
@@ -184,7 +187,7 @@ export default {
         ],
         layout: 'dropdown',
       },
-      group: ['mete-data'],
+      group: ['meta-data'],
     },
     {
       title: 'Invloed',
@@ -201,14 +204,14 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      group: ['mete-data'],
+      group: ['meta-data'],
     },
     {
       title: 'Toelichting invloed',
       name: 'invloedTooltipText',
       type: 'string',
       description: 'Beschrijf kort waarom dit beperkt, gemiddeld of hoog is',
-      group: 'mete-data',
+      group: 'meta-data',
     },
     {
       title: 'Juridische Haalbaarheid',
@@ -225,14 +228,14 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      group: ['mete-data'],
+      group: ['meta-data'],
     },
     {
       title: 'Toelichting juridische haalbaarheid',
       name: 'JHTooltipText',
       type: 'string',
       description: 'Beschrijf kort waarom dit beperkt, gemiddeld of hoog is',
-      group: 'mete-data',
+      group: 'meta-data',
     },
     {
       title: 'Overheidslaag',
@@ -250,7 +253,7 @@ export default {
         ],
         layout: 'grid',
       },
-      group: ['mete-data'],
+      group: ['meta-data'],
     },
     {
       title: 'Rechtsgebied',
@@ -267,7 +270,7 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      group: ['mete-data'],
+      group: ['meta-data'],
     },
     {
       title: 'Bevat extra info',
@@ -282,7 +285,7 @@ export default {
         ],
         layout: 'grid',
       },
-      group: ['mete-data'],
+      group: ['meta-data'],
     },
     // ITEMS ONLY IN TABLE
     {
@@ -291,7 +294,7 @@ export default {
       type: 'string',
       description: 'De naam van de relevante wet (bv Aanbestedingswet 2012)',
       validation: (Rule) => Rule.required(),
-      group: 'mete-data',
+      group: 'meta-data',
     },
     {
       title: 'Wetsartikel-nummer',
@@ -299,7 +302,7 @@ export default {
       type: 'string',
       description: 'Geef het nummer van het wetsartikel op (bv 2.8a).',
       validation: (Rule) => Rule.required(),
-      group: 'mete-data',
+      group: 'meta-data',
     },
     {
       title: 'Link wetsartikel',
@@ -307,17 +310,143 @@ export default {
       type: 'url',
       description: 'De link naar een wetsartikel moet altijd beginnen met http of https.',
       validation: (Rule) => Rule.required().uri({ scheme: ['http', 'https'] }),
-      group: 'mete-data',
+      group: 'meta-data',
     },
     {
       title: 'Ingangsdatum wet',
       name: 'lawDate',
       type: 'date',
       description: 'Ingangsdatum wet (laat open als wet nog niet van kracht is)',
-      group: 'mete-data',
+      group: 'meta-data',
       options: {
         dateFormat: 'DD-MM-YYYY',
       },
+    },
+    {
+      title: 'Beleid',
+      name: 'beleid',
+      type: 'boolean',
+      initialValue: false,
+      group: 'expertise',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: 'Beleid sub category',
+      name: 'beleidSubCategory',
+      type: 'array',
+      validation: (Rule) =>
+        Rule.custom((currentValue, { parent }) => {
+          return parent?.beleid === true &&
+            typeof currentValue === 'undefined' &&
+            parent.transitionAgenda == 'bouw'
+            ? 'A value is required.'
+            : true;
+        }),
+      hidden: ({ document }) => document.beleid === false || document.transitionAgenda !== 'bouw',
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Strategie', value: 'strategie' },
+          { title: 'Beleidsdoorwerking', value: 'beleidsdoorwerking' },
+          { title: 'Beleidsuitvoering', value: 'beleidsuitvoering' },
+        ],
+        layout: 'grid',
+      },
+      group: 'expertise',
+    },
+
+    {
+      title: 'Inkoop',
+      name: 'inkoop',
+      type: 'boolean',
+      initialValue: false,
+      group: 'expertise',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: 'inkoop sub category',
+      name: 'inkoopSubCategory',
+      type: 'array',
+      validation: (Rule) =>
+        Rule.custom((currentValue, { parent }) => {
+          console.log(parent?.inkoop === true && typeof currentValue === 'undefined');
+          return parent?.inkoop === true && typeof currentValue === 'undefined'
+            ? 'A value is required.'
+            : true;
+        }),
+      hidden: ({ document }) => document.inkoop === false,
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Beleid', value: 'beleid' },
+          { title: 'Strategie', value: 'strategie' },
+          { title: 'Bijzondere procedures', value: 'bijzondere-procedures' },
+          { title: 'Selectiecriteria', value: 'selectiecriteria' },
+          { title: 'Gunningscriteria', value: 'gunningscriteria' },
+          { title: 'Contracteisen', value: 'contracteisen' },
+        ],
+        layout: 'grid',
+      },
+      group: 'expertise',
+    },
+    {
+      title: 'Grondpositie',
+      name: 'grondpositie',
+      type: 'boolean',
+      initialValue: false,
+      group: 'expertise',
+      validation: (Rule) =>
+        Rule.custom((currentValue, { parent }) => {
+          {
+            console.log(currentValue);
+          }
+          return parent?.transitionAgenda === 'bouw' && typeof currentValue === 'undefined'
+            ? 'A value is required.'
+            : true;
+        }),
+      hidden: ({ document }) => document.transitionAgenda !== 'bouw',
+    },
+    {
+      title: 'Grondpositie sub category',
+      name: 'grondpositieSubCategory', // remo
+      type: 'array',
+      validation: (Rule) =>
+        Rule.custom((currentValue, { parent }) => {
+          return parent?.grondpositie === true &&
+            typeof currentValue === 'undefined' &&
+            parent?.transitionAgenda === 'bouw'
+            ? 'A value is required.'
+            : true;
+        }),
+      hidden: ({ document }) =>
+        document.grondpositie === false || document.transitionAgenda !== 'bouw',
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Strategie', value: 'strategie' },
+          { title: 'Selectiecriteria', value: 'selectiecriteria' },
+          { title: 'Gunningscriteria', value: 'gunningscriteria' },
+          { title: 'Contracteisen', value: 'contracteisen' },
+        ],
+        layout: 'grid',
+      },
+      group: 'expertise',
+    },
+    {
+      title: 'Subsidie',
+      name: 'subsidie',
+      type: 'boolean',
+      initialValue: false,
+      group: 'expertise',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: 'fiscaal',
+      name: 'fiscaal',
+      type: 'boolean',
+      initialValue: false,
+      group: 'expertise',
+      validation: (Rule) => Rule.required(),
     },
     // COPY CONTENT
     {
