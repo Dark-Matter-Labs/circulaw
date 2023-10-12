@@ -108,7 +108,7 @@ export default {
         ],
         layout: 'radio',
       },
-      group:'high-level'
+      group: 'high-level',
     },
     {
       title: 'Thema',
@@ -144,7 +144,7 @@ export default {
       components: {
         input: ProductGroupInput,
       },
-      group: 'high-level'
+      group: 'high-level',
     },
     // ITEMS ONLY IN MetaData
     {
@@ -328,7 +328,7 @@ export default {
       type: 'boolean',
       initialValue: false,
       group: 'expertise',
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Beleid sub category',
@@ -337,7 +337,8 @@ export default {
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
           return parent?.beleid === true &&
-            typeof currentValue === 'undefined' && parent.transitionAgenda == 'bouw'
+            typeof currentValue === 'undefined' &&
+            parent.transitionAgenda == 'bouw'
             ? 'A value is required.'
             : true;
         }),
@@ -360,7 +361,7 @@ export default {
       type: 'boolean',
       initialValue: false,
       group: 'expertise',
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'inkoop sub category',
@@ -368,7 +369,7 @@ export default {
       type: 'array',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
-          console.log(parent?.inkoop === true && typeof currentValue === 'undefined')
+          console.log(parent?.inkoop === true && typeof currentValue === 'undefined');
           return parent?.inkoop === true && typeof currentValue === 'undefined'
             ? 'A value is required.'
             : true;
@@ -396,12 +397,14 @@ export default {
       group: 'expertise',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
-          {console.log(currentValue)}
+          {
+            console.log(currentValue);
+          }
           return parent?.transitionAgenda === 'bouw' && typeof currentValue === 'undefined'
             ? 'A value is required.'
             : true;
         }),
-        hidden: ({ document }) => document.transitionAgenda !== 'bouw',
+      hidden: ({ document }) => document.transitionAgenda !== 'bouw',
     },
     {
       title: 'Grondpositie sub category',
@@ -409,11 +412,14 @@ export default {
       type: 'array',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
-          return parent?.grondpositie === true && typeof currentValue === 'undefined' && parent?.transitionAgenda === 'bouw'
+          return parent?.grondpositie === true &&
+            typeof currentValue === 'undefined' &&
+            parent?.transitionAgenda === 'bouw'
             ? 'A value is required.'
             : true;
         }),
-      hidden: ({ document }) => document.grondpositie === false || document.transitionAgenda !== 'bouw',
+      hidden: ({ document }) =>
+        document.grondpositie === false || document.transitionAgenda !== 'bouw',
       of: [{ type: 'string' }],
       options: {
         list: [
@@ -432,7 +438,7 @@ export default {
       type: 'boolean',
       initialValue: false,
       group: 'expertise',
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'fiscaal',
@@ -440,7 +446,7 @@ export default {
       type: 'boolean',
       initialValue: false,
       group: 'expertise',
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     // COPY CONTENT
     {

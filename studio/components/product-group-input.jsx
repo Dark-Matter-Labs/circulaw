@@ -65,13 +65,24 @@ export const ProductGroupInput = (props) => {
             {transitionAgenda === 'bouw' &&
               bouw.map((productGrp) => <option key={productGrp.title}>{productGrp.title}</option>)}
             {transitionAgenda === 'consumptiegoederen' &&
-              consumptiegoederen.map((productGrp) => <option key={productGrp.title}>{productGrp.title}{console.log(productGrp)}</option>)}
+              consumptiegoederen.map((productGrp) => (
+                <option key={productGrp.title}>
+                  {productGrp.title}
+                  {console.log(productGrp)}
+                </option>
+              ))}
             {transitionAgenda === 'maakindustrie' &&
-              maakindustrie.map((productGrp) => <option key={productGrp.title}>{productGrp.title}</option>)}
+              maakindustrie.map((productGrp) => (
+                <option key={productGrp.title}>{productGrp.title}</option>
+              ))}
             {transitionAgenda === 'biomassa-en-voedsel' &&
-              biomassaEnVoedsel.map((productGrp) => <option key={productGrp.title}>{productGrp.title}</option>)}
+              biomassaEnVoedsel.map((productGrp) => (
+                <option key={productGrp.title}>{productGrp.title}</option>
+              ))}
             {transitionAgenda === 'kunststoffen' &&
-              kunststoffen.map((productGrp) => <option key={productGrp.title}>{productGrp.title}</option>)}
+              kunststoffen.map((productGrp) => (
+                <option key={productGrp.title}>{productGrp.title}</option>
+              ))}
           </Select>
         </Stack>
       </Card>

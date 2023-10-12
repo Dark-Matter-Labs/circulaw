@@ -44,9 +44,7 @@ export default function Instrument({ data }) {
           </div>
 
           <div className='sm:w-11/12 max-w-[760px] sm:justify-self-center '>
-            <h1 className='lg:block pb-4 pt-6 mobile sm:desktop'>
-              {data?.measure?.titel}
-            </h1>
+            <h1 className='lg:block pb-4 pt-6 mobile sm:desktop'>{data?.measure?.titel}</h1>
           </div>
         </div>
 
