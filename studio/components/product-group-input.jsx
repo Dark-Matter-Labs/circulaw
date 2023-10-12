@@ -57,7 +57,6 @@ export const ProductGroupInput = (props) => {
   );
   // this returns the value of product group.
   const transitionAgenda = String(useFormValue(['transitionAgenda']));
-  console.log(transitionAgenda)
   return (
     <>
       <Card padding={0}>
