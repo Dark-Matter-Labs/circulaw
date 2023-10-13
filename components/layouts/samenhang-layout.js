@@ -104,7 +104,6 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
   useEffect(() => {
     // SET INITIAL VALUES
     if (selected === 'beleid') {
-      //  setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
       setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
       setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
       setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
@@ -156,6 +155,7 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
         ),
       );
     }
+
     // INKOOP
     if (local?.value === 'alle' && selected === 'inkoop') {
       setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
@@ -181,6 +181,7 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
         ),
       );
     }
+
     // GRONDPOSITIE
     if (local?.value === 'alle' && selected === 'grondpositie') {
       setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
@@ -206,6 +207,7 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
         ),
       );
     }
+
     // SUBSIDIE
     if (local?.value === 'alle' && selected === 'subsidie') {
       setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
@@ -231,6 +233,7 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
         ),
       );
     }
+
     // FISCAL
     if (local?.value === 'alle' && selected === 'fiscaal') {
       setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
@@ -265,9 +268,7 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
     });
   }
 
-  // calculate number of instruments while filtering.
-  // TODO
-  // -- if selected Category changes then need to set filter to alle.
+
 
   return (
     <>
