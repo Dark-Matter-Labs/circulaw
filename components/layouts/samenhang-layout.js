@@ -1,58 +1,278 @@
 import { useEffect, useState } from 'react';
 
 import OverviewPageHeader from '../overview-page-header';
+import DisplayInstruments from '../expertise-page/display-instruments';
 
 export default function SamenhangLayout({ expertiseData, ...props }) {
-  const [beleid, setBeleid] = useState(
-    expertiseData.filter((instrument) => instrument.beleid === true),
-  );
+  useEffect(() => {});
+
+  const [beleid, setBeleid] = useState([]);
   const [inkoop, setInkoop] = useState([]);
   const [grondpositie, setGrondpositie] = useState([]);
   const [subsidie, setSubsidie] = useState([]);
   const [fiscaal, setFiscaal] = useState([]);
-
   const [selected, setSelected] = useState('beleid');
+  const [local, setLocal] = useState({ value: 'alle' });
+  const [numBeleid, setNumBeleid] = useState();
+  const [numInkoop, setNumInkoop] = useState();
+  const [numGronposirie, setNumGronposirie] = useState();
 
-  const [local, setLocal] = useState();
+  // need to make headings display conditionally
+  const beleidSubCategories = ['strategie', 'beleidsdoorwerking', 'beleidsuitvoering'];
+  const inkoopSubCategories = [
+    'beleid',
+    'strategie',
+    'bijzondere-procedures',
+    'selectiecriteria',
+    'gunningscriteria',
+    'contracteisen',
+  ];
+  const grondpositieSubCategories = [
+    'strategie',
+    'selectiecriteria',
+    'gunningscriteria',
+    'contracteisen',
+  ];
 
-  // if selected setBeleid differently ?
+  const numGrondpositieStrategie = grondpositie.filter((instrument) =>
+    instrument.grondpositieSubCategory.includes('strategie'),
+  ).length;
+  const numGrondpositieSelectiecriteria = grondpositie.filter((instrument) =>
+    instrument.grondpositieSubCategory.includes('selectiecriteria'),
+  ).length;
+  const numGrondpositieGunningscriteria = grondpositie.filter((instrument) =>
+    instrument.grondpositieSubCategory.includes('gunningscriteria'),
+  ).length;
+  const numGrondpositieContracteisen = grondpositie.filter((instrument) =>
+    instrument.grondpositieSubCategory.includes('contracteisen'),
+  ).length;
+  // const numGronposirie = numGrondpositieStrategie + numGrondpositieSelectiecriteria + numGrondpositieGunningscriteria + numGrondpositieContracteisen
+
+  const numBeleidStrategie = beleid.filter((instrument) =>
+    instrument.beleidSubCategory.includes('strategie'),
+  ).length;
+  const numBeleidBeleidsdoorwerking = beleid.filter((instrument) =>
+    instrument.beleidSubCategory.includes('beleidsdoorwerking'),
+  ).length;
+  const numBeleidBeleidsuitvoering = beleid.filter((instrument) =>
+    instrument.beleidSubCategory.includes('beleidsuitvoering'),
+  ).length;
+  // const numBeleid = numBeleidStrategie + numBeleidBeleidsdoorwerking + numBeleidBeleidsuitvoering
+
+  const numInkoopBeleid = inkoop.filter((instrument) =>
+    instrument.inkoopSubCategory.includes('beleid'),
+  ).length;
+  const numInkoopStrategy = inkoop.filter((instrument) =>
+    instrument.inkoopSubCategory.includes('strategie'),
+  ).length;
+  const numInkoopBijzondereProcedures = inkoop.filter((instrument) =>
+    instrument.inkoopSubCategory.includes('bijzondere-procedures'),
+  ).length;
+  const numInkoopselectiecriteria = inkoop.filter((instrument) =>
+    instrument.inkoopSubCategory.includes('selectiecriteria'),
+  ).length;
+  const numInkoopGunningscriteria = inkoop.filter((instrument) =>
+    instrument.inkoopSubCategory.includes('gunningscriteria'),
+  ).length;
+  const numInkoopContracteisen = inkoop.filter((instrument) =>
+    instrument.inkoopSubCategory.includes('contracteisen'),
+  ).length;
+  // const numInkoop = numInkoopBeleid + numInkoopStrategy + numInkoopBijzondereProcedures + numInkoopselectiecriteria + numInkoopGunningscriteria + numInkoopContracteisen
+
+  // const [numBeleidStrategie, setNumBeleidStrategie] = useState()
+  // const [numBeleidBeleidsdoorwerking, setNumBeleidBeleidsdoorwerking] = useState()
+  // const [numBeleidBeleidsuitvoering, setNumBeleidBeleidsuitvoering] = useState()
+
   useEffect(() => {
-    if (local?.value === 'Gemeentelijk') {
+    setNumBeleid(numBeleidStrategie + numBeleidBeleidsdoorwerking + numBeleidBeleidsuitvoering);
+    setNumInkoop(
+      numInkoopBeleid +
+        numInkoopStrategy +
+        numInkoopBijzondereProcedures +
+        numInkoopselectiecriteria +
+        numInkoopGunningscriteria +
+        numInkoopContracteisen,
+    );
+    setNumGronposirie(
+      numGrondpositieStrategie +
+        numGrondpositieSelectiecriteria +
+        numGrondpositieGunningscriteria +
+        numGrondpositieContracteisen,
+    );
+  });
+
+  useEffect(() => {
+    
+    // SET INITIAL VALUES
+    if (selected === 'beleid') {
+    //  setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
+      setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
+      setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
+      setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
+      setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
+    } else if (selected === 'inkoop') {
+      setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
+    //  setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
+      setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
+      setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
+      setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
+    } else if (selected === 'grondpositie') {
+      setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
+      setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
+     //  setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
+      setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
+      setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
+    } else if (selected === 'subsidie') {
+      setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
+      setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
+      setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
+     //  setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
+      setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
+    } else if (selected === 'fiscaal') {
+      setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
+      setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
+      setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
+      setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
+      // setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
+    }
+
+    // BELEID
+    if (local?.value === 'alle' && selected === 'beleid') {
+      setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
+    } else if (local?.value === 'Gemeentelijk' && selected === 'beleid') {
       setBeleid(
         expertiseData.filter(
           (instrument) =>
             instrument.beleid === true && instrument.overheidslaag.includes('Gemeentelijk'),
         ),
       );
-    } else if (local?.value === 'Provinciaal') {
+    } else if (local?.value === 'Provinciaal' && selected === 'beleid') {
       setBeleid(
         expertiseData.filter(
           (instrument) =>
             instrument.beleid === true && instrument.overheidslaag.includes('Provinciaal'),
         ),
       );
-    } else if (local?.value === 'Nationaal') {
+    } else if (local?.value === 'Nationaal' && selected === 'beleid') {
       setBeleid(
         expertiseData.filter(
           (instrument) =>
             instrument.beleid === true && instrument.overheidslaag.includes('Nationaal'),
         ),
       );
-    } else {
-      setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
     }
+    // INKOOP
+    if (local?.value === 'alle' && selected === 'inkoop') {
+      setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
+    } else if (local?.value === 'Gemeentelijk' && selected === 'inkoop') {
+      setInkoop(
+        expertiseData.filter(
+          (instrument) =>
+            instrument.inkoop === true && instrument.overheidslaag.includes('Gemeentelijk'),
+        ),
+      );
+    } else if (local?.value === 'Provinciaal' && selected === 'inkoop') {
+      setInkoop(
+        expertiseData.filter(
+          (instrument) =>
+            instrument.inkoop === true && instrument.overheidslaag.includes('Provinciaal'),
+        ),
+      );
+    } else if (local?.value === 'Nationaal' && selected === 'inkoop') {
+      setInkoop(
+        expertiseData.filter(
+          (instrument) =>
+            instrument.inkoop === true && instrument.overheidslaag.includes('Nationaal'),
+        ),
+      );
+    }
+    // GRONDPOSITIE
+    if (local?.value === 'alle' && selected === 'grondpositie') {
+      setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
+    } else if (local?.value === 'Gemeentelijk' && selected === 'grondpositie') {
+      setGrondpositie(
+        expertiseData.filter(
+          (instrument) =>
+            instrument.grondpositie === true && instrument.overheidslaag.includes('Gemeentelijk'),
+        ),
+      );
+    } else if (local?.value === 'Provinciaal' && selected === 'grondpositie') {
+      setGrondpositie(
+        expertiseData.filter(
+          (instrument) =>
+            instrument.grondpositie === true && instrument.overheidslaag.includes('Provinciaal'),
+        ),
+      );
+    } else if (local?.value === 'Nationaal' && selected === 'grondpositie') {
+      setGrondpositie(
+        expertiseData.filter(
+          (instrument) =>
+            instrument.grondpositie === true && instrument.overheidslaag.includes('Nationaal'),
+        ),
+      );
+    }
+    // SUBSIDIE
+    if (local?.value === 'alle' && selected === 'subsidie') {
+      setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
+    } else if (local?.value === 'Gemeentelijk' && selected === 'subsidie') {
+      setSubsidie(
+        expertiseData.filter(
+          (instrument) =>
+            instrument.subsidie === true && instrument.overheidslaag.includes('Gemeentelijk'),
+        ),
+      );
+    } else if (local?.value === 'Provinciaal' && selected === 'subsidie') {
+      setSubsidie(
+        expertiseData.filter(
+          (instrument) =>
+            instrument.subsidie === true && instrument.overheidslaag.includes('Provinciaal'),
+        ),
+      );
+    } else if (local?.value === 'Nationaal' && selected === 'subsidie') {
+      setSubsidie(
+        expertiseData.filter(
+          (instrument) =>
+            instrument.subsidie === true && instrument.overheidslaag.includes('Nationaal'),
+        ),
+      );
+    }
+    // FISCAL
+    if (local?.value === 'alle' && selected === 'fiscaal') {
+      setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
+    } else if (local?.value === 'Gemeentelijk' && selected === 'fiscaal') {
+      setFiscaal(
+        expertiseData.filter(
+          (instrument) =>
+            instrument.fiscaal === true && instrument.overheidslaag.includes('Gemeentelijk'),
+        ),
+      );
+    } else if (local?.value === 'Provinciaal' && selected === 'fiscaal') {
+      setFiscaal(
+        expertiseData.filter(
+          (instrument) =>
+            instrument.fiscaal === true && instrument.overheidslaag.includes('Provinciaal'),
+        ),
+      );
+    } else if (local?.value === 'Nationaal' && selected === 'fiscaal') {
+      setFiscaal(
+        expertiseData.filter(
+          (instrument) =>
+            instrument.fiscaal === true && instrument.overheidslaag.includes('Nationaal'),
+        ),
+      );
+    }
+  }, [local.value, selected, expertiseData]);
 
-    setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
-    setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
-    setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
-    setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
-  }, [expertiseData, local]);
-
+  // change filters
   function handleRadioButton(value) {
     setLocal({
       value: value,
     });
   }
+
+  // calculate number of instruments while filtering.
+  // TODO
+  // -- if selected Category changes then need to set filter to alle.
 
   return (
     <>
@@ -68,31 +288,46 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
           <div className='flex flex-row justify-between'>
             {/* do i do conditional rendering on tranision agenda? */}
             <button
-              onClick={() => setSelected(Object.keys({ beleid })[0])}
+              onClick={() => {
+                setSelected(Object.keys({ beleid })[0]);
+                handleRadioButton('alle');
+              }}
               className={selected === 'beleid' ? 'bg-blue-300' : ''}
             >
-              beleid (help)
+              beleid ({numBeleid})
             </button>
             <button
-              onClick={() => setSelected(Object.keys({ inkoop })[0])}
+              onClick={() => {
+                setSelected(Object.keys({ inkoop })[0]);
+                handleRadioButton('alle');
+              }}
               className={selected === 'inkoop' ? 'bg-blue-300' : ''}
             >
-              inkoop ({inkoop.length})
+              inkoop ({numInkoop})
             </button>
             <button
-              onClick={() => setSelected(Object.keys({ grondpositie })[0])}
+              onClick={() => {
+                setSelected(Object.keys({ grondpositie })[0]);
+                handleRadioButton('alle');
+              }}
               className={selected === 'grondpositie' ? 'bg-blue-300' : ''}
             >
-              grondpositie ({grondpositie.length})
+              grondpositie ({numGronposirie})
             </button>
             <button
-              onClick={() => setSelected(Object.keys({ subsidie })[0])}
+              onClick={() => {
+                setSelected(Object.keys({ subsidie })[0]);
+                handleRadioButton('alle');
+              }}
               className={selected === 'subsidie' ? 'bg-blue-300' : ''}
             >
               subsidie ({subsidie.length})
             </button>
             <button
-              onClick={() => setSelected(Object.keys({ fiscaal })[0])}
+              onClick={() => {
+                setSelected(Object.keys({ fiscaal })[0]);
+                handleRadioButton('alle');
+              }}
               className={selected === 'fiscaal' ? 'bg-blue-300' : ''}
             >
               fiscaal ({fiscaal.length})
@@ -106,7 +341,7 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
                 type='radio'
                 name='filter'
                 value='alle'
-                checked
+                checked={local?.value === 'alle'}
                 onChange={() => handleRadioButton('alle')}
               ></input>
             </div>
@@ -116,6 +351,7 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
                 type='radio'
                 name='filter'
                 value='Gemeentelijk'
+                checked={local?.value === 'Gemeentelijk'}
                 onChange={() => handleRadioButton('Gemeentelijk')}
               ></input>
             </div>
@@ -125,6 +361,7 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
                 type='radio'
                 name='filter'
                 value='Provinciaal'
+                checked={local?.value === 'Provinciaal'}
                 onChange={() => handleRadioButton('Provinciaal')}
               ></input>
             </div>
@@ -134,6 +371,7 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
                 type='radio'
                 name='filter'
                 value='Nationaal'
+                checked={local?.value === 'Nationaal'}
                 onChange={() => handleRadioButton('Nationaal')}
               ></input>
             </div>
@@ -142,69 +380,33 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
           <div className='flex flex-col'>
             {selected === 'beleid' && (
               <>
-                <div>
-                  <div className='text-green-600'>strategie heading</div>
-                  {beleid
-                    .filter((instrument) => instrument.beleidSubCategory.includes('strategie'))
-                    .map((instrument) => (
-                      <div key={instrument.titel} className='flex flex-row justify-between'>
-                        <div className='py-1 border-t border-b border-black'>
-                          {instrument.titel}
-                        </div>
-                        <div className='flex flex-row'>
-                          {instrument.overheidslaag.map((govLevel) => (
-                            <div key={govLevel}>{govLevel}</div>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                </div>
-                <div>
-                  <div className='text-green-600'>Beleidsdoorwerking heading</div>
-                  {beleid
-                    .filter((instrument) =>
-                      instrument.beleidSubCategory.includes('beleidsdoorwerking'),
-                    )
-                    .map((instrument) => (
-                      <div key={instrument.titel} className='flex flex-row justify-between'>
-                        <div className='py-1 border-t border-b border-black'>
-                          {instrument.titel}
-                        </div>
-                        <div className='flex flex-row'>
-                          {instrument.overheidslaag.map((govLevel) => (
-                            <div key={govLevel}>{govLevel}</div>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                </div>
-                <div>
-                  <div className='text-green-600'>Beleidsuitvoering heading</div>
-                  {beleid
-                    .filter((instrument) =>
-                      instrument.beleidSubCategory.includes('beleidsuitvoering'),
-                    )
-                    .map((instrument) => (
-                      <div key={instrument.titel} className='flex flex-row justify-between'>
-                        <div className='py-1 border-t border-b border-black'>
-                          {instrument.titel}
-                        </div>
-                        <div className='flex flex-row'>
-                          {instrument.overheidslaag.map((govLevel) => (
-                            <div key={govLevel}>{govLevel}</div>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                </div>
+                {beleidSubCategories.map((cat) => (
+                  <DisplayInstruments
+                    key={cat}
+                    category={beleid}
+                    subCategory={cat}
+                    filter={(instrument) => instrument.beleidSubCategory.includes(cat)}
+                  />
+                ))}
               </>
             )}
-
             {selected === 'inkoop' &&
-              inkoop.map((instrument) => <div key={instrument.titel}>{instrument.titel}</div>)}
-            {selected === 'grondpositie' &&
-              grondpositie.map((instrument) => (
-                <div key={instrument.titel}>{instrument.titel}</div>
+              inkoopSubCategories.map((cat) => (
+                <DisplayInstruments
+                  key={cat}
+                  category={inkoop}
+                  subCategory={cat}
+                  filter={(instrument) => instrument.inkoopSubCategory.includes(cat)}
+                />
+              ))}
+            {selected == 'grondpositie' &&
+              grondpositieSubCategories.map((cat) => (
+                <DisplayInstruments
+                  key={cat}
+                  category={grondpositie}
+                  subCategory={cat}
+                  filter={(instrument) => instrument.grondpositieSubCategory.includes(cat)}
+                />
               ))}
             {selected === 'subsidie' &&
               subsidie.map((instrument) => <div key={instrument.titel}>{instrument.titel}</div>)}
