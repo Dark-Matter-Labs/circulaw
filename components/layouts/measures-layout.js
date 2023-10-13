@@ -63,9 +63,6 @@ export default function MeasuresLayout({ ...props }) {
   const [selectedResults, setSelectedResults] = useState(null);
   const [firstLaw, setFirstLaw] = useState(null);
 
-  {
-    /* MAY NEED TO REDO SEARCH TO NOT HAVE setState inside useEffect */
-  }
   const firstLawFunction = useCallback(() => {
     const firstLaw = selectedResults?.[0];
     return firstLaw;
@@ -293,7 +290,6 @@ export default function MeasuresLayout({ ...props }) {
         });
       }
 
-      // new for JI
       if (selected.juridischInvloed.length > 0) {
         filteredLaws = filteredLaws.filter((element) => {
           return selected.juridischInvloed.includes(element.juridischInvloed);
@@ -321,7 +317,6 @@ export default function MeasuresLayout({ ...props }) {
       const lawResults = searchValue ? results.map((result) => result.item) : filteredLaws;
       filteredLaws = lawResults;
 
-      // display scores in consol for testing
       // const scores = results.map((result) => result.score);
 
       // setting values for autocomplete
