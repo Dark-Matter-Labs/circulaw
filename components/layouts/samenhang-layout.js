@@ -102,38 +102,33 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
   });
 
   useEffect(() => {
-    
     // SET INITIAL VALUES
     if (selected === 'beleid') {
-    //  setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
+      //  setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
       setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
       setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
       setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
       setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
     } else if (selected === 'inkoop') {
       setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
-    //  setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
       setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
       setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
       setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
     } else if (selected === 'grondpositie') {
       setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
       setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
-     //  setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
       setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
       setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
     } else if (selected === 'subsidie') {
       setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
       setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
       setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
-     //  setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
       setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
     } else if (selected === 'fiscaal') {
       setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
       setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
       setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
       setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
-      // setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
     }
 
     // BELEID
