@@ -4,6 +4,8 @@ import OverviewPageHeader from '../overview-page-header';
 import DisplayInstruments from '../expertise-page/display-instruments';
 
 export default function SamenhangLayout({ expertiseData, ...props }) {
+
+  
   useEffect(() => {});
 
   const [beleid, setBeleid] = useState([]);
@@ -35,47 +37,50 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
   ];
 
   const numGrondpositieStrategie = grondpositie.filter((instrument) =>
-    instrument.grondpositieSubCategory.includes('strategie'),
+    instrument?.grondpositieSubCategory?.includes('strategie'),
   ).length;
   const numGrondpositieSelectiecriteria = grondpositie.filter((instrument) =>
-    instrument.grondpositieSubCategory.includes('selectiecriteria'),
+    instrument?.grondpositieSubCategory?.includes('selectiecriteria'),
   ).length;
   const numGrondpositieGunningscriteria = grondpositie.filter((instrument) =>
-    instrument.grondpositieSubCategory.includes('gunningscriteria'),
+    instrument?.grondpositieSubCategory?.includes('gunningscriteria'),
   ).length;
   const numGrondpositieContracteisen = grondpositie.filter((instrument) =>
-    instrument.grondpositieSubCategory.includes('contracteisen'),
+    instrument?.grondpositieSubCategory?.includes('contracteisen'),
   ).length;
   // const numGronposirie = numGrondpositieStrategie + numGrondpositieSelectiecriteria + numGrondpositieGunningscriteria + numGrondpositieContracteisen
 
+  
   const numBeleidStrategie = beleid.filter((instrument) =>
-    instrument.beleidSubCategory.includes('strategie'),
+    instrument?.beleidSubCategory?.includes('strategie'),
   ).length;
   const numBeleidBeleidsdoorwerking = beleid.filter((instrument) =>
-    instrument.beleidSubCategory.includes('beleidsdoorwerking'),
+    instrument?.beleidSubCategory?.includes('beleidsdoorwerking'),
   ).length;
   const numBeleidBeleidsuitvoering = beleid.filter((instrument) =>
-    instrument.beleidSubCategory.includes('beleidsuitvoering'),
+    instrument?.beleidSubCategory?.includes('beleidsuitvoering'),
   ).length;
+
+  const numBeleidNotBouw = beleid.length
   // const numBeleid = numBeleidStrategie + numBeleidBeleidsdoorwerking + numBeleidBeleidsuitvoering
 
   const numInkoopBeleid = inkoop.filter((instrument) =>
-    instrument.inkoopSubCategory.includes('beleid'),
+    instrument?.inkoopSubCategory?.includes('beleid'),
   ).length;
   const numInkoopStrategy = inkoop.filter((instrument) =>
-    instrument.inkoopSubCategory.includes('strategie'),
+    instrument?.inkoopSubCategory?.includes('strategie'),
   ).length;
   const numInkoopBijzondereProcedures = inkoop.filter((instrument) =>
-    instrument.inkoopSubCategory.includes('bijzondere-procedures'),
+    instrument?.inkoopSubCategory?.includes('bijzondere-procedures'),
   ).length;
   const numInkoopselectiecriteria = inkoop.filter((instrument) =>
-    instrument.inkoopSubCategory.includes('selectiecriteria'),
+    instrument?.inkoopSubCategory?.includes('selectiecriteria'),
   ).length;
   const numInkoopGunningscriteria = inkoop.filter((instrument) =>
-    instrument.inkoopSubCategory.includes('gunningscriteria'),
+    instrument?.inkoopSubCategory?.includes('gunningscriteria'),
   ).length;
   const numInkoopContracteisen = inkoop.filter((instrument) =>
-    instrument.inkoopSubCategory.includes('contracteisen'),
+    instrument?.inkoopSubCategory?.includes('contracteisen'),
   ).length;
   // const numInkoop = numInkoopBeleid + numInkoopStrategy + numInkoopBijzondereProcedures + numInkoopselectiecriteria + numInkoopGunningscriteria + numInkoopContracteisen
 
@@ -290,7 +295,7 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
               }}
               className={selected === 'beleid' ? 'bg-blue-300' : ''}
             >
-              beleid ({numBeleid})
+              beleid  {props.transitionAgenda === 'bouw' ? <span>({numBeleid})</span> : <span>({numBeleidNotBouw})</span>} 
             </button>
             <button
               onClick={() => {
@@ -301,6 +306,7 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
             >
               inkoop ({numInkoop})
             </button>
+            {props.transitionAgenda === 'bouw' && 
             <button
               onClick={() => {
                 setSelected(Object.keys({ grondpositie })[0]);
@@ -309,7 +315,7 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
               className={selected === 'grondpositie' ? 'bg-blue-300' : ''}
             >
               grondpositie ({numGronposirie})
-            </button>
+            </button>}
             <button
               onClick={() => {
                 setSelected(Object.keys({ subsidie })[0]);
@@ -374,40 +380,64 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
           </div>
 
           <div className='flex flex-col'>
-            {selected === 'beleid' && (
+
+            {selected === 'beleid' && props.transitionAgenda === 'bouw' && (
               <>
                 {beleidSubCategories.map((cat) => (
                   <DisplayInstruments
                     key={cat}
                     category={beleid}
                     subCategory={cat}
-                    filter={(instrument) => instrument.beleidSubCategory.includes(cat)}
+                    filter={(instrument) => instrument?.beleidSubCategory?.includes(cat)}
                   />
                 ))}
               </>
             )}
+             {selected === 'beleid' && props.transitionAgenda !== 'bouw' &&
+              beleid.map((instrument) =>  <div key={instrument.titel} className='flex flex-row justify-between'>
+              <div className='py-1 border-t border-b border-black'>{instrument.titel}</div>
+              <div className='flex flex-row'>
+                {instrument.overheidslaag.map((govLevel) => (
+                  <div key={govLevel}>{govLevel}</div>
+                ))}
+              </div>
+            </div>)}
             {selected === 'inkoop' &&
               inkoopSubCategories.map((cat) => (
                 <DisplayInstruments
                   key={cat}
                   category={inkoop}
                   subCategory={cat}
-                  filter={(instrument) => instrument.inkoopSubCategory.includes(cat)}
+                  filter={(instrument) => instrument?.inkoopSubCategory?.includes(cat)}
                 />
               ))}
-            {selected == 'grondpositie' &&
+            {selected == 'grondpositie' && props.transitionAgenda === 'bouw' && 
               grondpositieSubCategories.map((cat) => (
                 <DisplayInstruments
                   key={cat}
                   category={grondpositie}
                   subCategory={cat}
-                  filter={(instrument) => instrument.grondpositieSubCategory.includes(cat)}
+                  filter={(instrument) => instrument?.grondpositieSubCategory?.includes(cat)}
                 />
               ))}
             {selected === 'subsidie' &&
-              subsidie.map((instrument) => <div key={instrument.titel}>{instrument.titel}</div>)}
+              subsidie.map((instrument) =>  <div key={instrument.titel} className='flex flex-row justify-between'>
+              <div className='py-1 border-t border-b border-black'>{instrument.titel}</div>
+              <div className='flex flex-row'>
+                {instrument.overheidslaag.map((govLevel) => (
+                  <div key={govLevel}>{govLevel}</div>
+                ))}
+              </div>
+            </div>)}
             {selected === 'fiscaal' &&
-              fiscaal.map((instrument) => <div key={instrument.titel}>{instrument.titel}</div>)}
+              fiscaal.map((instrument) =>  <div key={instrument.titel} className='flex flex-row justify-between'>
+              <div className='py-1 border-t border-b border-black'>{instrument.titel}</div>
+              <div className='flex flex-row'>
+                {instrument.overheidslaag.map((govLevel) => (
+                  <div key={govLevel}>{govLevel}</div>
+                ))}
+              </div>
+            </div>)}
           </div>
         </div>
       </div>
