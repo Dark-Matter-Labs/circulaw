@@ -17,7 +17,6 @@ export default function PolicyList(props) {
               {law?.beleid === true && 
               <div className='bg-grey-600 text-grey-100 px-2 h-6 rounded-[9px] p-xsm flex items-center mx-1'>
                 Beleid
-                {console.log(law.beleid)}
               </div>}
               {law?.inkoop === true && 
               <div className='bg-grey-600 text-grey-100 px-2 h-6 rounded-[9px] p-xsm flex items-center mx-1'>

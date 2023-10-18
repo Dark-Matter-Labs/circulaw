@@ -9,6 +9,7 @@ export default function Measures({ numberOfInstruments }) {
     <Layout title='CircuLaw - Houtbouw stimuleren'>
       <MeasuresLayout
         totalNumberOfLaws={numberOfInstruments}
+        transitionAgenda = 'bouw'
         title='Lijst van houtbouw instrumenten'
         thema='houtbouw-stimuleren' // must be the same as value in cms
         heading='Instrumenten om de inzet van hout in de bouw te bevorderen'

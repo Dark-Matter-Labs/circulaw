@@ -68,7 +68,6 @@ export const ProductGroupInput = (props) => {
               consumptiegoederen.map((productGrp) => (
                 <option key={productGrp.title}>
                   {productGrp.title}
-                  {console.log(productGrp)}
                 </option>
               ))}
             {transitionAgenda === 'maakindustrie' &&
