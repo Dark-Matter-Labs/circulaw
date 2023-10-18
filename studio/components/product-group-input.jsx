@@ -66,10 +66,7 @@ export const ProductGroupInput = (props) => {
               bouw.map((productGrp) => <option key={productGrp.title}>{productGrp.title}</option>)}
             {transitionAgenda === 'consumptiegoederen' &&
               consumptiegoederen.map((productGrp) => (
-                <option key={productGrp.title}>
-                  {productGrp.title}
-                  {console.log(productGrp)}
-                </option>
+                <option key={productGrp.title}>{productGrp.title}</option>
               ))}
             {transitionAgenda === 'maakindustrie' &&
               maakindustrie.map((productGrp) => (

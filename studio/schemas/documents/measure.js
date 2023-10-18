@@ -369,7 +369,6 @@ export default {
       type: 'array',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
-          console.log(parent?.inkoop === true && typeof currentValue === 'undefined');
           return parent?.inkoop === true && typeof currentValue === 'undefined'
             ? 'A value is required.'
             : true;
@@ -397,9 +396,6 @@ export default {
       group: 'expertise',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
-          {
-            console.log(currentValue);
-          }
           return parent?.transitionAgenda === 'bouw' && typeof currentValue === 'undefined'
             ? 'A value is required.'
             : true;
