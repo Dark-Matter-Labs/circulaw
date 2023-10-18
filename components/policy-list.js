@@ -48,7 +48,7 @@ export default function PolicyList(props) {
                 </h3>
               </div>
 
-              <div className='block newlineDisplay p-base text-grey-800 my-4'>
+              <div className='block newlineDisplay p-base text-grey-800 mt-4 pb-4 sm:border-0 border-b border-grey-500'>
                 <p className=''>{law.introText}</p>
               </div>
               <InstrumentMetaData data={law} />
