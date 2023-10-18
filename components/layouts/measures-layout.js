@@ -250,7 +250,6 @@ export default function MeasuresLayout({ ...props }) {
         });
       }
 
-      // new for JI
       if (selected.juridischInvloed.length > 0) {
         filteredLaws = filteredLaws.filter((element) => {
           return selected.juridischInvloed.includes(element.juridischInvloed);
@@ -278,7 +277,6 @@ export default function MeasuresLayout({ ...props }) {
       const lawResults = searchValue ? results.map((result) => result.item) : filteredLaws;
       filteredLaws = lawResults;
 
-      // display scores in consol for testing
       // const scores = results.map((result) => result.score);
 
       // setting values for autocomplete

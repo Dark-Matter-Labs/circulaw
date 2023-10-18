@@ -364,7 +364,7 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'inkoop sub category',
+      title: 'Inkoop sub category',
       name: 'inkoopSubCategory',
       type: 'array',
       validation: (Rule) =>
