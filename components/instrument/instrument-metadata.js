@@ -6,7 +6,7 @@ export default function InstrumentMetaData({ data }) {
   return (
     <>
       <div className='hidden sm:block'>
-        <div className='h-auto border-b border-t mb-6 flex flex-row justify-between items-center justify-self-center py-1'>
+        <div className='h-auto border-b border-t flex flex-row justify-between items-center justify-self-center py-1'>
           <div className='flex flex-col'>
             <h4 className='mobile sm:desktop py-1 text-grey-600'>Juridische houdbaarheid</h4>
             <div className='flex items-center'>
@@ -117,9 +117,7 @@ export default function InstrumentMetaData({ data }) {
       </div>
       {/* MOBILE */}
       <div className='flex flex-col sm:hidden justify-center mb-4'>
-        <div
-          className='flex flex-col sm:flex-row justify-between h-auto sm:h-[4.5rem] py-1 border-t border-grey-500'
-        >
+        <div className='flex flex-row justify-between h-auto sm:h-[4.5rem] py-1 border-grey-500'>
           <div className='flex flex-col justify-center border-b border-grey-500 pb-2'>
             <h4 className='mobile sm:desktop sm:py-1 text-grey-600'>Juridische houdbaarheid</h4>
             <div className='flex items-center'>
@@ -173,8 +171,7 @@ export default function InstrumentMetaData({ data }) {
             </div>
           </div>
         </div>
-        <div
-          className='border-b border-grey-500 flex h-[4.5rem] py-1'>
+        <div className='border-b border-grey-500 flex h-[4.5rem] py-1'>
           <div className='flex flex-col justify-center'>
             <h4 className='mobile sm:desktop py-1 text-grey-600'>Overheidslaag</h4>
             <h5 className='mobile sm:desktop text-green-500'>
