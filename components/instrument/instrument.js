@@ -36,11 +36,10 @@ export default function Instrument({ data }) {
               {data?.measure?.thema.replace('-', ' ')}
             </h4>
 
-            {/* this will need to be added once samenhang structure is confirmed */}
-            {/*
-            <div className='ml-4 py-0.5 px-2 rounded-[5px] text-grey-100 bg-grey-600'>
-              verkoop
-            </div> */}
+            {/* placeholder */}
+            <div className='bg-grey-600 text-grey-100 ml-2 px-2 h-6 rounded-[9px] p-xsm flex items-center'>
+              Verkoop
+            </div>
           </div>
 
           <div className='sm:w-11/12 max-w-[760px] sm:justify-self-center '>
@@ -49,7 +48,11 @@ export default function Instrument({ data }) {
         </div>
 
         {/* Metadata */}
-        <InstrumentMetaData data={data} />
+        <div className='grid grid-cols-1'>
+          <div className='sm:w-11/12 max-w-[854px] sm:justify-self-center'>
+            <InstrumentMetaData data={data} />
+          </div>
+        </div>
         {/* Subtitle */}
         <div className='grid grid-cols-1'>
           {data?.measure?.subtitel && (

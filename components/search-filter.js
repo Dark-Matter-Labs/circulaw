@@ -1,6 +1,5 @@
 import { useState, forwardRef, useImperativeHandle } from 'react';
 import { handleToggle } from '../utils/checkbox-utils';
-import RTooltip from '../components/tooltip-r-ladder';
 import JHTooltip from '../components/tooltip-juridische-houdbaarheid';
 import JITooltip from '../components/tooltip-juridische-invloed';
 
@@ -49,17 +48,6 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
       <div className='block'>
         <div className='relative flex justify-between'>
           <h4 className='mobile sm:desktop mr-8'>{title}</h4>
-          {title === 'Circulaire strategie (R-ladder)' && (
-            <RTooltip>
-              <svg className='w-6 h-6  mb-2' viewBox='0 0 26 26'>
-                <circle cx='12' cy='15' r='10' fill='#676868' />
-                <path
-                  d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
-                  fill='#F8FBF8'
-                />
-              </svg>
-            </RTooltip>
-          )}
           {title === 'Juridische haalbaarheid' && (
             <JHTooltip>
               <svg className='w-6 h-6 fill-current text-grey-20 mb-2' viewBox='0 0 26 26'>
@@ -95,28 +83,16 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                     id={`data-${data.value}-${data.id}`}
                     checked={checkedArray.indexOf(data.id) !== -1}
                     onChange={() => onChangeHandler(data.id)}
-                    className='rounded-[3px]'
+                    className='border-grey-300 border-2 rounded-[3px]'
                   />
                   <label
                     htmlFor={`data-${data.value}-${data.id}`}
                     className='select-none popup-sm pl-2 text-grey-800'
                   >
-                    {/* RVALUE */}
-                    {title === 'Circulaire strategie (R-ladder)' && (
-                      <>
-                        <div className='h-6 w-6 mr-2 bg-green-600 rounded-full inline-flex justify-center items-center'>
-                          <h6 className='text-white text-center'>{data.value} </h6>
-                        </div>
-                        <span>{data.name}</span>
-                      </>
-                    )}
-                    {/* std design */}
-                    {title !== 'Circulaire strategie (R-ladder)' && (
-                      <span className=''>{data.name}</span>
-                    )}
+                    <span className=''>{data.name}</span>
                   </label>
                 </div>
-                <div className=' table-base '>({filterNumbers[dataIdx]})</div>
+                <div className='table-base '>({filterNumbers[dataIdx]})</div>
               </>
             ) : (
               <>
@@ -133,16 +109,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                     htmlFor={`data-${data.value}-${data.id}`}
                     className='select-none popup-sm text-grey-500 pl-2'
                   >
-                    {title === 'Circulaire strategie (R-ladder)' && (
-                      <>
-                        <div className='h-6 w-6 mr-2 bg-green-600 rounded-full inline-flex justify-center items-center'>
-                          <span className='text-white text-center'>{data.value}</span>
-                        </div>
-                        <span className='table-basel text-grey-600 text-sm'>{data.name}</span>
-                      </>
-                    )}
-
-                    {title !== 'Circulaire strategie (R-ladder)' && <span>{data.name}</span>}
+                    <span>{data.name}</span>
                   </label>
                 </div>
                 <div className='table-base text-grey-500'>({filterNumbers[dataIdx]})</div>
