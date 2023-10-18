@@ -49,7 +49,7 @@
   }
 
   h5.desktop {
-    @apply font-jakarta text-xs font-semibold leading-9;
+    @apply font-jakarta text-base font-semibold leading-9;
   }
 
   h5.bold {
@@ -57,11 +57,15 @@
   }
 
   h5.mobile {
-    @apply font-jakarta text-base font-medium leading-10;
+    @apply font-jakarta text-xs font-medium leading-10;
   }
 
   h6 {
     @apply font-jakarta text-xs font-bold leading-6;
+  }
+  
+  .heading-other {
+    @apply font-jakarta text-xs font-semibold leading-4;
   }
 
   .p-xl {
