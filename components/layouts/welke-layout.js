@@ -47,7 +47,7 @@ export default function WelkeLayout({ ...props }) {
 
   return (
     <div onLoad={useXarrow()}>
-      <div className='global-margin mt-8 max-w-2xl'>
+      <div className='global-margin mt-8'>
         <OverviewPageHeader props={props} page='welke' />
         {/* DYNAMIC IMAGE */}
         <div className='mb-20 mt-5 sm:mt-20 hidden sm:block'>

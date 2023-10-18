@@ -1,3 +1,62 @@
+export const expertise = [
+  {
+    id: '0',
+    name: 'Beleid',
+    label: 'Beleid',
+    value: 'Beleid',
+  },
+  {
+    id: '1',
+    name: 'Inkoop',
+    label: 'Inkoop',
+    value: 'Inkoop',
+  },
+  {
+    id: '2',
+    name: 'Grondpositie',
+    label: 'Grondpositie',
+    value: 'Grondpositie',
+  },
+  {
+    id: '3',
+    name: 'Subsidie',
+    label: 'Subsidie',
+    value: 'Subsidie',
+  },
+  {
+    id: '4',
+    name: 'Fiscaal',
+    label: 'Fiscaal',
+    value: 'Fiscaal',
+  },
+]
+export const expertiseSS = [
+  {
+    id: '0',
+    name: 'Beleid',
+    label: 'Beleid',
+    value: 'Beleid',
+  },
+  {
+    id: '1',
+    name: 'Inkoop',
+    label: 'Inkoop',
+    value: 'Inkoop',
+  },
+  {
+    id: '2',
+    name: 'Subsidie',
+    label: 'Subsidie',
+    value: 'Subsidie',
+  },
+  {
+    id: '3',
+    name: 'Fiscaal',
+    label: 'Fiscaal',
+    value: 'Fiscaal',
+  },
+]
+
 export const overheidslaag = [
   {
     id: '0',

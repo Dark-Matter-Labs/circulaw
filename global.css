@@ -84,6 +84,10 @@
     @apply font-jakarta text-xs font-normal leading-7;
   }
 
+  .p-xsm {
+    @apply font-manrope text-xxs font-bold leading-5
+  }
+
   .link-lg {
     @apply font-jakarta text-xl font-semibold leading-13 underline;
   }

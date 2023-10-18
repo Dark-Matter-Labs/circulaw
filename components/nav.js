@@ -58,7 +58,7 @@ export default function Nav(props) {
   if (router.pathname === '/en') {
     return (
       <>
-        <div className='w-full bg-green-800 sticky top-0 z-50 shadow-lg'>
+        <div className='w-full bg-green-800 sticky top-0 z-40 shadow-lg'>
           <div className='flex justify-between global-margin'>
             <div className=' flex justify-start items-center'>
               <div className='hidden sm:block -ml-6'>
@@ -106,19 +106,19 @@ export default function Nav(props) {
                 `${
                   router.pathname === '/'
                     ? 'bg-green-600 shadow-lg transition-all duration-150'
-                    : 'bg-grey-100 shadow-lg transition-all duration-150'
+                    : 'bg-[#F8FBF8] shadow-lg transition-all duration-150'
                 }`,
               ]
             : [
                 `${
                   router.pathname === '/'
                     ? 'bg-transparent transition-all duration-150'
-                    : 'bg-grey-100 shadow-lg transition-all duration-150'
+                    : 'bg-[#F8FBF8] shadow-lg transition-all duration-150'
                 }`,
               ]
-        } w-full sticky top-0 z-10 h-auto`}
+        } w-full sticky top-0 z-40 h-auto`}
       >
-        <Popover as='nav' className={`${scrollEffect ? '' : ''} z-20 relative`}>
+        <Popover as='nav' className={`${scrollEffect ? '' : ''} z-40 relative`}>
           {({ open }) => (
             <>
               <div
@@ -233,7 +233,7 @@ export default function Nav(props) {
                                 leaveFrom='opacity-100 translate-y-0'
                                 leaveTo='opacity-0 translate-y-1'
                               >
-                                <Popover.Panel className='absolute z-10  transform w-screen max-w-xs sm:px-0'>
+                                <Popover.Panel className='absolute z-40  transform w-screen max-w-xs sm:px-0'>
                                   <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                                     <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
                                       {themaSlugs.map((slug) => (
@@ -287,7 +287,7 @@ export default function Nav(props) {
                                 leaveFrom='opacity-100 translate-y-0'
                                 leaveTo='opacity-0 translate-y-1'
                               >
-                                <Popover.Panel className='absolute z-10  transform w-screen max-w-xs sm:px-0'>
+                                <Popover.Panel className='absolute z-40  transform w-screen max-w-xs sm:px-0'>
                                   <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                                     <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
                                       {aboutSlugs?.map((slug) => (
@@ -356,7 +356,7 @@ export default function Nav(props) {
                 leaveFrom='opacity-100 translate-y-0'
                 leaveTo='opacity-0 translate-y-1'
               >
-                <Popover.Panel className='lgNav:hidden bg-grey-100 w-full absolute z-50'>
+                <Popover.Panel className='lgNav:hidden bg-grey-100 w-full absolute z-40'>
                   <div className='pt-2 pb-4 global-margin'>
                     {/* LANG SWITCH */}
                     <Popover.Button
