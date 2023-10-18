@@ -85,7 +85,7 @@
   }
 
   .p-xsm {
-    @apply font-manrope text-xxs font-bold leading-5
+    @apply font-jakarta text-xxs font-bold leading-5
   }
 
   .link-lg {
