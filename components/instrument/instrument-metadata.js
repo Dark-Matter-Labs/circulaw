@@ -118,12 +118,10 @@ export default function InstrumentMetaData({ data }) {
       {/* MOBILE */}
       <div className='flex flex-col sm:hidden justify-center mb-4'>
         <div
-          className={`${
-            data?.measure?.juridischeHaalbaarheid ? 'border-b' : ''
-          } flex flex-row justify-between h-[4.5rem] py-1 border-t border-grey-500`}
+          className='flex flex-col sm:flex-row justify-between h-auto sm:h-[4.5rem] py-1 border-t border-grey-500'
         >
-          <div className='flex flex-col justify-center'>
-            <h4 className='mobile sm:desktop py-1 text-grey-600'>Juridische houdbaarheid</h4>
+          <div className='flex flex-col justify-center border-b border-grey-500 pb-2'>
+            <h4 className='mobile sm:desktop sm:py-1 text-grey-600'>Juridische houdbaarheid</h4>
             <div className='flex items-center'>
               <h5 className='mobile sm:desktop text-green-500 pr-2'>
                 {data?.measure?.juridischeHaalbaarheid}
@@ -148,7 +146,7 @@ export default function InstrumentMetaData({ data }) {
               )}
             </div>
           </div>
-          <div className='flex flex-col justify-center'>
+          <div className='flex flex-col justify-center border-b border-grey-500 pb-2'>
             <h4 className='mobile sm:desktop py-1 text-grey-600'>Invloed</h4>
             <div className='flex items-center'>
               <h5 className='mobile sm:desktop text-green-500 pr-2'>
@@ -176,10 +174,7 @@ export default function InstrumentMetaData({ data }) {
           </div>
         </div>
         <div
-          className={`${
-            data?.measure?.overheidslaag ? 'border-b border-grey-500' : ''
-          } flex h-[4.5rem] py-1`}
-        >
+          className='border-b border-grey-500 flex h-[4.5rem] py-1'>
           <div className='flex flex-col justify-center'>
             <h4 className='mobile sm:desktop py-1 text-grey-600'>Overheidslaag</h4>
             <h5 className='mobile sm:desktop text-green-500'>

@@ -11,7 +11,7 @@ export default function PolicyList(props) {
     <>
       {lawData.map((law) => (
         <Link href={'/measures/' + law.slug.current} key={law.titel}>
-          <div className='block sm:ml-0 mb-12 max-w-3xl'>
+          <div className='block sm:ml-0 mb-4 max-w-3xl'>
             <div className='inline-block flex justify-start items-center -ml-1'>
               {/* Expertise Tag */}
               {law?.beleid === true && (
@@ -40,6 +40,7 @@ export default function PolicyList(props) {
                 </div>
               )}
             </div>
+
             <div className='block mt-2 max-w-3xl'>
               <div className=' my-2'>
                 <h3 className='desktop text-grey-800 no-underline hover:text-green-500'>
@@ -47,7 +48,7 @@ export default function PolicyList(props) {
                 </h3>
               </div>
 
-              <div className='block newlineDisplay p-base text-grey-800 my-2'>
+              <div className='block newlineDisplay p-base text-grey-800 my-4'>
                 <p className=''>{law.introText}</p>
               </div>
               <InstrumentMetaData data={law} />
