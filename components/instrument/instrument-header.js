@@ -11,7 +11,7 @@ export default function Instrumentheader({ data }) {
 
 useEffect(() => {
     const changeEffect = () => {
-      if (window.scrollY >= 90) {
+      if (window.scrollY >= 120) {
         setScrollEffect(true);
       } else {
         setScrollEffect(false);
@@ -42,9 +42,9 @@ useEffect(() => {
       </div>
 
       {/* STICKY */}
-      <div className='sm:sticky top-6 z-20'>
-        <div className='bg-gradient-to-b from-[#042D36] to-[#22532200] bg-green-500 pt-24 mt-8'>
-          <div className='global-margin grid grid-cols-1 sm:pl-8 h-auto'>
+      <div className='sm:sticky -top-[6.5rem] z-20 bg-gradient-to-b from-[#042D36] to-[#22532200] bg-green-500'>
+        <div className=' pt-24 mt-8 min-h-[360px] flex items-end justify-items-start global-margin'>
+          <div className={`${scrollEffect ? 'duration-100 sm:scale-75 sm:-translate-x-[6.5rem] sm:duration-75' : 'sm:mb-12 duration-75'} mb-6 sm:mb-0 sm:pl-8 h-auto `}>
             <div className='max-w-[852px] flex'>
               <div className='first-letter:uppercase border rounded-[5px] py-0.5 px-2 border-grey-100 p-xsm text-grey-100 mr-2'>
                 {data?.measure?.thema.replace('-', ' ')}
@@ -75,8 +75,8 @@ useEffect(() => {
                 </div>
               )}
             </div>
-            <div className={`${scrollEffect ? 'sm:scale-75 sm:duration-150' : 'sm:scale-100 sm:duration-150'} pb-6 sm:pb-12 max-w-[852px] flex justify-start`}>
-              <h1 className={`${scrollEffect ? '' : ''} justify-self-start lg:block mobile sm:desktop mt-2 text-grey-100`}>
+            <div className='max-w-[852px] flex justify-start overflow-hidden'>
+              <h1 className='justify-self-start lg:block mobile sm:desktop mt-2 text-grey-100'>
                 {data?.measure?.titel}
               </h1>
             </div>
@@ -84,9 +84,11 @@ useEffect(() => {
         </div>
 
         {/* Metadata */}
-        <div className='global-margin grid grid-col-1 sm:pl-8 bg-grey-100'>
-          <div className='max-w-[854px]'>
+        <div className='bg-grey-100 w-screen flex justify-items-start'>
+          <div className='global-margin w-full'>
+            <div className='grid grid-col-1 sm:pl-8 w-full max-w-[852px]'>
             <InstrumentMetaData data={data} />
+            </div>
           </div>
         </div>
       </div>
