@@ -61,11 +61,11 @@
   }
 
   h6 {
-    @apply font-jakarta text-xs font-bold leading-6;
+    @apply font-jakarta text-xs font-semibold leading-8;
   }
   
-  .heading-other {
-    @apply font-jakarta text-xs font-semibold leading-4;
+  .other-table {
+    @apply font-jakarta text-base font-semibold leading-5;
   }
 
   .p-xl {
