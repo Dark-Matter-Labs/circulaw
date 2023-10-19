@@ -44,7 +44,7 @@ useEffect(() => {
       {/* STICKY */}
       <div className='sm:sticky -top-[6.5rem] z-20 bg-gradient-to-b from-[#042D36] to-[#22532200] bg-green-500'>
         <div className=' pt-24 mt-8 min-h-[360px] flex items-end justify-items-start global-margin'>
-          <div className={`${scrollEffect ? 'duration-100 sm:scale-75 sm:-translate-x-[6.5rem] sm:duration-75' : 'sm:mb-12 duration-75'} mb-6 sm:mb-0 sm:pl-8 h-auto `}>
+          <div className={`${scrollEffect ? 'duration-100 sm:scale-75 sm:-translate-x-[6.5rem]' : 'sm:mb-12 '} mb-6 sm:mb-0 sm:pl-8 h-auto `}>
             <div className='max-w-[852px] flex'>
               <div className='first-letter:uppercase border rounded-[5px] py-0.5 px-2 border-grey-100 p-xsm text-grey-100 mr-2'>
                 {data?.measure?.thema.replace('-', ' ')}
