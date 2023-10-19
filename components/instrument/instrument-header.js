@@ -1,10 +1,27 @@
-import { ArrowLeftIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
+
+import { ArrowLeftIcon } from '@heroicons/react/outline';
 import SocialButtons from '../social-buttons';
 import InstrumentMetaData from './instrument-metadata';
 
 export default function Instrumentheader({ data }) {
   const router = useRouter();
+  const [ scrollEffect, setScrollEffect ] = useState()
+
+useEffect(() => {
+    const changeEffect = () => {
+      if (window.scrollY >= 90) {
+        setScrollEffect(true);
+      } else {
+        setScrollEffect(false);
+      }
+    };
+    window.addEventListener('scroll', changeEffect);
+  }, []);
+
+  console.log(scrollEffect)
+
   return (
     <>
       {/* Not sticky */}
@@ -26,8 +43,8 @@ export default function Instrumentheader({ data }) {
 
       {/* STICKY */}
       <div className='sm:sticky top-6 z-20'>
-        <div className='bg-gradient-to-b from-[#042D36] to-[#22532200] bg-green-500 pt-24 mt-8 pb-6 sm:pb-12 '>
-          <div className='global-margin grid grid-cols-1 sm:pl-8'>
+        <div className='bg-gradient-to-b from-[#042D36] to-[#22532200] bg-green-500 pt-24 mt-8'>
+          <div className='global-margin grid grid-cols-1 sm:pl-8 h-auto'>
             <div className='max-w-[852px] flex'>
               <div className='first-letter:uppercase border rounded-[5px] py-0.5 px-2 border-grey-100 p-xsm text-grey-100 mr-2'>
                 {data?.measure?.thema.replace('-', ' ')}
@@ -58,8 +75,8 @@ export default function Instrumentheader({ data }) {
                 </div>
               )}
             </div>
-            <div className='max-w-[852px]'>
-              <h1 className='lg:block mobile sm:desktop mt-2 text-grey-100'>
+            <div className={`${scrollEffect ? 'sm:scale-75 sm:duration-150' : 'sm:scale-100 sm:duration-150'} pb-6 sm:pb-12 max-w-[852px] flex justify-start`}>
+              <h1 className={`${scrollEffect ? '' : ''} justify-self-start lg:block mobile sm:desktop mt-2 text-grey-100`}>
                 {data?.measure?.titel}
               </h1>
             </div>
