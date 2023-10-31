@@ -13,10 +13,10 @@ export default function InstrumentTable({ data }) {
 
   return (
     <>
-      <div className='grid grid-cols-6 mt-12'>
+      <div className='grid grid-cols-6'>
         <table className='table-fixed col-span-6 sm:col-span-4 sm:m-0'>
           <tbody>
-            <tr className='my-10 border-b boder-grey-300 border-t'>
+            <tr className='border-b boder-grey-300 border-t'>
               <td className='w-1/3 py-1.5 p-base'>Rechtsgebied</td>
               <td className='w-2/3 py-1.5 table-base capitalize'>
                 <span className='flex justify-end sm:justify-start'>

@@ -50,9 +50,9 @@ export default function Instrumentheader({ data }) {
           >
             <div className='w-full flex'>
               <Link href={`/${data?.measure?.thema.toLowerCase().replace(/ /g, '-')}`}>
-              <div className='first-letter:uppercase border rounded-[5px] py-0.5 px-2 border-grey-100 p-xsm text-grey-100 mr-2 hover:text-green-300 hover:border-green-300'>
-                {data?.measure?.thema.replace('-', ' ')}
-              </div>
+                <div className='first-letter:uppercase border rounded-[5px] py-0.5 px-2 border-grey-100 p-xsm text-grey-100 mr-2 hover:text-green-300 hover:border-green-300'>
+                  {data?.measure?.thema.replace('-', ' ')}
+                </div>
               </Link>
               {data?.measure?.beleid === true && (
                 <div className='bg-green-300 border border-green-300 text-grey-100 px-2 h-6 rounded-[5px] p-xsm flex items-center mr-2'>
