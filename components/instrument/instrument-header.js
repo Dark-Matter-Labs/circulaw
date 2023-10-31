@@ -78,7 +78,7 @@ export default function Instrumentheader({ data }) {
               )}
             </div>
             <div className='max-w-4xl flex justify-start overflow-hidden'>
-              <h1 className='justify-self-start lg:block mobile sm:desktop mt-2 text-grey-100 line-clamp-3'>
+              <h1 className='justify-self-start lg:block mobile sm:desktop mt-2 text-grey-100'>
                 {data?.measure?.titel}
               </h1>
             </div>
