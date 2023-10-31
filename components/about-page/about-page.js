@@ -21,7 +21,7 @@ export default function AboutPageComponent({ data }) {
               <Link href='/'>Home &gt;</Link>
             </div>
             <div className='max-w-3xl'>
-              <h1 className='lg:block sm:pt-10 py-6 sm:pb-10 mobile sm:desktop text-grey-800'>
+              <h1 className='lg:block sm:pt-10 py-6 sm:pb-10 text-grey-800'>
                 {data?.aboutPage?.pageTitle}
               </h1>
               <PortableText

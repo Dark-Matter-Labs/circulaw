@@ -66,6 +66,11 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
+"@domchristie/tailwind-utopia@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@domchristie/tailwind-utopia/-/tailwind-utopia-1.0.1.tgz#5a4b18d22eebc344634f072d0e0181a946e6a52f"
+  integrity sha512-TuNtnlmapczjwiu0C5gMzhF4oeajkANwlPPOjiauL3SNoH/p9MeF2ROa14lGawsb4tHFyYVVlaUX9elwBE9VfQ==
+
 "@emailjs/browser@^3.7.0":
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/@emailjs/browser/-/browser-3.7.0.tgz#6ee7cf286a6b9cf45d12707846e24749976f550c"
@@ -3796,10 +3801,6 @@ synckit@^0.8.4:
   dependencies:
     "@pkgr/utils" "^2.3.1"
     tslib "^2.4.0"
-
-tailwind-utopia@cwsdigital/tailwind-utopia:
-  version "1.0.5"
-  resolved "https://codeload.github.com/cwsdigital/tailwind-utopia/tar.gz/854e84f726f5c06791d961eaa9306a8ab2a4f4ad"
 
 tailwindcss@^3.2.7:
   version "3.2.7"

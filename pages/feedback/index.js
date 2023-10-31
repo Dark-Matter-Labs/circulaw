@@ -265,7 +265,7 @@ export default function Feedback() {
             </>
           ) : (
             <>
-              <h1 className='text-green-600 pt-10 mobile sm:desktop'>Dank voor je feedback!</h1>
+              <h1 className='text-green-600 pt-10'>Dank voor je feedback!</h1>
               <p className=' p-lg py-10 max-w-2xl text-grey-800'>
                 Samen met jou kunnen we CircuLaw blijven verbeteren, en dat is hard nodig! We gaan
                 je feedback bekijken en zullen je eventueel benaderen als we nog vragen hebben of
