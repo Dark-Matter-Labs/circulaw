@@ -6,8 +6,8 @@ export default function InstrumentMetaData({ data }) {
   return (
     <>
       <div className='hidden sm:block'>
-        <div className='h-auto border-b border-t flex flex-row gap-x-6 justify-between items-center justify-self-center py-1'>
-          <div className='flex flex-col'>
+        <div className='h-auto border-b border-t border-gray-300 flex flex-row gap-x-6 grow-0 items-center justify-self-center py-1 max-w-[850px]'>
+          <div className='flex flex-col basis-3/12'>
             <h6 className='py-1 text-grey-600'>Juridische houdbaarheid</h6>
             <div className='flex items-center'>
               <h6 className=' text-green-500 pr-2'>
@@ -33,7 +33,7 @@ export default function InstrumentMetaData({ data }) {
               )}
             </div>
           </div>
-          <div className='flex flex-col'>
+          <div className='flex flex-col basis-2/12'>
             <h6 className='py-1 text-grey-600'>Invloed</h6>
             <div className='flex items-center'>
               <h6 className=' text-green-500 pr-2'>
@@ -59,7 +59,7 @@ export default function InstrumentMetaData({ data }) {
               )}
             </div>
           </div>
-          <div className='flex flex-col'>
+          <div className='flex flex-col basis-4/12'>
             <h6 className='py-1 text-grey-600'>Overheidslaag</h6>
             <h6 className=' text-green-500'>
               {data?.measure?.overheidslaag?.map((level) => (
@@ -76,7 +76,7 @@ export default function InstrumentMetaData({ data }) {
               ))}
             </h6>
           </div>
-          <div className='flex flex-col'>
+          <div className='flex flex-col basis-3/12'>
             <h6 className='py-1 text-grey-600'>R-ladder</h6>
             <div className='flex items-center'>
               <div className='flex flex-row items-center'>
@@ -117,7 +117,7 @@ export default function InstrumentMetaData({ data }) {
       </div>
       {/* MOBILE */}
       <div className='flex flex-col sm:hidden justify-center mb-4'>
-        <div className='flex flex-row justify-between h-auto py-1 border-b border-grey-500'>
+        <div className='flex flex-row justify-between h-auto py-2 border-b border-t-2 border-grey-400'>
           <div className='flex flex-col justify-center'>
             <h6 className='sm:py-1 text-grey-600'>Juridische houdbaarheid</h6>
             <div className='flex items-center'>
@@ -171,7 +171,7 @@ export default function InstrumentMetaData({ data }) {
             </div>
           </div>
         </div>
-        <div className='border-b border-grey-500 flex h-auto py-1'>
+        <div className='border-b border-grey-400 flex h-auto py-2'>
           <div className='flex flex-col justify-center'>
             <h6 className='py-1 text-grey-600'>Overheidslaag</h6>
             <h6 className='text-green-500'>
@@ -190,7 +190,7 @@ export default function InstrumentMetaData({ data }) {
             </h6>
           </div>
         </div>
-        <div className='flex py-1 border-b border-grey-500'>
+        <div className='flex py-2 border-b-2 border-grey-400'>
           <div className='flex flex-col justify-center'>
             <h6 className='py-1 text-grey-600'>R-ladder</h6>
             <div className='flex items-center'>
