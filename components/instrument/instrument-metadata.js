@@ -6,7 +6,7 @@ export default function InstrumentMetaData({ data }) {
   return (
     <>
       <div className='hidden sm:block'>
-        <div className='h-auto border-b border-t border-gray-300 flex flex-row gap-x-6 grow-0 items-center justify-self-center py-1 max-w-[890px]'>
+        <div className='h-auto border-b border-t border-gray-300 flex flex-row gap-x-6 grow-0 items-center justify-self-center py-1 lg:min-w-[890px] max-w-[890px]'>
           <div className='flex flex-col basis-3/12'>
             <h6 className='py-1 text-grey-600'>Juridische houdbaarheid</h6>
             <div className='flex items-center'>

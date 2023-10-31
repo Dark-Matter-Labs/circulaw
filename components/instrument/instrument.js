@@ -24,7 +24,6 @@ export default function Instrument({ data }) {
           <div className='grid grid-cols-1 sm:pl-8'>
             <div className='pb-20 max-w-[760px]'>
               <div className=''>
-                {console.log(data.measure.content)}
                 <PortableText value={data?.measure?.content} components={instrumentPTComponents} />
               </div>
               <InstrumentTable data={data} />
