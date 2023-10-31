@@ -20,8 +20,6 @@ export default function Instrumentheader({ data }) {
     window.addEventListener('scroll', changeEffect);
   }, []);
 
-  console.log(scrollEffect);
-
   return (
     <>
       {/* Not sticky */}
