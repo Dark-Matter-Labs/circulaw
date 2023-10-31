@@ -24,68 +24,66 @@
     @apply max-w-screen-xl mx-auto;
   }
 
+  /* Figma H1*/
   .header {
-    @apply font-jakarta fl-text-step-5 font-semibold leading-17;
+    @apply font-jakarta text-fl-4xl font-semibold;
   }
 
+   /* Figma H2*/
   h1 {
-    @apply font-jakarta fl-text-step-3 font-semibold leading-16;
+    @apply font-jakarta text-fl-2xl font-semibold;
+  }
+  
+   /* Figma H3*/
+  h2.desktop {
+    @apply font-jakarta text-6xl font-semibold leading-14;
   }
 
-  h2 {
-    @apply font-jakarta fl-text-step-1 font-semibold leading-14;
+  h2.mobile {
+    @apply font-jakarta text-2xl font-semibold leading-10;
   }
 
-  h3 {
-    @apply font-jakarta fl-text-step--1 font-semibold leading-13;
+   /* Figma H4*/
+  h3.desktop {
+    @apply font-jakarta text-4xl font-semibold leading-12;
   }
 
+  h3.mobile {
+    @apply font-jakarta text-lg font-semibold leading-10;
+  }
+
+   /* Figma H5*/
   h4.desktop {
     @apply font-jakarta text-xl font-medium leading-10;
   }
 
   h4.mobile {
-    @apply font-jakarta text-lg font-semibold leading-10;
+    @apply font-jakarta text-base font-bold leading-10;
   }
 
-  h5.desktop {
-    @apply font-jakarta text-xs font-semibold leading-9;
-  }
-
-  h5.bold {
-    @apply font-jakarta text-xs font-extrabold leading-9;
-  }
-
-  h5.mobile {
-    @apply font-jakarta text-base font-medium leading-10;
-  }
-
-  h6 {
-    @apply font-jakarta text-xs font-bold leading-6;
-  }
-
+  /* Figma H6*/
+     h5.desktop {
+      @apply font-jakarta text-xs font-semibold leading-8;
+    }
+  
+    h5.mobile {
+      @apply font-jakarta text-xxs font-bold leading-6;
+    }
+    
   .p-xl {
     @apply font-jakarta text-3xl font-normal leading-14;
   }
-
-  .p-xl-header {
-    @apply font-jakarta text-3xl font-semibold leading-14;
-  }
   
   .p-lg {
-    @apply font-jakarta text-xl font-normal leading-13;
+    @apply font-jakarta text-xl font-normal leading-11;
   }
 
-  .p-base {
-    @apply font-jakarta fl-text-step--2 font-normal;
+  .p-md {
+    @apply font-jakarta text-base font-normal leading-9;
   }
 
   .p-sm {
-    @apply font-jakarta text-xs font-normal leading-7;
-  }
-
-  .p-xsm {
-    @apply font-jakarta text-xxs font-bold leading-5
+    @apply font-jakarta text-xs font-normal leading-8;
   }
 
   .link-lg {
@@ -107,8 +105,6 @@
   .link-interaction-dark-bg {
     @apply text-grey-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white
   }
-
-
 
   .button {
     @apply font-jakarta text-base font-bold leading-10;
