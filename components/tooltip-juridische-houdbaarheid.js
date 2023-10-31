@@ -87,16 +87,16 @@ export default function ToolTips({ children, icon, data }) {
                       <div className='relative mt-6 flex-1'>
                         <div className='absolute inset-0'>
                           {data?.measure?.JHTooltipText && (
-                            <p className='p-base'>{data?.measure?.JHTooltipText}</p>
+                            <p className='p-md'>{data?.measure?.JHTooltipText}</p>
                           )}
                           <div className='bg-grey-100 mt-6 p-6'>
-                            <p className='p-base'>
+                            <p className='p-md'>
                               Met de waardering ‘Juridische haalbaarheid’ laten we zien hoe
                               risicovol een instrument is: wat is het afbreukrisico of de kans dat
                               het instrument onderuit gaat bij de rechter.
                             </p>
                             <br />
-                            <p className='p-base'>
+                            <p className='p-md'>
                               We maken hiervan een globale inschatting, 1: beperkt, 2: gemiddeld, 3:
                               hoog.
                             </p>

@@ -57,7 +57,7 @@ export default function ThemeBottomSection({ props }) {
                         </div>
                         <div>
                           <h3 className='pt-4 sm:pt-0 mobile sm:desktop'>{measure?.titel}</h3>
-                          <p className=' p-base py-4 max-w-2xl'>{measure?.introText}</p>
+                          <p className=' p-md py-4 max-w-2xl'>{measure?.introText}</p>
                         </div>
                         <div className='flex sm:justify-between w-full sm:pt-14'>
                           <div className='hidden sm:block'>

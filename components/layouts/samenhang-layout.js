@@ -45,7 +45,7 @@ export default function SamenhangLayout({ ...props }) {
         </div>
         <div className='sm:hidden'>
           <div className='pb-6'>
-            <p className='p-base italic'>
+            <p className='p-md italic'>
               Bekijk deze afbeelding door in te zoomen of bekijk de site op een groter scherm
             </p>
           </div>

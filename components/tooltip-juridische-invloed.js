@@ -87,21 +87,21 @@ export default function ToolTips({ children, icon, data }) {
                       <div className='relative mt-6 flex-1'>
                         <div className='absolute inset-0'>
                           {data?.measure?.invloedTooltipText && (
-                            <p className='p-base'>{data?.measure?.invloedTooltipText}</p>
+                            <p className='p-md'>{data?.measure?.invloedTooltipText}</p>
                           )}
                           <div className='bg-grey-100 mt-6 p-6'>
-                            <p className='p-base'>
+                            <p className='p-md'>
                               Met ‘invloed’ bedoelen wij de invloed van het instrument in de
                               praktijk. We kijken hiervoor onder andere naar:
                             </p>
-                            <ul className='list-disc pl-6 p-base'>
+                            <ul className='list-disc pl-6 p-md'>
                               <li>de afdwingbaarheid,</li>
                               <li>hoeveel dírecte invloed het instrument heeft,</li>
                               <li>hoe lang het doorwerkt,</li>
                               <li>op hoeveel personen het betrekking heeft.</li>
                             </ul>
                             <br />
-                            <p className='p-base'>
+                            <p className='p-md'>
                               We maken hiervan een globale inschatting: 1: beperkt, 2: gemiddeld, 3:
                               hoog.
                             </p>
