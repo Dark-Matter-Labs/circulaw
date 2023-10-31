@@ -6,14 +6,14 @@ export default function InstrumentMetaData({ data }) {
   return (
     <>
       <div className='hidden sm:block'>
-        <div className='h-auto border-b border-t flex flex-row justify-between items-center justify-self-center py-1'>
-          <div className='flex flex-col min-w-[170px]'>
+        <div className='h-auto border-b border-t flex flex-row gap-x-6 justify-between items-center justify-self-center py-1'>
+          <div className='flex flex-col'>
             <h6 className='py-1 text-grey-600'>Juridische houdbaarheid</h6>
             <div className='flex items-center'>
-              <div className='other-table text-green-500 pr-2'>
+              <h6 className=' text-green-500 pr-2'>
                 {data?.measure?.juridischeHaalbaarheid}
                 {data?.juridischeHaalbaarheid}
-              </div>
+              </h6>
               {data?.measure?.slug && (
                 <JHTooltip data={data}>
                   <svg
@@ -36,10 +36,10 @@ export default function InstrumentMetaData({ data }) {
           <div className='flex flex-col'>
             <h6 className='py-1 text-grey-600'>Invloed</h6>
             <div className='flex items-center'>
-              <div className='other-table text-green-500 pr-2'>
+              <h6 className=' text-green-500 pr-2'>
                 {data?.measure?.juridischInvloed}
                 {data?.juridischInvloed}
-              </div>
+              </h6>
               {data?.measure?.slug && (
                 <JITooltip data={data}>
                   <svg
@@ -59,9 +59,9 @@ export default function InstrumentMetaData({ data }) {
               )}
             </div>
           </div>
-          <div className='flex flex-col min-w-[305px]'>
+          <div className='flex flex-col'>
             <h6 className='py-1 text-grey-600'>Overheidslaag</h6>
-            <div className='other-table text-green-500'>
+            <h6 className=' text-green-500'>
               {data?.measure?.overheidslaag?.map((level) => (
                 <span key={level} className=''>
                   {level} {data?.measure?.overheidslaag.slice(-1)[0] !== level && <span>-</span>}
@@ -74,23 +74,23 @@ export default function InstrumentMetaData({ data }) {
                   &nbsp;
                 </span>
               ))}
-            </div>
+            </h6>
           </div>
-          <div className='flex flex-col min-w-[198px]'>
+          <div className='flex flex-col'>
             <h6 className='py-1 text-grey-600'>R-ladder</h6>
             <div className='flex items-center'>
               <div className='flex flex-row items-center'>
                 {data?.measure?.rLadder?.map((rValue) => (
-                  <div key={rValue} className='text-green-500 other-table'>
+                  <h6 key={rValue} className='text-green-500 '>
                     {rValue} {data?.measure?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                     &nbsp;
-                  </div>
+                  </h6>
                 ))}
                 {data?.rLadder?.map((rValue) => (
-                  <div key={rValue} className='text-green-500 other-table'>
+                  <h6 key={rValue} className='text-green-500 '>
                     {rValue} {data?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                     &nbsp;
-                  </div>
+                  </h6>
                 ))}
                 {data?.measure?.slug && (
                   <RTooltip>
