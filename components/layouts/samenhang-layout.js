@@ -4,8 +4,6 @@ import OverviewPageHeader from '../overview-page-header';
 import DisplayInstruments from '../expertise-page/display-instruments';
 
 export default function SamenhangLayout({ expertiseData, ...props }) {
-
-  
   useEffect(() => {});
 
   const [beleid, setBeleid] = useState([]);
@@ -50,7 +48,6 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
   ).length;
   // const numGronposirie = numGrondpositieStrategie + numGrondpositieSelectiecriteria + numGrondpositieGunningscriteria + numGrondpositieContracteisen
 
-  
   const numBeleidStrategie = beleid.filter((instrument) =>
     instrument?.beleidSubCategory?.includes('strategie'),
   ).length;
@@ -61,7 +58,7 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
     instrument?.beleidSubCategory?.includes('beleidsuitvoering'),
   ).length;
 
-  const numBeleidNotBouw = beleid.length
+  const numBeleidNotBouw = beleid.length;
   // const numBeleid = numBeleidStrategie + numBeleidBeleidsdoorwerking + numBeleidBeleidsuitvoering
 
   const numInkoopBeleid = inkoop.filter((instrument) =>
@@ -273,8 +270,6 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
     });
   }
 
-
-
   return (
     <>
       <div className='global-margin mt-8'>
@@ -295,7 +290,12 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
               }}
               className={selected === 'beleid' ? 'bg-blue-300' : ''}
             >
-              beleid  {props.transitionAgenda === 'bouw' ? <span>({numBeleid})</span> : <span>({numBeleidNotBouw})</span>} 
+              beleid{' '}
+              {props.transitionAgenda === 'bouw' ? (
+                <span>({numBeleid})</span>
+              ) : (
+                <span>({numBeleidNotBouw})</span>
+              )}
             </button>
             <button
               onClick={() => {
@@ -306,16 +306,17 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
             >
               inkoop ({numInkoop})
             </button>
-            {props.transitionAgenda === 'bouw' && 
-            <button
-              onClick={() => {
-                setSelected(Object.keys({ grondpositie })[0]);
-                handleRadioButton('alle');
-              }}
-              className={selected === 'grondpositie' ? 'bg-blue-300' : ''}
-            >
-              grondpositie ({numGronposirie})
-            </button>}
+            {props.transitionAgenda === 'bouw' && (
+              <button
+                onClick={() => {
+                  setSelected(Object.keys({ grondpositie })[0]);
+                  handleRadioButton('alle');
+                }}
+                className={selected === 'grondpositie' ? 'bg-blue-300' : ''}
+              >
+                grondpositie ({numGronposirie})
+              </button>
+            )}
             <button
               onClick={() => {
                 setSelected(Object.keys({ subsidie })[0]);
@@ -380,7 +381,6 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
           </div>
 
           <div className='flex flex-col'>
-
             {selected === 'beleid' && props.transitionAgenda === 'bouw' && (
               <>
                 {beleidSubCategories.map((cat) => (
@@ -393,15 +393,18 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
                 ))}
               </>
             )}
-             {selected === 'beleid' && props.transitionAgenda !== 'bouw' &&
-              beleid.map((instrument) =>  <div key={instrument.titel} className='flex flex-row justify-between'>
-              <div className='py-1 border-t border-b border-black'>{instrument.titel}</div>
-              <div className='flex flex-row'>
-                {instrument.overheidslaag.map((govLevel) => (
-                  <div key={govLevel}>{govLevel}</div>
-                ))}
-              </div>
-            </div>)}
+            {selected === 'beleid' &&
+              props.transitionAgenda !== 'bouw' &&
+              beleid.map((instrument) => (
+                <div key={instrument.titel} className='flex flex-row justify-between'>
+                  <div className='py-1 border-t border-b border-black'>{instrument.titel}</div>
+                  <div className='flex flex-row'>
+                    {instrument.overheidslaag.map((govLevel) => (
+                      <div key={govLevel}>{govLevel}</div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             {selected === 'inkoop' &&
               inkoopSubCategories.map((cat) => (
                 <DisplayInstruments
@@ -411,7 +414,8 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
                   filter={(instrument) => instrument?.inkoopSubCategory?.includes(cat)}
                 />
               ))}
-            {selected == 'grondpositie' && props.transitionAgenda === 'bouw' && 
+            {selected == 'grondpositie' &&
+              props.transitionAgenda === 'bouw' &&
               grondpositieSubCategories.map((cat) => (
                 <DisplayInstruments
                   key={cat}
@@ -421,23 +425,27 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
                 />
               ))}
             {selected === 'subsidie' &&
-              subsidie.map((instrument) =>  <div key={instrument.titel} className='flex flex-row justify-between'>
-              <div className='py-1 border-t border-b border-black'>{instrument.titel}</div>
-              <div className='flex flex-row'>
-                {instrument.overheidslaag.map((govLevel) => (
-                  <div key={govLevel}>{govLevel}</div>
-                ))}
-              </div>
-            </div>)}
+              subsidie.map((instrument) => (
+                <div key={instrument.titel} className='flex flex-row justify-between'>
+                  <div className='py-1 border-t border-b border-black'>{instrument.titel}</div>
+                  <div className='flex flex-row'>
+                    {instrument.overheidslaag.map((govLevel) => (
+                      <div key={govLevel}>{govLevel}</div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             {selected === 'fiscaal' &&
-              fiscaal.map((instrument) =>  <div key={instrument.titel} className='flex flex-row justify-between'>
-              <div className='py-1 border-t border-b border-black'>{instrument.titel}</div>
-              <div className='flex flex-row'>
-                {instrument.overheidslaag.map((govLevel) => (
-                  <div key={govLevel}>{govLevel}</div>
-                ))}
-              </div>
-            </div>)}
+              fiscaal.map((instrument) => (
+                <div key={instrument.titel} className='flex flex-row justify-between'>
+                  <div className='py-1 border-t border-b border-black'>{instrument.titel}</div>
+                  <div className='flex flex-row'>
+                    {instrument.overheidslaag.map((govLevel) => (
+                      <div key={govLevel}>{govLevel}</div>
+                    ))}
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
       </div>

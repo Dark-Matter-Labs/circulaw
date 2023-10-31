@@ -7,9 +7,9 @@ import InstrumentMetaData from './instrument-metadata';
 
 export default function Instrumentheader({ data }) {
   const router = useRouter();
-  const [ scrollEffect, setScrollEffect ] = useState()
+  const [scrollEffect, setScrollEffect] = useState();
 
-useEffect(() => {
+  useEffect(() => {
     const changeEffect = () => {
       if (window.scrollY >= 85) {
         setScrollEffect(true);
@@ -20,7 +20,7 @@ useEffect(() => {
     window.addEventListener('scroll', changeEffect);
   }, []);
 
-  console.log(scrollEffect)
+  console.log(scrollEffect);
 
   return (
     <>
@@ -44,7 +44,11 @@ useEffect(() => {
       {/* STICKY */}
       <div className='sm:sticky -top-12 z-20 bg-gradient-to-b from-[#042D36] to-[#22532200] bg-green-500'>
         <div className=' pt-24 mt-8 min-h-[360px] flex items-end justify-items-start global-margin'>
-          <div className={`${scrollEffect ? 'duration-75 sm:scale-75' : 'sm:mb-12 duration-75 '} mb-6 sm:pl-8 h-auto origin-bottom-left`}>
+          <div
+            className={`${
+              scrollEffect ? 'duration-75 sm:scale-75' : 'sm:mb-12 duration-75 '
+            } mb-6 sm:pl-8 h-auto origin-bottom-left`}
+          >
             <div className='w-full flex'>
               <div className='first-letter:uppercase border rounded-[5px] py-0.5 px-2 border-grey-100 p-xsm text-grey-100 mr-2'>
                 {data?.measure?.thema.replace('-', ' ')}
@@ -78,7 +82,7 @@ useEffect(() => {
             <div className='max-w-4xl flex justify-start overflow-hidden'>
               <h1 className='justify-self-start lg:block mobile sm:desktop mt-2 text-grey-100 line-clamp-3'>
                 {data?.measure?.titel}
-              </h1> 
+              </h1>
             </div>
           </div>
         </div>
@@ -87,7 +91,7 @@ useEffect(() => {
         <div className='bg-grey-100 w-screen flex justify-items-start'>
           <div className='global-margin w-full'>
             <div className='grid grid-col-1 sm:pl-8 w-full max-w-4xl'>
-            <InstrumentMetaData data={data} />
+              <InstrumentMetaData data={data} />
             </div>
           </div>
         </div>
