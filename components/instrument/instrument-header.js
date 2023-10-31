@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-scroll';
 
 import { ArrowLeftIcon } from '@heroicons/react/outline';
 import SocialButtons from '../social-buttons';
@@ -48,9 +49,11 @@ export default function Instrumentheader({ data }) {
             } mb-6 sm:pl-8 h-auto origin-bottom-left`}
           >
             <div className='w-full flex'>
-              <div className='first-letter:uppercase border rounded-[5px] py-0.5 px-2 border-grey-100 p-xsm text-grey-100 mr-2'>
+              <Link href={`/${data?.measure?.thema.toLowerCase().replace(/ /g, '-')}`}>
+              <div className='first-letter:uppercase border rounded-[5px] py-0.5 px-2 border-grey-100 p-xsm text-grey-100 mr-2 hover:text-green-300 hover:border-green-300'>
                 {data?.measure?.thema.replace('-', ' ')}
               </div>
+              </Link>
               {data?.measure?.beleid === true && (
                 <div className='bg-green-300 border border-green-300 text-grey-100 px-2 h-6 rounded-[5px] p-xsm flex items-center mr-2'>
                   Beleid
