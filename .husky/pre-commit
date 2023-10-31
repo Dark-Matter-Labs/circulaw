@@ -11,4 +11,4 @@ v=${b%%[)| ]*}
 
 export PATH="$NVM_DIR/versions/node/$v/bin:$PATH"
 
-yarn pre-commit
+npm run pre-commit
