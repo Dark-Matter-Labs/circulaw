@@ -17,7 +17,7 @@ export default function InstrumentTable({ data }) {
         <table className='table-fixed col-span-6 sm:col-span-4 sm:m-0'>
           <tbody>
             <tr className='my-10 border-b boder-grey-300 border-t'>
-              <td className='w-1/3 py-1.5 p-base'>Rechtsgebied</td>
+              <td className='w-1/3 py-1.5 p-md'>Rechtsgebied</td>
               <td className='w-2/3 py-1.5 table-base capitalize'>
                 <span className='flex justify-end sm:justify-start'>
                   {data?.measure?.rechtsgebied}
@@ -27,7 +27,7 @@ export default function InstrumentTable({ data }) {
               </td>
             </tr>
             <tr className=' border-b boder-grey-300'>
-              <td className='w-1/3 py-1.5  p-base'>Citeertitel</td>
+              <td className='w-1/3 py-1.5  p-md'>Citeertitel</td>
               <td className='w-2/3 py-1.5 table-base first-letter:uppercase'>
                 <span className='flex justify-end sm:justify-start'>
                   {data?.measure?.citeertitel}
@@ -35,7 +35,7 @@ export default function InstrumentTable({ data }) {
               </td>
             </tr>
             <tr className='border-b boder-grey-300'>
-              <td className='w-1/3 py-1.5 p-base'>Artikel</td>
+              <td className='w-1/3 py-1.5 p-md'>Artikel</td>
               <td className='w-2/3 py-1.5 table-base'>
                 <span className='flex justify-end sm:justify-start link-interaction text-green-500'>
                   <a
@@ -68,7 +68,7 @@ export default function InstrumentTable({ data }) {
               </td>
             </tr>
             <tr className='border-b boder-grey-300'>
-              <td className='w-1/3 py-1.5  p-base'>Geldig vanaf</td>
+              <td className='w-1/3 py-1.5  p-md'>Geldig vanaf</td>
               <td className='w-2/3 py-1.5 table-base'>
                 <span className='flex justify-end sm:justify-start'>
                   {!data?.measure?.lawDate ? (

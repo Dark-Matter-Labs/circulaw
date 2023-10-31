@@ -242,7 +242,7 @@ export default function Nav(props) {
                                           href={`/${encodeURIComponent(slug)}`}
                                           className='-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 border-b uppercase'
                                         >
-                                          <h6 className='popup-base text-gray-900'>
+                                          <h6 className='popup-md text-gray-900'>
                                             {slug.replaceAll('-', ' ')}
                                           </h6>
                                         </a>
@@ -296,7 +296,7 @@ export default function Nav(props) {
                                           href={`/about/${encodeURIComponent(slug.slug)}`}
                                           className='-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase border-b'
                                         >
-                                          <h6 className='` popup-base text-grey-800'>
+                                          <h6 className='` popup-md text-grey-800'>
                                             {slug.title.replaceAll('-', ' ')}
                                           </h6>
                                         </a>

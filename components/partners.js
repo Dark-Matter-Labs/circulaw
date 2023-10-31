@@ -66,7 +66,7 @@ export default function Partners({ footerText }) {
           })}
         </div>
       </div>
-      <div className='global-margin pb-2 text-grey-100 p-base'>
+      <div className='global-margin pb-2 text-grey-100 p-md'>
         {router.pathname === '/en' && (
           <p className='pb-8'>
             Welcome to CircuLaw. This website is currently under development and in this version we

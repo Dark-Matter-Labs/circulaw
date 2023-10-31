@@ -59,9 +59,7 @@ export default function Instrumentheader({ data }) {
               )}
             </div>
             <div className='max-w-[852px]'>
-              <h1 className='lg:block mobile sm:desktop mt-2 text-grey-100'>
-                {data?.measure?.titel}
-              </h1>
+              <h1 className='lg:block mt-2 text-grey-100'>{data?.measure?.titel}</h1>
             </div>
           </div>
         </div>

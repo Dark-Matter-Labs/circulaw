@@ -53,6 +53,7 @@
     "use-persisted-state": "^0.3.3"
   },
   "devDependencies": {
+    "@domchristie/tailwind-utopia": "^1.0.1",
     "autoprefixer": "^10.4.13",
     "concurrently": "^7.6.0",
     "env-cmd": "^10.1.0",
@@ -62,7 +63,6 @@
     "husky": "^8.0.2",
     "postcss": "^8.4.21",
     "prettier": "2.5.1",
-    "tailwind-utopia": "cwsdigital/tailwind-utopia",
     "tailwindcss": "^3.2.7"
   }
 }

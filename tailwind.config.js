@@ -13,16 +13,35 @@ module.exports = {
   theme: {
     extend: {
       utopia: {
-        minScreen: '320px',
-        minSize: 22,
-        minScale: 1.2,
-        maxScreen: '1140px',
+        minWidth: 320,
+        minSize: 25,
+        minScale: 1,
+        maxWidth: 1140,
         maxSize: 26,
         maxScale: 1.25,
-        textSizes: [],
-        spacingSizes: {},
-        spacingPairs: {},
-        spacingCustomPairs: [],
+        fontSize: {
+          xs: 'inherit',
+          sm: 'inherit',
+          base: 1.4,
+          lg: 1.33,
+          xl: 1.2,
+          '2xl': 1.11,
+          '3xl': 1,
+          '4xl': {
+            lineHeight: 1.1,
+          }
+        },
+        spacing: {
+          '3xs': 0.25,
+          '2xs': 0.5,
+          xs: 0.75,
+          sm: 1,
+          md: 1.5,
+          lg: 2,
+          xl: 3,
+          '2xl': 4,
+          '3xl': 6
+        }
     },
       colors: {
         'grey-100': '#FDFDFD',
@@ -54,8 +73,6 @@ module.exports = {
         '4xl': '23px',
         '5xl': '25px',
         '6xl': '29px',
-        '7xl': '55px',
-        '8xl': '85px'
       },
       lineHeight: {
         3: '15px',
@@ -67,7 +84,7 @@ module.exports = {
         9: '23px',
         10: '24px',
         11: '26px',
-        12: '27px',
+        12: '28px',
         13: '30px',
         14: '32px',
         15: '36px',
@@ -98,6 +115,9 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwind-utopia'), require('@tailwindcss/forms')],
+  plugins: [
+    require('@domchristie/tailwind-utopia'),
+    require('@tailwindcss/forms')
+],
   
 };

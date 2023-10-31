@@ -27,7 +27,7 @@ const CookieConsent = () => {
     <section className={`fixed bottom-0 left-0 w-full pb-2 shadow-top ${consent ? 'hidden' : ''}`}>
       <div className='flex flex-col items-start px-20 py-6 space-y-2 bg-green-600 md:flex-row md:space-y-0 md:items-stretch md:space-x-2  '>
         <div className='flex items-center flex-grow text-grey-100'>
-          <p className='p-base sm:p-lg'>
+          <p className='p-md sm:p-lg'>
             Op deze site gebruiken we cookies om te analyseren hoe jij de site gebruikt en om de
             site vervolgens te kunnen verbeteren. Altijd met respect voor jouw privacy. Lees voor
             meer informatie onze{' '}

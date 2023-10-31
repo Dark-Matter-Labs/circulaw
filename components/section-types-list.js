@@ -32,7 +32,7 @@ export default function SectionTypes({ themaCards }) {
               <div className='group block w-full p-4 bg-white rounded-cl'>
                 <div className='inline-block'>
                   <Link href={`/${thema.slug}`}>
-                    <h3 className='desktop mt-2 text-black pointer-events-none pb-4 hidden sm:inline'>
+                    <h3 className='mobile sm:desktop mt-2 text-black pointer-events-none pb-4 hidden sm:inline'>
                       {thema.themaName}
                     </h3>
                     <h2 className='mobile mt-2 text-black pointer-events-none pb-4 inline sm:hidden'>
@@ -41,7 +41,7 @@ export default function SectionTypes({ themaCards }) {
                   </Link>
                 </div>
                 <Link href={`/${thema.slug}`}>
-                  <p className='p-base block text-black pointer-events-none py-4 w-full'>
+                  <p className='p-md block text-black pointer-events-none py-4 w-full'>
                     {thema.homePageCardText}
                   </p>
                 </Link>

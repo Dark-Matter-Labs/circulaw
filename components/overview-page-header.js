@@ -24,7 +24,7 @@ export default function OverviewPageHeader({ props, page }) {
         </div>
         <div className='items-center justify-center grid grid-cols-10 pb-2'>
           <div className='col-span-9'>
-            <h1 className='mobile sm:desktop text-black max-w-3xl'>{props.title}</h1>
+            <h1 className='text-black max-w-3xl'>{props.title}</h1>
           </div>
         </div>
       </div>
