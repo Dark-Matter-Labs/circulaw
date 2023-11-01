@@ -25,13 +25,21 @@
   }
 
   /* Figma H1*/
-  .header {
-    @apply font-jakarta text-fl-4xl font-semibold;
+  h1.lg.desktop {
+    @apply font-jakarta text-8xl font-semibold leading-17;
+  }
+
+  h1.lg.mobile {
+    @apply font-jakarta text-5xl font-semibold leading-14;
   }
 
    /* Figma H2*/
-  h1 {
-    @apply font-jakarta text-fl-2xl font-semibold;
+  h1.desktop {
+    @apply font-jakarta text-7xl font-semibold leading-16;
+  }
+
+  h1.mobile {
+    @apply font-jakarta text-3xl font-semibold leading-12;
   }
   
    /* Figma H3*/
