@@ -23,7 +23,7 @@ export default function AboutPagepreview({ query, queryParams }) {
               <Link href='/'>Home &gt;</Link>
             </div>
             <div className='max-w-3xl'>
-              <h1 className='lg:block sm:pt-10 py-6 sm:pb-10 text-green-500'>
+              <h1 className='mobile sm:desktop lg:block sm:pt-10 py-6 sm:pb-10 text-green-500'>
                 {data?.aboutPage?.pageTitle}
               </h1>
               <PortableText

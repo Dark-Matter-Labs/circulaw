@@ -25,7 +25,7 @@ export default function FAQPageComponent({ data }) {
             <Link href='/'>Home &gt;</Link>
           </div>
           <div className='max-w-4xl mx-auto'>
-            <h1 className='lg:block sm:pt-10 py-6 sm:pb-10 text-grey-800'>{data?.pageTitle}</h1>
+            <h1 className='mobile sm:desktop lg:block sm:pt-10 py-6 sm:pb-10 text-grey-800'>{data?.pageTitle}</h1>
             <div>
               {data.FAQPageContent.map((item, i) => (
                 <div key={i}>

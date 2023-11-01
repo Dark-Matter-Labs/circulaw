@@ -87,7 +87,7 @@ export default function InstrumentPreview({ query, queryParams }) {
           </div>
 
           <div className='sm:w-11/12 max-w-[760px] sm:justify-self-center '>
-            <h1 className='lg:block pb-4 pt-6'>{data?.measure?.titel}</h1>
+            <h1 className='mobile sm:desktop lg:block pb-4 pt-6'>{data?.measure?.titel}</h1>
           </div>
         </div>
 
