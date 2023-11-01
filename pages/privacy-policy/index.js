@@ -6,7 +6,7 @@ export default function Privacy() {
   return (
     <Layout title='CircuLaw - Privacyverklaring'>
       <div className='global-margin my-20 max-w-2xl text-grey-800'>
-        <h1 className='pb-6'>Privacyverklaring</h1>
+        <h1 className='mobile sm:desktop pb-6'>Privacyverklaring</h1>
         <p className=' p-lg pt-2 pb-6 max-w-4xl'>
           Het team CircuLaw is verantwoordelijk voor de verwerking van persoonsgegevens zoals
           weergegeven in deze verklaring. CircuLaw Bèta is een bètaversie van de website CircuLaw.
