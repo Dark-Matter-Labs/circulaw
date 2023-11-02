@@ -38,7 +38,7 @@ export default function ThemeLayout({ ...props }) {
                     {themaData?.themaSubtitle}{' '}
                     {themaData?.linkText && (
                       <span className='text-green-300 link-base inline-block  '>
-                        <Link
+                        <a
                           href={themaData?.headerLink}
                           target='_blank'
                           rel='noopener noreferrer'
@@ -61,7 +61,7 @@ export default function ThemeLayout({ ...props }) {
                               />
                             </svg>
                           </span>
-                        </Link>
+                        </a>
                       </span>
                     )}
                   </p>
@@ -79,7 +79,7 @@ export default function ThemeLayout({ ...props }) {
               {themaData?.linkText && (
                 <span className='text-green-500 link-base inline-block'>
                   <Link href={themaData?.headerLinkURL} target='_blank' rel='noopener noreferrer'>
-                    {themaData?.linkText}
+                    {themaData?.linkText}{console.log(themaData?.headerLinkURL, 'hi')}
                     <LinkIcon />
                   </Link>
                 </span>
