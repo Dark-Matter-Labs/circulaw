@@ -8,12 +8,12 @@ export default function InstrumentMetaData({ data }) {
       <div className='hidden sm:block'>
         <div className='h-auto border-b border-t border-gray-300 flex flex-row gap-x-6 grow-0 items-center justify-self-center py-1 lg:min-w-[890px] max-w-[890px]'>
           <div className='flex flex-col basis-3/12'>
-            <h6 className='py-1 text-grey-600'>Juridische houdbaarheid</h6>
+            <h5 className='mobile sm:desktop py-1 text-grey-600'>Juridische houdbaarheid</h5>
             <div className='flex items-center'>
-              <h6 className=' text-green-500 pr-2'>
+              <h5 className='mobile sm:desktop text-green-500 pr-2'>
                 {data?.measure?.juridischeHaalbaarheid}
                 {data?.juridischeHaalbaarheid}
-              </h6>
+              </h5>
               {data?.measure?.slug && (
                 <JHTooltip data={data}>
                   <svg
@@ -34,12 +34,12 @@ export default function InstrumentMetaData({ data }) {
             </div>
           </div>
           <div className='flex flex-col basis-2/12'>
-            <h6 className='py-1 text-grey-600'>Invloed</h6>
+            <h5 className='mobile sm:desktop py-1 text-grey-600'>Invloed</h5>
             <div className='flex items-center'>
-              <h6 className=' text-green-500 pr-2'>
+              <h5 className='mobile sm:desktop text-green-500 pr-2'>
                 {data?.measure?.juridischInvloed}
                 {data?.juridischInvloed}
-              </h6>
+              </h5>
               {data?.measure?.slug && (
                 <JITooltip data={data}>
                   <svg
@@ -60,8 +60,8 @@ export default function InstrumentMetaData({ data }) {
             </div>
           </div>
           <div className='flex flex-col basis-4/12'>
-            <h6 className='py-1 text-grey-600'>Overheidslaag</h6>
-            <h6 className=' text-green-500'>
+            <h5 className='mobile sm:desktop py-1 text-grey-600'>Overheidslaag</h5>
+            <h5 className='mobile sm:desktop text-green-500'>
               {data?.measure?.overheidslaag?.map((level) => (
                 <span key={level} className=''>
                   {level} {data?.measure?.overheidslaag.slice(-1)[0] !== level && <span>-</span>}
@@ -74,23 +74,23 @@ export default function InstrumentMetaData({ data }) {
                   &nbsp;
                 </span>
               ))}
-            </h6>
+            </h5>
           </div>
           <div className='flex flex-col basis-3/12'>
-            <h6 className='py-1 text-grey-600'>R-ladder</h6>
+            <h5 className='mobile sm:desktop py-1 text-grey-600'>R-ladder</h5>
             <div className='flex items-center'>
               <div className='flex flex-row items-center'>
                 {data?.measure?.rLadder?.map((rValue) => (
-                  <h6 key={rValue} className='text-green-500 '>
+                  <h5 key={rValue} className='mobile sm:desktop text-green-500 '>
                     {rValue} {data?.measure?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                     &nbsp;
-                  </h6>
+                  </h5>
                 ))}
                 {data?.rLadder?.map((rValue) => (
-                  <h6 key={rValue} className='text-green-500 '>
+                  <h5 key={rValue} className='mobile sm:desktop text-green-500 '>
                     {rValue} {data?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                     &nbsp;
-                  </h6>
+                  </h5>
                 ))}
                 {data?.measure?.slug && (
                   <RTooltip>
@@ -119,12 +119,12 @@ export default function InstrumentMetaData({ data }) {
       <div className='flex flex-col sm:hidden justify-center mb-4'>
         <div className='flex flex-row justify-between h-auto py-2 border-b border-t-2 border-grey-400'>
           <div className='flex flex-col justify-center'>
-            <h6 className='sm:py-1 text-grey-600'>Juridische houdbaarheid</h6>
+            <h5 className='mobile sm:desktop sm:py-1 text-grey-600'>Juridische houdbaarheid</h5>
             <div className='flex items-center'>
-              <h6 className=' text-green-500 pr-2'>
+              <h5 className='mobile sm:desktop text-green-500 pr-2'>
                 {data?.measure?.juridischeHaalbaarheid}
                 {data?.juridischeHaalbaarheid}
-              </h6>
+              </h5>
               {data?.measure?.slug && (
                 <JHTooltip data={data}>
                   <svg
@@ -145,12 +145,12 @@ export default function InstrumentMetaData({ data }) {
             </div>
           </div>
           <div className='flex flex-col justify-center'>
-            <h6 className='py-1 text-grey-600'>Invloed</h6>
+            <h5 className='mobile sm:desktop py-1 text-grey-600'>Invloed</h5>
             <div className='flex items-center'>
-              <h6 className='mobile sm:desktop text-green-500 pr-2'>
+              <h5 className='mobile sm:desktop text-green-500 pr-2'>
                 {data?.measure?.juridischInvloed}
                 {data?.juridischInvloed}
-              </h6>
+              </h5>
               {data?.measure?.slug && (
                 <JITooltip data={data}>
                   <svg
@@ -173,8 +173,8 @@ export default function InstrumentMetaData({ data }) {
         </div>
         <div className='border-b border-grey-400 flex h-auto py-2'>
           <div className='flex flex-col justify-center'>
-            <h6 className='py-1 text-grey-600'>Overheidslaag</h6>
-            <h6 className='text-green-500'>
+            <h5 className='mobile sm:desktop py-1 text-grey-600'>Overheidslaag</h5>
+            <h5 className='mobile sm:desktop text-green-500'>
               {data?.measure?.overheidslaag?.map((level) => (
                 <span key={level} className=''>
                   {level} {data?.measure?.overheidslaag.slice(-1)[0] !== level && <span>-</span>}
@@ -187,25 +187,25 @@ export default function InstrumentMetaData({ data }) {
                   &nbsp;
                 </span>
               ))}
-            </h6>
+            </h5>
           </div>
         </div>
         <div className='flex py-2 border-b-2 border-grey-400'>
           <div className='flex flex-col justify-center'>
-            <h6 className='py-1 text-grey-600'>R-ladder</h6>
+            <h5 className='mobile sm:desktop py-1 text-grey-600'>R-ladder</h5>
             <div className='flex items-center'>
               <div className='flex flex-row items-center'>
                 {data?.measure?.rLadder?.map((rValue) => (
-                  <h6 key={rValue} className='text-green-500'>
+                  <h5 key={rValue} className='mobile sm:desktop text-green-500'>
                     {rValue} {data?.measure?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                     &nbsp;
-                  </h6>
+                  </h5>
                 ))}
                 {data?.rLadder?.map((rValue) => (
-                  <h6 key={rValue} className='text-green-500'>
+                  <h5 key={rValue} className='mobile sm:desktop text-green-500'>
                     {rValue} {data?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                     &nbsp;
-                  </h6>
+                  </h5>
                 ))}
                 {data?.measure?.slug && (
                   <RTooltip>

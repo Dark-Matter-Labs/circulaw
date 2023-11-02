@@ -50,34 +50,34 @@ export default function Instrumentheader({ data }) {
           >
             <div className='w-full flex'>
               <Link href={`/${data?.measure?.thema.toLowerCase().replace(/ /g, '-')}`}>
-                <div className='first-letter:uppercase border rounded-[5px] py-0.5 px-2 border-grey-100 p-xsm text-grey-100 mr-2 hover:text-green-300 hover:border-green-300'>
+                <h5 className='mobile sm:desktop first-letter:uppercase border rounded-[5px] py-0.5 px-2 border-grey-100 text-grey-100 mr-2 hover:text-green-300 hover:border-green-300'>
                   {data?.measure?.thema.replace('-', ' ')}
-                </div>
+                </h5>
               </Link>
               {data?.measure?.beleid === true && (
-                <div className='bg-green-300 border border-green-300 text-grey-100 px-2 h-6 rounded-[5px] p-xsm flex items-center mr-2'>
+                <h5 className='mobile sm:desktop  px-2  rounded-[5px] flex items-center mr-2 bg-green-300 border border-green-300 text-grey-100'>
                   Beleid
-                </div>
+                </h5>
               )}
               {data?.measure?.inkoop === true && (
-                <div className='bg-green-300 border border-green-300 text-grey-100 px-2 h-6 rounded-[5px] p-xsm flex items-center mr-2'>
+                <h5 className='mobile sm:desktop bg-green-300 border border-green-300 text-grey-100 px-2 py-0.5 rounded-[5px] flex items-center mr-2'>
                   Inkoop
-                </div>
+                </h5>
               )}
               {data?.measure?.grondpositie === true && (
-                <div className='bg-green-300 border border-green-300 text-grey-100 px-2 h-6 rounded-[5px] p-xsm flex items-center mr-2'>
+                <h5 className='mobile sm:desktop bg-green-300 border border-green-300 text-grey-100 px-2 py-0.5 rounded-[5px] p-xsm flex items-center mr-2'>
                   Grondpositie
-                </div>
+                </h5>
               )}
               {data?.measure?.subsidie === true && (
-                <div className='bg-green-300 border border-green-300 text-grey-100 px-2 h-6 rounded-[5px] p-xsm flex items-center mr-2'>
+                <h5 className='mobile sm:desktop bg-green-300 border border-green-300 text-grey-100 px-2 h-6 rounded-[5px] p-xsm flex items-center mr-2'>
                   Subsidie
-                </div>
+                </h5>
               )}
               {data?.measure?.fiscaal === true && (
-                <div className='bg-green-300 border border-green-300 text-grey-100 px-2 h-6 rounded-[5px] p-xsm flex items-center'>
+                <h5 className='mobile sm:desktop bg-green-300 border border-green-300 text-grey-100 px-2 h-6 rounded-[5px] p-xsm flex items-center'>
                   Fiscaal
-                </div>
+                </h5>
               )}
             </div>
             <div className='max-w-4xl flex justify-start overflow-hidden'>
@@ -85,7 +85,6 @@ export default function Instrumentheader({ data }) {
             </div>
           </div>
         </div>
-
         {/* Metadata */}
         <div className='bg-grey-100 w-screen flex justify-items-start'>
           <div className='global-margin w-full'>
