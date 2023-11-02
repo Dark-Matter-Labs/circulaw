@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const formatDate = (date) => {
   let dateObject = new Date(date);
@@ -38,7 +39,7 @@ export default function InstrumentTable({ data }) {
               <td className='w-1/3 py-1.5 p-md'>Artikel</td>
               <td className='w-2/3 py-1.5 table-base'>
                 <span className='flex justify-end sm:justify-start link-interaction text-green-500'>
-                  <a
+                  <Link
                     className=''
                     target='_blank'
                     href={data?.measure?.artikelLink}
@@ -63,7 +64,7 @@ export default function InstrumentTable({ data }) {
                         />
                       </svg>
                     </span>
-                  </a>
+                  </Link>
                 </span>
               </td>
             </tr>

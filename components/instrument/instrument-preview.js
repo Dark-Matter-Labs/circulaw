@@ -60,7 +60,7 @@ export default function InstrumentPreview({ query, queryParams }) {
         <div className='grid grid-cols-1 sm:content-center mb-4'>
           <div className='row-span-1 h-12 mt-4 sm:w-11/12 max-w-[854px] sm:justify-self-center'>
             {/* BREADCRUMB */}
-            <button type='button' onClick={() => router.back()}>
+            <button type='button' onClick={() => router.back()} className='link-interaction-dark-bg'>
               <span className='breadcrumb text-green-600 flex justify-center items-center underline'>
                 <ArrowLeftIcon className='inline-block h-4 w-4 pr-1' aria-hidden='true' /> Terug
               </span>{' '}
@@ -78,12 +78,6 @@ export default function InstrumentPreview({ query, queryParams }) {
             <h4 className='uppercase mobile sm:desktop text-green-500'>
               {data?.measure?.thema.replace('-', ' ')}
             </h4>
-
-            {/* this will need to be added once samenhang structure is confirmed */}
-            {/*
-            <div className='ml-4 py-0.5 px-2 rounded-[5px] text-grey-100 bg-grey-600'>
-              verkoop
-            </div> */}
           </div>
 
           <div className='sm:w-11/12 max-w-[760px] sm:justify-self-center '>

@@ -91,14 +91,14 @@ export default function Footer(props) {
                           <ul role='list' className='mt-4 space-y-4'>
                             {themaSlugs?.map((slug) => (
                               <li key={slug}>
-                                <a
+                                <Link
                                   href={`/${encodeURIComponent(slug)}`}
                                   className='p-md link-interaction text-grey-100'
                                 >
                                   <span className='inline-block first-letter:uppercase'>
                                     {slug.replaceAll('-', ' ')}
                                   </span>
-                                </a>
+                                </Link>
                               </li>
                             ))}
                           </ul>
@@ -112,14 +112,14 @@ export default function Footer(props) {
                             {aboutSlugs &&
                               aboutSlugs?.map((slug) => (
                                 <li key={slug.slug}>
-                                  <a
+                                  <Link
                                     href={`/about/${encodeURIComponent(slug.slug)}`}
                                     className='p-md link-interaction text-grey-100'
                                   >
                                     <span className='inline-block first-letter:uppercase'>
                                       {slug.title.replaceAll('-', ' ')}
                                     </span>
-                                  </a>
+                                  </Link>
                                 </li>
                               ))}
                           </ul>
@@ -128,7 +128,7 @@ export default function Footer(props) {
                       <div className='py-2 sm:py-0'>
                         <ul role='list' className='space-y-4'>
                           <li>
-                            <a
+                            <Link
                               className='p-md text-grey-100 link-interaction'
                               href={`/${encodeURIComponent(FAQslug)}`}
                             >
@@ -137,13 +137,13 @@ export default function Footer(props) {
                                   {FAQslug.replaceAll('-', ' ')}
                                 </span>
                               )}
-                            </a>
+                            </Link>
                           </li>
                           {navigation.other.map((item) => (
                             <li key={item.name}>
-                              <a href={item.href} className=' p-md text-grey-100 link-interaction'>
+                              <Link href={item.href} className=' p-md text-grey-100 link-interaction'>
                                 {item.name}
-                              </a>
+                              </Link>
                             </li>
                           ))}
                           <li className='flex justify-start text-grey-100 items-center'>

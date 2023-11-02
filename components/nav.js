@@ -236,8 +236,8 @@ export default function Nav(props) {
                                 <Popover.Panel className='absolute z-40  transform w-screen max-w-xs sm:px-0'>
                                   <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                                     <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
-                                      {themaSlugs.map((slug) => (
-                                        <a
+                                      {themaSlugs?.map((slug) => (
+                                        <Link
                                           key={slug}
                                           href={`/${encodeURIComponent(slug)}`}
                                           className='-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 border-b uppercase'
@@ -245,7 +245,7 @@ export default function Nav(props) {
                                           <h6 className='popup-md text-gray-900'>
                                             {slug.replaceAll('-', ' ')}
                                           </h6>
-                                        </a>
+                                        </Link>
                                       ))}
                                     </div>
                                   </div>
@@ -291,7 +291,7 @@ export default function Nav(props) {
                                   <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                                     <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
                                       {aboutSlugs?.map((slug) => (
-                                        <a
+                                        <Link
                                           key={slug.slug}
                                           href={`/about/${encodeURIComponent(slug.slug)}`}
                                           className='-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase border-b'
@@ -299,7 +299,7 @@ export default function Nav(props) {
                                           <h6 className='` popup-md text-grey-800'>
                                             {slug.title.replaceAll('-', ' ')}
                                           </h6>
-                                        </a>
+                                        </Link>
                                       ))}
                                     </div>
                                   </div>
