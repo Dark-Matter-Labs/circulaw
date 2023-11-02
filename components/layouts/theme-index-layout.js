@@ -79,7 +79,7 @@ export default function ThemeLayout({ ...props }) {
               {themaData?.linkText && (
                 <span className='text-green-500 link-base inline-block'>
                   <a href={themaData?.headerLinkURL} target='_blank' rel='noopener noreferrer'>
-                    {themaData?.linkText}{console.log(themaData?.headerLinkURL, 'hi')}
+                    {themaData?.linkText}
                     <LinkIcon />
                   </a>
                 </span>
