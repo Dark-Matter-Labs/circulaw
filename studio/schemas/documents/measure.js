@@ -11,7 +11,7 @@ export default {
     {
       name: 'high-level',
       title: 'High level content',
-      default: 'true'
+      default: 'true',
     },
     {
       name: 'copy',

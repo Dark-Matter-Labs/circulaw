@@ -11,7 +11,7 @@ export default function PolicyList(props) {
     <>
       {lawData.map((law) => (
         <Link href={'/measures/' + law.slug.current} key={law.titel}>
-          <div className='block sm:ml-0 mb-10 sm:mb-8 max-w-[890px]'>
+          <div className='block sm:ml-0 mb-10 sm:mb-8 max-w-[825px]'>
             <div className='inline-block flex justify-start items-center -ml-1'>
               {/* Expertise Tag */}
               {law?.beleid === true && (

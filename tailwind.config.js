@@ -99,6 +99,12 @@ module.exports = {
       spacing: {
         '128': '32rem',
       },
+      flexBasis: {
+        'houdbaarheid': '22%',
+        'invloed': '14%',
+        'overheidslaag': '35%',
+        'rladder': '29%',
+      },
       backgroundImage: {
         'houtbouw-hero' : 'url("/hero-images/houtbouwHero.png")',
         'windmill-hero' : 'url("/hero-images/windmillHero.png")',

@@ -1,53 +1,28 @@
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
-
+import Link from 'next/link';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
 import SocialButtons from '../social-buttons';
 import InstrumentMetaData from './instrument-metadata';
 
 export default function Instrumentheader({ data }) {
   const router = useRouter();
-  const [scrollEffect, setScrollEffect] = useState();
-
-  useEffect(() => {
-    const changeEffect = () => {
-      if (window.scrollY >= 85) {
-        setScrollEffect(true);
-      } else {
-        setScrollEffect(false);
-      }
-    };
-    window.addEventListener('scroll', changeEffect);
-  }, []);
 
   return (
     <>
       {/* Not sticky */}
-      <div className='z-30 relative'>
-        <div className='global-margin grid grid-cols-1 sm:pl-8 -mb-24'>
-          <div className='mt-6 max-w-[854px] flex justify-between items-center'>
-            {/* BREADCRUMB */}
-            <button type='button' onClick={() => router.back()}>
-              <span className='breadcrumb text-grey-100 flex justify-center items-center underline'>
-                <ArrowLeftIcon className='inline-block h-4 w-4 pr-1' aria-hidden='true' /> Terug
-              </span>{' '}
-            </button>
-            <div className='float-right'>
-              <SocialButtons title={data?.measure?.titel} viewport='desktop' />
-            </div>
+      <div className='sm:sticky -top-[277px] z-20 bg-gradient-to-b from-[#042D36] to-[#22532200] bg-green-500 pt-3'>
+        <div className='h-auto sm:h-[360px] flex flex-col global-margin justify-between'>
+          <div className='max-w-[800px] sm:pl-8 pt-6 pb-6 sm:pb-0 flex justify-between items-center'>
+          <button type='button' onClick={() => router.back()}>
+            <span className='breadcrumb text-grey-100 flex justify-center items-center underline'>
+              <ArrowLeftIcon className='inline-block h-4 w-4 pr-1' aria-hidden='true' /> Terug
+            </span>{' '}
+          </button>
+          <div className='float-right'>
+            <SocialButtons title={data?.measure?.titel} viewport='desktop' />
           </div>
-        </div>
-      </div>
-
-      {/* STICKY */}
-      <div className='sm:sticky -top-24 z-20 bg-gradient-to-b from-[#042D36] to-[#22532200] bg-green-500'>
-        <div className='pt-24 mt-8 min-h-[360px] flex items-end justify-items-start global-margin'>
-          <div
-            className={`${
-              scrollEffect ? 'duration-75 sm:scale-75 break-all' : 'sm:mb-12 duration-75 '
-            } mb-6 sm:pl-8 h-auto origin-bottom-left`}
-          >
+          </div>
+          <div className='sm:mb-12 mb-8 sm:pl-8 h-auto'>
             <div className='w-full flex'>
               <Link href={`/${data?.measure?.thema.toLowerCase().replace(/ /g, '-')}`}>
                 <h5 className='mobile sm:desktop first-letter:uppercase border rounded-[5px] py-0.5 px-2 border-grey-100 text-grey-100 mr-2 hover:text-green-300 hover:border-green-300'>
@@ -81,12 +56,14 @@ export default function Instrumentheader({ data }) {
               )}
             </div>
             <div className='max-w-4xl flex justify-start overflow-hidden'>
-              <h1 className='justify-self-start mobile sm:desktop lg:block mt-2 text-grey-100 pb-2'>{data?.measure?.titel}</h1>
+              <h1 className='justify-self-start mobile sm:desktop lg:block mt-2 text-grey-100 pb-1'>
+                {data?.measure?.titel}
+              </h1>
             </div>
           </div>
         </div>
         {/* Metadata */}
-        <div className='bg-grey-100 w-screen flex justify-items-start'>
+        <div className='bg-grey-100 w-screen flex justify-items-start sm:border-b-2 sm:border-gray-300'>
           <div className='global-margin w-full'>
             <div className='grid grid-col-1 sm:pl-8 w-full max-w-4xl'>
               <InstrumentMetaData data={data} />

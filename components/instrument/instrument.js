@@ -7,7 +7,7 @@ import Instrumentheader from './instrument-header';
 
 export default function Instrument({ data }) {
   return (
-    <div className='mt-[11px] relative bg-grey-100'>
+    <div className='relative bg-grey-100'>
       <Instrumentheader data={data} />
       <div className='bg-grey-100 relative z-0'>
         <InstrumentFeedbackBlock data={data} />

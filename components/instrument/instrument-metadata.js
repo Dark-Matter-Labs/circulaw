@@ -1,13 +1,24 @@
+import { useRouter } from 'next/router';
 import RTooltip from '../tooltip-r-ladder';
 import JHTooltip from '../tooltip-juridische-houdbaarheid';
 import JITooltip from '../tooltip-juridische-invloed';
 
 export default function InstrumentMetaData({ data }) {
+  const router = useRouter();
+
   return (
     <>
       <div className='hidden sm:block'>
-        <div className='h-auto border-b border-t border-gray-300 flex flex-row gap-x-6 grow-0 items-center justify-self-center py-0.5 lg:min-w-[890px] max-w-[890px]'>
-          <div className='flex flex-col basis-3/12'>
+        <div
+          className={`${
+            (router.pathname === '/measures/houtbouw') |
+            (router.pathname === '/measures/windturbines') |
+            (router.pathname === '/measures/matrassen')
+              ? 'border-y border-gray-300'
+              : 'pt-2'
+          } h-auto flex flex-row gap-x-6 grow-0 items-center justify-self-center py-0.5 max-w-[860px]`}
+        >
+          <div className='flex flex-col basis-houdbaarheid'>
             <h5 className='mobile sm:desktop text-grey-600'>Juridische houdbaarheid</h5>
             <div className='flex items-center'>
               <h5 className='mobile sm:desktop text-green-500 pr-2'>
@@ -33,7 +44,7 @@ export default function InstrumentMetaData({ data }) {
               )}
             </div>
           </div>
-          <div className='flex flex-col basis-2/12'>
+          <div className='flex flex-col basis-invloed'>
             <h5 className='mobile sm:desktop text-grey-600'>Invloed</h5>
             <div className='flex items-center'>
               <h5 className='mobile sm:desktop text-green-500 pr-2'>
@@ -59,7 +70,7 @@ export default function InstrumentMetaData({ data }) {
               )}
             </div>
           </div>
-          <div className='flex flex-col basis-4/12'>
+          <div className='flex flex-col basis-overheidslaag'>
             <h5 className='mobile sm:desktop text-grey-600'>Overheidslaag</h5>
             <h5 className='mobile sm:desktop text-green-500'>
               {data?.measure?.overheidslaag?.map((level) => (
@@ -76,7 +87,7 @@ export default function InstrumentMetaData({ data }) {
               ))}
             </h5>
           </div>
-          <div className='flex flex-col basis-3/12'>
+          <div className='flex flex-col basis-rladder'>
             <h5 className='mobile sm:desktop text-grey-600'>R-ladder</h5>
             <div className='flex items-center'>
               <div className='flex flex-row items-center'>

@@ -3,7 +3,6 @@ import mattressIcon from '../../public/icons/matressIcon.svg';
 import SamenhangLayout from '../../components/layouts/samenhang-layout';
 import { client } from '../../lib/sanity';
 
-
 const expertiseDataQuerie = `
 *[_type == "measure" && thema == "circulaire-matrasketen"] {
   "slug": slug.current,
@@ -20,8 +19,7 @@ const expertiseDataQuerie = `
 }
 `;
 
-
-export default function InfoPage({expertiseData}) {
+export default function InfoPage({ expertiseData }) {
   return (
     <Layout title='CircuLaw - Samenhang Matrassen'>
       <SamenhangLayout
@@ -34,7 +32,6 @@ export default function InfoPage({expertiseData}) {
     </Layout>
   );
 }
-
 
 export async function getStaticProps() {
   const expertiseData = await client.fetch(expertiseDataQuerie);
