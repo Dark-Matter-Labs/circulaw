@@ -15,9 +15,9 @@ export default function English({ data }) {
           <div className='hidden sm:block h-auto bg-en-header bg-left bg-cover'>
             <div className='global-margin flex h-full'>
               <div className='flex items-center justify-center flex-wrap text-center text-grey-100 w-3/5 mx-auto py-12'>
-                <span className='header text-grey-100 py-10'>
+                <h1 className='lg mobile sm:desktop text-grey-100 py-10'>
                   Regulations for a circular economy
-                </span>
+                </h1>
                 <p className='p-md sm:p-lg'>
                   CircuLaw is a knowledge platform dedicated to enabling the transition to a
                   circular economy by identifying opportunities in current law to support a circular
@@ -37,7 +37,7 @@ export default function English({ data }) {
           <div className='w-full bg-en-header bg-cover bg-center'>
             <div className='block global-margin sm:hidden pt-5'>
               <div className='py-3 text-grey-100'>
-                <h1 className='pb-3'>Regulations for a circular economy</h1>
+                <h1 className='pb-3 lg mobile sm:desktop'>Regulations for a circular economy</h1>
                 <p className='pb-3 p-md'>
                   CircuLaw is a knowledge platform dedicated to enabling the transition to a
                   circular economy by identifying opportunities in current law to support a circular

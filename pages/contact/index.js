@@ -55,7 +55,7 @@ export default function Contact() {
       <div className='global-margin'>
         {!formStatus ? (
           <>
-            <h1 className='text-green-600 pt-10'>Contact</h1>
+            <h1 className='mobile sm:desktop text-green-600 pt-10'>Contact</h1>
             <div className='mt-8 max-w-3xl mb-20'>
               <form
                 acceptCharset='UTF-8'
@@ -168,7 +168,7 @@ export default function Contact() {
           </>
         ) : (
           <>
-            <h1 className='text-green-600 pt-10'>Bedankt!</h1>
+            <h1 className='mobile sm:desktop text-green-600 pt-10'>Bedankt!</h1>
             <p className=' p-lg py-10 max-w-2xl text-grey-800'>
               Dank voor je bericht! Je hoort van ons.
             </p>

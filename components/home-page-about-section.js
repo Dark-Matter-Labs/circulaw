@@ -127,7 +127,7 @@ export default function HomePageAboutSection({ aboutSection }) {
           </svg>
         </div>
 
-        <h1 className='pl-4 sm:pl-8 text-green-600 '>{aboutSection?.aboutSectionTitle}</h1>
+        <h1 className='mobile sm:desktop pl-4 sm:pl-8 text-green-600'>{aboutSection?.aboutSectionTitle}</h1>
       </div>
 
       <div className='grid grid-cols-1 lg:grid-cols-5 py-4 gap-x-8 gap-y-4 justify-between'>

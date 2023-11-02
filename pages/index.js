@@ -23,7 +23,7 @@ export default function Index({
     <Layout page='home' homePageHeader={homePageHeader} footerText={footerText}>
       <div className='bg-grey-100 sm:pb-14 -z-50' name='thema'>
         <div className='global-margin -z-20'>
-          <h1 className='pt-8 text-green-600 border-grey-600 border-b pb-4'>Thema’s</h1>
+          <h1 className='mobile sm:desktop pt-8 text-green-600 border-grey-600 border-b pb-4'>Thema’s</h1>
           <div className='pt-4 sm:pt-8 -z-20'>
             <SectionTypes type='home' themaCards={homePageThemaData} />
           </div>
@@ -38,7 +38,7 @@ export default function Index({
         <div className='global-margin'>
           <HomePageAboutSection aboutSection={aboutSection} />
           <div className='' name='news'>
-            <h1 className='pt-8 text-green-600 border-grey-600 border-b pb-4'>Nieuws</h1>
+            <h1 className='mobile sm:desktop pt-8 text-green-600 border-grey-600 border-b pb-4'>Nieuws</h1>
             <div className='pt-4 sm:pt-8'>
               <NewsItems newsItems={newsItems} />
             </div>
