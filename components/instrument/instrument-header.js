@@ -41,11 +41,11 @@ export default function Instrumentheader({ data }) {
       </div>
 
       {/* STICKY */}
-      <div className='sm:sticky -top-12 z-20 bg-gradient-to-b from-[#042D36] to-[#22532200] bg-green-500'>
-        <div className=' pt-24 mt-8 min-h-[360px] flex items-end justify-items-start global-margin'>
+      <div className='sm:sticky -top-24 z-20 bg-gradient-to-b from-[#042D36] to-[#22532200] bg-green-500'>
+        <div className='pt-24 mt-8 min-h-[360px] flex items-end justify-items-start global-margin'>
           <div
             className={`${
-              scrollEffect ? 'duration-75 sm:scale-75' : 'sm:mb-12 duration-75 '
+              scrollEffect ? 'duration-75 sm:scale-75 break-all' : 'sm:mb-12 duration-75 '
             } mb-6 sm:pl-8 h-auto origin-bottom-left`}
           >
             <div className='w-full flex'>
@@ -81,7 +81,7 @@ export default function Instrumentheader({ data }) {
               )}
             </div>
             <div className='max-w-4xl flex justify-start overflow-hidden'>
-              <h1 className='justify-self-start lg:block mt-2 text-grey-100'>{data?.measure?.titel}</h1>
+              <h1 className='justify-self-start lg:block mt-2 text-grey-100 pb-2'>{data?.measure?.titel}</h1>
             </div>
           </div>
         </div>

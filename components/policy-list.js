@@ -15,29 +15,29 @@ export default function PolicyList(props) {
             <div className='inline-block flex justify-start items-center -ml-1'>
               {/* Expertise Tag */}
               {law?.beleid === true && (
-                <div className='bg-green-500 text-grey-100 px-2 h-6 rounded-[9px] p-xsm flex items-center mx-1'>
+                <h5 className='bg-green-500 text-grey-100 px-2 h-6 rounded-[9px] mobile sm:desktop flex items-center mx-1'>
                   Beleid
-                </div>
+                </h5>
               )}
               {law?.inkoop === true && (
-                <div className='bg-green-500 text-grey-100 px-2 h-6 rounded-[9px] p-xsm flex items-center mx-1'>
+                <h5 className='bg-green-500 text-grey-100 px-2 h-6 rounded-[9px] mobile sm:desktop flex items-center mx-1'>
                   Inkoop
-                </div>
+                </h5>
               )}
               {law?.grondpositie === true && (
-                <div className='bg-green-500 text-grey-100 px-2 h-6 rounded-[9px] p-xsm flex items-center mx-1'>
+                <h5 className='bg-green-500 text-grey-100 px-2 h-6 rounded-[9px] mobile sm:desktop flex items-center mx-1'>
                   Grondpositie
-                </div>
+                </h5>
               )}
               {law?.subsidie === true && (
-                <div className='bg-green-500 text-grey-100 px-2 h-6 rounded-[9px] p-xsm flex items-center mx-1'>
+                <h5 className='bg-green-500 text-grey-100 px-2 h-6 rounded-[9px] mobile sm:desktop flex items-center mx-1'>
                   Subsidie
-                </div>
+                </h5>
               )}
               {law?.fiscaal === true && (
-                <div className='bg-green-500 text-grey-100 px-2 h-6 rounded-[9px] p-xsm flex items-center mx-1'>
+                <h5 className='bg-green-500 text-grey-100 px-2 h-6 rounded-[9px] mobile sm:desktop flex items-center mx-1'>
                   Fiscaal
-                </div>
+                </h5>
               )}
             </div>
 

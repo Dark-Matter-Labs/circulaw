@@ -6,9 +6,9 @@ export default function InstrumentMetaData({ data }) {
   return (
     <>
       <div className='hidden sm:block'>
-        <div className='h-auto border-b border-t border-gray-300 flex flex-row gap-x-6 grow-0 items-center justify-self-center py-1 lg:min-w-[890px] max-w-[890px]'>
+        <div className='h-auto border-b border-t border-gray-300 flex flex-row gap-x-6 grow-0 items-center justify-self-center py-0.5 lg:min-w-[890px] max-w-[890px]'>
           <div className='flex flex-col basis-3/12'>
-            <h5 className='mobile sm:desktop py-1 text-grey-600'>Juridische houdbaarheid</h5>
+            <h5 className='mobile sm:desktop text-grey-600'>Juridische houdbaarheid</h5>
             <div className='flex items-center'>
               <h5 className='mobile sm:desktop text-green-500 pr-2'>
                 {data?.measure?.juridischeHaalbaarheid}
@@ -34,7 +34,7 @@ export default function InstrumentMetaData({ data }) {
             </div>
           </div>
           <div className='flex flex-col basis-2/12'>
-            <h5 className='mobile sm:desktop py-1 text-grey-600'>Invloed</h5>
+            <h5 className='mobile sm:desktop text-grey-600'>Invloed</h5>
             <div className='flex items-center'>
               <h5 className='mobile sm:desktop text-green-500 pr-2'>
                 {data?.measure?.juridischInvloed}
@@ -60,7 +60,7 @@ export default function InstrumentMetaData({ data }) {
             </div>
           </div>
           <div className='flex flex-col basis-4/12'>
-            <h5 className='mobile sm:desktop py-1 text-grey-600'>Overheidslaag</h5>
+            <h5 className='mobile sm:desktop text-grey-600'>Overheidslaag</h5>
             <h5 className='mobile sm:desktop text-green-500'>
               {data?.measure?.overheidslaag?.map((level) => (
                 <span key={level} className=''>
@@ -77,7 +77,7 @@ export default function InstrumentMetaData({ data }) {
             </h5>
           </div>
           <div className='flex flex-col basis-3/12'>
-            <h5 className='mobile sm:desktop py-1 text-grey-600'>R-ladder</h5>
+            <h5 className='mobile sm:desktop text-grey-600'>R-ladder</h5>
             <div className='flex items-center'>
               <div className='flex flex-row items-center'>
                 {data?.measure?.rLadder?.map((rValue) => (
