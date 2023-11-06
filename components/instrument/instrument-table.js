@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import LinkIcon from '../link-icon';
 
 const formatDate = (date) => {
   let dateObject = new Date(date);
@@ -44,24 +45,9 @@ export default function InstrumentTable({ data }) {
                     href={data?.measure?.artikelLink}
                     rel='noreferrer'
                   >
+                    <span className='link-interaction'>
                     {data?.measure?.artikel}
-                    <span className='pl-0.5 inline-block -mb-0.5 h-5 w-5 relative '>
-                      <svg
-                        className='stroke-current'
-                        width='20'
-                        height='20'
-                        viewBox='0 -1 24 24'
-                        fill='none'
-                        xmlns='http://www.w3.org/2000/svg'
-                      >
-                        <path
-                          d='M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14'
-                          stroke=''
-                          strokeWidth='2'
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
-                        />
-                      </svg>
+                    <LinkIcon />
                     </span>
                   </a>
                 </span>
