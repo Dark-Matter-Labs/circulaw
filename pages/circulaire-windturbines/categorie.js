@@ -1,5 +1,5 @@
 import Layout from '../../components/layouts/layout';
-import SamenhangLayout from '../../components/layouts/samenhang-layout';
+import ExpertiseLayout from '../../components/layouts/samenhang-layout';
 import WindmillIcon from '../../public/icons/windmill.png';
 import { client } from '../../lib/sanity';
 
@@ -23,7 +23,7 @@ const expertiseDataQuerie = `
 export default function InfoPage({expertiseData}) {
   return (
     <Layout title='CircuLaw - Samenhang Matrassen'>
-      <SamenhangLayout
+      <ExpertiseLayout
         thema='circulaire-windturbines'
         transitionAgenda = ''
         title='Samenhang instrumenten circulaire windturbines'
