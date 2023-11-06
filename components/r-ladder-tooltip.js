@@ -129,7 +129,6 @@ export default function RLadderTooltip({ children, icon }) {
                                 website van RVO
                                 <LinkIcon />
                               </span>
-                          
                             </Link>
                           </span>
                         </div>

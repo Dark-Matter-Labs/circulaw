@@ -2,7 +2,7 @@ import { useState, forwardRef, useImperativeHandle } from 'react';
 import { handleToggle } from '../utils/checkbox-utils';
 import JHTooltip from '../components/tooltip-juridische-houdbaarheid';
 import JITooltip from '../components/tooltip-juridische-invloed';
-import RLadderTooltip from '../components/r-ladder-tooltip'
+import RLadderTooltip from '../components/r-ladder-tooltip';
 
 const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, ref) => {
   const [checkedArray, setCheckedArray] = useState([]);

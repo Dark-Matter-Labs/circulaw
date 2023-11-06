@@ -13,7 +13,7 @@ import {
   juridischInvloed,
   extraContent,
   expertise,
-  rLadder
+  rLadder,
 } from '../../utils/data-filter';
 import SearchFilter from '/components/search-filter';
 import PolicyList from '/components/policy-list';
@@ -172,7 +172,7 @@ export default function MeasuresLayout({ ...props }) {
       let numJHLow = 0;
       let numJHMedium = 0;
       let numJHHigh = 0;
-      
+
       let numR1 = 0;
       let numR2 = 0;
       let numR3 = 0;
@@ -550,7 +550,7 @@ export default function MeasuresLayout({ ...props }) {
                           handleFilters(checkboxState, 'overheidslaag')
                         }
                       />
-                        <SearchFilter
+                      <SearchFilter
                         ref={expertiseFilterRef}
                         title='Categorie'
                         list={expertise}
@@ -820,7 +820,7 @@ export default function MeasuresLayout({ ...props }) {
             ]}
             handleFilters={(checkboxState) => handleFilters(checkboxState, 'overheidslaag')}
           />
-            <SearchFilter
+          <SearchFilter
             ref={expertiseFilterRef}
             title='Categorie'
             list={expertise}
@@ -843,20 +843,13 @@ export default function MeasuresLayout({ ...props }) {
               handleFilters(checkboxState, 'juridischeHaalbaarheid')
             }
           />
-            <SearchFilter
-                        ref={rLadderFilterRef}
-                        title='Circulaire strategie (R-ladder)'
-                        list={rLadder}
-                        filterNumbers={[
-                          numberOfR1,
-                          numberOfR2,
-                          numberOfR3,
-                          numberOfR4,
-                          numberOfR5,
-                          numberOfR6,
-                        ]}
-                        handleFilters={(checkboxState) => handleFilters(checkboxState, 'rLadder')}
-                      />
+          <SearchFilter
+            ref={rLadderFilterRef}
+            title='Circulaire strategie (R-ladder)'
+            list={rLadder}
+            filterNumbers={[numberOfR1, numberOfR2, numberOfR3, numberOfR4, numberOfR5, numberOfR6]}
+            handleFilters={(checkboxState) => handleFilters(checkboxState, 'rLadder')}
+          />
           <SearchFilter
             ref={extraContentFilterRef}
             title='Inclusief'

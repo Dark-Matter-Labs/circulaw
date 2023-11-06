@@ -4,8 +4,6 @@ import OverviewPageHeader from '../overview-page-header';
 import DisplayInstruments from '../expertise-page/display-instruments';
 
 export default function ExpertiseLayout({ expertiseData, ...props }) {
-
-  
   useEffect(() => {});
 
   const [beleid, setBeleid] = useState([]);
@@ -50,7 +48,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   ).length;
   // const numGronposirie = numGrondpositieStrategie + numGrondpositieSelectiecriteria + numGrondpositieGunningscriteria + numGrondpositieContracteisen
 
-  
   const numBeleidStrategie = beleid.filter((instrument) =>
     instrument?.beleidSubCategory?.includes('strategie'),
   ).length;
@@ -61,7 +58,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
     instrument?.beleidSubCategory?.includes('beleidsuitvoering'),
   ).length;
 
-  const numBeleidNotBouw = beleid.length
+  const numBeleidNotBouw = beleid.length;
   // const numBeleid = numBeleidStrategie + numBeleidBeleidsdoorwerking + numBeleidBeleidsuitvoering
 
   const numInkoopBeleid = inkoop.filter((instrument) =>
@@ -273,8 +270,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
     });
   }
 
-
-
   return (
     <>
       <div className='global-margin mt-8'>
@@ -285,56 +280,75 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           </div>
         </div>
 
-        <div className='h-[360px] bg-gradient-to-t from-[#042D36] to-[#22532200] bg-green-500'>
-
-        </div>
+        <div className='h-[360px] bg-gradient-to-t from-[#042D36] to-[#22532200] bg-green-500'></div>
 
         <div className='h-screen max-w-[880px]'>
           <div className='flex flex-row justify-start h-12 -mt-12 z-5 '>
             {/* do i do conditional rendering on tranision agenda? */}
             <button
-            disabled={numBeleid === 0 | numBeleidNotBouw === 0}
+              disabled={(numBeleid === 0) | (numBeleidNotBouw === 0)}
               onClick={() => {
                 setSelected(Object.keys({ beleid })[0]);
                 handleRadioButton('alle');
               }}
-              className={`${selected === 'beleid' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'} ${numBeleid === 0  | numBeleidNotBouw === 0 ? 'opacity-50' : ''}  p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
+              className={`${
+                selected === 'beleid' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'
+              } ${
+                (numBeleid === 0) | (numBeleidNotBouw === 0) ? 'opacity-50' : ''
+              }  p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
             >
-              <h3 className='mobile sm:desktop pr-1'> 
-              Beleid</h3>  {props.transitionAgenda === 'bouw' ? <h5 className='mobile sm:desktop inline-block'>({numBeleid})</h5> : <h5 className='mobile sm:desktop inline-block'>({numBeleidNotBouw})</h5>} 
+              <h3 className='mobile sm:desktop pr-1'>Beleid</h3>{' '}
+              {props.transitionAgenda === 'bouw' ? (
+                <h5 className='mobile sm:desktop inline-block'>({numBeleid})</h5>
+              ) : (
+                <h5 className='mobile sm:desktop inline-block'>({numBeleidNotBouw})</h5>
+              )}
             </button>
             <button
-            disabled={numInkoop === 0}
+              disabled={numInkoop === 0}
               onClick={() => {
                 setSelected(Object.keys({ inkoop })[0]);
                 handleRadioButton('alle');
               }}
-              className={`${selected === 'inkoop' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'} ${numInkoop === 0 ? 'opacity-50' : ''}  p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
+              className={`${
+                selected === 'inkoop' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'
+              } ${
+                numInkoop === 0 ? 'opacity-50' : ''
+              }  p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
             >
-              <h3 className='mobile sm:desktop pr-1'>
-              Inkoop
-              </h3> 
+              <h3 className='mobile sm:desktop pr-1'>Inkoop</h3>
               <h5 className='mobile sm:desktop inline-block'>({numInkoop})</h5>
             </button>
-            {props.transitionAgenda === 'bouw' && 
+            {props.transitionAgenda === 'bouw' && (
+              <button
+                disabled={numGronposirie === 0}
+                onClick={() => {
+                  setSelected(Object.keys({ grondpositie })[0]);
+                  handleRadioButton('alle');
+                }}
+                className={`${
+                  selected === 'grondpositie'
+                    ? 'bg-white text-green-500'
+                    : 'text-gray-100 bg-green-500'
+                } ${
+                  numGronposirie === 0 ? 'opacity-50' : ''
+                } p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
+              >
+                <h3 className='mobile sm:desktop pr-1'>Grondpositie</h3>
+                <h5 className='mobile sm:desktop inline-block'>({numGronposirie})</h5>
+              </button>
+            )}
             <button
-              disabled={numGronposirie === 0}
-              onClick={() => {
-                setSelected(Object.keys({ grondpositie })[0]);
-                handleRadioButton('alle');
-              }}
-              className={`${selected === 'grondpositie' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'} ${numGronposirie === 0 ? 'opacity-50' : ''} p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
-            >
-              <h3 className='mobile sm:desktop pr-1'>Grondpositie</h3>
-               <h5 className='mobile sm:desktop inline-block'>({numGronposirie})</h5>
-            </button>}
-            <button
-            disabled={subsidie.length === 0}
+              disabled={subsidie.length === 0}
               onClick={() => {
                 setSelected(Object.keys({ subsidie })[0]);
                 handleRadioButton('alle');
               }}
-              className={`${selected === 'subsidie' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'} ${fiscaal.length === 0 ? 'opacity-50' : ''} p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
+              className={`${
+                selected === 'subsidie' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'
+              } ${
+                fiscaal.length === 0 ? 'opacity-50' : ''
+              } p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
             >
               <h3 className='mobile sm:desktop pr-1'>Subsidie</h3>
               <h5 className='mobile sm:desktop inline-block'>({subsidie.length})</h5>
@@ -345,7 +359,11 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 setSelected(Object.keys({ fiscaal })[0]);
                 handleRadioButton('alle');
               }}
-              className={`${selected === 'fiscaal' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'} ${fiscaal.length === 0 ? 'opacity-50' : ''} p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
+              className={`${
+                selected === 'fiscaal' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'
+              } ${
+                fiscaal.length === 0 ? 'opacity-50' : ''
+              } p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
             >
               <h3 className='mobile sm:desktop pr-1'>Fiscaal</h3>
               <h5 className='mobile sm:desktop inline-block'>({fiscaal.length})</h5>
@@ -353,7 +371,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           </div>
           <div className='py-6'>
             <p className='p-md'>
-            Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond bezit. 
+              Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond bezit.
             </p>
           </div>
           <div className='bg-green-100 flex flex-row justify-between'>
@@ -401,7 +419,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           </div>
 
           <div className='flex flex-col'>
-
             {selected === 'beleid' && props.transitionAgenda === 'bouw' && (
               <>
                 {beleidSubCategories.map((cat) => (
@@ -414,15 +431,18 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 ))}
               </>
             )}
-             {selected === 'beleid' && props.transitionAgenda !== 'bouw' &&
-              beleid.map((instrument) =>  <div key={instrument.titel} className='flex flex-row justify-between'>
-              <div className='py-1 border-t border-b border-black'>{instrument.titel}</div>
-              <div className='flex flex-row'>
-                {instrument.overheidslaag.map((govLevel) => (
-                  <div key={govLevel}>{govLevel}</div>
-                ))}
-              </div>
-            </div>)}
+            {selected === 'beleid' &&
+              props.transitionAgenda !== 'bouw' &&
+              beleid.map((instrument) => (
+                <div key={instrument.titel} className='flex flex-row justify-between'>
+                  <div className='py-1 border-t border-b border-black'>{instrument.titel}</div>
+                  <div className='flex flex-row'>
+                    {instrument.overheidslaag.map((govLevel) => (
+                      <div key={govLevel}>{govLevel}</div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             {selected === 'inkoop' &&
               inkoopSubCategories.map((cat) => (
                 <DisplayInstruments
@@ -432,7 +452,8 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   filter={(instrument) => instrument?.inkoopSubCategory?.includes(cat)}
                 />
               ))}
-            {selected == 'grondpositie' && props.transitionAgenda === 'bouw' && 
+            {selected == 'grondpositie' &&
+              props.transitionAgenda === 'bouw' &&
               grondpositieSubCategories.map((cat) => (
                 <DisplayInstruments
                   key={cat}
@@ -442,23 +463,27 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 />
               ))}
             {selected === 'subsidie' &&
-              subsidie.map((instrument) =>  <div key={instrument.titel} className='flex flex-row justify-between'>
-              <div className='py-1 border-t border-b border-black'>{instrument.titel}</div>
-              <div className='flex flex-row'>
-                {instrument.overheidslaag.map((govLevel) => (
-                  <div key={govLevel}>{govLevel}</div>
-                ))}
-              </div>
-            </div>)}
+              subsidie.map((instrument) => (
+                <div key={instrument.titel} className='flex flex-row justify-between'>
+                  <div className='py-1 border-t border-b border-black'>{instrument.titel}</div>
+                  <div className='flex flex-row'>
+                    {instrument.overheidslaag.map((govLevel) => (
+                      <div key={govLevel}>{govLevel}</div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             {selected === 'fiscaal' &&
-              fiscaal.map((instrument) =>  <div key={instrument.titel} className='flex flex-row justify-between'>
-              <div className='py-1 border-t border-b border-black'>{instrument.titel}</div>
-              <div className='flex flex-row'>
-                {instrument.overheidslaag.map((govLevel) => (
-                  <div key={govLevel}>{govLevel}</div>
-                ))}
-              </div>
-            </div>)}
+              fiscaal.map((instrument) => (
+                <div key={instrument.titel} className='flex flex-row justify-between'>
+                  <div className='py-1 border-t border-b border-black'>{instrument.titel}</div>
+                  <div className='flex flex-row'>
+                    {instrument.overheidslaag.map((govLevel) => (
+                      <div key={govLevel}>{govLevel}</div>
+                    ))}
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
       </div>
