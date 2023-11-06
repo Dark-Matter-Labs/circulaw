@@ -23,7 +23,7 @@ export default function Instrumentheader({ data }) {
           </div>
           <div className='sm:mb-12 mb-8 sm:pl-8 h-auto'>
             <div className='w-full flex'>
-            <Link href={`/${data?.measure?.thema.toLowerCase().replace(/ /g, '-')}`} className=''>
+            <Link href={`/${data?.measure?.thema?.toLowerCase().replace(/ /g, '-')}`} className=''>
                 <h5 className='mobile sm:desktop first-letter:uppercase border rounded-[5px] py-0.5 px-2 border-grey-100 hover:border-green-200 active:border-green-400 text-grey-100 mr-2 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>
                   {data?.measure?.thema.replace('-', ' ')}
                 </h5>
