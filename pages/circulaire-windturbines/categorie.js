@@ -1,5 +1,5 @@
 import Layout from '../../components/layouts/layout';
-import ExpertiseLayout from '../../components/layouts/samenhang-layout';
+import ExpertiseLayout from '../../components/layouts/expertise-layout';
 import WindmillIcon from '../../public/icons/windmill.png';
 import { client } from '../../lib/sanity';
 

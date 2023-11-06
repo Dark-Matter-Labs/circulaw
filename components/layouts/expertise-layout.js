@@ -319,7 +319,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
               <h3 className='mobile sm:desktop pr-1'>Inkoop</h3>
               <h5 className='mobile sm:desktop inline-block'>({numInkoop})</h5>
             </button>
-            {props.transitionAgenda === 'bouw' && (
+     
               <button
                 disabled={numGronposirie === 0}
                 onClick={() => {
@@ -337,7 +337,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 <h3 className='mobile sm:desktop pr-1'>Grondpositie</h3>
                 <h5 className='mobile sm:desktop inline-block'>({numGronposirie})</h5>
               </button>
-            )}
             <button
               disabled={subsidie.length === 0}
               onClick={() => {
@@ -347,7 +346,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
               className={`${
                 selected === 'subsidie' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'
               } ${
-                fiscaal.length === 0 ? 'opacity-50' : ''
+                subsidie.length === 0 ? 'opacity-50' : ''
               } p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
             >
               <h3 className='mobile sm:desktop pr-1'>Subsidie</h3>
