@@ -822,7 +822,7 @@ export default function MeasuresLayout({ ...props }) {
           />
             <SearchFilter
             ref={expertiseFilterRef}
-            title='Handelingsperspectief'
+            title='Categorie'
             list={expertise}
             filterNumbers={[numBeleid, numInkoop, numGrondpositie, numSubsidie, numFiscaal]}
             handleFilters={(checkboxState) => handleFilters(checkboxState, 'expertise')}

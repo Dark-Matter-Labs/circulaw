@@ -71,7 +71,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
               </svg>
             </JITooltip>
           )}
-          {title === 'Handelingsperspectief' && (
+          {title === 'Categorie' && (
             <JITooltip>
               <svg className='w-6 h-6 fill-current text-grey-20 mb-2' viewBox='0 0 26 26'>
                 <circle cx='12' cy='15' r='10' fill='#676868' />
