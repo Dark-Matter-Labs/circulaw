@@ -66,7 +66,7 @@ export default function SectionTypes({ themaCards }) {
                 </p>
                 <div className='flex grow self-baseline	'>
                   <div href='/contact' target='_blank' className='self-end'>
-                    <span className='text-black inline link-base sm:link-lg link-interaction break-words'>
+                    <span className='text-black inline link-base sm:link-lg break-words hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                       Houd me op de hoogte{' '}
                       <ArrowRightIcon className='inline h-4 w-4' aria-hidden='true' />
                     </span>

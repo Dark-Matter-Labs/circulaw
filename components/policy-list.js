@@ -43,7 +43,7 @@ export default function PolicyList(props) {
 
             <div className='block mt-2 max-w-4xl'>
               <div className=' mb-2'>
-                <h3 className='mobile sm:desktop text-grey-800 no-underline hover:text-green-500'>
+                <h3 className='mobile sm:desktop text-grey-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                   {law.titel}{' '}
                 </h3>
               </div>

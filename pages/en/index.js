@@ -25,8 +25,8 @@ export default function English({ data }) {
                 </p>
                 <p className='p-md sm:p-lg pb-3'>
                   For now, CircuLaw is available{' '}
-                  <Link href='/'>
-                    <span className='text-green-300 sm:link-lg inline-block'>in Dutch</span>
+                  <Link href='/' className='link-interaction-dark-bg'>
+                    <span className='text-green-300 sm:link-lg inline-block hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '>in Dutch</span>
                   </Link>{' '}
                   only.{' '}
                 </p>
@@ -62,9 +62,9 @@ export default function English({ data }) {
               <div>
                 <Link
                   href='/'
-                  className='text-green-300 link-base sm:link-lg link-interaction-dark-bg hidden lg:block'
+                  className='  sm:link-lg hidden lg:block'
                 >
-                  Check out the website in Dutch
+                  <span className='link-base link-interaction-dark-bg '>Check out the website in Dutch</span>
                 </Link>
               </div>
             </div>
@@ -106,7 +106,7 @@ export default function English({ data }) {
                     Questions? Contact us:
                     <a href='mailto:info@circulaw.nl'>
                       {' '}
-                      <span className='block underline font-semibold link-interaction-dark-bg text-green-300'>
+                      <span className='block underline font-semibold link-interaction-dark-bg'>
                         info@Circulaw.nl
                       </span>
                     </a>

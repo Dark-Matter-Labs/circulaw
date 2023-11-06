@@ -93,9 +93,9 @@ export default function Footer(props) {
                               <li key={slug}>
                                 <Link
                                   href={`/${encodeURIComponent(slug)}`}
-                                  className='p-md link-interaction text-grey-100'
+                                  className='p-md text-grey-100'
                                 >
-                                  <span className='inline-block first-letter:uppercase'>
+                                  <span className='inline-block first-letter:uppercase link-interaction-light-green-bg'>
                                     {slug.replaceAll('-', ' ')}
                                   </span>
                                 </Link>
@@ -114,9 +114,9 @@ export default function Footer(props) {
                                 <li key={slug.slug}>
                                   <Link
                                     href={`/about/${encodeURIComponent(slug.slug)}`}
-                                    className='p-md link-interaction text-grey-100'
+                                    className='p-md text-grey-100'
                                   >
-                                    <span className='inline-block first-letter:uppercase'>
+                                    <span className='inline-block first-letter:uppercase link-interaction-light-green-bg'>
                                       {slug.title.replaceAll('-', ' ')}
                                     </span>
                                   </Link>
@@ -129,11 +129,11 @@ export default function Footer(props) {
                         <ul role='list' className='space-y-4'>
                           <li>
                             <Link
-                              className='p-md text-grey-100 link-interaction'
+                              className='p-md text-grey-100'
                               href={`/${encodeURIComponent(FAQslug)}`}
                             >
                               {FAQslug.length > 0 && (
-                                <span className='inline-block first-letter:uppercase'>
+                                <span className='inline-block first-letter:uppercase link-interaction-light-green-bg'>
                                   {FAQslug.replaceAll('-', ' ')}
                                 </span>
                               )}
@@ -141,14 +141,14 @@ export default function Footer(props) {
                           </li>
                           {navigation.other.map((item) => (
                             <li key={item.name}>
-                              <Link href={item.href} className=' p-md text-grey-100 link-interaction'>
-                                {item.name}
+                              <Link href={item.href} className=' p-md text-grey-100'>
+                                <span className='link-interaction-light-green-bg'>{item.name}</span>
                               </Link>
                             </li>
                           ))}
                           <li className='flex justify-start text-grey-100 items-center'>
                             <span
-                              className={`link-interaction ${
+                              className={`link-interaction-light-green-bg ${
                                 router.pathname === '/en' ? '' : 'font-semibold'
                               }`}
                             >
@@ -156,7 +156,7 @@ export default function Footer(props) {
                             </span>
                             <span className='px-1 enLink'>|</span>
                             <span
-                              className={`link-interaction ${
+                              className={`link-interaction-light-green-bg ${
                                 router.pathname === '/en' ? 'font-semibold' : ''
                               }`}
                             >
@@ -176,7 +176,7 @@ export default function Footer(props) {
                           <h3 className='inline-block mobile sm:desktop'>Volg ons op:</h3>
                           <span data-text='Volg ons op LinkedIn' className='tooltip p-md z-40'>
                             <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
-                              <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
+                              <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-200 mb-1.5' />
                             </Link>
                           </span>
                           <span data-text='Volg ons op GitHub' className='tooltip p-md z-30'>
@@ -184,7 +184,7 @@ export default function Footer(props) {
                               href='https://github.com/Dark-Matter-Labs/circulaw'
                               target='_blank'
                             >
-                              <AiFillGithub className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
+                              <AiFillGithub className='inline-block ml-3 h-6 w-6 hover:text-green-200 mb-1.5' />
                             </Link>
                           </span>
                           <span data-text='Volg ons op OpenResearch' className='tooltip p-md'>
@@ -198,7 +198,7 @@ export default function Footer(props) {
                                 viewBox='0 0 107 107'
                                 fill='currentColor'
                                 xmlns='http://www.w3.org/2000/svg'
-                                className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5 fill-white'
+                                className='inline-block ml-3 h-6 w-6 hover:text-green-200 mb-1.5 fill-white'
                               >
                                 <circle cx='53.5' cy='53.5' r='53.5' fill='currentColor' />
                                 <path

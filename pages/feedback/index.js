@@ -242,7 +242,7 @@ export default function Feedback() {
                         hebben of je op de hoogte willen houden van dit instrument. Je gegevens
                         zullen nooit gebruikt worden voor andere doeleinden. Lees onze{' '}
                         <Link href='/privacy-policy'>
-                          <span className='text-green-500'>privacy verklaring.</span>
+                          <span className='link-interaction text-green-500 hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>privacy verklaring.</span>
                         </Link>
                       </p>
                     </div>

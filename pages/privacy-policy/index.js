@@ -14,7 +14,7 @@ export default function Privacy() {
         </p>
         <p className=' p-lg pb-10 max-w-4xl'>
           Contactgegevens projectteam CircuLaw:{' '}
-          <span className='text-green-500 link-lg link-interaction'>
+          <span className='text-green-500 link-lg link-interaction hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
             <Link href='mailto:info@circulaw.nl'>info@circulaw.nl</Link>
           </span>
         </p>
@@ -105,7 +105,7 @@ export default function Privacy() {
         <p className=' p-lg pb-6 max-w-4xl'>
           De gemeente Amsterdam heeft het recht om haar Privacyverklaring te wijzigen. Als er
           inhoudelijke wijzigingen worden doorgevoerd, maken we dit bekend via de website{' '}
-          <span className='text-green-500 link-lg'>
+          <span className='text-green-500 link-lg hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
             <Link href='https://www.amsterdam.nl/' target='_blank' rel='noopener noreferrer'>
               amsterdam.nl
             </Link>
@@ -115,14 +115,14 @@ export default function Privacy() {
         </p>
         <p className=' p-lg max-w-4xl pb-6'>
           Heb je vragen naar aanleiding van deze Privacyverklaring? Mail{' '}
-          <span className='text-green-500 link-lg link-interaction'>
+          <span className='text-green-500 link-lg hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
             <Link href='mailto:info@circulaw.nl'>info@circulaw.nl</Link>
           </span>
         </p>
         <h2 className='mobile sm:desktop py-2'>Cookies</h2>
         <p className=' p-lg pb-6 max-w-4xl'>
           Bekijk ons{' '}
-          <span className='text-green-500 link-lg link-interaction'>
+          <span className='text-green-500 link-lg hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
             <Link href='/cookie-info'>Cookiebeleid</Link>
           </span>
           .

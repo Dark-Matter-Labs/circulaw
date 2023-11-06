@@ -17,8 +17,8 @@ export default function Beta() {
           We horen graag wat je ervan vindt, wat je anders zou willen, wat je mist en natuurlijk
           horen we ook graag waar je blij van wordt.
         </p>
-        <p className='text-green-500 link-lg inline link-interaction'>
-          <Link href='/contact'>Stuur je feedback</Link>{' '}
+        <p className='text-green-500 link-lg inline '>
+          <Link href='/contact' className='link-interaction'>Stuur je feedback</Link>{' '}
         </p>
         <span className=' p-lg text-grey-800 max-w-2xl'>op deze Betaversie</span>
       </div>

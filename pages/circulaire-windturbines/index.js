@@ -23,20 +23,20 @@ export default function Windturbine({ featuredLaws, length, thema }) {
         <div className='global-margin pt-10 pb-20 border-t border-grey-800'>
           <div className='p-lg'>
             De informatie over windturbines is mede tot stand gekomen door nauwe samenwerking met de{' '}
-            <span className='text-green-500 link-lg inline-block link-interaction'>
-              <a href='https://www.noord-holland.nl/' target='_blank' rel='noopener noreferrer'>
+            <span className='text-green-500 link-lg inline-block '>
+              <Link href='https://www.noord-holland.nl/' target='_blank' rel='noopener noreferrer' className='link-interaction'>
                 Provincie Noord-Holland
                 <LinkIcon />
-              </a>
+              </Link>
             </span>
             <div className=''>
               {' '}
               Zie het{' '}
-              <span className='text-green-500 link-lg inline-block link-interaction'>
-                <Link href='/Analyse circulaire windturbines_PNH.pdf' target='_blank'>
+              <span className='text-green-500 link-lg inline-block '>
+                <Link href='/Analyse circulaire windturbines_PNH.pdf' target='_blank' className='link-interaction'>
                   rapport-Analyse CircuLaw: Circulaire Windturbines (download pdf).
+                  <LinkIcon />
                 </Link>
-                <LinkIcon />
               </span>{' '}
             </div>{' '}
           </div>
