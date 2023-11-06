@@ -502,7 +502,7 @@ export default {
                     title: 'Open in new winder',
                     name: 'blank',
                     type: 'boolean',
-                    validation: (Rule) => Rule.required()
+                    validation: (Rule) => Rule.required(),
                   },
                 ],
               },
