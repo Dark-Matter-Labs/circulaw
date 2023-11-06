@@ -807,7 +807,7 @@ export default function MeasuresLayout({ ...props }) {
       </div>
 
       <div className='grid grid-cols-1 sm:grid-cols-4 md:gap-x-20'>
-        <div className='hidden lg:block p-3 my-4'>
+        <div className='hidden lg:block pr-3 py-3 my-4'>
           <SearchFilter
             ref={wettelijkFilterRef}
             title='Bevoegdheidsniveau'

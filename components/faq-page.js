@@ -22,7 +22,9 @@ export default function FAQPageComponent({ data }) {
       <div className='grid grid-cols-1 w-full justify-center '>
         <div className=''>
           <div className='breadcrumb pt-8 text-green-500 link-interaction'>
-            <Link href='/'>Home &gt;</Link>
+            <Link href='/' className='link-interaction'>
+              Home &gt;
+            </Link>
           </div>
           <div className='max-w-4xl mx-auto'>
             <h1 className='mobile sm:desktop lg:block sm:pt-10 py-6 sm:pb-10 text-grey-800'>

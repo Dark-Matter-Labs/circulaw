@@ -7,16 +7,16 @@ import Instrumentheader from './instrument-header';
 
 export default function Instrument({ data }) {
   return (
-    <div className='mt-[11px] relative bg-grey-100'>
+    <div className='relative bg-grey-100'>
       <Instrumentheader data={data} />
       <div className='bg-grey-100 relative z-0'>
         <InstrumentFeedbackBlock data={data} />
-        <div className='global-margin sm:pt-7 z-0'>
+        <div className='global-margin sm:mt-4 z-0'>
           {/* Subtitle */}
           <div className='grid grid-cols-1 sm:pl-8'>
             {data?.measure?.subtitel && (
               <div className='max-w-[760px]'>
-                <h2 className='lg:block p-lg sm:p-xl  '> {data?.measure?.subtitel}</h2>
+                <h2 className='lg:block p-lg sm:p-xl my-6'> {data?.measure?.subtitel}</h2>
               </div>
             )}
           </div>

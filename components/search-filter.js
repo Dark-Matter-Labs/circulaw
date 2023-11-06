@@ -45,10 +45,10 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
   }));
 
   return (
-    <fieldset className='py-4'>
+    <fieldset className='py-3'>
       <div className='block'>
         <div className='relative flex justify-between'>
-          <h4 className='mobile sm:desktop mr-8'>{title}</h4>
+          <h5 className='mobile sm:desktop mr-4'>{title}</h5>
           {title === 'Juridische haalbaarheid' && (
             <JHTooltip>
               <svg className='w-6 h-6 fill-current text-grey-20 mb-2' viewBox='0 0 26 26'>

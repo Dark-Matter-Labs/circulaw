@@ -58,8 +58,8 @@ export default function NewsItems({ newsItems }) {
               )}
               {item.externalLink && (
                 <div className='flex grow'>
-                  <Link href={item.externalLink} target='_blank' className='self-end'>
-                    <span className='text-grey-100 inline link-base sm:link-lg link-interaction-dark-bg break-words'>
+                  <Link href={item.externalLink} target='_blank' className='self-end '>
+                    <span className='text-grey-100 inline link-base sm:link-lg break-words hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'>
                       {item.externalLinkText}
                       <LinkIcon />
                     </span>

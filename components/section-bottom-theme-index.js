@@ -75,7 +75,7 @@ export default function ThemeBottomSection({ props }) {
                             </div>
                           </div>
                           <div>
-                            <span className='text-green-500 link-lg link-interaction'>
+                            <span className='text-green-500 link-lg hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                               Bekijk het instrument{'>'}
                             </span>
                           </div>
