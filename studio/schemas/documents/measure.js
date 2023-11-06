@@ -11,7 +11,7 @@ export default {
     {
       name: 'high-level',
       title: 'High level content',
-      default: 'true'
+      default: 'true',
     },
     {
       name: 'copy',
@@ -496,11 +496,13 @@ export default {
                     title: 'URL',
                     name: 'href',
                     type: 'url',
+                    validation: (Rule) => Rule.required().uri({ scheme: ['http', 'https'] }),
                   },
                   {
                     title: 'Open in new winder',
                     name: 'blank',
                     type: 'boolean',
+                    validation: (Rule) => Rule.required(),
                   },
                 ],
               },

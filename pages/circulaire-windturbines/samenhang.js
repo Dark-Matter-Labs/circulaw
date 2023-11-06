@@ -19,13 +19,12 @@ const expertiseDataQuerie = `
 }
 `;
 
-
-export default function InfoPage({expertiseData}) {
+export default function InfoPage({ expertiseData }) {
   return (
     <Layout title='CircuLaw - Samenhang Matrassen'>
       <SamenhangLayout
         thema='circulaire-windturbines'
-        transitionAgenda = ''
+        transitionAgenda=''
         title='Samenhang instrumenten circulaire windturbines'
         icon={WindmillIcon}
         p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
@@ -34,7 +33,6 @@ export default function InfoPage({expertiseData}) {
     </Layout>
   );
 }
-
 
 export async function getStaticProps() {
   const expertiseData = await client.fetch(expertiseDataQuerie);

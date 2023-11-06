@@ -24,7 +24,7 @@ export default function InfoPage({ expertiseData }) {
       <SamenhangLayout
         expertiseData={expertiseData}
         thema='houtbouw-stimuleren'
-        transitionAgenda = 'bouw'
+        transitionAgenda='bouw'
         title='Samenhang instrumenten houtbouw'
         p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
       />

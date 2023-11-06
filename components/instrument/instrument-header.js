@@ -1,19 +1,24 @@
-import { ArrowLeftIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
+import { ArrowLeftIcon } from '@heroicons/react/outline';
 import SocialButtons from '../social-buttons';
 import InstrumentMetaData from './instrument-metadata';
 
 export default function Instrumentheader({ data }) {
   const router = useRouter();
+
   return (
     <>
       {/* Not sticky */}
-      <div className='z-30 relative'>
-        <div className='global-margin grid grid-cols-1 sm:pl-8 -mb-24'>
-          <div className='mt-6 max-w-[854px] flex justify-between items-center'>
-            {/* BREADCRUMB */}
-            <button type='button' onClick={() => router.back()}>
-              <span className='breadcrumb text-grey-100 flex justify-center items-center underline'>
+      <div className='sm:sticky -top-[277px] z-20 bg-gradient-to-b from-[#042D36] to-[#22532200] bg-green-500 pt-3'>
+        <div className='h-auto sm:h-[360px] flex flex-col global-margin justify-between'>
+          <div className='max-w-[800px] sm:pl-8 pt-6 pb-6 sm:pb-0 flex justify-between items-center'>
+            <button
+              type='button'
+              onClick={() => router.back()}
+              className='link-interaction-dark-bg'
+            >
+              <span className='breadcrumb text-grey-100 flex justify-center items-center underline hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>
                 <ArrowLeftIcon className='inline-block h-4 w-4 pr-1' aria-hidden='true' /> Terug
               </span>{' '}
             </button>
@@ -21,53 +26,55 @@ export default function Instrumentheader({ data }) {
               <SocialButtons title={data?.measure?.titel} viewport='desktop' />
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* STICKY */}
-      <div className='sm:sticky top-6 z-20'>
-        <div className='bg-gradient-to-b from-[#042D36] to-[#22532200] bg-green-500 pt-24 mt-8 pb-6 sm:pb-12 '>
-          <div className='global-margin grid grid-cols-1 sm:pl-8'>
-            <div className='max-w-[852px] flex'>
-              <div className='first-letter:uppercase border rounded-[5px] py-0.5 px-2 border-grey-100 p-xsm text-grey-100 mr-2'>
-                {data?.measure?.thema.replace('-', ' ')}
-              </div>
+          <div className='sm:mb-12 mb-8 sm:pl-8 h-auto'>
+            <div className='w-full flex'>
+              <Link
+                href={`/${data?.measure?.thema?.toLowerCase().replace(/ /g, '-')}`}
+                className=''
+              >
+                <h5 className='mobile sm:desktop first-letter:uppercase border rounded-[5px] py-0.5 px-2 border-grey-100 hover:border-green-200 active:border-green-400 text-grey-100 mr-2 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>
+                  {data?.measure?.thema.replace('-', ' ')}
+                </h5>
+              </Link>
               {data?.measure?.beleid === true && (
-                <div className='bg-green-300 border border-green-300 text-grey-100 px-2 h-6 rounded-[5px] p-xsm flex items-center mr-2'>
+                <h5 className='mobile sm:desktop  px-2  rounded-[5px] flex items-center mr-2 bg-green-300 border border-green-300 text-grey-100'>
                   Beleid
-                </div>
+                </h5>
               )}
               {data?.measure?.inkoop === true && (
-                <div className='bg-green-300 border border-green-300 text-grey-100 px-2 h-6 rounded-[5px] p-xsm flex items-center mr-2'>
+                <h5 className='mobile sm:desktop bg-green-300 border border-green-300 text-grey-100 px-2 py-0.5 rounded-[5px] flex items-center mr-2'>
                   Inkoop
-                </div>
+                </h5>
               )}
               {data?.measure?.grondpositie === true && (
-                <div className='bg-green-300 border border-green-300 text-grey-100 px-2 h-6 rounded-[5px] p-xsm flex items-center mr-2'>
+                <h5 className='mobile sm:desktop bg-green-300 border border-green-300 text-grey-100 px-2 py-0.5 rounded-[5px] p-xsm flex items-center mr-2'>
                   Grondpositie
-                </div>
+                </h5>
               )}
               {data?.measure?.subsidie === true && (
-                <div className='bg-green-300 border border-green-300 text-grey-100 px-2 h-6 rounded-[5px] p-xsm flex items-center mr-2'>
+                <h5 className='mobile sm:desktop bg-green-300 border border-green-300 text-grey-100 px-2 h-6 rounded-[5px] p-xsm flex items-center mr-2'>
                   Subsidie
-                </div>
+                </h5>
               )}
               {data?.measure?.fiscaal === true && (
-                <div className='bg-green-300 border border-green-300 text-grey-100 px-2 h-6 rounded-[5px] p-xsm flex items-center'>
+                <h5 className='mobile sm:desktop bg-green-300 border border-green-300 text-grey-100 px-2 h-6 rounded-[5px] p-xsm flex items-center'>
                   Fiscaal
-                </div>
+                </h5>
               )}
             </div>
-            <div className='max-w-[852px]'>
-              <h1 className='mobile sm:desktop lg:block mt-2 text-grey-100'>{data?.measure?.titel}</h1>
+            <div className='max-w-4xl flex justify-start overflow-hidden'>
+              <h1 className='justify-self-start mobile sm:desktop lg:block mt-2 text-grey-100 pb-1'>
+                {data?.measure?.titel}
+              </h1>
             </div>
           </div>
         </div>
-
         {/* Metadata */}
-        <div className='global-margin grid grid-col-1 sm:pl-8 bg-grey-100'>
-          <div className='max-w-[854px]'>
-            <InstrumentMetaData data={data} />
+        <div className='bg-grey-100 w-screen flex justify-items-start sm:border-b sm:border-gray-300'>
+          <div className='global-margin w-full'>
+            <div className='grid grid-col-1 sm:pl-8 w-full max-w-4xl'>
+              <InstrumentMetaData data={data} />
+            </div>
           </div>
         </div>
       </div>
