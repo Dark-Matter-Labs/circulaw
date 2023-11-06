@@ -1,5 +1,5 @@
 import Layout from '../../components/layouts/layout';
-import SamenhangLayout from '../../components/layouts/samenhang-layout';
+import ExpertiseLayout from '../../components/layouts/expertise-layout';
 import { client } from '../../lib/sanity';
 
 const expertiseDataQuerie = `
@@ -21,7 +21,7 @@ const expertiseDataQuerie = `
 export default function InfoPage({ expertiseData }) {
   return (
     <Layout title='CircuLaw - Samenhang Aantal Houtbouwmaatregelen'>
-      <SamenhangLayout
+      <ExpertiseLayout
         expertiseData={expertiseData}
         thema='houtbouw-stimuleren'
         transitionAgenda = 'bouw'

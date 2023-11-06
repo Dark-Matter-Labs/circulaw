@@ -1,11 +1,11 @@
 import Layout from '../../components/layouts/layout';
 import mattressIcon from '../../public/icons/matressIcon.svg';
-import SamenhangLayout from '../../components/layouts/samenhang-layout';
+import ExpertiseLayout from '../../components/layouts/expertise-layout';
 
 export default function InfoPage() {
   return (
     <Layout title='CircuLaw - Samenhang Matrassen'>
-      <SamenhangLayout
+      <ExpertiseLayout
         thema='circulaire-matrasketen'
         title='Samenhang instrumenten circulaire matrassen'
         icon={mattressIcon}

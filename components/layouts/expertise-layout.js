@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import OverviewPageHeader from '../overview-page-header';
 import DisplayInstruments from '../expertise-page/display-instruments';
 
-export default function SamenhangLayout({ expertiseData, ...props }) {
+export default function ExpertiseLayout({ expertiseData, ...props }) {
 
   
   useEffect(() => {});
