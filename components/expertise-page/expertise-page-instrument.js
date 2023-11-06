@@ -1,10 +1,13 @@
 
+import Link from 'next/link'
 
 export default function ExpertisePageInstrument({instrument}) {
     return (
         <>
-       <li className='flex flex-row justify-between first:border-t-0 border-b hover:bg-green-100'>
-                  <div className='py-3 border-black basis-1/2 ml-3'>{instrument.titel}</div>
+       <li className='flex flex-row justify-between first:border-t-0 border-b hover:bg-green-100 hover:text-green-800 hover:cursor-pointer'>
+                  <Link href={`/measures/${instrument.slug}`}>
+                  <div className='py-3 border-black basis-1/2 ml-3 line-clamp-1 overflow-hidden'>{instrument.titel}</div>
+                  </Link>
                   <div className='flex flex-row items-center justify-between p-md basis-1/2 mr-3'>
                     <div className='w-[60px] mr-4'></div>
                     <div className='w-[115px] mr-4'>

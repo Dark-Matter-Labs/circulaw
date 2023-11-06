@@ -15,6 +15,8 @@ const expertiseDataQuerie = `
   grondpositieSubCategory,
   subsidie,
   fiscaal,
+  "slug": slug.current,
+
 }
 `;
 
