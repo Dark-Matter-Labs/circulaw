@@ -8,7 +8,7 @@ export default function OverviewPageHeader({ props, page }) {
       <div>
         <div className='flex flex-col sm:flex-row sm:justify-between sm:items-center mt-12 sm:pt-0 pb-12'>
           <div className='breadcrumb uppercase'>
-            <Link href='/' className='underline link-interaction' >
+            <Link href='/' className='underline link-interaction'>
               Home &nbsp;
             </Link>
             <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />{' '}

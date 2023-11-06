@@ -38,13 +38,9 @@ export default function ThemeLayout({ ...props }) {
                     {themaData?.themaSubtitle}{' '}
                     {themaData?.linkText && (
                       <span className='text-green-300 link-base inline-block hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white group'>
-                        <a
-                          href={themaData?.headerLink}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                        >
+                        <a href={themaData?.headerLink} target='_blank' rel='noopener noreferrer'>
                           {themaData?.linkText}
-                            <LinkIcon/>
+                          <LinkIcon />
                         </a>
                       </span>
                     )}
@@ -62,7 +58,12 @@ export default function ThemeLayout({ ...props }) {
               {themaData?.themaSubtitle}
               {themaData?.linkText && (
                 <span className='text-green-500 link-base inline-block '>
-                  <a href={themaData?.headerLinkURL} target='_blank' rel='noopener noreferrer' className='hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'>
+                  <a
+                    href={themaData?.headerLinkURL}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
+                  >
                     {themaData?.linkText}
                     <LinkIcon />
                   </a>

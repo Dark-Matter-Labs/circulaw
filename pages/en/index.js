@@ -26,7 +26,9 @@ export default function English({ data }) {
                 <p className='p-md sm:p-lg pb-3'>
                   For now, CircuLaw is available{' '}
                   <Link href='/' className='link-interaction-dark-bg'>
-                    <span className='text-green-300 sm:link-lg inline-block hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '>in Dutch</span>
+                    <span className='text-green-300 sm:link-lg inline-block hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '>
+                      in Dutch
+                    </span>
                   </Link>{' '}
                   only.{' '}
                 </p>
@@ -60,11 +62,10 @@ export default function English({ data }) {
             <div className='col-span-2 text-grey-100 sm:max-w-3xl'>
               <PortableText components={enPageComponents} value={data?.englishContent} />
               <div>
-                <Link
-                  href='/'
-                  className='  sm:link-lg hidden lg:block'
-                >
-                  <span className='link-base link-interaction-dark-bg '>Check out the website in Dutch</span>
+                <Link href='/' className='  sm:link-lg hidden lg:block'>
+                  <span className='link-base link-interaction-dark-bg '>
+                    Check out the website in Dutch
+                  </span>
                 </Link>
               </div>
             </div>

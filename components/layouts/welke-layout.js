@@ -311,7 +311,11 @@ export default function WelkeLayout({ ...props }) {
                   </div>
                   <div className='pl-4 pt-3'>
                     {natLaws?.map((law) => (
-                      <Link key={law.titel} href={`/measures/${law.slug.current}`} className='link-interaction'>
+                      <Link
+                        key={law.titel}
+                        href={`/measures/${law.slug.current}`}
+                        className='link-interaction'
+                      >
                         <div className='flex items-start justify-start max-w-80 py-1'>
                           <span className='pr-2 inline-block'>
                             {' '}
@@ -356,7 +360,11 @@ export default function WelkeLayout({ ...props }) {
                   </div>
                   <div className='pl-4 pt-3'>
                     {provLaws?.map((law) => (
-                      <Link key={law.titel} href={`/measures/${law.slug.current}`} className='link-interaction'>
+                      <Link
+                        key={law.titel}
+                        href={`/measures/${law.slug.current}`}
+                        className='link-interaction'
+                      >
                         <div className='flex items-start justify-start max-w-80 py-1'>
                           <span className='pr-2 inline-block'>
                             {' '}
@@ -400,7 +408,11 @@ export default function WelkeLayout({ ...props }) {
                   </div>
                   <div className='pl-4 pt-3'>
                     {gemLaws?.map((law) => (
-                      <Link key={law.titel} href={`/measures/${law.slug.current}`} className='link-interaction'>
+                      <Link
+                        key={law.titel}
+                        href={`/measures/${law.slug.current}`}
+                        className='link-interaction'
+                      >
                         <div
                           key={law.titel}
                           className='flex items-start justify-start max-w-80 py-1'

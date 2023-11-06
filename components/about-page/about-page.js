@@ -18,7 +18,9 @@ export default function AboutPageComponent({ data }) {
         <div className='grid grid-cols-1 w-full lg:grid-cols-3 max-w-8xl'>
           <div className='lg:col-span-2'>
             <div className='breadcrumb pt-8 text-green-500 '>
-              <Link href='/' className='link-interaction'>Home &gt;</Link>
+              <Link href='/' className='link-interaction'>
+                Home &gt;
+              </Link>
             </div>
             <div className='max-w-3xl'>
               <h1 className='mobile sm:desktop lg:block sm:pt-10 py-6 sm:pb-10 text-grey-800'>
