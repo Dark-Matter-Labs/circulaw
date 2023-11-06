@@ -379,7 +379,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             <div className='basis-1/2 ml-3'>
               <div className='p-md font-semibold'>Filters</div>
             </div>
-            <div className='basis-1/2 mr-3 flex flex-row items-center justify-between p-sm font-semibold'>
+            <div className='basis-1/2 mr-3 flex flex-row items-center justify-between p-sm font-semibold max-w-[413px]'>
             <div className='mr-4 w-[60px]'>
               <input
                 type='radio'
@@ -431,6 +431,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           <div className='flex flex-col'>
             {selected === 'beleid' && props.transitionAgenda === 'bouw' && (
               <>
+              {console.log(beleid)}
                 {beleidSubCategories.map((cat) => (
                   <DisplayInstruments
                     key={cat}
