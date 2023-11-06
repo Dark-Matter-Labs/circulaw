@@ -101,7 +101,7 @@ export default function SamenhangLayout({ expertiseData, ...props }) {
         numGrondpositieGunningscriteria +
         numGrondpositieContracteisen,
     );
-  });
+  },[numBeleidStrategie, numBeleidBeleidsdoorwerking, numBeleidBeleidsuitvoering, numInkoopBeleid, numInkoopStrategy, numInkoopBijzondereProcedures, numInkoopselectiecriteria, numInkoopGunningscriteria, numInkoopContracteisen, numGrondpositieStrategie, numGrondpositieSelectiecriteria, numGrondpositieGunningscriteria, numGrondpositieContracteisen]);
 
   useEffect(() => {
     // SET INITIAL VALUES
