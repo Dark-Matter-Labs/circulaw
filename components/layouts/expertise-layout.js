@@ -285,55 +285,76 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           </div>
         </div>
 
-        <div className='h-screen bg-red-100'>
-          <div className='flex flex-row justify-between'>
+        <div className='h-[360px] bg-gradient-to-t from-[#042D36] to-[#22532200] bg-green-500'>
+
+        </div>
+
+        <div className='h-screen max-w-[880px]'>
+          <div className='flex flex-row justify-start h-12 -mt-12 z-5 '>
             {/* do i do conditional rendering on tranision agenda? */}
             <button
+            disabled={numBeleid === 0 | numBeleidNotBouw === 0}
               onClick={() => {
                 setSelected(Object.keys({ beleid })[0]);
                 handleRadioButton('alle');
               }}
-              className={selected === 'beleid' ? 'bg-blue-300' : ''}
+              className={`${selected === 'beleid' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'} ${numBeleid === 0  | numBeleidNotBouw === 0 ? 'opacity-50' : ''}  p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
             >
-              beleid  {props.transitionAgenda === 'bouw' ? <span>({numBeleid})</span> : <span>({numBeleidNotBouw})</span>} 
+              <h3 className='mobile sm:desktop pr-1'> 
+              Beleid</h3>  {props.transitionAgenda === 'bouw' ? <h5 className='mobile sm:desktop inline-block'>({numBeleid})</h5> : <h5 className='mobile sm:desktop inline-block'>({numBeleidNotBouw})</h5>} 
             </button>
             <button
+            disabled={numInkoop === 0}
               onClick={() => {
                 setSelected(Object.keys({ inkoop })[0]);
                 handleRadioButton('alle');
               }}
-              className={selected === 'inkoop' ? 'bg-blue-300' : ''}
+              className={`${selected === 'inkoop' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'} ${numInkoop === 0 ? 'opacity-50' : ''}  p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
             >
-              inkoop ({numInkoop})
+              <h3 className='mobile sm:desktop pr-1'>
+              Inkoop
+              </h3> 
+              <h5 className='mobile sm:desktop inline-block'>({numInkoop})</h5>
             </button>
             {props.transitionAgenda === 'bouw' && 
             <button
+              disabled={numGronposirie === 0}
               onClick={() => {
                 setSelected(Object.keys({ grondpositie })[0]);
                 handleRadioButton('alle');
               }}
-              className={selected === 'grondpositie' ? 'bg-blue-300' : ''}
+              className={`${selected === 'grondpositie' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'} ${numGronposirie === 0 ? 'opacity-50' : ''} p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
             >
-              grondpositie ({numGronposirie})
+              <h3 className='mobile sm:desktop pr-1'>Grondpositie</h3>
+               <h5 className='mobile sm:desktop inline-block'>({numGronposirie})</h5>
             </button>}
             <button
+            disabled={subsidie.length === 0}
               onClick={() => {
                 setSelected(Object.keys({ subsidie })[0]);
                 handleRadioButton('alle');
               }}
-              className={selected === 'subsidie' ? 'bg-blue-300' : ''}
+              className={`${selected === 'subsidie' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'} ${fiscaal.length === 0 ? 'opacity-50' : ''} p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
             >
-              subsidie ({subsidie.length})
+              <h3 className='mobile sm:desktop pr-1'>Subsidie</h3>
+              <h5 className='mobile sm:desktop inline-block'>({subsidie.length})</h5>
             </button>
             <button
+              disabled={fiscaal.length === 0}
               onClick={() => {
                 setSelected(Object.keys({ fiscaal })[0]);
                 handleRadioButton('alle');
               }}
-              className={selected === 'fiscaal' ? 'bg-blue-300' : ''}
+              className={`${selected === 'fiscaal' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'} ${fiscaal.length === 0 ? 'opacity-50' : ''} p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
             >
-              fiscaal ({fiscaal.length})
+              <h3 className='mobile sm:desktop pr-1'>Fiscaal</h3>
+              <h5 className='mobile sm:desktop inline-block'>({fiscaal.length})</h5>
             </button>
+          </div>
+          <div className='py-6'>
+            <p className='p-md'>
+            Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond bezit. 
+            </p>
           </div>
           <div className='bg-green-100 flex flex-row justify-between'>
             <div>filters</div>
