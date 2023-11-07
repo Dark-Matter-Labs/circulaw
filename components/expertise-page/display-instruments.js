@@ -107,58 +107,40 @@ export default function DisplayInstruments({ category, categoryName }) {
 
   return (
     <>
-    {categoryName === 'beleid' && 
-    <div>
-    {beleid1 !== 0 && (
-       <DisplaySubHeading arr = {beleid1} subCat={beleidSubCategories[0]} />
+      {categoryName === 'beleid' && (
+        <div>
+          {beleid1 !== 0 && <DisplaySubHeading arr={beleid1} subCat={beleidSubCategories[0]} />}
+          {beleid2 !== 0 && <DisplaySubHeading arr={beleid2} subCat={beleidSubCategories[1]} />}
+          {beleid3 !== 0 && <DisplaySubHeading arr={beleid3} subCat={beleidSubCategories[2]} />}
+        </div>
       )}
-      {beleid2 !== 0 && (
-       <DisplaySubHeading arr = {beleid2} subCat={beleidSubCategories[1]} />
-       
+
+      {categoryName === 'inkoop' && (
+        <div>
+          {inkoop1 !== 0 && <DisplaySubHeading arr={inkoop1} subCat={inkoopSubCategories[0]} />}
+          {inkoop2 !== 0 && <DisplaySubHeading arr={inkoop2} subCat={inkoopSubCategories[1]} />}
+          {inkoop3 !== 0 && <DisplaySubHeading arr={inkoop3} subCat={inkoopSubCategories[2]} />}
+          {inkoop4 !== 0 && <DisplaySubHeading arr={inkoop4} subCat={inkoopSubCategories[3]} />}
+          {inkoop5 !== 0 && <DisplaySubHeading arr={inkoop5} subCat={inkoopSubCategories[4]} />}
+          {inkoop6 !== 0 && <DisplaySubHeading arr={inkoop6} subCat={inkoopSubCategories[5]} />}
+        </div>
       )}
-      {beleid3 !== 0 && (
-       <DisplaySubHeading arr = {beleid3} subCat={beleidSubCategories[2]} />
-      
+      {categoryName === 'grondpositie' && (
+        <div>
+          {grondpositie1 !== 0 && (
+            <DisplaySubHeading arr={grondpositie1} subCat={grondpositieSubCategories[0]} />
+          )}
+          {grondpositie2 !== 0 && (
+            <DisplaySubHeading arr={grondpositie2} subCat={grondpositieSubCategories[1]} />
+          )}
+          {grondpositie3 !== 0 && (
+            <DisplaySubHeading arr={grondpositie3} subCat={grondpositieSubCategories[2]} />
+          )}
+          {grondpositie4 !== 0 && (
+            <DisplaySubHeading arr={grondpositie4} subCat={grondpositieSubCategories[3]} />
+          )}
+        </div>
       )}
-    </div>}
-      
-{categoryName === 'inkoop' && 
-<div>
-      {inkoop1 !== 0 && (
-        <DisplaySubHeading arr = {inkoop1} subCat={inkoopSubCategories[0]} />
-      )}
-      {inkoop2 !== 0 && (
-        <DisplaySubHeading arr = {inkoop2} subCat={inkoopSubCategories[1]} />
-      )}
-      {inkoop3 !== 0 && (
-        <DisplaySubHeading arr = {inkoop3} subCat={inkoopSubCategories[2]} />
-      )}
-      {inkoop4 !== 0 && (
-        <DisplaySubHeading arr = {inkoop4} subCat={inkoopSubCategories[3]} />
-      )}
-      {inkoop5 !== 0 && (
-        <DisplaySubHeading arr = {inkoop5} subCat={inkoopSubCategories[4]} />
-      )}
-      {inkoop6 !== 0 && (
-        <DisplaySubHeading arr = {inkoop6} subCat={inkoopSubCategories[5]} />
-      )}
-      </div>}
-      {categoryName === 'grondpositie' && 
-      <div>
-         {grondpositie1 !== 0 && (
-        <DisplaySubHeading arr = {grondpositie1} subCat={grondpositieSubCategories[0]} />
-      )}
-        {grondpositie2 !== 0 && (
-        <DisplaySubHeading arr = {grondpositie2} subCat={grondpositieSubCategories[1]} />
-      )}
-        {grondpositie3 !== 0 && (
-        <DisplaySubHeading arr = {grondpositie3} subCat={grondpositieSubCategories[2]} />
-      )}
-        {grondpositie4 !== 0 && (
-        <DisplaySubHeading arr = {grondpositie4} subCat={grondpositieSubCategories[3]} />
-      )}
-      </div>
-      }
     </>
   );
 }
