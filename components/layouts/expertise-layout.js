@@ -261,6 +261,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
 
   return (
     <>
+    <div className='bg-gradient-to-t from-[#F8FAF8] to-[#F8FAF8]'>
       <div className='global-margin mt-8'>
         <OverviewPageHeader props={props} page='samenhang' />
         <div className='grid grid-cols-1 sm:grid-cols-3 mt-10 sm:justify-items-end mb-10 sm:mb-0'>
@@ -357,10 +358,29 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
               <h5 className='mobile sm:desktop inline-block'>({fiscaal.length})</h5>
             </button>
           </div>
+          <div className='bg-white'>
           <div className='py-6'>
+            {selected === 'beleid' && 
             <p className='p-md'>
-              Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond bezit.
-            </p>
+              BELEID Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond bezit.
+            </p>}
+            {selected === 'inkoop' &&
+            <p className='p-md'>
+            INKOOP Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond bezit.
+          </p>
+            }
+            {selected === 'grondpositie' && 
+            <p className='p-md'>
+           GRONDPOSITIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond bezit.
+          </p>}
+            {selected === 'subsidie' && 
+            <p className='p-md'>
+            SUBSIDIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond bezit.
+          </p>}
+            {selected === 'fiscaal' && 
+            <p className='p-md'>
+            FISCAL Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond bezit.
+          </p>}
           </div>
           <div className='bg-grey-200 flex flex-ro items-center h-11 border-y border-y-grey-500'>
             <div className='basis-1/2 ml-3'>
@@ -444,7 +464,9 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 ))}
             </ul>
           </div>
+          </div>
         </div>
+      </div>
       </div>
     </>
   );
