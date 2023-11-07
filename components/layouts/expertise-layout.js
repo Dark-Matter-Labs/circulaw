@@ -275,7 +275,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           {/* DESKTOP */}
           <div className='max-w-[880px] hidden sm:block pb-10'>
             <div className='flex flex-row gap-x-3 justify-start h-12 -mt-12 z-5 '>
-            <TabButton
+              <TabButton
                 selected={selected}
                 onClick={() => {
                   setSelected('beleid');
@@ -306,7 +306,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 transitionAgenda={props.transitionAgenda}
                 name='grondpositie'
               />
-               <TabButton
+              <TabButton
                 selected={selected}
                 onClick={() => {
                   setSelected('subsidie');
@@ -316,7 +316,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 transitionAgenda={props.transitionAgenda}
                 name='subsidie'
               />
-               <TabButton
+              <TabButton
                 selected={selected}
                 onClick={() => {
                   setSelected('fiscaal');
@@ -446,137 +446,131 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           </div>
 
           {/* MOBILE */}
-        <div>
-          <div className='-mt-12 flex overflow-x-scroll snap-x snap-mandatory no-scrollbar sm:hidden -mx-4'>
-            <div className='flex gap-x-2 h-12'>
-              <TabButton
-                selected={selected}
-                onClick={() => {
-                  setSelected('beleid');
-                  handleRadioButton('alle');
-                }}
-                numInstrument={numBeleid}
-                numInstruments2={numBeleidNotBouw}
-                transitionAgenda={props.transitionAgenda}
-                name='beleid'
-              />
-               <TabButton
-                selected={selected}
-                onClick={() => {
-                  setSelected('inkoop');
-                  handleRadioButton('alle');
-                }}
-                numInstrument={numInkoop}
-                transitionAgenda={props.transitionAgenda}
-                name='inkoop'
-              />
-               <TabButton
-                selected={selected}
-                onClick={() => {
-                  setSelected('grondpositie');
-                  handleRadioButton('alle');
-                }}
-                numInstrument={numGronposirie}
-                transitionAgenda={props.transitionAgenda}
-                name='grondpositie'
-              />
-               <TabButton
-                selected={selected}
-                onClick={() => {
-                  setSelected('subsidie');
-                  handleRadioButton('alle');
-                }}
-                numInstrument={subsidie.length}
-                transitionAgenda={props.transitionAgenda}
-                name='subsidie'
-              />
-               <TabButton
-                selected={selected}
-                onClick={() => {
-                  setSelected('fiscaal');
-                  handleRadioButton('alle');
-                }}
-                numInstrument={fiscaal.length}
-                transitionAgenda={props.transitionAgenda}
-                name='fiscaal'
-              />
-            </div>
+          <div>
+            <div className='-mt-12 flex overflow-x-scroll snap-x snap-mandatory no-scrollbar sm:hidden -mx-4'>
+              <div className='flex gap-x-2 h-12'>
+                <TabButton
+                  selected={selected}
+                  onClick={() => {
+                    setSelected('beleid');
+                    handleRadioButton('alle');
+                  }}
+                  numInstrument={numBeleid}
+                  numInstruments2={numBeleidNotBouw}
+                  transitionAgenda={props.transitionAgenda}
+                  name='beleid'
+                />
+                <TabButton
+                  selected={selected}
+                  onClick={() => {
+                    setSelected('inkoop');
+                    handleRadioButton('alle');
+                  }}
+                  numInstrument={numInkoop}
+                  transitionAgenda={props.transitionAgenda}
+                  name='inkoop'
+                />
+                <TabButton
+                  selected={selected}
+                  onClick={() => {
+                    setSelected('grondpositie');
+                    handleRadioButton('alle');
+                  }}
+                  numInstrument={numGronposirie}
+                  transitionAgenda={props.transitionAgenda}
+                  name='grondpositie'
+                />
+                <TabButton
+                  selected={selected}
+                  onClick={() => {
+                    setSelected('subsidie');
+                    handleRadioButton('alle');
+                  }}
+                  numInstrument={subsidie.length}
+                  transitionAgenda={props.transitionAgenda}
+                  name='subsidie'
+                />
+                <TabButton
+                  selected={selected}
+                  onClick={() => {
+                    setSelected('fiscaal');
+                    handleRadioButton('alle');
+                  }}
+                  numInstrument={fiscaal.length}
+                  transitionAgenda={props.transitionAgenda}
+                  name='fiscaal'
+                />
               </div>
-              <div className='mt-5 mb-4'>
-                  {selected === 'beleid' && (
-                  <p className='p-md'>
-                    BELEID Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
-                    bezit.
-                  </p>
-                )}
-                {selected === 'inkoop' && (
-                  <p className='p-md'>
-                    INKOOP Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
-                    bezit.
-                  </p>
-                )}
-                {selected === 'grondpositie' && (
-                  <p className='p-md'>
-                    GRONDPOSITIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen
-                    grond bezit.
-                  </p>
-                )}
-                {selected === 'subsidie' && (
-                  <p className='p-md'>
-                    SUBSIDIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
-                    bezit.
-                  </p>
-                )}
-                {selected === 'fiscaal' && (
-                  <p className='p-md'>
-                    FISCAL Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
-                    bezit.
-                  </p>
-                )}
+            </div>
+            <div className='mt-5 mb-4'>
+              {selected === 'beleid' && (
+                <p className='p-md'>
+                  BELEID Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
+                  bezit.
+                </p>
+              )}
+              {selected === 'inkoop' && (
+                <p className='p-md'>
+                  INKOOP Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
+                  bezit.
+                </p>
+              )}
+              {selected === 'grondpositie' && (
+                <p className='p-md'>
+                  GRONDPOSITIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen
+                  grond bezit.
+                </p>
+              )}
+              {selected === 'subsidie' && (
+                <p className='p-md'>
+                  SUBSIDIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
+                  bezit.
+                </p>
+              )}
+              {selected === 'fiscaal' && (
+                <p className='p-md'>
+                  FISCAL Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
+                  bezit.
+                </p>
+              )}
             </div>
             <div className='bg-gray-200 border-t border-gray-500 -mx-4 pb-8'>
               <div className='mx-4'>
-              <p className='p-md py-3'>Filter op overheidslaag:</p>
-              <div className='h-10 border rounded-cl border-green-600 bg-white'>
-                gfi
-              </div>
-              
+                <p className='p-md py-3'>Filter op overheidslaag:</p>
+                <div className='h-10 border rounded-cl border-green-600 bg-white'>gfi</div>
               </div>
             </div>
-            {/* this needs to be made dynamically, what if there is not subtitle ? */}
-            <div className='mb-3 p-md font-semibold bg-gray-200 border-b border-gray-500 -mx-4'>
-                Subtitle
-            </div>
+
             <div className='flex flex-col'>
-                {selected === 'beleid' && props.transitionAgenda === 'bouw' && (
-                  <DisplayInstruments category={beleid} categoryName='beleid' />
-                )}
-                <ul>
-                  {selected === 'beleid' &&
-                    props.transitionAgenda !== 'bouw' &&
-                    beleid.map((instrument) => (
-                      <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                    ))}
-                </ul>
-                {selected === 'inkoop' && (
-                  <DisplayInstruments category={inkoop} categoryName='inkoop' />
-                )}
-                {selected == 'grondpositie' && props.transitionAgenda === 'bouw' && (
-                  <DisplayInstruments category={grondpositie} categoryName='grondpositie' />
-                )}
-                <ul className=''>
-                  {selected === 'subsidie' &&
-                    subsidie.map((instrument) => (
-                      <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                    ))}
-                </ul>
-                <ul>
-                  {selected === 'fiscaal' &&
-                    fiscaal.map((instrument) => (
-                      <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                    ))}
-                </ul>
-              </div>
+              {selected === 'beleid' && props.transitionAgenda === 'bouw' && (
+                <DisplayInstruments category={beleid} categoryName='beleid' />
+              )}
+              <ul>
+                {selected === 'beleid' &&
+                  props.transitionAgenda !== 'bouw' &&
+                  beleid.map((instrument) => (
+                    <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+                  ))}
+              </ul>
+              {selected === 'inkoop' && (
+                <DisplayInstruments category={inkoop} categoryName='inkoop' />
+              )}
+              {selected == 'grondpositie' && props.transitionAgenda === 'bouw' && (
+                <DisplayInstruments category={grondpositie} categoryName='grondpositie' />
+              )}
+              <ul className=''>
+                {selected === 'subsidie' &&
+                  subsidie.map((instrument) => (
+                    <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+                  ))}
+              </ul>
+              <ul>
+                {selected === 'fiscaal' &&
+                  fiscaal.map((instrument) => (
+                    <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+                  ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ export default function ExpertisePageInstrument({ instrument }) {
   return (
     <>
       <Link href={`/measures/${instrument.slug}`} className=''>
+        {/* DESKTOP */}
         <li className='hidden sm:block flex flex-row first:border-t-0 border-b hover:bg-[#035E46] hover:bg-opacity-5  hover:text-green-800 hover:cursor-pointer hover:font-semibold'>
           <div className='border-black basis-1/2 ml-3 overflow-hidden w-full py-3'>
             {instrument.titel}
@@ -27,27 +28,15 @@ export default function ExpertisePageInstrument({ instrument }) {
             </div>
           </div>
         </li>
-        <li className='sm:hidden'> 
-        <div className=''>
-            {instrument.titel}
-          </div>
-          <div className=''>
-            <div className=''></div>
-            <div className=''>
-              {instrument.overheidslaag.includes('Gemeentelijk') && (
-                <div className=''>Gemeentelijk</div>
-              )}
-            </div>
-            <div className=''>
-              {instrument.overheidslaag.includes('Provinciaal') && (
-                <div className=''>Provinciaal</div>
-              )}
-            </div>
-            <div className=''>
-              {instrument.overheidslaag.includes('Nationaal') && (
-                <div className=''>Nationaal</div>
-              )}
-            </div>
+        {/* MOBILE */}
+        <li className='sm:hidden border-b -mx-4 py-2'>
+          <div className='p-md mx-4 pb-2'>{instrument.titel}</div>
+          <div className='flex flex-row mx-4'>
+            {instrument.overheidslaag.map((lev) => (
+              <div key={lev} className='p-sm font-semibold text-green-500'>
+                {lev}&nbsp; {instrument.overheidslaag.slice(-1)[0] !== lev && <span>-&nbsp;</span>}
+              </div>
+            ))}
           </div>
         </li>
       </Link>
