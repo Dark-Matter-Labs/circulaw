@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import OverviewPageHeader from '../overview-page-header';
 import DisplayInstruments from '../expertise-page/display-instruments';
 import ExpertisePageInstrument from '../expertise-page/expertise-page-instrument';
+import TabButton from '../expertise-page/tab-button';
 
 export default function ExpertiseLayout({ expertiseData, ...props }) {
   const [beleid, setBeleid] = useState([]);
@@ -270,93 +271,61 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             </div>
           </div>
 
-          <div className='h-[360px] bg-gradient-to-t from-[#042D36] to-[#22532200] bg-green-500'></div>
-
+          <div className='h-[360px] bg-gradient-to-t from-[#042D36] to-[#22532200] bg-green-500 -mx-4 sm:mx-0'></div>
+          {/* DESKTOP */}
           <div className='max-w-[880px] hidden sm:block pb-10'>
-            <div className='flex flex-row justify-start h-12 -mt-12 z-5 '>
-              {/* do i do conditional rendering on tranision agenda? */}
-              <button
-                disabled={numBeleid === 0 && numBeleidNotBouw === 0}
+            <div className='flex flex-row gap-x-3 justify-start h-12 -mt-12 z-5 '>
+            <TabButton
+                selected={selected}
                 onClick={() => {
-                  setSelected(Object.keys({ beleid })[0]);
+                  setSelected('beleid');
                   handleRadioButton('alle');
                 }}
-                className={`${
-                  selected === 'beleid' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'
-                } ${
-                  numBeleid === 0 && numBeleidNotBouw === 0 ? 'opacity-50' : ''
-                }  p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
-              >
-                <h3 className='mobile sm:desktop pr-1'>Beleid</h3>{' '}
-                {props.transitionAgenda === 'bouw' ? (
-                  <h5 className='mobile sm:desktop inline-block'>({numBeleid})</h5>
-                ) : (
-                  <h5 className='mobile sm:desktop inline-block'>({numBeleidNotBouw})</h5>
-                )}
-              </button>
-              <button
-                disabled={numInkoop === 0}
+                numInstrument={numBeleid}
+                numInstruments2={numBeleidNotBouw}
+                transitionAgenda={props.transitionAgenda}
+                name='beleid'
+              />
+              <TabButton
+                selected={selected}
                 onClick={() => {
-                  setSelected(Object.keys({ inkoop })[0]);
+                  setSelected('inkoop');
                   handleRadioButton('alle');
                 }}
-                className={`${
-                  selected === 'inkoop' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'
-                } ${
-                  numInkoop === 0 ? 'opacity-50' : ''
-                }  p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
-              >
-                <h3 className='mobile sm:desktop pr-1'>Inkoop</h3>
-                <h5 className='mobile sm:desktop inline-block'>({numInkoop})</h5>
-              </button>
-
-              <button
-                disabled={numGronposirie === 0}
+                numInstrument={numInkoop}
+                transitionAgenda={props.transitionAgenda}
+                name='inkoop'
+              />
+              <TabButton
+                selected={selected}
                 onClick={() => {
-                  setSelected(Object.keys({ grondpositie })[0]);
+                  setSelected('grondpositie');
                   handleRadioButton('alle');
                 }}
-                className={`${
-                  selected === 'grondpositie'
-                    ? 'bg-white text-green-500'
-                    : 'text-gray-100 bg-green-500'
-                } ${
-                  numGronposirie === 0 ? 'opacity-50' : ''
-                } p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
-              >
-                <h3 className='mobile sm:desktop pr-1'>Grondpositie</h3>
-                <h5 className='mobile sm:desktop inline-block'>({numGronposirie})</h5>
-              </button>
-              <button
-                disabled={subsidie.length === 0}
+                numInstrument={numGronposirie}
+                transitionAgenda={props.transitionAgenda}
+                name='grondpositie'
+              />
+               <TabButton
+                selected={selected}
                 onClick={() => {
-                  setSelected(Object.keys({ subsidie })[0]);
+                  setSelected('subsidie');
                   handleRadioButton('alle');
                 }}
-                className={`${
-                  selected === 'subsidie' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'
-                } ${
-                  subsidie.length === 0 ? 'opacity-50' : ''
-                } p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
-              >
-                <h3 className='mobile sm:desktop pr-1'>Subsidie</h3>
-                <h5 className='mobile sm:desktop inline-block'>({subsidie.length})</h5>
-              </button>
-              <button
-                disabled={fiscaal.length === 0}
+                numInstrument={subsidie.length}
+                transitionAgenda={props.transitionAgenda}
+                name='subsidie'
+              />
+               <TabButton
+                selected={selected}
                 onClick={() => {
-                  setSelected(Object.keys({ fiscaal })[0]);
+                  setSelected('fiscaal');
                   handleRadioButton('alle');
                 }}
-                className={`${
-                  selected === 'fiscaal' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'
-                } ${
-                  fiscaal.length === 0 ? 'opacity-50' : ''
-                } p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
-              >
-                <h3 className='mobile sm:desktop pr-1'>Fiscaal</h3>
-                <h5 className='mobile sm:desktop inline-block'>({fiscaal.length})</h5>
-              </button>
+                numInstrument={fiscaal.length}
+                transitionAgenda={props.transitionAgenda}
+                name='fiscaal'
+              />
             </div>
             <div className='bg-white'>
               <div className='py-6'>
@@ -474,6 +443,140 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 </ul>
               </div>
             </div>
+          </div>
+
+          {/* MOBILE */}
+        <div>
+          <div className='-mt-12 flex overflow-x-scroll snap-x snap-mandatory no-scrollbar sm:hidden -mx-4'>
+            <div className='flex gap-x-2 h-12'>
+              <TabButton
+                selected={selected}
+                onClick={() => {
+                  setSelected('beleid');
+                  handleRadioButton('alle');
+                }}
+                numInstrument={numBeleid}
+                numInstruments2={numBeleidNotBouw}
+                transitionAgenda={props.transitionAgenda}
+                name='beleid'
+              />
+               <TabButton
+                selected={selected}
+                onClick={() => {
+                  setSelected('inkoop');
+                  handleRadioButton('alle');
+                }}
+                numInstrument={numInkoop}
+                transitionAgenda={props.transitionAgenda}
+                name='inkoop'
+              />
+               <TabButton
+                selected={selected}
+                onClick={() => {
+                  setSelected('grondpositie');
+                  handleRadioButton('alle');
+                }}
+                numInstrument={numGronposirie}
+                transitionAgenda={props.transitionAgenda}
+                name='grondpositie'
+              />
+               <TabButton
+                selected={selected}
+                onClick={() => {
+                  setSelected('subsidie');
+                  handleRadioButton('alle');
+                }}
+                numInstrument={subsidie.length}
+                transitionAgenda={props.transitionAgenda}
+                name='subsidie'
+              />
+               <TabButton
+                selected={selected}
+                onClick={() => {
+                  setSelected('fiscaal');
+                  handleRadioButton('alle');
+                }}
+                numInstrument={fiscaal.length}
+                transitionAgenda={props.transitionAgenda}
+                name='fiscaal'
+              />
+            </div>
+              </div>
+              <div className='mt-5 mb-4'>
+                  {selected === 'beleid' && (
+                  <p className='p-md'>
+                    BELEID Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
+                    bezit.
+                  </p>
+                )}
+                {selected === 'inkoop' && (
+                  <p className='p-md'>
+                    INKOOP Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
+                    bezit.
+                  </p>
+                )}
+                {selected === 'grondpositie' && (
+                  <p className='p-md'>
+                    GRONDPOSITIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen
+                    grond bezit.
+                  </p>
+                )}
+                {selected === 'subsidie' && (
+                  <p className='p-md'>
+                    SUBSIDIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
+                    bezit.
+                  </p>
+                )}
+                {selected === 'fiscaal' && (
+                  <p className='p-md'>
+                    FISCAL Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
+                    bezit.
+                  </p>
+                )}
+            </div>
+            <div className='bg-gray-200 border-t border-gray-500 -mx-4 pb-8'>
+              <div className='mx-4'>
+              <p className='p-md py-3'>Filter op overheidslaag:</p>
+              <div className='h-10 border rounded-cl border-green-600 bg-white'>
+                gfi
+              </div>
+              
+              </div>
+            </div>
+            {/* this needs to be made dynamically, what if there is not subtitle ? */}
+            <div className='mb-3 p-md font-semibold bg-gray-200 border-b border-gray-500 -mx-4'>
+                Subtitle
+            </div>
+            <div className='flex flex-col'>
+                {selected === 'beleid' && props.transitionAgenda === 'bouw' && (
+                  <DisplayInstruments category={beleid} categoryName='beleid' />
+                )}
+                <ul>
+                  {selected === 'beleid' &&
+                    props.transitionAgenda !== 'bouw' &&
+                    beleid.map((instrument) => (
+                      <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+                    ))}
+                </ul>
+                {selected === 'inkoop' && (
+                  <DisplayInstruments category={inkoop} categoryName='inkoop' />
+                )}
+                {selected == 'grondpositie' && props.transitionAgenda === 'bouw' && (
+                  <DisplayInstruments category={grondpositie} categoryName='grondpositie' />
+                )}
+                <ul className=''>
+                  {selected === 'subsidie' &&
+                    subsidie.map((instrument) => (
+                      <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+                    ))}
+                </ul>
+                <ul>
+                  {selected === 'fiscaal' &&
+                    fiscaal.map((instrument) => (
+                      <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+                    ))}
+                </ul>
+              </div>
           </div>
         </div>
       </div>
