@@ -5,9 +5,6 @@ import DisplayInstruments from '../expertise-page/display-instruments';
 import ExpertisePageInstrument from '../expertise-page/expertise-page-instrument';
 
 export default function ExpertiseLayout({ expertiseData, ...props }) {
-  console.log(expertiseData)
-  useEffect(() => {});
-
   const [beleid, setBeleid] = useState([]);
   const [inkoop, setInkoop] = useState([]);
   const [grondpositie, setGrondpositie] = useState([]);
@@ -18,23 +15,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   const [numBeleid, setNumBeleid] = useState();
   const [numInkoop, setNumInkoop] = useState();
   const [numGronposirie, setNumGronposirie] = useState();
-
-  // need to make headings display conditionally
-  const beleidSubCategories = ['strategie', 'beleidsdoorwerking', 'beleidsuitvoering'];
-  const inkoopSubCategories = [
-    'beleid',
-    'strategie',
-    'bijzondere-procedures',
-    'selectiecriteria',
-    'gunningscriteria',
-    'contracteisen',
-  ];
-  const grondpositieSubCategories = [
-    'strategie',
-    'selectiecriteria',
-    'gunningscriteria',
-    'contracteisen',
-  ];
 
   const numGrondpositieStrategie = grondpositie.filter((instrument) =>
     instrument?.grondpositieSubCategory?.includes('strategie'),
@@ -48,7 +28,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   const numGrondpositieContracteisen = grondpositie.filter((instrument) =>
     instrument?.grondpositieSubCategory?.includes('contracteisen'),
   ).length;
-  // const numGronposirie = numGrondpositieStrategie + numGrondpositieSelectiecriteria + numGrondpositieGunningscriteria + numGrondpositieContracteisen
 
   const numBeleidStrategie = beleid.filter((instrument) =>
     instrument?.beleidSubCategory?.includes('strategie'),
@@ -61,7 +40,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   ).length;
 
   const numBeleidNotBouw = beleid.length;
-  // const numBeleid = numBeleidStrategie + numBeleidBeleidsdoorwerking + numBeleidBeleidsuitvoering
 
   const numInkoopBeleid = inkoop.filter((instrument) =>
     instrument?.inkoopSubCategory?.includes('beleid'),
@@ -81,11 +59,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   const numInkoopContracteisen = inkoop.filter((instrument) =>
     instrument?.inkoopSubCategory?.includes('contracteisen'),
   ).length;
-  // const numInkoop = numInkoopBeleid + numInkoopStrategy + numInkoopBijzondereProcedures + numInkoopselectiecriteria + numInkoopGunningscriteria + numInkoopContracteisen
-
-  // const [numBeleidStrategie, setNumBeleidStrategie] = useState()
-  // const [numBeleidBeleidsdoorwerking, setNumBeleidBeleidsdoorwerking] = useState()
-  // const [numBeleidBeleidsuitvoering, setNumBeleidBeleidsuitvoering] = useState()
 
   useEffect(() => {
     setNumBeleid(numBeleidStrategie + numBeleidBeleidsdoorwerking + numBeleidBeleidsuitvoering);
@@ -103,7 +76,21 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
         numGrondpositieGunningscriteria +
         numGrondpositieContracteisen,
     );
-  },[numBeleidStrategie, numBeleidBeleidsdoorwerking, numBeleidBeleidsuitvoering, numInkoopBeleid, numInkoopStrategy, numInkoopBijzondereProcedures, numInkoopselectiecriteria, numInkoopGunningscriteria, numInkoopContracteisen, numGrondpositieStrategie, numGrondpositieSelectiecriteria, numGrondpositieGunningscriteria, numGrondpositieContracteisen]);
+  }, [
+    numBeleidStrategie,
+    numBeleidBeleidsdoorwerking,
+    numBeleidBeleidsuitvoering,
+    numInkoopBeleid,
+    numInkoopStrategy,
+    numInkoopBijzondereProcedures,
+    numInkoopselectiecriteria,
+    numInkoopGunningscriteria,
+    numInkoopContracteisen,
+    numGrondpositieStrategie,
+    numGrondpositieSelectiecriteria,
+    numGrondpositieGunningscriteria,
+    numGrondpositieContracteisen,
+  ]);
 
   useEffect(() => {
     // SET INITIAL VALUES
@@ -288,7 +275,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           <div className='flex flex-row justify-start h-12 -mt-12 z-5 '>
             {/* do i do conditional rendering on tranision agenda? */}
             <button
-              disabled={(numBeleid === 0) && (numBeleidNotBouw === 0)}
+              disabled={numBeleid === 0 && numBeleidNotBouw === 0}
               onClick={() => {
                 setSelected(Object.keys({ beleid })[0]);
                 handleRadioButton('alle');
@@ -296,7 +283,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
               className={`${
                 selected === 'beleid' ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'
               } ${
-                (numBeleid === 0) && (numBeleidNotBouw === 0) ? 'opacity-50' : ''
+                numBeleid === 0 && numBeleidNotBouw === 0 ? 'opacity-50' : ''
               }  p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
             >
               <h3 className='mobile sm:desktop pr-1'>Beleid</h3>{' '}
@@ -321,24 +308,24 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
               <h3 className='mobile sm:desktop pr-1'>Inkoop</h3>
               <h5 className='mobile sm:desktop inline-block'>({numInkoop})</h5>
             </button>
-     
-              <button
-                disabled={numGronposirie === 0}
-                onClick={() => {
-                  setSelected(Object.keys({ grondpositie })[0]);
-                  handleRadioButton('alle');
-                }}
-                className={`${
-                  selected === 'grondpositie'
-                    ? 'bg-white text-green-500'
-                    : 'text-gray-100 bg-green-500'
-                } ${
-                  numGronposirie === 0 ? 'opacity-50' : ''
-                } p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
-              >
-                <h3 className='mobile sm:desktop pr-1'>Grondpositie</h3>
-                <h5 className='mobile sm:desktop inline-block'>({numGronposirie})</h5>
-              </button>
+
+            <button
+              disabled={numGronposirie === 0}
+              onClick={() => {
+                setSelected(Object.keys({ grondpositie })[0]);
+                handleRadioButton('alle');
+              }}
+              className={`${
+                selected === 'grondpositie'
+                  ? 'bg-white text-green-500'
+                  : 'text-gray-100 bg-green-500'
+              } ${
+                numGronposirie === 0 ? 'opacity-50' : ''
+              } p-3 rounded-t-cl mr-3 flex flex-row items-baseline`}
+            >
+              <h3 className='mobile sm:desktop pr-1'>Grondpositie</h3>
+              <h5 className='mobile sm:desktop inline-block'>({numGronposirie})</h5>
+            </button>
             <button
               disabled={subsidie.length === 0}
               onClick={() => {
@@ -380,106 +367,82 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
               <div className='p-md font-semibold'>Filters</div>
             </div>
             <div className='basis-1/2 mr-3 flex flex-row items-center justify-between p-sm font-semibold max-w-[413px]'>
-            <div className='mr-4 w-[60px]'>
-              <input
-                type='radio'
-                name='filter'
-                value='alle'
-                checked={local?.value === 'alle'}
-                onChange={() => handleRadioButton('alle')}
-                className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
-               />
-               <label>Alle</label>
-            </div>
-            <div className='mr-4 w-[115px]'>
-              <input
-                type='radio'
-                name='filter'
-                value='Gemeentelijk'
-                checked={local?.value === 'Gemeentelijk'}
-                onChange={() => handleRadioButton('Gemeentelijk')}
-                className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
-               />
-              <label>Gemeentelijk</label>
-            </div>
-            <div className='mr-4 w-[100px]'>
-              <input
-                type='radio'
-                name='filter'
-                value='Provinciaal'
-                checked={local?.value === 'Provinciaal'}
-                onChange={() => handleRadioButton('Provinciaal')}
-                className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
-               />
-               <label>Provinciaal</label>
-              
-            </div>
-            <div className='w-[90px]'>
-              <input
-                type='radio'
-                name='filter'
-                value='Nationaal'
-                checked={local?.value === 'Nationaal'}
-                onChange={() => handleRadioButton('Nationaal')}
-                className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
-               />
-               <label>Nationaal</label>
-            </div>
+              <div className='mr-4 w-[60px]'>
+                <input
+                  type='radio'
+                  name='filter'
+                  value='alle'
+                  checked={local?.value === 'alle'}
+                  onChange={() => handleRadioButton('alle')}
+                  className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
+                />
+                <label>Alle</label>
+              </div>
+              <div className='mr-4 w-[115px]'>
+                <input
+                  type='radio'
+                  name='filter'
+                  value='Gemeentelijk'
+                  checked={local?.value === 'Gemeentelijk'}
+                  onChange={() => handleRadioButton('Gemeentelijk')}
+                  className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
+                />
+                <label>Gemeentelijk</label>
+              </div>
+              <div className='mr-4 w-[100px]'>
+                <input
+                  type='radio'
+                  name='filter'
+                  value='Provinciaal'
+                  checked={local?.value === 'Provinciaal'}
+                  onChange={() => handleRadioButton('Provinciaal')}
+                  className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
+                />
+                <label>Provinciaal</label>
+              </div>
+              <div className='w-[90px]'>
+                <input
+                  type='radio'
+                  name='filter'
+                  value='Nationaal'
+                  checked={local?.value === 'Nationaal'}
+                  onChange={() => handleRadioButton('Nationaal')}
+                  className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
+                />
+                <label>Nationaal</label>
+              </div>
             </div>
           </div>
 
           <div className='flex flex-col'>
             {selected === 'beleid' && props.transitionAgenda === 'bouw' && (
-              <>
-              {console.log(beleid)}
-                {beleidSubCategories.map((cat) => (
-                  <DisplayInstruments
-                    key={cat}
-                    category={beleid}
-                    subCategory={cat}
-                    filter={(instrument) => instrument?.beleidSubCategory?.includes(cat)}
-                  />
-                ))}
-              </>
+              <DisplayInstruments category={beleid} categoryName='beleid' />
             )}
-                <ul>
-            {selected === 'beleid' &&
-              props.transitionAgenda !== 'bouw' &&
-              beleid.map((instrument) => (
-                <ExpertisePageInstrument key = {instrument.titel} instrument = {instrument}/>
-              ))}
-              </ul>
-            {selected === 'inkoop' &&
-              inkoopSubCategories.map((cat) => (
-                <DisplayInstruments
-                  key={cat}
-                  category={inkoop}
-                  subCategory={cat}
-                  filter={(instrument) => instrument?.inkoopSubCategory?.includes(cat)}
-                />
-              ))}
-            {selected == 'grondpositie' &&
-              props.transitionAgenda === 'bouw' &&
-              grondpositieSubCategories.map((cat) => (
-                <DisplayInstruments
-                  key={cat}
-                  category={grondpositie}
-                  subCategory={cat}
-                  filter={(instrument) => instrument?.grondpositieSubCategory?.includes(cat)}
-                />
-              ))}
+            <ul>
+              {selected === 'beleid' &&
+                props.transitionAgenda !== 'bouw' &&
+                beleid.map((instrument) => (
+                  <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+                ))}
+            </ul>
+            {selected === 'inkoop' && (
+              <DisplayInstruments category={inkoop} categoryName='inkoop' />
+            )}
+            {selected == 'grondpositie' && props.transitionAgenda === 'bouw' && (
+              <DisplayInstruments category={grondpositie} categoryName='grondpositie' />
+            )}
             <ul className=''>
-            {selected === 'subsidie' &&
-              subsidie.map((instrument) => (
-                <ExpertisePageInstrument key = {instrument.titel} instrument = {instrument}/>
-              ))}
-              </ul>
-              <ul>
-            {selected === 'fiscaal' &&
-              fiscaal.map((instrument) => (
-                <ExpertisePageInstrument key = {instrument.titel} instrument = {instrument}/>
-              ))}
-              </ul>
+              {selected === 'subsidie' &&
+                subsidie.map((instrument) => (
+                  <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+                ))}
+            </ul>
+            <ul>
+              {selected === 'fiscaal' &&
+                fiscaal.map((instrument) => (
+                  <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+                ))}
+            </ul>
           </div>
         </div>
       </div>

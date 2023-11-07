@@ -20,7 +20,7 @@ const expertiseDataQuerie = `
 }
 `;
 
-export default function InfoPage({expertiseData}) {
+export default function InfoPage({ expertiseData }) {
   return (
     <Layout title='CircuLaw - Samenhang Matrassen'>
       <ExpertiseLayout
