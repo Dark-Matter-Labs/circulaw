@@ -261,7 +261,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
       value: value,
     });
   }
-  console.log(local.value)
+
   return (
     <>
       <div className='bg-gradient-to-t from-[#F8FAF8] to-[#F8FAF8]'>
