@@ -4,9 +4,9 @@ import Link from 'next/link'
 export default function ExpertisePageInstrument({instrument}) {
     return (
         <>
-       <li className='flex flex-row justify-between first:border-t-0 border-b hover:bg-green-100 hover:text-green-800 hover:cursor-pointer'>
+       <li className='flex flex-row justify-between first:border-t-0 border-b hover:bg-green-100 hover:text-green-800 hover:cursor-pointer hover:font-semibold'>
                   <Link href={`/measures/${instrument.slug}`} className='py-3'>
-                  <div className=' border-black basis-1/2 ml-3 overflow-hidden line-clamp-1 w-full'>{instrument.titel}</div>
+                  <div className=' border-black basis-1/2 ml-3 overflow-hidden w-full'>{instrument.titel}</div>
                   </Link>
                   <div className='flex flex-row items-center justify-between basis-1/2 mr-3 max-w-[413px]'>
                     <div className='w-[60px] mr-4'></div>
