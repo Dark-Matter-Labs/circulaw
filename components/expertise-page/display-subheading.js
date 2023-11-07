@@ -4,7 +4,7 @@ export default function DisplaySubHeading({ arr, subCat }) {
   return (
     <div>
       {arr?.length !== 0 && (
-        <div className='text-green-600 p-md font-semibold capitalize pl-3 py-3 bg-green-200'>
+        <div className='p-md font-semibold capitalize pl-3 py-3 bg-gray-200 flex items-center h-11 border-y border-y-gray-500 -mx-4 sm:'>
           {subCat}
         </div>
       )}

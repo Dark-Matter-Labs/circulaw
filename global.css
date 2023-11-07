@@ -78,7 +78,7 @@
     h5.mobile {
       @apply font-jakarta text-xxs font-bold leading-6;
     }
-    
+
   .p-xl {
     @apply font-jakarta text-3xl font-normal leading-14;
   }

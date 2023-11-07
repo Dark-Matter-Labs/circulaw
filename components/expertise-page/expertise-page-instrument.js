@@ -5,7 +5,7 @@ export default function ExpertisePageInstrument({ instrument }) {
     <>
       <Link href={`/measures/${instrument.slug}`} className=''>
         {/* DESKTOP */}
-        <li className='hidden sm:block flex flex-row first:border-t-0 border-b hover:bg-[#035E46] hover:bg-opacity-5  hover:text-green-800 hover:cursor-pointer hover:font-semibold'>
+        <li className='hidden sm:flex flex-row first:border-t-0 border-b hover:bg-[#035E46] hover:bg-opacity-5  hover:text-green-800 hover:cursor-pointer hover:font-semibold'>
           <div className='border-black basis-1/2 ml-3 overflow-hidden w-full py-3'>
             {instrument.titel}
           </div>

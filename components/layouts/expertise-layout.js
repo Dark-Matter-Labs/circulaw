@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
+import { ChevronUpIcon } from '@heroicons/react/outline';
 
 import OverviewPageHeader from '../overview-page-header';
 import DisplayInstruments from '../expertise-page/display-instruments';
 import ExpertisePageInstrument from '../expertise-page/expertise-page-instrument';
 import TabButton from '../expertise-page/tab-button';
+import { Disclosure } from '@headlessui/react';
 
 export default function ExpertiseLayout({ expertiseData, ...props }) {
   const [beleid, setBeleid] = useState([]);
@@ -259,7 +261,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
       value: value,
     });
   }
-
+  console.log(local.value)
   return (
     <>
       <div className='bg-gradient-to-t from-[#F8FAF8] to-[#F8FAF8]'>
@@ -360,11 +362,11 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   </p>
                 )}
               </div>
-              <div className='bg-grey-200 flex flex-ro items-center h-11 border-y border-y-grey-500'>
-                <div className='basis-1/2 ml-3'>
-                  <div className='p-md font-semibold'>Filters</div>
+              <div className='flex flex-ro items-center h-11'>
+                <div className='basis-1/2 ml-3 flex justify-end pr-3'>
+                  <div className='p-sm font-bold'>Filter op:</div>
                 </div>
-                <div className='basis-1/2 mr-3 flex flex-row items-center justify-between p-sm font-semibold max-w-[413px]'>
+                <div className='basis-1/2 mr-3 flex flex-row items-center justify-between p-sm font-medium max-w-[413px]'>
                   <div className='mr-4 w-[60px]'>
                     <input
                       type='radio'
@@ -446,7 +448,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           </div>
 
           {/* MOBILE */}
-          <div>
+          <div className='sm:hidden'>
             <div className='-mt-12 flex overflow-x-scroll snap-x snap-mandatory no-scrollbar sm:hidden -mx-4'>
               <div className='flex gap-x-2 h-12'>
                 <TabButton
@@ -537,10 +539,190 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             <div className='bg-gray-200 border-t border-gray-500 -mx-4 pb-8'>
               <div className='mx-4'>
                 <p className='p-md py-3'>Filter op overheidslaag:</p>
-                <div className='h-10 border rounded-cl border-green-600 bg-white'>gfi</div>
+                <div className='w-full min-w-[260px] pt-4 sm:pt-0'>
+                  {local.value === 'alle' && 
+                  <Disclosure>
+                    {({ open }) => (
+                      <>
+                        <Disclosure.Button
+                          className={`${
+                            open ? 'rounded-t-cl' : 'rounded-cl'
+                          } text-black bg-green-600 hover:text-green-600 flex justify-between items-center border border-green-600 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
+                        >
+                          <div
+                            className={`${
+                              open ? 'rounded-tl-cl' : 'rounded-l-cl'
+                            } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
+                          >
+                            <span className='inline text-left '>Alle</span>
+                          </div>
+                          <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
+                            <ChevronUpIcon
+                              className={`${
+                                open ? '' : 'rotate-180 transform'
+                              } h-5 w-5 text-white z-10`}
+                            />
+                          </div>
+                        </Disclosure.Button>
+                        <Disclosure.Panel>
+                          <Disclosure.Button as='div' onClick={() => handleRadioButton('National')}>
+                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <span className='block pl-3 truncate'>Nationaal</span>
+                              
+                            </div>
+                          </Disclosure.Button>
+                          <Disclosure.Button as='div' onClick={() => handleRadioButton('Provinciaal')}>
+                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <span className='block pl-3 truncate'>Provinciaal</span>
+                            </div>
+                          </Disclosure.Button>
+                          <Disclosure.Button as='div' onClick={() => handleRadioButton('Gemeentelijk')}>
+                            <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <span className='block pl-3 truncate'>Gemeentelijk</span>
+                            </div>
+                          </Disclosure.Button>
+                        </Disclosure.Panel>
+                      </>
+                    )}
+                  </Disclosure>}
+                  {local.value === 'National' && 
+                  <Disclosure>
+                    {({ open }) => (
+                      <>
+                        <Disclosure.Button
+                          className={`${
+                            open ? 'rounded-t-cl' : 'rounded-cl'
+                          } text-black bg-green-600 hover:text-green-600 flex justify-between items-center border border-green-600 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
+                        >
+                          <div
+                            className={`${
+                              open ? 'rounded-tl-cl' : 'rounded-l-cl'
+                            } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
+                          >
+                            <span className='inline text-left '>National</span>
+                          </div>
+                          <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
+                            <ChevronUpIcon
+                              className={`${
+                                open ? '' : 'rotate-180 transform'
+                              } h-5 w-5 text-white z-10`}
+                            />
+                          </div>
+                        </Disclosure.Button>
+                        <Disclosure.Panel>
+                          <Disclosure.Button as='div' onClick={() => handleRadioButton('alle')}>
+                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <span className='block pl-3 truncate'>Alle</span>
+                              
+                            </div>
+                          </Disclosure.Button>
+                          <Disclosure.Button as='div' onClick={() => handleRadioButton('Provinciaal')}>
+                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <span className='block pl-3 truncate'>Provinciaal</span>
+                            </div>
+                          </Disclosure.Button>
+                          <Disclosure.Button as='div' onClick={() => handleRadioButton('Gemeentelijk')}>
+                            <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <span className='block pl-3 truncate'>Gemeentelijk</span>
+                            </div>
+                          </Disclosure.Button>
+                        </Disclosure.Panel>
+                      </>
+                    )}
+                  </Disclosure>}
+                  {local.value === 'Provinciaal' && 
+                  <Disclosure>
+                    {({ open }) => (
+                      <>
+                        <Disclosure.Button
+                          className={`${
+                            open ? 'rounded-t-cl' : 'rounded-cl'
+                          } text-black bg-green-600 hover:text-green-600 flex justify-between items-center border border-green-600 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
+                        >
+                          <div
+                            className={`${
+                              open ? 'rounded-tl-cl' : 'rounded-l-cl'
+                            } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
+                          >
+                            <span className='inline text-left '>Provinciaal</span>
+                          </div>
+                          <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
+                            <ChevronUpIcon
+                              className={`${
+                                open ? '' : 'rotate-180 transform'
+                              } h-5 w-5 text-white z-10`}
+                            />
+                          </div>
+                        </Disclosure.Button>
+                        <Disclosure.Panel>
+                          <Disclosure.Button as='div' onClick={() => handleRadioButton('alle')}>
+                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <span className='block pl-3 truncate'>Alle</span>
+                              
+                            </div>
+                          </Disclosure.Button>
+                          <Disclosure.Button as='div' onClick={() => handleRadioButton('National')}>
+                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <span className='block pl-3 truncate'>National</span>
+                            </div>
+                          </Disclosure.Button>
+                          <Disclosure.Button as='div' onClick={() => handleRadioButton('Gemeentelijk')}>
+                            <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <span className='block pl-3 truncate'>Gemeentelijk</span>
+                            </div>
+                          </Disclosure.Button>
+                        </Disclosure.Panel>
+                      </>
+                    )}
+                  </Disclosure>}
+                  {local.value === 'Gemeentelijk' && 
+                  <Disclosure>
+                    {({ open }) => (
+                      <>
+                        <Disclosure.Button
+                          className={`${
+                            open ? 'rounded-t-cl' : 'rounded-cl'
+                          } text-black bg-green-600 hover:text-green-600 flex justify-between items-center border border-green-600 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
+                        >
+                          <div
+                            className={`${
+                              open ? 'rounded-tl-cl' : 'rounded-l-cl'
+                            } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
+                          >
+                            <span className='inline text-left '>Gemeentelijk</span>
+                          </div>
+                          <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
+                            <ChevronUpIcon
+                              className={`${
+                                open ? '' : 'rotate-180 transform'
+                              } h-5 w-5 text-white z-10`}
+                            />
+                          </div>
+                        </Disclosure.Button>
+                        <Disclosure.Panel>
+                          <Disclosure.Button as='div' onClick={() => handleRadioButton('alle')}>
+                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <span className='block pl-3 truncate'>Alle</span>
+                              
+                            </div>
+                          </Disclosure.Button>
+                          <Disclosure.Button as='div' onClick={() => handleRadioButton('National')}>
+                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <span className='block pl-3 truncate'>National</span>
+                            </div>
+                          </Disclosure.Button>
+                          <Disclosure.Button as='div' onClick={() => handleRadioButton('Provinciaal')}>
+                            <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <span className='block pl-3 truncate'>Provinciaal</span>
+                            </div>
+                          </Disclosure.Button>
+                        </Disclosure.Panel>
+                      </>
+                    )}
+                  </Disclosure>}
+                </div>
               </div>
             </div>
-
             <div className='flex flex-col'>
               {selected === 'beleid' && props.transitionAgenda === 'bouw' && (
                 <DisplayInstruments category={beleid} categoryName='beleid' />
