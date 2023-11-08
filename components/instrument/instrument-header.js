@@ -26,7 +26,7 @@ export default function Instrumentheader({ data }) {
               <SocialButtons title={data?.measure?.titel} viewport='desktop' />
             </div>
           </div>
-          <div className='sm:mb-11 mb-8 sm:pl-8 h-auto'>
+          <div className='sm:mb-6 mb-6 sm:pl-8 h-auto'>
             <div className='w-full flex'>
               <Link
                 href={`/${data?.measure?.thema?.toLowerCase().replace(/ /g, '-')}`}
@@ -63,7 +63,7 @@ export default function Instrumentheader({ data }) {
               )}
             </div>
             <div className='max-w-4xl flex justify-start overflow-hidden'>
-              <h1 className='justify-self-start mobile sm:desktop lg:block mt-2 text-grey-100 pb-1'>
+              <h1 className='justify-self-start mobile sm:desktop lg:block mt-1 text-grey-100 pb-1'>
                 {data?.measure?.titel}
               </h1>
             </div>

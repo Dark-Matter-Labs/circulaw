@@ -276,7 +276,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           </div>
           </div>
           {/* DESKTOP */}
-          <div className='max-w-[880px] hidden sm:block pb-10 global-margin pl-8 2xl:ml-60'>
+          <div className='max-w-[880px] hidden sm:block pb-10 global-margin 2xl:ml-60'>
             <div className='flex flex-row gap-x-3 justify-start h-12 -mt-12 z-5 '>
               <TabButton
                 selected={selected}
@@ -365,7 +365,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
               </div>
               <div className='flex flex-ro items-center h-11'>
                 <div className='basis-1/2 ml-3 flex justify-end pr-3'>
-                  <div className='p-sm font-bold'>Filter op:</div>
+                  <div className='p-sm font-bold'>Toon:</div>
                 </div>
                 <div className='basis-1/2 mr-3 flex flex-row items-center justify-between p-sm font-medium max-w-[413px]'>
                   <div className='mr-4 w-[60px]'>
@@ -415,7 +415,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   </div>
                 </div>
               </div>
-
               <div className='flex flex-col'>
                 {selected === 'beleid' && props.transitionAgenda === 'bouw' && (
                   <DisplayInstruments category={beleid} categoryName='beleid' />
@@ -722,6 +721,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                       </>
                     )}
                   </Disclosure>}
+                  {console.log(local.value)}
                 </div>
               </div>
             </div>

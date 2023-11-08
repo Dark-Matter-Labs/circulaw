@@ -87,6 +87,10 @@
     @apply font-jakarta text-xl font-normal leading-11;
   }
 
+  .p-base {
+    @apply font-jakarta text-base font-normal leading-10
+  }
+
   .p-md {
     @apply font-jakarta text-base font-normal leading-9;
   }
