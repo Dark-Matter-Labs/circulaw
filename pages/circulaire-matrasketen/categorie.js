@@ -26,9 +26,9 @@ export default function InfoPage({ expertiseData }) {
       <ExpertiseLayout
         thema='circulaire-matrasketen'
         expertiseData={expertiseData}
-        title='Samenhang instrumenten circulaire matrassen'
+        title='Matrasketen instrumenten per categorie'
         icon={mattressIcon}
-        p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
+        // p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
       />
     </Layout>
   );

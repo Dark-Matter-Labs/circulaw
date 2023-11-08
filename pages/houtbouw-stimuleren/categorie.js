@@ -27,8 +27,8 @@ export default function InfoPage({ expertiseData }) {
         expertiseData={expertiseData}
         thema='houtbouw-stimuleren'
         transitionAgenda='bouw'
-        title='Samenhang instrumenten houtbouw'
-        p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
+        title='Houtbouw instrumenten per categorie'
+        // p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
       />
     </Layout>
   );

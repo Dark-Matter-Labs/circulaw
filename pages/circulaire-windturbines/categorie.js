@@ -27,9 +27,9 @@ export default function InfoPage({ expertiseData }) {
       <ExpertiseLayout
         thema='circulaire-windturbines'
         transitionAgenda=''
-        title='Samenhang instrumenten circulaire windturbines'
+        title='Circulaire windturbines instrumenten per categorie'
         icon={WindmillIcon}
-        p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
+       //  p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
         expertiseData={expertiseData}
       />
     </Layout>

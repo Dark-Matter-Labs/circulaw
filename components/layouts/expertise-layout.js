@@ -265,17 +265,18 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   return (
     <>
       <div className='bg-gradient-to-t from-[#F8FAF8] to-[#F8FAF8]'>
-        <div className='global-margin mt-8'>
+       
+        <div className='-mt-10'>
+        <div className='h-[310px] sm:h-[360px] bg-gradient-to-t from-[#042D36] to-[#22532200] bg-green-500 sm:mx-0'>
           <OverviewPageHeader props={props} page='samenhang' />
           <div className='grid grid-cols-1 sm:grid-cols-3 mt-10 sm:justify-items-end mb-10 sm:mb-0'>
             <div className='col-span-2'>
               <p className=' p-lg text-grey-800 pb-6'>{props.p1}</p>
             </div>
           </div>
-
-          <div className='h-[360px] bg-gradient-to-t from-[#042D36] to-[#22532200] bg-green-500 -mx-4 sm:mx-0'></div>
+          </div>
           {/* DESKTOP */}
-          <div className='max-w-[880px] hidden sm:block pb-10'>
+          <div className='max-w-[880px] hidden sm:block pb-10 global-margin pl-8 2xl:ml-64'>
             <div className='flex flex-row gap-x-3 justify-start h-12 -mt-12 z-5 '>
               <TabButton
                 selected={selected}
@@ -449,7 +450,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
 
           {/* MOBILE */}
           <div className='sm:hidden'>
-            <div className='-mt-12 flex overflow-x-scroll snap-x snap-mandatory no-scrollbar sm:hidden -mx-4'>
+            <div className='-mt-12 flex overflow-x-scroll snap-x snap-mandatory no-scrollbar sm:hidden'>
               <div className='flex gap-x-2 h-12'>
                 <TabButton
                   selected={selected}
@@ -504,7 +505,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 />
               </div>
             </div>
-            <div className='mt-5 mb-4'>
+            <div className='mt-5 mb-4 global-margin'>
               {selected === 'beleid' && (
                 <p className='p-md'>
                   BELEID Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
@@ -536,7 +537,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 </p>
               )}
             </div>
-            <div className='bg-gray-200 border-t border-gray-500 -mx-4 pb-8'>
+            <div className='bg-gray-200 border-t border-gray-500 pb-8'>
               <div className='mx-4'>
                 <p className='p-md py-3'>Filter op overheidslaag:</p>
                 <div className='w-full min-w-[260px] pt-4 sm:pt-0'>

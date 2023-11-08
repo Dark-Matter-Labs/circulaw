@@ -484,7 +484,7 @@ export default function MeasuresLayout({ ...props }) {
   });
 
   return (
-    <div className='global-margin'>
+    <div className=''>
       <div className='min-h-full z-50'>
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog as='div' className='relative z-40 lg:hidden' onClose={setSidebarOpen}>
@@ -621,17 +621,11 @@ export default function MeasuresLayout({ ...props }) {
         </Transition.Root>
       </div>
 
-      <div>
+      <div className='h-[310px] sm:h-[360px] bg-gradient-to-t from-[#042D36] to-[#22532200] bg-green-500 sm:mx-0'>
         <OverviewPageHeader props={props} page='list' />
-        <div className='hidden sm:block max-w-3xl pt-2 mb-2 sm:mb-20'>
-          <p className='p-lg'>
-            {props.introPara}
-            <br />
-          </p>
-        </div>
       </div>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20 lg:border-b lg:border-grey-500'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20 lg:border-b lg:border-grey-500 global-margin mt-4'>
         <div className='hidden lg:block mb-6 self-end'>
           <h3 className='mobile sm:desktop inline text-grey-800'>Filter op:</h3>{' '}
           <span
@@ -794,7 +788,7 @@ export default function MeasuresLayout({ ...props }) {
           </div>
         </div>
       </div>
-      <div className='lg:hidden py-5 border-b border-grey-500'>
+      <div className='lg:hidden py-5 border-b border-grey-500 global-margin'>
         <button
           type='button'
           className='px-4 max-w-sm inline-flex items-center justify-center border-2 p-2 w-full border-grey-800 rounded-cl focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500 lg:hidden'
@@ -806,7 +800,7 @@ export default function MeasuresLayout({ ...props }) {
         </button>
       </div>
 
-      <div className='grid grid-cols-1 sm:grid-cols-4 md:gap-x-20'>
+      <div className='grid grid-cols-1 sm:grid-cols-4 md:gap-x-20 global-margin'>
         <div className='hidden lg:block pr-3 py-3 my-4'>
           <SearchFilter
             ref={wettelijkFilterRef}

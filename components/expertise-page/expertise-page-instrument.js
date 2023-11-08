@@ -29,7 +29,7 @@ export default function ExpertisePageInstrument({ instrument }) {
           </div>
         </li>
         {/* MOBILE */}
-        <li className='sm:hidden border-b -mx-4 py-2'>
+        <li className='sm:hidden border-b py-2'>
           <div className='p-md mx-4 pb-2'>{instrument.titel}</div>
           <div className='flex flex-row mx-4'>
             {instrument.overheidslaag.map((lev) => (
