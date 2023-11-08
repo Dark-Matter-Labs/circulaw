@@ -276,7 +276,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           </div>
           </div>
           {/* DESKTOP */}
-          <div className='max-w-[880px] hidden sm:block pb-10 global-margin pl-8 2xl:ml-64'>
+          <div className='max-w-[880px] hidden sm:block pb-10 global-margin pl-8 2xl:ml-60'>
             <div className='flex flex-row gap-x-3 justify-start h-12 -mt-12 z-5 '>
               <TabButton
                 selected={selected}
