@@ -264,7 +264,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
 
   return (
     <>
-      <div className='bg-gradient-to-t from-[#F8FAF8] to-[#F8FAF8]'>
+      <div className='sm:bg-gradient-to-t sm:from-[#F8FAF8] sm:to-[#F8FAF8]'>
        
         <div className='-mt-10'>
         <div className='h-[310px] sm:h-[360px] bg-gradient-to-t from-[#042D36] to-[#22532200] bg-green-500 sm:mx-0'>
@@ -375,20 +375,20 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                       value='alle'
                       checked={local?.value === 'alle'}
                       onChange={() => handleRadioButton('alle')}
-                      className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
+                      className='mr-2 text-black border-black border-2 h-4 w-4 focus:ring-black focus:ring-2 cursor-pointer bg-none'
                     />
                     <label>Alle</label>
                   </div>
-                  <div className='mr-4 w-[115px]'>
+                  <div className='mr-4 w-[90px]'>
                     <input
                       type='radio'
                       name='filter'
-                      value='Gemeentelijk'
-                      checked={local?.value === 'Gemeentelijk'}
-                      onChange={() => handleRadioButton('Gemeentelijk')}
-                      className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
+                      value='Nationaal'
+                      checked={local?.value === 'Nationaal'}
+                      onChange={() => handleRadioButton('Nationaal')}
+                      className='mr-2 text-green-600 border-black border-2 h-4 w-4 focus:ring-green-600 focus:ring-2 cursor-pointer bg-none'
                     />
-                    <label>Gemeentelijk</label>
+                    <label>Nationaal</label>
                   </div>
                   <div className='mr-4 w-[100px]'>
                     <input
@@ -401,16 +401,17 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                     />
                     <label>Provinciaal</label>
                   </div>
-                  <div className='w-[90px]'>
+                 
+                  <div className=' w-[115px]'>
                     <input
                       type='radio'
                       name='filter'
-                      value='Nationaal'
-                      checked={local?.value === 'Nationaal'}
-                      onChange={() => handleRadioButton('Nationaal')}
-                      className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
+                      value='Gemeentelijk'
+                      checked={local?.value === 'Gemeentelijk'}
+                      onChange={() => handleRadioButton('Gemeentelijk')}
+                      className='mr-2 text-green-200 border-black border-2 h-4 w-4 focus:ring-green-200 focus:ring-2 cursor-pointer bg-none'
                     />
-                    <label>Nationaal</label>
+                    <label>Gemeentelijk</label>
                   </div>
                 </div>
               </div>

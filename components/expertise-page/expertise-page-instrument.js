@@ -11,7 +11,7 @@ export default function ExpertisePageInstrument({ instrument }) {
           </div>
           <div className='flex flex-row items-center justify-between basis-1/2 mr-3 max-w-[413px]'>
             <div className='w-[60px] mr-4'></div>
-            <div className='w-[115px] mr-4'>
+            <div className='w-[90px] mr-4'>
               {instrument.overheidslaag.includes('Gemeentelijk') && (
                 <div className='h-4 w-4 bg-green-600 rounded-full'></div>
               )}
@@ -21,7 +21,7 @@ export default function ExpertisePageInstrument({ instrument }) {
                 <div className='h-4 w-4 bg-green-400 rounded-full'></div>
               )}
             </div>
-            <div className='w-[90px]'>
+            <div className='w-[115px]'>
               {instrument.overheidslaag.includes('Nationaal') && (
                 <div className='h-4 w-4 bg-green-200 rounded-full'></div>
               )}

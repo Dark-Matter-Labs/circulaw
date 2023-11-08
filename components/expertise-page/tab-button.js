@@ -20,9 +20,9 @@ export default function TabButton({
         >
           <h3 className='mobile sm:desktop pr-1 first-letter:capitalize'>{name}</h3>{' '}
           {transitionAgenda === 'bouw' ? (
-            <h5 className='mobile sm:desktop inline-block'>({numInstrument})</h5>
+            <h5 className='mobile sm:desktop inline-block min-w-[24px]'>({numInstrument})</h5>
           ) : (
-            <h5 className='mobile sm:desktop inline-block'>({numInstruments2})</h5>
+            <h5 className='mobile sm:desktop inline-block min-w-[24px]'>({numInstruments2})</h5>
           )}
         </button>
       )}
@@ -37,7 +37,7 @@ export default function TabButton({
           }  p-3 rounded-t-cl flex flex-row items-baseline`}
         >
           <h3 className='mobile sm:desktop pr-1 first-letter:capitalize'>{name}</h3>{' '}
-          <h5 className='mobile sm:desktop inline-block'>({numInstrument})</h5>
+          <h5 className='mobile sm:desktop inline-block min-w-[24px]'>({numInstrument})</h5>
         </button>
       )}
     </>

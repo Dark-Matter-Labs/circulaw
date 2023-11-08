@@ -451,7 +451,7 @@ export default function WelkeLayout({ ...props }) {
       </div>
 
       {/* TEXT COMPONENT */}
-      <div className='global-margin mb-20'>
+      <div className='global-margin mb-20 mt-4'>
         <div className='max-w-3xl mx-auto'>
           <p className=' p-lg text-grey-800 pb-6'>{props.p1}</p>
           {props.p2 !== '' && <p className=' p-lg text-grey-800 pb-6'>{props.p2}</p>}
