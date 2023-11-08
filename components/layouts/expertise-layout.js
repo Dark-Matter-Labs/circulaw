@@ -331,7 +331,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
               />
             </div>
             <div className='bg-white'>
-              <div className='py-6'>
+              <div className='py-6 ml-3'>
                 {selected === 'beleid' && (
                   <p className='p-md'>
                     BELEID Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
