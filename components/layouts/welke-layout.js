@@ -47,10 +47,12 @@ export default function WelkeLayout({ ...props }) {
 
   return (
     <div onLoad={useXarrow()}>
-      <div className='global-margin mt-8'>
+      <div className=''>
+        <div className='h-[310px] sm:h-[360px] bg-gradient-to-t from-[#042D36] to-[#22532200] bg-green-500 sm:mx-0'>
         <OverviewPageHeader props={props} page='welke' />
+        </div>
         {/* DYNAMIC IMAGE */}
-        <div className='mb-20 mt-5 sm:mt-20 hidden sm:block'>
+        <div className='mb-20 mt-5 sm:mt-20 hidden sm:block global-margin '>
           <div className='flex grid-cols-3 items-start 2xl:justify-center'>
             {/* LEFT HAND SIDE */}
             <div className='grid col-span-1 items-start justify-center h-full w-80 mt-10'>
@@ -449,7 +451,7 @@ export default function WelkeLayout({ ...props }) {
       </div>
 
       {/* TEXT COMPONENT */}
-      <div className='global-margin mb-20'>
+      <div className='global-margin mb-20 mt-4'>
         <div className='max-w-3xl mx-auto'>
           <p className=' p-lg text-grey-800 pb-6'>{props.p1}</p>
           {props.p2 !== '' && <p className=' p-lg text-grey-800 pb-6'>{props.p2}</p>}

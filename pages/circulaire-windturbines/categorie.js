@@ -1,5 +1,5 @@
 import Layout from '../../components/layouts/layout';
-import SamenhangLayout from '../../components/layouts/samenhang-layout';
+import ExpertiseLayout from '../../components/layouts/expertise-layout';
 import WindmillIcon from '../../public/icons/windmill.png';
 import { client } from '../../lib/sanity';
 
@@ -16,18 +16,20 @@ const expertiseDataQuerie = `
   grondpositieSubCategory,
   subsidie,
   fiscaal,
+  "slug": slug.current,
+
 }
 `;
 
 export default function InfoPage({ expertiseData }) {
   return (
     <Layout title='CircuLaw - Samenhang Matrassen'>
-      <SamenhangLayout
+      <ExpertiseLayout
         thema='circulaire-windturbines'
         transitionAgenda=''
-        title='Samenhang instrumenten circulaire windturbines'
+        title='Circulaire windturbines instrumenten per categorie'
         icon={WindmillIcon}
-        p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
+       //  p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
         expertiseData={expertiseData}
       />
     </Layout>

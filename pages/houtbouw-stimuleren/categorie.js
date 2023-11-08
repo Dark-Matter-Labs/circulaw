@@ -1,5 +1,5 @@
 import Layout from '../../components/layouts/layout';
-import SamenhangLayout from '../../components/layouts/samenhang-layout';
+import ExpertiseLayout from '../../components/layouts/expertise-layout';
 import { client } from '../../lib/sanity';
 
 const expertiseDataQuerie = `
@@ -15,18 +15,20 @@ const expertiseDataQuerie = `
   grondpositieSubCategory,
   subsidie,
   fiscaal,
+  "slug": slug.current,
+
 }
 `;
 
 export default function InfoPage({ expertiseData }) {
   return (
     <Layout title='CircuLaw - Samenhang Aantal Houtbouwmaatregelen'>
-      <SamenhangLayout
+      <ExpertiseLayout
         expertiseData={expertiseData}
         thema='houtbouw-stimuleren'
         transitionAgenda='bouw'
-        title='Samenhang instrumenten houtbouw'
-        p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
+        title='Houtbouw instrumenten per categorie'
+        // p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
       />
     </Layout>
   );

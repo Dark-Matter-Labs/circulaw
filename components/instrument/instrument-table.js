@@ -46,8 +46,8 @@ export default function InstrumentTable({ data }) {
                     rel='noreferrer'
                   >
                     <span className='link-interaction'>
-                    {data?.measure?.artikel}
-                    <LinkIcon />
+                      {data?.measure?.artikel}
+                      <LinkIcon />
                     </span>
                   </a>
                 </span>
