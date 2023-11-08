@@ -566,7 +566,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                           </div>
                         </Disclosure.Button>
                         <Disclosure.Panel>
-                          <Disclosure.Button as='div' onClick={() => handleRadioButton('National')}>
+                          <Disclosure.Button as='div' onClick={() => handleRadioButton('Nationaal')}>
                             <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
                               <span className='block pl-3 truncate'>Nationaal</span>
                               
@@ -586,7 +586,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                       </>
                     )}
                   </Disclosure>}
-                  {local.value === 'National' && 
+                  {local.value === 'Nationaal' && 
                   <Disclosure>
                     {({ open }) => (
                       <>
@@ -600,7 +600,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               open ? 'rounded-tl-cl' : 'rounded-l-cl'
                             } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
                           >
-                            <span className='inline text-left '>National</span>
+                            <span className='inline text-left '>Nationaal</span>
                           </div>
                           <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
                             <ChevronUpIcon
@@ -662,9 +662,9 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               
                             </div>
                           </Disclosure.Button>
-                          <Disclosure.Button as='div' onClick={() => handleRadioButton('National')}>
+                          <Disclosure.Button as='div' onClick={() => handleRadioButton('Nationaal')}>
                             <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
-                              <span className='block pl-3 truncate'>National</span>
+                              <span className='block pl-3 truncate'>Nationaal</span>
                             </div>
                           </Disclosure.Button>
                           <Disclosure.Button as='div' onClick={() => handleRadioButton('Gemeentelijk')}>
@@ -707,9 +707,9 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               
                             </div>
                           </Disclosure.Button>
-                          <Disclosure.Button as='div' onClick={() => handleRadioButton('National')}>
+                          <Disclosure.Button as='div' onClick={() => handleRadioButton('Nationaal')}>
                             <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
-                              <span className='block pl-3 truncate'>National</span>
+                              <span className='block pl-3 truncate'>Nationaal</span>
                             </div>
                           </Disclosure.Button>
                           <Disclosure.Button as='div' onClick={() => handleRadioButton('Provinciaal')}>
@@ -721,10 +721,11 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                       </>
                     )}
                   </Disclosure>}
-                  {console.log(local.value)}
                 </div>
               </div>
             </div>
+
+            {/* DISPLAY INSTRUMENTS */}
             <div className='flex flex-col'>
               {selected === 'beleid' && props.transitionAgenda === 'bouw' && (
                 <DisplayInstruments category={beleid} categoryName='beleid' />
