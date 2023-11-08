@@ -309,7 +309,7 @@ export default {
       name: 'artikelLink',
       type: 'url',
       description: 'De link naar een wetsartikel moet altijd beginnen met http of https.',
-      validation: (Rule) => Rule.required().uri({ scheme: ['http', 'https'] }),
+      validation: (Rule) => Rule.uri({ scheme: ['http', 'https'] }),
       group: 'meta-data',
     },
     {
