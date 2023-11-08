@@ -12,7 +12,7 @@ export default function Measures({ totalNumberOfLaws }) {
         title='Lijst van circulaire windturbines instrumenten'
         thema='circulaire-windturbines'
         heading='Instrumenten om de inzet en circulariteit van windturbines te bevorderen'
-        introPara={`We hebben ${totalNumberOfLaws} kansrijke instrumenten gevonden die je kunt inzetten als het gaat om circulaire windturbines. Met sommige van deze instrumenten is al praktijkervaring opgedaan, met andere nog niet. Ga aan de slag! Met jouw ervaringen help je anderen weer verder.`}
+        // introPara={`We hebben ${totalNumberOfLaws} kansrijke instrumenten gevonden die je kunt inzetten als het gaat om circulaire windturbines. Met sommige van deze instrumenten is al praktijkervaring opgedaan, met andere nog niet. Ga aan de slag! Met jouw ervaringen help je anderen weer verder.`}
         icon={WindmillIcon}
         searchTitle='Zoek in circulaire windturbines'
       />
