@@ -555,10 +555,10 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 </p>
               )}
             </div>
-            <div className='bg-gray-200 border-t border-gray-500 pb-8'>
+            <div className='pb-4'>
               <div className='mx-4'>
-                <p className='p-md py-3'>Filter op overheidslaag:</p>
-                <div className='w-full min-w-[260px] pt-4 sm:pt-0'>
+                <p className='p-md'>Toon:</p>
+                <div className='w-full min-w-[260px] pt-3'>
                   {local.value === 'alle' && 
                   <Disclosure>
                     {({ open }) => (
