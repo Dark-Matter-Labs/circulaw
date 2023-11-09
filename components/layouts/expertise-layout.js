@@ -269,14 +269,10 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
         <div className='-mt-10'>
           <div className='h-[310px] sm:h-[360px] bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 bg-green-600 sm:mx-0'>
             <OverviewPageHeader props={props} page='samenhang' />
-            <div className='grid grid-cols-1 sm:grid-cols-3 mt-10 sm:justify-items-end mb-10 sm:mb-0'>
-              <div className='col-span-2'>
-                <p className=' p-lg text-grey-800 pb-6'>{props.p1}</p>
-              </div>
-            </div>
           </div>
           {/* DESKTOP */}
-          <div className='max-w-[880px] hidden sm:block pb-10 global-margin 2xl:ml-60'>
+          <div className=' hidden sm:flex max-w-[1280px]  pb-10 global-margin'>
+            <div className='max-w-[880px] flex-col justify-start'>
             <div className='flex flex-row gap-x-3 justify-start h-12 sm:h-[52px] -mt-12 sm:-mt-[52px] z-5 '>
               <TabButton
                 selected={selected}
@@ -463,6 +459,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 </ul>
               </div>
             </div>
+          </div>   
           </div>
 
           {/* MOBILE */}
@@ -825,6 +822,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
               </ul>
             </div>
           </div>
+       
         </div>
       </div>
     </>

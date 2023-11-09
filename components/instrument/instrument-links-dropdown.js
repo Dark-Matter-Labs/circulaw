@@ -90,7 +90,7 @@ export default function InstrumentLinksDropdown({ page, type }) {
                   open ? 'rounded-tl-cl' : 'rounded-l-cl'
                 } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
               >
-                <span className='inline text-left '>Per categorie</span>
+                <span className='inline text-left p-base-bold text-green-500'>Per categorie</span>
               </div>
               <div className='w-1/12 px-5 h-full pr-5 bg-green-500 grid items-center justify-center rounded-r-cl border border-green-500'>
                 <ChevronUpIcon
@@ -106,7 +106,7 @@ export default function InstrumentLinksDropdown({ page, type }) {
                 }}
               >
                 <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
-                  <span className='block pl-3 truncate'>In lijst met filters</span>
+                  <span className='block pl-3 truncate p-base'>In lijst met filters</span>
                 </div>
               </Popover.Button>
               <Popover.Button
@@ -116,7 +116,7 @@ export default function InstrumentLinksDropdown({ page, type }) {
                 }}
               >
                 <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
-                  <span className='block pl-3 truncate'>Per overheidsbevoegdheid</span>
+                  <span className='block pl-3 truncate p-base'>Per overheidsbevoegdheid</span>
                 </div>
               </Popover.Button>
             </Popover.Panel>
@@ -139,7 +139,7 @@ export default function InstrumentLinksDropdown({ page, type }) {
                   open ? 'rounded-tl-cl' : 'rounded-l-cl'
                 } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
               >
-                <span className='inline text-left '>Per overheidsbevoegdheid</span>
+                <span className='inline text-left p-base-bold text-green-500'>Per overheidsbevoegdheid</span>
               </div>
               <div className='w-1/12 px-5 h-full pr-5 bg-green-500 grid items-center justify-center rounded-r-cl border border-green-500 cursor-pointer'>
                 <ChevronUpIcon
@@ -155,7 +155,7 @@ export default function InstrumentLinksDropdown({ page, type }) {
                 }}
               >
                 <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
-                  <span className='block pl-3 truncate'>Per categorie</span>
+                  <span className='block pl-3 truncate p-base'>Per categorie</span>
                 </div>
               </Popover.Button>
               <Popover.Button
@@ -165,7 +165,7 @@ export default function InstrumentLinksDropdown({ page, type }) {
                 }}
               >
                 <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
-                  <span className='block pl-3 truncate'>In lijst met filters</span>
+                  <span className='block pl-3 truncate p-base'>In lijst met filters</span>
                 </div>
               </Popover.Button>
             </Popover.Panel>
