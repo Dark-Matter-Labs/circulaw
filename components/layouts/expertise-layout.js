@@ -382,16 +382,16 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                     />
                     <label className='p-2xs-semibold'>Alle</label>
                   </div>
-                  <div className='mr-4 w-[90px]'>
+                  <div className='mr-4 w-[115px]'>
                     <input
                       type='radio'
                       name='filter'
-                      value='Nationaal'
-                      checked={local?.value === 'Nationaal'}
-                      onChange={() => handleRadioButton('Nationaal')}
-                      className='mr-2 text-green-600 border-black border-2 h-4 w-4 focus:ring-green-600 focus:ring-2 cursor-pointer bg-none'
+                      value='Gemeentelijk'
+                      checked={local?.value === 'Gemeentelijk'}
+                      onChange={() => handleRadioButton('Gemeentelijk')}
+                      className='mr-2 text-green-200 border-black border-2 h-4 w-4 focus:ring-green-200 focus:ring-2 cursor-pointer bg-none'
                     />
-                    <label className='p-2xs-semibold'>Nationaal</label>
+                    <label className='p-2xs-semibold'>Gemeentelijk</label>
                   </div>
                   <div className='mr-4 w-[100px]'>
                     <input
@@ -405,16 +405,17 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                     <label className='p-2xs-semibold'>Provinciaal</label>
                   </div>
                  
-                  <div className=' w-[115px]'>
+                  
+                  <div className='w-[90px]'>
                     <input
                       type='radio'
                       name='filter'
-                      value='Gemeentelijk'
-                      checked={local?.value === 'Gemeentelijk'}
-                      onChange={() => handleRadioButton('Gemeentelijk')}
-                      className='mr-2 text-green-200 border-black border-2 h-4 w-4 focus:ring-green-200 focus:ring-2 cursor-pointer bg-none'
+                      value='Nationaal'
+                      checked={local?.value === 'Nationaal'}
+                      onChange={() => handleRadioButton('Nationaal')}
+                      className='mr-2 text-green-600 border-black border-2 h-4 w-4 focus:ring-green-600 focus:ring-2 cursor-pointer bg-none'
                     />
-                    <label className='p-2xs-semibold'>Gemeentelijk</label>
+                    <label className='p-2xs-semibold'>Nationaal</label>
                   </div>
                 </div>
               </div>
