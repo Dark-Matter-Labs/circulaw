@@ -557,7 +557,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             </div>
             <div className='pb-4'>
               <div className='mx-4'>
-                <p className='p-md'>Toon:</p>
+                <p className='p-md'>Toon overheidslaag:</p>
                 <div className='w-full min-w-[260px] pt-3'>
                   {local.value === 'alle' && 
                   <Disclosure>
