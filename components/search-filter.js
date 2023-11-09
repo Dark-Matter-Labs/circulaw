@@ -95,7 +95,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                     id={`data-${data.value}-${data.id}`}
                     checked={checkedArray.indexOf(data.id) !== -1}
                     onChange={() => onChangeHandler(data.id)}
-                    className='border-grey-300 border-2 rounded-[3px]'
+                    className='border-grey-300 border-2 rounded-[3px] focus:ring-2 focus:ring-green-600'
                   />
                   <label
                     htmlFor={`data-${data.value}-${data.id}`}
