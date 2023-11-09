@@ -48,7 +48,7 @@ export default function WelkeLayout({ ...props }) {
   return (
     <div onLoad={useXarrow()}>
       <div className=''>
-        <div className='h-[310px] sm:h-[360px] bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 bg-green-600  sm:mx-0'>
+        <div className='h-[300px] sm:h-[360px] bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 bg-green-600  sm:mx-0'>
         <OverviewPageHeader props={props} page='welke' />
         </div>
         {/* DYNAMIC IMAGE */}

@@ -27,7 +27,7 @@ export default function OverviewPageHeader({ props, page }) {
         </div>
         <div className='items-center grid grid-cols-10'>
           <div className={`${router.pathname.includes('categorie') ? 'pb-[4.75rem]' : 'pb-6'} col-span-9`}>
-            <h1 className='p-3xl-semibold sm:p-7xl-bold text-white max-w-3xl pb-1'>{props.title}</h1>
+            <h1 className='p-3xl-semibold sm:p-7xl-bold text-white max-w-5xl pb-1'>{props.title}</h1>
             {props.introPara && 
             <div className='hidden sm:block max-w-3xl pt-2'>
               <p className='p-lg text-white'>
