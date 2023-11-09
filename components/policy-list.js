@@ -15,31 +15,31 @@ export default function PolicyList(props) {
             <div className='flex justify-start items-center -ml-1'>
               {/* Expertise Tag */}
               {law?.beleid === true && (
-                <Tag bgColor='bg-green-500'>
+                <Tag classes='bg-green-500 text-gray-100'>
                     Beleid  
                 </Tag>
                
               )}
               {law?.inkoop === true && (
-                <Tag bgColor='bg-green-500'>
+                <Tag classes='bg-green-500 text-gray-100'>
                 Inkoop  
                 </Tag>
               )}
               {law?.grondpositie === true && (
-                    <Tag bgColor='bg-green-500'>
+                    <Tag classes='bg-green-500 text-gray-100'>
                     Grondpositie  
                     </Tag>
                 
               )}
               {law?.subsidie === true && (
              
-                 <Tag bgColor='bg-green-500'>
+                 <Tag classes='bg-green-500 text-gray-100'>
                  Subsidie  
                  </Tag>
               )}
               {law?.fiscaal === true && (
               
-                 <Tag bgColor='bg-green-500'>
+                 <Tag classes='bg-green-500 text-gray-100'>
                  Fiscaal  
                  </Tag>
               )}

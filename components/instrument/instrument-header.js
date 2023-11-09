@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
 import SocialButtons from '../social-buttons';
 import InstrumentMetaData from './instrument-metadata';
+import Tag from '../tag';
 
 export default function Instrumentheader({ data }) {
   const router = useRouter();
@@ -32,34 +33,35 @@ export default function Instrumentheader({ data }) {
                 href={`/${data?.measure?.thema?.toLowerCase().replace(/ /g, '-')}`}
                 className=''
               >
-                <h5 className='mobile sm:desktop first-letter:uppercase border rounded-[5px] py-0.5 px-2 border-grey-100 hover:border-green-200 active:border-green-400 text-grey-100 mr-2 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>
+                <Tag classes='border border-grey-100 hover:border-green-200 active:border-green-400 text-grey-100 mr-2 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>   
                   {data?.measure?.thema.replace('-', ' ')}
-                </h5>
+                  </Tag>
               </Link>
+
               {data?.measure?.beleid === true && (
-                <h5 className='mobile sm:desktop  px-2  rounded-[5px] flex items-center mr-2 bg-green-300 border border-green-300 text-grey-100'>
-                  Beleid
-                </h5>
+               <Tag classes='bg-green-300 text-green-800'>
+                    Beleid  
+                </Tag>
               )}
               {data?.measure?.inkoop === true && (
-                <h5 className='mobile sm:desktop bg-green-300 border border-green-300 text-grey-100 px-2 py-0.5 rounded-[5px] flex items-center mr-2'>
-                  Inkoop
-                </h5>
+                <Tag classes='bg-green-300 text-green-800'>
+                Inkoop  
+                </Tag>
               )}
               {data?.measure?.grondpositie === true && (
-                <h5 className='mobile sm:desktop bg-green-300 border border-green-300 text-grey-100 px-2 py-0.5 rounded-[5px] p-xsm flex items-center mr-2'>
-                  Grondpositie
-                </h5>
+                <Tag classes='bg-green-300 text-green-800'>
+                Grondpositie  
+                </Tag>
               )}
               {data?.measure?.subsidie === true && (
-                <h5 className='mobile sm:desktop bg-green-300 border border-green-300 text-grey-100 px-2 h-6 rounded-[5px] p-xsm flex items-center mr-2'>
-                  Subsidie
-                </h5>
+              <Tag classes='bg-green-300 text-green-800'>
+              Subsidie  
+              </Tag>
               )}
               {data?.measure?.fiscaal === true && (
-                <h5 className='mobile sm:desktop bg-green-300 border border-green-300 text-grey-100 px-2 h-6 rounded-[5px] p-xsm flex items-center'>
-                  Fiscaal
-                </h5>
+               <Tag classes='bg-green-300 text-green-800'>
+               Fiscaal  
+               </Tag>
               )}
             </div>
             <div className='max-w-4xl flex justify-start overflow-hidden'>
