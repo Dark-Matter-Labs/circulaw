@@ -91,6 +91,10 @@
     @apply font-jakarta text-base font-normal leading-10
   }
 
+  .p-base-semibold {
+    @apply font-jakarta text-base font-semibold leading-10
+  }
+
   .p-md {
     @apply font-jakarta text-base font-normal leading-9;
   }
