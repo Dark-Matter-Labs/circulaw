@@ -368,9 +368,9 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
               </div>
               <div className='flex flex-ro items-center h-11'>
                 <div className='basis-1/2 ml-3 flex justify-end pr-3'>
-                  <div className='p-sm font-bold'>Toon:</div>
+                  <div className='p-xs font-bold'>Toon:</div>
                 </div>
-                <div className='basis-1/2 mr-3 flex flex-row items-center justify-between p-sm font-medium max-w-[413px]'>
+                <div className='basis-1/2 mr-3 flex flex-row items-center justify-between p-xs font-medium max-w-[413px]'>
                   <div className='mr-4 w-[60px]'>
                     <input
                       type='radio'

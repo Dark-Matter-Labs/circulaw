@@ -99,7 +99,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                   />
                   <label
                     htmlFor={`data-${data.value}-${data.id}`}
-                    className='select-none popup-sm pl-2 text-grey-800'
+                    className='select-none popup-xs pl-2 text-grey-800'
                   >
                     <span className=''>{data.name}</span>
                   </label>
@@ -119,7 +119,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                   />
                   <label
                     htmlFor={`data-${data.value}-${data.id}`}
-                    className='select-none popup-sm text-grey-500 pl-2'
+                    className='select-none popup-xs text-grey-500 pl-2'
                   >
                     <span>{data.name}</span>
                   </label>

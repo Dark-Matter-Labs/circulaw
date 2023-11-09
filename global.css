@@ -99,7 +99,7 @@
     @apply font-jakarta text-base font-normal leading-9;
   }
 
-  .p-sm {
+  .p-xs {
     @apply font-jakarta text-xs font-normal leading-8;
   }
 
@@ -140,7 +140,7 @@
     @apply font-jakarta text-base font-medium leading-8;
   }
 
-  .popup-sm {
+  .popup-xs {
     @apply font-jakarta text-xs font-medium leading-6;
   }
 

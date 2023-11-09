@@ -94,7 +94,7 @@ export default function Partners({ footerText }) {
         )}
         <hr className='border-grey-100 ' />
         <div className='text-center py-2'>
-          <span className='text-grey-100 p-sm'>Legal data & content managed with support from</span>
+          <span className='text-grey-100 p-xs'>Legal data & content managed with support from</span>
           <a target='_blank' href='https://www.sanity.io/' rel='noopener noreferrer'>
             <Image className='inline mx-2 my-2' src={sanityLogo} alt='Sanity logo' />
           </a>

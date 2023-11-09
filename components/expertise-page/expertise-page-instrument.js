@@ -33,7 +33,7 @@ export default function ExpertisePageInstrument({ instrument }) {
           <div className='p-md mx-4 pb-2'>{instrument.titel}</div>
           <div className='flex flex-row mx-4'>
             {instrument.overheidslaag.map((lev) => (
-              <div key={lev} className='p-sm font-semibold text-green-500'>
+              <div key={lev} className='p-xs font-semibold text-green-500'>
                 {lev}&nbsp; {instrument.overheidslaag.slice(-1)[0] !== lev && <span>-&nbsp;</span>}
               </div>
             ))}

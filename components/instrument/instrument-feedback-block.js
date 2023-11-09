@@ -27,7 +27,7 @@ export default function InstrumentFeedbackBlock({ data }) {
             <div className='w-52 h-72 sm:w-56 sm:h-96 bg-grey-200 -translate-y-72 sm:-translate-y-96 -translate-x-44 sm:-translate-x-40 flex flex-col items-center'>
               <div className='px-6 py-4 sm:px-8 sm:py-6'>
                 <h4 className='mobile sm:desktop'>Deel met ons:</h4>
-                <ul className='pb-2 sm:pb-10 sm:pt-4 list-disc p-sm sm:p-md'>
+                <ul className='pb-2 sm:pb-10 sm:pt-4 list-disc p-xs sm:p-md'>
                   <li>voorbeelden uit jouw praktijk</li>
                   <li>je tips om toepassing makkelijker te maken</li>
                   <li>de ervaring van jou of andere organisaties met een soortgelijk instrument</li>
@@ -38,7 +38,7 @@ export default function InstrumentFeedbackBlock({ data }) {
                 href={{ pathname: '/feedback', query: { instrument: data?.measure?.titel } }}
               >
                 <CustomButton color='greenBackground'>
-                  <span className='p-sm font-bold sm:p-md'>Ik deel mijn kennis</span>
+                  <span className='p-xs font-bold sm:p-md'>Ik deel mijn kennis</span>
                 </CustomButton>
               </Link>
             </div>
