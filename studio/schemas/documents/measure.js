@@ -496,7 +496,10 @@ export default {
                     title: 'URL',
                     name: 'href',
                     type: 'url',
-                    validation: (Rule) => Rule.required().uri({ scheme: ['http', 'https'] }).warning('Url is incorrect'),
+                    validation: (Rule) =>
+                      Rule.required()
+                        .uri({ scheme: ['http', 'https'] })
+                        .warning('Url is incorrect'),
                   },
                   {
                     title: 'Open in new winder',

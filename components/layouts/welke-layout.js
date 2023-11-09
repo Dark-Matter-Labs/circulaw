@@ -49,7 +49,7 @@ export default function WelkeLayout({ ...props }) {
     <div onLoad={useXarrow()}>
       <div className=''>
         <div className='h-[300px] sm:h-[360px] bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 bg-green-600  sm:mx-0'>
-        <OverviewPageHeader props={props} page='welke' />
+          <OverviewPageHeader props={props} page='welke' />
         </div>
         {/* DYNAMIC IMAGE */}
         <div className='mb-20 mt-5 sm:mt-20 hidden sm:block global-margin '>

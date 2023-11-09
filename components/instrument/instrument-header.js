@@ -33,35 +33,25 @@ export default function Instrumentheader({ data }) {
                 href={`/${data?.measure?.thema?.toLowerCase().replace(/ /g, '-')}`}
                 className=''
               >
-                <Tag classes='border border-grey-100 hover:border-green-200 active:border-green-400 text-grey-100 mr-2 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>   
+                <Tag classes='border border-grey-100 hover:border-green-200 active:border-green-400 text-grey-100 mr-2 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>
                   {data?.measure?.thema.replace('-', ' ')}
                 </Tag>
               </Link>
 
               {data?.measure?.beleid === true && (
-               <Tag classes='bg-green-300 text-green-800'>
-                    Beleid  
-                </Tag>
+                <Tag classes='bg-green-300 text-green-800'>Beleid</Tag>
               )}
               {data?.measure?.inkoop === true && (
-                <Tag classes='bg-green-300 text-green-800'>
-                Inkoop  
-                </Tag>
+                <Tag classes='bg-green-300 text-green-800'>Inkoop</Tag>
               )}
               {data?.measure?.grondpositie === true && (
-                <Tag classes='bg-green-300 text-green-800'>
-                Grondpositie  
-                </Tag>
+                <Tag classes='bg-green-300 text-green-800'>Grondpositie</Tag>
               )}
               {data?.measure?.subsidie === true && (
-              <Tag classes='bg-green-300 text-green-800'>
-              Subsidie  
-              </Tag>
+                <Tag classes='bg-green-300 text-green-800'>Subsidie</Tag>
               )}
               {data?.measure?.fiscaal === true && (
-               <Tag classes='bg-green-300 text-green-800'>
-               Fiscaal  
-               </Tag>
+                <Tag classes='bg-green-300 text-green-800'>Fiscaal</Tag>
               )}
             </div>
             <div className='max-w-4xl flex justify-start overflow-hidden'>

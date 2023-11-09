@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
 export default function ExpertisePageInstrument({ instrument }) {
-
   return (
     <>
       <Link href={`/measures/${instrument.slug}`} className=''>
