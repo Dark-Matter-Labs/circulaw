@@ -171,7 +171,6 @@
     @apply font-jakarta text-base font-semibold leading-3;
   }
 
-
   .breadcrumb {
     @apply font-jakarta text-xs font-medium leading-5 uppercase;
   }

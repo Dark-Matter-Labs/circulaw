@@ -21,7 +21,7 @@ export default function OverviewPageHeader({ props, page }) {
             </Link>
           </div>
           <div className='block sm:float-right py-3 sm:py-0'>
-            <div className='p-md text-white pb-2 hidden sm:block'>Bekijk de instrumenten:</div>
+            <div className='p-base text-white pb-2 hidden sm:block'>Bekijk de instrumenten:</div>
             <InstrumentLinksDropdown type={props.thema} page={page} />
           </div>
         </div>
