@@ -36,7 +36,6 @@ export default function ExpertisePageInstrument({ instrument }) {
             {instrument?.overheidslaag?.reverse().map((lev) => (
               <div key={lev} className='p-xs-semibold text-green-500'>
                 {lev}&nbsp; {instrument.overheidslaag.slice(-1)[0] !== lev && <span>-&nbsp;</span>}
-                {console.log(instrument?.overheidslaag.reverse())}
               </div>
             ))}
           </div>
