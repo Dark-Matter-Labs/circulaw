@@ -111,6 +111,10 @@
     @apply font-jakarta text-xs font-normal leading-8;
   }
 
+  .p-xs-semibold {
+    @apply font-jakarta text-xs font-semibold leading-8;
+  }
+
   .p-2xs {
     @apply font-jakarta text-xxs font-normal leading-2;
   }
