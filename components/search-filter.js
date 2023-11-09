@@ -99,12 +99,12 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                   />
                   <label
                     htmlFor={`data-${data.value}-${data.id}`}
-                    className='select-none popup-xs pl-2 text-grey-800'
+                    className='select-none p-base pl-2 text-grey-800'
                   >
                     <span className=''>{data.name}</span>
                   </label>
                 </div>
-                <div className='table-base '>({filterNumbers[dataIdx]})</div>
+                <div className='p-base-semibold'>({filterNumbers[dataIdx]})</div>
               </>
             ) : (
               <>
@@ -119,12 +119,12 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                   />
                   <label
                     htmlFor={`data-${data.value}-${data.id}`}
-                    className='select-none popup-xs text-grey-500 pl-2'
+                    className='select-none p-base text-grey-500 pl-2'
                   >
                     <span>{data.name}</span>
                   </label>
                 </div>
-                <div className='table-base text-grey-500'>({filterNumbers[dataIdx]})</div>
+                <div className='p-base-semibold text-grey-500'>({filterNumbers[dataIdx]})</div>
               </>
             )}
           </div>
