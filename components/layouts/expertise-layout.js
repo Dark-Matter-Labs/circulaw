@@ -273,193 +273,193 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           {/* DESKTOP */}
           <div className=' hidden sm:flex max-w-[1280px]  pb-10 global-margin'>
             <div className='max-w-[880px] flex-col justify-start'>
-            <div className='flex flex-row gap-x-3 justify-start h-12 sm:h-[52px] -mt-12 sm:-mt-[52px] z-5 '>
-              <TabButton
-                selected={selected}
-                onClick={() => {
-                  setSelected('beleid');
-                  handleRadioButton('alle');
-                }}
-                numInstrument={numBeleid}
-                numInstruments2={numBeleidNotBouw}
-                transitionAgenda={props.transitionAgenda}
-                name='beleid'
-              />
-              <TabButton
-                selected={selected}
-                onClick={() => {
-                  setSelected('inkoop');
-                  handleRadioButton('alle');
-                }}
-                numInstrument={numInkoop}
-                transitionAgenda={props.transitionAgenda}
-                name='inkoop'
-              />
-              {props.thema !== 'circulaire-matrasketen' && (
+              <div className='flex flex-row gap-x-3 justify-start h-12 sm:h-[52px] -mt-12 sm:-mt-[52px] z-5 '>
                 <TabButton
                   selected={selected}
                   onClick={() => {
-                    setSelected('grondpositie');
+                    setSelected('beleid');
                     handleRadioButton('alle');
                   }}
-                  numInstrument={numGronposirie}
-                  numInstruments2={numGronposirieNotBouw}
+                  numInstrument={numBeleid}
+                  numInstruments2={numBeleidNotBouw}
                   transitionAgenda={props.transitionAgenda}
-                  name='grondpositie'
+                  name='beleid'
                 />
-              )}
-              <TabButton
-                selected={selected}
-                onClick={() => {
-                  setSelected('subsidie');
-                  handleRadioButton('alle');
-                }}
-                numInstrument={subsidie.length}
-                transitionAgenda={props.transitionAgenda}
-                name='subsidie'
-              />
-              <TabButton
-                selected={selected}
-                onClick={() => {
-                  setSelected('fiscaal');
-                  handleRadioButton('alle');
-                }}
-                numInstrument={fiscaal.length}
-                transitionAgenda={props.transitionAgenda}
-                name='fiscaal'
-              />
-            </div>
-            <div className='bg-white'>
-              <div className='py-6 ml-3'>
-                {selected === 'beleid' && (
-                  <p className='p-base'>
-                    BELEID Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
-                    bezit.
-                  </p>
+                <TabButton
+                  selected={selected}
+                  onClick={() => {
+                    setSelected('inkoop');
+                    handleRadioButton('alle');
+                  }}
+                  numInstrument={numInkoop}
+                  transitionAgenda={props.transitionAgenda}
+                  name='inkoop'
+                />
+                {props.thema !== 'circulaire-matrasketen' && (
+                  <TabButton
+                    selected={selected}
+                    onClick={() => {
+                      setSelected('grondpositie');
+                      handleRadioButton('alle');
+                    }}
+                    numInstrument={numGronposirie}
+                    numInstruments2={numGronposirieNotBouw}
+                    transitionAgenda={props.transitionAgenda}
+                    name='grondpositie'
+                  />
                 )}
-                {selected === 'inkoop' && (
-                  <p className='p-base'>
-                    INKOOP Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
-                    bezit.
-                  </p>
-                )}
-                {selected === 'grondpositie' && (
-                  <p className='p-base'>
-                    GRONDPOSITIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen
-                    grond bezit.
-                  </p>
-                )}
-                {selected === 'subsidie' && (
-                  <p className='p-base'>
-                    SUBSIDIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
-                    bezit.
-                  </p>
-                )}
-                {selected === 'fiscaal' && (
-                  <p className='p-base'>
-                    FISCAL Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
-                    bezit.
-                  </p>
-                )}
+                <TabButton
+                  selected={selected}
+                  onClick={() => {
+                    setSelected('subsidie');
+                    handleRadioButton('alle');
+                  }}
+                  numInstrument={subsidie.length}
+                  transitionAgenda={props.transitionAgenda}
+                  name='subsidie'
+                />
+                <TabButton
+                  selected={selected}
+                  onClick={() => {
+                    setSelected('fiscaal');
+                    handleRadioButton('alle');
+                  }}
+                  numInstrument={fiscaal.length}
+                  transitionAgenda={props.transitionAgenda}
+                  name='fiscaal'
+                />
               </div>
-              <div className='flex flex-ro items-center h-11'>
-                <div className='basis-1/2 ml-3 flex justify-end pr-3'>
-                  <div className='p-2xs-bold'>Toon:</div>
-                </div>
-                <div className='basis-1/2 mr-3 flex flex-row items-center justify-between p-xs font-medium max-w-[413px]'>
-                  <div className='mr-4 w-[60px]'>
-                    <input
-                      type='radio'
-                      name='filter'
-                      value='alle'
-                      checked={local?.value === 'alle'}
-                      onChange={() => handleRadioButton('alle')}
-                      className='mr-2 text-black border-black border-2 h-4 w-4 focus:ring-black focus:ring-2 cursor-pointer bg-none'
-                    />
-                    <label className='p-2xs-semibold'>Alle</label>
-                  </div>
-                  <div className='mr-4 w-[115px]'>
-                    <input
-                      type='radio'
-                      name='filter'
-                      value='Gemeentelijk'
-                      checked={local?.value === 'Gemeentelijk'}
-                      onChange={() => handleRadioButton('Gemeentelijk')}
-                      className='mr-2 text-green-200 border-black border-2 h-4 w-4 focus:ring-green-200 focus:ring-2 cursor-pointer bg-none'
-                    />
-                    <label className='p-2xs-semibold'>Gemeentelijk</label>
-                  </div>
-                  <div className='mr-4 w-[100px]'>
-                    <input
-                      type='radio'
-                      name='filter'
-                      value='Provinciaal'
-                      checked={local?.value === 'Provinciaal'}
-                      onChange={() => handleRadioButton('Provinciaal')}
-                      className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
-                    />
-                    <label className='p-2xs-semibold'>Provinciaal</label>
-                  </div>
-
-                  <div className='w-[90px]'>
-                    <input
-                      type='radio'
-                      name='filter'
-                      value='Nationaal'
-                      checked={local?.value === 'Nationaal'}
-                      onChange={() => handleRadioButton('Nationaal')}
-                      className='mr-2 text-green-600 border-black border-2 h-4 w-4 focus:ring-green-600 focus:ring-2 cursor-pointer bg-none'
-                    />
-                    <label className='p-2xs-semibold'>Nationaal</label>
-                  </div>
-                </div>
-              </div>
-              {/* DISPLAY INSTRUMENTS DESKTOP */}
-              <div className='flex flex-col'>
-                <ul>
-                  {selected === 'beleid' && props.transitionAgenda === 'bouw' && (
-                    <DisplayInstruments category={beleid} categoryName='beleid' />
+              <div className='bg-white'>
+                <div className='py-6 ml-3'>
+                  {selected === 'beleid' && (
+                    <p className='p-base'>
+                      BELEID Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
+                      bezit.
+                    </p>
                   )}
-                </ul>
-                <ul>
-                  {selected === 'beleid' &&
-                    props.transitionAgenda !== 'bouw' &&
-                    beleid.map((instrument) => (
-                      <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                    ))}
-                </ul>
-                <ul>
                   {selected === 'inkoop' && (
-                    <DisplayInstruments category={inkoop} categoryName='inkoop' />
+                    <p className='p-base'>
+                      INKOOP Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
+                      bezit.
+                    </p>
                   )}
-                </ul>
-                <ul>
-                  {selected == 'grondpositie' && props.transitionAgenda === 'bouw' && (
-                    <DisplayInstruments category={grondpositie} categoryName='grondpositie' />
+                  {selected === 'grondpositie' && (
+                    <p className='p-base'>
+                      GRONDPOSITIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen
+                      grond bezit.
+                    </p>
                   )}
-                </ul>
-                <ul>
-                  {selected === 'grondpositie' &&
-                    props.transitionAgenda !== 'bouw' &&
-                    grondpositie.map((instrument) => (
-                      <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                    ))}
-                </ul>
-                <ul className=''>
-                  {selected === 'subsidie' &&
-                    subsidie.map((instrument) => (
-                      <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                    ))}
-                </ul>
-                <ul>
-                  {selected === 'fiscaal' &&
-                    fiscaal.map((instrument) => (
-                      <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                    ))}
-                </ul>
+                  {selected === 'subsidie' && (
+                    <p className='p-base'>
+                      SUBSIDIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen
+                      grond bezit.
+                    </p>
+                  )}
+                  {selected === 'fiscaal' && (
+                    <p className='p-base'>
+                      FISCAL Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
+                      bezit.
+                    </p>
+                  )}
+                </div>
+                <div className='flex flex-ro items-center h-11'>
+                  <div className='basis-1/2 ml-3 flex justify-end pr-3'>
+                    <div className='p-2xs-bold'>Toon:</div>
+                  </div>
+                  <div className='basis-1/2 mr-3 flex flex-row items-center justify-between p-xs font-medium max-w-[413px]'>
+                    <div className='mr-4 w-[60px]'>
+                      <input
+                        type='radio'
+                        name='filter'
+                        value='alle'
+                        checked={local?.value === 'alle'}
+                        onChange={() => handleRadioButton('alle')}
+                        className='mr-2 text-black border-black border-2 h-4 w-4 focus:ring-black focus:ring-2 cursor-pointer bg-none'
+                      />
+                      <label className='p-2xs-semibold'>Alle</label>
+                    </div>
+                    <div className='mr-4 w-[115px]'>
+                      <input
+                        type='radio'
+                        name='filter'
+                        value='Gemeentelijk'
+                        checked={local?.value === 'Gemeentelijk'}
+                        onChange={() => handleRadioButton('Gemeentelijk')}
+                        className='mr-2 text-green-200 border-black border-2 h-4 w-4 focus:ring-green-200 focus:ring-2 cursor-pointer bg-none'
+                      />
+                      <label className='p-2xs-semibold'>Gemeentelijk</label>
+                    </div>
+                    <div className='mr-4 w-[100px]'>
+                      <input
+                        type='radio'
+                        name='filter'
+                        value='Provinciaal'
+                        checked={local?.value === 'Provinciaal'}
+                        onChange={() => handleRadioButton('Provinciaal')}
+                        className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
+                      />
+                      <label className='p-2xs-semibold'>Provinciaal</label>
+                    </div>
+
+                    <div className='w-[90px]'>
+                      <input
+                        type='radio'
+                        name='filter'
+                        value='Nationaal'
+                        checked={local?.value === 'Nationaal'}
+                        onChange={() => handleRadioButton('Nationaal')}
+                        className='mr-2 text-green-600 border-black border-2 h-4 w-4 focus:ring-green-600 focus:ring-2 cursor-pointer bg-none'
+                      />
+                      <label className='p-2xs-semibold'>Nationaal</label>
+                    </div>
+                  </div>
+                </div>
+                {/* DISPLAY INSTRUMENTS DESKTOP */}
+                <div className='flex flex-col'>
+                  <ul>
+                    {selected === 'beleid' && props.transitionAgenda === 'bouw' && (
+                      <DisplayInstruments category={beleid} categoryName='beleid' />
+                    )}
+                  </ul>
+                  <ul>
+                    {selected === 'beleid' &&
+                      props.transitionAgenda !== 'bouw' &&
+                      beleid.map((instrument) => (
+                        <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+                      ))}
+                  </ul>
+                  <ul>
+                    {selected === 'inkoop' && (
+                      <DisplayInstruments category={inkoop} categoryName='inkoop' />
+                    )}
+                  </ul>
+                  <ul>
+                    {selected == 'grondpositie' && props.transitionAgenda === 'bouw' && (
+                      <DisplayInstruments category={grondpositie} categoryName='grondpositie' />
+                    )}
+                  </ul>
+                  <ul>
+                    {selected === 'grondpositie' &&
+                      props.transitionAgenda !== 'bouw' &&
+                      grondpositie.map((instrument) => (
+                        <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+                      ))}
+                  </ul>
+                  <ul className=''>
+                    {selected === 'subsidie' &&
+                      subsidie.map((instrument) => (
+                        <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+                      ))}
+                  </ul>
+                  <ul>
+                    {selected === 'fiscaal' &&
+                      fiscaal.map((instrument) => (
+                        <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+                      ))}
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>   
           </div>
 
           {/* MOBILE */}
@@ -822,7 +822,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
               </ul>
             </div>
           </div>
-       
         </div>
       </div>
     </>
