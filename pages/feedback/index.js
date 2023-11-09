@@ -92,12 +92,12 @@ export default function Feedback() {
               <h1 className='mobile sm:desktop text-grey-800 pt-10 mobile sm:desktop'>
                 Met jouw hulp maken we CircuLaw beter
               </h1>
-              <p className='p-xl pt-8 max-w-3xl'>
+              <p className='p-3xl pt-8 max-w-3xl'>
                 Ook bezig met{' '}
                 <span className='font-semibold'>{`‘${router.query.instrument}’`}</span>?
               </p>
-              <p className='p-xl pt-4 max-w-3xl'>Deel met ons:</p>
-              <ul className='p-xl max-w-3xl'>
+              <p className='p-3xl pt-4 max-w-3xl'>Deel met ons:</p>
+              <ul className='p-3xl max-w-3xl'>
                 <li>- voorbeelden uit jouw praktijk</li>
                 <li>- voorbeelden uit jouw praktijk</li>
                 <li>- de ervaring van jou of andere organisaties met een soortgelijk instrument</li>

@@ -46,6 +46,7 @@ module.exports = {
         '8xl': '85px'
       },
       lineHeight: {
+        2: '14px',
         3: '15px',
         4: '16px',
         5: '19px',
@@ -78,9 +79,6 @@ module.exports = {
         'houtbouw-hero' : 'url("/hero-images/houtbouwHero.png")',
         'windmill-hero' : 'url("/hero-images/windmillHero.png")',
         'matrassen-hero' : 'url("/hero-images/matrassenHero.png")',
-        'list-card': 'url("/thema-card-background/list-bg.png")',
-        'samenhang-card': 'url("/thema-card-background/samenhang-bg.png")',
-        'waarvoor-card': 'url("/thema-card-background/waaroov-bg.png")',
         'en-background': 'url("/Background-en-page.png")',
         'en-header': 'url("/en-deco-header.png")',
         'about-header': 'url("/about-header.png")',

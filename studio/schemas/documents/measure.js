@@ -309,7 +309,7 @@ export default {
       name: 'artikelLink',
       type: 'url',
       description: 'De link naar een wetsartikel moet altijd beginnen met http of https.',
-      validation: (Rule) => Rule.required().uri({ scheme: ['http', 'https'] }),
+      validation: (Rule) => Rule.uri({ scheme: ['http', 'https'] }),
       group: 'meta-data',
     },
     {
@@ -496,13 +496,16 @@ export default {
                     title: 'URL',
                     name: 'href',
                     type: 'url',
-                    validation: (Rule) => Rule.required().uri({ scheme: ['http', 'https'] }),
+                    validation: (Rule) =>
+                      Rule.required()
+                        .uri({ scheme: ['http', 'https'] })
+                        .warning('Url is incorrect'),
                   },
                   {
                     title: 'Open in new winder',
                     name: 'blank',
                     type: 'boolean',
-                    validation: (Rule) => Rule.required(),
+                    validation: (Rule) => Rule.required().warning('open in new tab not selected'),
                   },
                 ],
               },

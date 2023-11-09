@@ -141,7 +141,7 @@ export default function Footer(props) {
                           </li>
                           {navigation.other.map((item) => (
                             <li key={item.name}>
-                              <a href={item.href} className=' p-md text-grey-100 link-interaction'>
+                              <a href={item.href} className=' p-md link-interaction-light-green-bg'>
                                 {item.name}
                               </a>
                             </li>

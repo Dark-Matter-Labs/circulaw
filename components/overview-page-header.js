@@ -25,17 +25,19 @@ export default function OverviewPageHeader({ props, page }) {
             </Link>
           </div>
           <div className='block sm:float-right py-3 sm:py-0'>
-            <div className='p-md text-white pb-2 hidden sm:block'>Bekijk de instrumenten:</div>
+            <div className='p-base text-white pb-2 hidden sm:block'>Bekijk de instrumenten:</div>
             <InstrumentLinksDropdown type={props.thema} page={page} />
           </div>
         </div>
         <div className='items-center grid grid-cols-10'>
           <div
             className={`${
-              router.pathname.includes('categorie') ? 'pb-20 sm:pb-24' : 'pb-8 sm:pb-12'
+              router.pathname.includes('categorie') ? 'pb-[4.75rem]' : 'pb-6'
             } col-span-9`}
           >
-            <h1 className='mobile sm:desktop text-white max-w-3xl'>{props.title}</h1>
+            <h1 className='p-3xl-semibold sm:p-7xl-bold text-white max-w-5xl pb-1'>
+              {props.title}
+            </h1>
             {props.introPara && (
               <div className='hidden sm:block max-w-3xl pt-2'>
                 <p className='p-lg text-white'>{props.introPara}</p>
