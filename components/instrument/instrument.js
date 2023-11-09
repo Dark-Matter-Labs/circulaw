@@ -13,7 +13,7 @@ export default function Instrument({ data }) {
         <InstrumentFeedbackBlock data={data} />
         <div className='global-margin sm:mt-4 z-0'>
           {/* Subtitle */}
-          <div className='grid grid-cols-1 sm:pl-8'>
+          <div className='grid grid-cols-1'>
             {data?.measure?.subtitel && (
               <div className='max-w-[760px]'>
                 <h2 className='lg:block p-lg sm:p-xl sm:mt-2'> {data?.measure?.subtitel}</h2>
@@ -21,7 +21,7 @@ export default function Instrument({ data }) {
             )}
           </div>
           {/* Content */}
-          <div className='grid grid-cols-1 sm:pl-8'>
+          <div className='grid grid-cols-1'>
             <div className='pb-20 max-w-[760px]'>
               <div className=''>
                 <PortableText value={data?.measure?.content} components={instrumentPTComponents} />

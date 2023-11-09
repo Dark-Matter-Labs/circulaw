@@ -12,7 +12,7 @@ export default function Instrumentheader({ data }) {
       {/* Not sticky */}
       <div className='sm:sticky -top-[277px] z-20 bg-gradient-to-b from-[#042D36] to-[#22532200] bg-green-500 pt-3'>
         <div className='h-auto sm:h-[360px] flex flex-col global-margin justify-between'>
-          <div className='max-w-[800px] sm:pl-8 pt-6 pb-6 sm:pb-0 flex justify-between items-center'>
+          <div className='max-w-[800px] pt-6 pb-6 sm:pb-0 flex justify-between items-center'>
             <button
               type='button'
               onClick={() => router.back()}
@@ -26,7 +26,7 @@ export default function Instrumentheader({ data }) {
               <SocialButtons title={data?.measure?.titel} viewport='desktop' />
             </div>
           </div>
-          <div className='mb-6 sm:pl-8 h-auto'>
+          <div className='mb-6 h-auto'>
             <div className='w-full flex'>
               <Link
                 href={`/${data?.measure?.thema?.toLowerCase().replace(/ /g, '-')}`}
@@ -72,7 +72,7 @@ export default function Instrumentheader({ data }) {
         {/* Metadata */}
         <div className='bg-grey-100 w-screen flex justify-items-start sm:border-b sm:border-gray-300'>
           <div className='global-margin w-full'>
-            <div className='grid grid-col-1 sm:pl-8 w-full max-w-4xl'>
+            <div className='grid grid-col-1 w-full max-w-4xl'>
               <InstrumentMetaData data={data} />
             </div>
           </div>
