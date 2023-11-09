@@ -131,9 +131,6 @@
     @apply font-jakarta text-base font-semibold leading-3;
   }
 
-  .table-sm {
-    @apply font-jakarta text-xs font-semibold leading-4;
-  }
 
   .breadcrumb {
     @apply font-jakarta text-xs font-medium leading-5 uppercase;
