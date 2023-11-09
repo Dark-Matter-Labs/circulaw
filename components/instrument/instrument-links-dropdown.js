@@ -1,8 +1,7 @@
 import { Popover } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
-import { Fragment } from 'react'
-
+import { Fragment } from 'react';
 
 const links = {
   'houtbouw-stimuleren': [

@@ -266,7 +266,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   return (
     <>
       <div className='sm:bg-gradient-to-t sm:from-[#F8FAF8] sm:to-[#F8FAF8]'>
-       
         <div className='-mt-10'>
         <div className='h-[310px] sm:h-[360px] bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 bg-green-600 sm:mx-0'>
           <OverviewPageHeader props={props} page='samenhang' />
