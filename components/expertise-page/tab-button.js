@@ -13,9 +13,9 @@ export default function TabButton({
           disabled={numInstrument === 0 && numInstruments2 === 0}
           onClick={onClick}
           className={`${
-            selected === name ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'
+            selected === name ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500 hover:bg-green-400'
           } ${
-            numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50' : ''
+            numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50 hover:bg-green-500' : ''
           }  p-3 rounded-t-cl flex flex-row items-baseline pb-2.5`}
         >
           <h3 className='mobile sm:desktop pr-1 first-letter:capitalize'>{name}</h3>{' '}
@@ -31,9 +31,9 @@ export default function TabButton({
           disabled={numInstrument === 0 && numInstruments2 === 0}
           onClick={onClick}
           className={`${
-            selected === name ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'
+            selected === name ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500 hover:bg-green-400'
           } ${
-            numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50' : ''
+            numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50 hover:bg-green-500' : ''
           }  p-3 rounded-t-cl flex flex-row items-baseline pb-2.5`}
         >
           <h3 className='mobile sm:desktop pr-1 first-letter:capitalize'>{name}</h3>{' '}
@@ -49,9 +49,9 @@ export default function TabButton({
           disabled={numInstrument === 0}
           onClick={onClick}
           className={`${
-            selected === name ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500'
+            selected === name ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500 hover:bg-green-400'
           } ${
-            numInstrument === 0 ? 'opacity-50' : ''
+            numInstrument === 0 ? 'opacity-50 hover:bg-green-500' : ''
           }  p-3 rounded-t-cl flex flex-row items-baseline pb-2.5`}
         >
           <h3 className='mobile sm:desktop pr-1 first-letter:capitalize'>{name}</h3>{' '}
