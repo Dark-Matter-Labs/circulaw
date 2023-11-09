@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { Fragment } from 'react';
 import InstrumentMetaData from './instrument/instrument-metadata';
+import Tag from './tag';
 
 export default function PolicyList(props) {
   let lawData = [];
@@ -12,32 +12,36 @@ export default function PolicyList(props) {
       {lawData.map((law) => (
         <Link href={'/measures/' + law.slug.current} key={law.titel}>
           <div className='block sm:ml-0 mb-10 sm:mb-8 max-w-[825px]'>
-            <div className='inline-block flex justify-start items-center -ml-1'>
+            <div className='flex justify-start items-center -ml-1'>
               {/* Expertise Tag */}
               {law?.beleid === true && (
-                <h5 className='bg-green-500 text-grey-100 px-2 h-6 rounded-[9px] mobile sm:desktop flex items-center mx-1'>
-                  Beleid
-                </h5>
+                <Tag bgColor='bg-green-500'>
+                    Beleid  
+                </Tag>
+               
               )}
               {law?.inkoop === true && (
-                <h5 className='bg-green-500 text-grey-100 px-2 h-6 rounded-[9px] mobile sm:desktop flex items-center mx-1'>
-                  Inkoop
-                </h5>
+                <Tag bgColor='bg-green-500'>
+                Inkoop  
+                </Tag>
               )}
               {law?.grondpositie === true && (
-                <h5 className='bg-green-500 text-grey-100 px-2 h-6 rounded-[9px] mobile sm:desktop flex items-center mx-1'>
-                  Grondpositie
-                </h5>
+                    <Tag bgColor='bg-green-500'>
+                    Grondpositie  
+                    </Tag>
+                
               )}
               {law?.subsidie === true && (
-                <h5 className='bg-green-500 text-grey-100 px-2 h-6 rounded-[9px] mobile sm:desktop flex items-center mx-1'>
-                  Subsidie
-                </h5>
+             
+                 <Tag bgColor='bg-green-500'>
+                 Subsidie  
+                 </Tag>
               )}
               {law?.fiscaal === true && (
-                <h5 className='bg-green-500 text-grey-100 px-2 h-6 rounded-[9px] mobile sm:desktop flex items-center mx-1'>
-                  Fiscaal
-                </h5>
+              
+                 <Tag bgColor='bg-green-500'>
+                 Fiscaal  
+                 </Tag>
               )}
             </div>
 
@@ -49,7 +53,7 @@ export default function PolicyList(props) {
               </div>
 
               <div className='block newlineDisplay p-md text-grey-800 mt-2 pb-2'>
-                <p className=''>{law.introText}</p>
+                <p className='p-base'>{law.introText}</p>
               </div>
               <InstrumentMetaData data={law} />
             </div>
