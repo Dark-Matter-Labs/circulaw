@@ -43,6 +43,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   ).length;
 
   const numBeleidNotBouw = beleid.length;
+  const numGronposirieNotBouw = grondpositie.length
 
   const numInkoopBeleid = inkoop.filter((instrument) =>
     instrument?.inkoopSubCategory?.includes('beleid'),
@@ -299,6 +300,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 transitionAgenda={props.transitionAgenda}
                 name='inkoop'
               />
+              {props.thema !== 'circulaire-matrasketen' && 
               <TabButton
                 selected={selected}
                 onClick={() => {
@@ -306,9 +308,10 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   handleRadioButton('alle');
                 }}
                 numInstrument={numGronposirie}
+                numInstruments2={numGronposirieNotBouw}
                 transitionAgenda={props.transitionAgenda}
                 name='grondpositie'
-              />
+              />}
               <TabButton
                 selected={selected}
                 onClick={() => {
@@ -415,10 +418,13 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   </div>
                 </div>
               </div>
+              {/* DISPLAY INSTRUMENTS DESKTOP */}
               <div className='flex flex-col'>
+                <ul>
                 {selected === 'beleid' && props.transitionAgenda === 'bouw' && (
                   <DisplayInstruments category={beleid} categoryName='beleid' />
                 )}
+                </ul>
                 <ul>
                   {selected === 'beleid' &&
                     props.transitionAgenda !== 'bouw' &&
@@ -426,12 +432,22 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                       <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
                     ))}
                 </ul>
+                <ul>
                 {selected === 'inkoop' && (
                   <DisplayInstruments category={inkoop} categoryName='inkoop' />
-                )}
+                )}</ul>
+                <ul>
                 {selected == 'grondpositie' && props.transitionAgenda === 'bouw' && (
                   <DisplayInstruments category={grondpositie} categoryName='grondpositie' />
                 )}
+                </ul>
+                <ul>
+                  {selected === 'grondpositie' &&
+                    props.transitionAgenda !== 'bouw' &&
+                    grondpositie.map((instrument) => (
+                      <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+                    ))}
+                </ul>
                 <ul className=''>
                   {selected === 'subsidie' &&
                     subsidie.map((instrument) => (
@@ -473,6 +489,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   transitionAgenda={props.transitionAgenda}
                   name='inkoop'
                 />
+                {props.thema !== 'circulaire-matrasketen' && 
                 <TabButton
                   selected={selected}
                   onClick={() => {
@@ -480,9 +497,10 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                     handleRadioButton('alle');
                   }}
                   numInstrument={numGronposirie}
+                  numInstruments2={numGronposirieNotBouw}
                   transitionAgenda={props.transitionAgenda}
                   name='grondpositie'
-                />
+                />}
                 <TabButton
                   selected={selected}
                   onClick={() => {
@@ -725,11 +743,13 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
               </div>
             </div>
 
-            {/* DISPLAY INSTRUMENTS */}
+            {/* DISPLAY INSTRUMENTS MOBILE */}
             <div className='flex flex-col'>
+              <ul>
               {selected === 'beleid' && props.transitionAgenda === 'bouw' && (
                 <DisplayInstruments category={beleid} categoryName='beleid' />
               )}
+              </ul>
               <ul>
                 {selected === 'beleid' &&
                   props.transitionAgenda !== 'bouw' &&
@@ -737,12 +757,23 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                     <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
                   ))}
               </ul>
+              <ul>
               {selected === 'inkoop' && (
                 <DisplayInstruments category={inkoop} categoryName='inkoop' />
               )}
+              </ul>
+              <ul>
               {selected == 'grondpositie' && props.transitionAgenda === 'bouw' && (
                 <DisplayInstruments category={grondpositie} categoryName='grondpositie' />
               )}
+              </ul>
+              <ul>
+              {selected === 'grondpositie' && props.transitionAgenda !== 'bouw' && (
+                grondpositie.map((instrument) => (
+                  <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+                ))
+              )}
+              </ul>
               <ul className=''>
                 {selected === 'subsidie' &&
                   subsidie.map((instrument) => (
