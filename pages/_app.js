@@ -1,4 +1,3 @@
-import Script from 'next/script';
 import { hotjar } from 'react-hotjar';
 import { useEffect } from 'react';
 import Router from 'next/router';
@@ -28,15 +27,6 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
       {getLayout(<Component {...pageProps} />)}
-      <Script src='https://scripts.simpleanalyticscdn.com/latest.js' />
-      <noscript>
-        {/* eslint-disable @next/next/no-img-element */}
-        <img
-          src='https://queue.simpleanalyticscdn.com/noscript.gif'
-          alt=''
-          referrerPolicy='no-referrer-when-downgrade'
-        />
-      </noscript>
     </>
   );
 }
