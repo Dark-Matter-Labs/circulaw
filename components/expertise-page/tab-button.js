@@ -16,14 +16,16 @@ export default function TabButton({
             selected === name ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500 hover:bg-green-400'
           } ${
             numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50 hover:bg-green-500' : ''
-          }  p-3 rounded-t-cl flex flex-row items-baseline pb-2.5`}
+          }  p-3 rounded-t-cl flex flex-row items-center`}
         >
-          <h3 className='mobile sm:desktop pr-1 first-letter:capitalize'>{name}</h3>{' '}
+                    <div className='flex flex-row items-baseline'>
+
+          <h3 className='p-lg-semibild sm:p-4xl-semibold pr-1 first-letter:capitalize'>{name}</h3>{' '}
           {transitionAgenda === 'bouw' ? (
-            <h5 className='mobile sm:desktop inline-block min-w-[24px]'>({numInstrument})</h5>
+            <div className='p-2xs-bold sm:p-lg-semibild inline-block min-w-[24px]'>({numInstrument})</div>
           ) : (
-            <h5 className='mobile sm:desktop inline-block min-w-[24px]'>({numInstruments2})</h5>
-          )}
+            <div className='p-2xs-bold sm:p-lg-semibild inline-block min-w-[24px]'>({numInstruments2})</div>
+          )}</div>
         </button>
       )}
        {name === 'grondpositie' && (
@@ -34,14 +36,15 @@ export default function TabButton({
             selected === name ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500 hover:bg-green-400'
           } ${
             numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50 hover:bg-green-500' : ''
-          }  p-3 rounded-t-cl flex flex-row items-baseline pb-2.5`}
+          }  p-3 rounded-t-cl flex flex-row items-center`}
         >
-          <h3 className='mobile sm:desktop pr-1 first-letter:capitalize'>{name}</h3>{' '}
+          <div className='flex flex-row items-baseline'>
+          <h3 className='p-lg-semibild sm:p-4xl-semibold pr-1 first-letter:capitalize'>{name}</h3>{' '}
           {transitionAgenda === 'bouw' ? (
-            <h5 className='mobile sm:desktop inline-block min-w-[24px]'>({numInstrument})</h5>
+            <h5 className='p-2xs-bold sm:p-lg-semibild inline-block min-w-[24px]'>({numInstrument})</h5>
           ) : (
-            <h5 className='mobile sm:desktop inline-block min-w-[24px]'>({numInstruments2})</h5>
-          )}
+            <h5 className='p-2xs-bold sm:p-lg-semibild inline-block min-w-[24px]'>({numInstruments2})</h5>
+          )}</div>
         </button>
       )}
       {name !== 'beleid' && name !== 'grondpositie' && (
@@ -52,10 +55,12 @@ export default function TabButton({
             selected === name ? 'bg-white text-green-500' : 'text-gray-100 bg-green-500 hover:bg-green-400'
           } ${
             numInstrument === 0 ? 'opacity-50 hover:bg-green-500' : ''
-          }  p-3 rounded-t-cl flex flex-row items-baseline pb-2.5`}
+          }  p-3 rounded-t-cl flex flex-row items-center`}
         >
-          <h3 className='mobile sm:desktop pr-1 first-letter:capitalize'>{name}</h3>{' '}
-          <h5 className='mobile sm:desktop inline-block min-w-[24px]'>({numInstrument})</h5>
+          <div className='flex flex-row items-baseline'>
+          <h3 className='p-lg-semibild sm:p-4xl-semibold pr-1 first-letter:capitalize'>{name}</h3>{' '}
+          <div className='p-2xs-bold sm:p-lg-semibild inline-block min-w-[24px]'>({numInstrument})</div>
+          </div>
         </button>
       )}
     </>

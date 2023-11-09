@@ -278,7 +278,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           </div>
           {/* DESKTOP */}
           <div className='max-w-[880px] hidden sm:block pb-10 global-margin 2xl:ml-60'>
-            <div className='flex flex-row gap-x-3 justify-start h-12 -mt-12 z-5 '>
+            <div className='flex flex-row gap-x-3 justify-start h-12 sm:h-[52px] -mt-12 sm:-mt-[52px] z-5 '>
               <TabButton
                 selected={selected}
                 onClick={() => {
@@ -336,31 +336,31 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             <div className='bg-white'>
               <div className='py-6 ml-3'>
                 {selected === 'beleid' && (
-                  <p className='p-md'>
+                  <p className='p-base'>
                     BELEID Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
                     bezit.
                   </p>
                 )}
                 {selected === 'inkoop' && (
-                  <p className='p-md'>
+                  <p className='p-base'>
                     INKOOP Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
                     bezit.
                   </p>
                 )}
                 {selected === 'grondpositie' && (
-                  <p className='p-md'>
+                  <p className='p-base'>
                     GRONDPOSITIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen
                     grond bezit.
                   </p>
                 )}
                 {selected === 'subsidie' && (
-                  <p className='p-md'>
+                  <p className='p-base'>
                     SUBSIDIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
                     bezit.
                   </p>
                 )}
                 {selected === 'fiscaal' && (
-                  <p className='p-md'>
+                  <p className='p-base'>
                     FISCAL Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
                     bezit.
                   </p>
@@ -368,7 +368,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
               </div>
               <div className='flex flex-ro items-center h-11'>
                 <div className='basis-1/2 ml-3 flex justify-end pr-3'>
-                  <div className='p-xs font-bold'>Toon:</div>
+                  <div className='p-2xs-bold'>Toon:</div>
                 </div>
                 <div className='basis-1/2 mr-3 flex flex-row items-center justify-between p-xs font-medium max-w-[413px]'>
                   <div className='mr-4 w-[60px]'>
@@ -380,7 +380,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                       onChange={() => handleRadioButton('alle')}
                       className='mr-2 text-black border-black border-2 h-4 w-4 focus:ring-black focus:ring-2 cursor-pointer bg-none'
                     />
-                    <label>Alle</label>
+                    <label className='p-2xs-semibold'>Alle</label>
                   </div>
                   <div className='mr-4 w-[90px]'>
                     <input
@@ -391,7 +391,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                       onChange={() => handleRadioButton('Nationaal')}
                       className='mr-2 text-green-600 border-black border-2 h-4 w-4 focus:ring-green-600 focus:ring-2 cursor-pointer bg-none'
                     />
-                    <label>Nationaal</label>
+                    <label className='p-2xs-semibold'>Nationaal</label>
                   </div>
                   <div className='mr-4 w-[100px]'>
                     <input
@@ -402,7 +402,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                       onChange={() => handleRadioButton('Provinciaal')}
                       className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
                     />
-                    <label>Provinciaal</label>
+                    <label className='p-2xs-semibold'>Provinciaal</label>
                   </div>
                  
                   <div className=' w-[115px]'>
@@ -414,7 +414,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                       onChange={() => handleRadioButton('Gemeentelijk')}
                       className='mr-2 text-green-200 border-black border-2 h-4 w-4 focus:ring-green-200 focus:ring-2 cursor-pointer bg-none'
                     />
-                    <label>Gemeentelijk</label>
+                    <label className='p-2xs-semibold'>Gemeentelijk</label>
                   </div>
                 </div>
               </div>
@@ -525,31 +525,31 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             </div>
             <div className='mt-5 mb-4 global-margin'>
               {selected === 'beleid' && (
-                <p className='p-md'>
+                <p className='p-base'>
                   BELEID Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
                   bezit.
                 </p>
               )}
               {selected === 'inkoop' && (
-                <p className='p-md'>
+                <p className='p-base'>
                   INKOOP Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
                   bezit.
                 </p>
               )}
               {selected === 'grondpositie' && (
-                <p className='p-md'>
+                <p className='p-base'>
                   GRONDPOSITIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen
                   grond bezit.
                 </p>
               )}
               {selected === 'subsidie' && (
-                <p className='p-md'>
+                <p className='p-base'>
                   SUBSIDIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
                   bezit.
                 </p>
               )}
               {selected === 'fiscaal' && (
-                <p className='p-md'>
+                <p className='p-base'>
                   FISCAL Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
                   bezit.
                 </p>
@@ -557,7 +557,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             </div>
             <div className='pb-4'>
               <div className='mx-4'>
-                <p className='p-md'>Toon overheidslaag:</p>
+                <p className='p-base'>Toon overheidslaag:</p>
                 <div className='w-full min-w-[260px] pt-3'>
                   {local.value === 'alle' && 
                   <Disclosure>
@@ -573,7 +573,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               open ? 'rounded-tl-cl' : 'rounded-l-cl'
                             } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
                           >
-                            <span className='inline text-left '>Alle</span>
+                            <span className='inline text-left p-base-bold text-green-500'>Alle</span>
                           </div>
                           <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
                             <ChevronUpIcon
@@ -586,18 +586,18 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                         <Disclosure.Panel>
                           <Disclosure.Button as='div' onClick={() => handleRadioButton('Nationaal')}>
                             <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
-                              <span className='block pl-3 truncate'>Nationaal</span>
+                              <span className='block pl-3 truncate p-base'>Nationaal</span>
                               
                             </div>
                           </Disclosure.Button>
                           <Disclosure.Button as='div' onClick={() => handleRadioButton('Provinciaal')}>
                             <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
-                              <span className='block pl-3 truncate'>Provinciaal</span>
+                              <span className='block pl-3 truncate p-base'>Provinciaal</span>
                             </div>
                           </Disclosure.Button>
                           <Disclosure.Button as='div' onClick={() => handleRadioButton('Gemeentelijk')}>
                             <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
-                              <span className='block pl-3 truncate'>Gemeentelijk</span>
+                              <span className='block pl-3 truncate p-base'>Gemeentelijk</span>
                             </div>
                           </Disclosure.Button>
                         </Disclosure.Panel>
@@ -618,7 +618,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               open ? 'rounded-tl-cl' : 'rounded-l-cl'
                             } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
                           >
-                            <span className='inline text-left '>Nationaal</span>
+                            <span className='inline text-left p-base-bold text-green-500'>Nationaal</span>
                           </div>
                           <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
                             <ChevronUpIcon
@@ -631,18 +631,18 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                         <Disclosure.Panel>
                           <Disclosure.Button as='div' onClick={() => handleRadioButton('alle')}>
                             <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
-                              <span className='block pl-3 truncate'>Alle</span>
+                              <span className='block pl-3 truncate p-base'>Alle</span>
                               
                             </div>
                           </Disclosure.Button>
                           <Disclosure.Button as='div' onClick={() => handleRadioButton('Provinciaal')}>
                             <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
-                              <span className='block pl-3 truncate'>Provinciaal</span>
+                              <span className='block pl-3 truncate p-base'>Provinciaal</span>
                             </div>
                           </Disclosure.Button>
                           <Disclosure.Button as='div' onClick={() => handleRadioButton('Gemeentelijk')}>
                             <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
-                              <span className='block pl-3 truncate'>Gemeentelijk</span>
+                              <span className='block pl-3 truncate p-base'>Gemeentelijk</span>
                             </div>
                           </Disclosure.Button>
                         </Disclosure.Panel>
@@ -663,7 +663,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               open ? 'rounded-tl-cl' : 'rounded-l-cl'
                             } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
                           >
-                            <span className='inline text-left '>Provinciaal</span>
+                            <span className='inline text-left p-base-bold text-green-500'>Provinciaal</span>
                           </div>
                           <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
                             <ChevronUpIcon
@@ -676,18 +676,18 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                         <Disclosure.Panel>
                           <Disclosure.Button as='div' onClick={() => handleRadioButton('alle')}>
                             <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
-                              <span className='block pl-3 truncate'>Alle</span>
+                              <span className='block pl-3 truncate p-base'>Alle</span>
                               
                             </div>
                           </Disclosure.Button>
                           <Disclosure.Button as='div' onClick={() => handleRadioButton('Nationaal')}>
                             <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
-                              <span className='block pl-3 truncate'>Nationaal</span>
+                              <span className='block pl-3 truncate p-base'>Nationaal</span>
                             </div>
                           </Disclosure.Button>
                           <Disclosure.Button as='div' onClick={() => handleRadioButton('Gemeentelijk')}>
                             <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
-                              <span className='block pl-3 truncate'>Gemeentelijk</span>
+                              <span className='block pl-3 truncate p-base'>Gemeentelijk</span>
                             </div>
                           </Disclosure.Button>
                         </Disclosure.Panel>
@@ -708,7 +708,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               open ? 'rounded-tl-cl' : 'rounded-l-cl'
                             } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
                           >
-                            <span className='inline text-left '>Gemeentelijk</span>
+                            <span className='inline text-left p-base-bold text-green-500'>Gemeentelijk</span>
                           </div>
                           <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
                             <ChevronUpIcon
@@ -721,18 +721,18 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                         <Disclosure.Panel>
                           <Disclosure.Button as='div' onClick={() => handleRadioButton('alle')}>
                             <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
-                              <span className='block pl-3 truncate'>Alle</span>
+                              <span className='block pl-3 truncate p-base'>Alle</span>
                               
                             </div>
                           </Disclosure.Button>
                           <Disclosure.Button as='div' onClick={() => handleRadioButton('Nationaal')}>
                             <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
-                              <span className='block pl-3 truncate'>Nationaal</span>
+                              <span className='block pl-3 truncate p-base'>Nationaal</span>
                             </div>
                           </Disclosure.Button>
                           <Disclosure.Button as='div' onClick={() => handleRadioButton('Provinciaal')}>
                             <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
-                              <span className='block pl-3 truncate'>Provinciaal</span>
+                              <span className='block pl-3 truncate p-base'>Provinciaal</span>
                             </div>
                           </Disclosure.Button>
                         </Disclosure.Panel>

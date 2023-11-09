@@ -6,7 +6,7 @@ export default function ExpertisePageInstrument({ instrument }) {
       <Link href={`/measures/${instrument.slug}`} className=''>
         {/* DESKTOP */}
         <li className='hidden sm:flex flex-row first:border-t-0 border-b hover:bg-[#035E46] hover:bg-opacity-5  hover:text-green-800 hover:cursor-pointer transition duration-500 ease-in-out'>
-          <div className='border-black basis-1/2 ml-3 overflow-hidden w-full py-3'>
+          <div className='border-black basis-1/2 ml-3 overflow-hidden w-full py-3 p-base'>
             {instrument.titel}
           </div>
           <div className='flex flex-row items-center justify-between basis-1/2 mr-3 max-w-[413px]'>
@@ -30,10 +30,10 @@ export default function ExpertisePageInstrument({ instrument }) {
         </li>
         {/* MOBILE */}
         <li className='sm:hidden border-b py-2'>
-          <div className='p-md mx-4 pb-2'>{instrument.titel}</div>
+          <div className='p-base mx-4 pb-2'>{instrument.titel}</div>
           <div className='flex flex-row mx-4'>
             {instrument.overheidslaag.map((lev) => (
-              <div key={lev} className='p-xs font-semibold text-green-500'>
+              <div key={lev} className='p-xs-semibold text-green-500'>
                 {lev}&nbsp; {instrument.overheidslaag.slice(-1)[0] !== lev && <span>-&nbsp;</span>}
               </div>
             ))}

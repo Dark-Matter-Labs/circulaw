@@ -106,6 +106,10 @@
   .p-xl-semibold {
     @apply font-jakarta text-xl font-semibold leading-14;
   }
+
+  .p-lg-semibild {
+    @apply font-jakarta text-lg font-semibold leading-10;
+  }
   
   .p-lg {
     @apply font-jakarta text-xl font-normal leading-11;
@@ -137,6 +141,10 @@
 
   .p-2xs {
     @apply font-jakarta text-xxs font-normal leading-2;
+  }
+
+  .p-2xs-semibold {
+    @apply font-jakarta text-xxs font-semibold leading-2;
   }
 
   .p-2xs-bold {
