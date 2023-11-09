@@ -79,8 +79,16 @@
       @apply font-jakarta text-xxs font-bold leading-6;
     }
 
-  .p-xl {
+  .p-3xl {
     @apply font-jakarta text-3xl font-normal leading-14;
+  }
+
+  .p-xl {
+    @apply font-jakarta text-xl font-normal leading-14;
+  }
+
+  .p-xl-semibold {
+    @apply font-jakarta text-xl font-semibold leading-14;
   }
   
   .p-lg {
