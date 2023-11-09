@@ -621,7 +621,7 @@ export default function MeasuresLayout({ ...props }) {
         </Transition.Root>
       </div>
 
-      <div className='h-[310px] sm:h-[360px] bg-gradient-to-t from-[#042D36] to-[#22532200] bg-green-500 sm:mx-0'>
+      <div className='h-[310px] sm:h-[360px] bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 bg-green-600 sm:mx-0'>
         <OverviewPageHeader props={props} page='list' />
       </div>
 
