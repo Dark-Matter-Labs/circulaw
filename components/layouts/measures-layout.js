@@ -68,7 +68,7 @@ export default function MeasuresLayout({ ...props }) {
 
   // dynamic filter numbers
 
-  const [numberOfEuropees, setNumberOfEuropee] = useState(0);
+  // const [numberOfEuropees, setNumberOfEuropee] = useState(0);
   const [numberOfNationaal, setNumberOfNationaal] = useState(0);
   const [numberOfProvinciaal, setNumberOfProvinciaal] = useState(0);
   const [numberOfGemeentelijk, setNumberOfGemeentelijk] = useState(0);
@@ -161,7 +161,7 @@ export default function MeasuresLayout({ ...props }) {
       let numSubsidie = 0;
       let numFiscaal = 0;
 
-      let numEuropee = 0;
+      // let numEuropee = 0;
       let numNationaal = 0;
       let numProvinciaal = 0;
       let numGemeentelijk = 0;
@@ -365,9 +365,9 @@ export default function MeasuresLayout({ ...props }) {
           numVoorbeeld += 1;
         }
 
-        if (measure.overheidslaag.includes('Europees')) {
-          numEuropee += 1;
-        }
+        //  if (measure.overheidslaag.includes('Europees')) {
+        //   numEuropee += 1;
+        // }
         if (measure.overheidslaag.includes('Nationaal')) {
           numNationaal += 1;
         }
@@ -425,7 +425,7 @@ export default function MeasuresLayout({ ...props }) {
 
       setNumberOfLeidraad(numLeidraad);
       setNumberOfVoorbeeld(numVoorbeeld);
-      setNumberOfEuropee(numEuropee);
+      // setNumberOfEuropee(numEuropee);
       setNumberOfNationaal(numNationaal);
       setNumberOfProvinciaal(numProvinciaal);
       setNumberOfGemeentelijk(numGemeentelijk);
@@ -541,7 +541,6 @@ export default function MeasuresLayout({ ...props }) {
                         title='Bevoegdheidsniveau'
                         list={overheidslaag}
                         filterNumbers={[
-                          numberOfEuropees,
                           numberOfNationaal,
                           numberOfProvinciaal,
                           numberOfGemeentelijk,
@@ -807,7 +806,6 @@ export default function MeasuresLayout({ ...props }) {
             title='Bevoegdheidsniveau'
             list={overheidslaag}
             filterNumbers={[
-              numberOfEuropees,
               numberOfNationaal,
               numberOfProvinciaal,
               numberOfGemeentelijk,
