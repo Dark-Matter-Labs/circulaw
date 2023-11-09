@@ -26,7 +26,7 @@ export default function Instrumentheader({ data }) {
               <SocialButtons title={data?.measure?.titel} viewport='desktop' />
             </div>
           </div>
-          <div className='sm:mb-6 mb-6 sm:pl-8 h-auto'>
+          <div className='mb-6 sm:pl-8 h-auto'>
             <div className='w-full flex'>
               <Link
                 href={`/${data?.measure?.thema?.toLowerCase().replace(/ /g, '-')}`}
