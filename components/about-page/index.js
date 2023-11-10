@@ -5,7 +5,6 @@ import { aboutPagePTComponents } from '../../lib/portable-text/pt-components';
 import AboutPageDropdown from './about-page-dropdown';
 
 export default function AboutPageComponent({ data }) {
-  console.log(data, 'live')
   return (
     <div>
       <div className='bg-about-header bg-cover bg-center h-40'></div>

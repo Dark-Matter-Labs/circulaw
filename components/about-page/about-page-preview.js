@@ -7,7 +7,6 @@ import AboutPageDropdown from './about-page-dropdown';
 
 export default function AboutPagepreview({ query, queryParams }) {
   const data = { aboutPage: usePreview(null, query, queryParams) };
-  console.log(data.aboutPage.aboutPageSlugs, 'preview')
   return (
     <div>
     <div className='bg-about-header bg-cover bg-center h-40'></div>
