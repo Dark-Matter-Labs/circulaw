@@ -60,7 +60,6 @@ export default function Instrument({ data }) {
       </div>
         </div>
       </div>
-     
     </div>
   );
 }
