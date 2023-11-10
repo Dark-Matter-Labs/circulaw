@@ -5,10 +5,11 @@ import { aboutPagePTComponents } from '../../lib/portable-text/pt-components';
 import AboutPageDropdown from './about-page-dropdown';
 
 export default function AboutPageComponent({ data }) {
+  console.log(data, 'live')
   return (
     <div>
       <div className='bg-about-header bg-cover bg-center h-40'></div>
-      <div className='pb-8 text-grey-800 global-margin-alternative'>
+      <div className='pb-8 text-grey-800 global-margin'>
         <div className='block lg:hidden w-full'>
           <AboutPageDropdown
             currentSlug={data?.aboutPage?.slug.current}

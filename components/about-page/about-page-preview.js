@@ -7,14 +7,15 @@ import AboutPageDropdown from './about-page-dropdown';
 
 export default function AboutPagepreview({ query, queryParams }) {
   const data = { aboutPage: usePreview(null, query, queryParams) };
+  console.log(data.aboutPage.aboutPageSlugs, 'preview')
   return (
     <div>
     <div className='bg-about-header bg-cover bg-center h-40'></div>
-    <div className='pb-8 text-grey-800 global-margin-alternative'>
+    <div className='pb-8 text-grey-800 global-margin'>
       <div className='block lg:hidden w-full'>
         <AboutPageDropdown
           currentSlug={data?.aboutPage?.slug.current}
-          slugs={data?.aboutPageSlugs}
+          slugs={data?.aboutPage?.aboutPageSlugs}
         />
       </div>
       <div className='grid grid-cols-1 w-full lg:grid-cols-3 max-w-8xl'>
@@ -37,7 +38,7 @@ export default function AboutPagepreview({ query, queryParams }) {
         <div className='hidden lg:block mt-3 lg:ml-12 lg:mb-20 lg:mt-32 col-span-1'>
           <AboutPageNav
             currentSlug={data?.aboutPage?.slug.current}
-            slugs={data?.aboutPageSlugs}
+            slugs={data?.aboutPage?.aboutPageSlugs}
           />
         </div>
         <div className='block lg:hidden'>

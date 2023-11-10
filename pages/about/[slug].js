@@ -9,7 +9,7 @@ import {
   siteSettingsQuerys,
   aboutPagePreviewQuery,
 } from '../../lib/queries';
-import AboutPageComponent from '../../components/about-page/about-page';
+import AboutPageComponent from '../../components/about-page';
 
 const AboutPagepreview = lazy(() => import('../../components/about-page/about-page-preview'));
 
