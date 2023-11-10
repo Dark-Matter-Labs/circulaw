@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useTransition } from 'react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
 
 import OverviewPageHeader from '../overview-page-header';
@@ -18,6 +18,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   const [numBeleid, setNumBeleid] = useState();
   const [numInkoop, setNumInkoop] = useState();
   const [numGronposirie, setNumGronposirie] = useState();
+  const [isPending, startTransition] = useTransition();
 
   const numGrondpositieStrategie = grondpositie.filter((instrument) =>
     instrument?.grondpositieSubCategory?.includes('strategie'),
@@ -258,10 +259,155 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
 
   // change filters
   function handleRadioButton(value) {
-    setLocal({
-      value: value,
+    startTransition(() => {
+      setLocal({
+        value: value,
+      });
     });
   }
+
+  if (isPending) {
+    return     <>
+    <div className='sm:bg-gradient-to-t sm:from-[#F8FAF8] sm:to-[#F8FAF8]'>
+      <div className='-mt-10'>
+        <div className='h-[310px] sm:h-[360px] bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 bg-green-600 sm:mx-0'>
+          <OverviewPageHeader props={props} page='samenhang' />
+        </div>
+        {/* DESKTOP */}
+        <div className=' hidden sm:flex max-w-[1280px]  pb-10 global-margin'>
+          <div className='max-w-[880px] flex-col justify-start'>
+            <div className='flex flex-row gap-x-3 justify-start h-12 sm:h-[52px] -mt-12 sm:-mt-[52px] z-5 '>
+              <TabButton
+                selected={selected}
+                onClick={() => {
+                  setSelected('beleid');
+                  handleRadioButton('alle');
+                }}
+                numInstrument={numBeleid}
+                numInstruments2={numBeleidNotBouw}
+                transitionAgenda={props.transitionAgenda}
+                name='beleid'
+              />
+              <TabButton
+                selected={selected}
+                onClick={() => {
+                  setSelected('inkoop');
+                  handleRadioButton('alle');
+                }}
+                numInstrument={numInkoop}
+                transitionAgenda={props.transitionAgenda}
+                name='inkoop'
+              />
+              {props.thema !== 'circulaire-matrasketen' && (
+                <TabButton
+                  selected={selected}
+                  onClick={() => {
+                    setSelected('grondpositie');
+                    handleRadioButton('alle');
+                  }}
+                  numInstrument={numGronposirie}
+                  numInstruments2={numGronposirieNotBouw}
+                  transitionAgenda={props.transitionAgenda}
+                  name='grondpositie'
+                />
+              )}
+              <TabButton
+                selected={selected}
+                onClick={() => {
+                  setSelected('subsidie');
+                  handleRadioButton('alle');
+                }}
+                numInstrument={subsidie.length}
+                transitionAgenda={props.transitionAgenda}
+                name='subsidie'
+              />
+              <TabButton
+                selected={selected}
+                onClick={() => {
+                  setSelected('fiscaal');
+                  handleRadioButton('alle');
+                }}
+                numInstrument={fiscaal.length}
+                transitionAgenda={props.transitionAgenda}
+                name='fiscaal'
+              />
+            </div>
+            <div className='bg-white opacity-10'>
+              <div className='py-6 ml-3'>
+                  <p className='p-base'>
+                    BELEID Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
+                    bezit.
+                  </p>
+              </div>
+              <div className='flex flex-ro items-center h-11'>
+                <div className='basis-1/2 ml-3 flex justify-end pr-3'>
+                  <div className='p-2xs-bold'>Toon:</div>
+                </div>
+                <div className='basis-1/2 mr-3 flex flex-row items-center justify-between p-xs font-medium max-w-[413px]'>
+                  <div className='mr-4 w-[60px]'>
+                    <input
+                      type='radio'
+                      name='filter'
+                      value='alle'
+                      checked={local?.value === 'alle'}
+                      onChange={() => handleRadioButton('alle')}
+                      className='mr-2 text-black border-black border-2 h-4 w-4 focus:ring-black focus:ring-2 cursor-pointer bg-none'
+                    />
+                    <label className='p-2xs-semibold'>Alle</label>
+                  </div>
+                  <div className='mr-4 w-[115px]'>
+                    <input
+                      type='radio'
+                      name='filter'
+                      value='Gemeentelijk'
+                      checked={local?.value === 'Gemeentelijk'}
+                      onChange={() => handleRadioButton('Gemeentelijk')}
+                      className='mr-2 text-green-200 border-black border-2 h-4 w-4 focus:ring-green-200 focus:ring-2 cursor-pointer bg-none'
+                    />
+                    <label className='p-2xs-semibold'>Gemeentelijk</label>
+                  </div>
+                  <div className='mr-4 w-[100px]'>
+                    <input
+                      type='radio'
+                      name='filter'
+                      value='Provinciaal'
+                      checked={local?.value === 'Provinciaal'}
+                      onChange={() => handleRadioButton('Provinciaal')}
+                      className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
+                    />
+                    <label className='p-2xs-semibold'>Provinciaal</label>
+                  </div>
+
+                  <div className='w-[90px]'>
+                    <input
+                      type='radio'
+                      name='filter'
+                      value='Nationaal'
+                      checked={local?.value === 'Nationaal'}
+                      onChange={() => handleRadioButton('Nationaal')}
+                      className='mr-2 text-green-600 border-black border-2 h-4 w-4 focus:ring-green-600 focus:ring-2 cursor-pointer bg-none'
+                    />
+                    <label className='p-2xs-semibold'>Nationaal</label>
+                  </div>
+                </div>
+              </div>
+              {/* DISPLAY INSTRUMENTS DESKTOP */}
+              <div className='flex flex-col'>
+                <ul>
+                  {
+                    beleid.map((instrument) => (
+                      <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+                    ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </>;
+  }
+  
 
   return (
     <>
