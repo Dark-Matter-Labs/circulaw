@@ -1,24 +1,8 @@
 import Layout from '../../components/layouts/layout';
 import ExpertiseLayout from '../../components/layouts/expertise-layout';
 import { client } from '../../lib/sanity';
+import { categorieQuery } from '../../lib/queries';
 
-const expertiseDataQuerie = `
-*[_type == "measure" && thema == "houtbouw-stimuleren"] {
-  "slug": slug.current,
-  titel,
-  "overheidslaag": [overheidslaag[2], overheidslaag[1], overheidslaag[0]],
-  beleid,
-  beleidSubCategory,
-  inkoop,
-  inkoopSubCategory,
-  grondpositie,
-  grondpositieSubCategory,
-  subsidie,
-  fiscaal,
-  "slug": slug.current,
-
-}
-`;
 
 export default function InfoPage({ expertiseData }) {
   return (
@@ -35,7 +19,7 @@ export default function InfoPage({ expertiseData }) {
 }
 
 export async function getStaticProps() {
-  const expertiseData = await client.fetch(expertiseDataQuerie);
+  const expertiseData = await client.fetch(categorieQuery('houtbouw-stimuleren'));
   return {
     props: {
       expertiseData,
