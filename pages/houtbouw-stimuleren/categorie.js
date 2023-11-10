@@ -6,7 +6,7 @@ const expertiseDataQuerie = `
 *[_type == "measure" && thema == "houtbouw-stimuleren"] {
   "slug": slug.current,
   titel,
-  overheidslaag,
+  "overheidslaag": [overheidslaag[2], overheidslaag[1], overheidslaag[0]],
   beleid,
   beleidSubCategory,
   inkoop,

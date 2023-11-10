@@ -7,6 +7,7 @@ export default function PolicyList(props) {
   if (props.data) {
     lawData = props.data;
   }
+
   return (
     <>
       {lawData.map((law) => (

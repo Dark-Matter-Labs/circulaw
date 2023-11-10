@@ -73,13 +73,13 @@ export default function InstrumentMetaData({ data }) {
           <div className='flex flex-col basis-overheidslaag'>
             <div className='p-xs-semibold text-grey-600'>Overheidslaag</div>
             <div className='p-xs-semibold text-green-500'>
-              {data?.measure?.overheidslaag?.reverse().map((level) => (
+              {data?.measure?.overheidslaag?.filter(x => x !== null).map((level) => (
                 <span key={level} className=''>
                   {level} {data?.measure?.overheidslaag?.slice(-1)[0] !== level && <span>-</span>}
                   &nbsp;
                 </span>
               ))}
-              {data?.overheidslaag?.reverse().map((level) => (
+              {data?.overheidslaag?.filter(x => x !== null).map((level) => (
                 <span key={level} className=''>
                   {level} {data?.overheidslaag?.slice(-1)[0] !== level && <span>-</span>}
                   &nbsp;
@@ -186,13 +186,13 @@ export default function InstrumentMetaData({ data }) {
           <div className='flex flex-col justify-center'>
             <div className='p-xs-semibold py-1 text-grey-600'>Overheidslaag</div>
             <div className='p-xs-semibold text-green-500'>
-              {data?.measure?.overheidslaag?.reverse().map((level) => (
+              {data?.measure?.overheidslaag?.filter(x => x !== null).map((level) => (
                 <span key={level} className=''>
                   {level} {data?.measure?.overheidslaag.slice(-1)[0] !== level && <span>-</span>}
                   &nbsp;
                 </span>
               ))}
-              {data?.overheidslaag?.reverse().map((level) => (
+              {data?.overheidslaag?.filter(x => x !== null).map((level) => (
                 <span key={level} className=''>
                   {level} {data?.overheidslaag.slice(-1)[0] !== level && <span>-</span>}
                   &nbsp;
