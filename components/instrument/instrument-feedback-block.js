@@ -5,9 +5,8 @@ import { Popover } from '@headlessui/react';
 import CustomButton from '../custom-button';
 
 export default function InstrumentFeedbackBlock({ data }) {
-
   return (
-       <Popover className='absolute inset-y-1/6 right-0 h-72 w-8 sm:h-96 sm:w-16 hidden sm:block'>
+    <Popover className='absolute inset-y-1/6 right-0 h-72 w-8 sm:h-96 sm:w-16 hidden sm:block'>
       {({ open }) => (
         <>
           <Popover.Button
@@ -47,8 +46,5 @@ export default function InstrumentFeedbackBlock({ data }) {
         </>
       )}
     </Popover>
-
-  
-
   );
 }

@@ -60,7 +60,7 @@ export default {
             { title: 'firstH2', value: 'firstH2' },
             { title: 'H3', value: 'h3' },
             { title: 'normal', value: 'normal' },
-            { title: 'subheading', value: 'subheading'}
+            { title: 'subheading', value: 'subheading' },
           ],
           marks: {
             decorators: [],

@@ -728,7 +728,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                             </div>
                           </Disclosure.Button>
                           <Disclosure.Panel>
-                          <Disclosure.Button
+                            <Disclosure.Button
                               as='div'
                               onClick={() => handleRadioButton('Gemeentelijk')}
                             >
@@ -744,7 +744,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                                 <span className='block pl-3 truncate p-base'>Provinciaal</span>
                               </div>
                             </Disclosure.Button>
-                         
+
                             <Disclosure.Button
                               as='div'
                               onClick={() => handleRadioButton('Nationaal')}
@@ -806,7 +806,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                                 <span className='block pl-3 truncate p-base'>Provinciaal</span>
                               </div>
                             </Disclosure.Button>
-                         
                           </Disclosure.Panel>
                         </>
                       )}
@@ -860,7 +859,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                                 <span className='block pl-3 truncate p-base'>Nationaal</span>
                               </div>
                             </Disclosure.Button>
-                        
                           </Disclosure.Panel>
                         </>
                       )}
@@ -914,7 +912,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                                 <span className='block pl-3 truncate p-base'>Nationaal</span>
                               </div>
                             </Disclosure.Button>
-                           
                           </Disclosure.Panel>
                         </>
                       )}

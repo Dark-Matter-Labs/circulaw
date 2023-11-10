@@ -10,44 +10,42 @@ export default function NotFound() {
         <p className=' p-base text-grey-800'>
           We kunnen de pagina die je zoekt niet vinden. Kunnen we je verder helpen?
         </p>
-        <p className=' p-base text-grey-800'>
-          Zoek verder:</p>
-          <ul className=''>
-            <li className='text-green-500 p-base-semibold underline'>
-              <Link href='/' className='link-interaction'>
-                Home <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
-              </Link>
-            </li>
-            <li className='text-green-500 p-base-semibold underline'>
-              <Link href='/houtbouw-stimuleren' className='link-interaction'>
-                Houtbouw <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
-              </Link>{' '}
-            </li>
-            <li className='text-green-500 p-base-semibold underline'>
-              <Link href='/circulaire-windturbines' className='link-interaction'>
-                Circulaire windturbines{' '}
-                <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
-              </Link>{' '}
-            </li>
-            <li className='text-green-500 p-base-semibold underline'>
-              <Link href='/circulaire-matrasketen' className='link-interaction'>
-                Circulaire matrasketen{' '}
-                <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
-              </Link>{' '}
-            </li>
-            <li className='text-green-500 p-base-semibold underline'>
-              <Link href='/about/Wat-is-CircuLaw' className='link-interaction'>
-                Wat is CircuLaw?{' '}
-                <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
-              </Link>{' '}
-            </li>
-            <li className='text-green-500 p-base-semibold underline'>
-              <Link href='/contact' className='link-interaction'>
-                Contact <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
-              </Link>{' '}
-            </li>
-          </ul>
-
+        <p className=' p-base text-grey-800'>Zoek verder:</p>
+        <ul className=''>
+          <li className='text-green-500 p-base-semibold underline'>
+            <Link href='/' className='link-interaction'>
+              Home <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+            </Link>
+          </li>
+          <li className='text-green-500 p-base-semibold underline'>
+            <Link href='/houtbouw-stimuleren' className='link-interaction'>
+              Houtbouw <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+            </Link>{' '}
+          </li>
+          <li className='text-green-500 p-base-semibold underline'>
+            <Link href='/circulaire-windturbines' className='link-interaction'>
+              Circulaire windturbines{' '}
+              <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+            </Link>{' '}
+          </li>
+          <li className='text-green-500 p-base-semibold underline'>
+            <Link href='/circulaire-matrasketen' className='link-interaction'>
+              Circulaire matrasketen{' '}
+              <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+            </Link>{' '}
+          </li>
+          <li className='text-green-500 p-base-semibold underline'>
+            <Link href='/about/Wat-is-CircuLaw' className='link-interaction'>
+              Wat is CircuLaw?{' '}
+              <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+            </Link>{' '}
+          </li>
+          <li className='text-green-500 p-base-semibold underline'>
+            <Link href='/contact' className='link-interaction'>
+              Contact <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+            </Link>{' '}
+          </li>
+        </ul>
       </div>
     </Layout>
   );
