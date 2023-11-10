@@ -3,7 +3,6 @@ import ExpertiseLayout from '../../components/layouts/expertise-layout';
 import { client } from '../../lib/sanity';
 import { categorieQuery } from '../../lib/queries';
 
-
 export default function InfoPage({ expertiseData }) {
   return (
     <Layout title='CircuLaw - Samenhang Aantal Houtbouwmaatregelen'>
