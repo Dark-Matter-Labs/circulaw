@@ -126,134 +126,131 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
       setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
     }
 
-    // BELEID
-    if (local?.value === 'alle' && selected === 'beleid') {
-      setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
-    } else if (local?.value === 'Gemeentelijk' && selected === 'beleid') {
-      setBeleid(
-        expertiseData.filter(
-          (instrument) =>
-            instrument.beleid === true && instrument.overheidslaag.includes('Gemeentelijk'),
-        ),
-      );
-    } else if (local?.value === 'Provinciaal' && selected === 'beleid') {
-      setBeleid(
-        expertiseData.filter(
-          (instrument) =>
-            instrument.beleid === true && instrument.overheidslaag.includes('Provinciaal'),
-        ),
-      );
-    } else if (local?.value === 'Nationaal' && selected === 'beleid') {
-      setBeleid(
-        expertiseData.filter(
-          (instrument) =>
-            instrument.beleid === true && instrument.overheidslaag.includes('Nationaal'),
-        ),
-      );
-    }
-
-    // INKOOP
-    if (local?.value === 'alle' && selected === 'inkoop') {
-      setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
-    } else if (local?.value === 'Gemeentelijk' && selected === 'inkoop') {
-      setInkoop(
-        expertiseData.filter(
-          (instrument) =>
-            instrument.inkoop === true && instrument.overheidslaag.includes('Gemeentelijk'),
-        ),
-      );
-    } else if (local?.value === 'Provinciaal' && selected === 'inkoop') {
-      setInkoop(
-        expertiseData.filter(
-          (instrument) =>
-            instrument.inkoop === true && instrument.overheidslaag.includes('Provinciaal'),
-        ),
-      );
-    } else if (local?.value === 'Nationaal' && selected === 'inkoop') {
-      setInkoop(
-        expertiseData.filter(
-          (instrument) =>
-            instrument.inkoop === true && instrument.overheidslaag.includes('Nationaal'),
-        ),
-      );
-    }
-
-    // GRONDPOSITIE
-    if (local?.value === 'alle' && selected === 'grondpositie') {
-      setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
-    } else if (local?.value === 'Gemeentelijk' && selected === 'grondpositie') {
-      setGrondpositie(
-        expertiseData.filter(
-          (instrument) =>
-            instrument.grondpositie === true && instrument.overheidslaag.includes('Gemeentelijk'),
-        ),
-      );
-    } else if (local?.value === 'Provinciaal' && selected === 'grondpositie') {
-      setGrondpositie(
-        expertiseData.filter(
-          (instrument) =>
-            instrument.grondpositie === true && instrument.overheidslaag.includes('Provinciaal'),
-        ),
-      );
-    } else if (local?.value === 'Nationaal' && selected === 'grondpositie') {
-      setGrondpositie(
-        expertiseData.filter(
-          (instrument) =>
-            instrument.grondpositie === true && instrument.overheidslaag.includes('Nationaal'),
-        ),
-      );
-    }
-
-    // SUBSIDIE
-    if (local?.value === 'alle' && selected === 'subsidie') {
-      setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
-    } else if (local?.value === 'Gemeentelijk' && selected === 'subsidie') {
-      setSubsidie(
-        expertiseData.filter(
-          (instrument) =>
-            instrument.subsidie === true && instrument.overheidslaag.includes('Gemeentelijk'),
-        ),
-      );
-    } else if (local?.value === 'Provinciaal' && selected === 'subsidie') {
-      setSubsidie(
-        expertiseData.filter(
-          (instrument) =>
-            instrument.subsidie === true && instrument.overheidslaag.includes('Provinciaal'),
-        ),
-      );
-    } else if (local?.value === 'Nationaal' && selected === 'subsidie') {
-      setSubsidie(
-        expertiseData.filter(
-          (instrument) =>
-            instrument.subsidie === true && instrument.overheidslaag.includes('Nationaal'),
-        ),
-      );
-    }
-
-    // FISCAL
-    if (local?.value === 'alle' && selected === 'fiscaal') {
-      setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
-    } else if (local?.value === 'Gemeentelijk' && selected === 'fiscaal') {
-      setFiscaal(
-        expertiseData.filter(
-          (instrument) =>
-            instrument.fiscaal === true && instrument.overheidslaag.includes('Gemeentelijk'),
-        ),
-      );
-    } else if (local?.value === 'Provinciaal' && selected === 'fiscaal') {
-      setFiscaal(
-        expertiseData.filter(
-          (instrument) =>
-            instrument.fiscaal === true && instrument.overheidslaag.includes('Provinciaal'),
-        ),
-      );
-    } else if (local?.value === 'Nationaal' && selected === 'fiscaal') {
-      setFiscaal(
-        expertiseData.filter(
-          (instrument) =>
-            instrument.fiscaal === true && instrument.overheidslaag.includes('Nationaal'),
-        ),
-      );
+    if (selected === 'beleid') {
+      if (local?.value === 'alle') {
+        setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
+      } else if (local?.value === 'Gemeentelijk') {
+        setBeleid(
+          expertiseData.filter(
+            (instrument) =>
+              instrument.beleid === true && instrument.overheidslaag.includes('Gemeentelijk'),
+          ),
+        );
+      } else if (local?.value === 'Provinciaal') {
+        setBeleid(
+          expertiseData.filter(
+            (instrument) =>
+              instrument.beleid === true && instrument.overheidslaag.includes('Provinciaal'),
+          ),
+        );
+      } else if (local?.value === 'Nationaal') {
+        setBeleid(
+          expertiseData.filter(
+            (instrument) =>
+              instrument.beleid === true && instrument.overheidslaag.includes('Nationaal'),
+          ),
+        );
+      }
+    } else if (selected === 'inkoop') {
+      if (local?.value === 'alle') {
+        setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
+      } else if (local?.value === 'Gemeentelijk') {
+        setInkoop(
+          expertiseData.filter(
+            (instrument) =>
+              instrument.inkoop === true && instrument.overheidslaag.includes('Gemeentelijk'),
+          ),
+        );
+      } else if (local?.value === 'Provinciaal') {
+        setInkoop(
+          expertiseData.filter(
+            (instrument) =>
+              instrument.inkoop === true && instrument.overheidslaag.includes('Provinciaal'),
+          ),
+        );
+      } else if (local?.value === 'Nationaal') {
+        setInkoop(
+          expertiseData.filter(
+            (instrument) =>
+              instrument.inkoop === true && instrument.overheidslaag.includes('Nationaal'),
+          ),
+        );
+      }
+    } else if (selected === 'grondpositie') {
+      if (local?.value === 'alle') {
+        setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
+      } else if (local?.value === 'Gemeentelijk') {
+        setGrondpositie(
+          expertiseData.filter(
+            (instrument) =>
+              instrument.grondpositie === true && instrument.overheidslaag.includes('Gemeentelijk'),
+          ),
+        );
+      } else if (local?.value === 'Provinciaal') {
+        setGrondpositie(
+          expertiseData.filter(
+            (instrument) =>
+              instrument.grondpositie === true && instrument.overheidslaag.includes('Provinciaal'),
+          ),
+        );
+      } else if (local?.value === 'Nationaal') {
+        setGrondpositie(
+          expertiseData.filter(
+            (instrument) =>
+              instrument.grondpositie === true && instrument.overheidslaag.includes('Nationaal'),
+          ),
+        );
+      }
+    } else if (selected === 'subsidie') {
+      if (local?.value === 'alle') {
+        setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
+      } else if (local?.value === 'Gemeentelijk') {
+        setSubsidie(
+          expertiseData.filter(
+            (instrument) =>
+              instrument.subsidie === true && instrument.overheidslaag.includes('Gemeentelijk'),
+          ),
+        );
+      } else if (local?.value === 'Provinciaal') {
+        setSubsidie(
+          expertiseData.filter(
+            (instrument) =>
+              instrument.subsidie === true && instrument.overheidslaag.includes('Provinciaal'),
+          ),
+        );
+      } else if (local?.value === 'Nationaal') {
+        setSubsidie(
+          expertiseData.filter(
+            (instrument) =>
+              instrument.subsidie === true && instrument.overheidslaag.includes('Nationaal'),
+          ),
+        );
+      }
+    } else if (selected === 'fiscaal') {
+      if (local?.value === 'alle') {
+        setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
+      } else if (local?.value === 'Gemeentelijk') {
+        setFiscaal(
+          expertiseData.filter(
+            (instrument) =>
+              instrument.fiscaal === true && instrument.overheidslaag.includes('Gemeentelijk'),
+          ),
+        );
+      } else if (local?.value === 'Provinciaal') {
+        setFiscaal(
+          expertiseData.filter(
+            (instrument) =>
+              instrument.fiscaal === true && instrument.overheidslaag.includes('Provinciaal'),
+          ),
+        );
+      } else if (local?.value === 'Nationaal') {
+        setFiscaal(
+          expertiseData.filter(
+            (instrument) =>
+              instrument.fiscaal === true && instrument.overheidslaag.includes('Nationaal'),
+          ),
+        );
+      }
     }
   }, [local.value, selected, expertiseData]);
 
@@ -267,147 +264,147 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   }
 
   if (isPending) {
-    return     <>
-    <div className='sm:bg-gradient-to-t sm:from-[#F8FAF8] sm:to-[#F8FAF8]'>
-      <div className='-mt-10'>
-        <div className='h-[310px] sm:h-[360px] bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 bg-green-600 sm:mx-0'>
-          <OverviewPageHeader props={props} page='samenhang' />
-        </div>
-        {/* DESKTOP */}
-        <div className=' hidden sm:flex max-w-[1280px]  pb-10 global-margin'>
-          <div className='max-w-[880px] flex-col justify-start'>
-            <div className='flex flex-row gap-x-3 justify-start h-12 sm:h-[52px] -mt-12 sm:-mt-[52px] z-5 '>
-              <TabButton
-                selected={selected}
-                onClick={() => {
-                  setSelected('beleid');
-                  handleRadioButton('alle');
-                }}
-                numInstrument={numBeleid}
-                numInstruments2={numBeleidNotBouw}
-                transitionAgenda={props.transitionAgenda}
-                name='beleid'
-              />
-              <TabButton
-                selected={selected}
-                onClick={() => {
-                  setSelected('inkoop');
-                  handleRadioButton('alle');
-                }}
-                numInstrument={numInkoop}
-                transitionAgenda={props.transitionAgenda}
-                name='inkoop'
-              />
-              {props.thema !== 'circulaire-matrasketen' && (
-                <TabButton
-                  selected={selected}
-                  onClick={() => {
-                    setSelected('grondpositie');
-                    handleRadioButton('alle');
-                  }}
-                  numInstrument={numGronposirie}
-                  numInstruments2={numGronposirieNotBouw}
-                  transitionAgenda={props.transitionAgenda}
-                  name='grondpositie'
-                />
-              )}
-              <TabButton
-                selected={selected}
-                onClick={() => {
-                  setSelected('subsidie');
-                  handleRadioButton('alle');
-                }}
-                numInstrument={subsidie.length}
-                transitionAgenda={props.transitionAgenda}
-                name='subsidie'
-              />
-              <TabButton
-                selected={selected}
-                onClick={() => {
-                  setSelected('fiscaal');
-                  handleRadioButton('alle');
-                }}
-                numInstrument={fiscaal.length}
-                transitionAgenda={props.transitionAgenda}
-                name='fiscaal'
-              />
+    return (
+      <>
+        <div className='sm:bg-gradient-to-t sm:from-[#F8FAF8] sm:to-[#F8FAF8]'>
+          <div className='-mt-10'>
+            <div className='h-[310px] sm:h-[360px] bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 bg-green-600 sm:mx-0'>
+              <OverviewPageHeader props={props} page='samenhang' />
             </div>
-            <div className='bg-white opacity-10'>
-              <div className='py-6 ml-3'>
-                  <p className='p-base'>
-                    BELEID Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
-                    bezit.
-                  </p>
-              </div>
-              <div className='flex flex-ro items-center h-11'>
-                <div className='basis-1/2 ml-3 flex justify-end pr-3'>
-                  <div className='p-2xs-bold'>Toon:</div>
+            {/* DESKTOP */}
+            <div className=' hidden sm:flex max-w-[1280px]  pb-10 global-margin'>
+              <div className='max-w-[880px] flex-col justify-start'>
+                <div className='flex flex-row gap-x-3 justify-start h-12 sm:h-[52px] -mt-12 sm:-mt-[52px] z-5 '>
+                  <TabButton
+                    selected={selected}
+                    onClick={() => {
+                      setSelected('beleid');
+                      handleRadioButton('alle');
+                    }}
+                    numInstrument={numBeleid}
+                    numInstruments2={numBeleidNotBouw}
+                    transitionAgenda={props.transitionAgenda}
+                    name='beleid'
+                  />
+                  <TabButton
+                    selected={selected}
+                    onClick={() => {
+                      setSelected('inkoop');
+                      handleRadioButton('alle');
+                    }}
+                    numInstrument={numInkoop}
+                    transitionAgenda={props.transitionAgenda}
+                    name='inkoop'
+                  />
+                  {props.thema !== 'circulaire-matrasketen' && (
+                    <TabButton
+                      selected={selected}
+                      onClick={() => {
+                        setSelected('grondpositie');
+                        handleRadioButton('alle');
+                      }}
+                      numInstrument={numGronposirie}
+                      numInstruments2={numGronposirieNotBouw}
+                      transitionAgenda={props.transitionAgenda}
+                      name='grondpositie'
+                    />
+                  )}
+                  <TabButton
+                    selected={selected}
+                    onClick={() => {
+                      setSelected('subsidie');
+                      handleRadioButton('alle');
+                    }}
+                    numInstrument={subsidie.length}
+                    transitionAgenda={props.transitionAgenda}
+                    name='subsidie'
+                  />
+                  <TabButton
+                    selected={selected}
+                    onClick={() => {
+                      setSelected('fiscaal');
+                      handleRadioButton('alle');
+                    }}
+                    numInstrument={fiscaal.length}
+                    transitionAgenda={props.transitionAgenda}
+                    name='fiscaal'
+                  />
                 </div>
-                <div className='basis-1/2 mr-3 flex flex-row items-center justify-between p-xs font-medium max-w-[413px]'>
-                  <div className='mr-4 w-[60px]'>
-                    <input
-                      type='radio'
-                      name='filter'
-                      value='alle'
-                      checked={local?.value === 'alle'}
-                      onChange={() => handleRadioButton('alle')}
-                      className='mr-2 text-black border-black border-2 h-4 w-4 focus:ring-black focus:ring-2 cursor-pointer bg-none'
-                    />
-                    <label className='p-2xs-semibold'>Alle</label>
+                <div className='bg-white opacity-10'>
+                  <div className='py-6 ml-3'>
+                    <p className='p-base'>
+                      BELEID Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
+                      bezit.
+                    </p>
                   </div>
-                  <div className='mr-4 w-[115px]'>
-                    <input
-                      type='radio'
-                      name='filter'
-                      value='Gemeentelijk'
-                      checked={local?.value === 'Gemeentelijk'}
-                      onChange={() => handleRadioButton('Gemeentelijk')}
-                      className='mr-2 text-green-200 border-black border-2 h-4 w-4 focus:ring-green-200 focus:ring-2 cursor-pointer bg-none'
-                    />
-                    <label className='p-2xs-semibold'>Gemeentelijk</label>
-                  </div>
-                  <div className='mr-4 w-[100px]'>
-                    <input
-                      type='radio'
-                      name='filter'
-                      value='Provinciaal'
-                      checked={local?.value === 'Provinciaal'}
-                      onChange={() => handleRadioButton('Provinciaal')}
-                      className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
-                    />
-                    <label className='p-2xs-semibold'>Provinciaal</label>
-                  </div>
+                  <div className='flex flex-ro items-center h-11'>
+                    <div className='basis-1/2 ml-3 flex justify-end pr-3'>
+                      <div className='p-2xs-bold'>Toon:</div>
+                    </div>
+                    <div className='basis-1/2 mr-3 flex flex-row items-center justify-between p-xs font-medium max-w-[413px]'>
+                      <div className='mr-4 w-[60px]'>
+                        <input
+                          type='radio'
+                          name='filter'
+                          value='alle'
+                          checked={local?.value === 'alle'}
+                          onChange={() => handleRadioButton('alle')}
+                          className='mr-2 text-black border-black border-2 h-4 w-4 focus:ring-black focus:ring-2 cursor-pointer bg-none'
+                        />
+                        <label className='p-2xs-semibold'>Alle</label>
+                      </div>
+                      <div className='mr-4 w-[115px]'>
+                        <input
+                          type='radio'
+                          name='filter'
+                          value='Gemeentelijk'
+                          checked={local?.value === 'Gemeentelijk'}
+                          onChange={() => handleRadioButton('Gemeentelijk')}
+                          className='mr-2 text-green-200 border-black border-2 h-4 w-4 focus:ring-green-200 focus:ring-2 cursor-pointer bg-none'
+                        />
+                        <label className='p-2xs-semibold'>Gemeentelijk</label>
+                      </div>
+                      <div className='mr-4 w-[100px]'>
+                        <input
+                          type='radio'
+                          name='filter'
+                          value='Provinciaal'
+                          checked={local?.value === 'Provinciaal'}
+                          onChange={() => handleRadioButton('Provinciaal')}
+                          className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
+                        />
+                        <label className='p-2xs-semibold'>Provinciaal</label>
+                      </div>
 
-                  <div className='w-[90px]'>
-                    <input
-                      type='radio'
-                      name='filter'
-                      value='Nationaal'
-                      checked={local?.value === 'Nationaal'}
-                      onChange={() => handleRadioButton('Nationaal')}
-                      className='mr-2 text-green-600 border-black border-2 h-4 w-4 focus:ring-green-600 focus:ring-2 cursor-pointer bg-none'
-                    />
-                    <label className='p-2xs-semibold'>Nationaal</label>
+                      <div className='w-[90px]'>
+                        <input
+                          type='radio'
+                          name='filter'
+                          value='Nationaal'
+                          checked={local?.value === 'Nationaal'}
+                          onChange={() => handleRadioButton('Nationaal')}
+                          className='mr-2 text-green-600 border-black border-2 h-4 w-4 focus:ring-green-600 focus:ring-2 cursor-pointer bg-none'
+                        />
+                        <label className='p-2xs-semibold'>Nationaal</label>
+                      </div>
+                    </div>
+                  </div>
+                  {/* DISPLAY INSTRUMENTS DESKTOP */}
+                  <div className='flex flex-col'>
+                    <ul>
+                      {beleid.map((instrument) => (
+                        <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+                      ))}
+                    </ul>
                   </div>
                 </div>
-              </div>
-              {/* DISPLAY INSTRUMENTS DESKTOP */}
-              <div className='flex flex-col'>
-                <ul>
-                  {
-                    beleid.map((instrument) => (
-                      <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                    ))}
-                </ul>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </>;
+      </>
+    );
   }
-  
 
   return (
     <>
