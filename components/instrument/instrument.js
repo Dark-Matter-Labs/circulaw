@@ -58,7 +58,7 @@ export default function Instrument({ data }) {
             className={`${
               scrollEffect
                 ? 'translate-y-0 transition-all ease-in duration-300'
-                : 'translate-y-8 transition-all ease-out duration-300'
+                : 'translate-y-10 transition-all ease-out duration-300'
             } ${hidden ? 'hidden' : 'block'} bottom-0 sticky flex justify-center w-full`}
           >
             <MobileFeedback data={data} scrollEffect={scrollEffect} />

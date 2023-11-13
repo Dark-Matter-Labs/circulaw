@@ -5,7 +5,7 @@ import CustomButton from '../custom-button';
 
 export default function MobileFeedback({ data }) {
   return (
-    <Popover className='bottom-0 max-w-sm h-8 z-20 sticky sm:hidden w-full'>
+    <Popover className='bottom-0 max-w-sm h-10 z-20 sticky sm:hidden w-full'>
       {({ open }) => (
         <>
           <Popover.Button
