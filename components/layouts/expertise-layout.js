@@ -13,27 +13,25 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   const [grondpositie, setGrondpositie] = useState([]);
   const [subsidie, setSubsidie] = useState([]);
   const [fiscaal, setFiscaal] = useState([]);
-  
+
   const [numBeleid, setNumBeleid] = useState();
   const [numInkoop, setNumInkoop] = useState();
   const [numGronposirie, setNumGronposirie] = useState();
   const [isPending, startTransition] = useTransition();
 
   const [selected, setSelected] = useState('beleid');
-  const [local, setLocal] = useState({value: 'alle'});
- 
-  
+  const [local, setLocal] = useState({ value: 'alle' });
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.localStorage.length > 0) {
       let selected = localStorage.getItem('selected');
-      let keys = []
+      let keys = [];
       for (let i = 0; i < localStorage.length; i++) {
-        keys.push(localStorage.key(i))
+        keys.push(localStorage.key(i));
       }
-      setSelected(selected)
+      setSelected(selected);
     }
-  },[])
+  }, []);
 
   const numGrondpositieStrategie = grondpositie.filter((instrument) =>
     instrument?.grondpositieSubCategory?.includes('strategie'),
@@ -271,17 +269,17 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
 
   // change filters
   function handleRadioButton(value) {
-      startTransition(() => {
-        setLocal({
-          value: value,
-        });
+    startTransition(() => {
+      setLocal({
+        value: value,
       });
+    });
   }
 
   function handleTabButton(value) {
     if (typeof window !== 'undefined' && window.localStorage) {
-      localStorage.setItem('selected', value)
-      setSelected(value)
+      localStorage.setItem('selected', value);
+      setSelected(value);
     }
   }
 
@@ -508,13 +506,12 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   )}
                   {selected === 'grondpositie' && (
                     <p className='p-base'>
-                      Ben je als overheid grondeigenaar? Bekijk de mogelijkheden om houtbouw af te dwingen.
+                      Ben je als overheid grondeigenaar? Bekijk de mogelijkheden om houtbouw af te
+                      dwingen.
                     </p>
                   )}
                   {selected === 'subsidie' && (
-                    <p className='p-base'>
-                      Bekijk hoe je via subsidies houtbouw kunt stimuleren.
-                    </p>
+                    <p className='p-base'>Bekijk hoe je via subsidies houtbouw kunt stimuleren.</p>
                   )}
                   {selected === 'fiscaal' && (
                     <p className='p-base'>
@@ -695,13 +692,12 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
               )}
               {selected === 'grondpositie' && (
                 <p className='p-base'>
-                  Ben je als overheid grondeigenaar? Bekijk de mogelijkheden om houtbouw af te dwingen.
+                  Ben je als overheid grondeigenaar? Bekijk de mogelijkheden om houtbouw af te
+                  dwingen.
                 </p>
               )}
               {selected === 'subsidie' && (
-                <p className='p-base'>
-                  Bekijk hoe je via subsidies houtbouw kunt stimuleren.
-                </p>
+                <p className='p-base'>Bekijk hoe je via subsidies houtbouw kunt stimuleren.</p>
               )}
               {selected === 'fiscaal' && (
                 <p className='p-base'>
