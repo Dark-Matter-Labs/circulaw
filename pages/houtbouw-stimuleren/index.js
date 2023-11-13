@@ -19,7 +19,7 @@ export default function Houtbouw({ featuredLaws, thema, length }) {
       />
     </Layout>
   );
-}
+}   
 
 export async function getStaticProps() {
   const featuredLaws = await client.fetch(houtbouwQueries.houtbouwFeatured);

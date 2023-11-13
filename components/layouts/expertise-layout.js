@@ -13,12 +13,27 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   const [grondpositie, setGrondpositie] = useState([]);
   const [subsidie, setSubsidie] = useState([]);
   const [fiscaal, setFiscaal] = useState([]);
-  const [selected, setSelected] = useState('beleid');
-  const [local, setLocal] = useState({ value: 'alle' });
+  
   const [numBeleid, setNumBeleid] = useState();
   const [numInkoop, setNumInkoop] = useState();
   const [numGronposirie, setNumGronposirie] = useState();
   const [isPending, startTransition] = useTransition();
+
+  const [selected, setSelected] = useState('beleid');
+  const [local, setLocal] = useState({value: 'alle'});
+ 
+  
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      let selected = localStorage.getItem('selected');
+      let keys = []
+      for (let i = 0; i < localStorage.length; i++) {
+        keys.push(localStorage.key(i))
+      }
+      setSelected(selected)
+    }
+  },[])
 
   const numGrondpositieStrategie = grondpositie.filter((instrument) =>
     instrument?.grondpositieSubCategory?.includes('strategie'),
@@ -252,15 +267,22 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
         );
       }
     }
-  }, [local.value, selected, expertiseData]);
+  }, [local?.value, selected, expertiseData]);
 
   // change filters
   function handleRadioButton(value) {
-    startTransition(() => {
-      setLocal({
-        value: value,
+      startTransition(() => {
+        setLocal({
+          value: value,
+        });
       });
-    });
+  }
+
+  function handleTabButton(value) {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.setItem('selected', value)
+      setSelected(value)
+    }
   }
 
   if (isPending) {
@@ -278,7 +300,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   <TabButton
                     selected={selected}
                     onClick={() => {
-                      setSelected('beleid');
+                      handleTabButton('beleid');
                       handleRadioButton('alle');
                     }}
                     numInstrument={numBeleid}
@@ -289,7 +311,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   <TabButton
                     selected={selected}
                     onClick={() => {
-                      setSelected('inkoop');
+                      handleTabButton('inkoop');
                       handleRadioButton('alle');
                     }}
                     numInstrument={numInkoop}
@@ -300,7 +322,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                     <TabButton
                       selected={selected}
                       onClick={() => {
-                        setSelected('grondpositie');
+                        handleTabButton('grondpositie');
                         handleRadioButton('alle');
                       }}
                       numInstrument={numGronposirie}
@@ -312,7 +334,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   <TabButton
                     selected={selected}
                     onClick={() => {
-                      setSelected('subsidie');
+                      handleTabButton('subsidie');
                       handleRadioButton('alle');
                     }}
                     numInstrument={subsidie.length}
@@ -322,7 +344,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   <TabButton
                     selected={selected}
                     onClick={() => {
-                      setSelected('fiscaal');
+                      handleTabButton('fiscaal');
                       handleRadioButton('alle');
                     }}
                     numInstrument={fiscaal.length}
@@ -420,7 +442,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 <TabButton
                   selected={selected}
                   onClick={() => {
-                    setSelected('beleid');
+                    handleTabButton('beleid');
                     handleRadioButton('alle');
                   }}
                   numInstrument={numBeleid}
@@ -431,7 +453,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 <TabButton
                   selected={selected}
                   onClick={() => {
-                    setSelected('inkoop');
+                    handleTabButton('inkoop');
                     handleRadioButton('alle');
                   }}
                   numInstrument={numInkoop}
@@ -442,7 +464,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   <TabButton
                     selected={selected}
                     onClick={() => {
-                      setSelected('grondpositie');
+                      handleTabButton('grondpositie');
                       handleRadioButton('alle');
                     }}
                     numInstrument={numGronposirie}
@@ -454,7 +476,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 <TabButton
                   selected={selected}
                   onClick={() => {
-                    setSelected('subsidie');
+                    handleTabButton('subsidie');
                     handleRadioButton('alle');
                   }}
                   numInstrument={subsidie.length}
@@ -464,7 +486,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 <TabButton
                   selected={selected}
                   onClick={() => {
-                    setSelected('fiscaal');
+                    handleTabButton('fiscaal');
                     handleRadioButton('alle');
                   }}
                   numInstrument={fiscaal.length}
@@ -612,7 +634,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 <TabButton
                   selected={selected}
                   onClick={() => {
-                    setSelected('beleid');
+                    handleTabButton('beleid');
                     handleRadioButton('alle');
                   }}
                   numInstrument={numBeleid}
@@ -623,7 +645,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 <TabButton
                   selected={selected}
                   onClick={() => {
-                    setSelected('inkoop');
+                    handleTabButton('inkoop');
                     handleRadioButton('alle');
                   }}
                   numInstrument={numInkoop}
@@ -634,7 +656,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   <TabButton
                     selected={selected}
                     onClick={() => {
-                      setSelected('grondpositie');
+                      handleTabButton('grondpositie');
                       handleRadioButton('alle');
                     }}
                     numInstrument={numGronposirie}
@@ -646,7 +668,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 <TabButton
                   selected={selected}
                   onClick={() => {
-                    setSelected('subsidie');
+                    handleTabButton('subsidie');
                     handleRadioButton('alle');
                   }}
                   numInstrument={subsidie.length}
@@ -656,7 +678,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 <TabButton
                   selected={selected}
                   onClick={() => {
-                    setSelected('fiscaal');
+                    handleTabButton('fiscaal');
                     handleRadioButton('alle');
                   }}
                   numInstrument={fiscaal.length}
@@ -701,7 +723,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
               <div className='mx-4'>
                 <p className='p-base'>Toon overheidslaag:</p>
                 <div className='w-full min-w-[260px] pt-3'>
-                  {local.value === 'alle' && (
+                  {local?.value === 'alle' && (
                     <Disclosure>
                       {({ open }) => (
                         <>
@@ -758,7 +780,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                       )}
                     </Disclosure>
                   )}
-                  {local.value === 'Nationaal' && (
+                  {local?.value === 'Nationaal' && (
                     <Disclosure>
                       {({ open }) => (
                         <>
@@ -811,7 +833,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                       )}
                     </Disclosure>
                   )}
-                  {local.value === 'Provinciaal' && (
+                  {local?.value === 'Provinciaal' && (
                     <Disclosure>
                       {({ open }) => (
                         <>
@@ -864,7 +886,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                       )}
                     </Disclosure>
                   )}
-                  {local.value === 'Gemeentelijk' && (
+                  {local?.value === 'Gemeentelijk' && (
                     <Disclosure>
                       {({ open }) => (
                         <>
