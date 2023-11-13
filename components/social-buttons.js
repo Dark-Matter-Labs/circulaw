@@ -48,7 +48,7 @@ export default function SocialButtons({ title, viewport }) {
         <TwitterShareButton url={url + asPath} title={'' + title}>
           <SocialIcon
             url={url + asPath}
-            network='twitter'
+            network='x'
             style={{ height: 24, width: 24 }}
             bgColor='#FDFDFD'
             fgColor='#A2A3A2'
