@@ -25,7 +25,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.localStorage) {
+    if (typeof window !== 'undefined' && window.localStorage.length > 0) {
       let selected = localStorage.getItem('selected');
       let keys = []
       for (let i = 0; i < localStorage.length; i++) {
@@ -498,32 +498,27 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 <div className='py-6 ml-3'>
                   {selected === 'beleid' && (
                     <p className='p-base'>
-                      BELEID Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
-                      bezit.
+                      Vooral geïnteresseerd in het stimuleren van houtbouw via beleid?
                     </p>
                   )}
                   {selected === 'inkoop' && (
                     <p className='p-base'>
-                      INKOOP Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
-                      bezit.
+                      Bekijk hoe je via tenders en aanbestedingen houtbouw kunt stimuleren.
                     </p>
                   )}
                   {selected === 'grondpositie' && (
                     <p className='p-base'>
-                      GRONDPOSITIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen
-                      grond bezit.
+                      Ben je als overheid grondeigenaar? Bekijk de mogelijkheden om houtbouw af te dwingen.
                     </p>
                   )}
                   {selected === 'subsidie' && (
                     <p className='p-base'>
-                      SUBSIDIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen
-                      grond bezit.
+                      Bekijk hoe je via subsidies houtbouw kunt stimuleren.
                     </p>
                   )}
                   {selected === 'fiscaal' && (
                     <p className='p-base'>
-                      FISCAL Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
-                      bezit.
+                      Bekijk hoe je via fiscale maatregelen houtbouw kunt stimuleren.
                     </p>
                   )}
                 </div>
@@ -690,32 +685,27 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             <div className='mt-5 mb-4 global-margin'>
               {selected === 'beleid' && (
                 <p className='p-base'>
-                  BELEID Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
-                  bezit.
+                  Vooral geïnteresseerd in het stimuleren van houtbouw via beleid?
                 </p>
               )}
               {selected === 'inkoop' && (
                 <p className='p-base'>
-                  INKOOP Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
-                  bezit.
+                  Bekijk hoe je via tenders en aanbestedingen houtbouw kunt stimuleren.
                 </p>
               )}
               {selected === 'grondpositie' && (
                 <p className='p-base'>
-                  GRONDPOSITIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen
-                  grond bezit.
+                  Ben je als overheid grondeigenaar? Bekijk de mogelijkheden om houtbouw af te dwingen.
                 </p>
               )}
               {selected === 'subsidie' && (
                 <p className='p-base'>
-                  SUBSIDIE Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
-                  bezit.
+                  Bekijk hoe je via subsidies houtbouw kunt stimuleren.
                 </p>
               )}
               {selected === 'fiscaal' && (
                 <p className='p-base'>
-                  FISCAL Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
-                  bezit.
+                  Bekijk hoe je via fiscale maatregelen houtbouw kunt stimuleren.
                 </p>
               )}
             </div>
