@@ -11,7 +11,7 @@ export default function Instrumentheader({ data }) {
   return (
     <>
       {/* Not sticky */}
-      <div className='sm:sticky -top-[277px] z-20 bg-gradient-to-b from-[#042D36] to-[#22532200] bg-green-500 pt-3'>
+      <div className='sm:sticky -top-[294px] lgNav:-top-[277px] z-20 bg-gradient-to-b from-[#042D36] to-[#22532200] bg-green-500 pt-3'>
         <div className='h-auto sm:h-[360px] flex flex-col global-margin justify-between'>
           <div className='max-w-[800px] pt-6 pb-6 sm:pb-0 flex justify-between items-center'>
             <button

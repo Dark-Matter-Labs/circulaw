@@ -103,7 +103,7 @@ export default function ThemeCard({ props, type }) {
           <Link href={cardData.samenhangLink}>
             <div className='pb-6 pl-8'>
               <CustomButton color='whiteBackground'>
-                <div>Bekijk de samenhang</div>
+                <div>Bekijk jouw categorie</div>
                 <span className='pl-2'>
                   {' '}
                   <svg
