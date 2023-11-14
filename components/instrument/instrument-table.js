@@ -38,7 +38,7 @@ export default function InstrumentTable({ data }) {
             <tr className='border-b boder-grey-300'>
               <td className='w-1/3 py-3 p-base'>Artikel</td>
               <td className='w-2/3 py-3 p-base-semibold'>
-                <span className='flex justify-end sm:justify-start link-interaction text-green-500'>
+                {data?.measure?.artikelLink ? (  <span className='flex justify-end sm:justify-start link-interaction text-green-500'>
                   <a
                     className=''
                     target='_blank'
@@ -50,7 +50,8 @@ export default function InstrumentTable({ data }) {
                       <LinkIcon />
                     </span>
                   </a>
-                </span>
+                </span>):(<span className='p-base-semibold'>nvt</span>)}
+              
               </td>
             </tr>
             <tr className='border-b boder-grey-300'>
