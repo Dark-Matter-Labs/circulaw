@@ -38,20 +38,23 @@ export default function InstrumentTable({ data }) {
             <tr className='border-b boder-grey-300'>
               <td className='w-1/3 py-3 p-base'>Artikel</td>
               <td className='w-2/3 py-3 p-base-semibold'>
-                {data?.measure?.artikelLink ? (  <span className='flex justify-end sm:justify-start link-interaction text-green-500'>
-                  <a
-                    className=''
-                    target='_blank'
-                    href={data?.measure?.artikelLink}
-                    rel='noreferrer'
-                  >
-                    <span className='link-interaction'>
-                      {data?.measure?.artikel}
-                      <LinkIcon />
-                    </span>
-                  </a>
-                </span>):(<span className='p-base-semibold'>nvt</span>)}
-              
+                {data?.measure?.artikelLink ? (
+                  <span className='flex justify-end sm:justify-start link-interaction text-green-500'>
+                    <a
+                      className=''
+                      target='_blank'
+                      href={data?.measure?.artikelLink}
+                      rel='noreferrer'
+                    >
+                      <span className='link-interaction'>
+                        {data?.measure?.artikel}
+                        <LinkIcon />
+                      </span>
+                    </a>
+                  </span>
+                ) : (
+                  <span className='p-base-semibold'>nvt</span>
+                )}
               </td>
             </tr>
             <tr className='border-b boder-grey-300'>
