@@ -20,7 +20,7 @@ export default function ThemeBottomSection({ props }) {
               {laws?.map((measure) => (
                 <div
                   key={measure?._id}
-                  className={`border-black-white-600 ${
+                  className={`border-grey-600 ${
                     measure === laws?.[0] ? 'border-t border-transparent' : 'border-t'
                   }`}
                 >
@@ -57,7 +57,7 @@ export default function ThemeBottomSection({ props }) {
                         </div>
                         <div>
                           <h3 className='pt-4 sm:pt-0 mobile sm:desktop'>{measure?.titel}</h3>
-                          <p className=' p-base py-4 max-w-2xl'>{measure?.introText}</p>
+                          <p className=' p-md py-4 max-w-2xl'>{measure?.introText}</p>
                         </div>
                         <div className='flex sm:justify-between w-full sm:pt-14'>
                           <div className='hidden sm:block'>
@@ -75,7 +75,7 @@ export default function ThemeBottomSection({ props }) {
                             </div>
                           </div>
                           <div>
-                            <span className='text-green-500 link-lg link-interaction'>
+                            <span className='text-green-500 link-lg hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                               Bekijk het instrument{'>'}
                             </span>
                           </div>

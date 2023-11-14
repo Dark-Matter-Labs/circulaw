@@ -58,7 +58,7 @@ export default function Nav(props) {
   if (router.pathname === '/en') {
     return (
       <>
-        <div className='w-full bg-green-800 sticky top-0 z-50 shadow-lg'>
+        <div className='w-full bg-green-800 sticky top-0 z-40 shadow-lg'>
           <div className='flex justify-between global-margin'>
             <div className=' flex justify-start items-center'>
               <div className='hidden sm:block -ml-6'>
@@ -72,7 +72,7 @@ export default function Nav(props) {
                 </Link>
               </div>
             </div>
-            <div className='text-black-white-200 flex justify-center items-center min-w-[10%] pt-2 pr-4'>
+            <div className='text-grey-100 flex justify-center items-center min-w-[10%] pt-2 pr-4'>
               <span
                 className={`link-interaction-dark-bg ${
                   router.pathname === '/en' ? 'enLink' : 'enLinkSelected'
@@ -106,19 +106,19 @@ export default function Nav(props) {
                 `${
                   router.pathname === '/'
                     ? 'bg-green-600 shadow-lg transition-all duration-150'
-                    : 'bg-black-white-200 shadow-lg transition-all duration-150'
+                    : 'bg-[#F8FBF8] shadow-lg transition-all duration-150'
                 }`,
               ]
             : [
                 `${
                   router.pathname === '/'
                     ? 'bg-transparent transition-all duration-150'
-                    : 'bg-black-white-200 shadow-lg transition-all duration-150'
+                    : 'bg-[#F8FBF8] shadow-lg transition-all duration-150'
                 }`,
               ]
-        } w-full sticky top-0 z-10 h-auto`}
+        } w-full sticky top-0 z-40 h-auto`}
       >
-        <Popover as='nav' className={`${scrollEffect ? '' : ''} z-20 relative`}>
+        <Popover as='nav' className={`${scrollEffect ? '' : ''} z-40 relative`}>
           {({ open }) => (
             <>
               <div
@@ -180,7 +180,7 @@ export default function Nav(props) {
                 <div className='inset-y-0 float-right flex items-center pt-3 lgNav:hidden'>
                   <Popover.Button
                     className={`${
-                      router.pathname !== '/' ? 'text-green-600' : 'text-black-white-200'
+                      router.pathname !== '/' ? 'text-green-600' : 'text-grey-100'
                     } 'p-2 rounded-md`}
                   >
                     <span className='sr-only'>Open main menu</span>
@@ -205,7 +205,7 @@ export default function Nav(props) {
                             <>
                               <Popover.Button
                                 className={`${
-                                  router.pathname !== '/' ? 'text-black-white-800' : 'text-white'
+                                  router.pathname !== '/' ? 'text-grey-800' : 'text-white'
                                 } group rounded-md inline-flex items-center`}
                               >
                                 <h5 className='uppercase mobile sm:desktop'>Thema&apos;s</h5>
@@ -233,7 +233,7 @@ export default function Nav(props) {
                                 leaveFrom='opacity-100 translate-y-0'
                                 leaveTo='opacity-0 translate-y-1'
                               >
-                                <Popover.Panel className='absolute z-10  transform w-screen max-w-xs sm:px-0'>
+                                <Popover.Panel className='absolute z-40  transform w-screen max-w-xs sm:px-0'>
                                   <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                                     <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
                                       {themaSlugs.map((slug) => (
@@ -242,7 +242,7 @@ export default function Nav(props) {
                                           href={`/${encodeURIComponent(slug)}`}
                                           className='-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 border-b uppercase'
                                         >
-                                          <h6 className='popup-base text-gray-900'>
+                                          <h6 className='popup-md text-gray-900'>
                                             {slug.replaceAll('-', ' ')}
                                           </h6>
                                         </a>
@@ -259,9 +259,7 @@ export default function Nav(props) {
                             <>
                               <Popover.Button
                                 className={`${
-                                  router.pathname !== '/'
-                                    ? 'text-black-white-800'
-                                    : 'text-black-white-200'
+                                  router.pathname !== '/' ? 'text-grey-800' : 'text-grey-100'
                                 } group rounded-md inline-flex items-center`}
                               >
                                 <h5 className='uppercase mobile sm:desktop'>OVER CIRCULAW</h5>
@@ -289,7 +287,7 @@ export default function Nav(props) {
                                 leaveFrom='opacity-100 translate-y-0'
                                 leaveTo='opacity-0 translate-y-1'
                               >
-                                <Popover.Panel className='absolute z-10  transform w-screen max-w-xs sm:px-0'>
+                                <Popover.Panel className='absolute z-40  transform w-screen max-w-xs sm:px-0'>
                                   <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                                     <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
                                       {aboutSlugs?.map((slug) => (
@@ -298,7 +296,7 @@ export default function Nav(props) {
                                           href={`/about/${encodeURIComponent(slug.slug)}`}
                                           className='-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase border-b'
                                         >
-                                          <h6 className='` popup-base text-black-white-800'>
+                                          <h6 className='` popup-md text-grey-800'>
                                             {slug.title.replaceAll('-', ' ')}
                                           </h6>
                                         </a>
@@ -314,9 +312,7 @@ export default function Nav(props) {
                           <Link href={`/${encodeURIComponent(FAQslug)}`}>
                             <h5
                               className={`${
-                                router.pathname !== '/'
-                                  ? 'text-black-white-800'
-                                  : 'text-black-white-200'
+                                router.pathname !== '/' ? 'text-grey-800' : 'text-grey-100'
                               } uppercase group rounded-md inline-flex items-center mobile sm:desktop mobile sm:desktop`}
                             >
                               VRAAG & ANTWOORD
@@ -327,9 +323,7 @@ export default function Nav(props) {
                           <Link href='/contact'>
                             <h5
                               className={`${
-                                router.pathname !== '/'
-                                  ? 'text-black-white-800'
-                                  : 'text-black-white-200'
+                                router.pathname !== '/' ? 'text-grey-800' : 'text-grey-100'
                               } uppercase group rounded-md inline-flex items-center mobile sm:desktop mobile sm:desktop`}
                             >
                               CONTACT
@@ -339,7 +333,7 @@ export default function Nav(props) {
                         {router.pathname == '/' && (
                           <div className='inline-block relative pl-6'>
                             <ScrollLink to='news' smooth={true}>
-                              <button className='inline-flex items-center px-4 py-0.5 button bg-black-white-200 hover:bg-green-200 text-green-600 shadow-md active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white rounded-full'>
+                              <button className='inline-flex items-center px-4 py-0.5 button bg-grey-100 hover:bg-green-200 text-green-600 shadow-md active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white rounded-full'>
                                 Nieuw
                                 <ArrowDownIcon className='inline h-4 w-4 ml-1' aria-hidden='true' />
                               </button>
@@ -362,7 +356,7 @@ export default function Nav(props) {
                 leaveFrom='opacity-100 translate-y-0'
                 leaveTo='opacity-0 translate-y-1'
               >
-                <Popover.Panel className='lgNav:hidden bg-black-white-200 w-full absolute z-50'>
+                <Popover.Panel className='lgNav:hidden bg-grey-100 w-full absolute z-40'>
                   <div className='pt-2 pb-4 global-margin'>
                     {/* LANG SWITCH */}
                     <Popover.Button
@@ -386,10 +380,7 @@ export default function Nav(props) {
                       </span>
                     </Popover.Button>
 
-                    <Popover.Button
-                      as='span'
-                      className='uppercase text-black-white-800  pl-3 pr-4 py-4'
-                    >
+                    <Popover.Button as='span' className='uppercase text-grey-800  pl-3 pr-4 py-4'>
                       Thema&apos;s
                     </Popover.Button>
 
@@ -408,7 +399,7 @@ export default function Nav(props) {
                     <hr className='my-4 mx-2 border-green-600' />
                     <Popover.Button
                       as='span'
-                      className='uppercase text-black-white-800 block pl-3 pr-4 py-4'
+                      className='uppercase text-grey-800 block pl-3 pr-4 py-4'
                     >
                       Over CircuLaw
                     </Popover.Button>
@@ -430,14 +421,14 @@ export default function Nav(props) {
                       onClick={() => {
                         router.push(`/${encodeURIComponent(FAQslug)}`);
                       }}
-                      className='cursor-pointer uppercase text-black-white-800  block pl-3 pr-2 py-4'
+                      className='cursor-pointer uppercase text-grey-800  block pl-3 pr-2 py-4'
                     >
                       Vraag en Antwoord
                     </Popover.Button>
                     <hr className='my-4 mx-2 border-green-600' />
                     <Popover.Button
                       as='span'
-                      className='uppercase text-black-white-800 block pl-3 pr-4 py-4'
+                      className='uppercase text-grey-800 block pl-3 pr-4 py-4'
                     >
                       <Link href='/contact'>Contact</Link>
                     </Popover.Button>

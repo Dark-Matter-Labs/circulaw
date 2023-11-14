@@ -55,7 +55,7 @@ export default function Contact() {
       <div className='global-margin'>
         {!formStatus ? (
           <>
-            <h1 className='text-green-600 pt-10 mobile sm:desktop'>Contact</h1>
+            <h1 className='mobile sm:desktop text-green-600 pt-10'>Contact</h1>
             <div className='mt-8 max-w-3xl mb-20'>
               <form
                 acceptCharset='UTF-8'
@@ -66,7 +66,7 @@ export default function Contact() {
                 className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'
               >
                 <div>
-                  <label htmlFor='first-name' className='block text-black-white-800'>
+                  <label htmlFor='first-name' className='block text-grey-800'>
                     Wat is je naam? <span className='text-green-400'>*</span>
                   </label>
                   <div className='mt-1'>
@@ -83,7 +83,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
-                  <label htmlFor='company' className='block  text-black-white-800'>
+                  <label htmlFor='company' className='block  text-grey-800'>
                     Voor welke organisatie werk je?
                   </label>
                   <div className='mt-1'>
@@ -99,7 +99,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
-                  <label htmlFor='email' className='block  text-black-white-800'>
+                  <label htmlFor='email' className='block  text-grey-800'>
                     Op welk e-mailadres kunnen we je bereiken?{' '}
                     <span className='text-green-400'>*</span>
                   </label>
@@ -119,7 +119,7 @@ export default function Contact() {
                 </div>
 
                 <div className='sm:col-span-2'>
-                  <label htmlFor='message' className='block text-black-white-800'>
+                  <label htmlFor='message' className='block text-grey-800'>
                     Wat is je vraag of opmerking? <span className='text-green-400'>*</span>
                   </label>
                   <div className='mt-1'>
@@ -137,9 +137,7 @@ export default function Contact() {
                 <div className='mt-1 flex items-baseline'>
                   <input type='hidden' name='subscribe' value='no' />
                   <input type='checkbox' name='subscribe' value='yes' onChange={handleChange()} />
-                  <label className='block text-black-white-800 pl-2'>
-                    Abonneren op de nieuwsbrief
-                  </label>
+                  <label className='block text-grey-800 pl-2'>Abonneren op de nieuwsbrief</label>
                 </div>
                 <div className='sm:col-span-2'>
                   <div className=''>
@@ -147,8 +145,10 @@ export default function Contact() {
                       Door verzenden geef je akkoord dat we je mogen benaderen als we meer vragen
                       hebben of je op de hoogte willen houden van je vraag of opmerking. Je gegevens
                       zullen nooit gebruikt worden voor andere doeleinden. Lees onze{' '}
-                      <Link href='/privacy-policy'>
-                        <span className='text-green-500'>privacy verklaring.</span>
+                      <Link href='/privacy-policy' className='link-interaction'>
+                        <span className='text-green-500 hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+                          privacy verklaring.
+                        </span>
                       </Link>
                     </p>
                   </div>
@@ -170,8 +170,8 @@ export default function Contact() {
           </>
         ) : (
           <>
-            <h1 className='text-green-600 pt-10 mobile sm:desktop'>Bedankt!</h1>
-            <p className=' p-lg py-10 max-w-2xl text-black-white-800'>
+            <h1 className='mobile sm:desktop text-green-600 pt-10'>Bedankt!</h1>
+            <p className=' p-lg py-10 max-w-2xl text-grey-800'>
               Dank voor je bericht! Je hoort van ons.
             </p>
             <div className='sm:col-span-2 pb-20'>

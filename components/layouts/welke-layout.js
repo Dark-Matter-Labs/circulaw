@@ -47,16 +47,18 @@ export default function WelkeLayout({ ...props }) {
 
   return (
     <div onLoad={useXarrow()}>
-      <div className='global-margin mt-8'>
-        <OverviewPageHeader props={props} page='welke' />
+      <div className=''>
+        <div className='h-[300px] sm:h-[360px] bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 bg-green-600  sm:mx-0'>
+          <OverviewPageHeader props={props} page='welke' />
+        </div>
         {/* DYNAMIC IMAGE */}
-        <div className='mb-20 mt-5 sm:mt-20 hidden sm:block'>
-          <div className='flex grid-cols-3 items-start justify-center'>
+        <div className='mb-20 mt-5 sm:mt-20 hidden sm:block global-margin '>
+          <div className='flex grid-cols-3 items-start 2xl:justify-center'>
             {/* LEFT HAND SIDE */}
             <div className='grid col-span-1 items-start justify-center h-full w-80 mt-10'>
               <div
                 id='allId'
-                className='w-80 h-10 border border-green-800 rounded-full text-black-white-800 bg-black-white-200 flex items-center justify-left'
+                className='w-80 h-10 border border-green-800 rounded-full text-grey-800 bg-grey-100 flex items-center justify-left'
               >
                 <div className='h-10 w-10 border-r border-t border-b border-green-800 rounded-full flex items-center justify-center'>
                   <h5 className='mobile sm:desktop'>A</h5>
@@ -71,7 +73,7 @@ export default function WelkeLayout({ ...props }) {
                     <Link
                       key={law.titel}
                       href={`/measures/${law.slug.current}`}
-                      className='inline-block'
+                      className='inline-block link-interaction'
                     >
                       <div className='flex items-start justify-start max-w-80 py-1'>
                         <span className='pr-2 inline-block'>
@@ -311,7 +313,11 @@ export default function WelkeLayout({ ...props }) {
                   </div>
                   <div className='pl-4 pt-3'>
                     {natLaws?.map((law) => (
-                      <Link key={law.titel} href={`/measures/${law.slug.current}`}>
+                      <Link
+                        key={law.titel}
+                        href={`/measures/${law.slug.current}`}
+                        className='link-interaction'
+                      >
                         <div className='flex items-start justify-start max-w-80 py-1'>
                           <span className='pr-2 inline-block'>
                             {' '}
@@ -356,7 +362,11 @@ export default function WelkeLayout({ ...props }) {
                   </div>
                   <div className='pl-4 pt-3'>
                     {provLaws?.map((law) => (
-                      <Link key={law.titel} href={`/measures/${law.slug.current}`}>
+                      <Link
+                        key={law.titel}
+                        href={`/measures/${law.slug.current}`}
+                        className='link-interaction'
+                      >
                         <div className='flex items-start justify-start max-w-80 py-1'>
                           <span className='pr-2 inline-block'>
                             {' '}
@@ -400,7 +410,11 @@ export default function WelkeLayout({ ...props }) {
                   </div>
                   <div className='pl-4 pt-3'>
                     {gemLaws?.map((law) => (
-                      <Link key={law.titel} href={`/measures/${law.slug.current}`}>
+                      <Link
+                        key={law.titel}
+                        href={`/measures/${law.slug.current}`}
+                        className='link-interaction'
+                      >
                         <div
                           key={law.titel}
                           className='flex items-start justify-start max-w-80 py-1'
@@ -437,16 +451,16 @@ export default function WelkeLayout({ ...props }) {
       </div>
 
       {/* TEXT COMPONENT */}
-      <div className='global-margin mb-20'>
+      <div className='global-margin mb-20 mt-4'>
         <div className='max-w-3xl mx-auto'>
-          <p className=' p-lg text-black-white-800 pb-6'>{props.p1}</p>
-          {props.p2 !== '' && <p className=' p-lg text-black-white-800 pb-6'>{props.p2}</p>}
-          {props.p3 !== '' && <p className=' p-lg text-black-white-800 pb-6'>{props.p3}</p>}
-          {props.p4 !== '' && <p className=' p-lg text-black-white-800 pb-6'>{props.p4}</p>}
+          <p className=' p-lg text-grey-800 pb-6'>{props.p1}</p>
+          {props.p2 !== '' && <p className=' p-lg text-grey-800 pb-6'>{props.p2}</p>}
+          {props.p3 !== '' && <p className=' p-lg text-grey-800 pb-6'>{props.p3}</p>}
+          {props.p4 !== '' && <p className=' p-lg text-grey-800 pb-6'>{props.p4}</p>}
         </div>
         <div className='sm:hidden'>
           <div className='pb-6'>
-            <p className='p-base italic'>
+            <p className='p-md italic'>
               Bekijk deze afbeelding door in te zoomen of bekijk de site op een groter scherm
             </p>
           </div>

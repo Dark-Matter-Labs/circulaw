@@ -9,10 +9,11 @@ export default function Measures({ numberOfInstruments }) {
     <Layout title='CircuLaw - Houtbouw stimuleren'>
       <MeasuresLayout
         totalNumberOfLaws={numberOfInstruments}
-        title='Lijst van houtbouw instrumenten'
+        transitionAgenda='bouw'
+        title='Lijst van alle houtbouw instrumenten'
         thema='houtbouw-stimuleren' // must be the same as value in cms
         heading='Instrumenten om de inzet van hout in de bouw te bevorderen'
-        introPara={`We hebben ${numberOfInstruments} kansrijke instrumenten gevonden die je kunt inzetten om de houtbouwtransitie te versnellen. Sommige van deze instrumenten zijn al eerder toegepast, andere nog niet. Ga aan de slag! Met jouw ervaringen help je ook anderen weer verder.`}
+        // introPara={`We hebben ${numberOfInstruments} kansrijke instrumenten gevonden die je kunt inzetten om de houtbouwtransitie te versnellen. Sommige van deze instrumenten zijn al eerder toegepast, andere nog niet. Ga aan de slag! Met jouw ervaringen help je ook anderen weer verder.`}
         icon={IconWood}
         searchTitle='Zoek in houtbouw stimuleren'
       />

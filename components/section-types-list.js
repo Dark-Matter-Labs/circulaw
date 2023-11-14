@@ -32,7 +32,7 @@ export default function SectionTypes({ themaCards }) {
               <div className='group block w-full p-4 bg-white rounded-cl'>
                 <div className='inline-block'>
                   <Link href={`/${thema.slug}`}>
-                    <h3 className='desktop mt-2 text-black pointer-events-none pb-4 hidden sm:inline'>
+                    <h3 className='mobile sm:desktop mt-2 text-black pointer-events-none pb-4 hidden sm:inline'>
                       {thema.themaName}
                     </h3>
                     <h2 className='mobile mt-2 text-black pointer-events-none pb-4 inline sm:hidden'>
@@ -41,7 +41,7 @@ export default function SectionTypes({ themaCards }) {
                   </Link>
                 </div>
                 <Link href={`/${thema.slug}`}>
-                  <p className='p-base block text-black pointer-events-none py-4 w-full'>
+                  <p className='p-md block text-black pointer-events-none py-4 w-full'>
                     {thema.homePageCardText}
                   </p>
                 </Link>
@@ -66,7 +66,7 @@ export default function SectionTypes({ themaCards }) {
                 </p>
                 <div className='flex grow self-baseline	'>
                   <div href='/contact' target='_blank' className='self-end'>
-                    <span className='text-black inline link-base sm:link-lg link-interaction break-words'>
+                    <span className='text-black inline link-base sm:link-lg break-words hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                       Houd me op de hoogte{' '}
                       <ArrowRightIcon className='inline h-4 w-4' aria-hidden='true' />
                     </span>
@@ -80,7 +80,7 @@ export default function SectionTypes({ themaCards }) {
       <div className='block sm:hidden'>
         {themaCards.map((thema) => (
           <Link key={thema.slug} href={`/${thema.slug}`}>
-            <div className='h-24 w-full rounded-cl bg-black-white-100 shadow my-6'>
+            <div className='h-24 w-full rounded-cl bg-grey-100 shadow my-6'>
               <div className='flex items-center justify-start'>
                 <div className='h-24 w-24 relative'>
                   <Image
@@ -90,7 +90,7 @@ export default function SectionTypes({ themaCards }) {
                     className='rounded-cl object-cover'
                   />
                 </div>
-                <div className='text-black-white-800 pl-4'>
+                <div className='text-grey-800 pl-4'>
                   <h3 className='mobile sm:desktop'>{thema.themaName}</h3>
                   <ArrowRightIcon
                     className='block h-4 w-4 text-green-600 mt-1'

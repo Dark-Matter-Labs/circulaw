@@ -80,7 +80,7 @@ export default function Feedback() {
 
   return (
     <Layout title='CircuLaw - Met jouw hulp maken we CircuLaw beter'>
-      <div className='bg-black-white-200 sm:bg-device'>
+      <div className='bg-grey-100 sm:bg-device'>
         <div className='global-margin'>
           {!formStatus ? (
             <>
@@ -89,17 +89,17 @@ export default function Feedback() {
                   <ArrowLeftIcon className='inline-block h-4 w-4 pr-1' aria-hidden='true' /> Terug
                 </span>{' '}
               </button>
-              <h1 className='text-black-white-800 pt-10 mobile sm:desktop'>
+              <h1 className='mobile sm:desktop text-grey-800 pt-10 mobile sm:desktop'>
                 Met jouw hulp maken we CircuLaw beter
               </h1>
-              <p className='p-xl pt-8 max-w-3xl'>
+              <p className='p-3xl pt-8 max-w-3xl'>
                 Ook bezig met{' '}
                 <span className='font-semibold'>{`‘${router.query.instrument}’`}</span>?
               </p>
-              <p className='p-xl pt-4 max-w-3xl'>Deel met ons:</p>
-              <ul className='p-xl max-w-3xl'>
+              <p className='p-3xl pt-4 max-w-3xl'>Deel met ons:</p>
+              <ul className='p-3xl max-w-3xl'>
                 <li>- voorbeelden uit jouw praktijk</li>
-                <li>- voorbeelden uit jouw praktijk</li>
+                <li>- je tips om toepassing makkelijker te maken</li>
                 <li>- de ervaring van jou of andere organisaties met een soortgelijk instrument</li>
               </ul>
               <div className='mt-20 max-w-3xl pb-20'>
@@ -112,7 +112,7 @@ export default function Feedback() {
                   className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'
                 >
                   <div className='sm:col-span-2'>
-                    <label htmlFor='message' className='block text-black-white-800'>
+                    <label htmlFor='message' className='block text-grey-800'>
                       <h3 className='mobile sm:desktop'>
                         Tip, voorbeeld, vraag <span className='text-green-400'>*</span>
                       </h3>
@@ -130,7 +130,7 @@ export default function Feedback() {
                     </div>
                   </div>
                   <div className='sm:col-span-2'>
-                    <label htmlFor='file' className='block text-black-white-800'>
+                    <label htmlFor='file' className='block text-grey-800'>
                       <h3 className='mobile sm:desktop pb-2'>Bijlagen</h3>
                     </label>
                     <CustomButton color='greenBackgroundLessRound' onClick={handleClick}>
@@ -151,7 +151,7 @@ export default function Feedback() {
                     </p>
                   </div>
                   <div>
-                    <label htmlFor='first-name' className='block text-black-white-800'>
+                    <label htmlFor='first-name' className='block text-grey-800'>
                       <h3 className='mobile sm:desktop'>
                         Je voor- en achternaam <span className='text-green-400'>*</span>
                       </h3>
@@ -170,7 +170,7 @@ export default function Feedback() {
                     </div>
                   </div>
                   <div className='sm:col-span-2'>
-                    <label htmlFor='email' className='block  text-black-white-800'>
+                    <label htmlFor='email' className='block  text-grey-800'>
                       <h3 className='mobile sm:desktop'>
                         Je e-mail <span className='text-green-400'>*</span>
                       </h3>
@@ -193,7 +193,7 @@ export default function Feedback() {
                     </div>
                   </div>
                   <div className='sm:col-span-2'>
-                    <label htmlFor='company' className='block  text-black-white-800'>
+                    <label htmlFor='company' className='block  text-grey-800'>
                       <h3 className='mobile sm:desktop'>
                         Je organisatie / bedrijf <span className='text-green-400'>*</span>
                       </h3>
@@ -212,7 +212,7 @@ export default function Feedback() {
                     </div>
                   </div>
                   <div className='sm:col-span-2'>
-                    <label htmlFor='company' className='block  text-black-white-800'>
+                    <label htmlFor='company' className='block  text-grey-800'>
                       <h3 className='mobile sm:desktop'>
                         Je functie / rol <span className='text-green-400'>*</span>
                       </h3>
@@ -242,7 +242,9 @@ export default function Feedback() {
                         hebben of je op de hoogte willen houden van dit instrument. Je gegevens
                         zullen nooit gebruikt worden voor andere doeleinden. Lees onze{' '}
                         <Link href='/privacy-policy'>
-                          <span className='text-green-500'>privacy verklaring.</span>
+                          <span className='link-interaction text-green-500 hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+                            privacy verklaring.
+                          </span>
                         </Link>
                       </p>
                     </div>
@@ -253,7 +255,7 @@ export default function Feedback() {
                       type='submit'
                       onClick={scrollToTop}
                       className={
-                        'bg-green-600 hover:bg-green-200 hover:text-green-600 text-black-white-100 active:bg-green-800 active:text-black-white-200 focus:outline-none focus:ring-2 focus:ring-white rounded-full inline-flex items-center px-4 py-2 button '
+                        'bg-green-600 hover:bg-green-200 hover:text-green-600 text-grey-100 active:bg-green-800 active:text-grey-100 focus:outline-none focus:ring-2 focus:ring-white rounded-full inline-flex items-center px-4 py-2 button '
                       }
                     >
                       Verzenden &rarr;
@@ -265,8 +267,8 @@ export default function Feedback() {
             </>
           ) : (
             <>
-              <h1 className='text-green-600 pt-10 mobile sm:desktop'>Dank voor je feedback!</h1>
-              <p className=' p-lg py-10 max-w-2xl text-black-white-800'>
+              <h1 className='mobile sm:desktop text-green-600 pt-10'>Dank voor je feedback!</h1>
+              <p className=' p-lg py-10 max-w-2xl text-grey-800'>
                 Samen met jou kunnen we CircuLaw blijven verbeteren, en dat is hard nodig! We gaan
                 je feedback bekijken en zullen je eventueel benaderen als we nog vragen hebben of
                 antwoorden op jouw vraag. Wil je op de hoogte blijven van CircuLaw?{' '}

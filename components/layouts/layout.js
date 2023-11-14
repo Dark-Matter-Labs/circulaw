@@ -26,7 +26,6 @@ export default function Layout({
   const aboutNavItems = aboutPageSlugs;
   const vraagSlug = vraagAntwoordSlug?.slug;
   const themaSlugs = themaPageSlugs?.slugs;
-
   return (
     <>
       <Nav

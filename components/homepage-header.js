@@ -7,15 +7,12 @@ export default function HomepageHeader({ homePageHeader }) {
     <main className='pb-16 pt-56'>
       <div className='global-margin'>
         <div className='text-center max-w-4xl mx-auto'>
-          <div className='header hidden sm:block text-black-white-200 pb-10'>
-            <span className='block '>{homePageHeader.headerText}</span>{' '}
+          <div className='text-left sm:text-center max-w-xs m-auto sm:max-w-4xl sm:block text-grey-200'>
+            <h1 className='block lg mobile sm:desktop'>{homePageHeader.headerText}</h1>{' '}
+            <h3 className='mobile sm:desktop text-left m-auto sm:text-center mt-2 p-md max-w-sm sm:max-w-full text-grey-200 pt-10 pb-8'>
+              {homePageHeader.subHeader}
+            </h3>
           </div>
-          <h1 className='text-left mobile block sm:hidden text-black-white-200 py-4'>
-            <span className='block '>{homePageHeader.headerText}</span>{' '}
-          </h1>
-          <p className='text-left sm:text-center mt-2 p-base max-w-sm sm:max-w-full sm:p-xl-header text-black-white-200 pb-8'>
-            {homePageHeader.subHeader}
-          </p>
           <div className='mt-2 sm:flex sm:justify-center md:mt-2'>
             <div className=''>
               <CustomButton color='home'>

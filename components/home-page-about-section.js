@@ -7,7 +7,7 @@ import aboutImage from '../public/home-page/homepageAboutDeco.png';
 export default function HomePageAboutSection({ aboutSection }) {
   return (
     <Link href={`/about/${encodeURIComponent(aboutSection?.aboutSectionSlug)}`} name='about'>
-      <div className='w-full sm:w-3/5 flex items-center justify-start border-b border-black-white-800 pb-4'>
+      <div className='w-full sm:w-3/5 flex items-center justify-start border-b border-grey-800 pb-4'>
         <div className='sm:hidden'>
           <svg
             width='42'
@@ -127,7 +127,7 @@ export default function HomePageAboutSection({ aboutSection }) {
           </svg>
         </div>
 
-        <h1 className='mobile sm:desktop pl-4 sm:pl-8 text-green-600 '>
+        <h1 className='mobile sm:desktop pl-4 sm:pl-8 text-green-600'>
           {aboutSection?.aboutSectionTitle}
         </h1>
       </div>
@@ -139,8 +139,8 @@ export default function HomePageAboutSection({ aboutSection }) {
               <Image src={aboutImage} alt='image for wat circulaw' />
             </div>
           </div>
-          <p className='p-lg py-5 max-w-4xl hidden sm:block'>{aboutSection?.aboutSectionText}</p>
-          <p className='p-lg py-5 max-w-4xl block sm:hidden'>
+          <p className='p-base py-5 max-w-4xl hidden sm:block'>{aboutSection?.aboutSectionText}</p>
+          <p className='p-base py-5 max-w-4xl block sm:hidden'>
             {aboutSection?.aboutSectionMobileText}
           </p>
           <span className='text-green-500 link-lg link-interaction'>

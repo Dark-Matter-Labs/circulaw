@@ -11,7 +11,7 @@ import {
 } from '../../lib/queries';
 import AboutPageComponent from '../../components/about-page';
 
-const AboutPagepreview = lazy(() => import('../../components/about-page-preview'));
+const AboutPagepreview = lazy(() => import('../../components/about-page/about-page-preview'));
 
 export default function AboutPage({ preview, data }) {
   return preview ? (

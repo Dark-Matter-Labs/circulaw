@@ -28,9 +28,9 @@ export default function Partners({ footerText }) {
               <Fragment key={partner.partnerName}>
                 <div
                   key={partner.partnerName}
-                  className={`col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 border-r border-black-white-200  ${bordersDesktop} ${bordersSmall}`}
+                  className={`col-span-1 flex justify-center py-4 px-4 lg:py-8 lg:px-8 border-r border-grey-100  ${bordersDesktop} ${bordersSmall}`}
                 >
-                  <Link target='_blank' href={partner.partnerLink} rel='noopener noreferrer'>
+                  <Link href={partner.partnerLink} target='_blank' rel='noopener noreferrer'>
                     <Image
                       src={urlFor(partner.logo).url()}
                       alt={partner.partnerName}
@@ -40,45 +40,33 @@ export default function Partners({ footerText }) {
                   </Link>
                 </div>
 
-                {index === 2 && (
-                  <hr className='border-black-white-200 col-span-3 block lg:hidden' />
-                )}
+                {index === 2 && <hr className='border-grey-100 col-span-3 block lg:hidden' />}
 
-                {index === 4 && (
-                  <hr className='border-black-white-200 col-span-5 hidden lg:block' />
-                )}
+                {index === 4 && <hr className='border-grey-100 col-span-5 hidden lg:block' />}
 
-                {index === 5 && (
-                  <hr className='border-black-white-200 col-span-3 block lg:hidden' />
-                )}
+                {index === 5 && <hr className='border-grey-100 col-span-3 block lg:hidden' />}
 
-                {index === 8 && (
-                  <hr className='border-black-white-200 col-span-3 block lg:hidden' />
-                )}
+                {index === 8 && <hr className='border-grey-100 col-span-3 block lg:hidden' />}
 
-                {index === 9 && (
-                  <hr className='border-black-white-200 col-span-5 hidden lg:block' />
-                )}
+                {index === 9 && <hr className='border-grey-100 col-span-5 hidden lg:block' />}
 
-                {index === 11 && (
-                  <hr className='border-black-white-200 col-span-3 block lg:hidden' />
-                )}
+                {index === 11 && <hr className='border-grey-100 col-span-3 block lg:hidden' />}
 
                 {partners.length > 15 && index === 14 && (
-                  <hr className='border-black-white-200 col-span-3 block lg:hidden' />
+                  <hr className='border-grey-100 col-span-3 block lg:hidden' />
                 )}
                 {partners.length > 15 && index === 14 && (
-                  <hr className='border-black-white-200 col-span-5 hidden lg:block' />
+                  <hr className='border-grey-100 col-span-5 hidden lg:block' />
                 )}
                 {partners.length > 15 && index === 17 && (
-                  <hr className='border-black-white-200 col-span-3 block lg:hidden' />
+                  <hr className='border-grey-100 col-span-3 block lg:hidden' />
                 )}
               </Fragment>
             );
           })}
         </div>
       </div>
-      <div className='global-margin pb-2 text-black-white-200 p-base'>
+      <div className='global-margin pb-2 text-grey-100 p-md'>
         {router.pathname === '/en' && (
           <p className='pb-8'>
             Welcome to CircuLaw. This website is currently under development and in this version we
@@ -88,7 +76,7 @@ export default function Partners({ footerText }) {
             differently, what you think is missing, and of course, we would also like to hear what
             makes you happy.{' '}
             <Link href='mailto:info@circulaw.nl'>
-              <span className='text-green-300 link-interaction-dark-bg'>
+              <span className='text-green-300 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>
                 Please send your feedback on this beta version.
               </span>
             </Link>
@@ -104,11 +92,9 @@ export default function Partners({ footerText }) {
             </Link>
           </p>
         )}
-        <hr className='border-black-white-200 ' />
+        <hr className='border-grey-100 ' />
         <div className='text-center py-2'>
-          <span className='text-black-white-100 p-sm'>
-            Legal data & content managed with support from
-          </span>
+          <span className='text-grey-100 p-xs'>Legal data & content managed with support from</span>
           <a target='_blank' href='https://www.sanity.io/' rel='noopener noreferrer'>
             <Image className='inline mx-2 my-2' src={sanityLogo} alt='Sanity logo' />
           </a>

@@ -13,7 +13,7 @@ export default function ThemeCard({ props, type }) {
         <div className='row-span-3 shadow rounded-t-cl'>
           <div className=' shadow z-5 w-full rounded-t-cl h-full flex items-center justify-center'>
             {type === 'list' && (
-              <div className='bg-list-card bg-cover bg-center shadow z-5 w-full rounded-t-cl h-full flex items-center justify-center'>
+              <div className='bg-green-600 shadow z-5 w-full rounded-t-cl h-full flex items-center justify-center'>
                 <div className='w-5/6 h-5/6 relative'>
                   <Link href={cardData.listLink}>
                     <Image src={list} alt='' fill />
@@ -22,7 +22,7 @@ export default function ThemeCard({ props, type }) {
               </div>
             )}
             {type === 'samenhang' && (
-              <div className='bg-samenhang-card bg-cover bg-center shadow z-5 w-full rounded-t-cl h-full flex items-center justify-center'>
+              <div className='bg-green-600 shadow z-5 w-full rounded-t-cl h-full flex items-center justify-center'>
                 <div className='w-5/6 h-5/6 relative'>
                   <Link href={cardData.samenhangLink}>
                     <Image src={samenhang} alt='' fill />
@@ -31,7 +31,7 @@ export default function ThemeCard({ props, type }) {
               </div>
             )}
             {type === 'waarvoor' && (
-              <div className='bg-waarvoor-card bg-cover bg-center shadow z-5 w-full rounded-t-cl h-full flex items-center justify-center'>
+              <div className='bg-green-600 shadow z-5 w-full rounded-t-cl h-full flex items-center justify-center'>
                 <div className='w-5/6 h-5/6 relative'>
                   <Link href={cardData.welkeLink}>
                     <Image src={waarvoor} alt='' fill />
@@ -103,7 +103,7 @@ export default function ThemeCard({ props, type }) {
           <Link href={cardData.samenhangLink}>
             <div className='pb-6 pl-8'>
               <CustomButton color='whiteBackground'>
-                <div>Bekijk de samenhang</div>
+                <div>Bekijk jouw categorie</div>
                 <span className='pl-2'>
                   {' '}
                   <svg

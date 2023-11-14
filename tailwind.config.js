@@ -13,13 +13,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'black-white-100': '#FDFDFD',
-        'black-white-200': '#F8FBF8',
-        'black-white-300': '#DAD8D8',
-        'black-white-400': '#BFC0BF',
-        'black-white-500': '#A2A3A2',
-        'black-white-600': '#676868',
-        'black-white-800': '#1F2223',
+        'grey-100': '#FDFDFD',
+        'grey-200': '#F0F0F0',
+        'grey-300': '#DAD8D8',
+        'grey-400': '#BFC0BF',
+        'grey-500': '#A2A3A2',
+        'grey-600': '#676868',
+        'grey-800': '#1F2223',
         'green-200': '#84E9C5',
         'green-300': '#25C38B',
         'green-400': '#07B071',
@@ -28,8 +28,7 @@ module.exports = {
         'green-800': '#053237',
       },
       fontFamily: {
-        urbanist: ['Urbanist', 'sans-serif'],
-        manrope: ['Manrope', 'sans-serif']
+        jakarta: ['Plus Jakarta Sans', 'sans-serif']
       },
       fontSize: {
         xxs: '12px',
@@ -43,10 +42,11 @@ module.exports = {
         '4xl': '23px',
         '5xl': '25px',
         '6xl': '29px',
-        '7xl': '55px',
+        '7xl': '54px',
         '8xl': '85px'
       },
       lineHeight: {
+        2: '14px',
         3: '15px',
         4: '16px',
         5: '19px',
@@ -56,7 +56,7 @@ module.exports = {
         9: '23px',
         10: '24px',
         11: '26px',
-        12: '27px',
+        12: '28px',
         13: '30px',
         14: '32px',
         15: '36px',
@@ -69,13 +69,16 @@ module.exports = {
       spacing: {
         '128': '32rem',
       },
+      flexBasis: {
+        'houdbaarheid': '22%',
+        'invloed': '14%',
+        'overheidslaag': '35%',
+        'rladder': '29%',
+      },
       backgroundImage: {
         'houtbouw-hero' : 'url("/hero-images/houtbouwHero.png")',
         'windmill-hero' : 'url("/hero-images/windmillHero.png")',
         'matrassen-hero' : 'url("/hero-images/matrassenHero.png")',
-        'list-card': 'url("/thema-card-background/list-bg.png")',
-        'samenhang-card': 'url("/thema-card-background/samenhang-bg.png")',
-        'waarvoor-card': 'url("/thema-card-background/waaroov-bg.png")',
         'en-background': 'url("/Background-en-page.png")',
         'en-header': 'url("/en-deco-header.png")',
         'about-header': 'url("/about-header.png")',
@@ -83,9 +86,12 @@ module.exports = {
       },
       borderRadius: {
           'cl': '10px',
+          'clSm': '4px'
       },
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [
+    require('@tailwindcss/forms')
+],
   
 };

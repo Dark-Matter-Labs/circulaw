@@ -22,46 +22,26 @@ export default function ThemeLayout({ ...props }) {
             />
             <div className='global-margin h-[28rem] z-5 pt-10 relative'>
               <Link
-                className='bg-black-white-200 border rounded-md border-black-white-200 pl-1 pr-2 py-0.5 breadcrumb text-green-500'
+                className='bg-grey-100 border rounded-md border-grey-100 pl-1 pr-2 py-0.5 breadcrumb text-green-500'
                 href='/'
               >
-                &lt; Home
+                <span className='link-interaction'>&lt; Home</span>
               </Link>
               <div className='grid col-span-8 grid-cols-8 sm:pl-12 sm:pt:12 md:pl-24 lg:pl-36 pb-14 pt-14 w-4/5'>
                 <div className='col-span-8'>
-                  <h1 className='text-black-white-200 inline-block header'>
+                  <h1 className='mobile sm:desktop text-grey-100 inline-block lg mobile sm:desktop'>
                     {themaData?.themaName}
                   </h1>
                 </div>
                 <div className='col-span-7'>
-                  <p className='pt-4 text-black-white-200 p-lg'>
+                  <p className='pt-4 text-grey-100 p-lg '>
                     {themaData?.themaSubtitle}{' '}
                     {themaData?.linkText && (
-                      <span className='text-green-300 link-base inline-block  '>
-                        <Link
-                          href={themaData?.headerLink}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                        >
+                      <span className='text-green-300 link-base inline-block hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white group'>
+                        <a href={themaData?.headerLink} target='_blank' rel='noopener noreferrer'>
                           {themaData?.linkText}
-                          <span className='inline-block h-4 w-4 text-green-300'>
-                            <svg
-                              width='24'
-                              height='24'
-                              viewBox='0 3 24 24'
-                              fill='none'
-                              xmlns='http://www.w3.org/2000/svg'
-                            >
-                              <path
-                                d='M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14'
-                                stroke='#25C38B'
-                                strokeWidth='1.3'
-                                strokeLinecap='round'
-                                strokeLinejoin='round'
-                              />
-                            </svg>
-                          </span>
-                        </Link>
+                          <LinkIcon />
+                        </a>
                       </span>
                     )}
                   </p>
@@ -77,8 +57,13 @@ export default function ThemeLayout({ ...props }) {
             <p className=' pb-3'>
               {themaData?.themaSubtitle}
               {themaData?.linkText && (
-                <span className='text-green-500 link-base inline-block'>
-                  <a href={themaData?.headerLinkURL} target='_blank' rel='noopener noreferrer'>
+                <span className='text-green-500 link-base inline-block '>
+                  <a
+                    href={themaData?.headerLinkURL}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
+                  >
                     {themaData?.linkText}
                     <LinkIcon />
                   </a>

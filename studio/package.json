@@ -24,6 +24,7 @@
     "react-is": "^18.2.0",
     "sanity": "^3.9.1",
     "sanity-plugin-iframe-pane": "^2.3.0",
+    "sanity-plugin-vercel-deploy": "^3.3.4",
     "styled-components": "^5.2.0"
   },
   "devDependencies": {

@@ -77,27 +77,32 @@ export default function ToolTips({ children, icon, data }) {
                         </button>
                       </div>
                     </Transition.Child>
-                    <div className='flex h-full px-6 flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
+                    <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl px-6'>
                       <div className=''>
                         <Dialog.Title className='text-gray-900'>
                           {' '}
-                          <h2 className='mobile sm:desktop'>Geschatte juridische haalbaarheid</h2>
+                          <h2 className='mobile sm:desktop'>Geschatte invloed</h2>
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1'>
                         <div className='absolute inset-0'>
-                          {data?.measure?.JHTooltipText && (
-                            <p className='p-base'>{data?.measure?.JHTooltipText}</p>
+                          {data?.measure?.invloedTooltipText && (
+                            <p className='p-md'>{data?.measure?.invloedTooltipText}</p>
                           )}
-                          <div className='bg-black-white-200 mt-6 p-6'>
-                            <p className='p-base'>
-                              Met de waardering ‘Juridische haalbaarheid’ laten we zien hoe
-                              risicovol een instrument is: wat is het afbreukrisico of de kans dat
-                              het instrument onderuit gaat bij de rechter.
+                          <div className='bg-grey-100 mt-6 p-6'>
+                            <p className='p-md'>
+                              Met ‘invloed’ bedoelen wij de invloed van het instrument in de
+                              praktijk. We kijken hiervoor onder andere naar:
                             </p>
+                            <ul className='list-disc pl-6 p-md'>
+                              <li>de afdwingbaarheid,</li>
+                              <li>hoeveel dírecte invloed het instrument heeft,</li>
+                              <li>hoe lang het doorwerkt,</li>
+                              <li>op hoeveel personen het betrekking heeft.</li>
+                            </ul>
                             <br />
-                            <p className='p-base'>
-                              We maken hiervan een globale inschatting, 1: beperkt, 2: gemiddeld, 3:
+                            <p className='p-md'>
+                              We maken hiervan een globale inschatting: 1: beperkt, 2: gemiddeld, 3:
                               hoog.
                             </p>
                           </div>

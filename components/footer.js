@@ -41,7 +41,7 @@ export default function Footer(props) {
       <footer className='' aria-labelledby='footer-heading'>
         {router.pathname !== '/en' && (
           <div>
-            <div className='flex lgNav:hidden w-full items-center justify-center py-8 bg-green-800 border-y-2 border-black-white-200 '>
+            <div className='flex lgNav:hidden w-full items-center justify-center py-8 bg-green-800 border-y-2 border-grey-100 '>
               <CustomButton color='home'>
                 <ScrollLink to='top' smooth={true}>
                   <span>
@@ -56,14 +56,14 @@ export default function Footer(props) {
                 <div className='pb-20'>
                   <div className=''>
                     <div className='grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-8'>
-                      <div className='sm:hidden block border-b border-black-white-200 pb-4'>
+                      <div className='sm:hidden block border-b border-grey-100 pb-4'>
                         <ActionPanel
                           title='Doe met ons mee'
                           paragraph='Heb je vragen, wil je je ervaringen delen of wil je een wetsanalyse laten uitvoeren op een circulair  thema of casus?'
                           buttonText='Neem contact op'
                           buttonLink='/contact'
                         />
-                        <div className='block sm:hidden pt-6 p-base text-black-white-100 '>
+                        <div className='block sm:hidden pt-6 p-md text-grey-100 '>
                           <h3 className='mobile sm:desktop inline-block'>Volg ons op:</h3>
                           <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
                             <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
@@ -85,19 +85,17 @@ export default function Footer(props) {
                           </Link>
                         </div>
                       </div>
-                      <div className=' border-b border-black-white-200 sm:border-0 py-2 sm:py-0'>
-                        <h4 className='text-black-white-100 mobile sm:desktop uppercase'>
-                          THEMA’S
-                        </h4>
+                      <div className=' border-b border-grey-100 sm:border-0 py-2 sm:py-0'>
+                        <h4 className='text-grey-100 mobile sm:desktop uppercase'>THEMA’S</h4>
                         <div className='grid grid-cols-1 gap-8 py-2 sm:py-0'>
                           <ul role='list' className='mt-4 space-y-4'>
                             {themaSlugs?.map((slug) => (
                               <li key={slug}>
                                 <a
                                   href={`/${encodeURIComponent(slug)}`}
-                                  className='p-base link-interaction text-black-white-100'
+                                  className='p-md text-grey-100'
                                 >
-                                  <span className='inline-block first-letter:uppercase'>
+                                  <span className='inline-block first-letter:uppercase link-interaction-light-green-bg'>
                                     {slug.replaceAll('-', ' ')}
                                   </span>
                                 </a>
@@ -106,10 +104,8 @@ export default function Footer(props) {
                           </ul>
                         </div>
                       </div>
-                      <div className=' border-b border-black-white-200 sm:border-0 py-2 sm:py-0'>
-                        <h4 className='text-black-white-100 mobile sm:desktop uppercase'>
-                          OVER CIRCULAW
-                        </h4>
+                      <div className=' border-b border-grey-100 sm:border-0 py-2 sm:py-0'>
+                        <h4 className='text-grey-100 mobile sm:desktop uppercase'>OVER CIRCULAW</h4>
                         <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                           {' '}
                           <ul role='list' className='mt-4 space-y-4'>
@@ -118,9 +114,9 @@ export default function Footer(props) {
                                 <li key={slug.slug}>
                                   <a
                                     href={`/about/${encodeURIComponent(slug.slug)}`}
-                                    className='p-base link-interaction text-black-white-100'
+                                    className='p-md text-grey-100'
                                   >
-                                    <span className='inline-block first-letter:uppercase'>
+                                    <span className='inline-block first-letter:uppercase link-interaction-light-green-bg'>
                                       {slug.title.replaceAll('-', ' ')}
                                     </span>
                                   </a>
@@ -133,11 +129,11 @@ export default function Footer(props) {
                         <ul role='list' className='space-y-4'>
                           <li>
                             <a
-                              className='p-base text-black-white-100 link-interaction'
+                              className='p-md text-grey-100 link-interaction'
                               href={`/${encodeURIComponent(FAQslug)}`}
                             >
                               {FAQslug.length > 0 && (
-                                <span className='inline-block first-letter:uppercase'>
+                                <span className='inline-block first-letter:uppercase link-interaction-light-green-bg'>
                                   {FAQslug.replaceAll('-', ' ')}
                                 </span>
                               )}
@@ -145,17 +141,14 @@ export default function Footer(props) {
                           </li>
                           {navigation.other.map((item) => (
                             <li key={item.name}>
-                              <a
-                                href={item.href}
-                                className=' p-base text-black-white-100 link-interaction'
-                              >
+                              <a href={item.href} className=' p-md link-interaction-light-green-bg'>
                                 {item.name}
                               </a>
                             </li>
                           ))}
-                          <li className='flex justify-start text-black-white-100 items-center'>
+                          <li className='flex justify-start text-grey-100 items-center'>
                             <span
-                              className={`link-interaction ${
+                              className={`link-interaction-light-green-bg ${
                                 router.pathname === '/en' ? '' : 'font-semibold'
                               }`}
                             >
@@ -163,7 +156,7 @@ export default function Footer(props) {
                             </span>
                             <span className='px-1 enLink'>|</span>
                             <span
-                              className={`link-interaction ${
+                              className={`link-interaction-light-green-bg ${
                                 router.pathname === '/en' ? 'font-semibold' : ''
                               }`}
                             >
@@ -179,22 +172,22 @@ export default function Footer(props) {
                           buttonText='Neem contact op'
                           buttonLink='/contact'
                         />
-                        <div className='hidden sm:block py-6 p-base text-black-white-100 flex items-center justify-center z-0 relative'>
+                        <div className='hidden sm:block py-6 p-md text-grey-100 flex items-center justify-center z-0 relative'>
                           <h3 className='inline-block mobile sm:desktop'>Volg ons op:</h3>
-                          <span data-text='Volg ons op LinkedIn' className='tooltip p-base z-40'>
+                          <span data-text='Volg ons op LinkedIn' className='tooltip p-md z-40'>
                             <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
-                              <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
+                              <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-200 mb-1.5' />
                             </Link>
                           </span>
-                          <span data-text='Volg ons op GitHub' className='tooltip p-base z-30'>
+                          <span data-text='Volg ons op GitHub' className='tooltip p-md z-30'>
                             <Link
                               href='https://github.com/Dark-Matter-Labs/circulaw'
                               target='_blank'
                             >
-                              <AiFillGithub className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
+                              <AiFillGithub className='inline-block ml-3 h-6 w-6 hover:text-green-200 mb-1.5' />
                             </Link>
                           </span>
-                          <span data-text='Volg ons op OpenResearch' className='tooltip p-base'>
+                          <span data-text='Volg ons op OpenResearch' className='tooltip p-md'>
                             <Link
                               href='https://openresearch.amsterdam/nl/page/89270/circulaw---circulaire-regelgevingstool'
                               target='_blank'
@@ -205,7 +198,7 @@ export default function Footer(props) {
                                 viewBox='0 0 107 107'
                                 fill='currentColor'
                                 xmlns='http://www.w3.org/2000/svg'
-                                className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5 fill-white'
+                                className='inline-block ml-3 h-6 w-6 hover:text-green-200 mb-1.5 fill-white'
                               >
                                 <circle cx='53.5' cy='53.5' r='53.5' fill='currentColor' />
                                 <path

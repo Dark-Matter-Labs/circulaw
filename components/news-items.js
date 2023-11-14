@@ -22,7 +22,7 @@ export default function NewsItems({ newsItems }) {
               newsItems[8] === item
                 ? 'bg-green-600'
                 : 'bg-green-800'
-            } h-auto sm:h-[335px] w-full min-w-[270px] max-w-full sm:max-w-[310px] rounded-cl text-black-white-100`}
+            } h-auto sm:h-[335px] w-full min-w-[270px] max-w-full sm:max-w-[310px] rounded-cl text-grey-100`}
           >
             {/*  
             {item?.image && (
@@ -38,7 +38,7 @@ export default function NewsItems({ newsItems }) {
             <div className='w-full h-full p-6 flex flex-col items-start'>
               {item?.date && <div className='capitilize pb-1'>{formatDate(item?.date)}</div>}
               <div className='pb-4'>
-                <h3 className='mobile sm:desctop'>{item?.title}</h3>
+                <h3 className='mobile sm:desktop'>{item?.title}</h3>
               </div>
               <div>
                 <p className='mobile sm:desktop pb-4'>{item?.text}</p>
@@ -58,8 +58,8 @@ export default function NewsItems({ newsItems }) {
               )}
               {item.externalLink && (
                 <div className='flex grow'>
-                  <Link href={item.externalLink} target='_blank' className='self-end'>
-                    <span className='text-black-white-100 inline link-base sm:link-lg link-interaction-dark-bg break-words'>
+                  <Link href={item.externalLink} target='_blank' className='self-end '>
+                    <span className='text-grey-100 inline link-base sm:link-lg break-words hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'>
                       {item.externalLinkText}
                       <LinkIcon />
                     </span>

@@ -26,8 +26,8 @@ const CookieConsent = () => {
   return (
     <section className={`fixed bottom-0 left-0 w-full pb-2 shadow-top ${consent ? 'hidden' : ''}`}>
       <div className='flex flex-col items-start px-20 py-6 space-y-2 bg-green-600 md:flex-row md:space-y-0 md:items-stretch md:space-x-2  '>
-        <div className='flex items-center flex-grow text-black-white-200'>
-          <p className='p-base sm:p-lg'>
+        <div className='flex items-center flex-grow text-grey-100'>
+          <p className='p-md sm:p-lg'>
             Op deze site gebruiken we cookies om te analyseren hoe jij de site gebruikt en om de
             site vervolgens te kunnen verbeteren. Altijd met respect voor jouw privacy. Lees voor
             meer informatie onze{' '}
@@ -42,13 +42,13 @@ const CookieConsent = () => {
         </div>
         <div className='flex items-center'>
           <button
-            className='inline-flex rounded-full items-center px-4 py-4 border button mr-2 border-black-white-200 bg-transparent hover:bg-green-200 text-black-white-200 hover:text-green-600 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white active:bg-green-800 active:text-black-white-200'
+            className='inline-flex rounded-full items-center px-4 py-4 border button mr-2 border-grey-100 bg-transparent hover:bg-green-200 text-grey-100 hover:text-green-600 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white active:bg-green-800 active:text-grey-100'
             onClick={() => denyCookie()}
           >
             Weiger
           </button>
           <button
-            className='inline-flex rounded-full items-center px-4 py-4 border button ml-2 border-green-600 bg-black-white-200 hover:bg-green-200 text-green-600 hover:border-black-white-200 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white active:bg-green-300 active:text-green-600'
+            className='inline-flex rounded-full items-center px-4 py-4 border button ml-2 border-green-600 bg-grey-100 hover:bg-green-200 text-green-600 hover:border-grey-100 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white active:bg-green-300 active:text-green-600'
             onClick={() => {
               acceptCookie();
             }}
