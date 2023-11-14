@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
 import SocialButtons from '../social-buttons';
@@ -7,6 +8,27 @@ import Tag from '../tag';
 
 export default function Instrumentheader({ data }) {
   const router = useRouter();
+  
+  // eslint-disable-next-line
+  const [selected, setSelected] = useState(null)
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.localStorage.length > 0) {
+      let selected = localStorage.getItem('selected');
+      let keys = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        keys.push(localStorage.key(i));
+      }
+      setSelected(selected);
+    }
+  }, []);
+
+  function setCategorie(value) {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.setItem('selected', value);
+      setSelected(value);
+    }
+  }
 
   return (
     <>
@@ -39,19 +61,30 @@ export default function Instrumentheader({ data }) {
               </Link>
 
               {data?.measure?.beleid === true && (
-                <Tag classes='bg-green-300 text-green-800'>Beleid</Tag>
+                <Link href={`/${data.measure.thema}/categorie`} onClick={() => setCategorie('beleid')}>
+                <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent'>Beleid</Tag>
+                </Link>
               )}
               {data?.measure?.inkoop === true && (
-                <Tag classes='bg-green-300 text-green-800'>Inkoop</Tag>
+                <Link href={`/${data.measure.thema}/categorie`} onClick={() => setCategorie('inkoop')} >
+                <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent'>Inkoop</Tag>
+                </Link>
               )}
               {data?.measure?.grondpositie === true && (
-                <Tag classes='bg-green-300 text-green-800'>Grondpositie</Tag>
+                 <Link href={`/${data.measure.thema}/categorie`} onClick={() => setCategorie('grondpositie')} >
+                <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent'>Grondpositie</Tag>
+                </Link>
               )}
+              
               {data?.measure?.subsidie === true && (
-                <Tag classes='bg-green-300 text-green-800'>Subsidie</Tag>
+              <Link href={`/${data.measure.thema}/categorie`} onClick={() => setCategorie('subsidie')} >
+                <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent'>Subsidie</Tag>
+                </Link>
               )}
               {data?.measure?.fiscaal === true && (
-                <Tag classes='bg-green-300 text-green-800'>Fiscaal</Tag>
+              <Link href={`/${data.measure.thema}/categorie`} onClick={() => setCategorie('fiscaal')} >
+                <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent'>Fiscaal</Tag>
+                </Link>
               )}
             </div>
             <div className='max-w-4xl flex justify-start overflow-hidden'>
