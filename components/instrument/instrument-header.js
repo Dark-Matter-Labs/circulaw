@@ -65,7 +65,7 @@ export default function Instrumentheader({ data }) {
                   href={`/${data.measure.thema}/categorie`}
                   onClick={() => setCategorie('beleid')}
                 >
-                  <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>
+                  <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
                     Beleid
                   </Tag>
                 </Link>
@@ -75,7 +75,7 @@ export default function Instrumentheader({ data }) {
                   href={`/${data.measure.thema}/categorie`}
                   onClick={() => setCategorie('inkoop')}
                 >
-                  <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>
+                  <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
                     Inkoop
                   </Tag>
                 </Link>
@@ -85,7 +85,7 @@ export default function Instrumentheader({ data }) {
                   href={`/${data.measure.thema}/categorie`}
                   onClick={() => setCategorie('grondpositie')}
                 >
-                  <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>
+                  <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
                     Grondpositie
                   </Tag>
                 </Link>
@@ -96,7 +96,7 @@ export default function Instrumentheader({ data }) {
                   href={`/${data.measure.thema}/categorie`}
                   onClick={() => setCategorie('subsidie')}
                 >
-                  <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>
+                  <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
                     Subsidie
                   </Tag>
                 </Link>
@@ -106,7 +106,7 @@ export default function Instrumentheader({ data }) {
                   href={`/${data.measure.thema}/categorie`}
                   onClick={() => setCategorie('fiscaal')}
                 >
-                  <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '>
+                  <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
                     Fiscaal
                   </Tag>
                 </Link>
