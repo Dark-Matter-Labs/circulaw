@@ -293,7 +293,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             </div>
             {/* DESKTOP */}
             <div className=' hidden sm:flex max-w-[1280px]  pb-10 global-margin'>
-              <div className='max-w-[880px] flex-col justify-start'>
+              <div className='max-w-[880px] lg:min-w-[880px] flex-col justify-start'>
                 <div className='flex flex-row gap-x-3 justify-start h-12 sm:h-[52px] -mt-12 sm:-mt-[52px] z-5 '>
                   <TabButton
                     selected={selected}
@@ -435,7 +435,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           </div>
           {/* DESKTOP */}
           <div className=' hidden sm:flex max-w-[1280px]  pb-10 global-margin'>
-            <div className='max-w-[880px] flex-col justify-start'>
+            <div className='max-w-[880px] lg:min-w-[880px] flex-col justify-start'>
               <div className='flex flex-row gap-x-3 justify-start h-12 sm:h-[52px] -mt-12 sm:-mt-[52px] z-5 '>
                 <TabButton
                   selected={selected}
