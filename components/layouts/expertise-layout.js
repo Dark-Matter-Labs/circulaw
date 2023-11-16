@@ -2,7 +2,6 @@ import { useEffect, useState, useTransition } from 'react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
 import { Disclosure } from '@headlessui/react';
 
-
 import OverviewPageHeader from '../overview-page-header';
 import TabButton from '../expertise-page/tab-button';
 import TabLayout from '../expertise-page/tab-layout';
@@ -279,13 +278,12 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
 
   function handleTabButton(value) {
     if (typeof window !== 'undefined' && window.localStorage) {
-      localStorage.setItem('selectedTab', value); 
+      localStorage.setItem('selectedTab', value);
       startTransition(() => {
         setSelectedTab(value);
-      })
+      });
     }
   }
-
 
   return (
     <>
@@ -295,7 +293,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             <OverviewPageHeader props={props} page='samenhang' />
           </div>
           {/* DESKTOP */}
-          <div className=' hidden sm:flex max-w-[1280px]  pb-10 global-margin'>
+          <div className='hidden sm:flex max-w-[1280px]  pb-10 global-margin'>
             <div className='max-w-[880px] lg:min-w-[880px] flex-col justify-start'>
               <div className='flex flex-row gap-x-3 justify-start h-12 sm:h-[52px] -mt-12 sm:-mt-[52px] z-5 '>
                 <TabButton
@@ -353,83 +351,115 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   name='fiscaal'
                 />
               </div>
-              <ExplinationText selected={selectedTab}/>
 
+              <ExplinationText selected={selectedTab} />
 
               <div className='flex flex-ro items-center h-11'>
-                  <div className='basis-1/2 ml-3 flex justify-end pr-3'>
-                    <div className='p-2xs-bold'>Toon:</div>
+                <div className='basis-1/2 ml-3 flex justify-end pr-3'>
+                  <div className='p-2xs-bold'>Toon:</div>
+                </div>
+                <div className='basis-1/2 mr-3 flex flex-row items-center justify-between p-xs font-medium max-w-[413px]'>
+                  <div className='mr-4 w-[60px]'>
+                    <input
+                      type='radio'
+                      name='filter'
+                      value='alle'
+                      id='alle'
+                      checked={local?.value === 'alle'}
+                      onChange={() => handleRadioButton('alle')}
+                      className='mr-2 text-black border-black border-2 h-4 w-4 focus:ring-black focus:ring-2 cursor-pointer bg-none'
+                    />
+                    <label htmlFor='alle' className='p-2xs-semibold hover:cursor-pointer'>
+                      Alle
+                    </label>
                   </div>
-                  <div className='basis-1/2 mr-3 flex flex-row items-center justify-between p-xs font-medium max-w-[413px]'>
-                    <div className='mr-4 w-[60px]'>
-                      <input
-                        type='radio'
-                        name='filter'
-                        value='alle'
-                        id='alle'
-                        checked={local?.value === 'alle'}
-                        onChange={() => handleRadioButton('alle')}
-                        className='mr-2 text-black border-black border-2 h-4 w-4 focus:ring-black focus:ring-2 cursor-pointer bg-none'
-                      />
-                      <label htmlFor='alle' className='p-2xs-semibold hover:cursor-pointer'>
-                        Alle
-                      </label>
-                    </div>
-                    <div className='mr-4 w-[115px]'>
-                      <input
-                        type='radio'
-                        name='filter'
-                        value='Gemeentelijk'
-                        id='gemeentelijk'
-                        checked={local?.value === 'Gemeentelijk'}
-                        onChange={() => handleRadioButton('Gemeentelijk')}
-                        className='mr-2 text-green-200 border-black border-2 h-4 w-4 focus:ring-green-200 focus:ring-2 cursor-pointer bg-none'
-                      />
-                      <label htmlFor='gemeentelijk' className='p-2xs-semibold hover:cursor-pointer'>
-                        Gemeentelijk
-                      </label>
-                    </div>
-                    <div className='mr-4 w-[100px]'>
-                      <input
-                        type='radio'
-                        name='filter'
-                        value='Provinciaal'
-                        id='provinciaal'
-                        checked={local?.value === 'Provinciaal'}
-                        onChange={() => handleRadioButton('Provinciaal')}
-                        className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
-                      />
-                      <label htmlFor='provinciaal' className='p-2xs-semibold hover:cursor-pointer'>
-                        Provinciaal
-                      </label>
-                    </div>
+                  <div className='mr-4 w-[115px]'>
+                    <input
+                      type='radio'
+                      name='filter'
+                      value='Gemeentelijk'
+                      id='gemeentelijk'
+                      checked={local?.value === 'Gemeentelijk'}
+                      onChange={() => handleRadioButton('Gemeentelijk')}
+                      className='mr-2 text-green-200 border-black border-2 h-4 w-4 focus:ring-green-200 focus:ring-2 cursor-pointer bg-none'
+                    />
+                    <label htmlFor='gemeentelijk' className='p-2xs-semibold hover:cursor-pointer'>
+                      Gemeentelijk
+                    </label>
+                  </div>
+                  <div className='mr-4 w-[100px]'>
+                    <input
+                      type='radio'
+                      name='filter'
+                      value='Provinciaal'
+                      id='provinciaal'
+                      checked={local?.value === 'Provinciaal'}
+                      onChange={() => handleRadioButton('Provinciaal')}
+                      className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
+                    />
+                    <label htmlFor='provinciaal' className='p-2xs-semibold hover:cursor-pointer'>
+                      Provinciaal
+                    </label>
+                  </div>
 
-                    <div className='w-[90px]'>
-                      <input
-                        type='radio'
-                        name='filter'
-                        value='Nationaal'
-                        id='nationaal'
-                        checked={local?.value === 'Nationaal'}
-                        onChange={() => handleRadioButton('Nationaal')}
-                        className='mr-2 text-green-600 border-black border-2 h-4 w-4 focus:ring-green-600 focus:ring-2 cursor-pointer bg-none'
-                      />
-                      <label htmlFor='nationaal' className='p-2xs-semibold hover:cursor-pointer'>
-                        Nationaal
-                      </label>
-                    </div>
+                  <div className='w-[90px]'>
+                    <input
+                      type='radio'
+                      name='filter'
+                      value='Nationaal'
+                      id='nationaal'
+                      checked={local?.value === 'Nationaal'}
+                      onChange={() => handleRadioButton('Nationaal')}
+                      className='mr-2 text-green-600 border-black border-2 h-4 w-4 focus:ring-green-600 focus:ring-2 cursor-pointer bg-none'
+                    />
+                    <label htmlFor='nationaal' className='p-2xs-semibold hover:cursor-pointer'>
+                      Nationaal
+                    </label>
                   </div>
                 </div>
+              </div>
               {/* if is pending is true do not change the tab wait for the next*/}
-            
-            
-              {selectedTab === 'beleid' &&  <TabLayout category={beleid} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
-              {selectedTab === 'inkoop' &&  <TabLayout category={inkoop} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
-              {selectedTab === 'grondpositie' &&  <TabLayout category={grondpositie} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
-              {selectedTab === 'subsidie' &&  <TabLayout category={subsidie} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
-              {selectedTab === 'fiscaal' &&  <TabLayout category={fiscaal} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
-            
-            
+
+              {selectedTab === 'beleid' && (
+                <TabLayout
+                  category={beleid}
+                  selected={selectedTab}
+                  transitionAgenda={props.transitionAgenda}
+                  isPending={isPending}
+                />
+              )}
+              {selectedTab === 'inkoop' && (
+                <TabLayout
+                  category={inkoop}
+                  selected={selectedTab}
+                  transitionAgenda={props.transitionAgenda}
+                  isPending={isPending}
+                />
+              )}
+              {selectedTab === 'grondpositie' && (
+                <TabLayout
+                  category={grondpositie}
+                  selected={selectedTab}
+                  transitionAgenda={props.transitionAgenda}
+                  isPending={isPending}
+                />
+              )}
+              {selectedTab === 'subsidie' && (
+                <TabLayout
+                  category={subsidie}
+                  selected={selectedTab}
+                  transitionAgenda={props.transitionAgenda}
+                  isPending={isPending}
+                />
+              )}
+              {selectedTab === 'fiscaal' && (
+                <TabLayout
+                  category={fiscaal}
+                  selected={selectedTab}
+                  transitionAgenda={props.transitionAgenda}
+                  isPending={isPending}
+                />
+              )}
             </div>
           </div>
 
@@ -493,9 +523,9 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 />
               </div>
             </div>
-            
+
             <ExplinationText selected={selectedTab} />
-         
+
             <div className='pb-4'>
               <div className='mx-4'>
                 <p className='p-base'>Toon overheidslaag:</p>
@@ -721,17 +751,46 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             </div>
 
             {/* DISPLAY INSTRUMENTS MOBILE */}
-            {selectedTab === 'beleid' &&  <TabLayout category={beleid} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
-            {selectedTab === 'inkoop' &&  <TabLayout category={inkoop} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
-            {selectedTab === 'grondpositie' &&  <TabLayout category={grondpositie} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
-            {selectedTab === 'subsidie' &&  <TabLayout category={subsidie} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
-            {selectedTab === 'fiscaal' &&  <TabLayout category={fiscaal} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
-          
-          
-
-
-
-
+            {selectedTab === 'beleid' && (
+              <TabLayout
+                category={beleid}
+                selected={selectedTab}
+                transitionAgenda={props.transitionAgenda}
+                isPending={isPending}
+              />
+            )}
+            {selectedTab === 'inkoop' && (
+              <TabLayout
+                category={inkoop}
+                selected={selectedTab}
+                transitionAgenda={props.transitionAgenda}
+                isPending={isPending}
+              />
+            )}
+            {selectedTab === 'grondpositie' && (
+              <TabLayout
+                category={grondpositie}
+                selected={selectedTab}
+                transitionAgenda={props.transitionAgenda}
+                isPending={isPending}
+              />
+            )}
+            {selectedTab === 'subsidie' && (
+              <TabLayout
+                category={subsidie}
+                selected={selectedTab}
+                transitionAgenda={props.transitionAgenda}
+                isPending={isPending}
+              />
+            )}
+            {selectedTab === 'fiscaal' && (
+              <TabLayout
+                category={fiscaal}
+                selected={selectedTab}
+                transitionAgenda={props.transitionAgenda}
+                isPending={isPending}
+              />
+            )}
           </div>
         </div>
       </div>
