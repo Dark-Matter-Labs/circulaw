@@ -1,11 +1,10 @@
 import { useEffect, useState, useTransition } from 'react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
+import { Disclosure } from '@headlessui/react';
+
 
 import OverviewPageHeader from '../overview-page-header';
-import DisplayInstruments from '../expertise-page/display-instruments';
-import ExpertisePageInstrument from '../expertise-page/expertise-page-instrument';
 import TabButton from '../expertise-page/tab-button';
-import { Disclosure } from '@headlessui/react';
 import TabLayout from '../expertise-page/tab-layout';
 import ExplinationText from '../expertise-page/explination-text';
 
@@ -429,10 +428,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
               {selectedTab === 'grondpositie' &&  <TabLayout category={grondpositie} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
               {selectedTab === 'subsidie' &&  <TabLayout category={subsidie} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
               {selectedTab === 'fiscaal' &&  <TabLayout category={fiscaal} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
-  
-
-
-           
             
             
             </div>
@@ -443,7 +438,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             <div className='-mt-12 flex overflow-x-scroll snap-x snap-mandatory no-scrollbar sm:hidden'>
               <div className='flex gap-x-2 h-12'>
                 <TabButton
-                  selected={selectedTab === 'beleid'}
+                  selected={selectedTab}
                   onClick={() => {
                     handleTabButton('beleid');
                     handleRadioButton('alle');
@@ -454,7 +449,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   name='beleid'
                 />
                 <TabButton
-                  selected={selectedTab === 'inkoop'}
+                  selected={selectedTab}
                   onClick={() => {
                     handleTabButton('inkoop');
                     handleRadioButton('alle');
@@ -465,7 +460,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 />
                 {props.thema !== 'circulaire-matrasketen' && (
                   <TabButton
-                    selected={selectedTab === 'grondpositie'}
+                    selected={selectedTab}
                     onClick={() => {
                       handleTabButton('grondpositie');
                       handleRadioButton('alle');
@@ -487,7 +482,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   name='subsidie'
                 />
                 <TabButton
-                  selected={selectedTab === 'fiscaal'}
+                  selected={selectedTab}
                   onClick={() => {
                     handleTabButton('fiscaal');
                     handleRadioButton('alle');
@@ -498,32 +493,9 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 />
               </div>
             </div>
-            <div className='mt-5 mb-4 global-margin'>
-              {selectedTab === 'beleid' && (
-                <p className='p-base'>
-                  Vooral geïnteresseerd in het stimuleren van houtbouw via beleid?
-                </p>
-              )}
-              {selectedTab === 'inkoop' && (
-                <p className='p-base'>
-                  Bekijk hoe je via tenders en aanbestedingen houtbouw kunt stimuleren.
-                </p>
-              )}
-              {selectedTab === 'grondpositie' && (
-                <p className='p-base'>
-                  Ben je als overheid grondeigenaar? Bekijk de mogelijkheden om houtbouw af te
-                  dwingen.
-                </p>
-              )}
-              {selectedTab === 'subsidie' && (
-                <p className='p-base'>Bekijk hoe je via subsidies houtbouw kunt stimuleren.</p>
-              )}
-              {selectedTab === 'fiscaal' && (
-                <p className='p-base'>
-                  Bekijk hoe je via fiscale maatregelen houtbouw kunt stimuleren.
-                </p>
-              )}
-            </div>
+            
+            <ExplinationText selected={selectedTab} />
+         
             <div className='pb-4'>
               <div className='mx-4'>
                 <p className='p-base'>Toon overheidslaag:</p>
@@ -749,49 +721,17 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             </div>
 
             {/* DISPLAY INSTRUMENTS MOBILE */}
-            <div className='flex flex-col'>
-              <ul>
-                {selectedTab === 'beleid' && props.transitionAgenda === 'bouw' && (
-                  <DisplayInstruments category={beleid} categoryName='beleid' />
-                )}
-              </ul>
-              <ul>
-                {selectedTab === 'beleid' &&
-                  props.transitionAgenda !== 'bouw' &&
-                  beleid.map((instrument) => (
-                    <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                  ))}
-              </ul>
-              <ul>
-                {selectedTab === 'inkoop' && (
-                  <DisplayInstruments category={inkoop} categoryName='inkoop' />
-                )}
-              </ul>
-              <ul>
-                {selectedTab == 'grondpositie' && props.transitionAgenda === 'bouw' && (
-                  <DisplayInstruments category={grondpositie} categoryName='grondpositie' />
-                )}
-              </ul>
-              <ul>
-                {selectedTab === 'grondpositie' &&
-                  props.transitionAgenda !== 'bouw' &&
-                  grondpositie.map((instrument) => (
-                    <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                  ))}
-              </ul>
-              <ul className=''>
-                {selectedTab === 'subsidie' &&
-                  subsidie.map((instrument) => (
-                    <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                  ))}
-              </ul>
-              <ul>
-                {selectedTab === 'fiscaal' &&
-                  fiscaal.map((instrument) => (
-                    <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                  ))}
-              </ul>
-            </div>
+            {selectedTab === 'beleid' &&  <TabLayout category={beleid} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
+            {selectedTab === 'inkoop' &&  <TabLayout category={inkoop} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
+            {selectedTab === 'grondpositie' &&  <TabLayout category={grondpositie} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
+            {selectedTab === 'subsidie' &&  <TabLayout category={subsidie} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
+            {selectedTab === 'fiscaal' &&  <TabLayout category={fiscaal} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
+          
+          
+
+
+
+
           </div>
         </div>
       </div>

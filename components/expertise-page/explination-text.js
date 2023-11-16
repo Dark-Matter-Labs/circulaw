@@ -3,7 +3,7 @@
 export default function ExplinationText({selected}) {
     return (
 
-        <div className='py-6 ml-3'>
+        <div className='sm:py-6 sm:ml-3 mt-5 mb-4 global-margin sm:m-0' >
         {selected === 'beleid' && (
           <p className='p-base'>
             Vooral geïnteresseerd in het stimuleren van houtbouw via beleid?
