@@ -21,17 +21,17 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   const [numGronposirie, setNumGronposirie] = useState();
   const [isPending, startTransition] = useTransition();
 
-  const [selected, setSelected] = useState('beleid');
+  const [selectedTab, setSelectedTab] = useState('beleid');
   const [local, setLocal] = useState({ value: 'alle' });
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.localStorage.length > 0) {
-      let selected = localStorage.getItem('selected');
+      let selectedTab = localStorage.getItem('selectedTab');
       let keys = [];
       for (let i = 0; i < localStorage.length; i++) {
         keys.push(localStorage.key(i));
       }
-      setSelected(selected);
+      setSelectedTab(selectedTab);
     }
   }, []);
 
@@ -114,34 +114,34 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
 
   useEffect(() => {
     // SET INITIAL VALUES
-    if (selected === 'beleid') {
+    if (selectedTab === 'beleid') {
       setInkoop(expertiseData?.filter((instrument) => instrument.inkoop === true));
       setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
       setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
       setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
-    } else if (selected === 'inkoop') {
+    } else if (selectedTab === 'inkoop') {
       setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
       setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
       setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
       setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
-    } else if (selected === 'grondpositie') {
+    } else if (selectedTab === 'grondpositie') {
       setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
       setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
       setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
       setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
-    } else if (selected === 'subsidie') {
+    } else if (selectedTab === 'subsidie') {
       setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
       setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
       setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
       setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
-    } else if (selected === 'fiscaal') {
+    } else if (selectedTab === 'fiscaal') {
       setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
       setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
       setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
       setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
     }
 
-    if (selected === 'beleid') {
+    if (selectedTab === 'beleid') {
       if (local?.value === 'alle') {
         setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
       } else if (local?.value === 'Gemeentelijk') {
@@ -166,7 +166,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           ),
         );
       }
-    } else if (selected === 'inkoop') {
+    } else if (selectedTab === 'inkoop') {
       if (local?.value === 'alle') {
         setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
       } else if (local?.value === 'Gemeentelijk') {
@@ -191,7 +191,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           ),
         );
       }
-    } else if (selected === 'grondpositie') {
+    } else if (selectedTab === 'grondpositie') {
       if (local?.value === 'alle') {
         setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
       } else if (local?.value === 'Gemeentelijk') {
@@ -216,7 +216,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           ),
         );
       }
-    } else if (selected === 'subsidie') {
+    } else if (selectedTab === 'subsidie') {
       if (local?.value === 'alle') {
         setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
       } else if (local?.value === 'Gemeentelijk') {
@@ -241,7 +241,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           ),
         );
       }
-    } else if (selected === 'fiscaal') {
+    } else if (selectedTab === 'fiscaal') {
       if (local?.value === 'alle') {
         setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
       } else if (local?.value === 'Gemeentelijk') {
@@ -267,7 +267,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
         );
       }
     }
-  }, [local?.value, selected, expertiseData]);
+  }, [local?.value, selectedTab, expertiseData]);
 
   // change filters
   function handleRadioButton(value) {
@@ -280,9 +280,9 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
 
   function handleTabButton(value) {
     if (typeof window !== 'undefined' && window.localStorage) {
-      localStorage.setItem('selected', value); 
+      localStorage.setItem('selectedTab', value); 
       startTransition(() => {
-        setSelected(value);
+        setSelectedTab(value);
       })
     }
   }
@@ -300,7 +300,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             <div className='max-w-[880px] lg:min-w-[880px] flex-col justify-start'>
               <div className='flex flex-row gap-x-3 justify-start h-12 sm:h-[52px] -mt-12 sm:-mt-[52px] z-5 '>
                 <TabButton
-                  selected={selected}
+                  selected={selectedTab}
                   onClick={() => {
                     handleTabButton('beleid');
                     handleRadioButton('alle');
@@ -311,7 +311,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   name='beleid'
                 />
                 <TabButton
-                  selected={selected}
+                  selected={selectedTab}
                   onClick={() => {
                     handleTabButton('inkoop');
                     handleRadioButton('alle');
@@ -322,7 +322,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 />
                 {props.thema !== 'circulaire-matrasketen' && (
                   <TabButton
-                    selected={selected}
+                    selected={selectedTab}
                     onClick={() => {
                       handleTabButton('grondpositie');
                       handleRadioButton('alle');
@@ -334,7 +334,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   />
                 )}
                 <TabButton
-                  selected={selected}
+                  selected={selectedTab}
                   onClick={() => {
                     handleTabButton('subsidie');
                     handleRadioButton('alle');
@@ -344,7 +344,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   name='subsidie'
                 />
                 <TabButton
-                  selected={selected}
+                  selected={selectedTab}
                   onClick={() => {
                     handleTabButton('fiscaal');
                     handleRadioButton('alle');
@@ -354,7 +354,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   name='fiscaal'
                 />
               </div>
-              <ExplinationText selected={selected}/>
+              <ExplinationText selected={selectedTab}/>
 
 
               <div className='flex flex-ro items-center h-11'>
@@ -424,11 +424,11 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
               {/* if is pending is true do not change the tab wait for the next*/}
             
             
-              {selected === 'beleid' &&  <TabLayout category={beleid} selected={selected} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
-              {selected === 'inkoop' &&  <TabLayout category={inkoop} selected={selected} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
-              {selected === 'grondpositie' &&  <TabLayout category={grondpositie} selected={selected} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
-              {selected === 'subsidie' &&  <TabLayout category={subsidie} selected={selected} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
-              {selected === 'fiscaal' &&  <TabLayout category={fiscaal} selected={selected} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
+              {selectedTab === 'beleid' &&  <TabLayout category={beleid} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
+              {selectedTab === 'inkoop' &&  <TabLayout category={inkoop} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
+              {selectedTab === 'grondpositie' &&  <TabLayout category={grondpositie} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
+              {selectedTab === 'subsidie' &&  <TabLayout category={subsidie} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
+              {selectedTab === 'fiscaal' &&  <TabLayout category={fiscaal} selected={selectedTab} transitionAgenda={props.transitionAgenda} isPending={isPending}/>}
   
 
 
@@ -443,7 +443,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             <div className='-mt-12 flex overflow-x-scroll snap-x snap-mandatory no-scrollbar sm:hidden'>
               <div className='flex gap-x-2 h-12'>
                 <TabButton
-                  selected={selected === 'beleid'}
+                  selected={selectedTab === 'beleid'}
                   onClick={() => {
                     handleTabButton('beleid');
                     handleRadioButton('alle');
@@ -454,7 +454,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   name='beleid'
                 />
                 <TabButton
-                  selected={selected === 'inkoop'}
+                  selected={selectedTab === 'inkoop'}
                   onClick={() => {
                     handleTabButton('inkoop');
                     handleRadioButton('alle');
@@ -465,7 +465,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 />
                 {props.thema !== 'circulaire-matrasketen' && (
                   <TabButton
-                    selected={selected === 'grondpositie'}
+                    selected={selectedTab === 'grondpositie'}
                     onClick={() => {
                       handleTabButton('grondpositie');
                       handleRadioButton('alle');
@@ -477,7 +477,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   />
                 )}
                 <TabButton
-                  selected={selected}
+                  selected={selectedTab}
                   onClick={() => {
                     handleTabButton('subsidie');
                     handleRadioButton('alle');
@@ -487,7 +487,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   name='subsidie'
                 />
                 <TabButton
-                  selected={selected === 'fiscaal'}
+                  selected={selectedTab === 'fiscaal'}
                   onClick={() => {
                     handleTabButton('fiscaal');
                     handleRadioButton('alle');
@@ -499,26 +499,26 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
               </div>
             </div>
             <div className='mt-5 mb-4 global-margin'>
-              {selected === 'beleid' && (
+              {selectedTab === 'beleid' && (
                 <p className='p-base'>
                   Vooral geïnteresseerd in het stimuleren van houtbouw via beleid?
                 </p>
               )}
-              {selected === 'inkoop' && (
+              {selectedTab === 'inkoop' && (
                 <p className='p-base'>
                   Bekijk hoe je via tenders en aanbestedingen houtbouw kunt stimuleren.
                 </p>
               )}
-              {selected === 'grondpositie' && (
+              {selectedTab === 'grondpositie' && (
                 <p className='p-base'>
                   Ben je als overheid grondeigenaar? Bekijk de mogelijkheden om houtbouw af te
                   dwingen.
                 </p>
               )}
-              {selected === 'subsidie' && (
+              {selectedTab === 'subsidie' && (
                 <p className='p-base'>Bekijk hoe je via subsidies houtbouw kunt stimuleren.</p>
               )}
-              {selected === 'fiscaal' && (
+              {selectedTab === 'fiscaal' && (
                 <p className='p-base'>
                   Bekijk hoe je via fiscale maatregelen houtbouw kunt stimuleren.
                 </p>
@@ -751,42 +751,42 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             {/* DISPLAY INSTRUMENTS MOBILE */}
             <div className='flex flex-col'>
               <ul>
-                {selected === 'beleid' && props.transitionAgenda === 'bouw' && (
+                {selectedTab === 'beleid' && props.transitionAgenda === 'bouw' && (
                   <DisplayInstruments category={beleid} categoryName='beleid' />
                 )}
               </ul>
               <ul>
-                {selected === 'beleid' &&
+                {selectedTab === 'beleid' &&
                   props.transitionAgenda !== 'bouw' &&
                   beleid.map((instrument) => (
                     <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
                   ))}
               </ul>
               <ul>
-                {selected === 'inkoop' && (
+                {selectedTab === 'inkoop' && (
                   <DisplayInstruments category={inkoop} categoryName='inkoop' />
                 )}
               </ul>
               <ul>
-                {selected == 'grondpositie' && props.transitionAgenda === 'bouw' && (
+                {selectedTab == 'grondpositie' && props.transitionAgenda === 'bouw' && (
                   <DisplayInstruments category={grondpositie} categoryName='grondpositie' />
                 )}
               </ul>
               <ul>
-                {selected === 'grondpositie' &&
+                {selectedTab === 'grondpositie' &&
                   props.transitionAgenda !== 'bouw' &&
                   grondpositie.map((instrument) => (
                     <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
                   ))}
               </ul>
               <ul className=''>
-                {selected === 'subsidie' &&
+                {selectedTab === 'subsidie' &&
                   subsidie.map((instrument) => (
                     <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
                   ))}
               </ul>
               <ul>
-                {selected === 'fiscaal' &&
+                {selectedTab === 'fiscaal' &&
                   fiscaal.map((instrument) => (
                     <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
                   ))}
