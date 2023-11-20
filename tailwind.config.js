@@ -26,6 +26,7 @@ module.exports = {
         'green-500': '#028352',
         'green-600': '#035E46',
         'green-800': '#053237',
+        'breadcrumb': 'rgba(253, 253, 253, 0.10)'
       },
       fontFamily: {
         jakarta: ['Plus Jakarta Sans', 'sans-serif']

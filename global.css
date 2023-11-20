@@ -85,7 +85,7 @@
       @apply font-jakarta text-7xl font-bold leading-16;
     }
 
-    .p-6xl-bold {
+  .p-6xl-bold {
       @apply font-jakarta text-6xl font-bold leading-14
     }
 

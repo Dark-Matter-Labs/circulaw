@@ -1,9 +1,12 @@
 import Link from 'next/link';
-import ThemeBottomSection from '../section-bottom-theme-index';
-import ThemeCard from '../theme-card';
 import Image from 'next/image';
 import LinkIcon from '../link-icon';
 import { urlFor } from '../../lib/sanity';
+
+import ThemeBottomSection from '../section-bottom-theme-index';
+import waarvoor from '../../public/thema-card-background/waarvoor.svg';
+import samenhang from '../../public/thema-card-background/samenhang.svg';
+import list from '../../public/thema-card-background/list.svg';
 
 export default function ThemeLayout({ ...props }) {
   const themaData = props.thema;
@@ -11,8 +14,8 @@ export default function ThemeLayout({ ...props }) {
     <>
       <div>
         {/* HEADER DESKTOP */}
-        <div className='hidden sm:block w-full h-[28rem]'>
-          <div className='relative object-cover w-full h-full'>
+        <div className='hidden sm:block w-full h-[360px]'>
+          <div className='relative object-cover w-full h-full mt-3'>
             <Image
               src={urlFor(themaData?.heroImage).url()}
               alt={`${themaData.themaName} + 'hero image'`}
@@ -20,15 +23,19 @@ export default function ThemeLayout({ ...props }) {
               className='z-0'
               priority
             />
-            <div className='global-margin h-[28rem] z-5 pt-10 relative'>
-              <Link
-                className='bg-grey-100 border rounded-md border-grey-100 pl-1 pr-2 py-0.5 breadcrumb text-green-500'
-                href='/'
-              >
-                <span className='link-interaction'>&lt; Home</span>
-              </Link>
-              <div className='grid col-span-8 grid-cols-8 sm:pl-12 sm:pt:12 md:pl-24 lg:pl-36 pb-14 pt-14 w-4/5'>
-                <div className='col-span-8'>
+
+            <div className='global-margin h-[360px] z-5 relative flex flex-col justify-between'>
+              <div className='pt-8'>
+                <Link
+                  className='rounded-clSm bg-breadcrumb px-4 pt-0.5 pb-1.5 w-auto text-gray-100'
+                  href='/'
+                >
+                  <span className='p-2xs-bold link-interaction align-middle'>Home &nbsp; &gt;</span>
+                </Link>
+              </div>
+
+              <div className='pb-8 max-w-5xl'>
+                <div className=''>
                   <h1 className='mobile sm:desktop text-grey-100 inline-block lg mobile sm:desktop'>
                     {themaData?.themaName}
                   </h1>
@@ -51,6 +58,7 @@ export default function ThemeLayout({ ...props }) {
           </div>
         </div>
 
+        {/* HEADER MOBILE */}
         <div className='block global-margin sm:hidden pt-5'>
           <div className='py-3'>
             <h2 className='mobile pb-3'>{themaData?.themaName}</h2>
@@ -71,7 +79,6 @@ export default function ThemeLayout({ ...props }) {
               )}
             </p>
           </div>
-
           <div className='h-56 max-w-[380px] mx-auto flex items-center justify-center'>
             <div className='flex items-center justify-center h-full w-full rounded-cl relative z-0 object-cover'>
               <Image
@@ -85,18 +92,48 @@ export default function ThemeLayout({ ...props }) {
           </div>
         </div>
 
+        {/* CARDS */}
+
         <div className=''>
-          <div className='global-margin'>
-            <div className='pt-10 sm:pt-20 sm:pb-10'>
+          <div className='global-margin pb-20'>
+            <div className='pt-10 sm:pt-14 pb-10'>
               <h2 className='mobile sm:desktop'>{themaData?.overviewsTitle}</h2>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-14 justify-items-center sm:h-auto md:h-[76rem] lg:h-[38rem]'>
-              <ThemeCard props={props} type='samenhang' />
-              <ThemeCard props={props} type='list' />
-              <ThemeCard props={props} type='waarvoor' />
-            </div>
+            <ul
+              className='hidden sm:grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 sm:gap-x-10 max-w-8xl relative z-0'
+              role='list'
+            >
+              <li role='listitem' className='h-auto rounded-cl flex flex-col max-w-[340px]'>
+                <div className='bg-green-600 rounded-t-cl h-48 flex items-center justify-center'>
+                  <div className='p-4'>
+                    <Image src={samenhang} alt=''  className='h-full w-full'/>
+                  </div>
+                </div>
+                <div className='border border-gray-400 rounded-b-cl h-72'>bottom</div>
+              </li>
+              <li role='listitem' className='h-auto rounded-cl flex flex-col max-w-[340px]'>
+                <div className='bg-green-600 rounded-t-cl h-48 flex items-center justify-center'>
+                  <div className='p-4'>
+                    <Image src={list} alt='' className='h-full w-full' />
+                  </div>
+                </div>
+                <div className='border border-gray-400 rounded-b-cl h-72'>bottom</div>
+              </li>
+              <li role='listitem' className='h-auto rounded-cl flex flex-col max-w-[340px]'>
+                <div className='bg-green-600 rounded-t-cl h-48 flex items-center justify-center'>
+                  <div className='p-4'>
+                    {' '}
+                    <Image src={waarvoor} alt='' className='h-full w-full'/>
+                  </div>
+                </div>
+                <div className='border border-gray-400 rounded-b-cl h-72'>bottom</div>
+              </li>
+            </ul>
           </div>
-          <ThemeBottomSection props={props} />
+
+          <div className='bg-gray-200'>
+            <ThemeBottomSection props={props} />
+          </div>
         </div>
       </div>
     </>
