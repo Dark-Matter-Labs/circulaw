@@ -1,4 +1,7 @@
 import Link from 'next/link';
+import Image from 'next/image';
+
+import { urlFor } from '../lib/sanity';
 import Tag from './tag';
 import InstrumentMetaData from './instrument/instrument-metadata';
 
@@ -14,9 +17,20 @@ export default function ThemeBottomSection({ props }) {
           </h3>
           {/* ADD THIS TO CMS */}
           <p className='pb-10 p-base'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet felis tincidunt odio ornare elementum. In vel ligula ut lacus pharetra finibus. Curabitur blandit ligula at pulvinar faucibus. Aliquam luctus, elit eu scelerisque egestas, felis odio blandit ligula, in convallis dolor mi vel leo. Etiam sit amet mauris fermentum, tempus odio in, feugiat nibh. Donec imperdiet, nisi at congue porta, neque tortor fringilla lectus, a semper arcu eros eget libero. Maecenas efficitur feugiat molestie.</p>
-      
             <div className=''>
-              {laws?.map((measure) => (
+              {laws?.map((measure, index) => (
+              <div key={index} className='flex flex-row'>
+                <div className='h-full w-80 mr-6'>
+                <Image
+                    src={urlFor(measure?.featuredImage)?.url()}
+                    alt={measure?.featuredImage?.altText}
+                    width={828}
+                    height={400}
+                    sizes='(max-width: 768px) 100vw,
+                            (max-width: 1200px) 50vw,
+                              33vw'
+                        />
+                </div>
               <Link href={'/measures/' + measure.slug.current} key={measure.titel}>
               <div className='block sm:ml-0 mb-10 sm:mb-8 max-w-[825px]'>
               <div className='flex justify-start items-center -ml-1'>
@@ -44,10 +58,10 @@ export default function ThemeBottomSection({ props }) {
              </div>
            </div>
            </Link>
+           </div>
               ))}
             </div>
             </div>
-
           </div>
     </>
   );
