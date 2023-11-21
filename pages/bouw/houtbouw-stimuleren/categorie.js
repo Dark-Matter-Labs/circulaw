@@ -1,10 +1,9 @@
-import Layout from '../../components/layouts/layout';
-import mattressIcon from '../../public/icons/matressIcon.svg';
-import ExpertiseLayout from '../../components/layouts/expertise-layout';
-import { client } from '../../lib/sanity';
+import Layout from '@/components/layouts/layout';
+import ExpertiseLayout from '@/components/layouts/expertise-layout';
+import { client } from '@/lib/sanity';
 
 const expertiseDataQuerie = `
-*[_type == "measure" && thema == "circulaire-matrasketen"] {
+*[_type == "measure" && thema == "houtbouw-stimuleren"] {
   "slug": slug.current,
   titel,
   overheidslaag,
@@ -17,17 +16,18 @@ const expertiseDataQuerie = `
   subsidie,
   fiscaal,
   "slug": slug.current,
+
 }
 `;
 
 export default function InfoPage({ expertiseData }) {
   return (
-    <Layout title='CircuLaw - Samenhang Matrassen'>
+    <Layout title='CircuLaw - Samenhang Aantal Houtbouwmaatregelen'>
       <ExpertiseLayout
-        thema='circulaire-matrasketen'
         expertiseData={expertiseData}
-        title='Matrasketen instrumenten per categorie'
-        icon={mattressIcon}
+        thema='houtbouw-stimuleren'
+        transitionAgenda='bouw'
+        title='Houtbouw instrumenten per categorie'
         // p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
       />
     </Layout>

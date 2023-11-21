@@ -1,7 +1,7 @@
-import Layout from '../../components/layouts/layout';
-import ExpertiseLayout from '../../components/layouts/expertise-layout';
-import WindmillIcon from '../../public/icons/windmill.png';
-import { client } from '../../lib/sanity';
+import Layout from '@/components/layouts/layout';
+import ExpertiseLayout from '@/components/layouts/expertise-layout';
+import WindmillIcon from '@/public/icons/windmill.png';
+import { client } from '@/lib/sanity';
 
 const expertiseDataQuerie = `
 *[_type == "measure" && thema == "circulaire-windturbines"] {

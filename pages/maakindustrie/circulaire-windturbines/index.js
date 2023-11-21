@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
-import Layout from '../../components/layouts/layout';
-import ThemeLayout from '../../components/layouts/theme-index-layout';
-import { client } from '../../lib/sanity';
-import LinkIcon from '../../components/link-icon';
+import Layout from '@/components/layouts/layout';
+import ThemeLayout from '@/components/layouts/theme-index-layout';
+import { client } from '@/lib/sanity';
+import LinkIcon from '@/components/link-icon';
 import Link from 'next/link';
-import { windQueries } from '../../lib/queries';
+import { windQueries } from '@/lib/queries';
 
 export default function Windturbine({ featuredLaws, length, thema }) {
   useEffect(() => {
