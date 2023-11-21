@@ -23,7 +23,7 @@ export default function TabButton({
           <div className='flex flex-row items-baseline'>
             <h3 className='p-lg-semibild sm:p-4xl-semibold pr-1 first-letter:capitalize'>{name}</h3>{' '}
             {transitionAgenda === 'bouw' ? (
-              <div className='p-2xs-bold sm:p-lg-semibild inline-block min-w-[24px]'>
+              <div className='p-2xs-bold sm:p-lg-semibild inline-block min-w-[24px] sm:min-w-[38px]'>
                 ({numInstrument})
               </div>
             ) : (
