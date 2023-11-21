@@ -1,94 +1,54 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import { urlFor } from '../lib/sanity';
+import Tag from './tag';
+import InstrumentMetaData from './instrument/instrument-metadata';
 
 export default function ThemeBottomSection({ props }) {
   const laws = props.featuredLaws;
-
+  console.log(laws)
   return (
     <>
-      <div className='bg-[#F8FAF8] sm:bg-transparent'>
-        <div className='pt-16 global-margin'>
-          <h2 className='mobile sm:desktop pb-2'>
-            Uitgelicht: {laws?.length} {props.thema.featuredInstrumentTitle}
-          </h2>
-          <p className='pb-6 p-lg'>{props.thema.featureInstrumentSubtitle}</p>
-        </div>
-        <div className='bg-[#F8FAF8]'>
-          <div className='global-margin'>
-            <div className='sm:pt-5'>
+      <div className='bg-gray-200'>
+        <div className='py-8 global-margin'>
+          <h3 className='p-3xl-semibold sm:p-5xl-semibold pb-4'>
+              Uitgelichte instrumenten
+          </h3>
+          {/* ADD THIS TO CMS */}
+          <p className='pb-10 p-base'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet felis tincidunt odio ornare elementum. In vel ligula ut lacus pharetra finibus. Curabitur blandit ligula at pulvinar faucibus. Aliquam luctus, elit eu scelerisque egestas, felis odio blandit ligula, in convallis dolor mi vel leo. Etiam sit amet mauris fermentum, tempus odio in, feugiat nibh. Donec imperdiet, nisi at congue porta, neque tortor fringilla lectus, a semper arcu eros eget libero. Maecenas efficitur feugiat molestie.</p>
+      
+            <div className=''>
               {laws?.map((measure) => (
-                <div
-                  key={measure?._id}
-                  className={`border-grey-600 ${
-                    measure === laws?.[0] ? 'border-t border-transparent' : 'border-t'
-                  }`}
-                >
-                  <Link href={`/measures/${measure?.slug.current}`}>
-                    <div className='grid grid-cols-1 lg:grid-cols-2 py-10 gap-x-8 gap-y-4 '>
-                      <div className=''>
-                        <Image
-                          src={urlFor(measure?.featuredImage)?.url()}
-                          alt={measure?.featuredImage?.altText}
-                          width={828}
-                          height={400}
-                          sizes='(max-width: 768px) 100vw,
-                                  (max-width: 1200px) 50vw,
-                                   33vw'
-                        />
-                      </div>
-                      <div className='lg:pl-4 flex flex-wrap'>
-                        <div className='block pt-4 sm:hidden'>
-                          <div className='flex justify-left'>
-                            {measure?.extraContent?.includes('Leidraad') && (
-                              <h6
-                                className='border-green-600 bg-green-600 text-white inline py-0.5 px-2 mr-4
-                           rounded-md'
-                              >
-                                Leidraad
-                              </h6>
-                            )}
-                            {measure?.extraContent?.includes('Voorbeeld') && (
-                              <h6 className='border-green-500 bg-green-500 text-white inline p-0.5 px-2 rounded-md'>
-                                Voorbeeld
-                              </h6>
-                            )}
-                          </div>
-                        </div>
-                        <div>
-                          <h3 className='pt-4 sm:pt-0 mobile sm:desktop'>{measure?.titel}</h3>
-                          <p className=' p-md py-4 max-w-2xl'>{measure?.introText}</p>
-                        </div>
-                        <div className='flex sm:justify-between w-full sm:pt-14'>
-                          <div className='hidden sm:block'>
-                            <div className='flex justify-between'>
-                              {measure?.extraContent?.includes('Leidraad') && (
-                                <h6 className='border-green-600 bg-green-600 text-white inline py-0.5 px-2 rounded-md mr-4'>
-                                  Leidraad
-                                </h6>
-                              )}
-                              {measure?.extraContent?.includes('Voorbeeld') && (
-                                <h6 className='border-green-500 bg-green-500 text-white inline p-0.5 px-2 rounded-md'>
-                                  Voorbeeld
-                                </h6>
-                              )}
-                            </div>
-                          </div>
-                          <div>
-                            <span className='text-green-500 link-lg hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
-                              Bekijk het instrument{'>'}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
+              <Link href={'/measures/' + measure.slug.current} key={measure.titel}>
+              <div className='block sm:ml-0 mb-10 sm:mb-8 max-w-[825px]'>
+              <div className='flex justify-start items-center -ml-1'>
+               {/* Expertise Tag */}
+               {measure?.beleid === true && <Tag classes='bg-green-500 text-gray-100'>Beleid</Tag>}
+               {measure?.inkoop === true && <Tag classes='bg-green-500 text-gray-100'>Inkoop</Tag>}
+               {measure?.grondpositie === true && (
+                 <Tag classes='bg-green-500 text-gray-100'>Grondpositie</Tag>
+               )}
+               {measure?.subsidie === true && <Tag classes='bg-green-500 text-gray-100'>Subsidie</Tag>}
+               {measure?.fiscaal === true && <Tag classes='bg-green-500 text-gray-100'>Fiscaal</Tag>}
+             </div>
+ 
+             <div className='block mt-2 max-w-4xl'>
+               <div className=' mb-2'>
+                 <h3 className='p-4xl-semibold text-grey-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+                   {measure.titel}{' '}
+                 </h3>
+               </div>
+ 
+               <div className='block newlineDisplay p-md text-grey-800 mt-2 pb-2'>
+                 <p className='p-base'>{measure.introText}</p>
+               </div>
+               <InstrumentMetaData data={measure} />
+             </div>
+           </div>
+           </Link>
               ))}
             </div>
+            </div>
+
           </div>
-        </div>
-      </div>
     </>
   );
 }

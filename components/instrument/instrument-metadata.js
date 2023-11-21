@@ -13,7 +13,10 @@ export default function InstrumentMetaData({ data }) {
           className={`${
             (router.pathname === '/measures/houtbouw') |
             (router.pathname === '/measures/windturbines') |
-            (router.pathname === '/measures/matrassen')
+            (router.pathname === '/measures/matrassen') |
+            (router.pathname === '/circulaire-windturbines') |
+            (router.pathname === '/houtbouw-stimuleren') |
+            (router.pathname === '/circulaire-matrasketen') 
               ? 'border-y border-gray-300'
               : 'pt-5 pb-3'
           } h-auto flex flex-row gap-x-6 grow-0 items-center justify-self-center max-w-[860px]`}

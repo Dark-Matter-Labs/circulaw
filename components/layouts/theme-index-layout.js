@@ -76,8 +76,7 @@ export default function ThemeLayout({ ...props }) {
         </div>
 
         {/* HEADER MOBILE */}
-
-        <div className='h-[300px] max-w-[380px] mt-3 sm:hidden'>
+        <div className='h-[300px] mt-3 sm:hidden'>
           <div className='flex items-center h-full w-full relative z-0 object-cover'>
             <Image
               src={urlFor(themaData?.heroImageMobile).url()}
@@ -180,7 +179,7 @@ export default function ThemeLayout({ ...props }) {
                       <div className='p-base'>{themaData.listText}</div>
                     </div>
                     <CustomButton color='whiteBackground'>
-                      Bekijk jouw categorie
+                    Naar de lijst
                       <ArrowRightIcon
                         className='inline-block h-4 w-4 ml-1 place-self-center'
                         aria-hidden='true'
@@ -206,7 +205,7 @@ export default function ThemeLayout({ ...props }) {
                       <div className='p-base'>{themaData.welkeText}</div>
                     </div>
                     <CustomButton color='whiteBackground'>
-                      Bekijk jouw categorie
+                    Bekijk de bevoegdheden
                       <ArrowRightIcon
                         className='inline-block h-4 w-4 ml-1 place-self-center'
                         aria-hidden='true'
@@ -217,7 +216,7 @@ export default function ThemeLayout({ ...props }) {
               </Link>
             </ul>
             {/* Mobile Cards */}
-            <ul className='sm:hidden'>
+            <ul className='sm:hidden max-w-sm'>
               <li>
                 <Link href={`/${themaData.slug.current}/categorie`}>
                   <div className='h-24 w-full rounded-cl bg-grey-100 shadow mb-6'>
