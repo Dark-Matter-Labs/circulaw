@@ -77,7 +77,7 @@ export default function ThemeLayout({ ...props }) {
 
         {/* HEADER MOBILE */}
 
-        <div className='h-[300px] max-w-[380px] mt-3'>
+        <div className='h-[300px] max-w-[380px] mt-3 sm:hidden'>
           <div className='flex items-center h-full w-full relative z-0 object-cover'>
             <Image
               src={urlFor(themaData?.heroImageMobile).url()}
