@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Layout from '../../components/layouts/layout';
+import Layout from '@/components/layouts/layout';
 
 const cookies = [
   { name: '_localConsent', description: 'bewaart je cookievoorkeuren', valid: '1 jaar' },

@@ -7,12 +7,12 @@ import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon, ArrowDownIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import Lottie from 'react-lottie';
-import CirculawLogo from '../public/Circulaw_logotype.png';
-import logo from '../public/Circulaw_logotype_home.png';
+import CirculawLogo from '@/public/Circulaw_logotype.png';
+import logo from '@/public/Circulaw_logotype_home.png';
 
 import BetaBanner from './beta-banner';
-import animationData from '../public/CL_Home_Logo_Loop';
-import HomepageHeader from '../components/homepage-header';
+import animationData from '@/public/CL_Home_Logo_Loop';
+import HomepageHeader from '@/components/homepage-header';
 import CustomButton from './custom-button';
 import LangSwitch from './lang-switch';
 

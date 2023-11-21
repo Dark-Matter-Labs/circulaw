@@ -3,7 +3,7 @@ import ThemeBottomSection from '../section-bottom-theme-index';
 import ThemeCard from '../theme-card';
 import Image from 'next/image';
 import LinkIcon from '../link-icon';
-import { urlFor } from '../../lib/sanity';
+import { urlFor } from '@/lib/sanity';
 
 export default function ThemeLayout({ ...props }) {
   const themaData = props.thema;

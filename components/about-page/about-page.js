@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { PortableText } from '@portabletext/react';
 import AboutPageNav from './about-page-nav';
-import { aboutPagePTComponents } from '../../lib/portable-text/pt-components';
+import { aboutPagePTComponents } from '@/lib/portable-text/pt-components';
 import AboutPageDropdown from './about-page-dropdown';
 
 export default function AboutPageComponent({ data }) {

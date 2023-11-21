@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Layout from '../../components/layouts/layout';
-import LinkIcon from '../../components/link-icon';
+import Layout from '@/components/layouts/layout';
+import LinkIcon from '@/components/link-icon';
 
 export default function Privacy() {
   return (

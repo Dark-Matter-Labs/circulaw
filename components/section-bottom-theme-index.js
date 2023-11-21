@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { urlFor } from '../lib/sanity';
+import { urlFor } from '@/lib/sanity';
 
 export default function ThemeBottomSection({ props }) {
   const laws = props.featuredLaws;
