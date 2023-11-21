@@ -127,13 +127,6 @@ export default {
       group: 'editableContent',
     },
     {
-      title: 'List Card Link',
-      name: 'listLink',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-      group: 'devOnly',
-    },
-    {
       title: 'Titel samenhang-kaart',
       name: 'samenhangTitle',
       type: 'string',
@@ -148,13 +141,6 @@ export default {
       group: 'editableContent',
     },
     {
-      title: 'Samenhang Card Link',
-      name: 'samenhangLink',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-      group: 'devOnly',
-    },
-    {
       title: 'Titel bevoegdheden-kaart',
       name: 'welkeTitle',
       type: 'string',
@@ -167,13 +153,6 @@ export default {
       type: 'text',
       validation: (Rule) => Rule.required(),
       group: 'editableContent',
-    },
-    {
-      title: 'Welke Overheid Card Link',
-      name: 'welkeLink',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-      group: 'devOnly',
     },
     {
       name: 'homePageCards',
