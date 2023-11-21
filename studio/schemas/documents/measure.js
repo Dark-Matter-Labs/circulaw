@@ -1,5 +1,6 @@
 import { VscLaw } from 'react-icons/vsc';
 import { ProductGroupInput } from '../../components/product-group-input';
+import { CgInternal } from "react-icons/cg";
 
 export default {
   title: 'Measure',
@@ -496,6 +497,8 @@ export default {
                     title: 'URL',
                     name: 'href',
                     type: 'url',
+                 
+        
                     validation: (Rule) =>
                       Rule.required()
                         .uri({ scheme: ['http', 'https'] })
@@ -508,6 +511,25 @@ export default {
                     validation: (Rule) => Rule.required().warning('open in new tab not selected'),
                   },
                 ],
+              },
+              {
+                name: 'internalLink',
+                type: 'object',
+                title: 'Internal link',
+                icon: CgInternal,
+                fields: [
+                  {
+                    name: 'reference',
+                    type: 'reference',
+                    title: 'Reference',
+                    to: [
+                      { type: 'measure' },
+                    ],
+                    options: {
+                      disableNew: true,
+                    }
+                  }
+                ]
               },
             ],
           },
