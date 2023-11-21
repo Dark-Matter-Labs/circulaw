@@ -7,7 +7,6 @@ import list from '../public/thema-card-background/list.svg';
 
 export default function ThemeCard({ props, type }) {
   const cardData = props.thema;
-  console.log(cardData);
   return (
     <div className='relative shadow rounded-cl overflow-hidden h-auto my-6 md:py-0 md:h-5/6 lg:h-[95%] max-w-[380px] min-h-[550px] '>
       <div className='grid grid-rows-6 shadow rounded-cl h-full w-full'>

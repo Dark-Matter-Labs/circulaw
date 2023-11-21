@@ -89,6 +89,10 @@
       @apply font-jakarta text-6xl font-bold leading-14
     }
 
+    .p-5xl-semibold {
+      @apply font-jakarta text-5xl font-semibold leading-14
+    }
+
   .p-4xl {
       @apply font-jakarta text-4xl font-normal leading-14;
     }
@@ -107,6 +111,10 @@
 
   .p-2xl-bold {
     @apply font-jakarta text-2xl font-bold leading-14
+  }
+
+  .p-2xl-semibold {
+    @apply font-jakarta text-2xl font-semibold leading-10
   }
 
   .p-xl {
