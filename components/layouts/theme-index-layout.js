@@ -1,15 +1,33 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { ArrowRightIcon } from '@heroicons/react/outline';
+import { useEffect, useState } from 'react';
+
 import LinkIcon from '../link-icon';
 import { urlFor } from '../../lib/sanity';
-
 import ThemeBottomSection from '../section-bottom-theme-index';
 import waarvoor from '../../public/thema-card-background/waarvoor.svg';
 import samenhang from '../../public/thema-card-background/samenhang.svg';
 import list from '../../public/thema-card-background/list.svg';
+import CustomButton from '../../components/custom-button';
+
 
 export default function ThemeLayout({ ...props }) {
   const themaData = props.thema;
+  // temp function to set link to list page - can be removed when new link structure is set. 
+  
+  const [listLink, setListLink] = useState()
+
+  useEffect(() => {
+    if (themaData.slug.current === 'circulaire-windturbines') {
+      setListLink('windturbines')
+    } else if (themaData.slug.current === 'houtbouw-stimuleren'){
+      setListLink('houtbouw')
+    } else {
+      setListLink('matrassen')
+    }
+  },[themaData.slug])
+  
   return (
     <>
       <div>
@@ -100,34 +118,86 @@ export default function ThemeLayout({ ...props }) {
               <h2 className='mobile sm:desktop'>{themaData?.overviewsTitle}</h2>
             </div>
             <ul
-              className='hidden sm:grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 sm:gap-x-10 max-w-8xl relative z-0'
+              className='hidden sm:grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 sm:gap-x-8 max-w-8xl relative z-0'
               role='list'
             >
-              <li role='listitem' className='h-auto rounded-cl flex flex-col max-w-[340px]'>
+              <Link href={`/${themaData.slug.current}/categorie`}>
+              <li
+                role='listitem'
+                className='h-auto rounded-cl flex flex-col max-w-[355px] min-w-[300px]'
+              >
                 <div className='bg-green-600 rounded-t-cl h-48 flex items-center justify-center'>
                   <div className='p-4'>
-                    <Image src={samenhang} alt=''  className='h-full w-full'/>
+                    <Image src={samenhang} alt='' className='h-full w-full' />
                   </div>
                 </div>
-                <div className='border border-gray-400 rounded-b-cl h-72'>bottom</div>
+
+                <div className='border border-gray-400 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div>
+                    <div className='p-4xl-semibold pb-4'>{themaData.samenhangTitle}</div>
+                    <div className='p-base'>{themaData.samenhangText}</div>
+                  </div>
+                  <CustomButton color='whiteBackground'>
+                    Bekijk jouw categorie
+                    <ArrowRightIcon
+                      className='inline-block h-4 w-4 ml-1 place-self-center'
+                      aria-hidden='true'
+                    />
+                  </CustomButton>
+                </div>
               </li>
-              <li role='listitem' className='h-auto rounded-cl flex flex-col max-w-[340px]'>
+              </Link>
+              <Link href={`/measures/${listLink}`}>
+              <li
+                role='listitem'
+                className='h-auto rounded-cl flex flex-col max-w-[355px] min-w-[300px]'
+              >
                 <div className='bg-green-600 rounded-t-cl h-48 flex items-center justify-center'>
                   <div className='p-4'>
                     <Image src={list} alt='' className='h-full w-full' />
                   </div>
                 </div>
-                <div className='border border-gray-400 rounded-b-cl h-72'>bottom</div>
+                <div className='border border-gray-400 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div>
+                    <div className='p-4xl-semibold pb-4'>{props.listTitle}</div>
+                    <div className='p-base'>{themaData.listText}</div>
+                  </div>
+                  <CustomButton color='whiteBackground'>
+                    Bekijk jouw categorie
+                    <ArrowRightIcon
+                      className='inline-block h-4 w-4 ml-1 place-self-center'
+                      aria-hidden='true'
+                    />
+                  </CustomButton>
+                </div>{' '}
               </li>
-              <li role='listitem' className='h-auto rounded-cl flex flex-col max-w-[340px]'>
+              </Link>
+              <Link href={`/${themaData.slug.current}/welke-overheid-heeft`}> 
+              <li
+                role='listitem'
+                className='h-auto rounded-cl flex flex-col max-w-[355px] min-w-[300px]'
+              >
                 <div className='bg-green-600 rounded-t-cl h-48 flex items-center justify-center'>
                   <div className='p-4'>
                     {' '}
-                    <Image src={waarvoor} alt='' className='h-full w-full'/>
+                    <Image src={waarvoor} alt='' className='h-full w-full' />
                   </div>
                 </div>
-                <div className='border border-gray-400 rounded-b-cl h-72'>bottom</div>
+                <div className='border border-gray-400 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div>
+                    <div className='p-4xl-semibold pb-4'>{themaData.welkeTitle}</div>
+                    <div className='p-base'>{themaData.welkeText}</div>
+                  </div>
+                  <CustomButton color='whiteBackground'>
+                    Bekijk jouw categorie
+                    <ArrowRightIcon
+                      className='inline-block h-4 w-4 ml-1 place-self-center'
+                      aria-hidden='true'
+                    />
+                  </CustomButton>
+                </div>{' '}
               </li>
+              </Link>
             </ul>
           </div>
 
