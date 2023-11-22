@@ -1,7 +1,7 @@
 import Layout from '@/components/layouts/layout';
 import ExpertiseLayout from '@/components/layouts/expertise-layout';
 import { client } from '@/lib/sanity';
-import { categorieQuery } from '@lib/queries';
+import { categorieQuery } from '@/lib/queries';
 
 export default function InfoPage({ expertiseData }) {
   return (
