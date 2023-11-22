@@ -123,7 +123,7 @@ export default function ThemeLayout({ ...props }) {
         </div>
 
         {/* CARDS */}
-        <div className=''>
+        <div className='bg-gradient-to-b from-[#F8FAF8] to-[#F8FAF8]'>
           <div className='global-margin pb-16 sm:pb-20'>
             <div className='pt-14 pb-10'>
               <h2 className='p-3xl-semibold sm:p-5xl-semibold'>{themaData?.overviewsTitle}</h2>
@@ -148,7 +148,7 @@ export default function ThemeLayout({ ...props }) {
                     </div>
                   </div>
 
-                  <div className='border border-gray-400 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
                       <div className='p-4xl-semibold pb-4'>{themaData.samenhangTitle}</div>
                       <div className='p-base'>{themaData.samenhangText}</div>
@@ -173,7 +173,7 @@ export default function ThemeLayout({ ...props }) {
                       <Image src={list} alt='' className='h-full w-full' />
                     </div>
                   </div>
-                  <div className='border border-gray-400 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
                       <div className='p-4xl-semibold pb-4'>{props.listTitle}</div>
                       <div className='p-base'>{themaData.listText}</div>
@@ -199,7 +199,7 @@ export default function ThemeLayout({ ...props }) {
                       <Image src={waarvoor} alt='' className='h-full w-full' />
                     </div>
                   </div>
-                  <div className='border border-gray-400 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
                       <div className='p-4xl-semibold pb-4'>{themaData.welkeTitle}</div>
                       <div className='p-base'>{themaData.welkeText}</div>
@@ -219,7 +219,7 @@ export default function ThemeLayout({ ...props }) {
             <ul className='sm:hidden max-w-sm'>
               <li>
                 <Link href={`/${themaData.slug.current}/categorie`}>
-                  <div className='h-24 w-full rounded-cl bg-grey-100 shadow mb-6'>
+                  <div className='h-24 w-full rounded-cl bg-grey-50 shadow mb-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
                         <Image
@@ -241,7 +241,7 @@ export default function ThemeLayout({ ...props }) {
               </li>
               <li>
                 <Link href={`/measures/${listLink}`}>
-                  <div className='h-24 w-full rounded-cl bg-grey-100 shadow my-6'>
+                  <div className='h-24 w-full rounded-cl bg-grey-50 shadow my-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
                         <Image
@@ -263,7 +263,7 @@ export default function ThemeLayout({ ...props }) {
               </li>
               <li>
                 <Link href={`/${themaData.slug.current}/welke-overheid-heeft`}>
-                  <div className='h-24 w-full rounded-cl bg-grey-100 shadow mt-6'>
+                  <div className='h-24 w-full rounded-cl bg-grey-50 shadow mt-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
                         <Image
@@ -289,8 +289,47 @@ export default function ThemeLayout({ ...props }) {
           <div className='bg-gray-200'>
             <ThemeBottomSection props={props} />
           </div>
+
+     
+        <div className='global-margin pt-10 pb-20'>
+          <div className='grid grid-cols-3 gap-x-28'>          
+          
+          <div className='p-lg'>
+            De informatie over windturbines is mede tot stand gekomen door nauwe samenwerking met de{' '}
+            <span className='text-green-500 link-lg inline-block '>
+              <Link
+                href='https://www.noord-holland.nl/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='link-interaction'
+              >
+                Provincie Noord-Holland
+                <LinkIcon />
+              </Link>
+            </span>
+            <div className=''>
+              {' '}
+              Zie het{' '}
+              <span className='text-green-500 link-lg inline-block '>
+                <Link
+                  href='/Analyse circulaire windturbines_PNH.pdf'
+                  target='_blank'
+                  className='link-interaction'
+                >
+                  rapport-Analyse CircuLaw: Circulaire Windturbines (download pdf).
+                  <LinkIcon />
+                </Link>
+              </span>{' '}
+            </div>{' '}
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
         </div>
       </div>
+      </div>
+        </div>
     </>
   );
 }
