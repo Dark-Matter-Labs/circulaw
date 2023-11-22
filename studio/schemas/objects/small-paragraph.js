@@ -1,4 +1,4 @@
-import {CgInternal} from 'react-icons/cg'
+import { CgInternal } from 'react-icons/cg';
 
 export default {
   title: 'Kader secundaire info',
