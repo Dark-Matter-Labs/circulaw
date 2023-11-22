@@ -1,6 +1,6 @@
 import { VscLaw } from 'react-icons/vsc';
 import { ProductGroupInput } from '../../components/product-group-input';
-import { CgInternal } from "react-icons/cg";
+import { CgInternal } from 'react-icons/cg';
 
 export default {
   title: 'Measure',
@@ -497,13 +497,12 @@ export default {
                     title: 'URL',
                     name: 'href',
                     type: 'url',
-                 
-        
+
                     validation: (Rule) =>
                       Rule.required()
                         .uri({ scheme: ['http', 'https'] })
                         .warning('Url is incorrect'),
-                  }
+                  },
                 ],
               },
               {
@@ -516,14 +515,12 @@ export default {
                     name: 'reference',
                     type: 'reference',
                     title: 'Reference',
-                    to: [
-                      { type: 'measure' },
-                    ],
+                    to: [{ type: 'measure' }],
                     options: {
                       disableNew: true,
-                    }
-                  }
-                ]
+                    },
+                  },
+                ],
               },
             ],
           },
