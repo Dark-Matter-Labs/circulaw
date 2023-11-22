@@ -508,7 +508,7 @@ export default {
               {
                 name: 'internalLink',
                 type: 'object',
-                title: 'Internal link',
+                title: 'Internal link (Instrument)',
                 icon: CgInternal,
                 fields: [
                   {
