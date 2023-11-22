@@ -503,6 +503,11 @@ export default {
                         .uri({ scheme: ['http', 'https'] })
                         .warning('Url is incorrect'),
                   },
+                  {
+                    title: 'Open in new window',
+                    name: 'blank',
+                    type: 'boolean',
+                  },
                 ],
               },
               {
