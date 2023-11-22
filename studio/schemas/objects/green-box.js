@@ -1,3 +1,5 @@
+import { CgInternal } from 'react-icons/cg';
+
 export default {
   title: 'Kader highlight',
   name: 'greenBox',
@@ -38,6 +40,23 @@ export default {
                     title: 'Open in new window',
                     name: 'blank',
                     type: 'boolean',
+                  },
+                ],
+              },
+              {
+                name: 'internalLink',
+                type: 'object',
+                title: 'Internal link (Instrument)',
+                icon: CgInternal,
+                fields: [
+                  {
+                    name: 'reference',
+                    type: 'reference',
+                    title: 'Reference',
+                    to: [{ type: 'measure' }],
+                    options: {
+                      disableNew: true,
+                    },
                   },
                 ],
               },
