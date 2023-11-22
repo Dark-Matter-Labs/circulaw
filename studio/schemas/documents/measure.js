@@ -1,4 +1,5 @@
 import { VscLaw } from 'react-icons/vsc';
+import { CgInternal } from 'react-icons/cg';
 import { ProductGroupInput } from '@/components/product-group-input';
 
 export default {
@@ -124,7 +125,7 @@ export default {
           { title: 'Houtbouw', value: 'houtbouw-stimuleren' }, // need to change to refernece
           { title: 'Circulaire windturbines', value: 'circulaire-windturbines' }, // need to change to reference
           { title: 'Matrassen', value: 'circulaire-matrasketen' }, // need to change to reference
-        ], // <-- predefined values - can store these elsewhere if we want
+        ],
         layout: 'dropdown',
       },
       group: 'high-level',
@@ -496,16 +497,33 @@ export default {
                     title: 'URL',
                     name: 'href',
                     type: 'url',
+
                     validation: (Rule) =>
                       Rule.required()
                         .uri({ scheme: ['http', 'https'] })
                         .warning('Url is incorrect'),
                   },
                   {
-                    title: 'Open in new winder',
+                    title: 'Open in new window',
                     name: 'blank',
                     type: 'boolean',
-                    validation: (Rule) => Rule.required().warning('open in new tab not selected'),
+                  },
+                ],
+              },
+              {
+                name: 'internalLink',
+                type: 'object',
+                title: 'Internal link (Instrument)',
+                icon: CgInternal,
+                fields: [
+                  {
+                    name: 'reference',
+                    type: 'reference',
+                    title: 'Reference',
+                    to: [{ type: 'measure' }],
+                    options: {
+                      disableNew: true,
+                    },
                   },
                 ],
               },

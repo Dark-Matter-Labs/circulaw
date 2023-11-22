@@ -48,7 +48,7 @@ export default function SocialButtons({ title, viewport }) {
         <TwitterShareButton url={url + asPath} title={'' + title}>
           <SocialIcon
             url={url + asPath}
-            network='twitter'
+            network='x'
             style={{ height: 24, width: 24 }}
             bgColor='#FDFDFD'
             fgColor='#A2A3A2'
@@ -93,7 +93,7 @@ export default function SocialButtons({ title, viewport }) {
           }}
         />
       </span>
-      {showLinkCopied && <p>Link gekopieerd!</p>}
+      {showLinkCopied && <p className='p-md text-grey-100'>Link gekopieerd!</p>}
     </div>
   );
 }

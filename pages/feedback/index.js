@@ -99,7 +99,7 @@ export default function Feedback() {
               <p className='p-3xl pt-4 max-w-3xl'>Deel met ons:</p>
               <ul className='p-3xl max-w-3xl'>
                 <li>- voorbeelden uit jouw praktijk</li>
-                <li>- voorbeelden uit jouw praktijk</li>
+                <li>- je tips om toepassing makkelijker te maken</li>
                 <li>- de ervaring van jou of andere organisaties met een soortgelijk instrument</li>
               </ul>
               <div className='mt-20 max-w-3xl pb-20'>

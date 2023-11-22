@@ -32,11 +32,14 @@ export default function ExpertisePageInstrument({ instrument }) {
         <li className='sm:hidden border-b py-2'>
           <div className='p-base mx-4 pb-2'>{instrument.titel}</div>
           <div className='flex flex-row mx-4'>
-            {instrument?.overheidslaag?.reverse().map((lev) => (
-              <div key={lev} className='p-xs-semibold text-green-500'>
-                {lev}&nbsp; {instrument.overheidslaag.slice(-1)[0] !== lev && <span>-&nbsp;</span>}
-              </div>
-            ))}
+            {instrument?.overheidslaag
+              ?.filter((x) => x !== null)
+              .map((lev) => (
+                <div key={lev} className='p-xs-semibold text-green-500'>
+                  {lev}&nbsp;{' '}
+                  {instrument.overheidslaag.slice(-1)[0] !== lev && <span>-&nbsp;</span>}
+                </div>
+              ))}
           </div>
         </li>
       </Link>

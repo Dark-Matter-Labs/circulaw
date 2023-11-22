@@ -139,8 +139,8 @@ export default function HomePageAboutSection({ aboutSection }) {
               <Image src={aboutImage} alt='image for wat circulaw' />
             </div>
           </div>
-          <p className='p-lg py-5 max-w-4xl hidden sm:block'>{aboutSection?.aboutSectionText}</p>
-          <p className='p-lg py-5 max-w-4xl block sm:hidden'>
+          <p className='p-base py-5 max-w-4xl hidden sm:block'>{aboutSection?.aboutSectionText}</p>
+          <p className='p-base py-5 max-w-4xl block sm:hidden'>
             {aboutSection?.aboutSectionMobileText}
           </p>
           <span className='text-green-500 link-lg link-interaction'>

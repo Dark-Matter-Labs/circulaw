@@ -79,8 +79,14 @@
       @apply font-jakarta text-xxs font-bold leading-6;
     }
 
+    
+
   .p-7xl-bold {
       @apply font-jakarta text-7xl font-bold leading-16;
+    }
+
+    .p-6xl-bold {
+      @apply font-jakarta text-6xl font-bold leading-14
     }
 
   .p-4xl {
@@ -99,6 +105,10 @@
     @apply font-jakarta text-3xl font-semibold leading-14;
   }
 
+  .p-2xl-bold {
+    @apply font-jakarta text-2xl font-bold leading-14
+  }
+
   .p-xl {
     @apply font-jakarta text-xl font-normal leading-14;
   }
@@ -107,13 +117,19 @@
     @apply font-jakarta text-xl font-semibold leading-14;
   }
 
-  .p-lg-semibild {
-    @apply font-jakarta text-lg font-semibold leading-10;
-  }
   
   .p-lg {
     @apply font-jakarta text-xl font-normal leading-11;
   }
+
+  .p-lg-semibild {
+    @apply font-jakarta text-lg font-semibold leading-10;
+  }
+  
+  .p-lg-bold {
+    @apply font-jakarta text-lg font-bold leading-10;
+  }
+  
 
   .p-base {
     @apply font-jakarta text-base font-normal leading-10
