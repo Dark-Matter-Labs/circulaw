@@ -503,13 +503,7 @@ export default {
                       Rule.required()
                         .uri({ scheme: ['http', 'https'] })
                         .warning('Url is incorrect'),
-                  },
-                  {
-                    title: 'Open in new winder',
-                    name: 'blank',
-                    type: 'boolean',
-                    validation: (Rule) => Rule.required().warning('open in new tab not selected'),
-                  },
+                  }
                 ],
               },
               {
