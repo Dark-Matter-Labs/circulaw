@@ -125,7 +125,7 @@ export default {
           { title: 'Houtbouw', value: 'houtbouw-stimuleren' }, // need to change to refernece
           { title: 'Circulaire windturbines', value: 'circulaire-windturbines' }, // need to change to reference
           { title: 'Matrassen', value: 'circulaire-matrasketen' }, // need to change to reference
-        ], // <-- predefined values - can store these elsewhere if we want
+        ],
         layout: 'dropdown',
       },
       group: 'high-level',
