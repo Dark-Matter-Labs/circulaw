@@ -4,19 +4,14 @@ import SimpleThemaLayout from '../../components/layouts/simpleThemaLayout';
 import { client } from '../../lib/sanity';
 import { plasticInDeBouwQueries } from '../../lib/queries';
 
-
-export default function PlasticInDeBouw({ thema, length ,instruments}) {
+export default function PlasticInDeBouw({ thema, length, instruments }) {
   useEffect(() => {
     localStorage.clear();
   });
 
   return (
     <Layout title='CircuLaw - PLastic in de bouw'>
-      <SimpleThemaLayout
-        thema={thema}
-        numberOfLaws={length}
-        instruments={instruments}
-      />
+      <SimpleThemaLayout thema={thema} numberOfLaws={length} instruments={instruments} />
     </Layout>
   );
 }
@@ -24,7 +19,7 @@ export default function PlasticInDeBouw({ thema, length ,instruments}) {
 export async function getStaticProps() {
   const length = await client.fetch(plasticInDeBouwQueries.plasticLength);
   const thema = await client.fetch(plasticInDeBouwQueries.plasticThemaQuery);
-  const instruments = await client.fetch(plasticInDeBouwQueries.plasticInstrumentsQuery)
+  const instruments = await client.fetch(plasticInDeBouwQueries.plasticInstrumentsQuery);
   return {
     props: {
       thema,

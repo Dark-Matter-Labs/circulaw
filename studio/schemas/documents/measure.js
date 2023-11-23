@@ -125,7 +125,7 @@ export default {
           { title: 'Houtbouw', value: 'houtbouw-stimuleren' }, // need to change to refernece
           { title: 'Circulaire windturbines', value: 'circulaire-windturbines' }, // need to change to reference
           { title: 'Matrassen', value: 'circulaire-matrasketen' }, // need to change to reference
-          { title: 'Plastic in de bouw', value: 'plastic-in-de-bouw' }, // Temp thema 
+          { title: 'Plastic in de bouw', value: 'plastic-in-de-bouw' }, // Temp thema
         ],
         layout: 'dropdown',
       },

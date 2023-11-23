@@ -17,8 +17,7 @@ export default function InstrumentMetaData({ data }) {
             (router.pathname === '/circulaire-windturbines') |
             (router.pathname === '/houtbouw-stimuleren') |
             (router.pathname === '/circulaire-matrasketen') |
-            (router.pathname === '/plastic-in-de-bouw') 
-            
+            (router.pathname === '/plastic-in-de-bouw')
               ? 'border-y border-gray-300'
               : 'pt-5 pb-3'
           } h-auto flex flex-row gap-x-6 grow-0 items-center justify-self-center max-w-[860px]`}
