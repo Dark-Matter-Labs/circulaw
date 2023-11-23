@@ -57,7 +57,7 @@ export default function SectionTypes({ themaCards }) {
               </div>
             </li>
           ))}
-          <li className='w-full h-full flex-grow cl-gradient-400 rounded-cl shadow'>
+          <li className='w-full h-[400px] flex-grow cl-gradient-400 rounded-cl shadow'>
             <Link href='/contact' className='w-full h-full'>
               <div className='h-full w-full flex flex-col flex-grow p-8 '>
                 <h3 className='mobile sm:desktop pb-4'>Nieuwe thema’s</h3>

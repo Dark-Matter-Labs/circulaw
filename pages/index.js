@@ -32,7 +32,7 @@ export default function Index({
         </div>
       </div>
       <div className='bg-grey-100 sm:hidden'>
-        <div className='global-margin flex items-center justify-center'>
+        <div className='global-margin flex items-center justify-center]'>
           <NewThemaSuggestion />
         </div>
       </div>
