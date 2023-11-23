@@ -7,7 +7,7 @@ import InstrumentMetaData from './instrument/instrument-metadata';
 
 export default function ThemeBottomSection({ props }) {
   const laws = props.featuredLaws;
-  console.log(laws)
+
   return (
     <>
       <div className='bg-gray-200'>
