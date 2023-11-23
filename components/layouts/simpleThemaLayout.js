@@ -106,7 +106,7 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
           <p>{themaData?.introText}</p>
         </div>
         <div className='max-w-7xl flex pb-10'>
-          <div className='w-2 bg-gradient-to-b from-[#25C38B] to-[#035E46] mr-4 rounded-full mb-10'></div>
+          <div className='w-5 sm:w-2 bg-gradient-to-b from-[#25C38B] to-[#035E46] mr-4 rounded-full mb-10'></div>
           <div>
             {/* This can be a component - policy list, theme bottom section + here */}
             {instruments.map((measure) => (
