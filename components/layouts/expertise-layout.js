@@ -1,11 +1,11 @@
 import { useEffect, useState, useTransition } from 'react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
+import { Disclosure } from '@headlessui/react';
 
 import OverviewPageHeader from '../overview-page-header';
-import DisplayInstruments from '../expertise-page/display-instruments';
-import ExpertisePageInstrument from '../expertise-page/expertise-page-instrument';
 import TabButton from '../expertise-page/tab-button';
-import { Disclosure } from '@headlessui/react';
+import TabLayout from '../expertise-page/tab-layout';
+import ExplinationText from '../expertise-page/explination-text';
 
 export default function ExpertiseLayout({ expertiseData, ...props }) {
   const [beleid, setBeleid] = useState([]);
@@ -19,17 +19,17 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   const [numGronposirie, setNumGronposirie] = useState();
   const [isPending, startTransition] = useTransition();
 
-  const [selected, setSelected] = useState('beleid');
+  const [selectedTab, setSelectedTab] = useState('beleid');
   const [local, setLocal] = useState({ value: 'alle' });
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.localStorage.length > 0) {
-      let selected = localStorage.getItem('selected');
+      let selectedTab = localStorage.getItem('selectedTab');
       let keys = [];
       for (let i = 0; i < localStorage.length; i++) {
         keys.push(localStorage.key(i));
       }
-      setSelected(selected);
+      setSelectedTab(selectedTab);
     }
   }, []);
 
@@ -112,34 +112,34 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
 
   useEffect(() => {
     // SET INITIAL VALUES
-    if (selected === 'beleid') {
+    if (selectedTab === 'beleid') {
       setInkoop(expertiseData?.filter((instrument) => instrument.inkoop === true));
       setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
       setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
       setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
-    } else if (selected === 'inkoop') {
+    } else if (selectedTab === 'inkoop') {
       setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
       setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
       setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
       setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
-    } else if (selected === 'grondpositie') {
+    } else if (selectedTab === 'grondpositie') {
       setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
       setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
       setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
       setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
-    } else if (selected === 'subsidie') {
+    } else if (selectedTab === 'subsidie') {
       setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
       setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
       setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
       setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
-    } else if (selected === 'fiscaal') {
+    } else if (selectedTab === 'fiscaal') {
       setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
       setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
       setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
       setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
     }
 
-    if (selected === 'beleid') {
+    if (selectedTab === 'beleid') {
       if (local?.value === 'alle') {
         setBeleid(expertiseData.filter((instrument) => instrument.beleid === true));
       } else if (local?.value === 'Gemeentelijk') {
@@ -164,7 +164,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           ),
         );
       }
-    } else if (selected === 'inkoop') {
+    } else if (selectedTab === 'inkoop') {
       if (local?.value === 'alle') {
         setInkoop(expertiseData.filter((instrument) => instrument.inkoop === true));
       } else if (local?.value === 'Gemeentelijk') {
@@ -189,7 +189,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           ),
         );
       }
-    } else if (selected === 'grondpositie') {
+    } else if (selectedTab === 'grondpositie') {
       if (local?.value === 'alle') {
         setGrondpositie(expertiseData.filter((instrument) => instrument.grondpositie === true));
       } else if (local?.value === 'Gemeentelijk') {
@@ -214,7 +214,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           ),
         );
       }
-    } else if (selected === 'subsidie') {
+    } else if (selectedTab === 'subsidie') {
       if (local?.value === 'alle') {
         setSubsidie(expertiseData.filter((instrument) => instrument.subsidie === true));
       } else if (local?.value === 'Gemeentelijk') {
@@ -239,7 +239,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           ),
         );
       }
-    } else if (selected === 'fiscaal') {
+    } else if (selectedTab === 'fiscaal') {
       if (local?.value === 'alle') {
         setFiscaal(expertiseData.filter((instrument) => instrument.fiscaal === true));
       } else if (local?.value === 'Gemeentelijk') {
@@ -265,7 +265,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
         );
       }
     }
-  }, [local?.value, selected, expertiseData]);
+  }, [local?.value, selectedTab, expertiseData]);
 
   // change filters
   function handleRadioButton(value) {
@@ -278,152 +278,11 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
 
   function handleTabButton(value) {
     if (typeof window !== 'undefined' && window.localStorage) {
-      localStorage.setItem('selected', value);
-      setSelected(value);
+      localStorage.setItem('selectedTab', value);
+      startTransition(() => {
+        setSelectedTab(value);
+      });
     }
-  }
-
-  if (isPending) {
-    return (
-      <>
-        <div className='sm:bg-gradient-to-t sm:from-[#F8FAF8] sm:to-[#F8FAF8]'>
-          <div className='-mt-10'>
-            <div className='h-[310px] sm:h-[360px] bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 bg-green-600 sm:mx-0'>
-              <OverviewPageHeader props={props} page='samenhang' />
-            </div>
-            {/* DESKTOP */}
-            <div className=' hidden sm:flex max-w-[1280px]  pb-10 global-margin'>
-              <div className='max-w-[880px] lg:min-w-[880px] flex-col justify-start'>
-                <div className='flex flex-row gap-x-3 justify-start h-12 sm:h-[52px] -mt-12 sm:-mt-[52px] z-5 '>
-                  <TabButton
-                    selected={selected}
-                    onClick={() => {
-                      handleTabButton('beleid');
-                      handleRadioButton('alle');
-                    }}
-                    numInstrument={numBeleid}
-                    numInstruments2={numBeleidNotBouw}
-                    transitionAgenda={props.transitionAgenda}
-                    name='beleid'
-                  />
-                  <TabButton
-                    selected={selected}
-                    onClick={() => {
-                      handleTabButton('inkoop');
-                      handleRadioButton('alle');
-                    }}
-                    numInstrument={numInkoop}
-                    transitionAgenda={props.transitionAgenda}
-                    name='inkoop'
-                  />
-                  {props.thema !== 'circulaire-matrasketen' && (
-                    <TabButton
-                      selected={selected}
-                      onClick={() => {
-                        handleTabButton('grondpositie');
-                        handleRadioButton('alle');
-                      }}
-                      numInstrument={numGronposirie}
-                      numInstruments2={numGronposirieNotBouw}
-                      transitionAgenda={props.transitionAgenda}
-                      name='grondpositie'
-                    />
-                  )}
-                  <TabButton
-                    selected={selected}
-                    onClick={() => {
-                      handleTabButton('subsidie');
-                      handleRadioButton('alle');
-                    }}
-                    numInstrument={subsidie.length}
-                    transitionAgenda={props.transitionAgenda}
-                    name='subsidie'
-                  />
-                  <TabButton
-                    selected={selected}
-                    onClick={() => {
-                      handleTabButton('fiscaal');
-                      handleRadioButton('alle');
-                    }}
-                    numInstrument={fiscaal.length}
-                    transitionAgenda={props.transitionAgenda}
-                    name='fiscaal'
-                  />
-                </div>
-                <div className='bg-white opacity-10'>
-                  <div className='py-6 ml-3'>
-                    <p className='p-base'>
-                      BELEID Pas deze Instrumenten toe, ook wanneer de organisatie geen eigen grond
-                      bezit.
-                    </p>
-                  </div>
-                  <div className='flex flex-ro items-center h-11'>
-                    <div className='basis-1/2 ml-3 flex justify-end pr-3'>
-                      <div className='p-2xs-bold'>Toon:</div>
-                    </div>
-                    <div className='basis-1/2 mr-3 flex flex-row items-center justify-between p-xs font-medium max-w-[413px]'>
-                      <div className='mr-4 w-[60px]'>
-                        <input
-                          type='radio'
-                          name='filter'
-                          value='alle'
-                          checked={local?.value === 'alle'}
-                          onChange={() => handleRadioButton('alle')}
-                          className='mr-2 text-black border-black border-2 h-4 w-4 focus:ring-black focus:ring-2 cursor-pointer bg-none'
-                        />
-                        <label className='p-2xs-semibold'>Alle</label>
-                      </div>
-                      <div className='mr-4 w-[115px]'>
-                        <input
-                          type='radio'
-                          name='filter'
-                          value='Gemeentelijk'
-                          checked={local?.value === 'Gemeentelijk'}
-                          onChange={() => handleRadioButton('Gemeentelijk')}
-                          className='mr-2 text-green-200 border-black border-2 h-4 w-4 focus:ring-green-200 focus:ring-2 cursor-pointer bg-none'
-                        />
-                        <label className='p-2xs-semibold'>Gemeentelijk</label>
-                      </div>
-                      <div className='mr-4 w-[100px]'>
-                        <input
-                          type='radio'
-                          name='filter'
-                          value='Provinciaal'
-                          checked={local?.value === 'Provinciaal'}
-                          onChange={() => handleRadioButton('Provinciaal')}
-                          className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
-                        />
-                        <label className='p-2xs-semibold'>Provinciaal</label>
-                      </div>
-
-                      <div className='w-[90px]'>
-                        <input
-                          type='radio'
-                          name='filter'
-                          value='Nationaal'
-                          checked={local?.value === 'Nationaal'}
-                          onChange={() => handleRadioButton('Nationaal')}
-                          className='mr-2 text-green-600 border-black border-2 h-4 w-4 focus:ring-green-600 focus:ring-2 cursor-pointer bg-none'
-                        />
-                        <label className='p-2xs-semibold'>Nationaal</label>
-                      </div>
-                    </div>
-                  </div>
-                  {/* DISPLAY INSTRUMENTS DESKTOP */}
-                  <div className='flex flex-col'>
-                    <ul>
-                      {beleid.map((instrument) => (
-                        <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </>
-    );
   }
 
   return (
@@ -434,11 +293,11 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             <OverviewPageHeader props={props} page='samenhang' />
           </div>
           {/* DESKTOP */}
-          <div className=' hidden sm:flex max-w-[1280px]  pb-10 global-margin'>
+          <div className='hidden sm:flex max-w-[1280px]  pb-10 global-margin'>
             <div className='max-w-[880px] lg:min-w-[880px] flex-col justify-start'>
               <div className='flex flex-row gap-x-3 justify-start h-12 sm:h-[52px] -mt-12 sm:-mt-[52px] z-5 '>
                 <TabButton
-                  selected={selected}
+                  selected={selectedTab}
                   onClick={() => {
                     handleTabButton('beleid');
                     handleRadioButton('alle');
@@ -449,7 +308,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   name='beleid'
                 />
                 <TabButton
-                  selected={selected}
+                  selected={selectedTab}
                   onClick={() => {
                     handleTabButton('inkoop');
                     handleRadioButton('alle');
@@ -460,7 +319,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 />
                 {props.thema !== 'circulaire-matrasketen' && (
                   <TabButton
-                    selected={selected}
+                    selected={selectedTab}
                     onClick={() => {
                       handleTabButton('grondpositie');
                       handleRadioButton('alle');
@@ -472,7 +331,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   />
                 )}
                 <TabButton
-                  selected={selected}
+                  selected={selectedTab}
                   onClick={() => {
                     handleTabButton('subsidie');
                     handleRadioButton('alle');
@@ -482,7 +341,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   name='subsidie'
                 />
                 <TabButton
-                  selected={selected}
+                  selected={selectedTab}
                   onClick={() => {
                     handleTabButton('fiscaal');
                     handleRadioButton('alle');
@@ -492,142 +351,115 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   name='fiscaal'
                 />
               </div>
-              <div className='bg-white'>
-                <div className='py-6 ml-3'>
-                  {selected === 'beleid' && (
-                    <p className='p-base'>
-                      Vooral geïnteresseerd in het stimuleren van houtbouw via beleid?
-                    </p>
-                  )}
-                  {selected === 'inkoop' && (
-                    <p className='p-base'>
-                      Bekijk hoe je via tenders en aanbestedingen houtbouw kunt stimuleren.
-                    </p>
-                  )}
-                  {selected === 'grondpositie' && (
-                    <p className='p-base'>
-                      Ben je als overheid grondeigenaar? Bekijk de mogelijkheden om houtbouw af te
-                      dwingen.
-                    </p>
-                  )}
-                  {selected === 'subsidie' && (
-                    <p className='p-base'>Bekijk hoe je via subsidies houtbouw kunt stimuleren.</p>
-                  )}
-                  {selected === 'fiscaal' && (
-                    <p className='p-base'>
-                      Bekijk hoe je via fiscale maatregelen houtbouw kunt stimuleren.
-                    </p>
-                  )}
-                </div>
-                <div className='flex flex-ro items-center h-11'>
-                  <div className='basis-1/2 ml-3 flex justify-end pr-3'>
-                    <div className='p-2xs-bold'>Toon:</div>
-                  </div>
-                  <div className='basis-1/2 mr-3 flex flex-row items-center justify-between p-xs font-medium max-w-[413px]'>
-                    <div className='mr-4 w-[60px]'>
-                      <input
-                        type='radio'
-                        name='filter'
-                        value='alle'
-                        id='alle'
-                        checked={local?.value === 'alle'}
-                        onChange={() => handleRadioButton('alle')}
-                        className='mr-2 text-black border-black border-2 h-4 w-4 focus:ring-black focus:ring-2 cursor-pointer bg-none'
-                      />
-                      <label htmlFor='alle' className='p-2xs-semibold hover:cursor-pointer'>
-                        Alle
-                      </label>
-                    </div>
-                    <div className='mr-4 w-[115px]'>
-                      <input
-                        type='radio'
-                        name='filter'
-                        value='Gemeentelijk'
-                        id='gemeentelijk'
-                        checked={local?.value === 'Gemeentelijk'}
-                        onChange={() => handleRadioButton('Gemeentelijk')}
-                        className='mr-2 text-green-200 border-black border-2 h-4 w-4 focus:ring-green-200 focus:ring-2 cursor-pointer bg-none'
-                      />
-                      <label htmlFor='gemeentelijk' className='p-2xs-semibold hover:cursor-pointer'>
-                        Gemeentelijk
-                      </label>
-                    </div>
-                    <div className='mr-4 w-[100px]'>
-                      <input
-                        type='radio'
-                        name='filter'
-                        value='Provinciaal'
-                        id='provinciaal'
-                        checked={local?.value === 'Provinciaal'}
-                        onChange={() => handleRadioButton('Provinciaal')}
-                        className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
-                      />
-                      <label htmlFor='provinciaal' className='p-2xs-semibold hover:cursor-pointer'>
-                        Provinciaal
-                      </label>
-                    </div>
 
-                    <div className='w-[90px]'>
-                      <input
-                        type='radio'
-                        name='filter'
-                        value='Nationaal'
-                        id='nationaal'
-                        checked={local?.value === 'Nationaal'}
-                        onChange={() => handleRadioButton('Nationaal')}
-                        className='mr-2 text-green-600 border-black border-2 h-4 w-4 focus:ring-green-600 focus:ring-2 cursor-pointer bg-none'
-                      />
-                      <label htmlFor='nationaal' className='p-2xs-semibold hover:cursor-pointer'>
-                        Nationaal
-                      </label>
-                    </div>
-                  </div>
+              <ExplinationText selected={selectedTab} />
+
+              <div className='flex flex-ro items-center h-11'>
+                <div className='basis-1/2 ml-3 flex justify-end pr-3'>
+                  <div className='p-2xs-bold'>Toon:</div>
                 </div>
-                {/* DISPLAY INSTRUMENTS DESKTOP */}
-                <div className='flex flex-col'>
-                  <ul>
-                    {selected === 'beleid' && props.transitionAgenda === 'bouw' && (
-                      <DisplayInstruments category={beleid} categoryName='beleid' />
-                    )}
-                  </ul>
-                  <ul>
-                    {selected === 'beleid' &&
-                      props.transitionAgenda !== 'bouw' &&
-                      beleid.map((instrument) => (
-                        <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                      ))}
-                  </ul>
-                  <ul>
-                    {selected === 'inkoop' && (
-                      <DisplayInstruments category={inkoop} categoryName='inkoop' />
-                    )}
-                  </ul>
-                  <ul>
-                    {selected == 'grondpositie' && props.transitionAgenda === 'bouw' && (
-                      <DisplayInstruments category={grondpositie} categoryName='grondpositie' />
-                    )}
-                  </ul>
-                  <ul>
-                    {selected === 'grondpositie' &&
-                      props.transitionAgenda !== 'bouw' &&
-                      grondpositie.map((instrument) => (
-                        <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                      ))}
-                  </ul>
-                  <ul className=''>
-                    {selected === 'subsidie' &&
-                      subsidie.map((instrument) => (
-                        <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                      ))}
-                  </ul>
-                  <ul>
-                    {selected === 'fiscaal' &&
-                      fiscaal.map((instrument) => (
-                        <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                      ))}
-                  </ul>
+                <div className='basis-1/2 mr-3 flex flex-row items-center justify-between p-xs font-medium max-w-[413px]'>
+                  <div className='mr-4 w-[60px]'>
+                    <input
+                      type='radio'
+                      name='filter'
+                      value='alle'
+                      id='alle'
+                      checked={local?.value === 'alle'}
+                      onChange={() => handleRadioButton('alle')}
+                      className='mr-2 text-black border-black border-2 h-4 w-4 focus:ring-black focus:ring-2 cursor-pointer bg-none'
+                    />
+                    <label htmlFor='alle' className='p-2xs-semibold hover:cursor-pointer'>
+                      Alle
+                    </label>
+                  </div>
+                  <div className='mr-4 w-[115px]'>
+                    <input
+                      type='radio'
+                      name='filter'
+                      value='Gemeentelijk'
+                      id='gemeentelijk'
+                      checked={local?.value === 'Gemeentelijk'}
+                      onChange={() => handleRadioButton('Gemeentelijk')}
+                      className='mr-2 text-green-200 border-black border-2 h-4 w-4 focus:ring-green-200 focus:ring-2 cursor-pointer bg-none'
+                    />
+                    <label htmlFor='gemeentelijk' className='p-2xs-semibold hover:cursor-pointer'>
+                      Gemeentelijk
+                    </label>
+                  </div>
+                  <div className='mr-4 w-[100px]'>
+                    <input
+                      type='radio'
+                      name='filter'
+                      value='Provinciaal'
+                      id='provinciaal'
+                      checked={local?.value === 'Provinciaal'}
+                      onChange={() => handleRadioButton('Provinciaal')}
+                      className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
+                    />
+                    <label htmlFor='provinciaal' className='p-2xs-semibold hover:cursor-pointer'>
+                      Provinciaal
+                    </label>
+                  </div>
+
+                  <div className='w-[90px]'>
+                    <input
+                      type='radio'
+                      name='filter'
+                      value='Nationaal'
+                      id='nationaal'
+                      checked={local?.value === 'Nationaal'}
+                      onChange={() => handleRadioButton('Nationaal')}
+                      className='mr-2 text-green-600 border-black border-2 h-4 w-4 focus:ring-green-600 focus:ring-2 cursor-pointer bg-none'
+                    />
+                    <label htmlFor='nationaal' className='p-2xs-semibold hover:cursor-pointer'>
+                      Nationaal
+                    </label>
+                  </div>
                 </div>
               </div>
+              {/* if is pending is true do not change the tab wait for the next*/}
+
+              {selectedTab === 'beleid' && (
+                <TabLayout
+                  category={beleid}
+                  selected={selectedTab}
+                  transitionAgenda={props.transitionAgenda}
+                  isPending={isPending}
+                />
+              )}
+              {selectedTab === 'inkoop' && (
+                <TabLayout
+                  category={inkoop}
+                  selected={selectedTab}
+                  transitionAgenda={props.transitionAgenda}
+                  isPending={isPending}
+                />
+              )}
+              {selectedTab === 'grondpositie' && (
+                <TabLayout
+                  category={grondpositie}
+                  selected={selectedTab}
+                  transitionAgenda={props.transitionAgenda}
+                  isPending={isPending}
+                />
+              )}
+              {selectedTab === 'subsidie' && (
+                <TabLayout
+                  category={subsidie}
+                  selected={selectedTab}
+                  transitionAgenda={props.transitionAgenda}
+                  isPending={isPending}
+                />
+              )}
+              {selectedTab === 'fiscaal' && (
+                <TabLayout
+                  category={fiscaal}
+                  selected={selectedTab}
+                  transitionAgenda={props.transitionAgenda}
+                  isPending={isPending}
+                />
+              )}
             </div>
           </div>
 
@@ -636,7 +468,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             <div className='-mt-12 flex overflow-x-scroll snap-x snap-mandatory no-scrollbar sm:hidden'>
               <div className='flex gap-x-2 h-12'>
                 <TabButton
-                  selected={selected}
+                  selected={selectedTab}
                   onClick={() => {
                     handleTabButton('beleid');
                     handleRadioButton('alle');
@@ -647,7 +479,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   name='beleid'
                 />
                 <TabButton
-                  selected={selected}
+                  selected={selectedTab}
                   onClick={() => {
                     handleTabButton('inkoop');
                     handleRadioButton('alle');
@@ -658,7 +490,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 />
                 {props.thema !== 'circulaire-matrasketen' && (
                   <TabButton
-                    selected={selected}
+                    selected={selectedTab}
                     onClick={() => {
                       handleTabButton('grondpositie');
                       handleRadioButton('alle');
@@ -670,7 +502,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   />
                 )}
                 <TabButton
-                  selected={selected}
+                  selected={selectedTab}
                   onClick={() => {
                     handleTabButton('subsidie');
                     handleRadioButton('alle');
@@ -680,7 +512,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   name='subsidie'
                 />
                 <TabButton
-                  selected={selected}
+                  selected={selectedTab}
                   onClick={() => {
                     handleTabButton('fiscaal');
                     handleRadioButton('alle');
@@ -691,32 +523,9 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 />
               </div>
             </div>
-            <div className='mt-5 mb-4 global-margin'>
-              {selected === 'beleid' && (
-                <p className='p-base'>
-                  Vooral geïnteresseerd in het stimuleren van houtbouw via beleid?
-                </p>
-              )}
-              {selected === 'inkoop' && (
-                <p className='p-base'>
-                  Bekijk hoe je via tenders en aanbestedingen houtbouw kunt stimuleren.
-                </p>
-              )}
-              {selected === 'grondpositie' && (
-                <p className='p-base'>
-                  Ben je als overheid grondeigenaar? Bekijk de mogelijkheden om houtbouw af te
-                  dwingen.
-                </p>
-              )}
-              {selected === 'subsidie' && (
-                <p className='p-base'>Bekijk hoe je via subsidies houtbouw kunt stimuleren.</p>
-              )}
-              {selected === 'fiscaal' && (
-                <p className='p-base'>
-                  Bekijk hoe je via fiscale maatregelen houtbouw kunt stimuleren.
-                </p>
-              )}
-            </div>
+
+            <ExplinationText selected={selectedTab} />
+
             <div className='pb-4'>
               <div className='mx-4'>
                 <p className='p-base'>Toon overheidslaag:</p>
@@ -942,49 +751,46 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             </div>
 
             {/* DISPLAY INSTRUMENTS MOBILE */}
-            <div className='flex flex-col'>
-              <ul>
-                {selected === 'beleid' && props.transitionAgenda === 'bouw' && (
-                  <DisplayInstruments category={beleid} categoryName='beleid' />
-                )}
-              </ul>
-              <ul>
-                {selected === 'beleid' &&
-                  props.transitionAgenda !== 'bouw' &&
-                  beleid.map((instrument) => (
-                    <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                  ))}
-              </ul>
-              <ul>
-                {selected === 'inkoop' && (
-                  <DisplayInstruments category={inkoop} categoryName='inkoop' />
-                )}
-              </ul>
-              <ul>
-                {selected == 'grondpositie' && props.transitionAgenda === 'bouw' && (
-                  <DisplayInstruments category={grondpositie} categoryName='grondpositie' />
-                )}
-              </ul>
-              <ul>
-                {selected === 'grondpositie' &&
-                  props.transitionAgenda !== 'bouw' &&
-                  grondpositie.map((instrument) => (
-                    <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                  ))}
-              </ul>
-              <ul className=''>
-                {selected === 'subsidie' &&
-                  subsidie.map((instrument) => (
-                    <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                  ))}
-              </ul>
-              <ul>
-                {selected === 'fiscaal' &&
-                  fiscaal.map((instrument) => (
-                    <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
-                  ))}
-              </ul>
-            </div>
+            {selectedTab === 'beleid' && (
+              <TabLayout
+                category={beleid}
+                selected={selectedTab}
+                transitionAgenda={props.transitionAgenda}
+                isPending={isPending}
+              />
+            )}
+            {selectedTab === 'inkoop' && (
+              <TabLayout
+                category={inkoop}
+                selected={selectedTab}
+                transitionAgenda={props.transitionAgenda}
+                isPending={isPending}
+              />
+            )}
+            {selectedTab === 'grondpositie' && (
+              <TabLayout
+                category={grondpositie}
+                selected={selectedTab}
+                transitionAgenda={props.transitionAgenda}
+                isPending={isPending}
+              />
+            )}
+            {selectedTab === 'subsidie' && (
+              <TabLayout
+                category={subsidie}
+                selected={selectedTab}
+                transitionAgenda={props.transitionAgenda}
+                isPending={isPending}
+              />
+            )}
+            {selectedTab === 'fiscaal' && (
+              <TabLayout
+                category={fiscaal}
+                selected={selectedTab}
+                transitionAgenda={props.transitionAgenda}
+                isPending={isPending}
+              />
+            )}
           </div>
         </div>
       </div>
