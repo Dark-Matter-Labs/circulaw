@@ -90,6 +90,43 @@ export default {
       validation: (Rule) => Rule.required(),
       description: 'Text to introduce the top 5 instruments',
       group: 'editableContent',
-    }
+    },
+    {
+      name: 'homePageCards',
+      title: 'HOMEPAGE KAARTEN',
+      type: 'text',
+      components: {
+        input: lineBreak,
+      },
+      group: 'editableContent',
+    },
+    {
+      title: 'Tekst homepage-themakaart', // need to add max length
+      name: 'homePageCardText',
+      type: 'text',
+      group: 'editableContent',
+    },
+    {
+      title: 'Home Page Card Button Text', // need to add max length
+      name: 'homePageCardButtonText',
+      type: 'string',
+      group: 'editableContent',
+    },
+    {
+      title: 'Volgorde presentatie thema’s', // need to add max length
+      name: 'homePageOrder',
+      type: 'number',
+      description:
+        'Elk thema moet een eigen nummer krijgen. Nummer bepaalt de volgorde van presentatie.',
+      group: 'editableContent',
+    },
+    {
+      title: 'Beeld homepage thema-kaart', // need to add max length
+      name: 'homePageCardImage',
+      type: 'image',
+      description:
+        'Beeld moet altijd icoon van thema bevatten. Bij nieuw thema banner ‘NIEUW’ toevoegen.',
+      group: 'editableContent',
+    },
   ],
 };
