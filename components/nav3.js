@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Lottie from 'react-lottie';
 import {
@@ -18,6 +19,10 @@ import {
 
 import BetaBanner from './beta-banner';
 import animationData from '../public/CL_Home_Logo_Loop';
+import logo from '../public/Circulaw_logotype_home.png';
+import CirculawLogo from '../public/Circulaw_logotype.png';
+import HomepageHeader from '../components/homepage-header';
+
 
 
 const defaultOptions = {
@@ -29,9 +34,9 @@ const defaultOptions = {
     },
   };
 
-export default function Nav3() {
+export default function Nav3(props) {
 
- 
+
   const router = useRouter()
   // main menu
   const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
@@ -43,7 +48,7 @@ export default function Nav3() {
     placement: 'bottom',
     open: mainMenuIsOpen,
     onOpenChange: setMainMenuIsOpen,
-    middleware: [offset(36), flip(), shift()],
+    middleware: [offset(28), flip(), shift()],
   });
 
   const { isMounted: mainMenuIsMounted, styles: mainMenuTransitionStyles } = useTransitionStyles(
@@ -79,7 +84,7 @@ export default function Nav3() {
     placement: 'bottom-start',
     open: overMenuIsOpen,
     onOpenChange: setOverMenuIsOpen,
-    middleware: [offset(36), flip(), shift()],
+    middleware: [offset(28), flip(), shift()],
   });
 
   const { isMounted: overMenuIsMounted, styles: overMenuTransitionStyles } = useTransitionStyles(
@@ -147,7 +152,7 @@ if (router.pathname === '/en') {
 } 
   return (
     <>
-      <div className='flex justify-center -mb-9 relative z-110' name='top'>
+      <div className='flex w-96 justify-center mx-auto -mb-9 relative z-100' name='top'>
         <BetaBanner />
       </div>
 
@@ -158,9 +163,76 @@ if (router.pathname === '/en') {
           className='h-[98px] shadow-lg bg-green-200 flex flex-row justify-between global-padding'
         >
           <>
-            <div>Logo</div>
-            <div className='flex flex-row items-center'>
-              <div>
+          {/* LOGO */}
+            <div>
+            {router.pathname === '/' && (
+                <>
+                  {/* LOGO DESKTOP HP */}
+                  <div className='hidden lgNav:block'>
+                    <Link href='/'>
+                      <Lottie options={defaultOptions} height={98} width={163} />
+                    </Link>
+                  </div>
+                  {/* LOGO MOBILE HP */}
+                  <div className='block lgNav:hidden'>
+                    <Link href='/'>
+                      <Image height={24} width={120} src={logo} alt='CircuLaw logo' quality={100} />
+                    </Link>
+                  </div>
+                </>
+              )}
+                {router.pathname !== '/' && (
+                <>
+                  <div className='hidden lgNav:block py-3'>
+                    <Link href='/'>
+                      <Image
+                        height={75}
+                        width={141}
+                        src={CirculawLogo}
+                        alt='CircuLaw logo'
+                        quality={100}
+                        className='z-80 relative'
+                      />
+                    </Link>
+                  </div>
+                  <div className='block lgNav:hidden'>
+                    <Link href='/'>
+                      <Image
+                        height={24}
+                        width={120}
+                        src={CirculawLogo}
+                        alt='CircuLaw logo'
+                        quality={100}
+                      />
+                    </Link>
+                  </div>
+                </>
+              )}
+           </div>
+           <div className='flex flex-col justify-between'>
+            {/* LANGUAGE */}
+            <div className='text-grey-100 flex justify-end items-center min-w-[10%]'>
+              <span
+                className={`link-interaction-dark-bg ${
+                  router.pathname === '/en' ? 'enLink' : 'enLinkSelected'
+                }`}
+              >
+                <Link href='/'>NL</Link>
+              </span>
+              <span className='px-1 enLink'>|</span>
+              <span
+                className={`link-interaction-dark-bg ${
+                  router.pathname === '/en' ? 'enLinkSelected' : 'enLink'
+                }`}
+              >
+                <Link href='/en'>EN</Link>
+              </span>
+            </div>
+
+        
+
+            <div className='hidden lgNav:flex flex-row items-center justify-between mb-7'>
+              <div className=''>
                 <button
                   className='border h-full hover:bg-red-200 relative z-100 mr-8'
                   ref={mainMenuRef.setReference}
@@ -240,14 +312,21 @@ if (router.pathname === '/en') {
                   </FloatingFocusManager>  )}
             
               </div>
-
-              <div>faq</div>
-              <div>contact</div>
-              <div>new</div>
+              <div className='border h-full hover:bg-red-200 relative z-100 mr-8'>faq</div>
+              <div className='border h-full hover:bg-red-200 relative z-100 mr-8'>contact</div>
+              <div className='border h-full hover:bg-red-200 relative z-100'>new</div>
             </div>
+            </div>
+
+
           </>
         </nav>
       </div>
+      {router.pathname === '/' && (
+        <div className='-mt-[9.5rem] bg-header bg-cover bg-center'>
+          <HomepageHeader homePageHeader={props.homePageHeader} />
+        </div>
+      )}
     </>
   );
 }
