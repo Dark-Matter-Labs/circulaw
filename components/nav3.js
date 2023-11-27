@@ -168,16 +168,17 @@ if (router.pathname === '/en') {
                 >
                   Productketen
                 </button>
+                {mainMenuIsMounted && (
                   <FloatingFocusManager context={mainMenuContext} modal={false}>
                     <div
                       ref={mainMenuRef.setFloating}
                       style={mainMenuStyles}
                       {...mainMenuFloatingProps()}
                       id='child'
-                      className='h-72 w-screen -z-10 shadow-lg'
+                      className='h-72 w-screen -z-10'
                     >
-                      {mainMenuIsMounted && (
-                        <div className='h-full' style={{ ...mainMenuTransitionStyles }}>
+                  
+                        <div className='h-full shadow-lg' style={{ ...mainMenuTransitionStyles }}>
                           <div className='bg-white shadow-lg h-full grid grid-cols-5 gap-3 relative'>
                             <div className='w-full h-full bg-green-100 flex flex-col pl-4 lgNav:pl-10 xl:pl-20 3xl:pl-32 pt-8 pr-2'>
                               <div className='p-lg-semibild text-green-800 mb-2'>Bouw</div>
@@ -207,9 +208,9 @@ if (router.pathname === '/en') {
                             </div>
                           </div>
                         </div>
-                      )}
-                    </div>
-                  </FloatingFocusManager>
+                   
+                    </div>   
+                  </FloatingFocusManager>)}
               </div>
               <div className=''>
                 <button
@@ -219,7 +220,7 @@ if (router.pathname === '/en') {
                 >
                   Over Circulaw
                 </button>
-              
+                {overMenuIsMounted && (
                   <FloatingFocusManager context={overContext} modal={false}>
                     <div
                       ref={overRef.setFloating}
@@ -227,16 +228,16 @@ if (router.pathname === '/en') {
                       {...overFloatingProps()}
                       className='h-72 w-56 -z-10 '
                     >
-                      {overMenuIsMounted && (
+                   
                         <div
                           className='h-full bg-red-800 shadow-lg'
                           style={{ ...overMenuTransitionStyles }}
                         >
                           panel
                         </div>
-                      )}
+                    
                     </div>
-                  </FloatingFocusManager>
+                  </FloatingFocusManager>  )}
             
               </div>
 
