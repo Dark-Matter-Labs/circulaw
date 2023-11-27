@@ -9,7 +9,6 @@ import { ChevronDownIcon } from '@heroicons/react/solid';
 import Lottie from 'react-lottie';
 import CirculawLogo from '../public/Circulaw_logotype.png';
 import logo from '../public/Circulaw_logotype_home.png';
-import { usePopper } from 'react-popper';
 
 import BetaBanner from './beta-banner';
 import animationData from '../public/CL_Home_Logo_Loop';
@@ -27,20 +26,6 @@ const defaultOptions = {
 };
 
 export default function Nav(props) {
-  // place mega menue
-  let [referenceElement, setReferenceElement] = useState();
-  let [popperElement, setPopperElement] = useState();
-  let { styles, attributes } = usePopper(referenceElement, popperElement, {
-    modifiers: [
-      {
-        name: 'offset',
-        options: {
-          offset: [0, 0],
-        },
-      },
-    ],
-    placement: 'bottom',
-  });
 
   // function to change styles when the user scrolls
   const [scrollEffect, setScrollEffect] = useState(false);
@@ -109,7 +94,7 @@ export default function Nav(props) {
         </div>
       </>
     );
-  }
+  } else {
   return (
     <>
       <div className='flex justify-center -mb-9 relative z-110' name='top'>
@@ -135,7 +120,6 @@ export default function Nav(props) {
                 }`,
               ]
         } w-full top-0 h-auto shadow-lg sticky z-100`}
-        ref={setReferenceElement}
       >
         {({ open }) => (
           <>
@@ -237,11 +221,7 @@ export default function Nav(props) {
                           leaveTo='-translate-y-96'
                         >
                           <Popover.Panel
-                            ref={setPopperElement}
-                            style={styles.popper}
-                            {...attributes.popper}
                             className='h-72 w-screen z-10'
-                            onMouseLeave={() => close()}
                           >
                             <div className='h-full'>
                               <div className='bg-white  h-full grid grid-cols-5 gap-3 relative'>
@@ -480,4 +460,5 @@ export default function Nav(props) {
       )}
     </>
   );
+}
 }

@@ -421,22 +421,3 @@ html {
     }
   }
 }
-
-
-#overMenu {
-  transition-property: opacity, transform;
-}
-#overMenu[data-status='initial'] {
-  opacity: 0;
-  transform: scale(0);
-}
-#overMenu[data-status='open'] {
-  opacity: 1;
-  transform: scale(1);
-  transition-duration: 250ms;
-}
-#overMenu[data-status='close'] {
-  opacity: 0;
-  transform: scale(2);
-  transition-duration: 250ms;
-}

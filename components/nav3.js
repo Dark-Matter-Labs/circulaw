@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import Lottie from 'react-lottie';
 import {
   useFloating,
   offset,
@@ -13,9 +15,25 @@ import {
   useTransitionStyles,
 } from '@floating-ui/react';
 
+
 import BetaBanner from './beta-banner';
+import animationData from '../public/CL_Home_Logo_Loop';
+
+
+const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
 
 export default function Nav3() {
+
+ 
+  const router = useRouter()
+  // main menu
   const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
   const {
     refs: mainMenuRef,
@@ -44,6 +62,14 @@ export default function Nav3() {
       },
   );
 
+  const mainMenuClick = useClick(mainMenuContext);
+  const mainMenuDismiss = useDismiss(mainMenuContext);
+  const mainMenuRole = useRole(mainMenuContext);
+
+  const { getReferenceProps: mainMenuReferencProps, getFloatingProps: mainMenuFloatingProps } =
+  useInteractions([mainMenuClick, mainMenuDismiss, mainMenuRole]);
+
+  // over menu
   const [overMenuIsOpen, setOverMenuIsOpen] = useState(false);
   const {
     refs: overRef,
@@ -72,15 +98,6 @@ export default function Nav3() {
     },
   );
 
- 
-
-  const mainMenuClick = useClick(mainMenuContext);
-  const mainMenuDismiss = useDismiss(mainMenuContext);
-  const mainMenuRole = useRole(mainMenuContext);
-
-  const { getReferenceProps: mainMenuReferencProps, getFloatingProps: mainMenuFloatingProps } =
-    useInteractions([mainMenuClick, mainMenuDismiss, mainMenuRole]);
-
   const overMenuClick = useClick(overContext);
   const overMenuDismiss = useDismiss(overContext);
   const overMenuRole = useRole(overContext);
@@ -88,6 +105,46 @@ export default function Nav3() {
   const { getReferenceProps: overReferenceProps, getFloatingProps: overFloatingProps } =
     useInteractions([overMenuClick, overMenuDismiss, overMenuRole]);
 
+    console.log(router)
+if (router.pathname === '/en') {
+    return (
+        <>
+        <div className='w-full bg-green-800 sticky top-0 z-40 shadow-lg'>
+          <div className='flex justify-between global-margin'>
+            <div className=' flex justify-start items-center'>
+              <div className='hidden sm:block -ml-6'>
+                <Link href='/'>
+                  <Lottie options={defaultOptions} height={110} width={183} />
+                </Link>
+              </div>
+              <div className='block sm:hidden -ml-6'>
+                <Link href='/'>
+                  <Lottie options={defaultOptions} height={86} width={162} />
+                </Link>
+              </div>
+            </div>
+            <div className='text-grey-100 flex justify-center items-center min-w-[10%] pt-2 pr-4'>
+              <span
+                className={`link-interaction-dark-bg ${
+                  router.pathname === '/en' ? 'enLink' : 'enLinkSelected'
+                }`}
+              >
+                <Link href='/'>NL</Link>
+              </span>
+              <span className='px-1 enLink'>|</span>
+              <span
+                className={`link-interaction-dark-bg ${
+                  router.pathname === '/en' ? 'enLinkSelected' : 'enLink'
+                }`}
+              >
+                <Link href='/en'>EN</Link>
+              </span>
+            </div>
+          </div>
+        </div>
+      </>
+    )
+} 
   return (
     <>
       <div className='flex justify-center -mb-9 relative z-110' name='top'>
@@ -161,7 +218,6 @@ export default function Nav3() {
                   className='border h-full hover:bg-red-200 relative z-100 mr-8'
                 >
                   Over Circulaw
-                  {console.log(overMenuIsMounted)}
                 </button>
               
                   <FloatingFocusManager context={overContext} modal={false}>
@@ -194,3 +250,4 @@ export default function Nav3() {
     </>
   );
 }
+
