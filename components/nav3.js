@@ -14,6 +14,7 @@ import {
   useInteractions,
   FloatingFocusManager,
   useTransitionStyles,
+  FloatingOverlay
 } from '@floating-ui/react';
 
 import BetaBanner from './beta-banner';
@@ -22,6 +23,7 @@ import logo from '../public/Circulaw_logotype_home.png';
 import CirculawLogo from '../public/Circulaw_logotype.png';
 import HomepageHeader from '../components/homepage-header';
 import { ChevronDownIcon,  MenuIcon  } from '@heroicons/react/outline';
+import { Disclosure, Transition } from '@headlessui/react';
 
 const defaultOptions = {
   loop: true,
@@ -129,14 +131,15 @@ export default function Nav3(props) {
 
   const [ mobileMenuIsOpen, setMobileMenuIsOpen ] = useState(false)
   const { refs: mobileRef, floatingStyles: mobileFloatingStyles, context: mobileContext} = useFloating({
-    placement: 'bottom',
+    placement: 'bottom-start',
     open: mobileMenuIsOpen,
     onOpenChange: setMobileMenuIsOpen,
     middleware: [offset(10), flip(), shift()]
   })
 
   const mobileMenuClick = useClick(mobileContext)
-  const mobileMenuDismiss = useDismiss(mobileContext)
+  const mobileMenuDismiss = useDismiss(mobileContext, 
+    {outsidePressEvent: 'mousedown',})
   const mobileMenuRole = useRole(mobileContext)
 
   const { getReferenceProps: mobileRefProps, getFloatingProps: mobileFloatingProps} = useInteractions([mobileMenuClick, mobileMenuDismiss, mobileMenuRole])
@@ -311,17 +314,92 @@ export default function Nav3(props) {
                       <MenuIcon className='block h-10 w-10' aria-hidden='true' />
                   </button>
                   {mobileMenuIsMounted && ( 
+                      <FloatingOverlay
+                      lockScroll
+                      style={{background: 'rgba(0, 0, 0, 0)'}}
+                    >
                   <FloatingFocusManager context={mobileContext} modal={false}>
-                  <div className='h-72 w-screen -z-10'
+                  <div className='h-auto w-screen -z-10'
                        ref={mobileRef.setFloating}
                        style={mobileFloatingStyles}
                        {...mobileFloatingProps()} >
-                        <div className='h-72  w-screen bg-gray-200'  style={{ ...mobileMenuTransitionStyles }}> 
-                          Menu
+                        <div className='h-auto w-screen bg-[#F8FBF8]'  style={{ ...mobileMenuTransitionStyles }}> 
+                        <div className='flex flex-col items-start justify-end global-margin '>
+                         <Disclosure>
+                          {({ open }) => ( 
+                            <>
+                          <Disclosure.Button className={`${open ? 'text-green-500' : 'text-green-800'} border-y py-4 w-full text-left p-xl-semibold flex flex-row items-center`}>
+                               Productketen
+                          <ChevronDownIcon className={`${open ? 'rotate-180': ''} h-4 w-4 mt-1 ml-2`} />
+                          </Disclosure.Button>
+                          <Transition
+                              show={open}
+                              enter="transition duration-300 ease-out"
+                              enterFrom="transform opacity-0"
+                              enterTo="transform opacity-100"
+                              leave="transition duration-75 ease-out"
+                              leaveFrom="transform opacity-300"
+                              leaveTo="transform opacity-0"
+                              className='w-full'
+      >
+                          <Disclosure.Panel className='flex flex-col flex-grow ml-4'>
+                            <ul>
+                            <li className='p-base-semibold text-green-800 py-6 border-b'>
+                              Bouw
+                            </li>
+                            <li className='p-base-semibold text-green-800 py-6 border-b'>
+                            Consumptiegoederen
+                            </li>
+                            <li className='p-base-semibold text-green-800 py-6 border-b'>
+                            Voedsel en biomassa
+                            </li>
+                            <li className='p-base-semibold text-green-800 py-6 border-b'>
+                            Maakindustrie
+                            </li>
+                            <li className='p-base-semibold text-green-800 py-6'>
+                            Kunststoffen
+                            </li>
+                            </ul>
+                          </Disclosure.Panel>
+                          </Transition>
+                          </>
+                          )}
+                         </Disclosure>
+                         <Disclosure>
+                          {({ open }) => ( 
+                            <>
+                          <Disclosure.Button className={`${open ? 'text-green-500' : 'text-green-800'} border-y py-4 w-full text-left p-xl-semibold flex flex-row items-center`}>
+                               Over Circulaw
+                               <ChevronDownIcon className={`${open ? 'rotate-180': ''} h-4 w-4 mt-1 ml-2`} />
+
+                          </Disclosure.Button>
+                          <Disclosure.Panel className='ml-4'>
+                           <ul>
+                          {props?.aboutSlugs?.map((aboutPage) => (
+                            
+                            <li key={aboutPage?.slug} className='p-xs first:mt-4 mb-4 text-green-600 hover:text-green-500 hover:underline active:p-xs-semibold active:no-underline cursor-pointer' onClick={() => router.push(`/about/${aboutPage?.slug}`)}>
+                                {aboutPage.title}
+                           </li>
+                          ))}
+                            </ul>
+                          </Disclosure.Panel>
+                          </>
+                          )}
+                         </Disclosure>
+                         <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
+                         Nieuws
+                         </div>
+                         <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
+                         Vraag en antwoord
+                         </div>
+                         <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
+                         Contact
+                         </div>
+                         </div>
                         </div>
-                     
                   </div>
                   </FloatingFocusManager>
+                  </FloatingOverlay>
                   )}
                 </div>
 
