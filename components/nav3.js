@@ -21,7 +21,7 @@ import animationData from '../public/CL_Home_Logo_Loop';
 import logo from '../public/Circulaw_logotype_home.png';
 import CirculawLogo from '../public/Circulaw_logotype.png';
 import HomepageHeader from '../components/homepage-header';
-import { ChevronDownIcon } from '@heroicons/react/outline';
+import { ChevronDownIcon,  MenuIcon  } from '@heroicons/react/outline';
 
 const defaultOptions = {
   loop: true,
@@ -175,7 +175,7 @@ export default function Nav3(props) {
         id='wrapper'
         className={`${
           mainMenuIsOpen === true || overMenuIsOpen === true
-            ? 'bg-green-600 transition-colors'
+            ? 'bg-green-600 transition-colors shadow-lg'
             : 'bg-transparent duration-150 delay-300 transition-colors'
         } z-100 sticky top-0`}
       >
@@ -198,8 +198,7 @@ export default function Nav3(props) {
                       : 'bg-[#F8FBF8] z-100 transition-all duration-150 shadow-lg'
                   }`,
                 ]
-          } 
-          h-[98px] flex flex-row justify-between global-padding`}
+          } h-[70px] lgNav:h-[98px] flex flex-row justify-between items-center lgNav:items-end global-padding`}
         >
           <>
             {/* LOGO */}
@@ -215,7 +214,7 @@ export default function Nav3(props) {
                   {/* LOGO MOBILE HP */}
                   <div className='block lgNav:hidden'>
                     <Link href='/'>
-                      <Image height={24} width={120} src={logo} alt='CircuLaw logo' quality={100} />
+                      <Image height={24} width={100} src={logo} alt='CircuLaw logo' quality={100} />
                     </Link>
                   </div>
                 </>
@@ -238,7 +237,7 @@ export default function Nav3(props) {
                     <Link href='/'>
                       <Image
                         height={24}
-                        width={120}
+                        width={100}
                         src={CirculawLogo}
                         alt='CircuLaw logo'
                         quality={100}
@@ -250,9 +249,9 @@ export default function Nav3(props) {
             </div>
             <div className='flex flex-col justify-between'>
               {/* LANGUAGE */}
-              <div className='text-grey-100 flex justify-end items-center min-w-[10%]'>
+              <div className={`${router.pathname === '/' ? 'text-grey-100' : 'text-green-800'}  hidden lgNav:flex justify-end items-center min-w-[10%] mb-5`}>
                 <span
-                  className={`link-interaction-dark-bg ${
+                  className={`${router.pathname === '/' ? 'link-interaction-dark-bg ' : 'link-interaction'} ${
                     router.pathname === '/en' ? 'enLink' : 'enLinkSelected'
                   }`}
                 >
@@ -260,13 +259,25 @@ export default function Nav3(props) {
                 </span>
                 <span className='px-1 enLink'>|</span>
                 <span
-                  className={`link-interaction-dark-bg ${
+                  className={`${router.pathname === '/' ? 'link-interaction-dark-bg ' : 'link-interaction'} ${
                     router.pathname === '/en' ? 'enLinkSelected' : 'enLink'
                   }`}
                 >
                   <Link href='/en'>EN</Link>
                 </span>
               </div>
+
+              {/* Mobile button/NAV */}
+              <div className='inset-y-0 float-right flex items-center pt-2 lgNav:hidden'>
+                  <div
+                    className={`${
+                      router.pathname !== '/' ? 'text-green-600' : 'text-grey-100'
+                    } 'p-2 rounded-md`}
+                  >
+                    <span className='sr-only'>Open main menu</span>
+                      <MenuIcon className='block h-10 w-10' aria-hidden='true' />
+                  </div>
+                </div>
 
               <div className='hidden lgNav:flex flex-row items-center justify-between mb-7'>
                 <div className=''>
@@ -374,7 +385,7 @@ export default function Nav3(props) {
                         <div
                           className='h-full bg-green-100 shadow-lg pl-6 pt-8 pr-8'
                           style={{ ...overMenuTransitionStyles }}
-                          onMouseLeave={() => setOverMenuIsOpen(true)}
+                          onMouseLeave={() => setOverMenuIsOpen(false)}
                         >
                           {props?.aboutSlugs?.map((aboutPage) => (
                             <div key={aboutPage?.slug} className='p-xs mb-2 text-green-600 hover:text-green-500 hover:underline active:p-xs-semibold active:no-underline cursor-pointer' onClick={() => router.push(`/about/${aboutPage?.slug}`)}>
@@ -403,20 +414,4 @@ export default function Nav3(props) {
   );
 }
 
-{
-  /*
 
-
- <FloatingFocusManager context={mainMenuContext} modal={false}>
-                        <div
-                          ref={mainMenuRef.setFloating}
-                          style={mainMenuStyles}
-                          {...mainMenuFloatingProps()}
-                          id='child'
-                          className='h-72 w-screen -z-10'
-                        >
-                            
-                          </div>
-                      </FloatingFocusManager>
-*/
-}
