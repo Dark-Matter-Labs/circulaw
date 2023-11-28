@@ -126,6 +126,37 @@ export default function Nav3(props) {
   const { getReferenceProps: overReferenceProps, getFloatingProps: overFloatingProps } =
     useInteractions([overMenuClick, overMenuDismiss, overMenuRole]);
 
+
+  const [ mobileMenuIsOpen, setMobileMenuIsOpen ] = useState(false)
+  const { refs: mobileRef, floatingStyles: mobileFloatingStyles, context: mobileContext} = useFloating({
+    placement: 'bottom',
+    open: mobileMenuIsOpen,
+    onOpenChange: setMobileMenuIsOpen,
+    middleware: [offset(10), flip(), shift()]
+  })
+
+  const mobileMenuClick = useClick(mobileContext)
+  const mobileMenuDismiss = useDismiss(mobileContext)
+  const mobileMenuRole = useRole(mobileContext)
+
+  const { getReferenceProps: mobileRefProps, getFloatingProps: mobileFloatingProps} = useInteractions([mobileMenuClick, mobileMenuDismiss, mobileMenuRole])
+
+  const { isMounted: mobileMenuIsMounted, styles: mobileMenuTransitionStyles } = useTransitionStyles(
+    mobileContext,
+    {
+      duration: 150,
+      initial: {
+        opacity: 0,
+      },
+      open: {
+        opacity: 100,
+      },
+      close: {
+        opacity: 0,
+      },
+    },
+  );
+
   if (router.pathname === '/en') {
     return (
       <>
@@ -269,14 +300,29 @@ export default function Nav3(props) {
 
               {/* Mobile button/NAV */}
               <div className='inset-y-0 float-right flex items-center pt-2 lgNav:hidden'>
-                  <div
+                  <button
                     className={`${
                       router.pathname !== '/' ? 'text-green-600' : 'text-grey-100'
                     } 'p-2 rounded-md`}
-                  >
+                    ref={mobileRef.setReference}
+                    {...mobileRefProps()}
+                    >
                     <span className='sr-only'>Open main menu</span>
                       <MenuIcon className='block h-10 w-10' aria-hidden='true' />
+                  </button>
+                  {mobileMenuIsMounted && ( 
+                  <FloatingFocusManager context={mobileContext} modal={false}>
+                  <div className='h-72 w-screen -z-10'
+                       ref={mobileRef.setFloating}
+                       style={mobileFloatingStyles}
+                       {...mobileFloatingProps()} >
+                        <div className='h-72  w-screen bg-gray-200'  style={{ ...mobileMenuTransitionStyles }}> 
+                          Menu
+                        </div>
+                     
                   </div>
+                  </FloatingFocusManager>
+                  )}
                 </div>
 
               <div className='hidden lgNav:flex flex-row items-center justify-between mb-7'>
@@ -289,7 +335,6 @@ export default function Nav3(props) {
                     Productketen
                     <ChevronDownIcon className='h-5 w-5 ml-2 group-hover:text-green-500 '/>
                   </button>
-
                   {mainMenuIsMounted && (
                     <FloatingFocusManager context={mainMenuContext} modal={false}>
                       <div
