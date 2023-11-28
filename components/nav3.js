@@ -21,6 +21,7 @@ import animationData from '../public/CL_Home_Logo_Loop';
 import logo from '../public/Circulaw_logotype_home.png';
 import CirculawLogo from '../public/Circulaw_logotype.png';
 import HomepageHeader from '../components/homepage-header';
+import { ChevronDownIcon } from '@heroicons/react/outline';
 
 const defaultOptions = {
   loop: true,
@@ -32,6 +33,7 @@ const defaultOptions = {
 };
 
 export default function Nav3(props) {
+
   const [scrollEffect, setScrollEffect] = useState(false);
   const router = useRouter();
 
@@ -192,7 +194,7 @@ export default function Nav3(props) {
               : [
                   `${
                     router.pathname === '/'
-                      ? 'bg-gradient-to-b from-green-600 to-green-500 opacity-85 transition-all duration-150'
+                      ? 'bg-transparent opacity-85 transition-all duration-150'
                       : 'bg-[#F8FBF8] z-100 transition-all duration-150 shadow-lg'
                   }`,
                 ]
@@ -269,11 +271,12 @@ export default function Nav3(props) {
               <div className='hidden lgNav:flex flex-row items-center justify-between mb-7'>
                 <div className=''>
                   <button
-                    className='border h-full hover:bg-red-200 relative z-100 mr-8'
+                    className='h-full relative p-sm text-green-800 hover:underline hover:decoration-green-500 group z-100 mr-8 flex flex-row items-center '
                     ref={mainMenuRef.setReference}
                     {...mainMenuReferencProps()}
                   >
                     Productketen
+                    <ChevronDownIcon className='h-5 w-5 ml-2 group-hover:text-green-500 '/>
                   </button>
 
                   {mainMenuIsMounted && (
@@ -292,32 +295,56 @@ export default function Nav3(props) {
                           <div className='bg-white h-full flex flex-cols-5 gap-3 relative'>
                             <div className='w-full h-full bg-green-100 pl-4 lgNav:pl-10 xl:pl-20 3xl:pl-32 pt-8 pr-2 p-lg-semibild text-green-800 mb-2'>
                               Bouw
-                              <div className='p-base'>
+                              <div className=''>
                                 <div
-                                  className='h-6'
+                                  className='p-xs mt-2 text-green-600 hover:text-green-500 hover:underline active:p-xs-semibold active:no-underline cursor-pointer'
                                   onClick={() => router.push('/houtbouw-stimuleren')}
                                 >
-                                  Houtbow
+                                  Houtbow stimuleren
                                 </div>
                               </div>
-                              <div className='p-base'>more stuff</div>
                             </div>
                             <div className='w-full bg-green-100 flex flex-col pl-3 lg:pl-6 pt-8 pr-2'>
-                              <div className='p-lg-semibild text-green-800'>
+                              <div className='p-lg-semibild text-green-800 opacity-50'>
                                 Voedsel en biomassa
                               </div>
+                         
                             </div>
                             <div className='w-full bg-green-100 flex flex-col pl-3 lg:pl-6 pt-8 pr-2'>
                               <div className='p-lg-semibild break-words text-green-800'>
                                 Consumptiegoederen
                               </div>
+                              <div className=''>
+                                <div
+                                  className='p-xs mt-2 text-green-600 hover:text-green-500 hover:underline active:p-xs-semibold active:no-underline cursor-pointer'
+                                  onClick={() => router.push('/circulaire-matrasketen')}
+                                >
+                                 Circulaire matrasketen
+                                </div>
+                              </div>
                             </div>
                             <div className='w-full bg-green-100 flex flex-col pl-3 lg:pl-6 pt-8 pr-2'>
                               <div className='p-lg-semibild text-green-800'>Maakindustrie</div>
+                              <div className=''>
+                                <div
+                                  className='p-xs mt-2 text-green-600 hover:text-green-500 hover:underline active:p-xs-semibold active:no-underline cursor-pointer'
+                                  onClick={() => router.push('/circulaire-windturbines')}
+                                >
+                                  Circulaire windturbines
+                                </div>
+                              </div>
                             </div>
                             <div className='w-full bg-green-100 flex flex-col pl-3 lg:pl-6 pt-8 pr-2'>
-                              <div className='p-lg-semibild text-green-800 opacity-50'>
+                              <div className='p-lg-semibild text-green-800'>
                                 Kunststoffen
+                              </div>
+                              <div className=''>
+                                <div
+                                  className='p-xs mt-2 text-green-600 hover:text-green-500 hover:underline active:p-xs-semibold active:no-underline cursor-pointer'
+                                  onClick={() => router.push('/plastic-in-de-bouw')}
+                                >
+                                  Plastic in de bouw
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -331,9 +358,10 @@ export default function Nav3(props) {
                   <button
                     ref={overRef.setReference}
                     {...overReferenceProps()}
-                    className='border h-full hover:bg-red-200 relative z-100 mr-8'
+                    className='h-full relative p-sm text-green-800 hover:underline hover:decoration-green-500 group z-100 mr-8 flex flex-row items-center '
                   >
                     Over Circulaw
+                    <ChevronDownIcon className='h-5 w-5 ml-2 group-hover:text-green-500 '/>
                   </button>
                   {overMenuIsMounted && (
                     <FloatingFocusManager context={overContext} modal={false}>
@@ -341,22 +369,26 @@ export default function Nav3(props) {
                         ref={overRef.setFloating}
                         style={overStyles}
                         {...overFloatingProps()}
-                        className='h-72 w-56 -z-10 '
+                        className='h-60 w-60 -z-10 '
                       >
                         <div
-                          className='h-full bg-green-100 shadow-lg pl-6 pt-8'
+                          className='h-full bg-green-100 shadow-lg pl-6 pt-8 pr-8'
                           style={{ ...overMenuTransitionStyles }}
-                          onMouseLeave={() => setOverMenuIsOpen(false)}
+                          onMouseLeave={() => setOverMenuIsOpen(true)}
                         >
-                          panel
+                          {props?.aboutSlugs?.map((aboutPage) => (
+                            <div key={aboutPage?.slug} className='p-xs mb-2 text-green-600 hover:text-green-500 hover:underline active:p-xs-semibold active:no-underline cursor-pointer' onClick={() => router.push(`/about/${aboutPage?.slug}`)}>
+                                {aboutPage.title}
+                           </div>
+                          ))}
                         </div>
                       </div>
                     </FloatingFocusManager>
                   )}
                 </div>
-                <div className='border h-full hover:bg-red-200 relative z-100 mr-8'>faq</div>
-                <div className='border h-full hover:bg-red-200 relative z-100 mr-8'>contact</div>
-                <div className='border h-full hover:bg-red-200 relative z-100'>new</div>
+                <div className='h-full relative p-sm text-green-800 hover:underline z-100 mr-8 flex flex-row items-center cursor-pointer'>Nieuws</div>
+                <div className='h-full relative p-sm text-green-800 hover:underline z-100 mr-8 flex flex-row items-center cursor-pointer'>Vraag en antwoord</div>
+                <div className='h-full relative p-sm text-green-800 hover:underline z-100 flex flex-row items-center cursor-pointer'>Contact</div>
               </div>
             </div>
           </>
