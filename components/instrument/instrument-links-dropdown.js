@@ -1,23 +1,22 @@
 import { Popover } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
-import { Fragment } from 'react';
 
 const links = {
-  'houtbouw-stimuleren': [
-    '/houtbouw-stimuleren/categorie',
-    '/measures/houtbouw',
-    '/houtbouw-stimuleren/welke-overheid',
+  'houtbouw': [
+    '/bouw/houtbouw/categorie',
+    '/bouw/houtbouw/instrumenten',
+    '/bouw/houtbouw//welke-overheid',
   ],
-  'circulaire-windturbines': [
-    '/circulaire-windturbines/categorie',
-    '/measures/windturbines',
-    '/circulaire-windturbines/welke-overheid-heeft',
+  'windturbines': [
+    '/maakindustrie/windturbines/categorie',
+    '/maakindustrie/windturbines/instrumenten',
+    '/maakindustrie/windturbines/welke-overheid-heeft',
   ],
-  'circulaire-matrasketen': [
-    '/circulaire-matrasketen/categorie',
-    '/measures/matrassen',
-    '/circulaire-matrasketen/welke-overheid-heeft',
+  'matrasketen': [
+    '/consumenten-goederen/matrasketen/categorie',
+    '/consumenten-goederen/matrasketen/instrumenten',
+    '/consumenten-goederen/matrasketen/welke-overheid-heeft',
   ],
 };
 

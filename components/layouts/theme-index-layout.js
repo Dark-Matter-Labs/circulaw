@@ -4,7 +4,7 @@ import { ArrowRightIcon } from '@heroicons/react/outline';
 import { useEffect, useState } from 'react';
 
 import LinkIcon from '../link-icon';
-import { urlFor } from '../../lib/sanity';
+import { urlFor } from '@/lib/sanity';
 import ThemeBottomSection from '../section-bottom-theme-index';
 import waarvoor from '../../public/thema-card-background/waarvoor.svg';
 import samenhang from '../../public/thema-card-background/samenhang.svg';

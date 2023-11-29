@@ -1,16 +1,16 @@
-import Layout from '../components/layouts/layout';
-import SectionTypes from '../components/section-types-list';
-import { client } from '../lib/sanity';
+import Layout from '@/components/layouts/layout';
+import SectionTypes from '@/components/section-types-list';
+import { client } from '@/lib/sanity';
 
 import {
   aboutSectionQuerie,
   homePageThemaQuery,
   newsItemsQuery,
   homePageHeaderQuery,
-} from '../lib/queries';
-import NewThemaSuggestion from '../components/new-thema-suggestion';
-import NewsItems from '../components/news-items';
-import HomePageAboutSection from '../components/home-page-about-section';
+} from '@/lib/queries';
+import NewThemaSuggestion from '@/components/new-thema-suggestion';
+import NewsItems from '@/components/news-items';
+import HomePageAboutSection from '@/components/home-page-about-section';
 
 export default function Index({
   newsItems,

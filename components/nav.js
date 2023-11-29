@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Lottie from 'react-lottie';
+import CirculawLogo from '@/public/Circulaw_logotype.png';
+import logo from '@/public/Circulaw_logotype_home.png';
 import {
   useFloating,
   offset,
@@ -18,10 +20,10 @@ import {
 } from '@floating-ui/react';
 
 import BetaBanner from './beta-banner';
-import animationData from '../public/CL_Home_Logo_Loop';
+import animationData from '@/public/CL_Home_Logo_Loop';
 import logo from '../public/Circulaw_logotype_home.png';
 import CirculawLogo from '../public/Circulaw_logotype.png';
-import HomepageHeader from '../components/homepage-header';
+import HomepageHeader from '@/components/homepage-header';
 import { ChevronDownIcon, MenuIcon } from '@heroicons/react/outline';
 import { Disclosure, Transition } from '@headlessui/react';
 

@@ -3,10 +3,10 @@ import Image from 'next/image';
 import useSWR from 'swr';
 import { useRouter } from 'next/router';
 import { groq } from 'next-sanity';
-import { urlFor } from '../lib/sanity';
-import { partnersQuery } from '../lib/queries';
-import sanityLogo from '../public/logo_partners/sanity-logo.svg';
-import { fetcher } from '../utils/swr-fetcher';
+import { urlFor } from '@/lib/sanity';
+import { partnersQuery } from '@/lib/queries';
+import sanityLogo from '@/public/logo_partners/sanity-logo.svg';
+import { fetcher } from '@/utils/swr-fetcher';
 import { Fragment } from 'react';
 
 const bordersDesktop =

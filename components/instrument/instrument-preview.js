@@ -1,10 +1,11 @@
-import { usePreview } from '../../lib/sanity.preview';
-import { PortableText } from '@portabletext/react';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { PortableText } from '@portabletext/react';
+import { usePreview } from '@/lib/sanity.preview';
 
 import InstrumentTable from './instrument-table';
-import { instrumentPTComponents } from '../../lib/portable-text/pt-components';
+import { instrumentPTComponents } from '@/lib/portable-text/pt-components';
+
 import InstrumentFeedbackBlock from './instrument-feedback-block';
 import Instrumentheader from './instrument-header';
 import MobileFeedback from './instrument-feedback-block-mobile';
