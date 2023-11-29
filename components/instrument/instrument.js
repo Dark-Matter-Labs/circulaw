@@ -2,7 +2,7 @@ import { PortableText } from '@portabletext/react';
 import { useState, useEffect, useRef } from 'react';
 
 import InstrumentTable from './instrument-table';
-import { instrumentPTComponents } from '../../lib/portable-text/pt-components';
+import { instrumentPTComponents } from '@/lib/portable-text/pt-components';
 import InstrumentFeedbackBlock from './instrument-feedback-block';
 import Instrumentheader from './instrument-header';
 import MobileFeedback from './instrument-feedback-block-mobile';

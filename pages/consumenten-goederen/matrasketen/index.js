@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import Layout from '../../components/layouts/layout';
-import ThemeLayout from '../../components/layouts/theme-index-layout';
-import { client } from '../../lib/sanity';
-import { matrassenQueries } from '../../lib/queries';
+import Layout from '@/components/layouts/layout';
+import ThemeLayout from '@/components/layouts/theme-index-layout';
+import { client } from '@/lib/sanity';
+import { matrassenQueries } from '@/lib/queries';
 
 export default function Matrassen({ featuredLaws, thema, length }) {
   useEffect(() => {

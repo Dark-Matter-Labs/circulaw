@@ -1,14 +1,14 @@
 import { lazy } from 'react';
 import { PreviewSuspense } from 'next-sanity/preview';
 
-import Layout from '../../components/layouts/layout';
-import { client } from '../../lib/sanity';
-import { measurePagePathsQuery, measureQuery } from '../../lib/queries';
-import Instrument from '../../components/instrument/instrument';
+import Layout from '@/components/layouts/layout';
+import { client } from '@/lib/sanity';
+import { measurePagePathsQuery, measureQuery } from '@/lib/queries';
+import Instrument from '@/components/instrument/instrument';
 
-import globalMeta from '../../utils/global-meta';
+import globalMeta from '@/utils/global-meta';
 
-const InstrumentPreview = lazy(() => import('../../components/instrument/instrument-preview'));
+const InstrumentPreview = lazy(() => import('@/components/instrument/instrument-preview'));
 
 export default function Measure({ preview, data }) {
   return preview ? (

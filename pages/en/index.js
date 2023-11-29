@@ -1,11 +1,11 @@
 import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
-import Layout from '../../components/layouts/layout';
-import { client } from '../../lib/sanity';
-import { enPageComponents } from '../../lib/portable-text/pt-components';
-import CustomButton from '../../components/custom-button';
+import Layout from '@/components/layouts/layout';
+import { client } from '@/lib/sanity';
+import { enPageComponents } from '@/lib/portable-text/pt-components';
+import CustomButton from '@/components/custom-button';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import { enPageQuery } from '../../lib/queries';
+import { enPageQuery } from '@/lib/queries';
 
 export default function English({ data }) {
   return (

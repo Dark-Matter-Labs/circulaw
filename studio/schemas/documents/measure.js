@@ -1,6 +1,6 @@
 import { VscLaw } from 'react-icons/vsc';
-import { ProductGroupInput } from '../../components/product-group-input';
 import { CgInternal } from 'react-icons/cg';
+import { ProductGroupInput } from '../../components/product-group-input';
 
 export default {
   title: 'Measure',

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import { urlFor } from '../lib/sanity';
+import { urlFor } from '@/lib/sanity';
 
 export default function SectionTypes({ themaCards }) {
   return (

@@ -1,8 +1,8 @@
-import Layout from '../../components/layouts/layout';
-import ExpertiseLayout from '../../components/layouts/expertise-layout';
-import WindmillIcon from '../../public/icons/windmill.png';
-import { client } from '../../lib/sanity';
-import { categorieQuery } from '../../lib/queries';
+import Layout from '@/components/layouts/layout';
+import ExpertiseLayout from '@/components/layouts/expertise-layout';
+import WindmillIcon from '@/public/icons/windmill.png';
+import { client } from '@/lib/sanity';
+import { categorieQuery } from '@/lib/queries';
 
 export default function InfoPage({ expertiseData }) {
   return (

@@ -14,11 +14,11 @@ import {
   extraContent,
   expertise,
   rLadder,
-} from '../../utils/data-filter';
+} from '@/utils/data-filter';
 import SearchFilter from '/components/search-filter';
 import PolicyList from '/components/policy-list';
-import { fetcher } from '../../utils/swr-fetcher';
-import { measureLayoutQuery } from '../../lib/queries';
+import { fetcher } from '@/utils/swr-fetcher';
+import { measureLayoutQuery } from '@/lib/queries';
 import OverviewPageHeader from '../overview-page-header';
 // creating objects for persisting values
 const useSelectedState = createPersistedState('selected');

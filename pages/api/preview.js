@@ -1,5 +1,5 @@
-import { aboutPageQuery, measureQuery } from '../../lib/queries';
-import { client } from '../../lib/sanity';
+import { aboutPageQuery, measureQuery } from '@/lib/queries';
+import { client } from '@/lib/sanity';
 // need to edit this to be able to set location to slug:
 function redirectToPreview(res, previewData, Location) {
   // Enable Preview Mode by setting the cookies
