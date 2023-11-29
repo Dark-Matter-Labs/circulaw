@@ -257,7 +257,7 @@ export default function Nav3(props) {
               >
                 <span
                   className={`${
-                    router.pathname === '/' ? 'link-interaction-dark-bg ' : 'link-interaction'
+                    router.pathname === '/' ? 'hover:text-light-green-500' : 'link-interaction'
                   } ${router.pathname === '/en' ? 'enLink' : 'enLinkSelected'}`}
                 >
                   <Link href='/'>NL</Link>
@@ -265,7 +265,7 @@ export default function Nav3(props) {
                 <span className='px-1 enLink'>|</span>
                 <span
                   className={`${
-                    router.pathname === '/' ? 'link-interaction-dark-bg ' : 'link-interaction'
+                    router.pathname === '/' ? 'hover:text-light-green-500 ' : 'link-interaction'
                   } ${router.pathname === '/en' ? 'enLinkSelected' : 'enLink'}`}
                 >
                   <Link href='/en'>EN</Link>
@@ -478,11 +478,11 @@ export default function Nav3(props) {
                     <span
                       className={`${
                         mainMenuIsOpen === true
-                          ? [`${router.pathname === '/' ? 'text-green-300' : 'text-green-500'}`]
+                          ? [`${router.pathname === '/' ? 'text-light-green-500' : 'text-green-500'}`]
                           : [
                               `${
                                 router.pathname === '/'
-                                  ? 'text-white group-hover:decoration-green-400'
+                                  ? 'text-white group-hover:decoration-light-green-500'
                                   : 'text-green-800 group-hover:decoration-green-500'
                               }`,
                             ]
@@ -496,14 +496,14 @@ export default function Nav3(props) {
                           ? [
                               `${
                                 router.pathname === '/'
-                                  ? 'text-green-300 rotate-180'
+                                  ? 'text-light-green-500 rotate-180'
                                   : 'rotate-180 text-green-500'
                               }`,
                             ]
                           : [
                               `${
                                 router.pathname === '/'
-                                  ? 'text-white group-hover:text-green-300'
+                                  ? 'text-white group-hover:text-light-green-500'
                                   : 'group-hover:text-green-500'
                               }`,
                             ]
@@ -532,7 +532,7 @@ export default function Nav3(props) {
                             <div
                               className={`${
                                 router.pathname === '/'
-                                  ? 'bg-green-600 text-green-300'
+                                  ? 'bg-green-600 text-light-green-500'
                                   : 'bg-green-100 text-green-800'
                               } w-full h-full pl-4 lgNav:pl-10 xl:pl-20 3xl:pl-32 pt-8 pr-2 p-lg-semibild  mb-2`}
                             >
@@ -553,16 +553,16 @@ export default function Nav3(props) {
                             <div
                               className={`${
                                 router.pathname === '/'
-                                  ? 'bg-green-600 text-green-300'
+                                  ? 'bg-green-600 bg-opacity-50'
                                   : 'bg-green-100 text-green-800'
                               } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
                             >
-                              <div className='p-lg-semibild  opacity-50'>Voedsel en biomassa</div>
+                              <div className='p-lg-semibild opacity-50 text-light-green-500'>Voedsel en biomassa</div>
                               <div className=''>
                                 <div
                                   className={`${
-                                    router.pathname === '/' ? 'text-white' : 'text-black-600'
-                                  } p-xs mt-2`}
+                                    router.pathname === '/' ? 'text-gray-300' : 'text-gray-800'
+                                  } p-xs mt-2 italic`}
                                 >
                                   Thema’s voor deze productketen volgen binnekort
                                 </div>
@@ -571,7 +571,7 @@ export default function Nav3(props) {
                             <div
                               className={`${
                                 router.pathname === '/'
-                                  ? 'bg-green-600 text-green-300'
+                                  ? 'bg-green-600 text-light-green-500'
                                   : 'bg-green-100 text-green-800'
                               } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
                             >
@@ -592,7 +592,7 @@ export default function Nav3(props) {
                             <div
                               className={`${
                                 router.pathname === '/'
-                                  ? 'bg-green-600 text-green-300'
+                                  ? 'bg-green-600 text-light-green-500'
                                   : 'bg-green-100 text-green-800'
                               } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
                             >
@@ -613,7 +613,7 @@ export default function Nav3(props) {
                             <div
                               className={`${
                                 router.pathname === '/'
-                                  ? 'bg-green-600 text-green-300'
+                                  ? 'bg-green-600 text-light-green-500'
                                   : 'bg-green-100 text-green-800'
                               } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
                             >
@@ -647,11 +647,11 @@ export default function Nav3(props) {
                     <span
                       className={`${
                         overMenuIsOpen === true
-                          ? [`${router.pathname === '/' ? 'text-green-300' : 'text-green-500'}`]
+                          ? [`${router.pathname === '/' ? 'text-light-green-500' : 'text-green-500'}`]
                           : [
                               `${
                                 router.pathname === '/'
-                                  ? 'text-white group-hover:decoration-green-400'
+                                  ? 'text-white group-hover:decoration-light-green-500'
                                   : 'text-green-800 group-hover:decoration-green-500'
                               }`,
                             ]
@@ -665,14 +665,14 @@ export default function Nav3(props) {
                           ? [
                               `${
                                 router.pathname === '/'
-                                  ? 'text-green-300 rotate-180'
+                                  ? 'text-light-green-500 rotate-180'
                                   : 'rotate-180 text-green-500'
                               }`,
                             ]
                           : [
                               `${
                                 router.pathname === '/'
-                                  ? 'text-white group-hover:text-green-300'
+                                  ? 'text-white group-hover:text-light-green-500'
                                   : 'group-hover:text-green-500'
                               }`,
                             ]
@@ -715,7 +715,7 @@ export default function Nav3(props) {
                 <div
                   className={`${
                     router.pathname === '/'
-                      ? 'text-white hover:text-green-300'
+                      ? 'text-white hover:text-light-green-500'
                       : 'text-green-800 hover:text-green-500'
                   } h-full relative p-sm  hover:underline z-100 mr-8 flex flex-row items-center cursor-pointer`}
                 >
@@ -724,7 +724,7 @@ export default function Nav3(props) {
                 <div
                   className={`${
                     router.pathname === '/'
-                      ? 'text-white hover:text-green-300'
+                      ? 'text-white hover:text-light-green-500'
                       : 'text-green-800 hover:text-green-500'
                   } h-full relative p-sm  hover:underline z-100 mr-8 flex flex-row items-center cursor-pointer`}
                 >
@@ -733,7 +733,7 @@ export default function Nav3(props) {
                 <div
                   className={`${
                     router.pathname === '/'
-                      ? 'text-white hover:text-green-300'
+                      ? 'text-white hover:text-light-green-500'
                       : 'text-green-800 hover:text-green-500'
                   } h-full relative p-sm  hover:underline z-100 flex flex-row items-center cursor-pointer`}
                 >
