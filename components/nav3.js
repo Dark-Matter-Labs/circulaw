@@ -1,4 +1,4 @@
-import { useState, Fragment } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -36,6 +36,7 @@ const defaultOptions = {
 
 export default function Nav3(props) {
   const router = useRouter();
+ 
 
   // main menu
   const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
@@ -192,18 +193,18 @@ export default function Nav3(props) {
       <div className='flex w-96 justify-center mx-auto -mb-9 relative z-110' name='top'>
         <BetaBanner />
       </div>
-
-      <div id='wrapper' className='z-100 sticky top-0'>
+      
+      <div id='wrapper' className='z-100 sticky top-0 w-screen'>
         <nav
           id='parent'
           as='nav'
           className={`${
             router.pathname === '/' ? 'bg-green-600 shadow-lg' : 'bg-[#F8FBF8] shadow-lg'
-          } h-[70px] lgNav:h-[98px] flex flex-row justify-between items-center lgNav:items-end global-padding`}
+          } h-[70px] lgNav:h-[98px] flex flex-row justify-between items-center lgNav:items-end global-padding w-full lgNav:w-auto`}
         >
           <>
             {/* LOGO */}
-            <div>
+            <div className=''>
               {router.pathname === '/' && (
                 <>
                   {/* LOGO DESKTOP HP */}
@@ -285,16 +286,16 @@ export default function Nav3(props) {
                   <MenuIcon className='block h-10 w-10' aria-hidden='true' />
                 </button>
                 {mobileMenuIsMounted && (
-                  <FloatingOverlay lockScroll style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                  <FloatingOverlay id='overlay' lockScroll style={{ background: 'rgba(0, 0, 0, 0)'}} className='-z-10'>
                     <FloatingFocusManager context={mobileContext} modal={false}>
                       <div
-                        className='h-auto w-screen -z-10'
+                        className='h-auto w-screen'
                         ref={mobileRef.setFloating}
                         style={mobileFloatingStyles}
                         {...mobileFloatingProps()}
                       >
                         <div
-                          className='h-auto w-screen bg-[#F8FBF8]'
+                          className='h-auto w-full bg-[#F8FBF8]'
                           style={{ ...mobileMenuTransitionStyles }}
                         >
                           <div className='flex flex-col items-start justify-end global-margin '>
@@ -304,7 +305,7 @@ export default function Nav3(props) {
                                   <Disclosure.Button
                                     className={`${
                                       open ? 'text-green-500' : 'text-green-800'
-                                    } border-y py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
+                                    } py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
                                   >
                                     Productketen
                                     <ChevronDownIcon
@@ -324,19 +325,86 @@ export default function Nav3(props) {
                                     <Disclosure.Panel className='flex flex-col flex-grow ml-4'>
                                       <ul>
                                         <li className='p-base-semibold text-green-800 py-6 border-b'>
-                                          Bouw
+                                          <Disclosure>
+                                            {({open}) => (
+                                              <>
+                                            <Disclosure.Button className='flex flex-row items-center'>
+                                            Bouw
+                                            <ChevronDownIcon
+                                      className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`}
+                                    />
+                                            </Disclosure.Button>
+                                            <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
+                                            <Link href='/houtbouw-stimuleren'>
+                                              Houtbouw stimuleren
+                                              </Link>
+                                            </Disclosure.Panel>
+                                            </>
+                                            )}
+                                          </Disclosure>
                                         </li>
                                         <li className='p-base-semibold text-green-800 py-6 border-b'>
-                                          Consumptiegoederen
+                                        <Disclosure>
+                                          {({open}) => (
+                                            <>
+                                            
+                                            <Disclosure.Button className='flex flex-row items-center'>
+                                            Consumptiegoederen
+                                            <ChevronDownIcon
+                                      className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`}
+                                    />
+                                            </Disclosure.Button>
+                                            <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
+                                              <Link href='/circulaire-matrasketen'>
+                                              Circulaire matrasketen
+                                              </Link>
+                                            </Disclosure.Panel>
+                                            </>
+                                          )}
+                                          </Disclosure>
                                         </li>
-                                        <li className='p-base-semibold text-green-800 py-6 border-b'>
+                                        <li className='p-base-semibold text-green-800 py-6 border-b opacity-50'>
                                           Voedsel en biomassa
                                         </li>
                                         <li className='p-base-semibold text-green-800 py-6 border-b'>
-                                          Maakindustrie
+                                        <Disclosure>
+                                          {({open}) => (
+                                            <>
+                                            
+                                            <Disclosure.Button className='flex flex-row items-center'>
+                                            Maakindustrie
+
+                                            <ChevronDownIcon
+                                      className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`}
+                                    />
+                                            </Disclosure.Button>
+                                            <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
+                                              <Link href='/circulaire-windturbines'>
+                                              Circulaire windturbines                                              </Link>
+                                            </Disclosure.Panel>
+                                            </>
+                                          )}
+                                          </Disclosure>
                                         </li>
                                         <li className='p-base-semibold text-green-800 py-6'>
-                                          Kunststoffen
+                                        <Disclosure>
+                                          {({open}) => (
+                                            <>
+                                            
+                                            <Disclosure.Button className='flex flex-row items-center'>
+                                            Kunststoffen
+                                            <ChevronDownIcon
+                                      className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`}
+                                    />
+                                            </Disclosure.Button>
+                                            <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
+                                              <Link href='/plastic-in-de-bouw'>
+                                              Plastic in de bouw                                            </Link>
+                                            </Disclosure.Panel>
+                                            </>
+                                          )}
+                                          </Disclosure>
+                                          
                                         </li>
                                       </ul>
                                     </Disclosure.Panel>
@@ -350,7 +418,7 @@ export default function Nav3(props) {
                                   <Disclosure.Button
                                     className={`${
                                       open ? 'text-green-500' : 'text-green-800'
-                                    } border-y py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
+                                    }  border-t py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
                                   >
                                     Over Circulaw
                                     <ChevronDownIcon
@@ -362,7 +430,7 @@ export default function Nav3(props) {
                                       {props?.aboutSlugs?.map((aboutPage) => (
                                         <li
                                           key={aboutPage?.slug}
-                                          className='p-xs first:mt-4 mb-4 text-green-600 hover:text-green-500 hover:underline active:p-xs-semibold active:no-underline cursor-pointer'
+                                          className='p-base first:mt-4 mb-4 text-green-600 cursor-pointer'
                                           onClick={() => router.push(`/about/${aboutPage?.slug}`)}
                                         >
                                           {aboutPage.title}
@@ -373,20 +441,27 @@ export default function Nav3(props) {
                                 </>
                               )}
                             </Disclosure>
-                            <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
+                            <div className='text-green-800 border-b border-t py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
                               Nieuws
                             </div>
                             <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
+                              <Link href='/vraag-en-antwoord'>
                               Vraag en antwoord
+                              </Link>
                             </div>
                             <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
+                              <Link href='/contact'>
                               Contact
+                              </Link>
                             </div>
                           </div>
                         </div>
                       </div>
+               
                     </FloatingFocusManager>
+            
                   </FloatingOverlay>
+         
                 )}
               </div>
 
@@ -668,7 +743,7 @@ export default function Nav3(props) {
         </nav>
       </div>
       {router.pathname === '/' && (
-        <div className='-mt-[9.5rem] bg-header bg-cover bg-center'>
+        <div className='-mt-[9rem] bg-header bg-cover bg-center w-screen'>
           <HomepageHeader homePageHeader={props.homePageHeader} />
         </div>
       )}

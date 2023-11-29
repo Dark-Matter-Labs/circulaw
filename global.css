@@ -234,6 +234,8 @@
   }
 }
 
+
+
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -310,6 +312,7 @@ html {
 .cl-gradient-400 {
   background: linear-gradient(#CBE0CB 30.21%, rgba(199, 211, 199, 0) );
 }
+
 
 
 [type='checkbox']:checked {
@@ -421,3 +424,4 @@ html {
     }
   }
 }
+
