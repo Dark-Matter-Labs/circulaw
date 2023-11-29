@@ -140,7 +140,7 @@
     @apply font-jakarta text-xl font-normal leading-11;
   }
 
-  .p-lg-semibild {
+  .p-lg-semibold {
     @apply font-jakarta text-lg font-semibold leading-10;
   }
   

@@ -290,41 +290,9 @@ export default function ThemeLayout({ ...props }) {
             <ThemeBottomSection props={props} />
           </div>
 
-          <div className='global-margin pt-10 pb-20'>
-            <div className='grid grid-cols-3 gap-x-28'>
-              <div className='p-lg'>
-                De informatie over windturbines is mede tot stand gekomen door nauwe samenwerking
-                met de{' '}
-                <span className='text-green-500 link-lg inline-block '>
-                  <Link
-                    href='https://www.noord-holland.nl/'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='link-interaction'
-                  >
-                    Provincie Noord-Holland
-                    <LinkIcon />
-                  </Link>
-                </span>
-                <div className=''>
-                  {' '}
-                  Zie het{' '}
-                  <span className='text-green-500 link-lg inline-block '>
-                    <Link
-                      href='/Analyse circulaire windturbines_PNH.pdf'
-                      target='_blank'
-                      className='link-interaction'
-                    >
-                      rapport-Analyse CircuLaw: Circulaire Windturbines (download pdf).
-                      <LinkIcon />
-                    </Link>
-                  </span>{' '}
-                </div>{' '}
-              </div>
-              <div></div>
-              <div></div>
-            </div>
-          </div>
+        
+
+
         </div>
       </div>
     </>
