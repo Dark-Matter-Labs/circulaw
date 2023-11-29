@@ -24,6 +24,7 @@ module.exports = {
         'green-200': '#84E9C5',
         'green-300': '#25C38B',
         'green-400': '#07B071',
+        'light-green-500': '#00D88A',
         'green-500': '#028352',
         'green-600': '#035E46',
         'green-800': '#053237',

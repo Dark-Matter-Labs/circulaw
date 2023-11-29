@@ -1,20 +1,29 @@
+import { useState } from 'react';
 import Link from 'next/link';
-import { useState, useEffect, Fragment } from 'react';
-import { Link as ScrollLink } from 'react-scroll';
 import Image from 'next/image';
-import { useRouter } from 'next/dist/client/router';
-import { Popover, Transition } from '@headlessui/react';
-import { MenuIcon, XIcon, ArrowDownIcon } from '@heroicons/react/outline';
-import { ChevronDownIcon } from '@heroicons/react/solid';
+import { useRouter } from 'next/router';
 import Lottie from 'react-lottie';
-import CirculawLogo from '../public/Circulaw_logotype.png';
-import logo from '../public/Circulaw_logotype_home.png';
+import {
+  useFloating,
+  offset,
+  flip,
+  shift,
+  useClick,
+  useDismiss,
+  useRole,
+  useInteractions,
+  FloatingFocusManager,
+  useTransitionStyles,
+  FloatingOverlay,
+} from '@floating-ui/react';
 
 import BetaBanner from './beta-banner';
 import animationData from '../public/CL_Home_Logo_Loop';
+import logo from '../public/Circulaw_logotype_home.png';
+import CirculawLogo from '../public/Circulaw_logotype.png';
 import HomepageHeader from '../components/homepage-header';
-import CustomButton from './custom-button';
-import LangSwitch from './lang-switch';
+import { ChevronDownIcon, MenuIcon } from '@heroicons/react/outline';
+import { Disclosure, Transition } from '@headlessui/react';
 
 const defaultOptions = {
   loop: true,
@@ -25,35 +34,119 @@ const defaultOptions = {
   },
 };
 
-export default function Nav(props) {
-  // function to change styles when the user scrolls
-  const [scrollEffect, setScrollEffect] = useState(false);
-  useEffect(() => {
-    const changeEffect = () => {
-      if (window.scrollY >= 32) {
-        setScrollEffect(true);
-      } else {
-        setScrollEffect(false);
-      }
-    };
-    window.addEventListener('scroll', changeEffect);
-  }, []);
-
-  let themaSlugs = [];
-  if (props.themaSlugs) {
-    themaSlugs = props.themaSlugs;
-  }
-
-  let aboutSlugs = [];
-  if (props.aboutSlugs) {
-    aboutSlugs = props.aboutSlugs;
-  }
-
-  let FAQslug = [];
-  if (props.vraagSlug) {
-    FAQslug = props.vraagSlug;
-  }
+export default function Nav3(props) {
   const router = useRouter();
+
+  // main menu
+  const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
+  const {
+    refs: mainMenuRef,
+    floatingStyles: mainMenuStyles,
+    context: mainMenuContext,
+  } = useFloating({
+    placement: 'bottom',
+    open: mainMenuIsOpen,
+    onOpenChange: setMainMenuIsOpen,
+    middleware: [offset(28), flip(), shift()],
+  });
+
+  const { isMounted: mainMenuIsMounted, styles: mainMenuTransitionStyles } = useTransitionStyles(
+    mainMenuContext,
+    {
+      duration: 300,
+      initial: {
+        opacity: 0,
+        transform: 'translateY(-100%)',
+      },
+      open: {
+        opacity: 100,
+        transform: 'translateY(0)',
+      },
+      close: {
+        opacity: 0,
+        transform: 'translateY(-100%)',
+      },
+    },
+  );
+
+  const mainMenuClick = useClick(mainMenuContext);
+  const mainMenuDismiss = useDismiss(mainMenuContext);
+  const mainMenuRole = useRole(mainMenuContext);
+
+  const { getReferenceProps: mainMenuReferencProps, getFloatingProps: mainMenuFloatingProps } =
+    useInteractions([mainMenuClick, mainMenuDismiss, mainMenuRole]);
+
+  // over menu
+  const [overMenuIsOpen, setOverMenuIsOpen] = useState(false);
+  const {
+    refs: overRef,
+    floatingStyles: overStyles,
+    context: overContext,
+  } = useFloating({
+    placement: 'bottom-start',
+    open: overMenuIsOpen,
+    onOpenChange: setOverMenuIsOpen,
+    middleware: [offset(28), flip(), shift()],
+  });
+
+  const { isMounted: overMenuIsMounted, styles: overMenuTransitionStyles } = useTransitionStyles(
+    overContext,
+    {
+      duration: 300,
+      initial: {
+        opacity: 0,
+        transform: 'translateY(-100%)',
+      },
+      open: {
+        opacity: 100,
+        transform: 'translateY(0)',
+      },
+      close: {
+        opacity: 0,
+        transform: 'translateY(-100%)',
+      },
+    },
+  );
+
+  const overMenuClick = useClick(overContext);
+  const overMenuDismiss = useDismiss(overContext);
+  const overMenuRole = useRole(overContext);
+
+  const { getReferenceProps: overReferenceProps, getFloatingProps: overFloatingProps } =
+    useInteractions([overMenuClick, overMenuDismiss, overMenuRole]);
+
+  const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
+  const {
+    refs: mobileRef,
+    floatingStyles: mobileFloatingStyles,
+    context: mobileContext,
+  } = useFloating({
+    placement: 'bottom-start',
+    open: mobileMenuIsOpen,
+    onOpenChange: setMobileMenuIsOpen,
+    middleware: [offset(10), flip(), shift()],
+  });
+
+  const mobileMenuClick = useClick(mobileContext);
+  const mobileMenuDismiss = useDismiss(mobileContext, { outsidePressEvent: 'mousedown' });
+  const mobileMenuRole = useRole(mobileContext);
+
+  const { getReferenceProps: mobileRefProps, getFloatingProps: mobileFloatingProps } =
+    useInteractions([mobileMenuClick, mobileMenuDismiss, mobileMenuRole]);
+
+  const { isMounted: mobileMenuIsMounted, styles: mobileMenuTransitionStyles } =
+    useTransitionStyles(mobileContext, {
+      duration: 150,
+      initial: {
+        opacity: 0,
+      },
+      open: {
+        opacity: 100,
+      },
+      close: {
+        opacity: 0,
+      },
+    });
 
   if (router.pathname === '/en') {
     return (
@@ -93,379 +186,569 @@ export default function Nav(props) {
         </div>
       </>
     );
-  } else {
-    return (
-      <>
-        <div className='flex justify-center -mb-9 relative z-110' name='top'>
-          <BetaBanner />
-        </div>
+  }
+  return (
+    <>
+      <div className='flex w-96 justify-center mx-auto -mb-9 relative z-110' name='top'>
+        <BetaBanner />
+      </div>
 
-        <Popover
+      <div id='wrapper' className='z-100 sticky top-0 w-screen'>
+        <nav
+          id='parent'
           as='nav'
           className={`${
-            scrollEffect
-              ? [
-                  `${
-                    router.pathname === '/'
-                      ? 'bg-green-600 shadow-lg transition-all duration-150'
-                      : 'bg-[#F8FBF8] transition-all duration-150 shadow-lg'
-                  }`,
-                ]
-              : [
-                  `${
-                    router.pathname === '/'
-                      ? 'bg-transparent transition-all duration-150'
-                      : 'bg-red-200 z-100 transition-all duration-150 shadow-lg'
-                  }`,
-                ]
-          } w-full top-0 h-auto shadow-lg sticky z-100`}
+            router.pathname === '/' ? 'bg-green-600 shadow-lg' : 'bg-[#F8FBF8] shadow-lg'
+          } h-[70px] lgNav:h-[98px] flex flex-row justify-between items-center lgNav:items-end global-padding w-full lgNav:w-auto`}
         >
-          {({ open }) => (
-            <>
+          <>
+            {/* LOGO */}
+            <div className=''>
+              {router.pathname === '/' && (
+                <>
+                  {/* LOGO DESKTOP HP */}
+                  <div className='hidden lgNav:block'>
+                    <Link href='/'>
+                      <Lottie options={defaultOptions} height={98} width={163} />
+                    </Link>
+                  </div>
+                  {/* LOGO MOBILE HP */}
+                  <div className='block lgNav:hidden'>
+                    <Link href='/'>
+                      <Image height={24} width={100} src={logo} alt='CircuLaw logo' quality={100} />
+                    </Link>
+                  </div>
+                </>
+              )}
+              {router.pathname !== '/' && (
+                <>
+                  <div className='hidden lgNav:block py-3'>
+                    <Link href='/'>
+                      <Image
+                        height={75}
+                        width={141}
+                        src={CirculawLogo}
+                        alt='CircuLaw logo'
+                        quality={100}
+                        className='z-80 relative'
+                      />
+                    </Link>
+                  </div>
+                  <div className='block lgNav:hidden'>
+                    <Link href='/'>
+                      <Image
+                        height={24}
+                        width={100}
+                        src={CirculawLogo}
+                        alt='CircuLaw logo'
+                        quality={100}
+                      />
+                    </Link>
+                  </div>
+                </>
+              )}
+            </div>
+            <div className='flex flex-col justify-between'>
+              {/* LANGUAGE */}
               <div
                 className={`${
-                  scrollEffect ? 'py-2' : 'pt-5 pb-2'
-                }  flex justify-between items-center w-auto lgNav:py-0 global-margin transition-all duration-150 bg-green-200`}
+                  router.pathname === '/' ? 'text-grey-100' : 'text-green-800'
+                }  hidden lgNav:flex justify-end items-center min-w-[10%] mb-5`}
               >
-                {router.pathname === '/' && (
-                  <>
-                    {/* LOGO DESKTOP HP */}
-                    <div className='hidden lgNav:block'>
-                      <Link href='/'>
-                        <Lottie options={defaultOptions} height={110} width={183} />
-                      </Link>
-                    </div>
-                    {/* LOGO MOBILE HP */}
-                    <div className='block lgNav:hidden'>
-                      <Link href='/'>
-                        <Image
-                          height={24}
-                          width={120}
-                          src={logo}
-                          alt='CircuLaw logo'
-                          quality={100}
-                        />
-                      </Link>
-                    </div>
-                  </>
-                )}
-                {/* LOGO ALL OTHER PAGES */}
-                {router.pathname !== '/' && (
-                  <>
-                    <div className='hidden lgNav:block py-3'>
-                      <Link href='/'>
-                        <Image
-                          height={75}
-                          width={141}
-                          src={CirculawLogo}
-                          alt='CircuLaw logo'
-                          quality={100}
-                          className='z-80 relative'
-                        />
-                      </Link>
-                    </div>
-                    <div className='block lgNav:hidden'>
-                      <Link href='/'>
-                        <Image
-                          height={24}
-                          width={120}
-                          src={CirculawLogo}
-                          alt='CircuLaw logo'
-                          quality={100}
-                        />
-                      </Link>
-                    </div>
-                  </>
-                )}
-                {/* Mobile menu button */}
-                <div className='inset-y-0 float-right flex items-center pt-3 lgNav:hidden'>
-                  <Popover.Button
-                    className={`${
-                      router.pathname !== '/' ? 'text-green-600' : 'text-grey-100'
-                    } 'p-2 rounded-md`}
-                  >
-                    <span className='sr-only'>Open main menu</span>
-                    {open ? (
-                      <XIcon className='block h-10 w-10' aria-hidden='true' />
-                    ) : (
-                      <MenuIcon className='block h-10 w-10' aria-hidden='true' />
-                    )}
-                  </Popover.Button>
-                </div>
-
-                {/* DESKTOP NAV */}
-                <div className=' '>
-                  <div className='place-self-end flex justify-end -mt-6 pb-4 relative z-70'>
-                    <LangSwitch />
-                  </div>
-                </div>
-                <div className='relative z-50 content right-0'>
-                  <div className='relative flex items-center justify-between z-40'>
-                    <div className='relative z-30'>
-                      <Popover className='inline-block relative z-20'>
-                        <>
-                          <Popover.Button
-                            className={`${
-                              router.pathname !== '/'
-                                ? 'text-green-800 hover:underline decoration-green-500 active:text-green-500'
-                                : 'text-white'
-                            } group rounded-md flex items-center p-xs-semibold relative z-10`}
-                          >
-                            Productketen
-                            <ChevronDownIcon
-                              className={`${
-                                open ? '' : ''
-                              } ml-2 h-5 w-5 group-hover:text-green-500`}
-                              aria-hidden='true'
-                            />
-                          </Popover.Button>
-                          <Transition
-                            enter='transition transform ease-out duration-1000'
-                            enterFrom='-translate-y-10'
-                            enterTo='translate-y-0'
-                            leave='transition transform ease-in duration-1000'
-                            leaveFrom='translate-y-0'
-                            leaveTo='-translate-y-96'
-                          >
-                            <Popover.Panel className='h-72 w-screen z-10'>
-                              <div className='h-full'>
-                                <div className='bg-white  h-full grid grid-cols-5 gap-3 relative'>
-                                  <div className='w-full h-full bg-green-100 flex flex-col pl-4 lgNav:pl-10 xl:pl-20 3xl:pl-32 pt-8 pr-2'>
-                                    <div className='p-lg-semibild text-green-800 mb-2'>Bouw</div>
-                                    <div className='text-green-600 p-xs hover:underline active:font-semibold'>
-                                      Houtbouw
-                                    </div>
-                                  </div>
-                                  <div className='w-full h-full bg-green-100 flex flex-col pl-3 lg:pl-6 pt-8 pr-2'>
-                                    <div className='p-lg-semibild text-green-800'>
-                                      Voedsel en biomassa
-                                    </div>
-                                  </div>
-                                  <div className='w-full h-full bg-green-100 flex flex-col pl-3 lg:pl-6 pt-8 pr-2'>
-                                    <div className='p-lg-semibild break-words text-green-800'>
-                                      Consumptiegoederen
-                                    </div>
-                                  </div>
-                                  <div className='w-full h-full bg-green-100 flex flex-col pl-3 lg:pl-6 pt-8 pr-2'>
-                                    <div className='p-lg-semibild text-green-800'>
-                                      Maakindustrie
-                                    </div>
-                                  </div>
-                                  <div className='w-full h-full bg-green-100 flex flex-col pl-3 lg:pl-6 pt-8 pr-2'>
-                                    <div className='p-lg-semibild text-green-800 opacity-50'>
-                                      Kunststoffen
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </Popover.Panel>
-                          </Transition>
-                        </>
-                      </Popover>
-                      <Popover className='inline-block relative pl-6'>
-                        {({ open }) => (
-                          <>
-                            <Popover.Button
-                              className={`${
-                                router.pathname !== '/' ? 'text-grey-800' : 'text-grey-100'
-                              } group rounded-md inline-flex items-center relative z-70`}
-                            >
-                              <h5 className='uppercase mobile sm:desktop'>OVER CIRCULAW</h5>
-                              <ChevronDownIcon
-                                className={`${
-                                  router.pathname !== '/'
-                                    ? 'text-gray-400 group-hover:text-gray-500'
-                                    : 'text-white'
-                                } ml-2 h-5 w-5 first-letter
-                                        ${
-                                          open && router.pathname !== '/'
-                                            ? 'text-gray-500'
-                                            : 'text-gray-400'
-                                        }
-                                        `}
-                                aria-hidden='true'
-                              />
-                            </Popover.Button>
-                            <Transition
-                              as={Fragment}
-                              enter='transition ease-out duration-200'
-                              enterFrom='opacity-0 translate-y-1'
-                              enterTo='opacity-100 translate-y-0'
-                              leave='transition ease-in duration-150'
-                              leaveFrom='opacity-100 translate-y-0'
-                              leaveTo='opacity-0 translate-y-1'
-                            >
-                              <Popover.Panel className='absolute z-40  transform w-screen max-w-xs sm:px-0'>
-                                <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
-                                  <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
-                                    {aboutSlugs?.map((slug) => (
-                                      <a
-                                        key={slug.slug}
-                                        href={`/about/${encodeURIComponent(slug.slug)}`}
-                                        className='-m-3 p-3  block rounded-md hover:bg-gray-50 transition ease-in-out duration-150 uppercase border-b'
-                                      >
-                                        <h6 className='` popup-md text-grey-800'>
-                                          {slug.title.replaceAll('-', ' ')}
-                                        </h6>
-                                      </a>
-                                    ))}
-                                  </div>
-                                </div>
-                              </Popover.Panel>
-                            </Transition>
-                          </>
-                        )}
-                      </Popover>
-                      <div className='inline-block relative pl-6'>
-                        <Link href={`/${encodeURIComponent(FAQslug)}`}>
-                          <h5
-                            className={`${
-                              router.pathname !== '/' ? 'text-grey-800' : 'text-grey-100'
-                            } uppercase group rounded-md inline-flex items-center mobile sm:desktop mobile sm:desktop`}
-                          >
-                            VRAAG & ANTWOORD
-                          </h5>
-                        </Link>
-                      </div>
-                      <div className='inline-block relative pl-6'>
-                        <Link href='/contact'>
-                          <h5
-                            className={`${
-                              router.pathname !== '/' ? 'text-grey-800' : 'text-grey-100'
-                            } uppercase group rounded-md inline-flex items-center mobile sm:desktop mobile sm:desktop`}
-                          >
-                            CONTACT
-                          </h5>
-                        </Link>
-                      </div>
-                      {router.pathname == '/' && (
-                        <div className='inline-block relative pl-6'>
-                          <ScrollLink to='news' smooth={true}>
-                            <button className='inline-flex items-center px-4 py-0.5 button bg-grey-100 hover:bg-green-200 text-green-600 shadow-md active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white rounded-full'>
-                              Nieuw
-                              <ArrowDownIcon className='inline h-4 w-4 ml-1' aria-hidden='true' />
-                            </button>
-                          </ScrollLink>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
+                <span
+                  className={`${
+                    router.pathname === '/' ? 'link-interaction-dark-bg ' : 'link-interaction'
+                  } ${router.pathname === '/en' ? 'enLink' : 'enLinkSelected'}`}
+                >
+                  <Link href='/'>NL</Link>
+                </span>
+                <span className='px-1 enLink'>|</span>
+                <span
+                  className={`${
+                    router.pathname === '/' ? 'link-interaction-dark-bg ' : 'link-interaction'
+                  } ${router.pathname === '/en' ? 'enLinkSelected' : 'enLink'}`}
+                >
+                  <Link href='/en'>EN</Link>
+                </span>
               </div>
 
-              {/* MOBILE MENU */}
-              <Transition
-                as={Fragment}
-                enter='transition ease-out duration-200'
-                enterFrom='opacity-0 translate-y-1'
-                enterTo='opacity-100 translate-y-0'
-                leave='transition ease-in duration-150'
-                leaveFrom='opacity-100 translate-y-0'
-                leaveTo='opacity-0 translate-y-1'
-              >
-                <Popover.Panel className='lgNav:hidden bg-grey-100 w-full absolute z-40'>
-                  <div className='pt-2 pb-4 global-margin'>
-                    {/* LANG SWITCH */}
-                    <Popover.Button
-                      as='span'
-                      className='flex justify-end items-center pr-8 lgNav:hidden'
-                    >
-                      <span
-                        className={`hover:underline ${
-                          router.pathname === '/en' ? '' : 'font-semibold'
-                        }`}
+              {/* Mobile button/NAV */}
+              <div className='inset-y-0 float-right flex items-center pt-2 lgNav:hidden'>
+                <button
+                  className={`${
+                    router.pathname !== '/' ? 'text-green-600' : 'text-grey-100'
+                  } 'p-2 rounded-md`}
+                  ref={mobileRef.setReference}
+                  {...mobileRefProps()}
+                >
+                  <span className='sr-only'>Open main menu</span>
+                  <MenuIcon className='block h-10 w-10' aria-hidden='true' />
+                </button>
+                {mobileMenuIsMounted && (
+                  <FloatingOverlay
+                    id='overlay'
+                    lockScroll
+                    style={{ background: 'rgba(0, 0, 0, 0)' }}
+                    className='-z-10'
+                  >
+                    <FloatingFocusManager context={mobileContext} modal={false}>
+                      <div
+                        className='h-auto w-screen'
+                        ref={mobileRef.setFloating}
+                        style={mobileFloatingStyles}
+                        {...mobileFloatingProps()}
                       >
-                        <Link href='/'>NL&nbsp;</Link>
-                      </span>
-                      <span className='px-1 enLink'>|</span>
-                      <span
-                        className={`hover:underline ${
-                          router.pathname === '/en' ? 'font-semibold' : ''
-                        }`}
-                      >
-                        <Link href='/en'>&nbsp;EN</Link>
-                      </span>
-                    </Popover.Button>
-
-                    <Popover.Button as='span' className='uppercase text-grey-800  pl-3 pr-4 py-4'>
-                      Thema&apos;s
-                    </Popover.Button>
-
-                    {themaSlugs.map((slug) => (
-                      <div key={slug.name}>
-                        <Popover.Button
-                          as='span'
-                          className='border-transparent table-base text-green-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4 first-letter:uppercase'
+                        <div
+                          className='h-auto w-full bg-[#F8FBF8]'
+                          style={{ ...mobileMenuTransitionStyles }}
                         >
-                          <Link href={`/${encodeURIComponent(slug)}`}>
-                            {slug.replaceAll('-', ' ')}
-                          </Link>
-                        </Popover.Button>
-                      </div>
-                    ))}
-                    <hr className='my-4 mx-2 border-green-600' />
-                    <Popover.Button
-                      as='span'
-                      className='uppercase text-grey-800 block pl-3 pr-4 py-4'
-                    >
-                      Over CircuLaw
-                    </Popover.Button>
-                    {aboutSlugs?.map((slug) => (
-                      <Popover.Button
-                        as='a'
-                        key={slug.slug}
-                        onClick={() => {
-                          router.push(`/about/${encodeURIComponent(slug.slug)}`);
-                        }}
-                        className='cursor-pointer border-transparent table-base text-green-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-4 first-letter:uppercase'
-                      >
-                        {slug.title.replaceAll('-', ' ')}
-                      </Popover.Button>
-                    ))}
-                    <hr className='my-4 mx-2 border-green-600' />
-                    <Popover.Button
-                      as='a'
-                      onClick={() => {
-                        router.push(`/${encodeURIComponent(FAQslug)}`);
-                      }}
-                      className='cursor-pointer uppercase text-grey-800  block pl-3 pr-2 py-4'
-                    >
-                      Vraag en Antwoord
-                    </Popover.Button>
-                    <hr className='my-4 mx-2 border-green-600' />
-                    <Popover.Button
-                      as='span'
-                      className='uppercase text-grey-800 block pl-3 pr-4 py-4'
-                    >
-                      <Link href='/contact'>Contact</Link>
-                    </Popover.Button>
-
-                    {router.pathname == '/' && (
-                      <>
-                        <hr className='my-4 mx-2 border-green-600' />
-
-                        <div className='block pl-3 pr-4 py-4'>
-                          <ScrollLink to='news' smooth={true}>
-                            <CustomButton color='toPdf'>
-                              NIEUW
-                              <ArrowDownIcon className='inline h-4 w-4 ml-1' aria-hidden='true' />
-                            </CustomButton>
-                          </ScrollLink>
+                          <div className='flex flex-col items-start justify-end global-margin '>
+                            <Disclosure>
+                              {({ open }) => (
+                                <>
+                                  <Disclosure.Button
+                                    className={`${
+                                      open ? 'text-green-500' : 'text-green-800'
+                                    } py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
+                                  >
+                                    Productketen
+                                    <ChevronDownIcon
+                                      className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`}
+                                    />
+                                  </Disclosure.Button>
+                                  <Transition
+                                    show={open}
+                                    enter='transition duration-300 ease-out'
+                                    enterFrom='transform opacity-0'
+                                    enterTo='transform opacity-100'
+                                    leave='transition duration-75 ease-out'
+                                    leaveFrom='transform opacity-300'
+                                    leaveTo='transform opacity-0'
+                                    className='w-full'
+                                  >
+                                    <Disclosure.Panel className='flex flex-col flex-grow ml-4'>
+                                      <ul>
+                                        <li className='p-base-semibold text-green-800 py-6 border-b'>
+                                          <Disclosure>
+                                            {({ open }) => (
+                                              <>
+                                                <Disclosure.Button className='flex flex-row items-center'>
+                                                  Bouw
+                                                  <ChevronDownIcon
+                                                    className={`${
+                                                      open ? 'rotate-180' : ''
+                                                    } h-4 w-4 mt-1 ml-2`}
+                                                  />
+                                                </Disclosure.Button>
+                                                <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
+                                                  <Link href='/houtbouw-stimuleren'>
+                                                    Houtbouw stimuleren
+                                                  </Link>
+                                                </Disclosure.Panel>
+                                              </>
+                                            )}
+                                          </Disclosure>
+                                        </li>
+                                        <li className='p-base-semibold text-green-800 py-6 border-b'>
+                                          <Disclosure>
+                                            {({ open }) => (
+                                              <>
+                                                <Disclosure.Button className='flex flex-row items-center'>
+                                                  Consumptiegoederen
+                                                  <ChevronDownIcon
+                                                    className={`${
+                                                      open ? 'rotate-180' : ''
+                                                    } h-4 w-4 mt-1 ml-2`}
+                                                  />
+                                                </Disclosure.Button>
+                                                <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
+                                                  <Link href='/circulaire-matrasketen'>
+                                                    Circulaire matrasketen
+                                                  </Link>
+                                                </Disclosure.Panel>
+                                              </>
+                                            )}
+                                          </Disclosure>
+                                        </li>
+                                        <li className='p-base-semibold text-green-800 py-6 border-b opacity-50'>
+                                          Voedsel en biomassa
+                                        </li>
+                                        <li className='p-base-semibold text-green-800 py-6 border-b'>
+                                          <Disclosure>
+                                            {({ open }) => (
+                                              <>
+                                                <Disclosure.Button className='flex flex-row items-center'>
+                                                  Maakindustrie
+                                                  <ChevronDownIcon
+                                                    className={`${
+                                                      open ? 'rotate-180' : ''
+                                                    } h-4 w-4 mt-1 ml-2`}
+                                                  />
+                                                </Disclosure.Button>
+                                                <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
+                                                  <Link href='/circulaire-windturbines'>
+                                                    Circulaire windturbines{' '}
+                                                  </Link>
+                                                </Disclosure.Panel>
+                                              </>
+                                            )}
+                                          </Disclosure>
+                                        </li>
+                                        <li className='p-base-semibold text-green-800 py-6'>
+                                          <Disclosure>
+                                            {({ open }) => (
+                                              <>
+                                                <Disclosure.Button className='flex flex-row items-center'>
+                                                  Kunststoffen
+                                                  <ChevronDownIcon
+                                                    className={`${
+                                                      open ? 'rotate-180' : ''
+                                                    } h-4 w-4 mt-1 ml-2`}
+                                                  />
+                                                </Disclosure.Button>
+                                                <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
+                                                  <Link href='/plastic-in-de-bouw'>
+                                                    Plastic in de bouw{' '}
+                                                  </Link>
+                                                </Disclosure.Panel>
+                                              </>
+                                            )}
+                                          </Disclosure>
+                                        </li>
+                                      </ul>
+                                    </Disclosure.Panel>
+                                  </Transition>
+                                </>
+                              )}
+                            </Disclosure>
+                            <Disclosure>
+                              {({ open }) => (
+                                <>
+                                  <Disclosure.Button
+                                    className={`${
+                                      open ? 'text-green-500' : 'text-green-800'
+                                    }  border-t py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
+                                  >
+                                    Over Circulaw
+                                    <ChevronDownIcon
+                                      className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`}
+                                    />
+                                  </Disclosure.Button>
+                                  <Disclosure.Panel className='ml-4'>
+                                    <ul>
+                                      {props?.aboutSlugs?.map((aboutPage) => (
+                                        <li
+                                          key={aboutPage?.slug}
+                                          className='p-base first:mt-4 mb-4 text-green-600 cursor-pointer'
+                                          onClick={() => router.push(`/about/${aboutPage?.slug}`)}
+                                        >
+                                          {aboutPage.title}
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </Disclosure.Panel>
+                                </>
+                              )}
+                            </Disclosure>
+                            <div className='text-green-800 border-b border-t py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
+                              Nieuws
+                            </div>
+                            <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
+                              <Link href='/vraag-en-antwoord'>Vraag en antwoord</Link>
+                            </div>
+                            <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
+                              <Link href='/contact'>Contact</Link>
+                            </div>
+                          </div>
                         </div>
-                      </>
-                    )}
-                  </div>
-                </Popover.Panel>
-              </Transition>
-            </>
-          )}
-        </Popover>
-        {router.pathname === '/' && (
-          <div className='-mt-[9.5rem] bg-header bg-cover bg-center'>
-            <HomepageHeader homePageHeader={props.homePageHeader} />
-          </div>
-        )}
-      </>
-    );
-  }
+                      </div>
+                    </FloatingFocusManager>
+                  </FloatingOverlay>
+                )}
+              </div>
+
+              {/* Desktop nav */}
+              <div className='hidden lgNav:flex flex-row items-center justify-between mb-7'>
+                <div className=''>
+                  <button
+                    className='h-full relative p-sm group z-100 mr-8 flex flex-row items-center'
+                    ref={mainMenuRef.setReference}
+                    {...mainMenuReferencProps()}
+                  >
+                    <span
+                      className={`${
+                        mainMenuIsOpen === true
+                          ? [`${router.pathname === '/' ? 'text-green-300' : 'text-green-500'}`]
+                          : [
+                              `${
+                                router.pathname === '/'
+                                  ? 'text-white group-hover:decoration-green-400'
+                                  : 'text-green-800 group-hover:decoration-green-500'
+                              }`,
+                            ]
+                      } hover:underline`}
+                    >
+                      Productketen
+                    </span>
+                    <ChevronDownIcon
+                      className={`${
+                        mainMenuIsOpen
+                          ? [
+                              `${
+                                router.pathname === '/'
+                                  ? 'text-green-300 rotate-180'
+                                  : 'rotate-180 text-green-500'
+                              }`,
+                            ]
+                          : [
+                              `${
+                                router.pathname === '/'
+                                  ? 'text-white group-hover:text-green-300'
+                                  : 'group-hover:text-green-500'
+                              }`,
+                            ]
+                      } h-5 w-5 ml-2`}
+                    />
+                  </button>
+                  {/* REFACTOR CARDS */}
+                  {mainMenuIsMounted && (
+                    <FloatingFocusManager context={mainMenuContext} modal={false}>
+                      <div
+                        ref={mainMenuRef.setFloating}
+                        style={mainMenuStyles}
+                        {...mainMenuFloatingProps()}
+                        className='h-72 w-screen -z-10 '
+                      >
+                        <div
+                          className='h-full shadow-lg'
+                          style={{ ...mainMenuTransitionStyles }}
+                          onMouseLeave={() => setMainMenuIsOpen(false)}
+                        >
+                          <div
+                            className={`${
+                              router.pathname === '/' ? 'bg-green-500' : 'bg-white'
+                            } h-full flex flex-cols-5 gap-3 relative`}
+                          >
+                            <div
+                              className={`${
+                                router.pathname === '/'
+                                  ? 'bg-green-600 text-green-300'
+                                  : 'bg-green-100 text-green-800'
+                              } w-full h-full pl-4 lgNav:pl-10 xl:pl-20 3xl:pl-32 pt-8 pr-2 p-lg-semibild  mb-2`}
+                            >
+                              Bouw
+                              <div className=''>
+                                <div
+                                  className={`${
+                                    router.pathname === '/'
+                                      ? 'text-white'
+                                      : 'text-green-600 hover:text-green-500 '
+                                  } p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
+                                  onClick={() => router.push('/houtbouw-stimuleren')}
+                                >
+                                  Houtbow stimuleren
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              className={`${
+                                router.pathname === '/'
+                                  ? 'bg-green-600 text-green-300'
+                                  : 'bg-green-100 text-green-800'
+                              } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
+                            >
+                              <div className='p-lg-semibild  opacity-50'>Voedsel en biomassa</div>
+                              <div className=''>
+                                <div
+                                  className={`${
+                                    router.pathname === '/' ? 'text-white' : 'text-black-600'
+                                  } p-xs mt-2`}
+                                >
+                                  Thema’s voor deze productketen volgen binnekort
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              className={`${
+                                router.pathname === '/'
+                                  ? 'bg-green-600 text-green-300'
+                                  : 'bg-green-100 text-green-800'
+                              } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
+                            >
+                              <div className='p-lg-semibild break-words '>Consumptiegoederen</div>
+                              <div className=''>
+                                <div
+                                  className={`${
+                                    router.pathname === '/'
+                                      ? 'text-white'
+                                      : 'text-green-600 hover:text-green-500 '
+                                  } p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
+                                  onClick={() => router.push('/circulaire-matrasketen')}
+                                >
+                                  Circulaire matrasketen
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              className={`${
+                                router.pathname === '/'
+                                  ? 'bg-green-600 text-green-300'
+                                  : 'bg-green-100 text-green-800'
+                              } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
+                            >
+                              <div className='p-lg-semibild '>Maakindustrie</div>
+                              <div className=''>
+                                <div
+                                  className={`${
+                                    router.pathname === '/'
+                                      ? 'text-white'
+                                      : 'text-green-600 hover:text-green-500 '
+                                  } p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
+                                  onClick={() => router.push('/circulaire-windturbines')}
+                                >
+                                  Circulaire windturbines
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              className={`${
+                                router.pathname === '/'
+                                  ? 'bg-green-600 text-green-300'
+                                  : 'bg-green-100 text-green-800'
+                              } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
+                            >
+                              <div className='p-lg-semibild '>Kunststoffen</div>
+                              <div className=''>
+                                <div
+                                  className={`${
+                                    router.pathname === '/'
+                                      ? 'text-white'
+                                      : 'text-green-600 hover:text-green-500 '
+                                  } p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
+                                  onClick={() => router.push('/plastic-in-de-bouw')}
+                                >
+                                  Plastic in de bouw
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </FloatingFocusManager>
+                  )}
+                </div>
+
+                <div className=''>
+                  <button
+                    ref={overRef.setReference}
+                    {...overReferenceProps()}
+                    className='h-full relative p-sm group z-100 mr-8 flex flex-row items-center'
+                  >
+                    <span
+                      className={`${
+                        overMenuIsOpen === true
+                          ? [`${router.pathname === '/' ? 'text-green-300' : 'text-green-500'}`]
+                          : [
+                              `${
+                                router.pathname === '/'
+                                  ? 'text-white group-hover:decoration-green-400'
+                                  : 'text-green-800 group-hover:decoration-green-500'
+                              }`,
+                            ]
+                      } hover:underline`}
+                    >
+                      Over Circulaw
+                    </span>
+                    <ChevronDownIcon
+                      className={`${
+                        overMenuIsOpen
+                          ? [
+                              `${
+                                router.pathname === '/'
+                                  ? 'text-green-300 rotate-180'
+                                  : 'rotate-180 text-green-500'
+                              }`,
+                            ]
+                          : [
+                              `${
+                                router.pathname === '/'
+                                  ? 'text-white group-hover:text-green-300'
+                                  : 'group-hover:text-green-500'
+                              }`,
+                            ]
+                      } h-5 w-5 ml-2`}
+                    />
+                  </button>
+                  {overMenuIsMounted && (
+                    <FloatingFocusManager context={overContext} modal={false}>
+                      <div
+                        ref={overRef.setFloating}
+                        style={overStyles}
+                        {...overFloatingProps()}
+                        className='h-60 w-60 -z-10 '
+                      >
+                        <div
+                          className={`${
+                            router.pathname === '/' ? 'bg-green-600' : 'bg-green-100'
+                          } h-full  shadow-lg pl-6 pt-8 pr-8`}
+                          style={{ ...overMenuTransitionStyles }}
+                          onMouseLeave={() => setOverMenuIsOpen(false)}
+                        >
+                          {props?.aboutSlugs?.map((aboutPage) => (
+                            <div
+                              key={aboutPage?.slug}
+                              className={`${
+                                router.pathname === '/'
+                                  ? 'text-white'
+                                  : 'text-green-600 hover:text-green-500'
+                              } p-xs mb-2  hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
+                              onClick={() => router.push(`/about/${aboutPage?.slug}`)}
+                            >
+                              {aboutPage.title}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </FloatingFocusManager>
+                  )}
+                </div>
+                <div
+                  className={`${
+                    router.pathname === '/'
+                      ? 'text-white hover:text-green-300'
+                      : 'text-green-800 hover:text-green-500'
+                  } h-full relative p-sm  hover:underline z-100 mr-8 flex flex-row items-center cursor-pointer`}
+                >
+                  Nieuws
+                </div>
+                <div
+                  className={`${
+                    router.pathname === '/'
+                      ? 'text-white hover:text-green-300'
+                      : 'text-green-800 hover:text-green-500'
+                  } h-full relative p-sm  hover:underline z-100 mr-8 flex flex-row items-center cursor-pointer`}
+                >
+                  <Link href='/vraag-en-antwoord'>Vraag en antwoord</Link>
+                </div>
+                <div
+                  className={`${
+                    router.pathname === '/'
+                      ? 'text-white hover:text-green-300'
+                      : 'text-green-800 hover:text-green-500'
+                  } h-full relative p-sm  hover:underline z-100 flex flex-row items-center cursor-pointer`}
+                >
+                  <Link href='/contact'>Contact</Link>
+                </div>
+              </div>
+            </div>
+          </>
+        </nav>
+      </div>
+      {router.pathname === '/' && (
+        <div className='-mt-[9rem] bg-header bg-cover bg-center w-screen'>
+          <HomepageHeader homePageHeader={props.homePageHeader} />
+        </div>
+      )}
+    </>
+  );
 }

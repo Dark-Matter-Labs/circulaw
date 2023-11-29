@@ -4,7 +4,7 @@ import useSWR from 'swr';
 
 import globalMeta from '../../utils/global-meta';
 import Footer from '../../components/footer';
-import Nav3 from '../../components/nav3';
+import Nav from '../../components/nav';
 import CookieConsent from '../../components/cookie-banner';
 import { siteSettingsQuerys, footerQuery } from '../../lib/queries';
 import { fetcher } from '../../utils/swr-fetcher';
@@ -29,7 +29,7 @@ export default function Layout({
 
   return (
     <>
-      <Nav3
+      <Nav
         vraagSlug={vraagSlug}
         aboutSlugs={aboutNavItems}
         themaSlugs={themaSlugs}
