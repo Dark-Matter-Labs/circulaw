@@ -1,4 +1,4 @@
-import { useState, useEffect, Fragment } from 'react';
+import { useState, Fragment } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -35,20 +35,7 @@ const defaultOptions = {
 };
 
 export default function Nav3(props) {
-
-  const [scrollEffect, setScrollEffect] = useState(false);
   const router = useRouter();
-
-  useEffect(() => {
-    const changeEffect = () => {
-      if (window.scrollY >= 32) {
-        setScrollEffect(true);
-      } else {
-        setScrollEffect(false);
-      }
-    };
-    window.addEventListener('scroll', changeEffect);
-  }, []);
 
   // main menu
   const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
@@ -207,32 +194,12 @@ export default function Nav3(props) {
 
       <div
         id='wrapper'
-        className={`${
-          mainMenuIsOpen === true || overMenuIsOpen === true
-            ? 'bg-green-600 transition-colors shadow-lg'
-            : 'bg-transparent duration-150 delay-300 transition-colors'
-        } z-100 sticky top-0`}
+        className='z-100 sticky top-0'
       >
         <nav
           id='parent'
           as='nav'
-          className={`${
-            scrollEffect === true
-              ? [
-                  `${
-                    router.pathname === '/'
-                      ? 'bg-green-600 shadow-lg transition-all duration-150'
-                      : 'bg-[#F8FBF8] shadow-lg'
-                  }`,
-                ]
-              : [
-                  `${
-                    router.pathname === '/'
-                      ? 'bg-transparent opacity-85 transition-all duration-150'
-                      : 'bg-[#F8FBF8] z-100 transition-all duration-150 shadow-lg'
-                  }`,
-                ]
-          } h-[70px] lgNav:h-[98px] flex flex-row justify-between items-center lgNav:items-end global-padding`}
+          className={`${router.pathname === '/' ? 'bg-green-600 shadow-lg' : 'bg-[#F8FBF8] shadow-lg'} h-[70px] lgNav:h-[98px] flex flex-row justify-between items-center lgNav:items-end global-padding`}
         >
           <>
             {/* LOGO */}
@@ -402,16 +369,17 @@ export default function Nav3(props) {
                   </FloatingOverlay>
                   )}
                 </div>
-
+            
+            {/* Desktop nav */}
               <div className='hidden lgNav:flex flex-row items-center justify-between mb-7'>
                 <div className=''>
                   <button
-                    className='h-full relative p-sm text-green-800 hover:underline hover:decoration-green-500 group z-100 mr-8 flex flex-row items-center '
+                    className='h-full relative p-sm group z-100 mr-8 flex flex-row items-center'
                     ref={mainMenuRef.setReference}
                     {...mainMenuReferencProps()}
                   >
-                    Productketen
-                    <ChevronDownIcon className='h-5 w-5 ml-2 group-hover:text-green-500 '/>
+                      <span className={`${mainMenuIsOpen === true ? [`${router.pathname === '/' ? 'text-green-300': 'text-green-500'}`] : [`${router.pathname === '/' ? 'text-white group-hover:decoration-green-400': 'text-green-800 group-hover:decoration-green-500'}`]} hover:underline`}>Productketen</span>
+                    <ChevronDownIcon className={`${mainMenuIsOpen ? [`${router.pathname === '/' ? 'text-green-300 rotate-180': 'rotate-180 text-green-500'}`] : [`${router.pathname === '/' ? 'text-white group-hover:text-green-300': 'group-hover:text-green-500'}`]} h-5 w-5 ml-2`}/>
                   </button>
                   {mainMenuIsMounted && (
                     <FloatingFocusManager context={mainMenuContext} modal={false}>
@@ -422,59 +390,65 @@ export default function Nav3(props) {
                         className='h-72 w-screen -z-10 '
                       >
                         <div
-                          className='h-full bg-green-100 shadow-lg'
+                          className='h-full shadow-lg'
                           style={{ ...mainMenuTransitionStyles }}
                           onMouseLeave={() => setMainMenuIsOpen(false)}
                         >
-                          <div className='bg-white h-full flex flex-cols-5 gap-3 relative'>
-                            <div className='w-full h-full bg-green-100 pl-4 lgNav:pl-10 xl:pl-20 3xl:pl-32 pt-8 pr-2 p-lg-semibild text-green-800 mb-2'>
+                          <div className={`${router.pathname === '/' ? 'bg-green-500' : 'bg-white'} h-full flex flex-cols-5 gap-3 relative`}>
+                            <div className={`${router.pathname === '/' ? 'bg-green-600 text-green-300' : 'bg-green-100 text-green-800'} w-full h-full pl-4 lgNav:pl-10 xl:pl-20 3xl:pl-32 pt-8 pr-2 p-lg-semibild  mb-2`}>
                               Bouw
                               <div className=''>
                                 <div
-                                  className='p-xs mt-2 text-green-600 hover:text-green-500 hover:underline active:p-xs-semibold active:no-underline cursor-pointer'
+                                  className={`${router.pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '} p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
                                   onClick={() => router.push('/houtbouw-stimuleren')}
                                 >
                                   Houtbow stimuleren
                                 </div>
                               </div>
                             </div>
-                            <div className='w-full bg-green-100 flex flex-col pl-3 lg:pl-6 pt-8 pr-2'>
-                              <div className='p-lg-semibild text-green-800 opacity-50'>
+                            <div className={`${router.pathname === '/' ? 'bg-green-600 text-green-300' : 'bg-green-100 text-green-800'} w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`} >
+                              <div className='p-lg-semibild  opacity-50'>
                                 Voedsel en biomassa
                               </div>
-                         
+                              <div className=''>
+                                <div
+                                  className={`${router.pathname === '/' ? 'text-white' : 'text-black-600'} p-xs mt-2`}
+                                >
+                                 Thema’s voor deze productketen volgen binnekort
+                                </div>
+                              </div>
                             </div>
-                            <div className='w-full bg-green-100 flex flex-col pl-3 lg:pl-6 pt-8 pr-2'>
-                              <div className='p-lg-semibild break-words text-green-800'>
+                            <div className={`${router.pathname === '/' ? 'bg-green-600 text-green-300' : 'bg-green-100 text-green-800'} w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}>
+                              <div className='p-lg-semibild break-words '>
                                 Consumptiegoederen
                               </div>
                               <div className=''>
                                 <div
-                                  className='p-xs mt-2 text-green-600 hover:text-green-500 hover:underline active:p-xs-semibold active:no-underline cursor-pointer'
+                                  className={`${router.pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '} p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
                                   onClick={() => router.push('/circulaire-matrasketen')}
                                 >
                                  Circulaire matrasketen
                                 </div>
                               </div>
                             </div>
-                            <div className='w-full bg-green-100 flex flex-col pl-3 lg:pl-6 pt-8 pr-2'>
-                              <div className='p-lg-semibild text-green-800'>Maakindustrie</div>
+                            <div className={`${router.pathname === '/' ? 'bg-green-600 text-green-300' : 'bg-green-100 text-green-800'} w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}>
+                              <div className='p-lg-semibild '>Maakindustrie</div>
                               <div className=''>
                                 <div
-                                  className='p-xs mt-2 text-green-600 hover:text-green-500 hover:underline active:p-xs-semibold active:no-underline cursor-pointer'
+                                  className={`${router.pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '} p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
                                   onClick={() => router.push('/circulaire-windturbines')}
                                 >
                                   Circulaire windturbines
                                 </div>
                               </div>
                             </div>
-                            <div className='w-full bg-green-100 flex flex-col pl-3 lg:pl-6 pt-8 pr-2'>
-                              <div className='p-lg-semibild text-green-800'>
+                            <div className={`${router.pathname === '/' ? 'bg-green-600 text-green-300' : 'bg-green-100 text-green-800'} w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}>
+                              <div className='p-lg-semibild '>
                                 Kunststoffen
                               </div>
                               <div className=''>
                                 <div
-                                  className='p-xs mt-2 text-green-600 hover:text-green-500 hover:underline active:p-xs-semibold active:no-underline cursor-pointer'
+                                  className={`${router.pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '} p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
                                   onClick={() => router.push('/plastic-in-de-bouw')}
                                 >
                                   Plastic in de bouw
@@ -492,10 +466,10 @@ export default function Nav3(props) {
                   <button
                     ref={overRef.setReference}
                     {...overReferenceProps()}
-                    className='h-full relative p-sm text-green-800 hover:underline hover:decoration-green-500 group z-100 mr-8 flex flex-row items-center '
+                    className='h-full relative p-sm group z-100 mr-8 flex flex-row items-center'
                   >
-                    Over Circulaw
-                    <ChevronDownIcon className='h-5 w-5 ml-2 group-hover:text-green-500 '/>
+                    <span className={`${overMenuIsOpen === true ? [`${router.pathname === '/' ? 'text-green-300': 'text-green-500'}`] : [`${router.pathname === '/' ? 'text-white group-hover:decoration-green-400': 'text-green-800 group-hover:decoration-green-500'}`]} hover:underline`}>Over Circulaw</span>
+                    <ChevronDownIcon className={`${overMenuIsOpen ? [`${router.pathname === '/' ? 'text-green-300 rotate-180': 'rotate-180 text-green-500'}`] : [`${router.pathname === '/' ? 'text-white group-hover:text-green-300': 'group-hover:text-green-500'}`]} h-5 w-5 ml-2`} />
                   </button>
                   {overMenuIsMounted && (
                     <FloatingFocusManager context={overContext} modal={false}>
@@ -506,12 +480,12 @@ export default function Nav3(props) {
                         className='h-60 w-60 -z-10 '
                       >
                         <div
-                          className='h-full bg-green-100 shadow-lg pl-6 pt-8 pr-8'
+                          className={`${router.pathname === '/' ? 'bg-green-600' : 'bg-green-100'} h-full  shadow-lg pl-6 pt-8 pr-8`}
                           style={{ ...overMenuTransitionStyles }}
                           onMouseLeave={() => setOverMenuIsOpen(false)}
                         >
                           {props?.aboutSlugs?.map((aboutPage) => (
-                            <div key={aboutPage?.slug} className='p-xs mb-2 text-green-600 hover:text-green-500 hover:underline active:p-xs-semibold active:no-underline cursor-pointer' onClick={() => router.push(`/about/${aboutPage?.slug}`)}>
+                            <div key={aboutPage?.slug} className={`${router.pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500'} p-xs mb-2  hover:underline active:p-xs-semibold active:no-underline cursor-pointer`} onClick={() => router.push(`/about/${aboutPage?.slug}`)}>
                                 {aboutPage.title}
                            </div>
                           ))}
@@ -520,9 +494,9 @@ export default function Nav3(props) {
                     </FloatingFocusManager>
                   )}
                 </div>
-                <div className='h-full relative p-sm text-green-800 hover:underline z-100 mr-8 flex flex-row items-center cursor-pointer'>Nieuws</div>
-                <div className='h-full relative p-sm text-green-800 hover:underline z-100 mr-8 flex flex-row items-center cursor-pointer'>Vraag en antwoord</div>
-                <div className='h-full relative p-sm text-green-800 hover:underline z-100 flex flex-row items-center cursor-pointer'>Contact</div>
+                <div className={`${router.pathname === '/' ? 'text-white hover:text-green-300' : 'text-green-800 hover:text-green-500'} h-full relative p-sm  hover:underline z-100 mr-8 flex flex-row items-center cursor-pointer`}>Nieuws</div>
+                <div className={`${router.pathname === '/' ? 'text-white hover:text-green-300' : 'text-green-800 hover:text-green-500'} h-full relative p-sm  hover:underline z-100 mr-8 flex flex-row items-center cursor-pointer`}><Link href='/vraag-en-antwoord'>Vraag en antwoord</Link></div>
+                <div className={`${router.pathname === '/' ? 'text-white hover:text-green-300' : 'text-green-800 hover:text-green-500'} h-full relative p-sm  hover:underline z-100 flex flex-row items-center cursor-pointer`}><Link href='/contact'>Contact</Link></div>
               </div>
             </div>
           </>
