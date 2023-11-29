@@ -14,7 +14,7 @@ import {
   useInteractions,
   FloatingFocusManager,
   useTransitionStyles,
-  FloatingOverlay
+  FloatingOverlay,
 } from '@floating-ui/react';
 
 import BetaBanner from './beta-banner';
@@ -22,7 +22,7 @@ import animationData from '../public/CL_Home_Logo_Loop';
 import logo from '../public/Circulaw_logotype_home.png';
 import CirculawLogo from '../public/Circulaw_logotype.png';
 import HomepageHeader from '../components/homepage-header';
-import { ChevronDownIcon,  MenuIcon  } from '@heroicons/react/outline';
+import { ChevronDownIcon, MenuIcon } from '@heroicons/react/outline';
 import { Disclosure, Transition } from '@headlessui/react';
 
 const defaultOptions = {
@@ -115,25 +115,27 @@ export default function Nav3(props) {
   const { getReferenceProps: overReferenceProps, getFloatingProps: overFloatingProps } =
     useInteractions([overMenuClick, overMenuDismiss, overMenuRole]);
 
-
-  const [ mobileMenuIsOpen, setMobileMenuIsOpen ] = useState(false)
-  const { refs: mobileRef, floatingStyles: mobileFloatingStyles, context: mobileContext} = useFloating({
+  const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
+  const {
+    refs: mobileRef,
+    floatingStyles: mobileFloatingStyles,
+    context: mobileContext,
+  } = useFloating({
     placement: 'bottom-start',
     open: mobileMenuIsOpen,
     onOpenChange: setMobileMenuIsOpen,
-    middleware: [offset(10), flip(), shift()]
-  })
+    middleware: [offset(10), flip(), shift()],
+  });
 
-  const mobileMenuClick = useClick(mobileContext)
-  const mobileMenuDismiss = useDismiss(mobileContext, 
-    {outsidePressEvent: 'mousedown',})
-  const mobileMenuRole = useRole(mobileContext)
+  const mobileMenuClick = useClick(mobileContext);
+  const mobileMenuDismiss = useDismiss(mobileContext, { outsidePressEvent: 'mousedown' });
+  const mobileMenuRole = useRole(mobileContext);
 
-  const { getReferenceProps: mobileRefProps, getFloatingProps: mobileFloatingProps} = useInteractions([mobileMenuClick, mobileMenuDismiss, mobileMenuRole])
+  const { getReferenceProps: mobileRefProps, getFloatingProps: mobileFloatingProps } =
+    useInteractions([mobileMenuClick, mobileMenuDismiss, mobileMenuRole]);
 
-  const { isMounted: mobileMenuIsMounted, styles: mobileMenuTransitionStyles } = useTransitionStyles(
-    mobileContext,
-    {
+  const { isMounted: mobileMenuIsMounted, styles: mobileMenuTransitionStyles } =
+    useTransitionStyles(mobileContext, {
       duration: 150,
       initial: {
         opacity: 0,
@@ -144,8 +146,7 @@ export default function Nav3(props) {
       close: {
         opacity: 0,
       },
-    },
-  );
+    });
 
   if (router.pathname === '/en') {
     return (
@@ -192,14 +193,13 @@ export default function Nav3(props) {
         <BetaBanner />
       </div>
 
-      <div
-        id='wrapper'
-        className='z-100 sticky top-0'
-      >
+      <div id='wrapper' className='z-100 sticky top-0'>
         <nav
           id='parent'
           as='nav'
-          className={`${router.pathname === '/' ? 'bg-green-600 shadow-lg' : 'bg-[#F8FBF8] shadow-lg'} h-[70px] lgNav:h-[98px] flex flex-row justify-between items-center lgNav:items-end global-padding`}
+          className={`${
+            router.pathname === '/' ? 'bg-green-600 shadow-lg' : 'bg-[#F8FBF8] shadow-lg'
+          } h-[70px] lgNav:h-[98px] flex flex-row justify-between items-center lgNav:items-end global-padding`}
         >
           <>
             {/* LOGO */}
@@ -250,19 +250,23 @@ export default function Nav3(props) {
             </div>
             <div className='flex flex-col justify-between'>
               {/* LANGUAGE */}
-              <div className={`${router.pathname === '/' ? 'text-grey-100' : 'text-green-800'}  hidden lgNav:flex justify-end items-center min-w-[10%] mb-5`}>
+              <div
+                className={`${
+                  router.pathname === '/' ? 'text-grey-100' : 'text-green-800'
+                }  hidden lgNav:flex justify-end items-center min-w-[10%] mb-5`}
+              >
                 <span
-                  className={`${router.pathname === '/' ? 'link-interaction-dark-bg ' : 'link-interaction'} ${
-                    router.pathname === '/en' ? 'enLink' : 'enLinkSelected'
-                  }`}
+                  className={`${
+                    router.pathname === '/' ? 'link-interaction-dark-bg ' : 'link-interaction'
+                  } ${router.pathname === '/en' ? 'enLink' : 'enLinkSelected'}`}
                 >
                   <Link href='/'>NL</Link>
                 </span>
                 <span className='px-1 enLink'>|</span>
                 <span
-                  className={`${router.pathname === '/' ? 'link-interaction-dark-bg ' : 'link-interaction'} ${
-                    router.pathname === '/en' ? 'enLinkSelected' : 'enLink'
-                  }`}
+                  className={`${
+                    router.pathname === '/' ? 'link-interaction-dark-bg ' : 'link-interaction'
+                  } ${router.pathname === '/en' ? 'enLinkSelected' : 'enLink'}`}
                 >
                   <Link href='/en'>EN</Link>
                 </span>
@@ -270,107 +274,123 @@ export default function Nav3(props) {
 
               {/* Mobile button/NAV */}
               <div className='inset-y-0 float-right flex items-center pt-2 lgNav:hidden'>
-                  <button
-                    className={`${
-                      router.pathname !== '/' ? 'text-green-600' : 'text-grey-100'
-                    } 'p-2 rounded-md`}
-                    ref={mobileRef.setReference}
-                    {...mobileRefProps()}
-                    >
-                    <span className='sr-only'>Open main menu</span>
-                      <MenuIcon className='block h-10 w-10' aria-hidden='true' />
-                  </button>
-                  {mobileMenuIsMounted && ( 
-                      <FloatingOverlay
-                      lockScroll
-                      style={{background: 'rgba(0, 0, 0, 0)'}}
-                    >
-                  <FloatingFocusManager context={mobileContext} modal={false}>
-                  <div className='h-auto w-screen -z-10'
-                       ref={mobileRef.setFloating}
-                       style={mobileFloatingStyles}
-                       {...mobileFloatingProps()} >
-                        <div className='h-auto w-screen bg-[#F8FBF8]'  style={{ ...mobileMenuTransitionStyles }}> 
-                        <div className='flex flex-col items-start justify-end global-margin '>
-                         <Disclosure>
-                          {({ open }) => ( 
-                            <>
-                          <Disclosure.Button className={`${open ? 'text-green-500' : 'text-green-800'} border-y py-4 w-full text-left p-xl-semibold flex flex-row items-center`}>
-                               Productketen
-                          <ChevronDownIcon className={`${open ? 'rotate-180': ''} h-4 w-4 mt-1 ml-2`} />
-                          </Disclosure.Button>
-                          <Transition
-                              show={open}
-                              enter="transition duration-300 ease-out"
-                              enterFrom="transform opacity-0"
-                              enterTo="transform opacity-100"
-                              leave="transition duration-75 ease-out"
-                              leaveFrom="transform opacity-300"
-                              leaveTo="transform opacity-0"
-                              className='w-full'
-      >
-                          <Disclosure.Panel className='flex flex-col flex-grow ml-4'>
-                            <ul>
-                            <li className='p-base-semibold text-green-800 py-6 border-b'>
-                              Bouw
-                            </li>
-                            <li className='p-base-semibold text-green-800 py-6 border-b'>
-                            Consumptiegoederen
-                            </li>
-                            <li className='p-base-semibold text-green-800 py-6 border-b'>
-                            Voedsel en biomassa
-                            </li>
-                            <li className='p-base-semibold text-green-800 py-6 border-b'>
-                            Maakindustrie
-                            </li>
-                            <li className='p-base-semibold text-green-800 py-6'>
-                            Kunststoffen
-                            </li>
-                            </ul>
-                          </Disclosure.Panel>
-                          </Transition>
-                          </>
-                          )}
-                         </Disclosure>
-                         <Disclosure>
-                          {({ open }) => ( 
-                            <>
-                          <Disclosure.Button className={`${open ? 'text-green-500' : 'text-green-800'} border-y py-4 w-full text-left p-xl-semibold flex flex-row items-center`}>
-                               Over Circulaw
-                               <ChevronDownIcon className={`${open ? 'rotate-180': ''} h-4 w-4 mt-1 ml-2`} />
-
-                          </Disclosure.Button>
-                          <Disclosure.Panel className='ml-4'>
-                           <ul>
-                          {props?.aboutSlugs?.map((aboutPage) => (
-                            
-                            <li key={aboutPage?.slug} className='p-xs first:mt-4 mb-4 text-green-600 hover:text-green-500 hover:underline active:p-xs-semibold active:no-underline cursor-pointer' onClick={() => router.push(`/about/${aboutPage?.slug}`)}>
-                                {aboutPage.title}
-                           </li>
-                          ))}
-                            </ul>
-                          </Disclosure.Panel>
-                          </>
-                          )}
-                         </Disclosure>
-                         <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
-                         Nieuws
-                         </div>
-                         <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
-                         Vraag en antwoord
-                         </div>
-                         <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
-                         Contact
-                         </div>
-                         </div>
+                <button
+                  className={`${
+                    router.pathname !== '/' ? 'text-green-600' : 'text-grey-100'
+                  } 'p-2 rounded-md`}
+                  ref={mobileRef.setReference}
+                  {...mobileRefProps()}
+                >
+                  <span className='sr-only'>Open main menu</span>
+                  <MenuIcon className='block h-10 w-10' aria-hidden='true' />
+                </button>
+                {mobileMenuIsMounted && (
+                  <FloatingOverlay lockScroll style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                    <FloatingFocusManager context={mobileContext} modal={false}>
+                      <div
+                        className='h-auto w-screen -z-10'
+                        ref={mobileRef.setFloating}
+                        style={mobileFloatingStyles}
+                        {...mobileFloatingProps()}
+                      >
+                        <div
+                          className='h-auto w-screen bg-[#F8FBF8]'
+                          style={{ ...mobileMenuTransitionStyles }}
+                        >
+                          <div className='flex flex-col items-start justify-end global-margin '>
+                            <Disclosure>
+                              {({ open }) => (
+                                <>
+                                  <Disclosure.Button
+                                    className={`${
+                                      open ? 'text-green-500' : 'text-green-800'
+                                    } border-y py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
+                                  >
+                                    Productketen
+                                    <ChevronDownIcon
+                                      className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`}
+                                    />
+                                  </Disclosure.Button>
+                                  <Transition
+                                    show={open}
+                                    enter='transition duration-300 ease-out'
+                                    enterFrom='transform opacity-0'
+                                    enterTo='transform opacity-100'
+                                    leave='transition duration-75 ease-out'
+                                    leaveFrom='transform opacity-300'
+                                    leaveTo='transform opacity-0'
+                                    className='w-full'
+                                  >
+                                    <Disclosure.Panel className='flex flex-col flex-grow ml-4'>
+                                      <ul>
+                                        <li className='p-base-semibold text-green-800 py-6 border-b'>
+                                          Bouw
+                                        </li>
+                                        <li className='p-base-semibold text-green-800 py-6 border-b'>
+                                          Consumptiegoederen
+                                        </li>
+                                        <li className='p-base-semibold text-green-800 py-6 border-b'>
+                                          Voedsel en biomassa
+                                        </li>
+                                        <li className='p-base-semibold text-green-800 py-6 border-b'>
+                                          Maakindustrie
+                                        </li>
+                                        <li className='p-base-semibold text-green-800 py-6'>
+                                          Kunststoffen
+                                        </li>
+                                      </ul>
+                                    </Disclosure.Panel>
+                                  </Transition>
+                                </>
+                              )}
+                            </Disclosure>
+                            <Disclosure>
+                              {({ open }) => (
+                                <>
+                                  <Disclosure.Button
+                                    className={`${
+                                      open ? 'text-green-500' : 'text-green-800'
+                                    } border-y py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
+                                  >
+                                    Over Circulaw
+                                    <ChevronDownIcon
+                                      className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`}
+                                    />
+                                  </Disclosure.Button>
+                                  <Disclosure.Panel className='ml-4'>
+                                    <ul>
+                                      {props?.aboutSlugs?.map((aboutPage) => (
+                                        <li
+                                          key={aboutPage?.slug}
+                                          className='p-xs first:mt-4 mb-4 text-green-600 hover:text-green-500 hover:underline active:p-xs-semibold active:no-underline cursor-pointer'
+                                          onClick={() => router.push(`/about/${aboutPage?.slug}`)}
+                                        >
+                                          {aboutPage.title}
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </Disclosure.Panel>
+                                </>
+                              )}
+                            </Disclosure>
+                            <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
+                              Nieuws
+                            </div>
+                            <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
+                              Vraag en antwoord
+                            </div>
+                            <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
+                              Contact
+                            </div>
+                          </div>
                         </div>
-                  </div>
-                  </FloatingFocusManager>
+                      </div>
+                    </FloatingFocusManager>
                   </FloatingOverlay>
-                  )}
-                </div>
-            
-            {/* Desktop nav */}
+                )}
+              </div>
+
+              {/* Desktop nav */}
               <div className='hidden lgNav:flex flex-row items-center justify-between mb-7'>
                 <div className=''>
                   <button
@@ -378,9 +398,42 @@ export default function Nav3(props) {
                     ref={mainMenuRef.setReference}
                     {...mainMenuReferencProps()}
                   >
-                      <span className={`${mainMenuIsOpen === true ? [`${router.pathname === '/' ? 'text-green-300': 'text-green-500'}`] : [`${router.pathname === '/' ? 'text-white group-hover:decoration-green-400': 'text-green-800 group-hover:decoration-green-500'}`]} hover:underline`}>Productketen</span>
-                    <ChevronDownIcon className={`${mainMenuIsOpen ? [`${router.pathname === '/' ? 'text-green-300 rotate-180': 'rotate-180 text-green-500'}`] : [`${router.pathname === '/' ? 'text-white group-hover:text-green-300': 'group-hover:text-green-500'}`]} h-5 w-5 ml-2`}/>
+                    <span
+                      className={`${
+                        mainMenuIsOpen === true
+                          ? [`${router.pathname === '/' ? 'text-green-300' : 'text-green-500'}`]
+                          : [
+                              `${
+                                router.pathname === '/'
+                                  ? 'text-white group-hover:decoration-green-400'
+                                  : 'text-green-800 group-hover:decoration-green-500'
+                              }`,
+                            ]
+                      } hover:underline`}
+                    >
+                      Productketen
+                    </span>
+                    <ChevronDownIcon
+                      className={`${
+                        mainMenuIsOpen
+                          ? [
+                              `${
+                                router.pathname === '/'
+                                  ? 'text-green-300 rotate-180'
+                                  : 'rotate-180 text-green-500'
+                              }`,
+                            ]
+                          : [
+                              `${
+                                router.pathname === '/'
+                                  ? 'text-white group-hover:text-green-300'
+                                  : 'group-hover:text-green-500'
+                              }`,
+                            ]
+                      } h-5 w-5 ml-2`}
+                    />
                   </button>
+                  {/* REFACTOR CARDS */}
                   {mainMenuIsMounted && (
                     <FloatingFocusManager context={mainMenuContext} modal={false}>
                       <div
@@ -394,61 +447,107 @@ export default function Nav3(props) {
                           style={{ ...mainMenuTransitionStyles }}
                           onMouseLeave={() => setMainMenuIsOpen(false)}
                         >
-                          <div className={`${router.pathname === '/' ? 'bg-green-500' : 'bg-white'} h-full flex flex-cols-5 gap-3 relative`}>
-                            <div className={`${router.pathname === '/' ? 'bg-green-600 text-green-300' : 'bg-green-100 text-green-800'} w-full h-full pl-4 lgNav:pl-10 xl:pl-20 3xl:pl-32 pt-8 pr-2 p-lg-semibild  mb-2`}>
+                          <div
+                            className={`${
+                              router.pathname === '/' ? 'bg-green-500' : 'bg-white'
+                            } h-full flex flex-cols-5 gap-3 relative`}
+                          >
+                            <div
+                              className={`${
+                                router.pathname === '/'
+                                  ? 'bg-green-600 text-green-300'
+                                  : 'bg-green-100 text-green-800'
+                              } w-full h-full pl-4 lgNav:pl-10 xl:pl-20 3xl:pl-32 pt-8 pr-2 p-lg-semibild  mb-2`}
+                            >
                               Bouw
                               <div className=''>
                                 <div
-                                  className={`${router.pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '} p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
+                                  className={`${
+                                    router.pathname === '/'
+                                      ? 'text-white'
+                                      : 'text-green-600 hover:text-green-500 '
+                                  } p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
                                   onClick={() => router.push('/houtbouw-stimuleren')}
                                 >
                                   Houtbow stimuleren
                                 </div>
                               </div>
                             </div>
-                            <div className={`${router.pathname === '/' ? 'bg-green-600 text-green-300' : 'bg-green-100 text-green-800'} w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`} >
-                              <div className='p-lg-semibild  opacity-50'>
-                                Voedsel en biomassa
-                              </div>
+                            <div
+                              className={`${
+                                router.pathname === '/'
+                                  ? 'bg-green-600 text-green-300'
+                                  : 'bg-green-100 text-green-800'
+                              } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
+                            >
+                              <div className='p-lg-semibild  opacity-50'>Voedsel en biomassa</div>
                               <div className=''>
                                 <div
-                                  className={`${router.pathname === '/' ? 'text-white' : 'text-black-600'} p-xs mt-2`}
+                                  className={`${
+                                    router.pathname === '/' ? 'text-white' : 'text-black-600'
+                                  } p-xs mt-2`}
                                 >
-                                 Thema’s voor deze productketen volgen binnekort
+                                  Thema’s voor deze productketen volgen binnekort
                                 </div>
                               </div>
                             </div>
-                            <div className={`${router.pathname === '/' ? 'bg-green-600 text-green-300' : 'bg-green-100 text-green-800'} w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}>
-                              <div className='p-lg-semibild break-words '>
-                                Consumptiegoederen
-                              </div>
+                            <div
+                              className={`${
+                                router.pathname === '/'
+                                  ? 'bg-green-600 text-green-300'
+                                  : 'bg-green-100 text-green-800'
+                              } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
+                            >
+                              <div className='p-lg-semibild break-words '>Consumptiegoederen</div>
                               <div className=''>
                                 <div
-                                  className={`${router.pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '} p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
+                                  className={`${
+                                    router.pathname === '/'
+                                      ? 'text-white'
+                                      : 'text-green-600 hover:text-green-500 '
+                                  } p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
                                   onClick={() => router.push('/circulaire-matrasketen')}
                                 >
-                                 Circulaire matrasketen
+                                  Circulaire matrasketen
                                 </div>
                               </div>
                             </div>
-                            <div className={`${router.pathname === '/' ? 'bg-green-600 text-green-300' : 'bg-green-100 text-green-800'} w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}>
+                            <div
+                              className={`${
+                                router.pathname === '/'
+                                  ? 'bg-green-600 text-green-300'
+                                  : 'bg-green-100 text-green-800'
+                              } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
+                            >
                               <div className='p-lg-semibild '>Maakindustrie</div>
                               <div className=''>
                                 <div
-                                  className={`${router.pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '} p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
+                                  className={`${
+                                    router.pathname === '/'
+                                      ? 'text-white'
+                                      : 'text-green-600 hover:text-green-500 '
+                                  } p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
                                   onClick={() => router.push('/circulaire-windturbines')}
                                 >
                                   Circulaire windturbines
                                 </div>
                               </div>
                             </div>
-                            <div className={`${router.pathname === '/' ? 'bg-green-600 text-green-300' : 'bg-green-100 text-green-800'} w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}>
-                              <div className='p-lg-semibild '>
-                                Kunststoffen
-                              </div>
+                            <div
+                              className={`${
+                                router.pathname === '/'
+                                  ? 'bg-green-600 text-green-300'
+                                  : 'bg-green-100 text-green-800'
+                              } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
+                            >
+                              <div className='p-lg-semibild '>Kunststoffen</div>
                               <div className=''>
                                 <div
-                                  className={`${router.pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '} p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
+                                  className={`${
+                                    router.pathname === '/'
+                                      ? 'text-white'
+                                      : 'text-green-600 hover:text-green-500 '
+                                  } p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
                                   onClick={() => router.push('/plastic-in-de-bouw')}
                                 >
                                   Plastic in de bouw
@@ -468,8 +567,40 @@ export default function Nav3(props) {
                     {...overReferenceProps()}
                     className='h-full relative p-sm group z-100 mr-8 flex flex-row items-center'
                   >
-                    <span className={`${overMenuIsOpen === true ? [`${router.pathname === '/' ? 'text-green-300': 'text-green-500'}`] : [`${router.pathname === '/' ? 'text-white group-hover:decoration-green-400': 'text-green-800 group-hover:decoration-green-500'}`]} hover:underline`}>Over Circulaw</span>
-                    <ChevronDownIcon className={`${overMenuIsOpen ? [`${router.pathname === '/' ? 'text-green-300 rotate-180': 'rotate-180 text-green-500'}`] : [`${router.pathname === '/' ? 'text-white group-hover:text-green-300': 'group-hover:text-green-500'}`]} h-5 w-5 ml-2`} />
+                    <span
+                      className={`${
+                        overMenuIsOpen === true
+                          ? [`${router.pathname === '/' ? 'text-green-300' : 'text-green-500'}`]
+                          : [
+                              `${
+                                router.pathname === '/'
+                                  ? 'text-white group-hover:decoration-green-400'
+                                  : 'text-green-800 group-hover:decoration-green-500'
+                              }`,
+                            ]
+                      } hover:underline`}
+                    >
+                      Over Circulaw
+                    </span>
+                    <ChevronDownIcon
+                      className={`${
+                        overMenuIsOpen
+                          ? [
+                              `${
+                                router.pathname === '/'
+                                  ? 'text-green-300 rotate-180'
+                                  : 'rotate-180 text-green-500'
+                              }`,
+                            ]
+                          : [
+                              `${
+                                router.pathname === '/'
+                                  ? 'text-white group-hover:text-green-300'
+                                  : 'group-hover:text-green-500'
+                              }`,
+                            ]
+                      } h-5 w-5 ml-2`}
+                    />
                   </button>
                   {overMenuIsMounted && (
                     <FloatingFocusManager context={overContext} modal={false}>
@@ -480,23 +611,57 @@ export default function Nav3(props) {
                         className='h-60 w-60 -z-10 '
                       >
                         <div
-                          className={`${router.pathname === '/' ? 'bg-green-600' : 'bg-green-100'} h-full  shadow-lg pl-6 pt-8 pr-8`}
+                          className={`${
+                            router.pathname === '/' ? 'bg-green-600' : 'bg-green-100'
+                          } h-full  shadow-lg pl-6 pt-8 pr-8`}
                           style={{ ...overMenuTransitionStyles }}
                           onMouseLeave={() => setOverMenuIsOpen(false)}
                         >
                           {props?.aboutSlugs?.map((aboutPage) => (
-                            <div key={aboutPage?.slug} className={`${router.pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500'} p-xs mb-2  hover:underline active:p-xs-semibold active:no-underline cursor-pointer`} onClick={() => router.push(`/about/${aboutPage?.slug}`)}>
-                                {aboutPage.title}
-                           </div>
+                            <div
+                              key={aboutPage?.slug}
+                              className={`${
+                                router.pathname === '/'
+                                  ? 'text-white'
+                                  : 'text-green-600 hover:text-green-500'
+                              } p-xs mb-2  hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
+                              onClick={() => router.push(`/about/${aboutPage?.slug}`)}
+                            >
+                              {aboutPage.title}
+                            </div>
                           ))}
                         </div>
                       </div>
                     </FloatingFocusManager>
                   )}
                 </div>
-                <div className={`${router.pathname === '/' ? 'text-white hover:text-green-300' : 'text-green-800 hover:text-green-500'} h-full relative p-sm  hover:underline z-100 mr-8 flex flex-row items-center cursor-pointer`}>Nieuws</div>
-                <div className={`${router.pathname === '/' ? 'text-white hover:text-green-300' : 'text-green-800 hover:text-green-500'} h-full relative p-sm  hover:underline z-100 mr-8 flex flex-row items-center cursor-pointer`}><Link href='/vraag-en-antwoord'>Vraag en antwoord</Link></div>
-                <div className={`${router.pathname === '/' ? 'text-white hover:text-green-300' : 'text-green-800 hover:text-green-500'} h-full relative p-sm  hover:underline z-100 flex flex-row items-center cursor-pointer`}><Link href='/contact'>Contact</Link></div>
+                <div
+                  className={`${
+                    router.pathname === '/'
+                      ? 'text-white hover:text-green-300'
+                      : 'text-green-800 hover:text-green-500'
+                  } h-full relative p-sm  hover:underline z-100 mr-8 flex flex-row items-center cursor-pointer`}
+                >
+                  Nieuws
+                </div>
+                <div
+                  className={`${
+                    router.pathname === '/'
+                      ? 'text-white hover:text-green-300'
+                      : 'text-green-800 hover:text-green-500'
+                  } h-full relative p-sm  hover:underline z-100 mr-8 flex flex-row items-center cursor-pointer`}
+                >
+                  <Link href='/vraag-en-antwoord'>Vraag en antwoord</Link>
+                </div>
+                <div
+                  className={`${
+                    router.pathname === '/'
+                      ? 'text-white hover:text-green-300'
+                      : 'text-green-800 hover:text-green-500'
+                  } h-full relative p-sm  hover:underline z-100 flex flex-row items-center cursor-pointer`}
+                >
+                  <Link href='/contact'>Contact</Link>
+                </div>
               </div>
             </div>
           </>
@@ -510,5 +675,3 @@ export default function Nav3(props) {
     </>
   );
 }
-
-
