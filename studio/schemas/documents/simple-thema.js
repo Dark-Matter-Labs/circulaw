@@ -48,6 +48,25 @@ export default {
       },
     },
     {
+      title: 'Transitie-agenda',
+      name: 'transitionAgenda',
+      type: 'string',
+      description:
+        'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
+      validation: (Rule) => Rule.required(),
+      options: {
+        list: [
+          { title: 'Biomassa en voedsel', value: 'biomassa-en-voedsel' },
+          { title: 'Kunststoffen', value: 'kunststoffen' },
+          { title: 'Consumptiegoederen', value: 'consumenten-goederen' },
+          { title: 'Bouw', value: 'bouw' },
+          { title: 'Maakindustrie', value: 'maakindustrie' },
+        ], // <-- predefined values
+        layout: 'dropdown', // <-- defaults to 'dropdown'
+      },
+      group: 'devOnly',
+    },
+    {
       title: 'Thema intro',
       name: 'themaSubtitle',
       type: 'string',

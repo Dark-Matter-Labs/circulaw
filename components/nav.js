@@ -341,7 +341,7 @@ export default function Nav3(props) {
                                                   />
                                                 </Disclosure.Button>
                                                 <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
-                                                  <Link href='/houtbouw-stimuleren'>
+                                                  <Link href='/bouw/houtbouw'>
                                                     Houtbouw stimuleren
                                                   </Link>
                                                 </Disclosure.Panel>
@@ -362,7 +362,7 @@ export default function Nav3(props) {
                                                   />
                                                 </Disclosure.Button>
                                                 <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
-                                                  <Link href='/circulaire-matrasketen'>
+                                                  <Link href='/consumenten-goederen/matrasketen'>
                                                     Circulaire matrasketen
                                                   </Link>
                                                 </Disclosure.Panel>
@@ -386,7 +386,7 @@ export default function Nav3(props) {
                                                   />
                                                 </Disclosure.Button>
                                                 <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
-                                                  <Link href='/circulaire-windturbines'>
+                                                  <Link href='/maakindustrie/windturbines'>
                                                     Circulaire windturbines{' '}
                                                   </Link>
                                                 </Disclosure.Panel>
@@ -407,7 +407,7 @@ export default function Nav3(props) {
                                                   />
                                                 </Disclosure.Button>
                                                 <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
-                                                  <Link href='/plastic-in-de-bouw'>
+                                                  <Link href='/kunststoffen/plastic-in-de-bouw'>
                                                     Plastic in de bouw{' '}
                                                   </Link>
                                                 </Disclosure.Panel>
@@ -440,7 +440,7 @@ export default function Nav3(props) {
                                         <li
                                           key={aboutPage?.slug}
                                           className='p-base first:mt-4 mb-4 text-green-600 cursor-pointer'
-                                          onClick={() => router.push(`/about/${aboutPage?.slug}`)}
+                                          onClick={() => router.push(`/over/${aboutPage?.slug}`)}
                                         >
                                           {aboutPage.title}
                                         </li>
@@ -451,7 +451,9 @@ export default function Nav3(props) {
                               )}
                             </Disclosure>
                             <div className='text-green-800 border-b border-t py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
+                              <Link href='/over/Nieuws-en-blogs'>
                               Nieuws
+                              </Link>
                             </div>
                             <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
                               <Link href='/vraag-en-antwoord'>Vraag en antwoord</Link>
@@ -544,7 +546,7 @@ export default function Nav3(props) {
                                       ? 'text-white'
                                       : 'text-green-600 hover:text-green-500 '
                                   } p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
-                                  onClick={() => router.push('/houtbouw-stimuleren')}
+                                  onClick={() => router.push('/bouw/houtbouw')}
                                 >
                                   Houtbow stimuleren
                                 </div>
@@ -553,11 +555,11 @@ export default function Nav3(props) {
                             <div
                               className={`${
                                 router.pathname === '/'
-                                  ? 'bg-green-600 bg-opacity-50'
-                                  : 'bg-green-100 text-green-800'
+                                  ? 'bg-green-600 text-light-green-500 bg-opacity-50 opacity-50'
+                                  : 'bg-green-100 text-green-800 text-opacity-50'
                               } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
                             >
-                              <div className='p-lg-semibild opacity-50 text-light-green-500'>Voedsel en biomassa</div>
+                              <div className='p-lg-semibild '>Voedsel en biomassa</div>
                               <div className=''>
                                 <div
                                   className={`${
@@ -583,7 +585,7 @@ export default function Nav3(props) {
                                       ? 'text-white'
                                       : 'text-green-600 hover:text-green-500 '
                                   } p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
-                                  onClick={() => router.push('/circulaire-matrasketen')}
+                                  onClick={() => router.push('/consumenten-goederen/matrasketen')}
                                 >
                                   Circulaire matrasketen
                                 </div>
@@ -604,7 +606,7 @@ export default function Nav3(props) {
                                       ? 'text-white'
                                       : 'text-green-600 hover:text-green-500 '
                                   } p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
-                                  onClick={() => router.push('/circulaire-windturbines')}
+                                  onClick={() => router.push('/maakindustrie/windturbines')}
                                 >
                                   Circulaire windturbines
                                 </div>
@@ -625,7 +627,7 @@ export default function Nav3(props) {
                                       ? 'text-white'
                                       : 'text-green-600 hover:text-green-500 '
                                   } p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
-                                  onClick={() => router.push('/plastic-in-de-bouw')}
+                                  onClick={() => router.push('/kunststoffen/plastic-in-de-bouw')}
                                 >
                                   Plastic in de bouw
                                 </div>
@@ -702,7 +704,7 @@ export default function Nav3(props) {
                                   ? 'text-white'
                                   : 'text-green-600 hover:text-green-500'
                               } p-xs mb-2  hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
-                              onClick={() => router.push(`/about/${aboutPage?.slug}`)}
+                              onClick={() => router.push(`/over/${aboutPage?.slug}`)}
                             >
                               {aboutPage.title}
                             </div>
@@ -719,7 +721,9 @@ export default function Nav3(props) {
                       : 'text-green-800 hover:text-green-500'
                   } h-full relative p-sm  hover:underline z-100 mr-8 flex flex-row items-center cursor-pointer`}
                 >
+                  <Link href='/over/Nieuws-en-blogs'>
                   Nieuws
+                  </Link>
                 </div>
                 <div
                   className={`${
