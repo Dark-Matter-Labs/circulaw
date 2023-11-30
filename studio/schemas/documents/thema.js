@@ -58,7 +58,7 @@ export default {
         list: [
           { title: 'Biomassa en voedsel', value: 'biomassa-en-voedsel' },
           { title: 'Kunststoffen', value: 'kunststoffen' },
-          { title: 'Consumptiegoederen', value: 'consumenten-goederen' },
+          { title: 'Consumptiegoederen', value: 'consumptie-goederen' },
           { title: 'Bouw', value: 'bouw' },
           { title: 'Maakindustrie', value: 'maakindustrie' },
         ], // <-- predefined values

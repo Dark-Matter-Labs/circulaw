@@ -91,7 +91,7 @@ export default {
         list: [
           { title: 'Biomassa en voedsel', value: 'biomassa-en-voedsel' },
           { title: 'Kunststoffen', value: 'kunststoffen' },
-          { title: 'Consumptiegoederen', value: 'consumenten-goederen' },
+          { title: 'Consumptiegoederen', value: 'consumptie-goederen' },
           { title: 'Bouw', value: 'bouw' },
           { title: 'Maakindustrie', value: 'maakindustrie' },
         ], // <-- predefined values
@@ -122,9 +122,9 @@ export default {
       hidden: ({ document }) => document.themaOrProductGroup !== 'theme',
       options: {
         list: [
-          { title: 'Houtbouw', value: 'houtbouw-stimuleren' }, // need to change to refernece
-          { title: 'Circulaire windturbines', value: 'circulaire-windturbines' }, // need to change to reference
-          { title: 'Matrassen', value: 'circulaire-matrasketen' }, // need to change to reference
+          { title: 'Houtbouw', value: 'houtbouw' }, // need to change to refernece
+          { title: 'Circulaire windturbines', value: 'windturbines' }, // need to change to reference
+          { title: 'Matrassen', value: 'matrasketen' }, // need to change to reference
           { title: 'Plastic in de bouw', value: 'plastic-in-de-bouw' }, // Temp thema
         ],
         layout: 'dropdown',
