@@ -362,7 +362,7 @@ export default function Nav3(props) {
                                                   />
                                                 </Disclosure.Button>
                                                 <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
-                                                  <Link href='/consumenten-goederen/matrasketen'>
+                                                  <Link href='/consumptie-goederen/matrasketen'>
                                                     Circulaire matrasketen
                                                   </Link>
                                                 </Disclosure.Panel>
@@ -585,7 +585,7 @@ export default function Nav3(props) {
                                       ? 'text-white'
                                       : 'text-green-600 hover:text-green-500 '
                                   } p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
-                                  onClick={() => router.push('/consumenten-goederen/matrasketen')}
+                                  onClick={() => router.push('/consumptie-goederen/matrasketen')}
                                 >
                                   Circulaire matrasketen
                                 </div>

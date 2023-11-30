@@ -17,14 +17,19 @@ const navigation = {
     { name: 'Privacy', href: '/privacy-policy', className: '' },
     { name: 'Cookies', href: '/cookie-info', className: '' },
   ],
+  thema: [
+    {name:'Houtbouw stimuleren', slug: '/bouw/houtbouw'},
+    {name:'Circulaire windturbines', slug: '/maakindustrie/windturbines'},
+    {name:'Circulaire matrasketen', slug: '/consumptie-goederen/matrasketen'},
+    {name:'Plastic in de bouw', slug: '/kunststoffen/plastic-in-de-bouw'},
+
+  ]
 };
 
-export default function Footer(props) {
-  let themaSlugs = [];
-  if (props.themaSlugs) {
-    themaSlugs = props.themaSlugs;
-  }
 
+export default function Footer(props) {
+
+ 
   let aboutSlugs = [];
   if (props.aboutSlugs) {
     aboutSlugs = props.aboutSlugs;
@@ -88,14 +93,14 @@ export default function Footer(props) {
                         <h4 className='text-grey-100 mobile sm:desktop uppercase'>THEMA’S</h4>
                         <div className='grid grid-cols-1 gap-8 py-2 sm:py-0'>
                           <ul role='list' className='mt-4 space-y-4'>
-                            {themaSlugs?.map((slug) => (
-                              <li key={slug}>
+                            {navigation.thema?.map((thema) => (
+                              <li key={thema.name}>
                                 <a
-                                  href={`/${encodeURIComponent(slug)}`}
+                                  href={thema.slug}
                                   className='p-md text-grey-100'
                                 >
                                   <span className='inline-block first-letter:uppercase link-interaction-light-green-bg'>
-                                    {slug.replaceAll('-', ' ')}
+                                 {thema.name}
                                   </span>
                                 </a>
                               </li>
