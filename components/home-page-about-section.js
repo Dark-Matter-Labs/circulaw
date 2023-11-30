@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import CustomButton from './custom-button';
+import CustomButton from '@/components/custom-button';
 import aboutImage from '@/public/home-page/homepageAboutDeco.png';
 
 export default function HomePageAboutSection({ aboutSection }) {

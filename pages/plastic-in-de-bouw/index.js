@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import Layout from '../../components/layouts/layout';
-import SimpleThemaLayout from '../../components/layouts/simpleThemaLayout';
-import { client } from '../../lib/sanity';
-import { plasticInDeBouwQueries } from '../../lib/queries';
+import Layout from '@/components/layouts/layout';
+import SimpleThemaLayout from '@/components/layouts/simple-thema-layout';
+import { client } from '@/lib/sanity';
+import { plasticInDeBouwQueries } from '@/lib/queries';
 
 export default function PlasticInDeBouw({ thema, length, instruments }) {
   useEffect(() => {

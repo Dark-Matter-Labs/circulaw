@@ -1,31 +1,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import { useEffect, useState } from 'react';
 
-import LinkIcon from '../link-icon';
+import LinkIcon from '@/components/link-icon';
 import { urlFor } from '@/lib/sanity';
-import ThemeBottomSection from '../section-bottom-theme-index';
-import waarvoor from '../../public/thema-card-background/waarvoor.svg';
-import samenhang from '../../public/thema-card-background/samenhang.svg';
-import list from '../../public/thema-card-background/list.svg';
-import CustomButton from '../../components/custom-button';
+import ThemeBottomSection from '@/components/section-bottom-theme-index';
+import waarvoor from '@/public/thema-card-background/waarvoor.svg';
+import samenhang from '@/public/thema-card-background/samenhang.svg';
+import list from '@/public/thema-card-background/list.svg';
+import CustomButton from '@/components/custom-button';
 
 export default function ThemeLayout({ ...props }) {
   const themaData = props.thema;
-  // temp function to set link to list page - can be removed when new link structure is set.
-
-  const [listLink, setListLink] = useState();
-
-  useEffect(() => {
-    if (themaData.slug.current === 'circulaire-windturbines') {
-      setListLink('windturbines');
-    } else if (themaData.slug.current === 'houtbouw-stimuleren') {
-      setListLink('houtbouw');
-    } else {
-      setListLink('matrassen');
-    }
-  }, [themaData.slug]);
 
   return (
     <>
@@ -133,7 +119,7 @@ export default function ThemeLayout({ ...props }) {
               className='hidden sm:grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 sm:gap-x-8 max-w-8xl relative z-0'
               role='list'
             >
-              <Link href={`/${themaData.slug.current}/categorie`}>
+              <Link href={`/${themaData.transitionAgenda}/${themaData.slug.current}/categorie`}>
                 <li
                   role='listitem'
                   className='h-auto rounded-cl flex flex-col max-w-[355px] min-w-[300px]'
@@ -163,7 +149,7 @@ export default function ThemeLayout({ ...props }) {
                   </div>
                 </li>
               </Link>
-              <Link href={`/measures/${listLink}`}>
+              <Link href={`/${themaData.transitionAgenda}/${themaData.slug.current}/instrumenten/`}>
                 <li
                   role='listitem'
                   className='h-auto rounded-cl flex flex-col max-w-[355px] min-w-[300px]'
@@ -188,7 +174,7 @@ export default function ThemeLayout({ ...props }) {
                   </div>{' '}
                 </li>
               </Link>
-              <Link href={`/${themaData.slug.current}/welke-overheid-heeft`}>
+              <Link href={`/${themaData.transitionAgenda}/${themaData.slug.current}/overheidbevoegdheid`}>
                 <li
                   role='listitem'
                   className='h-auto rounded-cl flex flex-col max-w-[355px] min-w-[300px]'
@@ -218,7 +204,7 @@ export default function ThemeLayout({ ...props }) {
             {/* Mobile Cards */}
             <ul className='sm:hidden max-w-sm'>
               <li>
-                <Link href={`/${themaData.slug.current}/categorie`}>
+                <Link href={`/${themaData.transitionAgenda}/${themaData.slug.current}/categorie`}>
                   <div className='h-24 w-full rounded-cl bg-grey-50 shadow mb-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
@@ -240,7 +226,7 @@ export default function ThemeLayout({ ...props }) {
                 </Link>
               </li>
               <li>
-                <Link href={`/measures/${listLink}`}>
+                <Link href={`/${themaData.transitionAgenda}/${themaData.slug.current}/instrumenten/`}>
                   <div className='h-24 w-full rounded-cl bg-grey-50 shadow my-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
@@ -262,7 +248,7 @@ export default function ThemeLayout({ ...props }) {
                 </Link>
               </li>
               <li>
-                <Link href={`/${themaData.slug.current}/welke-overheid-heeft`}>
+                <Link href={`/${themaData.transitionAgenda}/${themaData.slug.current}/overheidbevoegdheid`}>
                   <div className='h-24 w-full rounded-cl bg-grey-50 shadow mt-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>

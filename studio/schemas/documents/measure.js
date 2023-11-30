@@ -86,11 +86,12 @@ export default {
       type: 'string',
       description:
         'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
+      validation: (Rule) => Rule.required(),
       options: {
         list: [
           { title: 'Biomassa en voedsel', value: 'biomassa-en-voedsel' },
           { title: 'Kunststoffen', value: 'kunststoffen' },
-          { title: 'Consumptiegoederen', value: 'consumptiegoederen' },
+          { title: 'Consumptiegoederen', value: 'consumenten-goederen' },
           { title: 'Bouw', value: 'bouw' },
           { title: 'Maakindustrie', value: 'maakindustrie' },
         ], // <-- predefined values
@@ -119,7 +120,6 @@ export default {
       description: 'Selecteer het thema waaronder dit instrument valt.',
       validation: (Rule) => Rule.required(),
       hidden: ({ document }) => document.themaOrProductGroup !== 'theme',
-
       options: {
         list: [
           { title: 'Houtbouw', value: 'houtbouw-stimuleren' }, // need to change to refernece

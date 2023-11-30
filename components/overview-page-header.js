@@ -1,10 +1,28 @@
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import InstrumentLinksDropdown from '@/components/instrument/instrument-links-dropdown';
 import { useRouter } from 'next/router';
 
 export default function OverviewPageHeader({ props, page }) {
-  const router = useRouter();
+
+    const router = useRouter();
+
+    // temp function until we update value of thema in cms. 
+    const [thema, setThema] = useState()
+
+    useEffect(() => {
+      if (props.thema === 'houtbouw-stimuleren') {
+        setThema('houtbouw')
+      } else if (props.thema === 'circulaire-matrasketen') {
+        setThema('matrasketen')
+      } else if (props.thema === 'circulaire-windturbines') {
+        setThema('windturbines')
+      } else {
+        setThema(props.thema)
+      }
+    },[props.thema])
+
   return (
     <>
       <div
@@ -26,7 +44,7 @@ export default function OverviewPageHeader({ props, page }) {
           </div>
           <div className='block sm:float-right py-3 sm:py-0'>
             <div className='p-base text-white pb-2 hidden sm:block'>Bekijk de instrumenten:</div>
-            <InstrumentLinksDropdown type={props.thema} page={page} />
+            <InstrumentLinksDropdown type={thema} page={page} />
           </div>
         </div>
         <div className='items-center grid grid-cols-10'>
