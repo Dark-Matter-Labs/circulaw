@@ -24,7 +24,9 @@ export const Structure = (S) =>
                 .child(
                   S.documentList()
                     .title('Houtbouw Measures')
-                    .filter('_type == "measure" &&  thema == "houtbouw-stimuleren" || thema == "houtbouw"'),
+                    .filter(
+                      '_type == "measure" &&  thema == "houtbouw-stimuleren" || thema == "houtbouw"',
+                    ),
                 ),
               S.listItem()
                 .title('Circulaire windturbines')
@@ -32,7 +34,9 @@ export const Structure = (S) =>
                 .child(
                   S.documentList()
                     .title('Circulaire windturbines measures')
-                    .filter('_type == "measure" &&  thema == "circulaire-windturbines" || thema == "windturbines"'),
+                    .filter(
+                      '_type == "measure" &&  thema == "circulaire-windturbines" || thema == "windturbines"',
+                    ),
                 ),
               S.listItem()
                 .title('Matrassen')
@@ -40,7 +44,9 @@ export const Structure = (S) =>
                 .child(
                   S.documentList()
                     .title('Matrassen measures')
-                    .filter('_type == "measure" && thema == "circulaire-matrasketen" || thema == "matrasketen"'),
+                    .filter(
+                      '_type == "measure" && thema == "circulaire-matrasketen" || thema == "matrasketen"',
+                    ),
                 ),
               S.listItem()
                 .title('Plastic in de bouw')

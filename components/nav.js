@@ -451,9 +451,7 @@ export default function Nav3(props) {
                               )}
                             </Disclosure>
                             <div className='text-green-800 border-b border-t py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
-                              <Link href='/over/Nieuws-en-blogs'>
-                              Nieuws
-                              </Link>
+                              <Link href='/over/Nieuws-en-blogs'>Nieuws</Link>
                             </div>
                             <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
                               <Link href='/vraag-en-antwoord'>Vraag en antwoord</Link>
@@ -480,7 +478,11 @@ export default function Nav3(props) {
                     <span
                       className={`${
                         mainMenuIsOpen === true
-                          ? [`${router.pathname === '/' ? 'text-light-green-500' : 'text-green-500'}`]
+                          ? [
+                              `${
+                                router.pathname === '/' ? 'text-light-green-500' : 'text-green-500'
+                              }`,
+                            ]
                           : [
                               `${
                                 router.pathname === '/'
@@ -649,7 +651,11 @@ export default function Nav3(props) {
                     <span
                       className={`${
                         overMenuIsOpen === true
-                          ? [`${router.pathname === '/' ? 'text-light-green-500' : 'text-green-500'}`]
+                          ? [
+                              `${
+                                router.pathname === '/' ? 'text-light-green-500' : 'text-green-500'
+                              }`,
+                            ]
                           : [
                               `${
                                 router.pathname === '/'
@@ -721,9 +727,7 @@ export default function Nav3(props) {
                       : 'text-green-800 hover:text-green-500'
                   } h-full relative p-sm  hover:underline z-100 mr-8 flex flex-row items-center cursor-pointer`}
                 >
-                  <Link href='/over/Nieuws-en-blogs'>
-                  Nieuws
-                  </Link>
+                  <Link href='/over/Nieuws-en-blogs'>Nieuws</Link>
                 </div>
                 <div
                   className={`${

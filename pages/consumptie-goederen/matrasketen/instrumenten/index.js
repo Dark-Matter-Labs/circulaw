@@ -20,7 +20,6 @@ export default function Measures({ totalNumberOfLaws }) {
   );
 }
 
-
 // move fetching of laws here
 export async function getStaticProps() {
   const totalNumberOfLaws = await client.fetch(matrassenQueries.matrassenLength);

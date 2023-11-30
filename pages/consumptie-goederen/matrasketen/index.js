@@ -17,8 +17,6 @@ export default function Matrassen({ featuredLaws, thema, length }) {
         numberOfLaws={length}
         listTitle={`Lijst van ${length} instrumenten`}
       />
-      
-
     </Layout>
   );
 }

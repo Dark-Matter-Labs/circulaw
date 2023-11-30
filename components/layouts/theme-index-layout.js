@@ -174,7 +174,9 @@ export default function ThemeLayout({ ...props }) {
                   </div>{' '}
                 </li>
               </Link>
-              <Link href={`/${themaData.transitionAgenda}/${themaData.slug.current}/overheidbevoegdheid`}>
+              <Link
+                href={`/${themaData.transitionAgenda}/${themaData.slug.current}/overheidbevoegdheid`}
+              >
                 <li
                   role='listitem'
                   className='h-auto rounded-cl flex flex-col max-w-[355px] min-w-[300px]'
@@ -226,7 +228,9 @@ export default function ThemeLayout({ ...props }) {
                 </Link>
               </li>
               <li>
-                <Link href={`/${themaData.transitionAgenda}/${themaData.slug.current}/instrumenten/`}>
+                <Link
+                  href={`/${themaData.transitionAgenda}/${themaData.slug.current}/instrumenten/`}
+                >
                   <div className='h-24 w-full rounded-cl bg-grey-50 shadow my-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
@@ -248,7 +252,9 @@ export default function ThemeLayout({ ...props }) {
                 </Link>
               </li>
               <li>
-                <Link href={`/${themaData.transitionAgenda}/${themaData.slug.current}/overheidbevoegdheid`}>
+                <Link
+                  href={`/${themaData.transitionAgenda}/${themaData.slug.current}/overheidbevoegdheid`}
+                >
                   <div className='h-24 w-full rounded-cl bg-grey-50 shadow mt-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
@@ -275,10 +281,6 @@ export default function ThemeLayout({ ...props }) {
           <div className='bg-gray-200'>
             <ThemeBottomSection props={props} />
           </div>
-
-        
-
-
         </div>
       </div>
     </>

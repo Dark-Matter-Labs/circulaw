@@ -52,7 +52,9 @@ export default function Instrumentheader({ data }) {
           <div className='mb-6 h-auto'>
             <div className='w-full flex'>
               <Link
-                href={`/${data?.measure?.transitionAgenda}/${data?.measure?.thema?.toLowerCase().replace(/ /g, '-')}`}
+                href={`/${data?.measure?.transitionAgenda}/${data?.measure?.thema
+                  ?.toLowerCase()
+                  .replace(/ /g, '-')}`}
                 className=''
               >
                 <Tag classes='border border-grey-100 hover:border-green-200 active:border-green-400 text-grey-100 mr-2 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>

@@ -18,18 +18,14 @@ const navigation = {
     { name: 'Cookies', href: '/cookie-info', className: '' },
   ],
   thema: [
-    {name:'Houtbouw stimuleren', slug: '/bouw/houtbouw'},
-    {name:'Circulaire windturbines', slug: '/maakindustrie/windturbines'},
-    {name:'Circulaire matrasketen', slug: '/consumptie-goederen/matrasketen'},
-    {name:'Plastic in de bouw', slug: '/kunststoffen/plastic-in-de-bouw'},
-
-  ]
+    { name: 'Houtbouw stimuleren', slug: '/bouw/houtbouw' },
+    { name: 'Circulaire windturbines', slug: '/maakindustrie/windturbines' },
+    { name: 'Circulaire matrasketen', slug: '/consumptie-goederen/matrasketen' },
+    { name: 'Plastic in de bouw', slug: '/kunststoffen/plastic-in-de-bouw' },
+  ],
 };
 
-
 export default function Footer(props) {
-
- 
   let aboutSlugs = [];
   if (props.aboutSlugs) {
     aboutSlugs = props.aboutSlugs;
@@ -95,12 +91,9 @@ export default function Footer(props) {
                           <ul role='list' className='mt-4 space-y-4'>
                             {navigation.thema?.map((thema) => (
                               <li key={thema.name}>
-                                <a
-                                  href={thema.slug}
-                                  className='p-md text-grey-100'
-                                >
+                                <a href={thema.slug} className='p-md text-grey-100'>
                                   <span className='inline-block first-letter:uppercase link-interaction-light-green-bg'>
-                                 {thema.name}
+                                    {thema.name}
                                   </span>
                                 </a>
                               </li>

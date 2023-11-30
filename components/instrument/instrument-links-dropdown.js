@@ -3,17 +3,17 @@ import { ChevronUpIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
 
 const links = {
-  'houtbouw': [
+  houtbouw: [
     '/bouw/houtbouw/categorie',
     '/bouw/houtbouw/instrumenten',
     '/bouw/houtbouw/overheidbevoegdheid',
   ],
-  'windturbines': [
+  windturbines: [
     '/maakindustrie/windturbines/categorie',
     '/maakindustrie/windturbines/instrumenten',
     '/maakindustrie/windturbines/overheidbevoegdheid',
   ],
-  'matrasketen': [
+  matrasketen: [
     '/consumenten-goederen/matrasketen/categorie',
     '/consumenten-goederen/matrasketen/instrumenten',
     '/consumenten-goederen/matrasketen/overheidbevoegdheid',
