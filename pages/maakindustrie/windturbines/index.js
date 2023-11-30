@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import Layout from '@/components/layouts/layout';
 import ThemeLayout from '@/components/layouts/theme-index-layout';
 import { client } from '@/lib/sanity';
-import LinkIcon from '@/components/link-icon';
 import Link from 'next/link';
 import { windQueries } from '@/lib/queries';
 
@@ -19,38 +18,44 @@ export default function Windturbine({ featuredLaws, length, thema }) {
         numberOfLaws={length}
         listTitle={`Lijst van ${length} instrumenten`}
       />
-      <div className='bg-[#F8FAF8]'>
-        <div className='global-margin pt-10 pb-20 border-t border-grey-800'>
-          <div className='p-lg'>
-            De informatie over windturbines is mede tot stand gekomen door nauwe samenwerking met de{' '}
-            <span className='text-green-500 link-lg inline-block '>
-              <Link
-                href='https://www.noord-holland.nl/'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='link-interaction'
-              >
-                Provincie Noord-Holland
-                <LinkIcon />
+      <div className='global-margin pt-10 pb-20'>
+            <div className='grid grid-cols-3 gap-x-28'>
+              <div className='flex flex-col gap-4'>
+                <div className='p-4xl-semibold'>
+              Analyse rapport  CircuLaw: Circulaire windturbines
+              </div>
+              <div className='p-base'>
+              De informatie over windturbines is mede tot stand gekomen door nauwe samenwerking met de provincie Norrd Holland
+              </div>
+              <div className=''>
+                <Link   href='/Analyse circulaire windturbines_PNH.pdf'
+                  target='_blank' className='flex flex-row items-center link-interaction p-lg-semibold text-green-500'>
+                  Lees meer
+                  <span className='pl-2'>
+                  {' '}
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    strokeWidth={1.5}
+                    stroke='currentColor'
+                    className='w-5  h-5'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      d='M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3'
+                    />
+                  </svg>
+                </span>
               </Link>
-            </span>
-            <div className=''>
-              {' '}
-              Zie het{' '}
-              <span className='text-green-500 link-lg inline-block '>
-                <Link
-                  href='/Analyse circulaire windturbines_PNH.pdf'
-                  target='_blank'
-                  className='link-interaction'
-                >
-                  rapport-Analyse CircuLaw: Circulaire Windturbines (download pdf).
-                  <LinkIcon />
-                </Link>
-              </span>{' '}
-            </div>{' '}
+              </div>
+             </div>
+              <div></div>
+              <div></div>
+            </div>
           </div>
-        </div>
-      </div>
+     
     </Layout>
   );
 }
