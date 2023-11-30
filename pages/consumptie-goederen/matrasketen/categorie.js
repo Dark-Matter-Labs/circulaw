@@ -8,7 +8,7 @@ export default function InfoPage({ expertiseData }) {
   return (
     <Layout title='CircuLaw - Samenhang Matrassen'>
       <ExpertiseLayout
-        thema='circulaire-matrasketen'
+        thema='matrasketen'
         expertiseData={expertiseData}
         title='Matrasketen instrumenten per categorie'
         icon={mattressIcon}
@@ -19,7 +19,7 @@ export default function InfoPage({ expertiseData }) {
 }
 
 export async function getStaticProps() {
-  const expertiseData = await client.fetch(categorieQuery('circulaire-matrasketen'));
+  const expertiseData = await client.fetch(categorieQuery('matrasketen'));
   return {
     props: {
       expertiseData,

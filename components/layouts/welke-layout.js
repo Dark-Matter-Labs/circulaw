@@ -139,7 +139,7 @@ export default function WelkeLayout({ ...props }) {
                 </>
               )}
 
-              {props.thema === 'circulaire-matrasketen' && (
+              {props.thema === 'matrasketen' && (
                 <>
                   {/* All regions = 12 */}
                   <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-white'></div>
