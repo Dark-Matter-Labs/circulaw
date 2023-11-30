@@ -8,7 +8,7 @@ export default function WelkeLayout({ ...props }) {
   const provLaws = props.provLaws;
   const gemLaws = props.gemLaws;
   const natLaws = props.natLaws;
-
+  console.log(allRegionLaws)
   const lines = [
     {
       start: 'allId',

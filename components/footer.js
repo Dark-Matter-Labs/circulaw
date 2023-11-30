@@ -34,7 +34,6 @@ export default function Footer(props) {
   if (props.vraagSlug) {
     FAQslug = props.vraagSlug;
   }
-
   const router = useRouter();
   return (
     <>
@@ -113,7 +112,7 @@ export default function Footer(props) {
                               aboutSlugs?.map((slug) => (
                                 <li key={slug.slug}>
                                   <a
-                                    href={`/about/${encodeURIComponent(slug.slug)}`}
+                                    href={`/over/${encodeURIComponent(slug.slug)}`}
                                     className='p-md text-grey-100'
                                   >
                                     <span className='inline-block first-letter:uppercase link-interaction-light-green-bg'>

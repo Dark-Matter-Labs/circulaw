@@ -110,7 +110,7 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
           <div>
             {/* This can be a component - policy list, theme bottom section + here */}
             {instruments.map((measure) => (
-              <Link href={'/measures/' + measure.slug.current} key={measure.titel}>
+              <Link href={`/${measure.transitionAgenda}/${measure.thema}/instrumenten/${measure.slug.current}`} key={measure.titel}>
                 <div className='block mb-14 sm:mb-10 max-w-[825px]'>
                   <div className='flex justify-start items-center -ml-1'>
                     {/* Expertise Tag */}
