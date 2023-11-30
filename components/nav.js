@@ -311,7 +311,7 @@ export default function Nav3(props) {
                                       open ? 'text-green-500' : 'text-green-800'
                                     } py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
                                   >
-                                    Productketen
+                                    Productketens
                                     <ChevronDownIcon
                                       className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`}
                                     />
@@ -490,7 +490,7 @@ export default function Nav3(props) {
                             ]
                       } hover:underline`}
                     >
-                      Productketen
+                      Productketens
                     </span>
                     <ChevronDownIcon
                       className={`${
