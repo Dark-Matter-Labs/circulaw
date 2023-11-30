@@ -11,9 +11,9 @@ export default function InstrumentMetaData({ data }) {
       <div className='hidden sm:block'>
         <div
           className={`${
-            (router.pathname === '/measures/houtbouw') |
-            (router.pathname === '/measures/windturbines') |
-            (router.pathname === '/measures/matrassen') |
+            (router.pathname === '/bouw/houtbouw/instrumenten') |
+            (router.pathname === '/maakindustrie/windturbines/instrumenten') |
+            (router.pathname === '/consumenten-goederen/matrasketen/instrumenten') |
             (router.pathname === '/maakindustrie/windturbines') |
             (router.pathname === '/bouw/houtbouw') |
             (router.pathname === '/consumenten-goederen/matrasketen') |
