@@ -6,7 +6,7 @@ import SocialButtons from '../social-buttons';
 import InstrumentMetaData from './instrument-metadata';
 import Tag from '../tag';
 
-export default function Instrumentheader({ data }) {
+export default function InstrumentHeader({ data }) {
   const router = useRouter();
 
   // eslint-disable-next-line
