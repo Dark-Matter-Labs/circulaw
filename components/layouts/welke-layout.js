@@ -8,7 +8,7 @@ export default function WelkeLayout({ ...props }) {
   const provLaws = props.provLaws;
   const gemLaws = props.gemLaws;
   const natLaws = props.natLaws;
-  console.log(allRegionLaws)
+
   const lines = [
     {
       start: 'allId',
@@ -72,7 +72,7 @@ export default function WelkeLayout({ ...props }) {
                   allRegionLaws?.map((law) => (
                     <Link
                       key={law.titel}
-                      href={`/measures/${law.slug.current}`}
+                      href={`/${law.transitionAgenda}/${law.thema}/instrumenten/${law.slug.current}`}
                       className='inline-block link-interaction'
                     >
                       <div className='flex items-start justify-start max-w-80 py-1'>
@@ -315,7 +315,7 @@ export default function WelkeLayout({ ...props }) {
                     {natLaws?.map((law) => (
                       <Link
                         key={law.titel}
-                        href={`/measures/${law.slug.current}`}
+                        href={`/${law.transitionAgenda}/${law.thema}/instrumenten/${law.slug.current}`}
                         className='link-interaction'
                       >
                         <div className='flex items-start justify-start max-w-80 py-1'>
@@ -364,7 +364,7 @@ export default function WelkeLayout({ ...props }) {
                     {provLaws?.map((law) => (
                       <Link
                         key={law.titel}
-                        href={`/measures/${law.slug.current}`}
+                        href={`/${law.transitionAgenda}/${law.thema}/instrumenten/${law.slug.current}`}
                         className='link-interaction'
                       >
                         <div className='flex items-start justify-start max-w-80 py-1'>
@@ -412,7 +412,7 @@ export default function WelkeLayout({ ...props }) {
                     {gemLaws?.map((law) => (
                       <Link
                         key={law.titel}
-                        href={`/measures/${law.slug.current}`}
+                        href={`/${law.transitionAgenda}/${law.thema}/instrumenten/${law.slug.current}`}
                         className='link-interaction'
                       >
                         <div

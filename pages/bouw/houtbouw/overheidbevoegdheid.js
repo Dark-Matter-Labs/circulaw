@@ -12,6 +12,7 @@ export default function InfoPage({ ...props }) {
     <Layout title='CircuLaw - Welke Overheid Heeft Houtbouw Stimuleren'>
       <WelkeLayout
         thema={thema}
+        transitionAgenda='bouw'
         title='Welke overheid kan welk instrument gebruiken voor houtbouw?'
         icon={woodIcon}
         p1='Je kunt op rijksniveau regels bepalen voor het hergebruik van producten. Ook kan het Rijk financieel bijdragen aan doelen die worden gesteld in een omgevingsvisie en/of een programma over houtbouw.'
