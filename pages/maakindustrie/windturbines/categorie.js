@@ -8,7 +8,7 @@ export default function InfoPage({ expertiseData }) {
   return (
     <Layout title='CircuLaw - Samenhang Matrassen'>
       <ExpertiseLayout
-        thema='circulaire-windturbines'
+        thema='windturbines'
         transitionAgenda=''
         title='Circulaire windturbines instrumenten per categorie'
         icon={WindmillIcon}
@@ -20,7 +20,7 @@ export default function InfoPage({ expertiseData }) {
 }
 
 export async function getStaticProps() {
-  const expertiseData = await client.fetch(categorieQuery('circulaire-windturbines'));
+  const expertiseData = await client.fetch(categorieQuery('windturbines'));
   return {
     props: {
       expertiseData,

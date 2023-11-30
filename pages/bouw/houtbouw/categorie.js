@@ -8,7 +8,7 @@ export default function InfoPage({ expertiseData }) {
     <Layout title='CircuLaw - Samenhang Aantal Houtbouwmaatregelen'>
       <ExpertiseLayout
         expertiseData={expertiseData}
-        thema='houtbouw-stimuleren'
+        thema='houtbouw'
         transitionAgenda='bouw'
         title='Houtbouw instrumenten per categorie'
         // p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
@@ -18,7 +18,7 @@ export default function InfoPage({ expertiseData }) {
 }
 
 export async function getStaticProps() {
-  const expertiseData = await client.fetch(categorieQuery('houtbouw-stimuleren'));
+  const expertiseData = await client.fetch(categorieQuery('houtbouw'));
   return {
     props: {
       expertiseData,

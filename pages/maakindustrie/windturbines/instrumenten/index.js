@@ -10,7 +10,7 @@ export default function Measures({ totalNumberOfLaws }) {
       <MeasuresLayout
         totalNumberOfLaws={totalNumberOfLaws}
         title='Lijst van alle circulaire windturbines instrumenten'
-        thema='circulaire-windturbines'
+        thema='windturbines'
         heading='Instrumenten om de inzet en circulariteit van windturbines te bevorderen'
         // introPara={`We hebben ${totalNumberOfLaws} kansrijke instrumenten gevonden die je kunt inzetten als het gaat om circulaire windturbines. Met sommige van deze instrumenten is al praktijkervaring opgedaan, met andere nog niet. Ga aan de slag! Met jouw ervaringen help je anderen weer verder.`}
         icon={WindmillIcon}

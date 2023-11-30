@@ -15,7 +15,7 @@ export default function PolicyList(props) {
   return (
     <>
       {lawData.map((law) => (
-        <Link href={`/${law.transitionAgenda}/${law.thema}/${law.slug.current}`} key={law.titel}>
+        <Link href={`/${law.transitionAgenda}/${law.thema}/instrumenten/${law.slug.current}`} key={law.titel}>
           <div className='block sm:ml-0 mb-10 sm:mb-8 max-w-[825px]'>
             <div className='flex justify-start items-center -ml-1'>
               {/* Expertise Tag */}

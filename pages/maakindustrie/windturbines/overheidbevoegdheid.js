@@ -5,7 +5,7 @@ import WindmillIcon from '@/public/icons/windmill.png';
 import windmillImageMob from '@/public/bevoegdheden/bevoegdheden-windmill.png';
 import { creatQuery } from '@/lib/queries';
 
-const thema = 'circulaire-windturbines';
+const thema = 'windturbines';
 
 export default function InfoPage({ ...props }) {
   return (
