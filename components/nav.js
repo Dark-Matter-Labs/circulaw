@@ -299,7 +299,7 @@ export default function Nav3(props) {
                         {...mobileFloatingProps()}
                       >
                         <div
-                          className='h-auto w-full bg-[#F8FBF8]'
+                          className='min-h-screen w-full bg-[#F8FBF8]'
                           style={{ ...mobileMenuTransitionStyles }}
                         >
                           <div className='flex flex-col items-start justify-end global-margin '>
@@ -370,7 +370,7 @@ export default function Nav3(props) {
                                             )}
                                           </Disclosure>
                                         </li>
-                                        <li className='p-base-semibold text-green-800 py-6 border-b opacity-50'>
+                                        <li className='p-base-semibold text-green-800 py-6 border-b opacity-75'>
                                           Voedsel en biomassa
                                         </li>
                                         <li className='p-base-semibold text-green-800 py-6 border-b'>
@@ -557,18 +557,18 @@ export default function Nav3(props) {
                             <div
                               className={`${
                                 router.pathname === '/'
-                                  ? 'bg-green-600 text-light-green-500 bg-opacity-50 opacity-50'
-                                  : 'bg-green-100 text-green-800 text-opacity-50'
+                                  ? 'bg-green-600 text-green-800 bg-opacity-75'
+                                  : 'bg-grey-100 text-green-800 text-opacity-75'
                               } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
                             >
                               <div className='p-lg-semibild '>Voedsel en biomassa</div>
                               <div className=''>
                                 <div
                                   className={`${
-                                    router.pathname === '/' ? 'text-gray-300' : 'text-gray-800'
+                                    router.pathname === '/' ? 'text-green-300 opacity-75' : 'text-gray-600'
                                   } p-xs mt-2 italic`}
                                 >
-                                  Thema’s voor deze productketen volgen binnekort
+                                  Thema’s voor deze productketen volgen binnenkort
                                 </div>
                               </div>
                             </div>
