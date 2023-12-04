@@ -19,7 +19,7 @@ export default function Windturbine({ featuredLaws, length, thema }) {
         listTitle={`Lijst van ${length} instrumenten`}
       />
       <div className='global-margin pt-10 pb-20'>
-        <div className='grid grid-cols-3 gap-x-28'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-28'>
           <div className='flex flex-col gap-4'>
             <div className='p-4xl-semibold'>Analyse rapport CircuLaw: Circulaire windturbines</div>
             <div className='p-base'>
