@@ -135,7 +135,7 @@
 
   
   .p-lg {
-    @apply font-jakarta text-xl font-normal leading-11;
+    @apply font-jakarta text-lg font-normal leading-11;
   }
 
   .p-lg-semibold {
