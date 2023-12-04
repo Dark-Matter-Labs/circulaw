@@ -86,11 +86,12 @@ export default {
       type: 'string',
       description:
         'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
+      validation: (Rule) => Rule.required(),
       options: {
         list: [
           { title: 'Biomassa en voedsel', value: 'biomassa-en-voedsel' },
           { title: 'Kunststoffen', value: 'kunststoffen' },
-          { title: 'Consumptiegoederen', value: 'consumptiegoederen' },
+          { title: 'Consumptiegoederen', value: 'consumptie-goederen' },
           { title: 'Bouw', value: 'bouw' },
           { title: 'Maakindustrie', value: 'maakindustrie' },
         ], // <-- predefined values
@@ -119,12 +120,12 @@ export default {
       description: 'Selecteer het thema waaronder dit instrument valt.',
       validation: (Rule) => Rule.required(),
       hidden: ({ document }) => document.themaOrProductGroup !== 'theme',
-
       options: {
         list: [
-          { title: 'Houtbouw', value: 'houtbouw-stimuleren' }, // need to change to refernece
-          { title: 'Circulaire windturbines', value: 'circulaire-windturbines' }, // need to change to reference
-          { title: 'Matrassen', value: 'circulaire-matrasketen' }, // need to change to reference
+          { title: 'Houtbouw', value: 'houtbouw' }, // need to change to refernece
+          { title: 'Circulaire windturbines', value: 'windturbines' }, // need to change to reference
+          { title: 'Matrassen', value: 'matrasketen' }, // need to change to reference
+          { title: 'Plastic in de bouw', value: 'plastic-in-de-bouw' }, // Temp thema
         ],
         layout: 'dropdown',
       },

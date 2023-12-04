@@ -5,13 +5,14 @@ import mattressIcon from '@/public/icons/matressIcon.svg';
 import matrassenImageMob from '@/public/bevoegdheden/bevoegdheden-matrassen.png';
 import { creatQuery } from '@/lib/queries';
 
-const thema = 'circulaire-matrasketen';
+const thema = 'matrasketen';
 
 export default function InfoPage({ ...props }) {
   return (
     <Layout title='CircuLaw - Welke Overheid Heeft Matrasketen'>
       <WelkeLayout
         thema={thema}
+        transitionAgenda='consumptie-goederen'
         title='Welke overheid kan welk instrument inzetten om de circulaire matrasketen te stimuleren?'
         icon={mattressIcon}
         p1='Rijk, provincies en gemeenten kunnen op verschillende manieren circulaire matrassen inkopen, bijvoorbeeld door middel van een innovatiepartnerschap, concurrentiegerichte dialogen of het verwerken van circulariteit in geschiktheidseisen. Daarnaast kan een terugnamegarantie helpen bij het recyclen van de matrassen aan het einde van hun levensduur. Dit kun je ook meenemen in de inkoopprocedure. Subsidies kunnen helpen om de ontwikkeling en productie van circulaire matrassen voor partijen aantrekkelijker te maken.'

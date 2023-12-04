@@ -3,7 +3,7 @@ import { ArrowRightIcon } from '@heroicons/react/outline';
 
 export default function BetaBanner() {
   return (
-    <div className='w-52 rounded-b-[16px] px-2 flex items-center justify-center bg-[#E6E6E6]'>
+    <div className='lgNav:w-52 rounded-b-[16px] px-3 flex items-center justify-center bg-[#E6E6E6]'>
       <div className='text-grey-800'>
         <h5 className='inline font-bold mobile sm:desktop'>Beta</h5>{' '}
         <h5 className='inline mobile sm:desktop font-normal'>versie - </h5>

@@ -26,6 +26,7 @@ export default function Layout({
   const aboutNavItems = aboutPageSlugs;
   const vraagSlug = vraagAntwoordSlug?.slug;
   const themaSlugs = themaPageSlugs?.slugs;
+
   return (
     <>
       <Nav
@@ -48,7 +49,7 @@ export default function Layout({
         <meta property='og:image' content={ogImgUrl} />
         <meta property='og:url' content={canonicalUrl} />
       </Head>
-      <main className=''>{children}</main>
+      <main className='w-full'>{children}</main>
       <CookieConsent />
       <Footer
         vraagSlug={vraagSlug}

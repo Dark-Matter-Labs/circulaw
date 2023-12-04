@@ -13,6 +13,7 @@ export default function Matrassen({ featuredLaws, thema, length }) {
     <Layout title='CircuLaw - Circulaire Matrasketen'>
       <ThemeLayout
         featuredLaws={featuredLaws}
+        transitionAgenda='consumptie-goederen'
         thema={thema}
         numberOfLaws={length}
         listTitle={`Lijst van ${length} instrumenten`}

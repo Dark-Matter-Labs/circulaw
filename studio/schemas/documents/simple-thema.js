@@ -2,8 +2,8 @@ import { BsCircle } from 'react-icons/bs';
 import { lineBreak } from '../../components/headerInput';
 
 export default {
-  title: 'Thema',
-  name: 'thema',
+  title: 'Simple Thema (top 5)',
+  name: 'simpleThema',
   type: 'document',
   icon: BsCircle,
   groups: [
@@ -102,75 +102,12 @@ export default {
       description: 'Gebruik originele formaat',
       group: 'editableContent',
     },
-
     {
-      title: 'Titel overzichten',
-      name: 'overviewsTitle',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-      description: 'Titel die boven de 3 kaarten met instrumenten en overzichten',
-      group: 'editableContent',
-    },
-    {
-      title: 'Titel uitgelichte instrumenten',
-      name: 'featuredInstrumentTitle',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-      description: 'Is de titel die in kop komt: Uitgelicht: 3 [titel]',
-      group: 'editableContent',
-    },
-    {
-      title: 'Subkop onder uitgelichte instrumenten',
-      name: 'featureInstrumentSubtitle',
-      type: 'string',
-      description: 'Subkop onder de kop Uitgelicht: 3 [titel]',
-      validation: (Rule) => Rule.required(),
-      group: 'editableContent',
-    },
-    {
-      name: 'overviewCards',
-      title: 'OVERZICHTSKAARTEN',
-      type: 'text',
-      components: {
-        input: lineBreak,
-      },
-      group: 'editableContent',
-    },
-    {
-      title: 'Intro op lijstkaart',
-      name: 'listText',
-      type: 'text',
-      description:
-        'Tekst over de instrumentenlijst. Titel op deze kaart wordt automatisch gegenereerd.',
-      validation: (Rule) => Rule.required(),
-      group: 'editableContent',
-    },
-    {
-      title: 'Titel samenhang-kaart',
-      name: 'samenhangTitle',
-      type: 'string',
-      validation: (Rule) => Rule.required().max(70),
-      group: 'editableContent',
-    },
-    {
-      title: 'Intro samenhang-kaart',
-      name: 'samenhangText',
+      title: 'Intro text',
+      name: 'introText',
       type: 'text',
       validation: (Rule) => Rule.required(),
-      group: 'editableContent',
-    },
-    {
-      title: 'Titel bevoegdheden-kaart',
-      name: 'welkeTitle',
-      type: 'string',
-      validation: (Rule) => Rule.required().max(70),
-      group: 'editableContent',
-    },
-    {
-      title: 'Intro bevoegdhedenkaart',
-      name: 'welkeText',
-      type: 'text',
-      validation: (Rule) => Rule.required(),
+      description: 'Text to introduce the top 5 instruments',
       group: 'editableContent',
     },
     {

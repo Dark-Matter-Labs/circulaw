@@ -33,7 +33,7 @@ export default function RLadderTooltip({ children, icon }) {
       </button>
 
       <Transition.Root show={open} as={Fragment}>
-        <Dialog as='div' className='relative z-50' onClose={setOpen}>
+        <Dialog as='div' className='relative z-120' onClose={setOpen}>
           <Transition.Child
             as={Fragment}
             enter='ease-in-out duration-500'
@@ -58,7 +58,7 @@ export default function RLadderTooltip({ children, icon }) {
                   leaveFrom='translate-x-0'
                   leaveTo='translate-x-full'
                 >
-                  <Dialog.Panel className='pointer-events-auto relative w-screen max-w-md'>
+                  <Dialog.Panel className='pointer-events-auto relative w-full max-w-md'>
                     <Transition.Child
                       as={Fragment}
                       enter='ease-in-out duration-500'

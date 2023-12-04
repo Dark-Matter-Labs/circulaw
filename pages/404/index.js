@@ -29,7 +29,7 @@ export default function NotFound() {
             </Link>{' '}
           </li>
           <li className='text-green-500 p-base-semibold underline'>
-            <Link href='/consumenten-goederen/matrasketen' className='link-interaction'>
+            <Link href='/consumptie-goederen/matrasketen' className='link-interaction'>
               Circulaire matrasketen{' '}
               <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
             </Link>{' '}

@@ -13,6 +13,7 @@ export default function Houtbouw({ featuredLaws, thema, length }) {
     <Layout title='CircuLaw - Houtbouw Stimuleren'>
       <ThemeLayout
         featuredLaws={featuredLaws}
+        transitionAgenda='bouw'
         thema={thema}
         numberOfLaws={length}
         listTitle={`Lijst van ${length} instrumenten`}

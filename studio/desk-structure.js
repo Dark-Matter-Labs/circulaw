@@ -24,7 +24,9 @@ export const Structure = (S) =>
                 .child(
                   S.documentList()
                     .title('Houtbouw Measures')
-                    .filter('_type == "measure" &&  thema == "houtbouw-stimuleren"'),
+                    .filter(
+                      '_type == "measure" &&  thema == "houtbouw-stimuleren" || thema == "houtbouw"',
+                    ),
                 ),
               S.listItem()
                 .title('Circulaire windturbines')
@@ -32,7 +34,9 @@ export const Structure = (S) =>
                 .child(
                   S.documentList()
                     .title('Circulaire windturbines measures')
-                    .filter('_type == "measure" &&  thema == "circulaire-windturbines"'),
+                    .filter(
+                      '_type == "measure" &&  thema == "circulaire-windturbines" || thema == "windturbines"',
+                    ),
                 ),
               S.listItem()
                 .title('Matrassen')
@@ -40,7 +44,17 @@ export const Structure = (S) =>
                 .child(
                   S.documentList()
                     .title('Matrassen measures')
-                    .filter('_type == "measure" && thema == "circulaire-matrasketen"'),
+                    .filter(
+                      '_type == "measure" && thema == "circulaire-matrasketen" || thema == "matrasketen"',
+                    ),
+                ),
+              S.listItem()
+                .title('Plastic in de bouw')
+                .icon(GiBed)
+                .child(
+                  S.documentList()
+                    .title('Plastic in de bouw measures')
+                    .filter('_type == "measure" && thema == "plastic-in-de-bouw"'),
                 ),
             ]),
         ),
@@ -56,7 +70,9 @@ export const Structure = (S) =>
       S.listItem()
         .title("Thema's")
         .icon(BsCircle)
-        .child(S.documentList().title("Thema's").filter('_type == "thema"')),
+        .child(
+          S.documentList().title("Thema's").filter('_type == "thema" || _type == "simpleThema"'),
+        ),
       S.documentListItem().schemaType('FAQpage').title('FAQ Page').icon(FaQuestion),
       S.listItem()
         .title('English Page')

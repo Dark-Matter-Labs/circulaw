@@ -5,13 +5,14 @@ import WindmillIcon from '@/public/icons/windmill.png';
 import windmillImageMob from '@/public/bevoegdheden/bevoegdheden-windmill.png';
 import { creatQuery } from '@/lib/queries';
 
-const thema = 'circulaire-windturbines';
+const thema = 'windturbines';
 
 export default function InfoPage({ ...props }) {
   return (
     <Layout title='CircuLaw - Welke Overheid Heeft Windturbines'>
       <WelkeLayout
         thema={thema}
+        transitionAgenda='maakindustrie'
         title='Welk instrument kan welke overheid gebruiken voor circulaire windturbines?'
         icon={WindmillIcon}
         p1='Rijk, provincies en gemeenten kunnen circulaire windturbines opnemen in hun omgevingsvisie om kenbaar te maken dat zij hiermee aan de slag willen. Het vergroten van het aandeel publieke grond van provincies en gemeenten maakt het mogelijk om circulaire eisen te stellen bij de uitgifte van grond. Dit kan bijvoorbeeld door middel van tenders of het sluiten van huurovereenkomsten. Daarnaast helpen subsidies om bijvoorbeeld de productie, het aanschaffen of recyclen van circulaire windturbines aan te moedigen.'

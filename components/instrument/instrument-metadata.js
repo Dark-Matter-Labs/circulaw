@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import RTooltip from '../tooltip-r-ladder';
+import RLadderTooltip from '@/components/r-ladder-tooltip';
 import JHTooltip from '../tooltip-juridische-houdbaarheid';
 import JITooltip from '../tooltip-juridische-invloed';
 
@@ -11,9 +11,13 @@ export default function InstrumentMetaData({ data }) {
       <div className='hidden sm:block'>
         <div
           className={`${
-            (router.pathname === '/measures/houtbouw') |
-            (router.pathname === '/measures/windturbines') |
-            (router.pathname === '/measures/matrassen')
+            (router.pathname === '/bouw/houtbouw/instrumenten') |
+            (router.pathname === '/maakindustrie/windturbines/instrumenten') |
+            (router.pathname === '/consumenten-goederen/matrasketen/instrumenten') |
+            (router.pathname === '/maakindustrie/windturbines') |
+            (router.pathname === '/bouw/houtbouw') |
+            (router.pathname === '/consumenten-goederen/matrasketen') |
+            (router.pathname === '/kunststoffen/plastic-in-de-bouw')
               ? 'border-y border-gray-300'
               : 'pt-5 pb-3'
           } h-auto flex flex-row gap-x-6 grow-0 items-center justify-self-center max-w-[860px]`}
@@ -108,7 +112,7 @@ export default function InstrumentMetaData({ data }) {
                   </div>
                 ))}
                 {data?.measure?.slug && (
-                  <RTooltip>
+                  <RLadderTooltip>
                     <svg
                       width='24'
                       height='24'
@@ -123,7 +127,7 @@ export default function InstrumentMetaData({ data }) {
                         fill='#FDFDFD'
                       />
                     </svg>
-                  </RTooltip>
+                  </RLadderTooltip>
                 )}
               </div>
             </div>
@@ -227,7 +231,7 @@ export default function InstrumentMetaData({ data }) {
                   </div>
                 ))}
                 {data?.measure?.slug && (
-                  <RTooltip>
+                  <RLadderTooltip>
                     <svg
                       width='24'
                       height='24'
@@ -242,7 +246,7 @@ export default function InstrumentMetaData({ data }) {
                         fill='#FDFDFD'
                       />
                     </svg>
-                  </RTooltip>
+                  </RLadderTooltip>
                 )}
               </div>
             </div>

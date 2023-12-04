@@ -7,6 +7,7 @@ import englishPage from './documents/english-page';
 import thema from './documents/thema';
 import faq from './documents/faq';
 import newsItem from './documents/news';
+import simpleThema from './documents/simple-thema';
 
 import greenBox from './objects/green-box';
 import pdfBlock from './objects/pdf-block';
@@ -30,6 +31,7 @@ export const schemaTypes = [
   thema,
   faq,
   newsItem,
+  simpleThema,
 
   // OBJECTS
   greenBox,

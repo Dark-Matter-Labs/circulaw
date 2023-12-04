@@ -3,20 +3,20 @@ import { ChevronUpIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
 
 const links = {
-  'houtbouw': [
+  houtbouw: [
     '/bouw/houtbouw/categorie',
     '/bouw/houtbouw/instrumenten',
-    '/bouw/houtbouw//welke-overheid',
+    '/bouw/houtbouw/overheidbevoegdheid',
   ],
-  'windturbines': [
+  windturbines: [
     '/maakindustrie/windturbines/categorie',
     '/maakindustrie/windturbines/instrumenten',
-    '/maakindustrie/windturbines/welke-overheid-heeft',
+    '/maakindustrie/windturbines/overheidbevoegdheid',
   ],
-  'matrasketen': [
+  matrasketen: [
     '/consumenten-goederen/matrasketen/categorie',
     '/consumenten-goederen/matrasketen/instrumenten',
-    '/consumenten-goederen/matrasketen/welke-overheid-heeft',
+    '/consumenten-goederen/matrasketen/overheidbevoegdheid',
   ],
 };
 
