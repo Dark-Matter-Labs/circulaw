@@ -26,7 +26,7 @@ export default function ThemeLayout({ ...props }) {
               className='z-0 bg-cover'
               priority
             />
-                        <div className='w-full h-full bg-gradient-to-t from-[#035E46] to-[#035E4600] z-0 absolute'></div>
+            <div className='w-full h-full bg-gradient-to-t from-[#035E46] to-[#035E4600] z-0 absolute'></div>
 
             <div className='global-margin h-[360px] z-5 relative flex flex-col justify-between'>
               <div className='pt-8'>

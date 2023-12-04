@@ -19,7 +19,7 @@ import {
   FloatingOverlay,
 } from '@floating-ui/react';
 
-import BetaBanner from './beta-banner';
+import BetaBanner from '@/components/beta-banner';
 import animationData from '@/public/CL_Home_Logo_Loop';
 import HomepageHeader from '@/components/homepage-header';
 import { ChevronDownIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
@@ -517,6 +517,25 @@ export default function Nav3(props) {
                             </div>
                             <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
                               <Link href='/contact'>Contact</Link>
+                            </div>
+                            <div className='flex flex-row items-end w-full justify-end'>
+                              <div className='flex justify-center items-center justify-self-end min-w-[10%] p-4 text-black'>
+                                <span
+                                  className={`link-interaction ${
+                                    router.pathname === '/en' ? 'enLink' : 'enLinkSelected'
+                                  }`}
+                                >
+                                  <Link href='/'>NL</Link>
+                                </span>
+                                <span className='px-1 enLink'>|</span>
+                                <span
+                                  className={`link-interaction ${
+                                    router.pathname === '/en' ? 'enLinkSelected' : 'enLink'
+                                  }`}
+                                >
+                                  <Link href='/en'>EN</Link>
+                                </span>
+                              </div>
                             </div>
                           </div>
                         </div>
