@@ -22,7 +22,7 @@ import {
 import BetaBanner from './beta-banner';
 import animationData from '@/public/CL_Home_Logo_Loop';
 import HomepageHeader from '@/components/homepage-header';
-import { ChevronDownIcon, MenuIcon } from '@heroicons/react/outline';
+import { ChevronDownIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Disclosure, Transition } from '@headlessui/react';
 
 const defaultOptions = {
@@ -282,7 +282,8 @@ export default function Nav3(props) {
                   {...mobileRefProps()}
                 >
                   <span className='sr-only'>Open main menu</span>
-                  <MenuIcon className='block h-10 w-10' aria-hidden='true' />
+                  {mobileMenuIsOpen ? (<XIcon className='block h-10 w-10' aria-hidden='true' />
+) : (<MenuIcon className='block h-10 w-10' aria-hidden='true' />)}
                 </button>
                 {mobileMenuIsMounted && (
                   <FloatingOverlay
@@ -340,11 +341,22 @@ export default function Nav3(props) {
                                                     } h-4 w-4 mt-1 ml-2`}
                                                   />
                                                 </Disclosure.Button>
+                                                <Transition
+                                    show={open}
+                                    enter='transition duration-300 ease-out'
+                                    enterFrom='transform opacity-0'
+                                    enterTo='transform opacity-100'
+                                    leave='transition duration-75 ease-out'
+                                    leaveFrom='transform opacity-300'
+                                    leaveTo='transform opacity-0'
+                                    className='w-full'
+                                  >
                                                 <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
                                                   <Link href='/bouw/houtbouw'>
                                                     Houtbouw stimuleren
                                                   </Link>
                                                 </Disclosure.Panel>
+                                                </Transition>
                                               </>
                                             )}
                                           </Disclosure>
@@ -361,11 +373,22 @@ export default function Nav3(props) {
                                                     } h-4 w-4 mt-1 ml-2`}
                                                   />
                                                 </Disclosure.Button>
+                                                <Transition
+                                    show={open}
+                                    enter='transition duration-300 ease-out'
+                                    enterFrom='transform opacity-0'
+                                    enterTo='transform opacity-100'
+                                    leave='transition duration-75 ease-out'
+                                    leaveFrom='transform opacity-300'
+                                    leaveTo='transform opacity-0'
+                                    className='w-full'
+                                  >
                                                 <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
                                                   <Link href='/consumptie-goederen/matrasketen'>
                                                     Circulaire matrasketen
                                                   </Link>
                                                 </Disclosure.Panel>
+                                                </Transition>
                                               </>
                                             )}
                                           </Disclosure>
@@ -385,11 +408,22 @@ export default function Nav3(props) {
                                                     } h-4 w-4 mt-1 ml-2`}
                                                   />
                                                 </Disclosure.Button>
+                                                <Transition
+                                    show={open}
+                                    enter='transition duration-300 ease-out'
+                                    enterFrom='transform opacity-0'
+                                    enterTo='transform opacity-100'
+                                    leave='transition duration-75 ease-out'
+                                    leaveFrom='transform opacity-300'
+                                    leaveTo='transform opacity-0'
+                                    className='w-full'
+                                  >
                                                 <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
                                                   <Link href='/maakindustrie/windturbines'>
                                                     Circulaire windturbines{' '}
                                                   </Link>
                                                 </Disclosure.Panel>
+                                                </Transition>
                                               </>
                                             )}
                                           </Disclosure>
@@ -406,11 +440,22 @@ export default function Nav3(props) {
                                                     } h-4 w-4 mt-1 ml-2`}
                                                   />
                                                 </Disclosure.Button>
+                                                <Transition
+                                    show={open}
+                                    enter='transition duration-300 ease-out'
+                                    enterFrom='transform opacity-0'
+                                    enterTo='transform opacity-100'
+                                    leave='transition duration-75 ease-out'
+                                    leaveFrom='transform opacity-300'
+                                    leaveTo='transform opacity-0'
+                                    className='w-full'
+                                  >
                                                 <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
                                                   <Link href='/kunststoffen/plastic-in-de-bouw'>
                                                     Plastic in de bouw{' '}
                                                   </Link>
                                                 </Disclosure.Panel>
+                                                </Transition>
                                               </>
                                             )}
                                           </Disclosure>
@@ -434,6 +479,16 @@ export default function Nav3(props) {
                                       className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`}
                                     />
                                   </Disclosure.Button>
+                                  <Transition
+                                    show={open}
+                                    enter='transition duration-300 ease-out'
+                                    enterFrom='transform opacity-0'
+                                    enterTo='transform opacity-100'
+                                    leave='transition duration-75 ease-out'
+                                    leaveFrom='transform opacity-300'
+                                    leaveTo='transform opacity-0'
+                                    className='w-full'
+                                  >
                                   <Disclosure.Panel className='ml-4'>
                                     <ul>
                                       {props?.aboutSlugs?.map((aboutPage) => (
@@ -447,6 +502,7 @@ export default function Nav3(props) {
                                       ))}
                                     </ul>
                                   </Disclosure.Panel>
+                                  </Transition>
                                 </>
                               )}
                             </Disclosure>
@@ -516,7 +572,7 @@ export default function Nav3(props) {
                   </button>
                   {/* REFACTOR CARDS */}
                   {mainMenuIsMounted && (
-                    <FloatingFocusManager context={mainMenuContext} modal={false}>
+                    <FloatingFocusManager context={mainMenuContext} modal={true} disabled>
                       <div
                         ref={mainMenuRef.setFloating}
                         style={mainMenuStyles}
@@ -542,7 +598,7 @@ export default function Nav3(props) {
                             >
                               Bouw
                               <div className=''>
-                                <div
+                                <button
                                   className={`${
                                     router.pathname === '/'
                                       ? 'text-white'
@@ -551,7 +607,7 @@ export default function Nav3(props) {
                                   onClick={() => router.push('/bouw/houtbouw')}
                                 >
                                   Houtbow stimuleren
-                                </div>
+                                </button>
                               </div>
                             </div>
                             <div
@@ -581,7 +637,7 @@ export default function Nav3(props) {
                             >
                               <div className='p-lg-semibild break-words '>Consumptiegoederen</div>
                               <div className=''>
-                                <div
+                                <button
                                   className={`${
                                     router.pathname === '/'
                                       ? 'text-white'
@@ -590,7 +646,7 @@ export default function Nav3(props) {
                                   onClick={() => router.push('/consumptie-goederen/matrasketen')}
                                 >
                                   Circulaire matrasketen
-                                </div>
+                                </button>
                               </div>
                             </div>
                             <div
@@ -602,7 +658,7 @@ export default function Nav3(props) {
                             >
                               <div className='p-lg-semibild '>Maakindustrie</div>
                               <div className=''>
-                                <div
+                                <button
                                   className={`${
                                     router.pathname === '/'
                                       ? 'text-white'
@@ -611,7 +667,7 @@ export default function Nav3(props) {
                                   onClick={() => router.push('/maakindustrie/windturbines')}
                                 >
                                   Circulaire windturbines
-                                </div>
+                                </button>
                               </div>
                             </div>
                             <div
@@ -623,7 +679,7 @@ export default function Nav3(props) {
                             >
                               <div className='p-lg-semibild '>Kunststoffen</div>
                               <div className=''>
-                                <div
+                                <button
                                   className={`${
                                     router.pathname === '/'
                                       ? 'text-white'
@@ -632,7 +688,7 @@ export default function Nav3(props) {
                                   onClick={() => router.push('/kunststoffen/plastic-in-de-bouw')}
                                 >
                                   Plastic in de bouw
-                                </div>
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -688,12 +744,12 @@ export default function Nav3(props) {
                     />
                   </button>
                   {overMenuIsMounted && (
-                    <FloatingFocusManager context={overContext} modal={false}>
+                    <FloatingFocusManager context={overContext} modal={false} disabled>
                       <div
                         ref={overRef.setFloating}
                         style={overStyles}
                         {...overFloatingProps()}
-                        className='h-60 w-60 -z-10 '
+                        className='h-60 w-72 -z-10 '
                       >
                         <div
                           className={`${
@@ -703,7 +759,7 @@ export default function Nav3(props) {
                           onMouseLeave={() => setOverMenuIsOpen(false)}
                         >
                           {props?.aboutSlugs?.map((aboutPage) => (
-                            <div
+                            <button
                               key={aboutPage?.slug}
                               className={`${
                                 router.pathname === '/'
@@ -713,7 +769,7 @@ export default function Nav3(props) {
                               onClick={() => router.push(`/over/${aboutPage?.slug}`)}
                             >
                               {aboutPage.title}
-                            </div>
+                            </button>
                           ))}
                         </div>
                       </div>
