@@ -15,7 +15,7 @@ export default function ThemeCard({ props, type }) {
             {type === 'list' && (
               <div className='bg-green-600 shadow z-5 w-full rounded-t-cl h-full flex items-center justify-center'>
                 <div className='w-5/6 h-5/6 relative'>
-                  <Link href={cardData.listLink}>
+                  <Link href={cardData?.listLink}>
                     <Image src={list} alt='' fill />
                   </Link>
                 </div>
@@ -24,7 +24,7 @@ export default function ThemeCard({ props, type }) {
             {type === 'samenhang' && (
               <div className='bg-green-600 shadow z-5 w-full rounded-t-cl h-full flex items-center justify-center'>
                 <div className='w-5/6 h-5/6 relative'>
-                  <Link href={cardData.samenhangLink}>
+                  <Link href={cardData?.samenhangLink}>
                     <Image src={samenhang} alt='' fill />
                   </Link>
                 </div>
@@ -33,7 +33,7 @@ export default function ThemeCard({ props, type }) {
             {type === 'waarvoor' && (
               <div className='bg-green-600 shadow z-5 w-full rounded-t-cl h-full flex items-center justify-center'>
                 <div className='w-5/6 h-5/6 relative'>
-                  <Link href={cardData.welkeLink}>
+                  <Link href={cardData?.welkeLink}>
                     <Image src={waarvoor} alt='' fill />
                   </Link>
                 </div>
@@ -43,7 +43,7 @@ export default function ThemeCard({ props, type }) {
         </div>
         {type === 'list' && (
           <div className='row-span-3'>
-            <Link href={cardData.listLink} className='w-full h-full'>
+            <Link href={cardData?.listLink} className='w-full h-full'>
               <div className='row-span-3 px-10'>
                 <h3 className='mobile sm:desktop pt-6'>{props.listTitle}</h3>
                 <p className='body-new py-6'>{cardData.listText}</p>
@@ -53,7 +53,7 @@ export default function ThemeCard({ props, type }) {
         )}
         {type === 'samenhang' && (
           <div className='row-span-3'>
-            <Link href={cardData.samenhangLink} className='w-full h-full'>
+            <Link href={cardData?.samenhangLink} className='w-full h-full'>
               <div className='row-span-3 px-10'>
                 <h3 className='mobile sm:desktop pt-6'>{cardData.samenhangTitle}</h3>
                 <p className='body-new py-6'>{cardData.samenhangText}</p>
@@ -63,7 +63,7 @@ export default function ThemeCard({ props, type }) {
         )}
         {type === 'waarvoor' && (
           <div className='row-span-3'>
-            <Link href={cardData.welkeLink}>
+            <Link href={cardData?.welkeLink}>
               <div className='row-span-3 px-10'>
                 <h3 className='mobile sm:desktop pt-6'>{cardData?.welkeTitle}</h3>
                 <p className='body-new py-6'>{cardData?.welkeText}</p>
@@ -73,7 +73,7 @@ export default function ThemeCard({ props, type }) {
         )}
 
         {type === 'list' && (
-          <Link href={cardData.listLink}>
+          <Link href={cardData?.listLink}>
             <div className='pb-6 pl-8'>
               <CustomButton color='whiteBackground'>
                 <div>Naar de lijst</div>
@@ -100,7 +100,7 @@ export default function ThemeCard({ props, type }) {
         )}
 
         {type === 'samenhang' && (
-          <Link href={cardData.samenhangLink}>
+          <Link href={cardData?.samenhangLink}>
             <div className='pb-6 pl-8'>
               <CustomButton color='whiteBackground'>
                 <div>Bekijk jouw categorie</div>
@@ -127,7 +127,7 @@ export default function ThemeCard({ props, type }) {
         )}
 
         {type === 'waarvoor' && (
-          <Link href={cardData.welkeLink}>
+          <Link href={cardData?.welkeLink}>
             <div className='pb-6 pl-8'>
               <CustomButton color='whiteBackground'>
                 <div>Bekijk de bevoegdheden</div>
