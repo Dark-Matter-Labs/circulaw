@@ -16,8 +16,6 @@
     @apply md:px-10;
     @apply xl:px-20;
     @apply 2xl:px-40
-
-   
   }
 
   .global-margin-alternative {
@@ -234,6 +232,9 @@
   }
 }
 
+body {
+  padding-right: 0 !important;
+}
 
 
 html {

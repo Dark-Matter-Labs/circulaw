@@ -49,7 +49,7 @@ export default function Layout({
         <meta property='og:image' content={ogImgUrl} />
         <meta property='og:url' content={canonicalUrl} />
       </Head>
-      <main className='w-screen'>{children}</main>
+      <main className='w-full'>{children}</main>
       <CookieConsent />
       <Footer
         vraagSlug={vraagSlug}

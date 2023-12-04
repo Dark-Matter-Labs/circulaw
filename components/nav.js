@@ -193,7 +193,7 @@ export default function Nav3(props) {
         <BetaBanner />
       </div>
 
-      <div id='wrapper' className='z-100 sticky top-0 w-screen'>
+      <div id='wrapper' className='z-100 sticky top-0 w-full'>
         <nav
           id='parent'
           as='nav'
@@ -293,7 +293,7 @@ export default function Nav3(props) {
                   >
                     <FloatingFocusManager context={mobileContext} modal={false}>
                       <div
-                        className='h-auto w-screen'
+                        className='h-auto w-full'
                         ref={mobileRef.setFloating}
                         style={mobileFloatingStyles}
                         {...mobileFloatingProps()}
@@ -521,7 +521,7 @@ export default function Nav3(props) {
                         ref={mainMenuRef.setFloating}
                         style={mainMenuStyles}
                         {...mainMenuFloatingProps()}
-                        className='h-72 w-screen -z-10 '
+                        className='h-72 w-full -z-10 '
                       >
                         <div
                           className='h-full shadow-lg'
@@ -753,7 +753,7 @@ export default function Nav3(props) {
         </nav>
       </div>
       {router.pathname === '/' && (
-        <div className='-mt-[9rem] bg-header bg-cover bg-center w-screen'>
+        <div className='-mt-[9rem] bg-header bg-cover bg-center w-full'>
           <HomepageHeader homePageHeader={props.homePageHeader} />
         </div>
       )}
