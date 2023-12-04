@@ -42,7 +42,24 @@ export const Structure = (S) =>
                     .title('Matrassen measures')
                     .filter('_type == "measure" && thema == "circulaire-matrasketen"'),
                 ),
+              S.listItem()
+              .title('Voedselverspilling')
+              .icon(GiBed)
+              .child(
+                S.documentList()
+                  .title('Voedselverspilling')
+                  .filter('_type == "measure" && thema == "voedselverspilling"'),
+              ),
+              S.listItem()
+              .title('Meubels')
+              .icon(GiBed)
+              .child(
+                S.documentList()
+                  .title('Meubels')
+                  .filter('_type == "measure" && thema == "meubels"'),
+              ),
             ]),
+            
         ),
       S.listItem()
         .title('About Pages')
