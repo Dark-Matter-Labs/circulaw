@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import RTooltip from '../tooltip-r-ladder';
+import RLadderTooltip from '@/components/r-ladder-tooltip';
 import JHTooltip from '../tooltip-juridische-houdbaarheid';
 import JITooltip from '../tooltip-juridische-invloed';
 
@@ -112,7 +112,7 @@ export default function InstrumentMetaData({ data }) {
                   </div>
                 ))}
                 {data?.measure?.slug && (
-                  <RTooltip>
+                  <RLadderTooltip>
                     <svg
                       width='24'
                       height='24'
@@ -127,7 +127,7 @@ export default function InstrumentMetaData({ data }) {
                         fill='#FDFDFD'
                       />
                     </svg>
-                  </RTooltip>
+                  </RLadderTooltip>
                 )}
               </div>
             </div>
@@ -231,7 +231,7 @@ export default function InstrumentMetaData({ data }) {
                   </div>
                 ))}
                 {data?.measure?.slug && (
-                  <RTooltip>
+                  <RLadderTooltip>
                     <svg
                       width='24'
                       height='24'
@@ -246,7 +246,7 @@ export default function InstrumentMetaData({ data }) {
                         fill='#FDFDFD'
                       />
                     </svg>
-                  </RTooltip>
+                  </RLadderTooltip>
                 )}
               </div>
             </div>
