@@ -38,23 +38,21 @@ export const Structure = (S) =>
                       '_type == "measure" &&  thema == "circulaire-windturbines" || thema == "windturbines"',
                     ),
                 ),
-              S.listItem()
-                .title('Matrassen')
+                S.listItem()
+                .title('Voedselverspilling')
                 .icon(GiBed)
                 .child(
                   S.documentList()
-                    .title('Matrassen measures')
-                    .filter(
-                      '_type == "measure" && thema == "circulaire-matrasketen" || thema == "matrasketen"',
-                    ),
+                    .title('Voedselverspilling')
+                    .filter('_type == "measure" && thema == "voedselverspilling"'),
                 ),
-              S.listItem()
-                .title('Plastic in de bouw')
+                S.listItem()
+                .title('Meubels')
                 .icon(GiBed)
                 .child(
                   S.documentList()
-                    .title('Plastic in de bouw measures')
-                    .filter('_type == "measure" && thema == "plastic-in-de-bouw"'),
+                    .title('Meubels')
+                    .filter('_type == "measure" && thema == "meubels"'),
                 ),
             ]),
         ),
