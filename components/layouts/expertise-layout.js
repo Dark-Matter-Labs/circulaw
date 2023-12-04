@@ -284,7 +284,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
       });
     }
   }
-  console.log(props)
   return (
     <>
       <div className='sm:bg-gradient-to-t sm:from-[#F8FAF8] sm:to-[#F8FAF8]'>
