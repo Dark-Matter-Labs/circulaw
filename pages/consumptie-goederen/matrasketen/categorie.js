@@ -9,6 +9,7 @@ export default function InfoPage({ expertiseData }) {
     <Layout title='CircuLaw - Samenhang Matrassen'>
       <ExpertiseLayout
         thema='matrasketen'
+        transitionAgenda='consumptie-goederen'
         expertiseData={expertiseData}
         title='Matrasketen instrumenten per categorie'
         icon={mattressIcon}

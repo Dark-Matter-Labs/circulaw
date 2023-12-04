@@ -15,6 +15,7 @@ export default function Windturbine({ featuredLaws, length, thema }) {
       <ThemeLayout
         featuredLaws={featuredLaws}
         thema={thema}
+        transitionAgenda='maakindustrie'
         numberOfLaws={length}
         listTitle={`Lijst van ${length} instrumenten`}
       />
