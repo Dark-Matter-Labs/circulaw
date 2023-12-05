@@ -9,6 +9,7 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
   const themaData = props.thema;
   return (
     <>
+    {/* refactor this page - make header a component for both theme and simple theme */}
       {/* HEADER DESKTOP */}
       <div className='hidden sm:block w-full h-[360px]'>
         <div className='relative object-cover w-full h-full mt-3'>
@@ -30,7 +31,7 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
               </Link>
             </div>
 
-            <div className='pb-8 max-w-5xl'>
+            <div className='pb-8 max-w-3xl'>
               <div className=''>
                 <h1 className='mobile sm:desktop text-grey-100 inline-block lg mobile sm:desktop'>
                   {themaData?.themaName}
@@ -114,7 +115,7 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
                 href={`/${measure.transitionAgenda}/${measure.thema}/instrumenten/${measure.slug.current}`}
                 key={measure.titel}
               >
-                <div className='block mb-14 sm:mb-10 max-w-[825px]'>
+                <div className='block mb-14 sm:mb-10 w-[760px]'>
                   <div className='flex justify-start items-center -ml-1'>
                     {/* Expertise Tag */}
                     {measure?.beleid === true && (
@@ -136,13 +137,13 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
 
                   <div className='block mt-2 max-w-4xl'>
                     <div className=' mb-2'>
-                      <h3 className='p-4xl-semibold text-grey-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+                      <h3 className='p-4xl-semibold max-w-[650px] text-grey-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                         {measure.titel}{' '}
                       </h3>
                     </div>
 
                     <div className='block newlineDisplay p-md text-grey-800 mt-2 pb-2'>
-                      <p className='p-base'>{measure.introText}</p>
+                      <p className='p-base max-w-[650px]'>{measure.introText}</p>
                     </div>
                     <InstrumentMetaData data={measure} />
                   </div>

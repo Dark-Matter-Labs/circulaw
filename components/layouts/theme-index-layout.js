@@ -38,7 +38,7 @@ export default function ThemeLayout({ ...props }) {
                 </Link>
               </div>
 
-              <div className='pb-8 max-w-5xl'>
+              <div className='pb-8 max-w-3xl'>
                 <div className=''>
                   <h1 className='mobile sm:desktop text-grey-100 inline-block lg mobile sm:desktop'>
                     {themaData?.themaName}

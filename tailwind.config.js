@@ -73,10 +73,10 @@ module.exports = {
         '128': '32rem',
       },
       flexBasis: {
-        'houdbaarheid': '22%',
-        'invloed': '14%',
-        'overheidslaag': '35%',
-        'rladder': '29%',
+        'houdbaarheid': '26%',
+        'invloed': '12%',
+        'overheidslaag': '37%',
+        'rladder': '25%',
       },
       backgroundImage: {
         'houtbouw-hero' : 'url("/hero-images/houtbouwHero.png")',
@@ -105,5 +105,4 @@ module.exports = {
   plugins: [
     require('@tailwindcss/forms')
 ],
-  
 };

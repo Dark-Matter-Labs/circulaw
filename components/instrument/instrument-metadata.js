@@ -16,11 +16,11 @@ export default function InstrumentMetaData({ data }) {
             (router.pathname === '/consumenten-goederen/matrasketen/instrumenten') |
             (router.pathname === '/maakindustrie/windturbines') |
             (router.pathname === '/bouw/houtbouw') |
-            (router.pathname === '/consumenten-goederen/matrasketen') |
+            (router.pathname === '/consumptie-goederen/matrasketen') |
             (router.pathname === '/kunststoffen/plastic-in-de-bouw')
               ? 'border-y border-gray-300'
               : 'pt-5 pb-3'
-          } h-auto flex flex-row gap-x-6 grow-0 items-center justify-self-center max-w-[860px]`}
+          } h-auto flex flex-row gap-x-4 grow-0 items-center justify-self-center max-w-[840px]`}
         >
           <div className='flex flex-col basis-houdbaarheid'>
             <div className='p-xs-semibold text-grey-600'>Juridische houdbaarheid</div>
