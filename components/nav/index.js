@@ -3,8 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Lottie from 'react-lottie';
-import CirculawLogo from '@/public/Circulaw_logotype.png';
-import logo from '@/public/Circulaw_logotype_home.png';
+import { ChevronDownIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import { Disclosure, Transition } from '@headlessui/react';
 import {
   useFloating,
   offset,
@@ -18,12 +18,14 @@ import {
   useTransitionStyles,
   FloatingOverlay,
 } from '@floating-ui/react';
+import CirculawLogo from '@/public/Circulaw_logotype.png';
+import logo from '@/public/Circulaw_logotype_home.png';
 
+import LangSwitch from '@/components/nav/lang-switch';
 import BetaBanner from '@/components/nav/beta-banner';
 import animationData from '@/public/CL_Home_Logo_Loop';
 import HomepageHeader from '@/components/homepage-header';
-import { ChevronDownIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
-import { Disclosure, Transition } from '@headlessui/react';
+
 
 const defaultOptions = {
   loop: true,
@@ -165,25 +167,7 @@ export default function Nav3(props) {
                 </Link>
               </div>
             </div>
-
-            {/* REFACTOR */}
-            <div className='text-grey-100 flex justify-center items-center min-w-[10%] pt-2 pr-4'>
-              <span
-                className={`link-interaction-dark-bg ${
-                  router.pathname === '/en' ? 'enLink' : 'enLinkSelected'
-                }`}
-              >
-                <Link href='/'>NL</Link>
-              </span>
-              <span className='px-1 enLink'>|</span>
-              <span
-                className={`link-interaction-dark-bg ${
-                  router.pathname === '/en' ? 'enLinkSelected' : 'enLink'
-                }`}
-              >
-                <Link href='/en'>EN</Link>
-              </span>
-            </div>
+            <LangSwitch background='dark' />
           </div>
         </div>
       </>
@@ -251,29 +235,11 @@ export default function Nav3(props) {
               )}
             </div>
             <div className='flex flex-col justify-between'>
-              {/* LANGUAGE */}
-              {/* Refactor */}
-              <div
-                className={`${
-                  router.pathname === '/' ? 'text-grey-100' : 'text-green-800'
-                }  hidden lgNav:flex justify-end items-center min-w-[10%] mb-5`}
-              >
-                <span
-                  className={`${
-                    router.pathname === '/' ? 'hover:text-light-green-500' : 'link-interaction'
-                  } ${router.pathname === '/en' ? 'enLink' : 'enLinkSelected'}`}
-                >
-                  <Link href='/'>NL</Link>
-                </span>
-                <span className='px-1 enLink'>|</span>
-                <span
-                  className={`${
-                    router.pathname === '/' ? 'hover:text-light-green-500 ' : 'link-interaction'
-                  } ${router.pathname === '/en' ? 'enLinkSelected' : 'enLink'}`}
-                >
-                  <Link href='/en'>EN</Link>
-                </span>
-              </div>
+           
+            <div className='hidden sm:flex flex-row justify-end mb-4'>
+              <LangSwitch background='dark' />
+            </div>
+             
 
               {/* Mobile button/NAV */}
               <div className='inset-y-0 float-right flex items-center pt-2 lgNav:hidden'>
@@ -525,24 +491,8 @@ export default function Nav3(props) {
                             </div>
 
                             {/* Refactor */}
-                            <div className='flex flex-row items-end w-full justify-end'>
-                              <div className='flex justify-center items-center justify-self-end min-w-[10%] p-4 text-black'>
-                                <span
-                                  className={`link-interaction ${
-                                    router.pathname === '/en' ? 'enLink' : 'enLinkSelected'
-                                  }`}
-                                >
-                                  <Link href='/'>NL</Link>
-                                </span>
-                                <span className='px-1 enLink'>|</span>
-                                <span
-                                  className={`link-interaction ${
-                                    router.pathname === '/en' ? 'enLinkSelected' : 'enLink'
-                                  }`}
-                                >
-                                  <Link href='/en'>EN</Link>
-                                </span>
-                              </div>
+                            <div className='flex flex-row items-end w-full justify-end pt-4 '>
+                          <LangSwitch/>
                             </div>
                           </div>
                         </div>

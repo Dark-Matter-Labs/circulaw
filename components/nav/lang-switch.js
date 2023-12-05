@@ -1,25 +1,22 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-export default function LangSwitch() {
+export default function LangSwitch({background}) {
   const router = useRouter();
   return (
-    <div
-      className={`hidden sm:block flex justify-center items-center min-w-[10%] pt-2 ${
-        router.pathname === '/en' || router.pathname === '/' ? 'text-grey-100' : 'text-black'
-      }`}
+  
+  <div className={`${background === 'dark' ? 'text-gray-100' : 'text-black'} flex justify-center items-center` }>
+    <span
+      className={`${background === 'dark' ? 'link-interaction-dark-bg' : 'link-interaction'}`}
     >
-      <span
-        className={`link-interaction ${router.pathname === '/en' ? 'enLink' : 'enLinkSelected'}`}
-      >
-        <Link href='/'>NL</Link>
-      </span>
-      <span className='px-1 enLink'>|</span>
-      <span
-        className={`link-interaction ${router.pathname === '/en' ? 'enLinkSelected' : 'enLink'}`}
-      >
-        <Link href='/en'>EN</Link>
-      </span>
-    </div>
+      <Link className={router.pathname === '/en' ? '': 'font-semibold'} href='/'>NL</Link>
+    </span>
+    <span className='px-1 enLink'>|</span>
+    <span
+      className={`${background === 'dark' ? 'link-interaction-dark-bg' : 'link-interaction'}`}
+    >
+      <Link className={router.pathname === '/en' ? 'font-semibold': ''}href='/en'>EN</Link>
+    </span>
+  </div>
   );
 }
