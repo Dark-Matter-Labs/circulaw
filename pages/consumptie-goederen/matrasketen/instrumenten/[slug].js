@@ -4,7 +4,7 @@ import { PreviewSuspense } from 'next-sanity/preview';
 import Layout from '@/components/layouts/layout';
 import { client } from '@/lib/sanity';
 import { measurePagePathsQuery, measureQuery } from '@/lib/queries';
-import Instrument from '@/components/instrument/instrument';
+import Instrument from '@/components/instrument';
 
 import globalMeta from '@/utils/global-meta';
 
