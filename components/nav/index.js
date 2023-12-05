@@ -236,7 +236,7 @@ export default function Nav3(props) {
             </div>
             <div className='flex flex-col justify-between'>
            
-            <div className='hidden sm:flex flex-row justify-end mb-4'>
+            <div className='hidden lgNav:flex flex-row justify-end mb-4'>
               <LangSwitch background='dark' />
             </div>
              
@@ -264,7 +264,7 @@ export default function Nav3(props) {
                     style={{ background: 'rgba(0, 0, 0, 0)' }}
                     className='-z-10'
                   >
-                    <FloatingFocusManager context={mobileContext} modal={false}>
+                    <FloatingFocusManager context={mobileContext} modal={false} disabled>
                       <div
                         className='h-auto w-full'
                         ref={mobileRef.setFloating}
