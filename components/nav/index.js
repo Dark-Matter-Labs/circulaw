@@ -165,6 +165,8 @@ export default function Nav3(props) {
                 </Link>
               </div>
             </div>
+
+            {/* REFACTOR */}
             <div className='text-grey-100 flex justify-center items-center min-w-[10%] pt-2 pr-4'>
               <span
                 className={`link-interaction-dark-bg ${
@@ -250,6 +252,7 @@ export default function Nav3(props) {
             </div>
             <div className='flex flex-col justify-between'>
               {/* LANGUAGE */}
+              {/* Refactor */}
               <div
                 className={`${
                   router.pathname === '/' ? 'text-grey-100' : 'text-green-800'
@@ -332,6 +335,7 @@ export default function Nav3(props) {
                                   >
                                     <Disclosure.Panel className='flex flex-col flex-grow ml-4'>
                                       <ul>
+                                        {/* Make component */}
                                         <li className='p-base-semibold text-green-800 py-6 border-b'>
                                           <Disclosure>
                                             {({ open }) => (
@@ -509,6 +513,7 @@ export default function Nav3(props) {
                                 </>
                               )}
                             </Disclosure>
+                            {/* Make component */}
                             <div className='text-green-800 border-b border-t py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
                               <Link href='/over/Nieuws-en-blogs'>Nieuws</Link>
                             </div>
@@ -518,6 +523,8 @@ export default function Nav3(props) {
                             <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
                               <Link href='/contact'>Contact</Link>
                             </div>
+
+                            {/* Refactor */}
                             <div className='flex flex-row items-end w-full justify-end'>
                               <div className='flex justify-center items-center justify-self-end min-w-[10%] p-4 text-black'>
                                 <span
@@ -611,6 +618,7 @@ export default function Nav3(props) {
                               router.pathname === '/' ? 'bg-green-500' : 'bg-white'
                             } h-full flex flex-cols-5 gap-3 relative`}
                           >
+                            {/* REFACTOR */}
                             <div
                               className={`${
                                 router.pathname === '/'
@@ -632,6 +640,7 @@ export default function Nav3(props) {
                                 </button>
                               </div>
                             </div>
+                            {/* Refactor */}
                             <div
                               className={`${
                                 router.pathname === '/'
@@ -652,6 +661,7 @@ export default function Nav3(props) {
                                 </div>
                               </div>
                             </div>
+                            {/* refactor */}
                             <div
                               className={`${
                                 router.pathname === '/'
@@ -673,6 +683,7 @@ export default function Nav3(props) {
                                 </button>
                               </div>
                             </div>
+                            {/* refactor */}
                             <div
                               className={`${
                                 router.pathname === '/'
@@ -682,6 +693,7 @@ export default function Nav3(props) {
                             >
                               <div className='p-lg-semibold '>Maakindustrie</div>
                               <div className=''>
+                                {/* Make card component that has a button on the inside? */}
                                 <button
                                   className={`${
                                     router.pathname === '/'
@@ -800,6 +812,7 @@ export default function Nav3(props) {
                     </FloatingFocusManager>
                   )}
                 </div>
+                {/* Refactor */}
                 <div
                   className={`${
                     router.pathname === '/'
