@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
-import LinkIcon from './link-icon';
+import LinkIcon from '../link-icon';
 
 export default function RLadderTooltip({ children, icon }) {
   const [open, setOpen] = useState(false);

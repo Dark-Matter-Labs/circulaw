@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
-import RLadderTooltip from '@/components/r-ladder-tooltip';
-import JHTooltip from '../tooltip-juridische-houdbaarheid';
-import JITooltip from '../tooltip-juridische-invloed';
+import RLadderTooltip from '@/components/tooltips/r-ladder-tooltip';
+import JHTooltip from '../tooltips/tooltip-juridische-houdbaarheid';
+import JITooltip from '../tooltips/tooltip-juridische-invloed';
 
 export default function InstrumentMetaData({ data }) {
   const router = useRouter();

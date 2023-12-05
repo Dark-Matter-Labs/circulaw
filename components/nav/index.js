@@ -19,7 +19,7 @@ import {
   FloatingOverlay,
 } from '@floating-ui/react';
 
-import BetaBanner from '@/components/beta-banner';
+import BetaBanner from '@/components/nav/beta-banner';
 import animationData from '@/public/CL_Home_Logo_Loop';
 import HomepageHeader from '@/components/homepage-header';
 import { ChevronDownIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
