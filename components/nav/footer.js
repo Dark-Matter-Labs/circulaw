@@ -6,8 +6,8 @@ import { AiFillGithub } from 'react-icons/ai';
 import { Link as ScrollLink } from 'react-scroll';
 import { ArrowUpIcon } from '@heroicons/react/outline';
 import ActionPanel from '@/components/section-action-panel';
-import Partners from './partners';
-import CustomButton from './custom-button';
+import Partners from '@/components/nav/partners';
+import CustomButton from '@/components/custom-button';
 import ORicon from '@/public/icons/openResearch.svg';
 
 const navigation = {
