@@ -9,6 +9,7 @@ import ActionPanel from '@/components/section-action-panel';
 import Partners from '@/components/nav/partners';
 import CustomButton from '@/components/custom-button';
 import ORicon from '@/public/icons/openResearch.svg';
+import LangSwitch from './lang-switch';
 
 const navigation = {
   other: [
@@ -144,21 +145,7 @@ export default function Footer(props) {
                             </li>
                           ))}
                           <li className='flex justify-start text-grey-100 items-center'>
-                            <span
-                              className={`link-interaction-light-green-bg ${
-                                router.pathname === '/en' ? '' : 'font-semibold'
-                              }`}
-                            >
-                              <Link href='/'>NL</Link>
-                            </span>
-                            <span className='px-1 enLink'>|</span>
-                            <span
-                              className={`link-interaction-light-green-bg ${
-                                router.pathname === '/en' ? 'font-semibold' : ''
-                              }`}
-                            >
-                              <Link href='/en'>EN</Link>
-                            </span>{' '}
+                            <LangSwitch background='dark' />
                           </li>
                         </ul>
                       </div>
