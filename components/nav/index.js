@@ -586,7 +586,7 @@ export default function Nav3(props) {
                                   } p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
                                   onClick={() => router.push('/bouw/houtbouw')}
                                 >
-                                  Houtbow stimuleren
+                                  Houtbouw stimuleren
                                 </button>
                               </div>
                             </div>
