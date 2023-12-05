@@ -616,7 +616,7 @@ export default function Nav3(props) {
                                 router.pathname === '/'
                                   ? 'bg-green-600 text-light-green-500'
                                   : 'bg-green-100 text-green-800'
-                              } w-full h-full pl-4 lgNav:pl-10 xl:pl-20 3xl:pl-32 pt-8 pr-2 p-lg-semibild  mb-2`}
+                              } w-full h-full pl-4 lgNav:pl-10 xl:pl-20 3xl:pl-32 pt-8 pr-2 p-lg-semibold mb-2`}
                             >
                               Bouw
                               <div className=''>
@@ -639,7 +639,7 @@ export default function Nav3(props) {
                                   : 'bg-grey-100 text-green-800 text-opacity-75'
                               } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
                             >
-                              <div className='p-lg-semibild '>Voedsel en biomassa</div>
+                              <div className='p-lg-semibold '>Voedsel en biomassa</div>
                               <div className=''>
                                 <div
                                   className={`${
@@ -659,7 +659,7 @@ export default function Nav3(props) {
                                   : 'bg-green-100 text-green-800'
                               } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
                             >
-                              <div className='p-lg-semibild break-words '>Consumptiegoederen</div>
+                              <div className='p-lg-semibold break-words '>Consumptiegoederen</div>
                               <div className=''>
                                 <button
                                   className={`${
@@ -680,7 +680,7 @@ export default function Nav3(props) {
                                   : 'bg-green-100 text-green-800'
                               } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
                             >
-                              <div className='p-lg-semibild '>Maakindustrie</div>
+                              <div className='p-lg-semibold '>Maakindustrie</div>
                               <div className=''>
                                 <button
                                   className={`${
@@ -701,7 +701,7 @@ export default function Nav3(props) {
                                   : 'bg-green-100 text-green-800'
                               } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
                             >
-                              <div className='p-lg-semibild '>Kunststoffen</div>
+                              <div className='p-lg-semibold '>Kunststoffen</div>
                               <div className=''>
                                 <button
                                   className={`${
