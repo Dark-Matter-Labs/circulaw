@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -38,6 +38,19 @@ const defaultOptions = {
 
 export default function Nav3(props) {
   const router = useRouter();
+
+  const [scrollEffect, setScrollEffect] = useState(false);
+  useEffect(() => {
+    const changeEffect = () => {
+      if (window.scrollY >= 32) {
+        setScrollEffect(true);
+      } else {
+        setScrollEffect(false);
+      }
+    };
+    window.addEventListener('scroll', changeEffect);
+  }, []);
+
 
   // main menu
   const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
@@ -184,10 +197,11 @@ export default function Nav3(props) {
           id='parent'
           as='nav'
           className={`${
-            router.pathname === '/' ? 'bg-green-600 shadow-lg' : 'bg-[#F8FBF8] shadow-lg'
+            router.pathname === '/' ? [`${mainMenuIsMounted && scrollEffect === false ? ['bg-green-600 bg-opacity-100 shadow-lg transition-all duration-75']:[`${scrollEffect === true ? 'bg-green-600 shadow-lg tranition-all duration-150': 'bg-opacity-0 transition-all duration-150'}`]}`] : 'bg-[#F8FBF8] shadow-lg'
           } h-[70px] lgNav:h-[98px] flex flex-row justify-between items-center lgNav:items-end global-padding w-full lgNav:w-auto`}
         >
           <>
+          {console.log(mainMenuIsMounted && scrollEffect === false)}
             {/* LOGO */}
             <div className=''>
               {router.pathname === '/' && (
