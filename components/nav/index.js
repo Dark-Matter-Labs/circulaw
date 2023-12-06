@@ -438,11 +438,7 @@ export default function Nav3(props) {
                     <span
                       className={`${
                         mainMenuIsOpen === true
-                          ? [
-                              `${
-                                router.pathname === '/' ? 'text-green-200' : 'text-green-500'
-                              }`,
-                            ]
+                          ? [`${router.pathname === '/' ? 'text-green-200' : 'text-green-500'}`]
                           : [
                               `${
                                 router.pathname === '/'
@@ -509,9 +505,7 @@ export default function Nav3(props) {
                               <div className=''>
                                 <div
                                   className={`${
-                                    router.pathname === '/'
-                                      ? 'text-gray-500'
-                                      : 'text-gray-600'
+                                    router.pathname === '/' ? 'text-gray-500' : 'text-gray-600'
                                   } p-xs mt-2 italic`}
                                 >
                                   Thema’s voor deze productketen volgen binnenkort
@@ -542,11 +536,7 @@ export default function Nav3(props) {
                     <span
                       className={`${
                         overMenuIsOpen === true
-                          ? [
-                              `${
-                                router.pathname === '/' ? 'text-green-200' : 'text-green-500'
-                              }`,
-                            ]
+                          ? [`${router.pathname === '/' ? 'text-green-200' : 'text-green-500'}`]
                           : [
                               `${
                                 router.pathname === '/'
