@@ -3,7 +3,7 @@ import { groq } from 'next-sanity';
 import useSWR from 'swr';
 
 import globalMeta from '@/utils/global-meta';
-import Footer from '@/components/footer';
+import Footer from '@/components/nav/footer';
 import Nav from '@/components/nav';
 import CookieConsent from '@/components/cookie-banner';
 import { siteSettingsQuerys, footerQuery } from '@/lib/queries';

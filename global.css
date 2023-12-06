@@ -138,10 +138,11 @@
     @apply font-jakarta text-lg font-normal leading-11;
   }
 
-  .p-lg-semibold {
-    @apply font-jakarta text-lg font-semibold leading-10;
-  }
   
+  .p-lg-semibold {
+    @apply font-jakarta text-lg font-semibold leading-10
+  }
+
   .p-lg-bold {
     @apply font-jakarta text-lg font-bold leading-10;
   }

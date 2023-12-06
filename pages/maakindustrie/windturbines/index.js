@@ -25,7 +25,7 @@ export default function Windturbine({ featuredLaws, length, thema }) {
             <div className='p-4xl-semibold'>Analyse rapport CircuLaw: Circulaire windturbines</div>
             <div className='p-base'>
               De informatie over windturbines is mede tot stand gekomen door nauwe samenwerking met
-              de provincie Norrd Holland
+              de provincie Noord Holland
             </div>
             <div className=''>
               <Link

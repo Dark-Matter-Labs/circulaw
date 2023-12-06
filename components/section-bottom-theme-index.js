@@ -11,19 +11,18 @@ export default function ThemeBottomSection({ props }) {
     <>
       <div className='bg-gray-200'>
         <div className='py-8 global-margin'>
-          <h3 className='p-3xl-semibold sm:p-5xl-semibold pb-4'>Uitgelichte instrumenten</h3>
+          <h3 className='p-3xl-semibold sm:p-5xl-semibold pb-4 lowercase first-letter:uppercase'>
+            Uitgelichte {props.thema.themaName} instrumenten
+          </h3>
           {/* ADD THIS TO CMS */}
-          <p className='pb-10 p-base'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet felis tincidunt
-            odio ornare elementum. In vel ligula ut lacus pharetra finibus. Curabitur blandit ligula
-            at pulvinar faucibus. Aliquam luctus, elit eu scelerisque egestas, felis odio blandit
-            ligula, in convallis dolor mi vel leo. Etiam sit amet mauris fermentum, tempus odio in,
-            feugiat nibh. Donec imperdiet, nisi at congue porta, neque tortor fringilla lectus, a
-            semper arcu eros eget libero. Maecenas efficitur feugiat molestie.
+          <p className='pb-10 p-base max-w-[830px]'>
+            Weet je niet precies met welk instrument je het beste kunt beginnen? We hebben er voor
+            jou 3 uitgelicht die bijzonder kansrijk zijn of waarmee de impact die je kunt maken
+            groot is.
           </p>
           <div className=''>
             {laws?.map((measure, index) => (
-              <div key={index} className='flex flex-col sm:flex-row mb-14 sm:mb-8'>
+              <div key={index} className='flex flex-col sm:flex-row mb-14 sm:mb-8 max-w-6xl'>
                 <div className='flex items-center w-full h-44 mb-5 sm:md-0 sm:w-64 sm:h-44 rounded-cl mr-6 relative object-fill'>
                   <Image
                     src={urlFor(measure?.featuredImage)?.url()}
@@ -36,7 +35,7 @@ export default function ThemeBottomSection({ props }) {
                   href={`/${measure.transitionAgenda}/${measure.thema}/instrumenten/${measure.slug.current}`}
                   key={measure.titel}
                 >
-                  <div className='block sm:ml-0 max-w-[825px]'>
+                  <div className='block sm:ml-0 w-[760px]'>
                     <div className='flex justify-start items-center -ml-1'>
                       {/* Expertise Tag */}
                       {measure?.beleid === true && (

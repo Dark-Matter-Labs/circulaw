@@ -39,22 +39,20 @@ export const Structure = (S) =>
                     ),
                 ),
               S.listItem()
-                .title('Matrassen')
+                .title('Voedselverspilling')
                 .icon(GiBed)
                 .child(
                   S.documentList()
-                    .title('Matrassen measures')
-                    .filter(
-                      '_type == "measure" && thema == "circulaire-matrasketen" || thema == "matrasketen"',
-                    ),
+                    .title('Voedselverspilling')
+                    .filter('_type == "measure" && thema == "voedselverspilling"'),
                 ),
               S.listItem()
-                .title('Plastic in de bouw')
+                .title('Meubels')
                 .icon(GiBed)
                 .child(
                   S.documentList()
-                    .title('Plastic in de bouw measures')
-                    .filter('_type == "measure" && thema == "plastic-in-de-bouw"'),
+                    .title('Meubels')
+                    .filter('_type == "measure" && thema == "meubels"'),
                 ),
             ]),
         ),

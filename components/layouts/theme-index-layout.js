@@ -12,7 +12,6 @@ import CustomButton from '@/components/custom-button';
 
 export default function ThemeLayout({ ...props }) {
   const themaData = props.thema;
-
   return (
     <>
       <div>
@@ -38,7 +37,7 @@ export default function ThemeLayout({ ...props }) {
                 </Link>
               </div>
 
-              <div className='pb-8 max-w-5xl'>
+              <div className='pb-8 max-w-3xl'>
                 <div className=''>
                   <h1 className='mobile sm:desktop text-grey-100 inline-block lg mobile sm:desktop'>
                     {themaData?.themaName}
@@ -176,7 +175,7 @@ export default function ThemeLayout({ ...props }) {
                 </li>
               </Link>
               <Link
-                href={`/${themaData.transitionAgenda}/${themaData.slug.current}/overheidbevoegdheid`}
+                href={`/${themaData.transitionAgenda}/${themaData.slug.current}/overheidsbevoegdheid`}
               >
                 <li
                   role='listitem'
@@ -254,7 +253,7 @@ export default function ThemeLayout({ ...props }) {
               </li>
               <li>
                 <Link
-                  href={`/${themaData.transitionAgenda}/${themaData.slug.current}/overheidbevoegdheid`}
+                  href={`/${themaData.transitionAgenda}/${themaData.slug.current}/overheidsbevoegdheid`}
                 >
                   <div className='h-24 w-full rounded-cl bg-grey-50 shadow mt-6'>
                     <div className='flex items-center justify-start'>
@@ -280,7 +279,7 @@ export default function ThemeLayout({ ...props }) {
           </div>
 
           <div className='bg-gray-200'>
-            <ThemeBottomSection props={props} />
+            <ThemeBottomSection props={props} thema={themaData.themaName} />
           </div>
         </div>
       </div>

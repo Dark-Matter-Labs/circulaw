@@ -125,7 +125,8 @@ export default {
           { title: 'Houtbouw', value: 'houtbouw' }, // need to change to refernece
           { title: 'Circulaire windturbines', value: 'windturbines' }, // need to change to reference
           { title: 'Matrassen', value: 'matrasketen' }, // need to change to reference
-          { title: 'Plastic in de bouw', value: 'plastic-in-de-bouw' }, // Temp thema
+          { title: 'Voedselverspilling', value: 'voedselverspilling' }, // need to change to reference
+          { title: 'Meubels', value: 'meubels' }, // need to change to reference
         ],
         layout: 'dropdown',
       },

@@ -9,6 +9,7 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
   const themaData = props.thema;
   return (
     <>
+      {/* refactor this page - make header a component for both theme and simple theme */}
       {/* HEADER DESKTOP */}
       <div className='hidden sm:block w-full h-[360px]'>
         <div className='relative object-cover w-full h-full mt-3'>
@@ -30,7 +31,7 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
               </Link>
             </div>
 
-            <div className='pb-8 max-w-5xl'>
+            <div className='pb-8 max-w-3xl'>
               <div className=''>
                 <h1 className='mobile sm:desktop text-grey-100 inline-block lg mobile sm:desktop'>
                   {themaData?.themaName}
@@ -99,7 +100,7 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
         </div>
       </div>
       <div className='global-margin'>
-        <div className='max-w-3xl mb-10'>
+        <div className='max-w-[830px] mb-10'>
           <h2 className='p-5xl-semibold pb-4 pt-7'>
             Top {numberOfLaws} instrumenten voor plastic in de bouw
           </h2>
@@ -114,7 +115,7 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
                 href={`/${measure.transitionAgenda}/${measure.thema}/instrumenten/${measure.slug.current}`}
                 key={measure.titel}
               >
-                <div className='block mb-14 sm:mb-10 max-w-[825px]'>
+                <div className='block mb-14 sm:mb-10 w-[760px]'>
                   <div className='flex justify-start items-center -ml-1'>
                     {/* Expertise Tag */}
                     {measure?.beleid === true && (

@@ -6,17 +6,17 @@ const links = {
   houtbouw: [
     '/bouw/houtbouw/categorie',
     '/bouw/houtbouw/instrumenten',
-    '/bouw/houtbouw/overheidbevoegdheid',
+    '/bouw/houtbouw/overheidsbevoegdheid',
   ],
   windturbines: [
     '/maakindustrie/windturbines/categorie',
     '/maakindustrie/windturbines/instrumenten',
-    '/maakindustrie/windturbines/overheidbevoegdheid',
+    '/maakindustrie/windturbines/overheidsbevoegdheid',
   ],
   matrasketen: [
     '/consumenten-goederen/matrasketen/categorie',
     '/consumenten-goederen/matrasketen/instrumenten',
-    '/consumenten-goederen/matrasketen/overheidbevoegdheid',
+    '/consumenten-goederen/matrasketen/overheidsbevoegdheid',
   ],
 };
 
