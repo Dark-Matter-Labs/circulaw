@@ -28,6 +28,7 @@ import HomepageHeader from '@/components/homepage-header';
 import DesktopNavCard from './desktop-nav-card';
 import MobileDisclosure from './mobile-disclosure';
 import DesktopSimpleButton from './desktop-simple-button';
+import MobileSimpleButton from './mobile-simple-button';
 
 const defaultOptions = {
   loop: true,
@@ -402,15 +403,10 @@ export default function Nav3(props) {
                               )}
                             </Disclosure>
                             {/* Make component */}
-                            <div className='text-green-800 border-b border-t py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
-                              <Link href='/over/Nieuws'>Nieuws</Link>
-                            </div>
-                            <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
-                              <Link href='/vraag-en-antwoord'>Vraag en antwoord</Link>
-                            </div>
-                            <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
-                              <Link href='/contact'>Contact</Link>
-                            </div>
+
+                            <MobileSimpleButton name='Nieuws' url='/over/Nieuws' />
+                            <MobileSimpleButton name='Vraag en antwoord' url='/vraag-en-antwoord' />
+                            <MobileSimpleButton name='Contact' url='/contact' />
 
                             {/* Refactor */}
                             <div className='flex flex-row items-end w-full justify-end pt-4 '>
@@ -491,7 +487,6 @@ export default function Nav3(props) {
                             } h-full flex flex-cols-5 gap-3 relative`}
                           >
                           <DesktopNavCard transitionAgenda='bouw' themas = {bouwThemas}/>
-                          
                             <DesktopNavCard transitionAgenda='Consumptiegoederen' themas = {consumptiegoederenThemas}/>
                               {/* Temp card as there is no themas in this transition agenda */}
                               <div
