@@ -35,7 +35,7 @@ export default function ThemeBottomSection({ props }) {
                   href={`/${measure.transitionAgenda}/${measure.thema}/instrumenten/${measure.slug.current}`}
                   key={measure.titel}
                 >
-                  <div className='block sm:ml-0 w-[760px]'>
+                  <div className='block sm:ml-0 max-w-[760px]'>
                     <div className='flex justify-start items-center -ml-1'>
                       {/* Expertise Tag */}
                       {measure?.beleid === true && (
