@@ -176,7 +176,7 @@ export default function ThemeLayout({ ...props }) {
                 </li>
               </Link>
               <Link
-                href={`/${themaData.transitionAgenda}/${themaData.slug.current}/overheidbevoegdheid`}
+                href={`/${themaData.transitionAgenda}/${themaData.slug.current}/overheidsbevoegdheid`}
               >
                 <li
                   role='listitem'
@@ -254,7 +254,7 @@ export default function ThemeLayout({ ...props }) {
               </li>
               <li>
                 <Link
-                  href={`/${themaData.transitionAgenda}/${themaData.slug.current}/overheidbevoegdheid`}
+                  href={`/${themaData.transitionAgenda}/${themaData.slug.current}/overheidsbevoegdheid`}
                 >
                   <div className='h-24 w-full rounded-cl bg-grey-50 shadow mt-6'>
                     <div className='flex items-center justify-start'>
