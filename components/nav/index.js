@@ -25,6 +25,7 @@ import LangSwitch from '@/components/nav/lang-switch';
 import BetaBanner from '@/components/nav/beta-banner';
 import animationData from '@/public/CL_Home_Logo_Loop';
 import HomepageHeader from '@/components/homepage-header';
+import DesktopNavCard from './desktop-nav-card';
 
 const defaultOptions = {
   loop: true,
@@ -34,6 +35,24 @@ const defaultOptions = {
     preserveAspectRatio: 'xMidYMid slice',
   },
 };
+
+const bouwThemas = [
+  {name: 'Houtbouw stimuleren', url:'/bouw/houtbouw'},  
+]
+
+// const voedselThemas = [ {name: '', url:''}  ]
+
+const consumptiegoederenThemas = [
+  {name: 'Circulaire matrasketen', url:'/consumptie-goederen/matrasketen'},  
+]
+
+const maakindustrieThemas = [
+  {name: 'Circulaire windturbines', url:'/maakindustrie/windturbines'},  
+]
+
+const kunststoffenThemas = [
+  {name: 'Plastic in de bouw', url:'/kunststoffen/plastic-in-de-bouw'},  
+]
 
 export default function Nav3(props) {
   const router = useRouter();
@@ -591,29 +610,8 @@ export default function Nav3(props) {
                               router.pathname === '/' ? 'bg-green-500' : 'bg-white'
                             } h-full flex flex-cols-5 gap-3 relative`}
                           >
-                            {/* REFACTOR */}
-                            <div
-                              className={`${
-                                router.pathname === '/'
-                                  ? 'bg-green-600 text-light-green-500'
-                                  : 'bg-green-100 text-green-800'
-                              } w-full h-full pl-4 lgNav:pl-10 xl:pl-20 3xl:pl-32 pt-8 pr-2 p-lg-semibold mb-2`}
-                            >
-                              Bouw
-                              <div className=''>
-                                <button
-                                  className={`${
-                                    router.pathname === '/'
-                                      ? 'text-white'
-                                      : 'text-green-600 hover:text-green-500 '
-                                  } p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
-                                  onClick={() => router.push('/bouw/houtbouw')}
-                                >
-                                  Houtbouw stimuleren
-                                </button>
-                              </div>
-                            </div>
-                            {/* Refactor */}
+                          <DesktopNavCard transitionAgenda='bouw' themas = {bouwThemas}/>
+                            {/* Temp card as there is no themas in this transition agenda */}
                             <div
                               className={`${
                                 router.pathname === '/'
@@ -634,72 +632,9 @@ export default function Nav3(props) {
                                 </div>
                               </div>
                             </div>
-                            {/* refactor */}
-                            <div
-                              className={`${
-                                router.pathname === '/'
-                                  ? 'bg-green-600 text-light-green-500'
-                                  : 'bg-green-100 text-green-800'
-                              } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
-                            >
-                              <div className='p-lg-semibold break-words '>Consumptiegoederen</div>
-                              <div className=''>
-                                <button
-                                  className={`${
-                                    router.pathname === '/'
-                                      ? 'text-white'
-                                      : 'text-green-600 hover:text-green-500 '
-                                  } p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
-                                  onClick={() => router.push('/consumptie-goederen/matrasketen')}
-                                >
-                                  Circulaire matrasketen
-                                </button>
-                              </div>
-                            </div>
-                            {/* refactor */}
-                            <div
-                              className={`${
-                                router.pathname === '/'
-                                  ? 'bg-green-600 text-light-green-500'
-                                  : 'bg-green-100 text-green-800'
-                              } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
-                            >
-                              <div className='p-lg-semibold '>Maakindustrie</div>
-                              <div className=''>
-                                {/* Make card component that has a button on the inside? */}
-                                <button
-                                  className={`${
-                                    router.pathname === '/'
-                                      ? 'text-white'
-                                      : 'text-green-600 hover:text-green-500 '
-                                  } p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
-                                  onClick={() => router.push('/maakindustrie/windturbines')}
-                                >
-                                  Circulaire windturbines
-                                </button>
-                              </div>
-                            </div>
-                            <div
-                              className={`${
-                                router.pathname === '/'
-                                  ? 'bg-green-600 text-light-green-500'
-                                  : 'bg-green-100 text-green-800'
-                              } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
-                            >
-                              <div className='p-lg-semibold '>Kunststoffen</div>
-                              <div className=''>
-                                <button
-                                  className={`${
-                                    router.pathname === '/'
-                                      ? 'text-white'
-                                      : 'text-green-600 hover:text-green-500 '
-                                  } p-xs mt-2 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
-                                  onClick={() => router.push('/kunststoffen/plastic-in-de-bouw')}
-                                >
-                                  Plastic in de bouw
-                                </button>
-                              </div>
-                            </div>
+                            <DesktopNavCard transitionAgenda='Consumptiegoederen' themas = {consumptiegoederenThemas}/>
+                            <DesktopNavCard transitionAgenda='maakindustrie' themas = {maakindustrieThemas}/>
+                            <DesktopNavCard transitionAgenda='Kunststoffen' themas = {kunststoffenThemas}/>
                           </div>
                         </div>
                       </div>
