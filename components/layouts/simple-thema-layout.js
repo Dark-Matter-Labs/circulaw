@@ -9,7 +9,7 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
   const themaData = props.thema;
   return (
     <>
-    {/* refactor this page - make header a component for both theme and simple theme */}
+      {/* refactor this page - make header a component for both theme and simple theme */}
       {/* HEADER DESKTOP */}
       <div className='hidden sm:block w-full h-[360px]'>
         <div className='relative object-cover w-full h-full mt-3'>

@@ -38,7 +38,7 @@ export const Structure = (S) =>
                       '_type == "measure" &&  thema == "circulaire-windturbines" || thema == "windturbines"',
                     ),
                 ),
-                S.listItem()
+              S.listItem()
                 .title('Voedselverspilling')
                 .icon(GiBed)
                 .child(
@@ -46,7 +46,7 @@ export const Structure = (S) =>
                     .title('Voedselverspilling')
                     .filter('_type == "measure" && thema == "voedselverspilling"'),
                 ),
-                S.listItem()
+              S.listItem()
                 .title('Meubels')
                 .icon(GiBed)
                 .child(

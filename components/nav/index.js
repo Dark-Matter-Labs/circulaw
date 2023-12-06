@@ -26,7 +26,6 @@ import BetaBanner from '@/components/nav/beta-banner';
 import animationData from '@/public/CL_Home_Logo_Loop';
 import HomepageHeader from '@/components/homepage-header';
 
-
 const defaultOptions = {
   loop: true,
   autoplay: true,
@@ -50,7 +49,6 @@ export default function Nav3(props) {
     };
     window.addEventListener('scroll', changeEffect);
   }, []);
-
 
   // main menu
   const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
@@ -197,11 +195,24 @@ export default function Nav3(props) {
           id='parent'
           as='nav'
           className={`${
-            router.pathname === '/' ? [`${mainMenuIsMounted && scrollEffect === false ? ['bg-green-600 bg-opacity-100 shadow-lg transition-all duration-75']:[`${scrollEffect === true ? 'bg-green-600 shadow-lg tranition-all duration-150': 'bg-opacity-0 transition-all duration-150'}`]}`] : 'bg-[#F8FBF8] shadow-lg'
+            router.pathname === '/'
+              ? [
+                  `${
+                    mainMenuIsMounted || overMenuIsMounted && scrollEffect === false
+                      ? ['bg-green-600 bg-opacity-100 shadow-lg transition-all duration-75']
+                      : [
+                          `${
+                            scrollEffect === true
+                              ? 'bg-green-600 shadow-lg tranition-all duration-150'
+                              : 'bg-opacity-0 transition-all duration-150'
+                          }`,
+                        ]
+                  }`,
+                ]
+              : 'bg-[#F8FBF8] shadow-lg'
           } h-[70px] lgNav:h-[98px] flex flex-row justify-between items-center lgNav:items-end global-padding w-full lgNav:w-auto`}
         >
           <>
-          {console.log(mainMenuIsMounted && scrollEffect === false)}
             {/* LOGO */}
             <div className=''>
               {router.pathname === '/' && (
@@ -249,11 +260,9 @@ export default function Nav3(props) {
               )}
             </div>
             <div className='flex flex-col justify-between'>
-           
-            <div className='hidden lgNav:flex flex-row justify-end mb-4'>
-              <LangSwitch background='dark' />
-            </div>
-             
+              <div className='hidden lgNav:flex flex-row justify-end mb-4'>
+                <LangSwitch background='dark' />
+              </div>
 
               {/* Mobile button/NAV */}
               <div className='inset-y-0 float-right flex items-center pt-2 lgNav:hidden'>
@@ -506,7 +515,7 @@ export default function Nav3(props) {
 
                             {/* Refactor */}
                             <div className='flex flex-row items-end w-full justify-end pt-4 '>
-                          <LangSwitch/>
+                              <LangSwitch />
                             </div>
                           </div>
                         </div>
