@@ -12,7 +12,6 @@ import CustomButton from '@/components/custom-button';
 
 export default function ThemeLayout({ ...props }) {
   const themaData = props.thema;
-
   return (
     <>
       <div>
@@ -280,7 +279,7 @@ export default function ThemeLayout({ ...props }) {
           </div>
 
           <div className='bg-gray-200'>
-            <ThemeBottomSection props={props} />
+            <ThemeBottomSection props={props} thema={themaData.themaName} />
           </div>
         </div>
       </div>

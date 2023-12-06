@@ -8,7 +8,7 @@ export default function Houtbouw({ featuredLaws, thema, length }) {
   useEffect(() => {
     localStorage.clear();
   });
-
+  
   return (
     <Layout title='CircuLaw - Houtbouw Stimuleren'>
       <ThemeLayout
