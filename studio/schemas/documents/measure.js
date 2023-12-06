@@ -522,6 +522,7 @@ export default {
                     type: 'reference',
                     title: 'Reference',
                     to: [{ type: 'measure' }],
+                    validation: (Rule) => Rule.required(),
                     options: {
                       disableNew: true,
                     },
