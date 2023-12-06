@@ -508,6 +508,8 @@ export default {
                     title: 'Open in new window',
                     name: 'blank',
                     type: 'boolean',
+                    validation: (Rule) => Rule.required(),
+                    initialValue: false,
                   },
                 ],
               },
