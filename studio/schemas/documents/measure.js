@@ -508,6 +508,8 @@ export default {
                     title: 'Open in new window',
                     name: 'blank',
                     type: 'boolean',
+                    validation: (Rule) => Rule.required(),
+                    initialValue: false,
                   },
                 ],
               },
@@ -522,6 +524,7 @@ export default {
                     type: 'reference',
                     title: 'Reference',
                     to: [{ type: 'measure' }],
+                    validation: (Rule) => Rule.required(),
                     options: {
                       disableNew: true,
                     },

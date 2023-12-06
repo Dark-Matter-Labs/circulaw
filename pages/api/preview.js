@@ -6,23 +6,25 @@ function redirectToPreview(res, previewData, Location) {
   res.setPreviewData(previewData);
   // Redirect to a preview capable route
   res.writeHead(307, { Location });
-  console.log(Location)
-  
+
   res.end();
 }
 
 export default async function preview(req, res) {
-
   const previewData = {};
   const instrument = await client.fetch(measureQuery, {
     slug: req.query.slug,
   });
-  
+
   const aboutPage = await client.fetch(aboutPageQuery, {
     slug: req.query.slug,
   });
   if (instrument) {
-    return redirectToPreview(res, previewData, `/${instrument.transitionAgenda}/${instrument.thema}/instrumenten/${instrument.slug.current}`);
+    return redirectToPreview(
+      res,
+      previewData,
+      `/${instrument.transitionAgenda}/${instrument.thema}/instrumenten/${instrument.slug.current}`,
+    );
   }
   if (aboutPage) {
     return redirectToPreview(res, previewData, `/over/${aboutPage.slug.current}`);
