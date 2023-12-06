@@ -100,7 +100,7 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
         </div>
       </div>
       <div className='global-margin'>
-        <div className='max-w-3xl mb-10'>
+        <div className='max-w-[830px] mb-10'>
           <h2 className='p-5xl-semibold pb-4 pt-7'>
             Top {numberOfLaws} instrumenten voor plastic in de bouw
           </h2>
@@ -137,13 +137,13 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
 
                   <div className='block mt-2 max-w-4xl'>
                     <div className=' mb-2'>
-                      <h3 className='p-4xl-semibold max-w-[650px] text-grey-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+                      <h3 className='p-4xl-semibold text-grey-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                         {measure.titel}{' '}
                       </h3>
                     </div>
 
                     <div className='block newlineDisplay p-md text-grey-800 mt-2 pb-2'>
-                      <p className='p-base max-w-[650px]'>{measure.introText}</p>
+                      <p className='p-base'>{measure.introText}</p>
                     </div>
                     <InstrumentMetaData data={measure} />
                   </div>

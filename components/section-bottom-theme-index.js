@@ -13,7 +13,7 @@ export default function ThemeBottomSection({ props }) {
         <div className='py-8 global-margin'>
           <h3 className='p-3xl-semibold sm:p-5xl-semibold pb-4'>Uitgelichte instrumenten</h3>
           {/* ADD THIS TO CMS */}
-          <p className='pb-10 p-base max-w-2xl'>
+          <p className='pb-10 p-base max-w-[830px]'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet felis tincidunt
             odio ornare elementum. In vel ligula ut lacus pharetra finibus. Curabitur blandit ligula
             at pulvinar faucibus. Aliquam luctus, elit eu scelerisque egestas, felis odio blandit
