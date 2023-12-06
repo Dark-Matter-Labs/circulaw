@@ -39,23 +39,21 @@ const defaultOptions = {
   },
 };
 
-const bouwThemas = [
-  {name: 'Houtbouw stimuleren', url:'/bouw/houtbouw'},  
-]
+const bouwThemas = [{ name: 'Houtbouw stimuleren', url: '/bouw/houtbouw' }];
 
 // const voedselThemas = [ {name: '', url:''}  ]
 
 const consumptiegoederenThemas = [
-  {name: 'Circulaire matrasketen', url:'/consumptie-goederen/matrasketen'},  
-]
+  { name: 'Circulaire matrasketen', url: '/consumptie-goederen/matrasketen' },
+];
 
 const maakindustrieThemas = [
-  {name: 'Circulaire windturbines', url:'/maakindustrie/windturbines'},  
-]
+  { name: 'Circulaire windturbines', url: '/maakindustrie/windturbines' },
+];
 
 const kunststoffenThemas = [
-  {name: 'Plastic in de bouw', url:'/kunststoffen/plastic-in-de-bouw'},  
-]
+  { name: 'Plastic in de bouw', url: '/kunststoffen/plastic-in-de-bouw' },
+];
 
 export default function Nav3(props) {
   const router = useRouter();
@@ -220,7 +218,7 @@ export default function Nav3(props) {
             router.pathname === '/'
               ? [
                   `${
-                    mainMenuIsMounted || overMenuIsMounted && scrollEffect === false
+                    mainMenuIsMounted || (overMenuIsMounted && scrollEffect === false)
                       ? ['bg-green-600 bg-opacity-100 shadow-lg transition-all duration-75']
                       : [
                           `${
@@ -322,8 +320,10 @@ export default function Nav3(props) {
                         >
                           <div className='flex flex-col items-start justify-end global-margin '>
                             <Disclosure>
-                             {({ open }) => (
-                                <>                                  <Disclosure.Button
+                              {({ open }) => (
+                                <>
+                                  {' '}
+                                  <Disclosure.Button
                                     className={`${
                                       open ? 'text-green-500' : 'text-green-800'
                                     } py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
@@ -345,22 +345,32 @@ export default function Nav3(props) {
                                   >
                                     <Disclosure.Panel className='flex flex-col flex-grow ml-4'>
                                       <ul>
-                                        {/* Make component */}
-                                        <MobileDisclosure transitionAgenda='Bouw' themas = {bouwThemas}/>
-                                        <MobileDisclosure transitionAgenda='Consumptiegoederen' themas = {consumptiegoederenThemas}/>
+                                        <MobileDisclosure
+                                          transitionAgenda='Bouw'
+                                          themas={bouwThemas}
+                                        />
+                                        <MobileDisclosure
+                                          transitionAgenda='Consumptiegoederen'
+                                          themas={consumptiegoederenThemas}
+                                        />
 
                                         <li className='p-base-semibold text-green-800 py-6 border-b opacity-75'>
                                           Voedsel en biomassa
                                         </li>
-                                        <MobileDisclosure transitionAgenda='Maakindustrie' themas = {maakindustrieThemas}/>
-                                        <MobileDisclosure transitionAgenda='Kunststoffen' themas = {kunststoffenThemas}/>
-                                       </ul>
-                                      </Disclosure.Panel>
-                                      </Transition>
-                                      </>
-
-                                      )}
-                                  </Disclosure>
+                                        <MobileDisclosure
+                                          transitionAgenda='Maakindustrie'
+                                          themas={maakindustrieThemas}
+                                        />
+                                        <MobileDisclosure
+                                          transitionAgenda='Kunststoffen'
+                                          themas={kunststoffenThemas}
+                                        />
+                                      </ul>
+                                    </Disclosure.Panel>
+                                  </Transition>
+                                </>
+                              )}
+                            </Disclosure>
 
                             <Disclosure>
                               {({ open }) => (
@@ -402,13 +412,10 @@ export default function Nav3(props) {
                                 </>
                               )}
                             </Disclosure>
-                            {/* Make component */}
-
                             <MobileSimpleButton name='Nieuws' url='/over/Nieuws' />
                             <MobileSimpleButton name='Vraag en antwoord' url='/vraag-en-antwoord' />
                             <MobileSimpleButton name='Contact' url='/contact' />
 
-                            {/* Refactor */}
                             <div className='flex flex-row items-end w-full justify-end pt-4 '>
                               <LangSwitch />
                             </div>
@@ -467,7 +474,6 @@ export default function Nav3(props) {
                       } h-5 w-5 ml-2`}
                     />
                   </button>
-                  {/* REFACTOR CARDS */}
                   {mainMenuIsMounted && (
                     <FloatingFocusManager context={mainMenuContext} modal={true} disabled>
                       <div
@@ -486,10 +492,13 @@ export default function Nav3(props) {
                               router.pathname === '/' ? 'bg-green-500' : 'bg-white'
                             } h-full flex flex-cols-5 gap-3 relative`}
                           >
-                          <DesktopNavCard transitionAgenda='bouw' themas = {bouwThemas}/>
-                            <DesktopNavCard transitionAgenda='Consumptiegoederen' themas = {consumptiegoederenThemas}/>
-                              {/* Temp card as there is no themas in this transition agenda */}
-                              <div
+                            <DesktopNavCard transitionAgenda='bouw' themas={bouwThemas} />
+                            <DesktopNavCard
+                              transitionAgenda='Consumptiegoederen'
+                              themas={consumptiegoederenThemas}
+                            />
+                            {/* Temp card as there is no themas in this transition agenda */}
+                            <div
                               className={`${
                                 router.pathname === '/'
                                   ? 'bg-green-600 text-green-800 bg-opacity-75'
@@ -509,8 +518,14 @@ export default function Nav3(props) {
                                 </div>
                               </div>
                             </div>
-                            <DesktopNavCard transitionAgenda='Maakindustrie' themas = {maakindustrieThemas}/>
-                            <DesktopNavCard transitionAgenda='Kunststoffen' themas = {kunststoffenThemas}/>
+                            <DesktopNavCard
+                              transitionAgenda='Maakindustrie'
+                              themas={maakindustrieThemas}
+                            />
+                            <DesktopNavCard
+                              transitionAgenda='Kunststoffen'
+                              themas={kunststoffenThemas}
+                            />
                           </div>
                         </div>
                       </div>
@@ -597,9 +612,9 @@ export default function Nav3(props) {
                   )}
                 </div>
                 {/* Refactor */}
-              <DesktopSimpleButton name= 'Nieuws' url = '/over/Nieuws'/>
-              <DesktopSimpleButton name= 'Vraag en antwoord' url = '/vraag-en-antwoord'/>
-              <DesktopSimpleButton name= 'Contact' url = '/contact'/>
+                <DesktopSimpleButton name='Nieuws' url='/over/Nieuws' />
+                <DesktopSimpleButton name='Vraag en antwoord' url='/vraag-en-antwoord' />
+                <DesktopSimpleButton name='Contact' url='/contact' />
               </div>
             </div>
           </>
