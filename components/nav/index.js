@@ -26,6 +26,8 @@ import BetaBanner from '@/components/nav/beta-banner';
 import animationData from '@/public/CL_Home_Logo_Loop';
 import HomepageHeader from '@/components/homepage-header';
 import DesktopNavCard from './desktop-nav-card';
+import MobileDisclosure from './mobile-disclosure';
+import DesktopSimpleButton from './desktop-simple-button';
 
 const defaultOptions = {
   loop: true,
@@ -319,9 +321,8 @@ export default function Nav3(props) {
                         >
                           <div className='flex flex-col items-start justify-end global-margin '>
                             <Disclosure>
-                              {({ open }) => (
-                                <>
-                                  <Disclosure.Button
+                             {({ open }) => (
+                                <>                                  <Disclosure.Button
                                     className={`${
                                       open ? 'text-green-500' : 'text-green-800'
                                     } py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
@@ -344,143 +345,22 @@ export default function Nav3(props) {
                                     <Disclosure.Panel className='flex flex-col flex-grow ml-4'>
                                       <ul>
                                         {/* Make component */}
-                                        <li className='p-base-semibold text-green-800 py-6 border-b'>
-                                          <Disclosure>
-                                            {({ open }) => (
-                                              <>
-                                                <Disclosure.Button className='flex flex-row items-center'>
-                                                  Bouw
-                                                  <ChevronDownIcon
-                                                    className={`${
-                                                      open ? 'rotate-180' : ''
-                                                    } h-4 w-4 mt-1 ml-2`}
-                                                  />
-                                                </Disclosure.Button>
-                                                <Transition
-                                                  show={open}
-                                                  enter='transition duration-300 ease-out'
-                                                  enterFrom='transform opacity-0'
-                                                  enterTo='transform opacity-100'
-                                                  leave='transition duration-75 ease-out'
-                                                  leaveFrom='transform opacity-300'
-                                                  leaveTo='transform opacity-0'
-                                                  className='w-full'
-                                                >
-                                                  <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
-                                                    <Link href='/bouw/houtbouw'>
-                                                      Houtbouw stimuleren
-                                                    </Link>
-                                                  </Disclosure.Panel>
-                                                </Transition>
-                                              </>
-                                            )}
-                                          </Disclosure>
-                                        </li>
-                                        <li className='p-base-semibold text-green-800 py-6 border-b'>
-                                          <Disclosure>
-                                            {({ open }) => (
-                                              <>
-                                                <Disclosure.Button className='flex flex-row items-center'>
-                                                  Consumptiegoederen
-                                                  <ChevronDownIcon
-                                                    className={`${
-                                                      open ? 'rotate-180' : ''
-                                                    } h-4 w-4 mt-1 ml-2`}
-                                                  />
-                                                </Disclosure.Button>
-                                                <Transition
-                                                  show={open}
-                                                  enter='transition duration-300 ease-out'
-                                                  enterFrom='transform opacity-0'
-                                                  enterTo='transform opacity-100'
-                                                  leave='transition duration-75 ease-out'
-                                                  leaveFrom='transform opacity-300'
-                                                  leaveTo='transform opacity-0'
-                                                  className='w-full'
-                                                >
-                                                  <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
-                                                    <Link href='/consumptie-goederen/matrasketen'>
-                                                      Circulaire matrasketen
-                                                    </Link>
-                                                  </Disclosure.Panel>
-                                                </Transition>
-                                              </>
-                                            )}
-                                          </Disclosure>
-                                        </li>
+                                        <MobileDisclosure transitionAgenda='Bouw' themas = {bouwThemas}/>
+                                        <MobileDisclosure transitionAgenda='Consumptiegoederen' themas = {consumptiegoederenThemas}/>
+
                                         <li className='p-base-semibold text-green-800 py-6 border-b opacity-75'>
                                           Voedsel en biomassa
                                         </li>
-                                        <li className='p-base-semibold text-green-800 py-6 border-b'>
-                                          <Disclosure>
-                                            {({ open }) => (
-                                              <>
-                                                <Disclosure.Button className='flex flex-row items-center'>
-                                                  Maakindustrie
-                                                  <ChevronDownIcon
-                                                    className={`${
-                                                      open ? 'rotate-180' : ''
-                                                    } h-4 w-4 mt-1 ml-2`}
-                                                  />
-                                                </Disclosure.Button>
-                                                <Transition
-                                                  show={open}
-                                                  enter='transition duration-300 ease-out'
-                                                  enterFrom='transform opacity-0'
-                                                  enterTo='transform opacity-100'
-                                                  leave='transition duration-75 ease-out'
-                                                  leaveFrom='transform opacity-300'
-                                                  leaveTo='transform opacity-0'
-                                                  className='w-full'
-                                                >
-                                                  <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
-                                                    <Link href='/maakindustrie/windturbines'>
-                                                      Circulaire windturbines{' '}
-                                                    </Link>
-                                                  </Disclosure.Panel>
-                                                </Transition>
-                                              </>
-                                            )}
-                                          </Disclosure>
-                                        </li>
-                                        <li className='p-base-semibold text-green-800 py-6'>
-                                          <Disclosure>
-                                            {({ open }) => (
-                                              <>
-                                                <Disclosure.Button className='flex flex-row items-center'>
-                                                  Kunststoffen
-                                                  <ChevronDownIcon
-                                                    className={`${
-                                                      open ? 'rotate-180' : ''
-                                                    } h-4 w-4 mt-1 ml-2`}
-                                                  />
-                                                </Disclosure.Button>
-                                                <Transition
-                                                  show={open}
-                                                  enter='transition duration-300 ease-out'
-                                                  enterFrom='transform opacity-0'
-                                                  enterTo='transform opacity-100'
-                                                  leave='transition duration-75 ease-out'
-                                                  leaveFrom='transform opacity-300'
-                                                  leaveTo='transform opacity-0'
-                                                  className='w-full'
-                                                >
-                                                  <Disclosure.Panel className='p-base text-green-600 pt-4 pl-4'>
-                                                    <Link href='/kunststoffen/plastic-in-de-bouw'>
-                                                      Plastic in de bouw{' '}
-                                                    </Link>
-                                                  </Disclosure.Panel>
-                                                </Transition>
-                                              </>
-                                            )}
-                                          </Disclosure>
-                                        </li>
-                                      </ul>
-                                    </Disclosure.Panel>
-                                  </Transition>
-                                </>
-                              )}
-                            </Disclosure>
+                                        <MobileDisclosure transitionAgenda='Maakindustrie' themas = {maakindustrieThemas}/>
+                                        <MobileDisclosure transitionAgenda='Kunststoffen' themas = {kunststoffenThemas}/>
+                                       </ul>
+                                      </Disclosure.Panel>
+                                      </Transition>
+                                      </>
+
+                                      )}
+                                  </Disclosure>
+
                             <Disclosure>
                               {({ open }) => (
                                 <>
@@ -523,7 +403,7 @@ export default function Nav3(props) {
                             </Disclosure>
                             {/* Make component */}
                             <div className='text-green-800 border-b border-t py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
-                              <Link href='/over/Nieuws-en-blogs'>Nieuws</Link>
+                              <Link href='/over/Nieuws'>Nieuws</Link>
                             </div>
                             <div className='text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center'>
                               <Link href='/vraag-en-antwoord'>Vraag en antwoord</Link>
@@ -611,8 +491,10 @@ export default function Nav3(props) {
                             } h-full flex flex-cols-5 gap-3 relative`}
                           >
                           <DesktopNavCard transitionAgenda='bouw' themas = {bouwThemas}/>
-                            {/* Temp card as there is no themas in this transition agenda */}
-                            <div
+                          
+                            <DesktopNavCard transitionAgenda='Consumptiegoederen' themas = {consumptiegoederenThemas}/>
+                              {/* Temp card as there is no themas in this transition agenda */}
+                              <div
                               className={`${
                                 router.pathname === '/'
                                   ? 'bg-green-600 text-green-800 bg-opacity-75'
@@ -632,8 +514,7 @@ export default function Nav3(props) {
                                 </div>
                               </div>
                             </div>
-                            <DesktopNavCard transitionAgenda='Consumptiegoederen' themas = {consumptiegoederenThemas}/>
-                            <DesktopNavCard transitionAgenda='maakindustrie' themas = {maakindustrieThemas}/>
+                            <DesktopNavCard transitionAgenda='Maakindustrie' themas = {maakindustrieThemas}/>
                             <DesktopNavCard transitionAgenda='Kunststoffen' themas = {kunststoffenThemas}/>
                           </div>
                         </div>
@@ -721,33 +602,9 @@ export default function Nav3(props) {
                   )}
                 </div>
                 {/* Refactor */}
-                <div
-                  className={`${
-                    router.pathname === '/'
-                      ? 'text-white hover:text-light-green-500'
-                      : 'text-green-800 hover:text-green-500'
-                  } h-full relative p-sm  hover:underline z-100 mr-8 flex flex-row items-center cursor-pointer`}
-                >
-                  <Link href='/over/Nieuws-en-blogs'>Nieuws</Link>
-                </div>
-                <div
-                  className={`${
-                    router.pathname === '/'
-                      ? 'text-white hover:text-light-green-500'
-                      : 'text-green-800 hover:text-green-500'
-                  } h-full relative p-sm  hover:underline z-100 mr-8 flex flex-row items-center cursor-pointer`}
-                >
-                  <Link href='/vraag-en-antwoord'>Vraag en antwoord</Link>
-                </div>
-                <div
-                  className={`${
-                    router.pathname === '/'
-                      ? 'text-white hover:text-light-green-500'
-                      : 'text-green-800 hover:text-green-500'
-                  } h-full relative p-sm  hover:underline z-100 flex flex-row items-center cursor-pointer`}
-                >
-                  <Link href='/contact'>Contact</Link>
-                </div>
+              <DesktopSimpleButton name= 'Nieuws' url = '/over/Nieuws'/>
+              <DesktopSimpleButton name= 'Vraag en antwoord' url = '/vraag-en-antwoord'/>
+              <DesktopSimpleButton name= 'Contact' url = '/contact'/>
               </div>
             </div>
           </>
