@@ -6,7 +6,6 @@ function redirectToPreview(res, previewData, Location) {
   res.setPreviewData(previewData);
   // Redirect to a preview capable route
   res.writeHead(307, { Location });
-  console.log(Location);
 
   res.end();
 }
