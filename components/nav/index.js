@@ -400,7 +400,7 @@ export default function Nav3(props) {
                                         {props?.aboutSlugs?.map((aboutPage) => (
                                           <li
                                             key={aboutPage?.slug}
-                                            className='p-base first:mt-4 mb-4 text-green-600 cursor-pointer'
+                                            className='p-base h-10 last:mb-2 text-green-600 cursor-pointer flex items-center'
                                             onClick={() => router.push(`/over/${aboutPage?.slug}`)}
                                           >
                                             {aboutPage.title}
