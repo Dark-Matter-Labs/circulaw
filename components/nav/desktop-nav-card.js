@@ -7,7 +7,7 @@ export default function DesktopNavCard({ transitionAgenda, themas }) {
     <div
       className={`${
         router.pathname === '/'
-          ? 'bg-green-600 text-light-green-500'
+          ? 'bg-green-600 text-green-200'
           : 'bg-green-100 text-green-800'
       } w-full h-full  ${
         transitionAgenda === 'bouw'

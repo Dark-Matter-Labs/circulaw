@@ -440,13 +440,13 @@ export default function Nav3(props) {
                         mainMenuIsOpen === true
                           ? [
                               `${
-                                router.pathname === '/' ? 'text-light-green-500' : 'text-green-500'
+                                router.pathname === '/' ? 'text-green-200' : 'text-green-500'
                               }`,
                             ]
                           : [
                               `${
                                 router.pathname === '/'
-                                  ? 'text-white group-hover:decoration-light-green-500'
+                                  ? 'text-white group-hover:decoration-green-200'
                                   : 'text-green-800 group-hover:decoration-green-500'
                               }`,
                             ]
@@ -460,14 +460,14 @@ export default function Nav3(props) {
                           ? [
                               `${
                                 router.pathname === '/'
-                                  ? 'text-light-green-500 rotate-180'
+                                  ? 'text-green-200 rotate-180'
                                   : 'rotate-180 text-green-500'
                               }`,
                             ]
                           : [
                               `${
                                 router.pathname === '/'
-                                  ? 'text-white group-hover:text-light-green-500'
+                                  ? 'text-white group-hover:text-green-200'
                                   : 'group-hover:text-green-500'
                               }`,
                             ]
@@ -489,7 +489,7 @@ export default function Nav3(props) {
                         >
                           <div
                             className={`${
-                              router.pathname === '/' ? 'bg-green-500' : 'bg-white'
+                              router.pathname === '/' ? 'bg-green-200' : 'bg-white'
                             } h-full flex flex-cols-5 gap-3 relative`}
                           >
                             <DesktopNavCard transitionAgenda='bouw' themas={bouwThemas} />
@@ -501,7 +501,7 @@ export default function Nav3(props) {
                             <div
                               className={`${
                                 router.pathname === '/'
-                                  ? 'bg-green-600 text-green-800 bg-opacity-75'
+                                  ? 'bg-green-800 text-gray-500'
                                   : 'bg-grey-100 text-green-800 text-opacity-75'
                               } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
                             >
@@ -510,7 +510,7 @@ export default function Nav3(props) {
                                 <div
                                   className={`${
                                     router.pathname === '/'
-                                      ? 'text-green-300 opacity-75'
+                                      ? 'text-gray-500'
                                       : 'text-gray-600'
                                   } p-xs mt-2 italic`}
                                 >
@@ -544,13 +544,13 @@ export default function Nav3(props) {
                         overMenuIsOpen === true
                           ? [
                               `${
-                                router.pathname === '/' ? 'text-light-green-500' : 'text-green-500'
+                                router.pathname === '/' ? 'text-green-200' : 'text-green-500'
                               }`,
                             ]
                           : [
                               `${
                                 router.pathname === '/'
-                                  ? 'text-white group-hover:decoration-light-green-500'
+                                  ? 'text-white group-hover:decoration-green-200'
                                   : 'text-green-800 group-hover:decoration-green-500'
                               }`,
                             ]
@@ -564,14 +564,14 @@ export default function Nav3(props) {
                           ? [
                               `${
                                 router.pathname === '/'
-                                  ? 'text-light-green-500 rotate-180'
+                                  ? 'text-green-200 rotate-180'
                                   : 'rotate-180 text-green-500'
                               }`,
                             ]
                           : [
                               `${
                                 router.pathname === '/'
-                                  ? 'text-white group-hover:text-light-green-500'
+                                  ? 'text-white group-hover:text-green-200'
                                   : 'group-hover:text-green-500'
                               }`,
                             ]
