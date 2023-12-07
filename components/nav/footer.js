@@ -22,7 +22,7 @@ const navigation = {
     { name: 'Houtbouw stimuleren', slug: '/bouw/houtbouw' },
     { name: 'Circulaire windturbines', slug: '/maakindustrie/windturbines' },
     { name: 'Circulaire matrasketen', slug: '/consumptie-goederen/matrasketen' },
-    { name: 'Plastic in de bouw', slug: '/kunststoffen/plastic-in-de-bouw' },
+    // { name: 'Plastic in de bouw', slug: '/kunststoffen/plastic-in-de-bouw' },
   ],
 };
 

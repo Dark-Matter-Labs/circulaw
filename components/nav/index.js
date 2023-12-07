@@ -51,9 +51,10 @@ const maakindustrieThemas = [
   { name: 'Circulaire windturbines', url: '/maakindustrie/windturbines' },
 ];
 
+{/* 
 const kunststoffenThemas = [
   { name: 'Plastic in de bouw', url: '/kunststoffen/plastic-in-de-bouw' },
-];
+];*/}
 
 export default function Nav3(props) {
   const router = useRouter();
@@ -367,10 +368,9 @@ export default function Nav3(props) {
                                           transitionAgenda='Maakindustrie'
                                           themas={maakindustrieThemas}
                                         />
-                                        <MobileDisclosure
-                                          transitionAgenda='Kunststoffen'
-                                          themas={kunststoffenThemas}
-                                        />
+                                        <li className='p-base-semibold text-green-800 py-6 border-b opacity-75'>
+                                          Voedsel en biomassa
+                                        </li>
                                       </ul>
                                     </Disclosure.Panel>
                                   </Transition>
@@ -522,10 +522,24 @@ export default function Nav3(props) {
                               transitionAgenda='Maakindustrie'
                               themas={maakindustrieThemas}
                             />
-                            <DesktopNavCard
-                              transitionAgenda='Kunststoffen'
-                              themas={kunststoffenThemas}
-                            />
+                            <div
+                              className={`${
+                                router.pathname === '/'
+                                  ? 'bg-green-600 text-gray-100 opacity-80'
+                                  : 'bg-grey-100 text-green-800 text-opacity-75'
+                              } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
+                            >
+                              <div className='p-lg-semibold '>Kunststoffen</div>
+                              <div className=''>
+                                <div
+                                  className={`${
+                                    router.pathname === '/' ? 'text-gray-100' : 'text-gray-600'
+                                  } p-xs mt-2 italic`}
+                                >
+                                  Thema’s voor deze productketen volgen binnenkort
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
