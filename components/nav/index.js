@@ -280,12 +280,15 @@ export default function Nav3(props) {
               )}
             </div>
             <div className='flex flex-col justify-between'>
-              {router.pathname === '/' ? ( <div className='hidden lgNav:flex flex-row justify-end mb-4'>
-                <LangSwitch background='dark' />
-              </div>) : ( <div className='hidden lgNav:flex flex-row justify-end mb-4'>
-                <LangSwitch />
-              </div>)}
-             
+              {router.pathname === '/' ? (
+                <div className='hidden lgNav:flex flex-row justify-end mb-4'>
+                  <LangSwitch background='dark' />
+                </div>
+              ) : (
+                <div className='hidden lgNav:flex flex-row justify-end mb-4'>
+                  <LangSwitch />
+                </div>
+              )}
 
               {/* Mobile button/NAV */}
               <div className='inset-y-0 float-right flex items-center pt-2 lgNav:hidden'>
