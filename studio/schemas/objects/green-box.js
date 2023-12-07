@@ -24,7 +24,8 @@ export default {
             { title: 'Number', value: 'number' },
           ],
           marks: {
-            decorators: [],
+            decorators: [ { title: 'Strong', value: 'strong' },
+            { title: 'Emphasis', value: 'em' },],
             annotations: [
               {
                 title: 'URL',
