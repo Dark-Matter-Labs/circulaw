@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Tag from '../tag';
 import InstrumentMetaData from '../instrument/instrument-metadata';
-import ThemePageHeader from '@/components/theme-page/theme-page-header'
+import ThemePageHeader from '@/components/theme-page/theme-page-header';
 import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
 
 export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props }) {
@@ -9,9 +9,9 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
   return (
     <>
       {/* HEADER DESKTOP */}
-      <ThemePageHeader themaData={themaData}/>
+      <ThemePageHeader themaData={themaData} />
       {/* HEADER MOBILE */}
-      <ThemePageHeaderMobile themaData={themaData}/>
+      <ThemePageHeaderMobile themaData={themaData} />
 
       <div className='global-margin'>
         <div className='max-w-[830px] mb-10'>

@@ -18,7 +18,7 @@ export default function ThemeLayout({ ...props }) {
         {/* HEADER DESKTOP */}
         <ThemePageHeader themaData={themaData} />
         {/* HEADER MOBILE */}
-       <ThemePageHeaderMobile themaData={themaData}/>
+        <ThemePageHeaderMobile themaData={themaData} />
 
         {/* CARDS */}
         <div className='bg-gradient-to-b from-[#F8FAF8] to-[#F8FAF8]'>
