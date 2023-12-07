@@ -59,7 +59,7 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
                     <div className='block newlineDisplay p-md text-grey-800 mt-2 pb-2'>
                       <p className='p-base sm:max-w-[650px]'>{measure.introText}</p>
                     </div>
-                    <InstrumentMetaData data={measure} borders={true}/>
+                    <InstrumentMetaData data={measure} borders={true} />
                   </div>
                 </div>
               </Link>
