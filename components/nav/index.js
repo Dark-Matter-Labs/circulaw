@@ -51,10 +51,12 @@ const maakindustrieThemas = [
   { name: 'Circulaire windturbines', url: '/maakindustrie/windturbines' },
 ];
 
-{/* 
+{
+  /* 
 const kunststoffenThemas = [
   { name: 'Plastic in de bouw', url: '/kunststoffen/plastic-in-de-bouw' },
-];*/}
+];*/
+}
 
 export default function Nav3(props) {
   const router = useRouter();
