@@ -406,8 +406,7 @@ export default function Nav3(props) {
                                     <Disclosure.Panel className='ml-4'>
                                       <ul>
                                         {/* Remove slice once news section is separate */}
-                                        {props?.aboutSlugs?.slice(0,4).map((aboutPage) => (
-                                          
+                                        {props?.aboutSlugs?.slice(0, 4).map((aboutPage) => (
                                           <li
                                             key={aboutPage?.slug}
                                             className='p-base h-10 my-2 last:mb-2 text-green-600 cursor-pointer flex items-center'
@@ -608,7 +607,7 @@ export default function Nav3(props) {
                           onMouseLeave={() => setOverMenuIsOpen(false)}
                         >
                           {/* Remove slice once news section is separate */}
-                          {props?.aboutSlugs?.slice(1,4).map((aboutPage) => (
+                          {props?.aboutSlugs?.slice(1, 4).map((aboutPage) => (
                             <button
                               key={aboutPage?.slug}
                               className={`${
