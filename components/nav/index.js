@@ -371,7 +371,7 @@ export default function Nav3(props) {
                                           themas={maakindustrieThemas}
                                         />
                                         <li className='p-base-semibold text-green-800 py-6 border-b opacity-75'>
-                                        Kunststoffen
+                                          Kunststoffen
                                         </li>
                                       </ul>
                                     </Disclosure.Panel>
