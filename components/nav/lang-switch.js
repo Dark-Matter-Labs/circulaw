@@ -6,7 +6,7 @@ export default function LangSwitch({ background }) {
   return (
     <div
       className={`${
-        background === 'dark' ? 'text-gray-100' : 'text-black'
+        background === 'dark' ? 'text-gray-100' : 'text-green-800'
       } flex justify-center items-center`}
     >
       <span
