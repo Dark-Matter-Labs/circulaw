@@ -26,7 +26,7 @@ export default function MobileDisclosure({ transitionAgenda, themas }) {
                 <ul>
                   {themas.map((thema) => (
                     <li key={thema.name} className=' pt-4 w-full flex items-center ml-4'>
-                      <Link href={thema.url} className='w-full h-full flex items-center'>
+                      <Link href={thema.url} className='h-10 flex items-center'>
                         {thema.name}
                       </Link>
                     </li>
