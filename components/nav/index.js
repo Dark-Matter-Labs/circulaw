@@ -452,7 +452,7 @@ export default function Nav3(props) {
                                   : 'text-green-800 group-hover:decoration-green-500'
                               }`,
                             ]
-                      } hover:underline`}
+                      } group-hover:underline`}
                     >
                       Productketens
                     </span>
@@ -550,7 +550,7 @@ export default function Nav3(props) {
                                   : 'text-green-800 group-hover:decoration-green-500'
                               }`,
                             ]
-                      } hover:underline`}
+                      } group-hover:underline`}
                     >
                       Over Circulaw
                     </span>
