@@ -485,8 +485,8 @@ export default function Nav3(props) {
                         >
                           <div
                             className={`${
-                              router.pathname === '/' ? 'bg-green-200' : 'bg-white'
-                            } h-full flex flex-cols-5 gap-3 relative`}
+                              router.pathname === '/' ? 'bg-green-500' : 'bg-gray-300'
+                            } h-full flex flex-cols-5 gap-[1px] relative`}
                           >
                             <DesktopNavCard transitionAgenda='bouw' themas={bouwThemas} />
                             <DesktopNavCard
@@ -497,7 +497,7 @@ export default function Nav3(props) {
                             <div
                               className={`${
                                 router.pathname === '/'
-                                  ? 'bg-green-800 text-gray-500'
+                                  ? 'bg-green-600 text-gray-100 opacity-80'
                                   : 'bg-grey-100 text-green-800 text-opacity-75'
                               } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
                             >
@@ -505,7 +505,7 @@ export default function Nav3(props) {
                               <div className=''>
                                 <div
                                   className={`${
-                                    router.pathname === '/' ? 'text-gray-500' : 'text-gray-600'
+                                    router.pathname === '/' ? 'text-gray-100' : 'text-gray-600'
                                   } p-xs mt-2 italic`}
                                 >
                                   Thema’s voor deze productketen volgen binnenkort
