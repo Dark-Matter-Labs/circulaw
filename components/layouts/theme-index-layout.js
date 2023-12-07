@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
-import ThemeBottomSection from '@/components/section-bottom-theme-index';
+import ThemeBottomSection from '@/components/theme-page/section-bottom-theme-index';
 import waarvoor from '@/public/thema-card-background/waarvoor.svg';
 import samenhang from '@/public/thema-card-background/samenhang.svg';
 import list from '@/public/thema-card-background/list.svg';
