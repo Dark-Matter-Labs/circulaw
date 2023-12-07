@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { urlFor } from '@/lib/sanity'
 import LinkIcon from '../link-icon'
+import { ChevronLeftIcon } from '@heroicons/react/outline'
 
 export default function ThemePageHeaderMobile({themaData}) {
     return (
@@ -17,23 +18,21 @@ export default function ThemePageHeaderMobile({themaData}) {
 
           <div className='w-full h-full z-10 flex flex-col justify-between global-margin'>
             <div>
-              <div className='pt-8'>
-                <Link
-                  className='rounded-clSm bg-breadcrumb px-4 pt-0.5 pb-1.5 w-auto text-gray-100'
-                  href='/'
-                >
-                  <span className='p-2xs-bold link-interaction align-middle'>
-                    Home &nbsp; &gt;
-                  </span>
-                </Link>
-              </div>
+            <div className='pt-8'>
+              <Link
+                className='rounded-clSm bg-white opacity-80 px-2 py-1.5 text-green-600 inline-flex flex-row items-center justify-center group'
+                href='/'
+              ><ChevronLeftIcon className='w-3 h-3 mt-0.5 font-semibold group-hover:text-green-300 group-active:text-green-800 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white'/>
+                <span className='p-2xs-bold align-middle group-hover:text-green-300 group-active:text-green-800 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white'> &nbsp;Home </span>
+              </Link>
+            </div>
             </div>
             <div className='mb-6'>
               <h1 className='p-5xl-semibold text-gray-50 pb-1'>{themaData?.themaName}</h1>
               <p className='p-base text-gray-50'>
                 {themaData?.themaSubtitle}
                 {themaData?.linkText && (
-                  <span className='text-green-500 link-base inline-block '>
+                  <span className='text-white link-base inline-block '>
                     <a
                       href={themaData?.headerLinkURL}
                       target='_blank'
