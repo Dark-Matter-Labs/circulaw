@@ -1,25 +1,14 @@
-import { useRouter } from 'next/router';
 import RLadderTooltip from '@/components/tooltips/r-ladder-tooltip';
 import JHTooltip from '../tooltips/tooltip-juridische-houdbaarheid';
 import JITooltip from '../tooltips/tooltip-juridische-invloed';
 
-export default function InstrumentMetaData({ data }) {
-  const router = useRouter();
-
+export default function InstrumentMetaData({ data, borders }) {
   return (
     <>
       <div className='hidden sm:block'>
         <div
           className={`${
-            (router.pathname === '/bouw/houtbouw/instrumenten') |
-            (router.pathname === '/maakindustrie/windturbines/instrumenten') |
-            (router.pathname === '/consumenten-goederen/matrasketen/instrumenten') |
-            (router.pathname === '/maakindustrie/windturbines') |
-            (router.pathname === '/bouw/houtbouw') |
-            (router.pathname === '/consumptie-goederen/matrasketen') |
-            (router.pathname === '/kunststoffen/plastic-in-de-bouw')
-              ? 'border-y border-gray-300'
-              : 'pt-5 pb-3'
+            borders === true ? 'border-y border-gray-300' : 'pt-5 pb-3'
           } h-auto flex flex-row gap-x-4 grow-0 items-center justify-self-center max-w-[840px]`}
         >
           <div className='flex flex-col basis-houdbaarheid'>

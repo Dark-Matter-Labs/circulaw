@@ -15,7 +15,7 @@ export default function PolicyList(props) {
           href={`/${law.transitionAgenda}/${law.thema}/instrumenten/${law.slug.current}`}
           key={law.titel}
         >
-          <div className='block sm:ml-0 mb-10 sm:mb-8 max-w-[760px]'>
+          <div className='block sm:ml-0 mb-10 sm:mb-8 md:max-w-[760px]'>
             <div className='flex justify-start items-center -ml-1'>
               {/* Expertise Tag */}
               {law?.beleid === true && <Tag classes='bg-green-500 text-gray-100'>Beleid</Tag>}
@@ -27,16 +27,16 @@ export default function PolicyList(props) {
               {law?.fiscaal === true && <Tag classes='bg-green-500 text-gray-100'>Fiscaal</Tag>}
             </div>
 
-            <div className='block mt-2 max-w-4xl'>
+            <div className='block mt-2 '>
               <div className=' mb-2'>
-                <h3 className='p-4xl-semibold  text-grey-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+                <h3 className='p-4xl-semibold max-w-[650px] text-grey-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                   {law.titel}{' '}
                 </h3>
               </div>
-              <div className='block newlineDisplay p-md text-grey-800 mt-2 pb-2'>
-                <p className='p-base '>{law.introText}</p>
+              <div className='block  newlineDisplay p-md text-grey-800 mt-2 pb-2'>
+                <p className='p-base max-w-[650px]'>{law.introText}</p>
               </div>
-              <InstrumentMetaData data={law} />
+              <InstrumentMetaData data={law} borders={true} />
             </div>
           </div>
         </Link>
