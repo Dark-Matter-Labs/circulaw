@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import Link from 'next/link';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
-import Layout from '../../components/layouts/layout';
-import CustomButton from '../../components/custom-button';
+import Layout from '@/components/layouts/layout';
+import CustomButton from '@/components/custom-button';
 
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/929e2e8c-bdf9-4c5f-a293-699dd63de422';
 

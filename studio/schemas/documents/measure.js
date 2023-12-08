@@ -1,6 +1,6 @@
 import { VscLaw } from 'react-icons/vsc';
-import { ProductGroupInput } from '../../components/product-group-input';
 import { CgInternal } from 'react-icons/cg';
+import { ProductGroupInput } from '../../components/product-group-input';
 
 export default {
   title: 'Measure',
@@ -86,11 +86,12 @@ export default {
       type: 'string',
       description:
         'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
+      validation: (Rule) => Rule.required(),
       options: {
         list: [
           { title: 'Biomassa en voedsel', value: 'biomassa-en-voedsel' },
           { title: 'Kunststoffen', value: 'kunststoffen' },
-          { title: 'Consumptiegoederen', value: 'consumptiegoederen' },
+          { title: 'Consumptiegoederen', value: 'consumptie-goederen' },
           { title: 'Bouw', value: 'bouw' },
           { title: 'Maakindustrie', value: 'maakindustrie' },
         ], // <-- predefined values
@@ -119,12 +120,13 @@ export default {
       description: 'Selecteer het thema waaronder dit instrument valt.',
       validation: (Rule) => Rule.required(),
       hidden: ({ document }) => document.themaOrProductGroup !== 'theme',
-
       options: {
         list: [
-          { title: 'Houtbouw', value: 'houtbouw-stimuleren' }, // need to change to refernece
-          { title: 'Circulaire windturbines', value: 'circulaire-windturbines' }, // need to change to reference
-          { title: 'Matrassen', value: 'circulaire-matrasketen' }, // need to change to reference
+          { title: 'Houtbouw', value: 'houtbouw' }, // need to change to refernece
+          { title: 'Circulaire windturbines', value: 'windturbines' }, // need to change to reference
+          { title: 'Matrassen', value: 'matrasketen' }, // need to change to reference
+          { title: 'Voedselverspilling', value: 'voedselverspilling' }, // need to change to reference
+          { title: 'Meubels', value: 'meubels' }, // need to change to reference
         ],
         layout: 'dropdown',
       },
@@ -484,9 +486,13 @@ export default {
             { title: 'firstH2', value: 'firstH2' },
             { title: 'H3', value: 'h3' },
             { title: 'normal', value: 'normal' },
+            // { title: 'subheading', value: 'subheading' },
           ],
           marks: {
-            decorators: [],
+            decorators: [
+              { title: 'Strong', value: 'strong' },
+              { title: 'Emphasis', value: 'em' },
+            ],
             annotations: [
               {
                 title: 'URL',
@@ -507,6 +513,8 @@ export default {
                     title: 'Open in new window',
                     name: 'blank',
                     type: 'boolean',
+                    validation: (Rule) => Rule.required(),
+                    initialValue: false,
                   },
                 ],
               },
@@ -521,6 +529,7 @@ export default {
                     type: 'reference',
                     title: 'Reference',
                     to: [{ type: 'measure' }],
+                    validation: (Rule) => Rule.required(),
                     options: {
                       disableNew: true,
                     },

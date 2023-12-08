@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import InstrumentLinksDropdown from '../components/instrument/instrument-links-dropdown';
+import InstrumentLinksDropdown from '@/components/instrument/instrument-links-dropdown';
 import { useRouter } from 'next/router';
 
 export default function OverviewPageHeader({ props, page }) {
   const router = useRouter();
+
   return (
     <>
       <div
@@ -18,7 +19,7 @@ export default function OverviewPageHeader({ props, page }) {
               Home &nbsp;
               <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />{' '}
             </Link>
-            <Link href={`/${props.thema.toLowerCase().replace(/ /g, '-')}`}>
+            <Link href={`/${props.transitionAgenda}/${props.thema}`}>
               <span className='underline inline-block uppercase link-interaction-dark-bg'>
                 {props.thema.replace('-', ' ')}
               </span>

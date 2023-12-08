@@ -1,9 +1,14 @@
 import Link from 'next/link';
-import ThemeBottomSection from '../section-bottom-theme-index';
-import ThemeCard from '../theme-card';
 import Image from 'next/image';
-import LinkIcon from '../link-icon';
-import { urlFor } from '../../lib/sanity';
+import { ArrowRightIcon } from '@heroicons/react/outline';
+
+import ThemeBottomSection from '@/components/theme-page/section-bottom-theme-index';
+import waarvoor from '@/public/thema-card-background/waarvoor.svg';
+import samenhang from '@/public/thema-card-background/samenhang.svg';
+import list from '@/public/thema-card-background/list.svg';
+import CustomButton from '@/components/custom-button';
+import ThemePageHeader from '../theme-page/theme-page-header';
+import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
 
 export default function ThemeLayout({ ...props }) {
   const themaData = props.thema;
@@ -11,92 +16,183 @@ export default function ThemeLayout({ ...props }) {
     <>
       <div>
         {/* HEADER DESKTOP */}
-        <div className='hidden sm:block w-full h-[28rem]'>
-          <div className='relative object-cover w-full h-full'>
-            <Image
-              src={urlFor(themaData?.heroImage).url()}
-              alt={`${themaData.themaName} + 'hero image'`}
-              fill
-              className='z-0'
-              priority
-            />
-            <div className='global-margin h-[28rem] z-5 pt-10 relative'>
-              <Link
-                className='bg-grey-100 border rounded-md border-grey-100 pl-1 pr-2 py-0.5 breadcrumb text-green-500'
-                href='/'
-              >
-                <span className='link-interaction'>&lt; Home</span>
+        <ThemePageHeader themaData={themaData} />
+        {/* HEADER MOBILE */}
+        <ThemePageHeaderMobile themaData={themaData} />
+
+        {/* CARDS */}
+        <div className='bg-gradient-to-b from-[#F8FAF8] to-[#F8FAF8]'>
+          <div className='global-margin pb-16 sm:pb-20'>
+            <div className='pt-14 pb-10'>
+              <h2 className='p-3xl-semibold sm:p-5xl-semibold'>{themaData?.overviewsTitle}</h2>
+            </div>
+            {/* Desktop Cards */}
+            <ul
+              className='hidden sm:grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 sm:gap-x-8 max-w-8xl relative z-0'
+              role='list'
+            >
+              <Link href={`/${themaData.transitionAgenda}/${themaData.slug.current}/categorie`}>
+                <li
+                  role='listitem'
+                  className='h-auto rounded-cl flex flex-col max-w-[355px] min-w-[300px]'
+                >
+                  <div className='bg-green-600 rounded-t-cl h-48 flex items-center justify-center'>
+                    <div className='p-4'>
+                      <Image
+                        src={samenhang}
+                        alt='vector image for categorie page'
+                        className='h-full w-full'
+                      />
+                    </div>
+                  </div>
+
+                  <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                    <div>
+                      <div className='p-4xl-semibold pb-4'>{themaData.samenhangTitle}</div>
+                      <div className='p-base'>{themaData.samenhangText}</div>
+                    </div>
+                    <CustomButton color='whiteBackground'>
+                      Bekijk jouw categorie
+                      <ArrowRightIcon
+                        className='inline-block h-4 w-4 ml-1 place-self-center'
+                        aria-hidden='true'
+                      />
+                    </CustomButton>
+                  </div>
+                </li>
               </Link>
-              <div className='grid col-span-8 grid-cols-8 sm:pl-12 sm:pt:12 md:pl-24 lg:pl-36 pb-14 pt-14 w-4/5'>
-                <div className='col-span-8'>
-                  <h1 className='mobile sm:desktop text-grey-100 inline-block lg mobile sm:desktop'>
-                    {themaData?.themaName}
-                  </h1>
-                </div>
-                <div className='col-span-7'>
-                  <p className='pt-4 text-grey-100 p-lg '>
-                    {themaData?.themaSubtitle}{' '}
-                    {themaData?.linkText && (
-                      <span className='text-green-300 link-base inline-block hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white group'>
-                        <a href={themaData?.headerLink} target='_blank' rel='noopener noreferrer'>
-                          {themaData?.linkText}
-                          <LinkIcon />
-                        </a>
-                      </span>
-                    )}
-                  </p>
-                </div>
-              </div>
-            </div>
+              <Link href={`/${themaData.transitionAgenda}/${themaData.slug.current}/instrumenten/`}>
+                <li
+                  role='listitem'
+                  className='h-auto rounded-cl flex flex-col max-w-[355px] min-w-[300px]'
+                >
+                  <div className='bg-green-600 rounded-t-cl h-48 flex items-center justify-center'>
+                    <div className='p-4'>
+                      <Image src={list} alt='' className='h-full w-full' />
+                    </div>
+                  </div>
+                  <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                    <div>
+                      <div className='p-4xl-semibold pb-4'>{props.listTitle}</div>
+                      <div className='p-base'>{themaData.listText}</div>
+                    </div>
+                    <CustomButton color='whiteBackground'>
+                      Naar de lijst
+                      <ArrowRightIcon
+                        className='inline-block h-4 w-4 ml-1 place-self-center'
+                        aria-hidden='true'
+                      />
+                    </CustomButton>
+                  </div>{' '}
+                </li>
+              </Link>
+              <Link
+                href={`/${themaData.transitionAgenda}/${themaData.slug.current}/overheidsbevoegdheid`}
+              >
+                <li
+                  role='listitem'
+                  className='h-auto rounded-cl flex flex-col max-w-[355px] min-w-[300px]'
+                >
+                  <div className='bg-green-600 rounded-t-cl h-48 flex items-center justify-center'>
+                    <div className='p-4'>
+                      {' '}
+                      <Image src={waarvoor} alt='' className='h-full w-full' />
+                    </div>
+                  </div>
+                  <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                    <div>
+                      <div className='p-4xl-semibold pb-4'>{themaData.welkeTitle}</div>
+                      <div className='p-base'>{themaData.welkeText}</div>
+                    </div>
+                    <CustomButton color='whiteBackground'>
+                      Bekijk de bevoegdheden
+                      <ArrowRightIcon
+                        className='inline-block h-4 w-4 ml-1 place-self-center'
+                        aria-hidden='true'
+                      />
+                    </CustomButton>
+                  </div>{' '}
+                </li>
+              </Link>
+            </ul>
+            {/* Mobile Cards */}
+            <ul className='sm:hidden max-w-sm'>
+              <li>
+                <Link href={`/${themaData.transitionAgenda}/${themaData.slug.current}/categorie`}>
+                  <div className='h-24 w-full rounded-cl bg-grey-50 shadow mb-6'>
+                    <div className='flex items-center justify-start'>
+                      <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
+                        <Image
+                          src={samenhang}
+                          alt='vector image for categorie page'
+                          className='w-full h-full rounded-l-cl'
+                        />
+                      </div>
+                      <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
+                        <div className='p-2xl-semibold'>Instrumenten per categorie</div>
+                        <ArrowRightIcon
+                          className='block h-6 w-6 text-green-600 mt-1'
+                          aria-hidden='true'
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${themaData.transitionAgenda}/${themaData.slug.current}/instrumenten/`}
+                >
+                  <div className='h-24 w-full rounded-cl bg-grey-50 shadow my-6'>
+                    <div className='flex items-center justify-start'>
+                      <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
+                        <Image
+                          src={list}
+                          alt='vector image for list page'
+                          className='w-full h-full rounded-l-cl'
+                        />
+                      </div>
+                      <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
+                        <div className='p-2xl-semibold'>{props.listTitle}</div>
+                        <ArrowRightIcon
+                          className='block h-6 w-6 text-green-600'
+                          aria-hidden='true'
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${themaData.transitionAgenda}/${themaData.slug.current}/overheidsbevoegdheid`}
+                >
+                  <div className='h-24 w-full rounded-cl bg-grey-50 shadow mt-6'>
+                    <div className='flex items-center justify-start'>
+                      <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
+                        <Image
+                          src={waarvoor}
+                          alt='vector image for waarvoor page'
+                          className='w-full h-full rounded-l-cl'
+                        />
+                      </div>
+                      <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
+                        <div className='p-2xl-semibold'>{themaData.welkeTitle}</div>
+                        <ArrowRightIcon
+                          className='block h-6 w-6 text-green-600 mt-1'
+                          aria-hidden='true'
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            </ul>
           </div>
-        </div>
 
-        <div className='block global-margin sm:hidden pt-5'>
-          <div className='py-3'>
-            <h2 className='mobile pb-3'>{themaData?.themaName}</h2>
-            <p className=' pb-3'>
-              {themaData?.themaSubtitle}
-              {themaData?.linkText && (
-                <span className='text-green-500 link-base inline-block '>
-                  <a
-                    href={themaData?.headerLinkURL}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                  >
-                    {themaData?.linkText}
-                    <LinkIcon />
-                  </a>
-                </span>
-              )}
-            </p>
+          <div className='bg-gray-200'>
+            <ThemeBottomSection props={props} thema={themaData.themaName} />
           </div>
-
-          <div className='h-56 max-w-[380px] mx-auto flex items-center justify-center'>
-            <div className='flex items-center justify-center h-full w-full rounded-cl relative z-0 object-cover'>
-              <Image
-                src={urlFor(themaData?.heroImageMobile).url()}
-                alt={`${themaData.themaName} + 'hero image'`}
-                fill
-                className='rounded-cl absolute'
-              />
-              <div className='w-full h-full thema-hero-gradient z-0 rounded-cl'></div>
-            </div>
-          </div>
-        </div>
-
-        <div className=''>
-          <div className='global-margin'>
-            <div className='pt-10 sm:pt-20 sm:pb-10'>
-              <h2 className='mobile sm:desktop'>{themaData?.overviewsTitle}</h2>
-            </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-14 justify-items-center sm:h-auto md:h-[76rem] lg:h-[38rem]'>
-              <ThemeCard props={props} type='samenhang' />
-              <ThemeCard props={props} type='list' />
-              <ThemeCard props={props} type='waarvoor' />
-            </div>
-          </div>
-          <ThemeBottomSection props={props} />
         </div>
       </div>
     </>

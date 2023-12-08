@@ -20,12 +20,15 @@ module.exports = {
         'grey-500': '#A2A3A2',
         'grey-600': '#676868',
         'grey-800': '#1F2223',
+        'green-100': '#F9FBF9',
         'green-200': '#84E9C5',
         'green-300': '#25C38B',
         'green-400': '#07B071',
+        'light-green-500': '#00D88A',
         'green-500': '#028352',
         'green-600': '#035E46',
         'green-800': '#053237',
+        'breadcrumb': 'rgba(253, 253, 253, 0.10)'
       },
       fontFamily: {
         jakarta: ['Plus Jakarta Sans', 'sans-serif']
@@ -70,10 +73,10 @@ module.exports = {
         '128': '32rem',
       },
       flexBasis: {
-        'houdbaarheid': '22%',
-        'invloed': '14%',
-        'overheidslaag': '35%',
-        'rladder': '29%',
+        'houdbaarheid': '25%',
+        'invloed': '12%',
+        'overheidslaag': '37%',
+        'rladder': '26%',
       },
       backgroundImage: {
         'houtbouw-hero' : 'url("/hero-images/houtbouwHero.png")',
@@ -88,10 +91,18 @@ module.exports = {
           'cl': '10px',
           'clSm': '4px'
       },
+      zIndex: {
+        '60': '60',
+        '70': '70',
+        '80': '80',
+        '90': '90',
+        '100': '100',
+        '110': '110',
+        '120': '120'
+      },
     },
   },
   plugins: [
     require('@tailwindcss/forms')
 ],
-  
 };

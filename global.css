@@ -10,6 +10,14 @@
     @apply 2xl:mx-auto;
   }
 
+
+  .global-padding {
+    @apply px-4;
+    @apply md:px-10;
+    @apply xl:px-20;
+    @apply 2xl:px-40
+  }
+
   .global-margin-alternative {
     @apply mx-8;
     @apply md:mx-10;
@@ -85,8 +93,12 @@
       @apply font-jakarta text-7xl font-bold leading-16;
     }
 
-    .p-6xl-bold {
+  .p-6xl-bold {
       @apply font-jakarta text-6xl font-bold leading-14
+    }
+
+    .p-5xl-semibold {
+      @apply font-jakarta text-5xl font-semibold leading-14
     }
 
   .p-4xl {
@@ -109,6 +121,10 @@
     @apply font-jakarta text-2xl font-bold leading-14
   }
 
+  .p-2xl-semibold {
+    @apply font-jakarta text-2xl font-semibold leading-10
+  }
+
   .p-xl {
     @apply font-jakarta text-xl font-normal leading-14;
   }
@@ -119,13 +135,14 @@
 
   
   .p-lg {
-    @apply font-jakarta text-xl font-normal leading-11;
+    @apply font-jakarta text-lg font-normal leading-11;
   }
 
-  .p-lg-semibild {
-    @apply font-jakarta text-lg font-semibold leading-10;
-  }
   
+  .p-lg-semibold {
+    @apply font-jakarta text-lg font-semibold leading-10
+  }
+
   .p-lg-bold {
     @apply font-jakarta text-lg font-bold leading-10;
   }
@@ -216,6 +233,11 @@
   }
 }
 
+body {
+  padding-right: 0 !important;
+}
+
+
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -292,6 +314,7 @@ html {
 .cl-gradient-400 {
   background: linear-gradient(#CBE0CB 30.21%, rgba(199, 211, 199, 0) );
 }
+
 
 
 [type='checkbox']:checked {
@@ -403,3 +426,4 @@ html {
     }
   }
 }
+

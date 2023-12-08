@@ -2,12 +2,12 @@ import Head from 'next/head';
 import { groq } from 'next-sanity';
 import useSWR from 'swr';
 
-import globalMeta from '../../utils/global-meta';
-import Footer from '../../components/footer';
-import Nav from '../../components/nav';
-import CookieConsent from '../../components/cookie-banner';
-import { siteSettingsQuerys, footerQuery } from '../../lib/queries';
-import { fetcher } from '../../utils/swr-fetcher';
+import globalMeta from '@/utils/global-meta';
+import Footer from '@/components/nav/footer';
+import Nav from '@/components/nav';
+import CookieConsent from '@/components/cookie-banner';
+import { siteSettingsQuerys, footerQuery } from '@/lib/queries';
+import { fetcher } from '@/utils/swr-fetcher';
 
 export default function Layout({
   title = globalMeta.siteName,
@@ -26,6 +26,7 @@ export default function Layout({
   const aboutNavItems = aboutPageSlugs;
   const vraagSlug = vraagAntwoordSlug?.slug;
   const themaSlugs = themaPageSlugs?.slugs;
+
   return (
     <>
       <Nav
@@ -48,7 +49,7 @@ export default function Layout({
         <meta property='og:image' content={ogImgUrl} />
         <meta property='og:url' content={canonicalUrl} />
       </Head>
-      <main className=''>{children}</main>
+      <main className='w-full'>{children}</main>
       <CookieConsent />
       <Footer
         vraagSlug={vraagSlug}

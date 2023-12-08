@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import Layout from '../../components/layouts/layout';
+import Layout from '@/components/layouts/layout';
 
 export default function NotFound() {
   return (
@@ -18,24 +18,24 @@ export default function NotFound() {
             </Link>
           </li>
           <li className='text-green-500 p-base-semibold underline'>
-            <Link href='/houtbouw-stimuleren' className='link-interaction'>
+            <Link href='/bouw/houtbouw' className='link-interaction'>
               Houtbouw <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
             </Link>{' '}
           </li>
           <li className='text-green-500 p-base-semibold underline'>
-            <Link href='/circulaire-windturbines' className='link-interaction'>
+            <Link href='/maakindustrie/windturbines' className='link-interaction'>
               Circulaire windturbines{' '}
               <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
             </Link>{' '}
           </li>
           <li className='text-green-500 p-base-semibold underline'>
-            <Link href='/circulaire-matrasketen' className='link-interaction'>
+            <Link href='/consumptie-goederen/matrasketen' className='link-interaction'>
               Circulaire matrasketen{' '}
               <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
             </Link>{' '}
           </li>
           <li className='text-green-500 p-base-semibold underline'>
-            <Link href='/about/Wat-is-CircuLaw' className='link-interaction'>
+            <Link href='/over/Wat-is-CircuLaw' className='link-interaction'>
               Wat is CircuLaw?{' '}
               <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
             </Link>{' '}

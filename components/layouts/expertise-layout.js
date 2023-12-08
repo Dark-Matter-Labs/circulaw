@@ -284,7 +284,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
       });
     }
   }
-
   return (
     <>
       <div className='sm:bg-gradient-to-t sm:from-[#F8FAF8] sm:to-[#F8FAF8]'>
@@ -317,7 +316,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   transitionAgenda={props.transitionAgenda}
                   name='inkoop'
                 />
-                {props.thema !== 'circulaire-matrasketen' && (
+                {props.thema !== 'matrasketen' && (
                   <TabButton
                     selected={selectedTab}
                     onClick={() => {
@@ -488,7 +487,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   transitionAgenda={props.transitionAgenda}
                   name='inkoop'
                 />
-                {props.thema !== 'circulaire-matrasketen' && (
+                {props.thema !== 'matrasketen' && (
                   <TabButton
                     selected={selectedTab}
                     onClick={() => {

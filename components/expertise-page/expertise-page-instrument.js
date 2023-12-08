@@ -3,7 +3,10 @@ import Link from 'next/link';
 export default function ExpertisePageInstrument({ instrument }) {
   return (
     <>
-      <Link href={`/measures/${instrument.slug}`} className=''>
+      <Link
+        href={`/${instrument?.transitionAgenda}/${instrument.thema}/instrumenten/${instrument.slug}`}
+        className=''
+      >
         {/* DESKTOP */}
         <li className='hidden sm:flex flex-row first:border-t-0 border-b hover:bg-[#035E46] hover:bg-opacity-5  hover:text-green-800 hover:cursor-pointer transition duration-500 ease-in-out'>
           <div className='border-black basis-1/2 ml-3 overflow-hidden w-full py-3 p-base'>
