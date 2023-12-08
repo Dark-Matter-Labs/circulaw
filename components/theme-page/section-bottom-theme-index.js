@@ -12,14 +12,10 @@ export default function ThemeBottomSection({ props }) {
       <div className='bg-gray-200'>
         <div className='py-8 global-margin'>
           <h3 className='p-3xl-semibold sm:p-5xl-semibold pb-4 lowercase first-letter:uppercase'>
-            Uitgelichte {props.thema.themaName} instrumenten
+            {props.thema.featuredInstrumentTitle}
           </h3>
           {/* ADD THIS TO CMS */}
-          <p className='pb-10 p-base max-w-[830px]'>
-            Weet je niet precies met welk instrument je het beste kunt beginnen? We hebben er voor
-            jou 3 uitgelicht die bijzonder kansrijk zijn of waarmee de impact die je kunt maken
-            groot is.
-          </p>
+          <p className='pb-10 p-base max-w-[830px]'>{props.thema.featureInstrumentSubtitle}</p>
           <div className=''>
             {laws?.map((measure, index) => (
               <div key={index} className='flex flex-col sm:flex-row mb-14 sm:mb-8 max-w-6xl'>
