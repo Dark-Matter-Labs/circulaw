@@ -38,7 +38,7 @@ export const Structure = (S) =>
                       '_type == "measure" &&  thema == "circulaire-windturbines" || thema == "windturbines"',
                     ),
                 ),
-                S.listItem()
+              S.listItem()
                 .title('Circulaire matrasketen')
                 .icon(GiWindmill)
                 .child(
