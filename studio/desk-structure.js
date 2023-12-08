@@ -1,5 +1,5 @@
 import { VscLaw } from 'react-icons/vsc';
-import { GiDeadWood, GiBed, GiWindmill } from 'react-icons/gi';
+import { GiDeadWood, GiBed, GiWindmill, GiBanana, GiTable } from 'react-icons/gi';
 import { GrNavigate } from 'react-icons/gr';
 import { FcAbout } from 'react-icons/fc';
 import { FaLanguage, FaHandshake, FaQuestion } from 'react-icons/fa';
@@ -40,7 +40,7 @@ export const Structure = (S) =>
                 ),
               S.listItem()
                 .title('Circulaire matrasketen')
-                .icon(GiWindmill)
+                .icon(GiBed)
                 .child(
                   S.documentList()
                     .title('Circulaire matrasketen measures')
@@ -50,7 +50,7 @@ export const Structure = (S) =>
                 ),
               S.listItem()
                 .title('Voedselverspilling')
-                .icon(GiBed)
+                .icon(GiBanana)
                 .child(
                   S.documentList()
                     .title('Voedselverspilling')
@@ -58,7 +58,7 @@ export const Structure = (S) =>
                 ),
               S.listItem()
                 .title('Meubels')
-                .icon(GiBed)
+                .icon(GiTable)
                 .child(
                   S.documentList()
                     .title('Meubels')
