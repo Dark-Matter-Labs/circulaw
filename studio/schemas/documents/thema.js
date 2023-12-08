@@ -122,7 +122,7 @@ export default {
     {
       title: 'Subkop onder uitgelichte instrumenten',
       name: 'featureInstrumentSubtitle',
-      type: 'string',
+      type: 'text',
       description: 'Subkop onder de kop Uitgelicht: 3 [titel]',
       validation: (Rule) => Rule.required(),
       group: 'editableContent',

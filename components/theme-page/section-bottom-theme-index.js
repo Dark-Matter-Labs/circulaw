@@ -7,18 +7,17 @@ import InstrumentMetaData from '@/components/instrument/instrument-metadata';
 
 export default function ThemeBottomSection({ props }) {
   const laws = props.featuredLaws;
+  console.log(props.thema)
   return (
     <>
       <div className='bg-gray-200'>
         <div className='py-8 global-margin'>
           <h3 className='p-3xl-semibold sm:p-5xl-semibold pb-4 lowercase first-letter:uppercase'>
-            Uitgelichte {props.thema.themaName} instrumenten
+            {props.thema.featuredInstrumentTitle}
           </h3>
           {/* ADD THIS TO CMS */}
           <p className='pb-10 p-base max-w-[830px]'>
-            Weet je niet precies met welk instrument je het beste kunt beginnen? We hebben er voor
-            jou 3 uitgelicht die bijzonder kansrijk zijn of waarmee de impact die je kunt maken
-            groot is.
+            {props.thema.featureInstrumentSubtitle}
           </p>
           <div className=''>
             {laws?.map((measure, index) => (
