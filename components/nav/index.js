@@ -60,7 +60,6 @@ const kunststoffenThemas = [
 
 export default function Nav3(props) {
   const router = useRouter();
-
   const [scrollEffect, setScrollEffect] = useState(false);
   useEffect(() => {
     const changeEffect = () => {
@@ -597,17 +596,17 @@ export default function Nav3(props) {
                         ref={overRef.setFloating}
                         style={overStyles}
                         {...overFloatingProps()}
-                        className='h-60 w-72 -z-10 '
+                        className='h-auto w-72 -z-10 '
                       >
                         <div
                           className={`${
                             router.pathname === '/' ? 'bg-green-600' : 'bg-green-100'
-                          } h-full  shadow-lg pl-6 pt-8 pr-8`}
+                          } h-full pb-10 shadow-lg pl-6 pt-8 pr-8`}
                           style={{ ...overMenuTransitionStyles }}
                           onMouseLeave={() => setOverMenuIsOpen(false)}
                         >
                           {/* Remove slice once news section is separate */}
-                          {props?.aboutSlugs?.slice(1, 4).map((aboutPage) => (
+                          {props?.aboutSlugs?.slice(0, 4).map((aboutPage) => (
                             <button
                               key={aboutPage?.slug}
                               className={`${
