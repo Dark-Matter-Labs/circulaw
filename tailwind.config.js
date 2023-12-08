@@ -73,10 +73,10 @@ module.exports = {
         '128': '32rem',
       },
       flexBasis: {
-        'houdbaarheid': '26%',
+        'houdbaarheid': '25%',
         'invloed': '12%',
         'overheidslaag': '37%',
-        'rladder': '25%',
+        'rladder': '26%',
       },
       backgroundImage: {
         'houtbouw-hero' : 'url("/hero-images/houtbouwHero.png")',
