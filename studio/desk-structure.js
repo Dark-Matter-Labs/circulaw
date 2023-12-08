@@ -38,6 +38,16 @@ export const Structure = (S) =>
                       '_type == "measure" &&  thema == "circulaire-windturbines" || thema == "windturbines"',
                     ),
                 ),
+                S.listItem()
+                .title('Circulaire matrasketen')
+                .icon(GiWindmill)
+                .child(
+                  S.documentList()
+                    .title('Circulaire matrasketen measures')
+                    .filter(
+                      '_type == "measure" &&  thema == "circulaire-matrasketen" || thema == "matrasketen"',
+                    ),
+                ),
               S.listItem()
                 .title('Voedselverspilling')
                 .icon(GiBed)
