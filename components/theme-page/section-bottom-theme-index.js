@@ -7,7 +7,6 @@ import InstrumentMetaData from '@/components/instrument/instrument-metadata';
 
 export default function ThemeBottomSection({ props }) {
   const laws = props.featuredLaws;
-  console.log(props.thema)
   return (
     <>
       <div className='bg-gray-200'>
@@ -16,9 +15,7 @@ export default function ThemeBottomSection({ props }) {
             {props.thema.featuredInstrumentTitle}
           </h3>
           {/* ADD THIS TO CMS */}
-          <p className='pb-10 p-base max-w-[830px]'>
-            {props.thema.featureInstrumentSubtitle}
-          </p>
+          <p className='pb-10 p-base max-w-[830px]'>{props.thema.featureInstrumentSubtitle}</p>
           <div className=''>
             {laws?.map((measure, index) => (
               <div key={index} className='flex flex-col sm:flex-row mb-14 sm:mb-8 max-w-6xl'>
