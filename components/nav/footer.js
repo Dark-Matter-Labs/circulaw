@@ -108,7 +108,7 @@ export default function Footer(props) {
                           {' '}
                           <ul role='list' className='mt-4 space-y-4'>
                             {aboutSlugs &&
-                              aboutSlugs?.slice(0,4).map((slug) => (
+                              aboutSlugs?.slice(0, 4).map((slug) => (
                                 <li key={slug.slug}>
                                   <a
                                     href={`/over/${encodeURIComponent(slug.slug)}`}
