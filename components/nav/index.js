@@ -314,7 +314,7 @@ export default function Nav3(props) {
                     id='overlay'
                     lockScroll
                     style={{ background: 'rgba(0, 0, 0, 0)' }}
-                    className='-z-10'
+                    className='-z-10 bg-[#F8FBF8] mt-[70px]'
                   >
                     <FloatingFocusManager context={mobileContext} modal={false} disabled>
                       <div
@@ -324,7 +324,7 @@ export default function Nav3(props) {
                         {...mobileFloatingProps()}
                       >
                         <div
-                          className='min-h-screen w-full bg-[#F8FBF8]'
+                          className='w-full h-full bg-[#F8FBF8]'
                           style={{ ...mobileMenuTransitionStyles }}
                         >
                           <div className='flex flex-col items-start justify-end global-margin '>
@@ -405,7 +405,8 @@ export default function Nav3(props) {
                                   >
                                     <Disclosure.Panel className='ml-4'>
                                       <ul>
-                                        {props?.aboutSlugs?.map((aboutPage) => (
+                                        {/* Remove slice once news section is separate */}
+                                        {props?.aboutSlugs?.slice(0, 4).map((aboutPage) => (
                                           <li
                                             key={aboutPage?.slug}
                                             className='p-base h-10 my-2 last:mb-2 text-green-600 cursor-pointer flex items-center'
@@ -605,7 +606,8 @@ export default function Nav3(props) {
                           style={{ ...overMenuTransitionStyles }}
                           onMouseLeave={() => setOverMenuIsOpen(false)}
                         >
-                          {props?.aboutSlugs?.map((aboutPage) => (
+                          {/* Remove slice once news section is separate */}
+                          {props?.aboutSlugs?.slice(1, 4).map((aboutPage) => (
                             <button
                               key={aboutPage?.slug}
                               className={`${
