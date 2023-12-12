@@ -63,7 +63,10 @@ export default {
             { title: 'subheading', value: 'subheading' },
           ],
           marks: {
-            decorators: [],
+            decorators: [
+              { title: 'Strong', value: 'strong' },
+              { title: 'Emphasis', value: 'em' },
+            ],
             annotations: [
               {
                 title: 'URL',
