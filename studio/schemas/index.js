@@ -8,6 +8,7 @@ import thema from './documents/thema';
 import faq from './documents/faq';
 import newsItem from './documents/news';
 import simpleThema from './documents/simple-thema';
+import newsPage from './documents/news-page';
 
 import greenBox from './objects/green-box';
 import pdfBlock from './objects/pdf-block';
@@ -20,6 +21,9 @@ import dropDown from './objects/drop-down';
 import partner from './objects/partner';
 import faqItem from './objects/faq-item';
 import faqSection from './objects/faq-section';
+import newsCard from './objects/news-item';
+import agendaItem from './objects/agenda-item';
+
 
 export const schemaTypes = [
   // DOCUMENT TYPES
@@ -32,6 +36,7 @@ export const schemaTypes = [
   faq,
   newsItem,
   simpleThema,
+  newsPage,
 
   // OBJECTS
   greenBox,
@@ -46,4 +51,6 @@ export const schemaTypes = [
   partner,
   faqItem,
   faqSection,
+  newsCard,
+  agendaItem
 ];
