@@ -24,7 +24,6 @@ import faqSection from './objects/faq-section';
 import newsCard from './objects/news-item';
 import agendaItem from './objects/agenda-item';
 
-
 export const schemaTypes = [
   // DOCUMENT TYPES
   measure,
@@ -52,5 +51,5 @@ export const schemaTypes = [
   faqItem,
   faqSection,
   newsCard,
-  agendaItem
+  agendaItem,
 ];

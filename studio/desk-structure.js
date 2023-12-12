@@ -78,9 +78,7 @@ export const Structure = (S) =>
         .title('News Page')
         .id('newsPage')
         .icon(BsNewspaper)
-        .child(
-          S.document().title('News Page').schemaType('newsPage').documentId('newsPage'),
-        ),
+        .child(S.document().title('News Page').schemaType('newsPage').documentId('newsPage')),
       S.divider(),
       S.listItem()
         .title("Thema's")
