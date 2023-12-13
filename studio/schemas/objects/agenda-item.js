@@ -1,13 +1,22 @@
+import { NewsItemComponent } from '../../components/news-item';
+import { BsNewspaper } from 'react-icons/bs';
+
 export default {
   name: 'agendaItem',
   title: 'Agenda Item',
   type: 'object',
+  components: { item: NewsItemComponent },
   fields: [
     {
-      name: 'agendaTitle',
+      name: 'newsTitle',
       type: 'string',
       title: 'Agenda Title',
       validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'featured',
+      type: 'boolean',
+      initialValue: false,
     },
     {
       name: 'newsDate',
@@ -15,6 +24,25 @@ export default {
       title: 'News Date',
       description: 'this does not effect the order in which news items are displayed',
     },
-    // add link option - must be a link
+    {
+      name: 'link',
+      type: 'url',
+      title: 'link to event',
+      description: 'this does not effect the order in which news items are displayed',
+      validation: (Rule) => Rule.uri({ scheme: ['http', 'https'] }).warning('Url is incorrect'),
+    },
+    // will this ever link to an interal page ?
   ],
+  preview: {
+    select: {
+      title: 'agendaTitle',
+      date: 'newsDate',
+      featured: 'featured',
+    },
+    prepare: ({ title, date, featured }) => ({
+      title: [featured ? '⭐️ ' : '', `${title ?? `No book selected`}`].join(` `),
+      subtitle: `${date}`,
+      media: BsNewspaper,
+    }),
+  },
 };
