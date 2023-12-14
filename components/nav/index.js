@@ -387,7 +387,7 @@ export default function Nav3(props) {
                                       open ? 'text-green-500' : 'text-green-800'
                                     }  border-t py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
                                   >
-                                    Over Circulaw
+                                    Over CircuLaw
                                     <ChevronDownIcon
                                       className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`}
                                     />
@@ -567,7 +567,7 @@ export default function Nav3(props) {
                             ]
                       } group-hover:underline`}
                     >
-                      Over Circulaw
+                      Over CircuLaw
                     </span>
                     <ChevronDownIcon
                       className={`${
