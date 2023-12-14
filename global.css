@@ -34,11 +34,11 @@
   }
 
   /* Figma H1*/
-  h1.lg.desktop {
+  .header-desktop {
     @apply font-jakarta text-8xl font-semibold leading-17;
   }
 
-  h1.lg.mobile {
+  .header-desktop-mobile {
     @apply font-jakarta text-5xl font-semibold leading-14;
   }
 
