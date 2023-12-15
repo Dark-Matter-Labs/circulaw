@@ -23,7 +23,7 @@ export default function AboutPage({ preview, data }) {
   ) : (
     <Layout title={'Over CircuLaw - ' + data?.aboutPage?.pageTitle}>
       <AboutPageComponent data={data} aboutPageSlugs={data?.aboutPageSlugs} />
-    </Layout>
+    </Layout> 
   );
 }
 

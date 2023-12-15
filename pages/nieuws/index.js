@@ -5,7 +5,7 @@ import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
 
 const newsItems = `
-*[_type == 'newsPage' || _type == 'agendaItem'][0] {
+*[_type == 'newsPage'][0] {
     "featured": newsItems[featured == true]{
       ...,
       "image": newsImage.asset->.url

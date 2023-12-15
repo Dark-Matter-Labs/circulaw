@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import LinkIcon from '../link-icon';
 
+// refactor - make a seperate component linkWrapper and use a single feature card component. 
 
 export default function FeaturedCard({ data }) {
   const event = new Date(data.newsDate);
@@ -104,7 +105,7 @@ export default function FeaturedCard({ data }) {
     );
   } else if (data.linkUrl !== undefined) {
     return (
-      <Link href={data.linkUrl}>
+      <Link href={data.linkUrl} target={`${data.internalExternal === true ? '_blank' : ''}`}>
         <div
           className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''}
                     ${data.colour === 'green' ? 'bg-green-500' : ''}
