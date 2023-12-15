@@ -1,8 +1,8 @@
 import Layout from '@/components/layouts/layout';
 import Link from 'next/link';
 import { client } from '@/lib/sanity';
-import AgendaCard from '@/components/news-page/agenda-card';
-import GreenCard from '@/components/news-page/green-card';
+import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
+import FeaturedCard from '@/components/news-page/featured-card';
 
 const newsItems = `
 *[_type == 'newsPage' || _type == 'agendaItem'][0] {
@@ -18,12 +18,7 @@ const newsItems = `
   }
 `;
 
-
-
 export default function NewsPage({ data }) {
-  console.log(data.featured, 'featured');
-  console.log(data, 'not featured');
-  
   return (
     <Layout>
       <div className='h-screen flex flex-col global-margin mt-4'>
@@ -37,11 +32,15 @@ export default function NewsPage({ data }) {
           <h1 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
             Uitgelichte nieuwsberichten
           </h1>
-          <div className='grid grid-cols-4 grid-rows-1 gap-6 py-10'>
-            <AgendaCard />
+          <div className='grid grid-cols-4 grid-rows-1 gap-6 py-10 overflow-hidden'>
             {data.featured.map((item, id) => (
-              <GreenCard key={id} data={item} />
-
+              <div
+                className={`${item.image ? 'col-span-2 flex-cols-2' : 'col-span-1 flex-col gap-3'}`}
+                key={id}
+              >
+                {item._type === 'agendaItem' && <FeaturedAgendaCard data={item} />}
+                {item._type === 'newsCard' && <FeaturedCard data={item} />}
+              </div>
             ))}
           </div>
         </div>

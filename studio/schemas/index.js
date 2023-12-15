@@ -21,7 +21,7 @@ import dropDown from './objects/drop-down';
 import partner from './objects/partner';
 import faqItem from './objects/faq-item';
 import faqSection from './objects/faq-section';
-import newsCard from './objects/news-item';
+import newsCard from './objects/news-card';
 import agendaItem from './objects/agenda-item';
 
 export const schemaTypes = [

@@ -1,5 +1,5 @@
 import { NewsItemComponent } from '../../components/news-item';
-import { BsNewspaper } from 'react-icons/bs';
+import { CiCalendarDate } from 'react-icons/ci';
 
 export default {
   name: 'agendaItem',
@@ -35,14 +35,14 @@ export default {
   ],
   preview: {
     select: {
-      title: 'agendaTitle',
+      title: 'newsTitle',
       date: 'newsDate',
       featured: 'featured',
     },
     prepare: ({ title, date, featured }) => ({
       title: [featured ? '⭐️ ' : '', `${title ?? `No book selected`}`].join(` `),
       subtitle: `${date}`,
-      media: BsNewspaper,
+      media: CiCalendarDate,
     }),
   },
 };

@@ -5,8 +5,6 @@ import { useCallback } from 'react';
 
 export function NewsItemComponent(props) {
   const { value, path } = props;
-  console.log(value, 'value');
-  console.log(path, 'path');
 
   const { onChange } = useDocumentPane();
 
