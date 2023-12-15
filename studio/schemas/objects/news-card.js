@@ -20,6 +20,13 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'createPage',
+      type: 'boolean',
+      title: 'Create Page for the news item',
+      description: 'Select true if the news item will have its own page with content',
+      initialValue: false,
+    },
+    {
       name: 'category',
       title: 'Category',
       type: 'string',
@@ -66,12 +73,19 @@ export default {
       type: 'string',
       title: 'Link text',
       description: 'text to be displayed in the link',
+      hidden: ({ parent }) => parent.createPage === true,
     },
     {
       name: 'linkUrl',
       type: 'url',
       title: 'Link',
-      // add validation
+      hidden: ({ parent }) => parent.createPage === true,
+      validation: (Rule) =>
+        Rule.custom((currentValue, { parent }) => {
+          return parent.linkText !== undefined && currentValue === undefined
+            ? 'A value is required'
+            : true;
+        }),
       description:
         'Link to internal or external page. please select whethere it is internal or external below.',
     },
@@ -80,9 +94,9 @@ export default {
       type: 'boolean',
       title: 'Internal or External Link',
       description: 'select true if external',
+      hidden: ({ parent }) => parent.createPage === true,
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
-          console.log(parent.linkUrl !== undefined);
           return parent?.linkUrl !== undefined && currentValue === undefined
             ? 'A value is required.'
             : true;
@@ -100,13 +114,7 @@ export default {
         },
       ],
     },
-    {
-      name: 'createPage',
-      type: 'boolean',
-      title: 'Create Page for the news item',
-      description: 'Select true if the news item will have its own page with content',
-      initialValue: false,
-    },
+
     {
       title: 'Slug',
       name: 'slug',
