@@ -17,6 +17,21 @@ export default {
       name: 'featured',
       type: 'boolean',
       initialValue: false,
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'category',
+      title: 'Category',
+      type: 'string',
+      description: 'select the type of news item',
+      validation: (Rule) => Rule.required(),
+      options: {
+        list: [
+          { title: 'Nieuw op de site', value: 'Nieuw op de site' },
+          { title: 'Artikelen', value: 'Artikelen' },
+          { title: 'Circulair nieuws', value: 'Circulair nieuws' },
+        ],
+      },
     },
     {
       name: 'colour',
@@ -56,6 +71,7 @@ export default {
       name: 'linkUrl',
       type: 'url',
       title: 'Link',
+      // add validation
       description:
         'Link to internal or external page. please select whethere it is internal or external below.',
     },
@@ -66,8 +82,10 @@ export default {
       description: 'select true if external',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
-          console.log(parent?.linkUrl === undefined, parent?.linkUrl);
-          return parent?.linkUrl !== undefined ? 'A value is required.' : true;
+          console.log(parent.linkUrl !== undefined);
+          return parent?.linkUrl !== undefined && currentValue === undefined
+            ? 'A value is required.'
+            : true;
         }),
     },
     {
@@ -97,8 +115,7 @@ export default {
       description:
         'Klik op ‘aanmaken’. (Slug is het gedeelte van een URL die na de domeinnaam komt. Deze paginanaam wordt automatisch gegenereerd aan de hand van de titel.)',
       options: {
-        source: 'newsTitle',
-        inUnique: 'true',
+        source: (doc, context) => context.parent.newsTitle,
         slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
       },
     },
@@ -116,6 +133,9 @@ export default {
         },
         {
           type: 'smallPara',
+        },
+        {
+          type: 'imageBlock',
         },
         {
           type: 'block',
