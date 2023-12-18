@@ -196,7 +196,6 @@ export default function WelkeLayout({ ...props }) {
                   <div className='absolute bottom-[70%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[70%] right-[53%] h-3 w-3 rounded-full bg-white'></div>
 
-
                   <div className='absolute bottom-[60%] right-[54%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[44%] right-[54%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[30%] right-[56%] h-3 w-3 rounded-full bg-white'></div>
