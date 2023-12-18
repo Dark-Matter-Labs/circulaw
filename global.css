@@ -88,7 +88,10 @@
     }
 
     
-
+    .p-7xl-semibold {
+      @apply font-jakarta text-7xl font-semibold leading-16;
+    }
+    
   .p-7xl-bold {
       @apply font-jakarta text-7xl font-bold leading-16;
     }
