@@ -8,7 +8,9 @@ export default function HomepageHeader({ homePageHeader }) {
       <div className='global-margin'>
         <div className='text-center max-w-4xl mx-auto'>
           <div className='text-left sm:text-center max-w-xs m-auto sm:max-w-4xl sm:block text-grey-200'>
-            <h1 className='block header-desktop-mobile sm:header-desktop'>{homePageHeader.headerText}</h1>{' '}
+            <h1 className='block header-desktop-mobile sm:header-desktop'>
+              {homePageHeader.headerText}
+            </h1>{' '}
             <h2 className='p-base sm:p-3xl-semibold text-left m-auto sm:text-center mt-2 max-w-sm sm:max-w-full text-grey-200 pt-10 pb-8'>
               {homePageHeader.subHeader}
             </h2>
