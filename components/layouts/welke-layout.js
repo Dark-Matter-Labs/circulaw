@@ -173,9 +173,9 @@ export default function WelkeLayout({ ...props }) {
                 </>
               )}
 
-              {props.thema == 'houtbow' && (
+              {props.thema === 'houtbouw' && (
                 <>
-                  {/* All regions = 18 */}
+                  {/* All regions = 18 18 dec 2023 -> 24 */}
                   <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
@@ -196,6 +196,12 @@ export default function WelkeLayout({ ...props }) {
                   <div className='absolute bottom-[70%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[70%] right-[53%] h-3 w-3 rounded-full bg-white'></div>
 
+                  <div className='absolute bottom-[60%] right-[54%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[44%] right-[54%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[30%] right-[56%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[80%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[75%] right-[55%] h-3 w-3 rounded-full bg-white'></div>
+
                   {/* National = 2 */}
                   <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[80%] right-[20%] h-3 w-3 rounded-full bg-white'></div>
@@ -205,7 +211,7 @@ export default function WelkeLayout({ ...props }) {
                   <div className='absolute bottom-[65%] right-[30%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[65%] right-[70%] h-3 w-3 rounded-full bg-white'></div>
 
-                  {/* Local = 8 */}
+                  {/* Local = 8  -- 11*/}
                   <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-white'></div>
@@ -214,6 +220,9 @@ export default function WelkeLayout({ ...props }) {
                   <div className='absolute bottom-[15%] right-[33%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[45%] right-[65%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[30%] right-[38%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[20%] right-[25%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[34%] right-[65%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[12%] right-[66%] h-3 w-3 rounded-full bg-white'></div>
                 </>
               )}
 
