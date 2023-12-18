@@ -1,5 +1,7 @@
 
+import { useState, useEffect } from 'react';
 import Layout from '@/components/layouts/layout';
+import NewsDetailPageHeader from '@/components/news-page/news-detail-page-header';
 import { client } from '@/lib/sanity';
 
 const newsSlugsQuery = `
@@ -18,10 +20,24 @@ const newsDetailPageQuery =`
 `
 
 export default function NewsDetailPage({data}) {
-    console.log(data)
+
+  const [cardColour, setCardColour] = useState()  
+
+    useEffect(() => {
+      if (data[0].colour === 'lightGreen') {
+        setCardColour('bg-green-300')
+      } else if (data[0].colour === 'green') {
+        setCardColour('bg-green-500')
+      } else if (data[0].colour === 'darkGreen') {
+        setCardColour('bg-green-600')
+      } else setCardColour('bg-green-800')
+    },[data])
+
+
     return (
         <>
         <Layout>
+          <NewsDetailPageHeader cardColour={cardColour} data={data[0]}/>
         <div>
             {JSON.stringify(data)}
         </div>
