@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Layout from '@/components/layouts/layout';
 import NewsDetailPageHeader from '@/components/news-page/news-detail-page-header';
 import { client } from '@/lib/sanity';
+import NewsDetailPageBody from '@/components/news-page/news-detail-page-body';
 
 const newsSlugsQuery = `
 *[_type == "newsPage"][0]{
@@ -38,11 +39,9 @@ export default function NewsDetailPage({data}) {
         <>
         <Layout>
           <NewsDetailPageHeader cardColour={cardColour} data={data[0]}/>
-        <div>
-            {JSON.stringify(data)}
-        </div>
+          <NewsDetailPageBody data = {data[0]}/>
+        
         </Layout>
-       
         </>
     )
 }

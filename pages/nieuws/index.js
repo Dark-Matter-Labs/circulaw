@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { client } from '@/lib/sanity';
 import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
+import AgendaCard from '@/components/news-page/agenda-card';
+import NewsCard from '@/components/news-page/news-card';
 
 const newsItems = `
 *[_type == 'newsPage'][0] {
@@ -21,14 +23,14 @@ const newsItems = `
 export default function NewsPage({ data }) {
   return (
     <Layout>
-      <div className='h-screen flex flex-col global-margin mt-4'>
+      <div className='flex flex-col global-margin mt-4'>
         <div className='h-20 mt-6'>
-          <Link href='/' className='breadcrumb'>
-            Home
+          <Link href='/' className='text-green-500 p-2xs-bold'>
+          {'<'} Home 
           </Link>
         </div>
 
-        <div className=''>
+        <div className='mt-14'>
           <h1 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
             Uitgelichte nieuwsberichten
           </h1>
@@ -44,13 +46,16 @@ export default function NewsPage({ data }) {
             ))}
           </div>
         </div>
-        <div className='h-96'>
+        <div className=''>
           <h1 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
             Laatste nieuws{' '}
           </h1>
-          <div className='grid grid-cols-4 grid-rows-1'>
-            {data.featured.map((item, id) => (
-              <div key={id}>{JSON.stringify(item)}</div>
+          <div className='grid grid-cols-4 py-10 gap-6 rid-flow-col-dense'>
+            {data.notFeatured.map((item, id) => (
+              <div key={id} className={`${item.image ? 'row-span-2' : ''}`}>
+                {item._type ==='agendaItem' && <AgendaCard data={item}/>}
+                {item._type ==='newsCard' && <NewsCard data={item}/>}
+              </div>
             ))}
           </div>
         </div>
