@@ -18,7 +18,7 @@ export default function AgendaCard({ data }) {
       {data.link && (
         <Link href={data.link}>
           <div className='col-span-1 bg-green-800 rounded-cl flex flex-col justify-between items-center'>
-            <div className='px-8 py-6 h-full w-full flex flex-col justify-between'>
+            <div className='px-8 py-6 h-full w-full flex flex-col justify-between gap-y-4'>
               <div className='w-auto'>
                 <div className='flex flex-col justify-between'>
                   <div className='flex grow-0 pb-3'>
@@ -47,8 +47,8 @@ export default function AgendaCard({ data }) {
       )}
 
       {!data.link && (
-        <div className='col-span-1 h-80 bg-green-800 rounded-cl flex flex-col justify-between items-center'>
-          <div className='px-8 py-6 h-full w-full flex flex-col justify-between'>
+        <div className='col-span-1 bg-green-800 rounded-cl flex flex-col justify-between items-center'>
+          <div className='px-8 py-6 h-full w-full flex flex-col justify-between gap-y-4'>
             <div className='w-auto'>
               <div className='flex flex-col justify-between'>
                 <div className='flex grow-0 pb-3'>

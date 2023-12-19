@@ -8,12 +8,14 @@ import NewsCard from '@/components/news-page/news-card';
 
 const newsItems = `
 *[_type == 'newsPage'][0] {
-    "featured": newsItems[featured == true]{
+    "featured": newsItems[featured == true]| order(_createdAt desc){
       ...,
+      _createdAt,
       "image": newsImage.asset->.url
     },
-      "notFeatured": newsItems[featured != true]{
+      "notFeatured": newsItems[featured != true] | order(_createdAt desc){
         ...,
+        _createdAt
         "image": newsImage.asset->.url
     },
    
@@ -21,6 +23,7 @@ const newsItems = `
 `;
 
 export default function NewsPage({ data }) {
+  console.log(data)
   return (
     <Layout>
       <div className='flex flex-col global-margin mt-4'>
@@ -50,16 +53,16 @@ export default function NewsPage({ data }) {
           <h1 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
             Laatste nieuws{' '}
           </h1>
-          <div className='grid grid-cols-4 py-10 gap-6 rid-flow-col-dense'>
+          <div className='columns-2 md:columns-3 lg:columns-4'>
             {data.notFeatured.map((item, id) => (
-              <div key={id} className={`${item.image ? 'row-span-2' : ''}`}>
+              <div key={id} className='relative mb-4 break-inside-avoid-column min-h '>
                 {item._type ==='agendaItem' && <AgendaCard data={item}/>}
                 {item._type ==='newsCard' && <NewsCard data={item}/>}
               </div>
             ))}
           </div>
         </div>
-        <div className='h-96'>
+        <div className=''>
           <h1 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
             Archief{' '}
           </h1>

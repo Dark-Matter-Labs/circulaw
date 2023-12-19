@@ -25,14 +25,21 @@ export default function NewsCard({ data }) {
                       data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
                     } rounded-cl flex   justify-between items-start`}
         >
+           {data.image && (
+            <div className='w-full h-72 pl-14 relative object-cover rounded-t-cl'>
+              <Image
+                src={urlFor(data?.image)?.url()}
+                alt={data?.newsTitle + 'image'}
+                fill
+                className='w-full h-full absolute rounded-t-cl '
+              />
+            </div>
+          )}
           <div
             className={`${
-              data.linkText || data.createPage === true ? 'justify-between' : 'gap-y-3'
-            } px-8 py-6 flex flex-col  h-full w-full`}
+              data.linkText || data.createPage === true ? 'justify-between gap-y-3' : 'gap-y-3'
+            } px-8 py-6 flex flex-col h-full w-full`}
           >
-
-
-            
             <div className=''>
               <div className='flex grow-0'>
                 <Tag
@@ -109,18 +116,18 @@ export default function NewsCard({ data }) {
                     } rounded-cl flex flex-col justify-between items-start`}
         >
              {data.image && (
-            <div className='w-full h-80 pl-14 relative object-cover rounded-t-cl'>
+            <div className='w-full h-72 pl-14 relative object-cover rounded-t-cl'>
               <Image
                 src={urlFor(data?.image)?.url()}
                 alt={data?.newsTitle + 'image'}
                 fill
-                className='w-full h-full absolute rounded-r-cl '
+                className='w-full h-full absolute rounded-t-cl '
               />
             </div>
           )}
           <div
             className={`${
-              data.linkText || data.createPage === true ? 'justify-between' : 'gap-y-3'
+              data.linkText || data.createPage === true ? 'justify-between gap-y-3' : 'gap-y-3'
             } px-8 py-6 flex flex-col  h-full w-full`}
           >
             <div className=''>
@@ -155,7 +162,7 @@ export default function NewsCard({ data }) {
             <div
               className={`${
                 data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
-              } p-base line-clamp-4`}
+              } p-base`}
             >
               {data.newsText}
             </div>
@@ -195,11 +202,21 @@ export default function NewsCard({ data }) {
                     ${data.colour === 'darkGreen' ? 'bg-green-600' : ''}
                     ${
                       data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
-                    } h-80 rounded-cl flex   justify-between items-start`}
+                    } rounded-cl flex   justify-between items-start`}
       >
+         {data.image && (
+          <div className='w-full h-72 pl-14 relative object-cover rounded-t-cl'>
+            <Image
+              src={urlFor(data?.image)?.url()}
+              alt={data?.newsTitle + 'image'}
+              fill
+              className='w-full h-full absolute rounded-t-cl '
+            />
+          </div>
+        )}
         <div
           className={`${
-            data.linkText || data.createPage === true ? 'justify-between' : 'gap-y-3'
+            data.linkText || data.createPage === true ? 'justify-between gap-y-3' : 'gap-y-3'
           } px-8 py-6 flex flex-col  h-full w-full`}
         >
           <div className=''>
@@ -234,7 +251,7 @@ export default function NewsCard({ data }) {
           <div
             className={`${
               data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
-            } p-base line-clamp-4`}
+            } p-base`}
           >
             {data.newsText}
           </div>
@@ -262,16 +279,6 @@ export default function NewsCard({ data }) {
             </div>
           )}
         </div>
-        {data.image && (
-          <div className='w-full h-80 pl-14 relative object-cover rounded-r-cl'>
-            <Image
-              src={urlFor(data?.image)?.url()}
-              alt={data?.newsTitle + 'image'}
-              fill
-              className='w-full h-full absolute rounded-r-cl '
-            />
-          </div>
-        )}
       </div>
     );
   }
