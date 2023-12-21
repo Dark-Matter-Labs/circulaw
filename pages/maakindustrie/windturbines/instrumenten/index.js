@@ -6,15 +6,15 @@ import { windQueries } from '@/lib/queries';
 
 export default function Measures({ totalNumberOfLaws }) {
   return (
-    <Layout title='CircuLaw - Circulaire windturbines'>
+    <Layout title='CircuLaw - Windturbines'>
       <MeasuresLayout
         totalNumberOfLaws={totalNumberOfLaws}
-        title='Lijst van alle circulaire windturbines instrumenten'
+        title='Lijst van alle windturbines instrumenten'
         thema='windturbines'
         heading='Instrumenten om de inzet en circulariteit van windturbines te bevorderen'
         // introPara={`We hebben ${totalNumberOfLaws} kansrijke instrumenten gevonden die je kunt inzetten als het gaat om circulaire windturbines. Met sommige van deze instrumenten is al praktijkervaring opgedaan, met andere nog niet. Ga aan de slag! Met jouw ervaringen help je anderen weer verder.`}
         icon={WindmillIcon}
-        searchTitle='Zoek in circulaire windturbines'
+        searchTitle='Zoek in windturbines'
       />
     </Layout>
   );

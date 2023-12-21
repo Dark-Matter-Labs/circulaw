@@ -11,7 +11,7 @@ export default function Windturbine({ featuredLaws, length, thema }) {
   });
 
   return (
-    <Layout title='CircuLaw - Circulaire Windturbines'>
+    <Layout title='CircuLaw - Windturbines'>
       <ThemeLayout
         featuredLaws={featuredLaws}
         thema={thema}

@@ -6,15 +6,15 @@ import { matrassenQueries } from '@/lib/queries';
 
 export default function Measures({ totalNumberOfLaws }) {
   return (
-    <Layout title='CircuLaw - Circulaire matrasketen'>
+    <Layout title='CircuLaw - Matrasketen'>
       <MeasuresLayout
         totalNumberOfLaws={totalNumberOfLaws}
-        title='Lijst van alle circulaire matrasketen instrumenten'
+        title='Lijst van alle matrasketen instrumenten'
         thema='matrasketen'
         heading='Instrumenten om de circulariteit van de matrasketen te bevorderen'
         // introPara={`We hebben ${totalNumberOfLaws} kansrijke instrumenten gevonden die je kunt inzetten als het gaat om matrassen. Met sommige van deze instrumenten is al praktijkervaring opgedaan, met andere nog niet. Ga aan de slag! Met jouw ervaringen help je anderen weer verder.`}
         icon={MatrassenIcon}
-        searchTitle='Zoek in circulaire matrasketen'
+        searchTitle='Zoek in matrasketen'
       />
     </Layout>
   );

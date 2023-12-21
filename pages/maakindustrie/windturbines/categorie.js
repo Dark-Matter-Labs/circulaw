@@ -10,7 +10,7 @@ export default function InfoPage({ expertiseData }) {
       <ExpertiseLayout
         thema='windturbines'
         transitionAgenda='maakindustrie'
-        title='Circulaire windturbines instrumenten per categorie'
+        title='Windturbines instrumenten per categorie'
         icon={WindmillIcon}
         //  p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
         expertiseData={expertiseData}
