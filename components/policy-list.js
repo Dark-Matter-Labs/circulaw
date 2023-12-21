@@ -22,7 +22,9 @@ export default function PolicyList(props) {
               {law?.grondpositie === true && (
                 <Tag classes='bg-green-500 text-gray-100 mr-2'>Grondpositie</Tag>
               )}
-              {law?.subsidie === true && <Tag classes='bg-green-500 text-gray-100 mr-2'>Subsidie</Tag>}
+              {law?.subsidie === true && (
+                <Tag classes='bg-green-500 text-gray-100 mr-2'>Subsidie</Tag>
+              )}
               {law?.fiscaal === true && <Tag classes='bg-green-500 text-gray-100'>Fiscaal</Tag>}
             </div>
 

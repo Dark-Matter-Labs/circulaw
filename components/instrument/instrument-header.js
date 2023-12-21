@@ -30,15 +30,15 @@ export default function InstrumentHeader({ data }) {
     }
   }
 
-  const [simpleThema, setSimpleThema] = useState()
+  const [simpleThema, setSimpleThema] = useState();
 
   useEffect(() => {
     if (router.pathname.includes('meubels')) {
-      setSimpleThema(true)
+      setSimpleThema(true);
     } else {
-      setSimpleThema(false)
+      setSimpleThema(false);
     }
-  },[router.pathname])
+  }, [router.pathname]);
 
   return (
     <>
@@ -60,7 +60,6 @@ export default function InstrumentHeader({ data }) {
             </div>
           </div>
           <div className='mb-6 h-auto'>
-          
             <div className='w-full flex'>
               <Link
                 href={`/${data?.measure?.transitionAgenda}/${data?.measure?.thema
@@ -72,8 +71,8 @@ export default function InstrumentHeader({ data }) {
                   {data?.measure?.thema.replace('-', ' ')}
                 </Tag>
               </Link>
-            
-                {data?.measure?.beleid === true && simpleThema === false && (
+
+              {data?.measure?.beleid === true && simpleThema === false && (
                 <Link
                   href={`/${data?.measure?.transitionAgenda}/${data?.measure?.thema}/categorie`}
                   onClick={() => setCategorie('beleid')}
@@ -83,10 +82,8 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-                 {data?.measure?.beleid === true && simpleThema === true && (
-                  <Tag classes='bg-green-300 text-green-800 mr-2'>
-                    Beleid
-                  </Tag>
+              {data?.measure?.beleid === true && simpleThema === true && (
+                <Tag classes='bg-green-300 text-green-800 mr-2'>Beleid</Tag>
               )}
               {data?.measure?.inkoop === true && simpleThema === false && (
                 <Link
@@ -98,10 +95,8 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-                 {data?.measure?.inkoop === true && simpleThema === true && (
-                  <Tag classes='bg-green-300 text-green-800 mr-2'>
-                    Inkoop
-                  </Tag>
+              {data?.measure?.inkoop === true && simpleThema === true && (
+                <Tag classes='bg-green-300 text-green-800 mr-2'>Inkoop</Tag>
               )}
 
               {data?.measure?.grondpositie === true && simpleThema === false && (
@@ -114,10 +109,8 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-                {data?.measure?.grondpositie === true && simpleThema === true && (
-                  <Tag classes='bg-green-300 text-green-800 mr-2'>
-                    Grondpositie
-                  </Tag>
+              {data?.measure?.grondpositie === true && simpleThema === true && (
+                <Tag classes='bg-green-300 text-green-800 mr-2'>Grondpositie</Tag>
               )}
 
               {data?.measure?.subsidie === true && simpleThema === false && (
@@ -130,10 +123,8 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-                  {data?.measure?.subsidie === true && simpleThema === true && (
-                  <Tag classes='bg-green-300 text-green-800 mr-2'>
-                    Subsidie
-                  </Tag>
+              {data?.measure?.subsidie === true && simpleThema === true && (
+                <Tag classes='bg-green-300 text-green-800 mr-2'>Subsidie</Tag>
               )}
               {data?.measure?.fiscaal === true && simpleThema === false && (
                 <Link
@@ -145,10 +136,8 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-                 {data?.measure?.fiscaal === true && simpleThema === true && (
-                  <Tag classes='bg-green-300 text-green-800 mr-2'>
-                    Fiscaal
-                  </Tag>
+              {data?.measure?.fiscaal === true && simpleThema === true && (
+                <Tag classes='bg-green-300 text-green-800 mr-2'>Fiscaal</Tag>
               )}
             </div>
             <div className='max-w-4xl flex justify-start overflow-hidden'>

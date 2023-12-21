@@ -19,6 +19,8 @@ export default function Measures({ numberOfInstruments }) {
 }
 
 export async function getStaticProps() {
-  const numberOfInstruments = await client.fetch(voedselverspillingQueries.voedselverspillingLength);
+  const numberOfInstruments = await client.fetch(
+    voedselverspillingQueries.voedselverspillingLength,
+  );
   return { props: { numberOfInstruments }, revalidate: 1 };
 }

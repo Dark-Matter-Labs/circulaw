@@ -44,16 +44,15 @@ const bouwThemas = [{ name: 'Houtbouw stimuleren', url: '/bouw/houtbouw' }];
 const consumptiegoederenThemas = [
   { name: 'Circulaire matrasketen', url: '/consumptie-goederen/matrasketen' },
   { name: 'Meubels', url: '/consumptie-goederen/meubels' },
-
 ];
 
 const maakindustrieThemas = [
   { name: 'Circulaire windturbines', url: '/maakindustrie/windturbines' },
 ];
 
-const biomassaEnVoedselThemas =[
+const biomassaEnVoedselThemas = [
   { name: 'Voedselverspilling', url: '/biomassa-en-voedsel/voedselverspilling' },
-]
+];
 
 {
   /* 
@@ -365,7 +364,7 @@ export default function Nav3(props) {
                                           transitionAgenda='Consumptiegoederen'
                                           themas={consumptiegoederenThemas}
                                         />
-                                         <MobileDisclosure
+                                        <MobileDisclosure
                                           transitionAgenda='Voedsel en biomassa'
                                           themas={biomassaEnVoedselThemas}
                                         />

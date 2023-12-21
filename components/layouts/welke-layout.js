@@ -226,7 +226,7 @@ export default function WelkeLayout({ ...props }) {
                 </>
               )}
 
-          {props.thema === 'voedselverspilling' && (
+              {props.thema === 'voedselverspilling' && (
                 <>
                   {/* All regions =  */}
                   <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-white'></div>
@@ -239,7 +239,7 @@ export default function WelkeLayout({ ...props }) {
                   <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[24%] right-[52%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[36%] right-[46%] h-3 w-3 rounded-full bg-white'></div>
-                
+
                   {/* National = 2 */}
                   <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[80%] right-[70%] h-3 w-3 rounded-full bg-white'></div>
@@ -256,9 +256,8 @@ export default function WelkeLayout({ ...props }) {
                   <div className='absolute bottom-[15%] right-[33%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[45%] right-[65%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[30%] right-[38%] h-3 w-3 rounded-full bg-white'></div>
-                 
                 </>
-              )}  
+              )}
 
               {/* ALL Regions 
             <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-white'></div>
