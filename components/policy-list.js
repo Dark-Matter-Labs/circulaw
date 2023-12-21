@@ -14,7 +14,6 @@ export default function PolicyList(props) {
           href={`/${law.transitionAgenda}/${law.thema}/instrumenten/${law.slug.current}`}
           key={law.titel}
         >
-          {console.log(law.expertise)}
           <div className='block sm:ml-0 mb-10 sm:mb-8 md:max-w-[760px]'>
             <div className='flex justify-start items-center -ml-1'>
               {/* Expertise Tag */}
