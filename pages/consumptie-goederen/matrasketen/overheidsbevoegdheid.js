@@ -9,7 +9,7 @@ const thema = 'matrasketen';
 
 export default function InfoPage({ ...props }) {
   return (
-    <Layout title='CircuLaw - Welke Overheid Heeft Matrasketen'>
+    <Layout title='CircuLaw - Wie is waarvoor bevoegd?'>
       <WelkeLayout
         thema={thema}
         transitionAgenda='consumptie-goederen'

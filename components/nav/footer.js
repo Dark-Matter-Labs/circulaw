@@ -21,9 +21,9 @@ const navigation = {
   thema: [
     { name: 'Voedselverspilling', slug: '/biomassa-en-voedsel/voedselverspilling' },
     { name: 'Meubels', slug: '/consumptie-goederen/meubels' },
-    { name: 'Houtbouw stimuleren', slug: '/bouw/houtbouw' },
-    { name: 'Circulaire windturbines', slug: '/maakindustrie/windturbines' },
-    { name: 'Circulaire matrasketen', slug: '/consumptie-goederen/matrasketen' },
+    { name: 'Houtbouw', slug: '/bouw/houtbouw' },
+    { name: 'Windturbines', slug: '/maakindustrie/windturbines' },
+    { name: 'Matrasketen', slug: '/consumptie-goederen/matrasketen' },
   ],
 };
 

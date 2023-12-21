@@ -10,7 +10,7 @@ export default function Houtbouw({ featuredLaws, thema, length }) {
   });
 
   return (
-    <Layout title='CircuLaw - Houtbouw Stimuleren'>
+    <Layout title='CircuLaw - Houtbouw'>
       <ThemeLayout
         featuredLaws={featuredLaws}
         transitionAgenda='bouw'
