@@ -210,5 +210,13 @@ export default {
         'Beeld moet altijd icoon van thema bevatten. Bij nieuw thema banner ‘NIEUW’ toevoegen.',
       group: 'editableContent',
     },
+    {
+      title: 'Beeld homepage thema-kaart mobile', // need to add max length
+      name: 'homePageCardImageMobile',
+      type: 'image',
+      description:
+        'Beeld moet altijd icoon van thema bevatten. Bij nieuw thema banner ‘NIEUW’ toevoegen.',
+      group: 'editableContent',
+    },
   ],
 };
