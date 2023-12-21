@@ -39,15 +39,15 @@ const defaultOptions = {
   },
 };
 
-const bouwThemas = [{ name: 'Houtbouw stimuleren', url: '/bouw/houtbouw' }];
+const bouwThemas = [{ name: 'Houtbouw', url: '/bouw/houtbouw' }];
 
 const consumptiegoederenThemas = [
-  { name: 'Circulaire matrasketen', url: '/consumptie-goederen/matrasketen' },
+  { name: 'Matrasketen', url: '/consumptie-goederen/matrasketen' },
   { name: 'Meubels', url: '/consumptie-goederen/meubels' },
 ];
 
 const maakindustrieThemas = [
-  { name: 'Circulaire windturbines', url: '/maakindustrie/windturbines' },
+  { name: 'Windturbines', url: '/maakindustrie/windturbines' },
 ];
 
 const biomassaEnVoedselThemas = [
