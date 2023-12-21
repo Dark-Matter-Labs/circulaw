@@ -226,6 +226,40 @@ export default function WelkeLayout({ ...props }) {
                 </>
               )}
 
+          {props.thema === 'voedselverspilling' && (
+                <>
+                  {/* All regions =  */}
+                  <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[24%] right-[52%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[36%] right-[46%] h-3 w-3 rounded-full bg-white'></div>
+                
+                  {/* National = 2 */}
+                  <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[80%] right-[70%] h-3 w-3 rounded-full bg-white'></div>
+
+                  {/* Provincial = 2 */}
+                  <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[60%] right-[80%] h-3 w-3 rounded-full bg-white'></div>
+                  {/* Local = 8 */}
+                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[45%] right-[33%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[15%] right-[33%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[45%] right-[65%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[30%] right-[38%] h-3 w-3 rounded-full bg-white'></div>
+                 
+                </>
+              )}  
+
               {/* ALL Regions 
             <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-white'></div>
             <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
