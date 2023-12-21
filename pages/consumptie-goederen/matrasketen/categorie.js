@@ -6,7 +6,7 @@ import { categorieQuery } from '@/lib/queries';
 
 export default function InfoPage({ expertiseData }) {
   return (
-    <Layout title='CircuLaw - Samenhang Matrassen'>
+    <Layout title='CircuLaw - Matrasketen instrumenten per categorie'>
       <ExpertiseLayout
         thema='matrasketen'
         transitionAgenda='consumptie-goederen'

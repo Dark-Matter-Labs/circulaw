@@ -84,7 +84,7 @@ export default function SectionTypes({ themaCards }) {
               <div className='flex items-center justify-start'>
                 <div className='h-24 w-24 relative'>
                   <Image
-                    src={urlFor(thema?.mobImage).url()}
+                    src={urlFor(thema?.mobileCardImage).url()}
                     alt={thema?.themaName + 'image'}
                     fill
                     className='rounded-cl object-cover'

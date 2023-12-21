@@ -41,14 +41,17 @@ const defaultOptions = {
 
 const bouwThemas = [{ name: 'Houtbouw stimuleren', url: '/bouw/houtbouw' }];
 
-// const voedselThemas = [ {name: '', url:''}  ]
-
 const consumptiegoederenThemas = [
   { name: 'Circulaire matrasketen', url: '/consumptie-goederen/matrasketen' },
+  { name: 'Meubels', url: '/consumptie-goederen/meubels' },
 ];
 
 const maakindustrieThemas = [
   { name: 'Circulaire windturbines', url: '/maakindustrie/windturbines' },
+];
+
+const biomassaEnVoedselThemas = [
+  { name: 'Voedselverspilling', url: '/biomassa-en-voedsel/voedselverspilling' },
 ];
 
 {
@@ -361,10 +364,10 @@ export default function Nav3(props) {
                                           transitionAgenda='Consumptiegoederen'
                                           themas={consumptiegoederenThemas}
                                         />
-
-                                        <li className='p-base-semibold text-green-800 py-6 border-b opacity-75'>
-                                          Voedsel en biomassa
-                                        </li>
+                                        <MobileDisclosure
+                                          transitionAgenda='Voedsel en biomassa'
+                                          themas={biomassaEnVoedselThemas}
+                                        />
                                         <MobileDisclosure
                                           transitionAgenda='Maakindustrie'
                                           themas={maakindustrieThemas}
@@ -500,25 +503,10 @@ export default function Nav3(props) {
                               transitionAgenda='Consumptiegoederen'
                               themas={consumptiegoederenThemas}
                             />
-                            {/* Temp card as there is no themas in this transition agenda */}
-                            <div
-                              className={`${
-                                router.pathname === '/'
-                                  ? 'bg-green-600 text-gray-100 opacity-80'
-                                  : 'bg-grey-100 text-green-800 text-opacity-75'
-                              } w-full flex flex-col pl-3 lg:pl-6 pt-8 pr-2`}
-                            >
-                              <div className='p-lg-semibold '>Voedsel en biomassa</div>
-                              <div className=''>
-                                <div
-                                  className={`${
-                                    router.pathname === '/' ? 'text-gray-100' : 'text-gray-600'
-                                  } p-xs mt-2 italic`}
-                                >
-                                  Thema’s voor deze productketen volgen binnenkort
-                                </div>
-                              </div>
-                            </div>
+                            <DesktopNavCard
+                              transitionAgenda='Voedsel en biomassa'
+                              themas={biomassaEnVoedselThemas}
+                            />
                             <DesktopNavCard
                               transitionAgenda='Maakindustrie'
                               themas={maakindustrieThemas}

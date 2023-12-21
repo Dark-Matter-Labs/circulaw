@@ -6,7 +6,7 @@ import { categorieQuery } from '@/lib/queries';
 
 export default function InfoPage({ expertiseData }) {
   return (
-    <Layout title='CircuLaw - Samenhang Windturbines'>
+    <Layout title='CircuLaw - Windturbine instrumenten per categorie'>
       <ExpertiseLayout
         thema='windturbines'
         transitionAgenda='maakindustrie'

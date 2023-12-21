@@ -5,7 +5,7 @@ import { categorieQuery } from '@/lib/queries';
 
 export default function InfoPage({ expertiseData }) {
   return (
-    <Layout title='CircuLaw - Samenhang Aantal Houtbouwmaatregelen'>
+    <Layout title='CircuLaw - Houtbouw instrumenten per categorie'>
       <ExpertiseLayout
         expertiseData={expertiseData}
         thema='houtbouw'
