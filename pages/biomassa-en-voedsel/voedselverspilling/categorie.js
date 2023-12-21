@@ -5,20 +5,19 @@ import { categorieQuery } from '@/lib/queries';
 
 export default function InfoPage({ expertiseData }) {
   return (
-    <Layout title='CircuLaw - Houtbouw instrumenten per categorie'>
+    <Layout title='CircuLaw - Voedselverspilling instrumenten per categorie'>
       <ExpertiseLayout
         expertiseData={expertiseData}
-        thema='houtbouw'
-        transitionAgenda='bouw'
-        title='Houtbouw instrumenten per categorie'
-        // p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
+        thema='voedselverspilling'
+        transitionAgenda='biomassa-en-voedsel'
+        title='Voedselverspilling instrumenten per categorie'
       />
     </Layout>
   );
 }
 
 export async function getStaticProps() {
-  const expertiseData = await client.fetch(categorieQuery('houtbouw'));
+  const expertiseData = await client.fetch(categorieQuery('voedselverspilling'));
   return {
     props: {
       expertiseData,

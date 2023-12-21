@@ -10,7 +10,7 @@ export default function Matrassen({ featuredLaws, thema, length }) {
   });
 
   return (
-    <Layout title='CircuLaw - Circulaire Matrasketen'>
+    <Layout title='CircuLaw - Matrasketen'>
       <ThemeLayout
         featuredLaws={featuredLaws}
         transitionAgenda='consumptie-goederen'

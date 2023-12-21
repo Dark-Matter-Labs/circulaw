@@ -35,19 +35,19 @@ export default function ThemeBottomSection({ props }) {
                     <div className='flex justify-start items-center -ml-1'>
                       {/* Expertise Tag */}
                       {measure?.beleid === true && (
-                        <Tag classes='bg-green-500 text-gray-100'>Beleid</Tag>
+                        <Tag classes='bg-green-500 text-gray-100 mr-2'>Beleid</Tag>
                       )}
                       {measure?.inkoop === true && (
-                        <Tag classes='bg-green-500 text-gray-100'>Inkoop</Tag>
+                        <Tag classes='bg-green-500 text-gray-100 mr-2'>Inkoop</Tag>
                       )}
                       {measure?.grondpositie === true && (
-                        <Tag classes='bg-green-500 text-gray-100'>Grondpositie</Tag>
+                        <Tag classes='bg-green-500 text-gray-100 mr-2'>Grondpositie</Tag>
                       )}
                       {measure?.subsidie === true && (
-                        <Tag classes='bg-green-500 text-gray-100'>Subsidie</Tag>
+                        <Tag classes='bg-green-500 text-gray-100 mr-2'>Subsidie</Tag>
                       )}
                       {measure?.fiscaal === true && (
-                        <Tag classes='bg-green-500 text-gray-100'>Fiscaal</Tag>
+                        <Tag classes='bg-green-500 text-gray-100 mr-2'>Fiscaal</Tag>
                       )}
                     </div>
 

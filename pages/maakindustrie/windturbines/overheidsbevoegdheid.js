@@ -9,7 +9,7 @@ const thema = 'windturbines';
 
 export default function InfoPage({ ...props }) {
   return (
-    <Layout title='CircuLaw - Welke Overheid Heeft Windturbines'>
+    <Layout title='CircuLaw - Wie is waarvoor bevoegd?'>
       <WelkeLayout
         thema={thema}
         transitionAgenda='maakindustrie'
