@@ -19,11 +19,11 @@ const navigation = {
     { name: 'Cookies', href: '/cookie-info', className: '' },
   ],
   thema: [
+    { name: 'Voedselverspilling', slug: '/biomassa-en-voedsel/voedselverspilling' },
+    { name: 'Meubels', slug: '/consumptie-goederen/meubels' },
     { name: 'Houtbouw stimuleren', slug: '/bouw/houtbouw' },
     { name: 'Circulaire windturbines', slug: '/maakindustrie/windturbines' },
     { name: 'Circulaire matrasketen', slug: '/consumptie-goederen/matrasketen' },
-    { name: 'Voedselverspilling', slug: '/biomassa-en-voedsel/voedselverspilling' },
-    { name: 'Meubels', slug: '/consumptie-goederen/meubels' },
   ],
 };
 
