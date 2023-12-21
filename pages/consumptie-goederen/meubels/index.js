@@ -15,7 +15,7 @@ export default function Meubels({ thema, length, instruments }) {
         thema={thema}
         numberOfLaws={length}
         instruments={instruments}
-        subheading='instrumenten om voedselverspilling te voorkomen'
+        subheading='instrumenten om circulariteit van meubels te bevorderen'
       />
     </Layout>
   );
