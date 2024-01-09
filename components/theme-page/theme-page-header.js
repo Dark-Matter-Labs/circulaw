@@ -10,7 +10,7 @@ export default function ThemePageHeader({ themaData }) {
       <div className='relative object-cover w-full h-full mt-3'>
         <Image
           src={urlFor(themaData?.heroImage).url()}
-          alt={`${themaData.themaName} + 'hero image'`}
+          alt={`${themaData?.themaName} + 'hero image'`}
           fill
           className='z-0 bg-cover'
           priority

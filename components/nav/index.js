@@ -46,9 +46,7 @@ const consumptiegoederenThemas = [
   { name: 'Meubels', url: '/consumptie-goederen/meubels' },
 ];
 
-const maakindustrieThemas = [
-  { name: 'Windturbines', url: '/maakindustrie/windturbines' },
-];
+const maakindustrieThemas = [{ name: 'Windturbines', url: '/maakindustrie/windturbines' }];
 
 const biomassaEnVoedselThemas = [
   { name: 'Voedselverspilling', url: '/biomassa-en-voedsel/voedselverspilling' },
