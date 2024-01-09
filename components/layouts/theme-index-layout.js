@@ -18,9 +18,9 @@ export default function ThemeLayout({ ...props }) {
         {/* HEADER DESKTOP */}
         <ThemePageHeader themaData={themaData} />
         {/* HEADER MOBILE */}
-        
+
         <ThemePageHeaderMobile themaData={themaData} />
-       
+
         {/* CARDS */}
         <div className='bg-gradient-to-b from-[#F8FAF8] to-[#F8FAF8]'>
           <div className='global-margin pb-16 sm:pb-20'>
@@ -62,7 +62,9 @@ export default function ThemeLayout({ ...props }) {
                   </div>
                 </li>
               </Link>
-              <Link href={`/${themaData?.transitionAgenda}/${themaData?.slug.current}/instrumenten/`}>
+              <Link
+                href={`/${themaData?.transitionAgenda}/${themaData?.slug.current}/instrumenten/`}
+              >
                 <li
                   role='listitem'
                   className='h-auto rounded-cl flex flex-col max-w-[355px] min-w-[300px]'
@@ -119,7 +121,9 @@ export default function ThemeLayout({ ...props }) {
             {/* Mobile Cards */}
             <ul className='sm:hidden max-w-sm'>
               <li>
-                <Link href={`/${themaData?.transitionAgenda}/${themaData?.slug?.current}/categorie`}>
+                <Link
+                  href={`/${themaData?.transitionAgenda}/${themaData?.slug?.current}/categorie`}
+                >
                   <div className='h-24 w-full rounded-cl bg-grey-50 shadow mb-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>

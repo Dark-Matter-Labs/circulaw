@@ -5,7 +5,7 @@ import LinkIcon from '../link-icon';
 import { ChevronLeftIcon } from '@heroicons/react/outline';
 
 export default function ThemePageHeader({ themaData }) {
-  console.log(themaData)
+  console.log(themaData);
   return (
     <div className='hidden sm:block w-full h-[360px]'>
       <div className='relative object-cover w-full h-full mt-3'>
