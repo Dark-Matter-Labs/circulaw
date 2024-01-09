@@ -24,14 +24,12 @@ export default function NotFound() {
           </li>
           <li className='text-green-500 p-base-semibold underline'>
             <Link href='/maakindustrie/windturbines' className='link-interaction'>
-              Windturbines{' '}
-              <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+              Windturbines <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
             </Link>{' '}
           </li>
           <li className='text-green-500 p-base-semibold underline'>
             <Link href='/consumptie-goederen/matrasketen' className='link-interaction'>
-              Matrasketen{' '}
-              <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+              Matrasketen <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
             </Link>{' '}
           </li>
           <li className='text-green-500 p-base-semibold underline'>

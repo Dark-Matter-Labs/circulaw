@@ -18,6 +18,7 @@ export default function ThemeLayout({ ...props }) {
         {/* HEADER DESKTOP */}
         <ThemePageHeader themaData={themaData} />
         {/* HEADER MOBILE */}
+
         <ThemePageHeaderMobile themaData={themaData} />
 
         {/* CARDS */}
@@ -31,7 +32,7 @@ export default function ThemeLayout({ ...props }) {
               className='hidden sm:grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 sm:gap-x-8 max-w-8xl relative z-0'
               role='list'
             >
-              <Link href={`/${themaData.transitionAgenda}/${themaData.slug.current}/categorie`}>
+              <Link href={`/${themaData?.transitionAgenda}/${themaData?.slug?.current}/categorie`}>
                 <li
                   role='listitem'
                   className='h-auto rounded-cl flex flex-col max-w-[355px] min-w-[300px]'
@@ -48,8 +49,8 @@ export default function ThemeLayout({ ...props }) {
 
                   <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
-                      <div className='p-4xl-semibold pb-4'>{themaData.samenhangTitle}</div>
-                      <div className='p-base'>{themaData.samenhangText}</div>
+                      <div className='p-4xl-semibold pb-4'>{themaData?.samenhangTitle}</div>
+                      <div className='p-base'>{themaData?.samenhangText}</div>
                     </div>
                     <CustomButton color='whiteBackground'>
                       Bekijk jouw categorie
@@ -61,7 +62,9 @@ export default function ThemeLayout({ ...props }) {
                   </div>
                 </li>
               </Link>
-              <Link href={`/${themaData.transitionAgenda}/${themaData.slug.current}/instrumenten/`}>
+              <Link
+                href={`/${themaData?.transitionAgenda}/${themaData?.slug.current}/instrumenten/`}
+              >
                 <li
                   role='listitem'
                   className='h-auto rounded-cl flex flex-col max-w-[355px] min-w-[300px]'
@@ -74,7 +77,7 @@ export default function ThemeLayout({ ...props }) {
                   <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
                       <div className='p-4xl-semibold pb-4'>{props.listTitle}</div>
-                      <div className='p-base'>{themaData.listText}</div>
+                      <div className='p-base'>{themaData?.listText}</div>
                     </div>
                     <CustomButton color='whiteBackground'>
                       Naar de lijst
@@ -87,7 +90,7 @@ export default function ThemeLayout({ ...props }) {
                 </li>
               </Link>
               <Link
-                href={`/${themaData.transitionAgenda}/${themaData.slug.current}/overheidsbevoegdheid`}
+                href={`/${themaData?.transitionAgenda}/${themaData?.slug?.current}/overheidsbevoegdheid`}
               >
                 <li
                   role='listitem'
@@ -101,8 +104,8 @@ export default function ThemeLayout({ ...props }) {
                   </div>
                   <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
-                      <div className='p-4xl-semibold pb-4'>{themaData.welkeTitle}</div>
-                      <div className='p-base'>{themaData.welkeText}</div>
+                      <div className='p-4xl-semibold pb-4'>{themaData?.welkeTitle}</div>
+                      <div className='p-base'>{themaData?.welkeText}</div>
                     </div>
                     <CustomButton color='whiteBackground'>
                       Bekijk de bevoegdheden
@@ -118,7 +121,9 @@ export default function ThemeLayout({ ...props }) {
             {/* Mobile Cards */}
             <ul className='sm:hidden max-w-sm'>
               <li>
-                <Link href={`/${themaData.transitionAgenda}/${themaData.slug.current}/categorie`}>
+                <Link
+                  href={`/${themaData?.transitionAgenda}/${themaData?.slug?.current}/categorie`}
+                >
                   <div className='h-24 w-full rounded-cl bg-grey-50 shadow mb-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
@@ -141,7 +146,7 @@ export default function ThemeLayout({ ...props }) {
               </li>
               <li>
                 <Link
-                  href={`/${themaData.transitionAgenda}/${themaData.slug.current}/instrumenten/`}
+                  href={`/${themaData?.transitionAgenda}/${themaData?.slug?.current}/instrumenten/`}
                 >
                   <div className='h-24 w-full rounded-cl bg-grey-50 shadow my-6'>
                     <div className='flex items-center justify-start'>
@@ -165,7 +170,7 @@ export default function ThemeLayout({ ...props }) {
               </li>
               <li>
                 <Link
-                  href={`/${themaData.transitionAgenda}/${themaData.slug.current}/overheidsbevoegdheid`}
+                  href={`/${themaData?.transitionAgenda}/${themaData?.slug?.current}/overheidsbevoegdheid`}
                 >
                   <div className='h-24 w-full rounded-cl bg-grey-50 shadow mt-6'>
                     <div className='flex items-center justify-start'>
@@ -177,7 +182,7 @@ export default function ThemeLayout({ ...props }) {
                         />
                       </div>
                       <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
-                        <div className='p-2xl-semibold'>{themaData.welkeTitle}</div>
+                        <div className='p-2xl-semibold'>{themaData?.welkeTitle}</div>
                         <ArrowRightIcon
                           className='block h-6 w-6 text-green-600 mt-1'
                           aria-hidden='true'
@@ -191,7 +196,7 @@ export default function ThemeLayout({ ...props }) {
           </div>
 
           <div className='bg-gray-200'>
-            <ThemeBottomSection props={props} thema={themaData.themaName} />
+            <ThemeBottomSection props={props} thema={themaData?.themaName} />
           </div>
         </div>
       </div>
