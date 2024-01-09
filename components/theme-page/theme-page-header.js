@@ -5,12 +5,13 @@ import LinkIcon from '../link-icon';
 import { ChevronLeftIcon } from '@heroicons/react/outline';
 
 export default function ThemePageHeader({ themaData }) {
+  console.log(themaData)
   return (
     <div className='hidden sm:block w-full h-[360px]'>
       <div className='relative object-cover w-full h-full mt-3'>
         <Image
           src={urlFor(themaData?.heroImage).url()}
-          alt={`${themaData.themaName} + 'hero image'`}
+          alt={`${themaData?.themaName} + 'hero image'`}
           fill
           className='z-0 bg-cover'
           priority
