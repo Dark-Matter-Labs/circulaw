@@ -12,7 +12,6 @@ import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
 
 export default function ThemeLayout({ ...props }) {
   const themaData = props.thema;
-  console.log(props, 'null')
   return (
     <>
       <div>
