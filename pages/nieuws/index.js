@@ -13,27 +13,26 @@ const newsItems = `
       _createdAt,
       "image": newsImage.asset->.url
     },
-      "notFeatured": newsItems[featured != true] | order(_createdAt desc){
+      "notFeatured": newsItems[featured != true] | order(_createdAt asc){
         ...,
-        _createdAt
+        _createdAt,
         "image": newsImage.asset->.url
     },
-   
   }
 `;
 
 export default function NewsPage({ data }) {
-  console.log(data)
+
   return (
     <Layout>
       <div className='flex flex-col global-margin mt-4'>
-        <div className='h-20 mt-6'>
+        <div className='mt-10'>
           <Link href='/' className='text-green-500 p-2xs-bold'>
           {'<'} Home 
           </Link>
         </div>
 
-        <div className='mt-14'>
+        <div className='mt-10'>
           <h1 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
             Uitgelichte nieuwsberichten
           </h1>
@@ -53,20 +52,16 @@ export default function NewsPage({ data }) {
           <h1 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
             Laatste nieuws{' '}
           </h1>
-          <div className='columns-2 md:columns-3 lg:columns-4'>
+          <div className='columns-2 md:columns-3 lg:columns-4 py-10'>
             {data.notFeatured.map((item, id) => (
-              <div key={id} className='relative mb-4 break-inside-avoid-column min-h '>
+              <div key={id} className='relative mb-4 break-inside-avoid-column min-h'>
                 {item._type ==='agendaItem' && <AgendaCard data={item}/>}
                 {item._type ==='newsCard' && <NewsCard data={item}/>}
               </div>
             ))}
           </div>
         </div>
-        <div className=''>
-          <h1 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
-            Archief{' '}
-          </h1>
-        </div>
+      
       </div>
     </Layout>
   );
