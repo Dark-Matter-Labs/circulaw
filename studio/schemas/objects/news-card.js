@@ -4,7 +4,7 @@ import { NewsItemComponent } from '../../components/news-item';
 export default {
   name: 'newsCard', // change to news item later - remove old news item.
   title: 'News Card',
-  type: 'object',
+  type: 'document',
   components: { item: NewsItemComponent },
   fields: [
     {

@@ -4,7 +4,7 @@ import { CiCalendarDate } from 'react-icons/ci';
 export default {
   name: 'agendaItem',
   title: 'Agenda Item',
-  type: 'object',
+  type: 'document',
   components: { item: NewsItemComponent },
   fields: [
     {
