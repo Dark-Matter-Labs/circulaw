@@ -8,14 +8,12 @@ import NewsCard from '@/components/news-page/news-card';
 
 const newsItems = `
 *[_type == 'newsPage'][0] {
-    "featured": newsItems[featured == true]| order(_createdAt desc){
+    "featured": newsItems[featured == true]{
       ...,
-      _createdAt,
       "image": newsImage.asset->.url
     },
-      "notFeatured": newsItems[featured != true] | order(_createdAt asc){
+      "notFeatured": newsItems[featured != true]{
         ...,
-        _createdAt,
         "image": newsImage.asset->.url
     },
   }
