@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import LinkIcon from '../link-icon';
 
-// refactor - make a seperate component linkWrapper and use a single feature card component. 
+// refactor - make a seperate component linkWrapper and use a single feature card component.
 
 export default function NewsCard({ data }) {
   const event = new Date(data.newsDate);
@@ -25,7 +25,7 @@ export default function NewsCard({ data }) {
                       data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
                     } rounded-cl flex justify-between items-start`}
         >
-           {data.image && (
+          {data.image && (
             <div className='w-full h-72 pl-14 relative object-cover rounded-t-cl'>
               <Image
                 src={urlFor(data?.image)?.url()}
@@ -100,7 +100,6 @@ export default function NewsCard({ data }) {
               </div>
             )}
           </div>
-        
         </div>
       </Link>
     );
@@ -115,7 +114,7 @@ export default function NewsCard({ data }) {
                       data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
                     } rounded-cl flex flex-col justify-between items-start`}
         >
-             {data.image && (
+          {data.image && (
             <div className='w-full h-72 pl-14 relative object-cover rounded-t-cl'>
               <Image
                 src={urlFor(data?.image)?.url()}
@@ -190,7 +189,6 @@ export default function NewsCard({ data }) {
               </div>
             )}
           </div>
-        
         </div>
       </Link>
     );
@@ -204,7 +202,7 @@ export default function NewsCard({ data }) {
                       data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
                     } rounded-cl flex   justify-between items-start`}
       >
-         {data.image && (
+        {data.image && (
           <div className='w-full h-72 pl-14 relative object-cover rounded-t-cl'>
             <Image
               src={urlFor(data?.image)?.url()}

@@ -20,13 +20,12 @@ const newsItems = `
 `;
 
 export default function NewsPage({ data }) {
-
   return (
     <Layout>
       <div className='flex flex-col global-margin mt-4'>
         <div className='mt-10'>
           <Link href='/' className='text-green-500 p-2xs-bold'>
-          {'<'} Home 
+            {'<'} Home
           </Link>
         </div>
 
@@ -37,7 +36,11 @@ export default function NewsPage({ data }) {
           <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-6 py-10 overflow-hidden'>
             {data.featured.map((item, id) => (
               <div
-                className={`${item.image ? 'col-span-1 flex-col sm:col-span-2 sm:flex-cols-2' : 'col-span-1 flex-col gap-3'}`}
+                className={`${
+                  item.image
+                    ? 'col-span-1 flex-col sm:col-span-2 sm:flex-cols-2'
+                    : 'col-span-1 flex-col gap-3'
+                }`}
                 key={id}
               >
                 {item._type === 'agendaItem' && <FeaturedAgendaCard data={item} />}
@@ -53,13 +56,12 @@ export default function NewsPage({ data }) {
           <div className='columns-1 md:columns-2 lg:columns-4 py-10'>
             {data.notFeatured.map((item, id) => (
               <div key={id} className='relative mb-6 break-inside-avoid-column min-h'>
-                {item._type ==='agendaItem' && <AgendaCard data={item}/>}
-                {item._type ==='newsCard' && <NewsCard data={item}/>}
+                {item._type === 'agendaItem' && <AgendaCard data={item} />}
+                {item._type === 'newsCard' && <NewsCard data={item} />}
               </div>
             ))}
           </div>
         </div>
-      
       </div>
     </Layout>
   );

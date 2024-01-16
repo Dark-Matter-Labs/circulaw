@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import LinkIcon from '../link-icon';
 
-// refactor - make a seperate component linkWrapper and use a single feature card component. 
+// refactor - make a seperate component linkWrapper and use a single feature card component.
 
 export default function FeaturedCard({ data }) {
   const event = new Date(data.newsDate);
