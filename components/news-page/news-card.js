@@ -23,7 +23,7 @@ export default function NewsCard({ data }) {
                     ${data.colour === 'darkGreen' ? 'bg-green-600' : ''}
                     ${
                       data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
-                    } rounded-cl flex   justify-between items-start`}
+                    } rounded-cl flex justify-between items-start`}
         >
            {data.image && (
             <div className='w-full h-72 pl-14 relative object-cover rounded-t-cl'>
