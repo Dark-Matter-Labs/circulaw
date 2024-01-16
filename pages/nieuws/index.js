@@ -34,10 +34,10 @@ export default function NewsPage({ data }) {
           <h1 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
             Uitgelichte nieuwsberichten
           </h1>
-          <div className='grid grid-cols-4 grid-rows-1 gap-6 py-10 overflow-hidden'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-6 py-10 overflow-hidden'>
             {data.featured.map((item, id) => (
               <div
-                className={`${item.image ? 'col-span-2 flex-cols-2' : 'col-span-1 flex-col gap-3'}`}
+                className={`${item.image ? 'col-span-1 flex-col sm:col-span-2 sm:flex-cols-2' : 'col-span-1 flex-col gap-3'}`}
                 key={id}
               >
                 {item._type === 'agendaItem' && <FeaturedAgendaCard data={item} />}
@@ -50,9 +50,9 @@ export default function NewsPage({ data }) {
           <h1 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
             Laatste nieuws{' '}
           </h1>
-          <div className='columns-2 md:columns-3 lg:columns-4 py-10'>
+          <div className='columns-1 md:columns-2 lg:columns-4 py-10'>
             {data.notFeatured.map((item, id) => (
-              <div key={id} className='relative mb-4 break-inside-avoid-column min-h'>
+              <div key={id} className='relative mb-6 break-inside-avoid-column min-h'>
                 {item._type ==='agendaItem' && <AgendaCard data={item}/>}
                 {item._type ==='newsCard' && <NewsCard data={item}/>}
               </div>
