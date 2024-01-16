@@ -112,7 +112,7 @@ export default function FeaturedCard({ data }) {
                     ${data.colour === 'darkGreen' ? 'bg-green-600' : ''}
                     ${
                       data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
-                    } h-80 rounded-cl flex   justify-between items-start`}
+                    } sm:h-80 rounded-cl flex justify-between items-start flex-col-reverse sm:flex-row`}
         >
           <div
             className={`${
@@ -180,7 +180,7 @@ export default function FeaturedCard({ data }) {
             )}
           </div>
           {data.image && (
-            <div className='w-full h-80 pl-14 relative object-cover rounded-r-cl'>
+            <div className='w-full h-72 sm:h-80 sm:pl-14 relative object-cover rounded-r-cl'>
               <Image
                 src={urlFor(data?.image)?.url()}
                 alt={data?.newsTitle + 'image'}
@@ -200,7 +200,7 @@ export default function FeaturedCard({ data }) {
                     ${data.colour === 'darkGreen' ? 'bg-green-600' : ''}
                     ${
                       data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
-                    } h-80 rounded-cl flex   justify-between items-start`}
+                    } sm:h-80 rounded-cl flex justify-between items-start flex-col-reverse sm:flex-row`}
       >
         <div
           className={`${
@@ -268,7 +268,7 @@ export default function FeaturedCard({ data }) {
           )}
         </div>
         {data.image && (
-          <div className='w-full h-80 pl-14 relative object-cover rounded-r-cl'>
+          <div className='w-full h-72 sm:h-80 sm:pl-14 relative object-cover rounded-r-cl'>
             <Image
               src={urlFor(data?.image)?.url()}
               alt={data?.newsTitle + 'image'}
