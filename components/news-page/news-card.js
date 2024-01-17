@@ -26,7 +26,7 @@ export default function NewsCard({ data }) {
                     } rounded-cl flex justify-between items-start`}
         >
           {data.image && (
-            <div className='w-full h-72 pl-14 relative object-cover rounded-t-cl'>
+            <div className='w-full h-80 relative object-cover rounded-t-cl'>
               <Image
                 src={urlFor(data?.image)?.url()}
                 alt={data?.newsTitle + 'image'}
@@ -115,7 +115,7 @@ export default function NewsCard({ data }) {
                     } rounded-cl flex flex-col justify-between items-start`}
         >
           {data.image && (
-            <div className='w-full h-72 pl-14 relative object-cover rounded-t-cl'>
+            <div className='w-full h-80 relative object-cover rounded-t-cl'>
               <Image
                 src={urlFor(data?.image)?.url()}
                 alt={data?.newsTitle + 'image'}
@@ -203,7 +203,7 @@ export default function NewsCard({ data }) {
                     } rounded-cl flex   justify-between items-start`}
       >
         {data.image && (
-          <div className='w-full h-72 pl-14 relative object-cover rounded-t-cl'>
+          <div className='w-full h-80 relative object-cover rounded-t-cl'>
             <Image
               src={urlFor(data?.image)?.url()}
               alt={data?.newsTitle + 'image'}
