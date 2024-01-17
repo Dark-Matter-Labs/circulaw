@@ -409,7 +409,16 @@ export default function NewsPage({ data }) {
               </div>
             </div>
           </div>
-
+          {/* Make new one with grid cols */}
+          <div className='columns-1 sm:columns-2 lg:columns-4 py-10'>
+            {notFeatured.map((item, id) => (
+              <div key={id} className='relative mb-6 break-inside-avoid-column min-h'>
+                {item._type === 'agendaItem' && <AgendaCard data={item} />}
+                {item._type === 'newsCard' && <NewsCard data={item} />}
+              </div>
+            ))}
+          </div>
+          <hr />
           <div className='columns-1 sm:columns-2 lg:columns-4 py-10'>
             {notFeatured.map((item, id) => (
               <div key={id} className='relative mb-6 break-inside-avoid-column min-h'>
