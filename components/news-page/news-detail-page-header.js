@@ -33,8 +33,10 @@ export default function NewsDetailPageHeader({ cardColour, data }) {
                 {data.category}
               </Tag>
             </div>
-            <h1 className='sm:p-7xl-semibold text-gray-100'>{data.newsTitle}</h1>
-            <div className='text-gray-100'> {event.toLocaleDateString('de-DE', options)}</div>
+            <h1 className='p-5xl-semibold sm:p-7xl-semibold text-gray-100'>{data.newsTitle}</h1>
+            {data.newsDate && (
+              <div className='text-gray-100'> {event.toLocaleDateString('de-DE', options)}</div>
+            )}
           </div>
         </div>
       </div>
