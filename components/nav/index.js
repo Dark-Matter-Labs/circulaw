@@ -39,8 +39,10 @@ const defaultOptions = {
   },
 };
 
-const bouwThemas = [{ name: 'Houtbouw', url: '/bouw/houtbouw' },
-{ name: 'Woningen', url: '/bouw/woningen' }];
+const bouwThemas = [
+  { name: 'Houtbouw', url: '/bouw/houtbouw' },
+  { name: 'Woningen', url: '/bouw/woningen' },
+];
 
 const consumptiegoederenThemas = [
   { name: 'Matrasketen', url: '/consumptie-goederen/matrasketen' },

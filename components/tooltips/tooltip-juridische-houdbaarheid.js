@@ -91,9 +91,9 @@ export default function ToolTips({ children, icon, data }) {
                           )}
                           <div className='bg-grey-100 mt-6 p-6'>
                             <p className='p-md'>
-                              Met de waardering ‘Juridische houdbaarheid laten we zien hoe
-                              risicovol een instrument is: wat is het afbreukrisico of de kans dat
-                              het instrument onderuit gaat bij de rechter.
+                              Met de waardering ‘Juridische houdbaarheid laten we zien hoe risicovol
+                              een instrument is: wat is het afbreukrisico of de kans dat het
+                              instrument onderuit gaat bij de rechter.
                             </p>
                             <br />
                             <p className='p-md'>

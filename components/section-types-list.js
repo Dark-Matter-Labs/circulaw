@@ -46,11 +46,11 @@ export default function SectionTypes({ themaCards }) {
                   </p>
                 </Link>
                 <div className='group flex justify-end w-full pb-4 pr-4 bg-white absolute inset-x-0 bottom-0 right-0 rounded-cl'>
-                    <Link href={`/${thema.transitionAgenda}/${thema.slug}`}>
-                      <div className='h-12 w-12 rounded-full flex items-center justify-center border-2 border-green-600 bg-transparent hover:bg-green-200 text-green-600 active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white self-end'>
-                        <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
-                      </div>
-                    </Link>
+                  <Link href={`/${thema.transitionAgenda}/${thema.slug}`}>
+                    <div className='h-12 w-12 rounded-full flex items-center justify-center border-2 border-green-600 bg-transparent hover:bg-green-200 text-green-600 active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white self-end'>
+                      <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                    </div>
+                  </Link>
                 </div>
               </div>
             </li>

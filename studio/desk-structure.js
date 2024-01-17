@@ -64,7 +64,7 @@ export const Structure = (S) =>
                     .title('Meubels')
                     .filter('_type == "measure" && thema == "meubels"'),
                 ),
-                S.listItem()
+              S.listItem()
                 .title('Woningen')
                 .icon(BsHouseDoor)
                 .child(
