@@ -55,7 +55,7 @@ export default function FeaturedCard({ data }) {
                     data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
                   } p-xs-semibold`}
                 >
-                  {event.toLocaleDateString('de-DE', options)}
+                  {event.toLocaleDateString('nl-NL', options)}
                 </div>
               )}
             </div>
@@ -144,7 +144,7 @@ export default function FeaturedCard({ data }) {
                     data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
                   } p-xs-semibold`}
                 >
-                  {event.toLocaleDateString('de-DE', options)}
+                  {event.toLocaleDateString('nl-NL', options)}
                 </div>
               )}
             </div>
@@ -232,7 +232,7 @@ export default function FeaturedCard({ data }) {
                   data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
                 } p-xs-semibold`}
               >
-                {event.toLocaleDateString('de-DE', options)}
+                {event.toLocaleDateString('nl-NL', options)}
               </div>
             )}
           </div>

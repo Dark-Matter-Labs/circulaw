@@ -26,14 +26,14 @@ export default function FeaturedAgendaCard({ data }) {
                   </div>
                   <div className='flex flex-row justify-start items-center gap-4'>
                     <div className='p-7xl-bold text-green-200'>
-                      {event.toLocaleDateString('de-DE', day)}
+                      {event.toLocaleDateString('nl-NL', day)}
                     </div>
                     <div className='flex flex-col items-start justify-between'>
                       <div className='p-6xl-bold text-green-200'>
-                        {event.toLocaleDateString('de-DE', month)}
+                        {event.toLocaleDateString('nl-NL', month)}
                       </div>
                       <div className='p-5xl-bold text-green-300'>
-                        {event.toLocaleDateString('de-DE', year)}
+                        {event.toLocaleDateString('nl-NL', year)}
                       </div>
                     </div>
                   </div>
@@ -56,14 +56,14 @@ export default function FeaturedAgendaCard({ data }) {
                 </div>
                 <div className='flex flex-row justify-start items-center gap-4'>
                   <div className='p-7xl-bold text-green-200'>
-                    {event.toLocaleDateString('de-DE', day)}
+                    {event.toLocaleDateString('nl-NL', day)}
                   </div>
                   <div className='flex flex-col items-start justify-between'>
                     <div className='p-6xl-bold text-green-200'>
-                      {event.toLocaleDateString('de-DE', month)}
+                      {event.toLocaleDateString('nl-NL', month)}
                     </div>
                     <div className='p-5xl-bold text-green-300'>
-                      {event.toLocaleDateString('de-DE', year)}
+                      {event.toLocaleDateString('nl-NL', year)}
                     </div>
                   </div>
                 </div>
