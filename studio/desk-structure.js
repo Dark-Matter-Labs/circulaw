@@ -3,7 +3,7 @@ import { GiDeadWood, GiBed, GiWindmill, GiBanana, GiTable } from 'react-icons/gi
 import { GrNavigate } from 'react-icons/gr';
 import { FcAbout } from 'react-icons/fc';
 import { FaLanguage, FaHandshake, FaQuestion } from 'react-icons/fa';
-import { BsCircle } from 'react-icons/bs';
+import { BsCircle, BsHouseDoor } from 'react-icons/bs';
 import { BiNews } from 'react-icons/bi';
 import { AiOutlineHome } from 'react-icons/ai';
 
@@ -63,6 +63,14 @@ export const Structure = (S) =>
                   S.documentList()
                     .title('Meubels')
                     .filter('_type == "measure" && thema == "meubels"'),
+                ),
+                S.listItem()
+                .title('Woningen')
+                .icon(BsHouseDoor)
+                .child(
+                  S.documentList()
+                    .title('Woningen')
+                    .filter('_type == "measure" && thema == "woningen"'),
                 ),
             ]),
         ),
