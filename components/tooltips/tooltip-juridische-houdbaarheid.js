@@ -81,7 +81,7 @@ export default function ToolTips({ children, icon, data }) {
                       <div className=''>
                         <Dialog.Title className='text-gray-900'>
                           {' '}
-                          <h2 className='mobile sm:desktop'>Geschatte juridische haalbaarheid</h2>
+                          <h2 className='mobile sm:desktop'>Geschatte juridische houdbaarheid</h2>
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1'>
@@ -91,7 +91,7 @@ export default function ToolTips({ children, icon, data }) {
                           )}
                           <div className='bg-grey-100 mt-6 p-6'>
                             <p className='p-md'>
-                              Met de waardering ‘Juridische haalbaarheid’ laten we zien hoe
+                              Met de waardering ‘Juridische houdbaarheid laten we zien hoe
                               risicovol een instrument is: wat is het afbreukrisico of de kans dat
                               het instrument onderuit gaat bij de rechter.
                             </p>
