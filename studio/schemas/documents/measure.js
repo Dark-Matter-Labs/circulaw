@@ -1,6 +1,5 @@
 import { VscLaw } from 'react-icons/vsc';
 import { CgInternal } from 'react-icons/cg';
-import { ProductGroupInput } from '../../components/product-group-input';
 
 export default {
   title: 'Measure',
@@ -100,26 +99,11 @@ export default {
       group: 'high-level',
     },
     {
-      title: 'Is this measure part of a thema or product group?',
-      name: 'themaOrProductGroup',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-      options: {
-        list: [
-          { title: 'Thema', value: 'theme' },
-          { title: 'Product Group', value: 'productGroup' },
-        ],
-        layout: 'radio',
-      },
-      group: 'high-level',
-    },
-    {
       title: 'Thema',
       name: 'thema',
       type: 'string',
       description: 'Selecteer het thema waaronder dit instrument valt.',
       validation: (Rule) => Rule.required(),
-      hidden: ({ document }) => document.themaOrProductGroup !== 'theme',
       options: {
         list: [
           { title: 'Houtbouw', value: 'houtbouw' }, // need to change to refernece
@@ -127,26 +111,9 @@ export default {
           { title: 'Matrassen', value: 'matrasketen' }, // need to change to reference
           { title: 'Voedselverspilling', value: 'voedselverspilling' }, // need to change to reference
           { title: 'Meubels', value: 'meubels' }, // need to change to reference
+          { title: 'Woningen', value: 'woningen' }, // need to change to reference
         ],
         layout: 'dropdown',
-      },
-      group: 'high-level',
-    },
-    {
-      name: 'productGroup',
-      title: 'Product Group',
-      description: 'Selecteer het product group waaronder dit instrument valt.',
-      type: 'string',
-      // checks if measure is part of thema or product group and makes product group required only if it had been previously selected.
-      validation: (Rule) =>
-        Rule.custom((currentValue, { parent }) => {
-          return parent?.themaOrProductGroup === 'productGroup' && !currentValue
-            ? 'A value is required.'
-            : true;
-        }),
-      hidden: ({ document }) => document.themaOrProductGroup !== 'productGroup',
-      components: {
-        input: ProductGroupInput,
       },
       group: 'high-level',
     },

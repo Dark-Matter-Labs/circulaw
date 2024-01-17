@@ -126,12 +126,6 @@ export default {
       group: 'editableContent',
     },
     {
-      title: 'Home Page Card Button Text', // need to add max length
-      name: 'homePageCardButtonText',
-      type: 'string',
-      group: 'editableContent',
-    },
-    {
       title: 'Volgorde presentatie thema’s', // need to add max length
       name: 'homePageOrder',
       type: 'number',
