@@ -24,9 +24,5 @@ export default function MyApp({ Component, pageProps }) {
     }
   }, [consent]);
 
-  return (
-    <>
-      {getLayout(<Component {...pageProps} />)}
-    </>
-  );
+  return <>{getLayout(<Component {...pageProps} />)}</>;
 }

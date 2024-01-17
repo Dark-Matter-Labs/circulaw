@@ -51,13 +51,13 @@ export default function Layout({
         <meta property='og:url' content={canonicalUrl} />
       </Head>
       <main className='w-full'>
-      <PiwikProProvider
+        <PiwikProProvider
           containerId={process.env.NEXT_PUBLIC_CONTAINER_ID}
           containerUrl={process.env.NEXT_PUBLIC_CONTAINER_URL}
         >
-        {children}
+          {children}
         </PiwikProProvider>
-        </main>
+      </main>
       <CookieConsent />
       <Footer
         vraagSlug={vraagSlug}
