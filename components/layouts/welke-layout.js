@@ -48,7 +48,7 @@ export default function WelkeLayout({ ...props }) {
   return (
     <div onLoad={useXarrow()}>
       <div className=''>
-        <div className='h-[310px] sm:h-[360px] bg-gradient-to-t from-[#042D36] to-[#22532200] bg-green-500 sm:mx-0'>
+        <div className='h-[300px] sm:h-[360px] bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 bg-green-600  sm:mx-0'>
           <OverviewPageHeader props={props} page='welke' />
         </div>
         {/* DYNAMIC IMAGE */}
@@ -72,7 +72,7 @@ export default function WelkeLayout({ ...props }) {
                   allRegionLaws?.map((law) => (
                     <Link
                       key={law.titel}
-                      href={`/measures/${law.slug.current}`}
+                      href={`/${law.transitionAgenda}/${law.thema}/instrumenten/${law.slug.current}`}
                       className='inline-block link-interaction'
                     >
                       <div className='flex items-start justify-start max-w-80 py-1'>
@@ -115,7 +115,7 @@ export default function WelkeLayout({ ...props }) {
                 </div>
               </div>
 
-              {props.thema === 'circulaire-windturbines' && (
+              {props.thema === 'windturbines' && (
                 <>
                   {/* All regions = 5 */}
                   <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-white'></div>
@@ -139,7 +139,7 @@ export default function WelkeLayout({ ...props }) {
                 </>
               )}
 
-              {props.thema === 'circulaire-matrasketen' && (
+              {props.thema === 'matrasketen' && (
                 <>
                   {/* All regions = 12 */}
                   <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-white'></div>
@@ -173,9 +173,9 @@ export default function WelkeLayout({ ...props }) {
                 </>
               )}
 
-              {props.thema == 'houtbouw-stimuleren' && (
+              {props.thema === 'houtbouw' && (
                 <>
-                  {/* All regions = 18 */}
+                  {/* All regions = 18 18 dec 2023 -> 24 */}
                   <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
@@ -196,6 +196,12 @@ export default function WelkeLayout({ ...props }) {
                   <div className='absolute bottom-[70%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[70%] right-[53%] h-3 w-3 rounded-full bg-white'></div>
 
+                  <div className='absolute bottom-[60%] right-[54%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[44%] right-[54%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[30%] right-[56%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[80%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[75%] right-[55%] h-3 w-3 rounded-full bg-white'></div>
+
                   {/* National = 2 */}
                   <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[80%] right-[20%] h-3 w-3 rounded-full bg-white'></div>
@@ -205,6 +211,42 @@ export default function WelkeLayout({ ...props }) {
                   <div className='absolute bottom-[65%] right-[30%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[65%] right-[70%] h-3 w-3 rounded-full bg-white'></div>
 
+                  {/* Local = 8  -- 11*/}
+                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[45%] right-[33%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[15%] right-[33%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[45%] right-[65%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[30%] right-[38%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[20%] right-[25%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[34%] right-[65%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[12%] right-[66%] h-3 w-3 rounded-full bg-white'></div>
+                </>
+              )}
+
+              {props.thema === 'voedselverspilling' && (
+                <>
+                  {/* All regions =  */}
+                  <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[24%] right-[52%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[36%] right-[46%] h-3 w-3 rounded-full bg-white'></div>
+
+                  {/* National = 2 */}
+                  <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[80%] right-[70%] h-3 w-3 rounded-full bg-white'></div>
+
+                  {/* Provincial = 2 */}
+                  <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-white'></div>
+                  <div className='absolute bottom-[60%] right-[80%] h-3 w-3 rounded-full bg-white'></div>
                   {/* Local = 8 */}
                   <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-white'></div>
                   <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-white'></div>
@@ -315,7 +357,7 @@ export default function WelkeLayout({ ...props }) {
                     {natLaws?.map((law) => (
                       <Link
                         key={law.titel}
-                        href={`/measures/${law.slug.current}`}
+                        href={`/${law.transitionAgenda}/${law.thema}/instrumenten/${law.slug.current}`}
                         className='link-interaction'
                       >
                         <div className='flex items-start justify-start max-w-80 py-1'>
@@ -364,7 +406,7 @@ export default function WelkeLayout({ ...props }) {
                     {provLaws?.map((law) => (
                       <Link
                         key={law.titel}
-                        href={`/measures/${law.slug.current}`}
+                        href={`/${law.transitionAgenda}/${law.thema}/instrumenten/${law.slug.current}`}
                         className='link-interaction'
                       >
                         <div className='flex items-start justify-start max-w-80 py-1'>
@@ -412,7 +454,7 @@ export default function WelkeLayout({ ...props }) {
                     {gemLaws?.map((law) => (
                       <Link
                         key={law.titel}
-                        href={`/measures/${law.slug.current}`}
+                        href={`/${law.transitionAgenda}/${law.thema}/instrumenten/${law.slug.current}`}
                         className='link-interaction'
                       >
                         <div

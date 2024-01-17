@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import Link from 'next/link';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
-import Layout from '../../components/layouts/layout';
-import CustomButton from '../../components/custom-button';
+import Layout from '@/components/layouts/layout';
+import CustomButton from '@/components/custom-button';
 
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/929e2e8c-bdf9-4c5f-a293-699dd63de422';
 
@@ -92,14 +92,14 @@ export default function Feedback() {
               <h1 className='mobile sm:desktop text-grey-800 pt-10 mobile sm:desktop'>
                 Met jouw hulp maken we CircuLaw beter
               </h1>
-              <p className='p-xl pt-8 max-w-3xl'>
+              <p className='p-3xl pt-8 max-w-3xl'>
                 Ook bezig met{' '}
                 <span className='font-semibold'>{`‘${router.query.instrument}’`}</span>?
               </p>
-              <p className='p-xl pt-4 max-w-3xl'>Deel met ons:</p>
-              <ul className='p-xl max-w-3xl'>
+              <p className='p-3xl pt-4 max-w-3xl'>Deel met ons:</p>
+              <ul className='p-3xl max-w-3xl'>
                 <li>- voorbeelden uit jouw praktijk</li>
-                <li>- voorbeelden uit jouw praktijk</li>
+                <li>- je tips om toepassing makkelijker te maken</li>
                 <li>- de ervaring van jou of andere organisaties met een soortgelijk instrument</li>
               </ul>
               <div className='mt-20 max-w-3xl pb-20'>

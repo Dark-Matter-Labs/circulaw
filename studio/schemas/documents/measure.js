@@ -1,5 +1,5 @@
 import { VscLaw } from 'react-icons/vsc';
-import { ProductGroupInput } from '../../components/product-group-input';
+import { CgInternal } from 'react-icons/cg';
 
 export default {
   title: 'Measure',
@@ -85,29 +85,16 @@ export default {
       type: 'string',
       description:
         'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
+      validation: (Rule) => Rule.required(),
       options: {
         list: [
           { title: 'Biomassa en voedsel', value: 'biomassa-en-voedsel' },
           { title: 'Kunststoffen', value: 'kunststoffen' },
-          { title: 'Consumptiegoederen', value: 'consumptiegoederen' },
+          { title: 'Consumptiegoederen', value: 'consumptie-goederen' },
           { title: 'Bouw', value: 'bouw' },
           { title: 'Maakindustrie', value: 'maakindustrie' },
         ], // <-- predefined values
         layout: 'dropdown', // <-- defaults to 'dropdown'
-      },
-      group: 'high-level',
-    },
-    {
-      title: 'Is this measure part of a thema or product group?',
-      name: 'themaOrProductGroup',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-      options: {
-        list: [
-          { title: 'Thema', value: 'theme' },
-          { title: 'Product Group', value: 'productGroup' },
-        ],
-        layout: 'radio',
       },
       group: 'high-level',
     },
@@ -117,33 +104,16 @@ export default {
       type: 'string',
       description: 'Selecteer het thema waaronder dit instrument valt.',
       validation: (Rule) => Rule.required(),
-      hidden: ({ document }) => document.themaOrProductGroup !== 'theme',
-
       options: {
         list: [
-          { title: 'Houtbouw', value: 'houtbouw-stimuleren' }, // need to change to refernece
-          { title: 'Circulaire windturbines', value: 'circulaire-windturbines' }, // need to change to reference
-          { title: 'Matrassen', value: 'circulaire-matrasketen' }, // need to change to reference
-        ], // <-- predefined values - can store these elsewhere if we want
+          { title: 'Houtbouw', value: 'houtbouw' }, // need to change to refernece
+          { title: 'Circulaire windturbines', value: 'windturbines' }, // need to change to reference
+          { title: 'Matrassen', value: 'matrasketen' }, // need to change to reference
+          { title: 'Voedselverspilling', value: 'voedselverspilling' }, // need to change to reference
+          { title: 'Meubels', value: 'meubels' }, // need to change to reference
+          { title: 'Woningen', value: 'woningen' }, // need to change to reference
+        ],
         layout: 'dropdown',
-      },
-      group: 'high-level',
-    },
-    {
-      name: 'productGroup',
-      title: 'Product Group',
-      description: 'Selecteer het product group waaronder dit instrument valt.',
-      type: 'string',
-      // checks if measure is part of thema or product group and makes product group required only if it had been previously selected.
-      validation: (Rule) =>
-        Rule.custom((currentValue, { parent }) => {
-          return parent?.themaOrProductGroup === 'productGroup' && !currentValue
-            ? 'A value is required.'
-            : true;
-        }),
-      hidden: ({ document }) => document.themaOrProductGroup !== 'productGroup',
-      components: {
-        input: ProductGroupInput,
       },
       group: 'high-level',
     },
@@ -309,7 +279,7 @@ export default {
       name: 'artikelLink',
       type: 'url',
       description: 'De link naar een wetsartikel moet altijd beginnen met http of https.',
-      validation: (Rule) => Rule.required().uri({ scheme: ['http', 'https'] }),
+      validation: (Rule) => Rule.uri({ scheme: ['http', 'https'] }),
       group: 'meta-data',
     },
     {
@@ -483,9 +453,13 @@ export default {
             { title: 'firstH2', value: 'firstH2' },
             { title: 'H3', value: 'h3' },
             { title: 'normal', value: 'normal' },
+            // { title: 'subheading', value: 'subheading' },
           ],
           marks: {
-            decorators: [],
+            decorators: [
+              { title: 'Strong', value: 'strong' },
+              { title: 'Emphasis', value: 'em' },
+            ],
             annotations: [
               {
                 title: 'URL',
@@ -496,13 +470,36 @@ export default {
                     title: 'URL',
                     name: 'href',
                     type: 'url',
-                    validation: (Rule) => Rule.required().uri({ scheme: ['http', 'https'] }),
+
+                    validation: (Rule) =>
+                      Rule.required()
+                        .uri({ scheme: ['http', 'https'] })
+                        .warning('Url is incorrect'),
                   },
                   {
-                    title: 'Open in new winder',
+                    title: 'Open in new window',
                     name: 'blank',
                     type: 'boolean',
                     validation: (Rule) => Rule.required(),
+                    initialValue: false,
+                  },
+                ],
+              },
+              {
+                name: 'internalLink',
+                type: 'object',
+                title: 'Internal link (Instrument)',
+                icon: CgInternal,
+                fields: [
+                  {
+                    name: 'reference',
+                    type: 'reference',
+                    title: 'Reference',
+                    to: [{ type: 'measure' }],
+                    validation: (Rule) => Rule.required(),
+                    options: {
+                      disableNew: true,
+                    },
                   },
                 ],
               },

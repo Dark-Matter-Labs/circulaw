@@ -35,7 +35,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
               <Disclosure.Button
                 as='div'
                 onClick={() => {
-                  router.push(`/about/${encodeURIComponent(remainingTitles[0]?.slug)}`);
+                  router.push(`/over/${encodeURIComponent(remainingTitles[0]?.slug)}`);
                 }}
               >
                 <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
@@ -45,7 +45,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
               <Disclosure.Button
                 as='div'
                 onClick={() => {
-                  router.push(`/about/${encodeURIComponent(remainingTitles[1]?.slug)}`);
+                  router.push(`/over/${encodeURIComponent(remainingTitles[1]?.slug)}`);
                 }}
               >
                 <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
@@ -55,7 +55,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
               <Disclosure.Button
                 as='div'
                 onClick={() => {
-                  router.push(`/about/${encodeURIComponent(remainingTitles[2]?.slug)}`);
+                  router.push(`/over/${encodeURIComponent(remainingTitles[2]?.slug)}`);
                 }}
               >
                 <div
@@ -72,7 +72,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                 <Disclosure.Button
                   as='div'
                   onClick={() => {
-                    router.push(`/about/${encodeURIComponent(remainingTitles[3]?.slug)}`);
+                    router.push(`/over/${encodeURIComponent(remainingTitles[3]?.slug)}`);
                   }}
                 >
                   <div
@@ -90,7 +90,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                 <Disclosure.Button
                   as='div'
                   onClick={() => {
-                    router.push(`/about/${encodeURIComponent(remainingTitles[4]?.slug)}`);
+                    router.push(`/over/${encodeURIComponent(remainingTitles[4]?.slug)}`);
                   }}
                 >
                   <div

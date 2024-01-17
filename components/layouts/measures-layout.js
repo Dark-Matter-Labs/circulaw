@@ -14,11 +14,11 @@ import {
   extraContent,
   expertise,
   rLadder,
-} from '../../utils/data-filter';
+} from '@/utils/data-filter';
 import SearchFilter from '/components/search-filter';
 import PolicyList from '/components/policy-list';
-import { fetcher } from '../../utils/swr-fetcher';
-import { measureLayoutQuery } from '../../lib/queries';
+import { fetcher } from '@/utils/swr-fetcher';
+import { measureLayoutQuery } from '@/lib/queries';
 import OverviewPageHeader from '../overview-page-header';
 // creating objects for persisting values
 const useSelectedState = createPersistedState('selected');
@@ -68,7 +68,7 @@ export default function MeasuresLayout({ ...props }) {
 
   // dynamic filter numbers
 
-  const [numberOfEuropees, setNumberOfEuropee] = useState(0);
+  // const [numberOfEuropees, setNumberOfEuropee] = useState(0);
   const [numberOfNationaal, setNumberOfNationaal] = useState(0);
   const [numberOfProvinciaal, setNumberOfProvinciaal] = useState(0);
   const [numberOfGemeentelijk, setNumberOfGemeentelijk] = useState(0);
@@ -161,7 +161,7 @@ export default function MeasuresLayout({ ...props }) {
       let numSubsidie = 0;
       let numFiscaal = 0;
 
-      let numEuropee = 0;
+      // let numEuropee = 0;
       let numNationaal = 0;
       let numProvinciaal = 0;
       let numGemeentelijk = 0;
@@ -365,9 +365,9 @@ export default function MeasuresLayout({ ...props }) {
           numVoorbeeld += 1;
         }
 
-        if (measure.overheidslaag.includes('Europees')) {
-          numEuropee += 1;
-        }
+        //  if (measure.overheidslaag.includes('Europees')) {
+        //   numEuropee += 1;
+        // }
         if (measure.overheidslaag.includes('Nationaal')) {
           numNationaal += 1;
         }
@@ -425,7 +425,7 @@ export default function MeasuresLayout({ ...props }) {
 
       setNumberOfLeidraad(numLeidraad);
       setNumberOfVoorbeeld(numVoorbeeld);
-      setNumberOfEuropee(numEuropee);
+      // setNumberOfEuropee(numEuropee);
       setNumberOfNationaal(numNationaal);
       setNumberOfProvinciaal(numProvinciaal);
       setNumberOfGemeentelijk(numGemeentelijk);
@@ -541,7 +541,6 @@ export default function MeasuresLayout({ ...props }) {
                         title='Bevoegdheidsniveau'
                         list={overheidslaag}
                         filterNumbers={[
-                          numberOfEuropees,
                           numberOfNationaal,
                           numberOfProvinciaal,
                           numberOfGemeentelijk,
@@ -621,7 +620,7 @@ export default function MeasuresLayout({ ...props }) {
         </Transition.Root>
       </div>
 
-      <div className='h-[310px] sm:h-[360px] bg-gradient-to-t from-[#042D36] to-[#22532200] bg-green-500 sm:mx-0'>
+      <div className='h-[300px] sm:h-[360px] bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 bg-green-600 sm:mx-0'>
         <OverviewPageHeader props={props} page='list' />
       </div>
 
@@ -806,12 +805,7 @@ export default function MeasuresLayout({ ...props }) {
             ref={wettelijkFilterRef}
             title='Bevoegdheidsniveau'
             list={overheidslaag}
-            filterNumbers={[
-              numberOfEuropees,
-              numberOfNationaal,
-              numberOfProvinciaal,
-              numberOfGemeentelijk,
-            ]}
+            filterNumbers={[numberOfNationaal, numberOfProvinciaal, numberOfGemeentelijk]}
             handleFilters={(checkboxState) => handleFilters(checkboxState, 'overheidslaag')}
           />
           <SearchFilter

@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import CustomButton from './custom-button';
-import aboutImage from '../public/home-page/homepageAboutDeco.png';
+import CustomButton from '@/components/custom-button';
+import aboutImage from '@/public/home-page/homepageAboutDeco.png';
 
 export default function HomePageAboutSection({ aboutSection }) {
   return (
-    <Link href={`/about/${encodeURIComponent(aboutSection?.aboutSectionSlug)}`} name='about'>
+    <Link href={`/over/${encodeURIComponent(aboutSection?.aboutSectionSlug)}`} name='about'>
       <div className='w-full sm:w-3/5 flex items-center justify-start border-b border-grey-800 pb-4'>
         <div className='sm:hidden'>
           <svg
@@ -139,8 +139,8 @@ export default function HomePageAboutSection({ aboutSection }) {
               <Image src={aboutImage} alt='image for wat circulaw' />
             </div>
           </div>
-          <p className='p-lg py-5 max-w-4xl hidden sm:block'>{aboutSection?.aboutSectionText}</p>
-          <p className='p-lg py-5 max-w-4xl block sm:hidden'>
+          <p className='p-base py-5 max-w-4xl hidden sm:block'>{aboutSection?.aboutSectionText}</p>
+          <p className='p-base py-5 max-w-4xl block sm:hidden'>
             {aboutSection?.aboutSectionMobileText}
           </p>
           <span className='text-green-500 link-lg link-interaction'>

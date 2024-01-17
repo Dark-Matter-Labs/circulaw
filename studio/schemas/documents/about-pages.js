@@ -60,9 +60,13 @@ export default {
             { title: 'firstH2', value: 'firstH2' },
             { title: 'H3', value: 'h3' },
             { title: 'normal', value: 'normal' },
+            { title: 'subheading', value: 'subheading' },
           ],
           marks: {
-            decorators: [],
+            decorators: [
+              { title: 'Strong', value: 'strong' },
+              { title: 'Emphasis', value: 'em' },
+            ],
             annotations: [
               {
                 title: 'URL',

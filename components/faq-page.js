@@ -1,6 +1,6 @@
 import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
-import { FAQPagePTComponents } from '../lib/portable-text/pt-components';
+import { FAQPagePTComponents } from '@/lib/portable-text/pt-components';
 import { PlusIcon, MinusIcon } from '@heroicons/react/outline';
 import { useState } from 'react';
 

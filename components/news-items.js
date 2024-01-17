@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import LinkIcon from '../components/link-icon';
+import LinkIcon from '@/components/link-icon';
 import CustomButton from './custom-button';
 
 export default function NewsItems({ newsItems }) {

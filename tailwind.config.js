@@ -20,12 +20,15 @@ module.exports = {
         'grey-500': '#A2A3A2',
         'grey-600': '#676868',
         'grey-800': '#1F2223',
+        'green-100': '#F9FBF9',
         'green-200': '#84E9C5',
         'green-300': '#25C38B',
         'green-400': '#07B071',
+        'light-green-500': '#00D88A',
         'green-500': '#028352',
         'green-600': '#035E46',
         'green-800': '#053237',
+        'breadcrumb': 'rgba(253, 253, 253, 0.10)'
       },
       fontFamily: {
         jakarta: ['Plus Jakarta Sans', 'sans-serif']
@@ -46,6 +49,7 @@ module.exports = {
         '8xl': '85px'
       },
       lineHeight: {
+        2: '14px',
         3: '15px',
         4: '16px',
         5: '19px',
@@ -69,18 +73,15 @@ module.exports = {
         '128': '32rem',
       },
       flexBasis: {
-        'houdbaarheid': '22%',
-        'invloed': '14%',
-        'overheidslaag': '35%',
-        'rladder': '29%',
+        'houdbaarheid': '25%',
+        'invloed': '12%',
+        'overheidslaag': '37%',
+        'rladder': '26%',
       },
       backgroundImage: {
         'houtbouw-hero' : 'url("/hero-images/houtbouwHero.png")',
         'windmill-hero' : 'url("/hero-images/windmillHero.png")',
         'matrassen-hero' : 'url("/hero-images/matrassenHero.png")',
-        'list-card': 'url("/thema-card-background/list-bg.png")',
-        'samenhang-card': 'url("/thema-card-background/samenhang-bg.png")',
-        'waarvoor-card': 'url("/thema-card-background/waaroov-bg.png")',
         'en-background': 'url("/Background-en-page.png")',
         'en-header': 'url("/en-deco-header.png")',
         'about-header': 'url("/about-header.png")',
@@ -90,10 +91,18 @@ module.exports = {
           'cl': '10px',
           'clSm': '4px'
       },
+      zIndex: {
+        '60': '60',
+        '70': '70',
+        '80': '80',
+        '90': '90',
+        '100': '100',
+        '110': '110',
+        '120': '120'
+      },
     },
   },
   plugins: [
     require('@tailwindcss/forms')
 ],
-  
 };

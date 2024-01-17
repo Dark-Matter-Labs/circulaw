@@ -64,7 +64,7 @@ export const ProductGroupInput = (props) => {
           <Select {...elementProps} onChange={handleChange} value={value}>
             {transitionAgenda === 'bouw' &&
               bouw.map((productGrp) => <option key={productGrp.title}>{productGrp.title}</option>)}
-            {transitionAgenda === 'consumptiegoederen' &&
+            {transitionAgenda === 'consumenten-goederen' &&
               consumptiegoederen.map((productGrp) => (
                 <option key={productGrp.title}>{productGrp.title}</option>
               ))}

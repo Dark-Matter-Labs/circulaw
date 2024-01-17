@@ -62,6 +62,13 @@
   dependencies:
     regenerator-runtime "^0.13.11"
 
+"@babel/runtime@^7.22.11":
+  version "7.23.2"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.23.2.tgz#062b0ac103261d68a966c4c7baf2ae3e62ec3885"
+  integrity sha512-mM8eg4yl5D6i3lu2QKPuPH4FArvJ8KhTofbE7jwMUv9KX5mBvwPAqnV3MlyBNqdp9RyRKP6Yck8TrfYrPvX3bg==
+  dependencies:
+    regenerator-runtime "^0.14.0"
+
 "@babel/types@^7.22.5":
   version "7.22.5"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.22.5.tgz#cd93eeaab025880a3a47ec881f4b096a5b786fbe"
@@ -199,6 +206,42 @@
     js-yaml "^4.1.0"
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
+
+"@floating-ui/core@^1.4.2":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@floating-ui/core/-/core-1.5.0.tgz#5c05c60d5ae2d05101c3021c1a2a350ddc027f8c"
+  integrity sha512-kK1h4m36DQ0UHGj5Ah4db7R0rHemTqqO0QLvUqi1/mUUp3LuAWbWxdxSIf/XsnH9VS6rRVPLJCncjRzUvyCLXg==
+  dependencies:
+    "@floating-ui/utils" "^0.1.3"
+
+"@floating-ui/dom@^1.5.1":
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/@floating-ui/dom/-/dom-1.5.3.tgz#54e50efcb432c06c23cd33de2b575102005436fa"
+  integrity sha512-ClAbQnEqJAKCJOEbbLo5IUlZHkNszqhuxS4fHAVxRPXPya6Ysf2G8KypnYcOTpx6I8xcgF9bbHb6g/2KpbV8qA==
+  dependencies:
+    "@floating-ui/core" "^1.4.2"
+    "@floating-ui/utils" "^0.1.3"
+
+"@floating-ui/react-dom@^2.0.3":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@floating-ui/react-dom/-/react-dom-2.0.4.tgz#b076fafbdfeb881e1d86ae748b7ff95150e9f3ec"
+  integrity sha512-CF8k2rgKeh/49UrnIBs4BdxPUV6vize/Db1d/YbCLyp9GiVZ0BEwf5AiDSxJRCr6yOkGqTFHtmrULxkEfYZ7dQ==
+  dependencies:
+    "@floating-ui/dom" "^1.5.1"
+
+"@floating-ui/react@^0.26.3":
+  version "0.26.3"
+  resolved "https://registry.yarnpkg.com/@floating-ui/react/-/react-0.26.3.tgz#1ec435f35e37d5e34577ee89c7abb1eedb3a0c5d"
+  integrity sha512-iKH8WRR0L/nLiM6qavFZxkyegIZRMxGnM9aKEc71M4wRlUNkgTamjPsOQXy11oZbDOH37MiTbk/nAPn9M2+shA==
+  dependencies:
+    "@floating-ui/react-dom" "^2.0.3"
+    "@floating-ui/utils" "^0.1.5"
+    tabbable "^6.0.1"
+
+"@floating-ui/utils@^0.1.3", "@floating-ui/utils@^0.1.5":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.1.6.tgz#22958c042e10b67463997bd6ea7115fe28cbcaf9"
+  integrity sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==
 
 "@headlessui/react@^1.6.0":
   version "1.6.1"
@@ -2979,10 +3022,10 @@ next-sanity@^3.1.3:
     "@sanity/webhook" "^2.0.0"
     groq "^2.33.2"
 
-next-share@^0.20.0:
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/next-share/-/next-share-0.20.0.tgz#2fe5ac18a8e96497625d017708d2ca1347414216"
-  integrity sha512-7EZem/fJe9QljTt4SrhKzKjC5i+aiBw5YxIGJNH1+G+El0tKzwAYcrm35KWe+R3j4apqWl+Bpyjo2FKbpj7fow==
+next-share@0.27.0:
+  version "0.27.0"
+  resolved "https://registry.yarnpkg.com/next-share/-/next-share-0.27.0.tgz#fc4e9eb5e6ade268106c0fae49e78bf2fe235991"
+  integrity sha512-Fmfl4LIL61g10vtiDECVldxtNgVNd4OQgnI5vk9IJxn/WMZLdhniUtV15xz4PGpo8UuDdTHwmDT8R/CP60EQHA==
   dependencies:
     jsonp "^0.2.1"
 
@@ -3516,12 +3559,14 @@ react-scroll@^1.8.7:
     lodash.throttle "^4.1.1"
     prop-types "^15.7.2"
 
-react-social-icons@^5.15.0:
-  version "5.15.0"
-  resolved "https://registry.yarnpkg.com/react-social-icons/-/react-social-icons-5.15.0.tgz#6b815aab9eff210e1f6e8a4ca420684aa72c154a"
-  integrity sha512-khfDgUiUwEBe34T6br2+mkXQg3hLVDdviVjexxZoVCsogMgxTy/m8+KlX/j6Wa7P2BPxgZ7yZ2jXw3X06pUUFQ==
+react-social-icons@^6.6.0:
+  version "6.6.0"
+  resolved "https://registry.yarnpkg.com/react-social-icons/-/react-social-icons-6.6.0.tgz#143202affafae4fc3562291fb6b2541433560439"
+  integrity sha512-L5+9IkpWhKWWf9+f07kgtQwefg2fwZvaFefkfSic20k0V37Pm5xLajhJ9iys/Sx+abqtViztopOcNShK6rcY4A==
   dependencies:
-    prop-types "^15.7.2"
+    "@babel/runtime" "^7.22.11"
+    react "^18.2.0"
+    react-dom "^18.2.0"
 
 react-transition-group@^4.4.5:
   version "4.4.5"
@@ -3590,6 +3635,11 @@ regenerator-runtime@^0.13.4:
   version "0.13.9"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz#8925742a98ffd90814988d7566ad30ca3b263b52"
   integrity sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==
+
+regenerator-runtime@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.14.0.tgz#5e19d68eb12d486f797e15a3c6a918f7cec5eb45"
+  integrity sha512-srw17NI0TUWHuGa5CFGGmhfNIeja30WMBfbslPNhf6JrqQlLN5gcrvig1oqPxiVaXb0oW0XRKtH6Nngs5lKCIA==
 
 regexp.prototype.flags@^1.4.1, regexp.prototype.flags@^1.4.3:
   version "1.4.3"
@@ -4025,6 +4075,11 @@ synckit@^0.8.4:
   dependencies:
     "@pkgr/utils" "^2.3.1"
     tslib "^2.4.0"
+
+tabbable@^6.0.1:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/tabbable/-/tabbable-6.2.0.tgz#732fb62bc0175cfcec257330be187dcfba1f3b97"
+  integrity sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==
 
 tailwindcss@^3.3.5:
   version "3.3.5"

@@ -4,9 +4,17 @@ const withTM = require('next-transpile-modules')(['@piwikpro/next-piwik-pro']);
 
 const nextConfig = {
   // redirects,
-  images: {
-    domains: ['cdn.sanity.io'],
+  async redirects() {
+    return [
+      {
+        source: '/houtbouw-stimuleren',
+        destination: '/bouw/houtbouw',
+        permanent: true,
+      },
+    ]
   },
-}
-
+    images: {
+      domains: ['cdn.sanity.io'],
+    },
+  }
 module.exports = withTM(nextConfig);

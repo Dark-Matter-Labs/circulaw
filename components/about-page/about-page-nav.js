@@ -5,7 +5,7 @@ export default function AboutPageNav({ currentSlug, slugs }) {
       {slugs?.map((slug) => (
         <a
           key={slug.slug}
-          href={`/about/${encodeURIComponent(slug.slug)}`}
+          href={`/over/${encodeURIComponent(slug.slug)}`}
           className={`${
             slug.slug === currentSlug
               ? 'text-grey-800'

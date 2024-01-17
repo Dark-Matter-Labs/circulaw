@@ -48,6 +48,25 @@ export default {
       },
     },
     {
+      title: 'Transitie-agenda',
+      name: 'transitionAgenda',
+      type: 'string',
+      description:
+        'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
+      validation: (Rule) => Rule.required(),
+      options: {
+        list: [
+          { title: 'Biomassa en voedsel', value: 'biomassa-en-voedsel' },
+          { title: 'Kunststoffen', value: 'kunststoffen' },
+          { title: 'Consumptiegoederen', value: 'consumptie-goederen' },
+          { title: 'Bouw', value: 'bouw' },
+          { title: 'Maakindustrie', value: 'maakindustrie' },
+        ], // <-- predefined values
+        layout: 'dropdown', // <-- defaults to 'dropdown'
+      },
+      group: 'devOnly',
+    },
+    {
       title: 'Thema intro',
       name: 'themaSubtitle',
       type: 'string',
@@ -103,7 +122,7 @@ export default {
     {
       title: 'Subkop onder uitgelichte instrumenten',
       name: 'featureInstrumentSubtitle',
-      type: 'string',
+      type: 'text',
       description: 'Subkop onder de kop Uitgelicht: 3 [titel]',
       validation: (Rule) => Rule.required(),
       group: 'editableContent',
@@ -127,13 +146,6 @@ export default {
       group: 'editableContent',
     },
     {
-      title: 'List Card Link',
-      name: 'listLink',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-      group: 'devOnly',
-    },
-    {
       title: 'Titel samenhang-kaart',
       name: 'samenhangTitle',
       type: 'string',
@@ -148,13 +160,6 @@ export default {
       group: 'editableContent',
     },
     {
-      title: 'Samenhang Card Link',
-      name: 'samenhangLink',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-      group: 'devOnly',
-    },
-    {
       title: 'Titel bevoegdheden-kaart',
       name: 'welkeTitle',
       type: 'string',
@@ -167,13 +172,6 @@ export default {
       type: 'text',
       validation: (Rule) => Rule.required(),
       group: 'editableContent',
-    },
-    {
-      title: 'Welke Overheid Card Link',
-      name: 'welkeLink',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-      group: 'devOnly',
     },
     {
       name: 'homePageCards',
@@ -191,12 +189,6 @@ export default {
       group: 'editableContent',
     },
     {
-      title: 'Home Page Card Button Text', // need to add max length
-      name: 'homePageCardButtonText',
-      type: 'string',
-      group: 'editableContent',
-    },
-    {
       title: 'Volgorde presentatie thema’s', // need to add max length
       name: 'homePageOrder',
       type: 'number',
@@ -207,6 +199,14 @@ export default {
     {
       title: 'Beeld homepage thema-kaart', // need to add max length
       name: 'homePageCardImage',
+      type: 'image',
+      description:
+        'Beeld moet altijd icoon van thema bevatten. Bij nieuw thema banner ‘NIEUW’ toevoegen.',
+      group: 'editableContent',
+    },
+    {
+      title: 'Beeld homepage thema-kaart mobile', // need to add max length
+      name: 'homePageCardImageMobile',
       type: 'image',
       description:
         'Beeld moet altijd icoon van thema bevatten. Bij nieuw thema banner ‘NIEUW’ toevoegen.',

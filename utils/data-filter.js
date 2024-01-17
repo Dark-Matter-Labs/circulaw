@@ -60,28 +60,21 @@ export const expertiseSS = [
 export const overheidslaag = [
   {
     id: '0',
-    name: 'Europees',
-    label: 'Europees',
-    value: 'Europees',
+    name: 'Gemeentelijk',
+    label: 'Gemeentelijk',
+    value: 'Gemeentelijk',
   },
   {
     id: '1',
-    name: 'Nationaal',
-    label: 'Nationaal',
-    value: 'Nationaal',
-  },
-  {
-    id: '2',
     name: 'Provinciaal',
     label: 'Provinciaal',
     value: 'Provinciaal',
   },
-  
   {
-    id: '3',
-    name: 'Gemeentelijk',
-    label: 'Gemeentelijk',
-    value: 'Gemeentelijk',
+    id: '2',
+    name: 'Nationaal',
+    label: 'Nationaal',
+    value: 'Nationaal',
   },
 
 ];

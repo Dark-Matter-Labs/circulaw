@@ -1,30 +1,23 @@
-import { useRouter } from 'next/router';
-import RTooltip from '../tooltip-r-ladder';
-import JHTooltip from '../tooltip-juridische-houdbaarheid';
-import JITooltip from '../tooltip-juridische-invloed';
+import RLadderTooltip from '@/components/tooltips/r-ladder-tooltip';
+import JHTooltip from '../tooltips/tooltip-juridische-houdbaarheid';
+import JITooltip from '../tooltips/tooltip-juridische-invloed';
 
-export default function InstrumentMetaData({ data }) {
-  const router = useRouter();
-
+export default function InstrumentMetaData({ data, borders }) {
   return (
     <>
       <div className='hidden sm:block'>
         <div
           className={`${
-            (router.pathname === '/measures/houtbouw') |
-            (router.pathname === '/measures/windturbines') |
-            (router.pathname === '/measures/matrassen')
-              ? 'border-y border-gray-300'
-              : 'pt-2'
-          } h-auto flex flex-row gap-x-6 grow-0 items-center justify-self-center py-0.5 max-w-[860px]`}
+            borders === true ? 'border-y border-gray-300' : 'pt-5 pb-3'
+          } h-auto flex flex-row gap-x-4 grow-0 items-center justify-self-center max-w-[870px]`}
         >
           <div className='flex flex-col basis-houdbaarheid'>
-            <h5 className='mobile sm:desktop text-grey-600'>Juridische houdbaarheid</h5>
+            <div className='p-xs-semibold text-grey-600'>Juridische houdbaarheid</div>
             <div className='flex items-center'>
-              <h5 className='mobile sm:desktop text-green-500 pr-2'>
+              <div className='p-xs-semibold text-green-500 pr-2'>
                 {data?.measure?.juridischeHaalbaarheid}
                 {data?.juridischeHaalbaarheid}
-              </h5>
+              </div>
               {data?.measure?.slug && (
                 <JHTooltip data={data}>
                   <svg
@@ -45,12 +38,12 @@ export default function InstrumentMetaData({ data }) {
             </div>
           </div>
           <div className='flex flex-col basis-invloed'>
-            <h5 className='mobile sm:desktop text-grey-600'>Invloed</h5>
+            <div className='p-xs-semibold text-grey-600'>Invloed</div>
             <div className='flex items-center'>
-              <h5 className='mobile sm:desktop text-green-500 pr-2'>
+              <div className='p-xs-semibold text-green-500 pr-2'>
                 {data?.measure?.juridischInvloed}
                 {data?.juridischInvloed}
-              </h5>
+              </div>
               {data?.measure?.slug && (
                 <JITooltip data={data}>
                   <svg
@@ -71,40 +64,44 @@ export default function InstrumentMetaData({ data }) {
             </div>
           </div>
           <div className='flex flex-col basis-overheidslaag'>
-            <h5 className='mobile sm:desktop text-grey-600'>Overheidslaag</h5>
-            <h5 className='mobile sm:desktop text-green-500'>
-              {data?.measure?.overheidslaag?.map((level) => (
-                <span key={level} className=''>
-                  {level} {data?.measure?.overheidslaag.slice(-1)[0] !== level && <span>-</span>}
-                  &nbsp;
-                </span>
-              ))}
-              {data?.overheidslaag?.map((level) => (
-                <span key={level} className=''>
-                  {level} {data?.overheidslaag.slice(-1)[0] !== level && <span>-</span>}
-                  &nbsp;
-                </span>
-              ))}
-            </h5>
+            <div className='p-xs-semibold text-grey-600'>Overheidslaag</div>
+            <div className='p-xs-semibold text-green-500'>
+              {data?.measure?.overheidslaag
+                ?.filter((x) => x !== null)
+                .map((level) => (
+                  <span key={level} className=''>
+                    {level} {data?.measure?.overheidslaag?.slice(-1)[0] !== level && <span>-</span>}
+                    &nbsp;
+                  </span>
+                ))}
+              {data?.overheidslaag
+                ?.filter((x) => x !== null)
+                .map((level) => (
+                  <span key={level} className=''>
+                    {level} {data?.overheidslaag?.slice(-1)[0] !== level && <span>-</span>}
+                    &nbsp;
+                  </span>
+                ))}
+            </div>
           </div>
           <div className='flex flex-col basis-rladder'>
-            <h5 className='mobile sm:desktop text-grey-600'>R-ladder</h5>
+            <div className='p-xs-semibold text-grey-600'>R-ladder</div>
             <div className='flex items-center'>
               <div className='flex flex-row items-center'>
                 {data?.measure?.rLadder?.map((rValue) => (
-                  <h5 key={rValue} className='mobile sm:desktop text-green-500 '>
+                  <div key={rValue} className='p-xs-semibold text-green-500 '>
                     {rValue} {data?.measure?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                     &nbsp;
-                  </h5>
+                  </div>
                 ))}
                 {data?.rLadder?.map((rValue) => (
-                  <h5 key={rValue} className='mobile sm:desktop text-green-500 '>
+                  <div key={rValue} className='p-xs-semibold text-green-500 '>
                     {rValue} {data?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                     &nbsp;
-                  </h5>
+                  </div>
                 ))}
                 {data?.measure?.slug && (
-                  <RTooltip>
+                  <RLadderTooltip>
                     <svg
                       width='24'
                       height='24'
@@ -119,7 +116,7 @@ export default function InstrumentMetaData({ data }) {
                         fill='#FDFDFD'
                       />
                     </svg>
-                  </RTooltip>
+                  </RLadderTooltip>
                 )}
               </div>
             </div>
@@ -130,12 +127,12 @@ export default function InstrumentMetaData({ data }) {
       <div className='flex flex-col sm:hidden justify-center mb-4'>
         <div className='flex flex-row justify-between h-auto py-2 border-b border-t-2 border-grey-400'>
           <div className='flex flex-col justify-center'>
-            <h5 className='mobile sm:desktop sm:py-1 text-grey-600'>Juridische houdbaarheid</h5>
+            <div className='p-xs-semibold sm:py-1 text-grey-600'>Juridische houdbaarheid</div>
             <div className='flex items-center'>
-              <h5 className='mobile sm:desktop text-green-500 pr-2'>
+              <div className='p-xs-semibold text-green-500 pr-2'>
                 {data?.measure?.juridischeHaalbaarheid}
                 {data?.juridischeHaalbaarheid}
-              </h5>
+              </div>
               {data?.measure?.slug && (
                 <JHTooltip data={data}>
                   <svg
@@ -156,12 +153,12 @@ export default function InstrumentMetaData({ data }) {
             </div>
           </div>
           <div className='flex flex-col justify-center'>
-            <h5 className='mobile sm:desktop py-1 text-grey-600'>Invloed</h5>
+            <div className='p-xs-semibold py-1 text-grey-600'>Invloed</div>
             <div className='flex items-center'>
-              <h5 className='mobile sm:desktop text-green-500 pr-2'>
+              <div className='p-xs-semibold text-green-500 pr-2'>
                 {data?.measure?.juridischInvloed}
                 {data?.juridischInvloed}
-              </h5>
+              </div>
               {data?.measure?.slug && (
                 <JITooltip data={data}>
                   <svg
@@ -184,42 +181,46 @@ export default function InstrumentMetaData({ data }) {
         </div>
         <div className='border-b border-grey-400 flex h-auto py-2'>
           <div className='flex flex-col justify-center'>
-            <h5 className='mobile sm:desktop py-1 text-grey-600'>Overheidslaag</h5>
-            <h5 className='mobile sm:desktop text-green-500'>
-              {data?.measure?.overheidslaag?.map((level) => (
-                <span key={level} className=''>
-                  {level} {data?.measure?.overheidslaag.slice(-1)[0] !== level && <span>-</span>}
-                  &nbsp;
-                </span>
-              ))}
-              {data?.overheidslaag?.map((level) => (
-                <span key={level} className=''>
-                  {level} {data?.overheidslaag.slice(-1)[0] !== level && <span>-</span>}
-                  &nbsp;
-                </span>
-              ))}
-            </h5>
+            <div className='p-xs-semibold py-1 text-grey-600'>Overheidslaag</div>
+            <div className='p-xs-semibold text-green-500'>
+              {data?.measure?.overheidslaag
+                ?.filter((x) => x !== null)
+                .map((level) => (
+                  <span key={level} className=''>
+                    {level} {data?.measure?.overheidslaag.slice(-1)[0] !== level && <span>-</span>}
+                    &nbsp;
+                  </span>
+                ))}
+              {data?.overheidslaag
+                ?.filter((x) => x !== null)
+                .map((level) => (
+                  <span key={level} className=''>
+                    {level} {data?.overheidslaag.slice(-1)[0] !== level && <span>-</span>}
+                    &nbsp;
+                  </span>
+                ))}
+            </div>
           </div>
         </div>
         <div className='flex py-2 border-b-2 border-grey-400'>
           <div className='flex flex-col justify-center'>
-            <h5 className='mobile sm:desktop py-1 text-grey-600'>R-ladder</h5>
+            <div className='p-xs-semibold py-1 text-grey-600'>R-ladder</div>
             <div className='flex items-center'>
               <div className='flex flex-row items-center'>
                 {data?.measure?.rLadder?.map((rValue) => (
-                  <h5 key={rValue} className='mobile sm:desktop text-green-500'>
+                  <div key={rValue} className='p-xs-semibold text-green-500'>
                     {rValue} {data?.measure?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                     &nbsp;
-                  </h5>
+                  </div>
                 ))}
                 {data?.rLadder?.map((rValue) => (
-                  <h5 key={rValue} className='mobile sm:desktop text-green-500'>
+                  <div key={rValue} className='p-xs-semibold text-green-500'>
                     {rValue} {data?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                     &nbsp;
-                  </h5>
+                  </div>
                 ))}
                 {data?.measure?.slug && (
-                  <RTooltip>
+                  <RLadderTooltip>
                     <svg
                       width='24'
                       height='24'
@@ -234,7 +235,7 @@ export default function InstrumentMetaData({ data }) {
                         fill='#FDFDFD'
                       />
                     </svg>
-                  </RTooltip>
+                  </RLadderTooltip>
                 )}
               </div>
             </div>
