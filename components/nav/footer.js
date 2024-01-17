@@ -24,6 +24,7 @@ const navigation = {
     { name: 'Houtbouw', slug: '/bouw/houtbouw' },
     { name: 'Windturbines', slug: '/maakindustrie/windturbines' },
     { name: 'Matrasketen', slug: '/consumptie-goederen/matrasketen' },
+    { name: 'Woningen', slug: '/bouw/woningen'}
   ],
 };
 
