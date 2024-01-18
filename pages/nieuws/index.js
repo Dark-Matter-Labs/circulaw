@@ -9,6 +9,10 @@ import FeaturedCard from '@/components/news-page/featured-card';
 import AgendaCard from '@/components/news-page/agenda-card';
 import NewsCard from '@/components/news-page/news-card';
 
+// test packages
+import Masonry, {ResponsiveMasonry} from 'react-responsive-masonry'
+
+
 const newsItems = `
 *[_type == 'newsPage'][0] {
     "featured": newsItems[featured == true]{
@@ -75,13 +79,13 @@ export default function NewsPage({ data }) {
           </div>
         </div>
         <div className=''>
-          <div className='flex flex-row justify-between items-center border-b-2 pb-5 border-green-800'>
-            <h1 className='p-2xl-semibold sm:p-5xl-semibold'>Laatste nieuws </h1>
-            <div className='flex flex-row items-center'>
-              <div className='p-3xl-semibold pr-4'>Bekijk:</div>
+          <div className='flex flex-col sm:flex-row justify-between sm:items-center border-b-2 pb-5 border-green-800'>
+            <h1 className='p-2xl-semibold sm:p-5xl-semibold pb-4 sm:pb-0'>Laatste nieuws </h1>
+            <div className='flex flex-row items-center justify-between'>
+              <div className='p-lg-semibold sm:p-3xl-semibold pr-4'>Bekijk:</div>
               <div>
                 {articleType === 'Alles' && (
-                  <Popover className='w-80 relative'>
+                  <Popover className='w-64 sm:w-80 relative'>
                   {({ open }) => (
                     <>
                       <Popover.Button
@@ -106,7 +110,7 @@ export default function NewsPage({ data }) {
                       </Popover.Button>
                       <Popover.Panel className='absolute z-20'>
                         <Popover.Button
-                          className='w-80'
+                          className='w-64 sm:w-80'
                           as='div'
                           onClick={() => setArticleType('Agenda')}
                         >
@@ -146,7 +150,7 @@ export default function NewsPage({ data }) {
                 </Popover>
                 )}
                  {articleType === 'Agenda' && (
-                  <Popover className='w-80 relative'>
+                  <Popover className='w-64 sm:w-80 relative'>
                   {({ open }) => (
                     <>
                       <Popover.Button
@@ -171,7 +175,7 @@ export default function NewsPage({ data }) {
                       </Popover.Button>
                       <Popover.Panel className='absolute z-20'>
                         <Popover.Button
-                          className='w-80'
+                          className='w-64 sm:w-80'
                           as='div'
                           onClick={() => setArticleType('Alles')}
                         >
@@ -212,7 +216,7 @@ export default function NewsPage({ data }) {
                 )}
 
                 {articleType === 'Circulair nieuws' && (
-                  <Popover className='w-80 relative'>
+                  <Popover className='w-64 sm:w-80 relative'>
                   {({ open }) => (
                     <>
                       <Popover.Button
@@ -237,7 +241,7 @@ export default function NewsPage({ data }) {
                       </Popover.Button>
                       <Popover.Panel className='absolute z-20'>
                         <Popover.Button
-                          className='w-80'
+                          className='w-64 sm:w-80'
                           as='div'
                           onClick={() => setArticleType('Alles')}
                         >
@@ -277,7 +281,7 @@ export default function NewsPage({ data }) {
                 </Popover>
                 )}
                 {articleType === 'Nieuw op de site' && (
-                  <Popover className='w-80 relative'>
+                  <Popover className='w-64 sm:w-80 relative'>
                   {({ open }) => (
                     <>
                       <Popover.Button
@@ -302,7 +306,7 @@ export default function NewsPage({ data }) {
                       </Popover.Button>
                       <Popover.Panel className='absolute z-20'>
                         <Popover.Button
-                          className='w-80'
+                          className='w-64 sm:w-80'
                           as='div'
                           onClick={() => setArticleType('Alles')}
                         >
@@ -342,7 +346,7 @@ export default function NewsPage({ data }) {
                 </Popover>
                 )}
                  {articleType === 'Artikelen' && (
-                  <Popover className='w-80 relative'>
+                  <Popover className='w-64 sm:w-80 relative'>
                   {({ open }) => (
                     <>
                       <Popover.Button
@@ -367,7 +371,7 @@ export default function NewsPage({ data }) {
                       </Popover.Button>
                       <Popover.Panel className='absolute z-20'>
                         <Popover.Button
-                          className='w-80'
+                          className='w-64 sm:w-80'
                           as='div'
                           onClick={() => setArticleType('Alles')}
                         >
@@ -410,7 +414,7 @@ export default function NewsPage({ data }) {
             </div>
           </div>
           {/* Make new one with grid cols */}
-          <div className='columns-1 sm:columns-2 lg:columns-4 py-10'>
+          <div className='columns-1 sm:columns-2 lg:columns-4 gap-x-6 py-10'>
             {notFeatured.map((item, id) => (
               <div key={id} className='relative mb-6 break-inside-avoid-column min-h'>
                 {item._type === 'agendaItem' && <AgendaCard data={item} />}
@@ -419,14 +423,20 @@ export default function NewsPage({ data }) {
             ))}
           </div>
           <hr />
-          <div className='columns-1 sm:columns-2 lg:columns-4 py-10'>
+          Masonry-responsive
+          <ResponsiveMasonry  columnsCountBreakPoints={{350: 1, 640: 2, 1024: 4}} className='py-10'>
+            <Masonry gutter='24px'>
             {notFeatured.map((item, id) => (
-              <div key={id} className='relative mb-6 break-inside-avoid-column min-h'>
+              <div key={id} className='relative break-inside-avoid-column min-h'>
                 {item._type === 'agendaItem' && <AgendaCard data={item} />}
                 {item._type === 'newsCard' && <NewsCard data={item} />}
               </div>
             ))}
-          </div>
+            </Masonry>
+          </ResponsiveMasonry>
+          
+    
+          
         </div>
       </div>
     </Layout>
