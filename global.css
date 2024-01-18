@@ -96,6 +96,18 @@
       @apply font-jakarta text-7xl font-bold leading-16;
     }
 
+  .p-agenda-card-day {
+    @apply font-jakarta text-[88px] font-bold leading-[88px]
+  }
+
+  .p-agenda-card-month {
+    @apply font-jakarta text-[25px] font-bold leading-[40px]
+  }
+
+  .p-agenda-card-year {
+    @apply font-jakarta text-[46px] font-bold leading-[40px] text-justify	
+  }
+
   .p-6xl-bold {
       @apply font-jakarta text-6xl font-bold leading-14
     }
