@@ -7,7 +7,6 @@ import { BsCircle, BsHouseDoor, BsNewspaper } from 'react-icons/bs';
 import { BiNews } from 'react-icons/bi';
 import { AiOutlineHome } from 'react-icons/ai';
 
-
 export const Structure = (S) =>
   S.list()
     .title('Content Types')

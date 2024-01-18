@@ -2,11 +2,7 @@ import Layout from '@/components/layouts/layout';
 import SectionTypes from '@/components/section-types-list';
 import { client } from '@/lib/sanity';
 
-import {
-  aboutSectionQuerie,
-  homePageThemaQuery,
-  homePageHeaderQuery,
-} from '@/lib/queries';
+import { aboutSectionQuerie, homePageThemaQuery, homePageHeaderQuery } from '@/lib/queries';
 import NewThemaSuggestion from '@/components/new-thema-suggestion';
 // import NewsItems from '@/components/news-items';
 import HomePageAboutSection from '@/components/home-page-about-section';
@@ -31,7 +27,7 @@ export default function Index({
   homePageThemaData,
   homePageHeader,
   footerText,
-  newsData
+  newsData,
 }) {
   return (
     <Layout page='home' homePageHeader={homePageHeader} footerText={footerText}>
@@ -54,25 +50,25 @@ export default function Index({
         <div className='global-margin'>
           <HomePageAboutSection aboutSection={aboutSection} />
           <div className='mt-10'>
-          <h1 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
-            Uitgelichte nieuwsberichten
-          </h1>
-          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-6 py-10 overflow-hidden'>
-            {newsData.featured.map((item, id) => (
-              <div
-                className={`${
-                  item.image
-                    ? 'col-span-1 flex-col sm:col-span-2 sm:flex-cols-2'
-                    : 'col-span-1 flex-col gap-3'
-                }`}
-                key={id}
-              >
-                {item._type === 'agendaItem' && <FeaturedAgendaCard data={item} />}
-                {item._type === 'newsCard' && <FeaturedCard data={item} />}
-              </div>
-            ))}
+            <h1 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
+              Uitgelichte nieuwsberichten
+            </h1>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-6 py-10 overflow-hidden'>
+              {newsData.featured.map((item, id) => (
+                <div
+                  className={`${
+                    item.image
+                      ? 'col-span-1 flex-col sm:col-span-2 sm:flex-cols-2'
+                      : 'col-span-1 flex-col gap-3'
+                  }`}
+                  key={id}
+                >
+                  {item._type === 'agendaItem' && <FeaturedAgendaCard data={item} />}
+                  {item._type === 'newsCard' && <FeaturedCard data={item} />}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </Layout>
@@ -84,14 +80,14 @@ export async function getStaticProps() {
   const homePageThemaData = await client.fetch(homePageThemaQuery);
   // const newsItems = await client.fetch(newsItemsQuery);
   const homePageHeader = await client.fetch(homePageHeaderQuery);
-  const newsData = await client.fetch(newsItems)
+  const newsData = await client.fetch(newsItems);
   return {
     props: {
       homePageThemaData,
-     //  newsItems,
+      //  newsItems,
       aboutSection,
       homePageHeader,
-      newsData
+      newsData,
     },
     revalidate: 1,
   };
