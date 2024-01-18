@@ -53,11 +53,11 @@ export default function NewsPage({ data }) {
     <Layout>
       <div className='flex flex-col global-margin mt-4'>
         <div className='mt-10'>
-          <Link href='/' className='text-green-500 p-2xs-bold'>
-            {'<'} Home
+          <Link href='/' className='text-green-600 hover:text-green-300 active:text-green-800 p-2xs-bold'>
+             Home
+            <span className='p-2xs-bold text-green-600 px-2'>{'>'}</span>
           </Link>
         </div>
-
         <div className='mt-10'>
           <h1 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
             Uitgelichte nieuwsberichten
