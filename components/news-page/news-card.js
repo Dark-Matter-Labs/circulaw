@@ -23,7 +23,7 @@ export default function NewsCard({ data }) {
                     ${data.colour === 'darkGreen' ? 'bg-green-600' : ''}
                     ${
                       data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
-                    } rounded-cl flex justify-between items-start`}
+                    } rounded-cl flex flex-col justify-between items-start`}
         >
           {data.image && (
             <div className='w-full h-80 relative object-cover rounded-t-cl'>
@@ -200,7 +200,7 @@ export default function NewsCard({ data }) {
                     ${data.colour === 'darkGreen' ? 'bg-green-600' : ''}
                     ${
                       data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
-                    } rounded-cl flex   justify-between items-start`}
+                    } rounded-cl flex justify-between items-start`}
       >
         {data.image && (
           <div className='w-full h-80 relative object-cover rounded-t-cl'>
@@ -215,7 +215,7 @@ export default function NewsCard({ data }) {
         <div
           className={`${
             data.linkText || data.createPage === true ? 'justify-between gap-y-3' : 'gap-y-3'
-          } px-8 py-6 flex flex-col  h-full w-full`}
+          } px-8 py-6 flex flex-col h-full w-full`}
         >
           <div className=''>
             <div className='flex grow-0'>
