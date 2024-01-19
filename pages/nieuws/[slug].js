@@ -23,13 +23,16 @@ export default function NewsDetailPage({ data }) {
   const [cardColour, setCardColour] = useState();
 
   useEffect(() => {
-    if (data[0]?.colour === 'lightGreen') {
-      setCardColour('bg-green-300');
-    } else if (data[0]?.colour === 'green') {
-      setCardColour('bg-green-500');
-    } else if (data[0]?.colour === 'darkGreen') {
-      setCardColour('bg-green-600');
-    } else setCardColour('bg-green-800');
+    if (data) {
+      let data = data[0]
+      if (data?.colour === 'lightGreen') {
+        setCardColour('bg-green-300');
+      } else if (data?.colour === 'green') {
+        setCardColour('bg-green-500');
+      } else if (data?.colour === 'darkGreen') {
+        setCardColour('bg-green-600');
+      } else setCardColour('bg-green-800');
+    }
   }, [data]);
 
   return (
