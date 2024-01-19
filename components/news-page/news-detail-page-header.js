@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Tag from '../tag';
 
 export default function NewsDetailPageHeader({ cardColour, data }) {
-  const event = new Date(data.newsDate);
+  const event = new Date(data?.newsDate);
   const options = {
     day: 'numeric',
     month: 'long',
