@@ -35,7 +35,7 @@ export default function NewsDetailPage({ data }) {
   return (
     <>
       <Layout>
-        <NewsDetailPageHeader cardColour={cardColour} data={data  } />
+        <NewsDetailPageHeader cardColour={cardColour} data={data} />
         <NewsDetailPageBody data={data} />
       </Layout>
     </>

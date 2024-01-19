@@ -32,12 +32,12 @@ export default function NewsDetailPageHeader({ cardColour, data }) {
             <div className='flex flex-grow-0'>
               <Tag
                 classes={`${
-                  data.colour === 'extraDarkGreen'
+                  data?.colour === 'extraDarkGreen'
                     ? 'text-green-300 border border-green-300 bg-transparent'
                     : 'text-white bg-green-800 border border-green-800'
                 }`}
               >
-                {data.category}
+                {data?.category}
               </Tag>
             </div>
             <h1
@@ -45,9 +45,9 @@ export default function NewsDetailPageHeader({ cardColour, data }) {
                 cardColour === 'bg-green-300' ? 'text-green-800' : 'text-gray-100'
               } p-5xl-semibold sm:p-7xl-semibold `}
             >
-              {data.newsTitle}
+              {data?.newsTitle}
             </h1>
-            {data.newsDate && (
+            {data?.newsDate && (
               <div
                 className={`${
                   cardColour === 'bg-green-300' ? 'text-green-800' : 'text-gray-100'
