@@ -12,8 +12,8 @@ const newsSlugsQuery = `
  }
 `;
 const newsDetailPageQuery = `
-*[_type == "newsPage"][0]{
-    newsItems[slug.current == $slug]{
+*[_type == "newsPage"][0] {
+    "newsItems" :newsItems[slug.current == $slug]{
       ...,
     }
 }
@@ -21,23 +21,22 @@ const newsDetailPageQuery = `
 
 export default function NewsDetailPage({ data }) {
   const [cardColour, setCardColour] = useState();
-  const newsDetail = data[0]
-// console.log(data)
+
   useEffect(() => {
-    if (newsDetail?.colour === 'lightGreen') {
+    if (data?.colour === 'lightGreen') {
       setCardColour('bg-green-300');
-    } else if (newsDetail?.colour === 'green') {
+    } else if (data?.colour === 'green') {
       setCardColour('bg-green-500');
-    } else if (newsDetail?.colour === 'darkGreen') {
+    } else if (data?.colour === 'darkGreen') {
       setCardColour('bg-green-600');
     } else setCardColour('bg-green-800');
-  }, [newsDetail]);
+  }, [data]);
 
   return (
     <>
       <Layout>
-        <NewsDetailPageHeader cardColour={cardColour} data={newsDetail} />
-        <NewsDetailPageBody data={newsDetail} />
+        <NewsDetailPageHeader cardColour={cardColour} data={data  } />
+        <NewsDetailPageBody data={data} />
       </Layout>
     </>
   );
@@ -57,7 +56,7 @@ export async function getStaticProps({ params }) {
   const data = await client.fetch(newsDetailPageQuery, slug);
   return {
     props: {
-      data: data.newsItems,
+      data: data.newsItems[0],
     },
     revalidate: 1,
   };
