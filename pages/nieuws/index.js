@@ -403,17 +403,7 @@ export default function NewsPage({ data }) {
             </div>
           </div>
           {/* Make new one with grid cols */}
-          <div className='columns-1 sm:columns-2 lg:columns-4 gap-x-6 py-10'>
-            {notFeatured.map((item, id) => (
-              <div key={id} className='relative mb-6 break-inside-avoid-column min-h'>
-                {item._type === 'agendaItem' && <AgendaCard data={item} />}
-                {item._type === 'newsCard' && <NewsCard data={item} />}
-              </div>
-            ))}
-          </div>
-          <hr />
-          Masonry-responsive
-          <ResponsiveMasonry
+           <ResponsiveMasonry
             columnsCountBreakPoints={{ 350: 1, 640: 2, 1024: 4 }}
             className='py-10'
           >
@@ -426,6 +416,8 @@ export default function NewsPage({ data }) {
               ))}
             </Masonry>
           </ResponsiveMasonry>
+      
+       
         </div>
       </div>
     </Layout>
