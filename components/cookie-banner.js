@@ -2,9 +2,11 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { setCookie, hasCookie } from 'cookies-next';
 import { useRouter } from 'next/router';
+import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 
 const CookieConsent = () => {
   const [consent, setConsent] = useState(true);
+  const { DataLayer } = usePiwikPro();
   const router = useRouter();
   useEffect(() => {
     setConsent(hasCookie('localConsent'));
@@ -14,6 +16,9 @@ const CookieConsent = () => {
     setConsent(true);
     setCookie('localConsent', 'true', { maxAge: 60 * 60 * 24 * 365 });
     router.reload(window.location.pathname); // extra refresh to enable Hotjar
+
+    DataLayer.push('setComplianceSettings', {consents: {analytics: {status: 1}}});
+
   };
   const denyCookie = () => {
     setConsent(true);
