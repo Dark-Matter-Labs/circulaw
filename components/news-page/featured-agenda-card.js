@@ -16,7 +16,7 @@ export default function FeaturedAgendaCard({ data }) {
   return (
     <>
       {data.link && (
-        <Link href={data.link}>
+        <Link href={data.link} target='_blank' className='group'>
           <div className='col-span-1 sm:h-80 bg-green-800 rounded-cl flex flex-col justify-between items-center'>
             <div className='px-8 py-6 h-full w-full flex flex-col justify-between gap-y-4 sm:gap-y-0'>
               <div className='w-auto'>
@@ -40,7 +40,7 @@ export default function FeaturedAgendaCard({ data }) {
                 </div>
               </div>
               <hr className='border-green-200 ' />
-              <div className='p-4xl-semibold text-white'>{data.newsTitle}</div>
+              <div className='p-4xl-semibold text-white group-hover:text-green-200 group-hover:underline'>{data.newsTitle}</div>
             </div>
           </div>
         </Link>
@@ -70,7 +70,7 @@ export default function FeaturedAgendaCard({ data }) {
               </div>
             </div>
             <hr className='border-green-200 ' />
-            <div className='p-4xl-semibold text-white'>{data.newsTitle}</div>
+            <div className='p-4xl-semibold text-white '>{data.newsTitle}</div>
           </div>
         </div>
       )}
