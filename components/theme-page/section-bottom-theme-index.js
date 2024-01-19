@@ -19,7 +19,7 @@ export default function ThemeBottomSection({ props }) {
           <div className=''>
             {laws?.map((measure, index) => (
               <div key={index} className='flex flex-col sm:flex-row mb-14 sm:mb-8 max-w-6xl'>
-                <div className='flex items-center w-full h-44 sm:md-0 sm:w-64 sm:h-44 rounded-cl mr-6 relative object-fill'>
+                <div className='flex items-center w-full h-44 sm:md-0 sm:w-64 sm:h-44 rounded-cl sm:mr-6 mb-4 sm:mb-0 relative '>
                   <Image
                     src={urlFor(measure?.featuredImage)?.url()}
                     alt={measure?.featuredImage?.altText}
