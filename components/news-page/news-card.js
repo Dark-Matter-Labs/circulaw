@@ -93,7 +93,11 @@ export default function NewsCard({ data }) {
     );
   } else if (data.linkUrl !== undefined) {
     return (
-      <Link href={data.linkUrl} target={`${data.internalExternal === true ? '_blank' : ''}`} className='group'>
+      <Link
+        href={data.linkUrl}
+        target={`${data.internalExternal === true ? '_blank' : ''}`}
+        className='group'
+      >
         <div
           className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''}
                     ${data.colour === 'green' ? 'bg-green-500' : ''}

@@ -403,7 +403,7 @@ export default function NewsPage({ data }) {
             </div>
           </div>
           {/* Make new one with grid cols */}
-           <ResponsiveMasonry
+          <ResponsiveMasonry
             columnsCountBreakPoints={{ 350: 1, 640: 2, 1024: 4 }}
             className='py-10'
           >
@@ -416,8 +416,6 @@ export default function NewsPage({ data }) {
               ))}
             </Masonry>
           </ResponsiveMasonry>
-      
-       
         </div>
       </div>
     </Layout>

@@ -93,7 +93,11 @@ export default function FeaturedCard({ data }) {
     );
   } else if (data.linkUrl !== undefined) {
     return (
-      <Link href={data.linkUrl} target={`${data.internalExternal === true ? '_blank' : ''}`} className='group'>
+      <Link
+        href={data.linkUrl}
+        target={`${data.internalExternal === true ? '_blank' : ''}`}
+        className='group'
+      >
         <div
           className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''}
                     ${data.colour === 'green' ? 'bg-green-500' : ''}
@@ -155,7 +159,6 @@ export default function FeaturedCard({ data }) {
                 {data.internalExternal === true ? <LinkIcon /> : <span>&nbsp;{'>'}</span>}
               </div>
             )}
-      
           </div>
           {data.image && (
             <div className='w-full h-80 sm:pl-14 relative object-cover rounded-t-cl sm:rounded-r-cl'>

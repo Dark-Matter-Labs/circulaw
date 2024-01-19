@@ -8,7 +8,6 @@ export default function NewsDetailPageHeader({ cardColour, data }) {
     month: 'long',
     year: 'numeric',
   };
-
   return (
     <>
       <div className={`${cardColour} h-72 my-3`}>
