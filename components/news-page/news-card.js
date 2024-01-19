@@ -16,7 +16,7 @@ export default function NewsCard({ data }) {
 
   if (data.createPage === true) {
     return (
-      <Link href={`/nieuws/${data.slug.current}`}>
+      <Link href={`/nieuws/${data.slug.current}`} className='group'>
         <div
           className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''}
                     ${data.colour === 'green' ? 'bg-green-500' : ''}
@@ -76,24 +76,12 @@ export default function NewsCard({ data }) {
             >
               {data.newsText}
             </div>
-            {data.linkText && (
-              <div
-                className={`${
-                  data.colour === 'lightGreen'
-                    ? 'text-green-800 hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                    : 'text-grey-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
-                } self-end p-lg-semibold inline-flex flex-row itmes-center`}
-              >
-                {data.linkText}{' '}
-                {data.internalExternal === true ? <LinkIcon /> : <span>&nbsp;{'>'}</span>}
-              </div>
-            )}
             {data.createPage === true && (
               <div
                 className={`${
                   data.colour === 'lightGreen'
-                    ? 'text-green-800 hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                    : 'text-grey-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
+                    ? 'text-green-800 group-hover:text-green-200 group-hover:underline active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
+                    : 'text-grey-100 group-hover:text-green-200 group-hover:underline active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
                 } self-end p-lg-semibold`}
               >
                 Lees meer {'>'}
@@ -105,7 +93,7 @@ export default function NewsCard({ data }) {
     );
   } else if (data.linkUrl !== undefined) {
     return (
-      <Link href={data.linkUrl} target={`${data.internalExternal === true ? '_blank' : ''}`}>
+      <Link href={data.linkUrl} target={`${data.internalExternal === true ? '_blank' : ''}`} className='group'>
         <div
           className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''}
                     ${data.colour === 'green' ? 'bg-green-500' : ''}
@@ -169,8 +157,8 @@ export default function NewsCard({ data }) {
               <div
                 className={`${
                   data.colour === 'lightGreen'
-                    ? 'text-green-800 hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                    : 'text-grey-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
+                    ? 'text-green-800 group-hover:text-green-200 group-hover:underline active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
+                    : 'text-grey-100 group-hover:text-green-200 group-hover:underline active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
                 } self-end p-lg-semibold inline-flex flex-row itmes-center`}
               >
                 {data.linkText}{' '}
