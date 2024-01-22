@@ -4,13 +4,17 @@ import SectionTypes from '@/components/section-types-list';
 import { client } from '@/lib/sanity';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
-import { aboutSectionQuerie, homePageThemaQuery, homePageHeaderQuery, newsItems } from '@/lib/queries';
+import {
+  aboutSectionQuerie,
+  homePageThemaQuery,
+  homePageHeaderQuery,
+  newsItems,
+} from '@/lib/queries';
 import NewThemaSuggestion from '@/components/new-thema-suggestion';
 // import NewsItems from '@/components/news-items';
 import HomePageAboutSection from '@/components/home-page-about-section';
 import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
-
 
 export default function Index({
   aboutSection,
@@ -60,7 +64,7 @@ export default function Index({
             </div>
             <div className='p-base-bold flex justify-end items-center text-green-600 hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white justify-self-end'>
               <Link href='/nieuws'>
-                Bekijk alle nieuwsberichten {' '}
+                Bekijk alle nieuwsberichten{' '}
                 <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
               </Link>
             </div>
