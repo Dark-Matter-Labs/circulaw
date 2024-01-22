@@ -418,7 +418,25 @@ export default function NewsPage({ data }) {
                       <div className='h-2 w-2 rounded-full bg-gray-400 mx-2'></div>
                     </>
                   )}
-                  {item.newsTitle}
+                  <div>
+                    {item.createPage === true && (
+                      <Link href={`/nieuws/${item.slug.current}`}>{item.newsTitle}</Link>
+                    )}
+                    {item.linkUrl !== undefined && (
+                      <Link
+                        href={item.linkUrl}
+                        target={`${item.internalExternal === true ? '_blank' : ''}`}
+                      >
+                        {item.newsTitle}
+                      </Link>
+                    )}
+                    {item.link && item._type === 'agendaItem' && (
+                      <Link href={item.link}>{item.newsTitle}</Link>
+                    )}
+                    {item.link === undefined && item._type === 'agendaItem' && (
+                      <div>{item.newsTitle}</div>
+                    )}
+                  </div>
                   {item._type !== 'agendaItem' && (
                     <Tag classes='text-white bg-green-800 border border-green-800 ml-3'>
                       {item.category}
