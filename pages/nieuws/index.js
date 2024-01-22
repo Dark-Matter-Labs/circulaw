@@ -409,6 +409,7 @@ export default function NewsPage({ data }) {
               ))}
             </Masonry>
           </ResponsiveMasonry>
+          {archived.length > 0 && 
           <div className='mb-10'>
             <h2 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
               Archief
@@ -464,7 +465,7 @@ export default function NewsPage({ data }) {
                 </div>
               ))}
             </div>
-          </div>
+          </div>}
         </div>
       </div>
     </Layout>
