@@ -8,22 +8,9 @@ import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
 import AgendaCard from '@/components/news-page/agenda-card';
 import NewsCard from '@/components/news-page/news-card';
+import { newsItems } from '@/lib/queries';
 
-// test packages
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
-
-const newsItems = `
-*[_type == 'newsPage'][0] {
-    "featured": newsItems[featured == true]{
-      ...,
-      "image": newsImage.asset->.url
-    },
-      "notFeatured": newsItems[featured != true]{
-        ...,
-        "image": newsImage.asset->.url
-    },
-  }
-`;
 
 export default function NewsPage({ data }) {
   const [articleType, setArticleType] = useState('Alles');

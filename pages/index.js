@@ -4,7 +4,7 @@ import SectionTypes from '@/components/section-types-list';
 import { client } from '@/lib/sanity';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
-import { aboutSectionQuerie, homePageThemaQuery, homePageHeaderQuery, newsItemsHomePage } from '@/lib/queries';
+import { aboutSectionQuerie, homePageThemaQuery, homePageHeaderQuery, newsItems } from '@/lib/queries';
 import NewThemaSuggestion from '@/components/new-thema-suggestion';
 // import NewsItems from '@/components/news-items';
 import HomePageAboutSection from '@/components/home-page-about-section';
@@ -76,7 +76,7 @@ export async function getStaticProps() {
   const homePageThemaData = await client.fetch(homePageThemaQuery);
   // const newsItems = await client.fetch(newsItemsQuery);
   const homePageHeader = await client.fetch(homePageHeaderQuery);
-  const newsData = await client.fetch(newsItemsHomePage);
+  const newsData = await client.fetch(newsItems);
   return {
     props: {
       homePageThemaData,
