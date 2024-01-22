@@ -4,25 +4,13 @@ import SectionTypes from '@/components/section-types-list';
 import { client } from '@/lib/sanity';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
-import { aboutSectionQuerie, homePageThemaQuery, homePageHeaderQuery } from '@/lib/queries';
+import { aboutSectionQuerie, homePageThemaQuery, homePageHeaderQuery, newsItemsHomePage } from '@/lib/queries';
 import NewThemaSuggestion from '@/components/new-thema-suggestion';
 // import NewsItems from '@/components/news-items';
 import HomePageAboutSection from '@/components/home-page-about-section';
 import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
 
-const newsItems = `
-*[_type == 'newsPage'][0] {
-    "featured": newsItems[featured == true]{
-      ...,
-      "image": newsImage.asset->.url
-    },
-      "notFeatured": newsItems[featured != true]{
-        ...,
-        "image": newsImage.asset->.url
-    },
-  }
-`;
 
 export default function Index({
   aboutSection,
@@ -88,7 +76,7 @@ export async function getStaticProps() {
   const homePageThemaData = await client.fetch(homePageThemaQuery);
   // const newsItems = await client.fetch(newsItemsQuery);
   const homePageHeader = await client.fetch(homePageHeaderQuery);
-  const newsData = await client.fetch(newsItems);
+  const newsData = await client.fetch(newsItemsHomePage);
   return {
     props: {
       homePageThemaData,
