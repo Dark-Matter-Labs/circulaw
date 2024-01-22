@@ -79,10 +79,6 @@ export const Structure = (S) =>
         .icon(FcAbout)
         .child(S.documentList().title('About Pages').filter('_type == "aboutPage"')),
       S.listItem()
-        .title('News and Updates')
-        .icon(BiNews)
-        .child(S.documentList().title('News and Updates').filter('_type == "newsItem"')),
-      S.listItem()
         .title('News Page')
         .id('newsPage')
         .icon(BsNewspaper)

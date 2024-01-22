@@ -6,7 +6,6 @@ import partners from './documents/partners';
 import englishPage from './documents/english-page';
 import thema from './documents/thema';
 import faq from './documents/faq';
-import newsItem from './documents/news';
 import simpleThema from './documents/simple-thema';
 import newsPage from './documents/news-page';
 
@@ -33,7 +32,6 @@ export const schemaTypes = [
   partners,
   thema,
   faq,
-  newsItem,
   simpleThema,
   newsPage,
 
