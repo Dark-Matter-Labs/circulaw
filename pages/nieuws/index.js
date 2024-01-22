@@ -14,11 +14,18 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 export default function NewsPage({ data }) {
   const [articleType, setArticleType] = useState('Alles');
-  const [notFeatured, setNotFeatured] = useState(data.notFeatured);
+  const [notFeatured, setNotFeatured] = useState(data?.notFeatured?.slice(0, 13));
+  const archived = data?.notFeatured.slice(13, 25);
+
+  const options = {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  };
 
   useEffect(() => {
-    if (data.notFeatured) {
-      let notFeatured = data.notFeatured;
+    if (data?.notFeatured) {
+      let notFeatured = data?.notFeatured;
       if (articleType === 'Nieuw op de site') {
         setNotFeatured(notFeatured?.filter((item) => item.category === 'Nieuw op de site'));
       } else if (articleType === 'Agenda') {
@@ -50,7 +57,7 @@ export default function NewsPage({ data }) {
             Uitgelichte nieuwsberichten
           </h1>
           <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-6 py-10 overflow-hidden'>
-            {data.featured.map((item, id) => (
+            {data?.featured.map((item, id) => (
               <div
                 className={`${
                   item.image
@@ -394,7 +401,7 @@ export default function NewsPage({ data }) {
             className='py-10'
           >
             <Masonry gutter='24px'>
-              {notFeatured?.slice(0, 13).map((item, id) => (
+              {notFeatured?.map((item, id) => (
                 <div key={id} className='relative break-inside-avoid-column min-h'>
                   {item._type === 'agendaItem' && <AgendaCard data={item} />}
                   {item._type === 'newsCard' && <NewsCard data={item} />}
@@ -407,43 +414,52 @@ export default function NewsPage({ data }) {
               Archief
             </h2>
             <div className='py-10'>
-              {notFeatured?.slice(13, 25).map((item, id) => (
+              {archived?.map((item, id) => (
                 <div
                   key={id}
-                  className='flex flex-row items-center my-3 p-xl-semibold text-green-800'
+                  className='flex flex-row items-center mb-3 p-xl-semibold text-green-800'
                 >
-                  {item.newsDate && (
-                    <>
-                      <span className='p-base text-green-800'>{item.newsDate}</span>
-                      <div className='h-2 w-2 rounded-full bg-gray-400 mx-2'></div>
-                    </>
+                  {item._type !== 'agendaItem' && (
+                    <Tag classes='text-white bg-green-800 border border-green-800 mr-3'>
+                      {item.category}
+                    </Tag>
                   )}
+                  {item._type === 'agendaItem' && (
+                    <Tag classes='text-white bg-green-800 border border-green-800 mr-3'>Agenda</Tag>
+                  )}
+
                   <div>
                     {item.createPage === true && (
-                      <Link href={`/nieuws/${item.slug.current}`}>{item.newsTitle}</Link>
+                      <Link className='link-interaction' href={`/nieuws/${item.slug.current}`}>
+                        {item.newsTitle}
+                      </Link>
                     )}
                     {item.linkUrl !== undefined && (
                       <Link
                         href={item.linkUrl}
                         target={`${item.internalExternal === true ? '_blank' : ''}`}
+                        className='link-interaction'
                       >
                         {item.newsTitle}
                       </Link>
                     )}
                     {item.link && item._type === 'agendaItem' && (
-                      <Link href={item.link}>{item.newsTitle}</Link>
+                      <Link className='link-interaction' href={item.link}>
+                        {item.newsTitle}
+                      </Link>
                     )}
                     {item.link === undefined && item._type === 'agendaItem' && (
                       <div>{item.newsTitle}</div>
                     )}
                   </div>
-                  {item._type !== 'agendaItem' && (
-                    <Tag classes='text-white bg-green-800 border border-green-800 ml-3'>
-                      {item.category}
-                    </Tag>
-                  )}
-                  {item._type === 'agendaItem' && (
-                    <Tag classes='text-white bg-green-800 border border-green-800 ml-3'>Agenda</Tag>
+                  {item.newsDate && (
+                    <>
+                      <div className='h-2 w-2 rounded-full bg-gray-400 mx-2'></div>
+                      <span className='p-base text-green-800'>
+                        {' '}
+                        {new Date(item.newsDate).toLocaleDateString('nl-NL', options)}
+                      </span>
+                    </>
                   )}
                 </div>
               ))}
