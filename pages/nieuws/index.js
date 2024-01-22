@@ -409,63 +409,66 @@ export default function NewsPage({ data }) {
               ))}
             </Masonry>
           </ResponsiveMasonry>
-          {archived.length > 0 && 
-          <div className='mb-10'>
-            <h2 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
-              Archief
-            </h2>
-            <div className='py-10'>
-              {archived?.map((item, id) => (
-                <div
-                  key={id}
-                  className='flex flex-row items-center mb-3 p-xl-semibold text-green-800'
-                >
-                  {item._type !== 'agendaItem' && (
-                    <Tag classes='text-white bg-green-800 border border-green-800 mr-3'>
-                      {item.category}
-                    </Tag>
-                  )}
-                  {item._type === 'agendaItem' && (
-                    <Tag classes='text-white bg-green-800 border border-green-800 mr-3'>Agenda</Tag>
-                  )}
+          {archived.length > 0 && (
+            <div className='mb-10'>
+              <h2 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
+                Archief
+              </h2>
+              <div className='py-10'>
+                {archived?.map((item, id) => (
+                  <div
+                    key={id}
+                    className='flex flex-row items-center mb-3 p-xl-semibold text-green-800'
+                  >
+                    {item._type !== 'agendaItem' && (
+                      <Tag classes='text-white bg-green-800 border border-green-800 mr-3'>
+                        {item.category}
+                      </Tag>
+                    )}
+                    {item._type === 'agendaItem' && (
+                      <Tag classes='text-white bg-green-800 border border-green-800 mr-3'>
+                        Agenda
+                      </Tag>
+                    )}
 
-                  <div>
-                    {item.createPage === true && (
-                      <Link className='link-interaction' href={`/nieuws/${item.slug.current}`}>
-                        {item.newsTitle}
-                      </Link>
-                    )}
-                    {item.linkUrl !== undefined && (
-                      <Link
-                        href={item.linkUrl}
-                        target={`${item.internalExternal === true ? '_blank' : ''}`}
-                        className='link-interaction'
-                      >
-                        {item.newsTitle}
-                      </Link>
-                    )}
-                    {item.link && item._type === 'agendaItem' && (
-                      <Link className='link-interaction' href={item.link}>
-                        {item.newsTitle}
-                      </Link>
-                    )}
-                    {item.link === undefined && item._type === 'agendaItem' && (
-                      <div>{item.newsTitle}</div>
+                    <div>
+                      {item.createPage === true && (
+                        <Link className='link-interaction' href={`/nieuws/${item.slug.current}`}>
+                          {item.newsTitle}
+                        </Link>
+                      )}
+                      {item.linkUrl !== undefined && (
+                        <Link
+                          href={item.linkUrl}
+                          target={`${item.internalExternal === true ? '_blank' : ''}`}
+                          className='link-interaction'
+                        >
+                          {item.newsTitle}
+                        </Link>
+                      )}
+                      {item.link && item._type === 'agendaItem' && (
+                        <Link className='link-interaction' href={item.link}>
+                          {item.newsTitle}
+                        </Link>
+                      )}
+                      {item.link === undefined && item._type === 'agendaItem' && (
+                        <div>{item.newsTitle}</div>
+                      )}
+                    </div>
+                    {item.newsDate && (
+                      <>
+                        <div className='h-2 w-2 rounded-full bg-gray-400 mx-2'></div>
+                        <span className='p-base text-green-800'>
+                          {' '}
+                          {new Date(item.newsDate).toLocaleDateString('nl-NL', options)}
+                        </span>
+                      </>
                     )}
                   </div>
-                  {item.newsDate && (
-                    <>
-                      <div className='h-2 w-2 rounded-full bg-gray-400 mx-2'></div>
-                      <span className='p-base text-green-800'>
-                        {' '}
-                        {new Date(item.newsDate).toLocaleDateString('nl-NL', options)}
-                      </span>
-                    </>
-                  )}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>}
+          )}
         </div>
       </div>
     </Layout>
