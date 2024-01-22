@@ -22,7 +22,7 @@ export default {
       featured: 'newsCard.featured',
     },
     prepare: ({ title, date, featured }) => ({
-      title: [featured ? '⭐️ ' : '', `${title ?? `No book selected`}`].join(` `),
+      title: [featured ? '⭐️ ' : '', `${title ?? `No item selected`}`].join(` `),
       date: `${date}`,
       media: BsNewspaper,
     }),
