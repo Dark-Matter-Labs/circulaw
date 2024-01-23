@@ -6,6 +6,7 @@ import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
 
 export default function SimpleThemaLayout({ instruments, numberOfLaws, subheading, ...props }) {
   const themaData = props.thema;
+
   return (
     <>
       {/* HEADER DESKTOP */}
