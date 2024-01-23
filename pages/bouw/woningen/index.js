@@ -8,7 +8,7 @@ export default function Meubels({ thema, length, instruments }) {
   useEffect(() => {
     localStorage.clear();
   });
-  console.log(length)
+
   return (
     <Layout title='CircuLaw - Woningen'>
       <SimpleThemaLayout

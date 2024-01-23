@@ -29,11 +29,11 @@ export default function InstrumentHeader({ data }) {
       setSelectedTab(value);
     }
   }
-
+  // need to refactor this
   const [simpleThema, setSimpleThema] = useState();
 
   useEffect(() => {
-    if (router.pathname.includes('meubels')) {
+    if (router.pathname.includes('meubels') || router.pathname.includes('woningen')) {
       setSimpleThema(true);
     } else {
       setSimpleThema(false);
