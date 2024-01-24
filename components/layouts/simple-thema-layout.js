@@ -17,7 +17,7 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, subheadin
       <div className='global-margin'>
         <div className='max-w-[830px] mb-10'>
           <h2 className='p-5xl-semibold pb-4 pt-7'>
-            Top {numberOfLaws} {subheading}
+            First {numberOfLaws} {subheading}
           </h2>
           <p>{themaData?.introText}</p>
         </div>
