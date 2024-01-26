@@ -24,12 +24,12 @@ export default function FeaturedAgendaCard({ data }) {
                   <div className='flex grow-0 pb-3'>
                     <Tag classes='text-green-300 border border-green-300'>Agenda</Tag>
                   </div>
-                  <div className='flex flex-row justify-between items-center'>
-                    <div className='p-agenda-card-day text-green-200'>
+                  <div className='flex flex-row items-center'>
+                    <div className='p-agenda-card-day text-green-200 mr-2'>
                       {event.toLocaleDateString('nl-NL', day)}
                     </div>
                     <div className='flex flex-col items-start justify-center'>
-                      <div className='p-agenda-card-month text-green-200 tracking-wider'>
+                      <div className='p-agenda-card-month text-green-200 tracking-wider ml-0.5'>
                         {event.toLocaleDateString('nl-NL', month)}
                       </div>
                       <div className='p-agenda-card-year text-green-400 tracking-tighter'>
@@ -56,12 +56,12 @@ export default function FeaturedAgendaCard({ data }) {
                 <div className='flex grow-0 pb-3'>
                   <Tag classes='text-green-300 border border-green-300'>Agenda</Tag>
                 </div>
-                <div className='flex flex-row justify-between items-center'>
-                  <div className='p-agenda-card-day text-green-200'>
+                <div className='flex flex-row items-center'>
+                  <div className='p-agenda-card-day text-green-200 mr-2'>
                     {event.toLocaleDateString('nl-NL', day)}
                   </div>
                   <div className='flex flex-col items-start justify-center'>
-                    <div className='p-agenda-card-month text-green-200 tracking-wider'>
+                    <div className='p-agenda-card-month text-green-200 tracking-wider ml-0.5'>
                       {event.toLocaleDateString('nl-NL', month)}
                     </div>
                     <div className='p-agenda-card-year text-green-400 tracking-tighter'>
