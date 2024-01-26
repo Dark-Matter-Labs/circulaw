@@ -27,7 +27,7 @@ export default function Index({
     <Layout page='home' homePageHeader={homePageHeader} footerText={footerText}>
       <div className='bg-grey-100 sm:pb-14 -z-50' name='thema'>
         <div className='global-margin -z-20'>
-          <h2 className='p-2xl-semibold sm:p-6xl-semibold pt-8 text-green-600 border-grey-600 border-b pb-4'>
+          <h2 className='p-5xl-semibold sm:p-7xl-semibold pt-8 text-green-600 border-grey-600 border-b pb-6'>
             Thema’s
           </h2>
           <div className='pt-4 sm:pt-8 -z-20'>
@@ -40,16 +40,15 @@ export default function Index({
           <NewThemaSuggestion />
         </div>
       </div>
-      <div className='bg-grey-100 py-20'>
+      <div className='bg-grey-100 pb-12'>
         <div className='global-margin'>
-          <HomePageAboutSection aboutSection={aboutSection} />
-          <div className='mt-10 flex flex-col'>
-            <h3 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
+          <div className='pb-12 flex flex-col'>
+            <h3 className='p-5xl-semibold sm:p-7xl-semibold text-green-600 w-full border-b pb-6 border-green-800'>
               Uitgelichte nieuwsberichten
             </h3>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-6 py-10 overflow-hidden'>
               {newsData.featured.map((item, id) => (
-                <div
+                <div  
                   className={`${
                     item.image
                       ? 'col-span-1 flex-col sm:col-span-2 sm:flex-cols-2'
@@ -69,6 +68,8 @@ export default function Index({
               </Link>
             </div>
           </div>
+          <HomePageAboutSection aboutSection={aboutSection} />
+
         </div>
       </div>
     </Layout>
