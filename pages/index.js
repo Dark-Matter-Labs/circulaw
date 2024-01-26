@@ -48,7 +48,7 @@ export default function Index({
             </h3>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-6 py-10 overflow-hidden'>
               {newsData.featured.map((item, id) => (
-                <div  
+                <div
                   className={`${
                     item.image
                       ? 'col-span-1 flex-col sm:col-span-2 sm:flex-cols-2'
@@ -69,7 +69,6 @@ export default function Index({
             </div>
           </div>
           <HomePageAboutSection aboutSection={aboutSection} />
-
         </div>
       </div>
     </Layout>

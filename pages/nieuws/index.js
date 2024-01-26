@@ -18,11 +18,11 @@ export default function NewsPage({ data }) {
 
   const archived = data?.notFeatured.slice(13, 25);
 
-  const options ={
+  const options = {
     day: 'numeric',
     month: 'short',
     year: 'numeric',
-  }
+  };
 
   useEffect(() => {
     if (data?.notFeatured) {
@@ -398,7 +398,7 @@ export default function NewsPage({ data }) {
             </div>
           </div>
           <ResponsiveMasonry
-            columnsCountBreakPoints={{ 350: 1, 640: 2, 1024:3,  1280: 4 }}
+            columnsCountBreakPoints={{ 350: 1, 640: 2, 1024: 3, 1280: 4 }}
             className='py-10'
           >
             <Masonry gutter='24px'>
