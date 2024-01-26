@@ -35,8 +35,8 @@ export default function NewsCard({ data }) {
           )}
           <div
             className={`${
-              data.linkText || data.createPage === true ? 'justify-between gap-y-3' : 'gap-y-3'
-            } px-8 py-6 flex flex-col h-full w-full`}
+              data.linkText || data.createPage === true ? 'justify-between' : ''
+            } px-8 py-6 flex flex-col h-full w-full gap-y-3`}
           >
             <div className=''>
               <div className='flex grow-0'>
@@ -116,8 +116,8 @@ export default function NewsCard({ data }) {
           )}
           <div
             className={`${
-              data.linkText || data.createPage === true ? 'justify-between gap-y-3' : 'gap-y-3'
-            } px-8 py-6 flex flex-col  h-full w-full`}
+              data.linkText || data.createPage === true ? 'justify-between ' : ''
+            } px-8 py-6 flex flex-col gap-y-3 h-full w-full`}
           >
             <div className=''>
               <div className='flex grow-0'>
@@ -204,8 +204,8 @@ export default function NewsCard({ data }) {
         )}
         <div
           className={`${
-            data.linkText || data.createPage === true ? 'justify-between gap-y-3' : 'gap-y-3'
-          } px-8 py-6 flex flex-col h-full w-full`}
+            data.linkText || data.createPage === true ? 'justify-between ' : ''
+          } px-8 py-6 flex gap-y-3 flex-col h-full w-full`}
         >
           <div className=''>
             <div className='flex grow-0'>
