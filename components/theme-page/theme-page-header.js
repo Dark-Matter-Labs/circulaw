@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { urlFor } from '@/lib/sanity';
 import LinkIcon from '../link-icon';
-import { ChevronLeftIcon } from '@heroicons/react/outline';
 
 export default function ThemePageHeader({ themaData }) {
   return (
@@ -20,13 +19,12 @@ export default function ThemePageHeader({ themaData }) {
         <div className='global-margin h-[360px] z-5 relative flex flex-col justify-between'>
           <div className='pt-8'>
             <Link
-              className='rounded-clSm bg-white opacity-80 pl-2 pr-3 py-1.5 text-green-600 inline-flex flex-row items-center justify-center group'
+              className='rounded-clSm bg-white pl-2 pr-3 py-1.5 text-green-600 inline-flex flex-row items-center justify-center group'
               href='/'
             >
-              <ChevronLeftIcon className='w-3 h-3 mt-0.5 font-semibold group-hover:text-green-300 group-active:text-green-800 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white' />
               <span className='p-2xs-bold align-middle group-hover:text-green-300 group-active:text-green-800 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white'>
                 {' '}
-                &nbsp;Home{' '}
+                Home <span className='ml-2'>{'>'}</span> 
               </span>
             </Link>
           </div>

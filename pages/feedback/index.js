@@ -2,7 +2,6 @@ import { useState, useRef } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import Link from 'next/link';
-import { ArrowLeftIcon } from '@heroicons/react/outline';
 import Layout from '@/components/layouts/layout';
 import CustomButton from '@/components/custom-button';
 
@@ -84,10 +83,10 @@ export default function Feedback() {
         <div className='global-margin'>
           {!formStatus ? (
             <>
-              <button type='button' onClick={() => router.back()}>
-                <span className='pt-10 breadcrumb flex justify-center items-center hover:underline'>
-                  <ArrowLeftIcon className='inline-block h-4 w-4 pr-1' aria-hidden='true' /> Terug
-                </span>{' '}
+              <button type='button' onClick={() => router.back()} className='mt-12 p-2xs-bold text-green-600 bg-white pl-2 pr-3 py-1.5 rounded-clSm'>
+                <span className='  '>
+                Terug
+                </span><span className='ml-2'>{'>'}</span>
               </button>
               <h1 className='mobile sm:desktop text-grey-800 pt-10 mobile sm:desktop'>
                 Met jouw hulp maken we CircuLaw beter
