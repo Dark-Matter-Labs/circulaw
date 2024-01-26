@@ -83,10 +83,13 @@ export default function Feedback() {
         <div className='global-margin'>
           {!formStatus ? (
             <>
-              <button type='button' onClick={() => router.back()} className='mt-12 p-2xs-bold text-green-600 bg-white pl-2 pr-3 py-1.5 rounded-clSm'>
-                <span className='  '>
-                Terug
-                </span><span className='ml-2'>{'>'}</span>
+              <button
+                type='button'
+                onClick={() => router.back()}
+                className='mt-12 p-2xs-bold text-green-600 bg-white pl-2 pr-3 py-1.5 rounded-clSm'
+              >
+                <span className='  '>Terug</span>
+                <span className='ml-2'>{'>'}</span>
               </button>
               <h1 className='mobile sm:desktop text-grey-800 pt-10 mobile sm:desktop'>
                 Met jouw hulp maken we CircuLaw beter

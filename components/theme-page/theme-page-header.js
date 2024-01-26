@@ -24,7 +24,7 @@ export default function ThemePageHeader({ themaData }) {
             >
               <span className='p-2xs-bold align-middle group-hover:text-green-300 group-active:text-green-800 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white'>
                 {' '}
-                Home <span className='ml-2'>{'>'}</span> 
+                Home <span className='ml-2'>{'>'}</span>
               </span>
             </Link>
           </div>
