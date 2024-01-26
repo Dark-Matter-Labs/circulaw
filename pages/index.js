@@ -25,7 +25,7 @@ export default function Index({
 }) {
   return (
     <Layout page='home' homePageHeader={homePageHeader} footerText={footerText}>
-      <div className='bg-grey-100 sm:pb-14 -z-50' name='thema'>
+      <div className='bg-grey-100 sm:pb-12 -z-50' name='thema'>
         <div className='global-margin -z-20'>
           <h2 className='p-5xl-semibold sm:p-7xl-semibold pt-8 text-green-600 border-grey-600 border-b pb-6'>
             Thema’s
@@ -40,7 +40,7 @@ export default function Index({
           <NewThemaSuggestion />
         </div>
       </div>
-      <div className='bg-grey-100 pb-12'>
+      <div className='bg-grey-100 pt-12 sm:pt-0 pb-12'>
         <div className='global-margin'>
           <div className='pb-12 flex flex-col'>
             <h3 className='p-5xl-semibold sm:p-7xl-semibold text-green-600 w-full border-b pb-6 border-green-800'>
