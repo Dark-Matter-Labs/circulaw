@@ -398,7 +398,7 @@ export default function NewsPage({ data }) {
             </div>
           </div>
           <ResponsiveMasonry
-            columnsCountBreakPoints={{ 350: 1, 640: 2, 1024: 4 }}
+            columnsCountBreakPoints={{ 350: 1, 640: 2, 1024:3,  1280: 4 }}
             className='py-10'
           >
             <Masonry gutter='24px'>
