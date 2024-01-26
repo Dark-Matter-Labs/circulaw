@@ -24,12 +24,12 @@ export default function NewsCard({ data }) {
                     } rounded-cl flex flex-col justify-between items-start`}
         >
           {data.image && (
-            <div className='w-full h-80 relative object-cover rounded-t-cl'>
+            <div className='w-full h-80 relative rounded-t-cl'>
               <Image
                 src={urlFor(data?.image)?.url()}
                 alt={data?.newsTitle + 'image'}
                 fill
-                className='w-full h-full absolute rounded-t-cl '
+                className='w-full h-full relative object-cover rounded-t-cl '
               />
             </div>
           )}
@@ -105,12 +105,12 @@ export default function NewsCard({ data }) {
                     } rounded-cl flex flex-col justify-between items-start`}
         >
           {data.image && (
-            <div className='w-full h-80 relative object-cover rounded-t-cl'>
+            <div className='w-full h-80 relative rounded-t-cl'>
               <Image
                 src={urlFor(data?.image)?.url()}
                 alt={data?.newsTitle + 'image'}
                 fill
-                className='w-full h-full absolute rounded-t-cl '
+                className='w-full h-full relative object-cover rounded-t-cl '
               />
             </div>
           )}
@@ -193,12 +193,12 @@ export default function NewsCard({ data }) {
                     } rounded-cl flex justify-between items-start`}
       >
         {data.image && (
-          <div className='w-full h-80 relative object-cover rounded-t-cl'>
+          <div className='w-full h-80 relative rounded-t-cl'>
             <Image
               src={urlFor(data?.image)?.url()}
               alt={data?.newsTitle + 'image'}
               fill
-              className='w-full h-full absolute rounded-t-cl '
+              className='w-full h-full relative object-cover rounded-t-cl '
             />
           </div>
         )}

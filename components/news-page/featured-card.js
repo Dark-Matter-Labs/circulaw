@@ -28,7 +28,7 @@ export default function FeaturedCard({ data }) {
           <div
             className={`${
               data.linkText || data.createPage === true ? 'justify-between' : 'gap-y-3'
-            } px-8 py-6 flex flex-col h-full w-full`}
+            } px-8 py-6 flex flex-col h-full w-full sm:w-1/2`}
           >
             <div className=''>
               <div className='flex grow-0'>
@@ -79,12 +79,12 @@ export default function FeaturedCard({ data }) {
             )}
           </div>
           {data.image && (
-            <div className='w-full h-80 sm:pl-14 relative object-cover rounded-t-cl sm:rounded-r-cl'>
+            <div className='w-full sm:w-1/2 h-80 relative  rounded-t-cl sm:rounded-r-cl'>
               <Image
                 src={urlFor(data?.image)?.url()}
                 alt={data?.newsTitle + 'image'}
                 fill
-                className='w-full h-full absolute rounded-t-cl sm:rounded-tl-none sm:rounded-r-cl'
+                className='w-full h-full relative object-cover rounded-t-cl sm:rounded-tl-none sm:rounded-r-cl'
               />
             </div>
           )}
@@ -109,7 +109,7 @@ export default function FeaturedCard({ data }) {
           <div
             className={`${
               data.linkText || data.createPage === true ? 'justify-between' : 'gap-y-3'
-            } px-8 py-6 flex flex-col  h-full w-full`}
+            } px-8 py-6 flex flex-col h-full w-full sm:w-1/2`}
           >
             <div className=''>
               <div className='flex grow-0'>
@@ -161,12 +161,12 @@ export default function FeaturedCard({ data }) {
             )}
           </div>
           {data.image && (
-            <div className='w-full h-80 sm:pl-14 relative object-cover rounded-t-cl sm:rounded-r-cl'>
+            <div className='w-full sm:w-1/2 h-80 relative rounded-t-cl sm:rounded-r-cl'>
               <Image
                 src={urlFor(data?.image)?.url()}
                 alt={data?.newsTitle + 'image'}
                 fill
-                className='w-full h-full absolute rounded-t-cl sm:rounded-tl-none sm:rounded-r-cl'
+                className='w-full h-full relative object-cover rounded-t-cl sm:rounded-tl-none sm:rounded-r-cl'
               />
             </div>
           )}
@@ -186,7 +186,7 @@ export default function FeaturedCard({ data }) {
         <div
           className={`${
             data.linkText || data.createPage === true ? 'justify-between' : 'gap-y-3'
-          } px-8 py-6 flex flex-col  h-full w-full`}
+          } px-8 py-6 flex flex-col h-full w-full sm:w-1/2`}
         >
           <div className=''>
             <div className='flex grow-0'>
@@ -249,12 +249,12 @@ export default function FeaturedCard({ data }) {
           )}
         </div>
         {data.image && (
-          <div className='w-full h-80 sm:pl-14 relative object-cover rounded-t-cl sm:rounded-r-cl'>
+          <div className='w-full sm:w-1/2 h-80 relative rounded-t-cl sm:rounded-r-cl'>
             <Image
               src={urlFor(data?.image)?.url()}
               alt={data?.newsTitle + 'image'}
               fill
-              className='w-full h-full absolute rounded-t-cl sm:rounded-tl-none sm:rounded-r-cl '
+              className='w-full h-full relative object-cover rounded-t-cl sm:rounded-tl-none sm:rounded-r-cl '
             />
           </div>
         )}
