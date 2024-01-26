@@ -15,6 +15,7 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 export default function NewsPage({ data }) {
   const [articleType, setArticleType] = useState('Alles');
   const [notFeatured, setNotFeatured] = useState(data?.notFeatured?.slice(0, 13));
+
   const archived = data?.notFeatured.slice(13, 25);
 
   const options = {
@@ -397,7 +398,7 @@ export default function NewsPage({ data }) {
             </div>
           </div>
           <ResponsiveMasonry
-            columnsCountBreakPoints={{ 350: 1, 640: 2, 1024: 4 }}
+            columnsCountBreakPoints={{ 350: 1, 640: 2, 1024: 3, 1280: 4 }}
             className='py-10'
           >
             <Masonry gutter='24px'>
@@ -458,7 +459,7 @@ export default function NewsPage({ data }) {
                     {item.newsDate && (
                       <>
                         <div className='h-2 w-2 rounded-full bg-gray-400 mx-2'></div>
-                        <span className='p-base text-green-800'>
+                        <span className='p-base text-green-800' suppressHydrationWarning>
                           {' '}
                           {new Date(item.newsDate).toLocaleDateString('nl-NL', options)}
                         </span>

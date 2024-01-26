@@ -24,19 +24,19 @@ export default function NewsCard({ data }) {
                     } rounded-cl flex flex-col justify-between items-start`}
         >
           {data.image && (
-            <div className='w-full h-80 relative object-cover rounded-t-cl'>
+            <div className='w-full h-80 relative rounded-t-cl'>
               <Image
                 src={urlFor(data?.image)?.url()}
                 alt={data?.newsTitle + 'image'}
                 fill
-                className='w-full h-full absolute rounded-t-cl '
+                className='w-full h-full relative object-cover rounded-t-cl '
               />
             </div>
           )}
           <div
             className={`${
-              data.linkText || data.createPage === true ? 'justify-between gap-y-3' : 'gap-y-3'
-            } px-8 py-6 flex flex-col h-full w-full`}
+              data.linkText || data.createPage === true ? 'justify-between' : ''
+            } px-8 py-6 flex flex-col h-full w-full gap-y-3`}
           >
             <div className=''>
               <div className='flex grow-0'>
@@ -105,19 +105,19 @@ export default function NewsCard({ data }) {
                     } rounded-cl flex flex-col justify-between items-start`}
         >
           {data.image && (
-            <div className='w-full h-80 relative object-cover rounded-t-cl'>
+            <div className='w-full h-80 relative rounded-t-cl'>
               <Image
                 src={urlFor(data?.image)?.url()}
                 alt={data?.newsTitle + 'image'}
                 fill
-                className='w-full h-full absolute rounded-t-cl '
+                className='w-full h-full relative object-cover rounded-t-cl '
               />
             </div>
           )}
           <div
             className={`${
-              data.linkText || data.createPage === true ? 'justify-between gap-y-3' : 'gap-y-3'
-            } px-8 py-6 flex flex-col  h-full w-full`}
+              data.linkText || data.createPage === true ? 'justify-between ' : ''
+            } px-8 py-6 flex flex-col gap-y-3 h-full w-full`}
           >
             <div className=''>
               <div className='flex grow-0'>
@@ -193,19 +193,19 @@ export default function NewsCard({ data }) {
                     } rounded-cl flex justify-between items-start`}
       >
         {data.image && (
-          <div className='w-full h-80 relative object-cover rounded-t-cl'>
+          <div className='w-full h-80 relative rounded-t-cl'>
             <Image
               src={urlFor(data?.image)?.url()}
               alt={data?.newsTitle + 'image'}
               fill
-              className='w-full h-full absolute rounded-t-cl '
+              className='w-full h-full relative object-cover rounded-t-cl '
             />
           </div>
         )}
         <div
           className={`${
-            data.linkText || data.createPage === true ? 'justify-between gap-y-3' : 'gap-y-3'
-          } px-8 py-6 flex flex-col h-full w-full`}
+            data.linkText || data.createPage === true ? 'justify-between ' : ''
+          } px-8 py-6 flex gap-y-3 flex-col h-full w-full`}
         >
           <div className=''>
             <div className='flex grow-0'>
