@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeftIcon } from '@heroicons/react/outline';
 import SocialButtons from '../social-buttons';
 import InstrumentMetaData from './instrument-metadata';
 import Tag from '../tag';
@@ -29,11 +28,11 @@ export default function InstrumentHeader({ data }) {
       setSelectedTab(value);
     }
   }
-
+  // need to refactor this
   const [simpleThema, setSimpleThema] = useState();
 
   useEffect(() => {
-    if (router.pathname.includes('meubels')) {
+    if (router.pathname.includes('meubels') || router.pathname.includes('woningen')) {
       setSimpleThema(true);
     } else {
       setSimpleThema(false);
@@ -49,11 +48,10 @@ export default function InstrumentHeader({ data }) {
             <button
               type='button'
               onClick={() => router.back()}
-              className='link-interaction-dark-bg'
+              className='rounded-clSm bg-white pl-2 pr-3 py-1.5 p-2xs-bold text-green-600'
             >
-              <span className='breadcrumb text-grey-100 flex justify-center items-center underline hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>
-                <ArrowLeftIcon className='inline-block h-4 w-4 pr-1' aria-hidden='true' /> Terug
-              </span>{' '}
+              <span className=' '>Terug</span>
+              <span className='ml-2'>{'>'}</span>
             </button>
             <div className='float-right'>
               <SocialButtons title={data?.measure?.titel} viewport='desktop' />

@@ -21,9 +21,9 @@ export default function FAQPageComponent({ data }) {
     <div className='global-margin pb-8 text-grey-800'>
       <div className='grid grid-cols-1 w-full justify-center '>
         <div className=''>
-          <div className='breadcrumb pt-8 text-green-500 link-interaction'>
+          <div className='bg-white pl-2 pr-3 py-1.5 rounded-clSm p-2xs-bold pt-8 text-green-600 link-interaction'>
             <Link href='/' className='link-interaction'>
-              Home &gt;
+              Home<span className='ml-2'>{'>'}</span>
             </Link>
           </div>
           <div className='max-w-4xl mx-auto'>
