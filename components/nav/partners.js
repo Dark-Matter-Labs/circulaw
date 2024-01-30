@@ -8,20 +8,22 @@ import sanityLogo from '@/public/logo_partners/sanity-logo.svg';
 import { fetcher } from '@/utils/swr-fetcher';
 import ParnerSection from './parner-section';
 
-export default function Partners({ footerText }) {
+
+  export default function Partners({ footerText }) {
   const { data } = useSWR(groq`${partnersQuery}`, fetcher);
   const router = useRouter();
 
   return (
     <div className='bg-green-800 pt-10 pb-2'>
-      {router.pathname === '/' && (
-        <div className='global-margin pb-12 px-4 lg:pb-16'>
-          <div className='p-6xl-semibold text-gray-100 pl-3 sm:pl-6 lg:pl-8'>Partners</div>
-          <ParnerSection partners={data?.developingPartners} partnerType='Ontwikkelpartners' />
-          <ParnerSection partners={data?.knowledge} partnerType='Kennispartners' />
-          <ParnerSection partners={data?.financingPartners} partnerType='Financieringspartners' />
+      {router.pathname === '/' &&  
+      <div className='global-margin pb-12 px-4 lg:pb-16'>
+        <div className='p-6xl-semibold text-gray-100 pl-3 sm:pl-6 lg:pl-8'>
+          Partners
         </div>
-      )}
+        <ParnerSection partners={data?.developingPartners} partnerType='Ontwikkelpartners'/>
+        <ParnerSection partners={data?.knowledge} partnerType='Kennispartners'/>
+        <ParnerSection partners={data?.financingPartners} partnerType='Financieringspartners'/>
+      </div>}
       <div className='global-margin pb-2 text-grey-100 p-md'>
         {router.pathname === '/en' && (
           <p className='pb-8'>
