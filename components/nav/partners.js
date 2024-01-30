@@ -22,6 +22,7 @@ export default function Partners({ footerText }) {
   return (
     <div className='bg-green-800 pt-10 pb-2'>
       <div className='global-margin pb-12 px-4 lg:pb-16'>
+        
         <div className='grid grid-cols-3 gap-x-0.5 gap-y-4 lg:grid-cols-5 '>
           {partners?.map((partner, index) => {
             return (

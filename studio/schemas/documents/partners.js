@@ -4,12 +4,22 @@ export default {
   type: 'document',
   fields: [
     {
+      name: 'developingPartners',
+      type: 'array',
+      title: 'Developing Partners',
+      of: [{ type: 'partner' }],
+    },
+    {
       name: 'partners',
       type: 'array',
-      title: 'Partnerlijst',
-      description:
-        'De lijst van partners is in dezelfde volgorde zichtbaar op de website. Klik op toevoegen om nieuwe partner toe te voegen. Max 20 partners mogelijk.',
+      title: 'Knowledge partners',
+      of: [{ type: 'partner' }],
+    },
+    {
+      name: 'financingPartners',
+      type: 'array',
+      title: 'Financing partners',
       of: [{ type: 'partner' }],
     },
   ],
-};
+}; 
