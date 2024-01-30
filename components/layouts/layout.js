@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { groq } from 'next-sanity';
 import useSWR from 'swr';
+import PiwikProProvider from '@piwikpro/next-piwik-pro';
 
 import globalMeta from '@/utils/global-meta';
 import Footer from '@/components/nav/footer';
@@ -49,7 +50,14 @@ export default function Layout({
         <meta property='og:image' content={ogImgUrl} />
         <meta property='og:url' content={canonicalUrl} />
       </Head>
-      <main className='w-full'>{children}</main>
+      <main className='w-full'>
+        <PiwikProProvider
+          containerId={process.env.NEXT_PUBLIC_CONTAINER_ID}
+          containerUrl={process.env.NEXT_PUBLIC_CONTAINER_URL}
+        >
+          {children}
+        </PiwikProProvider>
+      </main>
       <CookieConsent />
       <Footer
         vraagSlug={vraagSlug}
