@@ -3,7 +3,7 @@ import { GiDeadWood, GiBed, GiWindmill, GiBanana, GiTable } from 'react-icons/gi
 import { GrNavigate } from 'react-icons/gr';
 import { FcAbout } from 'react-icons/fc';
 import { FaLanguage, FaHandshake, FaQuestion } from 'react-icons/fa';
-import { BsCircle, BsHouseDoor } from 'react-icons/bs';
+import { BsCircle, BsHouseDoor, BsNewspaper } from 'react-icons/bs';
 import { BiNews } from 'react-icons/bi';
 import { AiOutlineHome } from 'react-icons/ai';
 
@@ -79,9 +79,10 @@ export const Structure = (S) =>
         .icon(FcAbout)
         .child(S.documentList().title('About Pages').filter('_type == "aboutPage"')),
       S.listItem()
-        .title('News and Updates')
-        .icon(BiNews)
-        .child(S.documentList().title('News and Updates').filter('_type == "newsItem"')),
+        .title('News Page')
+        .id('newsPage')
+        .icon(BsNewspaper)
+        .child(S.document().title('News Page').schemaType('newsPage').documentId('newsPage')),
       S.divider(),
       S.listItem()
         .title("Thema's")

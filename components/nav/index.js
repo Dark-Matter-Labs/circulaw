@@ -423,7 +423,7 @@ export default function Nav3(props) {
                                 </>
                               )}
                             </Disclosure>
-                            <MobileSimpleButton name='Nieuws' url='/over/Nieuws' />
+                            <MobileSimpleButton name='Nieuws' url='/nieuws' />
                             <MobileSimpleButton name='Vraag en antwoord' url='/vraag-en-antwoord' />
                             <MobileSimpleButton name='Contact' url='/contact' />
 
@@ -613,7 +613,7 @@ export default function Nav3(props) {
                   )}
                 </div>
                 {/* Refactor */}
-                <DesktopSimpleButton name='Nieuws' url='/over/Nieuws' />
+                <DesktopSimpleButton name='Nieuws' url='/nieuws' />
                 <DesktopSimpleButton name='Vraag en antwoord' url='/vraag-en-antwoord' />
                 <DesktopSimpleButton name='Contact' url='/contact' />
               </div>

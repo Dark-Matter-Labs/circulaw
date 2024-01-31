@@ -1,8 +1,8 @@
 // next.config.js
 // const { redirects } = require('./utils/redirects')
+const withTM = require('next-transpile-modules')(['@piwikpro/next-piwik-pro']);
 
-
-module.exports = {
+const nextConfig = {
   // redirects,
   async redirects() {
     return [
@@ -17,3 +17,4 @@ module.exports = {
       domains: ['cdn.sanity.io'],
     },
   }
+module.exports = withTM(nextConfig);
