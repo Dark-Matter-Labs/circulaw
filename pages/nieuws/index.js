@@ -45,11 +45,10 @@ export default function NewsPage({ data }) {
     <Layout>
       <div className='flex flex-col global-margin mt-4'>
         <div className='mt-10'>
-          <Link
-            href='/'
-            className='p-2xs-bold'
-          >
-            <span className='hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white text-green-600'>Home<span className='p-2xs-bold px-2'>{'>'}</span></span>
+          <Link href='/' className='p-2xs-bold'>
+            <span className='hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white text-green-600'>
+              Home<span className='p-2xs-bold px-2'>{'>'}</span>
+            </span>
           </Link>
         </div>
         <div className='mt-10'>
