@@ -14,11 +14,11 @@ export default function OverviewPageHeader({ props, page }) {
         <div className='flex flex-col sm:flex-row sm:justify-between sm:items-center pt-4'>
           <div className='p-2xs-bold text-green-600 bg-white w-min pl-2 pr-3 py-1.5 rounded-clSm flex flex-row'>
             <Link href='/' className=''>
-              <span>Home</span>
+              <span className='link-interaction'>Home</span>
               <span className='mx-2'>{'>'}</span>
             </Link>
             <Link href={`/${props.transitionAgenda}/${props.thema}`}>
-              <span className='capitalize'>{props.thema.replace('-', ' ')}</span>
+              <span className='capitalize link-interaction'>{props.thema.replace('-', ' ')}</span>
             </Link>
           </div>
           <div className='block sm:float-right py-3 sm:py-0'>

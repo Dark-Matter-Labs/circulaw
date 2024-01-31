@@ -47,10 +47,9 @@ export default function NewsPage({ data }) {
         <div className='mt-10'>
           <Link
             href='/'
-            className='text-green-600 hover:text-green-300 active:text-green-800 p-2xs-bold'
+            className='p-2xs-bold'
           >
-            Home
-            <span className='p-2xs-bold text-green-600 px-2'>{'>'}</span>
+            <span className='hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white text-green-600'>Home<span className='p-2xs-bold px-2'>{'>'}</span></span>
           </Link>
         </div>
         <div className='mt-10'>
