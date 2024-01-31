@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 
 export default function OverviewPageHeader({ props, page }) {
   const router = useRouter();
-  console.log(props);
   return (
     <>
       <div
