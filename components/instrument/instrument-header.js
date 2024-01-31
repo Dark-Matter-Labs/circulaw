@@ -50,8 +50,9 @@ export default function InstrumentHeader({ data }) {
               onClick={() => router.back()}
               className='rounded-clSm bg-white pl-2 pr-3 py-1.5 p-2xs-bold text-green-600'
             >
+                <span className='mr-2'>{'<'}</span>
               <span className=' '>Terug</span>
-              <span className='ml-2'>{'>'}</span>
+            
             </button>
             <div className='float-right'>
               <SocialButtons title={data?.measure?.titel} viewport='desktop' />
