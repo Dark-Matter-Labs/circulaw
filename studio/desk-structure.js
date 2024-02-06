@@ -88,7 +88,7 @@ export const Structure = (S) =>
         .title("Thema's")
         .icon(BsCircle)
         .child(
-          S.documentList().title("Thema's").filter('_type == "thema" || _type == "simpleThema"'),
+          S.documentList().title("Thema's").filter('_type in ["thema", "simpleThema"]'),
         ),
       S.documentListItem().schemaType('FAQpage').title('FAQ Page').icon(FaQuestion),
       S.listItem()
