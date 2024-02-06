@@ -72,6 +72,22 @@ export const Structure = (S) =>
                     .title('Woningen')
                     .filter('_type == "measure" && thema == "woningen"'),
                 ),
+                S.listItem()
+                .title('Woningen')
+                .icon(BsHouseDoor)
+                .child(
+                  S.documentList()
+                    .title('Woningen')
+                    .filter('_type == "measure" && thema == "kunstgrasvelden"'),
+                ),
+                S.listItem()
+                .title('Woningen')
+                .icon(BsHouseDoor)
+                .child(
+                  S.documentList()
+                    .title('Woningen')
+                    .filter('_type == "measure" && thema == "eiwittransitie"'),
+                ),
             ]),
         ),
       S.listItem()
