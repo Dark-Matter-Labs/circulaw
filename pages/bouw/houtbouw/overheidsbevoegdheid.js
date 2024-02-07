@@ -3,7 +3,7 @@ import WelkeLayout from '@/components/layouts/welke-layout';
 import { client } from '@/lib/sanity';
 import woodIcon from '@/public/icons/woodIcon.svg';
 import houtbouwImageMob from '@/public/bevoegdheden/bevoegdheden-houtbouw-mob.png';
-import { creatQuery } from '@/lib/queries';
+import { govLevelQueryFunction } from '@/lib/queries';
 
 const thema = 'houtbouw';
 
@@ -29,10 +29,10 @@ export default function InfoPage({ ...props }) {
   );
 }
 export async function getStaticProps() {
-  const allRegionLaws = await client.fetch(creatQuery(thema).allRegions);
-  const natLaws = await client.fetch(creatQuery(thema).national);
-  const provLaws = await client.fetch(creatQuery(thema).provincial);
-  const gemLaws = await client.fetch(creatQuery(thema).local);
+  const allRegionLaws = await client.fetch(govLevelQueryFunction(thema).allRegions);
+  const natLaws = await client.fetch(govLevelQueryFunction(thema).national);
+  const provLaws = await client.fetch(govLevelQueryFunction(thema).provincial);
+  const gemLaws = await client.fetch(govLevelQueryFunction(thema).local);
   return {
     props: {
       allRegionLaws: allRegionLaws,
