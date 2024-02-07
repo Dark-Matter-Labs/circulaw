@@ -25,6 +25,8 @@ const navigation = {
     { name: 'Windturbines', slug: '/maakindustrie/windturbines' },
     { name: 'Woningen', slug: '/bouw/woningen' },
     { name: 'Meubels', slug: '/consumptie-goederen/meubels' },
+    { name: 'Eiwittransitie', slug: '/biomassa-en-voedsel/eiwittransitie' },
+    { name: 'Kunstgrasvelden', slug: '/kunststoffen/kunstgrasvelden' },
   ],
 };
 
