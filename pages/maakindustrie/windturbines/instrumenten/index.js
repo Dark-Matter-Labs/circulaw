@@ -2,9 +2,9 @@ import Layout from '/components/layouts/layout';
 import MeasuresLayout from '@/components/layouts/measures-layout';
 import { client } from '@/lib/sanity';
 import WindmillIcon from '@/public/icons/windmill.png';
-import { themaQueryFunction } from '@/lib/queries';
+import { themaQueryFunction, instrumentListPageFunction } from '@/lib/queries';
 
-export default function Measures({ numberOfInstruments }) {
+export default function Measures({ numberOfInstruments, instruments }) {
   return (
     <Layout title='CircuLaw - Windturbines'>
       <MeasuresLayout
@@ -15,6 +15,7 @@ export default function Measures({ numberOfInstruments }) {
         // introPara={`We hebben ${totalNumberOfLaws} kansrijke instrumenten gevonden die je kunt inzetten als het gaat om circulaire windturbines. Met sommige van deze instrumenten is al praktijkervaring opgedaan, met andere nog niet. Ga aan de slag! Met jouw ervaringen help je anderen weer verder.`}
         icon={WindmillIcon}
         searchTitle='Zoek in windturbines'
+        instruments={instruments}
       />
     </Layout>
   );
@@ -24,5 +25,7 @@ export async function getStaticProps() {
   const numberOfInstruments = await client.fetch(
     themaQueryFunction('windturbines', 'Windturbines').length,
   );
-  return { props: { numberOfInstruments: numberOfInstruments }, revalidate: 1 };
+  const instruments = await client.fetch(instrumentListPageFunction('windturbines'))
+
+  return { props: { numberOfInstruments, instruments }, revalidate: 1 };
 }

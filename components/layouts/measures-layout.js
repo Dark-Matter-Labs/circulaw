@@ -2,10 +2,8 @@ import { useState, useEffect, useRef, Fragment, useCallback } from 'react';
 import { Dialog, Transition, Combobox } from '@headlessui/react';
 import createPersistedState from 'use-persisted-state';
 import { SearchIcon, XIcon, AdjustmentsIcon } from '@heroicons/react/outline';
-import { groq } from 'next-sanity';
 import { toPlainText } from '@portabletext/react';
 import Fuse from 'fuse.js';
-import useSWR from 'swr';
 
 import {
   overheidslaag,
@@ -17,15 +15,14 @@ import {
 } from '@/utils/data-filter';
 import SearchFilter from '/components/search-filter';
 import PolicyList from '/components/policy-list';
-import { fetcher } from '@/utils/swr-fetcher';
-import { measureLayoutQuery } from '@/lib/queries';
 import OverviewPageHeader from '../overview-page-header';
 // creating objects for persisting values
 const useSelectedState = createPersistedState('selected');
 
 export default function MeasuresLayout({ ...props }) {
-  // TODO: import the data staticly with getStaticProps when we implement link structure changes
-  const { data } = useSWR(groq`${measureLayoutQuery}`, fetcher);
+ 
+  const data = props.instruments
+
   // creating references to access child component functions
   const expertiseFilterRef = useRef();
   const wettelijkFilterRef = useRef();
@@ -132,10 +129,6 @@ export default function MeasuresLayout({ ...props }) {
     // added check for data to have been retrieved here
     if (data) {
       let filteredLaws = data;
-      // filter for thema
-      filteredLaws = filteredLaws?.filter((element) => {
-        return element.thema === props.thema;
-      });
 
       filteredLaws?.map((law) => {
         if (law.expertise[0] === true) {
