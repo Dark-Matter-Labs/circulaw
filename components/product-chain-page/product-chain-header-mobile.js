@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 // import { urlFor } from '@/lib/sanity';
 
-import bannerImage from '@/public/tempImages/banner.png';
+import bannerImage from '@/public/banner.png';
 
 export default function ThemePageHeaderMobile({ pageTitle }) {
   return (
