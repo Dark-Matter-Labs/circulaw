@@ -2162,34 +2162,10 @@
     slate "0.100.0"
     slate-react "0.101.0"
 
-"@sanity/presentation@1.7.2":
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/@sanity/presentation/-/presentation-1.7.2.tgz#06e9cbd1fa2b4fdbb803f384230cd1766719dfda"
-  integrity sha512-K3SbHT5NMyhPF4NYp4VTLGdD87PNe0eH6lOkkMJzE8x7CMpAU1s9aKAdOT8bolunP0/hYsNS90/Hb1su+ugy7w==
-  dependencies:
-    "@sanity/icons" "^2.10.0"
-    "@sanity/preview-url-secret" "^1.5.5"
-    "@sanity/uuid" "3.0.2"
-    "@types/lodash.isequal" "^4.5.8"
-    fast-deep-equal "3.1.3"
-    framer-motion "^11.0.3"
-    lodash.isequal "^4.5.0"
-    mendoza "3.0.4"
-    mnemonist "0.39.7"
-    rxjs "^7.8.1"
-    suspend-react "0.1.3"
-
-"@sanity/preview-url-secret@^1.5.5":
-  version "1.5.5"
-  resolved "https://registry.yarnpkg.com/@sanity/preview-url-secret/-/preview-url-secret-1.5.5.tgz#2b44c67cb9ae10196228ce4bfc1cf6f85efbad34"
-  integrity sha512-NZVRAVt4tS427SLa702Cw7H0mOb/oE73xcTA1+UQ/0pJ9V4GAqCZICKDn0wIN7vhkadl1j5pCSo7y6V7yi1d0A==
-  dependencies:
-    "@sanity/uuid" "3.0.2"
-
-"@sanity/schema@3.27.1":
-  version "3.27.1"
-  resolved "https://registry.yarnpkg.com/@sanity/schema/-/schema-3.27.1.tgz#3d838ade8dafa8671b47452ae9d3cbbec04191de"
-  integrity sha512-0hOw9j+p7HZMhxqOANhpWp8RiRN29oE/3B9+KOe5tytAV6Hh1jYUft49DHhc8N14hr8HMlhct9g9JJwtFem9cQ==
+"@sanity/schema@3.9.1":
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/@sanity/schema/-/schema-3.9.1.tgz#9084d614a925b9b88071cb58a287e9a6d510837c"
+  integrity sha512-rk8bqT0rPILEJOl+uBSOiEfXTYppz7i17nbs93CyvpTMXJ7QsWZwNS4Aom9F0xVfxzuRBYg9Vd5NCNDeZDkKig==
   dependencies:
     "@sanity/generate-help-url" "^3.0.0"
     "@sanity/types" "3.27.1"
@@ -2796,11 +2772,6 @@ axobject-query@^2.2.0:
   resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-2.2.0.tgz#943d47e10c0b704aa42275e20edf3722648989be"
   integrity sha512-Td525n+iPOOyUQIeBfcASuG6uJsDOITl7Mds5gFyerkWiX7qhUTdYUBlSgNMyVqtSJqwpt1kXGLdUt6SykLMRA==
 
-b4a@^1.6.4:
-  version "1.6.4"
-  resolved "https://registry.yarnpkg.com/b4a/-/b4a-1.6.4.tgz#ef1c1422cae5ce6535ec191baeed7567443f36c9"
-  integrity sha512-fpWrvyVHEKyeEvbKZTVOeZF3VSKKWtJxFIxX/jaVPf+cLbGUSitjb49pHLqPV2BUNNZ0LcoeEGfE/YCpyDYHIw==
-
 babel-plugin-polyfill-corejs2@^0.3.3:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/babel-plugin-polyfill-corejs2/-/babel-plugin-polyfill-corejs2-0.3.3.tgz#5d1bd3836d0a19e1b84bbf2d9640ccb6f951c122"
@@ -2961,11 +2932,6 @@ caniuse-lite@^1.0.30001400:
   version "1.0.30001534"
   resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001534.tgz"
   integrity sha512-vlPVrhsCS7XaSh2VvWluIQEzVhefrUQcEsQWSS5A5V+dM07uv1qHeQzAOTGIMy9i3e9bH15+muvI/UHojVgS/Q==
-
-caniuse-lite@^1.0.30001580:
-  version "1.0.30001583"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001583.tgz#abb2970cc370801dc7e27bf290509dc132cfa390"
-  integrity sha512-acWTYaha8xfhA/Du/z4sNZjHUWjkiuoAi2LM+T/aL+kemKQgPT1xBb/YKjlQ0Qo8gvbHsGNplrEJ+9G3gL7i4Q==
 
 chalk@^2.0.0, chalk@^2.0.1, chalk@^2.4.2:
   version "2.4.2"
@@ -3437,11 +3403,6 @@ electron-to-chromium@^1.4.251:
   version "1.4.284"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.284.tgz#61046d1e4cab3a25238f6bf7413795270f125592"
   integrity sha512-M8WEXFuKXMYMVr45fo8mq0wUrrJHheiKZf6BArTKk9ZBYCKJEOU5H8cdWgDT+qCVZf7Na4lVUaZsA+h6uA9+PA==
-
-electron-to-chromium@^1.4.648:
-  version "1.4.655"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.655.tgz#112410db0d7f9c2b4ed8baa3b1b548522a6f89d4"
-  integrity sha512-2yszojF7vIZ68adIOvzV4bku8OZad9w5H9xF3ZAMZjPuOjBarlflUkjN6DggdV+L71WZuKUfKUhov/34+G5QHg==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -6253,14 +6214,6 @@ stream-shift@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/stream-shift/-/stream-shift-1.0.1.tgz#d7088281559ab2778424279b0877da3c392d5a3d"
   integrity sha512-AiisoFqQ0vbGcZgQPY1cdP2I76glaVA/RauYR4G4thNFgkTqr90yXTo4LYX60Jl+sIlPNHHdGSwo01AvbKUSVQ==
-
-streamx@^2.15.0:
-  version "2.15.6"
-  resolved "https://registry.yarnpkg.com/streamx/-/streamx-2.15.6.tgz#28bf36997ebc7bf6c08f9eba958735231b833887"
-  integrity sha512-q+vQL4AAz+FdfT137VF69Cc/APqUbxy+MDOImRrMvchJpigHj9GksgDU2LYbO9rx7RX6osWgxJB2WxhYv4SZAw==
-  dependencies:
-    fast-fifo "^1.1.0"
-    queue-tick "^1.0.1"
 
 string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
   version "4.2.3"

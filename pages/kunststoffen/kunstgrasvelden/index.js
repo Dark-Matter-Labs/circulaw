@@ -4,27 +4,29 @@ import SimpleThemaLayout from '@/components/layouts/simple-thema-layout';
 import { client } from '@/lib/sanity';
 import { simpleThemaQueryFunction } from '@/lib/queries';
 
-export default function Meubels({ thema, length, instruments }) {
+export default function Kunstgrasvelden({ thema, length, instruments }) {
   useEffect(() => {
     localStorage.clear();
   });
 
   return (
-    <Layout title='CircuLaw - Woningen'>
+    <Layout title='CircuLaw - Kunstgrasvelden'>
       <SimpleThemaLayout
         thema={thema}
         numberOfLaws={length}
         instruments={instruments}
-        subheading='instrumenten om circulariteit van woningen te bevorderen'
+        subheading='instrumenten om circulariteit van kunstgrasvelden te bevorderen'
       />
     </Layout>
   );
 }
 
 export async function getStaticProps() {
-  const length = await client.fetch(simpleThemaQueryFunction('woningen').length);
-  const thema = await client.fetch(simpleThemaQueryFunction('woningen').themaQuery);
-  const instruments = await client.fetch(simpleThemaQueryFunction('woningen').instrumentsQuery);
+  const length = await client.fetch(simpleThemaQueryFunction('kunstgrasvelden').length);
+  const thema = await client.fetch(simpleThemaQueryFunction('kunstgrasvelden').themaQuery);
+  const instruments = await client.fetch(
+    simpleThemaQueryFunction('kunstgrasvelden').instrumentsQuery,
+  );
   return {
     props: {
       thema,
