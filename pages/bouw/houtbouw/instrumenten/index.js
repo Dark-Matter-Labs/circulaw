@@ -22,7 +22,7 @@ export default function Measures({ numberOfInstruments, instruments }) {
 }
 
 export async function getStaticProps() {
-  const numberOfInstruments = await client.fetch(themaQueryFunction('houtbouw', 'Houtbouw').length);
+  const numberOfInstruments = await client.fetch(themaQueryFunction('houtbouw').length);
   const instruments = await client.fetch(instrumentListPageFunction('houtbouw'));
   return { props: { numberOfInstruments, instruments }, revalidate: 1 };
 }

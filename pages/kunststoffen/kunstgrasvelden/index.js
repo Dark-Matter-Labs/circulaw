@@ -23,13 +23,13 @@ export default function Kunstgrasvelden({ thema, length, instruments }) {
 
 export async function getStaticProps() {
   const length = await client.fetch(
-    simpleThemaQueryFunction('kunstgrasvelden', 'Kunstgrasvelden').length,
+    simpleThemaQueryFunction('kunstgrasvelden').length,
   );
   const thema = await client.fetch(
-    simpleThemaQueryFunction('kunstgrasvelden', 'Kunstgrasvelden').themaQuery,
+    simpleThemaQueryFunction('kunstgrasvelden').themaQuery,
   );
   const instruments = await client.fetch(
-    simpleThemaQueryFunction('kunstgrasvelden', 'Kunstgrasvelden').instrumentsQuery,
+    simpleThemaQueryFunction('kunstgrasvelden').instrumentsQuery,
   );
   return {
     props: {

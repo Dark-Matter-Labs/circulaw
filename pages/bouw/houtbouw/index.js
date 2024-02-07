@@ -23,9 +23,9 @@ export default function Houtbouw({ featuredLaws, thema, length }) {
 }
 
 export async function getStaticProps() {
-  const featuredLaws = await client.fetch(themaQueryFunction('houtbouw', 'Houtbouw').featured);
-  const length = await client.fetch(themaQueryFunction('houtbouw', 'Houtbouw').length);
-  const thema = await client.fetch(themaQueryFunction('houtbouw', 'Houtbouw').themaQuery);
+  const featuredLaws = await client.fetch(themaQueryFunction('houtbouw').featured);
+  const length = await client.fetch(themaQueryFunction('houtbouw').length);
+  const thema = await client.fetch(themaQueryFunction('houtbouw').themaQuery);
   return {
     props: {
       featuredLaws,

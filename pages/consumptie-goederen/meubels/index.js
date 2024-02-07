@@ -22,10 +22,10 @@ export default function Meubels({ thema, length, instruments }) {
 }
 
 export async function getStaticProps() {
-  const length = await client.fetch(simpleThemaQueryFunction('meubels', 'Meubels').length);
-  const thema = await client.fetch(simpleThemaQueryFunction('meubels', 'Meubels').themaQuery);
+  const length = await client.fetch(simpleThemaQueryFunction('meubels').length);
+  const thema = await client.fetch(simpleThemaQueryFunction('meubels').themaQuery);
   const instruments = await client.fetch(
-    simpleThemaQueryFunction('meubels', 'Meubels').instrumentsQuery,
+    simpleThemaQueryFunction('meubels').instrumentsQuery,
   );
   return {
     props: {

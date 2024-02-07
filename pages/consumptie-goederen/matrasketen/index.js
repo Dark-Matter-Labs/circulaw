@@ -24,9 +24,9 @@ export default function Matrassen({ featuredLaws, thema, length }) {
 
 export async function getStaticProps() {
   const featuredLaws = await client.fetch(
-    themaQueryFunction('matrasketen', 'Matrasketen').featured,
+    themaQueryFunction('matrasketen').featured,
   );
-  const length = await client.fetch(themaQueryFunction('matrasketen', 'Matrasketen').length);
-  const thema = await client.fetch(themaQueryFunction('matrasketen', 'Matrasketen').themaQuery);
+  const length = await client.fetch(themaQueryFunction('matrasketen').length);
+  const thema = await client.fetch(themaQueryFunction('matrasketen').themaQuery);
   return { props: { featuredLaws, thema, length }, revalidate: 1 };
 }
