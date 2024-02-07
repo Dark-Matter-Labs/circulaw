@@ -12,7 +12,7 @@ export const Structure = (S) =>
     .title('Content Types')
     .items([
       S.listItem()
-        .title('Measures')
+        .title('Measures') // TODO: update to Instrumenten
         .icon(VscLaw)
         .child(
           S.list()
@@ -84,6 +84,14 @@ export const Structure = (S) =>
         .icon(BsNewspaper)
         .child(S.document().title('News Page').schemaType('newsPage').documentId('newsPage')),
       S.divider(),
+      S.listItem()
+        .title('Transitie-agenda')
+        .icon(BsCircle)
+        .child(
+          S.documentList()
+            .title('Transitie-agenda')
+            .filter('_type == "transitionAgenda" || _type == "simplePC"'),
+        ),
       S.listItem()
         .title("Thema's")
         .icon(BsCircle)
