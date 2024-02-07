@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Layout from '@/components/layouts/layout';
 import SimpleThemaLayout from '@/components/layouts/simple-thema-layout';
 import { client } from '@/lib/sanity';
-import { woningenQueries } from '@/lib/queries';
+import { simpleThemaQueryFunction } from '@/lib/queries';
 
 export default function Meubels({ thema, length, instruments }) {
   useEffect(() => {
@@ -22,9 +22,9 @@ export default function Meubels({ thema, length, instruments }) {
 }
 
 export async function getStaticProps() {
-  const length = await client.fetch(woningenQueries.woningenLength);
-  const thema = await client.fetch(woningenQueries.woningenThemaQuery);
-  const instruments = await client.fetch(woningenQueries.woningenInstrumentsQuery);
+  const length = await client.fetch(simpleThemaQueryFunction('woningen' ,'Woningen').length);
+  const thema = await client.fetch(simpleThemaQueryFunction('woningen' ,'Woningen').themaQuery);
+  const instruments = await client.fetch(simpleThemaQueryFunction('woningen' ,'Woningen').instrumentsQuery);
   return {
     props: {
       thema,
