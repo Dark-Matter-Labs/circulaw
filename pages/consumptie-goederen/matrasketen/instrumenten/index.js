@@ -22,6 +22,8 @@ export default function Measures({ numberOfInstruments }) {
 
 // move fetching of laws here
 export async function getStaticProps() {
-  const numberOfInstruments = await client.fetch(themaQueryFunction('matrasketen', 'Matrasketen').length);
+  const numberOfInstruments = await client.fetch(
+    themaQueryFunction('matrasketen', 'Matrasketen').length,
+  );
   return { props: { numberOfInstruments }, revalidate: 1 };
 }

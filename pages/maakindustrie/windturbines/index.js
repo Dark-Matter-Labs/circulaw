@@ -63,7 +63,9 @@ export default function Windturbine({ featuredLaws, length, thema }) {
 }
 
 export async function getStaticProps() {
-  const featuredLaws = await client.fetch(themaQueryFunction('windturbines', 'Windturbines').featured);
+  const featuredLaws = await client.fetch(
+    themaQueryFunction('windturbines', 'Windturbines').featured,
+  );
   const length = await client.fetch(themaQueryFunction('windturbines', 'Windturbines').length);
   const thema = await client.fetch(themaQueryFunction('windturbines', 'Windturbines').themaQuery);
   return {

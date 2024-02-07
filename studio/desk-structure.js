@@ -1,5 +1,13 @@
 import { VscLaw } from 'react-icons/vsc';
-import { GiDeadWood, GiBed, GiWindmill, GiBanana, GiTable, GiGrass, GiBeanstalk } from 'react-icons/gi';
+import {
+  GiDeadWood,
+  GiBed,
+  GiWindmill,
+  GiBanana,
+  GiTable,
+  GiGrass,
+  GiBeanstalk,
+} from 'react-icons/gi';
 import { GrNavigate } from 'react-icons/gr';
 import { FcAbout } from 'react-icons/fc';
 import { FaLanguage, FaHandshake, FaQuestion } from 'react-icons/fa';
@@ -72,7 +80,7 @@ export const Structure = (S) =>
                     .title('Woningen')
                     .filter('_type == "measure" && thema == "woningen"'),
                 ),
-                S.listItem()
+              S.listItem()
                 .title('Kunstgrasvelden')
                 .icon(GiGrass)
                 .child(
@@ -80,7 +88,7 @@ export const Structure = (S) =>
                     .title('Kunstgrasvelden')
                     .filter('_type == "measure" && thema == "kunstgrasvelden"'),
                 ),
-                S.listItem()
+              S.listItem()
                 .title('Eiwittransitie')
                 .icon(GiBeanstalk)
                 .child(
@@ -103,9 +111,7 @@ export const Structure = (S) =>
       S.listItem()
         .title("Thema's")
         .icon(BsCircle)
-        .child(
-          S.documentList().title("Thema's").filter('_type in ["thema", "simpleThema"]'),
-        ),
+        .child(S.documentList().title("Thema's").filter('_type in ["thema", "simpleThema"]')),
       S.documentListItem().schemaType('FAQpage').title('FAQ Page').icon(FaQuestion),
       S.listItem()
         .title('English Page')

@@ -32,7 +32,12 @@ export default function InstrumentHeader({ data }) {
   const [simpleThema, setSimpleThema] = useState();
 
   useEffect(() => {
-    if (router.pathname.includes('meubels') || router.pathname.includes('woningen') || router.pathname.includes('kunstgrasvelden') || router.pathname.includes('eiwittransitie')) {
+    if (
+      router.pathname.includes('meubels') ||
+      router.pathname.includes('woningen') ||
+      router.pathname.includes('kunstgrasvelden') ||
+      router.pathname.includes('eiwittransitie')
+    ) {
       setSimpleThema(true);
     } else {
       setSimpleThema(false);
