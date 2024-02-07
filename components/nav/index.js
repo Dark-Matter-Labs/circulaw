@@ -54,15 +54,9 @@ const maakindustrieThemas = [{ name: 'Windturbines', url: '/maakindustrie/windtu
 const biomassaEnVoedselThemas = [
   { name: 'Voedselverspilling', url: '/biomassa-en-voedsel/voedselverspilling' },
   { name: 'Eiwittransitie', url: '/biomassa-en-voedsel/eiwittransitie' },
-
 ];
 
-
-
-const kunststoffenThemas = [
-  { name: 'Kunstgrasvelden', url: '/kunststoffen/kunstgrasvelden' },
-];
-
+const kunststoffenThemas = [{ name: 'Kunstgrasvelden', url: '/kunststoffen/kunstgrasvelden' }];
 
 export default function Nav3(props) {
   const router = useRouter();
@@ -379,7 +373,6 @@ export default function Nav3(props) {
                                           transitionAgenda='Kunststoffen'
                                           themas={kunststoffenThemas}
                                         />
-                                       
                                       </ul>
                                     </Disclosure.Panel>
                                   </Transition>
@@ -516,11 +509,10 @@ export default function Nav3(props) {
                               transitionAgenda='Maakindustrie'
                               themas={maakindustrieThemas}
                             />
-                             <DesktopNavCard
+                            <DesktopNavCard
                               transitionAgenda='Kunststoffen'
                               themas={kunststoffenThemas}
                             />
-                           
                           </div>
                         </div>
                       </div>

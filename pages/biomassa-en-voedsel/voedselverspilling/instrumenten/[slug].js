@@ -26,7 +26,7 @@ export default function Measure({ preview, data }) {
 
 export async function getStaticPaths() {
   const paths = await client.fetch(instrumentPathsQueryFunction('voedselverspilling'));
-  console.log(paths)
+  console.log(paths);
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
     fallback: true,
