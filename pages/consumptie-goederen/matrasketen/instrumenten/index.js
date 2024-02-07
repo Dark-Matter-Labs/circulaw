@@ -26,6 +26,6 @@ export async function getStaticProps() {
   const numberOfInstruments = await client.fetch(
     themaQueryFunction('matrasketen', 'Matrasketen').length,
   );
-  const instruments = await client.fetch(instrumentListPageFunction('matrasketen'))
+  const instruments = await client.fetch(instrumentListPageFunction('matrasketen'));
   return { props: { numberOfInstruments, instruments }, revalidate: 1 };
 }

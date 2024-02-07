@@ -20,8 +20,7 @@ import OverviewPageHeader from '../overview-page-header';
 const useSelectedState = createPersistedState('selected');
 
 export default function MeasuresLayout({ ...props }) {
- 
-  const data = props.instruments
+  const data = props.instruments;
 
   // creating references to access child component functions
   const expertiseFilterRef = useRef();
