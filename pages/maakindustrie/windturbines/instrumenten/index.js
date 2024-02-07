@@ -2,13 +2,13 @@ import Layout from '/components/layouts/layout';
 import MeasuresLayout from '@/components/layouts/measures-layout';
 import { client } from '@/lib/sanity';
 import WindmillIcon from '@/public/icons/windmill.png';
-import { windQueries } from '@/lib/queries';
+import { themaQueryFunction } from '@/lib/queries';
 
-export default function Measures({ totalNumberOfLaws }) {
+export default function Measures({ numberOfInstruments }) {
   return (
     <Layout title='CircuLaw - Windturbines'>
       <MeasuresLayout
-        totalNumberOfLaws={totalNumberOfLaws}
+        totalNumberOfLaws={numberOfInstruments}
         title='Lijst van alle windturbines instrumenten'
         thema='windturbines'
         heading='Instrumenten om de inzet en circulariteit van windturbines te bevorderen'
@@ -21,6 +21,6 @@ export default function Measures({ totalNumberOfLaws }) {
 }
 
 export async function getStaticProps() {
-  const totalNumberOfLaws = await client.fetch(windQueries.windLength);
-  return { props: { totalNumberOfLaws: totalNumberOfLaws }, revalidate: 1 };
+  const numberOfInstruments = await client.fetch(themaQueryFunction('windturbines', 'Windturbines').length);
+  return { props: { numberOfInstruments: numberOfInstruments }, revalidate: 1 };
 }

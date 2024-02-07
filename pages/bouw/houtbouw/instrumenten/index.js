@@ -1,7 +1,7 @@
 import Layout from '/components/layouts/layout';
 import MeasuresLayout from '@/components/layouts/measures-layout';
 import { client } from '@/lib/sanity';
-import { houtbouwQueries } from '@/lib/queries';
+import { themaQueryFunction } from '@/lib/queries';
 
 export default function Measures({ numberOfInstruments }) {
   return (
@@ -21,6 +21,6 @@ export default function Measures({ numberOfInstruments }) {
 }
 
 export async function getStaticProps() {
-  const numberOfInstruments = await client.fetch(houtbouwQueries.houtbouwLength);
+  const numberOfInstruments = await client.fetch(themaQueryFunction('houtbouw', 'Houtbouw').length);
   return { props: { numberOfInstruments }, revalidate: 1 };
 }

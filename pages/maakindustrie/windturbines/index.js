@@ -3,7 +3,7 @@ import Layout from '@/components/layouts/layout';
 import ThemeLayout from '@/components/layouts/theme-index-layout';
 import { client } from '@/lib/sanity';
 import Link from 'next/link';
-import { windQueries } from '@/lib/queries';
+import { themaQueryFunction } from '@/lib/queries';
 
 export default function Windturbine({ featuredLaws, length, thema }) {
   useEffect(() => {
@@ -63,9 +63,9 @@ export default function Windturbine({ featuredLaws, length, thema }) {
 }
 
 export async function getStaticProps() {
-  const featuredLaws = await client.fetch(windQueries.windFeatured);
-  const length = await client.fetch(windQueries.windLength);
-  const thema = await client.fetch(windQueries.windThemaQuery);
+  const featuredLaws = await client.fetch(themaQueryFunction('windturbines', 'Windturbines').featured);
+  const length = await client.fetch(themaQueryFunction('windturbines', 'Windturbines').length);
+  const thema = await client.fetch(themaQueryFunction('windturbines', 'Windturbines').themaQuery);
   return {
     props: {
       featuredLaws,

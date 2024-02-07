@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Layout from '@/components/layouts/layout';
 import ThemeLayout from '@/components/layouts/theme-index-layout';
 import { client } from '@/lib/sanity';
-import { matrassenQueries } from '@/lib/queries';
+import { themaQueryFunction } from '@/lib/queries';
 
 export default function Matrassen({ featuredLaws, thema, length }) {
   useEffect(() => {
@@ -23,8 +23,8 @@ export default function Matrassen({ featuredLaws, thema, length }) {
 }
 
 export async function getStaticProps() {
-  const featuredLaws = await client.fetch(matrassenQueries.matrassenFeatured);
-  const thema = await client.fetch(matrassenQueries.matressThemaQuery);
-  const length = await client.fetch(matrassenQueries.matrassenLength);
+  const featuredLaws = await client.fetch(themaQueryFunction('matrasketen', 'Matrasketen').featured);
+  const length = await client.fetch(themaQueryFunction('matrasketen', 'Matrasketen').length);
+  const thema = await client.fetch(themaQueryFunction('matrasketen', 'Matrasketen').themaQuery);
   return { props: { featuredLaws, thema, length }, revalidate: 1 };
 }
