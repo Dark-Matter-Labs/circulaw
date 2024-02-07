@@ -1,9 +1,7 @@
-// import Link from 'next/link';
 import Image from 'next/image';
-// import { ArrowRightIcon } from '@heroicons/react/outline';
+import { urlFor } from '@/lib/sanity';
 
 import CustomButton from '@/components/custom-button';
-// import BottomSection from '@/components/product-chain-page/product-chain-bottom-section';
 import PageHeader from '@/components/product-chain-page/product-chain-header';
 import MobilePageHeader from '@/components/product-chain-page/product-chain-header-mobile';
 import ThemaList from '@/components/thema-list';
@@ -48,7 +46,13 @@ export default function ThemeLayout({ ...props }) {
                     key={impact.detail}
                   >
                     <div>
-                      <Image className='w-40 h-40' src={impact.image} alt='impact image' />
+                      <Image
+                        className='w-40 h-40'
+                        src={urlFor(impact?.image).url()}
+                        alt='impact image'
+                        height={40}
+                        width={40}
+                      />
                     </div>
                     <div>
                       <p className='pt-4 p-base'>{impact.detail}</p>
@@ -77,7 +81,12 @@ export default function ThemeLayout({ ...props }) {
                   </CustomButton>
                 </div>
                 <div>
-                  <Image src={ambition.image} alt='ambition illustration' />
+                  <Image
+                    src={urlFor(ambition?.image).url()}
+                    alt='ambition illustration'
+                    height={356}
+                    width={542}
+                  />
                 </div>
               </div>
             ) : (

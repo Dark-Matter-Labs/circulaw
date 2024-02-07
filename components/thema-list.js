@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
+import { urlFor } from '@/lib/sanity';
 
 export default function ThemaList({ themaCards }) {
   return (
@@ -12,32 +13,32 @@ export default function ThemaList({ themaCards }) {
         >
           {themaCards.map((thema) => (
             <li
-              key={thema.name}
+              key={thema._id}
               className='relative drop-shadow-sm bg-green-800 hover:bg-green-600 w-full rounded-cl h-auto min-h-[25rem] cursor-pointer'
             >
               <div className='object-cover rounded-cl w-full max-h-[200px]'>
-                {thema?.image && (
+                {thema?.heroImage && (
                   <Image
                     className='rounded-t-cl fill max-h-[200px]'
-                    src={thema?.image}
+                    src={urlFor(thema?.heroImage).url()}
                     alt={thema?.themaName + 'image'}
-                    width={1440}
-                    height={720}
+                    width={310}
+                    height={400}
                   />
                 )}
               </div>
               <div className='group block w-full p-4 rounded-cl'>
                 <div className='inline-block'>
                   <h3 className='mobile sm:desktop mt-2 text-grey-100 pointer-events-none pb-4 hidden sm:inline'>
-                    {thema.name}
+                    {thema.themaName}
                   </h3>
-                  <p className='p-md text-green-200'>{thema.instrumentCount} instrumenten</p>
+                  <p className='p-md text-green-200'>{thema.count} instrumenten</p>
                 </div>
                 <p className='p-md block text-grey-100 pointer-events-none py-4 mr-2'>
-                  {thema.description}
+                  {thema.themaSubtitle}
                 </p>
                 <div className='group flex justify-end w-full pb-4 pr-4  absolute inset-x-0 bottom-0 right-0 rounded-cl'>
-                  <Link href={`/${thema.transitionAgenda}/${thema.slug}`}>
+                  <Link href={`/${thema.transitionAgenda}/${thema.slug.current}`}>
                     <div className='h-12 w-12 rounded-full flex items-center justify-center border-2 border-grey-200 bg-transparent hover:bg-green-200 active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white self-end  text-grey-200 hover:text-green-600 hover:border-transparent'>
                       <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                     </div>
@@ -71,15 +72,20 @@ export default function ThemaList({ themaCards }) {
       </div>
       <div className='block sm:hidden'>
         {themaCards.map((thema) => (
-          <Link key={thema.slug} href={`/${thema.transitionAgenda}/${thema.slug}`}>
+          <Link key={thema.slug} href={`/${thema.transitionAgenda}/${thema.slug.current}`}>
             <div className='w-full rounded-cl bg-green-600 shadow my-6 py-4'>
               <div className='flex items-center justify-start'>
                 <div className='w-36 relative'>
-                  <Image src={thema?.image} alt={thema?.themaName + 'image'} />
+                  <Image
+                    src={urlFor(thema?.heroImageMobile).url()}
+                    alt={thema?.themaName + 'image'}
+                    width={107}
+                    height={114}
+                  />
                 </div>
                 <div className='text-grey-800 pl-4'>
                   <h2 className='mobile mt-2 text-grey-100 pointer-events-none pb-4 inline sm:hidden'>
-                    {thema.name}
+                    {thema.themaName}
                   </h2>
                   <p className='p-md text-green-200'>{thema.instrumentCount} instrumenten</p>
                 </div>
