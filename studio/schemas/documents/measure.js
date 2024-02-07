@@ -114,7 +114,6 @@ export default {
           { title: 'Woningen', value: 'woningen' }, // need to change to reference
           { title: 'Kunstgrasvelden', value: 'kunstgrasvelden' }, // need to change to reference
           { title: 'Eiwittransitie', value: 'eiwittransitie' }, // need to change to reference
-
         ],
         layout: 'dropdown',
       },
