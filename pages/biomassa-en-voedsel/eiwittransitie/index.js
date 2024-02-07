@@ -22,12 +22,8 @@ export default function Eiwittransitie({ thema, length, instruments }) {
 }
 
 export async function getStaticProps() {
-  const length = await client.fetch(
-    simpleThemaQueryFunction('eiwittransitie').length,
-  );
-  const thema = await client.fetch(
-    simpleThemaQueryFunction('eiwittransitie').themaQuery,
-  );
+  const length = await client.fetch(simpleThemaQueryFunction('eiwittransitie').length);
+  const thema = await client.fetch(simpleThemaQueryFunction('eiwittransitie').themaQuery);
   const instruments = await client.fetch(
     simpleThemaQueryFunction('eiwittransitie').instrumentsQuery,
   );

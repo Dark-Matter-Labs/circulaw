@@ -23,15 +23,9 @@ export default function Houtbouw({ featuredLaws, thema, length }) {
 }
 
 export async function getStaticProps() {
-  const featuredLaws = await client.fetch(
-    themaQueryFunction('voedselverspilling').featured,
-  );
-  const length = await client.fetch(
-    themaQueryFunction('voedselverspilling').length,
-  );
-  const thema = await client.fetch(
-    themaQueryFunction('voedselverspilling').themaQuery,
-  );
+  const featuredLaws = await client.fetch(themaQueryFunction('voedselverspilling').featured);
+  const length = await client.fetch(themaQueryFunction('voedselverspilling').length);
+  const thema = await client.fetch(themaQueryFunction('voedselverspilling').themaQuery);
   return {
     props: {
       featuredLaws,

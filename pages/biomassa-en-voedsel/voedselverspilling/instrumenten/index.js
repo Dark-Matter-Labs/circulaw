@@ -20,9 +20,7 @@ export default function Measures({ numberOfInstruments, instruments }) {
 }
 
 export async function getStaticProps() {
-  const numberOfInstruments = await client.fetch(
-    themaQueryFunction('voedselverspilling').length,
-  );
+  const numberOfInstruments = await client.fetch(themaQueryFunction('voedselverspilling').length);
   const instruments = await client.fetch(instrumentListPageFunction('voedselverspilling'));
   return { props: { numberOfInstruments, instruments }, revalidate: 1 };
 }
