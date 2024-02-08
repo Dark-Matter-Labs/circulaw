@@ -4,10 +4,12 @@ import { urlFor } from '@/lib/sanity';
 import CustomButton from '@/components/custom-button';
 import PageHeader from '@/components/product-chain-page/product-chain-header';
 import MobilePageHeader from '@/components/product-chain-page/product-chain-header-mobile';
-import ThemaList from '@/components/thema-list';
+// import ThemaList from '@/components/thema-list';
 import PCTooltip from '../tooltips/product-chain-tooltip';
+import ThemaCard from '../thema-cards';
 
 export default function ThemeLayout({ ...props }) {
+  console.log(props.themaList, 'prop for cards')
   return (
     <>
       <div>
@@ -19,7 +21,7 @@ export default function ThemeLayout({ ...props }) {
 
         <div className='bg-grey-150'>
           <div className='global-margin pb-16 sm:pb-20'>
-            <div className='pt-14 pb-10'>
+            <div className='pt-14 pb-0 sm:pb-10'>
               <h2 className='p-3xl-semibold sm:p-6xl-semibold text-green-800 pb-8'>
                 Thema’s en juridische instrumenten
               </h2>
@@ -32,10 +34,10 @@ export default function ThemeLayout({ ...props }) {
             </div>
 
             <div className='-z-20'>
-              <ThemaList themaCards={props.themaList} />
+              <ThemaCard themaCards={props.themaList} />
             </div>
 
-            <div className='pt-20 '>
+            <div className='pt-4 sm:pt-20'>
               <h2 className='p-3xl-semibold sm:p-6xl-semibold text-green-800 pb-8'>
                 Impact voedselsyteem op het klimaat en de natuur{' '}
               </h2>
