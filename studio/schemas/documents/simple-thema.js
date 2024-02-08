@@ -103,6 +103,14 @@ export default {
       group: 'editableContent',
     },
     {
+      title: 'Intro text title',
+      name: 'introTextTitle',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+      description: 'Text that comes after "Eerste XX"',
+      group: 'editableContent',
+    },
+    {
       title: 'Intro text',
       name: 'introText',
       type: 'text',
@@ -110,6 +118,7 @@ export default {
       description: 'Text to introduce the top 5 instruments',
       group: 'editableContent',
     },
+    
     {
       name: 'homePageCards',
       title: 'HOMEPAGE KAARTEN',
