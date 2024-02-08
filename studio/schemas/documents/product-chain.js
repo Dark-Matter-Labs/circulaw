@@ -46,7 +46,7 @@ export default {
       group: 'devOnly',
       description: 'DO NOT CHANGE',
       options: {
-        source: 'themaName',
+        source: 'pcName',
         inUnique: 'true',
         slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
       },
