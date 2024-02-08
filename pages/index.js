@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import Layout from '@/components/layouts/layout';
-import SectionTypes from '@/components/section-types-list';
 import { client } from '@/lib/sanity';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
 import {
   aboutSectionQuerie,
-  homePageThemaQuery,
   homePageHeaderQuery,
   newsItems,
 } from '@/lib/queries';
@@ -19,7 +17,6 @@ import LinkIcon from '@/components/link-icon';
 
 export default function Index({
   aboutSection,
-  homePageThemaData,
   homePageHeader,
   footerText,
   newsData,
@@ -32,11 +29,12 @@ export default function Index({
              Ontdek direct onze instrumenten
           </h2>
           <p className='p-xl max-w-[750px] py-4 whitespace-normal'>
-          De overheid heeft 5 productketens gekozen voor het <Link className='whitespace-normal text-green-600  ' href='https://www.rijksoverheid.nl/documenten/beleidsnotas/2023/02/03/nationaal-programma-circulaire-economie-2023-2030'><span className='link-interaction whitespace-normal font-semibold'>Nationaal Programma Circulaire Economie 2023-2030<span className=''><LinkIcon  /></span>. </span></Link> {' '}
+          De overheid heeft 5 productketens gekozen voor het <Link className='whitespace-normal text-green-500' href='https://www.rijksoverheid.nl/documenten/beleidsnotas/2023/02/03/nationaal-programma-circulaire-economie-2023-2030'><span className='link-interaction whitespace-normal font-semibold'>Nationaal Programma Circulaire Economie 2023-2030<span className=''><LinkIcon  /></span>. </span></Link> {' '}
           Deze ketens zijn belangrijk voor de economie, maar belasten ook het milieu. In transitieagenda’s staat hoe deze ketens in 2050 circulair kunnen zijn
           </p>
           <div className='pt-4 -z-20'>
-            <SectionTypes type='home' themaCards={homePageThemaData} />
+            
+            
           </div>
         </div>
       </div>
@@ -82,14 +80,10 @@ export default function Index({
 
 export async function getStaticProps() {
   const aboutSection = await client.fetch(aboutSectionQuerie);
-  const homePageThemaData = await client.fetch(homePageThemaQuery);
-  // const newsItems = await client.fetch(newsItemsQuery);
   const homePageHeader = await client.fetch(homePageHeaderQuery);
   const newsData = await client.fetch(newsItems);
   return {
     props: {
-      homePageThemaData,
-      //  newsItems,
       aboutSection,
       homePageHeader,
       newsData,
