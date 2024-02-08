@@ -15,7 +15,6 @@ export default function Eiwittransitie({ thema, length, instruments }) {
         thema={thema}
         numberOfLaws={length}
         instruments={instruments}
-        subheading='instrumenten om circulariteit van eiwittransitie te bevorderen'
       />
     </Layout>
   );

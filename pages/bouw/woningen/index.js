@@ -15,7 +15,6 @@ export default function Meubels({ thema, length, instruments }) {
         thema={thema}
         numberOfLaws={length}
         instruments={instruments}
-        subheading='instrumenten om circulariteit van woningen te bevorderen'
       />
     </Layout>
   );

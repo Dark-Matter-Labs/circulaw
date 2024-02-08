@@ -15,7 +15,6 @@ export default function Kunstgrasvelden({ thema, length, instruments }) {
         thema={thema}
         numberOfLaws={length}
         instruments={instruments}
-        subheading='instrumenten om circulariteit van kunstgrasvelden te bevorderen'
       />
     </Layout>
   );
