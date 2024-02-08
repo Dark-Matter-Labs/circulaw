@@ -11,12 +11,7 @@ export default function Eiwittransitie({ thema, length, instruments }) {
 
   return (
     <Layout title='CircuLaw - Eiwittransitie'>
-      <SimpleThemaLayout
-        thema={thema}
-        numberOfLaws={length}
-        instruments={instruments}
-        subheading='instrumenten om circulariteit van eiwittransitie te bevorderen'
-      />
+      <SimpleThemaLayout thema={thema} numberOfLaws={length} instruments={instruments} />
     </Layout>
   );
 }
