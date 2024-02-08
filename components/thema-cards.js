@@ -5,7 +5,6 @@ import { ArrowRightIcon } from '@heroicons/react/outline'
 
 
 export default function ThemaCard({themaCards}) {
-    
     return (
         <>
           <div className='hidden sm:block'>
