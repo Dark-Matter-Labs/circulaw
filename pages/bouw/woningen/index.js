@@ -11,12 +11,7 @@ export default function Meubels({ thema, length, instruments }) {
 
   return (
     <Layout title='CircuLaw - Woningen'>
-      <SimpleThemaLayout
-        thema={thema}
-        numberOfLaws={length}
-        instruments={instruments}
-        subheading='instrumenten om circulariteit van woningen te bevorderen'
-      />
+      <SimpleThemaLayout thema={thema} numberOfLaws={length} instruments={instruments} />
     </Layout>
   );
 }
