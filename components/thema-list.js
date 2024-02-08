@@ -17,10 +17,10 @@ export default function ThemaList({ themaCards }) {
               className='relative drop-shadow-sm bg-green-800 hover:bg-green-600 w-full rounded-cl h-auto min-h-[25rem] cursor-pointer'
             >
               <div className='object-cover rounded-cl w-full max-h-[200px]'>
-                {thema?.heroImage && (
+                {thema?.image && (
                   <Image
                     className='rounded-t-cl fill max-h-[200px]'
-                    src={urlFor(thema?.heroImage).url()}
+                    src={urlFor(thema?.image).url()}
                     alt={thema?.themaName + 'image'}
                     width={310}
                     height={400}
@@ -77,7 +77,7 @@ export default function ThemaList({ themaCards }) {
               <div className='flex items-center justify-start'>
                 <div className='w-36 relative'>
                   <Image
-                    src={urlFor(thema?.heroImageMobile).url()}
+                    src={urlFor(thema?.mobileCardImage).url()}
                     alt={thema?.themaName + 'image'}
                     width={107}
                     height={114}
