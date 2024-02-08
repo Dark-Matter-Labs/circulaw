@@ -9,20 +9,18 @@ import PCTooltip from '../tooltips/product-chain-tooltip';
 import ThemaCard from '../thema-cards';
 
 export default function ThemeLayout({ ...props }) {
-  console.log(props.themaList, 'prop for cards')
   return (
     <>
       <div>
         {/* HEADER DESKTOP */}
         <PageHeader pageTitle={props.title} />
         {/* HEADER MOBILE */}
-
         <MobilePageHeader pageTitle={props.title} />
 
         <div className='bg-grey-150'>
-          <div className='global-margin pb-16 sm:pb-20'>
+          <div className='global-margin pb-12 sm:pb-20'>
             <div className='pt-14 pb-0 sm:pb-10'>
-              <h2 className='p-3xl-semibold sm:p-6xl-semibold text-green-800 pb-8'>
+              <h2 className='p-6xl-semibold text-green-800 pb-8'>
                 Thema’s en juridische instrumenten
               </h2>
               <p className='pb-5 p-base max-w-2xl'>
@@ -37,7 +35,7 @@ export default function ThemeLayout({ ...props }) {
               <ThemaCard themaCards={props.themaList} />
             </div>
 
-            <div className='pt-4 sm:pt-20'>
+            <div className='pt-12 sm:pt-20'>
               <h2 className='p-3xl-semibold sm:p-6xl-semibold text-green-800 pb-8'>
                 Impact voedselsyteem op het klimaat en de natuur{' '}
               </h2>
@@ -69,20 +67,28 @@ export default function ThemeLayout({ ...props }) {
           </div>
         </div>
         <div className='global-margin pt-14  bg-white'>
-          <h2 className='p-3xl-semibold sm:p-6xl-semibold text-green-800 pb-10'>
+          <h2 className='p-6xl-semibold text-green-800 pb-10'>
             De voedsel-ambities in nederland
           </h2>
           {props.ambitionList.map((ambition, index) =>
             index % 2 == 0 ? (
-              <div key={ambition.title} className='grid grid-cols-1 sm:grid-cols-2 pb-20'>
+              <div key={index} className='grid grid-cols-1 sm:grid-cols-2 pb-20'>
+                   <div className='block mb-6 sm:hidden'>
+                  <Image
+                    src={urlFor(ambition?.image).url()}
+                    alt='ambition illustration'
+                    height={356}
+                    width={542}
+                  />
+                  </div>
                 <div>
-                  <h4 className='mobile sm:desktop text-green-800'>{ambition.title}</h4>
+                  <h4 className='p-2xl-semibold sm:3xl-semibold text-green-800'>{ambition.title}</h4>
                   <p className='p-xl pt-4 max-w-xl pb-4'>{ambition.detail}</p>
                   <CustomButton color='lightGreenBackground'>
                     Deze instrumenten helpen hierbij
                   </CustomButton>
                 </div>
-                <div>
+                <div className='hidden sm:block'>
                   <Image
                     src={urlFor(ambition?.image).url()}
                     alt='ambition illustration'
@@ -94,10 +100,11 @@ export default function ThemeLayout({ ...props }) {
             ) : (
               <div key={ambition.title} className='grid grid-cols-1 sm:grid-cols-2 pb-20'>
                 <div>
-                  <Image src={ambition.image} alt='ambition illustration' />
+                  <Image src={ambition.image} alt='ambition illustration' height={356}
+                    width={542} className='mb-6'/>
                 </div>
                 <div>
-                  <h4 className='mobile sm:desktop text-green-800'>{ambition.title}</h4>
+                  <h4 className='p-2xl-semibold sm:3xl-semibold text-green-800'>{ambition.title}</h4>
                   <p className='p-xl pt-4 max-w-xl pb-4'>{ambition.detail}</p>
                   <CustomButton color='lightGreenBackground'>
                     Deze instrumenten helpen hierbij
@@ -107,9 +114,9 @@ export default function ThemeLayout({ ...props }) {
             ),
           )}
         </div>
-        <div className=' pt-14 pb-10 bg-grey-150'>
+        <div className='pt-14 pb-10 bg-grey-150'>
           <div className='global-margin'>
-            <h2 className='p-3xl-semibold sm:p-6xl-semibold text-green-800 pb-10'>
+            <h2 className='p-6xl-semibold text-green-800 pb-10'>
               Duik nog dieper in de materie
             </h2>
             <div className='newlineDisplay p-base -mt-2 mb-6'>

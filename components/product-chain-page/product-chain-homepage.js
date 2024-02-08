@@ -13,7 +13,7 @@ const productChains = [
         title: 'Maakindustrie', slug: 'maakindustrie', description: 'Lorem ipsum mooi verhaaltje over deze product chaina'
     },
     {
-        title: 'Consumenten-goederen', slug: 'consumptie-goederen', description: 'Lorem ipsum mooi verhaaltje over deze product chaina'
+        title: 'Consumptiegoederen', slug: 'consumptie-goederen', description: 'Lorem ipsum mooi verhaaltje over deze product chaina'
     },
     {
         title: 'Kunststoffen', slug: 'kunststoffen', description: 'Lorem ipsum mooi verhaaltje over deze product chaina'
@@ -22,8 +22,6 @@ const productChains = [
 ]
 
 export default function PCHomePage() {
-
-
     return (
         <ul className='hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-4 gap-x-4 w-full'>
             {productChains.map((chain, id) => (
@@ -35,8 +33,8 @@ export default function PCHomePage() {
                     </svg>
                     </div>
                     <div className='divide-y divide-green-100 h-43 flex flex-col justify-center origin-center'>
-                    <div className='p-3xl-semibold h-1/2 text-white pb-3 w-full flex items-end'>
-                        <div className=''>
+                    <div className='p-3xl-semibold h-1/2 text-white pb-3 w-full flex items-end break-words'>
+                        <div className='break-words w-full'>
                         {chain.title}
                         </div>
                     </div>
