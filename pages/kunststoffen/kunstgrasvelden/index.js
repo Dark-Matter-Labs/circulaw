@@ -11,11 +11,7 @@ export default function Kunstgrasvelden({ thema, length, instruments }) {
 
   return (
     <Layout title='CircuLaw - Kunstgrasvelden'>
-      <SimpleThemaLayout
-        thema={thema}
-        numberOfLaws={length}
-        instruments={instruments}
-      />
+      <SimpleThemaLayout thema={thema} numberOfLaws={length} instruments={instruments} />
     </Layout>
   );
 }

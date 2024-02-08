@@ -118,7 +118,7 @@ export default {
       description: 'Text to introduce the top 5 instruments',
       group: 'editableContent',
     },
-    
+
     {
       name: 'homePageCards',
       title: 'HOMEPAGE KAARTEN',

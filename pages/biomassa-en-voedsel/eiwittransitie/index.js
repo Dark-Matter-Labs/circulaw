@@ -11,11 +11,7 @@ export default function Eiwittransitie({ thema, length, instruments }) {
 
   return (
     <Layout title='CircuLaw - Eiwittransitie'>
-      <SimpleThemaLayout
-        thema={thema}
-        numberOfLaws={length}
-        instruments={instruments}
-      />
+      <SimpleThemaLayout thema={thema} numberOfLaws={length} instruments={instruments} />
     </Layout>
   );
 }
