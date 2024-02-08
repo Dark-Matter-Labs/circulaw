@@ -15,6 +15,7 @@ import NewThemaSuggestion from '@/components/new-thema-suggestion';
 import HomePageAboutSection from '@/components/home-page-about-section';
 import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
+import LinkIcon from '@/components/link-icon';
 
 export default function Index({
   aboutSection,
@@ -28,9 +29,13 @@ export default function Index({
       <div className='bg-grey-100 sm:pb-12 -z-50' name='thema'>
         <div className='global-margin -z-20'>
           <h2 className='p-5xl-semibold sm:p-7xl-semibold pt-8 text-green-600 border-grey-600 border-b pb-6'>
-            Thema’s
+             Ontdek direct onze instrumenten
           </h2>
-          <div className='pt-4 sm:pt-8 -z-20'>
+          <p className='p-xl max-w-[750px] py-4 whitespace-normal'>
+          De overheid heeft 5 productketens gekozen voor het <Link className='whitespace-normal text-green-600  ' href='https://www.rijksoverheid.nl/documenten/beleidsnotas/2023/02/03/nationaal-programma-circulaire-economie-2023-2030'><span className='link-interaction whitespace-normal font-semibold'>Nationaal Programma Circulaire Economie 2023-2030<span className=''><LinkIcon  /></span>. </span></Link> {' '}
+          Deze ketens zijn belangrijk voor de economie, maar belasten ook het milieu. In transitieagenda’s staat hoe deze ketens in 2050 circulair kunnen zijn
+          </p>
+          <div className='pt-4 -z-20'>
             <SectionTypes type='home' themaCards={homePageThemaData} />
           </div>
         </div>
