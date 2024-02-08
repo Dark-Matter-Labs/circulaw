@@ -14,6 +14,7 @@ import HomePageAboutSection from '@/components/home-page-about-section';
 import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
 import LinkIcon from '@/components/link-icon';
+import PCHomePage from '@/components/product-chain-page/product-chain-homepage';
 
 export default function Index({
   aboutSection,
@@ -33,8 +34,7 @@ export default function Index({
           Deze ketens zijn belangrijk voor de economie, maar belasten ook het milieu. In transitieagenda’s staat hoe deze ketens in 2050 circulair kunnen zijn
           </p>
           <div className='pt-4 -z-20'>
-            
-            
+            <PCHomePage />
           </div>
         </div>
       </div>
