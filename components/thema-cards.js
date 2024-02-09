@@ -10,18 +10,17 @@ export default function ThemaCard({themaCards}) {
           <div className='hidden sm:block'>
         <ul
           role='list'
-          className='grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4 sm:gap-x-10 max-w-8xl relative z-0'
+          className='grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4 sm:gap-x-4 max-w-8xl relative z-0 h-[400px]'
         >
           {themaCards.map((thema, id) => (
             <Link href={`/${thema.transitionAgenda}/${thema.slug}`} key ={id} >
             <li
-              className='relative w-full rounded-cl h-auto min-h-[25rem] group'
+              className='relative w-full rounded-cl h-[400px] group overflow-hidden flex flex-col'
             >
-              <div className='object-cover rounded-cl w-full max-h-[200px]'>
-       
+              <div className='object-cover rounded-cl w-full'>
                   {thema?.image && (
                     <Image
-                      className='rounded-t-cl fill max-h-[200px]'
+                      className='rounded-t-cl fill'
                       src={urlFor(thema?.image).url()}
                       alt={thema?.themaName + 'image'}
                       width={1440}
@@ -29,22 +28,19 @@ export default function ThemaCard({themaCards}) {
                     />
                   )}
               </div>
-              <div className='group block w-full p-4 bg-green-600'>
-                <div className='inline-block'>
-                    <h3 className='mobile sm:desktop mt-2 text-grey-100 pointer-events-none pb-4 hidden sm:inline'>
+              <div className='group flex flex-col w-full h-full px-6 py-4 bg-green-600'>
+                    <h3 className='mobile sm:desktop text-grey-100 pointer-events-none hidden sm:inline'>
                       {thema.themaName}
                     </h3>
-                    <p className='p-md text-green-200'>{thema.count} instrumenten</p>
-
-                </div>
-                  <p className='p-md block text-grey-100 pointer-events-none py-4 w-full'>
-                    {thema.homePageCardText}
-                  </p>
-                <div className='group flex justify-end w-full pb-4 pr-4 bg-green-600 absolute inset-x-0 bottom-0 right-0 rounded-b-cl'>
+                    <p className='p-md text-green-200 pb-4'>{thema.count} instrumenten</p>
+                    <p className='p-md text-grey-100 w-full line-clamp-3'>
+                      {thema.homePageCardText}
+                    </p>
+                  <div className='flex justify-end flex-grow items-end'>
                 <div className='h-12 w-12 rounded-full flex items-center justify-center border-2 border-grey-200 group-hover:border-green-200 bg-transparent group-hover:bg-green-200 active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white self-end  text-grey-200 group-hover:text-green-600'>
-                      <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
-                    </div>
-                </div>
+                      <ArrowRightIcon className='inline-block h-5 w-5' aria-hidden='true' />
+                  </div>
+                  </div>
               </div>
             </li>
             </Link>
