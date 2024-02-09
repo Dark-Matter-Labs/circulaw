@@ -3,7 +3,7 @@ import PCLayout from '@/components/layouts/product-chain-layout';
 import { client } from '@/lib/sanity';
 import { productChainQueryFunction } from '@/lib/queries';
 
-export default function Biomassa({ title, count, themaList, impactList, ambitionList }) {
+export default function Biomassa({ title, count, themaList, impactList, ambitionList, links }) {
   return (
     <Layout title='CircuLaw - Voedsel en biomassa'>
       <PCLayout
@@ -12,6 +12,7 @@ export default function Biomassa({ title, count, themaList, impactList, ambition
         themaList={themaList}
         impactList={impactList}
         ambitionList={ambitionList}
+        links={links}
       />
     </Layout>
   );
@@ -21,7 +22,6 @@ export async function getStaticProps() {
   const productChain = await client.fetch(productChainQueryFunction('biomassa-en-voedsel').productChainPageQuery);
   const instrumentCount = await client.fetch(productChainQueryFunction('biomassa-en-voedsel').totalNumberOfInstruments);
   const themalist = await client.fetch(productChainQueryFunction('biomassa-en-voedsel').themaData);
-
   return {
     props: {
       title: productChain.pcName,
@@ -29,6 +29,7 @@ export async function getStaticProps() {
       themaList: themalist,
       impactList: productChain.impactItems,
       ambitionList: productChain.ambitionItems,
+      links: productChain.pcLinks
     },
     revalidate: 1,
   };

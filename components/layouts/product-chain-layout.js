@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { urlFor } from '@/lib/sanity';
-
+import Link from 'next/link';
 import CustomButton from '@/components/custom-button';
 import PageHeader from '@/components/product-chain-page/product-chain-header';
 import MobilePageHeader from '@/components/product-chain-page/product-chain-header-mobile';
@@ -57,7 +57,6 @@ export default function ThemeLayout({ ...props }) {
                     <div>
                       <p className='pt-4 p-base'>{impact.detail}</p>
                     </div>
-                    {console.log(impact)}
                     <PCTooltip title = {impact.disclosureTitle} content ={impact.disclosureContent}>
                       <p className='pt-8 p-base-bold  text-green-800'>{impact.question}</p>
                     </PCTooltip>
@@ -85,9 +84,12 @@ export default function ThemeLayout({ ...props }) {
                 <div>
                   <h4 className='p-2xl-semibold sm:3xl-semibold text-green-800'>{ambition.title}</h4>
                   <p className='p-xl pt-4 max-w-xl pb-4'>{ambition.detail}</p>
+               {ambition.buttonText && 
+                <Link href={ambition.buttonLink}>
                   <CustomButton color='lightGreenBackground'>
-                    Deze instrumenten helpen hierbij
+                    {ambition.buttonText}
                   </CustomButton>
+                  </Link>}
                 </div>
                 <div className='hidden sm:block'>
                   <Image
@@ -107,9 +109,12 @@ export default function ThemeLayout({ ...props }) {
                 <div>
                   <h4 className='p-2xl-semibold sm:3xl-semibold text-green-800'>{ambition.title}</h4>
                   <p className='p-xl pt-4 max-w-xl pb-4'>{ambition.detail}</p>
+                  {ambition.buttonText && 
+                <Link href={ambition.buttonLink}>
                   <CustomButton color='lightGreenBackground'>
-                    Deze instrumenten helpen hierbij
+                    {ambition.buttonText}
                   </CustomButton>
+                  </Link>}
                 </div>
               </div>
             ),
@@ -122,43 +127,20 @@ export default function ThemeLayout({ ...props }) {
             </h2>
             <div className='newlineDisplay p-base -mt-2 mb-6'>
               <ul className='list-disc pl-6 p-base'>
-                <li className='py-0.5'>
-                  <a
-                    className='text-green-500 inline link-interaction'
-                    href='https://www.rijksoverheid.nl/documenten/kamerstukken/2022/12/23/kamerbrief-over-beleidsagenda-normeren-en-stimuleren-circulair-bouwen'
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <span className='link-base link-interaction'>
-                      Kamerbrief over beleidsagenda normeren en stimuleren circulair bouwen
-                    </span>
-                  </a>
-                </li>
-                <li className='py-0.5'>
-                  <a
-                    className='text-green-500 inline link-interaction'
-                    href='https://www.ipo.nl/media/qv2cq1gp/ambitiebepaling-provinciale-klimaatneutrale-en-circulaire-infrastructuur-pkci.pdf'
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <span className='link-base link-interaction'>
-                      Ambitiebepaling Provinciale Klimaatneutrale en Circulaire Infrastructuur
-                      (PKCI)
-                    </span>
-                  </a>
-                </li>
-                <li className='py-0.5'>
-                  <a
-                    className='text-green-500 inline link-interaction'
-                    href='https://tki-bouwentechniek.nl/wp-content/uploads/MMIP_Circulaire-bouw-en-infrastructuur_v1.pdf'
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <span className='link-base link-interaction'>
-                      Meerjarig Missiegedreven Innovatieprogramma Bouw en Infrastructuur (MMIP)
-                    </span>
-                  </a>
-                </li>
+                {props?.links?.map((link, id) => (
+                    <li className='py-0.5' key={id}>
+                    <a
+                      className='text-green-500 inline link-interaction'
+                      href={link.link}
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      <span className='link-base link-interaction'>
+                        {link.linkText}
+                      </span>
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
