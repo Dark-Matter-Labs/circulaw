@@ -132,6 +132,7 @@ export default {
       title: 'Tekst homepage-themakaart', // need to add max length
       name: 'homePageCardText',
       type: 'text',
+      validation: (Rule) => Rule.required().max(85),
       group: 'editableContent',
     },
     {
