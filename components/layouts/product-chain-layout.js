@@ -13,9 +13,9 @@ export default function ThemeLayout({ ...props }) {
     <>
       <div>
         {/* HEADER DESKTOP */}
-        <PageHeader pageTitle={props.title} />
+        <PageHeader pageTitle={props?.title} />
         {/* HEADER MOBILE */}
-        <MobilePageHeader pageTitle={props.title} />
+        <MobilePageHeader pageTitle={props?.title} />
 
         <div className='bg-grey-150'>
           <div className='global-margin pb-12 sm:pb-20'>
@@ -25,14 +25,14 @@ export default function ThemeLayout({ ...props }) {
               </h2>
               <p className='pb-5 p-base max-w-2xl'>
                 Duik gelijk in de juridische materie. Hieronder staan{' '}
-                <b>{props.totalInstruments} instrumenten</b> die te maken hebben met voedsel. We
+                <b>{props?.totalInstruments} instrumenten</b> die te maken hebben met voedsel. We
                 hebben ze onderverdeeld in categorieen zodat je direct kunt beginnen waar het voor
                 jou het beste past.
               </p>
             </div>
 
             <div className='-z-20'>
-              <ThemaCard themaCards={props.themaList} />
+              <ThemaCard themaCards={props?.themaList} />
             </div>
 
             <div className='pt-12 sm:pt-20'>
@@ -40,7 +40,7 @@ export default function ThemeLayout({ ...props }) {
                 Impact voedselsyteem op het klimaat en de natuur{' '}
               </h2>
               <div className='grid grid-cols-1 justify-items-center sm:flex sm:justify-center gap-20'>
-                {props.impactList.map((impact) => (
+                {props?.impactList?.map((impact) => (
                   <div
                     className='grid grid-cols-1 justify-items-center content-between text-center max-w-xs'
                     key={impact.detail}
@@ -68,7 +68,7 @@ export default function ThemeLayout({ ...props }) {
         </div>
         <div className='global-margin pt-14  bg-white'>
           <h2 className='p-6xl-semibold text-green-800 pb-10'>De voedsel-ambities in nederland</h2>
-          {props.ambitionList.map((ambition, index) =>
+          {props?.ambitionList?.map((ambition, index) =>
             index % 2 == 0 ? (
               <div key={index} className='grid grid-cols-1 sm:grid-cols-2 pb-20'>
                 <div className='block mb-6 sm:hidden'>

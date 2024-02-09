@@ -11,7 +11,7 @@ export default function ThemaCard({ themaCards }) {
           role='list'
           className='grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4 sm:gap-x-4 max-w-8xl relative z-0 h-[400px]'
         >
-          {themaCards.map((thema, id) => (
+          {themaCards?.map((thema, id) => (
             <Link href={`/${thema.transitionAgenda}/${thema.slug}`} key={id}>
               <li className='relative w-full rounded-cl h-[400px] group overflow-hidden flex flex-col'>
                 <div className='object-cover rounded-cl w-full'>
@@ -64,7 +64,7 @@ export default function ThemaCard({ themaCards }) {
         </ul>
       </div>
       <div className='block sm:hidden'>
-        {themaCards.map((thema, id) => (
+        {themaCards?.map((thema, id) => (
           <Link key={id} href={`/${thema.transitionAgenda}/${thema.slug}`}>
             <div className='h-24 w-full rounded-cl bg-green-600 shadow my-6'>
               <div className='flex items-center justify-start'>
