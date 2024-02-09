@@ -57,5 +57,5 @@ export const schemaTypes = [
   agendaItem,
   productChainAmbition,
   productChainImpact,
-  linkObject
+  linkObject,
 ];
