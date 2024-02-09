@@ -36,7 +36,7 @@ export default {
     },
     {
       title: 'Slide out content',
-      name: 'disclosureContentt',
+      name: 'disclosureContent',
       type: 'array',
       of: [
         {
