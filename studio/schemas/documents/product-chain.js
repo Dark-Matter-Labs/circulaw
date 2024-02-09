@@ -70,8 +70,9 @@ export default {
     {
       title: 'Links',
       name: 'pcLinks',
-      type: 'text',
+      type: 'array',
       description: 'Links at the bottom',
+      of: [{type: 'linkObject'}],
       group: 'editableContent',
     },
   ],

@@ -28,7 +28,52 @@ export default {
           type: 'string',
         },
       ],
-    }, // TODO: add tool tip content
+    },
+    {
+      title: 'Slide out title',
+      name: 'disclosureTitle',
+      type: 'string',
+    },
+    {
+      title: 'Slide out content',
+      name: 'disclosureContentt',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          styles: [{ title: 'normal', value: 'normal' },             { title: 'H2', value: 'h2' },
+        ],
+          lists: [
+            { title: 'Bullet', value: 'bullet' },
+            { title: 'Number', value: 'number' },
+          ],
+          marks: {
+            decorators: [{ title: 'Strong', value: 'strong' },
+            { title: 'Emphasis', value: 'em' },],
+            annotations: [
+              {
+                title: 'URL',
+                name: 'link',
+                type: 'object',
+                fields: [
+                  {
+                    title: 'URL',
+                    name: 'href',
+                    type: 'url',
+                  },
+                  {
+                    title: 'Open in new window',
+                    name: 'blank',
+                    type: 'boolean',
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      ],
+    },
+  
   ],
   preview: {
     select: {

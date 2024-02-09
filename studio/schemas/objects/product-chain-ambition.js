@@ -29,6 +29,17 @@ export default {
         },
       ],
     },
+    {
+      title: 'Button text',
+      name: 'buttonText',
+      type: 'string',
+    },
+    {
+      title: 'Button link',
+      name: 'buttonLink',
+      type: 'url',
+      validation: (Rule) => Rule.uri({ scheme: ['http', 'https'] }),
+    },
   ],
   preview: {
     select: {

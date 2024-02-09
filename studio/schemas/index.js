@@ -25,6 +25,7 @@ import newsCard from './objects/news-card';
 import agendaItem from './objects/agenda-item';
 import productChainAmbition from './objects/product-chain-ambition';
 import productChainImpact from './objects/product-chain-impact';
+import linkObject from './objects/link-object';
 
 export const schemaTypes = [
   // DOCUMENT TYPES
@@ -56,4 +57,5 @@ export const schemaTypes = [
   agendaItem,
   productChainAmbition,
   productChainImpact,
+  linkObject
 ];
