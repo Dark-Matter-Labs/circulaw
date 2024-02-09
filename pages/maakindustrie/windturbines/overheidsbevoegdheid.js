@@ -3,7 +3,7 @@ import Layout from '@/components/layouts/layout';
 import WelkeLayout from '@/components/layouts/welke-layout';
 import WindmillIcon from '@/public/icons/windmill.png';
 import windmillImageMob from '@/public/bevoegdheden/bevoegdheden-windmill.png';
-import { creatQuery } from '@/lib/queries';
+import { govLevelQueryFunction } from '@/lib/queries';
 
 const thema = 'windturbines';
 
@@ -30,10 +30,10 @@ export default function InfoPage({ ...props }) {
 }
 
 export async function getStaticProps() {
-  const allRegionLaws = await client.fetch(creatQuery(thema).allRegions);
-  const natLaws = await client.fetch(creatQuery(thema).national);
-  const provLaws = await client.fetch(creatQuery(thema).provincial);
-  const gemLaws = await client.fetch(creatQuery(thema).local);
+  const allRegionLaws = await client.fetch(govLevelQueryFunction(thema).allRegions);
+  const natLaws = await client.fetch(govLevelQueryFunction(thema).national);
+  const provLaws = await client.fetch(govLevelQueryFunction(thema).provincial);
+  const gemLaws = await client.fetch(govLevelQueryFunction(thema).local);
   return {
     props: {
       allRegionLaws: allRegionLaws,

@@ -4,22 +4,24 @@ import SimpleThemaLayout from '@/components/layouts/simple-thema-layout';
 import { client } from '@/lib/sanity';
 import { simpleThemaQueryFunction } from '@/lib/queries';
 
-export default function Meubels({ thema, length, instruments }) {
+export default function Eiwittransitie({ thema, length, instruments }) {
   useEffect(() => {
     localStorage.clear();
   });
 
   return (
-    <Layout title='CircuLaw - Meubels'>
+    <Layout title='CircuLaw - Eiwittransitie'>
       <SimpleThemaLayout thema={thema} numberOfLaws={length} instruments={instruments} />
     </Layout>
   );
 }
 
 export async function getStaticProps() {
-  const length = await client.fetch(simpleThemaQueryFunction('meubels').length);
-  const thema = await client.fetch(simpleThemaQueryFunction('meubels').themaQuery);
-  const instruments = await client.fetch(simpleThemaQueryFunction('meubels').instrumentsQuery);
+  const length = await client.fetch(simpleThemaQueryFunction('eiwittransitie').length);
+  const thema = await client.fetch(simpleThemaQueryFunction('eiwittransitie').themaQuery);
+  const instruments = await client.fetch(
+    simpleThemaQueryFunction('eiwittransitie').instrumentsQuery,
+  );
   return {
     props: {
       thema,

@@ -112,6 +112,8 @@ export default {
           { title: 'Voedselverspilling', value: 'voedselverspilling' }, // need to change to reference
           { title: 'Meubels', value: 'meubels' }, // need to change to reference
           { title: 'Woningen', value: 'woningen' }, // need to change to reference
+          { title: 'Kunstgrasvelden', value: 'kunstgrasvelden' }, // need to change to reference
+          { title: 'Eiwittransitie', value: 'eiwittransitie' }, // need to change to reference
         ],
         layout: 'dropdown',
       },

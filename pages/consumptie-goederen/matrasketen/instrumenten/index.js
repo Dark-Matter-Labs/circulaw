@@ -2,19 +2,20 @@ import Layout from '/components/layouts/layout';
 import MatrassenIcon from '@/public/icons/matressIcon.svg';
 import MeasuresLayout from '@/components/layouts/measures-layout';
 import { client } from '@/lib/sanity';
-import { matrassenQueries } from '@/lib/queries';
+import { themaQueryFunction, instrumentListPageFunction } from '@/lib/queries';
 
-export default function Measures({ totalNumberOfLaws }) {
+export default function Measures({ numberOfInstruments, instruments }) {
   return (
     <Layout title='CircuLaw - Matrasketen'>
       <MeasuresLayout
-        totalNumberOfLaws={totalNumberOfLaws}
+        totalNumberOfLaws={numberOfInstruments}
         title='Lijst van alle matrasketen instrumenten'
         thema='matrasketen'
         heading='Instrumenten om de circulariteit van de matrasketen te bevorderen'
         // introPara={`We hebben ${totalNumberOfLaws} kansrijke instrumenten gevonden die je kunt inzetten als het gaat om matrassen. Met sommige van deze instrumenten is al praktijkervaring opgedaan, met andere nog niet. Ga aan de slag! Met jouw ervaringen help je anderen weer verder.`}
         icon={MatrassenIcon}
         searchTitle='Zoek in matrasketen'
+        instruments={instruments}
       />
     </Layout>
   );
@@ -22,6 +23,7 @@ export default function Measures({ totalNumberOfLaws }) {
 
 // move fetching of laws here
 export async function getStaticProps() {
-  const totalNumberOfLaws = await client.fetch(matrassenQueries.matrassenLength);
-  return { props: { totalNumberOfLaws }, revalidate: 1 };
+  const numberOfInstruments = await client.fetch(themaQueryFunction('matrasketen').length);
+  const instruments = await client.fetch(instrumentListPageFunction('matrasketen'));
+  return { props: { numberOfInstruments, instruments }, revalidate: 1 };
 }
