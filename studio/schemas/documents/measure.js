@@ -82,42 +82,21 @@ export default {
     {
       title: 'Transitie-agenda',
       name: 'transitionAgenda',
-      type: 'string',
+      type: 'reference',
+      group: 'high-level',
       description:
         'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
       validation: (Rule) => Rule.required(),
-      options: {
-        list: [
-          { title: 'Biomassa en voedsel', value: 'biomassa-en-voedsel' },
-          { title: 'Kunststoffen', value: 'kunststoffen' },
-          { title: 'Consumptiegoederen', value: 'consumptie-goederen' },
-          { title: 'Bouw', value: 'bouw' },
-          { title: 'Maakindustrie', value: 'maakindustrie' },
-        ], // <-- predefined values
-        layout: 'dropdown', // <-- defaults to 'dropdown'
-      },
-      group: 'high-level',
+      to: [{type: 'transitionAgenda'}]
     },
     {
       title: 'Thema',
       name: 'thema',
-      type: 'string',
+      type: 'reference',
       description: 'Selecteer het thema waaronder dit instrument valt.',
       validation: (Rule) => Rule.required(),
-      options: {
-        list: [
-          { title: 'Houtbouw', value: 'houtbouw' }, // need to change to refernece
-          { title: 'Circulaire windturbines', value: 'windturbines' }, // need to change to reference
-          { title: 'Matrassen', value: 'matrasketen' }, // need to change to reference
-          { title: 'Voedselverspilling', value: 'voedselverspilling' }, // need to change to reference
-          { title: 'Meubels', value: 'meubels' }, // need to change to reference
-          { title: 'Woningen', value: 'woningen' }, // need to change to reference
-          { title: 'Kunstgrasvelden', value: 'kunstgrasvelden' }, // need to change to reference
-          { title: 'Eiwittransitie', value: 'eiwittransitie' }, // need to change to reference
-        ],
-        layout: 'dropdown',
-      },
       group: 'high-level',
+      to: [{type: 'thema'}, {type: 'simpleThema'}]
     },
     {
       title: 'Bevat extra info',

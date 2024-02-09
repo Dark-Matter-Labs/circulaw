@@ -33,7 +33,7 @@ export const Structure = (S) =>
                   S.documentList()
                     .title('Houtbouw Measures')
                     .filter(
-                      '_type == "measure" &&  thema == "houtbouw-stimuleren" || thema == "houtbouw"',
+                        '_type == "measure" && thema->slug.current == "houtbouw"',
                     ),
                 ),
               S.listItem()
@@ -43,7 +43,7 @@ export const Structure = (S) =>
                   S.documentList()
                     .title('Circulaire windturbines measures')
                     .filter(
-                      '_type == "measure" &&  thema == "circulaire-windturbines" || thema == "windturbines"',
+                      '_type == "measure" && thema->slug.current == "windturbines"',
                     ),
                 ),
               S.listItem()
@@ -53,7 +53,7 @@ export const Structure = (S) =>
                   S.documentList()
                     .title('Circulaire matrasketen measures')
                     .filter(
-                      '_type == "measure" &&  thema == "circulaire-matrasketen" || thema == "matrasketen"',
+                      '_type == "measure" && thema->slug.current == "matrasketen"',
                     ),
                 ),
               S.listItem()
@@ -62,7 +62,8 @@ export const Structure = (S) =>
                 .child(
                   S.documentList()
                     .title('Voedselverspilling')
-                    .filter('_type == "measure" && thema == "voedselverspilling"'),
+                    .filter(
+                      '_type == "measure" && thema->slug.current == "voedselverspilling"'),
                 ),
               S.listItem()
                 .title('Meubels')
@@ -70,7 +71,7 @@ export const Structure = (S) =>
                 .child(
                   S.documentList()
                     .title('Meubels')
-                    .filter('_type == "measure" && thema == "meubels"'),
+                    .filter( '_type == "measure" && thema->slug.current == "meubels"'),
                 ),
               S.listItem()
                 .title('Woningen')
@@ -78,7 +79,7 @@ export const Structure = (S) =>
                 .child(
                   S.documentList()
                     .title('Woningen')
-                    .filter('_type == "measure" && thema == "woningen"'),
+                    .filter('_type == "measure" && thema->slug.current == "woningen"'),
                 ),
               S.listItem()
                 .title('Kunstgrasvelden')
@@ -86,7 +87,7 @@ export const Structure = (S) =>
                 .child(
                   S.documentList()
                     .title('Kunstgrasvelden')
-                    .filter('_type == "measure" && thema == "kunstgrasvelden"'),
+                    .filter('_type == "measure" && thema->slug.current == "kunstgrasvelden"'),
                 ),
               S.listItem()
                 .title('Eiwittransitie')
@@ -94,7 +95,7 @@ export const Structure = (S) =>
                 .child(
                   S.documentList()
                     .title('Eiwittransitie')
-                    .filter('_type == "measure" && thema == "eiwittransitie"'),
+                    .filter('_type == "measure" && thema->slug.current == "eiwittransitie"'),
                 ),
             ]),
         ),
