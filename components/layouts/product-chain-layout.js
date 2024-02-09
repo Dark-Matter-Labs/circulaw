@@ -57,7 +57,7 @@ export default function ThemeLayout({ ...props }) {
                     <div>
                       <p className='pt-4 p-base'>{impact.detail}</p>
                     </div>
-                    <PCTooltip title = {impact.disclosureTitle} content ={impact.disclosureContent}>
+                    <PCTooltip title={impact.disclosureTitle} content={impact.disclosureContent}>
                       <p className='pt-8 p-base-bold  text-green-800'>{impact.question}</p>
                     </PCTooltip>
                   </div>
@@ -67,29 +67,30 @@ export default function ThemeLayout({ ...props }) {
           </div>
         </div>
         <div className='global-margin pt-14  bg-white'>
-          <h2 className='p-6xl-semibold text-green-800 pb-10'>
-            De voedsel-ambities in nederland
-          </h2>
+          <h2 className='p-6xl-semibold text-green-800 pb-10'>De voedsel-ambities in nederland</h2>
           {props.ambitionList.map((ambition, index) =>
             index % 2 == 0 ? (
               <div key={index} className='grid grid-cols-1 sm:grid-cols-2 pb-20'>
-                   <div className='block mb-6 sm:hidden'>
+                <div className='block mb-6 sm:hidden'>
                   <Image
                     src={urlFor(ambition?.image).url()}
                     alt='ambition illustration'
                     height={356}
                     width={542}
                   />
-                  </div>
+                </div>
                 <div>
-                  <h4 className='p-2xl-semibold sm:3xl-semibold text-green-800'>{ambition.title}</h4>
+                  <h4 className='p-2xl-semibold sm:3xl-semibold text-green-800'>
+                    {ambition.title}
+                  </h4>
                   <p className='p-xl pt-4 max-w-xl pb-4'>{ambition.detail}</p>
-               {ambition.buttonText && 
-                <Link href={ambition.buttonLink}>
-                  <CustomButton color='lightGreenBackground'>
-                    {ambition.buttonText}
-                  </CustomButton>
-                  </Link>}
+                  {ambition.buttonText && (
+                    <Link href={ambition.buttonLink}>
+                      <CustomButton color='lightGreenBackground'>
+                        {ambition.buttonText}
+                      </CustomButton>
+                    </Link>
+                  )}
                 </div>
                 <div className='hidden sm:block'>
                   <Image
@@ -103,18 +104,26 @@ export default function ThemeLayout({ ...props }) {
             ) : (
               <div key={ambition.title} className='grid grid-cols-1 sm:grid-cols-2 pb-20'>
                 <div>
-                  <Image src={ambition.image} alt='ambition illustration' height={356}
-                    width={542} className='mb-6'/>
+                  <Image
+                    src={ambition.image}
+                    alt='ambition illustration'
+                    height={356}
+                    width={542}
+                    className='mb-6'
+                  />
                 </div>
                 <div>
-                  <h4 className='p-2xl-semibold sm:3xl-semibold text-green-800'>{ambition.title}</h4>
+                  <h4 className='p-2xl-semibold sm:3xl-semibold text-green-800'>
+                    {ambition.title}
+                  </h4>
                   <p className='p-xl pt-4 max-w-xl pb-4'>{ambition.detail}</p>
-                  {ambition.buttonText && 
-                <Link href={ambition.buttonLink}>
-                  <CustomButton color='lightGreenBackground'>
-                    {ambition.buttonText}
-                  </CustomButton>
-                  </Link>}
+                  {ambition.buttonText && (
+                    <Link href={ambition.buttonLink}>
+                      <CustomButton color='lightGreenBackground'>
+                        {ambition.buttonText}
+                      </CustomButton>
+                    </Link>
+                  )}
                 </div>
               </div>
             ),
@@ -122,22 +131,18 @@ export default function ThemeLayout({ ...props }) {
         </div>
         <div className='pt-14 pb-10 bg-grey-150'>
           <div className='global-margin'>
-            <h2 className='p-6xl-semibold text-green-800 pb-10'>
-              Duik nog dieper in de materie
-            </h2>
+            <h2 className='p-6xl-semibold text-green-800 pb-10'>Duik nog dieper in de materie</h2>
             <div className='newlineDisplay p-base -mt-2 mb-6'>
               <ul className='list-disc pl-6 p-base'>
                 {props?.links?.map((link, id) => (
-                    <li className='py-0.5' key={id}>
+                  <li className='py-0.5' key={id}>
                     <a
                       className='text-green-500 inline link-interaction'
                       href={link.link}
                       target='_blank'
                       rel='noreferrer'
                     >
-                      <span className='link-base link-interaction'>
-                        {link.linkText}
-                      </span>
+                      <span className='link-base link-interaction'>{link.linkText}</span>
                     </a>
                   </li>
                 ))}

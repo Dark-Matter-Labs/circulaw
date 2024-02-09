@@ -366,7 +366,7 @@ export default function Nav3(props) {
                                         <MobileDisclosure
                                           transitionAgenda='Voedsel en biomassa'
                                           themas={biomassaEnVoedselThemas}
-                                          slug ='biomassa-en-voedsel'
+                                          slug='biomassa-en-voedsel'
                                         />
                                         <MobileDisclosure
                                           transitionAgenda='Maakindustrie'
@@ -501,7 +501,11 @@ export default function Nav3(props) {
                               router.pathname === '/' ? 'bg-green-500' : 'bg-gray-300'
                             } h-full flex flex-cols-5 gap-[1px] relative`}
                           >
-                            <DesktopNavCard transitionAgenda='bouw' themas={bouwThemas} slug='bouw' />
+                            <DesktopNavCard
+                              transitionAgenda='bouw'
+                              themas={bouwThemas}
+                              slug='bouw'
+                            />
                             <DesktopNavCard
                               transitionAgenda='Consumptiegoederen'
                               themas={consumptiegoederenThemas}
@@ -510,7 +514,7 @@ export default function Nav3(props) {
                             <DesktopNavCard
                               transitionAgenda='Voedsel en biomassa'
                               themas={biomassaEnVoedselThemas}
-                              slug ='biomassa-en-voedsel'
+                              slug='biomassa-en-voedsel'
                             />
                             <DesktopNavCard
                               transitionAgenda='Maakindustrie'

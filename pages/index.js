@@ -3,11 +3,7 @@ import Layout from '@/components/layouts/layout';
 import { client } from '@/lib/sanity';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
-import {
-  aboutSectionQuerie,
-  homePageHeaderQuery,
-  newsItems,
-} from '@/lib/queries';
+import { aboutSectionQuerie, homePageHeaderQuery, newsItems } from '@/lib/queries';
 import NewThemaSuggestion from '@/components/new-thema-suggestion';
 // import NewsItems from '@/components/news-items';
 import HomePageAboutSection from '@/components/home-page-about-section';
@@ -16,22 +12,30 @@ import FeaturedCard from '@/components/news-page/featured-card';
 import LinkIcon from '@/components/link-icon';
 import PCHomePage from '@/components/product-chain-page/product-chain-homepage';
 
-export default function Index({
-  aboutSection,
-  homePageHeader,
-  footerText,
-  newsData,
-}) {
+export default function Index({ aboutSection, homePageHeader, footerText, newsData }) {
   return (
     <Layout page='home' homePageHeader={homePageHeader} footerText={footerText}>
       <div className='bg-grey-100 sm:pb-12 -z-50' name='thema'>
         <div className='global-margin -z-20'>
           <h2 className='p-5xl-semibold sm:p-7xl-semibold pt-8 text-green-600 border-grey-600 border-b pb-6'>
-             Ontdek direct onze instrumenten
+            Ontdek direct onze instrumenten
           </h2>
           <p className='p-xl max-w-[750px] py-4 whitespace-normal'>
-          De overheid heeft 5 productketens gekozen voor het <Link className='whitespace-normal text-green-500' href='https://www.rijksoverheid.nl/documenten/beleidsnotas/2023/02/03/nationaal-programma-circulaire-economie-2023-2030'><span className='link-interaction whitespace-normal font-semibold'>Nationaal Programma Circulaire Economie 2023-2030<span className=''><LinkIcon  /></span>. </span></Link> {' '}
-          Deze ketens zijn belangrijk voor de economie, maar belasten ook het milieu. In transitieagenda’s staat hoe deze ketens in 2050 circulair kunnen zijn
+            De overheid heeft 5 productketens gekozen voor het{' '}
+            <Link
+              className='whitespace-normal text-green-500'
+              href='https://www.rijksoverheid.nl/documenten/beleidsnotas/2023/02/03/nationaal-programma-circulaire-economie-2023-2030'
+            >
+              <span className='link-interaction whitespace-normal font-semibold'>
+                Nationaal Programma Circulaire Economie 2023-2030
+                <span className=''>
+                  <LinkIcon />
+                </span>
+                .{' '}
+              </span>
+            </Link>{' '}
+            Deze ketens zijn belangrijk voor de economie, maar belasten ook het milieu. In
+            transitieagenda’s staat hoe deze ketens in 2050 circulair kunnen zijn
           </p>
           <div className='pt-4 -z-20'>
             <PCHomePage />

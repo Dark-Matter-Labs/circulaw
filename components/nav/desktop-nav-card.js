@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-export default function DesktopNavCard({ transitionAgenda, themas , slug}) {
+export default function DesktopNavCard({ transitionAgenda, themas, slug }) {
   const router = useRouter();
   return (
     <div
@@ -14,7 +14,7 @@ export default function DesktopNavCard({ transitionAgenda, themas , slug}) {
       }  p-lg-semibold first-letter:uppercase `}
     >
       <Link href={`/${slug}`} className='hover:underline'>
-      {transitionAgenda} {'>'}
+        {transitionAgenda} {'>'}
       </Link>
       {themas.map((thema) => (
         <div className='mt-2' key={thema.name}>

@@ -25,9 +25,9 @@ export default function MobileDisclosure({ transitionAgenda, themas, slug }) {
               <Disclosure.Panel className='p-base text-green-600'>
                 <ul>
                   <Link href={`/${slug}`} onClick={close}>
-                  <li className='pt-4 w-full flex items-center ml-4'>
-                    {transitionAgenda} - overzicht
-                  </li>
+                    <li className='pt-4 w-full flex items-center ml-4'>
+                      {transitionAgenda} - overzicht
+                    </li>
                   </Link>
                   {themas.map((thema) => (
                     <li key={thema.name} className=' pt-4 w-full flex items-center ml-4'>

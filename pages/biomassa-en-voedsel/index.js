@@ -19,8 +19,12 @@ export default function Biomassa({ title, count, themaList, impactList, ambition
 }
 
 export async function getStaticProps() {
-  const productChain = await client.fetch(productChainQueryFunction('biomassa-en-voedsel').productChainPageQuery);
-  const instrumentCount = await client.fetch(productChainQueryFunction('biomassa-en-voedsel').totalNumberOfInstruments);
+  const productChain = await client.fetch(
+    productChainQueryFunction('biomassa-en-voedsel').productChainPageQuery,
+  );
+  const instrumentCount = await client.fetch(
+    productChainQueryFunction('biomassa-en-voedsel').totalNumberOfInstruments,
+  );
   const themalist = await client.fetch(productChainQueryFunction('biomassa-en-voedsel').themaData);
   return {
     props: {
@@ -29,7 +33,7 @@ export async function getStaticProps() {
       themaList: themalist,
       impactList: productChain.impactItems,
       ambitionList: productChain.ambitionItems,
-      links: productChain.pcLinks
+      links: productChain.pcLinks,
     },
     revalidate: 1,
   };

@@ -19,7 +19,9 @@ export default function Biomassa({ title, count, themaList, impactList, ambition
 
 export async function getStaticProps() {
   const productChain = await client.fetch(productChainQueryFunction('bouw').productChainPageQuery);
-  const instrumentCount = await client.fetch(productChainQueryFunction('bouw').totalNumberOfInstruments);
+  const instrumentCount = await client.fetch(
+    productChainQueryFunction('bouw').totalNumberOfInstruments,
+  );
   const themalist = await client.fetch(productChainQueryFunction('bouw').themaData);
   return {
     props: {

@@ -84,13 +84,11 @@ export default function PCTooltip({ children, icon, title, content }) {
                       <div className='px-4 sm:px-6'>
                         <Dialog.Title className='text-gray-900'>
                           {' '}
-                          <h2 className='mobile sm:desktop'>
-                            {title}
-                          </h2>
+                          <h2 className='mobile sm:desktop'>{title}</h2>
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>
-                        <PortableText value={content} components={PCtooltipComponents}/>
+                        <PortableText value={content} components={PCtooltipComponents} />
                       </div>
                     </div>
                   </Dialog.Panel>
