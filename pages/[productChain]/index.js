@@ -2,66 +2,76 @@
 
 import Layout from '@/components/layouts/layout';
 import PCLayout from '@/components/layouts/product-chain-layout';
-import { productChainQueryFunction } from '@/lib/queries';
-import { useRouter } from 'next/router';
-import useSWR from 'swr';
-import { groq } from 'next-sanity';
-import { fetcher } from '@/utils/swr-fetcher';
+import { client } from '@/lib/sanity';
 
-export default function ProductChainPage() {
-  const router = useRouter()
-  const productChain = router.query.productChain
-  const {data: productChainData} = useSWR(groq`${productChainQueryFunction(productChain).productChainPageQuery}` , fetcher);
-  const {data: instrumentCount} = useSWR(groq`${productChainQueryFunction(productChain).totalNumberOfInstruments}`, fetcher)
-  const {data: themaList} = useSWR(groq`${productChainQueryFunction(productChain).themaData}`, fetcher)
-  console.log(themaList, 'themalist')
-  console.log(instrumentCount, 'icount')
+// move these to a list of queries in query.js
+
+const pathsQuery = `
+*[_type == "productChain" && defined(slug.current)][].slug.current
+`
+const number = `
+count(*[_type == "measure" && transitionAgenda->slug.current == $productChain])
+`
+
+const query = `
+*[_type == "transitionAgenda" && slug.current == $productChain][0] {
+  ...,
+  "impactItems": impactItems[]{
+    ...,
+    "image": image.asset->.url,
+  },
+  "ambitionItems": ambitionItems[]{
+    ...,
+    "image": image.asset->.url,
+  },
+}
+`
+const themaCardQuery = `
+*[_type in ["thema", "simpleThema"] && transitionAgenda->slug.current == $productChain] {
+  themaName,
+  homePageCardText,
+  "slug": slug.current,
+  transitionAgenda,
+  "image": homePageCardImage.asset->.url,
+  "mobileCardImage": homePageCardImageMobile.asset->url,
+  "count": count(*[_type == "measure" && thema->slug.current == ^.slug.current || simpleThema->slug.current == ^.slug.current]),
+}
+`
+
+export default function ProductChainPage({productChainData, instrumentCount, themaCards}) {
   return (
     <Layout title='CircuLaw - Voedsel en biomassa'>
       <PCLayout
-        title={productChainData?.pcName}
-        totalInstruments={instrumentCount}
-        themaList={themaList}
-        impactList={productChainData?.impactItems}
-        ambitionList={productChainData?.ambitionItems}
-        links={productChainData?.pcLinks}
+       title={productChainData?.pcName}
+       totalInstruments={instrumentCount}
+       themaList={themaCards}
+       impactList={productChainData?.impactItems}
+       ambitionList={productChainData?.ambitionItems}
+       links={productChainData?.pcLinks}
       />
     </Layout>
   );
 }
 
-{/* 
+
 export async function getStaticPaths() {
-  const productChainPaths = await client.fetch(pathsQuery)
-  console.log(productChainPaths)
+  const productChains = await client.fetch(pathsQuery)
   return {
-    paths: productChainPaths.map((productChain) => ({ params: { productChain } })),
+    paths: productChains.map((productChain) => ({ params: { productChain } })),
     fallback: true,
-  };
+  }
 }
 
-export async function getStaticProps({params}) {
-  console.log(params)
-  const productChainx = await client.fetch(
-    productChainQueryFunction('bouw').productChainPageQuery,
-  );
-  const instrumentCount = await client.fetch(
-    productChainQueryFunction('bouw').totalNumberOfInstruments,
-  );
-  const themalist = await client.fetch(productChainQueryFunction('bouw').themaData);
+
+export async function getStaticProps({ params }) {
+  const productChain = { productChain: params?.productChain ?? '' };
+  const productChainData = await client.fetch(query, productChain);
+  console.log(productChain.productChain)
+  const instrumentCount = await client.fetch(number, productChain)
+  const themaCards = await client.fetch(themaCardQuery, productChain)
   return {
-    props: {
-      title: productChainx.pcName,
-      count: instrumentCount,
-      themaList: themalist,
-      impactList: productChainx.impactItems,
-      ambitionList: productChainx.ambitionItems,
-      links: productChainx.pcLinks,
-    },
+    props: {  productChainData, instrumentCount, themaCards },
     revalidate: 1,
   };
 }
 
-
-
-*/}
