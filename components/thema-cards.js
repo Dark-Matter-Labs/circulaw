@@ -53,7 +53,7 @@ export default function ThemaCard({ themaCards }) {
                 </p>
                 <div className='flex grow self-baseline'>
                   <div href='/contact' target='_blank' className='self-end'>
-                    <span className='text-grey-800 bg-grey-100 px-4 py-2 rounded-[56px] link-base-u0 break-words hover:bg-green-200 hover:text-green-600 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+                    <span className='text-grey-800 bg-grey-100 px-4 py-2 rounded-[56px] link-base break-words hover:bg-green-200 hover:text-green-600 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                       Houd me op de hoogte{' '}
                     </span>
                   </div>
@@ -97,7 +97,7 @@ export default function ThemaCard({ themaCards }) {
               </p>
               <div className='flex grow self-baseline pt-6'>
                 <div href='/contact' target='_blank' className='self-end'>
-                  <div className='text-grey-800 bg-grey-100 px-4 py-2 rounded-[56px] link-base-u0 break-words hover:bg-green-200 hover:text-green-600 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+                  <div className='text-grey-800 bg-grey-100 px-4 py-2 rounded-[56px] link-base break-words hover:bg-green-200 hover:text-green-600 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                     Houd me op de hoogte{' '}
                   </div>
                 </div>
