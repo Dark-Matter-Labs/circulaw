@@ -7,6 +7,7 @@ import {
   GiTable,
   GiGrass,
   GiBeanstalk,
+  GiEuropeanFlag
 } from 'react-icons/gi';
 import { GrNavigate } from 'react-icons/gr';
 import { FcAbout } from 'react-icons/fc';
@@ -98,6 +99,10 @@ export const Structure = (S) =>
                 ),
             ]),
         ),
+        S.listItem()
+        .title('EU Law')
+        .icon(GiEuropeanFlag)
+        .child(S.documentList().title('EU Law').filter('_type == "euLaw"')),
       S.listItem()
         .title('About Pages')
         .icon(FcAbout)
