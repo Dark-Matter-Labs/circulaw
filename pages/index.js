@@ -27,6 +27,11 @@ export default function Index({
     <Layout page='home' homePageHeader={homePageHeader} footerText={footerText}>
       <div className='bg-grey-100 sm:pb-12 -z-50' name='thema'>
         <div className='global-margin -z-20'>
+          <div className='h-32 bg-red-300'>
+            <Link href='/eu-wetgeving' className='w-full h-full'>
+              EU LAW LINK
+            </Link>
+          </div>
           <h2 className='p-5xl-semibold sm:p-7xl-semibold pt-8 text-green-600 border-grey-600 border-b pb-6'>
             Thema’s
           </h2>
