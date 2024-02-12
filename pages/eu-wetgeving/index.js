@@ -33,7 +33,7 @@ export default function EULaw() {
           </div>
         </div>
       </div>
-      <div className='h-96 grid grid-cols-1 md:grid-cols-2 gap-6 global-margin my-12'>
+      <div className=' grid grid-cols-1 md:grid-cols-2 gap-6 global-margin my-12'>
         <div className='bg-green-300/50 rounded-cl p-4'>
           <h2 className='p-5xl-semibold'>The nature restoration law</h2>
           <p className='p-base my-2'>
@@ -66,8 +66,70 @@ export default function EULaw() {
             Bekijk deze wet {'>'}
           </div>
         </div>
-        <div className='bg-green-300/50 rounded-cl'>Law 2</div>
-        <div className='bg-green-300/50 rounded-cl'>law 3</div>
+        <div className='bg-green-300/50 rounded-cl p-4'>
+          <h2 className='p-5xl-semibold'>The nature restoration law</h2>
+          <p className='p-base my-2'>
+            The revised Batteries Regulation attempts to strengthens a common set of sustainability
+            obligations towards battery production which will reduce the environmental and social
+            impacts associated with the battery lifecycle as a whole.
+          </p>
+          <div className='p-xs-semibold text-green-300 mb-4'>Status</div>
+          <div className='border-y border-green-800 py-4 p-base'>
+            <div class='flex items-center mb-4'>
+              <span class='text-black'> Proposed</span>
+              <div class='flex-1'></div>
+              <span class='text-black'>In negotiations</span>
+              <div class='flex-1'></div>
+              <span class='text-black'>Adopted</span>
+              <div class='flex-1 '></div>
+              <span class='text-black '>Transposed</span>
+            </div>
+            <div class='flex items-center w-11/12 mx-auto'>
+              <span class='bg-green-800 rounded-full h-4 w-4'></span>
+              <div class='flex-1 border-t-2 border-green-800'></div>
+              <span class='bg-green-800 rounded-full h-4 w-4'></span>
+              <div class='flex-1 border-t-2 border-green-800'></div>
+              <span class='text-gray-500 bg-green-800 rounded-full h-4 w-4'></span>
+              <div class='flex-1 border-t-2 border-green-800'></div>
+              <span class='border-2 border-green-800 bg-white rounded-full h-4 w-4'></span>
+            </div>
+          </div>
+          <div className='flex items-center justify-center link-interaction mt-4 p-base-semibold'>
+            Bekijk deze wet {'>'}
+          </div>
+        </div>
+        <div className='bg-green-300/50 rounded-cl p-4'>
+          <h2 className='p-5xl-semibold'>The nature restoration law</h2>
+          <p className='p-base my-2'>
+            The revised Batteries Regulation attempts to strengthens a common set of sustainability
+            obligations towards battery production which will reduce the environmental and social
+            impacts associated with the battery lifecycle as a whole.
+          </p>
+          <div className='p-xs-semibold text-green-300 mb-4'>Status</div>
+          <div className='border-y border-green-800 py-4 p-base'>
+            <div class='flex items-center mb-4'>
+              <span class='text-black'> Proposed</span>
+              <div class='flex-1'></div>
+              <span class='text-black'>In negotiations</span>
+              <div class='flex-1'></div>
+              <span class='text-black'>Adopted</span>
+              <div class='flex-1 '></div>
+              <span class='text-black '>Transposed</span>
+            </div>
+            <div class='flex items-center w-11/12 mx-auto'>
+              <span class='bg-green-800 rounded-full h-4 w-4'></span>
+              <div class='flex-1 border-t-2 border-green-800'></div>
+              <span class='bg-green-800 rounded-full h-4 w-4'></span>
+              <div class='flex-1 border-t-2 border-green-800'></div>
+              <span class='text-gray-500 bg-green-800 rounded-full h-4 w-4'></span>
+              <div class='flex-1 border-t-2 border-green-800'></div>
+              <span class='border-2 border-green-800 bg-white rounded-full h-4 w-4'></span>
+            </div>
+          </div>
+          <div className='flex items-center justify-center link-interaction mt-4 p-base-semibold'>
+            Bekijk deze wet {'>'}
+          </div>
+        </div>
       </div>
     </Layout>
   );

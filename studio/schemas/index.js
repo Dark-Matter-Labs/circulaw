@@ -53,5 +53,5 @@ export const schemaTypes = [
   faqSection,
   newsCard,
   agendaItem,
-  euLawSection
+  euLawSection,
 ];
