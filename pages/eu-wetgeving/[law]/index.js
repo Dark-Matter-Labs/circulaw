@@ -22,10 +22,7 @@ const lawQuery = `
 
 export default function LawSummaryPage({ lawData }) {
     const router = useRouter()
-
     const query = router.query.tab ?? 'overzicht'
-
-    
    
   return (
     <Layout title='Law title'>
@@ -34,11 +31,11 @@ export default function LawSummaryPage({ lawData }) {
             <div className='pt-6'>
               <div className='p-2xs-bold text-green-600 bg-white w-min pl-2 pr-3 py-1.5 rounded-clSm flex flex-row whitespace-nowrap'>
                 <Link href='/' className=''>
-                  <span className='link-interaction'>Home</span>
-                  <span className='mx-2'>{'>'}</span>
+                  <span className='link-interaction'>Home <span className='mx-2'>{'>'}</span></span>
+                 
                 </Link>
                 <Link href='/eu-wetgeving'>
-                  <span className='capitalize link-interaction'>Eu wetgeving</span>
+                  <span className='capitalize link-interaction'>Eu wetgeving <span className='ml-2'>{'>'}</span></span>
                 </Link>
               </div>
             </div>
