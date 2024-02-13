@@ -3,11 +3,11 @@ import Link from 'next/link';
 import Layout from '@/components/layouts/layout';
 import { client } from '@/lib/sanity';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import ScrollPagesTabContent from '@/components/eu-law/europe-tab-content';
 
 // create component for each tab
 // can create individual ones for overview if need be,
-// build out logic for the PT to pagination
-//
 
 const pathsQuery = `
 *[_type =="euLaw" && defined(slug.current)][].slug.current
@@ -22,6 +22,12 @@ const lawQuery = `
 export default function LawSummaryPage({ lawData }) {
   const router = useRouter();
   const query = router.query.tab ?? 'overzicht';
+
+  const [selectedTab, setSelectedTab] = useState(query);
+
+  useEffect(() => {
+    setSelectedTab(query);
+  }, [query]);
 
   return (
     <Layout title='Law title'>
@@ -50,7 +56,9 @@ export default function LawSummaryPage({ lawData }) {
         <div className='global-margin'>
           <div className='flex flex-row gap-x-3 justify-start p-xl-semibold text-green-500 h-[62px] max-w-3xl'>
             <Link
-              className='bg-white h-full rounded-t-cl px-3 py-2 flex items-center'
+              className={`${
+                selectedTab === 'overzicht' ? 'underline' : ''
+              } bg-white h-full rounded-t-cl px-3 py-2 flex items-center`}
               href={{
                 pathname: `/eu-wetgeving/${lawData.slug.current}`,
                 query: { tab: 'overzicht' },
@@ -59,7 +67,9 @@ export default function LawSummaryPage({ lawData }) {
               Overzicht
             </Link>
             <Link
-              className='bg-white h-full rounded-t-cl px-3 py-2 min-w-[200px] flex items-center'
+              className={`${
+                selectedTab === 'verplichtingen-voor-europese-lidstaten' ? 'underline' : ''
+              } bg-white h-full rounded-t-cl px-3 py-2 flex items-center`}
               href={{
                 pathname: `/eu-wetgeving/${lawData.slug.current}`,
                 query: { tab: 'verplichtingen-voor-europese-lidstaten' },
@@ -68,7 +78,9 @@ export default function LawSummaryPage({ lawData }) {
               Verplichtingen voor Europese lidstaten
             </Link>
             <Link
-              className='bg-white h-full rounded-t-cl px-3 py-2 min-w-[250px] flex items-center'
+              className={`${
+                selectedTab === 'relevantie-voor-regionale-en-lokale-overheden' ? 'underline' : ''
+              } bg-white h-full rounded-t-cl px-3 py-2 flex items-center`}
               href={{
                 pathname: `/eu-wetgeving/${lawData.slug.current}`,
                 query: { tab: 'relevantie-voor-regionale-en-lokale-overheden' },
@@ -77,7 +89,9 @@ export default function LawSummaryPage({ lawData }) {
               Relevantie voor regionale en lokale overheden
             </Link>
             <Link
-              className='bg-white h-full rounded-t-cl px-3 py-2 min-w-[200px] flex items-center'
+              className={`${
+                selectedTab === 'relevantie-voor-de-circulaire-economie' ? 'underline' : ''
+              } bg-white h-full rounded-t-cl px-3 py-2 flex items-center`}
               href={{
                 pathname: `/eu-wetgeving/${lawData.slug.current}`,
                 query: { tab: 'relevantie-voor-de-circulaire-economie' },
@@ -91,11 +105,11 @@ export default function LawSummaryPage({ lawData }) {
 
       {query === 'overzicht' && <div className='h-96 global-margin'>Overzicht</div>}
       {query === 'verplichtingen-voor-europese-lidstaten' && (
-        <div className='h-96 global-margin'>verplichtingen-voor-europese-lidstaten</div>
+        <ScrollPagesTabContent content={lawData.europeContent} />
       )}
       {query === 'relevantie-voor-regionale-en-lokale-overheden' && (
-        <div className='h-96 global-margin'>relevantie-voor-regionale-en-lokale-overheden</div>
-      )}
+        <ScrollPagesTabContent content={lawData.europeContent} />
+        )}
       {query === 'relevantie-voor-de-circulaire-economie' && (
         <div className='h-96 global-margin'>relevantie-voor-de-circulaire-economie</div>
       )}
