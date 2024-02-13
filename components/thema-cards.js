@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { urlFor } from '@/lib/sanity';
 import { ArrowRightIcon } from '@heroicons/react/outline';
+import CustomButton from './custom-button';
 
 export default function ThemaCard({ themaCards }) {
   return (
@@ -9,12 +10,12 @@ export default function ThemaCard({ themaCards }) {
       <div className='hidden sm:block'>
         <ul
           role='list'
-          className='grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4 sm:gap-x-4 max-w-8xl relative z-0 h-[400px]'
+          className='grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4 sm:gap-x-4 max-w-8xl relative z-0'
         >
           {themaCards.map((thema, id) => (
             <Link href={`/${thema.transitionAgenda}/${thema.slug}`} key={id}>
               <li className='relative w-full rounded-cl h-[400px] group overflow-hidden flex flex-col'>
-                <div className='object-cover rounded-cl w-full'>
+                <div className='object-cover rounded-cl w-full max-h-[200px]'>
                   {thema?.image && (
                     <Image
                       className='rounded-t-cl fill'
@@ -40,10 +41,11 @@ export default function ThemaCard({ themaCards }) {
               </li>
             </Link>
           ))}
-          <li className='w-full h-[400px] flex-grow bg-green-800 hover:bg-green-600 rounded-cl shadow'>
+          <li className='w-full h-[400px] flex-grow bg-green-800 hover:bg-green-600 rounded-cl shadow group'>
             <Link href='/contact' className='w-full h-full'>
-              <div className='h-full w-full flex flex-col flex-grow p-8 '>
-                <h3 className='mobile sm:desktop pb-4 text-grey-100'>Nieuwe thema’s</h3>
+              <div className='h-full w-full flex flex-col flex-grow p-8 justify-between'>
+                <h3 className='mobile sm:desktop text-grey-100'>Nieuwe thema’s</h3>
+                <div>
                 <p className='p-md pt-4 text-grey-100'>
                   Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
                 </p>
@@ -51,12 +53,13 @@ export default function ThemaCard({ themaCards }) {
                   Schrijf je in op onze nieuwsbrief en blijf op de hoogte van de laatste
                   ontwikkelingen.
                 </p>
-                <div className='flex grow self-baseline'>
-                  <div href='/contact' target='_blank' className='self-end'>
-                    <span className='text-grey-800 bg-grey-100 px-4 py-2 rounded-[56px] link-base break-words hover:bg-green-200 hover:text-green-600 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+                </div>
+                <div className='flex justify-center'>
+                  <CustomButton color='darkGreenBG' >
+                    <Link href='/contact' target='_blank'>
                       Houd me op de hoogte{' '}
-                    </span>
-                  </div>
+                    </Link>
+                  </CustomButton>
                 </div>
               </div>
             </Link>
@@ -96,11 +99,11 @@ export default function ThemaCard({ themaCards }) {
                 ontwikkelingen.
               </p>
               <div className='flex grow self-baseline pt-6'>
-                <div href='/contact' target='_blank' className='self-end'>
-                  <div className='text-grey-800 bg-grey-100 px-4 py-2 rounded-[56px] link-base break-words hover:bg-green-200 hover:text-green-600 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
-                    Houd me op de hoogte{' '}
-                  </div>
-                </div>
+                    <CustomButton color='darkGreenBG' >
+                    <Link href='/contact' target='_blank'>
+                      Houd me op de hoogte{' '}
+                    </Link>
+                  </CustomButton>
               </div>
             </div>
           </Link>
