@@ -109,7 +109,7 @@ export default function LawSummaryPage({ lawData }) {
       )}
       {query === 'relevantie-voor-regionale-en-lokale-overheden' && (
         <ScrollPagesTabContent content={lawData.europeContent} />
-        )}
+      )}
       {query === 'relevantie-voor-de-circulaire-economie' && (
         <div className='h-96 global-margin'>relevantie-voor-de-circulaire-economie</div>
       )}
