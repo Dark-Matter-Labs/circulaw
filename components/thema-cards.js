@@ -46,16 +46,16 @@ export default function ThemaCard({ themaCards }) {
               <div className='h-full w-full flex flex-col flex-grow p-8 justify-between'>
                 <h3 className='mobile sm:desktop text-green-600'>Nieuwe thema’s</h3>
                 <div>
-                <p className='p-md pt-4 text-green-800'>
-                  Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
-                </p>
-                <p className='p-md pt-4 text-grenn-800'>
-                  Schrijf je in op onze nieuwsbrief en blijf op de hoogte van de laatste
-                  ontwikkelingen.
-                </p>
+                  <p className='p-md pt-4 text-green-800'>
+                    Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
+                  </p>
+                  <p className='p-md pt-4 text-grenn-800'>
+                    Schrijf je in op onze nieuwsbrief en blijf op de hoogte van de laatste
+                    ontwikkelingen.
+                  </p>
                 </div>
                 <div className='flex justify-center'>
-                  <CustomButton color='darkGreenBG' >
+                  <CustomButton color='darkGreenBG'>
                     <Link href='/contact' target='_blank'>
                       Houd me op de hoogte{' '}
                     </Link>
@@ -99,11 +99,11 @@ export default function ThemaCard({ themaCards }) {
                 ontwikkelingen.
               </p>
               <div className='flex grow self-baseline pt-6'>
-                    <CustomButton color='darkGreenBG' >
-                    <Link href='/contact' target='_blank'>
-                      Houd me op de hoogte{' '}
-                    </Link>
-                  </CustomButton>
+                <CustomButton color='darkGreenBG'>
+                  <Link href='/contact' target='_blank'>
+                    Houd me op de hoogte{' '}
+                  </Link>
+                </CustomButton>
               </div>
             </div>
           </Link>
