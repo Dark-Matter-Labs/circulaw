@@ -41,15 +41,15 @@ export default function ThemaCard({ themaCards }) {
               </li>
             </Link>
           ))}
-          <li className='w-full h-[400px] flex-grow bg-green-800 hover:bg-green-600 rounded-cl shadow group'>
+          <li className='w-full h-[400px] flex-grow bg-grey-150 border border-grey-200 rounded-cl group'>
             <Link href='/contact' className='w-full h-full'>
               <div className='h-full w-full flex flex-col flex-grow p-8 justify-between'>
-                <h3 className='mobile sm:desktop text-grey-100'>Nieuwe thema’s</h3>
+                <h3 className='mobile sm:desktop text-green-600'>Nieuwe thema’s</h3>
                 <div>
-                <p className='p-md pt-4 text-grey-100'>
+                <p className='p-md pt-4 text-green-800'>
                   Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
                 </p>
-                <p className='p-md pt-4 text-grey-100'>
+                <p className='p-md pt-4 text-grenn-800'>
                   Schrijf je in op onze nieuwsbrief en blijf op de hoogte van de laatste
                   ontwikkelingen.
                 </p>
@@ -87,14 +87,14 @@ export default function ThemaCard({ themaCards }) {
             </div>
           </Link>
         ))}
-        <div className='w-full bg-green-800 hover:bg-green-600 rounded-cl shadow'>
+        <div className='w-full bg-grey-150 border border-grey-200 rounded-cl'>
           <Link href='/contact' className='w-full h-full'>
             <div className='h-full w-full flex flex-col justify-between flex-grow p-6'>
-              <h3 className='p-4xl-semibold pb-4 text-grey-100'>Nieuwe thema’s</h3>
-              <p className='p-base text-grey-100'>
+              <h3 className='p-4xl-semibold pb-4 text-green-600'>Nieuwe thema’s</h3>
+              <p className='p-base text-gren-800'>
                 Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
               </p>
-              <p className='p-base pt-4 text-grey-100'>
+              <p className='p-base pt-4 text-green-800'>
                 Schrijf je in op onze nieuwsbrief en blijf op de hoogte van de laatste
                 ontwikkelingen.
               </p>
