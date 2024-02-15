@@ -47,7 +47,7 @@ export default function ThemeLayout({ ...props }) {
                   >
                     <div>
                       <Image
-                        className='w-40 h-40'
+                        className='w-28 h-28'
                         src={urlFor(impact?.image).url()}
                         alt='impact image'
                         height={40}
