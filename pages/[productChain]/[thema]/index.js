@@ -13,7 +13,7 @@ const pathsQuery = `
 `;
 
 export default function ThemeIndexPage({ featuredLaws, thema, length, instruments }) {
-
+  
   useEffect(() => {
     localStorage.clear();
   });
