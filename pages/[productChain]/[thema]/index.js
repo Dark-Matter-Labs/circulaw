@@ -16,7 +16,6 @@ const pathsQuery = `
 
 export default function ThemeIndexPage({ featuredLaws, thema, length, instruments }) {
 
-console.log(thema)
   useEffect(() => {
     localStorage.clear();
   });

@@ -56,9 +56,7 @@ export default function ThemaCard({ themaCards }) {
                 </div>
                 <div className='flex justify-center'>
                   <CustomButton color='darkGreenBG'>
-                    <Link href='/contact' target='_blank'>
                       Houd me op de hoogte{' '}
-                    </Link>
                   </CustomButton>
                 </div>
               </div>
@@ -100,9 +98,7 @@ export default function ThemaCard({ themaCards }) {
               </p>
               <div className='flex grow self-baseline pt-6'>
                 <CustomButton color='darkGreenBG'>
-                  <Link href='/contact' target='_blank'>
                     Houd me op de hoogte{' '}
-                  </Link>
                 </CustomButton>
               </div>
             </div>

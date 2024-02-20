@@ -31,6 +31,7 @@ export default function Instrument({ data }) {
     window.addEventListener('scroll', changeEffect);
   }, []);
 
+  console.log(data)
   return (
     <div ref={ref} className='relative bg-grey-100'>
       <InstrumentHeader data={data} />
