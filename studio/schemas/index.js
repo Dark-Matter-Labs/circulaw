@@ -5,6 +5,7 @@ import siteConfig from './documents/site-config';
 import partners from './documents/partners';
 import englishPage from './documents/english-page';
 import thema from './documents/thema';
+import productChain from './documents/product-chain';
 import faq from './documents/faq';
 import simpleThema from './documents/simple-thema';
 import newsPage from './documents/news-page';
@@ -22,6 +23,9 @@ import faqItem from './objects/faq-item';
 import faqSection from './objects/faq-section';
 import newsCard from './objects/news-card';
 import agendaItem from './objects/agenda-item';
+import productChainAmbition from './objects/product-chain-ambition';
+import productChainImpact from './objects/product-chain-impact';
+import linkObject from './objects/link-object';
 
 export const schemaTypes = [
   // DOCUMENT TYPES
@@ -31,6 +35,7 @@ export const schemaTypes = [
   englishPage,
   partners,
   thema,
+  productChain,
   faq,
   simpleThema,
   newsPage,
@@ -50,4 +55,7 @@ export const schemaTypes = [
   faqSection,
   newsCard,
   agendaItem,
+  productChainAmbition,
+  productChainImpact,
+  linkObject,
 ];

@@ -356,22 +356,27 @@ export default function Nav3(props) {
                                         <MobileDisclosure
                                           transitionAgenda='Bouw'
                                           themas={bouwThemas}
+                                          slug='bouw'
                                         />
                                         <MobileDisclosure
                                           transitionAgenda='Consumptiegoederen'
                                           themas={consumptiegoederenThemas}
+                                          slug='consumptie-goederen'
                                         />
                                         <MobileDisclosure
                                           transitionAgenda='Voedsel en biomassa'
                                           themas={biomassaEnVoedselThemas}
+                                          slug='biomassa-en-voedsel'
                                         />
                                         <MobileDisclosure
                                           transitionAgenda='Maakindustrie'
                                           themas={maakindustrieThemas}
+                                          slug='maakindustrie'
                                         />
                                         <MobileDisclosure
                                           transitionAgenda='Kunststoffen'
                                           themas={kunststoffenThemas}
+                                          slug='kunststoffen'
                                         />
                                       </ul>
                                     </Disclosure.Panel>
@@ -496,22 +501,30 @@ export default function Nav3(props) {
                               router.pathname === '/' ? 'bg-green-500' : 'bg-gray-300'
                             } h-full flex flex-cols-5 gap-[1px] relative`}
                           >
-                            <DesktopNavCard transitionAgenda='bouw' themas={bouwThemas} />
+                            <DesktopNavCard
+                              transitionAgenda='bouw'
+                              themas={bouwThemas}
+                              slug='bouw'
+                            />
                             <DesktopNavCard
                               transitionAgenda='Consumptiegoederen'
                               themas={consumptiegoederenThemas}
+                              slug='consumptie-goederen'
                             />
                             <DesktopNavCard
                               transitionAgenda='Voedsel en biomassa'
                               themas={biomassaEnVoedselThemas}
+                              slug='biomassa-en-voedsel'
                             />
                             <DesktopNavCard
                               transitionAgenda='Maakindustrie'
                               themas={maakindustrieThemas}
+                              slug='maakindustrie'
                             />
                             <DesktopNavCard
                               transitionAgenda='Kunststoffen'
                               themas={kunststoffenThemas}
+                              slug='kunststoffen'
                             />
                           </div>
                         </div>
