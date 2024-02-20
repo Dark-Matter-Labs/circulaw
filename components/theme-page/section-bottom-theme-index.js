@@ -12,10 +12,10 @@ export default function ThemeBottomSection({ props }) {
       <div className='bg-gray-200'>
         <div className='py-8 global-margin'>
           <h3 className='p-3xl-semibold sm:p-5xl-semibold pb-4 lowercase first-letter:uppercase'>
-            {props.thema.featuredInstrumentTitle}
+            {props?.thema?.featuredInstrumentTitle}
           </h3>
           {/* ADD THIS TO CMS */}
-          <p className='pb-10 p-base max-w-[830px]'>{props.thema.featureInstrumentSubtitle}</p>
+          <p className='pb-10 p-base max-w-[830px]'>{props?.thema?.featureInstrumentSubtitle}</p>
           <div className=''>
             {laws?.map((measure, index) => (
               <div key={index} className='flex flex-col sm:flex-row mb-14 sm:mb-8 max-w-6xl'>
@@ -28,7 +28,7 @@ export default function ThemeBottomSection({ props }) {
                   />
                 </div>
                 <Link
-                  href={`/${measure.transitionAgenda}/${measure.thema}/instrumenten/${measure.slug.current}`}
+                  href={`/${measure?.transitionAgenda}/${measure?.thema}/instrumenten/${measure?.slug?.current}`}
                   key={measure.titel}
                 >
                   <div className='block sm:ml-0 md:min-w-[760px]'>
@@ -54,12 +54,12 @@ export default function ThemeBottomSection({ props }) {
                     <div className='block mt-2 max-w-4xl'>
                       <div className='mb-2'>
                         <h3 className='p-4xl-semibold max-w-[650px] text-grey-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
-                          {measure.titel}{' '}
+                          {measure?.titel}{' '}
                         </h3>
                       </div>
 
                       <div className='block newlineDisplay p-md text-grey-800 mt-2 pb-2  '>
-                        <p className='p-base max-w-[650px]'>{measure.introText}</p>
+                        <p className='p-base max-w-[650px]'>{measure?.introText}</p>
                       </div>
                       <InstrumentMetaData data={measure} borders={true} />
                     </div>
