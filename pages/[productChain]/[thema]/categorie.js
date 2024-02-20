@@ -20,7 +20,7 @@ const themaInfo = `
 `;
 
 export default function InfoPage({ expertiseData, themaData }) {
-  if (themaData.type === 'thema') {
+  if (themaData?.type === 'thema') {
     return (
       <Layout title={`CircuLaw - ${themaData?.themaName} instrumenten per categorie`}>
         <ExpertiseLayout
@@ -35,7 +35,7 @@ export default function InfoPage({ expertiseData, themaData }) {
   } else {
     return (
       <Layout>
-        
+
       </Layout>
     )
   }
