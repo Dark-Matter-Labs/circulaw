@@ -69,7 +69,7 @@ export default function InfoPage({ themaData, ...props }) {
       <Layout title='CircuLaw - Welke Overheid Heeft Voedselverspilling voorkomen'>
         <WelkeLayout
           thema={themaData?.thema}
-          transitionAgenda='biomassa-en-voedsel'
+          transitionAgenda={themaData?.transitionAgenda}
           title='Welke overheid kan welk instrument gebruiken voor voedselverspilling?'
           p1=''
           p2=''
@@ -83,12 +83,12 @@ export default function InfoPage({ themaData, ...props }) {
         />
       </Layout>
     );
-  } else {
+  } else if (themaData?.thema === 'windturbines') {
     return (
       <Layout title='CircuLaw - Wie is waarvoor bevoegd?'>
         <WelkeLayout
           thema={themaData?.thema}
-          transitionAgenda='maakindustrie'
+          transitionAgenda={themaData?.transitionAgenda}
           title='Welk instrument kan welke overheid gebruiken voor circulaire windturbines?'
           //  icon={WindmillIcon}
           p1='Rijk, provincies en gemeenten kunnen circulaire windturbines opnemen in hun omgevingsvisie om kenbaar te maken dat zij hiermee aan de slag willen. Het vergroten van het aandeel publieke grond van provincies en gemeenten maakt het mogelijk om circulaire eisen te stellen bij de uitgifte van grond. Dit kan bijvoorbeeld door middel van tenders of het sluiten van huurovereenkomsten. Daarnaast helpen subsidies om bijvoorbeeld de productie, het aanschaffen of recyclen van circulaire windturbines aan te moedigen.'
@@ -103,6 +103,12 @@ export default function InfoPage({ themaData, ...props }) {
         />
       </Layout>
     );
+  } else {
+    return (
+      <Layout>
+        
+      </Layout>
+    )
   }
 }
 

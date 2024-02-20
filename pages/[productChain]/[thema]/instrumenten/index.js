@@ -15,12 +15,15 @@ const themaInfo = `
     "thema": slug.current,
     "transitionAgenda": transitionAgenda->.slug.current, 
     themaName,
+    "type": _type
 }
 `;
 
 export default function Measures({ numberOfInstruments, instruments, themaData }) {
-  return (
-    <Layout title={`CircuLaw - ${themaData?.themaName}`}>
+
+  if (themaData?.type === 'thema') {
+    return (
+      <Layout title={`CircuLaw - ${themaData?.themaName}`}>
       <MeasuresLayout
         totalNumberOfLaws={numberOfInstruments}
         title={`Lijst van alle ${themaData?.thema} instrumenten`}
@@ -32,7 +35,14 @@ export default function Measures({ numberOfInstruments, instruments, themaData }
         instruments={instruments}
       />
     </Layout>
-  );
+    )
+  } else {
+    return (
+      <Layout>
+
+      </Layout>
+    )
+  }
 }
 
 export async function getStaticPaths() {
