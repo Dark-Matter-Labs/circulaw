@@ -4,8 +4,6 @@ import { client } from '@/lib/sanity';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
 import { aboutSectionQuerie, homePageHeaderQuery, newsItems } from '@/lib/queries';
-import NewThemaSuggestion from '@/components/new-thema-suggestion';
-// import NewsItems from '@/components/news-items';
 import HomePageAboutSection from '@/components/home-page-about-section';
 import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
@@ -42,11 +40,7 @@ export default function Index({ aboutSection, homePageHeader, footerText, newsDa
           </div>
         </div>
       </div>
-      <div className='bg-grey-100 sm:hidden'>
-        <div className='global-margin flex items-center justify-center]'>
-          <NewThemaSuggestion />
-        </div>
-      </div>
+
       <div className='bg-grey-100 pt-12 sm:pt-0 pb-12'>
         <div className='global-margin'>
           <div className='pb-12 flex flex-col'>
