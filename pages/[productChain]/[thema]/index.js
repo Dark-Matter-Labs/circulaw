@@ -16,18 +16,18 @@ export default function ThemeIndexPage({ featuredLaws, thema, length, instrument
   useEffect(() => {
     localStorage.clear();
   });
-  if (thema._type === 'simpleThema') {
+  if (thema?._type === 'simpleThema') {
     return (
-      <Layout title={`CircuLaw - ${thema.themaName}`}>
+      <Layout title={`CircuLaw - ${thema?.themaName}`}>
         <SimpleThemaLayout thema={thema} numberOfLaws={length} instruments={instruments} />
       </Layout>
     );
   } else {
     return (
-      <Layout title={`CircuLaw - ${thema.themaName}`}>
+      <Layout title={`CircuLaw - ${thema?.themaName}`}>
         <ThemeLayout
           featuredLaws={featuredLaws}
-          transitionAgenda={thema.transitionAgenda}
+          transitionAgenda={thema?.transitionAgenda}
           thema={thema}
           numberOfLaws={length}
           listTitle={`Lijst van ${length} instrumenten`}
