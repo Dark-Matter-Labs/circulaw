@@ -127,7 +127,6 @@ export async function getStaticProps({params}) {
   const gemLaws = await client.fetch(govLevelQueryFunction().local, thema);
 
   const themaData = await client.fetch(themaInfo, thema)
-    console.log(themaData)
   return {
     props: {
       allRegionLaws: allRegionLaws,
