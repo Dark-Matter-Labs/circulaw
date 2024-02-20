@@ -20,13 +20,91 @@ export const Structure = (S) =>
     .title('Content Types')
     .items([
       S.listItem()
-        .title('Measures') // TODO: update to Instrumenten
+        .title('Instruments by thema') // TODO: update to Instrumenten
         .icon(VscLaw)
         .child(
-          S.list()
-            .title('Themas')
-            .items([
-              S.listItem()
+         
+          // List out all categories
+          S.documentTypeList('thema')
+            .title('Instruments by thema')
+            .child(
+              themaId =>
+              S.documentList()
+                .title('Instruments')
+                .filter('_type == "measure" && $themaId ==  thema->._id')
+                .params({ themaId })
+                
+
+              
+            ),
+        ),
+        S.listItem()
+        .title('Instruments by simple thema') // TODO: update to Instrumenten
+        .icon(VscLaw)
+        .child(
+         
+          // List out all categories
+          S.documentTypeList('simpleThema')
+            .title('Instruments by top 5')
+            .child(themaId =>
+              S.documentList()
+                .title('Instruments')
+                .filter('_type == "measure" && $themaId ==  thema->._id')
+                .params({ themaId })),
+        ),
+      S.listItem()
+        .title('About Pages')
+        .icon(FcAbout)
+        .child(S.documentList().title('About Pages').filter('_type == "aboutPage"')),
+      S.listItem()
+        .title('News Page')
+        .id('newsPage')
+        .icon(BsNewspaper)
+        .child(S.document().title('News Page').schemaType('newsPage').documentId('newsPage')),
+      S.divider(),
+      S.listItem()
+        .title('Transitie-agenda')
+        .icon(BsCircle)
+        .child(
+          S.documentList()
+            .title('Transitie-agenda')
+            .filter('_type == "transitionAgenda" || _type == "simplePC"'),
+        ),
+      S.listItem()
+        .title("Thema's")
+        .icon(BsCircle)
+        .child(S.documentList().title("Thema's").filter('_type in ["thema", "simpleThema"]')),
+      S.documentListItem().schemaType('FAQpage').title('FAQ Page').icon(FaQuestion),
+      S.listItem()
+        .title('English Page')
+        .id('englishPage')
+        .icon(FaLanguage)
+        .child(
+          S.document().title('English Page').schemaType('englishPage').documentId('englishPage'),
+        ),
+      S.listItem()
+        .title('Partners')
+        .id('PartnersList')
+        .icon(FaHandshake)
+        .child(S.document().title('Partners').schemaType('partners').documentId('PartnersList')),
+      S.divider(),
+      S.listItem()
+        .title('Navigation')
+        .id('NavigationList')
+        .icon(GrNavigate)
+        .child(S.documentList().title('Navigation').filter('_type == "navigation"')),
+      S.listItem()
+        .title('Home Page')
+        .id('siteSettings')
+        .icon(AiOutlineHome)
+        .child(S.document().title('Home Page').schemaType('siteConfig').documentId('siteSettings')),
+    ]);
+
+
+
+    {/* 
+  
+   S.listItem()
                 .title('Houtbouw')
                 .icon(GiDeadWood)
                 .child(
@@ -97,52 +175,4 @@ export const Structure = (S) =>
                     .title('Eiwittransitie')
                     .filter('_type == "measure" && thema->slug.current == "eiwittransitie"'),
                 ),
-            ]),
-        ),
-      S.listItem()
-        .title('About Pages')
-        .icon(FcAbout)
-        .child(S.documentList().title('About Pages').filter('_type == "aboutPage"')),
-      S.listItem()
-        .title('News Page')
-        .id('newsPage')
-        .icon(BsNewspaper)
-        .child(S.document().title('News Page').schemaType('newsPage').documentId('newsPage')),
-      S.divider(),
-      S.listItem()
-        .title('Transitie-agenda')
-        .icon(BsCircle)
-        .child(
-          S.documentList()
-            .title('Transitie-agenda')
-            .filter('_type == "transitionAgenda" || _type == "simplePC"'),
-        ),
-      S.listItem()
-        .title("Thema's")
-        .icon(BsCircle)
-        .child(S.documentList().title("Thema's").filter('_type in ["thema", "simpleThema"]')),
-      S.documentListItem().schemaType('FAQpage').title('FAQ Page').icon(FaQuestion),
-      S.listItem()
-        .title('English Page')
-        .id('englishPage')
-        .icon(FaLanguage)
-        .child(
-          S.document().title('English Page').schemaType('englishPage').documentId('englishPage'),
-        ),
-      S.listItem()
-        .title('Partners')
-        .id('PartnersList')
-        .icon(FaHandshake)
-        .child(S.document().title('Partners').schemaType('partners').documentId('PartnersList')),
-      S.divider(),
-      S.listItem()
-        .title('Navigation')
-        .id('NavigationList')
-        .icon(GrNavigate)
-        .child(S.documentList().title('Navigation').filter('_type == "navigation"')),
-      S.listItem()
-        .title('Home Page')
-        .id('siteSettings')
-        .icon(AiOutlineHome)
-        .child(S.document().title('Home Page').schemaType('siteConfig').documentId('siteSettings')),
-    ]);
+  */}
