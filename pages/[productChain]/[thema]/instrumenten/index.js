@@ -20,15 +20,15 @@ const themaInfo = `
 
 export default function Measures({ numberOfInstruments, instruments, themaData }) {
   return (
-    <Layout title={`CircuLaw - ${themaData.themaName}`}>
+    <Layout title={`CircuLaw - ${themaData?.themaName}`}>
       <MeasuresLayout
         totalNumberOfLaws={numberOfInstruments}
-        title={`Lijst van alle ${themaData.thema} instrumenten`}
-        thema={themaData.thema}
-        heading={`Instrumenten om de circulariteit van de ${themaData.thema} te bevorderen`}
+        title={`Lijst van alle ${themaData?.thema} instrumenten`}
+        thema={themaData?.thema}
+        heading={`Instrumenten om de circulariteit van de ${themaData?.thema} te bevorderen`}
         // introPara={`We hebben ${totalNumberOfLaws} kansrijke instrumenten gevonden die je kunt inzetten als het gaat om matrassen. Met sommige van deze instrumenten is al praktijkervaring opgedaan, met andere nog niet. Ga aan de slag! Met jouw ervaringen help je anderen weer verder.`}
         // icon={MatrassenIcon}
-        searchTitle={`Zoek in ${themaData.thema}`}
+        searchTitle={`Zoek in ${themaData?.thema}`}
         instruments={instruments}
       />
     </Layout>

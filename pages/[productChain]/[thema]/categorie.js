@@ -15,21 +15,31 @@ const themaInfo = `
     "thema": slug.current,
     "transitionAgenda": transitionAgenda->.slug.current, 
     themaName,
+    "type": _type,
 }
 `;
 
 export default function InfoPage({ expertiseData, themaData }) {
-  return (
-    <Layout title={`CircuLaw - ${themaData.themaName} instrumenten per categorie`}>
-      <ExpertiseLayout
-        thema={themaData.thema}
-        transitionAgenda={themaData.transitionAgenda}
-        expertiseData={expertiseData}
-        title={`${themaData.themaName} instrumenten per categorie`}
-        // p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
-      />
-    </Layout>
-  );
+  if (themaData.type === 'thema') {
+    return (
+      <Layout title={`CircuLaw - ${themaData?.themaName} instrumenten per categorie`}>
+        <ExpertiseLayout
+          thema={themaData?.thema}
+          transitionAgenda={themaData?.transitionAgenda}
+          expertiseData={expertiseData}
+          title={`${themaData?.themaName} instrumenten per categorie`}
+          // p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
+        />
+      </Layout>
+    );
+  } else {
+    return (
+      <Layout>
+        
+      </Layout>
+    )
+  }
+
 }
 
 export async function getStaticPaths() {
