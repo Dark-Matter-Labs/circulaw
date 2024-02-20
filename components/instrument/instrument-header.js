@@ -6,7 +6,6 @@ import InstrumentMetaData from './instrument-metadata';
 import Tag from '../tag';
 
 export default function InstrumentHeader({ data }) {
-  
   const router = useRouter();
 
   // eslint-disable-next-line
@@ -29,8 +28,6 @@ export default function InstrumentHeader({ data }) {
       setSelectedTab(value);
     }
   }
-
-
 
   return (
     <>
@@ -119,7 +116,7 @@ export default function InstrumentHeader({ data }) {
               {data?.measure?.subsidie === true && data?.themaType !== 'thema' && (
                 <Tag classes='bg-green-300 text-green-800 mr-2'>Subsidie</Tag>
               )}
-              {data?.measure?.fiscaal === true &&  data?.themaType === 'thema' && (
+              {data?.measure?.fiscaal === true && data?.themaType === 'thema' && (
                 <Link
                   href={`/${data?.measure?.transitionAgenda}/${data?.measure?.thema}/categorie`}
                   onClick={() => setCategorie('fiscaal')}

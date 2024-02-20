@@ -36,7 +36,9 @@ export async function getStaticPaths() {
   const paths = await client.fetch(pathsQuery);
 
   return {
-    paths: paths.map((path) => ({ params: { slug: path.slug, thema: path.thema, productChain: path.productChain} })),
+    paths: paths.map((path) => ({
+      params: { slug: path.slug, thema: path.thema, productChain: path.productChain },
+    })),
     fallback: true,
   };
 }

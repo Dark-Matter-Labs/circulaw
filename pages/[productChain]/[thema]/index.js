@@ -10,61 +10,50 @@ const pathsQuery = `
     "thema": slug.current,
     "productChain": transitionAgenda->.slug.current,
   }
-`
-
-
+`;
 
 export default function ThemeIndexPage({ featuredLaws, thema, length, instruments }) {
-
   useEffect(() => {
     localStorage.clear();
   });
- if (thema._type === 'simpleThema') {
+  if (thema._type === 'simpleThema') {
     return (
-        <Layout title={`CircuLaw - ${thema.themaName}`}>
-            <SimpleThemaLayout thema={thema} numberOfLaws={length} instruments={instruments} />
-        </Layout>
-    )
- } else {
+      <Layout title={`CircuLaw - ${thema.themaName}`}>
+        <SimpleThemaLayout thema={thema} numberOfLaws={length} instruments={instruments} />
+      </Layout>
+    );
+  } else {
     return (
-        <Layout title={`CircuLaw - ${thema.themaName}`}>
-          <ThemeLayout
-            featuredLaws={featuredLaws}
-            transitionAgenda={thema.transitionAgenda}
-            thema={thema}
-            numberOfLaws={length}
-            listTitle={`Lijst van ${length} instrumenten`}
-          />
-        </Layout>
-      );
- }
+      <Layout title={`CircuLaw - ${thema.themaName}`}>
+        <ThemeLayout
+          featuredLaws={featuredLaws}
+          transitionAgenda={thema.transitionAgenda}
+          thema={thema}
+          numberOfLaws={length}
+          listTitle={`Lijst van ${length} instrumenten`}
+        />
+      </Layout>
+    );
+  }
 }
 
-
-
 export async function getStaticPaths() {
-    const themas = await client.fetch(pathsQuery)
-    return {
-      paths: themas.map((path) => ({ params: { thema: path.thema, productChain: path.productChain } })),
-      fallback: true,
-    }
-  }
+  const themas = await client.fetch(pathsQuery);
+  return {
+    paths: themas.map((path) => ({
+      params: { thema: path.thema, productChain: path.productChain },
+    })),
+    fallback: true,
+  };
+}
 
-export async function getStaticProps({params}) {
+export async function getStaticProps({ params }) {
   const thema = { thema: params?.thema ?? '' };
 
   const featuredLaws = await client.fetch(themaQueryFunction().featured, thema);
   const length = await client.fetch(themaQueryFunction().length, thema);
   const themaData = await client.fetch(themaQueryFunction().themaQuery, thema);
-  const instruments = await client.fetch(themaQueryFunction().instrumentsQuery, thema)
+  const instruments = await client.fetch(themaQueryFunction().instrumentsQuery, thema);
 
   return { props: { featuredLaws, thema: themaData, length, instruments }, revalidate: 1 };
 }
-
-
-
-  
-  
-
-  
-  

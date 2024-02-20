@@ -3,13 +3,12 @@ import MeasuresLayout from '@/components/layouts/measures-layout';
 import { client } from '@/lib/sanity';
 import { themaQueryFunction, instrumentListPageFunction } from '@/lib/queries';
 
-
 const pathsQuery = `
 *[_type in ["thema", "simpleThema"] && defined(slug.current)]{
     "thema": slug.current,
     "productChain": transitionAgenda->.slug.current,
   }
-`
+`;
 
 const themaInfo = `
 *[_type == "thema" && slug.current == $thema][0] {
@@ -17,7 +16,7 @@ const themaInfo = `
     "transitionAgenda": transitionAgenda->.slug.current, 
     themaName,
 }
-`
+`;
 
 export default function Measures({ numberOfInstruments, instruments, themaData }) {
   return (
@@ -37,22 +36,22 @@ export default function Measures({ numberOfInstruments, instruments, themaData }
 }
 
 export async function getStaticPaths() {
-    const themas = await client.fetch(pathsQuery)
-    return {
-      paths: themas.map((path) => ({ params: { thema: path.thema, productChain: path.productChain } })),
-      fallback: true,
-    }
-  }
-
-
+  const themas = await client.fetch(pathsQuery);
+  return {
+    paths: themas.map((path) => ({
+      params: { thema: path.thema, productChain: path.productChain },
+    })),
+    fallback: true,
+  };
+}
 
 // move fetching of laws here
-export async function getStaticProps({params}) {
-    const thema = { thema: params?.thema ?? '' };
+export async function getStaticProps({ params }) {
+  const thema = { thema: params?.thema ?? '' };
 
   const numberOfInstruments = await client.fetch(themaQueryFunction().length, thema);
   const instruments = await client.fetch(instrumentListPageFunction(), thema);
-  const themaData = await client.fetch(themaInfo, thema)
+  const themaData = await client.fetch(themaInfo, thema);
 
   return { props: { numberOfInstruments, instruments, themaData }, revalidate: 1 };
 }

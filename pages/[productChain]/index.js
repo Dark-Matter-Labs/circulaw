@@ -1,5 +1,3 @@
-
-
 import Layout from '@/components/layouts/layout';
 import PCLayout from '@/components/layouts/product-chain-layout';
 import { client } from '@/lib/sanity';
@@ -8,10 +6,10 @@ import { client } from '@/lib/sanity';
 
 const pathsQuery = `
 *[_type == "productChain" && defined(slug.current)][].slug.current
-`
+`;
 const number = `
 count(*[_type == "measure" && transitionAgenda->slug.current == $productChain])
-`
+`;
 
 const query = `
 *[_type == "transitionAgenda" && slug.current == $productChain][0] {
@@ -25,7 +23,7 @@ const query = `
     "image": image.asset->.url,
   },
 }
-`
+`;
 const themaCardQuery = `
 *[_type in ["thema", "simpleThema"] && transitionAgenda->slug.current == $productChain] {
   themaName,
@@ -36,41 +34,38 @@ const themaCardQuery = `
   "mobileCardImage": homePageCardImageMobile.asset->url,
   "count": count(*[_type == "measure" && thema->slug.current == ^.slug.current || simpleThema->slug.current == ^.slug.current]),
 }
-`
+`;
 
-export default function ProductChainPage({productChainData, instrumentCount, themaCards}) {
+export default function ProductChainPage({ productChainData, instrumentCount, themaCards }) {
   return (
     <Layout title='CircuLaw - Voedsel en biomassa'>
       <PCLayout
-       title={productChainData?.pcName}
-       totalInstruments={instrumentCount}
-       themaList={themaCards}
-       impactList={productChainData?.impactItems}
-       ambitionList={productChainData?.ambitionItems}
-       links={productChainData?.pcLinks}
+        title={productChainData?.pcName}
+        totalInstruments={instrumentCount}
+        themaList={themaCards}
+        impactList={productChainData?.impactItems}
+        ambitionList={productChainData?.ambitionItems}
+        links={productChainData?.pcLinks}
       />
     </Layout>
   );
 }
 
-
 export async function getStaticPaths() {
-  const productChains = await client.fetch(pathsQuery)
+  const productChains = await client.fetch(pathsQuery);
   return {
     paths: productChains.map((productChain) => ({ params: { productChain } })),
     fallback: true,
-  }
+  };
 }
-
 
 export async function getStaticProps({ params }) {
   const productChain = { productChain: params?.productChain ?? '' };
   const productChainData = await client.fetch(query, productChain);
-  const instrumentCount = await client.fetch(number, productChain)
-  const themaCards = await client.fetch(themaCardQuery, productChain)
+  const instrumentCount = await client.fetch(number, productChain);
+  const themaCards = await client.fetch(themaCardQuery, productChain);
   return {
-    props: {  productChainData, instrumentCount, themaCards },
+    props: { productChainData, instrumentCount, themaCards },
     revalidate: 1,
   };
 }
-

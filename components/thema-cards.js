@@ -4,7 +4,7 @@ import { urlFor } from '@/lib/sanity';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import CustomButton from './custom-button';
 
-export default function ThemaCard({ themaCards }) {  
+export default function ThemaCard({ themaCards }) {
   return (
     <>
       <div className='hidden sm:block'>
@@ -55,9 +55,7 @@ export default function ThemaCard({ themaCards }) {
                   </p>
                 </div>
                 <div className='flex justify-center'>
-                  <CustomButton color='darkGreenBG'>
-                      Houd me op de hoogte{' '}
-                  </CustomButton>
+                  <CustomButton color='darkGreenBG'>Houd me op de hoogte </CustomButton>
                 </div>
               </div>
             </Link>
@@ -97,9 +95,7 @@ export default function ThemaCard({ themaCards }) {
                 ontwikkelingen.
               </p>
               <div className='flex grow self-baseline pt-6'>
-                <CustomButton color='darkGreenBG'>
-                    Houd me op de hoogte{' '}
-                </CustomButton>
+                <CustomButton color='darkGreenBG'>Houd me op de hoogte </CustomButton>
               </div>
             </div>
           </Link>

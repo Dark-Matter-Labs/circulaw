@@ -54,7 +54,7 @@ export default {
       description:
         'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
       validation: (Rule) => Rule.required(),
-      to: [{type: 'transitionAgenda'}],
+      to: [{ type: 'transitionAgenda' }],
       group: 'devOnly',
     },
     {

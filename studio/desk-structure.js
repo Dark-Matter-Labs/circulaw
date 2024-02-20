@@ -1,18 +1,8 @@
 import { VscLaw } from 'react-icons/vsc';
-import {
-  GiDeadWood,
-  GiBed,
-  GiWindmill,
-  GiBanana,
-  GiTable,
-  GiGrass,
-  GiBeanstalk,
-} from 'react-icons/gi';
 import { GrNavigate } from 'react-icons/gr';
 import { FcAbout } from 'react-icons/fc';
 import { FaLanguage, FaHandshake, FaQuestion } from 'react-icons/fa';
-import { BsCircle, BsHouseDoor, BsNewspaper } from 'react-icons/bs';
-import { BiNews } from 'react-icons/bi';
+import { BsCircle, BsNewspaper } from 'react-icons/bs';
 import { AiOutlineHome } from 'react-icons/ai';
 
 export const Structure = (S) =>
@@ -20,37 +10,32 @@ export const Structure = (S) =>
     .title('Content Types')
     .items([
       S.listItem()
-        .title('Instruments by thema') // TODO: update to Instrumenten
+        .title('Instrumenten per thema') // TODO: update to Instrumenten
         .icon(VscLaw)
         .child(
-         
           // List out all categories
           S.documentTypeList('thema')
-            .title('Instruments by thema')
-            .child(
-              themaId =>
+            .title('Instrumenten per thema')
+            .child((themaId) =>
               S.documentList()
                 .title('Instruments')
                 .filter('_type == "measure" && $themaId ==  thema->._id')
-                .params({ themaId })
-                
-
-              
+                .params({ themaId }),
             ),
         ),
-        S.listItem()
-        .title('Instruments by simple thema') // TODO: update to Instrumenten
+      S.listItem()
+        .title('Instrumenten per top 5 thema') // TODO: update to Instrumenten
         .icon(VscLaw)
         .child(
-         
           // List out all categories
           S.documentTypeList('simpleThema')
-            .title('Instruments by top 5')
-            .child(themaId =>
+            .title('Instrumenten per top 5 thema')
+            .child((themaId) =>
               S.documentList()
                 .title('Instruments')
                 .filter('_type == "measure" && $themaId ==  thema->._id')
-                .params({ themaId })),
+                .params({ themaId }),
+            ),
         ),
       S.listItem()
         .title('About Pages')
@@ -63,11 +48,11 @@ export const Structure = (S) =>
         .child(S.document().title('News Page').schemaType('newsPage').documentId('newsPage')),
       S.divider(),
       S.listItem()
-        .title('Transitie-agenda')
+        .title('Productketen')
         .icon(BsCircle)
         .child(
           S.documentList()
-            .title('Transitie-agenda')
+            .title('Productketen')
             .filter('_type == "transitionAgenda" || _type == "simplePC"'),
         ),
       S.listItem()
@@ -100,9 +85,8 @@ export const Structure = (S) =>
         .child(S.document().title('Home Page').schemaType('siteConfig').documentId('siteSettings')),
     ]);
 
-
-
-    {/* 
+{
+  /* 
   
    S.listItem()
                 .title('Houtbouw')
@@ -175,4 +159,5 @@ export const Structure = (S) =>
                     .title('Eiwittransitie')
                     .filter('_type == "measure" && thema->slug.current == "eiwittransitie"'),
                 ),
-  */}
+  */
+}

@@ -87,7 +87,7 @@ export default {
       description:
         'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
       validation: (Rule) => Rule.required(),
-      to: [{type: 'transitionAgenda'}]
+      to: [{ type: 'transitionAgenda' }],
     },
     {
       title: 'Thema',
@@ -96,7 +96,7 @@ export default {
       description: 'Selecteer het thema waaronder dit instrument valt.',
       validation: (Rule) => Rule.required(),
       group: 'high-level',
-      to: [{type: 'thema'}, {type: 'simpleThema'}]
+      to: [{ type: 'thema' }, { type: 'simpleThema' }],
     },
     {
       title: 'Bevat extra info',
