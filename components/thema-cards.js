@@ -14,8 +14,8 @@ export default function ThemaCard({ themaCards }) {
         >
           {themaCards.map((thema, id) => (
             <Link href={`/${thema.transitionAgenda}/${thema.slug}`} key={id}>
-              <li className='relative w-full rounded-cl h-[400px] group overflow-hidden flex flex-col'>
-                <div className='object-cover rounded-cl w-full max-h-[200px]'>
+              <li className='relative w-full rounded-cl h-[420px] group overflow-hidden flex flex-col shadow-lg'>
+                <div className='object-cover rounded-cl w-full max-h-[180px]'>
                   {thema?.image && (
                     <Image
                       className='rounded-t-cl fill'
@@ -30,8 +30,8 @@ export default function ThemaCard({ themaCards }) {
                   <h3 className='mobile sm:desktop text-grey-100 pointer-events-none hidden sm:inline'>
                     {thema.themaName}
                   </h3>
-                  <p className='p-md text-green-200 pb-4'>{thema.count} instrumenten</p>
-                  <p className='p-md text-grey-100 w-full line-clamp-3'>{thema.homePageCardText}</p>
+                  <p className='p-md text-green-200 pb-2'>{thema.count} instrumenten</p>
+                  <p className='p-md text-grey-100 w-full'>{thema.homePageCardText}</p>
                   <div className='flex justify-end flex-grow items-end'>
                     <div className='h-12 w-12 rounded-full flex items-center justify-center border-2 border-grey-200 group-hover:border-green-200 bg-transparent group-hover:bg-green-200 active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white self-end  text-grey-200 group-hover:text-green-600'>
                       <ArrowRightIcon className='inline-block h-5 w-5' aria-hidden='true' />
@@ -41,7 +41,7 @@ export default function ThemaCard({ themaCards }) {
               </li>
             </Link>
           ))}
-          <li className='w-full h-[400px] flex-grow bg-grey-150 border border-grey-200 rounded-cl group'>
+          <li className='w-full h-[420px] flex-grow bg-grey-150 border border-grey-200 rounded-cl group'>
             <Link href='/contact' className='w-full h-full'>
               <div className='h-full w-full flex flex-col flex-grow p-8 justify-between'>
                 <h3 className='mobile sm:desktop text-green-600'>Nieuwe thema’s</h3>
