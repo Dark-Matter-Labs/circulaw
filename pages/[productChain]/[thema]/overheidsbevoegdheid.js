@@ -104,11 +104,7 @@ export default function InfoPage({ themaData, ...props }) {
       </Layout>
     );
   } else {
-    return (
-      <Layout>
-        
-      </Layout>
-    )
+    return <Layout></Layout>;
   }
 }
 

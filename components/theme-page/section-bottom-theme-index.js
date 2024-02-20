@@ -6,7 +6,8 @@ import Tag from '@/components/tag';
 import InstrumentMetaData from '@/components/instrument/instrument-metadata';
 
 export default function ThemeBottomSection({ props }) {
-  const laws = props.featuredLaws;
+  const laws = props?.featuredLaws;
+  console.log(props)
   return (
     <>
       <div className='bg-gray-200'>

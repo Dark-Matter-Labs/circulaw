@@ -7,14 +7,15 @@ export default function ThemePageHeader({ themaData }) {
   return (
     <div className='hidden sm:block w-full h-[360px]'>
       <div className='relative object-cover w-full h-full mt-3'>
-        {themaData?.heroImage && 
-        <Image
-          src={urlFor(themaData?.heroImage).url()}
-          alt={`${themaData?.themaName} + 'hero image'`}
-          fill
-          className='z-0 bg-cover'
-          priority
-        />}
+        {themaData?.heroImage && (
+          <Image
+            src={urlFor(themaData?.heroImage).url()}
+            alt={`${themaData?.themaName} + 'hero image'`}
+            fill
+            className='z-0 bg-cover'
+            priority
+          />
+        )}
         <div className='w-full h-full bg-gradient-to-t from-[#035E46] to-[#035E4600] z-0 absolute'></div>
 
         <div className='global-margin h-[360px] z-5 relative flex flex-col justify-between'>

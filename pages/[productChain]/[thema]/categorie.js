@@ -33,13 +33,8 @@ export default function InfoPage({ expertiseData, themaData }) {
       </Layout>
     );
   } else {
-    return (
-      <Layout>
-
-      </Layout>
-    )
+    return <Layout></Layout>;
   }
-
 }
 
 export async function getStaticPaths() {
@@ -54,7 +49,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const thema = { thema: params?.thema ?? '' };
-  
+
   const expertiseData = await client.fetch(categorieQuery(), thema);
   const themaData = await client.fetch(themaInfo, thema);
 
