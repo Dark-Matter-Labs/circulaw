@@ -31,7 +31,7 @@ const themaCardQuery = `
   themaName,
   homePageCardText,
   "slug": slug.current,
-  transitionAgenda,
+  "transitionAgenda": transitionAgenda->slug.current,
   "image": homePageCardImage.asset->.url,
   "mobileCardImage": homePageCardImageMobile.asset->url,
   "count": count(*[_type == "measure" && thema->slug.current == ^.slug.current || simpleThema->slug.current == ^.slug.current]),
@@ -66,7 +66,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const productChain = { productChain: params?.productChain ?? '' };
   const productChainData = await client.fetch(query, productChain);
-  console.log(productChain.productChain)
   const instrumentCount = await client.fetch(number, productChain)
   const themaCards = await client.fetch(themaCardQuery, productChain)
   return {

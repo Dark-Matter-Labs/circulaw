@@ -4,7 +4,7 @@ import { urlFor } from '@/lib/sanity';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import CustomButton from './custom-button';
 
-export default function ThemaCard({ themaCards }) {
+export default function ThemaCard({ themaCards }) {  
   return (
     <>
       <div className='hidden sm:block'>
