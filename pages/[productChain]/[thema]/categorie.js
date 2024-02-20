@@ -1,5 +1,4 @@
 import Layout from '@/components/layouts/layout';
-import mattressIcon from '@/public/icons/matressIcon.svg';
 import ExpertiseLayout from '@/components/layouts/expertise-layout';
 import { client } from '@/lib/sanity';
 import { categorieQuery } from '@/lib/queries';
@@ -12,17 +11,23 @@ const pathsQuery = `
   }
 `
 
+const themaInfo = `
+*[_type == "thema" && slug.current == $thema][0] {
+    "thema": slug.current,
+    "transitionAgenda": transitionAgenda->.slug.current, 
+    themaName,
+}
+`
 
-export default function InfoPage({ expertiseData }) {
-  console.log(expertiseData)
-  return (
-    <Layout title='CircuLaw - Matrasketen instrumenten per categorie'>
+export default function InfoPage({ expertiseData, themaData}) {
+
+return (
+    <Layout title={`CircuLaw - ${themaData.themaName} instrumenten per categorie`}>
       <ExpertiseLayout
-        thema='matrasketen'
-        transitionAgenda='consumptie-goederen'
+        thema={themaData.thema}
+        transitionAgenda={themaData.transitionAgenda}
         expertiseData={expertiseData}
-        title='Matrasketen instrumenten per categorie'
-        icon={mattressIcon}
+       title={`${themaData.themaName} instrumenten per categorie`}
         // p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
       />
     </Layout>
@@ -42,9 +47,12 @@ export async function getStaticProps({params}) {
   const thema = { thema: params?.thema ?? '' };
 
   const expertiseData = await client.fetch(categorieQuery(), thema);
+  const themaData = await client.fetch(themaInfo, thema)
+
   return {
     props: {
       expertiseData,
+      themaData
     },
     revalidate: 1,
   };
