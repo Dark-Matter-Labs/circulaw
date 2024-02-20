@@ -4,6 +4,8 @@ import { client } from '@/lib/sanity';
 import Layout from '@/components/layouts/layout';
 import WelkeLayout from '@/components/layouts/welke-layout';
 import matrassenImageMob from '@/public/bevoegdheden/bevoegdheden-matrassen.png';
+import houtbouwImageMob from '@/public/bevoegdheden/bevoegdheden-houtbouw-mob.png'
+import windmillImageMob from '@/public/bevoegdheden/bevoegdheden-windmill.png'
 import { govLevelQueryFunction } from '@/lib/queries';
 
 // const thema = 'matrasketen';
@@ -47,18 +49,62 @@ export default function InfoPage({themaData,  ...props }) {
           );
     } else if (themaData.thema === 'houtbouw') {
         return (
-            <>
-            </>
+            <Layout title='CircuLaw - Wie is waarvoor bevoegd?'>
+            <WelkeLayout
+              thema={themaData.thema}
+              transitionAgenda='bouw'
+              title='Welke overheid kan welk instrument gebruiken voor houtbouw?'
+              // icon={woodIcon}
+              p1='Je kunt op rijksniveau regels bepalen voor het hergebruik van producten. Ook kan het Rijk financieel bijdragen aan doelen die worden gesteld in een omgevingsvisie en/of een programma over houtbouw.'
+              p2='Provincies kunnen houtbouw integreren in hun omgevingsverordening door de houtopstanden in het gebied te vergroten. Het vaststellen van omgevingswaarden (instrumenten uit de Omgevingswet die provincies en gemeenten kunnen inzetten om beleid uit de omgevingsvisie uit te voeren),  kan hierbij helpen. Zo zou je een maximumwaarde voor CO₂ kunnen vaststellen.'
+              p3='Gemeenten kunnen ook veel doen. Zo kunnen gemeenten regels bepalen voor sloopwerkzaamheden, afvalstoffen en recycling. Ook kunnen ze houtbouw opnemen in het omgevingsplan om de vergunningverlening hierop aan te passen. Ook hierbij kunnen omgevingswaarden een rol spelen.'
+              p4='Gemeenten, provincies en Rijk hebben ook nog gedeelde bevoegdheden: aanbestedingen spelen hierbij de grootste rol. Het vergroten van het aandeel publieke grond maakt het mogelijk om circulaire eisen te stellen bij de uitgifte van die grond. De omgevingsvisie is voor alle overheden belangrijk omdat je hier de beleidsdoelen voor houtbouw in kunt verankeren. En ten slotte kunnen overheden innovatie stimuleren door verschillende experimenten toe te staan.'
+              allRegionLaws={props.allRegionLaws}
+              natLaws={props.natLaws}
+              provLaws={props.provLaws}
+              gemLaws={props.gemLaws}
+              imageMob={houtbouwImageMob}
+            />
+          </Layout>
         )
     } else if (themaData.thema === 'voedselverspilling') {
         return (
-            <>
-            </>
+            <Layout title='CircuLaw - Welke Overheid Heeft Voedselverspilling voorkomen'>
+            <WelkeLayout
+              thema={themaData.thema}
+              transitionAgenda='biomassa-en-voedsel'
+              title='Welke overheid kan welk instrument gebruiken voor voedselverspilling?'
+              p1=''
+              p2=''
+              p3=''
+              p4=''
+              allRegionLaws={props.allRegionLaws}
+              natLaws={props.natLaws}
+              provLaws={props.provLaws}
+              gemLaws={props.gemLaws}
+              imageMob={windmillImageMob} // need to update this to correct image
+            />
+          </Layout>
         )
     } else {
         return (
-            <>
-            </>
+            <Layout title='CircuLaw - Wie is waarvoor bevoegd?'>
+            <WelkeLayout
+              thema={themaData.thema}
+              transitionAgenda='maakindustrie'
+              title='Welk instrument kan welke overheid gebruiken voor circulaire windturbines?'
+             //  icon={WindmillIcon}
+              p1='Rijk, provincies en gemeenten kunnen circulaire windturbines opnemen in hun omgevingsvisie om kenbaar te maken dat zij hiermee aan de slag willen. Het vergroten van het aandeel publieke grond van provincies en gemeenten maakt het mogelijk om circulaire eisen te stellen bij de uitgifte van grond. Dit kan bijvoorbeeld door middel van tenders of het sluiten van huurovereenkomsten. Daarnaast helpen subsidies om bijvoorbeeld de productie, het aanschaffen of recyclen van circulaire windturbines aan te moedigen.'
+              p2='Ook kunnen Rijk en provincie met een projectbesluit het omgevingsplan wijzigen om  daarmee de ontwikkeling van circulaire windturbineparken te borgen en te stimuleren.'
+              p3='Provincies en gemeenten kunnen hun grondpositie versterken door beschikbare grond op te kopen. Ook kunnen zij in lokale verordeningen en plannen, eisen opnemen die circulariteit van windturbines aanmoedigen.'
+              p4='En ten slotte kunnen gemeenten in een anterieure overeenkomst kosten voor gebiedsontwikkeling vastleggen en daar ook circulariteit bij betrekken.'
+              allRegionLaws={props.allRegionLaws}
+              natLaws={props.natLaws}
+              provLaws={props.provLaws}
+              gemLaws={props.gemLaws}
+              imageMob={windmillImageMob}
+            />
+          </Layout>
         )
     }
   
