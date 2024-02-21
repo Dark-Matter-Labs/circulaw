@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Layout from '@/components/layouts/layout';
 import { client } from '@/lib/sanity';
+import EULawCard from '@/components/eu-law/eu-law-card';
 
 const euLawsQuery = `
 *[_type == "euLaw"]{...}
@@ -38,41 +39,9 @@ export default function EULaw({ laws }) {
           </div>
         </div>
       </div>
-      <div className=' grid grid-cols-1 md:grid-cols-2 gap-6 global-margin my-12'>
+      <div className=' grid grid-cols-1 lg:grid-cols-2 gap-y-4 gap-x-8 global-margin my-12 relative min-h-screen'>
         {laws.map((law, id) => (
-          <Link href={`/eu-wetgeving/${law.slug.current}`} key={id}>
-            <div className='bg-green-300/50 rounded-cl p-4'>
-              <h2 className='p-5xl-semibold'>
-                {id + 1}
-                {law.title}
-              </h2>
-              <p className='p-base my-2'>{law.introText}</p>
-              <div className='p-xs-semibold text-green-300 mb-4'>Status</div>
-              <div className='border-y border-green-800 py-4 p-base'>
-                <div class='flex items-center mb-4'>
-                  <span class='text-black'> Proposed</span>
-                  <div class='flex-1'></div>
-                  <span class='text-black'>In negotiations</span>
-                  <div class='flex-1'></div>
-                  <span class='text-black'>Adopted</span>
-                  <div class='flex-1 '></div>
-                  <span class='text-black '>Transposed</span>
-                </div>
-                <div class='flex items-center w-11/12 mx-auto'>
-                  <span class='bg-green-800 rounded-full h-4 w-4'></span>
-                  <div class='flex-1 border-t-2 border-green-800'></div>
-                  <span class='bg-green-800 rounded-full h-4 w-4'></span>
-                  <div class='flex-1 border-t-2 border-green-800'></div>
-                  <span class='text-gray-500 bg-green-800 rounded-full h-4 w-4'></span>
-                  <div class='flex-1 border-t-2 border-green-800'></div>
-                  <span class='border-2 border-green-800 bg-white rounded-full h-4 w-4'></span>
-                </div>
-              </div>
-              <div className='flex items-center justify-center link-interaction mt-4 p-base-semibold'>
-                Bekijk deze wet {'>'}
-              </div>
-            </div>
-          </Link>
+          <EULawCard law={law} key={id} />
         ))}
       </div>
     </Layout>

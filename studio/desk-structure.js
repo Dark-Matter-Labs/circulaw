@@ -4,6 +4,7 @@ import { FcAbout } from 'react-icons/fc';
 import { FaLanguage, FaHandshake, FaQuestion } from 'react-icons/fa';
 import { BsCircle, BsNewspaper } from 'react-icons/bs';
 import { AiOutlineHome } from 'react-icons/ai';
+import { GiEuropeanFlag } from 'react-icons/gi';
 
 export const Structure = (S) =>
   S.list()

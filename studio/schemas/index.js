@@ -42,6 +42,7 @@ export const schemaTypes = [
   simpleThema,
   newsPage,
   euLaw,
+  euLawSection,
 
   // OBJECTS
   greenBox,
@@ -58,4 +59,7 @@ export const schemaTypes = [
   faqSection,
   newsCard,
   agendaItem,
+  productChainAmbition,
+  productChainImpact,
+  linkObject,
 ];
