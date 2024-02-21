@@ -7,7 +7,7 @@ export default function EULawCard({ law }) {
 <>      
 <Link href={`/eu-wetgeving/${law?.slug?.current}`}>
 <div className='flex flex-col group h-[516px]'>  
-    <div className='bg-grey-100 rounded-cl shadow-md min-w-[460px] px-4 pb-6 pt-10 group duration-300 transition-all border h-[506px] hover:h-[490px] hover:translate-y-[16px]'>
+    <div className='bg-grey-100 rounded-cl shadow-md min-w-[460px] px-4 pb-6 pt-10 duration-300 transition-all border h-[506px] group-hover:h-[490px] group-hover:translate-y-[16px]'>
         <div className='group-hover:-translate-y-[16px] transition-all duration-300 z-10'>
           <h2 className='p-5xl-semibold mb-4'>{law?.title}</h2>
           <p className='p-base pb-6 border-b'>{law?.introText}</p>
