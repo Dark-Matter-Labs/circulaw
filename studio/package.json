@@ -7,6 +7,7 @@
   "scripts": {
     "dev:staging": "SANITY_ACTIVE_ENV=staging sanity dev",
     "dev:prod": "SANITY_ACTIVE_ENV=production sanity dev",
+    "dev:dev": "SANITY_ACTIVE_ENV=dev sanity dev",
     "start": "sanity start",
     "build": "sanity build",
     "deploy:staging": "SANITY_ACTIVE_ENV=staging sanity build && npx vercel --prod",

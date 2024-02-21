@@ -1,8 +1,8 @@
 import { BsNewspaper } from 'react-icons/bs';
 
 export default {
-  name: 'newsPage',
-  title: 'News',
+  name: 'impactList',
+  title: 'Impact List',
   type: 'document',
   fields: [
     {
