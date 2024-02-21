@@ -3,6 +3,8 @@ import InstrumentLinksDropdown from '@/components/instrument/instrument-links-dr
 import { useRouter } from 'next/router';
 
 export default function OverviewPageHeader({ props, page }) {
+console.log(props)
+console.log(page)
   const router = useRouter();
   return (
     <>
@@ -13,12 +15,17 @@ export default function OverviewPageHeader({ props, page }) {
       >
         <div className='flex flex-col sm:flex-row sm:justify-between sm:items-center pt-4'>
           <div className='p-2xs-bold text-green-600 bg-white w-min pl-2 pr-3 py-1.5 rounded-clSm flex flex-row'>
-            <Link href='/' className=''>
+            <Link href='/' className='group'>
               <span className='link-interaction'>Home</span>
+              <span className='mx-2'>{'>'}</span>
+            </Link>
+            <Link href={`/${props.transitionAgenda}`} className=''>
+              <span className='link-interaction capitalize'>{props.transitionAgenda}</span>
               <span className='mx-2'>{'>'}</span>
             </Link>
             <Link href={`/${props.transitionAgenda}/${props.thema}`}>
               <span className='capitalize link-interaction'>{props.thema.replace('-', ' ')}</span>
+              <span className='ml-2'>{'>'}</span>
             </Link>
           </div>
           <div className='block sm:float-right py-3 sm:py-0'>
