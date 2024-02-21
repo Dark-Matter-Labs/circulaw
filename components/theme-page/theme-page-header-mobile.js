@@ -28,10 +28,10 @@ export default function ThemePageHeaderMobile({ themaData }) {
                   Home<span className='ml-2'>{'>'}</span>{' '}
                 </Link>
                 <Link
-                  href={`/${themaData.transitionAgenda}`}
+                  href={`/${themaData?.transitionAgenda}`}
                   className='hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'
                 >
-                  <span className='ml-2 capitalize'>{themaData.transitionAgenda}</span>
+                  <span className='ml-2 capitalize'>{themaData?.transitionAgenda}</span>
                 </Link>
               </span>
             </div>

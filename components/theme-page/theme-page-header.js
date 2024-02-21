@@ -30,9 +30,9 @@ export default function ThemePageHeader({ themaData }) {
               </Link>
               <Link
                 className='hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'
-                href={`/${themaData.transitionAgenda}`}
+                href={`/${themaData?.transitionAgenda}`}
               >
-                <span className='ml-2 capitalize'>{themaData.transitionAgenda} </span>
+                <span className='ml-2 capitalize'>{themaData?.transitionAgenda} </span>
               </Link>
             </span>
           </div>
