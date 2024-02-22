@@ -40,7 +40,7 @@ export default function ProductChainPage({ productChainData, instrumentCount, th
   return (
     <Layout title='CircuLaw - Voedsel en biomassa'>
       <PCLayout
-        title={productChainData?.pcName}
+        productChainData={productChainData}
         totalInstruments={instrumentCount}
         themaList={themaCards}
         impactList={productChainData?.impactItems}

@@ -12,6 +12,11 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'subTitle',
+      type: 'string',
+      title: 'Ambition Sub title',
+    },
+    {
       name: 'detail',
       type: 'text',
       title: 'Ambition Detail',

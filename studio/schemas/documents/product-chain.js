@@ -52,11 +52,32 @@ export default {
       },
     },
     {
+      name: 'introOne',
+      type: 'text',
+      title: 'Intro Text 1',
+      validation: (Rule) => Rule.required(),
+      group: 'editableContent',
+    },
+    {
+      name: 'introTwo',
+      type: 'text',
+      title: 'Intro Text 2',
+      validation: (Rule) => Rule.required(),
+      group: 'editableContent',
+    },
+    {
       name: 'impactItems',
       type: 'array',
       title: 'Impact Items',
       description: 'add impact list here',
       of: [{ type: 'ImpactItem' }],
+      group: 'editableContent',
+    },
+    {
+      name: 'ambitionTitle',
+      type: 'string',
+      title: 'Ambition Title',
+      validation: (Rule) => Rule.required(),
       group: 'editableContent',
     },
     {
