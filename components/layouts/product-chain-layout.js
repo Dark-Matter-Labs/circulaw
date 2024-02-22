@@ -8,7 +8,6 @@ import PCTooltip from '../tooltips/product-chain-tooltip';
 import ThemaCard from '../thema-cards';
 
 export default function ThemeLayout({ ...props }) {
-  console.log(props);
   return (
     <>
       <div>
@@ -24,7 +23,8 @@ export default function ThemeLayout({ ...props }) {
                 Thema’s en juridische instrumenten
               </h2>
               <p className='pb-5 p-base max-w-2xl'>
-                {props?.productChainData?.introOne} <b>{props?.totalInstruments} instrumenten</b> {props?.productChainData?.introTwo}
+                {props?.productChainData?.introOne} <b>{props?.totalInstruments} instrumenten</b>{' '}
+                {props?.productChainData?.introTwo}
               </p>
             </div>
 
@@ -66,7 +66,9 @@ export default function ThemeLayout({ ...props }) {
           </div>
         </div>
         <div className='global-margin pt-14  bg-white'>
-          <h2 className='p-6xl-semibold text-green-800 pb-10'>{props?.productChainData?.ambitionTitle}</h2>
+          <h2 className='p-6xl-semibold text-green-800 pb-10'>
+            {props?.productChainData?.ambitionTitle}
+          </h2>
           {props?.ambitionList?.map((ambition, index) =>
             index % 2 == 0 ? (
               <div key={index} className='grid grid-cols-1 sm:grid-cols-2 pb-20'>
