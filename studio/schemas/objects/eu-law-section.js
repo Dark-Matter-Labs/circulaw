@@ -7,6 +7,7 @@ export default {
       name: 'title',
       type: 'string',
       title: 'Section Title',
+      validation: (Rule) => Rule.max(40)
     },
     {
       title: 'Inhoud',

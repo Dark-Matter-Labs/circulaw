@@ -43,7 +43,7 @@ export default function LawSummaryPage({ lawData }) {
               </Link>
               <Link href='/eu-wetgeving'>
                 <span className='capitalize link-interaction'>
-                  Eu wetgeving <span className='ml-2'>{'>'}</span>
+                  Eu wetgeving
                 </span>
               </Link>
             </div>
@@ -52,14 +52,14 @@ export default function LawSummaryPage({ lawData }) {
         </div>
       </div>
 
-      {/* tabs */}
-      <div className='bg-green-800 -mt-12 sm:-mt-[62px]'>
+      {/* tabs desktop */}
+      <div className='bg-green-800 -mt-12 sm:-mt-[62px] flex overflow-x-scroll snap-x snap-mandatory no-scrollbar lgNav:block'>
         <div className='global-margin'>
-          <div className='flex flex-row gap-x-3 justify-start p-xl-semibold text-green-500 h-[62px] max-w-3xl'>
+          <div className='flex flex-row gap-x-3 justify-start p-lg-semibold text-green-500 h-[62px] max-w-3xl'>
             <Link
               className={`${
-                selectedTab === 'overzicht' ? 'underline' : ''
-              } bg-white h-full rounded-t-cl px-3 py-2 flex items-center`}
+                selectedTab === 'overzicht' ? 'bg-white text-green-500' : 'bg-green-500 text-white'
+              }  h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[105px]`}
               href={{
                 pathname: `/eu-wetgeving/${lawData.slug.current}`,
                 query: { tab: 'overzicht' },
@@ -69,8 +69,8 @@ export default function LawSummaryPage({ lawData }) {
             </Link>
             <Link
               className={`${
-                selectedTab === 'verplichtingen-voor-europese-lidstaten' ? 'underline' : ''
-              } bg-white h-full rounded-t-cl px-3 py-2 flex items-center`}
+                selectedTab === 'verplichtingen-voor-europese-lidstaten' ? 'bg-white text-green-500' : 'bg-green-500 text-white'
+              } h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[200px]`}
               href={{
                 pathname: `/eu-wetgeving/${lawData.slug.current}`,
                 query: { tab: 'verplichtingen-voor-europese-lidstaten' },
@@ -80,8 +80,8 @@ export default function LawSummaryPage({ lawData }) {
             </Link>
             <Link
               className={`${
-                selectedTab === 'relevantie-voor-regionale-en-lokale-overheden' ? 'underline' : ''
-              } bg-white h-full rounded-t-cl px-3 py-2 flex items-center`}
+                selectedTab === 'relevantie-voor-regionale-en-lokale-overheden' ? 'bg-white text-green-500' : 'bg-green-500 text-white'
+              } h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[240px]`}
               href={{
                 pathname: `/eu-wetgeving/${lawData.slug.current}`,
                 query: { tab: 'relevantie-voor-regionale-en-lokale-overheden' },
@@ -91,8 +91,8 @@ export default function LawSummaryPage({ lawData }) {
             </Link>
             <Link
               className={`${
-                selectedTab === 'relevantie-voor-de-circulaire-economie' ? 'underline' : ''
-              } bg-white h-full rounded-t-cl px-3 py-2 flex items-center`}
+                selectedTab === 'relevantie-voor-de-circulaire-economie' ? 'bg-white text-green-500' : 'bg-green-500 text-white'
+              } h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[200px]`}
               href={{
                 pathname: `/eu-wetgeving/${lawData.slug.current}`,
                 query: { tab: 'relevantie-voor-de-circulaire-economie' },
@@ -103,6 +103,7 @@ export default function LawSummaryPage({ lawData }) {
           </div>
         </div>
       </div>
+
 
       {query === 'overzicht' && (
         <div className=''>
