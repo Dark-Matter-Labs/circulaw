@@ -67,10 +67,14 @@ export default {
       title: 'Law Status',
       options: {
         list: [
-          { title: 'Proposed', value: 'Proposed' },
-          { title: 'In negotiations', value: 'In negotiations' },
-          { title: 'Adopted', value: 'Adopted' },
-          { title: 'Transposed', value: 'Transposed' },
+          { title: 'Proposed A', value: 'Proposed A' },
+          { title: 'Proposed B', value: 'Proposed B' },
+          { title: 'In negotiations A', value: 'In negotiations A' },
+          { title: 'In negotiations B', value: 'In negotiations B' },
+          { title: 'Adopted A', value: 'Adopted A' },
+          { title: 'Adopted B', value: 'Adopted B' },
+          { title: 'Transposed A', value: 'Transposed A' },
+          { title: 'Transposed B', value: 'Transposed B' },
         ],
         layout: 'radio',
         direction: 'horizontal',
