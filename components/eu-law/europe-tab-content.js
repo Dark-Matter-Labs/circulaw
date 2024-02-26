@@ -22,9 +22,8 @@ export default function ScrollPagesTabContent({ content }) {
         </div>
 
         <div className='absolute top-0 right-2 md:right-12 lg:right-20 xl:right-56 h-full hidden lgNav:block'>
-   
           <ul className='sticky top-32 my-12 min-w-[390px]'>
-          <h4 className='p-6xl-semibold mb-5 ml-3'>Obligations</h4>
+            <h4 className='p-6xl-semibold mb-5 ml-3'>Obligations</h4>
             {content.map((section, id) => (
               <li key={id} className='my-4'>
                 <Link
@@ -44,9 +43,8 @@ export default function ScrollPagesTabContent({ content }) {
         </div>
         <div className='absolute top-20 left-0 h-full block lgNav:hidden z-20'>
           <div className='sticky top-44 my-12 py-2 px-4 bg-green-800 rounded-r-cl text-white p-base'>
-          Index
+            Index
           </div>
-          
         </div>
       </div>
     </>

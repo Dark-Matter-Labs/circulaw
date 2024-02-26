@@ -16,7 +16,7 @@ export default function EULawCard({ law }) {
               <div>
                 <div className='p-xs-semibold text-grey-800 my-6'>Status</div>
                 <div className='w-full flex justify-center items-center grow'>
-                    <StatusDesktop status={law.status} />
+                  <StatusDesktop status={law.status} />
                 </div>
               </div>
               <div className='flex items-center justify-center pt-6 border-t p-base-semibold'>
@@ -50,8 +50,8 @@ export default function EULawCard({ law }) {
   );
 }
 
-
-{/* 
+{
+  /* 
 coded version  - desktop
 
  <div class='flex items-center w-10/12 mx-auto'>
@@ -81,4 +81,5 @@ coded version  - desktop
                         Doorgezet
                       </span>
                     </div>
-*/}
+*/
+}

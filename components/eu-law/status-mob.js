@@ -1,8 +1,3 @@
-
-export default function StatusDesktop({status}) {
-    return (
-        <>
-        {status}
-        </>
-    )
+export default function StatusDesktop({ status }) {
+  return <>{status}</>;
 }
