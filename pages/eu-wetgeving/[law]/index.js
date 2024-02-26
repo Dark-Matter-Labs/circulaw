@@ -20,7 +20,7 @@ const lawQuery = `
 `;
 
 export default function LawSummaryPage({ lawData }) {
-  console.log(lawData);
+  console.log(lawData, 'law data');
   const router = useRouter();
   const query = router.query.tab ?? 'overzicht';
 
@@ -105,8 +105,8 @@ export default function LawSummaryPage({ lawData }) {
       </div>
 
       {query === 'overzicht' && (
-        <div className='h-96 global-margin'>
-          <SummaryComponent content='hello' />
+        <div className=''>
+          <SummaryComponent lawData={lawData} />
         </div>
       )}
       {query === 'verplichtingen-voor-europese-lidstaten' && (

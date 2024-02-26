@@ -49,7 +49,18 @@ export default {
       description: 'this will be displayed on the EU law card',
       group: 'summary',
     },
-
+    {
+      name: 'introImage',
+      type: 'image',
+      title: 'Intro Image',
+      group: 'summary',
+    },
+    {
+      name: 'introImageAlt',
+      type: 'string',
+      title: 'Intro Image Alt Text',
+      group: 'summary',
+    },
     {
       name: 'status',
       type: 'string',
@@ -64,7 +75,90 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
+      group: 'summary',
+    },
+    {
+      name: 'statusContentTitle',
+      type: 'string',
+      title: 'Status Content Title',
+      group: 'summary',
+    },
+    {
+      title: 'Status Content',
+      name: 'statusContent',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          of: [
+            {
+              type: 'dropDown',
+            },
+          ],
+          lists: [
+            { title: 'Bullet', value: 'bullet' },
+            { title: 'Number', value: 'number' },
+          ],
+          styles: [
+            { title: 'H3', value: 'h3' },
+            { title: 'normal', value: 'normal' },
+            // { title: 'subheading', value: 'subheading' },
+          ],
+          marks: {
+            decorators: [
+              { title: 'Strong', value: 'strong' },
+              { title: 'Emphasis', value: 'em' },
+            ],
+            annotations: [
+              {
+                title: 'URL',
+                name: 'link',
+                type: 'object',
+                fields: [
+                  {
+                    title: 'URL',
+                    name: 'href',
+                    type: 'url',
 
+                    validation: (Rule) =>
+                      Rule.required()
+                        .uri({ scheme: ['http', 'https'] })
+                        .warning('Url is incorrect'),
+                  },
+                  {
+                    title: 'Open in new window',
+                    name: 'blank',
+                    type: 'boolean',
+                    validation: (Rule) => Rule.required(),
+                    initialValue: false,
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      ],
+      group: 'summary',
+    },
+    {
+      name: 'linkCol1',
+      type: 'array',
+      title: 'Relevante CircuLaw thema',
+      of: [{ type: 'linkObject' }],
+      group: 'summary',
+    },
+    {
+      name: 'linkCol2',
+      type: 'array',
+      title: 'Verwante CircuLaw-instrumenten',
+      of: [{ type: 'linkObject' }],
+      group: 'summary',
+    },
+    {
+      name: 'linkCol3',
+      type: 'array',
+      title: 'Relevante Europese wetgeving',
+      of: [{ type: 'linkObject' }],
       group: 'summary',
     },
     {
@@ -86,7 +180,7 @@ export default {
       type: 'array',
       title: 'Circular Economy Content',
       group: 'ce',
-      of: [{ type: 'euLawSection' }],
+      of: [{ type: 'block' }],
     },
   ],
 };
