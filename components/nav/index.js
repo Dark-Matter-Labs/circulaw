@@ -47,6 +47,7 @@ const bouwThemas = [
 const consumptiegoederenThemas = [
   { name: 'Matrasketen', url: '/consumptie-goederen/matrasketen' },
   { name: 'Meubels', url: '/consumptie-goederen/meubels' },
+  { name: 'Elektrische apparaten', url: '/consumptie-goederen/elektrische-apparaten' },
 ];
 
 const maakindustrieThemas = [{ name: 'Windturbines', url: '/maakindustrie/windturbines' }];

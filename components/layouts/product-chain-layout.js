@@ -4,7 +4,6 @@ import Link from 'next/link';
 import CustomButton from '@/components/custom-button';
 import PageHeader from '@/components/product-chain-page/product-chain-header';
 import MobilePageHeader from '@/components/product-chain-page/product-chain-header-mobile';
-// import ThemaList from '@/components/thema-list';
 import PCTooltip from '../tooltips/product-chain-tooltip';
 import ThemaCard from '../thema-cards';
 
@@ -13,9 +12,9 @@ export default function ThemeLayout({ ...props }) {
     <>
       <div>
         {/* HEADER DESKTOP */}
-        <PageHeader pageTitle={props?.title} />
+        <PageHeader pageTitle={props?.productChainData?.pcName} />
         {/* HEADER MOBILE */}
-        <MobilePageHeader pageTitle={props?.title} />
+        <MobilePageHeader pageTitle={props?.productChainData?.pcName} />
 
         <div className='bg-grey-150'>
           <div className='global-margin pb-12 sm:pb-20'>
@@ -24,10 +23,8 @@ export default function ThemeLayout({ ...props }) {
                 Thema’s en juridische instrumenten
               </h2>
               <p className='pb-5 p-base max-w-2xl'>
-                Duik gelijk in de juridische materie. Hieronder staan{' '}
-                <b>{props?.totalInstruments} instrumenten</b> die te maken hebben met voedsel. We
-                hebben ze onderverdeeld in categorieen zodat je direct kunt beginnen waar het voor
-                jou het beste past.
+                {props?.productChainData?.introOne} <b>{props?.totalInstruments} instrumenten</b>{' '}
+                {props?.productChainData?.introTwo}
               </p>
             </div>
 
@@ -46,13 +43,15 @@ export default function ThemeLayout({ ...props }) {
                     key={impact.detail}
                   >
                     <div>
-                      <Image
-                        className='w-28 h-28'
-                        src={urlFor(impact?.image).url()}
-                        alt='impact image'
-                        height={40}
-                        width={40}
-                      />
+                      {impact?.image && (
+                        <Image
+                          className='w-28 h-28'
+                          src={urlFor(impact?.image).url()}
+                          alt='impact image'
+                          height={40}
+                          width={40}
+                        />
+                      )}
                     </div>
                     <div>
                       <p className='pt-4 p-base'>{impact.detail}</p>
@@ -67,20 +66,25 @@ export default function ThemeLayout({ ...props }) {
           </div>
         </div>
         <div className='global-margin pt-14  bg-white'>
-          <h2 className='p-6xl-semibold text-green-800 pb-10'>De voedsel-ambities in nederland</h2>
+          <h2 className='p-6xl-semibold text-green-800 pb-10'>
+            {props?.productChainData?.ambitionTitle}
+          </h2>
           {props?.ambitionList?.map((ambition, index) =>
             index % 2 == 0 ? (
               <div key={index} className='grid grid-cols-1 sm:grid-cols-2 pb-20'>
                 <div className='block mb-6 sm:hidden'>
-                  <Image
-                    src={urlFor(ambition?.image).url()}
-                    alt='ambition illustration'
-                    height={356}
-                    width={542}
-                  />
+                  {ambition?.image && (
+                    <Image
+                      src={urlFor(ambition?.image).url()}
+                      alt='ambition illustration'
+                      height={356}
+                      width={542}
+                    />
+                  )}
                 </div>
                 <div>
-                  <h4 className='p-2xl-semibold sm:3xl-semibold text-green-800'>
+                  <span className='p-2xl text-green-600 mb-2'>{ambition.subTitle}</span>
+                  <h4 className='p-3xl-semibold sm:3xl-semibold text-green-800'>
                     {ambition.title}
                   </h4>
                   <p className='p-xl pt-4 max-w-xl pb-4'>{ambition.detail}</p>
@@ -93,24 +97,28 @@ export default function ThemeLayout({ ...props }) {
                   )}
                 </div>
                 <div className='hidden sm:block'>
-                  <Image
-                    src={urlFor(ambition?.image).url()}
-                    alt='ambition illustration'
-                    height={356}
-                    width={542}
-                  />
+                  {ambition?.image && (
+                    <Image
+                      src={urlFor(ambition?.image).url()}
+                      alt='ambition illustration'
+                      height={356}
+                      width={542}
+                    />
+                  )}
                 </div>
               </div>
             ) : (
               <div key={ambition.title} className='grid grid-cols-1 sm:grid-cols-2 pb-20'>
                 <div>
-                  <Image
-                    src={ambition.image}
-                    alt='ambition illustration'
-                    height={356}
-                    width={542}
-                    className='mb-6'
-                  />
+                  {ambition?.image && (
+                    <Image
+                      src={ambition.image}
+                      alt='ambition illustration'
+                      height={356}
+                      width={542}
+                      className='mb-6'
+                    />
+                  )}
                 </div>
                 <div>
                   <h4 className='p-2xl-semibold sm:3xl-semibold text-green-800'>
