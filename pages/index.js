@@ -9,17 +9,13 @@ import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
 import LinkIcon from '@/components/link-icon';
 import PCHomePage from '@/components/product-chain-page/product-chain-homepage';
+import HomePageEUSection from '@/components/home-page-eu-section';
 
 export default function Index({ aboutSection, homePageHeader, footerText, newsData }) {
   return (
     <Layout page='home' homePageHeader={homePageHeader} footerText={footerText}>
       <div className='bg-grey-100 sm:pb-12 -z-50' name='thema'>
         <div className='global-margin -z-20'>
-          <div className='h-32 bg-red-300'>
-            <Link href='/eu-wetgeving' className='w-full h-full'>
-              EU LAW LINK
-            </Link>
-          </div>
           <h2 className='p-5xl-semibold sm:p-7xl-semibold pt-8 text-green-600 border-grey-600 border-b pb-6'>
             Ontdek direct onze instrumenten
           </h2>
@@ -43,6 +39,12 @@ export default function Index({ aboutSection, homePageHeader, footerText, newsDa
           <div className='pt-4 -z-20'>
             <PCHomePage />
           </div>
+        </div>
+      </div>
+
+      <div className='bg-grey-100 pt-12 sm:pt-0 pb-12'>
+        <div className='global-margin'>
+          <HomePageEUSection />
         </div>
       </div>
 

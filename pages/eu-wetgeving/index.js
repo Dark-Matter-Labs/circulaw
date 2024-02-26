@@ -1,7 +1,9 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Layout from '@/components/layouts/layout';
 import { client } from '@/lib/sanity';
 import EULawCard from '@/components/eu-law/eu-law-card';
+import bannerImage from '@/public/banner.png';
 
 const euLawsQuery = `
 *[_type == "euLaw"]{...}
@@ -10,20 +12,24 @@ const euLawsQuery = `
 export default function EULaw({ laws }) {
   return (
     <Layout title='EU wetgeving'>
-      <div className='h-[360px] bg-green-600 pt-3'>
-        <div className='flex flex-col justify-between global-margin h-full'>
-          <div className='pt-6'>
-            <Link
-              href='/'
-              type='button'
-              className='rounded-clSm bg-white pl-2 pr-3 py-1.5 p-2xs-bold text-green-600'
-            >
-              <span className='link-interaction '>
-                Home <span className='ml-2'>{'>'}</span>
-              </span>
-            </Link>
+      <div className='h-[200px] bg-green-800 pt-3 overflow-hidden'>
+        <div className='relative object-cover w-full h-[102%]'>
+          <Image src={bannerImage} alt={'hero image'} fill className='z-0 bg-cover' priority />
+
+          <div className='flex flex-col justify-between global-margin h-full relative z-10'>
+            <div className='pt-6'>
+              <Link
+                href='/'
+                type='button'
+                className='rounded-clSm bg-white pl-2 pr-3 py-1.5 p-2xs-bold text-green-600'
+              >
+                <span className='link-interaction '>
+                  Home <span className='ml-2'>{'>'}</span>
+                </span>
+              </Link>
+            </div>
+            <h1 className='mb-8 p-5xl-semibold sm:p-7xl-bold text-grey-100'>Eu wetgeving</h1>
           </div>
-          <h1 className='mb-8 p-5xl-semibold sm:p-7xl-bold text-grey-100'>Eu wetgeving</h1>
         </div>
       </div>
       <div className='global-margin'>

@@ -5,7 +5,7 @@ import { client } from '@/lib/sanity';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import ScrollPagesTabContent from '@/components/eu-law/europe-tab-content';
-
+import SummaryComponent from '@/components/eu-law/summary-tab-content';
 // create component for each tab
 // can create individual ones for overview if need be,
 
@@ -15,11 +15,12 @@ const pathsQuery = `
 
 const lawQuery = `
 *[_type =="euLaw" && slug.current == $law][0] {
-    ...,
+    ..., 
 }
 `;
 
 export default function LawSummaryPage({ lawData }) {
+  console.log(lawData);
   const router = useRouter();
   const query = router.query.tab ?? 'overzicht';
 
@@ -86,7 +87,7 @@ export default function LawSummaryPage({ lawData }) {
                 query: { tab: 'relevantie-voor-regionale-en-lokale-overheden' },
               }}
             >
-              Relevantie voor regionale en lokale overheden
+              Relevantie voor regionale en lokale overheden{' '}
             </Link>
             <Link
               className={`${
@@ -103,7 +104,11 @@ export default function LawSummaryPage({ lawData }) {
         </div>
       </div>
 
-      {query === 'overzicht' && <div className='h-96 global-margin'>Overzicht</div>}
+      {query === 'overzicht' && (
+        <div className='h-96 global-margin'>
+          <SummaryComponent content='hello' />
+        </div>
+      )}
       {query === 'verplichtingen-voor-europese-lidstaten' && (
         <ScrollPagesTabContent content={lawData.europeContent} />
       )}
