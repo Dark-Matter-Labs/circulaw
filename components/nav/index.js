@@ -385,6 +385,7 @@ export default function Nav3(props) {
                                 </>
                               )}
                             </Disclosure>
+                            <MobileSimpleButton name='Eu wetgeving' url='/eu-wetgeving' />
                             <Disclosure>
                               {({ open }) => (
                                 <>
