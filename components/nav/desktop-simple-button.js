@@ -10,7 +10,7 @@ export default function DesktopSimpleButton({ name, url }) {
           ? 'text-white hover:text-green-200'
           : 'text-green-800 hover:text-green-500'
       } ${
-        name === 'Contact' ? '' : 'mr-8'
+        name === 'Contact' ? '' : 'mr-6 lg:mr-8'
       } h-full relative p-sm  hover:underline z-100  flex flex-row items-center cursor-pointer`}
     >
       <Link href={url}>{name}</Link>

@@ -385,7 +385,6 @@ export default function Nav3(props) {
                                 </>
                               )}
                             </Disclosure>
-
                             <Disclosure>
                               {({ open }) => (
                                 <>
@@ -445,7 +444,7 @@ export default function Nav3(props) {
               <div className='hidden lgNav:flex flex-row items-center justify-between mb-7'>
                 <div className=''>
                   <button
-                    className='h-full relative p-sm group z-100 mr-8 flex flex-row items-center'
+                    className='h-full relative p-sm group z-100 mr-6 lg:mr-6 flex flex-row items-center'
                     ref={mainMenuRef.setReference}
                     {...mainMenuReferencProps()}
                   >
@@ -533,12 +532,12 @@ export default function Nav3(props) {
                     </FloatingFocusManager>
                   )}
                 </div>
-
+                <DesktopSimpleButton name='Eu wetgeving' url='/eu-wetgeving' />
                 <div className=''>
                   <button
                     ref={overRef.setReference}
                     {...overReferenceProps()}
-                    className='h-full relative p-sm group z-100 mr-8 flex flex-row items-center'
+                    className='h-full relative p-sm group z-100 mr-6 lg:mr-8 flex flex-row items-center'
                   >
                     <span
                       className={`${
@@ -611,7 +610,7 @@ export default function Nav3(props) {
                 </div>
                 {/* Refactor */}
                 <DesktopSimpleButton name='Nieuws' url='/nieuws' />
-                <DesktopSimpleButton name='Vraag en antwoord' url='/vraag-en-antwoord' />
+                <DesktopSimpleButton name='Vraag & antwoord' url='/vraag-en-antwoord' />
                 <DesktopSimpleButton name='Contact' url='/contact' />
               </div>
             </div>
