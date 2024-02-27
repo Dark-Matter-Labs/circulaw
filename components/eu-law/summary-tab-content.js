@@ -13,11 +13,11 @@ export default function SummaryComponent({ lawData }) {
       {/* Intro section */}
       <div className='global-margin'>
         <div className='grid grid-cols-1 sm:grid-cols-2 py-10 gap-x-32 items-center justify-center'>
-          <div className='p-base order-last sm:order-first'>{lawData.introText}</div>
+          <div className='p-base order-last sm:order-first'>{lawData?.introText}</div>
           <div className='mb-6 sm:mb-0 flex items-center justify-center max-h-80'>
             <Image
-              src={urlFor(lawData.introImage).url()}
-              alt={lawData.imageAlt}
+              src={urlFor(lawData?.introImage).url()}
+              alt={lawData?.imageAlt}
               width={525}
               height={307}
             />
@@ -44,8 +44,8 @@ export default function SummaryComponent({ lawData }) {
           </div>
           <div>Status section</div>
           <div>
-            <EUTooltip title={lawData.statusContentTitle}>
-              <PortableText value={lawData.statusContent} components={EUtooltipComponents} />
+            <EUTooltip title={lawData?.statusContentTitle}>
+              <PortableText value={lawData?.statusContent} components={EUtooltipComponents} />
             </EUTooltip>
           </div>
         </div>
@@ -66,9 +66,9 @@ export default function SummaryComponent({ lawData }) {
           <div className='flex flex-col'>
             <h3 className='text-green-800 p-4xl-semibold'>Relevante CircuLaw thema&apos;s</h3>
             <ul>
-              {lawData?.linkCol1.map((link, id) => (
+              {lawData?.linkCol1?.map((link, id) => (
                 <li key={id} className='p-base text-green-800 my-3'>
-                  <Link href={link.link}>{link.linkText}</Link>
+                  <Link href={link?.link}>{link?.linkText}</Link>
                 </li>
               ))}
             </ul>
@@ -78,10 +78,10 @@ export default function SummaryComponent({ lawData }) {
               Verwante CircuLaw-instrumenten <LinkIcon />
             </h3>
             <ul>
-              {lawData?.linkCol2.map((link, id) => (
+              {lawData?.linkCol2?.map((link, id) => (
                 <li key={id} className='p-base text-green-800 my-3'>
-                  <Link href={link.link} target='_blank'>
-                    {link.linkText}
+                  <Link href={link?.link} target='_blank'>
+                    {link?.linkText}
                   </Link>
                 </li>
               ))}
@@ -92,10 +92,10 @@ export default function SummaryComponent({ lawData }) {
               Relevante Europese wetgeving <LinkIcon />
             </h3>
             <ul>
-              {lawData?.linkCol3.map((link, id) => (
+              {lawData?.linkCol3?.map((link, id) => (
                 <li key={id} className='p-base text-green-800 my-3'>
-                  <Link href={link.link} target='_blank'>
-                    {link.linkText}
+                  <Link href={link?.link} target='_blank'>
+                    {link?.linkText}
                   </Link>
                 </li>
               ))}
