@@ -16,7 +16,7 @@ export default function SummaryComponent({ lawData }) {
           <div className='p-base order-last sm:order-first'>{lawData?.introText}</div>
           <div className='mb-6 sm:mb-0 flex items-center justify-center max-h-80'>
             <Image
-              src={urlFor(lawData?.introImage).url()}
+              src={urlFor(lawData?.introImage)?.url()}
               alt={lawData?.imageAlt}
               width={525}
               height={307}
