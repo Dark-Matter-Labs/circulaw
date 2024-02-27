@@ -45,7 +45,7 @@ export default function LawSummaryPage({ lawData }) {
               </Link>
             </div>
           </div>
-          <h1 className='mb-20 p-5xl-semibold sm:p-7xl-bold text-grey-100'> {lawData.title}</h1>
+          <h1 className='mb-20 p-5xl-semibold sm:p-7xl-bold text-grey-100'> {lawData?.title}</h1>
         </div>
       </div>
 
@@ -58,7 +58,7 @@ export default function LawSummaryPage({ lawData }) {
                 selectedTab === 'overzicht' ? 'bg-white text-green-500' : 'bg-green-500 text-white'
               }  h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[105px]`}
               href={{
-                pathname: `/eu-wetgeving/${lawData.slug.current}`,
+                pathname: `/eu-wetgeving/${lawData?.slug?.current}`,
                 query: { tab: 'overzicht' },
               }}
             >
@@ -71,7 +71,7 @@ export default function LawSummaryPage({ lawData }) {
                   : 'bg-green-500 text-white'
               } h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[200px]`}
               href={{
-                pathname: `/eu-wetgeving/${lawData.slug.current}`,
+                pathname: `/eu-wetgeving/${lawData?.slug?.current}`,
                 query: { tab: 'verplichtingen-voor-europese-lidstaten' },
               }}
             >
@@ -84,7 +84,7 @@ export default function LawSummaryPage({ lawData }) {
                   : 'bg-green-500 text-white'
               } h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[240px]`}
               href={{
-                pathname: `/eu-wetgeving/${lawData.slug.current}`,
+                pathname: `/eu-wetgeving/${lawData?.slug?.current}`,
                 query: { tab: 'relevantie-voor-regionale-en-lokale-overheden' },
               }}
             >
@@ -97,7 +97,7 @@ export default function LawSummaryPage({ lawData }) {
                   : 'bg-green-500 text-white'
               } h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[200px]`}
               href={{
-                pathname: `/eu-wetgeving/${lawData.slug.current}`,
+                pathname: `/eu-wetgeving/${lawData?.slug?.current}`,
                 query: { tab: 'relevantie-voor-de-circulaire-economie' },
               }}
             >
@@ -113,10 +113,10 @@ export default function LawSummaryPage({ lawData }) {
         </div>
       )}
       {query === 'verplichtingen-voor-europese-lidstaten' && (
-        <ScrollPagesTabContent content={lawData.europeContent} />
+        <ScrollPagesTabContent content={lawData?.europeContent} />
       )}
       {query === 'relevantie-voor-regionale-en-lokale-overheden' && (
-        <ScrollPagesTabContent content={lawData.europeContent} />
+        <ScrollPagesTabContent content={lawData?.europeContent} />
       )}
       {query === 'relevantie-voor-de-circulaire-economie' && (
         <div className='h-96 global-margin'>relevantie-voor-de-circulaire-economie</div>
