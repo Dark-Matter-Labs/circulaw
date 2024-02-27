@@ -28,6 +28,7 @@ import euLawSection from './objects/eu-law-section';
 import productChainAmbition from './objects/product-chain-ambition';
 import productChainImpact from './objects/product-chain-impact';
 import linkObject from './objects/link-object';
+import inlineTable from './objects/inline-table';
 
 export const schemaTypes = [
   // DOCUMENT TYPES
@@ -62,4 +63,5 @@ export const schemaTypes = [
   productChainAmbition,
   productChainImpact,
   linkObject,
+  inlineTable,
 ];

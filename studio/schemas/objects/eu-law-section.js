@@ -24,6 +24,9 @@ export default {
           type: 'smallPara',
         },
         {
+          type: 'inlineTable'
+        },
+        {
           type: 'block',
           of: [
             {
