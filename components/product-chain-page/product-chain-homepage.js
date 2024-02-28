@@ -19,7 +19,7 @@ const productChains = [
   },
   {
     title: 'Consumptiegoederen',
-    slug: 'consumptie-goederen',
+    slug: 'consumptiegoederen',
     description: 'Lorem ipsum mooi verhaaltje over deze product chaina',
   },
   {

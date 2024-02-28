@@ -20,7 +20,7 @@ const navigation = {
   ],
   thema: [
     { name: 'Bouw', slug: '/bouw' },
-    { name: 'Consumptiegoederen', slug: '/consumptie-goederen' },
+    { name: 'Consumptiegoederen', slug: '/consumptiegoederen' },
     { name: 'Biomassa en Voedsel', slug: '/biomassa-en-voedsel' },
     { name: 'Maakindustrie', slug: '/maakindustrie' },
     { name: 'Kunststoffen', slug: '/kunststoffen' },
