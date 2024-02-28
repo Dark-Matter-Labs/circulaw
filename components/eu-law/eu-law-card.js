@@ -4,7 +4,6 @@ import StatusTwoStep from './status/status-two-step';
 
 
 export default function EULawCard({ law }) {
-  console.log(law)
   return (
     <>
       <Link href={`/eu-wetgeving/${law?.slug?.current}`} className='hidden md:block'>

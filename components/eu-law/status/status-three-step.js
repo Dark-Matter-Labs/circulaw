@@ -16,8 +16,6 @@ import mobileStep4 from '@/public/eu-status/mobile-three-step/mobile-three-step-
 import mobileStep5 from '@/public/eu-status/mobile-three-step/mobile-three-step-5.svg'
 import mobileStep6 from '@/public/eu-status/mobile-three-step/mobile-three-step-6.svg'
 
-
-
 export default function StatusThreeStep({ status }) {
     if (status === 'In negotiations A') {
       return (
