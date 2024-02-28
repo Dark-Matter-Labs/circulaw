@@ -83,8 +83,8 @@ export default function ThemeLayout({ ...props }) {
                   )}
                 </div>
                 <div>
-                  <span className='p-2xl text-green-600 mb-2'>{ambition.subTitle}</span>
-                  <h4 className='p-3xl-semibold sm:3xl-semibold text-green-800'>
+                  <span className='p-2xl text-green-600'>{ambition.subTitle}</span>
+                  <h4 className='p-3xl-semibold sm:3xl-semibold text-green-800 mt-2'>
                     {ambition.title}
                   </h4>
                   <p className='p-xl pt-4 max-w-xl pb-4'>{ambition.detail}</p>
@@ -121,7 +121,8 @@ export default function ThemeLayout({ ...props }) {
                   )}
                 </div>
                 <div>
-                  <h4 className='p-2xl-semibold sm:3xl-semibold text-green-800'>
+                  <span className='p-2xl text-green-600'>{ambition.subTitle}</span>
+                  <h4 className='p-2xl-semibold sm:3xl-semibold text-green-800 mt-2'>
                     {ambition.title}
                   </h4>
                   <p className='p-xl pt-4 max-w-xl pb-4'>{ambition.detail}</p>
