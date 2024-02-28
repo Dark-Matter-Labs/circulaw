@@ -50,6 +50,13 @@ export default {
       group: 'summary',
     },
     {
+      name: 'summaryIntroText',
+      type: 'text',
+      title: 'Summary Introduction text',
+      description: 'this will be displayed on the EU law card',
+      group: 'summary',
+    },
+    {
       name: 'introImage',
       type: 'image',
       title: 'Intro Image',
