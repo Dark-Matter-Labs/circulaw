@@ -1,6 +1,7 @@
 import { Link, Element } from 'react-scroll';
 import { PortableText } from '@portabletext/react';
 import { euPageComponents } from '@/lib/portable-text/pt-components';
+import ScrollTabMobileMenu from './scroll-tab-mobile-menu';
 
 export default function ScrollPagesTabContent({ content }) {
   return (
@@ -32,7 +33,7 @@ export default function ScrollPagesTabContent({ content }) {
                   duration={500}
                   offset={-98}
                   spy={true}
-                  activeClass='bg-grey-200 text-green-800 font-semibold transition-all duration-100 min-w-[390px]'
+                  activeClass='bg-green-500 text-grey-100 font-semibold transition-all duration-100 min-w-[390px]'
                   className='p-base text-green-800 py-2 pl-4 pr-8 h-full break-words min-w-[390px] rounded-cl whitespace-nowrap cursor-pointer'
                 >
                   {id + 1}. {section.title}
@@ -41,10 +42,10 @@ export default function ScrollPagesTabContent({ content }) {
             ))}
           </ul>
         </div>
-        <div className='absolute top-20 left-0 h-full block lgNav:hidden z-20'>
-          <div className='sticky top-44 my-12 py-2 px-4 bg-green-800 rounded-r-cl text-white p-base'>
-            Index
-          </div>
+        <div className='absolute top-20 right-0 h-full block lgNav:hidden z-20'>
+          <ScrollTabMobileMenu content = {content}>
+        
+          </ScrollTabMobileMenu>
         </div>
       </div>
     </>
