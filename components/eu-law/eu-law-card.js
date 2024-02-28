@@ -1,9 +1,10 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import mobileStatus from '@/public/mobile.svg';
-import StatusDesktop from './status-desktop';
+import StatusThreeStep from './status/status-three-step';
+import StatusTwoStep from './status/status-two-step';
+
 
 export default function EULawCard({ law }) {
+  console.log(law)
   return (
     <>
       <Link href={`/eu-wetgeving/${law?.slug?.current}`} className='hidden md:block'>
@@ -16,7 +17,8 @@ export default function EULawCard({ law }) {
               <div>
                 <div className='p-xs-semibold text-grey-800 my-6'>Status</div>
                 <div className='w-full flex justify-center items-center grow'>
-                  <StatusDesktop status={law?.status} />
+                  {law.statusStep === 'Two Step' && (<StatusTwoStep status = {law.statusTwoStep} />)}
+                  {law.statusStep === 'Three Step' && (<StatusThreeStep status = {law.statusThreeStep} />)}
                 </div>
               </div>
               <div className='flex items-center justify-center pt-6 border-t p-base-semibold'>
@@ -36,8 +38,9 @@ export default function EULawCard({ law }) {
             <div className='p-lg-semibold my-4'>Status</div>
 
             <div className='flex items-center justify-center'>
-              {/* need to export all potential components and conditionally render them based on status */}
-              <Image src={mobileStatus} alt='' />
+              
+              {law.statusStep === 'Two Step' && (<StatusTwoStep status = {law.statusTwoStep} />)}
+              {law.statusStep === 'Three Step' && (<StatusThreeStep status = {law.statusThreeStep} />)}
             </div>
           </div>
 

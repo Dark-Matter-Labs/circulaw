@@ -62,13 +62,44 @@ export default {
       group: 'summary',
     },
     {
-      name: 'status',
+      name: 'statusStep',
       type: 'string',
-      title: 'Law Status',
+      title: 'Is the status 2 or 3 steps?',
+      validation: (Rule) => Rule.required(),
       options: {
         list: [
-          { title: 'Proposed A', value: 'Proposed A' },
-          { title: 'Proposed B', value: 'Proposed B' },
+          {title: 'Two Step', value: 'Two Step'},
+          {title: 'Three Step', value: 'Three Step'},
+        ],
+        layout: 'radio',
+        direction: 'horizontal'
+      },
+      group: 'summary',
+    },
+    {
+      name: 'statusTwoStep',
+      type: 'string',
+      title: 'Law Status',
+      hidden: ({ document }) => document.statusStep === 'Three Step' ||document.statusStep ===  undefined,
+      options: {
+        list: [
+          { title: 'In negotiations A', value: 'In negotiations A' },
+          { title: 'In negotiations B', value: 'In negotiations B' },
+          { title: 'Adopted A', value: 'Adopted A' },
+          { title: 'Adopted B', value: 'Adopted B' },
+        ],
+        layout: 'radio',
+        direction: 'horizontal',
+      },
+      group: 'summary',
+    },
+    {
+      name: 'statusThreeStep',
+      type: 'string',
+      title: 'Law Status',
+      hidden: ({ document }) => document.statusStep === 'Two Step' || document.statusStep ===  undefined,
+      options: {
+        list: [
           { title: 'In negotiations A', value: 'In negotiations A' },
           { title: 'In negotiations B', value: 'In negotiations B' },
           { title: 'Adopted A', value: 'Adopted A' },
