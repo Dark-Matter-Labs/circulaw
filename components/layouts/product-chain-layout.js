@@ -121,6 +121,7 @@ export default function ThemeLayout({ ...props }) {
                   )}
                 </div>
                 <div>
+                <span className='p-2xl text-green-600 mb-2'>{ambition.subTitle}</span>
                   <h4 className='p-2xl-semibold sm:3xl-semibold text-green-800'>
                     {ambition.title}
                   </h4>
