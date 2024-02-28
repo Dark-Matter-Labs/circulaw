@@ -3,9 +3,8 @@ import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import CustomButton from '@/components/custom-button';
 import aboutImage from '@/public/home-page/homepageAboutDeco.png';
-import euImage from '@/public/eu.png';
 
-export default function HomePageEUSection() {
+export default function HomePageEUSection({euData}) {
   return (
     <Link href='/eu-wetgeving'>
       <div className='flex flex-col sm:flex-row items-center justify-between'>
@@ -15,13 +14,7 @@ export default function HomePageEUSection() {
           </div>
           <div className='hidden sm:block py-6 p-base'>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-              has been the standard dummy text ever since the 1500s, when an unknown printer took a
-              galley of type and scrambled it to make a type specimen book. It has survived not only
-              five centuries, but also the leap into electronic typesetting, remaining essentially
-              unchanged. It was popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop publishing software
-              like Aldus PageMaker including versions of Lorem Ipsum.
+            {euData.euLaw}
             </p>
           </div>
           <div className='w-full flex justify-center sm:hidden py-6'>
@@ -39,8 +32,8 @@ export default function HomePageEUSection() {
           </div>
         </div>
         <div className='hidden sm:w-5/12 sm:flex justify-center'>
-          <div className='relative w-[400px] h-[266px]'>
-            <Image src={euImage} fill alt='image for wat circulaw' />
+          <div className='relative w-[400px] h-[266px] rounded-cl'>
+            <Image src={euData?.image} fill alt='image for wat circulaw' className='rounded-cl' />
           </div>
         </div>
       </div>
