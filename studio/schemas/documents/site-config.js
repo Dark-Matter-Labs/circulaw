@@ -119,6 +119,6 @@ export default {
       name: 'euLawImage',
       title: 'EU Law Image',
       type: 'image',
-    }
+    },
   ],
 };

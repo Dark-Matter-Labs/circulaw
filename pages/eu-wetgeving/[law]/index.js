@@ -16,10 +16,12 @@ const pathsQuery = `
 const lawQuery = `
 *[_type =="euLaw" && slug.current == $law][0] {
     ..., 
+    "introImage": introImage.asset->.url,
 }
 `;
 
 export default function LawSummaryPage({ lawData }) {
+  console.log(lawData)
   const router = useRouter();
   const query = router.query.tab ?? 'overzicht';
 

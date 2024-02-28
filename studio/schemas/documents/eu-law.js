@@ -75,11 +75,11 @@ export default {
       validation: (Rule) => Rule.required(),
       options: {
         list: [
-          {title: 'Two Step', value: 'Two Step'},
-          {title: 'Three Step', value: 'Three Step'},
+          { title: 'Two Step', value: 'Two Step' },
+          { title: 'Three Step', value: 'Three Step' },
         ],
         layout: 'radio',
-        direction: 'horizontal'
+        direction: 'horizontal',
       },
       group: 'summary',
     },
@@ -87,7 +87,8 @@ export default {
       name: 'statusTwoStep',
       type: 'string',
       title: 'Law Status',
-      hidden: ({ document }) => document.statusStep === 'Three Step' ||document.statusStep ===  undefined,
+      hidden: ({ document }) =>
+        document.statusStep === 'Three Step' || document.statusStep === undefined,
       options: {
         list: [
           { title: 'In negotiations A', value: 'In negotiations A' },
@@ -104,7 +105,8 @@ export default {
       name: 'statusThreeStep',
       type: 'string',
       title: 'Law Status',
-      hidden: ({ document }) => document.statusStep === 'Two Step' || document.statusStep ===  undefined,
+      hidden: ({ document }) =>
+        document.statusStep === 'Two Step' || document.statusStep === undefined,
       options: {
         list: [
           { title: 'In negotiations A', value: 'In negotiations A' },
