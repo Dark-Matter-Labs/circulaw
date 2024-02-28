@@ -31,7 +31,7 @@ export default function LawSummaryPage({ lawData }) {
   }, [query]);
 
   return (
-    <Layout title='Law title'>
+    <Layout title={lawData?.title}>
       <div className='h-[360px] pt-3 bg-green-800'>
         <div className='flex flex-col justify-between global-margin h-full'>
           <div className='pt-6'>
