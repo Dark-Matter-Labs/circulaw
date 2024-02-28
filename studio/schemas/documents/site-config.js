@@ -110,5 +110,15 @@ export default {
       type: 'string',
       group: 'footer',
     },
+    {
+      name: 'euLaw',
+      title: 'Eu Law text',
+      type: 'text',
+    },
+    {
+      name: 'euLawImage',
+      title: 'EU Law Image',
+      type: 'image',
+    }
   ],
 };

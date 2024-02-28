@@ -6,6 +6,8 @@ import EUTooltip from '../tooltips/eu-tooltip';
 import { PortableText } from '@portabletext/react';
 import { EUtooltipComponents } from '@/lib/portable-text/pt-components';
 import LinkIcon from '../link-icon';
+import StatusThreeStep from './status/status-three-step';
+import StatusTwoStep from './status/status-two-step';
 
 export default function SummaryComponent({ lawData }) {
   return (
@@ -13,7 +15,7 @@ export default function SummaryComponent({ lawData }) {
       {/* Intro section */}
       <div className='global-margin'>
         <div className='grid grid-cols-1 sm:grid-cols-2 py-10 gap-x-32 items-center justify-center'>
-          <div className='p-base order-last sm:order-first'>{lawData?.introText}</div>
+          <div className='p-base order-last sm:order-first'>{lawData?.summaryIntroText}</div>
           <div className='mb-6 sm:mb-0 flex items-center justify-center max-h-80'>
             <Image
               src={urlFor(lawData?.introImage)?.url()}
@@ -25,14 +27,15 @@ export default function SummaryComponent({ lawData }) {
         </div>
       </div>
       {/* tags */}
+      {/*  
       <div className='bg-grey-150 h-[200px]'>
         <div className='global-margin py-10'>
           <h2 className='text-green-800 p-6xl-semibold'>Relevante termen</h2>
         </div>
       </div>
-
+*/}
       {/* status */}
-      <div className='h-[200px]'>
+      <div className=''>
         <div className='global-margin py-10'>
           <div className='flex flex-row items-center place-items-center'>
             <h2 className='text-green-800 p-6xl-semibold'>Status</h2>
@@ -42,7 +45,8 @@ export default function SummaryComponent({ lawData }) {
               </EUGenericTooltip>
             </div>
           </div>
-          <div>Status section</div>
+          <div> {lawData?.statusStep === 'Two Step' && (<StatusTwoStep status = {lawData?.statusTwoStep} />)}
+                  {lawData?.statusStep === 'Three Step' && (<StatusThreeStep status = {lawData?.statusThreeStep} />)}</div>
           <div>
             <EUTooltip title={lawData?.statusContentTitle}>
               <PortableText value={lawData?.statusContent} components={EUtooltipComponents} />
