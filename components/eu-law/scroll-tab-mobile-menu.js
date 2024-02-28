@@ -73,7 +73,7 @@ export default function ScrollTabMobileMenu({ content }) {
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>
-                        <ul className='sticky top-32 my-12 min-w-[390px]'>
+                        <ul className='sticky top-32 my-12'>
                           <h4 className='p-6xl-semibold mb-5 ml-3'>Obligations</h4>
                           {content.map((section, id) => (
                             <li key={id} className='my-4'>
