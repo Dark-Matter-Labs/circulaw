@@ -43,9 +43,7 @@ export default function ScrollPagesTabContent({ content }) {
           </ul>
         </div>
         <div className='absolute top-20 right-0 h-full block lgNav:hidden z-20'>
-          <ScrollTabMobileMenu content = {content}>
-        
-          </ScrollTabMobileMenu>
+          <ScrollTabMobileMenu content={content}></ScrollTabMobileMenu>
         </div>
       </div>
     </>

@@ -45,8 +45,15 @@ export default function SummaryComponent({ lawData }) {
               </EUGenericTooltip>
             </div>
           </div>
-          <div> {lawData?.statusStep === 'Two Step' && (<StatusTwoStep status = {lawData?.statusTwoStep} />)}
-                  {lawData?.statusStep === 'Three Step' && (<StatusThreeStep status = {lawData?.statusThreeStep} />)}</div>
+          <div>
+            {' '}
+            {lawData?.statusStep === 'Two Step' && (
+              <StatusTwoStep status={lawData?.statusTwoStep} />
+            )}
+            {lawData?.statusStep === 'Three Step' && (
+              <StatusThreeStep status={lawData?.statusThreeStep} />
+            )}
+          </div>
           <div>
             <EUTooltip title={lawData?.statusContentTitle}>
               <PortableText value={lawData?.statusContent} components={EUtooltipComponents} />

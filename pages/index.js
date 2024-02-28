@@ -44,7 +44,7 @@ export default function Index({ aboutSection, homePageHeader, footerText, newsDa
 
       <div className='bg-grey-100 pt-12 sm:pt-0 pb-12'>
         <div className='global-margin'>
-          <HomePageEUSection euData={euData}/>
+          <HomePageEUSection euData={euData} />
         </div>
       </div>
 
@@ -87,7 +87,7 @@ export async function getStaticProps() {
   const aboutSection = await client.fetch(aboutSectionQuerie);
   const homePageHeader = await client.fetch(homePageHeaderQuery);
   const newsData = await client.fetch(newsItems);
-  const euData = await client.fetch(euHomePageQuery)
+  const euData = await client.fetch(euHomePageQuery);
   return {
     props: {
       aboutSection,

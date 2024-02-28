@@ -4,7 +4,7 @@ import { ArrowRightIcon } from '@heroicons/react/outline';
 import CustomButton from '@/components/custom-button';
 import aboutImage from '@/public/home-page/homepageAboutDeco.png';
 
-export default function HomePageEUSection({euData}) {
+export default function HomePageEUSection({ euData }) {
   return (
     <Link href='/eu-wetgeving'>
       <div className='flex flex-col sm:flex-row items-center justify-between'>
@@ -13,9 +13,7 @@ export default function HomePageEUSection({euData}) {
             <h2 className='p-5xl-semibold sm:p-7xl-semibold text-green-600 pb-6'>EU wetgeving</h2>
           </div>
           <div className='hidden sm:block py-6 p-base'>
-            <p>
-            {euData.euLaw}
-            </p>
+            <p>{euData.euLaw}</p>
           </div>
           <div className='w-full flex justify-center sm:hidden py-6'>
             <div className='flex  h-[11rem] w-48 justify-center'>

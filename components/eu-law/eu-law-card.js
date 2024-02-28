@@ -2,7 +2,6 @@ import Link from 'next/link';
 import StatusThreeStep from './status/status-three-step';
 import StatusTwoStep from './status/status-two-step';
 
-
 export default function EULawCard({ law }) {
   return (
     <>
@@ -16,8 +15,10 @@ export default function EULawCard({ law }) {
               <div>
                 <div className='p-xs-semibold text-grey-800 my-6'>Status</div>
                 <div className='w-full flex justify-center items-center grow'>
-                  {law.statusStep === 'Two Step' && (<StatusTwoStep status = {law.statusTwoStep} />)}
-                  {law.statusStep === 'Three Step' && (<StatusThreeStep status = {law.statusThreeStep} />)}
+                  {law.statusStep === 'Two Step' && <StatusTwoStep status={law.statusTwoStep} />}
+                  {law.statusStep === 'Three Step' && (
+                    <StatusThreeStep status={law.statusThreeStep} />
+                  )}
                 </div>
               </div>
               <div className='flex items-center justify-center pt-6 border-t p-base-semibold'>
@@ -37,9 +38,8 @@ export default function EULawCard({ law }) {
             <div className='p-lg-semibold my-4'>Status</div>
 
             <div className='flex items-center justify-center'>
-              
-              {law.statusStep === 'Two Step' && (<StatusTwoStep status = {law.statusTwoStep} />)}
-              {law.statusStep === 'Three Step' && (<StatusThreeStep status = {law.statusThreeStep} />)}
+              {law.statusStep === 'Two Step' && <StatusTwoStep status={law.statusTwoStep} />}
+              {law.statusStep === 'Three Step' && <StatusThreeStep status={law.statusThreeStep} />}
             </div>
           </div>
 

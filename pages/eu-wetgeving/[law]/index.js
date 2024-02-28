@@ -45,7 +45,10 @@ export default function LawSummaryPage({ lawData }) {
               </Link>
             </div>
           </div>
-          <h1 className='mb-[94px] p-5xl-semibold sm:p-7xl-bold text-grey-100'> {lawData?.title}</h1>
+          <h1 className='mb-[94px] p-5xl-semibold sm:p-7xl-bold text-grey-100'>
+            {' '}
+            {lawData?.title}
+          </h1>
         </div>
       </div>
 
