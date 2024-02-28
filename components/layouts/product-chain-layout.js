@@ -34,7 +34,7 @@ export default function ThemeLayout({ ...props }) {
 
             <div className='pt-12 sm:pt-20'>
               <h2 className='p-3xl-semibold sm:p-6xl-semibold text-green-800 pb-8'>
-                Impact voedselsyteem op het klimaat en de natuur{' '}
+                {props?.productChainData?.impactTitle}
               </h2>
               <div className='grid grid-cols-1 justify-items-center sm:flex sm:justify-center gap-20'>
                 {props?.impactList?.map((impact) => (
