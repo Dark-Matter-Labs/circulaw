@@ -14,7 +14,7 @@ import mobileStep4 from '@/public/eu-status/mobile-two-step/mobile-two-step-4.sv
 
 
 
-export default function StatusThreeStep({ status }) {
+export default function StatusTwoStep({ status }) {
     if (status === 'In negotiations A') {
       return (
         <>       
