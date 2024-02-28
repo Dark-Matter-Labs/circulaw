@@ -21,7 +21,6 @@ const lawQuery = `
 `;
 
 export default function LawSummaryPage({ lawData }) {
-  console.log(lawData)
   const router = useRouter();
   const query = router.query.tab ?? 'overzicht';
 
