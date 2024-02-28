@@ -14,9 +14,9 @@ const links = {
     '/maakindustrie/windturbines/overheidsbevoegdheid',
   ],
   matrasketen: [
-    '/consumptie-goederen/matrasketen/categorie',
-    '/consumptie-goederen/matrasketen/instrumenten',
-    '/consumptie-goederen/matrasketen/overheidsbevoegdheid',
+    '/consumptiegoederen/matrasketen/categorie',
+    '/consumptiegoederen/matrasketen/instrumenten',
+    '/consumptiegoederen/matrasketen/overheidsbevoegdheid',
   ],
   voedselverspilling: [
     '/biomassa-en-voedsel/voedselverspilling/categorie',

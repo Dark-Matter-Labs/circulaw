@@ -66,6 +66,13 @@ export default {
       group: 'editableContent',
     },
     {
+      name: 'impactTitle',
+      type: 'string',
+      title: 'Impact Title',
+      validation: (Rule) => Rule.required(),
+      group: 'editableContent',
+    },
+    {
       name: 'impactItems',
       type: 'array',
       title: 'Impact Items',

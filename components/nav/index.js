@@ -45,9 +45,9 @@ const bouwThemas = [
 ];
 
 const consumptiegoederenThemas = [
-  { name: 'Matrasketen', url: '/consumptie-goederen/matrasketen' },
-  { name: 'Meubels', url: '/consumptie-goederen/meubels' },
-  { name: 'Elektrische apparaten', url: '/consumptie-goederen/elektrische-apparaten' },
+  { name: 'Matrasketen', url: '/consumptiegoederen/matrasketen' },
+  { name: 'Meubels', url: '/consumptiegoederen/meubels' },
+  { name: 'Elektrische apparaten', url: '/consumptiegoederen/elektrische-apparaten' },
 ];
 
 const maakindustrieThemas = [{ name: 'Windturbines', url: '/maakindustrie/windturbines' }];
@@ -362,7 +362,7 @@ export default function Nav3(props) {
                                         <MobileDisclosure
                                           transitionAgenda='Consumptiegoederen'
                                           themas={consumptiegoederenThemas}
-                                          slug='consumptie-goederen'
+                                          slug='consumptiegoederen'
                                         />
                                         <MobileDisclosure
                                           transitionAgenda='Voedsel en biomassa'
@@ -510,7 +510,7 @@ export default function Nav3(props) {
                             <DesktopNavCard
                               transitionAgenda='Consumptiegoederen'
                               themas={consumptiegoederenThemas}
-                              slug='consumptie-goederen'
+                              slug='consumptiegoederen'
                             />
                             <DesktopNavCard
                               transitionAgenda='Voedsel en biomassa'
