@@ -6,8 +6,10 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import ScrollPagesTabContent from '@/components/eu-law/europe-tab-content';
 import SummaryComponent from '@/components/eu-law/summary-tab-content';
+import { PortableText } from '@portabletext/react';
 // create component for each tab
 // can create individual ones for overview if need be,
+import { euPageComponents } from '@/lib/portable-text/pt-components';
 
 const pathsQuery = `
 *[_type =="euLaw" && defined(slug.current)][].slug.current
@@ -120,10 +122,13 @@ export default function LawSummaryPage({ lawData }) {
         <ScrollPagesTabContent content={lawData?.europeContent} />
       )}
       {query === 'relevantie-voor-regionale-en-lokale-overheden' && (
-        <ScrollPagesTabContent content={lawData?.europeContent} />
+        <ScrollPagesTabContent content={lawData?.localContent} />
       )}
       {query === 'relevantie-voor-de-circulaire-economie' && (
-        <div className='h-96 global-margin'>relevantie-voor-de-circulaire-economie</div>
+        <div className='global-margin my-20 max-w-xl 2xl:max-w-2xl'>
+          <PortableText value={lawData?.ceContent} components={euPageComponents} />
+
+        </div>
       )}
     </Layout>
   );
