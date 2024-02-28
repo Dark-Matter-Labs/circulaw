@@ -22,7 +22,7 @@ const themaInfo = `
 export default function Measures({ numberOfInstruments, instruments, themaData }) {
   if (themaData?.type === 'thema') {
     return (
-      <Layout title={`CircuLaw - ${themaData?.themaName}`}>
+      <Layout title={`${themaData?.themaName}`}>
         <MeasuresLayout
           totalNumberOfLaws={numberOfInstruments}
           title={`Lijst van alle ${themaData?.thema} instrumenten`}

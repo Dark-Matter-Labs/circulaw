@@ -137,6 +137,7 @@ export default function ThemeLayout({ ...props }) {
             ),
           )}
         </div>
+        {props.links && 
         <div className='pt-14 pb-10 bg-grey-150'>
           <div className='global-margin'>
             <h2 className='p-6xl-semibold text-green-800 pb-10'>
@@ -175,7 +176,7 @@ export default function ThemeLayout({ ...props }) {
               </ul>
             </div>
           </div>
-        </div>
+        </div>}
       </div>
     </>
   );
