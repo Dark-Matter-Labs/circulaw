@@ -14,7 +14,6 @@ import euLaw from './documents/eu-law';
 import greenBox from './objects/green-box';
 import pdfBlock from './objects/pdf-block';
 import imageBlock from './objects/image-object';
-import hoverText from './objects/hover-text';
 import smallPara from './objects/small-paragraph';
 import link from './objects/link';
 import navItem from './objects/nav-item';
@@ -49,7 +48,6 @@ export const schemaTypes = [
   greenBox,
   pdfBlock,
   imageBlock,
-  hoverText,
   smallPara,
   link,
   navItem,
