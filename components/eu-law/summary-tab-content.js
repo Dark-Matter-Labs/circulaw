@@ -67,7 +67,15 @@ export default function SummaryComponent({ lawData }) {
       </div>
       {/* Ovewrview cards and stats */}
       <div className='bg-grey-150 py-10'>
+        <div className='bg-black text-white mb-4'>*** CSRD</div>
+       <Highlights law ='CSRD'/>
+       <div className='bg-black text-white mb-4'>*** EED</div>
+
        <Highlights law ='EED'/>
+       <div className='bg-black text-white mb-4'>*** SUP</div>
+
+       <Highlights law ='SUP'/>
+
       </div>
 
       {/* Links */}
