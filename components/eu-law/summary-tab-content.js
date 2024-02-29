@@ -8,6 +8,7 @@ import { EUtooltipComponents } from '@/lib/portable-text/pt-components';
 import LinkIcon from '../link-icon';
 import StatusThreeStep from './status/status-three-step';
 import StatusTwoStep from './status/status-two-step';
+import Highlights from './highlights';
 
 export default function SummaryComponent({ lawData }) {
   return (
@@ -66,12 +67,7 @@ export default function SummaryComponent({ lawData }) {
       </div>
       {/* Ovewrview cards and stats */}
       <div className='bg-grey-150 py-10'>
-        <div className='global-margin'>
-          <h2 className='text-green-800 p-6xl-semibold mb-6'>Title 1</h2>
-          <div className='h-32'>some cards and stats here</div>
-          <h2 className='text-green-800 p-6xl-semibold mb-6'>Title 2</h2>
-          <div className='h-32'>some cards and stats here</div>
-        </div>
+       <Highlights law ='EED'/>
       </div>
 
       {/* Links */}
