@@ -49,7 +49,7 @@ export default function LawSummaryPage({ lawData }) {
               </Link>
             </div>
             <div>
-              <SocialButtons title = {`${lawData?.title} - ${selectedTab.replace(/(-)/g, ' ')}`}/>
+              <SocialButtons title={`${lawData?.title} - ${selectedTab.replace(/(-)/g, ' ')}`} />
             </div>
           </div>
           <h1 className='mb-[94px] p-5xl-semibold sm:p-7xl-bold text-grey-100'>
@@ -131,7 +131,7 @@ export default function LawSummaryPage({ lawData }) {
       {query === 'relevantie-voor-de-circulaire-economie' && (
         <div className='global-margin my-20 '>
           <div className='max-w-xl 2xl:max-w-2xl'>
-          <PortableText value={lawData?.ceContent} components={euPageComponents} />
+            <PortableText value={lawData?.ceContent} components={euPageComponents} />
           </div>
         </div>
       )}

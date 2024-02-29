@@ -137,46 +137,47 @@ export default function ThemeLayout({ ...props }) {
             ),
           )}
         </div>
-        {props.links && 
-        <div className='pt-14 pb-10 bg-grey-150'>
-          <div className='global-margin'>
-            <h2 className='p-6xl-semibold text-green-800 pb-10'>
-              Duik nog dieper in de materie{' '}
-              <span className='pl-0.5 inline-block h-6 w-6 -mb-1 relative '>
-                <svg
-                  className='stroke-current h-6 w-6'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    d='M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14'
-                    stroke=''
-                    strokeWidth='2'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                  />
-                </svg>
-              </span>
-            </h2>
-            <div className='newlineDisplay p-base -mt-2 mb-6'>
-              <ul className='list-disc pl-6 p-base'>
-                {props?.links?.map((link, id) => (
-                  <li className='py-0.5' key={id}>
-                    <a
-                      className='text-green-500 inline link-interaction'
-                      href={link.link}
-                      target='_blank'
-                      rel='noreferrer'
-                    >
-                      <span className='link-base link-interaction'>{link.linkText}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
+        {props.links && (
+          <div className='pt-14 pb-10 bg-grey-150'>
+            <div className='global-margin'>
+              <h2 className='p-6xl-semibold text-green-800 pb-10'>
+                Duik nog dieper in de materie{' '}
+                <span className='pl-0.5 inline-block h-6 w-6 -mb-1 relative '>
+                  <svg
+                    className='stroke-current h-6 w-6'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <path
+                      d='M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14'
+                      stroke=''
+                      strokeWidth='2'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                    />
+                  </svg>
+                </span>
+              </h2>
+              <div className='newlineDisplay p-base -mt-2 mb-6'>
+                <ul className='list-disc pl-6 p-base'>
+                  {props?.links?.map((link, id) => (
+                    <li className='py-0.5' key={id}>
+                      <a
+                        className='text-green-500 inline link-interaction'
+                        href={link.link}
+                        target='_blank'
+                        rel='noreferrer'
+                      >
+                        <span className='link-base link-interaction'>{link.linkText}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
-        </div>}
+        )}
       </div>
     </>
   );
