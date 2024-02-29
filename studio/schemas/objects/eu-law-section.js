@@ -24,7 +24,7 @@ export default {
           type: 'smallPara',
         },
         {
-          type: 'inlineTable',
+          type: 'imageBlock',
         },
         {
           type: 'block',

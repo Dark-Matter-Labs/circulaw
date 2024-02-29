@@ -10,6 +10,7 @@ import { PortableText } from '@portabletext/react';
 // create component for each tab
 // can create individual ones for overview if need be,
 import { euPageComponents } from '@/lib/portable-text/pt-components';
+import SocialButtons from '@/components/social-buttons';
 
 const pathsQuery = `
 *[_type =="euLaw" && defined(slug.current)][].slug.current
@@ -36,7 +37,7 @@ export default function LawSummaryPage({ lawData }) {
     <Layout title={lawData?.title}>
       <div className='h-[360px] pt-3 bg-green-800'>
         <div className='flex flex-col justify-between global-margin h-full'>
-          <div className='pt-6'>
+          <div className='pt-6 flex flex-row justify-between'>
             <div className='p-2xs-bold text-green-600 bg-white w-min pl-2 pr-3 py-1.5 rounded-clSm flex flex-row whitespace-nowrap'>
               <Link href='/' className=''>
                 <span className='link-interaction'>
@@ -46,6 +47,9 @@ export default function LawSummaryPage({ lawData }) {
               <Link href='/eu-wetgeving'>
                 <span className='capitalize link-interaction'>Eu wetgeving</span>
               </Link>
+            </div>
+            <div>
+              <SocialButtons title = {`${lawData?.title} - ${selectedTab.replace(/(-)/g, ' ')}`}/>
             </div>
           </div>
           <h1 className='mb-[94px] p-5xl-semibold sm:p-7xl-bold text-grey-100'>
@@ -125,9 +129,10 @@ export default function LawSummaryPage({ lawData }) {
         <ScrollPagesTabContent content={lawData?.localContent} />
       )}
       {query === 'relevantie-voor-de-circulaire-economie' && (
-        <div className='global-margin my-20 max-w-xl 2xl:max-w-2xl'>
+        <div className='global-margin my-20 '>
+          <div className='max-w-xl 2xl:max-w-2xl'>
           <PortableText value={lawData?.ceContent} components={euPageComponents} />
-
+          </div>
         </div>
       )}
     </Layout>

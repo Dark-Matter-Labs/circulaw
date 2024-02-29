@@ -23,6 +23,7 @@ export default function SummaryComponent({ lawData }) {
               alt={lawData?.imageAlt}
               width={525}
               height={307}
+              className='rounded-cl'
             />}
           </div>
         </div>
