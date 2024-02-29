@@ -18,7 +18,7 @@ export default function HomepageHeader({ homePageHeader }) {
           <div className='mt-2 sm:flex sm:justify-center md:mt-2'>
             <div className=''>
               <CustomButton color='home'>
-                <ScrollLink to='thema' smooth={true}>
+                <ScrollLink to='thema' smooth={true} offset={-95}>
                   Bekijk de thema&rsquo;s{' '}
                   <ArrowDownIcon className='inline-block h-4 w-4' aria-hidden='true' />
                 </ScrollLink>
@@ -26,7 +26,7 @@ export default function HomepageHeader({ homePageHeader }) {
             </div>
             <div className='mt-3 rounded-md sm:mt-0 sm:ml-3'>
               <CustomButton color='home'>
-                <ScrollLink to='about' smooth={true}>
+                <ScrollLink to='about' smooth={true} offset={-100}>
                   Meer over CircuLaw?{' '}
                   <ArrowDownIcon className='inline-block h-4 w-4' aria-hidden='true' />
                 </ScrollLink>
