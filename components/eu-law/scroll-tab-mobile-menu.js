@@ -81,7 +81,7 @@ export default function ScrollTabMobileMenu({ content }) {
                                 to={`${section.title}`}
                                 smooth={true}
                                 duration={500}
-                                offset={-30}
+                                offset={-50}
                                 spy={true}
                                 activeClass='bg-green-500 text-grey-100 font-semibold transition-all duration-100'
                                 className='p-base text-green-800 py-2 pl-4 pr-8 h-full break-words rounded-cl whitespace-nowrap cursor-pointer'
