@@ -14,7 +14,7 @@ export default function HighlightCard({text, number, circleText}) {
                
             </div>
             <div className="">
-                <div className="mx-2 rounded-full bg-[#D1F9EB] border-[12px] border-grey-150 h-32 w-32 flex flex-col items-center justify-center">
+                <div className="mx-4 rounded-full bg-[#D1F9EB] border-[12px] border-grey-150 h-32 w-32 flex flex-col items-center justify-center">
                 <div className="text-center p-5xl-semibold text-green-600"> {number}</div>
                 <div className="text-center p-base-semibold text-green-600">{circleText}</div>
                 </div>
