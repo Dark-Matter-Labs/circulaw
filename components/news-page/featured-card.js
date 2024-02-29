@@ -107,9 +107,9 @@ export default function FeaturedCard({ data }) {
                     } sm:h-80 rounded-cl flex justify-between items-start flex-col-reverse sm:flex-row`}
         >
           <div
-            className={`${
-              data.linkText || data.createPage === true ? 'justify-between' : ''
-            } ${data.image ? 'sm:w-1/2' : ''} px-8 py-6 flex flex-col h-full w-full  gap-y-3`}
+            className={`${data.linkText || data.createPage === true ? 'justify-between' : ''} ${
+              data.image ? 'sm:w-1/2' : ''
+            } px-8 py-6 flex flex-col h-full w-full  gap-y-3`}
           >
             <div className=''>
               <div className='flex grow-0'>
