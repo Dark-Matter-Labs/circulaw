@@ -27,7 +27,7 @@ export default function Highlights({law}) {
           </div>
             </>
         )
-    } else if (law === 'EED') {
+    } else if (law === 'Energy Efficiency Directive') {
         return (
             <>
               <div className='global-margin'>
