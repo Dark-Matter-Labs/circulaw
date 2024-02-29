@@ -48,7 +48,7 @@ export default function LawSummaryPage({ lawData }) {
                 <span className='capitalize link-interaction'>Eu wetgeving</span>
               </Link>
             </div>
-            <div>
+            <div className='hidden sm:block'>
               <SocialButtons title={`${lawData?.title} - ${selectedTab.replace(/(-)/g, ' ')}`} />
             </div>
           </div>
