@@ -42,7 +42,7 @@ export default function Index({ aboutSection, homePageHeader, footerText, newsDa
         </div>
       </div>
 
-      <div className='bg-grey-100 pt-12 sm:pt-0 pb-12'>
+      <div className='bg-grey-100 pt-12 sm:pt-0'>
         <div className='global-margin'>
           <HomePageEUSection euData={euData} />
         </div>

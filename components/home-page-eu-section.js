@@ -2,13 +2,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import CustomButton from '@/components/custom-button';
-import aboutImage from '@/public/home-page/homepageAboutDeco.png';
 
 export default function HomePageEUSection({ euData }) {
   return (
     <Link href='/eu-wetgeving'>
       <div className='flex flex-col sm:flex-row items-center justify-between'>
-        <div className='sm:w-7/12 flex flex-col'>
+        <div className='w-full sm:w-7/12 flex flex-col'>
           <div className='border-b border-green-800'>
             <h2 className='p-5xl-semibold sm:p-7xl-semibold text-green-600 pb-6'>EU wetgeving</h2>
           </div>
@@ -16,9 +15,11 @@ export default function HomePageEUSection({ euData }) {
             <p>{euData.euLaw}</p>
           </div>
           <div className='w-full flex justify-center sm:hidden py-6'>
-            <div className='flex  h-[11rem] w-48 justify-center'>
-              <Image src={aboutImage} alt='image for wat circulaw' />
-            </div>
+            <div className='flex relative h-[200px] w-full justify-center'>
+            <Image src={euData?.image} fill alt='image for wat circulaw' className='rounded-cl' />            </div>
+          </div>
+          <div className='block sm:hidden pb-6 p-base'>
+            <p>{euData.euLaw}</p>
           </div>
           <div>
             <span className='text-green-500 link-lg link-interaction'>
