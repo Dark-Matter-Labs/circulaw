@@ -6,8 +6,8 @@ export default function EULawCard({ law }) {
   return (
     <>
       <Link href={`/eu-wetgeving/${law?.slug?.current}`} className='hidden md:block'>
-        <div className='flex flex-col group h-[470px]'>
-          <div className='bg-grey-100 group-hover:bg-grey-150 rounded-cl shadow-md min-w-[460px] px-4 py-6 duration-300 transition-all border h-[470px]'>
+        <div className='flex flex-col group max-h-[540px]'>
+          <div className='bg-grey-100 group-hover:bg-grey-150 rounded-cl shadow-md  px-4 py-6 duration-300 transition-all border max-h-[540px]'>
             <div className=' z-10'>
               <h2 className='p-5xl-semibold mb-4'>{law?.title}</h2>
               <p className='p-base pb-6 border-b'>{law?.introText}</p>
@@ -26,7 +26,7 @@ export default function EULawCard({ law }) {
               </div>
             </div>
           </div>
-          <div className='gradient-eu-card h-[20px] -translate-y-[20px] group-hover:-translate-y-[7px] -z-10 w-full rounded-b-cl transition-all duration-300'></div>
+          <div className='gradient-eu-card h-[20px] -translate-y-[20px] group-hover:-translate-y-[10px] -z-10 w-full rounded-b-cl transition-all duration-300'></div>
         </div>
       </Link>
 
