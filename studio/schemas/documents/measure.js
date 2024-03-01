@@ -482,7 +482,14 @@ export default {
                       disableNew: true,
                     },
                   },
+                  
                 ],
+                options: {
+                  modal: {
+                    type: "popover",
+                    width: 1,
+                  },
+                },
               },
             ],
           },
