@@ -1,11 +1,13 @@
 import { defineConfig } from 'sanity';
 import { vercelDeployTool } from 'sanity-plugin-vercel-deploy';
-import { deskTool } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './schemas';
 import { Structure } from './desk-structure';
 import { defaultDocumentNode } from './default-document-node';
 import { table } from '@sanity/table';
+import { assist } from '@sanity/assist';
+import { structureTool } from 'sanity/structure'
+
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
 
@@ -36,13 +38,14 @@ export default defineConfig({
   dataset: process.env.SANITY_STUDIO_DATASET,
   basePath: path,
   plugins: [
-    deskTool({
+    structureTool({
       structure: Structure,
       defaultDocumentNode,
     }),
     visionTool(),
     vercelDeployTool(),
     table(),
+    assist(),
   ],
   schema: {
     types: schemaTypes,
