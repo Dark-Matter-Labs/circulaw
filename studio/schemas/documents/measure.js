@@ -21,10 +21,6 @@ export default {
       name: 'meta-data',
       title: 'Meta Data',
     },
-    {
-      name: 'expertise',
-      title: 'Expertise Page',
-    },
   ],
   // FIELDS
   fields: [
@@ -111,7 +107,7 @@ export default {
         ],
         layout: 'grid',
       },
-      group: ['high-level'],
+      group: ['meta-data'],
     },
     // ITEMS ONLY IN MetaData
     {
@@ -278,7 +274,7 @@ export default {
       name: 'beleid',
       type: 'boolean',
       initialValue: false,
-      group: 'expertise',
+      group: 'meta-data',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -303,7 +299,7 @@ export default {
         ],
         layout: 'grid',
       },
-      group: 'expertise',
+      group: 'meta-data',
     },
 
     {
@@ -311,7 +307,7 @@ export default {
       name: 'inkoop',
       type: 'boolean',
       initialValue: false,
-      group: 'expertise',
+      group: 'meta-data',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -337,14 +333,14 @@ export default {
         ],
         layout: 'grid',
       },
-      group: 'expertise',
+      group: 'meta-data',
     },
     {
       title: 'Grondpositie',
       name: 'grondpositie',
       type: 'boolean',
       initialValue: false,
-      group: 'expertise',
+      group: 'meta-data',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
           return parent?.transitionAgenda === 'bouw' && typeof currentValue === 'undefined'
@@ -376,14 +372,14 @@ export default {
         ],
         layout: 'grid',
       },
-      group: 'expertise',
+      group: 'meta-data',
     },
     {
       title: 'Subsidie',
       name: 'subsidie',
       type: 'boolean',
       initialValue: false,
-      group: 'expertise',
+      group: 'meta-data',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -391,7 +387,7 @@ export default {
       name: 'fiscaal',
       type: 'boolean',
       initialValue: false,
-      group: 'expertise',
+      group: 'meta-data',
       validation: (Rule) => Rule.required(),
     },
     // COPY CONTENT
