@@ -24,22 +24,24 @@ export default function NotFound() {
           </li>
           <li className='text-green-500 p-base-semibold underline'>
             <Link href='/maakindustrie' className='link-interaction'>
-             Maakindustrie <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+              Maakindustrie <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
             </Link>{' '}
           </li>
           <li className='text-green-500 p-base-semibold underline'>
             <Link href='/consumptiegoederen' className='link-interaction'>
-            Consumptiegoederen <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+              Consumptiegoederen{' '}
+              <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
             </Link>{' '}
           </li>
           <li className='text-green-500 p-base-semibold underline'>
             <Link href='/biomassa-en-voedsel' className='link-interaction'>
-            Biomassa en voedsel <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+              Biomassa en voedsel{' '}
+              <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
             </Link>{' '}
           </li>
           <li className='text-green-500 p-base-semibold underline'>
             <Link href='/kunststoffen' className='link-interaction'>
-            Kunststoffen <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+              Kunststoffen <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
             </Link>{' '}
           </li>
           <li className='text-green-500 p-base-semibold underline'>
