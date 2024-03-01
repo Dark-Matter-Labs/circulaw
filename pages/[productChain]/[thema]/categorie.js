@@ -22,7 +22,7 @@ const themaInfo = `
 export default function InfoPage({ expertiseData, themaData }) {
   if (themaData?.type === 'thema') {
     return (
-      <Layout title={`CircuLaw - ${themaData?.themaName} instrumenten per categorie`}>
+      <Layout title={`${themaData?.themaName} instrumenten per categorie`}>
         <ExpertiseLayout
           thema={themaData?.thema}
           transitionAgenda={themaData?.transitionAgenda}

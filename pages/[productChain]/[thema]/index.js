@@ -18,13 +18,13 @@ export default function ThemeIndexPage({ featuredLaws, thema, length, instrument
   });
   if (thema?._type === 'simpleThema') {
     return (
-      <Layout title={`CircuLaw - ${thema?.themaName}`}>
+      <Layout title={`${thema?.themaName}`}>
         <SimpleThemaLayout thema={thema} numberOfLaws={length} instruments={instruments} />
       </Layout>
     );
   } else {
     return (
-      <Layout title={`CircuLaw - ${thema?.themaName}`}>
+      <Layout title={`${thema?.themaName}`}>
         <ThemeLayout
           featuredLaws={featuredLaws}
           transitionAgenda={thema?.transitionAgenda}

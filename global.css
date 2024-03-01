@@ -316,6 +316,10 @@ html {
   word-wrap: break-word;
 }
 
+.gradient-eu-card {
+  background: linear-gradient(71deg, #6CAB93 3.79%, #30BD88 38.64%, #39B086 45.9%, #42D4A8 64.06%, #34C19A 76.4%);
+}
+
 .gradient-overview {
   background: linear-gradient(rgba(248, 250, 248, 0) 0%, #F8FAF8 30%);
 }

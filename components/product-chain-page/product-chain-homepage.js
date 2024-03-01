@@ -75,7 +75,7 @@ export default function PCHomePage() {
           <Link key={id} href={`/${chain.slug}`} className='block sm:hidden'>
             <li className='h-24 w-full rounded-cl bg-green-800 shadow mb-2'>
               <div className='flex items-center justify-between'>
-                <div className='h-24 w-24 relative flex items-center justify-center'>
+                <div className='h-24 w-24 mx-3 relative flex items-center justify-center'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='60'
@@ -91,7 +91,7 @@ export default function PCHomePage() {
                     />
                   </svg>
                 </div>
-                <div className='text-grey-100 w-full break-words max-w-[200px] mr-3'>
+                <div className='text-grey-100 w-full break-words max-w-[180px] mr-3'>
                   <h3 className='p-4xl-semibold break-words w-full'>{chain.title}</h3>
                 </div>
                 <div className='grid justify-items-end mr-6'>

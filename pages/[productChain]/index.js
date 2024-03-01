@@ -38,7 +38,7 @@ const themaCardQuery = `
 
 export default function ProductChainPage({ productChainData, instrumentCount, themaCards }) {
   return (
-    <Layout title='CircuLaw - Voedsel en biomassa'>
+    <Layout title={`${productChainData?.pcName}`}>
       <PCLayout
         productChainData={productChainData}
         totalInstruments={instrumentCount}

@@ -4,6 +4,7 @@ import { FcAbout } from 'react-icons/fc';
 import { FaLanguage, FaHandshake, FaQuestion } from 'react-icons/fa';
 import { BsCircle, BsNewspaper } from 'react-icons/bs';
 import { AiOutlineHome } from 'react-icons/ai';
+import { GiEuropeanFlag } from 'react-icons/gi';
 
 export const Structure = (S) =>
   S.list()
@@ -37,6 +38,10 @@ export const Structure = (S) =>
                 .params({ themaId }),
             ),
         ),
+      S.listItem()
+        .title('EU Law')
+        .icon(GiEuropeanFlag)
+        .child(S.documentList().title('EU Law').filter('_type == "euLaw"')),
       S.listItem()
         .title('About Pages')
         .icon(FcAbout)

@@ -2199,6 +2199,15 @@
     lodash "^4.17.21"
     object-inspect "^1.6.0"
 
+"@sanity/table@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@sanity/table/-/table-1.1.2.tgz#5851ab98caa10adf44dbbd5f8ca44445ebceafb7"
+  integrity sha512-VTQQYtuYXRYnrwPeQDDYQ0/MExroV4FDeJStpxW3JcYWj+dKvfMfXG5PebzqgbolhAIzgYwcmkOBMXwmwEAN7w==
+  dependencies:
+    "@sanity/icons" "^2.0.0"
+    "@sanity/incompatible-plugin" "^1.0.4"
+    "@sanity/ui" "^1.0.0"
+
 "@sanity/telemetry@^0.7.6":
   version "0.7.7"
   resolved "https://registry.yarnpkg.com/@sanity/telemetry/-/telemetry-0.7.7.tgz#7905bb51aaf4217363242d229618ca65a0ec773f"
