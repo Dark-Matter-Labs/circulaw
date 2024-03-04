@@ -2,14 +2,16 @@ import { Disclosure, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 
-export default function MobileDisclosure({ transitionAgenda, themas, slug }) {
+export default function MobileDisclosure({ navData }) {
+
+  console.log(navData)
   return (
     <li className='p-base-semibold text-green-800 border-b py-6'>
       <Disclosure>
         {({ open, close }) => (
           <>
             <Disclosure.Button className={`${open ? '' : ''} flex flex-row items-center `}>
-              {transitionAgenda}
+              {navData?.title}
               <ChevronDownIcon className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`} />
             </Disclosure.Button>
             <Transition
@@ -24,15 +26,15 @@ export default function MobileDisclosure({ transitionAgenda, themas, slug }) {
             >
               <Disclosure.Panel className='p-base text-green-600'>
                 <ul>
-                  <Link href={`/${slug}`} onClick={close}>
+                  <Link href={`/${navData?.slug}`} onClick={close}>
                     <li className='pt-4 w-full flex items-center ml-4'>
-                      {transitionAgenda} - overzicht
+                      {navData?.title} - overzicht
                     </li>
                   </Link>
-                  {themas.map((thema) => (
-                    <li key={thema.name} className=' pt-4 w-full flex items-center ml-4'>
-                      <Link href={thema.url} className='h-10 flex items-center'>
-                        {thema.name}
+                  {navData?.themas?.map((thema, id) => (
+                    <li key={id} className=' pt-4 w-full flex items-center ml-4'>
+                      <Link href={`/${navData?.slug}/${thema?.slug}`} className='h-10 flex items-center'>
+                        {thema?.themaName}
                       </Link>
                     </li>
                   ))}

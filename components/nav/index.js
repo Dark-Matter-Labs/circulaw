@@ -41,6 +41,7 @@ const defaultOptions = {
 
 // import data
 
+{/*  
 const bouwThemas = [
   { name: 'Houtbouw', url: '/bouw/houtbouw' },
   { name: 'Woningen', url: '/bouw/woningen' },
@@ -60,6 +61,8 @@ const biomassaEnVoedselThemas = [
 ];
 
 const kunststoffenThemas = [{ name: 'Kunstgrasvelden', url: '/kunststoffen/kunstgrasvelden' }];
+*/}
+
 
 export default function Nav(props) {
   const router = useRouter();
@@ -356,33 +359,12 @@ export default function Nav(props) {
                                   >
                                     <Disclosure.Panel className='flex flex-col flex-grow ml-4'>
                                       <ul>
-
-
+                                      {props?.navItems?.map((navItem, id) => (
                                         <MobileDisclosure
-                                          transitionAgenda='Bouw'
-                                          themas={bouwThemas}
-                                          slug='bouw'
-                                        />
-                                        <MobileDisclosure
-                                          transitionAgenda='Consumptiegoederen'
-                                          themas={consumptiegoederenThemas}
-                                          slug='consumptiegoederen'
-                                        />
-                                        <MobileDisclosure
-                                          transitionAgenda='Voedsel en biomassa'
-                                          themas={biomassaEnVoedselThemas}
-                                          slug='biomassa-en-voedsel'
-                                        />
-                                        <MobileDisclosure
-                                          transitionAgenda='Maakindustrie'
-                                          themas={maakindustrieThemas}
-                                          slug='maakindustrie'
-                                        />
-                                        <MobileDisclosure
-                                          transitionAgenda='Kunststoffen'
-                                          themas={kunststoffenThemas}
-                                          slug='kunststoffen'
-                                        />
+                                        key={id}
+                                        navData={navItem}
+                                      />
+                                      ))}
                                       </ul>
                                     </Disclosure.Panel>
                                   </Transition>

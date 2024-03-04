@@ -2,8 +2,6 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 export default function DesktopNavCard({ navData }) {
-  console.log(navData, 'navdata')
-
   const router = useRouter();
   
   return (
