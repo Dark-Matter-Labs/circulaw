@@ -3,6 +3,7 @@ import InstrumentLinksDropdown from '@/components/instrument/instrument-links-dr
 import { useRouter } from 'next/router';
 
 export default function OverviewPageHeader({ props, page }) {
+ 
   const router = useRouter();
   return (
     <>
@@ -32,7 +33,7 @@ export default function OverviewPageHeader({ props, page }) {
           </div>
           <div className='block sm:float-right py-3 sm:py-0'>
             <div className='p-base text-white pb-2 hidden sm:block'>Bekijk de instrumenten:</div>
-            <InstrumentLinksDropdown type={props.thema} page={page} />
+            <InstrumentLinksDropdown page={page} props={props} />
           </div>
         </div>
         <div className='items-center grid grid-cols-10'>

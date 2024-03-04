@@ -2,33 +2,9 @@ import { Popover } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
 
-
-// import data
-const links = {
-  houtbouw: [
-    '/bouw/houtbouw/categorie',
-    '/bouw/houtbouw/instrumenten',
-    '/bouw/houtbouw/overheidsbevoegdheid',
-  ],
-  windturbines: [
-    '/maakindustrie/windturbines/categorie',
-    '/maakindustrie/windturbines/instrumenten',
-    '/maakindustrie/windturbines/overheidsbevoegdheid',
-  ],
-  matrasketen: [
-    '/consumptiegoederen/matrasketen/categorie',
-    '/consumptiegoederen/matrasketen/instrumenten',
-    '/consumptiegoederen/matrasketen/overheidsbevoegdheid',
-  ],
-  voedselverspilling: [
-    '/biomassa-en-voedsel/voedselverspilling/categorie',
-    '/biomassa-en-voedsel/voedselverspilling/instrumenten',
-    '/biomassa-en-voedsel/voedselverspilling/overheidsbevoegdheid',
-  ],
-};
-
-export default function InstrumentLinksDropdown({ page, type }) {
+export default function InstrumentLinksDropdown({ page, props}) {
   const router = useRouter();
+
   // add on click close to close the disclosure.
   if (page === 'list') {
     return (
@@ -59,7 +35,7 @@ export default function InstrumentLinksDropdown({ page, type }) {
               <Popover.Button
                 as='div'
                 onClick={() => {
-                  router.push(`${links[type][0]}`);
+                  router.push(`/${props?.transitionAgenda}/${props?.thema}/categorie`);
                 }}
               >
                 <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
@@ -69,7 +45,7 @@ export default function InstrumentLinksDropdown({ page, type }) {
               <Popover.Button
                 as='div'
                 onClick={() => {
-                  router.push(`${links[type][2]}`);
+                  router.push(`/${props?.transitionAgenda}/${props?.thema}/overheidsbevoegdheid`);
                 }}
               >
                 <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500'>
@@ -108,7 +84,7 @@ export default function InstrumentLinksDropdown({ page, type }) {
               <Popover.Button
                 as='div'
                 onClick={() => {
-                  router.push(`${links[type][1]}`);
+                  router.push(`/${props?.transitionAgenda}/${props?.thema}/instrumenten`);
                 }}
               >
                 <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
@@ -118,7 +94,7 @@ export default function InstrumentLinksDropdown({ page, type }) {
               <Popover.Button
                 as='div'
                 onClick={() => {
-                  router.push(`${links[type][2]}`);
+                  router.push(`/${props?.transitionAgenda}/${props?.thema}/overheidsbevoegdheid`);
                 }}
               >
                 <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
@@ -159,7 +135,7 @@ export default function InstrumentLinksDropdown({ page, type }) {
               <Popover.Button
                 as='div'
                 onClick={() => {
-                  router.push(`${links[type][0]}`);
+                  router.push(`/${props?.transitionAgenda}/${props?.thema}/categorie`);
                 }}
               >
                 <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
@@ -169,7 +145,7 @@ export default function InstrumentLinksDropdown({ page, type }) {
               <Popover.Button
                 as='div'
                 onClick={() => {
-                  router.push(`${links[type][1]}`);
+                  router.push(`/${props?.transitionAgenda}/${props?.thema}/instrumenten`);
                 }}
               >
                 <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>

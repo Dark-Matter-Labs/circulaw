@@ -8,6 +8,7 @@ import TabLayout from '../expertise-page/tab-layout';
 import ExplinationText from '../expertise-page/explination-text';
 
 export default function ExpertiseLayout({ expertiseData, ...props }) {
+
   const [beleid, setBeleid] = useState([]);
   const [inkoop, setInkoop] = useState([]);
   const [grondpositie, setGrondpositie] = useState([]);
