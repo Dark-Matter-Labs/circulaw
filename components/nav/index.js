@@ -39,6 +39,8 @@ const defaultOptions = {
   },
 };
 
+// import data
+
 const bouwThemas = [
   { name: 'Houtbouw', url: '/bouw/houtbouw' },
   { name: 'Woningen', url: '/bouw/woningen' },
