@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function DesktopNavCard({ navData }) {
   const router = useRouter();
-  
+
   return (
     <div
       className={`${

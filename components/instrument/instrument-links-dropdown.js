@@ -2,7 +2,7 @@ import { Popover } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/router';
 
-export default function InstrumentLinksDropdown({ page, props}) {
+export default function InstrumentLinksDropdown({ page, props }) {
   const router = useRouter();
 
   // add on click close to close the disclosure.

@@ -17,7 +17,7 @@ export const Structure = (S) =>
           // List out all categories
           S.documentTypeList('thema')
             .title('Instrumenten per thema')
-            .child((themaId) => 
+            .child((themaId) =>
               S.documentList()
                 .title('Instruments')
                 .filter('_type == "measure" && $themaId == thema._ref')

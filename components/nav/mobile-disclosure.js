@@ -31,7 +31,10 @@ export default function MobileDisclosure({ navData }) {
                   </Link>
                   {navData?.themas?.map((thema, id) => (
                     <li key={id} className=' pt-4 w-full flex items-center ml-4'>
-                      <Link href={`/${navData?.slug}/${thema?.slug}`} className='h-10 flex items-center'>
+                      <Link
+                        href={`/${navData?.slug}/${thema?.slug}`}
+                        className='h-10 flex items-center'
+                      >
                         {thema?.themaName}
                       </Link>
                     </li>

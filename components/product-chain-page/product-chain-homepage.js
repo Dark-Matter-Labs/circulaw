@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
-
 // import data
 const productChains = [
   {

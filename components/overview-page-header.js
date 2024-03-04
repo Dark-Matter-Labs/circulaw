@@ -3,7 +3,6 @@ import InstrumentLinksDropdown from '@/components/instrument/instrument-links-dr
 import { useRouter } from 'next/router';
 
 export default function OverviewPageHeader({ props, page }) {
- 
   const router = useRouter();
   return (
     <>

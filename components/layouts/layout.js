@@ -10,9 +10,6 @@ import CookieConsent from '@/components/cookie-banner';
 import { siteSettingsQuerys, footerQuery } from '@/lib/queries';
 import { fetcher } from '@/utils/swr-fetcher';
 
-
-
-
 const navQuery = `
 *[_type == 'navigation' && title == 'Product Chains']{
   'productChainItems': items[]{
@@ -24,8 +21,7 @@ const navQuery = `
     }
   }
 }.productChainItems[]
-`
-
+`;
 
 export default function Layout({
   title = globalMeta.siteName,
@@ -38,7 +34,7 @@ export default function Layout({
 }) {
   const { data: aboutPageSlugs } = useSWR(groq`${siteSettingsQuerys.overCirulaw}`, fetcher);
   const { data: vraagAntwoordSlug } = useSWR(groq`${siteSettingsQuerys.vraagAntwoord}`, fetcher);
-  const { data: navItems } = useSWR(groq`${navQuery}`, fetcher) 
+  const { data: navItems } = useSWR(groq`${navQuery}`, fetcher);
   const { data: footerTextData } = useSWR(groq`${footerQuery}`, fetcher);
   const footerText = footerTextData;
   const aboutNavItems = aboutPageSlugs;

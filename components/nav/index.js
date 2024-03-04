@@ -39,7 +39,6 @@ const defaultOptions = {
   },
 };
 
-
 export default function Nav(props) {
   const router = useRouter();
   const [scrollEffect, setScrollEffect] = useState(false);
@@ -335,12 +334,9 @@ export default function Nav(props) {
                                   >
                                     <Disclosure.Panel className='flex flex-col flex-grow ml-4'>
                                       <ul>
-                                      {props?.navItems?.map((navItem, id) => (
-                                        <MobileDisclosure
-                                        key={id}
-                                        navData={navItem}
-                                      />
-                                      ))}
+                                        {props?.navItems?.map((navItem, id) => (
+                                          <MobileDisclosure key={id} navData={navItem} />
+                                        ))}
                                       </ul>
                                     </Disclosure.Panel>
                                   </Transition>
@@ -464,13 +460,8 @@ export default function Nav(props) {
                               router.pathname === '/' ? 'bg-green-500' : 'bg-gray-300'
                             } h-full flex flex-cols-5 gap-[1px] relative`}
                           >
-                   
-
                             {props?.navItems?.map((navItem, id) => (
-                              <DesktopNavCard
-                              key={id}
-                              navData={navItem}
-                              />
+                              <DesktopNavCard key={id} navData={navItem} />
                             ))}
                           </div>
                         </div>

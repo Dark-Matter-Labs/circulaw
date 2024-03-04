@@ -2,8 +2,7 @@ import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import Layout from '@/components/layouts/layout';
 
-
-// import data // not neccissary 
+// import data // not neccissary
 export default function NotFound() {
   return (
     <Layout title='CircuLaw - 404'>

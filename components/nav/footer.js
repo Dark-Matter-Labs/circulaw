@@ -11,7 +11,6 @@ import CustomButton from '@/components/custom-button';
 import ORicon from '@/public/icons/openResearch.svg';
 import LangSwitch from './lang-switch';
 
-
 // import data // maybe not neccissary
 const navigation = {
   other: [
@@ -27,7 +26,7 @@ const navigation = {
     { name: 'Maakindustrie', slug: '/maakindustrie' },
     { name: 'Kunststoffen', slug: '/kunststoffen' },
   ],
-};  
+};
 
 export default function Footer(props) {
   let aboutSlugs = [];
