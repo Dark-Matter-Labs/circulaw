@@ -34,6 +34,7 @@ export default {
       validation: (Rule) => Rule.required(),
       description: 'DO NOT CHANGE This will be displayed in the Navigation, Footer, Thema Card etc',
       group: 'devOnly',
+      initialValue: 'New Thema'
     },
     {
       title: 'Slug',
