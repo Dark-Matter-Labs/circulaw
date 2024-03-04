@@ -3,8 +3,6 @@ import { ChevronDownIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 
 export default function MobileDisclosure({ navData }) {
-
-  console.log(navData)
   return (
     <li className='p-base-semibold text-green-800 border-b py-6'>
       <Disclosure>
