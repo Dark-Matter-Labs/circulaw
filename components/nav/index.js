@@ -39,30 +39,6 @@ const defaultOptions = {
   },
 };
 
-// import data
-
-{/*  
-const bouwThemas = [
-  { name: 'Houtbouw', url: '/bouw/houtbouw' },
-  { name: 'Woningen', url: '/bouw/woningen' },
-];
-
-const consumptiegoederenThemas = [
-  { name: 'Matrasketen', url: '/consumptiegoederen/matrasketen' },
-  { name: 'Meubels', url: '/consumptiegoederen/meubels' },
-  { name: 'Elektrische apparaten', url: '/consumptiegoederen/elektrische-apparaten' },
-];
-
-const maakindustrieThemas = [{ name: 'Windturbines', url: '/maakindustrie/windturbines' }];
-
-const biomassaEnVoedselThemas = [
-  { name: 'Voedselverspilling', url: '/biomassa-en-voedsel/voedselverspilling' },
-  { name: 'Eiwittransitie', url: '/biomassa-en-voedsel/eiwittransitie' },
-];
-
-const kunststoffenThemas = [{ name: 'Kunstgrasvelden', url: '/kunststoffen/kunstgrasvelden' }];
-*/}
-
 
 export default function Nav(props) {
   const router = useRouter();
