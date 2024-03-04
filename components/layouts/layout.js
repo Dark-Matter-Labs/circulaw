@@ -10,8 +10,6 @@ import CookieConsent from '@/components/cookie-banner';
 import { siteSettingsQuerys, footerQuery } from '@/lib/queries';
 import { fetcher } from '@/utils/swr-fetcher';
 
-
-
 export default function Layout({
   title = globalMeta.siteName,
   description = globalMeta.description,
