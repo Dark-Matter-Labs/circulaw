@@ -61,7 +61,7 @@ const biomassaEnVoedselThemas = [
 
 const kunststoffenThemas = [{ name: 'Kunstgrasvelden', url: '/kunststoffen/kunstgrasvelden' }];
 
-export default function Nav3(props) {
+export default function Nav(props) {
   const router = useRouter();
   const [scrollEffect, setScrollEffect] = useState(false);
   useEffect(() => {
@@ -356,6 +356,8 @@ export default function Nav3(props) {
                                   >
                                     <Disclosure.Panel className='flex flex-col flex-grow ml-4'>
                                       <ul>
+
+
                                         <MobileDisclosure
                                           transitionAgenda='Bouw'
                                           themas={bouwThemas}
@@ -504,31 +506,14 @@ export default function Nav3(props) {
                               router.pathname === '/' ? 'bg-green-500' : 'bg-gray-300'
                             } h-full flex flex-cols-5 gap-[1px] relative`}
                           >
-                            <DesktopNavCard
-                              transitionAgenda='bouw'
-                              themas={bouwThemas}
-                              slug='bouw'
-                            />
-                            <DesktopNavCard
-                              transitionAgenda='Consumptiegoederen'
-                              themas={consumptiegoederenThemas}
-                              slug='consumptiegoederen'
-                            />
-                            <DesktopNavCard
-                              transitionAgenda='Voedsel en biomassa'
-                              themas={biomassaEnVoedselThemas}
-                              slug='biomassa-en-voedsel'
-                            />
-                            <DesktopNavCard
-                              transitionAgenda='Maakindustrie'
-                              themas={maakindustrieThemas}
-                              slug='maakindustrie'
-                            />
-                            <DesktopNavCard
-                              transitionAgenda='Kunststoffen'
-                              themas={kunststoffenThemas}
-                              slug='kunststoffen'
-                            />
+                   
+
+                            {props?.navItems?.map((navItem, id) => (
+                              <DesktopNavCard
+                              key={id}
+                              navData={navItem}
+                              />
+                            ))}
                           </div>
                         </div>
                       </div>
