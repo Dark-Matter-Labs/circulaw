@@ -16,7 +16,7 @@ export default function ThemeLayout({ ...props }) {
         {/* HEADER MOBILE */}
         <MobilePageHeader pageTitle={props?.productChainData?.pcName} />
 
-        <div className='bg-grey-150'>
+        <div className='bg-white'>
           <div className='global-margin pb-12 sm:pb-20'>
             <div className='pt-14 pb-0 sm:pb-10'>
               <h2 className='p-6xl-semibold text-green-800 pb-8'>
@@ -32,8 +32,13 @@ export default function ThemeLayout({ ...props }) {
               <ThemaCard themaCards={props?.themaList} />
             </div>
 
-            <div className='pt-12 sm:pt-20'>
-              <h2 className='p-3xl-semibold sm:p-6xl-semibold text-green-800 pb-8'>
+           
+          </div>
+        </div>
+        <div className='bg-grey-150'>
+          <div className='global-margin'>
+          <div className='pt-10 pb-14'>
+              <h2 className='p-3xl-semibold sm:p-6xl-semibold text-green-800 mb-14 max-w-2xl'>
                 {props?.productChainData?.impactTitle}
               </h2>
               <div className='grid grid-cols-1 justify-items-center sm:flex sm:justify-center gap-20'>
@@ -65,7 +70,7 @@ export default function ThemeLayout({ ...props }) {
             </div>
           </div>
         </div>
-        <div className='global-margin pt-14  bg-white'>
+        <div className='global-margin pt-14 bg-white'>
           <h2 className='p-6xl-semibold text-green-800 pb-10'>
             {props?.productChainData?.ambitionTitle}
           </h2>
