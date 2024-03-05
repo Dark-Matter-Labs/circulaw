@@ -39,27 +39,7 @@ const defaultOptions = {
   },
 };
 
-const bouwThemas = [
-  { name: 'Houtbouw', url: '/bouw/houtbouw' },
-  { name: 'Woningen', url: '/bouw/woningen' },
-];
-
-const consumptiegoederenThemas = [
-  { name: 'Matrasketen', url: '/consumptiegoederen/matrasketen' },
-  { name: 'Meubels', url: '/consumptiegoederen/meubels' },
-  { name: 'Elektrische apparaten', url: '/consumptiegoederen/elektrische-apparaten' },
-];
-
-const maakindustrieThemas = [{ name: 'Windturbines', url: '/maakindustrie/windturbines' }];
-
-const biomassaEnVoedselThemas = [
-  { name: 'Voedselverspilling', url: '/biomassa-en-voedsel/voedselverspilling' },
-  { name: 'Eiwittransitie', url: '/biomassa-en-voedsel/eiwittransitie' },
-];
-
-const kunststoffenThemas = [{ name: 'Kunstgrasvelden', url: '/kunststoffen/kunstgrasvelden' }];
-
-export default function Nav3(props) {
+export default function Nav(props) {
   const router = useRouter();
   const [scrollEffect, setScrollEffect] = useState(false);
   useEffect(() => {
@@ -354,38 +334,24 @@ export default function Nav3(props) {
                                   >
                                     <Disclosure.Panel className='flex flex-col flex-grow ml-4'>
                                       <ul>
-                                        <MobileDisclosure
-                                          transitionAgenda='Bouw'
-                                          themas={bouwThemas}
-                                          slug='bouw'
-                                        />
-                                        <MobileDisclosure
-                                          transitionAgenda='Consumptiegoederen'
-                                          themas={consumptiegoederenThemas}
-                                          slug='consumptiegoederen'
-                                        />
-                                        <MobileDisclosure
-                                          transitionAgenda='Voedsel en biomassa'
-                                          themas={biomassaEnVoedselThemas}
-                                          slug='biomassa-en-voedsel'
-                                        />
-                                        <MobileDisclosure
-                                          transitionAgenda='Maakindustrie'
-                                          themas={maakindustrieThemas}
-                                          slug='maakindustrie'
-                                        />
-                                        <MobileDisclosure
-                                          transitionAgenda='Kunststoffen'
-                                          themas={kunststoffenThemas}
-                                          slug='kunststoffen'
-                                        />
+                                        {props?.navItems?.map((navItem, id) => (
+                                          <MobileDisclosure
+                                            key={id}
+                                            navData={navItem}
+                                            closeMenu={setMobileMenuIsOpen}
+                                          />
+                                        ))}
                                       </ul>
                                     </Disclosure.Panel>
                                   </Transition>
                                 </>
                               )}
                             </Disclosure>
-                            <MobileSimpleButton name='Eu wetgeving' url='/eu-wetgeving' />
+                            <MobileSimpleButton
+                              name='Eu wetgeving'
+                              url='/eu-wetgeving'
+                              closeMenu={setMobileMenuIsOpen}
+                            />
                             <Disclosure>
                               {({ open }) => (
                                 <>
@@ -415,9 +381,13 @@ export default function Nav3(props) {
                                           <li
                                             key={aboutPage?.slug}
                                             className='p-base h-10 my-2 last:mb-2 text-green-600 cursor-pointer flex items-center'
-                                            onClick={() => router.push(`/over/${aboutPage?.slug}`)}
                                           >
-                                            {aboutPage.title}
+                                            <Link
+                                              href={`/over/${aboutPage?.slug}`}
+                                              onClick={() => setMobileMenuIsOpen(false)}
+                                            >
+                                              {aboutPage.title}
+                                            </Link>
                                           </li>
                                         ))}
                                       </ul>
@@ -426,9 +396,21 @@ export default function Nav3(props) {
                                 </>
                               )}
                             </Disclosure>
-                            <MobileSimpleButton name='Nieuws' url='/nieuws' />
-                            <MobileSimpleButton name='Vraag en antwoord' url='/vraag-en-antwoord' />
-                            <MobileSimpleButton name='Contact' url='/contact' />
+                            <MobileSimpleButton
+                              name='Nieuws'
+                              url='/nieuws'
+                              closeMenu={setMobileMenuIsOpen}
+                            />
+                            <MobileSimpleButton
+                              name='Vraag en antwoord'
+                              url='/vraag-en-antwoord'
+                              closeMenu={setMobileMenuIsOpen}
+                            />
+                            <MobileSimpleButton
+                              name='Contact'
+                              url='/contact'
+                              closeMenu={setMobileMenuIsOpen}
+                            />
 
                             <div className='flex flex-row items-end w-full justify-end pt-4 '>
                               <LangSwitch />
@@ -502,31 +484,9 @@ export default function Nav3(props) {
                               router.pathname === '/' ? 'bg-green-500' : 'bg-gray-300'
                             } h-full flex flex-cols-5 gap-[1px] relative`}
                           >
-                            <DesktopNavCard
-                              transitionAgenda='bouw'
-                              themas={bouwThemas}
-                              slug='bouw'
-                            />
-                            <DesktopNavCard
-                              transitionAgenda='Consumptiegoederen'
-                              themas={consumptiegoederenThemas}
-                              slug='consumptiegoederen'
-                            />
-                            <DesktopNavCard
-                              transitionAgenda='Voedsel en biomassa'
-                              themas={biomassaEnVoedselThemas}
-                              slug='biomassa-en-voedsel'
-                            />
-                            <DesktopNavCard
-                              transitionAgenda='Maakindustrie'
-                              themas={maakindustrieThemas}
-                              slug='maakindustrie'
-                            />
-                            <DesktopNavCard
-                              transitionAgenda='Kunststoffen'
-                              themas={kunststoffenThemas}
-                              slug='kunststoffen'
-                            />
+                            {props?.navItems?.map((navItem, id) => (
+                              <DesktopNavCard key={id} navData={navItem} />
+                            ))}
                           </div>
                         </div>
                       </div>

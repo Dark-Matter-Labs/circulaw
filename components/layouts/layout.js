@@ -21,7 +21,7 @@ export default function Layout({
 }) {
   const { data: aboutPageSlugs } = useSWR(groq`${siteSettingsQuerys.overCirulaw}`, fetcher);
   const { data: vraagAntwoordSlug } = useSWR(groq`${siteSettingsQuerys.vraagAntwoord}`, fetcher);
-  // const { data: themaPageSlugs } = useSWR(groq`${siteSettingsQuerys.thema}`, fetcher);
+  const { data: navItems } = useSWR(groq`${siteSettingsQuerys.navQuery}`, fetcher);
   const { data: footerTextData } = useSWR(groq`${footerQuery}`, fetcher);
   const footerText = footerTextData;
   const aboutNavItems = aboutPageSlugs;
@@ -33,7 +33,7 @@ export default function Layout({
       <Nav
         vraagSlug={vraagSlug}
         aboutSlugs={aboutNavItems}
-        // themaSlugs={themaSlugs}
+        navItems={navItems}
         homePageHeader={homePageHeader}
       />
       <Head>
