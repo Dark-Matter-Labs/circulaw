@@ -485,7 +485,7 @@ export default function Nav(props) {
                             } h-full flex flex-cols-5 gap-[1px] relative`}
                           >
                             {props?.navItems?.map((navItem, id) => (
-                              <DesktopNavCard key={id} navData={navItem} />
+                              <DesktopNavCard key={id} navData={navItem} closeNav={setMainMenuIsOpen}/>
                             ))}
                           </div>
                         </div>
@@ -552,17 +552,19 @@ export default function Nav(props) {
                         >
                           {/* Remove slice once news section is separate */}
                           {props?.aboutSlugs?.map((aboutPage) => (
-                            <button
+                            <div
                               key={aboutPage?.slug}
                               className={`${
                                 router.pathname === '/'
                                   ? 'text-white'
                                   : 'text-green-600 hover:text-green-500'
                               } p-xs mb-2  hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
-                              onClick={() => router.push(`/over/${aboutPage?.slug}`)}
+                             
                             >
+                              <Link href={`/over/${aboutPage?.slug}`} onClick={() => setOverMenuIsOpen(false)}>
                               {aboutPage.title}
-                            </button>
+                              </Link>
+                            </div>
                           ))}
                         </div>
                       </div>
