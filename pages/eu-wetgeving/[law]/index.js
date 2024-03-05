@@ -46,7 +46,7 @@ export default function LawSummaryPage({ lawData }) {
                   </span>
                 </Link>
                 <Link href='/eu-wetgeving'>
-                  <span className='capitalize link-interaction'>Eu wetgeving</span>
+                  <span className='capitalize link-interaction'>EU wetgeving</span>
                 </Link>
               </div>
               <div className='hidden sm:block'>
