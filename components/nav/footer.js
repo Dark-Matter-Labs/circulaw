@@ -11,6 +11,7 @@ import CustomButton from '@/components/custom-button';
 import ORicon from '@/public/icons/openResearch.svg';
 import LangSwitch from './lang-switch';
 
+// import data // maybe not neccissary
 const navigation = {
   other: [
     { name: 'Contact', href: '/contact', className: '' },
@@ -157,7 +158,7 @@ export default function Footer(props) {
                           buttonText='Neem contact op'
                           buttonLink='/contact'
                         />
-                        <div className='hidden sm:block py-6 p-md text-grey-100 flex items-center justify-center z-0 relative'>
+                        <div className='flex sm:block py-6 p-md text-grey-100 items-center justify-center z-0 relative'>
                           <h3 className='inline-block mobile sm:desktop'>Volg ons op:</h3>
                           <span data-text='Volg ons op LinkedIn' className='tooltip p-md z-40'>
                             <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import Layout from '@/components/layouts/layout';
 
+// import data // not neccissary
 export default function NotFound() {
   return (
     <Layout title='CircuLaw - 404'>
@@ -42,6 +43,11 @@ export default function NotFound() {
           <li className='text-green-500 p-base-semibold underline'>
             <Link href='/kunststoffen' className='link-interaction'>
               Kunststoffen <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+            </Link>{' '}
+          </li>
+          <li className='text-green-500 p-base-semibold underline'>
+            <Link href='/eu-wetgeving' className='link-interaction'>
+              EU wetgeving <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
             </Link>{' '}
           </li>
           <li className='text-green-500 p-base-semibold underline'>
