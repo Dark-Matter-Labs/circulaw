@@ -12,6 +12,8 @@ import { PortableText } from '@portabletext/react';
 import { euPageComponents } from '@/lib/portable-text/pt-components';
 import SocialButtons from '@/components/social-buttons';
 
+
+// refactor
 const pathsQuery = `
 *[_type =="euLaw" && defined(slug.current)][].slug.current
 `;
