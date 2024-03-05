@@ -69,7 +69,7 @@ export default function ScrollTabMobileMenu({ content }) {
                       <div className='px-4 sm:px-6'>
                         <Dialog.Title className='text-gray-900'>
                           {' '}
-                          <h2 className='p-6xl-semibold my-4'>Obligations</h2>
+                          <h2 className='p-6xl-semibold my-4'>In deze pagina</h2>
                         </Dialog.Title>
                       </div>
                       <div className='relative flex-1 px-4 sm:px-6'>
@@ -80,7 +80,7 @@ export default function ScrollTabMobileMenu({ content }) {
                                 to={`${section.title}`}
                                 smooth={true}
                                 duration={500}
-                                offset={-50}
+                                offset={-135}
                                 spy={true}
                                 activeClass='bg-green-500 text-grey-100 font-semibold transition-all duration-100'
                                 className='p-base text-green-800 py-2 pl-4 pr-8 h-full break-words rounded-cl whitespace-nowrap cursor-pointer'
