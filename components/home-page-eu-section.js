@@ -25,7 +25,7 @@ export default function HomePageEUSection({ euData }) {
           <div>
             <span className='text-green-500 link-lg link-interaction'>
               <CustomButton color='whiteBackground'>
-                Bekijk de EU wegeving{' '}
+                Bekijk de EU wetgeving{' '}
                 <ArrowRightIcon className='inline-block h-4 w-4 ml-1' aria-hidden='true' />
               </CustomButton>
             </span>

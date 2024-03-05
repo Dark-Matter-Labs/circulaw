@@ -69,10 +69,10 @@ export default function PCTooltip({ children, icon, title, content }) {
                       leaveFrom='opacity-100'
                       leaveTo='opacity-0'
                     >
-                      <div className='absolute float-right top-0 right-0 flex pt-4 pr-8 sm:-ml-10'>
+                      <div className='absolute float-right top-0 right-0 flex pt-4 pr-8 sm:-ml-10 z-50'>
                         <button
                           type='button'
-                          className='rounded-md text-green-600'
+                          className='rounded-full text-white bg-green-500 p-2'
                           onClick={() => setOpen(false)}
                         >
                           <span className='sr-only'>Close panel</span>
@@ -84,7 +84,7 @@ export default function PCTooltip({ children, icon, title, content }) {
                       <div className='px-4 sm:px-6'>
                         <Dialog.Title className='text-gray-900'>
                           {' '}
-                          <h2 className='mobile sm:desktop'>{title}</h2>
+                          <h2 className='mobile sm:desktop mr-10'>{title}</h2>
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>

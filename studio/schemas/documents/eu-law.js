@@ -53,7 +53,7 @@ export default {
       name: 'summaryIntroText',
       type: 'text',
       title: 'Summary Introduction text',
-      description: 'this will be displayed on the EU law card',
+      description: 'this will be displayed on the Summary tab',
       group: 'summary',
     },
     {
