@@ -35,6 +35,7 @@ export default function LawSummaryPage({ lawData }) {
 
   return (
     <Layout title={lawData?.title}>
+      <div className='relative'>
       <div className='h-[240px] sm:h-[360px] pt-3 bg-green-800'>
         <div className='flex flex-col justify-between global-margin h-full'>
           <div className='pt-6 flex flex-row justify-between'>
@@ -52,7 +53,7 @@ export default function LawSummaryPage({ lawData }) {
               <SocialButtons title={`${lawData?.title} - ${selectedTab.replace(/(-)/g, ' ')}`} />
             </div>
           </div>
-          <h1 className='mb-[74px] sm:mb-[94px] p-5xl-semibold sm:p-7xl-bold text-grey-100'>
+          <h1 className='mb-[60px] sm:mb-[94px] p-5xl-semibold sm:p-7xl-bold text-grey-100'>
             {' '}
             {lawData?.title}
           </h1>
@@ -60,7 +61,8 @@ export default function LawSummaryPage({ lawData }) {
       </div>
       
       {/* tabs desktop */}
-      <div className='bg-green-800 -mt-12 sm:-mt-[62px] flex overflow-x-scroll snap-x snap-mandatory no-scrollbar lgNav:block'>
+      <div className='sticky top-16 lgNav:top-24 shadow-lg'>
+      <div className='bg-green-800 -mt-12 sm:-mt-[62px] flex overflow-x-scroll snap-x snap-mandatory no-scrollbar lgNav:block pt-4'>
         <div className='global-margin'>
           <div className='flex flex-row gap-x-3 justify-start p-lg-semibold text-green-500 h-[62px] max-w-3xl'>
             <Link
@@ -116,7 +118,7 @@ export default function LawSummaryPage({ lawData }) {
           </div>
         </div>
       </div>
-
+      </div>
       {query === 'overzicht' && (
         <div className=''>
           <SummaryComponent lawData={lawData} />
@@ -135,6 +137,7 @@ export default function LawSummaryPage({ lawData }) {
           </div>
         </div>
       )}
+      </div>
     </Layout>
   );
 }
