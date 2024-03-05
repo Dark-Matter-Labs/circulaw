@@ -33,21 +33,14 @@ export default function EULaw({ laws }) {
         </div>
       </div>
       <div className='global-margin'>
-        <div className='flex flex-col max-w-2xl'>
-          <div className='mb-4 mt-10'>
-            De Europese Unie ontwikkelt continu wetten en richtlijnen met het oog op de
-            verduurzaming van onze maatschappij en de bescherming van onze natuur. In veel gevallen
-            zijn die wetten en richtlijnen ook toepasbaar op de circulaire economie. In deze sectie
-            van CircuLaw verzamelen we zulke wetten en richtlijnen, en vertellen we je hoe je ze ook
-            in jouw gemeente of provincie van toepassing zijn. Op die manier vormen ze een
-            waardevolle aanvulling op alle andere instrumenten binnen CircuLaw.
-          </div>
-          <div>
-            De wetten en richtlijnen die we hier bespreken veranderen regelmatig. Sommige zijn al
-            vastgesteld, sommige zijn nog in ontwikkeling, sommige worden – of zijn - herzien. Wij
-            houden continu de status bij – en alle wijzigingen, nieuwe ontwikkelingen en nieuwe
-            relevante wetten en richtlijnen voegen we hier toe. Neem dus regelmatig even een kijkje!
-          </div>
+        <div className='flex flex-col max-w-2xl p-base'>
+          <p className='mb-4 mt-10'>
+          Er komt een ‘storm’ aan Europese wet- en regelgeving op ons af, gericht op het verduurzamen van onze maatschappij en de circulaire economie. Veel hiervan valt onder de ‘Green Deal’, maar ook buiten de Green Deal wordt wet- en regelgeving aangepast. Een totaaloverzicht hiervan ontbrak. Daarnaast hebben veel decentrale overheden geen zicht op de verplichtingen en kansen die voortvloeien uit al deze Europese wet- en regelgeving. CircuLaw brengt daar verandering in.
+
+          </p>
+          <p>
+          De wetten en richtlijnen die we hier bespreken veranderen regelmatig. Wij houden continu de status bij. Neem dus regelmatig even een kijkje! 
+          </p>
         </div>
       </div>
       <div className=' grid grid-cols-1 lgNav:grid-cols-2 gap-y-4 gap-x-8 global-margin my-12 relative min-h-screen'>
