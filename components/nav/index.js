@@ -335,7 +335,11 @@ export default function Nav(props) {
                                     <Disclosure.Panel className='flex flex-col flex-grow ml-4'>
                                       <ul>
                                         {props?.navItems?.map((navItem, id) => (
-                                          <MobileDisclosure key={id} navData={navItem} closeMenu={setMobileMenuIsOpen} />
+                                          <MobileDisclosure
+                                            key={id}
+                                            navData={navItem}
+                                            closeMenu={setMobileMenuIsOpen}
+                                          />
                                         ))}
                                       </ul>
                                     </Disclosure.Panel>
@@ -343,7 +347,11 @@ export default function Nav(props) {
                                 </>
                               )}
                             </Disclosure>
-                            <MobileSimpleButton name='Eu wetgeving' url='/eu-wetgeving' closeMenu={setMobileMenuIsOpen}/>
+                            <MobileSimpleButton
+                              name='Eu wetgeving'
+                              url='/eu-wetgeving'
+                              closeMenu={setMobileMenuIsOpen}
+                            />
                             <Disclosure>
                               {({ open }) => (
                                 <>
@@ -373,10 +381,12 @@ export default function Nav(props) {
                                           <li
                                             key={aboutPage?.slug}
                                             className='p-base h-10 my-2 last:mb-2 text-green-600 cursor-pointer flex items-center'
-                                         
                                           >
-                                            <Link href={`/over/${aboutPage?.slug}`} onClick={() => setMobileMenuIsOpen(false)}>
-                                            {aboutPage.title}
+                                            <Link
+                                              href={`/over/${aboutPage?.slug}`}
+                                              onClick={() => setMobileMenuIsOpen(false)}
+                                            >
+                                              {aboutPage.title}
                                             </Link>
                                           </li>
                                         ))}
@@ -386,9 +396,21 @@ export default function Nav(props) {
                                 </>
                               )}
                             </Disclosure>
-                            <MobileSimpleButton name='Nieuws' url='/nieuws' closeMenu={setMobileMenuIsOpen}/>
-                            <MobileSimpleButton name='Vraag en antwoord' url='/vraag-en-antwoord' closeMenu={setMobileMenuIsOpen}/>
-                            <MobileSimpleButton name='Contact' url='/contact' closeMenu={setMobileMenuIsOpen} />
+                            <MobileSimpleButton
+                              name='Nieuws'
+                              url='/nieuws'
+                              closeMenu={setMobileMenuIsOpen}
+                            />
+                            <MobileSimpleButton
+                              name='Vraag en antwoord'
+                              url='/vraag-en-antwoord'
+                              closeMenu={setMobileMenuIsOpen}
+                            />
+                            <MobileSimpleButton
+                              name='Contact'
+                              url='/contact'
+                              closeMenu={setMobileMenuIsOpen}
+                            />
 
                             <div className='flex flex-row items-end w-full justify-end pt-4 '>
                               <LangSwitch />
