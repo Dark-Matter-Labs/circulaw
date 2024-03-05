@@ -101,7 +101,9 @@ export default function SummaryComponent({ lawData }) {
       </div>
       {/* Ovewrview cards and stats */}
       <div className='bg-grey-150 py-10'>
-        {lawData?.title === 'Corporate Sustainability Reporting Directive (CSRD)' && <Highlights law='CSRD' />}
+        {lawData?.title === 'Corporate Sustainability Reporting Directive (CSRD)' && (
+          <Highlights law='CSRD' />
+        )}
         {lawData?.title === 'Energy Efficiency Directive' && (
           <Highlights law='Energy Efficiency Directive' />
         )}
@@ -112,44 +114,47 @@ export default function SummaryComponent({ lawData }) {
       {/* Links */}
       <div className='py-10'>
         <div className='global-margin grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+          {lawData?.linkCol1 && 
           <div className='flex flex-col'>
-            <h3 className='text-green-800 p-4xl-semibold'>Relevante CircuLaw thema&apos;s</h3>
+            <h3 className='text-green-800 p-4xl-semibold'>Bekijk ook op <Link href='/' className='underline link-interaction'>Circulaw.nl</Link></h3>
             <ul>
               {lawData?.linkCol1?.map((link, id) => (
                 <li key={id} className='p-base text-green-800 my-3'>
-                  <Link href={link?.link}>{link?.linkText}</Link>
+                  <Link href={link?.link} className='link-interaction'>{link?.linkText}</Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </div>}
+          {lawData?.linkCol2 && 
           <div>
             <h3 className='text-green-800 p-4xl-semibold'>
-              Verwante CircuLaw-instrumenten <LinkIcon />
+            Relevante NL wetgeving <LinkIcon />
             </h3>
             <ul>
               {lawData?.linkCol2?.map((link, id) => (
                 <li key={id} className='p-base text-green-800 my-3'>
-                  <Link href={link?.link} target='_blank'>
+                  <Link href={link?.link} target='_blank' className='link-interaction'>
                     {link?.linkText}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </div>}
+          {lawData?.linkCol3 && 
           <div>
             <h3 className='text-green-800 p-4xl-semibold'>
-              Relevante Europese wetgeving <LinkIcon />
+            Relevante EU wetgeving <LinkIcon />
             </h3>
             <ul>
               {lawData?.linkCol3?.map((link, id) => (
                 <li key={id} className='p-base text-green-800 my-3'>
-                  <Link href={link?.link} target='_blank'>
+                  <Link href={link?.link} target='_blank' className='link-interaction'>
                     {link?.linkText}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </div>}
         </div>
       </div>
     </div>
