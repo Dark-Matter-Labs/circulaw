@@ -35,13 +35,11 @@ export default function EULaw({ laws }) {
       <div className='global-margin'>
         <div className='flex flex-col max-w-2xl'>
           <div className='mb-4 mt-10'>
-            De Europese regelgeving uit de Green Deal vormt de motor van de transitie naar een
-            circulaire economie . We brengen Europese regelgeving in kaart, en geven aan hoe deze
-            van invloed is op de activiteiten van decentrale overheden.
+          De Europese Unie ontwikkelt continu wetten en richtlijnen met het oog op de verduurzaming van onze maatschappij en de bescherming van onze natuur. In veel gevallen zijn die wetten en richtlijnen ook toepasbaar op de circulaire economie. In deze sectie van CircuLaw verzamelen we zulke wetten en richtlijnen, en vertellen we je hoe je ze ook in jouw gemeente of provincie van toepassing zijn. Op die manier vormen ze een waardevolle aanvulling op alle andere instrumenten binnen CircuLaw.
           </div>
           <div>
-            Wil je voorop lopen, en onaangename verassingen voorkomen? Volg de ontwikkelingen van
-            deze 10 EU-wetten dan nauwlettend.
+          De wetten en richtlijnen die we hier bespreken veranderen regelmatig. Sommige zijn al vastgesteld, sommige zijn nog in ontwikkeling, sommige worden – of zijn - herzien. Wij houden continu de status bij – en alle wijzigingen, nieuwe ontwikkelingen en nieuwe relevante wetten en richtlijnen voegen we hier toe. Neem dus regelmatig even een kijkje! 
+
           </div>
         </div>
       </div>

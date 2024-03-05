@@ -44,8 +44,36 @@ export default function SummaryComponent({ lawData }) {
           <div className='flex flex-row items-center place-items-center'>
             <h2 className='text-green-800 p-6xl-semibold'>Status</h2>
             <div className='place-items-center mt-3 ml-2'>
-              <EUGenericTooltip title='Status'>
-                i am the generic content and I am kinda long to make the thing wide
+              <EUGenericTooltip title='Generieke status:'>
+                <div>
+                  <h3 className='mb-4 p-2xl-semibold'>
+                  Stap 1: In onderhandeling
+                  </h3>
+                  <p className='p-base mb-2'>
+                  De Europese Commissie komt met een nieuw initiatief voor een nieuwe wet of een wijziging van een bestaande wet. Burgers, bedrijven en organisaties kunnen op het wetsvoorstel reageren door vragenlijsten te beantwoorden (openbare raadplegingen).  
+                  </p>
+                  <p className='p-base mb-2'>
+                  Vervolgens wordt het wetsvoorstel aan het Europees Parlement en de Raad van de Europese Unie voorgelegd. Het Parlement en de Raad kunnen wijzigingen (amendementen) voorstellen. Op deze manier wordt over de definitieve tekst van een wet onderhandeld.  
+                  </p>
+                  <h3 className='my-4 p-2xl-semibold'>
+                  Stap 2: Aangenomen
+                  </h3>
+                  <p className='p-base mb-2'>
+                  De Europese Commissie, Europees Parlement en de Raad van de Europese Unie bereiken overeenstemming over de definitieve tekst van het wetsvoorstel. Vervolgens wordt het voorstel in stemming gebracht bij het Europees Parlement en aangenomen. De Commissie kan ook besluiten om het wetsvoorstel in te trekken, wanneer zij van mening is dat het voorstel te ingrijpend is gewijzigd naar aanleiding van alle amendementen. 
+
+                  </p>
+                  <h3 className='my-4 p-2xl-semibold'>
+                  Stap 3: Implementatie
+                  </h3>
+                  <p className='p-base mb-2'>
+                  Als een nieuwe of gewijzigde wet een richtlijn is, dan moet de lidstaat de richtlijn implementeren in nationale wet- en regelgeving. Dit kan door nieuwe nationale wet- en regelgeving aan te nemen of bestaande wetten en/of regelingen aan te passen. 
+
+                  </p>
+                  <p className='p-base'>
+                  Verordeningen hebben directe werking in nationale wetgeving. Deze hoeven daardoor niet in de nationale wet- en regelgeving geïmplementeerd te worden. 
+
+                  </p>
+                </div>
               </EUGenericTooltip>
             </div>
           </div>
