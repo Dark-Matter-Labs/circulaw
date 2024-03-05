@@ -485,7 +485,11 @@ export default function Nav(props) {
                             } h-full flex flex-cols-5 gap-[1px] relative`}
                           >
                             {props?.navItems?.map((navItem, id) => (
-                              <DesktopNavCard key={id} navData={navItem} closeNav={setMainMenuIsOpen}/>
+                              <DesktopNavCard
+                                key={id}
+                                navData={navItem}
+                                closeNav={setMainMenuIsOpen}
+                              />
                             ))}
                           </div>
                         </div>
@@ -559,10 +563,12 @@ export default function Nav(props) {
                                   ? 'text-white'
                                   : 'text-green-600 hover:text-green-500'
                               } p-xs mb-2  hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
-                             
                             >
-                              <Link href={`/over/${aboutPage?.slug}`} onClick={() => setOverMenuIsOpen(false)}>
-                              {aboutPage.title}
+                              <Link
+                                href={`/over/${aboutPage?.slug}`}
+                                onClick={() => setOverMenuIsOpen(false)}
+                              >
+                                {aboutPage.title}
                               </Link>
                             </div>
                           ))}

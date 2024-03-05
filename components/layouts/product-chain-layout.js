@@ -31,13 +31,11 @@ export default function ThemeLayout({ ...props }) {
             <div className='-z-20'>
               <ThemaCard themaCards={props?.themaList} />
             </div>
-
-           
           </div>
         </div>
         <div className='bg-grey-150'>
           <div className='global-margin'>
-          <div className='pt-10 pb-14'>
+            <div className='pt-10 pb-14'>
               <h2 className='p-3xl-semibold sm:p-6xl-semibold text-green-800 mb-14 max-w-2xl'>
                 {props?.productChainData?.impactTitle}
               </h2>
