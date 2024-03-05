@@ -335,7 +335,7 @@ export default function Nav(props) {
                                     <Disclosure.Panel className='flex flex-col flex-grow ml-4'>
                                       <ul>
                                         {props?.navItems?.map((navItem, id) => (
-                                          <MobileDisclosure key={id} navData={navItem} />
+                                          <MobileDisclosure key={id} navData={navItem} closeMenu={setMobileMenuIsOpen} />
                                         ))}
                                       </ul>
                                     </Disclosure.Panel>
@@ -343,7 +343,7 @@ export default function Nav(props) {
                                 </>
                               )}
                             </Disclosure>
-                            <MobileSimpleButton name='Eu wetgeving' url='/eu-wetgeving' />
+                            <MobileSimpleButton name='Eu wetgeving' url='/eu-wetgeving' closeMenu={setMobileMenuIsOpen}/>
                             <Disclosure>
                               {({ open }) => (
                                 <>
@@ -384,9 +384,9 @@ export default function Nav(props) {
                                 </>
                               )}
                             </Disclosure>
-                            <MobileSimpleButton name='Nieuws' url='/nieuws' />
-                            <MobileSimpleButton name='Vraag en antwoord' url='/vraag-en-antwoord' />
-                            <MobileSimpleButton name='Contact' url='/contact' />
+                            <MobileSimpleButton name='Nieuws' url='/nieuws' closeMenu={setMobileMenuIsOpen}/>
+                            <MobileSimpleButton name='Vraag en antwoord' url='/vraag-en-antwoord' closeMenu={setMobileMenuIsOpen}/>
+                            <MobileSimpleButton name='Contact' url='/contact' closeMenu={setMobileMenuIsOpen} />
 
                             <div className='flex flex-row items-end w-full justify-end pt-4 '>
                               <LangSwitch />
