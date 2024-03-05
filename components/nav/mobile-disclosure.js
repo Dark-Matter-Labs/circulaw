@@ -2,11 +2,11 @@ import { Disclosure, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 
-export default function MobileDisclosure({ navData }) {
+export default function MobileDisclosure({ navData, closeMenu }) {
   return (
     <li className='p-base-semibold text-green-800 border-b py-6'>
       <Disclosure>
-        {({ open, close }) => (
+        {({ open }) => (
           <>
             <Disclosure.Button className={`${open ? '' : ''} flex flex-row items-center `}>
               {navData?.title}
@@ -24,7 +24,7 @@ export default function MobileDisclosure({ navData }) {
             >
               <Disclosure.Panel className='p-base text-green-600'>
                 <ul>
-                  <Link href={`/${navData?.slug}`} onClick={close}>
+                  <Link href={`/${navData?.slug}`} onClick={() => closeMenu(false)}>
                     <li className='pt-4 w-full flex items-center ml-4'>
                       {navData?.title} - overzicht
                     </li>
@@ -34,6 +34,7 @@ export default function MobileDisclosure({ navData }) {
                       <Link
                         href={`/${navData?.slug}/${thema?.slug}`}
                         className='h-10 flex items-center'
+                        onClick={() => closeMenu(false)}
                       >
                         {thema?.themaName}
                       </Link>
