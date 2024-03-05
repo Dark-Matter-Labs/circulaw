@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-export default function DesktopNavCard({ navData }) {
+export default function DesktopNavCard({ navData, closeNav }) {
   const router = useRouter();
 
   return (
@@ -14,7 +14,7 @@ export default function DesktopNavCard({ navData }) {
           : 'pl-3 lg:pl-6 pt-8 pr-2'
       }  p-lg-semibold first-letter:uppercase `}
     >
-      <Link href={`/${navData.slug}`} className='hover:underline'>
+      <Link href={`/${navData.slug}`} className='hover:underline' onClick={() => closeNav(false)}>
         {navData.title} {'>'}
       </Link>
       {navData?.themas?.map((thema, id) => (
@@ -24,6 +24,7 @@ export default function DesktopNavCard({ navData }) {
             className={`${
               router.pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '
             } p-xs hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
+            onClick={() => closeNav(false)}
           >
             {thema.themaName}
           </Link>

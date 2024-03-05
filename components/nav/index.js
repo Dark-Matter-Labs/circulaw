@@ -348,7 +348,7 @@ export default function Nav(props) {
                               )}
                             </Disclosure>
                             <MobileSimpleButton
-                              name='Eu wetgeving'
+                              name='EU wetgeving'
                               url='/eu-wetgeving'
                               closeMenu={setMobileMenuIsOpen}
                             />
@@ -485,7 +485,11 @@ export default function Nav(props) {
                             } h-full flex flex-cols-5 gap-[1px] relative`}
                           >
                             {props?.navItems?.map((navItem, id) => (
-                              <DesktopNavCard key={id} navData={navItem} />
+                              <DesktopNavCard
+                                key={id}
+                                navData={navItem}
+                                closeNav={setMainMenuIsOpen}
+                              />
                             ))}
                           </div>
                         </div>
@@ -493,7 +497,7 @@ export default function Nav(props) {
                     </FloatingFocusManager>
                   )}
                 </div>
-                <DesktopSimpleButton name='Eu wetgeving' url='/eu-wetgeving' />
+                <DesktopSimpleButton name='EU wetgeving' url='/eu-wetgeving' />
                 <div className=''>
                   <button
                     ref={overRef.setReference}
@@ -552,17 +556,21 @@ export default function Nav(props) {
                         >
                           {/* Remove slice once news section is separate */}
                           {props?.aboutSlugs?.map((aboutPage) => (
-                            <button
+                            <div
                               key={aboutPage?.slug}
                               className={`${
                                 router.pathname === '/'
                                   ? 'text-white'
                                   : 'text-green-600 hover:text-green-500'
                               } p-xs mb-2  hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
-                              onClick={() => router.push(`/over/${aboutPage?.slug}`)}
                             >
-                              {aboutPage.title}
-                            </button>
+                              <Link
+                                href={`/over/${aboutPage?.slug}`}
+                                onClick={() => setOverMenuIsOpen(false)}
+                              >
+                                {aboutPage.title}
+                              </Link>
+                            </div>
                           ))}
                         </div>
                       </div>

@@ -19,13 +19,13 @@ export default function OverviewPageHeader({ props, page }) {
               </span>
             </Link>
             <Link href={`/${props.transitionAgenda}`} className=''>
-              <span className='link-interaction capitalize w-min'>
+              <span className='link-interaction capitalize w-min whitespace-nowrap'>
                 {props.transitionAgenda}
                 <span className='mx-2'>{'>'}</span>
               </span>
             </Link>
             <Link href={`/${props.transitionAgenda}/${props.thema}`}>
-              <span className='capitalize link-interaction w-min'>
+              <span className='capitalize link-interaction w-min whitespace-nowrap'>
                 {props.thema.replace('-', ' ')}{' '}
               </span>
             </Link>

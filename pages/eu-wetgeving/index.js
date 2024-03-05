@@ -28,7 +28,7 @@ export default function EULaw({ laws }) {
                 </span>
               </Link>
             </div>
-            <h1 className='mb-8 p-5xl-semibold sm:p-7xl-bold text-grey-100'>Eu wetgeving</h1>
+            <h1 className='mb-8 p-5xl-semibold sm:p-7xl-bold text-grey-100'>EU wetgeving</h1>
           </div>
         </div>
       </div>
@@ -48,9 +48,11 @@ export default function EULaw({ laws }) {
           </p>
         </div>
       </div>
-      <div className=' grid grid-cols-1 lgNav:grid-cols-2 gap-y-4 gap-x-8 global-margin my-12 relative min-h-screen'>
+      <div className='grid grid-cols-1 lgNav:grid-cols-2 gap-y-4 gap-x-8 global-margin my-12 relative min-h-screen'>
         {laws?.map((law, id) => (
-          <EULawCard law={law} key={id} />
+          <div key={id} className='md:min-h-[453px] md:max-h-[550px]'>
+            <EULawCard law={law} />
+          </div>
         ))}
       </div>
     </Layout>

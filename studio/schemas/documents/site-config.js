@@ -52,14 +52,6 @@ export default {
       group: 'navigation',
     },
     {
-      title: "Thema's",
-      name: 'themas',
-      description: 'Select menu for Thema navigation',
-      type: 'reference',
-      to: { type: 'navigation' },
-      group: 'navigation',
-    },
-    {
       title: 'About Section Title',
       name: 'aboutSectionTitle',
       type: 'string',
