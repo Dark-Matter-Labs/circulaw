@@ -12,6 +12,7 @@ import { PortableText } from '@portabletext/react';
 import { euPageComponents } from '@/lib/portable-text/pt-components';
 import SocialButtons from '@/components/social-buttons';
 
+// refactor
 const pathsQuery = `
 *[_type =="euLaw" && defined(slug.current)][].slug.current
 `;
@@ -46,14 +47,14 @@ export default function LawSummaryPage({ lawData }) {
                   </span>
                 </Link>
                 <Link href='/eu-wetgeving'>
-                  <span className='capitalize link-interaction'>Eu wetgeving</span>
+                  <span className='capitalize link-interaction'>EU wetgeving</span>
                 </Link>
               </div>
               <div className='hidden sm:block'>
                 <SocialButtons title={`${lawData?.title} - ${selectedTab.replace(/(-)/g, ' ')}`} />
               </div>
             </div>
-            <h1 className='mb-[60px] sm:mb-[94px] p-5xl-semibold sm:p-7xl-bold text-grey-100'>
+            <h1 className='mb-[60px] sm:mb-[94px] p-5xl-semibold sm:p-7xl-bold text-grey-100 max-w-4xl'>
               {' '}
               {lawData?.title}
             </h1>

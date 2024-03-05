@@ -76,7 +76,7 @@ export default function Highlights({ law }) {
         </div>
       </>
     );
-  } else {
+  } else if (law === 'Single-Use Plastics Directive (SUP)') {
     return (
       <>
         <div className='global-margin'>

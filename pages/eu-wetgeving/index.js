@@ -5,6 +5,7 @@ import { client } from '@/lib/sanity';
 import EULawCard from '@/components/eu-law/eu-law-card';
 import bannerImage from '@/public/banner.png';
 
+// refactor
 const euLawsQuery = `
 *[_type == "euLaw"]{...}
 `;
