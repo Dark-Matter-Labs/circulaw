@@ -373,9 +373,11 @@ export default function Nav(props) {
                                           <li
                                             key={aboutPage?.slug}
                                             className='p-base h-10 my-2 last:mb-2 text-green-600 cursor-pointer flex items-center'
-                                            onClick={() => router.push(`/over/${aboutPage?.slug}`)}
+                                         
                                           >
+                                            <Link href={`/over/${aboutPage?.slug}`} onClick={() => setMobileMenuIsOpen(false)}>
                                             {aboutPage.title}
+                                            </Link>
                                           </li>
                                         ))}
                                       </ul>
