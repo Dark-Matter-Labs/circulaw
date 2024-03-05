@@ -348,7 +348,7 @@ export default function Nav(props) {
                               )}
                             </Disclosure>
                             <MobileSimpleButton
-                              name='Eu wetgeving'
+                              name='EU wetgeving'
                               url='/eu-wetgeving'
                               closeMenu={setMobileMenuIsOpen}
                             />
@@ -497,7 +497,7 @@ export default function Nav(props) {
                     </FloatingFocusManager>
                   )}
                 </div>
-                <DesktopSimpleButton name='Eu wetgeving' url='/eu-wetgeving' />
+                <DesktopSimpleButton name='EU wetgeving' url='/eu-wetgeving' />
                 <div className=''>
                   <button
                     ref={overRef.setReference}

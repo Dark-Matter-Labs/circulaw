@@ -28,7 +28,7 @@ export default function EULaw({ laws }) {
                 </span>
               </Link>
             </div>
-            <h1 className='mb-8 p-5xl-semibold sm:p-7xl-bold text-grey-100'>Eu wetgeving</h1>
+            <h1 className='mb-8 p-5xl-semibold sm:p-7xl-bold text-grey-100'>EU wetgeving</h1>
           </div>
         </div>
       </div>
