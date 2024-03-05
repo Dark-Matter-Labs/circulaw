@@ -33,16 +33,19 @@ export default function EULaw({ laws }) {
         </div>
       </div>
       <div className='global-margin'>
-        <div className='flex flex-col max-w-2xl'>
-          <div className='mb-4 mt-10'>
-            De Europese regelgeving uit de Green Deal vormt de motor van de transitie naar een
-            circulaire economie . We brengen Europese regelgeving in kaart, en geven aan hoe deze
-            van invloed is op de activiteiten van decentrale overheden.
-          </div>
-          <div>
-            Wil je voorop lopen, en onaangename verassingen voorkomen? Volg de ontwikkelingen van
-            deze 10 EU-wetten dan nauwlettend.
-          </div>
+        <div className='flex flex-col max-w-2xl p-base'>
+          <p className='mb-4 mt-10'>
+            Er komt een ‘storm’ aan Europese wet- en regelgeving op ons af, gericht op het
+            verduurzamen van onze maatschappij en de circulaire economie. Veel hiervan valt onder de
+            ‘Green Deal’, maar ook buiten de Green Deal wordt wet- en regelgeving aangepast. Een
+            totaaloverzicht hiervan ontbrak. Daarnaast hebben veel decentrale overheden geen zicht
+            op de verplichtingen en kansen die voortvloeien uit al deze Europese wet- en
+            regelgeving. CircuLaw brengt daar verandering in.
+          </p>
+          <p>
+            De wetten en richtlijnen die we hier bespreken veranderen regelmatig. Wij houden continu
+            de status bij. Neem dus regelmatig even een kijkje!
+          </p>
         </div>
       </div>
       <div className='grid grid-cols-1 lgNav:grid-cols-2 gap-y-4 gap-x-8 global-margin my-12 relative min-h-screen'>
