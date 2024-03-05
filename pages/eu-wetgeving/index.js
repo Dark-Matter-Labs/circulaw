@@ -35,11 +35,16 @@ export default function EULaw({ laws }) {
       <div className='global-margin'>
         <div className='flex flex-col max-w-2xl p-base'>
           <p className='mb-4 mt-10'>
-          Er komt een ‘storm’ aan Europese wet- en regelgeving op ons af, gericht op het verduurzamen van onze maatschappij en de circulaire economie. Veel hiervan valt onder de ‘Green Deal’, maar ook buiten de Green Deal wordt wet- en regelgeving aangepast. Een totaaloverzicht hiervan ontbrak. Daarnaast hebben veel decentrale overheden geen zicht op de verplichtingen en kansen die voortvloeien uit al deze Europese wet- en regelgeving. CircuLaw brengt daar verandering in.
-
+            Er komt een ‘storm’ aan Europese wet- en regelgeving op ons af, gericht op het
+            verduurzamen van onze maatschappij en de circulaire economie. Veel hiervan valt onder de
+            ‘Green Deal’, maar ook buiten de Green Deal wordt wet- en regelgeving aangepast. Een
+            totaaloverzicht hiervan ontbrak. Daarnaast hebben veel decentrale overheden geen zicht
+            op de verplichtingen en kansen die voortvloeien uit al deze Europese wet- en
+            regelgeving. CircuLaw brengt daar verandering in.
           </p>
           <p>
-          De wetten en richtlijnen die we hier bespreken veranderen regelmatig. Wij houden continu de status bij. Neem dus regelmatig even een kijkje! 
+            De wetten en richtlijnen die we hier bespreken veranderen regelmatig. Wij houden continu
+            de status bij. Neem dus regelmatig even een kijkje!
           </p>
         </div>
       </div>
