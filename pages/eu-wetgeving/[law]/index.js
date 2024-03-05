@@ -35,7 +35,7 @@ export default function LawSummaryPage({ lawData }) {
 
   return (
     <Layout title={lawData?.title}>
-      <div className='h-[360px] pt-3 bg-green-800'>
+      <div className='h-[240px] sm:h-[360px] pt-3 bg-green-800'>
         <div className='flex flex-col justify-between global-margin h-full'>
           <div className='pt-6 flex flex-row justify-between'>
             <div className='p-2xs-bold text-green-600 bg-white w-min pl-2 pr-3 py-1.5 rounded-clSm flex flex-row whitespace-nowrap'>
@@ -52,13 +52,13 @@ export default function LawSummaryPage({ lawData }) {
               <SocialButtons title={`${lawData?.title} - ${selectedTab.replace(/(-)/g, ' ')}`} />
             </div>
           </div>
-          <h1 className='mb-[94px] p-5xl-semibold sm:p-7xl-bold text-grey-100'>
+          <h1 className='mb-[74px] sm:mb-[94px] p-5xl-semibold sm:p-7xl-bold text-grey-100'>
             {' '}
             {lawData?.title}
           </h1>
         </div>
       </div>
-
+      
       {/* tabs desktop */}
       <div className='bg-green-800 -mt-12 sm:-mt-[62px] flex overflow-x-scroll snap-x snap-mandatory no-scrollbar lgNav:block'>
         <div className='global-margin'>
