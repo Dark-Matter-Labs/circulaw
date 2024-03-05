@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import bouw from '@/public/product-chain/pcplaceholder.png'
 
-// import data
+// import data!!!
 const productChains = [
   {
     title: 'Bouw',

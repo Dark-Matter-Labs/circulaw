@@ -105,11 +105,10 @@ export default function SummaryComponent({ lawData }) {
         {lawData?.title === 'Energy Efficiency Directive' && (
           <Highlights law='Energy Efficiency Directive' />
         )}
-        {lawData?.title === 'Single-Use Plastics Directive' && (
-          <Highlights law='Single-Use Plastics Directive' />
+        {lawData?.title === 'Single-Use Plastics Directive (SUP)' && (
+          <Highlights law='Single-Use Plastics Directive (SUP)' />
         )}
       </div>
-
       {/* Links */}
       <div className='py-10'>
         <div className='global-margin grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
