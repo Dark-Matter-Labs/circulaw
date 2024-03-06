@@ -104,11 +104,17 @@ export default function SummaryComponent({ lawData }) {
         {lawData?.title === 'Corporate Sustainability Reporting Directive (CSRD)' && (
           <Highlights law='CSRD' />
         )}
-        {lawData?.title === 'Energy Efficiency Directive' && (
+        {lawData?.title === 'Energy Efficiency Directive (EED)' && (
           <Highlights law='Energy Efficiency Directive' />
         )}
         {lawData?.title === 'Single-Use Plastics Directive (SUP)' && (
           <Highlights law='Single-Use Plastics Directive (SUP)' />
+        )}
+        {lawData?.title === 'Construction Products Regulation (CPR)' && (
+          <Highlights law='Construction Products Regulation (CPR)' />
+        )}
+        {lawData?.title === 'Ecodesign for Sustainable Products Regulation (ESPR)' && (
+          <Highlights law='Ecodesign for Sustainable Products Regulation (ESPR)' />
         )}
       </div>
       {/* Links */}
