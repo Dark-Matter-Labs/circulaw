@@ -11,21 +11,20 @@ import sup8 from '@/public/eu-sup-icons/sup-8.svg';
 import sup9 from '@/public/eu-sup-icons/sup-9.svg';
 import sup10 from '@/public/eu-sup-icons/sup-10.svg';
 
-import cpr1 from '@/public/eu-crp-icons/cpr-1.svg'
-import cpr2 from '@/public/eu-crp-icons/cpr-2.svg'
-import cpr3 from '@/public/eu-crp-icons/cpr-3.svg'
-import cpr4 from '@/public/eu-crp-icons/cpr-4.svg'
+import cpr1 from '@/public/eu-crp-icons/cpr-1.svg';
+import cpr2 from '@/public/eu-crp-icons/cpr-2.svg';
+import cpr3 from '@/public/eu-crp-icons/cpr-3.svg';
+import cpr4 from '@/public/eu-crp-icons/cpr-4.svg';
 
-import espr from '@/public/eu-espr-icons/espr-0.svg'
-import espr1 from '@/public/eu-espr-icons/espr-1.svg'
-import espr2 from '@/public/eu-espr-icons/espr-2.svg'
-import espr3 from '@/public/eu-espr-icons/espr-3.svg'
-import espr4 from '@/public/eu-espr-icons/espr-4.svg'
-import espr5 from '@/public/eu-espr-icons/espr-5.svg'
-import espr6 from '@/public/eu-espr-icons/espr-6.svg'
-import espr7 from '@/public/eu-espr-icons/espr-7.svg'
-import espr8 from '@/public/eu-espr-icons/espr-8.svg'
-
+import espr from '@/public/eu-espr-icons/espr-0.svg';
+import espr1 from '@/public/eu-espr-icons/espr-1.svg';
+import espr2 from '@/public/eu-espr-icons/espr-2.svg';
+import espr3 from '@/public/eu-espr-icons/espr-3.svg';
+import espr4 from '@/public/eu-espr-icons/espr-4.svg';
+import espr5 from '@/public/eu-espr-icons/espr-5.svg';
+import espr6 from '@/public/eu-espr-icons/espr-6.svg';
+import espr7 from '@/public/eu-espr-icons/espr-7.svg';
+import espr8 from '@/public/eu-espr-icons/espr-8.svg';
 
 export default function Highlights({ law }) {
   if (law === 'CSRD') {
@@ -34,7 +33,8 @@ export default function Highlights({ law }) {
         <div className='global-margin'>
           <h2 className='text-green-800 p-6xl-semibold mb-4'>CSRD Highlights</h2>
           <p className='mb-16 max-w-xl'>
-          De CSRD is per boekjaar 2024 van toepassing op bedrijven die voldoen aan ten minste twee van de volgende criteria:
+            De CSRD is per boekjaar 2024 van toepassing op bedrijven die voldoen aan ten minste twee
+            van de volgende criteria:
           </p>
           <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
             <HighlightCard
@@ -57,9 +57,7 @@ export default function Highlights({ law }) {
       <>
         <div className='global-margin'>
           <h2 className='text-green-800 p-6xl-semibold mb-4'>EED Highlights</h2>
-          <p className='mb-16 max-w-xl'>
-          2030 EU Energy Efficiency-doelen
-          </p>
+          <p className='mb-16 max-w-xl'>2030 EU Energy Efficiency-doelen</p>
 
           <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-12'>
             <HighlightCard
@@ -73,9 +71,7 @@ export default function Highlights({ law }) {
               circleText='Mtoe'
             />
           </div>
-          <p className='my-16 max-w-xl'>
-          Tussentijds, verplichte besparingsdoelen
-          </p>
+          <p className='my-16 max-w-xl'>Tussentijds, verplichte besparingsdoelen</p>
 
           <div className='sm:max-w-3xl'>
             <div className='grid grid-cols-2 md:grid-cols-4 mb-6 gap-6 items-start justify-start'>
@@ -93,9 +89,7 @@ export default function Highlights({ law }) {
       <>
         <div className='global-margin'>
           <h2 className='text-green-800 p-6xl-semibold mb-4'>SUP Highlights</h2>
-          <p className='mb-16 max-w-xl'>
-          De SUP richt zich op dit moment op 10 productgroepen:
-          </p>
+          <p className='mb-16 max-w-xl'>De SUP richt zich op dit moment op 10 productgroepen:</p>
           <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
             <HighlightCard text='Wattenstaafjes' icon={sup1} />
             <HighlightCard text='Bestek, borden, rietjes en roerstaafjes' icon={sup2} />
@@ -122,13 +116,17 @@ export default function Highlights({ law }) {
       <div className='global-margin'>
         <h2 className='text-green-800 p-6xl-semibold mb-4'>CRP Highlights</h2>
         <p className='mb-12 max-w-xl'>
-        CPR stelt eisen aan de functionaliteit, veiligheid en milieuvriendelijkheid van bouwproducten. Zo wordt circulariteit in de bouw gestimuleerd:
+          CPR stelt eisen aan de functionaliteit, veiligheid en milieuvriendelijkheid van
+          bouwproducten. Zo wordt circulariteit in de bouw gestimuleerd:
         </p>
         <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
-        <HighlightCard text='Voorschriften voor duurzaamheid en milieuvriendelijkheid' icon={cpr1} />
-        <HighlightCard text='Digitaal productpaspoort' icon={cpr2} />
-        <HighlightCard text='Standaardisatie van bouwproducten' icon={cpr3} />
-        <HighlightCard text='Hergebruik en herfabricage van bouwproducten' icon={cpr4} />
+          <HighlightCard
+            text='Voorschriften voor duurzaamheid en milieuvriendelijkheid'
+            icon={cpr1}
+          />
+          <HighlightCard text='Digitaal productpaspoort' icon={cpr2} />
+          <HighlightCard text='Standaardisatie van bouwproducten' icon={cpr3} />
+          <HighlightCard text='Hergebruik en herfabricage van bouwproducten' icon={cpr4} />
         </div>
       </div>
     );
@@ -137,27 +135,25 @@ export default function Highlights({ law }) {
       <div className='global-margin'>
         <h2 className='text-green-800 p-6xl-semibold mb-4'>ESPR Highlights</h2>
 
-
-     
         <p className='mb-12 max-w-xl'>
-         Ecodesign stelt duurzame eisen aan producten als het gaat om: 
+          Ecodesign stelt duurzame eisen aan producten als het gaat om:
         </p>
         <div className='max-w-2xl sm:gap-10 mb-12'>
-             <HighlightCard text='Levensduur, herbruikbaarheid, opwaardeerbaarheidrepareerbaarheid, recyclebaarheid, aandeel gerecycled materiaal, energieverbruik en energie-efficiëntie, grondstoffengebruik en grondstoffen-efficiëntie' icon={espr} />
-          </div>
-
-        <p className='my-16 max-w-xl'>
-        Ecodesign geldt onder meer voor:
-        </p>
+          <HighlightCard
+            text='Levensduur, herbruikbaarheid, opwaardeerbaarheidrepareerbaarheid, recyclebaarheid, aandeel gerecycled materiaal, energieverbruik en energie-efficiëntie, grondstoffengebruik en grondstoffen-efficiëntie'
+            icon={espr}
+          />
+        </div>
+        <p className='my-16 max-w-xl'>Ecodesign geldt onder meer voor:</p>
         <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
-        <HighlightCard text='Kleding en schoenen' icon={espr1} />
-        <HighlightCard text='Meubels' icon={espr2} />
-        <HighlightCard text='Banden' icon={espr3} />
-        <HighlightCard text='Wasmiddelen' icon={espr4} />
-        <HighlightCard text='Verfproducten' icon={espr5} />
-        <HighlightCard text='Chemicaliën' icon={espr6} />
-        <HighlightCard text='ICT producten' icon={espr7} />
-        <HighlightCard text='Electronica' icon={espr8} />
+          <HighlightCard text='Kleding en schoenen' icon={espr1} />
+          <HighlightCard text='Meubels' icon={espr2} />
+          <HighlightCard text='Banden' icon={espr3} />
+          <HighlightCard text='Wasmiddelen' icon={espr4} />
+          <HighlightCard text='Verfproducten' icon={espr5} />
+          <HighlightCard text='Chemicaliën' icon={espr6} />
+          <HighlightCard text='ICT producten' icon={espr7} />
+          <HighlightCard text='Electronica' icon={espr8} />
         </div>
       </div>
     );
