@@ -20,6 +20,10 @@ export default {
       name: 'high-level',
       title: 'High level content',
     },
+    {
+      name: 'homepage',
+      title: 'Home Page',
+    },
   ],
   fields: [
     {
@@ -62,12 +66,20 @@ export default {
         name: 'altText'
        }
 
-      ]
+      ],
+      group: 'homepage',
     },
     {
       title: 'Homepage Card Text',
       name: 'cardText',
       type: 'string',
+      group: 'homepage',
+    },
+    {
+      name: 'order',
+      type: 'number',
+      title: 'Home Page order',
+      group: 'homepage',
     },
     {
       name: 'introOne',

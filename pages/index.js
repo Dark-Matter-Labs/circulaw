@@ -3,7 +3,7 @@ import Layout from '@/components/layouts/layout';
 import { client } from '@/lib/sanity';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
-import { aboutSectionQuerie, homePageHeaderQuery, newsItems, euHomePageQuery } from '@/lib/queries';
+import { aboutSectionQuerie, homePageHeaderQuery, newsItems, euHomePageQuery, pcHomePageQuery } from '@/lib/queries'; // refactor
 import HomePageAboutSection from '@/components/home-page-about-section';
 import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
@@ -12,16 +12,6 @@ import PCHomePage from '@/components/product-chain-page/product-chain-homepage';
 import HomePageEUSection from '@/components/home-page-eu-section';
 
 
-const pcHomePageQuery =`
-*[_type == 'transitionAgenda']{
-  pcName,
-  "image": homepageImage.asset->.url,
-  "alt": homepageImage.altText,
-  "slug": slug.current, 
-  cardText, 
-  "themaCount": count(*[_type in ["thema", "simpleThema"] && ^.slug.current == transitionAgenda->slug.current]) 
-}
-`
 
 export default function Index({ aboutSection, homePageHeader, footerText, newsData, euData, pcData }) {
 
