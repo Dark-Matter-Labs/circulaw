@@ -20,7 +20,7 @@ export default function PCHomePage({ pcData }) {
               />
 
               <div className='bg-green-800 group-hover:bg-green-600 rounded-b-cl py-4 px-6 flex flex-col h-[70%] justify-between group-hover:translate-y-[20px] absolute bottom-0 left-0 transition-all duration-300'>
-                <div className='divide-y divide-grey-100 group-hover:divide-green-200 group-hover:-translate-y-[20px] transition-all duration-300 h-[180px] flex flex-col justify-center origin-center'>
+                <div className='divide-y-[0.5px] divide-green-600 group-hover:divide-gray-100 group-hover:-translate-y-[20px] transition-all duration-300 h-[180px] flex flex-col justify-center origin-center'>
                   <div className='p-3xl-semibold text-white h-1/2 pb-3 w-full flex items-end break-words transition duration-300'>
                     <div className='[overflow-wrap:anywhere]'>{chain.pcName}</div>
                   </div>
