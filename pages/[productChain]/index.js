@@ -37,6 +37,7 @@ const themaCardQuery = `
 `;
 
 export default function ProductChainPage({ productChainData, instrumentCount, themaCards }) {
+
   return (
     <Layout title={`${productChainData?.pcName}`}>
       <PCLayout

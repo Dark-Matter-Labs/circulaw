@@ -52,6 +52,24 @@ export default {
       },
     },
     {
+      title: 'Home Page Image',
+      name: 'homepageImage',
+      type: 'image',
+      fields: [
+       {
+        title: 'Alt text', 
+        type: 'string',
+        name: 'altText'
+       }
+
+      ]
+    },
+    {
+      title: 'Homepage Card Text',
+      name: 'cardText',
+      type: 'string',
+    },
+    {
       name: 'introOne',
       type: 'text',
       title: 'Intro Text 1',
