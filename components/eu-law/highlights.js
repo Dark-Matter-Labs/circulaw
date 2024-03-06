@@ -110,31 +110,30 @@ export default function Highlights({ law }) {
   } else if (law === 'Ecodesign for Sustainable Products Regulation (ESPR)') {
     return (
       <div className='global-margin'>
-      <h2 className='text-green-800 p-6xl-semibold mb-6'>SUP Highlights</h2>
-      <p className='mb-6 max-w-xl'>
-        paragraph text not too long. paragraph text not too long.paragraph text not too
-        long.paragraph text not too long.paragraph text not too long.
-      </p>
+        <h2 className='text-green-800 p-6xl-semibold mb-6'>SUP Highlights</h2>
+        <p className='mb-6 max-w-xl'>
+          paragraph text not too long. paragraph text not too long.paragraph text not too
+          long.paragraph text not too long.paragraph text not too long.
+        </p>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
-      Ecodesign for Sustainable Products Regulation (ESPR) to be built
+        <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
+          Ecodesign for Sustainable Products Regulation (ESPR) to be built
+        </div>
       </div>
-    </div>
-    )
+    );
   } else if (law === 'Construction Products Regulation (CPR)') {
     return (
       <div className='global-margin'>
-      <h2 className='text-green-800 p-6xl-semibold mb-6'>SUP Highlights</h2>
-      <p className='mb-6 max-w-xl'>
-        paragraph text not too long. paragraph text not too long.paragraph text not too
-        long.paragraph text not too long.paragraph text not too long.
-      </p>
+        <h2 className='text-green-800 p-6xl-semibold mb-6'>SUP Highlights</h2>
+        <p className='mb-6 max-w-xl'>
+          paragraph text not too long. paragraph text not too long.paragraph text not too
+          long.paragraph text not too long.paragraph text not too long.
+        </p>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
-      Construction Products Regulation (CPR)
-            to be built
+        <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
+          Construction Products Regulation (CPR) to be built
+        </div>
       </div>
-    </div>
-    )
+    );
   }
 }
