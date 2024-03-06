@@ -7,7 +7,14 @@ import bannerImage from '@/public/banner.png';
 
 // refactor
 const euLawsQuery = `
-*[_type == "euLaw"]{...}
+*[_type == "euLaw"]{
+  slug, 
+  title, 
+  introText,
+  statusStep,
+  statusTwoStep, 
+  statusThreeStep, 
+}
 `;
 
 export default function EULaw({ laws }) {
