@@ -60,7 +60,9 @@ export default function ThemeLayout({ ...props }) {
                       <p className='p-base'>{impact.detail}</p>
                     </div>
                     <PCTooltip title={impact.disclosureTitle} content={impact.disclosureContent}>
-                      <p className='pt-8 p-base-bold text-green-800 border-b pb-1 border-green-800'>{impact.question}</p>
+                      <p className='pt-8 p-base-bold text-green-800 border-b pb-1 border-green-800'>
+                        {impact.question}
+                      </p>
                     </PCTooltip>
                   </div>
                 ))}

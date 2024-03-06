@@ -60,12 +60,11 @@ export default {
       name: 'homepageImage',
       type: 'image',
       fields: [
-       {
-        title: 'Alt text', 
-        type: 'string',
-        name: 'altText'
-       }
-
+        {
+          title: 'Alt text',
+          type: 'string',
+          name: 'altText',
+        },
       ],
       group: 'homepage',
     },

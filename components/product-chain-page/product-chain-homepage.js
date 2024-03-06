@@ -3,9 +3,7 @@ import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import { urlFor } from '@/lib/sanity';
 
-
-
-export default function PCHomePage({pcData}) {
+export default function PCHomePage({ pcData }) {
   return (
     <>
       {' '}
@@ -27,7 +25,7 @@ export default function PCHomePage({pcData}) {
                     <div className='[overflow-wrap:anywhere]'>{chain.pcName}</div>
                   </div>
                   <div className='text-green-200 p-md pt-3 h-1/2 transition duration-300'>
-                   {chain.cardText}
+                    {chain.cardText}
                   </div>
                 </div>
                 <div className='grid justify-items-end group-hover:-translate-y-[20px] transition-all duration-300'>
@@ -46,7 +44,13 @@ export default function PCHomePage({pcData}) {
             <li className='h-32 w-full rounded-cl bg-green-800 shadow mb-6'>
               <div className='flex items-center justify-between'>
                 <div className='h-32 w-28 flex items-center justify-center'>
-                  <Image src={urlFor(chain?.image).url()} alt={chain.alt} width={250} height={120} className='w-full h-full object-cover rounded-l-cl' />
+                  <Image
+                    src={urlFor(chain?.image).url()}
+                    alt={chain.alt}
+                    width={250}
+                    height={120}
+                    className='w-full h-full object-cover rounded-l-cl'
+                  />
                 </div>
                 <div className='text-grey-100 break-words w-full max-w-[170px] ml-6 mr-3'>
                   <h3 className='p-4xl-semibold break-words w-full'>{chain.pcName}</h3>

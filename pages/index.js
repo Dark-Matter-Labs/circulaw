@@ -3,7 +3,13 @@ import Layout from '@/components/layouts/layout';
 import { client } from '@/lib/sanity';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
-import { aboutSectionQuerie, homePageHeaderQuery, newsItems, euHomePageQuery, pcHomePageQuery } from '@/lib/queries'; // refactor
+import {
+  aboutSectionQuerie,
+  homePageHeaderQuery,
+  newsItems,
+  euHomePageQuery,
+  pcHomePageQuery,
+} from '@/lib/queries'; // refactor
 import HomePageAboutSection from '@/components/home-page-about-section';
 import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
@@ -11,10 +17,14 @@ import LinkIcon from '@/components/link-icon';
 import PCHomePage from '@/components/product-chain-page/product-chain-homepage';
 import HomePageEUSection from '@/components/home-page-eu-section';
 
-
-
-export default function Index({ aboutSection, homePageHeader, footerText, newsData, euData, pcData }) {
-
+export default function Index({
+  aboutSection,
+  homePageHeader,
+  footerText,
+  newsData,
+  euData,
+  pcData,
+}) {
   return (
     <Layout page='home' homePageHeader={homePageHeader} footerText={footerText}>
       <div className='bg-grey-100 sm:pb-12 -z-50' name='thema'>
@@ -91,14 +101,14 @@ export async function getStaticProps() {
   const homePageHeader = await client.fetch(homePageHeaderQuery);
   const newsData = await client.fetch(newsItems);
   const euData = await client.fetch(euHomePageQuery);
-  const pcData = await client.fetch(pcHomePageQuery)
+  const pcData = await client.fetch(pcHomePageQuery);
   return {
     props: {
       aboutSection,
       homePageHeader,
       newsData,
       euData,
-      pcData
+      pcData,
     },
     revalidate: 1,
   };
