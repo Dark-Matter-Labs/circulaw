@@ -3,7 +3,13 @@ import Layout from '@/components/layouts/layout';
 import { client } from '@/lib/sanity';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
-import { aboutSectionQuerie, homePageHeaderQuery, newsItems, euHomePageQuery } from '@/lib/queries';
+import {
+  aboutSectionQuerie,
+  homePageHeaderQuery,
+  newsItems,
+  euHomePageQuery,
+  pcHomePageQuery,
+} from '@/lib/queries'; // refactor
 import HomePageAboutSection from '@/components/home-page-about-section';
 import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
@@ -11,7 +17,14 @@ import LinkIcon from '@/components/link-icon';
 import PCHomePage from '@/components/product-chain-page/product-chain-homepage';
 import HomePageEUSection from '@/components/home-page-eu-section';
 
-export default function Index({ aboutSection, homePageHeader, footerText, newsData, euData }) {
+export default function Index({
+  aboutSection,
+  homePageHeader,
+  footerText,
+  newsData,
+  euData,
+  pcData,
+}) {
   return (
     <Layout page='home' homePageHeader={homePageHeader} footerText={footerText}>
       <div className='bg-grey-100 sm:pb-12 -z-50' name='thema'>
@@ -37,7 +50,7 @@ export default function Index({ aboutSection, homePageHeader, footerText, newsDa
             transitieagenda’s staat hoe deze ketens in 2050 circulair kunnen zijn
           </p>
           <div className='pt-4 -z-20'>
-            <PCHomePage />
+            <PCHomePage pcData={pcData} />
           </div>
         </div>
       </div>
@@ -88,12 +101,14 @@ export async function getStaticProps() {
   const homePageHeader = await client.fetch(homePageHeaderQuery);
   const newsData = await client.fetch(newsItems);
   const euData = await client.fetch(euHomePageQuery);
+  const pcData = await client.fetch(pcHomePageQuery);
   return {
     props: {
       aboutSection,
       homePageHeader,
       newsData,
       euData,
+      pcData,
     },
     revalidate: 1,
   };

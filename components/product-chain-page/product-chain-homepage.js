@@ -1,58 +1,31 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import bouw from '@/public/product-chain/pcplaceholder.png';
+import { urlFor } from '@/lib/sanity';
 
-// import data!!!
-const productChains = [
-  {
-    title: 'Bouw',
-    slug: 'bouw',
-    description: 'Lorem ipsum mooi verhaaltje over deze product chaina',
-  },
-  {
-    title: 'Voedsel en biomassa',
-    slug: 'biomassa-en-voedsel',
-    description: 'Lorem ipsum mooi verhaaltje over deze product chaina',
-  },
-  {
-    title: 'Maakindustrie',
-    slug: 'maakindustrie',
-    description: 'Lorem ipsum mooi verhaaltje over deze product chaina',
-  },
-  {
-    title: 'Consumptiegoederen',
-    slug: 'consumptiegoederen',
-    description: 'Lorem ipsum mooi verhaaltje over deze product chaina',
-  },
-  {
-    title: 'Kunststoffen',
-    slug: 'kunststoffen',
-    description: 'Lorem ipsum mooi verhaaltje over deze product chaina',
-  },
-];
-
-export default function PCHomePage() {
+export default function PCHomePage({ pcData }) {
   return (
     <>
       {' '}
       <ul className='hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-4 gap-x-4 w-full'>
-        {productChains.map((chain, id) => (
+        {pcData?.map((chain, id) => (
           <Link href={`/${chain.slug}`} key={id}>
             <li className='group h-96 rounded-cl flex flex-col justify-between relative overflow-hidden max-w-[250px]'>
               <Image
-                src={bouw}
-                alt='image of wood'
+                src={urlFor(chain?.image).url()}
+                alt={chain.alt}
+                width={250}
+                height={120}
                 className='h-[37.5%] rounded-t-cl object-cover origin-center group-hover:scale-110 transition-transform duration-300'
               />
 
               <div className='bg-green-800 group-hover:bg-green-600 rounded-b-cl py-4 px-6 flex flex-col h-[70%] justify-between group-hover:translate-y-[20px] absolute bottom-0 left-0 transition-all duration-300'>
-                <div className='divide-y divide-green-600 group-hover:divide-green-800 group-hover:-translate-y-[20px] transition-all duration-300 h-[180px] flex flex-col justify-center origin-center'>
+                <div className='divide-y divide-grey-100 group-hover:divide-green-200 group-hover:-translate-y-[20px] transition-all duration-300 h-[180px] flex flex-col justify-center origin-center'>
                   <div className='p-3xl-semibold text-white h-1/2 pb-3 w-full flex items-end break-words transition duration-300'>
-                    <div className='[overflow-wrap:anywhere]'>{chain.title}</div>
+                    <div className='[overflow-wrap:anywhere]'>{chain.pcName}</div>
                   </div>
                   <div className='text-green-200 p-md pt-3 h-1/2 transition duration-300'>
-                    Lorem ipsum mooi verhaaltje over deze product chaina
+                    {chain.cardText}
                   </div>
                 </div>
                 <div className='grid justify-items-end group-hover:-translate-y-[20px] transition-all duration-300'>
@@ -66,16 +39,22 @@ export default function PCHomePage() {
         ))}
       </ul>
       <ul className='sm:hidden flex flex-col w-full'>
-        {productChains.map((chain, id) => (
+        {pcData.map((chain, id) => (
           <Link key={id} href={`/${chain.slug}`} className='block sm:hidden'>
             <li className='h-32 w-full rounded-cl bg-green-800 shadow mb-6'>
               <div className='flex items-center justify-between'>
                 <div className='h-32 w-28 flex items-center justify-center'>
-                  <Image src={bouw} alt='' className='w-full h-full object-cover rounded-l-cl' />
+                  <Image
+                    src={urlFor(chain?.image).url()}
+                    alt={chain.alt}
+                    width={250}
+                    height={120}
+                    className='w-full h-full object-cover rounded-l-cl'
+                  />
                 </div>
                 <div className='text-grey-100 break-words w-full max-w-[170px] ml-6 mr-3'>
-                  <h3 className='p-4xl-semibold break-words w-full'>{chain.title}</h3>
-                  <h4 className='text-green-200 p-sm'>X themas</h4>
+                  <h3 className='p-4xl-semibold break-words w-full'>{chain.pcName}</h3>
+                  <h4 className='text-green-200 p-sm'>{chain.themaCount} thema&apos;s</h4>
                 </div>
                 <div className='grid justify-items-end mr-6'>
                   <div className='h-10 w-10 rounded-full flex items-center justify-center border-2 text-white border-white bg-transparent group-hover:bg-green-200 group-hover:border-green-200 group-hover:text-green-600  active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white self-end'>
