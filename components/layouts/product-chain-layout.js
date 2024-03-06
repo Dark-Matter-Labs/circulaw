@@ -42,13 +42,13 @@ export default function ThemeLayout({ ...props }) {
               <div className='grid grid-cols-1 justify-items-center sm:flex sm:justify-center gap-20'>
                 {props?.impactList?.map((impact) => (
                   <div
-                    className='grid grid-cols-1 justify-items-center content-between text-center max-w-xs'
+                    className='flex flex-col items-center justify-between text-center max-w-xs'
                     key={impact.detail}
                   >
                     <div>
                       {impact?.image && (
                         <Image
-                          className='w-28 h-28'
+                          className='w-28 h-28 mb-6'
                           src={urlFor(impact?.image).url()}
                           alt='impact image'
                           height={40}
@@ -56,11 +56,11 @@ export default function ThemeLayout({ ...props }) {
                         />
                       )}
                     </div>
-                    <div>
-                      <p className='pt-4 p-base'>{impact.detail}</p>
+                    <div className='h-full flex items-start'>
+                      <p className='p-base'>{impact.detail}</p>
                     </div>
                     <PCTooltip title={impact.disclosureTitle} content={impact.disclosureContent}>
-                      <p className='pt-8 p-base-bold  text-green-800'>{impact.question}</p>
+                      <p className='pt-8 p-base-bold text-green-800 border-b pb-1 border-green-800'>{impact.question}</p>
                     </PCTooltip>
                   </div>
                 ))}
