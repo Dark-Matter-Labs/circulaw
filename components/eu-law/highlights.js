@@ -136,7 +136,8 @@ export default function Highlights({ law }) {
         <h2 className='text-green-800 p-6xl-semibold mb-4'>ESPR Highlights</h2>
 
         <p className='mb-12 max-w-xl'>
-        Op basis van de ESPR worden producteisen gesteld op het gebied van onder andere de volgende aspecten.
+          Op basis van de ESPR worden producteisen gesteld op het gebied van onder andere de
+          volgende aspecten.
         </p>
         <div className='max-w-2xl sm:gap-10 mb-12'>
           <HighlightCard
@@ -144,7 +145,9 @@ export default function Highlights({ law }) {
             icon={espr}
           />
         </div>
-        <p className='my-16 max-w-xl'>De producteisen gaan in elk geval gelden voor de volgende productgroepen.</p>
+        <p className='my-16 max-w-xl'>
+          De producteisen gaan in elk geval gelden voor de volgende productgroepen.
+        </p>
         <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
           <HighlightCard text='Kleding en schoenen' icon={espr1} />
           <HighlightCard text='Meubels' icon={espr2} />
