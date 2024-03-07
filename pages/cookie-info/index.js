@@ -25,6 +25,24 @@ const cookies = [
       'geplaatst wanneer een gebruiker interactie heeft met een Link Survey invitation modal',
     valid: '1 jaar',
   },
+  {
+    name: '_pk_id.<appID>.<domainHash>',
+    description:
+      'creëert een unieke Piwik Pro ID voor deze site',
+    valid: '30 min',
+  },
+  {
+    name: '_pk_ses.<appID>.<domainHash>',
+    description:
+      'verzamelt statistieken over de bezoeken van de gebruiker aan de website, zoals het aantal bezoeken, de gemiddelde tijd besteed aan de site en welke pagina’s zijn gelezen',
+    valid: '30 min',
+  },
+  {
+    name: 'ppms_privacy_<appID>',
+    description:
+      'bewaart je cookievoorkeuren',
+    valid: '1 jaar',
+  },
 ];
 
 export default function Privacy() {
@@ -56,7 +74,7 @@ export default function Privacy() {
         <h2 className='mobile sm:desktop py-2'>CircuLaw maakt gebruik van de volgende cookies:</h2>
         <p className=' p-lg  max-w-4xl'>
           Om te begrijpen hoe bezoekers door onze site navigeren en om feedback te verzamelen om de
-          site te verbeteren, gebruiken we Hotjar. Heb je bezwaar tegen Hotjar-cookies? Kies dan
+          site te verbeteren, gebruiken we Hotjar en Piwik Pro. Heb je bezwaar tegen cookies? Kies dan
           voor ‘Weigeren’ of zet je instellingen op ‘cookies blokkeren.
         </p>
         <div className='mt-8 flex flex-col p-lg pb-6 max-w-4xl'>
