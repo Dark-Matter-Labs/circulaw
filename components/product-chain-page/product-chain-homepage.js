@@ -26,7 +26,11 @@ export default function PCHomePage({ pcData }) {
                         chain.pcName === 'Consumptiegoederen' ? 'max-w-[144px]' : ''
                       } [overflow-wrap:anywhere]`}
                     >
-                       {chain.pcName === 'Consumptiegoederen' ? (<span>Consumptie-goederen</span>) : (<span>{chain.pcName}</span>)}
+                      {chain.pcName === 'Consumptiegoederen' ? (
+                        <span>Consumptie-goederen</span>
+                      ) : (
+                        <span>{chain.pcName}</span>
+                      )}
                     </div>
                   </div>
                   <div className='text-green-200 p-md pt-3 h-1/2 transition duration-300'>
@@ -58,7 +62,14 @@ export default function PCHomePage({ pcData }) {
                   />
                 </div>
                 <div className='text-grey-100 break-words w-full max-w-[170px] ml-6 mr-3'>
-                  <h3 className='p-4xl-semibold break-words w-full'>   {chain.pcName === 'Consumptiegoederen' ? (<span className='max-w-[144px]'>Consumptie-goederen</span>) : (<span>{chain.pcName}</span>)}</h3>
+                  <h3 className='p-4xl-semibold break-words w-full'>
+                    {' '}
+                    {chain.pcName === 'Consumptiegoederen' ? (
+                      <span className='max-w-[144px]'>Consumptie-goederen</span>
+                    ) : (
+                      <span>{chain.pcName}</span>
+                    )}
+                  </h3>
                   <h4 className='text-green-200 p-sm'>{chain.themaCount} thema&apos;s</h4>
                 </div>
                 <div className='grid justify-items-end mr-6'>
