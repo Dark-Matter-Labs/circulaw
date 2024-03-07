@@ -16,7 +16,7 @@ export default function HomePageEUSection({ euData }) {
           </div>
           <div className='w-full flex justify-center sm:hidden py-6'>
             <div className='flex relative h-[200px] w-full justify-center'>
-              <Image src={euData?.image} fill alt='image for wat circulaw' className='rounded-cl' />{' '}
+              <Image src={euData?.image} fill alt='image for wat circulaw' className='rounded-cl ml-6' />{' '}
             </div>
           </div>
           <div className='block sm:hidden pb-6 p-base'>
