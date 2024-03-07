@@ -52,14 +52,6 @@ export default {
       group: 'navigation',
     },
     {
-      title: "Thema's",
-      name: 'themas',
-      description: 'Select menu for Thema navigation',
-      type: 'reference',
-      to: { type: 'navigation' },
-      group: 'navigation',
-    },
-    {
       title: 'About Section Title',
       name: 'aboutSectionTitle',
       type: 'string',
@@ -109,6 +101,16 @@ export default {
       description: 'this will link to the contact page on the website.',
       type: 'string',
       group: 'footer',
+    },
+    {
+      name: 'euLaw',
+      title: 'Eu Law text',
+      type: 'text',
+    },
+    {
+      name: 'euLawImage',
+      title: 'EU Law Image',
+      type: 'image',
     },
   ],
 };

@@ -215,6 +215,10 @@
     @apply font-jakarta text-base font-medium leading-11 underline;
   }
 
+  .link-base-u0 {
+    @apply font-jakarta text-base font-medium leading-11;
+  }
+
   .link-interaction {
     @apply hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white;
   }
@@ -310,6 +314,10 @@ html {
 
 .wrap {
   word-wrap: break-word;
+}
+
+.gradient-eu-card {
+  background: linear-gradient(71deg, #6CAB93 3.79%, #30BD88 38.64%, #39B086 45.9%, #42D4A8 64.06%, #34C19A 76.4%);
 }
 
 .gradient-overview {

@@ -39,26 +39,7 @@ const defaultOptions = {
   },
 };
 
-const bouwThemas = [
-  { name: 'Houtbouw', url: '/bouw/houtbouw' },
-  { name: 'Woningen', url: '/bouw/woningen' },
-];
-
-const consumptiegoederenThemas = [
-  { name: 'Matrasketen', url: '/consumptie-goederen/matrasketen' },
-  { name: 'Meubels', url: '/consumptie-goederen/meubels' },
-];
-
-const maakindustrieThemas = [{ name: 'Windturbines', url: '/maakindustrie/windturbines' }];
-
-const biomassaEnVoedselThemas = [
-  { name: 'Voedselverspilling', url: '/biomassa-en-voedsel/voedselverspilling' },
-  { name: 'Eiwittransitie', url: '/biomassa-en-voedsel/eiwittransitie' },
-];
-
-const kunststoffenThemas = [{ name: 'Kunstgrasvelden', url: '/kunststoffen/kunstgrasvelden' }];
-
-export default function Nav3(props) {
+export default function Nav(props) {
   const router = useRouter();
   const [scrollEffect, setScrollEffect] = useState(false);
   useEffect(() => {
@@ -353,33 +334,24 @@ export default function Nav3(props) {
                                   >
                                     <Disclosure.Panel className='flex flex-col flex-grow ml-4'>
                                       <ul>
-                                        <MobileDisclosure
-                                          transitionAgenda='Bouw'
-                                          themas={bouwThemas}
-                                        />
-                                        <MobileDisclosure
-                                          transitionAgenda='Consumptiegoederen'
-                                          themas={consumptiegoederenThemas}
-                                        />
-                                        <MobileDisclosure
-                                          transitionAgenda='Voedsel en biomassa'
-                                          themas={biomassaEnVoedselThemas}
-                                        />
-                                        <MobileDisclosure
-                                          transitionAgenda='Maakindustrie'
-                                          themas={maakindustrieThemas}
-                                        />
-                                        <MobileDisclosure
-                                          transitionAgenda='Kunststoffen'
-                                          themas={kunststoffenThemas}
-                                        />
+                                        {props?.navItems?.map((navItem, id) => (
+                                          <MobileDisclosure
+                                            key={id}
+                                            navData={navItem}
+                                            closeMenu={setMobileMenuIsOpen}
+                                          />
+                                        ))}
                                       </ul>
                                     </Disclosure.Panel>
                                   </Transition>
                                 </>
                               )}
                             </Disclosure>
-
+                            <MobileSimpleButton
+                              name='EU wetgeving'
+                              url='/eu-wetgeving'
+                              closeMenu={setMobileMenuIsOpen}
+                            />
                             <Disclosure>
                               {({ open }) => (
                                 <>
@@ -409,9 +381,13 @@ export default function Nav3(props) {
                                           <li
                                             key={aboutPage?.slug}
                                             className='p-base h-10 my-2 last:mb-2 text-green-600 cursor-pointer flex items-center'
-                                            onClick={() => router.push(`/over/${aboutPage?.slug}`)}
                                           >
-                                            {aboutPage.title}
+                                            <Link
+                                              href={`/over/${aboutPage?.slug}`}
+                                              onClick={() => setMobileMenuIsOpen(false)}
+                                            >
+                                              {aboutPage.title}
+                                            </Link>
                                           </li>
                                         ))}
                                       </ul>
@@ -420,9 +396,21 @@ export default function Nav3(props) {
                                 </>
                               )}
                             </Disclosure>
-                            <MobileSimpleButton name='Nieuws' url='/nieuws' />
-                            <MobileSimpleButton name='Vraag en antwoord' url='/vraag-en-antwoord' />
-                            <MobileSimpleButton name='Contact' url='/contact' />
+                            <MobileSimpleButton
+                              name='Nieuws'
+                              url='/nieuws'
+                              closeMenu={setMobileMenuIsOpen}
+                            />
+                            <MobileSimpleButton
+                              name='Vraag en antwoord'
+                              url='/vraag-en-antwoord'
+                              closeMenu={setMobileMenuIsOpen}
+                            />
+                            <MobileSimpleButton
+                              name='Contact'
+                              url='/contact'
+                              closeMenu={setMobileMenuIsOpen}
+                            />
 
                             <div className='flex flex-row items-end w-full justify-end pt-4 '>
                               <LangSwitch />
@@ -439,7 +427,7 @@ export default function Nav3(props) {
               <div className='hidden lgNav:flex flex-row items-center justify-between mb-7'>
                 <div className=''>
                   <button
-                    className='h-full relative p-sm group z-100 mr-8 flex flex-row items-center'
+                    className='h-full relative p-sm group z-100 mr-6 lg:mr-6 flex flex-row items-center'
                     ref={mainMenuRef.setReference}
                     {...mainMenuReferencProps()}
                   >
@@ -496,35 +484,25 @@ export default function Nav3(props) {
                               router.pathname === '/' ? 'bg-green-500' : 'bg-gray-300'
                             } h-full flex flex-cols-5 gap-[1px] relative`}
                           >
-                            <DesktopNavCard transitionAgenda='bouw' themas={bouwThemas} />
-                            <DesktopNavCard
-                              transitionAgenda='Consumptiegoederen'
-                              themas={consumptiegoederenThemas}
-                            />
-                            <DesktopNavCard
-                              transitionAgenda='Voedsel en biomassa'
-                              themas={biomassaEnVoedselThemas}
-                            />
-                            <DesktopNavCard
-                              transitionAgenda='Maakindustrie'
-                              themas={maakindustrieThemas}
-                            />
-                            <DesktopNavCard
-                              transitionAgenda='Kunststoffen'
-                              themas={kunststoffenThemas}
-                            />
+                            {props?.navItems?.map((navItem, id) => (
+                              <DesktopNavCard
+                                key={id}
+                                navData={navItem}
+                                closeNav={setMainMenuIsOpen}
+                              />
+                            ))}
                           </div>
                         </div>
                       </div>
                     </FloatingFocusManager>
                   )}
                 </div>
-
+                <DesktopSimpleButton name='EU wetgeving' url='/eu-wetgeving' />
                 <div className=''>
                   <button
                     ref={overRef.setReference}
                     {...overReferenceProps()}
-                    className='h-full relative p-sm group z-100 mr-8 flex flex-row items-center'
+                    className='h-full relative p-sm group z-100 mr-6 lg:mr-8 flex flex-row items-center'
                   >
                     <span
                       className={`${
@@ -578,17 +556,21 @@ export default function Nav3(props) {
                         >
                           {/* Remove slice once news section is separate */}
                           {props?.aboutSlugs?.map((aboutPage) => (
-                            <button
+                            <div
                               key={aboutPage?.slug}
                               className={`${
                                 router.pathname === '/'
                                   ? 'text-white'
                                   : 'text-green-600 hover:text-green-500'
                               } p-xs mb-2  hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
-                              onClick={() => router.push(`/over/${aboutPage?.slug}`)}
                             >
-                              {aboutPage.title}
-                            </button>
+                              <Link
+                                href={`/over/${aboutPage?.slug}`}
+                                onClick={() => setOverMenuIsOpen(false)}
+                              >
+                                {aboutPage.title}
+                              </Link>
+                            </div>
                           ))}
                         </div>
                       </div>
@@ -597,7 +579,7 @@ export default function Nav3(props) {
                 </div>
                 {/* Refactor */}
                 <DesktopSimpleButton name='Nieuws' url='/nieuws' />
-                <DesktopSimpleButton name='Vraag en antwoord' url='/vraag-en-antwoord' />
+                <DesktopSimpleButton name='Vraag & antwoord' url='/vraag-en-antwoord' />
                 <DesktopSimpleButton name='Contact' url='/contact' />
               </div>
             </div>

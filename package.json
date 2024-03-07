@@ -8,6 +8,7 @@
     "dev:staging": "env-cmd -e staging next dev",
     "dev:prod": "env-cmd -e production next dev",
     "cms:staging": "env-cmd -e staging concurrently \"next dev\" \"cd studio && yarn && yarn dev:staging\"",
+    "cms:dev":"env-cmd -e dev concurrently \"next dev\" \"cd studio && yarn && yarn dev:dev\"",
     "cms:prod": "env-cmd -e production concurrently \"next dev\" \"cd studio && yarn && yarn dev:prod\"",
     "prebuild": "echo 'Building Sanity to public/studio' && cd studio && yarn && npx @sanity/cli build ../public/studio -y && echo 'Done'",
     "build": "next build",

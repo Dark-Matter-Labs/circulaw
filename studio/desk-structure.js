@@ -1,103 +1,47 @@
 import { VscLaw } from 'react-icons/vsc';
-import {
-  GiDeadWood,
-  GiBed,
-  GiWindmill,
-  GiBanana,
-  GiTable,
-  GiGrass,
-  GiBeanstalk,
-} from 'react-icons/gi';
 import { GrNavigate } from 'react-icons/gr';
 import { FcAbout } from 'react-icons/fc';
 import { FaLanguage, FaHandshake, FaQuestion } from 'react-icons/fa';
-import { BsCircle, BsHouseDoor, BsNewspaper } from 'react-icons/bs';
-import { BiNews } from 'react-icons/bi';
+import { BsCircle, BsNewspaper } from 'react-icons/bs';
 import { AiOutlineHome } from 'react-icons/ai';
+import { GiEuropeanFlag } from 'react-icons/gi';
 
 export const Structure = (S) =>
   S.list()
     .title('Content Types')
     .items([
       S.listItem()
-        .title('Measures')
+        .title('Instrumenten per thema') // TODO: update to Instrumenten
         .icon(VscLaw)
         .child(
-          S.list()
-            .title('Themas')
-            .items([
-              S.listItem()
-                .title('Houtbouw')
-                .icon(GiDeadWood)
-                .child(
-                  S.documentList()
-                    .title('Houtbouw Measures')
-                    .filter(
-                      '_type == "measure" &&  thema == "houtbouw-stimuleren" || thema == "houtbouw"',
-                    ),
-                ),
-              S.listItem()
-                .title('Circulaire windturbines')
-                .icon(GiWindmill)
-                .child(
-                  S.documentList()
-                    .title('Circulaire windturbines measures')
-                    .filter(
-                      '_type == "measure" &&  thema == "circulaire-windturbines" || thema == "windturbines"',
-                    ),
-                ),
-              S.listItem()
-                .title('Circulaire matrasketen')
-                .icon(GiBed)
-                .child(
-                  S.documentList()
-                    .title('Circulaire matrasketen measures')
-                    .filter(
-                      '_type == "measure" &&  thema == "circulaire-matrasketen" || thema == "matrasketen"',
-                    ),
-                ),
-              S.listItem()
-                .title('Voedselverspilling')
-                .icon(GiBanana)
-                .child(
-                  S.documentList()
-                    .title('Voedselverspilling')
-                    .filter('_type == "measure" && thema == "voedselverspilling"'),
-                ),
-              S.listItem()
-                .title('Meubels')
-                .icon(GiTable)
-                .child(
-                  S.documentList()
-                    .title('Meubels')
-                    .filter('_type == "measure" && thema == "meubels"'),
-                ),
-              S.listItem()
-                .title('Woningen')
-                .icon(BsHouseDoor)
-                .child(
-                  S.documentList()
-                    .title('Woningen')
-                    .filter('_type == "measure" && thema == "woningen"'),
-                ),
-              S.listItem()
-                .title('Kunstgrasvelden')
-                .icon(GiGrass)
-                .child(
-                  S.documentList()
-                    .title('Kunstgrasvelden')
-                    .filter('_type == "measure" && thema == "kunstgrasvelden"'),
-                ),
-              S.listItem()
-                .title('Eiwittransitie')
-                .icon(GiBeanstalk)
-                .child(
-                  S.documentList()
-                    .title('Eiwittransitie')
-                    .filter('_type == "measure" && thema == "eiwittransitie"'),
-                ),
-            ]),
+          // List out all categories
+          S.documentTypeList('thema')
+            .title('Instrumenten per thema')
+            .child((themaId) =>
+              S.documentList()
+                .title('Instruments')
+                .filter('_type == "measure" && $themaId == thema._ref')
+                .params({ themaId }),
+            ),
         ),
+      S.listItem()
+        .title('Instrumenten per top 5 thema') // TODO: update to Instrumenten
+        .icon(VscLaw)
+        .child(
+          // List out all categories
+          S.documentTypeList('simpleThema')
+            .title('Instrumenten per top 5 thema')
+            .child((themaId) =>
+              S.documentList()
+                .title('Instruments')
+                .filter('_type == "measure" && $themaId ==  thema._ref')
+                .params({ themaId }),
+            ),
+        ),
+      S.listItem()
+        .title('EU Law')
+        .icon(GiEuropeanFlag)
+        .child(S.documentList().title('EU Law').filter('_type == "euLaw"')),
       S.listItem()
         .title('About Pages')
         .icon(FcAbout)
@@ -108,6 +52,14 @@ export const Structure = (S) =>
         .icon(BsNewspaper)
         .child(S.document().title('News Page').schemaType('newsPage').documentId('newsPage')),
       S.divider(),
+      S.listItem()
+        .title('Productketen')
+        .icon(BsCircle)
+        .child(
+          S.documentList()
+            .title('Productketen')
+            .filter('_type == "transitionAgenda" || _type == "simplePC"'),
+        ),
       S.listItem()
         .title("Thema's")
         .icon(BsCircle)
@@ -137,3 +89,80 @@ export const Structure = (S) =>
         .icon(AiOutlineHome)
         .child(S.document().title('Home Page').schemaType('siteConfig').documentId('siteSettings')),
     ]);
+
+{
+  /* 
+  
+   S.listItem()
+                .title('Houtbouw')
+                .icon(GiDeadWood)
+                .child(
+                  S.documentList()
+                    .title('Houtbouw Measures')
+                    .filter(
+                        '_type == "measure" && thema->slug.current == "houtbouw"',
+                    ),
+                ),
+              S.listItem()
+                .title('Circulaire windturbines')
+                .icon(GiWindmill)
+                .child(
+                  S.documentList()
+                    .title('Circulaire windturbines measures')
+                    .filter(
+                      '_type == "measure" && thema->slug.current == "windturbines"',
+                    ),
+                ),
+              S.listItem()
+                .title('Circulaire matrasketen')
+                .icon(GiBed)
+                .child(
+                  S.documentList()
+                    .title('Circulaire matrasketen measures')
+                    .filter(
+                      '_type == "measure" && thema->slug.current == "matrasketen"',
+                    ),
+                ),
+              S.listItem()
+                .title('Voedselverspilling')
+                .icon(GiBanana)
+                .child(
+                  S.documentList()
+                    .title('Voedselverspilling')
+                    .filter(
+                      '_type == "measure" && thema->slug.current == "voedselverspilling"'),
+                ),
+              S.listItem()
+                .title('Meubels')
+                .icon(GiTable)
+                .child(
+                  S.documentList()
+                    .title('Meubels')
+                    .filter( '_type == "measure" && thema->slug.current == "meubels"'),
+                ),
+              S.listItem()
+                .title('Woningen')
+                .icon(BsHouseDoor)
+                .child(
+                  S.documentList()
+                    .title('Woningen')
+                    .filter('_type == "measure" && thema->slug.current == "woningen"'),
+                ),
+              S.listItem()
+                .title('Kunstgrasvelden')
+                .icon(GiGrass)
+                .child(
+                  S.documentList()
+                    .title('Kunstgrasvelden')
+                    .filter('_type == "measure" && thema->slug.current == "kunstgrasvelden"'),
+                ),
+              S.listItem()
+                .title('Eiwittransitie')
+                .icon(GiBeanstalk)
+                .child(
+                  S.documentList()
+                    .title('Eiwittransitie')
+                    .filter('_type == "measure" && thema->slug.current == "eiwittransitie"'),
+                ),
+  */
+}

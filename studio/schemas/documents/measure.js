@@ -21,10 +21,6 @@ export default {
       name: 'meta-data',
       title: 'Meta Data',
     },
-    {
-      name: 'expertise',
-      title: 'Expertise Page',
-    },
   ],
   // FIELDS
   fields: [
@@ -35,6 +31,7 @@ export default {
       description: 'Moet dit instrument op de thema-pagina worden uitgelicht?',
       validation: (Rule) => Rule.required(),
       group: 'high-level',
+      initialValue: false,
     },
     {
       title: 'Featured Image',
@@ -57,6 +54,7 @@ export default {
       description: 'Titel van het instrument. Zorg dat deze titel uniek is.',
       validation: (Rule) => Rule.required(),
       group: 'high-level',
+      initialValue: 'New Instrument',
     },
     {
       title: 'Subtitel',
@@ -82,42 +80,21 @@ export default {
     {
       title: 'Transitie-agenda',
       name: 'transitionAgenda',
-      type: 'string',
+      type: 'reference',
+      group: 'high-level',
       description:
         'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
       validation: (Rule) => Rule.required(),
-      options: {
-        list: [
-          { title: 'Biomassa en voedsel', value: 'biomassa-en-voedsel' },
-          { title: 'Kunststoffen', value: 'kunststoffen' },
-          { title: 'Consumptiegoederen', value: 'consumptie-goederen' },
-          { title: 'Bouw', value: 'bouw' },
-          { title: 'Maakindustrie', value: 'maakindustrie' },
-        ], // <-- predefined values
-        layout: 'dropdown', // <-- defaults to 'dropdown'
-      },
-      group: 'high-level',
+      to: [{ type: 'transitionAgenda' }],
     },
     {
       title: 'Thema',
       name: 'thema',
-      type: 'string',
+      type: 'reference',
       description: 'Selecteer het thema waaronder dit instrument valt.',
       validation: (Rule) => Rule.required(),
-      options: {
-        list: [
-          { title: 'Houtbouw', value: 'houtbouw' }, // need to change to refernece
-          { title: 'Circulaire windturbines', value: 'windturbines' }, // need to change to reference
-          { title: 'Matrassen', value: 'matrasketen' }, // need to change to reference
-          { title: 'Voedselverspilling', value: 'voedselverspilling' }, // need to change to reference
-          { title: 'Meubels', value: 'meubels' }, // need to change to reference
-          { title: 'Woningen', value: 'woningen' }, // need to change to reference
-          { title: 'Kunstgrasvelden', value: 'kunstgrasvelden' }, // need to change to reference
-          { title: 'Eiwittransitie', value: 'eiwittransitie' }, // need to change to reference
-        ],
-        layout: 'dropdown',
-      },
       group: 'high-level',
+      to: [{ type: 'thema' }, { type: 'simpleThema' }],
     },
     {
       title: 'Bevat extra info',
@@ -132,7 +109,7 @@ export default {
         ],
         layout: 'grid',
       },
-      group: ['high-level'],
+      group: ['meta-data'],
     },
     // ITEMS ONLY IN MetaData
     {
@@ -299,7 +276,7 @@ export default {
       name: 'beleid',
       type: 'boolean',
       initialValue: false,
-      group: 'expertise',
+      group: 'meta-data',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -324,7 +301,7 @@ export default {
         ],
         layout: 'grid',
       },
-      group: 'expertise',
+      group: 'meta-data',
     },
 
     {
@@ -332,7 +309,7 @@ export default {
       name: 'inkoop',
       type: 'boolean',
       initialValue: false,
-      group: 'expertise',
+      group: 'meta-data',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -358,14 +335,14 @@ export default {
         ],
         layout: 'grid',
       },
-      group: 'expertise',
+      group: 'meta-data',
     },
     {
       title: 'Grondpositie',
       name: 'grondpositie',
       type: 'boolean',
       initialValue: false,
-      group: 'expertise',
+      group: 'meta-data',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
           return parent?.transitionAgenda === 'bouw' && typeof currentValue === 'undefined'
@@ -397,14 +374,14 @@ export default {
         ],
         layout: 'grid',
       },
-      group: 'expertise',
+      group: 'meta-data',
     },
     {
       title: 'Subsidie',
       name: 'subsidie',
       type: 'boolean',
       initialValue: false,
-      group: 'expertise',
+      group: 'meta-data',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -412,7 +389,7 @@ export default {
       name: 'fiscaal',
       type: 'boolean',
       initialValue: false,
-      group: 'expertise',
+      group: 'meta-data',
       validation: (Rule) => Rule.required(),
     },
     // COPY CONTENT
@@ -504,6 +481,12 @@ export default {
                     },
                   },
                 ],
+                options: {
+                  modal: {
+                    type: 'popover',
+                    width: 1,
+                  },
+                },
               },
             ],
           },

@@ -34,6 +34,7 @@ export default {
       validation: (Rule) => Rule.required(),
       description: 'DO NOT CHANGE This will be displayed in the Navigation, Footer, Thema Card etc',
       group: 'devOnly',
+      initialValue: 'New Thema',
     },
     {
       title: 'Slug',
@@ -50,20 +51,11 @@ export default {
     {
       title: 'Transitie-agenda',
       name: 'transitionAgenda',
-      type: 'string',
+      type: 'reference',
       description:
         'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
       validation: (Rule) => Rule.required(),
-      options: {
-        list: [
-          { title: 'Biomassa en voedsel', value: 'biomassa-en-voedsel' },
-          { title: 'Kunststoffen', value: 'kunststoffen' },
-          { title: 'Consumptiegoederen', value: 'consumptie-goederen' },
-          { title: 'Bouw', value: 'bouw' },
-          { title: 'Maakindustrie', value: 'maakindustrie' },
-        ], // <-- predefined values
-        layout: 'dropdown', // <-- defaults to 'dropdown'
-      },
+      to: [{ type: 'transitionAgenda' }],
       group: 'devOnly',
     },
     {

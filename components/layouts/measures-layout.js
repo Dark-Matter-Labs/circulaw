@@ -2,7 +2,6 @@ import { useState, useEffect, useRef, Fragment, useCallback } from 'react';
 import { Dialog, Transition, Combobox } from '@headlessui/react';
 import createPersistedState from 'use-persisted-state';
 import { SearchIcon, XIcon, AdjustmentsIcon } from '@heroicons/react/outline';
-import { toPlainText } from '@portabletext/react';
 import Fuse from 'fuse.js';
 
 import {
@@ -307,7 +306,7 @@ export default function MeasuresLayout({ ...props }) {
           { name: 'titel', weight: 1 },
           { name: 'subtitel', weight: 0.7 },
           // getFN gets all text in portable text as plaintext - this means that we search all text in the measure
-          { name: 'content', getFn: (law) => toPlainText(law.content), weight: 0.5 },
+          { name: 'content', weight: 0.5 },
           { name: 'subrechtsgebied', weight: 0.5 },
           { name: 'artikel', weight: 0.5 },
           { name: 'citeertitel', weight: 0.5 },

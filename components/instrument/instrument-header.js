@@ -28,21 +28,6 @@ export default function InstrumentHeader({ data }) {
       setSelectedTab(value);
     }
   }
-  // need to refactor this
-  const [simpleThema, setSimpleThema] = useState();
-
-  useEffect(() => {
-    if (
-      router.pathname.includes('meubels') ||
-      router.pathname.includes('woningen') ||
-      router.pathname.includes('kunstgrasvelden') ||
-      router.pathname.includes('eiwittransitie')
-    ) {
-      setSimpleThema(true);
-    } else {
-      setSimpleThema(false);
-    }
-  }, [router.pathname]);
 
   return (
     <>
@@ -77,7 +62,7 @@ export default function InstrumentHeader({ data }) {
                 </Tag>
               </Link>
 
-              {data?.measure?.beleid === true && simpleThema === false && (
+              {data?.measure?.beleid === true && data?.measure?.themaType === 'thema' && (
                 <Link
                   href={`/${data?.measure?.transitionAgenda}/${data?.measure?.thema}/categorie`}
                   onClick={() => setCategorie('beleid')}
@@ -87,10 +72,10 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-              {data?.measure?.beleid === true && simpleThema === true && (
+              {data?.measure?.beleid === true && data?.measure?.themaType !== 'thema' && (
                 <Tag classes='bg-green-300 text-green-800 mr-2'>Beleid</Tag>
               )}
-              {data?.measure?.inkoop === true && simpleThema === false && (
+              {data?.measure?.inkoop === true && data?.measure?.themaType === 'thema' && (
                 <Link
                   href={`/${data?.measure?.transitionAgenda}/${data?.measure?.thema}/categorie`}
                   onClick={() => setCategorie('inkoop')}
@@ -100,11 +85,11 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-              {data?.measure?.inkoop === true && simpleThema === true && (
+              {data?.measure?.inkoop === true && data?.measure?.themaType !== 'thema' && (
                 <Tag classes='bg-green-300 text-green-800 mr-2'>Inkoop</Tag>
               )}
 
-              {data?.measure?.grondpositie === true && simpleThema === false && (
+              {data?.measure?.grondpositie === true && data?.measure?.themaType === 'thema' && (
                 <Link
                   href={`/${data?.measure?.transitionAgenda}/${data?.measure?.thema}/categorie`}
                   onClick={() => setCategorie('grondpositie')}
@@ -114,11 +99,11 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-              {data?.measure?.grondpositie === true && simpleThema === true && (
+              {data?.measure?.grondpositie === true && data?.measure?.themaType !== 'thema' && (
                 <Tag classes='bg-green-300 text-green-800 mr-2'>Grondpositie</Tag>
               )}
 
-              {data?.measure?.subsidie === true && simpleThema === false && (
+              {data?.measure?.subsidie === true && data?.measure?.themaType === 'thema' && (
                 <Link
                   href={`/${data?.measure?.transitionAgenda}/${data?.measure?.thema}/categorie`}
                   onClick={() => setCategorie('subsidie')}
@@ -128,10 +113,10 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-              {data?.measure?.subsidie === true && simpleThema === true && (
+              {data?.measure?.subsidie === true && data?.measure?.themaType !== 'thema' && (
                 <Tag classes='bg-green-300 text-green-800 mr-2'>Subsidie</Tag>
               )}
-              {data?.measure?.fiscaal === true && simpleThema === false && (
+              {data?.measure?.fiscaal === true && data?.measure?.themaType === 'thema' && (
                 <Link
                   href={`/${data?.measure?.transitionAgenda}/${data?.measure?.thema}/categorie`}
                   onClick={() => setCategorie('fiscaal')}
@@ -141,7 +126,7 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-              {data?.measure?.fiscaal === true && simpleThema === true && (
+              {data?.measure?.fiscaal === true && data?.measure?.themaType !== 'thema' && (
                 <Tag classes='bg-green-300 text-green-800 mr-2'>Fiscaal</Tag>
               )}
             </div>

@@ -1,7 +1,7 @@
 import { CgInternal } from 'react-icons/cg';
 
 export default {
-  title: 'Kader secundaire info',
+  title: 'Grey Box',
   name: 'smallPara',
   type: 'object',
   fields: [

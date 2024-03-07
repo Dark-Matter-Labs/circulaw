@@ -5,6 +5,7 @@ import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './schemas';
 import { Structure } from './desk-structure';
 import { defaultDocumentNode } from './default-document-node';
+import { table } from '@sanity/table';
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
 
@@ -14,8 +15,7 @@ const singletonTypes = new Set([
   'partners',
   'navigation',
   'FAQpage',
-  'thema',
-  'simpleThema',
+  'transitionAgenda',
 ]);
 
 let name = '',
@@ -42,6 +42,7 @@ export default defineConfig({
     }),
     visionTool(),
     vercelDeployTool(),
+    table(),
   ],
   schema: {
     types: schemaTypes,

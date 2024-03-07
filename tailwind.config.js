@@ -14,6 +14,7 @@ module.exports = {
     extend: {
       colors: {
         'grey-100': '#FDFDFD',
+        'grey-150': '#F8FBF8',
         'grey-200': '#F0F0F0',
         'grey-300': '#DAD8D8',
         'grey-400': '#BFC0BF',
@@ -67,7 +68,7 @@ module.exports = {
         17: '96px'
       },
       screens: {
-        lgNav: '910px',
+        lgNav: '990px',
       },
       spacing: {
         '128': '32rem',

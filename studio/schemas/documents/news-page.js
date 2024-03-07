@@ -1,5 +1,4 @@
 import { BsNewspaper } from 'react-icons/bs';
-import { NewsItemComponent } from '../../components/news-item';
 
 export default {
   name: 'newsPage',

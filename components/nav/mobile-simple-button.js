@@ -1,13 +1,15 @@
 import Link from 'next/link';
 
-export default function MobileSimpleButton({ name, url }) {
+export default function MobileSimpleButton({ name, url, closeMenu }) {
   return (
     <div
-      className={`${
-        name === 'Nieuws' ? 'border-t' : ''
-      } text-green-800 border-b py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
+      className={`${name === 'Nieuws' || name === 'EU wetgeving' ? 'border-t' : ''} ${
+        name === 'EU wetgeving' ? '' : 'border-b'
+      } text-green-800 py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
     >
-      <Link href={url}>{name}</Link>
+      <Link href={url} onClick={() => closeMenu(false)}>
+        {name}
+      </Link>
     </div>
   );
 }
