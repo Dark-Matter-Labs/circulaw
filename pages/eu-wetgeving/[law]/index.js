@@ -65,7 +65,7 @@ export default function LawSummaryPage({ lawData }) {
         <div className='sticky top-16 lgNav:top-24 shadow-lg z-50'>
           <div className='bg-green-800 -mt-12 sm:-mt-[62px] flex overflow-x-scroll snap-x snap-mandatory no-scrollbar lgNav:block pt-4'>
             <div className='global-margin'>
-              <div className='flex flex-row gap-x-3 justify-start p-lg-semibold text-green-500 h-[62px] max-w-3xl'>
+              <div className='flex flex-row gap-x-2 justify-start p-lg-semibold text-green-500 h-[62px] max-w-3xl'>
                 <Link
                   className={`${
                     selectedTab === 'overzicht'
