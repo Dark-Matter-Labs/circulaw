@@ -116,7 +116,7 @@ export default function Highlights({ law }) {
       <div className='global-margin'>
         <h2 className='text-green-800 p-6xl-semibold mb-4'>CRP Highlights</h2>
         <p className='mb-12 max-w-xl'>
-          CPR stelt eisen aan de functionaliteit, veiligheid en milieuvriendelijkheid van
+          De CPR stelt eisen aan de functionaliteit, veiligheid en milieuvriendelijkheid van
           bouwproducten. Zo wordt circulariteit in de bouw gestimuleerd:
         </p>
         <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
@@ -136,15 +136,15 @@ export default function Highlights({ law }) {
         <h2 className='text-green-800 p-6xl-semibold mb-4'>ESPR Highlights</h2>
 
         <p className='mb-12 max-w-xl'>
-          Ecodesign stelt duurzame eisen aan producten als het gaat om:
+        Op basis van de ESPR worden producteisen gesteld op het gebied van onder andere de volgende aspecten.
         </p>
         <div className='max-w-2xl sm:gap-10 mb-12'>
           <HighlightCard
-            text='Levensduur, herbruikbaarheid, opwaardeerbaarheidrepareerbaarheid, recyclebaarheid, aandeel gerecycled materiaal, energieverbruik en energie-efficiëntie, grondstoffengebruik en grondstoffen-efficiëntie'
+            text='Duurzaamheid, herbruikbaarheid, op waardeerbaarheidrepareerbaarheid, recyclebaarheid, aandeel gerecycled materiaal, energieverbruik en energie-efficiëntie, grondstoffengebruik en grondstoffen-efficiëntie'
             icon={espr}
           />
         </div>
-        <p className='my-16 max-w-xl'>Ecodesign geldt onder meer voor:</p>
+        <p className='my-16 max-w-xl'>De producteisen gaan in elk geval gelden voor de volgende productgroepen.</p>
         <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
           <HighlightCard text='Kleding en schoenen' icon={espr1} />
           <HighlightCard text='Meubels' icon={espr2} />
