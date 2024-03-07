@@ -82,8 +82,8 @@ export default function Index({
                 </div>
               ))}
             </div>
-            <div className='p-base-bold flex justify-end items-center text-green-600 hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white justify-self-end'>
-              <Link href='/nieuws'>
+            <div className='p-base-bold flex justify-end items-center text-green-600'>
+              <Link href='/nieuws' className=' hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white justify-self-end'>
                 Bekijk alle nieuwsberichten{' '}
                 <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
               </Link>
