@@ -47,7 +47,7 @@ export default function Index({
               </span>
             </Link>{' '}
             Deze ketens zijn belangrijk voor de economie, maar belasten ook het milieu. In
-            transitieagenda’s staat hoe deze ketens in 2050 circulair kunnen zijn
+            transitieagenda’s staat hoe deze ketens in 2050 circulair kunnen zijn.
           </p>
           <div className='pt-4 -z-20'>
             <PCHomePage pcData={pcData} />

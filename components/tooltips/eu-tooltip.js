@@ -12,7 +12,7 @@ export default function EUTooltip({ children, title }) {
         className='text-green-800 p-base-semibold'
         onClick={() => setOpen(true)}
       >
-        Bekijk de status van deze regelgeving {'>'}
+        Bekijk de status van deze wet {'>'}
       </button>
       <Transition.Root show={open} as={Fragment}>
         <Dialog as='div' className='relative z-120' onClose={setOpen}>
