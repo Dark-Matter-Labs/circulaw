@@ -21,7 +21,7 @@ export default function HighlightCard({ text, number, circleText, icon }) {
           </div>
         </div>
       </div>
-      <div className='h-[172px] w-auto hidden sm:flex border shadow-sm hover:shadow-md flex-row transition-shadow duration-150 items-center justify-between bg-white rounded-cl'>
+      <div className='h-[172px] w-auto hidden sm:flex border shadow-sm flex-row transition-shadow duration-150 items-center justify-between bg-white rounded-cl'>
         <div className='max-w-[60%]'>
           <div className='w-full mx-4 p-base-semibold'>{text}</div>
         </div>

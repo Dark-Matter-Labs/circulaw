@@ -31,6 +31,7 @@ export default {
       description: 'Moet dit instrument op de thema-pagina worden uitgelicht?',
       validation: (Rule) => Rule.required(),
       group: 'high-level',
+      initialValue: false,
     },
     {
       title: 'Featured Image',
@@ -53,6 +54,7 @@ export default {
       description: 'Titel van het instrument. Zorg dat deze titel uniek is.',
       validation: (Rule) => Rule.required(),
       group: 'high-level',
+      initialValue: 'New Instrument',
     },
     {
       title: 'Subtitel',

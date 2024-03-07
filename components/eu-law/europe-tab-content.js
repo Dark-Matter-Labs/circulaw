@@ -23,15 +23,15 @@ export default function ScrollPagesTabContent({ content }) {
         </div>
 
         <div className='absolute top-0 right-2 md:right-12 lg:right-20 xl:right-56 h-full hidden lgNav:block'>
-          <ul className='sticky top-32 my-12 min-w-[390px]'>
-            <h4 className='p-6xl-semibold mb-5 ml-3'>Obligations</h4>
+          <ul className='sticky top-48 my-12 min-w-[390px]'>
+            <h4 className='p-6xl-semibold mb-5 ml-3'>In deze pagina</h4>
             {content.map((section, id) => (
               <li key={id} className='my-4'>
                 <Link
                   to={`${section.title}`}
                   smooth={true}
                   duration={500}
-                  offset={-98}
+                  offset={-155}
                   spy={true}
                   activeClass='bg-green-500 text-grey-100 font-semibold transition-all duration-100 min-w-[390px]'
                   className='p-base text-green-800 py-2 pl-4 pr-8 h-full break-words min-w-[390px] rounded-cl whitespace-nowrap cursor-pointer'

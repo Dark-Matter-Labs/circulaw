@@ -20,6 +20,10 @@ export default {
       name: 'high-level',
       title: 'High level content',
     },
+    {
+      name: 'homepage',
+      title: 'Home Page',
+    },
   ],
   fields: [
     {
@@ -50,6 +54,31 @@ export default {
         inUnique: 'true',
         slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
       },
+    },
+    {
+      title: 'Home Page Image',
+      name: 'homepageImage',
+      type: 'image',
+      fields: [
+        {
+          title: 'Alt text',
+          type: 'string',
+          name: 'altText',
+        },
+      ],
+      group: 'homepage',
+    },
+    {
+      title: 'Homepage Card Text',
+      name: 'cardText',
+      type: 'string',
+      group: 'homepage',
+    },
+    {
+      name: 'order',
+      type: 'number',
+      title: 'Home Page order',
+      group: 'homepage',
     },
     {
       name: 'introOne',

@@ -5,12 +5,14 @@ import StatusTwoStep from './status/status-two-step';
 export default function EULawCard({ law }) {
   return (
     <>
-      <Link href={`/eu-wetgeving/${law?.slug?.current}`} className='hidden md:block'>
-        <div className='flex flex-col group max-h-[540px]'>
-          <div className='bg-grey-100 group-hover:bg-grey-150 rounded-cl shadow-md  px-4 py-6 duration-300 transition-all border max-h-[540px]'>
-            <div className=' z-10'>
+      <Link href={`/eu-wetgeving/${law?.slug?.current}`} className='hidden md:block h-full'>
+        <div className='flex flex-col group h-full'>
+          <div className='bg-grey-100 group-hover:bg-grey-150 rounded-cl shadow-md  px-4 py-6 duration-300 transition-all border h-full'>
+            <div className='flex flex-col h-full z-10'>
               <h2 className='p-5xl-semibold mb-4'>{law?.title}</h2>
-              <p className='p-base pb-6 border-b'>{law?.introText}</p>
+              <p className='p-base pb-6 border-b flex grow justify-center items-center'>
+                {law?.introText}
+              </p>
               {/* STATUS bar */}
               <div>
                 <div className='p-xs-semibold text-grey-800 mt-6'>Status</div>

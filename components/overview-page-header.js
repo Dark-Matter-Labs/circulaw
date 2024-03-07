@@ -19,20 +19,20 @@ export default function OverviewPageHeader({ props, page }) {
               </span>
             </Link>
             <Link href={`/${props.transitionAgenda}`} className=''>
-              <span className='link-interaction capitalize w-min'>
+              <span className='link-interaction capitalize w-min whitespace-nowrap'>
                 {props.transitionAgenda}
                 <span className='mx-2'>{'>'}</span>
               </span>
             </Link>
             <Link href={`/${props.transitionAgenda}/${props.thema}`}>
-              <span className='capitalize link-interaction w-min'>
+              <span className='capitalize link-interaction w-min whitespace-nowrap'>
                 {props.thema.replace('-', ' ')}{' '}
               </span>
             </Link>
           </div>
           <div className='block sm:float-right py-3 sm:py-0'>
             <div className='p-base text-white pb-2 hidden sm:block'>Bekijk de instrumenten:</div>
-            <InstrumentLinksDropdown type={props.thema} page={page} />
+            <InstrumentLinksDropdown page={page} props={props} />
           </div>
         </div>
         <div className='items-center grid grid-cols-10'>

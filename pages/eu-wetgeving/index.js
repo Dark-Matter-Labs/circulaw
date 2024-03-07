@@ -5,8 +5,16 @@ import { client } from '@/lib/sanity';
 import EULawCard from '@/components/eu-law/eu-law-card';
 import bannerImage from '@/public/banner.png';
 
+// refactor
 const euLawsQuery = `
-*[_type == "euLaw"]{...}
+*[_type == "euLaw"]{
+  slug, 
+  title, 
+  introText,
+  statusStep,
+  statusTwoStep, 
+  statusThreeStep, 
+}
 `;
 
 export default function EULaw({ laws }) {
@@ -28,26 +36,32 @@ export default function EULaw({ laws }) {
                 </span>
               </Link>
             </div>
-            <h1 className='mb-8 p-5xl-semibold sm:p-7xl-bold text-grey-100'>Eu wetgeving</h1>
+            <h1 className='mb-8 p-5xl-semibold sm:p-7xl-bold text-grey-100'>EU wetgeving</h1>
           </div>
         </div>
       </div>
       <div className='global-margin'>
-        <div className='flex flex-col max-w-2xl'>
-          <div className='mb-4 mt-10'>
-            De Europese regelgeving uit de Green Deal vormt de motor van de transitie naar een
-            circulaire economie . We brengen Europese regelgeving in kaart, en geven aan hoe deze
-            van invloed is op de activiteiten van decentrale overheden.
-          </div>
-          <div>
-            Wil je voorop lopen, en onaangename verassingen voorkomen? Volg de ontwikkelingen van
-            deze 10 EU-wetten dan nauwlettend.
-          </div>
+        <div className='flex flex-col max-w-2xl p-base'>
+          <p className='mb-4 mt-10'>
+            Er komt een &apos;storm&apos; aan Europese wet- en regelgeving op ons af, gericht op het
+            verduurzamen van onze maatschappij en de circulaire economie. Veel hiervan valt onder de
+            &apos;Green Deal&apos; en Fit for 55, maar ook buiten de Green Deal wordt wet- en
+            regelgeving aangepast. Veel decentrale overheden hebben geen zicht op de verplichtingen
+            en kansen die voortvloeien uit al deze Europese wet- en regelgeving. Deze ontwikkeling
+            brengt zowel beperkingen als kansen om de transitie naar circulariteit te versnellen.
+          </p>
+          <p>
+            Een deel van de wetten die we hier bespreken hebben nog de status &apos;in
+            onderhandeling&apos;. Zij veranderen regelmatig totdat het wetgevingsproces is
+            doorlopen. Wij houden continu de status bij. Neem dus regelmatig even een kijkje!
+          </p>
         </div>
       </div>
-      <div className=' grid grid-cols-1 lgNav:grid-cols-2 gap-y-4 gap-x-8 global-margin my-12 relative min-h-screen'>
+      <div className='grid grid-cols-1 lgNav:grid-cols-2 gap-y-4 gap-x-8 global-margin my-12 relative min-h-screen'>
         {laws?.map((law, id) => (
-          <EULawCard law={law} key={id} />
+          <div key={id} className='md:min-h-[453px] md:max-h-[550px]'>
+            <EULawCard law={law} />
+          </div>
         ))}
       </div>
     </Layout>
@@ -61,6 +75,7 @@ export async function getStaticProps() {
   return {
     props: {
       laws,
+      revalidate: 1,
     },
   };
 }
