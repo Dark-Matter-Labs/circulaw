@@ -44,7 +44,7 @@ export default function SummaryComponent({ lawData }) {
           <div className='flex flex-row items-center place-items-center'>
             <h2 className='text-green-800 p-6xl-semibold'>Status</h2>
             <div className='place-items-center mt-3 ml-2'>
-              <EUGenericTooltip title='Generieke status:'>
+              <EUGenericTooltip title='Welke statussen zijn er'>
                 <div>
                   <h3 className='mb-4 p-2xl-semibold'>Stap 1: In onderhandeling</h3>
                   <p className='p-base mb-2'>
