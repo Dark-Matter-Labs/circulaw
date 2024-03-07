@@ -87,7 +87,7 @@ export default function ThemeLayout({ ...props }) {
                     />
                   )}
                 </div>
-                <div>
+                <div className='mr-6'>
                   <span className='p-2xl text-green-600'>{ambition.subTitle}</span>
                   <h4 className='p-3xl-semibold sm:3xl-semibold text-green-800 mt-2'>
                     {ambition.title}
@@ -125,7 +125,7 @@ export default function ThemeLayout({ ...props }) {
                     />
                   )}
                 </div>
-                <div>
+                <div className='ml-6'>
                   <span className='p-2xl text-green-600'>{ambition.subTitle}</span>
                   <h4 className='p-2xl-semibold sm:3xl-semibold text-green-800 mt-2'>
                     {ambition.title}
