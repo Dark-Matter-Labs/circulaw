@@ -158,7 +158,7 @@ export default function SummaryComponent({ lawData }) {
           {lawData?.linkCol3 && (
             <div>
               <h3 className='text-green-800 p-4xl-semibold'>
-                Relevante EU wetgeving <LinkIcon />
+                Relevante EU-wetgeving <LinkIcon />
               </h3>
               <ul>
                 {lawData?.linkCol3?.map((link, id) => (
