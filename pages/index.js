@@ -37,6 +37,7 @@ export default function Index({
             <Link
               className='whitespace-normal text-green-500'
               href='https://www.rijksoverheid.nl/documenten/beleidsnotas/2023/02/03/nationaal-programma-circulaire-economie-2023-2030'
+              target='_blank'
             >
               <span className='link-interaction whitespace-normal font-semibold'>
                 Nationaal Programma Circulaire Economie 2023-2030
