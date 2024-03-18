@@ -18,7 +18,7 @@ import OverviewPageHeader from '../overview-page-header';
 // creating objects for persisting values
 const useSelectedState = createPersistedState('selected');
 
-export default function MeasuresLayout({ ...props }) {
+export default function InstrumentsLayout({ ...props }) {
   const data = props.instruments;
 
   // creating references to access child component functions
@@ -305,7 +305,7 @@ export default function MeasuresLayout({ ...props }) {
         keys: [
           { name: 'titel', weight: 1 },
           { name: 'subtitel', weight: 0.7 },
-          // getFN gets all text in portable text as plaintext - this means that we search all text in the measure
+          // getFN gets all text in portable text as plaintext - this means that we search all text in the instrument
           { name: 'content', weight: 0.5 },
           { name: 'subrechtsgebied', weight: 0.5 },
           { name: 'artikel', weight: 0.5 },
@@ -331,76 +331,76 @@ export default function MeasuresLayout({ ...props }) {
       // dynamically calculate filter numbers
       // NEED TO ADD CONDITION BASED ON THE FIRST VALUE SELECTED.
       // UPDATE FILTER NUMBERS ONLY FOR ATTRIBUTES THAT ARE NOT THE FIRST SELECTED ATTRUBUTE
-      filteredLaws?.map((measure) => {
+      filteredLaws?.map((instrument) => {
         // add extra content
-        if (measure?.expertise?.includes('Beleid')) {
+        if (instrument?.expertise?.includes('Beleid')) {
           numBeleid += 1;
         }
-        if (measure?.expertise?.includes('Inkoop')) {
+        if (instrument?.expertise?.includes('Inkoop')) {
           numInkoop += 1;
         }
-        if (measure?.expertise?.includes('Grondpositie')) {
+        if (instrument?.expertise?.includes('Grondpositie')) {
           numGrondpositie += 1;
         }
-        if (measure?.expertise?.includes('Subsidie')) {
+        if (instrument?.expertise?.includes('Subsidie')) {
           numSubsidie += 1;
         }
-        if (measure?.expertise?.includes('Fiscaal')) {
+        if (instrument?.expertise?.includes('Fiscaal')) {
           numFiscaal += 1;
         }
 
-        if (measure?.extraContent?.includes('Leidraad')) {
+        if (instrument?.extraContent?.includes('Leidraad')) {
           numLeidraad += 1;
         }
-        if (measure?.extraContent?.includes('Voorbeeld')) {
+        if (instrument?.extraContent?.includes('Voorbeeld')) {
           numVoorbeeld += 1;
         }
 
-        //  if (measure.overheidslaag.includes('Europees')) {
+        //  if (instrument.overheidslaag.includes('Europees')) {
         //   numEuropee += 1;
         // }
-        if (measure.overheidslaag.includes('Nationaal')) {
+        if (instrument.overheidslaag.includes('Nationaal')) {
           numNationaal += 1;
         }
-        if (measure.overheidslaag.includes('Provinciaal')) {
+        if (instrument.overheidslaag.includes('Provinciaal')) {
           numProvinciaal += 1;
         }
-        if (measure.overheidslaag.includes('Gemeentelijk')) {
+        if (instrument.overheidslaag.includes('Gemeentelijk')) {
           numGemeentelijk += 1;
         }
 
-        if (measure.juridischeHaalbaarheid === 'Beperkt') {
+        if (instrument.juridischeHaalbaarheid === 'Beperkt') {
           numJHLow += 1;
-        } else if (measure.juridischeHaalbaarheid === 'Gemiddeld') {
+        } else if (instrument.juridischeHaalbaarheid === 'Gemiddeld') {
           numJHMedium += 1;
-        } else if (measure.juridischeHaalbaarheid === 'Hoog') {
+        } else if (instrument.juridischeHaalbaarheid === 'Hoog') {
           numJHHigh += 1;
         }
 
-        if (measure.rLadder.includes('R1')) {
+        if (instrument.rLadder.includes('R1')) {
           numR1 += 1;
         }
-        if (measure.rLadder.includes('R2')) {
+        if (instrument.rLadder.includes('R2')) {
           numR2 += 1;
         }
-        if (measure.rLadder.includes('R3')) {
+        if (instrument.rLadder.includes('R3')) {
           numR3 += 1;
         }
-        if (measure.rLadder.includes('R4')) {
+        if (instrument.rLadder.includes('R4')) {
           numR4 += 1;
         }
-        if (measure.rLadder.includes('R5')) {
+        if (instrument.rLadder.includes('R5')) {
           numR5 += 1;
         }
-        if (measure.rLadder.includes('R6')) {
+        if (instrument.rLadder.includes('R6')) {
           numR6 += 1;
         }
 
-        if (measure.juridischInvloed === 'Beperkt') {
+        if (instrument.juridischInvloed === 'Beperkt') {
           numJILow += 1;
-        } else if (measure.juridischInvloed === 'Gemiddeld') {
+        } else if (instrument.juridischInvloed === 'Gemiddeld') {
           numJIMedium += 1;
-        } else if (measure.juridischInvloed === 'Hoog') {
+        } else if (instrument.juridischInvloed === 'Hoog') {
           numJIHigh += 1;
         }
       });

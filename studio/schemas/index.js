@@ -1,4 +1,4 @@
-import measure from './documents/measure';
+import instrument from './documents/instrument';
 import aboutPage from './documents/about-pages';
 import navigation from './documents/navigation';
 import siteConfig from './documents/site-config';
@@ -31,7 +31,7 @@ import inlineTable from './objects/inline-table';
 
 export const schemaTypes = [
   // DOCUMENT TYPES
-  measure,
+  instrument,
   aboutPage,
   navigation,
   englishPage,

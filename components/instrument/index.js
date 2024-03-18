@@ -39,9 +39,9 @@ export default function Instrument({ data }) {
         <div className='global-margin sm:mt-4 z-0'>
           {/* Subtitle */}
           <div className='grid grid-cols-1'>
-            {data?.measure?.subtitel && (
+            {data?.instrument?.subtitel && (
               <div className='max-w-[760px]'>
-                <h2 className='lg:block p-lg sm:p-3xl sm:mt-2'> {data?.measure?.subtitel}</h2>
+                <h2 className='lg:block p-lg sm:p-3xl sm:mt-2'> {data?.instrument?.subtitel}</h2>
               </div>
             )}
           </div>
@@ -49,7 +49,7 @@ export default function Instrument({ data }) {
           <div className='grid grid-cols-1'>
             <div className='pb-20 max-w-[760px]'>
               <div className=''>
-                <PortableText value={data?.measure?.content} components={instrumentPTComponents} />
+                <PortableText value={data?.instrument?.content} components={instrumentPTComponents} />
               </div>
               <InstrumentTable data={data} />
             </div>

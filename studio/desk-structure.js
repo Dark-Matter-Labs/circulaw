@@ -20,7 +20,7 @@ export const Structure = (S) =>
             .child((themaId) =>
               S.documentList()
                 .title('Instruments')
-                .filter('_type == "measure" && $themaId == thema._ref')
+                .filter('_type == "instrument" && $themaId == thema._ref')
                 .params({ themaId }),
             ),
         ),
@@ -34,7 +34,7 @@ export const Structure = (S) =>
             .child((themaId) =>
               S.documentList()
                 .title('Instruments')
-                .filter('_type == "measure" && $themaId ==  thema._ref')
+                .filter('_type == "instrument" && $themaId ==  thema._ref')
                 .params({ themaId }),
             ),
         ),

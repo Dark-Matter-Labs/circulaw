@@ -202,7 +202,7 @@ export default {
                     name: 'reference',
                     type: 'reference',
                     title: 'Reference',
-                    to: [{ type: 'measure' }],
+                    to: [{ type: 'instrument' }],
                     validation: (Rule) => Rule.required(),
                     options: {
                       disableNew: true,

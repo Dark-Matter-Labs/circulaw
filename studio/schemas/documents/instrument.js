@@ -2,8 +2,8 @@ import { VscLaw } from 'react-icons/vsc';
 import { CgInternal } from 'react-icons/cg';
 
 export default {
-  title: 'Measure',
-  name: 'measure',
+  title: 'instrument',
+  name: 'instrument',
   type: 'document',
   icon: VscLaw,
   // GROUPS
@@ -474,7 +474,7 @@ export default {
                     name: 'reference',
                     type: 'reference',
                     title: 'Reference',
-                    to: [{ type: 'measure' }],
+                    to: [{ type: 'instrument' }],
                     validation: (Rule) => Rule.required(),
                     options: {
                       disableNew: true,

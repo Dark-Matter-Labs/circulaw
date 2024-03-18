@@ -1,4 +1,4 @@
-import { aboutPageQuery, measureQuery } from '@/lib/queries';
+import { aboutPageQuery, instrumentQuery } from '@/lib/queries';
 import { client } from '@/lib/sanity';
 // need to edit this to be able to set location to slug:
 function redirectToPreview(res, previewData, Location) {
@@ -12,7 +12,7 @@ function redirectToPreview(res, previewData, Location) {
 
 export default async function preview(req, res) {
   const previewData = {};
-  const instrument = await client.fetch(measureQuery, {
+  const instrument = await client.fetch(instrumentQuery, {
     slug: req.query.slug,
   });
 
