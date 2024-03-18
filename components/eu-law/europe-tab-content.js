@@ -1,6 +1,6 @@
 import { Link, Element } from 'react-scroll';
 import { PortableText } from '@portabletext/react';
-import { euPageComponents } from '@/lib/portable-text/pt-components';
+import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import ScrollTabMobileMenu from './scroll-tab-mobile-menu';
 
 export default function ScrollPagesTabContent({ content }) {
@@ -15,7 +15,7 @@ export default function ScrollPagesTabContent({ content }) {
                   <h2 className='p-6xl-semibold mb-6'>
                     {id + 1}. {section.title}
                   </h2>
-                  <PortableText value={section.content} components={euPageComponents} />
+                  <PortableText value={section.content} components={portableTextComponents} />
                 </div>
               </div>
             </Element>
