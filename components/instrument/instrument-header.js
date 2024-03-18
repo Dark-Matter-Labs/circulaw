@@ -46,25 +46,25 @@ export default function InstrumentHeader({ data }) {
               </span>
             </button>
             <div className='float-right'>
-              <SocialButtons title={data?.measure?.titel} viewport='desktop' />
+              <SocialButtons title={data?.instrument?.titel} viewport='desktop' />
             </div>
           </div>
           <div className='mb-6 h-auto'>
             <div className='w-full flex'>
               <Link
-                href={`/${data?.measure?.transitionAgenda}/${data?.measure?.thema
+                href={`/${data?.instrument?.transitionAgenda}/${data?.instrument?.thema
                   ?.toLowerCase()
                   .replace(/ /g, '-')}`}
                 className=''
               >
                 <Tag classes='border border-grey-100 hover:border-green-200 active:border-green-400 text-grey-100 mr-2 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>
-                  {data?.measure?.thema.replace('-', ' ')}
+                  {data?.instrument?.thema.replace('-', ' ')}
                 </Tag>
               </Link>
 
-              {data?.measure?.beleid === true && data?.measure?.themaType === 'thema' && (
+              {data?.instrument?.beleid === true && data?.instrument?.themaType === 'thema' && (
                 <Link
-                  href={`/${data?.measure?.transitionAgenda}/${data?.measure?.thema}/categorie`}
+                  href={`/${data?.instrument?.transitionAgenda}/${data?.instrument?.thema}/categorie`}
                   onClick={() => setCategorie('beleid')}
                 >
                   <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
@@ -72,12 +72,12 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-              {data?.measure?.beleid === true && data?.measure?.themaType !== 'thema' && (
+              {data?.instrument?.beleid === true && data?.instrument?.themaType !== 'thema' && (
                 <Tag classes='bg-green-300 text-green-800 mr-2'>Beleid</Tag>
               )}
-              {data?.measure?.inkoop === true && data?.measure?.themaType === 'thema' && (
+              {data?.instrument?.inkoop === true && data?.instrument?.themaType === 'thema' && (
                 <Link
-                  href={`/${data?.measure?.transitionAgenda}/${data?.measure?.thema}/categorie`}
+                  href={`/${data?.instrument?.transitionAgenda}/${data?.instrument?.thema}/categorie`}
                   onClick={() => setCategorie('inkoop')}
                 >
                   <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
@@ -85,13 +85,13 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-              {data?.measure?.inkoop === true && data?.measure?.themaType !== 'thema' && (
+              {data?.instrument?.inkoop === true && data?.instrument?.themaType !== 'thema' && (
                 <Tag classes='bg-green-300 text-green-800 mr-2'>Inkoop</Tag>
               )}
 
-              {data?.measure?.grondpositie === true && data?.measure?.themaType === 'thema' && (
+              {data?.instrument?.grondpositie === true && data?.instrument?.themaType === 'thema' && (
                 <Link
-                  href={`/${data?.measure?.transitionAgenda}/${data?.measure?.thema}/categorie`}
+                  href={`/${data?.instrument?.transitionAgenda}/${data?.instrument?.thema}/categorie`}
                   onClick={() => setCategorie('grondpositie')}
                 >
                   <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
@@ -99,13 +99,13 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-              {data?.measure?.grondpositie === true && data?.measure?.themaType !== 'thema' && (
+              {data?.instrument?.grondpositie === true && data?.instrument?.themaType !== 'thema' && (
                 <Tag classes='bg-green-300 text-green-800 mr-2'>Grondpositie</Tag>
               )}
 
-              {data?.measure?.subsidie === true && data?.measure?.themaType === 'thema' && (
+              {data?.instrument?.subsidie === true && data?.instrument?.themaType === 'thema' && (
                 <Link
-                  href={`/${data?.measure?.transitionAgenda}/${data?.measure?.thema}/categorie`}
+                  href={`/${data?.instrument?.transitionAgenda}/${data?.instrument?.thema}/categorie`}
                   onClick={() => setCategorie('subsidie')}
                 >
                   <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
@@ -113,12 +113,12 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-              {data?.measure?.subsidie === true && data?.measure?.themaType !== 'thema' && (
+              {data?.instrument?.subsidie === true && data?.instrument?.themaType !== 'thema' && (
                 <Tag classes='bg-green-300 text-green-800 mr-2'>Subsidie</Tag>
               )}
-              {data?.measure?.fiscaal === true && data?.measure?.themaType === 'thema' && (
+              {data?.instrument?.fiscaal === true && data?.instrument?.themaType === 'thema' && (
                 <Link
-                  href={`/${data?.measure?.transitionAgenda}/${data?.measure?.thema}/categorie`}
+                  href={`/${data?.instrument?.transitionAgenda}/${data?.instrument?.thema}/categorie`}
                   onClick={() => setCategorie('fiscaal')}
                 >
                   <Tag classes='bg-green-300 text-green-800 hover:text-grey-100 hover:border hover:border-grey-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
@@ -126,13 +126,13 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-              {data?.measure?.fiscaal === true && data?.measure?.themaType !== 'thema' && (
+              {data?.instrument?.fiscaal === true && data?.instrument?.themaType !== 'thema' && (
                 <Tag classes='bg-green-300 text-green-800 mr-2'>Fiscaal</Tag>
               )}
             </div>
             <div className='max-w-4xl flex justify-start overflow-hidden'>
               <h1 className='justify-self-start p-5xl-semibold sm:p-7xl-bold lg:block mt-1 text-grey-100 pb-1'>
-                {data?.measure?.titel}
+                {data?.instrument?.titel}
               </h1>
             </div>
           </div>

@@ -20,7 +20,7 @@ export const Structure = (S) =>
             .child((themaId) =>
               S.documentList()
                 .title('Instruments')
-                .filter('_type == "measure" && $themaId == thema._ref')
+                .filter('_type == "instrument" && $themaId == thema._ref')
                 .params({ themaId }),
             ),
         ),
@@ -34,7 +34,7 @@ export const Structure = (S) =>
             .child((themaId) =>
               S.documentList()
                 .title('Instruments')
-                .filter('_type == "measure" && $themaId ==  thema._ref')
+                .filter('_type == "instrument" && $themaId ==  thema._ref')
                 .params({ themaId }),
             ),
         ),
@@ -90,79 +90,3 @@ export const Structure = (S) =>
         .child(S.document().title('Home Page').schemaType('siteConfig').documentId('siteSettings')),
     ]);
 
-{
-  /* 
-  
-   S.listItem()
-                .title('Houtbouw')
-                .icon(GiDeadWood)
-                .child(
-                  S.documentList()
-                    .title('Houtbouw Measures')
-                    .filter(
-                        '_type == "measure" && thema->slug.current == "houtbouw"',
-                    ),
-                ),
-              S.listItem()
-                .title('Circulaire windturbines')
-                .icon(GiWindmill)
-                .child(
-                  S.documentList()
-                    .title('Circulaire windturbines measures')
-                    .filter(
-                      '_type == "measure" && thema->slug.current == "windturbines"',
-                    ),
-                ),
-              S.listItem()
-                .title('Circulaire matrasketen')
-                .icon(GiBed)
-                .child(
-                  S.documentList()
-                    .title('Circulaire matrasketen measures')
-                    .filter(
-                      '_type == "measure" && thema->slug.current == "matrasketen"',
-                    ),
-                ),
-              S.listItem()
-                .title('Voedselverspilling')
-                .icon(GiBanana)
-                .child(
-                  S.documentList()
-                    .title('Voedselverspilling')
-                    .filter(
-                      '_type == "measure" && thema->slug.current == "voedselverspilling"'),
-                ),
-              S.listItem()
-                .title('Meubels')
-                .icon(GiTable)
-                .child(
-                  S.documentList()
-                    .title('Meubels')
-                    .filter( '_type == "measure" && thema->slug.current == "meubels"'),
-                ),
-              S.listItem()
-                .title('Woningen')
-                .icon(BsHouseDoor)
-                .child(
-                  S.documentList()
-                    .title('Woningen')
-                    .filter('_type == "measure" && thema->slug.current == "woningen"'),
-                ),
-              S.listItem()
-                .title('Kunstgrasvelden')
-                .icon(GiGrass)
-                .child(
-                  S.documentList()
-                    .title('Kunstgrasvelden')
-                    .filter('_type == "measure" && thema->slug.current == "kunstgrasvelden"'),
-                ),
-              S.listItem()
-                .title('Eiwittransitie')
-                .icon(GiBeanstalk)
-                .child(
-                  S.documentList()
-                    .title('Eiwittransitie')
-                    .filter('_type == "measure" && thema->slug.current == "eiwittransitie"'),
-                ),
-  */
-}

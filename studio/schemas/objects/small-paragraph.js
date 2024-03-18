@@ -55,7 +55,7 @@ export default {
                     name: 'reference',
                     type: 'reference',
                     title: 'Reference',
-                    to: [{ type: 'measure' }],
+                    to: [{ type: 'instrument' }],
                     options: {
                       disableNew: true,
                     },
