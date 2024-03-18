@@ -2,7 +2,7 @@ import { PortableText } from '@portabletext/react';
 import { useState, useEffect, useRef } from 'react';
 
 import InstrumentTable from './instrument-table';
-import { instrumentPTComponents } from '@/lib/portable-text/pt-components';
+import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import InstrumentFeedbackBlock from './instrument-feedback-block';
 import InstrumentHeader from './instrument-header';
 import MobileFeedback from './instrument-feedback-block-mobile';
@@ -49,7 +49,7 @@ export default function Instrument({ data }) {
           <div className='grid grid-cols-1'>
             <div className='pb-20 max-w-[760px]'>
               <div className=''>
-                <PortableText value={data?.instrument?.content} components={instrumentPTComponents} />
+                <PortableText value={data?.instrument?.content} components={portableTextComponents} />
               </div>
               <InstrumentTable data={data} />
             </div>
