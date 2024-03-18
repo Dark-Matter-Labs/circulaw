@@ -3,7 +3,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
 import { PortableText } from '@portabletext/react';
 
-import { PCtooltipComponents } from '@/lib/portable-text/pt-components';
+import { reducedPortableTextComponents } from '@/lib/portable-text/pt-components';
 
 export default function PCTooltip({ children, icon, title, content }) {
   const [open, setOpen] = useState(false);
@@ -88,7 +88,7 @@ export default function PCTooltip({ children, icon, title, content }) {
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>
-                        <PortableText value={content} components={PCtooltipComponents} />
+                        <PortableText value={content} components={reducedPortableTextComponents} />
                       </div>
                     </div>
                   </Dialog.Panel>
