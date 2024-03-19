@@ -58,7 +58,7 @@ export default function InstrumentHeader({ data }) {
                 className=''
               >
                 <Tag classes='border border-grey-100 hover:border-green-200 active:border-green-400 text-grey-100 mr-2 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>
-                  {data?.instrument?.thema.replace('-', ' ')}
+                  {data?.instrument?.thema?.replace('-', ' ')}
                 </Tag>
               </Link>
 
