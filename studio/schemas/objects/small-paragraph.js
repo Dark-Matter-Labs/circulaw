@@ -1,5 +1,7 @@
 import { CgInternal } from 'react-icons/cg';
 
+
+// rename
 export default {
   title: 'Grey Box',
   name: 'smallPara',

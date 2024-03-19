@@ -7,9 +7,7 @@ import { useEffect, useState } from 'react';
 import ScrollPagesTabContent from '@/components/eu-law/europe-tab-content';
 import SummaryComponent from '@/components/eu-law/summary-tab-content';
 import { PortableText } from '@portabletext/react';
-// create component for each tab
-// can create individual ones for overview if need be,
-import { euPageComponents } from '@/lib/portable-text/pt-components';
+import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import SocialButtons from '@/components/social-buttons';
 
 // refactor
@@ -136,7 +134,7 @@ export default function LawSummaryPage({ lawData }) {
         {query === 'relevantie-voor-de-circulaire-economie' && (
           <div className='global-margin my-20 '>
             <div className='max-w-xl 2xl:max-w-2xl'>
-              <PortableText value={lawData?.ceContent} components={euPageComponents} />
+              <PortableText value={lawData?.ceContent} components={portableTextComponents} />
             </div>
           </div>
         )}
