@@ -54,7 +54,10 @@ export default function InstrumentPreview({ query, queryParams }) {
           <div className='grid grid-cols-1'>
             <div className='pb-20 max-w-[760px]'>
               <div className=''>
-                <PortableText value={data?.instrument?.content} components={portableTextComponents} />
+                <PortableText
+                  value={data?.instrument?.content}
+                  components={portableTextComponents}
+                />
               </div>
               <InstrumentTable data={data} />
             </div>
@@ -63,7 +66,7 @@ export default function InstrumentPreview({ query, queryParams }) {
             className={`${
               scrollEffect
                 ? 'translate-y-0 transition-all ease-in duration-300'
-                : 'translate-y-8 transition-all ease-out duration-300'
+                : 'translate-y-14 transition-all ease-out duration-300'
             } ${hidden ? 'hidden' : 'block'} bottom-0 sticky flex justify-center w-full`}
           >
             <MobileFeedback data={data} scrollEffect={scrollEffect} />
