@@ -2,7 +2,7 @@ import { useEffect, lazy } from 'react';
 import Layout from '@/components/layouts/layout';
 import ThemeLayout from '@/components/layouts/theme-index-layout';
 import { client } from '@/lib/sanity';
-import { themaQ } from '@/lib/queries';
+import { themaQuery } from '@/lib/queries';
 import SimpleThemaLayout from '@/components/layouts/simple-thema-layout';
 import { PreviewSuspense } from 'next-sanity/preview';
 
@@ -19,18 +19,19 @@ const pathsQuery = `
 `;
 
 // featuredLaws, thema, length, instruments
-export default function ThemeIndexPage({ themaData, preview }) {
+export default function ThemeIndexPage({ preview, data }) {
   useEffect(() => {
     localStorage.clear();
   });
-
+  
+ 
   if (preview) {
-    if (themaData?.thema._type === 'simpleThema') {
+    if (data.themaData?.thema._type === 'simpleThema') {
       return (
         <>
           <PreviewSuspense>
             <Layout>
-              <SimpleThemeLayoutPreview query='' queryParams={themaData.thema} />
+              <SimpleThemeLayoutPreview query={themaQuery} queryParams={data.thema} />
             </Layout>
           </PreviewSuspense>
         </>
@@ -40,30 +41,31 @@ export default function ThemeIndexPage({ themaData, preview }) {
         <>
           <PreviewSuspense>
             <Layout>
-              <ThemeLayoutPreview query='' queryParams={themaData.thema} />
+              <ThemeLayoutPreview query={themaQuery} queryParams={data.thema} />
+              {console.log(data, 'in page')}
             </Layout>
           </PreviewSuspense>
         </>
       );
     }
   } else {
-    if (themaData?.thema._type === 'simpleThema') {
+    if (data.themaData?.thema._type === 'simpleThema') {
       return (
-        <Layout title={`${themaData?.thema?.themaName}`}>
+        <Layout title={`${data.themaData?.thema?.themaName}`}>
           <SimpleThemaLayout
-            thema={themaData?.thema}
-            numberOfLaws={themaData?.length}
-            instruments={themaData?.instruments ?? []}
+            thema={data.themaData?.thema}
+            numberOfLaws={data.themaData?.length}
+            instruments={data.themaData?.instruments ?? []}
           />
         </Layout>
       );
     } else {
       return (
-        <Layout title={`${themaData?.thema?.themaName}`}>
+        <Layout title={`${data.themaData?.thema?.themaName}`}>
         <ThemeLayout
-          featuredLaws={themaData?.featured}
-          thema={themaData?.thema}
-          listTitle={`Lijst van ${themaData?.length} instrumenten`}
+          featuredLaws={data.themaData?.featured}
+          thema={data.themaData?.thema}
+          listTitle={`Lijst van ${data.themaData?.length} instrumenten`}
         />
       </Layout>
       )
@@ -89,7 +91,7 @@ export async function getStaticProps({ params, preview = false }) {
     return { props: { preview, data: { thema } } };
   }
 
-  const themaData = await client.fetch(themaQ, thema);
+  const themaData = await client.fetch(themaQuery, thema);
 
-  return { props: { themaData }, revalidate: 1 };
+  return { props: { data: {themaData, thema} }, revalidate: 1 };
 }
