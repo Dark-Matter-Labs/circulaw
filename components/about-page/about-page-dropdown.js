@@ -6,7 +6,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
   const remainingTitles = slugs?.filter((el) => el.slug !== currentSlug) ?? [];
   const currentPage = slugs?.filter((el) => el.slug === currentSlug) ?? [];
   const router = useRouter();
-  // add on click close to close the disclosure.
+  // add on click close to close the disclosure.  
   return (
     <div className='pt-8 w-full'>
       <Disclosure>

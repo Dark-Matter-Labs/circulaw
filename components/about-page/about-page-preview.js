@@ -19,9 +19,9 @@ export default function AboutPagepreview({ query, queryParams }) {
         </div>
         <div className='grid grid-cols-1 w-full lg:grid-cols-3 max-w-8xl'>
           <div className='lg:col-span-2'>
-            <div className='breadcrumb pt-8 text-green-500 '>
+            <div className='p-2xs-bold text-green-600 bg-white pl-2 pr-3 py-1.5 rounded-clSm mt-6'>
               <Link href='/' className='link-interaction'>
-                Home &gt;
+                Home<span className='ml-2'>{'>'}</span>
               </Link>
             </div>
             <div className='max-w-3xl'>
@@ -43,17 +43,19 @@ export default function AboutPagepreview({ query, queryParams }) {
           <div className='block lg:hidden'>
             <AboutPageDropdown
               currentSlug={data?.aboutPage?.slug.current}
-              slugs={data?.aboutPageSlugs}
+              slugs={data?.aboutPage?.aboutPageSlugs}
             />
           </div>
         </div>
         <Link
           className='bg-blue-500 p-6 text-white font-bold fixed bottom-0 right-0'
           href='/api/exit-preview'
-        >
+          >
           Exit Preview
-        </Link>
+          </Link>
       </div>
     </div>
   );
 }
+
+
