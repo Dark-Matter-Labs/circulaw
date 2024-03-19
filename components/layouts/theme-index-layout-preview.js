@@ -15,7 +15,7 @@ import InstrumentMetaData from '../instrument/instrument-metadata';
 export default function ThemeLayoutPreview({ query, queryParams }) {
   const data = usePreview(null, query, queryParams);
 
-  if (data.thema_type === 'thema') {
+  if (data.thema._type === 'thema') {
     return (
       <div>
         {/* HEADER DESKTOP */}
@@ -81,7 +81,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                   </div>
                   <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
-                      <div className='p-4xl-semibold pb-4'>{data?.listTitle}</div>
+                      <div className='p-4xl-semibold pb-4'>{`Lijst van ${data?.length} instrumenten`}</div>
                       <div className='p-base'>{data?.thema?.listText}</div>
                     </div>
                     <CustomButton color='whiteBackground'>
@@ -163,7 +163,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                         />
                       </div>
                       <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
-                        <div className='p-2xl-semibold'>{data?.listTitle}</div>
+                        <div className='p-2xl-semibold'>{`Lijst van ${data?.length} instrumenten`}</div>
                         <ArrowRightIcon
                           className='block h-6 w-6 text-green-600'
                           aria-hidden='true'

@@ -47,7 +47,7 @@ export default function ThemeIndexPage({ preview, data }) {
           <ThemeLayout
             featuredLaws={data.themaData?.featured}
             thema={data.themaData?.thema}
-            listTitle={`Lijst van ${data.themaData?.length} instrumenten`}
+            numberOfLaws={data.themaData?.length} 
           />
         </Layout>
       );

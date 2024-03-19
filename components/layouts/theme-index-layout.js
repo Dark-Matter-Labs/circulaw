@@ -10,7 +10,7 @@ import CustomButton from '@/components/custom-button';
 import ThemePageHeader from '../theme-page/theme-page-header';
 import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
 
-export default function ThemeLayout({ featuredLaws, thema, listTitle }) {
+export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
   return (
     <>
       <div>
@@ -73,7 +73,7 @@ export default function ThemeLayout({ featuredLaws, thema, listTitle }) {
                   </div>
                   <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
-                      <div className='p-4xl-semibold pb-4'>{listTitle}</div>
+                      <div className='p-4xl-semibold pb-4'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
                       <div className='p-base'>{thema?.listText}</div>
                     </div>
                     <CustomButton color='whiteBackground'>
@@ -151,7 +151,7 @@ export default function ThemeLayout({ featuredLaws, thema, listTitle }) {
                         />
                       </div>
                       <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
-                        <div className='p-2xl-semibold'>{listTitle}</div>
+                        <div className='p-2xl-semibold'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
                         <ArrowRightIcon
                           className='block h-6 w-6 text-green-600'
                           aria-hidden='true'

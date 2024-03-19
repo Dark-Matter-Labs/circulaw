@@ -11,6 +11,7 @@ function redirectToPreview(res, previewData, Location) {
 }
 
 export default async function preview(req, res) {
+ 
   const previewData = {};
   const instrument = await client.fetch(instrumentQuery, {
     slug: req.query.slug,
@@ -22,7 +23,7 @@ export default async function preview(req, res) {
 
   const themaPage = await client.fetch(themaQuery, { thema: req.query.slug });
 
-  if (themaPage) {
+  if (themaPage) {  
     return redirectToPreview(
       res,
       previewData,
@@ -40,4 +41,5 @@ export default async function preview(req, res) {
   if (aboutPage) {
     return redirectToPreview(res, previewData, `/over/${aboutPage.slug.current}`);
   }
+
 }
