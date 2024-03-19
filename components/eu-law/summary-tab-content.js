@@ -94,7 +94,10 @@ export default function SummaryComponent({ lawData }) {
           </div>
           <div>
             <EUTooltip title={lawData?.statusContentTitle}>
-              <PortableText value={lawData?.statusContent} components={reducedPortableTextComponents} />
+              <PortableText
+                value={lawData?.statusContent}
+                components={reducedPortableTextComponents}
+              />
             </EUTooltip>
           </div>
         </div>

@@ -70,7 +70,8 @@ export default function InstrumentMetaData({ data, borders }) {
                 ?.filter((x) => x !== null)
                 .map((level) => (
                   <span key={level} className=''>
-                    {level} {data?.instrument?.overheidslaag?.slice(-1)[0] !== level && <span>-</span>}
+                    {level}{' '}
+                    {data?.instrument?.overheidslaag?.slice(-1)[0] !== level && <span>-</span>}
                     &nbsp;
                   </span>
                 ))}
@@ -187,7 +188,8 @@ export default function InstrumentMetaData({ data, borders }) {
                 ?.filter((x) => x !== null)
                 .map((level) => (
                   <span key={level} className=''>
-                    {level} {data?.instrument?.overheidslaag.slice(-1)[0] !== level && <span>-</span>}
+                    {level}{' '}
+                    {data?.instrument?.overheidslaag.slice(-1)[0] !== level && <span>-</span>}
                     &nbsp;
                   </span>
                 ))}

@@ -26,7 +26,10 @@ export default function instrument({ preview, data }) {
       </Layout>
     </PreviewSuspense>
   ) : (
-    <Layout title={data?.instrument?.titel} canonicalUrl={globalMeta.siteUrl + data?.instrument?.slug}>
+    <Layout
+      title={data?.instrument?.titel}
+      canonicalUrl={globalMeta.siteUrl + data?.instrument?.slug}
+    >
       <Instrument data={data} />
     </Layout>
   );

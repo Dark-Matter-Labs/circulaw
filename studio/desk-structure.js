@@ -89,4 +89,3 @@ export const Structure = (S) =>
         .icon(AiOutlineHome)
         .child(S.document().title('Home Page').schemaType('siteConfig').documentId('siteSettings')),
     ]);
-

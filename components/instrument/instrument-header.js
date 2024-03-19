@@ -99,9 +99,10 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-              {data?.instrument?.grondpositie === true && data?.instrument?.themaType !== 'thema' && (
-                <Tag classes='bg-green-300 text-green-800 mr-2'>Grondpositie</Tag>
-              )}
+              {data?.instrument?.grondpositie === true &&
+                data?.instrument?.themaType !== 'thema' && (
+                  <Tag classes='bg-green-300 text-green-800 mr-2'>Grondpositie</Tag>
+                )}
 
               {data?.instrument?.subsidie === true && data?.instrument?.themaType === 'thema' && (
                 <Link
