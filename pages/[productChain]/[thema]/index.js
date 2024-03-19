@@ -25,29 +25,29 @@ export default function ThemeIndexPage({ preview, data }) {
       <>
         <PreviewSuspense>
           <Layout>
-            <ThemeLayoutPreview query={themaQuery} queryParams={data.thema} />
+            <ThemeLayoutPreview query={themaQuery} queryParams={data?.thema} />
           </Layout>
         </PreviewSuspense>
       </>
     );
   } else {
-    if (data.themaData?.thema._type === 'simpleThema') {
+    if (data?.themaData?.thema?._type === 'simpleThema') {
       return (
-        <Layout title={`${data.themaData?.thema?.themaName}`}>
+        <Layout title={`${data?.themaData?.thema?.themaName}`}>
           <SimpleThemaLayout
-            thema={data.themaData?.thema}
-            numberOfLaws={data.themaData?.length}
-            instruments={data.themaData?.instruments ?? []}
+            thema={data?.themaData?.thema}
+            numberOfLaws={data?.themaData?.length}
+            instruments={data?.themaData?.instruments ?? []}
           />
         </Layout>
       );
     } else {
       return (
-        <Layout title={`${data.themaData?.thema?.themaName}`}>
+        <Layout title={`${data?.themaData?.thema?.themaName}`}>
           <ThemeLayout
-            featuredLaws={data.themaData?.featured}
-            thema={data.themaData?.thema}
-            numberOfLaws={data.themaData?.length} 
+            featuredLaws={data?.themaData?.featured}
+            thema={data?.themaData?.thema}
+            numberOfLaws={data?.themaData?.length} 
           />
         </Layout>
       );

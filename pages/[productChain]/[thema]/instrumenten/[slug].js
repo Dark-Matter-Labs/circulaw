@@ -37,7 +37,6 @@ export default function instrument({ preview, data }) {
 
 export async function getStaticPaths() {
   const paths = await client.fetch(pathsQuery);
-  console.log(paths)
   return {
     paths: paths.map((path) => ({
       params: { slug: path.slug, thema: path.thema, productChain: path.productChain },
