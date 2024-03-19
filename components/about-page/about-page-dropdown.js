@@ -1,19 +1,11 @@
 import { useRouter } from 'next/router';
 import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
-import { useEffect, useState } from 'react';
 
 export default function AboutPageDropdown({ currentSlug, slugs }) {
-  const [remainingTitles, setRemainingTitles] = useState()
-  
-  
-  useEffect(() => {
-    setRemainingTitles(slugs?.filter((el) => el.slug !== currentSlug) ?? [])
-  }, [slugs, currentSlug])
-
+  const remainingTitles = slugs?.filter((el) => el.slug !== currentSlug) ?? [];
   const currentPage = slugs?.filter((el) => el.slug === currentSlug) ?? [];
   const router = useRouter();
-
 
   return (
     <div className='pt-8 w-full'>
@@ -38,25 +30,21 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                 />
               </div>
             </Disclosure.Button>
-          
-            <Disclosure.Panel>
-            {remainingTitles && 
-            remainingTitles?.map((remaining) => {
-              
-              <Disclosure.Button
-                as='div'
-                onClick={() => {
-                  router.push(`/over/${encodeURIComponent(remaining?.slug)}`);
-                }}
-              >
-                <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
-                  <span className='block pl-3 truncate'>{remaining?.title}</span>
-                {console.log(remaining)}
-                </div>
-              </Disclosure.Button>
-            })
-          }
-             
+            <Disclosure.Panel as='ul'>
+              {remainingTitles?.map((remaining, id) => (
+                <Disclosure.Button
+                  key={id}
+                  className='bg-white w-full text-grey-800 border-b border-l border-r last:rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500'
+                  as='li'
+                  onClick={() => {
+                    router.push(`/over/${encodeURIComponent(remaining?.slug)}`);
+                  }}
+                >
+                  <div className=''>
+                    <span className='block pl-3 truncate'>{remaining?.title}</span>
+                  </div>
+                </Disclosure.Button>
+              ))}
             </Disclosure.Panel>
           </>
         )}
