@@ -21,8 +21,9 @@ export default async function preview(req, res) {
   const aboutPage = await client.fetch(aboutPageQuery, {
     slug: req.query.slug,
   });
-  const themaPage = await client.fetch(themaQuery, { thema: req.query.slug})
   
+  const themaPage = await client.fetch(themaQuery, { thema: req.query.slug})
+
   if (themaPage) {  
     return redirectToPreview(
       res, previewData, `/${themaPage.thema.transitionAgenda}/${themaPage.thema.slug.current}`

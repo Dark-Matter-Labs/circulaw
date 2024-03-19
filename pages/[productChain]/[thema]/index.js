@@ -6,9 +6,7 @@ import { themaQuery } from '@/lib/queries';
 import SimpleThemaLayout from '@/components/layouts/simple-thema-layout';
 import { PreviewSuspense } from 'next-sanity/preview';
 
-const SimpleThemeLayoutPreview = lazy(() =>
-  import('@/components/layouts/simple-thema-layout-preview'),
-);
+
 const ThemeLayoutPreview = lazy(() => import('@/components/layouts/theme-index-layout-preview'));
 
 const pathsQuery = `
@@ -24,30 +22,16 @@ export default function ThemeIndexPage({ preview, data }) {
     localStorage.clear();
   });
   
- 
   if (preview) {
-    if (data.themaData?.thema._type === 'simpleThema') {
-      return (
-        <>
-          <PreviewSuspense>
-            <Layout>
-              <SimpleThemeLayoutPreview query={themaQuery} queryParams={data.thema} />
-            </Layout>
-          </PreviewSuspense>
-        </>
-      );
-    } else {
       return (
         <>
           <PreviewSuspense>
             <Layout>
               <ThemeLayoutPreview query={themaQuery} queryParams={data.thema} />
-              {console.log(data, 'in page')}
             </Layout>
           </PreviewSuspense>
         </>
       );
-    }
   } else {
     if (data.themaData?.thema._type === 'simpleThema') {
       return (
@@ -69,9 +53,7 @@ export default function ThemeIndexPage({ preview, data }) {
         />
       </Layout>
       )
-
     }
-     
   }
 }
 
