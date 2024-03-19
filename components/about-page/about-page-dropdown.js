@@ -1,12 +1,20 @@
 import { useRouter } from 'next/router';
 import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
+import { useEffect, useState } from 'react';
 
 export default function AboutPageDropdown({ currentSlug, slugs }) {
-  const remainingTitles = slugs?.filter((el) => el.slug !== currentSlug) ?? [];
+  const [remainingTitles, setRemainingTitles] = useState()
+  
+  
+  useEffect(() => {
+    setRemainingTitles(slugs?.filter((el) => el.slug !== currentSlug) ?? [])
+  }, [slugs, currentSlug])
+
   const currentPage = slugs?.filter((el) => el.slug === currentSlug) ?? [];
   const router = useRouter();
-  // add on click close to close the disclosure.  
+
+
   return (
     <div className='pt-8 w-full'>
       <Disclosure>
@@ -30,80 +38,25 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                 />
               </div>
             </Disclosure.Button>
-
+          
             <Disclosure.Panel>
+            {remainingTitles && 
+            remainingTitles?.map((remaining) => {
+              
               <Disclosure.Button
                 as='div'
                 onClick={() => {
-                  router.push(`/over/${encodeURIComponent(remainingTitles[0]?.slug)}`);
+                  router.push(`/over/${encodeURIComponent(remaining?.slug)}`);
                 }}
               >
                 <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
-                  <span className='block pl-3 truncate'>{remainingTitles[0]?.title}</span>
+                  <span className='block pl-3 truncate'>{remaining?.title}</span>
+                {console.log(remaining)}
                 </div>
               </Disclosure.Button>
-              <Disclosure.Button
-                as='div'
-                onClick={() => {
-                  router.push(`/over/${encodeURIComponent(remainingTitles[1]?.slug)}`);
-                }}
-              >
-                <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
-                  <span className='block pl-3 truncate'>{remainingTitles[1]?.title}</span>
-                </div>
-              </Disclosure.Button>
-              <Disclosure.Button
-                as='div'
-                onClick={() => {
-                  router.push(`/over/${encodeURIComponent(remainingTitles[2]?.slug)}`);
-                }}
-              >
-                <div
-                  className={`${
-                    remainingTitles[2]?.slug === remainingTitles?.slice(-1)[0]?.slug
-                      ? 'rounded-b-cl'
-                      : ''
-                  } bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500`}
-                >
-                  <span className='block pl-3 truncate'>{remainingTitles[2]?.title}</span>
-                </div>
-              </Disclosure.Button>
-              {remainingTitles[3] && (
-                <Disclosure.Button
-                  as='div'
-                  onClick={() => {
-                    router.push(`/over/${encodeURIComponent(remainingTitles[3]?.slug)}`);
-                  }}
-                >
-                  <div
-                    className={`${
-                      remainingTitles[3]?.slug === remainingTitles?.slice(-1)[0]?.slug
-                        ? 'rounded-b-cl'
-                        : ''
-                    } bg-white text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500`}
-                  >
-                    <span className='block pl-3 truncate'>{remainingTitles[3]?.title}</span>
-                  </div>
-                </Disclosure.Button>
-              )}
-              {remainingTitles[4] && (
-                <Disclosure.Button
-                  as='div'
-                  onClick={() => {
-                    router.push(`/over/${encodeURIComponent(remainingTitles[4]?.slug)}`);
-                  }}
-                >
-                  <div
-                    className={`${
-                      remainingTitles[4]?.slug === remainingTitles?.slice(-1)[0]?.slug
-                        ? 'rounded-b-cl'
-                        : ''
-                    } bg-white text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500`}
-                  >
-                    <span className='block pl-3 truncate'>{remainingTitles[4]?.title}</span>
-                  </div>
-                </Disclosure.Button>
-              )}
+            })
+          }
+             
             </Disclosure.Panel>
           </>
         )}
