@@ -6,7 +6,6 @@ import { themaQuery } from '@/lib/queries';
 import SimpleThemaLayout from '@/components/layouts/simple-thema-layout';
 import { PreviewSuspense } from 'next-sanity/preview';
 
-
 const ThemeLayoutPreview = lazy(() => import('@/components/layouts/theme-index-layout-preview'));
 
 const pathsQuery = `
@@ -16,22 +15,21 @@ const pathsQuery = `
   }
 `;
 
-// featuredLaws, thema, length, instruments
 export default function ThemeIndexPage({ preview, data }) {
   useEffect(() => {
     localStorage.clear();
   });
-  
+
   if (preview) {
-      return (
-        <>
-          <PreviewSuspense>
-            <Layout>
-              <ThemeLayoutPreview query={themaQuery} queryParams={data.thema} />
-            </Layout>
-          </PreviewSuspense>
-        </>
-      );
+    return (
+      <>
+        <PreviewSuspense>
+          <Layout>
+            <ThemeLayoutPreview query={themaQuery} queryParams={data.thema} />
+          </Layout>
+        </PreviewSuspense>
+      </>
+    );
   } else {
     if (data.themaData?.thema._type === 'simpleThema') {
       return (
@@ -46,13 +44,13 @@ export default function ThemeIndexPage({ preview, data }) {
     } else {
       return (
         <Layout title={`${data.themaData?.thema?.themaName}`}>
-        <ThemeLayout
-          featuredLaws={data.themaData?.featured}
-          thema={data.themaData?.thema}
-          listTitle={`Lijst van ${data.themaData?.length} instrumenten`}
-        />
-      </Layout>
-      )
+          <ThemeLayout
+            featuredLaws={data.themaData?.featured}
+            thema={data.themaData?.thema}
+            listTitle={`Lijst van ${data.themaData?.length} instrumenten`}
+          />
+        </Layout>
+      );
     }
   }
 }
@@ -75,5 +73,5 @@ export async function getStaticProps({ params, preview = false }) {
 
   const themaData = await client.fetch(themaQuery, thema);
 
-  return { props: { data: {themaData, thema} }, revalidate: 1 };
+  return { props: { data: { themaData, thema } }, revalidate: 1 };
 }

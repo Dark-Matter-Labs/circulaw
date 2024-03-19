@@ -6,7 +6,6 @@ import Tag from '@/components/tag';
 import InstrumentMetaData from '@/components/instrument/instrument-metadata';
 
 export default function ThemeBottomSection({ featuredLaws, thema }) {
-
   return (
     <>
       <div className='bg-gray-200'>

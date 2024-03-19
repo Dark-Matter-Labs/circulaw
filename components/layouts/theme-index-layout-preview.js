@@ -13,17 +13,17 @@ import Tag from '../tag';
 import InstrumentMetaData from '../instrument/instrument-metadata';
 
 export default function ThemeLayoutPreview({ query, queryParams }) {
-    const data =  usePreview(null, query, queryParams) ;
-    
+  const data = usePreview(null, query, queryParams);
+
   if (data.thema_type === 'thema') {
     return (
-        <div>
+      <div>
         {/* HEADER DESKTOP */}
         <ThemePageHeader themaData={data.thema} />
         {/* HEADER MOBILE */}
-    
+
         <ThemePageHeaderMobile themaData={data.thema} />
-    
+
         {/* CARDS */}
         <div className='bg-gradient-to-b from-[#F8FAF8] to-[#F8FAF8]'>
           <div className='global-margin pb-16 sm:pb-20'>
@@ -35,7 +35,9 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
               className='hidden sm:grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 sm:gap-x-8 max-w-8xl relative z-0'
               role='list'
             >
-              <Link href={`/${data?.thema?.transitionAgenda}/${data?.thema?.slug?.current}/categorie`}>
+              <Link
+                href={`/${data?.thema?.transitionAgenda}/${data?.thema?.slug?.current}/categorie`}
+              >
                 <li
                   role='listitem'
                   className='h-auto rounded-cl flex flex-col max-w-[355px] min-w-[300px]'
@@ -49,7 +51,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                       />
                     </div>
                   </div>
-    
+
                   <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
                       <div className='p-4xl-semibold pb-4'>{data?.thema?.samenhangTitle}</div>
@@ -202,80 +204,76 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
           </div>
         </div>
         <Link
-              className='bg-blue-500 p-6 text-white font-bold fixed bottom-0 right-0'
-              href='/api/exit-preview'
-            >
-              Exit Preview
-            </Link>
+          className='bg-blue-500 p-6 text-white font-bold fixed bottom-0 right-0'
+          href='/api/exit-preview'
+        >
+          Exit Preview
+        </Link>
       </div>
-      )
+    );
   } else {
     return (
-        <>
-    
-      {/* HEADER DESKTOP */}
-      <ThemePageHeader themaData={data.thema} />
-      {/* HEADER MOBILE */}
-      <ThemePageHeaderMobile themaData={data.thema} />
+      <>
+        {/* HEADER DESKTOP */}
+        <ThemePageHeader themaData={data.thema} />
+        {/* HEADER MOBILE */}
+        <ThemePageHeaderMobile themaData={data.thema} />
 
-      <div className='global-margin'>
-        <div className='max-w-[830px] mb-10'>
-          <h2 className='p-5xl-semibold pb-4 pt-7'>
-            Eerste {data.length} {data.thema.introTextTitle}
-          </h2>
-          <p>{data.thema?.introText}</p>
-        </div>
-        <div className='max-w-7xl flex pb-10'>
-          <div className='w-5 sm:w-2 bg-gradient-to-b from-[#25C38B] to-[#035E46] mr-4 rounded-full mb-10'></div>
-          <div>
-            {/* This can be a component - policy list, theme bottom section + here */}
-            {data.instruments.map((instrument) => (
-              <Link
-                href={`/${instrument.transitionAgenda}/${instrument.thema}/instrumenten/${instrument.slug.current}`}
-                key={instrument.titel}
-              >
-                <div className='block mb-14 sm:mb-10 md:min-w-[760px]'>
-                  <div className='flex justify-start items-center -ml-1'>
-                    {/* Expertise Tag */}
-                    {instrument?.beleid === true && (
-                      <Tag classes='bg-green-500 text-gray-100'>Beleid</Tag>
-                    )}
-                    {instrument?.inkoop === true && (
-                      <Tag classes='bg-green-500 text-gray-100'>Inkoop</Tag>
-                    )}
-                    {instrument?.grondpositie === true && (
-                      <Tag classes='bg-green-500 text-gray-100'>Grondpositie</Tag>
-                    )}
-                    {instrument?.subsidie === true && (
-                      <Tag classes='bg-green-500 text-gray-100'>Subsidie</Tag>
-                    )}
-                    {instrument?.fiscaal === true && (
-                      <Tag classes='bg-green-500 text-gray-100'>Fiscaal</Tag>
-                    )}
-                  </div>
-
-                  <div className='block mt-2'>
-                    <div className=' mb-2'>
-                      <h3 className='p-4xl-semibold sm:max-w-[650px] text-grey-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
-                        {instrument.titel}{' '}
-                      </h3>
+        <div className='global-margin'>
+          <div className='max-w-[830px] mb-10'>
+            <h2 className='p-5xl-semibold pb-4 pt-7'>
+              Eerste {data.length} {data.thema.introTextTitle}
+            </h2>
+            <p>{data.thema?.introText}</p>
+          </div>
+          <div className='max-w-7xl flex pb-10'>
+            <div className='w-5 sm:w-2 bg-gradient-to-b from-[#25C38B] to-[#035E46] mr-4 rounded-full mb-10'></div>
+            <div>
+              {/* This can be a component - policy list, theme bottom section + here */}
+              {data.instruments.map((instrument) => (
+                <Link
+                  href={`/${instrument.transitionAgenda}/${instrument.thema}/instrumenten/${instrument.slug.current}`}
+                  key={instrument.titel}
+                >
+                  <div className='block mb-14 sm:mb-10 md:min-w-[760px]'>
+                    <div className='flex justify-start items-center -ml-1'>
+                      {/* Expertise Tag */}
+                      {instrument?.beleid === true && (
+                        <Tag classes='bg-green-500 text-gray-100'>Beleid</Tag>
+                      )}
+                      {instrument?.inkoop === true && (
+                        <Tag classes='bg-green-500 text-gray-100'>Inkoop</Tag>
+                      )}
+                      {instrument?.grondpositie === true && (
+                        <Tag classes='bg-green-500 text-gray-100'>Grondpositie</Tag>
+                      )}
+                      {instrument?.subsidie === true && (
+                        <Tag classes='bg-green-500 text-gray-100'>Subsidie</Tag>
+                      )}
+                      {instrument?.fiscaal === true && (
+                        <Tag classes='bg-green-500 text-gray-100'>Fiscaal</Tag>
+                      )}
                     </div>
 
-                    <div className='block newlineDisplay p-md text-grey-800 mt-2 pb-2'>
-                      <p className='p-base sm:max-w-[650px]'>{instrument.introText}</p>
+                    <div className='block mt-2'>
+                      <div className=' mb-2'>
+                        <h3 className='p-4xl-semibold sm:max-w-[650px] text-grey-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+                          {instrument.titel}{' '}
+                        </h3>
+                      </div>
+
+                      <div className='block newlineDisplay p-md text-grey-800 mt-2 pb-2'>
+                        <p className='p-base sm:max-w-[650px]'>{instrument.introText}</p>
+                      </div>
+                      <InstrumentMetaData data={instrument} borders={true} />
                     </div>
-                    <InstrumentMetaData data={instrument} borders={true} />
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-
-        </>
-    )
+      </>
+    );
   }
-  
-  
 }

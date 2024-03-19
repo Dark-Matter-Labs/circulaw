@@ -43,7 +43,7 @@ export const defaultDocumentNode = (S, { schemaType }) => {
           })
           .title('Preview'),
       ]);
-      case 'thema':
+    case 'thema':
       return S.document().views([
         S.view.form(),
         S.view
@@ -53,7 +53,7 @@ export const defaultDocumentNode = (S, { schemaType }) => {
           })
           .title('Preview'),
       ]);
-      case 'simpleThema':
+    case 'simpleThema':
       return S.document().views([
         S.view.form(),
         S.view
@@ -63,7 +63,7 @@ export const defaultDocumentNode = (S, { schemaType }) => {
           })
           .title('Preview'),
       ]);
-   
+
     default:
       return S.document().views([S.view.form()]);
   }

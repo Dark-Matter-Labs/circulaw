@@ -11,7 +11,6 @@ import ThemePageHeader from '../theme-page/theme-page-header';
 import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
 
 export default function ThemeLayout({ featuredLaws, thema, listTitle }) {
- 
   return (
     <>
       <div>
@@ -62,9 +61,7 @@ export default function ThemeLayout({ featuredLaws, thema, listTitle }) {
                   </div>
                 </li>
               </Link>
-              <Link
-                href={`/${thema?.transitionAgenda}/${thema?.slug.current}/instrumenten/`}
-              >
+              <Link href={`/${thema?.transitionAgenda}/${thema?.slug.current}/instrumenten/`}>
                 <li
                   role='listitem'
                   className='h-auto rounded-cl flex flex-col max-w-[355px] min-w-[300px]'
@@ -121,9 +118,7 @@ export default function ThemeLayout({ featuredLaws, thema, listTitle }) {
             {/* Mobile Cards */}
             <ul className='sm:hidden max-w-sm'>
               <li>
-                <Link
-                  href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/categorie`}
-                >
+                <Link href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/categorie`}>
                   <div className='h-24 w-full rounded-cl bg-grey-50 shadow mb-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
@@ -145,9 +140,7 @@ export default function ThemeLayout({ featuredLaws, thema, listTitle }) {
                 </Link>
               </li>
               <li>
-                <Link
-                  href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/instrumenten/`}
-                >
+                <Link href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/instrumenten/`}>
                   <div className='h-24 w-full rounded-cl bg-grey-50 shadow my-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
