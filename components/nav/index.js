@@ -212,7 +212,7 @@ export default function Nav(props) {
                         ]
                   }`,
                 ]
-              : 'bg-[#F8FBF8] shadow-lg'
+              : 'bg-green-50 shadow-lg'
           } h-[70px] lgNav:h-[98px] flex flex-row justify-between items-center lgNav:items-end global-padding w-full lgNav:w-auto`}
         >
           <>
@@ -294,7 +294,7 @@ export default function Nav(props) {
                     id='overlay'
                     lockScroll
                     style={{ background: 'rgba(0, 0, 0, 0)' }}
-                    className='-z-10 bg-[#F8FBF8] mt-[70px]'
+                    className='-z-10 bg-green-50 mt-[70px]'
                   >
                     <FloatingFocusManager context={mobileContext} modal={false} disabled>
                       <div
@@ -304,7 +304,7 @@ export default function Nav(props) {
                         {...mobileFloatingProps()}
                       >
                         <div
-                          className='w-full h-full bg-[#F8FBF8]'
+                          className='w-full h-full bg-green-50'
                           style={{ ...mobileMenuTransitionStyles }}
                         >
                           <div className='flex flex-col items-start justify-end global-margin '>
@@ -549,7 +549,7 @@ export default function Nav(props) {
                       >
                         <div
                           className={`${
-                            router.pathname === '/' ? 'bg-green-600' : 'bg-green-100'
+                            router.pathname === '/' ? 'bg-green-600' : 'bg-green-50'
                           } h-full pb-10 shadow-lg pl-6 pt-8 pr-8`}
                           style={{ ...overMenuTransitionStyles }}
                           onMouseLeave={() => setOverMenuIsOpen(false)}

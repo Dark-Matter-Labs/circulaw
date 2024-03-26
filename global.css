@@ -208,8 +208,6 @@
     @apply p-2xs font-bold;
   }
 
-  
-
   .link-lg {
     @apply font-jakarta text-xl font-semibold leading-13 underline;
   }
@@ -237,7 +235,6 @@
   .enLink {
     @apply font-jakarta text-xs font-semibold leading-9;
   }
-
 }
 
 

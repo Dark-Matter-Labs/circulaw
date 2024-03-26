@@ -7,7 +7,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
   return (
     <div
       className={`${
-        router.pathname === '/' ? 'bg-green-600 text-green-200' : 'bg-green-100 text-green-800'
+        router.pathname === '/' ? 'bg-green-600 text-green-200' : 'bg-green-50 text-green-800'
       } w-full h-full  ${
         navData.slug === 'bouw'
           ? 'pl-4 lgNav:pl-10 xl:pl-20 3xl:pl-32 pt-8 pr-2'
