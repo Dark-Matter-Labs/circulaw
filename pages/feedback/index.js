@@ -86,7 +86,7 @@ export default function Feedback() {
               <button
                 type='button'
                 onClick={() => router.back()}
-                className='mt-12 p-2xs-bold text-green-600 bg-white pl-2 pr-3 py-1.5 rounded-clSm'
+                className='mt-12 p-2xs-bold text-green-600 bg-gray-100 pl-2 pr-3 py-1.5 rounded-clSm'
               >
                 <span className='  '>Terug</span>
                 <span className='ml-2'>{'>'}</span>

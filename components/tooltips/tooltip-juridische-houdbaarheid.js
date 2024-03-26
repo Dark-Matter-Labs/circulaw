@@ -77,7 +77,7 @@ export default function ToolTips({ children, icon, data }) {
                         </button>
                       </div>
                     </Transition.Child>
-                    <div className='flex h-full px-6 flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
+                    <div className='flex h-full px-6 flex-col overflow-y-scroll bg-gray-100 py-6 shadow-xl'>
                       <div className=''>
                         <Dialog.Title className='text-gray-900'>
                           {' '}

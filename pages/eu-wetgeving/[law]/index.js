@@ -38,7 +38,7 @@ export default function LawSummaryPage({ lawData }) {
         <div className='h-[240px] sm:h-[360px] pt-3 bg-green-800'>
           <div className='flex flex-col justify-between global-margin h-full'>
             <div className='pt-6 flex flex-row justify-between'>
-              <div className='p-2xs-bold text-green-600 bg-white w-min pl-2 pr-3 py-1.5 rounded-clSm flex flex-row whitespace-nowrap'>
+              <div className='p-2xs-bold text-green-600 bg-gray-100 w-min pl-2 pr-3 py-1.5 rounded-clSm flex flex-row whitespace-nowrap'>
                 <Link href='/' className=''>
                   <span className='link-interaction'>
                     Home <span className='mx-2'>{'>'}</span>
@@ -67,7 +67,7 @@ export default function LawSummaryPage({ lawData }) {
                 <Link
                   className={`${
                     selectedTab === 'overzicht'
-                      ? 'bg-white text-green-500'
+                      ? 'bg-gray-100 text-green-500'
                       : 'bg-green-500 text-white'
                   }  h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[105px]`}
                   href={{
@@ -80,7 +80,7 @@ export default function LawSummaryPage({ lawData }) {
                 <Link
                   className={`${
                     selectedTab === 'verplichtingen-voor-europese-lidstaten'
-                      ? 'bg-white text-green-500'
+                      ? 'bg-gray-100 text-green-500'
                       : 'bg-green-500 text-white'
                   } h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[200px]`}
                   href={{
@@ -93,7 +93,7 @@ export default function LawSummaryPage({ lawData }) {
                 <Link
                   className={`${
                     selectedTab === 'relevantie-voor-regionale-en-lokale-overheden'
-                      ? 'bg-white text-green-500'
+                      ? 'bg-gray-100 text-green-500'
                       : 'bg-green-500 text-white'
                   } h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[240px]`}
                   href={{
@@ -106,7 +106,7 @@ export default function LawSummaryPage({ lawData }) {
                 <Link
                   className={`${
                     selectedTab === 'relevantie-voor-de-circulaire-economie'
-                      ? 'bg-white text-green-500'
+                      ? 'bg-gray-100 text-green-500'
                       : 'bg-green-500 text-white'
                   } h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[200px]`}
                   href={{

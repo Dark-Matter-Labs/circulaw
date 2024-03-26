@@ -14,7 +14,7 @@ export default function TabButton({
           onClick={onClick}
           className={`${
             selected === name
-              ? 'bg-white text-green-500'
+              ? 'bg-gray-100 text-green-500'
               : 'text-gray-100 bg-green-500 hover:bg-green-400'
           } ${
             numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50 hover:bg-green-500' : ''
@@ -40,7 +40,7 @@ export default function TabButton({
           onClick={onClick}
           className={`${
             selected === name
-              ? 'bg-white text-green-500'
+              ? 'bg-gray-100 text-green-500'
               : 'text-gray-100 bg-green-500 hover:bg-green-400'
           } ${
             numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50 hover:bg-green-500' : ''
@@ -66,7 +66,7 @@ export default function TabButton({
           onClick={onClick}
           className={`${
             selected === name
-              ? 'bg-white text-green-500'
+              ? 'bg-gray-100 text-green-500'
               : 'text-gray-100 bg-green-500 hover:bg-green-400'
           } ${
             numInstrument === 0 ? 'opacity-50 hover:bg-green-500' : ''

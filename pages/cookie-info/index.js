@@ -93,7 +93,7 @@ export default function Privacy() {
                       </th>
                     </tr>
                   </thead>
-                  <tbody className='divide-y divide-gray-200 bg-white'>
+                  <tbody className='divide-y divide-gray-200 bg-gray-100'>
                     {cookies.map((cookie) => (
                       <tr key={cookie.email} className='divide-x divide-gray-200'>
                         <td className='whitespace-nowrap py-4 pl-4 pr-4 text-gray-800 sm:pl-6'>

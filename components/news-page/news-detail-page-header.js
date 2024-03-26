@@ -12,7 +12,7 @@ export default function NewsDetailPageHeader({ cardColour, data }) {
     <>
       <div className={`${cardColour} h-72 my-3`}>
         <div className='flex flex-col justify-between items-start h-full global-margin'>
-          <div className='bg-green-100 h-6 mt-6 flex items-center rounded-clSm'>
+          <div className='bg-gray-100 h-6 mt-6 flex items-center rounded-clSm'>
             <Link
               href='/'
               className='p-2xs-bold flex pl-2 flex-row items-center text-green-600 hover:text-green-300 active:text-green-800'

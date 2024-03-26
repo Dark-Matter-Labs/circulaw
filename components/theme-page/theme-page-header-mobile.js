@@ -20,7 +20,7 @@ export default function ThemePageHeaderMobile({ themaData }) {
         <div className='w-full h-full z-10 flex flex-col justify-between global-margin'>
           <div>
             <div className='pt-8'>
-              <span className='rounded-clSm bg-white pl-2 pr-3 py-1.5 text-green-600 inline-flex flex-row items-center justify-center p-2xs-bold align-middle '>
+              <span className='rounded-clSm bg-gray-100 pl-2 pr-3 py-1.5 text-green-600 inline-flex flex-row items-center justify-center p-2xs-bold align-middle '>
                 <Link
                   className='hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'
                   href='/'

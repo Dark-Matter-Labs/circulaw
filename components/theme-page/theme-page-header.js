@@ -20,7 +20,7 @@ export default function ThemePageHeader({ themaData }) {
 
         <div className='global-margin h-[360px] z-5 relative flex flex-col justify-between'>
           <div className='pt-8'>
-            <span className='p-2xs-bold align-middle rounded-clSm bg-white pl-2 pr-3 py-1.5 text-green-600 inline-flex flex-row items-center justify-center group-hover:text-green-300 group-active:text-green-800 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white'>
+            <span className='p-2xs-bold align-middle rounded-clSm bg-gray-100 pl-2 pr-3 py-1.5 text-green-600 inline-flex flex-row items-center justify-center group-hover:text-green-300 group-active:text-green-800 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white'>
               <Link
                 className='hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'
                 href='/'

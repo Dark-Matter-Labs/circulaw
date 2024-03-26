@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function HighlightCard({ text, number, circleText, icon }) {
   return (
     <>
-      <div className='w-full flex sm:hidden shadow-sm flex-col items-center justify-between bg-white rounded-cl p-4'>
+      <div className='w-full flex sm:hidden shadow-sm flex-col items-center justify-between bg-gray-100 rounded-cl p-4'>
         <div className='w-full flex items-center justify-center text-center'>
           <div className='p-base-semibold mb-4'>{text}</div>
         </div>
@@ -21,7 +21,7 @@ export default function HighlightCard({ text, number, circleText, icon }) {
           </div>
         </div>
       </div>
-      <div className='h-[172px] w-auto hidden sm:flex border shadow-sm flex-row transition-shadow duration-150 items-center justify-between bg-white rounded-cl'>
+      <div className='h-[172px] w-auto hidden sm:flex border shadow-sm flex-row transition-shadow duration-150 items-center justify-between bg-gray-100 rounded-cl'>
         <div className='max-w-[60%]'>
           <div className='w-full mx-4 p-base-semibold'>{text}</div>
         </div>

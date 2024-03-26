@@ -16,7 +16,7 @@ export default function ThemeLayout({ ...props }) {
         {/* HEADER MOBILE */}
         <MobilePageHeader pageTitle={props?.productChainData?.pcName} />
 
-        <div className='bg-white'>
+        <div className='bg-gray-100'>
           <div className='global-margin pb-12 sm:pb-20'>
             <div className='pt-14 pb-0 sm:pb-10'>
               <h2 className='p-6xl-semibold text-green-800 pb-8'>
@@ -70,7 +70,7 @@ export default function ThemeLayout({ ...props }) {
             </div>
           </div>
         </div>
-        <div className='global-margin pt-14 bg-white'>
+        <div className='global-margin pt-14 bg-gray-100'>
           <h2 className='p-6xl-semibold text-green-800 pb-10'>
             {props?.productChainData?.ambitionTitle}
           </h2>

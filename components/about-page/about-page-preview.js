@@ -19,7 +19,7 @@ export default function AboutPagepreview({ query, queryParams }) {
         </div>
         <div className='grid grid-cols-1 w-full lg:grid-cols-3 max-w-8xl'>
           <div className='lg:col-span-2'>
-            <div className='p-2xs-bold text-green-600 bg-white pl-2 pr-3 py-1.5 rounded-clSm mt-6'>
+            <div className='p-2xs-bold text-green-600 bg-gray-100 pl-2 pr-3 py-1.5 rounded-clSm mt-6'>
               <Link href='/' className='link-interaction'>
                 Home<span className='ml-2'>{'>'}</span>
               </Link>

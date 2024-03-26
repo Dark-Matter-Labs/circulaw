@@ -12,7 +12,7 @@ export default function OverviewPageHeader({ props, page }) {
         } global-margin flex flex-col justify-between h-full`}
       >
         <div className='flex flex-col sm:flex-row sm:justify-between sm:items-center pt-4'>
-          <div className='p-2xs-bold text-green-600 bg-white pl-2 pr-3 py-1.5 rounded-clSm flex flex-row w-min'>
+          <div className='p-2xs-bold text-green-600 bg-gray-100 pl-2 pr-3 py-1.5 rounded-clSm flex flex-row w-min'>
             <Link href='/' className=''>
               <span className='link-interaction'>
                 Home<span className='mx-2'>{'>'}</span>

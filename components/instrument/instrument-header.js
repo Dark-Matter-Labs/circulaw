@@ -38,7 +38,7 @@ export default function InstrumentHeader({ data }) {
             <button
               type='button'
               onClick={() => router.back()}
-              className='rounded-clSm bg-white pl-2 pr-3 py-1.5 p-2xs-bold text-green-600'
+              className='rounded-clSm bg-gray-100 pl-2 pr-3 py-1.5 p-2xs-bold text-green-600'
             >
               <span className='link-interaction '>
                 {' '}
