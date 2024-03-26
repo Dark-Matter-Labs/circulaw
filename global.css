@@ -195,17 +195,20 @@
     @apply font-jakarta text-xs font-semibold leading-8;
   }
 
+
   .p-2xs {
     @apply font-jakarta text-xxs font-normal leading-2;
   }
 
   .p-2xs-semibold {
-    @apply font-jakarta text-xxs font-semibold leading-2;
+    @apply p-2xs font-semibold ;
   }
 
   .p-2xs-bold {
-    @apply font-jakarta text-xxs font-bold leading-2;
+    @apply p-2xs font-bold;
   }
+
+  
 
   .link-lg {
     @apply font-jakarta text-xl font-semibold leading-13 underline;
@@ -213,10 +216,6 @@
 
   .link-base {
     @apply font-jakarta text-base font-medium leading-11 underline;
-  }
-
-  .link-base-u0 {
-    @apply font-jakarta text-base font-medium leading-11;
   }
 
   .link-interaction {
@@ -235,29 +234,10 @@
     @apply font-jakarta text-base font-bold leading-10;
   }
 
-  .table-base {
-    @apply font-jakarta text-base font-semibold leading-3;
-  }
-
-  .breadcrumb {
-    @apply font-jakarta text-xs font-medium leading-5 uppercase;
-  }
-
-  .popup-base {
-    @apply font-jakarta text-base font-medium leading-8;
-  }
-
-  .popup-xs {
-    @apply font-jakarta text-xs font-medium leading-6;
-  }
-
   .enLink {
     @apply font-jakarta text-xs font-semibold leading-9;
   }
 
-  .enLinkSelected {
-    @apply font-jakarta text-xs font-extrabold leading-9;
-  }
 }
 
 

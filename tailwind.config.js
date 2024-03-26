@@ -28,7 +28,6 @@ module.exports = {
         'green-500': '#028352',
         'green-600': '#035E46',
         'green-800': '#053237',
-        'breadcrumb': 'rgba(253, 253, 253, 0.10)' // this is gray-100 with 10 opacity. not in ds
       },
       fontFamily: {
         jakarta: ['Plus Jakarta Sans', 'sans-serif']
