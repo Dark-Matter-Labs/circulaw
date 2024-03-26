@@ -7,7 +7,7 @@ export default function ScrollPagesTabContent({ content }) {
   return (
     <>
       <div className='relative'>
-        <div className='[&>*:nth-child(even)]:bg-grey-150 grid'>
+        <div className='[&>*:nth-child(even)]:bg-green-50 grid'>
           {content?.map((section, id) => (
             <Element key={id} className='w-[calc(100vw - 17px)]' id={`${section.title}`}>
               <div className='global-margin'>

@@ -33,7 +33,7 @@ export default function ThemeLayout({ ...props }) {
             </div>
           </div>
         </div>
-        <div className='bg-grey-150'>
+        <div className='bg-green-50'>
           <div className='global-margin'>
             <div className='pt-10 pb-14'>
               <h2 className='p-3xl-semibold sm:p-6xl-semibold text-green-800 mb-14 max-w-2xl'>
@@ -144,7 +144,7 @@ export default function ThemeLayout({ ...props }) {
           )}
         </div>
         {props.links && (
-          <div className='pt-14 pb-10 bg-grey-150'>
+          <div className='pt-14 pb-10 bg-green-50'>
             <div className='global-margin'>
               <h2 className='p-6xl-semibold text-green-800 pb-10'>
                 Duik nog dieper in de materie{' '}

@@ -32,7 +32,7 @@ export default function SummaryComponent({ lawData }) {
       </div>
       {/* tags */}
       {/*  
-      <div className='bg-grey-150 h-[200px]'>
+      <div className='bg-green-50 h-[200px]'>
         <div className='global-margin py-10'>
           <h2 className='text-green-800 p-6xl-semibold'>Relevante termen</h2>
         </div>
@@ -103,7 +103,7 @@ export default function SummaryComponent({ lawData }) {
         </div>
       </div>
       {/* Ovewrview cards and stats */}
-      <div className='bg-grey-150 py-10'>
+      <div className='bg-green-50 py-10'>
         {lawData?.title === 'Corporate Sustainability Reporting Directive (CSRD)' && (
           <Highlights law='CSRD' />
         )}
