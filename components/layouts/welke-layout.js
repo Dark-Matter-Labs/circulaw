@@ -58,7 +58,7 @@ export default function WelkeLayout({ ...props }) {
             <div className='grid col-span-1 items-start justify-center h-full w-80 mt-10'>
               <div
                 id='allId'
-                className='w-80 h-10 border border-green-800 rounded-full text-grey-800 bg-grey-100 flex items-center justify-left'
+                className='w-80 h-10 border border-green-800 rounded-full text-gray-800 bg-gray-100 flex items-center justify-left'
               >
                 <div className='h-10 w-10 border-r border-t border-b border-green-800 rounded-full flex items-center justify-center'>
                   <h5 className='mobile sm:desktop'>A</h5>
@@ -495,10 +495,10 @@ export default function WelkeLayout({ ...props }) {
       {/* TEXT COMPONENT */}
       <div className='global-margin mb-20 mt-4'>
         <div className='max-w-3xl mx-auto'>
-          <p className=' p-lg text-grey-800 pb-6'>{props.p1}</p>
-          {props.p2 !== '' && <p className=' p-lg text-grey-800 pb-6'>{props.p2}</p>}
-          {props.p3 !== '' && <p className=' p-lg text-grey-800 pb-6'>{props.p3}</p>}
-          {props.p4 !== '' && <p className=' p-lg text-grey-800 pb-6'>{props.p4}</p>}
+          <p className=' p-lg text-gray-800 pb-6'>{props.p1}</p>
+          {props.p2 !== '' && <p className=' p-lg text-gray-800 pb-6'>{props.p2}</p>}
+          {props.p3 !== '' && <p className=' p-lg text-gray-800 pb-6'>{props.p3}</p>}
+          {props.p4 !== '' && <p className=' p-lg text-gray-800 pb-6'>{props.p4}</p>}
         </div>
         <div className='sm:hidden'>
           <div className='pb-6'>

@@ -33,30 +33,30 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
                   <div className='flex justify-start items-center -ml-1'>
                     {/* Expertise Tag */}
                     {instrument?.beleid === true && (
-                      <Tag classes='bg-green-500 text-grey-100'>Beleid</Tag>
+                      <Tag classes='bg-green-500 text-gray-100'>Beleid</Tag>
                     )}
                     {instrument?.inkoop === true && (
-                      <Tag classes='bg-green-500 text-grey-100'>Inkoop</Tag>
+                      <Tag classes='bg-green-500 text-gray-100'>Inkoop</Tag>
                     )}
                     {instrument?.grondpositie === true && (
-                      <Tag classes='bg-green-500 text-grey-100'>Grondpositie</Tag>
+                      <Tag classes='bg-green-500 text-gray-100'>Grondpositie</Tag>
                     )}
                     {instrument?.subsidie === true && (
-                      <Tag classes='bg-green-500 text-grey-100'>Subsidie</Tag>
+                      <Tag classes='bg-green-500 text-gray-100'>Subsidie</Tag>
                     )}
                     {instrument?.fiscaal === true && (
-                      <Tag classes='bg-green-500 text-grey-100'>Fiscaal</Tag>
+                      <Tag classes='bg-green-500 text-gray-100'>Fiscaal</Tag>
                     )}
                   </div>
 
                   <div className='block mt-2'>
                     <div className=' mb-2'>
-                      <h3 className='p-4xl-semibold sm:max-w-[650px] text-grey-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+                      <h3 className='p-4xl-semibold sm:max-w-[650px] text-gray-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                         {instrument.titel}{' '}
                       </h3>
                     </div>
 
-                    <div className='block newlineDisplay p-md text-grey-800 mt-2 pb-2'>
+                    <div className='block newlineDisplay p-md text-gray-800 mt-2 pb-2'>
                       <p className='p-base sm:max-w-[650px]'>{instrument.introText}</p>
                     </div>
                     <InstrumentMetaData data={instrument} borders={true} />

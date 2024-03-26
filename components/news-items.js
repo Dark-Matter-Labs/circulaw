@@ -22,7 +22,7 @@ export default function NewsItems({ newsItems }) {
               newsItems[8] === item
                 ? 'bg-green-600'
                 : 'bg-green-800'
-            } h-auto sm:h-[335px] w-full min-w-[270px] max-w-full sm:max-w-[310px] rounded-cl text-grey-100`}
+            } h-auto sm:h-[335px] w-full min-w-[270px] max-w-full sm:max-w-[310px] rounded-cl text-gray-100`}
           >
             {/*  
             {item?.image && (
@@ -59,7 +59,7 @@ export default function NewsItems({ newsItems }) {
               {item.externalLink && (
                 <div className='flex grow'>
                   <Link href={item.externalLink} target='_blank' className='self-end '>
-                    <span className='text-grey-100 inline link-base sm:link-lg break-words hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'>
+                    <span className='text-gray-100 inline link-base sm:link-lg break-words hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'>
                       {item.externalLinkText}
                       <LinkIcon />
                     </span>

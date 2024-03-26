@@ -2,7 +2,7 @@ import { CgInternal } from 'react-icons/cg';
 
 // rename
 export default {
-  title: 'Grey Box dropdown',
+  title: 'Gray Box dropdown',
   name: 'greenBox',
   type: 'object',
   description: 'Gebruik dit voor tekst die je wil benadrukken',

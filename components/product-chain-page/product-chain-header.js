@@ -27,7 +27,7 @@ export default function ThemePageHeader({ pageTitle }) {
           <div className='pb-8 max-w-3xl'>
             <div className=''>
               <h4 className='mobile sm:desktop text-green-300'>Productketen</h4>
-              <h1 className='mobile sm:desktop text-grey-100 inline-block lg'>{pageTitle}</h1>
+              <h1 className='mobile sm:desktop text-gray-100 inline-block lg'>{pageTitle}</h1>
             </div>
           </div>
         </div>

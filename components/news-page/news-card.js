@@ -52,7 +52,7 @@ export default function NewsCard({ data }) {
               </div>
               <div
                 className={`${
-                  data.colour === 'lightGreen' ? 'text-green-800' : 'text-grey-100'
+                  data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
                 } p-4xl-semibold py-0.5`}
               >
                 {data.newsTitle}
@@ -60,7 +60,7 @@ export default function NewsCard({ data }) {
               {data.newsDate && (
                 <div
                   className={`${
-                    data.colour === 'lightGreen' ? 'text-green-800' : 'text-grey-100'
+                    data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
                   } p-xs-semibold`}
                 >
                   {event.toLocaleDateString('nl-NL', options)}
@@ -69,7 +69,7 @@ export default function NewsCard({ data }) {
             </div>
             <div
               className={`${
-                data.colour === 'lightGreen' ? 'text-green-800' : 'text-grey-100'
+                data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
               } p-base`}
             >
               {data.newsText}
@@ -79,7 +79,7 @@ export default function NewsCard({ data }) {
                 className={`${
                   data.colour === 'lightGreen'
                     ? 'text-green-800 group-hover:text-green-200 group-hover:underline active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                    : 'text-grey-100 group-hover:text-green-200 group-hover:underline active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
+                    : 'text-gray-100 group-hover:text-green-200 group-hover:underline active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
                 } self-end p-lg-semibold`}
               >
                 Lees meer {'>'}
@@ -133,7 +133,7 @@ export default function NewsCard({ data }) {
               </div>
               <div
                 className={`${
-                  data.colour === 'lightGreen' ? 'text-green-800' : 'text-grey-100'
+                  data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
                 } p-4xl-semibold py-0.5`}
               >
                 {data.newsTitle}
@@ -141,7 +141,7 @@ export default function NewsCard({ data }) {
               {data.newsDate && (
                 <div
                   className={`${
-                    data.colour === 'lightGreen' ? 'text-green-800' : 'text-grey-100'
+                    data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
                   } p-xs-semibold`}
                 >
                   {event.toLocaleDateString('nl-NL', options)}
@@ -150,7 +150,7 @@ export default function NewsCard({ data }) {
             </div>
             <div
               className={`${
-                data.colour === 'lightGreen' ? 'text-green-800' : 'text-grey-100'
+                data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
               } p-base`}
             >
               {data.newsText}
@@ -160,7 +160,7 @@ export default function NewsCard({ data }) {
                 className={`${
                   data.colour === 'lightGreen'
                     ? 'text-green-800 group-hover:text-green-200 group-hover:underline active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                    : 'text-grey-100 group-hover:text-green-200 group-hover:underline active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
+                    : 'text-gray-100 group-hover:text-green-200 group-hover:underline active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
                 } self-end p-lg-semibold inline-flex flex-row itmes-center`}
               >
                 {data.linkText}{' '}
@@ -172,7 +172,7 @@ export default function NewsCard({ data }) {
                 className={`${
                   data.colour === 'lightGreen'
                     ? 'text-green-800 hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                    : 'text-grey-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
+                    : 'text-gray-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
                 } self-end p-lg-semibold`}
               >
                 Lees meer {'>'}
@@ -221,7 +221,7 @@ export default function NewsCard({ data }) {
             </div>
             <div
               className={`${
-                data.colour === 'lightGreen' ? 'text-green-800' : 'text-grey-100'
+                data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
               } p-4xl-semibold py-0.5`}
             >
               {data.newsTitle}
@@ -229,7 +229,7 @@ export default function NewsCard({ data }) {
             {data.newsDate && (
               <div
                 className={`${
-                  data.colour === 'lightGreen' ? 'text-green-800' : 'text-grey-100'
+                  data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
                 } p-xs-semibold`}
               >
                 {event.toLocaleDateString('nl-NL', options)}
@@ -238,7 +238,7 @@ export default function NewsCard({ data }) {
           </div>
           <div
             className={`${
-              data.colour === 'lightGreen' ? 'text-green-800' : 'text-grey-100'
+              data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
             } p-base`}
           >
             {data.newsText}
@@ -248,7 +248,7 @@ export default function NewsCard({ data }) {
               className={`${
                 data.colour === 'lightGreen'
                   ? 'text-green-800 hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                  : 'text-grey-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
+                  : 'text-gray-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
               } self-end p-lg-semibold inline-flex flex-row itmes-center`}
             >
               {data.linkText}{' '}
@@ -260,7 +260,7 @@ export default function NewsCard({ data }) {
               className={`${
                 data.colour === 'lightGreen'
                   ? 'text-green-800 hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                  : 'text-grey-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
+                  : 'text-gray-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
               } self-end p-lg-semibold`}
             >
               Lees meer {'>'}

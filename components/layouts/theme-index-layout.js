@@ -46,7 +46,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                     </div>
                   </div>
 
-                  <div className='border border-grey-400 bg-grey-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div className='border border-gray-400 bg-gray-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
                       <div className='p-4xl-semibold pb-4'>{thema?.samenhangTitle}</div>
                       <div className='p-base'>{thema?.samenhangText}</div>
@@ -71,7 +71,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                       <Image src={list} alt='' className='h-full w-full' />
                     </div>
                   </div>
-                  <div className='border border-grey-400 bg-grey-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div className='border border-gray-400 bg-gray-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
                       <div className='p-4xl-semibold pb-4'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
                       <div className='p-base'>{thema?.listText}</div>
@@ -99,7 +99,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                       <Image src={waarvoor} alt='' className='h-full w-full' />
                     </div>
                   </div>
-                  <div className='border border-grey-400 bg-grey-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div className='border border-gray-400 bg-gray-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
                       <div className='p-4xl-semibold pb-4'>{thema?.welkeTitle}</div>
                       <div className='p-base'>{thema?.welkeText}</div>
@@ -119,7 +119,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
             <ul className='sm:hidden max-w-sm'>
               <li>
                 <Link href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/categorie`}>
-                  <div className='h-24 w-full rounded-cl bg-grey-50 shadow mb-6'>
+                  <div className='h-24 w-full rounded-cl bg-gray-50 shadow mb-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
                         <Image
@@ -128,7 +128,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           className='w-full h-full rounded-l-cl'
                         />
                       </div>
-                      <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
+                      <div className='text-gray-800 px-4 flex items-center justify-center max-w-[240px]'>
                         <div className='p-2xl-semibold'>Instrumenten per categorie</div>
                         <ArrowRightIcon
                           className='block h-6 w-6 text-green-600 mt-1'
@@ -141,7 +141,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
               </li>
               <li>
                 <Link href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/instrumenten/`}>
-                  <div className='h-24 w-full rounded-cl bg-grey-50 shadow my-6'>
+                  <div className='h-24 w-full rounded-cl bg-gray-50 shadow my-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
                         <Image
@@ -150,7 +150,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           className='w-full h-full rounded-l-cl'
                         />
                       </div>
-                      <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
+                      <div className='text-gray-800 px-4 flex items-center justify-center max-w-[240px]'>
                         <div className='p-2xl-semibold'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
                         <ArrowRightIcon
                           className='block h-6 w-6 text-green-600'
@@ -165,7 +165,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                 <Link
                   href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/overheidsbevoegdheid`}
                 >
-                  <div className='h-24 w-full rounded-cl bg-grey-50 shadow mt-6'>
+                  <div className='h-24 w-full rounded-cl bg-gray-50 shadow mt-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
                         <Image
@@ -174,7 +174,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           className='w-full h-full rounded-l-cl'
                         />
                       </div>
-                      <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
+                      <div className='text-gray-800 px-4 flex items-center justify-center max-w-[240px]'>
                         <div className='p-2xl-semibold'>{thema?.welkeTitle}</div>
                         <ArrowRightIcon
                           className='block h-6 w-6 text-green-600 mt-1'
@@ -187,7 +187,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
               </li>
             </ul>
           </div>
-          <div className='bg-grey-200'>
+          <div className='bg-gray-200'>
             <ThemeBottomSection featuredLaws={featuredLaws} thema={thema} />
           </div>
         </div>

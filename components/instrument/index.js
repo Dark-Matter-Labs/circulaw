@@ -32,9 +32,9 @@ export default function Instrument({ data }) {
   }, []);
 
   return (
-    <div ref={ref} className='relative bg-grey-100'>
+    <div ref={ref} className='relative bg-gray-100'>
       <InstrumentHeader data={data} />
-      <div className='bg-grey-100 relative z-0'>
+      <div className='bg-gray-100 relative z-0'>
         <InstrumentFeedbackBlock data={data} />
         <div className='global-margin sm:mt-4 z-0'>
           {/* Subtitle */}

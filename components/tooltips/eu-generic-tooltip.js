@@ -9,11 +9,11 @@ export default function EUGenericTooltip({ children, title }) {
     <>
       <button
         type='button'
-        className='rounded-md text-grey-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white'
+        className='rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white'
         onClick={() => setOpen(true)}
       >
         <span className='sr-only'>Open ToolTip</span>
-        <svg className='w-6 h-6 fill-current text-grey-20 mb-2' viewBox='0 0 26 26'>
+        <svg className='w-6 h-6 fill-current text-gray-20 mb-2' viewBox='0 0 26 26'>
           <circle cx='12' cy='15' r='10' fill='#676868' />
           <path
             d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
@@ -32,7 +32,7 @@ export default function EUGenericTooltip({ children, title }) {
             leaveFrom='opacity-100'
             leaveTo='opacity-0'
           >
-            <div className='fixed inset-0 bg-grey-500 bg-opacity-75 transition-opacity' />
+            <div className='fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity' />
           </Transition.Child>
 
           <div className='fixed inset-0 overflow-hidden'>
@@ -70,7 +70,7 @@ export default function EUGenericTooltip({ children, title }) {
                     </Transition.Child>
                     <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
                       <div className='px-4 sm:px-6'>
-                        <Dialog.Title className='text-grey-900'>
+                        <Dialog.Title className='text-gray-900'>
                           {' '}
                           <h2 className='mobile sm:desktop'>{title}</h2>
                         </Dialog.Title>

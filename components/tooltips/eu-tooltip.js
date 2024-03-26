@@ -25,7 +25,7 @@ export default function EUTooltip({ children, title }) {
             leaveFrom='opacity-100'
             leaveTo='opacity-0'
           >
-            <div className='fixed inset-0 bg-grey-500 bg-opacity-75 transition-opacity' />
+            <div className='fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity' />
           </Transition.Child>
 
           <div className='fixed inset-0 overflow-hidden'>
@@ -63,7 +63,7 @@ export default function EUTooltip({ children, title }) {
                     </Transition.Child>
                     <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
                       <div className='px-4 sm:px-6'>
-                        <Dialog.Title className='text-grey-900'>
+                        <Dialog.Title className='text-gray-900'>
                           {' '}
                           <h2 className='mobile sm:desktop'>{title}</h2>
                         </Dialog.Title>

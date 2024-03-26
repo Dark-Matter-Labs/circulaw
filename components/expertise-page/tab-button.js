@@ -15,7 +15,7 @@ export default function TabButton({
           className={`${
             selected === name
               ? 'bg-white text-green-500'
-              : 'text-grey-100 bg-green-500 hover:bg-green-400'
+              : 'text-gray-100 bg-green-500 hover:bg-green-400'
           } ${
             numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50 hover:bg-green-500' : ''
           }  p-3 rounded-t-cl flex flex-row items-center`}
@@ -41,7 +41,7 @@ export default function TabButton({
           className={`${
             selected === name
               ? 'bg-white text-green-500'
-              : 'text-grey-100 bg-green-500 hover:bg-green-400'
+              : 'text-gray-100 bg-green-500 hover:bg-green-400'
           } ${
             numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50 hover:bg-green-500' : ''
           }  p-3 rounded-t-cl flex flex-row items-center`}
@@ -67,7 +67,7 @@ export default function TabButton({
           className={`${
             selected === name
               ? 'bg-white text-green-500'
-              : 'text-grey-100 bg-green-500 hover:bg-green-400'
+              : 'text-gray-100 bg-green-500 hover:bg-green-400'
           } ${
             numInstrument === 0 ? 'opacity-50 hover:bg-green-500' : ''
           }  p-3 rounded-t-cl flex flex-row items-center`}

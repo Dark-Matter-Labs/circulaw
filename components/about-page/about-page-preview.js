@@ -10,7 +10,7 @@ export default function AboutPagepreview({ query, queryParams }) {
   return (
     <div>
       <div className='bg-about-header bg-cover bg-center h-40'></div>
-      <div className='pb-8 text-grey-800 global-margin'>
+      <div className='pb-8 text-gray-800 global-margin'>
         <div className='block lg:hidden w-full'>
           <AboutPageDropdown
             currentSlug={data?.aboutPage?.slug.current}
@@ -25,7 +25,7 @@ export default function AboutPagepreview({ query, queryParams }) {
               </Link>
             </div>
             <div className='max-w-3xl'>
-              <h1 className='mobile sm:desktop lg:block sm:pt-10 py-6 sm:pb-10 text-grey-800'>
+              <h1 className='mobile sm:desktop lg:block sm:pt-10 py-6 sm:pb-10 text-gray-800'>
                 {data?.aboutPage?.pageTitle}
               </h1>
               <PortableText

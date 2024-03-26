@@ -224,11 +224,11 @@
   }
 
   .link-interaction-light-green-bg {
-    @apply text-grey-100 hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white
+    @apply text-gray-100 hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white
   }
 
   .link-interaction-dark-bg {
-    @apply text-grey-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white
+    @apply text-gray-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white
   }
 
   .button {

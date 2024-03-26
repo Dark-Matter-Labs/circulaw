@@ -37,8 +37,8 @@ export default function ThemePageHeaderMobile({ themaData }) {
             </div>
           </div>
           <div className='mb-6'>
-            <h1 className='p-5xl-semibold text-gray-50 pb-1'>{themaData?.themaName}</h1>
-            <p className='p-base text-gray-50'>
+            <h1 className='p-5xl-semibold text-gray-100 pb-1'>{themaData?.themaName}</h1>
+            <p className='p-base text-gray-100'>
               {themaData?.themaSubtitle}
               {themaData?.linkText && (
                 <span className='text-white link-base inline-block '>

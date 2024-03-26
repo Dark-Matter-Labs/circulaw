@@ -13,13 +13,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'grey-100': '#FDFDFD',
-        'grey-200': '#F0F0F0', // gray 250 in DS
-        'grey-300': '#DAD8D8',
-        'grey-400': '#BFC0BF',
-        'grey-500': '#A2A3A2',
-        'grey-600': '#676868',
-        'grey-800': '#1F2223',
+        'gray-100': '#FDFDFD',
+        'gray-200': '#F0F0F0', // gray 250 in DS
+        'gray-300': '#DAD8D8',
+        'gray-400': '#BFC0BF',
+        'gray-500': '#A2A3A2',
+        'gray-600': '#676868',
+        'gray-800': '#1F2223',
         'green-50': '#F8FBF8',
         'green-100': '#F9FBF9', // #D1F9EB in design system
         'green-200': '#84E9C5',
@@ -29,7 +29,7 @@ module.exports = {
         'green-500': '#028352',
         'green-600': '#035E46',
         'green-800': '#053237',
-        'breadcrumb': 'rgba(253, 253, 253, 0.10)' // this is grey-100 with 10 opacity. not in ds
+        'breadcrumb': 'rgba(253, 253, 253, 0.10)' // this is gray-100 with 10 opacity. not in ds
       },
       fontFamily: {
         jakarta: ['Plus Jakarta Sans', 'sans-serif']

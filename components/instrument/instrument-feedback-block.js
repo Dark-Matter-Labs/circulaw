@@ -12,19 +12,19 @@ export default function InstrumentFeedbackBlock({ data }) {
           <Popover.Button
             className={`${
               open ? '-translate-x-52 sm:-translate-x-56' : ''
-            } bg-green-500 rounded-l-clSm h-full w-full flex flex-col items-center justify-between text-grey-100`}
+            } bg-green-500 rounded-l-clSm h-full w-full flex flex-col items-center justify-between text-gray-100`}
           >
             <ArrowLeftIcon
               className={`${
                 open ? 'rotate-180 transform' : ''
-              } h-4 w-4 sm:h-6 sm:w-6 text-grey-100 mt-3 sm:mt-10`}
+              } h-4 w-4 sm:h-6 sm:w-6 text-gray-100 mt-3 sm:mt-10`}
             />
             <div className='[writing-mode:vertical-lr] rotate-180 pt-3 sm:pt-10 p-md sm:p-lg'>
               Help ons circulaw te verbeteren
             </div>
           </Popover.Button>
           <Popover.Panel className=''>
-            <div className='w-52 h-72 sm:w-56 sm:h-96 bg-grey-200 -translate-y-72 sm:-translate-y-96 -translate-x-44 sm:-translate-x-40 flex flex-col items-center'>
+            <div className='w-52 h-72 sm:w-56 sm:h-96 bg-gray-200 -translate-y-72 sm:-translate-y-96 -translate-x-44 sm:-translate-x-40 flex flex-col items-center'>
               <div className='px-6 py-4 sm:px-8 sm:py-6'>
                 <h4 className='mobile sm:desktop'>Deel met ons:</h4>
                 <ul className='pb-2 sm:pb-10 sm:pt-4 list-disc p-xs sm:p-md'>

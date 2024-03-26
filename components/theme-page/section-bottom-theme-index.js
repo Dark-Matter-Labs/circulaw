@@ -8,7 +8,7 @@ import InstrumentMetaData from '@/components/instrument/instrument-metadata';
 export default function ThemeBottomSection({ featuredLaws, thema }) {
   return (
     <>
-      <div className='bg-grey-200'>
+      <div className='bg-gray-200'>
         <div className='py-8 global-margin'>
           <h3 className='p-3xl-semibold sm:p-5xl-semibold pb-4 lowercase first-letter:uppercase'>
             {thema?.featuredInstrumentTitle}
@@ -34,30 +34,30 @@ export default function ThemeBottomSection({ featuredLaws, thema }) {
                     <div className='flex justify-start items-center -ml-1'>
                       {/* Expertise Tag */}
                       {instrument?.beleid === true && (
-                        <Tag classes='bg-green-500 text-grey-100 mr-2'>Beleid</Tag>
+                        <Tag classes='bg-green-500 text-gray-100 mr-2'>Beleid</Tag>
                       )}
                       {instrument?.inkoop === true && (
-                        <Tag classes='bg-green-500 text-grey-100 mr-2'>Inkoop</Tag>
+                        <Tag classes='bg-green-500 text-gray-100 mr-2'>Inkoop</Tag>
                       )}
                       {instrument?.grondpositie === true && (
-                        <Tag classes='bg-green-500 text-grey-100 mr-2'>Grondpositie</Tag>
+                        <Tag classes='bg-green-500 text-gray-100 mr-2'>Grondpositie</Tag>
                       )}
                       {instrument?.subsidie === true && (
-                        <Tag classes='bg-green-500 text-grey-100 mr-2'>Subsidie</Tag>
+                        <Tag classes='bg-green-500 text-gray-100 mr-2'>Subsidie</Tag>
                       )}
                       {instrument?.fiscaal === true && (
-                        <Tag classes='bg-green-500 text-grey-100 mr-2'>Fiscaal</Tag>
+                        <Tag classes='bg-green-500 text-gray-100 mr-2'>Fiscaal</Tag>
                       )}
                     </div>
 
                     <div className='block mt-2 max-w-4xl'>
                       <div className='mb-2'>
-                        <h3 className='p-4xl-semibold max-w-[650px] text-grey-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+                        <h3 className='p-4xl-semibold max-w-[650px] text-gray-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                           {instrument?.titel}{' '}
                         </h3>
                       </div>
 
-                      <div className='block newlineDisplay p-md text-grey-800 mt-2 pb-2  '>
+                      <div className='block newlineDisplay p-md text-gray-800 mt-2 pb-2  '>
                         <p className='p-base max-w-[650px]'>{instrument?.introText}</p>
                       </div>
                       <InstrumentMetaData data={instrument} borders={true} />

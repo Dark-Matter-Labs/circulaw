@@ -39,12 +39,12 @@ export default function ThemePageHeader({ themaData }) {
 
           <div className='pb-8 max-w-3xl'>
             <div className=''>
-              <h1 className='mobile sm:desktop text-grey-100 inline-block lg mobile sm:desktop'>
+              <h1 className='mobile sm:desktop text-gray-100 inline-block lg mobile sm:desktop'>
                 {themaData?.themaName}
               </h1>
             </div>
             <div className='col-span-7'>
-              <p className='pt-4 text-grey-100 p-lg '>
+              <p className='pt-4 text-gray-100 p-lg '>
                 {themaData?.themaSubtitle}{' '}
                 {themaData?.linkText && (
                   <span className='text-white link-base inline-block hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white group'>

@@ -488,7 +488,7 @@ export default function InstrumentsLayout({ ...props }) {
               leaveFrom='opacity-100'
               leaveTo='opacity-0'
             >
-              <div className='fixed inset-0 bg-grey-600 bg-opacity-75' />
+              <div className='fixed inset-0 bg-gray-600 bg-opacity-75' />
             </Transition.Child>
 
             <div className='fixed inset-0 flex z-40'>
@@ -615,9 +615,9 @@ export default function InstrumentsLayout({ ...props }) {
         <OverviewPageHeader props={props} page='list' />
       </div>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20 lg:border-b lg:border-grey-500 global-margin mt-4'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20 lg:border-b lg:border-gray-500 global-margin mt-4'>
         <div className='hidden lg:block mb-6 self-end'>
-          <h3 className='mobile sm:desktop inline text-grey-800'>Filter op:</h3>{' '}
+          <h3 className='mobile sm:desktop inline text-gray-800'>Filter op:</h3>{' '}
           <span
             onClick={reset}
             className='underline text-green-500 link-hover link-lg float-right mr-8 link-interaction'
@@ -635,11 +635,11 @@ export default function InstrumentsLayout({ ...props }) {
             <div className='max-w-3xl my-5 focus-within:ring-2 focus-within:border-0 focus-within:ring-green-600 border outline-none rounded-cl'>
               <Combobox value={firstLaw} onChange={setFirstLaw}>
                 <div className='flex items-center px-3'>
-                  <SearchIcon className='h-5 w-5 text-grey-500 inline-block' />
+                  <SearchIcon className='h-5 w-5 text-gray-500 inline-block' />
                   <Combobox.Input
                     onChange={(e) => setSearchValue(e.target.value)}
                     autoComplete={'off'}
-                    className='w-full py-2 px-3 outline-none border-0 rounded-cl focus:ring-0 placeholder:text-grey-600 placeholder:italic'
+                    className='w-full py-2 px-3 outline-none border-0 rounded-cl focus:ring-0 placeholder:text-gray-600 placeholder:italic'
                     displayValue={() => searchValue}
                     placeholder='Zoek op trefwoord'
                   />
@@ -778,10 +778,10 @@ export default function InstrumentsLayout({ ...props }) {
           </div>
         </div>
       </div>
-      <div className='lg:hidden py-5 border-b border-grey-500 global-margin'>
+      <div className='lg:hidden py-5 border-b border-gray-500 global-margin'>
         <button
           type='button'
-          className='px-4 max-w-sm inline-flex items-center justify-center border-2 p-2 w-full border-grey-800 rounded-cl focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500 lg:hidden'
+          className='px-4 max-w-sm inline-flex items-center justify-center border-2 p-2 w-full border-gray-800 rounded-cl focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500 lg:hidden'
           onClick={() => setSidebarOpen(true)}
         >
           <span className='sr-only'>Open sidebar</span>
