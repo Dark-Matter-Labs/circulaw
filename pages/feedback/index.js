@@ -79,7 +79,7 @@ export default function Feedback() {
 
   return (
     <Layout title='CircuLaw - Met jouw hulp maken we CircuLaw beter'>
-      <div className='bg-gray-100 sm:bg-device'>
+      <div className='bg-gray-100'>
         <div className='global-margin'>
           {!formStatus ? (
             <>
