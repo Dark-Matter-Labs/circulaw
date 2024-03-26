@@ -79,13 +79,13 @@
   }
 
   /* Figma H6*/
-     h5.desktop {
-      @apply font-jakarta text-xs font-semibold leading-8;
-    }
-  
-    h5.mobile {
-      @apply font-jakarta text-xxs font-bold leading-6;
-    }
+    h5.desktop {
+    @apply font-jakarta text-xs font-semibold leading-8;
+  }
+
+  h5.mobile {
+    @apply font-jakarta text-xxs font-bold leading-6;
+  }
 
     
     .p-7xl-semibold {
@@ -260,6 +260,10 @@
   }
 }
 
+
+
+
+
 body {
   padding-right: 0 !important;
 }
@@ -270,78 +274,27 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#background-video {
-  height: 100vh;
-  width: 100vw;
-  object-fit: cover;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-}
-
-
 .newlineDisplay {
   white-space: break-spaces;
 }
 
-.twoLines {
-  line-height: 1.5em;
-  height: 3em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-
-
-
-.link-hover:hover {
-  cursor: pointer;
-}
-
-.bg-opacity {
-  --tw-bg-opacity: 0.13;
-}
-
-.container {
-  display: inline-flex;
-  align-items: center;
-}
-
-.wrap {
-  word-wrap: break-word;
-}
-
-.gradient-eu-card {
+/* used on EU law card  */
+.gradient-600 {
   background: linear-gradient(71deg, #6CAB93 3.79%, #30BD88 38.64%, #39B086 45.9%, #42D4A8 64.06%, #34C19A 76.4%);
 }
 
-.gradient-overview {
-  background: linear-gradient(rgba(248, 250, 248, 0) 0%, #F8FAF8 30%);
-}
-
-/* RENAME as this is also for Thema Hero */
+/* used for PDF blocks in Portable text */
 .gradient-pdf {
   background: linear-gradient(#042D36 0%, rgba(34, 83, 44, 0) 100%);
 }
 
-.thema-hero-gradient {
-  background: linear-gradient(rgba(34, 83, 44, 0) 0%, #042D36 100%);
-}
 
-
+/* used on gov level page  */
 .overview-radial-gradient {
   background: radial-gradient(rgba(246, 214, 197, 0.3) 100%, rgba(247, 220, 206, 0.41) 89%, rgba(250, 232, 223, 0.62) 66%, 
   rgba(252, 242, 237, 0.78) 45%, rgba(253, 249, 246, 0.9) 26%, rgba(254, 253, 252, 0.97) 10%, #FFFFFF 0%);
 }
 
-.cl-gradient-400 {
-  background: linear-gradient(#CBE0CB 30.21%, rgba(199, 211, 199, 0) );
-}
 
 
 

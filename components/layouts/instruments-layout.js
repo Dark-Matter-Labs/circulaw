@@ -620,7 +620,7 @@ export default function InstrumentsLayout({ ...props }) {
           <h3 className='mobile sm:desktop inline text-gray-800'>Filter op:</h3>{' '}
           <span
             onClick={reset}
-            className='underline text-green-500 link-hover link-lg float-right mr-8 link-interaction'
+            className='underline text-green-500 hover:cursor-pointer link-lg float-right mr-8 link-interaction'
           >
             Wis filters
           </span>
