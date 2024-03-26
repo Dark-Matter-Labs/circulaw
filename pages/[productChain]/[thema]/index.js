@@ -1,9 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, lazy } from 'react';
 import Layout from '@/components/layouts/layout';
 import ThemeLayout from '@/components/layouts/theme-index-layout';
 import { client } from '@/lib/sanity';
-import { themaQueryFunction } from '@/lib/queries';
+import { themaQuery } from '@/lib/queries';
 import SimpleThemaLayout from '@/components/layouts/simple-thema-layout';
+import { PreviewSuspense } from 'next-sanity/preview';
+
+const ThemeLayoutPreview = lazy(() => import('@/components/layouts/theme-index-layout-preview'));
 
 const pathsQuery = `
 *[_type in ["thema", "simpleThema"] && defined(slug.current)]{
@@ -12,28 +15,43 @@ const pathsQuery = `
   }
 `;
 
-export default function ThemeIndexPage({ featuredLaws, thema, length, instruments }) {
+export default function ThemeIndexPage({ preview, data }) {
   useEffect(() => {
     localStorage.clear();
   });
-  if (thema?._type === 'simpleThema') {
+
+  if (preview) {
     return (
-      <Layout title={`${thema?.themaName}`}>
-        <SimpleThemaLayout thema={thema} numberOfLaws={length} instruments={instruments} />
-      </Layout>
+      <>
+        <PreviewSuspense>
+          <Layout>
+            <ThemeLayoutPreview query={themaQuery} queryParams={data?.thema} />
+          </Layout>
+        </PreviewSuspense>
+      </>
     );
   } else {
-    return (
-      <Layout title={`${thema?.themaName}`}>
-        <ThemeLayout
-          featuredLaws={featuredLaws}
-          transitionAgenda={thema?.transitionAgenda}
-          thema={thema}
-          numberOfLaws={length}
-          listTitle={`Lijst van ${length} instrumenten`}
-        />
-      </Layout>
-    );
+    if (data?.themaData?.thema?._type === 'simpleThema') {
+      return (
+        <Layout title={`${data?.themaData?.thema?.themaName}`}>
+          <SimpleThemaLayout
+            thema={data?.themaData?.thema}
+            numberOfLaws={data?.themaData?.length}
+            instruments={data?.themaData?.instruments ?? []}
+          />
+        </Layout>
+      );
+    } else {
+      return (
+        <Layout title={`${data?.themaData?.thema?.themaName}`}>
+          <ThemeLayout
+            featuredLaws={data?.themaData?.featured}
+            thema={data?.themaData?.thema}
+            numberOfLaws={data?.themaData?.length}
+          />
+        </Layout>
+      );
+    }
   }
 }
 
@@ -47,13 +65,13 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params, preview = false }) {
   const thema = { thema: params?.thema ?? '' };
+  if (preview) {
+    return { props: { preview, data: { thema } } };
+  }
 
-  const featuredLaws = await client.fetch(themaQueryFunction().featured, thema);
-  const length = await client.fetch(themaQueryFunction().length, thema);
-  const themaData = await client.fetch(themaQueryFunction().themaQuery, thema);
-  const instruments = await client.fetch(themaQueryFunction().instrumentsQuery, thema);
+  const themaData = await client.fetch(themaQuery, thema);
 
-  return { props: { featuredLaws, thema: themaData, length, instruments }, revalidate: 1 };
+  return { props: { data: { themaData, thema } }, revalidate: 1 };
 }

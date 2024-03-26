@@ -49,7 +49,10 @@ export default function Instrument({ data }) {
           <div className='grid grid-cols-1'>
             <div className='pb-20 max-w-[760px]'>
               <div className=''>
-                <PortableText value={data?.instrument?.content} components={portableTextComponents} />
+                <PortableText
+                  value={data?.instrument?.content}
+                  components={portableTextComponents}
+                />
               </div>
               <InstrumentTable data={data} />
             </div>

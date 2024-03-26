@@ -1,7 +1,7 @@
 import Layout from '/components/layouts/layout';
 import InstrumentsLayout from '@/components/layouts/instruments-layout';
 import { client } from '@/lib/sanity';
-import { themaQueryFunction, instrumentListPageFunction } from '@/lib/queries';
+import { totalNumberOfInstrumentsPerThema, instrumentListPageFunction } from '@/lib/queries';
 
 const pathsQuery = `
 *[_type in ["thema", "simpleThema"] && defined(slug.current)]{
@@ -55,7 +55,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const thema = { thema: params?.thema ?? '' };
 
-  const numberOfInstruments = await client.fetch(themaQueryFunction().length, thema);
+  const numberOfInstruments = await client.fetch(totalNumberOfInstrumentsPerThema, thema);
   const instruments = await client.fetch(instrumentListPageFunction(), thema);
   const themaData = await client.fetch(themaInfo, thema);
 

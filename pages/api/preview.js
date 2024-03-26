@@ -1,4 +1,4 @@
-import { aboutPageQuery, instrumentQuery } from '@/lib/queries';
+import { aboutPageQuery, instrumentQuery, themaQuery } from '@/lib/queries';
 import { client } from '@/lib/sanity';
 // need to edit this to be able to set location to slug:
 function redirectToPreview(res, previewData, Location) {
@@ -19,6 +19,17 @@ export default async function preview(req, res) {
   const aboutPage = await client.fetch(aboutPageQuery, {
     slug: req.query.slug,
   });
+
+  const themaPage = await client.fetch(themaQuery, { thema: req.query.slug });
+
+  if (themaPage) {
+    return redirectToPreview(
+      res,
+      previewData,
+      `/${themaPage.thema.transitionAgenda}/${themaPage.thema.slug.current}`,
+    );
+  }
+
   if (instrument) {
     return redirectToPreview(
       res,

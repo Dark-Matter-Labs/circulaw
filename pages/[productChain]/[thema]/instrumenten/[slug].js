@@ -13,7 +13,7 @@ const InstrumentPreview = lazy(() => import('@/components/instrument/instrument-
 const pathsQuery = `
   *[_type == "instrument" && defined(slug.current)]{
     "slug": slug.current,
-    "thema": thema->.slug.current,
+    "thema": coalesce(*[_id == ("drafts." + ^.thema._ref)][0].slug.current, thema->.slug.current),
     "productChain": transitionAgenda->.slug.current,
   }
   `;
@@ -26,7 +26,10 @@ export default function instrument({ preview, data }) {
       </Layout>
     </PreviewSuspense>
   ) : (
-    <Layout title={data?.instrument?.titel} canonicalUrl={globalMeta.siteUrl + data?.instrument?.slug}>
+    <Layout
+      title={data?.instrument?.titel}
+      canonicalUrl={globalMeta.siteUrl + data?.instrument?.slug}
+    >
       <Instrument data={data} />
     </Layout>
   );
@@ -34,7 +37,6 @@ export default function instrument({ preview, data }) {
 
 export async function getStaticPaths() {
   const paths = await client.fetch(pathsQuery);
-
   return {
     paths: paths.map((path) => ({
       params: { slug: path.slug, thema: path.thema, productChain: path.productChain },
