@@ -10,7 +10,7 @@
     @apply 2xl:mx-auto;
   }
 
-
+/* used in the nav component */
   .global-padding {
     @apply px-4;
     @apply md:px-10;
@@ -18,31 +18,8 @@
     @apply 2xl:px-40
   }
 
-  .global-margin-alternative {
-    @apply mx-8;
-    @apply md:mx-10;
-    @apply lg:ml-10;
-    @apply lg:mr-0;
-    @apply xl:ml-20; 
-    @apply xl:mr-0;
-    @apply 2xl:max-w-7xl; 
-    @apply 2xl:mx-auto;
-  }
 
-  .image-margin {
-    @apply max-w-screen-xl mx-auto;
-  }
-
-  /* Figma H1*/
-  .header-desktop {
-    @apply font-jakarta text-8xl font-semibold leading-17;
-  }
-
-  .header-desktop-mobile {
-    @apply font-jakarta text-5xl font-semibold leading-14;
-  }
-
-   /* Figma H2*/
+  /* Figma H2*/
   h1.desktop {
     @apply font-jakarta text-7xl font-semibold leading-16;
   }
@@ -96,17 +73,7 @@
       @apply font-jakarta text-7xl font-bold leading-16;
     }
 
-  .p-agenda-card-day {
-    @apply font-jakarta text-[88px] font-bold leading-[88px]
-  }
-
-  .p-agenda-card-month {
-    @apply font-jakarta text-[25px] font-bold leading-[40px]
-  }
-
-  .p-agenda-card-year {
-    @apply font-jakarta text-[46px] font-bold leading-[40px] text-justify	
-  }
+ 
 
   .p-6xl-bold {
       @apply font-jakarta text-6xl font-bold leading-14
@@ -156,11 +123,9 @@
     @apply font-jakarta text-xl font-semibold leading-14;
   }
 
-  
   .p-lg {
     @apply font-jakarta text-lg font-normal leading-11;
   }
-
   
   .p-lg-semibold {
     @apply font-jakarta text-lg font-semibold leading-10
@@ -170,7 +135,6 @@
     @apply font-jakarta text-lg font-bold leading-10;
   }
   
-
   .p-base {
     @apply font-jakarta text-base font-normal leading-10
   }
@@ -208,6 +172,28 @@
     @apply p-2xs font-bold;
   }
 
+   /* special fonts */
+   .header-desktop {
+    @apply font-jakarta text-8xl font-semibold leading-17;
+  }
+
+  .header-desktop-mobile {
+    @apply font-jakarta text-5xl font-semibold leading-14;
+  }
+
+  .p-agenda-card-day {
+    @apply font-jakarta text-[88px] font-bold leading-[88px]
+  }
+
+  .p-agenda-card-month {
+    @apply font-jakarta text-[25px] font-bold leading-[40px]
+  }
+
+  .p-agenda-card-year {
+    @apply font-jakarta text-[46px] font-bold leading-[40px] text-justify	
+  }
+
+  /* link fonts -- use the font styles above rather than re-defining these*/
   .link-lg {
     @apply font-jakarta text-xl font-semibold leading-13 underline;
   }
@@ -251,6 +237,8 @@ html {
 .newlineDisplay {
   white-space: break-spaces;
 }
+
+/* CHECK GRADIENTS BY SEARCHING BG_GRAD*/
 
 /* used on EU law card  */
 .gradient-600 {
