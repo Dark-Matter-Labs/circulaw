@@ -21,11 +21,10 @@ module.exports = {
         'gray-600': '#676868',
         'gray-800': '#1F2223',
         'green-50': '#F8FBF8',
-        'green-100': '#F9FBF9', // #D1F9EB in design system
+        'green-100': '#D1F9EB', 
         'green-200': '#84E9C5',
         'green-300': '#25C38B',
         'green-400': '#07B071',
-        'light-green-500': '#00D88A', // not in DS
         'green-500': '#028352',
         'green-600': '#035E46',
         'green-800': '#053237',
