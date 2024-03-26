@@ -29,7 +29,7 @@ export default function ScrollTabMobileMenu({ content }) {
             leaveFrom='opacity-100'
             leaveTo='opacity-0'
           >
-            <div className='fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity' />
+            <div className='fixed inset-0 bg-grey-500 bg-opacity-75 transition-opacity' />
           </Transition.Child>
 
           <div className='fixed inset-0 overflow-hidden'>
@@ -67,7 +67,7 @@ export default function ScrollTabMobileMenu({ content }) {
                     </Transition.Child>
                     <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
                       <div className='px-4 sm:px-6'>
-                        <Dialog.Title className='text-gray-900'>
+                        <Dialog.Title className='text-grey-800'>
                           {' '}
                           <h2 className='p-6xl-semibold my-4'>In deze pagina</h2>
                         </Dialog.Title>

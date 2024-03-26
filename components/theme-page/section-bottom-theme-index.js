@@ -8,7 +8,7 @@ import InstrumentMetaData from '@/components/instrument/instrument-metadata';
 export default function ThemeBottomSection({ featuredLaws, thema }) {
   return (
     <>
-      <div className='bg-gray-200'>
+      <div className='bg-grey-200'>
         <div className='py-8 global-margin'>
           <h3 className='p-3xl-semibold sm:p-5xl-semibold pb-4 lowercase first-letter:uppercase'>
             {thema?.featuredInstrumentTitle}
@@ -34,19 +34,19 @@ export default function ThemeBottomSection({ featuredLaws, thema }) {
                     <div className='flex justify-start items-center -ml-1'>
                       {/* Expertise Tag */}
                       {instrument?.beleid === true && (
-                        <Tag classes='bg-green-500 text-gray-100 mr-2'>Beleid</Tag>
+                        <Tag classes='bg-green-500 text-grey-100 mr-2'>Beleid</Tag>
                       )}
                       {instrument?.inkoop === true && (
-                        <Tag classes='bg-green-500 text-gray-100 mr-2'>Inkoop</Tag>
+                        <Tag classes='bg-green-500 text-grey-100 mr-2'>Inkoop</Tag>
                       )}
                       {instrument?.grondpositie === true && (
-                        <Tag classes='bg-green-500 text-gray-100 mr-2'>Grondpositie</Tag>
+                        <Tag classes='bg-green-500 text-grey-100 mr-2'>Grondpositie</Tag>
                       )}
                       {instrument?.subsidie === true && (
-                        <Tag classes='bg-green-500 text-gray-100 mr-2'>Subsidie</Tag>
+                        <Tag classes='bg-green-500 text-grey-100 mr-2'>Subsidie</Tag>
                       )}
                       {instrument?.fiscaal === true && (
-                        <Tag classes='bg-green-500 text-gray-100 mr-2'>Fiscaal</Tag>
+                        <Tag classes='bg-green-500 text-grey-100 mr-2'>Fiscaal</Tag>
                       )}
                     </div>
 

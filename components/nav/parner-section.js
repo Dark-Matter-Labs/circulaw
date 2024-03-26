@@ -11,12 +11,12 @@ const bordersSmall =
 export default function ParnerSection({ partners, partnerType }) {
   return (
     <>
-      <div className='p-lg-semibold text-gray-100 pl-3 sm:pl-6 lg:pl-8 my-4'>{partnerType}</div>
+      <div className='p-lg-semibold text-grey-100 pl-3 sm:pl-6 lg:pl-8 my-4'>{partnerType}</div>
       <div
         className={`${
           partnerType === 'Financieringspartners'
             ? ''
-            : 'mb-8 sm:mb-12 border-b border-gray-100 sm:pb-8'
+            : 'mb-8 sm:mb-12 border-b border-grey-100 sm:pb-8'
         } grid grid-cols-2 sm:grid-cols-3 gap-x-0.5 gap-y-4 lg:grid-cols-5  `}
       >
         {partners?.map((partner) => (

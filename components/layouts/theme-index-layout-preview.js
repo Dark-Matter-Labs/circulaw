@@ -52,7 +52,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                     </div>
                   </div>
 
-                  <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div className='border border-grey-400 bg-grey-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
                       <div className='p-4xl-semibold pb-4'>{data?.thema?.samenhangTitle}</div>
                       <div className='p-base'>{data?.thema?.samenhangText}</div>
@@ -79,7 +79,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                       <Image src={list} alt='' className='h-full w-full' />
                     </div>
                   </div>
-                  <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div className='border border-grey-400 bg-grey-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
                       <div className='p-4xl-semibold pb-4'>{`Lijst van ${data?.length} instrumenten`}</div>
                       <div className='p-base'>{data?.thema?.listText}</div>
@@ -107,7 +107,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                       <Image src={waarvoor} alt='' className='h-full w-full' />
                     </div>
                   </div>
-                  <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div className='border border-grey-400 bg-grey-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
                       <div className='p-4xl-semibold pb-4'>{data?.thema?.welkeTitle}</div>
                       <div className='p-base'>{data?.thema?.welkeText}</div>
@@ -199,7 +199,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
               </li>
             </ul>
           </div>
-          <div className='bg-gray-200'>
+          <div className='bg-grey-200'>
             <ThemeBottomSection featuredLaws={data?.featured} thema={data?.thema} />
           </div>
         </div>
@@ -239,19 +239,19 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                     <div className='flex justify-start items-center -ml-1'>
                       {/* Expertise Tag */}
                       {instrument?.beleid === true && (
-                        <Tag classes='bg-green-500 text-gray-100'>Beleid</Tag>
+                        <Tag classes='bg-green-500 text-grey-100'>Beleid</Tag>
                       )}
                       {instrument?.inkoop === true && (
-                        <Tag classes='bg-green-500 text-gray-100'>Inkoop</Tag>
+                        <Tag classes='bg-green-500 text-grey-100'>Inkoop</Tag>
                       )}
                       {instrument?.grondpositie === true && (
-                        <Tag classes='bg-green-500 text-gray-100'>Grondpositie</Tag>
+                        <Tag classes='bg-green-500 text-grey-100'>Grondpositie</Tag>
                       )}
                       {instrument?.subsidie === true && (
-                        <Tag classes='bg-green-500 text-gray-100'>Subsidie</Tag>
+                        <Tag classes='bg-green-500 text-grey-100'>Subsidie</Tag>
                       )}
                       {instrument?.fiscaal === true && (
-                        <Tag classes='bg-green-500 text-gray-100'>Fiscaal</Tag>
+                        <Tag classes='bg-green-500 text-grey-100'>Fiscaal</Tag>
                       )}
                     </div>
 

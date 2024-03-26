@@ -80,22 +80,22 @@ export default function Privacy() {
             <div className='inline-block min-w-full py-2 align-middle md:px-6 lg:px-8'>
               <div className='overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-cl'>
                 <table className='min-w-full divide-y divide-green-800'>
-                  <thead className='bg-gray-50'>
-                    <tr className='divide-x divide-gray-200'>
+                  <thead className='bg-grey-50'>
+                    <tr className='divide-x divide-grey-200'>
                       <th scope='col' className='py-3.5 pl-4 pr-4 text-left text-grey-800 sm:pl-6'>
                         Cookie naam
                       </th>
-                      <th scope='col' className='px-4 py-3.5 text-left text-gray-900'>
+                      <th scope='col' className='px-4 py-3.5 text-left text-grey-900'>
                         Beschrijving
                       </th>
-                      <th scope='col' className='px-4 py-3.5 text-left text-gray-900'>
+                      <th scope='col' className='px-4 py-3.5 text-left text-grey-900'>
                         Looptijd
                       </th>
                     </tr>
                   </thead>
-                  <tbody className='divide-y divide-gray-200 bg-white'>
+                  <tbody className='divide-y divide-grey-200 bg-white'>
                     {cookies.map((cookie) => (
-                      <tr key={cookie.email} className='divide-x divide-gray-200'>
+                      <tr key={cookie.email} className='divide-x divide-grey-200'>
                         <td className='whitespace-nowrap py-4 pl-4 pr-4 text-grey-800 sm:pl-6'>
                           {cookie.name}
                         </td>

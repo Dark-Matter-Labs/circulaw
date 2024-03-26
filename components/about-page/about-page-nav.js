@@ -9,7 +9,7 @@ export default function AboutPageNav({ currentSlug, slugs }) {
           className={`${
             slug.slug === currentSlug
               ? 'text-grey-800'
-              : 'text-green-500 hover:bg-gray-50 hover:text-gray-900'
+              : 'text-green-500 hover:bg-green-50 hover:text-grey-800'
           } flex items-center px-3 py-2 breadcrumb bg-grey-100`}
           aria-current={slug.slug ? 'page' : undefined}
         >

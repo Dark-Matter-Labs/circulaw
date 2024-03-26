@@ -124,7 +124,7 @@ export default function Feedback() {
                         id='message'
                         name='message'
                         rows={8}
-                        className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border border-gray-300 rounded-cl'
+                        className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border border-grey-300 rounded-cl'
                         required
                         value={query.message}
                         onChange={handleChange()}
@@ -147,7 +147,7 @@ export default function Feedback() {
                       accept='.png,.jpg,.jpeg,.gif,.pdf'
                       onChange={handleFileChange()}
                     />
-                    <p className='text-gray-500'>
+                    <p className='text-grey-500'>
                       Voeg eventueel een document (PNG, JPG, GIF, PDF) toe om je tip of voorbeeld te
                       illustreren
                     </p>
@@ -164,7 +164,7 @@ export default function Feedback() {
                         name='name'
                         id='first-name'
                         autoComplete='given-name'
-                        className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
+                        className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-grey-300 rounded-cl'
                         value={query.name}
                         onChange={handleChange()}
                         required
@@ -183,13 +183,13 @@ export default function Feedback() {
                         name='email'
                         type='email'
                         autoComplete='email'
-                        className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
+                        className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-grey-300 rounded-cl'
                         aria-describedby='emailHelp'
                         required
                         value={query.email}
                         onChange={handleChange()}
                       />
-                      <p className='text-gray-500'>
+                      <p className='text-grey-500'>
                         Zodat we contact met je kunnen opnemen voor vragen
                       </p>
                     </div>
@@ -206,7 +206,7 @@ export default function Feedback() {
                         name='org'
                         id='company'
                         autoComplete='organization'
-                        className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
+                        className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-grey-300 rounded-cl'
                         value={query.org}
                         onChange={handleChange()}
                         required
@@ -225,7 +225,7 @@ export default function Feedback() {
                         name='role'
                         id='role'
                         autoComplete='role'
-                        className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
+                        className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-grey-300 rounded-cl'
                         value={query.role}
                         onChange={handleChange()}
                         required
@@ -239,7 +239,7 @@ export default function Feedback() {
                   </div>
                   <div className='sm:col-span-2'>
                     <div className=''>
-                      <p className='text-gray-500'>
+                      <p className='text-grey-500'>
                         Door verzenden geef je akkoord dat we je mogen benaderen als we meer vragen
                         hebben of je op de hoogte willen houden van dit instrument. Je gegevens
                         zullen nooit gebruikt worden voor andere doeleinden. Lees onze{' '}

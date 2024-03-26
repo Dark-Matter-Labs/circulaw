@@ -488,7 +488,7 @@ export default function InstrumentsLayout({ ...props }) {
               leaveFrom='opacity-100'
               leaveTo='opacity-0'
             >
-              <div className='fixed inset-0 bg-gray-600 bg-opacity-75' />
+              <div className='fixed inset-0 bg-grey-600 bg-opacity-75' />
             </Transition.Child>
 
             <div className='fixed inset-0 flex z-40'>
@@ -635,7 +635,7 @@ export default function InstrumentsLayout({ ...props }) {
             <div className='max-w-3xl my-5 focus-within:ring-2 focus-within:border-0 focus-within:ring-green-600 border outline-none rounded-cl'>
               <Combobox value={firstLaw} onChange={setFirstLaw}>
                 <div className='flex items-center px-3'>
-                  <SearchIcon className='h-5 w-5 text-gray-500 inline-block' />
+                  <SearchIcon className='h-5 w-5 text-grey-500 inline-block' />
                   <Combobox.Input
                     onChange={(e) => setSearchValue(e.target.value)}
                     autoComplete={'off'}

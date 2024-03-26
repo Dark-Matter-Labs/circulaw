@@ -33,19 +33,19 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
                   <div className='flex justify-start items-center -ml-1'>
                     {/* Expertise Tag */}
                     {instrument?.beleid === true && (
-                      <Tag classes='bg-green-500 text-gray-100'>Beleid</Tag>
+                      <Tag classes='bg-green-500 text-grey-100'>Beleid</Tag>
                     )}
                     {instrument?.inkoop === true && (
-                      <Tag classes='bg-green-500 text-gray-100'>Inkoop</Tag>
+                      <Tag classes='bg-green-500 text-grey-100'>Inkoop</Tag>
                     )}
                     {instrument?.grondpositie === true && (
-                      <Tag classes='bg-green-500 text-gray-100'>Grondpositie</Tag>
+                      <Tag classes='bg-green-500 text-grey-100'>Grondpositie</Tag>
                     )}
                     {instrument?.subsidie === true && (
-                      <Tag classes='bg-green-500 text-gray-100'>Subsidie</Tag>
+                      <Tag classes='bg-green-500 text-grey-100'>Subsidie</Tag>
                     )}
                     {instrument?.fiscaal === true && (
-                      <Tag classes='bg-green-500 text-gray-100'>Fiscaal</Tag>
+                      <Tag classes='bg-green-500 text-grey-100'>Fiscaal</Tag>
                     )}
                   </div>
 

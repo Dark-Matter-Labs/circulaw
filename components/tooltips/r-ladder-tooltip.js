@@ -11,7 +11,7 @@ export default function RLadderTooltip({ children, icon }) {
     <>
       <button
         type='button'
-        className='rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white'
+        className='rounded-md text-grey-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white'
         onClick={() => setOpen(true)}
       >
         <span className='sr-only'>Open ToolTip</span>
@@ -43,7 +43,7 @@ export default function RLadderTooltip({ children, icon }) {
             leaveFrom='opacity-100'
             leaveTo='opacity-0'
           >
-            <div className='fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity' />
+            <div className='fixed inset-0 bg-grey-500 bg-opacity-75 transition-opacity' />
           </Transition.Child>
 
           <div className='fixed inset-0 overflow-hidden'>
@@ -81,7 +81,7 @@ export default function RLadderTooltip({ children, icon }) {
                     </Transition.Child>
                     <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
                       <div className='px-4 sm:px-6'>
-                        <Dialog.Title className='text-gray-900'>
+                        <Dialog.Title className='text-grey-900'>
                           {' '}
                           <h2 className='mobile sm:desktop'>
                             R-ladder: strategieën van circulariteit

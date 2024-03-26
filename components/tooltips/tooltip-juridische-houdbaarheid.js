@@ -9,13 +9,13 @@ export default function ToolTips({ children, icon, data }) {
     <>
       <button
         type='button'
-        className='rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white'
+        className='rounded-md text-grey-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white'
         onClick={() => setOpen(true)}
       >
         <span className='sr-only'>Open ToolTip</span>
         {icon > 0 && (
           <svg
-            className='text-gray-300 w-5 h-5'
+            className='text-grey-300 w-5 h-5'
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 20 20'
             fill='currentColor'
@@ -41,7 +41,7 @@ export default function ToolTips({ children, icon, data }) {
             leaveFrom='opacity-100'
             leaveTo='opacity-0'
           >
-            <div className='fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity' />
+            <div className='fixed inset-0 bg-grey-500 bg-opacity-75 transition-opacity' />
           </Transition.Child>
 
           <div className='fixed inset-0 overflow-hidden'>
@@ -79,7 +79,7 @@ export default function ToolTips({ children, icon, data }) {
                     </Transition.Child>
                     <div className='flex h-full px-6 flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
                       <div className=''>
-                        <Dialog.Title className='text-gray-900'>
+                        <Dialog.Title className='text-grey-900'>
                           {' '}
                           <h2 className='mobile sm:desktop'>Geschatte juridische houdbaarheid</h2>
                         </Dialog.Title>

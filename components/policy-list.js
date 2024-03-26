@@ -17,15 +17,15 @@ export default function PolicyList(props) {
           <div className='block sm:ml-0 mb-10 sm:mb-8 md:max-w-[760px]'>
             <div className='flex justify-start items-center -ml-1'>
               {/* Expertise Tag */}
-              {law?.beleid === true && <Tag classes='bg-green-500 text-gray-100 mr-2'>Beleid</Tag>}
-              {law?.inkoop === true && <Tag classes='bg-green-500 text-gray-100 mr-2'>Inkoop</Tag>}
+              {law?.beleid === true && <Tag classes='bg-green-500 text-grey-100 mr-2'>Beleid</Tag>}
+              {law?.inkoop === true && <Tag classes='bg-green-500 text-grey-100 mr-2'>Inkoop</Tag>}
               {law?.grondpositie === true && (
-                <Tag classes='bg-green-500 text-gray-100 mr-2'>Grondpositie</Tag>
+                <Tag classes='bg-green-500 text-grey-100 mr-2'>Grondpositie</Tag>
               )}
               {law?.subsidie === true && (
-                <Tag classes='bg-green-500 text-gray-100 mr-2'>Subsidie</Tag>
+                <Tag classes='bg-green-500 text-grey-100 mr-2'>Subsidie</Tag>
               )}
-              {law?.fiscaal === true && <Tag classes='bg-green-500 text-gray-100'>Fiscaal</Tag>}
+              {law?.fiscaal === true && <Tag classes='bg-green-500 text-grey-100'>Fiscaal</Tag>}
             </div>
 
             <div className='block mt-2 '>

@@ -52,7 +52,7 @@ export default function NewsCard({ data }) {
               </div>
               <div
                 className={`${
-                  data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
+                  data.colour === 'lightGreen' ? 'text-green-800' : 'text-grey-100'
                 } p-4xl-semibold py-0.5`}
               >
                 {data.newsTitle}
@@ -60,7 +60,7 @@ export default function NewsCard({ data }) {
               {data.newsDate && (
                 <div
                   className={`${
-                    data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
+                    data.colour === 'lightGreen' ? 'text-green-800' : 'text-grey-100'
                   } p-xs-semibold`}
                 >
                   {event.toLocaleDateString('nl-NL', options)}
@@ -69,7 +69,7 @@ export default function NewsCard({ data }) {
             </div>
             <div
               className={`${
-                data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
+                data.colour === 'lightGreen' ? 'text-green-800' : 'text-grey-100'
               } p-base`}
             >
               {data.newsText}
@@ -133,7 +133,7 @@ export default function NewsCard({ data }) {
               </div>
               <div
                 className={`${
-                  data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
+                  data.colour === 'lightGreen' ? 'text-green-800' : 'text-grey-100'
                 } p-4xl-semibold py-0.5`}
               >
                 {data.newsTitle}
@@ -141,7 +141,7 @@ export default function NewsCard({ data }) {
               {data.newsDate && (
                 <div
                   className={`${
-                    data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
+                    data.colour === 'lightGreen' ? 'text-green-800' : 'text-grey-100'
                   } p-xs-semibold`}
                 >
                   {event.toLocaleDateString('nl-NL', options)}
@@ -150,7 +150,7 @@ export default function NewsCard({ data }) {
             </div>
             <div
               className={`${
-                data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
+                data.colour === 'lightGreen' ? 'text-green-800' : 'text-grey-100'
               } p-base`}
             >
               {data.newsText}
@@ -221,7 +221,7 @@ export default function NewsCard({ data }) {
             </div>
             <div
               className={`${
-                data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
+                data.colour === 'lightGreen' ? 'text-green-800' : 'text-grey-100'
               } p-4xl-semibold py-0.5`}
             >
               {data.newsTitle}
@@ -229,7 +229,7 @@ export default function NewsCard({ data }) {
             {data.newsDate && (
               <div
                 className={`${
-                  data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
+                  data.colour === 'lightGreen' ? 'text-green-800' : 'text-grey-100'
                 } p-xs-semibold`}
               >
                 {event.toLocaleDateString('nl-NL', options)}
@@ -238,7 +238,7 @@ export default function NewsCard({ data }) {
           </div>
           <div
             className={`${
-              data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
+              data.colour === 'lightGreen' ? 'text-green-800' : 'text-grey-100'
             } p-base`}
           >
             {data.newsText}

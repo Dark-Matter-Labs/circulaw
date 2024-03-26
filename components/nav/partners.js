@@ -16,7 +16,7 @@ export default function Partners({ footerText }) {
     <div className='bg-green-800 pt-10 pb-2'>
       {router.pathname === '/' && (
         <div className='global-margin pb-12 px-4 lg:pb-16'>
-          <div className='p-6xl-semibold text-gray-100 pl-3 sm:pl-6 lg:pl-8'>Partners</div>
+          <div className='p-6xl-semibold text-grey-100 pl-3 sm:pl-6 lg:pl-8'>Partners</div>
           <ParnerSection partners={data?.developingPartners} partnerType='Ontwikkelpartners' />
           <ParnerSection partners={data?.knowledge} partnerType='Kennispartners' />
           <ParnerSection partners={data?.financingPartners} partnerType='Financieringspartners' />

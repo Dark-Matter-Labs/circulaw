@@ -46,7 +46,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                     </div>
                   </div>
 
-                  <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div className='border border-grey-400 bg-grey-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
                       <div className='p-4xl-semibold pb-4'>{thema?.samenhangTitle}</div>
                       <div className='p-base'>{thema?.samenhangText}</div>
@@ -71,7 +71,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                       <Image src={list} alt='' className='h-full w-full' />
                     </div>
                   </div>
-                  <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div className='border border-grey-400 bg-grey-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
                       <div className='p-4xl-semibold pb-4'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
                       <div className='p-base'>{thema?.listText}</div>
@@ -99,7 +99,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                       <Image src={waarvoor} alt='' className='h-full w-full' />
                     </div>
                   </div>
-                  <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div className='border border-grey-400 bg-grey-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
                       <div className='p-4xl-semibold pb-4'>{thema?.welkeTitle}</div>
                       <div className='p-base'>{thema?.welkeText}</div>
@@ -187,7 +187,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
               </li>
             </ul>
           </div>
-          <div className='bg-gray-200'>
+          <div className='bg-grey-200'>
             <ThemeBottomSection featuredLaws={featuredLaws} thema={thema} />
           </div>
         </div>

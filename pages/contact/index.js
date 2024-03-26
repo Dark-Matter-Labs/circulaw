@@ -75,7 +75,7 @@ export default function Contact() {
                       name='name'
                       id='first-name'
                       autoComplete='given-name'
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
+                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-grey-300 rounded-cl'
                       value={query.name}
                       onChange={handleChange()}
                       required
@@ -92,7 +92,7 @@ export default function Contact() {
                       name='org'
                       id='company'
                       autoComplete='organization'
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
+                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-grey-300 rounded-cl'
                       value={query.org}
                       onChange={handleChange()}
                     />
@@ -109,7 +109,7 @@ export default function Contact() {
                       name='email'
                       type='email'
                       autoComplete='email'
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
+                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-grey-300 rounded-cl'
                       aria-describedby='emailHelp'
                       required
                       value={query.email}
@@ -127,7 +127,7 @@ export default function Contact() {
                       id='message'
                       name='message'
                       rows={4}
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border border-gray-300 rounded-cl'
+                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border border-grey-300 rounded-cl'
                       required
                       value={query.message}
                       onChange={handleChange()}
@@ -141,7 +141,7 @@ export default function Contact() {
                 </div>
                 <div className='sm:col-span-2'>
                   <div className=''>
-                    <p className='text-gray-500'>
+                    <p className='text-grey-500'>
                       Door verzenden geef je akkoord dat we je mogen benaderen als we meer vragen
                       hebben of je op de hoogte willen houden van je vraag of opmerking. Je gegevens
                       zullen nooit gebruikt worden voor andere doeleinden. Lees onze{' '}
