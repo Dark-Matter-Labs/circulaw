@@ -11,7 +11,7 @@ export default function HomepageHeader({ homePageHeader }) {
             <h1 className='block header-desktop-mobile sm:header-desktop'>
               {homePageHeader.headerText}
             </h1>{' '}
-            <h2 className='p-base sm:p-3xl-semibold text-left m-auto sm:text-center mt-2 max-w-sm sm:max-w-full text-gray-200 pt-10 pb-8'>
+            <h2 className='p-base sm:heading-2xl-semibold text-left m-auto sm:text-center mt-2 max-w-sm sm:max-w-full text-gray-200 pt-10 pb-8'>
               {homePageHeader.subHeader}
             </h2>
           </div>

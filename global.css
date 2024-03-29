@@ -20,13 +20,7 @@
 
 
  
-    .heading-5xl {
-      @apply font-jakarta text-7xl leading-16
-    }
-
-    .heading-5xl-semibold {
-      @apply heading-5xl font-semibold 
-    }
+ 
 
     
 
@@ -38,28 +32,8 @@
     .p-6xl-semibold {
       @apply font-jakarta text-6xl font-semibold leading-14
     }
-
-
-
-    .heading-2xl {
-      @apply font-jakarta text-[24px] leading-[34px]
-    }
-
-    .heading-2xl-semibold {
-      @apply heading-2xl font-semibold
-    }
-   
-    /* remove 4xl (23px) and 5xl (25px) and make 24px as per new design system*/
-
-
-  .p-4xl {
-      @apply font-jakarta text-4xl font-normal leading-14;
-    }
-
-  .p-4xl-semibold {
-      @apply font-jakarta text-4xl font-semibold leading-14;
-    }
-
+ 
+  /* this is used on cards and breaks design if we go to 24px */
   .p-3xl {
     @apply font-jakarta text-3xl font-normal leading-14;
   }
@@ -68,6 +42,9 @@
     @apply font-jakarta text-3xl font-semibold leading-14;
   }
 
+  /* here we have 17, 18 and 19px but there is only 16 or 24 in the DS*/
+  /* propose to change heading-xl in DS from 16px to 18px */ 
+  /* replace lg, xl and 2xl with heading xl */ 
   .p-2xl-bold {
     @apply font-jakarta text-2xl font-bold leading-14
   }
@@ -84,16 +61,6 @@
     @apply font-jakarta text-xl font-semibold leading-14;
   }
 
-  /*Need to make this bigger i think. 18px or 17px*/
-  .heading-xl {
-    @apply font-jakarta text-xl leading-12
-  }
-
-  .heading-xl-semibold {
-    @apply heading-xl font-semibold
-  }
-
-  /* Need to delete and replace with heading xl if we can make it bigger. */
   .p-lg {
     @apply font-jakarta text-lg font-normal leading-11;
   }
@@ -106,6 +73,25 @@
     @apply font-jakarta text-lg font-bold leading-10;
   }
 
+
+
+  /* new system */
+  .heading-5xl {
+    @apply font-jakarta text-7xl leading-16
+  }
+
+  .heading-5xl-semibold {
+    @apply heading-5xl font-semibold 
+  }
+
+  .heading-2xl {
+    @apply font-jakarta text-[24px] leading-[34px]
+  }
+
+  .heading-2xl-semibold {
+    @apply heading-2xl font-semibold
+  }
+ 
 
   .p-base {
     @apply font-jakarta text-base font-normal leading-11
