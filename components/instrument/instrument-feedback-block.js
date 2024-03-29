@@ -11,7 +11,7 @@ export default function InstrumentFeedbackBlock({ data }) {
         <>
           <Popover.Button
             className={`${
-              open ? '-translate-x-52 sm:-translate-x-56' : ''
+              open ? '-translate-x-52 sm:-translate-x-60' : ''
             } bg-green-500 rounded-l-clSm h-full w-full flex flex-col items-center justify-between text-gray-100`}
           >
             <ArrowLeftIcon
@@ -19,15 +19,15 @@ export default function InstrumentFeedbackBlock({ data }) {
                 open ? 'rotate-180 transform' : ''
               } h-4 w-4 sm:h-6 sm:w-6 text-gray-100 mt-3 sm:mt-10`}
             />
-            <div className='[writing-mode:vertical-lr] rotate-180 pt-3 sm:pt-10 p-md sm:p-lg'>
+            <div className='[writing-mode:vertical-lr] rotate-180 pt-3 sm:pt-10 p-base sm:p-lg'>
               Help ons circulaw te verbeteren
             </div>
           </Popover.Button>
           <Popover.Panel className=''>
-            <div className='w-52 h-72 sm:w-56 sm:h-96 bg-gray-200 -translate-y-72 sm:-translate-y-96 -translate-x-44 sm:-translate-x-40 flex flex-col items-center'>
+            <div className='w-52 h-72 sm:w-60 sm:h-96 bg-gray-200 -translate-y-72 sm:-translate-y-96 -translate-x-44 sm:-translate-x-44 flex flex-col items-center'>
               <div className='px-6 py-4 sm:px-8 sm:py-6'>
                 <h4 className='mobile sm:desktop'>Deel met ons:</h4>
-                <ul className='pb-2 sm:pb-10 sm:pt-4 list-disc p-xs sm:p-md'>
+                <ul className='pb-2 sm:pb-4 sm:pt-4 list-disc p-xs sm:p-base text-balance'>
                   <li>voorbeelden uit jouw praktijk</li>
                   <li>je tips om toepassing makkelijker te maken</li>
                   <li>de ervaring van jou of andere organisaties met een soortgelijk instrument</li>
@@ -38,7 +38,7 @@ export default function InstrumentFeedbackBlock({ data }) {
                 href={{ pathname: '/feedback', query: { instrument: data?.instrument?.titel } }}
               >
                 <CustomButton color='greenBackground'>
-                  <span className='p-xs font-bold sm:p-md'>Ik deel mijn kennis</span>
+                  <span className='p-xs-bold sm:p-base-bold'>Ik deel mijn kennis</span>
                 </CustomButton>
               </Link>
             </div>

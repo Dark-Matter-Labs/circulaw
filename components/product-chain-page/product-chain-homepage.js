@@ -10,7 +10,7 @@ export default function PCHomePage({ pcData }) {
       <ul className='hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-4 gap-x-4 w-full'>
         {pcData?.map((chain, id) => (
           <Link href={`/${chain.slug}`} key={id}>
-            <li className='group h-96 rounded-cl flex flex-col justify-between relative overflow-hidden max-w-[250px]'>
+            <li className='group h-[400px] rounded-cl flex flex-col justify-between relative overflow-hidden max-w-[250px]'>
               <Image
                 src={urlFor(chain?.image).url()}
                 alt={chain.alt}
@@ -18,7 +18,7 @@ export default function PCHomePage({ pcData }) {
                 height={120}
                 className='h-[37.5%] rounded-t-cl object-cover origin-center group-hover:scale-110 transition-transform duration-300'
               />
-              <div className='bg-green-800 group-hover:bg-green-600 rounded-b-cl py-4 px-6 flex flex-col h-[70%] justify-between group-hover:translate-y-[20px] absolute bottom-0 left-0 transition-all duration-300'>
+              <div className='bg-green-800 group-hover:bg-green-600 rounded-b-cl pb-4 pt-2 px-6 flex flex-col h-[72%] justify-between group-hover:translate-y-[20px] absolute bottom-0 left-0 transition-all duration-300'>
                 <div className='divide-y-[0.5px] divide-green-600 group-hover:divide-gray-100 group-hover:-translate-y-[20px] transition-all duration-300 h-[180px] flex flex-col justify-center origin-center'>
                   <div className='p-3xl-semibold text-white h-1/2 pb-3 w-full flex items-end break-words transition duration-300'>
                     <div
@@ -33,7 +33,7 @@ export default function PCHomePage({ pcData }) {
                       )}
                     </div>
                   </div>
-                  <div className='text-green-200 p-md pt-3 h-1/2 transition duration-300'>
+                  <div className='text-green-200 p-base pt-3 h-1/2 transition duration-300'>
                     {chain.cardText}
                   </div>
                 </div>

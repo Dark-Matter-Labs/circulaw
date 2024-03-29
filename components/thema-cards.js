@@ -14,7 +14,7 @@ export default function ThemaCard({ themaCards }) {
         >
           {themaCards?.map((thema, id) => (
             <Link href={`/${thema.transitionAgenda}/${thema.slug}`} key={id}>
-              <li className='relative w-full rounded-cl h-[420px] group overflow-hidden flex flex-col shadow-lg'>
+              <li className='relative w-full rounded-cl h-[470px] group overflow-hidden flex flex-col shadow-lg'>
                 <div className='object-cover rounded-cl w-full max-h-[180px]'>
                   {thema?.image && (
                     <Image
@@ -30,8 +30,8 @@ export default function ThemaCard({ themaCards }) {
                   <h3 className='mobile sm:desktop text-gray-100 pointer-events-none hidden sm:inline'>
                     {thema.themaName}
                   </h3>
-                  <p className='p-md text-green-200 pb-2'>{thema.count} instrumenten</p>
-                  <p className='p-md text-gray-100 w-full'>{thema.homePageCardText}</p>
+                  <p className='p-base text-green-200 pb-2'>{thema.count} instrumenten</p>
+                  <p className='p-base text-gray-100 w-full'>{thema.homePageCardText}</p>
                   <div className='flex justify-end flex-grow items-end'>
                     <div className='h-12 w-12 rounded-full flex items-center justify-center border-2 border-gray-200 group-hover:border-green-200 bg-transparent group-hover:bg-green-200 active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white self-end  text-gray-200 group-hover:text-green-600'>
                       <ArrowRightIcon className='inline-block h-5 w-5' aria-hidden='true' />
@@ -41,15 +41,15 @@ export default function ThemaCard({ themaCards }) {
               </li>
             </Link>
           ))}
-          <li className='w-full h-[420px] flex-grow bg-green-50 border border-gray-200 rounded-cl group'>
+          <li className='w-full h-[470px] flex-grow bg-green-50 border border-gray-200 rounded-cl group'>
             <Link href='/contact' className='w-full h-full'>
               <div className='h-full w-full flex flex-col flex-grow p-8 justify-between'>
                 <h3 className='mobile sm:desktop text-green-600'>Nieuwe thema’s</h3>
                 <div>
-                  <p className='p-md pt-4 text-green-800'>
+                  <p className='p-base pt-4 text-green-800'>
                     Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
                   </p>
-                  <p className='p-md pt-4 text-grenn-800'>
+                  <p className='p-base pt-4 text-grenn-800'>
                     Schrijf je in op onze nieuwsbrief en blijf op de hoogte van de laatste
                     ontwikkelingen.
                   </p>
@@ -77,7 +77,7 @@ export default function ThemaCard({ themaCards }) {
                 </div>
                 <div className='text-gray-100 pl-4'>
                   <h3 className='p-4xl-semibold'>{thema.themaName}</h3>
-                  <p className='p-md text-green-200'>{thema.count} instrumenten</p>
+                  <p className='p-base text-green-200'>{thema.count} instrumenten</p>
                 </div>
               </div>
             </div>

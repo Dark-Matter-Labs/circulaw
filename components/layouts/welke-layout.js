@@ -502,7 +502,7 @@ export default function WelkeLayout({ ...props }) {
         </div>
         <div className='sm:hidden'>
           <div className='pb-6'>
-            <p className='p-md italic'>
+            <p className='p-base italic'>
               Bekijk deze afbeelding door in te zoomen of bekijk de site op een groter scherm
             </p>
           </div>

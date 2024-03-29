@@ -66,7 +66,7 @@ export default function Footer(props) {
                           buttonText='Neem contact op'
                           buttonLink='/contact'
                         />
-                        <div className='block sm:hidden pt-6 p-md text-gray-100 '>
+                        <div className='block sm:hidden pt-6 p-base text-gray-100 '>
                           <h3 className='mobile sm:desktop inline-block'>Volg ons op:</h3>
                           <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
                             <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
@@ -94,7 +94,7 @@ export default function Footer(props) {
                           <ul role='list' className='mt-4 space-y-4'>
                             {navigation.thema?.map((thema) => (
                               <li key={thema.name}>
-                                <a href={thema.slug} className='p-md text-gray-100'>
+                                <a href={thema.slug} className='p-base text-gray-100'>
                                   <span className='inline-block first-letter:uppercase link-interaction-light-green-bg'>
                                     {thema.name}
                                   </span>
@@ -114,7 +114,7 @@ export default function Footer(props) {
                                 <li key={slug.slug}>
                                   <a
                                     href={`/over/${encodeURIComponent(slug.slug)}`}
-                                    className='p-md text-gray-100'
+                                    className='p-base text-gray-100'
                                   >
                                     <span className='inline-block first-letter:uppercase link-interaction-light-green-bg'>
                                       {slug.title.replaceAll('-', ' ')}
@@ -129,7 +129,7 @@ export default function Footer(props) {
                         <ul role='list' className='space-y-4'>
                           <li>
                             <a
-                              className='p-md text-gray-100 link-interaction'
+                              className='p-base text-gray-100 link-interaction'
                               href={`/${encodeURIComponent(FAQslug)}`}
                             >
                               {FAQslug.length > 0 && (
@@ -141,7 +141,7 @@ export default function Footer(props) {
                           </li>
                           {navigation.other.map((item) => (
                             <li key={item.name}>
-                              <a href={item.href} className=' p-md link-interaction-light-green-bg'>
+                              <a href={item.href} className=' p-base link-interaction-light-green-bg'>
                                 {item.name}
                               </a>
                             </li>
@@ -158,14 +158,14 @@ export default function Footer(props) {
                           buttonText='Neem contact op'
                           buttonLink='/contact'
                         />
-                        <div className='flex sm:block py-6 p-md text-gray-100 items-center justify-center z-0 relative'>
+                        <div className='flex sm:block py-6 p-base text-gray-100 items-center justify-center z-0 relative'>
                           <h3 className='inline-block mobile sm:desktop'>Volg ons op:</h3>
-                          <span data-text='Volg ons op LinkedIn' className='tooltip p-md z-40'>
+                          <span data-text='Volg ons op LinkedIn' className='tooltip p-base z-40'>
                             <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
                               <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-200 mb-1.5' />
                             </Link>
                           </span>
-                          <span data-text='Volg ons op GitHub' className='tooltip p-md z-30'>
+                          <span data-text='Volg ons op GitHub' className='tooltip p-base z-30'>
                             <Link
                               href='https://github.com/Dark-Matter-Labs/circulaw'
                               target='_blank'
@@ -173,7 +173,7 @@ export default function Footer(props) {
                               <AiFillGithub className='inline-block ml-3 h-6 w-6 hover:text-green-200 mb-1.5' />
                             </Link>
                           </span>
-                          <span data-text='Volg ons op OpenResearch' className='tooltip p-md'>
+                          <span data-text='Volg ons op OpenResearch' className='tooltip p-base'>
                             <Link
                               href='https://openresearch.amsterdam/nl/page/89270/circulaw---circulaire-regelgevingstool'
                               target='_blank'

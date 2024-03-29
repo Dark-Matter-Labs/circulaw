@@ -18,7 +18,6 @@
     @apply 2xl:px-40
   }
 
-
   /* Figma H2*/
   h1.desktop {
     @apply font-jakarta text-7xl font-semibold leading-16;
@@ -74,7 +73,6 @@
     }
 
  
-
   .p-6xl-bold {
       @apply font-jakarta text-6xl font-bold leading-14
     }
@@ -123,6 +121,15 @@
     @apply font-jakarta text-xl font-semibold leading-14;
   }
 
+  .heading-xl {
+    @apply font-jakarta text-xl leading-12
+  }
+
+  .heading-xl-semibold {
+    @apply heading-xl font-semibold
+  }
+
+  /* Need to delete */
   .p-lg {
     @apply font-jakarta text-lg font-normal leading-11;
   }
@@ -134,21 +141,18 @@
   .p-lg-bold {
     @apply font-jakarta text-lg font-bold leading-10;
   }
-  
+
+
   .p-base {
-    @apply font-jakarta text-base font-normal leading-10
+    @apply font-jakarta text-base font-normal leading-11
   }
 
   .p-base-semibold {
-    @apply font-jakarta text-base font-semibold leading-10
+    @apply p-base font-semibold
   }
 
   .p-base-bold {
-    @apply font-jakarta text-base font-bold leading-10
-  }
-
-  .p-md {
-    @apply font-jakarta text-sm font-normal leading-9;
+    @apply p-base text-base font-bold
   }
 
   .p-xs {
@@ -156,7 +160,11 @@
   }
 
   .p-xs-semibold {
-    @apply font-jakarta text-xs font-semibold leading-8;
+    @apply p-xs font-semibold;
+  }
+
+  .p-xs-bold {
+    @apply p-xs font-bold;
   }
 
 

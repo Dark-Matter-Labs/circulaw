@@ -93,7 +93,7 @@ export default function SocialButtons({ title, viewport }) {
           }}
         />
       </span>
-      {showLinkCopied && <p className='p-md text-gray-100'>Link gekopieerd!</p>}
+      {showLinkCopied && <p className='p-base text-gray-100'>Link gekopieerd!</p>}
     </div>
   );
 }

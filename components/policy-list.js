@@ -34,7 +34,7 @@ export default function PolicyList(props) {
                   {law.titel}{' '}
                 </h3>
               </div>
-              <div className='block  newlineDisplay p-md text-gray-800 mt-2 pb-2'>
+              <div className='block  newlineDisplay p-base text-gray-800 mt-2 pb-2'>
                 <p className='p-base max-w-[650px]'>{law.introText}</p>
               </div>
               <InstrumentMetaData data={law} borders={true} />

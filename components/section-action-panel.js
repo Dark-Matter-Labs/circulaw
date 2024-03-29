@@ -9,7 +9,7 @@ export default function ActionPanel(props) {
         <h3 className='p-2xl-semibold text-green-200'>{props.title}</h3>
         <div className=''>
           <div>
-            <div className='mt-2 max-w-xl  p-md text-gray-100'>{props.paragraph}</div>
+            <div className='mt-2 max-w-xl p-base text-gray-100'>{props.paragraph}</div>
           </div>
           <div className='mt-5'>
             <Link href={props.buttonLink}>

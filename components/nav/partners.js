@@ -22,7 +22,7 @@ export default function Partners({ footerText }) {
           <ParnerSection partners={data?.financingPartners} partnerType='Financieringspartners' />
         </div>
       )}
-      <div className='global-margin pb-2 text-gray-100 p-md'>
+      <div className='global-margin pb-2 text-gray-100 p-base'>
         {router.pathname === '/en' && (
           <p className='pb-8'>
             Welcome to CircuLaw. This website is currently under development and in this version we
