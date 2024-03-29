@@ -19,7 +19,7 @@ export default function MobileFeedback({ data }) {
           <Popover.Panel className={`${open ? '-translate-y-64' : ''} w-full h-64`}>
             <div className=' bg-gray-200 flex flex-col items-center h-full justify-between py-4 px-8'>
               <div className=''>
-                <h4 className='p-lg-bold'>Deel met ons:</h4>
+                <h4 className='heading-xl-semibold'>Deel met ons:</h4>
                 <ul className='list-disc p-base'>
                   <li>voorbeelden uit jouw praktijk</li>
                   <li>je tips om toepassing makkelijker te maken</li>

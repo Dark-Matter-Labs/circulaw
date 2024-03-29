@@ -80,7 +80,7 @@ export default function NewsCard({ data }) {
                   data.colour === 'lightGreen'
                     ? 'text-green-800 group-hover:text-green-200 group-hover:underline active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
                     : 'text-gray-100 group-hover:text-green-200 group-hover:underline active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
-                } self-end p-lg-semibold`}
+                } self-end heading-xl-semibold`}
               >
                 Lees meer {'>'}
               </div>
@@ -161,7 +161,7 @@ export default function NewsCard({ data }) {
                   data.colour === 'lightGreen'
                     ? 'text-green-800 group-hover:text-green-200 group-hover:underline active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
                     : 'text-gray-100 group-hover:text-green-200 group-hover:underline active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
-                } self-end p-lg-semibold inline-flex flex-row itmes-center`}
+                } self-end heading-xl-semibold inline-flex flex-row itmes-center`}
               >
                 {data.linkText}{' '}
                 {data.internalExternal === true ? <LinkIcon /> : <span>&nbsp;{'>'}</span>}
@@ -173,7 +173,7 @@ export default function NewsCard({ data }) {
                   data.colour === 'lightGreen'
                     ? 'text-green-800 hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
                     : 'text-gray-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
-                } self-end p-lg-semibold`}
+                } self-end heading-xl-semibold`}
               >
                 Lees meer {'>'}
               </div>
@@ -249,7 +249,7 @@ export default function NewsCard({ data }) {
                 data.colour === 'lightGreen'
                   ? 'text-green-800 hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
                   : 'text-gray-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
-              } self-end p-lg-semibold inline-flex flex-row itmes-center`}
+              } self-end heading-xl-semibold inline-flex flex-row itmes-center`}
             >
               {data.linkText}{' '}
               {data.internalExternal === true ? <LinkIcon /> : <span>&nbsp;{'>'}</span>}
@@ -261,7 +261,7 @@ export default function NewsCard({ data }) {
                 data.colour === 'lightGreen'
                   ? 'text-green-800 hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
                   : 'text-gray-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
-              } self-end p-lg-semibold`}
+              } self-end heading-xl-semibold`}
             >
               Lees meer {'>'}
             </div>

@@ -32,7 +32,7 @@ export default function Index({
           <h2 className='heading-2xl-semibold sm:heading-5xl-semibold pt-8 text-green-600 border-gray-600 border-b pb-6'>
             Ontdek direct onze instrumenten
           </h2>
-          <p className='p-xl max-w-[750px] py-4 whitespace-normal'>
+          <p className='heading-xl max-w-[750px] py-4 whitespace-normal'>
             De overheid heeft 5 productketens gekozen voor het{' '}
             <Link
               className='whitespace-normal text-green-500'

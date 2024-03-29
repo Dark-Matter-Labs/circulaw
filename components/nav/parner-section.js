@@ -11,7 +11,7 @@ const bordersSmall =
 export default function ParnerSection({ partners, partnerType }) {
   return (
     <>
-      <div className='p-lg-semibold text-gray-100 pl-3 sm:pl-6 lg:pl-8 my-4'>{partnerType}</div>
+      <div className='heading-xl-semibold text-gray-100 pl-3 sm:pl-6 lg:pl-8 my-4'>{partnerType}</div>
       <div
         className={`${
           partnerType === 'Financieringspartners'

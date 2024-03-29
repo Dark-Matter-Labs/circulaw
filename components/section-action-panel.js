@@ -6,7 +6,7 @@ export default function ActionPanel(props) {
   return (
     <div className=''>
       <div className=''>
-        <h3 className='p-2xl-semibold text-green-200'>{props.title}</h3>
+        <h3 className='heading-xl-semibold text-green-200'>{props.title}</h3>
         <div className=''>
           <div>
             <div className='mt-2 max-w-xl p-base text-gray-100'>{props.paragraph}</div>

@@ -19,7 +19,7 @@ export default function InstrumentFeedbackBlock({ data }) {
                 open ? 'rotate-180 transform' : ''
               } h-4 w-4 sm:h-6 sm:w-6 text-gray-100 mt-3 sm:mt-10`}
             />
-            <div className='[writing-mode:vertical-lr] rotate-180 pt-3 sm:pt-10 p-base sm:p-lg'>
+            <div className='[writing-mode:vertical-lr] rotate-180 pt-3 sm:pt-10 p-base sm:heading-xl'>
               Help ons circulaw te verbeteren
             </div>
           </Popover.Button>

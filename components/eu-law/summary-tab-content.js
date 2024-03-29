@@ -46,7 +46,7 @@ export default function SummaryComponent({ lawData }) {
             <div className='place-items-center mt-3 ml-2'>
               <EUGenericTooltip title='Welke statussen zijn er?'>
                 <div>
-                  <h3 className='mb-4 p-2xl-semibold'>1: In onderhandeling</h3>
+                  <h3 className='mb-4 heading-xl-semibold'>1: In onderhandeling</h3>
                   <p className='p-base mb-2'>
                     De Europese Commissie komt met een nieuw initiatief voor een nieuwe wet of een
                     wijziging van een bestaande wet. Burgers, bedrijven en organisaties kunnen op
@@ -59,7 +59,7 @@ export default function SummaryComponent({ lawData }) {
                     (amendementen) voorstellen. Op deze manier wordt over de definitieve tekst van
                     een wet onderhandeld.
                   </p>
-                  <h3 className='my-4 p-2xl-semibold'>2: Aangenomen</h3>
+                  <h3 className='my-4 heading-xl-semibold'>2: Aangenomen</h3>
                   <p className='p-base mb-2'>
                     De Europese Commissie, Europees Parlement en de Raad van de Europese Unie
                     bereiken overeenstemming over de definitieve tekst van het wetsvoorstel.
@@ -68,7 +68,7 @@ export default function SummaryComponent({ lawData }) {
                     wanneer zij van mening is dat het voorstel te ingrijpend is gewijzigd naar
                     aanleiding van alle amendementen.
                   </p>
-                  <h3 className='my-4 p-2xl-semibold'>3: Implementatie</h3>
+                  <h3 className='my-4 heading-xl-semibold'>3: Implementatie</h3>
                   <p className='p-base mb-2'>
                     Als een nieuwe of gewijzigde wet een richtlijn is, dan moet de lidstaat de
                     richtlijn implementeren in nationale wet- en regelgeving. Dit kan door nieuwe

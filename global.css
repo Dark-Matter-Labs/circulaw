@@ -64,36 +64,7 @@ h4.mobile {
   }
 
 
-  /* here we have 17, 18 and 19px but there is only 16 or 24 in the DS*/
-  /* propose to change heading-xl in DS from 16px to 18px */ 
-  /* replace lg, xl and 2xl with heading xl */ 
-  .p-2xl-bold {
-    @apply font-jakarta text-2xl font-bold leading-14
-  }
 
-  .p-2xl-semibold {
-    @apply font-jakarta text-2xl font-semibold leading-10
-  }
-
-  .p-xl {
-    @apply font-jakarta text-xl font-normal leading-14;
-  }
-
-  .p-xl-semibold {
-    @apply font-jakarta text-xl font-semibold leading-14;
-  }
-
-  .p-lg {
-    @apply font-jakarta text-lg font-normal leading-11;
-  }
-  
-  .p-lg-semibold {
-    @apply font-jakarta text-lg font-semibold leading-10
-  }
-
-  .p-lg-bold {
-    @apply font-jakarta text-lg font-bold leading-10;
-  }
 
 
 
@@ -101,7 +72,6 @@ h4.mobile {
   /*
   heading 6xl is special font only used for header on homepage. 
   */
-
 
   .heading-5xl {
     @apply font-jakarta text-7xl leading-16
@@ -135,11 +105,13 @@ h4.mobile {
     @apply heading-2xl font-semibold
   }
 
-  /*
-  heading xl
-  need to confirm that this can be 18px 
-  if so remove p-lg, p-xl, p-2xl (17, 18 and 19px)
-  */
+  .heading-xl {
+    @apply font-jakarta text-[18px] leading-12
+  }
+
+  .heading-xl-semibold {
+    @apply heading-xl font-semibold
+  }
  
   .p-base {
     @apply font-jakarta text-base font-normal leading-11

@@ -315,7 +315,7 @@ export default function Nav(props) {
                                   <Disclosure.Button
                                     className={`${
                                       open ? 'text-green-500' : 'text-green-800'
-                                    } py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
+                                    } py-4 w-full text-left heading-xl-semibold flex flex-row items-center`}
                                   >
                                     Productketens
                                     <ChevronDownIcon
@@ -358,7 +358,7 @@ export default function Nav(props) {
                                   <Disclosure.Button
                                     className={`${
                                       open ? 'text-green-500' : 'text-green-800'
-                                    }  border-t py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
+                                    }  border-t py-4 w-full text-left heading-xl-semibold flex flex-row items-center`}
                                   >
                                     Over CircuLaw
                                     <ChevronDownIcon

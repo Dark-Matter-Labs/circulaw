@@ -44,7 +44,7 @@ export default function ThemePageHeader({ themaData }) {
               </h1>
             </div>
             <div className='col-span-7'>
-              <p className='pt-4 text-gray-100 p-lg '>
+              <p className='pt-4 text-gray-100 heading-xl '>
                 {themaData?.themaSubtitle}{' '}
                 {themaData?.linkText && (
                   <span className='text-white link-base inline-block hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white group'>

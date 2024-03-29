@@ -82,7 +82,7 @@ export default function ScrollTabMobileMenu({ content }) {
                                 duration={500}
                                 offset={-135}
                                 spy={true}
-                                activeClass='bg-green-500 text-gray-100 font-semibold transition-all duration-100'
+                                activeClass='bg-green-500 text-[#FDFDFD] font-semibold transition-all duration-100'
                                 className='p-base text-green-800 py-2 pl-4 pr-8 h-full break-words rounded-cl whitespace-nowrap cursor-pointer'
                                 onClick={() => setOpen(false)}
                               >

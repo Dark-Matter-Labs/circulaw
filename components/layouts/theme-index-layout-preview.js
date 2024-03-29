@@ -139,7 +139,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                         />
                       </div>
                       <div className='text-gray-800 px-4 flex items-center justify-center max-w-[240px]'>
-                        <div className='p-2xl-semibold'>Instrumenten per categorie</div>
+                        <div className='heading-xl-semibold'>Instrumenten per categorie</div>
                         <ArrowRightIcon
                           className='block h-6 w-6 text-green-600 mt-1'
                           aria-hidden='true'
@@ -163,7 +163,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                         />
                       </div>
                       <div className='text-gray-800 px-4 flex items-center justify-center max-w-[240px]'>
-                        <div className='p-2xl-semibold'>{`Lijst van ${data?.length} instrumenten`}</div>
+                        <div className='heading-xl-semibold'>{`Lijst van ${data?.length} instrumenten`}</div>
                         <ArrowRightIcon
                           className='block h-6 w-6 text-green-600'
                           aria-hidden='true'
@@ -187,7 +187,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                         />
                       </div>
                       <div className='text-gray-800 px-4 flex items-center justify-center max-w-[240px]'>
-                        <div className='p-2xl-semibold'>{data?.thema?.welkeTitle}</div>
+                        <div className='heading-xl-semibold'>{data?.thema?.welkeTitle}</div>
                         <ArrowRightIcon
                           className='block h-6 w-6 text-green-600 mt-1'
                           aria-hidden='true'

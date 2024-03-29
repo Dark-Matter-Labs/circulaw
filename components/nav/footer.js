@@ -89,7 +89,7 @@ export default function Footer(props) {
                         </div>
                       </div>
                       <div className=' border-b border-gray-100 sm:border-0 py-2 sm:py-0'>
-                        <h4 className='text-green-200 p-2xl-semibold'>Productketens</h4>
+                        <h4 className='text-green-200 heading-xl-semibold'>Productketens</h4>
                         <div className='grid grid-cols-1 gap-8 py-2 sm:py-0'>
                           <ul role='list' className='mt-4 space-y-4'>
                             {navigation.thema?.map((thema) => (
@@ -105,7 +105,7 @@ export default function Footer(props) {
                         </div>
                       </div>
                       <div className='border-b border-gray-100 sm:border-0 py-2 sm:py-0'>
-                        <h4 className='text-green-200 p-2xl-semibold'>Over CircuLaw</h4>
+                        <h4 className='text-green-200 heading-xl-semibold'>Over CircuLaw</h4>
                         <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                           {' '}
                           <ul role='list' className='mt-4 space-y-4'>
