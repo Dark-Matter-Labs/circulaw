@@ -5,7 +5,6 @@ import { Link } from 'react-scroll';
 
 export default function ScrollTabMobileMenu({ content }) {
   const [open, setOpen] = useState(false);
-
   return (
     <>
       <button
