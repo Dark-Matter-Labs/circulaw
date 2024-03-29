@@ -39,7 +39,7 @@ export default function ThemePageHeader({ themaData }) {
 
           <div className='pb-8 max-w-3xl'>
             <div className=''>
-              <h1 className='heading-4xl-semibold text-gray-100 inline-block'>
+              <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-gray-100 inline-block'>
                 {themaData?.themaName}
               </h1>
             </div>

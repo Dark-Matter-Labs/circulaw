@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <Layout title='CircuLaw - 404'>
       <div className='global-margin my-20 text-center flex flex-col justify-center'>
-        <h1 className='mobile sm:desktop text-gray-800 pb-2'>404</h1>
+        <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-gray-800 pb-2'>404</h1>
         <p className=' p-base text-gray-800'>
           We kunnen de pagina die je zoekt niet vinden. Kunnen we je verder helpen?
         </p>

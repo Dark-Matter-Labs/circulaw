@@ -20,14 +20,6 @@
 
 
 /* to delete once all have been replace */
- /* Figma H2*/
- h1.desktop {
-  @apply font-jakarta text-7xl font-semibold leading-16;
-}
-
-h1.mobile {
-  @apply font-jakarta text-3xl font-semibold leading-12;
-}
 
  /* Figma H3*/
 h2.desktop {
@@ -145,9 +137,10 @@ h4.mobile {
 
   /*
   heading xl
+  need to confirm that this can be 18px 
+  if so remove p-lg, p-xl, p-2xl (17, 18 and 19px)
   */
  
-
   .p-base {
     @apply font-jakarta text-base font-normal leading-11
   }
@@ -184,6 +177,7 @@ h4.mobile {
   .p-2xs-bold {
     @apply p-2xs font-bold;
   }
+
 
    /* special fonts */
    .header-desktop {

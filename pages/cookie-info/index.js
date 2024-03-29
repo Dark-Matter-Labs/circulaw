@@ -47,7 +47,7 @@ export default function Privacy() {
   return (
     <Layout title='CircuLaw - Cookiebeleid'>
       <div className='global-margin my-20 max-w-2xl text-gray-800'>
-        <h1 className='mobile sm:desktop pb-6'>Cookiebeleid CircuLaw</h1>
+        <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pb-6'>Cookiebeleid CircuLaw</h1>
         <h2 className='mobile sm:desktop py-2'>Wat zijn cookies?</h2>
         <p className=' p-base pb-6 max-w-4xl'>
           Cookies zijn kleine tekstbestanden die onzichtbaar zijn voor de gebruiker en die de

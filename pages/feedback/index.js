@@ -91,7 +91,7 @@ export default function Feedback() {
                 <span className='  '>Terug</span>
                 <span className='ml-2'>{'>'}</span>
               </button>
-              <h1 className='mobile sm:desktop text-gray-800 pt-10 mobile sm:desktop'>
+              <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-gray-800 pt-10'>
                 Met jouw hulp maken we CircuLaw beter
               </h1>
               <p className='p-3xl pt-8 max-w-3xl'>
@@ -269,7 +269,7 @@ export default function Feedback() {
             </>
           ) : (
             <>
-              <h1 className='mobile sm:desktop text-green-600 pt-10'>Dank voor je feedback!</h1>
+              <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pt-10'>Dank voor je feedback!</h1>
               <p className=' p-base py-10 max-w-2xl text-gray-800'>
                 Samen met jou kunnen we CircuLaw blijven verbeteren, en dat is hard nodig! We gaan
                 je feedback bekijken en zullen je eventueel benaderen als we nog vragen hebben of

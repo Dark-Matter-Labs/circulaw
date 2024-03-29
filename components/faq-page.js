@@ -27,7 +27,7 @@ export default function FAQPageComponent({ data }) {
             </Link>
           </div>
           <div className='max-w-4xl mx-auto'>
-            <h1 className='mobile sm:desktop lg:block sm:pt-10 py-6 sm:pb-10 text-gray-800'>
+            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold lg:block sm:pt-10 py-6 sm:pb-10 text-gray-800'>
               {data?.pageTitle}
             </h1>
             <div>

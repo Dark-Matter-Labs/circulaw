@@ -52,7 +52,7 @@ export default function LawSummaryPage({ lawData }) {
                 <SocialButtons title={`${lawData?.title} - ${selectedTab.replace(/(-)/g, ' ')}`} />
               </div>
             </div>
-            <h1 className='mb-[60px] sm:mb-[94px] heading-2xl-semibold sm:heading-5xl-semibold text-gray-100 max-w-4xl'>
+            <h1 className='mb-[60px] sm:mb-[94px] heading-4xl-semibold sm:heading-5xl-semibold text-gray-100 max-w-4xl'>
               {' '}
               {lawData?.title}
             </h1>

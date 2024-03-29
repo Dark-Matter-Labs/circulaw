@@ -23,7 +23,7 @@ export default function AboutPageComponent({ data }) {
               </Link>
             </div>
             <div className='max-w-3xl'>
-              <h1 className='mobile sm:desktop lg:block sm:pt-10 py-6 sm:pb-10 text-gray-800'>
+              <h1 className='heading-2xl-semibold sm:heading-5xl-semibold lg:block sm:pt-10 py-6 sm:pb-10 text-gray-800'>
                 {data?.aboutPage?.pageTitle}
               </h1>
               <PortableText
