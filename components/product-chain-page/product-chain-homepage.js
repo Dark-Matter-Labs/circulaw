@@ -62,7 +62,7 @@ export default function PCHomePage({ pcData }) {
                     className='w-full h-full object-cover rounded-l-cl'
                   />
                 </div>
-                <div className='text-gray-100 break-words w-full max-w-[170px] ml-6 mr-3'>
+                <div className='text-gray-100 break-words w-full max-w-[170px] ml-4'>
                   <h3 className='heading-2xl-semibold break-words w-full'>
                     {' '}
                     {chain.pcName === 'Consumptiegoederen' ? (
@@ -73,7 +73,7 @@ export default function PCHomePage({ pcData }) {
                   </h3>
                   <h4 className='text-green-200 p-sm'>{chain.themaCount} thema&apos;s</h4>
                 </div>
-                <div className='grid justify-items-end mr-6'>
+                <div className='grid justify-items-end mr-4'>
                   <div className='h-10 w-10 rounded-full flex items-center justify-center border-2 text-white border-white bg-transparent group-hover:bg-green-200 group-hover:border-green-200 group-hover:text-green-600  active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white self-end'>
                     <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                   </div>
