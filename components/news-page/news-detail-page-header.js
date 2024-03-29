@@ -42,7 +42,7 @@ export default function NewsDetailPageHeader({ cardColour, data }) {
             <h1
               className={`${
                 cardColour === 'bg-green-300' ? 'text-green-800' : 'text-gray-100'
-              } p-5xl-semibold sm:p-7xl-semibold `}
+              } p-5xl-semibold sm:heading-5xl-semibold `}
             >
               {data?.newsTitle}
             </h1>

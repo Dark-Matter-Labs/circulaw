@@ -18,62 +18,19 @@
     @apply 2xl:px-40
   }
 
-  /* Figma H2*/
-  h1.desktop {
-    @apply font-jakarta text-7xl font-semibold leading-16;
-  }
-
-  h1.mobile {
-    @apply font-jakarta text-3xl font-semibold leading-12;
-  }
-  
-   /* Figma H3*/
-  h2.desktop {
-    @apply font-jakarta text-6xl font-semibold leading-14;
-  }
-
-  h2.mobile {
-    @apply font-jakarta text-2xl font-semibold leading-10;
-  }
-
-   /* Figma H4*/
-  h3.desktop {
-    @apply font-jakarta text-4xl font-semibold leading-12;
-  }
-
-  h3.mobile {
-    @apply font-jakarta text-lg font-semibold leading-10;
-  }
-
-   /* Figma H5*/
-  h4.desktop {
-    @apply font-jakarta text-xl font-medium leading-10;
-  }
-
-  h4.mobile {
-    @apply font-jakarta text-base font-bold leading-10;
-  }
-
-  /* Figma H6*/
-    h5.desktop {
-    @apply font-jakarta text-xs font-semibold leading-8;
-  }
-
-  h5.mobile {
-    @apply font-jakarta text-xxs font-bold leading-6;
-  }
-
-    
-    .p-7xl-semibold {
-      @apply font-jakarta text-7xl font-semibold leading-16;
-    }
-    
-  .p-7xl-bold {
-      @apply font-jakarta text-7xl font-bold leading-16;
-    }
 
  
-  .p-6xl-bold {
+    .heading-5xl {
+      @apply font-jakarta text-7xl leading-16
+    }
+
+    .heading-5xl-semibold {
+      @apply heading-5xl font-semibold
+    }
+
+
+    /* there is 24px and 32px in the ds... not sure what fonts of 29px should be.*/
+    .p-6xl-bold {
       @apply font-jakarta text-6xl font-bold leading-14
     }
 
@@ -81,6 +38,8 @@
       @apply font-jakarta text-6xl font-semibold leading-14
     }
 
+
+    /* remove 4xl (23px) and 5xl (25px) and make 24px as per new design system*/
     .p-5xl-bold {
       @apply font-jakarta text-5xl font-bold leading-14
     }
@@ -121,6 +80,7 @@
     @apply font-jakarta text-xl font-semibold leading-14;
   }
 
+  /*Need to make this bigger i think. 18px or 17px*/
   .heading-xl {
     @apply font-jakarta text-xl leading-12
   }
@@ -129,7 +89,7 @@
     @apply heading-xl font-semibold
   }
 
-  /* Need to delete */
+  /* Need to delete and replace with heading xl if we can make it bigger. */
   .p-lg {
     @apply font-jakarta text-lg font-normal leading-11;
   }
@@ -345,3 +305,51 @@ html {
   }
 }
 
+
+
+/* to delete once all have been replace */
+
+ /* Figma H2*/
+ h1.desktop {
+  @apply font-jakarta text-7xl font-semibold leading-16;
+}
+
+h1.mobile {
+  @apply font-jakarta text-3xl font-semibold leading-12;
+}
+
+ /* Figma H3*/
+h2.desktop {
+  @apply font-jakarta text-6xl font-semibold leading-14;
+}
+
+h2.mobile {
+  @apply font-jakarta text-2xl font-semibold leading-10;
+}
+
+ /* Figma H4*/
+h3.desktop {
+  @apply font-jakarta text-4xl font-semibold leading-12;
+}
+
+h3.mobile {
+  @apply font-jakarta text-lg font-semibold leading-10;
+}
+
+ /* Figma H5*/
+h4.desktop {
+  @apply font-jakarta text-xl font-medium leading-10;
+}
+
+h4.mobile {
+  @apply font-jakarta text-base font-bold leading-10;
+}
+
+/* Figma H6*/
+  h5.desktop {
+  @apply font-jakarta text-xs font-semibold leading-8;
+}
+
+h5.mobile {
+  @apply font-jakarta text-xxs font-bold leading-6;
+}

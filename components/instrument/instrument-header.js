@@ -132,7 +132,7 @@ export default function InstrumentHeader({ data }) {
               )}
             </div>
             <div className='max-w-4xl flex justify-start overflow-hidden'>
-              <h1 className='justify-self-start p-5xl-semibold sm:p-7xl-bold lg:block mt-1 text-gray-100 pb-1'>
+              <h1 className='justify-self-start p-5xl-semibold sm:heading-5xl-semibold lg:block mt-1 text-gray-100 pb-1'>
                 {data?.instrument?.titel}
               </h1>
             </div>

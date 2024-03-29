@@ -29,7 +29,7 @@ export default function Index({
     <Layout page='home' homePageHeader={homePageHeader} footerText={footerText}>
       <div className='bg-gray-100 sm:pb-12 -z-50' name='thema'>
         <div className='global-margin -z-20'>
-          <h2 className='p-5xl-semibold sm:p-7xl-semibold pt-8 text-green-600 border-gray-600 border-b pb-6'>
+          <h2 className='p-5xl-semibold sm:heading-5xl-semibold pt-8 text-green-600 border-gray-600 border-b pb-6'>
             Ontdek direct onze instrumenten
           </h2>
           <p className='p-xl max-w-[750px] py-4 whitespace-normal'>
@@ -65,7 +65,7 @@ export default function Index({
       <div className='bg-gray-100 pt-12 sm:pt-0 pb-12'>
         <div className='global-margin'>
           <div className='pb-12 flex flex-col'>
-            <h3 className='p-5xl-semibold sm:p-7xl-semibold text-green-600 w-full border-b pb-6 border-green-800'>
+            <h3 className='p-5xl-semibold sm:heading-5xl-semibold text-green-600 w-full border-b pb-6 border-green-800'>
               Uitgelichte nieuwsberichten
             </h3>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-6 py-10 overflow-hidden'>
