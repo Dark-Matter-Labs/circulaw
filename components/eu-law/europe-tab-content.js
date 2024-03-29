@@ -33,7 +33,7 @@ export default function ScrollPagesTabContent({ content }) {
                   duration={500}
                   offset={-155}
                   spy={true}
-                  activeClass='bg-green-500 !text-gray-100 font-semibold transition-all duration-100 min-w-[390px]'
+                  activeClass='bg-green-500 !text-white font-semibold transition-all duration-100 min-w-[390px]'
                   className='p-base text-green-800 py-2 pl-4 pr-8 h-full break-words min-w-[390px] rounded-cl whitespace-nowrap cursor-pointer'
                 >
                   {id + 1}. {section.title}
