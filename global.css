@@ -19,10 +19,55 @@
   }
 
 
- 
- 
 
-    
+
+/* to delete once all have been replace */
+
+ /* Figma H2*/
+ h1.desktop {
+  @apply font-jakarta text-7xl font-semibold leading-16;
+}
+
+h1.mobile {
+  @apply font-jakarta text-3xl font-semibold leading-12;
+}
+
+ /* Figma H3*/
+h2.desktop {
+  @apply font-jakarta text-6xl font-semibold leading-14;
+}
+
+h2.mobile {
+  @apply font-jakarta text-2xl font-semibold leading-10;
+}
+
+ /* Figma H4*/
+h3.desktop {
+  @apply font-jakarta text-4xl font-semibold leading-12;
+}
+
+h3.mobile {
+  @apply font-jakarta text-lg font-semibold leading-10;
+}
+
+ /* Figma H5*/
+h4.desktop {
+  @apply font-jakarta text-xl font-medium leading-10;
+}
+
+h4.mobile {
+  @apply font-jakarta text-base font-bold leading-10;
+}
+
+/* Figma H6*/
+  h5.desktop {
+  @apply font-jakarta text-xs font-semibold leading-8;
+}
+
+h5.mobile {
+  @apply font-jakarta text-xxs font-bold leading-6;
+}
+
 
     /* there is 24px and 32px in the ds... not sure what fonts of 29px should be.*/
     .p-6xl-bold {
@@ -82,6 +127,22 @@
 
   .heading-5xl-semibold {
     @apply heading-5xl font-semibold 
+  }
+
+  .heading-4xl {
+    @apply font-jakarta text-[40px] leading-[50px]
+  }
+
+  .heading-4xl-semibold {
+    @apply heading-4xl font-semibold
+  }
+
+  .heading-3xl {
+    @apply font-jakarta text-[32px] leading-[42px]
+  }
+
+  .heading-3xl-semibold {
+    @apply heading-3xl font-semibold
   }
 
   .heading-2xl {
@@ -296,50 +357,3 @@ html {
 }
 
 
-
-/* to delete once all have been replace */
-
- /* Figma H2*/
- h1.desktop {
-  @apply font-jakarta text-7xl font-semibold leading-16;
-}
-
-h1.mobile {
-  @apply font-jakarta text-3xl font-semibold leading-12;
-}
-
- /* Figma H3*/
-h2.desktop {
-  @apply font-jakarta text-6xl font-semibold leading-14;
-}
-
-h2.mobile {
-  @apply font-jakarta text-2xl font-semibold leading-10;
-}
-
- /* Figma H4*/
-h3.desktop {
-  @apply font-jakarta text-4xl font-semibold leading-12;
-}
-
-h3.mobile {
-  @apply font-jakarta text-lg font-semibold leading-10;
-}
-
- /* Figma H5*/
-h4.desktop {
-  @apply font-jakarta text-xl font-medium leading-10;
-}
-
-h4.mobile {
-  @apply font-jakarta text-base font-bold leading-10;
-}
-
-/* Figma H6*/
-  h5.desktop {
-  @apply font-jakarta text-xs font-semibold leading-8;
-}
-
-h5.mobile {
-  @apply font-jakarta text-xxs font-bold leading-6;
-}

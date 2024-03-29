@@ -41,7 +41,7 @@ export default function OverviewPageHeader({ props, page }) {
               router.pathname.includes('categorie') ? 'pb-[4.75rem]' : 'pb-6'
             } col-span-9`}
           >
-            <h1 className='p-3xl-semibold sm:heading-5xl-semibold text-white max-w-5xl pb-1'>
+            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-white max-w-5xl pb-1'>
               {props.title}
             </h1>
             {props.introPara && (

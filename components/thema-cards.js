@@ -27,7 +27,7 @@ export default function ThemaCard({ themaCards }) {
                   )}
                 </div>
                 <div className='group flex flex-col w-full h-full px-6 py-4 bg-green-600'>
-                  <h3 className='mobile sm:desktop text-gray-100 pointer-events-none hidden sm:inline'>
+                  <h3 className='heading-2xl-semibold text-gray-100 pointer-events-none hidden sm:inline'>
                     {thema.themaName}
                   </h3>
                   <p className='p-base text-green-200 pb-2'>{thema.count} instrumenten</p>
@@ -44,7 +44,7 @@ export default function ThemaCard({ themaCards }) {
           <li className='w-full h-[470px] flex-grow bg-green-50 border border-gray-200 rounded-cl group'>
             <Link href='/contact' className='w-full h-full'>
               <div className='h-full w-full flex flex-col flex-grow p-8 justify-between'>
-                <h3 className='mobile sm:desktop text-green-600'>Nieuwe thema’s</h3>
+                <h3 className='heading-2xl-semibold text-green-600'>Nieuwe thema’s</h3>
                 <div>
                   <p className='p-base pt-4 text-green-800'>
                     Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
