@@ -125,7 +125,7 @@ export default function SummaryComponent({ lawData }) {
         <div className='global-margin grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
           {lawData?.linkCol1 && (
             <div className='flex flex-col'>
-              <h3 className='text-green-800 p-4xl-semibold'>
+              <h3 className='text-green-800 heading-2xl-semibold'>
                 Bekijk ook op{' '}
                 <Link href='/' className='underline link-interaction'>
                   Circulaw.nl
@@ -144,7 +144,7 @@ export default function SummaryComponent({ lawData }) {
           )}
           {lawData?.linkCol2 && (
             <div>
-              <h3 className='text-green-800 p-4xl-semibold'>
+              <h3 className='text-green-800 heading-2xl-semibold'>
                 Relevante NL wetgeving <LinkIcon />
               </h3>
               <ul>
@@ -160,7 +160,7 @@ export default function SummaryComponent({ lawData }) {
           )}
           {lawData?.linkCol3 && (
             <div>
-              <h3 className='text-green-800 p-4xl-semibold'>
+              <h3 className='text-green-800 heading-2xl-semibold'>
                 Relevante EU-wetgeving <LinkIcon />
               </h3>
               <ul>

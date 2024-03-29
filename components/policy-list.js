@@ -30,7 +30,7 @@ export default function PolicyList(props) {
 
             <div className='block mt-2 '>
               <div className=' mb-2'>
-                <h3 className='p-4xl-semibold max-w-[650px] text-gray-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+                <h3 className='heading-2xl-semibold max-w-[650px] text-gray-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                   {law.titel}{' '}
                 </h3>
               </div>

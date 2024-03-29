@@ -76,7 +76,7 @@ export default function ThemaCard({ themaCards }) {
                   />
                 </div>
                 <div className='text-gray-100 pl-4'>
-                  <h3 className='p-4xl-semibold'>{thema.themaName}</h3>
+                  <h3 className='heading-2xl-semibold'>{thema.themaName}</h3>
                   <p className='p-base text-green-200'>{thema.count} instrumenten</p>
                 </div>
               </div>
@@ -86,7 +86,7 @@ export default function ThemaCard({ themaCards }) {
         <div className='w-full bg-green-50 border border-gray-200 rounded-cl'>
           <Link href='/contact' className='w-full h-full'>
             <div className='h-full w-full flex flex-col justify-between flex-grow p-6'>
-              <h3 className='p-4xl-semibold pb-4 text-green-600'>Nieuwe thema’s</h3>
+              <h3 className='heading-2xl-semibold pb-4 text-green-600'>Nieuwe thema’s</h3>
               <p className='p-base text-gren-800'>
                 Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
               </p>

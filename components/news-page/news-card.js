@@ -53,7 +53,7 @@ export default function NewsCard({ data }) {
               <div
                 className={`${
                   data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
-                } p-4xl-semibold py-0.5`}
+                } heading-2xl-semibold py-0.5`}
               >
                 {data.newsTitle}
               </div>
@@ -134,7 +134,7 @@ export default function NewsCard({ data }) {
               <div
                 className={`${
                   data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
-                } p-4xl-semibold py-0.5`}
+                } heading-2xl-semibold py-0.5`}
               >
                 {data.newsTitle}
               </div>
@@ -222,7 +222,7 @@ export default function NewsCard({ data }) {
             <div
               className={`${
                 data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
-              } p-4xl-semibold py-0.5`}
+              } heading-2xl-semibold py-0.5`}
             >
               {data.newsTitle}
             </div>

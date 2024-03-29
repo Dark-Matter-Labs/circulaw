@@ -62,7 +62,7 @@ export default function PCHomePage({ pcData }) {
                   />
                 </div>
                 <div className='text-gray-100 break-words w-full max-w-[170px] ml-6 mr-3'>
-                  <h3 className='p-4xl-semibold break-words w-full'>
+                  <h3 className='heading-2xl-semibold break-words w-full'>
                     {' '}
                     {chain.pcName === 'Consumptiegoederen' ? (
                       <span className='max-w-[144px]'>Consumptie-goederen</span>

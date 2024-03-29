@@ -21,7 +21,7 @@ export default function TabButton({
           }  p-3 rounded-t-cl flex flex-row items-center`}
         >
           <div className='flex flex-row items-baseline'>
-            <h3 className='p-lg-semibild sm:p-4xl-semibold pr-1 first-letter:capitalize'>{name}</h3>{' '}
+            <h3 className='p-lg-semibild sm:heading-2xl-semibold pr-1 first-letter:capitalize'>{name}</h3>{' '}
             {transitionAgenda === 'bouw' ? (
               <div className='p-2xs-bold sm:p-lg-semibild inline-block min-w-[24px] sm:min-w-[38px]'>
                 ({numInstrument})
@@ -47,7 +47,7 @@ export default function TabButton({
           }  p-3 rounded-t-cl flex flex-row items-center`}
         >
           <div className='flex flex-row items-baseline'>
-            <h3 className='p-lg-semibild sm:p-4xl-semibold pr-1 first-letter:capitalize'>{name}</h3>{' '}
+            <h3 className='p-lg-semibild sm:heading-2xl-semibold pr-1 first-letter:capitalize'>{name}</h3>{' '}
             {transitionAgenda === 'bouw' ? (
               <h5 className='p-2xs-bold sm:p-lg-semibild inline-block min-w-[24px]'>
                 ({numInstrument})
@@ -73,7 +73,7 @@ export default function TabButton({
           }  p-3 rounded-t-cl flex flex-row items-center`}
         >
           <div className='flex flex-row items-baseline'>
-            <h3 className='p-lg-semibild sm:p-4xl-semibold pr-1 first-letter:capitalize'>{name}</h3>{' '}
+            <h3 className='p-lg-semibild sm:heading-2xl-semibold pr-1 first-letter:capitalize'>{name}</h3>{' '}
             <div className='p-2xs-bold sm:p-lg-semibild inline-block min-w-[24px]'>
               ({numInstrument})
             </div>

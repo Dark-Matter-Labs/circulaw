@@ -50,13 +50,7 @@
     }
    
     /* remove 4xl (23px) and 5xl (25px) and make 24px as per new design system*/
-    .p-5xl-bold {
-      @apply font-jakarta text-5xl font-bold leading-14
-    }
 
-    .p-5xl-semibold {
-      @apply font-jakarta text-5xl font-semibold leading-14
-    }
 
   .p-4xl {
       @apply font-jakarta text-4xl font-normal leading-14;

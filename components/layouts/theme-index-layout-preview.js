@@ -54,7 +54,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
 
                   <div className='border border-gray-400 bg-gray-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
-                      <div className='p-4xl-semibold pb-4'>{data?.thema?.samenhangTitle}</div>
+                      <div className='heading-2xl-semibold pb-4'>{data?.thema?.samenhangTitle}</div>
                       <div className='p-base'>{data?.thema?.samenhangText}</div>
                     </div>
                     <CustomButton color='whiteBackground'>
@@ -81,7 +81,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                   </div>
                   <div className='border border-gray-400 bg-gray-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
-                      <div className='p-4xl-semibold pb-4'>{`Lijst van ${data?.length} instrumenten`}</div>
+                      <div className='heading-2xl-semibold pb-4'>{`Lijst van ${data?.length} instrumenten`}</div>
                       <div className='p-base'>{data?.thema?.listText}</div>
                     </div>
                     <CustomButton color='whiteBackground'>
@@ -109,7 +109,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                   </div>
                   <div className='border border-gray-400 bg-gray-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
-                      <div className='p-4xl-semibold pb-4'>{data?.thema?.welkeTitle}</div>
+                      <div className='heading-2xl-semibold pb-4'>{data?.thema?.welkeTitle}</div>
                       <div className='p-base'>{data?.thema?.welkeText}</div>
                     </div>
                     <CustomButton color='whiteBackground'>
@@ -257,7 +257,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
 
                     <div className='block mt-2'>
                       <div className=' mb-2'>
-                        <h3 className='p-4xl-semibold sm:max-w-[650px] text-gray-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+                        <h3 className='heading-2xl-semibold sm:max-w-[650px] text-gray-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                           {instrument.titel}{' '}
                         </h3>
                       </div>

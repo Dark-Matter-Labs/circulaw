@@ -48,7 +48,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
 
                   <div className='border border-gray-400 bg-gray-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
-                      <div className='p-4xl-semibold pb-4'>{thema?.samenhangTitle}</div>
+                      <div className='heading-2xl-semibold pb-4'>{thema?.samenhangTitle}</div>
                       <div className='p-base'>{thema?.samenhangText}</div>
                     </div>
                     <CustomButton color='whiteBackground'>
@@ -73,7 +73,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                   </div>
                   <div className='border border-gray-400 bg-gray-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
-                      <div className='p-4xl-semibold pb-4'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
+                      <div className='heading-2xl-semibold pb-4'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
                       <div className='p-base'>{thema?.listText}</div>
                     </div>
                     <CustomButton color='whiteBackground'>
@@ -101,7 +101,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                   </div>
                   <div className='border border-gray-400 bg-gray-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
-                      <div className='p-4xl-semibold pb-4'>{thema?.welkeTitle}</div>
+                      <div className='heading-2xl-semibold pb-4'>{thema?.welkeTitle}</div>
                       <div className='p-base'>{thema?.welkeText}</div>
                     </div>
                     <CustomButton color='whiteBackground'>
