@@ -1,14 +1,13 @@
-import Link from 'next/link';
-
-import Layout from '@/components/layouts/layout';
-import { client } from '@/lib/sanity';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
 import ScrollPagesTabContent from '@/components/eu-law/europe-tab-content';
 import SummaryComponent from '@/components/eu-law/summary-tab-content';
-import { PortableText } from '@portabletext/react';
-import { portableTextComponents } from '@/lib/portable-text/pt-components';
+import Layout from '@/components/layouts/layout';
 import SocialButtons from '@/components/social-buttons';
+import { portableTextComponents } from '@/lib/portable-text/pt-components';
+import { client } from '@/lib/sanity';
+import { PortableText } from '@portabletext/react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 // refactor
 const pathsQuery = `

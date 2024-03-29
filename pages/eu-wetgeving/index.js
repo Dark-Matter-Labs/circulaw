@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import EULawCard from '@/components/eu-law/eu-law-card';
 import Layout from '@/components/layouts/layout';
 import { client } from '@/lib/sanity';
-import EULawCard from '@/components/eu-law/eu-law-card';
 import bannerImage from '@/public/banner.png';
+import Image from 'next/image';
+import Link from 'next/link';
 
 // refactor
 const euLawsQuery = `
@@ -36,7 +36,9 @@ export default function EULaw({ laws }) {
                 </span>
               </Link>
             </div>
-            <h1 className='mb-8 heading-4xl-semibold sm:heading-5xl-semibold text-gray-100'>EU wetgeving</h1>
+            <h1 className='mb-8 heading-4xl-semibold sm:heading-5xl-semibold text-gray-100'>
+              EU wetgeving
+            </h1>
           </div>
         </div>
       </div>

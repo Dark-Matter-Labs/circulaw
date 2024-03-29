@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import { ArrowRightIcon } from '@heroicons/react/outline';
 import Layout from '@/components/layouts/layout';
+import { ArrowRightIcon } from '@heroicons/react/outline';
+import Link from 'next/link';
 
 // import data // not neccissary
 export default function NotFound() {

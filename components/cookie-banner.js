@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
 import { setCookie, hasCookie } from 'cookies-next';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
 
 const CookieConsent = () => {
   const [consent, setConsent] = useState(true);

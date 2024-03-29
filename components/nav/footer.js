@@ -1,15 +1,15 @@
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import Image from 'next/image';
-import { RiLinkedinFill } from 'react-icons/ri';
-import { AiFillGithub } from 'react-icons/ai';
-import { Link as ScrollLink } from 'react-scroll';
-import { ArrowUpIcon } from '@heroicons/react/outline';
-import ActionPanel from '@/components/section-action-panel';
-import Partners from '@/components/nav/partners';
-import CustomButton from '@/components/custom-button';
-import ORicon from '@/public/icons/openResearch.svg';
 import LangSwitch from './lang-switch';
+import CustomButton from '@/components/custom-button';
+import Partners from '@/components/nav/partners';
+import ActionPanel from '@/components/section-action-panel';
+import ORicon from '@/public/icons/openResearch.svg';
+import { ArrowUpIcon } from '@heroicons/react/outline';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { AiFillGithub } from 'react-icons/ai';
+import { RiLinkedinFill } from 'react-icons/ri';
+import { Link as ScrollLink } from 'react-scroll';
 
 // import data // maybe not neccissary
 const navigation = {
@@ -67,7 +67,9 @@ export default function Footer(props) {
                           buttonLink='/contact'
                         />
                         <div className='block sm:hidden pt-6 p-base text-gray-100 '>
-                          <h3 className='heading-xl-semibold sm:heading-2xl-semibold inline-block'>Volg ons op:</h3>
+                          <h3 className='heading-xl-semibold sm:heading-2xl-semibold inline-block'>
+                            Volg ons op:
+                          </h3>
                           <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
                             <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
                           </Link>
@@ -141,7 +143,10 @@ export default function Footer(props) {
                           </li>
                           {navigation.other.map((item) => (
                             <li key={item.name}>
-                              <a href={item.href} className=' p-base link-interaction-light-green-bg'>
+                              <a
+                                href={item.href}
+                                className=' p-base link-interaction-light-green-bg'
+                              >
                                 {item.name}
                               </a>
                             </li>
@@ -159,7 +164,9 @@ export default function Footer(props) {
                           buttonLink='/contact'
                         />
                         <div className='flex sm:block py-6 p-base text-gray-100 items-center justify-center z-0 relative'>
-                          <h3 className='inline-block heading-xl-semibold sm:heading-2xl-semibold'>Volg ons op:</h3>
+                          <h3 className='inline-block heading-xl-semibold sm:heading-2xl-semibold'>
+                            Volg ons op:
+                          </h3>
                           <span data-text='Volg ons op LinkedIn' className='tooltip p-base z-40'>
                             <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
                               <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-200 mb-1.5' />

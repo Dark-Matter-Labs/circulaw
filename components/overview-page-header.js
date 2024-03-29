@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import InstrumentLinksDropdown from '@/components/instrument/instrument-links-dropdown';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 export default function OverviewPageHeader({ props, page }) {

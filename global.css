@@ -30,8 +30,6 @@ h2.mobile {
   @apply font-jakarta text-2xl font-semibold leading-10;
 }
 
-
-
 /* there is 24px and 32px in the ds... not sure what fonts of 29px should be.*/
 .p-6xl-bold {
   @apply font-jakarta text-6xl font-bold leading-14
@@ -41,21 +39,14 @@ h2.mobile {
   @apply font-jakarta text-6xl font-semibold leading-14
 }
 
+
   /*  */
 .p-3xl {
   @apply font-jakarta text-3xl font-normal leading-14;
 }
 
 
-
-
-
-
   /* new system */
-  /*
-  heading 6xl is special font only used for header on homepage. 
-  */
-
   .heading-5xl {
     @apply font-jakarta text-7xl leading-16
   }

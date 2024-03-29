@@ -1,11 +1,11 @@
+import CustomButton from '@/components/custom-button';
+import Layout from '@/components/layouts/layout';
+import { enPageComponents } from '@/lib/portable-text/pt-components';
+import { enPageQuery } from '@/lib/queries';
+import { client } from '@/lib/sanity';
+import { ArrowRightIcon } from '@heroicons/react/outline';
 import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
-import Layout from '@/components/layouts/layout';
-import { client } from '@/lib/sanity';
-import { enPageComponents } from '@/lib/portable-text/pt-components';
-import CustomButton from '@/components/custom-button';
-import { ArrowRightIcon } from '@heroicons/react/outline';
-import { enPageQuery } from '@/lib/queries';
 
 export default function English({ data }) {
   return (
@@ -39,7 +39,9 @@ export default function English({ data }) {
           <div className='w-full bg-en-header bg-cover bg-center'>
             <div className='block global-margin sm:hidden pt-5'>
               <div className='py-3 text-gray-100'>
-                <h1 className='pb-3 heading-2xl-semibold sm:heading-5xl-semibold'>Regulations for a circular economy</h1>
+                <h1 className='pb-3 heading-2xl-semibold sm:heading-5xl-semibold'>
+                  Regulations for a circular economy
+                </h1>
                 <p className='pb-3 p-base'>
                   CircuLaw is a knowledge platform dedicated to enabling the transition to a
                   circular economy by identifying opportunities in current law to support a circular

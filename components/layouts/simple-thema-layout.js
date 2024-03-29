@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import Tag from '../tag';
 import InstrumentMetaData from '../instrument/instrument-metadata';
-import ThemePageHeader from '@/components/theme-page/theme-page-header';
+import Tag from '../tag';
 import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
+import ThemePageHeader from '@/components/theme-page/theme-page-header';
+import Link from 'next/link';
 
 export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props }) {
   const themaData = props.thema;

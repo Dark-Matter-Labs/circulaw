@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import { ArrowRightIcon } from '@heroicons/react/outline';
 import CustomButton from './custom-button';
+import { ArrowRightIcon } from '@heroicons/react/outline';
+import Link from 'next/link';
 
 export default function ActionPanel(props) {
   return (

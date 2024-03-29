@@ -1,14 +1,13 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowRightIcon } from '@heroicons/react/outline';
-
-import ThemeBottomSection from '@/components/theme-page/section-bottom-theme-index';
-import waarvoor from '@/public/thema-card-background/waarvoor.svg';
-import samenhang from '@/public/thema-card-background/samenhang.svg';
-import list from '@/public/thema-card-background/list.svg';
-import CustomButton from '@/components/custom-button';
 import ThemePageHeader from '../theme-page/theme-page-header';
 import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
+import CustomButton from '@/components/custom-button';
+import ThemeBottomSection from '@/components/theme-page/section-bottom-theme-index';
+import list from '@/public/thema-card-background/list.svg';
+import samenhang from '@/public/thema-card-background/samenhang.svg';
+import waarvoor from '@/public/thema-card-background/waarvoor.svg';
+import { ArrowRightIcon } from '@heroicons/react/outline';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
   return (
@@ -24,7 +23,9 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
         <div className='bg-gradient-to-b from-[#F8FAF8] to-[#F8FAF8]'>
           <div className='global-margin pb-16 sm:pb-20'>
             <div className='pt-14 pb-10'>
-              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold'>{thema?.overviewsTitle}</h2>
+              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold'>
+                {thema?.overviewsTitle}
+              </h2>
             </div>
             {/* Desktop Cards */}
             <ul

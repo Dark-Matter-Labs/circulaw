@@ -1,8 +1,8 @@
+import LinkIcon from '../link-icon';
 import Tag from '../tag';
 import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
-import LinkIcon from '../link-icon';
 
 // refactor - make a seperate component linkWrapper and use a single feature card component.
 

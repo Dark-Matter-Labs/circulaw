@@ -1,9 +1,8 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { urlFor } from '@/lib/sanity';
-
-import Tag from '@/components/tag';
 import InstrumentMetaData from '@/components/instrument/instrument-metadata';
+import Tag from '@/components/tag';
+import { urlFor } from '@/lib/sanity';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ThemeBottomSection({ featuredLaws, thema }) {
   return (

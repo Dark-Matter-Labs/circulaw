@@ -1,10 +1,13 @@
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-import Lottie from 'react-lottie';
-import { ChevronDownIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
-import { Disclosure, Transition } from '@headlessui/react';
+import DesktopNavCard from './desktop-nav-card';
+import DesktopSimpleButton from './desktop-simple-button';
+import MobileDisclosure from './mobile-disclosure';
+import MobileSimpleButton from './mobile-simple-button';
+import HomepageHeader from '@/components/homepage-header';
+import BetaBanner from '@/components/nav/beta-banner';
+import LangSwitch from '@/components/nav/lang-switch';
+import animationData from '@/public/CL_Home_Logo_Loop';
+import CirculawLogo from '@/public/Circulaw_logotype.png';
+import logo from '@/public/Circulaw_logotype_home.png';
 import {
   useFloating,
   offset,
@@ -18,17 +21,13 @@ import {
   useTransitionStyles,
   FloatingOverlay,
 } from '@floating-ui/react';
-import CirculawLogo from '@/public/Circulaw_logotype.png';
-import logo from '@/public/Circulaw_logotype_home.png';
-
-import LangSwitch from '@/components/nav/lang-switch';
-import BetaBanner from '@/components/nav/beta-banner';
-import animationData from '@/public/CL_Home_Logo_Loop';
-import HomepageHeader from '@/components/homepage-header';
-import DesktopNavCard from './desktop-nav-card';
-import MobileDisclosure from './mobile-disclosure';
-import DesktopSimpleButton from './desktop-simple-button';
-import MobileSimpleButton from './mobile-simple-button';
+import { Disclosure, Transition } from '@headlessui/react';
+import { ChevronDownIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
+import Lottie from 'react-lottie';
 
 const defaultOptions = {
   loop: true,

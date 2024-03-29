@@ -1,9 +1,9 @@
-import { useState, useRef } from 'react';
-import { useRouter } from 'next/router';
+import CustomButton from '@/components/custom-button';
+import Layout from '@/components/layouts/layout';
 import axios from 'axios';
 import Link from 'next/link';
-import Layout from '@/components/layouts/layout';
-import CustomButton from '@/components/custom-button';
+import { useRouter } from 'next/router';
+import { useState, useRef } from 'react';
 
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/929e2e8c-bdf9-4c5f-a293-699dd63de422';
 
@@ -235,7 +235,9 @@ export default function Feedback() {
                   <div className='mt-1 flex items-baseline'>
                     <input type='hidden' name='subscribe' value='no' />
                     <input type='checkbox' name='subscribe' value='yes' onChange={handleChange()} />
-                    <h3 className='heading-xl-semibold sm:heading-2xl-semibold pl-2'>Abonneren op de nieuwsbrief</h3>
+                    <h3 className='heading-xl-semibold sm:heading-2xl-semibold pl-2'>
+                      Abonneren op de nieuwsbrief
+                    </h3>
                   </div>
                   <div className='sm:col-span-2'>
                     <div className=''>
@@ -264,12 +266,16 @@ export default function Feedback() {
                     </button>
                   </div>
                 </form>
-                <h4 className='pt-8 p-base-semibold sm:headling-xl-semibold text-green-400'>* dit veld is verplicht</h4>
+                <h4 className='pt-8 p-base-semibold sm:headling-xl-semibold text-green-400'>
+                  * dit veld is verplicht
+                </h4>
               </div>
             </>
           ) : (
             <>
-              <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pt-10'>Dank voor je feedback!</h1>
+              <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pt-10'>
+                Dank voor je feedback!
+              </h1>
               <p className=' p-base py-10 max-w-2xl text-gray-800'>
                 Samen met jou kunnen we CircuLaw blijven verbeteren, en dat is hard nodig! We gaan
                 je feedback bekijken en zullen je eventueel benaderen als we nog vragen hebben of

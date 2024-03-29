@@ -1,11 +1,13 @@
-import Link from 'next/link';
 import Layout from '@/components/layouts/layout';
+import Link from 'next/link';
 
 export default function Beta() {
   return (
     <Layout title='CircuLaw - Beta'>
       <div className='global-margin my-20'>
-        <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-gray-800 pb-4'>Betaversie CircuLaw</h1>
+        <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-gray-800 pb-4'>
+          Betaversie CircuLaw
+        </h1>
         <p className=' p-base text-gray-800 pb-6  max-w-2xl'>
           In deze versie van ons kennisplatform hebben we op basis van feedback van onze gebruikers
           een aantal verbeteringen aangebracht. Ook hebben we nieuwe inhoud toegevoegd. Maar deze

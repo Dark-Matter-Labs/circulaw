@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import CustomButton from '@/components/custom-button';
+import Layout from '@/components/layouts/layout';
 import axios from 'axios';
 import Link from 'next/link';
-import Layout from '@/components/layouts/layout';
-import CustomButton from '@/components/custom-button';
+import { useState } from 'react';
 
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/a53bd6aa-495c-416a-b8ec-2b36b6be1af9';
 
@@ -55,7 +55,9 @@ export default function Contact() {
       <div className='global-margin'>
         {!formStatus ? (
           <>
-            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pt-10'>Contact</h1>
+            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pt-10'>
+              Contact
+            </h1>
             <div className='mt-8 max-w-3xl mb-20'>
               <form
                 acceptCharset='UTF-8'
@@ -165,12 +167,16 @@ export default function Contact() {
                   </button>
                 </div>
               </form>
-              <h4 className='pt-8 p-base-semibold sm:headling-xl-semibold text-green-400'>* dit veld is verplicht</h4>
+              <h4 className='pt-8 p-base-semibold sm:headling-xl-semibold text-green-400'>
+                * dit veld is verplicht
+              </h4>
             </div>
           </>
         ) : (
           <>
-            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pt-10'>Bedankt!</h1>
+            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pt-10'>
+              Bedankt!
+            </h1>
             <p className='p-base py-10 max-w-2xl text-gray-800'>
               Dank voor je bericht! Je hoort van ons.
             </p>

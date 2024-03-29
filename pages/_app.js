@@ -1,12 +1,12 @@
-import { hotjar } from 'react-hotjar';
-import { useEffect } from 'react';
+import '../global.css';
+import { getCookie } from 'cookies-next';
+import 'next-pagination/dist/index.css';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
-import { getCookie } from 'cookies-next';
+import { useEffect } from 'react';
+import { hotjar } from 'react-hotjar';
 import 'tailwindcss/tailwind.css';
-import 'next-pagination/dist/index.css';
-import '../global.css';
 
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());

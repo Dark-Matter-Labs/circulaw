@@ -1,21 +1,21 @@
-import Link from 'next/link';
+// refactor
+import HomePageAboutSection from '@/components/home-page-about-section';
+import HomePageEUSection from '@/components/home-page-eu-section';
 import Layout from '@/components/layouts/layout';
-import { client } from '@/lib/sanity';
-import { ArrowRightIcon } from '@heroicons/react/outline';
-
+import LinkIcon from '@/components/link-icon';
+import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
+import FeaturedCard from '@/components/news-page/featured-card';
+import PCHomePage from '@/components/product-chain-page/product-chain-homepage';
 import {
   aboutSectionQuerie,
   homePageHeaderQuery,
   newsItems,
   euHomePageQuery,
   pcHomePageQuery,
-} from '@/lib/queries'; // refactor
-import HomePageAboutSection from '@/components/home-page-about-section';
-import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
-import FeaturedCard from '@/components/news-page/featured-card';
-import LinkIcon from '@/components/link-icon';
-import PCHomePage from '@/components/product-chain-page/product-chain-homepage';
-import HomePageEUSection from '@/components/home-page-eu-section';
+} from '@/lib/queries';
+import { client } from '@/lib/sanity';
+import { ArrowRightIcon } from '@heroicons/react/outline';
+import Link from 'next/link';
 
 export default function Index({
   aboutSection,

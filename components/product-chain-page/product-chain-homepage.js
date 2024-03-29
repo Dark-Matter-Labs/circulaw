@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowRightIcon } from '@heroicons/react/outline';
 import { urlFor } from '@/lib/sanity';
+import { ArrowRightIcon } from '@heroicons/react/outline';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function PCHomePage({ pcData }) {
   return (
@@ -28,7 +28,9 @@ export default function PCHomePage({ pcData }) {
                     >
                       {chain.pcName === 'Consumptiegoederen' ? (
                         <>
-                        <span className='whitespace-nowrap'>Consumptie-</span><span>goederen</span></>
+                          <span className='whitespace-nowrap'>Consumptie-</span>
+                          <span>goederen</span>
+                        </>
                       ) : (
                         <span>{chain.pcName}</span>
                       )}

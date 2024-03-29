@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import CustomButton from './custom-button';
 import { urlFor } from '@/lib/sanity';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import CustomButton from './custom-button';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ThemaCard({ themaCards }) {
   return (

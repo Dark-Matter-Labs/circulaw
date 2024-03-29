@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowRightIcon } from '@heroicons/react/outline';
 import CustomButton from '@/components/custom-button';
+import { ArrowRightIcon } from '@heroicons/react/outline';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function HomePageEUSection({ euData }) {
   return (
@@ -9,7 +9,9 @@ export default function HomePageEUSection({ euData }) {
       <div className='flex flex-col sm:flex-row items-center justify-between'>
         <div className='w-full sm:w-7/12 flex flex-col'>
           <div className='border-b border-green-800 mr-6'>
-            <h2 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pb-6'>EU wetgeving</h2>
+            <h2 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pb-6'>
+              EU wetgeving
+            </h2>
           </div>
           <div className='hidden sm:block py-6 p-base mr-6'>
             <p>{euData.euLaw}</p>

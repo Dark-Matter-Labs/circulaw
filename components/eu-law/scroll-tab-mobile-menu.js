@@ -1,8 +1,7 @@
-import { Fragment, useState } from 'react';
-import { Link } from 'react-scroll';
-
 import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
+import { Fragment, useState } from 'react';
+import { Link } from 'react-scroll';
 
 export default function ScrollTabMobileMenu({ content }) {
   const [open, setOpen] = useState(false);

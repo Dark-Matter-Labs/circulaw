@@ -1,7 +1,7 @@
+import LinkIcon from '../link-icon';
+import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
-import { urlFor } from '@/lib/sanity';
-import LinkIcon from '../link-icon';
 
 export default function ThemePageHeaderMobile({ themaData }) {
   return (
@@ -37,7 +37,9 @@ export default function ThemePageHeaderMobile({ themaData }) {
             </div>
           </div>
           <div className='mb-6'>
-            <h1 className='heading-4xl-semibold sm:heading-5xl-semibold text-gray-100 pb-1'>{themaData?.themaName}</h1>
+            <h1 className='heading-4xl-semibold sm:heading-5xl-semibold text-gray-100 pb-1'>
+              {themaData?.themaName}
+            </h1>
             <p className='p-base text-gray-100'>
               {themaData?.themaSubtitle}
               {themaData?.linkText && (

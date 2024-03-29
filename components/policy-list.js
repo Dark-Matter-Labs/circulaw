@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import InstrumentMetaData from './instrument/instrument-metadata';
 import Tag from './tag';
+import Link from 'next/link';
 
 export default function PolicyList(props) {
   let lawData = [];

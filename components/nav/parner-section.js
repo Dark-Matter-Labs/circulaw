@@ -1,7 +1,7 @@
-import { Fragment } from 'react';
+import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
-import { urlFor } from '@/lib/sanity';
+import { Fragment } from 'react';
 
 const bordersDesktop =
   'lg:[&:nth-child(5)]:border-r-0 lg:[&:nth-child(10)]:border-r-0 lg:[&:nth-child(15)]:border-r-0 lg:[&:nth-child(3)]:border-r lg:[&:nth-child(6)]:border-r lg:[&:nth-child(9)]:border-r lg:[&:nth-child(12)]:border-r lg:[&:nth-child(15)]:border-r';
@@ -11,7 +11,9 @@ const bordersSmall =
 export default function ParnerSection({ partners, partnerType }) {
   return (
     <>
-      <div className='heading-xl-semibold text-gray-100 pl-3 sm:pl-6 lg:pl-8 my-4'>{partnerType}</div>
+      <div className='heading-xl-semibold text-gray-100 pl-3 sm:pl-6 lg:pl-8 my-4'>
+        {partnerType}
+      </div>
       <div
         className={`${
           partnerType === 'Financieringspartners'

@@ -1,12 +1,12 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import useSWR from 'swr';
-import { useRouter } from 'next/router';
-import { groq } from 'next-sanity';
+import ParnerSection from './parner-section';
 import { partnersQuery } from '@/lib/queries';
 import sanityLogo from '@/public/logo_partners/sanity-logo.svg';
 import { fetcher } from '@/utils/swr-fetcher';
-import ParnerSection from './parner-section';
+import { groq } from 'next-sanity';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import useSWR from 'swr';
 
 export default function Partners({ footerText }) {
   const { data } = useSWR(groq`${partnersQuery}`, fetcher);

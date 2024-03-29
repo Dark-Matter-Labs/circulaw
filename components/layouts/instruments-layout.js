@@ -1,9 +1,6 @@
-import { useState, useEffect, useRef, Fragment, useCallback } from 'react';
-import { Dialog, Transition, Combobox } from '@headlessui/react';
-import createPersistedState from 'use-persisted-state';
-import { SearchIcon, XIcon, AdjustmentsIcon } from '@heroicons/react/outline';
-import Fuse from 'fuse.js';
-
+import OverviewPageHeader from '../overview-page-header';
+import PolicyList from '/components/policy-list';
+import SearchFilter from '/components/search-filter';
 import {
   overheidslaag,
   juridischeHaalbaarheid,
@@ -12,9 +9,12 @@ import {
   expertise,
   rLadder,
 } from '@/utils/data-filter';
-import SearchFilter from '/components/search-filter';
-import PolicyList from '/components/policy-list';
-import OverviewPageHeader from '../overview-page-header';
+import { Dialog, Transition, Combobox } from '@headlessui/react';
+import { SearchIcon, XIcon, AdjustmentsIcon } from '@heroicons/react/outline';
+import Fuse from 'fuse.js';
+import { useState, useEffect, useRef, Fragment, useCallback } from 'react';
+import createPersistedState from 'use-persisted-state';
+
 // creating objects for persisting values
 const useSelectedState = createPersistedState('selected');
 
@@ -617,7 +617,9 @@ export default function InstrumentsLayout({ ...props }) {
 
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20 lg:border-b lg:border-gray-500 global-margin mt-4'>
         <div className='hidden lg:block mb-6 self-end'>
-          <h3 className='heading-xl-semibold sm:heading-2xl-semibold inline text-gray-800'>Filter op:</h3>{' '}
+          <h3 className='heading-xl-semibold sm:heading-2xl-semibold inline text-gray-800'>
+            Filter op:
+          </h3>{' '}
           <span
             onClick={reset}
             className='underline text-green-500 hover:cursor-pointer link-lg float-right mr-8 link-interaction'

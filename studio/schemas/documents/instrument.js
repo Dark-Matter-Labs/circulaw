@@ -1,5 +1,5 @@
-import { VscLaw } from 'react-icons/vsc';
 import { CgInternal } from 'react-icons/cg';
+import { VscLaw } from 'react-icons/vsc';
 
 export default {
   title: 'instrument',
