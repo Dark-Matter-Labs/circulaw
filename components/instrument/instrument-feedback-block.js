@@ -26,7 +26,7 @@ export default function InstrumentFeedbackBlock({ data }) {
           <Popover.Panel className=''>
             <div className='w-52 h-72 sm:w-60 sm:h-96 bg-gray-200 -translate-y-72 sm:-translate-y-96 -translate-x-44 sm:-translate-x-44 flex flex-col items-center'>
               <div className='px-6 py-4 sm:px-8 sm:py-6'>
-                <h4 className='mobile sm:desktop'>Deel met ons:</h4>
+                <h4 className='p-base-semibold sm:headling-xl-semibold'>Deel met ons:</h4>
                 <ul className='pb-2 sm:pb-4 sm:pt-4 list-disc p-xs sm:p-base text-balance'>
                   <li>voorbeelden uit jouw praktijk</li>
                   <li>je tips om toepassing makkelijker te maken</li>

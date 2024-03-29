@@ -38,10 +38,10 @@ export default function NewsItems({ newsItems }) {
             <div className='w-full h-full p-6 flex flex-col items-start'>
               {item?.date && <div className='capitilize pb-1'>{formatDate(item?.date)}</div>}
               <div className='pb-4'>
-                <h3 className='mobile sm:desktop'>{item?.title}</h3>
+                <h3 className='heading-xl-semibold sm:heading-2xl-semibold'>{item?.title}</h3>
               </div>
               <div>
-                <p className='mobile sm:desktop pb-4'>{item?.text}</p>
+                <p className='p-base pb-4'>{item?.text}</p>
               </div>
               {item?.internalLink && (
                 <div className='flex grow'>

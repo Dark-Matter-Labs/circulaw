@@ -30,23 +30,7 @@ h2.mobile {
   @apply font-jakarta text-2xl font-semibold leading-10;
 }
 
- /* Figma H4*/
-h3.desktop {
-  @apply font-jakarta text-4xl font-semibold leading-12;
-}
 
-h3.mobile {
-  @apply font-jakarta text-lg font-semibold leading-10;
-}
-
- /* Figma H5*/
-h4.desktop {
-  @apply font-jakarta text-xl font-medium leading-10;
-}
-
-h4.mobile {
-  @apply font-jakarta text-base font-bold leading-10;
-}
 
 /* there is 24px and 32px in the ds... not sure what fonts of 29px should be.*/
 .p-6xl-bold {

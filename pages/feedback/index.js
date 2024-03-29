@@ -115,7 +115,7 @@ export default function Feedback() {
                 >
                   <div className='sm:col-span-2'>
                     <label htmlFor='message' className='block text-gray-800'>
-                      <h3 className='mobile sm:desktop'>
+                      <h3 className='heading-xl-semibold sm:heading-2xl-semibold'>
                         Tip, voorbeeld, vraag <span className='text-green-400'>*</span>
                       </h3>
                     </label>
@@ -133,7 +133,7 @@ export default function Feedback() {
                   </div>
                   <div className='sm:col-span-2'>
                     <label htmlFor='file' className='block text-gray-800'>
-                      <h3 className='mobile sm:desktop pb-2'>Bijlagen</h3>
+                      <h3 className='heading-xl-semibold sm:heading-2xl-semibold pb-2'>Bijlagen</h3>
                     </label>
                     <CustomButton color='greenBackgroundLessRound' onClick={handleClick}>
                       Upload bestand
@@ -154,7 +154,7 @@ export default function Feedback() {
                   </div>
                   <div>
                     <label htmlFor='first-name' className='block text-gray-800'>
-                      <h3 className='mobile sm:desktop'>
+                      <h3 className='heading-xl-semibold sm:heading-2xl-semibold'>
                         Je voor- en achternaam <span className='text-green-400'>*</span>
                       </h3>
                     </label>
@@ -173,7 +173,7 @@ export default function Feedback() {
                   </div>
                   <div className='sm:col-span-2'>
                     <label htmlFor='email' className='block  text-gray-800'>
-                      <h3 className='mobile sm:desktop'>
+                      <h3 className='heading-xl-semibold sm:heading-2xl-semibold'>
                         Je e-mail <span className='text-green-400'>*</span>
                       </h3>
                     </label>
@@ -196,7 +196,7 @@ export default function Feedback() {
                   </div>
                   <div className='sm:col-span-2'>
                     <label htmlFor='company' className='block  text-gray-800'>
-                      <h3 className='mobile sm:desktop'>
+                      <h3 className='heading-xl-semibold sm:heading-2xl-semibold'>
                         Je organisatie / bedrijf <span className='text-green-400'>*</span>
                       </h3>
                     </label>
@@ -215,7 +215,7 @@ export default function Feedback() {
                   </div>
                   <div className='sm:col-span-2'>
                     <label htmlFor='company' className='block  text-gray-800'>
-                      <h3 className='mobile sm:desktop'>
+                      <h3 className='heading-xl-semibold sm:heading-2xl-semibold'>
                         Je functie / rol <span className='text-green-400'>*</span>
                       </h3>
                     </label>
@@ -235,7 +235,7 @@ export default function Feedback() {
                   <div className='mt-1 flex items-baseline'>
                     <input type='hidden' name='subscribe' value='no' />
                     <input type='checkbox' name='subscribe' value='yes' onChange={handleChange()} />
-                    <h3 className='mobile sm:desktop pl-2'>Abonneren op de nieuwsbrief</h3>
+                    <h3 className='heading-xl-semibold sm:heading-2xl-semibold pl-2'>Abonneren op de nieuwsbrief</h3>
                   </div>
                   <div className='sm:col-span-2'>
                     <div className=''>
@@ -264,7 +264,7 @@ export default function Feedback() {
                     </button>
                   </div>
                 </form>
-                <h4 className='pt-8 mobile sm:desktop text-green-400'>* dit veld is verplicht</h4>
+                <h4 className='pt-8 p-base-semibold sm:headling-xl-semibold text-green-400'>* dit veld is verplicht</h4>
               </div>
             </>
           ) : (

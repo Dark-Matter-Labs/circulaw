@@ -1,7 +1,7 @@
 export default function AboutPageNav({ currentSlug, slugs }) {
   return (
     <nav className='space-y-1 sticky top-64' aria-label='Sidebar'>
-      <h3 className='mobile sm:desktop text-green-500 pl-5 pb-2'>Over Circulaw</h3>
+      <h3 className='heading-xl-semibold sm:heading-2xl-semibold text-green-500 pl-5 pb-2'>Over Circulaw</h3>
       {slugs?.map((slug) => (
         <a
           key={slug.slug}

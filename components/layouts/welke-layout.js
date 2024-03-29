@@ -64,7 +64,7 @@ export default function WelkeLayout({ ...props }) {
                   <h5 className='p-2xs-semibold sm:p-xs-semibold'>A</h5>
                 </div>
                 <div className='flex items-center justify-center w-full h-full -ml-10'>
-                  <h4 className='mobile sm:desktop'>Alle overheidslagen</h4>
+                  <h4 className='p-base-semibold sm:headling-xl-semibold'>Alle overheidslagen</h4>
                 </div>
               </div>
               <div className='pl-4 pt-3'>
@@ -347,7 +347,7 @@ export default function WelkeLayout({ ...props }) {
                     className='w-80 h-10 bg-green-800 text-white rounded-full flex items-center justify-left'
                   >
                     <div className='flex items-center justify-center w-full h-full -ml-10'>
-                      <h4 className='mobile sm:desktop'>Nationaal</h4>
+                      <h4 className='p-base-semibold sm:headling-xl-semibold'>Nationaal</h4>
                     </div>
                     <div className='h-10 w-10 border-l border-t border-b border-white rounded-full flex items-center justify-center'>
                       <h5 className='p-2xs-semibold sm:p-xs-semibold'>Nat</h5>
@@ -396,7 +396,7 @@ export default function WelkeLayout({ ...props }) {
                     className='w-80 h-10 rounded-full text-white bg-green-500 flex items-center justify-left'
                   >
                     <div className='flex items-center justify-center w-full h-full -ml-10'>
-                      <h4 className='mobile sm:desktop'>Provinciaal</h4>
+                      <h4 className='p-base-semibold sm:headling-xl-semibold'>Provinciaal</h4>
                     </div>
                     <div className='h-10 w-10 border-l border-t border-b border-white rounded-full flex items-center justify-center'>
                       <h5 className='p-2xs-semibold sm:p-xs-semibold'>Pr</h5>
@@ -444,7 +444,7 @@ export default function WelkeLayout({ ...props }) {
                     className='w-80 h-10 rounded-full bg-green-400 text-white flex items-center justify-right'
                   >
                     <div className='flex items-center justify-center w-full h-full -ml-10'>
-                      <h4 className='mobile sm:desktop'>Gemeentelijk</h4>
+                      <h4 className='p-base-semibold sm:headling-xl-semibold'>Gemeentelijk</h4>
                     </div>
                     <div className='h-10 w-10 border-l border-t border-b border-white rounded-full flex items-center justify-center'>
                       <h5 className='p-2xs-semibold sm:p-xs-semibold'>Gem</h5>

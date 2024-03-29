@@ -617,7 +617,7 @@ export default function InstrumentsLayout({ ...props }) {
 
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20 lg:border-b lg:border-gray-500 global-margin mt-4'>
         <div className='hidden lg:block mb-6 self-end'>
-          <h3 className='mobile sm:desktop inline text-gray-800'>Filter op:</h3>{' '}
+          <h3 className='heading-xl-semibold sm:heading-2xl-semibold inline text-gray-800'>Filter op:</h3>{' '}
           <span
             onClick={reset}
             className='underline text-green-500 hover:cursor-pointer link-lg float-right mr-8 link-interaction'
@@ -628,7 +628,7 @@ export default function InstrumentsLayout({ ...props }) {
         <div className='col-span-3 flex-wrap'>
           <div className=''>
             <div>
-              <h4 className='mobile sm:desktop'>{props.searchTitle}</h4>
+              <h4 className='p-base-semibold sm:headling-xl-semibold'>{props.searchTitle}</h4>
             </div>
 
             {/* AUTOCOMPLETE */}

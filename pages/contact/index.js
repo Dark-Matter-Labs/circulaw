@@ -165,7 +165,7 @@ export default function Contact() {
                   </button>
                 </div>
               </form>
-              <h4 className='pt-8 mobile sm:desktop text-green-400'>* dit veld is verplicht</h4>
+              <h4 className='pt-8 p-base-semibold sm:headling-xl-semibold text-green-400'>* dit veld is verplicht</h4>
             </div>
           </>
         ) : (
