@@ -25,9 +25,10 @@
     }
 
     .heading-5xl-semibold {
-      @apply heading-5xl font-semibold
+      @apply heading-5xl font-semibold 
     }
 
+    
 
     /* there is 24px and 32px in the ds... not sure what fonts of 29px should be.*/
     .p-6xl-bold {
@@ -39,6 +40,15 @@
     }
 
 
+
+    .heading-2xl {
+      @apply font-jakarta text-[24px] leading-[34px]
+    }
+
+    .heading-2xl-semibold {
+      @apply heading-2xl font-semibold
+    }
+   
     /* remove 4xl (23px) and 5xl (25px) and make 24px as per new design system*/
     .p-5xl-bold {
       @apply font-jakarta text-5xl font-bold leading-14

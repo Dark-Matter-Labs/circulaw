@@ -10,7 +10,7 @@ export default function HomePageAboutSection({ aboutSection }) {
       <div className='flex flex-col sm:flex-row items-center justify-between'>
         <div className='sm:w-7/12 flex flex-col'>
           <div className='border-b border-green-800'>
-            <h2 className='p-5xl-semibold sm:heading-5xl-semibold text-green-600 pb-6'>
+            <h2 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pb-6'>
               {aboutSection?.aboutSectionTitle}
             </h2>
           </div>

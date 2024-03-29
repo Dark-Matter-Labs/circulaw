@@ -11,7 +11,7 @@ export default function HighlightCard({ text, number, circleText, icon }) {
           <div className='rounded-full bg-[#D1F9EB] border-[12px] border-green-50 h-36 w-36 flex flex-col items-center justify-center'>
             {number && (
               <>
-                <div className='text-center p-5xl-semibold text-green-600'> {number}</div>
+                <div className='text-center heading-2xl-semibold text-green-600'> {number}</div>
                 <div className='text-center p-base-semibold text-green-600 max-w-[90px]'>
                   {circleText}
                 </div>
@@ -29,7 +29,7 @@ export default function HighlightCard({ text, number, circleText, icon }) {
           <div className='mx-4 rounded-full bg-[#D1F9EB] border-[12px] border-green-50 h-36 w-36 flex flex-col items-center justify-center'>
             {number && (
               <>
-                <div className='text-center p-5xl-semibold text-green-600'> {number}</div>
+                <div className='text-center heading-2xl-semibold text-green-600'> {number}</div>
                 <div className='text-center p-base-semibold text-green-600 max-w-[90px]'>
                   {circleText}
                 </div>

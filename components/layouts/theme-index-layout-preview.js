@@ -28,7 +28,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
         <div className='bg-gradient-to-b from-[#F8FAF8] to-[#F8FAF8]'>
           <div className='global-margin pb-16 sm:pb-20'>
             <div className='pt-14 pb-10'>
-              <h2 className='p-3xl-semibold sm:p-5xl-semibold'>{data?.thema?.overviewsTitle}</h2>
+              <h2 className='p-3xl-semibold sm:heading-2xl-semibold'>{data?.thema?.overviewsTitle}</h2>
             </div>
             {/* Desktop Cards */}
             <ul
@@ -221,7 +221,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
 
         <div className='global-margin'>
           <div className='max-w-[830px] mb-10'>
-            <h2 className='p-5xl-semibold pb-4 pt-7'>
+            <h2 className='heading-2xl-semibold pb-4 pt-7'>
               Eerste {data.length} {data.thema.introTextTitle}
             </h2>
             <p>{data.thema?.introText}</p>

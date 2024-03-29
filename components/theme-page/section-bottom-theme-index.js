@@ -10,7 +10,7 @@ export default function ThemeBottomSection({ featuredLaws, thema }) {
     <>
       <div className='bg-gray-200'>
         <div className='py-8 global-margin'>
-          <h3 className='p-3xl-semibold sm:p-5xl-semibold pb-4 lowercase first-letter:uppercase'>
+          <h3 className='p-3xl-semibold sm:heading-2xl-semibold pb-4 lowercase first-letter:uppercase'>
             {thema?.featuredInstrumentTitle}
           </h3>
           {/* ADD THIS TO CMS */}

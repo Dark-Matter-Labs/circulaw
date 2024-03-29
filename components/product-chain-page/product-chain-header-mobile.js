@@ -26,7 +26,7 @@ export default function ThemePageHeaderMobile({ pageTitle }) {
           </div>
           <div className='mb-6'>
             <h4 className='mobile sm:desktop text-green-300'>Productketen</h4>
-            <h1 className='p-5xl-semibold text-gray-100 pb-1'>{pageTitle}</h1>
+            <h1 className='heading-2xl-semibold text-gray-100 pb-1'>{pageTitle}</h1>
           </div>
         </div>
       </div>

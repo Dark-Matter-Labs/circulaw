@@ -52,7 +52,7 @@ export default function NewsPage({ data }) {
           </Link>
         </div>
         <div className='mt-10'>
-          <h1 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
+          <h1 className='p-2xl-semibold sm:heading-2xl-semibold w-full border-b-2 pb-5 border-green-800'>
             Uitgelichte nieuwsberichten
           </h1>
           <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-6 py-10 overflow-hidden'>
@@ -73,7 +73,7 @@ export default function NewsPage({ data }) {
         </div>
         <div className=''>
           <div className='flex flex-col sm:flex-row justify-between sm:items-center border-b-2 pb-5 border-green-800'>
-            <h2 className='p-2xl-semibold sm:p-5xl-semibold pb-4 sm:pb-0'>Laatste nieuws </h2>
+            <h2 className='p-2xl-semibold sm:heading-2xl-semibold pb-4 sm:pb-0'>Laatste nieuws </h2>
             <div className='flex flex-row items-center justify-between'>
               <div className='p-lg-semibold sm:p-3xl-semibold pr-4'>Bekijk:</div>
               <div>
@@ -410,7 +410,7 @@ export default function NewsPage({ data }) {
           </ResponsiveMasonry>
           {archived.length > 0 && (
             <div className='mb-10'>
-              <h2 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
+              <h2 className='p-2xl-semibold sm:heading-2xl-semibold w-full border-b-2 pb-5 border-green-800'>
                 Archief
               </h2>
               <div className='py-10'>
