@@ -46,7 +46,7 @@ export default function OverviewPageHeader({ props, page }) {
             </h1>
             {props.introPara && (
               <div className='hidden sm:block max-w-3xl pt-2'>
-                <p className='p-lg text-white'>{props.introPara}</p>
+                <p className='p-base text-white'>{props.introPara}</p>
               </div>
             )}
           </div>

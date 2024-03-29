@@ -15,7 +15,7 @@ export default function EULawCard({ law }) {
               </p>
               {/* STATUS bar */}
               <div>
-                <div className='p-xs-semibold text-gray-800 mt-6'>Status</div>
+                <div className='p-base-semibold text-gray-800 mt-6'>Status</div>
                 <div className='w-full flex justify-center items-center grow'>
                   {law.statusStep === 'Two Step' && <StatusTwoStep status={law.statusTwoStep} />}
                   {law.statusStep === 'Three Step' && (
@@ -37,7 +37,7 @@ export default function EULawCard({ law }) {
           <h2 className='p-5xl-semibold mb-2'>{law?.title}</h2>
           <p className='p-base pb-6 border-b'>{law?.introText}</p>
           <div className='pb-4'>
-            <div className='p-lg-semibold my-4'>Status</div>
+            <div className='p-base-semibold my-4'>Status</div>
 
             <div className='flex items-center justify-center'>
               {law.statusStep === 'Two Step' && <StatusTwoStep status={law.statusTwoStep} />}

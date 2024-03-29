@@ -171,7 +171,7 @@ export default function Contact() {
         ) : (
           <>
             <h1 className='mobile sm:desktop text-green-600 pt-10'>Bedankt!</h1>
-            <p className=' p-lg py-10 max-w-2xl text-gray-800'>
+            <p className='p-base py-10 max-w-2xl text-gray-800'>
               Dank voor je bericht! Je hoort van ons.
             </p>
             <div className='sm:col-span-2 pb-20'>

@@ -29,7 +29,7 @@ export default function SocialButtons({ title, viewport }) {
 
   return (
     <div className={`${viewportClasses}`}>
-      <span className='p-lg text-gray-100 pr-2'>Delen: </span>
+      <span className='p-base text-gray-100 pr-2'>Delen: </span>
       <span className='pr-2 test' title='Share link on LinkedIn'>
         <LinkedinShareButton
           url={url + asPath}

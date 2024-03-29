@@ -495,10 +495,10 @@ export default function WelkeLayout({ ...props }) {
       {/* TEXT COMPONENT */}
       <div className='global-margin mb-20 mt-4'>
         <div className='max-w-3xl mx-auto'>
-          <p className=' p-lg text-gray-800 pb-6'>{props.p1}</p>
-          {props.p2 !== '' && <p className=' p-lg text-gray-800 pb-6'>{props.p2}</p>}
-          {props.p3 !== '' && <p className=' p-lg text-gray-800 pb-6'>{props.p3}</p>}
-          {props.p4 !== '' && <p className=' p-lg text-gray-800 pb-6'>{props.p4}</p>}
+          <p className=' p-base text-gray-800 pb-6'>{props.p1}</p>
+          {props.p2 !== '' && <p className=' p-base text-gray-800 pb-6'>{props.p2}</p>}
+          {props.p3 !== '' && <p className=' p-base text-gray-800 pb-6'>{props.p3}</p>}
+          {props.p4 !== '' && <p className=' p-base text-gray-800 pb-6'>{props.p4}</p>}
         </div>
         <div className='sm:hidden'>
           <div className='pb-6'>

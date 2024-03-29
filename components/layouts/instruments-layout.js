@@ -682,27 +682,27 @@ export default function InstrumentsLayout({ ...props }) {
               {numberOfLaws === 0 && (
                 <div className='inline'>
                   <div className='inline'>
-                    <h3 className='mobile sm:desktop inline'>0 &nbsp;</h3>
-                    <span className=' p-lg'>resultaten in </span>
-                    <h3 className='inline-block lowercase mobile sm:desktop'>
+                    <span className='p-base-semibold inline'>0 &nbsp;</span>
+                    <span className='p-base'>resultaten in </span>
+                    <span className='p-base-semibold capitalize inline-block'>
                       {props.thema.replace('-', ' ')}
                       &nbsp;
-                    </h3>
-                    {searchValue != '' && <span className='p-lg'>voor&nbsp;</span>}
-                    <h3 className='mobile sm:desktop inline'>
+                    </span>
+                    {searchValue != '' && <span className='p-base'>voor&nbsp;</span>}
+                    <span className='p-base-semibold inline'>
                       {searchValue}&nbsp;
-                      {allSelectedValues.length != 0 && <span className='p-lg'>en</span>}&nbsp;
-                    </h3>
+                      {allSelectedValues.length != 0 && <span className='p-base'>en</span>}&nbsp;
+                    </span>
                   </div>
 
                   {allSelectedValues != 0 && (
                     <div className='sm:inline-block flex flex-wrap items-center'>
                       {allSelectedValues.map((value, index) => (
                         <div key={index} className='inline'>
-                          <h3 className='inline mobile sm:desktop'>
+                          <span className='p-base-semibold inline'>
                             {value}
                             {value !== allSelectedValues.slice(-1)[0] && <span>,</span>}&nbsp;
-                          </h3>
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -713,24 +713,24 @@ export default function InstrumentsLayout({ ...props }) {
               {numberOfLaws === props.totalNumberOfLaws && (
                 <div className='inline'>
                   <span className='inline'>
-                    <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
-                    <span className=' p-lg'>resultaten in </span>
-                    <h3 className='lowercase first-letter:uppercase mobile sm:desktop inline'>
+                    <span className='p-base-semibold inline'>{numberOfLaws}</span>{' '}
+                    <span className=' p-base'>resultaten in </span>
+                    <span className='p-base-semibold capitalize inline'>
                       {props.thema.replace('-', ' ')}
-                    </h3>{' '}
-                    {searchValue != '' && <span className='p-lg'>voor&nbsp;</span>}
-                    <h3 className='lowercase first-letter:uppercase mobile sm:desktop inline'>
+                    </span>{' '}
+                    {searchValue != '' && <span className='p-base'>voor&nbsp;</span>}
+                    <span className='p-base-semibold inline'>
                       {searchValue} {allSelectedValues.length != 0 && <span>,</span>} &nbsp;
-                    </h3>
+                    </span>
                   </span>
                   {allSelectedValues != 0 && (
                     <div className='sm:inline-block flex flex-wrap items-center'>
                       {allSelectedValues.map((value, index) => (
                         <div key={index} className='inline'>
-                          <h3 className='inline mobile sm:desktop'>
+                          <span className='inline p-base-semibold'>
                             {value}
                             {value !== allSelectedValues.slice(-1)[0] && <span>,</span>}&nbsp;
-                          </h3>
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -742,32 +742,32 @@ export default function InstrumentsLayout({ ...props }) {
               {numberOfLaws > 0 && numberOfLaws != props.totalNumberOfLaws && (
                 <div className='inline'>
                   <div className='inline'>
-                    <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
-                    <span className=' p-lg'>resultaten in </span>
-                    <h3 className='inline lowercase first-letter:uppercase mobile sm:desktop'>
+                    <span className='p-base-semibold inline'>{numberOfLaws}</span>{' '}
+                    <span className='p-base'>resultaten in </span>
+                    <span className='p-base-semibold inline capitalize'>
                       {props.thema.replace('-', ' ')}
-                    </h3>
-                    {searchValue != '' && <span className=' p-lg'>&nbsp;voor&nbsp;</span>}
-                    <h3 className='mobile sm:desktop inline'>
+                    </span>
+                    {searchValue != '' && <span className=' p-base'>&nbsp;voor&nbsp;</span>}
+                    <span className='p-base-semibold inline'>
                       {searchValue}
                       {searchValue != '' && <span>&nbsp;</span>}
                       {allSelectedValues.length != 0 && searchValue != '' && (
-                        <span className='p-lg'>en</span>
+                        <span className='p-base'>en</span>
                       )}
                       &nbsp;
-                    </h3>
+                    </span>
                   </div>
 
                   {allSelectedValues != 0 && (
                     <div className='sm:inline-block flex flex-wrap items-center'>
                       {allSelectedValues > 0 ||
-                        (searchValue == '' && <span className='p-lg'>voor&nbsp;</span>)}
+                        (searchValue == '' && <span className='p-base'>voor&nbsp;</span>)}
                       {allSelectedValues.map((value, index) => (
                         <div key={index} className='inline'>
-                          <h3 className='inline mobile sm:desktop'>
+                          <span className='p-base-semibold inline'>
                             {value}
                             {value !== allSelectedValues.slice(-1)[0] && <span>,</span>}&nbsp;
-                          </h3>
+                          </span>
                         </div>
                       ))}
                     </div>
