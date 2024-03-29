@@ -39,7 +39,7 @@ export default function ThemePageHeader({ themaData }) {
 
           <div className='pb-8 max-w-3xl'>
             <div className=''>
-              <h1 className='mobile sm:desktop text-gray-100 inline-block lg mobile sm:desktop'>
+              <h1 className='heading-4xl-semibold text-gray-100 inline-block'>
                 {themaData?.themaName}
               </h1>
             </div>

@@ -19,10 +19,7 @@
   }
 
 
-
-
 /* to delete once all have been replace */
-
  /* Figma H2*/
  h1.desktop {
   @apply font-jakarta text-7xl font-semibold leading-16;
@@ -59,33 +56,21 @@ h4.mobile {
   @apply font-jakarta text-base font-bold leading-10;
 }
 
-/* Figma H6*/
-  h5.desktop {
-  @apply font-jakarta text-xs font-semibold leading-8;
+
+/* there is 24px and 32px in the ds... not sure what fonts of 29px should be.*/
+.p-6xl-bold {
+  @apply font-jakarta text-6xl font-bold leading-14
 }
 
-h5.mobile {
-  @apply font-jakarta text-xxs font-bold leading-6;
+.p-6xl-semibold {
+  @apply font-jakarta text-6xl font-semibold leading-14
 }
 
-
-    /* there is 24px and 32px in the ds... not sure what fonts of 29px should be.*/
-    .p-6xl-bold {
-      @apply font-jakarta text-6xl font-bold leading-14
-    }
-
-    .p-6xl-semibold {
-      @apply font-jakarta text-6xl font-semibold leading-14
-    }
- 
-  /* this is used on cards and breaks design if we go to 24px */
+  /*  */
   .p-3xl {
     @apply font-jakarta text-3xl font-normal leading-14;
   }
 
-  .p-3xl-semibold {
-    @apply font-jakarta text-3xl font-semibold leading-14;
-  }
 
   /* here we have 17, 18 and 19px but there is only 16 or 24 in the DS*/
   /* propose to change heading-xl in DS from 16px to 18px */ 
@@ -121,6 +106,11 @@ h5.mobile {
 
 
   /* new system */
+  /*
+  heading 6xl is special font only used for header on homepage. 
+  */
+
+
   .heading-5xl {
     @apply font-jakarta text-7xl leading-16
   }
@@ -152,6 +142,10 @@ h5.mobile {
   .heading-2xl-semibold {
     @apply heading-2xl font-semibold
   }
+
+  /*
+  heading xl
+  */
  
 
   .p-base {

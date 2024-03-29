@@ -61,7 +61,7 @@ export default function WelkeLayout({ ...props }) {
                 className='w-80 h-10 border border-green-800 rounded-full text-gray-800 bg-gray-100 flex items-center justify-left'
               >
                 <div className='h-10 w-10 border-r border-t border-b border-green-800 rounded-full flex items-center justify-center'>
-                  <h5 className='mobile sm:desktop'>A</h5>
+                  <h5 className='p-2xs-semibold sm:p-xs-semibold'>A</h5>
                 </div>
                 <div className='flex items-center justify-center w-full h-full -ml-10'>
                   <h4 className='mobile sm:desktop'>Alle overheidslagen</h4>
@@ -93,7 +93,7 @@ export default function WelkeLayout({ ...props }) {
                             />
                           </svg>
                         </span>
-                        <h5 className=' inline-block mobile sm:desktop hover:underline'>
+                        <h5 className=' inline-block p-2xs-semibold sm:p-xs-semibold hover:underline'>
                           {law.titel}
                         </h5>
                       </div>
@@ -350,7 +350,7 @@ export default function WelkeLayout({ ...props }) {
                       <h4 className='mobile sm:desktop'>Nationaal</h4>
                     </div>
                     <div className='h-10 w-10 border-l border-t border-b border-white rounded-full flex items-center justify-center'>
-                      <h5 className='mobile sm:desktop'>Nat</h5>
+                      <h5 className='p-2xs-semibold sm:p-xs-semibold'>Nat</h5>
                     </div>
                   </div>
                   <div className='pl-4 pt-3'>
@@ -378,7 +378,7 @@ export default function WelkeLayout({ ...props }) {
                               />
                             </svg>
                           </span>
-                          <h5 className='inline-block mobile sm:desktop hover:underline'>
+                          <h5 className='inline-block p-2xs-semibold sm:p-xs-semibold hover:underline'>
                             {law.titel}
                           </h5>
                         </div>
@@ -399,7 +399,7 @@ export default function WelkeLayout({ ...props }) {
                       <h4 className='mobile sm:desktop'>Provinciaal</h4>
                     </div>
                     <div className='h-10 w-10 border-l border-t border-b border-white rounded-full flex items-center justify-center'>
-                      <h5 className='mobile sm:desktop'>Pr</h5>
+                      <h5 className='p-2xs-semibold sm:p-xs-semibold'>Pr</h5>
                     </div>
                   </div>
                   <div className='pl-4 pt-3'>
@@ -427,7 +427,7 @@ export default function WelkeLayout({ ...props }) {
                               />
                             </svg>
                           </span>
-                          <h5 className='inline-block mobile sm:desktop hover:underline'>
+                          <h5 className='inline-block p-2xs-semibold sm:p-xs-semibold hover:underline'>
                             {law.titel}
                           </h5>
                         </div>
@@ -447,7 +447,7 @@ export default function WelkeLayout({ ...props }) {
                       <h4 className='mobile sm:desktop'>Gemeentelijk</h4>
                     </div>
                     <div className='h-10 w-10 border-l border-t border-b border-white rounded-full flex items-center justify-center'>
-                      <h5 className='mobile sm:desktop'>Gem</h5>
+                      <h5 className='p-2xs-semibold sm:p-xs-semibold'>Gem</h5>
                     </div>
                   </div>
                   <div className='pl-4 pt-3'>
@@ -478,7 +478,7 @@ export default function WelkeLayout({ ...props }) {
                               />
                             </svg>
                           </span>
-                          <h5 className='inline-block mobile sm:desktop hover:underline'>
+                          <h5 className='inline-block p-2xs-semibold sm:p-xs-semibold hover:underline'>
                             {law.titel}
                           </h5>
                         </div>
