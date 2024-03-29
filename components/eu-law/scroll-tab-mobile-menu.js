@@ -73,7 +73,7 @@ export default function ScrollTabMobileMenu({ content }) {
                       <div className='relative flex-1 px-4 sm:px-6'>
                         <ul className=''>
                           {content.map((section, id) => (
-                            <li key={id} className='my-4'>
+                            <li key={id} className='my-4 text-green-800'>
                               <Link
                                 to={`${section.title}`}
                                 smooth={true}
@@ -81,7 +81,7 @@ export default function ScrollTabMobileMenu({ content }) {
                                 offset={-135}
                                 spy={true}
                                 activeClass='bg-green-500 !text-white font-semibold transition-all duration-100'
-                                className='p-base text-green-800 py-2 pl-4 pr-8 h-full break-words rounded-cl whitespace-nowrap cursor-pointer'
+                                className='p-base  py-2 pl-4 pr-8 h-full break-words rounded-cl whitespace-nowrap cursor-pointer'
                                 onClick={() => setOpen(false)}
                               >
                                 {id + 1}. {section.title}

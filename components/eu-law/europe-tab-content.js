@@ -26,7 +26,7 @@ export default function ScrollPagesTabContent({ content }) {
           <ul className='sticky top-48 my-12 min-w-[390px]'>
             <h4 className='p-6xl-semibold mb-5 ml-3'>In deze pagina</h4>
             {content.map((section, id) => (
-              <li key={id} className='my-4'>
+              <li key={id} className='my-4 text-green-800'>
                 <Link
                   to={`${section.title}`}
                   smooth={true}
@@ -34,7 +34,7 @@ export default function ScrollPagesTabContent({ content }) {
                   offset={-155}
                   spy={true}
                   activeClass='bg-green-500 !text-white font-semibold transition-all duration-100 min-w-[390px]'
-                  className='p-base text-green-800 py-2 pl-4 pr-8 h-full break-words min-w-[390px] rounded-cl whitespace-nowrap cursor-pointer'
+                  className='p-base py-2 pl-4 pr-8 h-full break-words min-w-[390px] rounded-cl whitespace-nowrap cursor-pointer'
                 >
                   {id + 1}. {section.title}
                 </Link>
