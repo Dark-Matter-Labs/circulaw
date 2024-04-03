@@ -34,7 +34,7 @@ export default function SummaryComponent({ lawData }) {
       {/*  
       <div className='bg-green-50 h-[200px]'>
         <div className='global-margin py-10'>
-          <h2 className='text-green-800 p-6xl-semibold'>Relevante termen</h2>
+          <h2 className='text-green-800 heading-3xl-semibold'>Relevante termen</h2>
         </div>
       </div>
 */}
@@ -42,7 +42,7 @@ export default function SummaryComponent({ lawData }) {
       <div className=''>
         <div className='global-margin py-10'>
           <div className='flex flex-row items-center place-items-center'>
-            <h2 className='text-green-800 p-6xl-semibold'>Status</h2>
+            <h2 className='text-green-800 heading-3xl-semibold'>Status</h2>
             <div className='place-items-center mt-3 ml-2'>
               <EUGenericTooltip title='Welke statussen zijn er?'>
                 <div>

@@ -67,7 +67,7 @@ export default function ScrollTabMobileMenu({ content }) {
                       <div className='px-4 sm:px-6'>
                         <Dialog.Title className='text-gray-800'>
                           {' '}
-                          <h2 className='p-6xl-semibold my-4'>In deze pagina</h2>
+                          <h2 className='heading-3xl-semibold my-4'>In deze pagina</h2>
                         </Dialog.Title>
                       </div>
                       <div className='relative flex-1 px-4 sm:px-6'>
