@@ -45,15 +45,16 @@ export default function EULaw({ laws }) {
           <p className='mb-4 mt-10'>
             Er komt een &apos;storm&apos; aan Europese wet- en regelgeving op ons af, gericht op het
             verduurzamen van onze maatschappij en de circulaire economie. Veel hiervan valt onder de
-            &apos;Green Deal&apos; en Fit for 55, maar ook buiten de Green Deal wordt wet- en
-            regelgeving aangepast. Veel decentrale overheden hebben geen zicht op de verplichtingen
-            en kansen die voortvloeien uit al deze Europese wet- en regelgeving. Deze ontwikkeling
-            brengt zowel beperkingen als kansen om de transitie naar circulariteit te versnellen.
+            &apos;Green Deal&apos; en Fit for 55, maar ook daarbuiten wordt wet- en regelgeving aangepast.
+            Omdat decentrale overheden vaak geen zicht hebben op de verplichtingen en kansen die
+            voortvloeien uit alle Europese wet- en regelgeving, hebben we alvast 5 wetten
+            geanalyseerd.
           </p>
           <p>
-            Een deel van de wetten die we hier bespreken hebben nog de status &apos;in
-            onderhandeling&apos;. Zij veranderen regelmatig totdat het wetgevingsproces is
-            doorlopen. Wij houden continu de status bij. Neem dus regelmatig even een kijkje!
+            Een aantal hiervan heeft nog de status &apos;in onderhandeling&apos;. De inhoud wijzigt
+            regelmatig tijdens het wetgevingsproces. Wij houden continu de status bij. Op basis van
+            jullie feedback zullen we ook nieuwe wetten uitwerken en nieuwe informatie toevoegen.
+            Neem dus regelmatig even een kijkje!
           </p>
         </div>
       </div>
