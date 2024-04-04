@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import Tag from '../tag';
+import Link from 'next/link';
 
 export default function FeaturedAgendaCard({ data }) {
   // seperate date

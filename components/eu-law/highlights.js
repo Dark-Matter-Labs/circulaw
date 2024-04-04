@@ -1,5 +1,18 @@
 import HighlightCard from './highlight-card';
 import HighlightsSmallCard from './highlights-small-card';
+import cpr1 from '@/public/eu-crp-icons/cpr-1.svg';
+import cpr2 from '@/public/eu-crp-icons/cpr-2.svg';
+import cpr3 from '@/public/eu-crp-icons/cpr-3.svg';
+import cpr4 from '@/public/eu-crp-icons/cpr-4.svg';
+import espr from '@/public/eu-espr-icons/espr-0.svg';
+import espr1 from '@/public/eu-espr-icons/espr-1.svg';
+import espr2 from '@/public/eu-espr-icons/espr-2.svg';
+import espr3 from '@/public/eu-espr-icons/espr-3.svg';
+import espr4 from '@/public/eu-espr-icons/espr-4.svg';
+import espr5 from '@/public/eu-espr-icons/espr-5.svg';
+import espr6 from '@/public/eu-espr-icons/espr-6.svg';
+import espr7 from '@/public/eu-espr-icons/espr-7.svg';
+import espr8 from '@/public/eu-espr-icons/espr-8.svg';
 import sup1 from '@/public/eu-sup-icons/sup-1.svg';
 import sup2 from '@/public/eu-sup-icons/sup-2.svg';
 import sup3 from '@/public/eu-sup-icons/sup-3.svg';
@@ -10,21 +23,6 @@ import sup7 from '@/public/eu-sup-icons/sup-7.svg';
 import sup8 from '@/public/eu-sup-icons/sup-8.svg';
 import sup9 from '@/public/eu-sup-icons/sup-9.svg';
 import sup10 from '@/public/eu-sup-icons/sup-10.svg';
-
-import cpr1 from '@/public/eu-crp-icons/cpr-1.svg';
-import cpr2 from '@/public/eu-crp-icons/cpr-2.svg';
-import cpr3 from '@/public/eu-crp-icons/cpr-3.svg';
-import cpr4 from '@/public/eu-crp-icons/cpr-4.svg';
-
-import espr from '@/public/eu-espr-icons/espr-0.svg';
-import espr1 from '@/public/eu-espr-icons/espr-1.svg';
-import espr2 from '@/public/eu-espr-icons/espr-2.svg';
-import espr3 from '@/public/eu-espr-icons/espr-3.svg';
-import espr4 from '@/public/eu-espr-icons/espr-4.svg';
-import espr5 from '@/public/eu-espr-icons/espr-5.svg';
-import espr6 from '@/public/eu-espr-icons/espr-6.svg';
-import espr7 from '@/public/eu-espr-icons/espr-7.svg';
-import espr8 from '@/public/eu-espr-icons/espr-8.svg';
 
 export default function Highlights({ law }) {
   if (law === 'CSRD') {

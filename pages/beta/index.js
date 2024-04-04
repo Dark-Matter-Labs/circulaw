@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import Layout from '@/components/layouts/layout';
+import Link from 'next/link';
 
 export default function Beta() {
   return (

@@ -1,7 +1,7 @@
-import { client } from '@/lib/sanity';
-import { FAQPageQuery } from '@/lib/queries';
 import FAQPageComponent from '@/components/faq-page';
 import Layout from '@/components/layouts/layout';
+import { FAQPageQuery } from '@/lib/queries';
+import { client } from '@/lib/sanity';
 
 export default function FAQ({ FAQ }) {
   return (

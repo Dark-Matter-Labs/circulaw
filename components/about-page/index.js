@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import { PortableText } from '@portabletext/react';
+import AboutPageDropdown from './about-page-dropdown';
 import AboutPageNav from './about-page-nav';
 import { portableTextComponents } from '@/lib/portable-text/pt-components';
-import AboutPageDropdown from './about-page-dropdown';
+import { PortableText } from '@portabletext/react';
+import Link from 'next/link';
 
 export default function AboutPageComponent({ data }) {
   return (

@@ -1,7 +1,7 @@
 import { Box, Flex, Switch } from '@sanity/ui';
-import { useDocumentPane } from 'sanity/desk';
-import { useFormValue, PatchEvent, set } from 'sanity';
 import { useCallback } from 'react';
+import { useFormValue, PatchEvent, set } from 'sanity';
+import { useDocumentPane } from 'sanity/desk';
 
 export function NewsItemComponent(props) {
   const { value, path } = props;

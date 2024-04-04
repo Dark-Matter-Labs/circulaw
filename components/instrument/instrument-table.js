@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
 import LinkIcon from '../link-icon';
+import { useEffect, useState } from 'react';
 
 const formatDate = (date) => {
   let dateObject = new Date(date);

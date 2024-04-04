@@ -1,8 +1,7 @@
-import Link from 'next/link';
-import { ArrowLeftIcon } from '@heroicons/react/outline';
-import { Popover } from '@headlessui/react';
-
 import CustomButton from '../custom-button';
+import { Popover } from '@headlessui/react';
+import { ArrowLeftIcon } from '@heroicons/react/outline';
+import Link from 'next/link';
 
 export default function InstrumentFeedbackBlock({ data }) {
   return (

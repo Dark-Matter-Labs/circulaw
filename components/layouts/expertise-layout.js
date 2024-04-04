@@ -1,11 +1,10 @@
-import { useEffect, useState, useTransition } from 'react';
-import { ChevronUpIcon } from '@heroicons/react/outline';
-import { Disclosure } from '@headlessui/react';
-
-import OverviewPageHeader from '../overview-page-header';
+import ExplinationText from '../expertise-page/explination-text';
 import TabButton from '../expertise-page/tab-button';
 import TabLayout from '../expertise-page/tab-layout';
-import ExplinationText from '../expertise-page/explination-text';
+import OverviewPageHeader from '../overview-page-header';
+import { Disclosure } from '@headlessui/react';
+import { ChevronUpIcon } from '@heroicons/react/outline';
+import { useEffect, useState, useTransition } from 'react';
 
 export default function ExpertiseLayout({ expertiseData, ...props }) {
   const [beleid, setBeleid] = useState([]);

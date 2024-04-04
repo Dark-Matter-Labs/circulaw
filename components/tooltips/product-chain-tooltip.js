@@ -1,9 +1,8 @@
-import { Fragment, useState } from 'react';
+import { reducedPortableTextComponents } from '@/lib/portable-text/pt-components';
 import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
 import { PortableText } from '@portabletext/react';
-
-import { reducedPortableTextComponents } from '@/lib/portable-text/pt-components';
+import { Fragment, useState } from 'react';
 
 export default function PCTooltip({ children, icon, title, content }) {
   const [open, setOpen] = useState(false);

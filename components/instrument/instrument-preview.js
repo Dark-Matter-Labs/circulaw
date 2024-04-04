@@ -1,14 +1,12 @@
-import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
-import { PortableText } from '@portabletext/react';
-import { usePreview } from '@/lib/sanity.preview';
-
+import InstrumentFeedbackBlock from './instrument-feedback-block';
+import MobileFeedback from './instrument-feedback-block-mobile';
+import InstrumentHeader from './instrument-header';
 import InstrumentTable from './instrument-table';
 import { portableTextComponents } from '@/lib/portable-text/pt-components';
-
-import InstrumentFeedbackBlock from './instrument-feedback-block';
-import InstrumentHeader from './instrument-header';
-import MobileFeedback from './instrument-feedback-block-mobile';
+import { usePreview } from '@/lib/sanity.preview';
+import { PortableText } from '@portabletext/react';
+import Link from 'next/link';
+import { useState, useEffect, useRef } from 'react';
 
 export default function InstrumentPreview({ query, queryParams }) {
   const data = { instrument: usePreview(null, query, queryParams) };

@@ -1,8 +1,7 @@
+// import { urlFor } from '@/lib/sanity';
+import bannerImage from '@/public/banner.png';
 import Image from 'next/image';
 import Link from 'next/link';
-// import { urlFor } from '@/lib/sanity';
-
-import bannerImage from '@/public/banner.png';
 
 export default function ThemePageHeader({ pageTitle }) {
   return (
