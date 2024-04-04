@@ -158,7 +158,6 @@ export default {
           ],
           styles: [
             { title: 'H2', value: 'h2' },
-            { title: 'firstH2', value: 'firstH2' },
             { title: 'H3', value: 'h3' },
             { title: 'normal', value: 'normal' },
             // { title: 'subheading', value: 'subheading' },
@@ -202,7 +201,7 @@ export default {
                     name: 'reference',
                     type: 'reference',
                     title: 'Reference',
-                    to: [{ type: 'measure' }],
+                    to: [{ type: 'instrument' }],
                     validation: (Rule) => Rule.required(),
                     options: {
                       disableNew: true,

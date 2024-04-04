@@ -22,7 +22,7 @@ function getPreviewUrl(doc) {
 
 export const defaultDocumentNode = (S, { schemaType }) => {
   switch (schemaType) {
-    case 'measure':
+    case 'instrument':
       return S.document().views([
         S.view.form(),
         S.view
@@ -43,6 +43,27 @@ export const defaultDocumentNode = (S, { schemaType }) => {
           })
           .title('Preview'),
       ]);
+    case 'thema':
+      return S.document().views([
+        S.view.form(),
+        S.view
+          .component(Iframe)
+          .options({
+            url: (doc) => getPreviewUrl(doc),
+          })
+          .title('Preview'),
+      ]);
+    case 'simpleThema':
+      return S.document().views([
+        S.view.form(),
+        S.view
+          .component(Iframe)
+          .options({
+            url: (doc) => getPreviewUrl(doc),
+          })
+          .title('Preview'),
+      ]);
+
     default:
       return S.document().views([S.view.form()]);
   }

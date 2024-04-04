@@ -1,6 +1,6 @@
 import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
-import { FAQPagePTComponents } from '@/lib/portable-text/pt-components';
+import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import { PlusIcon, MinusIcon } from '@heroicons/react/outline';
 import { useState } from 'react';
 
@@ -70,7 +70,7 @@ export default function FAQPageComponent({ data }) {
                       </AccordionSummary>
                       <AccordionDetails>
                         <Typography as='div' className='w-5/6'>
-                          <PortableText value={item.response} components={FAQPagePTComponents} />
+                          <PortableText value={item.response} components={portableTextComponents} />
                         </Typography>
                       </AccordionDetails>
                     </Accordion>

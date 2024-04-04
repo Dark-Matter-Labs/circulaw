@@ -1,5 +1,6 @@
 import { CgInternal } from 'react-icons/cg';
 
+// rename
 export default {
   title: 'Grey Box',
   name: 'smallPara',
@@ -55,7 +56,7 @@ export default {
                     name: 'reference',
                     type: 'reference',
                     title: 'Reference',
-                    to: [{ type: 'measure' }],
+                    to: [{ type: 'instrument' }],
                     options: {
                       disableNew: true,
                     },

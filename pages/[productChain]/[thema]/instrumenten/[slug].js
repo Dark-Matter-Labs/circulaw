@@ -3,7 +3,7 @@ import { PreviewSuspense } from 'next-sanity/preview';
 
 import Layout from '@/components/layouts/layout';
 import { client } from '@/lib/sanity';
-import { measureQuery } from '@/lib/queries';
+import { instrumentQuery } from '@/lib/queries';
 import Instrument from '@/components/instrument';
 
 import globalMeta from '@/utils/global-meta';
@@ -11,22 +11,25 @@ import globalMeta from '@/utils/global-meta';
 const InstrumentPreview = lazy(() => import('@/components/instrument/instrument-preview'));
 
 const pathsQuery = `
-  *[_type == "measure" && defined(slug.current)]{
+  *[_type == "instrument" && defined(slug.current)]{
     "slug": slug.current,
-    "thema": thema->.slug.current,
+    "thema": coalesce(*[_id == ("drafts." + ^.thema._ref)][0].slug.current, thema->.slug.current),
     "productChain": transitionAgenda->.slug.current,
   }
   `;
 
-export default function Measure({ preview, data }) {
+export default function instrument({ preview, data }) {
   return preview ? (
     <PreviewSuspense>
       <Layout>
-        <InstrumentPreview query={measureQuery} queryParams={data.slug} />
+        <InstrumentPreview query={instrumentQuery} queryParams={data.slug} />
       </Layout>
     </PreviewSuspense>
   ) : (
-    <Layout title={data?.measure?.titel} canonicalUrl={globalMeta.siteUrl + data?.measure?.slug}>
+    <Layout
+      title={data?.instrument?.titel}
+      canonicalUrl={globalMeta.siteUrl + data?.instrument?.slug}
+    >
       <Instrument data={data} />
     </Layout>
   );
@@ -34,7 +37,6 @@ export default function Measure({ preview, data }) {
 
 export async function getStaticPaths() {
   const paths = await client.fetch(pathsQuery);
-
   return {
     paths: paths.map((path) => ({
       params: { slug: path.slug, thema: path.thema, productChain: path.productChain },
@@ -50,9 +52,9 @@ export async function getStaticProps({ params, preview = false }) {
   if (preview) {
     return { props: { preview, data: { slug } } };
   }
-  const measure = await client.fetch(measureQuery, slug);
+  const instrument = await client.fetch(instrumentQuery, slug);
   return {
-    props: { preview, data: { measure, slug } },
+    props: { preview, data: { instrument, slug } },
     revalidate: 1,
   };
 }

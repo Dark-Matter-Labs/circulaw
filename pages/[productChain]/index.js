@@ -8,7 +8,7 @@ const pathsQuery = `
 *[_type == "productChain" && defined(slug.current)][].slug.current
 `;
 const number = `
-count(*[_type == "measure" && transitionAgenda->slug.current == $productChain])
+count(*[_type == "instrument" && transitionAgenda->slug.current == $productChain])
 `;
 
 const query = `
@@ -32,7 +32,7 @@ const themaCardQuery = `
   "transitionAgenda": transitionAgenda->slug.current,
   "image": homePageCardImage.asset->.url,
   "mobileCardImage": homePageCardImageMobile.asset->url,
-  "count": count(*[_type == "measure" && thema->slug.current == ^.slug.current || simpleThema->slug.current == ^.slug.current]),
+  "count": count(*[_type == "instrument" && thema->slug.current == ^.slug.current || simpleThema->slug.current == ^.slug.current]),
 }
 `;
 

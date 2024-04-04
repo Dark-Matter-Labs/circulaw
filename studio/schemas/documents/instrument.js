@@ -2,8 +2,8 @@ import { VscLaw } from 'react-icons/vsc';
 import { CgInternal } from 'react-icons/cg';
 
 export default {
-  title: 'Measure',
-  name: 'measure',
+  title: 'instrument',
+  name: 'instrument',
   type: 'document',
   icon: VscLaw,
   // GROUPS
@@ -94,6 +94,7 @@ export default {
       description: 'Selecteer het thema waaronder dit instrument valt.',
       validation: (Rule) => Rule.required(),
       group: 'high-level',
+
       to: [{ type: 'thema' }, { type: 'simpleThema' }],
     },
     {
@@ -429,7 +430,6 @@ export default {
           ],
           styles: [
             { title: 'H2', value: 'h2' },
-            { title: 'firstH2', value: 'firstH2' },
             { title: 'H3', value: 'h3' },
             { title: 'normal', value: 'normal' },
             // { title: 'subheading', value: 'subheading' },
@@ -474,7 +474,7 @@ export default {
                     name: 'reference',
                     type: 'reference',
                     title: 'Reference',
-                    to: [{ type: 'measure' }],
+                    to: [{ type: 'instrument' }],
                     validation: (Rule) => Rule.required(),
                     options: {
                       disableNew: true,

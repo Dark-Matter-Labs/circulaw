@@ -4,7 +4,7 @@ import Image from 'next/image';
 import EUGenericTooltip from '../tooltips/eu-generic-tooltip';
 import EUTooltip from '../tooltips/eu-tooltip';
 import { PortableText } from '@portabletext/react';
-import { EUtooltipComponents } from '@/lib/portable-text/pt-components';
+import { reducedPortableTextComponents } from '@/lib/portable-text/pt-components';
 import LinkIcon from '../link-icon';
 import StatusThreeStep from './status/status-three-step';
 import StatusTwoStep from './status/status-two-step';
@@ -94,7 +94,10 @@ export default function SummaryComponent({ lawData }) {
           </div>
           <div>
             <EUTooltip title={lawData?.statusContentTitle}>
-              <PortableText value={lawData?.statusContent} components={EUtooltipComponents} />
+              <PortableText
+                value={lawData?.statusContent}
+                components={reducedPortableTextComponents}
+              />
             </EUTooltip>
           </div>
         </div>

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { PortableText } from '@portabletext/react';
 import AboutPageNav from './about-page-nav';
 import { usePreview } from '@/lib/sanity.preview';
-import { aboutPagePTComponents } from '@/lib/portable-text/pt-components';
+import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import AboutPageDropdown from './about-page-dropdown';
 
 export default function AboutPagepreview({ query, queryParams }) {
@@ -19,9 +19,9 @@ export default function AboutPagepreview({ query, queryParams }) {
         </div>
         <div className='grid grid-cols-1 w-full lg:grid-cols-3 max-w-8xl'>
           <div className='lg:col-span-2'>
-            <div className='breadcrumb pt-8 text-green-500 '>
+            <div className='p-2xs-bold text-green-600 bg-white pl-2 pr-3 py-1.5 rounded-clSm mt-6'>
               <Link href='/' className='link-interaction'>
-                Home &gt;
+                Home<span className='ml-2'>{'>'}</span>
               </Link>
             </div>
             <div className='max-w-3xl'>
@@ -30,7 +30,7 @@ export default function AboutPagepreview({ query, queryParams }) {
               </h1>
               <PortableText
                 value={data?.aboutPage?.aboutPageContent}
-                components={aboutPagePTComponents}
+                components={portableTextComponents}
               />
             </div>
           </div>
@@ -43,7 +43,7 @@ export default function AboutPagepreview({ query, queryParams }) {
           <div className='block lg:hidden'>
             <AboutPageDropdown
               currentSlug={data?.aboutPage?.slug.current}
-              slugs={data?.aboutPageSlugs}
+              slugs={data?.aboutPage?.aboutPageSlugs}
             />
           </div>
         </div>
