@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { useRouter } from 'next/router';
+import { LinkIcon } from '@heroicons/react/outline';
 import {
   EmailShareButton,
   LinkedinShareButton,
   TwitterShareButton,
   WhatsappShareButton,
 } from 'next-share';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { SocialIcon } from 'react-social-icons';
-import { LinkIcon } from '@heroicons/react/outline';
 
 const viewportType = {
   mobile: 'flex flex-row justify-between items-center px-2',

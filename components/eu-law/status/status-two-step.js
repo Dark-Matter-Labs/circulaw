@@ -1,16 +1,14 @@
-import Image from 'next/image';
-
 // import desktop svgs
 import desktopStep1 from '@/public/eu-status/desktop-two-step/desktop-two-step-1.svg';
 import desktopStep2 from '@/public/eu-status/desktop-two-step/desktop-two-step-2.svg';
 import desktopStep3 from '@/public/eu-status/desktop-two-step/desktop-two-step-3.svg';
 import desktopStep4 from '@/public/eu-status/desktop-two-step/desktop-two-step-4.svg';
-
 // import mobile svgs
 import mobileStep1 from '@/public/eu-status/mobile-two-step/mobile-two-step-1.svg';
 import mobileStep2 from '@/public/eu-status/mobile-two-step/mobile-two-step-2.svg';
 import mobileStep3 from '@/public/eu-status/mobile-two-step/mobile-two-step-3.svg';
 import mobileStep4 from '@/public/eu-status/mobile-two-step/mobile-two-step-4.svg';
+import Image from 'next/image';
 
 export default function StatusTwoStep({ status }) {
   if (status === 'In negotiations A') {

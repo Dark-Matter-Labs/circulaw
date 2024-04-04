@@ -1,10 +1,10 @@
-import { useEffect, lazy } from 'react';
 import Layout from '@/components/layouts/layout';
-import ThemeLayout from '@/components/layouts/theme-index-layout';
-import { client } from '@/lib/sanity';
-import { themaQuery } from '@/lib/queries';
 import SimpleThemaLayout from '@/components/layouts/simple-thema-layout';
+import ThemeLayout from '@/components/layouts/theme-index-layout';
+import { themaQuery } from '@/lib/queries';
+import { client } from '@/lib/sanity';
 import { PreviewSuspense } from 'next-sanity/preview';
+import { useEffect, lazy } from 'react';
 
 const ThemeLayoutPreview = lazy(() => import('@/components/layouts/theme-index-layout-preview'));
 

@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import CustomButton from '@/components/custom-button';
+import Layout from '@/components/layouts/layout';
 import axios from 'axios';
 import Link from 'next/link';
-import Layout from '@/components/layouts/layout';
-import CustomButton from '@/components/custom-button';
+import { useState } from 'react';
 
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/a53bd6aa-495c-416a-b8ec-2b36b6be1af9';
 

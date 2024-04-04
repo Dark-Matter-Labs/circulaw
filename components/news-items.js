@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import { ArrowRightIcon } from '@heroicons/react/outline';
-import LinkIcon from '@/components/link-icon';
 import CustomButton from './custom-button';
+import LinkIcon from '@/components/link-icon';
+import { ArrowRightIcon } from '@heroicons/react/outline';
+import Link from 'next/link';
 
 export default function NewsItems({ newsItems }) {
   const formatDate = (date) => {

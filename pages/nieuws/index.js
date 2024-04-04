@@ -1,15 +1,15 @@
 import Layout from '@/components/layouts/layout';
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { Popover } from '@headlessui/react';
-import { ChevronUpIcon } from '@heroicons/react/outline';
-import { client } from '@/lib/sanity';
+import AgendaCard from '@/components/news-page/agenda-card';
 import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
-import AgendaCard from '@/components/news-page/agenda-card';
 import NewsCard from '@/components/news-page/news-card';
-import { newsItems } from '@/lib/queries';
 import Tag from '@/components/tag';
+import { newsItems } from '@/lib/queries';
+import { client } from '@/lib/sanity';
+import { Popover } from '@headlessui/react';
+import { ChevronUpIcon } from '@heroicons/react/outline';
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 export default function NewsPage({ data }) {

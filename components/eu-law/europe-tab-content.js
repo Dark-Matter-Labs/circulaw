@@ -1,7 +1,7 @@
-import { Link, Element } from 'react-scroll';
-import { PortableText } from '@portabletext/react';
-import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import ScrollTabMobileMenu from './scroll-tab-mobile-menu';
+import { portableTextComponents } from '@/lib/portable-text/pt-components';
+import { PortableText } from '@portabletext/react';
+import { Link, Element } from 'react-scroll';
 
 export default function ScrollPagesTabContent({ content }) {
   return (

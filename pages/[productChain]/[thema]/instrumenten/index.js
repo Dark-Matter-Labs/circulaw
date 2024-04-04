@@ -1,7 +1,7 @@
 import Layout from '/components/layouts/layout';
 import InstrumentsLayout from '@/components/layouts/instruments-layout';
-import { client } from '@/lib/sanity';
 import { totalNumberOfInstrumentsPerThema, instrumentListPageFunction } from '@/lib/queries';
+import { client } from '@/lib/sanity';
 
 const pathsQuery = `
 *[_type in ["thema", "simpleThema"] && defined(slug.current)]{

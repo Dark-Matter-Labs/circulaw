@@ -1,10 +1,10 @@
-import { client } from '@/lib/sanity';
 import Layout from '@/components/layouts/layout';
 import WelkeLayout from '@/components/layouts/welke-layout';
-import matrassenImageMob from '@/public/bevoegdheden/bevoegdheden-matrassen.png';
-import houtbouwImageMob from '@/public/bevoegdheden/bevoegdheden-houtbouw-mob.png';
-import windmillImageMob from '@/public/bevoegdheden/bevoegdheden-windmill.png';
 import { govLevelQueryFunction } from '@/lib/queries';
+import { client } from '@/lib/sanity';
+import houtbouwImageMob from '@/public/bevoegdheden/bevoegdheden-houtbouw-mob.png';
+import matrassenImageMob from '@/public/bevoegdheden/bevoegdheden-matrassen.png';
+import windmillImageMob from '@/public/bevoegdheden/bevoegdheden-windmill.png';
 
 // const thema = 'matrasketen';
 

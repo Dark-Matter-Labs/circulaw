@@ -1,6 +1,6 @@
-import RLadderTooltip from '@/components/tooltips/r-ladder-tooltip';
 import JHTooltip from '../tooltips/tooltip-juridische-houdbaarheid';
 import JITooltip from '../tooltips/tooltip-juridische-invloed';
+import RLadderTooltip from '@/components/tooltips/r-ladder-tooltip';
 
 export default function InstrumentMetaData({ data, borders }) {
   return (

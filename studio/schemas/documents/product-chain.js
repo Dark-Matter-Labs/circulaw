@@ -1,5 +1,5 @@
-import { BsCircle } from 'react-icons/bs';
 import { lineBreak } from '../../components/headerInput';
+import { BsCircle } from 'react-icons/bs';
 
 export default {
   title: 'Transitie-agenda',
