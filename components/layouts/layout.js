@@ -1,14 +1,13 @@
-import Head from 'next/head';
-import { groq } from 'next-sanity';
-import useSWR from 'swr';
-import PiwikProProvider from '@piwikpro/next-piwik-pro';
-
-import globalMeta from '@/utils/global-meta';
-import Footer from '@/components/nav/footer';
-import Nav from '@/components/nav';
 import CookieConsent from '@/components/cookie-banner';
+import Nav from '@/components/nav';
+import Footer from '@/components/nav/footer';
 import { siteSettingsQuerys, footerQuery } from '@/lib/queries';
+import globalMeta from '@/utils/global-meta';
 import { fetcher } from '@/utils/swr-fetcher';
+import PiwikProProvider from '@piwikpro/next-piwik-pro';
+import { groq } from 'next-sanity';
+import Head from 'next/head';
+import useSWR from 'swr';
 
 export default function Layout({
   title = globalMeta.siteName,

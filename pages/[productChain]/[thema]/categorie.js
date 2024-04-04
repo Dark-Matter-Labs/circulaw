@@ -1,7 +1,7 @@
-import Layout from '@/components/layouts/layout';
 import ExpertiseLayout from '@/components/layouts/expertise-layout';
-import { client } from '@/lib/sanity';
+import Layout from '@/components/layouts/layout';
 import { categorieQuery } from '@/lib/queries';
+import { client } from '@/lib/sanity';
 
 const pathsQuery = `
 *[_type in ["thema", "simpleThema"] && defined(slug.current)]{

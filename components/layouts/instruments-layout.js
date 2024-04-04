@@ -1,9 +1,6 @@
-import { useState, useEffect, useRef, Fragment, useCallback } from 'react';
-import { Dialog, Transition, Combobox } from '@headlessui/react';
-import createPersistedState from 'use-persisted-state';
-import { SearchIcon, XIcon, AdjustmentsIcon } from '@heroicons/react/outline';
-import Fuse from 'fuse.js';
-
+import OverviewPageHeader from '../overview-page-header';
+import PolicyList from '/components/policy-list';
+import SearchFilter from '/components/search-filter';
 import {
   overheidslaag,
   juridischeHaalbaarheid,
@@ -12,9 +9,12 @@ import {
   expertise,
   rLadder,
 } from '@/utils/data-filter';
-import SearchFilter from '/components/search-filter';
-import PolicyList from '/components/policy-list';
-import OverviewPageHeader from '../overview-page-header';
+import { Dialog, Transition, Combobox } from '@headlessui/react';
+import { SearchIcon, XIcon, AdjustmentsIcon } from '@heroicons/react/outline';
+import Fuse from 'fuse.js';
+import { useState, useEffect, useRef, Fragment, useCallback } from 'react';
+import createPersistedState from 'use-persisted-state';
+
 // creating objects for persisting values
 const useSelectedState = createPersistedState('selected');
 

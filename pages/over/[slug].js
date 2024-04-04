@@ -1,15 +1,14 @@
-import { lazy } from 'react';
-import { PreviewSuspense } from 'next-sanity/preview';
-
+import AboutPageComponent from '@/components/about-page';
 import Layout from '@/components/layouts/layout';
-import { client } from '@/lib/sanity';
 import {
   aboutPagePathsQuery,
   aboutPageQuery,
   siteSettingsQuerys,
   aboutPagePreviewQuery,
 } from '@/lib/queries';
-import AboutPageComponent from '@/components/about-page';
+import { client } from '@/lib/sanity';
+import { PreviewSuspense } from 'next-sanity/preview';
+import { lazy } from 'react';
 
 const AboutPagepreview = lazy(() => import('@/components/about-page/about-page-preview'));
 

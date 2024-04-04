@@ -1,5 +1,5 @@
-import { BsNewspaper } from 'react-icons/bs';
 import { NewsItemComponent } from '../../components/news-item';
+import { BsNewspaper } from 'react-icons/bs';
 
 export default {
   name: 'newsCard', // change to news item later - remove old news item.

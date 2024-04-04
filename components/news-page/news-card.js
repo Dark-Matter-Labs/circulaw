@@ -1,8 +1,8 @@
+import LinkIcon from '../link-icon';
 import Tag from '../tag';
 import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
-import LinkIcon from '../link-icon';
 
 export default function NewsCard({ data }) {
   const event = new Date(data.newsDate);

@@ -1,10 +1,10 @@
-import { VscLaw } from 'react-icons/vsc';
-import { GrNavigate } from 'react-icons/gr';
-import { FcAbout } from 'react-icons/fc';
-import { FaLanguage, FaHandshake, FaQuestion } from 'react-icons/fa';
-import { BsCircle, BsNewspaper } from 'react-icons/bs';
 import { AiOutlineHome } from 'react-icons/ai';
+import { BsCircle, BsNewspaper } from 'react-icons/bs';
+import { FaLanguage, FaHandshake, FaQuestion } from 'react-icons/fa';
+import { FcAbout } from 'react-icons/fc';
 import { GiEuropeanFlag } from 'react-icons/gi';
+import { GrNavigate } from 'react-icons/gr';
+import { VscLaw } from 'react-icons/vsc';
 
 export const Structure = (S) =>
   S.list()

@@ -1,14 +1,14 @@
-import { urlFor } from '@/lib/sanity';
-import Link from 'next/link';
-import Image from 'next/image';
+import LinkIcon from '../link-icon';
 import EUGenericTooltip from '../tooltips/eu-generic-tooltip';
 import EUTooltip from '../tooltips/eu-tooltip';
-import { PortableText } from '@portabletext/react';
-import { reducedPortableTextComponents } from '@/lib/portable-text/pt-components';
-import LinkIcon from '../link-icon';
+import Highlights from './highlights';
 import StatusThreeStep from './status/status-three-step';
 import StatusTwoStep from './status/status-two-step';
-import Highlights from './highlights';
+import { reducedPortableTextComponents } from '@/lib/portable-text/pt-components';
+import { urlFor } from '@/lib/sanity';
+import { PortableText } from '@portabletext/react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function SummaryComponent({ lawData }) {
   return (

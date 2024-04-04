@@ -1,5 +1,5 @@
-import { PortableText } from '@portabletext/react';
 import { portableTextComponents } from '@/lib/portable-text/pt-components';
+import { PortableText } from '@portabletext/react';
 
 export default function NewsDetailPageBody({ data }) {
   return (

@@ -1,11 +1,10 @@
-import { PortableText } from '@portabletext/react';
-import { useState, useEffect, useRef } from 'react';
-
+import InstrumentFeedbackBlock from './instrument-feedback-block';
+import MobileFeedback from './instrument-feedback-block-mobile';
+import InstrumentHeader from './instrument-header';
 import InstrumentTable from './instrument-table';
 import { portableTextComponents } from '@/lib/portable-text/pt-components';
-import InstrumentFeedbackBlock from './instrument-feedback-block';
-import InstrumentHeader from './instrument-header';
-import MobileFeedback from './instrument-feedback-block-mobile';
+import { PortableText } from '@portabletext/react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function Instrument({ data }) {
   const [scrollEffect, setScrollEffect] = useState(false);

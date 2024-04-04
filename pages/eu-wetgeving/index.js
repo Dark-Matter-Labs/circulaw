@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import EULawCard from '@/components/eu-law/eu-law-card';
 import Layout from '@/components/layouts/layout';
 import { client } from '@/lib/sanity';
-import EULawCard from '@/components/eu-law/eu-law-card';
 import bannerImage from '@/public/banner.png';
+import Image from 'next/image';
+import Link from 'next/link';
 
 // refactor
 const euLawsQuery = `

@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowRightIcon } from '@heroicons/react/outline';
 import CustomButton from '@/components/custom-button';
+import { ArrowRightIcon } from '@heroicons/react/outline';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function HomePageEUSection({ euData }) {
   return (

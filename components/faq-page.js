@@ -1,13 +1,13 @@
-import { PortableText } from '@portabletext/react';
-import Link from 'next/link';
 import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import { PlusIcon, MinusIcon } from '@heroicons/react/outline';
-import { useState } from 'react';
-
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
+import { PortableText } from '@portabletext/react';
+import Link from 'next/link';
+import { useState } from 'react';
+
 // import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function FAQPageComponent({ data }) {

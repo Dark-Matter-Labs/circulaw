@@ -1,7 +1,7 @@
+import LinkIcon from '../link-icon';
+import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
-import { urlFor } from '@/lib/sanity';
-import LinkIcon from '../link-icon';
 
 export default function ThemePageHeaderMobile({ themaData }) {
   return (

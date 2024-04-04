@@ -1,7 +1,7 @@
-import { Popover } from '@headlessui/react';
-import Link from 'next/link';
-import { ArrowUpIcon } from '@heroicons/react/outline';
 import CustomButton from '../custom-button';
+import { Popover } from '@headlessui/react';
+import { ArrowUpIcon } from '@heroicons/react/outline';
+import Link from 'next/link';
 
 export default function MobileFeedback({ data }) {
   return (

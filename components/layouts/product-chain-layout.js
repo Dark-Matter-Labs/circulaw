@@ -1,11 +1,11 @@
-import Image from 'next/image';
-import { urlFor } from '@/lib/sanity';
-import Link from 'next/link';
+import ThemaCard from '../thema-cards';
+import PCTooltip from '../tooltips/product-chain-tooltip';
 import CustomButton from '@/components/custom-button';
 import PageHeader from '@/components/product-chain-page/product-chain-header';
 import MobilePageHeader from '@/components/product-chain-page/product-chain-header-mobile';
-import PCTooltip from '../tooltips/product-chain-tooltip';
-import ThemaCard from '../thema-cards';
+import { urlFor } from '@/lib/sanity';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ThemeLayout({ ...props }) {
   return (

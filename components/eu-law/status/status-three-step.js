@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 // import desktop svgs
 import desktopStep1 from '@/public/eu-status/desktop-three-step/desktop-three-step-1.svg';
 import desktopStep2 from '@/public/eu-status/desktop-three-step/desktop-three-step-2.svg';
@@ -7,7 +5,6 @@ import desktopStep3 from '@/public/eu-status/desktop-three-step/desktop-three-st
 import desktopStep4 from '@/public/eu-status/desktop-three-step/desktop-three-step-4.svg';
 import desktopStep5 from '@/public/eu-status/desktop-three-step/desktop-three-step-5.svg';
 import desktopStep6 from '@/public/eu-status/desktop-three-step/desktop-three-step-6.svg';
-
 // import mobile svgs
 import mobileStep1 from '@/public/eu-status/mobile-three-step/mobile-three-step-1.svg';
 import mobileStep2 from '@/public/eu-status/mobile-three-step/mobile-three-step-2.svg';
@@ -15,6 +12,7 @@ import mobileStep3 from '@/public/eu-status/mobile-three-step/mobile-three-step-
 import mobileStep4 from '@/public/eu-status/mobile-three-step/mobile-three-step-4.svg';
 import mobileStep5 from '@/public/eu-status/mobile-three-step/mobile-three-step-5.svg';
 import mobileStep6 from '@/public/eu-status/mobile-three-step/mobile-three-step-6.svg';
+import Image from 'next/image';
 
 export default function StatusThreeStep({ status }) {
   if (status === 'In negotiations A') {
