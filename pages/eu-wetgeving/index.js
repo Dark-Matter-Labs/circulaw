@@ -45,9 +45,9 @@ export default function EULaw({ laws }) {
           <p className='mb-4 mt-10'>
             Er komt een &apos;storm&apos; aan Europese wet- en regelgeving op ons af, gericht op het
             verduurzamen van onze maatschappij en de circulaire economie. Veel hiervan valt onder de
-            &apos;Green Deal&apos; en Fit for 55, maar ook daarbuiten wordt wet- en regelgeving aangepast.
-            Omdat decentrale overheden vaak geen zicht hebben op de verplichtingen en kansen die
-            voortvloeien uit alle Europese wet- en regelgeving, hebben we alvast 5 wetten
+            &apos;Green Deal&apos; en Fit for 55, maar ook daarbuiten wordt wet- en regelgeving
+            aangepast. Omdat decentrale overheden vaak geen zicht hebben op de verplichtingen en
+            kansen die voortvloeien uit alle Europese wet- en regelgeving, hebben we alvast 5 wetten
             geanalyseerd.
           </p>
           <p>
