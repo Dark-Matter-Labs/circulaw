@@ -194,7 +194,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
           <div className='global-margin my-32 text-center'>
             <div className='flex justify-center items-center'>
               <Image src={commentIcon} alt='' />
-              <h3 className='mobile sm:desktop'>Discuseer mee</h3>
+              <h3 className='mobile sm:desktop pl-2'>Discuseer mee</h3>
             </div>
 
             <DiscussionEmbed
