@@ -1,3 +1,7 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { DiscussionEmbed } from 'disqus-react';
+import { ArrowRightIcon } from '@heroicons/react/outline';
 import ThemePageHeader from '../theme-page/theme-page-header';
 import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
 import CustomButton from '@/components/custom-button';
@@ -5,9 +9,7 @@ import ThemeBottomSection from '@/components/theme-page/section-bottom-theme-ind
 import list from '@/public/thema-card-background/list.svg';
 import samenhang from '@/public/thema-card-background/samenhang.svg';
 import waarvoor from '@/public/thema-card-background/waarvoor.svg';
-import { ArrowRightIcon } from '@heroicons/react/outline';
-import Image from 'next/image';
-import Link from 'next/link';
+import commentIcon from '@/public/comment-icon.svg';
 
 export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
   return (
@@ -188,6 +190,20 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
           </div>
           <div className='bg-gray-200'>
             <ThemeBottomSection featuredLaws={featuredLaws} thema={thema} />
+          </div>
+          <div className='global-margin my-32 text-center'>
+            <div className='flex justify-center items-center'>
+              <Image src={commentIcon} alt='' />
+              <h3 className='mobile sm:desktop'>Discuseer mee</h3>
+            </div>
+
+            <DiscussionEmbed
+              shortname='circulaw'
+              config={{
+                identifier: thema?.slug.current,
+                title: thema?.slug.current,
+              }}
+            />
           </div>
         </div>
       </div>

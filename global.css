@@ -455,3 +455,12 @@ html {
   }
 }
 
+/* --- disqus css -- */
+
+#disqus_thread {
+  color: #028352;
+  padding: 4px;
+  }
+  
+  /*--- end disqus css --*/
+
