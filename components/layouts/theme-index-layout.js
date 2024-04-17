@@ -9,6 +9,7 @@ import ThemeBottomSection from '@/components/theme-page/section-bottom-theme-ind
 import list from '@/public/thema-card-background/list.svg';
 import samenhang from '@/public/thema-card-background/samenhang.svg';
 import waarvoor from '@/public/thema-card-background/waarvoor.svg';
+import commentIcon from '@/public/comment-icon.svg';
 
 export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
   return (
@@ -190,7 +191,12 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
           <div className='bg-gray-200'>
             <ThemeBottomSection featuredLaws={featuredLaws} thema={thema} />
           </div>
-          <div className='global-margin my-10'>
+          <div className='global-margin my-32 text-center'>
+            <div className='flex justify-center items-center'>
+              <Image src={commentIcon} alt='' />
+              <h3 className='mobile sm:desktop'>Discuseer mee</h3>
+            </div>
+
             <DiscussionEmbed
               shortname='circulaw'
               config={{
