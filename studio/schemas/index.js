@@ -27,6 +27,7 @@ import pdfBlock from './objects/pdf-block';
 import productChainAmbition from './objects/product-chain-ambition';
 import productChainImpact from './objects/product-chain-impact';
 import smallPara from './objects/small-paragraph';
+import { youtube } from './objects/youtube-embed';
 
 export const schemaTypes = [
   // DOCUMENT TYPES
@@ -61,4 +62,5 @@ export const schemaTypes = [
   productChainImpact,
   linkObject,
   inlineTable,
+  youtube,
 ];
