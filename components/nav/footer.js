@@ -1,15 +1,18 @@
-import LangSwitch from './lang-switch';
-import CustomButton from '@/components/custom-button';
-import Partners from '@/components/nav/partners';
-import ActionPanel from '@/components/section-action-panel';
-import ORicon from '@/public/icons/openResearch.svg';
-import { ArrowUpIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { AiFillGithub } from 'react-icons/ai';
 import { RiLinkedinFill } from 'react-icons/ri';
 import { Link as ScrollLink } from 'react-scroll';
+
+import LangSwitch from './lang-switch';
+import CustomButton from '@/components/custom-button';
+import Partners from '@/components/nav/partners';
+import ActionPanel from '@/components/section-action-panel';
+import ORicon from '@/public/icons/openResearch.svg';
+import { ArrowUpIcon } from '@heroicons/react/outline';
+import JaIcon from '@/public/icons/ja-icon.svg';
+import NeeIcon from '@/public/icons/nee-icon.svg';
 
 // import data // maybe not neccissary
 const navigation = {
@@ -53,6 +56,35 @@ export default function Footer(props) {
                   </span>
                 </ScrollLink>
               </CustomButton>
+            </div>
+            <div className='global-margin flex justify-center items-center py-10 border-t border-t-green-600'>
+              <h3 className='mobile sm:desktop text-green-600 pr-8'>Vond je deze pagina nuttig?</h3>
+              <div className='mr-4'>
+                <CustomButton color='whiteBackground'>
+                  {' '}
+                  <Image
+                    className='inline-block h-5 w-5 hover:text-green-300 mr-1'
+                    alt='Open Research icon'
+                    src={JaIcon}
+                    width={6}
+                    height={6}
+                  />
+                  Ja
+                </CustomButton>
+              </div>
+              <div>
+                <CustomButton color='whiteBackground'>
+                  {' '}
+                  <Image
+                    className='inline-block h-5 w-5 hover:text-green-300 mr-1'
+                    alt='Open Research icon'
+                    src={NeeIcon}
+                    width={6}
+                    height={6}
+                  />
+                  Nee
+                </CustomButton>
+              </div>
             </div>
             <div className='bg-green-600'>
               <div className='global-margin pt-8 lg:pt-16 lg:px-8'>
