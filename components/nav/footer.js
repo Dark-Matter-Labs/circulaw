@@ -1,9 +1,12 @@
+import { Fragment, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { AiFillGithub } from 'react-icons/ai';
 import { RiLinkedinFill } from 'react-icons/ri';
 import { Link as ScrollLink } from 'react-scroll';
+import { Dialog, Transition } from '@headlessui/react';
+import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 
 import LangSwitch from './lang-switch';
 import CustomButton from '@/components/custom-button';
@@ -14,7 +17,7 @@ import { ArrowUpIcon } from '@heroicons/react/outline';
 import JaIcon from '@/public/icons/ja-icon.svg';
 import NeeIcon from '@/public/icons/nee-icon.svg';
 
-// import data // maybe not neccissary
+// import data // maybe not necessary
 const navigation = {
   other: [
     { name: 'Contact', href: '/contact', className: '' },
@@ -32,6 +35,11 @@ const navigation = {
 };
 
 export default function Footer(props) {
+  const { CustomEvent } = usePiwikPro();
+  const [moreInfoOpen, setMoreInfoOpen] = useState(false);
+  const [feedbackState, setFeedBackState] = useState('');
+  const [feedback, setFeedback] = useState('');
+
   let aboutSlugs = [];
   if (props.aboutSlugs) {
     aboutSlugs = props.aboutSlugs;
@@ -44,6 +52,84 @@ export default function Footer(props) {
   const router = useRouter();
   return (
     <>
+      <Transition.Root show={moreInfoOpen} as={Fragment}>
+        <Dialog as='div' className='relative z-10' onClose={setMoreInfoOpen}>
+          <Transition.Child
+            as={Fragment}
+            enter='ease-out duration-300'
+            enterFrom='opacity-0'
+            enterTo='opacity-100'
+            leave='ease-in duration-200'
+            leaveFrom='opacity-100'
+            leaveTo='opacity-0'
+          >
+            <div className='fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity' />
+          </Transition.Child>
+
+          <div className='fixed inset-0 z-10 w-screen overflow-y-auto'>
+            <div className='flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0'>
+              <Transition.Child
+                as={Fragment}
+                enter='ease-out duration-300'
+                enterFrom='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
+                enterTo='opacity-100 translate-y-0 sm:scale-100'
+                leave='ease-in duration-200'
+                leaveFrom='opacity-100 translate-y-0 sm:scale-100'
+                leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
+              >
+                <Dialog.Panel className='relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6'>
+                  <div>
+                    <div className='mt-3 text-center sm:mt-5'>
+                      {feedbackState === 'Ja' ? (
+                        <Dialog.Title
+                          as='h3'
+                          className='text-base font-semibold leading-6 text-gray-900'
+                        >
+                          Fijn! Laat ons kort weten waarom
+                        </Dialog.Title>
+                      ) : (
+                        <Dialog.Title
+                          as='h3'
+                          className='text-base font-semibold leading-6 text-gray-900'
+                        >
+                          Jammer, vertel ons waarom niet, zodat we onze website kunnen verbeteren.
+                        </Dialog.Title>
+                      )}
+
+                      <div className='mt-2'>
+                        <textarea
+                          id='message'
+                          name='message'
+                          rows={2}
+                          value={feedback}
+                          onChange={(e) => setFeedback(e.target.value)}
+                          className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border border-gray-300 rounded-cl'
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className='mt-5 sm:mt-6 text-center'>
+                    <CustomButton
+                      color='whiteBackground'
+                      onClick={() => {
+                        CustomEvent.trackEvent(
+                          'Footer Feedback More Info',
+                          feedback,
+                          feedbackState,
+                        );
+                        setMoreInfoOpen(false);
+                      }}
+                    >
+                      Send
+                    </CustomButton>
+                  </div>
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition.Root>
+
       <footer className='' aria-labelledby='footer-heading'>
         {router.pathname !== '/en' && (
           <div>
@@ -60,7 +146,14 @@ export default function Footer(props) {
             <div className='global-margin flex justify-center items-center py-10 border-t border-t-green-600'>
               <h3 className='mobile sm:desktop text-green-600 pr-8'>Vond je deze pagina nuttig?</h3>
               <div className='mr-4'>
-                <CustomButton color='whiteBackground'>
+                <CustomButton
+                  color='whiteBackground'
+                  onClick={() => {
+                    setFeedBackState('Ja');
+                    CustomEvent.trackEvent('Footer Feedback Ja', router.pathname);
+                    setMoreInfoOpen(true);
+                  }}
+                >
                   {' '}
                   <Image
                     className='inline-block h-5 w-5 hover:text-green-300 mr-1'
@@ -73,7 +166,14 @@ export default function Footer(props) {
                 </CustomButton>
               </div>
               <div>
-                <CustomButton color='whiteBackground'>
+                <CustomButton
+                  color='whiteBackground'
+                  onClick={() => {
+                    setFeedBackState('Nee');
+                    CustomEvent.trackEvent('Footer Feedback Nee', router.pathname);
+                    setMoreInfoOpen(true);
+                  }}
+                >
                   {' '}
                   <Image
                     className='inline-block h-5 w-5 hover:text-green-300 mr-1'
