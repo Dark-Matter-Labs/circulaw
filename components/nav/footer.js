@@ -153,9 +153,9 @@ export default function Footer(props) {
                 </div>
               </div>
               <div className={successMessage}>
-                <h4 className='mobile sm:desktop leading-6 text-gray-900'>
+                <h3 className='mobile sm:desktop leading-6 text-gray-900'>
                   Bedankt voor je reactie!
-                </h4>
+                </h3>
               </div>
             </div>
             <div className='bg-green-600'>
