@@ -464,3 +464,7 @@ html {
   
   /*--- end disqus css --*/
 
+
+  textarea {
+    resize: none !important;
+ }
