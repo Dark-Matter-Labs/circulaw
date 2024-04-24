@@ -74,6 +74,7 @@ export default function Footer(props) {
                 <div className='mr-4'>
                   <CustomButton
                     color='whiteBackground'
+                    id='je'
                     onClick={() => {
                       setFeedback('');
                       setFeedBackState('Ja');
@@ -95,6 +96,7 @@ export default function Footer(props) {
                 <div>
                   <CustomButton
                     color='whiteBackground'
+                    id='nee'
                     onClick={() => {
                       setFeedback('');
                       setFeedBackState('Nee');
@@ -141,6 +143,7 @@ export default function Footer(props) {
                 <div className='mt-5 sm:mt-6 '>
                   <CustomButton
                     color='whiteBackground'
+                    id='moreFeedback'
                     onClick={() => {
                       CustomEvent.trackEvent('Footer Feedback More Info', feedback, feedbackState);
                       setMoreInfoOpen('hidden');
@@ -148,7 +151,7 @@ export default function Footer(props) {
                       setSuccessMessage('block');
                     }}
                   >
-                    Send
+                    Versturen
                   </CustomButton>
                 </div>
               </div>
