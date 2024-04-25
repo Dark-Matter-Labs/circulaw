@@ -191,20 +191,24 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
           <div className='bg-gray-200'>
             <ThemeBottomSection featuredLaws={featuredLaws} thema={thema} />
           </div>
-          <div className='global-margin my-32 text-center'>
-            <div className='flex justify-center items-center'>
-              <Image src={commentIcon} alt='' />
-              <h3 className='mobile sm:desktop pl-2'>Kaart een nieuw onderwerp aan of Discuseer mee</h3>
-            </div>
 
-            <DiscussionEmbed
-              shortname='circulaw'
-              config={{
-                identifier: thema?.slug.current,
-                title: thema?.slug.current,
-              }}
-            />
-          </div>
+          {(thema?.themaName === 'Houtbouw' || thema?.themaName === 'Voedselverspilling') && (
+            <div className='global-margin my-32 text-center'>
+              <div className='flex justify-center items-center'>
+                <Image src={commentIcon} alt='' />
+                <h3 className='mobile sm:desktop pl-2'>
+                  Kaart een nieuw onderwerp aan of Discuseer mee
+                </h3>
+              </div>
+              <DiscussionEmbed
+                shortname='circulaw'
+                config={{
+                  identifier: thema?.slug.current,
+                  title: thema?.slug.current,
+                }}
+              />
+            </div>
+          )}
         </div>
       </div>
     </>

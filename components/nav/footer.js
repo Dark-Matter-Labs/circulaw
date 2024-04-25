@@ -156,9 +156,7 @@ export default function Footer(props) {
                 </div>
               </div>
               <div className={successMessage}>
-                <p className='p-base leading-6 text-gray-900'>
-                  Bedankt voor je reactie!
-                </p>
+                <p className='p-base leading-6 text-gray-900'>Bedankt voor je reactie!</p>
               </div>
             </div>
             <div className='bg-green-600'>
