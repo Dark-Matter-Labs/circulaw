@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import Layout from '@/components/layouts/layout';
 import SimpleThemaLayout from '@/components/layouts/simple-thema-layout';
 import ThemeLayout from '@/components/layouts/theme-index-layout';
@@ -16,6 +17,8 @@ const pathsQuery = `
 `;
 
 export default function ThemeIndexPage({ preview, data }) {
+  const router = useRouter();
+
   useEffect(() => {
     localStorage.clear();
   });
@@ -30,10 +33,10 @@ export default function ThemeIndexPage({ preview, data }) {
         </PreviewSuspense>
       </>
     );
-  } else {
+  } else if (Object.keys(router.query).length > 0) {
     if (data?.themaData?.thema?._type === 'simpleThema') {
       return (
-        <Layout title={`${data?.themaData?.thema?.themaName}`}>
+        <Layout title={`${data?.themaData?.thema?.themaName}`} pageUrl={router.asPath}>
           <SimpleThemaLayout
             thema={data?.themaData?.thema}
             numberOfLaws={data?.themaData?.length}
@@ -43,7 +46,7 @@ export default function ThemeIndexPage({ preview, data }) {
       );
     } else {
       return (
-        <Layout title={`${data?.themaData?.thema?.themaName}`}>
+        <Layout title={`${data?.themaData?.thema?.themaName}`} pageUrl={router.asPath}>
           <ThemeLayout
             featuredLaws={data?.themaData?.featured}
             thema={data?.themaData?.thema}
@@ -52,6 +55,8 @@ export default function ThemeIndexPage({ preview, data }) {
         </Layout>
       );
     }
+  } else {
+    return <Layout></Layout>;
   }
 }
 

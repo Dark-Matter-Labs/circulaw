@@ -1,8 +1,9 @@
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Layout from '@/components/layouts/layout';
 import NewsDetailPageBody from '@/components/news-page/news-detail-page-body';
 import NewsDetailPageHeader from '@/components/news-page/news-detail-page-header';
 import { client } from '@/lib/sanity';
-import { useState, useEffect } from 'react';
 
 const newsSlugsQuery = `
 *[_type == "newsPage"][0]{
@@ -20,6 +21,7 @@ const newsDetailPageQuery = `
 `;
 
 export default function NewsDetailPage({ data }) {
+  const router = useRouter();
   const [cardColour, setCardColour] = useState();
 
   useEffect(() => {
@@ -32,14 +34,16 @@ export default function NewsDetailPage({ data }) {
     } else setCardColour('bg-green-800');
   }, [data]);
 
-  return (
-    <>
-      <Layout>
-        <NewsDetailPageHeader cardColour={cardColour} data={data} />
-        <NewsDetailPageBody data={data} />
-      </Layout>
-    </>
-  );
+  if (Object.keys(router.query).length > 0) {
+    return (
+      <>
+        <Layout title={data?.newsTitle} pageUrl={router.asPath}>
+          <NewsDetailPageHeader cardColour={cardColour} data={data} />
+          <NewsDetailPageBody data={data} />
+        </Layout>
+      </>
+    );
+  } else return <Layout></Layout>;
 }
 
 export async function getStaticPaths() {
