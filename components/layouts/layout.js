@@ -12,8 +12,9 @@ import useSWR from 'swr';
 export default function Layout({
   title = globalMeta.siteName,
   description = globalMeta.description,
-  canonicalUrl = globalMeta.siteUrl,
-  ogType,
+  keywords = globalMeta.keywords,
+  siteUrl = globalMeta.siteUrl,
+  pageUrl,
   ogImgUrl = globalMeta.siteLogo,
   children,
   homePageHeader,
@@ -25,7 +26,6 @@ export default function Layout({
   const footerText = footerTextData;
   const aboutNavItems = aboutPageSlugs;
   const vraagSlug = vraagAntwoordSlug?.slug;
-  // const themaSlugs = themaPageSlugs?.slugs;
 
   return (
     <>
@@ -38,16 +38,23 @@ export default function Layout({
       <Head>
         <title>{`CircuLaw - ${title}`}</title>
         <meta name='description' content={description} />
-        <link rel='canonical' href={canonicalUrl} />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='canonical' href={siteUrl + pageUrl} />
+        <meta name='keywords' content={keywords} />
+        <meta name='robots' content='index, follow' />
+        <meta name='googlebot' content='index, follow' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta charSet='utf-8' />
         <link rel='icon' href='/favicon.ico' />
 
+        <meta property='og:title' content={`CircuLaw - ${title}`} />
         <meta property='og:locale' content='nl_NL' />
         <meta property='og:site_name' content={globalMeta.siteName} />
-        <meta property='og:type' content={ogType} />
+        <meta property='og:type' content='website' />
         <meta property='og:description' content={description} />
         <meta property='og:image' content={ogImgUrl} />
-        <meta property='og:url' content={canonicalUrl} />
+        <meta property='og:image:alt' content='CircuLaw logo' />
+        <meta property='og:image:type' content='image/png' />
+        <meta property='og:url' content={siteUrl + pageUrl} />
       </Head>
       <main className='w-full'>
         <PiwikProProvider
@@ -58,12 +65,7 @@ export default function Layout({
         </PiwikProProvider>
       </main>
       <CookieConsent />
-      <Footer
-        vraagSlug={vraagSlug}
-        aboutSlugs={aboutNavItems}
-        // themaSlugs={themaSlugs}
-        footerText={footerText}
-      />
+      <Footer vraagSlug={vraagSlug} aboutSlugs={aboutNavItems} footerText={footerText} />
     </>
   );
 }

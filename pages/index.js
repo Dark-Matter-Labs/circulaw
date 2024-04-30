@@ -16,6 +16,7 @@ import {
 import { client } from '@/lib/sanity';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Index({
   aboutSection,
@@ -25,8 +26,14 @@ export default function Index({
   euData,
   pcData,
 }) {
+  const router = useRouter();
   return (
-    <Layout page='home' homePageHeader={homePageHeader} footerText={footerText}>
+    <Layout
+      page='home'
+      homePageHeader={homePageHeader}
+      footerText={footerText}
+      pageUrl={router.asPath}
+    >
       <div className='bg-grey-100 sm:pb-12 -z-50' name='thema'>
         <div className='global-margin -z-20'>
           <h2 className='p-5xl-semibold sm:p-7xl-semibold pt-8 text-green-600 border-grey-600 border-b pb-6'>

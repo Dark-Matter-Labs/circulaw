@@ -2,10 +2,9 @@ import Layout from '@/components/layouts/layout';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 
-// import data // not neccissary
 export default function NotFound() {
   return (
-    <Layout title='CircuLaw - 404'>
+    <Layout title='CircuLaw - 404' pageUrl='404'>
       <div className='global-margin my-20 text-center flex flex-col justify-center'>
         <h1 className='mobile sm:desktop text-grey-800 pb-2'>404</h1>
         <p className=' p-base text-grey-800'>

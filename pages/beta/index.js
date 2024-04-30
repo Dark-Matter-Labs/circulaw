@@ -1,9 +1,11 @@
-import Layout from '@/components/layouts/layout';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Layout from '@/components/layouts/layout';
 
 export default function Beta() {
+  const router = useRouter();
   return (
-    <Layout title='CircuLaw - Beta'>
+    <Layout title='CircuLaw - Beta' pageUrl={router.asPath}>
       <div className='global-margin my-20'>
         <h1 className='mobile sm:desktop text-grey-800 pb-4'>Betaversie CircuLaw</h1>
         <p className=' p-lg text-grey-800 pb-6  max-w-2xl'>

@@ -1,9 +1,10 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import EULawCard from '@/components/eu-law/eu-law-card';
 import Layout from '@/components/layouts/layout';
 import { client } from '@/lib/sanity';
 import bannerImage from '@/public/banner.png';
-import Image from 'next/image';
-import Link from 'next/link';
 
 // refactor
 const euLawsQuery = `
@@ -18,8 +19,9 @@ const euLawsQuery = `
 `;
 
 export default function EULaw({ laws }) {
+  const router = useRouter();
   return (
-    <Layout title='EU wetgeving'>
+    <Layout title='EU wetgeving' pageUrl={router.asPath}>
       <div className='h-[200px] bg-green-800 pt-3 overflow-hidden'>
         <div className='relative object-cover w-full h-[102%]'>
           <Image src={bannerImage} alt={'hero image'} fill className='z-0 bg-cover' priority />

@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import CustomButton from '@/components/custom-button';
 import Layout from '@/components/layouts/layout';
 import { enPageComponents } from '@/lib/portable-text/pt-components';
@@ -5,12 +7,13 @@ import { enPageQuery } from '@/lib/queries';
 import { client } from '@/lib/sanity';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import { PortableText } from '@portabletext/react';
-import Link from 'next/link';
 
 export default function English({ data }) {
+  const router = useRouter();
+
   return (
     <>
-      <Layout title='CircuLaw - Regulations for a circular economy'>
+      <Layout title='CircuLaw - Regulations for a circular economy' pageUrl={router.asPath}>
         <div className='bg-en-background bg-center bg-cover relative z-0'>
           <div className='hidden sm:block h-auto bg-en-header bg-left bg-cover'>
             <div className='global-margin flex h-full'>
