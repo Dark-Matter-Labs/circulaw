@@ -78,7 +78,7 @@ export default function Footer(props) {
                     onClick={() => {
                       setFeedback('');
                       setFeedBackState('Ja');
-                      CustomEvent.trackEvent('Footer Feedback Ja', router.pathname);
+                      CustomEvent.trackEvent('Footer Feedback Ja', router.asPath);
                       setMoreInfoOpen('block');
                     }}
                   >
@@ -100,7 +100,7 @@ export default function Footer(props) {
                     onClick={() => {
                       setFeedback('');
                       setFeedBackState('Nee');
-                      CustomEvent.trackEvent('Footer Feedback Nee', router.pathname);
+                      CustomEvent.trackEvent('Footer Feedback Nee', router.asPath);
                       setMoreInfoOpen(true);
                     }}
                   >
@@ -155,8 +155,8 @@ export default function Footer(props) {
                   </CustomButton>
                 </div>
               </div>
-              <div className={successMessage}>
-                <p className='p-base leading-6 text-gray-900'>Bedankt voor je reactie!</p>
+              <div className={`success-message py-4 max-w-sm px-4 ${successMessage}`}>
+                <p className='p-base leading-6 text-gray-900 mx-auto '>Bedankt voor je reactie!</p>
               </div>
             </div>
             <div className='bg-green-600'>
