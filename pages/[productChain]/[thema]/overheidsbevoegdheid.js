@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import Layout from '@/components/layouts/layout';
 import WelkeLayout from '@/components/layouts/welke-layout';
 import { govLevelQueryFunction } from '@/lib/queries';
@@ -5,8 +6,6 @@ import { client } from '@/lib/sanity';
 import houtbouwImageMob from '@/public/bevoegdheden/bevoegdheden-houtbouw-mob.png';
 import matrassenImageMob from '@/public/bevoegdheden/bevoegdheden-matrassen.png';
 import windmillImageMob from '@/public/bevoegdheden/bevoegdheden-windmill.png';
-
-// const thema = 'matrasketen';
 
 const pathsQuery = `
 *[_type in ["thema", "simpleThema"] && defined(slug.current)]{
@@ -24,9 +23,10 @@ const themaInfo = `
 `;
 
 export default function InfoPage({ themaData, ...props }) {
+  const router = useRouter();
   if (themaData?.thema === 'matrasketen') {
     return (
-      <Layout title='CircuLaw - Wie is waarvoor bevoegd?'>
+      <Layout title={`${themaData?.themaName} - Wie is waarvoor bevoegd?`} pageUrl={router.asPath}>
         <WelkeLayout
           thema={themaData?.thema}
           transitionAgenda={themaData?.transitionAgenda}
@@ -46,7 +46,7 @@ export default function InfoPage({ themaData, ...props }) {
     );
   } else if (themaData?.thema === 'houtbouw') {
     return (
-      <Layout title='CircuLaw - Wie is waarvoor bevoegd?'>
+      <Layout title={`${themaData?.themaName} - Wie is waarvoor bevoegd?`} pageUrl={router.asPath}>
         <WelkeLayout
           thema={themaData?.thema}
           transitionAgenda={themaData?.transitionAgenda}
@@ -66,7 +66,7 @@ export default function InfoPage({ themaData, ...props }) {
     );
   } else if (themaData?.thema === 'voedselverspilling') {
     return (
-      <Layout title='CircuLaw - Welke Overheid Heeft Voedselverspilling voorkomen'>
+      <Layout title={`${themaData?.themaName} - Wie is waarvoor bevoegd?`} pageUrl={router.asPath}>
         <WelkeLayout
           thema={themaData?.thema}
           transitionAgenda={themaData?.transitionAgenda}
@@ -85,7 +85,7 @@ export default function InfoPage({ themaData, ...props }) {
     );
   } else if (themaData?.thema === 'windturbines') {
     return (
-      <Layout title='CircuLaw - Wie is waarvoor bevoegd?'>
+      <Layout title={`${themaData?.themaName} - Wie is waarvoor bevoegd?`} pageUrl={router.asPath}>
         <WelkeLayout
           thema={themaData?.thema}
           transitionAgenda={themaData?.transitionAgenda}

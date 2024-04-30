@@ -78,7 +78,7 @@ export default function Feedback() {
   };
 
   return (
-    <Layout title='CircuLaw - Met jouw hulp maken we CircuLaw beter'>
+    <Layout title='CircuLaw - Met jouw hulp maken we CircuLaw beter' pageUrl={router.asPath}>
       <div className='bg-grey-100 sm:bg-device'>
         <div className='global-margin'>
           {!formStatus ? (

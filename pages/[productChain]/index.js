@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import Layout from '@/components/layouts/layout';
 import PCLayout from '@/components/layouts/product-chain-layout';
 import { client } from '@/lib/sanity';
@@ -37,18 +38,24 @@ const themaCardQuery = `
 `;
 
 export default function ProductChainPage({ productChainData, instrumentCount, themaCards }) {
-  return (
-    <Layout title={`${productChainData?.pcName}`}>
-      <PCLayout
-        productChainData={productChainData}
-        totalInstruments={instrumentCount}
-        themaList={themaCards}
-        impactList={productChainData?.impactItems}
-        ambitionList={productChainData?.ambitionItems}
-        links={productChainData?.pcLinks}
-      />
-    </Layout>
-  );
+  const router = useRouter();
+
+  if (Object.keys(router.query).length > 0) {
+    return (
+      <Layout title={`${productChainData?.pcName}`} pageUrl={router.asPath}>
+        <PCLayout
+          productChainData={productChainData}
+          totalInstruments={instrumentCount}
+          themaList={themaCards}
+          impactList={productChainData?.impactItems}
+          ambitionList={productChainData?.ambitionItems}
+          links={productChainData?.pcLinks}
+        />
+      </Layout>
+    );
+  } else {
+    return <Layout></Layout>;
+  }
 }
 
 export async function getStaticPaths() {
@@ -67,5 +74,15 @@ export async function getStaticProps({ params }) {
   return {
     props: { productChainData, instrumentCount, themaCards },
     revalidate: 1,
+  };
+}
+
+export async function generateMetadata({ params }) {
+  // read route params
+  console.log('yo');
+  console.log(params);
+
+  return {
+    pageUrl: params.url,
   };
 }

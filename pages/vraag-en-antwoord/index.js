@@ -1,11 +1,13 @@
+import { useRouter } from 'next/router';
 import FAQPageComponent from '@/components/faq-page';
 import Layout from '@/components/layouts/layout';
 import { FAQPageQuery } from '@/lib/queries';
 import { client } from '@/lib/sanity';
 
 export default function FAQ({ FAQ }) {
+  const router = useRouter();
   return (
-    <Layout title='CircuLaw - Vraag en antwoord'>
+    <Layout title='CircuLaw - Vraag en antwoord' pageUrl={router.asPath}>
       <FAQPageComponent data={FAQ} />
     </Layout>
   );
