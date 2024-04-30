@@ -465,6 +465,12 @@ html {
   /*--- end disqus css --*/
 
 
-  textarea {
+textarea {
     resize: none !important;
- }
+}
+
+.success-message {
+  background: #FDFDFD; 
+  box-shadow: 0px 3px 8px -1px rgba(50, 50, 71, 0.05); 
+  border-radius: 10px;
+}
