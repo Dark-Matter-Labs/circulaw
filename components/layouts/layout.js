@@ -38,7 +38,6 @@ export default function Layout({
       <Head>
         <title>{`CircuLaw - ${title}`}</title>
         <meta name='description' content={description} />
-        <link rel='canonical' href={siteUrl + pageUrl} />
         <meta name='keywords' content={keywords} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index, follow' />

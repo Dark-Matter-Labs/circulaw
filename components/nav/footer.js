@@ -145,7 +145,12 @@ export default function Footer(props) {
                     color='whiteBackground'
                     id='moreFeedback'
                     onClick={() => {
-                      CustomEvent.trackEvent('Footer Feedback More Info', feedback, feedbackState);
+                      CustomEvent.trackEvent(
+                        'Footer Feedback More Info',
+                        feedback,
+                        router.asPath,
+                        feedbackState,
+                      );
                       setMoreInfoOpen('hidden');
                       setJeeNee('hidden');
                       setSuccessMessage('block');
