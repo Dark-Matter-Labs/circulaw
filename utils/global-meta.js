@@ -12,7 +12,7 @@ const globalMeta = {
 	siteUrl: url,
 	email: 'info@circulaw.nl',
     siteLogo: url + '/api/og',
-	description: 'Ontdek hoe CircuLaw jouw gemeente helpt bij het versnellen van de circulaire economie met juridische instrumenten uit wet- en regelgeving. CircuLaw biedt ondersteuning bij het selecteren en toepassen van beleidsmaatregelen voor een circulaire toekomst.',
+	description: 'CircuLaw helpt decentrale overheden met het versnellen van de circulaire transitie. Door te laten zien hoe je daarvoor bestaande wet-en regelgeving kunt inzetten.',
 	keywords: 'CircuLaw, circulaire economie, juridische instrumenten'
 }
 

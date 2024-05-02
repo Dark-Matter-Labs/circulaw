@@ -197,7 +197,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
               <div className='flex justify-center items-center'>
                 <Image src={commentIcon} alt='' />
                 <h3 className='mobile sm:desktop pl-2'>
-                  Kaart een nieuw onderwerp aan of Discuseer mee
+                  Kaart een nieuw onderwerp aan of discussieer mee
                 </h3>
               </div>
               <DiscussionEmbed
