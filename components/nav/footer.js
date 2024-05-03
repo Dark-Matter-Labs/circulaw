@@ -147,9 +147,8 @@ export default function Footer(props) {
                     onClick={() => {
                       CustomEvent.trackEvent(
                         'Footer Feedback More Info',
-                        feedback,
                         router.asPath,
-                        feedbackState,
+                        feedback +' ,state:'+ feedbackState,
                       );
                       setMoreInfoOpen('hidden');
                       setJeeNee('hidden');
