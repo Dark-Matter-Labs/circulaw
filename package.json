@@ -45,6 +45,7 @@
     "next-share": "0.27.0",
     "next-sitemap": "^4.2.3",
     "next-transpile-modules": "^10.0.1",
+    "nextjs-linkedin-insight-tag": "^0.0.6",
     "nprogress": "^0.2.0",
     "open-graph-scraper": "^4.11.0",
     "react": "^18.2.0",

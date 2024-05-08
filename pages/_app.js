@@ -1,5 +1,6 @@
 import '../global.css';
 import { getCookie } from 'cookies-next';
+import { LinkedInInsightTag } from 'nextjs-linkedin-insight-tag';
 import 'next-pagination/dist/index.css';
 import Router from 'next/router';
 import NProgress from 'nprogress';
@@ -27,5 +28,10 @@ export default function MyApp({ Component, pageProps }) {
     }
   }, [consent]);
 
-  return <>{getLayout(<Component {...pageProps} />)}</>;
+  return (
+    <>
+      <LinkedInInsightTag />
+      {getLayout(<Component {...pageProps} />)}
+    </>
+  );
 }
