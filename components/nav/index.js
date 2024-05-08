@@ -1,3 +1,4 @@
+import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 import DesktopNavCard from './desktop-nav-card';
 import DesktopSimpleButton from './desktop-simple-button';
 import MobileDisclosure from './mobile-disclosure';
@@ -40,6 +41,7 @@ const defaultOptions = {
 
 export default function Nav(props) {
   const router = useRouter();
+  const { CustomEvent } = usePiwikPro();
   const [scrollEffect, setScrollEffect] = useState(false);
   useEffect(() => {
     const changeEffect = () => {
@@ -565,7 +567,15 @@ export default function Nav(props) {
                             >
                               <Link
                                 href={`/over/${aboutPage?.slug}`}
-                                onClick={() => setOverMenuIsOpen(false)}
+                                id='navClick'
+                                onClick={() => {
+                                  setOverMenuIsOpen(false);
+                                  CustomEvent.trackEvent(
+                                    'Nav click',
+                                    router.asPath,
+                                    aboutPage.title,
+                                  );
+                                }}
                               >
                                 {aboutPage.title}
                               </Link>
