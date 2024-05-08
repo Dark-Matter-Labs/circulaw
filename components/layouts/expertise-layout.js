@@ -5,6 +5,8 @@ import OverviewPageHeader from '../overview-page-header';
 import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
 import { useEffect, useState, useTransition } from 'react';
+import { usePiwikPro } from '@piwikpro/next-piwik-pro';
+import { useRouter } from 'next/router';
 
 export default function ExpertiseLayout({ expertiseData, ...props }) {
   const [beleid, setBeleid] = useState([]);
@@ -20,6 +22,9 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
 
   const [selectedTab, setSelectedTab] = useState('beleid');
   const [local, setLocal] = useState({ value: 'alle' });
+
+  const router = useRouter();
+  const { CustomEvent } = usePiwikPro();
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.localStorage.length > 0) {
@@ -281,6 +286,8 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
       startTransition(() => {
         setSelectedTab(value);
       });
+
+      CustomEvent.trackEvent('Categorie Tab Change', router.asPath, value);
     }
   }
   return (

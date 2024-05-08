@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 
 export default function DesktopNavCard({ navData, closeNav }) {
   const router = useRouter();
-
+  const { CustomEvent } = usePiwikPro();
   return (
     <div
       className={`${
@@ -14,17 +15,29 @@ export default function DesktopNavCard({ navData, closeNav }) {
           : 'pl-3 lg:pl-6 pt-8 pr-2'
       }  p-lg-semibold first-letter:uppercase `}
     >
-      <Link href={`/${navData.slug}`} className='hover:underline' onClick={() => closeNav(false)}>
+      <Link
+        id='navClick'
+        href={`/${navData.slug}`}
+        className='hover:underline'
+        onClick={() => {
+          closeNav(false);
+          CustomEvent.trackEvent('Nav click', router.asPath, navData.title);
+        }}
+      >
         {navData.title} {'>'}
       </Link>
       {navData?.themas?.map((thema, id) => (
         <div className='mt-2' key={id}>
           <Link
+            id='navClick'
             href={`/${navData.slug}/${thema.slug}`}
             className={`${
               router.pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '
             } p-xs hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
-            onClick={() => closeNav(false)}
+            onClick={() => {
+              CustomEvent.trackEvent('Nav click', router.asPath, thema.themaName);
+              closeNav(false);
+            }}
           >
             {thema.themaName}
           </Link>
