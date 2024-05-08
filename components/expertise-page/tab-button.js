@@ -12,6 +12,7 @@ export default function TabButton({
         <button
           disabled={numInstrument === 0 && numInstruments2 === 0}
           onClick={onClick}
+          id='categorieTab'
           className={`${
             selected === name
               ? 'bg-white text-green-500'
@@ -38,6 +39,7 @@ export default function TabButton({
         <button
           disabled={numInstrument === 0 && numInstruments2 === 0}
           onClick={onClick}
+          id='categorieTab'
           className={`${
             selected === name
               ? 'bg-white text-green-500'
@@ -64,6 +66,7 @@ export default function TabButton({
         <button
           disabled={numInstrument === 0}
           onClick={onClick}
+          id='categorieTab'
           className={`${
             selected === name
               ? 'bg-white text-green-500'
