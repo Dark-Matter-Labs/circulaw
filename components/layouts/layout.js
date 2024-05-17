@@ -20,7 +20,7 @@ export default function Layout({
   homePageHeader,
 }) {
   const { data: aboutPageSlugs } = useSWR(groq`${siteSettingsQuerys.overCirulaw}`, fetcher);
-  const { data: euSlugs } = useSWR(groq`${siteSettingsQuerys.euSlugsQuery}`, fetcher)
+  const { data: euSlugs } = useSWR(groq`${siteSettingsQuerys.euSlugsQuery}`, fetcher);
   const { data: vraagAntwoordSlug } = useSWR(groq`${siteSettingsQuerys.vraagAntwoord}`, fetcher);
   const { data: navItems } = useSWR(groq`${siteSettingsQuerys.navQuery}`, fetcher);
   const { data: footerTextData } = useSWR(groq`${footerQuery}`, fetcher);

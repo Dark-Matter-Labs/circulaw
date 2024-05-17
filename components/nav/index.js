@@ -132,7 +132,6 @@ export default function Nav(props) {
   const { getReferenceProps: euReferenceProps, getFloatingProps: euFloatingProps } =
     useInteractions([euMenuClick, euMenuDismiss, euMenuRole]);
 
-
   // over menu
   const [overMenuIsOpen, setOverMenuIsOpen] = useState(false);
   const {
@@ -242,7 +241,9 @@ export default function Nav(props) {
             router.pathname === '/'
               ? [
                   `${
-                    mainMenuIsMounted || (overMenuIsMounted && scrollEffect === false) || (euMenuIsMounted && scrollEffect === false)
+                    mainMenuIsMounted ||
+                    (overMenuIsMounted && scrollEffect === false) ||
+                    (euMenuIsMounted && scrollEffect === false)
                       ? ['bg-green-600 bg-opacity-100 shadow-lg transition-all duration-75']
                       : [
                           `${
@@ -388,11 +389,56 @@ export default function Nav(props) {
                                 </>
                               )}
                             </Disclosure>
-                            <MobileSimpleButton
-                              name='EU wetgeving'
-                              url='/eu-wetgeving'
-                              closeMenu={setMobileMenuIsOpen}
-                            />
+
+                            {/* EU */}
+                            <Disclosure>
+                              {({ open }) => (
+                                <>
+                                  <Disclosure.Button
+                                    className={`${
+                                      open ? 'text-green-500' : 'text-green-800'
+                                    }  border-t py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
+                                  >
+                                    EU wetgeving
+                                    <ChevronDownIcon
+                                      className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`}
+                                    />
+                                  </Disclosure.Button>
+                                  <Transition
+                                    show={open}
+                                    enter='transition duration-300 ease-out'
+                                    enterFrom='transform opacity-0'
+                                    enterTo='transform opacity-100'
+                                    leave='transition duration-75 ease-out'
+                                    leaveFrom='transform opacity-300'
+                                    leaveTo='transform opacity-0'
+                                    className='w-full'
+                                  >
+                                    <Disclosure.Panel className='ml-4'>
+                                      <ul>
+                                        <li className='p-base h-10 my-2 last:mb-2 text-green-600 cursor-pointer flex items-center'>
+                                          Overzicht
+                                        </li>
+                                        {props?.euSlugs?.map((euPage) => (
+                                          <li
+                                            key={euPage?.slug}
+                                            className='p-base h-10 my-2 last:mb-2 text-green-600 cursor-pointer flex items-center'
+                                          >
+                                            <Link
+                                              href={`/eu-wetgeving/${euPage?.slug}`}
+                                              onClick={() => setMobileMenuIsOpen(false)}
+                                            >
+                                              {euPage.title}
+                                            </Link>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </Disclosure.Panel>
+                                  </Transition>
+                                </>
+                              )}
+                            </Disclosure>
+
                             <Disclosure>
                               {({ open }) => (
                                 <>
@@ -539,8 +585,7 @@ export default function Nav(props) {
                   )}
                 </div>
 
-
-                  {/* EU MENU */}
+                {/* EU MENU */}
                 <div className=''>
                   <button
                     ref={euRef.setReference}
@@ -599,26 +644,23 @@ export default function Nav(props) {
                         >
                           {/* Remove slice once news section is separate */}
                           <div
-                              className={`${
-                                router.pathname === '/'
-                                  ? 'text-white'
-                                  : 'text-green-600 hover:text-green-500'
-                              } p-xs mb-2  hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
+                            className={`${
+                              router.pathname === '/'
+                                ? 'text-white'
+                                : 'text-green-600 hover:text-green-500'
+                            } p-xs mb-2  hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
+                          >
+                            <Link
+                              href='/eu-wetgeving'
+                              id='navClick'
+                              onClick={() => {
+                                setEuMenuIsOpen(false);
+                                CustomEvent.trackEvent('Nav click', router.asPath);
+                              }}
                             >
-                              <Link
-                                href='/eu-wetgeving'
-                                id='navClick'
-                                onClick={() => {
-                                  setEuMenuIsOpen(false);
-                                  CustomEvent.trackEvent(
-                                    'Nav click',
-                                    router.asPath,
-                                  );
-                                }}
-                              >
-                                Overzicht
-                              </Link>
-                            </div>
+                              Overzicht
+                            </Link>
+                          </div>
                           {props?.euSlugs?.map((euLaw) => (
                             <div
                               key={euLaw?.slug}
@@ -633,11 +675,7 @@ export default function Nav(props) {
                                 id='navClick'
                                 onClick={() => {
                                   setEuMenuIsOpen(false);
-                                  CustomEvent.trackEvent(
-                                    'Nav click',
-                                    router.asPath,
-                                    euLaw.title,
-                                  );
+                                  CustomEvent.trackEvent('Nav click', router.asPath, euLaw.title);
                                 }}
                               >
                                 {euLaw.title}
@@ -650,14 +688,7 @@ export default function Nav(props) {
                   )}
                 </div>
 
-
-
-
-
-
-
-
-                  {/* ABOUT MENU */}
+                {/* ABOUT MENU */}
                 <div className=''>
                   <button
                     ref={overRef.setReference}
