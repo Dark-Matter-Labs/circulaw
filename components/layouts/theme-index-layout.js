@@ -32,72 +32,62 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
               <>
                 <div className='grid grid-cols-3 md:gap-x-8 lg:gap-x-16'>
                   <div className='col-span-2 grid grid-col gap-y-4'>
-                    <div className='w-full bg-grey-150 h-44 rounded-cl grid grid-cols-3'>
-                      <div className='col-span-1 bg-green-600 rounded-l-cl'>
-                      <div className='p-4 flex items-center justify-center h-full w-full'>
-                          <Image src={samenhang} alt='' className='h-2/3 w-2/3' />
-                        </div>
-                      </div>
-                      <div className='col-span-2'>
-                      <div>
-                          <div className='p-4xl-semibold pb-4'>{thema?.samenhangTitle}</div>
-                          <div className='p-base'>{thema?.samenhangText}</div>
-                        </div>
-                        <CustomButton color='whiteBackground'>
-                          Bekijk jouw categorie
-                          <ArrowRightIcon
-                            className='inline-block h-4 w-4 ml-1 place-self-center'
-                            aria-hidden='true'
-                          />
-                        </CustomButton>
 
-                      </div>
-                    </div>
-                    <div className='w-full bg-grey-150 h-44 rounded-cl grid grid-cols-3'>
+                    <Link href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/categorie`}>
+                    <div className='w-full bg-grey-150 h-44 rounded-cl grid grid-cols-3 group hover:cursor-pointer'>
                       <div className='col-span-1 bg-green-600 rounded-l-cl'>
                         <div className='p-4 flex items-center justify-center h-full w-full'>
-                          <Image src={list} alt='' className='h-2/3 w-2/3' />
+                          <Image src={samenhang} alt='' className='h-3/4 w-3/4' />
                         </div>
                       </div>
-                      <div className='col-span-2'>
-                      <div>
-                          <div className='p-4xl-semibold pb-4'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
-                          <div className='p-base'>{thema?.listText}</div>
-                        </div>
-                        <CustomButton color='whiteBackground'>
-                          Naar de lijst
-                          <ArrowRightIcon
-                            className='inline-block h-4 w-4 ml-1 place-self-center'
-                            aria-hidden='true'
-                          />
-                        </CustomButton>
-
+                      <div className='col-span-2 p-4 flex flex-col gap-y-2'>
+                        <div className='p-xl-semibold'>{thema?.samenhangTitle}</div>
+                          <div className='p-base flex-grow h-full'>{thema?.samenhangText}</div>
+                          <div className='p-lg-semibold w-full flex items-center justify-end group-hover:text-green-300'>
+                          Bekijk jouw categorie {'>'}
+                          </div>
                       </div>
                     </div>
-                    <div className='w-full bg-grey-150 h-44 rounded-cl grid grid-cols-3'>
+                    </Link>
+                  <Link href={`/${thema?.transitionAgenda}/${thema?.slug.current}/instrumenten/`}>
+                    <div className='w-full bg-grey-150 h-44 rounded-cl grid grid-cols-3 group hover:cursor-pointer'>
                       <div className='col-span-1 bg-green-600 rounded-l-cl'>
-                      <div className='p-4 flex items-center justify-center h-full w-full'>
-                          <Image src={waarvoor} alt='' className='h-2/3 w-2/3' />
+                        <div className='p-4 flex items-center justify-center h-full w-full'>
+                          <Image src={list} alt='' className='h-3/4 w-3/4' />
                         </div>
                       </div>
-                      <div className='col-span-2'>
-                      <div>
-                          <div className='p-4xl-semibold pb-4'>{thema?.welkeTitle}</div>
-                          <div className='p-base'>{thema?.welkeText}</div>
-                        </div>
-                        <CustomButton color='whiteBackground'>
-                          Bekijk de bevoegdheden
-                          <ArrowRightIcon
-                            className='inline-block h-4 w-4 ml-1 place-self-center'
-                            aria-hidden='true'
-                          />
-                        </CustomButton>
-                        
+                      <div className='col-span-2 p-4 flex flex-col gap-y-2'>
+                          <div className='p-xl-semibold'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
+                          <div className='p-base flex-grow h-full'>{thema?.listText}</div>
+                          <div className='p-lg-semibold w-full flex items-center justify-end group-hover:text-green-300'>
+                          Naar de lijst {'>'}
+                          </div>
                       </div>
                     </div>
+
+                    </Link>
+
+                    <Link href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/overheidsbevoegdheid`}>
+                    <div className='w-full bg-grey-150 h-44 rounded-cl grid grid-cols-3 group hover:cursor-pointer'>
+                      <div className='col-span-1 bg-green-600 rounded-l-cl'>
+                        <div className='p-4 flex items-center justify-center h-full w-full'>
+                          <Image src={waarvoor} alt='' className='h-3/4 w-3/4'/>
+                        </div>
+                      </div>
+                      <div className='col-span-2 p-4 flex flex-col gap-y-2'>
+                      <div className='p-xl-semibold'>{thema?.welkeTitle}</div>
+                          <div className='p-base flex-grow h-full'>{thema?.welkeText}</div>
+                          <div className='p-lg-semibold w-full flex items-center justify-end group-hover:text-green-300'>
+                          Bekijk de bevoegdheden {'>'}
+                          </div>
+                  
+                      </div>
+                    </div>
+                    </Link>
+
                   </div>
                   <div className='col-span-1'>
-                    <div className='w-full h-full bg-green-200'></div>
+                    <div className='w-full h-full shadow-md rounded-cl bg-grey-150 flex flex-col p-4'></div>
                   </div>
                 </div>
               </>
