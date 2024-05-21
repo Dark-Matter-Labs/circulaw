@@ -21,30 +21,22 @@
 
 /* to delete once all have been replace */
 
- /* Figma H3*/
+ /* change to 32px */
 h2.desktop {
   @apply font-jakarta text-6xl font-semibold leading-14;
 }
 
+/* change to 18px */
 h2.mobile {
   @apply font-jakarta text-2xl font-semibold leading-10;
 }
 
-/* there is 24px and 32px in the ds... not sure what fonts of 29px should be.*/
-.p-6xl-bold {
-  @apply font-jakarta text-6xl font-bold leading-14
-}
-
-.p-6xl-semibold {
-  @apply font-jakarta text-6xl font-semibold leading-14
-}
 
 
   /*  */
 .p-3xl {
   @apply font-jakarta text-3xl font-normal leading-14;
 }
-
 
   /* new system */
   .heading-5xl {
@@ -110,7 +102,6 @@ h2.mobile {
   .p-xs-bold {
     @apply p-xs font-bold;
   }
-
 
   .p-2xs {
     @apply font-jakarta text-xxs font-normal leading-2;
