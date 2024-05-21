@@ -33,15 +33,28 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                 <div className='grid grid-cols-3 md:gap-x-8 lg:gap-x-16'>
                   <div className='col-span-2 grid grid-col gap-y-4'>
                     <div className='w-full bg-grey-150 h-44 rounded-cl grid grid-cols-3'>
-                      <div className='col-span-1 bg-green-600 rounded-l-cl'></div>
+                      <div className='col-span-1 bg-green-600 rounded-l-cl'>
+                      <div className='p-4 flex items-center justify-center h-full w-full'>
+                          <Image src={samenhang} alt='' className='h-2/3 w-2/3' />
+                        </div>
+                        
+                      </div>
                       <div className='col-span-2'></div>
                     </div>
                     <div className='w-full bg-grey-150 h-44 rounded-cl grid grid-cols-3'>
-                      <div className='col-span-1 bg-green-600 rounded-l-cl'></div>
+                      <div className='col-span-1 bg-green-600 rounded-l-cl'>
+                        <div className='p-4 flex items-center justify-center h-full w-full'>
+                          <Image src={list} alt='' className='h-2/3 w-2/3' />
+                        </div>
+                      </div>
                       <div className='col-span-2'></div>
                     </div>
                     <div className='w-full bg-grey-150 h-44 rounded-cl grid grid-cols-3'>
-                      <div className='col-span-1 bg-green-600 rounded-l-cl'></div>
+                      <div className='col-span-1 bg-green-600 rounded-l-cl'>
+                      <div className='p-4 flex items-center justify-center h-full w-full'>
+                          <Image src={waarvoor} alt='' className='h-2/3 w-2/3' />
+                        </div>
+                      </div>
                       <div className='col-span-2'></div>
                     </div>
                   </div>
