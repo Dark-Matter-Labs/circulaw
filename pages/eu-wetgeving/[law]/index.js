@@ -31,32 +31,35 @@ export default function LawSummaryPage({ lawData }) {
     setSelectedTab(query);
   }, [query]);
 
-  return (
-    <Layout title={lawData?.title}>
-      <div className='relative'>
-        <div className='h-[240px] sm:h-[360px] pt-3 bg-green-800'>
-          <div className='flex flex-col justify-between global-margin h-full'>
-            <div className='pt-6 flex flex-row justify-between'>
-              <div className='p-2xs-bold text-green-600 bg-gray-100 w-min pl-2 pr-3 py-1.5 rounded-clSm flex flex-row whitespace-nowrap'>
-                <Link href='/' className=''>
-                  <span className='link-interaction'>
-                    Home <span className='mx-2'>{'>'}</span>
-                  </span>
-                </Link>
-                <Link href='/eu-wetgeving'>
-                  <span className='capitalize link-interaction'>EU wetgeving</span>
-                </Link>
+  if (Object.keys(router.query).length > 0) {
+    return (
+      <Layout title={lawData?.title} pageUrl={router.asPath}>
+        <div className='relative'>
+          <div className='h-[240px] sm:h-[360px] pt-3 bg-green-800'>
+            <div className='flex flex-col justify-between global-margin h-full'>
+              <div className='pt-6 flex flex-row justify-between'>
+                <div className='p-2xs-bold text-green-600 bg-white w-min pl-2 pr-3 py-1.5 rounded-clSm flex flex-row whitespace-nowrap'>
+                  <Link href='/' className=''>
+                    <span className='link-interaction'>
+                      Home <span className='mx-2'>{'>'}</span>
+                    </span>
+                  </Link>
+                  <Link href='/eu-wetgeving'>
+                    <span className='capitalize link-interaction'>EU wetgeving</span>
+                  </Link>
+                </div>
+                <div className='hidden sm:block'>
+                  <SocialButtons
+                    title={`${lawData?.title} - ${selectedTab.replace(/(-)/g, ' ')}`}
+                  />
+                </div>
               </div>
-              <div className='hidden sm:block'>
-                <SocialButtons title={`${lawData?.title} - ${selectedTab.replace(/(-)/g, ' ')}`} />
-              </div>
+              <h1 className='mb-[60px] sm:mb-[94px] p-5xl-semibold sm:p-7xl-bold text-grey-100 max-w-4xl'>
+                {' '}
+                {lawData?.title}
+              </h1>
             </div>
-            <h1 className='mb-[60px] sm:mb-[94px] heading-2xl-semibold sm:heading-5xl-semibold text-gray-100 max-w-4xl'>
-              {' '}
-              {lawData?.title}
-            </h1>
           </div>
-        </div>
 
         {/* tabs desktop */}
         <div className='sticky top-16 lgNav:top-24 shadow-lg z-50'>

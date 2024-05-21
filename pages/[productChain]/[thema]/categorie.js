@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import ExpertiseLayout from '@/components/layouts/expertise-layout';
 import Layout from '@/components/layouts/layout';
 import { categorieQuery } from '@/lib/queries';
@@ -20,9 +21,11 @@ const themaInfo = `
 `;
 
 export default function InfoPage({ expertiseData, themaData }) {
-  if (themaData?.type === 'thema') {
+  const router = useRouter();
+
+  if (themaData?.type === 'thema' && Object.keys(router.query).length > 0) {
     return (
-      <Layout title={`${themaData?.themaName} instrumenten per categorie`}>
+      <Layout title={`${themaData?.themaName} instrumenten per categorie`} pageUrl={router.asPath}>
         <ExpertiseLayout
           thema={themaData?.thema}
           transitionAgenda={themaData?.transitionAgenda}

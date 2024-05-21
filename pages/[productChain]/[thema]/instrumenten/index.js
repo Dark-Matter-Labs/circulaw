@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import Layout from '/components/layouts/layout';
 import InstrumentsLayout from '@/components/layouts/instruments-layout';
 import { totalNumberOfInstrumentsPerThema, instrumentListPageFunction } from '@/lib/queries';
@@ -19,17 +20,16 @@ const themaInfo = `
 }
 `;
 
-export default function instruments({ numberOfInstruments, instruments, themaData }) {
+export default function Instruments({ numberOfInstruments, instruments, themaData }) {
+  const router = useRouter();
   if (themaData?.type === 'thema') {
     return (
-      <Layout title={`${themaData?.themaName}`}>
+      <Layout title={`${themaData?.themaName}`} pageUrl={router.asPath}>
         <InstrumentsLayout
           totalNumberOfLaws={numberOfInstruments}
           title={`Lijst van alle ${themaData?.thema} instrumenten`}
           thema={themaData?.thema}
           heading={`Instrumenten om de circulariteit van de ${themaData?.thema} te bevorderen`}
-          // introPara={`We hebben ${totalNumberOfLaws} kansrijke instrumenten gevonden die je kunt inzetten als het gaat om matrassen. Met sommige van deze instrumenten is al praktijkervaring opgedaan, met andere nog niet. Ga aan de slag! Met jouw ervaringen help je anderen weer verder.`}
-          // icon={MatrassenIcon}
           transitionAgenda={themaData?.transitionAgenda}
           searchTitle={`Zoek in ${themaData?.thema}`}
           instruments={instruments}

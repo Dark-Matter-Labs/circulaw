@@ -1,6 +1,9 @@
 // refactor
 import HomePageAboutSection from '@/components/home-page-about-section';
 import HomePageEUSection from '@/components/home-page-eu-section';
+// refactor
+import HomePageAboutSection from '@/components/home-page-about-section';
+import HomePageEUSection from '@/components/home-page-eu-section';
 import Layout from '@/components/layouts/layout';
 import LinkIcon from '@/components/link-icon';
 import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
@@ -12,10 +15,13 @@ import {
   newsItems,
   euHomePageQuery,
   pcHomePageQuery,
-} from '@/lib/queries';
-import { client } from '@/lib/sanity';
-import { ArrowRightIcon } from '@heroicons/react/outline';
-import Link from 'next/link';
+} from '@/lib/queries'; // refactor
+import HomePageAboutSection from '@/components/home-page-about-section';
+import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
+import FeaturedCard from '@/components/news-page/featured-card';
+import LinkIcon from '@/components/link-icon';
+import PCHomePage from '@/components/product-chain-page/product-chain-homepage';
+import HomePageEUSection from '@/components/home-page-eu-section';
 
 export default function Index({
   aboutSection,
@@ -25,8 +31,14 @@ export default function Index({
   euData,
   pcData,
 }) {
+  const router = useRouter();
   return (
-    <Layout page='home' homePageHeader={homePageHeader} footerText={footerText}>
+    <Layout
+      page='home'
+      homePageHeader={homePageHeader}
+      footerText={footerText}
+      pageUrl={router.asPath}
+    >
       <div className='bg-gray-100 sm:pb-12 -z-50' name='thema'>
         <div className='global-margin -z-20'>
           <h2 className='heading-2xl-semibold sm:heading-5xl-semibold pt-8 text-green-600 border-gray-600 border-b pb-6'>

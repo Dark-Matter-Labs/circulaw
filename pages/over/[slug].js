@@ -1,3 +1,6 @@
+import { useRouter } from 'next/router';
+import { PreviewSuspense } from 'next-sanity/preview';
+import { lazy } from 'react';
 import AboutPageComponent from '@/components/about-page';
 import Layout from '@/components/layouts/layout';
 import {
@@ -13,16 +16,19 @@ import { lazy } from 'react';
 const AboutPagepreview = lazy(() => import('@/components/about-page/about-page-preview'));
 
 export default function AboutPage({ preview, data }) {
+  const router = useRouter();
   return preview ? (
     <PreviewSuspense>
       <Layout>
         <AboutPagepreview query={aboutPagePreviewQuery} queryParams={data?.slug} />
       </Layout>
     </PreviewSuspense>
-  ) : (
-    <Layout title={'Over CircuLaw - ' + data?.aboutPage?.pageTitle}>
+  ) : Object.keys(router.query).length > 0 ? (
+    <Layout title={'Over CircuLaw - ' + data?.aboutPage?.pageTitle} pageUrl={router.asPath}>
       <AboutPageComponent data={data} aboutPageSlugs={data?.aboutPageSlugs} />
     </Layout>
+  ) : (
+    <Layout></Layout>
   );
 }
 

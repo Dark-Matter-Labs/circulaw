@@ -1,3 +1,6 @@
+import { useRouter } from 'next/router';
+import { PreviewSuspense } from 'next-sanity/preview';
+import { lazy } from 'react';
 import Instrument from '@/components/instrument';
 import Layout from '@/components/layouts/layout';
 import { instrumentQuery } from '@/lib/queries';
@@ -16,20 +19,21 @@ const pathsQuery = `
   }
   `;
 
-export default function instrument({ preview, data }) {
+export default function InstrumentPage({ preview, data }) {
+  const router = useRouter();
+
   return preview ? (
     <PreviewSuspense>
       <Layout>
         <InstrumentPreview query={instrumentQuery} queryParams={data.slug} />
       </Layout>
     </PreviewSuspense>
-  ) : (
-    <Layout
-      title={data?.instrument?.titel}
-      canonicalUrl={globalMeta.siteUrl + data?.instrument?.slug}
-    >
+  ) : Object.keys(router.query).length > 0 ? (
+    <Layout title={data?.instrument?.titel} pageUrl={router.asPath}>
       <Instrument data={data} />
     </Layout>
+  ) : (
+    <Layout></Layout>
   );
 }
 

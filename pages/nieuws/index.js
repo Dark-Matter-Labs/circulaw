@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import Layout from '@/components/layouts/layout';
 import AgendaCard from '@/components/news-page/agenda-card';
 import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
@@ -41,8 +42,10 @@ export default function NewsPage({ data }) {
     }
   }, [articleType, data.notFeatured]);
 
+  const router = useRouter();
+
   return (
-    <Layout>
+    <Layout title='Nieuws' pageUrl={router.asPath}>
       <div className='flex flex-col global-margin mt-4'>
         <div className='mt-10'>
           <Link href='/' className='p-2xs-bold'>

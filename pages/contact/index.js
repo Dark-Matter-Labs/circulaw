@@ -1,12 +1,14 @@
-import CustomButton from '@/components/custom-button';
-import Layout from '@/components/layouts/layout';
 import axios from 'axios';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
+import CustomButton from '@/components/custom-button';
+import Layout from '@/components/layouts/layout';
 
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/a53bd6aa-495c-416a-b8ec-2b36b6be1af9';
 
 export default function Contact() {
+  const router = useRouter();
   const [formStatus, setFormStatus] = useState(false);
   const [query, setQuery] = useState({
     name: '',
@@ -51,7 +53,7 @@ export default function Contact() {
   };
 
   return (
-    <Layout title='CircuLaw - Contact'>
+    <Layout title='Contact' pageUrl={router.asPath}>
       <div className='global-margin'>
         {!formStatus ? (
           <>

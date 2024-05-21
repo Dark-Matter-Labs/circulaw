@@ -1,10 +1,12 @@
 import Layout from '@/components/layouts/layout';
 import LinkIcon from '@/components/link-icon';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Privacy() {
+  const router = useRouter();
   return (
-    <Layout title='CircuLaw - Privacyverklaring'>
+    <Layout title='CircuLaw - Privacyverklaring' pageUrl={router.asPath}>
       <div className='global-margin my-20 max-w-2xl text-gray-800'>
         <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pb-6'>Privacyverklaring</h1>
         <p className=' p-base pt-2 pb-6 max-w-4xl'>

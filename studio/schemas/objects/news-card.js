@@ -146,6 +146,9 @@ export default {
           type: 'imageBlock',
         },
         {
+          type: 'youtube',
+        },
+        {
           type: 'block',
           of: [
             {

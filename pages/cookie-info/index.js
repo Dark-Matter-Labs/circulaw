@@ -1,5 +1,6 @@
-import Layout from '@/components/layouts/layout';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import Layout from '@/components/layouts/layout';
 
 const cookies = [
   { name: '_localConsent', description: 'bewaart je cookievoorkeuren', valid: '1 jaar' },
@@ -44,10 +45,12 @@ const cookies = [
 ];
 
 export default function Privacy() {
+  const router = useRouter();
+
   return (
-    <Layout title='CircuLaw - Cookiebeleid'>
-      <div className='global-margin my-20 max-w-2xl text-gray-800'>
-        <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pb-6'>Cookiebeleid CircuLaw</h1>
+    <Layout title='CircuLaw - Cookiebeleid' pageUrl={router.asPath}>
+      <div className='global-margin my-20 max-w-2xl text-grey-800'>
+        <h1 className='mobile sm:desktop pb-6'>Cookiebeleid CircuLaw</h1>
         <h2 className='mobile sm:desktop py-2'>Wat zijn cookies?</h2>
         <p className=' p-base pb-6 max-w-4xl'>
           Cookies zijn kleine tekstbestanden die onzichtbaar zijn voor de gebruiker en die de

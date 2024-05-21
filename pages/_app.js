@@ -1,5 +1,6 @@
 import '../global.css';
 import { getCookie } from 'cookies-next';
+import { LinkedInInsightTag } from 'nextjs-linkedin-insight-tag';
 import 'next-pagination/dist/index.css';
 import Router from 'next/router';
 import NProgress from 'nprogress';
@@ -20,9 +21,17 @@ export default function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     if (consent === true) {
-      hotjar.initialize(process.env.NEXT_PUBLIC_HJID, process.env.NEXT_PUBLIC_HJSV);
+      hotjar.initialize({
+        id: Number(process.env.NEXT_PUBLIC_HJID),
+        sv: process.env.NEXT_PUBLIC_HJSV,
+      });
     }
   }, [consent]);
 
-  return <>{getLayout(<Component {...pageProps} />)}</>;
+  return (
+    <>
+      <LinkedInInsightTag />
+      {getLayout(<Component {...pageProps} />)}
+    </>
+  );
 }
