@@ -10,6 +10,9 @@ import list from '@/public/thema-card-background/list.svg';
 import samenhang from '@/public/thema-card-background/samenhang.svg';
 import waarvoor from '@/public/thema-card-background/waarvoor.svg';
 import commentIcon from '@/public/comment-icon.svg';
+import comments from '@/public/comments.png';
+import { Link as ScrollLink } from 'react-scroll';
+
 
 export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
   return (
@@ -27,67 +30,90 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
             <div className='pt-20 pb-14'>
               <h2 className='p-3xl-semibold sm:p-5xl-semibold'>{thema?.overviewsTitle}</h2>
             </div>
+
             {/* Desktop Cards */}
             {thema?.themaName === 'Houtbouw' || thema?.themaName === 'Voedselverspilling' ? (
               <>
-                <div className='grid grid-cols-3 md:gap-x-8 lg:gap-x-16'>
+                <div className=' grid-cols-3 md:gap-x-8 lg:gap-x-16 hidden sm:grid'>
                   <div className='col-span-2 grid grid-col gap-y-4'>
-
                     <Link href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/categorie`}>
-                    <div className='w-full bg-grey-150 h-44 rounded-cl grid grid-cols-3 group hover:cursor-pointer'>
-                      <div className='col-span-1 bg-green-600 rounded-l-cl'>
-                        <div className='p-4 flex items-center justify-center h-full w-full'>
-                          <Image src={samenhang} alt='' className='h-3/4 w-3/4' />
+                      <div className='w-full bg-grey-150 h-44 rounded-cl grid grid-cols-3 group hover:cursor-pointer'>
+                        <div className='col-span-1 bg-green-600 rounded-l-cl'>
+                          <div className='p-4 flex items-center justify-center h-full w-full'>
+                            <Image src={samenhang} alt='' className='h-3/4 w-3/4' />
+                          </div>
                         </div>
-                      </div>
-                      <div className='col-span-2 p-4 flex flex-col gap-y-2'>
-                        <div className='p-xl-semibold'>{thema?.samenhangTitle}</div>
+                        <div className='col-span-2 p-4 flex flex-col gap-y-2'>
+                          <div className='p-xl-semibold'>{thema?.samenhangTitle}</div>
                           <div className='p-base flex-grow h-full'>{thema?.samenhangText}</div>
                           <div className='p-lg-semibold w-full flex items-center justify-end group-hover:text-green-300'>
-                          Bekijk jouw categorie {'>'}
+                            Bekijk jouw categorie {'>'}
                           </div>
-                      </div>
-                    </div>
-                    </Link>
-                  <Link href={`/${thema?.transitionAgenda}/${thema?.slug.current}/instrumenten/`}>
-                    <div className='w-full bg-grey-150 h-44 rounded-cl grid grid-cols-3 group hover:cursor-pointer'>
-                      <div className='col-span-1 bg-green-600 rounded-l-cl'>
-                        <div className='p-4 flex items-center justify-center h-full w-full'>
-                          <Image src={list} alt='' className='h-3/4 w-3/4' />
                         </div>
                       </div>
-                      <div className='col-span-2 p-4 flex flex-col gap-y-2'>
+                    </Link>
+                    <Link href={`/${thema?.transitionAgenda}/${thema?.slug.current}/instrumenten/`}>
+                      <div className='w-full bg-grey-150 h-44 rounded-cl grid grid-cols-3 group hover:cursor-pointer'>
+                        <div className='col-span-1 bg-green-600 rounded-l-cl'>
+                          <div className='p-4 flex items-center justify-center h-full w-full'>
+                            <Image src={list} alt='' className='h-3/4 w-3/4' />
+                          </div>
+                        </div>
+                        <div className='col-span-2 p-4 flex flex-col gap-y-2'>
                           <div className='p-xl-semibold'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
                           <div className='p-base flex-grow h-full'>{thema?.listText}</div>
                           <div className='p-lg-semibold w-full flex items-center justify-end group-hover:text-green-300'>
-                          Naar de lijst {'>'}
+                            Naar de lijst {'>'}
                           </div>
-                      </div>
-                    </div>
-
-                    </Link>
-
-                    <Link href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/overheidsbevoegdheid`}>
-                    <div className='w-full bg-grey-150 h-44 rounded-cl grid grid-cols-3 group hover:cursor-pointer'>
-                      <div className='col-span-1 bg-green-600 rounded-l-cl'>
-                        <div className='p-4 flex items-center justify-center h-full w-full'>
-                          <Image src={waarvoor} alt='' className='h-3/4 w-3/4'/>
                         </div>
                       </div>
-                      <div className='col-span-2 p-4 flex flex-col gap-y-2'>
-                      <div className='p-xl-semibold'>{thema?.welkeTitle}</div>
-                          <div className='p-base flex-grow h-full'>{thema?.welkeText}</div>
-                          <div className='p-lg-semibold w-full flex items-center justify-end group-hover:text-green-300'>
-                          Bekijk de bevoegdheden {'>'}
-                          </div>
-                  
-                      </div>
-                    </div>
                     </Link>
 
+                    <Link
+                      href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/overheidsbevoegdheid`}
+                    >
+                      <div className='w-full bg-grey-150 h-44 rounded-cl grid grid-cols-3 group hover:cursor-pointer'>
+                        <div className='col-span-1 bg-green-600 rounded-l-cl'>
+                          <div className='p-4 flex items-center justify-center h-full w-full'>
+                            <Image src={waarvoor} alt='' className='h-3/4 w-3/4' />
+                          </div>
+                        </div>
+                        <div className='col-span-2 p-4 flex flex-col gap-y-2'>
+                          <div className='p-xl-semibold'>{thema?.welkeTitle}</div>
+                          <div className='p-base flex-grow h-full'>{thema?.welkeText}</div>
+                          <div className='p-lg-semibold w-full flex items-center justify-end group-hover:text-green-300'>
+                            Bekijk de bevoegdheden {'>'}
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
                   </div>
                   <div className='col-span-1'>
-                    <div className='w-full h-full shadow-md rounded-cl bg-grey-150 flex flex-col p-4'></div>
+                    <div className='w-full h-full shadow-md rounded-cl bg-grey-150 flex flex-col p-4'>
+                      <Image
+                        src={comments}
+                        width={406}
+                        height={172}
+                        alt='comment image'
+                        className=''
+                      />
+                      <div className='flex flex-col h-full w-full sm:p-4 md:p-6 lg:p-8 justify-between'>
+                        <div className='p-2xl-semibold'>Laat je horen!</div>
+                        <div className='p-base'>
+                          Er zijn al 4 gesprekken gaande. Discussieer mee, deel jouw ervaringen, stel je vragen.
+                          Help zo jezelf en anderen verder.
+                        </div>
+                        <ScrollLink to='comments' smooth={true} offset={-120} className='w-full'>
+                        <CustomButton color='greenBackground'>
+                          Discusseer mee
+                          <ArrowRightIcon
+                            className='inline-block h-4 w-4 ml-1 place-self-center'
+                            aria-hidden='true'
+                          />
+                        </CustomButton>
+                        </ScrollLink>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </>
@@ -263,7 +289,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
           </div>
 
           {(thema?.themaName === 'Houtbouw' || thema?.themaName === 'Voedselverspilling') && (
-            <div className='global-margin my-32 text-center'>
+            <div className='global-margin my-32 text-center' id='comments'>
               <div className='flex justify-center items-center'>
                 <Image src={commentIcon} alt='' />
                 <h3 className='mobile sm:desktop pl-2'>
