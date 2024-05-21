@@ -144,6 +144,7 @@ export default function LawSummaryPage({ lawData }) {
     </Layout>
   );
 }
+}
 
 export async function getStaticPaths() {
   const laws = await client.fetch(pathsQuery);

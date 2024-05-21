@@ -5,9 +5,6 @@ import Instrument from '@/components/instrument';
 import Layout from '@/components/layouts/layout';
 import { instrumentQuery } from '@/lib/queries';
 import { client } from '@/lib/sanity';
-import globalMeta from '@/utils/global-meta';
-import { PreviewSuspense } from 'next-sanity/preview';
-import { lazy } from 'react';
 
 const InstrumentPreview = lazy(() => import('@/components/instrument/instrument-preview'));
 

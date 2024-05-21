@@ -9,14 +9,6 @@ import ThemeBottomSection from '@/components/theme-page/section-bottom-theme-ind
 import list from '@/public/thema-card-background/list.svg';
 import samenhang from '@/public/thema-card-background/samenhang.svg';
 import waarvoor from '@/public/thema-card-background/waarvoor.svg';
-import { ArrowRightIcon } from '@heroicons/react/outline';
-import Image from 'next/image';
-import Link from 'next/link';
-import CustomButton from '@/components/custom-button';
-import ThemeBottomSection from '@/components/theme-page/section-bottom-theme-index';
-import list from '@/public/thema-card-background/list.svg';
-import samenhang from '@/public/thema-card-background/samenhang.svg';
-import waarvoor from '@/public/thema-card-background/waarvoor.svg';
 import commentIcon from '@/public/comment-icon.svg';
 
 export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {

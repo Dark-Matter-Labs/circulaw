@@ -1,9 +1,10 @@
+import Link from 'next/link';
+import { ArrowRightIcon } from '@heroicons/react/outline';
+import { client } from '@/lib/sanity';
 // refactor
 import HomePageAboutSection from '@/components/home-page-about-section';
 import HomePageEUSection from '@/components/home-page-eu-section';
 // refactor
-import HomePageAboutSection from '@/components/home-page-about-section';
-import HomePageEUSection from '@/components/home-page-eu-section';
 import Layout from '@/components/layouts/layout';
 import LinkIcon from '@/components/link-icon';
 import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
@@ -16,12 +17,7 @@ import {
   euHomePageQuery,
   pcHomePageQuery,
 } from '@/lib/queries'; // refactor
-import HomePageAboutSection from '@/components/home-page-about-section';
-import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
-import FeaturedCard from '@/components/news-page/featured-card';
-import LinkIcon from '@/components/link-icon';
-import PCHomePage from '@/components/product-chain-page/product-chain-homepage';
-import HomePageEUSection from '@/components/home-page-eu-section';
+import { useRouter } from 'next/router';
 
 export default function Index({
   aboutSection,

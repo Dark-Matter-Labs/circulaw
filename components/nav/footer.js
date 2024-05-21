@@ -7,19 +7,13 @@ import Partners from '@/components/nav/partners';
 import ActionPanel from '@/components/section-action-panel';
 import ORicon from '@/public/icons/openResearch.svg';
 import { ArrowUpIcon } from '@heroicons/react/outline';
-import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { AiFillGithub } from 'react-icons/ai';
 import { RiLinkedinFill } from 'react-icons/ri';
 import { Link as ScrollLink } from 'react-scroll';
-import { ArrowUpIcon } from '@heroicons/react/outline';
-import ActionPanel from '@/components/section-action-panel';
-import Partners from '@/components/nav/partners';
-import CustomButton from '@/components/custom-button';
-import ORicon from '@/public/icons/openResearch.svg';
-import LangSwitch from './lang-switch';
-
+import { usePiwikPro } from '@piwikpro/next-piwik-pro';
+import JaIcon from '@/public/icons/ja-icon.svg';
+import NeeIcon from '@/public/icons/nee-icon.svg';
 // import data // maybe not necessary
 const navigation = {
   other: [

@@ -10,8 +10,6 @@ import {
   aboutPagePreviewQuery,
 } from '@/lib/queries';
 import { client } from '@/lib/sanity';
-import { PreviewSuspense } from 'next-sanity/preview';
-import { lazy } from 'react';
 
 const AboutPagepreview = lazy(() => import('@/components/about-page/about-page-preview'));
 
