@@ -22,14 +22,34 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
 
         {/* CARDS */}
 
-        <div className='bg-gradient-to-b from-[#F8FAF8] to-[#F8FAF8]'>
+        <div className='bg-grey-100'>
           <div className='global-margin pb-16 sm:pb-20'>
-            <div className='pt-14 pb-10'>
+            <div className='pt-20 pb-14'>
               <h2 className='p-3xl-semibold sm:p-5xl-semibold'>{thema?.overviewsTitle}</h2>
             </div>
             {/* Desktop Cards */}
             {thema?.themaName === 'Houtbouw' || thema?.themaName === 'Voedselverspilling' ? (
-              <></>
+              <>
+                <div className='grid grid-cols-3 md:gap-x-8 lg:gap-x-16'>
+                  <div className='col-span-2 grid grid-col gap-y-4'>
+                    <div className='w-full bg-grey-150 h-44 rounded-cl grid grid-cols-3'>
+                      <div className='col-span-1 bg-green-600 rounded-l-cl'></div>
+                      <div className='col-span-2'></div>
+                    </div>
+                    <div className='w-full bg-grey-150 h-44 rounded-cl grid grid-cols-3'>
+                      <div className='col-span-1 bg-green-600 rounded-l-cl'></div>
+                      <div className='col-span-2'></div>
+                    </div>
+                    <div className='w-full bg-grey-150 h-44 rounded-cl grid grid-cols-3'>
+                      <div className='col-span-1 bg-green-600 rounded-l-cl'></div>
+                      <div className='col-span-2'></div>
+                    </div>
+                  </div>
+                  <div className='col-span-1'>
+                    <div className='w-full h-full bg-green-200'></div>
+                  </div>
+                </div>
+              </>
             ) : (
               <>
                 <ul
