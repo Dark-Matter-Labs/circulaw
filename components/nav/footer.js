@@ -147,7 +147,7 @@ export default function Footer(props) {
                         'Footer Feedback More Info',
                         feedback,
                         router.asPath,
-                        feedbackState,
+                        feedback + ' ,state:' + feedbackState,
                       );
                       setMoreInfoOpen('hidden');
                       setJeeNee('hidden');
@@ -168,6 +168,13 @@ export default function Footer(props) {
                   <div className=''>
                     <div className='grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-8'>
                       <div className='sm:hidden block border-b border-gray-100 pb-4'>
+                        <ActionPanel
+                          title='Schrijf je in op de nieuwsbrief'
+                          paragraph='Wil je op de hoogte blijven van het laatste nieuws binnen CircuLaw. Meld je dan snel aan!'
+                          buttonText='Aanmelden'
+                          buttonLink='/nieuwsbrief'
+                        />
+                        <div className='py-4'></div>
                         <ActionPanel
                           title='Doe met ons mee'
                           paragraph='Heb je vragen, wil je je ervaringen delen of wil je een wetsanalyse laten uitvoeren op een circulair  thema of casus?'
@@ -265,6 +272,13 @@ export default function Footer(props) {
                         </ul>
                       </div>
                       <div className='hidden sm:block'>
+                        <ActionPanel
+                          title='Schrijf je in op de nieuwsbrief'
+                          paragraph='Wil je op de hoogte blijven van het laatste nieuws binnen CircuLaw. Meld je dan snel aan!'
+                          buttonText='Aanmelden'
+                          buttonLink='/nieuwsbrief'
+                        />
+                        <div className='py-4'></div>
                         <ActionPanel
                           title='Doe met ons mee'
                           paragraph='Heb je vragen, wil je je ervaringen delen of wil je een wetsanalyse laten uitvoeren op een circulair  thema of casus?'
