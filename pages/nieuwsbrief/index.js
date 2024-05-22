@@ -7,6 +7,13 @@ import Layout from '@/components/layouts/layout';
 
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/raeqmmza';
 
+// TODO: move function to utils
+const isBrowser = () => typeof window !== 'undefined';
+function scrollToTop() {
+  if (!isBrowser()) return;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 export default function Newsletter() {
   const router = useRouter();
   const [formStatus, setFormStatus] = useState(false);
@@ -48,6 +55,7 @@ export default function Newsletter() {
           subscribe: 'yes',
         });
         console.log(response);
+        scrollToTop();
       })
       .catch(function (error) {
         console.log(error);
@@ -135,7 +143,7 @@ export default function Newsletter() {
                 </div>
                 <div className='sm:col-span-2'>
                   <label htmlFor='role' className='block  text-grey-800'>
-                    Functie/rol?
+                    Wat is je functie/rol?
                   </label>
                   <div className='mt-1'>
                     <input
