@@ -78,7 +78,7 @@ export default function Newsletter() {
                 className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'
               >
                 <div>
-                  <label htmlFor='first-name' className='block text-grey-800'>
+                  <label htmlFor='first-name' className='block text-gray-800'>
                     Wat is je naam? <span className='text-green-400'>*</span>
                   </label>
                   <div className='mt-1'>
@@ -95,7 +95,7 @@ export default function Newsletter() {
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
-                  <label htmlFor='email' className='block  text-grey-800'>
+                  <label htmlFor='email' className='block  text-gray-800'>
                     Op welk e-mailadres kunnen we je bereiken?{' '}
                     <span className='text-green-400'>*</span>
                   </label>
@@ -123,10 +123,10 @@ export default function Newsletter() {
                     checked
                     onChange={handleChange()}
                   />
-                  <label className='block text-grey-800 pl-2'>Abonneren op de nieuwsbrief</label>
+                  <label className='block text-gray-800 pl-2'>Abonneren op de nieuwsbrief</label>
                 </div>
                 <div className='sm:col-span-2'>
-                  <label htmlFor='company' className='block  text-grey-800'>
+                  <label htmlFor='company' className='block  text-gray-800'>
                     Voor welke organisatie werk je?
                   </label>
                   <div className='mt-1'>
@@ -142,7 +142,7 @@ export default function Newsletter() {
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
-                  <label htmlFor='role' className='block  text-grey-800'>
+                  <label htmlFor='role' className='block  text-gray-800'>
                     Wat is je functie/rol?
                   </label>
                   <div className='mt-1'>
@@ -190,7 +190,7 @@ export default function Newsletter() {
         ) : (
           <>
             <h1 className='mobile sm:desktop text-green-600 pt-10'>Bedankt!</h1>
-            <p className=' p-lg py-10 max-w-2xl text-grey-800'>
+            <p className=' p-lg py-10 max-w-2xl text-gray-800'>
               Dank voor je bericht! Je hoort van ons.
             </p>
             <div className='sm:col-span-2 pb-20'>
