@@ -54,7 +54,7 @@ export default function LawSummaryPage({ lawData }) {
                   />
                 </div>
               </div>
-              <h1 className='mb-[60px] sm:mb-[94px] p-5xl-semibold sm:p-7xl-bold text-grey-100 max-w-4xl'>
+              <h1 className='mb-[60px] sm:mb-[94px] heading-5xl-semibold sm:p-7xl-bold text-gray-100 max-w-4xl'>
                 {' '}
                 {lawData?.title}
               </h1>

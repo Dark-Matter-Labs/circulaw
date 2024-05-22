@@ -49,7 +49,7 @@ export default function Privacy() {
 
   return (
     <Layout title='CircuLaw - Cookiebeleid' pageUrl={router.asPath}>
-      <div className='global-margin my-20 max-w-2xl text-grey-800'>
+      <div className='global-margin my-20 max-w-2xl text-gray-800'>
         <h1 className='heading-3xl-semibold sm:heading-5xl-semibold pb-6'>Cookiebeleid CircuLaw</h1>
         <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>Wat zijn cookies?</h2>
         <p className=' p-base pb-6 max-w-4xl'>

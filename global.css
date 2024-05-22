@@ -18,8 +18,6 @@
     @apply 2xl:px-40
   }
 
-
-
   /* new system */
   .heading-5xl {
     @apply font-jakarta text-7xl leading-16
@@ -96,7 +94,6 @@
   .p-2xs-bold {
     @apply p-2xs font-bold;
   }
-
 
    /* special fonts */
    .header-desktop {

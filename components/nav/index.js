@@ -397,7 +397,7 @@ export default function Nav(props) {
                                   <Disclosure.Button
                                     className={`${
                                       open ? 'text-green-500' : 'text-green-800'
-                                    }  border-t py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
+                                    }  border-t py-4 w-full text-left heading-xl-semibold flex flex-row items-center`}
                                   >
                                     EU wetgeving
                                     <ChevronDownIcon
@@ -637,7 +637,7 @@ export default function Nav(props) {
                       >
                         <div
                           className={`${
-                            router.pathname === '/' ? 'bg-green-600' : 'bg-green-100'
+                            router.pathname === '/' ? 'bg-green-600' : 'bg-gray-200'
                           } h-full pb-10 shadow-lg pl-6 pt-8 pr-8`}
                           style={{ ...euMenuTransitionStyles }}
                           onMouseLeave={() => setEuMenuIsOpen(false)}
