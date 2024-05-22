@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { DiscussionEmbed } from 'disqus-react';
+import { DiscussionEmbed, CommentCount } from 'disqus-react';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import ThemePageHeader from '../theme-page/theme-page-header';
 import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
@@ -13,7 +13,6 @@ import commentIcon from '@/public/comment-icon.svg';
 import comments from '@/public/comments.png';
 import { Link as ScrollLink } from 'react-scroll';
 
-
 export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
   return (
     <>
@@ -24,7 +23,6 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
         <ThemePageHeaderMobile themaData={thema} />
 
         {/* CARDS */}
-
         <div className='bg-grey-100'>
           <div className='global-margin pb-16 sm:pb-20'>
             <div className='pt-20 pb-14'>
@@ -68,7 +66,6 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         </div>
                       </div>
                     </Link>
-
                     <Link
                       href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/overheidsbevoegdheid`}
                     >
@@ -88,34 +85,142 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                       </div>
                     </Link>
                   </div>
+
                   <div className='col-span-1'>
-                    <div className='w-full h-full shadow-md rounded-cl bg-grey-150 flex flex-col p-4'>
-                      <Image
-                        src={comments}
-                        width={406}
-                        height={172}
-                        alt='comment image'
-                        className=''
-                      />
-                      <div className='flex flex-col h-full w-full sm:p-4 md:p-6 lg:p-8 justify-between'>
-                        <div className='p-2xl-semibold'>Laat je horen!</div>
-                        <div className='p-base'>
-                          Er zijn al 4 gesprekken gaande. Discussieer mee, deel jouw ervaringen, stel je vragen.
-                          Help zo jezelf en anderen verder.
+                    <ScrollLink to='comments' smooth={true} offset={-120} className='w-full'>
+                      <div className='w-full h-full shadow-md rounded-cl bg-grey-150 flex flex-col p-4 cursor-pointer'>
+                        <Image
+                          src={comments}
+                          width={406}
+                          height={172}
+                          alt='comment image'
+                          className=''
+                        />
+                        <div className='flex flex-col h-full w-full sm:p-4 md:p-6 lg:p-8 justify-between'>
+                          <div className='p-2xl-semibold'>Laat je horen!</div>
+                          <div className='p-base'>
+                            Er zijn al{' '}
+                            <CommentCount
+                              shortname='circulaw'
+                              config={{
+                                identifier: thema?.slug.current,
+                                title: thema?.slug.current,
+                              }}
+                            />{' '}
+                            gesprekken gaande. Discussieer mee, deel jouw ervaringen, stel je
+                            vragen. Help zo jezelf en anderen verder.
+                          </div>
+
+                          <CustomButton color='greenBackground'>
+                            Discusseer mee
+                            <ArrowRightIcon
+                              className='inline-block h-4 w-4 ml-1 place-self-center'
+                              aria-hidden='true'
+                            />
+                          </CustomButton>
                         </div>
-                        <ScrollLink to='comments' smooth={true} offset={-120} className='w-full'>
-                        <CustomButton color='greenBackground'>
-                          Discusseer mee
-                          <ArrowRightIcon
-                            className='inline-block h-4 w-4 ml-1 place-self-center'
-                            aria-hidden='true'
-                          />
-                        </CustomButton>
-                        </ScrollLink>
                       </div>
-                    </div>
+                    </ScrollLink>
                   </div>
                 </div>
+
+                <ul className='sm:hidden max-w-sm'>
+                  <li>
+                    <Link href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/categorie`}>
+                      <div className='h-24 w-full rounded-cl bg-grey-50 shadow mb-6'>
+                        <div className='flex items-center justify-start'>
+                          <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
+                            <Image
+                              src={samenhang}
+                              alt='vector image for categorie page'
+                              className='w-full h-full rounded-l-cl'
+                            />
+                          </div>
+                          <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
+                            <div className='p-2xl-semibold'>Instrumenten per categorie</div>
+                            <ArrowRightIcon
+                              className='block h-6 w-6 text-green-600 mt-1'
+                              aria-hidden='true'
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/instrumenten/`}
+                    >
+                      <div className='h-24 w-full rounded-cl bg-grey-50 shadow my-6'>
+                        <div className='flex items-center justify-start'>
+                          <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
+                            <Image
+                              src={list}
+                              alt='vector image for list page'
+                              className='w-full h-full rounded-l-cl'
+                            />
+                          </div>
+                          <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
+                            <div className='p-2xl-semibold'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
+                            <ArrowRightIcon
+                              className='block h-6 w-6 text-green-600'
+                              aria-hidden='true'
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/overheidsbevoegdheid`}
+                    >
+                      <div className='h-24 w-full rounded-cl bg-grey-50 shadow mt-6'>
+                        <div className='flex items-center justify-start'>
+                          <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
+                            <Image
+                              src={waarvoor}
+                              alt='vector image for waarvoor page'
+                              className='w-full h-full rounded-l-cl'
+                            />
+                          </div>
+                          <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
+                            <div className='p-2xl-semibold'>{thema?.welkeTitle}</div>
+                            <ArrowRightIcon
+                              className='block h-6 w-6 text-green-600 mt-1'
+                              aria-hidden='true'
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </li>
+                </ul>
+                <ScrollLink to='comments' smooth={true} offset={-120} className='w-full sm:hidden'>
+                  <div className='mt-6 w-full rounded-cl bg-gray-150 h-auto p-4 flex flex-col shadow gap-4'>
+                    <div className='p-xl-semibold '>Laat je horen!</div>
+                    <div className='p-base'>
+                      Er zijn al{' '}
+                      <CommentCount
+                        shortname='circulaw'
+                        config={{
+                          identifier: thema?.slug.current,
+                          title: thema?.slug.current,
+                        }}
+                      />{' '}
+                      gesprekken gaande. Discussieer mee, deel jouw ervaringen, stel je vragen. Help
+                      zo jezelf en anderen verder.
+                    </div>
+
+                    <CustomButton color='greenBackground'>
+                      Discusseer mee
+                      <ArrowRightIcon
+                        className='inline-block h-4 w-4 ml-1 place-self-center'
+                        aria-hidden='true'
+                      />
+                    </CustomButton>
+                  </div>
+                </ScrollLink>
               </>
             ) : (
               <>
