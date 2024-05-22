@@ -5,7 +5,7 @@ import { useState } from 'react';
 import CustomButton from '@/components/custom-button';
 import Layout from '@/components/layouts/layout';
 
-const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/a53bd6aa-495c-416a-b8ec-2b36b6be1af9';
+const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/raeqmmza';
 
 // TODO: move function to utils
 const isBrowser = () => typeof window !== 'undefined';
@@ -14,7 +14,7 @@ function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-export default function Contact() {
+export default function Newsletter() {
   const router = useRouter();
   const [formStatus, setFormStatus] = useState(false);
   const [query, setQuery] = useState({
@@ -23,7 +23,7 @@ export default function Contact() {
     role: '',
     email: '',
     message: '',
-    subscribe: 'no',
+    subscribe: 'yes',
   });
 
   const handleChange = () => (e) => {
@@ -52,7 +52,7 @@ export default function Contact() {
           role: '',
           email: '',
           message: '',
-          subscribe: 'no',
+          subscribe: 'yes',
         });
         console.log(response);
         scrollToTop();
@@ -63,11 +63,11 @@ export default function Contact() {
   };
 
   return (
-    <Layout title='Contact' pageUrl={router.asPath}>
+    <Layout title='Newsletter' pageUrl={router.asPath}>
       <div className='global-margin'>
         {!formStatus ? (
           <>
-            <h1 className='mobile sm:desktop text-green-600 pt-10'>Contact</h1>
+            <h1 className='mobile sm:desktop text-green-600 pt-10'>Nieuwsbrief</h1>
             <div className='mt-8 max-w-3xl mb-20'>
               <form
                 acceptCharset='UTF-8'
@@ -93,6 +93,37 @@ export default function Contact() {
                       required
                     />
                   </div>
+                </div>
+                <div className='sm:col-span-2'>
+                  <label htmlFor='email' className='block  text-grey-800'>
+                    Op welk e-mailadres kunnen we je bereiken?{' '}
+                    <span className='text-green-400'>*</span>
+                  </label>
+                  <div className='mt-1'>
+                    <input
+                      id='email'
+                      name='email'
+                      type='email'
+                      autoComplete='email'
+                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
+                      aria-describedby='emailHelp'
+                      required
+                      value={query.email}
+                      onChange={handleChange()}
+                    />
+                  </div>
+                </div>
+
+                <div className='mt-1 flex items-baseline'>
+                  <input type='hidden' name='subscribe' value='yes' />
+                  <input
+                    type='checkbox'
+                    name='subscribe'
+                    value='yes'
+                    checked
+                    onChange={handleChange()}
+                  />
+                  <label className='block text-grey-800 pl-2'>Abonneren op de nieuwsbrief</label>
                 </div>
                 <div className='sm:col-span-2'>
                   <label htmlFor='company' className='block  text-grey-800'>
@@ -126,47 +157,7 @@ export default function Contact() {
                     />
                   </div>
                 </div>
-                <div className='sm:col-span-2'>
-                  <label htmlFor='email' className='block  text-grey-800'>
-                    Op welk e-mailadres kunnen we je bereiken?{' '}
-                    <span className='text-green-400'>*</span>
-                  </label>
-                  <div className='mt-1'>
-                    <input
-                      id='email'
-                      name='email'
-                      type='email'
-                      autoComplete='email'
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
-                      aria-describedby='emailHelp'
-                      required
-                      value={query.email}
-                      onChange={handleChange()}
-                    />
-                  </div>
-                </div>
 
-                <div className='sm:col-span-2'>
-                  <label htmlFor='message' className='block text-grey-800'>
-                    Wat is je vraag of opmerking? <span className='text-green-400'>*</span>
-                  </label>
-                  <div className='mt-1'>
-                    <textarea
-                      id='message'
-                      name='message'
-                      rows={4}
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border border-gray-300 rounded-cl'
-                      required
-                      value={query.message}
-                      onChange={handleChange()}
-                    />
-                  </div>
-                </div>
-                <div className='mt-1 flex items-baseline'>
-                  <input type='hidden' name='subscribe' value='no' />
-                  <input type='checkbox' name='subscribe' value='yes' onChange={handleChange()} />
-                  <label className='block text-grey-800 pl-2'>Abonneren op de nieuwsbrief</label>
-                </div>
                 <div className='sm:col-span-2'>
                   <div className=''>
                     <p className='text-gray-500'>
