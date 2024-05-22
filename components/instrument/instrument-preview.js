@@ -44,7 +44,7 @@ export default function InstrumentPreview({ query, queryParams }) {
           <div className='grid grid-cols-1'>
             {data?.instrument?.subtitel && (
               <div className='max-w-[760px]'>
-                <h2 className='lg:block heading-xl sm:p-3xl sm:mt-2'>
+                <h2 className='lg:block heading-xl sm:mt-2'>
                   {' '}
                   {data?.instrument?.subtitel}
                 </h2>

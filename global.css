@@ -19,24 +19,6 @@
   }
 
 
-/* to delete once all have been replace */
-
- /* change to 32px */
-h2.desktop {
-  @apply font-jakarta text-6xl font-semibold leading-14;
-}
-
-/* change to 18px */
-h2.mobile {
-  @apply font-jakarta text-2xl font-semibold leading-10;
-}
-
-
-
-  /*  */
-.p-3xl {
-  @apply font-jakarta text-3xl font-normal leading-14;
-}
 
   /* new system */
   .heading-5xl {

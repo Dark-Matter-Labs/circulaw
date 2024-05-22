@@ -66,7 +66,7 @@ export default function Footer(props) {
             </div>
             <div className='global-margin py-10 border-t border-t-green-600'>
               <div className={`flex justify-center items-center ${jeeNee}`}>
-                <h3 className='mobile sm:desktop text-green-600 pr-8'>
+                <h3 className='heading-xl-semibold sm:heading-2xl-semibold text-green-600 pr-8'>
                   Vond je deze pagina nuttig?
                 </h3>
                 <div className='mr-4'>
@@ -117,11 +117,11 @@ export default function Footer(props) {
               <div className={moreInfoOpen}>
                 <div className='mt-3  sm:mt-5'>
                   {feedbackState === 'Ja' ? (
-                    <h5 className='mobile sm:desktop leading-6 text-gray-900'>
+                    <h5 className='p-base leading-6 text-gray-900'>
                       Fijn! Laat ons kort weten waarom.
                     </h5>
                   ) : (
-                    <h5 className='mobile sm:desktop leading-6 text-gray-900'>
+                    <h5 className='p-base leading-6 text-gray-900'>
                       Jammer, vertel ons waarom niet, zodat we onze website kunnen verbeteren.
                     </h5>
                   )}

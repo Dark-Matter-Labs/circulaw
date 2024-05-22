@@ -35,7 +35,7 @@ export default function FAQPageComponent({ data }) {
                 <div key={i}>
                   {item?.sectionTitle && (
                     <div>
-                      <h2 className='mobile sm:desktop text-green-500 pt-6 pb-10'>
+                      <h2 className='heading-xl-semibold sm:heading-3xl-semibold text-green-500 pt-6 pb-10'>
                         {' '}
                         {item?.sectionTitle}
                       </h2>
@@ -63,7 +63,7 @@ export default function FAQPageComponent({ data }) {
                       >
                         <Typography
                           as='h3'
-                          className='width-1/3 mobile sm:desktop text-green-600 mr-4'
+                          className='width-1/3 heading-xl-semibold sm:heading-2xl-semibold text-green-600 mr-4'
                         >
                           {item.question}
                         </Typography>

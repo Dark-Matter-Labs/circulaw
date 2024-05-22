@@ -83,7 +83,7 @@ export default function RLadderTooltip({ children, icon }) {
                       <div className='px-4 sm:px-6'>
                         <Dialog.Title className='text-gray-900'>
                           {' '}
-                          <h2 className='mobile sm:desktop'>
+                          <h2 className='heading-xl-semibold sm:heading-3xl-semibold'>
                             R-ladder: strategieën van circulariteit
                           </h2>
                         </Dialog.Title>

@@ -50,8 +50,8 @@ export default function Privacy() {
   return (
     <Layout title='CircuLaw - Cookiebeleid' pageUrl={router.asPath}>
       <div className='global-margin my-20 max-w-2xl text-grey-800'>
-        <h1 className='mobile sm:desktop pb-6'>Cookiebeleid CircuLaw</h1>
-        <h2 className='mobile sm:desktop py-2'>Wat zijn cookies?</h2>
+        <h1 className='heading-3xl-semibold sm:heading-5xl-semibold pb-6'>Cookiebeleid CircuLaw</h1>
+        <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>Wat zijn cookies?</h2>
         <p className=' p-base pb-6 max-w-4xl'>
           Cookies zijn kleine tekstbestanden die onzichtbaar zijn voor de gebruiker en die de
           browser opslaat op de computer of mobiele apparaten van de gebruiker wanneer die een
@@ -72,7 +72,7 @@ export default function Privacy() {
           beter inzicht in het functioneren van onze website.
         </p>
 
-        <h2 className='mobile sm:desktop py-2'>CircuLaw maakt gebruik van de volgende cookies:</h2>
+        <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>CircuLaw maakt gebruik van de volgende cookies:</h2>
         <p className=' p-base  max-w-4xl'>
           Om te begrijpen hoe bezoekers door onze site navigeren en om feedback te verzamelen om de
           site te verbeteren, gebruiken we Hotjar en Piwik Pro. Heb je bezwaar tegen cookies? Kies
