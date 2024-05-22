@@ -637,7 +637,7 @@ export default function Nav(props) {
                       >
                         <div
                           className={`${
-                            router.pathname === '/' ? 'bg-green-600' : 'bg-gray-200'
+                            router.pathname === '/' ? 'bg-green-600' : 'bg-green-50'
                           } h-full pb-10 shadow-lg pl-6 pt-8 pr-8`}
                           style={{ ...euMenuTransitionStyles }}
                           onMouseLeave={() => setEuMenuIsOpen(false)}
