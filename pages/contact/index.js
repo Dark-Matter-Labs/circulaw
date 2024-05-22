@@ -13,6 +13,7 @@ export default function Contact() {
   const [query, setQuery] = useState({
     name: '',
     org: '',
+    role: '',
     email: '',
     message: '',
     subscribe: 'no',
@@ -41,6 +42,7 @@ export default function Contact() {
         setQuery({
           name: '',
           org: '',
+          role: '',
           email: '',
           message: '',
           subscribe: 'no',
@@ -96,6 +98,22 @@ export default function Contact() {
                       autoComplete='organization'
                       className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
                       value={query.org}
+                      onChange={handleChange()}
+                    />
+                  </div>
+                </div>
+                <div className='sm:col-span-2'>
+                  <label htmlFor='role' className='block  text-grey-800'>
+                    Functie/rol?
+                  </label>
+                  <div className='mt-1'>
+                    <input
+                      type='text'
+                      name='role'
+                      id='role'
+                      autoComplete='role'
+                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
+                      value={query.role}
                       onChange={handleChange()}
                     />
                   </div>
