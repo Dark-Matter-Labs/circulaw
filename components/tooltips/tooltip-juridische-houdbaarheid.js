@@ -77,26 +77,26 @@ export default function ToolTips({ children, icon, data }) {
                         </button>
                       </div>
                     </Transition.Child>
-                    <div className='flex h-full px-6 flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
+                    <div className='flex h-full px-6 flex-col overflow-y-scroll bg-gray-100 py-6 shadow-xl'>
                       <div className=''>
                         <Dialog.Title className='text-gray-900'>
                           {' '}
-                          <h2 className='mobile sm:desktop'>Geschatte juridische houdbaarheid</h2>
+                          <h2 className='heading-xl-semibold sm:heading-3xl-semibold'>Geschatte juridische houdbaarheid</h2>
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1'>
                         <div className='absolute inset-0'>
                           {data?.instrument?.JHTooltipText && (
-                            <p className='p-md'>{data?.instrument?.JHTooltipText}</p>
+                            <p className='p-base'>{data?.instrument?.JHTooltipText}</p>
                           )}
-                          <div className='bg-grey-100 mt-6 p-6'>
-                            <p className='p-md'>
+                          <div className='bg-gray-100 mt-6 p-6'>
+                            <p className='p-base'>
                               Met de waardering ‘Juridische houdbaarheid laten we zien hoe risicovol
                               een instrument is: wat is het afbreukrisico of de kans dat het
                               instrument onderuit gaat bij de rechter.
                             </p>
                             <br />
-                            <p className='p-md'>
+                            <p className='p-base'>
                               We maken hiervan een globale inschatting, 1: beperkt, 2: gemiddeld, 3:
                               hoog.
                             </p>

@@ -5,7 +5,6 @@ import { Link } from 'react-scroll';
 
 export default function ScrollTabMobileMenu({ content }) {
   const [open, setOpen] = useState(false);
-
   return (
     <>
       <button
@@ -64,25 +63,25 @@ export default function ScrollTabMobileMenu({ content }) {
                         </button>
                       </div>
                     </Transition.Child>
-                    <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
+                    <div className='flex h-full flex-col overflow-y-scroll bg-gray-100 py-6 shadow-xl'>
                       <div className='px-4 sm:px-6'>
-                        <Dialog.Title className='text-gray-900'>
+                        <Dialog.Title className='text-gray-800'>
                           {' '}
-                          <h2 className='p-6xl-semibold my-4'>In deze pagina</h2>
+                          <h2 className='heading-3xl-semibold my-4'>In deze pagina</h2>
                         </Dialog.Title>
                       </div>
                       <div className='relative flex-1 px-4 sm:px-6'>
                         <ul className=''>
                           {content.map((section, id) => (
-                            <li key={id} className='my-4'>
+                            <li key={id} className='my-4 text-green-800'>
                               <Link
                                 to={`${section.title}`}
                                 smooth={true}
                                 duration={500}
                                 offset={-135}
                                 spy={true}
-                                activeClass='bg-green-500 text-grey-100 font-semibold transition-all duration-100'
-                                className='p-base text-green-800 py-2 pl-4 pr-8 h-full break-words rounded-cl whitespace-nowrap cursor-pointer'
+                                activeClass='bg-green-500 !text-white font-semibold transition-all duration-100'
+                                className='p-base  py-2 pl-4 pr-8 h-full break-words rounded-cl whitespace-nowrap cursor-pointer'
                                 onClick={() => setOpen(false)}
                               >
                                 {id + 1}. {section.title}

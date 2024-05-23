@@ -19,7 +19,7 @@ export default function InstrumentLinksDropdown({ page, props }) {
               <div
                 className={`${
                   open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
+                } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
               >
                 <span className='inline text-left p-base-bold text-green-500'>
                   In lijst met filters
@@ -38,7 +38,7 @@ export default function InstrumentLinksDropdown({ page, props }) {
                   router.push(`/${props?.transitionAgenda}/${props?.thema}/categorie`);
                 }}
               >
-                <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
+                <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
                   <span className='block pl-3 truncate p-base'>Per categorie</span>
                 </div>
               </Popover.Button>
@@ -48,7 +48,7 @@ export default function InstrumentLinksDropdown({ page, props }) {
                   router.push(`/${props?.transitionAgenda}/${props?.thema}/overheidsbevoegdheid`);
                 }}
               >
-                <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500'>
+                <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500'>
                   <span className='block pl-3 truncate p-base'>Per overheidsbevoegdheid</span>
                 </div>
               </Popover.Button>
@@ -70,7 +70,7 @@ export default function InstrumentLinksDropdown({ page, props }) {
               <div
                 className={`${
                   open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
+                } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
               >
                 <span className='inline text-left p-base-bold text-green-500'>Per categorie</span>
               </div>
@@ -87,7 +87,7 @@ export default function InstrumentLinksDropdown({ page, props }) {
                   router.push(`/${props?.transitionAgenda}/${props?.thema}/instrumenten`);
                 }}
               >
-                <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
+                <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
                   <span className='block pl-3 truncate p-base'>In lijst met filters</span>
                 </div>
               </Popover.Button>
@@ -97,7 +97,7 @@ export default function InstrumentLinksDropdown({ page, props }) {
                   router.push(`/${props?.transitionAgenda}/${props?.thema}/overheidsbevoegdheid`);
                 }}
               >
-                <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
+                <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
                   <span className='block pl-3 truncate p-base'>Per overheidsbevoegdheid</span>
                 </div>
               </Popover.Button>
@@ -119,7 +119,7 @@ export default function InstrumentLinksDropdown({ page, props }) {
               <div
                 className={`${
                   open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
+                } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
               >
                 <span className='inline text-left p-base-bold text-green-500'>
                   Per overheidsbevoegdheid
@@ -138,7 +138,7 @@ export default function InstrumentLinksDropdown({ page, props }) {
                   router.push(`/${props?.transitionAgenda}/${props?.thema}/categorie`);
                 }}
               >
-                <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
+                <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
                   <span className='block pl-3 truncate p-base'>Per categorie</span>
                 </div>
               </Popover.Button>
@@ -148,7 +148,7 @@ export default function InstrumentLinksDropdown({ page, props }) {
                   router.push(`/${props?.transitionAgenda}/${props?.thema}/instrumenten`);
                 }}
               >
-                <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
+                <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
                   <span className='block pl-3 truncate p-base'>In lijst met filters</span>
                 </div>
               </Popover.Button>

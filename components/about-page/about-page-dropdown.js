@@ -20,7 +20,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
               <div
                 className={`${
                   open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
+                } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
               >
                 <span className='inline text-left '>{currentPage[0]?.title}</span>
               </div>
@@ -34,7 +34,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
               {remainingTitles?.map((remaining, id) => (
                 <Disclosure.Button
                   key={id}
-                  className='bg-white w-full text-grey-800 border-b border-l border-r last:rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500'
+                  className='bg-gray-100 w-full text-gray-800 border-b border-l border-r last:rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500'
                   as='li'
                   onClick={() => {
                     router.push(`/over/${encodeURIComponent(remaining?.slug)}`);

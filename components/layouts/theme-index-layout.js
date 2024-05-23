@@ -25,7 +25,9 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
         <div className='bg-gradient-to-b from-[#F8FAF8] to-[#F8FAF8]'>
           <div className='global-margin pb-16 sm:pb-20'>
             <div className='pt-14 pb-10'>
-              <h2 className='p-3xl-semibold sm:p-5xl-semibold'>{thema?.overviewsTitle}</h2>
+              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold'>
+                {thema?.overviewsTitle}
+              </h2>
             </div>
             {/* Desktop Cards */}
             <ul
@@ -47,9 +49,9 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                     </div>
                   </div>
 
-                  <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div className='border border-gray-400 bg-gray-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
-                      <div className='p-4xl-semibold pb-4'>{thema?.samenhangTitle}</div>
+                      <div className='heading-2xl-semibold pb-4'>{thema?.samenhangTitle}</div>
                       <div className='p-base'>{thema?.samenhangText}</div>
                     </div>
                     <CustomButton color='whiteBackground'>
@@ -72,9 +74,9 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                       <Image src={list} alt='' className='h-full w-full' />
                     </div>
                   </div>
-                  <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div className='border border-gray-400 bg-gray-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
-                      <div className='p-4xl-semibold pb-4'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
+                      <div className='heading-2xl-semibold pb-4'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
                       <div className='p-base'>{thema?.listText}</div>
                     </div>
                     <CustomButton color='whiteBackground'>
@@ -100,9 +102,9 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                       <Image src={waarvoor} alt='' className='h-full w-full' />
                     </div>
                   </div>
-                  <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div className='border border-gray-400 bg-gray-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
-                      <div className='p-4xl-semibold pb-4'>{thema?.welkeTitle}</div>
+                      <div className='heading-2xl-semibold pb-4'>{thema?.welkeTitle}</div>
                       <div className='p-base'>{thema?.welkeText}</div>
                     </div>
                     <CustomButton color='whiteBackground'>
@@ -120,7 +122,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
             <ul className='sm:hidden max-w-sm'>
               <li>
                 <Link href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/categorie`}>
-                  <div className='h-24 w-full rounded-cl bg-grey-50 shadow mb-6'>
+                  <div className='h-24 w-full rounded-cl bg-gray-50 shadow mb-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
                         <Image
@@ -129,8 +131,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           className='w-full h-full rounded-l-cl'
                         />
                       </div>
-                      <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
-                        <div className='p-2xl-semibold'>Instrumenten per categorie</div>
+                      <div className='text-gray-800 px-4 flex items-center justify-center max-w-[240px]'>
+                        <div className='heading-xl-semibold'>Instrumenten per categorie</div>
                         <ArrowRightIcon
                           className='block h-6 w-6 text-green-600 mt-1'
                           aria-hidden='true'
@@ -142,7 +144,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
               </li>
               <li>
                 <Link href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/instrumenten/`}>
-                  <div className='h-24 w-full rounded-cl bg-grey-50 shadow my-6'>
+                  <div className='h-24 w-full rounded-cl bg-gray-50 shadow my-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
                         <Image
@@ -151,8 +153,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           className='w-full h-full rounded-l-cl'
                         />
                       </div>
-                      <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
-                        <div className='p-2xl-semibold'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
+                      <div className='text-gray-800 px-4 flex items-center justify-center max-w-[240px]'>
+                        <div className='heading-xl-semibold'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
                         <ArrowRightIcon
                           className='block h-6 w-6 text-green-600'
                           aria-hidden='true'
@@ -166,7 +168,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                 <Link
                   href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/overheidsbevoegdheid`}
                 >
-                  <div className='h-24 w-full rounded-cl bg-grey-50 shadow mt-6'>
+                  <div className='h-24 w-full rounded-cl bg-gray-50 shadow mt-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
                         <Image
@@ -175,8 +177,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           className='w-full h-full rounded-l-cl'
                         />
                       </div>
-                      <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
-                        <div className='p-2xl-semibold'>{thema?.welkeTitle}</div>
+                      <div className='text-gray-800 px-4 flex items-center justify-center max-w-[240px]'>
+                        <div className='heading-xl-semibold'>{thema?.welkeTitle}</div>
                         <ArrowRightIcon
                           className='block h-6 w-6 text-green-600 mt-1'
                           aria-hidden='true'
@@ -196,7 +198,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
             <div className='global-margin my-32 text-center'>
               <div className='flex justify-center items-center'>
                 <Image src={commentIcon} alt='' />
-                <h3 className='mobile sm:desktop pl-2'>
+                <h3 className='heading-xl-semibold sm:heading-2xl-semibold pl-2'>
                   Kaart een nieuw onderwerp aan of discussieer mee
                 </h3>
               </div>

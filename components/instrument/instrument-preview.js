@@ -35,16 +35,19 @@ export default function InstrumentPreview({ query, queryParams }) {
   }, []);
 
   return (
-    <div ref={ref} className='relative bg-grey-100'>
+    <div ref={ref} className='relative bg-gray-100'>
       <InstrumentHeader data={data} />
-      <div className='bg-grey-100 relative z-0'>
+      <div className='bg-gray-100 relative z-0'>
         <InstrumentFeedbackBlock data={data} />
         <div className='global-margin sm:mt-4 z-0'>
           {/* Subtitle */}
           <div className='grid grid-cols-1'>
             {data?.instrument?.subtitel && (
               <div className='max-w-[760px]'>
-                <h2 className='lg:block p-lg sm:p-3xl sm:mt-2'> {data?.instrument?.subtitel}</h2>
+                <h2 className='lg:block heading-xl sm:mt-2'>
+                  {' '}
+                  {data?.instrument?.subtitel}
+                </h2>
               </div>
             )}
           </div>

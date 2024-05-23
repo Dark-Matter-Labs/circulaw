@@ -501,7 +501,7 @@ export default function InstrumentsLayout({ ...props }) {
                 leaveFrom='translate-x-0'
                 leaveTo='-translate-x-full'
               >
-                <Dialog.Panel className='relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-white'>
+                <Dialog.Panel className='relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-gray-100'>
                   <Transition.Child
                     as={Fragment}
                     enter='ease-in-out duration-300'
@@ -615,12 +615,14 @@ export default function InstrumentsLayout({ ...props }) {
         <OverviewPageHeader props={props} page='list' />
       </div>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20 lg:border-b lg:border-grey-500 global-margin mt-4'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-x-20 lg:border-b lg:border-gray-500 global-margin mt-4'>
         <div className='hidden lg:block mb-6 self-end'>
-          <h3 className='mobile sm:desktop inline text-grey-800'>Filter op:</h3>{' '}
+          <h3 className='heading-xl-semibold sm:heading-2xl-semibold inline text-gray-800'>
+            Filter op:
+          </h3>{' '}
           <span
             onClick={reset}
-            className='underline text-green-500 link-hover link-lg float-right mr-8 link-interaction'
+            className='underline text-green-500 hover:cursor-pointer link-lg float-right mr-8 link-interaction'
           >
             Wis filters
           </span>
@@ -628,7 +630,7 @@ export default function InstrumentsLayout({ ...props }) {
         <div className='col-span-3 flex-wrap'>
           <div className=''>
             <div>
-              <h4 className='mobile sm:desktop'>{props.searchTitle}</h4>
+              <h4 className='p-base-semibold sm:headling-xl-semibold'>{props.searchTitle}</h4>
             </div>
 
             {/* AUTOCOMPLETE */}
@@ -639,7 +641,7 @@ export default function InstrumentsLayout({ ...props }) {
                   <Combobox.Input
                     onChange={(e) => setSearchValue(e.target.value)}
                     autoComplete={'off'}
-                    className='w-full py-2 px-3 outline-none border-0 rounded-cl focus:ring-0 placeholder:text-grey-600 placeholder:italic'
+                    className='w-full py-2 px-3 outline-none border-0 rounded-cl focus:ring-0 placeholder:text-gray-600 placeholder:italic'
                     displayValue={() => searchValue}
                     placeholder='Zoek op trefwoord'
                   />
@@ -682,27 +684,27 @@ export default function InstrumentsLayout({ ...props }) {
               {numberOfLaws === 0 && (
                 <div className='inline'>
                   <div className='inline'>
-                    <h3 className='mobile sm:desktop inline'>0 &nbsp;</h3>
-                    <span className=' p-lg'>resultaten in </span>
-                    <h3 className='inline-block lowercase mobile sm:desktop'>
+                    <span className='p-base-semibold inline'>0 &nbsp;</span>
+                    <span className='p-base'>resultaten in </span>
+                    <span className='p-base-semibold capitalize inline-block'>
                       {props.thema.replace('-', ' ')}
                       &nbsp;
-                    </h3>
-                    {searchValue != '' && <span className='p-lg'>voor&nbsp;</span>}
-                    <h3 className='mobile sm:desktop inline'>
+                    </span>
+                    {searchValue != '' && <span className='p-base'>voor&nbsp;</span>}
+                    <span className='p-base-semibold inline'>
                       {searchValue}&nbsp;
-                      {allSelectedValues.length != 0 && <span className='p-lg'>en</span>}&nbsp;
-                    </h3>
+                      {allSelectedValues.length != 0 && <span className='p-base'>en</span>}&nbsp;
+                    </span>
                   </div>
 
                   {allSelectedValues != 0 && (
                     <div className='sm:inline-block flex flex-wrap items-center'>
                       {allSelectedValues.map((value, index) => (
                         <div key={index} className='inline'>
-                          <h3 className='inline mobile sm:desktop'>
+                          <span className='p-base-semibold inline'>
                             {value}
                             {value !== allSelectedValues.slice(-1)[0] && <span>,</span>}&nbsp;
-                          </h3>
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -713,24 +715,24 @@ export default function InstrumentsLayout({ ...props }) {
               {numberOfLaws === props.totalNumberOfLaws && (
                 <div className='inline'>
                   <span className='inline'>
-                    <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
-                    <span className=' p-lg'>resultaten in </span>
-                    <h3 className='lowercase first-letter:uppercase mobile sm:desktop inline'>
+                    <span className='p-base-semibold inline'>{numberOfLaws}</span>{' '}
+                    <span className=' p-base'>resultaten in </span>
+                    <span className='p-base-semibold capitalize inline'>
                       {props.thema.replace('-', ' ')}
-                    </h3>{' '}
-                    {searchValue != '' && <span className='p-lg'>voor&nbsp;</span>}
-                    <h3 className='lowercase first-letter:uppercase mobile sm:desktop inline'>
+                    </span>{' '}
+                    {searchValue != '' && <span className='p-base'>voor&nbsp;</span>}
+                    <span className='p-base-semibold inline'>
                       {searchValue} {allSelectedValues.length != 0 && <span>,</span>} &nbsp;
-                    </h3>
+                    </span>
                   </span>
                   {allSelectedValues != 0 && (
                     <div className='sm:inline-block flex flex-wrap items-center'>
                       {allSelectedValues.map((value, index) => (
                         <div key={index} className='inline'>
-                          <h3 className='inline mobile sm:desktop'>
+                          <span className='inline p-base-semibold'>
                             {value}
                             {value !== allSelectedValues.slice(-1)[0] && <span>,</span>}&nbsp;
-                          </h3>
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -742,32 +744,32 @@ export default function InstrumentsLayout({ ...props }) {
               {numberOfLaws > 0 && numberOfLaws != props.totalNumberOfLaws && (
                 <div className='inline'>
                   <div className='inline'>
-                    <h3 className='mobile sm:desktop inline'>{numberOfLaws}</h3>{' '}
-                    <span className=' p-lg'>resultaten in </span>
-                    <h3 className='inline lowercase first-letter:uppercase mobile sm:desktop'>
+                    <span className='p-base-semibold inline'>{numberOfLaws}</span>{' '}
+                    <span className='p-base'>resultaten in </span>
+                    <span className='p-base-semibold inline capitalize'>
                       {props.thema.replace('-', ' ')}
-                    </h3>
-                    {searchValue != '' && <span className=' p-lg'>&nbsp;voor&nbsp;</span>}
-                    <h3 className='mobile sm:desktop inline'>
+                    </span>
+                    {searchValue != '' && <span className=' p-base'>&nbsp;voor&nbsp;</span>}
+                    <span className='p-base-semibold inline'>
                       {searchValue}
                       {searchValue != '' && <span>&nbsp;</span>}
                       {allSelectedValues.length != 0 && searchValue != '' && (
-                        <span className='p-lg'>en</span>
+                        <span className='p-base'>en</span>
                       )}
                       &nbsp;
-                    </h3>
+                    </span>
                   </div>
 
                   {allSelectedValues != 0 && (
                     <div className='sm:inline-block flex flex-wrap items-center'>
                       {allSelectedValues > 0 ||
-                        (searchValue == '' && <span className='p-lg'>voor&nbsp;</span>)}
+                        (searchValue == '' && <span className='p-base'>voor&nbsp;</span>)}
                       {allSelectedValues.map((value, index) => (
                         <div key={index} className='inline'>
-                          <h3 className='inline mobile sm:desktop'>
+                          <span className='p-base-semibold inline'>
                             {value}
                             {value !== allSelectedValues.slice(-1)[0] && <span>,</span>}&nbsp;
-                          </h3>
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -778,10 +780,10 @@ export default function InstrumentsLayout({ ...props }) {
           </div>
         </div>
       </div>
-      <div className='lg:hidden py-5 border-b border-grey-500 global-margin'>
+      <div className='lg:hidden py-5 border-b border-gray-500 global-margin'>
         <button
           type='button'
-          className='px-4 max-w-sm inline-flex items-center justify-center border-2 p-2 w-full border-grey-800 rounded-cl focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500 lg:hidden'
+          className='px-4 max-w-sm inline-flex items-center justify-center border-2 p-2 w-full border-gray-800 rounded-cl focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500 lg:hidden'
           onClick={() => setSidebarOpen(true)}
         >
           <span className='sr-only'>Open sidebar</span>

@@ -16,10 +16,10 @@ export default function ThemeLayout({ ...props }) {
         {/* HEADER MOBILE */}
         <MobilePageHeader pageTitle={props?.productChainData?.pcName} />
 
-        <div className='bg-white'>
+        <div className='bg-gray-100'>
           <div className='global-margin pb-12 sm:pb-20'>
             <div className='pt-14 pb-0 sm:pb-10'>
-              <h2 className='p-6xl-semibold text-green-800 pb-8'>
+              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 pb-8'>
                 Thema’s en juridische instrumenten
               </h2>
               <p className='pb-5 p-base max-w-2xl'>
@@ -33,10 +33,10 @@ export default function ThemeLayout({ ...props }) {
             </div>
           </div>
         </div>
-        <div className='bg-grey-150'>
+        <div className='bg-green-50'>
           <div className='global-margin'>
             <div className='pt-10 pb-14'>
-              <h2 className='p-3xl-semibold sm:p-6xl-semibold text-green-800 mb-14 max-w-2xl'>
+              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 mb-14 max-w-2xl'>
                 {props?.productChainData?.impactTitle}
               </h2>
               <div className='grid grid-cols-1 justify-items-center sm:flex sm:justify-center gap-20'>
@@ -70,8 +70,8 @@ export default function ThemeLayout({ ...props }) {
             </div>
           </div>
         </div>
-        <div className='global-margin pt-14 bg-white'>
-          <h2 className='p-6xl-semibold text-green-800 pb-10'>
+        <div className='global-margin pt-14 bg-gray-100'>
+          <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 pb-10'>
             {props?.productChainData?.ambitionTitle}
           </h2>
           {props?.ambitionList?.map((ambition, index) =>
@@ -88,11 +88,11 @@ export default function ThemeLayout({ ...props }) {
                   )}
                 </div>
                 <div className='mr-6'>
-                  <span className='p-2xl text-green-600'>{ambition.subTitle}</span>
-                  <h4 className='p-3xl-semibold sm:3xl-semibold text-green-800 mt-2'>
+                  <span className='p-base-semibold text-green-600'>{ambition.subTitle}</span>
+                  <h4 className='heading-2xl-semibold sm:3xl-semibold text-green-800 mt-2'>
                     {ambition.title}
                   </h4>
-                  <p className='p-xl pt-4 max-w-xl pb-4'>{ambition.detail}</p>
+                  <p className='p-base pt-4 max-w-xl pb-4'>{ambition.detail}</p>
                   {ambition.buttonText && (
                     <Link href={ambition.buttonLink}>
                       <CustomButton color='lightGreenBackground'>
@@ -125,12 +125,12 @@ export default function ThemeLayout({ ...props }) {
                     />
                   )}
                 </div>
-                <div className='ml-6'>
-                  <span className='p-2xl text-green-600'>{ambition.subTitle}</span>
-                  <h4 className='p-2xl-semibold sm:3xl-semibold text-green-800 mt-2'>
+                <div className='sm:ml-6'>
+                  <span className='p-base-semibold text-green-600'>{ambition.subTitle}</span>
+                  <h4 className='heading-2xl-semibold sm:3xl-semibold text-green-800 mt-2'>
                     {ambition.title}
                   </h4>
-                  <p className='p-xl pt-4 max-w-xl pb-4'>{ambition.detail}</p>
+                  <p className='p-base pt-4 max-w-xl pb-4'>{ambition.detail}</p>
                   {ambition.buttonText && (
                     <Link href={ambition.buttonLink}>
                       <CustomButton color='lightGreenBackground'>
@@ -144,11 +144,11 @@ export default function ThemeLayout({ ...props }) {
           )}
         </div>
         {props.links && (
-          <div className='pt-14 pb-10 bg-grey-150'>
+          <div className='pt-14 pb-10 bg-green-50'>
             <div className='global-margin'>
-              <h2 className='p-6xl-semibold text-green-800 pb-10'>
+              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 pb-10'>
                 Duik nog dieper in de materie{' '}
-                <span className='pl-0.5 inline-block h-6 w-6 -mb-1 relative '>
+                <span className='pl-0.5 inline-block h-6 w-6 -mb-1 relative'>
                   <svg
                     className='stroke-current h-6 w-6'
                     viewBox='0 0 24 24'

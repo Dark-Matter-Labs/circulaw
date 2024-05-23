@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '@/components/layouts/layout';
-import NewsDetailPageBody from '@/components/news-page/news-detail-page-body';
 import NewsDetailPageHeader from '@/components/news-page/news-detail-page-header';
 import { client } from '@/lib/sanity';
+import NewsDetailPageBody from '@/components/news-page/news-detail-page-body';
 
 const newsSlugsQuery = `
 *[_type == "newsPage"][0]{

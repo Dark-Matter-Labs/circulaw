@@ -16,13 +16,13 @@ export default function Partners({ footerText }) {
     <div className='bg-green-800 pt-10 pb-2'>
       {router.pathname === '/' && (
         <div className='global-margin pb-12 px-4 lg:pb-16'>
-          <div className='p-6xl-semibold text-gray-100 pl-3 sm:pl-6 lg:pl-8'>Partners</div>
+          <div className='heading-3xl-semibold text-gray-100 pl-3 sm:pl-6 lg:pl-8'>Partners</div>
           <ParnerSection partners={data?.developingPartners} partnerType='Ontwikkelpartners' />
           <ParnerSection partners={data?.knowledge} partnerType='Kennispartners' />
           <ParnerSection partners={data?.financingPartners} partnerType='Financieringspartners' />
         </div>
       )}
-      <div className='global-margin pb-2 text-grey-100 p-md'>
+      <div className='global-margin pb-2 text-gray-100 p-base'>
         {router.pathname === '/en' && (
           <p className='pb-8'>
             Welcome to CircuLaw. This website is currently under development and in this version we
@@ -48,9 +48,9 @@ export default function Partners({ footerText }) {
             </Link>
           </p>
         )}
-        <hr className='border-grey-100 ' />
+        <hr className='border-gray-100 ' />
         <div className='text-center py-2'>
-          <span className='text-grey-100 p-xs'>Legal data & content managed with support from</span>
+          <span className='text-gray-100 p-xs'>Legal data & content managed with support from</span>
           <a target='_blank' href='https://www.sanity.io/' rel='noopener noreferrer'>
             <Image className='inline mx-2 my-2' src={sanityLogo} alt='Sanity logo' />
           </a>

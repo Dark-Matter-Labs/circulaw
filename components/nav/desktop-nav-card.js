@@ -8,12 +8,12 @@ export default function DesktopNavCard({ navData, closeNav }) {
   return (
     <div
       className={`${
-        router.pathname === '/' ? 'bg-green-600 text-green-200' : 'bg-green-100 text-green-800'
+        router.pathname === '/' ? 'bg-green-600 text-green-200' : 'bg-green-50 text-green-800'
       } w-full h-full  ${
         navData.slug === 'bouw'
           ? 'pl-4 lgNav:pl-10 xl:pl-20 3xl:pl-32 pt-8 pr-2'
           : 'pl-3 lg:pl-6 pt-8 pr-2'
-      }  p-lg-semibold first-letter:uppercase `}
+      }  heading-xl-semibold first-letter:uppercase `}
     >
       <Link
         id='navClick'

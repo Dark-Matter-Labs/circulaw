@@ -17,16 +17,16 @@ export default function English({ data }) {
         <div className='bg-en-background bg-center bg-cover relative z-0'>
           <div className='hidden sm:block h-auto bg-en-header bg-left bg-cover'>
             <div className='global-margin flex h-full'>
-              <div className='flex items-center justify-center flex-wrap text-center text-grey-100 w-3/5 mx-auto py-12'>
-                <h1 className='lg mobile sm:desktop text-grey-100 py-10'>
+              <div className='flex items-center justify-center flex-wrap text-center text-gray-100 w-3/5 mx-auto py-12'>
+                <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-gray-100 py-10'>
                   Regulations for a circular economy
                 </h1>
-                <p className='p-md sm:p-lg'>
+                <p className='p-base'>
                   CircuLaw is a knowledge platform dedicated to enabling the transition to a
                   circular economy by identifying opportunities in current law to support a circular
                   future.
                 </p>
-                <p className='p-md sm:p-lg pb-3'>
+                <p className='p-base pb-3'>
                   For now, CircuLaw is available{' '}
                   <Link href='/' className='link-interaction-dark-bg'>
                     <span className='text-green-300 sm:link-lg inline-block hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '>
@@ -41,14 +41,16 @@ export default function English({ data }) {
 
           <div className='w-full bg-en-header bg-cover bg-center'>
             <div className='block global-margin sm:hidden pt-5'>
-              <div className='py-3 text-grey-100'>
-                <h1 className='pb-3 lg mobile sm:desktop'>Regulations for a circular economy</h1>
-                <p className='pb-3 p-md'>
+              <div className='py-3 text-gray-100'>
+                <h1 className='pb-3 heading-2xl-semibold sm:heading-5xl-semibold'>
+                  Regulations for a circular economy
+                </h1>
+                <p className='pb-3 p-base'>
                   CircuLaw is a knowledge platform dedicated to enabling the transition to a
                   circular economy by identifying opportunities in current law to support a circular
                   future.
                 </p>
-                <p className='p-md sm:p-lg'>
+                <p className='p-base'>
                   For now, CircuLaw is available{' '}
                   <Link href='/'>
                     <span className='text-green-300 hover:underline link-base inline-block'>
@@ -62,7 +64,7 @@ export default function English({ data }) {
           </div>
 
           <div className='grid grid-cols-1 lg:grid-cols-3 global-margin justify-start pb-20 pt-10 sm:py-20'>
-            <div className='col-span-2 text-grey-100 sm:max-w-3xl'>
+            <div className='col-span-2 text-gray-100 sm:max-w-3xl'>
               <PortableText components={enPageComponents} value={data?.englishContent} />
               <div>
                 <Link href='/' className='  sm:link-lg hidden lg:block'>
@@ -73,9 +75,9 @@ export default function English({ data }) {
               </div>
             </div>
 
-            <div className='col-span-1 max-w-md block w-full float-right px-8 lg:ml-6 bg-green-800 text-grey-100 h-[30rem] lg:h-[40rem] xl:h-[32rem] sticky top-40 lg:mb-20'>
+            <div className='col-span-1 max-w-md block w-full float-right px-8 lg:ml-6 bg-green-800 text-gray-100 h-[30rem] lg:h-[40rem] xl:h-[32rem] sticky top-40 lg:mb-20'>
               <div className='w-full h-full grid grid-cols-1 items-center'>
-                <div className='py-6 p-md sm:p-lg'>
+                <div className='py-6 p-base'>
                   <p>For now, CircuLaw is available in Dutch only</p>
                 </div>
                 <div className='pb-6'>
@@ -88,7 +90,7 @@ export default function English({ data }) {
                 </div>
                 <hr />
                 <div className='py-6'>
-                  <p className='p-md sm:p-lg'>
+                  <p className='p-base'>
                     In preparation of the next steps for CircuLaw we have been delving into EU
                     legislation. This resulted in a series of white papers in English.
                   </p>
@@ -106,7 +108,7 @@ export default function English({ data }) {
                 </div>
                 <hr />
                 <div className='py-6'>
-                  <p className='p-md sm:p-lg'>
+                  <p className='p-base'>
                     Questions? Contact us:
                     <a href='mailto:info@circulaw.nl'>
                       {' '}

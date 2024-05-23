@@ -9,13 +9,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'grey-100': '#FDFDFD',
-        'grey-200': '#F8FBF8',
-        'grey-300': '#DAD8D8',
-        'grey-400': '#BFC0BF',
-        'grey-500': '#A2A3A2',
-        'grey-600': '#676868',
-        'grey-800': '#1F2223',
+        'gray-100': '#FDFDFD',
+        'gray-200': '#F8FBF8',
+        'gray-300': '#DAD8D8',
+        'gray-400': '#BFC0BF',
+        'gray-500': '#A2A3A2',
+        'gray-600': '#676868',
+        'gray-800': '#1F2223',
         'green-200': '#84E9C5',
         'green-300': '#25C38B',
         'green-400': '#6D9F6B',

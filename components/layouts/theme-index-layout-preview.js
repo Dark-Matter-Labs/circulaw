@@ -28,7 +28,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
         <div className='bg-gradient-to-b from-[#F8FAF8] to-[#F8FAF8]'>
           <div className='global-margin pb-16 sm:pb-20'>
             <div className='pt-14 pb-10'>
-              <h2 className='p-3xl-semibold sm:p-5xl-semibold'>{data?.thema?.overviewsTitle}</h2>
+              <h2 className='heading-2xl-semibold'>{data?.thema?.overviewsTitle}</h2>
             </div>
             {/* Desktop Cards */}
             <ul
@@ -52,9 +52,9 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                     </div>
                   </div>
 
-                  <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div className='border border-gray-400 bg-gray-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
-                      <div className='p-4xl-semibold pb-4'>{data?.thema?.samenhangTitle}</div>
+                      <div className='heading-2xl-semibold pb-4'>{data?.thema?.samenhangTitle}</div>
                       <div className='p-base'>{data?.thema?.samenhangText}</div>
                     </div>
                     <CustomButton color='whiteBackground'>
@@ -79,9 +79,9 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                       <Image src={list} alt='' className='h-full w-full' />
                     </div>
                   </div>
-                  <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div className='border border-gray-400 bg-gray-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
-                      <div className='p-4xl-semibold pb-4'>{`Lijst van ${data?.length} instrumenten`}</div>
+                      <div className='heading-2xl-semibold pb-4'>{`Lijst van ${data?.length} instrumenten`}</div>
                       <div className='p-base'>{data?.thema?.listText}</div>
                     </div>
                     <CustomButton color='whiteBackground'>
@@ -107,9 +107,9 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                       <Image src={waarvoor} alt='' className='h-full w-full' />
                     </div>
                   </div>
-                  <div className='border border-gray-400 bg-gray-50 rounded-b-cl h-72 flex flex-col justify-between p-5'>
+                  <div className='border border-gray-400 bg-gray-100 rounded-b-cl h-72 flex flex-col justify-between p-5'>
                     <div>
-                      <div className='p-4xl-semibold pb-4'>{data?.thema?.welkeTitle}</div>
+                      <div className='heading-2xl-semibold pb-4'>{data?.thema?.welkeTitle}</div>
                       <div className='p-base'>{data?.thema?.welkeText}</div>
                     </div>
                     <CustomButton color='whiteBackground'>
@@ -129,7 +129,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                 <Link
                   href={`/${data?.thema?.transitionAgenda}/${data?.thema?.slug?.current}/categorie`}
                 >
-                  <div className='h-24 w-full rounded-cl bg-grey-50 shadow mb-6'>
+                  <div className='h-24 w-full rounded-cl bg-gray-50 shadow mb-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
                         <Image
@@ -138,8 +138,8 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                           className='w-full h-full rounded-l-cl'
                         />
                       </div>
-                      <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
-                        <div className='p-2xl-semibold'>Instrumenten per categorie</div>
+                      <div className='text-gray-800 px-4 flex items-center justify-center max-w-[240px]'>
+                        <div className='heading-xl-semibold'>Instrumenten per categorie</div>
                         <ArrowRightIcon
                           className='block h-6 w-6 text-green-600 mt-1'
                           aria-hidden='true'
@@ -153,7 +153,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                 <Link
                   href={`/${data?.thema?.transitionAgenda}/${data?.thema?.slug?.current}/instrumenten/`}
                 >
-                  <div className='h-24 w-full rounded-cl bg-grey-50 shadow my-6'>
+                  <div className='h-24 w-full rounded-cl bg-gray-50 shadow my-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
                         <Image
@@ -162,8 +162,8 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                           className='w-full h-full rounded-l-cl'
                         />
                       </div>
-                      <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
-                        <div className='p-2xl-semibold'>{`Lijst van ${data?.length} instrumenten`}</div>
+                      <div className='text-gray-800 px-4 flex items-center justify-center max-w-[240px]'>
+                        <div className='heading-xl-semibold'>{`Lijst van ${data?.length} instrumenten`}</div>
                         <ArrowRightIcon
                           className='block h-6 w-6 text-green-600'
                           aria-hidden='true'
@@ -177,7 +177,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                 <Link
                   href={`/${data?.thema?.transitionAgenda}/${data?.thema?.slug?.current}/overheidsbevoegdheid`}
                 >
-                  <div className='h-24 w-full rounded-cl bg-grey-50 shadow mt-6'>
+                  <div className='h-24 w-full rounded-cl bg-gray-50 shadow mt-6'>
                     <div className='flex items-center justify-start'>
                       <div className='h-24 w-24 relative bg-green-600 p-1 rounded-l-cl shadow'>
                         <Image
@@ -186,8 +186,8 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
                           className='w-full h-full rounded-l-cl'
                         />
                       </div>
-                      <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
-                        <div className='p-2xl-semibold'>{data?.thema?.welkeTitle}</div>
+                      <div className='text-gray-800 px-4 flex items-center justify-center max-w-[240px]'>
+                        <div className='heading-xl-semibold'>{data?.thema?.welkeTitle}</div>
                         <ArrowRightIcon
                           className='block h-6 w-6 text-green-600 mt-1'
                           aria-hidden='true'
@@ -221,7 +221,7 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
 
         <div className='global-margin'>
           <div className='max-w-[830px] mb-10'>
-            <h2 className='p-5xl-semibold pb-4 pt-7'>
+            <h2 className='heading-2xl-semibold pb-4 pt-7'>
               Eerste {data.length} {data.thema.introTextTitle}
             </h2>
             <p>{data.thema?.introText}</p>
@@ -257,12 +257,12 @@ export default function ThemeLayoutPreview({ query, queryParams }) {
 
                     <div className='block mt-2'>
                       <div className=' mb-2'>
-                        <h3 className='p-4xl-semibold sm:max-w-[650px] text-grey-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+                        <h3 className='heading-2xl-semibold sm:max-w-[650px] text-gray-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                           {instrument.titel}{' '}
                         </h3>
                       </div>
 
-                      <div className='block newlineDisplay p-md text-grey-800 mt-2 pb-2'>
+                      <div className='block newlineDisplay p-base text-gray-800 mt-2 pb-2'>
                         <p className='p-base sm:max-w-[650px]'>{instrument.introText}</p>
                       </div>
                       <InstrumentMetaData data={instrument} borders={true} />
