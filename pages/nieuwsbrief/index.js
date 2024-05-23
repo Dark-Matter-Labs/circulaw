@@ -67,7 +67,7 @@ export default function Newsletter() {
       <div className='global-margin'>
         {!formStatus ? (
           <>
-            <h1 className='mobile sm:desktop text-green-600 pt-10'>Nieuwsbrief</h1>
+            <h1 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-600 pt-10'>Nieuwsbrief</h1>
             <div className='mt-8 max-w-3xl mb-20'>
               <form
                 acceptCharset='UTF-8'

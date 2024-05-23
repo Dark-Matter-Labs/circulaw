@@ -113,7 +113,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
-                  <label htmlFor='role' className='block  text-grey-800'>
+                  <label htmlFor='role' className='block text-gray-800'>
                     Wat is je functie/rol?
                   </label>
                   <div className='mt-1'>
