@@ -7,6 +7,8 @@ import houtbouwImageMob from '@/public/bevoegdheden/bevoegdheden-houtbouw-mob.pn
 import matrassenImageMob from '@/public/bevoegdheden/bevoegdheden-matrassen.png';
 import windmillImageMob from '@/public/bevoegdheden/bevoegdheden-windmill.png';
 
+// const thema = 'matrasketen';
+
 const pathsQuery = `
 *[_type in ["thema", "simpleThema"] && defined(slug.current)]{
     "thema": slug.current,

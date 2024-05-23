@@ -48,10 +48,10 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
     <fieldset className='py-3 min-w-[224px]'>
       <div className='block'>
         <div className='relative flex justify-between'>
-          <h5 className='p-xl-semibold mr-4'>{title}</h5>
+          <h5 className='heading-xl-semibold mr-4'>{title}</h5>
           {title === 'Juridische haalbaarheid' && (
             <JHTooltip>
-              <svg className='w-6 h-6 fill-current text-grey-20 mb-2' viewBox='0 0 26 26'>
+              <svg className='w-6 h-6 fill-current text-gray-20 mb-2' viewBox='0 0 26 26'>
                 <circle cx='12' cy='15' r='10' fill='#676868' />
                 <path
                   d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
@@ -62,7 +62,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
           )}
           {title === 'Invloed' && (
             <JITooltip>
-              <svg className='w-6 h-6 fill-current text-grey-20 mb-2' viewBox='0 0 26 26'>
+              <svg className='w-6 h-6 fill-current text-gray-20 mb-2' viewBox='0 0 26 26'>
                 <circle cx='12' cy='15' r='10' fill='#676868' />
                 <path
                   d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
@@ -73,7 +73,7 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
           )}
           {title === 'Circulaire strategie (R-ladder)' && (
             <RLadderTooltip>
-              <svg className='w-6 h-6 fill-current text-grey-20 mb-2' viewBox='0 0 26 26'>
+              <svg className='w-6 h-6 fill-current text-gray-20 mb-2' viewBox='0 0 26 26'>
                 <circle cx='12' cy='15' r='10' fill='#676868' />
                 <path
                   d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
@@ -95,11 +95,11 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                     id={`data-${data.value}-${data.id}`}
                     checked={checkedArray.indexOf(data.id) !== -1}
                     onChange={() => onChangeHandler(data.id)}
-                    className='border-grey-300 border-2 rounded-[3px] focus:ring-2 focus:ring-green-600'
+                    className='border-gray-300 border-2 rounded-[3px] focus:ring-2 focus:ring-green-600'
                   />
                   <label
                     htmlFor={`data-${data.value}-${data.id}`}
-                    className='select-none p-base pl-2 text-grey-800'
+                    className='select-none p-base pl-2 text-gray-800'
                   >
                     <span className=''>{data.name}</span>
                   </label>
@@ -119,12 +119,12 @@ const SearchFilter = forwardRef(({ list, title, filterNumbers, handleFilters }, 
                   />
                   <label
                     htmlFor={`data-${data.value}-${data.id}`}
-                    className='select-none p-base text-grey-500 pl-2'
+                    className='select-none p-base text-gray-500 pl-2'
                   >
                     <span>{data.name}</span>
                   </label>
                 </div>
-                <div className='p-base-semibold text-grey-500'>({filterNumbers[dataIdx]})</div>
+                <div className='p-base-semibold text-gray-500'>({filterNumbers[dataIdx]})</div>
               </>
             )}
           </div>

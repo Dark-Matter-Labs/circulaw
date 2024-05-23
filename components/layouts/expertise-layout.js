@@ -547,7 +547,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                             <div
                               className={`${
                                 open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                              } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
+                              } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
                             >
                               <span className='inline text-left p-base-bold text-green-500'>
                                 Alle
@@ -566,7 +566,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               as='div'
                               onClick={() => handleRadioButton('Gemeentelijk')}
                             >
-                              <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Gemeentelijk</span>
                               </div>
                             </Disclosure.Button>
@@ -574,7 +574,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               as='div'
                               onClick={() => handleRadioButton('Provinciaal')}
                             >
-                              <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Provinciaal</span>
                               </div>
                             </Disclosure.Button>
@@ -583,7 +583,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               as='div'
                               onClick={() => handleRadioButton('Nationaal')}
                             >
-                              <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Nationaal</span>
                               </div>
                             </Disclosure.Button>
@@ -604,7 +604,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                             <div
                               className={`${
                                 open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                              } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
+                              } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
                             >
                               <span className='inline text-left p-base-bold text-green-500'>
                                 Nationaal
@@ -620,7 +620,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                           </Disclosure.Button>
                           <Disclosure.Panel>
                             <Disclosure.Button as='div' onClick={() => handleRadioButton('alle')}>
-                              <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Alle</span>
                               </div>
                             </Disclosure.Button>
@@ -628,7 +628,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               as='div'
                               onClick={() => handleRadioButton('Gemeentelijk')}
                             >
-                              <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Gemeentelijk</span>
                               </div>
                             </Disclosure.Button>
@@ -636,7 +636,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               as='div'
                               onClick={() => handleRadioButton('Provinciaal')}
                             >
-                              <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Provinciaal</span>
                               </div>
                             </Disclosure.Button>
@@ -657,7 +657,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                             <div
                               className={`${
                                 open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                              } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
+                              } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
                             >
                               <span className='inline text-left p-base-bold text-green-500'>
                                 Provinciaal
@@ -673,7 +673,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                           </Disclosure.Button>
                           <Disclosure.Panel>
                             <Disclosure.Button as='div' onClick={() => handleRadioButton('alle')}>
-                              <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Alle</span>
                               </div>
                             </Disclosure.Button>
@@ -681,7 +681,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               as='div'
                               onClick={() => handleRadioButton('Gemeentelijk')}
                             >
-                              <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Gemeentelijk</span>
                               </div>
                             </Disclosure.Button>
@@ -689,7 +689,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               as='div'
                               onClick={() => handleRadioButton('Nationaal')}
                             >
-                              <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Nationaal</span>
                               </div>
                             </Disclosure.Button>
@@ -710,7 +710,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                             <div
                               className={`${
                                 open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                              } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
+                              } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
                             >
                               <span className='inline text-left p-base-bold text-green-500'>
                                 Gemeentelijk
@@ -726,7 +726,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                           </Disclosure.Button>
                           <Disclosure.Panel>
                             <Disclosure.Button as='div' onClick={() => handleRadioButton('alle')}>
-                              <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Alle</span>
                               </div>
                             </Disclosure.Button>
@@ -734,7 +734,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               as='div'
                               onClick={() => handleRadioButton('Provinciaal')}
                             >
-                              <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Provinciaal</span>
                               </div>
                             </Disclosure.Button>
@@ -742,7 +742,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               as='div'
                               onClick={() => handleRadioButton('Nationaal')}
                             >
-                              <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
+                              <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Nationaal</span>
                               </div>
                             </Disclosure.Button>

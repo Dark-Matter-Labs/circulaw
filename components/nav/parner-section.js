@@ -11,7 +11,9 @@ const bordersSmall =
 export default function ParnerSection({ partners, partnerType }) {
   return (
     <>
-      <div className='p-lg-semibold text-gray-100 pl-3 sm:pl-6 lg:pl-8 my-4'>{partnerType}</div>
+      <div className='heading-xl-semibold text-gray-100 pl-3 sm:pl-6 lg:pl-8 my-4'>
+        {partnerType}
+      </div>
       <div
         className={`${
           partnerType === 'Financieringspartners'
@@ -23,7 +25,7 @@ export default function ParnerSection({ partners, partnerType }) {
           <Fragment key={partner.partnerName}>
             <div
               key={partner.partnerName}
-              className={`col-span-1 flex justify-center items-center py-4 px-4 lg:py-4 lg:px-8 border-r-0 sm:border-r border-grey-100  ${bordersDesktop} ${bordersSmall}`}
+              className={`col-span-1 flex justify-center items-center py-4 px-4 lg:py-4 lg:px-8 border-r-0 sm:border-r border-gray-100  ${bordersDesktop} ${bordersSmall}`}
             >
               <Link href={partner.partnerLink} target='_blank' rel='noopener noreferrer'>
                 <Image

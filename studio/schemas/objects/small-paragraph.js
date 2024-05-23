@@ -2,7 +2,7 @@ import { CgInternal } from 'react-icons/cg';
 
 // rename
 export default {
-  title: 'Grey Box',
+  title: 'Gray Box',
   name: 'smallPara',
   type: 'object',
   fields: [

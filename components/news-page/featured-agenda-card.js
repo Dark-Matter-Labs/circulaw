@@ -40,7 +40,7 @@ export default function FeaturedAgendaCard({ data }) {
                 </div>
               </div>
               <hr className='border-green-200 ' />
-              <div className='p-4xl-semibold text-white group-hover:text-green-200 group-hover:underline'>
+              <div className='heading-2xl-semibold text-white group-hover:text-green-200 group-hover:underline'>
                 {data.newsTitle}
               </div>
             </div>
@@ -72,7 +72,7 @@ export default function FeaturedAgendaCard({ data }) {
               </div>
             </div>
             <hr className='border-green-200 ' />
-            <div className='p-4xl-semibold text-white '>{data.newsTitle}</div>
+            <div className='heading-2xl-semibold text-white '>{data.newsTitle}</div>
           </div>
         </div>
       )}

@@ -32,9 +32,9 @@ export default function SummaryComponent({ lawData }) {
       </div>
       {/* tags */}
       {/*  
-      <div className='bg-grey-150 h-[200px]'>
+      <div className='bg-green-50 h-[200px]'>
         <div className='global-margin py-10'>
-          <h2 className='text-green-800 p-6xl-semibold'>Relevante termen</h2>
+          <h2 className='text-green-800 heading-3xl-semibold'>Relevante termen</h2>
         </div>
       </div>
 */}
@@ -42,11 +42,11 @@ export default function SummaryComponent({ lawData }) {
       <div className=''>
         <div className='global-margin py-10'>
           <div className='flex flex-row items-center place-items-center'>
-            <h2 className='text-green-800 p-6xl-semibold'>Status</h2>
+            <h2 className='text-green-800 heading-3xl-semibold'>Status</h2>
             <div className='place-items-center mt-3 ml-2'>
               <EUGenericTooltip title='Welke statussen zijn er?'>
                 <div>
-                  <h3 className='mb-4 p-2xl-semibold'>1: In onderhandeling</h3>
+                  <h3 className='mb-4 heading-xl-semibold'>1: In onderhandeling</h3>
                   <p className='p-base mb-2'>
                     De Europese Commissie komt met een nieuw initiatief voor een nieuwe wet of een
                     wijziging van een bestaande wet. Burgers, bedrijven en organisaties kunnen op
@@ -59,7 +59,7 @@ export default function SummaryComponent({ lawData }) {
                     (amendementen) voorstellen. Op deze manier wordt over de definitieve tekst van
                     een wet onderhandeld.
                   </p>
-                  <h3 className='my-4 p-2xl-semibold'>2: Aangenomen</h3>
+                  <h3 className='my-4 heading-xl-semibold'>2: Aangenomen</h3>
                   <p className='p-base mb-2'>
                     De Europese Commissie, Europees Parlement en de Raad van de Europese Unie
                     bereiken overeenstemming over de definitieve tekst van het wetsvoorstel.
@@ -68,7 +68,7 @@ export default function SummaryComponent({ lawData }) {
                     wanneer zij van mening is dat het voorstel te ingrijpend is gewijzigd naar
                     aanleiding van alle amendementen.
                   </p>
-                  <h3 className='my-4 p-2xl-semibold'>3: Implementatie</h3>
+                  <h3 className='my-4 heading-xl-semibold'>3: Implementatie</h3>
                   <p className='p-base mb-2'>
                     Als een nieuwe of gewijzigde wet een richtlijn is, dan moet de lidstaat de
                     richtlijn implementeren in nationale wet- en regelgeving. Dit kan door nieuwe
@@ -103,7 +103,7 @@ export default function SummaryComponent({ lawData }) {
         </div>
       </div>
       {/* Ovewrview cards and stats */}
-      <div className='bg-grey-150 py-10'>
+      <div className='bg-green-50 py-10'>
         {lawData?.title === 'Corporate Sustainability Reporting Directive (CSRD)' && (
           <Highlights law='CSRD' />
         )}
@@ -125,7 +125,7 @@ export default function SummaryComponent({ lawData }) {
         <div className='global-margin grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
           {lawData?.linkCol1 && (
             <div className='flex flex-col'>
-              <h3 className='text-green-800 p-4xl-semibold'>
+              <h3 className='text-green-800 heading-2xl-semibold'>
                 Bekijk ook op{' '}
                 <Link href='/' className='underline link-interaction'>
                   Circulaw.nl
@@ -144,7 +144,7 @@ export default function SummaryComponent({ lawData }) {
           )}
           {lawData?.linkCol2 && (
             <div>
-              <h3 className='text-green-800 p-4xl-semibold'>
+              <h3 className='text-green-800 heading-2xl-semibold'>
                 Relevante NL wetgeving <LinkIcon />
               </h3>
               <ul>
@@ -160,7 +160,7 @@ export default function SummaryComponent({ lawData }) {
           )}
           {lawData?.linkCol3 && (
             <div>
-              <h3 className='text-green-800 p-4xl-semibold'>
+              <h3 className='text-green-800 heading-2xl-semibold'>
                 Relevante EU-wetgeving <LinkIcon />
               </h3>
               <ul>

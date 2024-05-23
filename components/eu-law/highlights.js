@@ -29,7 +29,7 @@ export default function Highlights({ law }) {
     return (
       <>
         <div className='global-margin'>
-          <h2 className='text-green-800 p-6xl-semibold mb-4'>CSRD Highlights</h2>
+          <h2 className='text-green-800 heading-3xl-semibold mb-4'>CSRD Highlights</h2>
           <p className='mb-16 max-w-xl'>
             De CSRD is per boekjaar 2024 van toepassing op bedrijven die voldoen aan ten minste twee
             van de volgende criteria:
@@ -54,7 +54,7 @@ export default function Highlights({ law }) {
     return (
       <>
         <div className='global-margin'>
-          <h2 className='text-green-800 p-6xl-semibold mb-4'>EED Highlights</h2>
+          <h2 className='text-green-800 heading-3xl-semibold mb-4'>EED Highlights</h2>
           <p className='mb-16 max-w-xl'>2030 EU Energy Efficiency-doelen</p>
 
           <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-12'>
@@ -86,7 +86,7 @@ export default function Highlights({ law }) {
     return (
       <>
         <div className='global-margin'>
-          <h2 className='text-green-800 p-6xl-semibold mb-4'>SUP Highlights</h2>
+          <h2 className='text-green-800 heading-3xl-semibold mb-4'>SUP Highlights</h2>
           <p className='mb-16 max-w-xl'>De SUP richt zich op dit moment op 10 productgroepen:</p>
           <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
             <HighlightCard text='Wattenstaafjes' icon={sup1} />
@@ -112,7 +112,7 @@ export default function Highlights({ law }) {
   } else if (law === 'Construction Products Regulation (CPR)') {
     return (
       <div className='global-margin'>
-        <h2 className='text-green-800 p-6xl-semibold mb-4'>CRP Highlights</h2>
+        <h2 className='text-green-800 heading-3xl-semibold mb-4'>CRP Highlights</h2>
         <p className='mb-12 max-w-xl'>
           De CPR stelt eisen aan de functionaliteit, veiligheid en milieuvriendelijkheid van
           bouwproducten. Zo wordt circulariteit in de bouw gestimuleerd:
@@ -131,7 +131,7 @@ export default function Highlights({ law }) {
   } else if (law === 'Ecodesign for Sustainable Products Regulation (ESPR)') {
     return (
       <div className='global-margin'>
-        <h2 className='text-green-800 p-6xl-semibold mb-4'>ESPR Highlights</h2>
+        <h2 className='text-green-800 heading-3xl-semibold mb-4'>ESPR Highlights</h2>
 
         <p className='mb-12 max-w-xl'>
           Op basis van de ESPR worden producteisen gesteld op het gebied van onder andere de

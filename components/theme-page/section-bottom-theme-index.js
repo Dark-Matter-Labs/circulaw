@@ -9,7 +9,7 @@ export default function ThemeBottomSection({ featuredLaws, thema }) {
     <>
       <div className='bg-gray-200'>
         <div className='py-8 global-margin'>
-          <h3 className='p-3xl-semibold sm:p-5xl-semibold pb-4 lowercase first-letter:uppercase'>
+          <h3 className='heading-2xl-semibold sm:heading-3xl-semibold pb-4 lowercase first-letter:uppercase'>
             {thema?.featuredInstrumentTitle}
           </h3>
           {/* ADD THIS TO CMS */}
@@ -51,12 +51,12 @@ export default function ThemeBottomSection({ featuredLaws, thema }) {
 
                     <div className='block mt-2 max-w-4xl'>
                       <div className='mb-2'>
-                        <h3 className='p-4xl-semibold max-w-[650px] text-grey-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+                        <h3 className='heading-2xl-semibold max-w-[650px] text-gray-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                           {instrument?.titel}{' '}
                         </h3>
                       </div>
 
-                      <div className='block newlineDisplay p-md text-grey-800 mt-2 pb-2  '>
+                      <div className='block newlineDisplay p-base text-gray-800 mt-2 pb-2  '>
                         <p className='p-base max-w-[650px]'>{instrument?.introText}</p>
                       </div>
                       <InstrumentMetaData data={instrument} borders={true} />
