@@ -13,7 +13,6 @@ import commentIcon from '@/public/comment-icon.svg';
 import comments from '@/public/comments.png';
 import { Link as ScrollLink } from 'react-scroll';
 
-
 export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
   return (
     <>

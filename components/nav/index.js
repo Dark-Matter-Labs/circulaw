@@ -529,7 +529,7 @@ export default function Nav(props) {
                                   : 'text-green-800 group-hover:decoration-green-500'
                               }`,
                             ]
-                      } group-hover:underline`}
+                      } group-hover:underline p-base`}
                     >
                       Productketens
                     </span>
@@ -603,7 +603,7 @@ export default function Nav(props) {
                                   : 'text-green-800 group-hover:decoration-green-500'
                               }`,
                             ]
-                      } group-hover:underline`}
+                      } group-hover:underline p-base`}
                     >
                       EU wetgeving
                     </span>
@@ -706,7 +706,7 @@ export default function Nav(props) {
                                   : 'text-green-800 group-hover:decoration-green-500'
                               }`,
                             ]
-                      } group-hover:underline`}
+                      } group-hover:underline p-base`}
                     >
                       Over CircuLaw
                     </span>

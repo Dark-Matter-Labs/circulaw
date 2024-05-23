@@ -13,7 +13,7 @@ export default function DesktopSimpleButton({ name, url }) {
           : 'text-green-800 hover:text-green-500'
       } ${
         name === 'Contact' ? '' : 'mr-6 lg:mr-8'
-      } h-full relative p-sm  hover:underline z-100  flex flex-row items-center cursor-pointer`}
+      } h-full relative p-base hover:underline z-100  flex flex-row items-center cursor-pointer`}
     >
       <Link
         onClick={() => CustomEvent.trackEvent('Nav click', router.asPath, name)}
