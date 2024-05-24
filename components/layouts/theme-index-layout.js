@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { DiscussionEmbed } from 'disqus-react';
-import { ArrowRightIcon } from '@heroicons/react/outline';
+import { ArrowRightIcon, ArrowDownIcon } from '@heroicons/react/outline';
 import ThemePageHeader from '../theme-page/theme-page-header';
 import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
 import CustomButton from '@/components/custom-button';
@@ -117,8 +117,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           </div>
 
                           <CustomButton color='greenBackground'>
-                            Discusseer mee
-                            <ArrowRightIcon
+                          Start de discussie
+                            <ArrowDownIcon
                               className='inline-block h-4 w-4 ml-1 place-self-center'
                               aria-hidden='true'
                             />
@@ -143,7 +143,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           </div>
                           <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
                             <div className='heading-xl-semibold'>Instrumenten per categorie</div>
-                            <ArrowRightIcon
+                            <ArrowDownIcon
                               className='block h-6 w-6 text-green-600 mt-1'
                               aria-hidden='true'
                             />
@@ -219,7 +219,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                       zo jezelf en anderen verder.*/}
                     </div>
                     <CustomButton color='greenBackground'>
-                      Discusseer mee
+                    Start de discussie
                       <ArrowRightIcon
                         className='inline-block h-4 w-4 ml-1 place-self-center'
                         aria-hidden='true'
