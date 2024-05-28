@@ -101,7 +101,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         <div className='flex flex-col h-full w-full sm:p-4 md:p-6 lg:p-8 justify-between'>
                           <div className='heading-2xl-semibold'>Laat je horen!</div>
                           <div className='p-base'>
-                          Begin een discussie, deel je ervaringen, stel je vragen. Help zo jezelf en anderen verder.
+                            Begin een discussie, deel je ervaringen, stel je vragen. Help zo jezelf
+                            en anderen verder.
                             {/* 
 
                             Er zijn al{' '}
@@ -117,7 +118,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           </div>
 
                           <CustomButton color='greenBackground'>
-                          Start de discussie
+                            Start de discussie
                             <ArrowDownIcon
                               className='inline-block h-4 w-4 ml-1 place-self-center'
                               aria-hidden='true'
@@ -205,7 +206,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                   <div className='mt-6 w-full rounded-cl bg-green-50 h-auto p-4 flex flex-col shadow gap-4'>
                     <div className='heading-xl-semibold'>Laat je horen!</div>
                     <div className='p-base'>
-                      Begin een discussie, deel je ervaringen, stel je vragen. Help zo jezelf en anderen verder.
+                      Begin een discussie, deel je ervaringen, stel je vragen. Help zo jezelf en
+                      anderen verder.
                       {/* 
                       Er zijn al{' '}
                       <CommentCount
@@ -219,7 +221,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                       zo jezelf en anderen verder.*/}
                     </div>
                     <CustomButton color='greenBackground'>
-                    Start de discussie
+                      Start de discussie
                       <ArrowRightIcon
                         className='inline-block h-4 w-4 ml-1 place-self-center'
                         aria-hidden='true'

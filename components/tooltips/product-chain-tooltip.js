@@ -83,7 +83,9 @@ export default function PCTooltip({ children, icon, title, content }) {
                       <div className='px-4 sm:px-6'>
                         <Dialog.Title className='text-gray-900'>
                           {' '}
-                          <h2 className='heading-xl-semibold sm:heading-3xl-semibold mr-10'>{title}</h2>
+                          <h2 className='heading-xl-semibold sm:heading-3xl-semibold mr-10'>
+                            {title}
+                          </h2>
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>

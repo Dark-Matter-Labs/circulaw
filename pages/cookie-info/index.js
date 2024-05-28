@@ -72,7 +72,9 @@ export default function Privacy() {
           beter inzicht in het functioneren van onze website.
         </p>
 
-        <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>CircuLaw maakt gebruik van de volgende cookies:</h2>
+        <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>
+          CircuLaw maakt gebruik van de volgende cookies:
+        </h2>
         <p className=' p-base  max-w-4xl'>
           Om te begrijpen hoe bezoekers door onze site navigeren en om feedback te verzamelen om de
           site te verbeteren, gebruiken we Hotjar en Piwik Pro. Heb je bezwaar tegen cookies? Kies

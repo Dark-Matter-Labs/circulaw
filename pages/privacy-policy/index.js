@@ -20,7 +20,9 @@ export default function Privacy() {
             <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
           </span>
         </p>
-        <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>Wanneer verwerken wij persoonsgegevens</h2>
+        <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>
+          Wanneer verwerken wij persoonsgegevens
+        </h2>
         <p className=' p-base pb-10 max-w-4xl'>
           Wanneer je je registreert of aanmeldt voor een van onze producten, diensten of
           activiteiten, voor een nieuwsbrief, of deelneemt aan een bijeenkomst, gebruik maakt van
@@ -30,14 +32,18 @@ export default function Privacy() {
           gemeente verwerkt deze persoonsgegevens op basis van een gerechtvaardigd belang, artikel
           6, eerste lid, sub f, van de AVG.
         </p>
-        <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>Welke gegevens verwerken wij?</h2>
+        <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>
+          Welke gegevens verwerken wij?
+        </h2>
         <p className=' p-base pb-10 max-w-4xl'>
           We verwerken jouw registratiegegevens. Dit zijn de gegevens waarnaar we je vragen bij
           registratie zoals je naam, e-mailadres, telefoonnummer, functie, naam werkgever/bedrijf en
           de vestigingsplaats van het bedrijf. Voor de verwerking van je gegevens maken wij géén
           gebruik van AI-technieken.
         </p>
-        <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>Met welk doel verwerken wij je persoonsgegevens?</h2>
+        <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>
+          Met welk doel verwerken wij je persoonsgegevens?
+        </h2>
         <div className=' p-base pb-10 max-w-4xl'>
           <ul className='list-disc pl-6'>
             <li>We verwerken je persoonsgegevens om je te informeren over ons product</li>
@@ -98,12 +104,16 @@ export default function Privacy() {
           </span>
           .
         </p>
-        <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>Hoe lang bewaren we je gegevens?</h2>
+        <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>
+          Hoe lang bewaren we je gegevens?
+        </h2>
         <p className=' p-base pb-10 max-w-4xl'>
           CircuLaw bewaart je persoonsgegevens zolang als dat nodig is voor de doelen die hierboven
           zijn genoemd of om te voldoen aan wettelijke (bewaar)verplichtingen.
         </p>
-        <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>Wijziging van deze Privacyverklaring</h2>
+        <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>
+          Wijziging van deze Privacyverklaring
+        </h2>
         <p className=' p-base pb-6 max-w-4xl'>
           De gemeente Amsterdam heeft het recht om haar Privacyverklaring te wijzigen. Als er
           inhoudelijke wijzigingen worden doorgevoerd, maken we dit bekend via de website{' '}
