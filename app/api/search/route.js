@@ -37,9 +37,9 @@ const PROJECTION = `{
     
 
 
-export async function POST(req) {
+export async function POST(req, res) {
     const index = agoliaInstance.initIndex('instruments')
-
+    console.log(req, res)
     const sanityAgolia = indexer(
         {
             instrument: {
@@ -53,14 +53,14 @@ export async function POST(req) {
 
     return sanityAgolia
         .webhookSync(client, req.body)
-        .then(() => ({
-            status:200,
-            body: 'Sucess!'
-        }))
-        .catch(() => ({
-            status: 500, 
-            body: 'Something went wrong'
-        }))
+        .then(() => res.status(200).send('ok'))
+        // eslint-disable-next-line
+        .catch(err => {
+      return {
+        statusCode: 500,
+        body: JSON.stringify({message: 'Something went wrong'})
+      }
+    })
 
 }
 
