@@ -11,7 +11,6 @@ const PROJECTION = `
     _type,
     _rev,
     "objectID": _id,
-    _createdAt,
     titel,
     subtitel,
     subrechtsgebied,
@@ -26,8 +25,6 @@ const PROJECTION = `
     juridischeHaalbaarheid,
     rLadder,
     rechtsgebied,
-    subrechtsgebied,
-    "Categorie": [beleid, inkoop, grondpositie, subsidie, fiscaal],
     beleid,
     inkoop,
     grondpositie,
@@ -37,6 +34,7 @@ const PROJECTION = `
     
 
 export async function POST(req) {
+    console.log(req)
     try {
         const sanityAgolia = indexer(
             {
@@ -51,7 +49,26 @@ export async function POST(req) {
                 switch (document._type) {
                     case 'instrument': 
                         return {
-                            document
+                            objectID: document.objectID,
+                            titel: document.titel,
+                            subtitel: document.subtitel,
+                            subrechtsgebied: document.subrechtsgebied,
+                            citeertitel: document.citeertitel,
+                            content: document.content,
+                            slug: document.slug,
+                            transitionAgenda: document.transitionAgenda,
+                            thema: document.thema,
+                            extraContent: document.extraContent,
+                            overheidslaag: document.overheidslaag,
+                            juridischInvloed: document.juridischInvloed,
+                            juridischeHaalbaarheid: document.juridischeHaalbaarheid,
+                            rLadder: document.rLadder,
+                            rechtsgebied: document.rechtsgebied,
+                            beleid: document.beleid,
+                            inkoop: document.inkoop,
+                            grondpositie: document.grondpositie,
+                            subsidie: document.subsidie,
+                            fiscaal: document.fiscaal,
                         };
                     default: 
                         return document
