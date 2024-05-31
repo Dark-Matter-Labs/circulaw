@@ -8,7 +8,7 @@ export const agoliaInstance = algoliasearch(
 )
     
 const QUERY = `
-*[_type == "instrument"] {
+*[_type == "instrument" && !(_id in path('drafts.**'))] {
     _type,
     _rev,
     "objectID": _id,

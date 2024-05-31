@@ -40,7 +40,6 @@ const PROJECTION = `{
 export async function POST(req) {
     const index = agoliaInstance.initIndex('instruments')
 
-    
     const sanityAgolia = indexer(
         {
             instrument: {
