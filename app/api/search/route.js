@@ -7,7 +7,7 @@ export const agoliaInstance = algoliasearch(
     process.env.AGOLIA_ADMIN_KEY,
 )
 
-const PROJECTION = `{
+const PROJECTION = `
     _type,
     _rev,
     "objectID": _id,
@@ -33,13 +33,56 @@ const PROJECTION = `{
     grondpositie,
     subsidie,
     fiscaal,
-}`
+`
     
 
+export async function POST(req) {
+    try {
+        const sanityAgolia = indexer(
+            {
+                instrument: {
+                    index: agoliaInstance.initIndex('instruments'),
+                    projection: PROJECTION,
 
-export async function POST(req, res) {
+                }
+            },
+            (document) => {
+                console.log(document)
+                switch (document._type) {
+                    case 'instrument': 
+                        return {
+                            document
+                        };
+                    default: 
+                        return document
+                }
+            }
+        );
+        const body = await req.json()
+
+        const webhook = await sanityAgolia.webhookSync(client, body)
+
+        return webhook && Response.json({message: 'success!'})
+        
+    
+            
+    } catch (err) {
+        let error_response = 
+        {status: 'error',
+            msg: err
+        };
+        return new Response(JSON.stringify(error_response))
+    }
+}
+
+
+
+{/*
+
+export async function POST(req) {
+   
     const index = agoliaInstance.initIndex('instruments')
-    console.log(req, res)
+    console.log(req)
     const sanityAgolia = indexer(
         {
             instrument: {
@@ -64,3 +107,5 @@ export async function POST(req, res) {
 
 }
 
+
+*/}
