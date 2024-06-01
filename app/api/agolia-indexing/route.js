@@ -1,6 +1,8 @@
 import { client } from '@/lib/sanity';
 import algoliasearch from 'algoliasearch';
 
+// need to hide this route. 
+
 
 export const agoliaInstance = algoliasearch(
     process.env.AGOLIA_APPLICATION_ID,
@@ -28,12 +30,11 @@ const QUERY = `
     rLadder,
     rechtsgebied,
     subrechtsgebied,
-    "Categorie": [beleid, inkoop, grondpositie, subsidie, fiscaal],
-    beleid,
-    inkoop,
-    grondpositie,
-    subsidie,
-    fiscaal,
+    "categorie": [select(beleid == true => "beleid"), 
+          select(inkoop == true => "inkoop"),
+          select(grondpositie == true => "grondpositie"),
+          select(subsidie == true => "subsidie"),
+          select(fiscaal == true => "fiscaal")],
   }
 `
 

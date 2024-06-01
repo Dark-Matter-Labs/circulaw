@@ -268,7 +268,7 @@ html {
 }
 
 .ais-InstantSearch {
-  max-width: 960px;
+  max-width: 860px;
   width: 100%;
   display: block;
   overflow: hidden;
@@ -280,9 +280,7 @@ html {
   width: 100%;
 }
 
-.ais-Hits-item img {
-  margin-right: 1em
-}
+
 
 .ais-InstantSearch .ais-Hits-list {
   display: flex;

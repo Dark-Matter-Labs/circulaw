@@ -8,12 +8,20 @@ const searchClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a0635326
 
 export const Search = () => {
   return (
-    <InstantSearch searchClient={searchClient} indexName='agolia-test'>
+    <>
+    <InstantSearch searchClient={searchClient} indexName='instruments'>
+      
       <Configure hitsPerPage={5} />
+           
       <div className='ais-InstantSearch'>
+  
+
+
         <SearchBox />
         <Hits hitComponent={Hit} />
       </div>
     </InstantSearch>
+   
+  </>
   );
 };

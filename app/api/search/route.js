@@ -25,11 +25,11 @@ const PROJECTION = `
     juridischeHaalbaarheid,
     rLadder,
     rechtsgebied,
-    beleid,
-    inkoop,
-    grondpositie,
-    subsidie,
-    fiscaal,
+    "categorie": [select(beleid == true => "beleid"), 
+          select(inkoop == true => "inkoop"),
+          select(grondpositie == true => "grondpositie"),
+          select(subsidie == true => "subsidie"),
+          select(fiscaal == true => "fiscaal")],]
 `
     
 
@@ -45,7 +45,6 @@ export async function POST(req) {
                 }
             },
             (document) => {
-                console.log(document)
                 switch (document._type) {
                     case 'instrument': 
                         return {
@@ -64,11 +63,7 @@ export async function POST(req) {
                             juridischeHaalbaarheid: document.juridischeHaalbaarheid,
                             rLadder: document.rLadder,
                             rechtsgebied: document.rechtsgebied,
-                            beleid: document.beleid,
-                            inkoop: document.inkoop,
-                            grondpositie: document.grondpositie,
-                            subsidie: document.subsidie,
-                            fiscaal: document.fiscaal,
+                            categorie: document.categorie,
                         };
                     default: 
                         return document
@@ -91,38 +86,3 @@ export async function POST(req) {
         return new Response(JSON.stringify(error_response))
     }
 }
-
-
-
-{/*
-
-export async function POST(req) {
-   
-    const index = agoliaInstance.initIndex('instruments')
-    console.log(req)
-    const sanityAgolia = indexer(
-        {
-            instrument: {
-                index, 
-                projection: PROJECTION,
-            }
-        },
-
-        (document) => document,
-    )
-
-    return sanityAgolia
-        .webhookSync(client, req.body)
-        .then(() => res.status(200).send('ok'))
-        // eslint-disable-next-line
-        .catch(err => {
-      return {
-        statusCode: 500,
-        body: JSON.stringify({message: 'Something went wrong'})
-      }
-    })
-
-}
-
-
-*/}
