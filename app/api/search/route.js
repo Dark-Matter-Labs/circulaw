@@ -100,8 +100,8 @@ export async function POST(req) {
         const body = await req.json()
         console.log('body', body)
         const webhook = await sanityAgolia.webhookSync(client, body)
-
-        return webhook && NextResponse.json({message: 'success!'})
+        
+        return NextResponse.json({ data: webhook },{message: 'success!'})
             
     } catch (err) {
         let error_response = 
