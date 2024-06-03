@@ -33,7 +33,7 @@ const PROJECTION = `
 `
 
 const PROJ = `
-  ...,
+  ...,}
 `
 
 
