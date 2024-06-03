@@ -82,7 +82,8 @@ export async function POST(req) {
                         };
                     case 'newsPage': {
                         return {
-                            objectID: document.objectID
+                            objectID: document.newsItems.objectID,
+                            newsTitle: document.newsItems.newsTitle
                         }
                     }
                     default: 
