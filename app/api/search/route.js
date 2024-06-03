@@ -32,9 +32,7 @@ const PROJECTION = `
           select(fiscaal == true => "fiscaal")],]
 `
 
-const PROJ = `
-  ...,}
-`
+
 
 
 export async function POST(req) {
@@ -49,7 +47,9 @@ export async function POST(req) {
                 }, 
                 newsPage: {
                     index: agoliaInstance.initIndex('newsPage'),
-                    projection: PROJ
+                    projection: `
+                    {...,}
+                    `
                 }
             },
             (document) => {
