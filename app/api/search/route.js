@@ -49,6 +49,7 @@ export async function POST(req) {
                     index: agoliaInstance.initIndex('newsPage'),
                     projection: `{
                         "newsItems": newsItems[_type == "newsCard] {
+                            "objectID": _key
                             newsTitle, 
                             category,
                             newsText,
@@ -82,7 +83,7 @@ export async function POST(req) {
                         };
                     case 'newsPage': {
                         return {
-                            objectID: document[0].newsItems._key,
+                            objectID: document[0].newsItems.objectID,
                             newsTitle: document[0].newsItems.newsTitle
                         }
                     }
