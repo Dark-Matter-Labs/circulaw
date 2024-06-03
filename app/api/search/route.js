@@ -33,8 +33,6 @@ const PROJECTION = `{
         }`
 
 
-
-
 export async function POST(req) {
     console.log(req)
     try {
@@ -60,7 +58,7 @@ export async function POST(req) {
                 }
             },
             (document) => {
-                console.log(document)
+                console.log('document cl', document)
                 switch (document._type) {
                     case 'instrument': 
                         return {
@@ -83,8 +81,8 @@ export async function POST(req) {
                         };
                     case 'newsPage': {
                         return {
-                            objectID: document[0].newsItems.objectID,
-                            newsTitle: document[0].newsItems.newsTitle
+                            objectID: document.newsItems.objectID,
+                            newsTitle: document.newsItems.newsTitle
                         }
                     }
                     default: 
