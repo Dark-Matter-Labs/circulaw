@@ -1,7 +1,7 @@
 import { client } from '@/lib/sanity';
 import algoliasearch from 'algoliasearch';
 import indexer from 'sanity-algolia';
-
+import { NextResponse } from 'next/server';
 export const agoliaInstance = algoliasearch(
     process.env.AGOLIA_APPLICATION_ID,
     process.env.AGOLIA_ADMIN_KEY,
@@ -36,7 +36,6 @@ const PROJECTION = `{
 
 
 export async function POST(req) {
-    console.log(req)
     try {
         const sanityAgolia = indexer(
             {
@@ -84,9 +83,10 @@ export async function POST(req) {
                         };
                     case 'newsPage': {
                         // break up documents and send them back individually 
-                        
-                       const documents = document.newsItems
-                        console.log('test', documents)
+                        // how can i get the doc key that has changed in order to filter here... 
+
+                        // const documents = document.newsItems
+                        // console.log('test', documents)
                         return {
                             objectID: document.newsItems.objectID,
                             newsTitle: document.newsItems.newsTitle
@@ -98,11 +98,10 @@ export async function POST(req) {
             }
         );
         const body = await req.json()
-
+        console.log('body', body)
         const webhook = await sanityAgolia.webhookSync(client, body)
 
-        return webhook && Response.json({message: 'success!'})
-        
+        return webhook && NextResponse.json({message: 'success!'})
             
     } catch (err) {
         let error_response = 
