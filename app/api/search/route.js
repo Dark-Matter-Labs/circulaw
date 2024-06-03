@@ -7,7 +7,7 @@ export const agoliaInstance = algoliasearch(
     process.env.AGOLIA_ADMIN_KEY,
 )
 
-const PROJECTION = `
+const PROJECTION = `{
     _type,
     _rev,
     "objectID": _id,
@@ -29,8 +29,8 @@ const PROJECTION = `
           select(inkoop == true => "inkoop"),
           select(grondpositie == true => "grondpositie"),
           select(subsidie == true => "subsidie"),
-          select(fiscaal == true => "fiscaal")],]
-`
+          select(fiscaal == true => "fiscaal")],
+        }`
 
 
 
@@ -47,9 +47,9 @@ export async function POST(req) {
                 }, 
                 newsPage: {
                     index: agoliaInstance.initIndex('newsPage'),
-                    projection: `
-                    {...,}
-                    `
+                    projection: `{
+                        ...,
+                    }`
                 }
             },
             (document) => {
