@@ -33,6 +33,8 @@ const PROJECTION = `{
         }`
 
 
+
+
 export async function POST(req) {
     console.log(req)
     try {
@@ -57,8 +59,9 @@ export async function POST(req) {
                     }`
                 }
             },
+
             (document) => {
-                console.log('document cl', document)
+               //  console.log('document cl', document)
                 switch (document._type) {
                     case 'instrument': 
                         return {
@@ -80,6 +83,10 @@ export async function POST(req) {
                             categorie: document.categorie,
                         };
                     case 'newsPage': {
+                        // break up documents and send them back individually 
+                        
+                       const documents = document.newsItems
+                        console.log('test', documents)
                         return {
                             objectID: document.newsItems.objectID,
                             newsTitle: document.newsItems.newsTitle
