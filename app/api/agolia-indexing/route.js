@@ -41,6 +41,7 @@ const QUERY = `
 const NEWS_QUERY = `
 *[_type == "newsPage"][0] {
     newsItems[_type == "newsCard"]{
+      "parentID": ^._id,
       "objectID": _key,
       category,
       newsTitle,

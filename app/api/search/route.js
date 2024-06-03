@@ -48,6 +48,7 @@ export async function POST(req) {
                     index: agoliaInstance.initIndex('newsPage'),
                     projection: `{
                         "newsItems": newsItems[_type == "newsCard"] {
+                            "parentID": ^._id,
                             "objectID": _key,
                             newsTitle, 
                             category,
@@ -60,7 +61,8 @@ export async function POST(req) {
             },
 
             (document) => {
-               //  console.log('document cl', document)
+               console.log('id', document._id)
+               console.log('document', document.newsItems)
                 switch (document._type) {
                     case 'instrument': 
                         return {
@@ -88,6 +90,7 @@ export async function POST(req) {
                         // const documents = document.newsItems
                         // console.log('test', documents)
                         return {
+                            parentID: document.newsItems.parentID,
                             objectID: document.newsItems.objectID,
                             newsTitle: document.newsItems.newsTitle
                         }
@@ -98,7 +101,8 @@ export async function POST(req) {
             }
         );
         const body = await req.json()
-        console.log('body', body)
+        //  console.log('body', body)
+        // body is the array with the id. for news page this will always return updated as it does 
         const webhook = await sanityAgolia.webhookSync(client, body)
 
         return webhook.then(() => NextResponse.json({message: 'success!'})) 
