@@ -80,7 +80,7 @@ export async function POST(req) {
                             rechtsgebied: document.rechtsgebied,
                             categorie: document.categorie,
                         };
-                    case 'news': {
+                    case 'newsPage': {
                         return {
                             objectID: document.objectID
                         }
