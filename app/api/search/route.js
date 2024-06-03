@@ -53,7 +53,7 @@ export async function POST(req) {
                     projection: PROJECTION,
 
                 }, 
-                news: {
+                newsPage: {
                     index: agoliaInstance.initIndex('newsPage'),
                     projection: PROJ
                 }
