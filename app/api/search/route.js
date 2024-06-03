@@ -31,7 +31,17 @@ const PROJECTION = `
           select(subsidie == true => "subsidie"),
           select(fiscaal == true => "fiscaal")],]
 `
-    
+
+const PROJ = `
+newsItems[_type == "newsCard"]{
+    "objectID": _key,
+    category,
+    newsTitle,
+    newsText,
+    "content": pt::text(content)
+  }
+`
+
 
 export async function POST(req) {
     console.log(req)
@@ -42,9 +52,14 @@ export async function POST(req) {
                     index: agoliaInstance.initIndex('instruments'),
                     projection: PROJECTION,
 
+                }, 
+                news: {
+                    index: agoliaInstance.initIndex('news'),
+                    projection: PROJ
                 }
             },
             (document) => {
+                console.log(document)
                 switch (document._type) {
                     case 'instrument': 
                         return {
@@ -65,6 +80,11 @@ export async function POST(req) {
                             rechtsgebied: document.rechtsgebied,
                             categorie: document.categorie,
                         };
+                    case 'news': {
+                        return {
+                            objectID: document.objectID
+                        }
+                    }
                     default: 
                         return document
                 }

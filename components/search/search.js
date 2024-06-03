@@ -17,20 +17,26 @@ const searchClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a0635326
 export const Search = () => {
   return (
     <>
-      <InstantSearch searchClient={searchClient} indexName='instruments' className=''>
+      <InstantSearch searchClient={searchClient} indexName='instruments' className='' routing={true}>
         <div className='flex flex-col'>
           <div className='flex flex-col'>
             <h3 className='mb-2'>Categorie</h3>
-            <RefinementList attribute='categorie' className='mb-12' />
+            <RefinementList attribute='categorie' className='mb-12' sortBy={['label:asc']}/>
           </div>
           <div className='flex flex-col'>
-            <h3 className='mb-2'>Categorie</h3>
-            <RefinementList attribute='thema' className='mb-12' />
+            <h3 className='mb-2'>Thema</h3>
+            <RefinementList attribute='thema' className='mb-12' sortBy={['label:asc']}/>
           </div>
         </div>
         <Configure hitsPerPage={5} />
         <div className='ais-InstantSearch'>
-          <SearchBox />
+          <SearchBox 
+          classNames={{
+            root: 'p-3 shadow-none',
+            form: 'relative',
+            input: 'block w-full pl-9 pr-3 py-2 bg-white border border-green-300 placeholder-green-400 focus:outline-none focus:border-green-500 focus:ring-green-500 rounded-cl focus:ring-1',
+            submitIcon: 'absolute top-0 left-0 bottom-0 w-6',
+          }}/>
           <Hits hitComponent={Hit} />
           <Pagination
           // Optional props

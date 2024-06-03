@@ -7,6 +7,44 @@
   resolved "https://registry.yarnpkg.com/@aashutoshrathi/word-wrap/-/word-wrap-1.2.6.tgz#bd9154aec9983f77b3a034ecaa015c2e4201f6cf"
   integrity sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==
 
+"@algolia/autocomplete-core@1.17.2":
+  version "1.17.2"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-core/-/autocomplete-core-1.17.2.tgz#dbdd0a57597b05f38d20d4de381ba446cc609001"
+  integrity sha512-Fi5cPV5pzEmJgTJ/KTcccJoR/v94OkBwJFyLTsmAx9jbBg5rlgoumRXQM41cgwzY1s/eBLNduUMak2KnZYofcA==
+  dependencies:
+    "@algolia/autocomplete-plugin-algolia-insights" "1.17.2"
+    "@algolia/autocomplete-shared" "1.17.2"
+
+"@algolia/autocomplete-js@^1.17.2":
+  version "1.17.2"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-js/-/autocomplete-js-1.17.2.tgz#d3affab63094bf28a1bea9050cfdeb382b694a52"
+  integrity sha512-2UP5ZMEAtIJvnJ3qLiz3AzFjJD66n4UWsAf6mFGFXSYA/UU0LuaC8Bzrfj4CnK1d/AZyPLe+rgZXr6mQtBI8jg==
+  dependencies:
+    "@algolia/autocomplete-core" "1.17.2"
+    "@algolia/autocomplete-preset-algolia" "1.17.2"
+    "@algolia/autocomplete-shared" "1.17.2"
+    htm "^3.1.1"
+    preact "^10.13.2"
+
+"@algolia/autocomplete-plugin-algolia-insights@1.17.2":
+  version "1.17.2"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-plugin-algolia-insights/-/autocomplete-plugin-algolia-insights-1.17.2.tgz#af431f36d559ffdeb4bbcb6132d21ba63501bdc1"
+  integrity sha512-bgVuThYaY9NSQMHOE/GMvlEzQxFzqDH3Lbls7fWuei8iIfcBWGtRUH01m/w5LY1mAw1wv8SyZ9xwuvfdXt8XkA==
+  dependencies:
+    "@algolia/autocomplete-shared" "1.17.2"
+
+"@algolia/autocomplete-preset-algolia@1.17.2":
+  version "1.17.2"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.17.2.tgz#65387d60c2d8fc8485caea6591bf5e5c5210cc46"
+  integrity sha512-pXOD059R1giNJkcFpPEWI20XdQevHlmuTxPisKk/XkqjOCFnMmyNq2O7AWJylkcOeb62o2Ord166tJ90vNTSvw==
+  dependencies:
+    "@algolia/autocomplete-shared" "1.17.2"
+
+"@algolia/autocomplete-shared@1.17.2":
+  version "1.17.2"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-shared/-/autocomplete-shared-1.17.2.tgz#62d91594eb6077a47a0709fd9410150d1eb3394f"
+  integrity sha512-L9gmDgv2J6cXXefV4tg/xlfomd+jjbzKmoc6kcvtS2USkxowoLNvqkLRNQP8bHvX+RXXGNLJBwJj+Ul7JIpv8A==
+
 "@algolia/cache-browser-local-storage@4.23.3":
   version "4.23.3"
   resolved "https://registry.yarnpkg.com/@algolia/cache-browser-local-storage/-/cache-browser-local-storage-4.23.3.tgz#0cc26b96085e1115dac5fcb9d826651ba57faabc"
@@ -133,6 +171,19 @@
     "@algolia/logger-common" "4.23.3"
     "@algolia/requester-common" "4.23.3"
 
+"@algolia/ui-components-highlight-vdom@^1.2.1":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@algolia/ui-components-highlight-vdom/-/ui-components-highlight-vdom-1.2.2.tgz#913ac447e41afc79dcbd95ca37531bbfbdb81cfe"
+  integrity sha512-/+7jh7cd5rR2yQC7ME4SDcnAMiD1Ofn5Qq+E7afTJx9XSMOHkLR77/o6YcuJ60TfD1S+9lr7yjBLACon8gOuzQ==
+  dependencies:
+    "@algolia/ui-components-shared" "1.2.2"
+    "@babel/runtime" "^7.0.0"
+
+"@algolia/ui-components-shared@1.2.2", "@algolia/ui-components-shared@^1.2.1":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@algolia/ui-components-shared/-/ui-components-shared-1.2.2.tgz#ec49246e2de7d0461cdeadf2e7742d2f2c7c0bd9"
+  integrity sha512-FYwEG5sbr8p4V8mqP0iUaKgmWfcrMXRXwp7e6iBuB65P/7QyL8pT4I6/iGb85Q5mNH+UtYYSmLZhKjEblllKEQ==
+
 "@alloc/quick-lru@^5.2.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
@@ -173,7 +224,7 @@
     js-tokens "^4.0.0"
     picocolors "^1.0.0"
 
-"@babel/runtime@^7.1.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2":
   version "7.24.6"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.24.6.tgz#5b76eb89ad45e2e4a0a8db54c456251469a3358e"
   integrity sha512-Ja18XcETdEl5mzzACGd+DKgaGJzPTCow7EglgwTmHdwokzDFYh/MHua6lU6DV/hjF2IaOJ4oX2nqnjG7RElKOw==
@@ -1108,10 +1159,24 @@ ajv@^6.10.0, ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
+algoliasearch-helper@3.14.0:
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.14.0.tgz#2409c2591952719ab6fba1de77b3bbe5094ab85e"
+  integrity sha512-gXDXzsSS0YANn5dHr71CUXOo84cN4azhHKUbg71vAWnH+1JBiR4jf7to3t3JHXknXkbV0F7f055vUSBKrltHLQ==
+  dependencies:
+    "@algolia/events" "^4.0.1"
+
 algoliasearch-helper@3.20.0:
   version "3.20.0"
   resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.20.0.tgz#1f31b11c0df9881d0086c8e7f64b4ccd66d78148"
   integrity sha512-6EVhAmVug0+hdRHWbubF7hLHHhLoQ8NjLk6iS6d4k5chWawpS5EDexrF6Jx/hPZvUKIeNrzsbTpjAkcvrjNLHg==
+  dependencies:
+    "@algolia/events" "^4.0.1"
+
+algoliasearch-helper@3.21.0:
+  version "3.21.0"
+  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.21.0.tgz#d28fdb61199b5c229714788bfb812376b18aaf28"
+  integrity sha512-hjVOrL15I3Y3K8xG0icwG1/tWE+MocqBrhW6uVBWpU+/kVEMK0BnM2xdssj6mZM61eJ4iRxHR0djEI3ENOpR8w==
   dependencies:
     "@algolia/events" "^4.0.1"
 
@@ -2824,7 +2889,7 @@ hoist-non-react-statics@^3.3.1:
   dependencies:
     react-is "^16.7.0"
 
-htm@^3.0.0:
+htm@^3.0.0, htm@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/htm/-/htm-3.1.1.tgz#49266582be0dc66ed2235d5ea892307cc0c24b78"
   integrity sha512-983Vyg8NwUE7JkZ6NmOqpCZ+sh1bKv2iYTlUkzlWmA5JD2acKoxd4KVxbMmxX/85mtfdnDmTFoNKcg5DGAvxNQ==
@@ -2912,6 +2977,25 @@ instantsearch.css@^8.2.0:
   resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-8.2.0.tgz#d5ed2535551c242830b791da68929c2c47c2d61e"
   integrity sha512-VLALy7sSpXwtPSHDFBZ4e/46/vOIVZjLyi24sYqJThubcKSPExLNmkSBzSiBt+VupLXKhlJPSb6qoVO486JSRw==
 
+instantsearch.js@4.56.8:
+  version "4.56.8"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.56.8.tgz#c417c68a792a4b7d6cc866cdb059d828799e84da"
+  integrity sha512-40DJ5l70ZzVzWPK3qrHTKlJLaHGq1PRZpzfL6281P2mz8G19WOHQHKAP4Zh6a4lOZaRtJQUiPjQwqCHSurXZ5g==
+  dependencies:
+    "@algolia/events" "^4.0.1"
+    "@algolia/ui-components-highlight-vdom" "^1.2.1"
+    "@algolia/ui-components-shared" "^1.2.1"
+    "@types/dom-speech-recognition" "^0.0.1"
+    "@types/google.maps" "^3.45.3"
+    "@types/hogan.js" "^3.0.0"
+    "@types/qs" "^6.5.3"
+    algoliasearch-helper "3.14.0"
+    hogan.js "^3.0.2"
+    htm "^3.0.0"
+    preact "^10.10.0"
+    qs "^6.5.1 < 6.10"
+    search-insights "^2.6.0"
+
 instantsearch.js@4.69.0:
   version "4.69.0"
   resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.69.0.tgz#b7935defb4f85dc2b865efa37201cf1a41dccc9c"
@@ -2923,6 +3007,24 @@ instantsearch.js@4.69.0:
     "@types/hogan.js" "^3.0.0"
     "@types/qs" "^6.5.3"
     algoliasearch-helper "3.20.0"
+    hogan.js "^3.0.2"
+    htm "^3.0.0"
+    instantsearch-ui-components "0.6.0"
+    preact "^10.10.0"
+    qs "^6.5.1 < 6.10"
+    search-insights "^2.13.0"
+
+instantsearch.js@4.70.0:
+  version "4.70.0"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.70.0.tgz#d798240fda10d229ba8bd3bd870799eedd288b57"
+  integrity sha512-hB0G5tOR+EJnXrAxGqOzdzM7MXpdx9WglJc4XulqSL6+roYVX+O6eRCNTn0s5+FJlCeh7xjZrtgEmjEexW7R3A==
+  dependencies:
+    "@algolia/events" "^4.0.1"
+    "@types/dom-speech-recognition" "^0.0.1"
+    "@types/google.maps" "^3.45.3"
+    "@types/hogan.js" "^3.0.0"
+    "@types/qs" "^6.5.3"
+    algoliasearch-helper "3.21.0"
     hogan.js "^3.0.2"
     htm "^3.0.0"
     instantsearch-ui-components "0.6.0"
@@ -3909,7 +4011,7 @@ postcss@^8.4.21, postcss@^8.4.23:
     picocolors "^1.0.0"
     source-map-js "^1.2.0"
 
-preact@^10.10.0:
+preact@^10.10.0, preact@^10.13.2:
   version "10.22.0"
   resolved "https://registry.yarnpkg.com/preact/-/preact-10.22.0.tgz#a50f38006ae438d255e2631cbdaf7488e6dd4e16"
   integrity sha512-RRurnSjJPj4rp5K6XoP45Ui33ncb7e4H7WiOHVpjbkvqvA3U+N8Z6Qbo0AE6leGYBV66n8EhEaFixvIu3SkxFw==
@@ -4029,6 +4131,26 @@ react-instantsearch-core@7.9.0:
     "@babel/runtime" "^7.1.2"
     algoliasearch-helper "3.20.0"
     instantsearch.js "4.69.0"
+    use-sync-external-store "^1.0.0"
+
+react-instantsearch-core@^7.10.0:
+  version "7.10.0"
+  resolved "https://registry.yarnpkg.com/react-instantsearch-core/-/react-instantsearch-core-7.10.0.tgz#69d5252a2fc47cedf0730b48739014ceb3545550"
+  integrity sha512-TxXGSZtokAi5pHpRYKEFmyA5m+boVshs/YpVRD9gDGw7SpL5GBb5B/hWqAmCdXx/VgZRbaHRouiAykFEzTjuGA==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    algoliasearch-helper "3.21.0"
+    instantsearch.js "4.70.0"
+    use-sync-external-store "^1.0.0"
+
+react-instantsearch-hooks@^6.47.3:
+  version "6.47.3"
+  resolved "https://registry.yarnpkg.com/react-instantsearch-hooks/-/react-instantsearch-hooks-6.47.3.tgz#66876c9a5fdf0bb0e777fcf14901b63269a17953"
+  integrity sha512-QuGSwZ664MHrzvndXGnsyPhpKHywGqyDgqOVorYpEE24Y063OPv5XtmJaZqn27MIvvByUormTb6dbPgbjqkd8w==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    algoliasearch-helper "3.14.0"
+    instantsearch.js "4.56.8"
     use-sync-external-store "^1.0.0"
 
 react-instantsearch@^7.9.0:
@@ -4336,7 +4458,7 @@ scheduler@^0.23.0:
   dependencies:
     loose-envify "^1.1.0"
 
-search-insights@^2.13.0:
+search-insights@^2.13.0, search-insights@^2.6.0:
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/search-insights/-/search-insights-2.14.0.tgz#212626f1c5ee8d8e232af1f35c9afaa760a56d24"
   integrity sha512-OLN6MsPMCghDOqlCtsIsYgtsC0pnwVTyT9Mu6A3ewOj1DxvzZF6COrn2g86E/c05xbktB0XN04m/t1Z+n+fTGw==

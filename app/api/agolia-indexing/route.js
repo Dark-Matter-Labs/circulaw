@@ -38,17 +38,31 @@ const QUERY = `
   }
 `
 
+const NEWS_QUERY = `
+*[_type == "newsPage"][0] {
+    newsItems[_type == "newsCard"]{
+      "objectID": _key,
+      category,
+      newsTitle,
+      newsText,
+      "content": pt::text(content)
+    }
+  }
+`
+
 export async function GET() {
     // fetch instruments 
     const instruments = await client.fetch(QUERY)
-
-
-    const index = agoliaInstance.initIndex('instruments')
-
+    const newsItems = await client.fetch(NEWS_QUERY)
+    const instrumentIndex = agoliaInstance.initIndex('instruments')
+    const newsIndex  = agoliaInstance.initIndex('news')
+        
     try {
-        console.time(`Saving ${instruments.length} documents to index`)
-        await index.saveObjects(instruments)
-        console.timeEnd(`Saving ${instruments.length} documents to index`)
+        console.time(`Saving ${instruments.length} instruments and ${newsItems.newsItems.length} news items to index`)
+        await instrumentIndex.saveObjects(instruments) 
+        await newsIndex.saveObjects(newsItems.newsItems)
+          // here it is newsItems.newsItems to structure the data as a array and not an object
+        console.timeEnd(`Saving ${instruments.length} instruments and ${newsItems.newsItems.length} news items to index`)
         return Response.json({
             status: 200,
             body: 'Success!'
@@ -60,5 +74,4 @@ export async function GET() {
             body: error
         }
     }
-
 }

@@ -21,6 +21,7 @@
     "pre-commit": "next lint --fix"
   },
   "dependencies": {
+    "@algolia/autocomplete-js": "^1.17.2",
     "@emailjs/browser": "^3.7.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -55,6 +56,8 @@
     "react-hotjar": "^6.3.1",
     "react-icons": "^4.7.1",
     "react-instantsearch": "^7.9.0",
+    "react-instantsearch-core": "^7.10.0",
+    "react-instantsearch-hooks": "^6.47.3",
     "react-lottie": "^1.2.3",
     "react-player": "^2.16.0",
     "react-responsive-masonry": "^2.1.7",
