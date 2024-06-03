@@ -55,8 +55,8 @@ export async function GET() {
     const instruments = await client.fetch(QUERY)
     const newsItems = await client.fetch(NEWS_QUERY)
     const instrumentIndex = agoliaInstance.initIndex('instruments')
-    const newsIndex  = agoliaInstance.initIndex('news')
-        
+    const newsIndex  = agoliaInstance.initIndex('newsPage')
+
     try {
         console.time(`Saving ${instruments.length} instruments and ${newsItems.newsItems.length} news items to index`)
         await instrumentIndex.saveObjects(instruments) 

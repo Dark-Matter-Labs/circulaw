@@ -33,7 +33,7 @@ const PROJECTION = `
 `
 
 const PROJ = `
-newsItems[_type == "newsCard"]{
+  newsItems[_type == "newsCard"]{
     "objectID": _key,
     category,
     newsTitle,
@@ -96,7 +96,6 @@ export async function POST(req) {
 
         return webhook && Response.json({message: 'success!'})
         
-    
             
     } catch (err) {
         let error_response = 
