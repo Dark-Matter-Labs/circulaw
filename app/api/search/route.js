@@ -33,7 +33,7 @@ const PROJECTION = `
 `
 
 const PROJ = `
-  newsItems[_type == "newsCard"]{
+  "newsItems" : newsItems[_type == "newsCard"]{
     "objectID": _key,
     category,
     newsTitle,
