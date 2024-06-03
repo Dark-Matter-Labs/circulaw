@@ -48,7 +48,13 @@ export async function POST(req) {
                 newsPage: {
                     index: agoliaInstance.initIndex('newsPage'),
                     projection: `{
-                        ...,
+                        "newsItems": newsItems[_type == "newsCard] {
+                            newsTitle, 
+                            category,
+                            newsText,
+                            "slug": slug.current,
+                            "content": pt::text(content)
+                        }
                     }`
                 }
             },
