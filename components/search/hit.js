@@ -3,11 +3,11 @@ import Link from 'next/link';
 import Tag from '../tag';
 
 export const Hit = ({ hit }) => {
-  //  console.log(hit);
+  console.log(hit);
   return (
     <article>
       <Link href={`/${hit.transitionAgenda}/${hit.thema}/instrumenten/${hit.slug}`}>
-        <div className='block sm:ml-0 mb-10 sm:mb-8 md:min-w-[760px]'>
+        <div className='block sm:ml-0 md:min-w-[760px]'>
           <div className='flex justify-start items-center -ml-1'>
             {/* Expertise Tag */}
             {hit?.categorie.includes('beleid') && (
@@ -26,7 +26,6 @@ export const Hit = ({ hit }) => {
               <Tag classes='bg-green-500 text-gray-100'>Fiscaal</Tag>
             )}
           </div>
-
           <div className='block mt-2 '>
             <div className=' mb-2'>
               <h3 className='heading-2xl-semibold max-w-[650px] text-gray-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>

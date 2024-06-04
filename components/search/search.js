@@ -1,13 +1,6 @@
 import algoliasearch from 'algoliasearch/lite';
 import 'instantsearch.css/themes/satellite.css';
-import {
-  Hits,
-  InstantSearch,
-  SearchBox,
-  Configure,
-  RefinementList,
-  Pagination,
-} from 'react-instantsearch';
+import { Hits, InstantSearch, SearchBox, Configure, RefinementList } from 'react-instantsearch';
 
 import { Hit } from '@/components/search/hit';
 
@@ -24,7 +17,7 @@ export const Search = () => {
           className=''
           routing={true}
         >
-          <Configure hitsPerPage={10} />
+          <Configure hitsPerPage={5} />
           <div className='bg-green-800 h-[260px] flex items-end justify-center w-full'>
             <div className='global-margin w-full flex items-center justify-center'>
               <div className='w-3/5'>
@@ -49,7 +42,7 @@ export const Search = () => {
                   attribute='categorie'
                   classNames={{
                     root: 'mb-12 min-w-[260px] mr-12',
-                    item: 'mb-2.5',
+                    item: 'mb-2',
                     checkbox:
                       'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                     label: 'flex justify-between',
@@ -61,12 +54,46 @@ export const Search = () => {
                 />
               </div>
               <div className='flex flex-col'>
-                <h4 className='mb-2 heading-xl-semibold'>Categorie</h4>
+                <h4 className='mb-2 heading-xl-semibold'>Thema</h4>
                 <RefinementList
                   attribute='thema'
                   classNames={{
                     root: 'mb-12 min-w-[260px] mr-12',
-                    item: 'mb-2.5',
+                    item: 'mb-2',
+                    checkbox:
+                      'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    label: 'flex justify-between',
+                    labelText: 'p-base flex-grow capitalize',
+                    count:
+                      'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
+                  }}
+                  sortBy={['label:asc']}
+                />
+              </div>
+              <div className='flex flex-col'>
+                <h4 className='mb-2 heading-xl-semibold'>Overheidslaag</h4>
+                <RefinementList
+                  attribute='overheidslaag'
+                  classNames={{
+                    root: 'mb-12 min-w-[260px] mr-12',
+                    item: 'mb-2',
+                    checkbox:
+                      'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    label: 'flex justify-between',
+                    labelText: 'p-base flex-grow capitalize',
+                    count:
+                      'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
+                  }}
+                  sortBy={['label:asc']}
+                />
+              </div>
+              <div className='flex flex-col'>
+                <h4 className='mb-2 heading-xl-semibold'>R Ladder</h4>
+                <RefinementList
+                  attribute='rLadder'
+                  classNames={{
+                    root: 'mb-12 min-w-[260px] mr-12',
+                    item: 'mb-2',
                     checkbox:
                       'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                     label: 'flex justify-between',
@@ -79,9 +106,13 @@ export const Search = () => {
               </div>
             </div>
             <div>
-              <Hits hitComponent={Hit} />
-              <Pagination
-              // Optional props
+              <Hits
+                classNames={{
+                  root: 'border-none mt-12',
+                  list: 'ml-10',
+                  item: 'shadow-none px-0 pb-8 pt-0',
+                }}
+                hitComponent={Hit}
               />
             </div>
           </div>
