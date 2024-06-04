@@ -42,29 +42,51 @@ export const Search = () => {
             </div>
           </div>
           <div className='global-margin flex'>
-          <div className='flex flex-col'>
-            <div className='flex flex-col'>
-              <h3 className='mb-2'>Categorie</h3>
-              <RefinementList attribute='categorie' className='mb-12' sortBy={['label:asc']} />
+            <div className='flex flex-col mt-12'>
+              <div className='flex flex-col'>
+                <h4 className='mb-2 heading-xl-semibold'>Categorie</h4>
+                <RefinementList
+                  attribute='categorie'
+                  classNames={{
+                    root: 'mb-12 min-w-[260px] mr-12',
+                    item: 'mb-2.5',
+                    checkbox:
+                      'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    label: 'flex justify-between',
+                    labelText: 'p-base flex-grow capitalize',
+                    count:
+                      'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
+                  }}
+                  sortBy={['label:asc']}
+                />
+              </div>
+              <div className='flex flex-col'>
+                <h4 className='mb-2 heading-xl-semibold'>Categorie</h4>
+                <RefinementList
+                  attribute='thema'
+                  classNames={{
+                    root: 'mb-12 min-w-[260px] mr-12',
+                    item: 'mb-2.5',
+                    checkbox:
+                      'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    label: 'flex justify-between',
+                    labelText: 'p-base flex-grow capitalize',
+                    count:
+                      'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
+                  }}
+                  sortBy={['label:asc']}
+                />
+              </div>
             </div>
-            <div className='flex flex-col'>
-              <h3 className='mb-2'>Thema</h3>
-              <RefinementList attribute='thema' className='mb-12' sortBy={['label:asc']} />
+            <div>
+              <Hits hitComponent={Hit} />
+              <Pagination
+              // Optional props
+              />
             </div>
           </div>
-          <div>
-          <Hits hitComponent={Hit} />
-          <Pagination
-          // Optional props
-          />
-          </div>
-        
-          </div>
-         
 
           {/* make this w full */}
-
-          
         </InstantSearch>
       </div>
     </>

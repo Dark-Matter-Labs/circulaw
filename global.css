@@ -296,3 +296,10 @@ html {
  height: 20px !important;
  width: 20px !important;
 }
+
+
+
+.ais-RefinementList-item--selected .ais-RefinementList-checkbox {
+  background-image: url('/tick.svg') !important;
+}
+
