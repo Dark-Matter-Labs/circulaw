@@ -289,3 +289,10 @@ html {
   margin-left: 0;
   margin-top: 0;
 }
+
+.ais-SearchBox-form::before {
+ background-image: url("/search_icon.png") !important;
+ z-index: 1 !important;
+ height: 20px !important;
+ width: 20px !important;
+}

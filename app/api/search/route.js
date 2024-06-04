@@ -32,9 +32,6 @@ const PROJECTION = `{
           select(fiscaal == true => "fiscaal")],
         }`
 
-
-
-
 export async function POST(req) {
     try {
         const sanityAgolia = indexer(
@@ -100,6 +97,8 @@ export async function POST(req) {
                 }
             }
         );
+
+
         const body = await req.json()
         //  console.log('body', body)
         // body is the array with the id. for news page this will always return updated as it does 
