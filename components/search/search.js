@@ -11,22 +11,22 @@ const searchClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a0635326
 // create condition here to change indexName
 export const Search = () => {
   const [index, setIndex] = useState('instruments');
-  console.log(Hits)
+
   return (
     <>
       <div className='w-full flex flex-col items center justify-center'>
         <InstantSearch searchClient={searchClient} indexName={index} className='' routing={true}>
           <Configure hitsPerPage={5} />
-          <div className='bg-green-800 h-[260px] flex items-end justify-center w-full'>
+          <div className='bg-green-600 h-[260px] flex items-end justify-center w-full'>
             <div className='global-margin w-full flex items-center justify-center'>
               <div className='w-3/5 flex flex-col'>
                 <SearchBox
                   placeholder='Zoek naar instrumeten'
                   classNames={{
                     root: '',
-                    form: 'relative h-14 rounded-cl bg-green-800',
+                    form: 'relative h-14 rounded-cl bg-green-600',
                     input:
-                      'block w-full pl-16 pr-3 py-2 h-14 border border-green-800 bg-white bg-opacity-50 placeholder-green-50 text-green-50 text-[18px] font-semibold focus:outline-none focus:border-green-300 focus:ring-green-300 rounded-cl focus:ring-1 fill-red-400',
+                      'block w-full pl-16 pr-3 py-2 h-14 border border-green-600 bg-white bg-opacity-50 placeholder-green-50 text-green-50 text-[18px] font-semibold focus:outline-none focus:border-green-300 focus:ring-green-300 rounded-cl focus:ring-1 fill-red-400',
                     resetIcon: 'fill-green-900',
                   }}
                 />

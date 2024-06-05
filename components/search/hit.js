@@ -32,7 +32,9 @@ export const Hit = ({ hit }) => {
               </h3>
             </div>
             <div className='block  newlineDisplay p-base text-gray-800 mt-2 pb-2'>
-              <p className='p-base max-w-[650px]'>{hit?.subtitel}</p>
+              <p className='p-base max-w-[650px]'>
+              <Highlight attribute='subtitel' hit={hit} /></p>
+            
             </div>
             {/* ADD METADATA */}
             <div className='hidden sm:block'>
