@@ -93,8 +93,7 @@ export async function POST(req) {
 
 
         const body = await req.json()
-        //  console.log('body', body)
-        // body is the array with the id. for news page this will always return updated as it does 
+        
         const webhook = await sanityAgolia.webhookSync(client, body)
 
         return webhook.then(() => NextResponse.json({message: 'success!'})) 

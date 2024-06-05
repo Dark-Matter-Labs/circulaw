@@ -3,7 +3,7 @@ import 'instantsearch.css/themes/satellite.css';
 import { Hits, InstantSearch, SearchBox, Configure, RefinementList } from 'react-instantsearch';
 
 import { Hit } from '@/components/search/hit';
-import NewsHit from './newsHit';
+import NewsHit from './about-hit';
 import { useState } from 'react';
 
 const searchClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a06353266a');
@@ -40,9 +40,9 @@ export const Search = () => {
                     Instrumenten
                   </button>
                   <button
-                    onClick={() => setIndex('newsPage')}
+                    onClick={() => setIndex('aboutPage')}
                     className={`${
-                      index === 'newsPage' ? 'opacity-100' : 'opacity-50'
+                      index === 'aboutPage' ? 'opacity-100' : 'opacity-50'
                     } h-12 w-32 bg-white rounded-cl flex items-center justify-center`}
                   >
                     Over CircuLaw
