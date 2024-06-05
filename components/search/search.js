@@ -1,6 +1,15 @@
 import algoliasearch from 'algoliasearch/lite';
 import 'instantsearch.css/themes/satellite.css';
-import { Hits, InstantSearch, SearchBox, Configure, RefinementList, Stats, useInstantSearch, ClearRefinements } from 'react-instantsearch';
+import {
+  Hits,
+  InstantSearch,
+  SearchBox,
+  Configure,
+  RefinementList,
+  Stats,
+  useInstantSearch,
+  ClearRefinements,
+} from 'react-instantsearch';
 
 import { Hit } from '@/components/search/hit';
 import NewsHit from './about-hit';
@@ -57,15 +66,17 @@ export const Search = () => {
           <div className='global-margin flex'>
             {index === 'instruments' && (
               <div className='flex flex-col mt-12'>
-
                 <div className='flex flex-col'>
-                <ClearRefinements classNames={{
-                  root: 'mb-6 p-base',
-                  button: 'p-base border-2 border-green-600 bg-none hover:bg-green-200 text-green-600 active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white rounded-full',
-                }}/>
+                  <ClearRefinements
+                    classNames={{
+                      root: 'mb-6 p-base',
+                      button:
+                        'p-base border-2 border-green-600 bg-none hover:bg-green-200 text-green-600 active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white rounded-full',
+                    }}
+                  />
                   <RefinementList
                     attribute='categorie'
-                    title="Categorie"
+                    title='Categorie'
                     classNames={{
                       root: 'mb-12 min-w-[260px] mr-12',
                       item: 'pt-2',
@@ -134,15 +145,16 @@ export const Search = () => {
               </div>
             )}
             <div>
-            <NoResultsBoundary fallback={<NoResults />}>
-              <Hits
-                classNames={{
-                  root: 'border-none mt-12',
-                  list: 'ml-10',
-                  item: 'shadow-none px-0 pb-8 pt-0',
-                }}
-                hitComponent={index === 'instruments' ? Hit : NewsHit}
-              /></NoResultsBoundary>
+              <NoResultsBoundary fallback={<NoResults />}>
+                <Hits
+                  classNames={{
+                    root: 'border-none mt-12',
+                    list: 'ml-10',
+                    item: 'shadow-none px-0 pb-8 pt-0',
+                  }}
+                  hitComponent={index === 'instruments' ? Hit : NewsHit}
+                />
+              </NoResultsBoundary>
             </div>
           </div>
 
@@ -152,7 +164,6 @@ export const Search = () => {
     </>
   );
 };
-
 
 function NoResultsBoundary({ children, fallback }) {
   const { results } = useInstantSearch();

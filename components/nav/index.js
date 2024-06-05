@@ -780,10 +780,16 @@ export default function Nav(props) {
                 <DesktopSimpleButton name='Nieuws' url='/nieuws' />
                 <DesktopSimpleButton name='Vraag & antwoord' url='/vraag-en-antwoord' />
                 <DesktopSimpleButton name='Contact' url='/contact' />
-                <Link href ='/search' >
-                <div className={`${router.pathname === '/' ? 'bg-green-50 text-green-600' : 'bg-green-600 text-green-50'} h-[26px] w-9 rounded-cl ml-6 flex items-center justify-center`}>
-                    <SearchIcon className=' h-5 w-5' />
-                </div>
+                <Link href='/search'>
+                  <div
+                    className={`${
+                      router.pathname === '/'
+                        ? 'bg-green-50 text-green-600'
+                        : 'bg-green-600 text-green-50'
+                    } h-[26px] w-9 rounded-cl ml-6 flex items-center justify-center`}
+                  >
+                    <SearchIcon className='h-5 w-5' />
+                  </div>
                 </Link>
               </div>
             </div>
