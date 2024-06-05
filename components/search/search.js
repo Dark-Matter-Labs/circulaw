@@ -1,6 +1,6 @@
 import algoliasearch from 'algoliasearch/lite';
 import 'instantsearch.css/themes/satellite.css';
-import { Hits, InstantSearch, SearchBox, Configure, RefinementList } from 'react-instantsearch';
+import { Hits, InstantSearch, SearchBox, Configure, RefinementList, Stats, useInstantSearch } from 'react-instantsearch';
 
 import { Hit } from '@/components/search/hit';
 import NewsHit from './about-hit';
@@ -11,7 +11,7 @@ const searchClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a0635326
 // create condition here to change indexName
 export const Search = () => {
   const [index, setIndex] = useState('instruments');
-
+  console.log(Hits)
   return (
     <>
       <div className='w-full flex flex-col items center justify-center'>
@@ -51,16 +51,21 @@ export const Search = () => {
               </div>
             </div>
           </div>
+          <div className='global-margin'>
+            <Stats />
+
+          </div>
           <div className='global-margin flex'>
             {index === 'instruments' && (
               <div className='flex flex-col mt-12'>
                 <div className='flex flex-col'>
-                  <h4 className='mb-2 heading-xl-semibold'>Categorie</h4>
                   <RefinementList
                     attribute='categorie'
+                    title="Categorie"
                     classNames={{
                       root: 'mb-12 min-w-[260px] mr-12',
-                      item: 'mb-2',
+                      item: 'pt-2',
+                      list: 'empty:hidden before:content-["Categorie"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
                       checkbox:
                         'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                       label: 'flex justify-between',
@@ -72,12 +77,12 @@ export const Search = () => {
                   />
                 </div>
                 <div className='flex flex-col'>
-                  <h4 className='mb-2 heading-xl-semibold'>Thema</h4>
                   <RefinementList
                     attribute='thema'
                     classNames={{
                       root: 'mb-12 min-w-[260px] mr-12',
-                      item: 'mb-2',
+                      item: 'pt-2',
+                      list: 'empty:hidden before:content-["Thema"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
                       checkbox:
                         'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                       label: 'flex justify-between',
@@ -89,12 +94,12 @@ export const Search = () => {
                   />
                 </div>
                 <div className='flex flex-col'>
-                  <h4 className='mb-2 heading-xl-semibold'>Overheidslaag</h4>
                   <RefinementList
                     attribute='overheidslaag'
                     classNames={{
                       root: 'mb-12 min-w-[260px] mr-12',
-                      item: 'mb-2',
+                      item: 'pt-2',
+                      list: 'empty:hidden before:content-["Overheidslaag"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
                       checkbox:
                         'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                       label: 'flex justify-between',
@@ -106,12 +111,12 @@ export const Search = () => {
                   />
                 </div>
                 <div className='flex flex-col'>
-                  <h4 className='mb-2 heading-xl-semibold'>R Ladder</h4>
                   <RefinementList
                     attribute='rLadder'
                     classNames={{
-                      root: 'mb-12 min-w-[260px] mr-12',
-                      item: 'mb-2',
+                      root: 'mb-12 min-w-[260px] mr-12 ',
+                      list: 'empty:hidden before:content-["R_Ladder"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                      item: 'pt-2',
                       checkbox:
                         'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                       label: 'flex justify-between',
@@ -125,6 +130,7 @@ export const Search = () => {
               </div>
             )}
             <div>
+            <NoResultsBoundary fallback={<NoResults />}>
               <Hits
                 classNames={{
                   root: 'border-none mt-12',
@@ -132,7 +138,7 @@ export const Search = () => {
                   item: 'shadow-none px-0 pb-8 pt-0',
                 }}
                 hitComponent={index === 'instruments' ? Hit : NewsHit}
-              />
+              /></NoResultsBoundary>
             </div>
           </div>
 
@@ -142,3 +148,33 @@ export const Search = () => {
     </>
   );
 };
+
+
+function NoResultsBoundary({ children, fallback }) {
+  const { results } = useInstantSearch();
+
+  // The `__isArtificial` flag makes sure not to display the No Results message
+  // when no hits have been returned.
+  if (!results.__isArtificial && results.nbHits === 0) {
+    return (
+      <>
+        {fallback}
+        <div hidden>{children}</div>
+      </>
+    );
+  }
+
+  return children;
+}
+
+function NoResults() {
+  const { indexUiState } = useInstantSearch();
+
+  return (
+    <div>
+      <p>
+        No results for <q>{indexUiState.query}</q>.
+      </p>
+    </div>
+  );
+}

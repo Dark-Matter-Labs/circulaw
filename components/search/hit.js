@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Tag from '../tag';
 
 export const Hit = ({ hit }) => {
-  console.log(hit);
   return (
     <article>
       <Link href={`/${hit.transitionAgenda}/${hit.thema}/instrumenten/${hit.slug}`}>
