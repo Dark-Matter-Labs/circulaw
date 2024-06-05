@@ -10,19 +10,19 @@ export const Hit = ({ hit }) => {
         <div className='block sm:ml-0 md:min-w-[760px]'>
           <div className='flex justify-start items-center -ml-1'>
             {/* Expertise Tag */}
-            {hit?.categorie.includes('beleid') && (
+            {hit?.categorie?.includes('beleid') && (
               <Tag classes='bg-green-500 text-gray-100 mr-2'>Beleid</Tag>
             )}
-            {hit?.categorie.includes('inkoop') && (
+            {hit?.categorie?.includes('inkoop') && (
               <Tag classes='bg-green-500 text-gray-100 mr-2'>Inkoop</Tag>
             )}
-            {hit?.categorie.includes('grondpositie') && (
+            {hit?.categorie?.includes('grondpositie') && (
               <Tag classes='bg-green-500 text-gray-100 mr-2'>Grondpositie</Tag>
             )}
-            {hit?.categorie.includes('subsidie') && (
+            {hit?.categorie?.includes('subsidie') && (
               <Tag classes='bg-green-500 text-gray-100 mr-2'>Subsidie</Tag>
             )}
-            {hit?.categorie.includes('fiscaal') && (
+            {hit?.categorie?.includes('fiscaal') && (
               <Tag classes='bg-green-500 text-gray-100'>Fiscaal</Tag>
             )}
           </div>
@@ -33,7 +33,7 @@ export const Hit = ({ hit }) => {
               </h3>
             </div>
             <div className='block  newlineDisplay p-base text-gray-800 mt-2 pb-2'>
-              <p className='p-base max-w-[650px]'>{hit.subtitel}</p>
+              <p className='p-base max-w-[650px]'>{hit?.subtitel}</p>
             </div>
             {/* ADD METADATA */}
             <div className='hidden sm:block'>

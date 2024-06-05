@@ -38,32 +38,31 @@ const QUERY = `
   }
 `
 
-const NEWS_QUERY = `
-*[_type == "newsPage"][0] {
-    newsItems[_type == "newsCard"]{
-      "parentID": ^._id,
-      "objectID": _key,
-      category,
-      newsTitle,
-      newsText,
-      "content": pt::text(content)
-    }
+
+const ABOUT_QUERY = `
+  *[_type == "aboutPage"] {
+    "objectID": _id,
+    pageTitle, 
+    "slug": slug.current,
+    "content": array::join(string::split((pt::text(aboutPageContent)), "")[0..9500], "")
   }
 `
 
 export async function GET() {
     // fetch instruments 
     const instruments = await client.fetch(QUERY)
-    const newsItems = await client.fetch(NEWS_QUERY)
+    const aboutPage = await client.fetch(ABOUT_QUERY)
     const instrumentIndex = agoliaInstance.initIndex('instruments')
-    const newsIndex  = agoliaInstance.initIndex('newsPage')
+    // const newsIndex  = agoliaInstance.initIndex('newsPage')
+    const aboutIndex = agoliaInstance.initIndex('aboutPage')
 
     try {
-        console.time(`Saving ${instruments.length} instruments and ${newsItems.newsItems.length} news items to index`)
+        console.time(`Saving ${instruments.length} instruments and ${aboutPage.length} news items to index`)
         await instrumentIndex.saveObjects(instruments) 
-        await newsIndex.saveObjects(newsItems.newsItems)
+        // await newsIndex.saveObjects(newsItems.newsItems)
+        await aboutIndex.saveObjects(aboutPage)
           // here it is newsItems.newsItems to structure the data as a array and not an object
-        console.timeEnd(`Saving ${instruments.length} instruments and ${newsItems.newsItems.length} news items to index`)
+        console.timeEnd(`Saving ${instruments.length} instruments and ${aboutPage.length} news items to index`)
         return Response.json({
             status: 200,
             body: 'Success!'

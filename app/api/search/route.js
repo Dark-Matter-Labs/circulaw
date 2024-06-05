@@ -32,6 +32,8 @@ const PROJECTION = `{
           select(fiscaal == true => "fiscaal")],
         }`
 
+
+
 export async function POST(req) {
     try {
         const sanityAgolia = indexer(
@@ -41,25 +43,20 @@ export async function POST(req) {
                     projection: PROJECTION,
 
                 }, 
-                newsPage: {
-                    index: agoliaInstance.initIndex('newsPage'),
-                    projection: `{
-                        "newsItems": newsItems[_type == "newsCard"] {
-                            "parentID": ^._id,
-                            "objectID": _key,
-                            newsTitle, 
-                            category,
-                            newsText,
+                aboutPage: {
+                    index: agoliaInstance.initIndex('aboutPage'),
+                    projection: `
+                        {
+                            "objectID": _id,
+                            pageTitle, 
                             "slug": slug.current,
-                            "content": pt::text(content)
-                        }
-                    }`
+                            "content": array::join(string::split((pt::text(aboutPageContent)), "")[0..9500], "")
+                          }
+                    `
                 }
             },
 
             (document) => {
-               console.log('id', document._id)
-               console.log('document', document.newsItems)
                 switch (document._type) {
                     case 'instrument': 
                         return {
@@ -80,16 +77,12 @@ export async function POST(req) {
                             rechtsgebied: document.rechtsgebied,
                             categorie: document.categorie,
                         };
-                    case 'newsPage': {
-                        // break up documents and send them back individually 
-                        // how can i get the doc key that has changed in order to filter here... 
-
-                        // const documents = document.newsItems
-                        // console.log('test', documents)
+                    case 'aboutPage': {
                         return {
-                            parentID: document.newsItems.parentID,
-                            objectID: document.newsItems.objectID,
-                            newsTitle: document.newsItems.newsTitle
+                            objectID: document.objectID,
+                            pageTitle: document.pageTitle,
+                            slug: document.slug,
+                            content: document.content,
                         }
                     }
                     default: 
