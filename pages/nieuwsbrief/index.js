@@ -70,7 +70,17 @@ export default function Newsletter() {
             <h1 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-600 pt-10'>
               Nieuwsbrief
             </h1>
+
             <div className='mt-8 max-w-3xl mb-20'>
+              <div className='sm:col-span-2 pb-8'>
+                <div className=''>
+                  <p className='text-gray-800'>
+                    Fijn dat je geïnteresseerd bent in CircuLaw-nieuws. Onze nieuwsbrief sturen we
+                    alleen als we echt wat te melden hebben. Je hoeft dus niet bang te zijn voor een
+                    overdaad aan berichten van ons.
+                  </p>
+                </div>
+              </div>
               <form
                 acceptCharset='UTF-8'
                 method='POST'
@@ -115,18 +125,6 @@ export default function Newsletter() {
                     />
                   </div>
                 </div>
-
-                <div className='mt-1 flex items-baseline'>
-                  <input type='hidden' name='subscribe' value='yes' />
-                  <input
-                    type='checkbox'
-                    name='subscribe'
-                    value='yes'
-                    checked
-                    onChange={handleChange()}
-                  />
-                  <label className='block text-gray-800 pl-2'>Abonneren op de nieuwsbrief</label>
-                </div>
                 <div className='sm:col-span-2'>
                   <label htmlFor='company' className='block  text-gray-800'>
                     Voor welke organisatie werk je?
@@ -163,9 +161,9 @@ export default function Newsletter() {
                 <div className='sm:col-span-2'>
                   <div className=''>
                     <p className='text-gray-500'>
-                      Door verzenden geef je akkoord dat we je mogen benaderen als we meer vragen
-                      hebben of je op de hoogte willen houden van je vraag of opmerking. Je gegevens
-                      zullen nooit gebruikt worden voor andere doeleinden. Lees onze{' '}
+                      We slaan je persoonsgegevens op en gebruiken deze alleen voor het toezenden
+                      van nieuwsbrieven. Wil je geen nieuwsbrieven meer ontvangen? Onder aan iedere
+                      nieuwsbrief vind je de mogelijkheid je af te melden. Zie verder onze{' '}
                       <Link href='/privacy-policy' className='link-interaction'>
                         <span className='text-green-500 hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                           privacy verklaring.
@@ -193,7 +191,7 @@ export default function Newsletter() {
           <>
             <h1 className='mobile sm:desktop text-green-600 pt-10'>Bedankt!</h1>
             <p className=' p-lg py-10 max-w-2xl text-gray-800'>
-              Dank voor je bericht! Je hoort van ons.
+              Bedankt voor je aanmelding voor onze nieuwsbrief!
             </p>
             <div className='sm:col-span-2 pb-20'>
               <Link href='/'>
