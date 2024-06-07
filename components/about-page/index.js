@@ -3,6 +3,8 @@ import AboutPageNav from './about-page-nav';
 import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
+import Image from 'next/image';
+
 
 export default function AboutPageComponent({ data }) {
   return (
@@ -31,6 +33,15 @@ export default function AboutPageComponent({ data }) {
                 components={portableTextComponents}
               />
             </div>
+            {data?.aboutPage?.slug.current === 'Wetsanalyse-vanuit-circulaire-blik' &&
+            <div>
+                <Image 
+                  src='/method.png'
+                  alt= 'image of methodology'
+                  width={768}
+                  height={1806}
+                />
+            </div>}
           </div>
           <div className='hidden lg:block mt-3 lg:ml-12 lg:mb-20 lg:mt-32 col-span-1'>
             <AboutPageNav
