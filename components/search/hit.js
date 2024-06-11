@@ -5,7 +5,7 @@ import Tag from '../tag';
 export const Hit = ({ hit }) => {
   return (
     <article>
-      <Link href={`/${hit.transitionAgenda.toLowerCase()}/${hit.thema.toLowerCase()}/instrumenten/${hit.slug}`}>
+      <Link href={`/${hit?.transitionAgenda?.toLowerCase()}/${hit?.thema?.toLowerCase()}/instrumenten/${hit.slug}`}>
         <div className='block sm:ml-0 md:min-w-[760px]'>
           <div className='flex justify-start items-center -ml-1'>
             <Tag classes='bg-blue-400 text-black mr-2'>{hit.thema}</Tag>
