@@ -169,8 +169,8 @@ export default function Footer(props) {
                     <div className='grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-8'>
                       <div className='sm:hidden block border-b border-gray-100 pb-4'>
                         <ActionPanel
-                          title='Schrijf je in op de nieuwsbrief'
-                          paragraph='Wil je op de hoogte blijven van het laatste nieuws binnen CircuLaw. Meld je dan snel aan!'
+                          title='Schrijf je in voor onze CircuLaw Nieuwsbrief'
+                          paragraph='Zo ben je altijd op de hoogte van het laatste CircuLaw-nieuws. '
                           buttonText='Aanmelden'
                           buttonLink='/nieuwsbrief'
                         />
@@ -273,8 +273,8 @@ export default function Footer(props) {
                       </div>
                       <div className='hidden sm:block'>
                         <ActionPanel
-                          title='Schrijf je in op de nieuwsbrief'
-                          paragraph='Wil je op de hoogte blijven van het laatste nieuws binnen CircuLaw. Meld je dan snel aan!'
+                          title='Schrijf je in voor onze CircuLaw Nieuwsbrief'
+                          paragraph='Zo ben je altijd op de hoogte van het laatste CircuLaw-nieuws. '
                           buttonText='Aanmelden'
                           buttonLink='/nieuwsbrief'
                         />
