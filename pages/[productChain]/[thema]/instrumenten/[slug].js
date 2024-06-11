@@ -52,6 +52,12 @@ export async function getStaticProps({ params, preview = false }) {
     return { props: { preview, data: { slug } } };
   }
   const instrument = await client.fetch(instrumentQuery, slug);
+
+  if (!instrument) {
+    return {
+        notFound: true
+    };
+}
   return {
     props: { preview, data: { instrument, slug } },
     revalidate: 1,

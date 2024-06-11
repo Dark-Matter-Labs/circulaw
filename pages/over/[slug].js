@@ -45,6 +45,12 @@ export async function getStaticProps({ params, preview = false }) {
   }
   const aboutPage = await client.fetch(aboutPageQuery, slug);
   const aboutPageSlugs = await client.fetch(siteSettingsQuerys.overCirulaw);
+
+  if (!aboutPage) {
+    return {
+        notFound: true
+    };
+}
   return {
     props: { preview, data: { aboutPage, slug, aboutPageSlugs } },
     revalidate: 1,

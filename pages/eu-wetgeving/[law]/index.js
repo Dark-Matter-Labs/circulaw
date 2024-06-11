@@ -157,6 +157,12 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const law = { law: params?.law ?? '' };
   const lawData = await client.fetch(lawQuery, law);
+
+  if (!lawData) {
+    return {
+        notFound: true
+    };
+}
   return {
     props: { lawData },
     revalidate: 1,

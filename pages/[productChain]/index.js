@@ -77,7 +77,6 @@ export async function getStaticProps({ params }) {
         notFound: true
     };
 }
-console.log(productChainData)
   return {
     props: { productChainData, instrumentCount, themaCards },
     revalidate: 1,

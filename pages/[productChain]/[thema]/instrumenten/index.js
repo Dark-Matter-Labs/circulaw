@@ -59,5 +59,11 @@ export async function getStaticProps({ params }) {
   const instruments = await client.fetch(instrumentListPageFunction(), thema);
   const themaData = await client.fetch(themaInfo, thema);
 
+  if (!themaData) {
+    return {
+        notFound: true
+    };
+}
+
   return { props: { numberOfInstruments, instruments, themaData }, revalidate: 1 };
 }
