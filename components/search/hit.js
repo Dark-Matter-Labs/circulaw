@@ -8,6 +8,7 @@ export const Hit = ({ hit }) => {
       <Link href={`/${hit.transitionAgenda}/${hit.thema}/instrumenten/${hit.slug}`}>
         <div className='block sm:ml-0 md:min-w-[760px]'>
           <div className='flex justify-start items-center -ml-1'>
+            <Tag classes='bg-blue-400 text-black mr-2'>{hit.thema}</Tag>
             {/* Expertise Tag */}
             {hit?.categorie?.includes('beleid') && (
               <Tag classes='bg-green-500 text-gray-100 mr-2'>Beleid</Tag>
