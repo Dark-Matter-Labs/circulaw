@@ -61,9 +61,9 @@ export async function getStaticProps({ params }) {
 
   if (!data) {
     return {
-        notFound: true
+      notFound: true,
     };
-}
+  }
   return {
     props: {
       data: data.newsItems[0],

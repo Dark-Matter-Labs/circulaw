@@ -132,9 +132,9 @@ export async function getStaticProps({ params }) {
 
   if (!themaData) {
     return {
-        notFound: true
+      notFound: true,
     };
-}
+  }
 
   return {
     props: {

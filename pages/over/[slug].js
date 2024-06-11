@@ -48,9 +48,9 @@ export async function getStaticProps({ params, preview = false }) {
 
   if (!aboutPage) {
     return {
-        notFound: true
+      notFound: true,
     };
-}
+  }
   return {
     props: { preview, data: { aboutPage, slug, aboutPageSlugs } },
     revalidate: 1,

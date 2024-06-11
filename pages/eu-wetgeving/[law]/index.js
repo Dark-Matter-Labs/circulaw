@@ -160,9 +160,9 @@ export async function getStaticProps({ params }) {
 
   if (!lawData) {
     return {
-        notFound: true
+      notFound: true,
     };
-}
+  }
   return {
     props: { lawData },
     revalidate: 1,

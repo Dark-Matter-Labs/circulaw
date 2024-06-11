@@ -55,9 +55,9 @@ export async function getStaticProps({ params, preview = false }) {
 
   if (!instrument) {
     return {
-        notFound: true
+      notFound: true,
     };
-}
+  }
   return {
     props: { preview, data: { instrument, slug } },
     revalidate: 1,

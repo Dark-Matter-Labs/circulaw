@@ -74,9 +74,9 @@ export async function getStaticProps({ params }) {
 
   if (!productChainData) {
     return {
-        notFound: true
+      notFound: true,
     };
-}
+  }
   return {
     props: { productChainData, instrumentCount, themaCards },
     revalidate: 1,
@@ -85,7 +85,6 @@ export async function getStaticProps({ params }) {
 
 export async function generateMetadata({ params }) {
   // read route params
-  console.log('yo');
   console.log(params);
 
   return {

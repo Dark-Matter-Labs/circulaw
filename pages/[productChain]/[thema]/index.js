@@ -70,8 +70,6 @@ export async function getStaticPaths() {
   };
 }
 
-
-
 export async function getStaticProps({ params, preview = false }) {
   const thema = { thema: params?.thema ?? '' };
   if (preview) {
@@ -82,9 +80,9 @@ export async function getStaticProps({ params, preview = false }) {
 
   if (!themaData) {
     return {
-        notFound: true
+      notFound: true,
     };
-}
+  }
 
   return { props: { data: { themaData, thema } }, revalidate: 1 };
 }
