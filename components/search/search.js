@@ -9,6 +9,7 @@ import {
   Stats,
   useInstantSearch,
   ClearRefinements,
+  Pagination
 } from 'react-instantsearch';
 
 import { Hit } from '@/components/search/hit';
@@ -25,7 +26,7 @@ export const Search = () => {
     <>
       <div className='w-full flex flex-col items center justify-center'>
         <InstantSearch searchClient={searchClient} indexName={index} className='' routing={true}>
-          <Configure hitsPerPage={5} />
+          <Configure hitsPerPage={10} />
           <div className='bg-green-600 h-[260px] flex items-end justify-center w-full'>
             <div className='global-margin w-full flex items-center justify-center'>
               <div className='w-3/5 flex flex-col'>
@@ -154,7 +155,9 @@ export const Search = () => {
                   }}
                   hitComponent={index === 'instruments' ? Hit : NewsHit}
                 />
+                <Pagination />
               </NoResultsBoundary>
+              
             </div>
           </div>
 
