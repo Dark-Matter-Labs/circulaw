@@ -35,7 +35,7 @@ export default function Index({
       footerText={footerText}
       pageUrl={router.asPath}
     >
-      <div className='bg-gray-100 sm:pb-12 -z-50' name='thema'>
+      <div className='bg-gray-100 py-12 sm:pb-24 sm:pt-18 -z-50' name='thema'>
         <div className='global-margin -z-20'>
           <h2 className='heading-2xl-semibold sm:heading-5xl-semibold pt-8 text-green-600 border-gray-600 border-b pb-6'>
             Ontdek direct onze instrumenten
@@ -64,7 +64,7 @@ export default function Index({
         </div>
       </div>
 
-      <div className='bg-gray-100 pt-12 sm:pt-0 pb-0 sm:pb-12'>
+      <div className='bg-gray-100 sm:pt-0 pb-12 sm:pb-24'>
         <div className='global-margin'>
           <HomePageEUSection euData={euData} />
         </div>
@@ -72,7 +72,7 @@ export default function Index({
 
       <div className='bg-gray-100 pt-12 sm:pt-0 pb-12'>
         <div className='global-margin'>
-          <div className='pb-12 flex flex-col'>
+          <div className='pb-12 sm:pb-24 flex flex-col'>
             <h3 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 w-full border-b pb-6 border-green-800'>
               Uitgelichte nieuwsberichten
             </h3>
