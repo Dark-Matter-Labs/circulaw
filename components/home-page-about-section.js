@@ -6,9 +6,9 @@ import Link from 'next/link';
 
 export default function HomePageAboutSection({ aboutSection }) {
   return (
-      <div className='flex flex-col sm:flex-row items-center justify-between pb-12 sm:pb-24'>
-        <div className='sm:w-1/2 flex flex-col sm:mr-6'>
-        <Link href={`/over/${encodeURIComponent(aboutSection?.aboutSectionSlug)}`} name='about'>  
+    <div className='flex flex-col sm:flex-row items-center justify-between pb-12 sm:pb-24'>
+      <div className='sm:w-1/2 flex flex-col sm:mr-6'>
+        <Link href={`/over/${encodeURIComponent(aboutSection?.aboutSectionSlug)}`} name='about'>
           <div className='border-b border-green-800'>
             <h2 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pb-6'>
               {aboutSection?.aboutSectionTitle}
@@ -29,14 +29,23 @@ export default function HomePageAboutSection({ aboutSection }) {
               </CustomButton>
             </span>
           </div>
-          </Link>
-        </div>
-        <div className='w-full sm:w-1/2 sm:flex justify-center h-400px mt-6 sm:mt-0'>
+        </Link>
+      </div>
+      <div className='w-full sm:w-1/2 sm:flex justify-center h-400px mt-6 sm:mt-0'>
         <div className=' w-full relative overflow-hidden pt-[56%]'>
-        <iframe className='absolute bottom-0 left-0 right-0 top-0 h-full w-full' width="560" height="315" src="https://www.youtube.com/embed/9PTTCyLhzLo?si=uqv63SA7T44lQLnO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe
+            className='absolute bottom-0 left-0 right-0 top-0 h-full w-full'
+            width='560'
+            height='315'
+            src='https://www.youtube.com/embed/9PTTCyLhzLo?si=uqv63SA7T44lQLnO'
+            title='YouTube video player'
+            frameborder='0'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+            referrerpolicy='strict-origin-when-cross-origin'
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
-      </div>
-   
+    </div>
   );
 }
