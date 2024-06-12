@@ -18,8 +18,6 @@ import { useState } from 'react';
 
 const searchClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a06353266a');
 
-
-
 // create condition here to change indexName
 export const Search = () => {
   const [index, setIndex] = useState('instruments');
@@ -32,8 +30,10 @@ export const Search = () => {
           <div className='bg-green-600 h-[360px] flex items-end justify-center w-full'>
             <div className='global-margin w-full flex items-center justify-center'>
               <div className='flex flex-col items-center justify-center gap-y-6'>
-              <h1 className='text-green-50 heading-2xl-semibold sm:heading-5xl-semibold'>Zoek binnen de website</h1>
-              <div className='w-full flex flex-row justify-center'>
+                <h1 className='text-green-50 heading-2xl-semibold sm:heading-5xl-semibold'>
+                  Zoek binnen de website
+                </h1>
+                <div className='w-full flex flex-row justify-center'>
                   <button
                     onClick={() => setIndex('instruments')}
                     className={`${
@@ -52,16 +52,20 @@ export const Search = () => {
                   </button>
                 </div>
                 <div className='w-full'>
-                <SearchBox
-                  placeholder={index === 'instruments' ? 'Zoek naar instrumenten...' : 'Zoek naar Over CircuLaw...'}
-                  classNames={{
-                    root: 'mb-10 h-14',
-                    form: 'bg-green-600 flex',
-                    input:
-                      'h-14 rounded-full max-w-none focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] caret-white block pl-12 pr-3 py-2 border border-green-600 bg-white bg-opacity-50 placeholder-green-50 text-green-50 text-[18px] font-semibold focus:outline-none focus:border-green-50 focus:ring-green-50 focus:ring-1',
-                    resetIcon: 'fill-green-900',
-                  }}
-                />
+                  <SearchBox
+                    placeholder={
+                      index === 'instruments'
+                        ? 'Zoek naar instrumenten...'
+                        : 'Zoek naar Over CircuLaw...'
+                    }
+                    classNames={{
+                      root: 'mb-10 h-14',
+                      form: 'bg-green-600 flex',
+                      input:
+                        'h-14 rounded-full max-w-none focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] caret-white block pl-12 pr-3 py-2 border border-green-600 bg-white bg-opacity-50 placeholder-green-50 text-green-50 text-[18px] font-semibold focus:outline-none focus:border-green-50 focus:ring-green-50 focus:ring-1',
+                      resetIcon: 'fill-green-900',
+                    }}
+                  />
                 </div>
               </div>
             </div>
@@ -162,7 +166,6 @@ export const Search = () => {
                 />
                 <Pagination />
               </NoResultsBoundary>
-              
             </div>
           </div>
 
@@ -173,7 +176,7 @@ export const Search = () => {
   );
 };
 
-// move these into components and export them. 
+// move these into components and export them.
 
 function NoResultsBoundary({ children, fallback }) {
   const { results } = useInstantSearch();
