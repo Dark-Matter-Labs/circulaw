@@ -56,6 +56,12 @@ export async function getStaticProps({ params }) {
   const expertiseData = await client.fetch(categorieQuery(), thema);
   const themaData = await client.fetch(themaInfo, thema);
 
+  if (!themaData) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       expertiseData,

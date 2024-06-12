@@ -286,13 +286,14 @@ export default {
       type: 'array',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
+
           return parent?.beleid === true &&
             typeof currentValue === 'undefined' &&
-            parent.transitionAgenda == 'bouw'
+            parent?.transitionAgenda?._ref === '4759ffe9-96e8-4963-90a3-047fd9910e45'
             ? 'A value is required.'
             : true;
         }),
-      hidden: ({ document }) => document.beleid === false || document.transitionAgenda !== 'bouw',
+      hidden: ({ document }) => document.beleid === false || document?.transitionAgenda?._ref !== '4759ffe9-96e8-4963-90a3-047fd9910e45',
       of: [{ type: 'string' }],
       options: {
         list: [
@@ -359,12 +360,12 @@ export default {
         Rule.custom((currentValue, { parent }) => {
           return parent?.grondpositie === true &&
             typeof currentValue === 'undefined' &&
-            parent?.transitionAgenda === 'bouw'
+            parent?.transitionAgenda?._ref === '4759ffe9-96e8-4963-90a3-047fd9910e45'
             ? 'A value is required.'
             : true;
         }),
       hidden: ({ document }) =>
-        document.grondpositie === false || document.transitionAgenda !== 'bouw',
+        document.grondpositie === false || document?.transitionAgenda?._ref !== '4759ffe9-96e8-4963-90a3-047fd9910e45',
       of: [{ type: 'string' }],
       options: {
         list: [

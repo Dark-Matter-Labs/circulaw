@@ -58,6 +58,12 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const slug = { slug: params?.slug.toString() };
   const data = await client.fetch(newsDetailPageQuery, slug);
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: {
       data: data.newsItems[0],

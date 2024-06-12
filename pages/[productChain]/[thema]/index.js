@@ -78,5 +78,11 @@ export async function getStaticProps({ params, preview = false }) {
 
   const themaData = await client.fetch(themaQuery, thema);
 
+  if (!themaData) {
+    return {
+      notFound: true,
+    };
+  }
+
   return { props: { data: { themaData, thema } }, revalidate: 1 };
 }
