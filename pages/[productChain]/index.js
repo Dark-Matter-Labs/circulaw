@@ -62,7 +62,7 @@ export async function getStaticPaths() {
   const productChains = await client.fetch(pathsQuery);
   return {
     paths: productChains.map((productChain) => ({ params: { productChain } })),
-    fallback: true,
+    fallback: false,
   };
 }
 
@@ -71,6 +71,12 @@ export async function getStaticProps({ params }) {
   const productChainData = await client.fetch(query, productChain);
   const instrumentCount = await client.fetch(number, productChain);
   const themaCards = await client.fetch(themaCardQuery, productChain);
+
+  if (!productChainData) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: { productChainData, instrumentCount, themaCards },
     revalidate: 1,
@@ -79,7 +85,6 @@ export async function getStaticProps({ params }) {
 
 export async function generateMetadata({ params }) {
   // read route params
-  console.log('yo');
   console.log(params);
 
   return {
