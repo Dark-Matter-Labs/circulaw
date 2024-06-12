@@ -12,9 +12,7 @@ module.exports = {
   important: true,
   theme: {
     extend: {
-      boxShadow: {
-        'card': '0px 0px 3px 0px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05);', 
-      },
+  
       colors: {
         'green-50': '#F8FBF8',
         'green-100': '#D1F9EB', 
