@@ -111,8 +111,7 @@ export default function InfoPage({ themaData, ...props }) {
         <WelkeLayout
           thema={themaData?.thema}
           transitionAgenda={themaData?.transitionAgenda}
-          title='Welk instrument kan welke overheid gebruiken voor circulaire windturbines?'
-          //  icon={WindmillIcon}
+          title='Welk instrument kan welke overheid gebruiken voor infra?'
           p1=''
           p2=''
           p3=''
@@ -131,7 +130,7 @@ export default function InfoPage({ themaData, ...props }) {
         <WelkeLayout
           thema={themaData?.thema}
           transitionAgenda={themaData?.transitionAgenda}
-          title='Welk instrument kan welke overheid gebruiken voor circulaire windturbines?'
+          title='Welk instrument kan welke overheid gebruiken voor bedrijventerreinen'
           //  icon={WindmillIcon}
           p1=''
           p2=''
