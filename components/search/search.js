@@ -6,17 +6,19 @@ import {
   SearchBox,
   Configure,
   RefinementList,
-  Stats,
   useInstantSearch,
   ClearRefinements,
-  Pagination
+  Pagination,
 } from 'react-instantsearch';
 
+import CustomStats from './stats';
 import { Hit } from '@/components/search/hit';
 import NewsHit from './about-hit';
 import { useState } from 'react';
 
 const searchClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a06353266a');
+
+
 
 // create condition here to change indexName
 export const Search = () => {
@@ -27,25 +29,16 @@ export const Search = () => {
       <div className='w-full flex flex-col items center justify-center'>
         <InstantSearch searchClient={searchClient} indexName={index} className='' routing={true}>
           <Configure hitsPerPage={10} />
-          <div className='bg-green-600 h-[260px] flex items-end justify-center w-full'>
+          <div className='bg-green-600 h-[360px] flex items-end justify-center w-full'>
             <div className='global-margin w-full flex items-center justify-center'>
-              <div className='w-3/5 flex flex-col'>
-                <SearchBox
-                  placeholder='Zoek naar instrumeten'
-                  classNames={{
-                    root: '',
-                    form: 'relative h-14 rounded-cl bg-green-600',
-                    input:
-                      'block w-full pl-16 pr-3 py-2 h-14 border border-green-600 bg-white bg-opacity-50 placeholder-green-50 text-green-50 text-[18px] font-semibold focus:outline-none focus:border-green-300 focus:ring-green-300 rounded-cl focus:ring-1 fill-red-400',
-                    resetIcon: 'fill-green-900',
-                  }}
-                />
-                <div className='w-full flex flex-row mb-12'>
+              <div className='flex flex-col items-center justify-center gap-y-6'>
+              <h1 className='text-green-50 heading-2xl-semibold sm:heading-5xl-semibold'>Zoek binnen de website</h1>
+              <div className='w-full flex flex-row justify-center'>
                   <button
                     onClick={() => setIndex('instruments')}
                     className={`${
                       index === 'instruments' ? 'opacity-100' : 'opacity-50'
-                    } h-12 w-32 bg-white  rounded-cl flex items-center justify-center mr-4`}
+                    } px-5 py-1.5 bg-white rounded-[8px] flex items-center justify-center mr-1 p-base-semibold`}
                   >
                     Instrumenten
                   </button>
@@ -53,20 +46,32 @@ export const Search = () => {
                     onClick={() => setIndex('aboutPage')}
                     className={`${
                       index === 'aboutPage' ? 'opacity-100' : 'opacity-50'
-                    } h-12 w-32 bg-white rounded-cl flex items-center justify-center`}
+                    } px-5 py-1.5 bg-white rounded-[8px] flex items-center justify-center p-base-semibold`}
                   >
                     Over CircuLaw
                   </button>
                 </div>
+                <div className='w-full'>
+                <SearchBox
+                  placeholder={index === 'instruments' ? 'Zoek naar instrumenten...' : 'Zoek naar Over CircuLaw...'}
+                  classNames={{
+                    root: 'mb-10 h-14',
+                    form: 'bg-green-600 flex',
+                    input:
+                      'h-14 rounded-full max-w-none focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] caret-white block pl-12 pr-3 py-2 border border-green-600 bg-white bg-opacity-50 placeholder-green-50 text-green-50 text-[18px] font-semibold focus:outline-none focus:border-green-50 focus:ring-green-50 focus:ring-1',
+                    resetIcon: 'fill-green-900',
+                  }}
+                />
+                </div>
               </div>
             </div>
           </div>
-          <div className='global-margin'>
-            <Stats />
+          <div className='global-margin flex items-center justify-center mt-10'>
+            <CustomStats />
           </div>
           <div className='global-margin flex'>
             {index === 'instruments' && (
-              <div className='flex flex-col mt-12'>
+              <div className='flex flex-col mt-10'>
                 <div className='flex flex-col'>
                   <ClearRefinements
                     classNames={{
@@ -149,9 +154,9 @@ export const Search = () => {
               <NoResultsBoundary fallback={<NoResults />}>
                 <Hits
                   classNames={{
-                    root: 'border-none mt-12',
+                    root: 'border-none mt-10',
                     list: 'ml-10',
-                    item: 'shadow-none px-0 pb-8 pt-0',
+                    item: 'shadow-none px-0 pb-4 pt-0',
                   }}
                   hitComponent={index === 'instruments' ? Hit : NewsHit}
                 />
@@ -167,6 +172,8 @@ export const Search = () => {
     </>
   );
 };
+
+// move these into components and export them. 
 
 function NoResultsBoundary({ children, fallback }) {
   const { results } = useInstantSearch();

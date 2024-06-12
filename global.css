@@ -263,40 +263,10 @@ html {
 
 /* SEARCH */
 
-.ais-SearchBox {
-  margin-bottom: 1em;
-}
-
-.ais-InstantSearch {
-  max-width: 860px;
-  width: 100%;
-  display: block;
-  overflow: hidden;
-  margin: 0 auto
-}
-
-.ais-Hits-list .ais-Hits-item {
-  margin-left: 0;
-  width: 100%;
-}
-
-
-
-.ais-InstantSearch .ais-Hits-list {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1em;
-  margin-left: 0;
-  margin-top: 0;
-}
 
 .ais-SearchBox-form::before {
- background-image: url("/search_icon.png") !important;
- z-index: 1 !important;
- height: 20px !important;
- width: 20px !important;
+ background-image: none !important;
 }
-
 
 
 .ais-RefinementList-item--selected .ais-RefinementList-checkbox {
