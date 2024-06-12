@@ -9,7 +9,6 @@ export default function WelkeLayout({ ...props }) {
   const gemLaws = props.gemLaws;
   const natLaws = props.natLaws;
 
-
   const lines = [
     {
       start: 'allId',
@@ -260,7 +259,7 @@ export default function WelkeLayout({ ...props }) {
                 </>
               )}
 
-            {props.thema === 'infra' && (
+              {props.thema === 'infra' && (
                 <>
                   {/* All regions =  */}
                   <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
@@ -298,7 +297,7 @@ export default function WelkeLayout({ ...props }) {
                 </>
               )}
 
-            {props.thema === 'bedrijventerreinen' && (
+              {props.thema === 'bedrijventerreinen' && (
                 <>
                   {/* All regions =  */}
                   <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
@@ -316,7 +315,6 @@ export default function WelkeLayout({ ...props }) {
                   <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[80%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[70%] right-[85%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  
 
                   {/* Provincial = 2 */}
                   <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-gray-100'></div>

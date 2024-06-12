@@ -9,7 +9,6 @@ import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 import { useRouter } from 'next/router';
 
 export default function ExpertiseLayout({ expertiseData, ...props }) {
-  
   const [beleid, setBeleid] = useState([]);
   const [inkoop, setInkoop] = useState([]);
   const [grondpositie, setGrondpositie] = useState([]);
@@ -25,7 +24,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   const [local, setLocal] = useState({ value: 'alle' });
   const router = useRouter();
   const { CustomEvent } = usePiwikPro();
-  
+
   useEffect(() => {
     if (typeof window !== 'undefined' && window.localStorage.length > 0) {
       let selectedTab = localStorage.getItem('selectedTab');

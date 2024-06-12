@@ -108,46 +108,44 @@ export default function InfoPage({ themaData, ...props }) {
   } else if (themaData?.thema === 'infra') {
     return (
       <Layout title={`${themaData?.themaName} - Wie is waarvoor bevoegd?`} pageUrl={router.asPath}>
-      <WelkeLayout
-        thema={themaData?.thema}
-        transitionAgenda={themaData?.transitionAgenda}
-        title='Welk instrument kan welke overheid gebruiken voor circulaire windturbines?'
-        //  icon={WindmillIcon}
-        p1=''
-        p2=''
-        p3=''
-        p4=''
-        allRegionLaws={props?.allRegionLaws}
-        natLaws={props?.natLaws}
-        provLaws={props?.provLaws}
-        gemLaws={props?.gemLaws}
-        imageMob={windmillImageMob}
-      />
-    </Layout>
-    )
+        <WelkeLayout
+          thema={themaData?.thema}
+          transitionAgenda={themaData?.transitionAgenda}
+          title='Welk instrument kan welke overheid gebruiken voor circulaire windturbines?'
+          //  icon={WindmillIcon}
+          p1=''
+          p2=''
+          p3=''
+          p4=''
+          allRegionLaws={props?.allRegionLaws}
+          natLaws={props?.natLaws}
+          provLaws={props?.provLaws}
+          gemLaws={props?.gemLaws}
+          imageMob={windmillImageMob}
+        />
+      </Layout>
+    );
   } else if (themaData?.thema === 'bedrijventerreinen') {
     return (
       <Layout title={`${themaData?.themaName} - Wie is waarvoor bevoegd?`} pageUrl={router.asPath}>
-      <WelkeLayout
-        thema={themaData?.thema}
-        transitionAgenda={themaData?.transitionAgenda}
-        title='Welk instrument kan welke overheid gebruiken voor circulaire windturbines?'
-        //  icon={WindmillIcon}
-        p1=''
-        p2=''
-        p3=''
-        p4=''
-        allRegionLaws={props?.allRegionLaws}
-        natLaws={props?.natLaws}
-        provLaws={props?.provLaws}
-        gemLaws={props?.gemLaws}
-        imageMob={windmillImageMob}
-      />
+        <WelkeLayout
+          thema={themaData?.thema}
+          transitionAgenda={themaData?.transitionAgenda}
+          title='Welk instrument kan welke overheid gebruiken voor circulaire windturbines?'
+          //  icon={WindmillIcon}
+          p1=''
+          p2=''
+          p3=''
+          p4=''
+          allRegionLaws={props?.allRegionLaws}
+          natLaws={props?.natLaws}
+          provLaws={props?.provLaws}
+          gemLaws={props?.gemLaws}
+          imageMob={windmillImageMob}
+        />
       </Layout>
-    )
-  }
-
-  else {
+    );
+  } else {
     return <Layout></Layout>;
   }
 }
