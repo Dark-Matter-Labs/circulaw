@@ -63,7 +63,7 @@ export async function getStaticPaths() {
   console.log(productChains, 'in paths')
   return {
     paths: productChains.map((productChain) => ({ params: { productChain } })),
-    fallback: false,
+    fallback: true,
   };
 }
 
