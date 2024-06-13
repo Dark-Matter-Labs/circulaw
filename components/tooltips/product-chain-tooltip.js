@@ -79,11 +79,13 @@ export default function PCTooltip({ children, icon, title, content }) {
                         </button>
                       </div>
                     </Transition.Child>
-                    <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
+                    <div className='flex h-full flex-col overflow-y-scroll bg-gray-100 py-6 shadow-xl'>
                       <div className='px-4 sm:px-6'>
                         <Dialog.Title className='text-gray-900'>
                           {' '}
-                          <h2 className='mobile sm:desktop mr-10'>{title}</h2>
+                          <h2 className='heading-xl-semibold sm:heading-3xl-semibold mr-10'>
+                            {title}
+                          </h2>
                         </Dialog.Title>
                       </div>
                       <div className='relative mt-6 flex-1 px-4 sm:px-6'>

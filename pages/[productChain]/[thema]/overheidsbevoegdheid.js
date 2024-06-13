@@ -7,6 +7,8 @@ import houtbouwImageMob from '@/public/bevoegdheden/bevoegdheden-houtbouw-mob.pn
 import matrassenImageMob from '@/public/bevoegdheden/bevoegdheden-matrassen.png';
 import windmillImageMob from '@/public/bevoegdheden/bevoegdheden-windmill.png';
 
+// const thema = 'matrasketen';
+
 const pathsQuery = `
 *[_type in ["thema", "simpleThema"] && defined(slug.current)]{
     "thema": slug.current,
@@ -103,6 +105,45 @@ export default function InfoPage({ themaData, ...props }) {
         />
       </Layout>
     );
+  } else if (themaData?.thema === 'infra') {
+    return (
+      <Layout title={`${themaData?.themaName} - Wie is waarvoor bevoegd?`} pageUrl={router.asPath}>
+        <WelkeLayout
+          thema={themaData?.thema}
+          transitionAgenda={themaData?.transitionAgenda}
+          title='Welk instrument kan welke overheid gebruiken voor infra?'
+          p1=''
+          p2=''
+          p3=''
+          p4=''
+          allRegionLaws={props?.allRegionLaws}
+          natLaws={props?.natLaws}
+          provLaws={props?.provLaws}
+          gemLaws={props?.gemLaws}
+          imageMob={windmillImageMob}
+        />
+      </Layout>
+    );
+  } else if (themaData?.thema === 'bedrijventerreinen') {
+    return (
+      <Layout title={`${themaData?.themaName} - Wie is waarvoor bevoegd?`} pageUrl={router.asPath}>
+        <WelkeLayout
+          thema={themaData?.thema}
+          transitionAgenda={themaData?.transitionAgenda}
+          title='Welk instrument kan welke overheid gebruiken voor bedrijventerreinen'
+          //  icon={WindmillIcon}
+          p1=''
+          p2=''
+          p3=''
+          p4=''
+          allRegionLaws={props?.allRegionLaws}
+          natLaws={props?.natLaws}
+          provLaws={props?.provLaws}
+          gemLaws={props?.gemLaws}
+          imageMob={windmillImageMob}
+        />
+      </Layout>
+    );
   } else {
     return <Layout></Layout>;
   }
@@ -127,6 +168,13 @@ export async function getStaticProps({ params }) {
   const gemLaws = await client.fetch(govLevelQueryFunction().local, thema);
 
   const themaData = await client.fetch(themaInfo, thema);
+
+  if (!themaData) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       allRegionLaws: allRegionLaws,

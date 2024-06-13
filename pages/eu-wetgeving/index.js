@@ -31,14 +31,16 @@ export default function EULaw({ laws }) {
               <Link
                 href='/'
                 type='button'
-                className='rounded-clSm bg-white pl-2 pr-3 py-1.5 p-2xs-bold text-green-600'
+                className='rounded-clSm bg-gray-100 pl-2 pr-3 py-1.5 p-2xs-bold text-green-600'
               >
                 <span className='link-interaction '>
                   Home <span className='ml-2'>{'>'}</span>
                 </span>
               </Link>
             </div>
-            <h1 className='mb-8 p-5xl-semibold sm:p-7xl-bold text-grey-100'>EU wetgeving</h1>
+            <h1 className='mb-8 heading-4xl-semibold sm:heading-5xl-semibold text-gray-100'>
+              EU wetgeving
+            </h1>
           </div>
         </div>
       </div>

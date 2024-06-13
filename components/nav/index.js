@@ -93,6 +93,45 @@ export default function Nav(props) {
   const { getReferenceProps: mainMenuReferencProps, getFloatingProps: mainMenuFloatingProps } =
     useInteractions([mainMenuClick, mainMenuDismiss, mainMenuRole]);
 
+  // eu menu
+  const [euMenuIsOpen, setEuMenuIsOpen] = useState(false);
+  const {
+    refs: euRef,
+    floatingStyles: euStyles,
+    context: euContext,
+  } = useFloating({
+    placement: 'bottom-start',
+    open: euMenuIsOpen,
+    onOpenChange: setEuMenuIsOpen,
+    middleware: [offset(28), flip(), shift()],
+  });
+
+  const { isMounted: euMenuIsMounted, styles: euMenuTransitionStyles } = useTransitionStyles(
+    euContext,
+    {
+      duration: 300,
+      initial: {
+        opacity: 0,
+        transform: 'translateY(-100%)',
+      },
+      open: {
+        opacity: 100,
+        transform: 'translateY(0)',
+      },
+      close: {
+        opacity: 0,
+        transform: 'translateY(-100%)',
+      },
+    },
+  );
+
+  const euMenuClick = useClick(euContext);
+  const euMenuDismiss = useDismiss(euContext);
+  const euMenuRole = useRole(euContext);
+
+  const { getReferenceProps: euReferenceProps, getFloatingProps: euFloatingProps } =
+    useInteractions([euMenuClick, euMenuDismiss, euMenuRole]);
+
   // over menu
   const [overMenuIsOpen, setOverMenuIsOpen] = useState(false);
   const {
@@ -202,7 +241,9 @@ export default function Nav(props) {
             router.pathname === '/'
               ? [
                   `${
-                    mainMenuIsMounted || (overMenuIsMounted && scrollEffect === false)
+                    mainMenuIsMounted ||
+                    (overMenuIsMounted && scrollEffect === false) ||
+                    (euMenuIsMounted && scrollEffect === false)
                       ? ['bg-green-600 bg-opacity-100 shadow-lg transition-all duration-75']
                       : [
                           `${
@@ -213,7 +254,7 @@ export default function Nav(props) {
                         ]
                   }`,
                 ]
-              : 'bg-[#F8FBF8] shadow-lg'
+              : 'bg-green-50 shadow-lg'
           } h-[70px] lgNav:h-[98px] flex flex-row justify-between items-center lgNav:items-end global-padding w-full lgNav:w-auto`}
         >
           <>
@@ -278,7 +319,7 @@ export default function Nav(props) {
               <div className='inset-y-0 float-right flex items-center pt-2 lgNav:hidden'>
                 <button
                   className={`${
-                    router.pathname !== '/' ? 'text-green-600' : 'text-grey-100'
+                    router.pathname !== '/' ? 'text-green-600' : 'text-gray-100'
                   } 'p-2 rounded-md`}
                   ref={mobileRef.setReference}
                   {...mobileRefProps()}
@@ -295,7 +336,7 @@ export default function Nav(props) {
                     id='overlay'
                     lockScroll
                     style={{ background: 'rgba(0, 0, 0, 0)' }}
-                    className='-z-10 bg-[#F8FBF8] mt-[70px]'
+                    className='-z-10 bg-green-50 mt-[70px]'
                   >
                     <FloatingFocusManager context={mobileContext} modal={false} disabled>
                       <div
@@ -305,7 +346,7 @@ export default function Nav(props) {
                         {...mobileFloatingProps()}
                       >
                         <div
-                          className='w-full h-full bg-[#F8FBF8]'
+                          className='w-full h-full bg-green-50'
                           style={{ ...mobileMenuTransitionStyles }}
                         >
                           <div className='flex flex-col items-start justify-end global-margin '>
@@ -316,7 +357,7 @@ export default function Nav(props) {
                                   <Disclosure.Button
                                     className={`${
                                       open ? 'text-green-500' : 'text-green-800'
-                                    } py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
+                                    } py-4 w-full text-left heading-xl-semibold flex flex-row items-center`}
                                   >
                                     Productketens
                                     <ChevronDownIcon
@@ -348,18 +389,63 @@ export default function Nav(props) {
                                 </>
                               )}
                             </Disclosure>
-                            <MobileSimpleButton
-                              name='EU wetgeving'
-                              url='/eu-wetgeving'
-                              closeMenu={setMobileMenuIsOpen}
-                            />
+
+                            {/* EU */}
                             <Disclosure>
                               {({ open }) => (
                                 <>
                                   <Disclosure.Button
                                     className={`${
                                       open ? 'text-green-500' : 'text-green-800'
-                                    }  border-t py-4 w-full text-left p-xl-semibold flex flex-row items-center`}
+                                    }  border-t py-4 w-full text-left heading-xl-semibold flex flex-row items-center`}
+                                  >
+                                    EU wetgeving
+                                    <ChevronDownIcon
+                                      className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`}
+                                    />
+                                  </Disclosure.Button>
+                                  <Transition
+                                    show={open}
+                                    enter='transition duration-300 ease-out'
+                                    enterFrom='transform opacity-0'
+                                    enterTo='transform opacity-100'
+                                    leave='transition duration-75 ease-out'
+                                    leaveFrom='transform opacity-300'
+                                    leaveTo='transform opacity-0'
+                                    className='w-full'
+                                  >
+                                    <Disclosure.Panel className='ml-4'>
+                                      <ul>
+                                        <li className='p-base h-10 my-2 last:mb-2 text-green-600 cursor-pointer flex items-center'>
+                                          Overzicht
+                                        </li>
+                                        {props?.euSlugs?.map((euPage) => (
+                                          <li
+                                            key={euPage?.slug}
+                                            className='p-base h-10 my-2 last:mb-2 text-green-600 cursor-pointer flex items-center'
+                                          >
+                                            <Link
+                                              href={`/eu-wetgeving/${euPage?.slug}`}
+                                              onClick={() => setMobileMenuIsOpen(false)}
+                                            >
+                                              {euPage.title}
+                                            </Link>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </Disclosure.Panel>
+                                  </Transition>
+                                </>
+                              )}
+                            </Disclosure>
+
+                            <Disclosure>
+                              {({ open }) => (
+                                <>
+                                  <Disclosure.Button
+                                    className={`${
+                                      open ? 'text-green-500' : 'text-green-800'
+                                    }  border-t py-4 w-full text-left heading-xl-semibold flex flex-row items-center`}
                                   >
                                     Over CircuLaw
                                     <ChevronDownIcon
@@ -443,7 +529,7 @@ export default function Nav(props) {
                                   : 'text-green-800 group-hover:decoration-green-500'
                               }`,
                             ]
-                      } group-hover:underline`}
+                      } group-hover:underline p-base`}
                     >
                       Productketens
                     </span>
@@ -498,7 +584,111 @@ export default function Nav(props) {
                     </FloatingFocusManager>
                   )}
                 </div>
-                <DesktopSimpleButton name='EU wetgeving' url='/eu-wetgeving' />
+
+                {/* EU MENU */}
+                <div className=''>
+                  <button
+                    ref={euRef.setReference}
+                    {...euReferenceProps()}
+                    className='h-full relative p-sm group z-100 mr-6 lg:mr-8 flex flex-row items-center'
+                  >
+                    <span
+                      className={`${
+                        euMenuIsOpen === true
+                          ? [`${router.pathname === '/' ? 'text-green-200' : 'text-green-500'}`]
+                          : [
+                              `${
+                                router.pathname === '/'
+                                  ? 'text-white group-hover:decoration-green-200'
+                                  : 'text-green-800 group-hover:decoration-green-500'
+                              }`,
+                            ]
+                      } group-hover:underline p-base`}
+                    >
+                      EU wetgeving
+                    </span>
+                    <ChevronDownIcon
+                      className={`${
+                        euMenuIsOpen
+                          ? [
+                              `${
+                                router.pathname === '/'
+                                  ? 'text-green-200 rotate-180'
+                                  : 'rotate-180 text-green-500'
+                              }`,
+                            ]
+                          : [
+                              `${
+                                router.pathname === '/'
+                                  ? 'text-white group-hover:text-green-200'
+                                  : 'group-hover:text-green-500'
+                              }`,
+                            ]
+                      } h-5 w-5 ml-2`}
+                    />
+                  </button>
+                  {euMenuIsMounted && (
+                    <FloatingFocusManager context={euContext} modal={false} disabled>
+                      <div
+                        ref={euRef.setFloating}
+                        style={euStyles}
+                        {...euFloatingProps()}
+                        className='h-auto w-72 -z-10 '
+                      >
+                        <div
+                          className={`${
+                            router.pathname === '/' ? 'bg-green-600' : 'bg-green-50'
+                          } h-full pb-10 shadow-lg pl-6 pt-8 pr-8`}
+                          style={{ ...euMenuTransitionStyles }}
+                          onMouseLeave={() => setEuMenuIsOpen(false)}
+                        >
+                          {/* Remove slice once news section is separate */}
+                          <div
+                            className={`${
+                              router.pathname === '/'
+                                ? 'text-white'
+                                : 'text-green-600 hover:text-green-500'
+                            } p-xs mb-2  hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
+                          >
+                            <Link
+                              href='/eu-wetgeving'
+                              id='navClick'
+                              onClick={() => {
+                                setEuMenuIsOpen(false);
+                                CustomEvent.trackEvent('Nav click', router.asPath);
+                              }}
+                            >
+                              Overzicht
+                            </Link>
+                          </div>
+                          {props?.euSlugs?.map((euLaw) => (
+                            <div
+                              key={euLaw?.slug}
+                              className={`${
+                                router.pathname === '/'
+                                  ? 'text-white'
+                                  : 'text-green-600 hover:text-green-500'
+                              } p-xs mb-2  hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
+                            >
+                              <Link
+                                href={`/eu-wetgeving/${euLaw?.slug}`}
+                                id='navClick'
+                                onClick={() => {
+                                  setEuMenuIsOpen(false);
+                                  CustomEvent.trackEvent('Nav click', router.asPath, euLaw.title);
+                                }}
+                              >
+                                {euLaw.title}
+                              </Link>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </FloatingFocusManager>
+                  )}
+                </div>
+
+                {/* ABOUT MENU */}
                 <div className=''>
                   <button
                     ref={overRef.setReference}
@@ -516,7 +706,7 @@ export default function Nav(props) {
                                   : 'text-green-800 group-hover:decoration-green-500'
                               }`,
                             ]
-                      } group-hover:underline`}
+                      } group-hover:underline p-base`}
                     >
                       Over CircuLaw
                     </span>
@@ -550,7 +740,7 @@ export default function Nav(props) {
                       >
                         <div
                           className={`${
-                            router.pathname === '/' ? 'bg-green-600' : 'bg-green-100'
+                            router.pathname === '/' ? 'bg-green-600' : 'bg-green-50'
                           } h-full pb-10 shadow-lg pl-6 pt-8 pr-8`}
                           style={{ ...overMenuTransitionStyles }}
                           onMouseLeave={() => setOverMenuIsOpen(false)}

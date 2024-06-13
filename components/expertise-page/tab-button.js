@@ -15,20 +15,22 @@ export default function TabButton({
           id='categorieTab'
           className={`${
             selected === name
-              ? 'bg-white text-green-500'
+              ? 'bg-gray-100 text-green-500'
               : 'text-gray-100 bg-green-500 hover:bg-green-400'
           } ${
             numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50 hover:bg-green-500' : ''
           }  p-3 rounded-t-cl flex flex-row items-center`}
         >
           <div className='flex flex-row items-baseline'>
-            <h3 className='p-lg-semibild sm:p-4xl-semibold pr-1 first-letter:capitalize'>{name}</h3>{' '}
+            <h3 className='heading-xl-semibold sm:heading-2xl-semibold pr-1 first-letter:capitalize'>
+              {name}
+            </h3>{' '}
             {transitionAgenda === 'bouw' ? (
-              <div className='p-2xs-bold sm:p-lg-semibild inline-block min-w-[24px] sm:min-w-[38px]'>
+              <div className='p-2xs-bold sm:heading-xl-semibold inline-block min-w-[24px] sm:min-w-[38px]'>
                 ({numInstrument})
               </div>
             ) : (
-              <div className='p-2xs-bold sm:p-lg-semibild inline-block min-w-[24px]'>
+              <div className='p-2xs-bold sm:heading-xl-semibold inline-block min-w-[24px]'>
                 ({numInstruments2})
               </div>
             )}
@@ -42,20 +44,22 @@ export default function TabButton({
           id='categorieTab'
           className={`${
             selected === name
-              ? 'bg-white text-green-500'
+              ? 'bg-gray-100 text-green-500'
               : 'text-gray-100 bg-green-500 hover:bg-green-400'
           } ${
             numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50 hover:bg-green-500' : ''
           }  p-3 rounded-t-cl flex flex-row items-center`}
         >
           <div className='flex flex-row items-baseline'>
-            <h3 className='p-lg-semibild sm:p-4xl-semibold pr-1 first-letter:capitalize'>{name}</h3>{' '}
+            <h3 className='heading-xl-semibold sm:heading-2xl-semibold pr-1 first-letter:capitalize'>
+              {name}
+            </h3>{' '}
             {transitionAgenda === 'bouw' ? (
-              <h5 className='p-2xs-bold sm:p-lg-semibild inline-block min-w-[24px]'>
+              <h5 className='p-2xs-bold sm:heading-xl-semibold inline-block min-w-[24px]'>
                 ({numInstrument})
               </h5>
             ) : (
-              <h5 className='p-2xs-bold sm:p-lg-semibild inline-block min-w-[24px]'>
+              <h5 className='p-2xs-bold sm:heading-xl-semibold inline-block min-w-[24px]'>
                 ({numInstruments2})
               </h5>
             )}
@@ -69,15 +73,17 @@ export default function TabButton({
           id='categorieTab'
           className={`${
             selected === name
-              ? 'bg-white text-green-500'
+              ? 'bg-gray-100 text-green-500'
               : 'text-gray-100 bg-green-500 hover:bg-green-400'
           } ${
             numInstrument === 0 ? 'opacity-50 hover:bg-green-500' : ''
           }  p-3 rounded-t-cl flex flex-row items-center`}
         >
           <div className='flex flex-row items-baseline'>
-            <h3 className='p-lg-semibild sm:p-4xl-semibold pr-1 first-letter:capitalize'>{name}</h3>{' '}
-            <div className='p-2xs-bold sm:p-lg-semibild inline-block min-w-[24px]'>
+            <h3 className='heading-xl-semibold sm:heading-2xl-semibold pr-1 first-letter:capitalize'>
+              {name}
+            </h3>{' '}
+            <div className='p-2xs-bold sm:heading-xl-semibold inline-block min-w-[24px]'>
               ({numInstrument})
             </div>
           </div>

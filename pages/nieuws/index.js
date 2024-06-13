@@ -55,7 +55,7 @@ export default function NewsPage({ data }) {
           </Link>
         </div>
         <div className='mt-10'>
-          <h1 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
+          <h1 className='heading-xl-semibold sm:heading-2xl-semibold w-full border-b-2 pb-5 border-green-800'>
             Uitgelichte nieuwsberichten
           </h1>
           <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-6 py-10 overflow-hidden'>
@@ -76,9 +76,11 @@ export default function NewsPage({ data }) {
         </div>
         <div className=''>
           <div className='flex flex-col sm:flex-row justify-between sm:items-center border-b-2 pb-5 border-green-800'>
-            <h2 className='p-2xl-semibold sm:p-5xl-semibold pb-4 sm:pb-0'>Laatste nieuws </h2>
+            <h2 className='heading-xl-semibold sm:heading-2xl-semibold pb-4 sm:pb-0'>
+              Laatste nieuws{' '}
+            </h2>
             <div className='flex flex-row items-center justify-between'>
-              <div className='p-lg-semibold sm:p-3xl-semibold pr-4'>Bekijk:</div>
+              <div className='heading-xl-semibold sm:heading-2xl-semibold pr-4'>Bekijk:</div>
               <div>
                 {articleType === 'Alles' && (
                   <Popover className='w-64 sm:w-80 relative'>
@@ -92,7 +94,7 @@ export default function NewsPage({ data }) {
                           <div
                             className={`${
                               open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                            } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
+                            } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
                           >
                             <span className='inline text-left p-base-bold text-green-500'>
                               Alles
@@ -112,7 +114,7 @@ export default function NewsPage({ data }) {
                             as='div'
                             onClick={() => setArticleType('Agenda')}
                           >
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Agenda</span>
                             </div>
                           </Popover.Button>
@@ -120,7 +122,7 @@ export default function NewsPage({ data }) {
                             as='div'
                             onClick={() => setArticleType('Circulair nieuws')}
                           >
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Circulair nieuws</span>
                             </div>
                           </Popover.Button>
@@ -129,13 +131,13 @@ export default function NewsPage({ data }) {
                             as='div'
                             onClick={() => setArticleType('Nieuw op de site')}
                           >
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Nieuw op de site</span>
                             </div>
                           </Popover.Button>
 
                           <Popover.Button as='div' onClick={() => setArticleType('Artikelen')}>
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Artikelen</span>
                             </div>
                           </Popover.Button>
@@ -156,7 +158,7 @@ export default function NewsPage({ data }) {
                           <div
                             className={`${
                               open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                            } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
+                            } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
                           >
                             <span className='inline text-left p-base-bold text-green-500'>
                               Agenda
@@ -176,7 +178,7 @@ export default function NewsPage({ data }) {
                             as='div'
                             onClick={() => setArticleType('Alles')}
                           >
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Alles</span>
                             </div>
                           </Popover.Button>
@@ -184,7 +186,7 @@ export default function NewsPage({ data }) {
                             as='div'
                             onClick={() => setArticleType('Circulair nieuws')}
                           >
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Circulair nieuws</span>
                             </div>
                           </Popover.Button>
@@ -193,13 +195,13 @@ export default function NewsPage({ data }) {
                             as='div'
                             onClick={() => setArticleType('Nieuw op de site')}
                           >
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Nieuw op de site</span>
                             </div>
                           </Popover.Button>
 
                           <Popover.Button as='div' onClick={() => setArticleType('Artikelen')}>
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Artikelen</span>
                             </div>
                           </Popover.Button>
@@ -221,7 +223,7 @@ export default function NewsPage({ data }) {
                           <div
                             className={`${
                               open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                            } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
+                            } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
                           >
                             <span className='inline text-left p-base-bold text-green-500'>
                               Circulair nieuws
@@ -241,12 +243,12 @@ export default function NewsPage({ data }) {
                             as='div'
                             onClick={() => setArticleType('Alles')}
                           >
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Alles</span>
                             </div>
                           </Popover.Button>
                           <Popover.Button as='div' onClick={() => setArticleType('Agenda')}>
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Agenda</span>
                             </div>
                           </Popover.Button>
@@ -255,13 +257,13 @@ export default function NewsPage({ data }) {
                             as='div'
                             onClick={() => setArticleType('Nieuw op de site')}
                           >
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Nieuw op de site</span>
                             </div>
                           </Popover.Button>
 
                           <Popover.Button as='div' onClick={() => setArticleType('Artikelen')}>
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Artikelen</span>
                             </div>
                           </Popover.Button>
@@ -282,7 +284,7 @@ export default function NewsPage({ data }) {
                           <div
                             className={`${
                               open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                            } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
+                            } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
                           >
                             <span className='inline text-left p-base-bold text-green-500'>
                               Nieuw op de site
@@ -302,12 +304,12 @@ export default function NewsPage({ data }) {
                             as='div'
                             onClick={() => setArticleType('Alles')}
                           >
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Alles</span>
                             </div>
                           </Popover.Button>
                           <Popover.Button as='div' onClick={() => setArticleType('Agenda')}>
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Agenda</span>
                             </div>
                           </Popover.Button>
@@ -316,13 +318,13 @@ export default function NewsPage({ data }) {
                             as='div'
                             onClick={() => setArticleType('Circulair nieuws')}
                           >
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Circulair nieuws</span>
                             </div>
                           </Popover.Button>
 
                           <Popover.Button as='div' onClick={() => setArticleType('Artikelen')}>
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Artikelen</span>
                             </div>
                           </Popover.Button>
@@ -343,7 +345,7 @@ export default function NewsPage({ data }) {
                           <div
                             className={`${
                               open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                            } h-full bg-white w-11/12 flex items-center justify-start pl-3 truncate`}
+                            } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
                           >
                             <span className='inline text-left p-base-bold text-green-500'>
                               Artikelen
@@ -363,12 +365,12 @@ export default function NewsPage({ data }) {
                             as='div'
                             onClick={() => setArticleType('Alles')}
                           >
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Alles</span>
                             </div>
                           </Popover.Button>
                           <Popover.Button as='div' onClick={() => setArticleType('Agenda')}>
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Agenda</span>
                             </div>
                           </Popover.Button>
@@ -377,7 +379,7 @@ export default function NewsPage({ data }) {
                             as='div'
                             onClick={() => setArticleType('Circulair nieuws')}
                           >
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Circulair nieuws</span>
                             </div>
                           </Popover.Button>
@@ -386,7 +388,7 @@ export default function NewsPage({ data }) {
                             as='div'
                             onClick={() => setArticleType('Nieuw op de site')}
                           >
-                            <div className='bg-white w-full text-grey-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
+                            <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                               <span className='block pl-3 truncate p-base'>Nieuw op de site</span>
                             </div>
                           </Popover.Button>
@@ -413,14 +415,14 @@ export default function NewsPage({ data }) {
           </ResponsiveMasonry>
           {archived.length > 0 && (
             <div className='mb-10'>
-              <h2 className='p-2xl-semibold sm:p-5xl-semibold w-full border-b-2 pb-5 border-green-800'>
+              <h2 className='heading-xl-semibold sm:heading-2xl-semibold w-full border-b-2 pb-5 border-green-800'>
                 Archief
               </h2>
               <div className='py-10'>
                 {archived?.map((item, id) => (
                   <div
                     key={id}
-                    className='flex flex-row items-center mb-3 p-xl-semibold text-green-800'
+                    className='flex flex-row items-center mb-3 heading-xl-semibold text-green-800'
                   >
                     {item._type !== 'agendaItem' && (
                       <Tag classes='text-white bg-green-800 border border-green-800 mr-3'>

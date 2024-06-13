@@ -1,21 +1,19 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { AiFillGithub } from 'react-icons/ai';
-import { RiLinkedinFill } from 'react-icons/ri';
-import { Link as ScrollLink } from 'react-scroll';
-import { usePiwikPro } from '@piwikpro/next-piwik-pro';
-
 import LangSwitch from './lang-switch';
 import CustomButton from '@/components/custom-button';
 import Partners from '@/components/nav/partners';
 import ActionPanel from '@/components/section-action-panel';
 import ORicon from '@/public/icons/openResearch.svg';
 import { ArrowUpIcon } from '@heroicons/react/outline';
+import { useRouter } from 'next/router';
+import { AiFillGithub } from 'react-icons/ai';
+import { RiLinkedinFill } from 'react-icons/ri';
+import { Link as ScrollLink } from 'react-scroll';
+import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 import JaIcon from '@/public/icons/ja-icon.svg';
 import NeeIcon from '@/public/icons/nee-icon.svg';
-
 // import data // maybe not necessary
 const navigation = {
   other: [
@@ -56,7 +54,7 @@ export default function Footer(props) {
       <footer className='' aria-labelledby='footer-heading'>
         {router.pathname !== '/en' && (
           <div>
-            <div className='flex lgNav:hidden w-full items-center justify-center py-8 bg-green-800 border-y-2 border-grey-100 '>
+            <div className='flex lgNav:hidden w-full items-center justify-center py-8 bg-green-800 border-y-2 border-gray-100 '>
               <CustomButton color='home'>
                 <ScrollLink to='top' smooth={true}>
                   <span>
@@ -68,7 +66,7 @@ export default function Footer(props) {
             </div>
             <div className='global-margin py-10 border-t border-t-green-600'>
               <div className={`flex justify-center items-center ${jeeNee}`}>
-                <h3 className='mobile sm:desktop text-green-600 pr-8'>
+                <h3 className='heading-xl-semibold sm:heading-2xl-semibold text-green-600 pr-8'>
                   Vond je deze pagina nuttig?
                 </h3>
                 <div className='mr-4'>
@@ -119,11 +117,11 @@ export default function Footer(props) {
               <div className={moreInfoOpen}>
                 <div className='mt-3  sm:mt-5'>
                   {feedbackState === 'Ja' ? (
-                    <h5 className='mobile sm:desktop leading-6 text-gray-900'>
+                    <h5 className='p-base leading-6 text-gray-900'>
                       Fijn! Laat ons kort weten waarom.
                     </h5>
                   ) : (
-                    <h5 className='mobile sm:desktop leading-6 text-gray-900'>
+                    <h5 className='p-base leading-6 text-gray-900'>
                       Jammer, vertel ons waarom niet, zodat we onze website kunnen verbeteren.
                     </h5>
                   )}
@@ -168,15 +166,24 @@ export default function Footer(props) {
                 <div className='pb-20'>
                   <div className=''>
                     <div className='grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-8'>
-                      <div className='sm:hidden block border-b border-grey-100 pb-4'>
+                      <div className='sm:hidden block border-b border-gray-100 pb-4'>
+                        <ActionPanel
+                          title='Schrijf je in voor onze CircuLaw Nieuwsbrief'
+                          paragraph='Zo ben je altijd op de hoogte van het laatste CircuLaw-nieuws. '
+                          buttonText='Aanmelden'
+                          buttonLink='/nieuwsbrief'
+                        />
+                        <div className='py-4'></div>
                         <ActionPanel
                           title='Doe met ons mee'
                           paragraph='Heb je vragen, wil je je ervaringen delen of wil je een wetsanalyse laten uitvoeren op een circulair  thema of casus?'
                           buttonText='Neem contact op'
                           buttonLink='/contact'
                         />
-                        <div className='block sm:hidden pt-6 p-md text-grey-100 '>
-                          <h3 className='mobile sm:desktop inline-block'>Volg ons op:</h3>
+                        <div className='block sm:hidden pt-6 p-base text-gray-100 '>
+                          <h3 className='heading-xl-semibold sm:heading-2xl-semibold inline-block'>
+                            Volg ons op:
+                          </h3>
                           <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
                             <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
                           </Link>
@@ -197,13 +204,13 @@ export default function Footer(props) {
                           </Link>
                         </div>
                       </div>
-                      <div className=' border-b border-grey-100 sm:border-0 py-2 sm:py-0'>
-                        <h4 className='text-green-200 p-2xl-semibold'>Productketens</h4>
+                      <div className=' border-b border-gray-100 sm:border-0 py-2 sm:py-0'>
+                        <h4 className='text-green-200 heading-xl-semibold'>Productketens</h4>
                         <div className='grid grid-cols-1 gap-8 py-2 sm:py-0'>
                           <ul role='list' className='mt-4 space-y-4'>
                             {navigation.thema?.map((thema) => (
                               <li key={thema.name}>
-                                <a href={thema.slug} className='p-md text-grey-100'>
+                                <a href={thema.slug} className='p-base text-gray-100'>
                                   <span className='inline-block first-letter:uppercase link-interaction-light-green-bg'>
                                     {thema.name}
                                   </span>
@@ -213,8 +220,8 @@ export default function Footer(props) {
                           </ul>
                         </div>
                       </div>
-                      <div className='border-b border-grey-100 sm:border-0 py-2 sm:py-0'>
-                        <h4 className='text-green-200 p-2xl-semibold'>Over CircuLaw</h4>
+                      <div className='border-b border-gray-100 sm:border-0 py-2 sm:py-0'>
+                        <h4 className='text-green-200 heading-xl-semibold'>Over CircuLaw</h4>
                         <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                           {' '}
                           <ul role='list' className='mt-4 space-y-4'>
@@ -223,7 +230,7 @@ export default function Footer(props) {
                                 <li key={slug.slug}>
                                   <a
                                     href={`/over/${encodeURIComponent(slug.slug)}`}
-                                    className='p-md text-grey-100'
+                                    className='p-base text-gray-100'
                                   >
                                     <span className='inline-block first-letter:uppercase link-interaction-light-green-bg'>
                                       {slug.title.replaceAll('-', ' ')}
@@ -238,7 +245,7 @@ export default function Footer(props) {
                         <ul role='list' className='space-y-4'>
                           <li>
                             <a
-                              className='p-md text-grey-100 link-interaction'
+                              className='p-base text-gray-100 link-interaction'
                               href={`/${encodeURIComponent(FAQslug)}`}
                             >
                               {FAQslug.length > 0 && (
@@ -250,31 +257,43 @@ export default function Footer(props) {
                           </li>
                           {navigation.other.map((item) => (
                             <li key={item.name}>
-                              <a href={item.href} className=' p-md link-interaction-light-green-bg'>
+                              <a
+                                href={item.href}
+                                className=' p-base link-interaction-light-green-bg'
+                              >
                                 {item.name}
                               </a>
                             </li>
                           ))}
-                          <li className='flex justify-start text-grey-100 items-center'>
+                          <li className='flex justify-start text-gray-100 items-center'>
                             <LangSwitch background='dark' />
                           </li>
                         </ul>
                       </div>
                       <div className='hidden sm:block'>
                         <ActionPanel
+                          title='Schrijf je in voor onze CircuLaw Nieuwsbrief'
+                          paragraph='Zo ben je altijd op de hoogte van het laatste CircuLaw-nieuws. '
+                          buttonText='Aanmelden'
+                          buttonLink='/nieuwsbrief'
+                        />
+                        <div className='py-4'></div>
+                        <ActionPanel
                           title='Doe met ons mee'
                           paragraph='Heb je vragen, wil je je ervaringen delen of wil je een wetsanalyse laten uitvoeren op een circulair  thema of casus?'
                           buttonText='Neem contact op'
                           buttonLink='/contact'
                         />
-                        <div className='flex sm:block py-6 p-md text-grey-100 items-center justify-center z-0 relative'>
-                          <h3 className='inline-block mobile sm:desktop'>Volg ons op:</h3>
-                          <span data-text='Volg ons op LinkedIn' className='tooltip p-md z-40'>
+                        <div className='flex sm:block py-6 p-base text-gray-100 items-center justify-center z-0 relative'>
+                          <h3 className='inline-block heading-xl-semibold sm:heading-2xl-semibold'>
+                            Volg ons op:
+                          </h3>
+                          <span data-text='Volg ons op LinkedIn' className='tooltip p-base z-40'>
                             <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
                               <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-200 mb-1.5' />
                             </Link>
                           </span>
-                          <span data-text='Volg ons op GitHub' className='tooltip p-md z-30'>
+                          <span data-text='Volg ons op GitHub' className='tooltip p-base z-30'>
                             <Link
                               href='https://github.com/Dark-Matter-Labs/circulaw'
                               target='_blank'
@@ -282,7 +301,7 @@ export default function Footer(props) {
                               <AiFillGithub className='inline-block ml-3 h-6 w-6 hover:text-green-200 mb-1.5' />
                             </Link>
                           </span>
-                          <span data-text='Volg ons op OpenResearch' className='tooltip p-md'>
+                          <span data-text='Volg ons op OpenResearch' className='tooltip p-base'>
                             <Link
                               href='https://openresearch.amsterdam/nl/page/89270/circulaw---circulaire-regelgevingstool'
                               target='_blank'

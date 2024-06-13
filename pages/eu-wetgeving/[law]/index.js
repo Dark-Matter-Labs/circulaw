@@ -54,7 +54,7 @@ export default function LawSummaryPage({ lawData }) {
                   />
                 </div>
               </div>
-              <h1 className='mb-[60px] sm:mb-[94px] p-5xl-semibold sm:p-7xl-bold text-grey-100 max-w-4xl'>
+              <h1 className='mb-[60px] sm:mb-[94px] heading-5xl-semibold sm:p-7xl-bold text-gray-100 max-w-4xl'>
                 {' '}
                 {lawData?.title}
               </h1>
@@ -63,13 +63,13 @@ export default function LawSummaryPage({ lawData }) {
 
           {/* tabs desktop */}
           <div className='sticky top-16 lgNav:top-24 shadow-lg z-50'>
-            <div className='bg-green-800 -mt-12 sm:-mt-[62px] flex overflow-x-scroll snap-x snap-mandatory no-scrollbar lgNav:block pt-4'>
+            <div className='bg-green-800 -mt-12 sm:-mt-[72px] flex overflow-x-scroll snap-x snap-mandatory no-scrollbar lgNav:block pt-4'>
               <div className='global-margin'>
-                <div className='flex flex-row gap-x-2 justify-start p-lg-semibold text-green-500 h-[62px] max-w-3xl'>
+                <div className='flex flex-row gap-x-2 justify-start heading-xl-semibold text-green-500 h-[72px] max-w-3xl'>
                   <Link
                     className={`${
                       selectedTab === 'overzicht'
-                        ? 'bg-white text-green-500'
+                        ? 'bg-gray-100 text-green-500'
                         : 'bg-green-500 text-white'
                     }  h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[105px]`}
                     href={{
@@ -82,7 +82,7 @@ export default function LawSummaryPage({ lawData }) {
                   <Link
                     className={`${
                       selectedTab === 'verplichtingen-voor-europese-lidstaten'
-                        ? 'bg-white text-green-500'
+                        ? 'bg-gray-100 text-green-500'
                         : 'bg-green-500 text-white'
                     } h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[200px]`}
                     href={{
@@ -95,9 +95,9 @@ export default function LawSummaryPage({ lawData }) {
                   <Link
                     className={`${
                       selectedTab === 'relevantie-voor-regionale-en-lokale-overheden'
-                        ? 'bg-white text-green-500'
+                        ? 'bg-gray-100 text-green-500'
                         : 'bg-green-500 text-white'
-                    } h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[240px]`}
+                    } h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[250px]`}
                     href={{
                       pathname: `/eu-wetgeving/${lawData?.slug?.current}`,
                       query: { tab: 'relevantie-voor-regionale-en-lokale-overheden' },
@@ -108,7 +108,7 @@ export default function LawSummaryPage({ lawData }) {
                   <Link
                     className={`${
                       selectedTab === 'relevantie-voor-de-circulaire-economie'
-                        ? 'bg-white text-green-500'
+                        ? 'bg-gray-100 text-green-500'
                         : 'bg-green-500 text-white'
                     } h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[200px]`}
                     href={{
@@ -143,8 +143,6 @@ export default function LawSummaryPage({ lawData }) {
         </div>
       </Layout>
     );
-  } else {
-    return <Layout></Layout>;
   }
 }
 
@@ -159,6 +157,12 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const law = { law: params?.law ?? '' };
   const lawData = await client.fetch(lawQuery, law);
+
+  if (!lawData) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: { lawData },
     revalidate: 1,

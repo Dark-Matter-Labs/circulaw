@@ -1,6 +1,10 @@
+import Link from 'next/link';
+import { ArrowRightIcon } from '@heroicons/react/outline';
+import { client } from '@/lib/sanity';
 // refactor
 import HomePageAboutSection from '@/components/home-page-about-section';
 import HomePageEUSection from '@/components/home-page-eu-section';
+// refactor
 import Layout from '@/components/layouts/layout';
 import LinkIcon from '@/components/link-icon';
 import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
@@ -12,10 +16,7 @@ import {
   newsItems,
   euHomePageQuery,
   pcHomePageQuery,
-} from '@/lib/queries';
-import { client } from '@/lib/sanity';
-import { ArrowRightIcon } from '@heroicons/react/outline';
-import Link from 'next/link';
+} from '@/lib/queries'; // refactor
 import { useRouter } from 'next/router';
 
 export default function Index({
@@ -34,12 +35,12 @@ export default function Index({
       footerText={footerText}
       pageUrl={router.asPath}
     >
-      <div className='bg-grey-100 sm:pb-12 -z-50' name='thema'>
+      <div className='bg-gray-100 py-12 sm:pb-24 sm:pt-18 -z-50' name='thema'>
         <div className='global-margin -z-20'>
-          <h2 className='p-5xl-semibold sm:p-7xl-semibold pt-8 text-green-600 border-grey-600 border-b pb-6'>
+          <h2 className='heading-2xl-semibold sm:heading-5xl-semibold pt-8 text-green-600 border-gray-600 border-b pb-6'>
             Ontdek direct onze instrumenten
           </h2>
-          <p className='p-xl max-w-[750px] py-4 whitespace-normal'>
+          <p className='heading-xl max-w-[750px] py-4 whitespace-normal'>
             De overheid heeft 5 productketens gekozen voor het{' '}
             <Link
               className='whitespace-normal text-green-500'
@@ -63,16 +64,16 @@ export default function Index({
         </div>
       </div>
 
-      <div className='bg-grey-100 pt-12 sm:pt-0 pb-0 sm:pb-12'>
+      <div className='bg-gray-100 sm:pt-0 pb-12 sm:pb-24'>
         <div className='global-margin'>
           <HomePageEUSection euData={euData} />
         </div>
       </div>
 
-      <div className='bg-grey-100 pt-12 sm:pt-0 pb-12'>
+      <div className='bg-gray-100 pt-12 sm:pt-0 pb-12'>
         <div className='global-margin'>
-          <div className='pb-12 flex flex-col'>
-            <h3 className='p-5xl-semibold sm:p-7xl-semibold text-green-600 w-full border-b pb-6 border-green-800'>
+          <div className='pb-12 sm:pb-24 flex flex-col'>
+            <h3 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 w-full border-b pb-6 border-green-800'>
               Uitgelichte nieuwsberichten
             </h3>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-6 py-10 overflow-hidden'>
