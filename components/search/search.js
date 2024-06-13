@@ -7,10 +7,9 @@ import {
   Configure,
   RefinementList,
   useInstantSearch,
-  ClearRefinements,
-  Pagination,
 } from 'react-instantsearch';
-
+import Pagination from './pagination';
+import CustomClearRefinements from './clear-filters';
 import CustomStats from './stats';
 import { Hit } from '@/components/search/hit';
 import NewsHit from './about-hit';
@@ -75,8 +74,10 @@ export const Search = () => {
           </div>
           <div className='global-margin flex'>
             {index === 'instruments' && (
-              <div className='flex flex-col mt-10'>
+              <div className='flex flex-col mt-10 min-w-[260px]'>
                 <div className='flex flex-col'>
+                  <CustomClearRefinements />
+                  {/* 
                   <ClearRefinements
                     classNames={{
                       root: 'mb-6 p-base',
@@ -84,6 +85,8 @@ export const Search = () => {
                         'p-base border-2 border-green-600 bg-none hover:bg-green-200 text-green-600 active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white rounded-full',
                     }}
                   />
+                   */}
+                  
                   <RefinementList
                     attribute='categorie'
                     title='Categorie'
@@ -164,7 +167,21 @@ export const Search = () => {
                   }}
                   hitComponent={index === 'instruments' ? Hit : NewsHit}
                 />
+                <div className='w-full flex items-center justify-center mb-12 mt-6'>
+                  {/*  
+              <Pagination 
+                  // onClick={() => {scrollTo(0,0)}}
+                  classNames={{
+                    root: 'shadow-none',
+                    list: 'shador-none border-none ',
+                    item: '',
+                    firstPageItem: 'bg-none hover:bg-red-300 rounded-cl group',
+                    link: 'border-none shadow-none group-hover:bg-red-300 rounded-full bg-none p-2 mx-1 ',
+                    selectedItem: 'bg-green-200 !font-italic focus:text-green-500'
+                  }}
+                />*/}
                 <Pagination />
+          </div>
               </NoResultsBoundary>
             </div>
           </div>
