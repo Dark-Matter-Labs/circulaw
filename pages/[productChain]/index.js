@@ -62,7 +62,7 @@ export async function getStaticPaths() {
   const productChains = await client.fetch(pathsQuery);
   return {
     paths: productChains.map((productChain) => ({ params: { productChain } })),
-    fallback: false,
+    fallback: true,
   };
 }
 
@@ -77,6 +77,7 @@ export async function getStaticProps({ params }) {
       notFound: true,
     };
   }
+
   return {
     props: { productChainData, instrumentCount, themaCards },
     revalidate: 1,
