@@ -72,11 +72,8 @@ export async function getStaticProps({ params }) {
   const instrumentCount = await client.fetch(number, productChain);
   const themaCards = await client.fetch(themaCardQuery, productChain);
 
-  if (!productChainData) {
-    return {
-      notFound: true,
-    };
-  }
+  
+ 
   return {
     props: { productChainData, instrumentCount, themaCards },
     revalidate: 1,
