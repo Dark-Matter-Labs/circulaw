@@ -16,7 +16,7 @@ export default function FeaturedCard({ data }) {
 
   if (data.createPage === true) {
     return (
-      <Link href={`/nieuws/${data.slug.current}`} className='group'>
+      <Link href={`/nieuws/${data?.slug?.current}`} className='group'>
         <div
           className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''}
                     ${data.colour === 'green' ? 'bg-green-500' : ''}
@@ -62,7 +62,7 @@ export default function FeaturedCard({ data }) {
             <div
               className={`${
                 data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
-              } p-base line-clamp-4`}
+              } p-base line-clamp-2`}
             >
               {data.newsText}
             </div>

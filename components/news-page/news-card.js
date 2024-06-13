@@ -14,7 +14,7 @@ export default function NewsCard({ data }) {
 
   if (data.createPage === true) {
     return (
-      <Link href={`/nieuws/${data.slug.current}`} className='group'>
+      <Link href={`/nieuws/${data?.slug?.current}`} className='group'>
         <div
           className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''}
                     ${data.colour === 'green' ? 'bg-green-500' : ''}
