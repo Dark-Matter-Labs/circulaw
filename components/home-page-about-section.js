@@ -39,10 +39,9 @@ export default function HomePageAboutSection({ aboutSection }) {
             height='253'
             src='https://www.youtube.com/embed/9PTTCyLhzLo?si=uqv63SA7T44lQLnO'
             title='YouTube video player'
-            frameborder='0'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-            referrerpolicy='strict-origin-when-cross-origin'
-            allowfullscreen
+            referrerPolicy='strict-origin-when-cross-origin'
+            allowFullScreen
           ></iframe>
         </div>
       </div>
