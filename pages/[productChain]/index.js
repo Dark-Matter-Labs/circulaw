@@ -60,7 +60,6 @@ export default function ProductChainPage({ productChainData, instrumentCount, th
 
 export async function getStaticPaths() {
   const productChains = await client.fetch(pathsQuery);
-  console.log(productChains, 'in paths')
   return {
     paths: productChains.map((productChain) => ({ params: { productChain } })),
     fallback: true,
@@ -69,14 +68,16 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const productChain = { productChain: params?.productChain ?? '' };
-  console.log(productChain)
   const productChainData = await client.fetch(query, productChain);
-  console.log(productChainData)
   const instrumentCount = await client.fetch(number, productChain);
   const themaCards = await client.fetch(themaCardQuery, productChain);
 
+  if (!productChainData) {
+    return {
+      notFound: true,
+    };
+  }
 
-  console.log(!productChainData)
   return {
     props: { productChainData, instrumentCount, themaCards },
     revalidate: 1,
