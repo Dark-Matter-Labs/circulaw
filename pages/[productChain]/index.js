@@ -73,7 +73,7 @@ export async function getStaticProps({ params }) {
   const themaCards = await client.fetch(themaCardQuery, productChain);
 
   
- 
+  console.log(!productChainData)
   return {
     props: { productChainData, instrumentCount, themaCards },
     revalidate: 1,
