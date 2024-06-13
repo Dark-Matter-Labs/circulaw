@@ -13,19 +13,49 @@ import CustomClearRefinements from './clear-filters';
 import CustomStats from './stats';
 import { Hit } from '@/components/search/hit';
 import NewsHit from './about-hit';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+
 
 const searchClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a06353266a');
 
 // create condition here to change indexName
 export const Search = () => {
-  const [index, setIndex] = useState('instruments');
+
+  const searchParams = useSearchParams()
+  const initialSearchIndex = searchParams.get('searchIndex')
+  const initialSearchQuery = searchParams.get('query')
+
+
+
+  useEffect(() => {
+    if (initialSearchIndex) {
+      setIndex(initialSearchIndex)
+    } else 
+      setIndex('instruments')
+
+
+    if (initialSearchQuery) {
+      setInitialSearchPageQuery(initialSearchQuery)
+    } else {
+      setInitialSearchPageQuery('')
+    }
+  }, [initialSearchIndex, initialSearchQuery])
+
+  const [index, setIndex] = useState();
+  const [initialSearchPageQuerie, setInitialSearchPageQuery] = useState()
+  console.log(initialSearchPageQuerie)
 
   return (
     <>
       <div className='w-full flex flex-col items center justify-center'>
-        <InstantSearch searchClient={searchClient} indexName={index} className='' routing={true}>
-          <Configure hitsPerPage={10} />
+        <InstantSearch searchClient={searchClient} indexName={index} className='' routing={true}  initialUiState={{ instruments: {
+      query: 'fuck you',
+    },
+  }}      
+>
+
+          <Configure hitsPerPage={10}/>
           <div className='bg-green-600 h-[360px] flex items-end justify-center w-full'>
             <div className='global-margin w-full flex items-center justify-center'>
               <div className='flex flex-col items-center justify-center gap-y-6'>
@@ -52,6 +82,8 @@ export const Search = () => {
                 </div>
                 <div className='w-full'>
                   <SearchBox
+                    defaultRefinement='hello'
+                    searchAsYouType={false}
                     placeholder={
                       index === 'instruments'
                         ? 'Zoek naar instrumenten...'
@@ -77,16 +109,7 @@ export const Search = () => {
               <div className='flex flex-col mt-10 min-w-[260px]'>
                 <div className='flex flex-col'>
                   <CustomClearRefinements />
-                  {/* 
-                  <ClearRefinements
-                    classNames={{
-                      root: 'mb-6 p-base',
-                      button:
-                        'p-base border-2 border-green-600 bg-none hover:bg-green-200 text-green-600 active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white rounded-full',
-                    }}
-                  />
-                   */}
-                  
+              
                   <RefinementList
                     attribute='categorie'
                     title='Categorie'
@@ -168,20 +191,9 @@ export const Search = () => {
                   hitComponent={index === 'instruments' ? Hit : NewsHit}
                 />
                 <div className='w-full flex items-center justify-center mb-12 mt-6'>
-                  {/*  
-              <Pagination 
-                  // onClick={() => {scrollTo(0,0)}}
-                  classNames={{
-                    root: 'shadow-none',
-                    list: 'shador-none border-none ',
-                    item: '',
-                    firstPageItem: 'bg-none hover:bg-red-300 rounded-cl group',
-                    link: 'border-none shadow-none group-hover:bg-red-300 rounded-full bg-none p-2 mx-1 ',
-                    selectedItem: 'bg-green-200 !font-italic focus:text-green-500'
-                  }}
-                />*/}
-                <Pagination />
-          </div>
+                 
+                  <Pagination />
+                </div>
               </NoResultsBoundary>
             </div>
           </div>

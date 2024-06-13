@@ -27,8 +27,9 @@ import { ChevronDownIcon, MenuIcon, XIcon, SearchIcon } from '@heroicons/react/o
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Lottie from 'react-lottie';
+import { useSearchParams } from 'next/navigation';
 
 const defaultOptions = {
   loop: true,
@@ -41,6 +42,8 @@ const defaultOptions = {
 
 export default function Nav(props) {
   const router = useRouter();
+  const searchParams = useSearchParams();
+
   const { CustomEvent } = usePiwikPro();
   const [scrollEffect, setScrollEffect] = useState(false);
   useEffect(() => {
@@ -53,6 +56,68 @@ export default function Nav(props) {
     };
     window.addEventListener('scroll', changeEffect);
   }, []);
+
+  const [searchIndex, setSearchIndex] = useState('instruments');
+  const [searchQuery, setSearchQuery] = useState('');
+  console.log(searchIndex, searchQuery)
+
+  const createQueryString = useCallback(
+    (name, value) => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set(name, value);
+      console.log(params);
+      return params.toString();
+    },
+    [searchParams],
+  );
+
+  const onChange = () => (e) => {
+   const value = e.target.value
+  setSearchQuery(value)
+  }
+
+  const onSubmit = () => (e) => {
+    e.preventDefault()
+    router.push('/search' + '?' + createQueryString('searchIndex', searchIndex) + '&' + createQueryString('query', searchQuery ))
+  }
+
+  // search Menu
+
+  const [searchMenuIsOpen, setSearchMenuIsOpen] = useState(false);
+  const {
+    refs: searchMenuRef,
+    floatingStyles: searchMenuStyles,
+    context: searchMenuContext,
+  } = useFloating({
+    placement: 'bottom',
+    open: searchMenuIsOpen,
+    onOpenChange: setSearchMenuIsOpen,
+    middleware: [offset(28), flip(), shift()],
+  });
+
+  const { isMounted: searchMenuIsMounted, styles: searchMenuTransitionStyles } =
+    useTransitionStyles(searchMenuContext, {
+      duration: 300,
+      initial: {
+        opacity: 0,
+        transform: 'translateY(-100%)',
+      },
+      open: {
+        opacity: 100,
+        transform: 'translateY(0)',
+      },
+      close: {
+        opacity: 0,
+        transform: 'translateY(-100%)',
+      },
+    });
+
+  const searchMenuClick = useClick(searchMenuContext);
+  const searchMenuDismiss = useDismiss(searchMenuContext);
+  const searchMenuRole = useRole(searchMenuContext);
+
+  const { getReferenceProps: searchMenuReferencProps, getFloatingProps: searchMenuFloatingProps } =
+    useInteractions([searchMenuClick, searchMenuDismiss, searchMenuRole]);
 
   // main menu
   const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
@@ -242,6 +307,7 @@ export default function Nav(props) {
               ? [
                   `${
                     mainMenuIsMounted ||
+                    searchMenuIsMounted ||
                     (overMenuIsMounted && scrollEffect === false) ||
                     (euMenuIsMounted && scrollEffect === false)
                       ? ['bg-green-600 bg-opacity-100 shadow-lg transition-all duration-75']
@@ -776,21 +842,100 @@ export default function Nav(props) {
                     </FloatingFocusManager>
                   )}
                 </div>
-                {/* Refactor */}
+
                 <DesktopSimpleButton name='Nieuws' url='/nieuws' />
                 <DesktopSimpleButton name='Vraag & antwoord' url='/vraag-en-antwoord' />
                 <DesktopSimpleButton name='Contact' url='/contact' />
-                <Link href='/search'>
-                  <div
-                    className={`${
-                      router.pathname === '/'
-                        ? 'bg-green-50 text-green-600'
-                        : 'bg-green-600 text-green-50'
-                    } h-[26px] w-9 rounded-cl ml-6 flex items-center justify-center`}
+
+                {/* SEARCH MENU */}
+
+                <div
+                  className={`${router.pathname === '/search' ? 'hidden' : 'block'} ml-6 lg:ml-8`}
+                >
+                  <button
+                    className='h-full relative p-sm group z-100 flex flex-row items-center'
+                    ref={searchMenuRef.setReference}
+                    {...searchMenuReferencProps()}
                   >
-                    <SearchIcon className='h-5 w-5' />
-                  </div>
-                </Link>
+                    <span
+                      className={`${
+                        searchMenuIsOpen === true
+                          ? [
+                              `${
+                                router.pathname === '/'
+                                  ? 'bg-green-50 text-green-600'
+                                  : 'bg-green-600 text-green-50'
+                              }`,
+                            ]
+                          : [
+                              `${
+                                router.pathname === '/'
+                                  ? ' bg-green-50 text-green-600'
+                                  : 'bg-green-600 text-green-50'
+                              }`,
+                            ]
+                      } flex items-center justify-center rounded-clSm h-6 w-7`}
+                    >
+                      <SearchIcon className='h-4 w-4' />
+                    </span>
+                  </button>
+                  {searchMenuIsMounted && (
+                    <FloatingFocusManager context={mainMenuContext} modal={true} disabled>
+                      <div
+                        ref={searchMenuRef.setFloating}
+                        style={searchMenuStyles}
+                        {...searchMenuFloatingProps()}
+                        className='h-72 w-full -z-10 '
+                      >
+                        <div
+                          className='h-full shadow-lg'
+                          style={{ ...searchMenuTransitionStyles }}
+                          // onMouseLeave={() => setSearchMenuIsOpen(false)}
+                        >
+                          <div
+                            className={`${
+                              router.pathname === '/' ? 'bg-green-600' : 'bg-gray-300'
+                            } h-full`}
+                          >
+                            <div className='w-full h-full global-margin flex flex-col items-center justify-end pb-10'>
+                              <div className='mb-4'>
+                                <div className='w-full flex flex-row justify-center'>
+                                  <button
+                                    onClick={() => setSearchIndex('instruments')}
+                                    className={`${
+                                      searchIndex === 'instruments' ? 'opacity-100' : 'opacity-50'
+                                    } px-5 py-1.5 bg-white rounded-[8px] flex items-center justify-center mr-1 p-base-semibold`}
+                                  >
+                                    Instrumenten
+                                  </button>
+
+                                  <button
+                                    onClick={() => setSearchIndex('aboutPage')}
+                                    className={`${
+                                      searchIndex === 'aboutPage' ? 'opacity-100' : 'opacity-50'
+                                    } px-5 py-1.5 bg-white rounded-[8px] flex items-center justify-center p-base-semibold`}
+                                  >
+                                    Over CircuLaw
+                                  </button>
+                                </div>
+                              </div>
+                              <div className='h-16 w-[366px]'>
+
+
+                                <form onSubmit={onSubmit()}>
+                                  <input placeholder='Search for a product...' onChange={onChange()}/>
+                                  <button className='ml-2 border border-white p-2'>Go to the results page</button>
+                                </form>
+
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </FloatingFocusManager>
+                  )}
+                </div>
               </div>
             </div>
           </>
