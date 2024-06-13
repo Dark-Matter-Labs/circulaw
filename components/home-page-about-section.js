@@ -32,11 +32,11 @@ export default function HomePageAboutSection({ aboutSection }) {
         </Link>
       </div>
       <div className='w-full sm:w-1/2 sm:flex justify-center h-400px mt-6 sm:mt-0'>
-        <div className=' w-full relative overflow-hidden pt-[56%]'>
+        <div className='w-full relative overflow-hidden pt-[56%]'>
           <iframe
-            className='absolute bottom-0 left-0 right-0 top-0 h-full w-full'
-            width='560'
-            height='315'
+            className='absolute bottom-0 left-0 sm:left-24 right-0 top-0 sm:top-12 h-full w-full sm:h-3/4 sm:w-3/4 rounded-cl'
+            width='450'
+            height='253'
             src='https://www.youtube.com/embed/9PTTCyLhzLo?si=uqv63SA7T44lQLnO'
             title='YouTube video player'
             frameborder='0'
