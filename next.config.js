@@ -3,6 +3,7 @@
 const withTM = require('next-transpile-modules')(['@piwikpro/next-piwik-pro']);
 
 const nextConfig = {
+  reactStrictMode: false,
   // redirects,
   async redirects() {
     return [

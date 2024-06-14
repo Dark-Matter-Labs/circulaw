@@ -3,10 +3,10 @@ import 'instantsearch.css/themes/satellite.css';
 import {
   Hits,
   InstantSearch,
-  SearchBox,
   Configure,
   RefinementList,
   useInstantSearch,
+  SearchBox,
 } from 'react-instantsearch';
 import Pagination from './pagination';
 import CustomClearRefinements from './clear-filters';
@@ -14,89 +14,165 @@ import CustomStats from './stats';
 import { Hit } from '@/components/search/hit';
 import NewsHit from './about-hit';
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
-
+// import { useSearchParams } from 'next/navigation';
+import singletonRouter from 'next/router';
+import { XIcon } from '@heroicons/react/outline';
+import { createInstantSearchRouterNext } from 'react-instantsearch-router-nextjs';
 
 const searchClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a06353266a');
 
-// create condition here to change indexName
 export const Search = () => {
-
-  const searchParams = useSearchParams()
-  const initialSearchIndex = searchParams.get('searchIndex')
-  const initialSearchQuery = searchParams.get('query')
-
-
+  const [searchIndex, setSearchIndex] = useState();
+  const [searchQuery, setSearchQuery] = useState();
 
   useEffect(() => {
-    if (initialSearchIndex) {
-      setIndex(initialSearchIndex)
-    } else 
-      setIndex('instruments')
-
-
-    if (initialSearchQuery) {
-      setInitialSearchPageQuery(initialSearchQuery)
-    } else {
-      setInitialSearchPageQuery('')
-    }
-  }, [initialSearchIndex, initialSearchQuery])
-
-  const [index, setIndex] = useState();
-  const [initialSearchPageQuerie, setInitialSearchPageQuery] = useState()
-  console.log(initialSearchPageQuerie)
-
+    if (typeof window !== 'undefined' && sessionStorage.length > 0) {
+      setSearchIndex(sessionStorage.getItem('searchIndex'))
+      setSearchQuery(sessionStorage.getItem('searchQuery'))
+    } else setSearchIndex('instruments')
+  }, [])
+  
   return (
     <>
       <div className='w-full flex flex-col items center justify-center'>
-        <InstantSearch searchClient={searchClient} indexName={index} className='' routing={true}  initialUiState={{ instruments: {
-      query: 'fuck you',
-    },
-  }}      
->
-
-          <Configure hitsPerPage={10}/>
-          <div className='bg-green-600 h-[360px] flex items-end justify-center w-full'>
+        <InstantSearch
+        initialUiState={{
+           [searchIndex]: {
+          query: searchQuery,
+          },
+       }}
+          searchClient={searchClient}
+          indexName={searchIndex}
+          className=''
+          insights={true}
+          routing={{
+            router: createInstantSearchRouterNext({
+              singletonRouter,
+            }),
+          }}
+          
+          
+        >
+        <Configure hitsPerPage={10} query={searchQuery}/>
+          <div className='bg-green-600 h-[260px] flex items-end justify-center w-full'>
             <div className='global-margin w-full flex items-center justify-center'>
               <div className='flex flex-col items-center justify-center gap-y-6'>
-                <h1 className='text-green-50 heading-2xl-semibold sm:heading-5xl-semibold'>
-                  Zoek binnen de website
-                </h1>
-                <div className='w-full flex flex-row justify-center'>
-                  <button
-                    onClick={() => setIndex('instruments')}
-                    className={`${
-                      index === 'instruments' ? 'opacity-100' : 'opacity-50'
-                    } px-5 py-1.5 bg-white rounded-[8px] flex items-center justify-center mr-1 p-base-semibold`}
-                  >
-                    Instrumenten
-                  </button>
-                  <button
-                    onClick={() => setIndex('aboutPage')}
-                    className={`${
-                      index === 'aboutPage' ? 'opacity-100' : 'opacity-50'
-                    } px-5 py-1.5 bg-white rounded-[8px] flex items-center justify-center p-base-semibold`}
-                  >
-                    Over CircuLaw
-                  </button>
-                </div>
                 <div className='w-full'>
-                  <SearchBox
-                    defaultRefinement='hello'
-                    searchAsYouType={false}
-                    placeholder={
-                      index === 'instruments'
-                        ? 'Zoek naar instrumenten...'
-                        : 'Zoek naar Over CircuLaw...'
-                    }
-                    classNames={{
-                      root: 'mb-10 h-14',
-                      form: 'bg-green-600 flex',
-                      input:
-                        'h-14 rounded-full max-w-none focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] caret-white block pl-12 pr-3 py-2 border border-green-600 bg-white bg-opacity-50 placeholder-green-50 text-green-50 text-[18px] font-semibold focus:outline-none focus:border-green-50 focus:ring-green-50 focus:ring-1',
-                      resetIcon: 'fill-green-900',
-                    }}
-                  />
+                  <div className='w-full h-full global-margin flex flex-col items-center justify-end pb-10'>
+                    <div className='mb-4'>
+                      <div className='flex flex-row justify-center w-[600px] gap-x-1.5'>
+                        <button
+                          onClick={() => setSearchIndex('instruments')}
+                          className={`${
+                            searchIndex === 'instruments' ? '' : ''
+                          } flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
+                        >
+                          <div
+                            className={`${
+                              searchIndex === 'instruments' ? 'bg-green-500' : 'bg-black'
+                            } w-4 h-4 rounded-full flex items-center justify-center mr-4`}
+                          >
+                            <div
+                              className={`${
+                                searchIndex === 'instruments'
+                                  ? 'bg-green-500 border-white border-2'
+                                  : 'bg-white'
+                              } h-3 w-3 rounded-full `}
+                            ></div>
+                          </div>
+                          <div className='flex flex-col items-start justify-start'>
+                            Instrumenten
+                            <span className='p-xs'>Zoeken binnen &apos;instrumenten&apos;</span>
+                          </div>
+                        </button>
+                        <button
+                          onClick={() => setSearchIndex('aboutPage')}
+                          className={`${
+                            searchIndex === 'aboutPage' ? '' : ''
+                          } flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
+                        >
+                          <div
+                            className={`${
+                              searchIndex === 'aboutPage' ? 'bg-green-500' : 'bg-black'
+                            } w-4 h-4 rounded-full flex items-center justify-center mr-4`}
+                          >
+                            <div
+                              className={`${
+                                searchIndex === 'aboutPage'
+                                  ? 'bg-green-500 border-white border-2'
+                                  : 'bg-white'
+                              } h-3 w-3 rounded-full `}
+                            ></div>
+                          </div>
+                          <div className='flex flex-col items-start justify-start'>
+                            Over Circulaw
+                            <span className='p-xs'>Zoeken binnen &apos;Over Circulaw&apos;</span>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+
+                    {/*  
+                              <div className='h-16 w-[600px] bg-green-600'>
+                                <form
+                                  className='bg-green-600 w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex'
+                                  onSubmit={onSubmit()}
+                                >
+                                  <input
+                                    className='w-[600px] h-[66px] focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold'
+                                    placeholder={
+                                      searchIndex === 'instruments'
+                                        ? 'Zoek naar instrumenten...'
+                                        : 'Zoek naar over CircuLaw...'
+                                    }
+                                    onChange={onChange()}
+                                  />
+                                  <button
+                                    type='reset'
+                                    title='Clear the search query'
+                                    className={`${
+                                      searchQuery === '' ? 'hidden' : ''
+                                    } absolute top-3.5 right-28 rounded-full p-2 hover:bg-white/50 group`}
+                                    onClick={() => setSearchQuery('')}
+                                  >
+                                    <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
+                                  </button>
+                                  <button
+                                    type='submit'
+                                    className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl'
+                                  >
+                                    Zoeken
+                                  </button>
+                                </form>
+                              </div>
+
+*/}
+
+                    <SearchBox
+                      searchAsYouType={false}
+                      placeholder={
+                        searchIndex === 'instruments'
+                          ? 'Zoek naar instrumenten...'
+                          : 'Zoek naar Over CircuLaw...'
+                      }
+                      classNames={{
+                        root: 'h-16 w-[600px] bg-green-600',
+                        form: 'bg-green-600 w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex',
+                        input:
+                          'w-[600px] h-[66px] focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold',
+                        resetIcon: 'fill-green-900',
+                        submitIcon: 'visible',
+                      }}
+                      submitIconComponent={() => (
+                        <div
+                          className='absolute top-3.5 right-28 rounded-full p-2 hover:bg-white/50 group'
+                          type='reset'
+                        >
+                          <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
+                        </div>
+                      )}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -105,11 +181,11 @@ export const Search = () => {
             <CustomStats />
           </div>
           <div className='global-margin flex'>
-            {index === 'instruments' && (
+            {searchIndex === 'instruments' && (
               <div className='flex flex-col mt-10 min-w-[260px]'>
                 <div className='flex flex-col'>
                   <CustomClearRefinements />
-              
+
                   <RefinementList
                     attribute='categorie'
                     title='Categorie'
@@ -188,10 +264,9 @@ export const Search = () => {
                     list: 'ml-10',
                     item: 'shadow-none px-0 pb-4 pt-0',
                   }}
-                  hitComponent={index === 'instruments' ? Hit : NewsHit}
+                  hitComponent={searchIndex === 'instruments' ? Hit : NewsHit}
                 />
                 <div className='w-full flex items-center justify-center mb-12 mt-6'>
-                 
                   <Pagination />
                 </div>
               </NoResultsBoundary>
@@ -235,3 +310,5 @@ function NoResults() {
     </div>
   );
 }
+
+

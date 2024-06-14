@@ -3032,6 +3032,24 @@ instantsearch.js@4.70.0:
     qs "^6.5.1 < 6.10"
     search-insights "^2.13.0"
 
+instantsearch.js@4.71.1:
+  version "4.71.1"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.71.1.tgz#367a10c2da2f423aaeef42d7e59845f2bfa9c367"
+  integrity sha512-4AvEPadnDBf0NsCCw+a1GjmMFEZ3zQzQhCe51cFPLYRXnRyKw5bLvRVaNQckiDG+vl7bPyJrWn5YAh5UhBwA+w==
+  dependencies:
+    "@algolia/events" "^4.0.1"
+    "@types/dom-speech-recognition" "^0.0.1"
+    "@types/google.maps" "^3.45.3"
+    "@types/hogan.js" "^3.0.0"
+    "@types/qs" "^6.5.3"
+    algoliasearch-helper "3.21.0"
+    hogan.js "^3.0.2"
+    htm "^3.0.0"
+    instantsearch-ui-components "0.6.0"
+    preact "^10.10.0"
+    qs "^6.5.1 < 6.10"
+    search-insights "^2.13.0"
+
 internal-slot@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/internal-slot/-/internal-slot-1.0.7.tgz#c06dcca3ed874249881007b0a5523b172a190802"
@@ -4123,6 +4141,16 @@ react-icons@^4.7.1:
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.12.0.tgz#54806159a966961bfd5cdb26e492f4dafd6a8d78"
   integrity sha512-IBaDuHiShdZqmfc/TwHu6+d6k2ltNCf3AszxNmjJc1KUfXdEeRJOKyNvLmAHaarhzGmTSVygNdyu8/opXv2gaw==
 
+react-instantsearch-core@7.11.1:
+  version "7.11.1"
+  resolved "https://registry.yarnpkg.com/react-instantsearch-core/-/react-instantsearch-core-7.11.1.tgz#a0c058365f6d956bf83622c7dab3852f4f9beda4"
+  integrity sha512-FsfEvefr3AZtsN4NYLxrqWFvzlrR73ejNX9f/1NBDERxaM+dZFKRfWpRXrA1QSwFeAppRmyC5+TMmga8OK8M0g==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    algoliasearch-helper "3.21.0"
+    instantsearch.js "4.71.1"
+    use-sync-external-store "^1.0.0"
+
 react-instantsearch-core@7.9.0:
   version "7.9.0"
   resolved "https://registry.yarnpkg.com/react-instantsearch-core/-/react-instantsearch-core-7.9.0.tgz#6e6c0c778c1fe90430037641441f4886b4851226"
@@ -4152,6 +4180,14 @@ react-instantsearch-hooks@^6.47.3:
     algoliasearch-helper "3.14.0"
     instantsearch.js "4.56.8"
     use-sync-external-store "^1.0.0"
+
+react-instantsearch-router-nextjs@^7.11.1:
+  version "7.11.1"
+  resolved "https://registry.yarnpkg.com/react-instantsearch-router-nextjs/-/react-instantsearch-router-nextjs-7.11.1.tgz#22dcba6cecd5911782dd788cc3eb0090994db274"
+  integrity sha512-MgR3fm5bg68i6pasvUWEurb8S0MKjxmsL3R5XGTwMCn8JRZB+EpehcircyLmbQeGX94jlcSdK4ipfHyH/JQ7eA==
+  dependencies:
+    instantsearch.js "4.71.1"
+    react-instantsearch-core "7.11.1"
 
 react-instantsearch@^7.9.0:
   version "7.9.0"

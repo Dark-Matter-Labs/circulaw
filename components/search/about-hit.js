@@ -4,7 +4,7 @@ import { Highlight } from 'react-instantsearch';
 export default function AboutHit({ hit }) {
   return (
     <>
-      <Link href={`/over/${hit.slug}`}>
+      <Link href={`/over/${hit.slug}`} onClick={() => sessionStorage.clear()}>
         <article>
           <div className='max-w-[760px] '>
             <h2 className='heading-2xl-semibold mb-2'>

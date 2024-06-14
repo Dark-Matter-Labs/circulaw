@@ -6,6 +6,7 @@ export const Hit = ({ hit }) => {
   return (
     <article className='p-4 rounded-cl group hover:shadow-card transition-all duration-100 w-[760px]'>
       <Link
+        onClick={() => sessionStorage.clear()}
         href={`/${hit?.transitionAgenda?.toLowerCase()}/${hit?.thema?.toLowerCase()}/instrumenten/${
           hit.slug
         }`}
