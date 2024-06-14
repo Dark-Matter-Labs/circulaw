@@ -29,7 +29,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState, useEffect, useCallback } from 'react';
 import Lottie from 'react-lottie';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, usePathname } from 'next/navigation';
 
 const defaultOptions = {
   loop: true,
@@ -43,7 +43,7 @@ const defaultOptions = {
 export default function Nav(props) {
   const router = useRouter();
   const searchParams = useSearchParams();
-
+  const pathname = usePathname()
   const { CustomEvent } = usePiwikPro();
   const [scrollEffect, setScrollEffect] = useState(false);
   useEffect(() => {
@@ -267,7 +267,7 @@ export default function Nav(props) {
       },
     });
 
-  if (router.pathname === '/en') {
+  if (pathname === '/en') {
     return (
       <>
         <div className='w-full bg-green-800 sticky top-0 z-40 shadow-lg'>
@@ -301,7 +301,7 @@ export default function Nav(props) {
           id='parent'
           as='nav'
           className={`${
-            router.pathname === '/'
+            pathname === '/'
               ? [
                   `${
                     mainMenuIsMounted ||
@@ -324,7 +324,7 @@ export default function Nav(props) {
           <>
             {/* LOGO */}
             <div className=''>
-              {router.pathname === '/' && (
+              {pathname === '/' && (
                 <>
                   {/* LOGO DESKTOP HP */}
                   <div className='hidden lgNav:block'>
@@ -340,7 +340,7 @@ export default function Nav(props) {
                   </div>
                 </>
               )}
-              {router.pathname !== '/' && (
+              {pathname !== '/' && (
                 <>
                   <div className='hidden lgNav:block py-3'>
                     <Link href='/'>
@@ -369,7 +369,7 @@ export default function Nav(props) {
               )}
             </div>
             <div className='flex flex-col justify-between'>
-              {router.pathname === '/' ? (
+              {pathname === '/' ? (
                 <div className='hidden lgNav:flex flex-row justify-end mb-4'>
                   <LangSwitch background='dark' />
                 </div>
@@ -383,7 +383,7 @@ export default function Nav(props) {
               <div className='inset-y-0 float-right flex items-center pt-2 lgNav:hidden'>
                 <button
                   className={`${
-                    router.pathname !== '/' ? 'text-green-600' : 'text-gray-100'
+                    pathname !== '/' ? 'text-green-600' : 'text-gray-100'
                   } 'p-2 rounded-md`}
                   ref={mobileRef.setReference}
                   {...mobileRefProps()}
@@ -585,10 +585,10 @@ export default function Nav(props) {
                     <span
                       className={`${
                         mainMenuIsOpen === true
-                          ? [`${router.pathname === '/' ? 'text-green-200' : 'text-green-500'}`]
+                          ? [`${pathname === '/' ? 'text-green-200' : 'text-green-500'}`]
                           : [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-white group-hover:decoration-green-200'
                                   : 'text-green-800 group-hover:decoration-green-500'
                               }`,
@@ -602,14 +602,14 @@ export default function Nav(props) {
                         mainMenuIsOpen
                           ? [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-green-200 rotate-180'
                                   : 'rotate-180 text-green-500'
                               }`,
                             ]
                           : [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-white group-hover:text-green-200'
                                   : 'group-hover:text-green-500'
                               }`,
@@ -632,7 +632,7 @@ export default function Nav(props) {
                         >
                           <div
                             className={`${
-                              router.pathname === '/' ? 'bg-green-500' : 'bg-gray-300'
+                              pathname === '/' ? 'bg-green-500' : 'bg-gray-300'
                             } h-full flex flex-cols-5 gap-[1px] relative`}
                           >
                             {props?.navItems?.map((navItem, id) => (
@@ -659,10 +659,10 @@ export default function Nav(props) {
                     <span
                       className={`${
                         euMenuIsOpen === true
-                          ? [`${router.pathname === '/' ? 'text-green-200' : 'text-green-500'}`]
+                          ? [`${pathname === '/' ? 'text-green-200' : 'text-green-500'}`]
                           : [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-white group-hover:decoration-green-200'
                                   : 'text-green-800 group-hover:decoration-green-500'
                               }`,
@@ -676,14 +676,14 @@ export default function Nav(props) {
                         euMenuIsOpen
                           ? [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-green-200 rotate-180'
                                   : 'rotate-180 text-green-500'
                               }`,
                             ]
                           : [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-white group-hover:text-green-200'
                                   : 'group-hover:text-green-500'
                               }`,
@@ -701,7 +701,7 @@ export default function Nav(props) {
                       >
                         <div
                           className={`${
-                            router.pathname === '/' ? 'bg-green-600' : 'bg-green-50'
+                            pathname === '/' ? 'bg-green-600' : 'bg-green-50'
                           } h-full pb-10 shadow-lg pl-6 pt-8 pr-8`}
                           style={{ ...euMenuTransitionStyles }}
                           onMouseLeave={() => setEuMenuIsOpen(false)}
@@ -709,7 +709,7 @@ export default function Nav(props) {
                           {/* Remove slice once news section is separate */}
                           <div
                             className={`${
-                              router.pathname === '/'
+                              pathname === '/'
                                 ? 'text-white'
                                 : 'text-green-600 hover:text-green-500'
                             } p-xs mb-2  hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
@@ -729,7 +729,7 @@ export default function Nav(props) {
                             <div
                               key={euLaw?.slug}
                               className={`${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-white'
                                   : 'text-green-600 hover:text-green-500'
                               } p-xs mb-2  hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
@@ -762,10 +762,10 @@ export default function Nav(props) {
                     <span
                       className={`${
                         overMenuIsOpen === true
-                          ? [`${router.pathname === '/' ? 'text-green-200' : 'text-green-500'}`]
+                          ? [`${pathname === '/' ? 'text-green-200' : 'text-green-500'}`]
                           : [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-white group-hover:decoration-green-200'
                                   : 'text-green-800 group-hover:decoration-green-500'
                               }`,
@@ -779,14 +779,14 @@ export default function Nav(props) {
                         overMenuIsOpen
                           ? [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-green-200 rotate-180'
                                   : 'rotate-180 text-green-500'
                               }`,
                             ]
                           : [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-white group-hover:text-green-200'
                                   : 'group-hover:text-green-500'
                               }`,
@@ -804,7 +804,7 @@ export default function Nav(props) {
                       >
                         <div
                           className={`${
-                            router.pathname === '/' ? 'bg-green-600' : 'bg-green-50'
+                            pathname === '/' ? 'bg-green-600' : 'bg-green-50'
                           } h-full pb-10 shadow-lg pl-6 pt-8 pr-8`}
                           style={{ ...overMenuTransitionStyles }}
                           onMouseLeave={() => setOverMenuIsOpen(false)}
@@ -814,7 +814,7 @@ export default function Nav(props) {
                             <div
                               key={aboutPage?.slug}
                               className={`${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-white'
                                   : 'text-green-600 hover:text-green-500'
                               } p-xs mb-2  hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
@@ -848,7 +848,7 @@ export default function Nav(props) {
                 {/* SEARCH MENU */}
 
                 <div
-                  className={`${router.pathname === '/search' ? 'hidden' : 'block'} ml-6 lg:ml-8`}
+                  className={`${pathname === '/search' ? 'hidden' : 'block'} ml-6 lg:ml-8`}
                 >
                   <button
                     className='h-full relative p-sm group z-100 flex flex-row items-center'
@@ -860,14 +860,14 @@ export default function Nav(props) {
                         searchMenuIsOpen === true
                           ? [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'bg-green-50 text-green-600'
                                   : 'bg-green-600 text-green-50'
                               }`,
                             ]
                           : [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? ' bg-green-50 text-green-600'
                                   : 'bg-green-600 text-green-50'
                               }`,
@@ -892,7 +892,7 @@ export default function Nav(props) {
                         >
                           <div
                             className={`${
-                              router.pathname === '/' ? 'bg-green-600' : 'bg-gray-300'
+                              pathname === '/' ? 'bg-green-600' : 'bg-gray-300'
                             } h-full`}
                           >
                             {/* MAKE INTO A COMPONENT */}
@@ -997,7 +997,7 @@ export default function Nav(props) {
           </>
         </nav>
       </div>
-      {router.pathname === '/' && (
+      {pathname === '/' && (
         <div className='-mt-[9rem] bg-header bg-cover bg-center w-full'>
           <HomepageHeader homePageHeader={props.homePageHeader} />
         </div>
