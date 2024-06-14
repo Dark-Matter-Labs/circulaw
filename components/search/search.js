@@ -12,12 +12,12 @@ import {
 } from 'react-instantsearch';
 import { createInstantSearchRouterNext } from 'react-instantsearch-router-nextjs';
 import { InstrumentHit } from '@/components/search/instrument-hit';
-import { XIcon } from '@heroicons/react/outline';
 import { useState } from 'react';
 import CustomStats from '../../components/search/stats';
 import Pagination from '@/components/search/pagination';
 import AboutHit from '@/components/search/about-hit';
 import CustomClearRefinements from '@/components/search/clear-refinements';
+import { XIcon } from '@heroicons/react/outline';
 
 const algoliaClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a06353266a');
 
@@ -98,43 +98,6 @@ export default function Search({ serverState, url }) {
                       </button>
                     </div>
                   </div>
-
-                  {/*  
-                              <div className='h-16 w-[600px] bg-green-600'>
-                                <form
-                                  className='bg-green-600 w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex'
-                                  onSubmit={onSubmit()}
-                                >
-                                  <input
-                                    className='w-[600px] h-[66px] focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold'
-                                    placeholder={
-                                      searchIndex === 'instruments'
-                                        ? 'Zoek naar instrumenten...'
-                                        : 'Zoek naar over CircuLaw...'
-                                    }
-                                    onChange={onChange()}
-                                  />
-                                  <button
-                                    type='reset'
-                                    title='Clear the search query'
-                                    className={`${
-                                      searchQuery === '' ? 'hidden' : ''
-                                    } absolute top-3.5 right-28 rounded-full p-2 hover:bg-white/50 group`}
-                                    onClick={() => setSearchQuery('')}
-                                  >
-                                    <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
-                                  </button>
-                                  <button
-                                    type='submit'
-                                    className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl'
-                                  >
-                                    Zoeken
-                                  </button>
-                                </form>
-                              </div>
-
-*/}
-
                   <SearchBox
                     searchAsYouType={false}
                     placeholder={
@@ -147,16 +110,24 @@ export default function Search({ serverState, url }) {
                       form: 'bg-green-600 w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex',
                       input:
                         'w-[600px] h-[66px] focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold',
-                      resetIcon: 'fill-green-900',
                       submitIcon: 'visible',
                     }}
                     submitIconComponent={() => (
-                      <div
-                        className='absolute top-3.5 right-28 rounded-full p-2 hover:bg-white/50 group'
+                      <button
+                        type='submit'
+                        className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl'
+                      >
+                        Zoeken
+                      </button>
+                    )}
+                    resetIconComponent={() => (
+                      <button
                         type='reset'
+                        title='Clear the search query'
+                        className='absolute top-3.5 right-28 rounded-full p-2 hover:bg-white/50 group'
                       >
                         <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
-                      </div>
+                      </button>
                     )}
                   />
                 </div>
@@ -164,11 +135,9 @@ export default function Search({ serverState, url }) {
             </div>
           </div>
         </div>
-
         <div className='global-margin flex items-center justify-center mt-10'>
           <CustomStats />
         </div>
-
         <div className='global-margin flex'>
           {searchIndex === 'instruments' && (
             <div className='flex flex-col mt-10 min-w-[260px]'>
@@ -261,18 +230,6 @@ export default function Search({ serverState, url }) {
             </NoResultsBoundary>
           </div>
         </div>
-
-        {/* 
-        <div className=''>
-          <div>
-            <DynamicWidgets fallbackComponent={FallbackComponent} facets={[]} />
-          </div>
-          <div>
-       
-            <Hits hitComponent={InstrumentHit} />
-          </div>
-        </div>
-        */}
       </InstantSearch>
     </InstantSearchSSRProvider>
   );

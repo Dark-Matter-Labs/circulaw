@@ -1,15 +1,11 @@
 import { getServerState } from 'react-instantsearch';
 import { renderToString } from 'react-dom/server';
 
-import Layout from '@/components/layouts/layout';
+// import Layout from '@/components/layouts/layout';
 
 import Search from '@/components/search/search';
 export default function SearchPage({ serverState, url }) {
-  return (
-    <Layout>
-      <Search serverState={serverState} url={url} />
-    </Layout>
-  );
+  return <Search serverState={serverState} url={url} />;
 }
 
 export const getServerSideProps = async function getServerSideProps({ req }) {

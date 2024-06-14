@@ -43,7 +43,7 @@ const defaultOptions = {
 export default function Nav(props) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const pathname = usePathname()
+  const pathname = usePathname();
   const { CustomEvent } = usePiwikPro();
   const [scrollEffect, setScrollEffect] = useState(false);
   useEffect(() => {
@@ -847,9 +847,7 @@ export default function Nav(props) {
 
                 {/* SEARCH MENU */}
 
-                <div
-                  className={`${pathname === '/search' ? 'hidden' : 'block'} ml-6 lg:ml-8`}
-                >
+                <div className={`${pathname === '/search' ? 'hidden' : 'block'} ml-6 lg:ml-8`}>
                   <button
                     className='h-full relative p-sm group z-100 flex flex-row items-center'
                     ref={searchMenuRef.setReference}
