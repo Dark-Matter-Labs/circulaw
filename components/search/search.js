@@ -27,20 +27,20 @@ export const Search = () => {
 
   useEffect(() => {
     if (typeof window !== 'undefined' && sessionStorage.length > 0) {
-      setSearchIndex(sessionStorage.getItem('searchIndex'))
-      setSearchQuery(sessionStorage.getItem('searchQuery'))
-    } else setSearchIndex('instruments')
-  }, [])
-  
+      setSearchIndex(sessionStorage.getItem('searchIndex'));
+      setSearchQuery(sessionStorage.getItem('searchQuery'));
+    } else setSearchIndex('instruments');
+  }, []);
+
   return (
     <>
       <div className='w-full flex flex-col items center justify-center'>
         <InstantSearch
-        initialUiState={{
-           [searchIndex]: {
-          query: searchQuery,
-          },
-       }}
+          initialUiState={{
+            [searchIndex]: {
+              query: searchQuery,
+            },
+          }}
           searchClient={searchClient}
           indexName={searchIndex}
           className=''
@@ -50,10 +50,8 @@ export const Search = () => {
               singletonRouter,
             }),
           }}
-          
-          
         >
-        <Configure hitsPerPage={10} query={searchQuery}/>
+          <Configure hitsPerPage={10} query={searchQuery} />
           <div className='bg-green-600 h-[260px] flex items-end justify-center w-full'>
             <div className='global-margin w-full flex items-center justify-center'>
               <div className='flex flex-col items-center justify-center gap-y-6'>
@@ -310,5 +308,3 @@ function NoResults() {
     </div>
   );
 }
-
-

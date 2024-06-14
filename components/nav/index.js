@@ -60,7 +60,8 @@ export default function Nav(props) {
   const [searchIndex, setSearchIndex] = useState('instruments');
   const [searchQuery, setSearchQuery] = useState('');
 
-{/*  
+  {
+    /*  
   const createQueryString = useCallback(
     (name, value) => {
       const params = new URLSearchParams(searchParams.toString());
@@ -71,7 +72,8 @@ export default function Nav(props) {
   );
 
 
-  */}
+  */
+  }
 
   const onChange = () => (e) => {
     const value = e.target.value;
@@ -80,11 +82,10 @@ export default function Nav(props) {
 
   const onSubmit = () => (e) => {
     e.preventDefault();
-    sessionStorage.setItem('searchIndex', searchIndex)
-    sessionStorage.setItem('searchQuery', searchQuery)
-    router.push('/search')
+    sessionStorage.setItem('searchIndex', searchIndex);
+    sessionStorage.setItem('searchQuery', searchQuery);
+    router.push('/search');
   };
-
 
   const [searchMenuIsOpen, setSearchMenuIsOpen] = useState(false);
   const {
