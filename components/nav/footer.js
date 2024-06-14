@@ -7,13 +7,13 @@ import Partners from '@/components/nav/partners';
 import ActionPanel from '@/components/section-action-panel';
 import ORicon from '@/public/icons/openResearch.svg';
 import { ArrowUpIcon } from '@heroicons/react/outline';
-import { useRouter } from 'next/router';
 import { AiFillGithub } from 'react-icons/ai';
 import { RiLinkedinFill } from 'react-icons/ri';
 import { Link as ScrollLink } from 'react-scroll';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 import JaIcon from '@/public/icons/ja-icon.svg';
 import NeeIcon from '@/public/icons/nee-icon.svg';
+import { usePathname } from 'next/navigation';
 // import data // maybe not necessary
 const navigation = {
   other: [
@@ -48,11 +48,11 @@ export default function Footer(props) {
   if (props.vraagSlug) {
     FAQslug = props.vraagSlug;
   }
-  const router = useRouter();
+  const pathname = usePathname();
   return (
     <>
       <footer className='' aria-labelledby='footer-heading'>
-        {router.pathname !== '/en' && (
+        {pathname !== '/en' && (
           <div>
             <div className='flex lgNav:hidden w-full items-center justify-center py-8 bg-green-800 border-y-2 border-gray-100 '>
               <CustomButton color='home'>
@@ -76,7 +76,7 @@ export default function Footer(props) {
                     onClick={() => {
                       setFeedback('');
                       setFeedBackState('Ja');
-                      CustomEvent.trackEvent('Footer Feedback Ja', router.asPath);
+                      CustomEvent.trackEvent('Footer Feedback Ja', pathname);
                       setMoreInfoOpen('block');
                     }}
                   >
@@ -98,7 +98,7 @@ export default function Footer(props) {
                     onClick={() => {
                       setFeedback('');
                       setFeedBackState('Nee');
-                      CustomEvent.trackEvent('Footer Feedback Nee', router.asPath);
+                      CustomEvent.trackEvent('Footer Feedback Nee', pathname);
                       setMoreInfoOpen(true);
                     }}
                   >
@@ -145,7 +145,7 @@ export default function Footer(props) {
                     onClick={() => {
                       CustomEvent.trackEvent(
                         'Footer Feedback More Info',
-                        router.asPath,
+                        pathname,
                         feedback + ' ,state:' + feedbackState,
                       );
                       setMoreInfoOpen('hidden');

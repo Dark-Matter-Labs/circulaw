@@ -1,14 +1,14 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 
 export default function DesktopSimpleButton({ name, url }) {
-  const router = useRouter();
+  const pathname = usePathname();
   const { CustomEvent } = usePiwikPro();
   return (
     <div
       className={`${
-        router.pathname === '/'
+        pathname === '/'
           ? 'text-white hover:text-green-200'
           : 'text-green-800 hover:text-green-500'
       } ${
@@ -16,7 +16,7 @@ export default function DesktopSimpleButton({ name, url }) {
       } h-full relative p-base hover:underline z-100  flex flex-row items-center cursor-pointer`}
     >
       <Link
-        onClick={() => CustomEvent.trackEvent('Nav click', router.asPath, name)}
+        onClick={() => CustomEvent.trackEvent('Nav click', pathname, name)}
         id='navClick'
         href={url}
       >

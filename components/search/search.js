@@ -23,7 +23,7 @@ const algoliaClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a063532
 
 export default function Search({ serverState, url }) {
   const [searchIndex, setSearchIndex] = useState('instruments');
-
+  // const router = useRouter()
   return (
     <InstantSearchSSRProvider {...serverState}>
       <InstantSearch
@@ -113,21 +113,21 @@ export default function Search({ serverState, url }) {
                       submitIcon: 'visible',
                     }}
                     submitIconComponent={() => (
-                      <button
+                      <div
                         type='submit'
                         className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl'
                       >
                         Zoeken
-                      </button>
+                      </div>
                     )}
                     resetIconComponent={() => (
-                      <button
+                      <div
                         type='reset'
                         title='Clear the search query'
                         className='absolute top-3.5 right-28 rounded-full p-2 hover:bg-white/50 group'
                       >
                         <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
-                      </button>
+                      </div>
                     )}
                   />
                 </div>

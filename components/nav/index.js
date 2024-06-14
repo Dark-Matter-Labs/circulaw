@@ -26,7 +26,7 @@ import { Disclosure, Transition } from '@headlessui/react';
 import { ChevronDownIcon, MenuIcon, XIcon, SearchIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 import { useState, useEffect, useCallback } from 'react';
 import Lottie from 'react-lottie';
 import { useSearchParams, usePathname } from 'next/navigation';
@@ -41,7 +41,7 @@ const defaultOptions = {
 };
 
 export default function Nav(props) {
-  const router = useRouter();
+ //  const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { CustomEvent } = usePiwikPro();
@@ -75,10 +75,7 @@ export default function Nav(props) {
     setSearchQuery(value);
   };
 
-  const onSubmit = () => (e) => {
-    e.preventDefault();
-    router.push('/search' + '?' + searchIndex + createQueryString('[query]', searchQuery));
-  };
+  
 
   // search Menu
   const [searchMenuIsOpen, setSearchMenuIsOpen] = useState(false);
@@ -719,7 +716,7 @@ export default function Nav(props) {
                               id='navClick'
                               onClick={() => {
                                 setEuMenuIsOpen(false);
-                                CustomEvent.trackEvent('Nav click', router.asPath);
+                                CustomEvent.trackEvent('Nav click',pathname);
                               }}
                             >
                               Overzicht
@@ -739,7 +736,7 @@ export default function Nav(props) {
                                 id='navClick'
                                 onClick={() => {
                                   setEuMenuIsOpen(false);
-                                  CustomEvent.trackEvent('Nav click', router.asPath, euLaw.title);
+                                  CustomEvent.trackEvent('Nav click', pathname, euLaw.title);
                                 }}
                               >
                                 {euLaw.title}
@@ -826,7 +823,7 @@ export default function Nav(props) {
                                   setOverMenuIsOpen(false);
                                   CustomEvent.trackEvent(
                                     'Nav click',
-                                    router.asPath,
+                                    pathname,
                                     aboutPage.title,
                                   );
                                 }}
@@ -954,7 +951,6 @@ export default function Nav(props) {
                               <div className='h-16 w-[600px] bg-green-600'>
                                 <form
                                   className='bg-green-600 w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex'
-                                  onSubmit={onSubmit()}
                                 >
                                   <input
                                     className='w-[600px] h-[66px] focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold'
@@ -975,12 +971,13 @@ export default function Nav(props) {
                                   >
                                     <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
                                   </button>
-                                  <button
+                                  <Link
+                                    href={'/search' + '?' + searchIndex + createQueryString('[query]', searchQuery)}
                                     type='submit'
                                     className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl'
                                   >
                                     Zoeken
-                                  </button>
+                                  </Link>
                                 </form>
                               </div>
                             </div>

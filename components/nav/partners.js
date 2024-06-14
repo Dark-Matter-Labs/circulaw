@@ -5,16 +5,16 @@ import { fetcher } from '@/utils/swr-fetcher';
 import { groq } from 'next-sanity';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import useSWR from 'swr';
 
 export default function Partners({ footerText }) {
   const { data } = useSWR(groq`${partnersQuery}`, fetcher);
-  const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <div className='bg-green-800 pt-10 pb-2'>
-      {router.pathname === '/' && (
+      {pathname === '/' && (
         <div className='global-margin pb-12 px-4 lg:pb-16'>
           <div className='heading-3xl-semibold text-gray-100 pl-3 sm:pl-6 lg:pl-8'>Partners</div>
           <ParnerSection partners={data?.developingPartners} partnerType='Ontwikkelpartners' />
@@ -23,7 +23,7 @@ export default function Partners({ footerText }) {
         </div>
       )}
       <div className='global-margin pb-2 text-gray-100 p-base'>
-        {router.pathname === '/en' && (
+        {pathname === '/en' && (
           <p className='pb-8'>
             Welcome to CircuLaw. This website is currently under development and in this version we
             are testing the technology, design, and content of the site. The content of the site may
@@ -38,7 +38,7 @@ export default function Partners({ footerText }) {
             </Link>
           </p>
         )}
-        {router.pathname !== '/en' && (
+        {pathname !== '/en' && (
           <p className='pb-8'>
             {footerText?.footerText}&nbsp;
             <Link href='/contact'>
