@@ -23,12 +23,13 @@ import {
   FloatingOverlay,
 } from '@floating-ui/react';
 import { Disclosure, Transition } from '@headlessui/react';
-import { ChevronDownIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import { ChevronDownIcon, MenuIcon, XIcon, SearchIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Lottie from 'react-lottie';
+import { useSearchParams } from 'next/navigation';
 
 const defaultOptions = {
   loop: true,
@@ -41,6 +42,8 @@ const defaultOptions = {
 
 export default function Nav(props) {
   const router = useRouter();
+  const searchParams = useSearchParams();
+
   const { CustomEvent } = usePiwikPro();
   const [scrollEffect, setScrollEffect] = useState(false);
   useEffect(() => {
@@ -53,6 +56,66 @@ export default function Nav(props) {
     };
     window.addEventListener('scroll', changeEffect);
   }, []);
+
+  const [searchIndex, setSearchIndex] = useState('instruments');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const createQueryString = useCallback(
+    (name, value) => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set(name, value);
+      console.log(params);
+      return params.toString();
+    },
+    [searchParams],
+  );
+
+  const onChange = () => (e) => {
+   const value = e.target.value
+   setSearchQuery(value)
+  }
+
+  const onSubmit = () => (e) => {
+    e.preventDefault()
+    router.push('/search' + '?' + searchIndex + createQueryString('[query]', searchQuery ))
+  }
+
+  // search Menu
+  const [searchMenuIsOpen, setSearchMenuIsOpen] = useState(false);
+  const {
+    refs: searchMenuRef,
+    floatingStyles: searchMenuStyles,
+    context: searchMenuContext,
+  } = useFloating({
+    placement: 'bottom',
+    open: searchMenuIsOpen,
+    onOpenChange: setSearchMenuIsOpen,
+    middleware: [offset(28), flip(), shift()],
+  });
+
+  const { isMounted: searchMenuIsMounted, styles: searchMenuTransitionStyles } =
+    useTransitionStyles(searchMenuContext, {
+      duration: 300,
+      initial: {
+        opacity: 0,
+        transform: 'translateY(-100%)',
+      },
+      open: {
+        opacity: 100,
+        transform: 'translateY(0)',
+      },
+      close: {
+        opacity: 0,
+        transform: 'translateY(-100%)',
+      },
+    });
+
+  const searchMenuClick = useClick(searchMenuContext);
+  const searchMenuDismiss = useDismiss(searchMenuContext);
+  const searchMenuRole = useRole(searchMenuContext);
+
+  const { getReferenceProps: searchMenuReferencProps, getFloatingProps: searchMenuFloatingProps } =
+    useInteractions([searchMenuClick, searchMenuDismiss, searchMenuRole]);
 
   // main menu
   const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
@@ -242,6 +305,7 @@ export default function Nav(props) {
               ? [
                   `${
                     mainMenuIsMounted ||
+                    searchMenuIsMounted ||
                     (overMenuIsMounted && scrollEffect === false) ||
                     (euMenuIsMounted && scrollEffect === false)
                       ? ['bg-green-600 bg-opacity-100 shadow-lg transition-all duration-75']
@@ -776,10 +840,114 @@ export default function Nav(props) {
                     </FloatingFocusManager>
                   )}
                 </div>
-                {/* Refactor */}
+
                 <DesktopSimpleButton name='Nieuws' url='/nieuws' />
                 <DesktopSimpleButton name='Vraag & antwoord' url='/vraag-en-antwoord' />
                 <DesktopSimpleButton name='Contact' url='/contact' />
+
+                {/* SEARCH MENU */}
+
+                <div
+                  className={`${router.pathname === '/search' ? 'hidden' : 'block'} ml-6 lg:ml-8`}
+                >
+                  <button
+                    className='h-full relative p-sm group z-100 flex flex-row items-center'
+                    ref={searchMenuRef.setReference}
+                    {...searchMenuReferencProps()}
+                  >
+                    <span
+                      className={`${
+                        searchMenuIsOpen === true
+                          ? [
+                              `${
+                                router.pathname === '/'
+                                  ? 'bg-green-50 text-green-600'
+                                  : 'bg-green-600 text-green-50'
+                              }`,
+                            ]
+                          : [
+                              `${
+                                router.pathname === '/'
+                                  ? ' bg-green-50 text-green-600'
+                                  : 'bg-green-600 text-green-50'
+                              }`,
+                            ]
+                      } flex items-center justify-center rounded-clSm h-6 w-7`}
+                    >
+                      <SearchIcon className='h-4 w-4' />
+                    </span>
+                  </button>
+                  {searchMenuIsMounted && (
+                    <FloatingFocusManager context={mainMenuContext} modal={true} disabled>
+                      <div
+                        ref={searchMenuRef.setFloating}
+                        style={searchMenuStyles}
+                        {...searchMenuFloatingProps()}
+                        className='h-72 w-full -z-10 '
+                      >
+                        <div
+                          className='h-full shadow-lg'
+                          style={{ ...searchMenuTransitionStyles }}
+                          // onMouseLeave={() => setSearchMenuIsOpen(false)}
+                        >
+                          <div
+                            className={`${
+                              router.pathname === '/' ? 'bg-green-600' : 'bg-gray-300'
+                            } h-full`}
+                          >
+
+                            {/* MAKE INTO A COMPONENT */}
+                            <div className='w-full h-full global-margin flex flex-col items-center justify-end pb-10'>
+                              <div className='mb-4'>
+                                <div className='flex flex-row justify-center w-[600px] gap-x-1.5'>
+                                  <button
+                                    onClick={() => setSearchIndex('instruments')}
+                                    className={`${
+                                      searchIndex === 'instruments' ? '' : ''
+                                    } flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
+                                  >
+                                    <div className={`${searchIndex === 'instruments' ? 'bg-green-500' : 'bg-black' } w-4 h-4 rounded-full flex items-center justify-center mr-4`}>
+                                        <div className={`${searchIndex === 'instruments' ? 'bg-green-500 border-white border-2' : 'bg-white'} h-3 w-3 rounded-full `}>
+                                        </div>
+                                    </div>
+                                    <div className='flex flex-col items-start justify-start'>
+                                    Instrumenten
+                                    <span className='p-xs'>Zoeken binnen &apos;instrumenten&apos;</span>
+                                    </div>
+                                  </button>
+                                  <button
+                                    onClick={() => setSearchIndex('aboutPage')}
+                                    className={`${
+                                      searchIndex === 'aboutPage' ? '' : ''
+                                    } flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
+                                  >
+                                    <div className={`${searchIndex === 'aboutPage' ? 'bg-green-500' : 'bg-black' } w-4 h-4 rounded-full flex items-center justify-center mr-4`}>
+                                        <div className={`${searchIndex === 'aboutPage' ? 'bg-green-500 border-white border-2' : 'bg-white'} h-3 w-3 rounded-full `}>
+                                        </div>
+                                    </div>
+                                    <div className='flex flex-col items-start justify-start'>
+                                    Over Circulaw
+                                    <span className='p-xs'>Zoeken binnen &apos;Over Circulaw&apos;</span>
+                                    </div>
+                                  </button>
+                                </div>
+                              </div>
+                              <div className='h-16 w-[600px] bg-green-600'>
+                                <form className='bg-green-600 w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex' onSubmit={onSubmit()}>
+                                  <input className='w-[600px] h-[66px] focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold' placeholder={searchIndex === 'instruments' ? 'Zoek naar instrumenten...' : 'Zoek naar over CircuLaw...'} onChange={onChange()}/>
+                                  <button type='reset' title="Clear the search query" className={`${searchQuery === '' ? 'hidden' : ''} absolute top-3.5 right-28 rounded-full p-2 hover:bg-white/50 group`} onClick={() => setSearchQuery('')}><XIcon className='h-6 w-6 text-white group-hover:text-green-900'/></button>
+                                 <button type = 'submit' className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl'>Zoeken</button>
+                                </form>
+                              </div>
+                            </div>
+
+
+                          </div>
+                        </div>
+                      </div>
+                    </FloatingFocusManager>
+                  )}
+                </div>
               </div>
             </div>
           </>
