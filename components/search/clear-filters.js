@@ -2,7 +2,7 @@ import { useClearRefinements } from 'react-instantsearch';
 
 export default function CustomClearRefinements(props) {
   const { refine, canRefine } = useClearRefinements(props, {includedAttributes: ['categorie']});
-
+  console.log(canRefine)
   return (
     <>
       <div className='w-[265px] flex flex-row items-center justify-between mb-12 '>
