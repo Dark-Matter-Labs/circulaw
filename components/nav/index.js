@@ -71,14 +71,14 @@ export default function Nav(props) {
   );
 
   const onChange = () => (e) => {
-   const value = e.target.value
-   setSearchQuery(value)
-  }
+    const value = e.target.value;
+    setSearchQuery(value);
+  };
 
   const onSubmit = () => (e) => {
-    e.preventDefault()
-    router.push('/search' + '?' + searchIndex + createQueryString('[query]', searchQuery ))
-  }
+    e.preventDefault();
+    router.push('/search' + '?' + searchIndex + createQueryString('[query]', searchQuery));
+  };
 
   // search Menu
   const [searchMenuIsOpen, setSearchMenuIsOpen] = useState(false);
@@ -895,7 +895,6 @@ export default function Nav(props) {
                               router.pathname === '/' ? 'bg-green-600' : 'bg-gray-300'
                             } h-full`}
                           >
-
                             {/* MAKE INTO A COMPONENT */}
                             <div className='w-full h-full global-margin flex flex-col items-center justify-end pb-10'>
                               <div className='mb-4'>
@@ -906,13 +905,24 @@ export default function Nav(props) {
                                       searchIndex === 'instruments' ? '' : ''
                                     } flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
                                   >
-                                    <div className={`${searchIndex === 'instruments' ? 'bg-green-500' : 'bg-black' } w-4 h-4 rounded-full flex items-center justify-center mr-4`}>
-                                        <div className={`${searchIndex === 'instruments' ? 'bg-green-500 border-white border-2' : 'bg-white'} h-3 w-3 rounded-full `}>
-                                        </div>
+                                    <div
+                                      className={`${
+                                        searchIndex === 'instruments' ? 'bg-green-500' : 'bg-black'
+                                      } w-4 h-4 rounded-full flex items-center justify-center mr-4`}
+                                    >
+                                      <div
+                                        className={`${
+                                          searchIndex === 'instruments'
+                                            ? 'bg-green-500 border-white border-2'
+                                            : 'bg-white'
+                                        } h-3 w-3 rounded-full `}
+                                      ></div>
                                     </div>
                                     <div className='flex flex-col items-start justify-start'>
-                                    Instrumenten
-                                    <span className='p-xs'>Zoeken binnen &apos;instrumenten&apos;</span>
+                                      Instrumenten
+                                      <span className='p-xs'>
+                                        Zoeken binnen &apos;instrumenten&apos;
+                                      </span>
                                     </div>
                                   </button>
                                   <button
@@ -921,27 +931,61 @@ export default function Nav(props) {
                                       searchIndex === 'aboutPage' ? '' : ''
                                     } flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
                                   >
-                                    <div className={`${searchIndex === 'aboutPage' ? 'bg-green-500' : 'bg-black' } w-4 h-4 rounded-full flex items-center justify-center mr-4`}>
-                                        <div className={`${searchIndex === 'aboutPage' ? 'bg-green-500 border-white border-2' : 'bg-white'} h-3 w-3 rounded-full `}>
-                                        </div>
+                                    <div
+                                      className={`${
+                                        searchIndex === 'aboutPage' ? 'bg-green-500' : 'bg-black'
+                                      } w-4 h-4 rounded-full flex items-center justify-center mr-4`}
+                                    >
+                                      <div
+                                        className={`${
+                                          searchIndex === 'aboutPage'
+                                            ? 'bg-green-500 border-white border-2'
+                                            : 'bg-white'
+                                        } h-3 w-3 rounded-full `}
+                                      ></div>
                                     </div>
                                     <div className='flex flex-col items-start justify-start'>
-                                    Over Circulaw
-                                    <span className='p-xs'>Zoeken binnen &apos;Over Circulaw&apos;</span>
+                                      Over Circulaw
+                                      <span className='p-xs'>
+                                        Zoeken binnen &apos;Over Circulaw&apos;
+                                      </span>
                                     </div>
                                   </button>
                                 </div>
                               </div>
                               <div className='h-16 w-[600px] bg-green-600'>
-                                <form className='bg-green-600 w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex' onSubmit={onSubmit()}>
-                                  <input className='w-[600px] h-[66px] focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold' placeholder={searchIndex === 'instruments' ? 'Zoek naar instrumenten...' : 'Zoek naar over CircuLaw...'} onChange={onChange()}/>
-                                  <button type='reset' title="Clear the search query" className={`${searchQuery === '' ? 'hidden' : ''} absolute top-3.5 right-28 rounded-full p-2 hover:bg-white/50 group`} onClick={() => setSearchQuery('')}><XIcon className='h-6 w-6 text-white group-hover:text-green-900'/></button>
-                                 <button type = 'submit' className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl'>Zoeken</button>
+                                <form
+                                  className='bg-green-600 w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex'
+                                  onSubmit={onSubmit()}
+                                >
+                                  <input
+                                    className='w-[600px] h-[66px] focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold'
+                                    placeholder={
+                                      searchIndex === 'instruments'
+                                        ? 'Zoek naar instrumenten...'
+                                        : 'Zoek naar over CircuLaw...'
+                                    }
+                                    onChange={onChange()}
+                                  />
+                                  <button
+                                    type='reset'
+                                    title='Clear the search query'
+                                    className={`${
+                                      searchQuery === '' ? 'hidden' : ''
+                                    } absolute top-3.5 right-28 rounded-full p-2 hover:bg-white/50 group`}
+                                    onClick={() => setSearchQuery('')}
+                                  >
+                                    <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
+                                  </button>
+                                  <button
+                                    type='submit'
+                                    className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl'
+                                  >
+                                    Zoeken
+                                  </button>
                                 </form>
                               </div>
                             </div>
-
-
                           </div>
                         </div>
                       </div>
