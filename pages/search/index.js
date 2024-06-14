@@ -1,59 +1,47 @@
 import algoliasearch from 'algoliasearch';
-import singletonRouter from 'next/navigation'
-
+import singletonRouter from 'next/router'
 
 import { renderToString } from 'react-dom/server';
 import {
-    DynamicWidgets,
-    InstantSearch,
-    Hits,
-    Highlight,
-    RefinementList,
-    SearchBox,
-    InstantSearchSSRProvider,
-    getServerState,
-  } from 'react-instantsearch';
-  import { createInstantSearchRouterNext } from 'react-instantsearch-router-nextjs';
-  import Link from 'next/link';
-
+DynamicWidgets,
+InstantSearch,
+Hits,
+RefinementList,
+SearchBox,
+InstantSearchSSRProvider,
+getServerState,
+} from 'react-instantsearch';
+import { createInstantSearchRouterNext } from 'react-instantsearch-router-nextjs';
+import { InstrumentHit } from '@/components/search/instrument-hit';
 
   const algoliaClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a06353266a')
 
-  function Hit({hit}) {
-    return (
-        <>
-        <Link href="/other-page" className="Hit-label">
-        <Highlight hit={hit} attribute="titel" />
-        </Link>
-            <span className="">${hit.subtitel}</span>
-        </>
-    )
-  }
+
 
   export default function SearchPage({serverState, url}) {
     return (
         <InstantSearchSSRProvider {...serverState}>
             <InstantSearch
-        searchClient={algoliaClient}
-        indexName="instruments"
-        routing={{
-          router: createInstantSearchRouterNext({
-            singletonRouter,
-            serverUrl: url,
-            routerOptions: {
-              cleanUrlOnDispose: false,
-            },
-          }),
-        }}
-        insights={true}
-      >
+                searchClient={algoliaClient}
+                indexName="instruments"
+                routing={{
+                  router: createInstantSearchRouterNext({
+                    singletonRouter,
+                    serverUrl: url,
+                    routerOptions: {
+                      cleanUrlOnDispose: false,
+                    },
+                  }),
+                }}
+                insights={true}
+            >
         <div className="">
           <div>
             <DynamicWidgets fallbackComponent={FallbackComponent} facets={[]} />
           </div>
           <div>
             <SearchBox />
-            <Hits hitComponent={Hit} />
+            <Hits hitComponent={InstrumentHit} />
           </div>
         </div>
       </InstantSearch>
