@@ -1,14 +1,14 @@
 import { usePagination } from 'react-instantsearch';
 import { ChevronDoubleLeftIcon, ChevronLeftIcon, ChevronDoubleRightIcon, ChevronRightIcon } from '@heroicons/react/outline';
 
-export default function Pagination(props) {
-  const {nbPages, currentRefinement, pages, refine, isFirstPage, isLastPage, createURL } = usePagination(props);
+export default function Pagination() {
+  const {nbPages, currentRefinement, pages, refine, isFirstPage, isLastPage } = usePagination({padding: 2});
+
   const firstPageIndex = 0;
   const previousPageIndex = currentRefinement - 1;
   const nextPageIndex = currentRefinement + 1;
   const lastPageIndex = nbPages - 1;
-  
-    console.log(createURL(previousPageIndex))
+  console.log(pages)
   return (
     <ul className='flex flex-row'>
       <li className='mx-1 h-8 w-8 flex items-center justify-center'>

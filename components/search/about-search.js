@@ -12,7 +12,6 @@ import {
 import { createInstantSearchRouterNext } from 'react-instantsearch-router-nextjs';
 import Link from 'next/link';
 import CustomStats from '../../components/search/stats';
-import Pagination from '@/components/search/pagination';
 import { XIcon } from '@heroicons/react/outline';
 import AboutHit from './about-hit';
 import Image from 'next/image';
@@ -110,7 +109,7 @@ export default function AboutSearch({ serverState, url }) {
         </div>
         <div className='global-margin flex'>
           <NoResultsBoundary fallback={<NoResults />}>
-            <div>
+            <div className='mb-12'>
               <Hits
                 classNames={{
                   root: 'border-none mt-10',
@@ -119,9 +118,6 @@ export default function AboutSearch({ serverState, url }) {
                 }}
                 hitComponent={AboutHit}
               />
-              <div className='w-full flex items-center justify-center mb-12 mt-6'>
-                <Pagination />
-              </div>
             </div>
           </NoResultsBoundary>
         </div>
