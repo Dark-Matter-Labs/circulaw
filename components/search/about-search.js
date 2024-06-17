@@ -106,12 +106,11 @@ export default function AboutSearch({ serverState, url }) {
           </div>
         </div>
         <div className='global-margin flex items-center justify-center mt-10'>
-          <CustomStats/>
+          <CustomStats />
         </div>
         <div className='global-margin flex'>
-        <NoResultsBoundary fallback={<NoResults />}>
-
-          <div>
+          <NoResultsBoundary fallback={<NoResults />}>
+            <div>
               <Hits
                 classNames={{
                   root: 'border-none mt-10',
@@ -123,9 +122,8 @@ export default function AboutSearch({ serverState, url }) {
               <div className='w-full flex items-center justify-center mb-12 mt-6'>
                 <Pagination />
               </div>
-          </div>
+            </div>
           </NoResultsBoundary>
-
         </div>
       </InstantSearch>
     </InstantSearchSSRProvider>
@@ -150,15 +148,9 @@ function NoResultsBoundary({ children, fallback }) {
 }
 
 function NoResults() {
-
   return (
     <div className='h-96 w-full flex items-center justify-center my-10'>
-        <Image 
-          src='/no-results.png'
-          height={320}
-          width={540}
-          alt='no results for this search'
-        />
-      </div>
+      <Image src='/no-results.png' height={320} width={540} alt='no results for this search' />
+    </div>
   );
 }

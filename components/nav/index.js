@@ -968,7 +968,9 @@ export default function Nav(props) {
                                   }  w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex`}
                                 >
                                   <input
-                                    className={`${pathname === '/' ? 'bg-green-50/50' : 'bg-green-600/50'} w-[600px] h-[66px] focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold`} 
+                                    className={`${
+                                      pathname === '/' ? 'bg-green-50/50' : 'bg-green-600/50'
+                                    } w-[600px] h-[66px] focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold`}
                                     placeholder={
                                       searchIndex === 'instruments'
                                         ? 'Zoek naar instrumenten...'

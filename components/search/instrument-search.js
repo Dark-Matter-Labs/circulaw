@@ -113,84 +113,81 @@ export default function InstrumentSearch({ serverState, url }) {
           <CustomStats />
         </div>
         <div className='global-margin flex'>
+          <NoResultsBoundary fallback={<NoResults />}>
+            <div className='flex flex-col mt-10 min-w-[260px]'>
+              <div className='flex flex-col'>
+                <CustomClearRefinements />
 
-        <NoResultsBoundary fallback={<NoResults />}>
-
-
-          <div className='flex flex-col mt-10 min-w-[260px]'>
-            <div className='flex flex-col'>
-              <CustomClearRefinements />
-
-              <RefinementList
-                attribute='categorie'
-                title='Categorie'
-                classNames={{
-                  root: 'mb-12 min-w-[260px] mr-12',
-                  item: 'pt-2',
-                  list: 'empty:hidden before:content-["Categorie"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
-                  checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
-                  label: 'flex justify-between items-center',
-                  labelText: 'p-base flex-grow capitalize ml-2',
-                  count:
-                    'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
-                }}
-                sortBy={['label:asc']}
-              />
-            </div>
-            <div className='flex flex-col'>
-              <RefinementList
-                attribute='thema'
-                classNames={{
-                  root: 'mb-12 min-w-[260px] mr-12',
-                  item: 'pt-2',
-                  list: 'empty:hidden before:content-["Thema"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
-                  checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                <RefinementList
+                  attribute='categorie'
+                  title='Categorie'
+                  classNames={{
+                    root: 'mb-12 min-w-[260px] mr-12',
+                    item: 'pt-2',
+                    list: 'empty:hidden before:content-["Categorie"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                    checkbox:
+                      'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                     label: 'flex justify-between items-center',
                     labelText: 'p-base flex-grow capitalize ml-2',
-                  count:
-                    'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
-                }}
-                sortBy={['label:asc']}
-              />
-            </div>
-            <div className='flex flex-col'>
-              <RefinementList
-                attribute='overheidslaag'
-                classNames={{
-                  root: 'mb-12 min-w-[260px] mr-12',
-                  item: 'pt-2',
-                  list: 'empty:hidden before:content-["Overheidslaag"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
-                  checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    count:
+                      'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
+                  }}
+                  sortBy={['label:asc']}
+                />
+              </div>
+              <div className='flex flex-col'>
+                <RefinementList
+                  attribute='thema'
+                  classNames={{
+                    root: 'mb-12 min-w-[260px] mr-12',
+                    item: 'pt-2',
+                    list: 'empty:hidden before:content-["Thema"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                    checkbox:
+                      'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                     label: 'flex justify-between items-center',
                     labelText: 'p-base flex-grow capitalize ml-2',
-                  count:
-                    'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
-                }}
-                sortBy={['label:asc']}
-              />
-            </div>
-            <div className='flex flex-col'>
-              <RefinementList
-                attribute='rLadder'
-                classNames={{
-                  root: 'mb-12 min-w-[260px] mr-12 ',
-                  list: 'empty:hidden before:content-["R_Ladder"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
-                  item: 'pt-2',
-                  checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    count:
+                      'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
+                  }}
+                  sortBy={['label:asc']}
+                />
+              </div>
+              <div className='flex flex-col'>
+                <RefinementList
+                  attribute='overheidslaag'
+                  classNames={{
+                    root: 'mb-12 min-w-[260px] mr-12',
+                    item: 'pt-2',
+                    list: 'empty:hidden before:content-["Overheidslaag"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                    checkbox:
+                      'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                     label: 'flex justify-between items-center',
                     labelText: 'p-base flex-grow capitalize ml-2',
-                  count:
-                    'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
-                }}
-                sortBy={['label:asc']}
-              />
+                    count:
+                      'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
+                  }}
+                  sortBy={['label:asc']}
+                />
+              </div>
+              <div className='flex flex-col'>
+                <RefinementList
+                  attribute='rLadder'
+                  classNames={{
+                    root: 'mb-12 min-w-[260px] mr-12 ',
+                    list: 'empty:hidden before:content-["R_Ladder"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                    item: 'pt-2',
+                    checkbox:
+                      'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    label: 'flex justify-between items-center',
+                    labelText: 'p-base flex-grow capitalize ml-2',
+                    count:
+                      'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
+                  }}
+                  sortBy={['label:asc']}
+                />
+              </div>
             </div>
-          </div>
-          <div>
+            <div>
               <Hits
                 classNames={{
                   root: 'border-none mt-10',
@@ -202,8 +199,7 @@ export default function InstrumentSearch({ serverState, url }) {
               <div className='w-full flex items-center justify-center mb-12 mt-6'>
                 <Pagination />
               </div>
-        
-          </div>
+            </div>
           </NoResultsBoundary>
         </div>
       </InstantSearch>
@@ -229,18 +225,9 @@ function NoResultsBoundary({ children, fallback }) {
 }
 
 function NoResults() {
- 
-
   return (
-
-      <div className='h-96 w-full flex items-center justify-center my-10'>
-        <Image 
-          src='/no-results.png'
-          height={320}
-          width={540}
-          alt='no results for this search'
-        />
-      </div>
-
+    <div className='h-96 w-full flex items-center justify-center my-10'>
+      <Image src='/no-results.png' height={320} width={540} alt='no results for this search' />
+    </div>
   );
 }
