@@ -44,7 +44,6 @@ export default function InstrumentSearch({ serverState, url }) {
         <Configure hitsPerPage={10} />
         <div className='bg-green-600 h-[260px] flex items-end justify-center w-full'>
           <div className='global-margin w-full flex items-center justify-center'>
-            
             {/* Desktop */}
             <div className='hidden sm:flex flex-col items-center justify-center gap-y-6'>
               <div className='w-full'>
@@ -110,21 +109,19 @@ export default function InstrumentSearch({ serverState, url }) {
               </div>
             </div>
             {/* Mobile */}
-                  <MobileHeaderSearch index = 'instruments'/>
+            <MobileHeaderSearch index='instruments' />
             {/* end mobile */}
           </div>
         </div>
 
-
         <div className='global-margin flex items-center justify-center mt-10'>
           <CustomStats />
         </div>
-        <div className='global-margin hidden sm:flex'>
+        <div className='global-margin flex'>
           <NoResultsBoundary fallback={<NoResults />}>
-            <div className='flex flex-col mt-10 min-w-[260px]'>
+            <div className='hidden sm:flex flex-col mt-10 min-w-[260px]'>
               <div className='flex flex-col'>
                 <CustomClearRefinements />
-
                 <RefinementList
                   attribute='categorie'
                   title='Categorie'

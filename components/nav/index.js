@@ -556,7 +556,7 @@ export default function Nav(props) {
                               url='/contact'
                               closeMenu={setMobileMenuIsOpen}
                             />
-                              <MobileSimpleButton
+                            <MobileSimpleButton
                               name='Zoeken'
                               url='/zoeken/instrumenten'
                               closeMenu={setMobileMenuIsOpen}
@@ -838,7 +838,6 @@ export default function Nav(props) {
                 <DesktopSimpleButton name='Nieuws' url='/nieuws' />
                 <DesktopSimpleButton name='Vraag & antwoord' url='/vraag-en-antwoord' />
                 <DesktopSimpleButton name='Contact' url='/contact' />
-
 
                 {/* SEARCH MENU */}
 

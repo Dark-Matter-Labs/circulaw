@@ -40,7 +40,6 @@ export default function AboutSearch({ serverState, url }) {
         <Configure hitsPerPage={10} />
         <div className='bg-green-600 h-[260px] flex items-end justify-center w-full'>
           <div className='global-margin w-full flex items-center justify-center'>
-
             {/* DESKTOP */}
             <div className='hidden sm:flex flex-col items-center justify-center gap-y-6'>
               <div className='w-full'>
@@ -107,9 +106,7 @@ export default function AboutSearch({ serverState, url }) {
             </div>
 
             {/* MOBILE */}
-            <MobileHeaderSearch index ='aboutPage'/>
-
-
+            <MobileHeaderSearch index='aboutPage' />
           </div>
         </div>
         <div className='global-margin flex items-center justify-center mt-10'>
