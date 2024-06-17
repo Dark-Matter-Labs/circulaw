@@ -165,7 +165,7 @@ export const InstrumentHit = ({ hit }) => {
         </Link>
       </article>
       {/* MOBILE */}
-      <article>
+      <article className='block sm:hidden'>
       <div className='block sm:ml-0 mb-10 sm:mb-8 md:max-w-[760px] p-4 bg-green-50 rounded-cl'>
             <div className='flex justify-start items-center -ml-1'>
               {/* Expertise Tag */}
