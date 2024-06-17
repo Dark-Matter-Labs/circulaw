@@ -1,63 +1,99 @@
 import { usePagination } from 'react-instantsearch';
+import { ChevronDoubleLeftIcon, ChevronLeftIcon, ChevronDoubleRightIcon, ChevronRightIcon } from '@heroicons/react/outline';
 
 export default function Pagination(props) {
-  const { currentRefinement, pages, refine, isFirstPage } = usePagination(props);
-
+  const {nbPages, currentRefinement, pages, refine, isFirstPage, isLastPage, createURL } = usePagination(props);
+  const firstPageIndex = 0;
+  const previousPageIndex = currentRefinement - 1;
+  const nextPageIndex = currentRefinement + 1;
+  const lastPageIndex = nbPages - 1;
+  
+    console.log(createURL(previousPageIndex))
   return (
     <ul className='flex flex-row'>
-      <li>
-        <a
-          href='#'
+      <li className='mx-1 h-8 w-8 flex items-center justify-center'>
+        <button
+        disabled={isFirstPage}
+          className={isFirstPage ? 'rounded-cl w-full h-full flex items-center justify-center text-green-900 heading-xl bg-green-50' : 'rounded-cl w-full h-full flex items-center justify-center bg-green-500 text-green-50 heading-xl-semibold'}
           onClick={(event) => {
             event.preventDefault();
-            refine(0);
+            refine(firstPageIndex);
+            window.scrollTo(0, 0)
           }}
         >
-          {'<<'}
-        </a>
+          <ChevronDoubleLeftIcon className='h-5 w-5'/>
+        </button>
       </li>
 
-      <li>
-        <a
-          className={`${isFirstPage ? '' : ''}`}
-          href='#'
+      <li className='mx-1 h-8 w-8 flex items-center justify-center'>
+        <button
+          disabled={isFirstPage}
+          className={`${isFirstPage ? 'rounded-cl w-full h-full flex items-center justify-center text-green-900 heading-xl bg-green-50' : 'rounded-cl w-full h-full flex items-center justify-center bg-green-500 text-green-50 heading-xl-semibold'}`}
           onClick={(event) => {
             event.preventDefault();
-            refine(currentRefinement - 1);
+            refine(previousPageIndex);
+            window.scrollTo(0, 0)
           }}
         >
-          {'XXXX'}
-        </a>
+         <ChevronLeftIcon className='h-5 w-5'/>
+        </button>
       </li>
       {pages.map((page) => (
         <>
           <li key={page} className='mx-1 h-8 w-8 flex items-center justify-center'>
             {page === currentRefinement ? (
-              <a
+              <button
                 className='rounded-cl w-full h-full flex items-center justify-center bg-green-500 text-green-50 heading-xl-semibold'
-                href='#'
                 onClick={(event) => {
                   event.preventDefault();
                   refine(page);
+                  window.scrollTo(0, 0)
                 }}
               >
                 {page + 1}
-              </a>
+              </button>
             ) : (
-              <a
-                className='rounded-cl w-full h-full flex items-center justify-center text-green-900 heading-xl'
-                href='#'
+              <button
+                className='rounded-cl w-full h-full flex items-center justify-center text-green-900 heading-xl bg-green-50'
                 onClick={(event) => {
                   event.preventDefault();
                   refine(page);
+                  window.scrollTo(0, 0)
                 }}
               >
                 {page + 1}
-              </a>
+              </button>
             )}
           </li>
         </>
       ))}
+       <li className='mx-1 h-8 w-8 flex items-center justify-center'>
+        <button
+        disabled={isLastPage}
+          className={isLastPage ? 'rounded-cl w-full h-full flex items-center justify-center text-green-900 heading-xl bg-green-50' : 'rounded-cl w-full h-full flex items-center justify-center bg-green-500 text-green-50 heading-xl-semibold'}
+          onClick={(event) => {
+            event.preventDefault();
+            refine(nextPageIndex);
+            window.scrollTo(0, 0)
+          }}
+        >
+          <ChevronRightIcon className='h-5 w-5'/>
+        </button>
+      </li>
+
+      <li className='mx-1 h-8 w-8 flex items-center justify-center'>
+        <button
+          disabled={isLastPage}
+          className={`${isLastPage ? 'rounded-cl w-full h-full flex items-center justify-center text-green-900 heading-xl bg-green-50' : 'rounded-cl w-full h-full flex items-center justify-center bg-green-500 text-green-50 heading-xl-semibold'}`}
+          onClick={(event) => {
+            event.preventDefault();
+            refine(lastPageIndex);
+            window.scrollTo(0, 0)
+          }}
+        >
+         <ChevronDoubleRightIcon className='h-5 w-5'/>
+        </button>
+      </li>
     </ul>
   );
 }
