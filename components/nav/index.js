@@ -880,7 +880,7 @@ export default function Nav(props) {
                         >
                           <div
                             className={`${
-                              pathname === '/' ? 'bg-green-600' : 'bg-gray-300'
+                              pathname === '/' ? 'bg-green-600' : 'bg-green-50'
                             } h-full`}
                           >
                             {/* MAKE INTO A COMPONENT */}
@@ -890,19 +890,23 @@ export default function Nav(props) {
                                   <button
                                     onClick={() => setSearchIndex('instruments')}
                                     className={`${
-                                      searchIndex === 'instruments' ? '' : ''
-                                    } flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
+                                      pathname === '/' ? 'bg-green-50 text-green-800' : 'bg-green-600 text-green-50'
+                                    } flex-row px-5 py-1.5 w-full  rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
                                   >
                                     <div
                                       className={`${
-                                        searchIndex === 'instruments' ? 'bg-green-500' : 'bg-black'
-                                      } w-4 h-4 rounded-full flex items-center justify-center mr-4`}
+                                        searchIndex === 'instruments' ? [`${pathname === '/' ? 'bg-green-500': 'bg-green-50'}`]: 
+                                        
+                                        
+                                        
+                                        [`${pathname=== '/' ? 'bg-black' : 'bg-green-50'}`]
+                                      } 
+                                      
+                                      w-4 h-4 rounded-full flex items-center justify-center mr-4`}
                                     >
                                       <div
                                         className={`${
-                                          searchIndex === 'instruments'
-                                            ? 'bg-green-500 border-white border-2'
-                                            : 'bg-white'
+                                          searchIndex === 'instruments' ? [pathname === '/' ? 'bg-green-500 border-green-50 border-2' : 'border-green-600 border-2'] : [pathname === '/' ? 'bg-green-50' : 'bg-green-600']
                                         } h-3 w-3 rounded-full `}
                                       ></div>
                                     </div>
@@ -916,19 +920,23 @@ export default function Nav(props) {
                                   <button
                                     onClick={() => setSearchIndex('aboutPage')}
                                     className={`${
-                                      searchIndex === 'aboutPage' ? '' : ''
-                                    } flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
+                                      pathname === '/' ? 'bg-white text-green-800' : 'bg-green-600 text-green-50'
+                                    } flex-row px-5 py-1.5 w-full  rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
                                   >
                                     <div
                                       className={`${
-                                        searchIndex === 'aboutPage' ? 'bg-green-500' : 'bg-black'
-                                      } w-4 h-4 rounded-full flex items-center justify-center mr-4`}
+                                        searchIndex === 'aboutPage' ? [`${pathname === '/' ? 'bg-green-500': 'bg-green-50'}`]: 
+                                        
+                                        
+                                        
+                                        [`${pathname=== '/' ? 'bg-black' : 'bg-green-50'}`]
+                                      } 
+                                      
+                                      w-4 h-4 rounded-full flex items-center justify-center mr-4`}
                                     >
                                       <div
                                         className={`${
-                                          searchIndex === 'aboutPage'
-                                            ? 'bg-green-500 border-white border-2'
-                                            : 'bg-white'
+                                          searchIndex === 'aboutPage' ? [pathname === '/' ? 'bg-green-500 border-green-50 border-2' : 'border-green-600 border-2'] : [pathname === '/' ? 'bg-green-50' : 'bg-green-600']
                                         } h-3 w-3 rounded-full `}
                                       ></div>
                                     </div>
