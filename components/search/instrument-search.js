@@ -18,6 +18,7 @@ import Pagination from '@/components/search/pagination';
 import CustomClearRefinements from '@/components/search/clear-refinements';
 import { XIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const algoliaClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a06353266a');
 
@@ -112,6 +113,10 @@ export default function InstrumentSearch({ serverState, url }) {
           <CustomStats />
         </div>
         <div className='global-margin flex'>
+
+        <NoResultsBoundary fallback={<NoResults />}>
+
+
           <div className='flex flex-col mt-10 min-w-[260px]'>
             <div className='flex flex-col'>
               <CustomClearRefinements />
@@ -186,7 +191,6 @@ export default function InstrumentSearch({ serverState, url }) {
             </div>
           </div>
           <div>
-            <NoResultsBoundary fallback={<NoResults />}>
               <Hits
                 classNames={{
                   root: 'border-none mt-10',
@@ -198,8 +202,9 @@ export default function InstrumentSearch({ serverState, url }) {
               <div className='w-full flex items-center justify-center mb-12 mt-6'>
                 <Pagination />
               </div>
-            </NoResultsBoundary>
+        
           </div>
+          </NoResultsBoundary>
         </div>
       </InstantSearch>
     </InstantSearchSSRProvider>
@@ -224,13 +229,18 @@ function NoResultsBoundary({ children, fallback }) {
 }
 
 function NoResults() {
-  const { indexUiState } = useInstantSearch();
+ 
 
   return (
-    <div>
-      <p>
-        No results for <q>{indexUiState.query}</q>.
-      </p>
-    </div>
+
+      <div className='h-96 w-full flex items-center justify-center my-10'>
+        <Image 
+          src='/no-results.png'
+          height={320}
+          width={540}
+          alt='no results for this search'
+        />
+      </div>
+
   );
 }
