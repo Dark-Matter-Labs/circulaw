@@ -952,6 +952,22 @@ export default function Nav(props) {
                                     }
                                     onChange={onChange()}
                                   />
+                                  <Link
+                                    href={`${
+                                      searchIndex === 'instruments'
+                                        ? `/zoeken/instrumenten?${searchIndex}${createQueryString(
+                                            '[query]',
+                                            searchQuery,
+                                          )}`
+                                        : `/zoeken/over-circulaw?${searchIndex}${createQueryString(
+                                            '[query]',
+                                            searchQuery,
+                                          )}`
+                                    }`}
+                                    className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl flex items-center justify-center'
+                                  >
+                                    Zoeken
+                                  </Link>
                                   <button
                                     type='reset'
                                     title='Clear the search query'
@@ -962,22 +978,6 @@ export default function Nav(props) {
                                   >
                                     <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
                                   </button>
-                                  <Link
-                                    href={`${
-                                      searchIndex === 'instruments'
-                                        ? `/search?${searchIndex}${createQueryString(
-                                            '[query]',
-                                            searchQuery,
-                                          )}`
-                                        : `/search/search-over?${searchIndex}${createQueryString(
-                                            '[query]',
-                                            searchQuery,
-                                          )}`
-                                    }`}
-                                    className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl flex items-center justify-center'
-                                  >
-                                    Zoeken
-                                  </Link>
                                 </form>
                               </div>
                             </div>
