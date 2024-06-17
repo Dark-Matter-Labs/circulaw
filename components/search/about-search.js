@@ -11,7 +11,8 @@ import {
   useInstantSearch,
 } from 'react-instantsearch';
 import { createInstantSearchRouterNext } from 'react-instantsearch-router-nextjs';
-import { InstrumentHit } from '@/components/search/instrument-hit';
+// import { InstrumentHit } from '@/components/search/instrument-hit';
+import Link from 'next/link';
 import { useState } from 'react';
 import CustomStats from '../../components/search/stats';
 import Pagination from '@/components/search/pagination';
@@ -19,12 +20,10 @@ import Pagination from '@/components/search/pagination';
 import CustomClearRefinements from '@/components/search/clear-refinements';
 import { XIcon } from '@heroicons/react/outline';
 import AboutHit from './about-hit';
-import Link from 'next/link';
-
 
 const algoliaClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a06353266a');
 
-export default function Search({ serverState, url }) {
+export default function AboutSearch({ serverState, url }) {
 
 
   // somthing is bugging here. 
@@ -35,7 +34,7 @@ export default function Search({ serverState, url }) {
 
 
   // console.log(url?.contains('instruments'))
-  const [searchIndex, setSearchIndex] = useState('instruments');
+  const [searchIndex, setSearchIndex] = useState('aboutPage');
 
   {/* 
 
@@ -51,7 +50,7 @@ export default function Search({ serverState, url }) {
     <InstantSearchSSRProvider {...serverState}>
       <InstantSearch
         searchClient={algoliaClient}
-        indexName={'instruments'}
+        indexName={'aboutPage'}
         routing={{
           router: createInstantSearchRouterNext({
             singletonRouter,
@@ -72,8 +71,9 @@ export default function Search({ serverState, url }) {
                 <div className='w-full h-full global-margin flex flex-col items-center justify-end pb-10'>
                   <div className='mb-4'>
                     <div className='flex flex-row justify-center w-[600px] gap-x-1.5'>
-                      <button
-                        onClick={() => setSearchIndex('instruments')}
+                      <Link
+                        href = '/search'
+                        // onClick={() => setSearchIndex('instruments')}
                         className={`${
                           searchIndex === 'instruments' ? '' : ''
                         } flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
@@ -95,10 +95,9 @@ export default function Search({ serverState, url }) {
                           Instrumenten
                           <span className='p-xs'>Zoeken binnen &apos;instrumenten&apos;</span>
                         </div>
-                      </button>
-                      <Link
-                        href = '/search/search-over'
-                        // onClick={() => setSearchIndex('aboutPage')}
+                      </Link>
+                      <button
+                        onClick={() => setSearchIndex('aboutPage')}
                         className={`${
                           searchIndex === 'aboutPage' ? '' : ''
                         } flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
@@ -120,7 +119,7 @@ export default function Search({ serverState, url }) {
                           Over Circulaw
                           <span className='p-xs'>Zoeken binnen &apos;Over Circulaw&apos;</span>
                         </div>
-                      </Link>
+                      </button>
                     </div>
                   </div>
                   <SearchBox
@@ -240,7 +239,7 @@ export default function Search({ serverState, url }) {
             </div>
           )}
           <div>
-             
+               
             <NoResultsBoundary fallback={<NoResults />}>
               <Hits
                 classNames={{
@@ -248,12 +247,13 @@ export default function Search({ serverState, url }) {
                   list: 'ml-10',
                   item: 'shadow-none px-0 pb-4 pt-0',
                 }}
-                hitComponent={searchIndex === 'instruments' ? InstrumentHit : AboutHit}
+                hitComponent={AboutHit}
               />
               <div className='w-full flex items-center justify-center mb-12 mt-6'>
                 <Pagination />
               </div>
             </NoResultsBoundary>
+           
           </div>
         </div>
       </InstantSearch>
