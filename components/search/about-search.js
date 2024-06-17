@@ -19,7 +19,6 @@ import AboutHit from './about-hit';
 const algoliaClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a06353266a');
 
 export default function AboutSearch({ serverState, url }) {
- 
   return (
     <InstantSearchSSRProvider {...serverState}>
       <InstantSearch
@@ -48,14 +47,10 @@ export default function AboutSearch({ serverState, url }) {
                       <Link
                         href='/zoeken/instrumenten'
                         // onClick={() => setSearchIndex('instruments')}
-                        className= 'flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]'
+                        className='flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]'
                       >
-                        <div
-                          className='bg-black w-4 h-4 rounded-full flex items-center justify-center mr-4'
-                        >
-                          <div
-                            className='bg-white h-3 w-3 rounded-full'
-                          ></div>
+                        <div className='bg-black w-4 h-4 rounded-full flex items-center justify-center mr-4'>
+                          <div className='bg-white h-3 w-3 rounded-full'></div>
                         </div>
                         <div className='flex flex-col items-start justify-start'>
                           Instrumenten
@@ -63,15 +58,11 @@ export default function AboutSearch({ serverState, url }) {
                         </div>
                       </Link>
                       <Link
-                      href = '/zoeken/over-circulaw'
+                        href='/zoeken/over-circulaw'
                         className='flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]'
                       >
-                        <div
-                          className='w-4 h-4 rounded-full flex items-center justify-center mr-4 bg-green-500'
-                        >
-                          <div
-                            className='bg-green-500 border-white border-2 h-3 w-3 rounded-full'
-                          ></div>
+                        <div className='w-4 h-4 rounded-full flex items-center justify-center mr-4 bg-green-500'>
+                          <div className='bg-green-500 border-white border-2 h-3 w-3 rounded-full'></div>
                         </div>
                         <div className='flex flex-col items-start justify-start'>
                           Over Circulaw

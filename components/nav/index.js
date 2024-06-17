@@ -890,23 +890,29 @@ export default function Nav(props) {
                                   <button
                                     onClick={() => setSearchIndex('instruments')}
                                     className={`${
-                                      pathname === '/' ? 'bg-green-50 text-green-800' : 'bg-green-600 text-green-50'
+                                      pathname === '/'
+                                        ? 'bg-green-50 text-green-800'
+                                        : 'bg-green-600 text-green-50'
                                     } flex-row px-5 py-1.5 w-full  rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
                                   >
                                     <div
                                       className={`${
-                                        searchIndex === 'instruments' ? [`${pathname === '/' ? 'bg-green-500': 'bg-green-50'}`]: 
-                                        
-                                        
-                                        
-                                        [`${pathname=== '/' ? 'bg-black' : 'bg-green-50'}`]
+                                        searchIndex === 'instruments'
+                                          ? [`${pathname === '/' ? 'bg-green-500' : 'bg-green-50'}`]
+                                          : [`${pathname === '/' ? 'bg-black' : 'bg-green-50'}`]
                                       } 
                                       
                                       w-4 h-4 rounded-full flex items-center justify-center mr-4`}
                                     >
                                       <div
                                         className={`${
-                                          searchIndex === 'instruments' ? [pathname === '/' ? 'bg-green-500 border-green-50 border-2' : 'border-green-600 border-2'] : [pathname === '/' ? 'bg-green-50' : 'bg-green-600']
+                                          searchIndex === 'instruments'
+                                            ? [
+                                                pathname === '/'
+                                                  ? 'bg-green-500 border-green-50 border-2'
+                                                  : 'border-green-600 border-2',
+                                              ]
+                                            : [pathname === '/' ? 'bg-green-50' : 'bg-green-600']
                                         } h-3 w-3 rounded-full `}
                                       ></div>
                                     </div>
@@ -920,23 +926,29 @@ export default function Nav(props) {
                                   <button
                                     onClick={() => setSearchIndex('aboutPage')}
                                     className={`${
-                                      pathname === '/' ? 'bg-white text-green-800' : 'bg-green-600 text-green-50'
+                                      pathname === '/'
+                                        ? 'bg-white text-green-800'
+                                        : 'bg-green-600 text-green-50'
                                     } flex-row px-5 py-1.5 w-full  rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
                                   >
                                     <div
                                       className={`${
-                                        searchIndex === 'aboutPage' ? [`${pathname === '/' ? 'bg-green-500': 'bg-green-50'}`]: 
-                                        
-                                        
-                                        
-                                        [`${pathname=== '/' ? 'bg-black' : 'bg-green-50'}`]
+                                        searchIndex === 'aboutPage'
+                                          ? [`${pathname === '/' ? 'bg-green-500' : 'bg-green-50'}`]
+                                          : [`${pathname === '/' ? 'bg-black' : 'bg-green-50'}`]
                                       } 
                                       
                                       w-4 h-4 rounded-full flex items-center justify-center mr-4`}
                                     >
                                       <div
                                         className={`${
-                                          searchIndex === 'aboutPage' ? [pathname === '/' ? 'bg-green-500 border-green-50 border-2' : 'border-green-600 border-2'] : [pathname === '/' ? 'bg-green-50' : 'bg-green-600']
+                                          searchIndex === 'aboutPage'
+                                            ? [
+                                                pathname === '/'
+                                                  ? 'bg-green-500 border-green-50 border-2'
+                                                  : 'border-green-600 border-2',
+                                              ]
+                                            : [pathname === '/' ? 'bg-green-50' : 'bg-green-600']
                                         } h-3 w-3 rounded-full `}
                                       ></div>
                                     </div>
@@ -949,8 +961,12 @@ export default function Nav(props) {
                                   </button>
                                 </div>
                               </div>
-                              <div className='h-16 w-[600px] bg-green-600'>
-                                <form className='bg-green-600 w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex'>
+                              <div className='h-16 w-[600px]'>
+                                <form
+                                  className={`${
+                                    pathname === '/' ? 'bg-green-600' : 'bg-green-600'
+                                  }  w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex`}
+                                >
                                   <input
                                     className='w-[600px] h-[66px] focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold'
                                     placeholder={
