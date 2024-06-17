@@ -15,7 +15,6 @@ export default function Pagination() {
   const previousPageIndex = currentRefinement - 1;
   const nextPageIndex = currentRefinement + 1;
   const lastPageIndex = nbPages - 1;
-  console.log(pages);
   return (
     <ul className='flex flex-row'>
       <li className='mx-1 h-8 w-8 flex items-center justify-center'>
