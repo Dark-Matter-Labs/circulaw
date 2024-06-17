@@ -12,7 +12,6 @@ import {
 import { createInstantSearchRouterNext } from 'react-instantsearch-router-nextjs';
 // import { InstrumentHit } from '@/components/search/instrument-hit';
 import Link from 'next/link';
-import { useState } from 'react';
 import CustomStats from '../../components/search/stats';
 import Pagination from '@/components/search/pagination';
 // import AboutHit from '@/components/search/about-hit';
@@ -22,27 +21,7 @@ import AboutHit from './about-hit';
 const algoliaClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a06353266a');
 
 export default function AboutSearch({ serverState, url }) {
-  // somthing is bugging here.
-  // two different pages
-  // set state in use effect ?
-  // index is not a param so cant use useSearchParams
-  //
-
-  // console.log(url?.contains('instruments'))
-  const [searchIndex, setSearchIndex] = useState('aboutPage');
-
-  {
-    /* 
-
-  useEffect(() => {
-    if (url.includes('instruments')) {
-      setSearchIndex('instruments')
-    } else {
-      setSearchIndex('aboutPage')
-    }
-  }, [url])*/
-  }
-
+ 
   return (
     <InstantSearchSSRProvider {...serverState}>
       <InstantSearch
@@ -71,21 +50,13 @@ export default function AboutSearch({ serverState, url }) {
                       <Link
                         href='/zoeken/instrumenten'
                         // onClick={() => setSearchIndex('instruments')}
-                        className={`${
-                          searchIndex === 'instruments' ? '' : ''
-                        } flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
+                        className= 'flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]'
                       >
                         <div
-                          className={`${
-                            searchIndex === 'instruments' ? 'bg-green-500' : 'bg-black'
-                          } w-4 h-4 rounded-full flex items-center justify-center mr-4`}
+                          className='bg-black w-4 h-4 rounded-full flex items-center justify-center mr-4'
                         >
                           <div
-                            className={`${
-                              searchIndex === 'instruments'
-                                ? 'bg-green-500 border-white border-2'
-                                : 'bg-white'
-                            } h-3 w-3 rounded-full `}
+                            className='bg-white h-3 w-3 rounded-full'
                           ></div>
                         </div>
                         <div className='flex flex-col items-start justify-start'>
@@ -93,39 +64,27 @@ export default function AboutSearch({ serverState, url }) {
                           <span className='p-xs'>Zoeken binnen &apos;instrumenten&apos;</span>
                         </div>
                       </Link>
-                      <button
-                        onClick={() => setSearchIndex('aboutPage')}
-                        className={`${
-                          searchIndex === 'aboutPage' ? '' : ''
-                        } flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
+                      <Link
+                      href = '/zoeken/over-circulaw'
+                        className='flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]'
                       >
                         <div
-                          className={`${
-                            searchIndex === 'aboutPage' ? 'bg-green-500' : 'bg-black'
-                          } w-4 h-4 rounded-full flex items-center justify-center mr-4`}
+                          className='w-4 h-4 rounded-full flex items-center justify-center mr-4 bg-green-500'
                         >
                           <div
-                            className={`${
-                              searchIndex === 'aboutPage'
-                                ? 'bg-green-500 border-white border-2'
-                                : 'bg-white'
-                            } h-3 w-3 rounded-full `}
+                            className='bg-green-500 border-white border-2 h-3 w-3 rounded-full'
                           ></div>
                         </div>
                         <div className='flex flex-col items-start justify-start'>
                           Over Circulaw
                           <span className='p-xs'>Zoeken binnen &apos;Over Circulaw&apos;</span>
                         </div>
-                      </button>
+                      </Link>
                     </div>
                   </div>
                   <SearchBox
                     searchAsYouType={false}
-                    placeholder={
-                      searchIndex === 'instruments'
-                        ? 'Zoek naar instrumenten...'
-                        : 'Zoek naar Over CircuLaw...'
-                    }
+                    placeholder='Zoek naar Over CircuLaw...'
                     classNames={{
                       root: 'h-16 w-[600px] bg-green-600',
                       form: 'bg-green-600 w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex',
