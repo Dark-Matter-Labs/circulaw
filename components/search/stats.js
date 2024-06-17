@@ -26,12 +26,12 @@ export default function CustomStats() {
     <>
       {/* No query and no filter */}
       {query === '' && !categorie && !thema && !overheidslaag && !rLadder && (
-        <div className='heading-3xl'>{nbHits} resultaten.</div>
+        <div className='heading-2xl sm:heading-3xl'>{nbHits} resultaten.</div>
       )}
 
       {/* Query and no filter */}
       {query !== '' && !categorie && !thema && !overheidslaag && !rLadder && (
-        <div className='heading-3xl'>
+        <div className='heading-2xl sm:heading-3xl'>
           {nbHits} resultaten gevonden voor: <span className='font-semibold'>{query}</span>.
         </div>
       )}
@@ -42,7 +42,7 @@ export default function CustomStats() {
         overheidslaag !== undefined ||
         rLadder !== undefined) &&
       query === '' ? (
-        <div className='heading-3xl'>
+        <div className='heading-2xl sm:heading-3xl'>
           {nbHits} resultaten gevonden voor:{' '}
           {categorie &&
             categorie.map((item) => (
@@ -76,7 +76,7 @@ export default function CustomStats() {
         overheidslaag !== undefined ||
         rLadder !== undefined) &&
       query !== '' ? (
-        <div className='heading-3xl'>
+        <div className='heading-2xl sm:heading-3xl'>
           {nbHits} resultaten gevonden voor: <span className='font-semibold'>{query}</span>{' '}
           {categorie &&
             categorie.map((item) => (

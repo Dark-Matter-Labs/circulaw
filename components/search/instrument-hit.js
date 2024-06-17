@@ -164,14 +164,40 @@ export const InstrumentHit = ({ hit }) => {
           </div>
         </Link>
       </article>
-
+      {/* MOBILE */}
       <article>
-        <div className='flex flex-col sm:hidden justify-center mb-4'>
-          <div className='flex flex-row justify-between h-auto py-2 border-b border-t-2 border-gray-400'>
+      <div className='block sm:ml-0 mb-10 sm:mb-8 md:max-w-[760px] p-4 bg-green-50 rounded-cl'>
+            <div className='flex justify-start items-center -ml-1'>
+              {/* Expertise Tag */}
+              <Tag classes='border border-green-400 bg-transparent text-green-400 mr-2'>
+                {hit.thema}
+              </Tag>
+              {hit?.categorie?.includes('beleid') && <Tag classes='bg-green-500 text-gray-100 mr-2'>Beleid</Tag>}
+              {hit?.categorie?.includes('inkoop') && <Tag classes='bg-green-500 text-gray-100 mr-2'>Inkoop</Tag>}
+              {hit?.categorie?.includes('grondpositie') && (
+                <Tag classes='bg-green-500 text-gray-100 mr-2'>Grondpositie</Tag>
+              )}
+              {hit?.categorie?.includes('subsidie') && (
+                <Tag classes='bg-green-500 text-gray-100 mr-2'>Subsidie</Tag>
+              )}
+              {hit?.categorie?.includes('fiscaal') && <Tag classes='bg-green-500 text-gray-100'>Fiscaal</Tag>}
+            </div>
+
+            <div className='block mt-2 '>
+              <div className=' mb-2'>
+                <h3 className='heading-2xl-semibold max-w-[650px] text-gray-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+                  {hit.titel}{' '}
+                </h3>
+              </div>
+              <div className='block  newlineDisplay p-base text-gray-800 mt-2 pb-2'>
+                <p className='p-base max-w-[650px]'>{hit.subtitel}</p>
+              </div>
+              <div className='flex flex-col sm:hidden justify-center mb-4'>
+          <div className='flex flex-row justify-between h-auto py-2'>
             <div className='flex flex-col justify-center'>
               <div className='p-xs-semibold sm:py-1 text-gray-600'>Juridische houdbaarheid</div>
               <div className='flex items-center'>
-                <div className='p-xs-semibold text-green-500 pr-2'>
+                <div className='p-xs-semibold text-green-500 bg-green-100 px-1.5 py-1 rounded-cl'>
                   {hit?.juridischeHaalbaarheid}
                 </div>
               </div>
@@ -179,14 +205,14 @@ export const InstrumentHit = ({ hit }) => {
             <div className='flex flex-col justify-center'>
               <div className='p-xs-semibold py-1 text-gray-600'>Invloed</div>
               <div className='flex items-center'>
-                <div className='p-xs-semibold text-green-500 pr-2'>{hit?.juridischInvloed}</div>
+                <div className='p-xs-semibold text-green-500 bg-green-100 px-1.5 py-1 rounded-cl'>{hit?.juridischInvloed}</div>
               </div>
             </div>
           </div>
-          <div className='border-b border-gray-400 flex h-auto py-2'>
+          <div className='flex h-auto py-2'>
             <div className='flex flex-col justify-center'>
               <div className='p-xs-semibold py-1 text-gray-600'>Overheidslaag</div>
-              <div className='p-xs-semibold text-green-500'>
+              <div className='p-xs-semibold text-green-500 bg-green-100 pl-1.5 p-1 rounded-cl'>
                 {hit?.overheidslaag
                   ?.filter((x) => x !== null)
                   .map((level) => (
@@ -198,11 +224,11 @@ export const InstrumentHit = ({ hit }) => {
               </div>
             </div>
           </div>
-          <div className='flex py-2 border-b-2 border-gray-400'>
+          <div className='flex py-2'>
             <div className='flex flex-col justify-center'>
               <div className='p-xs-semibold py-1 text-gray-600'>R-ladder</div>
               <div className='flex items-center'>
-                <div className='flex flex-row items-center'>
+                <div className='flex flex-row items-center bg-green-100 pl-1.5 p-1 rounded-cl'>
                   {hit?.rLadder?.map((rValue) => (
                     <div key={rValue} className='p-xs-semibold text-green-500'>
                       {rValue} {hit?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
@@ -214,6 +240,9 @@ export const InstrumentHit = ({ hit }) => {
             </div>
           </div>
         </div>
+            </div>
+          </div>
+        
       </article>
     </>
   );

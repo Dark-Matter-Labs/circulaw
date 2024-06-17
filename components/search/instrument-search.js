@@ -114,7 +114,7 @@ export default function InstrumentSearch({ serverState, url }) {
           </div>
         </div>
 
-        <div className='global-margin flex items-center justify-center mt-10'>
+        <div className='global-margin flex items-center justify-center mt-6 sm:mt-10'>
           <CustomStats />
         </div>
         <div className='global-margin flex'>
@@ -194,8 +194,8 @@ export default function InstrumentSearch({ serverState, url }) {
             <div>
               <Hits
                 classNames={{
-                  root: 'border-none mt-10',
-                  list: 'ml-10',
+                  root: 'border-none mt-4 sm:mt-10',
+                  list: 'sm:ml-10',
                   item: 'shadow-none px-0 pb-4 pt-0',
                 }}
                 hitComponent={InstrumentHit}
