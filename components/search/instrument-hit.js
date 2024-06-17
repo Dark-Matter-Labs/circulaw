@@ -12,26 +12,26 @@ export const InstrumentHit = ({ hit }) => {
       >
         <div className='block'>
           <div className='flex justify-start items-center -ml-1'>
-            <Tag classes='bg-green-500 text-gray-100 mr-2'>{hit.thema}</Tag>
+            <Tag classes='border border-green-400 bg-transparent text-green-400 mr-2'>{hit.thema}</Tag>
             {/* Expertise Tag */}
             {hit?.categorie?.includes('beleid') && (
-              <Tag classes='border border-green-400 bg-transparent text-green-400 mr-2'>Beleid</Tag>
+              <Tag classes='bg-green-500 text-gray-100 mr-2'>Beleid</Tag>
             )}
             {hit?.categorie?.includes('inkoop') && (
-              <Tag classes='border border-green-400 bg-transparent text-green-400 mr-2'>Inkoop</Tag>
+              <Tag classes='bg-green-500 text-gray-100 mr-2'>Inkoop</Tag>
             )}
             {hit?.categorie?.includes('grondpositie') && (
-              <Tag classes='border border-green-400 bg-transparent text-green-400 mr-2'>
+              <Tag classes='bg-green-500 text-gray-100 mr-2'>
                 Grondpositie
               </Tag>
             )}
             {hit?.categorie?.includes('subsidie') && (
-              <Tag classes='border border-green-400 bg-transparent text-green-400 mr-2'>
+              <Tag classes='bg-green-500 text-gray-100 mr-2'>
                 Subsidie
               </Tag>
             )}
             {hit?.categorie?.includes('fiscaal') && (
-              <Tag classes='border border-green-400 bg-transparent text-green-400'>Fiscaal</Tag>
+              <Tag classes='bg-green-500 text-gray-100 mr-2'>Fiscaal</Tag>
             )}
           </div>
           <div className='block mt-2 '>

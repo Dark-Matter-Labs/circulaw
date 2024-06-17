@@ -125,8 +125,8 @@ export default function InstrumentSearch({ serverState, url }) {
                   list: 'empty:hidden before:content-["Categorie"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
                   checkbox:
                     'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
-                  label: 'flex justify-between',
-                  labelText: 'p-base flex-grow capitalize',
+                  label: 'flex justify-between items-center',
+                  labelText: 'p-base flex-grow capitalize ml-2',
                   count:
                     'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                 }}
@@ -142,8 +142,8 @@ export default function InstrumentSearch({ serverState, url }) {
                   list: 'empty:hidden before:content-["Thema"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
                   checkbox:
                     'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
-                  label: 'flex justify-between',
-                  labelText: 'p-base flex-grow capitalize',
+                    label: 'flex justify-between items-center',
+                    labelText: 'p-base flex-grow capitalize ml-2',
                   count:
                     'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                 }}
@@ -159,8 +159,8 @@ export default function InstrumentSearch({ serverState, url }) {
                   list: 'empty:hidden before:content-["Overheidslaag"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
                   checkbox:
                     'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
-                  label: 'flex justify-between',
-                  labelText: 'p-base flex-grow capitalize',
+                    label: 'flex justify-between items-center',
+                    labelText: 'p-base flex-grow capitalize ml-2',
                   count:
                     'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                 }}
@@ -176,8 +176,8 @@ export default function InstrumentSearch({ serverState, url }) {
                   item: 'pt-2',
                   checkbox:
                     'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
-                  label: 'flex justify-between',
-                  labelText: 'p-base flex-grow capitalize',
+                    label: 'flex justify-between items-center',
+                    labelText: 'p-base flex-grow capitalize ml-2',
                   count:
                     'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                 }}
@@ -185,7 +185,6 @@ export default function InstrumentSearch({ serverState, url }) {
               />
             </div>
           </div>
-
           <div>
             <NoResultsBoundary fallback={<NoResults />}>
               <Hits
