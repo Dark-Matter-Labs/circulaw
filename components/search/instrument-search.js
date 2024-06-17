@@ -13,7 +13,7 @@ import {
 import { createInstantSearchRouterNext } from 'react-instantsearch-router-nextjs';
 import { InstrumentHit } from '@/components/search/instrument-hit';
 import { useState } from 'react';
-import CustomStats from '../../components/search/stats';
+import CustomStats from './stats';
 import Pagination from '@/components/search/pagination';
 // import AboutHit from '@/components/search/about-hit';
 import CustomClearRefinements from '@/components/search/clear-refinements';
@@ -23,7 +23,7 @@ import Link from 'next/link';
 
 const algoliaClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a06353266a');
 
-export default function Search({ serverState, url }) {
+export default function InstrumentSearch({ serverState, url }) {
   // can remove all the conditional rendering logic as they are seperate components now
 
   // eslint-disable-next-line
@@ -80,7 +80,7 @@ export default function Search({ serverState, url }) {
                         </div>
                       </Link>
                       <Link
-                        href='/search/search-over'
+                        href='/zoeken/over-circulaw'
                         // onClick={() => setSearchIndex('aboutPage')}
                         className={`${
                           searchIndex === 'aboutPage' ? '' : ''

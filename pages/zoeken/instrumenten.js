@@ -1,13 +1,13 @@
 import { getServerState } from 'react-instantsearch';
 import { renderToString } from 'react-dom/server';
 
-import Search from '@/components/search/search';
+import InstrumentSearch from '@/components/search/instrument-search';
 import Layout from '@/components/layouts/layout';
 
 export default function SearchPage({ serverState, url }) {
   return (
     <Layout>
-      <Search serverState={serverState} url={url} />
+      <InstrumentSearch serverState={serverState} url={url} />
     </Layout>
   );
 }

@@ -69,7 +69,7 @@ export default function AboutSearch({ serverState, url }) {
                   <div className='mb-4'>
                     <div className='flex flex-row justify-center w-[600px] gap-x-1.5'>
                       <Link
-                        href='/search'
+                        href='/zoeken/instrumenten'
                         // onClick={() => setSearchIndex('instruments')}
                         className={`${
                           searchIndex === 'instruments' ? '' : ''
