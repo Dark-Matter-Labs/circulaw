@@ -15,6 +15,7 @@ import CustomStats from '../../components/search/stats';
 import { XIcon } from '@heroicons/react/outline';
 import AboutHit from './about-hit';
 import Image from 'next/image';
+import MobileHeaderSearch from './mobile-header';
 
 const algoliaClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a06353266a');
 
@@ -39,9 +40,11 @@ export default function AboutSearch({ serverState, url }) {
         <Configure hitsPerPage={10} />
         <div className='bg-green-600 h-[260px] flex items-end justify-center w-full'>
           <div className='global-margin w-full flex items-center justify-center'>
-            <div className='flex flex-col items-center justify-center gap-y-6'>
+
+            {/* DESKTOP */}
+            <div className='hidden sm:flex flex-col items-center justify-center gap-y-6'>
               <div className='w-full'>
-                <div className='w-full h-full global-margin flex flex-col items-center justify-end pb-10'>
+                <div className='w-full h-full flex flex-col items-center justify-end pb-10'>
                   <div className='mb-4'>
                     <div className='flex flex-row justify-center w-[600px] gap-x-1.5'>
                       <Link
@@ -102,6 +105,11 @@ export default function AboutSearch({ serverState, url }) {
                 </div>
               </div>
             </div>
+
+            {/* MOBILE */}
+            <MobileHeaderSearch index ='aboutPage'/>
+
+
           </div>
         </div>
         <div className='global-margin flex items-center justify-center mt-10'>

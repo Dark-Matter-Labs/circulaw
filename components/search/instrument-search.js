@@ -19,6 +19,7 @@ import CustomClearRefinements from '@/components/search/clear-refinements';
 import { XIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 import Image from 'next/image';
+import MobileHeaderSearch from './mobile-header';
 
 const algoliaClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a06353266a');
 
@@ -43,14 +44,15 @@ export default function InstrumentSearch({ serverState, url }) {
         <Configure hitsPerPage={10} />
         <div className='bg-green-600 h-[260px] flex items-end justify-center w-full'>
           <div className='global-margin w-full flex items-center justify-center'>
-            <div className='flex flex-col items-center justify-center gap-y-6'>
+            
+            {/* Desktop */}
+            <div className='hidden sm:flex flex-col items-center justify-center gap-y-6'>
               <div className='w-full'>
-                <div className='w-full h-full global-margin flex flex-col items-center justify-end pb-10'>
+                <div className='w-full h-full flex flex-col items-center justify-end pb-10'>
                   <div className='mb-4'>
                     <div className='flex flex-row justify-center w-[600px] gap-x-1.5'>
                       <Link
-                        // onClick={() => setSearchIndex('instruments')}
-                        href='/search'
+                        href='/zoeken/instrumenten'
                         className='flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]'
                       >
                         <div className='bg-green-500 w-4 h-4 rounded-full flex items-center justify-center mr-4'>
@@ -107,12 +109,17 @@ export default function InstrumentSearch({ serverState, url }) {
                 </div>
               </div>
             </div>
+            {/* Mobile */}
+                  <MobileHeaderSearch index = 'instruments'/>
+            {/* end mobile */}
           </div>
         </div>
+
+
         <div className='global-margin flex items-center justify-center mt-10'>
           <CustomStats />
         </div>
-        <div className='global-margin flex'>
+        <div className='global-margin hidden sm:flex'>
           <NoResultsBoundary fallback={<NoResults />}>
             <div className='flex flex-col mt-10 min-w-[260px]'>
               <div className='flex flex-col'>
