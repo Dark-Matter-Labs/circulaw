@@ -10,11 +10,9 @@ import {
   useInstantSearch,
 } from 'react-instantsearch';
 import { createInstantSearchRouterNext } from 'react-instantsearch-router-nextjs';
-// import { InstrumentHit } from '@/components/search/instrument-hit';
 import Link from 'next/link';
 import CustomStats from '../../components/search/stats';
 import Pagination from '@/components/search/pagination';
-// import AboutHit from '@/components/search/about-hit';
 import { XIcon } from '@heroicons/react/outline';
 import AboutHit from './about-hit';
 

@@ -12,22 +12,16 @@ import {
 } from 'react-instantsearch';
 import { createInstantSearchRouterNext } from 'react-instantsearch-router-nextjs';
 import { InstrumentHit } from '@/components/search/instrument-hit';
-import { useState } from 'react';
 import CustomStats from './stats';
 import Pagination from '@/components/search/pagination';
 // import AboutHit from '@/components/search/about-hit';
 import CustomClearRefinements from '@/components/search/clear-refinements';
 import { XIcon } from '@heroicons/react/outline';
-import AboutHit from './about-hit';
 import Link from 'next/link';
 
 const algoliaClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a06353266a');
 
 export default function InstrumentSearch({ serverState, url }) {
-  // can remove all the conditional rendering logic as they are seperate components now
-
-  // eslint-disable-next-line
-  const [searchIndex, setSearchIndex] = useState('instruments');
 
   return (
     <InstantSearchSSRProvider {...serverState}>
@@ -57,21 +51,13 @@ export default function InstrumentSearch({ serverState, url }) {
                       <Link
                         // onClick={() => setSearchIndex('instruments')}
                         href='/search'
-                        className={`${
-                          searchIndex === 'instruments' ? '' : ''
-                        } flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
+                        className='flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]'
                       >
                         <div
-                          className={`${
-                            searchIndex === 'instruments' ? 'bg-green-500' : 'bg-black'
-                          } w-4 h-4 rounded-full flex items-center justify-center mr-4`}
+                          className='bg-green-500 w-4 h-4 rounded-full flex items-center justify-center mr-4'
                         >
                           <div
-                            className={`${
-                              searchIndex === 'instruments'
-                                ? 'bg-green-500 border-white border-2'
-                                : 'bg-white'
-                            } h-3 w-3 rounded-full `}
+                            className='bg-green-500 border-white border-2 h-3 w-3 rounded-full'
                           ></div>
                         </div>
                         <div className='flex flex-col items-start justify-start'>
@@ -82,21 +68,13 @@ export default function InstrumentSearch({ serverState, url }) {
                       <Link
                         href='/zoeken/over-circulaw'
                         // onClick={() => setSearchIndex('aboutPage')}
-                        className={`${
-                          searchIndex === 'aboutPage' ? '' : ''
-                        } flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
+                        className='flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]'
                       >
                         <div
-                          className={`${
-                            searchIndex === 'aboutPage' ? 'bg-green-500' : 'bg-black'
-                          } w-4 h-4 rounded-full flex items-center justify-center mr-4`}
+                          className='bg-black w-4 h-4 rounded-full flex items-center justify-center mr-4'
                         >
                           <div
-                            className={`${
-                              searchIndex === 'aboutPage'
-                                ? 'bg-green-500 border-white border-2'
-                                : 'bg-white'
-                            } h-3 w-3 rounded-full `}
+                            className='bg-white h-3 w-3 rounded-full'
                           ></div>
                         </div>
                         <div className='flex flex-col items-start justify-start'>
@@ -108,11 +86,7 @@ export default function InstrumentSearch({ serverState, url }) {
                   </div>
                   <SearchBox
                     searchAsYouType={false}
-                    placeholder={
-                      searchIndex === 'instruments'
-                        ? 'Zoek naar instrumenten...'
-                        : 'Zoek naar Over CircuLaw...'
-                    }
+                    placeholder='Zoek naar instrumenten...'
                     classNames={{
                       root: 'h-16 w-[600px] bg-green-600',
                       form: 'bg-green-600 w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex',
@@ -147,7 +121,7 @@ export default function InstrumentSearch({ serverState, url }) {
           <CustomStats />
         </div>
         <div className='global-margin flex'>
-          {searchIndex === 'instruments' && (
+         
             <div className='flex flex-col mt-10 min-w-[260px]'>
               <div className='flex flex-col'>
                 <CustomClearRefinements />
@@ -221,7 +195,7 @@ export default function InstrumentSearch({ serverState, url }) {
                 />
               </div>
             </div>
-          )}
+        
           <div>
             <NoResultsBoundary fallback={<NoResults />}>
               <Hits
@@ -230,7 +204,7 @@ export default function InstrumentSearch({ serverState, url }) {
                   list: 'ml-10',
                   item: 'shadow-none px-0 pb-4 pt-0',
                 }}
-                hitComponent={searchIndex === 'instruments' ? InstrumentHit : AboutHit}
+                hitComponent={InstrumentHit}
               />
               <div className='w-full flex items-center justify-center mb-12 mt-6'>
                 <Pagination />
