@@ -106,7 +106,7 @@ export default function AboutSearch({ serverState, url }) {
           </div>
         </div>
         <div className='global-margin flex items-center justify-center mt-10'>
-          <CustomStats />
+          <CustomStats/>
         </div>
         <div className='global-margin flex'>
         <NoResultsBoundary fallback={<NoResults />}>
@@ -116,7 +116,7 @@ export default function AboutSearch({ serverState, url }) {
                 classNames={{
                   root: 'border-none mt-10',
                   list: 'ml-10',
-                  item: 'shadow-none px-0 pb-4 pt-0',
+                  item: 'px-0 pb-4 pt-0',
                 }}
                 hitComponent={AboutHit}
               />
