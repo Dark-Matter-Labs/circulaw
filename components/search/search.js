@@ -21,31 +21,13 @@ import { XIcon } from '@heroicons/react/outline';
 import AboutHit from './about-hit';
 import Link from 'next/link';
 
-
 const algoliaClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a06353266a');
 
 export default function Search({ serverState, url }) {
+  // can remove all the conditional rendering logic as they are seperate components now
 
-
-  // somthing is bugging here. 
-  // two different pages 
-  // set state in use effect ?
-  // index is not a param so cant use useSearchParams
-  // 
-
-
-  // console.log(url?.contains('instruments'))
+  // eslint-disable-next-line
   const [searchIndex, setSearchIndex] = useState('instruments');
-
-  {/* 
-
-  useEffect(() => {
-    if (url.includes('instruments')) {
-      setSearchIndex('instruments')
-    } else {
-      setSearchIndex('aboutPage')
-    }
-  }, [url])*/}
 
   return (
     <InstantSearchSSRProvider {...serverState}>
@@ -58,7 +40,7 @@ export default function Search({ serverState, url }) {
             serverUrl: url,
             routerOptions: {
               cleanUrlOnDispose: false,
-              preserveSharedStateOnUnmount: true
+              preserveSharedStateOnUnmount: true,
             },
           }),
         }}
@@ -72,8 +54,9 @@ export default function Search({ serverState, url }) {
                 <div className='w-full h-full global-margin flex flex-col items-center justify-end pb-10'>
                   <div className='mb-4'>
                     <div className='flex flex-row justify-center w-[600px] gap-x-1.5'>
-                      <button
-                        onClick={() => setSearchIndex('instruments')}
+                      <Link
+                        // onClick={() => setSearchIndex('instruments')}
+                        href='/search'
                         className={`${
                           searchIndex === 'instruments' ? '' : ''
                         } flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
@@ -95,9 +78,9 @@ export default function Search({ serverState, url }) {
                           Instrumenten
                           <span className='p-xs'>Zoeken binnen &apos;instrumenten&apos;</span>
                         </div>
-                      </button>
+                      </Link>
                       <Link
-                        href = '/search/search-over'
+                        href='/search/search-over'
                         // onClick={() => setSearchIndex('aboutPage')}
                         className={`${
                           searchIndex === 'aboutPage' ? '' : ''
@@ -240,7 +223,6 @@ export default function Search({ serverState, url }) {
             </div>
           )}
           <div>
-             
             <NoResultsBoundary fallback={<NoResults />}>
               <Hits
                 classNames={{

@@ -4,7 +4,6 @@ import singletonRouter from 'next/router';
 import {
   InstantSearch,
   Hits,
-  RefinementList,
   SearchBox,
   InstantSearchSSRProvider,
   Configure,
@@ -17,26 +16,23 @@ import { useState } from 'react';
 import CustomStats from '../../components/search/stats';
 import Pagination from '@/components/search/pagination';
 // import AboutHit from '@/components/search/about-hit';
-import CustomClearRefinements from '@/components/search/clear-refinements';
 import { XIcon } from '@heroicons/react/outline';
 import AboutHit from './about-hit';
 
 const algoliaClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a06353266a');
 
 export default function AboutSearch({ serverState, url }) {
-
-
-  // somthing is bugging here. 
-  // two different pages 
+  // somthing is bugging here.
+  // two different pages
   // set state in use effect ?
   // index is not a param so cant use useSearchParams
-  // 
-
+  //
 
   // console.log(url?.contains('instruments'))
   const [searchIndex, setSearchIndex] = useState('aboutPage');
 
-  {/* 
+  {
+    /* 
 
   useEffect(() => {
     if (url.includes('instruments')) {
@@ -44,7 +40,8 @@ export default function AboutSearch({ serverState, url }) {
     } else {
       setSearchIndex('aboutPage')
     }
-  }, [url])*/}
+  }, [url])*/
+  }
 
   return (
     <InstantSearchSSRProvider {...serverState}>
@@ -57,7 +54,7 @@ export default function AboutSearch({ serverState, url }) {
             serverUrl: url,
             routerOptions: {
               cleanUrlOnDispose: false,
-              preserveSharedStateOnUnmount: true
+              preserveSharedStateOnUnmount: true,
             },
           }),
         }}
@@ -72,7 +69,7 @@ export default function AboutSearch({ serverState, url }) {
                   <div className='mb-4'>
                     <div className='flex flex-row justify-center w-[600px] gap-x-1.5'>
                       <Link
-                        href = '/search'
+                        href='/search'
                         // onClick={() => setSearchIndex('instruments')}
                         className={`${
                           searchIndex === 'instruments' ? '' : ''
@@ -163,83 +160,7 @@ export default function AboutSearch({ serverState, url }) {
           <CustomStats />
         </div>
         <div className='global-margin flex'>
-          {searchIndex === 'instruments' && (
-            <div className='flex flex-col mt-10 min-w-[260px]'>
-              <div className='flex flex-col'>
-                <CustomClearRefinements />
-
-                <RefinementList
-                  attribute='categorie'
-                  title='Categorie'
-                  classNames={{
-                    root: 'mb-12 min-w-[260px] mr-12',
-                    item: 'pt-2',
-                    list: 'empty:hidden before:content-["Categorie"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
-                    checkbox:
-                      'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
-                    label: 'flex justify-between',
-                    labelText: 'p-base flex-grow capitalize',
-                    count:
-                      'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
-                  }}
-                  sortBy={['label:asc']}
-                />
-              </div>
-              <div className='flex flex-col'>
-                <RefinementList
-                  attribute='thema'
-                  classNames={{
-                    root: 'mb-12 min-w-[260px] mr-12',
-                    item: 'pt-2',
-                    list: 'empty:hidden before:content-["Thema"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
-                    checkbox:
-                      'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
-                    label: 'flex justify-between',
-                    labelText: 'p-base flex-grow capitalize',
-                    count:
-                      'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
-                  }}
-                  sortBy={['label:asc']}
-                />
-              </div>
-              <div className='flex flex-col'>
-                <RefinementList
-                  attribute='overheidslaag'
-                  classNames={{
-                    root: 'mb-12 min-w-[260px] mr-12',
-                    item: 'pt-2',
-                    list: 'empty:hidden before:content-["Overheidslaag"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
-                    checkbox:
-                      'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
-                    label: 'flex justify-between',
-                    labelText: 'p-base flex-grow capitalize',
-                    count:
-                      'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
-                  }}
-                  sortBy={['label:asc']}
-                />
-              </div>
-              <div className='flex flex-col'>
-                <RefinementList
-                  attribute='rLadder'
-                  classNames={{
-                    root: 'mb-12 min-w-[260px] mr-12 ',
-                    list: 'empty:hidden before:content-["R_Ladder"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
-                    item: 'pt-2',
-                    checkbox:
-                      'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
-                    label: 'flex justify-between',
-                    labelText: 'p-base flex-grow capitalize',
-                    count:
-                      'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
-                  }}
-                  sortBy={['label:asc']}
-                />
-              </div>
-            </div>
-          )}
           <div>
-               
             <NoResultsBoundary fallback={<NoResults />}>
               <Hits
                 classNames={{
@@ -253,7 +174,6 @@ export default function AboutSearch({ serverState, url }) {
                 <Pagination />
               </div>
             </NoResultsBoundary>
-           
           </div>
         </div>
       </InstantSearch>
