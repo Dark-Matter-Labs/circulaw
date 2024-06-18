@@ -27,9 +27,10 @@ import { ChevronDownIcon, MenuIcon, XIcon, SearchIcon } from '@heroicons/react/o
 import Image from 'next/image';
 import Link from 'next/link';
 // import { useRouter } from 'next/router';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Lottie from 'react-lottie';
-import { useSearchParams, usePathname } from 'next/navigation';
+import { useSearchParams, usePathname} from 'next/navigation';
+
 
 const defaultOptions = {
   loop: true,
@@ -41,11 +42,13 @@ const defaultOptions = {
 };
 
 export default function Nav(props) {
-  //  const router = useRouter();
+
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { CustomEvent } = usePiwikPro();
   const [scrollEffect, setScrollEffect] = useState(false);
+  
+  
   useEffect(() => {
     const changeEffect = () => {
       if (window.scrollY >= 32) {
@@ -56,6 +59,8 @@ export default function Nav(props) {
     };
     window.addEventListener('scroll', changeEffect);
   }, []);
+
+  
 
   const [searchIndex, setSearchIndex] = useState('instruments');
   const [searchQuery, setSearchQuery] = useState('');
@@ -73,6 +78,14 @@ export default function Nav(props) {
     const value = e.target.value;
     setSearchQuery(value);
   };
+
+  const linkRef = useRef()
+
+  const enterClick = (e) => {
+    e.preventDefault()
+    console.log('enter key')
+    linkRef.current.click()
+  }
 
   // search Menu
   const [searchMenuIsOpen, setSearchMenuIsOpen] = useState(false);
@@ -841,7 +854,7 @@ export default function Nav(props) {
 
                 {/* SEARCH MENU */}
 
-                <div className={`${pathname === '/search' ? 'hidden' : 'block'} ml-6 lg:ml-8`}>
+                <div className={`${pathname?.includes('/zoeken')  ? 'hidden' : 'block'} ml-6 lg:ml-8`}>
                   <button
                     className='h-full relative p-sm group z-100 flex flex-row items-center'
                     ref={searchMenuRef.setReference}
@@ -970,6 +983,12 @@ export default function Nav(props) {
                                   className={`${
                                     pathname === '/' ? 'bg-green-600' : 'bg-green-50'
                                   }  w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex`}
+                                  onKeyDown={(e) => {
+                                    
+                                    if (e.key === 'Enter')
+                                       // e.preventDefault()
+                                        enterClick(e);
+                                    }}
                                 >
                                   <input
                                     className={`${
@@ -981,8 +1000,12 @@ export default function Nav(props) {
                                         : 'Zoek naar over CircuLaw...'
                                     }
                                     onChange={onChange()}
+                                    
                                   />
+                                  <button type='submit'>
                                   <Link
+                                    // onClick={handleSubmit()}
+                                    ref={linkRef}
                                     href={`${
                                       searchIndex === 'instruments'
                                         ? `/zoeken/instrumenten?${searchIndex}${createQueryString(
@@ -998,6 +1021,7 @@ export default function Nav(props) {
                                   >
                                     Zoeken
                                   </Link>
+                                  </button>
                                   <button
                                     type='reset'
                                     title='Clear the search query'
