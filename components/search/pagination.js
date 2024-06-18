@@ -10,7 +10,7 @@ export default function Pagination() {
   const previousPageIndex = currentRefinement - 1;
   const nextPageIndex = currentRefinement + 1;
   const lastPageIndex = nbPages - 1;
-  
+
   if (nbPages !== 1) {
     return (
       <ul className={`${pages[2] + 1 === nbPages ? '' : ''} flex flex-row`}>
@@ -44,8 +44,10 @@ export default function Pagination() {
             {firstPageIndex + 1}
           </button>
         </li>
-  
-        {pages[0] !== 0 && pages[0] !==1 && <li className='mx-1 h-8 w-8 flex items-end justify-center'>...</li>}
+
+        {pages[0] !== 0 && pages[0] !== 1 && (
+          <li className='mx-1 h-8 w-8 flex items-end justify-center'>...</li>
+        )}
         {pages.map((page, index) => {
           const label = page + 1;
           return (
@@ -60,16 +62,20 @@ export default function Pagination() {
                   pages[2] + 1 === nbPages && index === 2 ? 'hidden' : ''
                 } mx-1 h-8 w-8 flex items-center justify-center heading-xl-semibold`}
               >
-                <button isDisabled={false} onClick={() => {window.scrollTo(0, 0);
-                  refine(page)
-                }}>
+                <button
+                  isDisabled={false}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    refine(page);
+                  }}
+                >
                   {label}
                 </button>
               </li>
             </>
           );
         })}
-        {pages[2] !== nbPages - 1 && pages[2] !== nbPages -2 && (
+        {pages[2] !== nbPages - 1 && pages[2] !== nbPages - 2 && (
           <li className='mx-1 h-8 w-8 flex items-end justify-center'>...</li>
         )}
         <li className='mx-1 h-8 w-8 flex items-center justify-center'>
@@ -104,6 +110,5 @@ export default function Pagination() {
         </li>
       </ul>
     );
-  } else return null
-  
+  } else return null;
 }

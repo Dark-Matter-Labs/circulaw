@@ -19,10 +19,14 @@ import { XIcon, AdjustmentsIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 import Image from 'next/image';
 import MobileHeaderSearch from './mobile-header';
+import { useState, Fragment } from 'react';
+import { Transition, Dialog } from '@headlessui/react';
 
 const algoliaClient = algoliasearch('0L6RUN37T0', '5287d2668bdeebcbff12a4a06353266a');
 
 export default function InstrumentSearch({ serverState, url }) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   return (
     <InstantSearchSSRProvider {...serverState}>
       <InstantSearch
@@ -34,12 +38,145 @@ export default function InstrumentSearch({ serverState, url }) {
             serverUrl: url,
             routerOptions: {
               cleanUrlOnDispose: false,
-              preserveSharedStateOnUnmount: true,
             },
           }),
         }}
+        future={{
+          preserveSharedStateOnUnmount: true,
+        }}
         insights={true}
       >
+        {/* MOBILE FILTERS */}
+        <div className='min-h-full mt-[70px] z-50'>
+          <Transition.Root show={sidebarOpen} as={Fragment}>
+            <Dialog as='div' className='relative z-40 lg:hidden' onClose={setSidebarOpen}>
+              <Transition.Child
+                as={Fragment}
+                enter='transition-opacity ease-linear duration-300'
+                enterFrom='opacity-0'
+                enterTo='opacity-100'
+                leave='transition-opacity ease-linear duration-300'
+                leaveFrom='opacity-100'
+                leaveTo='opacity-0'
+              >
+                <div className='fixed inset-0 bg-gray-600 bg-opacity-75' />
+              </Transition.Child>
+
+              <div className='fixed inset-0 flex z-40 '>
+                <Transition.Child
+                  as={Fragment}
+                  enter='transition ease-in-out duration-300 transform'
+                  enterFrom='-translate-x-full'
+                  enterTo='translate-x-0'
+                  leave='transition ease-in-out duration-300 transform'
+                  leaveFrom='translate-x-0'
+                  leaveTo='-translate-x-full'
+                >
+                  <Dialog.Panel className='relative flex-1 flex flex-col max-w-xs w-full mt-[70px] pb-4 bg-gray-100'>
+                    <Transition.Child
+                      as={Fragment}
+                      enter='ease-in-out duration-300'
+                      enterFrom='opacity-0'
+                      enterTo='opacity-100'
+                      leave='ease-in-out duration-300'
+                      leaveFrom='opacity-100'
+                      leaveTo='opacity-0'
+                    >
+                      <div className='absolute top-0 right-0 pt-2 pr-6'>
+                        <button
+                          type='button'
+                          className='ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'
+                          onClick={() => setSidebarOpen(false)}
+                        >
+                          <span className='sr-only'>Close sidebar</span>
+                          <XIcon className='h-6 w-6 text-green-600' aria-hidden='true' />
+                        </button>
+                      </div>
+                    </Transition.Child>
+                    <div className=' p-4 flex justify-between'>
+                      <div className='flex flex-col mt-6 min-w-[260px]'>
+                        <div className='flex flex-col'>
+                          <CustomClearRefinements />
+                          <RefinementList
+                            attribute='categorie'
+                            title='Categorie'
+                            classNames={{
+                              root: 'mb-12 min-w-[260px] mr-8',
+                              item: 'pt-2',
+                              list: 'empty:hidden before:content-["Categorie"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                              checkbox:
+                                'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                              label: 'flex justify-between items-center',
+                              labelText: 'p-base flex-grow capitalize ml-2',
+                              count:
+                                'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
+                            }}
+                            sortBy={['label:asc']}
+                          />
+                        </div>
+                        <div className='flex flex-col'>
+                          <RefinementList
+                            attribute='thema'
+                            classNames={{
+                              root: 'mb-12 min-w-[260px] mr-12',
+                              item: 'pt-2',
+                              list: 'empty:hidden before:content-["Thema"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                              checkbox:
+                                'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                              label: 'flex justify-between items-center',
+                              labelText: 'p-base flex-grow capitalize ml-2',
+                              count:
+                                'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
+                            }}
+                            sortBy={['label:asc']}
+                          />
+                        </div>
+                        <div className='flex flex-col'>
+                          <RefinementList
+                            attribute='overheidslaag'
+                            classNames={{
+                              root: 'mb-12 min-w-[260px] mr-12',
+                              item: 'pt-2',
+                              list: 'empty:hidden before:content-["Overheidslaag"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                              checkbox:
+                                'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                              label: 'flex justify-between items-center',
+                              labelText: 'p-base flex-grow capitalize ml-2',
+                              count:
+                                'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
+                            }}
+                            sortBy={['label:asc']}
+                          />
+                        </div>
+                        <div className='flex flex-col'>
+                          <RefinementList
+                            attribute='rLadder'
+                            classNames={{
+                              root: 'mb-12 min-w-[260px] mr-12 ',
+                              list: 'empty:hidden before:content-["R_Ladder"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                              item: 'pt-2',
+                              checkbox:
+                                'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                              label: 'flex justify-between items-center',
+                              labelText: 'p-base flex-grow capitalize ml-2',
+                              count:
+                                'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
+                            }}
+                            sortBy={['label:asc']}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
+                <div className='flex-shrink-0 w-14' aria-hidden='true'>
+                  {/* Dummy element to force sidebar to shrink to fit close icon */}
+                </div>
+              </div>
+            </Dialog>
+          </Transition.Root>
+        </div>
+
         <Configure hitsPerPage={10} />
         <div className='bg-green-600 h-[260px] flex items-end justify-center w-full'>
           <div className='global-margin w-full flex items-center justify-center'>
@@ -109,25 +246,22 @@ export default function InstrumentSearch({ serverState, url }) {
             </div>
             {/* Mobile */}
             <MobileHeaderSearch index='instruments' />
-        
+
             {/* end mobile */}
           </div>
-          
         </div>
 
-    
         <div className='lg:hidden py-5 global-margin'>
-        <button
-          type='button'
-          className='px-4 max-w-sm inline-flex items-center justify-center bg-green-5 0 h-[60px] p-2 w-full border-gray-800 rounded-cl focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500 lg:hidden'
-          // onClick={() => setSidebarOpen(true)}
-        >
-          <span className='sr-only'>Open sidebar</span>
-          <span className='p-base-bold mr-3'>Filter</span>
-          <AdjustmentsIcon className='h-8 w-8 -rotate-90' aria-hidden='true' />
-        </button>
-      </div>
-           
+          <button
+            type='button'
+            className='px-4 max-w-sm inline-flex items-center justify-center bg-green-50 h-[60px] p-2 w-full border-gray-800 rounded-cl focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500 lg:hidden'
+            onClick={() => setSidebarOpen(true)}
+          >
+            <span className='sr-only'>Open sidebar</span>
+            <span className='p-base-bold mr-3'>Filter</span>
+            <AdjustmentsIcon className='h-8 w-8 -rotate-90' aria-hidden='true' />
+          </button>
+        </div>
 
         <div className='global-margin flex items-center justify-center mt-6 sm:mt-10'>
           <CustomStats />
