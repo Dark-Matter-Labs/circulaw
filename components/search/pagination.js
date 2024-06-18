@@ -21,7 +21,7 @@ export default function Pagination() {
             onClick={(event) => {
               event.preventDefault();
               refine(previousPageIndex);
-              // window.scrollTo(0, 0);
+              window.scrollTo(0, 0);
             }}
           >
             <ChevronLeftIcon className='h-5 w-5' />
@@ -38,7 +38,7 @@ export default function Pagination() {
             onClick={(event) => {
               event.preventDefault();
               refine(firstPageIndex);
-              //  window.scrollTo(0, 0);
+              window.scrollTo(0, 0);
             }}
           >
             {firstPageIndex + 1}
@@ -60,7 +60,9 @@ export default function Pagination() {
                   pages[2] + 1 === nbPages && index === 2 ? 'hidden' : ''
                 } mx-1 h-8 w-8 flex items-center justify-center heading-xl-semibold`}
               >
-                <button isDisabled={false} onClick={() => refine(page)}>
+                <button isDisabled={false} onClick={() => {window.scrollTo(0, 0);
+                  refine(page)
+                }}>
                   {label}
                 </button>
               </li>
@@ -81,7 +83,7 @@ export default function Pagination() {
             onClick={(event) => {
               event.preventDefault();
               refine(lastPageIndex);
-              //    window.scrollTo(0, 0);
+              window.scrollTo(0, 0);
             }}
           >
             {lastPageIndex + 1}
@@ -94,7 +96,7 @@ export default function Pagination() {
             onClick={(event) => {
               event.preventDefault();
               refine(nextPageIndex);
-              //   window.scrollTo(0, 0);
+              window.scrollTo(0, 0);
             }}
           >
             <ChevronRightIcon className='h-5 w-5' />
