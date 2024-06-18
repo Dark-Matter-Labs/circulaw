@@ -5,7 +5,7 @@ export default function CustomClearRefinements(props) {
 
   return (
     <>
-      <div className='w-[265px] flex flex-row items-center justify-between mb-12 '>
+      <div className='w-[265px] flex flex-row items-center justify-between mb-8 sm:mb-12 '>
         <div className='heading-2xl-semibold mr-6'>Filter Ops:</div>
         <button
           onClick={refine}

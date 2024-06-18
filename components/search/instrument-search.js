@@ -47,7 +47,7 @@ export default function InstrumentSearch({ serverState, url }) {
         insights={true}
       >
         {/* MOBILE FILTERS */}
-        <div className='min-h-full mt-[70px] z-50'>
+        <div className='min-h-full  z-50'>
           <Transition.Root show={sidebarOpen} as={Fragment}>
             <Dialog as='div' className='relative z-40 lg:hidden' onClose={setSidebarOpen}>
               <Transition.Child
@@ -72,7 +72,7 @@ export default function InstrumentSearch({ serverState, url }) {
                   leaveFrom='translate-x-0'
                   leaveTo='-translate-x-full'
                 >
-                  <Dialog.Panel className='relative flex-1 flex flex-col max-w-xs w-full mt-[70px] pb-4 bg-gray-100'>
+                  <Dialog.Panel className='relative flex-1 flex flex-col max-w-xs w-full mt-[70px] bg-gray-100'>
                     <Transition.Child
                       as={Fragment}
                       enter='ease-in-out duration-300'
@@ -82,7 +82,7 @@ export default function InstrumentSearch({ serverState, url }) {
                       leaveFrom='opacity-100'
                       leaveTo='opacity-0'
                     >
-                      <div className='absolute top-0 right-0 pt-2 pr-6'>
+                      <div className='absolute top-0 right-0 pt-2 pr-2'>
                         <button
                           type='button'
                           className='ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'
@@ -93,15 +93,15 @@ export default function InstrumentSearch({ serverState, url }) {
                         </button>
                       </div>
                     </Transition.Child>
-                    <div className=' p-4 flex justify-between'>
-                      <div className='flex flex-col mt-6 min-w-[260px]'>
-                        <div className='flex flex-col'>
+                    <div className=' p-4 flex justify-between overflow-scroll'>
+                      <div className='flex flex-col mt-6 min-w-[260px] '>
+                        <div className='flex flex-col '>
                           <CustomClearRefinements />
                           <RefinementList
                             attribute='categorie'
                             title='Categorie'
                             classNames={{
-                              root: 'mb-12 min-w-[260px] mr-8',
+                              root: 'mb-8 min-w-[260px] mr-8',
                               item: 'pt-2',
                               list: 'empty:hidden before:content-["Categorie"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
                               checkbox:
@@ -118,7 +118,7 @@ export default function InstrumentSearch({ serverState, url }) {
                           <RefinementList
                             attribute='thema'
                             classNames={{
-                              root: 'mb-12 min-w-[260px] mr-12',
+                              root: 'mb-8 min-w-[260px] mr-12',
                               item: 'pt-2',
                               list: 'empty:hidden before:content-["Thema"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
                               checkbox:
@@ -135,7 +135,7 @@ export default function InstrumentSearch({ serverState, url }) {
                           <RefinementList
                             attribute='overheidslaag'
                             classNames={{
-                              root: 'mb-12 min-w-[260px] mr-12',
+                              root: 'mb-8 min-w-[260px] mr-12',
                               item: 'pt-2',
                               list: 'empty:hidden before:content-["Overheidslaag"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
                               checkbox:
@@ -152,7 +152,7 @@ export default function InstrumentSearch({ serverState, url }) {
                           <RefinementList
                             attribute='rLadder'
                             classNames={{
-                              root: 'mb-12 min-w-[260px] mr-12 ',
+                              root: 'mb-8 min-w-[260px] mr-12 ',
                               list: 'empty:hidden before:content-["R_Ladder"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
                               item: 'pt-2',
                               checkbox:
