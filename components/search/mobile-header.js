@@ -4,7 +4,7 @@ import { XIcon } from '@heroicons/react/outline';
 
 export default function MobileHeaderSearch({ index }) {
   return (
-    <div className='flex sm:hidden flex-col items-center justify-center gap-y-6'>
+    <div className='flex sm:hidden w-full max-w-sm flex-col items-center justify-center gap-y-6'>
       <div className='w-full h-full flex flex-col items-center justify-end pb-6'>
         <div className='flex flex-col justify-center w-full gap-y-1.5 mb-4'>
           <Link
@@ -53,10 +53,10 @@ export default function MobileHeaderSearch({ index }) {
             index === 'instruments' ? 'Zoek naar instrumenten...' : 'Zoek naar Over CircuLaw...'
           }
           classNames={{
-            root: 'h-16 w-[350px] bg-green-600',
-            form: 'bg-green-600 w-[350px] h-[60px] rounded-cl flex-row items-center justify-between relative flex',
+            root: 'h-16 max-w-sm w-full bg-green-600',
+            form: 'bg-green-600 max-w-sm w-full h-[60px] rounded-cl flex-row items-center justify-between relative flex',
             input:
-              'w-[350px] h-[60px] focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] pl-4 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold',
+              'max-w-sm w-full h-[60px] focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] pl-4 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold',
             submitIcon: 'visible',
           }}
           submitIconComponent={() => (

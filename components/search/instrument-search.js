@@ -1,6 +1,5 @@
 import algoliasearch from 'algoliasearch';
 import singletonRouter from 'next/router';
-
 import {
   InstantSearch,
   Hits,
@@ -16,7 +15,7 @@ import CustomStats from './stats';
 import Pagination from '@/components/search/pagination';
 // import AboutHit from '@/components/search/about-hit';
 import CustomClearRefinements from '@/components/search/clear-refinements';
-import { XIcon } from '@heroicons/react/outline';
+import { XIcon, AdjustmentsIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 import Image from 'next/image';
 import MobileHeaderSearch from './mobile-header';
@@ -110,9 +109,25 @@ export default function InstrumentSearch({ serverState, url }) {
             </div>
             {/* Mobile */}
             <MobileHeaderSearch index='instruments' />
+        
             {/* end mobile */}
           </div>
+          
         </div>
+
+    
+        <div className='lg:hidden py-5 global-margin'>
+        <button
+          type='button'
+          className='px-4 max-w-sm inline-flex items-center justify-center bg-green-5 0 h-[60px] p-2 w-full border-gray-800 rounded-cl focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500 lg:hidden'
+          // onClick={() => setSidebarOpen(true)}
+        >
+          <span className='sr-only'>Open sidebar</span>
+          <span className='p-base-bold mr-3'>Filter</span>
+          <AdjustmentsIcon className='h-8 w-8 -rotate-90' aria-hidden='true' />
+        </button>
+      </div>
+           
 
         <div className='global-margin flex items-center justify-center mt-6 sm:mt-10'>
           <CustomStats />
