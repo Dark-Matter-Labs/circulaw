@@ -119,7 +119,7 @@ export default function AboutSearch({ serverState, url }) {
                 classNames={{
                   root: 'border-none mt-10',
                   list: 'ml-10',
-                  item: 'px-0 pb-4 pt-0',
+                  item: 'px-0 pb-10 pt-0 relative',
                 }}
                 hitComponent={AboutHit}
               />
