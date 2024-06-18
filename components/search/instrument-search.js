@@ -90,7 +90,7 @@ export default function InstrumentSearch({ serverState, url }) {
                     submitIconComponent={() => (
                       <div
                         type='submit'
-                        className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl'
+                        className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl hover:bg-green-200 hover:border-green-200'
                       >
                         Zoeken
                       </div>

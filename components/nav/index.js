@@ -29,8 +29,7 @@ import Link from 'next/link';
 // import { useRouter } from 'next/router';
 import { useState, useEffect, useCallback, useRef } from 'react';
 import Lottie from 'react-lottie';
-import { useSearchParams, usePathname} from 'next/navigation';
-
+import { useSearchParams, usePathname } from 'next/navigation';
 
 const defaultOptions = {
   loop: true,
@@ -42,13 +41,11 @@ const defaultOptions = {
 };
 
 export default function Nav(props) {
-
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { CustomEvent } = usePiwikPro();
   const [scrollEffect, setScrollEffect] = useState(false);
-  
-  
+
   useEffect(() => {
     const changeEffect = () => {
       if (window.scrollY >= 32) {
@@ -59,8 +56,6 @@ export default function Nav(props) {
     };
     window.addEventListener('scroll', changeEffect);
   }, []);
-
-  
 
   const [searchIndex, setSearchIndex] = useState('instruments');
   const [searchQuery, setSearchQuery] = useState('');
@@ -79,13 +74,13 @@ export default function Nav(props) {
     setSearchQuery(value);
   };
 
-  const linkRef = useRef()
+  const linkRef = useRef();
 
   const enterClick = (e) => {
-    e.preventDefault()
-    console.log('enter key')
-    linkRef.current.click()
-  }
+    e.preventDefault();
+    console.log('enter key');
+    linkRef.current.click();
+  };
 
   // search Menu
   const [searchMenuIsOpen, setSearchMenuIsOpen] = useState(false);
@@ -854,7 +849,9 @@ export default function Nav(props) {
 
                 {/* SEARCH MENU */}
 
-                <div className={`${pathname?.includes('/zoeken')  ? 'hidden' : 'block'} ml-6 lg:ml-8`}>
+                <div
+                  className={`${pathname?.includes('/zoeken') ? 'hidden' : 'block'} ml-6 lg:ml-8`}
+                >
                   <button
                     className='h-full relative p-sm group z-100 flex flex-row items-center'
                     ref={searchMenuRef.setReference}
@@ -984,11 +981,9 @@ export default function Nav(props) {
                                     pathname === '/' ? 'bg-green-600' : 'bg-green-50'
                                   }  w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex`}
                                   onKeyDown={(e) => {
-                                    
                                     if (e.key === 'Enter')
-                                       // e.preventDefault()
-                                        enterClick(e);
-                                    }}
+                                      enterClick(e);
+                                  }}
                                 >
                                   <input
                                     className={`${
@@ -1000,27 +995,26 @@ export default function Nav(props) {
                                         : 'Zoek naar over CircuLaw...'
                                     }
                                     onChange={onChange()}
-                                    
                                   />
                                   <button type='submit'>
-                                  <Link
-                                    // onClick={handleSubmit()}
-                                    ref={linkRef}
-                                    href={`${
-                                      searchIndex === 'instruments'
-                                        ? `/zoeken/instrumenten?${searchIndex}${createQueryString(
-                                            '[query]',
-                                            searchQuery,
-                                          )}`
-                                        : `/zoeken/over-circulaw?${searchIndex}${createQueryString(
-                                            '[query]',
-                                            searchQuery,
-                                          )}`
-                                    }`}
-                                    className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl flex items-center justify-center'
-                                  >
-                                    Zoeken
-                                  </Link>
+                                    <Link
+                                      // onClick={handleSubmit()}
+                                      ref={linkRef}
+                                      href={`${
+                                        searchIndex === 'instruments'
+                                          ? `/zoeken/instrumenten?${searchIndex}${createQueryString(
+                                              '[query]',
+                                              searchQuery,
+                                            )}`
+                                          : `/zoeken/over-circulaw?${searchIndex}${createQueryString(
+                                              '[query]',
+                                              searchQuery,
+                                            )}`
+                                      }`}
+                                      className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl flex items-center justify-center hover:bg-green-200 hover:border-green-200'
+                                    >
+                                      Zoeken
+                                    </Link>
                                   </button>
                                   <button
                                     type='reset'
