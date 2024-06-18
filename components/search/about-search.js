@@ -118,7 +118,7 @@ export default function AboutSearch({ serverState, url }) {
               <Hits
                 classNames={{
                   root: 'border-none mt-10',
-                  list: 'ml-10',
+                  list: 'sm:ml-10',
                   item: 'px-0 pb-10 pt-0 relative',
                 }}
                 hitComponent={AboutHit}
