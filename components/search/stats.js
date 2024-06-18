@@ -32,7 +32,7 @@ export default function CustomStats() {
       {/* Query and no filter */}
       {query !== '' && !categorie && !thema && !overheidslaag && !rLadder && (
         <div className='heading-2xl sm:heading-3xl'>
-          {nbHits} resultaten gevonden voor: <span className='font-semibold'>{query}</span>.
+          {nbHits} resultaten gevonden voor: <span className='font-semibold'>&apos;{query}&apos;</span>.
         </div>
       )}
 
