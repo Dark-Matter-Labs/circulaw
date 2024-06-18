@@ -13,7 +13,6 @@ import { createInstantSearchRouterNext } from 'react-instantsearch-router-nextjs
 import { InstrumentHit } from '@/components/search/instrument-hit';
 import CustomStats from './stats';
 import Pagination from '@/components/search/pagination';
-// import AboutHit from '@/components/search/about-hit';
 import CustomClearRefinements from '@/components/search/clear-refinements';
 import { XIcon, AdjustmentsIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
