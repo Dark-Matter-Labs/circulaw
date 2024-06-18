@@ -981,8 +981,7 @@ export default function Nav(props) {
                                     pathname === '/' ? 'bg-green-600' : 'bg-green-50'
                                   }  w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex`}
                                   onKeyDown={(e) => {
-                                    if (e.key === 'Enter')
-                                      enterClick(e);
+                                    if (e.key === 'Enter') enterClick(e);
                                   }}
                                 >
                                   <input

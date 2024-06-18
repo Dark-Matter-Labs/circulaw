@@ -32,7 +32,8 @@ export default function CustomStats() {
       {/* Query and no filter */}
       {query !== '' && !categorie && !thema && !overheidslaag && !rLadder && (
         <div className='heading-2xl sm:heading-3xl'>
-          {nbHits} resultaten gevonden voor: <span className='font-semibold'>&apos;{query}&apos;</span>.
+          {nbHits} resultaten gevonden voor:{' '}
+          <span className='font-semibold'>&apos;{query}&apos;</span>.
         </div>
       )}
 
@@ -77,7 +78,10 @@ export default function CustomStats() {
         rLadder !== undefined) &&
       query !== '' ? (
         <div className='heading-2xl sm:heading-3xl'>
-          {nbHits} resultaten gevonden voor: <span className='font-semibold'>&apos;{query}&apos; <span className='font-normal'>en</span></span>{' '}
+          {nbHits} resultaten gevonden voor:{' '}
+          <span className='font-semibold'>
+            &apos;{query}&apos; <span className='font-normal'>en</span>
+          </span>{' '}
           {categorie &&
             categorie.map((item) => (
               <span className='font-semibold capitalize' key={item}>
