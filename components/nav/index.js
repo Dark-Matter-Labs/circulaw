@@ -23,12 +23,13 @@ import {
   FloatingOverlay,
 } from '@floating-ui/react';
 import { Disclosure, Transition } from '@headlessui/react';
-import { ChevronDownIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import { ChevronDownIcon, MenuIcon, XIcon, SearchIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+// import { useRouter } from 'next/router';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Lottie from 'react-lottie';
+import { useSearchParams, usePathname } from 'next/navigation';
 
 const defaultOptions = {
   loop: true,
@@ -40,9 +41,11 @@ const defaultOptions = {
 };
 
 export default function Nav(props) {
-  const router = useRouter();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
   const { CustomEvent } = usePiwikPro();
   const [scrollEffect, setScrollEffect] = useState(false);
+
   useEffect(() => {
     const changeEffect = () => {
       if (window.scrollY >= 32) {
@@ -53,6 +56,68 @@ export default function Nav(props) {
     };
     window.addEventListener('scroll', changeEffect);
   }, []);
+
+  const [searchIndex, setSearchIndex] = useState('instruments');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const createQueryString = useCallback(
+    (name, value) => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set(name, value);
+      return params.toString();
+    },
+    [searchParams],
+  );
+
+  const onChange = () => (e) => {
+    const value = e.target.value;
+    setSearchQuery(value);
+  };
+
+  const linkRef = useRef();
+
+  const enterClick = (e) => {
+    e.preventDefault();
+    console.log('enter key');
+    linkRef.current.click();
+  };
+
+  // search Menu
+  const [searchMenuIsOpen, setSearchMenuIsOpen] = useState(false);
+  const {
+    refs: searchMenuRef,
+    floatingStyles: searchMenuStyles,
+    context: searchMenuContext,
+  } = useFloating({
+    placement: 'bottom',
+    open: searchMenuIsOpen,
+    onOpenChange: setSearchMenuIsOpen,
+    middleware: [offset(28), flip(), shift()],
+  });
+
+  const { isMounted: searchMenuIsMounted, styles: searchMenuTransitionStyles } =
+    useTransitionStyles(searchMenuContext, {
+      duration: 300,
+      initial: {
+        opacity: 0,
+        transform: 'translateY(-100%)',
+      },
+      open: {
+        opacity: 100,
+        transform: 'translateY(0)',
+      },
+      close: {
+        opacity: 0,
+        transform: 'translateY(-100%)',
+      },
+    });
+
+  const searchMenuClick = useClick(searchMenuContext);
+  const searchMenuDismiss = useDismiss(searchMenuContext);
+  const searchMenuRole = useRole(searchMenuContext);
+
+  const { getReferenceProps: searchMenuReferencProps, getFloatingProps: searchMenuFloatingProps } =
+    useInteractions([searchMenuClick, searchMenuDismiss, searchMenuRole]);
 
   // main menu
   const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
@@ -204,7 +269,7 @@ export default function Nav(props) {
       },
     });
 
-  if (router.pathname === '/en') {
+  if (pathname === '/en') {
     return (
       <>
         <div className='w-full bg-green-800 sticky top-0 z-40 shadow-lg'>
@@ -238,10 +303,11 @@ export default function Nav(props) {
           id='parent'
           as='nav'
           className={`${
-            router.pathname === '/'
+            pathname === '/'
               ? [
                   `${
                     mainMenuIsMounted ||
+                    searchMenuIsMounted ||
                     (overMenuIsMounted && scrollEffect === false) ||
                     (euMenuIsMounted && scrollEffect === false)
                       ? ['bg-green-600 bg-opacity-100 shadow-lg transition-all duration-75']
@@ -260,7 +326,7 @@ export default function Nav(props) {
           <>
             {/* LOGO */}
             <div className=''>
-              {router.pathname === '/' && (
+              {pathname === '/' && (
                 <>
                   {/* LOGO DESKTOP HP */}
                   <div className='hidden lgNav:block'>
@@ -276,7 +342,7 @@ export default function Nav(props) {
                   </div>
                 </>
               )}
-              {router.pathname !== '/' && (
+              {pathname !== '/' && (
                 <>
                   <div className='hidden lgNav:block py-3'>
                     <Link href='/'>
@@ -305,7 +371,7 @@ export default function Nav(props) {
               )}
             </div>
             <div className='flex flex-col justify-between'>
-              {router.pathname === '/' ? (
+              {pathname === '/' ? (
                 <div className='hidden lgNav:flex flex-row justify-end mb-4'>
                   <LangSwitch background='dark' />
                 </div>
@@ -319,7 +385,7 @@ export default function Nav(props) {
               <div className='inset-y-0 float-right flex items-center pt-2 lgNav:hidden'>
                 <button
                   className={`${
-                    router.pathname !== '/' ? 'text-green-600' : 'text-gray-100'
+                    pathname !== '/' ? 'text-green-600' : 'text-gray-100'
                   } 'p-2 rounded-md`}
                   ref={mobileRef.setReference}
                   {...mobileRefProps()}
@@ -498,7 +564,11 @@ export default function Nav(props) {
                               url='/contact'
                               closeMenu={setMobileMenuIsOpen}
                             />
-
+                            <MobileSimpleButton
+                              name='Zoeken'
+                              url='/zoeken/instrumenten'
+                              closeMenu={setMobileMenuIsOpen}
+                            />
                             <div className='flex flex-row items-end w-full justify-end pt-4 '>
                               <LangSwitch />
                             </div>
@@ -521,10 +591,10 @@ export default function Nav(props) {
                     <span
                       className={`${
                         mainMenuIsOpen === true
-                          ? [`${router.pathname === '/' ? 'text-green-200' : 'text-green-500'}`]
+                          ? [`${pathname === '/' ? 'text-green-200' : 'text-green-500'}`]
                           : [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-white group-hover:decoration-green-200'
                                   : 'text-green-800 group-hover:decoration-green-500'
                               }`,
@@ -538,14 +608,14 @@ export default function Nav(props) {
                         mainMenuIsOpen
                           ? [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-green-200 rotate-180'
                                   : 'rotate-180 text-green-500'
                               }`,
                             ]
                           : [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-white group-hover:text-green-200'
                                   : 'group-hover:text-green-500'
                               }`,
@@ -568,7 +638,7 @@ export default function Nav(props) {
                         >
                           <div
                             className={`${
-                              router.pathname === '/' ? 'bg-green-500' : 'bg-gray-300'
+                              pathname === '/' ? 'bg-green-500' : 'bg-gray-300'
                             } h-full flex flex-cols-5 gap-[1px] relative`}
                           >
                             {props?.navItems?.map((navItem, id) => (
@@ -595,10 +665,10 @@ export default function Nav(props) {
                     <span
                       className={`${
                         euMenuIsOpen === true
-                          ? [`${router.pathname === '/' ? 'text-green-200' : 'text-green-500'}`]
+                          ? [`${pathname === '/' ? 'text-green-200' : 'text-green-500'}`]
                           : [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-white group-hover:decoration-green-200'
                                   : 'text-green-800 group-hover:decoration-green-500'
                               }`,
@@ -612,14 +682,14 @@ export default function Nav(props) {
                         euMenuIsOpen
                           ? [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-green-200 rotate-180'
                                   : 'rotate-180 text-green-500'
                               }`,
                             ]
                           : [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-white group-hover:text-green-200'
                                   : 'group-hover:text-green-500'
                               }`,
@@ -637,7 +707,7 @@ export default function Nav(props) {
                       >
                         <div
                           className={`${
-                            router.pathname === '/' ? 'bg-green-600' : 'bg-green-50'
+                            pathname === '/' ? 'bg-green-600' : 'bg-green-50'
                           } h-full pb-10 shadow-lg pl-6 pt-8 pr-8`}
                           style={{ ...euMenuTransitionStyles }}
                           onMouseLeave={() => setEuMenuIsOpen(false)}
@@ -645,7 +715,7 @@ export default function Nav(props) {
                           {/* Remove slice once news section is separate */}
                           <div
                             className={`${
-                              router.pathname === '/'
+                              pathname === '/'
                                 ? 'text-white'
                                 : 'text-green-600 hover:text-green-500'
                             } p-xs mb-2  hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
@@ -655,7 +725,7 @@ export default function Nav(props) {
                               id='navClick'
                               onClick={() => {
                                 setEuMenuIsOpen(false);
-                                CustomEvent.trackEvent('Nav click', router.asPath);
+                                CustomEvent.trackEvent('Nav click', pathname);
                               }}
                             >
                               Overzicht
@@ -665,7 +735,7 @@ export default function Nav(props) {
                             <div
                               key={euLaw?.slug}
                               className={`${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-white'
                                   : 'text-green-600 hover:text-green-500'
                               } p-xs mb-2  hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
@@ -675,7 +745,7 @@ export default function Nav(props) {
                                 id='navClick'
                                 onClick={() => {
                                   setEuMenuIsOpen(false);
-                                  CustomEvent.trackEvent('Nav click', router.asPath, euLaw.title);
+                                  CustomEvent.trackEvent('Nav click', pathname, euLaw.title);
                                 }}
                               >
                                 {euLaw.title}
@@ -698,10 +768,10 @@ export default function Nav(props) {
                     <span
                       className={`${
                         overMenuIsOpen === true
-                          ? [`${router.pathname === '/' ? 'text-green-200' : 'text-green-500'}`]
+                          ? [`${pathname === '/' ? 'text-green-200' : 'text-green-500'}`]
                           : [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-white group-hover:decoration-green-200'
                                   : 'text-green-800 group-hover:decoration-green-500'
                               }`,
@@ -715,14 +785,14 @@ export default function Nav(props) {
                         overMenuIsOpen
                           ? [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-green-200 rotate-180'
                                   : 'rotate-180 text-green-500'
                               }`,
                             ]
                           : [
                               `${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-white group-hover:text-green-200'
                                   : 'group-hover:text-green-500'
                               }`,
@@ -740,7 +810,7 @@ export default function Nav(props) {
                       >
                         <div
                           className={`${
-                            router.pathname === '/' ? 'bg-green-600' : 'bg-green-50'
+                            pathname === '/' ? 'bg-green-600' : 'bg-green-50'
                           } h-full pb-10 shadow-lg pl-6 pt-8 pr-8`}
                           style={{ ...overMenuTransitionStyles }}
                           onMouseLeave={() => setOverMenuIsOpen(false)}
@@ -750,7 +820,7 @@ export default function Nav(props) {
                             <div
                               key={aboutPage?.slug}
                               className={`${
-                                router.pathname === '/'
+                                pathname === '/'
                                   ? 'text-white'
                                   : 'text-green-600 hover:text-green-500'
                               } p-xs mb-2  hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
@@ -760,11 +830,7 @@ export default function Nav(props) {
                                 id='navClick'
                                 onClick={() => {
                                   setOverMenuIsOpen(false);
-                                  CustomEvent.trackEvent(
-                                    'Nav click',
-                                    router.asPath,
-                                    aboutPage.title,
-                                  );
+                                  CustomEvent.trackEvent('Nav click', pathname, aboutPage.title);
                                 }}
                               >
                                 {aboutPage.title}
@@ -776,16 +842,183 @@ export default function Nav(props) {
                     </FloatingFocusManager>
                   )}
                 </div>
-                {/* Refactor */}
+
                 <DesktopSimpleButton name='Nieuws' url='/nieuws' />
                 <DesktopSimpleButton name='Vraag & antwoord' url='/vraag-en-antwoord' />
                 <DesktopSimpleButton name='Contact' url='/contact' />
+
+                {/* SEARCH MENU */}
+
+                <div
+                  className={`${pathname?.includes('/zoeken') ? 'hidden' : 'block'} ml-6 lg:ml-8`}
+                >
+                  <button
+                    className='h-full relative p-sm group z-100 flex flex-row items-center'
+                    ref={searchMenuRef.setReference}
+                    {...searchMenuReferencProps()}
+                  >
+                    <span
+                      className={`${
+                        searchMenuIsOpen === true
+                          ? [
+                              `${
+                                pathname === '/'
+                                  ? 'bg-green-50 text-green-600'
+                                  : 'bg-green-600 text-green-50'
+                              }`,
+                            ]
+                          : [
+                              `${
+                                pathname === '/'
+                                  ? ' bg-green-50 text-green-600'
+                                  : 'bg-green-600 text-green-50'
+                              }`,
+                            ]
+                      } flex items-center justify-center rounded-clSm h-6 w-7`}
+                    >
+                      <SearchIcon className='h-4 w-4' />
+                    </span>
+                  </button>
+                  {searchMenuIsMounted && (
+                    <FloatingFocusManager context={mainMenuContext} modal={true} disabled>
+                      <div
+                        ref={searchMenuRef.setFloating}
+                        style={searchMenuStyles}
+                        {...searchMenuFloatingProps()}
+                        className='h-72 w-full -z-10 '
+                      >
+                        <div
+                          className='h-full shadow-lg'
+                          style={{ ...searchMenuTransitionStyles }}
+                          // onMouseLeave={() => setSearchMenuIsOpen(false)}
+                        >
+                          <div
+                            className={`${
+                              pathname === '/' ? 'bg-green-600' : 'bg-green-50'
+                            } h-full`}
+                          >
+                            {/* MAKE INTO A COMPONENT */}
+                            <div className='w-full h-full global-margin flex flex-col items-center justify-end pb-10'>
+                              <div className='mb-4'>
+                                <div className='flex flex-row justify-center w-[600px] gap-x-1.5'>
+                                  <button
+                                    onClick={() => setSearchIndex('instruments')}
+                                    className={`${
+                                      pathname === '/'
+                                        ? 'bg-green-50 text-green-800'
+                                        : 'bg-white text-green-800 shadow-card'
+                                    } flex-row px-5 py-1.5 w-full  rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
+                                  >
+                                    {searchIndex === 'instruments' ? (
+                                      <div className='bg-green-500 w-4 h-4 rounded-full flex items-center justify-center mr-4'>
+                                        <div className='bg-green-500 border-white border-2 h-3 w-3 rounded-full'></div>
+                                      </div>
+                                    ) : (
+                                      <div className='bg-black w-4 h-4 rounded-full flex items-center justify-center mr-4'>
+                                        <div className='bg-white h-3 w-3 rounded-full'></div>
+                                      </div>
+                                    )}
+
+                                    <div className='flex flex-col items-start justify-start'>
+                                      Instrumenten
+                                      <span className='p-xs'>
+                                        Zoeken binnen &apos;instrumenten&apos;
+                                      </span>
+                                    </div>
+                                  </button>
+                                  <button
+                                    onClick={() => setSearchIndex('aboutPage')}
+                                    className={`${
+                                      pathname === '/'
+                                        ? 'bg-white text-green-800'
+                                        : 'bg-white text-green-800 shadow-card'
+                                    } flex-row px-5 py-1.5 w-full rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
+                                  >
+                                    {searchIndex === 'aboutPage' ? (
+                                      <div className='bg-green-500 w-4 h-4 rounded-full flex items-center justify-center mr-4'>
+                                        <div className='bg-green-500 border-white border-2 h-3 w-3 rounded-full'></div>
+                                      </div>
+                                    ) : (
+                                      <div className='bg-black w-4 h-4 rounded-full flex items-center justify-center mr-4'>
+                                        <div className='bg-white h-3 w-3 rounded-full'></div>
+                                      </div>
+                                    )}
+                                    <div className='flex flex-col items-start justify-start'>
+                                      Over Circulaw
+                                      <span className='p-xs'>
+                                        Zoeken binnen &apos;Over Circulaw&apos;
+                                      </span>
+                                    </div>
+                                  </button>
+                                </div>
+                              </div>
+                              <div className='h-16 w-[600px]'>
+                                <form
+                                  className={`${
+                                    pathname === '/' ? 'bg-green-600' : 'bg-green-50'
+                                  }  w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex`}
+                                  onKeyDown={(e) => {
+                                    if (e.key === 'Enter') enterClick(e);
+                                  }}
+                                >
+                                  <input
+                                    className={`${
+                                      pathname === '/'
+                                        ? 'bg-green-50/50 placeholder:text-white caret-white focus:bg-[url("/search-icon.png")] text-white'
+                                        : 'bg-white placeholder:text-green-800 caret-green-800 focus:bg-[url("/search-icon-dark.png")] text-green-800'
+                                    } w-[600px] h-[66px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none  p-base  focus:ring-1 focus:ring-white  placeholder:p-base-semibold`}
+                                    placeholder={
+                                      searchIndex === 'instruments'
+                                        ? 'Zoek naar instrumenten...'
+                                        : 'Zoek naar over CircuLaw...'
+                                    }
+                                    onChange={onChange()}
+                                  />
+                                  <button type='submit'>
+                                    <Link
+                                      // onClick={handleSubmit()}
+                                      ref={linkRef}
+                                      href={`${
+                                        searchIndex === 'instruments'
+                                          ? `/zoeken/instrumenten?${searchIndex}${createQueryString(
+                                              '[query]',
+                                              searchQuery,
+                                            )}`
+                                          : `/zoeken/over-circulaw?${searchIndex}${createQueryString(
+                                              '[query]',
+                                              searchQuery,
+                                            )}`
+                                      }`}
+                                      className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl flex items-center justify-center hover:bg-green-200 hover:border-green-200'
+                                    >
+                                      Zoeken
+                                    </Link>
+                                  </button>
+                                  <button
+                                    type='reset'
+                                    title='Clear the search query'
+                                    className={`${
+                                      searchQuery === '' ? 'hidden' : ''
+                                    } absolute top-3.5 right-28 rounded-full p-2 hover:bg-white/50 group`}
+                                    onClick={() => setSearchQuery('')}
+                                  >
+                                    <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
+                                  </button>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </FloatingFocusManager>
+                  )}
+                </div>
               </div>
             </div>
           </>
         </nav>
       </div>
-      {router.pathname === '/' && (
+      {pathname === '/' && (
         <div className='-mt-[9rem] bg-header bg-cover bg-center w-full'>
           <HomepageHeader homePageHeader={props.homePageHeader} />
         </div>
