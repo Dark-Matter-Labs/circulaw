@@ -1120,7 +1120,7 @@ algoliasearch-helper@3.21.0:
   dependencies:
     "@algolia/events" "^4.0.1"
 
-algoliasearch@^4.23.3:
+algoliasearch@^4.23.3, algoliasearch@^4.5.1:
   version "4.23.3"
   resolved "https://registry.yarnpkg.com/algoliasearch/-/algoliasearch-4.23.3.tgz#e09011d0a3b0651444916a3e6bbcba064ec44b60"
   integrity sha512-Le/3YgNvjW9zxIQMRhUHuhiUjAlKY/zsdZpfq4dlLqg6mEm0nL6yk+7f2hDOtLpxsgE4jSzDmvHL7nXdBp5feg==
@@ -4308,6 +4308,14 @@ same-origin@^0.1.1:
   resolved "https://registry.yarnpkg.com/same-origin/-/same-origin-0.1.1.tgz#c2287d3192577df517acbbd6d1451a9c3c3914f5"
   integrity sha512-effkSW9cap879l6CVNdwL5iubVz8tkspqgfiqwgBgFQspV7152WHaLzr5590yR8oFgt7E1d4lO09uUhtAgUPoA==
 
+sanity-algolia@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/sanity-algolia/-/sanity-algolia-1.1.0.tgz#d4ded0a9c4c259dc3d9feb44f6388464f9bfb3b9"
+  integrity sha512-y/wr/tzJMz4rBk5PXu5okoerm2hmto57RosulntSGubCUqGGsOCzseed638VyZsRIA7zqTCbTVi6NL56k1dcoQ==
+  dependencies:
+    algoliasearch "^4.5.1"
+    stopword "^1.0.3"
+
 satori@0.10.9:
   version "0.10.9"
   resolved "https://registry.yarnpkg.com/satori/-/satori-0.10.9.tgz#efde2898ab4a5b09c072f0f4e112ac4a7d6a499c"
@@ -4486,6 +4494,11 @@ split2@4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/split2/-/split2-4.2.0.tgz#c9c5920904d148bab0b9f67145f245a86aadbfa4"
   integrity sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==
+
+stopword@^1.0.3:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/stopword/-/stopword-1.0.11.tgz#2f9f36558bf1ad8c9e1197e572442e9b8814f153"
+  integrity sha512-rMBuk91/PTdV7GpVIwlZRLGcmZ9OMbTM+KXJN19oKIkgns+EhTVEzXfb4q8/v4ExuoGxNSBSHmuzt+DUijuQqQ==
 
 streamsearch@^1.1.0:
   version "1.1.0"
