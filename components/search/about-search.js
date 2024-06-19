@@ -18,7 +18,7 @@ import Image from 'next/image';
 import MobileHeaderSearch from './mobile-header';
 
 
-const api_key = process.env.AGOLIA_ADMIN_KEY
+const api_key = process.env.AGOLIA_SEARCH_KEY
 const api_id = process.env.AGOLIA_APPLICATION_ID
 
 const algoliaClient = algoliasearch(api_id, api_key);

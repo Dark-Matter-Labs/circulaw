@@ -21,7 +21,7 @@ import MobileHeaderSearch from './mobile-header';
 import { useState, Fragment } from 'react';
 import { Transition, Dialog } from '@headlessui/react';
 
-const api_key = process.env.AGOLIA_ADMIN_KEY
+const api_key = process.env.AGOLIA_SEARCH_KEY
 const api_id = process.env.AGOLIA_APPLICATION_ID
 
 const algoliaClient = algoliasearch(api_id, api_key);
