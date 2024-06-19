@@ -4,8 +4,8 @@ import algoliasearch from 'algoliasearch';
 // need to hide this route. 
 
 export const agoliaInstance = algoliasearch(
-    process.env.AGOLIA_APPLICATION_ID,
-    process.env.AGOLIA_ADMIN_KEY,
+    process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID,
+    process.env.NEXT_PUBLIC_AGOLIA_ADMIN_KEY,
 )
     
 const QUERY = `

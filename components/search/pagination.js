@@ -63,7 +63,7 @@ export default function Pagination() {
                 } mx-1 h-8 w-8 flex items-center justify-center heading-xl-semibold`}
               >
                 <button
-                  isDisabled={false}
+                  disabled={false}
                   onClick={() => {
                     window.scrollTo(0, 0);
                     refine(page);
