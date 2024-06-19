@@ -21,15 +21,13 @@ import MobileHeaderSearch from './mobile-header';
 import { useState, Fragment } from 'react';
 import { Transition, Dialog } from '@headlessui/react';
 
-const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY
-const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID
+const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
+const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
 
 const algoliaClient = algoliasearch(api_id, api_key);
 
-
 export default function InstrumentSearch({ serverState, url }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
 
   return (
     <InstantSearchSSRProvider {...serverState}>

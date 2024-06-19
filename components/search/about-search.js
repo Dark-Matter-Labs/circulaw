@@ -17,9 +17,8 @@ import AboutHit from './about-hit';
 import Image from 'next/image';
 import MobileHeaderSearch from './mobile-header';
 
-
-const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY
-const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID
+const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
+const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
 
 const algoliaClient = algoliasearch(api_id, api_key);
 

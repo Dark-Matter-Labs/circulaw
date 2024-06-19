@@ -963,7 +963,9 @@ export default function Nav(props) {
                                 >
                                   <input
                                     className={`${
-                                      pathname === '/' ? 'bg-green-50/50 placeholder:text-white caret-white focus:bg-[url("/search-icon.png")] text-white' : 'bg-white placeholder:text-green-800 caret-green-800 focus:bg-[url("/search-icon-dark.png")] text-green-800'
+                                      pathname === '/'
+                                        ? 'bg-green-50/50 placeholder:text-white caret-white focus:bg-[url("/search-icon.png")] text-white'
+                                        : 'bg-white placeholder:text-green-800 caret-green-800 focus:bg-[url("/search-icon-dark.png")] text-green-800'
                                     } w-[600px] h-[66px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none  p-base  focus:ring-1 focus:ring-white  placeholder:p-base-semibold`}
                                     placeholder={
                                       searchIndex === 'instruments'
