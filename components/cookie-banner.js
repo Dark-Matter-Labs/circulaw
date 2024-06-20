@@ -12,7 +12,7 @@ const CookieConsent = () => {
     setConsent(true);
     setCookie('localConsent', 'true', { maxAge: 60 * 60 * 24 * 365 });
     // extra refresh to enable Hotjar
-    window.location.reload()
+    window.location.reload();
     // eslint-disable-next-line
     ppms.cm.api(
       'setComplianceSettings',
