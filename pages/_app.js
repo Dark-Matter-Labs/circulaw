@@ -21,10 +21,7 @@ export default function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     if (consent === true) {
-      hotjar.initialize(
-        Number(process.env.NEXT_PUBLIC_HJID),
-        Number(process.env.NEXT_PUBLIC_HJSV),
-      );
+      hotjar.initialize(Number(process.env.NEXT_PUBLIC_HJID), Number(process.env.NEXT_PUBLIC_HJSV));
     }
   }, [consent]);
 
