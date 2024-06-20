@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 export default function LangSwitch({ background }) {
-  const router = useRouter();
+  const pathname = usePathname();
   return (
     <div
       className={`${
@@ -12,7 +12,7 @@ export default function LangSwitch({ background }) {
       <span
         className={`${background === 'dark' ? 'link-interaction-dark-bg' : 'link-interaction'}`}
       >
-        <Link className={router.pathname === '/en' ? '' : 'font-semibold'} href='/'>
+        <Link className={pathname === '/en' ? '' : 'font-semibold'} href='/'>
           NL
         </Link>
       </span>
@@ -20,7 +20,7 @@ export default function LangSwitch({ background }) {
       <span
         className={`${background === 'dark' ? 'link-interaction-dark-bg' : 'link-interaction'}`}
       >
-        <Link className={router.pathname === '/en' ? 'font-semibold' : ''} href='/en'>
+        <Link className={pathname === '/en' ? 'font-semibold' : ''} href='/en'>
           EN
         </Link>
       </span>
