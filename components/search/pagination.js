@@ -44,47 +44,47 @@ export default function Pagination() {
             {firstPageIndex + 1}
           </button>
         </li>
-            
-          
+
         {pages[0] !== 0 && pages[0] !== 1 && (
           <li className='mx-1 h-8 w-8 flex items-end justify-center'>...</li>
         )}
- {pages.length !== 2 && 
- <>
-        {pages.map((page, index) => {
-          const label = page + 1;
-          return (
-            <>
-            
-              <li
-                key={page}
-                className={`${
-                  pages[2] === label && currentRefinement !== 0 && currentRefinement !== nbPages - 1
-                    ? 'font-semibold bg-green-500 rounded-cl text-green-50'
-                    : ''
-                } ${pages[0] === 0 && index === 0 ? 'hidden' : ''} ${
-                  pages[2] + 1 === nbPages && index === 2 ? 'hidden' : ''
-                } mx-1 h-8 w-8 flex items-center justify-center heading-xl-semibold`}
-              >
-           
-                <button
-                  disabled={false}
-                  onClick={() => {
-                    window.scrollTo(0, 0);
-                    refine(page);
-                  }}
-                >
-                  {label}
-                </button>
-              </li>
-            </>
-          );
-        })}
-        </>}
+        {pages.length !== 2 && (
+          <>
+            {pages.map((page, index) => {
+              const label = page + 1;
+              return (
+                <>
+                  <li
+                    key={page}
+                    className={`${
+                      pages[2] === label &&
+                      currentRefinement !== 0 &&
+                      currentRefinement !== nbPages - 1
+                        ? 'font-semibold bg-green-500 rounded-cl text-green-50'
+                        : ''
+                    } ${pages[0] === 0 && index === 0 ? 'hidden' : ''} ${
+                      pages[2] + 1 === nbPages && index === 2 ? 'hidden' : ''
+                    } mx-1 h-8 w-8 flex items-center justify-center heading-xl-semibold`}
+                  >
+                    <button
+                      disabled={false}
+                      onClick={() => {
+                        window.scrollTo(0, 0);
+                        refine(page);
+                      }}
+                    >
+                      {label}
+                    </button>
+                  </li>
+                </>
+              );
+            })}
+          </>
+        )}
         {pages[2] !== nbPages - 1 && pages[2] !== nbPages - 2 && pages.length > 2 && (
           <li className='mx-1 h-8 w-8 flex items-end justify-center'>...</li>
         )}
-         
+
         <li className='mx-1 h-8 w-8 flex items-center justify-center'>
           <button
             disabled={isLastPage}
