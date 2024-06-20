@@ -16,7 +16,6 @@ import Pagination from '@/components/search/pagination';
 import CustomClearRefinements from '@/components/search/clear-refinements';
 import { XIcon, AdjustmentsIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
-import Image from 'next/image';
 import MobileHeaderSearch from './mobile-header';
 import { useState, Fragment } from 'react';
 import { Transition, Dialog } from '@headlessui/react';
@@ -381,8 +380,21 @@ function NoResultsBoundary({ children, fallback }) {
 
 function NoResults() {
   return (
-    <div className='h-96 w-full flex items-center justify-center my-10'>
-      <Image src='/no-results.png' height={320} width={540} alt='no results for this search' />
+    <div className='flex items-center justify-center my-10 w-full '>
+      <div className='flex flex-col items-center justify-center max-w-md'>
+        <h3 className='p-base-semibold mb-4'>Tips voor betere resultaten:</h3>
+        <ul className='p-base list-disc'>
+          <li className='mb-1'>gebruik minder zoektermen</li>
+          <li className='mb-1'>begin met een steekwoord</li>
+          <li className='mb-1'>gebruik synoniemen.</li>
+        </ul>
+        <p className='p-base'>
+          Help ons de zoekresultaten te verbeteren klik hieronder op{' '}
+          <span className='p-base-semibold'>&apos;Ja&apos;</span> of{' '}
+          <span className='p-base-semibold'>&apos;Nee&apos;</span> en geef je mening en
+          verbeterpunten door.
+        </p>
+      </div>
     </div>
   );
 }
