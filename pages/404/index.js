@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <Layout title='CircuLaw - 404' pageUrl='404'>
+    <Layout title='404' pageUrl='404'>
       <div className='global-margin my-20 text-center flex flex-col justify-center'>
         <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-gray-800 pb-2'>404</h1>
         <p className=' p-base text-gray-800'>

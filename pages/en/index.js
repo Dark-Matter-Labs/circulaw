@@ -13,7 +13,7 @@ export default function English({ data }) {
 
   return (
     <>
-      <Layout title='CircuLaw - Regulations for a circular economy' pageUrl={router.asPath}>
+      <Layout title='Regulations for a circular economy' pageUrl={router.asPath}>
         <div className='bg-en-background bg-center bg-cover relative z-0'>
           <div className='hidden sm:block h-auto bg-en-header bg-left bg-cover'>
             <div className='global-margin flex h-full'>
