@@ -38,7 +38,7 @@ export default function Layout({
         homePageHeader={homePageHeader}
       />
       <Head>
-        <title>{`CircuLaw - ${title}`}</title>
+        <title>{`${title} - CircuLaw`}</title>
         <meta name='description' content={description} />
         <meta name='keywords' content={keywords} />
         <meta name='robots' content='index, follow' />
@@ -46,8 +46,9 @@ export default function Layout({
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta charSet='utf-8' />
         <link rel='icon' href='/favicon.ico' />
+        <link rel='canonical' href={siteUrl + pageUrl} />
 
-        <meta property='og:title' content={`CircuLaw - ${title}`} />
+        <meta property='og:title' content={`${title} - CircuLaw`} />
         <meta property='og:locale' content='nl_NL' />
         <meta property='og:site_name' content={globalMeta.siteName} />
         <meta property='og:type' content='website' />

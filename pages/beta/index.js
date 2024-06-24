@@ -5,7 +5,7 @@ import Layout from '@/components/layouts/layout';
 export default function Beta() {
   const router = useRouter();
   return (
-    <Layout title='CircuLaw - Beta' pageUrl={router.asPath}>
+    <Layout title='Beta' pageUrl={router.asPath}>
       <div className='global-margin my-20'>
         <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-gray-800 pb-4'>
           Betaversie CircuLaw

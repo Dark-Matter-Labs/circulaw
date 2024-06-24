@@ -7,7 +7,7 @@ import { client } from '@/lib/sanity';
 export default function FAQ({ FAQ }) {
   const router = useRouter();
   return (
-    <Layout title='CircuLaw - Vraag en antwoord' pageUrl={router.asPath}>
+    <Layout title='Vraag en antwoord' pageUrl={router.asPath}>
       <FAQPageComponent data={FAQ} />
     </Layout>
   );
