@@ -208,7 +208,7 @@ export default {
       title: 'Reports',
       name: 'reports',
       type: 'array',
-      of: [{type: 'themePageReport'}],
+      of: [{ type: 'themePageReport' }],
       validation: (Rule) => Rule.max(3),
       group: 'editableContent',
     },

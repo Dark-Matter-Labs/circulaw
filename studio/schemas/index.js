@@ -28,7 +28,7 @@ import productChainAmbition from './objects/product-chain-ambition';
 import productChainImpact from './objects/product-chain-impact';
 import smallPara from './objects/small-paragraph';
 import { youtube } from './objects/youtube-embed';
-import themePageReport from './objects/thema-report'
+import themePageReport from './objects/thema-report';
 
 export const schemaTypes = [
   // DOCUMENT TYPES
