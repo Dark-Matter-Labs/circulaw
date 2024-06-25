@@ -13,12 +13,12 @@ const nextConfig = {
       },
       {
         source: '/over/Wat-is-CircuLaw',
-        destination: '/over/wat-is-circuLaw',
+        destination: '/over/wat-is-circulaw',
         permanent: true,
       },
       {
         source: '/over/Wat-vind-je-nu-op-CircuLaw',
-        destination: '/over/wat-vind-je-nu-op-circuLaw',
+        destination: '/over/wat-vind-je-nu-op-circulaw',
         permanent: true,
       },
       {
