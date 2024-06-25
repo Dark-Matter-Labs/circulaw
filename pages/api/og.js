@@ -5,7 +5,7 @@ export const config = {
   runtime: 'edge',
 };
 
-const image = fetch(new URL('@/public/Circulaw_logotype_home.png', import.meta.url)).then((res) =>
+const image = fetch(new URL('@/public/circulaw_logotype_home2.png', import.meta.url)).then((res) =>
   res.arrayBuffer(),
 );
 
