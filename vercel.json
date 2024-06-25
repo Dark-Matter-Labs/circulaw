@@ -1,7 +1,7 @@
 {
     "redirects": [
         { 
-            "source": "/over/Wat-is-CircuLaw'", 
+            "source": "/over/Wat-is-CircuLaw", 
             "destination": "/over/wat-is-circulaw", 
             "permanent": true },
         {
