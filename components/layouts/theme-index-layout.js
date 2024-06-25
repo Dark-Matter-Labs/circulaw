@@ -400,6 +400,34 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
           <div className='bg-gray-200'>
             <ThemeBottomSection featuredLaws={featuredLaws} thema={thema} />
           </div>
+          {thema.reports && (
+            <div className='global-margin'>
+              <ul className='grid grid-cols-1  sm:grid-cols-3 gap-x-6 my-10'>
+                {thema?.reports.map((report) => {
+                  // eslint-disable-next-line
+                  const [_file, id, extension] = report?.asset?._ref.split('-');
+                  return (
+                    <li className='flex flex-col gap-y-4 my-6 sm:my-0' key={report.reportTitle}>
+                      <h4 className='heading-2xl-semibold'>{report.reportTitle}</h4>
+                      <p className='p-base'>{report.reportDescription}</p>
+                      <Link
+                        href={`https://cdn.sanity.io/files/${
+                          process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '2vfoxb3h'
+                        }/${
+                          process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
+                        }/${id}.${extension}`}
+                        className='p-base-bold text-green-500 hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'
+                        target='_blank'
+
+                      >
+                        Lees moor {'>'}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
 
           {(thema?.themaName === 'Houtbouw' || thema?.themaName === 'Voedselverspilling') && (
             <div className='global-margin my-32 text-center' id='comments'>

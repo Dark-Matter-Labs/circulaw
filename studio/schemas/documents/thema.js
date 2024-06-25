@@ -204,5 +204,13 @@ export default {
         'Beeld moet altijd icoon van thema bevatten. Bij nieuw thema banner ‘NIEUW’ toevoegen.',
       group: 'editableContent',
     },
+    {
+      title: 'Reports',
+      name: 'reports',
+      type: 'array',
+      of: [{ type: 'themePageReport' }],
+      validation: (Rule) => Rule.max(3),
+      group: 'editableContent',
+    },
   ],
 };
