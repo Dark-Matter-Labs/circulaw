@@ -78,7 +78,6 @@ export default function Nav(props) {
 
   const enterClick = (e) => {
     e.preventDefault();
-    console.log('enter key');
     linkRef.current.click();
   };
 

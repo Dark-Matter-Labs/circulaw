@@ -86,8 +86,6 @@ export async function getStaticProps({ params }) {
 
 export async function generateMetadata({ params }) {
   // read route params
-  console.log(params);
-
   return {
     pageUrl: params.url,
   };
