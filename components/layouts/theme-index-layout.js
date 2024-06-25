@@ -402,13 +402,12 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
           </div>
           {thema.reports && (
             <div className='global-margin'>
-              <ul className='grid grid-cols-3 gap-x-6 my-10'>
+              <ul className='grid grid-cols-1  sm:grid-cols-3 gap-x-6 my-10'>
                 {thema?.reports.map((report) => {
                   // eslint-disable-next-line
                   const [_file, id, extension] = report?.asset?._ref.split('-');
-
                   return (
-                    <li className='flex flex-col gap-y-4' key={report.reportTitle}>
+                    <li className='flex flex-col gap-y-4 my-6 sm:my-0' key={report.reportTitle}>
                       <h4 className='heading-2xl-semibold'>{report.reportTitle}</h4>
                       <p className='p-base'>{report.reportDescription}</p>
                       <Link
