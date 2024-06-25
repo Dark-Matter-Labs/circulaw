@@ -11,31 +11,6 @@ const nextConfig = {
         destination: '/bouw/houtbouw',
         permanent: true,
       },
-      {
-        source: '/over/Wat-is-CircuLaw',
-        destination: '/over/wat-is-circulaw',
-        permanent: true,
-      },
-      {
-        source: '/over/Wat-vind-je-nu-op-CircuLaw',
-        destination: '/over/wat-vind-je-nu-op-circulaw',
-        permanent: true,
-      },
-      {
-        source: '/over/Wetsanalyse-vanuit-circulaire-blik',
-        destination: '/over/wetsanalyse-vanuit-circulaire-blik',
-        permanent: true,
-      },
-      {
-        source: '/over/Zorgplicht-van-de-overheid',
-        destination: '/over/zorgplicht-van-de-overheid',
-        permanent: true,
-      },
-      {
-        source: '/over/Wie-maken-CircuLaw',
-        destination: '/over/wie-maken-circulaw',
-        permanent: true,
-      },
     ]
   },
     images: {
