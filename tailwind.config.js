@@ -84,7 +84,7 @@ module.exports = {
         'rladder': '29%',
       },
       backgroundImage: {
-        'en-background': 'url("/background-en-page.png")',
+        'en-background': 'url("/background-en-page2.png")',
         'en-header': 'url("/en-deco-header.png")',
         'about-header': 'url("/about-header.png")',
         'header': 'url("/home-page/cl_header_new.png")'

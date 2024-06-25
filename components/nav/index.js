@@ -7,8 +7,8 @@ import HomepageHeader from '@/components/homepage-header';
 import BetaBanner from '@/components/nav/beta-banner';
 import LangSwitch from '@/components/nav/lang-switch';
 import animationData from '@/public/CL_Home_Logo_Loop';
-import CirculawLogo from '@/public/circulaw_logotype.png';
-import logo from '@/public/circulaw_logotype_home.png';
+import CirculawLogo from '@/public/circulaw_logotype2.png';
+import logo from '@/public/circulaw_logotype_home2.png';
 import {
   useFloating,
   offset,
