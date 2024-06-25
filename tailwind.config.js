@@ -84,13 +84,10 @@ module.exports = {
         'rladder': '29%',
       },
       backgroundImage: {
-        'houtbouw-hero' : 'url("/hero-images/houtbouwHero.png")',
-        'windmill-hero' : 'url("/hero-images/windmillHero.png")',
-        'matrassen-hero' : 'url("/hero-images/matrassenHero.png")',
-        'en-background': 'url("/Background-en-page.png")',
+        'en-background': 'url("/background-en-page.png")',
         'en-header': 'url("/en-deco-header.png")',
         'about-header': 'url("/about-header.png")',
-        'header': 'url("/home-page/CL_header_new2.png")'
+        'header': 'url("/home-page/cl_header_new2.png")'
       },
       borderRadius: {
           'cl': '10px',

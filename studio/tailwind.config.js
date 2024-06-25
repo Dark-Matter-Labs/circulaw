@@ -66,9 +66,6 @@ module.exports = {
         128: '32rem',
       },
       backgroundImage: {
-        'houtbouw-hero': 'url("/hero-images/houtbouwHero.png")',
-        'windmill-hero': 'url("/hero-images/windmillHero.png")',
-        'matrassen-hero': 'url("/hero-images/matrassenHero.png")',
         'list-card': 'url("/thema-card-background/list-bg.png")',
         'samenhang-card': 'url("/thema-card-background/samenhang-bg.png")',
         'waarvoor-card': 'url("/thema-card-background/waaroov-bg.png")',
