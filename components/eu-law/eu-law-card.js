@@ -7,23 +7,19 @@ export default function EULawCard({ law }) {
     <>
       <Link href={`/eu-wetgeving/${law?.slug?.current}`} className='hidden md:block h-full'>
         <div className='flex flex-col group h-full'>
-          <div className='bg-gray-100 group-hover:bg-green-50 rounded-cl shadow-md px-4 py-6 duration-300 transition-all border h-full'>
-            <div className='flex flex-col h-full z-10'>
-              <h2 className='heading-2xl-semibold mb-4'>{law?.title}</h2>
-              <p className='p-base pb-6 border-b flex grow justify-center items-center'>
-                {law?.introText}
-              </p>
+          <div className='bg-gray-100 group-hover:bg-green-50 rounded-cl shadow-md duration-300 transition-all border h-full'>
+            <div className='flex flex-col h-full z-10 justify-between'>
+              <h2 className='heading-2xl-semibold min-h-[68px] p-4'>{law?.title}</h2>
               {/* STATUS bar */}
               <div>
-                <div className='p-base-semibold text-gray-800 mt-6'>Status</div>
-                <div className='w-full flex justify-center items-center grow'>
+                <div className='w-full flex justify-center items-center grow mt-6 max-h-[100px] px-4'>
                   {law.statusStep === 'Two Step' && <StatusTwoStep status={law.statusTwoStep} />}
                   {law.statusStep === 'Three Step' && (
                     <StatusThreeStep status={law.statusThreeStep} />
                   )}
                 </div>
               </div>
-              <div className='flex items-center justify-center pt-6 border-t p-base-semibold'>
+              <div className='flex items-center justify-center h-full p-base-semibold bg-green-50 rounded-b-cl max-h-[42px] text-green-500'>
                 Bekijk deze wet {'>'}
               </div>
             </div>

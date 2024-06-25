@@ -62,9 +62,9 @@ export default function EULaw({ laws }) {
           </p>
         </div>
       </div>
-      <div className='grid grid-cols-1 lgNav:grid-cols-2 gap-y-4 gap-x-8 global-margin my-12 relative min-h-screen'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lgNav:grid-cols-3 gap-y-4 gap-x-8 global-margin my-12 relative'>
         {laws?.map((law, id) => (
-          <div key={id} className='md:min-h-[453px] md:max-h-[550px]'>
+          <div key={id} className=''>
             <EULawCard law={law} />
           </div>
         ))}
