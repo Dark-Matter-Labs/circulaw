@@ -9,7 +9,7 @@ export default function EULawCard({ law }) {
         <div className='flex flex-col group h-full'>
           <div className='bg-gray-100 group-hover:bg-green-50 rounded-cl shadow-md duration-300 transition-all border h-full'>
             <div className='flex flex-col h-full z-10 justify-between'>
-              <h2 className='heading-2xl-semibold min-h-[68px] p-4'>{law?.title}</h2>
+              <h2 className='heading-2xl-semibold min-h-[85px] p-4'>{law?.title}</h2>
               {/* STATUS bar */}
               <div>
                 <div className='w-full flex justify-center items-center grow mt-6 max-h-[100px] px-4'>
@@ -19,7 +19,7 @@ export default function EULawCard({ law }) {
                   )}
                 </div>
               </div>
-              <div className='flex items-center justify-center h-full p-base-semibold bg-green-50 rounded-b-cl max-h-[42px] text-green-500'>
+              <div className='flex items-center justify-center h-full p-base-semibold bg-green-50 rounded-b-cl min-h-[42px] text-green-500'>
                 Bekijk deze wet {'>'}
               </div>
             </div>
