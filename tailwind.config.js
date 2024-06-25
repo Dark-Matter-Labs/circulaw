@@ -87,7 +87,7 @@ module.exports = {
         'en-background': 'url("/background-en-page.png")',
         'en-header': 'url("/en-deco-header.png")',
         'about-header': 'url("/about-header.png")',
-        'header': 'url("/home-page/cl_header_new2.png")'
+        'header': 'url("/home-page/cl_header_new.png")'
       },
       borderRadius: {
           'cl': '10px',
