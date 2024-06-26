@@ -22,5 +22,11 @@ export default {
       type: 'string',
       validation: (Rule) => Rule.required().max(250),
     },
+    {
+      title: 'Link text',
+      name: 'linkText',
+      type: 'string',
+      validation: (Rule) => Rule.required().max(50),
+    },
   ],
 };
