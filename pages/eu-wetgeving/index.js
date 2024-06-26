@@ -23,8 +23,8 @@ export default function EULaw({ laws }) {
   const router = useRouter();
   return (
     <Layout title='EU wetgeving' pageUrl={router.asPath}>
-      <div className='h-[500px] gradient-700 pt-3 overflow-hidden'>
-        <div className='relative object-cover w-full h-[102%] gradient-700'>
+      <div className='bg-[url("/bg-eu.png")] pt-3 overflow-hidden bg-center	bg-no-repeat bg-cover'>
+        <div className='relative object-cover w-full h-[102%] '>
           {/* <Image src={bannerImage} alt={'hero image'} fill className='z-0 bg-cover' priority />  */}
 
           <div className='flex flex-col justify-between global-margin h-full relative z-10'>
