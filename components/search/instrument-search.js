@@ -19,6 +19,7 @@ import Link from 'next/link';
 import MobileHeaderSearch from './mobile-header';
 import { useState, Fragment } from 'react';
 import { Transition, Dialog } from '@headlessui/react';
+import RLadderTooltip from '../tooltips/r-ladder-tooltip';
 
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
@@ -27,6 +28,21 @@ const algoliaClient = algoliasearch(api_id, api_key);
 
 export default function InstrumentSearch({ serverState, url }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const transformItems = (items) => {
+    const rLadderLabes = {
+      R1: 'R1: Refuse/rethink',
+      R2: 'R2: Reduce',
+      R3: 'R3: Re-use',
+      R4: 'R4: Repair/remanufacture',
+      R5: 'R5: Recycling',
+      R6: 'R6: Recover',
+    };
+    return items.map((item) => ({
+      ...item,
+      label: rLadderLabes[item.label],
+    }));
+  };
 
   return (
     <InstantSearchSSRProvider {...serverState}>
@@ -269,14 +285,14 @@ export default function InstrumentSearch({ serverState, url }) {
         </div>
         <div className='global-margin flex'>
           <NoResultsBoundary fallback={<NoResults />}>
-            <div className='hidden sm:flex flex-col mt-10 min-w-[260px]'>
+            <div className='hidden sm:flex flex-col mt-10 min-w-[270px]'>
               <div className='flex flex-col'>
                 <CustomClearRefinements />
                 <RefinementList
                   attribute='categorie'
                   title='Categorie'
                   classNames={{
-                    root: 'mb-12 min-w-[260px] mr-12',
+                    root: 'mb-12 min-w-[270px] mr-12',
                     item: 'pt-2',
                     list: 'empty:hidden before:content-["Categorie"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
                     checkbox:
@@ -293,7 +309,7 @@ export default function InstrumentSearch({ serverState, url }) {
                 <RefinementList
                   attribute='thema'
                   classNames={{
-                    root: 'mb-12 min-w-[260px] mr-12',
+                    root: 'mb-12 min-w-[270px] mr-12',
                     item: 'pt-2',
                     list: 'empty:hidden before:content-["Thema"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
                     checkbox:
@@ -310,7 +326,7 @@ export default function InstrumentSearch({ serverState, url }) {
                 <RefinementList
                   attribute='overheidslaag'
                   classNames={{
-                    root: 'mb-12 min-w-[260px] mr-12',
+                    root: 'mb-12 min-w-[270px] mr-12',
                     item: 'pt-2',
                     list: 'empty:hidden before:content-["Overheidslaag"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
                     checkbox:
@@ -323,12 +339,24 @@ export default function InstrumentSearch({ serverState, url }) {
                   sortBy={['label:asc']}
                 />
               </div>
-              <div className='flex flex-col'>
+              <div className='flex flex-col mr-12'>
+                <div className='flex flex-row w-full justify-between items-center mr-12'>
+                  <h4 className='heading-xl-semibold mb-1'>R-Ladder</h4>
+                  <RLadderTooltip>
+                    <svg className='w-6 h-6 fill-current text-gray-20 mb-2' viewBox='0 0 26 26'>
+                      <circle cx='12' cy='15' r='10' fill='#676868' />
+                      <path
+                        d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
+                        fill='#F8FBF8'
+                      />
+                    </svg>
+                  </RLadderTooltip>
+                </div>
                 <RefinementList
                   attribute='rLadder'
                   classNames={{
-                    root: 'mb-12 min-w-[260px] mr-12 ',
-                    list: 'empty:hidden before:content-["R_Ladder"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                    root: 'mb-12 min-w-[270px]',
+                    list: 'empty:hidden',
                     item: 'pt-2',
                     checkbox:
                       'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
@@ -337,7 +365,8 @@ export default function InstrumentSearch({ serverState, url }) {
                     count:
                       'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                   }}
-                  sortBy={['label:asc']}
+                  sortBy={['name:asc']}
+                  transformItems={transformItems}
                 />
               </div>
             </div>
