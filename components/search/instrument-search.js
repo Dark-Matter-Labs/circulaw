@@ -112,15 +112,17 @@ export default function InstrumentSearch({ serverState, url }) {
                     </Transition.Child>
                     <div className=' p-4 flex justify-between overflow-scroll'>
                       <div className='flex flex-col mt-6 min-w-[260px] '>
-                        <div className='flex flex-col '>
+                        <div className='flex flex-col mr-12'>
+                          
                           <CustomClearRefinements />
+                          <h4 className='heading-xl-semibold mb-1'>Categorie</h4>
                           <RefinementList
                             attribute='categorie'
                             title='Categorie'
                             classNames={{
-                              root: 'mb-8 min-w-[260px] mr-8',
+                              root: 'mb-8 min-w-[270px]',
                               item: 'pt-2',
-                              list: 'empty:hidden before:content-["Categorie"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                              list: 'empty:hidden',
                               checkbox:
                                 'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                               label: 'flex justify-between items-center',
@@ -131,13 +133,14 @@ export default function InstrumentSearch({ serverState, url }) {
                             sortBy={['label:asc']}
                           />
                         </div>
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col mr-12'>
+                        <h4 className='heading-xl-semibold mb-1'>Thema</h4>
                           <RefinementList
                             attribute='thema'
                             classNames={{
-                              root: 'mb-8 min-w-[260px] mr-12',
+                              root: 'mb-8 min-w-[270px]',
                               item: 'pt-2',
-                              list: 'empty:hidden before:content-["Thema"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                              list: 'empty:hidden',
                               checkbox:
                                 'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                               label: 'flex justify-between items-center',
@@ -148,13 +151,14 @@ export default function InstrumentSearch({ serverState, url }) {
                             sortBy={['label:asc']}
                           />
                         </div>
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col mr-12'>
+                        <h4 className='heading-xl-semibold mb-1'>Overheidslaag</h4>
                           <RefinementList
                             attribute='overheidslaag'
                             classNames={{
-                              root: 'mb-8 min-w-[260px] mr-12',
+                              root: 'mb-8 min-w-[270px] ',
                               item: 'pt-2',
-                              list: 'empty:hidden before:content-["Overheidslaag"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                              list: 'empty:hidden',
                               checkbox:
                                 'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                               label: 'flex justify-between items-center',
@@ -165,12 +169,24 @@ export default function InstrumentSearch({ serverState, url }) {
                             sortBy={['label:asc']}
                           />
                         </div>
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col mr-6'>
+                        <div className='flex flex-row w-full justify-between items-center'>
+                  <h4 className='heading-xl-semibold mb-1'>R-Ladder</h4>
+                  <RLadderTooltip>
+                    <svg className='w-6 h-6 fill-current text-gray-20 mb-2' viewBox='0 0 26 26'>
+                      <circle cx='12' cy='15' r='10' fill='#676868' />
+                      <path
+                        d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
+                        fill='#F8FBF8'
+                      />
+                    </svg>
+                  </RLadderTooltip>
+                </div>
                           <RefinementList
                             attribute='rLadder'
                             classNames={{
-                              root: 'mb-8 min-w-[260px] mr-12 ',
-                              list: 'empty:hidden before:content-["R_Ladder"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                              root: 'mb-8 min-w-[270px] ',
+                              list: 'empty:hidden',
                               item: 'pt-2',
                               checkbox:
                                 'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
@@ -179,7 +195,8 @@ export default function InstrumentSearch({ serverState, url }) {
                               count:
                                 'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                             }}
-                            sortBy={['label:asc']}
+                            sortBy={['name:asc']}
+                            transformItems={transformItems}
                           />
                         </div>
                       </div>
@@ -286,15 +303,17 @@ export default function InstrumentSearch({ serverState, url }) {
         <div className='global-margin flex'>
           <NoResultsBoundary fallback={<NoResults />}>
             <div className='hidden sm:flex flex-col mt-10 min-w-[270px]'>
-              <div className='flex flex-col'>
+              <div className='flex flex-col mr-12'>
+             
                 <CustomClearRefinements />
+                <h4 className='heading-xl-semibold mb-1'>Categorie</h4>
                 <RefinementList
                   attribute='categorie'
                   title='Categorie'
                   classNames={{
-                    root: 'mb-12 min-w-[270px] mr-12',
+                    root: 'mb-12 min-w-[270px]',
                     item: 'pt-2',
-                    list: 'empty:hidden before:content-["Categorie"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                    list: 'empty:hidden',
                     checkbox:
                       'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                     label: 'flex justify-between items-center',
@@ -305,13 +324,14 @@ export default function InstrumentSearch({ serverState, url }) {
                   sortBy={['label:asc']}
                 />
               </div>
-              <div className='flex flex-col'>
+              <div className='flex flex-col mr-12'>
+              <h4 className='heading-xl-semibold mb-1'>Thema</h4>
                 <RefinementList
                   attribute='thema'
                   classNames={{
-                    root: 'mb-12 min-w-[270px] mr-12',
+                    root: 'mb-12 min-w-[270px]',
                     item: 'pt-2',
-                    list: 'empty:hidden before:content-["Thema"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                    list: 'empty:hidden',
                     checkbox:
                       'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                     label: 'flex justify-between items-center',
@@ -322,13 +342,14 @@ export default function InstrumentSearch({ serverState, url }) {
                   sortBy={['label:asc']}
                 />
               </div>
-              <div className='flex flex-col'>
+              <div className='flex flex-col mr-12'>
+              <h4 className='heading-xl-semibold mb-1'>Overheidslaag</h4>
                 <RefinementList
                   attribute='overheidslaag'
                   classNames={{
-                    root: 'mb-12 min-w-[270px] mr-12',
+                    root: 'mb-12 min-w-[270px]',
                     item: 'pt-2',
-                    list: 'empty:hidden before:content-["Overheidslaag"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                    list: 'empty:hidden',
                     checkbox:
                       'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                     label: 'flex justify-between items-center',
