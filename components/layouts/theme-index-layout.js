@@ -418,9 +418,9 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         }/${id}.${extension}`}
                         className='heading-xl-semibold text-green-500 hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'
                         target='_blank'
-
                       >
-                        {report.linkText}{' >'}
+                        {report.linkText}
+                        {' >'}
                       </Link>
                     </li>
                   );
