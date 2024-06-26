@@ -6,6 +6,9 @@ import Layout from '@/components/layouts/layout';
 import { client } from '@/lib/sanity';
 // import bannerImage from '@/public/banner.png';
 import CustomButton from '@/components/custom-button';
+import { ArrowDownIcon } from '@heroicons/react/outline';
+import { Link as ScrollLink } from 'react-scroll';
+
 
 // refactor
 const euLawsQuery = `
@@ -24,11 +27,8 @@ export default function EULaw({ laws }) {
   return (
     <Layout title='EU wetgeving' pageUrl={router.asPath}>
       <div className='bg-[url("/bg-eu.png")] pt-3 overflow-hidden bg-center	bg-no-repeat bg-cover'>
-        <div className='relative object-cover w-full h-[102%] '>
-          {/* <Image src={bannerImage} alt={'hero image'} fill className='z-0 bg-cover' priority />  */}
-
-          <div className='flex flex-col justify-between global-margin h-full relative z-10'>
-            <div className='pt-6'>
+          <div className='flex flex-col justify-between global-margin h-full relative z-10 mt-10'>
+            <div className='pt-6 mb-20'>
               <Link
                 href='/'
                 type='button'
@@ -52,17 +52,19 @@ export default function EULaw({ laws }) {
                 CircuLaw laat je zien hoe je deze verordeningen en richtlijnen kunt toepassen op de
                 circulaire doelen van jouw gemeente of provincie.
               </p>
-              <div className='mt-4'>
-                <CustomButton color='darkGreenBG'>Bekijk de 11 wetten</CustomButton>
+              <div className='mt-8'>
+                <ScrollLink to='laws' smooth={true} offset={-140}>
+                <CustomButton color='euPage'>Bekijk de 11 wetten <ArrowDownIcon className='h-5 w-5 ml-3 text-green-50'/></CustomButton>
+                </ScrollLink>
               </div>
             </div>
           </div>
-        </div>
       </div>
       <div className='global-margin'>
         <div className='flex sm:flex-row mt-10 flex-col'>
           <div className='flex flex-col justify-between p-base basis-1/2 mr-8'>
             <h2 className='mb-6 heading-2xl-semibold'>Wat is Green Deal?</h2>
+            <div>
             <p className='mb-2'>
               De Europese Unie wil in 2050 klimaatneutraal zijn: een ambitie die bekend staat als de
               &apos;Green Deal&apos;. In het kader van de Green Deal worden continu nieuwe wetten
@@ -73,6 +75,7 @@ export default function EULaw({ laws }) {
               bijdragen aan klimaatneutraliteit. Hiernaast zie je een overzicht, inclusief de
               huidige status van elk voorstel en het toepassingsgebied.
             </p>
+            </div>
             <div className='w-2/5 mt-4 sm:mt-0'>
               <CustomButton color='whiteBackground'>Download PDF</CustomButton>
             </div>
@@ -103,7 +106,7 @@ export default function EULaw({ laws }) {
           </p>
         </div>
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 lgNav:grid-cols-3 gap-y-8 gap-x-6 global-margin my-12 relative'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lgNav:grid-cols-3 gap-y-8 gap-x-6 global-margin my-12 relative' id='laws'> 
         {laws?.map((law, id) => (
           <div key={id} className=''>
             <EULawCard law={law} />
