@@ -62,9 +62,9 @@ export default function EULaw({ laws }) {
       </div>
       <div className='global-margin'>
         <div className='flex sm:flex-row mt-10 flex-col'>
-          <div className='flex flex-col justify-between p-base basis-1/2 mr-8'>
-            <h2 className='mb-6 heading-2xl-semibold'>Wat is Green Deal?</h2>
-            <div>
+          <div className='flex flex-col justify-start p-base basis-1/2 mr-8'>
+            <h2 className='mb-8 heading-2xl-semibold'>Wat is Green Deal?</h2>
+            <div className='mb-8'>
             <p className='mb-2'>
               De Europese Unie wil in 2050 klimaatneutraal zijn: een ambitie die bekend staat als de
               &apos;Green Deal&apos;. In het kader van de Green Deal worden continu nieuwe wetten
@@ -76,7 +76,7 @@ export default function EULaw({ laws }) {
               huidige status van elk voorstel en het toepassingsgebied.
             </p>
             </div>
-            <div className='w-2/5 mt-4 sm:mt-0'>
+            <div className='sm:w-2/5 sm:mt-0'>
               <CustomButton color='whiteBackground'>Download PDF</CustomButton>
             </div>
           </div>
