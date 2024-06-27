@@ -112,7 +112,7 @@ export default function InstrumentSearch({ serverState, url }) {
                       </div>
                     </Transition.Child>
                     <div className=' p-4 flex justify-between overflow-scroll'>
-                      <div className='flex flex-col mt-6 min-w-[270px] '>
+                      <div className='flex flex-col mt-4 min-w-[270px] '>
                         <div className='flex flex-col mr-12'>
                           <CustomClearRefinements />
                           <h4 className='heading-xl-semibold mb-1'>Categorie</h4>
@@ -133,7 +133,7 @@ export default function InstrumentSearch({ serverState, url }) {
                             sortBy={['label:asc']}
                           />
                         </div>
-                        <div className='flex flex-col mr-12'>
+                        <div className='flex flex-col mr-4'>
                           <h4 className='heading-xl-semibold mb-1'>Thema</h4>
                           <RefinementList
                             attribute='thema'
@@ -151,7 +151,7 @@ export default function InstrumentSearch({ serverState, url }) {
                             sortBy={['label:asc']}
                           />
                         </div>
-                        <div className='flex flex-col mr-12'>
+                        <div className='flex flex-col mr-4'>
                           <h4 className='heading-xl-semibold mb-1'>Overheidslaag</h4>
                           <RefinementList
                             attribute='overheidslaag'
@@ -169,7 +169,7 @@ export default function InstrumentSearch({ serverState, url }) {
                             sortBy={['label:asc']}
                           />
                         </div>
-                        <div className='flex flex-col mr-6'>
+                        <div className='flex flex-col mr-4'>
                           <div className='flex flex-row w-full justify-between items-center'>
                             <h4 className='heading-xl-semibold mb-1'>R-Ladder</h4>
                             <RLadderTooltip>
@@ -412,4 +412,3 @@ export default function InstrumentSearch({ serverState, url }) {
     </InstantSearchSSRProvider>
   );
 }
-

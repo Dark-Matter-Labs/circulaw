@@ -32,7 +32,7 @@ const algoliaClient = algoliasearch(api_id, api_key);
 
 export default function ThemeLevelSearch({ serverState, url, thema }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
- 
+
   const transformItems = (items) => {
     const rLadderLabes = {
       R1: 'R1: Refuse/rethink',
@@ -116,7 +116,7 @@ export default function ThemeLevelSearch({ serverState, url, thema }) {
                     </Transition.Child>
                     <div className=' p-4 flex justify-between overflow-scroll'>
                       <div className='flex flex-col mt-6 min-w-[270px] '>
-                        <div className='flex flex-col mr-12'>
+                        <div className='flex flex-col mr-4'>
                           <CustomClearRefinements />
                           <h4 className='heading-xl-semibold mb-1'>Overheidslaag</h4>
                           <RefinementList
@@ -135,7 +135,7 @@ export default function ThemeLevelSearch({ serverState, url, thema }) {
                             sortBy={['label:asc']}
                           />
                         </div>
-                        <div className='flex flex-col mr-12'>
+                        <div className='flex flex-col mr-4'>
                           <h4 className='heading-xl-semibold mb-1'>Categorie</h4>
                           <RefinementList
                             attribute='categorie'
@@ -155,7 +155,7 @@ export default function ThemeLevelSearch({ serverState, url, thema }) {
                           />
                         </div>
 
-                        <div className='flex flex-col mr-12'>
+                        <div className='flex flex-col mr-4'>
                           <div className='flex flex-row w-full justify-between items-center'>
                             <h4 className='heading-xl-semibold mb-1'>Invloed</h4>
                             <JITooltip>
@@ -188,7 +188,7 @@ export default function ThemeLevelSearch({ serverState, url, thema }) {
                           />
                         </div>
 
-                        <div className='flex flex-col mr-12'>
+                        <div className='flex flex-col mr-4'>
                           <div className='flex flex-row w-full justify-between items-center'>
                             <h4 className='heading-xl-semibold mb-1'>Juridische haalbaarheid</h4>
                             <JHTooltip>
@@ -220,7 +220,7 @@ export default function ThemeLevelSearch({ serverState, url, thema }) {
                             sortBy={['name:asc']}
                           />
                         </div>
-                        <div className='flex flex-col mr-6'>
+                        <div className='flex flex-col mr-4'>
                           <div className='flex flex-row w-full justify-between items-center'>
                             <h4 className='heading-xl-semibold mb-1'>R-Ladder</h4>
                             <RLadderTooltip>
@@ -253,7 +253,7 @@ export default function ThemeLevelSearch({ serverState, url, thema }) {
                             transformItems={transformItems}
                           />
                         </div>
-                        <div className='flex flex-col mr-12'>
+                        <div className='flex flex-col mr-6'>
                           <RefinementList
                             attribute='extraContent'
                             title='Inclusief'
@@ -502,14 +502,13 @@ export default function ThemeLevelSearch({ serverState, url, thema }) {
                 />
               </div>
               <div className='flex flex-col mr-12'>
-                <h4 className='heading-xl-semibold mb-1'>Inclusief</h4>
                 <RefinementList
                   attribute='extraContent'
                   title='Inclusief'
                   classNames={{
                     root: 'mb-12 min-w-[270px]',
                     item: 'pt-2',
-                    list: 'empty:hidden',
+                    list: 'empty:hidden before:content-["Inclusief"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
                     checkbox:
                       'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                     label: 'flex justify-between items-center',
