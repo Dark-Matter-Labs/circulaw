@@ -286,7 +286,7 @@ export default function ThemeLevelSearch({ serverState, url, thema, props }) {
         <div className=' bg-green-600 h-[300px] sm:h-[360px]  flex items-end justify-center w-full mt-3'>
           <OverviewPageHeader props={props} />
         </div>
-            {/* TODO - implement design of search bar here */}
+        {/* TODO - implement design of search bar here */}
         <div className='mt-10 global-margin hidden sm:block'>
           <SearchBox
             searchAsYouType={false}
