@@ -7,7 +7,6 @@ import {
   SearchBox,
   InstantSearchSSRProvider,
   Configure,
-  useInstantSearch,
 } from 'react-instantsearch';
 import { createInstantSearchRouterNext } from 'react-instantsearch-router-nextjs';
 import { InstrumentHit } from '@/components/search/instrument-hit';
@@ -20,6 +19,8 @@ import MobileHeaderSearch from './mobile-header';
 import { useState, Fragment } from 'react';
 import { Transition, Dialog } from '@headlessui/react';
 import RLadderTooltip from '../tooltips/r-ladder-tooltip';
+import NoResults from './no-results';
+import NoResultsBoundary from './no-results-boundary';
 
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
@@ -412,40 +413,3 @@ export default function InstrumentSearch({ serverState, url }) {
   );
 }
 
-function NoResultsBoundary({ children, fallback }) {
-  const { results } = useInstantSearch();
-
-  // The `__isArtificial` flag makes sure not to display the No Results message
-  // when no hits have been returned.
-  if (!results.__isArtificial && results.nbHits === 0) {
-    return (
-      <>
-        {fallback}
-        <div hidden>{children}</div>
-      </>
-    );
-  }
-
-  return children;
-}
-
-function NoResults() {
-  return (
-    <div className='flex items-center justify-center my-10 w-full '>
-      <div className='flex flex-col items-center justify-center max-w-md'>
-        <h3 className='p-base-semibold mb-4'>Tips voor betere resultaten:</h3>
-        <ul className='p-base list-disc'>
-          <li className='mb-1'>gebruik minder zoektermen</li>
-          <li className='mb-1'>begin met een steekwoord</li>
-          <li className='mb-1'>gebruik synoniemen.</li>
-        </ul>
-        <p className='p-base'>
-          Help ons de zoekresultaten te verbeteren klik hieronder op{' '}
-          <span className='p-base-semibold'>&apos;Ja&apos;</span> of{' '}
-          <span className='p-base-semibold'>&apos;Nee&apos;</span> en geef je mening en
-          verbeterpunten door.
-        </p>
-      </div>
-    </div>
-  );
-}

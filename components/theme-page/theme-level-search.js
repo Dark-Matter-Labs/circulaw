@@ -7,7 +7,6 @@ import {
   SearchBox,
   InstantSearchSSRProvider,
   Configure,
-  useInstantSearch,
 } from 'react-instantsearch';
 import { createInstantSearchRouterNext } from 'react-instantsearch-router-nextjs';
 import { InstrumentHit } from '@/components/search/instrument-hit';
@@ -23,6 +22,9 @@ import RLadderTooltip from '../tooltips/r-ladder-tooltip';
 import JHTooltip from '../tooltips/tooltip-juridische-houdbaarheid';
 import JITooltip from '../tooltips/tooltip-juridische-invloed';
 
+import NoResults from '../search/no-results';
+import NoResultsBoundary from '../search/no-results-boundary';
+
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
 
@@ -30,7 +32,7 @@ const algoliaClient = algoliasearch(api_id, api_key);
 
 export default function ThemeLevelSearch({ serverState, url, thema }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
+ 
   const transformItems = (items) => {
     const rLadderLabes = {
       R1: 'R1: Refuse/rethink',
@@ -252,14 +254,13 @@ export default function ThemeLevelSearch({ serverState, url, thema }) {
                           />
                         </div>
                         <div className='flex flex-col mr-12'>
-                          <h4 className='heading-xl-semibold mb-1'>Inclusief</h4>
                           <RefinementList
                             attribute='extraContent'
                             title='Inclusief'
                             classNames={{
                               root: 'mb-12 min-w-[270px]',
                               item: 'pt-2',
-                              list: 'empty:hidden',
+                              list: 'empty:hidden before:content-["Inclusief"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
                               checkbox:
                                 'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                               label: 'flex justify-between items-center',
@@ -537,43 +538,5 @@ export default function ThemeLevelSearch({ serverState, url, thema }) {
         </div>
       </InstantSearch>
     </InstantSearchSSRProvider>
-  );
-}
-
-function NoResultsBoundary({ children, fallback }) {
-  const { results } = useInstantSearch();
-
-  // The `__isArtificial` flag makes sure not to display the No Results message
-  // when no hits have been returned.
-  if (!results.__isArtificial && results.nbHits === 0) {
-    return (
-      <>
-        {fallback}
-        <div hidden>{children}</div>
-      </>
-    );
-  }
-
-  return children;
-}
-
-function NoResults() {
-  return (
-    <div className='flex items-center justify-center my-10 w-full '>
-      <div className='flex flex-col items-center justify-center max-w-md'>
-        <h3 className='p-base-semibold mb-4'>Tips voor betere resultaten:</h3>
-        <ul className='p-base list-disc'>
-          <li className='mb-1'>gebruik minder zoektermen</li>
-          <li className='mb-1'>begin met een steekwoord</li>
-          <li className='mb-1'>gebruik synoniemen.</li>
-        </ul>
-        <p className='p-base'>
-          Help ons de zoekresultaten te verbeteren klik hieronder op{' '}
-          <span className='p-base-semibold'>&apos;Ja&apos;</span> of{' '}
-          <span className='p-base-semibold'>&apos;Nee&apos;</span> en geef je mening en
-          verbeterpunten door.
-        </p>
-      </div>
-    </div>
   );
 }
