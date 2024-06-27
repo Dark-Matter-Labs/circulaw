@@ -20,6 +20,8 @@ import MobileHeaderSearch from '../search/mobile-header';
 import { useState, Fragment } from 'react';
 import { Transition, Dialog } from '@headlessui/react';
 import RLadderTooltip from '../tooltips/r-ladder-tooltip';
+import JHTooltip from '../tooltips/tooltip-juridische-houdbaarheid';
+import JITooltip from '../tooltips/tooltip-juridische-invloed';
 
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
@@ -111,9 +113,27 @@ export default function ThemeLevelSearch({ serverState, url, thema }) {
                       </div>
                     </Transition.Child>
                     <div className=' p-4 flex justify-between overflow-scroll'>
-                      <div className='flex flex-col mt-6 min-w-[260px] '>
+                      <div className='flex flex-col mt-6 min-w-[270px] '>
                         <div className='flex flex-col mr-12'>
                           <CustomClearRefinements />
+                          <h4 className='heading-xl-semibold mb-1'>Overheidslaag</h4>
+                          <RefinementList
+                            attribute='overheidslaag'
+                            classNames={{
+                              root: 'mb-12 min-w-[270px]',
+                              item: 'pt-2',
+                              list: 'empty:hidden',
+                              checkbox:
+                                'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                              label: 'flex justify-between items-center',
+                              labelText: 'p-base flex-grow capitalize ml-2',
+                              count:
+                                'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
+                            }}
+                            sortBy={['label:asc']}
+                          />
+                        </div>
+                        <div className='flex flex-col mr-12'>
                           <h4 className='heading-xl-semibold mb-1'>Categorie</h4>
                           <RefinementList
                             attribute='categorie'
@@ -132,14 +152,29 @@ export default function ThemeLevelSearch({ serverState, url, thema }) {
                             sortBy={['label:asc']}
                           />
                         </div>
+
                         <div className='flex flex-col mr-12'>
-                          <h4 className='heading-xl-semibold mb-1'>Overheidslaag</h4>
+                          <div className='flex flex-row w-full justify-between items-center'>
+                            <h4 className='heading-xl-semibold mb-1'>Invloed</h4>
+                            <JITooltip>
+                              <svg
+                                className='w-6 h-6 fill-current text-gray-20 mb-2'
+                                viewBox='0 0 26 26'
+                              >
+                                <circle cx='12' cy='15' r='10' fill='#676868' />
+                                <path
+                                  d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
+                                  fill='#F8FBF8'
+                                />
+                              </svg>
+                            </JITooltip>
+                          </div>
                           <RefinementList
-                            attribute='overheidslaag'
+                            attribute='juridischInvloed'
                             classNames={{
-                              root: 'mb-8 min-w-[270px] ',
-                              item: 'pt-2',
+                              root: 'mb-12 min-w-[270px]',
                               list: 'empty:hidden',
+                              item: 'pt-2',
                               checkbox:
                                 'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                               label: 'flex justify-between items-center',
@@ -147,7 +182,40 @@ export default function ThemeLevelSearch({ serverState, url, thema }) {
                               count:
                                 'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                             }}
-                            sortBy={['label:asc']}
+                            sortBy={['name:asc']}
+                          />
+                        </div>
+
+                        <div className='flex flex-col mr-12'>
+                          <div className='flex flex-row w-full justify-between items-center'>
+                            <h4 className='heading-xl-semibold mb-1'>Juridische haalbaarheid</h4>
+                            <JHTooltip>
+                              <svg
+                                className='w-6 h-6 fill-current text-gray-20 mb-2'
+                                viewBox='0 0 26 26'
+                              >
+                                <circle cx='12' cy='15' r='10' fill='#676868' />
+                                <path
+                                  d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
+                                  fill='#F8FBF8'
+                                />
+                              </svg>
+                            </JHTooltip>
+                          </div>
+                          <RefinementList
+                            attribute='juridischeHaalbaarheid'
+                            classNames={{
+                              root: 'mb-12 min-w-[270px]',
+                              list: 'empty:hidden',
+                              item: 'pt-2',
+                              checkbox:
+                                'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                              label: 'flex justify-between items-center',
+                              labelText: 'p-base flex-grow capitalize ml-2',
+                              count:
+                                'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
+                            }}
+                            sortBy={['name:asc']}
                           />
                         </div>
                         <div className='flex flex-col mr-6'>
@@ -183,6 +251,25 @@ export default function ThemeLevelSearch({ serverState, url, thema }) {
                             transformItems={transformItems}
                           />
                         </div>
+                        <div className='flex flex-col mr-12'>
+                          <h4 className='heading-xl-semibold mb-1'>Inclusief</h4>
+                          <RefinementList
+                            attribute='extraContent'
+                            title='Inclusief'
+                            classNames={{
+                              root: 'mb-12 min-w-[270px]',
+                              item: 'pt-2',
+                              list: 'empty:hidden',
+                              checkbox:
+                                'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                              label: 'flex justify-between items-center',
+                              labelText: 'p-base flex-grow capitalize ml-2',
+                              count:
+                                'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
+                            }}
+                            sortBy={['label:asc']}
+                          />
+                        </div>
                       </div>
                     </div>
                   </Dialog.Panel>
@@ -195,7 +282,7 @@ export default function ThemeLevelSearch({ serverState, url, thema }) {
           </Transition.Root>
         </div>
 
-        <Configure hitsPerPage={10} filters={`thema:${thema}`}/>
+        <Configure hitsPerPage={10} filters={`thema:${thema}`} />
         <div className='bg-green-600 h-[260px] flex items-end justify-center w-full'>
           <div className='global-margin w-full flex items-center justify-center'>
             {/* Desktop */}
@@ -280,7 +367,6 @@ export default function ThemeLevelSearch({ serverState, url, thema }) {
             <AdjustmentsIcon className='h-8 w-8 -rotate-90' aria-hidden='true' />
           </button>
         </div>
-
         <div className='global-margin flex items-center justify-center mt-6 sm:mt-10'>
           <CustomStats />
         </div>
@@ -289,6 +375,24 @@ export default function ThemeLevelSearch({ serverState, url, thema }) {
             <div className='hidden sm:flex flex-col mt-10 min-w-[270px]'>
               <div className='flex flex-col mr-12'>
                 <CustomClearRefinements />
+                <h4 className='heading-xl-semibold mb-1'>Overheidslaag</h4>
+                <RefinementList
+                  attribute='overheidslaag'
+                  classNames={{
+                    root: 'mb-12 min-w-[270px]',
+                    item: 'pt-2',
+                    list: 'empty:hidden',
+                    checkbox:
+                      'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    label: 'flex justify-between items-center',
+                    labelText: 'p-base flex-grow capitalize ml-2',
+                    count:
+                      'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
+                  }}
+                  sortBy={['label:asc']}
+                />
+              </div>
+              <div className='flex flex-col mr-12'>
                 <h4 className='heading-xl-semibold mb-1'>Categorie</h4>
                 <RefinementList
                   attribute='categorie'
@@ -307,14 +411,26 @@ export default function ThemeLevelSearch({ serverState, url, thema }) {
                   sortBy={['label:asc']}
                 />
               </div>
+
               <div className='flex flex-col mr-12'>
-                <h4 className='heading-xl-semibold mb-1'>Overheidslaag</h4>
+                <div className='flex flex-row w-full justify-between items-center mr-12'>
+                  <h4 className='heading-xl-semibold mb-1'>Invloed</h4>
+                  <JITooltip>
+                    <svg className='w-6 h-6 fill-current text-gray-20 mb-2' viewBox='0 0 26 26'>
+                      <circle cx='12' cy='15' r='10' fill='#676868' />
+                      <path
+                        d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
+                        fill='#F8FBF8'
+                      />
+                    </svg>
+                  </JITooltip>
+                </div>
                 <RefinementList
-                  attribute='overheidslaag'
+                  attribute='juridischInvloed'
                   classNames={{
                     root: 'mb-12 min-w-[270px]',
-                    item: 'pt-2',
                     list: 'empty:hidden',
+                    item: 'pt-2',
                     checkbox:
                       'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                     label: 'flex justify-between items-center',
@@ -322,7 +438,36 @@ export default function ThemeLevelSearch({ serverState, url, thema }) {
                     count:
                       'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                   }}
-                  sortBy={['label:asc']}
+                  sortBy={['name:asc']}
+                />
+              </div>
+              <div className='flex flex-col mr-12'>
+                <div className='flex flex-row w-full justify-between items-center mr-12'>
+                  <h4 className='heading-xl-semibold mb-1'>Juridische haalbaarheid</h4>
+                  <JHTooltip>
+                    <svg className='w-6 h-6 fill-current text-gray-20 mb-2' viewBox='0 0 26 26'>
+                      <circle cx='12' cy='15' r='10' fill='#676868' />
+                      <path
+                        d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
+                        fill='#F8FBF8'
+                      />
+                    </svg>
+                  </JHTooltip>
+                </div>
+                <RefinementList
+                  attribute='juridischeHaalbaarheid'
+                  classNames={{
+                    root: 'mb-12 min-w-[270px]',
+                    list: 'empty:hidden',
+                    item: 'pt-2',
+                    checkbox:
+                      'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    label: 'flex justify-between items-center',
+                    labelText: 'p-base flex-grow capitalize ml-2',
+                    count:
+                      'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
+                  }}
+                  sortBy={['name:asc']}
                 />
               </div>
               <div className='flex flex-col mr-12'>
@@ -353,6 +498,25 @@ export default function ThemeLevelSearch({ serverState, url, thema }) {
                   }}
                   sortBy={['name:asc']}
                   transformItems={transformItems}
+                />
+              </div>
+              <div className='flex flex-col mr-12'>
+                <h4 className='heading-xl-semibold mb-1'>Inclusief</h4>
+                <RefinementList
+                  attribute='extraContent'
+                  title='Inclusief'
+                  classNames={{
+                    root: 'mb-12 min-w-[270px]',
+                    item: 'pt-2',
+                    list: 'empty:hidden',
+                    checkbox:
+                      'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    label: 'flex justify-between items-center',
+                    labelText: 'p-base flex-grow capitalize ml-2',
+                    count:
+                      'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
+                  }}
+                  sortBy={['label:asc']}
                 />
               </div>
             </div>

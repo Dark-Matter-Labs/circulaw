@@ -111,7 +111,7 @@ export default function InstrumentSearch({ serverState, url }) {
                       </div>
                     </Transition.Child>
                     <div className=' p-4 flex justify-between overflow-scroll'>
-                      <div className='flex flex-col mt-6 min-w-[260px] '>
+                      <div className='flex flex-col mt-6 min-w-[270px] '>
                         <div className='flex flex-col mr-12'>
                           <CustomClearRefinements />
                           <h4 className='heading-xl-semibold mb-1'>Categorie</h4>
