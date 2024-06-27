@@ -23,7 +23,7 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
           <div>
             {/* This can be a component - policy list, theme bottom section + here */}
             {instruments.map((instrument, index) => (
-             <InstrumentCard key={index} instrument={instrument}/>
+              <InstrumentCard key={index} instrument={instrument} />
             ))}
           </div>
         </div>

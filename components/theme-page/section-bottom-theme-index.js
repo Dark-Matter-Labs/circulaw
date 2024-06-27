@@ -94,7 +94,7 @@ export default function ThemeBottomSection({ featuredLaws, thema }) {
                   <div>
                     {/* This can be a component - policy list, theme bottom section + here */}
                     {featuredLaws.map((instrument, index) => (
-                     <InstrumentCard key={index} instrument={instrument}/>
+                      <InstrumentCard key={index} instrument={instrument} />
                     ))}
                   </div>
                 </div>
