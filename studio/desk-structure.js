@@ -78,7 +78,7 @@ export const Structure = (S) =>
         .title("Thema's")
         .icon(BsCircle)
         .child(S.documentList().title("Thema's").filter('_type in ["thema", "simpleThema"]')),
-        S.listItem()
+      S.listItem()
         .title('EU Laws')
         .icon(GiEuropeanFlag)
         .child(S.documentList().title('EU Laws').filter('_type == "euLaw"')),
