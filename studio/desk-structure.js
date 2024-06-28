@@ -7,7 +7,6 @@ import { GrNavigate } from 'react-icons/gr';
 import { VscLaw } from 'react-icons/vsc';
 import thema from './schemas/documents/thema';
 
-
 export const Structure = (S) =>
   S.list()
     .title('Content Types')
@@ -40,7 +39,7 @@ export const Structure = (S) =>
                 .params({ themaId }),
             ),
         ),
-        S.listItem()
+      S.listItem()
         .title('EU Law Content')
         .icon(GiEuropeanFlag)
         .child(
@@ -48,17 +47,15 @@ export const Structure = (S) =>
           S.documentTypeList('euLaw')
             .title('EU Law Content')
             .child((euLawId) =>
-             // console.log(euLawId),
+              // console.log(euLawId),
               S.documentList()
                 .title('Instruments')
-                .filter('_type in ["euEuropeTab", "euCircularEconomyTab", "euLocalTab"] && $euLawId ==  euLawReference._ref')
+                .filter(
+                  '_type in ["euEuropeTab", "euCircularEconomyTab", "euLocalTab"] && $euLawId ==  euLawReference._ref',
+                )
                 .params({ euLawId }),
             ),
         ),
-      S.listItem()
-        .title('EU Law')
-        .icon(GiEuropeanFlag)
-        .child(S.documentList().title('EU Law').filter('_type == "euLaw"')),
       S.listItem()
         .title('About Pages')
         .icon(FcAbout)
@@ -81,6 +78,10 @@ export const Structure = (S) =>
         .title("Thema's")
         .icon(BsCircle)
         .child(S.documentList().title("Thema's").filter('_type in ["thema", "simpleThema"]')),
+        S.listItem()
+        .title('EU Laws')
+        .icon(GiEuropeanFlag)
+        .child(S.documentList().title('EU Laws').filter('_type == "euLaw"')),
       S.documentListItem().schemaType('FAQpage').title('FAQ Page').icon(FaQuestion),
       S.listItem()
         .title('English Page')
