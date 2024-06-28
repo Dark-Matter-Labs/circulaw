@@ -5,6 +5,8 @@ import { FcAbout } from 'react-icons/fc';
 import { GiEuropeanFlag } from 'react-icons/gi';
 import { GrNavigate } from 'react-icons/gr';
 import { VscLaw } from 'react-icons/vsc';
+import thema from './schemas/documents/thema';
+
 
 export const Structure = (S) =>
   S.list()
@@ -36,6 +38,21 @@ export const Structure = (S) =>
                 .title('Instruments')
                 .filter('_type == "instrument" && $themaId ==  thema._ref')
                 .params({ themaId }),
+            ),
+        ),
+        S.listItem()
+        .title('EU Law Content')
+        .icon(GiEuropeanFlag)
+        .child(
+          // List out all categories
+          S.documentTypeList('euLaw')
+            .title('EU Law Content')
+            .child((euLawId) =>
+             // console.log(euLawId),
+              S.documentList()
+                .title('Instruments')
+                .filter('_type in ["euEuropeTab", "euCircularEconomyTab", "euLocalTab"] && $euLawId ==  euLawReference._ref')
+                .params({ euLawId }),
             ),
         ),
       S.listItem()
