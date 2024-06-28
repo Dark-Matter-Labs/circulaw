@@ -3,7 +3,6 @@ import Tag from '../tag';
 import Image from 'next/image';
 import { urlFor } from '@/lib/sanity';
 
-
 export default function InstrumentCard({ instrument, images }) {
   return (
     <>
