@@ -14,14 +14,23 @@ const pathsQuery = `
 *[_type =="euLaw" && defined(slug.current)][].slug.current
 `;
 
-const lawQuery = `
+const lawSummaryQuery = `
 *[_type =="euLaw" && slug.current == $law][0] {
     ..., 
     "introImage": introImage.asset->.url,
 }
 `;
 
-export default function LawSummaryPage({ lawData }) {
+const lawTabQuery = `
+*[_type in ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab'] && euLawReference->.slug.current == $law] {
+  ...,  
+}
+`;
+
+export default function LawSummaryPage({ lawData, lawSummary }) {
+  const euCircularEconomyTab = lawData?.filter((tab) => tab._type === 'euCircularEconomyTab')[0];
+  const euLocalTab = lawData?.filter((tab) => tab._type === 'euLocalTab')[0];
+  const euEuropeTab = lawData?.filter((tab) => tab._type === 'euEuropeTab')[0];
   const router = useRouter();
   const query = router.query.tab ?? 'overzicht';
 
@@ -33,7 +42,7 @@ export default function LawSummaryPage({ lawData }) {
 
   if (Object.keys(router.query).length > 0) {
     return (
-      <Layout title={lawData?.title} pageUrl={router.asPath}>
+      <Layout title={lawSummary?.title} pageUrl={router.asPath}>
         <div className='relative'>
           <div className='h-[240px] sm:h-[360px] pt-3 bg-green-800'>
             <div className='flex flex-col justify-between global-margin h-full'>
@@ -50,13 +59,13 @@ export default function LawSummaryPage({ lawData }) {
                 </div>
                 <div className='hidden sm:block'>
                   <SocialButtons
-                    title={`${lawData?.title} - ${selectedTab.replace(/(-)/g, ' ')}`}
+                    title={`${lawSummary?.title} - ${selectedTab.replace(/(-)/g, ' ')}`}
                   />
                 </div>
               </div>
               <h1 className='mb-[60px] sm:mb-[94px] heading-5xl-semibold sm:p-7xl-bold text-gray-100 max-w-4xl'>
                 {' '}
-                {lawData?.title}
+                {lawSummary?.title}
               </h1>
             </div>
           </div>
@@ -73,7 +82,7 @@ export default function LawSummaryPage({ lawData }) {
                         : 'bg-green-500 text-white'
                     }  h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[105px]`}
                     href={{
-                      pathname: `/eu-wetgeving/${lawData?.slug?.current}`,
+                      pathname: `/eu-wetgeving/${lawSummary?.slug?.current}`,
                       query: { tab: 'overzicht' },
                     }}
                   >
@@ -86,7 +95,7 @@ export default function LawSummaryPage({ lawData }) {
                         : 'bg-green-500 text-white'
                     } h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[200px]`}
                     href={{
-                      pathname: `/eu-wetgeving/${lawData?.slug?.current}`,
+                      pathname: `/eu-wetgeving/${lawSummary?.slug?.current}`,
                       query: { tab: 'verplichtingen-voor-europese-lidstaten' },
                     }}
                   >
@@ -99,7 +108,7 @@ export default function LawSummaryPage({ lawData }) {
                         : 'bg-green-500 text-white'
                     } h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[250px]`}
                     href={{
-                      pathname: `/eu-wetgeving/${lawData?.slug?.current}`,
+                      pathname: `/eu-wetgeving/${lawSummary?.slug?.current}`,
                       query: { tab: 'relevantie-voor-regionale-en-lokale-overheden' },
                     }}
                   >
@@ -112,7 +121,7 @@ export default function LawSummaryPage({ lawData }) {
                         : 'bg-green-500 text-white'
                     } h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[200px]`}
                     href={{
-                      pathname: `/eu-wetgeving/${lawData?.slug?.current}`,
+                      pathname: `/eu-wetgeving/${lawSummary?.slug?.current}`,
                       query: { tab: 'relevantie-voor-de-circulaire-economie' },
                     }}
                   >
@@ -124,19 +133,22 @@ export default function LawSummaryPage({ lawData }) {
           </div>
           {query === 'overzicht' && (
             <div className=''>
-              <SummaryComponent lawData={lawData} />
+              <SummaryComponent lawData={lawSummary} />
             </div>
           )}
           {query === 'verplichtingen-voor-europese-lidstaten' && (
-            <ScrollPagesTabContent content={lawData?.europeContent} />
+            <ScrollPagesTabContent content={euEuropeTab?.europeContent} />
           )}
           {query === 'relevantie-voor-regionale-en-lokale-overheden' && (
-            <ScrollPagesTabContent content={lawData?.localContent} />
+            <ScrollPagesTabContent content={euLocalTab?.localContent} />
           )}
           {query === 'relevantie-voor-de-circulaire-economie' && (
             <div className='global-margin my-20 '>
               <div className='max-w-xl 2xl:max-w-2xl'>
-                <PortableText value={lawData?.ceContent} components={portableTextComponents} />
+                <PortableText
+                  value={euCircularEconomyTab?.ceContent}
+                  components={portableTextComponents}
+                />
               </div>
             </div>
           )}
@@ -156,15 +168,17 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const law = { law: params?.law ?? '' };
-  const lawData = await client.fetch(lawQuery, law);
+  const lawSummary = await client.fetch(lawSummaryQuery, law);
+  const lawData = await client.fetch(lawTabQuery, law);
 
-  if (!lawData) {
+  if (!lawSummary) {
     return {
       notFound: true,
     };
   }
+
   return {
-    props: { lawData },
+    props: { lawSummary, lawData },
     revalidate: 1,
   };
 }

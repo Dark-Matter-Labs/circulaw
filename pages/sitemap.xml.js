@@ -15,7 +15,7 @@ export async function getServerSideProps({ res }) {
     }`;
   const urls = await client.fetch(query);
   const instruments = urls.instruments.map((page) => {
-    const slug = page.URL.replace(/\s+/g, '-').replace('(', '').replace(')', '');
+    const slug = page.URL.replace(/\s+/g, '-').replace('elektr(on)ische', 'elektrische');
     return `
         <loc>${baseUrl}${slug}</loc>
         <changefreq>daily</changefreq>
