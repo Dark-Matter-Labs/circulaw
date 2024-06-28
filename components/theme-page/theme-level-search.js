@@ -287,15 +287,15 @@ export default function ThemeLevelSearch({ serverState, url, thema, props }) {
           <OverviewPageHeader props={props} />
         </div>
         {/* TODO - implement design of search bar here */}
-        <div className='mt-10 global-margin hidden sm:block'>
+        <div className='mt-10 global-margin hidden sm:flex items-center justify-center'>
           <SearchBox
             searchAsYouType={false}
             placeholder='Zoek naar instrumenten...'
             classNames={{
-              root: 'h-16 w-[600px] bg-green-600',
-              form: 'bg-green-600 w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex',
+              root: 'h-16 w-[600px] bg-white',
+              form: 'bg-white shadow-card w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex',
               input:
-                'w-[600px] h-[66px] focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold',
+                'w-[600px] h-[66px] focus:bg-[url("/search-icon-dark.png")] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-green-600 p-base text-green-600 focus:ring-1 focus:ring-white placeholder:text-green-600 placeholder:p-base-semibold',
               submitIcon: 'visible',
             }}
             submitIconComponent={() => (
@@ -316,6 +316,36 @@ export default function ThemeLevelSearch({ serverState, url, thema, props }) {
               </div>
             )}
           />
+        </div>
+        <div className='flex sm:hidden items-center justify-center mt-4'>
+        <SearchBox
+          searchAsYouType={false}
+          placeholder='Zoek naar instrumenten...'
+          classNames={{
+            root: 'h-16 max-w-sm w-full bg-white',
+            form: 'bg-white shadow-card max-w-sm w-full h-[60px] rounded-cl flex-row items-center justify-between relative flex',
+            input:
+              'max-w-sm w-full h-[60px] focus:bg-[url("/search-icon-dark.png")] bg-no-repeat bg-left [background-position-x:10px] pl-10 rounded-cl border-none bg-white/50 caret-green-600 p-base text-green-600 focus:ring-1 focus:ring-white placeholder:text-green-600 placeholder:p-base-semibold',
+            submitIcon: 'visible',
+          }}
+          submitIconComponent={() => (
+            <div
+              type='submit'
+              className='flex items-center ml-2 border h-[40px] w-22 border-white p-2 absolute top-2.5 right-2.5 shadow-card p-base-semibold text-green-600 bg-white rounded-cl'
+            >
+              Zoeken
+            </div>
+          )}
+          resetIconComponent={() => (
+            <div
+              type='reset'
+              title='Clear the search query'
+              className='absolute top-3 right-24 rounded-full p-2 hover:bg-white/50 group'
+            >
+              <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
+            </div>
+          )}
+        />
         </div>
 
         <div className='lg:hidden py-5 global-margin'>
