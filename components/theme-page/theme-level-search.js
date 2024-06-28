@@ -310,9 +310,9 @@ export default function ThemeLevelSearch({ serverState, url, thema, props }) {
               <div
                 type='reset'
                 title='Clear the search query'
-                className='absolute top-3.5 right-28 rounded-full p-2 hover:bg-white/50 group'
+                className='absolute top-3.5 right-28 rounded-full p-2 hover:bg-green-300/50 group'
               >
-                <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
+                <XIcon className='h-6 w-6 text-green-600 group-hover:text-green-900' />
               </div>
             )}
           />
@@ -340,9 +340,9 @@ export default function ThemeLevelSearch({ serverState, url, thema, props }) {
             <div
               type='reset'
               title='Clear the search query'
-              className='absolute top-3 right-24 rounded-full p-2 hover:bg-white/50 group'
+              className='absolute top-3 right-24 rounded-full p-2 hover:bg-green-300/50 group'
             >
-              <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
+              <XIcon className='h-6 w-6 text-green-600 group-hover:text-green-900' />
             </div>
           )}
         />
