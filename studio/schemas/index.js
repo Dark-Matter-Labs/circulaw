@@ -29,6 +29,9 @@ import productChainImpact from './objects/product-chain-impact';
 import smallPara from './objects/small-paragraph';
 import { youtube } from './objects/youtube-embed';
 import themePageReport from './objects/thema-report';
+import euCircularEconomyTab from './documents/eu-circular-economy-tab';
+import euEuropeTab from './documents/eu-europe-tab';
+import euLocalTab from './documents/eu-local-tab';
 
 export const schemaTypes = [
   // DOCUMENT TYPES
@@ -44,6 +47,9 @@ export const schemaTypes = [
   newsPage,
   euLaw,
   euLawSection,
+  euCircularEconomyTab,
+  euEuropeTab,
+  euLocalTab,
 
   // OBJECTS
   greenBox,
