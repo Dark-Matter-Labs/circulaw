@@ -265,3 +265,6 @@ html {
 }
 
 
+.ais-RefinementList:empty {
+  display: none;
+  }
