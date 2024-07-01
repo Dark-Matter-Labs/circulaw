@@ -4,19 +4,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function PCHomePage({ pcData }) {
-  console.log(pcData)
   return (
     <>
       {' '}
       <ul className='hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-4 gap-x-2 w-full'>
         {pcData?.map((chain, id) => (
+          
           <Link href={`/${chain.slug}`} key={id}>
-            <li className='group h-[400px] rounded-cl flex flex-col justify-between relative overflow-hidden max-w-[250px]'>
+            {console.log(chain.alt)}
+            <li className='group h-[400px] w-auto rounded-cl flex flex-col justify-between relative overflow-hidden max-w-[250px]'>
               <Image
                 src={urlFor(chain?.image).url()}
                 alt={chain.alt}
-                width={250}
-                height={120}
+                fill
+                sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
                 className='h-[37.5%] w-auto rounded-t-cl object-cover origin-center group-hover:scale-110 transition-transform duration-300'
               />
               <div className='bg-green-800 group-hover:bg-green-600 rounded-b-cl pb-4 pt-5 px-6 flex flex-col h-[72%] justify-between group-hover:translate-y-[20px] absolute bottom-0 left-0 transition-all duration-300'>
@@ -56,12 +57,12 @@ export default function PCHomePage({ pcData }) {
           <Link key={id} href={`/${chain.slug}`} className='block sm:hidden'>
             <li className='h-32 w-full rounded-cl bg-green-800 shadow mb-6'>
               <div className='flex items-center justify-between'>
-                <div className='h-32 w-28 flex items-center justify-center'>
+                <div className='h-32 w-28 flex items-center justify-center relative'>
                   <Image
                     src={urlFor(chain?.image).url()}
                     alt={chain.alt}
-                    width={250}
-                    height={120}
+                    fill
+                    sizes='(max-width: 768px) 30vw'
                     className='w-full h-full object-cover rounded-l-cl'
                   />
                 </div>
