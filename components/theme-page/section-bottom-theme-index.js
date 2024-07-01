@@ -41,6 +41,7 @@ export default function ThemeBottomSection({ featuredLaws, thema }) {
                           src={urlFor(instrument?.featuredImage)?.url()}
                           alt={instrument?.featuredImage?.altText}
                           fill
+                          sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
                           className='absolute rounded-cl object-cover'
                         />
                       )}
