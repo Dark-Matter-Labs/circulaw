@@ -33,6 +33,7 @@ export default function ParnerSection({ partners, partnerType }) {
                   alt={partner.partnerName}
                   width={190}
                   height={190}
+                  className='h-auto w-auto'
                 />
               </Link>
             </div>
