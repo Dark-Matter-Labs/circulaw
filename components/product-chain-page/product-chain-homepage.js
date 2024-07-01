@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function PCHomePage({ pcData }) {
+  console.log(pcData)
   return (
     <>
       {' '}
@@ -16,7 +17,7 @@ export default function PCHomePage({ pcData }) {
                 alt={chain.alt}
                 width={250}
                 height={120}
-                className='h-[37.5%] rounded-t-cl object-cover origin-center group-hover:scale-110 transition-transform duration-300'
+                className='h-[37.5%] w-auto rounded-t-cl object-cover origin-center group-hover:scale-110 transition-transform duration-300'
               />
               <div className='bg-green-800 group-hover:bg-green-600 rounded-b-cl pb-4 pt-5 px-6 flex flex-col h-[72%] justify-between group-hover:translate-y-[20px] absolute bottom-0 left-0 transition-all duration-300'>
                 <div className='divide-y-[0.5px] divide-green-600 group-hover:divide-gray-100 group-hover:-translate-y-[20px] transition-all duration-300 h-[180px] flex flex-col justify-center origin-center'>
