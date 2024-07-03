@@ -54,7 +54,7 @@ export default function EULaw({ laws }) {
               </p>
               <div className='mt-8'>
                 <ScrollLink to='laws' smooth={true} offset={-140}>
-                <CustomButton color='euPage'>Bekijk de 11 wetten <ArrowDownIcon className='h-5 w-5 ml-3 text-green-50'/></CustomButton>
+                <CustomButton color='euPage'>Bekijk de {laws?.length} wetten <ArrowDownIcon className='h-5 w-5 ml-3 text-green-50'/></CustomButton>
                 </ScrollLink>
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function EULaw({ laws }) {
             Lokale overheden zijn vaak niet op de hoogte van de verplichtingen en kansen die
             voortvloeien uit Europese wet- en regelgeving. CircuLaw brengt daar verandering in. Wij
             brengen de toepasbaarheid voor de circulaire economie in kaart van richtlijnen en
-            verordeningen. Op dit moment hebben we 5 analyses gereed; je vindt ze hieronder.
+            verordeningen. Op dit moment hebben we {laws?.length} analyses gereed; je vindt ze hieronder.
           </p>
           <p>
             We blijven nieuwe analyses toevoegen, en de status van de verschillende wet- en
