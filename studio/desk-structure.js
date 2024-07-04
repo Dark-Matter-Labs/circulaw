@@ -5,7 +5,6 @@ import { FcAbout } from 'react-icons/fc';
 import { GiEuropeanFlag } from 'react-icons/gi';
 import { GrNavigate } from 'react-icons/gr';
 import { VscLaw } from 'react-icons/vsc';
-import thema from './schemas/documents/thema';
 
 export const Structure = (S) =>
   S.list()
