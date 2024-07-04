@@ -40,12 +40,12 @@ export const Structure = (S) =>
             ),
         ),
       S.listItem()
-        .title('EU Law Content')
+        .title('Inhoud per EU wet')
         .icon(GiEuropeanFlag)
         .child(
           // List out all categories
           S.documentTypeList('euLaw')
-            .title('EU Law Content')
+            .title('Inhoud per EU wet')
             .child((euLawId) =>
               // console.log(euLawId),
               S.documentList()
@@ -79,9 +79,9 @@ export const Structure = (S) =>
         .icon(BsCircle)
         .child(S.documentList().title("Thema's").filter('_type in ["thema", "simpleThema"]')),
       S.listItem()
-        .title('EU Laws')
+        .title('EU wetgeving')
         .icon(GiEuropeanFlag)
-        .child(S.documentList().title('EU Laws').filter('_type == "euLaw"')),
+        .child(S.documentList().title('EU wetgeving').filter('_type == "euLaw"')),
       S.documentListItem().schemaType('FAQpage').title('FAQ Page').icon(FaQuestion),
       S.listItem()
         .title('English Page')
