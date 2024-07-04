@@ -38,7 +38,7 @@ export default function OverviewPageHeader({ props, page }) {
         <div className='items-center grid grid-cols-10'>
           <div
             className={`${
-              router.pathname.includes('categorie') ? 'pb-[4.75rem]' : 'pb-6'
+              router.pathname.includes('categorie') ? 'pb-[4.75rem]' : 'pb-10'
             } col-span-9`}
           >
             <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-white max-w-5xl pb-1'>
