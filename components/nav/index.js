@@ -1018,15 +1018,7 @@ export default function Nav(props) {
         </nav>
       </div>
       {pathname === '/' && (
-        <div className='-mt-[9rem] w-full relative'>
-          <Image 
-            src = '/home-page/cl_header_new.png'
-            alt='Header image for CircuLaw home page'
-            fill
-            sizes="(max-width: 768px) 100vw, 33vw"
-            className='absolute bottom-0 left-0 h-full w-full -z-10'
-            priority
-          />
+        <div className='-mt-[9rem] w-full bg-cover bg-header'>
           <HomepageHeader homePageHeader={props.homePageHeader} />
         </div>
       )}
