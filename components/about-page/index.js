@@ -32,7 +32,7 @@ export default function AboutPageComponent({ data }) {
                 components={portableTextComponents}
               />
             </div>
-            {data?.aboutPage?.slug.current === 'Wetsanalyse-vanuit-circulaire-blik' && (
+            {data?.aboutPage?.slug.current === 'wetsanalyse-vanuit-circulaire-blik' && (
               <div>
                 <Image src='/method.png' alt='image of methodology' width={768} height={1806} />
               </div>
