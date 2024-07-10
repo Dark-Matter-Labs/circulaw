@@ -1018,7 +1018,7 @@ export default function Nav(props) {
         </nav>
       </div>
       {pathname === '/' && (
-        <div className='-mt-[9rem] bg-header bg-cover bg-center w-full'>
+        <div className='-mt-[9rem] w-full bg-cover bg-header'>
           <HomepageHeader homePageHeader={props.homePageHeader} />
         </div>
       )}

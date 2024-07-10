@@ -300,12 +300,9 @@ export default function InstrumentSearch({ serverState, url }) {
           </button>
         </div>
 
-        <div className='global-margin flex items-center justify-center mt-6 sm:mt-10'>
-          <CustomStats />
-        </div>
         <div className='global-margin flex'>
           <NoResultsBoundary fallback={<NoResults />}>
-            <div className='hidden sm:flex flex-col mt-10 min-w-[270px]'>
+            <div className='hidden sm:flex flex-col mt-32 min-w-[270px]'>
               <div className='flex flex-col mr-12'>
                 <CustomClearRefinements />
                 <h4 className='heading-xl-semibold mb-1'>Categorie</h4>
@@ -394,6 +391,9 @@ export default function InstrumentSearch({ serverState, url }) {
               </div>
             </div>
             <div>
+              <div className='sm:ml-12 sm:mt-10'>
+                <CustomStats />
+              </div>
               <Hits
                 classNames={{
                   root: 'border-none mt-4 sm:mt-10',

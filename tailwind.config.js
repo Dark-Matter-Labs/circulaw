@@ -87,7 +87,8 @@ module.exports = {
         'en-background': 'url("/background-en-page2.png")',
         'en-header': 'url("/en-deco-header.png")',
         'about-header': 'url("/about-header.png")',
-        'header': 'url("/home-page/cl_header_new.png")'
+        'header': 'url("/home-page/homepage_bg.png")',
+        'eu': 'url("/bg-eu.png")'
       },
       borderRadius: {
           'cl': '10px',
@@ -108,3 +109,5 @@ module.exports = {
     require('@tailwindcss/forms')
 ],
 };
+
+
