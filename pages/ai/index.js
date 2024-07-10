@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import CustomButton from '@/components/custom-button';
 import Layout from '@/components/layouts/layout';
-import aiImage from '@/public/lawren.png';
 import aiIcon1 from '@/public/aiIcon1.png';
 import aiIcon2 from '@/public/aiIcon2.png';
 import aiIcon3 from '@/public/aiIcon3.png';
@@ -17,13 +16,26 @@ export default function AI() {
         <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-gray-800 pb-2'>
           CircuLaw AI playground
         </h1>
-        <p className=' p-base text-gray-800 max-w-xl mx-auto py-5'>
+        <p className=' p-base text-gray-800 max-w-xl mx-auto pt-5'>
           Discover the power of AI in simplifying circular legislation. Our innovative open-source
           chat agent is designed to make complex circularity laws accessible to everyone. Whether
           you’re a business owner, policymaker, or curious citizen, this intelligent assistant is
           here to guide you.
         </p>
-        <Image src={aiImage} width={500} alt='AI assistant' className='mx-auto' />
+        <div className='sm:w-[660px] sm:flex justify-center mt-6 sm:mt-0 mx-auto'>
+        <div className='w-full relative overflow-hidden pt-[56%]'>
+          <iframe
+            className='absolute bottom-0 left-0 sm:left-20 right-0 top-0 sm:top-24 h-full w-full sm:h-3/4 sm:w-3/4 rounded-cl'
+            width='500'
+            height='253'
+            src='https://player.vimeo.com/video/980767411?h=9de430fe8a&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479'
+            title='YouTube video player'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+            referrerPolicy='strict-origin-when-cross-origin'
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
         <div className='bg-[#F5F5F5] py-10 w-[500px] mx-auto max-w-xl'>
           <h2 className='heading-xl-semibold sm:heading-3xl-semibold text-gray-800 pb-2 m'>
             Hello I’m Lawren!
