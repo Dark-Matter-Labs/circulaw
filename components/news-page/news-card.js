@@ -29,6 +29,7 @@ export default function NewsCard({ data }) {
                 src={urlFor(data?.image)?.url()}
                 alt={data?.newsTitle + 'image'}
                 fill
+                sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
                 className='w-full h-full relative object-cover rounded-t-cl '
               />
             </div>
@@ -110,6 +111,7 @@ export default function NewsCard({ data }) {
                 src={urlFor(data?.image)?.url()}
                 alt={data?.newsTitle + 'image'}
                 fill
+                sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
                 className='w-full h-full relative object-cover rounded-t-cl '
               />
             </div>
@@ -198,6 +200,7 @@ export default function NewsCard({ data }) {
               src={urlFor(data?.image)?.url()}
               alt={data?.newsTitle + 'image'}
               fill
+              sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
               className='w-full h-full relative object-cover rounded-t-cl '
             />
           </div>
