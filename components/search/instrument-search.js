@@ -300,7 +300,6 @@ export default function InstrumentSearch({ serverState, url }) {
           </button>
         </div>
 
-      
         <div className='global-margin flex'>
           <NoResultsBoundary fallback={<NoResults />}>
             <div className='hidden sm:flex flex-col mt-32 min-w-[270px]'>
@@ -393,7 +392,7 @@ export default function InstrumentSearch({ serverState, url }) {
             </div>
             <div>
               <div className='sm:ml-12 sm:mt-10'>
-              <CustomStats />
+                <CustomStats />
               </div>
               <Hits
                 classNames={{
