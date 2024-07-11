@@ -112,12 +112,14 @@ export default function AboutSearch({ serverState, url }) {
             <MobileHeaderSearch index='aboutPage' />
           </div>
         </div>
-        <div className='global-margin flex items-center justify-center mt-10'>
-          <CustomStats />
-        </div>
+
         <div className='global-margin flex'>
           <NoResultsBoundary fallback={<NoResults />}>
             <div className='mb-12'>
+              <div className='mt-10 sm:ml-10'>
+                <CustomStats />
+              </div>
+
               <Hits
                 classNames={{
                   root: 'border-none mt-10',

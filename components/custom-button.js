@@ -12,6 +12,8 @@ const buttonColors = {
     'bg-green-600 hover:bg-green-200 hover:text-green-600 text-gray-100 active:bg-green-800 active:text-gray-100 focus:outline-none focus:ring-2 focus:ring-white rounded-[10px]',
   darkGreenBG:
     'bg-green-50 group-hover:bg-green-600 group-hover:text-green-50 text-green-600 border-2 border-green-600 active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white rounded-full',
+  euPage:
+    'bg-transparent hover:bg-green-600 hover:text-green-50 text-green-50 border-2 border-green-50 active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white rounded-full',
 };
 export default function CustomButton({ color, children, ...props }) {
   let colorClasses = buttonColors[color];

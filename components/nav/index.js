@@ -482,7 +482,12 @@ export default function Nav(props) {
                                     <Disclosure.Panel className='ml-4'>
                                       <ul>
                                         <li className='p-base h-10 my-2 last:mb-2 text-green-600 cursor-pointer flex items-center'>
+                                        <Link
+                                              href={'/eu-wetgeving'}
+                                              onClick={() => setMobileMenuIsOpen(false)}
+                                            >
                                           Overzicht
+                                          </Link>
                                         </li>
                                         {props?.euSlugs?.map((euPage) => (
                                           <li
@@ -1018,7 +1023,7 @@ export default function Nav(props) {
         </nav>
       </div>
       {pathname === '/' && (
-        <div className='-mt-[9rem] bg-header bg-cover bg-center w-full'>
+        <div className='-mt-[9rem] w-full bg-cover bg-header'>
           <HomepageHeader homePageHeader={props.homePageHeader} />
         </div>
       )}

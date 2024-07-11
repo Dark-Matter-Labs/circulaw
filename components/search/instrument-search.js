@@ -7,7 +7,6 @@ import {
   SearchBox,
   InstantSearchSSRProvider,
   Configure,
-  useInstantSearch,
 } from 'react-instantsearch';
 import { createInstantSearchRouterNext } from 'react-instantsearch-router-nextjs';
 import { InstrumentHit } from '@/components/search/instrument-hit';
@@ -19,6 +18,9 @@ import Link from 'next/link';
 import MobileHeaderSearch from './mobile-header';
 import { useState, Fragment } from 'react';
 import { Transition, Dialog } from '@headlessui/react';
+import RLadderTooltip from '../tooltips/r-ladder-tooltip';
+import NoResults from './no-results';
+import NoResultsBoundary from './no-results-boundary';
 
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
@@ -27,6 +29,21 @@ const algoliaClient = algoliasearch(api_id, api_key);
 
 export default function InstrumentSearch({ serverState, url }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const transformItems = (items) => {
+    const rLadderLabes = {
+      R1: 'R1: Refuse/rethink',
+      R2: 'R2: Reduce',
+      R3: 'R3: Re-use',
+      R4: 'R4: Repair/remanufacture',
+      R5: 'R5: Recycling',
+      R6: 'R6: Recover',
+    };
+    return items.map((item) => ({
+      ...item,
+      label: rLadderLabes[item.label],
+    }));
+  };
 
   return (
     <InstantSearchSSRProvider {...serverState}>
@@ -95,16 +112,17 @@ export default function InstrumentSearch({ serverState, url }) {
                       </div>
                     </Transition.Child>
                     <div className=' p-4 flex justify-between overflow-scroll'>
-                      <div className='flex flex-col mt-6 min-w-[260px] '>
-                        <div className='flex flex-col '>
+                      <div className='flex flex-col mt-4 min-w-[270px] '>
+                        <div className='flex flex-col mr-12'>
                           <CustomClearRefinements />
+                          <h4 className='heading-xl-semibold mb-1'>Categorie</h4>
                           <RefinementList
                             attribute='categorie'
                             title='Categorie'
                             classNames={{
-                              root: 'mb-8 min-w-[260px] mr-8',
+                              root: 'mb-8 min-w-[270px]',
                               item: 'pt-2',
-                              list: 'empty:hidden before:content-["Categorie"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                              list: 'empty:hidden',
                               checkbox:
                                 'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                               label: 'flex justify-between items-center',
@@ -115,13 +133,14 @@ export default function InstrumentSearch({ serverState, url }) {
                             sortBy={['label:asc']}
                           />
                         </div>
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col mr-4'>
+                          <h4 className='heading-xl-semibold mb-1'>Thema</h4>
                           <RefinementList
                             attribute='thema'
                             classNames={{
-                              root: 'mb-8 min-w-[260px] mr-12',
+                              root: 'mb-8 min-w-[270px]',
                               item: 'pt-2',
-                              list: 'empty:hidden before:content-["Thema"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                              list: 'empty:hidden',
                               checkbox:
                                 'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                               label: 'flex justify-between items-center',
@@ -132,13 +151,14 @@ export default function InstrumentSearch({ serverState, url }) {
                             sortBy={['label:asc']}
                           />
                         </div>
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col mr-4'>
+                          <h4 className='heading-xl-semibold mb-1'>Overheidslaag</h4>
                           <RefinementList
                             attribute='overheidslaag'
                             classNames={{
-                              root: 'mb-8 min-w-[260px] mr-12',
+                              root: 'mb-8 min-w-[270px] ',
                               item: 'pt-2',
-                              list: 'empty:hidden before:content-["Overheidslaag"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                              list: 'empty:hidden',
                               checkbox:
                                 'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                               label: 'flex justify-between items-center',
@@ -149,12 +169,27 @@ export default function InstrumentSearch({ serverState, url }) {
                             sortBy={['label:asc']}
                           />
                         </div>
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col mr-4'>
+                          <div className='flex flex-row w-full justify-between items-center'>
+                            <h4 className='heading-xl-semibold mb-1'>R-Ladder</h4>
+                            <RLadderTooltip>
+                              <svg
+                                className='w-6 h-6 fill-current text-gray-20 mb-2'
+                                viewBox='0 0 26 26'
+                              >
+                                <circle cx='12' cy='15' r='10' fill='#676868' />
+                                <path
+                                  d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
+                                  fill='#F8FBF8'
+                                />
+                              </svg>
+                            </RLadderTooltip>
+                          </div>
                           <RefinementList
                             attribute='rLadder'
                             classNames={{
-                              root: 'mb-8 min-w-[260px] mr-12 ',
-                              list: 'empty:hidden before:content-["R_Ladder"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                              root: 'mb-8 min-w-[270px] ',
+                              list: 'empty:hidden',
                               item: 'pt-2',
                               checkbox:
                                 'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
@@ -163,7 +198,8 @@ export default function InstrumentSearch({ serverState, url }) {
                               count:
                                 'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                             }}
-                            sortBy={['label:asc']}
+                            sortBy={['name:asc']}
+                            transformItems={transformItems}
                           />
                         </div>
                       </div>
@@ -264,21 +300,19 @@ export default function InstrumentSearch({ serverState, url }) {
           </button>
         </div>
 
-        <div className='global-margin flex items-center justify-center mt-6 sm:mt-10'>
-          <CustomStats />
-        </div>
         <div className='global-margin flex'>
           <NoResultsBoundary fallback={<NoResults />}>
-            <div className='hidden sm:flex flex-col mt-10 min-w-[260px]'>
-              <div className='flex flex-col'>
+            <div className='hidden sm:flex flex-col mt-32 min-w-[270px]'>
+              <div className='flex flex-col mr-12'>
                 <CustomClearRefinements />
+                <h4 className='heading-xl-semibold mb-1'>Categorie</h4>
                 <RefinementList
                   attribute='categorie'
                   title='Categorie'
                   classNames={{
-                    root: 'mb-12 min-w-[260px] mr-12',
+                    root: 'mb-12 min-w-[270px]',
                     item: 'pt-2',
-                    list: 'empty:hidden before:content-["Categorie"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                    list: 'empty:hidden',
                     checkbox:
                       'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                     label: 'flex justify-between items-center',
@@ -289,13 +323,14 @@ export default function InstrumentSearch({ serverState, url }) {
                   sortBy={['label:asc']}
                 />
               </div>
-              <div className='flex flex-col'>
+              <div className='flex flex-col mr-12'>
+                <h4 className='heading-xl-semibold mb-1'>Thema</h4>
                 <RefinementList
                   attribute='thema'
                   classNames={{
-                    root: 'mb-12 min-w-[260px] mr-12',
+                    root: 'mb-12 min-w-[270px]',
                     item: 'pt-2',
-                    list: 'empty:hidden before:content-["Thema"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                    list: 'empty:hidden',
                     checkbox:
                       'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                     label: 'flex justify-between items-center',
@@ -306,13 +341,14 @@ export default function InstrumentSearch({ serverState, url }) {
                   sortBy={['label:asc']}
                 />
               </div>
-              <div className='flex flex-col'>
+              <div className='flex flex-col mr-12'>
+                <h4 className='heading-xl-semibold mb-1'>Overheidslaag</h4>
                 <RefinementList
                   attribute='overheidslaag'
                   classNames={{
-                    root: 'mb-12 min-w-[260px] mr-12',
+                    root: 'mb-12 min-w-[270px]',
                     item: 'pt-2',
-                    list: 'empty:hidden before:content-["Overheidslaag"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                    list: 'empty:hidden',
                     checkbox:
                       'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
                     label: 'flex justify-between items-center',
@@ -323,12 +359,24 @@ export default function InstrumentSearch({ serverState, url }) {
                   sortBy={['label:asc']}
                 />
               </div>
-              <div className='flex flex-col'>
+              <div className='flex flex-col mr-12'>
+                <div className='flex flex-row w-full justify-between items-center mr-12'>
+                  <h4 className='heading-xl-semibold mb-1'>R-Ladder</h4>
+                  <RLadderTooltip>
+                    <svg className='w-6 h-6 fill-current text-gray-20 mb-2' viewBox='0 0 26 26'>
+                      <circle cx='12' cy='15' r='10' fill='#676868' />
+                      <path
+                        d='M10.7031 10.0078C10.7031 9.23177 11.1354 8.84375 12 8.84375C12.8646 8.84375 13.2969 9.23177 13.2969 10.0078C13.2969 10.3776 13.1875 10.6667 12.9688 10.875C12.7552 11.0781 12.4323 11.1797 12 11.1797C11.1354 11.1797 10.7031 10.7891 10.7031 10.0078ZM13.1875 21H10.8047V12.2656H13.1875V21Z'
+                        fill='#F8FBF8'
+                      />
+                    </svg>
+                  </RLadderTooltip>
+                </div>
                 <RefinementList
                   attribute='rLadder'
                   classNames={{
-                    root: 'mb-12 min-w-[260px] mr-12 ',
-                    list: 'empty:hidden before:content-["R_Ladder"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
+                    root: 'mb-12 min-w-[270px]',
+                    list: 'empty:hidden',
                     item: 'pt-2',
                     checkbox:
                       'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
@@ -337,11 +385,15 @@ export default function InstrumentSearch({ serverState, url }) {
                     count:
                       'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                   }}
-                  sortBy={['label:asc']}
+                  sortBy={['name:asc']}
+                  transformItems={transformItems}
                 />
               </div>
             </div>
             <div>
+              <div className='sm:ml-12 sm:mt-10'>
+                <CustomStats />
+              </div>
               <Hits
                 classNames={{
                   root: 'border-none mt-4 sm:mt-10',
@@ -358,43 +410,5 @@ export default function InstrumentSearch({ serverState, url }) {
         </div>
       </InstantSearch>
     </InstantSearchSSRProvider>
-  );
-}
-
-function NoResultsBoundary({ children, fallback }) {
-  const { results } = useInstantSearch();
-
-  // The `__isArtificial` flag makes sure not to display the No Results message
-  // when no hits have been returned.
-  if (!results.__isArtificial && results.nbHits === 0) {
-    return (
-      <>
-        {fallback}
-        <div hidden>{children}</div>
-      </>
-    );
-  }
-
-  return children;
-}
-
-function NoResults() {
-  return (
-    <div className='flex items-center justify-center my-10 w-full '>
-      <div className='flex flex-col items-center justify-center max-w-md'>
-        <h3 className='p-base-semibold mb-4'>Tips voor betere resultaten:</h3>
-        <ul className='p-base list-disc'>
-          <li className='mb-1'>gebruik minder zoektermen</li>
-          <li className='mb-1'>begin met een steekwoord</li>
-          <li className='mb-1'>gebruik synoniemen.</li>
-        </ul>
-        <p className='p-base'>
-          Help ons de zoekresultaten te verbeteren klik hieronder op{' '}
-          <span className='p-base-semibold'>&apos;Ja&apos;</span> of{' '}
-          <span className='p-base-semibold'>&apos;Nee&apos;</span> en geef je mening en
-          verbeterpunten door.
-        </p>
-      </div>
-    </div>
   );
 }

@@ -168,6 +168,10 @@ html {
   background: linear-gradient(71deg, #6CAB93 3.79%, #30BD88 38.64%, #39B086 45.9%, #42D4A8 64.06%, #34C19A 76.4%);
 }
 
+.gradient-700 {
+  background: linear-gradient(35deg, #3DB989 20.34%, #028453 56.51%, #03794F 64.05%, #066548 82.89%, #085E46 95.7%);
+}
+
 /* used for PDF blocks in Portable text */
 .gradient-pdf {
   background: linear-gradient(#042D36 0%, rgba(34, 83, 44, 0) 100%);
@@ -261,3 +265,6 @@ html {
 }
 
 
+.ais-RefinementList:empty {
+  display: none;
+  }
