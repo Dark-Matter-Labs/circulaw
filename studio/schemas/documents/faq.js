@@ -12,6 +12,18 @@ export default {
       type: 'string',
     },
     {
+      title: 'Meta Page Title',
+      name: 'metaTitle',
+      type: 'string',
+      description: 'SEO',
+    },
+    {
+      title: 'Meta Description',
+      name: 'metaDescribe',
+      type: 'string',
+      description: 'SEO',
+    },
+    {
       title: 'Slug',
       name: 'slug',
       type: 'slug',

@@ -26,6 +26,18 @@ export default {
       },
     },
     {
+      title: 'Meta Page Title',
+      name: 'metaTitle',
+      type: 'string',
+      description: 'SEO',
+    },
+    {
+      title: 'Meta Description',
+      name: 'metaDescribe',
+      type: 'string',
+      description: 'SEO',
+    },
+    {
       title: 'Copy',
       name: 'aboutPageContent',
       type: 'array',
