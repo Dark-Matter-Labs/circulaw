@@ -26,9 +26,19 @@ export default function InstrumentPage({ preview, data }) {
       </Layout>
     </PreviewSuspense>
   ) : Object.keys(router.query).length > 0 ? (
-    <Layout title={data?.instrument?.titel} pageUrl={router.asPath}>
-      <Instrument data={data} />
-    </Layout>
+    data?.instrument?.metaTitle !== undefined && data?.instrument?.metaDescribe !== undefined ? (
+      <Layout
+        title={data?.instrument?.metaTitle}
+        pageUrl={router.asPath}
+        description={data?.instrument?.description}
+      >
+        <Instrument data={data} />
+      </Layout>
+    ) : (
+      <Layout title={data?.instrument?.titel} pageUrl={router.asPath}>
+        <Instrument data={data} />
+      </Layout>
+    )
   ) : (
     <Layout></Layout>
   );
