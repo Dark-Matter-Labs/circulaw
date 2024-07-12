@@ -12,7 +12,7 @@ export default function InstrumentCard({ instrument, images }) {
             <div className='flex items-center w-full h-44 sm:md-0 sm:w-64 sm:h-44 rounded-cl sm:mr-6 mb-4 sm:mb-0 relative '>
               {instrument.featuredImage && (
                 <Image
-                  src={urlFor(instrument?.featuredImage)?.url()}
+                  src={urlFor(instrument?.featuredImage).url()}
                   alt={instrument?.featuredImage?.altText}
                   fill
                   className='absolute rounded-cl object-cover'
@@ -125,7 +125,7 @@ export default function InstrumentCard({ instrument, images }) {
               <div className='flex items-center w-full h-44 sm:md-0 sm:w-64 sm:h-44 rounded-cl sm:mr-6 mb-4 sm:mb-0 relative '>
                 {instrument.featuredImage && (
                   <Image
-                    src={urlFor(instrument?.featuredImage)?.url()}
+                    src={urlFor(instrument?.featuredImage).url()}
                     alt={instrument?.featuredImage?.altText}
                     fill
                     className='absolute rounded-cl object-cover'
