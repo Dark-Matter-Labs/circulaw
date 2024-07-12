@@ -62,7 +62,7 @@ export default function NewsPage({ data }) {
             {data?.featured.map((item, id) => (
               <div
                 className={`${
-                  item.image
+                  item.image != null
                     ? 'col-span-1 flex-col sm:col-span-2 sm:flex-cols-2'
                     : 'col-span-1 flex-col gap-3'
                 }`}

@@ -20,7 +20,7 @@ export default function SummaryComponent({ lawData }) {
           <div className='mb-6 sm:mb-0 flex items-center justify-center max-h-80'>
             {lawData?.introImage && (
               <Image
-                src={urlFor(lawData?.introImage)?.url() ?? ''}
+                src={urlFor(lawData?.introImage).url() ?? ''}
                 alt={lawData?.imageAlt}
                 width={525}
                 height={307}
