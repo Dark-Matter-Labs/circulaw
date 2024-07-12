@@ -35,25 +35,63 @@ export default function ThemeIndexPage({ preview, data }) {
     );
   } else if (Object.keys(router.query).length > 0) {
     if (data?.themaData?.thema?._type === 'simpleThema') {
-      return (
-        <Layout title={`${data?.themaData?.thema?.themaName}`} pageUrl={router.asPath}>
-          <SimpleThemaLayout
-            thema={data?.themaData?.thema}
-            numberOfLaws={data?.themaData?.length}
-            instruments={data?.themaData?.instruments ?? []}
-          />
-        </Layout>
-      );
+      if (
+        data?.themaData?.thema?.metaTitle !== undefined &&
+        data?.themaData?.thema?.metaDescribe !== undefined
+      ) {
+        return (
+          <Layout
+            title={`${data?.themaData?.thema?.metaTitle}`}
+            pageUrl={router.asPath}
+            description={data?.themaData?.thema?.metaDescribe}
+          >
+            <SimpleThemaLayout
+              thema={data?.themaData?.thema}
+              numberOfLaws={data?.themaData?.length}
+              instruments={data?.themaData?.instruments ?? []}
+            />
+          </Layout>
+        );
+      } else {
+        return (
+          <Layout title={`${data?.themaData?.thema?.themaName}`} pageUrl={router.asPath}>
+            <SimpleThemaLayout
+              thema={data?.themaData?.thema}
+              numberOfLaws={data?.themaData?.length}
+              instruments={data?.themaData?.instruments ?? []}
+            />
+          </Layout>
+        );
+      }
     } else {
-      return (
-        <Layout title={`${data?.themaData?.thema?.themaName}`} pageUrl={router.asPath}>
-          <ThemeLayout
-            featuredLaws={data?.themaData?.featured}
-            thema={data?.themaData?.thema}
-            numberOfLaws={data?.themaData?.length}
-          />
-        </Layout>
-      );
+      if (
+        data?.themaData?.thema?.metaTitle !== undefined &&
+        data?.themaData?.thema?.metaDescribe !== undefined
+      ) {
+        return (
+          <Layout
+            title={`${data?.themaData?.thema?.metaTitle}`}
+            pageUrl={router.asPath}
+            description={data?.themaData?.thema?.metaDescribe}
+          >
+            <ThemeLayout
+              featuredLaws={data?.themaData?.featured}
+              thema={data?.themaData?.thema}
+              numberOfLaws={data?.themaData?.length}
+            />
+          </Layout>
+        );
+      } else {
+        return (
+          <Layout title={`${data?.themaData?.thema?.themaName}`} pageUrl={router.asPath}>
+            <ThemeLayout
+              featuredLaws={data?.themaData?.featured}
+              thema={data?.themaData?.thema}
+              numberOfLaws={data?.themaData?.length}
+            />
+          </Layout>
+        );
+      }
     }
   } else {
     return <Layout></Layout>;

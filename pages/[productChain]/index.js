@@ -41,18 +41,37 @@ export default function ProductChainPage({ productChainData, instrumentCount, th
   const router = useRouter();
 
   if (Object.keys(router.query).length > 0) {
-    return (
-      <Layout title={`${productChainData?.pcName}`} pageUrl={router.asPath}>
-        <PCLayout
-          productChainData={productChainData}
-          totalInstruments={instrumentCount}
-          themaList={themaCards}
-          impactList={productChainData?.impactItems}
-          ambitionList={productChainData?.ambitionItems}
-          links={productChainData?.pcLinks}
-        />
-      </Layout>
-    );
+    if (productChainData?.metaTitle !== undefined && productChainData?.metaDescribe !== undefined) {
+      return (
+        <Layout
+          title={`${productChainData?.metaTitle}`}
+          pageUrl={router.asPath}
+          description={`${productChainData?.metaDescribe}`}
+        >
+          <PCLayout
+            productChainData={productChainData}
+            totalInstruments={instrumentCount}
+            themaList={themaCards}
+            impactList={productChainData?.impactItems}
+            ambitionList={productChainData?.ambitionItems}
+            links={productChainData?.pcLinks}
+          />
+        </Layout>
+      );
+    } else {
+      return (
+        <Layout title={`${productChainData?.pcName}`} pageUrl={router.asPath}>
+          <PCLayout
+            productChainData={productChainData}
+            totalInstruments={instrumentCount}
+            themaList={themaCards}
+            impactList={productChainData?.impactItems}
+            ambitionList={productChainData?.ambitionItems}
+            links={productChainData?.pcLinks}
+          />
+        </Layout>
+      );
+    }
   } else {
     return <Layout></Layout>;
   }

@@ -44,6 +44,18 @@ export default {
       group: 'devOnly',
     },
     {
+      title: 'Meta Page Title',
+      name: 'metaTitle',
+      type: 'string',
+      description: 'SEO',
+    },
+    {
+      title: 'Meta Description',
+      name: 'metaDescribe',
+      type: 'string',
+      description: 'SEO',
+    },
+    {
       title: 'Slug',
       name: 'slug',
       type: 'slug',

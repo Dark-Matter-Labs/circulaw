@@ -22,9 +22,19 @@ export default function AboutPage({ preview, data }) {
       </Layout>
     </PreviewSuspense>
   ) : Object.keys(router.query).length > 0 ? (
-    <Layout title={'Over CircuLaw - ' + data?.aboutPage?.pageTitle} pageUrl={router.asPath}>
-      <AboutPageComponent data={data} aboutPageSlugs={data?.aboutPageSlugs} />
-    </Layout>
+    data?.aboutPage?.metaTitle !== undefined && data?.aboutPage?.metaDescribe !== undefined ? (
+      <Layout
+        title={'Over - ' + data?.aboutPage?.metaTitle}
+        pageUrl={router.asPath}
+        description={data?.aboutPage?.metaDescribe}
+      >
+        <AboutPageComponent data={data} aboutPageSlugs={data?.aboutPageSlugs} />
+      </Layout>
+    ) : (
+      <Layout title={'Over - ' + data?.aboutPage?.pageTitle} pageUrl={router.asPath}>
+        <AboutPageComponent data={data} aboutPageSlugs={data?.aboutPageSlugs} />
+      </Layout>
+    )
   ) : (
     <Layout></Layout>
   );
