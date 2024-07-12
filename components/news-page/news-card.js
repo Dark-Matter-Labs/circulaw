@@ -26,7 +26,7 @@ export default function NewsCard({ data }) {
           {data.image && (
             <div className='w-full h-80 relative rounded-t-cl'>
               <Image
-                src={urlFor(data?.image)?.url()}
+                src={urlFor(data?.image).url()}
                 alt={data?.newsTitle + 'image'}
                 fill
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
@@ -108,7 +108,7 @@ export default function NewsCard({ data }) {
           {data.image && (
             <div className='w-full h-80 relative rounded-t-cl'>
               <Image
-                src={urlFor(data?.image)?.url()}
+                src={urlFor(data?.image).url()}
                 alt={data?.newsTitle + 'image'}
                 fill
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
@@ -197,7 +197,7 @@ export default function NewsCard({ data }) {
         {data.image && (
           <div className='w-full h-80 relative rounded-t-cl'>
             <Image
-              src={urlFor(data?.image)?.url()}
+              src={urlFor(data?.image).url()}
               alt={data?.newsTitle + 'image'}
               fill
               sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
