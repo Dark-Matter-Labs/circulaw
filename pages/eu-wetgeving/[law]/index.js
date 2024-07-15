@@ -28,7 +28,6 @@ const lawQuery = `
 }
 `;
 
-
 export default function LawSummaryPage({ lawData, lawSummary }) {
   const router = useRouter();
   const query = router.query.tab ?? 'overzicht';
@@ -143,10 +142,7 @@ export default function LawSummaryPage({ lawData, lawSummary }) {
           {query === 'relevantie-voor-de-circulaire-economie' && (
             <div className='global-margin my-20 '>
               <div className='max-w-xl 2xl:max-w-2xl'>
-                <PortableText
-                  value={lawData?.ceContent}
-                  components={portableTextComponents}
-                />
+                <PortableText value={lawData?.ceContent} components={portableTextComponents} />
               </div>
             </div>
           )}
@@ -168,7 +164,7 @@ export async function getStaticProps({ params }) {
   const law = { law: params?.law ?? '' };
   const lawSummary = await client.fetch(lawSummaryQuery, law);
   const lawData = await client.fetch(lawQuery, law);
- 
+
   if (!lawSummary) {
     return {
       notFound: true,
