@@ -482,11 +482,11 @@ export default function Nav(props) {
                                     <Disclosure.Panel className='ml-4'>
                                       <ul>
                                         <li className='p-base h-10 my-2 last:mb-2 text-green-600 cursor-pointer flex items-center'>
-                                        <Link
-                                              href={'/eu-wetgeving'}
-                                              onClick={() => setMobileMenuIsOpen(false)}
-                                            >
-                                          Overzicht
+                                          <Link
+                                            href={'/eu-wetgeving'}
+                                            onClick={() => setMobileMenuIsOpen(false)}
+                                          >
+                                            Overzicht
                                           </Link>
                                         </li>
                                         {props?.euSlugs?.map((euPage) => (
