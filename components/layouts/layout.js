@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import Script from 'next/script';
 import CookieConsent from '@/components/cookie-banner';
 import Nav from '@/components/nav';
 import Footer from '@/components/nav/footer';
@@ -28,6 +30,14 @@ export default function Layout({
   const aboutNavItems = aboutPageSlugs;
   const vraagSlug = vraagAntwoordSlug?.slug;
 
+  useEffect(() => {
+  
+    window.googleTranslateElementInit = () => {
+     new window.google.translate.TranslateElement({ pageLanguage: 'nl' }, 'google_translate_element');
+    };
+  
+   }, []);
+
   return (
     <>
       <Nav
@@ -37,6 +47,7 @@ export default function Layout({
         navItems={navItems}
         homePageHeader={homePageHeader}
       />
+      <div id="google_translate_element" style={{ position: 'fixed', right: 0, top: 100, zIndex: 1000, backgroundColor:'rgba(255, 255, 255, 0.7)', borderRadius:'10px', padding:'5px', marginRight: '20px'}}></div>
       <Head>
         <title>{`${title} - CircuLaw`}</title>
         <meta name='description' content={description} />
@@ -57,7 +68,18 @@ export default function Layout({
         <meta property='og:image:alt' content='CircuLaw logo' />
         <meta property='og:image:type' content='image/png' />
         <meta property='og:url' content={siteUrl + pageUrl} />
+        
       </Head>
+      <Script
+     src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></Script>
+
+    {/* Google Translate CSS */}
+    <link
+     rel="stylesheet"
+     type="text/css"
+     href="https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.26tY-h6gH9w.L.W.O/am=CAM/d=0/rs=AN8SPfpIXxhebB2A47D9J-MACsXmFF6Vew/m=el_main_css"
+    />
       <main className='w-full'>
         <PiwikProProvider
           containerId={process.env.NEXT_PUBLIC_CONTAINER_ID}
