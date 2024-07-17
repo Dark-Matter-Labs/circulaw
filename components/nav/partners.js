@@ -25,17 +25,10 @@ export default function Partners({ footerText }) {
       <div className='global-margin pb-2 text-gray-100 p-base'>
         {pathname === '/en' && (
           <p className='pb-8'>
-            Welcome to CircuLaw. This website is currently under development and in this version we
+            This website is currently under development and in this version we
             are testing the technology, design, and content of the site. The content of the site may
             be incomplete or contain errors. This means that no rights can be derived from the
-            content of this site. We would like to hear what you think, what you would like
-            differently, what you think is missing, and of course, we would also like to hear what
-            makes you happy.{' '}
-            <Link href='mailto:info@circulaw.nl'>
-              <span className='text-green-300 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>
-                Please send your feedback on this beta version.
-              </span>
-            </Link>
+            content of this site.
           </p>
         )}
         {pathname !== '/en' && (
