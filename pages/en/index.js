@@ -28,10 +28,10 @@ export default function English({ data }) {
                 The website is{' '}
                   <Link href='/' className='link-interaction-dark-bg'>
                     <span className='text-green-300 sm:link-lg inline-block hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '>
-                      in Dutch
+                      in Dutch.
                     </span>
                   </Link>{' '}
-                  only. See below instructions for translating the site to English.
+                  See below instructions for translating the site to English.
                 </p>
               </div>
             </div>
@@ -50,10 +50,10 @@ export default function English({ data }) {
                 The website is{' '}
                   <Link href='/'>
                     <span className='text-green-300 hover:underline link-base inline-block'>
-                      in Dutch
+                      in Dutch.
                     </span>
                   </Link>{' '}
-                  only. See below instructions for translating the site to English.
+                  See below instructions for translating the site to English.
                 </p>
               </div>
             </div>
@@ -74,7 +74,7 @@ export default function English({ data }) {
             <div className='col-span-1 max-w-md block w-full float-right px-8 lg:ml-6 bg-green-800 text-gray-100 sticky top-40 h-[20rem]  lg:mb-20'>
               <div className='w-full h-full grid grid-cols-1 items-center'>
                 <div className='py-6 p-base'>
-                  <p>For now, CircuLaw is available in Dutch only</p>
+                  <p>For now, CircuLaw is available in Dutch</p>
                 </div>
                 <div className='pb-6'>
                   <Link href='/'>
