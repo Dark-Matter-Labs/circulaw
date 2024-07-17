@@ -22,18 +22,16 @@ export default function English({ data }) {
                   Regulations for a circular economy
                 </h1>
                 <p className='p-base'>
-                  CircuLaw is a knowledge platform dedicated to enabling the transition to a
-                  circular economy by identifying opportunities in current law to support a circular
-                  future.
+                CircuLaw is a knowledge platform dedicated to enabling the transition to a circular economy by identifying opportunities in current Dutch and European law to support a circular future.
                 </p>
                 <p className='p-base pb-3'>
-                  For now, CircuLaw is available{' '}
+                The website is{' '}
                   <Link href='/' className='link-interaction-dark-bg'>
                     <span className='text-green-300 sm:link-lg inline-block hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '>
                       in Dutch
                     </span>
                   </Link>{' '}
-                  only.{' '}
+                  only. See below instructions for translating the site to English.
                 </p>
               </div>
             </div>
@@ -46,18 +44,16 @@ export default function English({ data }) {
                   Regulations for a circular economy
                 </h1>
                 <p className='pb-3 p-base'>
-                  CircuLaw is a knowledge platform dedicated to enabling the transition to a
-                  circular economy by identifying opportunities in current law to support a circular
-                  future.
+                CircuLaw is a knowledge platform dedicated to enabling the transition to a circular economy by identifying opportunities in current Dutch and European law to support a circular future.
                 </p>
                 <p className='p-base'>
-                  For now, CircuLaw is available{' '}
+                The website is{' '}
                   <Link href='/'>
                     <span className='text-green-300 hover:underline link-base inline-block'>
                       in Dutch
                     </span>
                   </Link>{' '}
-                  only.{' '}
+                  only. See below instructions for translating the site to English.
                 </p>
               </div>
             </div>
@@ -75,7 +71,7 @@ export default function English({ data }) {
               </div>
             </div>
 
-            <div className='col-span-1 max-w-md block w-full float-right px-8 lg:ml-6 bg-green-800 text-gray-100 h-[30rem] lg:h-[40rem] xl:h-[32rem] sticky top-40 lg:mb-20'>
+            <div className='col-span-1 max-w-md block w-full float-right px-8 lg:ml-6 bg-green-800 text-gray-100 sticky top-40 h-[20rem]  lg:mb-20'>
               <div className='w-full h-full grid grid-cols-1 items-center'>
                 <div className='py-6 p-base'>
                   <p>For now, CircuLaw is available in Dutch only</p>
@@ -84,24 +80,6 @@ export default function English({ data }) {
                   <Link href='/'>
                     <CustomButton color='home'>
                       View website (Dutch)&nbsp;
-                      <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
-                    </CustomButton>
-                  </Link>
-                </div>
-                <hr />
-                <div className='py-6'>
-                  <p className='p-base'>
-                    In preparation of the next steps for CircuLaw we have been delving into EU
-                    legislation. This resulted in a series of white papers in English.
-                  </p>
-                </div>
-                <div className='pb-6'>
-                  <Link
-                    href='https://openresearch.amsterdam/en/page/90992/europese-wet--en-regelgeving-circulaire-economie'
-                    target='_blank'
-                  >
-                    <CustomButton color='home'>
-                      View whitepapers (English)&nbsp;
                       <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
                     </CustomButton>
                   </Link>
