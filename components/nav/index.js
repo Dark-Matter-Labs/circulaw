@@ -26,7 +26,6 @@ import { Disclosure, Transition } from '@headlessui/react';
 import { ChevronDownIcon, MenuIcon, XIcon, SearchIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import Link from 'next/link';
-// import { useRouter } from 'next/router';
 import { useState, useEffect, useCallback, useRef } from 'react';
 import Lottie from 'react-lottie';
 import { useSearchParams, usePathname } from 'next/navigation';
@@ -285,7 +284,11 @@ export default function Nav(props) {
                 </Link>
               </div>
             </div>
-            <LangSwitch background='dark' />
+            <LangSwitch
+              background='dark'
+              translateOpen={props.translateOpen}
+              setTranslateOpen={props.setTranslateOpen}
+            />
           </div>
         </div>
       </>
@@ -371,12 +374,19 @@ export default function Nav(props) {
             </div>
             <div className='flex flex-col justify-between'>
               {pathname === '/' ? (
-                <div className='hidden lgNav:flex flex-row justify-end mb-4'>
-                  <LangSwitch background='dark' />
+                <div className='hidden lgNav:flex flex-row justify-end mb-2'>
+                  <LangSwitch
+                    background='dark'
+                    translateOpen={props.translateOpen}
+                    setTranslateOpen={props.setTranslateOpen}
+                  />
                 </div>
               ) : (
                 <div className='hidden lgNav:flex flex-row justify-end mb-4'>
-                  <LangSwitch />
+                  <LangSwitch
+                    translateOpen={props.translateOpen}
+                    setTranslateOpen={props.setTranslateOpen}
+                  />
                 </div>
               )}
 
@@ -574,7 +584,10 @@ export default function Nav(props) {
                               closeMenu={setMobileMenuIsOpen}
                             />
                             <div className='flex flex-row items-end w-full justify-end pt-4 '>
-                              <LangSwitch />
+                              <LangSwitch
+                                translateOpen={props.translateOpen}
+                                setTranslateOpen={props.setTranslateOpen}
+                              />
                             </div>
                           </div>
                         </div>

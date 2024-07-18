@@ -268,3 +268,9 @@ html {
 .ais-RefinementList:empty {
   display: none;
   }
+
+  .goog-te-combo {
+    border-width: 2px;
+    border-color: #25C38B; 
+    border-radius: 10px;
+  }

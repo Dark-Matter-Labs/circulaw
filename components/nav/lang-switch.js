@@ -1,8 +1,6 @@
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { GlobeIcon } from '@heroicons/react/outline';
 
-export default function LangSwitch({ background }) {
-  const pathname = usePathname();
+export default function LangSwitch({ background, translateOpen, setTranslateOpen }) {
   return (
     <div
       className={`${
@@ -12,17 +10,13 @@ export default function LangSwitch({ background }) {
       <span
         className={`${background === 'dark' ? 'link-interaction-dark-bg' : 'link-interaction'}`}
       >
-        <Link className={pathname === '/en' ? '' : 'font-semibold'} href='/'>
-          NL
-        </Link>
-      </span>
-      <span className='px-1 enLink'>|</span>
-      <span
-        className={`${background === 'dark' ? 'link-interaction-dark-bg' : 'link-interaction'}`}
-      >
-        <Link className={pathname === '/en' ? 'font-semibold' : ''} href='/en'>
-          EN
-        </Link>
+        <button
+          onClick={() => {
+            setTranslateOpen(!translateOpen);
+          }}
+        >
+          <GlobeIcon className=' h-6 w-6 text-gray-100 hover:text-green-400' />
+        </button>
       </span>
     </div>
   );
