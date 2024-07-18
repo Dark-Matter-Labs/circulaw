@@ -373,7 +373,6 @@ export default function Nav(props) {
               )}
             </div>
             <div className=''>
-
               {/* Mobile button/NAV */}
               <div className='inset-y-0 float-right flex items-center pt-2 lgNav:hidden'>
                 <button
@@ -845,7 +844,7 @@ export default function Nav(props) {
                 </div>
 
                 <DesktopSimpleButton name='Nieuws' url='/nieuws' />
-                <DesktopSimpleButton name='Vraag & antwoord' url='/vraag-en-antwoord' />
+                <DesktopSimpleButton name='FAQ' url='/vraag-en-antwoord' />
                 <DesktopSimpleButton name='Contact' url='/contact' />
 
                 {/* SEARCH MENU */}
@@ -1015,21 +1014,21 @@ export default function Nav(props) {
                   )}
                 </div>
                 {pathname === '/' ? (
-                <div className='hidden lgNav:block pl-4 pt-1 '>
-                  <LangSwitch
-                    background='dark'
-                    translateOpen={props.translateOpen}
-                    setTranslateOpen={props.setTranslateOpen}
-                  />
-                </div>
-              ) : (
-                <div className='hidden lgNav:block pl-4 pt-1'>
-                  <LangSwitch
-                    translateOpen={props.translateOpen}
-                    setTranslateOpen={props.setTranslateOpen}
-                  />
-                </div>
-              )}
+                  <div className='hidden lgNav:block  '>
+                    <LangSwitch
+                      background='dark'
+                      translateOpen={props.translateOpen}
+                      setTranslateOpen={props.setTranslateOpen}
+                    />
+                  </div>
+                ) : (
+                  <div className='hidden lgNav:block '>
+                    <LangSwitch
+                      translateOpen={props.translateOpen}
+                      setTranslateOpen={props.setTranslateOpen}
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </>
