@@ -25,10 +25,10 @@ export default function Partners({ footerText }) {
       <div className='global-margin pb-2 text-gray-100 p-base'>
         {pathname === '/en' && (
           <p className='pb-8'>
-            This website is currently under development and in this version we
-            are testing the technology, design, and content of the site. The content of the site may
-            be incomplete or contain errors. This means that no rights can be derived from the
-            content of this site.
+            This website is currently under development and in this version we are testing the
+            technology, design, and content of the site. The content of the site may be incomplete
+            or contain errors. This means that no rights can be derived from the content of this
+            site.
           </p>
         )}
         {pathname !== '/en' && (
