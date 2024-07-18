@@ -372,23 +372,7 @@ export default function Nav(props) {
                 </>
               )}
             </div>
-            <div className='flex flex-col justify-between'>
-              {pathname === '/' ? (
-                <div className='hidden lgNav:flex flex-row justify-end mb-2'>
-                  <LangSwitch
-                    background='dark'
-                    translateOpen={props.translateOpen}
-                    setTranslateOpen={props.setTranslateOpen}
-                  />
-                </div>
-              ) : (
-                <div className='hidden lgNav:flex flex-row justify-end mb-4'>
-                  <LangSwitch
-                    translateOpen={props.translateOpen}
-                    setTranslateOpen={props.setTranslateOpen}
-                  />
-                </div>
-              )}
+            <div className=''>
 
               {/* Mobile button/NAV */}
               <div className='inset-y-0 float-right flex items-center pt-2 lgNav:hidden'>
@@ -1030,6 +1014,22 @@ export default function Nav(props) {
                     </FloatingFocusManager>
                   )}
                 </div>
+                {pathname === '/' ? (
+                <div className='hidden lgNav:block pl-4 pt-1 '>
+                  <LangSwitch
+                    background='dark'
+                    translateOpen={props.translateOpen}
+                    setTranslateOpen={props.setTranslateOpen}
+                  />
+                </div>
+              ) : (
+                <div className='hidden lgNav:block pl-4 pt-1'>
+                  <LangSwitch
+                    translateOpen={props.translateOpen}
+                    setTranslateOpen={props.setTranslateOpen}
+                  />
+                </div>
+              )}
               </div>
             </div>
           </>

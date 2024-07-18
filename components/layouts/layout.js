@@ -69,7 +69,7 @@ export default function Layout({
           className='h-6 w-6 text-green-800 hover:text-green-900 float-right cursor-pointer'
         />
         <h3 className='heading-2xl-semibold text-green-800 max-w-xs'>
-          Vertaal de website via ‘Google Translate’
+        Let Google translate this website
         </h3>
         <div id='google_translate_element' className=''>
           <p className='p-xs italic max-w-xs py-4'>
