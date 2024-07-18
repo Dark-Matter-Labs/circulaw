@@ -188,7 +188,7 @@ export default function ThemeLevelSearch({ serverState, url, thema, props }) {
 
                         <div className='flex flex-col mr-4'>
                           <div className='flex flex-row w-full justify-between items-center'>
-                            <h4 className='heading-xl-semibold mb-1'>Juridische haalbaarheid</h4>
+                            <h4 className='heading-xl-semibold mb-1'>Juridische houdbaarheid</h4>
                             <JHTooltip>
                               <svg
                                 className='w-6 h-6 fill-current text-gray-20 mb-2'
@@ -404,7 +404,7 @@ export default function ThemeLevelSearch({ serverState, url, thema, props }) {
               </div>
               <div className='flex flex-col mr-12'>
                 <div className='flex flex-row w-full justify-between items-center mr-12'>
-                  <h4 className='heading-xl-semibold mb-1'>Juridische haalbaarheid</h4>
+                  <h4 className='heading-xl-semibold mb-1'>Juridische houdbaarheid</h4>
                   <JHTooltip>
                     <svg className='w-6 h-6 fill-current text-gray-20 mb-2' viewBox='0 0 26 26'>
                       <circle cx='12' cy='15' r='10' fill='#676868' />
