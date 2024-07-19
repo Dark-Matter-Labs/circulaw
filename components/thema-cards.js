@@ -43,7 +43,7 @@ export default function ThemaCard({ themaCards }) {
             </Link>
           ))}
           <li className='w-full h-[470px] flex-grow bg-green-50 border border-gray-200 rounded-cl group'>
-            <Link href='/contact' className='w-full h-full'>
+            <Link href='/nieuwsbrief' className='w-full h-full'>
               <div className='h-full w-full flex flex-col flex-grow p-8 justify-between'>
                 <h3 className='heading-2xl-semibold text-green-600'>Nieuwe thema’s</h3>
                 <div>
@@ -85,7 +85,7 @@ export default function ThemaCard({ themaCards }) {
           </Link>
         ))}
         <div className='w-full bg-green-50 border border-gray-200 rounded-cl'>
-          <Link href='/contact' className='w-full h-full'>
+          <Link href='/nieuwsbrief' className='w-full h-full'>
             <div className='h-full w-full flex flex-col justify-between flex-grow p-6'>
               <h3 className='heading-2xl-semibold pb-4 text-green-600'>Nieuwe thema’s</h3>
               <p className='p-base text-gren-800'>

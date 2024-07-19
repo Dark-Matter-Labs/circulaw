@@ -1,29 +1,22 @@
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { GlobeAltIcon } from '@heroicons/react/outline';
 
-export default function LangSwitch({ background }) {
-  const pathname = usePathname();
+export default function LangSwitch({ background, translateOpen, setTranslateOpen }) {
   return (
     <div
       className={`${
-        background === 'dark' ? 'text-gray-100' : 'text-green-800'
-      } flex justify-center items-center`}
+        background === 'dark' ? 'bg-green-50 text-green-600' : 'bg-green-600 text-green-50'
+      }  ml-4 lg:ml-4 rounded-clSm`}
     >
-      <span
-        className={`${background === 'dark' ? 'link-interaction-dark-bg' : 'link-interaction'}`}
+      <button
+        className='h-full relative p-sm group z-100 flex flex-row items-center'
+        onClick={() => {
+          setTranslateOpen(!translateOpen);
+        }}
       >
-        <Link className={pathname === '/en' ? '' : 'font-semibold'} href='/'>
-          NL
-        </Link>
-      </span>
-      <span className='px-1 enLink'>|</span>
-      <span
-        className={`${background === 'dark' ? 'link-interaction-dark-bg' : 'link-interaction'}`}
-      >
-        <Link className={pathname === '/en' ? 'font-semibold' : ''} href='/en'>
-          EN
-        </Link>
-      </span>
+        <span className='flex items-center justify-center rounded-clSm h-6 w-7'>
+          <GlobeAltIcon className='h-4 w-4' />
+        </span>
+      </button>
     </div>
   );
 }

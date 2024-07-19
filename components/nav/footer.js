@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import LangSwitch from './lang-switch';
 import CustomButton from '@/components/custom-button';
 import Partners from '@/components/nav/partners';
 import ActionPanel from '@/components/section-action-panel';
@@ -265,9 +264,6 @@ export default function Footer(props) {
                               </a>
                             </li>
                           ))}
-                          <li className='flex justify-start text-gray-100 items-center'>
-                            <LangSwitch background='dark' />
-                          </li>
                         </ul>
                       </div>
                       <div className='hidden sm:block'>

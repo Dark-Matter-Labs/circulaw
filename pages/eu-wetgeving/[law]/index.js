@@ -21,14 +21,16 @@ const lawSummaryQuery = `
 }
 `;
 
-const lawQuery = `
-*[_type =="euLaw" && slug.current == $law][0] {
-    ..., 
-    "introImage": introImage.asset->.url,
+const lawTabQuery = `
+*[_type in ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab'] && euLawReference->.slug.current == $law] {
+  ...,  
 }
 `;
 
 export default function LawSummaryPage({ lawData, lawSummary }) {
+  const euCircularEconomyTab = lawData?.filter((tab) => tab._type === 'euCircularEconomyTab')[0];
+  const euLocalTab = lawData?.filter((tab) => tab._type === 'euLocalTab')[0];
+  const euEuropeTab = lawData?.filter((tab) => tab._type === 'euEuropeTab')[0];
   const router = useRouter();
   const query = router.query.tab ?? 'overzicht';
   const [selectedTab, setSelectedTab] = useState(query);
@@ -60,7 +62,7 @@ export default function LawSummaryPage({ lawData, lawSummary }) {
                   />
                 </div>
               </div>
-              <h1 className='mb-[60px] sm:mb-[94px] heading-5xl-semibold sm:p-7xl-bold text-gray-100 max-w-4xl'>
+              <h1 className='mb-[60px] sm:mb-[94px] heading-2xl-semibold sm:heading-5xl-semibold text-gray-100 max-w-4xl'>
                 {' '}
                 {lawSummary?.title}
               </h1>
@@ -134,15 +136,18 @@ export default function LawSummaryPage({ lawData, lawSummary }) {
             </div>
           )}
           {query === 'verplichtingen-voor-europese-lidstaten' && (
-            <ScrollPagesTabContent content={lawData?.europeContent} />
+            <ScrollPagesTabContent content={euEuropeTab?.europeContent} />
           )}
           {query === 'relevantie-voor-regionale-en-lokale-overheden' && (
-            <ScrollPagesTabContent content={lawData?.localContent} />
+            <ScrollPagesTabContent content={euLocalTab?.localContent} />
           )}
           {query === 'relevantie-voor-de-circulaire-economie' && (
             <div className='global-margin my-20 '>
               <div className='max-w-xl 2xl:max-w-2xl'>
-                <PortableText value={lawData?.ceContent} components={portableTextComponents} />
+                <PortableText
+                  value={euCircularEconomyTab?.ceContent}
+                  components={portableTextComponents}
+                />
               </div>
             </div>
           )}
@@ -163,7 +168,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const law = { law: params?.law ?? '' };
   const lawSummary = await client.fetch(lawSummaryQuery, law);
-  const lawData = await client.fetch(lawQuery, law);
+  const lawData = await client.fetch(lawTabQuery, law);
 
   if (!lawSummary) {
     return {

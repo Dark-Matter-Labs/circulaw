@@ -22,10 +22,12 @@ export default function English({ data }) {
                   Regulations for a circular economy
                 </h1>
                 <p className='p-base'>
-                CircuLaw is a knowledge platform dedicated to enabling the transition to a circular economy by identifying opportunities in current Dutch and European law to support a circular future.
+                  CircuLaw is a knowledge platform dedicated to enabling the transition to a
+                  circular economy by identifying opportunities in current Dutch and European law to
+                  support a circular future.
                 </p>
                 <p className='p-base pb-3'>
-                The website is{' '}
+                  The website is{' '}
                   <Link href='/' className='link-interaction-dark-bg'>
                     <span className='text-green-300 sm:link-lg inline-block hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '>
                       in Dutch.
@@ -44,10 +46,12 @@ export default function English({ data }) {
                   Regulations for a circular economy
                 </h1>
                 <p className='pb-3 p-base'>
-                CircuLaw is a knowledge platform dedicated to enabling the transition to a circular economy by identifying opportunities in current Dutch and European law to support a circular future.
+                  CircuLaw is a knowledge platform dedicated to enabling the transition to a
+                  circular economy by identifying opportunities in current Dutch and European law to
+                  support a circular future.
                 </p>
                 <p className='p-base'>
-                The website is{' '}
+                  The website is{' '}
                   <Link href='/'>
                     <span className='text-green-300 hover:underline link-base inline-block'>
                       in Dutch.
