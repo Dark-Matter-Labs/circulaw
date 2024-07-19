@@ -21,7 +21,6 @@ const lawSummaryQuery = `
 }
 `;
 
-
 const lawTabQuery = `
 *[_type in ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab'] && euLawReference->.slug.current == $law] {
   ...,  
@@ -29,7 +28,6 @@ const lawTabQuery = `
 `;
 
 export default function LawSummaryPage({ lawData, lawSummary }) {
-
   const euCircularEconomyTab = lawData?.filter((tab) => tab._type === 'euCircularEconomyTab')[0];
   const euLocalTab = lawData?.filter((tab) => tab._type === 'euLocalTab')[0];
   const euEuropeTab = lawData?.filter((tab) => tab._type === 'euEuropeTab')[0];
@@ -146,7 +144,10 @@ export default function LawSummaryPage({ lawData, lawSummary }) {
           {query === 'relevantie-voor-de-circulaire-economie' && (
             <div className='global-margin my-20 '>
               <div className='max-w-xl 2xl:max-w-2xl'>
-                <PortableText value={euCircularEconomyTab?.ceContent} components={portableTextComponents} />
+                <PortableText
+                  value={euCircularEconomyTab?.ceContent}
+                  components={portableTextComponents}
+                />
               </div>
             </div>
           )}
