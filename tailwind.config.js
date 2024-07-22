@@ -36,7 +36,7 @@ module.exports = {
         'gray-800': '#1F2223',
       },
       fontFamily: {
-        jakarta: ['Plus Jakarta Sans', 'sans-serif']
+        jakarta: ['var(--font-plus-jakarta-sans)'],
       },
       fontSize: {
         xxs: '12px',
