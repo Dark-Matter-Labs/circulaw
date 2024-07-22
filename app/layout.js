@@ -1,9 +1,8 @@
 import '../global.css';
 import 'tailwindcss/tailwind.css';
-
 import { Plus_Jakarta_Sans } from 'next/font/google';
 
-
+import globalMeta from '@/utils/global-meta';
 import Layout from '@/components/layouts/layout'
 
 const plus_Jakarta_Sans = Plus_Jakarta_Sans({
@@ -12,6 +11,13 @@ const plus_Jakarta_Sans = Plus_Jakarta_Sans({
   display: 'swap',
   variable: '--font-plus-jakarta-sans',
 })
+
+export const metadata = {
+  title: globalMeta.siteName,
+  description: globalMeta.description,
+  keywords: globalMeta.keywords
+}
+
 
 export default function RootLayout({children}) {
   return (

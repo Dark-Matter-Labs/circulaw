@@ -21,9 +21,6 @@ async function getData() {
 }
   
 
-export const metadata = {
-    title: 'Next.jsxxx',
-  }
 
 export default async function Page() {
     const data = await getData()
