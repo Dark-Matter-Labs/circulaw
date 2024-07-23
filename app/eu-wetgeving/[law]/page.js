@@ -3,24 +3,9 @@ import { client } from '@/lib/sanity';
 import SocialButtons from '@/components/social-buttons';
 import Tabs from '@/components/eu-law/tabs';
 import TabContent from '@/components/eu-law/tab-content';
+import { EU_LAW_PATHS_QUERY, LAW_TAB_QUERY, LAW_SUMMARY_QUERY } from '@/lib/queries';
 
-const EU_LAW_PATHS_QUERY = `
-*[_type =="euLaw" && defined(slug.current)][].slug.current
-`;
 
-const LAW_SUMMARY_QUERY = `
-
-*[_type =="euLaw" && slug.current == $law][0] {
-    ..., 
-    "introImage": introImage.asset->.url,
-}
-`;
-
-const LAW_TAB_QUERY = `
-*[_type in ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab'] && euLawReference->.slug.current == $law] {
-  ...,  
-}
-`;
 
 export async function generateStaticParams() {
   const laws = await client.fetch(EU_LAW_PATHS_QUERY);

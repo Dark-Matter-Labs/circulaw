@@ -7,7 +7,6 @@ import ScrollPagesTabContent from './scroll-tab-content';
 import { portableTextComponents } from '@/lib/portable-text/pt-components';
 
 export default function TabContent({ summaryData, tabData }) {
-  console.log(tabData);
   const searchParams = useSearchParams();
   let selectedTab = searchParams.get('tab');
   if (!selectedTab) {
