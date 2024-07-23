@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
 import { Fragment, useState } from 'react';

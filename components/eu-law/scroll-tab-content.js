@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import ScrollTabMobileMenu from './scroll-tab-mobile-menu';
 import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import { PortableText } from '@portabletext/react';

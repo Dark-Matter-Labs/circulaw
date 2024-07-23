@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { LinkIcon } from '@heroicons/react/outline';
 import {
   EmailShareButton,

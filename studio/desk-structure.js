@@ -46,7 +46,6 @@ export const Structure = (S) =>
           S.documentTypeList('euLaw')
             .title('Inhoud per EU wet')
             .child((euLawId) =>
-              // console.log(euLawId),
               S.documentList()
                 .title('Instruments')
                 .filter(
