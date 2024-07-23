@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useEffect, useState } from 'react';
 import Script from 'next/script';
 import { XIcon } from '@heroicons/react/outline';
@@ -15,10 +15,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Layout({
-  children,
-  homePageHeader,
-}) {
+export default function Layout({ children, homePageHeader }) {
   const [translateOpen, setTranslateOpen] = useState(false);
   const { data: aboutPageSlugs } = useSWR(groq`${siteSettingsQuerys.overCirulaw}`, fetcher);
   const { data: euSlugs } = useSWR(groq`${siteSettingsQuerys.euSlugsQuery}`, fetcher);

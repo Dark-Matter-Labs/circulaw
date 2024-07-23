@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 
 export default function DesktopNavCard({ navData, closeNav }) {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   const { CustomEvent } = usePiwikPro();
   return (

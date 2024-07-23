@@ -1,32 +1,38 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { ArrowDownIcon } from '@heroicons/react/outline'
-import CustomButton from '@/components/custom-button'
-import EULawCard from '@/components/eu-law/eu-law-card'
-import { client } from '@/lib/sanity'
-import { EU_LAW_OVERVIEW_QUERY } from '@/lib/queries'
-import ScrollButton from '@/components/eu-law/scroll-button'
-
-
+import Link from 'next/link';
+import Image from 'next/image';
+import { ArrowDownIcon } from '@heroicons/react/outline';
+import CustomButton from '@/components/custom-button';
+import EULawCard from '@/components/eu-law/eu-law-card';
+import { client } from '@/lib/sanity';
+import { EU_LAW_OVERVIEW_QUERY } from '@/lib/queries';
+import ScrollButton from '@/components/eu-law/scroll-button';
+import globalMeta from '@/utils/global-meta';
 
 export const metadata = {
-    title: 'EU wetgeving - CircuLaw',
-}
+  title: 'EU wetgeving - CircuLaw',
+  metadataBase: new URL(globalMeta.siteUrl + '/eu-wetgeving'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'nl-NL': '/nl-NL',
+    },
+  },
+};
 
 async function getEuLaws() {
-    const res = client.fetch(EU_LAW_OVERVIEW_QUERY)
-    if (!res) {
-        throw new Error('failed to fetch data')
-    }
-    return res
+  const res = client.fetch(EU_LAW_OVERVIEW_QUERY);
+  if (!res) {
+    throw new Error('failed to fetch data');
+  }
+  return res;
 }
 
 export default async function Page() {
-    const data = await getEuLaws()
+  const data = await getEuLaws();
 
-    return (
-        <>
-        <div className='bg-[url("/bg-eu.png")] pt-3 overflow-hidden bg-center	bg-no-repeat bg-cover'>
+  return (
+    <>
+      <div className='bg-[url("/bg-eu.png")] pt-3 overflow-hidden bg-center	bg-no-repeat bg-cover'>
         <div className='flex flex-col justify-between global-margin h-full relative z-10 mt-10'>
           <div className='pt-6 mb-20'>
             <Link
@@ -124,7 +130,6 @@ export default async function Page() {
           </div>
         ))}
       </div>
-        </>
-    )
+    </>
+  );
 }
-

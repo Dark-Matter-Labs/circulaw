@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
-
 import { client } from '@/lib/sanity';
 import HomePageAboutSection from '@/components/home-page-about-section';
 import HomePageEUSection from '@/components/home-page-eu-section';
@@ -9,24 +8,21 @@ import LinkIcon from '@/components/link-icon';
 import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
 import PCHomePage from '@/components/product-chain-page/product-chain-homepage';
-import {HOME_PAGE_QUERY} from '@/lib/queries'
+import { HOME_PAGE_QUERY } from '@/lib/queries';
 
 async function getData() {
-    const res = await client.fetch(HOME_PAGE_QUERY)
+  const res = await client.fetch(HOME_PAGE_QUERY);
 
-    if (!res) {
-        throw new Error('failed to fetch data')
-    }
-    return res
+  if (!res) {
+    throw new Error('failed to fetch data');
+  }
+  return res;
 }
-  
-
 
 export default async function Page() {
-    const data = await getData()
+  const data = await getData();
   return (
-<>
-
+    <>
       <div className='bg-gray-100 py-12 sm:pb-24 sm:pt-18 -z-50' name='thema'>
         <div className='global-margin -z-20'>
           <h2 className='heading-2xl-semibold sm:heading-5xl-semibold pt-8 text-green-600 border-gray-600 border-b pb-6'>
@@ -58,7 +54,6 @@ export default async function Page() {
 
       <div className='bg-gray-100 sm:pt-0 pb-12 sm:pb-24'>
         <div className='global-margin'>
-             
           <HomePageEUSection euData={data.euData} />
         </div>
       </div>
@@ -69,7 +64,7 @@ export default async function Page() {
             <h3 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 w-full border-b pb-6 border-green-800'>
               Uitgelichte nieuwsberichten
             </h3>
-            
+
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-6 py-10 overflow-hidden'>
               {data.newsItems.featured.map((item, id) => (
                 <div
@@ -84,7 +79,7 @@ export default async function Page() {
                   {item._type === 'newsCard' && <FeaturedCard data={item} />}
                 </div>
               ))}
-            </div> 
+            </div>
             <div className='p-base-bold flex justify-end items-center text-green-600'>
               <Link
                 href='/nieuws'
@@ -95,11 +90,10 @@ export default async function Page() {
               </Link>
             </div>
           </div>
-          
+
           <HomePageAboutSection aboutSection={data.aboutSection} />
         </div>
       </div>
-      </>
+    </>
   );
 }
-
