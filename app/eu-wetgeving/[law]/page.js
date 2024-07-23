@@ -5,11 +5,8 @@ import Tabs from '@/components/eu-law/tabs';
 import TabContent from '@/components/eu-law/tab-content';
 import { EU_LAW_PATHS_QUERY, LAW_TAB_QUERY, LAW_SUMMARY_QUERY } from '@/lib/queries';
 
-
-
 export async function generateStaticParams() {
   const laws = await client.fetch(EU_LAW_PATHS_QUERY);
-
   return laws.map((law) => ({
     law: law.slug,
   }));
