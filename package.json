@@ -63,7 +63,6 @@
     "react-xarrows": "^2.0.2",
     "sanity-algolia": "^1.1.0",
     "sharp": "^0.33.3",
-    "swr": "^1.0.1",
     "use-persisted-state": "^0.3.3"
   },
   "devDependencies": {

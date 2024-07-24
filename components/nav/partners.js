@@ -12,9 +12,15 @@ export default function Partners({ footerText, partnerLogos }) {
       {pathname === '/' && (
         <div className='global-margin pb-12 px-4 lg:pb-16'>
           <div className='heading-3xl-semibold text-gray-100 pl-3 sm:pl-6 lg:pl-8'>Partners</div>
-          <ParnerSection partners={partnerLogos?.developingPartners} partnerType='Ontwikkelpartners' />
+          <ParnerSection
+            partners={partnerLogos?.developingPartners}
+            partnerType='Ontwikkelpartners'
+          />
           <ParnerSection partners={partnerLogos?.knowledge} partnerType='Kennispartners' />
-          <ParnerSection partners={partnerLogos?.financingPartners} partnerType='Financieringspartners' />
+          <ParnerSection
+            partners={partnerLogos?.financingPartners}
+            partnerType='Financieringspartners'
+          />
         </div>
       )}
       <div className='global-margin pb-2 text-gray-100 p-base'>

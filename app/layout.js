@@ -55,20 +55,22 @@ async function getNavData() {
 }
 
 async function getPartnerLogos() {
-  const partnerLogos = await client.fetch(PARTNERS_QUERY)
+  const partnerLogos = await client.fetch(PARTNERS_QUERY);
   if (!partnerLogos) {
-    throw new Error('could not fetch partnerLogos')
+    throw new Error('could not fetch partnerLogos');
   }
-  return partnerLogos
+  return partnerLogos;
 }
 
 export default async function RootLayout({ children }) {
   const navData = await getNavData();
-  const partnerLogos = await getPartnerLogos()
+  const partnerLogos = await getPartnerLogos();
   return (
     <html lang='nl' className={plus_Jakarta_Sans.variable}>
       <body>
-          <Layout navData={navData} partnerLogos={partnerLogos}>{children}</Layout>
+        <Layout navData={navData} partnerLogos={partnerLogos}>
+          {children}
+        </Layout>
       </body>
     </html>
   );
