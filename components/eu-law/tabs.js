@@ -1,13 +1,11 @@
 'use client';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import { useState } from 'react';
 
 export default function Tabs({ summaryData }) {
-  const searchParams = useSearchParams();
-  let selectedTab = searchParams.get('tab');
-  if (!selectedTab) {
-    selectedTab = 'overzicht';
-  }
+
+  const [selectedTab, setSelectedTab] = useState('overzicht')
+
 
   return (
     <div className='sticky top-16 lgNav:top-24 shadow-lg z-50'>
@@ -24,6 +22,7 @@ export default function Tabs({ summaryData }) {
                 pathname: `/eu-wetgeving/${summaryData?.slug?.current}`,
                 query: { tab: 'overzicht' },
               }}
+              onClick={() => setSelectedTab('overzicht')}
             >
               Overzicht
             </Link>
@@ -37,6 +36,7 @@ export default function Tabs({ summaryData }) {
                 pathname: `/eu-wetgeving/${summaryData?.slug?.current}`,
                 query: { tab: 'verplichtingen-voor-europese-lidstaten' },
               }}
+              onClick={() => setSelectedTab('verplichtingen-voor-europese-lidstaten')}
             >
               Verplichtingen voor Europese lidstaten
             </Link>
@@ -50,6 +50,7 @@ export default function Tabs({ summaryData }) {
                 pathname: `/eu-wetgeving/${summaryData?.slug?.current}`,
                 query: { tab: 'relevantie-voor-regionale-en-lokale-overheden' },
               }}
+              onClick={() => setSelectedTab('relevantie-voor-regionale-en-lokale-overheden')}
             >
               Relevantie voor regionale en lokale overheden{' '}
             </Link>
@@ -63,6 +64,7 @@ export default function Tabs({ summaryData }) {
                 pathname: `/eu-wetgeving/${summaryData?.slug?.current}`,
                 query: { tab: 'relevantie-voor-de-circulaire-economie' },
               }}
+              onClick={() => setSelectedTab('relevantie-voor-de-circulaire-economie')}
             >
               Relevantie voor de circulaire economie
             </Link>

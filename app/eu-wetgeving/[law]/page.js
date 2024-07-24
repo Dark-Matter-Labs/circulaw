@@ -63,9 +63,9 @@ export default async function EULawPage({ params }) {
           </div>
         </div>
 
-        {/* tabs desktop */}
-        <Suspense>
+        
         <Tabs summaryData={summaryData} />
+        <Suspense>
         <TabContent summaryData={summaryData} tabData={tabData} />
         </Suspense>
       </div>
