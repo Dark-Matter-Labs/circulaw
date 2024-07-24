@@ -27,7 +27,7 @@ import { Disclosure, Transition } from '@headlessui/react';
 import { ChevronDownIcon, MenuIcon, XIcon, SearchIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect, useCallback, useRef, Suspense } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Lottie from 'react-lottie';
 import { useSearchParams, usePathname } from 'next/navigation';
 
@@ -298,7 +298,6 @@ export default function Nav(props) {
   return (
 
     <>
-    <Suspense>
      
        <div className='flex w-96 justify-center mx-auto -mb-9 relative z-110' name='top'>
         <BetaBanner />
@@ -1045,7 +1044,6 @@ export default function Nav(props) {
           <HomepageHeader homePageHeader={props.homePageHeader} />
         </div>
       )}
-       </Suspense>     
     </>
   );
 }
