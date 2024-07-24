@@ -27,7 +27,7 @@ import { Disclosure, Transition } from '@headlessui/react';
 import { ChevronDownIcon, MenuIcon, XIcon, SearchIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import Lottie from 'react-lottie';
 import { usePathname } from 'next/navigation';
 import SearchButton from './searchButton';
@@ -970,12 +970,13 @@ export default function Nav(props) {
                                     }
                                     onChange={onChange()}
                                   />
-
-                                  <SearchButton
-                                    linkRef={linkRef}
-                                    searchIndex={searchIndex}
-                                    searchQuery={searchQuery}
-                                  />
+                                  <Suspense>
+                                    <SearchButton
+                                      linkRef={linkRef}
+                                      searchIndex={searchIndex}
+                                      searchQuery={searchQuery}
+                                    />
+                                  </Suspense>
                                   <button
                                     type='reset'
                                     title='Clear the search query'
