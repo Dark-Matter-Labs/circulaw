@@ -27,9 +27,10 @@ import { Disclosure, Transition } from '@headlessui/react';
 import { ChevronDownIcon, MenuIcon, XIcon, SearchIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Lottie from 'react-lottie';
-import { useSearchParams, usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
+import SearchButton from './searchButton';
 
 const defaultOptions = {
   loop: true,
@@ -41,7 +42,6 @@ const defaultOptions = {
 };
 
 export default function Nav(props) {
-  const searchParams = useSearchParams();
   const pathname = usePathname();
   const { CustomEvent } = usePiwikPro();
   const [scrollEffect, setScrollEffect] = useState(false);
@@ -59,15 +59,6 @@ export default function Nav(props) {
 
   const [searchIndex, setSearchIndex] = useState('instruments');
   const [searchQuery, setSearchQuery] = useState('');
-
-  const createQueryString = useCallback(
-    (name, value) => {
-      const params = new URLSearchParams(searchParams.toString());
-      params.set(name, value);
-      return params.toString();
-    },
-    [searchParams],
-  );
 
   const onChange = () => (e) => {
     const value = e.target.value;
@@ -980,27 +971,11 @@ export default function Nav(props) {
                                     onChange={onChange()}
                                   />
 
-                                  <button type='submit'>
-                                    <Link
-                                      // onClick={handleSubmit()}
-                                      ref={linkRef}
-                                      href={`${
-                                        searchIndex === 'instruments'
-                                          ? `/zoeken/instrumenten?${searchIndex}${createQueryString(
-                                              '[query]',
-                                              searchQuery,
-                                            )}`
-                                          : `/zoeken/over-circulaw?${searchIndex}${createQueryString(
-                                              '[query]',
-                                              searchQuery,
-                                            )}`
-                                      }`}
-                                      className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl flex items-center justify-center hover:bg-green-200 hover:border-green-200'
-                                    >
-                                      Zoeken
-                                    </Link>
-                                  </button>
-
+                                  <SearchButton
+                                    linkRef={linkRef}
+                                    searchIndex={searchIndex}
+                                    searchQuery={searchQuery}
+                                  />
                                   <button
                                     type='reset'
                                     title='Clear the search query'
