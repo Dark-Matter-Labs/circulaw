@@ -296,8 +296,11 @@ export default function Nav(props) {
     );
   }
   return (
+
     <>
-      <div className='flex w-96 justify-center mx-auto -mb-9 relative z-110' name='top'>
+    <Suspense>
+     
+       <div className='flex w-96 justify-center mx-auto -mb-9 relative z-110' name='top'>
         <BetaBanner />
       </div>
 
@@ -975,7 +978,7 @@ export default function Nav(props) {
                                     }
                                     onChange={onChange()}
                                   />
-                                  <Suspense>
+                            
                                   <button type='submit'>
                                     <Link
                                       // onClick={handleSubmit()}
@@ -996,7 +999,7 @@ export default function Nav(props) {
                                       Zoeken
                                     </Link>
                                   </button>
-                                  </Suspense>
+                                
                                   <button
                                     type='reset'
                                     title='Clear the search query'
@@ -1042,6 +1045,7 @@ export default function Nav(props) {
           <HomepageHeader homePageHeader={props.homePageHeader} />
         </div>
       )}
+       </Suspense>     
     </>
   );
 }
