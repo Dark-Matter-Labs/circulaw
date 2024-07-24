@@ -5,7 +5,7 @@ import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
 import NewsCard from '@/components/news-page/news-card';
 import Tag from '@/components/tag';
-import { newsItemsQuery } from '@/lib/queries';
+import { newsItems } from '@/lib/queries';
 import { client } from '@/lib/sanity';
 import { Popover } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
@@ -16,9 +16,9 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 export default function NewsPage({ data }) {
   const [articleType, setArticleType] = useState('Alles');
   const [notFeatured, setNotFeatured] = useState(data?.notFeatured?.slice(0, 13));
+  console.log(data, 'data')
 
   const archived = data?.notFeatured.slice(13, 25);
-
   const options = {
     day: 'numeric',
     month: 'short',
@@ -40,7 +40,7 @@ export default function NewsPage({ data }) {
         setNotFeatured(notFeatured);
       }
     }
-  }, [articleType, data.notFeatured]);
+  }, [articleType, data?.notFeatured]);
 
   const router = useRouter();
 
@@ -480,7 +480,7 @@ export default function NewsPage({ data }) {
 }
 
 export async function getStaticProps() {
-  const data = await client.fetch(newsItemsQuery);
+  const data = await client.fetch(newsItems);
   return {
     props: {
       data,
