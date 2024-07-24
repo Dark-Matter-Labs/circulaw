@@ -5,7 +5,7 @@ import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
 import NewsCard from '@/components/news-page/news-card';
 import Tag from '@/components/tag';
-import { newsItems } from '@/lib/queries';
+import { NEWS_ITEMS_QUERY } from '@/lib/queries';
 import { client } from '@/lib/sanity';
 import { Popover } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
@@ -480,7 +480,7 @@ export default function NewsPage({ data }) {
 }
 
 export async function getStaticProps() {
-  const data = await client.fetch(newsItems);
+  const data = await client.fetch(NEWS_ITEMS_QUERY);
   return {
     props: {
       data,
