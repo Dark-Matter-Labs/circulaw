@@ -38,7 +38,6 @@
     "axios": "^1.4.0",
     "cookies-next": "^2.1.1",
     "disqus-react": "^1.1.5",
-    "fuse.js": "^6.6.2",
     "next": "^14.1.1",
     "next-pagination": "^3.1.0",
     "next-sanity": "^3.1.3",
