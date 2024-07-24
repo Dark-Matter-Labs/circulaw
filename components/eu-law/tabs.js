@@ -3,9 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Tabs({ summaryData }) {
-
-  const [selectedTab, setSelectedTab] = useState('overzicht')
-
+  const [selectedTab, setSelectedTab] = useState('overzicht');
 
   return (
     <div className='sticky top-16 lgNav:top-24 shadow-lg z-50'>

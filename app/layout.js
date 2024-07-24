@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
         {/* TODO - at the moment the entire layout for every page is wrapped in suspense. This is because the Nav uses useSearchParams and this needs to be wrapped */}
         {/* We could either: remove useSearchParams from nav, e.g. make a component just for the search part of the nav which uses it, seperate the nav from the layout component */}
         <Suspense>
-        <Layout>{children}</Layout>
+          <Layout>{children}</Layout>
         </Suspense>
       </body>
     </html>

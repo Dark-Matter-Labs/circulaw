@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 import DesktopNavCard from './desktop-nav-card';
 import DesktopSimpleButton from './desktop-simple-button';
@@ -296,10 +296,8 @@ export default function Nav(props) {
     );
   }
   return (
-
     <>
-     
-       <div className='flex w-96 justify-center mx-auto -mb-9 relative z-110' name='top'>
+      <div className='flex w-96 justify-center mx-auto -mb-9 relative z-110' name='top'>
         <BetaBanner />
       </div>
 
@@ -977,7 +975,7 @@ export default function Nav(props) {
                                     }
                                     onChange={onChange()}
                                   />
-                            
+
                                   <button type='submit'>
                                     <Link
                                       // onClick={handleSubmit()}
@@ -998,7 +996,7 @@ export default function Nav(props) {
                                       Zoeken
                                     </Link>
                                   </button>
-                                
+
                                   <button
                                     type='reset'
                                     title='Clear the search query'
