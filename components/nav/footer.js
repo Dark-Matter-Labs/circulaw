@@ -30,7 +30,7 @@ const navigation = {
   ],
 };
 
-export default function Footer(props) {
+export default function Footer({ vraagSlug, aboutSlugs, footerText }) {
   const { CustomEvent } = usePiwikPro();
   const [moreInfoOpen, setMoreInfoOpen] = useState('hidden');
   const [successMessage, setSuccessMessage] = useState('hidden');
@@ -38,15 +38,6 @@ export default function Footer(props) {
   const [feedbackState, setFeedBackState] = useState('');
   const [feedback, setFeedback] = useState('');
 
-  let aboutSlugs = [];
-  if (props.aboutSlugs) {
-    aboutSlugs = props.aboutSlugs;
-  }
-
-  let FAQslug = [];
-  if (props.vraagSlug) {
-    FAQslug = props.vraagSlug;
-  }
   const pathname = usePathname();
   return (
     <>
@@ -232,7 +223,7 @@ export default function Footer(props) {
                                     className='p-base text-gray-100'
                                   >
                                     <span className='inline-block first-letter:uppercase link-interaction-light-green-bg'>
-                                      {slug.title.replaceAll('-', ' ')}
+                                      {slug.pageTitle.replaceAll('-', ' ')}
                                     </span>
                                   </a>
                                 </li>
@@ -243,15 +234,10 @@ export default function Footer(props) {
                       <div className='py-2 sm:py-0'>
                         <ul role='list' className='space-y-4'>
                           <li>
-                            <a
-                              className='p-base text-gray-100 link-interaction'
-                              href={`/${encodeURIComponent(FAQslug)}`}
-                            >
-                              {FAQslug.length > 0 && (
-                                <span className='inline-block first-letter:uppercase link-interaction-light-green-bg'>
-                                  {FAQslug.replaceAll('-', ' ')}
-                                </span>
-                              )}
+                            <a className='p-base text-gray-100 link-interaction' href={vraagSlug}>
+                              <span className='inline-block first-letter:uppercase link-interaction-light-green-bg'>
+                                Vraag en antwoord
+                              </span>
                             </a>
                           </li>
                           {navigation.other.map((item) => (
@@ -359,7 +345,7 @@ export default function Footer(props) {
           </div>
         )}
 
-        <Partners footerText={props.footerText} />
+        <Partners footerText={footerText} />
       </footer>
     </>
   );

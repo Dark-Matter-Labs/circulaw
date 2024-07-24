@@ -537,7 +537,7 @@ export default function Nav(props) {
                                               href={`/over/${aboutPage?.slug}`}
                                               onClick={() => setMobileMenuIsOpen(false)}
                                             >
-                                              {aboutPage.title}
+                                              {aboutPage.pageTitle}
                                             </Link>
                                           </li>
                                         ))}
@@ -831,10 +831,14 @@ export default function Nav(props) {
                                 id='navClick'
                                 onClick={() => {
                                   setOverMenuIsOpen(false);
-                                  CustomEvent.trackEvent('Nav click', pathname, aboutPage.title);
+                                  CustomEvent.trackEvent(
+                                    'Nav click',
+                                    pathname,
+                                    aboutPage.pageTitle,
+                                  );
                                 }}
                               >
-                                {aboutPage.title}
+                                {aboutPage.pageTitle}
                               </Link>
                             </div>
                           ))}

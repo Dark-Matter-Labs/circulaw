@@ -5,26 +5,14 @@ import { XIcon } from '@heroicons/react/outline';
 import CookieConsent from '@/components/cookie-banner';
 import Nav from '@/components/nav';
 import Footer from '@/components/nav/footer';
-import { siteSettingsQuerys, footerQuery } from '@/lib/queries';
-import { fetcher } from '@/utils/swr-fetcher';
 import PiwikProProvider from '@piwikpro/next-piwik-pro';
-import { groq } from 'next-sanity';
-import useSWR from 'swr';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Layout({ children, homePageHeader }) {
+export default function Layout({ children, homePageHeader, navData }) {
   const [translateOpen, setTranslateOpen] = useState(false);
-  const { data: aboutPageSlugs } = useSWR(groq`${siteSettingsQuerys.overCirulaw}`, fetcher);
-  const { data: euSlugs } = useSWR(groq`${siteSettingsQuerys.euSlugsQuery}`, fetcher);
-  const { data: vraagAntwoordSlug } = useSWR(groq`${siteSettingsQuerys.vraagAntwoord}`, fetcher);
-  const { data: navItems } = useSWR(groq`${siteSettingsQuerys.navQuery}`, fetcher);
-  const { data: footerTextData } = useSWR(groq`${footerQuery}`, fetcher);
-  const footerText = footerTextData;
-  const aboutNavItems = aboutPageSlugs;
-  const vraagSlug = vraagAntwoordSlug?.slug;
 
   useEffect(() => {
     window.googleTranslateElementInit = () => {
@@ -35,13 +23,15 @@ export default function Layout({ children, homePageHeader }) {
     };
   }, []);
 
+  const vraagSlug = '/vraag-en-antwoord';
+
   return (
     <>
       <Nav
         vraagSlug={vraagSlug}
-        aboutSlugs={aboutNavItems}
-        euSlugs={euSlugs}
-        navItems={navItems}
+        aboutSlugs={navData?.aboutPages}
+        euSlugs={navData?.EUSlugs}
+        navItems={navData?.themesAndProductChains}
         homePageHeader={homePageHeader}
         translateOpen={translateOpen}
         setTranslateOpen={setTranslateOpen}
@@ -88,7 +78,11 @@ export default function Layout({ children, homePageHeader }) {
         </PiwikProProvider>
       </main>
       <CookieConsent />
-      <Footer vraagSlug={vraagSlug} aboutSlugs={aboutNavItems} footerText={footerText} />
+      <Footer
+        vraagSlug={vraagSlug}
+        aboutSlugs={navData?.aboutPages}
+        footerText={navData?.footerText}
+      />
     </>
   );
 }

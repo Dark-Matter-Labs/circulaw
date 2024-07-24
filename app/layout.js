@@ -5,6 +5,8 @@ import { Plus_Jakarta_Sans } from 'next/font/google';
 import globalMeta from '@/utils/global-meta';
 import Layout from '@/components/layouts/layout';
 import { Suspense } from 'react';
+import { client } from '@/lib/sanity';
+import { NAV_QUERY } from '@/lib/queries';
 
 const plus_Jakarta_Sans = Plus_Jakarta_Sans({
   weight: ['200', '300', '400', '500', '600', '700', '800'],
@@ -45,14 +47,23 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+async function getNavData() {
+  const navData = await client.fetch(NAV_QUERY);
+  if (!navData) {
+    throw new Error('could not fetch navData');
+  }
+  return navData;
+}
+
+export default async function RootLayout({ children }) {
+  const navData = await getNavData();
   return (
     <html lang='nl' className={plus_Jakarta_Sans.variable}>
       <body>
         {/* TODO - at the moment the entire layout for every page is wrapped in suspense. This is because the Nav uses useSearchParams and this needs to be wrapped */}
         {/* We could either: remove useSearchParams from nav, e.g. make a component just for the search part of the nav which uses it, seperate the nav from the layout component */}
         <Suspense>
-          <Layout>{children}</Layout>
+          <Layout navData={navData}>{children}</Layout>
         </Suspense>
       </body>
     </html>

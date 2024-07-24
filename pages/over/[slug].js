@@ -48,6 +48,8 @@ export async function getStaticPaths() {
   };
 }
 
+// TODO - remove siteSettingsQuery
+// when moving this page to new router need to stop using siteSettingsQuery
 export async function getStaticProps({ params, preview = false }) {
   const slug = { slug: params?.slug.toString() };
   if (preview) {
