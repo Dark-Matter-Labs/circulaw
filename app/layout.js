@@ -5,7 +5,7 @@ import { Plus_Jakarta_Sans } from 'next/font/google';
 import globalMeta from '@/utils/global-meta';
 import Layout from '@/components/layouts/layout';
 import { client } from '@/lib/sanity';
-import { NAV_QUERY } from '@/lib/queries';
+import { NAV_QUERY, PARTNERS_QUERY } from '@/lib/queries';
 
 const plus_Jakarta_Sans = Plus_Jakarta_Sans({
   weight: ['200', '300', '400', '500', '600', '700', '800'],
@@ -54,12 +54,21 @@ async function getNavData() {
   return navData;
 }
 
+async function getPartnerLogos() {
+  const partnerLogos = await client.fetch(PARTNERS_QUERY)
+  if (!partnerLogos) {
+    throw new Error('could not fetch partnerLogos')
+  }
+  return partnerLogos
+}
+
 export default async function RootLayout({ children }) {
   const navData = await getNavData();
+  const partnerLogos = await getPartnerLogos()
   return (
     <html lang='nl' className={plus_Jakarta_Sans.variable}>
       <body>
-          <Layout navData={navData}>{children}</Layout>
+          <Layout navData={navData} partnerLogos={partnerLogos}>{children}</Layout>
       </body>
     </html>
   );

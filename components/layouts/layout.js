@@ -11,7 +11,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Layout({ children, homePageHeader, navData }) {
+export default function Layout({ children, homePageHeader, navData, partnerLogos }) {
   const [translateOpen, setTranslateOpen] = useState(false);
 
   useEffect(() => {
@@ -82,6 +82,7 @@ export default function Layout({ children, homePageHeader, navData }) {
         vraagSlug={vraagSlug}
         aboutSlugs={navData?.aboutPages}
         footerText={navData?.footerText}
+        partnerLogos={partnerLogos}
       />
     </>
   );

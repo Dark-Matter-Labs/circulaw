@@ -30,7 +30,7 @@ const navigation = {
   ],
 };
 
-export default function Footer({ vraagSlug, aboutSlugs, footerText }) {
+export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos }) {
   const { CustomEvent } = usePiwikPro();
   const [moreInfoOpen, setMoreInfoOpen] = useState('hidden');
   const [successMessage, setSuccessMessage] = useState('hidden');
@@ -345,7 +345,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText }) {
           </div>
         )}
 
-        <Partners footerText={footerText} />
+        <Partners footerText={footerText} partnerLogos={partnerLogos} />
       </footer>
     </>
   );
