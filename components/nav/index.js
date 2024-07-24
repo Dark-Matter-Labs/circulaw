@@ -27,7 +27,7 @@ import { Disclosure, Transition } from '@headlessui/react';
 import { ChevronDownIcon, MenuIcon, XIcon, SearchIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef, Suspense } from 'react';
 import Lottie from 'react-lottie';
 import { useSearchParams, usePathname } from 'next/navigation';
 
@@ -975,6 +975,7 @@ export default function Nav(props) {
                                     }
                                     onChange={onChange()}
                                   />
+                                  <Suspense>
                                   <button type='submit'>
                                     <Link
                                       // onClick={handleSubmit()}
@@ -995,6 +996,7 @@ export default function Nav(props) {
                                       Zoeken
                                     </Link>
                                   </button>
+                                  </Suspense>
                                   <button
                                     type='reset'
                                     title='Clear the search query'
