@@ -16,7 +16,6 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 export default function NewsPage({ data }) {
   const [articleType, setArticleType] = useState('Alles');
   const [notFeatured, setNotFeatured] = useState(data?.notFeatured?.slice(0, 13));
-  console.log(data, 'data')
 
   const archived = data?.notFeatured.slice(13, 25);
   const options = {
