@@ -1,3 +1,4 @@
+'use client'
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 import DesktopNavCard from './desktop-nav-card';
 import DesktopSimpleButton from './desktop-simple-button';
