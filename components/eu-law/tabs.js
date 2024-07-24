@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
 export default function Tabs({ summaryData }) {
   const searchParams = useSearchParams();
@@ -10,6 +11,7 @@ export default function Tabs({ summaryData }) {
   }
 
   return (
+    <Suspense fallback={<p>loading...</p>}>
     <div className='sticky top-16 lgNav:top-24 shadow-lg z-50'>
       <div className='bg-green-800 -mt-12 sm:-mt-[72px] flex overflow-x-scroll snap-x snap-mandatory no-scrollbar lgNav:block pt-4'>
         <div className='global-margin'>
@@ -70,5 +72,6 @@ export default function Tabs({ summaryData }) {
         </div>
       </div>
     </div>
+    </Suspense>
   );
 }

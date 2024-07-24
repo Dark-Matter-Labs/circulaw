@@ -1,6 +1,7 @@
 'use client';
 import { useSearchParams } from 'next/navigation';
 import { PortableText } from '@portabletext/react';
+import { Suspense } from 'react';
 
 import SummaryComponent from './summary-tab-content';
 import ScrollPagesTabContent from './scroll-tab-content';
@@ -19,6 +20,7 @@ export default function TabContent({ summaryData, tabData }) {
 
   return (
     <>
+    <Suspense fallback={<p>loading....</p>}>
       {' '}
       {selectedTab === 'overzicht' && (
         <div className=''>
@@ -41,6 +43,7 @@ export default function TabContent({ summaryData, tabData }) {
           </div>
         </div>
       )}
+      </Suspense>
     </>
   );
 }
