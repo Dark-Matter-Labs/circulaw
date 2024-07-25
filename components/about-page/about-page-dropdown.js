@@ -1,10 +1,9 @@
-'use client'
+'use client';
 import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/navigation';
 
 export default function AboutPageDropdown({ currentSlug, slugs }) {
-
   const remainingTitles = slugs?.filter((el) => el.slug !== currentSlug) ?? [];
   const currentPage = slugs?.filter((el) => el.slug === currentSlug) ?? [];
   const router = useRouter();

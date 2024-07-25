@@ -1,4 +1,4 @@
-'use client'
+'use client';
 export default function AboutPageNav({ currentSlug, slugs }) {
   return (
     <nav className='space-y-1 sticky top-64' aria-label='Sidebar'>

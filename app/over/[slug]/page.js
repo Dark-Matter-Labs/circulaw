@@ -4,7 +4,6 @@ import AboutPageComponent from '@/components/about-page';
 
 export async function generateStaticParams() {
   const slugs = await client.fetch(ABOUT_PAGE_PATHS_QUERY);
-
   return slugs.map((slug) => ({ slug }));
 }
 
@@ -20,8 +19,5 @@ async function getPageData(params) {
 
 export default async function Page({ params }) {
   const data = await getPageData(params.slug);
-  console.log(data)
-  return (
-    <AboutPageComponent data={data} />
-  );
+  return <AboutPageComponent data={data} />;
 }
