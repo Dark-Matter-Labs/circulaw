@@ -216,8 +216,8 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                           {' '}
                           <ul role='list' className='mt-4 space-y-4'>
                             {aboutSlugs &&
-                              aboutSlugs?.map((slug) => (
-                                <li key={slug.slug}>
+                              aboutSlugs?.map((slug, id) => (
+                                <li key={id}>
                                   <a
                                     href={`/over/${encodeURIComponent(slug.slug)}`}
                                     className='p-base text-gray-100'

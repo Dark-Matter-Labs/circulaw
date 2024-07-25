@@ -6,7 +6,7 @@ import Layout from '@/components/layouts/layout';
 import {
   aboutPagePathsQuery,
   aboutPageQuery,
-  siteSettingsQuerys,
+  aboutPageSlugsQuery,
   aboutPagePreviewQuery,
 } from '@/lib/queries';
 import { client } from '@/lib/sanity';
@@ -56,7 +56,7 @@ export async function getStaticProps({ params, preview = false }) {
     return { props: { preview, data: { slug } } };
   }
   const aboutPage = await client.fetch(aboutPageQuery, slug);
-  const aboutPageSlugs = await client.fetch(siteSettingsQuerys.overCirulaw);
+  const aboutPageSlugs = await client.fetch(aboutPageSlugsQuery);
 
   if (!aboutPage) {
     return {
