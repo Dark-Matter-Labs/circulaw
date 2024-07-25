@@ -13,6 +13,9 @@ const nextConfig = {
       },
     ]
   },
+  experimental: {
+    taint: true,
+  },
   transpilePackages: ['@piwikpro/next-piwik-pro'],
     images: {
       remotePatterns: [
@@ -23,5 +26,6 @@ const nextConfig = {
         },
       ],
     },
+    
   }
 module.exports = nextConfig
