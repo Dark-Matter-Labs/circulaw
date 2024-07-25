@@ -1,3 +1,4 @@
+'use client'
 import AboutPageDropdown from './about-page-dropdown';
 import AboutPageNav from './about-page-nav';
 import { portableTextComponents } from '@/lib/portable-text/pt-components';
@@ -6,14 +7,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function AboutPageComponent({ data }) {
+  console.log(data)
   return (
     <div>
       <div className='bg-about-header bg-cover bg-center h-40'></div>
       <div className='pb-8 text-gray-800 global-margin'>
         <div className='block lg:hidden w-full'>
           <AboutPageDropdown
-            currentSlug={data?.aboutPage?.slug.current}
-            slugs={data?.aboutPageSlugs}
+            currentSlug={data?.slug.current}
+            slugs={data?.slugs}
           />
         </div>
         <div className='grid grid-cols-1 w-full lg:grid-cols-3 max-w-8xl'>
@@ -25,14 +27,14 @@ export default function AboutPageComponent({ data }) {
             </div>
             <div className='max-w-3xl'>
               <h1 className='heading-2xl-semibold sm:heading-5xl-semibold lg:block sm:pt-10 py-6 sm:pb-10 text-gray-800'>
-                {data?.aboutPage?.pageTitle}
+                {data?.pageTitle}
               </h1>
               <PortableText
-                value={data?.aboutPage?.aboutPageContent}
+                value={data?.aboutPageContent}
                 components={portableTextComponents}
               />
             </div>
-            {data?.aboutPage?.slug.current === 'wetsanalyse-vanuit-circulaire-blik' && (
+            {data?.slug.current === 'wetsanalyse-vanuit-circulaire-blik' && (
               <div>
                 <Image src='/method.png' alt='image of methodology' width={768} height={1806} />
               </div>
@@ -40,14 +42,14 @@ export default function AboutPageComponent({ data }) {
           </div>
           <div className='hidden lg:block mt-3 lg:ml-12 lg:mb-20 lg:mt-32 col-span-1'>
             <AboutPageNav
-              currentSlug={data?.aboutPage?.slug.current}
-              slugs={data?.aboutPageSlugs}
+              currentSlug={data?.slug.current}
+              slugs={data?.slugs}
             />
           </div>
           <div className='block lg:hidden'>
             <AboutPageDropdown
-              currentSlug={data?.aboutPage?.slug.current}
-              slugs={data?.aboutPageSlugs}
+              currentSlug={data?.slug.current}
+              slugs={data?.slugs}
             />
           </div>
         </div>

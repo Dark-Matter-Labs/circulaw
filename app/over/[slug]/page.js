@@ -1,5 +1,6 @@
 import { client } from '@/lib/sanity';
 import { ABOUT_PAGE_PATHS_QUERY, ABOUT_PAGE_QUERY } from '@/lib/queries';
+import AboutPageComponent from '@/components/about-page';
 
 export async function generateStaticParams() {
   const slugs = await client.fetch(ABOUT_PAGE_PATHS_QUERY);
@@ -10,7 +11,6 @@ export async function generateStaticParams() {
 async function getPageData(params) {
   const slug = params;
   const aboutPageContent = await client.fetch(ABOUT_PAGE_QUERY, { slug });
-
   if (!aboutPageContent) {
     throw new Error('could not fetch content');
   }
@@ -20,6 +20,8 @@ async function getPageData(params) {
 
 export default async function Page({ params }) {
   const data = await getPageData(params.slug);
-    console.log(data)
-  return <></>;
+  console.log(data)
+  return (
+    <AboutPageComponent data={data} />
+  );
 }

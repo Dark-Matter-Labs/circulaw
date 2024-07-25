@@ -1,8 +1,10 @@
+'use client'
 import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 export default function AboutPageDropdown({ currentSlug, slugs }) {
+
   const remainingTitles = slugs?.filter((el) => el.slug !== currentSlug) ?? [];
   const currentPage = slugs?.filter((el) => el.slug === currentSlug) ?? [];
   const router = useRouter();
@@ -22,7 +24,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                   open ? 'rounded-tl-cl' : 'rounded-l-cl'
                 } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
               >
-                <span className='inline text-left '>{currentPage[0]?.title}</span>
+                <span className='inline text-left '>{currentPage[0]?.pageTitle}</span>
               </div>
               <div className='w-1/12 px-5 h-full pr-5 bg-green-500 grid items-center justify-center rounded-r-cl border border-green-500'>
                 <ChevronUpIcon
@@ -41,7 +43,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                   }}
                 >
                   <div className=''>
-                    <span className='block pl-3 truncate'>{remaining?.title}</span>
+                    <span className='block pl-3 truncate'>{remaining?.pageTitle}</span>
                   </div>
                 </Disclosure.Button>
               ))}

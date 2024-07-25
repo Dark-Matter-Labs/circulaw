@@ -1,3 +1,4 @@
+'use client'
 export default function AboutPageNav({ currentSlug, slugs }) {
   return (
     <nav className='space-y-1 sticky top-64' aria-label='Sidebar'>
@@ -17,7 +18,7 @@ export default function AboutPageNav({ currentSlug, slugs }) {
         >
           <span className='truncate'>
             {'>'}
-            {slug.title.replaceAll('-', ' ')}
+            {slug.pageTitle.replaceAll('-', ' ')}
           </span>
         </a>
       ))}
