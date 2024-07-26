@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import SocialButtons from '../social-buttons';
 import Tag from '../tag';
 import InstrumentMetaData from './instrument-metadata';
@@ -52,9 +52,7 @@ export default function InstrumentHeader({ data }) {
           <div className='mb-6 h-auto'>
             <div className='w-full flex'>
               <Link
-                href={`/${data?.transitionAgenda}/${data?.thema
-                  ?.toLowerCase()
-                  .replace(/ /g, '-')}`}
+                href={`/${data?.transitionAgenda}/${data?.thema?.toLowerCase().replace(/ /g, '-')}`}
                 className=''
               >
                 <Tag classes='border border-gray-100 hover:border-green-200 active:border-green-400 text-gray-100 mr-2 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>
@@ -99,10 +97,9 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-              {data?.grondpositie === true &&
-                data?.themaType !== 'thema' && (
-                  <Tag classes='bg-green-300 text-green-800 mr-2'>Grondpositie</Tag>
-                )}
+              {data?.grondpositie === true && data?.themaType !== 'thema' && (
+                <Tag classes='bg-green-300 text-green-800 mr-2'>Grondpositie</Tag>
+              )}
 
               {data?.subsidie === true && data?.themaType === 'thema' && (
                 <Link

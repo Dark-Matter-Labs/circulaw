@@ -40,12 +40,7 @@ export default function InstrumentTable({ data }) {
               <td className='w-2/3 py-3 p-base-semibold'>
                 {data?.artikelLink ? (
                   <span className='flex justify-end sm:justify-start link-interaction text-green-500'>
-                    <a
-                      className=''
-                      target='_blank'
-                      href={data?.artikelLink}
-                      rel='noreferrer'
-                    >
+                    <a className='' target='_blank' href={data?.artikelLink} rel='noreferrer'>
                       <span className='link-interaction'>
                         {data?.artikel}
                         <LinkIcon />
@@ -61,11 +56,7 @@ export default function InstrumentTable({ data }) {
               <td className='w-1/3 py-3 p-base'>Geldig vanaf</td>
               <td className='w-2/3 py-3 p-base-semibold'>
                 <span className='flex justify-end sm:justify-start'>
-                  {!data?.lawDate ? (
-                    <span className='p-base-semibold'>TBD</span>
-                  ) : (
-                    formatDate(date)
-                  )}
+                  {!data?.lawDate ? <span className='p-base-semibold'>TBD</span> : formatDate(date)}
                 </span>
               </td>
             </tr>

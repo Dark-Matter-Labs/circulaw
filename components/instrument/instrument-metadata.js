@@ -39,9 +39,7 @@ export default function InstrumentMetaData({ data, borders }) {
           <div className='flex flex-col basis-invloed'>
             <div className='p-xs-semibold text-gray-600'>Invloed</div>
             <div className='flex items-center'>
-              <div className='p-xs-semibold text-green-500 pr-2'>
-                {data?.juridischInvloed}
-              </div>
+              <div className='p-xs-semibold text-green-500 pr-2'>{data?.juridischInvloed}</div>
               {data?.slug && (
                 <JITooltip data={data}>
                   <svg
@@ -138,9 +136,7 @@ export default function InstrumentMetaData({ data, borders }) {
           <div className='flex flex-col justify-center'>
             <div className='p-xs-semibold py-1 text-gray-600'>Invloed</div>
             <div className='flex items-center'>
-              <div className='p-xs-semibold text-green-500 pr-2'>
-                {data?.juridischInvloed}
-              </div>
+              <div className='p-xs-semibold text-green-500 pr-2'>{data?.juridischInvloed}</div>
               {data?.slug && (
                 <JITooltip data={data}>
                   <svg

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import InstrumentFeedbackBlock from './instrument-feedback-block';
 import MobileFeedback from './instrument-feedback-block-mobile';
 import InstrumentHeader from './instrument-header';
@@ -8,7 +8,6 @@ import { PortableText } from '@portabletext/react';
 import { useState, useEffect, useRef } from 'react';
 
 export default function Instrument({ data }) {
-
   const [scrollEffect, setScrollEffect] = useState(false);
   const [hidden, setHidden] = useState(false);
   const ref = useRef(null);
@@ -50,10 +49,7 @@ export default function Instrument({ data }) {
           <div className='grid grid-cols-1'>
             <div className='pb-20 max-w-[760px]'>
               <div className=''>
-                <PortableText
-                  value={data?.content}
-                  components={portableTextComponents}
-                />
+                <PortableText value={data?.content} components={portableTextComponents} />
               </div>
               <InstrumentTable data={data} />
             </div>
