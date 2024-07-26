@@ -24,7 +24,6 @@ const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
 const algoliaClient = algoliasearch(api_id, api_key);
 
 export default function ThemeLevelSearch({ thema, ...props }) {
-  console.log(props);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const transformItems = (items) => {
     const rLadderLabes = {

@@ -13,7 +13,6 @@ export default function CustomStats() {
   const [extraContent, setExtraContent] = useState([]);
   const [juridischInvloed, setJuridischInvloed] = useState([]);
 
-  console.log(uiState);
   useEffect(() => {
     setCategorie(uiState?.instruments?.refinementList?.categorie);
     setThema(uiState?.instruments?.refinementList?.thema);

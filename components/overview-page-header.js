@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function OverviewPageHeader({ props, page }) {
-  console.log(props);
   const pathname = usePathname();
   return (
     <>
