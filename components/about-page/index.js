@@ -7,7 +7,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function AboutPageComponent({ data }) {
-  console.log(data);
   return (
     <div>
       <div className='bg-about-header bg-cover bg-center h-40'></div>

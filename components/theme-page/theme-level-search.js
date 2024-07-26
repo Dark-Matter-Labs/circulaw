@@ -1,14 +1,11 @@
+'use client'
 import algoliasearch from 'algoliasearch';
-import singletonRouter from 'next/router';
 import {
-  InstantSearch,
   Hits,
   RefinementList,
   SearchBox,
-  InstantSearchSSRProvider,
   Configure,
 } from 'react-instantsearch';
-import { createInstantSearchRouterNext } from 'react-instantsearch-router-nextjs';
 import { InstrumentHit } from '@/components/search/instrument-hit';
 import CustomStats from '../search/stats';
 import Pagination from '@/components/search/pagination';
@@ -24,12 +21,15 @@ import NoResults from '../search/no-results';
 import NoResultsBoundary from '../search/no-results-boundary';
 import OverviewPageHeader from '../overview-page-header';
 
+import { InstantSearchNext } from 'react-instantsearch-nextjs';
+
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
 
 const algoliaClient = algoliasearch(api_id, api_key);
 
-export default function ThemeLevelSearch({ serverState, url, thema, props }) {
+export default function ThemeLevelSearch({ thema, ...props }) {
+  console.log(props)
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const transformItems = (items) => {
     const rLadderLabes = {
@@ -47,19 +47,10 @@ export default function ThemeLevelSearch({ serverState, url, thema, props }) {
   };
 
   return (
-    <InstantSearchSSRProvider {...serverState}>
-      <InstantSearch
+      <InstantSearchNext
         searchClient={algoliaClient}
         indexName={'instruments'}
-        routing={{
-          router: createInstantSearchRouterNext({
-            singletonRouter,
-            serverUrl: url,
-            routerOptions: {
-              cleanUrlOnDispose: false,
-            },
-          }),
-        }}
+        routing
         future={{
           preserveSharedStateOnUnmount: true,
         }}
@@ -528,7 +519,6 @@ export default function ThemeLevelSearch({ serverState, url, thema, props }) {
             </div>
           </NoResultsBoundary>
         </div>
-      </InstantSearch>
-    </InstantSearchSSRProvider>
+      </InstantSearchNext>
   );
 }

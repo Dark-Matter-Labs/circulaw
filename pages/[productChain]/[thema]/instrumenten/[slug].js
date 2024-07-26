@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import { PreviewSuspense } from 'next-sanity/preview';
 import { lazy } from 'react';
 import Instrument from '@/components/instrument';
 import Layout from '@/components/layouts/layout';
@@ -20,11 +19,9 @@ export default function InstrumentPage({ preview, data }) {
   const router = useRouter();
 
   return preview ? (
-    <PreviewSuspense>
       <Layout>
         <InstrumentPreview query={instrumentQuery} queryParams={data.slug} />
       </Layout>
-    </PreviewSuspense>
   ) : Object.keys(router.query).length > 0 ? (
     data?.instrument?.metaTitle !== undefined && data?.instrument?.metaDescribe !== undefined ? (
       <Layout

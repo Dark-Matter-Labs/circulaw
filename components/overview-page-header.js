@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function OverviewPageHeader({ props, page }) {
+  console.log(props)
   const pathname = usePathname();
   return (
     <>
@@ -27,7 +28,7 @@ export default function OverviewPageHeader({ props, page }) {
             </Link>
             <Link href={`/${props.transitionAgenda}/${props.thema}`}>
               <span className='capitalize link-interaction w-min whitespace-nowrap'>
-                {props.thema.replace('-', ' ')}{' '}
+                {props?.thema?.replace('-', ' ')}{' '}
               </span>
             </Link>
           </div>
