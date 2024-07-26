@@ -1,9 +1,10 @@
+'use client'
 import { useEffect, useState } from 'react';
 import InstrumentCard from '../instrument/instrument-card';
 
 export default function ThemeBottomSection({ featuredLaws, thema }) {
   const [images, setImages] = useState();
-
+  console.log(featuredLaws)
   useEffect(() => {
     if (
       featuredLaws[0]?.featuredImage === null ||
@@ -38,7 +39,7 @@ export default function ThemeBottomSection({ featuredLaws, thema }) {
                   <div className='w-5 sm:w-2 bg-gradient-to-b from-[#25C38B] to-[#035E46] mr-4 rounded-full mb-10'></div>
                   <div>
                     {/* This can be a component - policy list, theme bottom section + here */}
-                    {featuredLaws.map((instrument, index) => (
+                    {featuredLaws?.map((instrument, index) => (
                       <InstrumentCard key={index} instrument={instrument} />
                     ))}
                   </div>

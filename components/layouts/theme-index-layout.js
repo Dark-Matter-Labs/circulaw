@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image';
 import Link from 'next/link';
 import { DiscussionEmbed } from 'disqus-react';
@@ -400,7 +401,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
           <div className='bg-gray-200'>
             <ThemeBottomSection featuredLaws={featuredLaws} thema={thema} />
           </div>
-          {thema.reports && (
+          {thema?.reports && (
             <div className='global-margin'>
               <ul className='grid grid-cols-1  sm:grid-cols-3 gap-x-6 my-10'>
                 {thema?.reports.map((report) => {
