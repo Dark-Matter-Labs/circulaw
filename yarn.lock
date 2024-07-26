@@ -4026,14 +4026,6 @@ react-instantsearch-nextjs@^0.3.7:
   resolved "https://registry.yarnpkg.com/react-instantsearch-nextjs/-/react-instantsearch-nextjs-0.3.7.tgz#c7f452b12a2937a778427a50d55c2cfda49daa65"
   integrity sha512-7hPf1TQrBgIltAXHMx66PB+JTdhCDvQJIz2GtnY52F1noGInd1BbZW8GytVdd+ttPxUuXDM8iRmBET7RulcG5w==
 
-react-instantsearch-router-nextjs@^7.11.1:
-  version "7.11.1"
-  resolved "https://registry.yarnpkg.com/react-instantsearch-router-nextjs/-/react-instantsearch-router-nextjs-7.11.1.tgz#22dcba6cecd5911782dd788cc3eb0090994db274"
-  integrity sha512-MgR3fm5bg68i6pasvUWEurb8S0MKjxmsL3R5XGTwMCn8JRZB+EpehcircyLmbQeGX94jlcSdK4ipfHyH/JQ7eA==
-  dependencies:
-    instantsearch.js "4.71.1"
-    react-instantsearch-core "7.11.1"
-
 react-instantsearch@^7.11.1:
   version "7.11.1"
   resolved "https://registry.yarnpkg.com/react-instantsearch/-/react-instantsearch-7.11.1.tgz#b9d4ba85151e45ac2888681173607eff1adc4f60"
