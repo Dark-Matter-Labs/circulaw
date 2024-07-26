@@ -1,9 +1,10 @@
+'use client';
 import OverviewPageHeader from '../overview-page-header';
 import Image from 'next/image';
 import Link from 'next/link';
 import Xarrow, { useXarrow } from 'react-xarrows';
 
-export default function WelkeLayout({ ...props }) {
+export default function GovLevelLayout({ ...props }) {
   const allRegionLaws = props.allRegionLaws;
   const provLaws = props.provLaws;
   const gemLaws = props.gemLaws;

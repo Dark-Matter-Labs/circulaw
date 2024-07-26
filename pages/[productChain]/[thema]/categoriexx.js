@@ -4,6 +4,7 @@ import Layout from '@/components/layouts/layout';
 import { categorieQuery } from '@/lib/queries';
 import { client } from '@/lib/sanity';
 
+// this is the same as
 const pathsQuery = `
 *[_type in ["thema", "simpleThema"] && defined(slug.current)]{
     "thema": slug.current,

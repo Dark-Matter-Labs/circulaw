@@ -1,10 +1,9 @@
-'use client'
+'use client';
 import { useEffect, useState } from 'react';
 import InstrumentCard from '../instrument/instrument-card';
 
 export default function ThemeBottomSection({ featuredLaws, thema }) {
   const [images, setImages] = useState();
-  console.log(featuredLaws)
   useEffect(() => {
     if (
       featuredLaws[0]?.featuredImage === null ||

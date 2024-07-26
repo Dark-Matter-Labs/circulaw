@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import Layout from '@/components/layouts/layout';
-import WelkeLayout from '@/components/layouts/welke-layout';
+import WelkeLayout from '@/components/layouts/gov-level-layout';
 import { govLevelQueryFunction } from '@/lib/queries';
 import { client } from '@/lib/sanity';
 import houtbouwImageMob from '@/public/bevoegdheden/bevoegdheden-houtbouw-mob.png';

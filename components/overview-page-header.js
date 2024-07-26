@@ -1,14 +1,15 @@
+'use client';
 import InstrumentLinksDropdown from '@/components/instrument/instrument-links-dropdown';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 export default function OverviewPageHeader({ props, page }) {
-  const router = useRouter();
+  const pathname = usePathname();
   return (
     <>
       <div
         className={`${
-          router.pathname.includes('categorie') ? 'mt-[50px]' : 'mt-3'
+          pathname.includes('categorie') ? 'mt-[50px]' : 'mt-3'
         } global-margin flex flex-col justify-between h-full`}
       >
         <div className='flex flex-col sm:flex-row sm:justify-between sm:items-center pt-4'>
@@ -37,9 +38,7 @@ export default function OverviewPageHeader({ props, page }) {
         </div>
         <div className='items-center grid grid-cols-10'>
           <div
-            className={`${
-              router.pathname.includes('categorie') ? 'pb-[4.75rem]' : 'pb-10'
-            } col-span-9`}
+            className={`${pathname.includes('categorie') ? 'pb-[4.75rem]' : 'pb-10'} col-span-9`}
           >
             <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-white max-w-5xl pb-1'>
               {props.title}

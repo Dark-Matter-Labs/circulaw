@@ -1,6 +1,6 @@
 import { Popover } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 export default function InstrumentLinksDropdown({ page, props }) {
   const router = useRouter();
