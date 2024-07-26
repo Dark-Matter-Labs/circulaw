@@ -16,11 +16,10 @@ import { Link as ScrollLink } from 'react-scroll';
 import { useEffect } from 'react';
 
 export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
-
   useEffect(() => {
     localStorage.clear();
   });
-  
+
   return (
     <>
       <div>

@@ -19,9 +19,9 @@ export default function InstrumentPage({ preview, data }) {
   const router = useRouter();
 
   return preview ? (
-      <Layout>
-        <InstrumentPreview query={instrumentQuery} queryParams={data.slug} />
-      </Layout>
+    <Layout>
+      <InstrumentPreview query={instrumentQuery} queryParams={data.slug} />
+    </Layout>
   ) : Object.keys(router.query).length > 0 ? (
     data?.instrument?.metaTitle !== undefined && data?.instrument?.metaDescribe !== undefined ? (
       <Layout

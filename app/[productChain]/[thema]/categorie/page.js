@@ -8,23 +8,23 @@ export async function generateStaticParams() {
 }
 
 async function getCategoryData(params) {
-  const thema = params
-  const categorieData = await client.fetch(CATEGORIE_PAGE_QUERY, {thema})
+  const thema = params;
+  const categorieData = await client.fetch(CATEGORIE_PAGE_QUERY, { thema });
   if (!categorieData) {
-    throw new Error('could not get categorie data')
+    throw new Error('could not get categorie data');
   }
-  return categorieData
+  return categorieData;
 }
 
-export default async function CategoriePage({params}) {
-  const categorieContent = await getCategoryData(params.thema)
+export default async function CategoriePage({ params }) {
+  const categorieContent = await getCategoryData(params.thema);
   return (
     <ExpertiseLayout
-    thema={params?.thema}
-    transitionAgenda={params?.productChain}
-    expertiseData={categorieContent}
-    title={`${params?.themaName} instrumenten per categorie`}
-    // p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
-  />
-  )
+      thema={params?.thema}
+      transitionAgenda={params?.productChain}
+      expertiseData={categorieContent}
+      title={`${params?.themaName} instrumenten per categorie`}
+      // p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
+    />
+  );
 }

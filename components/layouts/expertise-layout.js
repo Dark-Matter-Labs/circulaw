@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import ExplinationText from '../expertise-page/explination-text';
 import TabButton from '../expertise-page/tab-button';
 import TabLayout from '../expertise-page/tab-layout';
