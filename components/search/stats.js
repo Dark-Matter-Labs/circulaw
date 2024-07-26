@@ -9,28 +9,39 @@ export default function CustomStats() {
   const [thema, setThema] = useState([]);
   const [overheidslaag, setOverheidslaag] = useState([]);
   const [rLadder, setRLadder] = useState([]);
+  const [juridischeHaalbaarheid, setJuridischeHaalbaarheid] = useState([]);
+  const [extraContent, setExtraContent] = useState([]);
+  const [juridischInvloed, setJuridischInvloed] = useState([]);
 
+  
+  console.log(uiState)
   useEffect(() => {
     setCategorie(uiState?.instruments?.refinementList?.categorie);
     setThema(uiState?.instruments?.refinementList?.thema);
     setRLadder(uiState?.instruments?.refinementList?.rLadder);
     setOverheidslaag(uiState?.instruments?.refinementList?.overheidslaag);
+    setJuridischInvloed(uiState?.instruments?.refinementList?.juridischInvloed)
+    setJuridischeHaalbaarheid(uiState?.instruments?.refinementList?.juridischeHaalbaarheid)
+    setExtraContent(uiState?.instruments?.refinementList?.extraContent)
   }, [
     uiState?.instruments?.refinementList?.categorie,
     uiState?.instruments?.refinementList?.thema,
     uiState?.instruments?.refinementList?.overheidslaag,
     uiState?.instruments?.refinementList?.rLadder,
+    uiState?.instruments?.refinementList?.juridischInvloed,
+    uiState?.instruments?.refinementList?.juridischeHaalbaarheid,
+    uiState?.instruments?.refinementList?.extraContent
   ]);
 
   return (
     <>
       {/* No query and no filter */}
-      {query === '' && !categorie && !thema && !overheidslaag && !rLadder && (
+      {query === '' && !categorie && !thema && !overheidslaag && !rLadder && !juridischInvloed && !juridischeHaalbaarheid && !extraContent && (
         <div className='heading-2xl sm:heading-3xl'>{nbHits} resultaten.</div>
       )}
 
       {/* Query and no filter */}
-      {query !== '' && !categorie && !thema && !overheidslaag && !rLadder && (
+      {query !== '' && !categorie && !thema && !overheidslaag && !rLadder && !juridischInvloed && !juridischeHaalbaarheid && !extraContent && (
         <div className='heading-2xl sm:heading-3xl'>
           {nbHits} resultaten gevonden voor:{' '}
           <span className='font-semibold'>&apos;{query}&apos;</span>.
@@ -41,7 +52,9 @@ export default function CustomStats() {
       {(categorie !== undefined ||
         thema !== undefined ||
         overheidslaag !== undefined ||
-        rLadder !== undefined) &&
+        rLadder !== undefined ||
+        juridischInvloed !== undefined ||
+      juridischeHaalbaarheid !== undefined || extraContent !== undefined) &&
       query === '' ? (
         <div className='heading-2xl sm:heading-3xl'>
           {nbHits} resultaten gevonden voor:{' '}
@@ -69,13 +82,32 @@ export default function CustomStats() {
                 {item},{' '}
               </span>
             ))}
+              {juridischInvloed &&
+            juridischInvloed.map((item) => (
+              <span className='font-semibold' key={item}>
+                {item},{' '}
+              </span>
+            ))}
+                {juridischeHaalbaarheid &&
+            juridischeHaalbaarheid.map((item) => (
+              <span className='font-semibold' key={item}>
+                {item},{' '}
+              </span>
+            ))}
+                {extraContent &&
+            extraContent.map((item) => (
+              <span className='font-semibold' key={item}>
+                {item},{' '}
+              </span>
+            ))}
         </div>
       ) : null}
 
       {(categorie !== undefined ||
         thema !== undefined ||
         overheidslaag !== undefined ||
-        rLadder !== undefined) &&
+        rLadder !== undefined ||
+        juridischInvloed !== undefined || juridischeHaalbaarheid !== undefined || extraContent !== undefined) &&
       query !== '' ? (
         <div className='heading-2xl sm:heading-3xl'>
           {nbHits} resultaten gevonden voor:{' '}
@@ -102,6 +134,24 @@ export default function CustomStats() {
             ))}
           {rLadder &&
             rLadder.map((item) => (
+              <span className='font-semibold capitalize' key={item}>
+                {item},{' '}
+              </span>
+            ))}
+            {juridischInvloed &&
+            juridischInvloed.map((item) => (
+              <span className='font-semibold capitalize' key={item}>
+                {item},{' '}
+              </span>
+            ))}
+              {juridischeHaalbaarheid &&
+            juridischeHaalbaarheid.map((item) => (
+              <span className='font-semibold capitalize' key={item}>
+                {item},{' '}
+              </span>
+            ))}
+              {extraContent &&
+            extraContent.map((item) => (
               <span className='font-semibold capitalize' key={item}>
                 {item},{' '}
               </span>
