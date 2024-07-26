@@ -7,7 +7,7 @@ import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function ThemeLayout({ ...props }) {
+export default function PCLayout({ ...props }) {
   return (
     <>
       <div>
