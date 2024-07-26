@@ -13,8 +13,14 @@ import waarvoor from '@/public/thema-card-background/waarvoor.svg';
 import commentIcon from '@/public/comment-icon.svg';
 import comments from '@/public/comments.png';
 import { Link as ScrollLink } from 'react-scroll';
+import { useEffect } from 'react';
 
 export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
+
+  useEffect(() => {
+    localStorage.clear();
+  });
+  
   return (
     <>
       <div>

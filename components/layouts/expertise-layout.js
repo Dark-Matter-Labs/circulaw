@@ -1,3 +1,4 @@
+'use client'
 import ExplinationText from '../expertise-page/explination-text';
 import TabButton from '../expertise-page/tab-button';
 import TabLayout from '../expertise-page/tab-layout';
@@ -6,7 +7,7 @@ import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
 import { useEffect, useState, useTransition } from 'react';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 export default function ExpertiseLayout({ expertiseData, ...props }) {
   const [beleid, setBeleid] = useState([]);
@@ -22,7 +23,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
 
   const [selectedTab, setSelectedTab] = useState('beleid');
   const [local, setLocal] = useState({ value: 'alle' });
-  const router = useRouter();
+  const pathname = usePathname();
   const { CustomEvent } = usePiwikPro();
 
   useEffect(() => {
@@ -286,7 +287,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
         setSelectedTab(value);
       });
 
-      CustomEvent.trackEvent('Categorie Tab Change', router.asPath, value);
+      CustomEvent.trackEvent('Categorie Tab Change', pathname, value);
     }
   }
   return (
