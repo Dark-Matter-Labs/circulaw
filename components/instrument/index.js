@@ -1,3 +1,4 @@
+'use client'
 import InstrumentFeedbackBlock from './instrument-feedback-block';
 import MobileFeedback from './instrument-feedback-block-mobile';
 import InstrumentHeader from './instrument-header';
@@ -7,6 +8,7 @@ import { PortableText } from '@portabletext/react';
 import { useState, useEffect, useRef } from 'react';
 
 export default function Instrument({ data }) {
+
   const [scrollEffect, setScrollEffect] = useState(false);
   const [hidden, setHidden] = useState(false);
   const ref = useRef(null);
@@ -38,9 +40,9 @@ export default function Instrument({ data }) {
         <div className='global-margin sm:mt-4 z-0'>
           {/* Subtitle */}
           <div className='grid grid-cols-1'>
-            {data?.instrument?.subtitel && (
+            {data?.subtitel && (
               <div className='max-w-[760px]'>
-                <h2 className='lg:block heading-xl sm:mt-2'> {data?.instrument?.subtitel}</h2>
+                <h2 className='lg:block heading-xl sm:mt-2'> {data?.subtitel}</h2>
               </div>
             )}
           </div>
@@ -49,7 +51,7 @@ export default function Instrument({ data }) {
             <div className='pb-20 max-w-[760px]'>
               <div className=''>
                 <PortableText
-                  value={data?.instrument?.content}
+                  value={data?.content}
                   components={portableTextComponents}
                 />
               </div>

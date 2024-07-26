@@ -34,7 +34,7 @@ export default function InstrumentFeedbackBlock({ data }) {
               </div>
               <Link
                 className=''
-                href={{ pathname: '/feedback', query: { instrument: data?.instrument?.titel } }}
+                href={{ pathname: '/feedback', query: { instrument: data?.titel } }}
               >
                 <CustomButton color='greenBackground'>
                   <span className='p-xs-bold sm:p-base-bold'>Ik deel mijn kennis</span>

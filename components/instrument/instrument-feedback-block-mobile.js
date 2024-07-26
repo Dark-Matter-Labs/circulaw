@@ -28,7 +28,7 @@ export default function MobileFeedback({ data }) {
               </div>
               <Link
                 className=''
-                href={{ pathname: '/feedback', query: { instrument: data?.instrument?.titel } }}
+                href={{ pathname: '/feedback', query: { instrument: data?.titel } }}
               >
                 <CustomButton color='greenBackground'>
                   <span className=''>Ik deel mijn kennis</span>
