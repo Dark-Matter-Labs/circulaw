@@ -1,11 +1,10 @@
-import Layout from '@/components/layouts/layout';
-import { ArrowRightIcon } from '@heroicons/react/outline';
-import Link from 'next/link';
+import Link from 'next/link'
+import { ArrowRightIcon } from '@heroicons/react/outline'
+
 
 export default function NotFound() {
-  return (
-    <Layout title='404' pageUrl='404'>
-      <div className='global-margin my-20 text-center flex flex-col justify-center'>
+    return (
+        <div className='global-margin my-20 text-center flex flex-col justify-center'>
         <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-gray-800 pb-2'>404</h1>
         <p className=' p-base text-gray-800'>
           We kunnen de pagina die je zoekt niet vinden. Kunnen we je verder helpen?
@@ -62,6 +61,5 @@ export default function NotFound() {
           </li>
         </ul>
       </div>
-    </Layout>
-  );
+    )
 }
