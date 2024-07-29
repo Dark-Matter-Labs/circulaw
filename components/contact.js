@@ -1,21 +1,16 @@
-import axios from 'axios';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+'use client'
 import { useState } from 'react';
+import axios from 'axios';
 import CustomButton from '@/components/custom-button';
-import Layout from '@/components/layouts/layout';
+import Link from 'next/link';
+import { scrollToTop } from '@/utils/scroll-to-top';
+
 
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/a53bd6aa-495c-416a-b8ec-2b36b6be1af9';
 
-// TODO: move function to utils
-const isBrowser = () => typeof window !== 'undefined';
-function scrollToTop() {
-  if (!isBrowser()) return;
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
 
-export default function Contact() {
-  const router = useRouter();
+export default function ContactPageComponent() {
+
   const [formStatus, setFormStatus] = useState(false);
   const [query, setQuery] = useState({
     name: '',
@@ -61,10 +56,8 @@ export default function Contact() {
         console.log(error);
       });
   };
-
-  return (
-    <Layout title='Contact' pageUrl={router.asPath}>
-      <div className='global-margin'>
+    return (
+        <div className='global-margin'>
         {!formStatus ? (
           <>
             <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pt-10'>
@@ -216,6 +209,5 @@ export default function Contact() {
           </>
         )}
       </div>
-    </Layout>
-  );
+    )
 }
