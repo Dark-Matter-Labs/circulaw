@@ -11,7 +11,7 @@ export const Structure = (S) =>
     .title('Content Types')
     .items([
       S.listItem()
-        .title('Instrumenten per thema') 
+        .title('Instrumenten per thema')
         .icon(VscLaw)
         .child(
           // List out all categories

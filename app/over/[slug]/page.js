@@ -7,7 +7,7 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export const dynamicParams = false
+export const dynamicParams = false;
 
 async function getPageData(params) {
   const slug = params;
