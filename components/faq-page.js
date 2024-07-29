@@ -66,7 +66,7 @@ export default function FAQPageComponent({ data }) {
                       >
                         <Typography
                           as='h3'
-                          className='width-1/3 heading-xl-semibold sm:heading-2xl-semibold text-green-600 mr-4'
+                          className='width-1/3 heading-xl-semibold sm:heading-3xl-semibold text-green-600 mr-4'
                         >
                           {item.question}
                         </Typography>
