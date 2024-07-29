@@ -6,6 +6,7 @@ import { client } from '@/lib/sanity';
 
 export async function generateStaticParams() {
   const productChains = await client.fetch(PC_PATHS_QUERY);
+  console.log(productChains)
   return productChains.map((productChain) => ({ productChain }));
 }
 
