@@ -8,6 +8,7 @@ import { Suspense } from 'react';
 
 export async function generateStaticParams() {
   const laws = await client.fetch(EU_LAW_PATHS_QUERY);
+  console.log(laws)
   return laws.map((law) => ({
     law: law.slug,
   }));
