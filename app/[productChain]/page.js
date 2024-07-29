@@ -2,10 +2,14 @@ import { PC_PATHS_QUERY, PRODUCT_CHAIN_PAGE_QUERY, THEMES_BY_PC_QUERY } from '@/
 import PCLayout from '@/components/layouts/product-chain-layout';
 import { client } from '@/lib/sanity';
 
+
+
 export async function generateStaticParams() {
   const productChains = await client.fetch(PC_PATHS_QUERY);
   return productChains.map((productChain) => ({ productChain }));
 }
+
+export const dynamicParams = false
 
 async function getProductChainData(params) {
   const productChain = params;
