@@ -5,7 +5,7 @@ import ThemeLayout from '@/components/layouts/theme-index-layout';
 
 export async function generateStaticParams() {
   const themas = await client.fetch(THEME_PATHS_QUERY);
-  return themas.map((thema) => ({ thema: thema.thema }));
+  return themas.map((thema) => ({ thema: thema.thema, productChain: thema.productChain }));
 }
 
 export const dynamicParams = false
