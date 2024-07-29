@@ -37,7 +37,6 @@ async function getNewsPageData(params) {
 
 export default async function NewsDetailPage({ params }) {
   const newsPageContent = await getNewsPageData(params.slug);
-  console.log(newsPageContent);
 
   return (
     <>
