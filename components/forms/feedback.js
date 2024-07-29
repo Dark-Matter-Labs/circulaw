@@ -1,6 +1,6 @@
 'use client'
 import { useRef, useState } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import { scrollToTop } from '@/utils/scroll-to-top';
 import CustomButton from '../custom-button';
@@ -10,8 +10,8 @@ import Link from 'next/link';
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/929e2e8c-bdf9-4c5f-a293-699dd63de422';
 
 export default function FeedbackComponent() {
-  const searchParams = useSearchParams()
-  const instrument = searchParams.get('instrument')
+  const params = new URLSearchParams(document.location.search);
+  const instrument = params.get('instrument')
   const router = useRouter()
   const hiddenFileInput = useRef(null);
   const [formStatus, setFormStatus] = useState(false);
