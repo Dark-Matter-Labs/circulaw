@@ -3,6 +3,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
 import { Fragment, useState } from 'react';
 
+// TODO: make one tooltip component that works for all cases. 
 export default function EUTooltip({ children, title }) {
   const [open, setOpen] = useState(false);
 

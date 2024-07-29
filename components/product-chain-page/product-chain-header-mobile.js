@@ -2,6 +2,7 @@ import bannerImage from '@/public/banner.png';
 import Image from 'next/image';
 import Link from 'next/link';
 
+// TODO: try and make these image load on the server/optimise them as they are slow
 export default function ThemePageHeaderMobile({ pageTitle }) {
   return (
     <div className='h-[300px] mt-3 sm:hidden'>

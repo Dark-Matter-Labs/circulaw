@@ -4,6 +4,7 @@ import { XIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 import { Fragment, useState } from 'react';
 
+// TODO: make one tooltip component that works for all cases. 
 export default function RLadderTooltip({ children, icon }) {
   const [open, setOpen] = useState(false);
 

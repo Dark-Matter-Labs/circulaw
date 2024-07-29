@@ -17,7 +17,6 @@ export default function SearchButton({ linkRef, searchIndex, searchQuery }) {
   return (
     <button type='submit'>
       <Link
-        // onClick={handleSubmit()}
         ref={linkRef}
         href={`${
           searchIndex === 'instruments'

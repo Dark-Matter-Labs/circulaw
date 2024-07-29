@@ -4,8 +4,7 @@ import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
 
-// refactor - make a seperate component linkWrapper and use a single feature card component.
-
+// TODO: refactor - make a seperate component linkWrapper and use a single feature card component.
 export default function FeaturedCard({ data }) {
   const event = new Date(data.newsDate);
   const options = {

@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 export default function InstrumentLinksDropdown({ page, props }) {
   const router = useRouter();
 
-  // add on click close to close the disclosure.
   if (page === 'list') {
     return (
       <Popover className='inline-block relative w-full min-w-[260px] pt-4 sm:pt-0'>

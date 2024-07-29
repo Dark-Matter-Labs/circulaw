@@ -3,6 +3,7 @@ import InstrumentLinksDropdown from '@/components/instrument/instrument-links-dr
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+// TODO: move to theme page folder
 export default function OverviewPageHeader({ props, page }) {
   const pathname = usePathname();
   return (

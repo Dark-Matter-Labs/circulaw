@@ -41,6 +41,8 @@ const defaultOptions = {
   },
 };
 
+
+// TODO: remove case for en page as it no longer exists and has been redirected. 
 export default function Nav(props) {
   const pathname = usePathname();
   const { CustomEvent } = usePiwikPro();

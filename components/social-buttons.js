@@ -15,6 +15,7 @@ const viewportType = {
   desktop: 'flex flex-row justify-center items-center',
 };
 
+// TODO: make a mobile version of this and place it more consistently accross the different pages
 export default function SocialButtons({ title, viewport }) {
   const pathname = usePathname();
   const [showLinkCopied, setShowLinkCopied] = useState(false);

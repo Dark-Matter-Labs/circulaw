@@ -3,6 +3,7 @@ import { Popover } from '@headlessui/react';
 import { ArrowUpIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 
+// TODO: Combine the mobile and desktop components into one
 export default function MobileFeedback({ data }) {
   return (
     <Popover className='bottom-0 max-w-sm h-14 z-20 sticky sm:hidden w-full'>

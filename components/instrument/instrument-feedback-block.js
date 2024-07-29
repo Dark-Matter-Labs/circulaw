@@ -3,6 +3,7 @@ import { Popover } from '@headlessui/react';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 
+// TODO: Combine the mobile and desktop components into one
 export default function InstrumentFeedbackBlock({ data }) {
   return (
     <Popover className='absolute inset-y-1/6 right-0 h-72 w-8 sm:h-96 sm:w-16 hidden sm:block'>

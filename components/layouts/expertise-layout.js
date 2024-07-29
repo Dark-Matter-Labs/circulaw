@@ -423,8 +423,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   </div>
                 </div>
               </div>
-              {/* if is pending is true do not change the tab wait for the next*/}
-
               {selectedTab === 'beleid' && (
                 <TabLayout
                   category={beleid}

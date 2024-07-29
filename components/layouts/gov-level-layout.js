@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Xarrow, { useXarrow } from 'react-xarrows';
 
+// TODO: refactor this to work on mobile and implement new design once it is ready
 export default function GovLevelLayout({ ...props }) {
   const allRegionLaws = props.allRegionLaws;
   const provLaws = props.provLaws;

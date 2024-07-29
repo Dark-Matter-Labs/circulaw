@@ -6,6 +6,7 @@ const formatDate = (date) => {
   return dateObject.toLocaleDateString();
 };
 
+// TODO: get the redisgn of this prioritised by Andrea, update schema and front end. 
 export default function InstrumentTable({ data }) {
   const [date, setDate] = useState();
   useEffect(() => {

@@ -5,6 +5,7 @@ import { XIcon } from '@heroicons/react/outline';
 import { PortableText } from '@portabletext/react';
 import { Fragment, useState } from 'react';
 
+// TODO: make one tooltip component that works for all cases. 
 export default function PCTooltip({ children, icon, title, content }) {
   const [open, setOpen] = useState(false);
 
