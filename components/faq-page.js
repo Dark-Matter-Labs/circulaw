@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import { PlusIcon, MinusIcon } from '@heroicons/react/outline';
 import Accordion from '@mui/material/Accordion';
@@ -9,7 +9,7 @@ import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
 import { useState } from 'react';
 
-// TODO: we are using materlia ui here but only for this page. 
+// TODO: we are using materlia ui here but only for this page.
 // perhaps a re-design with a different functinality so we can remove MUI
 // the hidden content is also not good for SEO
 

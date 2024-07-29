@@ -2,9 +2,8 @@ import NewsDetailPageHeader from '@/components/news-page/news-detail-page-header
 import { client } from '@/lib/sanity';
 import NewsDetailPageBody from '@/components/news-page/news-detail-page-body';
 
-
 // TODO - leaving these two queries here
-// need to refactor how news is built and then re-fetch the data in the new structure. 
+// need to refactor how news is built and then re-fetch the data in the new structure.
 // this will also improve passing newsPageContent.newsItems[0] to the components.
 const NEWS_SLUGS_QUERY = `
 *[_type == "newsPage"][0]{
