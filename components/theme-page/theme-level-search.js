@@ -271,8 +271,6 @@ export default function ThemeLevelSearch({ thema, ...props }) {
       <div className=' bg-green-600 h-[300px] sm:h-[360px]  flex items-end justify-center w-full mt-3'>
         <OverviewPageHeader props={props} />
       </div>
-      {/* TODO - implement design of search bar here */}
-
       <div className='flex sm:hidden items-center justify-center mt-4'>
         <SearchBox
           searchAsYouType={false}
