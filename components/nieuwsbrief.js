@@ -1,21 +1,12 @@
 import axios from 'axios';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { useState } from 'react';
 import CustomButton from '@/components/custom-button';
-import Layout from '@/components/layouts/layout';
+import { scrollToTop } from '@/utils/scroll-to-top';
 
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/raeqmmza';
 
-// TODO: move function to utils
-const isBrowser = () => typeof window !== 'undefined';
-function scrollToTop() {
-  if (!isBrowser()) return;
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-export default function Newsletter() {
-  const router = useRouter();
+export default function NewsLetterComponent() {
   const [formStatus, setFormStatus] = useState(false);
   const [query, setQuery] = useState({
     name: '',
@@ -62,9 +53,8 @@ export default function Newsletter() {
       });
   };
 
-  return (
-    <Layout title='Newsletter' pageUrl={router.asPath}>
-      <div className='global-margin'>
+    return (
+<div className='global-margin'>
         {!formStatus ? (
           <>
             <h1 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-600 pt-10'>
@@ -201,6 +191,5 @@ export default function Newsletter() {
           </>
         )}
       </div>
-    </Layout>
-  );
+    )
 }
