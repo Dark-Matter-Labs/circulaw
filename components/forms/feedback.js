@@ -1,9 +1,9 @@
 'use client'
-import { Suspense, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import axios from 'axios';
 import { scrollToTop } from '@/utils/scroll-to-top';
-import CustomButton from './custom-button';
+import CustomButton from '../custom-button';
 import Link from 'next/link';
 
 
@@ -91,9 +91,7 @@ export default function FeedbackComponent() {
               </h1>
               <p className='heading-2xl pt-8 max-w-3xl'>
                 Ook bezig met{' '}
-                <Suspense>
-                <span className='font-semibold'>{`‘${instrument}’`}</span>?
-                </Suspense>
+                <span className='font-semibold'>{`‘${instrument}’`}</span>
               </p>
               <p className='heading-2xl pt-4 max-w-3xl'>Deel met ons:</p>
               <ul className='heading-2xl max-w-3xl'>

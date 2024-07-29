@@ -1,6 +1,11 @@
-import NewsLetterComponent from '@/components/nieuwsbrief';
+import NewsLetterComponent from '@/components/forms/nieuwsbrief';
+import { Suspense } from 'react';
 
 
 export default function NewsLetterPage() {
-    return <NewsLetterComponent />
+    return (
+        <Suspense>
+            <NewsLetterComponent />
+        </Suspense>
+    )
 }

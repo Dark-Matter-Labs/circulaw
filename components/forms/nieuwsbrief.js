@@ -176,12 +176,12 @@ export default function NewsLetterComponent() {
                   </button>
                 </div>
               </form>
-              <h4 className='pt-8 mobile sm:desktop text-green-400'>* dit veld is verplicht</h4>
+              <h4 className='pt-8 p-base-semibold text-green-400'>* dit veld is verplicht</h4>
             </div>
           </>
         ) : (
           <>
-            <h1 className='mobile sm:desktop text-green-600 pt-10'>Bedankt!</h1>
+            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pt-10'>Bedankt!</h1>
             <p className=' p-lg py-10 max-w-2xl text-gray-800'>
               Bedankt voor je aanmelding voor onze nieuwsbrief!
             </p>
