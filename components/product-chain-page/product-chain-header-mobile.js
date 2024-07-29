@@ -1,4 +1,4 @@
-import bannerImage from '@/public/banner.png';
+import bannerImage from '@/public/banner.png'; // TODO: remname this file to be more explicative
 import Image from 'next/image';
 import Link from 'next/link';
 

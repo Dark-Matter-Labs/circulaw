@@ -4,16 +4,17 @@ import Link from 'next/link';
 import CustomButton from '@/components/custom-button';
 import Partners from '@/components/nav/partners';
 import ActionPanel from '@/components/section-action-panel';
-import ORicon from '@/public/icons/openResearch.svg';
+import ORicon from '@/public/icons/openResearch.svg'; // TODO: get this icon from Icon library
 import { ArrowUpIcon } from '@heroicons/react/outline';
 import { AiFillGithub } from 'react-icons/ai';
 import { RiLinkedinFill } from 'react-icons/ri';
 import { Link as ScrollLink } from 'react-scroll';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
-import JaIcon from '@/public/icons/ja-icon.svg';
-import NeeIcon from '@/public/icons/nee-icon.svg';
+import JaIcon from '@/public/icons/ja-icon.svg'; // TODO: get this icon from Icon library
+import NeeIcon from '@/public/icons/nee-icon.svg'; // TODO: get this icon from Icon library
 import { usePathname } from 'next/navigation';
-// import data // maybe not necessary
+
+
 const navigation = {
   other: [
     { name: 'Contact', href: '/contact', className: '' },

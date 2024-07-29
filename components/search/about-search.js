@@ -123,6 +123,7 @@ export default function AboutSearch() {
   );
 }
 
+// TODO: remove these two components and use the ones that are built with the correct design.
 function NoResultsBoundary({ children, fallback }) {
   const { results } = useInstantSearch();
 
