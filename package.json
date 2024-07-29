@@ -44,8 +44,6 @@
     "next-sanity-image": "^5.0.0",
     "next-share": "0.27.0",
     "next-sitemap": "^4.2.3",
-    "next-transpile-modules": "^10.0.1",
-    "nextjs-linkedin-insight-tag": "^0.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hotjar": "5.5.0",
