@@ -8,6 +8,8 @@ export async function generateStaticParams() {
   return themas.map((thema) => ({ thema: thema.thema, productChain: thema.productChain }));
 }
 
+export const dynamicParams = false
+
 async function getGovLeveldData(params) {
   const thema = params;
   const govLevelData = await client.fetch(GOV_LEVEL_QUERY, { thema });

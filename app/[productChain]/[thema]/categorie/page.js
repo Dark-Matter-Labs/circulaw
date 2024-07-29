@@ -7,6 +7,8 @@ export async function generateStaticParams() {
   return themas.map((thema) => ({ thema: thema.thema, productChain: thema.productChain }));
 }
 
+export const dynamicParams = false
+
 async function getCategoryData(params) {
   const thema = params;
   const categorieData = await client.fetch(CATEGORIE_PAGE_QUERY, { thema });

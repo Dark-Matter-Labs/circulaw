@@ -7,6 +7,8 @@ export async function generateStaticParams() {
   return themas.map((thema) => ({ thema: thema.thema, productChain: thema.productChain }));
 }
 
+export const dynamicParams = false
+
 async function getInstrumentListPageData(params) {
   const thema = params;
   const instrumentListPageData = await client.fetch(INSTRUMENT_LIST_PAGE_QUERY, { thema });

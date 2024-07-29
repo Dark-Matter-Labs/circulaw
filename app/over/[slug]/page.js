@@ -7,6 +7,8 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
+export const dynamicParams = false
+
 async function getPageData(params) {
   const slug = params;
   const aboutPageContent = await client.fetch(ABOUT_PAGE_QUERY, { slug });

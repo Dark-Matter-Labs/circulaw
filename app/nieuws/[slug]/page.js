@@ -26,6 +26,8 @@ export async function generateStaticParams() {
   return newsPages.newsItems.map((newsPage) => ({ slug: newsPage.slug }));
 }
 
+export const dynamicParams = false
+
 async function getNewsPageData(params) {
   const slug = params;
   const newsPageData = await client.fetch(NEWS_DETAIL_PAGE_QUERY, { slug });

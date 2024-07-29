@@ -13,6 +13,8 @@ export async function generateStaticParams() {
   }));
 }
 
+export const dynamicParams = false
+
 async function getTabData(params) {
   const law = params;
   const tabContent = client.fetch(LAW_TAB_QUERY, { law });

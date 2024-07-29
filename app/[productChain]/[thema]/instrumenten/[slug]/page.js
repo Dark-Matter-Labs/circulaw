@@ -11,6 +11,8 @@ export async function generateStaticParams() {
   }));
 }
 
+export const dynamicParams = false
+
 async function getInstrumentData(params) {
   const slug = params;
   const instrumentData = await client.fetch(INSTRUMENT_PAGE_QUERY, { slug });
