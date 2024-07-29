@@ -1,21 +1,18 @@
-import CustomButton from '@/components/custom-button';
-import Layout from '@/components/layouts/layout';
+'use client'
+import { useRef, useState } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 import axios from 'axios';
+import { scrollToTop } from '@/utils/scroll-to-top';
+import CustomButton from './custom-button';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useState, useRef } from 'react';
+
 
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/929e2e8c-bdf9-4c5f-a293-699dd63de422';
 
-const isBrowser = () => typeof window !== 'undefined';
-
-function scrollToTop() {
-  if (!isBrowser()) return;
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-export default function Feedback() {
-  const router = useRouter();
+export default function FeedbackComponent() {
+  const searchParams = useSearchParams()
+  const instrument = searchParams.get('instrument')
+  const router = useRouter()
   const hiddenFileInput = useRef(null);
   const [formStatus, setFormStatus] = useState(false);
 
@@ -26,7 +23,7 @@ export default function Feedback() {
     email: '',
     org: '',
     role: '',
-    instrument: router.query.instrument,
+    instrument: instrument,
     subscribe: 'no',
   });
 
@@ -68,7 +65,7 @@ export default function Feedback() {
           email: '',
           org: '',
           role: '',
-          instrument: router.query.instrument,
+          instrument: instrument,
           subscribe: 'no',
         });
       })
@@ -76,10 +73,8 @@ export default function Feedback() {
         console.log(error);
       });
   };
-
-  return (
-    <Layout title='Met jouw hulp maken we CircuLaw beter' pageUrl={router.asPath}>
-      <div className='bg-gray-100'>
+    return (
+        <div className='bg-gray-100'>
         <div className='global-margin'>
           {!formStatus ? (
             <>
@@ -96,7 +91,7 @@ export default function Feedback() {
               </h1>
               <p className='heading-2xl pt-8 max-w-3xl'>
                 Ook bezig met{' '}
-                <span className='font-semibold'>{`‘${router.query.instrument}’`}</span>?
+                <span className='font-semibold'>{`‘${instrument}’`}</span>?
               </p>
               <p className='heading-2xl pt-4 max-w-3xl'>Deel met ons:</p>
               <ul className='heading-2xl max-w-3xl'>
@@ -299,6 +294,5 @@ export default function Feedback() {
           )}
         </div>
       </div>
-    </Layout>
-  );
+    )
 }
