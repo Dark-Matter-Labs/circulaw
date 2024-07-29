@@ -1,55 +1,50 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import Layout from '@/components/layouts/layout';
 
 const cookies = [
-  { name: '_localConsent', description: 'bewaart je cookievoorkeuren', valid: '1 jaar' },
-  {
-    name: '_hjSessionUser',
-    description: 'creëert een unieke Hotjar ID voor deze site',
-    valid: '1 jaar',
-  },
-  {
-    name: '_hjSession',
-    description:
-      'verzamelt statistieken over de bezoeken van de gebruiker aan de website, zoals het aantal bezoeken, de gemiddelde tijd besteed aan de site en welke pagina’s zijn gelezen',
-    valid: '30 min',
-  },
-  {
-    name: '_hjRecordingEnabled',
-    description: 'wordt gezet wanneer een opname start',
-    valid: 'sessie',
-  },
-  {
-    name: '_hjClosedSurveyInvites',
-    description:
-      'geplaatst wanneer een gebruiker interactie heeft met een Link Survey invitation modal',
-    valid: '1 jaar',
-  },
-  {
-    name: '_pk_id.<appID>.<domainHash>',
-    description: 'creëert een unieke Piwik Pro ID voor deze site',
-    valid: '30 min',
-  },
-  {
-    name: '_pk_ses.<appID>.<domainHash>',
-    description:
-      'verzamelt statistieken over de bezoeken van de gebruiker aan de website, zoals het aantal bezoeken, de gemiddelde tijd besteed aan de site en welke pagina’s zijn gelezen',
-    valid: '30 min',
-  },
-  {
-    name: 'ppms_privacy_<appID>',
-    description: 'bewaart je cookievoorkeuren',
-    valid: '1 jaar',
-  },
-];
+    { name: '_localConsent', description: 'bewaart je cookievoorkeuren', valid: '1 jaar' },
+    {
+      name: '_hjSessionUser',
+      description: 'creëert een unieke Hotjar ID voor deze site',
+      valid: '1 jaar',
+    },
+    {
+      name: '_hjSession',
+      description:
+        'verzamelt statistieken over de bezoeken van de gebruiker aan de website, zoals het aantal bezoeken, de gemiddelde tijd besteed aan de site en welke pagina’s zijn gelezen',
+      valid: '30 min',
+    },
+    {
+      name: '_hjRecordingEnabled',
+      description: 'wordt gezet wanneer een opname start',
+      valid: 'sessie',
+    },
+    {
+      name: '_hjClosedSurveyInvites',
+      description:
+        'geplaatst wanneer een gebruiker interactie heeft met een Link Survey invitation modal',
+      valid: '1 jaar',
+    },
+    {
+      name: '_pk_id.<appID>.<domainHash>',
+      description: 'creëert een unieke Piwik Pro ID voor deze site',
+      valid: '30 min',
+    },
+    {
+      name: '_pk_ses.<appID>.<domainHash>',
+      description:
+        'verzamelt statistieken over de bezoeken van de gebruiker aan de website, zoals het aantal bezoeken, de gemiddelde tijd besteed aan de site en welke pagina’s zijn gelezen',
+      valid: '30 min',
+    },
+    {
+      name: 'ppms_privacy_<appID>',
+      description: 'bewaart je cookievoorkeuren',
+      valid: '1 jaar',
+    },
+  ];
 
-export default function Privacy() {
-  const router = useRouter();
-
-  return (
-    <Layout title='Cookiebeleid' pageUrl={router.asPath}>
-      <div className='global-margin my-20 max-w-2xl text-gray-800'>
+export default function CookieInfo() {
+    return (
+        <div className='global-margin my-20 max-w-2xl text-gray-800'>
         <h1 className='heading-3xl-semibold sm:heading-5xl-semibold pb-6'>Cookiebeleid CircuLaw</h1>
         <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>Wat zijn cookies?</h2>
         <p className=' p-base pb-6 max-w-4xl'>
@@ -128,6 +123,5 @@ export default function Privacy() {
           </span>
         </p>
       </div>
-    </Layout>
-  );
+    )
 }
