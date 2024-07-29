@@ -21,7 +21,6 @@
     "pre-commit": "next lint --fix"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.7.0",
     "@floating-ui/react": "^0.26.3",
     "@headlessui/react": "^1.6.0",
     "@heroicons/react": "^1.0.6",
