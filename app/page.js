@@ -2,12 +2,12 @@ import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 
 import { client } from '@/lib/sanity';
-import HomePageAboutSection from '@/components/home-page-about-section';
-import HomePageEUSection from '@/components/home-page-eu-section';
+import HomePageAboutSection from '@/components/homepage/home-page-about-section';
+import HomePageEUSection from '@/components/homepage/home-page-eu-section';
 import LinkIcon from '@/components/link-icon';
 import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
-import PCHomePage from '@/components/product-chain-page/product-chain-homepage';
+import PCHomePage from '@/components/homepage/product-chain-homepage';
 import { HOME_PAGE_QUERY } from '@/lib/queries';
 
 async function getData() {

@@ -4,7 +4,6 @@ import { ArrowRightIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import Link from 'next/link';
 
-// TODO: move to homepage components folder
 export default function HomePageAboutSection({ aboutSection }) {
   return (
     <div className='flex flex-col sm:flex-row items-center justify-between pb-12 sm:pb-24'>

@@ -1,9 +1,9 @@
-import CustomButton from './custom-button';
+import CustomButton from '../custom-button';
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 
 // TODO: Rename component and move to nav foler
-export default function ActionPanel(props) {
+export default function FooterLinkBlock(props) {
   return (
     <div className=''>
       <div className=''>

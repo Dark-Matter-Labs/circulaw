@@ -3,7 +3,6 @@ import { ArrowRightIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import Link from 'next/link';
 
-// TODO: move to homepage components folder
 export default function HomePageEUSection({ euData }) {
   return (
     <Link href='/eu-wetgeving'>

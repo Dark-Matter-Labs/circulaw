@@ -1,8 +1,7 @@
-import CustomButton from './custom-button';
+import CustomButton from '../custom-button';
 import { ArrowDownIcon } from '@heroicons/react/outline';
 import { Link as ScrollLink } from 'react-scroll';
 
-// TODO: move to homepage components folder
 export default function HomepageHeader() {
   return (
     <main className='pb-16 pt-56'>

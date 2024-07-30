@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import CustomButton from '@/components/custom-button';
 import Partners from '@/components/nav/partners';
-import ActionPanel from '@/components/section-action-panel';
+import FooterLinkBlock from './footer-link-block';
 import ORicon from '@/public/icons/openResearch.svg'; // TODO: get this icon from Icon library
 import { ArrowUpIcon } from '@heroicons/react/outline';
 import { AiFillGithub } from 'react-icons/ai';
@@ -158,14 +158,14 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                   <div className=''>
                     <div className='grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-8'>
                       <div className='sm:hidden block border-b border-gray-100 pb-4'>
-                        <ActionPanel
+                        <FooterLinkBlock
                           title='Schrijf je in voor onze CircuLaw Nieuwsbrief'
                           paragraph='Zo ben je altijd op de hoogte van het laatste CircuLaw-nieuws. '
                           buttonText='Aanmelden'
                           buttonLink='/nieuwsbrief'
                         />
                         <div className='py-4'></div>
-                        <ActionPanel
+                        <FooterLinkBlock
                           title='Doe met ons mee'
                           paragraph='Heb je vragen, wil je je ervaringen delen of wil je een wetsanalyse laten uitvoeren op een circulair  thema of casus?'
                           buttonText='Neem contact op'
@@ -254,14 +254,14 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                         </ul>
                       </div>
                       <div className='hidden sm:block'>
-                        <ActionPanel
+                        <FooterLinkBlock
                           title='Schrijf je in voor onze CircuLaw Nieuwsbrief'
                           paragraph='Zo ben je altijd op de hoogte van het laatste CircuLaw-nieuws. '
                           buttonText='Aanmelden'
                           buttonLink='/nieuwsbrief'
                         />
                         <div className='py-4'></div>
-                        <ActionPanel
+                        <FooterLinkBlock
                           title='Doe met ons mee'
                           paragraph='Heb je vragen, wil je je ervaringen delen of wil je een wetsanalyse laten uitvoeren op een circulair  thema of casus?'
                           buttonText='Neem contact op'

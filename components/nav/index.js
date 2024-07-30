@@ -4,7 +4,7 @@ import DesktopNavCard from './desktop-nav-card';
 import DesktopSimpleButton from './desktop-simple-button';
 import MobileDisclosure from './mobile-disclosure';
 import MobileSimpleButton from './mobile-simple-button';
-import HomepageHeader from '@/components/homepage-header';
+import HomepageHeader from '@/components/homepage/homepage-header';
 import BetaBanner from '@/components/nav/beta-banner';
 import LangSwitch from '@/components/nav/lang-switch';
 import animationData from '@/public/CL_Home_Logo_Loop';

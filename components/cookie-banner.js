@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 
-// TODO: implement cookie consent in app router
+// TODO: implement cookie consent in app router with hotjar
 const CookieConsent = () => {
   const [consent, setConsent] = useState(true);
   useEffect(() => {
