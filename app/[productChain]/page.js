@@ -3,7 +3,7 @@ import PCLayout from '@/components/layouts/product-chain-layout';
 import { client } from '@/lib/sanity';
 
 export async function generateStaticParams() {
-  const productChains = await client.fetch(PC_PATHS_QUERY);
+  const productChains = await client.fetch(PC_PATHS_QUERY, { next: { tags: ['transitionAgenda'] } });
   return productChains.map((productChain) => ({ productChain }));
 }
 
@@ -11,7 +11,7 @@ export const dynamicParams = false;
 
 async function getProductChainData(params) {
   const productChain = params;
-  const productChainContent = await client.fetch(PRODUCT_CHAIN_PAGE_QUERY, { productChain });
+  const productChainContent = await client.fetch(PRODUCT_CHAIN_PAGE_QUERY, { productChain }, { next: { tags: ['transitionAgenda'] } });
   if (!productChainContent) {
     throw new Error('could not get product chain data');
   }
