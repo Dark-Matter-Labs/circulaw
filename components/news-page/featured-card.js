@@ -83,6 +83,7 @@ export default function FeaturedCard({ data }) {
                 src={urlFor(data?.image).url()}
                 alt={data?.newsTitle + 'image'}
                 fill
+                priority={true}
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
                 className='w-full h-full relative object-cover rounded-t-cl sm:rounded-tl-none sm:rounded-r-cl'
               />
@@ -166,6 +167,7 @@ export default function FeaturedCard({ data }) {
                 src={urlFor(data?.image).url()}
                 alt={data?.newsTitle + 'image'}
                 fill
+                priority={true}
                 className='w-full h-full relative object-cover rounded-t-cl sm:rounded-tl-none sm:rounded-r-cl'
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
               />
@@ -255,6 +257,7 @@ export default function FeaturedCard({ data }) {
               src={urlFor(data?.image).url()}
               alt={data?.newsTitle + 'image'}
               fill
+              priority={true}
               className='w-full h-full relative object-cover rounded-t-cl sm:rounded-tl-none sm:rounded-r-cl '
               sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
             />

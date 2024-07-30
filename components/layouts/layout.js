@@ -36,8 +36,6 @@ export default function Layout({ children, homePageHeader, navData, partnerLogos
         euSlugs={navData?.EUSlugs}
         navItems={navData?.themesAndProductChains}
         homePageHeader={homePageHeader}
-        translateOpen={translateOpen}
-        setTranslateOpen={setTranslateOpen}
       />
       <div
         className={classNames(

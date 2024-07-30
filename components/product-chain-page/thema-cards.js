@@ -23,6 +23,7 @@ export default function ThemaCard({ themaCards }) {
                       alt={thema?.themaName + 'image'}
                       width={1440}
                       height={720}
+                      priority={true}
                     />
                   )}
                 </div>
