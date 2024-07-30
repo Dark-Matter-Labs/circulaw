@@ -1,6 +1,26 @@
+import { useEffect } from 'react';
 import { GlobeAltIcon } from '@heroicons/react/outline';
 
+const googleTranslateElementInit = () => {
+  new window.google.translate.TranslateElement(
+    {
+      pageLanguage: 'auto',
+      autoDisplay: false,
+    },
+    'google_translate_element',
+  );
+};
+
 export default function LangSwitch({ background, translateOpen, setTranslateOpen }) {
+  useEffect(() => {
+    const addScript = document.createElement('script');
+    addScript.setAttribute(
+      'src',
+      '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
+    );
+    document.body.appendChild(addScript);
+    window.googleTranslateElementInit = googleTranslateElementInit;
+  }, []);
   return (
     <div
       className={`${

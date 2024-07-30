@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import Script from 'next/script';
+import { useState } from 'react';
 import { XIcon } from '@heroicons/react/outline';
 import CookieConsent from '@/components/cookie-banner';
 import Nav from '@/components/nav';
@@ -35,15 +34,6 @@ export default function Layout({
   const footerText = footerTextData;
   const aboutNavItems = aboutPageSlugs;
   const vraagSlug = vraagAntwoordSlug?.slug;
-
-  useEffect(() => {
-    window.googleTranslateElementInit = () => {
-      new window.google.translate.TranslateElement(
-        { pageLanguage: 'nl' },
-        'google_translate_element',
-      );
-    };
-  }, []);
 
   return (
     <>
@@ -101,7 +91,6 @@ export default function Layout({
         <meta property='og:image:type' content='image/png' />
         <meta property='og:url' content={siteUrl + pageUrl} />
       </Head>
-      <Script src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'></Script>
 
       {/* Google Translate CSS */}
       <link
