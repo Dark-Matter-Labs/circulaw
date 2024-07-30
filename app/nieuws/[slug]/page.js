@@ -22,7 +22,7 @@ const NEWS_DETAIL_PAGE_QUERY = `
 `;
 
 export async function generateStaticParams() {
-  const newsPages = await client.fetch(NEWS_SLUGS_QUERY);
+  const newsPages = await client.fetch(NEWS_SLUGS_QUERY, { next: { tags: ['newsPage'] } });
   return newsPages.newsItems.map((newsPage) => ({ slug: newsPage.slug }));
 }
 
@@ -30,7 +30,7 @@ export const dynamicParams = false;
 
 async function getNewsPageData(params) {
   const slug = params;
-  const newsPageData = await client.fetch(NEWS_DETAIL_PAGE_QUERY, { slug });
+  const newsPageData = await client.fetch(NEWS_DETAIL_PAGE_QUERY, { slug }, { next: { tags: ['newsPage'] } });
   if (!newsPageData) {
     throw new Error('could not get news detail data');
   }

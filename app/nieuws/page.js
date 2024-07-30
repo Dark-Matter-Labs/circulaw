@@ -3,7 +3,7 @@ import { client } from '@/lib/sanity';
 import NewsOverview from '@/components/news-page/news-overview';
 
 async function getNewsOverviewData() {
-  const newsOverviewData = await client.fetch(NEWS_ITEMS_QUERY);
+  const newsOverviewData = await client.fetch(NEWS_ITEMS_QUERY, { next: { tags: ['newsPage'] } });
 
   if (!newsOverviewData) {
     throw new Error('could not get news items');

@@ -3,7 +3,7 @@ import { FAQ_PAGE_QUERY } from '@/lib/queries';
 import FAQPageComponent from '@/components/faq-page';
 
 async function getFAQData() {
-  const FAQData = await client.fetch(FAQ_PAGE_QUERY);
+  const FAQData = await client.fetch(FAQ_PAGE_QUERY, { next: { tags: ['FAQpage'] } });
 
   if (!FAQData) {
     throw new Error('could not get FAQData');

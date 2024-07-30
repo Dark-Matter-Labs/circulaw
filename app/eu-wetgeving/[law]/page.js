@@ -7,7 +7,7 @@ import { EU_LAW_PATHS_QUERY, LAW_TAB_QUERY, LAW_SUMMARY_QUERY } from '@/lib/quer
 import { Suspense } from 'react';
 
 export async function generateStaticParams() {
-  const laws = await client.fetch(EU_LAW_PATHS_QUERY);
+  const laws = await client.fetch(EU_LAW_PATHS_QUERY, { next: { tags: ['euLaw'] } });
   return laws.map((law) => ({
     law: law,
   }));
@@ -17,7 +17,7 @@ export const dynamicParams = false;
 
 async function getTabData(params) {
   const law = params;
-  const tabContent = client.fetch(LAW_TAB_QUERY, { law });
+  const tabContent = client.fetch(LAW_TAB_QUERY, { law }, { next: { tags: ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab'] } });
   if (!tabContent) {
     throw new Error('data could not be fetched');
   }
@@ -26,7 +26,7 @@ async function getTabData(params) {
 
 async function getSummaryData(params) {
   const law = params;
-  const summary = client.fetch(LAW_SUMMARY_QUERY, { law });
+  const summary = client.fetch(LAW_SUMMARY_QUERY, { law }, { next: { tags: ['euLaw'] } });
   if (!summary) {
     throw new Error('data could not be fetched');
   }

@@ -47,7 +47,7 @@ export const metadata = {
 };
 
 async function getNavData() {
-  const navData = await client.fetch(NAV_QUERY);
+  const navData = await client.fetch(NAV_QUERY, { next: { tags: ['aboutPages', 'navigation', 'thema', 'simpleThema', 'euLaw', 'siteConfig'] } });
   if (!navData) {
     throw new Error('could not fetch navData');
   }
@@ -55,7 +55,7 @@ async function getNavData() {
 }
 
 async function getPartnerLogos() {
-  const partnerLogos = await client.fetch(PARTNERS_QUERY);
+  const partnerLogos = await client.fetch(PARTNERS_QUERY, { next: { tags: ['partners'] } });
   if (!partnerLogos) {
     throw new Error('could not fetch partnerLogos');
   }

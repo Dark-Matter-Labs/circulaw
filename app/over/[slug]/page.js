@@ -11,7 +11,7 @@ export const dynamicParams = false;
 
 async function getPageData(params) {
   const slug = params;
-  const aboutPageContent = await client.fetch(ABOUT_PAGE_QUERY, { slug });
+  const aboutPageContent = await client.fetch(ABOUT_PAGE_QUERY, { slug }, { next: { tags: ['aboutPage'] } });
   if (!aboutPageContent) {
     throw new Error('could not fetch content');
   }

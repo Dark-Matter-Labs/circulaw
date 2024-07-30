@@ -11,7 +11,7 @@ import PCHomePage from '@/components/product-chain-page/product-chain-homepage';
 import { HOME_PAGE_QUERY } from '@/lib/queries';
 
 async function getData() {
-  const res = await client.fetch(HOME_PAGE_QUERY);
+  const res = await client.fetch(HOME_PAGE_QUERY,  { next: { tags: ['siteConfig', 'transitionAgenda', 'newsPage', 'thema', 'newsPage'] } });
 
   if (!res) {
     throw new Error('failed to fetch data');
