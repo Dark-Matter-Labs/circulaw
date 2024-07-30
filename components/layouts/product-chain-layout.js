@@ -1,4 +1,4 @@
-import ThemaCard from '../thema-cards';
+import ThemaCard from '../product-chain-page/thema-cards';
 import PCTooltip from '../tooltips/product-chain-tooltip';
 import CustomButton from '@/components/custom-button';
 import PageHeader from '@/components/product-chain-page/product-chain-header';

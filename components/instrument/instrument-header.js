@@ -1,6 +1,6 @@
 'use client';
 import SocialButtons from '../social-buttons';
-import Tag from '../tag';
+import Tag from './tag';
 import InstrumentMetaData from './instrument-metadata';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';

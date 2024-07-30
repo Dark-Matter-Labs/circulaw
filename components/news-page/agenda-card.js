@@ -1,4 +1,4 @@
-import Tag from '../tag';
+import Tag from '../instrument/tag';
 import Link from 'next/link';
 
 
