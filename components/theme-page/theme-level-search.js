@@ -14,7 +14,7 @@ import JITooltip from '../tooltips/tooltip-juridische-invloed';
 
 import NoResults from '../search/no-results';
 import NoResultsBoundary from '../search/no-results-boundary';
-import OverviewPageHeader from '../overview-page-header';
+import OverviewPageHeader from './overview-page-header';
 
 import { InstantSearchNext } from 'react-instantsearch-nextjs';
 

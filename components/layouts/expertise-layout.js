@@ -2,7 +2,7 @@
 import ExplinationText from '../expertise-page/explination-text';
 import TabButton from '../expertise-page/tab-button';
 import TabLayout from '../expertise-page/tab-layout';
-import OverviewPageHeader from '../overview-page-header';
+import OverviewPageHeader from '../theme-page/overview-page-header';
 import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
 import { useEffect, useState, useTransition } from 'react';

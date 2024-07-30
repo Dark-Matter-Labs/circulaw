@@ -1,5 +1,5 @@
 'use client';
-import OverviewPageHeader from '../overview-page-header';
+import OverviewPageHeader from '../theme-page/overview-page-header';
 import Image from 'next/image';
 import Link from 'next/link';
 import Xarrow, { useXarrow } from 'react-xarrows';
