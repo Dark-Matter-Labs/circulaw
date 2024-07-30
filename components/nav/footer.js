@@ -14,7 +14,6 @@ import JaIcon from '@/public/icons/ja-icon.svg'; // TODO: get this icon from Ico
 import NeeIcon from '@/public/icons/nee-icon.svg'; // TODO: get this icon from Icon library
 import { usePathname } from 'next/navigation';
 
-
 const navigation = {
   other: [
     { name: 'Contact', href: '/contact', className: '' },

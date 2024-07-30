@@ -15,8 +15,7 @@ import comments from '@/public/comments.png';
 import { Link as ScrollLink } from 'react-scroll';
 import { useEffect } from 'react';
 
-
-// TODO: See what we could move to a layout.js file instead of having everything in components. 
+// TODO: See what we could move to a layout.js file instead of having everything in components.
 export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
   useEffect(() => {
     localStorage.clear();

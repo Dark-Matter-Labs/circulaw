@@ -1,7 +1,6 @@
 import Tag from '../tag';
 import Link from 'next/link';
 
-
 export default function AgendaCard({ data }) {
   // seperate date
   const event = new Date(data.newsDate);

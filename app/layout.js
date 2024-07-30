@@ -47,7 +47,9 @@ export const metadata = {
 };
 
 async function getNavData() {
-  const navData = await client.fetch(NAV_QUERY, { next: { tags: ['aboutPages', 'navigation', 'thema', 'simpleThema', 'euLaw', 'siteConfig'] } });
+  const navData = await client.fetch(NAV_QUERY, {
+    next: { tags: ['aboutPages', 'navigation', 'thema', 'simpleThema', 'euLaw', 'siteConfig'] },
+  });
   if (!navData) {
     throw new Error('could not fetch navData');
   }

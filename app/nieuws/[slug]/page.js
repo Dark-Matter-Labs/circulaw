@@ -30,7 +30,11 @@ export const dynamicParams = false;
 
 async function getNewsPageData(params) {
   const slug = params;
-  const newsPageData = await client.fetch(NEWS_DETAIL_PAGE_QUERY, { slug }, { next: { tags: ['newsPage'] } });
+  const newsPageData = await client.fetch(
+    NEWS_DETAIL_PAGE_QUERY,
+    { slug },
+    { next: { tags: ['newsPage'] } },
+  );
   if (!newsPageData) {
     throw new Error('could not get news detail data');
   }

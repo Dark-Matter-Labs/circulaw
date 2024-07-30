@@ -20,7 +20,7 @@ export const metadata = {
 };
 
 async function getEuLaws() {
-  const res = client.fetch(EU_LAW_OVERVIEW_QUERY,{ next: { tags: ['euLaw'] } } );
+  const res = client.fetch(EU_LAW_OVERVIEW_QUERY, { next: { tags: ['euLaw'] } });
   if (!res) {
     throw new Error('failed to fetch data');
   }

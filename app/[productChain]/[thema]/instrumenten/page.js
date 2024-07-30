@@ -3,7 +3,9 @@ import { client } from '@/lib/sanity';
 import ThemeLevelSearch from '@/components/theme-page/theme-level-search';
 
 export async function generateStaticParams() {
-  const themas = await client.fetch(THEME_PATHS_QUERY, { next: { tags: ['thema' , 'simpleThema'] } });
+  const themas = await client.fetch(THEME_PATHS_QUERY, {
+    next: { tags: ['thema', 'simpleThema'] },
+  });
   return themas.map((thema) => ({ thema: thema.thema, productChain: thema.productChain }));
 }
 
@@ -11,7 +13,11 @@ export const dynamicParams = false;
 
 async function getInstrumentListPageData(params) {
   const thema = params;
-  const instrumentListPageData = await client.fetch(INSTRUMENT_LIST_PAGE_QUERY, { thema }, { next: { tags: ['instrument'] } });
+  const instrumentListPageData = await client.fetch(
+    INSTRUMENT_LIST_PAGE_QUERY,
+    { thema },
+    { next: { tags: ['instrument'] } },
+  );
   if (!instrumentListPageData) {
     throw new Error('could not get instrument list page data');
   }

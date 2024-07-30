@@ -4,7 +4,9 @@ import GovLevelLayout from '@/components/layouts/gov-level-layout';
 import placeholderImage from '@/public/gov-level-placeholder-mobile.png';
 
 export async function generateStaticParams() {
-  const themas = await client.fetch(THEME_PATHS_QUERY, { next: { tags: ['thema' , 'simpleThema'] } });
+  const themas = await client.fetch(THEME_PATHS_QUERY, {
+    next: { tags: ['thema', 'simpleThema'] },
+  });
   return themas.map((thema) => ({ thema: thema.thema, productChain: thema.productChain }));
 }
 
@@ -12,7 +14,11 @@ export const dynamicParams = false;
 
 async function getGovLeveldData(params) {
   const thema = params;
-  const govLevelData = await client.fetch(GOV_LEVEL_QUERY, { thema }, { next: { tags: ['instrument'] } });
+  const govLevelData = await client.fetch(
+    GOV_LEVEL_QUERY,
+    { thema },
+    { next: { tags: ['instrument'] } },
+  );
   if (!govLevelData) {
     throw new Error('could not get gov level data');
   }

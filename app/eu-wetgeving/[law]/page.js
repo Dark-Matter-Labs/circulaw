@@ -17,7 +17,11 @@ export const dynamicParams = false;
 
 async function getTabData(params) {
   const law = params;
-  const tabContent = client.fetch(LAW_TAB_QUERY, { law }, { next: { tags: ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab'] } });
+  const tabContent = client.fetch(
+    LAW_TAB_QUERY,
+    { law },
+    { next: { tags: ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab'] } },
+  );
   if (!tabContent) {
     throw new Error('data could not be fetched');
   }
