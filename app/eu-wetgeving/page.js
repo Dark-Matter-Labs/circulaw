@@ -5,7 +5,7 @@ import CustomButton from '@/components/custom-button';
 import EULawCard from '@/components/eu-law/eu-law-card';
 import { client } from '@/lib/sanity';
 import { EU_LAW_OVERVIEW_QUERY } from '@/lib/queries';
-import ScrollButton from '@/components/eu-law/scroll-button';
+import ScrollButton from '@/components/scroll-button';
 import globalMeta from '@/utils/global-meta';
 
 export const metadata = {

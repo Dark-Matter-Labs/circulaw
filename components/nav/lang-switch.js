@@ -1,7 +1,5 @@
 import { GlobeAltIcon } from '@heroicons/react/outline';
 
-
-// TODO - delete this component and remove it from NAV. Double check if it is rendering anywhere first. 
 export default function LangSwitch({ background, translateOpen, setTranslateOpen }) {
   return (
     <div

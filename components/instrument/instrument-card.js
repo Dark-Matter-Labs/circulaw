@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Tag from './tag';
+import Tag from '../tag';
 import Image from 'next/image';
 import { urlFor } from '@/lib/sanity';
 

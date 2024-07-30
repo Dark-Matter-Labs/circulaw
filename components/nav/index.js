@@ -261,33 +261,6 @@ export default function Nav(props) {
       },
     });
 
-  if (pathname === '/en') {
-    return (
-      <>
-        <div className='w-full bg-green-800 sticky top-0 z-40 shadow-lg'>
-          <div className='flex justify-between global-margin'>
-            <div className=' flex justify-start items-center'>
-              <div className='hidden sm:block -ml-6'>
-                <Link href='/'>
-                  <Lottie options={defaultOptions} height={110} width={183} />
-                </Link>
-              </div>
-              <div className='block sm:hidden -ml-6'>
-                <Link href='/'>
-                  <Lottie options={defaultOptions} height={86} width={162} />
-                </Link>
-              </div>
-            </div>
-            <LangSwitch
-              background='dark'
-              translateOpen={props.translateOpen}
-              setTranslateOpen={props.setTranslateOpen}
-            />
-          </div>
-        </div>
-      </>
-    );
-  }
   return (
     <>
       <div className='flex w-96 justify-center mx-auto -mb-9 relative z-110' name='top'>

@@ -1,4 +1,4 @@
-import Tag from '../instrument/tag';
+import Tag from '../tag';
 import Link from 'next/link';
 
 export default function FeaturedAgendaCard({ data }) {

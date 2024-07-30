@@ -1,5 +1,5 @@
 import LinkIcon from '../link-icon';
-import Tag from '../instrument/tag';
+import Tag from '../tag';
 import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';

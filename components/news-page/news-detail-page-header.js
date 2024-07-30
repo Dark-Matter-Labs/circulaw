@@ -1,5 +1,5 @@
 'use client';
-import Tag from '../instrument/tag';
+import Tag from '../tag';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 export default function NewsDetailPageHeader({ data }) {
