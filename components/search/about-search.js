@@ -1,11 +1,12 @@
 'use client';
 import algoliasearch from 'algoliasearch';
-import { Hits, SearchBox, Configure, useInstantSearch } from 'react-instantsearch';
+import { Hits, SearchBox, Configure } from 'react-instantsearch';
 import Link from 'next/link';
 import CustomStats from '../../components/search/stats';
 import { XIcon } from '@heroicons/react/outline';
 import AboutHit from './about-hit';
-import Image from 'next/image';
+import NoResults from './no-results';
+import NoResultsBoundary from './no-results-boundary';
 import MobileHeaderSearch from './mobile-header';
 import { InstantSearchNext } from 'react-instantsearch-nextjs';
 
@@ -123,28 +124,4 @@ export default function AboutSearch() {
   );
 }
 
-// TODO: remove these two components and use the ones that are built with the correct design.
-function NoResultsBoundary({ children, fallback }) {
-  const { results } = useInstantSearch();
 
-  // The `__isArtificial` flag makes sure not to display the No Results message
-  // when no hits have been returned.
-  if (!results.__isArtificial && results.nbHits === 0) {
-    return (
-      <>
-        {fallback}
-        <div hidden>{children}</div>
-      </>
-    );
-  }
-
-  return children;
-}
-
-function NoResults() {
-  return (
-    <div className='h-96 w-full flex items-center justify-center my-10'>
-      <Image src='/no-results.png' height={320} width={540} alt='no results for this search' />
-    </div>
-  );
-}
