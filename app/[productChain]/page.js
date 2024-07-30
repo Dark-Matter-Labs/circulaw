@@ -20,7 +20,7 @@ async function getProductChainData(params) {
 
 async function getThemeByPCData(params) {
   const productChain = params;
-  const themeByPCData = await client.fetch(THEMES_BY_PC_QUERY, { productChain });
+  const themeByPCData = await client.fetch(THEMES_BY_PC_QUERY, { productChain }, { next: { tags: ['thema', 'simpleThema'] } });
   if (!themeByPCData) {
     throw new Error('count not get theme data');
   }

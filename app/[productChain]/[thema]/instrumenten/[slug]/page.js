@@ -3,7 +3,7 @@ import { INSTRUMENT_PATHS_QUERY, INSTRUMENT_PAGE_QUERY } from '@/lib/queries';
 import { client } from '@/lib/sanity';
 
 export async function generateStaticParams() {
-  const slugs = await client.fetch(INSTRUMENT_PATHS_QUERY);
+  const slugs = await client.fetch(INSTRUMENT_PATHS_QUERY, { next: { tags: ['instrument' ] } });
   return slugs.map((slug) => ({
     thema: slug.thema,
     productChain: slug.productChain,
@@ -15,7 +15,7 @@ export const dynamicParams = false;
 
 async function getInstrumentData(params) {
   const slug = params;
-  const instrumentData = await client.fetch(INSTRUMENT_PAGE_QUERY, { slug });
+  const instrumentData = await client.fetch(INSTRUMENT_PAGE_QUERY, { slug }, { next: { tags: ['instrument' ] } });
   if (!instrumentData) {
     throw new Error('could not get instrument data');
   }

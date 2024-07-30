@@ -3,7 +3,7 @@ import { client } from '@/lib/sanity';
 import ExpertiseLayout from '@/components/layouts/expertise-layout';
 
 export async function generateStaticParams() {
-  const themas = await client.fetch(THEME_PATHS_QUERY);
+  const themas = await client.fetch(THEME_PATHS_QUERY, { next: { tags: ['thema', 'simpleThema' ] } });
   return themas.map((thema) => ({ thema: thema.thema, productChain: thema.productChain }));
 }
 
@@ -11,7 +11,7 @@ export const dynamicParams = false;
 
 async function getCategoryData(params) {
   const thema = params;
-  const categorieData = await client.fetch(CATEGORIE_PAGE_QUERY, { thema });
+  const categorieData = await client.fetch(CATEGORIE_PAGE_QUERY, { thema }, { next: { tags: ['instrument' ] } });
   if (!categorieData) {
     throw new Error('could not get categorie data');
   }

@@ -4,7 +4,7 @@ import SimpleThemaLayout from '@/components/layouts/simple-thema-layout';
 import ThemeLayout from '@/components/layouts/theme-index-layout';
 
 export async function generateStaticParams() {
-  const themas = await client.fetch(THEME_PATHS_QUERY);
+  const themas = await client.fetch(THEME_PATHS_QUERY, { next: { tags: ['thema', 'simpleThema'] } });
   return themas.map((thema) => ({ thema: thema.thema, productChain: thema.productChain }));
 }
 
@@ -12,7 +12,7 @@ export const dynamicParams = false;
 
 async function getThemeData(params) {
   const thema = params;
-  const themaData = await client.fetch(THEME_QUERY, { thema });
+  const themaData = await client.fetch(THEME_QUERY, { thema }, { next: { tags: ['thema' , 'simpleThema'] } });
   if (!themaData) {
     throw new Error('could not get theme data');
   }
