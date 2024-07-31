@@ -1,6 +1,36 @@
 import { PC_PATHS_QUERY, PRODUCT_CHAIN_PAGE_QUERY, THEMES_BY_PC_QUERY } from '@/lib/queries';
 import PCLayout from '@/components/layouts/product-chain-layout';
-import { client } from '@/lib/sanity';
+import { client, urlFor } from '@/lib/sanity';
+
+const PRODUCT_CHAIN_METADATA_QUERY = `
+*[_type == "transitionAgenda" && slug.current == $productChain][0] {
+  metaTitle,
+  metaDescribe,
+  pcName,
+  'image': homepageImage.asset,
+}
+`
+
+export async function generateMetadata({ params }, parent) {
+  // read route params
+  const productChain = params.productChain
+  // fetch data
+  const productChainMetaData = await client.fetch(PRODUCT_CHAIN_METADATA_QUERY, {productChain})
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || []
+
+  const image = urlFor(productChainMetaData.image).url()
+  console.log(image)
+  return {
+    title: productChainMetaData.pcName + ' - CircuLaw',
+    description: productChainMetaData.metaDescribe,
+    openGraph: {
+      images: [image, ...previousImages],
+      title: productChainMetaData.pcName,
+      description: productChainMetaData.metaDescribe
+    },
+  }
+}
 
 export async function generateStaticParams() {
   const productChains = await client.fetch(PC_PATHS_QUERY, {

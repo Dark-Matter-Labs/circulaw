@@ -29,6 +29,8 @@ export const metadata = {
   keywords: globalMeta.keywords,
   openGraph: {
     images: globalMeta.siteLogo,
+    title: globalMeta.siteName,
+    description: globalMeta.description,
   },
 
   robots: {

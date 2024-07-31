@@ -1,7 +1,7 @@
-let url = 'https://circulaw-staging.vercel.app';
+let url = 'https://circulaw-git-migrate-from-pages-to-app-router-dark-matter-labs.vercel.app';
 
 if (process.env.NEXT_PUBLIC_SANITY_DATASET === 'staging') {
-    url = 'https://circulaw-staging.vercel.app';
+    url = 'https://circulaw-git-migrate-from-pages-to-app-router-dark-matter-labs.vercel.app';
 } else {
     url = 'https://www.circulaw.nl';
 }
