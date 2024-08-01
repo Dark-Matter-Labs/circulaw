@@ -83,7 +83,7 @@ export default async function ProductChainPage({ params }) {
   return (
     <PCLayout
       productChainData={productChainData}
-      totalInstruments={themeByPCData.totalNumberInstruments}
+      totalInstruments={themeByPCData[0].totalNumberInstruments}
       themaList={themeByPCData}
       impactList={productChainData?.impactItems}
       ambitionList={productChainData?.ambitionItems}
