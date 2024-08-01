@@ -2,8 +2,6 @@ import Instrument from '@/components/instrument';
 import { INSTRUMENT_PATHS_QUERY, INSTRUMENT_PAGE_QUERY, INSTRUMENT_META_DATA } from '@/lib/queries';
 import { client } from '@/lib/sanity';
 
-
-
 export async function generateMetadata({ params }, parent) {
   // read route params
   const slug = params.slug;
@@ -21,7 +19,8 @@ export async function generateMetadata({ params }, parent) {
 
   return {
     title: instrumentMetaData.titel + ' - CircuLaw',
-    description: instrumentMetaData.metaDescribe || instrumentMetaData.subtitel || generic.description,
+    description:
+      instrumentMetaData.metaDescribe || instrumentMetaData.subtitel || generic.description,
     alternates: {
       canonical: `/${instrumentMetaData.productChain}/${instrumentMetaData.thema}/instrumenten/${instrumentMetaData.slug}`,
       languages: {
@@ -31,7 +30,8 @@ export async function generateMetadata({ params }, parent) {
     openGraph: {
       images: previousImages,
       title: instrumentMetaData.titel + ' - CircuLaw',
-      description: instrumentMetaData.metaDescribe || instrumentMetaData.subtitel || generic.description,
+      description:
+        instrumentMetaData.metaDescribe || instrumentMetaData.subtitel || generic.description,
     },
   };
 }
