@@ -2,12 +2,14 @@ import { PC_PATHS_QUERY, PRODUCT_CHAIN_PAGE_QUERY, THEMES_BY_PC_QUERY, PRODUCT_C
 import PCLayout from '@/components/layouts/product-chain-layout';
 import { client } from '@/lib/sanity';
 
-
+// metadata
 export async function generateMetadata({ params }, parent) {
   // read route params
   const productChain = params.productChain
   // fetch data
-  const productChainMetaData = await client.fetch(PRODUCT_CHAIN_METADATA_QUERY, {productChain})
+  const productChainMetaData = await client.fetch(PRODUCT_CHAIN_METADATA_QUERY, {productChain}, {
+    next: { tags: ['transitionAgenda'] },
+  })
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || []
   const generic = (await parent).openGraph
@@ -29,6 +31,7 @@ export async function generateMetadata({ params }, parent) {
   }
 }
 
+// slugs
 export async function generateStaticParams() {
   const productChains = await client.fetch(PC_PATHS_QUERY, {
     next: { tags: ['transitionAgenda'] },
@@ -38,6 +41,8 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
+
+// page data
 async function getProductChainData(params) {
   const productChain = params;
   const productChainContent = await client.fetch(
