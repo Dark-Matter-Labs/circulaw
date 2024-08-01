@@ -1,7 +1,36 @@
-import { THEME_PATHS_QUERY, GOV_LEVEL_QUERY } from '@/lib/queries';
+import { THEME_PATHS_QUERY, GOV_LEVEL_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
 import { client } from '@/lib/sanity';
 import GovLevelLayout from '@/components/layouts/gov-level-layout';
 import placeholderImage from '@/public/gov-level-placeholder-mobile.png';
+
+export async function generateMetadata({ params }, parent) {
+  // read route params
+  const thema = params.thema
+  // fetch data
+  const themaMetaData = await client.fetch(THEME_METADATA_QUERY, {thema}, {
+    next: { tags: ['thema', 'simpleThema'] },
+  })
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || []
+  const generic = (await parent).openGraph
+
+  return {
+    title: themaMetaData.themaName + ' - Wie is waarvoor bevoegd? - CircuLaw', 
+    description: themaMetaData.metaDescribe || generic.description,
+    alternates: {
+      canonical: `/${themaMetaData.productChain}/${themaMetaData.slug}/overheidsbevoegdheid`,
+      languages: {
+        'nl-NL': '/nl-NL',
+      },
+    },
+    openGraph: {
+      images: previousImages,
+      title: themaMetaData.themaName + ' - Wie is waarvoor bevoegd? - CircuLaw', 
+      description: generic.description
+    },
+  }
+}
+
 
 export async function generateStaticParams() {
   const themas = await client.fetch(THEME_PATHS_QUERY, {
