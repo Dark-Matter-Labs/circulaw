@@ -44,8 +44,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
     }
   }, []);
 
-  console.log(selectedTab, 'should default');
-
   const numGrondpositieStrategie = grondpositie.filter((instrument) =>
     instrument?.grondpositieSubCategory?.includes('strategie'),
   ).length;
