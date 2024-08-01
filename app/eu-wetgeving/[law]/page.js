@@ -6,6 +6,51 @@ import TabContent from '@/components/eu-law/tab-content';
 import { EU_LAW_PATHS_QUERY, LAW_TAB_QUERY, LAW_SUMMARY_QUERY } from '@/lib/queries';
 import { Suspense } from 'react';
 
+const EU_LAW_METADATA_QUERY = `
+*[_type == 'euLaw' && slug.current == $law][0] {
+  metaTitle,
+  metaDescribe, 
+  title,
+  introText,
+  'slug': slug.current,
+
+}
+`
+
+export async function generateMetadata({ params }, parent) {
+  // read route params
+  const law = params.law;
+  console.log(params)
+  // fetch data
+  const euLawMetaData = await client.fetch(
+    EU_LAW_METADATA_QUERY,
+    { law },
+    {
+      next: { tags: ['euLaw'] },
+    },
+  );
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
+  const generic = (await parent).openGraph;
+
+  return {
+    title: euLawMetaData.metaTitle || euLawMetaData.title + ' - CircuLaw',
+    description: euLawMetaData.metaDescribe || euLawMetaData.introText || generic.description,
+    alternates: {
+      canonical: `/eu-wetgeving/${euLawMetaData.slug}`,
+      languages: {
+        'nl-NL': '/nl-NL',
+      },
+    },
+    openGraph: {
+      images: previousImages,
+      title: euLawMetaData.metaTitle || euLawMetaData.title,
+      description: euLawMetaData.metaDescribe || euLawMetaData.introText || generic.description,
+    },
+  };
+}
+
+
 export async function generateStaticParams() {
   const laws = await client.fetch(EU_LAW_PATHS_QUERY, { next: { tags: ['euLaw'] } });
   return laws.map((law) => ({

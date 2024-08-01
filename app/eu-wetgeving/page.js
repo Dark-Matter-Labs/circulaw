@@ -10,13 +10,19 @@ import globalMeta from '@/utils/global-meta';
 
 export const metadata = {
   title: 'EU wetgeving - CircuLaw',
+  description: 'Er komt een lawine van Europese wet- en regelgeving op ons af, gericht op de verduurzaming van onze maatschappij. Veel van deze nieuwe wet- en regelgeving valt onder de Green Deal, met als tussendoel Fit for 55.',
   metadataBase: new URL(globalMeta.siteUrl + '/eu-wetgeving'),
   alternates: {
-    canonical: '/',
+    canonical: '',
     languages: {
       'nl-NL': '/nl-NL',
     },
   },
+  openGraph: {
+    images: globalMeta.siteLogo,
+    title: 'EU wetgeving - CircuLaw',
+    description: 'Er komt een lawine van Europese wet- en regelgeving op ons af, gericht op de verduurzaming van onze maatschappij. Veel van deze nieuwe wet- en regelgeving valt onder de Green Deal, met als tussendoel Fit for 55.'
+  }
 };
 
 async function getEuLaws() {
