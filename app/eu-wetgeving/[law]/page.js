@@ -3,24 +3,18 @@ import { client } from '@/lib/sanity';
 import SocialButtons from '@/components/social-buttons';
 import Tabs from '@/components/eu-law/tabs';
 import TabContent from '@/components/eu-law/tab-content';
-import { EU_LAW_PATHS_QUERY, LAW_TAB_QUERY, LAW_SUMMARY_QUERY } from '@/lib/queries';
+import {
+  EU_LAW_PATHS_QUERY,
+  LAW_TAB_QUERY,
+  LAW_SUMMARY_QUERY,
+  EU_LAW_METADATA_QUERY,
+} from '@/lib/queries';
 import { Suspense } from 'react';
-
-const EU_LAW_METADATA_QUERY = `
-*[_type == 'euLaw' && slug.current == $law][0] {
-  metaTitle,
-  metaDescribe, 
-  title,
-  introText,
-  'slug': slug.current,
-
-}
-`
 
 export async function generateMetadata({ params }, parent) {
   // read route params
   const law = params.law;
-  console.log(params)
+  console.log(params);
   // fetch data
   const euLawMetaData = await client.fetch(
     EU_LAW_METADATA_QUERY,
@@ -49,7 +43,6 @@ export async function generateMetadata({ params }, parent) {
     },
   };
 }
-
 
 export async function generateStaticParams() {
   const laws = await client.fetch(EU_LAW_PATHS_QUERY, { next: { tags: ['euLaw'] } });
