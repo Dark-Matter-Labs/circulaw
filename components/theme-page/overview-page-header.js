@@ -1,9 +1,13 @@
 'use client';
-import InstrumentLinksDropdown from '@/components/instrument/instrument-links-dropdown';
+import InstrumentLinksDropdown from '@/components/theme-page/instrument-links-dropdown';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-export default function OverviewPageHeader({ props, page }) {
+export default function OverviewPageHeader({ thema, productChain, title, page }) {
+  console.log(thema)
+  console.log(productChain)
+  console.log(title)
+  console.log(page)
   const pathname = usePathname();
   return (
     <>
@@ -19,21 +23,21 @@ export default function OverviewPageHeader({ props, page }) {
                 Home<span className='mx-2'>{'>'}</span>
               </span>
             </Link>
-            <Link href={`/${props.transitionAgenda}`} className=''>
+            <Link href={`/${productChain}`} className=''>
               <span className='link-interaction capitalize w-min whitespace-nowrap'>
-                {props.transitionAgenda}
+                {productChain}
                 <span className='mx-2'>{'>'}</span>
               </span>
             </Link>
-            <Link href={`/${props.transitionAgenda}/${props.thema}`}>
+            <Link href={`/${productChain}/${thema}`}>
               <span className='capitalize link-interaction w-min whitespace-nowrap'>
-                {props?.thema?.replace('-', ' ')}{' '}
+                {thema?.replace('-', ' ')}{' '}
               </span>
             </Link>
           </div>
           <div className='block sm:float-right py-3 sm:py-0'>
             <div className='p-base text-white pb-2 hidden sm:block'>Bekijk de instrumenten:</div>
-            <InstrumentLinksDropdown page={page} props={props} />
+            <InstrumentLinksDropdown page={page} productChain={productChain} thema={thema} />
           </div>
         </div>
         <div className='items-center grid grid-cols-10'>
@@ -41,13 +45,8 @@ export default function OverviewPageHeader({ props, page }) {
             className={`${pathname.includes('categorie') ? 'pb-[4.75rem]' : 'pb-10'} col-span-9`}
           >
             <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-white max-w-5xl pb-1'>
-              {props.title}
+              {title}
             </h1>
-            {props.introPara && (
-              <div className='hidden sm:block max-w-3xl pt-2'>
-                <p className='p-base text-white'>{props.introPara}</p>
-              </div>
-            )}
           </div>
         </div>
       </div>

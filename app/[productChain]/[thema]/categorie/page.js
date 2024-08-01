@@ -60,8 +60,7 @@ export default async function CategoriePage({ params }) {
       thema={params?.thema}
       transitionAgenda={params?.productChain}
       expertiseData={categorieContent}
-      title={`${params?.themaName} instrumenten per categorie`}
-      // p1='In dit overzicht zie je hoe de verschillende instrumenten met elkaar samenhangen, welke overheden verantwoordelijk zijn en hoe je verschillende instrumenten kunt combineren.'
+      title={`${categorieContent[0].themaName} instrumenten per categorie`}
     />
   );
 }

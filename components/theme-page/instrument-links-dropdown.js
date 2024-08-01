@@ -2,9 +2,8 @@ import { Popover } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/navigation';
 
-export default function InstrumentLinksDropdown({ page, props }) {
+export default function InstrumentLinksDropdown({ page, productChain, thema }) {
   const router = useRouter();
-
   if (page === 'list') {
     return (
       <Popover className='inline-block relative w-full min-w-[260px] pt-4 sm:pt-0'>
@@ -34,7 +33,7 @@ export default function InstrumentLinksDropdown({ page, props }) {
               <Popover.Button
                 as='div'
                 onClick={() => {
-                  router.push(`/${props?.transitionAgenda}/${props?.thema}/categorie`);
+                  router.push(`/${productChain}/${thema}/categorie`);
                 }}
               >
                 <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
@@ -44,7 +43,7 @@ export default function InstrumentLinksDropdown({ page, props }) {
               <Popover.Button
                 as='div'
                 onClick={() => {
-                  router.push(`/${props?.transitionAgenda}/${props?.thema}/overheidsbevoegdheid`);
+                  router.push(`/${productChain}/${thema}/overheidsbevoegdheid`);
                 }}
               >
                 <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500'>
@@ -83,7 +82,7 @@ export default function InstrumentLinksDropdown({ page, props }) {
               <Popover.Button
                 as='div'
                 onClick={() => {
-                  router.push(`/${props?.transitionAgenda}/${props?.thema}/instrumenten`);
+                  router.push(`/${productChain}/${thema}/instrumenten`);
                 }}
               >
                 <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
@@ -93,7 +92,7 @@ export default function InstrumentLinksDropdown({ page, props }) {
               <Popover.Button
                 as='div'
                 onClick={() => {
-                  router.push(`/${props?.transitionAgenda}/${props?.thema}/overheidsbevoegdheid`);
+                  router.push(`/${productChain}/${thema}/overheidsbevoegdheid`);
                 }}
               >
                 <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
@@ -134,7 +133,7 @@ export default function InstrumentLinksDropdown({ page, props }) {
               <Popover.Button
                 as='div'
                 onClick={() => {
-                  router.push(`/${props?.transitionAgenda}/${props?.thema}/categorie`);
+                  router.push(`/${productChain}/${thema}/categorie`);
                 }}
               >
                 <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
@@ -144,7 +143,7 @@ export default function InstrumentLinksDropdown({ page, props }) {
               <Popover.Button
                 as='div'
                 onClick={() => {
-                  router.push(`/${props?.transitionAgenda}/${props?.thema}/instrumenten`);
+                  router.push(`/${productChain}/${thema}/instrumenten`);
                 }}
               >
                 <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>

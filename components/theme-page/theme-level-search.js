@@ -23,7 +23,7 @@ const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
 
 const algoliaClient = algoliasearch(api_id, api_key);
 
-export default function ThemeLevelSearch({ thema, ...props }) {
+export default function ThemeLevelSearch(props) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const transformItems = (items) => {
     const rLadderLabes = {
@@ -266,15 +266,15 @@ export default function ThemeLevelSearch({ thema, ...props }) {
         </Transition.Root>
       </div>
 
-      <Configure hitsPerPage={10} filters={`thema:${thema}`} />
+      <Configure hitsPerPage={10} filters={`thema:${props?.thema}`} />
 
       <div className=' bg-green-600 h-[300px] sm:h-[360px]  flex items-end justify-center w-full mt-3'>
-        <OverviewPageHeader props={props} />
+        <OverviewPageHeader thema={props?.thema} productChain={props.productChain} page='list' title={props.title} />
       </div>
       <div className='flex sm:hidden items-center justify-center mt-4'>
         <SearchBox
           searchAsYouType={false}
-          placeholder='Zoek naar instrumenten...'
+          placeholder={props.searchTitle + '...'}
           classNames={{
             root: 'h-16 max-w-sm w-full bg-white',
             form: 'bg-white shadow-card max-w-sm w-full h-[60px] rounded-cl flex-row items-center justify-between relative flex',
@@ -468,7 +468,7 @@ export default function ThemeLevelSearch({ thema, ...props }) {
               <div className='mt-10 mb-10 hidden sm:flex items-center justify-start'>
                 <SearchBox
                   searchAsYouType={false}
-                  placeholder='Zoek naar instrumenten...'
+                  placeholder={props.searchTitle + '...'}
                   classNames={{
                     root: 'h-16 w-[600px] bg-white',
                     form: 'bg-white shadow-card w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex',
