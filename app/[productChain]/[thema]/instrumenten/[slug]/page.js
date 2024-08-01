@@ -1,18 +1,8 @@
 import Instrument from '@/components/instrument';
-import { INSTRUMENT_PATHS_QUERY, INSTRUMENT_PAGE_QUERY } from '@/lib/queries';
+import { INSTRUMENT_PATHS_QUERY, INSTRUMENT_PAGE_QUERY, INSTRUMENT_META_DATA } from '@/lib/queries';
 import { client } from '@/lib/sanity';
 
-const INSTRUMENT_META_DATA = `
-*[_type == 'instrument' && slug.current == $slug][0] {
-  metaTitle,
-  metaDescribe, 
-  titel, 
-  'productChain': transitionAgenda->.slug.current,
-  'thema': thema->.slug.current,
-  'slug': slug.current,
-  subtitel
-}
-`
+
 
 export async function generateMetadata({ params }, parent) {
   // read route params
