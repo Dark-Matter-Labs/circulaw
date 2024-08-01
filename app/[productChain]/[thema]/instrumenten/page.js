@@ -32,7 +32,7 @@ export async function generateMetadata({ params }, parent) {
       description: generic.description,
     },
   };
-}
+}             
 
 export async function generateStaticParams() {
   const themas = await client.fetch(THEME_PATHS_QUERY, {
