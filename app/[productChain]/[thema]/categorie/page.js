@@ -2,20 +2,23 @@ import { THEME_PATHS_QUERY, CATEGORIE_PAGE_QUERY, THEME_METADATA_QUERY } from '@
 import { client } from '@/lib/sanity';
 import ExpertiseLayout from '@/components/layouts/expertise-layout';
 
-
 export async function generateMetadata({ params }, parent) {
   // read route params
-  const thema = params.thema
+  const thema = params.thema;
   // fetch data
-  const themaMetaData = await client.fetch(THEME_METADATA_QUERY, {thema}, {
-    next: { tags: ['thema', 'simpleThema'] },
-  })
+  const themaMetaData = await client.fetch(
+    THEME_METADATA_QUERY,
+    { thema },
+    {
+      next: { tags: ['thema', 'simpleThema'] },
+    },
+  );
   // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent).openGraph?.images || []
-  const generic = (await parent).openGraph
+  const previousImages = (await parent).openGraph?.images || [];
+  const generic = (await parent).openGraph;
 
   return {
-    title: themaMetaData.themaName + ' - instrumenten per categorie - CircuLaw', 
+    title: themaMetaData.themaName + ' - instrumenten per categorie - CircuLaw',
     description: themaMetaData.metaDescribe || generic.description,
     alternates: {
       canonical: `/${themaMetaData.productChain}/${themaMetaData.slug}/categorie`,
@@ -25,10 +28,10 @@ export async function generateMetadata({ params }, parent) {
     },
     openGraph: {
       images: previousImages,
-      title: themaMetaData.themaName + ' - instrumenten per categorie - CircuLaw', 
-      description: generic.description
+      title: themaMetaData.themaName + ' - instrumenten per categorie - CircuLaw',
+      description: generic.description,
     },
-  }
+  };
 }
 
 export async function generateStaticParams() {

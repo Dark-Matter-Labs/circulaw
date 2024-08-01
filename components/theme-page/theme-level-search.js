@@ -269,7 +269,12 @@ export default function ThemeLevelSearch(props) {
       <Configure hitsPerPage={10} filters={`thema:${props?.thema}`} />
 
       <div className=' bg-green-600 h-[300px] sm:h-[360px]  flex items-end justify-center w-full mt-3'>
-        <OverviewPageHeader thema={props?.thema} productChain={props.productChain} page='list' title={props.title} />
+        <OverviewPageHeader
+          thema={props?.thema}
+          productChain={props.productChain}
+          page='list'
+          title={props.title}
+        />
       </div>
       <div className='flex sm:hidden items-center justify-center mt-4'>
         <SearchBox

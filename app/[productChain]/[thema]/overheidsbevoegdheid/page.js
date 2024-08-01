@@ -5,17 +5,21 @@ import placeholderImage from '@/public/gov-level-placeholder-mobile.png';
 
 export async function generateMetadata({ params }, parent) {
   // read route params
-  const thema = params.thema
+  const thema = params.thema;
   // fetch data
-  const themaMetaData = await client.fetch(THEME_METADATA_QUERY, {thema}, {
-    next: { tags: ['thema', 'simpleThema'] },
-  })
+  const themaMetaData = await client.fetch(
+    THEME_METADATA_QUERY,
+    { thema },
+    {
+      next: { tags: ['thema', 'simpleThema'] },
+    },
+  );
   // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent).openGraph?.images || []
-  const generic = (await parent).openGraph
+  const previousImages = (await parent).openGraph?.images || [];
+  const generic = (await parent).openGraph;
 
   return {
-    title: themaMetaData.themaName + ' - Wie is waarvoor bevoegd? - CircuLaw', 
+    title: themaMetaData.themaName + ' - Wie is waarvoor bevoegd? - CircuLaw',
     description: themaMetaData.metaDescribe || generic.description,
     alternates: {
       canonical: `/${themaMetaData.productChain}/${themaMetaData.slug}/overheidsbevoegdheid`,
@@ -25,12 +29,11 @@ export async function generateMetadata({ params }, parent) {
     },
     openGraph: {
       images: previousImages,
-      title: themaMetaData.themaName + ' - Wie is waarvoor bevoegd? - CircuLaw', 
-      description: generic.description
+      title: themaMetaData.themaName + ' - Wie is waarvoor bevoegd? - CircuLaw',
+      description: generic.description,
     },
-  }
+  };
 }
-
 
 export async function generateStaticParams() {
   const themas = await client.fetch(THEME_PATHS_QUERY, {

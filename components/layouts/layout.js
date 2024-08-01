@@ -4,12 +4,10 @@ import Nav from '@/components/nav';
 import Footer from '@/components/nav/footer';
 import PiwikProProvider from '@piwikpro/next-piwik-pro';
 
-
 // TODO: what parts of this can we move directly to layout.js
 // moving these parts mean they will render on the server and not client side.
 // at the moment most of the layout is being rendered client side which defeats the purporse of the app router.
 export default function Layout({ children, homePageHeader, navData, partnerLogos }) {
-
   const vraagSlug = '/vraag-en-antwoord';
 
   return (

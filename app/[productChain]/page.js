@@ -1,21 +1,30 @@
-import { PC_PATHS_QUERY, PRODUCT_CHAIN_PAGE_QUERY, THEMES_BY_PC_QUERY, PRODUCT_CHAIN_METADATA_QUERY } from '@/lib/queries';
+import {
+  PC_PATHS_QUERY,
+  PRODUCT_CHAIN_PAGE_QUERY,
+  THEMES_BY_PC_QUERY,
+  PRODUCT_CHAIN_METADATA_QUERY,
+} from '@/lib/queries';
 import PCLayout from '@/components/layouts/product-chain-layout';
 import { client } from '@/lib/sanity';
 
 // metadata
 export async function generateMetadata({ params }, parent) {
   // read route params
-  const productChain = params.productChain
+  const productChain = params.productChain;
   // fetch data
-  const productChainMetaData = await client.fetch(PRODUCT_CHAIN_METADATA_QUERY, {productChain}, {
-    next: { tags: ['transitionAgenda'] },
-  })
+  const productChainMetaData = await client.fetch(
+    PRODUCT_CHAIN_METADATA_QUERY,
+    { productChain },
+    {
+      next: { tags: ['transitionAgenda'] },
+    },
+  );
   // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent).openGraph?.images || []
-  const generic = (await parent).openGraph
+  const previousImages = (await parent).openGraph?.images || [];
+  const generic = (await parent).openGraph;
 
   return {
-    title: productChainMetaData.metaTitle || productChainMetaData.pcName  + ' - CircuLaw',
+    title: productChainMetaData.metaTitle || productChainMetaData.pcName + ' - CircuLaw',
     description: productChainMetaData.metaDescribe || generic.description,
     alternates: {
       canonical: `/${productChainMetaData.slug}`,
@@ -25,10 +34,10 @@ export async function generateMetadata({ params }, parent) {
     },
     openGraph: {
       images: previousImages,
-      title: productChainMetaData.metaTitle || productChainMetaData.pcName, 
-      description: productChainMetaData.metaDescribe || generic.description
+      title: productChainMetaData.metaTitle || productChainMetaData.pcName,
+      description: productChainMetaData.metaDescribe || generic.description,
     },
-  }
+  };
 }
 
 // slugs
@@ -40,7 +49,6 @@ export async function generateStaticParams() {
 }
 
 export const dynamicParams = false;
-
 
 // page data
 async function getProductChainData(params) {

@@ -4,10 +4,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function OverviewPageHeader({ thema, productChain, title, page }) {
-  console.log(thema)
-  console.log(productChain)
-  console.log(title)
-  console.log(page)
   const pathname = usePathname();
   return (
     <>

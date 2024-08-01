@@ -1,18 +1,18 @@
 /* eslint-disable */
-import { ImageResponse } from 'next/og'
+import { ImageResponse } from 'next/og';
 
-export const runtime = 'edge'
- 
+export const runtime = 'edge';
+
 const image = fetch(new URL('@/public/circulaw_logotype_home2.png', import.meta.url)).then((res) =>
-    res.arrayBuffer(),
-  );
+  res.arrayBuffer(),
+);
 
 export async function GET() {
-    const imageData = await image;
+  const imageData = await image;
 
   return new ImageResponse(
     (
-        <div
+      <div
         style={{
           backgroundColor: '#035E46',
           backgroundSize: '150px 150px',
@@ -42,5 +42,5 @@ export async function GET() {
       width: 1200,
       height: 630,
     },
-  )
+  );
 }

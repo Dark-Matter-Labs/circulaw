@@ -20,6 +20,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
   useEffect(() => {
     localStorage.clear();
   });
+  // console.log(localStorage)
 
   return (
     <>

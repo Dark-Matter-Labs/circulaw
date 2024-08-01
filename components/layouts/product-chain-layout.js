@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 // TODO: See what we could move to a layout.js file instead of having everything in components.
+// TOTAL INSTRUMENTS IS NOT THERE!!!!
 export default function PCLayout({ ...props }) {
   return (
     <>
