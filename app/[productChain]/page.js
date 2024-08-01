@@ -1,15 +1,7 @@
-import { PC_PATHS_QUERY, PRODUCT_CHAIN_PAGE_QUERY, THEMES_BY_PC_QUERY } from '@/lib/queries';
+import { PC_PATHS_QUERY, PRODUCT_CHAIN_PAGE_QUERY, THEMES_BY_PC_QUERY, PRODUCT_CHAIN_METADATA_QUERY } from '@/lib/queries';
 import PCLayout from '@/components/layouts/product-chain-layout';
-import { client, urlFor } from '@/lib/sanity';
+import { client } from '@/lib/sanity';
 
-const PRODUCT_CHAIN_METADATA_QUERY = `
-*[_type == "transitionAgenda" && slug.current == $productChain][0] {
-  metaTitle,
-  metaDescribe,
-  pcName,
-  'image': homepageImage.asset,
-}
-`
 
 export async function generateMetadata({ params }, parent) {
   // read route params
@@ -18,16 +10,21 @@ export async function generateMetadata({ params }, parent) {
   const productChainMetaData = await client.fetch(PRODUCT_CHAIN_METADATA_QUERY, {productChain})
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || []
+  const generic = (await parent).openGraph
 
-  const image = urlFor(productChainMetaData.image).url()
-  console.log(image)
   return {
-    title: productChainMetaData.pcName + ' - CircuLaw',
-    description: productChainMetaData.metaDescribe,
+    title: productChainMetaData.metaTitle || productChainMetaData.pcName  + ' - CircuLaw',
+    description: productChainMetaData.metaDescribe || generic.description,
+    alternates: {
+      canonical: `/${productChainMetaData.slug}`,
+      languages: {
+        'nl-NL': '/nl-NL',
+      },
+    },
     openGraph: {
-      images: [image, ...previousImages],
-      title: productChainMetaData.pcName,
-      description: productChainMetaData.metaDescribe
+      images: previousImages,
+      title: productChainMetaData.pcName, 
+      description: productChainMetaData.metaDescribe || generic.description
     },
   }
 }
