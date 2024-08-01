@@ -25,7 +25,7 @@ export async function generateMetadata({ params }, parent) {
     },
     openGraph: {
       images: previousImages,
-      title: productChainMetaData.pcName, 
+      title: productChainMetaData.metaTitle || productChainMetaData.pcName, 
       description: productChainMetaData.metaDescribe || generic.description
     },
   }
