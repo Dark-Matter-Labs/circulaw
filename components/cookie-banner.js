@@ -35,7 +35,7 @@ const CookieConsent = ({ hasLocalConsentCookie }) => {
       () => console.log('consent fail'),
     );
   };
-  if (consent === true) {
+  if (consent === true || window.location.host.includes('staging') || window.location.host.includes('-git-')) {
     return null;
   }
 
