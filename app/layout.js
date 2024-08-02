@@ -1,7 +1,7 @@
 import '../global.css';
 import 'tailwindcss/tailwind.css';
 import { Plus_Jakarta_Sans } from 'next/font/google';
-import { LinkedInInsightTag } from 'nextjs-linkedin-insight-tag'
+import { LinkedInInsightTag } from 'nextjs-linkedin-insight-tag';
 
 import globalMeta from '@/utils/global-meta';
 import Layout from '@/components/layouts/layout';
