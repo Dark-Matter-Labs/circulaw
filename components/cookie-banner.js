@@ -1,10 +1,15 @@
+'use client'
 import { setCookie, hasCookie } from 'cookies-next';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
 
 // TODO: implement cookie consent in app router with hotjar
 const CookieConsent = () => {
   const [consent, setConsent] = useState(true);
+  const router = useRouter()
+
   useEffect(() => {
     setConsent(hasCookie('localConsent'));
   }, []);
@@ -13,7 +18,7 @@ const CookieConsent = () => {
     setConsent(true);
     setCookie('localConsent', 'true', { maxAge: 60 * 60 * 24 * 365 });
     // extra refresh to enable Hotjar
-    window.location.reload();
+    router.refresh()
     // eslint-disable-next-line
     ppms.cm.api(
       'setComplianceSettings',
