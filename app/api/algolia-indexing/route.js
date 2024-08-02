@@ -36,7 +36,7 @@ const QUERY = `
 `;
 
 const ABOUT_QUERY = `
-  *[_type == "aboutPage"] {
+  *[_type == "aboutPage" && !(_id in path('drafts.**'))] {
     "objectID": _id,
     pageTitle, 
     "slug": slug.current,
@@ -54,7 +54,7 @@ export async function GET() {
 
   try {
     console.time(
-      `Saving ${instruments.length} instruments and ${aboutPage.length} news items to index`,
+      `Saving ${instruments.length} instruments and ${aboutPage.length} aboutPages items to index`,
     );
     await instrumentIndex.saveObjects(instruments);
     // await newsIndex.saveObjects(newsItems.newsItems)
