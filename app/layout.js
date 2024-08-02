@@ -7,6 +7,8 @@ import globalMeta from '@/utils/global-meta';
 import Layout from '@/components/layouts/layout';
 import { client } from '@/lib/sanity';
 import { NAV_QUERY, PARTNERS_QUERY } from '@/lib/queries';
+import { hasCookie } from 'cookies-next';
+import { cookies } from 'next/headers';
 
 const plus_Jakarta_Sans = Plus_Jakarta_Sans({
   weight: ['200', '300', '400', '500', '600', '700', '800'],
@@ -60,10 +62,17 @@ async function getPartnerLogos() {
 export default async function RootLayout({ children }) {
   const navData = await getNavData();
   const partnerLogos = await getPartnerLogos();
+
+  const hasLocalConsentCookie = hasCookie('localConsent', { cookies });
+
   return (
     <html lang='nl' className={plus_Jakarta_Sans.variable}>
       <body>
-        <Layout navData={navData} partnerLogos={partnerLogos}>
+        <Layout
+          navData={navData}
+          partnerLogos={partnerLogos}
+          hasLocalConsentCookie={hasLocalConsentCookie}
+        >
           {children}
         </Layout>
         <LinkedInInsightTag />
