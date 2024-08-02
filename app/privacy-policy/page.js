@@ -1,6 +1,10 @@
 import LinkIcon from '@/components/link-icon';
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'Privacyverklaring - CircuLaw'
+}
+
 export default function Privacy() {
   return (
     <div className='global-margin my-20 max-w-2xl text-gray-800'>
