@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 
-// TODO: implement cookie consent in app router with hotjar
 const CookieConsent = () => {
   const [consent, setConsent] = useState(true);
   const router = useRouter()
