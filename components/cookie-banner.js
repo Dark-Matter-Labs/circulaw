@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 // TODO: implement cookie consent in app router with hotjar
 const CookieConsent = () => {
   const [consent, setConsent] = useState(true);
+
   useEffect(() => {
     setConsent(hasCookie('localConsent'));
   }, []);
