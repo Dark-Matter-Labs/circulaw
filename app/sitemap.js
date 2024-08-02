@@ -15,7 +15,6 @@ export default async function sitemap() {
   const urls = await getURLS();
   const array = [];
   const URLS = array.concat(urls.instrument, urls.about, urls.eu, urls.pcs, urls.themas, urls.news);
-  console.log(URLS.length)
   return URLS.map((url) => ({
     url: baseUrl + url.URL,
     priority: 0.8,
