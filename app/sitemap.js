@@ -1,29 +1,24 @@
 import { client } from '@/lib/sanity';
+import { SITEMAP_QUERY } from '@/lib/queries';
 
 const baseUrl = 'https://www.circulaw.nl';
 
-async function getInstruments() {
-  const INSTRUMENT_QUERY = `{
-        "instruments": *[_type == 'instrument'] {
-        "URL":'/' + lower(transitionAgenda->pcName) + '/' + lower(thema->themaName) + '/instrumenten/' + slug.current
-        }
-    }`;
-  const urls = await client.fetch(INSTRUMENT_QUERY);
+export async function getURLS() {
+  const urls = await client.fetch(SITEMAP_QUERY, {  next: { tags: ['aboutPage', 'instrument', 'euLaw', 'thema', 'simpleThema', 'transitionAgenda', 'newsPage'] }});
   if (!urls) {
     throw new Error('could not fetch instruments');
   }
   return urls;
 }
 
-export default async function Sitemap() {
-  const instruments = await getInstruments();
-
-  return instruments.map((page) => {
-    const slug = page.URL.replace(/\s+/g, '-').replace('elektr(on)ische', 'elektrische');
-    return `
-                <loc>${baseUrl}${slug}</loc>
-                <changefreq>daily</changefreq>
-                <priority>0.8</priority>
-                `;
-  });
+export default async function sitemap() {
+  const urls = await getURLS();
+  const array = [];
+  const URLS = array.concat(urls.instrument, urls.about, urls.eu, urls.pcs, urls.themas, urls.news);
+  console.log(URLS.length)
+  return URLS.map((url) => ({
+    url: baseUrl + url.URL,
+    priority: 0.8,
+    changeFrequency: 'daily',
+  }));
 }
