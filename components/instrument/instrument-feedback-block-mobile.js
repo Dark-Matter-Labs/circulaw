@@ -3,6 +3,7 @@ import { Popover } from '@headlessui/react';
 import { ArrowUpIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 
+// TODO: Combine the mobile and desktop components into one
 export default function MobileFeedback({ data }) {
   return (
     <Popover className='bottom-0 max-w-sm h-14 z-20 sticky sm:hidden w-full'>
@@ -28,7 +29,7 @@ export default function MobileFeedback({ data }) {
               </div>
               <Link
                 className=''
-                href={{ pathname: '/feedback', query: { instrument: data?.instrument?.titel } }}
+                href={{ pathname: '/feedback', query: { instrument: data?.titel } }}
               >
                 <CustomButton color='greenBackground'>
                   <span className=''>Ik deel mijn kennis</span>

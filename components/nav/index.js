@@ -1,9 +1,10 @@
+'use client';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 import DesktopNavCard from './desktop-nav-card';
 import DesktopSimpleButton from './desktop-simple-button';
 import MobileDisclosure from './mobile-disclosure';
 import MobileSimpleButton from './mobile-simple-button';
-import HomepageHeader from '@/components/homepage-header';
+import HomepageHeader from '@/components/homepage/homepage-header';
 import BetaBanner from '@/components/nav/beta-banner';
 import LangSwitch from '@/components/nav/lang-switch';
 import animationData from '@/public/CL_Home_Logo_Loop';
@@ -26,9 +27,10 @@ import { Disclosure, Transition } from '@headlessui/react';
 import { ChevronDownIcon, MenuIcon, XIcon, SearchIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import Lottie from 'react-lottie';
-import { useSearchParams, usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
+import SearchButton from './searchButton';
 
 const defaultOptions = {
   loop: true,
@@ -39,8 +41,8 @@ const defaultOptions = {
   },
 };
 
+// TODO: remove case for en page as it no longer exists and has been redirected.
 export default function Nav(props) {
-  const searchParams = useSearchParams();
   const pathname = usePathname();
   const { CustomEvent } = usePiwikPro();
   const [scrollEffect, setScrollEffect] = useState(false);
@@ -58,15 +60,6 @@ export default function Nav(props) {
 
   const [searchIndex, setSearchIndex] = useState('instruments');
   const [searchQuery, setSearchQuery] = useState('');
-
-  const createQueryString = useCallback(
-    (name, value) => {
-      const params = new URLSearchParams(searchParams.toString());
-      params.set(name, value);
-      return params.toString();
-    },
-    [searchParams],
-  );
 
   const onChange = () => (e) => {
     const value = e.target.value;
@@ -267,33 +260,6 @@ export default function Nav(props) {
       },
     });
 
-  if (pathname === '/en') {
-    return (
-      <>
-        <div className='w-full bg-green-800 sticky top-0 z-40 shadow-lg'>
-          <div className='flex justify-between global-margin'>
-            <div className=' flex justify-start items-center'>
-              <div className='hidden sm:block -ml-6'>
-                <Link href='/'>
-                  <Lottie options={defaultOptions} height={110} width={183} />
-                </Link>
-              </div>
-              <div className='block sm:hidden -ml-6'>
-                <Link href='/'>
-                  <Lottie options={defaultOptions} height={86} width={162} />
-                </Link>
-              </div>
-            </div>
-            <LangSwitch
-              background='dark'
-              translateOpen={props.translateOpen}
-              setTranslateOpen={props.setTranslateOpen}
-            />
-          </div>
-        </div>
-      </>
-    );
-  }
   return (
     <>
       <div className='flex w-96 justify-center mx-auto -mb-9 relative z-110' name='top'>
@@ -536,7 +502,7 @@ export default function Nav(props) {
                                               href={`/over/${aboutPage?.slug}`}
                                               onClick={() => setMobileMenuIsOpen(false)}
                                             >
-                                              {aboutPage.title}
+                                              {aboutPage.pageTitle}
                                             </Link>
                                           </li>
                                         ))}
@@ -830,10 +796,14 @@ export default function Nav(props) {
                                 id='navClick'
                                 onClick={() => {
                                   setOverMenuIsOpen(false);
-                                  CustomEvent.trackEvent('Nav click', pathname, aboutPage.title);
+                                  CustomEvent.trackEvent(
+                                    'Nav click',
+                                    pathname,
+                                    aboutPage.pageTitle,
+                                  );
                                 }}
                               >
-                                {aboutPage.title}
+                                {aboutPage.pageTitle}
                               </Link>
                             </div>
                           ))}
@@ -974,26 +944,13 @@ export default function Nav(props) {
                                     }
                                     onChange={onChange()}
                                   />
-                                  <button type='submit'>
-                                    <Link
-                                      // onClick={handleSubmit()}
-                                      ref={linkRef}
-                                      href={`${
-                                        searchIndex === 'instruments'
-                                          ? `/zoeken/instrumenten?${searchIndex}${createQueryString(
-                                              '[query]',
-                                              searchQuery,
-                                            )}`
-                                          : `/zoeken/over-circulaw?${searchIndex}${createQueryString(
-                                              '[query]',
-                                              searchQuery,
-                                            )}`
-                                      }`}
-                                      className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl flex items-center justify-center hover:bg-green-200 hover:border-green-200'
-                                    >
-                                      Zoeken
-                                    </Link>
-                                  </button>
+                                  <Suspense>
+                                    <SearchButton
+                                      linkRef={linkRef}
+                                      searchIndex={searchIndex}
+                                      searchQuery={searchQuery}
+                                    />
+                                  </Suspense>
                                   <button
                                     type='reset'
                                     title='Clear the search query'

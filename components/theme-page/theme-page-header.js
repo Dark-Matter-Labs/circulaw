@@ -3,6 +3,7 @@ import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
 
+// TODO: try and make these image load on the server/optimise them as they are slow
 export default function ThemePageHeader({ themaData }) {
   return (
     <div className='hidden sm:block w-full h-[360px]'>

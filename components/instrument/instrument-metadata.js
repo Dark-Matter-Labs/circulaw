@@ -15,10 +15,9 @@ export default function InstrumentMetaData({ data, borders }) {
             <div className='p-xs-semibold text-gray-600'>Juridische houdbaarheid</div>
             <div className='flex items-center'>
               <div className='p-xs-semibold text-green-500 pr-2'>
-                {data?.instrument?.juridischeHaalbaarheid}
                 {data?.juridischeHaalbaarheid}
               </div>
-              {data?.instrument?.slug && (
+              {data?.slug && (
                 <JHTooltip data={data}>
                   <svg
                     width='24'
@@ -40,11 +39,8 @@ export default function InstrumentMetaData({ data, borders }) {
           <div className='flex flex-col basis-invloed'>
             <div className='p-xs-semibold text-gray-600'>Invloed</div>
             <div className='flex items-center'>
-              <div className='p-xs-semibold text-green-500 pr-2'>
-                {data?.instrument?.juridischInvloed}
-                {data?.juridischInvloed}
-              </div>
-              {data?.instrument?.slug && (
+              <div className='p-xs-semibold text-green-500 pr-2'>{data?.juridischInvloed}</div>
+              {data?.slug && (
                 <JITooltip data={data}>
                   <svg
                     width='24'
@@ -66,15 +62,6 @@ export default function InstrumentMetaData({ data, borders }) {
           <div className='flex flex-col basis-overheidslaag'>
             <div className='p-xs-semibold text-gray-600'>Overheidslaag</div>
             <div className='p-xs-semibold text-green-500'>
-              {data?.instrument?.overheidslaag
-                ?.filter((x) => x !== null)
-                .map((level) => (
-                  <span key={level} className=''>
-                    {level}{' '}
-                    {data?.instrument?.overheidslaag?.slice(-1)[0] !== level && <span>-</span>}
-                    &nbsp;
-                  </span>
-                ))}
               {data?.overheidslaag
                 ?.filter((x) => x !== null)
                 .map((level) => (
@@ -89,19 +76,13 @@ export default function InstrumentMetaData({ data, borders }) {
             <div className='p-xs-semibold text-gray-600'>R-ladder</div>
             <div className='flex items-center'>
               <div className='flex flex-row items-center'>
-                {data?.instrument?.rLadder?.map((rValue) => (
-                  <div key={rValue} className='p-xs-semibold text-green-500 '>
-                    {rValue} {data?.instrument?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
-                    &nbsp;
-                  </div>
-                ))}
                 {data?.rLadder?.map((rValue) => (
                   <div key={rValue} className='p-xs-semibold text-green-500 '>
                     {rValue} {data?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                     &nbsp;
                   </div>
                 ))}
-                {data?.instrument?.slug && (
+                {data?.slug && (
                   <RLadderTooltip>
                     <svg
                       width='24'
@@ -131,10 +112,9 @@ export default function InstrumentMetaData({ data, borders }) {
             <div className='p-xs-semibold sm:py-1 text-gray-600'>Juridische houdbaarheid</div>
             <div className='flex items-center'>
               <div className='p-xs-semibold text-green-500 pr-2'>
-                {data?.instrument?.juridischeHaalbaarheid}
                 {data?.juridischeHaalbaarheid}
               </div>
-              {data?.instrument?.slug && (
+              {data?.slug && (
                 <JHTooltip data={data}>
                   <svg
                     width='24'
@@ -156,11 +136,8 @@ export default function InstrumentMetaData({ data, borders }) {
           <div className='flex flex-col justify-center'>
             <div className='p-xs-semibold py-1 text-gray-600'>Invloed</div>
             <div className='flex items-center'>
-              <div className='p-xs-semibold text-green-500 pr-2'>
-                {data?.instrument?.juridischInvloed}
-                {data?.juridischInvloed}
-              </div>
-              {data?.instrument?.slug && (
+              <div className='p-xs-semibold text-green-500 pr-2'>{data?.juridischInvloed}</div>
+              {data?.slug && (
                 <JITooltip data={data}>
                   <svg
                     width='24'
@@ -184,15 +161,6 @@ export default function InstrumentMetaData({ data, borders }) {
           <div className='flex flex-col justify-center'>
             <div className='p-xs-semibold py-1 text-gray-600'>Overheidslaag</div>
             <div className='p-xs-semibold text-green-500'>
-              {data?.instrument?.overheidslaag
-                ?.filter((x) => x !== null)
-                .map((level) => (
-                  <span key={level} className=''>
-                    {level}{' '}
-                    {data?.instrument?.overheidslaag.slice(-1)[0] !== level && <span>-</span>}
-                    &nbsp;
-                  </span>
-                ))}
               {data?.overheidslaag
                 ?.filter((x) => x !== null)
                 .map((level) => (
@@ -209,19 +177,13 @@ export default function InstrumentMetaData({ data, borders }) {
             <div className='p-xs-semibold py-1 text-gray-600'>R-ladder</div>
             <div className='flex items-center'>
               <div className='flex flex-row items-center'>
-                {data?.instrument?.rLadder?.map((rValue) => (
-                  <div key={rValue} className='p-xs-semibold text-green-500'>
-                    {rValue} {data?.instrument?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
-                    &nbsp;
-                  </div>
-                ))}
                 {data?.rLadder?.map((rValue) => (
                   <div key={rValue} className='p-xs-semibold text-green-500'>
                     {rValue} {data?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                     &nbsp;
                   </div>
                 ))}
-                {data?.instrument?.slug && (
+                {data?.slug && (
                   <RLadderTooltip>
                     <svg
                       width='24'

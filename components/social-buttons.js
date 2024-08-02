@@ -1,3 +1,4 @@
+'use client';
 import { LinkIcon } from '@heroicons/react/outline';
 import {
   EmailShareButton,
@@ -5,7 +6,7 @@ import {
   TwitterShareButton,
   WhatsappShareButton,
 } from 'next-share';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { SocialIcon } from 'react-social-icons';
 
@@ -14,8 +15,9 @@ const viewportType = {
   desktop: 'flex flex-row justify-center items-center',
 };
 
+// TODO: make a mobile version of this and place it more consistently accross the different pages
 export default function SocialButtons({ title, viewport }) {
-  const { asPath } = useRouter();
+  const pathname = usePathname();
   const [showLinkCopied, setShowLinkCopied] = useState(false);
   let viewportClasses = viewportType[viewport];
 
@@ -32,11 +34,11 @@ export default function SocialButtons({ title, viewport }) {
       <span className='p-base text-gray-100 pr-2'>Delen: </span>
       <span className='pr-2 test' title='Share link on LinkedIn'>
         <LinkedinShareButton
-          url={url + asPath}
+          url={url + pathname}
           title={'Graag deel ik met jou deze informatie van CircuLaw.nl: ' + title}
         >
           <SocialIcon
-            url={url + asPath}
+            url={url + pathname}
             network='linkedin'
             style={{ height: 24, width: 24 }}
             bgColor='#FDFDFD'
@@ -45,9 +47,9 @@ export default function SocialButtons({ title, viewport }) {
         </LinkedinShareButton>
       </span>
       <span className='pr-2' title='Share link on Twitter'>
-        <TwitterShareButton url={url + asPath} title={'' + title}>
+        <TwitterShareButton url={url + pathname} title={'' + title}>
           <SocialIcon
-            url={url + asPath}
+            url={url + pathname}
             network='x'
             style={{ height: 24, width: 24 }}
             bgColor='#FDFDFD'
@@ -56,9 +58,9 @@ export default function SocialButtons({ title, viewport }) {
         </TwitterShareButton>
       </span>
       <span className='pr-2' title='Share link on Whatsapp'>
-        <WhatsappShareButton url={url + asPath} title={'' + title} separator=':: '>
+        <WhatsappShareButton url={url + pathname} title={'' + title} separator=':: '>
           <SocialIcon
-            url={url + asPath}
+            url={url + pathname}
             network='whatsapp'
             style={{ height: 24, width: 24 }}
             bgColor='#FDFDFD'
@@ -68,12 +70,12 @@ export default function SocialButtons({ title, viewport }) {
       </span>
       <span className='pr-2' title='Share link as email'>
         <EmailShareButton
-          url={url + asPath}
+          url={url + pathname}
           subject={'Graag deel ik met jou deze informatie van CircuLaw.nl'}
           title={'Voeg eigen boodschap toe. ' + title}
         >
           <SocialIcon
-            url={url + asPath}
+            url={url + pathname}
             network='email'
             style={{ height: 24, width: 24 }}
             bgColor='#FDFDFD'
@@ -85,7 +87,7 @@ export default function SocialButtons({ title, viewport }) {
         <LinkIcon
           className='inline-block p-1 h-6 w-6 bg-gray-100 rounded-full text-[#A2A3A2] hover:cursor-pointer hover:bg-green-300'
           onClick={() => {
-            navigator.clipboard.writeText(url + asPath);
+            navigator.clipboard.writeText(url + pathname);
             setShowLinkCopied(true);
             setTimeout(() => {
               setShowLinkCopied(false);

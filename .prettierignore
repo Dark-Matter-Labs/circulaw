@@ -2,4 +2,6 @@
 build
 coverage
 
+/studio/dist
+
 .next

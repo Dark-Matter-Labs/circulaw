@@ -3,11 +3,10 @@ import algoliasearch from 'algoliasearch';
 import indexer from 'sanity-algolia';
 import { NextResponse } from 'next/server';
 
-
 export const agoliaInstance = algoliasearch(
-    process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID,
-    process.env.NEXT_PUBLIC_AGOLIA_ADMIN_KEY,
-)
+  process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID,
+  process.env.NEXT_PUBLIC_AGOLIA_ADMIN_KEY,
+);
 
 const PROJECTION = `{
     _type,
@@ -32,79 +31,71 @@ const PROJECTION = `{
           select(grondpositie == true => "grondpositie"),
           select(subsidie == true => "subsidie"),
           select(fiscaal == true => "fiscaal")],
-        }`
-
-
+        }`;
 
 export async function POST(req) {
-    try {
-        const sanityAgolia = indexer(
-            {
-                instrument: {
-                    index: agoliaInstance.initIndex('instruments'),
-                    projection: PROJECTION,
-
-                }, 
-                aboutPage: {
-                    index: agoliaInstance.initIndex('aboutPage'),
-                    projection: `
+  try {
+    const sanityAgolia = indexer(
+      {
+        instrument: {
+          index: agoliaInstance.initIndex('instruments'),
+          projection: PROJECTION,
+        },
+        aboutPage: {
+          index: agoliaInstance.initIndex('aboutPage'),
+          projection: `
                         {
                             "objectID": _id,
                             pageTitle, 
                             "slug": slug.current,
                             "content": array::join(string::split((pt::text(aboutPageContent)), "")[0..9500], "")
                           }
-                    `
-                }
-            },
+                    `,
+        },
+      },
 
-            (document) => {
-                switch (document._type) {
-                    case 'instrument': 
-                        return {
-                            objectID: document.objectID,
-                            titel: document.titel,
-                            subtitel: document.subtitel,
-                            subrechtsgebied: document.subrechtsgebied,
-                            citeertitel: document.citeertitel,
-                            content: document.content,
-                            slug: document.slug,
-                            transitionAgenda: document.transitionAgenda,
-                            thema: document.thema,
-                            extraContent: document.extraContent,
-                            overheidslaag: document.overheidslaag,
-                            juridischInvloed: document.juridischInvloed,
-                            juridischeHaalbaarheid: document.juridischeHaalbaarheid,
-                            rLadder: document.rLadder,
-                            rechtsgebied: document.rechtsgebied,
-                            categorie: document.categorie,
-                        };
-                    case 'aboutPage': {
-                        return {
-                            objectID: document.objectID,
-                            pageTitle: document.pageTitle,
-                            slug: document.slug,
-                            content: document.content,
-                        }
-                    }
-                    default: 
-                        return document
-                }
-            }
-        );
+      (document) => {
+        switch (document._type) {
+          case 'instrument':
+            return {
+              objectID: document.objectID,
+              titel: document.titel,
+              subtitel: document.subtitel,
+              subrechtsgebied: document.subrechtsgebied,
+              citeertitel: document.citeertitel,
+              content: document.content,
+              slug: document.slug,
+              transitionAgenda: document.transitionAgenda,
+              thema: document.thema,
+              extraContent: document.extraContent,
+              overheidslaag: document.overheidslaag,
+              juridischInvloed: document.juridischInvloed,
+              juridischeHaalbaarheid: document.juridischeHaalbaarheid,
+              rLadder: document.rLadder,
+              rechtsgebied: document.rechtsgebied,
+              categorie: document.categorie,
+            };
+          case 'aboutPage': {
+            return {
+              objectID: document.objectID,
+              pageTitle: document.pageTitle,
+              slug: document.slug,
+              content: document.content,
+            };
+          }
+          default:
+            return document;
+        }
+      },
+    );
 
+    const body = await req.json();
 
-        const body = await req.json()
-        
-        const webhook = await sanityAgolia.webhookSync(client, body)
+    const webhook = await sanityAgolia.webhookSync(client, body);
 
-        return webhook.then(() => NextResponse.json({message: 'success!'})) 
-
-    } catch (err) {
-        let error_response = 
-        {status: 'error',
-            msg: err
-        };
-        return new Response(JSON.stringify(error_response))
-    }
+    return webhook.then(() => NextResponse.json({ message: 'success!' }));
+  } catch (err) {
+    let error_response = { status: 'error', msg: err };
+    return new Response(JSON.stringify(error_response));
+  }
 }

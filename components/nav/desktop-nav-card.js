@@ -1,14 +1,15 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 
 export default function DesktopNavCard({ navData, closeNav }) {
-  const router = useRouter();
+  const pathname = usePathname();
+
   const { CustomEvent } = usePiwikPro();
   return (
     <div
       className={`${
-        router.pathname === '/' ? 'bg-green-600 text-green-200' : 'bg-green-50 text-green-800'
+        pathname === '/' ? 'bg-green-600 text-green-200' : 'bg-green-50 text-green-800'
       } w-full h-full  ${
         navData.slug === 'bouw'
           ? 'pl-4 lgNav:pl-10 xl:pl-20 3xl:pl-32 pt-8 pr-2'
@@ -21,7 +22,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
         className='hover:underline'
         onClick={() => {
           closeNav(false);
-          CustomEvent.trackEvent('Nav click', router.asPath, navData.title);
+          CustomEvent.trackEvent('Nav click', pathname, navData.title);
         }}
       >
         {navData.title} {'>'}
@@ -32,10 +33,10 @@ export default function DesktopNavCard({ navData, closeNav }) {
             id='navClick'
             href={`/${navData.slug}/${thema.slug}`}
             className={`${
-              router.pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '
+              pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '
             } p-xs hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
             onClick={() => {
-              CustomEvent.trackEvent('Nav click', router.asPath, thema.themaName);
+              CustomEvent.trackEvent('Nav click', pathname, thema.themaName);
               closeNav(false);
             }}
           >
