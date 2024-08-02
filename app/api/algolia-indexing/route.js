@@ -68,7 +68,7 @@ export async function GET() {
           status: 200,
           body: 'Success!',
         });
-      } else return
+      }
     } catch (error) {
       console.error(error);
       return {
