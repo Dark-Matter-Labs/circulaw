@@ -2,7 +2,6 @@ import NewsDetailPageHeader from '@/components/news-page/news-detail-page-header
 import { client } from '@/lib/sanity';
 import NewsDetailPageBody from '@/components/news-page/news-detail-page-body';
 
-
 // re do this when re-structing news page
 const NEWS_METADATA_QUERY = `
 *[_type == "newsPage"][0] {
@@ -11,7 +10,7 @@ const NEWS_METADATA_QUERY = `
       'slug': slug.current
     }
 }
-`
+`;
 export async function generateMetadata({ params }, parent) {
   // read route params
   const slug = params.slug;
@@ -29,7 +28,9 @@ export async function generateMetadata({ params }, parent) {
   const generic = (await parent).openGraph;
 
   return {
-    title: newsPageMetaData.newsItems[0].metaTitle || newsPageMetaData.newsItems[0].newsTitle + ' - CircuLaw',
+    title:
+      newsPageMetaData.newsItems[0].metaTitle ||
+      newsPageMetaData.newsItems[0].newsTitle + ' - CircuLaw',
     description: newsPageMetaData.newsItems[0].metaDescribe || generic.description,
     alternates: {
       canonical: `/nieuws/${newsPageMetaData.newsItems[0].slug}`,

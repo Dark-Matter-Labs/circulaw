@@ -29,7 +29,7 @@ export async function generateMetadata({ params }, parent) {
       title: instrumentMetaData.titel + ' - CircuLaw',
       description:
         instrumentMetaData.metaDescribe || instrumentMetaData.subtitel || generic.description,
-        type: 'website',
+      type: 'website',
     },
   };
 }

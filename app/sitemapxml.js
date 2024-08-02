@@ -4,6 +4,7 @@ import { client } from '@/lib/sanity';
 export default function SiteMap() {
   return <div>loading</div>;
 }
+
 export async function getServerSideProps({ res }) {
   const baseUrl = 'https://www.circulaw.nl';
 

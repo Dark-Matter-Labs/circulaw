@@ -2,6 +2,10 @@ import { client } from '@/lib/sanity';
 import { FAQ_PAGE_QUERY } from '@/lib/queries';
 import FAQPageComponent from '@/components/faq-page';
 
+export const metadata = {
+  title: 'Vraag en antwoord - CircuLaw',
+};
+
 async function getFAQData() {
   const FAQData = await client.fetch(FAQ_PAGE_QUERY, { next: { tags: ['FAQpage'] } });
 

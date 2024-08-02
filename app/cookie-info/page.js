@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Cookiebeleid CircuLaw - CircuLaw'
-}
+  title: 'Cookiebeleid CircuLaw - CircuLaw',
+};
 
 const cookies = [
   { name: '_localConsent', description: 'bewaart je cookievoorkeuren', valid: '1 jaar' },

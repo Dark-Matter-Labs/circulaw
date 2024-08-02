@@ -3,9 +3,8 @@ import { client } from '@/lib/sanity';
 import NewsOverview from '@/components/news-page/news-overview';
 
 export const metadata = {
-  title: 'Nieuws - CircuLaw'
-}
-
+  title: 'Nieuws - CircuLaw',
+};
 
 async function getNewsOverviewData() {
   const newsOverviewData = await client.fetch(NEWS_ITEMS_QUERY, { next: { tags: ['newsPage'] } });

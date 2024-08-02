@@ -9,7 +9,7 @@ const ABOUT_PAGE_METADATA_QUERY = `
   metaDescribe,
   'slug': slug.current
 }
-`
+`;
 
 export async function generateMetadata({ params }, parent) {
   // read route params

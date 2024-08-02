@@ -2,8 +2,8 @@ import LinkIcon from '@/components/link-icon';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Privacyverklaring - CircuLaw'
-}
+  title: 'Privacyverklaring - CircuLaw',
+};
 
 export default function Privacy() {
   return (
