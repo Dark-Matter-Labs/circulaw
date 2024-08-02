@@ -29,7 +29,6 @@ export const metadata = {
     title: globalMeta.siteName,
     description: globalMeta.description,
     type: 'website',
-    logo: globalMeta.siteLogo
   },
 
   robots: {

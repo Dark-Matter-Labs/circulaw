@@ -27,6 +27,7 @@ export async function generateMetadata({ params }, parent) {
       images: previousImages,
       title: themaMetaData.themaName + ' - CircuLaw',
       description: generic.description,
+      type: 'website',
     },
   };
 }

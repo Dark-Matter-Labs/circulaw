@@ -37,6 +37,7 @@ export async function generateMetadata({ params }, parent) {
       images: previousImages,
       title: euLawMetaData.metaTitle || euLawMetaData.title,
       description: euLawMetaData.metaDescribe || euLawMetaData.introText || generic.description,
+      type: 'website',
     },
   };
 }

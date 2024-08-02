@@ -33,6 +33,7 @@ export async function generateMetadata({ params }, parent) {
       images: previousImages,
       title: productChainMetaData.metaTitle || productChainMetaData.pcName,
       description: productChainMetaData.metaDescribe || generic.description,
+      type: 'website',
     },
   };
 }

@@ -37,6 +37,7 @@ export async function generateMetadata({ params }, parent) {
       images: previousImages,
       title: aboutPageMetaData.metaTitle || aboutPageMetaData.pageTitle,
       description: aboutPageMetaData.metaDescribe || generic.description,
+      type: 'website',
     },
   };
 }

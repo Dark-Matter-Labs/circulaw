@@ -21,6 +21,7 @@ export const metadata = {
     title: 'EU wetgeving - CircuLaw',
     description:
       'Er komt een lawine van Europese wet- en regelgeving op ons af, gericht op de verduurzaming van onze maatschappij. Veel van deze nieuwe wet- en regelgeving valt onder de Green Deal, met als tussendoel Fit for 55.',
+      type: 'website',
   },
 };
 

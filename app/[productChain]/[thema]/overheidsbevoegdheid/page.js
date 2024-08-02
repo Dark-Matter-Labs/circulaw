@@ -28,6 +28,7 @@ export async function generateMetadata({ params }, parent) {
       images: previousImages,
       title: themaMetaData.themaName + ' - Wie is waarvoor bevoegd? - CircuLaw',
       description: generic.description,
+      type: 'website',
     },
   };
 }
