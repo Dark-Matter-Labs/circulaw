@@ -14,7 +14,6 @@ import { Suspense } from 'react';
 export async function generateMetadata({ params }, parent) {
   // read route params
   const law = params.law;
-  console.log(params);
   // fetch data
   const euLawMetaData = await client.fetch(
     EU_LAW_METADATA_QUERY,

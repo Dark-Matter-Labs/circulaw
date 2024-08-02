@@ -4,7 +4,19 @@ import { SITEMAP_QUERY } from '@/lib/queries';
 const baseUrl = 'https://www.circulaw.nl';
 
 export async function getURLS() {
-  const urls = await client.fetch(SITEMAP_QUERY, {  next: { tags: ['aboutPage', 'instrument', 'euLaw', 'thema', 'simpleThema', 'transitionAgenda', 'newsPage'] }});
+  const urls = await client.fetch(SITEMAP_QUERY, {
+    next: {
+      tags: [
+        'aboutPage',
+        'instrument',
+        'euLaw',
+        'thema',
+        'simpleThema',
+        'transitionAgenda',
+        'newsPage',
+      ],
+    },
+  });
   if (!urls) {
     throw new Error('could not fetch instruments');
   }

@@ -21,7 +21,6 @@ export default function Layout({ children, homePageHeader, navData, partnerLogos
     }
   }, [consent]);
 
-
   return (
     <>
       <Nav
