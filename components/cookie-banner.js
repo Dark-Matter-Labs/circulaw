@@ -11,8 +11,6 @@ const CookieConsent = ({ hasLocalConsentCookie }) => {
     setConsent(hasLocalConsentCookie);
   }, [hasLocalConsentCookie]);
 
-  console.log(hasLocalConsentCookie);
-
   const acceptCookie = () => {
     setConsent(true);
     setCookie('localConsent', 'true', { maxAge: 60 * 60 * 24 * 365 });
@@ -43,7 +41,9 @@ const CookieConsent = ({ hasLocalConsentCookie }) => {
 
   return (
     <section
-      className={`fixed z-20 bottom-0 left-0 w-full pb-2 shadow-top ${consent ? 'hidden' : ''}`}
+      className={`fixed z-20 bottom-0 left-0 w-full pb-2 shadow-top ${
+        consent === true ? 'hidden' : ''
+      }`}
     >
       <div className='flex flex-col items-start px-20 py-6 space-y-2 bg-green-600 md:flex-row md:space-y-0 md:items-stretch md:space-x-2  '>
         <div className='flex items-center flex-grow text-gray-100'>

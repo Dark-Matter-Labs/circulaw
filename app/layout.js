@@ -7,7 +7,7 @@ import globalMeta from '@/utils/global-meta';
 import Layout from '@/components/layouts/layout';
 import { client } from '@/lib/sanity';
 import { NAV_QUERY, PARTNERS_QUERY } from '@/lib/queries';
-import { hasCookie } from 'cookies-next';
+import { getCookie, hasCookie } from 'cookies-next';
 import { cookies } from 'next/headers';
 
 const plus_Jakarta_Sans = Plus_Jakarta_Sans({
@@ -64,6 +64,7 @@ export default async function RootLayout({ children }) {
   const partnerLogos = await getPartnerLogos();
 
   const hasLocalConsentCookie = hasCookie('localConsent', { cookies });
+  const hotjarCookie = getCookie('localConsent', { cookies });
 
   return (
     <html lang='nl' className={plus_Jakarta_Sans.variable}>
@@ -72,6 +73,7 @@ export default async function RootLayout({ children }) {
           navData={navData}
           partnerLogos={partnerLogos}
           hasLocalConsentCookie={hasLocalConsentCookie}
+          hotjarCookie={hotjarCookie}
         >
           {children}
         </Layout>

@@ -4,7 +4,6 @@ import Nav from '@/components/nav';
 import Footer from '@/components/nav/footer';
 import PiwikProProvider from '@piwikpro/next-piwik-pro';
 import { useEffect } from 'react';
-import { getCookie } from 'cookies-next';
 import { hotjar } from 'react-hotjar';
 
 // TODO: what parts of this can we move directly to layout.js
@@ -16,16 +15,18 @@ export default function Layout({
   navData,
   partnerLogos,
   hasLocalConsentCookie,
+  hotjarCookie,
 }) {
   const vraagSlug = '/vraag-en-antwoord';
 
-  const hotjarConsent = getCookie('localConsent');
+  // const hotjarConsent = getCookie('localConsent');
 
   useEffect(() => {
-    if (hotjarConsent === true) {
+    if (hotjarCookie === true) {
+      console.log('hotjar turned on');
       hotjar.initialize(Number(process.env.NEXT_PUBLIC_HJID), Number(process.env.NEXT_PUBLIC_HJSV));
     }
-  }, [hotjarConsent]);
+  }, [hotjarCookie]);
 
   return (
     <>
