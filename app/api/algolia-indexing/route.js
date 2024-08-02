@@ -1,8 +1,6 @@
 import { client } from '@/lib/sanity';
 import algoliasearch from 'algoliasearch';
 
-// need to hide this route.
-
 export const agoliaInstance = algoliasearch(
   process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID,
   process.env.NEXT_PUBLIC_AGOLIA_ADMIN_KEY,
@@ -54,22 +52,23 @@ export async function GET() {
   // const newsIndex  = agoliaInstance.initIndex('newsPage')
   const aboutIndex = agoliaInstance.initIndex('aboutPage');
 
-  if (process.env.NEXT_PUBLIC_SANITY_DATASET === 'production') {
     try {
-      console.time(
-        `Saving ${instruments.length} instruments and ${aboutPage.length} news items to index`,
-      );
-      await instrumentIndex.saveObjects(instruments);
-      // await newsIndex.saveObjects(newsItems.newsItems)
-      await aboutIndex.saveObjects(aboutPage);
-      // here it is newsItems.newsItems to structure the data as a array and not an object
-      console.timeEnd(
-        `Saving ${instruments.length} instruments and ${aboutPage.length} news items to index`,
-      );
-      return Response.json({
-        status: 200,
-        body: 'Success!',
-      });
+      if (process.env.NEXT_PUBLIC_SANITY_DATASET === 'prodcution') {
+        console.time(
+          `Saving ${instruments.length} instruments and ${aboutPage.length} news items to index`,
+        );
+        await instrumentIndex.saveObjects(instruments);
+        // await newsIndex.saveObjects(newsItems.newsItems)
+        await aboutIndex.saveObjects(aboutPage);
+        // here it is newsItems.newsItems to structure the data as a array and not an object
+        console.timeEnd(
+          `Saving ${instruments.length} instruments and ${aboutPage.length} news items to index`,
+        );
+        return Response.json({
+          status: 200,
+          body: 'Success!',
+        });
+      } else return
     } catch (error) {
       console.error(error);
       return {
@@ -77,8 +76,4 @@ export async function GET() {
         body: error,
       };
     }
-  } else Response.json({
-    status: 500, 
-    body: 'not production build'
-  });
 }
