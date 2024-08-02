@@ -2,6 +2,47 @@ import NewsDetailPageHeader from '@/components/news-page/news-detail-page-header
 import { client } from '@/lib/sanity';
 import NewsDetailPageBody from '@/components/news-page/news-detail-page-body';
 
+
+// re do this when re-structing news page
+const NEWS_METADATA_QUERY = `
+*[_type == "newsPage"][0] {
+    "newsItems" :newsItems[slug.current == $slug]{
+      newsTitle, 
+      'slug': slug.current
+    }
+}
+`
+export async function generateMetadata({ params }, parent) {
+  // read route params
+  const slug = params.slug;
+
+  // fetch data
+  const newsPageMetaData = await client.fetch(
+    NEWS_METADATA_QUERY,
+    { slug },
+    {
+      next: { tags: ['newsPage'] },
+    },
+  );
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
+  const generic = (await parent).openGraph;
+
+  return {
+    title: newsPageMetaData.newsItems[0].metaTitle || newsPageMetaData.newsItems[0].newsTitle + ' - CircuLaw',
+    description: newsPageMetaData.newsItems[0].metaDescribe || generic.description,
+    alternates: {
+      canonical: `/nieuws/${newsPageMetaData.newsItems[0].slug}`,
+    },
+    openGraph: {
+      images: previousImages,
+      title: newsPageMetaData.newsItems[0].metaTitle || newsPageMetaData.newsItems[0].newsTitle,
+      description: newsPageMetaData.newsItems[0].metaDescribe || generic.description,
+      type: 'website',
+    },
+  };
+}
+
 // TODO - leaving these two queries here
 // need to refactor how news is built and then re-fetch the data in the new structure.
 // this will also improve passing newsPageContent.newsItems[0] to the components.
