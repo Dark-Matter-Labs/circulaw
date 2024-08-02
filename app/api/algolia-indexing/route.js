@@ -35,7 +35,6 @@ const QUERY = `
   }
 `;
 
-
 const ABOUT_QUERY = `
   *[_type == "aboutPage" && !(_id in path('drafts.**'))] {
     "objectID": _id,
