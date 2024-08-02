@@ -53,7 +53,6 @@ export async function GET() {
   const aboutIndex = agoliaInstance.initIndex('aboutPage');
 
     try {
-      if (process.env.NEXT_PUBLIC_SANITY_DATASET === 'prodcution') {
         console.time(
           `Saving ${instruments.length} instruments and ${aboutPage.length} news items to index`,
         );
@@ -68,7 +67,6 @@ export async function GET() {
           status: 200,
           body: 'Success!',
         });
-      }
     } catch (error) {
       console.error(error);
       return {
