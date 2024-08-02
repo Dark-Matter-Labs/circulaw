@@ -52,26 +52,26 @@ export async function GET() {
   // const newsIndex  = agoliaInstance.initIndex('newsPage')
   const aboutIndex = agoliaInstance.initIndex('aboutPage');
 
-    try {
-        console.time(
-          `Saving ${instruments.length} instruments and ${aboutPage.length} news items to index`,
-        );
-        await instrumentIndex.saveObjects(instruments);
-        // await newsIndex.saveObjects(newsItems.newsItems)
-        await aboutIndex.saveObjects(aboutPage);
-        // here it is newsItems.newsItems to structure the data as a array and not an object
-        console.timeEnd(
-          `Saving ${instruments.length} instruments and ${aboutPage.length} news items to index`,
-        );
-        return Response.json({
-          status: 200,
-          body: 'Success!',
-        });
-    } catch (error) {
-      console.error(error);
-      return {
-        status: 500,
-        body: error,
-      };
-    }
+  try {
+    console.time(
+      `Saving ${instruments.length} instruments and ${aboutPage.length} news items to index`,
+    );
+    await instrumentIndex.saveObjects(instruments);
+    // await newsIndex.saveObjects(newsItems.newsItems)
+    await aboutIndex.saveObjects(aboutPage);
+    // here it is newsItems.newsItems to structure the data as a array and not an object
+    console.timeEnd(
+      `Saving ${instruments.length} instruments and ${aboutPage.length} news items to index`,
+    );
+    return Response.json({
+      status: 200,
+      body: 'Success!',
+    });
+  } catch (error) {
+    console.error(error);
+    return {
+      status: 500,
+      body: error,
+    };
+  }
 }
