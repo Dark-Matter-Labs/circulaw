@@ -20,9 +20,6 @@ export const metadata = {
   metadataBase: new URL(globalMeta.siteUrl),
   alternates: {
     canonical: '/',
-    languages: {
-      'nl-NL': '/nl-NL',
-    },
   },
   title: globalMeta.siteName,
   description: globalMeta.description,

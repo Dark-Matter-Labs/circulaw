@@ -24,9 +24,6 @@ export async function generateMetadata({ params }, parent) {
     description: themaMetaData.metaDescribe || generic.description,
     alternates: {
       canonical: `/${themaMetaData.productChain}/${themaMetaData.slug}`,
-      languages: {
-        'nl-NL': '/nl-NL',
-      },
     },
     openGraph: {
       images: previousImages,

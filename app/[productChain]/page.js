@@ -28,9 +28,6 @@ export async function generateMetadata({ params }, parent) {
     description: productChainMetaData.metaDescribe || generic.description,
     alternates: {
       canonical: `/${productChainMetaData.slug}`,
-      languages: {
-        'nl-NL': '/nl-NL',
-      },
     },
     openGraph: {
       images: previousImages,

@@ -23,9 +23,6 @@ export async function generateMetadata({ params }, parent) {
       instrumentMetaData.metaDescribe || instrumentMetaData.subtitel || generic.description,
     alternates: {
       canonical: `/${instrumentMetaData.productChain}/${instrumentMetaData.thema}/instrumenten/${instrumentMetaData.slug}`,
-      languages: {
-        'nl-NL': '/nl-NL',
-      },
     },
     openGraph: {
       images: previousImages,

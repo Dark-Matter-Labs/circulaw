@@ -15,9 +15,6 @@ export const metadata = {
   metadataBase: new URL(globalMeta.siteUrl + '/eu-wetgeving'),
   alternates: {
     canonical: '/',
-    languages: {
-      'nl-NL': '/nl-NL',
-    },
   },
   openGraph: {
     images: globalMeta.siteLogo,

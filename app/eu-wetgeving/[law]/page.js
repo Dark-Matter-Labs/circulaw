@@ -32,9 +32,6 @@ export async function generateMetadata({ params }, parent) {
     description: euLawMetaData.metaDescribe || euLawMetaData.introText || generic.description,
     alternates: {
       canonical: `/eu-wetgeving/${euLawMetaData.slug}`,
-      languages: {
-        'nl-NL': '/nl-NL',
-      },
     },
     openGraph: {
       images: previousImages,
