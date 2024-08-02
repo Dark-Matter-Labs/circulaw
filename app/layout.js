@@ -28,6 +28,8 @@ export const metadata = {
     images: globalMeta.siteLogo,
     title: globalMeta.siteName,
     description: globalMeta.description,
+    type: 'website',
+    logo: globalMeta.siteLogo
   },
 
   robots: {
