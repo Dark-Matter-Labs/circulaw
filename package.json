@@ -35,7 +35,7 @@
     "@vercel/og": "^0.5.6",
     "algoliasearch": "^4.23.3",
     "axios": "^1.4.0",
-    "cookies-next": "^2.1.1",
+    "cookies-next": "^4.2.1",
     "disqus-react": "^1.1.5",
     "next": "^14.1.1",
     "next-sanity": "^9.4.2",
