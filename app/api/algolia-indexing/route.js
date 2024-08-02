@@ -77,5 +77,8 @@ export async function GET() {
         body: error,
       };
     }
-  } else return;
+  } else Response.json({
+    status: 500, 
+    body: 'not production build'
+  });
 }
