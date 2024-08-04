@@ -162,5 +162,12 @@ export default {
         'Beeld moet altijd icoon van thema bevatten. Bij nieuw thema banner ‘NIEUW’ toevoegen.',
       group: 'editableContent',
     },
+    {
+      title: 'Theme sponsors',
+      name: 'themeSponsors',
+      type: 'array',
+      of: [{ type: 'partner' }],
+      group: 'editableContent',
+    },
   ],
 };
