@@ -79,20 +79,6 @@ export default {
       group: 'editableContent',
     },
     {
-      title: 'Link introtekst',
-      name: 'linkText',
-      type: 'string',
-      description: 'Niet verplicht',
-      group: 'editableContent',
-    },
-    {
-      title: 'Url introtekst',
-      name: 'headerLink',
-      type: 'url',
-      validation: (Rule) => Rule.uri({ scheme: ['http', 'https'] }),
-      group: 'editableContent',
-    },
-    {
       title: 'Hoofdafbeelding',
       name: 'heroImage',
       type: 'image',
@@ -106,7 +92,6 @@ export default {
       description: 'Gebruik originele formaat',
       group: 'editableContent',
     },
-
     {
       title: 'Titel overzichten',
       name: 'overviewsTitle',
@@ -222,6 +207,13 @@ export default {
       type: 'array',
       of: [{ type: 'themePageReport' }],
       validation: (Rule) => Rule.max(3),
+      group: 'editableContent',
+    },
+    {
+      title: 'Theme sponsors',
+      name: 'themeSponsors',
+      type: 'array',
+      of: [{ type: 'partner' }],
       group: 'editableContent',
     },
   ],
