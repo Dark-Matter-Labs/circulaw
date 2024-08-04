@@ -15,7 +15,6 @@ export default function ThemePageHeaderMobile({ themaData }) {
           />
         )}
         <div className='w-full h-full bg-gradient-to-t from-[#035E46] to-[#035E4600] z-0 absolute'></div>
-
         <div className='w-full h-full z-10 flex flex-col justify-between global-margin'>
           <div>
             <div className='pt-8'>
@@ -39,9 +38,7 @@ export default function ThemePageHeaderMobile({ themaData }) {
             <h1 className='heading-4xl-semibold sm:heading-5xl-semibold text-gray-100 pb-1'>
               {themaData?.themaName}
             </h1>
-            <p className='p-base text-gray-100'>
-              {themaData?.themaSubtitle}
-            </p>
+            <p className='p-base text-gray-100'>{themaData?.themaSubtitle}</p>
           </div>
         </div>
       </div>
