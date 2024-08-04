@@ -92,7 +92,6 @@ export default {
       description: 'Gebruik originele formaat',
       group: 'editableContent',
     },
-
     {
       title: 'Titel overzichten',
       name: 'overviewsTitle',
@@ -210,5 +209,12 @@ export default {
       validation: (Rule) => Rule.max(3),
       group: 'editableContent',
     },
+    {
+      title: 'Theme sponsors',
+      name: 'themeSponsors',
+      type: 'array',
+      of: [{type: 'partner'}],
+      group: 'editableContent',
+    }
   ],
 };
