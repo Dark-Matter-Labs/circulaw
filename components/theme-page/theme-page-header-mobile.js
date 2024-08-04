@@ -1,4 +1,3 @@
-import LinkIcon from '../link-icon';
 import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -42,19 +41,6 @@ export default function ThemePageHeaderMobile({ themaData }) {
             </h1>
             <p className='p-base text-gray-100'>
               {themaData?.themaSubtitle}
-              {themaData?.linkText && (
-                <span className='text-white link-base inline-block '>
-                  <a
-                    href={themaData?.headerLinkURL}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                  >
-                    {themaData?.linkText}
-                    <LinkIcon />
-                  </a>
-                </span>
-              )}
             </p>
           </div>
         </div>
