@@ -79,20 +79,6 @@ export default {
       group: 'editableContent',
     },
     {
-      title: 'Link introtekst',
-      name: 'linkText',
-      type: 'string',
-      description: 'Niet verplicht',
-      group: 'editableContent',
-    },
-    {
-      title: 'Url introtekst',
-      name: 'headerLink',
-      type: 'url',
-      validation: (Rule) => Rule.uri({ scheme: ['http', 'https'] }),
-      group: 'editableContent',
-    },
-    {
       title: 'Hoofdafbeelding',
       name: 'heroImage',
       type: 'image',
