@@ -166,8 +166,8 @@ export default {
       title: 'Theme sponsors',
       name: 'themeSponsors',
       type: 'array',
-      of: [{type: 'partner'}],
+      of: [{ type: 'partner' }],
       group: 'editableContent',
-    }
+    },
   ],
 };
