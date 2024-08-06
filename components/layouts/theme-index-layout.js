@@ -21,6 +21,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
   useEffect(() => {
     localStorage.clear();
   });
+
+  console.log(thema.themaName);
   return (
     <>
       <div>
@@ -454,7 +456,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
             </div>
           )}
           {thema?.themeSponsors?.length > 0 && (
-            <ThemeSponsors sponsor={thema?.themeSponsors?.length} theme={thema?.themaName} />
+            <ThemeSponsors sponsors={thema?.themeSponsors} thema={thema?.themaName} />
           )}
         </div>
       </div>

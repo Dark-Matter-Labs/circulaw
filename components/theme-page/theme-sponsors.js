@@ -9,8 +9,8 @@ export default function ThemeSponsors({ thema, sponsors }) {
           <div className='h-11 w-1.5 bg-green-500'></div>
           <div className='ml-4'>Het thema &apos;{thema}&apos; is mede mogelijk gemaakt door:</div>
         </div>
-        <ul className='mb-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 sm:gap-x-8'>
-          {sponsors.map((sponsor, id) => (
+        <ul className='mb-16 flex flex-row flex-wrap sm:gap-x-8 items-center justify-center'>
+          {sponsors?.map((sponsor, id) => (
             <li key={id} className='relative h-28 w-52'>
               <Link href={sponsor.partnerLink}>
                 <ImageComponent image={sponsor.logo} />

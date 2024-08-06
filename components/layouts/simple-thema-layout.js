@@ -6,7 +6,6 @@ import ThemeSponsors from '../theme-page/theme-sponsors';
 // TODO: See what we could move to a layout.js file instead of having everything in components.
 export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props }) {
   const themaData = props.thema;
-  console.log();
   return (
     <>
       {/* HEADER DESKTOP */}
@@ -32,7 +31,7 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
         </div>
       </div>
       {props?.thema?.themeSponsors?.length > 0 && (
-        <ThemeSponsors sponsors={props?.thema?.themeSponsors} thema = {props?.thema?.themeName}/>
+        <ThemeSponsors sponsors={props?.thema?.themeSponsors} thema={props?.thema?.themaName} />
       )}
     </>
   );
