@@ -14,7 +14,7 @@ import commentIcon from '@/public/comment-icon.svg';
 import comments from '@/public/comments.png';
 import { Link as ScrollLink } from 'react-scroll';
 import { useEffect } from 'react';
-import ImageComponent from '../image-component';
+import ThemeSponsors from '../theme-page/theme-sponsors';
 
 // TODO: See what we could move to a layout.js file instead of having everything in components.
 export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
@@ -454,25 +454,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
             </div>
           )}
           {thema?.themeSponsors?.length > 0 && (
-            <div className='bg-gray-100 h-auto'>
-              <div className='global-margin flex flex-col items-center justify-center'>
-                <div className='mt-20 mb-10 heading-xl-semibold text-green-500 flex flex-row items-center'>
-                  <div className='h-11 w-1.5 bg-green-500'></div>
-                  <div className='ml-4'>
-                    Het thema ‘Voedselverspilling’ is mede mogelijk gemaakt door:
-                  </div>
-                </div>
-                <ul className='mb-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 sm:gap-x-8'>
-                  {thema?.themeSponsors?.map((sponsor, id) => (
-                    <li key={id} className='relative h-28 w-52'>
-                      <Link href={sponsor.partnerLink}>
-                        <ImageComponent image={sponsor.logo} />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            <ThemeSponsors sponsor={thema?.themeSponsors?.length} theme={thema?.themaName} />
           )}
         </div>
       </div>
