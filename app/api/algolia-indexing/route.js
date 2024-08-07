@@ -1,11 +1,13 @@
 import { client } from '@/lib/sanity';
 import algoliasearch from 'algoliasearch';
 
-export const agoliaInstance = algoliasearch(
-  process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID,
-  process.env.NEXT_PUBLIC_AGOLIA_ADMIN_KEY,
-);
+// need to hide this route. 
 
+export const agoliaInstance = algoliasearch(
+    '0L6RUN37T0',
+    '6dec367e60884b5c2c25ecdd03e59890',
+)
+    
 const QUERY = `
 *[_type == "instrument" && !(_id in path('drafts.**'))] {
     _type,
@@ -33,19 +35,18 @@ const QUERY = `
           select(subsidie == true => "subsidie"),
           select(fiscaal == true => "fiscaal")],
   }
-`;
+`
 
 const ABOUT_QUERY = `
-  *[_type == "aboutPage" && !(_id in path('drafts.**'))] {
+  *[_type == "aboutPage"] {
     "objectID": _id,
     pageTitle, 
     "slug": slug.current,
     "content": array::join(string::split((pt::text(aboutPageContent)), "")[0..9500], "")
   }
-`;
-
+`
 const EU_LAW_QUERY = `
-*[_type in ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab', 'euLaw'] && !(_id in path('drafts.**'))] {
+*[_type in ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab', 'euLaw']] {
     "objectID": _id,
     'lawTitle': coalesce(euLawReference->title, title),
     'slug': coalesce(euLawReference->slug.current, slug.current),
@@ -86,40 +87,35 @@ const EU_LAW_QUERY = `
      title,
     "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
 }
-`;
+`
 
 export async function GET() {
-  // fetch instruments
-  const instruments = await client.fetch(QUERY);
-  const aboutPage = await client.fetch(ABOUT_QUERY);
-  const euLaw = await client.fetch(EU_LAW_QUERY);
-  const instrumentIndex = agoliaInstance.initIndex('instruments');
-  // const newsIndex  = agoliaInstance.initIndex('newsPage')
-  const aboutIndex = agoliaInstance.initIndex('aboutPage');
-  const euIndex = agoliaInstance.initIndex('EuLaw');
+    // fetch instruments 
+    const instruments = await client.fetch(QUERY)
+    const aboutPage = await client.fetch(ABOUT_QUERY)
+    const euLaw = await client.fetch(EU_LAW_QUERY)
+    const instrumentIndex = agoliaInstance.initIndex('instruments')
+    // const newsIndex  = agoliaInstance.initIndex('newsPage')
+    const aboutIndex = agoliaInstance.initIndex('aboutPage')
+    const euLawIndex = agoliaInstance.initIndex('euLaw')
 
-  try {
-    console.time(
-      `Saving ${instruments.length} instruments and ${aboutPage.length} aboutPages and ${euLaw.length} eu laws items to index`,
-    );
-    await instrumentIndex.saveObjects(instruments);
-    // await newsIndex.saveObjects(newsItems.newsItems)
-    await aboutIndex.saveObjects(aboutPage);
-
-    await euIndex.saveObject(euLaw);
-    // here it is newsItems.newsItems to structure the data as a array and not an object
-    console.timeEnd(
-      `Saving ${instruments.length} instruments and ${aboutPage.length} about pages and ${euLaw.length} items eu laws to index`,
-    );
-    return Response.json({
-      status: 200,
-      body: 'Success!',
-    });
-  } catch (error) {
-    console.error(error);
-    return {
-      status: 500,
-      body: error,
-    };
-  }
+    try {
+        console.time(`Saving ${instruments.length} instruments and ${aboutPage.length} news items to index`)
+        await instrumentIndex.saveObjects(instruments) 
+        // await newsIndex.saveObjects(newsItems.newsItems)
+        await aboutIndex.saveObjects(aboutPage)
+        await euLawIndex.saveObjects(euLaw)
+          // here it is newsItems.newsItems to structure the data as a array and not an object
+        console.timeEnd(`Saving ${instruments.length} instruments and ${aboutPage.length} news items to index`)
+        return Response.json({
+            status: 200,
+            body: 'Success!'
+        })
+    } catch (error) {
+        console.error(error, 'errrrrr')
+        return {
+            status: 500,
+            body: error
+        }
+    }
 }
