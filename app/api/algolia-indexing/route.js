@@ -44,24 +44,72 @@ const ABOUT_QUERY = `
   }
 `;
 
+const EU_LAW_QUERY = `
+*[_type in ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab', 'euLaw']] {
+    "objectID": _id,
+    'lawTitle': coalesce(euLawReference->title, title),
+    'slug': coalesce(euLawReference->slug.current, slug.current),
+     defined(introText) => introText,
+    'eu1Content': array::join(string::split((pt::text(europeContent[0].content)), "")[0..6000], ""), 
+    'eu2Content': array::join(string::split((pt::text(europeContent[2].content)), "")[0..6000], ""),
+    'eu3Content': array::join(string::split((pt::text(europeContent[3].content)), "")[0..6000], ""), 
+    'eu4Content': array::join(string::split((pt::text(europeContent[4].content)), "")[0..6000], ""), 
+    'eu5Content': array::join(string::split((pt::text(europeContent[5].content)), "")[0..6000], ""), 
+    'eu6Content': array::join(string::split((pt::text(europeContent[6].content)), "")[0..6000], ""), 
+    'eu7Content': array::join(string::split((pt::text(europeContent[7].content)), "")[0..6000], ""), 
+    'eu8Content': array::join(string::split((pt::text(europeContent[8].content)), "")[0..6000], ""), 
+    'eu1Title': europeContent[0].title,
+    'eu2Title': europeContent[1].title,
+    'eu3Title': europeContent[2].title,
+    'eu4Title': europeContent[3].title,
+    'eu5Title': europeContent[4].title,
+    'eu6Title': europeContent[5].title,
+    'eu7Title': europeContent[6].title,
+    'eu8Title': europeContent[7].title,
+    'localContent1': pt::text(localContent[0].content),
+    'localContent2': pt::text(localContent[1].content),
+    'localContent3': pt::text(localContent[2].content),
+    'localContent4': pt::text(localContent[3].content),
+    'localContent5': pt::text(localContent[4].content),
+    'localContent6': pt::text(localContent[5].content),
+    'localContent7': pt::text(localContent[6].content),
+    'localContent8': pt::text(localContent[7].content),
+    'localTitle1': localContent[0].title,
+    'localTitle2': localContent[1].title,
+    'localTitle3': localContent[2].title,
+    'localTitle4': localContent[3].title,
+    'localTitle5': localContent[4].title,
+    'localTitle6': localContent[5].title,
+    'localTitle7': localContent[6].title,
+    'localTitle8': localContent[7].title,
+     defined(ceContent) => pt::text(ceContent),
+     title,
+    "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
+}
+`
+
 export async function GET() {
   // fetch instruments
   const instruments = await client.fetch(QUERY);
   const aboutPage = await client.fetch(ABOUT_QUERY);
+  const euLaw = await client.fetch(EU_LAW_QUERY)
   const instrumentIndex = agoliaInstance.initIndex('instruments');
   // const newsIndex  = agoliaInstance.initIndex('newsPage')
   const aboutIndex = agoliaInstance.initIndex('aboutPage');
+  const euIndex = agoliaInstance.initIndex('EuLaw')
 
   try {
     console.time(
-      `Saving ${instruments.length} instruments and ${aboutPage.length} aboutPages items to index`,
+      `Saving ${instruments.length} instruments and ${aboutPage.length} aboutPages and ${euLaw.length} eu laws items to index`,
     );
     await instrumentIndex.saveObjects(instruments);
     // await newsIndex.saveObjects(newsItems.newsItems)
     await aboutIndex.saveObjects(aboutPage);
+
+    await euIndex.saveObject(euLaw)
     // here it is newsItems.newsItems to structure the data as a array and not an object
     console.timeEnd(
-      `Saving ${instruments.length} instruments and ${aboutPage.length} news items to index`,
+      `Saving ${instruments.length} instruments and ${aboutPage.length} about pages and ${euLaw.length} items eu laws to index`,
     );
     return Response.json({
       status: 200,
