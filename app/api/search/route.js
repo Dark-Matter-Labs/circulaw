@@ -54,30 +54,38 @@ export async function POST(req) {
         },
 
         euLaw: {
-          index: agoliaInstance.initIndex('EuLaw'),
+          index: agoliaInstance.initIndex('euLaw'),
           projection: `
           {
             "objectID": _id,
             'lawTitle': coalesce(euLawReference->title, title),
             'slug': coalesce(euLawReference->slug.current, slug.current),
-            defined(introText) => introText,
-            'eu1Content': *[_type == 'euEuropeTab' && euLawReference._ref == ^._id][0] {'eu1Content': array::join(string::split((pt::text(europeContent[0].content)), "")[0..6000], "")}.eu1Content,
-            'eu2Content': *[_type == 'euEuropeTab' && euLawReference._ref == ^._id][0] {'eu1Content': array::join(string::split((pt::text(europeContent[1].content)), "")[0..6000], "")}.eu2Content,
-            'eu3Content': *[_type == 'euEuropeTab' && euLawReference._ref == ^._id][0] {'eu1Content': array::join(string::split((pt::text(europeContent[2].content)), "")[0..6000], "")}.eu3Content,
-            'eu4Content': *[_type == 'euEuropeTab' && euLawReference._ref == ^._id][0] {'eu1Content': array::join(string::split((pt::text(europeContent[3].content)), "")[0..6000], "")}.eu4Content,
-            'eu5Content': *[_type == 'euEuropeTab' && euLawReference._ref == ^._id][0] {'eu1Content': array::join(string::split((pt::text(europeContent[4].content)), "")[0..6000], "")}.eu5Content,
-            'eu6Content': *[_type == 'euEuropeTab' && euLawReference._ref == ^._id][0] {'eu1Content': array::join(string::split((pt::text(europeContent[5].content)), "")[0..6000], "")}.eu6Content,
-            'eu7Content': *[_type == 'euEuropeTab' && euLawReference._ref == ^._id][0] {'eu1Content': array::join(string::split((pt::text(europeContent[6].content)), "")[0..6000], "")}.eu7Content,
-            'eu8Content': *[_type == 'euEuropeTab' && euLawReference._ref == ^._id][0] {'eu1Content': array::join(string::split((pt::text(europeContent[7].content)), "")[0..6000], "")}.eu8Content,
-            'eu1Title': *[_type == 'euEuropeTab' && euLawReference._ref == ^._id][0] {"eu1Title": europeContent[0].title,}.eu1Title,
-            'eu2Title': *[_type == 'euEuropeTab' && euLawReference._ref == ^._id][0] {"eu2Title": europeContent[1].title,}.eu2Title,
-            'eu3Title': *[_type == 'euEuropeTab' && euLawReference._ref == ^._id][0] {"eu3Title": europeContent[2].title,}.eu3Title,
-            'eu4Title': *[_type == 'euEuropeTab' && euLawReference._ref == ^._id][0] {"eu4Title": europeContent[3].title,}.eu4Title,
-            'eu5Title': *[_type == 'euEuropeTab' && euLawReference._ref == ^._id][0] {"eu5Title": europeContent[4].title,}.eu5Title,
-            'eu6Title': *[_type == 'euEuropeTab' && euLawReference._ref == ^._id][0] {"eu6Title": europeContent[5].title,}.eu6Title,
-            'eu7Title': *[_type == 'euEuropeTab' && euLawReference._ref == ^._id][0] {"eu7Title": europeContent[6].title,}.eu7Title,
-            'eu8Title': *[_type == 'euEuropeTab' && euLawReference._ref == ^._id][0] {"eu8Title": europeContent[7].title,}.eu8Title,
-                  }
+             defined(introText) => introText,
+              }
+         `,
+        },
+        euEuropeTab: {
+          index: agoliaInstance.initIndex('euLaw'),
+          projection: `
+          {
+            "objectID": _id,
+            'eu1Content': array::join(string::split((pt::text(europeContent[0].content)), "")[0..6000], ""), 
+            'eu2Content': array::join(string::split((pt::text(europeContent[2].content)), "")[0..6000], ""),
+            'eu3Content': array::join(string::split((pt::text(europeContent[3].content)), "")[0..6000], ""), 
+            'eu4Content': array::join(string::split((pt::text(europeContent[4].content)), "")[0..6000], ""), 
+            'eu5Content': array::join(string::split((pt::text(europeContent[5].content)), "")[0..6000], ""), 
+            'eu6Content': array::join(string::split((pt::text(europeContent[6].content)), "")[0..6000], ""), 
+            'eu7Content': array::join(string::split((pt::text(europeContent[7].content)), "")[0..6000], ""), 
+            'eu8Content': array::join(string::split((pt::text(europeContent[8].content)), "")[0..6000], ""), 
+            'eu1Title': europeContent[0].title,
+            'eu2Title': europeContent[1].title,
+            'eu3Title': europeContent[2].title,
+            'eu4Title': europeContent[3].title,
+            'eu5Title': europeContent[4].title,
+            'eu6Title': europeContent[5].title,
+            'eu7Title': europeContent[6].title,
+            'eu8Title': europeContent[7].title,
+            }
          `,
         },
       },
@@ -110,6 +118,34 @@ export async function POST(req) {
               slug: document.slug,
               content: document.content,
             };
+          }
+          case 'euLaw': {
+            return {
+              objectID: document.objectID,
+              lawTitle: document.lawTitle,
+              slug: document.slug
+            }
+          }
+          case 'euEuropeTab': {
+            return {
+               objectID: document.objectID,
+               eu1Content: document.eu1Content,
+               eu2Content: document.eu2Content,
+               eu3Content: document.eu3Content,
+               eu4Content: document.eu4Content,
+               eu5Content: document.eu5Content,
+               eu6Content: document.eu6Content,
+               eu7Content: document.eu7Content,
+               eu8Content: document.eu8Content,
+               eu1Title: document.eu1Title,
+               eu2Title: document.eu2Title,
+               eu3Title: document.eu3Title,
+               eu4Title: document.eu4Title,
+               eu5Title: document.eu5Title,
+               eu6Title: document.eu6Title,
+               eu7Title: document.eu7Title,
+               eu8Title: document.eu8Title,
+            }
           }
           default:
             return document;
