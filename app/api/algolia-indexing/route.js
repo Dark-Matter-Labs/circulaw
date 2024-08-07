@@ -50,7 +50,7 @@ const EU_LAW_QUERY = `
     "objectID": _id,
     'lawTitle': coalesce(euLawReference->title, title),
     'slug': coalesce(euLawReference->slug.current, slug.current),
-     defined(introText) => introText,
+     introText,
     'eu1Content': array::join(string::split((pt::text(europeContent[0].content)), "")[0..6000], ""), 
     'eu2Content': array::join(string::split((pt::text(europeContent[2].content)), "")[0..6000], ""),
     'eu3Content': array::join(string::split((pt::text(europeContent[3].content)), "")[0..6000], ""), 
@@ -83,7 +83,7 @@ const EU_LAW_QUERY = `
     'localTitle6': localContent[5].title,
     'localTitle7': localContent[6].title,
     'localTitle8': localContent[7].title,
-     defined(ceContent) => pt::text(ceContent),
+     'ceContent': pt::text(ceContent),
      title,
     "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
 }
