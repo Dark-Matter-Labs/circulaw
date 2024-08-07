@@ -54,10 +54,10 @@ export async function POST(req) {
         },
 
         euLaw: {
-         index: agoliaInstance.initIndex('EuLaw'),
-         projection: `
+          index: agoliaInstance.initIndex('EuLaw'),
+          projection: `
           {
-          "objectID": _id,
+            "objectID": _id,
             'lawTitle': coalesce(euLawReference->title, title),
             'slug': coalesce(euLawReference->slug.current, slug.current),
             defined(introText) => introText,
@@ -78,8 +78,8 @@ export async function POST(req) {
             'eu7Title': *[_type == 'euEuropeTab' && euLawReference._ref == ^._id][0] {"eu7Title": europeContent[6].title,}.eu7Title,
             'eu8Title': *[_type == 'euEuropeTab' && euLawReference._ref == ^._id][0] {"eu8Title": europeContent[7].title,}.eu8Title,
                   }
-         `
-        }
+         `,
+        },
       },
 
       (document) => {

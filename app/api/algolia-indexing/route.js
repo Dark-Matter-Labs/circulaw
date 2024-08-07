@@ -86,17 +86,17 @@ const EU_LAW_QUERY = `
      title,
     "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
 }
-`
+`;
 
 export async function GET() {
   // fetch instruments
   const instruments = await client.fetch(QUERY);
   const aboutPage = await client.fetch(ABOUT_QUERY);
-  const euLaw = await client.fetch(EU_LAW_QUERY)
+  const euLaw = await client.fetch(EU_LAW_QUERY);
   const instrumentIndex = agoliaInstance.initIndex('instruments');
   // const newsIndex  = agoliaInstance.initIndex('newsPage')
   const aboutIndex = agoliaInstance.initIndex('aboutPage');
-  const euIndex = agoliaInstance.initIndex('EuLaw')
+  const euIndex = agoliaInstance.initIndex('EuLaw');
 
   try {
     console.time(
@@ -106,7 +106,7 @@ export async function GET() {
     // await newsIndex.saveObjects(newsItems.newsItems)
     await aboutIndex.saveObjects(aboutPage);
 
-    await euIndex.saveObject(euLaw)
+    await euIndex.saveObject(euLaw);
     // here it is newsItems.newsItems to structure the data as a array and not an object
     console.timeEnd(
       `Saving ${instruments.length} instruments and ${aboutPage.length} about pages and ${euLaw.length} items eu laws to index`,
