@@ -11,7 +11,6 @@ import dropDown from './objects/drop-down';
 import euLawSection from './objects/eu-law-section';
 import siteConfig from './documents/site-config';
 import thema from './documents/thema';
-import agendaItem from './objects/agenda-item';
 import faqItem from './objects/faq-item';
 import faqSection from './objects/faq-section';
 import greenBox from './objects/green-box';
@@ -49,7 +48,6 @@ export const schemaTypes = [
   euCircularEconomyTab,
   euEuropeTab,
   euLocalTab,
-  agendaItem,
   
 
 
