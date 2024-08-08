@@ -14,6 +14,7 @@ import { Suspense } from 'react';
 export async function generateMetadata({ params }, parent) {
   // read route params
   const law = params.law;
+  
   // fetch data
   const euLawMetaData = await client.fetch(
     EU_LAW_METADATA_QUERY,
@@ -25,6 +26,7 @@ export async function generateMetadata({ params }, parent) {
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
+
 
   return {
     title: euLawMetaData.metaTitle || euLawMetaData.title + ' - CircuLaw',
@@ -72,9 +74,10 @@ async function getSummaryData(params) {
   return summary;
 }
 
-export default async function EULawPage({ params }) {
+export default async function EULawPage({ params, searchParams }) {
   const summaryData = await getSummaryData(params.law);
   const tabData = await getTabData(params.law);
+  const initialTab = searchParams.tab
 
   return (
     <>
@@ -103,7 +106,7 @@ export default async function EULawPage({ params }) {
             </h1>
           </div>
         </div>
-        <Tabs summaryData={summaryData} />
+        <Tabs summaryData={summaryData} initialTab={initialTab} />
         <Suspense>
           <TabContent summaryData={summaryData} tabData={tabData} />
         </Suspense>
