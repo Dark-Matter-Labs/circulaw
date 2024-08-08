@@ -4,7 +4,6 @@ import faq from './documents/faq';
 import englishPage from './documents/english-page';
 import instrument from './documents/instrument';
 import navigation from './documents/navigation';
-import newsPage from './documents/news-page';
 import partners from './documents/partners';
 import productChain from './documents/product-chain';
 import simpleThema from './documents/simple-thema';
@@ -21,7 +20,7 @@ import inlineTable from './objects/inline-table';
 import link from './objects/link';
 import linkObject from './objects/link-object';
 import navItem from './objects/nav-item';
-import newsCard from './objects/news-card';
+import newsItem from './documents/news-item';
 import pdfBlock from './objects/pdf-block';
 import partner from './objects/partner';
 import productChainAmbition from './objects/product-chain-ambition';
@@ -44,12 +43,15 @@ export const schemaTypes = [
   productChain,
   faq,
   simpleThema,
-  newsPage,
+  newsItem,
   euLaw,
   euLawSection,
   euCircularEconomyTab,
   euEuropeTab,
   euLocalTab,
+  agendaItem,
+  
+
 
   // OBJECTS
   greenBox,
@@ -63,8 +65,6 @@ export const schemaTypes = [
   partner,
   faqItem,
   faqSection,
-  newsCard,
-  agendaItem,
   productChainAmbition,
   productChainImpact,
   linkObject,

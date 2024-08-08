@@ -2,13 +2,13 @@ import { NewsItemComponent } from '../../components/news-item';
 import { BsNewspaper } from 'react-icons/bs';
 
 export default {
-  name: 'newsCard', // change to news item later - remove old news item.
-  title: 'News Card',
+  name: 'newsItem',
+  title: 'News Item',
   type: 'document',
   components: { item: NewsItemComponent },
   fields: [
     {
-      name: 'newsTitle',
+      name: 'title',
       type: 'string',
       title: 'News Title',
       validation: (Rule) => Rule.required(),
@@ -220,7 +220,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'newsTitle',
+      title: 'title',
       date: 'newsDate',
       featured: 'featured',
     },

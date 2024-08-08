@@ -59,10 +59,10 @@ export const Structure = (S) =>
         .icon(FcAbout)
         .child(S.documentList().title('About Pages').filter('_type == "aboutPage"')),
       S.listItem()
-        .title('News Page')
-        .id('newsPage')
+        .title('News Items')
+        .id('newsItem')
         .icon(BsNewspaper)
-        .child(S.document().title('News Page').schemaType('newsPage').documentId('newsPage')),
+        .child(S.documentList().title('News Items').filter('_type in ["newsItem", "agendaItem"]')),
       S.divider(),
       S.listItem()
         .title('Productketen')
