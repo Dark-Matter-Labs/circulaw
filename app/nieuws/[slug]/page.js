@@ -11,7 +11,7 @@ export async function generateMetadata({ params }, parent) {
     NEWS_METADATA_QUERY,
     { slug },
     {
-      next: { tags: ['newsPage'] },
+      next: { tags: ['newsItem'] },
     },
   );
   // optionally access and extend (rather than replace) parent metadata

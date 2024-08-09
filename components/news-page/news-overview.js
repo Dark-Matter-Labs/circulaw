@@ -7,37 +7,21 @@ import Tag from '@/components/tag';
 import { Popover } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+import { useState } from 'react';
+// import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }) {
   const [articleType, setArticleType] = useState('Alles');
-  const [notFeatured, setNotFeatured] = useState(nonFeaturedNewsItems?.slice(0, 13));
 
-  const archived = nonFeaturedNewsItems.slice(13, 25);
+  console.log(nonFeaturedNewsItems)
+  
   const options = {
     day: 'numeric',
     month: 'short',
     year: 'numeric',
   };
 
-  useEffect(() => {
-    if (nonFeaturedNewsItems) {
-      let notFeatured = nonFeaturedNewsItems;
-      if (articleType === 'Nieuw op de site') {
-        setNotFeatured(notFeatured?.filter((item) => item.category === 'Nieuw op de site'));
-      } else if (articleType === 'Agenda') {
-        setNotFeatured(notFeatured?.filter((item) => item._type === 'agendaItem'));
-      } else if (articleType === 'Artikelen') {
-        setNotFeatured(notFeatured?.filter((item) => item.category === 'Artikelen'));
-      } else if (articleType === 'Circulair nieuws') {
-        setNotFeatured(notFeatured?.filter((item) => item.category === 'Circulair nieuws'));
-      } else {
-        setNotFeatured(notFeatured);
-      }
-    }
-  }, [articleType, nonFeaturedNewsItems]);
-
+ 
   return (
     <div className='flex flex-col global-margin mt-4'>
       <div className='mt-10'>
@@ -367,26 +351,23 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
             </div>
           </div>
         </div>
-        <ResponsiveMasonry
-          columnsCountBreakPoints={{ 350: 1, 640: 2, 1024: 3, 1280: 4 }}
-          className='py-10'
-        >
-          <Masonry gutter='24px'>
-            {notFeatured?.map((item, id) => (
-              <div key={id} className='relative break-inside-avoid-column min-h'>
-                {item._type === 'agendaItem' && <AgendaCard data={item} />}
-                {item._type === 'newsCard' && <NewsCard data={item} />}
+   
+
+            {nonFeaturedNewsItems?.map((item, id) => (
+              <div key={id} className='relative break-inside-avoid-column min-h mb-4'>
+              
+                {item.newsOrAgenda === true && <AgendaCard data={item} />}
+                {item.newsOrAgenda === false && <NewsCard data={item} />}
               </div>
             ))}
-          </Masonry>
-        </ResponsiveMasonry>
-        {archived.length > 0 && (
+ 
+        {nonFeaturedNewsItems.length > 12 && (
           <div className='mb-10'>
             <h2 className='heading-xl-semibold sm:heading-2xl-semibold w-full border-b-2 pb-5 border-green-800'>
               Archief
             </h2>
             <div className='py-10'>
-              {archived?.map((item, id) => (
+              {nonFeaturedNewsItems.slice(13, 30)?.map((item, id) => (
                 <div
                   key={id}
                   className='flex flex-row items-center mb-3 heading-xl-semibold text-green-800'
@@ -403,7 +384,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                   <div>
                     {item.createPage === true && (
                       <Link className='link-interaction' href={`/nieuws/${item.slug.current}`}>
-                        {item.newsTitle}
+                        {item.title}
                       </Link>
                     )}
                     {item.linkUrl !== undefined && (
@@ -412,16 +393,16 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                         target={`${item.internalExternal === true ? '_blank' : ''}`}
                         className='link-interaction'
                       >
-                        {item.newsTitle}
+                        {item.title}
                       </Link>
                     )}
                     {item.link && item._type === 'agendaItem' && (
                       <Link className='link-interaction' href={item.link}>
-                        {item.newsTitle}
+                        {item.title}
                       </Link>
                     )}
                     {item.link === undefined && item._type === 'agendaItem' && (
-                      <div>{item.newsTitle}</div>
+                      <div>{item.title}</div>
                     )}
                   </div>
                   {item.newsDate && (

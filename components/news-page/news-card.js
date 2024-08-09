@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function NewsCard({ data }) {
+
   const event = new Date(data.newsDate);
   const options = {
     day: 'numeric',
@@ -15,6 +16,7 @@ export default function NewsCard({ data }) {
   if (data.createPage === true) {
     return (
       <Link href={`/nieuws/${data?.slug?.current}`} className='group'>
+        {console.log(data, 'with internal link')}
         <div
           className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''}
                     ${data.colour === 'green' ? 'bg-green-500' : ''}
@@ -93,11 +95,12 @@ export default function NewsCard({ data }) {
     );
   } else if (data.linkUrl !== undefined) {
     return (
+     
       <Link
         href={data.linkUrl}
         target={`${data.internalExternal === true ? '_blank' : ''}`}
         className='group'
-      >
+      > {console.log(data, 'with external link')}
         <div
           className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''}
                     ${data.colour === 'green' ? 'bg-green-500' : ''}

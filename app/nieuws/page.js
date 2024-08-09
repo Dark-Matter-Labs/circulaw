@@ -5,6 +5,7 @@ export const metadata = {
   title: 'Nieuws - CircuLaw',
 };
 
+// TODO: MOVE QUERIES TO QUERIES FILE
 const FEATURED_NEWS_ITEMS_QUERY = `
 *[_type == 'newsItem' && featured == true] {
   "image": newsImage.asset->.url,
