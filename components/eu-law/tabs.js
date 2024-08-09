@@ -4,16 +4,14 @@ import { useEffect, useState } from 'react';
 
 export default function Tabs({ summaryData, initialTab }) {
   const [selectedTab, setSelectedTab] = useState();
- 
- 
+
   useEffect(() => {
     if (initialTab !== undefined) {
-      setSelectedTab(initialTab)
+      setSelectedTab(initialTab);
     } else {
-      setSelectedTab('overzicht')
+      setSelectedTab('overzicht');
     }
-  }, [initialTab])
-
+  }, [initialTab]);
 
   return (
     <div className='sticky top-16 lgNav:top-24 shadow-lg z-50'>

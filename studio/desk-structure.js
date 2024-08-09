@@ -60,7 +60,11 @@ export const Structure = (S, context) =>
         .icon(FcAbout)
         .child(S.documentList().title('About Pages').filter('_type == "aboutPage"')),
       orderableDocumentListDeskItem({
-        type:'newsItem', S, context, title: 'News Items', icon:BsNewspaper
+        type: 'newsItem',
+        S,
+        context,
+        title: 'News Items',
+        icon: BsNewspaper,
       }),
       S.divider(),
       S.listItem()

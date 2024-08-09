@@ -19,9 +19,10 @@ const NON_FEATURED_NEWS_ITEMS_QUERY = `
 }
 `;
 
-
 async function getFeaturedNewsItems() {
-  const featuredNewsData = await client.fetch(FEATURED_NEWS_ITEMS_QUERY, { next: { tags: ['newsItem'] } });
+  const featuredNewsData = await client.fetch(FEATURED_NEWS_ITEMS_QUERY, {
+    next: { tags: ['newsItem'] },
+  });
 
   if (!featuredNewsData) {
     throw new Error('could not get news items');
@@ -30,7 +31,9 @@ async function getFeaturedNewsItems() {
 }
 
 async function getNonFeaturedNewsItems() {
-  const nonFeaturedNewsData = await client.fetch(NON_FEATURED_NEWS_ITEMS_QUERY, { next: { tags: ['newsItem'] } });
+  const nonFeaturedNewsData = await client.fetch(NON_FEATURED_NEWS_ITEMS_QUERY, {
+    next: { tags: ['newsItem'] },
+  });
 
   if (!nonFeaturedNewsData) {
     throw new Error('could not get news items');
@@ -40,6 +43,11 @@ async function getNonFeaturedNewsItems() {
 
 export default async function NewsOverviewPage() {
   const featuresNewsItems = await getFeaturedNewsItems();
-  const nonFeaturedNewsItems = await getNonFeaturedNewsItems()
-  return <NewsOverview featuresNewsItems={featuresNewsItems} nonFeaturedNewsItems={nonFeaturedNewsItems}/>;
+  const nonFeaturedNewsItems = await getNonFeaturedNewsItems();
+  return (
+    <NewsOverview
+      featuresNewsItems={featuresNewsItems}
+      nonFeaturedNewsItems={nonFeaturedNewsItems}
+    />
+  );
 }

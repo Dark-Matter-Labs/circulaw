@@ -18,8 +18,6 @@ const algoliaClient = algoliasearch(api_id, api_key);
 export const dynamic = 'force-dynamic';
 
 export default function EUSearch() {
-
-
   return (
     <InstantSearchNext
       searchClient={algoliaClient}
@@ -42,7 +40,7 @@ export default function EUSearch() {
             <div className='w-full'>
               <div className='w-full h-full flex flex-col items-center justify-end pb-10'>
                 <div className='mb-4'>
-                    {/* make this a component that can be re-used */}
+                  {/* make this a component that can be re-used */}
                   <div className='flex flex-row justify-center w-[600px] gap-x-1.5'>
                     <Link
                       href='/zoeken/instrumenten'
@@ -117,7 +115,6 @@ export default function EUSearch() {
           </div>
         </div>
       </div>
-
 
       <div className='global-margin flex'>
         <NoResultsBoundary fallback={<NoResults />}>

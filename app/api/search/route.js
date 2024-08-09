@@ -160,57 +160,57 @@ export async function POST(req) {
               objectID: document.objectID,
               lawTitle: document.lawTitle,
               slug: document.slug,
-              introText: document.introText
-            }
+              introText: document.introText,
+            };
           }
           case 'euEuropeTab': {
             return {
-               objectID: document.objectID,
-               eu1Content: document.eu1Content,
-               eu2Content: document.eu2Content,
-               eu3Content: document.eu3Content,
-               eu4Content: document.eu4Content,
-               eu5Content: document.eu5Content,
-               eu6Content: document.eu6Content,
-               eu7Content: document.eu7Content,
-               eu8Content: document.eu8Content,
-               eu1Title: document.eu1Title,
-               eu2Title: document.eu2Title,
-               eu3Title: document.eu3Title,
-               eu4Title: document.eu4Title,
-               eu5Title: document.eu5Title,
-               eu6Title: document.eu6Title,
-               eu7Title: document.eu7Title,
-               eu8Title: document.eu8Title,
-            }
+              objectID: document.objectID,
+              eu1Content: document.eu1Content,
+              eu2Content: document.eu2Content,
+              eu3Content: document.eu3Content,
+              eu4Content: document.eu4Content,
+              eu5Content: document.eu5Content,
+              eu6Content: document.eu6Content,
+              eu7Content: document.eu7Content,
+              eu8Content: document.eu8Content,
+              eu1Title: document.eu1Title,
+              eu2Title: document.eu2Title,
+              eu3Title: document.eu3Title,
+              eu4Title: document.eu4Title,
+              eu5Title: document.eu5Title,
+              eu6Title: document.eu6Title,
+              eu7Title: document.eu7Title,
+              eu8Title: document.eu8Title,
+            };
           }
           case 'euLocalTab': {
             return {
-               objectID: document.objectID,
-               localContent1: document.localContent1,
-               localContent2: document.localContent2,
-               localContent3: document.localContent3,
-               localContent4: document.localContent4,
-               localContent5: document.localContent5,
-               localContent6: document.localContent6,
-               localContent7: document.localContent7,
-               localContent8: document.localContent8, 
-               localTitle1: document.localTitle1,
-               localTitle2: document.localTitle2,
-               localTitle3: document.localTitle3,
-               localTitle4: document.localTitle4,
-               localTitle5: document.localTitle5,
-               localTitle6: document.localTitle6,
-               localTitle7: document.localTitle7,
-               localTitle8: document.localTitle8,
-            }
+              objectID: document.objectID,
+              localContent1: document.localContent1,
+              localContent2: document.localContent2,
+              localContent3: document.localContent3,
+              localContent4: document.localContent4,
+              localContent5: document.localContent5,
+              localContent6: document.localContent6,
+              localContent7: document.localContent7,
+              localContent8: document.localContent8,
+              localTitle1: document.localTitle1,
+              localTitle2: document.localTitle2,
+              localTitle3: document.localTitle3,
+              localTitle4: document.localTitle4,
+              localTitle5: document.localTitle5,
+              localTitle6: document.localTitle6,
+              localTitle7: document.localTitle7,
+              localTitle8: document.localTitle8,
+            };
           }
           case 'euCircularEconomyTab': {
             return {
-               objectID: document.objectID,
-               searchTitle: document.searchTitle,
-               ceContent: document.ceContent
-            }
+              objectID: document.objectID,
+              searchTitle: document.searchTitle,
+              ceContent: document.ceContent,
+            };
           }
           default:
             return document;

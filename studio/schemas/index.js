@@ -48,8 +48,6 @@ export const schemaTypes = [
   euCircularEconomyTab,
   euEuropeTab,
   euLocalTab,
-  
-
 
   // OBJECTS
   greenBox,

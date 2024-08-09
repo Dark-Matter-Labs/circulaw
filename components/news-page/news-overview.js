@@ -10,10 +10,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
-export default function NewsOverview({ featuresNewsItems ,nonFeaturedNewsItems }) {
-
-  console.log(featuresNewsItems)
- 
+export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }) {
   const [articleType, setArticleType] = useState('Alles');
   const [notFeatured, setNotFeatured] = useState(nonFeaturedNewsItems?.slice(0, 13));
 
@@ -63,7 +60,7 @@ export default function NewsOverview({ featuresNewsItems ,nonFeaturedNewsItems }
                   : 'col-span-1 flex-col gap-3'
               }`}
               key={id}
-            > {console.log(item)}
+            >
               {item.newsOrAgenda === true && <FeaturedAgendaCard data={item} />}
               {item.newsOrAgenda === false && <FeaturedCard data={item} />}
             </div>

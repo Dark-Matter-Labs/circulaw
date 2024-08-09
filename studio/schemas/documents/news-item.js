@@ -8,12 +8,12 @@ export default {
   type: 'document',
   components: { item: NewsItemComponent },
   fields: [
-    orderRankField({ type: "newsItem" , newItemPosition: "before"}),
+    orderRankField({ type: 'newsItem', newItemPosition: 'before' }),
     {
       name: 'newsOrAgenda',
       type: 'boolean',
       title: 'Is this an Agenda Item?',
-      description: 'select true if this is an Agenda Itme'
+      description: 'select true if this is an Agenda Itme',
     },
     {
       name: 'title',
@@ -61,12 +61,12 @@ export default {
       title: 'Card Colour',
       description:
         'select the colour of the news item card. Make sure it works with the other news items next to it.',
-        validation: (Rule) =>
-          Rule.custom((currentValue, { parent }) => {
-            return parent.newsOrAgenda !== true && currentValue === undefined
-              ? 'A value is required'
-              : true;
-          }),
+      validation: (Rule) =>
+        Rule.custom((currentValue, { parent }) => {
+          return parent.newsOrAgenda !== true && currentValue === undefined
+            ? 'A value is required'
+            : true;
+        }),
       hidden: ({ parent }) => parent.newsOrAgenda === true,
       options: {
         list: [
@@ -100,7 +100,7 @@ export default {
       type: 'string',
       title: 'Link text',
       description: 'text to be displayed in the link',
-      hidden: ({ parent }) => parent.createPage === true ||  parent.newsOrAgenda === true,
+      hidden: ({ parent }) => parent.createPage === true || parent.newsOrAgenda === true,
     },
     {
       name: 'linkUrl',
@@ -159,7 +159,7 @@ export default {
       title: 'Inhoud',
       name: 'content',
       type: 'array',
-      hidden: ({ parent }) => parent.createPage === false ||  parent.newsOrAgenda === true,
+      hidden: ({ parent }) => parent.createPage === false || parent.newsOrAgenda === true,
       of: [
         {
           type: 'greenBox',
