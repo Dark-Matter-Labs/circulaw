@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function NewsCard({ data }) {
-
   const event = new Date(data.newsDate);
   const options = {
     day: 'numeric',
@@ -94,7 +93,6 @@ export default function NewsCard({ data }) {
     );
   } else if (data.linkUrl !== undefined) {
     return (
-     
       <Link
         href={data.linkUrl}
         target={`${data.internalExternal === true ? '_blank' : ''}`}

@@ -16,17 +16,25 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
   const [notFeatured, setNotFeatured] = useState();
 
   useEffect(() => {
-      if (articleType === 'Nieuw op de site') {
-        setNotFeatured(nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.category === 'Nieuw op de site'));
-      } else if (articleType === 'Agenda') {
-        setNotFeatured(nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.newsOrAgenda === true));
-      } else if (articleType === 'Artikelen') {
-        setNotFeatured(nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.category === 'Artikelen'));
-      } else if (articleType === 'Circulair nieuws') {
-        setNotFeatured(nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.category === 'Circulair nieuws'));
-      } else {
-        setNotFeatured(nonFeaturedNewsItems?.slice(0, 12));
-      }
+    if (articleType === 'Nieuw op de site') {
+      setNotFeatured(
+        nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.category === 'Nieuw op de site'),
+      );
+    } else if (articleType === 'Agenda') {
+      setNotFeatured(
+        nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.newsOrAgenda === true),
+      );
+    } else if (articleType === 'Artikelen') {
+      setNotFeatured(
+        nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.category === 'Artikelen'),
+      );
+    } else if (articleType === 'Circulair nieuws') {
+      setNotFeatured(
+        nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.category === 'Circulair nieuws'),
+      );
+    } else {
+      setNotFeatured(nonFeaturedNewsItems?.slice(0, 12));
+    }
   }, [articleType, nonFeaturedNewsItems]);
 
   const options = {
@@ -376,7 +384,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
               </div>
             ))}
           </Masonry>
-          </ResponsiveMasonry>
+        </ResponsiveMasonry>
         {nonFeaturedNewsItems.length > 12 && (
           <div className='mb-10'>
             <h2 className='heading-xl-semibold sm:heading-2xl-semibold w-full border-b-2 pb-5 border-green-800'>
