@@ -89,6 +89,10 @@ const EU_LAW_QUERY = `
 const NEWS_ITEMS_QUERY = `
 *[_type == 'newsItem'] {
 "objectID": _id,
+"content": pt::text(content),
+title,
+newsText,
+newsDate,
 ...,
 }
 `
