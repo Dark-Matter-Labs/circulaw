@@ -7,14 +7,14 @@ export const metadata = {
 
 // TODO: MOVE QUERIES TO QUERIES FILE
 const FEATURED_NEWS_ITEMS_QUERY = `
-*[_type == 'newsItem' && featured == true] {
+*[_type == 'newsItem' && featured == true]|order(orderRank) {
   "image": newsImage.asset->.url,
   ...
 }
 `;
 
 const NON_FEATURED_NEWS_ITEMS_QUERY = `
-*[_type == 'newsItem' && featured == false] {
+*[_type == 'newsItem' && featured == false]|order(orderRank) {
   "image": newsImage.asset->.url,
   ...
 }

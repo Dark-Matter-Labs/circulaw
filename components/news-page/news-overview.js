@@ -8,7 +8,7 @@ import { Popover } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 import { useState } from 'react';
-// import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }) {
   const [articleType, setArticleType] = useState('Alles');
@@ -351,16 +351,19 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
             </div>
           </div>
         </div>
-   
-
-            {nonFeaturedNewsItems?.map((item, id) => (
+        <ResponsiveMasonry
+          columnsCountBreakPoints={{ 350: 1, 640: 2, 1024: 3, 1280: 4 }}
+          className='py-10'
+        >
+          <Masonry gutter='24px'>
+            {nonFeaturedNewsItems?.slice(0,13).map((item, id) => (
               <div key={id} className='relative break-inside-avoid-column min-h mb-4'>
-              
                 {item.newsOrAgenda === true && <AgendaCard data={item} />}
                 {item.newsOrAgenda === false && <NewsCard data={item} />}
               </div>
             ))}
- 
+          </Masonry>
+          </ResponsiveMasonry>
         {nonFeaturedNewsItems.length > 12 && (
           <div className='mb-10'>
             <h2 className='heading-xl-semibold sm:heading-2xl-semibold w-full border-b-2 pb-5 border-green-800'>
@@ -372,12 +375,12 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                   key={id}
                   className='flex flex-row items-center mb-3 heading-xl-semibold text-green-800'
                 >
-                  {item._type !== 'agendaItem' && (
+                  {item.newsOrAgenda !== true && (
                     <Tag classes='text-white bg-green-800 border border-green-800 mr-3'>
                       {item.category}
                     </Tag>
                   )}
-                  {item._type === 'agendaItem' && (
+                  {item.newsOrAgenda === true && (
                     <Tag classes='text-white bg-green-800 border border-green-800 mr-3'>Agenda</Tag>
                   )}
 
@@ -396,12 +399,12 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                         {item.title}
                       </Link>
                     )}
-                    {item.link && item._type === 'agendaItem' && (
+                    {item.link && item.newsOrAgenda === true && (
                       <Link className='link-interaction' href={item.link}>
                         {item.title}
                       </Link>
                     )}
-                    {item.link === undefined && item._type === 'agendaItem' && (
+                    {item.link === undefined && item.newsOrAgenda === true && (
                       <div>{item.title}</div>
                     )}
                   </div>
