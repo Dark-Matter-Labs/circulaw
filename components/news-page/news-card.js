@@ -16,7 +16,6 @@ export default function NewsCard({ data }) {
   if (data.createPage === true) {
     return (
       <Link href={`/nieuws/${data?.slug?.current}`} className='group'>
-        {console.log(data, 'with internal link')}
         <div
           className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''}
                     ${data.colour === 'green' ? 'bg-green-500' : ''}
@@ -100,7 +99,7 @@ export default function NewsCard({ data }) {
         href={data.linkUrl}
         target={`${data.internalExternal === true ? '_blank' : ''}`}
         className='group'
-      > {console.log(data, 'with external link')}
+      >
         <div
           className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''}
                     ${data.colour === 'green' ? 'bg-green-500' : ''}

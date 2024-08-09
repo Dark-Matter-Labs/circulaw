@@ -7,21 +7,34 @@ import Tag from '@/components/tag';
 import { Popover } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
+// TODO: fix the filters
 export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }) {
   const [articleType, setArticleType] = useState('Alles');
+  const [notFeatured, setNotFeatured] = useState();
 
-  console.log(nonFeaturedNewsItems)
-  
+  useEffect(() => {
+      if (articleType === 'Nieuw op de site') {
+        setNotFeatured(nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.category === 'Nieuw op de site'));
+      } else if (articleType === 'Agenda') {
+        setNotFeatured(nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.newsOrAgenda === true));
+      } else if (articleType === 'Artikelen') {
+        setNotFeatured(nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.category === 'Artikelen'));
+      } else if (articleType === 'Circulair nieuws') {
+        setNotFeatured(nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.category === 'Circulair nieuws'));
+      } else {
+        setNotFeatured(nonFeaturedNewsItems?.slice(0, 12));
+      }
+  }, [articleType, nonFeaturedNewsItems]);
+
   const options = {
     day: 'numeric',
     month: 'short',
     year: 'numeric',
   };
 
- 
   return (
     <div className='flex flex-col global-margin mt-4'>
       <div className='mt-10'>
@@ -356,7 +369,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
           className='py-10'
         >
           <Masonry gutter='24px'>
-            {nonFeaturedNewsItems?.slice(0,13).map((item, id) => (
+            {notFeatured?.map((item, id) => (
               <div key={id} className='relative break-inside-avoid-column min-h mb-4'>
                 {item.newsOrAgenda === true && <AgendaCard data={item} />}
                 {item.newsOrAgenda === false && <NewsCard data={item} />}
