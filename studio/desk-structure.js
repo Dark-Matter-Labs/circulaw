@@ -5,8 +5,9 @@ import { FcAbout } from 'react-icons/fc';
 import { GiEuropeanFlag } from 'react-icons/gi';
 import { GrNavigate } from 'react-icons/gr';
 import { VscLaw } from 'react-icons/vsc';
+import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 
-export const Structure = (S) =>
+export const Structure = (S, context) =>
   S.list()
     .title('Content Types')
     .items([
@@ -58,11 +59,13 @@ export const Structure = (S) =>
         .title('About Pages')
         .icon(FcAbout)
         .child(S.documentList().title('About Pages').filter('_type == "aboutPage"')),
-      S.listItem()
-        .title('News Page')
-        .id('newsPage')
-        .icon(BsNewspaper)
-        .child(S.document().title('News Page').schemaType('newsPage').documentId('newsPage')),
+      orderableDocumentListDeskItem({
+        type: 'newsItem',
+        S,
+        context,
+        title: 'News Items',
+        icon: BsNewspaper,
+      }),
       S.divider(),
       S.listItem()
         .title('Productketen')
