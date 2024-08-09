@@ -10,11 +10,14 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
-export default function NewsOverview({ data }) {
-  const [articleType, setArticleType] = useState('Alles');
-  const [notFeatured, setNotFeatured] = useState(data?.notFeatured?.slice(0, 13));
+export default function NewsOverview({ featuresNewsItems ,nonFeaturedNewsItems }) {
 
-  const archived = data?.notFeatured.slice(13, 25);
+  console.log(featuresNewsItems)
+ 
+  const [articleType, setArticleType] = useState('Alles');
+  const [notFeatured, setNotFeatured] = useState(nonFeaturedNewsItems?.slice(0, 13));
+
+  const archived = nonFeaturedNewsItems.slice(13, 25);
   const options = {
     day: 'numeric',
     month: 'short',
@@ -22,8 +25,8 @@ export default function NewsOverview({ data }) {
   };
 
   useEffect(() => {
-    if (data?.notFeatured) {
-      let notFeatured = data?.notFeatured;
+    if (nonFeaturedNewsItems) {
+      let notFeatured = nonFeaturedNewsItems;
       if (articleType === 'Nieuw op de site') {
         setNotFeatured(notFeatured?.filter((item) => item.category === 'Nieuw op de site'));
       } else if (articleType === 'Agenda') {
@@ -36,7 +39,7 @@ export default function NewsOverview({ data }) {
         setNotFeatured(notFeatured);
       }
     }
-  }, [articleType, data?.notFeatured]);
+  }, [articleType, nonFeaturedNewsItems]);
 
   return (
     <div className='flex flex-col global-margin mt-4'>
@@ -52,7 +55,7 @@ export default function NewsOverview({ data }) {
           Uitgelichte nieuwsberichten
         </h1>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-6 py-10 overflow-hidden'>
-          {data?.featured.map((item, id) => (
+          {featuresNewsItems.map((item, id) => (
             <div
               className={`${
                 item.image != null
@@ -60,9 +63,9 @@ export default function NewsOverview({ data }) {
                   : 'col-span-1 flex-col gap-3'
               }`}
               key={id}
-            >
-              {item._type === 'agendaItem' && <FeaturedAgendaCard data={item} />}
-              {item._type === 'newsCard' && <FeaturedCard data={item} />}
+            > {console.log(item)}
+              {item.newsOrAgenda === true && <FeaturedAgendaCard data={item} />}
+              {item.newsOrAgenda === false && <FeaturedCard data={item} />}
             </div>
           ))}
         </div>

@@ -3,18 +3,18 @@ import { client } from '@/lib/sanity';
 import NewsDetailPageBody from '@/components/news-page/news-detail-page-body';
 
 // re do this when re-structing news page
+
+
 const NEWS_METADATA_QUERY = `
-*[_type == "newsPage"][0] {
-    "newsItems" :newsItems[slug.current == $slug]{
-      newsTitle, 
-      'slug': slug.current
-    }
+*[_type == "newsItem" && slug.current == $slug][0] {
+   ...,
 }
 `;
+
+
 export async function generateMetadata({ params }, parent) {
   // read route params
   const slug = params.slug;
-
   // fetch data
   const newsPageMetaData = await client.fetch(
     NEWS_METADATA_QUERY,

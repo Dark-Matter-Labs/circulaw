@@ -8,7 +8,7 @@ export default {
   type: 'document',
   components: { item: NewsItemComponent },
   fields: [
-    orderRankField({ type: "newsItem" }),
+    orderRankField({ type: "newsItem" , newItemPosition: "before"}),
     {
       name: 'newsOrAgenda',
       type: 'boolean',
@@ -151,7 +151,7 @@ export default {
       description:
         'Klik op ‘aanmaken’. (Slug is het gedeelte van een URL die na de domeinnaam komt. Deze paginanaam wordt automatisch gegenereerd aan de hand van de titel.)',
       options: {
-        source: (doc, context) => context.parent.newsTitle,
+        source: (doc, context) => context.parent.title,
         slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
       },
     },
@@ -159,7 +159,7 @@ export default {
       title: 'Inhoud',
       name: 'content',
       type: 'array',
-      hidden: ({ parent }) => parent.createPage === false,
+      hidden: ({ parent }) => parent.createPage === false ||  parent.newsOrAgenda === true,
       of: [
         {
           type: 'greenBox',
