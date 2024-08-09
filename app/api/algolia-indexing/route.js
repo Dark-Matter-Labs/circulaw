@@ -35,7 +35,7 @@ const QUERY = `
 `;
 
 const ABOUT_QUERY = `
-  *[_type == "aboutPage"] {
+  *[_type == "aboutPage" && !(_id in path('drafts.**'))] {
     "objectID": _id,
     pageTitle, 
     "slug": slug.current,
@@ -43,7 +43,7 @@ const ABOUT_QUERY = `
   }
 `;
 const EU_LAW_QUERY = `
-*[_type in ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab', 'euLaw']] {
+*[_type in ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab', 'euLaw'] && !(_id in path('drafts.**'))] {
     "objectID": _id,
     'lawTitle': coalesce(euLawReference->title, title),
     'slug': coalesce(euLawReference->slug.current, slug.current),
@@ -87,7 +87,7 @@ const EU_LAW_QUERY = `
 `;
 
 const NEWS_ITEMS_QUERY = `
-*[_type == 'newsItem'] {
+*[_type == 'newsItem' && !(_id in path('drafts.**'))] {
 "objectID": _id,
 "content": pt::text(content),
 title,
@@ -112,7 +112,10 @@ export async function GET() {
 
   try {
     console.time(
-      `Saving ${instruments.length} instruments and ${aboutPage.length} news items to index`,
+      `Saving ${instruments.length} instruments 
+      and ${aboutPage.length} about pages
+      and ${euLaw.length} eu laws
+      and ${newsItems.length} news items to index`,
     );
     await instrumentIndex.saveObjects(instruments);
     // await newsIndex.saveObjects(newsItems.newsItems)
@@ -121,7 +124,10 @@ export async function GET() {
     await newsIndex.saveObject(newsItems)
     // here it is newsItems.newsItems to structure the data as a array and not an object
     console.timeEnd(
-      `Saving ${instruments.length} instruments and ${aboutPage.length} news items to index`,
+      `Saving ${instruments.length} instruments 
+      and ${aboutPage.length} about pages
+      and ${euLaw.length} eu laws
+      and ${newsItems.length} news items to index`,
     );
     return Response.json({
       status: 200,
