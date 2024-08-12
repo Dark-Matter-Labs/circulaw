@@ -68,7 +68,7 @@ export default async function Page() {
             </h3>
 
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-6 py-10 overflow-hidden'>
-              {data.newsItems.featured.map((item, id) => (
+              {data.newsItems.map((item, id) => (
                 <div
                   className={`${
                     item.image
@@ -77,8 +77,8 @@ export default async function Page() {
                   }`}
                   key={id}
                 >
-                  {item._type === 'agendaItem' && <FeaturedAgendaCard data={item} />}
-                  {item._type === 'newsCard' && <FeaturedCard data={item} />}
+                  {item.newsOrAgenda === true && <FeaturedAgendaCard data={item} />}
+                  {item.newsOrAgenda === false && <FeaturedCard data={item} />}
                 </div>
               ))}
             </div>
