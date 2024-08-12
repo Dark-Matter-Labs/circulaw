@@ -19,10 +19,8 @@ export default function Layout({
 }) {
   const vraagSlug = '/vraag-en-antwoord';
 
-  // const hotjarConsent = getCookie('localConsent');
-
   useEffect(() => {
-    if (hotjarCookie === true) {
+    if (hotjarCookie === 'true') {
       console.log('hotjar turned on');
       hotjar.initialize(Number(process.env.NEXT_PUBLIC_HJID), Number(process.env.NEXT_PUBLIC_HJSV));
     }
