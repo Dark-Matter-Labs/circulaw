@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-
 import { client } from '@/lib/sanity';
 import HomePageAboutSection from '@/components/homepage/home-page-about-section';
 import HomePageEUSection from '@/components/homepage/home-page-eu-section';
@@ -12,7 +11,7 @@ import { HOME_PAGE_QUERY } from '@/lib/queries';
 
 async function getData() {
   const res = await client.fetch(HOME_PAGE_QUERY, {
-    next: { tags: ['siteConfig', 'transitionAgenda', 'newsPage', 'thema', 'newsPage'] },
+    next: { tags: ['siteConfig', 'transitionAgenda', 'thema', 'newsItem'] },
   });
 
   if (!res) {
@@ -92,7 +91,6 @@ export default async function Page() {
               </Link>
             </div>
           </div>
-
           <HomePageAboutSection aboutSection={data.aboutSection} />
         </div>
       </div>
