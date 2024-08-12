@@ -1,7 +1,7 @@
 'use client';
 import algoliasearch from 'algoliasearch';
 import { Hits, Configure } from 'react-instantsearch';
-import EUHit from './eu-law-hit';
+import NewsHit from './news-hit';
 import CustomStats from './stats';
 import Pagination from '@/components/search/pagination';
 import SearchHeader from './search-header';
@@ -17,11 +17,11 @@ const algoliaClient = algoliasearch(api_id, api_key);
 
 export const dynamic = 'force-dynamic';
 
-export default function EUSearch() {
+export default function NewsSearch() {
   return (
     <InstantSearchNext
       searchClient={algoliaClient}
-      indexName={'euLaw'}
+      indexName={'newsItems'}
       routing={{
         router: {
           cleanUrlOnDispose: false,
@@ -32,13 +32,13 @@ export default function EUSearch() {
       }}
       insights={true}
     >
-      <Configure hitsPerPage={12} />
+      <Configure hitsPerPage={10} />
       <div className='bg-green-600 h-[260px] flex items-end justify-center w-full'>
         <div className='global-margin w-full flex items-center justify-center'>
           {/* Desktop */}
-          <SearchHeader index='euLaw' />
+          <SearchHeader index='news' />
           {/* Mobile */}
-          <MobileHeaderSearch index='euLaw' />
+          <MobileHeaderSearch index='news' />
         </div>
       </div>
 
@@ -54,7 +54,7 @@ export default function EUSearch() {
                 list: 'sm:ml-10 grid grid-cols-3 gap-3',
                 item: 'shadow-none px-0 pt-0',
               }}
-              hitComponent={EUHit}
+              hitComponent={NewsHit}
             />
             <div className='w-full flex items-center justify-center mb-12 mt-6'>
               <Pagination />

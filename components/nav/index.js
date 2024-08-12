@@ -64,13 +64,13 @@ export default function Nav(props) {
 
   useEffect(() => {
     if (searchIndex === 'instruments') {
-      setPlaceholder('instruments search');
+      setPlaceholder('Zoek naar instrumenten...');
     } else if (searchIndex === 'aboutPage') {
-      setPlaceholder('about search');
+      setPlaceholder('Zoek naar over CircuLaw');
     } else if (searchIndex === 'euLaw') {
-      setPlaceholder('EULAW search');
+      setPlaceholder('Zoek naar EU wetgeving');
     } else {
-      setPlaceholder('news search');
+      setPlaceholder('Zoek naar nieuws');
     }
   }, [searchIndex]);
 

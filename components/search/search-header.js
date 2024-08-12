@@ -4,20 +4,19 @@ import { XIcon } from '@heroicons/react/outline';
 import { useState, useEffect } from 'react';
 
 export default function SearchHeader({ index }) {
+  const [placeholder, setPlaceholder] = useState('instruments');
 
-    const [placeholder, setPlaceholder] = useState('instruments');
-
-    useEffect(() => {
-      if (index === 'instruments') {
-        setPlaceholder('Zoek naar instrumenten...');
-      } else if (index === 'aboutPage') {
-        setPlaceholder('about search');
-      } else if (index === 'euLaw') {
-        setPlaceholder('EULAW search');
-      } else {
-        setPlaceholder('news search');
-      }
-    }, [index]);
+  useEffect(() => {
+    if (index === 'instruments') {
+      setPlaceholder('Zoek naar instrumenten...');
+    } else if (index === 'aboutPage') {
+      setPlaceholder('Zoek naar over CircuLaw');
+    } else if (index === 'euLaw') {
+      setPlaceholder('Zoek naar EU wetgeving');
+    } else {
+      setPlaceholder('Zoek naar nieuws');
+    }
+  }, [index]);
 
   return (
     <div className='hidden sm:flex flex-col items-center justify-center gap-y-6'>
@@ -73,7 +72,7 @@ export default function SearchHeader({ index }) {
               >
                 EU wetgeving
               </Link>
-              <Link 
+              <Link
                 href='/zoeken/over-circulaw'
                 className={`${
                   index === 'aboutPage'
@@ -84,7 +83,7 @@ export default function SearchHeader({ index }) {
                 Over
               </Link>
               <Link
-                href='/'
+                href='/zoeken/nieuws'
                 className={`${
                   index === 'news' ? 'border-b-2 border-white' : 'border-b-2 border-transparent'
                 } p-xs-semibold text-white p-2`}
