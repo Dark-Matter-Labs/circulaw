@@ -12,7 +12,7 @@
         },
         {
             "source": "/over/Wetsanalyse-vanuit-circulaire-blik",
-            "destination": "/over/wetsanalyse-vanuit-circulaire-blik",
+            "destination": "/over/methodiek-circulaw",
             "permanent": true
         },
         {
@@ -24,6 +24,21 @@
             "source": "/over/Wie-maken-CircuLaw",
             "destination": "/over/wie-maken-circulaw",
             "permanent": true
-        } 
+        },
+        {
+            "source": "/en",
+            "destination": "/",
+            "permanent": true
+        },      
+        {
+            "source": "/over/wetsanalyse-vanuit-circulaire-blik",
+            "destination": "/over/methodiek-circulaw",
+            "permanent": true
+        },
+        {
+            "source": "/over/zorgplicht-van-de-overheid",
+            "destination": "/over/zorgplicht-circulaire-transitie",
+            "permanent": true
+        }
     ]
 }
