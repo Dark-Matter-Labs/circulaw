@@ -28,9 +28,9 @@ export default function SearchButton({ linkRef, searchIndex, searchQuery }) {
       setSearchUrl(
         `/zoeken/over-circulaw?${searchIndex}${createQueryString('[query]', searchQuery)}`,
       );
-    } else {
+    } else if (searchIndex === 'newsItems') {
       setSearchUrl(
-        `/zoeken/over-circulaw?${searchIndex}${createQueryString('[query]', searchQuery)}`,
+        `/zoeken/nieuws?${searchIndex}${createQueryString('[query]', searchQuery)}`,
       );
     }
   }, [searchIndex, createQueryString, searchQuery]);

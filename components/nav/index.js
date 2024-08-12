@@ -691,7 +691,6 @@ export default function Nav(props) {
                           style={{ ...euMenuTransitionStyles }}
                           onMouseLeave={() => setEuMenuIsOpen(false)}
                         >
-                          {/* Remove slice once news section is separate */}
                           <div
                             className={`${
                               pathname === '/'
@@ -955,9 +954,9 @@ export default function Nav(props) {
                                         Over
                                       </button>
                                       <button
-                                        onClick={() => setSearchIndex('news')}
+                                        onClick={() => setSearchIndex('newsItems')}
                                         className={`${
-                                          searchIndex === 'news'
+                                          searchIndex === 'newsItems'
                                             ? 'border-b-2 border-white'
                                             : 'border-b-2 border-transparent'
                                         } p-xs-semibold text-white p-2`}
@@ -998,9 +997,9 @@ export default function Nav(props) {
                                         Over
                                       </button>
                                       <button
-                                        onClick={() => setSearchIndex('news')}
+                                        onClick={() => setSearchIndex('newsItems')}
                                         className={`${
-                                          searchIndex === 'news'
+                                          searchIndex === 'NewsItems'
                                             ? 'border-b-2 border-green-600'
                                             : 'border-b-2 border-transparent'
                                         } p-xs-semibold text-green-600 p-2`}

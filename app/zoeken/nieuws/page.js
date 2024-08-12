@@ -4,6 +4,6 @@ export const metadata = {
   title: 'Zoeken nieuwx - CircuLaw',
 };
 
-export default async function InstrumentSearchPage() {
+export default async function NewsSearchPage() {
   return <NewsSearch />
 }
