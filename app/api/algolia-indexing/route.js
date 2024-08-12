@@ -1,9 +1,11 @@
 import { client } from '@/lib/sanity';
 import algoliasearch from 'algoliasearch';
 
-// need to hide this route.
+export const agoliaInstance = algoliasearch(
+  process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID,
+  process.env.NEXT_PUBLIC_AGOLIA_ADMIN_KEY,
+);
 
-export const agoliaInstance = algoliasearch('0L6RUN37T0', '6dec367e60884b5c2c25ecdd03e59890');
 
 const QUERY = `
 *[_type == "instrument" && !(_id in path('drafts.**'))] {
@@ -31,7 +33,7 @@ const QUERY = `
           select(grondpositie == true => "grondpositie"),
           select(subsidie == true => "subsidie"),
           select(fiscaal == true => "fiscaal")],
-  }
+  } 
 `;
 
 const ABOUT_QUERY = `
@@ -42,6 +44,7 @@ const ABOUT_QUERY = `
     "content": array::join(string::split((pt::text(aboutPageContent)), "")[0..9500], "")
   }
 `;
+
 const EU_LAW_QUERY = `
 *[_type in ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab', 'euLaw'] && !(_id in path('drafts.**'))] {
     "objectID": _id,
@@ -88,14 +91,14 @@ const EU_LAW_QUERY = `
 
 const NEWS_ITEMS_QUERY = `
 *[_type == 'newsItem' && !(_id in path('drafts.**'))] {
-"objectID": _id,
-"content": pt::text(content),
+'objectID': _id,
+'content': pt::text(content),
 title,
 newsText,
 newsDate,
-...,
+newsOrAgenda,
 }
-`
+`;
 
 export async function GET() {
   // fetch instruments
@@ -103,9 +106,7 @@ export async function GET() {
   const aboutPage = await client.fetch(ABOUT_QUERY);
   const euLaw = await client.fetch(EU_LAW_QUERY);
   const newsItems = await client.fetch(NEWS_ITEMS_QUERY)
-
   const instrumentIndex = agoliaInstance.initIndex('instruments');
-  // const newsIndex  = agoliaInstance.initIndex('newsPage')
   const aboutIndex = agoliaInstance.initIndex('aboutPage');
   const euLawIndex = agoliaInstance.initIndex('euLaw');
   const newsIndex = agoliaInstance.initIndex('newsItems');
@@ -117,12 +118,13 @@ export async function GET() {
       and ${euLaw.length} eu laws
       and ${newsItems.length} news items to index`,
     );
+
     await instrumentIndex.saveObjects(instruments);
-    // await newsIndex.saveObjects(newsItems.newsItems)
     await aboutIndex.saveObjects(aboutPage);
-    await euLawIndex.saveObjects(euLaw);
-    await newsIndex.saveObject(newsItems)
-    // here it is newsItems.newsItems to structure the data as a array and not an object
+    await euLawIndex.saveObjects(euLaw)
+    await newsIndex.saveObjects(newsItems)
+  
+   
     console.timeEnd(
       `Saving ${instruments.length} instruments 
       and ${aboutPage.length} about pages
@@ -134,7 +136,7 @@ export async function GET() {
       body: 'Success!',
     });
   } catch (error) {
-    console.error(error, 'errrrrr');
+    console.error(error, 'error');
     return {
       status: 500,
       body: error,

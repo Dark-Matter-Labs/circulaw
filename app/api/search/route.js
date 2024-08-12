@@ -124,6 +124,20 @@ export async function POST(req) {
             }
          `,
         },
+        newsItem: {
+          index: agoliaInstance.initIndex('newsItems'),
+          projection: `
+          {
+       'objectID': _id,
+        'content': pt::text(content),
+        title,
+        newsText,
+        newsDate,
+        newsOrAgenda,
+
+            }
+         `,
+        },
       },
 
       (document) => {
@@ -210,6 +224,16 @@ export async function POST(req) {
               objectID: document.objectID,
               searchTitle: document.searchTitle,
               ceContent: document.ceContent,
+            };
+          }
+          case 'newsItem': {
+            return {
+              objectID: document.objectID,
+              content: document.content,
+              title: document.title,
+              newsText: document.newsText,
+              newsDate: document.newsDate,
+              newsOrAgenda: document.newsOrAgenda,
             };
           }
           default:
