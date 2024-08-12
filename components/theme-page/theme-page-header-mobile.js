@@ -1,4 +1,3 @@
-import LinkIcon from '../link-icon';
 import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -16,7 +15,6 @@ export default function ThemePageHeaderMobile({ themaData }) {
           />
         )}
         <div className='w-full h-full bg-gradient-to-t from-[#035E46] to-[#035E4600] z-0 absolute'></div>
-
         <div className='w-full h-full z-10 flex flex-col justify-between global-margin'>
           <div>
             <div className='pt-8'>
@@ -40,22 +38,7 @@ export default function ThemePageHeaderMobile({ themaData }) {
             <h1 className='heading-4xl-semibold sm:heading-5xl-semibold text-gray-100 pb-1'>
               {themaData?.themaName}
             </h1>
-            <p className='p-base text-gray-100'>
-              {themaData?.themaSubtitle}
-              {themaData?.linkText && (
-                <span className='text-white link-base inline-block '>
-                  <a
-                    href={themaData?.headerLinkURL}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                  >
-                    {themaData?.linkText}
-                    <LinkIcon />
-                  </a>
-                </span>
-              )}
-            </p>
+            <p className='p-base text-gray-100'>{themaData?.themaSubtitle}</p>
           </div>
         </div>
       </div>
