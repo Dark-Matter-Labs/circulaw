@@ -11,7 +11,7 @@ export const Structure = (S) =>
     .title('Content Types')
     .items([
       S.listItem()
-        .title('Instrumenten per thema') // TODO: update to Instrumenten
+        .title('Instrumenten per thema')
         .icon(VscLaw)
         .child(
           // List out all categories
@@ -25,7 +25,7 @@ export const Structure = (S) =>
             ),
         ),
       S.listItem()
-        .title('Instrumenten per top 5 thema') // TODO: update to Instrumenten
+        .title('Instrumenten per top 5 thema')
         .icon(VscLaw)
         .child(
           // List out all categories
@@ -46,7 +46,6 @@ export const Structure = (S) =>
           S.documentTypeList('euLaw')
             .title('Inhoud per EU wet')
             .child((euLawId) =>
-              // console.log(euLawId),
               S.documentList()
                 .title('Instruments')
                 .filter(

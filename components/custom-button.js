@@ -1,3 +1,4 @@
+// TODO: refactor this and use it more widely.
 const buttonColors = {
   home: 'bg-gray-100 hover:bg-green-200 text-green-600 shadow-md active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white rounded-full',
   whiteBackground:

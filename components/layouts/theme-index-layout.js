@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { DiscussionEmbed } from 'disqus-react';
@@ -12,8 +13,16 @@ import waarvoor from '@/public/thema-card-background/waarvoor.svg';
 import commentIcon from '@/public/comment-icon.svg';
 import comments from '@/public/comments.png';
 import { Link as ScrollLink } from 'react-scroll';
+import { useEffect } from 'react';
+import ThemeSponsors from '../theme-page/theme-sponsors';
 
+// TODO: See what we could move to a layout.js file instead of having everything in components.
 export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
+  useEffect(() => {
+    localStorage.clear();
+  });
+
+  console.log(thema.themaName);
   return (
     <>
       <div>
@@ -400,7 +409,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
           <div className='bg-gray-200'>
             <ThemeBottomSection featuredLaws={featuredLaws} thema={thema} />
           </div>
-          {thema.reports && (
+          {thema?.reports && (
             <div className='global-margin'>
               <ul className='grid grid-cols-1  sm:grid-cols-3 gap-x-6 my-10'>
                 {thema?.reports.map((report) => {
@@ -445,6 +454,9 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                 }}
               />
             </div>
+          )}
+          {thema?.themeSponsors?.length > 0 && (
+            <ThemeSponsors sponsors={thema?.themeSponsors} thema={thema?.themaName} />
           )}
         </div>
       </div>

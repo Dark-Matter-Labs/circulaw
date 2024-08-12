@@ -2,12 +2,12 @@
 
 module.exports = {
   content: [
+    './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
     './public/**/*.html',
     './lib/**/*.{js,ts,jsx,tsx}',
     './utils/**/*.{js,ts,jsx,tsx}',
-    
   ],
   important: true,
   theme: {
@@ -36,7 +36,7 @@ module.exports = {
         'gray-800': '#1F2223',
       },
       fontFamily: {
-        jakarta: ['Plus Jakarta Sans', 'sans-serif']
+        jakarta: ['var(--font-plus-jakarta-sans)'],
       },
       fontSize: {
         xxs: '12px',
@@ -84,11 +84,8 @@ module.exports = {
         'rladder': '29%',
       },
       backgroundImage: {
-        'en-background': 'url("/background-en-page2.png")',
-        'en-header': 'url("/en-deco-header.png")',
         'about-header': 'url("/about-header.png")',
         'header': 'url("/home-page/homepage_bg.png")',
-        'eu': 'url("/bg-eu.png")'
       },
       borderRadius: {
           'cl': '10px',

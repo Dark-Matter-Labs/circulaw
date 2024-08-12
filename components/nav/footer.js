@@ -3,17 +3,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import CustomButton from '@/components/custom-button';
 import Partners from '@/components/nav/partners';
-import ActionPanel from '@/components/section-action-panel';
-import ORicon from '@/public/icons/openResearch.svg';
+import FooterLinkBlock from './footer-link-block';
+import ORicon from '@/public/icons/openResearch.svg'; // TODO: get this icon from Icon library
 import { ArrowUpIcon } from '@heroicons/react/outline';
 import { AiFillGithub } from 'react-icons/ai';
 import { RiLinkedinFill } from 'react-icons/ri';
 import { Link as ScrollLink } from 'react-scroll';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
-import JaIcon from '@/public/icons/ja-icon.svg';
-import NeeIcon from '@/public/icons/nee-icon.svg';
+import JaIcon from '@/public/icons/ja-icon.svg'; // TODO: get this icon from Icon library
+import NeeIcon from '@/public/icons/nee-icon.svg'; // TODO: get this icon from Icon library
 import { usePathname } from 'next/navigation';
-// import data // maybe not necessary
+
 const navigation = {
   other: [
     { name: 'Contact', href: '/contact', className: '' },
@@ -30,7 +30,7 @@ const navigation = {
   ],
 };
 
-export default function Footer(props) {
+export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos }) {
   const { CustomEvent } = usePiwikPro();
   const [moreInfoOpen, setMoreInfoOpen] = useState('hidden');
   const [successMessage, setSuccessMessage] = useState('hidden');
@@ -38,15 +38,6 @@ export default function Footer(props) {
   const [feedbackState, setFeedBackState] = useState('');
   const [feedback, setFeedback] = useState('');
 
-  let aboutSlugs = [];
-  if (props.aboutSlugs) {
-    aboutSlugs = props.aboutSlugs;
-  }
-
-  let FAQslug = [];
-  if (props.vraagSlug) {
-    FAQslug = props.vraagSlug;
-  }
   const pathname = usePathname();
   return (
     <>
@@ -166,14 +157,14 @@ export default function Footer(props) {
                   <div className=''>
                     <div className='grid grid-cols-1 sm:grid-cols-4 gap-2 sm:gap-8'>
                       <div className='sm:hidden block border-b border-gray-100 pb-4'>
-                        <ActionPanel
+                        <FooterLinkBlock
                           title='Schrijf je in voor onze CircuLaw Nieuwsbrief'
                           paragraph='Zo ben je altijd op de hoogte van het laatste CircuLaw-nieuws. '
                           buttonText='Aanmelden'
                           buttonLink='/nieuwsbrief'
                         />
                         <div className='py-4'></div>
-                        <ActionPanel
+                        <FooterLinkBlock
                           title='Doe met ons mee'
                           paragraph='Heb je vragen, wil je je ervaringen delen of wil je een wetsanalyse laten uitvoeren op een circulair  thema of casus?'
                           buttonText='Neem contact op'
@@ -225,14 +216,14 @@ export default function Footer(props) {
                           {' '}
                           <ul role='list' className='mt-4 space-y-4'>
                             {aboutSlugs &&
-                              aboutSlugs?.map((slug) => (
-                                <li key={slug.slug}>
+                              aboutSlugs?.map((slug, id) => (
+                                <li key={id}>
                                   <a
                                     href={`/over/${encodeURIComponent(slug.slug)}`}
                                     className='p-base text-gray-100'
                                   >
                                     <span className='inline-block first-letter:uppercase link-interaction-light-green-bg'>
-                                      {slug.title.replaceAll('-', ' ')}
+                                      {slug.pageTitle.replaceAll('-', ' ')}
                                     </span>
                                   </a>
                                 </li>
@@ -243,15 +234,10 @@ export default function Footer(props) {
                       <div className='py-2 sm:py-0'>
                         <ul role='list' className='space-y-4'>
                           <li>
-                            <a
-                              className='p-base text-gray-100 link-interaction'
-                              href={`/${encodeURIComponent(FAQslug)}`}
-                            >
-                              {FAQslug.length > 0 && (
-                                <span className='inline-block first-letter:uppercase link-interaction-light-green-bg'>
-                                  {FAQslug.replaceAll('-', ' ')}
-                                </span>
-                              )}
+                            <a className='p-base text-gray-100 link-interaction' href={vraagSlug}>
+                              <span className='inline-block first-letter:uppercase link-interaction-light-green-bg'>
+                                Vraag en antwoord
+                              </span>
                             </a>
                           </li>
                           {navigation.other.map((item) => (
@@ -267,14 +253,14 @@ export default function Footer(props) {
                         </ul>
                       </div>
                       <div className='hidden sm:block'>
-                        <ActionPanel
+                        <FooterLinkBlock
                           title='Schrijf je in voor onze CircuLaw Nieuwsbrief'
                           paragraph='Zo ben je altijd op de hoogte van het laatste CircuLaw-nieuws. '
                           buttonText='Aanmelden'
                           buttonLink='/nieuwsbrief'
                         />
                         <div className='py-4'></div>
-                        <ActionPanel
+                        <FooterLinkBlock
                           title='Doe met ons mee'
                           paragraph='Heb je vragen, wil je je ervaringen delen of wil je een wetsanalyse laten uitvoeren op een circulair  thema of casus?'
                           buttonText='Neem contact op'
@@ -359,7 +345,7 @@ export default function Footer(props) {
           </div>
         )}
 
-        <Partners footerText={props.footerText} />
+        <Partners footerText={footerText} partnerLogos={partnerLogos} />
       </footer>
     </>
   );

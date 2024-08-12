@@ -1,4 +1,4 @@
-import ThemaCard from '../thema-cards';
+import ThemaCard from '../product-chain-page/thema-cards';
 import PCTooltip from '../tooltips/product-chain-tooltip';
 import CustomButton from '@/components/custom-button';
 import PageHeader from '@/components/product-chain-page/product-chain-header';
@@ -7,7 +7,9 @@ import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function ThemeLayout({ ...props }) {
+// TODO: See what we could move to a layout.js file instead of having everything in components.
+// TOTAL INSTRUMENTS IS NOT THERE!!!!
+export default function PCLayout({ ...props }) {
   return (
     <>
       <div>

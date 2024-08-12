@@ -9,8 +9,8 @@ export default function DisplaySubHeading({ arr, subCat }) {
         </div>
       )}
       <ul>
-        {arr?.map((instrument) => (
-          <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+        {arr?.map((instrument, id) => (
+          <ExpertisePageInstrument key={id} instrument={instrument} />
         ))}
       </ul>
     </div>

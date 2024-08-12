@@ -1,6 +1,6 @@
 import { Highlight } from 'react-instantsearch';
 import Link from 'next/link';
-import Tag from '../tag';
+import Tag from '@/components/tag';
 
 export const InstrumentHit = ({ hit }) => {
   return (

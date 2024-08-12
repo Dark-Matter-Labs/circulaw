@@ -1,13 +1,13 @@
+'use client';
 import SocialButtons from '../social-buttons';
-import Tag from '../tag';
+import Tag from '@/components/tag';
 import InstrumentMetaData from './instrument-metadata';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export default function InstrumentHeader({ data }) {
   const router = useRouter();
-
   // eslint-disable-next-line
   const [selectedTab, setSelectedTab] = useState(null);
 
@@ -46,25 +46,23 @@ export default function InstrumentHeader({ data }) {
               </span>
             </button>
             <div className='float-right'>
-              <SocialButtons title={data?.instrument?.titel} viewport='desktop' />
+              <SocialButtons title={data?.titel} viewport='desktop' />
             </div>
           </div>
           <div className='mb-6 h-auto'>
             <div className='w-full flex'>
               <Link
-                href={`/${data?.instrument?.transitionAgenda}/${data?.instrument?.thema
-                  ?.toLowerCase()
-                  .replace(/ /g, '-')}`}
+                href={`/${data?.transitionAgenda}/${data?.thema?.toLowerCase().replace(/ /g, '-')}`}
                 className=''
               >
                 <Tag classes='border border-gray-100 hover:border-green-200 active:border-green-400 text-gray-100 mr-2 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>
-                  {data?.instrument?.thema?.replace('-', ' ')}
+                  {data?.thema?.replace('-', ' ')}
                 </Tag>
               </Link>
 
-              {data?.instrument?.beleid === true && data?.instrument?.themaType === 'thema' && (
+              {data?.beleid === true && data?.themaType === 'thema' && (
                 <Link
-                  href={`/${data?.instrument?.transitionAgenda}/${data?.instrument?.thema}/categorie`}
+                  href={`/${data?.transitionAgenda}/${data?.thema}/categorie`}
                   onClick={() => setCategorie('beleid')}
                 >
                   <Tag classes='bg-green-300 text-green-800 hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
@@ -72,12 +70,12 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-              {data?.instrument?.beleid === true && data?.instrument?.themaType !== 'thema' && (
+              {data?.beleid === true && data?.themaType !== 'thema' && (
                 <Tag classes='bg-green-300 text-green-800 mr-2'>Beleid</Tag>
               )}
-              {data?.instrument?.inkoop === true && data?.instrument?.themaType === 'thema' && (
+              {data?.inkoop === true && data?.themaType === 'thema' && (
                 <Link
-                  href={`/${data?.instrument?.transitionAgenda}/${data?.instrument?.thema}/categorie`}
+                  href={`/${data?.transitionAgenda}/${data?.thema}/categorie`}
                   onClick={() => setCategorie('inkoop')}
                 >
                   <Tag classes='bg-green-300 text-green-800 hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
@@ -85,13 +83,13 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-              {data?.instrument?.inkoop === true && data?.instrument?.themaType !== 'thema' && (
+              {data?.inkoop === true && data?.themaType !== 'thema' && (
                 <Tag classes='bg-green-300 text-green-800 mr-2'>Inkoop</Tag>
               )}
 
-              {data?.instrument?.grondpositie === true && data?.instrument?.themaType === 'thema' && (
+              {data?.grondpositie === true && data?.themaType === 'thema' && (
                 <Link
-                  href={`/${data?.instrument?.transitionAgenda}/${data?.instrument?.thema}/categorie`}
+                  href={`/${data?.transitionAgenda}/${data?.thema}/categorie`}
                   onClick={() => setCategorie('grondpositie')}
                 >
                   <Tag classes='bg-green-300 text-green-800 hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
@@ -99,14 +97,13 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-              {data?.instrument?.grondpositie === true &&
-                data?.instrument?.themaType !== 'thema' && (
-                  <Tag classes='bg-green-300 text-green-800 mr-2'>Grondpositie</Tag>
-                )}
+              {data?.grondpositie === true && data?.themaType !== 'thema' && (
+                <Tag classes='bg-green-300 text-green-800 mr-2'>Grondpositie</Tag>
+              )}
 
-              {data?.instrument?.subsidie === true && data?.instrument?.themaType === 'thema' && (
+              {data?.subsidie === true && data?.themaType === 'thema' && (
                 <Link
-                  href={`/${data?.instrument?.transitionAgenda}/${data?.instrument?.thema}/categorie`}
+                  href={`/${data?.transitionAgenda}/${data?.thema}/categorie`}
                   onClick={() => setCategorie('subsidie')}
                 >
                   <Tag classes='bg-green-300 text-green-800 hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
@@ -114,12 +111,12 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-              {data?.instrument?.subsidie === true && data?.instrument?.themaType !== 'thema' && (
+              {data?.subsidie === true && data?.themaType !== 'thema' && (
                 <Tag classes='bg-green-300 text-green-800 mr-2'>Subsidie</Tag>
               )}
-              {data?.instrument?.fiscaal === true && data?.instrument?.themaType === 'thema' && (
+              {data?.fiscaal === true && data?.themaType === 'thema' && (
                 <Link
-                  href={`/${data?.instrument?.transitionAgenda}/${data?.instrument?.thema}/categorie`}
+                  href={`/${data?.transitionAgenda}/${data?.thema}/categorie`}
                   onClick={() => setCategorie('fiscaal')}
                 >
                   <Tag classes='bg-green-300 text-green-800 hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
@@ -127,13 +124,13 @@ export default function InstrumentHeader({ data }) {
                   </Tag>
                 </Link>
               )}
-              {data?.instrument?.fiscaal === true && data?.instrument?.themaType !== 'thema' && (
+              {data?.fiscaal === true && data?.themaType !== 'thema' && (
                 <Tag classes='bg-green-300 text-green-800 mr-2'>Fiscaal</Tag>
               )}
             </div>
             <div className='max-w-4xl flex justify-start overflow-hidden'>
               <h1 className='heading-2xl-semibold sm:heading-5xl-semibold justify-self-start lg:block mt-1 text-gray-100 pb-1'>
-                {data?.instrument?.titel}
+                {data?.titel}
               </h1>
             </div>
           </div>

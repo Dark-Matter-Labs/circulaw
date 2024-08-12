@@ -69,8 +69,6 @@ module.exports = {
         'list-card': 'url("/thema-card-background/list-bg.png")',
         'samenhang-card': 'url("/thema-card-background/samenhang-bg.png")',
         'waarvoor-card': 'url("/thema-card-background/waaroov-bg.png")',
-        'en-background': 'url("/background-en-page2.png")',
-        'en-header': 'url("/en-deco-header.png")',
         'about-header': 'url("/about-header.png")',
       },
       borderRadius: {

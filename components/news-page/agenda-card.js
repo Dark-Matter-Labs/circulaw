@@ -1,4 +1,4 @@
-import Tag from '../tag';
+import Tag from '@/components/tag';
 import Link from 'next/link';
 
 export default function AgendaCard({ data }) {

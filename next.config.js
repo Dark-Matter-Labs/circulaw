@@ -1,8 +1,8 @@
 // next.config.js
 // const { redirects } = require('./utils/redirects')
-const withTM = require('next-transpile-modules')(['@piwikpro/next-piwik-pro']);
 
 const nextConfig = {
+  
   // redirects,
   async redirects() {
     return [
@@ -13,6 +13,7 @@ const nextConfig = {
       },
     ]
   },
+  transpilePackages: ['@piwikpro/next-piwik-pro'],
     images: {
       remotePatterns: [
         {
@@ -23,4 +24,4 @@ const nextConfig = {
       ],
     },
   }
-module.exports = withTM(nextConfig);
+module.exports = nextConfig

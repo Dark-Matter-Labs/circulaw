@@ -1,15 +1,10 @@
 import ParnerSection from './parner-section';
-import { partnersQuery } from '@/lib/queries';
 import sanityLogo from '@/public/logo_partners/sanity-logo.svg';
-import { fetcher } from '@/utils/swr-fetcher';
-import { groq } from 'next-sanity';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import useSWR from 'swr';
 
-export default function Partners({ footerText }) {
-  const { data } = useSWR(groq`${partnersQuery}`, fetcher);
+export default function Partners({ footerText, partnerLogos }) {
   const pathname = usePathname();
 
   return (
@@ -17,9 +12,15 @@ export default function Partners({ footerText }) {
       {pathname === '/' && (
         <div className='global-margin pb-12 px-4 lg:pb-16'>
           <div className='heading-3xl-semibold text-gray-100 pl-3 sm:pl-6 lg:pl-8'>Partners</div>
-          <ParnerSection partners={data?.developingPartners} partnerType='Ontwikkelpartners' />
-          <ParnerSection partners={data?.knowledge} partnerType='Kennispartners' />
-          <ParnerSection partners={data?.financingPartners} partnerType='Financieringspartners' />
+          <ParnerSection
+            partners={partnerLogos?.developingPartners}
+            partnerType='Ontwikkelpartners'
+          />
+          <ParnerSection partners={partnerLogos?.knowledge} partnerType='Kennispartners' />
+          <ParnerSection
+            partners={partnerLogos?.financingPartners}
+            partnerType='Financieringspartners'
+          />
         </div>
       )}
       <div className='global-margin pb-2 text-gray-100 p-base'>

@@ -1,3 +1,4 @@
+// TODO: update icon to our decided icon package
 export default function LinkIcon() {
   return (
     <span className='pl-0.5 inline-block h-5 w-5 -mb-1 relative '>

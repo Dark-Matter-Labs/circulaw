@@ -31,6 +31,20 @@ export default {
       group: 'summary',
     },
     {
+      name: 'metaTitle',
+      type: 'string',
+      title: 'Meta Title',
+      description: 'SEO',
+      group: 'summary',
+    },
+    {
+      name: 'metaDescribe',
+      type: 'string',
+      title: 'Meta Describe',
+      description: 'SEO',
+      group: 'summary',
+    },
+    {
       name: 'introText',
       type: 'text',
       title: 'Introduction text',
