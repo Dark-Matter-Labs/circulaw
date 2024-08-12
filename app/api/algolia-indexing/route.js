@@ -6,7 +6,6 @@ export const agoliaInstance = algoliasearch(
   process.env.NEXT_PUBLIC_AGOLIA_ADMIN_KEY,
 );
 
-
 const QUERY = `
 *[_type == "instrument" && !(_id in path('drafts.**'))] {
     _type,
@@ -105,7 +104,7 @@ export async function GET() {
   const instruments = await client.fetch(QUERY);
   const aboutPage = await client.fetch(ABOUT_QUERY);
   const euLaw = await client.fetch(EU_LAW_QUERY);
-  const newsItems = await client.fetch(NEWS_ITEMS_QUERY)
+  const newsItems = await client.fetch(NEWS_ITEMS_QUERY);
   const instrumentIndex = agoliaInstance.initIndex('instruments');
   const aboutIndex = agoliaInstance.initIndex('aboutPage');
   const euLawIndex = agoliaInstance.initIndex('euLaw');
@@ -121,10 +120,9 @@ export async function GET() {
 
     await instrumentIndex.saveObjects(instruments);
     await aboutIndex.saveObjects(aboutPage);
-    await euLawIndex.saveObjects(euLaw)
-    await newsIndex.saveObjects(newsItems)
-  
-   
+    await euLawIndex.saveObjects(euLaw);
+    await newsIndex.saveObjects(newsItems);
+
     console.timeEnd(
       `Saving ${instruments.length} instruments 
       and ${aboutPage.length} about pages

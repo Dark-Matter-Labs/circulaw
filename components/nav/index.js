@@ -30,7 +30,7 @@ import Link from 'next/link';
 import { useState, useEffect, useRef, Suspense } from 'react';
 import Lottie from 'react-lottie';
 import { usePathname } from 'next/navigation';
-import SearchButton from './searchButton';
+import SearchButton from './search-button';
 
 const defaultOptions = {
   loop: true,
@@ -60,6 +60,19 @@ export default function Nav(props) {
 
   const [searchIndex, setSearchIndex] = useState('instruments');
   const [searchQuery, setSearchQuery] = useState('');
+  const [placeholder, setPlaceholder] = useState('instruments');
+
+  useEffect(() => {
+    if (searchIndex === 'instruments') {
+      setPlaceholder('instruments search');
+    } else if (searchIndex === 'aboutPage') {
+      setPlaceholder('about search');
+    } else if (searchIndex === 'euLaw') {
+      setPlaceholder('EULAW search');
+    } else {
+      setPlaceholder('news search');
+    }
+  }, [searchIndex]);
 
   const onChange = () => (e) => {
     const value = e.target.value;
@@ -869,9 +882,47 @@ export default function Nav(props) {
                           >
                             {/* MAKE INTO A COMPONENT */}
                             <div className='w-full h-full global-margin flex flex-col items-center justify-end pb-10'>
-                              <div className='mb-4'>
-                                <div className='flex flex-row justify-center w-[600px] gap-x-1.5'>
+                              <div className='h-16 w-[600px]'>
+                                <form
+                                  className={`${
+                                    pathname === '/' ? 'bg-green-600' : 'bg-green-50'
+                                  }  w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex`}
+                                  onKeyDown={(e) => {
+                                    if (e.key === 'Enter') enterClick(e);
+                                  }}
+                                >
+                                  <input
+                                    className={`${
+                                      pathname === '/'
+                                        ? 'bg-green-50/50 placeholder:text-white caret-white focus:bg-[url("/search-icon.png")] text-white'
+                                        : 'bg-white placeholder:text-green-600 caret-green-600 focus:bg-[url("/search-icon-dark.png")] text-green-600'
+                                    } w-[600px] h-[66px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none  p-base  focus:ring-1 focus:ring-white  placeholder:p-base-semibold`}
+                                    placeholder={placeholder}
+                                    onChange={onChange()}
+                                  />
+                                  <Suspense>
+                                    <SearchButton
+                                      linkRef={linkRef}
+                                      searchIndex={searchIndex}
+                                      searchQuery={searchQuery}
+                                    />
+                                  </Suspense>
                                   <button
+                                    type='reset'
+                                    title='Clear the search query'
+                                    className={`${
+                                      searchQuery === '' ? 'hidden' : ''
+                                    } absolute top-3.5 right-28 rounded-full p-2 hover:bg-white/50 group`}
+                                    onClick={() => setSearchQuery('')}
+                                  >
+                                    <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
+                                  </button>
+                                </form>
+                              </div>
+
+                              <div className='mt-4'>
+                                <div className='flex flex-row justify-center w-[600px] gap-x-2.5'>
+                                  {/* <button
                                     onClick={() => setSearchIndex('instruments')}
                                     className={`${
                                       pathname === '/'
@@ -919,49 +970,95 @@ export default function Nav(props) {
                                         Zoeken binnen &apos;Over Circulaw&apos;
                                       </span>
                                     </div>
-                                  </button>
+                                  </button> */}
+                                  {pathname === '/' ? (
+                                    <>
+                                      <button
+                                        onClick={() => setSearchIndex('instruments')}
+                                        className={`${
+                                          searchIndex === 'instruments'
+                                            ? 'border-b-2 border-white'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-white p-2`}
+                                      >
+                                        Instrumenten
+                                      </button>
+                                      <button
+                                        onClick={() => setSearchIndex('euLaw')}
+                                        className={`${
+                                          searchIndex === 'euLaw'
+                                            ? 'border-b-2 border-white box-content'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-white p-2`}
+                                      >
+                                        EU wetgeving
+                                      </button>
+                                      <button
+                                        onClick={() => setSearchIndex('aboutPage')}
+                                        className={`${
+                                          searchIndex === 'aboutPage'
+                                            ? 'border-b-2 border-white'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-white p-2`}
+                                      >
+                                        Over
+                                      </button>
+                                      <button
+                                        onClick={() => setSearchIndex('news')}
+                                        className={`${
+                                          searchIndex === 'news'
+                                            ? 'border-b-2 border-white'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-white p-2`}
+                                      >
+                                        Nieuws
+                                      </button>
+                                    </>
+                                  ) : (
+                                    <>
+                                      <button
+                                        onClick={() => setSearchIndex('instruments')}
+                                        className={`${
+                                          searchIndex === 'instruments'
+                                            ? 'border-b-2 border-green-600'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-green-600 p-2`}
+                                      >
+                                        Instrumenten
+                                      </button>
+                                      <button
+                                        onClick={() => setSearchIndex('euLaw')}
+                                        className={`${
+                                          searchIndex === 'euLaw'
+                                            ? 'border-b-2 border-green-600'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-green-600 p-2`}
+                                      >
+                                        EU wetgeving
+                                      </button>
+                                      <button
+                                        onClick={() => setSearchIndex('aboutPage')}
+                                        className={`${
+                                          searchIndex === 'aboutPage'
+                                            ? 'border-b-2 border-green-600'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-green-600 p-2`}
+                                      >
+                                        Over
+                                      </button>
+                                      <button
+                                        onClick={() => setSearchIndex('news')}
+                                        className={`${
+                                          searchIndex === 'news'
+                                            ? 'border-b-2 border-green-600'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-green-600 p-2`}
+                                      >
+                                        Nieuws
+                                      </button>
+                                    </>
+                                  )}
                                 </div>
-                              </div>
-                              <div className='h-16 w-[600px]'>
-                                <form
-                                  className={`${
-                                    pathname === '/' ? 'bg-green-600' : 'bg-green-50'
-                                  }  w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex`}
-                                  onKeyDown={(e) => {
-                                    if (e.key === 'Enter') enterClick(e);
-                                  }}
-                                >
-                                  <input
-                                    className={`${
-                                      pathname === '/'
-                                        ? 'bg-green-50/50 placeholder:text-white caret-white focus:bg-[url("/search-icon.png")] text-white'
-                                        : 'bg-white placeholder:text-green-800 caret-green-800 focus:bg-[url("/search-icon-dark.png")] text-green-800'
-                                    } w-[600px] h-[66px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none  p-base  focus:ring-1 focus:ring-white  placeholder:p-base-semibold`}
-                                    placeholder={
-                                      searchIndex === 'instruments'
-                                        ? 'Zoek naar instrumenten...'
-                                        : 'Zoek naar over CircuLaw...'
-                                    }
-                                    onChange={onChange()}
-                                  />
-                                  <Suspense>
-                                    <SearchButton
-                                      linkRef={linkRef}
-                                      searchIndex={searchIndex}
-                                      searchQuery={searchQuery}
-                                    />
-                                  </Suspense>
-                                  <button
-                                    type='reset'
-                                    title='Clear the search query'
-                                    className={`${
-                                      searchQuery === '' ? 'hidden' : ''
-                                    } absolute top-3.5 right-28 rounded-full p-2 hover:bg-white/50 group`}
-                                    onClick={() => setSearchQuery('')}
-                                  >
-                                    <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
-                                  </button>
-                                </form>
                               </div>
                             </div>
                           </div>
