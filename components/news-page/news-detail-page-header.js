@@ -1,13 +1,27 @@
-import Tag from '../tag';
+'use client';
+import Tag from '@/components/tag';
 import Link from 'next/link';
-
-export default function NewsDetailPageHeader({ cardColour, data }) {
+import { useState, useEffect } from 'react';
+export default function NewsDetailPageHeader({ data }) {
   const event = new Date(data?.newsDate);
   const options = {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
   };
+
+  const [cardColour, setCardColour] = useState();
+
+  useEffect(() => {
+    if (data?.colour === 'lightGreen') {
+      setCardColour('bg-green-300');
+    } else if (data?.colour === 'green') {
+      setCardColour('bg-green-500');
+    } else if (data?.colour === 'darkGreen') {
+      setCardColour('bg-green-600');
+    } else setCardColour('bg-green-800');
+  }, [data]);
+
   return (
     <>
       <div className={`${cardColour} h-72 my-3`}>

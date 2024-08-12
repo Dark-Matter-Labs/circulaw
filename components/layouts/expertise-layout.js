@@ -1,12 +1,13 @@
+'use client';
 import ExplinationText from '../expertise-page/explination-text';
 import TabButton from '../expertise-page/tab-button';
 import TabLayout from '../expertise-page/tab-layout';
-import OverviewPageHeader from '../overview-page-header';
+import OverviewPageHeader from '../theme-page/overview-page-header';
 import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
 import { useEffect, useState, useTransition } from 'react';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 export default function ExpertiseLayout({ expertiseData, ...props }) {
   const [beleid, setBeleid] = useState([]);
@@ -22,11 +23,18 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
 
   const [selectedTab, setSelectedTab] = useState('beleid');
   const [local, setLocal] = useState({ value: 'alle' });
-  const router = useRouter();
+  const pathname = usePathname();
   const { CustomEvent } = usePiwikPro();
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.localStorage.length > 0) {
+    if (
+      typeof window !== 'undefined' &&
+      (Object.values(window.localStorage).includes('beleid') ||
+        Object.values(window.localStorage).includes('inkoop') ||
+        Object.values(window.localStorage).includes('grondpositie') ||
+        Object.values(window.localStorage).includes('subsidie') ||
+        Object.values(window.localStorage).includes('fiscaal'))
+    ) {
       let selectedTab = localStorage.getItem('selectedTab');
       let keys = [];
       for (let i = 0; i < localStorage.length; i++) {
@@ -286,7 +294,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
         setSelectedTab(value);
       });
 
-      CustomEvent.trackEvent('Categorie Tab Change', router.asPath, value);
+      CustomEvent.trackEvent('Categorie Tab Change', pathname, value);
     }
   }
   return (
@@ -294,7 +302,12 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
       <div className='sm:bg-gradient-to-t sm:from-[#F8FAF8] sm:to-[#F8FAF8]'>
         <div className='-mt-10'>
           <div className='h-[310px] sm:h-[360px] bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 bg-green-600 sm:mx-0'>
-            <OverviewPageHeader props={props} page='samenhang' />
+            <OverviewPageHeader
+              thema={props.thema}
+              productChain={props.transitionAgenda}
+              title={props.title}
+              page='samenhang'
+            />
           </div>
           {/* DESKTOP */}
           <div className='hidden sm:flex max-w-[1280px]  pb-10 global-margin'>
@@ -422,8 +435,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                   </div>
                 </div>
               </div>
-              {/* if is pending is true do not change the tab wait for the next*/}
-
               {selectedTab === 'beleid' && (
                 <TabLayout
                   category={beleid}

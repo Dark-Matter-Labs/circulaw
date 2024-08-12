@@ -1,7 +1,9 @@
 import InstrumentCard from '../instrument/instrument-card';
 import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
 import ThemePageHeader from '@/components/theme-page/theme-page-header';
+import ThemeSponsors from '../theme-page/theme-sponsors';
 
+// TODO: See what we could move to a layout.js file instead of having everything in components.
 export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props }) {
   const themaData = props.thema;
   return (
@@ -28,6 +30,9 @@ export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props 
           </div>
         </div>
       </div>
+      {props?.thema?.themeSponsors?.length > 0 && (
+        <ThemeSponsors sponsors={props?.thema?.themeSponsors} thema={props?.thema?.themaName} />
+      )}
     </>
   );
 }

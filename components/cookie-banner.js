@@ -1,18 +1,21 @@
-import { setCookie, hasCookie } from 'cookies-next';
+import { setCookie } from 'cookies-next';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
-const CookieConsent = () => {
+const CookieConsent = ({ hasLocalConsentCookie }) => {
   const [consent, setConsent] = useState(true);
+  const router = useRouter();
+
   useEffect(() => {
-    setConsent(hasCookie('localConsent'));
-  }, []);
+    setConsent(hasLocalConsentCookie);
+  }, [hasLocalConsentCookie]);
 
   const acceptCookie = () => {
     setConsent(true);
     setCookie('localConsent', 'true', { maxAge: 60 * 60 * 24 * 365 });
     // extra refresh to enable Hotjar
-    window.location.reload();
+    router.refresh();
     // eslint-disable-next-line
     ppms.cm.api(
       'setComplianceSettings',
@@ -32,13 +35,20 @@ const CookieConsent = () => {
       () => console.log('consent fail'),
     );
   };
-  if (consent === true || window.location.host.includes('staging')) {
+  if (
+    consent === true ||
+    window.location.host.includes('staging') ||
+    window.location.host.includes('-git-') ||
+    window.location.host.includes('localhost')
+  ) {
     return null;
   }
 
   return (
     <section
-      className={`fixed z-20 bottom-0 left-0 w-full pb-2 shadow-top ${consent ? 'hidden' : ''}`}
+      className={`fixed z-20 bottom-0 left-0 w-full pb-2 shadow-top ${
+        consent === true ? 'hidden' : ''
+      }`}
     >
       <div className='flex flex-col items-start px-20 py-6 space-y-2 bg-green-600 md:flex-row md:space-y-0 md:items-stretch md:space-x-2  '>
         <div className='flex items-center flex-grow text-gray-100'>
