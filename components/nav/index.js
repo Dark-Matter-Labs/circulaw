@@ -922,55 +922,6 @@ export default function Nav(props) {
 
                               <div className='mt-4'>
                                 <div className='flex flex-row justify-center w-[600px] gap-x-2.5'>
-                                  {/* <button
-                                    onClick={() => setSearchIndex('instruments')}
-                                    className={`${
-                                      pathname === '/'
-                                        ? 'bg-green-50 text-green-800'
-                                        : 'bg-white text-green-800 shadow-card'
-                                    } flex-row px-5 py-1.5 w-full  rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
-                                  >
-                                    {searchIndex === 'instruments' ? (
-                                      <div className='bg-green-500 w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                                        <div className='bg-green-500 border-white border-2 h-3 w-3 rounded-full'></div>
-                                      </div>
-                                    ) : (
-                                      <div className='bg-black w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                                        <div className='bg-white h-3 w-3 rounded-full'></div>
-                                      </div>
-                                    )}
-
-                                    <div className='flex flex-col items-start justify-start'>
-                                      Instrumenten
-                                      <span className='p-xs'>
-                                        Zoeken binnen &apos;instrumenten&apos;
-                                      </span>
-                                    </div>
-                                  </button>
-                                  <button
-                                    onClick={() => setSearchIndex('aboutPage')}
-                                    className={`${
-                                      pathname === '/'
-                                        ? 'bg-white text-green-800'
-                                        : 'bg-white text-green-800 shadow-card'
-                                    } flex-row px-5 py-1.5 w-full rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
-                                  >
-                                    {searchIndex === 'aboutPage' ? (
-                                      <div className='bg-green-500 w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                                        <div className='bg-green-500 border-white border-2 h-3 w-3 rounded-full'></div>
-                                      </div>
-                                    ) : (
-                                      <div className='bg-black w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                                        <div className='bg-white h-3 w-3 rounded-full'></div>
-                                      </div>
-                                    )}
-                                    <div className='flex flex-col items-start justify-start'>
-                                      Over Circulaw
-                                      <span className='p-xs'>
-                                        Zoeken binnen &apos;Over Circulaw&apos;
-                                      </span>
-                                    </div>
-                                  </button> */}
                                   {pathname === '/' ? (
                                     <>
                                       <button

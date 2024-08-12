@@ -13,19 +13,27 @@ export default function SearchButton({ linkRef, searchIndex, searchQuery }) {
     },
     [searchParams],
   );
-  const [searchUrl, setSearchUrl] = useState('')
+  const [searchUrl, setSearchUrl] = useState('');
 
   useEffect(() => {
     if (searchIndex === 'instruments') {
-      setSearchUrl(`/zoeken/instrumenten?${searchIndex}${createQueryString('[query]', searchQuery)}`)
+      setSearchUrl(
+        `/zoeken/instrumenten?${searchIndex}${createQueryString('[query]', searchQuery)}`,
+      );
     } else if (searchIndex === 'euLaw') {
-      setSearchUrl(`/zoeken/eu-wetgeving?${searchIndex}${createQueryString('[query]', searchQuery)}`)
+      setSearchUrl(
+        `/zoeken/eu-wetgeving?${searchIndex}${createQueryString('[query]', searchQuery)}`,
+      );
     } else if (searchIndex === 'aboutPage') {
-      setSearchUrl(`/zoeken/over-circulaw?${searchIndex}${createQueryString('[query]', searchQuery)}`)
+      setSearchUrl(
+        `/zoeken/over-circulaw?${searchIndex}${createQueryString('[query]', searchQuery)}`,
+      );
     } else {
-      setSearchUrl(`/zoeken/over-circulaw?${searchIndex}${createQueryString('[query]', searchQuery)}`)
+      setSearchUrl(
+        `/zoeken/over-circulaw?${searchIndex}${createQueryString('[query]', searchQuery)}`,
+      );
     }
-  }, [searchIndex, createQueryString ,searchQuery])
+  }, [searchIndex, createQueryString, searchQuery]);
 
   return (
     <button type='submit'>
