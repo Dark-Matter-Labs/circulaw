@@ -38,6 +38,7 @@
     "cookies-next": "^4.2.1",
     "disqus-react": "^1.1.5",
     "framer": "^2.4.1",
+    "framer-motion": "^11.3.24",
     "motion": "^10.18.0",
     "next": "^14.1.1",
     "next-sanity": "^9.4.2",
