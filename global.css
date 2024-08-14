@@ -269,3 +269,31 @@ html {
     border-color: #25C38B; 
     border-radius: 10px;
   }
+
+
+  #list0 {
+    opacity: 0;
+    translate: 0px 100px
+  }
+  #list1 {
+    opacity: 0;
+    translate: 0px 100px
+  }
+  #list2 {
+    opacity: 0;
+    translate: 0px 100px
+  }
+  #list3 {
+    opacity: 0;
+    translate: 0px 100px
+  }
+  #list4 {
+    opacity: 0;
+    translate: 0px 100px
+  }
+
+  #list5 {
+    opacity: 0;
+    translate: 0px -12px
+  }
+
