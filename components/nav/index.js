@@ -826,6 +826,7 @@ export default function Nav(props) {
                     className='h-full relative p-sm group z-100 flex flex-row items-center'
                     ref={searchMenuRef.setReference}
                     {...searchMenuReferencProps()}
+                    aria-label='Open search CircuLaw feature'
                   >
                     <span
                       className={`${

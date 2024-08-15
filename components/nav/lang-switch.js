@@ -62,6 +62,7 @@ export default function LangSwitch({ background }) {
           onClick={() => {
             setTranslateOpen(!translateOpen);
           }}
+          aria-label='Open google translate for CircuLaw'
         >
           <span className='flex items-center justify-center rounded-clSm h-6 w-7'>
             <GlobeAltIcon className='h-4 w-4' />

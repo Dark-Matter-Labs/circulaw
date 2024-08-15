@@ -183,6 +183,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                           <Link
                             href='https://openresearch.amsterdam/nl/page/89270/circulaw---circulaire-regelgevingstool'
                             target='_blank'
+                            aria-label='linke to CircuLaw open research'
                           >
                             <Image
                               className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5'
