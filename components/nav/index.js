@@ -998,8 +998,9 @@ export default function Nav(props) {
             alt='homepage decoration'
             fill 
             sizes='100vw'
-            className='z-10 object-fill'
+            className='z-10 object-cover'
             priority={true}
+            quality={100}
           />
           <HomepageHeader homePageHeader={props.homePageHeader} />
         </div>
