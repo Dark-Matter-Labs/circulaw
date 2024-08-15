@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import LinkIcon from '../link-icon';
 import Tag from '@/components/tag';
 import { urlFor } from '@/lib/sanity';
@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 // TODO: refactor - make a seperate component linkWrapper and use a single feature card component.
 export default function FeaturedCard({ data }) {
   const event = new Date(data.newsDate);
-  const pathname = usePathname()
+  const pathname = usePathname();
   const options = {
     day: 'numeric',
     month: 'long',

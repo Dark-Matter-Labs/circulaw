@@ -19,7 +19,7 @@ export default function HomePageAboutSection({ aboutSection }) {
           <div className='hidden sm:block py-6 p-base'>{aboutSection?.aboutSectionText}</div>
           <div className='w-full flex justify-center sm:hidden py-6'>
             <div className='hidden sm:flex h-[11rem] w-48 justify-center'>
-              <Image src={aboutImage} alt='image for wat circulaw' loading="lazy"/>
+              <Image src={aboutImage} alt='image for wat circulaw' loading='lazy' />
             </div>
           </div>
           <div className='flex sm:hidden pb-6 p-base'>{aboutSection?.aboutSectionMobileText}</div>
@@ -36,7 +36,7 @@ export default function HomePageAboutSection({ aboutSection }) {
       <div className='w-full sm:w-1/2 sm:flex justify-center h-400px mt-6 sm:mt-0'>
         <div className='w-full relative overflow-hidden pt-[56%]'>
           <Suspense>
-           <YouTubeComponent />
+            <YouTubeComponent />
           </Suspense>
         </div>
       </div>

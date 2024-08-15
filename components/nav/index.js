@@ -993,10 +993,10 @@ export default function Nav(props) {
       </div>
       {pathname === '/' && (
         <div className='-mt-[9rem] w-full bg-green-600 relative'>
-          <Image 
+          <Image
             src='/home-page/header-image.png'
             alt='homepage decoration'
-            fill 
+            fill
             sizes='100vw'
             className='z-10 object-cover'
             priority={true}
