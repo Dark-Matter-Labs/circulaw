@@ -1,7 +1,7 @@
 import '../global.css';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import { LinkedInInsightTag } from 'nextjs-linkedin-insight-tag';
-
+import PiwikProProvider from '@piwikpro/next-piwik-pro';
 import globalMeta from '@/utils/global-meta';
 import Layout from '@/components/layouts/layout';
 import { client } from '@/lib/sanity';
@@ -77,7 +77,17 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang='nl' className={plus_Jakarta_Sans.variable}>
+       {/* Google Translate CSS */}
+       <link
+        rel='stylesheet'
+        type='text/css'
+        href='https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.26tY-h6gH9w.L.W.O/am=CAM/d=0/rs=AN8SPfpIXxhebB2A47D9J-MACsXmFF6Vew/m=el_main_css'
+      />
       <body>
+      <PiwikProProvider
+          containerId={process.env.NEXT_PUBLIC_CONTAINER_ID}
+          containerUrl={process.env.NEXT_PUBLIC_CONTAINER_URL}
+        >
         <Layout
           navData={navData}
           partnerLogos={partnerLogos}
@@ -86,7 +96,9 @@ export default async function RootLayout({ children }) {
         >
           {children}
         </Layout>
+      
         <LinkedInInsightTag />
+        </PiwikProProvider>
       </body>
     </html>
   );
