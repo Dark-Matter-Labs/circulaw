@@ -174,10 +174,10 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                           <h3 className='heading-xl-semibold sm:heading-2xl-semibold inline-block'>
                             Volg ons op:
                           </h3>
-                          <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
+                          <Link href='https://www.linkedin.com/company/circulaw/' target='_blank' aria-label='link to CircuLaw LinkedIn'>
                             <RiLinkedinFill className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
                           </Link>
-                          <Link href='https://github.com/Dark-Matter-Labs/circulaw' target='_blank'>
+                          <Link href='https://github.com/Dark-Matter-Labs/circulaw' target='_blank' aria-label='link to CircuLaw github'>
                             <AiFillGithub className='inline-block ml-3 h-6 w-6 hover:text-green-300 mb-1.5' />
                           </Link>
                           <Link
