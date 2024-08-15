@@ -992,7 +992,15 @@ export default function Nav(props) {
         </nav>
       </div>
       {pathname === '/' && (
-        <div className='-mt-[9rem] w-full bg-cover bg-header'>
+        <div className='-mt-[9rem] w-full bg-green-600 relative'>
+          <Image 
+            src='/home-page/header-image.png'
+            alt='homepage decoration'
+            fill 
+            sizes='100vw'
+            className='z-10 object-fill'
+            priority={true}
+          />
           <HomepageHeader homePageHeader={props.homePageHeader} />
         </div>
       )}
