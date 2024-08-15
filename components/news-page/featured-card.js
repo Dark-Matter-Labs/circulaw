@@ -1,3 +1,4 @@
+'use client'
 import LinkIcon from '../link-icon';
 import Tag from '@/components/tag';
 import { urlFor } from '@/lib/sanity';
