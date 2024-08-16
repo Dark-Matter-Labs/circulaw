@@ -127,7 +127,6 @@ export async function POST(req) {
             }
          `,
         },
-        // TODO: check indexing route and add new fields to this projection
         newsItem: {
           index: agoliaInstance.initIndex('newsItems'),
           projection: `
@@ -138,6 +137,11 @@ export async function POST(req) {
         newsText,
         newsDate,
         newsOrAgenda,
+        'newsImage': newsImage.asset,
+        'slug': slug.current,
+        link,
+        category,
+        linkUrl,
 
             }
          `,
@@ -238,6 +242,11 @@ export async function POST(req) {
               newsText: document.newsText,
               newsDate: document.newsDate,
               newsOrAgenda: document.newsOrAgenda,
+              newsImage: document.newsImage,
+              slug: document.slug,
+              link: document.link,
+              category: document.category,
+              linkUrl: document.linkUrl,
             };
           }
           default:
