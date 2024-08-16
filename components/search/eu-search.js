@@ -51,8 +51,8 @@ export default function EUSearch() {
             <Hits
               classNames={{
                 root: 'border-none mt-4 sm:mt-10 ',
-                list: 'sm:ml-10 grid grid-cols-3 gap-3',
-                item: 'shadow-none px-0 pt-0',
+                list: 'sm:ml-10 flex flex-col',
+                item: 'shadow-none px-0 pt-0 mb-10',
               }}
               hitComponent={EUHit}
             />

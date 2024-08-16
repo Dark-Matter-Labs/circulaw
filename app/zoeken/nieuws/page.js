@@ -5,5 +5,5 @@ export const metadata = {
 };
 
 export default async function NewsSearchPage() {
-  return <NewsSearch />
+  return <NewsSearch />;
 }

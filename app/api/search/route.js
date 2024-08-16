@@ -69,6 +69,7 @@ export async function POST(req) {
           projection: `
           {
             "objectID": _id,
+            'lawTitle': coalesce(euLawReference->title, title),
             'eu1Content': array::join(string::split((pt::text(europeContent[0].content)), "")[0..6000], ""), 
             'eu2Content': array::join(string::split((pt::text(europeContent[2].content)), "")[0..6000], ""),
             'eu3Content': array::join(string::split((pt::text(europeContent[3].content)), "")[0..6000], ""), 
@@ -94,6 +95,7 @@ export async function POST(req) {
           projection: `
           {
             "objectID": _id,
+            'lawTitle': coalesce(euLawReference->title, title),
              'localContent1': pt::text(localContent[0].content),
               'localContent2': pt::text(localContent[1].content),
               'localContent3': pt::text(localContent[2].content),
@@ -119,6 +121,7 @@ export async function POST(req) {
           projection: `
           {
             "objectID": _id,
+            'lawTitle': coalesce(euLawReference->title, title),
              "ceContent": pt::text(ceContent)
              "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
             }

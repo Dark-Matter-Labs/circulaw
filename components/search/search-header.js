@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Link from 'next/link';
 import { SearchBox } from 'react-instantsearch';
 import { XIcon } from '@heroicons/react/outline';
