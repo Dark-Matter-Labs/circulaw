@@ -42,7 +42,9 @@ export default function NewsHit({ hit }) {
               </div>
             )}
             {!hit.newsImage && hit.newsOrAgenda === false && (
-              <div className='h-[130px] w-[150px] bg-green-200 rounded-cl mr-4 p-base-semibold flex items-center justify-center mb-6 sm:mb-0'>placeholder</div>
+              <div className='h-[130px] w-[150px] bg-green-200 rounded-cl mr-4 p-base-semibold flex items-center justify-center mb-6 sm:mb-0'>
+                placeholder
+              </div>
             )}
             <div className='flex flex-col'>
               <div className='flex flex-row mb-6'>
@@ -79,7 +81,6 @@ export default function NewsHit({ hit }) {
               </p>
             </div>
           </div>
-        
         </Link>
       </>
     );

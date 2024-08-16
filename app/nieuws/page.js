@@ -6,7 +6,6 @@ export const metadata = {
   title: 'Nieuws - CircuLaw',
 };
 
-
 async function getFeaturedNewsItems() {
   const featuredNewsData = await client.fetch(FEATURED_NEWS_ITEMS_QUERY, {
     next: { tags: ['newsItem'] },
