@@ -45,7 +45,7 @@ export default function NewsSearch() {
       <div className='global-margin flex'>
         <NoResultsBoundary fallback={<NoResults />}>
           <div>
-            <div className='sm:ml-12 sm:mt-10'>
+            <div className='sm:ml-12 sm:mt-10 mt-6'>
               <CustomStats />
             </div>
             <Hits
