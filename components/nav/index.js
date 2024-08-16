@@ -318,7 +318,7 @@ export default function Nav(props) {
                   {/* LOGO MOBILE HP */}
                   <div className='block lgNav:hidden'>
                     <Link href='/'>
-                      <Image height={24} width={100} src={logo} alt='CircuLaw logo' quality={100} />
+                      <Image height={24} width={100} src={logo} alt='CircuLaw logo' quality={100} priority={true} />
                     </Link>
                   </div>
                 </>
@@ -838,6 +838,7 @@ export default function Nav(props) {
                     className='h-full relative p-sm group z-100 flex flex-row items-center'
                     ref={searchMenuRef.setReference}
                     {...searchMenuReferencProps()}
+                    aria-label='Open search CircuLaw feature'
                   >
                     <span
                       className={`${
@@ -1039,7 +1040,16 @@ export default function Nav(props) {
         </nav>
       </div>
       {pathname === '/' && (
-        <div className='-mt-[9rem] w-full bg-cover bg-header'>
+        <div className='-mt-[9rem] w-full bg-green-600 relative'>
+          <Image
+            src='/home-page/header-image.png'
+            alt='homepage decoration'
+            fill
+            sizes='100vw'
+            className='z-10 object-cover'
+            priority={true}
+            quality={100}
+          />
           <HomepageHeader homePageHeader={props.homePageHeader} />
         </div>
       )}

@@ -1,5 +1,4 @@
 import '../global.css';
-import 'tailwindcss/tailwind.css';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import { LinkedInInsightTag } from 'nextjs-linkedin-insight-tag';
 
