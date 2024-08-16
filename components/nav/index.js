@@ -41,7 +41,6 @@ const defaultOptions = {
   },
 };
 
-// TODO: remove case for en page as it no longer exists and has been redirected.
 export default function Nav(props) {
   const pathname = usePathname();
   const { CustomEvent } = usePiwikPro();
@@ -1007,7 +1006,7 @@ export default function Nav(props) {
                                       <button
                                         onClick={() => setSearchIndex('newsItems')}
                                         className={`${
-                                          searchIndex === 'NewsItems'
+                                          searchIndex === 'newsItems'
                                             ? 'border-b-2 border-green-600'
                                             : 'border-b-2 border-transparent'
                                         } p-xs-semibold text-green-600 p-2`}

@@ -26,9 +26,9 @@ export default function NewsHit({ hit }) {
     return (
       <>
         <Link href={hit.slug ? `/nieuws/${hit.slug}` : `${hit.linkUrl}`}>
-          <div className='hidden sm:flex flex-row mb-10'>
+          <div className='flex flex-col sm:flex-row mb-10'>
             {hit.newsImage && (
-              <div className='h-[130px] w-[150px] rounded-cl overflow-hidden relative mr-4'>
+              <div className='h-[130px] w-[150px] rounded-cl overflow-hidden relative mr-4 mb-6 sm:mb-0'>
                 <Image
                   className='w-full object-cover'
                   src={urlFor(hit.newsImage).auto('format').fit('max').url()}
@@ -42,7 +42,7 @@ export default function NewsHit({ hit }) {
               </div>
             )}
             {!hit.newsImage && hit.newsOrAgenda === false && (
-              <div className='h-[130px] w-[150px] bg-green-200 rounded-cl mr-4 p-base-semibold flex items-center justify-center'>placeholder</div>
+              <div className='h-[130px] w-[150px] bg-green-200 rounded-cl mr-4 p-base-semibold flex items-center justify-center mb-6 sm:mb-0'>placeholder</div>
             )}
             <div className='flex flex-col'>
               <div className='flex flex-row mb-6'>
@@ -79,14 +79,15 @@ export default function NewsHit({ hit }) {
               </p>
             </div>
           </div>
+        
         </Link>
       </>
     );
   } else {
     return (
       <Link href={hit?.link} target='_blanl' className='p-base text-green-800 '>
-        <div className='hidden sm:flex flex-row mb-10'>
-          <div className='h-[130px] w-[150px] gradient-700 rounded-cl mr-4 flex flex-row items-center justify-center'>
+        <div className='flex flex-col sm:flex-row mb-10'>
+          <div className='h-[130px] w-[150px] gradient-700 rounded-cl mr-4 flex flex-row items-center justify-center mb-6 sm:mb-0'>
             <div className='mr-2 heading-4xl-semibold text-white'>
               {event.toLocaleDateString('nl-NL', day)}
             </div>
