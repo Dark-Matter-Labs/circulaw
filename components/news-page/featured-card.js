@@ -1,12 +1,15 @@
+'use client';
 import LinkIcon from '../link-icon';
 import Tag from '@/components/tag';
 import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 // TODO: refactor - make a seperate component linkWrapper and use a single feature card component.
 export default function FeaturedCard({ data }) {
   const event = new Date(data.newsDate);
+  const pathname = usePathname();
   const options = {
     day: 'numeric',
     month: 'long',
@@ -83,7 +86,7 @@ export default function FeaturedCard({ data }) {
                 src={urlFor(data?.image).url()}
                 alt={data?.newsTitle + 'image'}
                 fill
-                priority={true}
+                priority={pathname === '/' ? false : true}
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
                 className='w-full h-full relative object-cover rounded-t-cl sm:rounded-tl-none sm:rounded-r-cl'
               />
@@ -167,7 +170,7 @@ export default function FeaturedCard({ data }) {
                 src={urlFor(data?.image).url()}
                 alt={data?.newsTitle + 'image'}
                 fill
-                priority={true}
+                priority={pathname === '/' ? false : true}
                 className='w-full h-full relative object-cover rounded-t-cl sm:rounded-tl-none sm:rounded-r-cl'
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
               />
@@ -257,7 +260,7 @@ export default function FeaturedCard({ data }) {
               src={urlFor(data?.image).url()}
               alt={data?.newsTitle + 'image'}
               fill
-              priority={true}
+              priority={pathname === '/' ? false : true}
               className='w-full h-full relative object-cover rounded-t-cl sm:rounded-tl-none sm:rounded-r-cl '
               sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
             />
