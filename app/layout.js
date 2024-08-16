@@ -17,7 +17,6 @@ const plus_Jakarta_Sans = Plus_Jakarta_Sans({
 });
 
 // these are global and will be on all pages.
-// TODO - Define strategy for global metadata and page level metadata.
 export const metadata = {
   metadataBase: new URL(globalMeta.siteUrl),
   alternates: {

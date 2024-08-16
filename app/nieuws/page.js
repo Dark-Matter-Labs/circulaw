@@ -1,24 +1,11 @@
 import { client } from '@/lib/sanity';
 import NewsOverview from '@/components/news-page/news-overview';
+import { FEATURED_NEWS_ITEMS_QUERY, NON_FEATURED_NEWS_ITEMS_QUERY } from '@/lib/queries';
 
 export const metadata = {
   title: 'Nieuws - CircuLaw',
 };
 
-// TODO: MOVE QUERIES TO QUERIES FILE
-const FEATURED_NEWS_ITEMS_QUERY = `
-*[_type == 'newsItem' && featured == true]|order(orderRank) {
-  "image": newsImage.asset->.url,
-  ...
-}
-`;
-
-const NON_FEATURED_NEWS_ITEMS_QUERY = `
-*[_type == 'newsItem' && featured == false]|order(orderRank) {
-  "image": newsImage.asset->.url,
-  ...
-}
-`;
 
 async function getFeaturedNewsItems() {
   const featuredNewsData = await client.fetch(FEATURED_NEWS_ITEMS_QUERY, {
