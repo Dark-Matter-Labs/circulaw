@@ -96,6 +96,11 @@ title,
 newsText,
 newsDate,
 newsOrAgenda,
+'newsImage': newsImage.asset,
+'slug': slug.current,
+link,
+category,
+linkUrl,
 }
 `;
 

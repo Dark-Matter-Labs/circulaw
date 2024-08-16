@@ -127,6 +127,7 @@ export async function POST(req) {
             }
          `,
         },
+        // TODO: check indexing route and add new fields to this projection
         newsItem: {
           index: agoliaInstance.initIndex('newsItems'),
           projection: `

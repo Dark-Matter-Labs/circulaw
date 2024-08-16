@@ -51,7 +51,7 @@ export default function NewsSearch() {
             <Hits
               classNames={{
                 root: 'border-none mt-4 sm:mt-10 ',
-                list: 'sm:ml-10 grid grid-cols-3 gap-3',
+                list: 'sm:ml-10 flex flex-col mb-10',
                 item: 'shadow-none px-0 pt-0',
               }}
               hitComponent={NewsHit}
