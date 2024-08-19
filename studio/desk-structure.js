@@ -55,10 +55,13 @@ export const Structure = (S, context) =>
                 .params({ euLawId }),
             ),
         ),
-      S.listItem()
-        .title('About Pages')
-        .icon(FcAbout)
-        .child(S.documentList().title('About Pages').filter('_type == "aboutPage"')),
+        orderableDocumentListDeskItem({
+          type: 'aboutPage',
+          S,
+          context,
+          title: 'About Pages',
+          icon: FcAbout,
+        }),
       orderableDocumentListDeskItem({
         type: 'newsItem',
         S,
@@ -97,11 +100,6 @@ export const Structure = (S, context) =>
         .icon(FaHandshake)
         .child(S.document().title('Partners').schemaType('partners').documentId('PartnersList')),
       S.divider(),
-      S.listItem()
-        .title('Navigation')
-        .id('NavigationList')
-        .icon(GrNavigate)
-        .child(S.documentList().title('Navigation').filter('_type == "navigation"')),
       S.listItem()
         .title('Home Page')
         .id('siteSettings')
