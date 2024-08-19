@@ -12,12 +12,12 @@ export default function ThemeSponsors({ thema, sponsors }) {
     useEffect(() => {
       const observer = new IntersectionObserver(([entry]) => {
         setIntersecting(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          observer.disconnect();
+        }
       });
 
       observer.observe(ref.current);
-      return () => {
-        observer.disconnect();
-      };
     }, [ref]);
 
     return isIntersecting;
