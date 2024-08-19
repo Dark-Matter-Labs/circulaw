@@ -72,6 +72,7 @@ export default function PCLayout({ ...props }) {
           </div>
         </div>
         <div className='global-margin pt-14 bg-gray-100'>
+          <div className='max-w-4xl'>
           <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 pb-10'>
             {props?.productChainData?.ambitionTitle}
           </h2>
@@ -143,6 +144,8 @@ export default function PCLayout({ ...props }) {
               </div>
             ),
           )}
+        </div>
+       
         </div>
         {props.links && (
           <div className='pt-14 pb-10 bg-green-50'>
