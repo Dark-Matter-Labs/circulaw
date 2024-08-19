@@ -25,7 +25,6 @@ export async function getURLS() {
 
 export default async function sitemap() {
   const urls = await getURLS();
-  console.log(urls);
   const array = [];
   const URLS = array.concat(urls.instrument, urls.about, urls.eu, urls.pcs, urls.themas, urls.news);
   return URLS.map((url) => ({
