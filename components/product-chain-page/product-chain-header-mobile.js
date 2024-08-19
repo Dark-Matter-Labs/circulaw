@@ -7,7 +7,14 @@ export default function ThemePageHeaderMobile({ pageTitle }) {
   return (
     <div className='h-[300px] mt-3 sm:hidden'>
       <div className='flex items-center h-full w-full relative z-0 object-cover'>
-        <Image src={bannerImage} alt={'hero image'} fill className=' absolute' />
+        <Image
+          src={bannerImage}
+          alt={'hero image'}
+          fill
+          className='absolute'
+          sizes='100vw'
+          priority={true}
+        />
         <div className='w-full h-full bg-gradient-to-t from-[#035E46] to-[#035E4600] z-0 absolute'></div>
 
         <div className='w-full h-full z-10 flex flex-col justify-between global-margin'>

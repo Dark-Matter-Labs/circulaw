@@ -10,33 +10,37 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
-export default function NewsOverview({ data }) {
+export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }) {
   const [articleType, setArticleType] = useState('Alles');
-  const [notFeatured, setNotFeatured] = useState(data?.notFeatured?.slice(0, 13));
+  const [notFeatured, setNotFeatured] = useState();
 
-  const archived = data?.notFeatured.slice(13, 25);
+  useEffect(() => {
+    if (articleType === 'Nieuw op de site') {
+      setNotFeatured(
+        nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.category === 'Nieuw op de site'),
+      );
+    } else if (articleType === 'Agenda') {
+      setNotFeatured(
+        nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.newsOrAgenda === true),
+      );
+    } else if (articleType === 'Artikelen') {
+      setNotFeatured(
+        nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.category === 'Artikelen'),
+      );
+    } else if (articleType === 'Circulair nieuws') {
+      setNotFeatured(
+        nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.category === 'Circulair nieuws'),
+      );
+    } else {
+      setNotFeatured(nonFeaturedNewsItems?.slice(0, 12));
+    }
+  }, [articleType, nonFeaturedNewsItems]);
+
   const options = {
     day: 'numeric',
     month: 'short',
     year: 'numeric',
   };
-
-  useEffect(() => {
-    if (data?.notFeatured) {
-      let notFeatured = data?.notFeatured;
-      if (articleType === 'Nieuw op de site') {
-        setNotFeatured(notFeatured?.filter((item) => item.category === 'Nieuw op de site'));
-      } else if (articleType === 'Agenda') {
-        setNotFeatured(notFeatured?.filter((item) => item._type === 'agendaItem'));
-      } else if (articleType === 'Artikelen') {
-        setNotFeatured(notFeatured?.filter((item) => item.category === 'Artikelen'));
-      } else if (articleType === 'Circulair nieuws') {
-        setNotFeatured(notFeatured?.filter((item) => item.category === 'Circulair nieuws'));
-      } else {
-        setNotFeatured(notFeatured);
-      }
-    }
-  }, [articleType, data?.notFeatured]);
 
   return (
     <div className='flex flex-col global-margin mt-4'>
@@ -52,7 +56,7 @@ export default function NewsOverview({ data }) {
           Uitgelichte nieuwsberichten
         </h1>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-6 py-10 overflow-hidden'>
-          {data?.featured.map((item, id) => (
+          {featuresNewsItems.map((item, id) => (
             <div
               className={`${
                 item.image != null
@@ -61,8 +65,8 @@ export default function NewsOverview({ data }) {
               }`}
               key={id}
             >
-              {item._type === 'agendaItem' && <FeaturedAgendaCard data={item} />}
-              {item._type === 'newsCard' && <FeaturedCard data={item} />}
+              {item.newsOrAgenda === true && <FeaturedAgendaCard data={item} />}
+              {item.newsOrAgenda === false && <FeaturedCard data={item} />}
             </div>
           ))}
         </div>
@@ -373,37 +377,37 @@ export default function NewsOverview({ data }) {
         >
           <Masonry gutter='24px'>
             {notFeatured?.map((item, id) => (
-              <div key={id} className='relative break-inside-avoid-column min-h'>
-                {item._type === 'agendaItem' && <AgendaCard data={item} />}
-                {item._type === 'newsCard' && <NewsCard data={item} />}
+              <div key={id} className='relative break-inside-avoid-column min-h mb-4'>
+                {item.newsOrAgenda === true && <AgendaCard data={item} />}
+                {item.newsOrAgenda === false && <NewsCard data={item} />}
               </div>
             ))}
           </Masonry>
         </ResponsiveMasonry>
-        {archived.length > 0 && (
+        {nonFeaturedNewsItems.length > 12 && (
           <div className='mb-10'>
             <h2 className='heading-xl-semibold sm:heading-2xl-semibold w-full border-b-2 pb-5 border-green-800'>
               Archief
             </h2>
             <div className='py-10'>
-              {archived?.map((item, id) => (
+              {nonFeaturedNewsItems.slice(13, 30)?.map((item, id) => (
                 <div
                   key={id}
                   className='flex flex-row items-center mb-3 heading-xl-semibold text-green-800'
                 >
-                  {item._type !== 'agendaItem' && (
+                  {item.newsOrAgenda !== true && (
                     <Tag classes='text-white bg-green-800 border border-green-800 mr-3'>
                       {item.category}
                     </Tag>
                   )}
-                  {item._type === 'agendaItem' && (
+                  {item.newsOrAgenda === true && (
                     <Tag classes='text-white bg-green-800 border border-green-800 mr-3'>Agenda</Tag>
                   )}
 
                   <div>
                     {item.createPage === true && (
                       <Link className='link-interaction' href={`/nieuws/${item.slug.current}`}>
-                        {item.newsTitle}
+                        {item.title}
                       </Link>
                     )}
                     {item.linkUrl !== undefined && (
@@ -412,16 +416,16 @@ export default function NewsOverview({ data }) {
                         target={`${item.internalExternal === true ? '_blank' : ''}`}
                         className='link-interaction'
                       >
-                        {item.newsTitle}
+                        {item.title}
                       </Link>
                     )}
-                    {item.link && item._type === 'agendaItem' && (
+                    {item.link && item.newsOrAgenda === true && (
                       <Link className='link-interaction' href={item.link}>
-                        {item.newsTitle}
+                        {item.title}
                       </Link>
                     )}
-                    {item.link === undefined && item._type === 'agendaItem' && (
-                      <div>{item.newsTitle}</div>
+                    {item.link === undefined && item.newsOrAgenda === true && (
+                      <div>{item.title}</div>
                     )}
                   </div>
                   {item.newsDate && (

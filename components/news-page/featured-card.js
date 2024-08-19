@@ -49,7 +49,7 @@ export default function FeaturedCard({ data }) {
                   data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
                 } heading-2xl-semibold py-0.5`}
               >
-                {data.newsTitle}
+                {data.title}
               </div>
               {data.newsDate && (
                 <div
@@ -84,7 +84,7 @@ export default function FeaturedCard({ data }) {
             <div className='w-full sm:w-1/2 h-80 relative  rounded-t-cl sm:rounded-r-cl'>
               <Image
                 src={urlFor(data?.image).url()}
-                alt={data?.newsTitle + 'image'}
+                alt={data?.title + 'image'}
                 fill
                 priority={pathname === '/' ? false : true}
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
@@ -132,7 +132,7 @@ export default function FeaturedCard({ data }) {
                   data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
                 } heading-2xl-semibold py-0.5`}
               >
-                {data.newsTitle}
+                {data.title}
               </div>
               {data.newsDate && (
                 <div
@@ -168,7 +168,7 @@ export default function FeaturedCard({ data }) {
             <div className='w-full sm:w-1/2 h-80 relative rounded-t-cl sm:rounded-r-cl'>
               <Image
                 src={urlFor(data?.image).url()}
-                alt={data?.newsTitle + 'image'}
+                alt={data?.title + 'image'}
                 fill
                 priority={pathname === '/' ? false : true}
                 className='w-full h-full relative object-cover rounded-t-cl sm:rounded-tl-none sm:rounded-r-cl'
@@ -211,7 +211,7 @@ export default function FeaturedCard({ data }) {
                 data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
               } heading-2xl-semibold py-0.5`}
             >
-              {data.newsTitle}
+              {data.title}
             </div>
             {data.newsDate && (
               <div
@@ -258,7 +258,7 @@ export default function FeaturedCard({ data }) {
           <div className='w-full sm:w-1/2 h-80 relative rounded-t-cl sm:rounded-r-cl'>
             <Image
               src={urlFor(data?.image).url()}
-              alt={data?.newsTitle + 'image'}
+              alt={data?.title + 'image'}
               fill
               priority={pathname === '/' ? false : true}
               className='w-full h-full relative object-cover rounded-t-cl sm:rounded-tl-none sm:rounded-r-cl '

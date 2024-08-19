@@ -30,7 +30,7 @@ import Link from 'next/link';
 import { useState, useEffect, useRef, Suspense } from 'react';
 import Lottie from 'react-lottie';
 import { usePathname } from 'next/navigation';
-import SearchButton from './searchButton';
+import SearchButton from './search-button';
 
 const defaultOptions = {
   loop: true,
@@ -41,7 +41,6 @@ const defaultOptions = {
   },
 };
 
-// TODO: remove case for en page as it no longer exists and has been redirected.
 export default function Nav(props) {
   const pathname = usePathname();
   const { CustomEvent } = usePiwikPro();
@@ -60,6 +59,19 @@ export default function Nav(props) {
 
   const [searchIndex, setSearchIndex] = useState('instruments');
   const [searchQuery, setSearchQuery] = useState('');
+  const [placeholder, setPlaceholder] = useState('instruments');
+
+  useEffect(() => {
+    if (searchIndex === 'instruments') {
+      setPlaceholder('Zoek naar instrumenten...');
+    } else if (searchIndex === 'aboutPage') {
+      setPlaceholder('Zoek naar over CircuLaw');
+    } else if (searchIndex === 'euLaw') {
+      setPlaceholder('Zoek naar EU wetgeving');
+    } else {
+      setPlaceholder('Zoek naar nieuws');
+    }
+  }, [searchIndex]);
 
   const onChange = () => (e) => {
     const value = e.target.value;
@@ -685,7 +697,6 @@ export default function Nav(props) {
                           style={{ ...euMenuTransitionStyles }}
                           onMouseLeave={() => setEuMenuIsOpen(false)}
                         >
-                          {/* Remove slice once news section is separate */}
                           <div
                             className={`${
                               pathname === '/'
@@ -877,59 +888,6 @@ export default function Nav(props) {
                           >
                             {/* MAKE INTO A COMPONENT */}
                             <div className='w-full h-full global-margin flex flex-col items-center justify-end pb-10'>
-                              <div className='mb-4'>
-                                <div className='flex flex-row justify-center w-[600px] gap-x-1.5'>
-                                  <button
-                                    onClick={() => setSearchIndex('instruments')}
-                                    className={`${
-                                      pathname === '/'
-                                        ? 'bg-green-50 text-green-800'
-                                        : 'bg-white text-green-800 shadow-card'
-                                    } flex-row px-5 py-1.5 w-full  rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
-                                  >
-                                    {searchIndex === 'instruments' ? (
-                                      <div className='bg-green-500 w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                                        <div className='bg-green-500 border-white border-2 h-3 w-3 rounded-full'></div>
-                                      </div>
-                                    ) : (
-                                      <div className='bg-black w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                                        <div className='bg-white h-3 w-3 rounded-full'></div>
-                                      </div>
-                                    )}
-
-                                    <div className='flex flex-col items-start justify-start'>
-                                      Instrumenten
-                                      <span className='p-xs'>
-                                        Zoeken binnen &apos;instrumenten&apos;
-                                      </span>
-                                    </div>
-                                  </button>
-                                  <button
-                                    onClick={() => setSearchIndex('aboutPage')}
-                                    className={`${
-                                      pathname === '/'
-                                        ? 'bg-white text-green-800'
-                                        : 'bg-white text-green-800 shadow-card'
-                                    } flex-row px-5 py-1.5 w-full rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
-                                  >
-                                    {searchIndex === 'aboutPage' ? (
-                                      <div className='bg-green-500 w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                                        <div className='bg-green-500 border-white border-2 h-3 w-3 rounded-full'></div>
-                                      </div>
-                                    ) : (
-                                      <div className='bg-black w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                                        <div className='bg-white h-3 w-3 rounded-full'></div>
-                                      </div>
-                                    )}
-                                    <div className='flex flex-col items-start justify-start'>
-                                      Over Circulaw
-                                      <span className='p-xs'>
-                                        Zoeken binnen &apos;Over Circulaw&apos;
-                                      </span>
-                                    </div>
-                                  </button>
-                                </div>
-                              </div>
                               <div className='h-16 w-[600px]'>
                                 <form
                                   className={`${
@@ -943,13 +901,9 @@ export default function Nav(props) {
                                     className={`${
                                       pathname === '/'
                                         ? 'bg-green-50/50 placeholder:text-white caret-white focus:bg-[url("/search-icon.png")] text-white'
-                                        : 'bg-white placeholder:text-green-800 caret-green-800 focus:bg-[url("/search-icon-dark.png")] text-green-800'
+                                        : 'bg-white placeholder:text-green-600 caret-green-600 focus:bg-[url("/search-icon-dark.png")] text-green-600'
                                     } w-[600px] h-[66px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none  p-base  focus:ring-1 focus:ring-white  placeholder:p-base-semibold`}
-                                    placeholder={
-                                      searchIndex === 'instruments'
-                                        ? 'Zoek naar instrumenten...'
-                                        : 'Zoek naar over CircuLaw...'
-                                    }
+                                    placeholder={placeholder}
                                     onChange={onChange()}
                                   />
                                   <Suspense>
@@ -970,6 +924,98 @@ export default function Nav(props) {
                                     <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
                                   </button>
                                 </form>
+                              </div>
+
+                              <div className='mt-4'>
+                                <div className='flex flex-row justify-center w-[600px] gap-x-2.5'>
+                                  {pathname === '/' ? (
+                                    <>
+                                      <button
+                                        onClick={() => setSearchIndex('instruments')}
+                                        className={`${
+                                          searchIndex === 'instruments'
+                                            ? 'border-b-2 border-white'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-white p-2`}
+                                      >
+                                        Instrumenten
+                                      </button>
+                                      <button
+                                        onClick={() => setSearchIndex('euLaw')}
+                                        className={`${
+                                          searchIndex === 'euLaw'
+                                            ? 'border-b-2 border-white box-content'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-white p-2`}
+                                      >
+                                        EU wetgeving
+                                      </button>
+                                      <button
+                                        onClick={() => setSearchIndex('aboutPage')}
+                                        className={`${
+                                          searchIndex === 'aboutPage'
+                                            ? 'border-b-2 border-white'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-white p-2`}
+                                      >
+                                        Over
+                                      </button>
+                                      <button
+                                        onClick={() => setSearchIndex('newsItems')}
+                                        className={`${
+                                          searchIndex === 'newsItems'
+                                            ? 'border-b-2 border-white'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-white p-2`}
+                                      >
+                                        Nieuws
+                                      </button>
+                                    </>
+                                  ) : (
+                                    <>
+                                      <button
+                                        onClick={() => setSearchIndex('instruments')}
+                                        className={`${
+                                          searchIndex === 'instruments'
+                                            ? 'border-b-2 border-green-600'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-green-600 p-2`}
+                                      >
+                                        Instrumenten
+                                      </button>
+                                      <button
+                                        onClick={() => setSearchIndex('euLaw')}
+                                        className={`${
+                                          searchIndex === 'euLaw'
+                                            ? 'border-b-2 border-green-600'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-green-600 p-2`}
+                                      >
+                                        EU wetgeving
+                                      </button>
+                                      <button
+                                        onClick={() => setSearchIndex('aboutPage')}
+                                        className={`${
+                                          searchIndex === 'aboutPage'
+                                            ? 'border-b-2 border-green-600'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-green-600 p-2`}
+                                      >
+                                        Over
+                                      </button>
+                                      <button
+                                        onClick={() => setSearchIndex('newsItems')}
+                                        className={`${
+                                          searchIndex === 'newsItems'
+                                            ? 'border-b-2 border-green-600'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-green-600 p-2`}
+                                      >
+                                        Nieuws
+                                      </button>
+                                    </>
+                                  )}
+                                </div>
                               </div>
                             </div>
                           </div>

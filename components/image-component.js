@@ -8,7 +8,7 @@ export default function ImageComponent({ image }) {
   return (
     <div className='relative'>
       <Image
-        className='w-full object-contain'
+        className='w-full object-cover'
         src={urlFor(image).auto('format').fit('max').url()}
         alt={image.caption || 'No alt-tag provided'}
         width={900}

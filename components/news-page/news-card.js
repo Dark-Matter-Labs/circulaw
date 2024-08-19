@@ -27,7 +27,7 @@ export default function NewsCard({ data }) {
             <div className='w-full h-80 relative rounded-t-cl'>
               <Image
                 src={urlFor(data?.image).url()}
-                alt={data?.newsTitle + 'image'}
+                alt={data?.title + 'image'}
                 priority={true}
                 fill
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
@@ -57,7 +57,7 @@ export default function NewsCard({ data }) {
                   data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
                 } heading-2xl-semibold py-0.5`}
               >
-                {data.newsTitle}
+                {data.title}
               </div>
               {data.newsDate && (
                 <div
@@ -110,7 +110,7 @@ export default function NewsCard({ data }) {
             <div className='w-full h-80 relative rounded-t-cl'>
               <Image
                 src={urlFor(data?.image).url()}
-                alt={data?.newsTitle + 'image'}
+                alt={data?.title + 'image'}
                 fill
                 priority={true}
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
@@ -140,7 +140,7 @@ export default function NewsCard({ data }) {
                   data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
                 } heading-2xl-semibold py-0.5`}
               >
-                {data.newsTitle}
+                {data.title}
               </div>
               {data.newsDate && (
                 <div
@@ -200,7 +200,7 @@ export default function NewsCard({ data }) {
           <div className='w-full h-80 relative rounded-t-cl'>
             <Image
               src={urlFor(data?.image).url()}
-              alt={data?.newsTitle + 'image'}
+              alt={data?.title + 'image'}
               fill
               priority={true}
               sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
@@ -230,7 +230,7 @@ export default function NewsCard({ data }) {
                 data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
               } heading-2xl-semibold py-0.5`}
             >
-              {data.newsTitle}
+              {data.title}
             </div>
             {data.newsDate && (
               <div
