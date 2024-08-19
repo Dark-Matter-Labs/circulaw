@@ -305,7 +305,14 @@ export default function Nav(props) {
                   {/* LOGO MOBILE HP */}
                   <div className='block lgNav:hidden'>
                     <Link href='/'>
-                      <Image height={24} width={100} src={logo} alt='CircuLaw logo' quality={100} priority={true} />
+                      <Image
+                        height={24}
+                        width={100}
+                        src={logo}
+                        alt='CircuLaw logo'
+                        quality={100}
+                        priority={true}
+                      />
                     </Link>
                   </div>
                 </>
