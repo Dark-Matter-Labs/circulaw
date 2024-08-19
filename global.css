@@ -297,3 +297,25 @@ html {
     translate: 0px -12px
   }
 
+  @keyframes slider {
+    from {
+      translate: 0 100px;
+      opacity: 0;
+    }
+    50% {
+      translate: 0 0;
+      opacity: 1;
+    }
+    to {
+      translate: 0 -100px;
+      opacity: 0;
+    }
+  }
+
+
+  
+  #css0{
+    animation-duration: 3s;
+    animation-name: slider;
+    animation-fill-mode: forwards;
+  }
