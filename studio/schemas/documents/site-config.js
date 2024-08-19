@@ -36,22 +36,6 @@ export default {
       group: 'siteSettings',
     },
     {
-      title: 'Over CircuLaw',
-      name: 'overCirculaw',
-      description: 'Select menu for about navigation',
-      type: 'reference',
-      to: { type: 'navigation' },
-      group: 'navigation',
-    },
-    {
-      title: 'Vraag & antwoord',
-      name: 'vraagAntwoord',
-      description: 'Select menu for FAQ navigation',
-      type: 'reference',
-      to: { type: 'navigation' },
-      group: 'navigation',
-    },
-    {
       title: 'About Section Title',
       name: 'aboutSectionTitle',
       type: 'string',
