@@ -73,79 +73,78 @@ export default function PCLayout({ ...props }) {
         </div>
         <div className='global-margin pt-14 bg-gray-100'>
           <div className='max-w-4xl'>
-          <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 pb-10'>
-            {props?.productChainData?.ambitionTitle}
-          </h2>
-          {props?.ambitionList?.map((ambition, index) =>
-            index % 2 == 0 ? (
-              <div key={index} className='grid grid-cols-1 sm:grid-cols-2 pb-20'>
-                <div className='block mb-6 sm:hidden'>
-                  {ambition?.image && (
-                    <Image
-                      src={urlFor(ambition?.image).url()}
-                      alt='ambition illustration'
-                      height={356}
-                      width={542}
-                    />
-                  )}
+            <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 pb-10'>
+              {props?.productChainData?.ambitionTitle}
+            </h2>
+            {props?.ambitionList?.map((ambition, index) =>
+              index % 2 == 0 ? (
+                <div key={index} className='grid grid-cols-1 sm:grid-cols-2 pb-20'>
+                  <div className='block mb-6 sm:hidden'>
+                    {ambition?.image && (
+                      <Image
+                        src={urlFor(ambition?.image).url()}
+                        alt='ambition illustration'
+                        height={356}
+                        width={542}
+                      />
+                    )}
+                  </div>
+                  <div className='mr-6'>
+                    <span className='p-base-semibold text-green-600'>{ambition.subTitle}</span>
+                    <h4 className='heading-2xl-semibold sm:3xl-semibold text-green-800 mt-2'>
+                      {ambition.title}
+                    </h4>
+                    <p className='p-base pt-4 max-w-xl pb-4'>{ambition.detail}</p>
+                    {ambition.buttonText && (
+                      <Link href={ambition.buttonLink}>
+                        <CustomButton color='lightGreenBackground'>
+                          {ambition.buttonText}
+                        </CustomButton>
+                      </Link>
+                    )}
+                  </div>
+                  <div className='hidden sm:block'>
+                    {ambition?.image && (
+                      <Image
+                        src={urlFor(ambition?.image).url()}
+                        alt='ambition illustration'
+                        height={356}
+                        width={542}
+                      />
+                    )}
+                  </div>
                 </div>
-                <div className='mr-6'>
-                  <span className='p-base-semibold text-green-600'>{ambition.subTitle}</span>
-                  <h4 className='heading-2xl-semibold sm:3xl-semibold text-green-800 mt-2'>
-                    {ambition.title}
-                  </h4>
-                  <p className='p-base pt-4 max-w-xl pb-4'>{ambition.detail}</p>
-                  {ambition.buttonText && (
-                    <Link href={ambition.buttonLink}>
-                      <CustomButton color='lightGreenBackground'>
-                        {ambition.buttonText}
-                      </CustomButton>
-                    </Link>
-                  )}
+              ) : (
+                <div key={ambition.title} className='grid grid-cols-1 sm:grid-cols-2 pb-20'>
+                  <div>
+                    {ambition?.image && (
+                      <Image
+                        src={ambition.image}
+                        alt='ambition illustration'
+                        height={356}
+                        width={542}
+                        className='mb-6'
+                      />
+                    )}
+                  </div>
+                  <div className='sm:ml-6'>
+                    <span className='p-base-semibold text-green-600'>{ambition.subTitle}</span>
+                    <h4 className='heading-2xl-semibold sm:3xl-semibold text-green-800 mt-2'>
+                      {ambition.title}
+                    </h4>
+                    <p className='p-base pt-4 max-w-xl pb-4'>{ambition.detail}</p>
+                    {ambition.buttonText && (
+                      <Link href={ambition.buttonLink}>
+                        <CustomButton color='lightGreenBackground'>
+                          {ambition.buttonText}
+                        </CustomButton>
+                      </Link>
+                    )}
+                  </div>
                 </div>
-                <div className='hidden sm:block'>
-                  {ambition?.image && (
-                    <Image
-                      src={urlFor(ambition?.image).url()}
-                      alt='ambition illustration'
-                      height={356}
-                      width={542}
-                    />
-                  )}
-                </div>
-              </div>
-            ) : (
-              <div key={ambition.title} className='grid grid-cols-1 sm:grid-cols-2 pb-20'>
-                <div>
-                  {ambition?.image && (
-                    <Image
-                      src={ambition.image}
-                      alt='ambition illustration'
-                      height={356}
-                      width={542}
-                      className='mb-6'
-                    />
-                  )}
-                </div>
-                <div className='sm:ml-6'>
-                  <span className='p-base-semibold text-green-600'>{ambition.subTitle}</span>
-                  <h4 className='heading-2xl-semibold sm:3xl-semibold text-green-800 mt-2'>
-                    {ambition.title}
-                  </h4>
-                  <p className='p-base pt-4 max-w-xl pb-4'>{ambition.detail}</p>
-                  {ambition.buttonText && (
-                    <Link href={ambition.buttonLink}>
-                      <CustomButton color='lightGreenBackground'>
-                        {ambition.buttonText}
-                      </CustomButton>
-                    </Link>
-                  )}
-                </div>
-              </div>
-            ),
-          )}
-        </div>
-       
+              ),
+            )}
+          </div>
         </div>
         {props.links && (
           <div className='pt-14 pb-10 bg-green-50'>

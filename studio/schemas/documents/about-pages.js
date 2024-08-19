@@ -6,7 +6,6 @@ export default {
   type: 'document',
   icon: FcAbout,
   fields: [
-    
     {
       title: 'Titel',
       name: 'pageTitle',

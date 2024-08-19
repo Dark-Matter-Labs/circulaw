@@ -9,7 +9,6 @@ import mobileStep2 from '@/public/eu-status/mobile-two-step/mobile-two-step-2.sv
 import mobileStep3 from '@/public/eu-status/mobile-two-step/mobile-two-step-3.svg';
 import mobileStep4 from '@/public/eu-status/mobile-two-step/mobile-two-step-4.svg';
 
-
 import Image from 'next/image';
 
 export default function StatusTwoStep({ status }) {
