@@ -36,10 +36,6 @@ export async function generateMetadata({ params }, parent) {
 
 export async function generateStaticParams() {
   const slugs = await client.fetch(INSTRUMENT_PATHS_QUERY, { next: { tags: ['instrument'] } });
-  // this is used to improve build time on preview deployments
-  if (process.env.VERCEL_ENV === 'preview') {
-    return [];
-  }
 
   return slugs.map((slug) => ({
     thema: slug.thema,
