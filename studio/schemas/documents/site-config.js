@@ -7,10 +7,6 @@ export default {
   title: 'Home Page',
   groups: [
     {
-      name: 'navigation',
-      title: 'Navigation',
-    },
-    {
       name: 'aboutPage',
       title: 'About Page',
     },

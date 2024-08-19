@@ -101,11 +101,6 @@ export const Structure = (S, context) =>
         .child(S.document().title('Partners').schemaType('partners').documentId('PartnersList')),
       S.divider(),
       S.listItem()
-        .title('Navigation')
-        .id('NavigationList')
-        .icon(GrNavigate)
-        .child(S.documentList().title('Navigation').filter('_type == "navigation"')),
-      S.listItem()
         .title('Home Page')
         .id('siteSettings')
         .icon(AiOutlineHome)
