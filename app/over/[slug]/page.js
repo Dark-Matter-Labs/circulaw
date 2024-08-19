@@ -14,7 +14,6 @@ const ABOUT_PAGE_METADATA_QUERY = `
 export async function generateMetadata({ params }, parent) {
   // read route params
   const slug = params.slug;
-
   // fetch data
   const aboutPageMetaData = await client.fetch(
     ABOUT_PAGE_METADATA_QUERY,
