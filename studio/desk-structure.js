@@ -55,10 +55,13 @@ export const Structure = (S, context) =>
                 .params({ euLawId }),
             ),
         ),
-      S.listItem()
-        .title('About Pages')
-        .icon(FcAbout)
-        .child(S.documentList().title('About Pages').filter('_type == "aboutPage"')),
+        orderableDocumentListDeskItem({
+          type: 'aboutPage',
+          S,
+          context,
+          title: 'About Pages',
+          icon: FcAbout,
+        }),
       orderableDocumentListDeskItem({
         type: 'newsItem',
         S,
