@@ -27,7 +27,7 @@ export default function AboutPageComponent({ data }) {
               </h1>
               <PortableText value={data?.aboutPageContent} components={portableTextComponents} />
             </div>
-            {data?.slug.current === 'methodiek-circulaw' && (
+            {data?._id === '2573771a-7b6d-4404-9162-c9427cc825c8' && (
               <div>
                 <Image src='/method.png' alt='image of methodology' width={768} height={1806} />
               </div>
