@@ -41,8 +41,8 @@ export default {
       type: 'boolean',
       validation: (Rule) => Rule.required(),
       group: 'editableContent',
-      description: 'select true if you want the new banner to appear'
-    },  
+      description: 'select true if you want the new banner to appear',
+    },
     {
       title: 'Meta Page Title',
       name: 'metaTitle',
