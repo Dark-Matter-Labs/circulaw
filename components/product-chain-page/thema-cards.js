@@ -28,7 +28,7 @@ export default function ThemaCard({ themaCards }) {
                   )}
                   {thema.new === true && (
                     <div className='absolute top-12 -right-24 bg-green-400 text-white origin-center rotate-45 p-xs w-full text-center uppercase'>
-                      Nieuwe
+                      Nieuw
                     </div>
                   )}
                 </div>
@@ -82,7 +82,7 @@ export default function ThemaCard({ themaCards }) {
                   />
                   {thema.new === true && (
                     <div className='p-2xs w-full bg-green-400 absolute bottom-0 right-0 text-center text-white pb-0.5 rounded-bl-cl uppercase'>
-                      Nieuwe
+                      Nieuw
                     </div>
                   )}
                 </div>

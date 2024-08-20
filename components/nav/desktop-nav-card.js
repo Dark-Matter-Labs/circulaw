@@ -40,7 +40,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
               closeNav(false);
             }}
           >
-            {thema.themaName}
+            {thema.themaName} {thema.new &&  <span className={`${pathname === '/' ? 'bg-green-200 text-green-800' : 'bg-green-800 text-green-50'} font-jakarta text-[10px] font-semibold px-1 py-0.5 rounded-clSm ml-2`}>Nieuw</span>}
           </Link>
         </div>
       ))}
