@@ -27,7 +27,7 @@ export default function AboutPageComponent({ data }) {
               </h1>
               <PortableText value={data?.aboutPageContent} components={portableTextComponents} />
             </div>
-            {data?.slug.current === 'wetsanalyse-vanuit-circulaire-blik' && (
+            {data?.slug.current === 'methodiek-circulaw' && (
               <div>
                 <Image src='/method.png' alt='image of methodology' width={768} height={1806} />
               </div>
