@@ -12,7 +12,7 @@ export default function ThemeSponsors({ thema, sponsors }) {
         <ul className='mb-16 flex flex-row flex-wrap sm:gap-x-8 items-center justify-center'>
           {sponsors?.map((sponsor, id) => (
             <li key={id} className='relative h-28 w-52'>
-              <Link href={sponsor.partnerLink}>
+              <Link href={sponsor.partnerLink} target='_blank'>
                 <ImageComponent image={sponsor.logo} />
               </Link>
             </li>
