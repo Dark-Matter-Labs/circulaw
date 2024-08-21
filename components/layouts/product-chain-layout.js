@@ -115,7 +115,10 @@ export default function PCLayout({ ...props }) {
                   </div>
                 </div>
               ) : (
-                <div key={ambition.title} className='grid grid-cols-1 sm:grid-cols-2 gap-x-[80px] pb-28'>
+                <div
+                  key={ambition.title}
+                  className='grid grid-cols-1 sm:grid-cols-2 gap-x-[80px] pb-28'
+                >
                   <div>
                     {ambition?.image && (
                       <Image
