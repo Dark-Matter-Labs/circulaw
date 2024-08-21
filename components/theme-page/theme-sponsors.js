@@ -43,7 +43,7 @@ export default function ThemeSponsors({ thema, sponsors }) {
                 key={id}
                 className={`${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[100px]'
-                } tranistion-opactiy ease-in duration-[1000ms] delay-[${
+                } tranistion-opactiy ease-in-out duration-[800ms] delay-[${
                   id * 250
                 }ms] relative h-28 w-52`}
               >
