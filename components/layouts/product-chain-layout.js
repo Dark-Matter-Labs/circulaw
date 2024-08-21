@@ -37,7 +37,7 @@ export default function PCLayout({ ...props }) {
         <div className='bg-green-50'>
           <div className='global-margin'>
             <div className='pt-10 pb-14'>
-              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 mb-14 max-w-2xl'>
+              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 pb-14 max-w-3xl'>
                 {props?.productChainData?.impactTitle}
               </h2>
               <div className='grid grid-cols-1 justify-items-center sm:flex sm:justify-center gap-20'>
@@ -73,12 +73,12 @@ export default function PCLayout({ ...props }) {
         </div>
         <div className='global-margin pt-14 bg-gray-100'>
           <div className='max-w-4xl'>
-            <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 pb-10'>
+            <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 pb-14'>
               {props?.productChainData?.ambitionTitle}
             </h2>
             {props?.ambitionList?.map((ambition, index) =>
               index % 2 == 0 ? (
-                <div key={index} className='grid grid-cols-1 sm:grid-cols-2 pb-20'>
+                <div key={index} className='grid grid-cols-1 sm:grid-cols-2 gap-x-[80px] pb-28'>
                   <div className='block mb-6 sm:hidden'>
                     {ambition?.image && (
                       <Image
@@ -89,7 +89,7 @@ export default function PCLayout({ ...props }) {
                       />
                     )}
                   </div>
-                  <div className='mr-6'>
+                  <div className=''>
                     <span className='p-base-semibold text-green-600'>{ambition.subTitle}</span>
                     <h4 className='heading-2xl-semibold sm:3xl-semibold text-green-800 mt-2'>
                       {ambition.title}
@@ -115,7 +115,10 @@ export default function PCLayout({ ...props }) {
                   </div>
                 </div>
               ) : (
-                <div key={ambition.title} className='grid grid-cols-1 sm:grid-cols-2 pb-20'>
+                <div
+                  key={ambition.title}
+                  className='grid grid-cols-1 sm:grid-cols-2 gap-x-[80px] pb-28'
+                >
                   <div>
                     {ambition?.image && (
                       <Image
@@ -127,7 +130,7 @@ export default function PCLayout({ ...props }) {
                       />
                     )}
                   </div>
-                  <div className='sm:ml-6'>
+                  <div className=''>
                     <span className='p-base-semibold text-green-600'>{ambition.subTitle}</span>
                     <h4 className='heading-2xl-semibold sm:3xl-semibold text-green-800 mt-2'>
                       {ambition.title}
@@ -149,7 +152,7 @@ export default function PCLayout({ ...props }) {
         {props.links && (
           <div className='pt-14 pb-10 bg-green-50'>
             <div className='global-margin'>
-              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 pb-10'>
+              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 pb-14'>
                 Duik nog dieper in de materie{' '}
                 <span className='pl-0.5 inline-block h-6 w-6 -mb-1 relative'>
                   <svg

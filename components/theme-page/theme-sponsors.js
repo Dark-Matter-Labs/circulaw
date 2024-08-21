@@ -33,7 +33,6 @@ export default function ThemeSponsors({ thema, sponsors }) {
             <div className='h-11 w-1.5 bg-green-500'></div>
             <div className='ml-4'>Het thema &apos;{thema}&apos; is mede mogelijk gemaakt door:</div>
           </div>
-
           <ul
             ref={ref}
             className='mb-16 flex flex-row flex-wrap sm:gap-x-8 items-center justify-center'
@@ -43,9 +42,9 @@ export default function ThemeSponsors({ thema, sponsors }) {
                 key={id}
                 className={`${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[100px]'
-                } tranistion-opactiy ease-in duration-[1000ms] delay-[${
+                } tranistion-opactiy ease-in-out duration-[800ms] delay-[${
                   id * 250
-                }ms] relative h-28 w-52`}
+                }ms] relative h-28 w-52 basis-1/2 sm:basis-auto`}
               >
                 <Link href={sponsor.partnerLink} target='_blank'>
                   <ImageComponent image={sponsor.logo} caption={sponsor.partnerName} />
