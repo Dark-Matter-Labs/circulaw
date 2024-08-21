@@ -47,8 +47,8 @@ export default function ThemeSponsors({ thema, sponsors }) {
                   id * 250
                 }ms] relative h-28 w-52`}
               >
-                <Link href={sponsor.partnerLink}>
-                  <ImageComponent image={sponsor.logo} />
+                <Link href={sponsor.partnerLink} target='_blank'>
+                  <ImageComponent image={sponsor.logo} caption={sponsor.partnerName} />
                 </Link>
               </li>
             ))}

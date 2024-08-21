@@ -1,3 +1,4 @@
+import { validation } from 'sanity';
 import { lineBreak } from '../../components/headerInput';
 import { BsCircle } from 'react-icons/bs';
 
@@ -35,6 +36,13 @@ export default {
       description: 'DO NOT CHANGE This will be displayed in the Navigation, Footer, Thema Card etc',
       group: 'devOnly',
       initialValue: 'New Thema',
+    },
+    {
+      title: 'New thema?',
+      name: 'new',
+      type: 'boolean',
+      validation: (Rule) => Rule.required(),
+      group: 'editableContent',
     },
     {
       title: 'Meta Page Title',
