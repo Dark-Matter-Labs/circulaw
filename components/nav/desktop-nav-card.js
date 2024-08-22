@@ -40,8 +40,8 @@ export default function DesktopNavCard({ navData, closeNav }) {
               closeNav(false);
             }}
           >
-            <span className='hover:underline'> {thema.themaName}{' '}</span>
-           
+            <span className='hover:underline'> {thema.themaName} </span>
+
             {thema.new && (
               <span
                 className={`${
