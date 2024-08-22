@@ -34,18 +34,19 @@ export default function DesktopNavCard({ navData, closeNav }) {
             href={`/${navData.slug}/${thema.slug}`}
             className={`${
               pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '
-            } p-xs hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
+            } p-xs active:p-xs-semibold active:no-underline cursor-pointer`}
             onClick={() => {
               CustomEvent.trackEvent('Nav click', pathname, thema.themaName);
               closeNav(false);
             }}
           >
-            {thema.themaName}{' '}
+            <span className='hover:underline'> {thema.themaName} </span>
+
             {thema.new && (
               <span
                 className={`${
-                  pathname === '/' ? 'bg-green-200 text-green-800' : 'bg-green-800 text-green-50'
-                } font-jakarta text-[10px] font-semibold px-1 py-0.5 rounded-clSm ml-2`}
+                  pathname === '/' ? 'text-green-200' : 'text-green-800'
+                } font-jakarta text-[8px] font-bold ml-1.5 absolute mt-[2px] hover:no-underline uppercase`}
               >
                 Nieuw
               </span>

@@ -1,8 +1,10 @@
 import { Highlight } from 'react-instantsearch';
 import Link from 'next/link';
 import Image from 'next/image';
+import { urlFor } from '@/lib/sanity';
 
 export default function EUHit({ hit }) {
+  console.log(hit.searchImage);
   if (hit.title === 'EU Europe Tab') {
     return (
       <>
@@ -15,29 +17,31 @@ export default function EUHit({ hit }) {
           <article className='hidden sm:flex flex-col h-full rounded-cl'>
             <div className='rounded-cl h-full'>
               <div className='flex flex-row'>
-                <div className='h-[160px] min-w-[160px] relative mr-4'>
-                  <Image
-                    src='/icon.png'
-                    alt='eu icon'
-                    fill
-                    priority={true}
-                    className='object-cover'
-                    sizes='15vw'
-                  />
+                <div className='h-[160px] min-w-[160px] relative mr-6'>
+                  {hit.searchImage ? (
+                    <Image
+                      src={urlFor(hit.searchImage).url()}
+                      alt='eu icon'
+                      fill
+                      priority={true}
+                      className='object-fil'
+                      sizes='15vw'
+                    />
+                  ) : null}
                 </div>
                 <div className='flex flex-col'>
                   <div>
-                    <div className='flex flex-row gap-x-2 justify-start p-2xs-semibold text-green-500 h-[52px] max-w-[524px] mb-6'>
-                      <div className='h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[73px] bg-green-600/30 text-white'>
+                    <div className='flex flex-row gap-x-2 justify-start p-2xs-semibold h-[52px] max-w-[524px] mb-6'>
+                      <div className='h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[73px] bg-gray-200/30 text-gray-500'>
                         Overzicht
                       </div>
-                      <div className='text-green-800 h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[132px]'>
+                      <div className='text-green-500 border-green-500 border box-border h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[132px]'>
                         Verplichtingen voor Europese lidstaten
                       </div>
-                      <div className='bg-green-600/30 text-white h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[164px]'>
+                      <div className='bg-gray-200/30 text-gray-500 h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[164px]'>
                         Relevantie voor regionale en lokale overheden{' '}
                       </div>
-                      <div className='bg-green-600/30 text-white h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[131px]'>
+                      <div className='bg-gray-200/30 text-gray-500 h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[131px]'>
                         Relevantie voor de circulaire economie
                       </div>
                     </div>
@@ -68,17 +72,19 @@ export default function EUHit({ hit }) {
           </article>
           <article className='flex flex-col sm:hidden gap-y-3'>
             <div className='h-[160px] w-[160px] relative'>
-              <Image
-                src='/icon.png'
-                alt='eu icon'
-                fill
-                priority={true}
-                className='object-fil'
-                sizes='15vw'
-              />
+              {hit.searchImage ? (
+                <Image
+                  src={urlFor(hit.searchImage).url()}
+                  alt='eu icon'
+                  fill
+                  priority={true}
+                  className='object-fil'
+                  sizes='15vw'
+                />
+              ) : null}
             </div>
             <div>
-              <div className='bg-green-600/30 text-white p-2xs-semibold h-[52px] rounded-t-cl px-2 py-3 flex items-start justify-center w-[132px]'>
+              <div className='bg-gray-200/30 text-gray-500 p-2xs-semibold h-[52px] rounded-t-cl px-2 py-3 flex items-start justify-center w-[132px]'>
                 Verplichtingen voor Europese lidstaten
               </div>
             </div>
@@ -116,29 +122,31 @@ export default function EUHit({ hit }) {
           <article className='hidden sm:flex flex-col h-full rounded-cl'>
             <div className='rounded-cl h-full'>
               <div className='flex flex-row'>
-                <div className='h-[160px] min-w-[160px] relative mr-4'>
-                  <Image
-                    src='/icon.png'
-                    alt='eu icon'
-                    fill
-                    priority={true}
-                    className='object-cover'
-                    sizes='15vw'
-                  />
+                <div className='h-[160px] min-w-[160px] relative mr-6'>
+                  {hit.searchImage ? (
+                    <Image
+                      src={urlFor(hit.searchImage).url()}
+                      alt='eu icon'
+                      fill
+                      priority={true}
+                      className='object-fil'
+                      sizes='15vw'
+                    />
+                  ) : null}
                 </div>
                 <div className='flex flex-col'>
                   <div>
-                    <div className='flex flex-row gap-x-2 justify-start p-2xs-semibold text-green-500 h-[52px] max-w-[524px] mb-6'>
-                      <div className='h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[73px] bg-green-600/30 text-white'>
+                    <div className='flex flex-row gap-x-2 justify-start p-2xs-semibold h-[52px] max-w-[524px] mb-6'>
+                      <div className='h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[73px] bg-gray-200/30 text-gray-500'>
                         Overzicht
                       </div>
-                      <div className='bg-green-600/30 text-white h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[132px]'>
+                      <div className='bg-gray-200/30 text-gray-500 h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[132px]'>
                         Verplichtingen voor Europese lidstaten
                       </div>
-                      <div className=' text-green-800 h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[164px]'>
+                      <div className=' text-green-500 border-green-500 border box-border h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[164px]'>
                         Relevantie voor regionale en lokale overheden{' '}
                       </div>
-                      <div className='bg-green-600/30 text-white h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[131px]'>
+                      <div className='bg-gray-200/30 text-gray-500 h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[131px]'>
                         Relevantie voor de circulaire economie
                       </div>
                     </div>
@@ -170,17 +178,19 @@ export default function EUHit({ hit }) {
         </Link>
         <article className='flex flex-col sm:hidden gap-y-3'>
           <div className='h-[160px] w-[160px] relative'>
-            <Image
-              src='/icon.png'
-              alt='eu icon'
-              fill
-              priority={true}
-              className='object-fil'
-              sizes='15vw'
-            />
+            {hit.searchImage ? (
+              <Image
+                src={urlFor(hit.searchImage).url()}
+                alt='eu icon'
+                fill
+                priority={true}
+                className='object-fil'
+                sizes='15vw'
+              />
+            ) : null}
           </div>
           <div>
-            <div className='bg-green-600/30 text-white p-2xs-semibold h-[52px] rounded-t-cl px-2 py-3 flex items-start justify-center w-[164px]'>
+            <div className='bg-gray-200/30 text-gray-500 p-2xs-semibold h-[52px] rounded-t-cl px-2 py-3 flex items-start justify-center w-[164px]'>
               Relevantie voor regionale en lokale overheden{' '}
             </div>
           </div>
@@ -217,29 +227,31 @@ export default function EUHit({ hit }) {
           <article className='hidden sm:flex flex-col h-full rounded-cl'>
             <div className='rounded-cl h-full'>
               <div className='flex flex-row'>
-                <div className='h-[160px] min-w-[160px] relative mr-4'>
-                  <Image
-                    src='/icon.png'
-                    alt='eu icon'
-                    fill
-                    priority={true}
-                    className='object-cover'
-                    sizes='15vw'
-                  />
+                <div className='h-[160px] min-w-[160px] relative mr-6'>
+                  {hit.searchImage ? (
+                    <Image
+                      src={urlFor(hit.searchImage).url()}
+                      alt='eu icon'
+                      fill
+                      priority={true}
+                      className='object-fil'
+                      sizes='15vw'
+                    />
+                  ) : null}
                 </div>
                 <div className='flex flex-col'>
                   <div>
-                    <div className='flex flex-row gap-x-2 justify-start p-2xs-semibold text-green-500 h-[52px] max-w-[524px] mb-6'>
-                      <div className='h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[73px] bg-green-600/30 text-white'>
+                    <div className='flex flex-row gap-x-2 justify-start p-2xs-semibold  h-[52px] max-w-[524px] mb-6'>
+                      <div className='h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[73px] bg-gray-200/30 text-gray-500'>
                         Overzicht
                       </div>
-                      <div className='bg-green-600/30 text-white h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[132px]'>
+                      <div className='bg-gray-200/30 text-gray-500 h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[132px]'>
                         Verplichtingen voor Europese lidstaten
                       </div>
-                      <div className='bg-green-600/30 text-white h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[164px]'>
+                      <div className='bg-gray-200/30 text-gray-500 h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[164px]'>
                         Relevantie voor regionale en lokale overheden{' '}
                       </div>
-                      <div className='text-green-800 h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[131px]'>
+                      <div className='text-green-500 border-green-500 border box-border h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[133px]'>
                         Relevantie voor de circulaire economie
                       </div>
                     </div>
@@ -271,17 +283,19 @@ export default function EUHit({ hit }) {
         </Link>
         <article className='flex flex-col sm:hidden gap-y-3'>
           <div className='h-[160px] w-[160px] relative'>
-            <Image
-              src='/icon.png'
-              alt='eu icon'
-              fill
-              priority={true}
-              className='object-fil'
-              sizes='15vw'
-            />
+            {hit.searchImage ? (
+              <Image
+                src={urlFor(hit.searchImage).url()}
+                alt='eu icon'
+                fill
+                priority={true}
+                className='object-fil'
+                sizes='15vw'
+              />
+            ) : null}
           </div>
           <div>
-            <div className='bg-green-600/30 text-white p-2xs-semibold h-[52px] rounded-t-cl px-2 py-3 flex items-start justify-center w-[131px]'>
+            <div className='bg-gray-200/30 text-gray-500 p-2xs-semibold h-[52px] rounded-t-cl px-2 py-3 flex items-start justify-center w-[131px]'>
               Relevantie voor de circulaire economie
             </div>
           </div>
@@ -318,29 +332,31 @@ export default function EUHit({ hit }) {
           <article className='hidden sm:flex flex-col h-full rounded-cl'>
             <div className='rounded-cl h-full'>
               <div className='flex flex-row'>
-                <div className='h-[160px] min-w-[160px] relative mr-4'>
-                  <Image
-                    src='/icon.png'
-                    alt='eu icon'
-                    fill
-                    priority={true}
-                    className='object-cover'
-                    sizes='15vw'
-                  />
+                <div className='h-[160px] min-w-[160px] relative mr-6'>
+                  {hit.searchImage ? (
+                    <Image
+                      src={urlFor(hit.searchImage).url()}
+                      alt='eu icon'
+                      fill
+                      priority={true}
+                      className='object-fil'
+                      sizes='15vw'
+                    />
+                  ) : null}
                 </div>
                 <div className='flex flex-col'>
                   <div>
-                    <div className='flex flex-row gap-x-2 justify-start p-2xs-semibold text-green-500 h-[52px] max-w-[524px] mb-6'>
-                      <div className='text-green-800 h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[73px]'>
+                    <div className='flex flex-row gap-x-2 justify-start p-2xs-semibold h-[52px] max-w-[524px] mb-6'>
+                      <div className='text-green-500 border-green-500 border box-border h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[73px]'>
                         Overzicht
                       </div>
-                      <div className='bg-green-600/30 text-white h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[132px]'>
+                      <div className='bg-gray-200/30 text-gray-500 h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[132px]'>
                         Verplichtingen voor Europese lidstaten
                       </div>
-                      <div className='bg-green-600/30 text-white h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[164px]'>
+                      <div className='bg-gray-200/30 text-gray-500 h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[164px]'>
                         Relevantie voor regionale en lokale overheden{' '}
                       </div>
-                      <div className='bg-green-600/30 text-white h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[131px]'>
+                      <div className='bg-gray-200/30 text-gray-500 h-full rounded-t-cl px-2 py-3 flex items-start justify-center min-w-[131px]'>
                         Relevantie voor de circulaire economie
                       </div>
                     </div>
@@ -371,17 +387,19 @@ export default function EUHit({ hit }) {
           </article>
           <article className='flex flex-col sm:hidden gap-y-3'>
             <div className='h-[160px] w-[160px] relative'>
-              <Image
-                src='/icon.png'
-                alt='eu icon'
-                fill
-                priority={true}
-                className='object-fil'
-                sizes='15vw'
-              />
+              {hit.searchImage ? (
+                <Image
+                  src={urlFor(hit.searchImage).url()}
+                  alt='eu icon'
+                  fill
+                  priority={true}
+                  className='object-fil'
+                  sizes='15vw'
+                />
+              ) : null}
             </div>
             <div>
-              <div className='bg-green-600/30 text-white p-2xs-semibold h-[52px] rounded-t-cl px-2 py-3 flex items-start justify-center w-[73px]'>
+              <div className='bg-gray-200/30 text-gray-500 p-2xs-semibold h-[52px] rounded-t-cl px-2 py-3 flex items-start justify-center w-[73px]'>
                 Overzicht
               </div>
             </div>

@@ -60,7 +60,8 @@ export async function POST(req) {
             "objectID": _id,
             'lawTitle': coalesce(euLawReference->title, title),
             'slug': coalesce(euLawReference->slug.current, slug.current),
-            introText
+            introText,
+            'searchImage': searchImage.asset
             }
          `,
         },
@@ -183,6 +184,7 @@ export async function POST(req) {
               lawTitle: document.lawTitle,
               slug: document.slug,
               introText: document.introText,
+              searchImage: document.searchImage,
             };
           }
           case 'euEuropeTab': {
