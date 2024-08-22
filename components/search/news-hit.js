@@ -28,7 +28,7 @@ export default function NewsHit({ hit }) {
         <Link href={hit.slug ? `/nieuws/${hit.slug}` : `${hit.linkUrl}`}>
           <div className='flex flex-col sm:flex-row mb-10'>
             {hit.newsImage && (
-              <div className='h-[130px] w-[150px] rounded-cl overflow-hidden relative mr-4 mb-6 sm:mb-0'>
+              <div className='h-[130px] w-[150px] rounded-cl overflow-hidden relative mr-6 mb-6 sm:mb-0'>
                 <Image
                   className='w-full object-cover'
                   src={urlFor(hit.newsImage).auto('format').fit('max').url()}
@@ -42,7 +42,7 @@ export default function NewsHit({ hit }) {
               </div>
             )}
             {!hit.newsImage && hit.newsOrAgenda === false && (
-              <div className='h-[130px] w-[150px] bg-green-200 rounded-cl mr-4 p-base-semibold flex items-center justify-center mb-6 sm:mb-0'>
+              <div className='h-[130px] w-[150px] bg-green-200 rounded-cl mr-6 p-base-semibold flex items-center justify-center mb-6 sm:mb-0'>
                 placeholder
               </div>
             )}
@@ -56,7 +56,7 @@ export default function NewsHit({ hit }) {
                   </Tag>
                 )}
                 {hit.linkUrl && (
-                  <Tag classes='bg-green-800 text-white shrink mr-2'>
+                  <Tag classes='border border-green-300 text-green-300 shrink mr-2'>
                     <ExternalLinkIcon className='h-4 w-4' />
                   </Tag>
                 )}
@@ -88,7 +88,7 @@ export default function NewsHit({ hit }) {
     return (
       <Link href={hit?.link} target='_blanl' className='p-base text-green-800 '>
         <div className='flex flex-col sm:flex-row mb-10'>
-          <div className='h-[130px] w-[150px] gradient-700 rounded-cl mr-4 flex flex-row items-center justify-center mb-6 sm:mb-0'>
+          <div className='h-[130px] w-[150px] gradient-700 rounded-cl mr-6 flex flex-row items-center justify-center mb-6 sm:mb-0'>
             <div className='mr-2 heading-4xl-semibold text-white'>
               {event.toLocaleDateString('nl-NL', day)}
             </div>
@@ -105,7 +105,7 @@ export default function NewsHit({ hit }) {
             <div className='flex flex-row mb-6'>
               <Tag classes='bg-green-800 text-white shrink mr-2'>agenda</Tag>
               {hit.link && (
-                <Tag classes='bg-green-800 text-white shrink mr-2'>
+                <Tag classes='border border-green-300 text-green-300 shrink mr-2'>
                   <ExternalLinkIcon className='h-4 w-4' />
                 </Tag>
               )}

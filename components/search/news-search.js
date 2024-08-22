@@ -41,7 +41,6 @@ export default function NewsSearch() {
           <MobileHeaderSearch index='news' />
         </div>
       </div>
-
       <div className='global-margin flex'>
         <NoResultsBoundary fallback={<NoResults />}>
           <div>
