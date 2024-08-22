@@ -46,7 +46,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
               <span
                 className={`${
                   pathname === '/' ? 'text-green-200' : 'text-green-800'
-                } font-jakarta text-[8px] font-bold ml-2 absolute mt-[2px] hover:no-underline uppercase`}
+                } font-jakarta text-[8px] font-bold ml-1.5 absolute mt-[2px] hover:no-underline uppercase`}
               >
                 Nieuw
               </span>

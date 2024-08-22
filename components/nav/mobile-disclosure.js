@@ -38,7 +38,7 @@ export default function MobileDisclosure({ navData, closeMenu }) {
                       >
                         {thema?.themaName}
                         {thema.new && (
-                          <span className='bg-green-800 text-green-50 font-jakarta text-[10px] font-semibold px-1.5 h-5 flex items-center justify-center rounded-clSm ml-2'>
+                          <span className='font-jakarta text-[8px] font-bold ml-1.5 mb-2 mt-[2px] hover:no-underline uppercase inline-block'>
                             Nieuw
                           </span>
                         )}
