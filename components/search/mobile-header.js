@@ -4,49 +4,8 @@ import { XIcon } from '@heroicons/react/outline';
 
 export default function MobileHeaderSearch({ index }) {
   return (
-    <div className='flex sm:hidden w-full max-w-sm flex-col items-center justify-center gap-y-6'>
+    <div className='flex sm:hidden w-full max-w-sm flex-col items-center justify-center'>
       <div className='w-full h-full flex flex-col items-center justify-end pb-6'>
-        <div className='flex flex-col justify-center w-full gap-y-1.5 mb-4'>
-          <Link
-            href='/zoeken/instrumenten'
-            className='flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[60px]'
-          >
-            {index === 'instruments' && (
-              <div className='bg-green-500 w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                <div className='bg-green-500 border-white border-2 h-3 w-3 rounded-full'></div>
-              </div>
-            )}
-            {index === 'aboutPage' && (
-              <div className='bg-black w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                <div className='bg-white h-3 w-3 rounded-full'></div>
-              </div>
-            )}
-            <div className='flex flex-col items-start justify-start'>
-              Instrumenten
-              <span className='p-xs'>Zoeken binnen &apos;instrumenten&apos;</span>
-            </div>
-          </Link>
-          <Link
-            href='/zoeken/over-circulaw'
-            // onClick={() => setSearchIndex('aboutPage')}
-            className='flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[60px]'
-          >
-            {index === 'instruments' && (
-              <div className='bg-black w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                <div className='bg-white h-3 w-3 rounded-full'></div>
-              </div>
-            )}
-            {index === 'aboutPage' && (
-              <div className='bg-green-500 w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                <div className='bg-green-500 border-white border-2 h-3 w-3 rounded-full'></div>
-              </div>
-            )}
-            <div className='flex flex-col items-start justify-start'>
-              Over Circulaw
-              <span className='p-xs'>Zoeken binnen &apos;Over Circulaw&apos;</span>
-            </div>
-          </Link>
-        </div>
         <SearchBox
           searchAsYouType={false}
           placeholder={
@@ -78,6 +37,48 @@ export default function MobileHeaderSearch({ index }) {
           )}
         />
       </div>
+      <div className='mb-10'>
+            <>
+              <Link
+                href='/zoeken/instrumenten'
+                className={`${
+                  index === 'instruments'
+                    ? 'border-b-2 border-white'
+                    : 'border-b-2 border-transparent'
+                } p-xs-semibold text-white p-2`}
+              >
+                Instrumenten
+              </Link>
+              <Link
+                href='/zoeken/eu-wetgeving'
+                className={`${
+                  index === 'euLaw'
+                    ? 'border-b-2 border-white box-content'
+                    : 'border-b-2 border-transparent'
+                } p-xs-semibold text-white p-2`}
+              >
+                EU wetgeving
+              </Link>
+              <Link
+                href='/zoeken/over-circulaw'
+                className={`${
+                  index === 'aboutPage'
+                    ? 'border-b-2 border-white'
+                    : 'border-b-2 border-transparent'
+                } p-xs-semibold text-white p-2`}
+              >
+                Over
+              </Link>
+              <Link
+                href='/zoeken/nieuws'
+                className={`${
+                  index === 'news' ? 'border-b-2 border-white' : 'border-b-2 border-transparent'
+                } p-xs-semibold text-white p-2`}
+              >
+                Nieuws
+              </Link>
+            </>
+          </div>
     </div>
   );
 }
