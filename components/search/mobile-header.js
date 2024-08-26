@@ -38,47 +38,43 @@ export default function MobileHeaderSearch({ index }) {
         />
       </div>
       <div className='mb-10'>
-            <>
-              <Link
-                href='/zoeken/instrumenten'
-                className={`${
-                  index === 'instruments'
-                    ? 'border-b-2 border-white'
-                    : 'border-b-2 border-transparent'
-                } p-xs-semibold text-white p-2`}
-              >
-                Instrumenten
-              </Link>
-              <Link
-                href='/zoeken/eu-wetgeving'
-                className={`${
-                  index === 'euLaw'
-                    ? 'border-b-2 border-white box-content'
-                    : 'border-b-2 border-transparent'
-                } p-xs-semibold text-white p-2`}
-              >
-                EU wetgeving
-              </Link>
-              <Link
-                href='/zoeken/over-circulaw'
-                className={`${
-                  index === 'aboutPage'
-                    ? 'border-b-2 border-white'
-                    : 'border-b-2 border-transparent'
-                } p-xs-semibold text-white p-2`}
-              >
-                Over
-              </Link>
-              <Link
-                href='/zoeken/nieuws'
-                className={`${
-                  index === 'news' ? 'border-b-2 border-white' : 'border-b-2 border-transparent'
-                } p-xs-semibold text-white p-2`}
-              >
-                Nieuws
-              </Link>
-            </>
-          </div>
+        <>
+          <Link
+            href='/zoeken/instrumenten'
+            className={`${
+              index === 'instruments' ? 'border-b-2 border-white' : 'border-b-2 border-transparent'
+            } p-xs-semibold text-white p-2`}
+          >
+            Instrumenten
+          </Link>
+          <Link
+            href='/zoeken/eu-wetgeving'
+            className={`${
+              index === 'euLaw'
+                ? 'border-b-2 border-white box-content'
+                : 'border-b-2 border-transparent'
+            } p-xs-semibold text-white p-2`}
+          >
+            EU wetgeving
+          </Link>
+          <Link
+            href='/zoeken/over-circulaw'
+            className={`${
+              index === 'aboutPage' ? 'border-b-2 border-white' : 'border-b-2 border-transparent'
+            } p-xs-semibold text-white p-2`}
+          >
+            Over
+          </Link>
+          <Link
+            href='/zoeken/nieuws'
+            className={`${
+              index === 'news' ? 'border-b-2 border-white' : 'border-b-2 border-transparent'
+            } p-xs-semibold text-white p-2`}
+          >
+            Nieuws
+          </Link>
+        </>
+      </div>
     </div>
   );
 }
