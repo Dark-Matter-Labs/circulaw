@@ -122,7 +122,7 @@ export async function POST(req) {
           {
             "objectID": _id,
             'lawTitle': coalesce(euLawReference->title, title),
-             "ceContent": pt::text(ceContent)
+             "ceContent": pt::text(ceContent),
              "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
             }
          `,
