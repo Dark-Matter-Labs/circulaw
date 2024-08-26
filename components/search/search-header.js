@@ -11,11 +11,11 @@ export default function SearchHeader({ index }) {
     if (index === 'instruments') {
       setPlaceholder('Zoek naar instrumenten...');
     } else if (index === 'aboutPage') {
-      setPlaceholder('Zoek naar over CircuLaw');
+      setPlaceholder('Zoek naar over CircuLaw...');
     } else if (index === 'euLaw') {
-      setPlaceholder('Zoek naar EU wetgeving');
+      setPlaceholder('Zoek naar EU wetgeving...');
     } else {
-      setPlaceholder('Zoek naar nieuws');
+      setPlaceholder('Zoek naar nieuws...');
     }
   }, [index]);
 
