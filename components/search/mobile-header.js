@@ -15,7 +15,7 @@ export default function MobileHeaderSearch({ index }) {
             root: 'h-16 max-w-sm w-full bg-green-600',
             form: 'bg-green-600 max-w-sm w-full h-[60px] rounded-cl flex-row items-center justify-between relative flex',
             input:
-              'max-w-sm w-full h-[60px] focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] pl-10 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold',
+              'max-w-sm w-full h-[60px] focus:bg-[url("/search-icon.png")] focus:bg-[length:24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-10 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold',
             submitIcon: 'visible',
           }}
           submitIconComponent={() => (
