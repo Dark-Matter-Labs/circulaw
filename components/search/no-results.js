@@ -6,7 +6,9 @@ export default function NoResults() {
     <div className='flex items-center justify-center my-10 w-full '>
       <div className='flex flex-col items-center justify-center max-w-md'>
         <h2 className='heading-2xl sm:heading-3xl mb-6'>
-        Geen resultaten gevonden voor: &apos;<span className='heading-2xl-semibold sm:heading-3xl-semibold'>{indexUiState.query}</span>&apos;
+          Geen resultaten gevonden voor: &apos;
+          <span className='heading-2xl-semibold sm:heading-3xl-semibold'>{indexUiState.query}</span>
+          &apos;
         </h2>
         <h3 className='p-base-semibold mb-4'>Tips voor betere resultaten:</h3>
         <ul className='p-base list-disc'>
