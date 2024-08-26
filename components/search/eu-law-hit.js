@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { urlFor } from '@/lib/sanity';
 
 export default function EUHit({ hit }) {
-  console.log(hit.searchImage);
   if (hit.title === 'EU Europe Tab') {
     return (
       <>

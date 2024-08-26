@@ -52,7 +52,6 @@ export async function POST(req) {
                           }
                     `,
         },
-
         euLaw: {
           index: agoliaInstance.initIndex('euLaw'),
           projection: `
@@ -128,25 +127,7 @@ export async function POST(req) {
             }
          `,
         },
-        newsItem: {
-          index: agoliaInstance.initIndex('newsItems'),
-          projection: `
-          {
-       'objectID': _id,
-        'content': pt::text(content),
-        title,
-        newsText,
-        newsDate,
-        newsOrAgenda,
-        'newsImage': newsImage.asset,
-        'slug': slug.current,
-        link,
-        category,
-        linkUrl,
-
-            }
-         `,
-        },
+     
       },
 
       (document) => {
@@ -266,4 +247,29 @@ export async function POST(req) {
     let error_response = { status: 'error', msg: err };
     return new Response(JSON.stringify(error_response));
   }
+}
+
+
+{
+  /*
+       newsItem: {
+          index: agoliaInstance.initIndex('newsItems'),
+          projection: `
+          {
+       'objectID': _id,
+        'content': pt::text(content),
+        title,
+        newsText,
+        newsDate,
+        newsOrAgenda,
+        'newsImage': newsImage.asset,
+        'slug': slug.current,
+        link,
+        category,
+        linkUrl,
+
+            }
+         `,
+        },
+  */
 }
