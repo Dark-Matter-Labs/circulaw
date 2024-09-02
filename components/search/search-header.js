@@ -27,10 +27,10 @@ export default function SearchHeader({ index }) {
             searchAsYouType={false}
             placeholder={placeholder}
             classNames={{
-              root: 'h-16 w-[600px] bg-green-600',
-              form: 'bg-green-600 w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex',
+              root: 'h-16 w-[600px] bg-white rounded-cl',
+              form: 'bg-white w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex shadow-card',
               input:
-                'w-[600px] h-[66px] focus:bg-[url("/search-icon.png")] focus:bg-[length:24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold',
+                'w-[600px] h-[66px] focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-green-600 p-base text-green-600 focus:ring-1 focus:ring-green-600 placeholder:text-green-600 placeholder:p-base-semibold',
               submitIcon: 'visible',
             }}
             submitIconComponent={() => (
@@ -45,9 +45,9 @@ export default function SearchHeader({ index }) {
               <div
                 type='reset'
                 title='Clear the search query'
-                className='absolute top-3.5 right-28 rounded-full p-2 hover:bg-white/50 group'
+                className='absolute top-3.5 right-28 rounded-full p-2 hover:bg-green-200 group'
               >
-                <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
+                <XIcon className='h-6 w-6 text-green-600 group-hover:text-green-900' />
               </div>
             )}
           />
@@ -57,9 +57,9 @@ export default function SearchHeader({ index }) {
                 href='/zoeken/instrumenten'
                 className={`${
                   index === 'instruments'
-                    ? 'border-b-2 border-white'
+                    ? 'border-b-2 border-green-600'
                     : 'border-b-2 border-transparent'
-                } p-xs-semibold text-white p-2`}
+                } p-xs-semibold text-green-600 p-2`}
               >
                 Instrumenten
               </Link>
@@ -67,9 +67,9 @@ export default function SearchHeader({ index }) {
                 href='/zoeken/eu-wetgeving'
                 className={`${
                   index === 'euLaw'
-                    ? 'border-b-2 border-white box-content'
+                    ? 'border-b-2 border-green-600 box-content'
                     : 'border-b-2 border-transparent'
-                } p-xs-semibold text-white p-2`}
+                } p-xs-semibold text-green-600 p-2`}
               >
                 EU wetgeving
               </Link>
@@ -77,17 +77,17 @@ export default function SearchHeader({ index }) {
                 href='/zoeken/over-circulaw'
                 className={`${
                   index === 'aboutPage'
-                    ? 'border-b-2 border-white'
+                    ? 'border-b-2 border-green-600'
                     : 'border-b-2 border-transparent'
-                } p-xs-semibold text-white p-2`}
+                } p-xs-semibold text-green-600 p-2`}
               >
                 Over
               </Link>
               <Link
                 href='/zoeken/nieuws'
                 className={`${
-                  index === 'news' ? 'border-b-2 border-white' : 'border-b-2 border-transparent'
-                } p-xs-semibold text-white p-2`}
+                  index === 'news' ? 'border-b-2 border-green-600' : 'border-b-2 border-transparent'
+                } p-xs-semibold text-green-600 p-2`}
               >
                 Nieuws
               </Link>

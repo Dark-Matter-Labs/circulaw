@@ -33,7 +33,7 @@ export default function EUSearch() {
       insights={true}
     >
       <Configure hitsPerPage={12} />
-      <div className='bg-green-600 h-[260px] flex items-end justify-center w-full'>
+      <div className='bg-green-50 h-[260px] flex items-end justify-center w-full'>
         <div className='global-margin w-full flex items-center justify-center'>
           {/* Desktop */}
           <SearchHeader index='euLaw' />
