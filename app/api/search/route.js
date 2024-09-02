@@ -64,6 +64,9 @@ export async function POST(req) {
             }
          `,
         },
+        // search Image could be: 'searchImage': euLawReference->searchImage.asset
+        // objectId should be: euLawReference.ref
+        
         euEuropeTab: {
           index: agoliaInstance.initIndex('euLaw'),
           projection: `
