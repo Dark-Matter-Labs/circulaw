@@ -15,7 +15,7 @@ export default function MobileHeaderSearch({ index }) {
             root: 'h-16 max-w-sm w-full bg-green-600',
             form: 'bg-green-600 max-w-sm w-full h-[60px] rounded-cl flex-row items-center justify-between relative flex',
             input:
-              'max-w-sm w-full h-[60px] focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] pl-10 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold',
+              'max-w-sm w-full h-[60px] focus:bg-[url("/search-icon.png")] focus:bg-[length:24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-10 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold',
             submitIcon: 'visible',
           }}
           submitIconComponent={() => (
@@ -38,47 +38,43 @@ export default function MobileHeaderSearch({ index }) {
         />
       </div>
       <div className='mb-10'>
-            <>
-              <Link
-                href='/zoeken/instrumenten'
-                className={`${
-                  index === 'instruments'
-                    ? 'border-b-2 border-white'
-                    : 'border-b-2 border-transparent'
-                } p-xs-semibold text-white p-2`}
-              >
-                Instrumenten
-              </Link>
-              <Link
-                href='/zoeken/eu-wetgeving'
-                className={`${
-                  index === 'euLaw'
-                    ? 'border-b-2 border-white box-content'
-                    : 'border-b-2 border-transparent'
-                } p-xs-semibold text-white p-2`}
-              >
-                EU wetgeving
-              </Link>
-              <Link
-                href='/zoeken/over-circulaw'
-                className={`${
-                  index === 'aboutPage'
-                    ? 'border-b-2 border-white'
-                    : 'border-b-2 border-transparent'
-                } p-xs-semibold text-white p-2`}
-              >
-                Over
-              </Link>
-              <Link
-                href='/zoeken/nieuws'
-                className={`${
-                  index === 'news' ? 'border-b-2 border-white' : 'border-b-2 border-transparent'
-                } p-xs-semibold text-white p-2`}
-              >
-                Nieuws
-              </Link>
-            </>
-          </div>
+        <>
+          <Link
+            href='/zoeken/instrumenten'
+            className={`${
+              index === 'instruments' ? 'border-b-2 border-white' : 'border-b-2 border-transparent'
+            } p-xs-semibold text-white p-2`}
+          >
+            Instrumenten
+          </Link>
+          <Link
+            href='/zoeken/eu-wetgeving'
+            className={`${
+              index === 'euLaw'
+                ? 'border-b-2 border-white box-content'
+                : 'border-b-2 border-transparent'
+            } p-xs-semibold text-white p-2`}
+          >
+            EU wetgeving
+          </Link>
+          <Link
+            href='/zoeken/over-circulaw'
+            className={`${
+              index === 'aboutPage' ? 'border-b-2 border-white' : 'border-b-2 border-transparent'
+            } p-xs-semibold text-white p-2`}
+          >
+            Over
+          </Link>
+          <Link
+            href='/zoeken/nieuws'
+            className={`${
+              index === 'news' ? 'border-b-2 border-white' : 'border-b-2 border-transparent'
+            } p-xs-semibold text-white p-2`}
+          >
+            Nieuws
+          </Link>
+        </>
+      </div>
     </div>
   );
 }

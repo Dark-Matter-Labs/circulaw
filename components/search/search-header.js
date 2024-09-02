@@ -5,17 +5,17 @@ import { XIcon } from '@heroicons/react/outline';
 import { useState, useEffect } from 'react';
 
 export default function SearchHeader({ index }) {
-  const [placeholder, setPlaceholder] = useState('instruments');
+  const [placeholder, setPlaceholder] = useState('Zoek naar instrumenten...');
 
   useEffect(() => {
     if (index === 'instruments') {
       setPlaceholder('Zoek naar instrumenten...');
     } else if (index === 'aboutPage') {
-      setPlaceholder('Zoek naar over CircuLaw');
+      setPlaceholder('Zoek naar over CircuLaw...');
     } else if (index === 'euLaw') {
-      setPlaceholder('Zoek naar EU wetgeving');
+      setPlaceholder('Zoek naar EU wetgeving...');
     } else {
-      setPlaceholder('Zoek naar nieuws');
+      setPlaceholder('Zoek naar nieuws...');
     }
   }, [index]);
 
@@ -30,7 +30,7 @@ export default function SearchHeader({ index }) {
               root: 'h-16 w-[600px] bg-green-600',
               form: 'bg-green-600 w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex',
               input:
-                'w-[600px] h-[66px] focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold',
+                'w-[600px] h-[66px] focus:bg-[url("/search-icon.png")] focus:bg-[length:24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold',
               submitIcon: 'visible',
             }}
             submitIconComponent={() => (

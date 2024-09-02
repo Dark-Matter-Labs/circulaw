@@ -52,7 +52,6 @@ export async function POST(req) {
                           }
                     `,
         },
-
         euLaw: {
           index: agoliaInstance.initIndex('euLaw'),
           projection: `
@@ -123,7 +122,7 @@ export async function POST(req) {
           {
             "objectID": _id,
             'lawTitle': coalesce(euLawReference->title, title),
-             "ceContent": pt::text(ceContent)
+             "ceContent": pt::text(ceContent),
              "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
             }
          `,
@@ -143,7 +142,6 @@ export async function POST(req) {
         link,
         category,
         linkUrl,
-
             }
          `,
         },
