@@ -29,7 +29,7 @@ export default function AboutSearch() {
       insights={true}
     >
       <Configure hitsPerPage={10} />
-      <div className='bg-green-600 h-[260px] flex items-end justify-center w-full'>
+      <div className='bg-green-50 h-[260px] flex items-end justify-center w-full'>
         <div className='global-margin w-full flex items-center justify-center'>
           {/* DESKTOP */}
           <SearchHeader index='aboutPage' />

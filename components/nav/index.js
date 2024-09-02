@@ -900,9 +900,9 @@ export default function Nav(props) {
                                   <input
                                     className={`${
                                       pathname === '/'
-                                        ? 'bg-green-50/50 placeholder:text-white caret-white focus:bg-[url("/search-icon.png")] focus:bg-[length:24px_24px] text-white'
-                                        : 'bg-white placeholder:text-green-600 caret-green-600 focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] text-green-600 shadow-card'
-                                    } w-[600px] h-[66px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none  p-base  focus:ring-1 focus:ring-white  placeholder:p-base-semibold`}
+                                        ? 'bg-green-50/50 placeholder:text-white caret-white focus:bg-[url("/search-icon.png")] focus:bg-[length:24px_24px] text-white focus:ring-white'
+                                        : 'bg-white placeholder:text-green-600 caret-green-600 focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] text-green-600 shadow-card focus:ring-green-600'
+                                    } w-[600px] h-[66px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none  p-base  focus:ring-1   placeholder:p-base-semibold`}
                                     placeholder={placeholder}
                                     onChange={onChange()}
                                   />
@@ -916,12 +916,16 @@ export default function Nav(props) {
                                   <button
                                     type='reset'
                                     title='Clear the search query'
-                                    className={`${
-                                      searchQuery === '' ? 'hidden' : ''
-                                    } absolute top-3.5 right-28 rounded-full p-2 hover:bg-white/50 group`}
+                                    className={`${searchQuery === '' ? 'hidden' : ''} ${
+                                      pathname === '/' ? 'hover:bg-white/50' : 'hover:bg-green-200'
+                                    } absolute top-3.5 right-28 rounded-full p-2  group`}
                                     onClick={() => setSearchQuery('')}
                                   >
-                                    <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
+                                    <XIcon
+                                      className={`${
+                                        pathname === '/' ? 'text-white' : 'text-green-600'
+                                      } h-6 w-6`}
+                                    />
                                   </button>
                                 </form>
                               </div>
