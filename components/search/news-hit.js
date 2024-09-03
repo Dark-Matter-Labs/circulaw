@@ -42,8 +42,7 @@ export default function NewsHit({ hit }) {
               </div>
             )}
             {!hit.newsImage && hit.newsOrAgenda === false && (
-              <div className='h-[130px] w-[150px] bg-green-200 rounded-cl mr-6 p-base-semibold flex items-center justify-center mb-6 sm:mb-0'>
-                placeholder
+              <div className='h-[130px] w-[150px] gradient-700 rounded-cl mr-6 p-base-semibold flex items-center justify-center mb-6 sm:mb-0'>
               </div>
             )}
             <div className='flex flex-col'>
