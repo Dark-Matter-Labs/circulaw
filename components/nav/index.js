@@ -31,6 +31,7 @@ import { useState, useEffect, useRef, Suspense } from 'react';
 import Lottie from 'react-lottie';
 import { usePathname } from 'next/navigation';
 import SearchButton from './search-button';
+import { IconFileDownload } from '@tabler/icons-react';
 
 const defaultOptions = {
   loop: true,
@@ -480,6 +481,16 @@ export default function Nav(props) {
                                             </Link>
                                           </li>
                                         ))}
+                                        <li className='p-base h-auto mt-6 py-2 last:mb-2 text-green-400 cursor-pointer items-center flex border-t border-green-600'>
+                                          <Link
+                                            href='https://www.circulaw.nl/European_green_deal.pdf'
+                                            onClick={() => setMobileMenuIsOpen(false)}
+                                            className='flex flex-row items-center justify-center h-10'
+                                          >
+                                            <IconFileDownload className='w-5 h-5 text-green-400 mr-2' />
+                                            EU Green Deal
+                                          </Link>
+                                        </li>
                                       </ul>
                                     </Disclosure.Panel>
                                   </Transition>
@@ -736,6 +747,26 @@ export default function Nav(props) {
                               </Link>
                             </div>
                           ))}
+                          <div
+                            className={`${
+                              pathname === '/'
+                                ? 'text-green-200 border-green-200'
+                                : 'text-green-400 border-green-400'
+                            } p-xs mt-4 border-t pt-3 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
+                          >
+                            <Link
+                              href='https://www.circulaw.nl/European_green_deal.pdf'
+                              id='navClick'
+                              target='_blank'
+                              onClick={() => {
+                                setEuMenuIsOpen(false);
+                                CustomEvent.trackEvent('Nav click', pathname);
+                              }}
+                              className='flex flex-row items-center justify-start'
+                            >
+                              <IconFileDownload className='h-5 w-5 mr-2' /> EU Green Deal
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </FloatingFocusManager>
