@@ -320,7 +320,7 @@ export default function InstrumentSearch() {
           </div>
           <div>
             <div className='sm:ml-12 sm:mt-10'>
-              <CustomStats />
+              <CustomStats index='Instrumenten' />
             </div>
             <Hits
               classNames={{

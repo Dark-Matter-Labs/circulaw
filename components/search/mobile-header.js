@@ -4,7 +4,6 @@ import { XIcon } from '@heroicons/react/outline';
 import { useEffect, useState } from 'react';
 
 export default function MobileHeaderSearch({ index }) {
-
   const [placeholder, setPlaceholder] = useState('Zoek naar instrumenten...');
 
   useEffect(() => {
@@ -42,12 +41,12 @@ export default function MobileHeaderSearch({ index }) {
           )}
           resetIconComponent={() => (
             <div
-                type='reset'
-                title='Clear the search query'
-                className='absolute top-3 right-24 rounded-full p-2 hover:bg-green-200 group'
-              >
-                <XIcon className='h-6 w-6 text-green-600 group-hover:text-green-900' />
-              </div>
+              type='reset'
+              title='Clear the search query'
+              className='absolute top-3 right-24 rounded-full p-2 hover:bg-green-200 group'
+            >
+              <XIcon className='h-6 w-6 text-green-600 group-hover:text-green-900' />
+            </div>
           )}
         />
       </div>
@@ -56,7 +55,9 @@ export default function MobileHeaderSearch({ index }) {
           <Link
             href='/zoeken/instrumenten'
             className={`${
-              index === 'instruments' ? 'border-b-2 border-green-600' : 'border-b-2 border-transparent'
+              index === 'instruments'
+                ? 'border-b-2 border-green-600'
+                : 'border-b-2 border-transparent'
             } p-xs-semibold text-green-600 p-2`}
           >
             Instrumenten
@@ -74,7 +75,9 @@ export default function MobileHeaderSearch({ index }) {
           <Link
             href='/zoeken/over-circulaw'
             className={`${
-              index === 'aboutPage' ? 'border-b-2 border-green-600' : 'border-b-2 border-transparent'
+              index === 'aboutPage'
+                ? 'border-b-2 border-green-600'
+                : 'border-b-2 border-transparent'
             } p-xs-semibold text-green-600 p-2`}
           >
             Over
