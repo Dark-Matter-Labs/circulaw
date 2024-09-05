@@ -9,13 +9,13 @@ export default function SearchHeader({ index }) {
 
   useEffect(() => {
     if (index === 'instruments') {
-      setPlaceholder('Zoek naar instrumenten...');
+      setPlaceholder('Zoek in instrumenten...');
     } else if (index === 'aboutPage') {
-      setPlaceholder('Zoek naar over CircuLaw...');
+      setPlaceholder('Zoek in "Over CircuLaw"...');
     } else if (index === 'euLaw') {
-      setPlaceholder('Zoek naar EU wetgeving...');
+      setPlaceholder('Zoek in EU wetgeving...');
     } else {
-      setPlaceholder('Zoek naar nieuws...');
+      setPlaceholder('Zoek in Nieuws...');
     }
   }, [index]);
 
@@ -81,7 +81,7 @@ export default function SearchHeader({ index }) {
                     : 'border-b-2 border-transparent'
                 } p-xs-semibold text-green-600 p-2`}
               >
-                Over
+                Over CircuLaw
               </Link>
               <Link
                 href='/zoeken/nieuws'
