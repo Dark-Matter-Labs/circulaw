@@ -42,7 +42,7 @@ export default function AboutSearch() {
         <NoResultsBoundary fallback={<NoResults />}>
           <div className='mb-12'>
             <div className='mt-10 sm:ml-10'>
-              <CustomStats />
+              <CustomStats index='Over CircuLaw' />
             </div>
 
             <Hits

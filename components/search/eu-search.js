@@ -46,7 +46,7 @@ export default function EUSearch() {
         <NoResultsBoundary fallback={<NoResults />}>
           <div>
             <div className='sm:ml-12 sm:mt-10 mt-6'>
-              <CustomStats />
+              <CustomStats index='EU wetgeving' />
             </div>
             <Hits
               classNames={{

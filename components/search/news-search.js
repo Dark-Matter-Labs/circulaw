@@ -45,7 +45,7 @@ export default function NewsSearch() {
         <NoResultsBoundary fallback={<NoResults />}>
           <div>
             <div className='sm:ml-12 sm:mt-10 mt-6'>
-              <CustomStats />
+              <CustomStats index='Nieuws' />
             </div>
             <Hits
               classNames={{
