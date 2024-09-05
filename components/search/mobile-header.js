@@ -25,10 +25,10 @@ export default function MobileHeaderSearch({ index }) {
           searchAsYouType={false}
           placeholder={placeholder}
           classNames={{
-            root: 'h-16 max-w-sm w-full bg-green-50 ',
-            form: 'bg-green-50 max-w-sm w-full h-[60px] rounded-cl flex-row items-center justify-between relative flex shardow-card',
+            root: 'h-16 max-w-sm w-full bg-green-50',
+            form: 'bg-green-50 max-w-sm w-full h-[60px] rounded-cl flex-row items-center justify-between relative flex shadow-card',
             input:
-              'max-w-sm shardow-card w-full h-[60px] focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-10 rounded-cl border-none bg-white-600 caret-green-600 p-base text-green-600 focus:ring-1 focus:ring-green-600 placeholder:text-green-600 placeholder:p-base-semibold',
+              'max-w-sm w-full h-[60px] focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-10 rounded-cl border-none bg-white-600 caret-green-600 p-base text-green-600 focus:ring-1 focus:ring-green-600 placeholder:text-green-600 placeholder:p-base-semibold',
             submitIcon: 'visible',
           }}
           submitIconComponent={() => (
