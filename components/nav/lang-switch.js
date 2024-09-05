@@ -71,7 +71,7 @@ export default function LangSwitch({ background }) {
       <div
         className={`${
           background === 'dark' ? 'bg-green-50 text-green-600' : 'bg-green-600 text-green-50'
-        }  ml-4 lg:ml-4 rounded-clSm block sm:hidden`}
+        }  ml-4 lg:ml-4 rounded-clSm hidden sm:block`}
       >
         <button
           className='h-full relative p-sm group z-100 flex-row items-center hidden sm:flex'
