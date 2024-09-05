@@ -557,12 +557,17 @@ export default function Nav(props) {
                               url='/contact'
                               closeMenu={setMobileMenuIsOpen}
                             />
-                            <MobileSimpleButton
-                              name='Zoeken'
-                              url='/zoeken/instrumenten'
-                              closeMenu={setMobileMenuIsOpen}
-                            />
-                            <div className='flex flex-row items-end w-full justify-end pt-4 '>
+                            <div className='flex flex-row items-start w-full justify-start pt-4'>
+                              <Link
+                                href='/zoeken/instrumenten'
+                                className='heading-xl-semibold text-green-800 flex flex-row justify-center items-center'
+                                onClick={() => setMobileMenuIsOpen(false)}
+                              >
+                               <span className='mr-2'>Zoeken{' '}</span> 
+                                <span className='bg-green-800 text-green-50 flex items-center justify-center rounded-clSm h-6 w-7'>
+                                  <SearchIcon className='h-4 w-4' />
+                                </span>
+                              </Link>
                               <LangSwitch
                                 translateOpen={props.translateOpen}
                                 setTranslateOpen={props.setTranslateOpen}
