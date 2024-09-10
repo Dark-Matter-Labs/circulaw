@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-import { client } from '@/lib/sanity';
+import { sanityFetch } from '@/lib/sanity';
 import HomePageAboutSection from '@/components/homepage/home-page-about-section';
 import HomePageEUSection from '@/components/homepage/home-page-eu-section';
 import LinkIcon from '@/components/link-icon';
@@ -9,19 +9,11 @@ import FeaturedCard from '@/components/news-page/featured-card';
 import PCHomePage from '@/components/homepage/product-chain-homepage';
 import { HOME_PAGE_QUERY } from '@/lib/queries';
 
-async function getData() {
-  const res = await client.fetch(HOME_PAGE_QUERY, {
-    next: { tags: ['siteConfig', 'transitionAgenda', 'thema', 'newsItem'] },
-  });
-
-  if (!res) {
-    throw new Error('failed to fetch data');
-  }
-  return res;
-}
-
 export default async function Page() {
-  const data = await getData();
+  const data = await sanityFetch({
+    query: HOME_PAGE_QUERY,
+    tags: ['siteConfig', 'transitionAgenda', 'thema', 'newsItem'],
+  });
   return (
     <>
       <div className='bg-gray-100 py-12 sm:pb-24 sm:pt-18 -z-50' name='thema'>
