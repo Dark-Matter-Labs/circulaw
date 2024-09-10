@@ -13,7 +13,7 @@ export default async function NewsOverviewPage() {
   });
   const nonFeaturedNewsItems = await sanityFetch({
     query: NON_FEATURED_NEWS_ITEMS_QUERY,
-    tags: ['newsItems'],
+    tags: ['newsItem'],
   });
   return (
     <NewsOverview
