@@ -1,5 +1,5 @@
 import NewsDetailPageHeader from '@/components/news-page/news-detail-page-header';
-import { client } from '@/lib/sanity';
+import { client, sanityFetch } from '@/lib/sanity';
 import NewsDetailPageBody from '@/components/news-page/news-detail-page-body';
 import { NEWS_SLUGS_QUERY, NEWS_DETAIL_PAGE_QUERY, NEWS_METADATA_QUERY } from '@/lib/queries';
 
@@ -39,21 +39,8 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
-async function getNewsPageData(params) {
-  const slug = params;
-  const newsPageData = await client.fetch(
-    NEWS_DETAIL_PAGE_QUERY,
-    { slug },
-    { next: { tags: ['newsItem'] } },
-  );
-  if (!newsPageData) {
-    throw new Error('could not get news detail data');
-  }
-  return newsPageData;
-}
-
 export default async function NewsDetailPage({ params }) {
-  const newsPageContent = await getNewsPageData(params.slug);
+  const newsPageContent = await sanityFetch({query: NEWS_DETAIL_PAGE_QUERY , qParams: params, tags: ['newsItem']});
   return (
     <>
       <NewsDetailPageHeader data={newsPageContent} />
