@@ -1,5 +1,5 @@
 import { THEME_PATHS_QUERY, CATEGORIE_PAGE_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
-import { client } from '@/lib/sanity';
+import { client, sanityFetch } from '@/lib/sanity';
 import ExpertiseLayout from '@/components/layouts/expertise-layout';
 
 export async function generateMetadata({ params }, parent) {
@@ -41,21 +41,12 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
-async function getCategoryData(params) {
-  const thema = params;
-  const categorieData = await client.fetch(
-    CATEGORIE_PAGE_QUERY,
-    { thema },
-    { next: { tags: ['instrument'] } },
-  );
-  if (!categorieData) {
-    throw new Error('could not get categorie data');
-  }
-  return categorieData;
-}
-
 export default async function CategoriePage({ params }) {
-  const categorieContent = await getCategoryData(params.thema);
+  const categorieContent = await sanityFetch({
+    query: CATEGORIE_PAGE_QUERY,
+    qParams: params,
+    tags: ['instrument'],
+  });
   return (
     <ExpertiseLayout
       thema={params?.thema}

@@ -1,5 +1,5 @@
 import { THEME_PATHS_QUERY, GOV_LEVEL_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
-import { client } from '@/lib/sanity';
+import { client, sanityFetch } from '@/lib/sanity';
 import GovLevelLayout from '@/components/layouts/gov-level-layout';
 import placeholderImage from '@/public/gov-level-placeholder-mobile.png';
 
@@ -42,22 +42,12 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
-async function getGovLeveldData(params) {
-  const thema = params;
-  const govLevelData = await client.fetch(
-    GOV_LEVEL_QUERY,
-    { thema },
-    { next: { tags: ['instrument'] } },
-  );
-  if (!govLevelData) {
-    throw new Error('could not get gov level data');
-  }
-  return govLevelData;
-}
-
 export default async function GovernmentLevelPage({ params }) {
-  const govLevelContent = await getGovLeveldData(params.thema);
-
+  const govLevelContent = await sanityFetch({
+    query: GOV_LEVEL_QUERY,
+    qParams: params,
+    tags: ['instrument'],
+  });
   if (params.thema === 'matrasketen') {
     return (
       <GovLevelLayout

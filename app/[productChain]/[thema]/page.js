@@ -1,4 +1,4 @@
-import { client } from '@/lib/sanity';
+import { client, sanityFetch } from '@/lib/sanity';
 import { THEME_PATHS_QUERY, THEME_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
 import SimpleThemaLayout from '@/components/layouts/simple-thema-layout';
 import ThemeLayout from '@/components/layouts/theme-index-layout';
@@ -42,21 +42,12 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
-async function getThemeData(params) {
-  const thema = params;
-  const themaData = await client.fetch(
-    THEME_QUERY,
-    { thema },
-    { next: { tags: ['thema', 'simpleThema', 'instrument'] } },
-  );
-  if (!themaData) {
-    throw new Error('could not get theme data');
-  }
-  return themaData;
-}
-
 export default async function ThemePage({ params }) {
-  const themeData = await getThemeData(params.thema);
+  const themeData = await sanityFetch({
+    query: THEME_QUERY,
+    qParams: params,
+    tags: ['thema', 'simpleThema', 'instrument'],
+  });
   if (themeData.thema._type === 'simpleThema') {
     return (
       <SimpleThemaLayout
