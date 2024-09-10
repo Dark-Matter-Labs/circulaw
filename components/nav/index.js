@@ -563,7 +563,7 @@ export default function Nav(props) {
                                 className='heading-xl-semibold text-green-800 flex flex-row justify-center items-center'
                                 onClick={() => setMobileMenuIsOpen(false)}
                               >
-                               <span className='mr-2'>Zoeken{' '}</span> 
+                                <span className='mr-2'>Zoeken </span>
                                 <span className='bg-green-800 text-green-50 flex items-center justify-center rounded-clSm h-6 w-7'>
                                   <SearchIcon className='h-4 w-4' />
                                 </span>

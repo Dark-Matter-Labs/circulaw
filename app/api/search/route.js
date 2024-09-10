@@ -142,7 +142,7 @@ export async function POST(req) {
         newsOrAgenda,
         'newsImage': newsImage.asset,
         'slug': slug.current,
-        link,
+        'link',
         category,
         linkUrl,
             }
