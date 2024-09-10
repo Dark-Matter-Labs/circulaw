@@ -34,7 +34,7 @@ export async function generateMetadata({ params }, parent) {
 
 export async function generateStaticParams() {
   const newsPages = await client.fetch(NEWS_SLUGS_QUERY, { next: { tags: ['newsItem'] } });
-  return newsPages.map((newsPage) => ({ slug: newsPage.slug }));
+  return newsPages.map((newsPage) => ({ slug: newsPage}));
 }
 
 export const dynamicParams = false;
