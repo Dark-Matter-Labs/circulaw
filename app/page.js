@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/outline';
-
 import { client } from '@/lib/sanity';
 import HomePageAboutSection from '@/components/homepage/home-page-about-section';
 import HomePageEUSection from '@/components/homepage/home-page-eu-section';
@@ -12,7 +11,7 @@ import { HOME_PAGE_QUERY } from '@/lib/queries';
 
 async function getData() {
   const res = await client.fetch(HOME_PAGE_QUERY, {
-    next: { tags: ['siteConfig', 'transitionAgenda', 'newsPage', 'thema', 'newsPage'] },
+    next: { tags: ['siteConfig', 'transitionAgenda', 'thema', 'newsItem'] },
   });
 
   if (!res) {
@@ -68,7 +67,7 @@ export default async function Page() {
             </h3>
 
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-6 py-10 overflow-hidden'>
-              {data.newsItems.featured.map((item, id) => (
+              {data.newsItems.map((item, id) => (
                 <div
                   className={`${
                     item.image
@@ -77,8 +76,8 @@ export default async function Page() {
                   }`}
                   key={id}
                 >
-                  {item._type === 'agendaItem' && <FeaturedAgendaCard data={item} />}
-                  {item._type === 'newsCard' && <FeaturedCard data={item} />}
+                  {item.newsOrAgenda === true && <FeaturedAgendaCard data={item} />}
+                  {item.newsOrAgenda === false && <FeaturedCard data={item} />}
                 </div>
               ))}
             </div>
@@ -92,7 +91,6 @@ export default async function Page() {
               </Link>
             </div>
           </div>
-
           <HomePageAboutSection aboutSection={data.aboutSection} />
         </div>
       </div>

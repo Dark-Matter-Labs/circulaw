@@ -52,21 +52,39 @@ export default function LangSwitch({ background }) {
           </p>
         </div>
       </div>
-      <div
-        className={`${
-          background === 'dark' ? 'bg-green-50 text-green-600' : 'bg-green-600 text-green-50'
-        }  ml-4 lg:ml-4 rounded-clSm`}
-      >
+      <div className=''>
         <button
-          className='h-full relative p-sm group z-100 flex flex-row items-center'
+          className='h-full relative p-sm group z-100 flex-row items-center justify-center text-green-50 ml-5 lg:ml-4 rounded-clSm flex sm:hidden'
           onClick={() => {
             setTranslateOpen(!translateOpen);
           }}
+          aria-label='Open google translate for CircuLaw'
+        >
+          <span className='heading-xl-semibold text-green-800 mr-2'>Vertaling</span>
+          <span className='flex items-center justify-center rounded-clSm h-6 w-7 bg-green-800'>
+            <GlobeAltIcon className='h-4 w-4' />
+          </span>
+        </button>
+        
+      </div>
+
+      <div
+        className={`${
+          background === 'dark' ? 'bg-green-50 text-green-600' : 'bg-green-600 text-green-50'
+        }  ml-4 lg:ml-4 rounded-clSm hidden sm:block`}
+      >
+        <button
+          className='h-full relative p-sm group z-100 flex-row items-center hidden sm:flex'
+          onClick={() => {
+            setTranslateOpen(!translateOpen);
+          }}
+          aria-label='Open google translate for CircuLaw'
         >
           <span className='flex items-center justify-center rounded-clSm h-6 w-7'>
             <GlobeAltIcon className='h-4 w-4' />
           </span>
         </button>
+        
       </div>
     </>
   );

@@ -3,14 +3,14 @@ import Image from 'next/image';
 
 import { urlFor } from '@/lib/sanity';
 
-export default function ImageComponent({ image }) {
+export default function ImageComponent({ image, caption }) {
   const { width, height } = getImageDimensions(image);
   return (
     <div className='relative'>
       <Image
-        className='w-full object-contain'
+        className='w-full object-cover'
         src={urlFor(image).auto('format').fit('max').url()}
-        alt={image.caption || 'No alt-tag provided'}
+        alt={caption || 'No alt-tag provided'}
         width={900}
         height={900 * (height / width)}
         sizes='

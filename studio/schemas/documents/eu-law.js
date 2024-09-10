@@ -65,6 +65,13 @@ export default {
       group: 'summary',
     },
     {
+      name: 'searchImage',
+      type: 'image',
+      title: 'Search Image',
+      group: 'summary',
+      description: '',
+    },
+    {
       name: 'introImageAlt',
       type: 'string',
       title: 'Intro Image Alt Text',

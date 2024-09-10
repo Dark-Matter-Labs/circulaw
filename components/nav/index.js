@@ -30,7 +30,8 @@ import Link from 'next/link';
 import { useState, useEffect, useRef, Suspense } from 'react';
 import Lottie from 'react-lottie';
 import { usePathname } from 'next/navigation';
-import SearchButton from './searchButton';
+import SearchButton from './search-button';
+import { IconFileDownload } from '@tabler/icons-react';
 
 const defaultOptions = {
   loop: true,
@@ -41,7 +42,6 @@ const defaultOptions = {
   },
 };
 
-// TODO: remove case for en page as it no longer exists and has been redirected.
 export default function Nav(props) {
   const pathname = usePathname();
   const { CustomEvent } = usePiwikPro();
@@ -60,6 +60,19 @@ export default function Nav(props) {
 
   const [searchIndex, setSearchIndex] = useState('instruments');
   const [searchQuery, setSearchQuery] = useState('');
+  const [placeholder, setPlaceholder] = useState('instruments');
+
+  useEffect(() => {
+    if (searchIndex === 'instruments') {
+      setPlaceholder('Zoek naar instrumenten...');
+    } else if (searchIndex === 'aboutPage') {
+      setPlaceholder('Zoek naar over CircuLaw');
+    } else if (searchIndex === 'euLaw') {
+      setPlaceholder('Zoek naar EU wetgeving');
+    } else {
+      setPlaceholder('Zoek naar nieuws');
+    }
+  }, [searchIndex]);
 
   const onChange = () => (e) => {
     const value = e.target.value;
@@ -305,7 +318,14 @@ export default function Nav(props) {
                   {/* LOGO MOBILE HP */}
                   <div className='block lgNav:hidden'>
                     <Link href='/'>
-                      <Image height={24} width={100} src={logo} alt='CircuLaw logo' quality={100} />
+                      <Image
+                        height={24}
+                        width={100}
+                        src={logo}
+                        alt='CircuLaw logo'
+                        quality={100}
+                        priority={true}
+                      />
                     </Link>
                   </div>
                 </>
@@ -461,6 +481,16 @@ export default function Nav(props) {
                                             </Link>
                                           </li>
                                         ))}
+                                        <li className='p-base h-auto mt-6 py-2 last:mb-2 text-green-400 cursor-pointer items-center flex border-t border-green-600'>
+                                          <Link
+                                            href='https://www.circulaw.nl/European_green_deal.pdf'
+                                            onClick={() => setMobileMenuIsOpen(false)}
+                                            className='flex flex-row items-center justify-center h-10'
+                                          >
+                                            <IconFileDownload className='w-5 h-5 text-green-400 mr-2' />
+                                            EU Green Deal
+                                          </Link>
+                                        </li>
                                       </ul>
                                     </Disclosure.Panel>
                                   </Transition>
@@ -527,12 +557,17 @@ export default function Nav(props) {
                               url='/contact'
                               closeMenu={setMobileMenuIsOpen}
                             />
-                            <MobileSimpleButton
-                              name='Zoeken'
-                              url='/zoeken/instrumenten'
-                              closeMenu={setMobileMenuIsOpen}
-                            />
-                            <div className='flex flex-row items-end w-full justify-end pt-4 '>
+                            <div className='flex flex-row items-start w-full justify-start pt-4'>
+                              <Link
+                                href='/zoeken/instrumenten'
+                                className='heading-xl-semibold text-green-800 flex flex-row justify-center items-center'
+                                onClick={() => setMobileMenuIsOpen(false)}
+                              >
+                               <span className='mr-2'>Zoeken{' '}</span> 
+                                <span className='bg-green-800 text-green-50 flex items-center justify-center rounded-clSm h-6 w-7'>
+                                  <SearchIcon className='h-4 w-4' />
+                                </span>
+                              </Link>
                               <LangSwitch
                                 translateOpen={props.translateOpen}
                                 setTranslateOpen={props.setTranslateOpen}
@@ -678,7 +713,6 @@ export default function Nav(props) {
                           style={{ ...euMenuTransitionStyles }}
                           onMouseLeave={() => setEuMenuIsOpen(false)}
                         >
-                          {/* Remove slice once news section is separate */}
                           <div
                             className={`${
                               pathname === '/'
@@ -718,6 +752,26 @@ export default function Nav(props) {
                               </Link>
                             </div>
                           ))}
+                          <div
+                            className={`${
+                              pathname === '/'
+                                ? 'text-green-200 border-green-200'
+                                : 'text-green-400 border-green-400'
+                            } p-xs mt-4 border-t pt-3 hover:underline active:p-xs-semibold active:no-underline cursor-pointer`}
+                          >
+                            <Link
+                              href='https://www.circulaw.nl/European_green_deal.pdf'
+                              id='navClick'
+                              target='_blank'
+                              onClick={() => {
+                                setEuMenuIsOpen(false);
+                                CustomEvent.trackEvent('Nav click', pathname);
+                              }}
+                              className='flex flex-row items-center justify-start'
+                            >
+                              <IconFileDownload className='h-5 w-5 mr-2' /> EU Green Deal
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </FloatingFocusManager>
@@ -826,6 +880,7 @@ export default function Nav(props) {
                     className='h-full relative p-sm group z-100 flex flex-row items-center'
                     ref={searchMenuRef.setReference}
                     {...searchMenuReferencProps()}
+                    aria-label='Open search CircuLaw feature'
                   >
                     <span
                       className={`${
@@ -869,59 +924,6 @@ export default function Nav(props) {
                           >
                             {/* MAKE INTO A COMPONENT */}
                             <div className='w-full h-full global-margin flex flex-col items-center justify-end pb-10'>
-                              <div className='mb-4'>
-                                <div className='flex flex-row justify-center w-[600px] gap-x-1.5'>
-                                  <button
-                                    onClick={() => setSearchIndex('instruments')}
-                                    className={`${
-                                      pathname === '/'
-                                        ? 'bg-green-50 text-green-800'
-                                        : 'bg-white text-green-800 shadow-card'
-                                    } flex-row px-5 py-1.5 w-full  rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
-                                  >
-                                    {searchIndex === 'instruments' ? (
-                                      <div className='bg-green-500 w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                                        <div className='bg-green-500 border-white border-2 h-3 w-3 rounded-full'></div>
-                                      </div>
-                                    ) : (
-                                      <div className='bg-black w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                                        <div className='bg-white h-3 w-3 rounded-full'></div>
-                                      </div>
-                                    )}
-
-                                    <div className='flex flex-col items-start justify-start'>
-                                      Instrumenten
-                                      <span className='p-xs'>
-                                        Zoeken binnen &apos;instrumenten&apos;
-                                      </span>
-                                    </div>
-                                  </button>
-                                  <button
-                                    onClick={() => setSearchIndex('aboutPage')}
-                                    className={`${
-                                      pathname === '/'
-                                        ? 'bg-white text-green-800'
-                                        : 'bg-white text-green-800 shadow-card'
-                                    } flex-row px-5 py-1.5 w-full rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]`}
-                                  >
-                                    {searchIndex === 'aboutPage' ? (
-                                      <div className='bg-green-500 w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                                        <div className='bg-green-500 border-white border-2 h-3 w-3 rounded-full'></div>
-                                      </div>
-                                    ) : (
-                                      <div className='bg-black w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                                        <div className='bg-white h-3 w-3 rounded-full'></div>
-                                      </div>
-                                    )}
-                                    <div className='flex flex-col items-start justify-start'>
-                                      Over Circulaw
-                                      <span className='p-xs'>
-                                        Zoeken binnen &apos;Over Circulaw&apos;
-                                      </span>
-                                    </div>
-                                  </button>
-                                </div>
-                              </div>
                               <div className='h-16 w-[600px]'>
                                 <form
                                   className={`${
@@ -934,14 +936,10 @@ export default function Nav(props) {
                                   <input
                                     className={`${
                                       pathname === '/'
-                                        ? 'bg-green-50/50 placeholder:text-white caret-white focus:bg-[url("/search-icon.png")] text-white'
-                                        : 'bg-white placeholder:text-green-800 caret-green-800 focus:bg-[url("/search-icon-dark.png")] text-green-800'
-                                    } w-[600px] h-[66px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none  p-base  focus:ring-1 focus:ring-white  placeholder:p-base-semibold`}
-                                    placeholder={
-                                      searchIndex === 'instruments'
-                                        ? 'Zoek naar instrumenten...'
-                                        : 'Zoek naar over CircuLaw...'
-                                    }
+                                        ? 'bg-green-50/50 placeholder:text-white caret-white focus:bg-[url("/search-icon.png")] focus:bg-[length:24px_24px] text-white focus:ring-white'
+                                        : 'bg-white placeholder:text-green-600 caret-green-600 focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] text-green-600 shadow-card focus:ring-green-600'
+                                    } w-[600px] h-[66px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none  p-base  focus:ring-1   placeholder:p-base-semibold`}
+                                    placeholder={placeholder}
                                     onChange={onChange()}
                                   />
                                   <Suspense>
@@ -954,14 +952,110 @@ export default function Nav(props) {
                                   <button
                                     type='reset'
                                     title='Clear the search query'
-                                    className={`${
-                                      searchQuery === '' ? 'hidden' : ''
-                                    } absolute top-3.5 right-28 rounded-full p-2 hover:bg-white/50 group`}
+                                    className={`${searchQuery === '' ? 'hidden' : ''} ${
+                                      pathname === '/' ? 'hover:bg-white/50' : 'hover:bg-green-200'
+                                    } absolute top-3.5 right-28 rounded-full p-2  group`}
                                     onClick={() => setSearchQuery('')}
                                   >
-                                    <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
+                                    <XIcon
+                                      className={`${
+                                        pathname === '/' ? 'text-white' : 'text-green-600'
+                                      } h-6 w-6`}
+                                    />
                                   </button>
                                 </form>
+                              </div>
+
+                              <div className='mt-4'>
+                                <div className='flex flex-row justify-center w-[600px] gap-x-2.5'>
+                                  {pathname === '/' ? (
+                                    <>
+                                      <button
+                                        onClick={() => setSearchIndex('instruments')}
+                                        className={`${
+                                          searchIndex === 'instruments'
+                                            ? 'border-b-2 border-white'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-white p-2`}
+                                      >
+                                        Instrumenten
+                                      </button>
+                                      <button
+                                        onClick={() => setSearchIndex('euLaw')}
+                                        className={`${
+                                          searchIndex === 'euLaw'
+                                            ? 'border-b-2 border-white box-content'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-white p-2`}
+                                      >
+                                        EU wetgeving
+                                      </button>
+                                      <button
+                                        onClick={() => setSearchIndex('aboutPage')}
+                                        className={`${
+                                          searchIndex === 'aboutPage'
+                                            ? 'border-b-2 border-white'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-white p-2`}
+                                      >
+                                        Over
+                                      </button>
+                                      <button
+                                        onClick={() => setSearchIndex('newsItems')}
+                                        className={`${
+                                          searchIndex === 'newsItems'
+                                            ? 'border-b-2 border-white'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-white p-2`}
+                                      >
+                                        Nieuws
+                                      </button>
+                                    </>
+                                  ) : (
+                                    <>
+                                      <button
+                                        onClick={() => setSearchIndex('instruments')}
+                                        className={`${
+                                          searchIndex === 'instruments'
+                                            ? 'border-b-2 border-green-600'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-green-600 p-2`}
+                                      >
+                                        Instrumenten
+                                      </button>
+                                      <button
+                                        onClick={() => setSearchIndex('euLaw')}
+                                        className={`${
+                                          searchIndex === 'euLaw'
+                                            ? 'border-b-2 border-green-600'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-green-600 p-2`}
+                                      >
+                                        EU wetgeving
+                                      </button>
+                                      <button
+                                        onClick={() => setSearchIndex('aboutPage')}
+                                        className={`${
+                                          searchIndex === 'aboutPage'
+                                            ? 'border-b-2 border-green-600'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-green-600 p-2`}
+                                      >
+                                        Over
+                                      </button>
+                                      <button
+                                        onClick={() => setSearchIndex('newsItems')}
+                                        className={`${
+                                          searchIndex === 'newsItems'
+                                            ? 'border-b-2 border-green-600'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-green-600 p-2`}
+                                      >
+                                        Nieuws
+                                      </button>
+                                    </>
+                                  )}
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -992,7 +1086,16 @@ export default function Nav(props) {
         </nav>
       </div>
       {pathname === '/' && (
-        <div className='-mt-[9rem] w-full bg-cover bg-header'>
+        <div className='-mt-[9rem] w-full bg-green-600 relative'>
+          <Image
+            src='/home-page/header-image.png'
+            alt='homepage decoration'
+            fill
+            sizes='100vw'
+            className='z-10 object-cover'
+            priority={true}
+            quality={100}
+          />
           <HomepageHeader homePageHeader={props.homePageHeader} />
         </div>
       )}

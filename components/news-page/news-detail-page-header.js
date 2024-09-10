@@ -58,7 +58,7 @@ export default function NewsDetailPageHeader({ data }) {
                 cardColour === 'bg-green-300' ? 'text-green-800' : 'text-gray-100'
               } heading-2xl-semibold sm:heading-5xl-semibold `}
             >
-              {data?.newsTitle}
+              {data?.title}
             </h1>
             {data?.newsDate && (
               <div

@@ -36,6 +36,7 @@ export async function generateMetadata({ params }, parent) {
 
 export async function generateStaticParams() {
   const slugs = await client.fetch(INSTRUMENT_PATHS_QUERY, { next: { tags: ['instrument'] } });
+
   return slugs.map((slug) => ({
     thema: slug.thema,
     productChain: slug.productChain,

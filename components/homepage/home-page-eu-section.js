@@ -24,6 +24,7 @@ export default function HomePageEUSection({ euData }) {
                 alt='image for wat circulaw'
                 className='rounded-cl'
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
+                loading='lazy'
               />{' '}
             </div>
           </div>

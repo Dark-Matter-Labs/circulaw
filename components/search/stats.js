@@ -1,7 +1,7 @@
 import { useStats, useInstantSearch } from 'react-instantsearch';
 import { useEffect, useState } from 'react';
 
-export default function CustomStats() {
+export default function CustomStats({ index }) {
   const { nbHits, query } = useStats();
   const { uiState } = useInstantSearch();
 
@@ -54,7 +54,8 @@ export default function CustomStats() {
         !extraContent && (
           <div className='heading-2xl sm:heading-3xl'>
             {nbHits} resultaten gevonden voor:{' '}
-            <span className='font-semibold'>&apos;{query}&apos;</span>.
+            <span className='font-semibold'>&apos;{query}&apos;</span>
+            <span> in {index}</span>.
           </div>
         )}
 

@@ -4,7 +4,7 @@ import { Link as ScrollLink } from 'react-scroll';
 
 export default function HomepageHeader() {
   return (
-    <main className='pb-16 pt-56'>
+    <main className='pb-16 pt-56 z-10 relative'>
       <div className='global-margin'>
         <div className='text-center max-w-4xl mx-auto'>
           <div className='text-left sm:text-center max-w-xs m-auto sm:max-w-4xl sm:block text-gray-200'>

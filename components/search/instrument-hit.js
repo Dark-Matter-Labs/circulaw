@@ -197,11 +197,26 @@ export const InstrumentHit = ({ hit }) => {
             <div className='block mt-2 '>
               <div className=' mb-2'>
                 <h3 className='heading-2xl-semibold max-w-[650px] text-gray-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
-                  {hit.titel}{' '}
+                  <Highlight
+                    attribute='titel'
+                    hit={hit}
+                    classNames={{
+                      highlighted: 'text-green-300 bg-green-300/20',
+                    }}
+                  />
                 </h3>
               </div>
               <div className='block  newlineDisplay p-base text-gray-800 mt-2 pb-2'>
-                <p className='p-base max-w-[650px]'>{hit.subtitel}</p>
+                <p className='p-base max-w-[650px]'>
+                  {' '}
+                  <Highlight
+                    attribute='subtitel'
+                    hit={hit}
+                    classNames={{
+                      highlighted: 'text-green-300 bg-green-300/20',
+                    }}
+                  />
+                </p>
               </div>
               <div className='flex flex-col sm:hidden justify-center mb-4'>
                 <div className='flex flex-row justify-between h-auto py-2'>

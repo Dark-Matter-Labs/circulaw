@@ -1,12 +1,11 @@
 'use client';
 import algoliasearch from 'algoliasearch';
-import { Hits, RefinementList, SearchBox, Configure } from 'react-instantsearch';
+import { Hits, RefinementList, Configure } from 'react-instantsearch';
 import { InstrumentHit } from '@/components/search/instrument-hit';
 import CustomStats from './stats';
 import Pagination from '@/components/search/pagination';
 import CustomClearRefinements from '@/components/search/clear-refinements';
 import { XIcon, AdjustmentsIcon } from '@heroicons/react/outline';
-import Link from 'next/link';
 import MobileHeaderSearch from './mobile-header';
 import { useState, Fragment } from 'react';
 import { Transition, Dialog } from '@headlessui/react';
@@ -14,6 +13,7 @@ import RLadderTooltip from '../tooltips/r-ladder-tooltip';
 import NoResults from './no-results';
 import NoResultsBoundary from './no-results-boundary';
 import { InstantSearchNext } from 'react-instantsearch-nextjs';
+import SearchHeader from './search-header';
 
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
@@ -205,72 +205,10 @@ export default function InstrumentSearch() {
       </div>
 
       <Configure hitsPerPage={10} />
-      <div className='bg-green-600 h-[260px] flex items-end justify-center w-full'>
+      <div className='bg-green-50 h-[260px] flex items-end justify-center w-full'>
         <div className='global-margin w-full flex items-center justify-center'>
           {/* Desktop */}
-          <div className='hidden sm:flex flex-col items-center justify-center gap-y-6'>
-            <div className='w-full'>
-              <div className='w-full h-full flex flex-col items-center justify-end pb-10'>
-                <div className='mb-4'>
-                  <div className='flex flex-row justify-center w-[600px] gap-x-1.5'>
-                    <Link
-                      href='/zoeken/instrumenten'
-                      className='flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]'
-                    >
-                      <div className='bg-green-500 w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                        <div className='bg-green-500 border-white border-2 h-3 w-3 rounded-full'></div>
-                      </div>
-                      <div className='flex flex-col items-start justify-start'>
-                        Instrumenten
-                        <span className='p-xs'>Zoeken binnen &apos;instrumenten&apos;</span>
-                      </div>
-                    </Link>
-                    <Link
-                      href='/zoeken/over-circulaw'
-                      // onClick={() => setSearchIndex('aboutPage')}
-                      className='flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[72px]'
-                    >
-                      <div className='bg-black w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                        <div className='bg-white h-3 w-3 rounded-full'></div>
-                      </div>
-                      <div className='flex flex-col items-start justify-start'>
-                        Over Circulaw
-                        <span className='p-xs'>Zoeken binnen &apos;Over Circulaw&apos;</span>
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-                <SearchBox
-                  searchAsYouType={false}
-                  placeholder='Zoek naar instrumenten...'
-                  classNames={{
-                    root: 'h-16 w-[600px] bg-green-600',
-                    form: 'bg-green-600 w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex',
-                    input:
-                      'w-[600px] h-[66px] focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold',
-                    submitIcon: 'visible',
-                  }}
-                  submitIconComponent={() => (
-                    <div
-                      type='submit'
-                      className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl hover:bg-green-200 hover:border-green-200'
-                    >
-                      Zoeken
-                    </div>
-                  )}
-                  resetIconComponent={() => (
-                    <div
-                      type='reset'
-                      title='Clear the search query'
-                      className='absolute top-3.5 right-28 rounded-full p-2 hover:bg-white/50 group'
-                    >
-                      <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
-                    </div>
-                  )}
-                />
-              </div>
-            </div>
-          </div>
+          <SearchHeader index='instruments' />
           {/* Mobile */}
           <MobileHeaderSearch index='instruments' />
 
@@ -382,7 +320,7 @@ export default function InstrumentSearch() {
           </div>
           <div>
             <div className='sm:ml-12 sm:mt-10'>
-              <CustomStats />
+              <CustomStats index='Instrumenten' />
             </div>
             <Hits
               classNames={{

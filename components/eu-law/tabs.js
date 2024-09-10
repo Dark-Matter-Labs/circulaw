@@ -1,9 +1,17 @@
 'use client';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function Tabs({ summaryData }) {
-  const [selectedTab, setSelectedTab] = useState('overzicht');
+export default function Tabs({ summaryData, initialTab }) {
+  const [selectedTab, setSelectedTab] = useState();
+
+  useEffect(() => {
+    if (initialTab !== undefined) {
+      setSelectedTab(initialTab);
+    } else {
+      setSelectedTab('overzicht');
+    }
+  }, [initialTab]);
 
   return (
     <div className='sticky top-16 lgNav:top-24 shadow-lg z-50'>
