@@ -1,4 +1,4 @@
-import { client } from '@/lib/sanity';
+import { sanityFetch } from '@/lib/sanity';
 import { FAQ_PAGE_QUERY } from '@/lib/queries';
 import FAQPageComponent from '@/components/faq-page';
 
@@ -6,16 +6,8 @@ export const metadata = {
   title: 'Vraag en antwoord - CircuLaw',
 };
 
-async function getFAQData() {
-  const FAQData = await client.fetch(FAQ_PAGE_QUERY, { next: { tags: ['FAQpage'] } });
-
-  if (!FAQData) {
-    throw new Error('could not get FAQData');
-  }
-  return FAQData;
-}
 
 export default async function VraagAndAntwoordPage() {
-  const FAWContent = await getFAQData();
-  return <FAQPageComponent data={FAWContent} />;
+  const FAQContent = await sanityFetch({query: FAQ_PAGE_QUERY,  tags: ['FAQpage']})
+  return <FAQPageComponent data={FAQContent} />;
 }
