@@ -9,8 +9,11 @@ export default function PCHomePage({ pcData }) {
       {' '}
       <ul className='hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-4 gap-x-2 w-full'>
         {pcData?.map((chain, id) => (
-          <Link href={`/${chain.slug}`} key={id}>
-            <li className='group h-[400px] w-auto rounded-cl flex flex-col justify-between relative overflow-hidden max-w-[250px]'>
+          <li
+            key={id}
+            className='group h-[400px] w-auto rounded-cl flex flex-col justify-between relative overflow-hidden max-w-[250px]'
+          >
+            <Link href={`/${chain.slug}`}>
               <Image
                 src={urlFor(chain?.image).url()}
                 alt={chain.alt}
@@ -46,14 +49,14 @@ export default function PCHomePage({ pcData }) {
                   </div>
                 </div>
               </div>
-            </li>
-          </Link>
+            </Link>
+          </li>
         ))}
       </ul>
       <ul className='sm:hidden flex flex-col w-full'>
         {pcData.map((chain, id) => (
-          <Link key={id} href={`/${chain.slug}`} className='block sm:hidden'>
-            <li className='h-32 w-full rounded-cl bg-green-800 shadow mb-6'>
+          <li key={id} className='h-32 w-full rounded-cl bg-green-800 shadow mb-6 block sm:hidden'>
+            <Link href={`/${chain.slug}`} className='w-full h-full'>
               <div className='flex items-center justify-between'>
                 <div className='h-32 w-28 flex items-center justify-center relative'>
                   <Image
@@ -81,8 +84,8 @@ export default function PCHomePage({ pcData }) {
                   </div>
                 </div>
               </div>
-            </li>
-          </Link>
+            </Link>
+          </li>
         ))}
       </ul>
     </>

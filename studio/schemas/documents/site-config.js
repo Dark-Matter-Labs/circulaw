@@ -7,10 +7,6 @@ export default {
   title: 'Home Page',
   groups: [
     {
-      name: 'navigation',
-      title: 'Navigation',
-    },
-    {
       name: 'aboutPage',
       title: 'About Page',
     },
@@ -34,22 +30,6 @@ export default {
       type: 'url',
       description: 'The main site url. Used to create canonical url',
       group: 'siteSettings',
-    },
-    {
-      title: 'Over CircuLaw',
-      name: 'overCirculaw',
-      description: 'Select menu for about navigation',
-      type: 'reference',
-      to: { type: 'navigation' },
-      group: 'navigation',
-    },
-    {
-      title: 'Vraag & antwoord',
-      name: 'vraagAntwoord',
-      description: 'Select menu for FAQ navigation',
-      type: 'reference',
-      to: { type: 'navigation' },
-      group: 'navigation',
     },
     {
       title: 'About Section Title',

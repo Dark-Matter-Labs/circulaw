@@ -13,7 +13,7 @@ export async function getURLS() {
         'thema',
         'simpleThema',
         'transitionAgenda',
-        'newsPage',
+        'newsItem',
       ],
     },
   });

@@ -26,6 +26,11 @@ export default function ThemaCard({ themaCards }) {
                       priority={true}
                     />
                   )}
+                  {thema.new === true && (
+                    <div className='absolute top-12 -right-24 bg-green-400 text-white origin-center rotate-45 p-xs w-full text-center uppercase'>
+                      Nieuw
+                    </div>
+                  )}
                 </div>
                 <div className='group flex flex-col w-full h-full px-6 py-4 bg-green-600'>
                   <h3 className='heading-2xl-semibold text-gray-100 pointer-events-none hidden sm:inline'>
@@ -75,6 +80,11 @@ export default function ThemaCard({ themaCards }) {
                     fill
                     className='rounded-l-cl object-cover'
                   />
+                  {thema.new === true && (
+                    <div className='p-2xs w-full bg-green-400 absolute bottom-0 right-0 text-center text-white pb-0.5 rounded-bl-cl uppercase'>
+                      Nieuw
+                    </div>
+                  )}
                 </div>
                 <div className='text-gray-100 pl-4'>
                   <h3 className='heading-2xl-semibold'>{thema.themaName}</h3>

@@ -12,7 +12,7 @@ export async function generateMetadata({ params }, parent) {
     THEME_METADATA_QUERY,
     { thema },
     {
-      next: { tags: ['thema', 'simpleThema'] },
+      next: { tags: ['thema', 'simpleThema', 'instrument'] },
     },
   );
   // optionally access and extend (rather than replace) parent metadata
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }, parent) {
 
 export async function generateStaticParams() {
   const themas = await client.fetch(THEME_PATHS_QUERY, {
-    next: { tags: ['thema', 'simpleThema'] },
+    next: { tags: ['thema', 'simpleThema', 'instrument'] },
   });
   return themas.map((thema) => ({ thema: thema.thema, productChain: thema.productChain }));
 }
@@ -47,7 +47,7 @@ async function getThemeData(params) {
   const themaData = await client.fetch(
     THEME_QUERY,
     { thema },
-    { next: { tags: ['thema', 'simpleThema'] } },
+    { next: { tags: ['thema', 'simpleThema', 'instrument'] } },
   );
   if (!themaData) {
     throw new Error('could not get theme data');

@@ -37,6 +37,11 @@ export default function MobileDisclosure({ navData, closeMenu }) {
                         onClick={() => closeMenu(false)}
                       >
                         {thema?.themaName}
+                        {thema.new && (
+                          <span className='font-jakarta text-[8px] font-bold ml-1.5 mb-2 mt-[2px] hover:no-underline uppercase inline-block'>
+                            Nieuw
+                          </span>
+                        )}
                       </Link>
                     </li>
                   ))}

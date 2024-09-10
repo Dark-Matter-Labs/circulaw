@@ -1,62 +1,34 @@
 import Link from 'next/link';
 import { SearchBox } from 'react-instantsearch';
 import { XIcon } from '@heroicons/react/outline';
+import { useEffect, useState } from 'react';
 
 export default function MobileHeaderSearch({ index }) {
+  const [placeholder, setPlaceholder] = useState('Zoek naar instrumenten...');
+
+  useEffect(() => {
+    if (index === 'instruments') {
+      setPlaceholder('Zoek in instrumenten...');
+    } else if (index === 'aboutPage') {
+      setPlaceholder('Zoek in "Over CircuLaw"...');
+    } else if (index === 'euLaw') {
+      setPlaceholder('Zoek in EU wetgeving...');
+    } else {
+      setPlaceholder('Zoek in Nieuws...');
+    }
+  }, [index]);
+
   return (
-    <div className='flex sm:hidden w-full max-w-sm flex-col items-center justify-center gap-y-6'>
+    <div className='flex sm:hidden w-full max-w-sm flex-col items-center justify-center'>
       <div className='w-full h-full flex flex-col items-center justify-end pb-6'>
-        <div className='flex flex-col justify-center w-full gap-y-1.5 mb-4'>
-          <Link
-            href='/zoeken/instrumenten'
-            className='flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[60px]'
-          >
-            {index === 'instruments' && (
-              <div className='bg-green-500 w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                <div className='bg-green-500 border-white border-2 h-3 w-3 rounded-full'></div>
-              </div>
-            )}
-            {index === 'aboutPage' && (
-              <div className='bg-black w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                <div className='bg-white h-3 w-3 rounded-full'></div>
-              </div>
-            )}
-            <div className='flex flex-col items-start justify-start'>
-              Instrumenten
-              <span className='p-xs'>Zoeken binnen &apos;instrumenten&apos;</span>
-            </div>
-          </Link>
-          <Link
-            href='/zoeken/over-circulaw'
-            // onClick={() => setSearchIndex('aboutPage')}
-            className='flex-row px-5 py-1.5 w-full bg-white rounded-[8px] flex items-center justify-start p-base-semibold h-[60px]'
-          >
-            {index === 'instruments' && (
-              <div className='bg-black w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                <div className='bg-white h-3 w-3 rounded-full'></div>
-              </div>
-            )}
-            {index === 'aboutPage' && (
-              <div className='bg-green-500 w-4 h-4 rounded-full flex items-center justify-center mr-4'>
-                <div className='bg-green-500 border-white border-2 h-3 w-3 rounded-full'></div>
-              </div>
-            )}
-            <div className='flex flex-col items-start justify-start'>
-              Over Circulaw
-              <span className='p-xs'>Zoeken binnen &apos;Over Circulaw&apos;</span>
-            </div>
-          </Link>
-        </div>
         <SearchBox
           searchAsYouType={false}
-          placeholder={
-            index === 'instruments' ? 'Zoek naar instrumenten...' : 'Zoek naar Over CircuLaw...'
-          }
+          placeholder={placeholder}
           classNames={{
-            root: 'h-16 max-w-sm w-full bg-green-600',
-            form: 'bg-green-600 max-w-sm w-full h-[60px] rounded-cl flex-row items-center justify-between relative flex',
+            root: 'h-16 max-w-sm w-full bg-green-50',
+            form: 'bg-green-50 max-w-sm w-full h-[60px] rounded-cl flex-row items-center justify-between relative flex shadow-card',
             input:
-              'max-w-sm w-full h-[60px] focus:bg-[url("/search-icon.png")] bg-no-repeat bg-left [background-position-x:10px] pl-10 rounded-cl border-none bg-white/50 caret-white p-base text-white focus:ring-1 focus:ring-white placeholder:text-white placeholder:p-base-semibold',
+              'max-w-sm w-full h-[60px] focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-10 rounded-cl border-none bg-white-600 caret-green-600 p-base text-green-600 focus:ring-1 focus:ring-green-600 placeholder:text-green-600 placeholder:p-base-semibold',
             submitIcon: 'visible',
           }}
           submitIconComponent={() => (
@@ -71,12 +43,54 @@ export default function MobileHeaderSearch({ index }) {
             <div
               type='reset'
               title='Clear the search query'
-              className='absolute top-3 right-24 rounded-full p-2 hover:bg-white/50 group'
+              className='absolute top-3 right-24 rounded-full p-2 hover:bg-green-200 group'
             >
-              <XIcon className='h-6 w-6 text-white group-hover:text-green-900' />
+              <XIcon className='h-6 w-6 text-green-600 group-hover:text-green-900' />
             </div>
           )}
         />
+      </div>
+      <div className='mb-10'>
+        <>
+          <Link
+            href='/zoeken/instrumenten'
+            className={`${
+              index === 'instruments'
+                ? 'border-b-2 border-green-600'
+                : 'border-b-2 border-transparent'
+            } p-xs-semibold text-green-600 p-2`}
+          >
+            Instrumenten
+          </Link>
+          <Link
+            href='/zoeken/eu-wetgeving'
+            className={`${
+              index === 'euLaw'
+                ? 'border-b-2 border-green-600 box-content'
+                : 'border-b-2 border-transparent'
+            } p-xs-semibold text-green-600 p-2`}
+          >
+            EU wetgeving
+          </Link>
+          <Link
+            href='/zoeken/over-circulaw'
+            className={`${
+              index === 'aboutPage'
+                ? 'border-b-2 border-green-600'
+                : 'border-b-2 border-transparent'
+            } p-xs-semibold text-green-600 p-2`}
+          >
+            Over
+          </Link>
+          <Link
+            href='/zoeken/nieuws'
+            className={`${
+              index === 'news' ? 'border-b-2 border-green-600' : 'border-b-2 border-transparent'
+            } p-xs-semibold text-green-600 p-2`}
+          >
+            Nieuws
+          </Link>
+        </>
       </div>
     </div>
   );

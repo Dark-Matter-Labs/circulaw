@@ -102,6 +102,14 @@ module.exports = {
       },
     },
   },
+  // this allows the dynamic setting of animation delay in theme-sponsors.js
+  safelist: [
+    'delay-[250ms]',
+    'delay-[500ms]',
+    'delay-[750ms]',
+    'delay-[1000ms]',
+    // etc.
+  ],
   plugins: [
     require('@tailwindcss/forms')
 ],

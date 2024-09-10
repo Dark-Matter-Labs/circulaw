@@ -1,3 +1,4 @@
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -269,3 +270,5 @@ html {
     border-color: #25C38B; 
     border-radius: 10px;
   }
+
+  

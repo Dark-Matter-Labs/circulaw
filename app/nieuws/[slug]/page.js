@@ -1,71 +1,40 @@
 import NewsDetailPageHeader from '@/components/news-page/news-detail-page-header';
 import { client } from '@/lib/sanity';
 import NewsDetailPageBody from '@/components/news-page/news-detail-page-body';
+import { NEWS_SLUGS_QUERY, NEWS_DETAIL_PAGE_QUERY, NEWS_METADATA_QUERY } from '@/lib/queries';
 
-// re do this when re-structing news page
-const NEWS_METADATA_QUERY = `
-*[_type == "newsPage"][0] {
-    "newsItems" :newsItems[slug.current == $slug]{
-      newsTitle, 
-      'slug': slug.current
-    }
-}
-`;
 export async function generateMetadata({ params }, parent) {
   // read route params
   const slug = params.slug;
-
   // fetch data
   const newsPageMetaData = await client.fetch(
     NEWS_METADATA_QUERY,
     { slug },
     {
-      next: { tags: ['newsPage'] },
+      next: { tags: ['newsItem'] },
     },
   );
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
-
   return {
-    title:
-      newsPageMetaData.newsItems[0].metaTitle ||
-      newsPageMetaData.newsItems[0].newsTitle + ' - CircuLaw',
-    description: newsPageMetaData.newsItems[0].metaDescribe || generic.description,
+    title: newsPageMetaData.metaTitle || newsPageMetaData.title + ' - CircuLaw',
+    description: newsPageMetaData.metaDescribe || generic.description,
     alternates: {
-      canonical: `/nieuws/${newsPageMetaData.newsItems[0].slug}`,
+      canonical: `/nieuws/${newsPageMetaData.slug}`,
     },
     openGraph: {
       images: previousImages,
-      title: newsPageMetaData.newsItems[0].metaTitle || newsPageMetaData.newsItems[0].newsTitle,
-      description: newsPageMetaData.newsItems[0].metaDescribe || generic.description,
+      title: newsPageMetaData.metaTitle || newsPageMetaData.title,
+      description: newsPageMetaData.metaDescribe || generic.description,
       type: 'website',
     },
   };
 }
 
-// TODO - leaving these two queries here
-// need to refactor how news is built and then re-fetch the data in the new structure.
-// this will also improve passing newsPageContent.newsItems[0] to the components.
-const NEWS_SLUGS_QUERY = `
-*[_type == "newsPage"][0]{
-    newsItems[slug != undefined]{
-      "slug": slug.current
-    }
- }
-`;
-
-const NEWS_DETAIL_PAGE_QUERY = `
-*[_type == "newsPage"][0] {
-    "newsItems" :newsItems[slug.current == $slug]{
-      ...,
-    }
-}
-`;
-
 export async function generateStaticParams() {
-  const newsPages = await client.fetch(NEWS_SLUGS_QUERY, { next: { tags: ['newsPage'] } });
-  return newsPages.newsItems.map((newsPage) => ({ slug: newsPage.slug }));
+  const newsPages = await client.fetch(NEWS_SLUGS_QUERY, { next: { tags: ['newsItem'] } });
+  return newsPages.map((newsPage) => ({ slug: newsPage }));
 }
 
 export const dynamicParams = false;
@@ -75,7 +44,7 @@ async function getNewsPageData(params) {
   const newsPageData = await client.fetch(
     NEWS_DETAIL_PAGE_QUERY,
     { slug },
-    { next: { tags: ['newsPage'] } },
+    { next: { tags: ['newsItem'] } },
   );
   if (!newsPageData) {
     throw new Error('could not get news detail data');
@@ -85,11 +54,10 @@ async function getNewsPageData(params) {
 
 export default async function NewsDetailPage({ params }) {
   const newsPageContent = await getNewsPageData(params.slug);
-
   return (
     <>
-      <NewsDetailPageHeader data={newsPageContent.newsItems[0]} />
-      <NewsDetailPageBody data={newsPageContent.newsItems[0]} />
+      <NewsDetailPageHeader data={newsPageContent} />
+      <NewsDetailPageBody data={newsPageContent} />
     </>
   );
 }
