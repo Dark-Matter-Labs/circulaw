@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { ArrowDownIcon } from '@heroicons/react/outline';
 import CustomButton from '@/components/custom-button';
 import EULawCard from '@/components/eu-law/eu-law-card';
-import { client } from '@/lib/sanity';
+import { sanityFetch } from '@/lib/sanity';
 import { EU_LAW_OVERVIEW_QUERY } from '@/lib/queries';
 import ScrollButton from '@/components/scroll-button';
 import globalMeta from '@/utils/global-meta';
@@ -25,17 +25,8 @@ export const metadata = {
   },
 };
 
-async function getEuLaws() {
-  const res = client.fetch(EU_LAW_OVERVIEW_QUERY, { next: { tags: ['euLaw'] } });
-  if (!res) {
-    throw new Error('failed to fetch data');
-  }
-  return res;
-}
-
 export default async function Page() {
-  const data = await getEuLaws();
-
+  const data = await sanityFetch({query: EU_LAW_OVERVIEW_QUERY, tags: ['euLaw']});
   return (
     <>
       <div className='bg-[url("/bg-eu.png")] pt-3 overflow-hidden bg-center	bg-no-repeat bg-cover'>
