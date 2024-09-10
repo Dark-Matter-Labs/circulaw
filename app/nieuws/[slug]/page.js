@@ -40,7 +40,11 @@ export async function generateStaticParams() {
 export const dynamicParams = false;
 
 export default async function NewsDetailPage({ params }) {
-  const newsPageContent = await sanityFetch({query: NEWS_DETAIL_PAGE_QUERY , qParams: params, tags: ['newsItem']});
+  const newsPageContent = await sanityFetch({
+    query: NEWS_DETAIL_PAGE_QUERY,
+    qParams: params,
+    tags: ['newsItem'],
+  });
   return (
     <>
       <NewsDetailPageHeader data={newsPageContent} />

@@ -9,13 +9,11 @@ import FeaturedCard from '@/components/news-page/featured-card';
 import PCHomePage from '@/components/homepage/product-chain-homepage';
 import { HOME_PAGE_QUERY } from '@/lib/queries';
 
-
-
 export default async function Page() {
   const data = await sanityFetch({
     query: HOME_PAGE_QUERY,
-    tags: ['siteConfig', 'transitionAgenda', 'thema', 'newsItem']
-  })
+    tags: ['siteConfig', 'transitionAgenda', 'thema', 'newsItem'],
+  });
   return (
     <>
       <div className='bg-gray-100 py-12 sm:pb-24 sm:pt-18 -z-50' name='thema'>

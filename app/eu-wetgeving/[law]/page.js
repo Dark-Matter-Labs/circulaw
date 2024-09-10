@@ -52,10 +52,17 @@ export async function generateStaticParams() {
 export const dynamicParams = false;
 
 export default async function EULawPage({ params, searchParams }) {
-  const summaryData = await sanityFetch({query: LAW_SUMMARY_QUERY, qParams: params, tags: ['euLaw']} );
-  const tabData = await sanityFetch({query: LAW_TAB_QUERY, qParams: params, tags: ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab']});
+  const summaryData = await sanityFetch({
+    query: LAW_SUMMARY_QUERY,
+    qParams: params,
+    tags: ['euLaw'],
+  });
+  const tabData = await sanityFetch({
+    query: LAW_TAB_QUERY,
+    qParams: params,
+    tags: ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab'],
+  });
   const initialTab = searchParams.tab;
-
   return (
     <>
       <div className='relative'>

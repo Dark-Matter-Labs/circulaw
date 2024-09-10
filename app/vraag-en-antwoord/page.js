@@ -6,8 +6,7 @@ export const metadata = {
   title: 'Vraag en antwoord - CircuLaw',
 };
 
-
 export default async function VraagAndAntwoordPage() {
-  const FAQContent = await sanityFetch({query: FAQ_PAGE_QUERY,  tags: ['FAQpage']})
+  const FAQContent = await sanityFetch({ query: FAQ_PAGE_QUERY, tags: ['FAQpage'] });
   return <FAQPageComponent data={FAQContent} />;
 }

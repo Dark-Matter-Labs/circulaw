@@ -49,6 +49,6 @@ export async function generateStaticParams() {
 export const dynamicParams = false;
 
 export default async function Page({ params }) {
-  const data = await sanityFetch({query: ABOUT_PAGE_QUERY, qParams: params, tags: ['aboutPage']})
+  const data = await sanityFetch({ query: ABOUT_PAGE_QUERY, qParams: params, tags: ['aboutPage'] });
   return <AboutPageComponent data={data} />;
 }

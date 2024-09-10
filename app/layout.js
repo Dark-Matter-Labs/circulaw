@@ -40,16 +40,11 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  const partnerLogos = await sanityFetch({query: PARTNERS_QUERY, tags: ['partners']})
-  const navData = await sanityFetch({query: NAV_QUERY,  tags: [
-    'aboutPages',
-    'navigation',
-    'thema',
-    'simpleThema',
-    'euLaw',
-    'siteConfig',
-    'navigation',
-  ],})
+  const partnerLogos = await sanityFetch({ query: PARTNERS_QUERY, tags: ['partners'] });
+  const navData = await sanityFetch({
+    query: NAV_QUERY,
+    tags: ['aboutPages', 'navigation', 'thema', 'simpleThema', 'euLaw', 'siteConfig', 'navigation'],
+  });
   const hasLocalConsentCookie = hasCookie('localConsent', { cookies });
   const hotjarCookie = getCookie('localConsent', { cookies });
 

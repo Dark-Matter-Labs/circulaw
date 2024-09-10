@@ -26,7 +26,7 @@ export const metadata = {
 };
 
 export default async function Page() {
-  const data = await sanityFetch({query: EU_LAW_OVERVIEW_QUERY, tags: ['euLaw']});
+  const data = await sanityFetch({ query: EU_LAW_OVERVIEW_QUERY, tags: ['euLaw'] });
   return (
     <>
       <div className='bg-[url("/bg-eu.png")] pt-3 overflow-hidden bg-center	bg-no-repeat bg-cover'>
