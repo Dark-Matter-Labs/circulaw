@@ -65,7 +65,6 @@ export default function LangSwitch({ background }) {
             <GlobeAltIcon className='h-4 w-4' />
           </span>
         </button>
-        
       </div>
 
       <div
@@ -84,7 +83,6 @@ export default function LangSwitch({ background }) {
             <GlobeAltIcon className='h-4 w-4' />
           </span>
         </button>
-        
       </div>
     </>
   );
