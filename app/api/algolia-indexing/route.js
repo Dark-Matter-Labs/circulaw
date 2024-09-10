@@ -101,7 +101,7 @@ newsDate,
 newsOrAgenda,
 'newsImage': newsImage.asset,
 'slug': slug.current,
-'linkUrl': link,
+link,
 category,
 linkUrl,
 }
