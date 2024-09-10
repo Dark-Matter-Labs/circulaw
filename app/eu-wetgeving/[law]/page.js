@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { client } from '@/lib/sanity';
+import { client, sanityFetch } from '@/lib/sanity';
 import SocialButtons from '@/components/social-buttons';
 import Tabs from '@/components/eu-law/tabs';
 import TabContent from '@/components/eu-law/tab-content';
@@ -51,31 +51,9 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
-async function getTabData(params) {
-  const law = params;
-  const tabContent = client.fetch(
-    LAW_TAB_QUERY,
-    { law },
-    { next: { tags: ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab'] } },
-  );
-  if (!tabContent) {
-    throw new Error('data could not be fetched');
-  }
-  return tabContent;
-}
-
-async function getSummaryData(params) {
-  const law = params;
-  const summary = client.fetch(LAW_SUMMARY_QUERY, { law }, { next: { tags: ['euLaw'] } });
-  if (!summary) {
-    throw new Error('data could not be fetched');
-  }
-  return summary;
-}
-
 export default async function EULawPage({ params, searchParams }) {
-  const summaryData = await getSummaryData(params.law);
-  const tabData = await getTabData(params.law);
+  const summaryData = await sanityFetch({query: LAW_SUMMARY_QUERY, qParams: params, tags: ['euLaw']} );
+  const tabData = await sanityFetch({query: LAW_TAB_QUERY, qParams: params, tags: ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab']});
   const initialTab = searchParams.tab;
 
   return (
