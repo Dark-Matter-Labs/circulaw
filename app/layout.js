@@ -4,7 +4,7 @@ import { LinkedInInsightTag } from 'nextjs-linkedin-insight-tag';
 
 import globalMeta from '@/utils/global-meta';
 import Layout from '@/components/layouts/layout';
-import { client } from '@/lib/sanity';
+import { sanityFetch } from '@/lib/sanity';
 import { NAV_QUERY, PARTNERS_QUERY } from '@/lib/queries';
 import { getCookie, hasCookie } from 'cookies-next';
 import { cookies } from 'next/headers';
@@ -39,38 +39,17 @@ export const metadata = {
   },
 };
 
-async function getNavData() {
-  const navData = await client.fetch(NAV_QUERY, {
-    next: {
-      tags: [
-        'aboutPages',
-        'navigation',
-        'thema',
-        'simpleThema',
-        'euLaw',
-        'siteConfig',
-        'navigation',
-      ],
-    },
-  });
-  if (!navData) {
-    throw new Error('could not fetch navData');
-  }
-  return navData;
-}
-
-async function getPartnerLogos() {
-  const partnerLogos = await client.fetch(PARTNERS_QUERY, { next: { tags: ['partners'] } });
-  if (!partnerLogos) {
-    throw new Error('could not fetch partnerLogos');
-  }
-  return partnerLogos;
-}
-
 export default async function RootLayout({ children }) {
-  const navData = await getNavData();
-  const partnerLogos = await getPartnerLogos();
-
+  const partnerLogos = await sanityFetch({query: PARTNERS_QUERY, tags: ['partners']})
+  const navData = await sanityFetch({query: NAV_QUERY,  tags: [
+    'aboutPages',
+    'navigation',
+    'thema',
+    'simpleThema',
+    'euLaw',
+    'siteConfig',
+    'navigation',
+  ],})
   const hasLocalConsentCookie = hasCookie('localConsent', { cookies });
   const hotjarCookie = getCookie('localConsent', { cookies });
 
