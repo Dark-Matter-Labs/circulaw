@@ -43,7 +43,11 @@ export async function generateStaticParams() {
 export const dynamicParams = false;
 
 export default async function GovernmentLevelPage({ params }) {
-  const govLevelContent = await sanityFetch({query: GOV_LEVEL_QUERY, qParams: params, tags: ['instrument']});
+  const govLevelContent = await sanityFetch({
+    query: GOV_LEVEL_QUERY,
+    qParams: params,
+    tags: ['instrument'],
+  });
   if (params.thema === 'matrasketen') {
     return (
       <GovLevelLayout

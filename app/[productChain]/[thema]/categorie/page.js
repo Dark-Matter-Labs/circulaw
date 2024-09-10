@@ -42,7 +42,11 @@ export async function generateStaticParams() {
 export const dynamicParams = false;
 
 export default async function CategoriePage({ params }) {
-  const categorieContent = await sanityFetch({query: CATEGORIE_PAGE_QUERY, qParams: params, tags: ['instrument']});
+  const categorieContent = await sanityFetch({
+    query: CATEGORIE_PAGE_QUERY,
+    qParams: params,
+    tags: ['instrument'],
+  });
   return (
     <ExpertiseLayout
       thema={params?.thema}

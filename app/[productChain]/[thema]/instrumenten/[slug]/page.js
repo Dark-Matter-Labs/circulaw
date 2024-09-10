@@ -46,6 +46,10 @@ export async function generateStaticParams() {
 export const dynamicParams = false;
 
 export default async function InstrumentPage({ params }) {
-  const instrumentContent = await sanityFetch({query: INSTRUMENT_PAGE_QUERY, qParams: params, tags: ['instrument']});
+  const instrumentContent = await sanityFetch({
+    query: INSTRUMENT_PAGE_QUERY,
+    qParams: params,
+    tags: ['instrument'],
+  });
   return <Instrument data={instrumentContent} />;
 }

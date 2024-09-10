@@ -43,7 +43,11 @@ export async function generateStaticParams() {
 export const dynamicParams = false;
 
 export default async function ThemePage({ params }) {
-  const themeData = await sanityFetch({query: THEME_QUERY , qParams: params, tags: ['thema', 'simpleThema', 'instrument']});
+  const themeData = await sanityFetch({
+    query: THEME_QUERY,
+    qParams: params,
+    tags: ['thema', 'simpleThema', 'instrument'],
+  });
   if (themeData.thema._type === 'simpleThema') {
     return (
       <SimpleThemaLayout
