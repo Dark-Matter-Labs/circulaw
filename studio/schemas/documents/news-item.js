@@ -245,6 +245,7 @@ export default {
         },
       ],
     },
+    // @TODO: need to fix this - maybe make one link
     {
       name: 'link',
       type: 'url',
