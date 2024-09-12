@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { client, sanityFetch } from '@/lib/sanity';
 import { THEME_PATHS_QUERY, THEME_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
 import SimpleThemaLayout from '@/components/layouts/simple-thema-layout';
@@ -48,6 +49,11 @@ export default async function ThemePage({ params }) {
     qParams: params,
     tags: ['thema', 'simpleThema', 'instrument'],
   });
+
+  if (!themeData) {
+    notFound();
+  }
+
   if (themeData.thema._type === 'simpleThema') {
     return (
       <SimpleThemaLayout
