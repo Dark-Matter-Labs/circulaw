@@ -27,6 +27,8 @@ import themePageReport from './objects/thema-report';
 import euCircularEconomyTab from './documents/eu-circular-economy-tab';
 import euEuropeTab from './documents/eu-europe-tab';
 import euLocalTab from './documents/eu-local-tab';
+import modelText from './documents/model-text';
+import pillar from './documents/pillar';
 
 export const schemaTypes = [
   // DOCUMENT TYPES
@@ -44,6 +46,9 @@ export const schemaTypes = [
   euCircularEconomyTab,
   euEuropeTab,
   euLocalTab,
+  modelText,
+  pillar,
+
 
   // OBJECTS
   greenBox,
