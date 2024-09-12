@@ -6,6 +6,7 @@ import {
 } from '@/lib/queries';
 import PCLayout from '@/components/layouts/product-chain-layout';
 import { client, sanityFetch } from '@/lib/sanity';
+import { notFound } from 'next/navigation'
 
 // metadata
 export async function generateMetadata({ params }, parent) {
@@ -59,6 +60,10 @@ export default async function ProductChainPage({ params }) {
     qParams: params,
     tags: ['thema', 'simpleThema'],
   });
+
+  if (!themeByPCData || !productChainData) {
+    notFound()
+  }
   return (
     <PCLayout
       productChainData={productChainData}
