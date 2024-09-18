@@ -13,6 +13,7 @@ const MODELTEXT_QUERY = `
   *[_type == 'modelText'] {
   ...,
   'pillar': pillar->title,
+  'modelTextPT': pt::text(modelText),
   'descriptionPT': pt::text(description),
   'linkedInstruments': linkedInstruments[]->
     {titel, 'slug': slug.current, 'transitionAgenda':transitionAgenda->slug.current, 'thema': thema->slug.current , }
@@ -53,7 +54,7 @@ export default async function ModelTextPage() {
         </div>
       </div>
 
-      <div className=' bg-white flex flex-col global-margin my-10 sm:my-16'>
+      <div className=' bg-white flex flex-col global-margin my-10 sm:my-16 h-max'>
         <div className='flex flex-col max-w-[760px]'>
           <h2 className='heading-xl-semibold sm:heading-3xl-semibold mb-3 sm:mb-10'>
             Modelteksten/planregels omgevingsplan

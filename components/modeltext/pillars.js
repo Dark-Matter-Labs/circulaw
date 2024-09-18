@@ -19,7 +19,8 @@ export default function Pillars({ pillars, modelTexts }) {
     setFilteredModelTexts(filtered);
   }, [modelTexts, selectedPillar]);
 
-  
+  const [showLinkCopied, setShowLinkCopied] = useState(false);
+
 
   return (
     <>
@@ -63,7 +64,7 @@ export default function Pillars({ pillars, modelTexts }) {
           <ScrollLink
             smooth={true}
             key={id}
-            className='max-w-[340px] rounded-cl bg-green-50 shadow-card p-6 flex flex-col justify-between group'
+            className='max-w-[340px] rounded-cl bg-green-50 shadow-card p-6 flex flex-col justify-between group cursor-pointer'
             onClick={() => setSelectedModelText(text)}
             to='pillars'
           >
@@ -90,9 +91,25 @@ export default function Pillars({ pillars, modelTexts }) {
 
             <h5 className='heading-xl-semibold mb-10'>Modeltekst omgevingsplan</h5>
             <div className='w-full border border-green-800 flex flex-col p-6 rounded-cl mb-10'>
-              <button className='p-xs-semibold self-end flex flex-row text-gray-600 mb-8'>
+                <div className='self-end relative'>
+                
+              <button 
+                onClick={() => {
+                navigator.clipboard.writeText(selectedModelText.modelTextPT);
+                setShowLinkCopied(true);
+                setTimeout(() => {
+                    setShowLinkCopied(false);
+                }, 2000);
+                }}
+                
+              className='p-xs-semibold  flex flex-row text-gray-600 mb-8'>
                 Kopieer tekst <IconCopy className='w-6 h-6 text-green-800 ml-2.5' />
               </button>
+              {showLinkCopied && (
+                  <p className="absolute top-6 p-lg-regular text-black text-nowrap">MODELTEXT copied!</p>
+                )}
+              </div>
+             
               <PortableText
                 value={selectedModelText.modelText}
                 components={reducedPortableTextComponents}
