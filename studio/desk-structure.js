@@ -76,10 +76,12 @@ export const Structure = (S, context) =>
         .child(
           S.documentTypeList('pillar')
             .title('Model Texts')
-            .child((pillarId) => 
-              S.documentList().title('Model Texts').filter('_type in ["modelText"] && $pillarId == pillar._ref').params({pillarId})
-            )
-
+            .child((pillarId) =>
+              S.documentList()
+                .title('Model Texts')
+                .filter('_type in ["modelText"] && $pillarId == pillar._ref')
+                .params({ pillarId }),
+            ),
         ),
       S.divider(),
       S.listItem()

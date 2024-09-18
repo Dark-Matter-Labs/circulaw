@@ -5,34 +5,39 @@ import { useState, useEffect, useRef } from 'react';
 import { reducedPortableTextComponents } from '@/lib/portable-text/pt-components';
 import { PortableText } from 'next-sanity';
 import Link from 'next/link';
+// import { useRouter, useSearchParams } from 'next/navigation';
 
 export default function Pillars({ pillars, modelTexts }) {
-    // url params for pillar and selected modeltext perhaps ?
-
   const [selectedPillar, setSelectedPillar] = useState('Energie');
   const [filteredModelTexts, setFilteredModelTexts] = useState();
   const [selectedModelText, setSelectedModelText] = useState(null);
+  const [showLinkCopied, setShowLinkCopied] = useState(false);
+  const modelTextRef = useRef();
+  // const router = useRouter()
+  // const searchParams = useSearchParams()
 
   useEffect(() => {
+    if (selectedModelText) {
+      setSelectedModelText(null);
+    }
+
     const filtered = modelTexts.filter((t) => t.pillar === selectedPillar);
     setFilteredModelTexts(filtered);
-    setSelectedModelText(null)
   }, [modelTexts, selectedPillar]);
-
-  const [showLinkCopied, setShowLinkCopied] = useState(false);
-
-  const modelTextRef = useRef()
 
   useEffect(() => {
     if (modelTextRef.current) {
-        modelTextRef.current.scrollTop = 0;
+      modelTextRef.current.scrollTop = 0;
     }
-  })
+  });
 
   return (
     <>
-      <div>
-        <ul id='pillars' className='bg-green-50 rounded-cl flex flex-row p-4 mt-14 gap-x-2.5 justify-between'>
+      <div className='max-w-[1280px]'>
+        <ul
+          id='pillars'
+          className='bg-green-50 rounded-cl flex flex-row p-4 mt-14 gap-x-2.5 justify-between'
+        >
           {pillars?.map((p) => (
             <li key={p.title}>
               <button
@@ -63,14 +68,16 @@ export default function Pillars({ pillars, modelTexts }) {
       </div>
       <div
         className={`${
-          selectedModelText !== null ? 'grid-cols-1 max-h-screen overflow-y-scroll p-1' : 'grid-cols-3'
+          selectedModelText !== null
+            ? 'grid-cols-1 max-h-screen overflow-y-scroll scr p-1'
+            : 'grid-cols-3'
         } grid gap-14 mt-14 relative `}
         ref={modelTextRef}
       >
         {filteredModelTexts?.map((text, id) => (
           <button
             key={id}
-            className='max-w-[340px] rounded-cl bg-green-50 shadow-card p-6 flex flex-col justify-between group cursor-pointer'
+            className='max-w-[396px] rounded-cl bg-green-50 shadow-card p-6 flex flex-col justify-between group cursor-pointer'
             onClick={() => setSelectedModelText(text)}
           >
             {console.log(text)}
@@ -86,7 +93,7 @@ export default function Pillars({ pillars, modelTexts }) {
           </button>
         ))}
         {selectedModelText && (
-          <div className='absolute top-0 left-[400px] rounded-cl bg-gray-100 w-[635px] py-6 px-10'>
+          <div className='absolute top-0 left-[456px] rounded-cl bg-gray-100 w-[635px] py-6 px-10'>
             <div className='flex flex-row w-full justify-between items-center'>
               <h4 className='heading-2xl-semibold mb-2.5'>{selectedModelText.title}</h4>
               <button onClick={() => setSelectedModelText(null)}>
@@ -96,25 +103,26 @@ export default function Pillars({ pillars, modelTexts }) {
 
             <h5 className='heading-xl-semibold mb-10'>Modeltekst omgevingsplan</h5>
             <div className='w-full border border-green-800 flex flex-col p-6 rounded-cl mb-10'>
-                <div className='self-end relative'>
-                
-              <button 
-                onClick={() => {
-                navigator.clipboard.writeText(selectedModelText.modelTextPT);
-                setShowLinkCopied(true);
-                setTimeout(() => {
-                    setShowLinkCopied(false);
-                }, 2000);
-                }}
-                
-              className='p-xs-semibold  flex flex-row text-gray-600 mb-8'>
-                Kopieer tekst <IconCopy className='w-6 h-6 text-green-800 ml-2.5' />
-              </button>
-              {showLinkCopied && (
-                  <p className="absolute top-6 p-lg-regular text-black text-nowrap">MODELTEXT copied!</p>
+              <div className='self-end relative'>
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText(selectedModelText.modelTextPT);
+                    setShowLinkCopied(true);
+                    setTimeout(() => {
+                      setShowLinkCopied(false);
+                    }, 2000);
+                  }}
+                  className='p-xs-semibold  flex flex-row text-gray-600 mb-8'
+                >
+                  Kopieer tekst <IconCopy className='w-6 h-6 text-green-800 ml-2.5' />
+                </button>
+                {showLinkCopied && (
+                  <p className='absolute top-6 p-lg-regular text-black text-nowrap'>
+                    MODELTEXT copied!
+                  </p>
                 )}
               </div>
-             
+
               <PortableText
                 value={selectedModelText.modelText}
                 components={reducedPortableTextComponents}
