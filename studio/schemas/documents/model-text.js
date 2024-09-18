@@ -1,5 +1,3 @@
-import { InstrumentInput } from '../../components/instrument-reference';
-
 export default {
   name: 'modelText',
   type: 'document',

@@ -12,13 +12,16 @@ const PILLARS_QUERY = `
 const MODELTEXT_QUERY = `
   *[_type == 'modelText'] {
   ...,
-  'pillar': pillar->title
-  }  
+  'pillar': pillar->title,
+  'descriptionPT': pt::text(description),
+  'linkedInstruments': linkedInstruments[]->
+    {titel, 'slug': slug.current, 'transitionAgenda':transitionAgenda->slug.current, 'thema': thema->slug.current , }
+  } 
 `;
 
 export default async function ModelTextPage() {
-  const pillars = await sanityFetch({ query: PILLARS_QUERY });
-  const modelTexts = await sanityFetch({ query: MODELTEXT_QUERY });
+  const pillars = await sanityFetch({ query: PILLARS_QUERY, tags: ['pillar'] });
+  const modelTexts = await sanityFetch({ query: MODELTEXT_QUERY, tags: ['modelText'] });
   return (
     <>
       <div className='w-full bg-green-600 relative h-[260px] sm:h-[360px] mt-3 flex'>
@@ -76,7 +79,6 @@ export default async function ModelTextPage() {
             pijlers zoals Toekomstig Bestendig Bouwen deze heeft gedefinieerd:
           </p>
         </div>
-
         <Pillars modelTexts={modelTexts} pillars={pillars} />
       </div>
     </>
