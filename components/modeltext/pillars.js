@@ -5,10 +5,11 @@ import { useState, useEffect } from 'react';
 import { reducedPortableTextComponents } from '@/lib/portable-text/pt-components';
 import { PortableText } from 'next-sanity';
 import Link from 'next/link';
+import { Link as ScrollLink } from 'react-scroll';
 
 export default function Pillars({ pillars, modelTexts }) {
     // url params for pillar and selected modeltext perhaps ?
-    
+
   const [selectedPillar, setSelectedPillar] = useState('Energie');
   const [filteredModelTexts, setFilteredModelTexts] = useState();
   const [selectedModelText, setSelectedModelText] = useState(null);
@@ -18,10 +19,12 @@ export default function Pillars({ pillars, modelTexts }) {
     setFilteredModelTexts(filtered);
   }, [modelTexts, selectedPillar]);
 
+  
+
   return (
     <>
       <div>
-        <ul className='bg-green-50 rounded-cl flex flex-row p-4 mt-14 gap-x-2.5 justify-between'>
+        <ul id='pillars' className='bg-green-50 rounded-cl flex flex-row p-4 mt-14 gap-x-2.5 justify-between'>
           {pillars?.map((p) => (
             <li key={p.title}>
               <button
@@ -57,10 +60,12 @@ export default function Pillars({ pillars, modelTexts }) {
         } grid gap-14 mt-14 relative`}
       >
         {filteredModelTexts?.map((text, id) => (
-          <button
+          <ScrollLink
+            smooth={true}
             key={id}
             className='max-w-[340px] rounded-cl bg-green-50 shadow-card p-6 flex flex-col justify-between group'
             onClick={() => setSelectedModelText(text)}
+            to='pillars'
           >
             {console.log(text)}
             <div className='p-2xs px-2 py-1 border border-green-800 w-min rounded-cl mb-6'>
@@ -72,7 +77,7 @@ export default function Pillars({ pillars, modelTexts }) {
             <div className='p-base-semibold flex flex-row items-center justify-start group-hover:text-green-300 link-interaction'>
               Modeltekst bekijken <ArrowRightIcon className='h-5 w-5 ml-2' />
             </div>
-          </button>
+          </ScrollLink>
         ))}
         {selectedModelText && (
           <div className='absolute top-0 left-[400px] rounded-cl bg-gray-100 w-[635px] py-6 px-10'>
