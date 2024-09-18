@@ -1,11 +1,10 @@
 'use client';
 import { ArrowRightIcon, XIcon } from '@heroicons/react/outline';
 import { IconCopy } from '@tabler/icons-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { reducedPortableTextComponents } from '@/lib/portable-text/pt-components';
 import { PortableText } from 'next-sanity';
 import Link from 'next/link';
-import { Link as ScrollLink } from 'react-scroll';
 
 export default function Pillars({ pillars, modelTexts }) {
     // url params for pillar and selected modeltext perhaps ?
@@ -17,10 +16,18 @@ export default function Pillars({ pillars, modelTexts }) {
   useEffect(() => {
     const filtered = modelTexts.filter((t) => t.pillar === selectedPillar);
     setFilteredModelTexts(filtered);
+    setSelectedModelText(null)
   }, [modelTexts, selectedPillar]);
 
   const [showLinkCopied, setShowLinkCopied] = useState(false);
 
+  const modelTextRef = useRef()
+
+  useEffect(() => {
+    if (modelTextRef.current) {
+        modelTextRef.current.scrollTop = 0;
+    }
+  })
 
   return (
     <>
@@ -54,19 +61,17 @@ export default function Pillars({ pillars, modelTexts }) {
           ))}
         </div>
       </div>
-
       <div
         className={`${
-          selectedModelText !== null ? 'grid-cols-1' : 'grid-cols-3'
-        } grid gap-14 mt-14 relative`}
+          selectedModelText !== null ? 'grid-cols-1 max-h-screen overflow-y-scroll p-1' : 'grid-cols-3'
+        } grid gap-14 mt-14 relative `}
+        ref={modelTextRef}
       >
         {filteredModelTexts?.map((text, id) => (
-          <ScrollLink
-            smooth={true}
+          <button
             key={id}
             className='max-w-[340px] rounded-cl bg-green-50 shadow-card p-6 flex flex-col justify-between group cursor-pointer'
             onClick={() => setSelectedModelText(text)}
-            to='pillars'
           >
             {console.log(text)}
             <div className='p-2xs px-2 py-1 border border-green-800 w-min rounded-cl mb-6'>
@@ -78,7 +83,7 @@ export default function Pillars({ pillars, modelTexts }) {
             <div className='p-base-semibold flex flex-row items-center justify-start group-hover:text-green-300 link-interaction'>
               Modeltekst bekijken <ArrowRightIcon className='h-5 w-5 ml-2' />
             </div>
-          </ScrollLink>
+          </button>
         ))}
         {selectedModelText && (
           <div className='absolute top-0 left-[400px] rounded-cl bg-gray-100 w-[635px] py-6 px-10'>
