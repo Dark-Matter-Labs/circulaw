@@ -71,9 +71,16 @@ export const Structure = (S, context) =>
         icon: BsNewspaper,
       }),
       S.listItem()
-        .title('Model Texts')
+        .title('Model Texts by Pillar')
         .icon(CiTextAlignJustify)
-        .child(S.documentList().title('Model Texts').filter('_type == "modelText"')),
+        .child(
+          S.documentTypeList('pillar')
+            .title('Model Texts')
+            .child((pillarId) => 
+              S.documentList().title('Model Texts').filter('_type in ["modelText"] && $pillarId == pillar._ref').params({pillarId})
+            )
+
+        ),
       S.divider(),
       S.listItem()
         .title('Productketen')
