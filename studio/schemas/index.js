@@ -49,7 +49,6 @@ export const schemaTypes = [
   modelText,
   pillar,
 
-
   // OBJECTS
   greenBox,
   pdfBlock,
