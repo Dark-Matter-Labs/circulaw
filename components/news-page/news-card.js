@@ -32,7 +32,7 @@ export default function NewsCard({ data }) {
                 fill
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
                 className='w-full h-full relative object-cover rounded-t-cl '
-                placeholder="blur" 
+                placeholder='blur'
                 blurDataURL={data?.metadata.lqip}
               />
             </div>
@@ -117,7 +117,7 @@ export default function NewsCard({ data }) {
                 priority={true}
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
                 className='w-full h-full relative object-cover rounded-t-cl '
-                placeholder="blur" 
+                placeholder='blur'
                 blurDataURL={data?.metadata.lqip}
               />
             </div>
@@ -209,7 +209,7 @@ export default function NewsCard({ data }) {
               priority={true}
               sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
               className='w-full h-full relative object-cover rounded-t-cl '
-              placeholder="blur" 
+              placeholder='blur'
               blurDataURL={data?.metadata.lqip}
             />
           </div>

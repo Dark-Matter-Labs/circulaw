@@ -24,7 +24,7 @@ export default function ThemaCard({ themaCards }) {
                       width={1440}
                       height={720}
                       priority={true}
-                      placeholder="blur" 
+                      placeholder='blur'
                       blurDataURL={thema?.metadata.lqip}
                     />
                   )}
@@ -81,7 +81,7 @@ export default function ThemaCard({ themaCards }) {
                     alt={thema?.themaName + 'image'}
                     fill
                     className='rounded-l-cl object-cover'
-                    placeholder="blur" 
+                    placeholder='blur'
                     blurDataURL={thema?.metadata.lqip}
                   />
                   {thema.new === true && (

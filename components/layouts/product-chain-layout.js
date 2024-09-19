@@ -54,7 +54,7 @@ export default function PCLayout({ ...props }) {
                           alt='impact image'
                           height={112}
                           width={112}
-                          placeholder="blur" 
+                          placeholder='blur'
                           blurDataURL={impact?.metadata.lqip}
                         />
                       )}
@@ -88,7 +88,7 @@ export default function PCLayout({ ...props }) {
                         alt='ambition illustration'
                         height={356}
                         width={542}
-                        placeholder="blur" 
+                        placeholder='blur'
                         blurDataURL={ambition?.metadata.lqip}
                       />
                     )}
@@ -114,7 +114,7 @@ export default function PCLayout({ ...props }) {
                         alt='ambition illustration'
                         height={356}
                         width={542}
-                        placeholder="blur" 
+                        placeholder='blur'
                         blurDataURL={ambition?.metadata.lqip}
                       />
                     )}
@@ -133,7 +133,7 @@ export default function PCLayout({ ...props }) {
                         height={356}
                         width={542}
                         className='mb-6'
-                        placeholder="blur" 
+                        placeholder='blur'
                         blurDataURL={ambition?.metadata.lqip}
                       />
                     )}
