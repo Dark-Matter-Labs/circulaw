@@ -16,7 +16,6 @@ export function InstrumentInput(props) {
   useEffect(() => {
     client.fetch(Q).then((data) => setAllThemas(data));
   }, []);
-  console.log(value);
 
   return (
     <Flex gap={3} paddingRight={2} align='center'>

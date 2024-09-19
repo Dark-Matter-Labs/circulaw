@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from 'react';
 import { reducedPortableTextComponents } from '@/lib/portable-text/pt-components';
 import { PortableText } from 'next-sanity';
 import Link from 'next/link';
-// import { useRouter, useSearchParams } from 'next/navigation';
+// import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 export default function Pillars({ pillars, modelTexts }) {
   const [selectedPillar, setSelectedPillar] = useState('Energie');
@@ -13,23 +13,35 @@ export default function Pillars({ pillars, modelTexts }) {
   const [selectedModelText, setSelectedModelText] = useState(null);
   const [showLinkCopied, setShowLinkCopied] = useState(false);
   const modelTextRef = useRef();
-  // const router = useRouter()
+ //  const router = useRouter()
+ //  const pathname = usePathname()
   // const searchParams = useSearchParams()
 
-  useEffect(() => {
-    if (selectedModelText) {
-      setSelectedModelText(null);
-    }
 
-    const filtered = modelTexts.filter((t) => t.pillar === selectedPillar);
-    setFilteredModelTexts(filtered);
-  }, [modelTexts, selectedPillar]);
+
+  // function to re-order the array so that the selected modeltext is at the beginning. 
+  useEffect(() => {
+    if (selectedModelText === null) {
+      const filtered = modelTexts.filter((t) => t.pillar === selectedPillar);
+      setFilteredModelTexts(filtered);
+    } else {
+      const filtered = modelTexts.filter((t) => t.pillar === selectedPillar)
+      const reFiltered = filtered.sort(function(x,y) {return x === selectedModelText ? -1: y === selectedModelText ? 1: 0})
+      setFilteredModelTexts(reFiltered)
+    }
+    
+
+
+  }, [modelTexts, selectedPillar, selectedModelText]);
 
   useEffect(() => {
     if (modelTextRef.current) {
       modelTextRef.current.scrollTop = 0;
     }
   });
+
+
+ 
 
   return (
     <>
@@ -41,7 +53,9 @@ export default function Pillars({ pillars, modelTexts }) {
           {pillars?.map((p) => (
             <li key={p.title}>
               <button
-                onClick={() => setSelectedPillar(p.title)}
+                onClick={() => {setSelectedPillar(p.title)
+                                setSelectedModelText(null)
+                              }}
                 className={`${
                   selectedPillar === p.title ? 'p-base-semibold underline' : 'p-base'
                 } text-green-600 p-2`}
@@ -80,7 +94,6 @@ export default function Pillars({ pillars, modelTexts }) {
             className='max-w-[396px] rounded-cl bg-green-50 shadow-card p-6 flex flex-col justify-between group cursor-pointer'
             onClick={() => setSelectedModelText(text)}
           >
-            {console.log(text)}
             <div className='p-2xs px-2 py-1 border border-green-800 w-min rounded-cl mb-6'>
               Omgevingsplan
             </div>
