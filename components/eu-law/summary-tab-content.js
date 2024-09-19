@@ -12,10 +12,12 @@ export default function SummaryComponent({ lawData }) {
     <div className=''>
       {/* Intro section */}
       <div className='global-margin'>
-        <div className='flex flex-row gap-x-32 my-20 items-center justify-start'>
-          <div className='p-base order-last sm:order-first max-w-[540px]'>{lawData?.summaryIntroText}</div>
+        <div className='flex flex-col-reverse sm:flex-row gap-y-12 sm:gap-y-0 gap-x-32 my-12 sm:my-20 items-center justify-start'>
+          <div className='p-base order-last sm:order-first max-w-[540px]'>
+            {lawData?.summaryIntroText}
+          </div>
           <div className='flex flex-col items-center justify-center gap-y-8'>
-            <div className='mb-6 sm:mb-0 flex items-center justify-center max-h-80'>
+            <div className='mb-6 sm:mb-0 sm:flex items-center justify-center max-h-80 hidden'>
               {lawData?.introImage && (
                 <Image
                   src={urlFor(lawData?.introImage).url() ?? ''}
@@ -26,7 +28,6 @@ export default function SummaryComponent({ lawData }) {
                 />
               )}
             </div>
-
             <EUTooltip title='Status' lawData={lawData}>
               <div>
                 <PortableText

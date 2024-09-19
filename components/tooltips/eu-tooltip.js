@@ -14,7 +14,7 @@ export default function EUTooltip({ children, title, lawData }) {
       <button
         onClick={() => setOpen(true)}
         type='button'
-        className='border p-4 shadow-card rounded-cl flex flex-col gap-6 max-w-[380px] group'
+        className='border p-4 shadow-card rounded-cl flex flex-col gap-6 sm:max-w-[380px] group'
       >
         <h3 className='heading-2xl-semibold'>Status</h3>
         <div>
