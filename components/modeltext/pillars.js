@@ -5,19 +5,14 @@ import { useState, useEffect, useRef } from 'react';
 import { reducedPortableTextComponents } from '@/lib/portable-text/pt-components';
 import { PortableText } from 'next-sanity';
 import Link from 'next/link';
-// import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 export default function Pillars({ pillars, modelTexts }) {
-  const [selectedPillar, setSelectedPillar] = useState('Energie');
+  const [selectedPillar, setSelectedPillar] = useState('materialenkringloop');
   const [filteredModelTexts, setFilteredModelTexts] = useState();
   const [selectedModelText, setSelectedModelText] = useState(null);
   const [showLinkCopied, setShowLinkCopied] = useState(false);
   const modelTextRef = useRef();
-  //  const router = useRouter()
-  //  const pathname = usePathname()
-  // const searchParams = useSearchParams()
 
-  // function to re-order the array so that the selected modeltext is at the beginning.
   useEffect(() => {
     if (selectedModelText === null) {
       const filtered = modelTexts.filter((t) => t.pillar === selectedPillar);
@@ -48,15 +43,15 @@ export default function Pillars({ pillars, modelTexts }) {
             <li key={p.title}>
               <button
                 onClick={() => {
-                  setSelectedPillar(p.title);
+                  setSelectedPillar(p.slug);
                   setSelectedModelText(null);
                 }}
                 className={`${
-                  selectedPillar === p.title ? 'p-base-semibold underline' : 'p-base'
+                  selectedPillar === p.slug ? 'p-base-semibold underline' : 'p-base'
                 } text-green-600 p-2`}
               >
                 {p.title} {'('}
-                {modelTexts.filter((text) => text.pillar === p.title).length}
+                {modelTexts.filter((text) => text.pillar === p.slug).length}
                 {')'}
               </button>
             </li>
@@ -65,7 +60,7 @@ export default function Pillars({ pillars, modelTexts }) {
         <div>
           {pillars.map((p) => (
             <>
-              {p.title === selectedPillar && (
+              {p.slug === selectedPillar && (
                 <>
                   <h3 className='heading-xl-semibold mt-8 mb-2'>{p.title}</h3>
                   <p className='p-xs max-w-[700px]'>{p.description}</p>

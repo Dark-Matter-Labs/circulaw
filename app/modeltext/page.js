@@ -5,7 +5,8 @@ import Link from 'next/link';
 
 const PILLARS_QUERY = `
  *[_type == 'pillar'] {
-  ...
+  ...,
+  'slug':slug.current,
  }
 `;
 
