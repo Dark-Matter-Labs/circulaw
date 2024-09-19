@@ -9,6 +9,16 @@ export default {
       type: 'string',
     },
     {
+      title: 'Slug',
+      type: 'slug',
+      name: 'slug',
+      options: {
+        source: 'title',
+        inUnique: 'true',
+        slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').replace('?', '').slice(0, 200),
+      },
+    },
+    {
       title: 'Description',
       name: 'description',
       type: 'text',

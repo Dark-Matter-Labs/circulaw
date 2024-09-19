@@ -12,7 +12,8 @@ const PILLARS_QUERY = `
 const MODELTEXT_QUERY = `
   *[_type == 'modelText'] {
   ...,
-  'pillar': pillar->title,
+  'slug': slug.current,
+  'pillar': pillar->slug.current,
   'modelTextPT': pt::text(modelText),
   'descriptionPT': pt::text(description),
   'linkedInstruments': linkedInstruments[]->
