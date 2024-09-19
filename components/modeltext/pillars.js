@@ -13,25 +13,22 @@ export default function Pillars({ pillars, modelTexts }) {
   const [selectedModelText, setSelectedModelText] = useState(null);
   const [showLinkCopied, setShowLinkCopied] = useState(false);
   const modelTextRef = useRef();
- //  const router = useRouter()
- //  const pathname = usePathname()
+  //  const router = useRouter()
+  //  const pathname = usePathname()
   // const searchParams = useSearchParams()
 
-
-
-  // function to re-order the array so that the selected modeltext is at the beginning. 
+  // function to re-order the array so that the selected modeltext is at the beginning.
   useEffect(() => {
     if (selectedModelText === null) {
       const filtered = modelTexts.filter((t) => t.pillar === selectedPillar);
       setFilteredModelTexts(filtered);
     } else {
-      const filtered = modelTexts.filter((t) => t.pillar === selectedPillar)
-      const reFiltered = filtered.sort(function(x,y) {return x === selectedModelText ? -1: y === selectedModelText ? 1: 0})
-      setFilteredModelTexts(reFiltered)
+      const filtered = modelTexts.filter((t) => t.pillar === selectedPillar);
+      const reFiltered = filtered.sort(function (x, y) {
+        return x === selectedModelText ? -1 : y === selectedModelText ? 1 : 0;
+      });
+      setFilteredModelTexts(reFiltered);
     }
-    
-
-
   }, [modelTexts, selectedPillar, selectedModelText]);
 
   useEffect(() => {
@@ -39,9 +36,6 @@ export default function Pillars({ pillars, modelTexts }) {
       modelTextRef.current.scrollTop = 0;
     }
   });
-
-
- 
 
   return (
     <>
@@ -53,9 +47,10 @@ export default function Pillars({ pillars, modelTexts }) {
           {pillars?.map((p) => (
             <li key={p.title}>
               <button
-                onClick={() => {setSelectedPillar(p.title)
-                                setSelectedModelText(null)
-                              }}
+                onClick={() => {
+                  setSelectedPillar(p.title);
+                  setSelectedModelText(null);
+                }}
                 className={`${
                   selectedPillar === p.title ? 'p-base-semibold underline' : 'p-base'
                 } text-green-600 p-2`}
