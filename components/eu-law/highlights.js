@@ -29,6 +29,9 @@ import tax3 from '@/public/eu-taxonomie-icons/3-taxonomie.svg'
 import tax4 from '@/public/eu-taxonomie-icons/4-taxonomie.svg'
 import tax5 from '@/public/eu-taxonomie-icons/5-taxonomie.svg'
 import tax6 from '@/public/eu-taxonomie-icons/6-taxonomie.svg'
+import csddd1 from '@/public/eu-csddd-icons/csddd-1.svg'
+import csddd2 from '@/public/eu-csddd-icons/csddd-2.svg'
+import Image from 'next/image';
 
 
 export default function Highlights({ law }) {
@@ -198,6 +201,32 @@ export default function Highlights({ law }) {
           icon={tax6}
         />
       </div>
+    </div>
+    )
+  } else if (law === 'Corporate Sustainability Due Diligence Directive (CSDDD)') {
+    return (
+      <div className='global-margin'>
+      <h2 className='text-green-800 heading-3xl-semibold mb-4'>CSDDD highlights</h2>
+      <p className='mb-12 max-w-xl'>
+        Need to get this subtitle pleace
+      </p>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
+        <HighlightCard
+          text='1. Due diligence verplichting'
+          icon={csddd1}
+        />
+         <HighlightCard
+          text='2. Klimaattransititieplan'
+          icon={csddd2}
+        />
+      </div>
+      <h3 className='text-green-800 heading-3xl-semibold mt-12 mb-12'>Scope van de CSDDD</h3>
+      <Image 
+      src='/eu-csddd-icons/csddd-scope.png'
+      alt='an image describing the scope of the CSDDD'
+      width={800}
+      height={445}
+      />
     </div>
     )
   }
