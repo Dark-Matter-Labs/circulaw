@@ -15,7 +15,7 @@ export default function InstrumentCard({ instrument, images }) {
                   src={urlFor(instrument?.featuredImage).url()}
                   alt={instrument?.featuredImage?.altText}
                   fill
-                  placeholder="blur" 
+                  placeholder='blur'
                   blurDataURL={instrument?.metadata.lqip}
                   className='absolute rounded-cl object-cover'
                 />
@@ -130,7 +130,7 @@ export default function InstrumentCard({ instrument, images }) {
                     src={urlFor(instrument?.featuredImage).url()}
                     alt={instrument?.featuredImage?.altText}
                     fill
-                    placeholder="blur" 
+                    placeholder='blur'
                     blurDataURL={instrument?.metadata.lqip}
                     className='absolute rounded-cl object-cover'
                   />

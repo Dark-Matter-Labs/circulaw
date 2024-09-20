@@ -15,7 +15,7 @@ export default function ThemePageHeader({ themaData }) {
             fill
             className='z-0 bg-cover'
             priority
-            placeholder="blur" 
+            placeholder='blur'
             blurDataURL={themaData?.metadata.lqip}
           />
         )}

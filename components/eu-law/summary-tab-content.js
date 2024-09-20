@@ -1,9 +1,6 @@
 import LinkIcon from '../link-icon';
-import EUGenericTooltip from '../tooltips/eu-generic-tooltip';
 import EUTooltip from '../tooltips/eu-tooltip';
 import Highlights from './highlights';
-import StatusThreeStep from './status/status-three-step';
-import StatusTwoStep from './status/status-two-step';
 import { reducedPortableTextComponents } from '@/lib/portable-text/pt-components';
 import { urlFor } from '@/lib/sanity';
 import { PortableText } from '@portabletext/react';
@@ -15,36 +12,29 @@ export default function SummaryComponent({ lawData }) {
     <div className=''>
       {/* Intro section */}
       <div className='global-margin'>
-        <div className='grid grid-cols-1 sm:grid-cols-2 py-10 gap-x-32 items-center justify-center'>
-          <div className='p-base order-last sm:order-first'>{lawData?.summaryIntroText}</div>
-          <div className='mb-6 sm:mb-0 flex items-center justify-center max-h-80'>
-            {lawData?.introImage && (
-              <Image
-                src={urlFor(lawData?.introImage).url() ?? ''}
-                alt={lawData?.imageAlt}
-                width={525}
-                height={307}
-                className='rounded-cl'
-              />
-            )}
+        <div className='flex flex-col-reverse sm:flex-row gap-y-12 sm:gap-y-0 gap-x-32 my-12 sm:my-20 items-center justify-start'>
+          <div className='p-base order-last sm:order-first max-w-[540px]'>
+            {lawData?.summaryIntroText}
           </div>
-        </div>
-      </div>
-      {/* tags */}
-      {/*  
-      <div className='bg-green-50 h-[200px]'>
-        <div className='global-margin py-10'>
-          <h2 className='text-green-800 heading-3xl-semibold'>Relevante termen</h2>
-        </div>
-      </div>
-*/}
-      {/* status */}
-      <div className=''>
-        <div className='global-margin py-10'>
-          <div className='flex flex-row items-center place-items-center'>
-            <h2 className='text-green-800 heading-3xl-semibold'>Status</h2>
-            <div className='place-items-center mt-3 ml-2'>
-              <EUGenericTooltip title='Welke statussen zijn er?'>
+          <div className='flex flex-col items-center justify-center gap-y-8'>
+            <div className='mb-6 sm:mb-0 sm:flex items-center justify-center max-h-80 hidden'>
+              {lawData?.introImage && (
+                <Image
+                  src={urlFor(lawData?.introImage).url() ?? ''}
+                  alt={lawData?.imageAlt ?? ''}
+                  width={300}
+                  height={176}
+                  className='rounded-cl'
+                />
+              )}
+            </div>
+            <EUTooltip title='Status' lawData={lawData}>
+              <div>
+                <PortableText
+                  value={lawData?.statusContent}
+                  components={reducedPortableTextComponents}
+                />
+                <div className='heading-2xl-semibold mb-8 mt-6'>Welke statussen zijn er?</div>
                 <div>
                   <h3 className='mb-4 heading-xl-semibold'>1: In onderhandeling</h3>
                   <p className='p-base mb-2'>
@@ -80,24 +70,7 @@ export default function SummaryComponent({ lawData }) {
                     daardoor niet in de nationale wet- en regelgeving geïmplementeerd te worden.
                   </p>
                 </div>
-              </EUGenericTooltip>
-            </div>
-          </div>
-          <div>
-            {' '}
-            {lawData?.statusStep === 'Two Step' && (
-              <StatusTwoStep status={lawData?.statusTwoStep} />
-            )}
-            {lawData?.statusStep === 'Three Step' && (
-              <StatusThreeStep status={lawData?.statusThreeStep} />
-            )}
-          </div>
-          <div>
-            <EUTooltip title={lawData?.statusContentTitle}>
-              <PortableText
-                value={lawData?.statusContent}
-                components={reducedPortableTextComponents}
-              />
+              </div>
             </EUTooltip>
           </div>
         </div>

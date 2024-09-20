@@ -18,7 +18,7 @@ export default function PCHomePage({ pcData }) {
                 src={urlFor(chain?.image).url()}
                 alt={chain.alt}
                 fill
-                placeholder="blur" 
+                placeholder='blur'
                 blurDataURL={chain?.metadata.lqip}
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
                 className='h-[37.5%] w-auto rounded-t-cl object-cover origin-center group-hover:scale-110 transition-transform duration-300'
@@ -66,7 +66,7 @@ export default function PCHomePage({ pcData }) {
                     alt={chain.alt}
                     fill
                     sizes='(max-width: 768px) 30vw'
-                    placeholder="blur" 
+                    placeholder='blur'
                     blurDataURL={chain?.metadata.lqip}
                     className='w-full h-full object-cover rounded-l-cl'
                   />
