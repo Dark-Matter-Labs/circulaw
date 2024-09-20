@@ -21,7 +21,7 @@ export default function SummaryComponent({ lawData }) {
               {lawData?.introImage && (
                 <Image
                   src={urlFor(lawData?.introImage).url() ?? ''}
-                  alt={lawData?.imageAlt}
+                  alt={lawData?.imageAlt ?? ''}
                   width={300}
                   height={176}
                   className='rounded-cl'
@@ -151,19 +151,4 @@ export default function SummaryComponent({ lawData }) {
       </div>
     </div>
   );
-}
-
-{
-  /* 
-   <EUGenericTooltip title='Welke statussen zijn er?'>
-                
-              </EUGenericTooltip>
-
-                 <div>
-            <EUTooltip title={lawData?.statusContentTitle}>
-            
-            </EUTooltip>
-          </div>
-
-  */
 }
