@@ -92,6 +92,10 @@ export default function SummaryComponent({ lawData }) {
         {lawData?.title === 'Ecodesign for Sustainable Products Regulation (ESPR)' && (
           <Highlights law='Ecodesign for Sustainable Products Regulation (ESPR)' />
         )}
+        {lawData.title === 'EU Taxonomie' && <Highlights law='EU Taxonomie' />}
+        {lawData.title === 'Corporate Sustainability Due Diligence Directive (CSDDD)' && (
+          <Highlights law='Corporate Sustainability Due Diligence Directive (CSDDD)' />
+        )}
       </div>
       {/* Links */}
       <div className='py-10'>
