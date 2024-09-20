@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import HighlightCard from './highlight-card';
 import HighlightsSmallCard from './highlights-small-card';
 import cpr1 from '@/public/eu-crp-icons/cpr-1.svg';
@@ -31,7 +32,12 @@ import tax5 from '@/public/eu-taxonomie-icons/5-taxonomie.svg'
 import tax6 from '@/public/eu-taxonomie-icons/6-taxonomie.svg'
 import csddd1 from '@/public/eu-csddd-icons/csddd-1.svg'
 import csddd2 from '@/public/eu-csddd-icons/csddd-2.svg'
-import Image from 'next/image';
+import wfd1 from '@/public/eu-wfd-icons/wfd-1.svg'
+import wfd2 from '@/public/eu-wfd-icons/wfd-2.svg'
+import wfd3 from '@/public/eu-wfd-icons/wfd-3.svg'
+
+
+
 
 
 export default function Highlights({ law }) {
@@ -227,6 +233,29 @@ export default function Highlights({ law }) {
       width={800}
       height={445}
       />
+    </div>
+    )
+  } else if (law === 'Waste Framework Directive (WFD)') {
+    return (
+      <div className='global-margin'>
+      <h2 className='text-green-800 heading-3xl-semibold mb-4'>WFD highlights</h2>
+      <p className='mb-12 max-w-xl'>
+        Need to get this subtitle pleace
+      </p>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
+        <HighlightCard
+          text='Geharmonisdeerde regelingen voor UPV'
+          icon={wfd1}
+        />
+         <HighlightCard
+          text='Een vermindereing van 10% in de verwerking- en productiefase, vergeleken met de hoeveel afval die in 2020 werd geproduceerd.'
+          icon={wfd2}
+        />
+         <HighlightCard
+          text='Een vermindering van 30% in de detailhandel, foodservices en huishoudens, ten opzichte van 2020.'
+          icon={wfd3}
+        />
+      </div>
     </div>
     )
   }
