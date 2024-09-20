@@ -14,7 +14,6 @@ export default function PCLayout({ ...props }) {
         {/* HEADER DESKTOP */}
         <PageHeader pageTitle={props?.productChainData?.pcName} />
         {/* HEADER MOBILE */}
-       
 
         <div className='bg-gray-100'>
           <div className='global-margin pb-12 sm:pb-20'>
