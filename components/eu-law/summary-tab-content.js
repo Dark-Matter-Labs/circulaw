@@ -96,6 +96,9 @@ export default function SummaryComponent({ lawData }) {
         {lawData.title === 'Corporate Sustainability Due Diligence Directive (CSDDD)' && (
           <Highlights law='Corporate Sustainability Due Diligence Directive (CSDDD)' />
         )}
+        {lawData.title === 'Waste Framework Directive (WFD)' && (
+          <Highlights law='Waste Framework Directive (WFD)' />
+        )}
       </div>
       {/* Links */}
       <div className='py-10'>
