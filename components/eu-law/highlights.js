@@ -204,12 +204,12 @@ export default function Highlights({ law }) {
     return (
       <div className='global-margin'>
         <h2 className='text-green-800 heading-3xl-semibold mb-4'>CSDDD highlights</h2>
-        <p className='mb-12 max-w-xl'>Voor welke bedrijven geldt de CSDDD?</p>
+        <p className='mb-12 max-w-xl p-base'>waar bestaat de CSDDD uit?</p>
         <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
           <HighlightCard text='1. Due diligence verplichting' icon={csddd1} />
           <HighlightCard text='2. Klimaattransititieplan' icon={csddd2} />
         </div>
-        <h3 className='text-green-800 heading-3xl-semibold mt-12 mb-12'>Scope van de CSDDD</h3>
+        <p className='p-base mt-12 mb-12'>Voor welke bedrijven geldt de CSDDD?</p>
         <Image
           src='/eu-csddd-icons/csddd-scope.png'
           alt='an image describing the scope of the CSDDD'
@@ -224,9 +224,9 @@ export default function Highlights({ law }) {
         <h2 className='text-green-800 heading-3xl-semibold mb-4'>WFD highlights</h2>
         <p className='mb-12 max-w-xl'>De bindende doelen van de WFD</p>
         <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
-          <HighlightCard text='Geharmonisdeerde regelingen voor UPV' icon={wfd1} />
+          <HighlightCard text='Geharmoniseerde regelingen voor UPV' icon={wfd1} />
           <HighlightCard
-            text='Een vermindereing van 10% in de verwerking- en productiefase, vergeleken met de hoeveel afval die in 2020 werd geproduceerd.'
+            text='Een vermindering van 10% in de verwerking- en productiefase, vergeleken met peiljaar 2020'
             icon={wfd2}
           />
           <HighlightCard
