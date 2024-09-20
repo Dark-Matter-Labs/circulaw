@@ -44,7 +44,7 @@ export async function generateMetadata({ params }, parent) {
 
 export async function generateStaticParams() {
   const laws = await client.fetch(EU_LAW_PATHS_QUERY, { next: { tags: ['euLaw'] } });
-  console.log(laws)
+  console.log(laws);
   return laws.map((law) => ({
     law: law,
   }));
