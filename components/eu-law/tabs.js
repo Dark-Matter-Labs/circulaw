@@ -17,13 +17,13 @@ export default function Tabs({ summaryData, initialTab }) {
     <div className='sticky top-16 lgNav:top-24 shadow-lg z-50'>
       <div className='bg-green-800 -mt-12 sm:-mt-[72px] flex overflow-x-scroll snap-x snap-mandatory no-scrollbar lgNav:block pt-4'>
         <div className='global-margin'>
-          <div className='flex flex-row gap-x-2 justify-start heading-xl-semibold text-green-500 h-[72px] max-w-3xl'>
+          <div className='flex flex-row gap-x-2 justify-start p-2xs-semibold text-green-500 h-[57px] max-w-3xl'>
             <Link
               className={`${
                 selectedTab === 'overzicht'
                   ? 'bg-gray-100 text-green-500'
                   : 'bg-green-500 text-white'
-              }  h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[105px]`}
+              }  h-full rounded-t-cl px-3 py-2 flex items-start justify-center w-[73px]`}
               href={{
                 pathname: `/eu-wetgeving/${summaryData?.slug?.current}`,
                 query: { tab: 'overzicht' },
@@ -37,7 +37,7 @@ export default function Tabs({ summaryData, initialTab }) {
                 selectedTab === 'verplichtingen-voor-europese-lidstaten'
                   ? 'bg-gray-100 text-green-500'
                   : 'bg-green-500 text-white'
-              } h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[200px]`}
+              } h-full rounded-t-cl px-3 py-2 flex items-start justify-center w-[140px]`}
               href={{
                 pathname: `/eu-wetgeving/${summaryData?.slug?.current}`,
                 query: { tab: 'verplichtingen-voor-europese-lidstaten' },
@@ -51,7 +51,7 @@ export default function Tabs({ summaryData, initialTab }) {
                 selectedTab === 'relevantie-voor-regionale-en-lokale-overheden'
                   ? 'bg-gray-100 text-green-500'
                   : 'bg-green-500 text-white'
-              } h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[250px]`}
+              } h-full rounded-t-cl px-3 py-2 flex items-start justify-center w-[170px]`}
               href={{
                 pathname: `/eu-wetgeving/${summaryData?.slug?.current}`,
                 query: { tab: 'relevantie-voor-regionale-en-lokale-overheden' },
@@ -65,7 +65,7 @@ export default function Tabs({ summaryData, initialTab }) {
                 selectedTab === 'relevantie-voor-de-circulaire-economie'
                   ? 'bg-gray-100 text-green-500'
                   : 'bg-green-500 text-white'
-              } h-full rounded-t-cl px-3 py-2 flex items-start justify-center min-w-[200px]`}
+              } h-full rounded-t-cl px-3 py-2 flex items-start justify-center w-[140px]`}
               href={{
                 pathname: `/eu-wetgeving/${summaryData?.slug?.current}`,
                 query: { tab: 'relevantie-voor-de-circulaire-economie' },
