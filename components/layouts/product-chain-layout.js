@@ -2,7 +2,6 @@ import ThemaCard from '../product-chain-page/thema-cards';
 import PCTooltip from '../tooltips/product-chain-tooltip';
 import CustomButton from '@/components/custom-button';
 import PageHeader from '@/components/product-chain-page/product-chain-header';
-import MobilePageHeader from '@/components/product-chain-page/product-chain-header-mobile';
 import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -15,7 +14,7 @@ export default function PCLayout({ ...props }) {
         {/* HEADER DESKTOP */}
         <PageHeader pageTitle={props?.productChainData?.pcName} />
         {/* HEADER MOBILE */}
-        <MobilePageHeader pageTitle={props?.productChainData?.pcName} />
+       
 
         <div className='bg-gray-100'>
           <div className='global-margin pb-12 sm:pb-20'>
