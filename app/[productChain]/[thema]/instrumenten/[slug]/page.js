@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Instrument from '@/components/instrument';
 import { INSTRUMENT_PATHS_QUERY, INSTRUMENT_PAGE_QUERY, INSTRUMENT_META_DATA } from '@/lib/queries';
 import { client, sanityFetch } from '@/lib/sanity';
@@ -51,5 +52,10 @@ export default async function InstrumentPage({ params }) {
     qParams: params,
     tags: ['instrument'],
   });
+
+  if (!instrumentContent) {
+    notFound();
+  }
+
   return <Instrument data={instrumentContent} />;
 }

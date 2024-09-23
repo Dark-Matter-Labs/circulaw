@@ -112,6 +112,7 @@ export default function CustomStats({ index }) {
                 {item},{' '}
               </span>
             ))}
+          <span> in {index}</span>.
         </div>
       ) : null}
 
@@ -170,6 +171,7 @@ export default function CustomStats({ index }) {
                 {item},{' '}
               </span>
             ))}
+          <span> in {index}</span>.
         </div>
       ) : null}
     </>

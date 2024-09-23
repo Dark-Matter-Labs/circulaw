@@ -24,6 +24,8 @@ export default function ThemaCard({ themaCards, transitionAgenda }) {
                       width={1440}
                       height={720}
                       priority={true}
+                      placeholder='blur'
+                      blurDataURL={thema?.metadata.lqip}
                     />
                   )}
                   {thema.new === true && (
@@ -97,6 +99,8 @@ export default function ThemaCard({ themaCards, transitionAgenda }) {
                     alt={thema?.themaName + 'image'}
                     fill
                     className='rounded-l-cl object-cover'
+                    placeholder='blur'
+                    blurDataURL={thema?.metadata.lqip}
                   />
                   {thema.new === true && (
                     <div className='p-2xs w-full bg-green-400 absolute bottom-0 right-0 text-center text-white pb-0.5 rounded-bl-cl uppercase'>

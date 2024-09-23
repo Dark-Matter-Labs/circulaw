@@ -25,6 +25,8 @@ export default function HomePageEUSection({ euData }) {
                 className='rounded-cl'
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
                 loading='lazy'
+                placeholder='blur'
+                blurDataURL={euData?.metadata.lqip}
               />{' '}
             </div>
           </div>
@@ -48,6 +50,8 @@ export default function HomePageEUSection({ euData }) {
               alt='image for wat circulaw'
               className='rounded-cl'
               sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
+              placeholder='blur'
+              blurDataURL={euData?.metadata.lqip}
             />
           </div>
         </div>

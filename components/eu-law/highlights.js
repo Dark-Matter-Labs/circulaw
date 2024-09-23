@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import HighlightCard from './highlight-card';
 import HighlightsSmallCard from './highlights-small-card';
 import cpr1 from '@/public/eu-crp-icons/cpr-1.svg';
@@ -23,6 +24,17 @@ import sup7 from '@/public/eu-sup-icons/sup-7.svg';
 import sup8 from '@/public/eu-sup-icons/sup-8.svg';
 import sup9 from '@/public/eu-sup-icons/sup-9.svg';
 import sup10 from '@/public/eu-sup-icons/sup-10.svg';
+import tax1 from '@/public/eu-taxonomie-icons/1-taxonomie.svg';
+import tax2 from '@/public/eu-taxonomie-icons/2-taxanomie.svg';
+import tax3 from '@/public/eu-taxonomie-icons/3-taxonomie.svg';
+import tax4 from '@/public/eu-taxonomie-icons/4-taxonomie.svg';
+import tax5 from '@/public/eu-taxonomie-icons/5-taxonomie.svg';
+import tax6 from '@/public/eu-taxonomie-icons/6-taxonomie.svg';
+import csddd1 from '@/public/eu-csddd-icons/csddd-1.svg';
+import csddd2 from '@/public/eu-csddd-icons/csddd-2.svg';
+import wfd1 from '@/public/eu-wfd-icons/wfd-1.svg';
+import wfd2 from '@/public/eu-wfd-icons/wfd-2.svg';
+import wfd3 from '@/public/eu-wfd-icons/wfd-3.svg';
 
 export default function Highlights({ law }) {
   if (law === 'CSRD') {
@@ -155,6 +167,72 @@ export default function Highlights({ law }) {
           <HighlightCard text='Chemicaliën' icon={espr6} />
           <HighlightCard text='ICT producten' icon={espr7} />
           <HighlightCard text='Electronica' icon={espr8} />
+        </div>
+      </div>
+    );
+  } else if (law === 'EU Taxonomie') {
+    return (
+      <div className='global-margin'>
+        <h2 className='text-green-800 heading-3xl-semibold mb-4'>EU Taxonomie highlights</h2>
+        <p className='mb-12 max-w-xl'>De hoofddoelen van de EU Taxonomie op een rijtje:</p>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
+          <HighlightCard
+            text='Uitstoot van broeikasgassen met tenminste 55% teruggedrongen in 2030 (vergeleken met peiljaar 1990)'
+            icon={tax1}
+          />
+          <HighlightCard
+            text='In 2050 is er geen netto-uitstoot van broeikasgassen meer'
+            icon={tax2}
+          />
+          <HighlightCard
+            text='De EU-samenleving heeft zich in 2050 volledig aangepast aan de impact van klimaatverandering'
+            icon={tax3}
+          />
+          <HighlightCard
+            text='Het natuurlijke kapitaal van de EU wordt beschermd, geconserveerd en verbeterd'
+            icon={tax4}
+          />
+          <HighlightCard
+            text="De gezondheid en het welzijn van burgers wordt beschermd tegen invloeden en risico's vanuit het milieu"
+            icon={tax5}
+          />
+          <HighlightCard text='Iedereen doet mee en geen plek wordt vergeten' icon={tax6} />
+        </div>
+      </div>
+    );
+  } else if (law === 'Corporate Sustainability Due Diligence Directive (CSDDD)') {
+    return (
+      <div className='global-margin'>
+        <h2 className='text-green-800 heading-3xl-semibold mb-4'>CSDDD highlights</h2>
+        <p className='mb-12 max-w-xl p-base'>waar bestaat de CSDDD uit?</p>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
+          <HighlightCard text='1. Due diligence verplichting' icon={csddd1} />
+          <HighlightCard text='2. Klimaattransititieplan' icon={csddd2} />
+        </div>
+        <p className='p-base mt-12 mb-12'>Voor welke bedrijven geldt de CSDDD?</p>
+        <Image
+          src='/eu-csddd-icons/csddd-scope.png'
+          alt='an image describing the scope of the CSDDD'
+          width={800}
+          height={445}
+        />
+      </div>
+    );
+  } else if (law === 'Waste Framework Directive (WFD)') {
+    return (
+      <div className='global-margin'>
+        <h2 className='text-green-800 heading-3xl-semibold mb-4'>WFD highlights</h2>
+        <p className='mb-12 max-w-xl'>De bindende doelen van de WFD</p>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
+          <HighlightCard text='Geharmoniseerde regelingen voor UPV' icon={wfd1} />
+          <HighlightCard
+            text='Een vermindering van 10% in de verwerking- en productiefase, vergeleken met peiljaar 2020'
+            icon={wfd2}
+          />
+          <HighlightCard
+            text='Een vermindering van 30% in de detailhandel, foodservices en huishoudens, ten opzichte van 2020.'
+            icon={wfd3}
+          />
         </div>
       </div>
     );

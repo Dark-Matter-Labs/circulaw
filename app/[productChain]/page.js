@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import {
   PC_PATHS_QUERY,
   PRODUCT_CHAIN_PAGE_QUERY,
@@ -59,6 +60,11 @@ export default async function ProductChainPage({ params }) {
     qParams: params,
     tags: ['thema', 'simpleThema'],
   });
+
+  if (!productChainData || !themeByPCData) {
+    notFound();
+  }
+
   return (
     <PCLayout
       productChainData={productChainData}
