@@ -24,7 +24,7 @@
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@floating-ui/react": "^0.26.3",
-    "@headlessui/react": "^1.6.0",
+    "@headlessui/react": "^2.1.8",
     "@heroicons/react": "^1.0.6",
     "@mui/material": "^5.13.7",
     "@piwikpro/next-piwik-pro": "^2.0.0",
