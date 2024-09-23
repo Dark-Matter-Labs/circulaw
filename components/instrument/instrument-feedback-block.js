@@ -1,5 +1,5 @@
 import CustomButton from '../custom-button';
-import { Popover } from '@headlessui/react';
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import { ArrowLeftIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 
@@ -9,7 +9,7 @@ export default function InstrumentFeedbackBlock({ data }) {
     <Popover className='absolute inset-y-1/6 right-0 h-72 w-8 sm:h-96 sm:w-16 hidden sm:block'>
       {({ open }) => (
         <>
-          <Popover.Button
+          <PopoverButton
             className={`${
               open ? '-translate-x-52 sm:-translate-x-60' : ''
             } bg-green-500 rounded-l-clSm h-full w-full flex flex-col items-center justify-between text-gray-100`}
@@ -22,8 +22,8 @@ export default function InstrumentFeedbackBlock({ data }) {
             <div className='[writing-mode:vertical-lr] rotate-180 pt-3 sm:pt-10 p-base sm:heading-xl'>
               Help ons circulaw te verbeteren
             </div>
-          </Popover.Button>
-          <Popover.Panel className=''>
+          </PopoverButton>
+          <PopoverPanel className=''>
             <div className='w-52 h-72 sm:w-60 sm:h-96 bg-gray-200 -translate-y-72 sm:-translate-y-96 -translate-x-44 sm:-translate-x-44 flex flex-col items-center'>
               <div className='px-6 py-4 sm:px-8 sm:py-6'>
                 <h4 className='p-base-semibold sm:headling-xl-semibold'>Deel met ons:</h4>
@@ -42,7 +42,7 @@ export default function InstrumentFeedbackBlock({ data }) {
                 </CustomButton>
               </Link>
             </div>
-          </Popover.Panel>
+          </PopoverPanel>
         </>
       )}
     </Popover>

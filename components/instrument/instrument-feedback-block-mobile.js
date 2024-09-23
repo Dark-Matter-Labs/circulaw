@@ -1,5 +1,5 @@
 import CustomButton from '../custom-button';
-import { Popover } from '@headlessui/react';
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import { ArrowUpIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 
@@ -9,15 +9,15 @@ export default function MobileFeedback({ data }) {
     <Popover className='bottom-0 max-w-sm h-14 z-20 sticky sm:hidden w-full'>
       {({ open }) => (
         <>
-          <Popover.Button
+          <PopoverButton
             className={`${
               open ? '-translate-y-64' : ''
             } bg-green-500 px-8 rounded-t-clSm h-full w-full flex flex-row items-center justify-between text-gray-100`}
           >
             <div className='p-base'>Help ons circulaw te verbeteren</div>
             <ArrowUpIcon className={`${open ? 'rotate-180' : ''} h-4 w-4 text-gray-100`} />
-          </Popover.Button>
-          <Popover.Panel className={`${open ? '-translate-y-64' : ''} w-full h-64`}>
+          </PopoverButton>
+          <PopoverPanel className={`${open ? '-translate-y-64' : ''} w-full h-64`}>
             <div className=' bg-gray-200 flex flex-col items-center h-full justify-between py-4 px-8'>
               <div className=''>
                 <h4 className='heading-xl-semibold'>Deel met ons:</h4>
@@ -36,7 +36,7 @@ export default function MobileFeedback({ data }) {
                 </CustomButton>
               </Link>
             </div>
-          </Popover.Panel>
+          </PopoverPanel>
         </>
       )}
     </Popover>
