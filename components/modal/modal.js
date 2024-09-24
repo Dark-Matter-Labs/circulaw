@@ -17,7 +17,9 @@ export default function Modal({ Button, children }) {
           transition
           className='fixed inset-0 bg-gray-500/75 transition duration-500 ease-out data-[closed]:opacity-0'
         />
-        {children}
+        <div className='fixed inset-0 w-screen overflow-y-auto'>
+          <div className='flex min-h-full items-center justify-end'>{children}</div>
+        </div>
       </Dialog>
     </>
   );
