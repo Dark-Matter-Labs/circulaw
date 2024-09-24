@@ -2,13 +2,12 @@
 import { Dialog, DialogBackdrop } from '@headlessui/react';
 import { useState } from 'react';
 
+// the modal takes a react component as the prop Button
 export default function Modal({ Button, children }) {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
   return (
     <>
       <button onClick={() => setIsOpen(true)}>{Button}</button>
-
       <Dialog
         open={isOpen}
         onClose={() => setIsOpen(false)}

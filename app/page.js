@@ -90,7 +90,7 @@ export default async function Page() {
         <div className='bg-red-100 h-96'>
           <div className='global-margin'>
             <Modal Button={<ModalButton />}>
-              <ModalContent title='I am modal title'>
+              <ModalContent title='I am modal title a reallyLs really long one'>
                 <div>I am modal Content</div>
               </ModalContent>
             </Modal>

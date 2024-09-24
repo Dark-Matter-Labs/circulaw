@@ -1,12 +1,17 @@
-import { DialogPanel, DialogTitle } from '@headlessui/react';
+import { CloseButton, DialogPanel, DialogTitle } from '@headlessui/react';
+import { XIcon } from '@heroicons/react/outline';
 
 export default function ModalContent({ title, children }) {
   return (
     <DialogPanel
       transition
-      className='w-full max-w-md min-h-screen bg-white p-12 z-130 duration-500 ease-out data-[closed]:translate-x-full'
+      className='w-full max-w-md min-h-screen bg-white p-8 pt-10 z-130 duration-500 ease-out data-[closed]:translate-x-full'
     >
-      <DialogTitle>{title}</DialogTitle>
+      <CloseButton className='absolute float-right top-0 right-0 flex pt-4 pr-8 sm:-ml-10'>
+        <span className='sr-only'>Close panel</span>
+        <XIcon className='h-6 w-6' aria-hidden='true' />
+      </CloseButton>
+      <DialogTitle className='heading-3xl-semibold'>{title}</DialogTitle>
       <div>{children}</div>
     </DialogPanel>
   );
