@@ -1,10 +1,11 @@
 import ThemaCard from '../product-chain-page/thema-cards';
-import PCTooltip from '../tooltips/product-chain-tooltip';
 import CustomButton from '@/components/custom-button';
 import PageHeader from '@/components/product-chain-page/product-chain-header';
 import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
+import Modal from '../modal/modal';
+import ModalContent from '../modal/modal-content';
 
 // TODO: See what we could move to a layout.js file instead of having everything in components.
 export default function PCLayout({ ...props }) {
@@ -60,11 +61,18 @@ export default function PCLayout({ ...props }) {
                     <div className='h-full flex items-start'>
                       <p className='p-base'>{impact.detail}</p>
                     </div>
-                    <PCTooltip title={impact.disclosureTitle} content={impact.disclosureContent}>
-                      <p className='pt-8 p-base-bold text-green-800 border-b pb-1 border-green-800'>
-                        {impact.question}
-                      </p>
-                    </PCTooltip>
+                    <Modal
+                      Button={
+                        <p className='pt-8 p-base-bold text-green-800 border-b pb-1 border-green-800'>
+                          {impact.question}
+                        </p>
+                      }
+                    >
+                      <ModalContent
+                        title={impact.disclosureTitle}
+                        ptContent={impact.disclosureContent}
+                      ></ModalContent>
+                    </Modal>
                   </div>
                 ))}
               </div>
