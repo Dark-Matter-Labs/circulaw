@@ -15,7 +15,6 @@ export default function PCLayout({ ...props }) {
         {/* HEADER DESKTOP */}
         <PageHeader pageTitle={props?.productChainData?.pcName} />
         {/* HEADER MOBILE */}
-
         <div className='bg-gray-100'>
           <div className='global-margin pb-12 sm:pb-20'>
             <div className='pt-14 pb-0 sm:pb-10'>
@@ -27,7 +26,6 @@ export default function PCLayout({ ...props }) {
                 {props?.productChainData?.introTwo}
               </p>
             </div>
-
             <div className='-z-20'>
               <ThemaCard themaCards={props?.themaList} />
             </div>
