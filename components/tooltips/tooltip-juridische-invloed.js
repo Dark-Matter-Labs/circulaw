@@ -30,7 +30,6 @@ export default function ToolTips({ children, icon, data }) {
         )}
         <div className='text-white'>{children}</div>
       </button>
-
       <Transition.Root show={open} as={Fragment}>
         <Dialog as='div' className='relative z-120' onClose={setOpen}>
           <Transition.Child

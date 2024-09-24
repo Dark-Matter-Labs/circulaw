@@ -7,7 +7,9 @@ export default function Modal({ Button, children }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <button onClick={() => setIsOpen(true)}>{Button}</button>
+      <button className='w-auto' onClick={() => setIsOpen(true)}>
+        {Button}
+      </button>
       <Dialog
         open={isOpen}
         onClose={() => setIsOpen(false)}
