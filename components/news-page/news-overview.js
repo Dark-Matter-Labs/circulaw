@@ -10,6 +10,8 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
+// TODO: replace Popover with headless UI Listbox
+
 export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }) {
   const [articleType, setArticleType] = useState('Alles');
   const [notFeatured, setNotFeatured] = useState();
