@@ -102,7 +102,7 @@ export default function Pillars({ pillars, modelTexts }) {
             </li>
           ))}
         </ul>
-        <div ref={pillarsRef}>
+        <div>
           {pillars.map((p) => (
             <>
               {p.slug === selectedPillar && (
@@ -117,13 +117,13 @@ export default function Pillars({ pillars, modelTexts }) {
       </div>
 
       {!modelTextSlug && !isPending ? (
-        <div className='min-h-screen'>
+        <div className='min-h-screen scroll-m-[80px]' ref={pillarsRef}>
           <div className='grid grid-cols-2 xl:grid-cols-3 gap-y-8 justify-evenly mt-14 relative w-full'>
             {filteredModelTexts?.map((text, id) => (
               <button
                 key={id}
                 onClick={() => {
-                  pillarsRef.current?.scrollIntoView({ top: 200, behavior: 'smooth' });
+                  pillarsRef.current?.scrollIntoView({ behavior: 'smooth' ,  block: 'start'});
                   console.log(pillarsRef.current);
                   router.push(pathname + '?' + createQueryString('modeltext', text.slug), {
                     scroll: false,
@@ -136,13 +136,13 @@ export default function Pillars({ pillars, modelTexts }) {
           </div>
         </div>
       ) : (
-        <div className='flex items-start justify-center mt-14 w-full min-h-screen max-w-[1280px]'>
+        <div className='flex items-start justify-center mt-14 w-full min-h-screen max-w-[1280px] scroll-m-[130px]' ref={pillarsRef}>
           <div className='h-screen overflow-y-scroll flex flex-col gap-y-8 pl-4 py-4 no-scrollbar min-w-[420px]'>
             {filteredWithSelected?.map((text, id) => (
               <button
                 key={id}
                 onClick={() => {
-                  pillarsRef.current?.scrollIntoView({ behavior: 'smooth' });
+                  pillarsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start'});
                   router.push(pathname + '?' + createQueryString('modeltext', text.slug), {
                     scroll: false,
                   });
