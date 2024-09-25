@@ -4,7 +4,7 @@ export default function ModelTextCard({ text }) {
   return (
     <div
       key={text.title}
-      className='min-w-[396px] min-h-[340px] rounded-cl bg-green-50 shadow-card p-6 flex flex-col justify-between group cursor-pointer text-left'
+      className='w-[396px] h-full basis-1/3 rounded-cl bg-green-50 shadow-card p-6 flex flex-col justify-between group cursor-pointer text-left'
     >
       <div className='p-2xs px-2 py-1 border border-green-800 w-min rounded-cl mb-6'>
         Omgevingsplan

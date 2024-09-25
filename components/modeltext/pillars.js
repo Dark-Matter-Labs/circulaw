@@ -33,6 +33,8 @@ export default function Pillars({ pillars, modelTexts }) {
   const [showLinkCopied, setShowLinkCopied] = useState(false);
 
   const [isPending, startTransition] = useTransition();
+
+  
   const handelModeltextChanges = (modelTextSlug, pillar) => {
     startTransition(() => {
       if (modelTextSlug !== '') {
@@ -96,8 +98,10 @@ export default function Pillars({ pillars, modelTexts }) {
                   setModelTextSlug(undefined);
                 }}
                 className={`${
-                  selectedPillar === p.slug ? 'p-base-semibold underline' : 'p-base'
-                } text-green-600 p-2`}
+                  selectedPillar === p.slug
+                    ? 'p-base-semibold border-b-2 border-b-green-600'
+                    : 'p-base'
+                } text-green-600 px-2`}
               >
                 {p.title} {'('}
                 {modelTexts.filter((text) => text.pillar === p.slug).length}
@@ -106,7 +110,6 @@ export default function Pillars({ pillars, modelTexts }) {
             </li>
           ))}
         </ul>
-
         <div>
           {pillars.map((p) => (
             <>
@@ -123,7 +126,7 @@ export default function Pillars({ pillars, modelTexts }) {
 
       {!modelTextSlug && !isPending ? (
         <div className='min-h-screen'>
-          <div className='grid grid-cols-3 gap-12 mt-14 relative w-full'>
+          <div className='grid grid-cols-2 xl:grid-cols-3 gap-y-8 justify-evenly mt-14 relative w-full'>
             {filteredModelTexts?.map((text, id) => (
               <button
                 key={id}
@@ -139,8 +142,8 @@ export default function Pillars({ pillars, modelTexts }) {
           </div>
         </div>
       ) : (
-        <div className='flex items-start justify-center mt-14 w-full min-h-screen'>
-          <div className='basis-1/3 h-screen overflow-y-scroll flex flex-col gap-y-8 pl-4 py-4 no-scrollbar'>
+        <div className='flex items-start justify-center mt-14 w-full min-h-screen max-w-[1280px]'>
+          <div className='h-screen overflow-y-scroll flex flex-col gap-y-8 pl-4 py-4 no-scrollbar min-w-[420px]'>
             {filteredWithSelected?.map((text, id) => (
               <button
                 key={id}
@@ -154,7 +157,7 @@ export default function Pillars({ pillars, modelTexts }) {
               </button>
             ))}
           </div>
-          <div className='basis-2/3 h-screen overflow-y-scroll pl-12 flex items-start justify-start py-4 no-scrollbar'>
+          <div className='h-screen flex-shrink w-full overflow-y-scroll pl-12 flex items-start py-4 no-scrollbar'>
             {selectedModelText && (
               <div className='rounded-cl bg-gray-100 border w-[635px] py-6 px-10'>
                 <div className='flex flex-row w-full justify-between items-center'>
