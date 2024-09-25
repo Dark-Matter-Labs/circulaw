@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useTransition } from 'react';
 import { IconX, IconCopy } from '@tabler/icons-react';
 import ModelTextCard from './modeltext-card';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
@@ -11,8 +11,6 @@ export default function Pillars({ pillars, modelTexts }) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-
-  // const [url, setUrl] = useState()
 
   const createQueryString = useCallback(
     (name, value) => {
@@ -33,37 +31,44 @@ export default function Pillars({ pillars, modelTexts }) {
   const [filteredWithSelected, setFilteredWithSelected] = useState();
   const [selectedModelText, setSelectedModelText] = useState(null);
   const [showLinkCopied, setShowLinkCopied] = useState(false);
+
+  const [isPending, startTransition] = useTransition();
+  const handelModeltextChanges = (modelTextSlug, pillar) => {
+    startTransition(() => {
+      if (modelTextSlug !== '') {
+        setModelTextSlug(modelTextSlug);
+      } else if (modelTextSlug === '') {
+        setModelTextSlug(undefined);
+      }
+
+      if (pillar && !modelTextSlug) {
+        setSelectedPillar(pillar);
+        const filtered = modelTexts.filter((t) => t.pillar === pillar);
+        setFilteredModelTexts(filtered);
+        setSelectedModelText(undefined);
+        setFilteredWithSelected(undefined);
+        setModelTextSlug(undefined);
+      } else if (!pillar && !modelTextSlug) {
+        setSelectedPillar('materialenkringloop');
+        const filtered = modelTexts.filter((t) => t.pillar === 'materialenkringloop');
+        setFilteredModelTexts(filtered);
+      } else if (pillar && modelTextSlug) {
+        setSelectedPillar(pillar);
+        let filered = modelTexts.filter((t) => t.pillar === pillar);
+        let refiltered = filered.filter((t) => t.slug !== modelTextSlug);
+        setSelectedModelText(modelTexts.filter((t) => t.slug === modelTextSlug)[0]);
+        setFilteredWithSelected(refiltered);
+      }
+    });
+  };
+
   // use effect to set the pillar and filer the modeltexts
   useEffect(() => {
     // initialise from search params
     let modelTextSlug = searchParams.get('modeltext');
-    if (modelTextSlug !== '') {
-      setModelTextSlug(modelTextSlug);
-    } else if (modelTextSlug === '') {
-      setModelTextSlug(undefined);
-    }
-
     let pillar = searchParams.get('pillar');
 
-    if (pillar && !modelTextSlug) {
-      setSelectedPillar(pillar);
-      const filtered = modelTexts.filter((t) => t.pillar === pillar);
-      setFilteredModelTexts(filtered);
-      setSelectedModelText(undefined);
-      setFilteredWithSelected(undefined);
-      setModelTextSlug(undefined);
-    } else if (!pillar && !modelTextSlug) {
-      // may not need this and just assure that there is always a pillar
-      setSelectedPillar('materialenkringloop');
-      const filtered = modelTexts.filter((t) => t.pillar === 'materialenkringloop');
-      setFilteredModelTexts(filtered);
-    } else if (pillar && modelTextSlug) {
-      setSelectedPillar(pillar);
-      let filered = modelTexts.filter((t) => t.pillar === pillar);
-      let refiltered = filered.filter((t) => t.slug !== modelTextSlug);
-      setSelectedModelText(modelTexts.filter((t) => t.slug === modelTextSlug)[0]);
-      setFilteredWithSelected(refiltered);
-    }
+    handelModeltextChanges(modelTextSlug, pillar);
   }, [searchParams, modelTexts, modelTextSlug]);
 
   const modelTextRef = useRef();
@@ -85,10 +90,10 @@ export default function Pillars({ pillars, modelTexts }) {
             <li key={p.title}>
               <button
                 onClick={() => {
-                  setModelTextSlug(undefined);
                   router.push(pathname + '?' + createQueryString('pillar', p.slug), {
                     scroll: false,
                   });
+                  setModelTextSlug(undefined);
                 }}
                 className={`${
                   selectedPillar === p.slug ? 'p-base-semibold underline' : 'p-base'
@@ -116,23 +121,25 @@ export default function Pillars({ pillars, modelTexts }) {
         </div>
       </div>
 
-      {!modelTextSlug ? (
-        <div className='grid-cols-3 grid gap-14 mt-14 relative'>
-          {filteredModelTexts?.map((text, id) => (
-            <button
-              key={id}
-              onClick={() => {
-                router.push(pathname + '?' + createQueryString('modeltext', text.slug), {
-                  scroll: false,
-                });
-              }}
-            >
-              <ModelTextCard text={text} />
-            </button>
-          ))}
+      {!modelTextSlug && !isPending ? (
+        <div className='min-h-screen'>
+          <div className='grid grid-cols-3 gap-12 mt-14 relative w-full'>
+            {filteredModelTexts?.map((text, id) => (
+              <button
+                key={id}
+                onClick={() => {
+                  router.push(pathname + '?' + createQueryString('modeltext', text.slug), {
+                    scroll: false,
+                  });
+                }}
+              >
+                <ModelTextCard text={text} />
+              </button>
+            ))}
+          </div>
         </div>
       ) : (
-        <div className='flex items-start justify-center mt-12'>
+        <div className='flex items-start justify-center mt-14 w-full min-h-screen'>
           <div className='basis-1/3 h-screen overflow-y-scroll flex flex-col gap-y-8 pl-4 py-4 no-scrollbar'>
             {filteredWithSelected?.map((text, id) => (
               <button
@@ -147,7 +154,7 @@ export default function Pillars({ pillars, modelTexts }) {
               </button>
             ))}
           </div>
-          <div className='basis-2/3 pl-12 flex items-start justify-start h-full py-4'>
+          <div className='basis-2/3 h-screen overflow-y-scroll pl-12 flex items-start justify-start py-4 no-scrollbar'>
             {selectedModelText && (
               <div className='rounded-cl bg-gray-100 border w-[635px] py-6 px-10'>
                 <div className='flex flex-row w-full justify-between items-center'>
@@ -166,7 +173,6 @@ export default function Pillars({ pillars, modelTexts }) {
                     <IconX className='h-6 w-6 text-green-800' />
                   </button>
                 </div>
-
                 <h5 className='heading-xl-semibold mb-10'>Modeltekst omgevingsplan</h5>
                 <div className='w-full border border-green-800 flex flex-col p-6 rounded-cl mb-10'>
                   <div className='self-end relative'>
