@@ -124,7 +124,6 @@ export default function Pillars({ pillars, modelTexts }) {
                 key={id}
                 onClick={() => {
                   pillarsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  console.log(pillarsRef.current);
                   router.push(pathname + '?' + createQueryString('modeltext', text.slug), {
                     scroll: false,
                   });
