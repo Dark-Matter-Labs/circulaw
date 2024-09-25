@@ -123,7 +123,7 @@ export default function Pillars({ pillars, modelTexts }) {
               <button
                 key={id}
                 onClick={() => {
-                  pillarsRef.current?.scrollIntoView({ behavior: 'smooth' ,  block: 'start'});
+                  pillarsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   console.log(pillarsRef.current);
                   router.push(pathname + '?' + createQueryString('modeltext', text.slug), {
                     scroll: false,
@@ -136,13 +136,16 @@ export default function Pillars({ pillars, modelTexts }) {
           </div>
         </div>
       ) : (
-        <div className='flex items-start justify-center mt-14 w-full min-h-screen max-w-[1280px] scroll-m-[130px]' ref={pillarsRef}>
+        <div
+          className='flex items-start justify-center mt-14 w-full min-h-screen max-w-[1280px] scroll-m-[130px]'
+          ref={pillarsRef}
+        >
           <div className='h-screen overflow-y-scroll flex flex-col gap-y-8 pl-4 py-4 no-scrollbar min-w-[420px]'>
             {filteredWithSelected?.map((text, id) => (
               <button
                 key={id}
                 onClick={() => {
-                  pillarsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start'});
+                  pillarsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   router.push(pathname + '?' + createQueryString('modeltext', text.slug), {
                     scroll: false,
                   });
