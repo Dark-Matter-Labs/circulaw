@@ -8,8 +8,6 @@ import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
 import PCHomePage from '@/components/homepage/product-chain-homepage';
 import { HOME_PAGE_QUERY } from '@/lib/queries';
-import Modal from '@/components/modal/modal';
-import ModalContent from '@/components/modal/modal-content';
 
 export default async function Page() {
   const data = await sanityFetch({
@@ -87,22 +85,8 @@ export default async function Page() {
           </div>
           <HomePageAboutSection aboutSection={data.aboutSection} />
         </div>
-        <div className='bg-red-100 h-96'>
-          <div className='global-margin'>
-            <Modal Button={<ModalButton />}>
-              <ModalContent title='I am modal title a reallyLs really long one'>
-                <div>I am modal Content</div>
-              </ModalContent>
-            </Modal>
-          </div>
-        </div>
       </div>
     </>
   );
 }
 
-function ModalButton() {
-  return (
-    <div className='p-base-semibold text-green-500 underline hover:text-green-200'>Open Modal</div>
-  );
-}
