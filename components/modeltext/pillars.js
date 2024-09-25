@@ -34,7 +34,6 @@ export default function Pillars({ pillars, modelTexts }) {
 
   const [isPending, startTransition] = useTransition();
 
-  
   const handelModeltextChanges = (modelTextSlug, pillar) => {
     startTransition(() => {
       if (modelTextSlug !== '') {
@@ -69,22 +68,15 @@ export default function Pillars({ pillars, modelTexts }) {
     // initialise from search params
     let modelTextSlug = searchParams.get('modeltext');
     let pillar = searchParams.get('pillar');
-
     handelModeltextChanges(modelTextSlug, pillar);
   }, [searchParams, modelTexts, modelTextSlug]);
 
-  const modelTextRef = useRef();
-  useEffect(() => {
-    if (modelTextRef.current) {
-      modelTextRef.current.scrollTop = 0;
-    }
-  });
+  const pillarsRef = useRef(null);
 
   return (
     <>
       <div className='max-w-[1280px]'>
         <ul
-          ref={modelTextRef}
           id='pillars'
           className='bg-green-50 rounded-cl flex flex-row p-4 mt-14 gap-x-2.5 justify-between'
         >
@@ -110,7 +102,7 @@ export default function Pillars({ pillars, modelTexts }) {
             </li>
           ))}
         </ul>
-        <div>
+        <div ref={pillarsRef}>
           {pillars.map((p) => (
             <>
               {p.slug === selectedPillar && (
@@ -131,6 +123,8 @@ export default function Pillars({ pillars, modelTexts }) {
               <button
                 key={id}
                 onClick={() => {
+                  pillarsRef.current?.scrollIntoView({ top: 200, behavior: 'smooth' });
+                  console.log(pillarsRef.current);
                   router.push(pathname + '?' + createQueryString('modeltext', text.slug), {
                     scroll: false,
                   });
@@ -148,6 +142,7 @@ export default function Pillars({ pillars, modelTexts }) {
               <button
                 key={id}
                 onClick={() => {
+                  pillarsRef.current?.scrollIntoView({ behavior: 'smooth' });
                   router.push(pathname + '?' + createQueryString('modeltext', text.slug), {
                     scroll: false,
                   });
