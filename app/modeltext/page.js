@@ -77,7 +77,7 @@ export default async function ModelTextPage() {
             zelf.
           </p>
           <p className='p-base-semibold'>Hoe vind je de planregel die jij nodig hebt?</p>
-          <p>
+          <p className='p-base'>
             We hebben de planregels ingedeeld op basis van 6 pijlers - hierbij sluiten we aan bij de
             pijlers zoals Toekomstig Bestendig Bouwen deze heeft gedefinieerd:
           </p>

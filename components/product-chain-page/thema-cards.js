@@ -72,15 +72,15 @@ export default function ThemaCard({ themaCards, transitionAgenda }) {
             <li className='w-full h-[470px] flex-grow bg-green-50 border border-gray-200 rounded-cl group'>
               <Link href='/modeltext?pillar=materialenkringloop' className='w-full h-full'>
                 <div className='h-full w-full flex flex-col flex-grow p-8 justify-between'>
-                  <h3 className='heading-2xl-semibold text-green-600'>MODELTEXTS BABY</h3>
+                  <h3 className='heading-2xl-semibold text-green-600'>MODELTEXTS</h3>
                   <div>
-                    <p className='p-base pt-4 text-green-800'>Copy and paste that jazz</p>
+                    <p className='p-base pt-4 text-green-800'>Copy and paste them</p>
                     <p className='p-base pt-4 text-grenn-800'>
                       Ohh so cool these litle model texts
                     </p>
                   </div>
                   <div className='flex justify-center'>
-                    <CustomButton color='darkGreenBG'>come and get me </CustomButton>
+                    <CustomButton color='darkGreenBG'>come and see</CustomButton>
                   </div>
                 </div>
               </Link>
