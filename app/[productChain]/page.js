@@ -24,8 +24,7 @@ export async function generateMetadata({ params }, parent) {
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
 
-  if(productChainMetaData)
-  {
+  if (productChainMetaData) {
     return {
       title: productChainMetaData.metaTitle || productChainMetaData.pcName + ' - CircuLaw',
       description: productChainMetaData.metaDescribe || generic.description,
@@ -40,7 +39,6 @@ export async function generateMetadata({ params }, parent) {
       },
     };
   }
-  
 }
 
 // slugs
