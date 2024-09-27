@@ -17,19 +17,22 @@ export async function generateMetadata({ params }, parent) {
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
-  return {
-    title: newsPageMetaData.metaTitle || newsPageMetaData.title + ' - CircuLaw',
-    description: newsPageMetaData.metaDescribe || generic.description,
-    alternates: {
-      canonical: `/nieuws/${newsPageMetaData.slug}`,
-    },
-    openGraph: {
-      images: previousImages,
-      title: newsPageMetaData.metaTitle || newsPageMetaData.title,
+
+  if (newsPageMetaData) {
+    return {
+      title: newsPageMetaData.metaTitle || newsPageMetaData.title + ' - CircuLaw',
       description: newsPageMetaData.metaDescribe || generic.description,
-      type: 'website',
-    },
-  };
+      alternates: {
+        canonical: `/nieuws/${newsPageMetaData.slug}`,
+      },
+      openGraph: {
+        images: previousImages,
+        title: newsPageMetaData.metaTitle || newsPageMetaData.title,
+        description: newsPageMetaData.metaDescribe || generic.description,
+        type: 'website',
+      },
+    };
+  }
 }
 
 export async function generateStaticParams() {

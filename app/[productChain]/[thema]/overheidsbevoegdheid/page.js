@@ -18,19 +18,21 @@ export async function generateMetadata({ params }, parent) {
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
 
-  return {
-    title: themaMetaData.themaName + ' - Wie is waarvoor bevoegd? - CircuLaw',
-    description: themaMetaData.metaDescribe || generic.description,
-    alternates: {
-      canonical: `/${themaMetaData.productChain}/${themaMetaData.slug}/overheidsbevoegdheid`,
-    },
-    openGraph: {
-      images: previousImages,
+  if (themaMetaData) {
+    return {
       title: themaMetaData.themaName + ' - Wie is waarvoor bevoegd? - CircuLaw',
-      description: generic.description,
-      type: 'website',
-    },
-  };
+      description: themaMetaData.metaDescribe || generic.description,
+      alternates: {
+        canonical: `/${themaMetaData.productChain}/${themaMetaData.slug}/overheidsbevoegdheid`,
+      },
+      openGraph: {
+        images: previousImages,
+        title: themaMetaData.themaName + ' - Wie is waarvoor bevoegd? - CircuLaw',
+        description: generic.description,
+        type: 'website',
+      },
+    };
+  }
 }
 
 export async function generateStaticParams() {
