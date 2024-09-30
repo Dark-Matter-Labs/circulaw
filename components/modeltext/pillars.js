@@ -24,7 +24,7 @@ export default function Pillars({ pillars, modelTexts }) {
     },
     [searchParams],
   );
-
+  const [startAnim, setStartAnim] = useState()
   const [selectedPillar, setSelectedPillar] = useState();
   const [filteredModelTexts, setFilteredModelTexts] = useState();
   const [modelTextSlug, setModelTextSlug] = useState();
@@ -35,6 +35,7 @@ export default function Pillars({ pillars, modelTexts }) {
   const [isPending, startTransition] = useTransition();
 
   const handelModeltextChanges = (modelTextSlug, pillar) => {
+    setTimeout(() => {
     startTransition(() => {
       if (modelTextSlug !== '') {
         setModelTextSlug(modelTextSlug);
@@ -60,8 +61,9 @@ export default function Pillars({ pillars, modelTexts }) {
         setSelectedModelText(modelTexts.filter((t) => t.slug === modelTextSlug)[0]);
         setFilteredWithSelected(refiltered);
       }
-    });
+    });}, 300);
   };
+
 
   // use effect to set the pillar and filer the modeltexts
   useEffect(() => {
@@ -141,9 +143,12 @@ export default function Pillars({ pillars, modelTexts }) {
         >
           <div className='h-screen overflow-y-scroll flex flex-col gap-y-8 pl-4 py-4 no-scrollbar min-w-[420px]'>
             {filteredWithSelected?.map((text, id) => (
+              
               <button
                 key={id}
+                className={`${text.slug === startAnim ? 'opacity-0' : 'opacity-100'} transition-all duration-500 `}
                 onClick={() => {
+                  setStartAnim(text.slug)
                   pillarsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   router.push(pathname + '?' + createQueryString('modeltext', text.slug), {
                     scroll: false,
