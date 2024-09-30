@@ -24,7 +24,7 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@floating-ui/react": "^0.26.24",
-    "@headlessui/react": "^1.6.0",
+    "@headlessui/react": "^2.1.8",
     "@heroicons/react": "^1.0.6",
     "@lottiefiles/react-lottie-player": "^3.5.4",
     "@mui/material": "^5.16.7",
