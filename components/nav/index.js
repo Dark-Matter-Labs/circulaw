@@ -1,5 +1,6 @@
 'use client';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
+import dynamic from 'next/dynamic';
 import DesktopNavCard from './desktop-nav-card';
 import DesktopSimpleButton from './desktop-simple-button';
 import MobileDisclosure from './mobile-disclosure';
@@ -7,7 +8,6 @@ import MobileSimpleButton from './mobile-simple-button';
 import HomepageHeader from '@/components/homepage/homepage-header';
 import BetaBanner from '@/components/nav/beta-banner';
 import LangSwitch from '@/components/nav/lang-switch';
-import animationData from '@/public/CL_Home_Logo_Loop';
 import CirculawLogo from '@/public/circulaw_logotype2.png';
 import logo from '@/public/circulaw_logotype_home2.png';
 import {
@@ -28,19 +28,14 @@ import { ChevronDownIcon, MenuIcon, XIcon, SearchIcon } from '@heroicons/react/o
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect, useRef, Suspense } from 'react';
-import Lottie from 'react-lottie';
 import { usePathname } from 'next/navigation';
 import SearchButton from './search-button';
 import { IconFileDownload } from '@tabler/icons-react';
 
-const defaultOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: animationData,
-  rendererSettings: {
-    preserveAspectRatio: 'xMidYMid slice',
-  },
-};
+const PlayerWithNoSSR = dynamic(
+  () => import('@lottiefiles/react-lottie-player').then((module) => module.Player),
+  { ssr: false },
+);
 
 export default function Nav(props) {
   const pathname = usePathname();
@@ -312,7 +307,13 @@ export default function Nav(props) {
                   {/* LOGO DESKTOP HP */}
                   <div className='hidden lgNav:block'>
                     <Link href='/'>
-                      <Lottie options={defaultOptions} height={98} width={163} />
+                      <PlayerWithNoSSR
+                        autoplay
+                        keepLastFrame
+                        style={{ width: 163, height: 98 }}
+                        loop
+                        src={'/CL_Home_Logo_Loop.json'}
+                      />
                     </Link>
                   </div>
                   {/* LOGO MOBILE HP */}

@@ -18,21 +18,23 @@ export async function generateMetadata({ params }, parent) {
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
 
-  return {
-    title: instrumentMetaData.titel + ' - CircuLaw',
-    description:
-      instrumentMetaData.metaDescribe || instrumentMetaData.subtitel || generic.description,
-    alternates: {
-      canonical: `/${instrumentMetaData.productChain}/${instrumentMetaData.thema}/instrumenten/${instrumentMetaData.slug}`,
-    },
-    openGraph: {
-      images: previousImages,
+  if (instrumentMetaData) {
+    return {
       title: instrumentMetaData.titel + ' - CircuLaw',
       description:
         instrumentMetaData.metaDescribe || instrumentMetaData.subtitel || generic.description,
-      type: 'website',
-    },
-  };
+      alternates: {
+        canonical: `/${instrumentMetaData.productChain}/${instrumentMetaData.thema}/instrumenten/${instrumentMetaData.slug}`,
+      },
+      openGraph: {
+        images: previousImages,
+        title: instrumentMetaData.titel + ' - CircuLaw',
+        description:
+          instrumentMetaData.metaDescribe || instrumentMetaData.subtitel || generic.description,
+        type: 'website',
+      },
+    };
+  }
 }
 
 export async function generateStaticParams() {

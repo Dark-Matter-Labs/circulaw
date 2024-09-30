@@ -61,3 +61,7 @@ export default function NotFound() {
     </div>
   );
 }
+
+export const metadata = {
+  title: '404 - CircuLaw',
+};

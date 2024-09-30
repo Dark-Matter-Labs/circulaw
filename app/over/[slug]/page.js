@@ -26,19 +26,21 @@ export async function generateMetadata({ params }, parent) {
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
 
-  return {
-    title: aboutPageMetaData.metaTitle || aboutPageMetaData.pageTitle + ' - CircuLaw',
-    description: aboutPageMetaData.metaDescribe || generic.description,
-    alternates: {
-      canonical: `/over/${aboutPageMetaData.slug}`,
-    },
-    openGraph: {
-      images: previousImages,
-      title: aboutPageMetaData.metaTitle || aboutPageMetaData.pageTitle,
+  if (aboutPageMetaData) {
+    return {
+      title: aboutPageMetaData.metaTitle || aboutPageMetaData.pageTitle + ' - CircuLaw',
       description: aboutPageMetaData.metaDescribe || generic.description,
-      type: 'website',
-    },
-  };
+      alternates: {
+        canonical: `/over/${aboutPageMetaData.slug}`,
+      },
+      openGraph: {
+        images: previousImages,
+        title: aboutPageMetaData.metaTitle || aboutPageMetaData.pageTitle,
+        description: aboutPageMetaData.metaDescribe || generic.description,
+        type: 'website',
+      },
+    };
+  }
 }
 
 export async function generateStaticParams() {

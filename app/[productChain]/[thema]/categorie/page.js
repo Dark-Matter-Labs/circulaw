@@ -17,19 +17,21 @@ export async function generateMetadata({ params }, parent) {
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
 
-  return {
-    title: themaMetaData.themaName + ' - instrumenten per categorie - CircuLaw',
-    description: themaMetaData.metaDescribe || generic.description,
-    alternates: {
-      canonical: `/${themaMetaData.productChain}/${themaMetaData.slug}/categorie`,
-    },
-    openGraph: {
-      images: previousImages,
+  if (themaMetaData) {
+    return {
       title: themaMetaData.themaName + ' - instrumenten per categorie - CircuLaw',
-      description: generic.description,
-      type: 'website',
-    },
-  };
+      description: themaMetaData.metaDescribe || generic.description,
+      alternates: {
+        canonical: `/${themaMetaData.productChain}/${themaMetaData.slug}/categorie`,
+      },
+      openGraph: {
+        images: previousImages,
+        title: themaMetaData.themaName + ' - instrumenten per categorie - CircuLaw',
+        description: generic.description,
+        type: 'website',
+      },
+    };
+  }
 }
 
 export async function generateStaticParams() {
