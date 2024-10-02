@@ -18,19 +18,21 @@ export async function generateMetadata({ params }, parent) {
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
 
-  return {
-    title: themaMetaData.themaName + ' - Wie is waarvoor bevoegd? - CircuLaw',
-    description: themaMetaData.metaDescribe || generic.description,
-    alternates: {
-      canonical: `/${themaMetaData.productChain}/${themaMetaData.slug}/overheidsbevoegdheid`,
-    },
-    openGraph: {
-      images: previousImages,
+  if (themaMetaData) {
+    return {
       title: themaMetaData.themaName + ' - Wie is waarvoor bevoegd? - CircuLaw',
-      description: generic.description,
-      type: 'website',
-    },
-  };
+      description: themaMetaData.metaDescribe || generic.description,
+      alternates: {
+        canonical: `/${themaMetaData.productChain}/${themaMetaData.slug}/overheidsbevoegdheid`,
+      },
+      openGraph: {
+        images: previousImages,
+        title: themaMetaData.themaName + ' - Wie is waarvoor bevoegd? - CircuLaw',
+        description: generic.description,
+        type: 'website',
+      },
+    };
+  }
 }
 
 export async function generateStaticParams() {
@@ -131,6 +133,32 @@ export default async function GovernmentLevelPage({ params }) {
         thema={params?.thema}
         transitionAgenda={params?.productChain}
         title='Welk instrument kan welke overheid gebruiken voor bedrijventerreinen'
+        allRegionLaws={govLevelContent?.allRegions}
+        natLaws={govLevelContent?.national}
+        provLaws={govLevelContent?.provincial}
+        gemLaws={govLevelContent?.local}
+        imageMob={placeholderImage}
+      />
+    );
+  } else if (params.thema === 'bedrijfskleding') {
+    return (
+      <GovLevelLayout
+        thema={params?.thema}
+        transitionAgenda={params?.productChain}
+        title='Welk instrument kan welke overheid gebruiken voor bedrijfskleding'
+        allRegionLaws={govLevelContent?.allRegions}
+        natLaws={govLevelContent?.national}
+        provLaws={govLevelContent?.provincial}
+        gemLaws={govLevelContent?.local}
+        imageMob={placeholderImage}
+      />
+    );
+  } else if (params.thema === 'consumententextiel') {
+    return (
+      <GovLevelLayout
+        thema={params?.thema}
+        transitionAgenda={params?.productChain}
+        title='Welk instrument kan welke overheid gebruiken voor consumententextiel'
         allRegionLaws={govLevelContent?.allRegions}
         natLaws={govLevelContent?.national}
         provLaws={govLevelContent?.provincial}

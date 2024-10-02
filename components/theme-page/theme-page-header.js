@@ -15,6 +15,8 @@ export default function ThemePageHeader({ themaData }) {
             fill
             className='z-0 bg-cover'
             priority
+            placeholder='blur'
+            blurDataURL={themaData?.metadata.lqip}
           />
         )}
         <div className='w-full h-full bg-gradient-to-t from-[#035E46] to-[#035E4600] z-0 absolute'></div>

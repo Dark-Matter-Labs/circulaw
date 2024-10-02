@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { client, sanityFetch } from '@/lib/sanity';
 import { THEME_PATHS_QUERY, THEME_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
 import SimpleThemaLayout from '@/components/layouts/simple-thema-layout';
@@ -19,18 +20,20 @@ export async function generateMetadata({ params }, parent) {
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
 
-  return {
-    title: themaMetaData.metaTitle || themaMetaData.themaName + ' - CircuLaw',
-    description: themaMetaData.metaDescribe || generic.description,
-    alternates: {
-      canonical: `/${themaMetaData.productChain}/${themaMetaData.slug}`,
-    },
-    openGraph: {
-      images: previousImages,
-      title: themaMetaData.metaTitle || themaMetaData.themaName,
+  if (themaMetaData) {
+    return {
+      title: themaMetaData.metaTitle || themaMetaData.themaName + ' - CircuLaw',
       description: themaMetaData.metaDescribe || generic.description,
-    },
-  };
+      alternates: {
+        canonical: `/${themaMetaData.productChain}/${themaMetaData.slug}`,
+      },
+      openGraph: {
+        images: previousImages,
+        title: themaMetaData.metaTitle || themaMetaData.themaName,
+        description: themaMetaData.metaDescribe || generic.description,
+      },
+    };
+  }
 }
 
 export async function generateStaticParams() {
@@ -48,6 +51,11 @@ export default async function ThemePage({ params }) {
     qParams: params,
     tags: ['thema', 'simpleThema', 'instrument'],
   });
+
+  if (!themeData) {
+    notFound();
+  }
+
   if (themeData.thema._type === 'simpleThema') {
     return (
       <SimpleThemaLayout

@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Instrument from '@/components/instrument';
 import { INSTRUMENT_PATHS_QUERY, INSTRUMENT_PAGE_QUERY, INSTRUMENT_META_DATA } from '@/lib/queries';
 import { client, sanityFetch } from '@/lib/sanity';
@@ -17,21 +18,23 @@ export async function generateMetadata({ params }, parent) {
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
 
-  return {
-    title: instrumentMetaData.titel + ' - CircuLaw',
-    description:
-      instrumentMetaData.metaDescribe || instrumentMetaData.subtitel || generic.description,
-    alternates: {
-      canonical: `/${instrumentMetaData.productChain}/${instrumentMetaData.thema}/instrumenten/${instrumentMetaData.slug}`,
-    },
-    openGraph: {
-      images: previousImages,
+  if (instrumentMetaData) {
+    return {
       title: instrumentMetaData.titel + ' - CircuLaw',
       description:
         instrumentMetaData.metaDescribe || instrumentMetaData.subtitel || generic.description,
-      type: 'website',
-    },
-  };
+      alternates: {
+        canonical: `/${instrumentMetaData.productChain}/${instrumentMetaData.thema}/instrumenten/${instrumentMetaData.slug}`,
+      },
+      openGraph: {
+        images: previousImages,
+        title: instrumentMetaData.titel + ' - CircuLaw',
+        description:
+          instrumentMetaData.metaDescribe || instrumentMetaData.subtitel || generic.description,
+        type: 'website',
+      },
+    };
+  }
 }
 
 export async function generateStaticParams() {
@@ -51,5 +54,10 @@ export default async function InstrumentPage({ params }) {
     qParams: params,
     tags: ['instrument'],
   });
+
+  if (!instrumentContent) {
+    notFound();
+  }
+
   return <Instrument data={instrumentContent} />;
 }
