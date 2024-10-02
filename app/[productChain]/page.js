@@ -60,7 +60,7 @@ export default async function ProductChainPage({ params }) {
   const themeByPCData = await sanityFetch({
     query: THEMES_BY_PC_QUERY,
     qParams: params,
-    tags: ['thema', 'simpleThema'],
+    tags: ['thema', 'simpleThema', 'instrument'],
   });
 
   if (!productChainData || !themeByPCData) {
