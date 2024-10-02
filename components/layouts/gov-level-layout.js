@@ -345,6 +345,51 @@ export default function GovLevelLayout({ ...props }) {
                 </>
               )}
 
+              {props.thema === 'bedrijfskleding' && (
+                <>
+                  {/* All regions =  */}
+                  <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
+
+                  {/* Local = 8 */}
+                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
+                </>
+              )}
+
+              {props.thema === 'consumententextiel' && (
+                <>
+                  {/* All regions =  */}
+                  <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-gray-100'></div>
+
+                  {/* Provincial = 2 */}
+                  <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-gray-100'></div>
+
+                  {/* Local = 8 */}
+                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[45%] right-[33%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[15%] right-[33%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[45%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[30%] right-[38%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[20%] right-[25%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[34%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
+                </>
+              )}
+
               {/* ALL Regions 
             <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
             <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
@@ -398,7 +443,9 @@ export default function GovLevelLayout({ ...props }) {
               {allRegionLaws && (
                 <div>
                   <div id='allEnd' className='absolute bottom-[85%] right-[50%] h-3 w-3'></div>
-                  <div id='natEnd' className='absolute top-24 right-40 h-3 w-3'></div>
+                  {natLaws.length > 0 && (
+                    <div id='natEnd' className='absolute top-24 right-40 h-3 w-3'></div>
+                  )}
                   <div id='gemEnd' className='absolute bottom-[15%] right-[30%] h-3 w-3'></div>
                   {lines.map((line, i) => (
                     <Xarrow key={i} {...line} />
@@ -439,6 +486,7 @@ export default function GovLevelLayout({ ...props }) {
                       <h5 className='p-2xs-semibold sm:p-xs-semibold'>Nat</h5>
                     </div>
                   </div>
+
                   <div className='pl-4 pt-3'>
                     {natLaws?.map((law) => (
                       <Link

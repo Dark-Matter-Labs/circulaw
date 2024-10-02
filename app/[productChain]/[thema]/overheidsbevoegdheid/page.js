@@ -140,5 +140,31 @@ export default async function GovernmentLevelPage({ params }) {
         imageMob={placeholderImage}
       />
     );
+  } else if (params.thema === 'bedrijfskleding') {
+    return (
+      <GovLevelLayout
+        thema={params?.thema}
+        transitionAgenda={params?.productChain}
+        title='Welk instrument kan welke overheid gebruiken voor bedrijfskleding'
+        allRegionLaws={govLevelContent?.allRegions}
+        natLaws={govLevelContent?.national}
+        provLaws={govLevelContent?.provincial}
+        gemLaws={govLevelContent?.local}
+        imageMob={placeholderImage}
+      />
+    );
+  } else if (params.thema === 'consumententextiel') {
+    return (
+      <GovLevelLayout
+        thema={params?.thema}
+        transitionAgenda={params?.productChain}
+        title='Welk instrument kan welke overheid gebruiken voor consumententextiel'
+        allRegionLaws={govLevelContent?.allRegions}
+        natLaws={govLevelContent?.national}
+        provLaws={govLevelContent?.provincial}
+        gemLaws={govLevelContent?.local}
+        imageMob={placeholderImage}
+      />
+    );
   }
 }
