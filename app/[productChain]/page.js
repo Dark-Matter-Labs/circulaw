@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import {
   PC_PATHS_QUERY,
   PRODUCT_CHAIN_PAGE_QUERY,
@@ -23,19 +24,21 @@ export async function generateMetadata({ params }, parent) {
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
 
-  return {
-    title: productChainMetaData.metaTitle || productChainMetaData.pcName + ' - CircuLaw',
-    description: productChainMetaData.metaDescribe || generic.description,
-    alternates: {
-      canonical: `/${productChainMetaData.slug}`,
-    },
-    openGraph: {
-      images: previousImages,
-      title: productChainMetaData.metaTitle || productChainMetaData.pcName,
+  if (productChainMetaData) {
+    return {
+      title: productChainMetaData.metaTitle || productChainMetaData.pcName + ' - CircuLaw',
       description: productChainMetaData.metaDescribe || generic.description,
-      type: 'website',
-    },
-  };
+      alternates: {
+        canonical: `/${productChainMetaData.slug}`,
+      },
+      openGraph: {
+        images: previousImages,
+        title: productChainMetaData.metaTitle || productChainMetaData.pcName,
+        description: productChainMetaData.metaDescribe || generic.description,
+        type: 'website',
+      },
+    };
+  }
 }
 
 // slugs
@@ -59,6 +62,11 @@ export default async function ProductChainPage({ params }) {
     qParams: params,
     tags: ['thema', 'simpleThema'],
   });
+
+  if (!productChainData || !themeByPCData) {
+    notFound();
+  }
+
   return (
     <PCLayout
       productChainData={productChainData}

@@ -2,7 +2,6 @@ import ThemaCard from '../product-chain-page/thema-cards';
 import PCTooltip from '../tooltips/product-chain-tooltip';
 import CustomButton from '@/components/custom-button';
 import PageHeader from '@/components/product-chain-page/product-chain-header';
-import MobilePageHeader from '@/components/product-chain-page/product-chain-header-mobile';
 import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -15,7 +14,6 @@ export default function PCLayout({ ...props }) {
         {/* HEADER DESKTOP */}
         <PageHeader pageTitle={props?.productChainData?.pcName} />
         {/* HEADER MOBILE */}
-        <MobilePageHeader pageTitle={props?.productChainData?.pcName} />
 
         <div className='bg-gray-100'>
           <div className='global-margin pb-12 sm:pb-20'>
@@ -54,6 +52,8 @@ export default function PCLayout({ ...props }) {
                           alt='impact image'
                           height={112}
                           width={112}
+                          placeholder='blur'
+                          blurDataURL={impact?.metadata.lqip}
                         />
                       )}
                     </div>
@@ -86,6 +86,8 @@ export default function PCLayout({ ...props }) {
                         alt='ambition illustration'
                         height={356}
                         width={542}
+                        placeholder='blur'
+                        blurDataURL={ambition?.metadata.lqip}
                       />
                     )}
                   </div>
@@ -110,6 +112,8 @@ export default function PCLayout({ ...props }) {
                         alt='ambition illustration'
                         height={356}
                         width={542}
+                        placeholder='blur'
+                        blurDataURL={ambition?.metadata.lqip}
                       />
                     )}
                   </div>
@@ -127,6 +131,8 @@ export default function PCLayout({ ...props }) {
                         height={356}
                         width={542}
                         className='mb-6'
+                        placeholder='blur'
+                        blurDataURL={ambition?.metadata.lqip}
                       />
                     )}
                   </div>

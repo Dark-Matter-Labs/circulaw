@@ -44,11 +44,3 @@ export default function TabContent({ summaryData, tabData }) {
     </>
   );
 }
-
-{
-  /**
-    
-      
-            
-          */
-}
