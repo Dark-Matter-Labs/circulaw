@@ -1,13 +1,14 @@
 'use client';
-import { useState, useEffect, useRef, useCallback, useTransition } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { IconX, IconCopy } from '@tabler/icons-react';
 import ModelTextCard from './modeltext-card';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { PortableText } from '@portabletext/react';
 import { reducedPortableTextComponents } from '@/lib/portable-text/pt-components';
 import Link from 'next/link';
+import { Dialog, DialogPanel, DialogTitle, DialogBackdrop, Button } from '@headlessui/react';
 
-export default function Pillars({ pillars, modelTexts }) {
+export default function PopUp({ pillars, modelTexts }) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -26,53 +27,43 @@ export default function Pillars({ pillars, modelTexts }) {
   );
   const [selectedPillar, setSelectedPillar] = useState();
   const [filteredModelTexts, setFilteredModelTexts] = useState();
-  const [modelTextSlug, setModelTextSlug] = useState();
-  const [filteredWithSelected, setFilteredWithSelected] = useState();
   const [selectedModelText, setSelectedModelText] = useState(null);
   const [showLinkCopied, setShowLinkCopied] = useState(false);
-
-  const [isPending, startTransition] = useTransition();
-
-  const handelModeltextChanges = (modelTextSlug, pillar) => {
-    setTimeout(() => {
-      startTransition(() => {
-        if (modelTextSlug !== '') {
-          setModelTextSlug(modelTextSlug);
-        } else if (modelTextSlug === '') {
-          setModelTextSlug(undefined);
-        }
-
-        if (pillar && !modelTextSlug) {
-          setSelectedPillar(pillar);
-          const filtered = modelTexts.filter((t) => t.pillar === pillar);
-          setFilteredModelTexts(filtered);
-          setSelectedModelText(undefined);
-          setFilteredWithSelected(undefined);
-          setModelTextSlug(undefined);
-        } else if (!pillar && !modelTextSlug) {
-          setSelectedPillar('materialenkringloop');
-          const filtered = modelTexts.filter((t) => t.pillar === 'materialenkringloop');
-          setFilteredModelTexts(filtered);
-        } else if (pillar && modelTextSlug) {
-          setSelectedPillar(pillar);
-          let filered = modelTexts.filter((t) => t.pillar === pillar);
-          let refiltered = filered.filter((t) => t.slug !== modelTextSlug);
-          setSelectedModelText(modelTexts.filter((t) => t.slug === modelTextSlug)[0]);
-          setFilteredWithSelected(refiltered);
-        }
-      });
-    }, 300);
-  };
 
   // use effect to set the pillar and filer the modeltexts
   useEffect(() => {
     // initialise from search params
     let modelTextSlug = searchParams.get('modeltext');
     let pillar = searchParams.get('pillar');
-    handelModeltextChanges(modelTextSlug, pillar);
-  }, [searchParams, modelTexts, modelTextSlug]);
 
-  const pillarsRef = useRef(null);
+    if (pillar && !modelTextSlug) {
+      setSelectedPillar(pillar);
+      const filtered = modelTexts.filter((t) => t.pillar === pillar);
+      setFilteredModelTexts(filtered);
+    } else if (pillar && modelTextSlug) {
+      setSelectedPillar(pillar);
+      const filtered = modelTexts.filter((t) => t.pillar === pillar);
+      setFilteredModelTexts(filtered);
+      setIsOpen(true);
+      setSelectedModelText(modelTexts.filter((t) => t.slug === modelTextSlug)[0]);
+    } else if (!pillar) {
+      setSelectedPillar('materialenkringloop');
+      router.push(pathname + '?' + createQueryString('pillar', 'materialenkringloop'), {
+        scroll: false,
+      });
+      const filtered = modelTexts.filter((t) => t.pillar === 'materialenkringloop');
+      setFilteredModelTexts(filtered);
+    }
+  }, [searchParams, modelTexts, createQueryString, router, pathname]);
+
+  let [isOpen, setIsOpen] = useState(false);
+
+  function close() {
+    setIsOpen(false);
+    router.push(pathname + '?' + createQueryString('pillar', selectedModelText.pillar), {
+      scroll: false,
+    });
+  }
 
   return (
     <>
@@ -88,7 +79,6 @@ export default function Pillars({ pillars, modelTexts }) {
                   router.push(pathname + '?' + createQueryString('pillar', p.slug), {
                     scroll: false,
                   });
-                  setModelTextSlug(undefined);
                 }}
                 className={`${
                   selectedPillar === p.slug
@@ -117,63 +107,50 @@ export default function Pillars({ pillars, modelTexts }) {
         </div>
       </div>
 
-      {!modelTextSlug && !isPending ? (
-        <div className='min-h-screen scroll-m-[80px]' ref={pillarsRef}>
-          <div className='grid grid-cols-2 xl:grid-cols-3 gap-y-8 justify-evenly mt-14 relative w-full'>
-            {filteredModelTexts?.map((text, id) => (
-              <button
-                key={id}
-                onClick={() => {
-                  pillarsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  router.push(pathname + '?' + createQueryString('modeltext', text.slug), {
-                    scroll: false,
-                  });
-                }}
-              >
-                <ModelTextCard text={text} />
-              </button>
-            ))}
-          </div>
+      <div className='min-h-screen scroll-m-[80px]'>
+        <div className='grid grid-cols-2 xl:grid-cols-3 gap-y-8 justify-evenly mt-14 relative w-full'>
+          {filteredModelTexts?.map((text, id) => (
+            <Button
+              key={id}
+              onClick={() => {
+                // setIsOpen(true);
+                // setSelectedModelText(text);
+                router.push(pathname + '?' + createQueryString('modeltext', text.slug), {
+                  scroll: false,
+                });
+              }}
+            >
+              <ModelTextCard text={text} />
+            </Button>
+          ))}
         </div>
-      ) : (
-        <div
-          className='flex items-start justify-center mt-14 w-full min-h-screen max-w-[1280px] scroll-m-[130px]'
-          ref={pillarsRef}
+      </div>
+      {selectedModelText && (
+        <Dialog
+          open={isOpen}
+          as='div'
+          className='relative z-120 bg-green-500 focus:outline-none'
+          onClose={close}
         >
-          <div className='h-screen overflow-y-scroll flex flex-col gap-y-8 pl-4 py-4 no-scrollbar min-w-[420px]'>
-            {filteredWithSelected?.map((text, id) => (
-              <button
-                key={id}
-                onClick={() => {
-                  pillarsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  router.push(pathname + '?' + createQueryString('modeltext', text.slug), {
-                    scroll: false,
-                  });
-                }}
+          <DialogBackdrop
+            transition
+            className='fixed inset-0 bg-gray-500/75 transition duration-500 ease-out data-[closed]:opacity-0'
+          />
+          <div className='fixed inset-0 z-10 w-screen overflow-y-auto'>
+            <div className='flex min-h-full items-center justify-center px-4 py-10'>
+              <DialogPanel
+                transition
+                className='rounded-cl bg-gray-100 border w-[635px] py-6 px-10 duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0'
               >
-                <ModelTextCard text={text} />
-              </button>
-            ))}
-          </div>
-          <div className='h-screen flex-shrink w-full overflow-y-scroll pl-12 flex items-start py-4 no-scrollbar'>
-            {selectedModelText && (
-              <div className='rounded-cl bg-gray-100 border w-[635px] py-6 px-10'>
                 <div className='flex flex-row w-full justify-between items-center'>
-                  <h4 className='heading-2xl-semibold mb-2.5'>{selectedModelText.title}</h4>
-                  <button
-                    onClick={() => {
-                      setModelTextSlug(undefined);
-                      router.push(
-                        pathname + '?' + createQueryString('pillar', selectedModelText.pillar),
-                        {
-                          scroll: false,
-                        },
-                      );
-                    }}
-                  >
+                  <DialogTitle as='h3' className='heading-2xl-semibold mb-2.5'>
+                    {selectedModelText?.title}
+                  </DialogTitle>
+                  <Button onClick={close}>
                     <IconX className='h-6 w-6 text-green-800' />
-                  </button>
+                  </Button>
                 </div>
+
                 <h5 className='heading-xl-semibold mb-10'>Modeltekst omgevingsplan</h5>
                 <div className='w-full border border-green-800 flex flex-col p-6 rounded-cl mb-10'>
                   <div className='self-end relative'>
@@ -247,10 +224,10 @@ export default function Pillars({ pillars, modelTexts }) {
                     </div>
                   </div>
                 </div>
-              </div>
-            )}
+              </DialogPanel>
+            </div>
           </div>
-        </div>
+        </Dialog>
       )}
     </>
   );

@@ -19,19 +19,14 @@ const MODELTEXT_QUERY = `
   } 
 `;
 
-
-
 export default async function ModelDocs() {
-    const pillars = await sanityFetch({ query: PILLARS_QUERY, tags: ['pillar'] });
-    const modelTexts = await sanityFetch({ query: MODELTEXT_QUERY, tags: ['modelText'] });
+  const pillars = await sanityFetch({ query: PILLARS_QUERY, tags: ['pillar'] });
+  const modelTexts = await sanityFetch({ query: MODELTEXT_QUERY, tags: ['modelText'] });
 
-
-    return (
-        <div className="global-margin flex flex-col items-center">
-            <h1 className='heading-5xl-semibold mt-10'>
-                Model texts 
-            </h1>
-            <Docs pillars={pillars} modelTexts={modelTexts} />
-        </div>
-    )
+  return (
+    <div className='global-margin flex flex-col items-center'>
+      <h1 className='heading-5xl-semibold mt-10'>Model texts</h1>
+      <Docs pillars={pillars} modelTexts={modelTexts} />
+    </div>
+  );
 }
