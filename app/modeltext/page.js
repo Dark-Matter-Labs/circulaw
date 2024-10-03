@@ -1,4 +1,4 @@
-import Pillars from '@/components/modeltext/pillars';
+import PopUp from '@/components/modeltext/popup';
 import { sanityFetch } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -82,7 +82,7 @@ export default async function ModelTextPage() {
             pijlers zoals Toekomstig Bestendig Bouwen deze heeft gedefinieerd:
           </p>
         </div>
-        <Pillars modelTexts={modelTexts} pillars={pillars} />
+        <PopUp modelTexts={modelTexts} pillars={pillars} />
       </div>
     </>
   );
