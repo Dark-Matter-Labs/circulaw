@@ -144,7 +144,7 @@ export default function PopUp({ pillars, modelTexts }) {
                 className='sm:rounded-cl bg-gray-100 border w-screen sm:w-[635px] min-h-screen sm:min-h-0 sm:h-auto py-6 px-10 duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0'
               >
                 <div className='flex flex-row w-full justify-between items-center'>
-                  <Tag classes='bg-green-400 max-w-min text-green-50 mb-2'>
+                  <Tag classes='bg-green-400 max-w-min text-green-50 mb-2 text-nowrap'>
                     {selectedModelText.pillar}
                   </Tag>
                   <Button onClick={close}>
