@@ -69,7 +69,6 @@ export default function ThemaCard({ themaCards, transitionAgenda }) {
             </Link>
           </li>
           {transitionAgenda === 'Bouw' && (
-      
             <li className='w-full h-[470px] flex-grow bg-green-50 border border-gray-200 rounded-cl group'>
               <Link href='/modeltext' className='w-full h-full'>
                 <div className='h-full w-full flex flex-col flex-grow p-8 justify-between'>

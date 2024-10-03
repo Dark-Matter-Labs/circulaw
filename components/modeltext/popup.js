@@ -143,18 +143,17 @@ export default function PopUp({ pillars, modelTexts }) {
                 transition
                 className='sm:rounded-cl bg-gray-100 border w-screen sm:w-[635px] min-h-screen sm:min-h-0 sm:h-auto py-6 px-10 duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0'
               >
-                <Tag classes='bg-green-400 max-w-min text-green-50 mb-2'>
-                  {selectedModelText.pillar}
-                </Tag>
                 <div className='flex flex-row w-full justify-between items-center'>
-                  <DialogTitle as='h3' className='heading-2xl-semibold mb-2.5'>
-                    {selectedModelText?.title}
-                  </DialogTitle>
+                  <Tag classes='bg-green-400 max-w-min text-green-50 mb-2'>
+                    {selectedModelText.pillar}
+                  </Tag>
                   <Button onClick={close}>
                     <IconX className='h-6 w-6 text-green-800' />
                   </Button>
                 </div>
-
+                <DialogTitle as='h3' className='heading-2xl-semibold mb-2.5'>
+                  {selectedModelText?.title}
+                </DialogTitle>
                 <h5 className='heading-xl-semibold mb-10'>Modeltekst omgevingsplan</h5>
                 <div className='w-full border border-green-800 flex flex-col p-6 rounded-cl mb-10'>
                   <div className='self-end relative'>
