@@ -70,7 +70,7 @@ export default function PopUp({ pillars, modelTexts }) {
       <div className='max-w-[1280px]'>
         <ul
           id='pillars'
-          className='bg-green-50 rounded-cl flex flex-row p-4 mt-14 gap-x-2.5 justify-between'
+          className='bg-green-50 rounded-cl flex overflow-x-scroll snap-x snap-mandatory no-scrollbar text-nowrap sm:flex-row p-4 mt-14 gap-x-2.5 justify-between'
         >
           {pillars?.map((p) => (
             <li key={p.title}>
@@ -108,7 +108,7 @@ export default function PopUp({ pillars, modelTexts }) {
       </div>
 
       <div className='min-h-screen scroll-m-[80px]'>
-        <div className='grid grid-cols-2 xl:grid-cols-3 gap-y-8 justify-evenly mt-14 relative w-full'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-y-6 sm:gap-y-8 justify-evenly mt-14 relative w-full'>
           {filteredModelTexts?.map((text, id) => (
             <Button
               key={id}
@@ -129,7 +129,7 @@ export default function PopUp({ pillars, modelTexts }) {
         <Dialog
           open={isOpen}
           as='div'
-          className='relative z-120 bg-green-500 focus:outline-none'
+          className='relative z-120 focus:outline-none'
           onClose={close}
         >
           <DialogBackdrop
@@ -137,10 +137,10 @@ export default function PopUp({ pillars, modelTexts }) {
             className='fixed inset-0 bg-gray-500/75 transition duration-500 ease-out data-[closed]:opacity-0'
           />
           <div className='fixed inset-0 z-10 w-screen overflow-y-auto'>
-            <div className='flex min-h-full items-center justify-center px-4 py-10'>
+            <div className='flex min-h-full items-center justify-center p-0 sm:px-4 sm:py-10'>
               <DialogPanel
                 transition
-                className='rounded-cl bg-gray-100 border w-[635px] py-6 px-10 duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0'
+                className='sm:rounded-cl bg-gray-100 border w-screen sm:w-[635px] min-h-screen sm:min-h-0 sm:h-auto py-6 px-10 duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0'
               >
                 <div className='flex flex-row w-full justify-between items-center'>
                   <DialogTitle as='h3' className='heading-2xl-semibold mb-2.5'>
@@ -203,7 +203,7 @@ export default function PopUp({ pillars, modelTexts }) {
                   </ul>
                 </div>
                 <div className='flex flex-row justify-between '>
-                  <div className='flex flex-row gap-4'>
+                  <div className='flex flex-wrap sm:flex-row gap-4'>
                     <div className='flex flex-col'>
                       <div className='p-xs-semibold mb-2'>Schaalniveau</div>
                       <div className='text-xs text-gray-600 bg-white border border-gray-200 rounded-cl px-2 py-1'>
