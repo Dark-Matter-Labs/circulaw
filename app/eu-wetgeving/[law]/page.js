@@ -27,19 +27,21 @@ export async function generateMetadata({ params }, parent) {
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
 
-  return {
-    title: euLawMetaData.metaTitle || euLawMetaData.title + ' - CircuLaw',
-    description: euLawMetaData.metaDescribe || euLawMetaData.introText || generic.description,
-    alternates: {
-      canonical: `/eu-wetgeving/${euLawMetaData.slug}`,
-    },
-    openGraph: {
-      images: previousImages,
-      title: euLawMetaData.metaTitle || euLawMetaData.title,
+  if (euLawMetaData) {
+    return {
+      title: euLawMetaData.metaTitle || euLawMetaData.title + ' - CircuLaw',
       description: euLawMetaData.metaDescribe || euLawMetaData.introText || generic.description,
-      type: 'website',
-    },
-  };
+      alternates: {
+        canonical: `/eu-wetgeving/${euLawMetaData.slug}`,
+      },
+      openGraph: {
+        images: previousImages,
+        title: euLawMetaData.metaTitle || euLawMetaData.title,
+        description: euLawMetaData.metaDescribe || euLawMetaData.introText || generic.description,
+        type: 'website',
+      },
+    };
+  }
 }
 
 export async function generateStaticParams() {

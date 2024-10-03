@@ -1,5 +1,5 @@
 'use client';
-import { Disclosure } from '@headlessui/react';
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/navigation';
 
@@ -13,7 +13,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
       <Disclosure>
         {({ open }) => (
           <>
-            <Disclosure.Button
+            <DisclosureButton
               className={`${
                 open ? 'rounded-t-cl' : 'rounded-cl'
               } text-black bg-green-500 hover:text-green-500 flex justify-between items-center border border-green-500 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
@@ -30,10 +30,10 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                   className={`${open ? '' : 'rotate-180 transform'} h-5 w-5 text-white z-10`}
                 />
               </div>
-            </Disclosure.Button>
-            <Disclosure.Panel as='ul'>
+            </DisclosureButton>
+            <DisclosurePanel as='ul'>
               {remainingTitles?.map((remaining, id) => (
-                <Disclosure.Button
+                <DisclosureButton
                   key={id}
                   className='bg-gray-100 w-full text-gray-800 border-b border-l border-r last:rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500'
                   as='li'
@@ -44,9 +44,9 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
                   <div className=''>
                     <span className='block pl-3 truncate'>{remaining?.pageTitle}</span>
                   </div>
-                </Disclosure.Button>
+                </DisclosureButton>
               ))}
-            </Disclosure.Panel>
+            </DisclosurePanel>
           </>
         )}
       </Disclosure>

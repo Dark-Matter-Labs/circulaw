@@ -3,7 +3,7 @@ import ExplinationText from '../expertise-page/explination-text';
 import TabButton from '../expertise-page/tab-button';
 import TabLayout from '../expertise-page/tab-layout';
 import OverviewPageHeader from '../theme-page/overview-page-header';
-import { Disclosure } from '@headlessui/react';
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
 import { useEffect, useState, useTransition } from 'react';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
@@ -549,7 +549,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                     <Disclosure>
                       {({ open }) => (
                         <>
-                          <Disclosure.Button
+                          <DisclosureButton
                             className={`${
                               open ? 'rounded-t-cl' : 'rounded-cl'
                             } text-black bg-green-600 hover:text-green-600 flex justify-between items-center border border-green-600 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
@@ -570,34 +570,34 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                                 } h-5 w-5 text-white z-10`}
                               />
                             </div>
-                          </Disclosure.Button>
-                          <Disclosure.Panel>
-                            <Disclosure.Button
+                          </DisclosureButton>
+                          <DisclosurePanel>
+                            <DisclosureButton
                               as='div'
                               onClick={() => handleRadioButton('Gemeentelijk')}
                             >
                               <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Gemeentelijk</span>
                               </div>
-                            </Disclosure.Button>
-                            <Disclosure.Button
+                            </DisclosureButton>
+                            <DisclosureButton
                               as='div'
                               onClick={() => handleRadioButton('Provinciaal')}
                             >
                               <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Provinciaal</span>
                               </div>
-                            </Disclosure.Button>
+                            </DisclosureButton>
 
-                            <Disclosure.Button
+                            <DisclosureButton
                               as='div'
                               onClick={() => handleRadioButton('Nationaal')}
                             >
                               <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Nationaal</span>
                               </div>
-                            </Disclosure.Button>
-                          </Disclosure.Panel>
+                            </DisclosureButton>
+                          </DisclosurePanel>
                         </>
                       )}
                     </Disclosure>
@@ -606,7 +606,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                     <Disclosure>
                       {({ open }) => (
                         <>
-                          <Disclosure.Button
+                          <DisclosureButton
                             className={`${
                               open ? 'rounded-t-cl' : 'rounded-cl'
                             } text-black bg-green-600 hover:text-green-600 flex justify-between items-center border border-green-600 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
@@ -627,30 +627,30 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                                 } h-5 w-5 text-white z-10`}
                               />
                             </div>
-                          </Disclosure.Button>
-                          <Disclosure.Panel>
-                            <Disclosure.Button as='div' onClick={() => handleRadioButton('alle')}>
+                          </DisclosureButton>
+                          <DisclosurePanel>
+                            <DisclosureButton as='div' onClick={() => handleRadioButton('alle')}>
                               <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Alle</span>
                               </div>
-                            </Disclosure.Button>
-                            <Disclosure.Button
+                            </DisclosureButton>
+                            <DisclosureButton
                               as='div'
                               onClick={() => handleRadioButton('Gemeentelijk')}
                             >
                               <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Gemeentelijk</span>
                               </div>
-                            </Disclosure.Button>
-                            <Disclosure.Button
+                            </DisclosureButton>
+                            <DisclosureButton
                               as='div'
                               onClick={() => handleRadioButton('Provinciaal')}
                             >
                               <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Provinciaal</span>
                               </div>
-                            </Disclosure.Button>
-                          </Disclosure.Panel>
+                            </DisclosureButton>
+                          </DisclosurePanel>
                         </>
                       )}
                     </Disclosure>
@@ -659,7 +659,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                     <Disclosure>
                       {({ open }) => (
                         <>
-                          <Disclosure.Button
+                          <DisclosureButton
                             className={`${
                               open ? 'rounded-t-cl' : 'rounded-cl'
                             } text-black bg-green-600 hover:text-green-600 flex justify-between items-center border border-green-600 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
@@ -680,30 +680,30 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                                 } h-5 w-5 text-white z-10`}
                               />
                             </div>
-                          </Disclosure.Button>
-                          <Disclosure.Panel>
-                            <Disclosure.Button as='div' onClick={() => handleRadioButton('alle')}>
+                          </DisclosureButton>
+                          <DisclosurePanel>
+                            <DisclosureButton as='div' onClick={() => handleRadioButton('alle')}>
                               <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Alle</span>
                               </div>
-                            </Disclosure.Button>
-                            <Disclosure.Button
+                            </DisclosureButton>
+                            <DisclosureButton
                               as='div'
                               onClick={() => handleRadioButton('Gemeentelijk')}
                             >
                               <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Gemeentelijk</span>
                               </div>
-                            </Disclosure.Button>
-                            <Disclosure.Button
+                            </DisclosureButton>
+                            <DisclosureButton
                               as='div'
                               onClick={() => handleRadioButton('Nationaal')}
                             >
                               <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Nationaal</span>
                               </div>
-                            </Disclosure.Button>
-                          </Disclosure.Panel>
+                            </DisclosureButton>
+                          </DisclosurePanel>
                         </>
                       )}
                     </Disclosure>
@@ -712,7 +712,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                     <Disclosure>
                       {({ open }) => (
                         <>
-                          <Disclosure.Button
+                          <DisclosureButton
                             className={`${
                               open ? 'rounded-t-cl' : 'rounded-cl'
                             } text-black bg-green-600 hover:text-green-600 flex justify-between items-center border border-green-600 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
@@ -733,30 +733,30 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                                 } h-5 w-5 text-white z-10`}
                               />
                             </div>
-                          </Disclosure.Button>
-                          <Disclosure.Panel>
-                            <Disclosure.Button as='div' onClick={() => handleRadioButton('alle')}>
+                          </DisclosureButton>
+                          <DisclosurePanel>
+                            <DisclosureButton as='div' onClick={() => handleRadioButton('alle')}>
                               <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Alle</span>
                               </div>
-                            </Disclosure.Button>
-                            <Disclosure.Button
+                            </DisclosureButton>
+                            <DisclosureButton
                               as='div'
                               onClick={() => handleRadioButton('Provinciaal')}
                             >
                               <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Provinciaal</span>
                               </div>
-                            </Disclosure.Button>
-                            <Disclosure.Button
+                            </DisclosureButton>
+                            <DisclosureButton
                               as='div'
                               onClick={() => handleRadioButton('Nationaal')}
                             >
                               <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600'>
                                 <span className='block pl-3 truncate p-base'>Nationaal</span>
                               </div>
-                            </Disclosure.Button>
-                          </Disclosure.Panel>
+                            </DisclosureButton>
+                          </DisclosurePanel>
                         </>
                       )}
                     </Disclosure>
