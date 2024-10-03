@@ -1,11 +1,11 @@
 import LinkIcon from '../link-icon';
-import EUTooltip from '../tooltips/eu-tooltip';
 import Highlights from './highlights';
-import { reducedPortableTextComponents } from '@/lib/portable-text/pt-components';
 import { urlFor } from '@/lib/sanity';
-import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Modal from '../modal/modal';
+import ModalContent from '../modal/modal-content';
+import EULawButton from '../modal/modal-buttons/eu-status-button';
 
 export default function SummaryComponent({ lawData }) {
   return (
@@ -28,12 +28,8 @@ export default function SummaryComponent({ lawData }) {
                 />
               )}
             </div>
-            <EUTooltip title='Status' lawData={lawData}>
-              <div>
-                <PortableText
-                  value={lawData?.statusContent}
-                  components={reducedPortableTextComponents}
-                />
+            <Modal Button={<EULawButton lawData={lawData} />}>
+              <ModalContent title='Status' ptContent={lawData?.statusContent}>
                 <div className='heading-2xl-semibold mb-8 mt-6'>Welke statussen zijn er?</div>
                 <div>
                   <h3 className='mb-4 heading-xl-semibold'>1: In onderhandeling</h3>
@@ -70,8 +66,8 @@ export default function SummaryComponent({ lawData }) {
                     daardoor niet in de nationale wet- en regelgeving geïmplementeerd te worden.
                   </p>
                 </div>
-              </div>
-            </EUTooltip>
+              </ModalContent>
+            </Modal>
           </div>
         </div>
       </div>

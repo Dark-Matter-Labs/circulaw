@@ -1,6 +1,8 @@
-import { Popover } from '@headlessui/react';
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/navigation';
+
+// TODO: Replace Popover with headless UI Listbox
 
 export default function InstrumentLinksDropdown({ page, productChain, thema }) {
   const router = useRouter();
@@ -9,7 +11,7 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
       <Popover className='inline-block relative w-full min-w-[260px] pt-4 sm:pt-0'>
         {({ open }) => (
           <>
-            <Popover.Button
+            <PopoverButton
               className={`${
                 open ? 'rounded-t-cl' : 'rounded-cl'
               } bg-green-500 hover:text-green-500 flex justify-between items-center border border-green-500 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
@@ -28,9 +30,9 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                   className={`${open ? '' : 'rotate-180 transform'} h-5 w-5 text-white z-10`}
                 />
               </div>
-            </Popover.Button>
-            <Popover.Panel className='absolute z-40 min-w-[260px] w-full'>
-              <Popover.Button
+            </PopoverButton>
+            <PopoverPanel className='absolute z-40 min-w-[260px] w-full'>
+              <PopoverButton
                 as='div'
                 onClick={() => {
                   router.push(`/${productChain}/${thema}/categorie`);
@@ -39,8 +41,8 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                 <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
                   <span className='block pl-3 truncate p-base'>Per categorie</span>
                 </div>
-              </Popover.Button>
-              <Popover.Button
+              </PopoverButton>
+              <PopoverButton
                 as='div'
                 onClick={() => {
                   router.push(`/${productChain}/${thema}/overheidsbevoegdheid`);
@@ -49,8 +51,8 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                 <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500'>
                   <span className='block pl-3 truncate p-base'>Per overheidsbevoegdheid</span>
                 </div>
-              </Popover.Button>
-            </Popover.Panel>
+              </PopoverButton>
+            </PopoverPanel>
           </>
         )}
       </Popover>
@@ -60,7 +62,7 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
       <Popover className='inline-block relative w-full min-w-[260px] pt-4 sm:pt-0'>
         {({ open }) => (
           <>
-            <Popover.Button
+            <PopoverButton
               className={`${
                 open ? 'rounded-t-cl' : 'rounded-cl'
               } text-black bg-green-500 hover:text-green-500 flex justify-between items-center border border-green-500 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
@@ -77,9 +79,9 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                   className={`${open ? '' : 'rotate-180 transform'} h-5 w-5 text-white z-10`}
                 />
               </div>
-            </Popover.Button>
-            <Popover.Panel className='absolute z-40 min-w-[260px] w-full'>
-              <Popover.Button
+            </PopoverButton>
+            <PopoverPanel className='absolute z-40 min-w-[260px] w-full'>
+              <PopoverButton
                 as='div'
                 onClick={() => {
                   router.push(`/${productChain}/${thema}/instrumenten`);
@@ -88,8 +90,8 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                 <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
                   <span className='block pl-3 truncate p-base'>In lijst met filters</span>
                 </div>
-              </Popover.Button>
-              <Popover.Button
+              </PopoverButton>
+              <PopoverButton
                 as='div'
                 onClick={() => {
                   router.push(`/${productChain}/${thema}/overheidsbevoegdheid`);
@@ -98,8 +100,8 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                 <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
                   <span className='block pl-3 truncate p-base'>Per overheidsbevoegdheid</span>
                 </div>
-              </Popover.Button>
-            </Popover.Panel>
+              </PopoverButton>
+            </PopoverPanel>
           </>
         )}
       </Popover>
@@ -109,7 +111,7 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
       <Popover className='inline-block relative w-full min-w-[260px] pt-4 sm:pt-0'>
         {({ open }) => (
           <>
-            <Popover.Button
+            <PopoverButton
               className={`${
                 open ? 'rounded-t-cl' : 'rounded-cl'
               } text-black bg-green-500 hover:text-green-500 flex justify-between items-center border border-green-500 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
@@ -128,9 +130,9 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                   className={`${open ? '' : 'rotate-180 transform'} h-5 w-5 text-white z-10`}
                 />
               </div>
-            </Popover.Button>
-            <Popover.Panel className='absolute z-40 min-w-[260px] w-full'>
-              <Popover.Button
+            </PopoverButton>
+            <PopoverPanel className='absolute z-40 min-w-[260px] w-full'>
+              <PopoverButton
                 as='div'
                 onClick={() => {
                   router.push(`/${productChain}/${thema}/categorie`);
@@ -139,8 +141,8 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                 <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
                   <span className='block pl-3 truncate p-base'>Per categorie</span>
                 </div>
-              </Popover.Button>
-              <Popover.Button
+              </PopoverButton>
+              <PopoverButton
                 as='div'
                 onClick={() => {
                   router.push(`/${productChain}/${thema}/instrumenten`);
@@ -149,8 +151,8 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                 <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
                   <span className='block pl-3 truncate p-base'>In lijst met filters</span>
                 </div>
-              </Popover.Button>
-            </Popover.Panel>
+              </PopoverButton>
+            </PopoverPanel>
           </>
         )}
       </Popover>
