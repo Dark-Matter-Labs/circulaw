@@ -1,4 +1,3 @@
-import { validation } from 'sanity';
 import { lineBreak } from '../../components/headerInput';
 import { BsCircle } from 'react-icons/bs';
 
