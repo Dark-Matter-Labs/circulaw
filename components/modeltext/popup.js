@@ -85,14 +85,14 @@ export default function PopUp({ pillars, modelTexts }) {
                 className={`${
                   selectedPillar === p.slug
                     ? 'p-base-semibold border-b-2 border-b-green-600'
-                    : 'p-base'
+                    : 'p-base hover:text-green-300'
                 } text-green-600 px-2`}
               >
                 {p.title} {'('}
                 {modelTexts.filter((text) => text.pillar === p.slug).length}
                 {')'}
               </button>
-            </li>           
+            </li>
           ))}
         </ul>
         <div>
@@ -113,7 +113,7 @@ export default function PopUp({ pillars, modelTexts }) {
         <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-y-6 sm:gap-y-8 justify-evenly mt-14 relative w-full'>
           {filteredModelTexts?.map((text, id) => (
             <Button
-            className='w-[396px]'
+              className='w-[396px]'
               key={id}
               onClick={() => {
                 router.push(pathname + '?' + createQueryString('modeltext', text.slug), {
@@ -145,14 +145,12 @@ export default function PopUp({ pillars, modelTexts }) {
               >
                 <div className='flex flex-row w-full justify-between items-center'>
                   <div className='flex flex-row gap-x-2'>
-                  <Tag classes='bg-green-400 max-w-min text-green-50 mb-2 text-nowrap'>
-                    {selectedModelText.pillar}
-                  </Tag>
-                  <Tag classes='bg-transparent border border-black'>
-                  Modeltekst omgevingsplan
-                  </Tag>
+                    <Tag classes='bg-green-400 max-w-min text-green-50 mb-2 text-nowrap'>
+                      {selectedModelText.pillar}
+                    </Tag>
+                    <Tag classes='bg-transparent border border-black'>Modeltekst omgevingsplan</Tag>
                   </div>
-                 
+
                   <Button onClick={close}>
                     <IconX className='h-6 w-6 text-green-800' />
                   </Button>
@@ -160,7 +158,7 @@ export default function PopUp({ pillars, modelTexts }) {
                 <DialogTitle as='h3' className='heading-2xl-semibold my-8'>
                   {selectedModelText?.title}
                 </DialogTitle>
-               
+
                 <div className='w-full border border-green-800 flex flex-col p-6 rounded-cl mb-10'>
                   <div className='self-end relative'>
                     <button
