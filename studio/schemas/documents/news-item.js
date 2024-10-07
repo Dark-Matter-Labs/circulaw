@@ -152,7 +152,7 @@ export default {
         'Klik op ‘aanmaken’. (Slug is het gedeelte van een URL die na de domeinnaam komt. Deze paginanaam wordt automatisch gegenereerd aan de hand van de titel.)',
       options: {
         source: (doc, context) => context.parent.title,
-        slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
+        slugify: (input) => input.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "").replace(/\s+/g, '-').slice(0, 200),
       },
     },
     {

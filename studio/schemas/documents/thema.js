@@ -65,7 +65,7 @@ export default {
       options: {
         source: 'themaName',
         inUnique: 'true',
-        slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
+        slugify: (input) => input.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "").replace(/\s+/g, '-').slice(0, 200),
       },
     },
     {
