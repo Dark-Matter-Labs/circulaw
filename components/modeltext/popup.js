@@ -26,6 +26,7 @@ export default function PopUp({ pillars, modelTexts }) {
     },
     [searchParams],
   );
+
   const [selectedPillar, setSelectedPillar] = useState();
   const [filteredModelTexts, setFilteredModelTexts] = useState();
   const [selectedModelText, setSelectedModelText] = useState(null);
@@ -91,7 +92,7 @@ export default function PopUp({ pillars, modelTexts }) {
                 {modelTexts.filter((text) => text.pillar === p.slug).length}
                 {')'}
               </button>
-            </li>
+            </li>           
           ))}
         </ul>
         <div>
@@ -112,10 +113,9 @@ export default function PopUp({ pillars, modelTexts }) {
         <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-y-6 sm:gap-y-8 justify-evenly mt-14 relative w-full'>
           {filteredModelTexts?.map((text, id) => (
             <Button
+            className='w-[396px]'
               key={id}
               onClick={() => {
-                // setIsOpen(true);
-                // setSelectedModelText(text);
                 router.push(pathname + '?' + createQueryString('modeltext', text.slug), {
                   scroll: false,
                 });
@@ -144,17 +144,23 @@ export default function PopUp({ pillars, modelTexts }) {
                 className='sm:rounded-cl bg-gray-100 border w-screen sm:w-[635px] min-h-screen sm:min-h-0 sm:h-auto py-6 px-10 duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0'
               >
                 <div className='flex flex-row w-full justify-between items-center'>
+                  <div className='flex flex-row gap-x-2'>
                   <Tag classes='bg-green-400 max-w-min text-green-50 mb-2 text-nowrap'>
                     {selectedModelText.pillar}
                   </Tag>
+                  <Tag classes='bg-transparent border border-black'>
+                  Modeltekst omgevingsplan
+                  </Tag>
+                  </div>
+                 
                   <Button onClick={close}>
                     <IconX className='h-6 w-6 text-green-800' />
                   </Button>
                 </div>
-                <DialogTitle as='h3' className='heading-2xl-semibold mb-2.5'>
+                <DialogTitle as='h3' className='heading-2xl-semibold my-8'>
                   {selectedModelText?.title}
                 </DialogTitle>
-                <h5 className='heading-xl-semibold mb-10'>Modeltekst omgevingsplan</h5>
+               
                 <div className='w-full border border-green-800 flex flex-col p-6 rounded-cl mb-10'>
                   <div className='self-end relative'>
                     <button

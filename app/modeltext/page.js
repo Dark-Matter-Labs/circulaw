@@ -50,36 +50,20 @@ export default async function ModelTextPage() {
             </span>
           </div>
           <div className='mb-6 sm:mb-10 flex flex-col gap-2'>
-            <div className='text-green-400 p-base-semibold sm:heading-2xl-semibold'>Planregels</div>
-            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-white'>Per pijler</h1>
+            
+            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-white'>Planregels: modelteksten voor een omgevingsplan</h1>
           </div>
         </div>
       </div>
 
       <div className=' bg-white flex flex-col global-margin my-10 sm:my-16 h-max'>
         <div className='flex flex-col max-w-[760px]'>
-          <h2 className='heading-xl-semibold sm:heading-3xl-semibold mb-3 sm:mb-10'>
-            Modelteksten/planregels omgevingsplan
-          </h2>
+     
           <p className='p-base pb-6'>
-            Planregels zijn stukken tekst die gebruikers over kunnen nemen in een omgevingsplan. Het
-            zijn dus modelteksten voor een omgevingsplan.
+          We hebben de <span className='text-green-400'>planregels</span> ingedeeld op basis van 6 pijlers - deze sluiten aan op de pijlers zoals <span className='text-green-400'>Toekomstig Bestendig Bouwen {'>'}</span> ze heeft gedefinieerd.
           </p>
           <p className='p-base'>
-            Modelteksten hebben de juristen van CircuLaw zelf opgesteld. Daarin onderscheiden
-            modelteksten zich van voorbeeldteksten: voorbeeldteksten hebben we overgenomen uit
-            praktijkvoorbeelden van andere organisaties. Focus daarbij ligt op inspiratie.
-          </p>
-          <p className='p-base pb-6'>
-            Belangrijk om te onthouden: hoewel er een onderscheid is tussen modelteksten en
-            voorbeeldteksten geldt voor beide: nooit zomaar klakkeloos overtypen, maar wees je
-            altijd bewust van de context, en samenhang met informatie en teksten buiten de regels
-            zelf.
-          </p>
-          <p className='p-base-semibold'>Hoe vind je de planregel die jij nodig hebt?</p>
-          <p className='p-base'>
-            We hebben de planregels ingedeeld op basis van 6 pijlers - hierbij sluiten we aan bij de
-            pijlers zoals Toekomstig Bestendig Bouwen deze heeft gedefinieerd:
+          <span className='p-base-semibold'>Let op:</span> De planregels zijn ‘modelteksten’. Deze zijn door de juristen van CircuLaw zelf opgesteld. Typ de modelteksten nooit zomaar klakkeloos over, wees je altijd bewust van de context en samenhang met informatie en teksten buiten de regels zelf.
           </p>
         </div>
         <PopUp modelTexts={modelTexts} pillars={pillars} />
