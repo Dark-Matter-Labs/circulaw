@@ -63,10 +63,12 @@ export async function POST(req) {
             'searchImage': searchImage.asset
             }
          `,
-        },
-        // search Image could be: 'searchImage': euLawReference->searchImage.asset
-        // objectId should be: euLawReference.ref
-
+          },
+  
+        // when updated the record in Algolia index only has the specified info. 
+        // Need to set the query here to include the common fields accross all 
+        // euLawTitle, Search Image etc. 
+        // need to also include this below 
         euEuropeTab: {
           index: agoliaInstance.initIndex('euLaw'),
           projection: `
