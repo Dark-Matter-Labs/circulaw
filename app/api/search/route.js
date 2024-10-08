@@ -57,24 +57,31 @@ export async function POST(req) {
           projection: `
           {
             "objectID": _id,
+            "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
             'lawTitle': coalesce(euLawReference->title, title),
             'slug': coalesce(euLawReference->slug.current, slug.current),
             introText,
-            'searchImage': searchImage.asset
+             "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, title) == title ][0] {
+            'searchImage': searchImage.asset,
+          }.searchImage
             }
          `,
-          },
-  
-        // when updated the record in Algolia index only has the specified info. 
-        // Need to set the query here to include the common fields accross all 
-        // euLawTitle, Search Image etc. 
-        // need to also include this below 
+        },
+
+        // when updated the record in Algolia index only has the specified info.
+        // Need to set the query here to include the common fields accross all
+        // euLawTitle, Search Image etc.
+        // need to also include this below
         euEuropeTab: {
           index: agoliaInstance.initIndex('euLaw'),
           projection: `
           {
             "objectID": _id,
             'lawTitle': coalesce(euLawReference->title, title),
+            "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
+            "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, title) == title ][0] {
+            'searchImage': searchImage.asset,
+          }.searchImage,
             'eu1Content': array::join(string::split((pt::text(europeContent[0].content)), "")[0..5500], ""), 
             'eu2Content': array::join(string::split((pt::text(europeContent[2].content)), "")[0..5500], ""),
             'eu3Content': array::join(string::split((pt::text(europeContent[3].content)), "")[0..5500], ""), 
@@ -91,7 +98,6 @@ export async function POST(req) {
             'eu6Title': europeContent[5].title,
             'eu7Title': europeContent[6].title,
             'eu8Title': europeContent[7].title,
-            "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
             }
          `,
         },
@@ -100,7 +106,11 @@ export async function POST(req) {
           projection: `
           {
             "objectID": _id,
-            'lawTitle': coalesce(euLawReference->title, title),
+             'lawTitle': coalesce(euLawReference->title, title),
+            "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
+            "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, title) == title ][0] {
+            'searchImage': searchImage.asset,
+          }.searchImage,
              'localContent1': pt::text(localContent[0].content),
               'localContent2': pt::text(localContent[1].content),
               'localContent3': pt::text(localContent[2].content),
@@ -117,7 +127,6 @@ export async function POST(req) {
               'localTitle6': localContent[5].title,
               'localTitle7': localContent[6].title,
               'localTitle8': localContent[7].title,
-              "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
             }
          `,
         },
@@ -126,9 +135,12 @@ export async function POST(req) {
           projection: `
           {
             "objectID": _id,
-            'lawTitle': coalesce(euLawReference->title, title),
+             'lawTitle': coalesce(euLawReference->title, title),
+            "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
+            "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, title) == title ][0] {
+            'searchImage': searchImage.asset,
+          }.searchImage,
              "ceContent": pt::text(ceContent),
-             "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
             }
          `,
         },
@@ -185,6 +197,7 @@ export async function POST(req) {
             return {
               objectID: document.objectID,
               lawTitle: document.lawTitle,
+              searchTitle: document.searchTitle,
               slug: document.slug,
               introText: document.introText,
               searchImage: document.searchImage,
@@ -192,7 +205,12 @@ export async function POST(req) {
           }
           case 'euEuropeTab': {
             return {
+
               objectID: document.objectID,
+              lawTitle: document.lawTitle,
+              slug: document.slug,
+              searchImage: document.searchImage,
+              searchTitle: document.searchTitle,
               eu1Content: document.eu1Content,
               eu2Content: document.eu2Content,
               eu3Content: document.eu3Content,
@@ -214,6 +232,10 @@ export async function POST(req) {
           case 'euLocalTab': {
             return {
               objectID: document.objectID,
+              lawTitle: document.lawTitle,
+              slug: document.slug,
+              searchImage: document.searchImage,
+              searchTitle: document.searchTitle,
               localContent1: document.localContent1,
               localContent2: document.localContent2,
               localContent3: document.localContent3,
@@ -235,6 +257,9 @@ export async function POST(req) {
           case 'euCircularEconomyTab': {
             return {
               objectID: document.objectID,
+              lawTitle: document.lawTitle,
+              slug: document.slug,
+              searchImage: document.searchImage,
               searchTitle: document.searchTitle,
               ceContent: document.ceContent,
             };
