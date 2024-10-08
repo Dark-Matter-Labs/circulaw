@@ -18,10 +18,10 @@ const plus_Jakarta_Sans = Plus_Jakarta_Sans({
 
 // these are global and will be on all pages.
 export const metadata = {
-  metadataBase: new URL(globalMeta.siteUrl),
-  alternates: {
-    canonical: '/',
-  },
+  // metadataBase: new URL(globalMeta.siteUrl),
+  // alternates: {
+   // canonical: '/',
+ // },
   title: globalMeta.siteName,
   description: globalMeta.description,
   keywords: globalMeta.keywords,
