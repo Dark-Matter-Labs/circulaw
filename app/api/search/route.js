@@ -58,11 +58,11 @@ export async function POST(req) {
           {
             "objectID": _id,
             "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
-            'lawTitle': coalesce(euLawReference->title, title),
-            'slug': coalesce(euLawReference->slug.current, slug.current),
+            "lawTitle": coalesce(euLawReference->title, title),
+            "slug": coalesce(euLawReference->slug.current, slug.current),
             introText,
              "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, title) == title ][0] {
-            'searchImage': searchImage.asset,
+            "searchImage": searchImage.asset,
           }.searchImage
             }
          `,
@@ -132,12 +132,12 @@ export async function POST(req) {
           projection: `
           {
             "objectID": _id,
-             'lawTitle': coalesce(euLawReference->title, title),
-             'slug': coalesce(euLawReference->slug.current, slug.current),
+             "lawTitle": coalesce(euLawReference->title, title),
+             "slug": coalesce(euLawReference->slug.current, slug.current),
             "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
             "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, title) == title ][0] {
             'searchImage': searchImage.asset,
-          }.searchImage,
+                }.searchImage,
              "ceContent": pt::text(ceContent),
             }
          `,
