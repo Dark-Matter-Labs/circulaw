@@ -163,6 +163,7 @@ export async function POST(req) {
       },
 
       (document) => {
+        console.log(document)
         switch (document._type) {
           case 'instrument':
             return {
