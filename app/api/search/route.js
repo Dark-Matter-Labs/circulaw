@@ -77,6 +77,7 @@ export async function POST(req) {
             "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, title) == title ][0] {
             'searchImage': searchImage.asset,
           }.searchImage,
+          'slug': coalesce(euLawReference->slug.current, slug.current),
             'eu1Content': array::join(string::split((pt::text(europeContent[0].content)), "")[0..5500], ""), 
             'eu2Content': array::join(string::split((pt::text(europeContent[2].content)), "")[0..5500], ""),
             'eu3Content': array::join(string::split((pt::text(europeContent[3].content)), "")[0..5500], ""), 
@@ -106,6 +107,7 @@ export async function POST(req) {
             "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, title) == title ][0] {
             'searchImage': searchImage.asset,
           }.searchImage,
+          'slug': coalesce(euLawReference->slug.current, slug.current),
              'localContent1': pt::text(localContent[0].content),
               'localContent2': pt::text(localContent[1].content),
               'localContent3': pt::text(localContent[2].content),
@@ -131,6 +133,7 @@ export async function POST(req) {
           {
             "objectID": _id,
              'lawTitle': coalesce(euLawReference->title, title),
+             'slug': coalesce(euLawReference->slug.current, slug.current),
             "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
             "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, title) == title ][0] {
             'searchImage': searchImage.asset,
