@@ -4,4 +4,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://acme.com/sitemap.xml
+Sitemap: https://circulaw-git-fix-webhook-for-news-and-eulaw-dark-matter-labs.vercel.app/sitemap.xml
