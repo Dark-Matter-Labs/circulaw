@@ -37,9 +37,9 @@ export default function PopUp({ pillars, modelTexts }) {
     // initialise from search params
     let modelTextSlug = searchParams.get('modeltext');
     let pillar = searchParams.get('pillar');
-    console.log(pillar, modelTextSlug)
+    console.log(pillar, modelTextSlug);
     if (pillar && !modelTextSlug) {
-      setSelectedModelText(null)
+      setSelectedModelText(null);
       setSelectedPillar(pillar);
       const filtered = modelTexts.filter((t) => t.pillar === pillar);
       setFilteredModelTexts(filtered);
@@ -49,8 +49,7 @@ export default function PopUp({ pillars, modelTexts }) {
       setFilteredModelTexts(filtered);
       setIsOpen(true);
       setSelectedModelText(modelTexts.filter((t) => t.slug === modelTextSlug)[0]);
-    }
-    else if (pillar && modelTextSlug) {
+    } else if (pillar && modelTextSlug) {
       setSelectedPillar(pillar);
       const filtered = modelTexts.filter((t) => t.pillar === pillar);
       setFilteredModelTexts(filtered);
@@ -60,8 +59,8 @@ export default function PopUp({ pillars, modelTexts }) {
       setSelectedPillar('materialenkringloop');
       const filtered = modelTexts.filter((t) => t.pillar === 'materialenkringloop');
       setFilteredModelTexts(filtered);
-      setIsOpen(false)
-    } 
+      setIsOpen(false);
+    }
   }, [searchParams, modelTexts, createQueryString, router, pathname]);
 
   let [isOpen, setIsOpen] = useState(false);
@@ -154,7 +153,6 @@ export default function PopUp({ pillars, modelTexts }) {
                     <Tag classes='bg-green-500 max-w-min text-green-50 mb-2 text-nowrap'>
                       {selectedModelText.pillar}
                     </Tag>
-                    
                   </div>
 
                   <Button onClick={close}>
@@ -167,36 +165,32 @@ export default function PopUp({ pillars, modelTexts }) {
 
                 <div className='w-full border border-gray-300 flex flex-col rounded-cl mb-10'>
                   <div className='flex flex-row justify-between bg-gray-200 rounded-t-cl py-2 px-6'>
-                    <div className='p-xs-semibold'>
-                    Modeltekst omgevingsplan
+                    <div className='p-xs-semibold'>Modeltekst omgevingsplan</div>
+                    <div className='self-end relative'>
+                      <button
+                        onClick={() => {
+                          navigator.clipboard.writeText(selectedModelText.modelTextPT);
+                          setShowLinkCopied(true);
+                          setTimeout(() => {
+                            setShowLinkCopied(false);
+                          }, 1800);
+                        }}
+                        className={`${showLinkCopied ? 'hidden' : 'block'} p-xs flex flex-row`}
+                      >
+                        <IconCopy className='w-5 h-5 ml-2.5' />
+                      </button>
+                      {showLinkCopied && (
+                        <p className='p-xs text-green-500 text-nowrap flex flex-row'>
+                          <IconCheck className='w-5 h-5 text-green-500 ml-2.5' />
+                        </p>
+                      )}
                     </div>
-                  <div className='self-end relative'>
-                    <button
-                      onClick={() => {
-                        navigator.clipboard.writeText(selectedModelText.modelTextPT);
-                        setShowLinkCopied(true);
-                        setTimeout(() => {
-                          setShowLinkCopied(false);
-                        }, 1800);
-                      }}
-                      className={`${
-                        showLinkCopied ? 'hidden' : 'block'
-                      } p-xs flex flex-row`}
-                    >
-                      <IconCopy className='w-5 h-5 ml-2.5' />
-                    </button>
-                    {showLinkCopied && (
-                      <p className='p-xs text-green-500 text-nowrap flex flex-row'>
-                        <IconCheck className='w-5 h-5 text-green-500 ml-2.5' />
-                      </p>
-                    )}
-                  </div>
                   </div>
                   <div className='px-6'>
-                  <PortableText
-                    value={selectedModelText.modelText}
-                    components={reducedPortableTextComponents}
-                  />
+                    <PortableText
+                      value={selectedModelText.modelText}
+                      components={reducedPortableTextComponents}
+                    />
                   </div>
                 </div>
                 <div className='flex flex-col mb-6 pr-6'>
@@ -244,7 +238,10 @@ export default function PopUp({ pillars, modelTexts }) {
                   </div>
                 </div>
                 <div className='p-xs pr-6 italic'>
-                <span className='font-semibold'>Let op: </span>De planregels zijn ‘modelteksten’. Deze zijn door de juristen van CircuLaw zelf opgesteld. Typ de modelteksten nooit zomaar klakkeloos over, wees je altijd bewust van de context en samenhang met informatie en teksten buiten de regels zelf.
+                  <span className='font-semibold'>Let op: </span>De planregels zijn ‘modelteksten’.
+                  Deze zijn door de juristen van CircuLaw zelf opgesteld. Typ de modelteksten nooit
+                  zomaar klakkeloos over, wees je altijd bewust van de context en samenhang met
+                  informatie en teksten buiten de regels zelf.
                 </div>
               </DialogPanel>
             </div>

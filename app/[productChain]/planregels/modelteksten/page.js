@@ -72,18 +72,22 @@ export default async function ModelTextPage() {
       <div className=' bg-white flex flex-col global-margin my-10 sm:my-16 h-max'>
         <div className='flex flex-col max-w-[760px]'>
           <p className='p-base pb-6'>
-            We hebben de planregels ingedeeld op basis van 6
-            pijlers - deze sluiten aan op de pijlers zoals{' '}
-            <span className='text-green-400'>Toekomstig Bestendig Bouwen {'>'}</span> ze heeft
-            gedefinieerd.
+            We hebben de planregels ingedeeld op basis van 6 pijlers - deze sluiten aan op de
+            pijlers zoals <span className='text-green-400'>Toekomstig Bestendig Bouwen {'>'}</span>{' '}
+            ze heeft gedefinieerd.
           </p>
-          <Link href='/bouw/planregels' className='flex items-center mb-6 text-green-500 hover:link-interaction underline p-base-semibold'>
-          Meer over het omgevingsplan en planregels <IconArrowRight className='inline-block ml-1'/></Link>
+          <Link
+            href='/bouw/planregels'
+            className='flex items-center mb-6 text-green-500 hover:link-interaction underline p-base-semibold'
+          >
+            Meer over het omgevingsplan en planregels{' '}
+            <IconArrowRight className='inline-block ml-1' />
+          </Link>
           <p className='p-xs italic'>
-            <span className='font-semibold'>Let op:</span> De planregels zijn &apos;modelteksten&apos;. Deze
-            zijn door de juristen van CircuLaw zelf opgesteld. Typ de modelteksten nooit zomaar
-            klakkeloos over, wees je altijd bewust van de context en samenhang met informatie en
-            teksten buiten de regels zelf.
+            <span className='font-semibold'>Let op:</span> De planregels zijn
+            &apos;modelteksten&apos;. Deze zijn door de juristen van CircuLaw zelf opgesteld. Typ de
+            modelteksten nooit zomaar klakkeloos over, wees je altijd bewust van de context en
+            samenhang met informatie en teksten buiten de regels zelf.
           </p>
         </div>
         <PopUp modelTexts={modelTexts} pillars={pillars} />
