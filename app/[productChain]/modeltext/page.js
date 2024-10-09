@@ -119,7 +119,7 @@ export default function ScrollyTellingPage() {
                 Ga direct aan de slag met de modelteksten voor planregels in het omgevingsplan die
                 onze juristen hebben opgesteld
               </p>
-              <CustomButton color='lightGreenBackground'>
+              <CustomButton color='whiteBackground'>
                 Naar de planregels
                 <IconArrowRight />
               </CustomButton>

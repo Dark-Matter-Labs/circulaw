@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
-import { IconX, IconCopy } from '@tabler/icons-react';
+import { IconX, IconCopy, IconCheck } from '@tabler/icons-react';
 import ModelTextCard from './modeltext-card';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { PortableText } from '@portabletext/react';
@@ -141,25 +141,29 @@ export default function PopUp({ pillars, modelTexts }) {
             <div className='flex min-h-full items-center justify-center p-0 sm:px-4 sm:py-10'>
               <DialogPanel
                 transition
-                className='sm:rounded-cl bg-gray-100 border w-screen sm:w-[635px] min-h-screen sm:min-h-0 sm:h-auto py-6 px-10 duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0'
+                className='sm:rounded-cl bg-gray-100 border w-screen sm:max-w-3xl min-h-screen sm:min-h-0 sm:h-auto py-6 px-10 duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0'
               >
                 <div className='flex flex-row w-full justify-between items-center'>
                   <div className='flex flex-row gap-x-2'>
-                    <Tag classes='bg-green-400 max-w-min text-green-50 mb-2 text-nowrap'>
+                    <Tag classes='bg-green-500 max-w-min text-green-50 mb-2 text-nowrap'>
                       {selectedModelText.pillar}
                     </Tag>
-                    <Tag classes='bg-transparent border border-black'>Modeltekst omgevingsplan</Tag>
+                    
                   </div>
 
                   <Button onClick={close}>
                     <IconX className='h-6 w-6 text-green-800' />
                   </Button>
                 </div>
-                <DialogTitle as='h3' className='heading-2xl-semibold my-8'>
+                <DialogTitle as='h3' className='heading-2xl-semibold mb-10'>
                   {selectedModelText?.title}
                 </DialogTitle>
 
-                <div className='w-full border border-green-800 flex flex-col p-6 rounded-cl mb-10'>
+                <div className='w-full border border-gray-300 flex flex-col rounded-cl mb-10'>
+                  <div className='flex flex-row justify-between bg-gray-200 rounded-t-cl py-2 px-6'>
+                    <div className='p-xs-semibold'>
+                    Modeltekst omgevingsplan
+                    </div>
                   <div className='self-end relative'>
                     <button
                       onClick={() => {
@@ -171,36 +175,38 @@ export default function PopUp({ pillars, modelTexts }) {
                       }}
                       className={`${
                         showLinkCopied ? 'hidden' : 'block'
-                      } p-xs-semibold flex flex-row text-gray-600 mb-8`}
+                      } p-xs flex flex-row`}
                     >
-                      Kopieer tekst <IconCopy className='w-6 h-6 text-green-800 ml-2.5' />
+                      <IconCopy className='w-5 h-5 ml-2.5' />
                     </button>
                     {showLinkCopied && (
-                      <p className='p-xs-semibold text-green-500 text-nowrap flex flex-row mb-8'>
-                        Tekst gekopieerd!
-                        <IconCopy className='w-6 h-6 text-green-500 ml-2.5' />
+                      <p className='p-xs text-green-500 text-nowrap flex flex-row'>
+                        <IconCheck className='w-5 h-5 text-green-500 ml-2.5' />
                       </p>
                     )}
                   </div>
+                  </div>
+                  <div className='px-6'>
                   <PortableText
                     value={selectedModelText.modelText}
                     components={reducedPortableTextComponents}
                   />
+                  </div>
                 </div>
-                <div className='flex flex-col max-w-[425px] mb-6'>
+                <div className='flex flex-col mb-6 pr-6'>
                   <h6 className='heading-xl-semibold'>Toelichting</h6>
                   <PortableText
                     value={selectedModelText.description}
                     components={reducedPortableTextComponents}
                   />
                 </div>
-                <div className='flex flex-col mb-10 max-w-[425px]'>
-                  <h6 className='heading-xl-semibold mb-6'>Gelinkte instrumenten</h6>
+                <div className='flex flex-col mb-10'>
+                  <h6 className='heading-xl-semibold mb-4'>Gelinkte instrumenten</h6>
                   <ul className='list-disc list-inside ml-2'>
                     {selectedModelText?.linkedInstruments?.map((instrument) => (
                       <li className='p-base underline' key={instrument.slug}>
                         <Link
-                          className='link-interaction text-green-600'
+                          className='link-interaction text-green-500'
                           href={`/${instrument.transitionAgenda}/${instrument.thema}/instrumenten/${instrument.slug}`}
                         >
                           {instrument.titel}
@@ -209,7 +215,7 @@ export default function PopUp({ pillars, modelTexts }) {
                     ))}
                   </ul>
                 </div>
-                <div className='flex flex-row justify-between '>
+                <div className='flex flex-row justify-between mb-10'>
                   <div className='flex flex-wrap sm:flex-row gap-4'>
                     <div className='flex flex-col'>
                       <div className='p-xs-semibold mb-2'>Schaalniveau</div>
@@ -230,6 +236,9 @@ export default function PopUp({ pillars, modelTexts }) {
                       </div>
                     </div>
                   </div>
+                </div>
+                <div className='p-xs pr-6 italic'>
+                <span className='font-semibold'>Let op: </span>De planregels zijn ‘modelteksten’. Deze zijn door de juristen van CircuLaw zelf opgesteld. Typ de modelteksten nooit zomaar klakkeloos over, wees je altijd bewust van de context en samenhang met informatie en teksten buiten de regels zelf.
                 </div>
               </DialogPanel>
             </div>

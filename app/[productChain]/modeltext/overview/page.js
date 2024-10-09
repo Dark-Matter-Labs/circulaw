@@ -1,5 +1,6 @@
 import PopUp from '@/components/modeltext/popup';
 import { sanityFetch } from '@/lib/sanity';
+import { IconArrowRight } from '@tabler/icons-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -68,7 +69,6 @@ export default async function ModelTextPage() {
           </div>
         </div>
       </div>
-
       <div className=' bg-white flex flex-col global-margin my-10 sm:my-16 h-max'>
         <div className='flex flex-col max-w-[760px]'>
           <p className='p-base pb-6'>
@@ -77,8 +77,10 @@ export default async function ModelTextPage() {
             <span className='text-green-400'>Toekomstig Bestendig Bouwen {'>'}</span> ze heeft
             gedefinieerd.
           </p>
-          <p className='p-base'>
-            <span className='p-base-semibold'>Let op:</span> De planregels zijn ‘modelteksten’. Deze
+          <Link href='/bouw/modeltext' className='flex items-center mb-6 text-green-500 hover:link-interaction underline p-base-semibold'>
+          Meer over het omgevingsplan en planregels <IconArrowRight className='inline-block ml-1'/></Link>
+          <p className='p-xs italic'>
+            <span className='font-semibold'>Let op:</span> De planregels zijn ‘modelteksten’. Deze
             zijn door de juristen van CircuLaw zelf opgesteld. Typ de modelteksten nooit zomaar
             klakkeloos over, wees je altijd bewust van de context en samenhang met informatie en
             teksten buiten de regels zelf.

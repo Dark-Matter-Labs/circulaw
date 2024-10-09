@@ -35,7 +35,7 @@ export default function PCLayout({ ...props }) {
             </div>
             <div>
               {props.productChainData.pcName === 'Bouw' && (
-                <div className='my-20'>
+                <div className='mt-20'>
                   <Link href='/bouw/modeltext'>
                     <div className='w-full bg-green-50 flex flex-col md:flex-row border border-gray-200 rounded-cl items-start md:items-center justify-between px-10 py-8 gap-8'>
                       <p className='heading-2xl-semibold max-w-sm'>
@@ -46,7 +46,7 @@ export default function PCLayout({ ...props }) {
                         <span className='p-base-semibold'>omgevingsplan</span> een van de
                         instrumenten om circulair bouwen te bevorderen
                       </p>
-                      <CustomButton color='lightGreenBackground'>
+                      <CustomButton color='whiteBackground'>
                         Meer over het omgevingsplan
                         <IconArrowRight />
                       </CustomButton>
