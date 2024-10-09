@@ -49,6 +49,20 @@ const EU_LAW_SUMMARY_PROJECTION = `{
       "searchImage": searchImage.asset->url
     }`;
 
+const NEWS_ITEM_PROJECTION = `{
+    'objectID': _id,
+    'content': pt::text(content),
+    title,
+    newsText,
+    newsDate,
+    newsOrAgenda,
+    'newsImage': newsImage.asset,
+    'slug': slug.current,
+    'link',
+    category,
+    linkUrl,
+}`
+
 export async function POST(req) {
   try {
     const sanityAgolia = indexer(
@@ -64,6 +78,10 @@ export async function POST(req) {
         euLaw: {
           index: agoliaInstance.initIndex('euLaw'),
           projection: EU_LAW_SUMMARY_PROJECTION,
+        },
+        newsItem: {
+          index: agoliaInstance.initIndex('newsItems'),
+          projection: NEWS_ITEM_PROJECTION,
         },
       },
 
@@ -106,6 +124,21 @@ export async function POST(req) {
                 introText: document.introText,
                 searchImage: document.searchImage
               }
+          }
+          case 'newsItme': {
+            return {
+              objectID: document.objectID,
+              content: document.content,
+              title: document.title,
+              newsText: document.newsText,
+              newsDate: document.newsDate,
+              newsOrAgenda: document.newsOrAgenda,
+              newsImage: document.newsImage,
+              slug: document.slug,
+              link: document.link,
+              category: document.category,
+              linkUrl: document.linkUrl,
+            }
           }
           default:
             return document;
