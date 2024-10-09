@@ -177,6 +177,7 @@ export async function POST(req) {
               lawTitle: document.lawTitle,
               slug: document.slug,
               searchTitle: document.searchTitle,
+              searchImage: document.searchImage,
               eu1Content: document.eu1Content,
               eu2Content: document.eu2Content,
               eu3Content: document.eu3Content,

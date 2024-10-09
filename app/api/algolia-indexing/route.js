@@ -90,7 +90,7 @@ const EU_LAW_QUERY = `
     }.searchImage
 }
 `;
-// TODO: there is an error here and the EU law 
+
 
 const NEWS_ITEMS_QUERY = `
 *[_type == 'newsItem' && !(_id in path('drafts.**'))] {
