@@ -52,20 +52,6 @@ export async function POST(req) {
                           }
                     `,
         },
-        euLaw: {
-          index: agoliaInstance.initIndex('euLaw'),
-          projection: `
-          {
-            "objectID": _id,
-            "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
-            "lawTitle": coalesce(euLawReference->title, title),
-            "slug": coalesce(euLawReference->slug.current, slug.current),
-            introText,
-             
-            }
-         `,
-        },
-       
         newsItem: {
           index: agoliaInstance.initIndex('newsItems'),
           projection: `
@@ -116,17 +102,6 @@ export async function POST(req) {
               content: document.content,
             };
           }
-          case 'euLaw': {
-            return {
-              objectID: document.objectID,
-              lawTitle: document.lawTitle,
-              searchTitle: document.searchTitle,
-              slug: document.slug,
-              introText: document.introText,
-              searchImage: document.searchImage,
-            };
-          }
-         
           case 'newsItem': {
             return {
               objectID: document.objectID,
