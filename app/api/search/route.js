@@ -67,6 +67,7 @@ const EU_LAW_EU_TAB_PROJECTION =`{
       "objectID": _id,
       'lawTitle': coalesce(euLawReference->title, title),
       'searchTitle': coalesce(euLawReference->title, title) + ' - ' + title,
+      'searchImage': euLawReference->searchImage.asset->url,
       'slug': coalesce(euLawReference->slug.current, slug.current),
       'eu1Content': array::join(string::split((pt::text(europeContent[0].content)), "")[0..5500], ""), 
       'eu2Content': array::join(string::split((pt::text(europeContent[2].content)), "")[0..5500], ""),

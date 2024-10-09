@@ -86,7 +86,7 @@ const EU_LAW_QUERY = `
      title,
     "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
     "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, title) == title ][0] {
-      'searchImage': searchImage.asset,
+      'searchImage': searchImage.asset->url,
     }.searchImage
 }
 `;
