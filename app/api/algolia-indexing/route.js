@@ -85,8 +85,8 @@ const EU_LAW_QUERY = `
      'ceContent': pt::text(ceContent),
      title,
     "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
-    "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, title) == title ][0] {
-      'searchImage': searchImage.asset,
+    "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, ^.title) == title][0] {
+      'searchImage': searchImage.asset->url,
     }.searchImage
 }
 `;
@@ -99,7 +99,7 @@ title,
 newsText,
 newsDate,
 newsOrAgenda,
-'newsImage': newsImage.asset,
+'newsImage': newsImage.asset->url,
 'slug': slug.current,
 link,
 category,
