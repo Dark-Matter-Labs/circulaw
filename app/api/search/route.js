@@ -58,6 +58,7 @@ const NEWS_ITEM_PROJECTION = `{
     newsOrAgenda,
     'newsImage': newsImage.asset->url,
     'slug': slug.current,
+    link, 
     category,
     linkUrl,
 }`
@@ -134,7 +135,7 @@ export async function POST(req) {
               newsOrAgenda: document.newsOrAgenda,
               newsImage: document.newsImage,
               slug: document.slug,
-              // link: document.link,
+              link: document.link,
               category: document.category,
               linkUrl: document.linkUrl,
             }
