@@ -20,8 +20,8 @@ const plus_Jakarta_Sans = Plus_Jakarta_Sans({
 export const metadata = {
   // metadataBase: new URL(globalMeta.siteUrl),
   // alternates: {
-   // canonical: '/',
- // },
+  // canonical: '/',
+  // },
   title: globalMeta.siteName,
   description: globalMeta.description,
   keywords: globalMeta.keywords,

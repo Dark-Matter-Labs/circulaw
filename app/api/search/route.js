@@ -8,7 +8,7 @@ export const agoliaInstance = algoliasearch(
   process.env.NEXT_PUBLIC_AGOLIA_ADMIN_KEY,
 );
 
-const PROJECTION = `{
+const INSTRUMENT_PROJECTION = `{
     _type,
     _rev,
     "objectID": _id,
@@ -33,30 +33,44 @@ const PROJECTION = `{
           select(fiscaal == true => "fiscaal")],
         }`;
 
+const ABOUT_PAGE_PROJECTION = `{
+      "objectID": _id,
+      pageTitle, 
+      "slug": slug.current,
+      "content": array::join(string::split((pt::text(aboutPageContent)), "")[0..9500], "")
+    }`;
+
+const EU_LAW_SUMMARY_PROJECTION = `{
+      "objectID": _id,
+      "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
+      "lawTitle": coalesce(euLawReference->title, title),
+      "slug": coalesce(euLawReference->slug.current, slug.current),
+      introText,
+      "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, title) == title ][0] {
+        'searchImage': searchImage.asset,
+      }.searchImage
+    }`;
+
 export async function POST(req) {
   try {
     const sanityAgolia = indexer(
       {
         instrument: {
           index: agoliaInstance.initIndex('instruments'),
-          projection: PROJECTION,
+          projection: INSTRUMENT_PROJECTION,
         },
         aboutPage: {
           index: agoliaInstance.initIndex('aboutPage'),
-          projection: `
-                        {
-                            "objectID": _id,
-                            pageTitle, 
-                            "slug": slug.current,
-                            "content": array::join(string::split((pt::text(aboutPageContent)), "")[0..9500], "")
-                          }
-                    `,
+          projection: ABOUT_PAGE_PROJECTION,
         },
-   
+        euLaw: {
+          index: agoliaInstance.initIndex('euLaw'),
+          projection: EU_LAW_SUMMARY_PROJECTION,
+        },
       },
 
       (document) => {
-        console.log(document)
+        console.log(document);
         switch (document._type) {
           case 'instrument':
             return {
@@ -84,6 +98,16 @@ export async function POST(req) {
               slug: document.slug,
               content: document.content,
             };
+          }
+          case 'euLaw': {
+              return {
+                objectID: document.objectID, 
+                searchTitle: document.searchTitle,
+                lawTitle: document.lawTitle,
+                slug: document.slug,
+                introText: document.introText,
+                searchImage: document.searchImage
+              }
           }
           default:
             return document;
