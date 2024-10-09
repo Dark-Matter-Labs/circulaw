@@ -46,9 +46,7 @@ const EU_LAW_SUMMARY_PROJECTION = `{
       "lawTitle": coalesce(euLawReference->title, title),
       "slug": coalesce(euLawReference->slug.current, slug.current),
       introText,
-      "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, title) == title ][0] {
-        'searchImage': searchImage.asset,
-      }.searchImage
+      
     }`;
 
 export async function POST(req) {
@@ -106,7 +104,6 @@ export async function POST(req) {
                 lawTitle: document.lawTitle,
                 slug: document.slug,
                 introText: document.introText,
-                searchImage: document.searchImage
               }
           }
           default:
@@ -116,7 +113,7 @@ export async function POST(req) {
     );
 
     const body = await req.json();
-
+    console.log(body)
     const webhook = await sanityAgolia.webhookSync(client, body);
 
     return webhook.then(() => NextResponse.json({ message: 'success!' }));
