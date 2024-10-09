@@ -37,12 +37,20 @@ export default function PopUp({ pillars, modelTexts }) {
     // initialise from search params
     let modelTextSlug = searchParams.get('modeltext');
     let pillar = searchParams.get('pillar');
-
+    console.log(pillar, modelTextSlug)
     if (pillar && !modelTextSlug) {
+      setSelectedModelText(null)
       setSelectedPillar(pillar);
       const filtered = modelTexts.filter((t) => t.pillar === pillar);
       setFilteredModelTexts(filtered);
-    } else if (pillar && modelTextSlug) {
+    } else if (!pillar && modelTextSlug) {
+      setSelectedPillar('materialenkringloop');
+      const filtered = modelTexts.filter((t) => t.pillar === 'materialenkringloop');
+      setFilteredModelTexts(filtered);
+      setIsOpen(true);
+      setSelectedModelText(modelTexts.filter((t) => t.slug === modelTextSlug)[0]);
+    }
+    else if (pillar && modelTextSlug) {
       setSelectedPillar(pillar);
       const filtered = modelTexts.filter((t) => t.pillar === pillar);
       setFilteredModelTexts(filtered);
@@ -50,12 +58,10 @@ export default function PopUp({ pillars, modelTexts }) {
       setSelectedModelText(modelTexts.filter((t) => t.slug === modelTextSlug)[0]);
     } else if (!pillar) {
       setSelectedPillar('materialenkringloop');
-      router.push(pathname + '?' + createQueryString('pillar', 'materialenkringloop'), {
-        scroll: false,
-      });
       const filtered = modelTexts.filter((t) => t.pillar === 'materialenkringloop');
       setFilteredModelTexts(filtered);
-    }
+      setIsOpen(false)
+    } 
   }, [searchParams, modelTexts, createQueryString, router, pathname]);
 
   let [isOpen, setIsOpen] = useState(false);
