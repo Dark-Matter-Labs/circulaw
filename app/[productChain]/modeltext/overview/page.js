@@ -47,6 +47,18 @@ export default async function ModelTextPage() {
                 {' '}
                 Home <span className='ml-2'>{'>'}</span>
               </Link>
+              <Link
+                href='/bouw'
+                className='hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white pl-3'
+              >
+                Bouw <span className='ml-2'>{'>'}</span>
+              </Link>
+              <Link
+                href='/bouw/modeltext'
+                className='hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white pl-3'
+              >
+                Circulair bouwen meer effect met mix van sintrumenten
+              </Link>
             </span>
           </div>
           <div className='mb-6 sm:mb-10 flex flex-col gap-2'>
