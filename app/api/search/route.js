@@ -46,7 +46,7 @@ const EU_LAW_SUMMARY_PROJECTION = `{
       "lawTitle": coalesce(euLawReference->title, title),
       "slug": coalesce(euLawReference->slug.current, slug.current),
       introText,
-      
+      "searchImage": searchImage.asset->url
     }`;
 
 export async function POST(req) {
@@ -104,6 +104,7 @@ export async function POST(req) {
                 lawTitle: document.lawTitle,
                 slug: document.slug,
                 introText: document.introText,
+                searchImage: document.searchImage
               }
           }
           default:
