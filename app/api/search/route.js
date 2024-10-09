@@ -125,7 +125,7 @@ export async function POST(req) {
                 searchImage: document.searchImage
               }
           }
-          case 'newsItme': {
+          case 'newsItem': {
             return {
               objectID: document.objectID,
               content: document.content,
