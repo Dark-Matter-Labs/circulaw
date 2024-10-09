@@ -91,7 +91,6 @@ const EU_LAW_QUERY = `
 }
 `;
 
-
 const NEWS_ITEMS_QUERY = `
 *[_type == 'newsItem' && !(_id in path('drafts.**'))] {
 'objectID': _id,

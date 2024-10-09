@@ -61,9 +61,9 @@ const NEWS_ITEM_PROJECTION = `{
     link, 
     category,
     linkUrl,
-}`
+}`;
 
-const EU_LAW_EU_TAB_PROJECTION =`{
+const EU_LAW_EU_TAB_PROJECTION = `{
       "objectID": _id,
       'lawTitle': coalesce(euLawReference->title, title),
       'searchTitle': coalesce(euLawReference->title, title) + ' - ' + title,
@@ -85,18 +85,18 @@ const EU_LAW_EU_TAB_PROJECTION =`{
       'eu6Title': europeContent[5].title,
       'eu7Title': europeContent[6].title,
       'eu8Title': europeContent[7].title,
-}`
+}`;
 
-const EU_LAW_CIRC_TAB_PROJECTION=`{
+const EU_LAW_CIRC_TAB_PROJECTION = `{
       "objectID": _id,
       'lawTitle': coalesce(euLawReference->title, title),
       'searchTitle': coalesce(euLawReference->title, title) + ' - ' + title,
       'searchImage': euLawReference->searchImage.asset->url,
       'slug': coalesce(euLawReference->slug.current, slug.current),
       "ceContent": pt::text(ceContent),
-}`
+}`;
 
-const EU_LAW_LOCAL_TAB_PROJECTION=`{
+const EU_LAW_LOCAL_TAB_PROJECTION = `{
       "objectID": _id,
       'lawTitle': coalesce(euLawReference->title, title),
       'searchTitle': coalesce(euLawReference->title, title) + ' - ' + title,
@@ -118,7 +118,7 @@ const EU_LAW_LOCAL_TAB_PROJECTION=`{
       'localTitle6': localContent[5].title,
       'localTitle7': localContent[6].title,
       'localTitle8': localContent[7].title,
-}`
+}`;
 
 // clTab
 // localTab
@@ -154,7 +154,7 @@ export async function POST(req) {
         euLocalTab: {
           index: agoliaInstance.initIndex('euLaw'),
           projection: EU_LAW_LOCAL_TAB_PROJECTION,
-        }
+        },
       },
 
       (document) => {
@@ -188,14 +188,14 @@ export async function POST(req) {
             };
           }
           case 'euLaw': {
-              return {
-                objectID: document.objectID, 
-                searchTitle: document.searchTitle,
-                lawTitle: document.lawTitle,
-                slug: document.slug,
-                introText: document.introText,
-                searchImage: document.searchImage
-              }
+            return {
+              objectID: document.objectID,
+              searchTitle: document.searchTitle,
+              lawTitle: document.lawTitle,
+              slug: document.slug,
+              introText: document.introText,
+              searchImage: document.searchImage,
+            };
           }
           case 'newsItem': {
             return {
@@ -210,7 +210,7 @@ export async function POST(req) {
               link: document.link,
               category: document.category,
               linkUrl: document.linkUrl,
-            }
+            };
           }
           case 'euEuropeTab': {
             return {
@@ -235,7 +235,7 @@ export async function POST(req) {
               eu6Title: document.eu6Title,
               eu7Title: document.eu7Title,
               eu8Title: document.eu8Title,
-            }
+            };
           }
           case 'euCircularEconomyTab': {
             return {
@@ -245,7 +245,7 @@ export async function POST(req) {
               searchTitle: document.searchTitle,
               searchImage: document.searchImage,
               ceContent: document.ceContent,
-            }
+            };
           }
           case 'euLocalTab': {
             return {
@@ -270,7 +270,7 @@ export async function POST(req) {
               localTitle6: document.localTitle6,
               localTitle7: document.localTitle7,
               localTitle8: document.localTitle8,
-            }
+            };
           }
           default:
             return document;
@@ -279,7 +279,7 @@ export async function POST(req) {
     );
 
     const body = await req.json();
-    console.log(body)
+    console.log(body);
     const webhook = await sanityAgolia.webhookSync(client, body);
 
     return webhook.then(() => NextResponse.json({ message: 'success!' }));
