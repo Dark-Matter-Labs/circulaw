@@ -96,6 +96,30 @@ const EU_LAW_CIRC_TAB_PROJECTION=`{
       "ceContent": pt::text(ceContent),
 }`
 
+const EU_LAW_LOCAL_TAB_PROJECTION=`{
+      "objectID": _id,
+      'lawTitle': coalesce(euLawReference->title, title),
+      'searchTitle': coalesce(euLawReference->title, title) + ' - ' + title,
+      'searchImage': euLawReference->searchImage.asset->url,
+      'slug': coalesce(euLawReference->slug.current, slug.current),
+      'localContent1': pt::text(localContent[0].content),
+      'localContent2': pt::text(localContent[1].content),
+      'localContent3': pt::text(localContent[2].content),
+      'localContent4': pt::text(localContent[3].content),
+      'localContent5': pt::text(localContent[4].content),
+      'localContent6': pt::text(localContent[5].content),
+      'localContent7': pt::text(localContent[6].content),
+      'localContent8': pt::text(localContent[7].content),
+      'localTitle1': localContent[0].title,
+      'localTitle2': localContent[1].title,
+      'localTitle3': localContent[2].title,
+      'localTitle4': localContent[3].title,
+      'localTitle5': localContent[4].title,
+      'localTitle6': localContent[5].title,
+      'localTitle7': localContent[6].title,
+      'localTitle8': localContent[7].title,
+}`
+
 // clTab
 // localTab
 
@@ -126,6 +150,10 @@ export async function POST(req) {
         euCircularEconomyTab: {
           index: agoliaInstance.initIndex('euLaw'),
           projection: EU_LAW_CIRC_TAB_PROJECTION,
+        },
+        euLocalTab: {
+          index: agoliaInstance.initIndex('euLaw'),
+          projection: EU_LAW_LOCAL_TAB_PROJECTION,
         }
       },
 
@@ -217,6 +245,31 @@ export async function POST(req) {
               searchTitle: document.searchTitle,
               searchImage: document.searchImage,
               ceContent: document.ceContent,
+            }
+          }
+          case 'euLocalTab': {
+            return {
+              objectID: document.objectID,
+              lawTitle: document.lawTitle,
+              slug: document.slug,
+              searchTitle: document.searchTitle,
+              searchImage: document.searchImage,
+              localContent1: document.localContent1,
+              localContent2: document.localContent2,
+              localContent3: document.localContent3,
+              localContent4: document.localContent4,
+              localContent5: document.localContent5,
+              localContent6: document.localContent6,
+              localContent7: document.localContent7,
+              localContent8: document.localContent8,
+              localTitle1: document.localTitle1,
+              localTitle2: document.localTitle2,
+              localTitle3: document.localTitle3,
+              localTitle4: document.localTitle4,
+              localTitle5: document.localTitle5,
+              localTitle6: document.localTitle6,
+              localTitle7: document.localTitle7,
+              localTitle8: document.localTitle8,
             }
           }
           default:
