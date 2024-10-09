@@ -87,6 +87,15 @@ const EU_LAW_EU_TAB_PROJECTION =`{
       'eu8Title': europeContent[7].title,
 }`
 
+const EU_LAW_CIRC_TAB_PROJECTION=`{
+      "objectID": _id,
+      'lawTitle': coalesce(euLawReference->title, title),
+      'searchTitle': coalesce(euLawReference->title, title) + ' - ' + title,
+      'searchImage': euLawReference->searchImage.asset->url,
+      'slug': coalesce(euLawReference->slug.current, slug.current),
+      "ceContent": pt::text(ceContent),
+}`
+
 // clTab
 // localTab
 
@@ -112,7 +121,11 @@ export async function POST(req) {
         },
         euEuropeTab: {
           index: agoliaInstance.initIndex('euLaw'),
-          projection: EU_LAW_EU_TAB_PROJECTION
+          projection: EU_LAW_EU_TAB_PROJECTION,
+        },
+        euCircularEconomyTab: {
+          index: agoliaInstance.initIndex('euLaw'),
+          projection: EU_LAW_CIRC_TAB_PROJECTION,
         }
       },
 
@@ -194,6 +207,16 @@ export async function POST(req) {
               eu6Title: document.eu6Title,
               eu7Title: document.eu7Title,
               eu8Title: document.eu8Title,
+            }
+          }
+          case 'euCircularEconomyTab': {
+            return {
+              objectID: document.objectID,
+              lawTitle: document.lawTitle,
+              slug: document.slug,
+              searchTitle: document.searchTitle,
+              searchImage: document.searchImage,
+              ceContent: document.ceContent,
             }
           }
           default:
