@@ -61,9 +61,7 @@ export async function POST(req) {
             "lawTitle": coalesce(euLawReference->title, title),
             "slug": coalesce(euLawReference->slug.current, slug.current),
             introText,
-             "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, title) == title ][0] {
-            "searchImage": searchImage.asset,
-          }.searchImage
+             
             }
          `,
         },
@@ -71,29 +69,7 @@ export async function POST(req) {
           index: agoliaInstance.initIndex('euLaw'),
           projection: `
           {
-            "objectID": _id,
-            'lawTitle': coalesce(euLawReference->title, title),
-            "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
-            "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, title) == title ][0] {
-            'searchImage': searchImage.asset,
-          }.searchImage,
-          'slug': coalesce(euLawReference->slug.current, slug.current),
-            'eu1Content': array::join(string::split((pt::text(europeContent[0].content)), "")[0..5500], ""), 
-            'eu2Content': array::join(string::split((pt::text(europeContent[2].content)), "")[0..5500], ""),
-            'eu3Content': array::join(string::split((pt::text(europeContent[3].content)), "")[0..5500], ""), 
-            'eu4Content': array::join(string::split((pt::text(europeContent[4].content)), "")[0..5500], ""), 
-            'eu5Content': array::join(string::split((pt::text(europeContent[5].content)), "")[0..5500], ""), 
-            'eu6Content': array::join(string::split((pt::text(europeContent[6].content)), "")[0..5500], ""), 
-            'eu7Content': array::join(string::split((pt::text(europeContent[7].content)), "")[0..5500], ""), 
-            'eu8Content': array::join(string::split((pt::text(europeContent[8].content)), "")[0..5500], ""), 
-            'eu1Title': europeContent[0].title,
-            'eu2Title': europeContent[1].title,
-            'eu3Title': europeContent[2].title,
-            'eu4Title': europeContent[3].title,
-            'eu5Title': europeContent[4].title,
-            'eu6Title': europeContent[5].title,
-            'eu7Title': europeContent[6].title,
-            'eu8Title': europeContent[7].title,
+            ...
             }
          `,
         },
@@ -101,29 +77,7 @@ export async function POST(req) {
           index: agoliaInstance.initIndex('euLaw'),
           projection: `
           {
-            "objectID": _id,
-             'lawTitle': coalesce(euLawReference->title, title),
-            "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
-            "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, title) == title ][0] {
-            'searchImage': searchImage.asset,
-          }.searchImage,
-          'slug': coalesce(euLawReference->slug.current, slug.current),
-             'localContent1': pt::text(localContent[0].content),
-              'localContent2': pt::text(localContent[1].content),
-              'localContent3': pt::text(localContent[2].content),
-              'localContent4': pt::text(localContent[3].content),
-              'localContent5': pt::text(localContent[4].content),
-              'localContent6': pt::text(localContent[5].content),
-              'localContent7': pt::text(localContent[6].content),
-              'localContent8': pt::text(localContent[7].content),
-              'localTitle1': localContent[0].title,
-              'localTitle2': localContent[1].title,
-              'localTitle3': localContent[2].title,
-              'localTitle4': localContent[3].title,
-              'localTitle5': localContent[4].title,
-              'localTitle6': localContent[5].title,
-              'localTitle7': localContent[6].title,
-              'localTitle8': localContent[7].title,
+            ...
             }
          `,
         },
@@ -131,14 +85,7 @@ export async function POST(req) {
           index: agoliaInstance.initIndex('euLaw'),
           projection: `
           {
-            "objectID": _id,
-             "lawTitle": coalesce(euLawReference->title, title),
-             "slug": coalesce(euLawReference->slug.current, slug.current),
-            "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
-            "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, title) == title ][0] {
-            'searchImage': searchImage.asset,
-                }.searchImage,
-             "ceContent": pt::text(ceContent),
+            ...
             }
          `,
         },
@@ -225,6 +172,7 @@ export async function POST(req) {
               eu6Title: document.eu6Title,
               eu7Title: document.eu7Title,
               eu8Title: document.eu8Title,
+              ...document
             };
           }
           case 'euLocalTab': {
