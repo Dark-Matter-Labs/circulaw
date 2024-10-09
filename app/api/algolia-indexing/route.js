@@ -85,11 +85,12 @@ const EU_LAW_QUERY = `
      'ceContent': pt::text(ceContent),
      title,
     "searchTitle": coalesce(euLawReference->title, title) + ' - ' + title,
-    "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, title) == title ][0] {
+    "searchImage": *[_type == 'euLaw' && coalesce(^.euLawReference->title, ^.title) == title][0] {
       'searchImage': searchImage.asset->url,
     }.searchImage
 }
 `;
+// TODO: there is an error here and the EU law 
 
 const NEWS_ITEMS_QUERY = `
 *[_type == 'newsItem' && !(_id in path('drafts.**'))] {
