@@ -89,12 +89,12 @@ export default function ScrollyTellingPage() {
         <h2 className='heading-3xl-semibold text-green-800 mb-10'>
           Planregels: modelteksten voor een omgevingsplan
         </h2>
-        <div className='relative w-[700px] h-[550px] mb-10'>
+        <div className='relative max-w-[700px] max-h-[550px] mb-10'>
           <Image
             src='/planregelsImage.png'
             alt='planregels image'
-            sizes='100vw'
-            fill
+            height={700}
+            width={500}
             className='z-10 object-cover'
           />
         </div>
