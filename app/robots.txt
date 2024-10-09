@@ -1,7 +1,0 @@
-
-# Algolia-Crawler-Verif: 4F999F21ABBE611A
-
-User-Agent: *
-Allow: /
-
-Sitemap: https://circulaw-git-fix-webhook-for-news-and-eulaw-dark-matter-labs.vercel.app/sitemap.xml
