@@ -112,7 +112,7 @@ export default function ScrollyTellingPage() {
           zijn dus modelteksten voor een omgevingsplan.
         </p>
         <div className='mt-20 flex shrink'>
-          <Link href='/bouw/modeltext/overview'>
+          <Link href='/bouw/planregels/modelteksten'>
             <div className='w-full bg-green-50 flex flex-col md:flex-row border border-gray-200 rounded-cl items-start md:items-center justify-start px-10 py-8 gap-8'>
               <p className='heading-2xl-semibold max-w-sm'>Aan de slag met planregels</p>
               <p className='p-base max-w-sm'>
