@@ -52,24 +52,7 @@ export async function POST(req) {
                           }
                     `,
         },
-        newsItem: {
-          index: agoliaInstance.initIndex('newsItems'),
-          projection: `
-          {
-       'objectID': _id,
-        'content': pt::text(content),
-        title,
-        newsText,
-        newsDate,
-        newsOrAgenda,
-        'newsImage': newsImage.asset,
-        'slug': slug.current,
-        'link',
-        category,
-        linkUrl,
-            }
-         `,
-        },
+   
       },
 
       (document) => {
@@ -100,21 +83,6 @@ export async function POST(req) {
               pageTitle: document.pageTitle,
               slug: document.slug,
               content: document.content,
-            };
-          }
-          case 'newsItem': {
-            return {
-              objectID: document.objectID,
-              content: document.content,
-              title: document.title,
-              newsText: document.newsText,
-              newsDate: document.newsDate,
-              newsOrAgenda: document.newsOrAgenda,
-              newsImage: document.newsImage,
-              slug: document.slug,
-              link: document.link,
-              category: document.category,
-              linkUrl: document.linkUrl,
             };
           }
           default:
