@@ -177,6 +177,7 @@ export default function PopUp({ pillars, modelTexts }) {
                         }}
                         className={`${showLinkCopied ? 'hidden' : 'block'} p-xs flex flex-row`}
                       >
+                        Kopieer
                         <IconCopy className='w-5 h-5 ml-2.5' />
                       </button>
                       {showLinkCopied && (

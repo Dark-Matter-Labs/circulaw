@@ -1,3 +1,4 @@
+import LinkIcon from '@/components/link-icon';
 import PopUp from '@/components/modeltext/popup';
 import { sanityFetch } from '@/lib/sanity';
 import { IconArrowRight } from '@tabler/icons-react';
@@ -64,7 +65,7 @@ export default async function ModelTextPage() {
           </div>
           <div className='mb-6 sm:mb-10 flex flex-col gap-2'>
             <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-white'>
-              Planregels: modelteksten voor een omgevingsplan
+              Aan de slag met het omgevingsplan
             </h1>
           </div>
         </div>
@@ -72,18 +73,23 @@ export default async function ModelTextPage() {
       <div className=' bg-white flex flex-col global-margin my-10 sm:my-16 h-max'>
         <div className='flex flex-col max-w-[760px]'>
           <p className='p-base pb-6'>
-            We hebben de planregels ingedeeld op basis van 6 pijlers - deze sluiten aan op de
-            pijlers zoals <span className='text-green-400'>Toekomstig Bestendig Bouwen {'>'}</span>{' '}
+            We hebben de <span className='font-semibold'>planregels</span> voor het{' '}
+            <span className='font-semibold'>omgevingsplan</span> ingedeeld op basis van 6 pijlers .
+            Deze sluiten aan op de pijlers zoals{' '}
+            <Link href='/' className='link-interaction'>
+              Toekomstig Bestendig Bouwen
+              <LinkIcon />
+            </Link>{' '}
             ze heeft gedefinieerd.
           </p>
           <Link
             href='/bouw/planregels'
-            className='flex items-center mb-6 text-green-500 hover:link-interaction underline p-base-semibold'
+            className='flex items-center mb-6 text-green-600 hover:link-interaction underline p-base-semibold'
           >
             Meer over het omgevingsplan en planregels{' '}
             <IconArrowRight className='inline-block ml-1' />
           </Link>
-          <p className='p-xs italic'>
+          <p className='p-xs italic p-4'>
             <span className='font-semibold'>Let op:</span> De planregels zijn
             &apos;modelteksten&apos;. Deze zijn door de juristen van CircuLaw zelf opgesteld. Typ de
             modelteksten nooit zomaar klakkeloos over, wees je altijd bewust van de context en

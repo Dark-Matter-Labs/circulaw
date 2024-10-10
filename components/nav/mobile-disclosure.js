@@ -53,7 +53,7 @@ export default function MobileDisclosure({ navData, closeMenu }) {
                         className='flex flex-row items-center justify-center ml-4'
                       >
                         <span className='hover:underline max-w-xs'>
-                          Omgevingsplan: modelteksten voor planregels
+                          Planregels: modelteksten voor het omgevingsplan
                         </span>
                       </Link>
                     </li>

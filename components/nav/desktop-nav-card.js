@@ -65,7 +65,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
             } p-xs active:p-xs-semibold active:no-underline cursor-pointer flex flex-row items-center -ml-7 pt-2`}
           >
             <IconCopy className='block h-6 w-6 mr-2' />
-            <span className='hover:underline'>Omgevingsplan: modelteksten voor planregels</span>
+            <span className='hover:underline'>Planregels: modelteksten voor het omgevingsplan</span>
           </Link>
         </div>
       )}
