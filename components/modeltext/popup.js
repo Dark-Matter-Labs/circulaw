@@ -164,7 +164,7 @@ export default function PopUp({ pillars, modelTexts }) {
                 </DialogTitle>
 
                 <div className='w-full border border-gray-300 flex flex-col rounded-cl mb-10'>
-                  <div className='flex flex-row justify-between bg-gray-200 rounded-t-cl py-2 px-6'>
+                  <div className='flex flex-row justify-between bg-gray-200 border-b border-gray-300 rounded-t-cl py-2 px-6'>
                     <div className='p-xs-semibold'>Modeltekst omgevingsplan</div>
                     <div className='self-end relative'>
                       <button
