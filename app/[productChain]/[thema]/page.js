@@ -51,7 +51,6 @@ export default async function ThemePage({ params }) {
     qParams: params,
     tags: ['thema', 'simpleThema', 'instrument'],
   });
-
   if (!themeData) {
     notFound();
   }
