@@ -1,6 +1,7 @@
 import { THEME_PATHS_QUERY, CATEGORIE_PAGE_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
 import { client, sanityFetch } from '@/lib/sanity';
-import ExpertiseLayout from '@/components/layouts/expertise-layout';
+import ExpertiseLayout2 from '@/components/expertise-2/expertise-layout';
+
 
 export async function generateMetadata({ params }, parent) {
   // read route params
@@ -44,16 +45,17 @@ export async function generateStaticParams() {
 export const dynamicParams = false;
 
 export default async function CategoriePage({ params }) {
+  console.log(params)
   const categorieContent = await sanityFetch({
     query: CATEGORIE_PAGE_QUERY,
     qParams: params,
     tags: ['instrument', 'thema', 'simpleThema'],
   });
   return (
-    <ExpertiseLayout
+    <ExpertiseLayout2
       thema={params?.thema}
       transitionAgenda={params?.productChain}
-      expertiseData={categorieContent}
+      // expertiseData={categorieContent}
       title={`${categorieContent[0].themaName} instrumenten per categorie`}
     />
   );
