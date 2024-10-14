@@ -22,6 +22,14 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   const [isPending, startTransition] = useTransition();
 
   const [selectedTab, setSelectedTab] = useState('beleid');
+
+  useEffect(() => {
+    if (beleid.length === 0) {
+      setSelectedTab('inkoop')
+    }
+  }, [beleid])
+
+  
   const [local, setLocal] = useState({ value: 'alle' });
   const pathname = usePathname();
   const { CustomEvent } = usePiwikPro();
