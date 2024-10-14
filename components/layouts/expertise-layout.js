@@ -25,10 +25,13 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
 
   useEffect(() => {
     if (expertiseData.filter((i) => i.beleid === true).length > 0 && selectedTab === undefined) {
-      setSelectedTab('beleid')
-    } else if (expertiseData.filter((i) => i.beleid === true).length === 0 && selectedTab === undefined) 
-      setSelectedTab('inkoop')
-  }, [expertiseData, selectedTab])
+      setSelectedTab('beleid');
+    } else if (
+      expertiseData.filter((i) => i.beleid === true).length === 0 &&
+      selectedTab === undefined
+    )
+      setSelectedTab('inkoop');
+  }, [expertiseData, selectedTab]);
 
   const [local, setLocal] = useState({ value: 'alle' });
   const pathname = usePathname();
