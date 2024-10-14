@@ -21,7 +21,18 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   const [numGronposirie, setNumGronposirie] = useState();
   const [isPending, startTransition] = useTransition();
 
-  const [selectedTab, setSelectedTab] = useState('beleid');
+  const [selectedTab, setSelectedTab] = useState();
+
+  useEffect(() => {
+    if (expertiseData.filter((i) => i.beleid === true).length > 0 && selectedTab === undefined) {
+      setSelectedTab('beleid');
+    } else if (
+      expertiseData.filter((i) => i.beleid === true).length === 0 &&
+      selectedTab === undefined
+    )
+      setSelectedTab('inkoop');
+  }, [expertiseData, selectedTab]);
+
   const [local, setLocal] = useState({ value: 'alle' });
   const pathname = usePathname();
   const { CustomEvent } = usePiwikPro();
@@ -293,7 +304,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
       startTransition(() => {
         setSelectedTab(value);
       });
-
       CustomEvent.trackEvent('Categorie Tab Change', pathname, value);
     }
   }

@@ -47,7 +47,7 @@ export default async function CategoriePage({ params }) {
   const categorieContent = await sanityFetch({
     query: CATEGORIE_PAGE_QUERY,
     qParams: params,
-    tags: ['instrument'],
+    tags: ['instrument', 'thema', 'simpleThema'],
   });
   return (
     <ExpertiseLayout
