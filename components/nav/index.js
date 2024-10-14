@@ -23,7 +23,7 @@ import {
   useTransitionStyles,
   FloatingOverlay,
 } from '@floating-ui/react';
-import { Disclosure, Transition } from '@headlessui/react';
+import { Disclosure, DisclosurePanel, DisclosureButton } from '@headlessui/react';
 import { ChevronDownIcon, MenuIcon, XIcon, SearchIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -396,30 +396,16 @@ export default function Nav(props) {
                         >
                           <div className='flex flex-col items-start justify-end global-margin '>
                             <Disclosure>
-                              {({ open }) => (
                                 <>
-                                  {' '}
-                                  <Disclosure.Button
-                                    className={`${
-                                      open ? 'text-green-500' : 'text-green-800'
-                                    } py-4 w-full text-left heading-xl-semibold flex flex-row items-center`}
+                                  <DisclosureButton
+                                    className='py-4 w-full text-left heading-xl-semibold flex flex-row items-center text-green-800 group data-[open]:text-green-500'
                                   >
                                     Productketens
                                     <ChevronDownIcon
-                                      className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`}
+                                      className='h-4 w-4 mt-1 ml-2 group-data-[open]:rotate-180'
                                     />
-                                  </Disclosure.Button>
-                                  <Transition
-                                    show={open}
-                                    enter='transition duration-300 ease-out'
-                                    enterFrom='transform opacity-0'
-                                    enterTo='transform opacity-100'
-                                    leave='transition duration-75 ease-out'
-                                    leaveFrom='transform opacity-300'
-                                    leaveTo='transform opacity-0'
-                                    className='w-full'
-                                  >
-                                    <Disclosure.Panel className='flex flex-col flex-grow ml-4'>
+                                  </DisclosureButton>
+                                    <DisclosurePanel className='flex flex-col flex-grow ml-4'>
                                       <ul>
                                         {props?.navItems?.map((navItem, id) => (
                                           <MobileDisclosure
@@ -429,37 +415,22 @@ export default function Nav(props) {
                                           />
                                         ))}
                                       </ul>
-                                    </Disclosure.Panel>
-                                  </Transition>
+                                    </DisclosurePanel>
                                 </>
-                              )}
                             </Disclosure>
 
                             {/* EU */}
                             <Disclosure>
-                              {({ open }) => (
                                 <>
-                                  <Disclosure.Button
-                                    className={`${
-                                      open ? 'text-green-500' : 'text-green-800'
-                                    }  border-t py-4 w-full text-left heading-xl-semibold flex flex-row items-center`}
-                                  >
+                                  <DisclosureButton
+                                    className='border-t py-4 w-full text-left heading-xl-semibold flex flex-row items-center text-green-800 group data-[open]:text-green-500'
+                                >
                                     EU wetgeving
                                     <ChevronDownIcon
-                                      className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`}
+                                      className='h-4 w-4 mt-1 ml-2 group-data-[open]:rotate-180'
                                     />
-                                  </Disclosure.Button>
-                                  <Transition
-                                    show={open}
-                                    enter='transition duration-300 ease-out'
-                                    enterFrom='transform opacity-0'
-                                    enterTo='transform opacity-100'
-                                    leave='transition duration-75 ease-out'
-                                    leaveFrom='transform opacity-300'
-                                    leaveTo='transform opacity-0'
-                                    className='w-full'
-                                  >
-                                    <Disclosure.Panel className='ml-4'>
+                                  </DisclosureButton>
+                                    <DisclosurePanel className='ml-4'>
                                       <ul>
                                         <li className='p-base h-10 my-2 last:mb-2 text-green-600 cursor-pointer flex items-center'>
                                           <Link
@@ -493,36 +464,22 @@ export default function Nav(props) {
                                           </Link>
                                         </li>
                                       </ul>
-                                    </Disclosure.Panel>
-                                  </Transition>
+                                    </DisclosurePanel>
                                 </>
-                              )}
                             </Disclosure>
 
                             <Disclosure>
-                              {({ open }) => (
+                             
                                 <>
-                                  <Disclosure.Button
-                                    className={`${
-                                      open ? 'text-green-500' : 'text-green-800'
-                                    }  border-t py-4 w-full text-left heading-xl-semibold flex flex-row items-center`}
+                                  <DisclosureButton
+                                    className='border-t py-4 w-full text-left heading-xl-semibold flex flex-row items-center text-green-800 group data-[open]:text-green-500'
                                   >
                                     Over CircuLaw
                                     <ChevronDownIcon
-                                      className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`}
+                                       className='h-4 w-4 mt-1 ml-2 group-data-[open]:rotate-180'
                                     />
-                                  </Disclosure.Button>
-                                  <Transition
-                                    show={open}
-                                    enter='transition duration-300 ease-out'
-                                    enterFrom='transform opacity-0'
-                                    enterTo='transform opacity-100'
-                                    leave='transition duration-75 ease-out'
-                                    leaveFrom='transform opacity-300'
-                                    leaveTo='transform opacity-0'
-                                    className='w-full'
-                                  >
-                                    <Disclosure.Panel className='ml-4'>
+                                  </DisclosureButton>
+                                    <DisclosurePanel className='ml-4'>
                                       <ul>
                                         {props?.aboutSlugs?.map((aboutPage) => (
                                           <li
@@ -538,10 +495,8 @@ export default function Nav(props) {
                                           </li>
                                         ))}
                                       </ul>
-                                    </Disclosure.Panel>
-                                  </Transition>
+                                    </DisclosurePanel>
                                 </>
-                              )}
                             </Disclosure>
                             <MobileSimpleButton
                               name='Nieuws'
