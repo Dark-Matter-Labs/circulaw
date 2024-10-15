@@ -16,10 +16,14 @@ export default async function TabItem({ children, tabValue, thema }) {
       disabled={count === 0}
       className={`${
         count === 0 ? 'opacity-50 hover:bg-green-500' : ''
-      } heading-xl-semibold sm:heading-2xl-semibold pr-1 first-letter:capitalize text-gray-100 bg-green-500 hover:bg-green-400 p-3 rounded-t-cl flex flex-row items-center data-[selected]:bg-gray-100 data-[selected]:text-green-500`}
+      } heading-xl-semibold sm:heading-2xl-semibold first-letter:capitalize text-gray-100 bg-green-500 hover:bg-green-400 p-3 rounded-t-cl flex flex-row items-center data-[selected]:bg-gray-100 data-[selected]:text-green-500`}
     >
-      {children}
-      {count}
+      <div className='flex flex-row items-baseline'>
+        {children}
+        <span className='p-2xs-bold sm:heading-xl-semibold inline-block min-w-[24px] pl-1'>
+          ({count})
+        </span>
+      </div>
     </Tab>
   );
 }
