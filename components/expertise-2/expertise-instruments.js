@@ -1,9 +1,36 @@
 'use client';
-import DisplayInstruments from './display-instruments';
+import { useEffect, useState } from 'react';
 import ExpertisePageInstrument from './expertise-page-instrument';
+import DisplayInstruments from './display-instruments';
 
-// TODO: change name of this
-export default function TabLayout({ selected, instruments, transitionAgenda }) {
+export default function ExpertiseInstruments({ selected, instruments, transitionAgenda }) {
+  const [filteredInstruments, setFilteredInstruments] = useState([]);
+  const [govLevel, setGovLevel] = useState({ value: 'alle' });
+
+  useEffect(() => {
+    if (govLevel.value === 'Gemeentelijk') {
+      setFilteredInstruments(
+        instruments.filter((instrument) => instrument.overheidslaag.includes(govLevel.value)),
+      );
+    } else if (govLevel.value === 'Provinciaal') {
+      setFilteredInstruments(
+        instruments.filter((instrument) => instrument.overheidslaag.includes(govLevel.value)),
+      );
+    } else if (govLevel.value === 'Nationaal') {
+      setFilteredInstruments(
+        instruments.filter((instrument) => instrument.overheidslaag.includes(govLevel.value)),
+      );
+    } else {
+      setFilteredInstruments(instruments);
+    }
+  }, [instruments, govLevel]);
+  // todo - update radio buttons to headless ui
+  function handleRadioButton(value) {
+    setGovLevel({
+      value: value,
+    });
+  }
+
   return (
     <>
       <div className='flex flex-ro items-center h-11'>
@@ -17,8 +44,8 @@ export default function TabLayout({ selected, instruments, transitionAgenda }) {
               name='filter'
               value='alle'
               id='alle'
-              //  checked={local?.value === 'alle'}
-              // onChange={() => handleRadioButton('alle')}
+              checked={govLevel?.value === 'alle'}
+              onChange={() => handleRadioButton('alle')}
               className='mr-2 text-black border-black border-2 h-4 w-4 focus:ring-black focus:ring-2 cursor-pointer bg-none'
             />
             <label htmlFor='alle' className='p-2xs-semibold hover:cursor-pointer'>
@@ -31,8 +58,8 @@ export default function TabLayout({ selected, instruments, transitionAgenda }) {
               name='filter'
               value='Gemeentelijk'
               id='gemeentelijk'
-              //  checked={local?.value === 'Gemeentelijk'}
-              // onChange={() => handleRadioButton('Gemeentelijk')}
+              checked={govLevel?.value === 'Gemeentelijk'}
+              onChange={() => handleRadioButton('Gemeentelijk')}
               className='mr-2 text-green-200 border-black border-2 h-4 w-4 focus:ring-green-200 focus:ring-2 cursor-pointer bg-none'
             />
             <label htmlFor='gemeentelijk' className='p-2xs-semibold hover:cursor-pointer'>
@@ -45,8 +72,8 @@ export default function TabLayout({ selected, instruments, transitionAgenda }) {
               name='filter'
               value='Provinciaal'
               id='provinciaal'
-              // checked={local?.value === 'Provinciaal'}
-              //  onChange={() => handleRadioButton('Provinciaal')}
+              checked={govLevel?.value === 'Provinciaal'}
+              onChange={() => handleRadioButton('Provinciaal')}
               className='mr-2 text-green-400 border-black border-2 h-4 w-4 focus:ring-green-400 focus:ring-2 cursor-pointer bg-none'
             />
             <label htmlFor='provinciaal' className='p-2xs-semibold hover:cursor-pointer'>
@@ -60,8 +87,8 @@ export default function TabLayout({ selected, instruments, transitionAgenda }) {
               name='filter'
               value='Nationaal'
               id='nationaal'
-              // checked={local?.value === 'Nationaal'}
-              // onChange={() => handleRadioButton('Nationaal')}
+              checked={govLevel?.value === 'Nationaal'}
+              onChange={() => handleRadioButton('Nationaal')}
               className='mr-2 text-green-600 border-black border-2 h-4 w-4 focus:ring-green-600 focus:ring-2 cursor-pointer bg-none'
             />
             <label htmlFor='nationaal' className='p-2xs-semibold hover:cursor-pointer'>
@@ -76,42 +103,42 @@ export default function TabLayout({ selected, instruments, transitionAgenda }) {
         <div className='flex flex-col'>
           <ul>
             {selected === 'beleid' && transitionAgenda === 'bouw' && (
-              <DisplayInstruments instruments={instruments} categoryName='beleid' />
+              <DisplayInstruments instruments={filteredInstruments} categoryName='beleid' />
             )}
           </ul>
           <ul>
             {selected === 'beleid' &&
               transitionAgenda !== 'bouw' &&
-              instruments.map((instrument) => (
+              filteredInstruments.map((instrument) => (
                 <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
               ))}
           </ul>
           <ul>
             {selected === 'inkoop' && (
-              <DisplayInstruments instruments={instruments} categoryName='inkoop' />
+              <DisplayInstruments instruments={filteredInstruments} categoryName='inkoop' />
             )}
           </ul>
           <ul>
             {selected == 'grondpositie' && transitionAgenda === 'bouw' && (
-              <DisplayInstruments instruments={instruments} categoryName='grondpositie' />
+              <DisplayInstruments instruments={filteredInstruments} categoryName='grondpositie' />
             )}
           </ul>
           <ul>
             {selected === 'grondpositie' &&
               transitionAgenda !== 'bouw' &&
-              instruments.map((instrument) => (
+              filteredInstruments.map((instrument) => (
                 <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
               ))}
           </ul>
           <ul className=''>
             {selected === 'subsidie' &&
-              instruments.map((instrument) => (
+              filteredInstruments.map((instrument) => (
                 <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
               ))}
           </ul>
           <ul>
             {selected === 'fiscaal' &&
-              instruments.map((instrument) => (
+              filteredInstruments.map((instrument) => (
                 <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
               ))}
           </ul>

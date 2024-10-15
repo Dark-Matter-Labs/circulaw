@@ -1,7 +1,7 @@
 'use client';
 import ExplinationText from '../expertise-2/explination-text';
 import TabButton from '../expertise-page/tab-button';
-import TabLayout from '../expertise-2/tab-layout';
+import TabLayout from '../expertise-2/expertise-instruments';
 import OverviewPageHeader from '../theme-page/overview-page-header';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/outline';
@@ -381,7 +381,6 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
 
               <ExplinationText selected={selectedTab} />
 
-            
               {selectedTab === 'beleid' && (
                 <TabLayout
                   category={beleid}

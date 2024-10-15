@@ -1,5 +1,5 @@
 'use client';
-import DisplaySubHeading from './display-subheading';
+import DisplaySubHeading from './display-instruments-with-subcategory';
 import { useEffect, useState } from 'react';
 
 const beleidSubCategories = ['strategie', 'beleidsdoorwerking', 'beleidsuitvoering'];
@@ -18,7 +18,7 @@ const grondpositieSubCategories = [
   'contracteisen',
 ];
 
-// make same number of arrays as sub instruments
+// TODO: May even be able to move instrument fetching to here?
 export default function DisplayInstruments({ instruments, categoryName }) {
   const [beleid1, setBeleid1] = useState();
   const [beleid2, setBeleid2] = useState();

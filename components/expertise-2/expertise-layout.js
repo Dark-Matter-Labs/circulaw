@@ -1,3 +1,5 @@
+// TODO: move all this to page.js
+
 import { TabGroup, TabList, TabPanels } from '@headlessui/react';
 import OverviewPageHeader from '../theme-page/overview-page-header';
 import TabItem from './tab';
