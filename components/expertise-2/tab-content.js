@@ -1,15 +1,27 @@
 import { TabPanel } from '@headlessui/react';
-import ExplinationText from '../expertise-page/explination-text';
+import ExplinationText from './explination-text';
 import { sanityFetch } from '@/lib/sanity';
-import DisplayInstruments from './display-instruments';
+import TabLayout from './tab-layout';
 
-export default async function TabContent({tabValue, thema}) {
+export default async function TabContent({tabValue, thema, transitionAgenda}) {
+    // TODO: make this a function and move it to queries.js
     const CATEGORIE_INSTRUMENTS_QUERY=`
     *[_type == 'instrument' && thema->slug.current == $thema && ${tabValue} == true]{
-    ...,
-    "thema": thema->slug.current,
-    "transitionAgenda": transitionAgenda->slug.current,
-    "slug": slug.current
+            "slug": slug.current, 
+            "transitionAgenda": transitionAgenda->.slug.current,
+            "thema": thema->.slug.current,
+            'themaName': thema->.themaName,
+            titel,
+            "overheidslaag": [overheidslaag[2], overheidslaag[1], overheidslaag[0]],
+            beleid,
+            beleidSubCategory,
+            inkoop,
+            inkoopSubCategory,
+            grondpositie,
+            grondpositieSubCategory,
+            subsidie,
+            fiscaal,
+            "slug": slug.current,
     }
     `
     const instruments = await sanityFetch({
@@ -20,7 +32,7 @@ export default async function TabContent({tabValue, thema}) {
     return (
         <TabPanel>
             <ExplinationText selected ={tabValue}/>
-            <DisplayInstruments instruments={instruments}/>
+            <TabLayout instruments={instruments} selected={tabValue} transitionAgenda={transitionAgenda}/>
         </TabPanel>
     )
 }

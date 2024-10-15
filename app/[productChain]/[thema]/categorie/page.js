@@ -44,7 +44,7 @@ export async function generateStaticParams() {
 export const dynamicParams = false;
 
 export default async function CategoriePage({ params }) {
-  console.log(params);
+  // TODO: update this to only fetch the themaName using the params
   const categorieContent = await sanityFetch({
     query: CATEGORIE_PAGE_QUERY,
     qParams: params,
