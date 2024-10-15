@@ -2,7 +2,6 @@ import { THEME_PATHS_QUERY, CATEGORIE_PAGE_QUERY, THEME_METADATA_QUERY } from '@
 import { client, sanityFetch } from '@/lib/sanity';
 import ExpertiseLayout2 from '@/components/expertise-2/expertise-layout';
 
-
 export async function generateMetadata({ params }, parent) {
   // read route params
   const thema = params.thema;
@@ -45,7 +44,7 @@ export async function generateStaticParams() {
 export const dynamicParams = false;
 
 export default async function CategoriePage({ params }) {
-  console.log(params)
+  console.log(params);
   const categorieContent = await sanityFetch({
     query: CATEGORIE_PAGE_QUERY,
     qParams: params,
