@@ -45,6 +45,19 @@ export default function MobileDisclosure({ navData, closeMenu }) {
                       </Link>
                     </li>
                   ))}
+                  {navData.title === 'Bouw' && (
+                    <li className='p-base h-auto mt-4 pt-4 text-green-400 cursor-pointer items-center flex border-t border-green-600'>
+                      <Link
+                        href='/bouw/planregels'
+                        onClick={() => closeMenu(false)}
+                        className='flex flex-row items-center justify-center ml-4'
+                      >
+                        <span className='hover:underline max-w-xs'>
+                          Planregels: modelteksten voor het omgevingsplan
+                        </span>
+                      </Link>
+                    </li>
+                  )}
                 </ul>
               </Disclosure.Panel>
             </Transition>
