@@ -158,7 +158,6 @@ export async function POST(req) {
       },
 
       (document) => {
-        console.log(document);
         switch (document._type) {
           case 'instrument':
             return {
@@ -279,7 +278,6 @@ export async function POST(req) {
     );
 
     const body = await req.json();
-    console.log(body);
     const webhook = await sanityAgolia.webhookSync(client, body);
 
     return webhook.then(() => NextResponse.json({ message: 'success!' }));
