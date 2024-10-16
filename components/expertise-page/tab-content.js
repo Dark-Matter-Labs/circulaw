@@ -1,4 +1,3 @@
-import { TabPanel } from '@headlessui/react';
 import ExplinationText from './explination-text';
 import { sanityFetch } from '@/lib/sanity';
 import ExpertiseInstruments from './expertise-instruments';
@@ -30,13 +29,13 @@ export default async function TabContent({ tabValue, thema, transitionAgenda }) 
     tags: ['instruments', 'thema'],
   });
   return (
-    <TabPanel>
+    <>
       <ExplinationText selected={tabValue} />
       <ExpertiseInstruments
         instruments={instruments}
         selected={tabValue}
         transitionAgenda={transitionAgenda}
       />
-    </TabPanel>
+    </>
   );
 }

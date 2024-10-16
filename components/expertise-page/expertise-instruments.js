@@ -6,16 +6,14 @@ import { Listbox, ListboxButton, ListboxOptions, ListboxOption } from '@headless
 import { IconChevronDown } from '@tabler/icons-react';
 
 const govLevels = [
-  {id: 1, name: 'Alle'},
-  {id: 2, name: 'Gemeentelijk'},
-  {id: 3, name: 'Provinciaal'},
-  {id: 4, name: 'Nationaal'}
-]
+  { id: 1, name: 'Alle' },
+  { id: 2, name: 'Gemeentelijk' },
+  { id: 3, name: 'Provinciaal' },
+  { id: 4, name: 'Nationaal' },
+];
 export default function ExpertiseInstruments({ selected, instruments, transitionAgenda }) {
   const [filteredInstruments, setFilteredInstruments] = useState([]);
   const [govLevel, setGovLevel] = useState({ value: 'alle' });
-
-  
 
   useEffect(() => {
     if (govLevel.value === 'Gemeentelijk') {
@@ -41,8 +39,8 @@ export default function ExpertiseInstruments({ selected, instruments, transition
     });
   }
 
-  // mobile filters 
-  const [selectedGovLevel, setSelectedGovLevel] = useState(govLevels[1])
+  // mobile filters
+  const [selectedGovLevel, setSelectedGovLevel] = useState(govLevels[1]);
 
   return (
     <>
@@ -112,29 +110,27 @@ export default function ExpertiseInstruments({ selected, instruments, transition
       </div>
 
       <div className='block sm:hidden'>
-        <div>
-        Toon overheidslaag:
-        </div>
+        <div>Toon overheidslaag:</div>
         <Listbox as='div' value={selectedGovLevel} onChange={setSelectedGovLevel} className='my-4'>
           <ListboxButton className='border border-green-500 data-[open]:boder-b-none rounded-cl data-[open]:rounded-b-none w-full group flex items-center relative h-10 overflow-hidden'>
             <span className='p-base-bold ml-2 text-green-500'>{selectedGovLevel.name}</span>
             <div className='w-10 h-full bg-green-500 flex items-center justify-center absolute top-0 right-0'>
-              <IconChevronDown className='h-6 w-6 text-green-50 group-data-[open]:rotate-180'/>
+              <IconChevronDown className='h-6 w-6 text-green-50 group-data-[open]:rotate-180' />
             </div>
           </ListboxButton>
-          <ListboxOptions
-        anchor="bottom"
-        transition
-        className='w-[var(--button-width)] group'
-        >
-          {govLevels.map((govLevel) => (
-            <ListboxOption onClick={() => handleRadioButton(govLevel.name)} key={govLevel.name} value={govLevel} className='h-10 pl-2 bg-white p-base flex items-center border-b border-x border-green-500 data-[selected]:hidden last:rounded-b-cl'>
-              {govLevel.name}
-            </ListboxOption>
-          ))}
-        </ListboxOptions>
+          <ListboxOptions anchor='bottom' transition className='w-[var(--button-width)] group'>
+            {govLevels.map((govLevel) => (
+              <ListboxOption
+                onClick={() => handleRadioButton(govLevel.name)}
+                key={govLevel.name}
+                value={govLevel}
+                className='h-10 pl-2 bg-white p-base flex items-center border-b border-x border-green-500 data-[selected]:hidden last:rounded-b-cl'
+              >
+                {govLevel.name}
+              </ListboxOption>
+            ))}
+          </ListboxOptions>
         </Listbox>
-      
       </div>
 
       <div className='min-h-[1200px] bg-gray-100'>
