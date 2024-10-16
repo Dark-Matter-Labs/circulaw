@@ -1,3 +1,4 @@
+'use server'
 import { sanityFetch } from '@/lib/sanity';
 import { Tab } from '@headlessui/react';
 

@@ -30,7 +30,7 @@ export default function ExpertiseLayout2(props) {
       </div>
       <div className='min-h-screen'>
         <TabGroup defaultIndex={0} className='max-w-[1280px] pb-10 global-margin'>
-          <TabList className='flex flex-row gap-x-3 justify-start h-12 sm:h-[52px] -mt-12 sm:-mt-[52px] z-5'>
+          <TabList className='flex flex-row gap-x-3 justify-start h-12 sm:h-[52px] -mt-12 sm:-mt-[52px] z-5 overflow-scroll no-scrollbar'>
             {tabs.map((tab) => (
               <TabItem key={tab.name} tabValue={tab.value} thema={props.thema}>
                 {tab.name}
