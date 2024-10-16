@@ -1,6 +1,6 @@
 import { THEME_PATHS_QUERY, CATEGORIE_PAGE_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
 import { client, sanityFetch } from '@/lib/sanity';
-import ExpertiseLayout2 from '@/components/expertise-2/expertise-layout';
+import ExpertiseLayout from '@/components/expertise-2/expertise-layout';
 
 export async function generateMetadata({ params }, parent) {
   // read route params
@@ -51,7 +51,7 @@ export default async function CategoriePage({ params }) {
     tags: ['instrument', 'thema', 'simpleThema'],
   });
   return (
-    <ExpertiseLayout2
+    <ExpertiseLayout
       thema={params?.thema}
       transitionAgenda={params?.productChain}
       // expertiseData={categorieContent}

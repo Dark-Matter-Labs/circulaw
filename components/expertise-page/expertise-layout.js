@@ -2,7 +2,7 @@
 
 import { TabGroup, TabList, TabPanels } from '@headlessui/react';
 import OverviewPageHeader from '../theme-page/overview-page-header';
-import TabItem from './tab';
+import TabItem from './tab-item';
 import TabContent from './tab-content';
 
 const tabs = [
@@ -39,6 +39,7 @@ export default function ExpertiseLayout2(props) {
           </TabList>
           <TabPanels className='w-full'>
             {tabs.map((tab) => (
+
               <TabContent
                 key={tab.name}
                 tabValue={tab.value}

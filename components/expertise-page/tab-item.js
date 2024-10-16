@@ -2,6 +2,7 @@
 import { sanityFetch } from '@/lib/sanity';
 import { Tab } from '@headlessui/react';
 
+
 export default async function TabItem({ children, tabValue, thema }) {
   // TODO: make this a function and move to /lib/queries.js
   const TAB_COUNT_QUERY = `
