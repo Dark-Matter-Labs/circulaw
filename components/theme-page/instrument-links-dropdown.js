@@ -3,7 +3,6 @@ import { ChevronUpIcon } from '@heroicons/react/outline';
 import { useRouter } from 'next/navigation';
 
 // TODO: Replace Popover with headless UI Listbox
-
 export default function InstrumentLinksDropdown({ page, productChain, thema }) {
   const router = useRouter();
   if (page === 'list') {
