@@ -39,7 +39,7 @@ export default function PCLayout({ ...props }) {
                   <Link href='/bouw/planregels'>
                     <div className='w-full bg-gray-200 flex flex-col md:flex-row border border-gray-200 rounded-cl items-start md:items-center justify-between px-10 py-8 gap-8'>
                       <p className='heading-2xl-semibold max-w-sm'>
-                      Planregels: modelteksten voor het omgevingsplan
+                        Planregels: modelteksten voor het omgevingsplan
                       </p>
                       <p className='p-base max-w-sm'>
                         Samen met de omgevingsvisie en omgevingsprogramma is het{' '}
