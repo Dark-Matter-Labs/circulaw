@@ -2,6 +2,7 @@ import { THEME_PATHS_QUERY, GOV_LEVEL_QUERY, THEME_METADATA_QUERY } from '@/lib/
 import { client, sanityFetch } from '@/lib/sanity';
 import GovLevelLayout from '@/components/layouts/gov-level-layout';
 import placeholderImage from '@/public/gov-level-placeholder-mobile.png';
+import { notFound } from 'next/navigation';
 
 export async function generateMetadata({ params }, parent) {
   // read route params
@@ -166,5 +167,7 @@ export default async function GovernmentLevelPage({ params }) {
         imageMob={placeholderImage}
       />
     );
+  } else {
+    return notFound();
   }
 }

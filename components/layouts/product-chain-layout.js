@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Modal from '../modal/modal';
 import ModalContent from '../modal/modal-content';
+import { IconArrowRight } from '@tabler/icons-react';
 
 // TODO: See what we could move to a layout.js file instead of having everything in components.
 export default function PCLayout({ ...props }) {
@@ -27,7 +28,32 @@ export default function PCLayout({ ...props }) {
               </p>
             </div>
             <div className='-z-20'>
-              <ThemaCard themaCards={props?.themaList} />
+              <ThemaCard
+                themaCards={props?.themaList}
+                transitionAgenda={props.productChainData.pcName}
+              />
+            </div>
+            <div>
+              {props.productChainData.pcName === 'Bouw' && (
+                <div className='mt-20'>
+                  <Link href='/bouw/planregels'>
+                    <div className='w-full bg-gray-200 flex flex-col md:flex-row border border-gray-200 rounded-cl items-start md:items-center justify-between px-10 py-8 gap-8'>
+                      <p className='heading-2xl-semibold max-w-sm'>
+                      Planregels: modelteksten voor het omgevingsplan
+                      </p>
+                      <p className='p-base max-w-sm'>
+                        Samen met de omgevingsvisie en omgevingsprogramma is het{' '}
+                        <span className='p-base-semibold'>omgevingsplan</span> een van de
+                        instrumenten om circulair bouwen te bevorderen
+                      </p>
+                      <CustomButton color='greenBackground'>
+                        Meer over het omgevingsplan
+                        <IconArrowRight />
+                      </CustomButton>
+                    </div>
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>
