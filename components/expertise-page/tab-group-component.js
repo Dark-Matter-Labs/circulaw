@@ -10,18 +10,18 @@ const tabs = [
 ];
 
 function mergeData(obj, tabs) {
-  return tabs.map(tab => ({
+  return tabs.map((tab) => ({
     name: tab.name,
     value: tab.value,
-    number: obj[tab.value] || 0
+    number: obj[tab.value] || 0,
   }));
 }
 
 export default function TabGroupComponent(props) {
-  const finalTabs = mergeData(props.numberOfInstruments, tabs)
+  const finalTabs = mergeData(props.numberOfInstruments, tabs);
   return (
     <>
-     <TabGroup className='max-w-[1280px] pb-10 global-margin'>
+      <TabGroup className='max-w-[1280px] pb-10 global-margin'>
         <TabList className='flex flex-row gap-x-3 justify-start h-12 sm:h-[52px] -mt-12 sm:-mt-[52px] z-5 overflow-scroll no-scrollbar'>
           {finalTabs.map((tab) => (
             <Tab
@@ -47,7 +47,7 @@ export default function TabGroupComponent(props) {
             </TabPanel>
           ))}
         </TabPanels>
-        </TabGroup>
+      </TabGroup>
     </>
   );
 }
