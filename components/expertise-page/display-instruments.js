@@ -1,4 +1,5 @@
-import DisplaySubHeading from './display-subheading';
+'use client';
+import DisplaySubHeading from './display-instruments-with-subcategory';
 import { useEffect, useState } from 'react';
 
 const beleidSubCategories = ['strategie', 'beleidsdoorwerking', 'beleidsuitvoering'];
@@ -17,8 +18,8 @@ const grondpositieSubCategories = [
   'contracteisen',
 ];
 
-// make same number of arrays as sub category
-export default function DisplayInstruments({ category, categoryName }) {
+// TODO: May even be able to move instrument fetching to here?
+export default function DisplayInstruments({ instruments, categoryName }) {
   const [beleid1, setBeleid1] = useState();
   const [beleid2, setBeleid2] = useState();
   const [beleid3, setBeleid3] = useState();
@@ -37,73 +38,73 @@ export default function DisplayInstruments({ category, categoryName }) {
 
   useEffect(() => {
     setBeleid1(
-      category?.filter((instrument) =>
+      instruments?.filter((instrument) =>
         instrument?.beleidSubCategory?.includes(beleidSubCategories[0]),
       ),
     );
     setBeleid2(
-      category?.filter((instrument) =>
+      instruments?.filter((instrument) =>
         instrument?.beleidSubCategory?.includes(beleidSubCategories[1]),
       ),
     );
     setBeleid3(
-      category?.filter((instrument) =>
+      instruments?.filter((instrument) =>
         instrument?.beleidSubCategory?.includes(beleidSubCategories[2]),
       ),
     );
 
     setInkoop1(
-      category?.filter((instrument) =>
+      instruments?.filter((instrument) =>
         instrument?.inkoopSubCategory?.includes(inkoopSubCategories[0]),
       ),
     );
     setInkoop2(
-      category?.filter((instrument) =>
+      instruments?.filter((instrument) =>
         instrument?.inkoopSubCategory?.includes(inkoopSubCategories[1]),
       ),
     );
     setInkoop3(
-      category?.filter((instrument) =>
+      instruments?.filter((instrument) =>
         instrument?.inkoopSubCategory?.includes(inkoopSubCategories[2]),
       ),
     );
     setInkoop4(
-      category?.filter((instrument) =>
+      instruments?.filter((instrument) =>
         instrument?.inkoopSubCategory?.includes(inkoopSubCategories[3]),
       ),
     );
     setInkoop5(
-      category?.filter((instrument) =>
+      instruments?.filter((instrument) =>
         instrument?.inkoopSubCategory?.includes(inkoopSubCategories[4]),
       ),
     );
     setInkoop6(
-      category?.filter((instrument) =>
+      instruments?.filter((instrument) =>
         instrument?.inkoopSubCategory?.includes(inkoopSubCategories[5]),
       ),
     );
 
     setGrondpositie1(
-      category?.filter((instrument) =>
+      instruments?.filter((instrument) =>
         instrument?.grondpositieSubCategory?.includes(grondpositieSubCategories[0]),
       ),
     );
     setGrondpositie2(
-      category?.filter((instrument) =>
+      instruments?.filter((instrument) =>
         instrument?.grondpositieSubCategory?.includes(grondpositieSubCategories[1]),
       ),
     );
     setGrondpositie3(
-      category?.filter((instrument) =>
+      instruments?.filter((instrument) =>
         instrument?.grondpositieSubCategory?.includes(grondpositieSubCategories[2]),
       ),
     );
     setGrondpositie4(
-      category?.filter((instrument) =>
+      instruments?.filter((instrument) =>
         instrument?.grondpositieSubCategory?.includes(grondpositieSubCategories[3]),
       ),
     );
-  }, [category]);
+  }, [instruments]);
 
   return (
     <>
