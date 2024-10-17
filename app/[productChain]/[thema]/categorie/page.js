@@ -3,7 +3,6 @@ import { client, sanityFetch } from '@/lib/sanity';
 import TabGroupComponent from '@/components/expertise-page/expertise-layout';
 import OverviewPageHeader from '@/components/theme-page/overview-page-header';
 
-
 export async function generateMetadata({ params }, parent) {
   // read route params
   const thema = params.thema;
@@ -74,7 +73,7 @@ export default async function CategoriePage({ params }) {
         </div>
       </div>
       <div className='min-h-screen'>
-          <TabGroupComponent thema={params.thema} />        
+        <TabGroupComponent thema={params.thema} />
       </div>
     </>
   );

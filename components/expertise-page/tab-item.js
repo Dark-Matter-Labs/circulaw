@@ -14,7 +14,9 @@ export default async function TabItem({ tabValue, thema, tabName }) {
     <button
       id={tabValue}
       disabled={count === 0}
-      className={`${count === 0 ? 'opacity-50' : 'hover:bg-green-400'} w-full h-full p-3 text-gray-100 bg-green-500 rounded-t-cl flex flex-row items-baseline group-data-[selected]:bg-gray-100 group-data-[selected]:text-green-500`}
+      className={`${
+        count === 0 ? 'opacity-50' : 'hover:bg-green-400'
+      } w-full h-full p-3 text-gray-100 bg-green-500 rounded-t-cl flex flex-row items-baseline group-data-[selected]:bg-gray-100 group-data-[selected]:text-green-500`}
     >
       {tabName}
       <span className='p-2xs-bold sm:heading-xl-semibold inline-block min-w-[24px] pl-1'>
