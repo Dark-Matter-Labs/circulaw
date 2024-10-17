@@ -144,8 +144,8 @@ export default function ExpertiseInstruments({ selected, instruments, transition
           <ul>
             {selected === 'beleid' &&
               transitionAgenda !== 'bouw' &&
-              filteredInstruments.map((instrument) => (
-                <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+              filteredInstruments.map((instrument, id) => (
+                <ExpertisePageInstrument key={id} instrument={instrument} />
               ))}
           </ul>
           <ul>
@@ -161,20 +161,20 @@ export default function ExpertiseInstruments({ selected, instruments, transition
           <ul>
             {selected === 'grondpositie' &&
               transitionAgenda !== 'bouw' &&
-              filteredInstruments.map((instrument) => (
-                <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+              filteredInstruments.map((instrument, id) => (
+                <ExpertisePageInstrument key={id} instrument={instrument} />
               ))}
           </ul>
           <ul className=''>
             {selected === 'subsidie' &&
-              filteredInstruments.map((instrument) => (
-                <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+              filteredInstruments.map((instrument, id) => (
+                <ExpertisePageInstrument key={id} instrument={instrument} />
               ))}
           </ul>
           <ul>
             {selected === 'fiscaal' &&
-              filteredInstruments.map((instrument) => (
-                <ExpertisePageInstrument key={instrument.titel} instrument={instrument} />
+              filteredInstruments.map((instrument, id) => (
+                <ExpertisePageInstrument key={id} instrument={instrument} />
               ))}
           </ul>
         </div>

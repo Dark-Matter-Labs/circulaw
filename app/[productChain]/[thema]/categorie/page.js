@@ -1,6 +1,6 @@
 import { THEME_PATHS_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
 import { client, sanityFetch } from '@/lib/sanity';
-import TabGroupComponent from '@/components/expertise-page/expertise-layout';
+import TabGroupComponent from '@/components/expertise-page/tab-group-component';
 import OverviewPageHeader from '@/components/theme-page/overview-page-header';
 
 export async function generateMetadata({ params }, parent) {
@@ -52,11 +52,30 @@ export default async function CategoriePage({ params }) {
     }
   `;
 
+  const NUMBER_OF_INSTRUMENT_PER_TAB =`
+    *[_type == 'instrument'][0]{
+  "beleid": count(*[_type == 'instrument' && beleid == true && thema->slug.current == $thema]),
+  "inkoop": count(*[_type == 'instrument' && inkoop == true && thema->slug.current == $thema]),
+  "grondpositie": count(*[_type == 'instrument' && grondpositie == true && thema->slug.current == $thema]),
+  "subsidie": count(*[_type == 'instrument' && subsidie == true && thema->slug.current == $thema]),
+  "fiscaal": count(*[_type == 'instrument' && fiscaal == true && thema->slug.current == $thema]),
+}
+  `
+
   const themaName = await sanityFetch({
     query: THEME_NAME_QUERY,
     qParams: params,
-    tags: ['instrument', 'thema', 'simpleThema'],
+    tags: ['instrument', 'thema'],
   });
+  // this is used to change the default tab rendered when there are no instruments with beleid selected
+  // need to also come up with a way to set default value only when there are instruments in the tab
+  // cannot use state for this as it breaks the server component. 
+  // maybe fetch all the lengths here and pass it down as props instead of fetching the data in tab-item.js
+  const numberOfInstruments = await sanityFetch({
+    query: NUMBER_OF_INSTRUMENT_PER_TAB, 
+    qParams: params,
+    tags: ['instrument', 'thema'],
+  })
 
   return (
     <>
@@ -73,7 +92,7 @@ export default async function CategoriePage({ params }) {
         </div>
       </div>
       <div className='min-h-screen'>
-        <TabGroupComponent thema={params.thema} />
+          <TabGroupComponent thema={params.thema} numberOfInstruments={numberOfInstruments}/>
       </div>
     </>
   );
