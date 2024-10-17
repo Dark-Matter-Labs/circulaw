@@ -1,4 +1,3 @@
-'use server';
 import { sanityFetch } from '@/lib/sanity';
 
 export default async function TabItem({ tabValue, thema, tabName }) {
@@ -12,18 +11,15 @@ export default async function TabItem({ tabValue, thema, tabName }) {
     tags: ['instrument'],
   });
   return (
-    <div
+    <button
+      id={tabValue}
       disabled={count === 0}
-      className={`${
-        count === 0 ? 'opacity-50 hover:bg-green-500' : ''
-      } heading-xl-semibold sm:heading-2xl-semibold first-letter:capitalize text-gray-100 bg-green-500 hover:bg-green-400 p-3 rounded-t-cl flex flex-row items-center data-[selected]:bg-gray-100 data-[selected]:text-green-500`}
+      className={`${count === 0 ? 'opacity-50' : 'hover:bg-green-400'} w-full h-full p-3 text-gray-100 bg-green-500 rounded-t-cl flex flex-row items-baseline group-data-[selected]:bg-gray-100 group-data-[selected]:text-green-500`}
     >
-      <div className='flex flex-row items-baseline'>
-        {tabName}
-        <span className='p-2xs-bold sm:heading-xl-semibold inline-block min-w-[24px] pl-1'>
-          ({count})
-        </span>
-      </div>
-    </div>
+      {tabName}
+      <span className='p-2xs-bold sm:heading-xl-semibold inline-block min-w-[24px] pl-1'>
+        ({count})
+      </span>
+    </button>
   );
 }

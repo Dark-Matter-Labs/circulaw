@@ -12,11 +12,11 @@ const tabs = [
 
 export default function TabGroupComponent(props) {
   return (
-    <>
-      <TabGroup defaultIndex={0} className='max-w-[1280px] pb-10 global-margin'>
+<>  
+      <TabGroup  defaultIndex={0} className='max-w-[1280px] pb-10 global-margin'>
         <TabList className='flex flex-row gap-x-3 justify-start h-12 sm:h-[52px] -mt-12 sm:-mt-[52px] z-5 overflow-scroll no-scrollbar'>
           {tabs.map((tab) => (
-            <Tab key={tab.name}>
+            <Tab as='div' key={tab.name} className='relative heading-xl-semibold sm:heading-2xl-semibold first-letter:capitalize group overflow-hidden'>
               <TabItem tabValue={tab.value} thema={props.thema} tabName={tab.name} />
             </Tab>
           ))}
@@ -34,5 +34,6 @@ export default function TabGroupComponent(props) {
         </TabPanels>
       </TabGroup>
     </>
-  );
+  )
 }
+  

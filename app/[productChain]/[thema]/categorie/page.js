@@ -1,7 +1,8 @@
-import { THEME_PATHS_QUERY, CATEGORIE_PAGE_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
+import { THEME_PATHS_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
 import { client, sanityFetch } from '@/lib/sanity';
 import TabGroupComponent from '@/components/expertise-page/expertise-layout';
 import OverviewPageHeader from '@/components/theme-page/overview-page-header';
+
 
 export async function generateMetadata({ params }, parent) {
   // read route params
@@ -46,8 +47,14 @@ export const dynamicParams = false;
 
 export default async function CategoriePage({ params }) {
   // TODO: update this to only fetch the themaName using the params
-  const categorieContent = await sanityFetch({
-    query: CATEGORIE_PAGE_QUERY,
+  const THEME_NAME_QUERY = `
+    *[_type == 'thema' && slug.current == $thema][0] {
+      themaName
+    }
+  `;
+
+  const themaName = await sanityFetch({
+    query: THEME_NAME_QUERY,
     qParams: params,
     tags: ['instrument', 'thema', 'simpleThema'],
   });
@@ -59,15 +66,15 @@ export default async function CategoriePage({ params }) {
           <div className='h-[310px] sm:h-[360px] bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 bg-green-600 sm:mx-0'>
             <OverviewPageHeader
               thema={params?.thema}
-              productChain={params?.transitionAgenda}
-              title={`${categorieContent[0].themaName} instrumenten per categorie`}
+              productChain={params?.productChain}
+              title={`${themaName.themaName} instrumenten per categorie`}
               page='samenhang'
             />
           </div>
         </div>
       </div>
       <div className='min-h-screen'>
-        <TabGroupComponent thema={params.thema} />
+          <TabGroupComponent thema={params.thema} />        
       </div>
     </>
   );
