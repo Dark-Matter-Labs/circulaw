@@ -37,7 +37,6 @@ export default function PopUp({ pillars, modelTexts }) {
     // initialise from search params
     let modelTextSlug = searchParams.get('modeltext');
     let pillar = searchParams.get('pillar');
-    console.log(pillar, modelTextSlug);
     if (pillar && !modelTextSlug) {
       setSelectedModelText(null);
       setSelectedPillar(pillar);
@@ -146,7 +145,7 @@ export default function PopUp({ pillars, modelTexts }) {
             <div className='flex min-h-full items-center justify-center p-0 sm:px-4 sm:py-10'>
               <DialogPanel
                 transition
-                className='sm:rounded-cl bg-gray-100 border w-screen sm:max-w-3xl min-h-screen sm:min-h-0 sm:h-auto py-6 px-10 duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0'
+                className='sm:rounded-cl bg-gray-100 border w-screen sm:max-w-3xl min-h-screen sm:min-h-0 sm:overflow-scroll no-scrollbar sm:h-[800px] py-6 px-10 duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0'
               >
                 <div className='flex flex-row w-full justify-between items-center'>
                   <div className='flex flex-row gap-x-2'>
