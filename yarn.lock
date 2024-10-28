@@ -3351,6 +3351,13 @@ queue-microtask@^1.2.2:
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
+react-dom@19.0.0-rc-cae764ce-20241025:
+  version "19.0.0-rc-cae764ce-20241025"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-19.0.0-rc-cae764ce-20241025.tgz#59695085e3ab7b3eeec98418dc33c85bcacf569b"
+  integrity sha512-e3CVe2+ojMe4dz8E/WsV9bkRj+lZt5ms+rhTFHEqIAHv4/PDdXa7P4uJXNhfik+ZYF4Wg5wCDVP4l7cgaudCpg==
+  dependencies:
+    scheduler "0.25.0-rc-cae764ce-20241025"
+
 react-dom@^18.3.1:
   version "18.3.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.3.1.tgz#c2265d79511b57d479b3dd3fdfa51536494c5cb4"
@@ -3445,6 +3452,11 @@ react-xarrows@^2.0.2:
     "@types/prop-types" "^15.7.3"
     lodash "^4.17.21"
     prop-types "^15.7.2"
+
+react@19.0.0-rc-cae764ce-20241025:
+  version "19.0.0-rc-cae764ce-20241025"
+  resolved "https://registry.yarnpkg.com/react/-/react-19.0.0-rc-cae764ce-20241025.tgz#264a8271e24f3a665f1171d42b2fe12b59156e2a"
+  integrity sha512-5wV/3MJc6Ws4l4ZF95yaQKaMV8aWVlIBKOdPA4Kere7CfdJ0NMIuKt9j9v0U4ZTmCi4ubAdN+KL4gGdfTEIpuw==
 
 react@^18.3.1:
   version "18.3.1"
@@ -3624,6 +3636,11 @@ satori@0.10.9:
     parse-css-color "^0.2.1"
     postcss-value-parser "^4.2.0"
     yoga-wasm-web "^0.3.3"
+
+scheduler@0.25.0-rc-cae764ce-20241025:
+  version "0.25.0-rc-cae764ce-20241025"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.25.0-rc-cae764ce-20241025.tgz#d0ab0f20da90496d096e99be47f63be228eca8b9"
+  integrity sha512-kiDqIcp0nrZ8RW65wMujBEs7eDNfd49hcfjDmscxWIsnDTz9NRQrTAChv/tYRYCUNk7qPM36SQOja2HcRuee0A==
 
 scheduler@^0.23.2:
   version "0.23.2"
