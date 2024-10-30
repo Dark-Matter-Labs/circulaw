@@ -37,7 +37,6 @@ export default function PopUp({ pillars, modelTexts }) {
     // initialise from search params
     let modelTextSlug = searchParams.get('modeltext');
     let pillar = searchParams.get('pillar');
-    console.log(pillar, modelTextSlug);
     if (pillar && !modelTextSlug) {
       setSelectedModelText(null);
       setSelectedPillar(pillar);
