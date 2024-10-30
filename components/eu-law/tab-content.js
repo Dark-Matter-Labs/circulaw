@@ -38,7 +38,7 @@ export default function TabContent({ summaryData, tabData }) {
         />
       )}
       {selectedTab === 'relevantie-voor-de-circulaire-economie' && (
-        <div className='global-margin my-20 '>
+        <div className='global-margin my-12 '>
           <div className='max-w-xl 2xl:max-w-2xl'>
             <h2 className='heading-xl-semibold text-green-800'>
               Relevantie voor de circulaire economie
