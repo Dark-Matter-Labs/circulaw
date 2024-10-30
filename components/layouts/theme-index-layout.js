@@ -55,7 +55,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           <div className='heading-xl-semibold'>{thema?.samenhangTitle}</div>
                           <div className='p-base flex-grow h-full'>{thema?.samenhangText}</div>
                           <div className='p-base-semibold w-full flex items-center justify-end group-hover:text-green-300'>
-                            Bekijk jouw categorie<IconArrowRight className='h-5 w-5 ml-0.5' />
+                            Bekijk jouw categorie
+                            <IconArrowRight className='h-5 w-5 ml-0.5' />
                           </div>
                         </div>
                       </div>
@@ -71,7 +72,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           <div className='heading-xl-semibold'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
                           <div className='p-base flex-grow h-full'>{thema?.listText}</div>
                           <div className='p-base-semibold w-full flex items-center justify-end group-hover:text-green-300'>
-                            Naar de lijst<IconArrowRight className='h-5 w-5 ml-0.5' />
+                            Naar de lijst
+                            <IconArrowRight className='h-5 w-5 ml-0.5' />
                           </div>
                         </div>
                       </div>
@@ -89,7 +91,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           <div className='heading-xl-semibold'>{thema?.welkeTitle}</div>
                           <div className='p-base flex-grow h-full'>{thema?.welkeText}</div>
                           <div className='p-base-semibold w-full flex items-center justify-end group-hover:text-green-300'>
-                            Bekijk de bevoegdheden<IconArrowRight className='h-5 w-5 ml-0.5' />
+                            Bekijk de bevoegdheden
+                            <IconArrowRight className='h-5 w-5 ml-0.5' />
                           </div>
                         </div>
                       </div>
@@ -427,7 +430,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         target='_blank'
                       >
                         {report.linkText}
-                        <IconArrowRight className='h-5 w-5 ml-0.5'/>
+                        <IconArrowRight className='h-5 w-5 ml-0.5' />
                       </Link>
                     </li>
                   );

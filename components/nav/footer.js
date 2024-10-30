@@ -3,7 +3,14 @@ import Link from 'next/link';
 import CustomButton from '@/components/custom-button';
 import Partners from '@/components/nav/partners';
 import FooterLinkBlock from './footer-link-block';
-import { IconBrandGithub, IconArrowUp, IconThumbUp, IconThumbDown, IconBrandLinkedin, IconFileSearch } from '@tabler/icons-react';
+import {
+  IconBrandGithub,
+  IconArrowUp,
+  IconThumbUp,
+  IconThumbDown,
+  IconBrandLinkedin,
+  IconFileSearch,
+} from '@tabler/icons-react';
 import { Link as ScrollLink } from 'react-scroll';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 import { usePathname } from 'next/navigation';
@@ -65,8 +72,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                     }}
                   >
                     {' '}
-                   <IconThumbUp className='h-6 w-6 mr-1'/>
-
+                    <IconThumbUp className='h-6 w-6 mr-1' />
                     Ja
                   </CustomButton>
                 </div>
@@ -82,7 +88,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                     }}
                   >
                     {' '}
-                    <IconThumbDown className='h-6 w-6 mr-1'/>
+                    <IconThumbDown className='h-6 w-6 mr-1' />
                     Nee
                   </CustomButton>
                 </div>
@@ -176,7 +182,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                             target='_blank'
                             aria-label='linke to CircuLaw open research'
                           >
-                         <IconFileSearch className='w-6 h-6 inline-block mb-1.5 ml-3'/>
+                            <IconFileSearch className='w-6 h-6 inline-block mb-1.5 ml-3' />
                           </Link>
                         </div>
                       </div>
@@ -274,7 +280,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                               href='https://openresearch.amsterdam/nl/page/89270/circulaw---circulaire-regelgevingstool'
                               target='_blank'
                             >
-                             <IconFileSearch className='inline-block h-6 w-6 ml-3 mb-1.5 hover:text-green-200'/>
+                              <IconFileSearch className='inline-block h-6 w-6 ml-3 mb-1.5 hover:text-green-200' />
                             </Link>
                           </span>
                         </div>

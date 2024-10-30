@@ -24,7 +24,13 @@ import {
   FloatingOverlay,
 } from '@floating-ui/react';
 import { Disclosure, DisclosurePanel, DisclosureButton } from '@headlessui/react';
-import { IconChevronDown, IconFileDownload, IconMenu2, IconSearch, IconX } from '@tabler/icons-react';
+import {
+  IconChevronDown,
+  IconFileDownload,
+  IconMenu2,
+  IconSearch,
+  IconX,
+} from '@tabler/icons-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect, useRef, Suspense } from 'react';
