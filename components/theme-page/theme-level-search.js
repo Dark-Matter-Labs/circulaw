@@ -5,7 +5,7 @@ import { InstrumentHit } from '@/components/search/instrument-hit';
 import CustomStats from '../search/stats';
 import Pagination from '@/components/search/pagination';
 import CustomClearRefinements from '@/components/search/clear-refinements';
-import { XIcon } from '@heroicons/react/outline';
+import { IconX } from '@tabler/icons-react';
 import Modal from '../modal/modal';
 import ModalContent from '../modal/modal-content';
 import InstrumentTooltipButton from '../modal/modal-buttons/instrument-tooltip-button';
@@ -86,7 +86,7 @@ export default function ThemeLevelSearch(props) {
                 title='Clear the search query'
                 className='absolute top-3.5 right-28 rounded-full p-2 hover:bg-green-300/50 group'
               >
-                <XIcon className='h-6 w-6 text-green-600 group-hover:text-green-900' />
+                <IconX className='h-6 w-6 text-green-600 group-hover:text-green-900' />
               </div>
             )}
           />
@@ -117,7 +117,7 @@ export default function ThemeLevelSearch(props) {
               title='Clear the search query'
               className='absolute top-3 right-24 rounded-full p-2 hover:bg-green-300/50 group'
             >
-              <XIcon className='h-6 w-6 text-green-600 group-hover:text-green-900' />
+              <IconX className='h-6 w-6 text-green-600 group-hover:text-green-900' />
             </div>
           )}
         />

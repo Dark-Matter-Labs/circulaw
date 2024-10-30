@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { SearchBox } from 'react-instantsearch';
-import { XIcon } from '@heroicons/react/outline';
+import { IconX } from '@tabler/icons-react';
 import { useState, useEffect } from 'react';
 
 export default function SearchHeader({ index }) {
@@ -47,7 +47,7 @@ export default function SearchHeader({ index }) {
                 title='Clear the search query'
                 className='absolute top-3.5 right-28 rounded-full p-2 hover:bg-green-200 group'
               >
-                <XIcon className='h-6 w-6 text-green-600 group-hover:text-green-900' />
+                <IconX className='h-6 w-6 text-green-600 group-hover:text-green-900' />
               </div>
             )}
           />

@@ -1,5 +1,5 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/outline';
+import { IconChevronDown } from '@tabler/icons-react';
 import Link from 'next/link';
 
 export default function MobileDisclosure({ navData, closeMenu }) {
@@ -9,7 +9,7 @@ export default function MobileDisclosure({ navData, closeMenu }) {
         <>
           <DisclosureButton className='flex flex-row items-center group data-[open]:text-green-500'>
             {navData?.title}
-            <ChevronDownIcon className='h-4 w-4 mt-1 ml-2 group-data-[open]:rotate-180' />
+            <IconChevronDown className='h-5 w-5 mt-1 ml-2 group-data-[open]:rotate-180' />
           </DisclosureButton>
           <DisclosurePanel className='p-base text-green-600'>
             <ul>

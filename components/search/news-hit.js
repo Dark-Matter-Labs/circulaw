@@ -3,7 +3,8 @@ import { urlFor } from '@/lib/sanity';
 import Link from 'next/link';
 import Tag from '../tag';
 import { Highlight } from 'react-instantsearch';
-import { ExternalLinkIcon } from '@heroicons/react/outline';
+import { IconExternalLink } from '@tabler/icons-react';
+
 export default function NewsHit({ hit }) {
   const event = new Date(hit.newsDate);
   const day = {
@@ -107,7 +108,7 @@ export default function NewsHit({ hit }) {
                   )}
                   {!hit.linkUrl.includes('circulaw.nl') && (
                     <Tag classes='border border-green-300 text-green-300 shrink mr-2'>
-                      <ExternalLinkIcon className='h-4 w-4' />
+                      <IconExternalLink className='h-4 w-4' />
                     </Tag>
                   )}
                 </div>
@@ -157,7 +158,7 @@ export default function NewsHit({ hit }) {
               <Tag classes='bg-green-800 text-white shrink mr-2'>agenda</Tag>
               {hit.link && (
                 <Tag classes='border border-green-300 text-green-300 shrink mr-2'>
-                  <ExternalLinkIcon className='h-4 w-4' />
+                  <IconExternalLink className='h-4 w-4' />
                 </Tag>
               )}
             </div>
