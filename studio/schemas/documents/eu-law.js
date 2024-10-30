@@ -143,12 +143,6 @@ export default {
       group: 'summary',
     },
     {
-      name: 'statusContentTitle',
-      type: 'string',
-      title: 'Status Content Title',
-      group: 'summary',
-    },
-    {
       title: 'Status Content',
       name: 'statusContent',
       type: 'array',
