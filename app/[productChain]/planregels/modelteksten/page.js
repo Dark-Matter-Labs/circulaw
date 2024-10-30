@@ -25,7 +25,7 @@ const MODELTEXT_QUERY = `
   } 
 `;
 
-export default async function ModelTextPage({params}) {
+export default async function ModelTextPage({ params }) {
   const pillars = await sanityFetch({ query: PILLARS_QUERY, tags: ['pillar'] });
   const modelTexts = await sanityFetch({ query: MODELTEXT_QUERY, tags: ['modelText'] });
   if (params.productChain === 'bouw') {
@@ -76,8 +76,8 @@ export default async function ModelTextPage({params}) {
           <div className='flex flex-col max-w-[760px]'>
             <p className='p-base pb-6'>
               We hebben de <span className='font-semibold'>planregels</span> voor het{' '}
-              <span className='font-semibold'>omgevingsplan</span> ingedeeld op basis van 6 pijlers .
-              Deze sluiten aan op de pijlers zoals{' '}
+              <span className='font-semibold'>omgevingsplan</span> ingedeeld op basis van 6 pijlers
+              . Deze sluiten aan op de pijlers zoals{' '}
               <Link href='/' className='link-interaction'>
                 Toekomstig Bestendig Bouwen
                 <LinkIcon />
@@ -93,8 +93,8 @@ export default async function ModelTextPage({params}) {
             </Link>
             <p className='p-xs italic p-4'>
               <span className='font-semibold'>Let op:</span> De planregels zijn
-              &apos;modelteksten&apos;. Deze zijn door de juristen van CircuLaw zelf opgesteld. Typ de
-              modelteksten nooit zomaar klakkeloos over, wees je altijd bewust van de context en
+              &apos;modelteksten&apos;. Deze zijn door de juristen van CircuLaw zelf opgesteld. Typ
+              de modelteksten nooit zomaar klakkeloos over, wees je altijd bewust van de context en
               samenhang met informatie en teksten buiten de regels zelf.
             </p>
           </div>
@@ -102,5 +102,5 @@ export default async function ModelTextPage({params}) {
         </div>
       </>
     );
-  } else return notFound()
+  } else return notFound();
 }

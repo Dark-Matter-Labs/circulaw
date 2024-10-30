@@ -5,7 +5,7 @@ import { IconChevronDown, IconArrowRight } from '@tabler/icons-react';
 import CustomButton from '@/components/custom-button';
 import { notFound } from 'next/navigation';
 
-export default function ScrollyTellingPage({params}) {
+export default function ScrollyTellingPage({ params }) {
   if (params.productChain === 'bouw') {
     return (
       <>
@@ -50,8 +50,8 @@ export default function ScrollyTellingPage({params}) {
           <div className='basis-2/3'>
             <p className='p-base mb-10 max-w-3xl'>
               Wil je werkelijk <span className='font-semibold'>impact</span> maken, zet dan een{' '}
-              <span className='font-semibold'>mix van instrumenten</span> in. Voor het stimuleren van{' '}
-              <span className='font-semibold'>circulaire bouw</span> kun je aan de slag met de{' '}
+              <span className='font-semibold'>mix van instrumenten</span> in. Voor het stimuleren
+              van <span className='font-semibold'>circulaire bouw</span> kun je aan de slag met de{' '}
               <span className='font-semibold'>omgevingsvisie</span>, het{' '}
               <span className='font-semibold'>omgevingsprogramma</span>, en het{' '}
               <span className='font-semibold'>omgevingsplan</span>.
@@ -79,10 +79,10 @@ export default function ScrollyTellingPage({params}) {
                         horizon.
                       </p>
                       <p className='p-base'>
-                        In het <span className='p-base-semibold'>omgevingsplan</span> worden concrete
-                        regels, voorschriften en toestemmingsvereisten vastgelegd die nodig zijn om de
-                        ambities uit de omgevingsvisie en omgevingsprogramma’s in de praktijk te
-                        brengen.
+                        In het <span className='p-base-semibold'>omgevingsplan</span> worden
+                        concrete regels, voorschriften en toestemmingsvereisten vastgelegd die nodig
+                        zijn om de ambities uit de omgevingsvisie en omgevingsprogramma’s in de
+                        praktijk te brengen.
                       </p>
                     </div>
                   </DisclosurePanel>
@@ -102,14 +102,14 @@ export default function ScrollyTellingPage({params}) {
               In het <span className='p-base-semibold'>omgevingsplan</span> worden{' '}
               <span className='p-base-semibold'>concrete regels</span>,{' '}
               <span className='p-base-semibold'>voorschriften</span> en{' '}
-              <span className='p-base-semibold'>toestemmingsvereisten</span> vastgelegd die nodig zijn
-              om de ambities uit de <span className='p-base-semibold'>omgevingsvisie</span> en{' '}
+              <span className='p-base-semibold'>toestemmingsvereisten</span> vastgelegd die nodig
+              zijn om de ambities uit de <span className='p-base-semibold'>omgevingsvisie</span> en{' '}
               <span className='p-base-semibold'>omgevingsprogramma&apos;s</span> in de praktijk te
               brengen.
             </p>
             <p className='max-w-3xl mb-10 p-base'>
-              Planregels zijn stukken tekst die gebruikers over kunnen nemen in een omgevingsplan. Het
-              zijn dus modelteksten voor een omgevingsplan.
+              Planregels zijn stukken tekst die gebruikers over kunnen nemen in een omgevingsplan.
+              Het zijn dus modelteksten voor een omgevingsplan.
             </p>
             <Link
               href='/bouw/planregels/modelteksten'
@@ -135,7 +135,5 @@ export default function ScrollyTellingPage({params}) {
         </div>
       </>
     );
-  } else return notFound()
-  
+  } else return notFound();
 }
-
