@@ -38,7 +38,6 @@ export async function generateStaticParams() {
   const themas = await client.fetch(FUll_THEME_PATHS_QUERY, {
     next: { tags: ['thema'] },
   });
-  console.log(themas);
   return themas.map((thema) => ({ thema: thema.thema, productChain: thema.productChain }));
 }
 
