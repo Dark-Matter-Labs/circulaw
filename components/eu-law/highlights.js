@@ -151,7 +151,7 @@ export default function Highlights({ law }) {
         </p>
         <div className='max-w-2xl sm:gap-10 mb-12'>
           <HighlightCard
-            text='Duurzaamheid, herbruikbaarheid, op waardeerbaarheidrepareerbaarheid, recyclebaarheid, aandeel gerecycled materiaal, energieverbruik en energie-efficiëntie, grondstoffengebruik en grondstoffen-efficiëntie'
+            text='Duurzaamheid, herbruikbaarheid, op waardeerbaarheid, repareerbaarheid, recyclebaarheid, aandeel gerecycled materiaal, energieverbruik en energie-efficiëntie, grondstoffengebruik en grondstoffen-efficiëntie'
             icon={espr}
           />
         </div>
