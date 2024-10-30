@@ -36,6 +36,13 @@ export default {
       group: 'summary',
     },
     {
+      name: 'productChain',
+      title: 'Product Chain',
+      type: 'reference',
+      to: [{type: 'transitionAgenda'}],
+      group: 'summary',
+    },
+    {
       name: 'metaTitle',
       type: 'string',
       title: 'Meta Title',
