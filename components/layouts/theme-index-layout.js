@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { DiscussionEmbed } from 'disqus-react';
-import { ArrowRightIcon, ArrowDownIcon } from '@heroicons/react/outline';
+import { IconArrowRight, IconArrowDown } from '@tabler/icons-react';
 import ThemePageHeader from '../theme-page/theme-page-header';
 import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
 import CustomButton from '@/components/custom-button';
@@ -55,7 +55,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           <div className='heading-xl-semibold'>{thema?.samenhangTitle}</div>
                           <div className='p-base flex-grow h-full'>{thema?.samenhangText}</div>
                           <div className='p-base-semibold w-full flex items-center justify-end group-hover:text-green-300'>
-                            Bekijk jouw categorie {'>'}
+                            Bekijk jouw categorie<IconArrowRight className='h-5 w-5 ml-0.5' />
                           </div>
                         </div>
                       </div>
@@ -71,7 +71,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           <div className='heading-xl-semibold'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
                           <div className='p-base flex-grow h-full'>{thema?.listText}</div>
                           <div className='p-base-semibold w-full flex items-center justify-end group-hover:text-green-300'>
-                            Naar de lijst {'>'}
+                            Naar de lijst<IconArrowRight className='h-5 w-5 ml-0.5' />
                           </div>
                         </div>
                       </div>
@@ -89,7 +89,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           <div className='heading-xl-semibold'>{thema?.welkeTitle}</div>
                           <div className='p-base flex-grow h-full'>{thema?.welkeText}</div>
                           <div className='p-base-semibold w-full flex items-center justify-end group-hover:text-green-300'>
-                            Bekijk de bevoegdheden {'>'}
+                            Bekijk de bevoegdheden<IconArrowRight className='h-5 w-5 ml-0.5' />
                           </div>
                         </div>
                       </div>
@@ -127,8 +127,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
 
                           <CustomButton color='greenBackground'>
                             Start de discussie
-                            <ArrowDownIcon
-                              className='inline-block h-4 w-4 ml-1 place-self-center'
+                            <IconArrowDown
+                              className='inline-block h-5 w-5 ml-1 place-self-center'
                               aria-hidden='true'
                             />
                           </CustomButton>
@@ -137,7 +137,6 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                     </ScrollLink>
                   </div>
                 </div>
-
                 <ul className='sm:hidden max-w-sm'>
                   <li>
                     <Link href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/categorie`}>
@@ -152,8 +151,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           </div>
                           <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
                             <div className='heading-xl-semibold'>Instrumenten per categorie</div>
-                            <ArrowDownIcon
-                              className='block h-6 w-6 text-green-600 mt-1'
+                            <IconArrowRight
+                              className='block h-8 w-8 text-green-600 mt-1'
                               aria-hidden='true'
                             />
                           </div>
@@ -176,8 +175,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           </div>
                           <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
                             <div className='heading-xl-semibold'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
-                            <ArrowRightIcon
-                              className='block h-6 w-6 text-green-600'
+                            <IconArrowRight
+                              className='block h-8 w-8 text-green-600'
                               aria-hidden='true'
                             />
                           </div>
@@ -200,8 +199,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           </div>
                           <div className='text-grey-800 px-4 flex items-center justify-center max-w-[240px]'>
                             <div className='heading-xl-semibold'>{thema?.welkeTitle}</div>
-                            <ArrowRightIcon
-                              className='block h-6 w-6 text-green-600 mt-1'
+                            <IconArrowRight
+                              className='block h-8 w-8 text-green-600 mt-1'
                               aria-hidden='true'
                             />
                           </div>
@@ -230,8 +229,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                     </div>
                     <CustomButton color='greenBackground'>
                       Start de discussie
-                      <ArrowRightIcon
-                        className='inline-block h-4 w-4 ml-1 place-self-center'
+                      <IconArrowRight
+                        className='inline-block h-5 w-5 ml-1 place-self-center'
                         aria-hidden='true'
                       />
                     </CustomButton>
@@ -266,8 +265,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         </div>
                         <CustomButton color='whiteBackground'>
                           Bekijk jouw categorie
-                          <ArrowRightIcon
-                            className='inline-block h-4 w-4 ml-1 place-self-center'
+                          <IconArrowRight
+                            className='inline-block h-5 w-5 ml-1 place-self-center'
                             aria-hidden='true'
                           />
                         </CustomButton>
@@ -291,8 +290,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         </div>
                         <CustomButton color='whiteBackground'>
                           Naar de lijst
-                          <ArrowRightIcon
-                            className='inline-block h-4 w-4 ml-1 place-self-center'
+                          <IconArrowRight
+                            className='inline-block h-5 w-5 ml-1 place-self-center'
                             aria-hidden='true'
                           />
                         </CustomButton>
@@ -319,8 +318,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         </div>
                         <CustomButton color='whiteBackground'>
                           Bekijk de bevoegdheden
-                          <ArrowRightIcon
-                            className='inline-block h-4 w-4 ml-1 place-self-center'
+                          <IconArrowRight
+                            className='inline-block h-5 w-5 ml-1 place-self-center'
                             aria-hidden='true'
                           />
                         </CustomButton>
@@ -343,8 +342,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           </div>
                           <div className='text-gray-800 px-4 flex items-center justify-center max-w-[240px]'>
                             <div className='heading-xl-semibold'>Instrumenten per categorie</div>
-                            <ArrowRightIcon
-                              className='block h-6 w-6 text-green-600 mt-1'
+                            <IconArrowRight
+                              className='block h-8 w-8 text-green-600 mt-1'
                               aria-hidden='true'
                             />
                           </div>
@@ -367,8 +366,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           </div>
                           <div className='text-gray-800 px-4 flex items-center justify-center max-w-[240px]'>
                             <div className='heading-xl-semibold'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
-                            <ArrowRightIcon
-                              className='block h-6 w-6 text-green-600'
+                            <IconArrowRight
+                              className='block h-8 w-8 text-green-600'
                               aria-hidden='true'
                             />
                           </div>
@@ -391,8 +390,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           </div>
                           <div className='text-gray-800 px-4 flex items-center justify-center max-w-[240px]'>
                             <div className='heading-xl-semibold'>{thema?.welkeTitle}</div>
-                            <ArrowRightIcon
-                              className='block h-6 w-6 text-green-600 mt-1'
+                            <IconArrowRight
+                              className='block h-8 w-8 text-green-600 mt-1'
                               aria-hidden='true'
                             />
                           </div>
@@ -424,11 +423,11 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         }/${
                           process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
                         }/${id}.${extension}`}
-                        className='heading-xl-semibold text-green-500 hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'
+                        className='heading-xl-semibold flex items-center text-green-500 hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'
                         target='_blank'
                       >
                         {report.linkText}
-                        {' >'}
+                        <IconArrowRight className='h-5 w-5 ml-0.5'/>
                       </Link>
                     </li>
                   );

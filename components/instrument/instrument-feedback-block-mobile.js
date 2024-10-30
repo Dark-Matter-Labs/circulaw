@@ -1,7 +1,7 @@
 import CustomButton from '../custom-button';
 
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
-import { ArrowUpIcon } from '@heroicons/react/outline';
+import { IconArrowUp } from '@tabler/icons-react';
 import Link from 'next/link';
 
 // TODO: Combine the mobile and desktop components into one
@@ -16,7 +16,7 @@ export default function MobileFeedback({ data }) {
             } bg-green-500 px-8 rounded-t-clSm h-full w-full flex flex-row items-center justify-between text-gray-100`}
           >
             <div className='p-base'>Help ons circulaw te verbeteren</div>
-            <ArrowUpIcon className={`${open ? 'rotate-180' : ''} h-4 w-4 text-gray-100`} />
+            <IconArrowUp className={`${open ? 'rotate-180' : ''} h-5 w-5 text-gray-100`} />
           </PopoverButton>
           <PopoverPanel className={`${open ? '-translate-y-64' : ''} w-full h-64`}>
             <div className=' bg-gray-200 flex flex-col items-center h-full justify-between py-4 px-8'>
