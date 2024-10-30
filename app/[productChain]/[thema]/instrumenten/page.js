@@ -1,4 +1,4 @@
-import { THEME_PATHS_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
+import { FUll_THEME_PATHS_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
 import { client } from '@/lib/sanity';
 import ThemeLevelSearch from '@/components/theme-page/theme-level-search';
 
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }, parent) {
 }
 
 export async function generateStaticParams() {
-  const themas = await client.fetch(THEME_PATHS_QUERY, {
+  const themas = await client.fetch(FUll_THEME_PATHS_QUERY, {
     next: { tags: ['thema', 'simpleThema'] },
   });
   return themas.map((thema) => ({ thema: thema.thema, productChain: thema.productChain }));

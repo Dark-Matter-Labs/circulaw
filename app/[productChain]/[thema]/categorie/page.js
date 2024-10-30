@@ -1,4 +1,4 @@
-import { THEME_PATHS_QUERY, CATEGORIE_PAGE_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
+import { FUll_THEME_PATHS_QUERY, CATEGORIE_PAGE_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
 import { client, sanityFetch } from '@/lib/sanity';
 import ExpertiseLayout from '@/components/layouts/expertise-layout';
 
@@ -35,9 +35,10 @@ export async function generateMetadata({ params }, parent) {
 }
 
 export async function generateStaticParams() {
-  const themas = await client.fetch(THEME_PATHS_QUERY, {
-    next: { tags: ['thema', 'simpleThema'] },
+  const themas = await client.fetch(FUll_THEME_PATHS_QUERY, {
+    next: { tags: ['thema'] },
   });
+  console.log(themas)
   return themas.map((thema) => ({ thema: thema.thema, productChain: thema.productChain }));
 }
 
