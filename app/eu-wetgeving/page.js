@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowDownIcon } from '@heroicons/react/outline';
+import { IconArrowDown } from '@tabler/icons-react';
 import CustomButton from '@/components/custom-button';
 import EULawCard from '@/components/eu-law/eu-law-card';
 import { sanityFetch } from '@/lib/sanity';
@@ -59,7 +59,7 @@ export default async function Page() {
               <ScrollButton to='laws' offset={-140}>
                 <CustomButton color='euPage'>
                   Bekijk de {data?.length} wetten{' '}
-                  <ArrowDownIcon className='h-5 w-5 ml-3 text-green-50' />
+                  <IconArrowDown className='h-5 w-5 ml-3 text-green-50' />
                 </CustomButton>
               </ScrollButton>
             </div>
