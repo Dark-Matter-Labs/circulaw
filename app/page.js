@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRightIcon } from '@heroicons/react/outline';
+import { IconArrowRight } from '@tabler/icons-react';
 import { sanityFetch } from '@/lib/sanity';
 import HomePageAboutSection from '@/components/homepage/home-page-about-section';
 import HomePageEUSection from '@/components/homepage/home-page-eu-section';
@@ -76,10 +76,10 @@ export default async function Page() {
             <div className='p-base-bold flex justify-end items-center text-green-600'>
               <Link
                 href='/nieuws'
-                className=' hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white justify-self-end'
+                className='hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white flex items-center'
               >
                 Bekijk alle nieuwsberichten{' '}
-                <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                <IconArrowRight className='inline-block h-6 w-6 ml-0.5' aria-hidden='true' />
               </Link>
             </div>
           </div>
