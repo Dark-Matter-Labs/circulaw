@@ -4,7 +4,7 @@ import TabButton from '../expertise-page/tab-button';
 import TabLayout from '../expertise-page/tab-layout';
 import OverviewPageHeader from '../theme-page/overview-page-header';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
-import { ChevronUpIcon } from '@heroicons/react/outline';
+import { IconChevronUp } from '@tabler/icons-react';
 import { useEffect, useState, useTransition } from 'react';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 import { usePathname } from 'next/navigation';
@@ -574,7 +574,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               </span>
                             </div>
                             <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
-                              <ChevronUpIcon
+                              <IconChevronUp
                                 className={`${
                                   open ? '' : 'rotate-180 transform'
                                 } h-5 w-5 text-white z-10`}
@@ -631,7 +631,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               </span>
                             </div>
                             <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
-                              <ChevronUpIcon
+                              <IconChevronUp
                                 className={`${
                                   open ? '' : 'rotate-180 transform'
                                 } h-5 w-5 text-white z-10`}
@@ -684,7 +684,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               </span>
                             </div>
                             <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
-                              <ChevronUpIcon
+                              <IconChevronUp
                                 className={`${
                                   open ? '' : 'rotate-180 transform'
                                 } h-5 w-5 text-white z-10`}
@@ -737,7 +737,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                               </span>
                             </div>
                             <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
-                              <ChevronUpIcon
+                              <IconChevronUp
                                 className={`${
                                   open ? '' : 'rotate-180 transform'
                                 } h-5 w-5 text-white z-10`}

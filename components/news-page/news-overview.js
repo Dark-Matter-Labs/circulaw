@@ -5,7 +5,7 @@ import FeaturedCard from '@/components/news-page/featured-card';
 import NewsCard from '@/components/news-page/news-card';
 import Tag from '@/components/tag';
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
-import { ChevronUpIcon } from '@heroicons/react/outline';
+import { IconChevronDown } from '@tabler/icons-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
@@ -97,10 +97,10 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           <span className='inline text-left p-base-bold text-green-500'>Alles</span>
                         </div>
                         <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
-                          <ChevronUpIcon
+                          <IconChevronDown
                             className={`${
                               open ? '' : 'rotate-180 transform'
-                            } h-5 w-5 text-white z-10`}
+                            } h-6 w-6 text-white z-10`}
                           />
                         </div>
                       </PopoverButton>
@@ -155,10 +155,10 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           </span>
                         </div>
                         <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
-                          <ChevronUpIcon
+                          <IconChevronDown
                             className={`${
                               open ? '' : 'rotate-180 transform'
-                            } h-5 w-5 text-white z-10`}
+                            } h-6 w-6 text-white z-10`}
                           />
                         </div>
                       </PopoverButton>
@@ -214,10 +214,10 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           </span>
                         </div>
                         <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
-                          <ChevronUpIcon
+                          <IconChevronDown
                             className={`${
                               open ? '' : 'rotate-180 transform'
-                            } h-5 w-5 text-white z-10`}
+                            } h-6 w-6 text-white z-10`}
                           />
                         </div>
                       </PopoverButton>
@@ -272,10 +272,10 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           </span>
                         </div>
                         <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
-                          <ChevronUpIcon
+                          <IconChevronDown
                             className={`${
                               open ? '' : 'rotate-180 transform'
-                            } h-5 w-5 text-white z-10`}
+                            } h-6 w-6 text-white z-10`}
                           />
                         </div>
                       </PopoverButton>
@@ -330,10 +330,10 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           </span>
                         </div>
                         <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
-                          <ChevronUpIcon
+                          <IconChevronDown
                             className={`${
                               open ? '' : 'rotate-180 transform'
-                            } h-5 w-5 text-white z-10`}
+                            } h-6 w-6 text-white z-10`}
                           />
                         </div>
                       </PopoverButton>

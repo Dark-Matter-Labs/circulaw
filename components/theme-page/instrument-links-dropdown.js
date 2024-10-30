@@ -1,5 +1,5 @@
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
-import { ChevronUpIcon } from '@heroicons/react/outline';
+import { IconChevronUp } from '@tabler/icons-react';
 import { useRouter } from 'next/navigation';
 
 // TODO: Replace Popover with headless UI Listbox
@@ -25,8 +25,8 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                 </span>
               </div>
               <div className='w-1/12 px-5 h-full pr-5 bg-green-500 grid items-center justify-center rounded-r-cl border border-green-500'>
-                <ChevronUpIcon
-                  className={`${open ? '' : 'rotate-180 transform'} h-5 w-5 text-white z-10`}
+                <IconChevronUp
+                  className={`${open ? '' : 'rotate-180 transform'} h-6 w-6 text-white z-10`}
                 />
               </div>
             </PopoverButton>
@@ -74,8 +74,8 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                 <span className='inline text-left p-base-bold text-green-500'>Per categorie</span>
               </div>
               <div className='w-1/12 px-5 h-full pr-5 bg-green-500 grid items-center justify-center rounded-r-cl border border-green-500'>
-                <ChevronUpIcon
-                  className={`${open ? '' : 'rotate-180 transform'} h-5 w-5 text-white z-10`}
+                <IconChevronUp
+                  className={`${open ? '' : 'rotate-180 transform'} h-6 w-6 text-white z-10`}
                 />
               </div>
             </PopoverButton>
@@ -125,8 +125,8 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                 </span>
               </div>
               <div className='w-1/12 px-5 h-full pr-5 bg-green-500 grid items-center justify-center rounded-r-cl border border-green-500 cursor-pointer'>
-                <ChevronUpIcon
-                  className={`${open ? '' : 'rotate-180 transform'} h-5 w-5 text-white z-10`}
+                <IconChevronUp
+                  className={`${open ? '' : 'rotate-180 transform'} h-6 w-6 text-white z-10`}
                 />
               </div>
             </PopoverButton>
