@@ -26,14 +26,23 @@ export default function TabContent({ summaryData, tabData }) {
         </div>
       )}
       {selectedTab === 'verplichtingen-voor-europese-lidstaten' && (
-        <ScrollPagesTabContent content={euEuropeTab?.europeContent} />
+        <ScrollPagesTabContent
+          content={euEuropeTab?.europeContent}
+          title='Verplichting voor Europese lidstaten'
+        />
       )}
       {selectedTab === 'relevantie-voor-regionale-en-lokale-overheden' && (
-        <ScrollPagesTabContent content={euLocalTab?.localContent} />
+        <ScrollPagesTabContent
+          content={euLocalTab?.localContent}
+          title='Relevantie voor regionale en lokale overheden'
+        />
       )}
       {selectedTab === 'relevantie-voor-de-circulaire-economie' && (
         <div className='global-margin my-20 '>
           <div className='max-w-xl 2xl:max-w-2xl'>
+            <h2 className='heading-xl-semibold text-green-800'>
+              Relevantie voor de circulaire economie
+            </h2>
             <PortableText
               value={euCircularEconomyTab?.ceContent}
               components={portableTextComponents}
