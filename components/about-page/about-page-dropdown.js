@@ -1,6 +1,6 @@
 'use client';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/outline';
+import { IconChevronDown } from '@tabler/icons-react';
 import { useRouter } from 'next/navigation';
 
 export default function AboutPageDropdown({ currentSlug, slugs }) {
@@ -17,7 +17,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
               <span className='inline text-left '>{currentPage[0]?.pageTitle}</span>
             </div>
             <div className='w-1/12 px-5 h-full pr-5 bg-green-500 grid items-center justify-center rounded-r-cl border border-green-500'>
-              <ChevronDownIcon className='h-5 w-5 text-white z-10 group-data-[open]:rotate-180 transform' />
+              <IconChevronDown className='h-6 w-6 text-white z-10 group-data-[open]:rotate-180 transform' />
             </div>
           </DisclosureButton>
           <DisclosurePanel as='ul'>

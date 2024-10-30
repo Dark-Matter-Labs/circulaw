@@ -5,7 +5,7 @@ import { PortableText } from '@portabletext/react';
 import { Link, Element } from 'react-scroll';
 import { Dialog, DialogPanel, DialogTitle, CloseButton } from '@headlessui/react';
 import { useState } from 'react';
-import { XIcon } from '@heroicons/react/outline';
+import { IconX } from '@tabler/icons-react';
 
 export default function ScrollPagesTabContent({ content }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -75,7 +75,7 @@ export default function ScrollPagesTabContent({ content }) {
             >
               <CloseButton className='absolute float-right top-0 right-0 flex pt-4 pr-8 sm:-ml-10'>
                 <span className='sr-only'>Close panel</span>
-                <XIcon className='h-6 w-6' aria-hidden='true' />
+                <IconX className='h-6 w-6' aria-hidden='true' />
               </CloseButton>
               <DialogTitle className='heading-3xl-semibold'>In deze pagina</DialogTitle>
               <div className='relative mt-6 flex-1'>
