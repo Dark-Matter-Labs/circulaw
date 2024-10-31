@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRightIcon } from '@heroicons/react/outline';
+import { IconArrowRight } from '@tabler/icons-react';
 
 export default function NotFound() {
   return (
@@ -12,49 +12,49 @@ export default function NotFound() {
       <ul className=''>
         <li className='text-green-500 p-base-semibold underline'>
           <Link href='/' className='link-interaction'>
-            Home <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+            Home <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />
           </Link>
         </li>
         <li className='text-green-500 p-base-semibold underline'>
           <Link href='/bouw' className='link-interaction'>
-            Bouw <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+            Bouw <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />
           </Link>{' '}
         </li>
         <li className='text-green-500 p-base-semibold underline'>
           <Link href='/maakindustrie' className='link-interaction'>
-            Maakindustrie <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+            Maakindustrie <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />
           </Link>{' '}
         </li>
         <li className='text-green-500 p-base-semibold underline'>
           <Link href='/consumptiegoederen' className='link-interaction'>
             Consumptiegoederen{' '}
-            <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+            <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />
           </Link>{' '}
         </li>
         <li className='text-green-500 p-base-semibold underline'>
           <Link href='/biomassa-en-voedsel' className='link-interaction'>
             Biomassa en voedsel{' '}
-            <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+            <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />
           </Link>{' '}
         </li>
         <li className='text-green-500 p-base-semibold underline'>
           <Link href='/kunststoffen' className='link-interaction'>
-            Kunststoffen <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+            Kunststoffen <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />
           </Link>{' '}
         </li>
         <li className='text-green-500 p-base-semibold underline'>
           <Link href='/eu-wetgeving' className='link-interaction'>
-            EU wetgeving <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+            EU wetgeving <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />
           </Link>{' '}
         </li>
         <li className='text-green-500 p-base-semibold underline'>
           <Link href='/over/wat-is-circuLaw' className='link-interaction'>
-            Wat is CircuLaw? <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+            Wat is CircuLaw? <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />
           </Link>{' '}
         </li>
         <li className='text-green-500 p-base-semibold underline'>
           <Link href='/contact' className='link-interaction'>
-            Contact <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+            Contact <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />
           </Link>{' '}
         </li>
       </ul>

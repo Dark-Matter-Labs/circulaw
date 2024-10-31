@@ -23,7 +23,6 @@
   "dependencies": {
     "@floating-ui/react": "^0.26.24",
     "@headlessui/react": "^2.1.8",
-    "@heroicons/react": "^1.0.6",
     "@lottiefiles/react-lottie-player": "^3.5.4",
     "@piwikpro/next-piwik-pro": "^2.0.0",
     "@portabletext/react": "^2.0.0",

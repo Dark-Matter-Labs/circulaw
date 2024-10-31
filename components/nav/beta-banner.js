@@ -1,4 +1,4 @@
-import { ArrowRightIcon } from '@heroicons/react/outline';
+import { IconArrowRight } from '@tabler/icons-react';
 import Link from 'next/link';
 
 export default function BetaBanner() {
@@ -9,7 +9,7 @@ export default function BetaBanner() {
         <h5 className='inline p-2xs sm:p-xs'>versie - </h5>
         <h5 className='link-interaction inline underline p-2xs sm:p-xs'>
           <Link href='/beta'>Lees meer </Link>
-          <ArrowRightIcon className='h-3 w-3 inline' />
+          <IconArrowRight className='h-4 w-4 inline' />
         </h5>
       </div>
     </div>

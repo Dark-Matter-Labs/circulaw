@@ -1,4 +1,4 @@
-import { THEME_PATHS_QUERY, GOV_LEVEL_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
+import { FUll_THEME_PATHS_QUERY, GOV_LEVEL_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
 import { client, sanityFetch } from '@/lib/sanity';
 import GovLevelLayout from '@/components/layouts/gov-level-layout';
 import placeholderImage from '@/public/gov-level-placeholder-mobile.png';
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }, parent) {
 }
 
 export async function generateStaticParams() {
-  const themas = await client.fetch(THEME_PATHS_QUERY, {
+  const themas = await client.fetch(FUll_THEME_PATHS_QUERY, {
     next: { tags: ['thema', 'simpleThema'] },
   });
   return themas.map((thema) => ({ thema: thema.thema, productChain: thema.productChain }));

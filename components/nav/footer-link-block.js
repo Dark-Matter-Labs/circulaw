@@ -1,5 +1,5 @@
 import CustomButton from '../custom-button';
-import { ArrowRightIcon } from '@heroicons/react/outline';
+import { IconArrowRight } from '@tabler/icons-react';
 import Link from 'next/link';
 
 export default function FooterLinkBlock(props) {
@@ -15,7 +15,7 @@ export default function FooterLinkBlock(props) {
             <Link href={props.buttonLink}>
               <CustomButton color='home'>
                 {props.buttonText}&nbsp;
-                <ArrowRightIcon className='inline-block mt-0.5 h-4 w-4' aria-hidden='true' />
+                <IconArrowRight className='inline-block mt-0.5 h-5 w-5' aria-hidden='true' />
               </CustomButton>
             </Link>
           </div>

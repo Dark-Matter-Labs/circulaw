@@ -5,9 +5,9 @@ import { PortableText } from '@portabletext/react';
 import { Link, Element } from 'react-scroll';
 import { Dialog, DialogPanel, DialogTitle, CloseButton } from '@headlessui/react';
 import { useState } from 'react';
-import { XIcon } from '@heroicons/react/outline';
+import { IconX } from '@tabler/icons-react';
 
-export default function ScrollPagesTabContent({ content }) {
+export default function ScrollPagesTabContent({ content, title }) {
   const [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
@@ -25,16 +25,16 @@ export default function ScrollPagesTabContent({ content }) {
             <Element key={id} className='w-[calc(100vw - 17px)]' id={`${section.title}`}>
               <div className='global-margin'>
                 <div className='my-12 lgNav:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl relative z-10'>
-                  <h2 className='heading-3xl-semibold mb-6'>
+                  <h2 className='heading-xl-semibold text-green-800 mb-6'>{title}</h2>
+                  <h3 className='heading-3xl-semibold mb-6'>
                     {id + 1}. {section.title}
-                  </h2>
+                  </h3>
                   <PortableText value={section.content} components={portableTextComponents} />
                 </div>
               </div>
             </Element>
           ))}
         </div>
-
         <div className='absolute top-0 right-2 md:right-12 lg:right-20 xl:right-56 h-full hidden lgNav:block'>
           <ul className='sticky top-48 my-12 min-w-[390px]'>
             <h4 className='heading-3xl-semibold mb-5 ml-3'>In deze pagina</h4>
@@ -75,7 +75,7 @@ export default function ScrollPagesTabContent({ content }) {
             >
               <CloseButton className='absolute float-right top-0 right-0 flex pt-4 pr-8 sm:-ml-10'>
                 <span className='sr-only'>Close panel</span>
-                <XIcon className='h-6 w-6' aria-hidden='true' />
+                <IconX className='h-6 w-6' aria-hidden='true' />
               </CloseButton>
               <DialogTitle className='heading-3xl-semibold'>In deze pagina</DialogTitle>
               <div className='relative mt-6 flex-1'>

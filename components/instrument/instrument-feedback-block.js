@@ -1,6 +1,6 @@
 import CustomButton from '../custom-button';
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
-import { ArrowLeftIcon } from '@heroicons/react/outline';
+import { IconArrowLeft } from '@tabler/icons-react';
 import Link from 'next/link';
 
 // TODO: Combine the mobile and desktop components into one
@@ -14,10 +14,10 @@ export default function InstrumentFeedbackBlock({ data }) {
               open ? '-translate-x-52 sm:-translate-x-60' : ''
             } bg-green-500 rounded-l-clSm h-full w-full flex flex-col items-center justify-between text-gray-100`}
           >
-            <ArrowLeftIcon
+            <IconArrowLeft
               className={`${
                 open ? 'rotate-180 transform' : ''
-              } h-4 w-4 sm:h-6 sm:w-6 text-gray-100 mt-3 sm:mt-10`}
+              } h-6 sm:w-6 text-gray-100 mt-3 sm:mt-10`}
             />
             <div className='[writing-mode:vertical-lr] rotate-180 pt-3 sm:pt-10 p-base sm:heading-xl'>
               Help ons circulaw te verbeteren
