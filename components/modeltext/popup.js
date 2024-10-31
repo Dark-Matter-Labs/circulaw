@@ -4,7 +4,10 @@ import { IconX, IconCopy, IconCheck } from '@tabler/icons-react';
 import ModelTextCard from './modeltext-card';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { PortableText } from '@portabletext/react';
-import { reducedPortableTextComponents, ModelTextComponents } from '@/lib/portable-text/pt-components';
+import {
+  reducedPortableTextComponents,
+  ModelTextComponents,
+} from '@/lib/portable-text/pt-components';
 import Link from 'next/link';
 import { Dialog, DialogPanel, DialogTitle, DialogBackdrop, Button } from '@headlessui/react';
 
@@ -171,7 +174,9 @@ export default function PopUp({ pillars, modelTexts }) {
                             setShowLinkCopied(false);
                           }, 1800);
                         }}
-                        className={`${showLinkCopied ? 'hidden' : 'block'} p-xs-semibold flex flex-row`}
+                        className={`${
+                          showLinkCopied ? 'hidden' : 'block'
+                        } p-xs-semibold flex flex-row`}
                       >
                         Kopieer
                         <IconCopy className='w-5 h-5 ml-2.5' />
@@ -198,7 +203,15 @@ export default function PopUp({ pillars, modelTexts }) {
                   />
                 </div>
                 <div className='pr-6 mb-6'>
-                  <p className='p-base'><span className='font-semibold'>Let op: </span> <span className='italic'>De planregels zijn &apos;modelteksten&apos;. Deze zijn door de juristen van CircuLaw zelf opgesteld. Typ de modelteksten nooit zomaar klakkeloos over, wees je altijd bewust van de context en samenhang met informatie en teksten buiten de regels zelf.</span></p>
+                  <p className='p-base'>
+                    <span className='font-semibold'>Let op: </span>{' '}
+                    <span className='italic'>
+                      De planregels zijn &apos;modelteksten&apos;. Deze zijn door de juristen van
+                      CircuLaw zelf opgesteld. Typ de modelteksten nooit zomaar klakkeloos over,
+                      wees je altijd bewust van de context en samenhang met informatie en teksten
+                      buiten de regels zelf.
+                    </span>
+                  </p>
                 </div>
                 {selectedModelText?.linkedInstruments && (
                   <div className='flex flex-col mb-10'>
