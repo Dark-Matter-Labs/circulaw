@@ -200,23 +200,24 @@ export default function PopUp({ pillars, modelTexts }) {
                     components={reducedPortableTextComponents}
                   />
                 </div>
-                {selectedModelText?.linkedInstruments && 
-                <div className='flex flex-col mb-10'>
-                  {console.log(selectedModelText.linkedInstruments)}
-                  <h6 className='heading-xl-semibold mb-4'>Gelinkte instrumenten</h6>
-                  <ul className='list-disc list-inside ml-2'>
-                    {selectedModelText?.linkedInstruments?.map((instrument) => (
-                      <li className='p-base underline' key={instrument.slug}>
-                        <Link
-                          className='link-interaction text-green-500'
-                          href={`/${instrument.transitionAgenda}/${instrument.thema}/instrumenten/${instrument.slug}`}
-                        >
-                          {instrument.titel}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>}
+                {selectedModelText?.linkedInstruments && (
+                  <div className='flex flex-col mb-10'>
+                    {console.log(selectedModelText.linkedInstruments)}
+                    <h6 className='heading-xl-semibold mb-4'>Gelinkte instrumenten</h6>
+                    <ul className='list-disc list-inside ml-2'>
+                      {selectedModelText?.linkedInstruments?.map((instrument) => (
+                        <li className='p-base underline' key={instrument.slug}>
+                          <Link
+                            className='link-interaction text-green-500'
+                            href={`/${instrument.transitionAgenda}/${instrument.thema}/instrumenten/${instrument.slug}`}
+                          >
+                            {instrument.titel}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
                 <div className='flex flex-row justify-between mb-10'>
                   <div className='flex flex-wrap sm:flex-row gap-4'>
                     <div className='flex flex-col'>
