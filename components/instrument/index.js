@@ -51,7 +51,22 @@ export default function Instrument({ data }) {
               <div className=''>
                 <PortableText value={data?.content} components={portableTextComponents} />
               </div>
+              <div>
+                {/* ADD MODAL HERE */}
+              {data.modelTexts && (
+                <>
+                {data.modelTexts.map((text, id) => (
+                  <>
+                  <div key={id}>
+                    {text.title}
+                  </div>
+                  </>
+                ))}
+                </>
+              )}
+              </div>
               <InstrumentTable data={data} />
+            
             </div>
           </div>
           <div
