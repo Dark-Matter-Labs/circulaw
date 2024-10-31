@@ -4,10 +4,9 @@ import { IconX, IconCopy, IconCheck } from '@tabler/icons-react';
 import ModelTextCard from './modeltext-card';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { PortableText } from '@portabletext/react';
-import { reducedPortableTextComponents } from '@/lib/portable-text/pt-components';
+import { reducedPortableTextComponents, ModelTextComponents } from '@/lib/portable-text/pt-components';
 import Link from 'next/link';
 import { Dialog, DialogPanel, DialogTitle, DialogBackdrop, Button } from '@headlessui/react';
-import Tag from '../tag';
 
 export default function PopUp({ pillars, modelTexts }) {
   const searchParams = useSearchParams();
@@ -145,24 +144,24 @@ export default function PopUp({ pillars, modelTexts }) {
                 transition
                 className='sm:rounded-cl bg-gray-100 border w-screen sm:max-w-3xl min-h-screen sm:min-h-0 sm:overflow-scroll no-scrollbar sm:h-auto sm:max-h-[800px] py-6 px-10 duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0'
               >
-                <div className='flex flex-row w-full justify-between items-center'>
+                <div className='flex flex-row w-full justify-between items-center mb-4'>
                   <div className='flex flex-row gap-x-2'>
-                    <Tag classes='bg-green-500 max-w-min text-green-50 mb-2 text-nowrap'>
+                    <div className='rounded-cl max-w-min text-nowrap border border-green-400 text-green-400 px-2 py-1 p-2xs-semibold first-letter:uppercase'>
                       {selectedModelText.pillar}
-                    </Tag>
+                    </div>
                   </div>
 
                   <Button onClick={close}>
                     <IconX className='h-6 w-6 text-green-800' />
                   </Button>
                 </div>
-                <DialogTitle as='h3' className='heading-2xl-semibold mb-10'>
+                <DialogTitle as='h3' className='heading-2xl-semibold mb-8'>
                   {selectedModelText?.title}
                 </DialogTitle>
 
-                <div className='w-full border border-gray-300 flex flex-col rounded-cl mb-10'>
-                  <div className='flex flex-row justify-between bg-gray-200 border-b border-gray-300 rounded-t-cl py-2 px-6'>
-                    <div className='p-xs-semibold'>Modeltekst omgevingsplan</div>
+                <div className='w-full border border-green-300 flex flex-col rounded-cl mb-10 overflow-hidden'>
+                  <div className='flex flex-row justify-between bg-green-300 border-b border-green-300 py-3 px-6'>
+                    <div className='p-base-semibold text-green-800'>Modeltekst omgevingsplan</div>
                     <div className='self-end relative'>
                       <button
                         onClick={() => {
@@ -172,31 +171,34 @@ export default function PopUp({ pillars, modelTexts }) {
                             setShowLinkCopied(false);
                           }, 1800);
                         }}
-                        className={`${showLinkCopied ? 'hidden' : 'block'} p-xs flex flex-row`}
+                        className={`${showLinkCopied ? 'hidden' : 'block'} p-xs-semibold flex flex-row`}
                       >
                         Kopieer
                         <IconCopy className='w-5 h-5 ml-2.5' />
                       </button>
                       {showLinkCopied && (
                         <p className='p-xs text-green-500 text-nowrap flex flex-row'>
-                          <IconCheck className='w-5 h-5 text-green-500 ml-2.5' />
+                          <IconCheck className='w-5 h-5 text-green-800 ml-2.5' />
                         </p>
                       )}
                     </div>
                   </div>
-                  <div className='px-6'>
+                  <div className='p-6'>
                     <PortableText
                       value={selectedModelText.modelText}
-                      components={reducedPortableTextComponents}
+                      components={ModelTextComponents}
                     />
                   </div>
                 </div>
-                <div className='flex flex-col mb-6 pr-6'>
+                <div className='flex flex-col mb-2 pr-6'>
                   <h6 className='heading-xl-semibold'>Toelichting</h6>
                   <PortableText
                     value={selectedModelText.description}
                     components={reducedPortableTextComponents}
                   />
+                </div>
+                <div className='pr-6 mb-6'>
+                  <p className='p-base'><span className='font-semibold'>Let op: </span> <span className='italic'>De planregels zijn &apos;modelteksten&apos;. Deze zijn door de juristen van CircuLaw zelf opgesteld. Typ de modelteksten nooit zomaar klakkeloos over, wees je altijd bewust van de context en samenhang met informatie en teksten buiten de regels zelf.</span></p>
                 </div>
                 {selectedModelText?.linkedInstruments && (
                   <div className='flex flex-col mb-10'>
