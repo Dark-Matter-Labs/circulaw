@@ -31,7 +31,6 @@ export default function PopUp({ pillars, modelTexts }) {
   const [filteredModelTexts, setFilteredModelTexts] = useState();
   const [selectedModelText, setSelectedModelText] = useState(null);
   const [showLinkCopied, setShowLinkCopied] = useState(false);
-
   // use effect to set the pillar and filer the modeltexts
   useEffect(() => {
     // initialise from search params
@@ -43,8 +42,8 @@ export default function PopUp({ pillars, modelTexts }) {
       const filtered = modelTexts.filter((t) => t.pillar === pillar);
       setFilteredModelTexts(filtered);
     } else if (!pillar && modelTextSlug) {
-      setSelectedPillar('materialenkringloop');
-      const filtered = modelTexts.filter((t) => t.pillar === 'materialenkringloop');
+      setSelectedPillar('energie');
+      const filtered = modelTexts.filter((t) => t.pillar === 'energie');
       setFilteredModelTexts(filtered);
       setIsOpen(true);
       setSelectedModelText(modelTexts.filter((t) => t.slug === modelTextSlug)[0]);
@@ -55,8 +54,8 @@ export default function PopUp({ pillars, modelTexts }) {
       setIsOpen(true);
       setSelectedModelText(modelTexts.filter((t) => t.slug === modelTextSlug)[0]);
     } else if (!pillar) {
-      setSelectedPillar('materialenkringloop');
-      const filtered = modelTexts.filter((t) => t.pillar === 'materialenkringloop');
+      setSelectedPillar('energie');
+      const filtered = modelTexts.filter((t) => t.pillar === 'energie');
       setFilteredModelTexts(filtered);
       setIsOpen(false);
     }
@@ -112,12 +111,11 @@ export default function PopUp({ pillars, modelTexts }) {
           ))}
         </div>
       </div>
-
-      <div className='min-h-screen scroll-m-[80px]'>
-        <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-y-6 sm:gap-y-8 justify-evenly mt-14 relative w-full'>
+      <div className='min-h-screen '>
+        <div className='flex flex-wrap gap-6 sm:gap-8 mt-14 gap relative w-full justify-center sm:justify-start items-center'>
           {filteredModelTexts?.map((text, id) => (
             <Button
-              className='w-[396px]'
+              className='w-[366px]'
               key={id}
               onClick={() => {
                 router.push(pathname + '?' + createQueryString('modeltext', text.slug), {

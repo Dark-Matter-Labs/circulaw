@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 const PILLARS_QUERY = `
- *[_type == 'pillar'] {
+ *[_type == 'pillar'] | order(_createdAt) {
   ...,
   'slug':slug.current,
  }
@@ -96,7 +96,7 @@ export default async function ModelTextPage({ params }) {
               <div className='h-12 w-12 mr-2 rounded-full flex items-center justify-center border-2 text-green-600 border-green-600 bg-transparent group-hover:bg-green-200 group-hover:border-green-200 group-hover:text-green-600  active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white self-end'>
                 <IconArrowLeft className='inline-block h-6 w-6' aria-hidden='true' />
               </div>
-              <span className='max-w-sm'>
+              <span className='max-w-xs'>
                 Terug naar de informatie pagina over het omgevingsplan en de planregels
               </span>
             </Link>

@@ -63,19 +63,19 @@ export default function ScrollyTellingPage({ params }) {
             <div className='my-16'>
               <Disclosure className='' as='div'>
                 <>
-                  <DisclosureButton className='group rounded-clSm text-gray-800 bg-green-50 flex justify-between items-center w-full px-10 py-6'>
+                  <DisclosureButton className='group rounded-clSm text-gray-800 bg-green-50 flex justify-between items-center w-full px-6 sm:px-10 py-6'>
                     <div className='flex flex-col'>
                       <h4 className='heading-xl-semibold sm:heading-2xl-semibold text-left mb-2.5'>
                         Samenhang omgevingsvisie
                       </h4>
-                      <h5 className='p-xs-semibold sm:heading-xl-semibold'>
+                      <h5 className='p-xs-semibold sm:heading-xl-semibold text-left'>
                         Omgevingsvisie, omgevingsprogramma’s en omgevingsplan
                       </h5>
                     </div>
 
                     <IconChevronDown className='h-6 w-6 text-gray-800 group-data-[open]:rotate-180 place-self-start' />
                   </DisclosureButton>
-                  <DisclosurePanel className='bg-green-50 -mt-6 px-10 pb-4 rounded-b-clSm'>
+                  <DisclosurePanel className='bg-green-50 -mt-6 px-6 sm:px-10 pb-4 rounded-b-clSm'>
                     <div className='flex flex-col gap-8 py-6'>
                       <p className='p-base'>
                         De <span className='p-base-semibold'>omgevingsvisie</span> beschrijft op
@@ -99,8 +99,8 @@ export default function ScrollyTellingPage({ params }) {
                 </>
               </Disclosure>
             </div>
-            <div className='flex flex-row gap-x-16'>
-              <div className='relative max-w-[700px] max-h-[550px]'>
+            <div className='flex flex-col sm:flex-row gap-x-16'>
+              <div className='relative max-w-[700px] max-h-[550px] mb-6 sm:mb-0'>
                 <Image
                   src='/planregelsImage.png'
                   alt='planregels image'
