@@ -32,6 +32,15 @@ export default function MobileDisclosure({ navData, closeMenu }) {
                   </Link>
                 </li>
               ))}
+              {navData.title === 'Bouw' && (
+                <li className='border-t border-green-600 pt-2 mt-4 ml-4'>
+                  <Link href='/bouw/planregels' onClick={() => closeMenu(false)} className=''>
+                    <span className='w-full flex items-center'>
+                      Planregels: modelteksten voor het omgevingsplan
+                    </span>
+                  </Link>
+                </li>
+              )}
             </ul>
           </DisclosurePanel>
         </>

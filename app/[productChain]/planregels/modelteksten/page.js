@@ -1,13 +1,13 @@
 import LinkIcon from '@/components/link-icon';
 import PopUp from '@/components/modeltext/popup';
 import { sanityFetch } from '@/lib/sanity';
-import { IconArrowRight } from '@tabler/icons-react';
+import { IconArrowLeft } from '@tabler/icons-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 const PILLARS_QUERY = `
- *[_type == 'pillar'] {
+ *[_type == 'pillar'] | order(_createdAt) {
   ...,
   'slug':slug.current,
  }
@@ -75,29 +75,33 @@ export default async function ModelTextPage({ params }) {
         <div className=' bg-white flex flex-col global-margin my-10 sm:my-16 h-max'>
           <div className='flex flex-col max-w-[760px]'>
             <p className='p-base pb-6'>
-              We hebben de <span className='font-semibold'>planregels</span> voor het{' '}
-              <span className='font-semibold'>omgevingsplan</span> ingedeeld op basis van 6 pijlers
-              . Deze sluiten aan op de pijlers zoals{' '}
+              We hebben de planregels voor het omgevingsplan ingedeeld op basis van 6 pijlers . Deze
+              sluiten aan op de pijlers zoals{' '}
               <Link href='/' className='link-interaction'>
                 Toekomstig Bestendig Bouwen
                 <LinkIcon />
               </Link>{' '}
               ze heeft gedefinieerd.
             </p>
-            <Link
-              href='/bouw/planregels'
-              className='flex items-center mb-6 text-green-600 hover:link-interaction underline p-base-semibold'
-            >
-              Meer over het omgevingsplan en planregels{' '}
-              <IconArrowRight className='inline-block ml-1' />
-            </Link>
-            <p className='p-xs italic p-4'>
+            <p className='p-xs italic mb-6'>
               <span className='font-semibold'>Let op:</span> De planregels zijn
               &apos;modelteksten&apos;. Deze zijn door de juristen van CircuLaw zelf opgesteld. Typ
               de modelteksten nooit zomaar klakkeloos over, wees je altijd bewust van de context en
               samenhang met informatie en teksten buiten de regels zelf.
             </p>
+            <Link
+              href='/bouw/planregels'
+              className='flex items-center mb-6 text-green-600 hover:link-interaction underline p-base-semibold group'
+            >
+              <div className='h-12 w-12 mr-2 rounded-full flex items-center justify-center border-2 text-green-600 border-green-600 bg-transparent group-hover:bg-green-200 group-hover:border-green-200 group-hover:text-green-600  active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white self-end'>
+                <IconArrowLeft className='inline-block h-6 w-6' aria-hidden='true' />
+              </div>
+              <span className='max-w-xs'>
+                Terug naar de informatie pagina over het omgevingsplan en de planregels
+              </span>
+            </Link>
           </div>
+
           <PopUp modelTexts={modelTexts} pillars={pillars} />
         </div>
       </>

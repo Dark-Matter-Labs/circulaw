@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
-import { IconCopy } from '@tabler/icons-react';
 
 export default function DesktopNavCard({ navData, closeNav }) {
   const pathname = usePathname();
@@ -62,9 +61,8 @@ export default function DesktopNavCard({ navData, closeNav }) {
             href='/bouw/planregels'
             className={`${
               pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '
-            } p-xs active:p-xs-semibold active:no-underline cursor-pointer flex flex-row items-center -ml-7 pt-2`}
+            } p-xs active:p-xs-semibold active:no-underline cursor-pointer flex flex-row items-center pt-2`}
           >
-            <IconCopy className='block h-6 w-6 mr-2' />
             <span className='hover:underline'>Planregels: modelteksten voor het omgevingsplan</span>
           </Link>
         </div>

@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { IconChevronDown, IconArrowRight } from '@tabler/icons-react';
-import CustomButton from '@/components/custom-button';
 import { notFound } from 'next/navigation';
 
 export default function ScrollyTellingPage({ params }) {
@@ -46,26 +45,37 @@ export default function ScrollyTellingPage({ params }) {
             </div>
           </div>
         </div>
-        <div className='global-margin py-20 flex flex-col md:flex-row relative'>
-          <div className='basis-2/3'>
-            <p className='p-base mb-10 max-w-3xl'>
-              Wil je werkelijk <span className='font-semibold'>impact</span> maken, zet dan een{' '}
-              <span className='font-semibold'>mix van instrumenten</span> in. Voor het stimuleren
-              van <span className='font-semibold'>circulaire bouw</span> kun je aan de slag met de{' '}
-              <span className='font-semibold'>omgevingsvisie</span>, het{' '}
-              <span className='font-semibold'>omgevingsprogramma</span>, en het{' '}
-              <span className='font-semibold'>omgevingsplan</span>.
+        <div className='global-margin py-10 sm:py-16 flex flex-col md:flex-row relative'>
+          <div className='basis-2/3 max-w-4xl'>
+            <h2 className='heading-2xl-semibold sm:heading-3xl-semibold mb-6'>Begintitel</h2>
+            <p className='p-base mb-6 max-w-2xl'>
+              Wil je werkelijk impact maken, zet dan een mix van instrumenten in. Voor het
+              stimuleren van circulaire bouw kun je aan de slag met de omgevingsvisie, het
+              omgevingsprogramma, en het omgevingsplan.
             </p>
-            <div className='my-6'>
-              <Disclosure className='max-w-2xl' as='div'>
+            <p className='p-base mb-6 max-w-2xl'>
+              In het omgevingsplan worden concrete regels, voorschriften en toestemmingsvereisten
+              vastgelegd die nodig zijn om de ambities uit de omgevingsvisie en
+              omgevingsprogramma&apos;s in de praktijk te brengen. Planregels zijn stukken tekst die
+              gebruikers over kunnen nemen in een omgevingsplan. Het zijn dus modelteksten voor een
+              omgevingsplan.
+            </p>
+            <div className='my-16'>
+              <Disclosure className='' as='div'>
                 <>
-                  <DisclosureButton className='group rounded-clSm text-gray-800 bg-gray-200 flex justify-between items-center w-full px-8 py-6'>
-                    <h4 className='p-base-semibold sm:headling-xl-semibold text-left'>
-                      Samenhang omgevingsvisie, omgevingsprogramma en omgevingsplan
-                    </h4>
-                    <IconChevronDown className='h-6 w-6 text-gray-800 group-data-[open]:rotate-180' />
+                  <DisclosureButton className='group rounded-clSm text-gray-800 bg-green-50 flex justify-between items-center w-full px-6 sm:px-10 py-6'>
+                    <div className='flex flex-col'>
+                      <h4 className='heading-xl-semibold sm:heading-2xl-semibold text-left mb-2.5'>
+                        Samenhang omgevingsvisie
+                      </h4>
+                      <h5 className='p-xs-semibold sm:heading-xl-semibold text-left'>
+                        Omgevingsvisie, omgevingsprogramma’s en omgevingsplan
+                      </h5>
+                    </div>
+
+                    <IconChevronDown className='h-6 w-6 text-gray-800 group-data-[open]:rotate-180 place-self-start' />
                   </DisclosureButton>
-                  <DisclosurePanel className='bg-gray-200 -mt-6 px-8 pb-4 rounded-b-clSm'>
+                  <DisclosurePanel className='bg-green-50 -mt-6 px-6 sm:px-10 pb-4 rounded-b-clSm'>
                     <div className='flex flex-col gap-8 py-6'>
                       <p className='p-base'>
                         De <span className='p-base-semibold'>omgevingsvisie</span> beschrijft op
@@ -89,48 +99,33 @@ export default function ScrollyTellingPage({ params }) {
                 </>
               </Disclosure>
             </div>
-            <div className='relative max-w-[700px] max-h-[550px] mb-10'>
-              <Image
-                src='/planregelsImage.png'
-                alt='planregels image'
-                height={700}
-                width={500}
-                className='z-10 object-cover'
-              />
-            </div>
-            <p className='p-base mb-8 max-w-3xl'>
-              In het <span className='p-base-semibold'>omgevingsplan</span> worden{' '}
-              <span className='p-base-semibold'>concrete regels</span>,{' '}
-              <span className='p-base-semibold'>voorschriften</span> en{' '}
-              <span className='p-base-semibold'>toestemmingsvereisten</span> vastgelegd die nodig
-              zijn om de ambities uit de <span className='p-base-semibold'>omgevingsvisie</span> en{' '}
-              <span className='p-base-semibold'>omgevingsprogramma&apos;s</span> in de praktijk te
-              brengen.
-            </p>
-            <p className='max-w-3xl mb-10 p-base'>
-              Planregels zijn stukken tekst die gebruikers over kunnen nemen in een omgevingsplan.
-              Het zijn dus modelteksten voor een omgevingsplan.
-            </p>
-            <Link
-              href='/bouw/planregels/modelteksten'
-              className='heading-2xl-semibold max-w-sm text-green-500 underline'
-            >
-              Aan de slag met planregels <IconArrowRight className='inline-block' />
-            </Link>
-          </div>
-          <div className='sticky top-28 max-h-min ml-0 md:ml-6 mt-8 md:mt-0 max-w-sm'>
-            <Link href='/bouw/planregels/modelteksten'>
-              <div className='w-full bg-gray-200 flex flex-col border border-gray-200 rounded-cl items-start justify-start px-10 py-8 gap-8'>
-                <p className='heading-2xl-semibold max-w-sm'>Aan de slag met het omgevingsplan</p>
-                <p className='p-base max-w-sm'>
-                  Ga direct aan de slag met de modelteksten voor planregels in het omgevingsplan
-                </p>
-                <CustomButton color='greenBackground'>
-                  Naar de planregels
-                  <IconArrowRight />
-                </CustomButton>
+            <div className='flex flex-col sm:flex-row gap-x-16'>
+              <div className='relative max-w-[700px] max-h-[550px] mb-6 sm:mb-0'>
+                <Image
+                  src='/planregelsImage.png'
+                  alt='planregels image'
+                  height={700}
+                  width={500}
+                  className='z-10 object-cover'
+                />
               </div>
-            </Link>
+              <Link href='/bouw/planregels/modelteksten' className='group'>
+                <div className='w-full bg-green-50 flex flex-col border border-gray-200 rounded-cl items-start justify-start px-10 py-8'>
+                  <div className='mb-4 p-2xs-semibold text-green-800 border rounded-cl border-green-800 px-2 py-1'>
+                    Plangregels
+                  </div>
+                  <p className='heading-2xl-semibold max-w-sm mb-6'>
+                    Aan de slag met het omgevingsplan
+                  </p>
+                  <p className='p-base max-w-sm mb-6'>
+                    Ga direct aan de slag met de modelteksten voor planregels in het omgevingsplan
+                  </p>
+                  <div className='flex flex-row items-center text-green-800 p-base-semibold group-hover:text-green-200'>
+                    Modeltekst bekijken <IconArrowRight className='h-5 w-5 ml-0.5' />
+                  </div>
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       </>
