@@ -55,9 +55,10 @@ export default function ScrollyTellingPage({ params }) {
             </p>
             <p className='p-base mb-6 max-w-2xl'>
               In het omgevingsplan worden concrete regels, voorschriften en toestemmingsvereisten
-              vastgelegd die nodig zijn om de ambities uit de omgevingsvisie en omgevingsprogramma&apos;s
-              in de praktijk te brengen. Planregels zijn stukken tekst die gebruikers over kunnen
-              nemen in een omgevingsplan. Het zijn dus modelteksten voor een omgevingsplan.
+              vastgelegd die nodig zijn om de ambities uit de omgevingsvisie en
+              omgevingsprogramma&apos;s in de praktijk te brengen. Planregels zijn stukken tekst die
+              gebruikers over kunnen nemen in een omgevingsplan. Het zijn dus modelteksten voor een
+              omgevingsplan.
             </p>
             <div className='my-16'>
               <Disclosure className='' as='div'>
@@ -111,14 +112,16 @@ export default function ScrollyTellingPage({ params }) {
               <Link href='/bouw/planregels/modelteksten' className='group'>
                 <div className='w-full bg-green-50 flex flex-col border border-gray-200 rounded-cl items-start justify-start px-10 py-8'>
                   <div className='mb-4 p-2xs-semibold text-green-800 border rounded-cl border-green-800 px-2 py-1'>
-                  Plangregels
+                    Plangregels
                   </div>
-                  <p className='heading-2xl-semibold max-w-sm mb-6'>Aan de slag met het omgevingsplan</p>
+                  <p className='heading-2xl-semibold max-w-sm mb-6'>
+                    Aan de slag met het omgevingsplan
+                  </p>
                   <p className='p-base max-w-sm mb-6'>
                     Ga direct aan de slag met de modelteksten voor planregels in het omgevingsplan
                   </p>
                   <div className='flex flex-row items-center text-green-800 p-base-semibold group-hover:text-green-200'>
-                    Modeltekst bekijken <IconArrowRight className='h-5 w-5 ml-0.5'/>
+                    Modeltekst bekijken <IconArrowRight className='h-5 w-5 ml-0.5' />
                   </div>
                 </div>
               </Link>
