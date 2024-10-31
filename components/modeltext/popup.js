@@ -153,7 +153,6 @@ export default function PopUp({ pillars, modelTexts }) {
                       {selectedModelText.pillar}
                     </div>
                   </div>
-
                   <Button onClick={close}>
                     <IconX className='h-6 w-6 text-green-800' />
                   </Button>
