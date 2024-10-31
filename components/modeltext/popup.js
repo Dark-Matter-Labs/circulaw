@@ -142,7 +142,7 @@ export default function PopUp({ pillars, modelTexts }) {
             <div className='flex min-h-full items-center justify-center p-0 sm:px-4 sm:py-10'>
               <DialogPanel
                 transition
-                className='sm:rounded-cl bg-gray-100 border w-screen sm:max-w-3xl min-h-screen sm:min-h-0 sm:overflow-scroll no-scrollbar sm:h-auto sm:max-h-[800px] py-6 px-10 duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0'
+                className='sm:rounded-cl bg-gray-100 border w-screen sm:max-w-3xl min-h-screen sm:min-h-0 sm:overflow-scroll no-scrollbar sm:h-auto sm:max-h-[800px] py-6 px-4 sm:px-10 duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0'
               >
                 <div className='flex flex-row w-full justify-between items-center mb-4'>
                   <div className='flex flex-row gap-x-2'>
@@ -218,7 +218,7 @@ export default function PopUp({ pillars, modelTexts }) {
                     </ul>
                   </div>
                 )}
-                <div className='flex flex-row justify-between mb-10'>
+                <div className='flex flex-row justify-between'>
                   <div className='flex flex-wrap sm:flex-row gap-4'>
                     <div className='flex flex-col'>
                       <div className='p-xs-semibold mb-2'>Schaalniveau</div>
@@ -239,12 +239,6 @@ export default function PopUp({ pillars, modelTexts }) {
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className='p-xs pr-6 italic'>
-                  <span className='font-semibold'>Let op: </span>De planregels zijn ‘modelteksten’.
-                  Deze zijn door de juristen van CircuLaw zelf opgesteld. Typ de modelteksten nooit
-                  zomaar klakkeloos over, wees je altijd bewust van de context en samenhang met
-                  informatie en teksten buiten de regels zelf.
                 </div>
               </DialogPanel>
             </div>
