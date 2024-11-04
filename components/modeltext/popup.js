@@ -220,7 +220,7 @@ export default function PopUp({ pillars, modelTexts }) {
                       {selectedModelText?.linkedInstruments?.map((instrument) => (
                         <li className='p-base underline' key={instrument.slug}>
                           <Link
-                            className='link-interaction text-green-500'
+                            className='link-interaction text-green-600'
                             href={`/${instrument.transitionAgenda}/${instrument.thema}/instrumenten/${instrument.slug}`}
                           >
                             {instrument.titel}
