@@ -59,6 +59,10 @@ export default function DesktopNavCard({ navData, closeNav }) {
         >
           <Link
             href='/bouw/planregels'
+            onClick={() => {
+              CustomEvent.trackEvent('Nav click', pathname, 'planregels');
+              closeNav(false);
+            }}
             className={`${
               pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '
             } p-xs active:p-xs-semibold active:no-underline cursor-pointer flex flex-row items-center pt-2`}
