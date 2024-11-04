@@ -4,12 +4,13 @@ import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
 import NewsCard from '@/components/news-page/news-card';
 import Tag from '@/components/tag';
-import { Popover } from '@headlessui/react';
-import { ChevronUpIcon } from '@heroicons/react/outline';
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
+import { IconChevronDown } from '@tabler/icons-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
+// TODO: replace Popover with headless UI Listbox
 export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }) {
   const [articleType, setArticleType] = useState('Alles');
   const [notFeatured, setNotFeatured] = useState();
@@ -83,7 +84,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                 <Popover className='w-64 sm:w-80 relative'>
                   {({ open }) => (
                     <>
-                      <Popover.Button
+                      <PopoverButton
                         className={`${
                           open ? 'rounded-t-cl' : 'rounded-cl'
                         } text-black bg-green-600 hover:text-green-600 flex justify-between items-center border border-green-600 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
@@ -96,15 +97,15 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           <span className='inline text-left p-base-bold text-green-500'>Alles</span>
                         </div>
                         <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
-                          <ChevronUpIcon
+                          <IconChevronDown
                             className={`${
                               open ? '' : 'rotate-180 transform'
-                            } h-5 w-5 text-white z-10`}
+                            } h-6 w-6 text-white z-10`}
                           />
                         </div>
-                      </Popover.Button>
-                      <Popover.Panel className='absolute z-20'>
-                        <Popover.Button
+                      </PopoverButton>
+                      <PopoverPanel className='absolute z-20'>
+                        <PopoverButton
                           className='w-64 sm:w-80'
                           as='div'
                           onClick={() => setArticleType('Agenda')}
@@ -112,25 +113,25 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Agenda</span>
                           </div>
-                        </Popover.Button>
-                        <Popover.Button as='div' onClick={() => setArticleType('Circulair nieuws')}>
+                        </PopoverButton>
+                        <PopoverButton as='div' onClick={() => setArticleType('Circulair nieuws')}>
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Circulair nieuws</span>
                           </div>
-                        </Popover.Button>
+                        </PopoverButton>
 
-                        <Popover.Button as='div' onClick={() => setArticleType('Nieuw op de site')}>
+                        <PopoverButton as='div' onClick={() => setArticleType('Nieuw op de site')}>
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Nieuw op de site</span>
                           </div>
-                        </Popover.Button>
+                        </PopoverButton>
 
-                        <Popover.Button as='div' onClick={() => setArticleType('Artikelen')}>
+                        <PopoverButton as='div' onClick={() => setArticleType('Artikelen')}>
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Artikelen</span>
                           </div>
-                        </Popover.Button>
-                      </Popover.Panel>
+                        </PopoverButton>
+                      </PopoverPanel>
                     </>
                   )}
                 </Popover>
@@ -139,7 +140,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                 <Popover className='w-64 sm:w-80 relative'>
                   {({ open }) => (
                     <>
-                      <Popover.Button
+                      <PopoverButton
                         className={`${
                           open ? 'rounded-t-cl' : 'rounded-cl'
                         } text-black bg-green-600 hover:text-green-600 flex justify-between items-center border border-green-600 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
@@ -154,15 +155,15 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           </span>
                         </div>
                         <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
-                          <ChevronUpIcon
+                          <IconChevronDown
                             className={`${
                               open ? '' : 'rotate-180 transform'
-                            } h-5 w-5 text-white z-10`}
+                            } h-6 w-6 text-white z-10`}
                           />
                         </div>
-                      </Popover.Button>
-                      <Popover.Panel className='absolute z-20'>
-                        <Popover.Button
+                      </PopoverButton>
+                      <PopoverPanel className='absolute z-20'>
+                        <PopoverButton
                           className='w-64 sm:w-80'
                           as='div'
                           onClick={() => setArticleType('Alles')}
@@ -170,25 +171,25 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Alles</span>
                           </div>
-                        </Popover.Button>
-                        <Popover.Button as='div' onClick={() => setArticleType('Circulair nieuws')}>
+                        </PopoverButton>
+                        <PopoverButton as='div' onClick={() => setArticleType('Circulair nieuws')}>
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Circulair nieuws</span>
                           </div>
-                        </Popover.Button>
+                        </PopoverButton>
 
-                        <Popover.Button as='div' onClick={() => setArticleType('Nieuw op de site')}>
+                        <PopoverButton as='div' onClick={() => setArticleType('Nieuw op de site')}>
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Nieuw op de site</span>
                           </div>
-                        </Popover.Button>
+                        </PopoverButton>
 
-                        <Popover.Button as='div' onClick={() => setArticleType('Artikelen')}>
+                        <PopoverButton as='div' onClick={() => setArticleType('Artikelen')}>
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Artikelen</span>
                           </div>
-                        </Popover.Button>
-                      </Popover.Panel>
+                        </PopoverButton>
+                      </PopoverPanel>
                     </>
                   )}
                 </Popover>
@@ -198,7 +199,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                 <Popover className='w-64 sm:w-80 relative'>
                   {({ open }) => (
                     <>
-                      <Popover.Button
+                      <PopoverButton
                         className={`${
                           open ? 'rounded-t-cl' : 'rounded-cl'
                         } text-black bg-green-600 hover:text-green-600 flex justify-between items-center border border-green-600 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
@@ -213,15 +214,15 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           </span>
                         </div>
                         <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
-                          <ChevronUpIcon
+                          <IconChevronDown
                             className={`${
                               open ? '' : 'rotate-180 transform'
-                            } h-5 w-5 text-white z-10`}
+                            } h-6 w-6 text-white z-10`}
                           />
                         </div>
-                      </Popover.Button>
-                      <Popover.Panel className='absolute z-20'>
-                        <Popover.Button
+                      </PopoverButton>
+                      <PopoverPanel className='absolute z-20'>
+                        <PopoverButton
                           className='w-64 sm:w-80'
                           as='div'
                           onClick={() => setArticleType('Alles')}
@@ -229,25 +230,25 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Alles</span>
                           </div>
-                        </Popover.Button>
-                        <Popover.Button as='div' onClick={() => setArticleType('Agenda')}>
+                        </PopoverButton>
+                        <PopoverButton as='div' onClick={() => setArticleType('Agenda')}>
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Agenda</span>
                           </div>
-                        </Popover.Button>
+                        </PopoverButton>
 
-                        <Popover.Button as='div' onClick={() => setArticleType('Nieuw op de site')}>
+                        <PopoverButton as='div' onClick={() => setArticleType('Nieuw op de site')}>
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Nieuw op de site</span>
                           </div>
-                        </Popover.Button>
+                        </PopoverButton>
 
-                        <Popover.Button as='div' onClick={() => setArticleType('Artikelen')}>
+                        <PopoverButton as='div' onClick={() => setArticleType('Artikelen')}>
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Artikelen</span>
                           </div>
-                        </Popover.Button>
-                      </Popover.Panel>
+                        </PopoverButton>
+                      </PopoverPanel>
                     </>
                   )}
                 </Popover>
@@ -256,7 +257,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                 <Popover className='w-64 sm:w-80 relative'>
                   {({ open }) => (
                     <>
-                      <Popover.Button
+                      <PopoverButton
                         className={`${
                           open ? 'rounded-t-cl' : 'rounded-cl'
                         } text-black bg-green-600 hover:text-green-600 flex justify-between items-center border border-green-600 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
@@ -271,15 +272,15 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           </span>
                         </div>
                         <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
-                          <ChevronUpIcon
+                          <IconChevronDown
                             className={`${
                               open ? '' : 'rotate-180 transform'
-                            } h-5 w-5 text-white z-10`}
+                            } h-6 w-6 text-white z-10`}
                           />
                         </div>
-                      </Popover.Button>
-                      <Popover.Panel className='absolute z-20'>
-                        <Popover.Button
+                      </PopoverButton>
+                      <PopoverPanel className='absolute z-20'>
+                        <PopoverButton
                           className='w-64 sm:w-80'
                           as='div'
                           onClick={() => setArticleType('Alles')}
@@ -287,25 +288,25 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Alles</span>
                           </div>
-                        </Popover.Button>
-                        <Popover.Button as='div' onClick={() => setArticleType('Agenda')}>
+                        </PopoverButton>
+                        <PopoverButton as='div' onClick={() => setArticleType('Agenda')}>
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Agenda</span>
                           </div>
-                        </Popover.Button>
+                        </PopoverButton>
 
-                        <Popover.Button as='div' onClick={() => setArticleType('Circulair nieuws')}>
+                        <PopoverButton as='div' onClick={() => setArticleType('Circulair nieuws')}>
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Circulair nieuws</span>
                           </div>
-                        </Popover.Button>
+                        </PopoverButton>
 
-                        <Popover.Button as='div' onClick={() => setArticleType('Artikelen')}>
+                        <PopoverButton as='div' onClick={() => setArticleType('Artikelen')}>
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Artikelen</span>
                           </div>
-                        </Popover.Button>
-                      </Popover.Panel>
+                        </PopoverButton>
+                      </PopoverPanel>
                     </>
                   )}
                 </Popover>
@@ -314,7 +315,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                 <Popover className='w-64 sm:w-80 relative'>
                   {({ open }) => (
                     <>
-                      <Popover.Button
+                      <PopoverButton
                         className={`${
                           open ? 'rounded-t-cl' : 'rounded-cl'
                         } text-black bg-green-600 hover:text-green-600 flex justify-between items-center border border-green-600 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
@@ -329,15 +330,15 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           </span>
                         </div>
                         <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
-                          <ChevronUpIcon
+                          <IconChevronDown
                             className={`${
                               open ? '' : 'rotate-180 transform'
-                            } h-5 w-5 text-white z-10`}
+                            } h-6 w-6 text-white z-10`}
                           />
                         </div>
-                      </Popover.Button>
-                      <Popover.Panel className='absolute z-20'>
-                        <Popover.Button
+                      </PopoverButton>
+                      <PopoverPanel className='absolute z-20'>
+                        <PopoverButton
                           className='w-64 sm:w-80'
                           as='div'
                           onClick={() => setArticleType('Alles')}
@@ -345,25 +346,25 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Alles</span>
                           </div>
-                        </Popover.Button>
-                        <Popover.Button as='div' onClick={() => setArticleType('Agenda')}>
+                        </PopoverButton>
+                        <PopoverButton as='div' onClick={() => setArticleType('Agenda')}>
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Agenda</span>
                           </div>
-                        </Popover.Button>
+                        </PopoverButton>
 
-                        <Popover.Button as='div' onClick={() => setArticleType('Circulair nieuws')}>
+                        <PopoverButton as='div' onClick={() => setArticleType('Circulair nieuws')}>
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Circulair nieuws</span>
                           </div>
-                        </Popover.Button>
+                        </PopoverButton>
 
-                        <Popover.Button as='div' onClick={() => setArticleType('Nieuw op de site')}>
+                        <PopoverButton as='div' onClick={() => setArticleType('Nieuw op de site')}>
                           <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
                             <span className='block pl-3 truncate p-base'>Nieuw op de site</span>
                           </div>
-                        </Popover.Button>
-                      </Popover.Panel>
+                        </PopoverButton>
+                      </PopoverPanel>
                     </>
                   )}
                 </Popover>

@@ -26,8 +26,20 @@ export default {
       options: {
         source: 'title',
         inUnique: 'true',
-        slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
+        slugify: (input) =>
+          input
+            .toLowerCase()
+            .replace(/[^a-zA-Z0-9]/g, '')
+            .replace(/\s+/g, '-')
+            .slice(0, 200),
       },
+      group: 'summary',
+    },
+    {
+      name: 'productChain',
+      title: 'Product Chain',
+      type: 'reference',
+      to: [{ type: 'transitionAgenda' }],
       group: 'summary',
     },
     {
@@ -128,12 +140,6 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      group: 'summary',
-    },
-    {
-      name: 'statusContentTitle',
-      type: 'string',
-      title: 'Status Content Title',
       group: 'summary',
     },
     {

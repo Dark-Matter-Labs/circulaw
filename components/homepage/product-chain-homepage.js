@@ -1,5 +1,5 @@
 import { urlFor } from '@/lib/sanity';
-import { ArrowRightIcon } from '@heroicons/react/outline';
+import { IconArrowRight } from '@tabler/icons-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -47,7 +47,7 @@ export default function PCHomePage({ pcData }) {
                 </div>
                 <div className='grid justify-items-end group-hover:-translate-y-[20px] transition-all duration-300'>
                   <div className='h-10 w-10 rounded-full flex items-center justify-center border-2 text-white border-white bg-transparent group-hover:bg-green-200 group-hover:border-green-200 group-hover:text-green-600  active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white self-end'>
-                    <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                    <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />
                   </div>
                 </div>
               </div>
@@ -84,7 +84,7 @@ export default function PCHomePage({ pcData }) {
                 </div>
                 <div className='grid justify-items-end mr-4'>
                   <div className='h-10 w-10 rounded-full flex items-center justify-center border-2 text-white border-white bg-transparent group-hover:bg-green-200 group-hover:border-green-200 group-hover:text-green-600  active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white self-end'>
-                    <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                    <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />
                   </div>
                 </div>
               </div>

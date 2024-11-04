@@ -1,20 +1,29 @@
 import LinkIcon from '../link-icon';
-import EUTooltip from '../tooltips/eu-tooltip';
 import Highlights from './highlights';
-import { reducedPortableTextComponents } from '@/lib/portable-text/pt-components';
 import { urlFor } from '@/lib/sanity';
-import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Modal from '../modal/modal';
+import ModalContent from '../modal/modal-content';
+import EULawButton from '../modal/modal-buttons/eu-status-button';
+import ImageComponent from '../image-component';
 
 export default function SummaryComponent({ lawData }) {
   return (
     <div className=''>
       {/* Intro section */}
       <div className='global-margin'>
-        <div className='flex flex-col-reverse sm:flex-row gap-y-12 sm:gap-y-0 gap-x-32 my-12 sm:my-20 items-center justify-start'>
-          <div className='p-base order-last sm:order-first max-w-[540px]'>
-            {lawData?.summaryIntroText}
+        <div className='flex flex-col sm:flex-row gap-y-12 sm:gap-y-0 gap-x-32 my-12 sm:my-20 items-start justify-start'>
+          <div className='flex flex-col sm:flex-col-reverse'>
+            <div className='mb-6 sm:mb-0 flex relative sm:hidden items-center justify-center h-[205px] w-full'>
+              {lawData?.introImage && (
+                <ImageComponent image={lawData?.introImage} caption={lawData?.imageAlt ?? ''} />
+              )}
+            </div>
+            <h3 className='heading-xl-semibold text-green-800 mb-6'>Overzicht</h3>
+            <div className='p-base order-last sm:order-first max-w-[540px]'>
+              {lawData?.summaryIntroText}
+            </div>
           </div>
           <div className='flex flex-col items-center justify-center gap-y-8'>
             <div className='mb-6 sm:mb-0 sm:flex items-center justify-center max-h-80 hidden'>
@@ -28,12 +37,8 @@ export default function SummaryComponent({ lawData }) {
                 />
               )}
             </div>
-            <EUTooltip title='Status' lawData={lawData}>
-              <div>
-                <PortableText
-                  value={lawData?.statusContent}
-                  components={reducedPortableTextComponents}
-                />
+            <Modal Button={<EULawButton lawData={lawData} />}>
+              <ModalContent title='Status' ptContent={lawData?.statusContent}>
                 <div className='heading-2xl-semibold mb-8 mt-6'>Welke statussen zijn er?</div>
                 <div>
                   <h3 className='mb-4 heading-xl-semibold'>1: In onderhandeling</h3>
@@ -70,8 +75,8 @@ export default function SummaryComponent({ lawData }) {
                     daardoor niet in de nationale wet- en regelgeving geïmplementeerd te worden.
                   </p>
                 </div>
-              </div>
-            </EUTooltip>
+              </ModalContent>
+            </Modal>
           </div>
         </div>
       </div>

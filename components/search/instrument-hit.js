@@ -58,7 +58,7 @@ export const InstrumentHit = ({ hit }) => {
               </div>
               {/* ADD METADATA */}
               <div className='hidden sm:block'>
-                <div className='h-auto flex flex-row gap-x-3 grow-0 items-center justify-self-center mt-4'>
+                <div className='h-auto flex flex-row gap-x-3 grow-0 items-center justify-self-start mt-4'>
                   <div className='flex flex-col basis-houdbaarheid'>
                     <div className='p-2xs-semibold text-gray-600 mb-1'>Juridische houdbaarheid</div>
                     <div className='flex items-center'>

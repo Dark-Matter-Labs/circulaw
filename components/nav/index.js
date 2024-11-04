@@ -23,14 +23,19 @@ import {
   useTransitionStyles,
   FloatingOverlay,
 } from '@floating-ui/react';
-import { Disclosure, Transition } from '@headlessui/react';
-import { ChevronDownIcon, MenuIcon, XIcon, SearchIcon } from '@heroicons/react/outline';
+import { Disclosure, DisclosurePanel, DisclosureButton } from '@headlessui/react';
+import {
+  IconChevronDown,
+  IconFileDownload,
+  IconMenu2,
+  IconSearch,
+  IconX,
+} from '@tabler/icons-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect, useRef, Suspense } from 'react';
 import { usePathname } from 'next/navigation';
 import SearchButton from './search-button';
-import { IconFileDownload } from '@tabler/icons-react';
 
 const PlayerWithNoSSR = dynamic(
   () => import('@lottiefiles/react-lottie-player').then((module) => module.Player),
@@ -371,9 +376,9 @@ export default function Nav(props) {
                 >
                   <span className='sr-only'>Open main menu</span>
                   {mobileMenuIsOpen ? (
-                    <XIcon className='block h-10 w-10' aria-hidden='true' />
+                    <IconX className='block h-10 w-10' aria-hidden='true' />
                   ) : (
-                    <MenuIcon className='block h-10 w-10' aria-hidden='true' />
+                    <IconMenu2 className='block h-10 w-10' aria-hidden='true' />
                   )}
                 </button>
                 {mobileMenuIsMounted && (
@@ -396,152 +401,94 @@ export default function Nav(props) {
                         >
                           <div className='flex flex-col items-start justify-end global-margin '>
                             <Disclosure>
-                              {({ open }) => (
-                                <>
-                                  {' '}
-                                  <Disclosure.Button
-                                    className={`${
-                                      open ? 'text-green-500' : 'text-green-800'
-                                    } py-4 w-full text-left heading-xl-semibold flex flex-row items-center`}
-                                  >
-                                    Productketens
-                                    <ChevronDownIcon
-                                      className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`}
-                                    />
-                                  </Disclosure.Button>
-                                  <Transition
-                                    show={open}
-                                    enter='transition duration-300 ease-out'
-                                    enterFrom='transform opacity-0'
-                                    enterTo='transform opacity-100'
-                                    leave='transition duration-75 ease-out'
-                                    leaveFrom='transform opacity-300'
-                                    leaveTo='transform opacity-0'
-                                    className='w-full'
-                                  >
-                                    <Disclosure.Panel className='flex flex-col flex-grow ml-4'>
-                                      <ul>
-                                        {props?.navItems?.map((navItem, id) => (
-                                          <MobileDisclosure
-                                            key={id}
-                                            navData={navItem}
-                                            closeMenu={setMobileMenuIsOpen}
-                                          />
-                                        ))}
-                                      </ul>
-                                    </Disclosure.Panel>
-                                  </Transition>
-                                </>
-                              )}
+                              <>
+                                <DisclosureButton className='py-4 w-full text-left heading-xl-semibold flex flex-row items-center text-green-800 group data-[open]:text-green-500'>
+                                  Productketens
+                                  <IconChevronDown className='h-5 w-5 mt-1 ml-2 group-data-[open]:rotate-180' />
+                                </DisclosureButton>
+                                <DisclosurePanel className='flex flex-col flex-grow ml-4'>
+                                  <ul>
+                                    {props?.navItems?.map((navItem, id) => (
+                                      <MobileDisclosure
+                                        key={id}
+                                        navData={navItem}
+                                        closeMenu={setMobileMenuIsOpen}
+                                      />
+                                    ))}
+                                  </ul>
+                                </DisclosurePanel>
+                              </>
                             </Disclosure>
 
                             {/* EU */}
                             <Disclosure>
-                              {({ open }) => (
-                                <>
-                                  <Disclosure.Button
-                                    className={`${
-                                      open ? 'text-green-500' : 'text-green-800'
-                                    }  border-t py-4 w-full text-left heading-xl-semibold flex flex-row items-center`}
-                                  >
-                                    EU wetgeving
-                                    <ChevronDownIcon
-                                      className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`}
-                                    />
-                                  </Disclosure.Button>
-                                  <Transition
-                                    show={open}
-                                    enter='transition duration-300 ease-out'
-                                    enterFrom='transform opacity-0'
-                                    enterTo='transform opacity-100'
-                                    leave='transition duration-75 ease-out'
-                                    leaveFrom='transform opacity-300'
-                                    leaveTo='transform opacity-0'
-                                    className='w-full'
-                                  >
-                                    <Disclosure.Panel className='ml-4'>
-                                      <ul>
-                                        <li className='p-base h-10 my-2 last:mb-2 text-green-600 cursor-pointer flex items-center'>
-                                          <Link
-                                            href={'/eu-wetgeving'}
-                                            onClick={() => setMobileMenuIsOpen(false)}
-                                          >
-                                            Overzicht
-                                          </Link>
-                                        </li>
-                                        {props?.euSlugs?.map((euPage) => (
-                                          <li
-                                            key={euPage?.slug}
-                                            className='p-base h-10 my-2 last:mb-2 text-green-600 cursor-pointer flex items-center'
-                                          >
-                                            <Link
-                                              href={`/eu-wetgeving/${euPage?.slug}`}
-                                              onClick={() => setMobileMenuIsOpen(false)}
-                                            >
-                                              {euPage.title}
-                                            </Link>
-                                          </li>
-                                        ))}
-                                        <li className='p-base h-auto mt-6 py-2 last:mb-2 text-green-400 cursor-pointer items-center flex border-t border-green-600'>
-                                          <Link
-                                            href='https://www.circulaw.nl/European_green_deal.pdf'
-                                            onClick={() => setMobileMenuIsOpen(false)}
-                                            className='flex flex-row items-center justify-center h-10'
-                                          >
-                                            <IconFileDownload className='w-5 h-5 text-green-400 mr-2' />
-                                            EU Green Deal
-                                          </Link>
-                                        </li>
-                                      </ul>
-                                    </Disclosure.Panel>
-                                  </Transition>
-                                </>
-                              )}
+                              <>
+                                <DisclosureButton className='border-t py-4 w-full text-left heading-xl-semibold flex flex-row items-center text-green-800 group data-[open]:text-green-500'>
+                                  EU wetgeving
+                                  <IconChevronDown className='h-5 w-5 mt-1 ml-2 group-data-[open]:rotate-180' />
+                                </DisclosureButton>
+                                <DisclosurePanel className='ml-4'>
+                                  <ul>
+                                    <li className='p-base h-10 my-2 last:mb-2 text-green-600 cursor-pointer flex items-center'>
+                                      <Link
+                                        href={'/eu-wetgeving'}
+                                        onClick={() => setMobileMenuIsOpen(false)}
+                                      >
+                                        Overzicht
+                                      </Link>
+                                    </li>
+                                    {props?.euSlugs?.map((euPage) => (
+                                      <li
+                                        key={euPage?.slug}
+                                        className='p-base h-10 my-2 last:mb-2 text-green-600 cursor-pointer flex items-center'
+                                      >
+                                        <Link
+                                          href={`/eu-wetgeving/${euPage?.slug}`}
+                                          onClick={() => setMobileMenuIsOpen(false)}
+                                        >
+                                          {euPage.title}
+                                        </Link>
+                                      </li>
+                                    ))}
+                                    <li className='p-base h-auto mt-6 py-2 last:mb-2 text-green-400 cursor-pointer items-center flex border-t border-green-600'>
+                                      <Link
+                                        href='https://www.circulaw.nl/European_green_deal.pdf'
+                                        onClick={() => setMobileMenuIsOpen(false)}
+                                        className='flex flex-row items-center justify-center h-10'
+                                      >
+                                        <IconFileDownload className='w-5 h-5 text-green-400 mr-2' />
+                                        EU Green Deal
+                                      </Link>
+                                    </li>
+                                  </ul>
+                                </DisclosurePanel>
+                              </>
                             </Disclosure>
 
                             <Disclosure>
-                              {({ open }) => (
-                                <>
-                                  <Disclosure.Button
-                                    className={`${
-                                      open ? 'text-green-500' : 'text-green-800'
-                                    }  border-t py-4 w-full text-left heading-xl-semibold flex flex-row items-center`}
-                                  >
-                                    Over CircuLaw
-                                    <ChevronDownIcon
-                                      className={`${open ? 'rotate-180' : ''} h-4 w-4 mt-1 ml-2`}
-                                    />
-                                  </Disclosure.Button>
-                                  <Transition
-                                    show={open}
-                                    enter='transition duration-300 ease-out'
-                                    enterFrom='transform opacity-0'
-                                    enterTo='transform opacity-100'
-                                    leave='transition duration-75 ease-out'
-                                    leaveFrom='transform opacity-300'
-                                    leaveTo='transform opacity-0'
-                                    className='w-full'
-                                  >
-                                    <Disclosure.Panel className='ml-4'>
-                                      <ul>
-                                        {props?.aboutSlugs?.map((aboutPage) => (
-                                          <li
-                                            key={aboutPage?.slug}
-                                            className='p-base h-10 my-2 last:mb-2 text-green-600 cursor-pointer flex items-center'
-                                          >
-                                            <Link
-                                              href={`/over/${aboutPage?.slug}`}
-                                              onClick={() => setMobileMenuIsOpen(false)}
-                                            >
-                                              {aboutPage.pageTitle}
-                                            </Link>
-                                          </li>
-                                        ))}
-                                      </ul>
-                                    </Disclosure.Panel>
-                                  </Transition>
-                                </>
-                              )}
+                              <>
+                                <DisclosureButton className='border-t py-4 w-full text-left heading-xl-semibold flex flex-row items-center text-green-800 group data-[open]:text-green-500'>
+                                  Over CircuLaw
+                                  <IconChevronDown className='h-5 w-5 mt-1 ml-2 group-data-[open]:rotate-180' />
+                                </DisclosureButton>
+                                <DisclosurePanel className='ml-4'>
+                                  <ul>
+                                    {props?.aboutSlugs?.map((aboutPage) => (
+                                      <li
+                                        key={aboutPage?.slug}
+                                        className='p-base h-10 my-2 last:mb-2 text-green-600 cursor-pointer flex items-center'
+                                      >
+                                        <Link
+                                          href={`/over/${aboutPage?.slug}`}
+                                          onClick={() => setMobileMenuIsOpen(false)}
+                                        >
+                                          {aboutPage.pageTitle}
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </DisclosurePanel>
+                              </>
                             </Disclosure>
                             <MobileSimpleButton
                               name='Nieuws'
@@ -566,7 +513,7 @@ export default function Nav(props) {
                               >
                                 <span className='mr-2'>Zoeken </span>
                                 <span className='bg-green-800 text-green-50 flex items-center justify-center rounded-clSm h-6 w-7'>
-                                  <SearchIcon className='h-4 w-4' />
+                                  <IconSearch className='h-4 w-4' />
                                 </span>
                               </Link>
                               <LangSwitch
@@ -605,7 +552,7 @@ export default function Nav(props) {
                     >
                       Productketens
                     </span>
-                    <ChevronDownIcon
+                    <IconChevronDown
                       className={`${
                         mainMenuIsOpen
                           ? [
@@ -679,7 +626,7 @@ export default function Nav(props) {
                     >
                       EU wetgeving
                     </span>
-                    <ChevronDownIcon
+                    <IconChevronDown
                       className={`${
                         euMenuIsOpen
                           ? [
@@ -801,7 +748,7 @@ export default function Nav(props) {
                     >
                       Over CircuLaw
                     </span>
-                    <ChevronDownIcon
+                    <IconChevronDown
                       className={`${
                         overMenuIsOpen
                           ? [
@@ -902,7 +849,7 @@ export default function Nav(props) {
                             ]
                       } flex items-center justify-center rounded-clSm h-6 w-7`}
                     >
-                      <SearchIcon className='h-4 w-4' />
+                      <IconSearch className='h-4 w-4' />
                     </span>
                   </button>
                   {searchMenuIsMounted && (
@@ -958,7 +905,7 @@ export default function Nav(props) {
                                     } absolute top-3.5 right-28 rounded-full p-2  group`}
                                     onClick={() => setSearchQuery('')}
                                   >
-                                    <XIcon
+                                    <IconX
                                       className={`${
                                         pathname === '/' ? 'text-white' : 'text-green-600'
                                       } h-6 w-6`}
