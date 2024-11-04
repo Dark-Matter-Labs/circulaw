@@ -14,7 +14,7 @@ export default function InstrumentMetaData({ data, borders }) {
             borders === true ? 'sm:border-y sm:border-gray-300' : 'pt-5 pb-3'
           } h-auto flex flex-row gap-x-4 grow-0 items-center justify-self-start w-full max-w-[870px]`}
         >
-          <div className='h-auto flex flex-row gap-x-3 grow-0 items-st justify-self-start w-full mt-4'>
+          <div className='h-auto flex flex-row gap-x-3 grow-0 items-st justify-self-start w-full'>
             <div className='flex flex-col basis-houdbaarheid'>
               <div className='flex items-center'>
                 <div className='p-2xs-semibold text-gray-600 mb-1'>Juridische houdbaarheid</div>
