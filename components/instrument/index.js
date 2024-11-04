@@ -62,8 +62,12 @@ export default function Instrument({ data }) {
               </div>
               <div>
                 {/* MODELTEXTS */}
+
                 {data.modelTexts && (
                   <>
+                  <h2 className='mt-10 mb-6 heading-xl-semibold sm:heading-3xl-semibold'>
+                   Modeltekst voor het omgevingsplan
+                  </h2>
                     {data.modelTexts.map((text, id) => (
                       <>
                         <Disclosure as='div' key={id} className='my-6'>
@@ -72,8 +76,7 @@ export default function Instrument({ data }) {
                               <div className='rounded-cl max-w-min text-nowrap border border-green-400 text-green-400 px-2 py-1 p-2xs-semibold first-letter:uppercase mb-4'>
                                 {text.pillar}
                               </div>
-                              <h5 className='heading-2xl-semibold mb-2.5'>{text.title}</h5>
-                              <h6 className='heading-xl-semibold'>Modeltekst omgevingsplan</h6>
+                              <h5 className='heading-2xl-semibold'>{text.title}</h5>
                             </div>
                             <IconChevronDown className='h-6 w-6 text-gray-800 group-data-[open]:rotate-180 place-self-start' />
                           </DisclosureButton>
