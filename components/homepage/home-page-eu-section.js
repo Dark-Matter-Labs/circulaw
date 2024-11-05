@@ -1,5 +1,5 @@
 import CustomButton from '@/components/custom-button';
-import { ArrowRightIcon } from '@heroicons/react/outline';
+import { IconArrowRight } from '@tabler/icons-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -37,7 +37,7 @@ export default function HomePageEUSection({ euData }) {
             <span className='text-green-500 link-lg link-interaction'>
               <CustomButton color='whiteBackground'>
                 Bekijk de EU wetgeving{' '}
-                <ArrowRightIcon className='inline-block h-4 w-4 ml-1' aria-hidden='true' />
+                <IconArrowRight className='inline-block h-5 w-5 ml-1' aria-hidden='true' />
               </CustomButton>
             </span>
           </div>
