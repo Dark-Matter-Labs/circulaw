@@ -83,12 +83,6 @@ export default async function ModelTextPage({ params }) {
               </Link>{' '}
               ze heeft gedefinieerd.
             </p>
-            <p className='p-xs italic mb-6'>
-              <span className='font-semibold'>Let op:</span> De planregels zijn
-              &apos;modelteksten&apos;. Deze zijn door de juristen van CircuLaw zelf opgesteld. Typ
-              de modelteksten nooit zomaar klakkeloos over, wees je altijd bewust van de context en
-              samenhang met informatie en teksten buiten de regels zelf.
-            </p>
             <Link
               href='/bouw/planregels'
               className='flex items-center mb-6 text-green-600 hover:link-interaction underline p-base-semibold group'
