@@ -77,7 +77,11 @@ export default async function ModelTextPage({ params }) {
             <p className='p-base pb-6'>
               We hebben de planregels voor het omgevingsplan ingedeeld op basis van 6 pijlers . Deze
               sluiten aan op de pijlers zoals{' '}
-              <Link href='https://toekomstbestendigbouwen.nl/' className='link-interaction' target='_blank'>
+              <Link
+                href='https://toekomstbestendigbouwen.nl/'
+                className='link-interaction'
+                target='_blank'
+              >
                 Toekomstig Bestendig Bouwen
                 <LinkIcon />
               </Link>{' '}
