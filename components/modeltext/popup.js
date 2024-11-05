@@ -102,14 +102,14 @@ export default function PopUp({ pillars, modelTexts }) {
         </ul>
         <div>
           {pillars.map((p) => (
-            <>
+            <div key={p.slug}>
               {p.slug === selectedPillar && (
                 <>
                   <h3 className='heading-xl-semibold mt-8 mb-2'>{p.title}</h3>
                   <p className='p-xs max-w-[700px]'>{p.description}</p>
                 </>
               )}
-            </>
+            </div>
           ))}
         </div>
       </div>

@@ -9,11 +9,11 @@ export default function PCHomePage({ pcData }) {
       {' '}
       <ul className='hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-4 gap-x-2 w-full'>
         {pcData?.map((chain, id) => (
+           <Link key={id} href={`/${chain.slug}`}>
           <li
-            key={id}
             className='group h-[400px] w-auto rounded-cl flex flex-col justify-between relative overflow-hidden max-w-[250px]'
           >
-            <Link href={`/${chain.slug}`}>
+           
               <Image
                 src={urlFor(chain?.image).url()}
                 alt={chain.alt}
@@ -51,8 +51,9 @@ export default function PCHomePage({ pcData }) {
                   </div>
                 </div>
               </div>
-            </Link>
+           
           </li>
+          </Link>
         ))}
       </ul>
       <ul className='sm:hidden flex flex-col w-full'>
