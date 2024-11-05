@@ -91,7 +91,7 @@ export default async function ModelTextPage({ params }) {
                 <IconArrowLeft className='inline-block h-6 w-6' aria-hidden='true' />
               </div>
               <span className='max-w-xs'>
-              Borgen circulair bouwen in omgevingsvisie, - programma, en - plan
+                Borgen circulair bouwen in omgevingsvisie, - programma, en - plan
               </span>
             </Link>
           </div>

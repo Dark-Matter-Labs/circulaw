@@ -42,8 +42,9 @@ export default function PCLayout({ ...props }) {
                         Planregels: modelteksten voor het omgevingsplan
                       </p>
                       <p className='p-base max-w-sm'>
-                      Samen met de omgevingsvisie en omgevingsprogramma is het omgevingsplan een van de instrumenten om circulair bouwen te bevorderen
-                       </p>
+                        Samen met de omgevingsvisie en omgevingsprogramma is het omgevingsplan een
+                        van de instrumenten om circulair bouwen te bevorderen
+                      </p>
                       <CustomButton color='lightGreenBackground'>
                         Meer over het omgevingsplan
                         <IconArrowRight />

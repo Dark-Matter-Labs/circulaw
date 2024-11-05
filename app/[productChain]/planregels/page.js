@@ -39,7 +39,7 @@ export default function ScrollyTellingPage({ params }) {
               </div>
               <div className='mb-6 sm:mb-10 flex flex-col gap-2'>
                 <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-white'>
-                Modelteksten voor omgevingsplan
+                  Modelteksten voor omgevingsplan
                 </h1>
               </div>
             </div>
@@ -66,11 +66,10 @@ export default function ScrollyTellingPage({ params }) {
                   <DisclosureButton className='group rounded-clSm text-gray-800 bg-green-50 flex justify-between items-center w-full px-6 sm:px-10 py-6'>
                     <div className='flex flex-col'>
                       <h4 className='heading-xl-semibold sm:heading-2xl-semibold text-left mb-2.5'>
-                      Samenhang
+                        Samenhang
                       </h4>
                       <h5 className='p-xs-semibold sm:heading-xl-semibold text-left'>
-                      Omgevingsvisie, - programma&apos;s, - plan
-
+                        Omgevingsvisie, - programma&apos;s, - plan
                       </h5>
                     </div>
                     <IconChevronDown className='h-6 w-6 text-gray-800 group-data-[open]:rotate-180 place-self-start' />
@@ -114,16 +113,13 @@ export default function ScrollyTellingPage({ params }) {
                   <div className='mb-4 p-2xs-semibold text-green-800 border rounded-cl border-green-800 px-2 py-1'>
                     Plangregels
                   </div>
-                  <p className='heading-2xl-semibold max-w-sm mb-6'>
-                  Circulaire bouw verankeren 
-
-                  </p>
+                  <p className='heading-2xl-semibold max-w-sm mb-6'>Circulaire bouw verankeren</p>
                   <p className='p-base max-w-sm mb-6'>
-                  Neem de juiste teksten op in je omgevingsplan
+                    Neem de juiste teksten op in je omgevingsplan
                   </p>
                   <div className='flex flex-row items-center text-green-800 p-base-semibold group-hover:text-green-200'>
-                  Bekijk de planregels
-                  <IconArrowRight className='h-5 w-5 ml-0.5' />
+                    Bekijk de planregels
+                    <IconArrowRight className='h-5 w-5 ml-0.5' />
                   </div>
                 </div>
               </Link>
