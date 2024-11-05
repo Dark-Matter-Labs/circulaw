@@ -97,7 +97,7 @@ export default async function ModelTextPage({ params }) {
                 <IconArrowLeft className='inline-block h-6 w-6' aria-hidden='true' />
               </div>
               <span className='max-w-xs'>
-                Terug naar de informatie pagina over het omgevingsplan en de planregels
+              Borgen circulair bouwen in omgevingsvisie, - programma, en - plan
               </span>
             </Link>
           </div>
