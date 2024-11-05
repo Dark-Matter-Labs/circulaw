@@ -61,7 +61,7 @@ export default async function ModelTextPage({ params }) {
                   href='/bouw/planregels'
                   className='hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white pl-3'
                 >
-                  Circulair bouwen meer effect met mix van sintrumenten
+                  Modelteksten voor omgevingsplan
                 </Link>
               </span>
             </div>
