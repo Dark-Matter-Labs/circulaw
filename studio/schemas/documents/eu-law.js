@@ -38,8 +38,8 @@ export default {
     {
       name: 'productChain',
       title: 'Product Chain',
-      type: 'reference',
-      to: [{ type: 'transitionAgenda' }],
+      type: 'array',
+      of: [{ type: 'reference', to: [{type:'transitionAgenda'}] }],
       group: 'summary',
     },
     {
