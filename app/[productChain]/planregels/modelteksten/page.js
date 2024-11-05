@@ -83,12 +83,6 @@ export default async function ModelTextPage({ params }) {
               </Link>{' '}
               ze heeft gedefinieerd.
             </p>
-            <p className='p-xs italic mb-6'>
-              <span className='font-semibold'>Let op:</span> De planregels zijn
-              &apos;modelteksten&apos;. Deze zijn door de juristen van CircuLaw zelf opgesteld. Typ
-              de modelteksten nooit zomaar klakkeloos over, wees je altijd bewust van de context en
-              samenhang met informatie en teksten buiten de regels zelf.
-            </p>
             <Link
               href='/bouw/planregels'
               className='flex items-center mb-6 text-green-600 hover:link-interaction underline p-base-semibold group'
@@ -97,7 +91,7 @@ export default async function ModelTextPage({ params }) {
                 <IconArrowLeft className='inline-block h-6 w-6' aria-hidden='true' />
               </div>
               <span className='max-w-xs'>
-                Terug naar de informatie pagina over het omgevingsplan en de planregels
+                Borgen circulair bouwen in omgevingsvisie, - programma, en - plan
               </span>
             </Link>
           </div>

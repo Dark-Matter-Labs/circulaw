@@ -39,7 +39,7 @@ export default function ScrollyTellingPage({ params }) {
               </div>
               <div className='mb-6 sm:mb-10 flex flex-col gap-2'>
                 <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-white'>
-                  Planregels: modelteksten voor het omgevingsplan
+                  Modelteksten voor omgevingsplan
                 </h1>
               </div>
             </div>
@@ -47,7 +47,7 @@ export default function ScrollyTellingPage({ params }) {
         </div>
         <div className='global-margin py-10 sm:py-16 flex flex-col md:flex-row relative'>
           <div className='basis-2/3 max-w-4xl'>
-            <h2 className='heading-2xl-semibold sm:heading-3xl-semibold mb-6'>Begintitel</h2>
+            <h2 className='heading-2xl-semibold sm:heading-3xl-semibold mb-6'>Planregels</h2>
             <p className='p-base mb-6 max-w-2xl'>
               Wil je werkelijk impact maken, zet dan een mix van instrumenten in. Voor het
               stimuleren van circulaire bouw kun je aan de slag met de omgevingsvisie, het
@@ -66,13 +66,12 @@ export default function ScrollyTellingPage({ params }) {
                   <DisclosureButton className='group rounded-clSm text-gray-800 bg-green-50 flex justify-between items-center w-full px-6 sm:px-10 py-6'>
                     <div className='flex flex-col'>
                       <h4 className='heading-xl-semibold sm:heading-2xl-semibold text-left mb-2.5'>
-                        Samenhang omgevingsvisie
+                        Samenhang
                       </h4>
                       <h5 className='p-xs-semibold sm:heading-xl-semibold text-left'>
-                        Omgevingsvisie, omgevingsprogramma’s en omgevingsplan
+                        Omgevingsvisie, - programma&apos;s, - plan
                       </h5>
                     </div>
-
                     <IconChevronDown className='h-6 w-6 text-gray-800 group-data-[open]:rotate-180 place-self-start' />
                   </DisclosureButton>
                   <DisclosurePanel className='bg-green-50 -mt-6 px-6 sm:px-10 pb-4 rounded-b-clSm'>
@@ -114,14 +113,13 @@ export default function ScrollyTellingPage({ params }) {
                   <div className='mb-4 p-2xs-semibold text-green-800 border rounded-cl border-green-800 px-2 py-1'>
                     Plangregels
                   </div>
-                  <p className='heading-2xl-semibold max-w-sm mb-6'>
-                    Aan de slag met het omgevingsplan
-                  </p>
+                  <p className='heading-2xl-semibold max-w-sm mb-6'>Circulaire bouw verankeren</p>
                   <p className='p-base max-w-sm mb-6'>
-                    Ga direct aan de slag met de modelteksten voor planregels in het omgevingsplan
+                    Neem de juiste teksten op in je omgevingsplan
                   </p>
                   <div className='flex flex-row items-center text-green-800 p-base-semibold group-hover:text-green-200'>
-                    Modeltekst bekijken <IconArrowRight className='h-5 w-5 ml-0.5' />
+                    Bekijk de planregels
+                    <IconArrowRight className='h-5 w-5 ml-0.5' />
                   </div>
                 </div>
               </Link>
