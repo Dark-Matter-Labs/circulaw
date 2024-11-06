@@ -1,6 +1,6 @@
 import CustomButton from '../custom-button';
 import { urlFor } from '@/lib/sanity';
-import { ArrowRightIcon } from '@heroicons/react/outline';
+import { IconArrowRight } from '@tabler/icons-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -42,7 +42,7 @@ export default function ThemaCard({ themaCards }) {
                   <p className='p-base text-gray-100 w-full'>{thema.homePageCardText}</p>
                   <div className='flex justify-end flex-grow items-end'>
                     <div className='h-12 w-12 rounded-full flex items-center justify-center border-2 border-gray-200 group-hover:border-green-200 bg-transparent group-hover:bg-green-200 active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white self-end  text-gray-200 group-hover:text-green-600'>
-                      <ArrowRightIcon className='inline-block h-5 w-5' aria-hidden='true' />
+                      <IconArrowRight className='inline-block h-6 w-6' aria-hidden='true' />
                     </div>
                   </div>
                 </div>

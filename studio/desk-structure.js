@@ -2,10 +2,11 @@ import { AiOutlineHome } from 'react-icons/ai';
 import { BsCircle, BsNewspaper } from 'react-icons/bs';
 import { FaLanguage, FaHandshake, FaQuestion } from 'react-icons/fa';
 import { FcAbout } from 'react-icons/fc';
-import { GiEuropeanFlag } from 'react-icons/gi';
+import { GiEuropeanFlag, GiGreekTemple } from 'react-icons/gi';
 import { GrNavigate } from 'react-icons/gr';
 import { VscLaw } from 'react-icons/vsc';
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
+import { CiTextAlignJustify } from 'react-icons/ci';
 
 export const Structure = (S, context) =>
   S.list()
@@ -69,6 +70,19 @@ export const Structure = (S, context) =>
         title: 'News Items',
         icon: BsNewspaper,
       }),
+      S.listItem()
+        .title('Model Texts by Pillar')
+        .icon(CiTextAlignJustify)
+        .child(
+          S.documentTypeList('pillar')
+            .title('Model Texts')
+            .child((pillarId) =>
+              S.documentList()
+                .title('Model Texts')
+                .filter('_type in ["modelText"] && $pillarId == pillar._ref')
+                .params({ pillarId }),
+            ),
+        ),
       S.divider(),
       S.listItem()
         .title('Productketen')
@@ -86,6 +100,13 @@ export const Structure = (S, context) =>
         .title('EU wetgeving')
         .icon(GiEuropeanFlag)
         .child(S.documentList().title('EU wetgeving').filter('_type == "euLaw"')),
+      orderableDocumentListDeskItem({
+        type: 'pillar',
+        S,
+        context,
+        title: 'Pillars',
+        icon: GiGreekTemple,
+      }),
       S.documentListItem().schemaType('FAQpage').title('FAQ Page').icon(FaQuestion),
       S.listItem()
         .title('English Page')

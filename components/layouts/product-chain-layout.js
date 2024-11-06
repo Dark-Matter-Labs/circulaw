@@ -1,10 +1,12 @@
 import ThemaCard from '../product-chain-page/thema-cards';
-import PCTooltip from '../tooltips/product-chain-tooltip';
 import CustomButton from '@/components/custom-button';
 import PageHeader from '@/components/product-chain-page/product-chain-header';
 import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
+import Modal from '../modal/modal';
+import ModalContent from '../modal/modal-content';
+import { IconArrowRight } from '@tabler/icons-react';
 
 // TODO: See what we could move to a layout.js file instead of having everything in components.
 export default function PCLayout({ ...props }) {
@@ -14,7 +16,6 @@ export default function PCLayout({ ...props }) {
         {/* HEADER DESKTOP */}
         <PageHeader pageTitle={props?.productChainData?.pcName} />
         {/* HEADER MOBILE */}
-
         <div className='bg-gray-100'>
           <div className='global-margin pb-12 sm:pb-20'>
             <div className='pt-14 pb-0 sm:pb-10'>
@@ -26,9 +27,32 @@ export default function PCLayout({ ...props }) {
                 {props?.productChainData?.introTwo}
               </p>
             </div>
-
             <div className='-z-20'>
-              <ThemaCard themaCards={props?.themaList} />
+              <ThemaCard
+                themaCards={props?.themaList}
+                transitionAgenda={props.productChainData.pcName}
+              />
+            </div>
+            <div>
+              {props.productChainData.pcName === 'Bouw' && (
+                <div className='mt-20'>
+                  <Link href='/bouw/planregels'>
+                    <div className='w-full bg-green-50 flex flex-col md:flex-row border border-gray-200 rounded-cl items-start md:items-center justify-between px-10 py-8 gap-8'>
+                      <p className='heading-2xl-semibold max-w-sm'>
+                        Planregels: modelteksten voor het omgevingsplan
+                      </p>
+                      <p className='p-base max-w-sm'>
+                        Samen met de omgevingsvisie en omgevingsprogramma is het omgevingsplan een
+                        van de instrumenten om circulair bouwen te bevorderen
+                      </p>
+                      <CustomButton color='lightGreenBackground'>
+                        Meer over het omgevingsplan
+                        <IconArrowRight />
+                      </CustomButton>
+                    </div>
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -60,11 +84,18 @@ export default function PCLayout({ ...props }) {
                     <div className='h-full flex items-start'>
                       <p className='p-base'>{impact.detail}</p>
                     </div>
-                    <PCTooltip title={impact.disclosureTitle} content={impact.disclosureContent}>
-                      <p className='pt-8 p-base-bold text-green-800 border-b pb-1 border-green-800'>
-                        {impact.question}
-                      </p>
-                    </PCTooltip>
+                    <Modal
+                      Button={
+                        <p className='pt-8 p-base-bold text-green-800 border-b pb-1 border-green-800'>
+                          {impact.question}
+                        </p>
+                      }
+                    >
+                      <ModalContent
+                        title={impact.disclosureTitle}
+                        ptContent={impact.disclosureContent}
+                      ></ModalContent>
+                    </Modal>
                   </div>
                 ))}
               </div>

@@ -1,5 +1,5 @@
 'use client';
-import { LinkIcon } from '@heroicons/react/outline';
+import { IconLink } from '@tabler/icons-react';
 import {
   EmailShareButton,
   LinkedinShareButton,
@@ -84,7 +84,7 @@ export default function SocialButtons({ title, viewport }) {
         </EmailShareButton>
       </span>
       <span className='pr-2' title='Copy link to clipboard'>
-        <LinkIcon
+        <IconLink
           className='inline-block p-1 h-6 w-6 bg-gray-100 rounded-full text-[#A2A3A2] hover:cursor-pointer hover:bg-green-300'
           onClick={() => {
             navigator.clipboard.writeText(url + pathname);

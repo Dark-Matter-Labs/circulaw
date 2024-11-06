@@ -1,6 +1,5 @@
 import '../global.css';
 import { Plus_Jakarta_Sans } from 'next/font/google';
-import { LinkedInInsightTag } from 'nextjs-linkedin-insight-tag';
 
 import globalMeta from '@/utils/global-meta';
 import Layout from '@/components/layouts/layout';
@@ -59,7 +58,6 @@ export default async function RootLayout({ children }) {
         >
           {children}
         </Layout>
-        <LinkedInInsightTag />
       </body>
     </html>
   );

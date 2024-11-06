@@ -1,5 +1,5 @@
 import CustomButton from '../custom-button';
-import { ArrowDownIcon } from '@heroicons/react/outline';
+import { IconArrowDown } from '@tabler/icons-react';
 import { Link as ScrollLink } from 'react-scroll';
 
 export default function HomepageHeader() {
@@ -22,7 +22,7 @@ export default function HomepageHeader() {
               <CustomButton color='home'>
                 <ScrollLink to='thema' smooth={true} offset={-95}>
                   Bekijk de thema&rsquo;s{' '}
-                  <ArrowDownIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                  <IconArrowDown className='inline-block h-5 w-5' aria-hidden='true' />
                 </ScrollLink>
               </CustomButton>
             </div>
@@ -30,7 +30,7 @@ export default function HomepageHeader() {
               <CustomButton color='home'>
                 <ScrollLink to='about' smooth={true} offset={-100}>
                   Meer over CircuLaw?{' '}
-                  <ArrowDownIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                  <IconArrowDown className='inline-block h-5 w-5' aria-hidden='true' />
                 </ScrollLink>
               </CustomButton>
             </div>

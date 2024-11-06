@@ -1,5 +1,5 @@
 import { usePagination } from 'react-instantsearch';
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline';
+import { IconChevronRight, IconChevronLeft } from '@tabler/icons-react';
 
 export default function Pagination() {
   const { nbPages, currentRefinement, pages, refine, isFirstPage, isLastPage } = usePagination({
@@ -24,7 +24,7 @@ export default function Pagination() {
               window.scrollTo(0, 0);
             }}
           >
-            <ChevronLeftIcon className='h-5 w-5' />
+            <IconChevronLeft className='h-6 w-6' />
           </button>
         </li>
         <li className='mx-1 h-8 w-8 flex items-center justify-center'>
@@ -112,7 +112,7 @@ export default function Pagination() {
               window.scrollTo(0, 0);
             }}
           >
-            <ChevronRightIcon className='h-5 w-5' />
+            <IconChevronRight className='h-6 w-6' />
           </button>
         </li>
       </ul>

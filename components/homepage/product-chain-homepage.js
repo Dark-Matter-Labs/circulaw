@@ -1,5 +1,5 @@
 import { urlFor } from '@/lib/sanity';
-import { ArrowRightIcon } from '@heroicons/react/outline';
+import { IconArrowRight } from '@tabler/icons-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -9,11 +9,8 @@ export default function PCHomePage({ pcData }) {
       {' '}
       <ul className='hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-4 gap-x-2 w-full'>
         {pcData?.map((chain, id) => (
-          <li
-            key={id}
-            className='group h-[400px] w-auto rounded-cl flex flex-col justify-between relative overflow-hidden max-w-[250px]'
-          >
-            <Link href={`/${chain.slug}`}>
+          <Link key={id} href={`/${chain.slug}`}>
+            <li className='group h-[400px] w-auto rounded-cl flex flex-col justify-between relative overflow-hidden max-w-[250px]'>
               <Image
                 src={urlFor(chain?.image).url()}
                 alt={chain.alt}
@@ -47,12 +44,12 @@ export default function PCHomePage({ pcData }) {
                 </div>
                 <div className='grid justify-items-end group-hover:-translate-y-[20px] transition-all duration-300'>
                   <div className='h-10 w-10 rounded-full flex items-center justify-center border-2 text-white border-white bg-transparent group-hover:bg-green-200 group-hover:border-green-200 group-hover:text-green-600  active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white self-end'>
-                    <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                    <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />
                   </div>
                 </div>
               </div>
-            </Link>
-          </li>
+            </li>
+          </Link>
         ))}
       </ul>
       <ul className='sm:hidden flex flex-col w-full'>
@@ -84,7 +81,7 @@ export default function PCHomePage({ pcData }) {
                 </div>
                 <div className='grid justify-items-end mr-4'>
                   <div className='h-10 w-10 rounded-full flex items-center justify-center border-2 text-white border-white bg-transparent group-hover:bg-green-200 group-hover:border-green-200 group-hover:text-green-600  active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white self-end'>
-                    <ArrowRightIcon className='inline-block h-4 w-4' aria-hidden='true' />
+                    <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />
                   </div>
                 </div>
               </div>

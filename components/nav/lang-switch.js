@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { GlobeAltIcon, XIcon } from '@heroicons/react/outline';
+import { IconWorld, IconX } from '@tabler/icons-react';
 
 const googleTranslateElementInit = () => {
   new window.google.translate.TranslateElement(
@@ -34,7 +34,7 @@ export default function LangSwitch({ background }) {
           'fixed  sm:right-0 top-20 z-[999] bg-white p-5  rounded-cl',
         )}
       >
-        <XIcon
+        <IconX
           onClick={() => {
             setTranslateOpen(false);
           }}
@@ -62,7 +62,7 @@ export default function LangSwitch({ background }) {
         >
           <span className='heading-xl-semibold text-green-800 mr-2'>Vertaling</span>
           <span className='flex items-center justify-center rounded-clSm h-6 w-7 bg-green-800'>
-            <GlobeAltIcon className='h-4 w-4' />
+            <IconWorld className='h-4 w-4' />
           </span>
         </button>
       </div>
@@ -80,7 +80,7 @@ export default function LangSwitch({ background }) {
           aria-label='Open google translate for CircuLaw'
         >
           <span className='flex items-center justify-center rounded-clSm h-6 w-7'>
-            <GlobeAltIcon className='h-4 w-4' />
+            <IconWorld className='h-4 w-4' />
           </span>
         </button>
       </div>
