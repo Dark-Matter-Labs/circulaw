@@ -317,3 +317,13 @@ html {
 		height: 0;
 	}
 }
+
+.containerx {
+  position: relative;
+ 
+  height: 100vh;
+}
+
+.svg {
+  transform: rotate(-90deg); /* Start drawing from the top */
+}
