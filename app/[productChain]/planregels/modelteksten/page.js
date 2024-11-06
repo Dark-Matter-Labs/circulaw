@@ -84,7 +84,8 @@ export default async function ModelTextPage({ params }) {
               >
                 Toekomstig Bestendig Bouwen
                 <LinkIcon />
-              </Link>{' '}. En beslaan meer thema&apos;s dan alleen circulaire. ze heeft gedefinieerd.
+              </Link>{' '}
+              . En beslaan meer thema&apos;s dan alleen circulaire. ze heeft gedefinieerd.
             </p>
             <Link
               href='/bouw/planregels'

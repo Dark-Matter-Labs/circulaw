@@ -66,10 +66,11 @@ export default function Instrument({ data }) {
                 {data.modelTexts && (
                   <>
                     <h2 className='mt-10 mb-2 heading-xl-semibold sm:heading-3xl-semibold'>
-                      Planregels  
+                      Planregels
                     </h2>
                     <p className='mb-6'>
-                    Zorg voor borging van dit instrument door opnemen van onderstaande teksten in je omgevingsplan.
+                      Zorg voor borging van dit instrument door opnemen van onderstaande teksten in
+                      je omgevingsplan.
                     </p>
                     {data.modelTexts.map((text, id) => (
                       <>
