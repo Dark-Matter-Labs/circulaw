@@ -75,8 +75,8 @@ export default async function ModelTextPage({ params }) {
         <div className=' bg-white flex flex-col global-margin my-10 sm:my-16 h-max'>
           <div className='flex flex-col max-w-[760px]'>
             <p className='p-base pb-6'>
-              We hebben de planregels voor het omgevingsplan ingedeeld op basis van 6 pijlers . Deze
-              sluiten aan op de pijlers zoals{' '}
+              We hebben de planregels voor het omgevingsplan ingedeeld op basis van 6 pijlers. Deze
+              pijlers sluiten aan bij het Convenant{' '}
               <Link
                 href='https://toekomstbestendigbouwen.nl/'
                 className='link-interaction'
@@ -84,8 +84,7 @@ export default async function ModelTextPage({ params }) {
               >
                 Toekomstig Bestendig Bouwen
                 <LinkIcon />
-              </Link>{' '}
-              ze heeft gedefinieerd.
+              </Link>{' '}. En beslaan meer thema&apos;s dan alleen circulaire. ze heeft gedefinieerd.
             </p>
             <Link
               href='/bouw/planregels'

@@ -100,13 +100,13 @@ export const Structure = (S, context) =>
         .title('EU wetgeving')
         .icon(GiEuropeanFlag)
         .child(S.documentList().title('EU wetgeving').filter('_type == "euLaw"')),
-        orderableDocumentListDeskItem({
-          type: 'pillar',
-          S,
-          context,
-          title: 'Pillars',
-          icon: GiGreekTemple,
-        }),
+      orderableDocumentListDeskItem({
+        type: 'pillar',
+        S,
+        context,
+        title: 'Pillars',
+        icon: GiGreekTemple,
+      }),
       S.documentListItem().schemaType('FAQpage').title('FAQ Page').icon(FaQuestion),
       S.listItem()
         .title('English Page')
