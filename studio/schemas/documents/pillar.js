@@ -1,3 +1,5 @@
+import { orderRankField } from '@sanity/orderable-document-list';
+
 export default {
   title: 'Pillar',
   type: 'document',
@@ -8,6 +10,7 @@ export default {
       name: 'title',
       type: 'string',
     },
+    orderRankField({ type: 'pillar', newItemPosition: 'after' }),
     {
       title: 'Slug',
       type: 'slug',
