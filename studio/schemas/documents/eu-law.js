@@ -39,7 +39,7 @@ export default {
       name: 'productChain',
       title: 'Product Chain',
       type: 'array',
-      of: [{ type: 'reference', to: [{type:'transitionAgenda'}] }],
+      of: [{ type: 'reference', to: [{ type: 'transitionAgenda' }] }],
       group: 'summary',
     },
     {

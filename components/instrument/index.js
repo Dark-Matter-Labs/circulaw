@@ -65,9 +65,13 @@ export default function Instrument({ data }) {
 
                 {data.modelTexts && (
                   <>
-                    <h2 className='mt-10 mb-6 heading-xl-semibold sm:heading-3xl-semibold'>
-                      Modeltekst voor het omgevingsplan
+                    <h2 className='mt-10 mb-2 heading-xl-semibold sm:heading-3xl-semibold'>
+                      Planregels
                     </h2>
+                    <p className='mb-6'>
+                      Zorg voor borging van dit instrument door opnemen van onderstaande teksten in
+                      je omgevingsplan.
+                    </p>
                     {data.modelTexts.map((text, id) => (
                       <>
                         <Disclosure as='div' key={id} className='my-6'>
