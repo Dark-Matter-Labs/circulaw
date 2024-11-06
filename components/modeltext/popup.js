@@ -44,8 +44,8 @@ export default function PopUp({ pillars, modelTexts }) {
       const filtered = modelTexts.filter((t) => t.pillar === pillar);
       setFilteredModelTexts(filtered);
     } else if (!pillar && modelTextSlug) {
-      setSelectedPillar('energie');
-      const filtered = modelTexts.filter((t) => t.pillar === 'energie');
+      setSelectedPillar(pillars[0].slug);
+      const filtered = modelTexts.filter((t) => t.pillar === pillars[0].slug);
       setFilteredModelTexts(filtered);
       setIsOpen(true);
       setSelectedModelText(modelTexts.filter((t) => t.slug === modelTextSlug)[0]);
@@ -56,12 +56,12 @@ export default function PopUp({ pillars, modelTexts }) {
       setIsOpen(true);
       setSelectedModelText(modelTexts.filter((t) => t.slug === modelTextSlug)[0]);
     } else if (!pillar) {
-      setSelectedPillar('energie');
-      const filtered = modelTexts.filter((t) => t.pillar === 'energie');
+      setSelectedPillar(pillars[0].slug);
+      const filtered = modelTexts.filter((t) => t.pillar === pillars[0].slug);
       setFilteredModelTexts(filtered);
       setIsOpen(false);
     }
-  }, [searchParams, modelTexts, createQueryString, router, pathname]);
+  }, [searchParams, modelTexts, createQueryString, router, pathname, pillars]);
 
   let [isOpen, setIsOpen] = useState(false);
 

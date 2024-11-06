@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 const PILLARS_QUERY = `
- *[_type == 'pillar'] | order(_createdAt) {
+ *[_type == 'pillar'] | order(orderRank) {
   ...,
   'slug':slug.current,
  }
