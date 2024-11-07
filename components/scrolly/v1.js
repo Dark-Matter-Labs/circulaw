@@ -29,10 +29,13 @@ export default function V1() {
   const circumference3 = 2 * Math.PI * radius3;
 
   return (
-    <div>
-      <div className='h-[400vh] global-margin '>
-        <div className="fixed bg-[url('/bg.svg')] w-full bg-no-repeat">
-          <div className='containerx pl-[120px] pt-[120px]'>
+    <div className='flex items-start justify-center w-full'>
+      <div className='w-72'>Nav</div>
+      <div className='w-72'>content</div>
+
+      <div className='flex items-center justify-center'>
+        <div className="bg-[url('/bg.svg')] bg-cover w-full bg-no-repeat">
+          <div className='container'>
             <svg className='svg' height='400' width='400'>
               <circle
                 cx='200'

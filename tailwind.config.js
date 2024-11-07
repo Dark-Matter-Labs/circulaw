@@ -86,6 +86,7 @@ module.exports = {
       backgroundImage: {
         'about-header': 'url("/about-header.png")',
         'header': 'url("/home-page/homepage_bg.png")',
+        'scoll-circles': 'url("/scrolly/centered.svg")',
       },
       borderRadius: {
           'cl': '10px',
