@@ -214,7 +214,6 @@ export default function PopUp({ pillars, modelTexts }) {
                 </div>
                 {selectedModelText?.linkedInstruments && (
                   <div className='flex flex-col mb-10'>
-                    {console.log(selectedModelText.linkedInstruments)}
                     <h6 className='heading-xl-semibold mb-4'>Gelinkte instrumenten</h6>
                     <ul className='list-disc list-inside ml-2'>
                       {selectedModelText?.linkedInstruments?.map((instrument) => (

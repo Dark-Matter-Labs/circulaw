@@ -39,7 +39,6 @@ export default function Instrument({ data }) {
     };
     window.addEventListener('scroll', changeEffect);
   }, []);
-  console.log(data.modelTexts, 'ncdjskncd');
   return (
     <div ref={ref} className='relative bg-gray-100'>
       <InstrumentHeader data={data} />
@@ -62,8 +61,7 @@ export default function Instrument({ data }) {
               </div>
               <div>
                 {/* MODELTEXTS */}
-
-                {data.modelTexts && (
+                {data.modelTexts.length > 0 && (
                   <>
                     <h2 className='mt-10 mb-2 heading-xl-semibold sm:heading-3xl-semibold'>
                       Planregels
@@ -140,7 +138,6 @@ export default function Instrument({ data }) {
                             </div>
                             {text?.linkedInstruments && (
                               <div className='flex flex-col mb-10'>
-                                {console.log(text.linkedInstruments)}
                                 <h6 className='heading-xl-semibold mb-4'>Gelinkte instrumenten</h6>
                                 <ul className='list-disc list-inside ml-2'>
                                   {text?.linkedInstruments?.map((instrument) => (
