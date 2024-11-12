@@ -39,7 +39,6 @@ export default function Instrument({ data }) {
     };
     window.addEventListener('scroll', changeEffect);
   }, []);
-  console.log(data.modelTexts, 'ncdjskncd');
   return (
     <div ref={ref} className='relative bg-gray-100'>
       <InstrumentHeader data={data} />
@@ -62,8 +61,7 @@ export default function Instrument({ data }) {
               </div>
               <div>
                 {/* MODELTEXTS */}
-
-                {data.modelTexts && (
+                {data.modelTexts.length > 0 && (
                   <>
                     <h2 className='mt-10 mb-2 heading-xl-semibold sm:heading-3xl-semibold'>
                       Planregels
