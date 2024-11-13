@@ -18,31 +18,6 @@ export default function V2() {
   };
 
   useEffect(() => {
-    // Function to handle setting active content based on intersection
-    const handleIntersection = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveContent(entry.target.dataset.id);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.5, // Trigger when 50% of the element is visible
-    });
-
-    // Observe each content section
-    Object.values(contentRefs).forEach((ref) => {
-      if (ref.current) observer.observe(ref.current);
-    });
-
-    return () => {
-      // Cleanup the observer on component unmount
-      observer.disconnect();
-    };
-  }, []);
-
-  useEffect(() => {
     const handleScroll = () => {
       const position = window.scrollY;
       setScrollPosition(position);
@@ -74,26 +49,43 @@ export default function V2() {
     };
   }, [scrollPosition]);
 
-  console.log(scrollPosition);
-
   // Radii and circumferences for circles
-  const radius1 = 182;
+  const radius1 = 185;
   const circumference1 = 2 * Math.PI * radius1;
-  const radius2 = 133;
+  const radius2 = 135;
   const circumference2 = 2 * Math.PI * radius2;
-  const radius3 = 84;
+  const radius3 = 85;
   const circumference3 = 2 * Math.PI * radius3;
 
-  // Scroll segments
-  const scrollStart1 = 0;
-  const scrollEnd1 = 4000;
+  // Define unique scroll ranges for each circle
+  const scrollStartOuter = 1000; // Start point for the outer circle
+  const scrollEndOuter = 4800; // End point for the outer circle
+  const scrollStartMiddle = 1800; // Start point for the middle circle
+  const scrollEndMiddle = 5500; // End point for the middle circle
+  const scrollStartInner = 2200; // Start point for the inner circle
+  const scrollEndInner = 6000; // End point for the inner circle
 
-  // Milestones based on progress percentages
-  const startMiddleCircleAt = scrollEnd1 * 0.2;
-  const startInnerCircleAt = scrollEnd1 * 0.3;
-  const stopMiddleCircleAt = scrollEnd1 + scrollEnd1 * 0.25;
+  // Function to calculate progress based on custom start and end points
+  const calculateProgress = (scrollPosition, start, end) => {
+    if (scrollPosition < start) return 0;
+    if (scrollPosition > end) return 1;
+    return (scrollPosition - start) / (end - start);
+  };
 
-  console.log(stopMiddleCircleAt);
+  // Calculate the progress for each circle based on its unique scroll range
+  const progressOuter = calculateProgress(scrollPosition, scrollStartOuter, scrollEndOuter);
+  const progressMiddle = calculateProgress(scrollPosition, scrollStartMiddle, scrollEndMiddle);
+  const progressInner = calculateProgress(scrollPosition, scrollStartInner, scrollEndInner);
+
+  // Calculate strokeDashoffset for each circle based on progress
+  const calculateOffset = (progress, circumference) => {
+    return circumference * (1 - progress);
+  };
+
+  // Calculate strokeDashoffset for each circle based on its progress
+  const offsetOuter = calculateOffset(progressOuter, circumference1);
+  const offsetMiddle = calculateOffset(progressMiddle, circumference2);
+  const offsetInner = calculateOffset(progressInner, circumference3);
 
   // Starting rotations for each circle to achieve specific starting points on the circumference
   const rotation1 = 64.8;
@@ -110,33 +102,6 @@ export default function V2() {
   const barRotation2 = rotation2 - angleShift2;
   const barRotation3 = rotation3 - angleShift3;
 
-  // Calculate the progress for each circle based on segments
-  const calculateProgress = (start, end) => {
-    if (scrollPosition < start) return 0;
-    if (scrollPosition > end) return 1;
-    return (scrollPosition - start) / (end - start);
-  };
-
-  // Outer circle progress
-  const progress1 = calculateProgress(scrollStart1, scrollEnd1);
-
-  // Middle circle progress
-  const progress2 =
-    scrollPosition >= startMiddleCircleAt
-      ? calculateProgress(startMiddleCircleAt, stopMiddleCircleAt)
-      : 0;
-
-  // Inner circle progress
-  const progress3 =
-    scrollPosition >= startInnerCircleAt
-      ? calculateProgress(startInnerCircleAt, scrollEnd1 * 1.5)
-      : 0;
-
-  // Calculate strokeDashoffset for each circle based on progress
-  const calculateOffset = (progress, circumference) => {
-    return circumference * (1 - progress);
-  };
-
   // Calculate the position for each bar, moving it slightly inward to align the thicker edge with the circumference
   const barOffset = 24; // Adjust this value to control how far the bar sits from the circle edge
   const barPosition1 = {
@@ -151,6 +116,8 @@ export default function V2() {
     x: 317.5 + (radius3 - barOffset) * Math.cos((barRotation3 * Math.PI) / 180),
     y: 317.5 + (radius3 - barOffset) * Math.sin((barRotation3 * Math.PI) / 180),
   };
+
+  const opacity = Math.min(scrollPosition / 300, 1);
 
   return (
     <div className='fixed mt-10 flex items-start justify-center w-full'>
@@ -308,35 +275,223 @@ export default function V2() {
         <div className='bg-scroll-circles h-full w-full'>
           <div className='w-full h-full flex items-center justify-center'>
             <svg className='svg' height='635' width='635'>
+              {/* Outer Outer Circle */}
+              <circle cx='317.5' cy='317.5' r='225' stroke='#F8FBF8' strokeWidth='40' fill='none' />
+
+              {/* Path for 45° */}
+              <path
+                id='path45'
+                d={`M ${317.5 - 220} 317.5 a 220 220 0 1 1 ${2 * 220} 0 a 220 220 0 1 1 ${
+                  -2 * 220
+                } 0`}
+                fill='none'
+                transform='rotate(45, 317.5, 317.5)'
+              />
+
+              {/* Path for 135° with slightly reduced radius */}
+              <path
+                id='path135'
+                d={`M ${317.5 - 220} 317.5 a 220 220 0 1 1 ${2 * 220} 0 a 220 220 0 1 1 ${
+                  -2 * 220
+                } 0`}
+                fill='none'
+                transform='rotate(135, 317.5, 317.5)'
+              />
+
+              {/* Path for 225° with slightly reduced radius */}
+              <path
+                id='path225'
+                d={`M ${317.5 - 220} 317.5 a 220 220 0 1 1 ${2 * 220} 0 a 220 220 0 1 1 ${
+                  -2 * 220
+                } 0`}
+                fill='none'
+                transform='rotate(225, 317.5, 317.5)'
+              />
+
+              {/* Path for 315° with slightly reduced radius */}
+              <path
+                id='path315'
+                d={`M ${317.5 - 220} 317.5 a 220 220 0 1 1 ${2 * 220} 0 a 220 220 0 1 1 ${
+                  -2 * 220
+                } 0`}
+                fill='none'
+                transform='rotate(315, 317.5, 317.5)'
+              />
+
+              {/* Texts along each path */}
+              <text
+                fill='#035e46'
+                className='p-2xs-bold uppercase tracking-[0.2rem]'
+                textAnchor='middle'
+              >
+                <textPath href='#path45' startOffset='50%'>
+                  Ontwikkeling
+                </textPath>
+              </text>
+
+              <text
+                fill='#035e46'
+                className='p-2xs-bold uppercase tracking-[0.2rem]'
+                textAnchor='middle'
+              >
+                <textPath href='#path135' startOffset='50%'>
+                  Doorwerking
+                </textPath>
+              </text>
+
+              <text
+                fill='#035e46'
+                className='p-2xs-bold uppercase tracking-[0.2rem]'
+                textAnchor='middle'
+              >
+                <textPath href='#path225' startOffset='50%'>
+                  Uitvoering
+                </textPath>
+              </text>
+
+              <text
+                fill='#035e46'
+                className='p-2xs-bold uppercase tracking-[0.2rem]'
+                textAnchor='middle'
+              >
+                <textPath href='#path315' startOffset='50%'>
+                  Terugkoppeling
+                </textPath>
+              </text>
+
               {/* Outer Circle */}
               <circle
                 cx='317.5'
                 cy='317.5'
                 r={radius1}
+                stroke='#E6FBF3'
+                strokeWidth='40'
+                fill='none'
+              />
+              <circle
+                cx='317.5'
+                cy='317.5'
+                r={radius1}
+                stroke='#F6FEFB'
+                strokeWidth='40'
+                fill='none'
+                style={{
+                  strokeOpacity: opacity, // Opacity increases from 0 to 1
+                  transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
+                }}
+                className='duration-200 ease-in-out'
+              />
+              <circle
+                cx='317.5'
+                cy='317.5'
+                r={radius1}
                 stroke='#D1F9EB'
-                strokeWidth='39'
+                strokeWidth='40'
                 fill='none'
                 strokeDasharray={circumference1}
-                strokeDashoffset={calculateOffset(progress1, circumference1)}
+                strokeDashoffset={offsetOuter}
                 transform={`rotate(${rotation1} 317.5 317.5)`}
                 strokeLinecap='round'
               />
+              {/* Path for the text, with radius reduced to move text inward */}
+              <path
+                id='textPathCircle'
+                d={`
+                  M ${317.5 - (radius1 - 20)} 317.5
+                  a ${radius1 - 20} ${radius1 - 20} 0 1 1 ${2 * (radius1 - 12)} 0
+                  a ${radius1 - 20} ${radius1 - 20} 0 1 1 ${-2 * (radius1 - 12)} 0
+                `}
+                fill='none'
+              />
+              {/* Text along the path */}
+              <text
+                textAnchor='middle'
+                fill='#035e46'
+                className='p-2xs-bold uppercase tracking-[0.2rem]'
+                // </svg>className='p-2xs-bold'
+              >
+                <textPath href='#textPathCircle' startOffset='50%'>
+                  Visie
+                </textPath>
+              </text>
 
               {/* Middle Circle */}
               <circle
                 cx='317.5'
                 cy='317.5'
                 r={radius2}
+                stroke='#E6FBF3'
+                strokeWidth='40'
+                fill='none'
+              />
+              <circle
+                cx='317.5'
+                cy='317.5'
+                r={radius2}
+                stroke='#E6FBF3'
+                strokeWidth='40'
+                fill='none'
+                style={{
+                  strokeOpacity: opacity, // Opacity increases from 0 to 1
+                  transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
+                }}
+                className='duration-200 ease-in-out'
+              />
+              <circle
+                cx='317.5'
+                cy='317.5'
+                r={radius2}
                 stroke='#84E9C5'
-                strokeWidth='41'
+                strokeWidth='40'
                 fill='none'
                 strokeDasharray={circumference2}
-                strokeDashoffset={calculateOffset(progress2, circumference2)}
+                strokeDashoffset={offsetMiddle}
                 transform={`rotate(${rotation2} 317.5 317.5)`}
                 strokeLinecap='round'
               />
+              <path
+                id='textPathMiddle'
+                d={`
+                  M ${317.5 - (radius2 - 20)} 317.5
+                  a ${radius2 - 20} ${radius2 - 20} 0 1 1 ${2 * (radius2 - 12)} 0
+                  a ${radius2 - 20} ${radius2 - 20} 0 1 1 ${-2 * (radius2 - 12)} 0
+                `}
+                fill='none'
+              />
+              {/* Text along the path */}
+              <text
+                textAnchor='middle'
+                fill='#035e46'
+                className='p-2xs-bold uppercase tracking-[0.2rem]'
+                // </svg>className='p-2xs-bold'
+              >
+                <textPath href='#textPathMiddle' startOffset='50%'>
+                  Programma&apos;s
+                </textPath>
+              </text>
 
               {/* Inner Circle */}
+              <circle
+                cx='317.5'
+                cy='317.5'
+                r={radius3}
+                stroke='#E6FBF3'
+                strokeWidth='40'
+                fill='none'
+              />
+              <circle
+                cx='317.5'
+                cy='317.5'
+                r={radius3}
+                stroke='#D3F3E8'
+                strokeWidth='40'
+                fill='none'
+                style={{
+                  strokeOpacity: opacity, // Opacity increases from 0 to 1
+                  transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
+                }}
+                className='duration-200 ease-in-out'
+              />
               <circle
                 cx='317.5'
                 cy='317.5'
@@ -345,10 +500,30 @@ export default function V2() {
                 strokeWidth='40'
                 fill='none'
                 strokeDasharray={circumference3}
-                strokeDashoffset={calculateOffset(progress3, circumference3)}
+                strokeDashoffset={offsetInner}
                 transform={`rotate(${rotation3} 317.5 317.5)`}
                 strokeLinecap='round'
               />
+              <path
+                id='textPathInner'
+                d={`
+                  M ${317.5 - (radius3 - 20)} 317.5
+                  a ${radius3 - 20} ${radius3 - 20} 0 1 1 ${2 * (radius3 - 12)} 0
+                  a ${radius3 - 20} ${radius3 - 20} 0 1 1 ${-2 * (radius3 - 12)} 0
+                `}
+                fill='none'
+              />
+              {/* Text along the path */}
+              <text
+                textAnchor='middle'
+                fill='#035e46'
+                className='p-2xs-bold uppercase tracking-[0.2rem]'
+                // </svg>className='p-2xs-bold'
+              >
+                <textPath href='#textPathInner' startOffset='50%'>
+                  Plan
+                </textPath>
+              </text>
 
               {/* Outer Tapered Bar */}
               <path
@@ -357,6 +532,11 @@ export default function V2() {
                 transform={`translate(${barPosition1.x}, ${barPosition1.y}) rotate(${
                   barRotation1 + 90
                 }) scale(1, -1)`}
+                style={{
+                  opacity: opacity,
+                  transition: 'opacity 0.2s ease-in-out',
+                }}
+                className='duration-200 ease-in-out'
               />
 
               {/* Middle Tapered Bar */}
@@ -366,6 +546,11 @@ export default function V2() {
                 transform={`translate(${barPosition2.x}, ${barPosition2.y}) rotate(${
                   barRotation2 + 90
                 }) scale(1, -1)`}
+                style={{
+                  opacity: opacity,
+                  transition: 'opacity 0.2s ease-in-out',
+                }}
+                className='duration-200 ease-in-out'
               />
 
               {/* Inner Tapered Bar */}
@@ -375,6 +560,11 @@ export default function V2() {
                 transform={`translate(${barPosition3.x}, ${barPosition3.y}) rotate(${
                   barRotation3 + 90
                 }) scale(1, -1)`}
+                style={{
+                  opacity: opacity,
+                  transition: 'opacity 0.2s ease-in-out',
+                }}
+                className='duration-200 ease-in-out'
               />
             </svg>
           </div>
