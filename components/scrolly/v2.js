@@ -120,8 +120,14 @@ export default function V2() {
   const opacity = Math.min(scrollPosition / 300, 1);
 
   return (
-    <div className='fixed mt-10 flex items-start justify-center w-full'>
+    <>
+     <div className='fixed bottom-8 right-8 text-red-700 heading-2xl-semibold'>
+        {scrollPosition}
+      </div>
+      <div className='fixed mt-10 flex items-start justify-center w-full'>
+      
       <div className='w-48 h-full relative mr-6'>
+       
         <div className='sticky h-[700px] grow flex flex-col gap-y-6'>
           <button
             className={`${
@@ -571,5 +577,7 @@ export default function V2() {
         </div>
       </div>
     </div>
+    </>
+    
   );
 }
