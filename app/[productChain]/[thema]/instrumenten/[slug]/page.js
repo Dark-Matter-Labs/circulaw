@@ -52,7 +52,7 @@ export default async function InstrumentPage({ params }) {
   const instrumentContent = await sanityFetch({
     query: INSTRUMENT_PAGE_QUERY,
     qParams: params,
-    tags: ['instrument'],
+    tags: ['instrument', 'modelText'],
   });
 
   if (!instrumentContent) {
