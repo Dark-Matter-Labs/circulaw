@@ -328,4 +328,18 @@ html {
   transform: rotate(-90deg); /* Start drawing from the top */
 }
 
+.bg-scroll-circles {
+  background-color: 'transparent'; /* Replace with your preferred color or gradient */
+  background-image: url('/scrolly/centered.svg'); /* Use this if you need an image background */
+  background-size: cover;
+  background-position: center;
+}
 
+img {
+  max-width: max-content;
+}
+
+.test {
+  transform-origin: center center;
+  will-change: transform;
+}
