@@ -278,7 +278,7 @@ export default function V2() {
         </div>
       </div>
       <div className='flex items-center justify-center w-[635px] h-[635px]'>
-        <div className='bg-scroll-circles h-full w-full'>
+        <div className=' h-full w-full'>
           <div className='w-full h-full flex items-center justify-center'>
             <svg className='svg' height='635' width='635'>
               {/* Outer Outer Circle */}
