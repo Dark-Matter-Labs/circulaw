@@ -429,7 +429,7 @@ export default function V2() {
                       transition:
                         'fill-opacity 0.2s ease-in-out, filter 0.3s ease-in-out, fill 0.3s ease-in-out', // Smooth transition for opacity, color, and filter
                       filter:
-                        activeContent === 'c3'
+                        activeContent === 'c4'
                           ? 'drop-shadow(0px 0px 10px #84E9C5) drop-shadow(0px 0px 10px #84E9C5)'
                           : 'none', // Enhanced glow effect with a matching bright color
                     }}
