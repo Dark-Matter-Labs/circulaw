@@ -3,9 +3,7 @@ import InstrumentFeedbackBlock from './instrument-feedback-block';
 import MobileFeedback from './instrument-feedback-block-mobile';
 import InstrumentHeader from './instrument-header';
 import InstrumentTable from './instrument-table';
-import {
-  portableTextComponents,
-} from '@/lib/portable-text/pt-components';
+import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import { PortableText } from '@portabletext/react';
 import { useState, useEffect, useRef } from 'react';
 
