@@ -48,9 +48,12 @@ export default function V2() {
       setActiveContent('c4');
     } else if (scrollPosition > 1995 && scrollPosition < 2730) {
       setActiveContent('c5');
-    } else if (scrollPosition > 2730 && scrollPosition < 3290) {
+    } else if (scrollPosition > 2730 && scrollPosition < 3450) {
       setActiveContent('c6');
+    } else if (scrollPosition > 3450 && scrollPosition < 4000) {
+      setActiveContent('c7');
     }
+    
 
     if (scrollPosition > 3850) {
       setAnimationStage(1);
