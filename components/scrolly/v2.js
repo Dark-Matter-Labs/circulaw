@@ -124,8 +124,7 @@ export default function V2() {
      <div className='fixed bottom-8 right-8 text-red-700 heading-2xl-semibold'>
         {scrollPosition}
       </div>
-      <div className='fixed mt-10 flex items-start justify-center w-full'>
-      
+      <div className='sticky top-44 mt-10 flex items-start justify-center w-full'>
       <div className='w-48 h-full relative mr-6'>
        
         <div className='sticky h-[700px] grow flex flex-col gap-y-6'>
@@ -280,7 +279,7 @@ export default function V2() {
       <div className='flex items-center justify-center w-[635px] h-[635px]'>
         <div className=' h-full w-full'>
           <div className='w-full h-full flex items-center justify-center'>
-            <svg className='svg' height='635' width='635'>
+            <svg className='svg' height='635' width='635' xmlns="http://www.w3.org/2000/svg" >
               {/* Outer Outer Circle */}
               <circle cx='317.5' cy='317.5' r='225' stroke='#F8FBF8' strokeWidth='40' fill='none' />
 
@@ -330,7 +329,7 @@ export default function V2() {
                 className='p-2xs-bold uppercase tracking-[0.2rem]'
                 textAnchor='middle'
               >
-                <textPath href='#path45' startOffset='50%'>
+                <textPath  href='#path45' startOffset='50%'>
                   Ontwikkeling
                 </textPath>
               </text>
@@ -471,7 +470,7 @@ export default function V2() {
                 className='p-2xs-bold uppercase tracking-[0.2rem]'
                 // </svg>className='p-2xs-bold'
               >
-                <textPath href='#textPathMiddle' startOffset='50%'>
+                <textPath  href="#textPathMiddle" startOffset='50%'>
                   Programma&apos;s
                 </textPath>
               </text>

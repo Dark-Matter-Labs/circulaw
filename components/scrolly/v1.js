@@ -18,17 +18,16 @@ export default function AnimatedCone() {
   const coneHeight = Math.min(scrollPosition / 5, maxHeight);
 
   return (
-    <div className="flex justify-center items-center h-[100vh]">
-      <svg width="450" height="400" viewBox="0 0 450 400" className="overflow-visible">
+    <div className='flex justify-center items-center h-[100vh]'>
+      <svg width='450' height='400' viewBox='0 0 450 400' className='overflow-visible'>
         {/* Outer Red Circle (Flat Disc) - stays visible */}
         <ellipse
-          cx="225"
-          cy="350"
-          rx="225" // Radius of outer red circle
-          ry="50"
-          fill="red"
+          cx='225'
+          cy='350'
+          rx='225' // Radius of outer red circle
+          ry='50'
+          fill='red'
         />
-
         {/* Cone Layers */}
         {Array.from({ length: layers }).map((_, i) => {
           const progress = i / (layers - 1); // Calculate progress for each layer
@@ -41,7 +40,7 @@ export default function AnimatedCone() {
           return (
             <ellipse
               key={i}
-              cx="225"
+              cx='225'
               cy={layerHeight}
               rx={layerRx}
               ry={layerRy}
