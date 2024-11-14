@@ -1,23 +1,15 @@
 'use client';
-import { Disclosure, DisclosurePanel, DisclosureButton } from '@headlessui/react';
 import InstrumentFeedbackBlock from './instrument-feedback-block';
 import MobileFeedback from './instrument-feedback-block-mobile';
 import InstrumentHeader from './instrument-header';
 import InstrumentTable from './instrument-table';
-import {
-  portableTextComponents,
-  ModelTextComponents,
-  reducedPortableTextComponents,
-} from '@/lib/portable-text/pt-components';
+import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import { PortableText } from '@portabletext/react';
 import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
-import { IconCopy, IconCheck, IconChevronDown, IconArrowRight } from '@tabler/icons-react';
 
 export default function Instrument({ data }) {
   const [scrollEffect, setScrollEffect] = useState(false);
   const [hidden, setHidden] = useState(false);
-  const [showLinkCopied, setShowLinkCopied] = useState(false);
 
   const ref = useRef(null);
   useEffect(() => {
@@ -60,7 +52,7 @@ export default function Instrument({ data }) {
                 <PortableText value={data?.content} components={portableTextComponents} />
               </div>
               <div>
-                {/* MODELTEXTS */}
+                {/*  
                 {data.modelTexts.length > 0 && (
                   <>
                     <h2 className='mt-10 mb-2 heading-xl-semibold sm:heading-3xl-semibold'>
@@ -188,6 +180,7 @@ export default function Instrument({ data }) {
                     ))}
                   </>
                 )}
+                */}
               </div>
               <InstrumentTable data={data} />
             </div>
