@@ -42,18 +42,17 @@ export default function V2() {
       setActiveContent('c1');
     } else if (scrollPosition > 455 && scrollPosition < 910) {
       setActiveContent('c2');
-    } else if (scrollPosition > 910 && scrollPosition < 1540) {
+    } else if (scrollPosition > 910 && scrollPosition < 1440) {
       setActiveContent('c3');
-    } else if (scrollPosition > 1540 && scrollPosition < 1995) {
+    } else if (scrollPosition > 1440 && scrollPosition < 1995) {
       setActiveContent('c4');
-    } else if (scrollPosition > 1995 && scrollPosition < 2730) {
+    } else if (scrollPosition > 1995 && scrollPosition < 2630) {
       setActiveContent('c5');
-    } else if (scrollPosition > 2730 && scrollPosition < 3450) {
+    } else if (scrollPosition > 2630 && scrollPosition < 3450) {
       setActiveContent('c6');
     } else if (scrollPosition > 3450 && scrollPosition < 4000) {
       setActiveContent('c7');
     }
-    
 
     if (scrollPosition > 3850) {
       setAnimationStage(1);
@@ -77,7 +76,7 @@ export default function V2() {
 
   // Define unique scroll ranges for each circle
   const scrollStartOuter = 875; // Start point for the outer circle
-  const scrollEndOuter = 3850;  // End point for the outer circle
+  const scrollEndOuter = 3850; // End point for the outer circle
   const scrollStartMiddle = 1260; // Start point for the middle circle
   const scrollEndMiddle = 3675; // End point for the middle circle
   const scrollStartInner = 1540; // Start point for the inner circle
@@ -106,7 +105,7 @@ export default function V2() {
   const offsetInner = calculateOffset(progressInner, circumference3);
 
   // Starting rotations for each circle to achieve specific starting points on the circumference
-  const rotation1 = 54.8;
+  const rotation1 = 50;
   const rotation2 = 116.8;
   const rotation3 = 185;
 
@@ -137,7 +136,7 @@ export default function V2() {
 
   const opacityOuterWords = Math.min(Math.max(scrollPosition / 250, 0), 1);
   const opacity = scrollPosition < 250 ? 0 : Math.min((scrollPosition - 250) / 400, 1);
-  const opacity2 = Math.min(Math.max((scrollPosition - 650) / 650, 0), 1); // From 1950 to 3900px, opacity2 goes from 0 to 1
+  const opacity2 = Math.min(Math.max((scrollPosition - 650) / 200, 0), 1);
 
   // Define thresholds for the scroll position to control when the transition happens
   const thresholdStart = 3400; // start the transition
@@ -403,12 +402,17 @@ export default function V2() {
 
                   {/* Texts along each path */}
                   <text
-                    fill='#035e46'
+                    fill={activeContent === 'c3' ? '#07B071' : '#035e46'} // Bright green for active content
                     textAnchor='middle'
                     className='p-2xs-bold uppercase tracking-[0.2rem] duration-200 ease-in-out'
                     style={{
-                      fillOpacity: opacityOuterWords, // Opacity increases from 0 to 1
-                      transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
+                      fillOpacity: opacityOuterWords,
+                      transition:
+                        'fill-opacity 0.2s ease-in-out, filter 0.3s ease-in-out, fill 0.3s ease-in-out', // Smooth transition for opacity, color, and filter
+                      filter:
+                        activeContent === 'c3'
+                          ? 'drop-shadow(0px 0px 10px #84E9C5) drop-shadow(0px 0px 10px #84E9C5)'
+                          : 'none', // Enhanced glow effect with a matching bright color
                     }}
                   >
                     <textPath href='#path45' startOffset='50%'>
@@ -417,47 +421,59 @@ export default function V2() {
                   </text>
 
                   <text
-                    fill='#035e46'
+                    fill={activeContent === 'c4' ? '#07B071' : '#035e46'} // Bright green for active content
                     textAnchor='middle'
                     className='p-2xs-bold uppercase tracking-[0.2rem] duration-200 ease-in-out'
                     style={{
-                      fillOpacity: opacityOuterWords, // Opacity increases from 0 to 1
-                      transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
+                      fillOpacity: opacityOuterWords,
+                      transition:
+                        'fill-opacity 0.2s ease-in-out, filter 0.3s ease-in-out, fill 0.3s ease-in-out', // Smooth transition for opacity, color, and filter
+                      filter:
+                        activeContent === 'c3'
+                          ? 'drop-shadow(0px 0px 10px #84E9C5) drop-shadow(0px 0px 10px #84E9C5)'
+                          : 'none', // Enhanced glow effect with a matching bright color
                     }}
                   >
                     <textPath href='#path135' startOffset='50%'>
                       Doorwerking
                     </textPath>
                   </text>
-
                   <text
-                    fill='#035e46'
+                    fill={activeContent === 'c5' ? '#07B071' : '#035e46'} // Bright green for active content
                     textAnchor='middle'
                     className='p-2xs-bold uppercase tracking-[0.2rem] duration-200 ease-in-out'
                     style={{
-                      fillOpacity: opacityOuterWords, // Opacity increases from 0 to 1
-                      transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
+                      fillOpacity: opacityOuterWords,
+                      transition:
+                        'fill-opacity 0.2s ease-in-out, filter 0.3s ease-in-out, fill 0.3s ease-in-out', // Smooth transition for opacity, color, and filter
+                      filter:
+                        activeContent === 'c5'
+                          ? 'drop-shadow(0px 0px 10px #84E9C5) drop-shadow(0px 0px 10px #84E9C5)'
+                          : 'none', // Enhanced glow effect with a matching bright color
                     }}
                   >
                     <textPath href='#path225' startOffset='50%'>
                       Uitvoering
                     </textPath>
                   </text>
-
                   <text
-                    fill='#035e46'
+                    fill={activeContent === 'c6' ? '#07B071' : '#035e46'} // Bright green for active content
                     textAnchor='middle'
                     className='p-2xs-bold uppercase tracking-[0.2rem] duration-200 ease-in-out'
                     style={{
-                      fillOpacity: opacityOuterWords, // Opacity increases from 0 to 1
-                      transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
+                      fillOpacity: opacityOuterWords,
+                      transition:
+                        'fill-opacity 0.2s ease-in-out, filter 0.3s ease-in-out, fill 0.3s ease-in-out', // Smooth transition for opacity, color, and filter
+                      filter:
+                        activeContent === 'c6'
+                          ? 'drop-shadow(0px 0px 10px #84E9C5) drop-shadow(0px 0px 10px #84E9C5)'
+                          : 'none', // Enhanced glow effect with a matching bright color
                     }}
                   >
                     <textPath href='#path315' startOffset='50%'>
                       Terugkoppeling
                     </textPath>
                   </text>
-
                   {/* Outer Circle */}
                   <circle
                     cx='317.5'
@@ -531,7 +547,6 @@ export default function V2() {
                   </text>
 
                   {/* Middle Circle */}
-
                   <circle
                     cx='317.5'
                     cy='317.5'
