@@ -143,22 +143,24 @@ export default function V2() {
   const thresholdEnd = 3850; // complete the transition
 
   const fadeStart = thresholdStart + 100; // Start fading out 100px after thresholdStart
-  const fadeEnd = thresholdEnd + 200;     // Finish fading out 100px after thresholdEnd
-  
-  const svgOpacity = scrollPosition < fadeStart
-    ? 1
-    : scrollPosition > fadeEnd
-    ? 0
-    : 1 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
+  const fadeEnd = thresholdEnd + 200; // Finish fading out 100px after thresholdEnd
 
-const fadeInStart = thresholdEnd       // Start fading in 100px after thresholdEnd
-const fadeInEnd = fadeInStart + 200; 
+  const svgOpacity =
+    scrollPosition < fadeStart
+      ? 1
+      : scrollPosition > fadeEnd
+      ? 0
+      : 1 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
 
-  const secondSvgOpacity = scrollPosition < fadeInStart
-  ? 0
-  : scrollPosition > fadeInEnd
-  ? 1
-  : (scrollPosition - fadeInStart) / (fadeInEnd - fadeInStart);
+  const fadeInStart = thresholdEnd; // Start fading in 100px after thresholdEnd
+  const fadeInEnd = fadeInStart + 200;
+
+  const secondSvgOpacity =
+    scrollPosition < fadeInStart
+      ? 0
+      : scrollPosition > fadeInEnd
+      ? 1
+      : (scrollPosition - fadeInStart) / (fadeInEnd - fadeInStart);
 
   // Calculate the interpolation value
   const maxRotation = 75;
@@ -371,7 +373,12 @@ const fadeInEnd = fadeInStart + 200;
         >
           <div className=' h-full w-full' style={transformStyle}>
             <div className='w-full h-full flex items-center justify-center'>
-              <svg className='svg' height='635' width='635' xmlns='http://www.w3.org/2000/svg'   style={{ opacity: svgOpacity, transition: 'opacity 0.2s ease-out' }}
+              <svg
+                className='svg'
+                height='635'
+                width='635'
+                xmlns='http://www.w3.org/2000/svg'
+                style={{ opacity: svgOpacity, transition: 'opacity 0.2s ease-out' }}
               >
                 {/* Outer Outer Circle */}
                 <circle
@@ -788,7 +795,7 @@ const fadeInEnd = fadeInStart + 200;
                     key={i}
                     cx='317.5'
                     cy={layerHeight}
-                    r={layerRadius +10}
+                    r={layerRadius + 10}
                     stroke={fillColor}
                     strokeWidth={60}
                     fill='none'
