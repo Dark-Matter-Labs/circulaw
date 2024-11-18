@@ -13,8 +13,8 @@ export default function V2() {
   const [activeContent, setActiveContent] = useState('c1');
   const [animationStage, setAnimationStage] = useState(0);
 
-  const [isVisible, setIsVisible] = useState(false);
-  const [isReduced, setIsReduced] = useState(false);
+  const [secondVisible, setSecondVisible] = useState(false);
+  const [secondReduced, setSecondReduced] = useState(false);
 
   const [thirdVisible, setThirdVisible] = useState(false);
 
@@ -59,27 +59,23 @@ export default function V2() {
       setActiveContent('c7');
     }
 
-    if (scrollPosition > 3850 && scrollPosition <= 4600) {
+    if (scrollPosition > 3850 && scrollPosition <= 6500) {
       setAnimationStage(1);
 
-      if (scrollPosition > 4000) {
-        setIsVisible(true);
+      if (scrollPosition > 5600) {
+        setSecondVisible(true);
       } else {
-        setIsVisible(false);
+        setSecondVisible(false);
       }
 
-      if (scrollPosition > 4400) {
+      if (scrollPosition > 6000) {
         setThirdVisible(true);
+        setSecondReduced(true);
       } else {
         setThirdVisible(false);
+        setSecondReduced(false);
       }
-
-      if (scrollPosition > 4400) {
-        setIsReduced(true);
-      } else {
-        setIsReduced(false);
-      }
-    } else if (scrollPosition > 4600) {
+    } else if (scrollPosition > 6500) {
       setAnimationStage(2);
     } else {
       setAnimationStage(0);
@@ -167,21 +163,45 @@ export default function V2() {
   const thresholdStart = 3400; // start the transition
   const thresholdEnd = 3850; // complete the transition
 
+  const fadeStart = thresholdStart + 100; // Start fading out 100px after thresholdStart
+  const fadeEnd = thresholdEnd + 200; // Finish fading out 100px after thresholdEnd
+
+  const svgOpacity =
+    scrollPosition < fadeStart
+      ? 1
+      : scrollPosition > fadeEnd
+      ? 0
+      : 1 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
+
+  const fadeInStart = thresholdEnd; // Start fading in 100px after thresholdEnd
+  const fadeInEnd = fadeInStart + 200;
+
+  const secondSvgOpacity =
+    scrollPosition < fadeInStart
+      ? 0
+      : scrollPosition > fadeInEnd
+      ? 1
+      : (scrollPosition - fadeInStart) / (fadeInEnd - fadeInStart);
+
+  // Calculate the interpolation value
+  const maxRotation = 75;
+
   // Calculate the interpolation value
   const progress = Math.min(
     Math.max((scrollPosition - thresholdStart) / (thresholdEnd - thresholdStart), 0),
     1,
   );
 
+  // Use the maxRotation angle instead of 90 in the transform
   const transformStyle = {
-    transform: `rotateX(${progress * 90}deg)  scale(${1 + progress * 0.2})`,
+    transform: `rotateX(${progress * maxRotation}deg) scale(${1 + progress * 0.2})`,
     transition: 'transform 0.1s ease-out',
   };
 
   // Define growth parameters
-  const maxHeight = 110; // Maximum height of the cone is now 190px
+  const maxHeight = 300; // Maximum height of the cone is now 190px
   const layers = 200; // Number of ellipse layers for smoother transition
-  const coneHeight = Math.min((scrollPosition - 3450) / 5, maxHeight);
+  const coneHeight = Math.min((scrollPosition - 3850) / 5, maxHeight);
 
   return (
     <>
@@ -367,14 +387,21 @@ export default function V2() {
             <ContentSix />
           </div>
         </div>
-        {animationStage === 0 ? (
-          <div
-            className='flex items-center justify-center w-[635px] h-[635px]'
-            style={{ perspective: '1000px' }}
-          >
+
+        <div
+          className='flex items-center justify-center w-[635px] h-[635px]'
+          style={{ perspective: '1000px' }}
+        >
+          {animationStage === 0 ? (
             <div className=' h-full w-full' style={transformStyle}>
               <div className='w-full h-full flex items-center justify-center'>
-                <svg className='svg' height='635' width='635' xmlns='http://www.w3.org/2000/svg'>
+                <svg
+                  className='svg'
+                  height='635'
+                  width='635'
+                  xmlns='http://www.w3.org/2000/svg'
+                  style={{ opacity: svgOpacity, transition: 'opacity 0.2s ease-out' }}
+                >
                   {/* Outer Outer Circle */}
                   <circle
                     cx='317.5'
@@ -757,133 +784,145 @@ export default function V2() {
                 </svg>
               </div>
             </div>
-          </div>
-        ) : animationStage === 1 ? (
-          <div className='flex justify-center items-center w-[635px] h-[635px] pb-[100px]'>
-            <div
-              style={{
-                position: 'fixed',
-                bottom: thirdVisible ? '60%' : '-400px', // Start from bottom, move to middle
-                transition: 'bottom 0.5s ease',
-              }}
-            >
+          ) : animationStage === 1 ? (
+            <div className='flex justify-center items-center w-[635px] h-[635px] pt-[200px]'>
+              <div
+                style={{
+                  position: 'fixed',
+                  bottom: thirdVisible ? '78%' : '-400px', // Start from bottom, move to middle
+                  transition: 'bottom 0.5s ease',
+                }}
+              >
+                <svg
+                  width='146'
+                  height='87'
+                  viewBox='0 0 146 87'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    d='M0 85.0819L18 19C60.6945 21.9505 81.6466 22.0014 125.5 19L146 84.3988C146 84.3988 101.567 86.8681 72.7712 86.9945C44.2454 87.1196 0 85.0819 0 85.0819Z'
+                    fill='#25C38B'
+                  />
+                  <ellipse cx='72' cy='16' rx='54' ry='16' fill='#25C38B' />
+                </svg>
+              </div>
+              <div
+                style={{
+                  position: 'fixed',
+                  bottom: secondVisible ? '58%' : '-400px', // Start from bottom, move to middle
+                  transition: 'bottom 0.5s ease',
+                }}
+              >
+                {secondReduced ? (
+                  <svg
+                    width='272'
+                    height='102'
+                    viewBox='0 0 272 102'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <path
+                      fillRule='evenodd'
+                      clipRule='evenodd'
+                      d='M212.522 11.6115C206.028 12.1923 195.355 13.0986 183.245 13.9357L178.893 99.9201C191.562 98.9724 204.732 97.7977 217.042 96.608L212.522 11.6115ZM223.014 96.0234C250.314 93.317 272 90.7131 272 90.7131L219.138 11C219.138 11 218.917 11.0215 218.495 11.0618L223.014 96.0234ZM141.002 15.933C152.383 15.754 165.257 15.107 177.222 14.3377L172.869 100.356C161.257 101.166 150.268 101.749 141.002 101.936V15.933ZM135.002 15.9821C127.985 15.9813 120.154 15.7558 112.172 15.4012L90.2185 99.8194C106.934 101.104 122.91 101.998 135.002 102V15.9821ZM77.5788 13.2645C86.237 13.921 96.1973 14.5987 106.18 15.1132L84.2738 99.3491C71.692 98.3262 58.9041 97.1189 47.2188 95.9362L77.5788 13.2645ZM71.6165 12.8003C59.3802 11.8232 50.9399 11 50.9399 11L0 90.7131C0 90.7131 17.7544 92.8894 41.3084 95.3308L71.6165 12.8003Z'
+                      fill='#84E9C5'
+                    />
+                    <ellipse cx='135.5' cy='12.5' rx='85.5' ry='12.5' fill='#84E9C5' />
+                  </svg>
+                ) : (
+                  <svg
+                    width='272'
+                    height='170'
+                    viewBox='0 0 272 170'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <path
+                      fillRule='evenodd'
+                      clipRule='evenodd'
+                      d='M212.522 13.0617C206.028 14.0701 195.356 15.6437 183.245 17.0972L178.893 166.389C191.562 164.743 204.732 162.704 217.042 160.638L212.522 13.0617ZM223.014 159.623C250.314 154.924 272 150.403 272 150.403L219.138 12C219.138 12 218.917 12.0374 218.495 12.1072L223.014 159.623ZM141.002 20.5649C152.383 20.2542 165.257 19.1308 177.222 17.7951L172.869 167.145C161.257 168.551 150.268 169.565 141.002 169.889V20.5649ZM135.002 20.6502C127.985 20.6488 120.154 20.2573 112.171 19.6416L90.2183 166.214C106.934 168.444 122.91 169.997 135.002 170V20.6502ZM77.5788 15.9318C86.237 17.0717 96.1972 18.2484 106.179 19.1415L84.2737 165.397C71.6919 163.621 58.904 161.525 47.2189 159.472L77.5788 15.9318ZM71.6166 15.1258C59.3802 13.4292 50.9399 12 50.9399 12L0 150.403C0 150.403 17.7545 154.182 41.3085 158.42L71.6166 15.1258Z'
+                      fill='#84E9C5'
+                    />
+                    <ellipse cx='135' cy='12.5' rx='84' ry='12.5' fill='#7EDEBC' />
+                  </svg>
+                )}
+              </div>
               <svg
-                width='146'
-                height='87'
-                viewBox='0 0 146 87'
+                width='635'
+                height='635'
+                viewBox='0 0 635 635'
+                className='overflow-visible absolute'
+                style={{ opacity: secondSvgOpacity, transition: 'opacity 0.2s ease-out' }}
+              >
+                {/* Outer Circle (Flat Disc) - stays visible */}
+
+                <circle
+                  cx='317.5'
+                  cy='317.5'
+                  r='205' // Radius of the outer circle
+                  fill='none'
+                  stroke='#D1F9EB'
+                  strokeWidth={40}
+                  transformOrigin='317.5 340'
+                  transform='scale(1.12, 0.3)' // Squash vertically to simulate an ellipse
+                />
+                {/* Cone Layers */}
+                {Array.from({ length: layers }).map((_, i) => {
+                  const progress = i / (layers - 1); // Calculate progress for each layer
+                  const layerHeight = 317.5 - progress * coneHeight; // Adjust layer height
+                  const layerRadius = 185 - progress * 50; // Gradually reduce radius for 3D effect
+
+                  // Set the color of the top layer to blue
+                  const fillColor = i === layers - 1 ? '#7CE1BD' : '#D1F9EB';
+                  return (
+                    <circle
+                      key={i}
+                      cx='317.5'
+                      cy={layerHeight}
+                      r={layerRadius + 10}
+                      stroke={fillColor}
+                      strokeWidth={60}
+                      fill='none'
+                      opacity={1} // Full opacity to avoid blurriness
+                      transformOrigin='317.5 335'
+                      transform='scale(1.12, 0.3)' // Squash each circle vertically
+                    />
+                  );
+                })}
+              </svg>
+            </div>
+          ) : (
+            <div className='flex justify-center items-center w-[635px] h-[635px] pb-[100px]'>
+              <svg
+                width='423'
+                height='310'
+                viewBox='0 0 423 310'
                 fill='none'
                 xmlns='http://www.w3.org/2000/svg'
               >
+                <ellipse cx='211.5' cy='271' rx='211.5' ry='38.5' fill='#D0FDED' />
                 <path
-                  d='M0 85.0819L18 19C60.6945 21.9505 81.6466 22.0014 125.5 19L146 84.3988C146 84.3988 101.567 86.8681 72.7712 86.9945C44.2454 87.1196 0 85.0819 0 85.0819Z'
+                  d='M401 275.236L369 173C335 186.395 266.5 187.761 214.5 187.761C162.5 187.761 99 183.934 60 176.827L19 275.236C19 275.236 139.712 289.76 214.5 289.997C291.59 290.241 401 275.236 401 275.236Z'
+                  fill='#D1F9EB'
+                />
+                <ellipse cx='213.5' cy='173' rx='153.5' ry='30' fill='#7CE1BD' />
+                <path
+                  fill-rule='evenodd'
+                  clip-rule='evenodd'
+                  d='M290.522 105.612C284.028 106.192 273.355 107.099 261.245 107.936L256.893 193.92C269.562 192.972 282.732 191.798 295.042 190.608L290.522 105.612ZM301.014 190.023C328.314 187.317 350 184.713 350 184.713L297.138 105C297.138 105 296.917 105.022 296.495 105.062L301.014 190.023ZM219.002 109.933C230.383 109.754 243.257 109.107 255.222 108.338L250.869 194.356C239.257 195.166 228.268 195.749 219.002 195.936V109.933ZM213.002 109.982C205.985 109.981 198.154 109.756 190.172 109.401L168.218 193.819C184.934 195.104 200.91 195.998 213.002 196V109.982ZM155.579 107.264C164.237 107.921 174.197 108.599 184.18 109.113L162.274 193.349C149.692 192.326 136.904 191.119 125.219 189.936L155.579 107.264ZM149.617 106.8C137.38 105.823 128.94 105 128.94 105L78 184.713C78 184.713 95.7544 186.889 119.308 189.331L149.617 106.8Z'
+                  fill='#84E9C5'
+                />
+                <ellipse cx='215.5' cy='105.5' rx='85.5' ry='12.5' fill='#15B67D' />
+                <path
+                  d='M143 104.49L161 18C203.695 21.8617 224.647 21.9283 268.5 18L289 103.596C289 103.596 244.567 106.827 215.771 106.993C187.245 107.157 143 104.49 143 104.49Z'
                   fill='#25C38B'
                 />
-                <ellipse cx='72' cy='16' rx='54' ry='16' fill='#25C38B' />
+                <ellipse cx='215' cy='16' rx='54' ry='16' fill='#0CA56F' />
               </svg>
             </div>
-            <div
-              style={{
-                position: 'fixed',
-                bottom: isVisible ? '45%' : '-400px', // Start from bottom, move to middle
-                transition: 'bottom 0.5s ease',
-              }}
-            >
-              {isReduced ? (
-                <svg
-                  width='272'
-                  height='102'
-                  viewBox='0 0 272 102'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    fillRule='evenodd'
-                    clipRule='evenodd'
-                    d='M212.522 11.6115C206.028 12.1923 195.355 13.0986 183.245 13.9357L178.893 99.9201C191.562 98.9724 204.732 97.7977 217.042 96.608L212.522 11.6115ZM223.014 96.0234C250.314 93.317 272 90.7131 272 90.7131L219.138 11C219.138 11 218.917 11.0215 218.495 11.0618L223.014 96.0234ZM141.002 15.933C152.383 15.754 165.257 15.107 177.222 14.3377L172.869 100.356C161.257 101.166 150.268 101.749 141.002 101.936V15.933ZM135.002 15.9821C127.985 15.9813 120.154 15.7558 112.172 15.4012L90.2185 99.8194C106.934 101.104 122.91 101.998 135.002 102V15.9821ZM77.5788 13.2645C86.237 13.921 96.1973 14.5987 106.18 15.1132L84.2738 99.3491C71.692 98.3262 58.9041 97.1189 47.2188 95.9362L77.5788 13.2645ZM71.6165 12.8003C59.3802 11.8232 50.9399 11 50.9399 11L0 90.7131C0 90.7131 17.7544 92.8894 41.3084 95.3308L71.6165 12.8003Z'
-                    fill='#84E9C5'
-                  />
-                  <ellipse cx='135.5' cy='12.5' rx='85.5' ry='12.5' fill='#84E9C5' />
-                </svg>
-              ) : (
-                <svg
-                  width='272'
-                  height='170'
-                  viewBox='0 0 272 170'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    fillRule='evenodd'
-                    clipRule='evenodd'
-                    d='M212.522 13.0617C206.028 14.0701 195.356 15.6437 183.245 17.0972L178.893 166.389C191.562 164.743 204.732 162.704 217.042 160.638L212.522 13.0617ZM223.014 159.623C250.314 154.924 272 150.403 272 150.403L219.138 12C219.138 12 218.917 12.0374 218.495 12.1072L223.014 159.623ZM141.002 20.5649C152.383 20.2542 165.257 19.1308 177.222 17.7951L172.869 167.145C161.257 168.551 150.268 169.565 141.002 169.889V20.5649ZM135.002 20.6502C127.985 20.6488 120.154 20.2573 112.171 19.6416L90.2183 166.214C106.934 168.444 122.91 169.997 135.002 170V20.6502ZM77.5788 15.9318C86.237 17.0717 96.1972 18.2484 106.179 19.1415L84.2737 165.397C71.6919 163.621 58.904 161.525 47.2189 159.472L77.5788 15.9318ZM71.6166 15.1258C59.3802 13.4292 50.9399 12 50.9399 12L0 150.403C0 150.403 17.7545 154.182 41.3085 158.42L71.6166 15.1258Z'
-                    fill='#84E9C5'
-                  />
-                  <ellipse cx='135' cy='12.5' rx='84' ry='12.5' fill='#7EDEBC' />
-                </svg>
-              )}
-            </div>
-            <svg width='450' height='400' viewBox='0 0 450 400' className='overflow-visible'>
-              {/* Outer Red Circle (Flat Disc) - stays visible */}
-              <ellipse
-                cx='225'
-                cy='350'
-                rx='225' // Radius of outer red circle
-                ry='50'
-                fill='#7CE1BD'
-              />
-              {/* Cone Layers */}
-              {Array.from({ length: layers }).map((_, i) => {
-                const progress = i / (layers - 1); // Calculate progress for each layer
-                const layerHeight = 350 - progress * coneHeight; // Adjust layer height
-                const layerRx = 185 - progress * 50; // Gradually reduce x-radius for 3D effect
-                const layerRy = 38.5 - progress * 10; // Gradually reduce y-radius for depth effect
-
-                // Set the color of the top layer to blue
-                const fillColor = i === layers - 1 ? 'gray' : '#7CE1BD';
-                return (
-                  <ellipse
-                    key={i}
-                    cx='225'
-                    cy={layerHeight}
-                    rx={layerRx}
-                    ry={layerRy}
-                    fill={fillColor}
-                    opacity={1} // Full opacity to avoid blurriness
-                  />
-                );
-              })}
-            </svg>
-          </div>
-        ) : (
-          <div className='flex justify-center items-center w-[635px] h-[635px] pb-[100px]'>
-            <svg
-              width='423'
-              height='310'
-              viewBox='0 0 423 310'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <ellipse cx='211.5' cy='271' rx='211.5' ry='38.5' fill='#D0FDED' />
-              <path
-                d='M401 275.236L369 173C335 186.395 266.5 187.761 214.5 187.761C162.5 187.761 99 183.934 60 176.827L19 275.236C19 275.236 139.712 289.76 214.5 289.997C291.59 290.241 401 275.236 401 275.236Z'
-                fill='#D1F9EB'
-              />
-              <ellipse cx='213.5' cy='173' rx='153.5' ry='30' fill='#7CE1BD' />
-              <path
-                fill-rule='evenodd'
-                clip-rule='evenodd'
-                d='M290.522 105.612C284.028 106.192 273.355 107.099 261.245 107.936L256.893 193.92C269.562 192.972 282.732 191.798 295.042 190.608L290.522 105.612ZM301.014 190.023C328.314 187.317 350 184.713 350 184.713L297.138 105C297.138 105 296.917 105.022 296.495 105.062L301.014 190.023ZM219.002 109.933C230.383 109.754 243.257 109.107 255.222 108.338L250.869 194.356C239.257 195.166 228.268 195.749 219.002 195.936V109.933ZM213.002 109.982C205.985 109.981 198.154 109.756 190.172 109.401L168.218 193.819C184.934 195.104 200.91 195.998 213.002 196V109.982ZM155.579 107.264C164.237 107.921 174.197 108.599 184.18 109.113L162.274 193.349C149.692 192.326 136.904 191.119 125.219 189.936L155.579 107.264ZM149.617 106.8C137.38 105.823 128.94 105 128.94 105L78 184.713C78 184.713 95.7544 186.889 119.308 189.331L149.617 106.8Z'
-                fill='#84E9C5'
-              />
-              <ellipse cx='215.5' cy='105.5' rx='85.5' ry='12.5' fill='#15B67D' />
-              <path
-                d='M143 104.49L161 18C203.695 21.8617 224.647 21.9283 268.5 18L289 103.596C289 103.596 244.567 106.827 215.771 106.993C187.245 107.157 143 104.49 143 104.49Z'
-                fill='#25C38B'
-              />
-              <ellipse cx='215' cy='16' rx='54' ry='16' fill='#0CA56F' />
-            </svg>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </>
   );

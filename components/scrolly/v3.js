@@ -779,7 +779,7 @@ export default function V2() {
                 fill='none'
                 stroke='#D1F9EB'
                 strokeWidth={40}
-                transform-origin='317.5 340'
+                transformOrigin='317.5 340'
                 transform='scale(1.12, 0.3)' // Squash vertically to simulate an ellipse
               />
               {/* Cone Layers */}
@@ -800,7 +800,7 @@ export default function V2() {
                     strokeWidth={60}
                     fill='none'
                     opacity={1} // Full opacity to avoid blurriness
-                    transform-origin='317.5 335'
+                    transformOrigin='317.5 335'
                     transform='scale(1.12, 0.3)' // Squash each circle vertically
                   />
                 );
