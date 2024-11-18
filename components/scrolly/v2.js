@@ -16,6 +16,8 @@ export default function V2() {
   const [isVisible, setIsVisible] = useState(false);
   const [isReduced, setIsReduced] = useState(false);
 
+  const [thirdVisible, setThirdVisible] = useState(false);
+
   const contentRefs = {
     c1: useRef(),
     c2: useRef(),
@@ -65,8 +67,14 @@ export default function V2() {
       } else {
         setIsVisible(false);
       }
+
+      if(scrollPosition > 4400){
+        setThirdVisible(true)
+      } else{
+        setThirdVisible(false)
+      }
       
-      if (scrollPosition > 4200) {
+      if (scrollPosition > 4400) {
         setIsReduced(true);
       } else {
         setIsReduced(false);
@@ -749,13 +757,27 @@ export default function V2() {
             </div>
           </div>
         ) : (
-          <div className='flex justify-center items-center w-[635px] h-[635px] pb-[300px]'>
+          <div className='flex justify-center items-center w-[635px] h-[635px] pb-[100px]'>
+              <div
+        style={{
+          position: 'fixed',
+          bottom: thirdVisible ? '60%' : '-400px', // Start from bottom, move to middle
+          transition: 'bottom 0.5s ease',
+        }}
+      >
+
+<svg width="146" height="87" viewBox="0 0 146 87" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 85.0819L18 19C60.6945 21.9505 81.6466 22.0014 125.5 19L146 84.3988C146 84.3988 101.567 86.8681 72.7712 86.9945C44.2454 87.1196 0 85.0819 0 85.0819Z" fill="#25C38B"/>
+<ellipse cx="72" cy="16" rx="54" ry="16" fill="#25C38B"/>
+</svg>
+
+        
+      </div>
             <div
         style={{
           position: 'fixed',
-          bottom: isVisible ? '50%' : '-400px', // Start from bottom, move to middle
+          bottom: isVisible ? '45%' : '-400px', // Start from bottom, move to middle
           transition: 'bottom 0.5s ease',
-          paddingBottom: '60px'
         }}
       >
         {isReduced ? (
