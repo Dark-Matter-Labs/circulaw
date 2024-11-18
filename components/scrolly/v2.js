@@ -13,6 +13,9 @@ export default function V2() {
   const [activeContent, setActiveContent] = useState('c1');
   const [animationStage, setAnimationStage] = useState(0);
 
+  const [isVisible, setIsVisible] = useState(false);
+  const [isReduced, setIsReduced] = useState(false);
+
   const contentRefs = {
     c1: useRef(),
     c2: useRef(),
@@ -56,6 +59,18 @@ export default function V2() {
 
     if (scrollPosition > 3850) {
       setAnimationStage(1);
+
+      if(scrollPosition > 4000){
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+      
+      if (scrollPosition > 4200) {
+        setIsReduced(true);
+      } else {
+        setIsReduced(false);
+      }
     } else {
       setAnimationStage(0);
     }
@@ -735,6 +750,26 @@ export default function V2() {
           </div>
         ) : (
           <div className='flex justify-center items-center w-[635px] h-[635px] pb-[300px]'>
+            <div
+        style={{
+          position: 'fixed',
+          bottom: isVisible ? '50%' : '-400px', // Start from bottom, move to middle
+          transition: 'bottom 0.5s ease',
+          paddingBottom: '60px'
+        }}
+      >
+        {isReduced ? (
+          <svg width="272" height="102" viewBox="0 0 272 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fillRule="evenodd" clipRule="evenodd" d="M212.522 11.6115C206.028 12.1923 195.355 13.0986 183.245 13.9357L178.893 99.9201C191.562 98.9724 204.732 97.7977 217.042 96.608L212.522 11.6115ZM223.014 96.0234C250.314 93.317 272 90.7131 272 90.7131L219.138 11C219.138 11 218.917 11.0215 218.495 11.0618L223.014 96.0234ZM141.002 15.933C152.383 15.754 165.257 15.107 177.222 14.3377L172.869 100.356C161.257 101.166 150.268 101.749 141.002 101.936V15.933ZM135.002 15.9821C127.985 15.9813 120.154 15.7558 112.172 15.4012L90.2185 99.8194C106.934 101.104 122.91 101.998 135.002 102V15.9821ZM77.5788 13.2645C86.237 13.921 96.1973 14.5987 106.18 15.1132L84.2738 99.3491C71.692 98.3262 58.9041 97.1189 47.2188 95.9362L77.5788 13.2645ZM71.6165 12.8003C59.3802 11.8232 50.9399 11 50.9399 11L0 90.7131C0 90.7131 17.7544 92.8894 41.3084 95.3308L71.6165 12.8003Z" fill="#84E9C5"/>
+            <ellipse cx="135.5" cy="12.5" rx="85.5" ry="12.5" fill="#84E9C5"/>
+          </svg>
+        ) : (
+          <svg width="272" height="170" viewBox="0 0 272 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fillRule="evenodd" clipRule="evenodd" d="M212.522 13.0617C206.028 14.0701 195.356 15.6437 183.245 17.0972L178.893 166.389C191.562 164.743 204.732 162.704 217.042 160.638L212.522 13.0617ZM223.014 159.623C250.314 154.924 272 150.403 272 150.403L219.138 12C219.138 12 218.917 12.0374 218.495 12.1072L223.014 159.623ZM141.002 20.5649C152.383 20.2542 165.257 19.1308 177.222 17.7951L172.869 167.145C161.257 168.551 150.268 169.565 141.002 169.889V20.5649ZM135.002 20.6502C127.985 20.6488 120.154 20.2573 112.171 19.6416L90.2183 166.214C106.934 168.444 122.91 169.997 135.002 170V20.6502ZM77.5788 15.9318C86.237 17.0717 96.1972 18.2484 106.179 19.1415L84.2737 165.397C71.6919 163.621 58.904 161.525 47.2189 159.472L77.5788 15.9318ZM71.6166 15.1258C59.3802 13.4292 50.9399 12 50.9399 12L0 150.403C0 150.403 17.7545 154.182 41.3085 158.42L71.6166 15.1258Z" fill="#84E9C5"/>
+            <ellipse cx="135" cy="12.5" rx="84" ry="12.5" fill="#7EDEBC"/>
+          </svg>
+        )}
+      </div>
             <svg width='450' height='400' viewBox='0 0 450 400' className='overflow-visible'>
               {/* Outer Red Circle (Flat Disc) - stays visible */}
               <ellipse
