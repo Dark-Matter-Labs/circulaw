@@ -187,6 +187,29 @@ export default function V5() {
   const layers2 = 300;
   const coneHeight = Math.min((scrollPosition - 3850) / 5, maxHeight);
   const coneHeight2 = Math.min((scrollPosition - 5400) / 5, maxHeight2);
+  const coneHeight3 = Math.min((scrollPosition - 7200) / 5, maxHeight2);
+
+  // Set the scroll positions and max offset
+  const startScroll = 5200; // Replace with the desired start scroll position
+  const endScroll = 5400; // Replace with the desired end scroll position
+  const maxCYOffset = 350; // Maximum offset to add to `cy`
+
+  const startScroll2 = 7000; // Replace with the desired start scroll position
+  const endScroll2 = 7200; // Replace with the desired end scroll position
+
+  function calculateCY(scrollPosition, start, end, maxOffset) {
+    if (scrollPosition < start) return 0;
+    if (scrollPosition > end) return maxOffset;
+
+    // Calculate the progress based on scroll position between start and end
+    const progress = (scrollPosition - start) / (end - start);
+
+    // Return the calculated offset for the `cy` value
+    return progress * maxOffset;
+  }
+
+  const cyOffset = calculateCY(scrollPosition, startScroll, endScroll, maxCYOffset);
+  const cyOffset2 = calculateCY(scrollPosition, startScroll2, endScroll2, maxCYOffset);
 
   return (
     <>
@@ -778,7 +801,7 @@ export default function V5() {
             >
               <circle
                 cx='317.5'
-                cy='317.5'
+                cy={317.5 + cyOffset + cyOffset2}
                 r='205'
                 fill='none'
                 stroke='#D1F9EB'
@@ -798,7 +821,7 @@ export default function V5() {
                   <circle
                     key={i}
                     cx='317.5'
-                    cy={layerHeight}
+                    cy={layerHeight + cyOffset + cyOffset2}
                     r={layerRadius + 10}
                     stroke={fillColor}
                     strokeWidth={40}
@@ -810,26 +833,38 @@ export default function V5() {
                 );
               })}
 
+              {scrollPosition > 5200 && (
+                <circle
+                  cx='317.5'
+                  cy={37.5 + cyOffset2}
+                  r='145'
+                  fill='none'
+                  stroke='#7CE1BD'
+                  strokeWidth={40}
+                  transform-origin='317.5 340'
+                  transform='scale(1.12, 0.3)'
+                />
+              )}
+
               {secondConeStart < scrollPosition && (
                 <>
                   {/* Dashed Circles for the Second Cone with Alternating Colors */}
                   {Array.from({ length: layers2 - 1 }).map((_, i) => {
                     const progress2 = i / (layers2 - 1);
-                    const layerHeight = 206 - progress2 * coneHeight2;
+                    const layerHeight = 236 - progress2 * coneHeight2;
                     const layerRadius = 145 - progress2 * 50;
-
-                    // Calculate circumference and dash length/gap
+                    // Calcul ate circumference and dash length/gap
                     const circumference = 2 * Math.PI * layerRadius;
                     const dashLength = (circumference * 0.75) / 6;
                     const gapLength = circumference / 25;
-
+                    console.log(layerHeight);
                     return (
                       <>
                         {/* Green dashes */}
                         <circle
                           key={`dashed-green-${i}`}
                           cx='317.5'
-                          cy={layerHeight}
+                          cy={layerHeight + cyOffset2}
                           r={layerRadius}
                           fill='none'
                           stroke='#07B071'
@@ -843,7 +878,7 @@ export default function V5() {
                         <circle
                           key={`dashed-blue-${i}`}
                           cx='317.5'
-                          cy={layerHeight}
+                          cy={layerHeight + cyOffset2}
                           r={layerRadius}
                           fill='#D1F9EB' // can change this to white for a different look.
                           stroke='#7CE1BD'
@@ -857,6 +892,45 @@ export default function V5() {
                       </>
                     );
                   })}
+                  {scrollPosition > 7000 && (
+                    <>
+                      <circle
+                        cx='317.5'
+                        cy={-264}
+                        r='95'
+                        fill='none'
+                        stroke='#25C38B'
+                        strokeWidth={40}
+                        transform-origin='317.5 340'
+                        transform='scale(1.12, 0.3)'
+                      />
+                      {scrollPosition > 7200 && (
+                        <>
+                          {Array.from({ length: layers }).map((_, i) => {
+                            const progress3 = i / (layers - 1);
+                            const layerHeight = -254 - progress3 * coneHeight3;
+                            const layerRadius = 85 - progress3 * 50;
+                            const fillColor = i === layers - 1 ? '#07B071' : '#25C38B';
+
+                            return (
+                              <circle
+                                key={i}
+                                cx='317.5'
+                                cy={layerHeight}
+                                r={layerRadius + 10}
+                                stroke={fillColor}
+                                strokeWidth={40}
+                                fill='none'
+                                opacity={1}
+                                transform-origin='317.5 335'
+                                transform='scale(1.12, 0.3)'
+                              />
+                            );
+                          })}
+                        </>
+                      )}
+                    </>
+                  )}
                 </>
               )}
             </svg>
