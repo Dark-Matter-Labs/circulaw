@@ -7,7 +7,7 @@ import ContentFour from './content/04-content';
 import ContentFive from './content/05-content';
 import ContentSix from './content/06-content';
 
-export default function V2() {
+export default function V3() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [activeNav, setActiveNav] = useState(0);
   const [activeContent, setActiveContent] = useState('c1');
@@ -162,6 +162,8 @@ export default function V2() {
       ? 1
       : (scrollPosition - fadeInStart) / (fadeInEnd - fadeInStart);
 
+  const secondConeStart = 5400;
+
   // Calculate the interpolation value
   const maxRotation = 75;
 
@@ -179,8 +181,11 @@ export default function V2() {
 
   // Define growth parameters
   const maxHeight = 300; // Maximum height of the cone is now 190px
+  const maxHeight2 = 300; // Maximum height of the cone is now 190px
+
   const layers = 200; // Number of ellipse layers for smoother transition
   const coneHeight = Math.min((scrollPosition - 3850) / 5, maxHeight);
+  const coneHeight2 = Math.min((scrollPosition - 5400) / 5, maxHeight2);
 
   return (
     <>
@@ -771,25 +776,24 @@ export default function V2() {
               style={{ opacity: secondSvgOpacity, transition: 'opacity 0.2s ease-out' }}
             >
               {/* Outer Circle (Flat Disc) - stays visible */}
-
               <circle
                 cx='317.5'
                 cy='317.5'
-                r='205' // Radius of the outer circle
+                r='205'
                 fill='none'
                 stroke='#D1F9EB'
                 strokeWidth={40}
                 transform-origin='317.5 340'
                 transform='scale(1.12, 0.3)' // Squash vertically to simulate an ellipse
               />
-              {/* Cone Layers */}
-              {Array.from({ length: layers }).map((_, i) => {
-                const progress = i / (layers - 1); // Calculate progress for each layer
-                const layerHeight = 317.5 - progress * coneHeight; // Adjust layer height
-                const layerRadius = 185 - progress * 50; // Gradually reduce radius for 3D effect
 
-                // Set the color of the top layer to blue
+              {/* First Cone Layers */}
+              {Array.from({ length: layers }).map((_, i) => {
+                const progress = i / (layers - 1);
+                const layerHeight = 317.5 - progress * coneHeight;
+                const layerRadius = 185 - progress * 50;
                 const fillColor = i === layers - 1 ? '#7CE1BD' : '#D1F9EB';
+
                 return (
                   <circle
                     key={i}
@@ -797,17 +801,94 @@ export default function V2() {
                     cy={layerHeight}
                     r={layerRadius + 10}
                     stroke={fillColor}
-                    strokeWidth={60}
+                    strokeWidth={40}
                     fill='none'
-                    opacity={1} // Full opacity to avoid blurriness
+                    opacity={1}
                     transform-origin='317.5 335'
-                    transform='scale(1.12, 0.3)' // Squash each circle vertically
+                    transform='scale(1.12, 0.3)'
                   />
                 );
               })}
+
+              {secondConeStart < scrollPosition && (
+                <>
+                  {/* Define Vertical Line Pattern for Stroke */}
+                  <defs>
+                    <pattern
+                      id='verticalLinePattern'
+                      width='20' // Adjust for spacing between lines
+                      height='40' // Matches stroke width for full coverage
+                      patternUnits='userSpaceOnUse'
+                    >
+                      {/* Vertical Line that goes from the outer edge to the inner edge */}
+                      <line x1='5' y1='0' x2='5' y2='40' stroke='white' strokeWidth='2' />
+                    </pattern>
+                  </defs>
+
+                  {/* Second Cone Layers with Solid Outline and Vertical Line Pattern */}
+                  {Array.from({ length: layers }).map((_, i) => {
+                    const progress2 = i / (layers - 1);
+                    const layerHeight = 206 - progress2 * coneHeight2;
+                    const layerRadius = 145 - progress2 * 50;
+
+                    // Check if it's the top circle layer
+                    if (i === layers - 1) {
+                      // Render the top circle with solid fill color
+                      return (
+                        <circle
+                          key={i}
+                          cx='317.5'
+                          cy={layerHeight}
+                          r={layerRadius}
+                          fill='none'
+                          stroke='#7EDEBC'
+                          strokeWidth={40}
+                          opacity={1}
+                          transform-origin='317.5 254'
+                          transform='scale(1.12, 0.3)'
+                        />
+                      );
+                    }
+
+                    return (
+                      <>
+                        {/* Solid Outline for Each Layer */}
+                        <circle
+                          key={`outline-${i}`}
+                          cx='317.5'
+                          cy={layerHeight}
+                          r={layerRadius + 14}
+                          fill='none'
+                          stroke='#7EDEBC' // Outline color
+                          strokeWidth={10}
+                          opacity={1}
+                          transform-origin='317.5 254'
+                          transform='scale(1.12, 0.3)'
+                        />
+
+                        {/* Patterned Layer with Vertical Lines Inside the Outline */}
+                        <circle
+                          key={`pattern-${i}`}
+                          cx='317.5'
+                          cy={layerHeight}
+                          r={layerRadius}
+                          fill='none'
+                          stroke='url(#verticalLinePattern)' // Apply vertical line pattern to stroke
+                          strokeWidth={38} // Slightly smaller to fit inside the outline
+                          opacity={1}
+                          transform-origin='317.5 254'
+                          transform='scale(1.12, 0.3)'
+                        />
+                      </>
+                    );
+                  })}
+                </>
+              )}
             </svg>
+            
           )}
         </div>
+        
       </div>
     </>
   );
