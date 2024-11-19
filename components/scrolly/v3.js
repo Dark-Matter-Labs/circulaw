@@ -783,7 +783,7 @@ export default function V3() {
                 fill='none'
                 stroke='#D1F9EB'
                 strokeWidth={40}
-                transform-origin='317.5 340'
+                transformOrigin='317.5 340'
                 transform='scale(1.12, 0.3)' // Squash vertically to simulate an ellipse
               />
 
@@ -804,7 +804,7 @@ export default function V3() {
                     strokeWidth={40}
                     fill='none'
                     opacity={1}
-                    transform-origin='317.5 335'
+                    transformOrigin='317.5 335'
                     transform='scale(1.12, 0.3)'
                   />
                 );
