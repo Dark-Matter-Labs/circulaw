@@ -184,7 +184,7 @@ export default function V5() {
   const maxHeight2 = 300; // Maximum height of the cone is now 190px
 
   const layers = 200; // Number of ellipse layers for smoother transition
-  const layers2 = 300
+  const layers2 = 300;
   const coneHeight = Math.min((scrollPosition - 3850) / 5, maxHeight);
   const coneHeight2 = Math.min((scrollPosition - 5400) / 5, maxHeight2);
 
@@ -769,102 +769,99 @@ export default function V5() {
             </div>
           </div>
           {animationStage === 1 && (
-       <svg
-       width="635"
-       height="635"
-       viewBox="0 0 635 635"
-       className="overflow-visible absolute"
-       style={{ opacity: secondSvgOpacity, transition: 'opacity 0.2s ease-out' }}
-     >
-       <circle
-         cx="317.5"
-         cy="317.5"
-         r="205"
-         fill="none"
-         stroke="#D1F9EB"
-         strokeWidth={40}
-         transform-origin="317.5 340"
-         transform="scale(1.12, 0.3)"
-       />
-     
-       {/* First Cone Layers */}
-       {Array.from({ length: layers }).map((_, i) => {
-         const progress = i / (layers - 1);
-         const layerHeight = 317.5 - progress * coneHeight;
-         const layerRadius = 185 - progress * 50;
-         const fillColor = i === layers - 1 ? '#7CE1BD' : '#D1F9EB';
-     
-         return (
-           <circle
-             key={i}
-             cx="317.5"
-             cy={layerHeight}
-             r={layerRadius + 10}
-             stroke={fillColor}
-             strokeWidth={40}
-             fill="none"
-             opacity={1}
-             transform-origin="317.5 335"
-             transform="scale(1.12, 0.3)"
-           />
-         );
-       })}
-     
-       {secondConeStart < scrollPosition && (
-         <>
-           {/* Dashed Circles for the Second Cone with Alternating Colors */}
-           {Array.from({ length: layers2 - 1 }).map((_, i) => {
-             const progress2 = i / (layers2 - 1);
-             const layerHeight = 206 - progress2 * coneHeight2;
-             const layerRadius = 145 - progress2 * 50;
-     
-             // Calculate circumference and dash length/gap
-             const circumference = 2 * Math.PI * layerRadius;
-             const dashLength = (circumference * 0.75) / 6;
-             const gapLength = (circumference) / 25;
-     
-             return (
-               <>
-                 {/* Green dashes */}
-                 <circle
-                   key={`dashed-green-${i}`}
-                   cx="317.5"
-                   cy={layerHeight}
-                   r={layerRadius}
-                   fill="none"
-                   stroke="#07B071"
-                   strokeWidth={40}
-                   strokeDasharray={`${dashLength}, ${gapLength}`}
-                   opacity={1}
-                   transform-origin="317.5 254"
-                   transform="scale(1.12, 0.3)"
-                 />
-                 {/* Blue dashes with offset to alternate */}
-                 <circle
-                   key={`dashed-blue-${i}`}
-                   cx="317.5"
-                   cy={layerHeight}
-                   r={layerRadius}
-                   fill="#D1F9EB" // can change this to white for a different look.
-                   stroke="#7CE1BD"
-                   strokeWidth={40}
-                   strokeDasharray={`${dashLength}, ${gapLength}`}
-                   strokeDashoffset={dashLength + gapLength} // Offset to alternate colors
-                   opacity={1}
-                   transform-origin="317.5 254"
-                   transform="scale(1.12, 0.3)"
-                 />
-               </>
-             );
-           })}
-         </>
-       )}
-     </svg>
-     
-            
+            <svg
+              width='635'
+              height='635'
+              viewBox='0 0 635 635'
+              className='overflow-visible absolute'
+              style={{ opacity: secondSvgOpacity, transition: 'opacity 0.2s ease-out' }}
+            >
+              <circle
+                cx='317.5'
+                cy='317.5'
+                r='205'
+                fill='none'
+                stroke='#D1F9EB'
+                strokeWidth={40}
+                transform-origin='317.5 340'
+                transform='scale(1.12, 0.3)'
+              />
+
+              {/* First Cone Layers */}
+              {Array.from({ length: layers }).map((_, i) => {
+                const progress = i / (layers - 1);
+                const layerHeight = 317.5 - progress * coneHeight;
+                const layerRadius = 185 - progress * 50;
+                const fillColor = i === layers - 1 ? '#7CE1BD' : '#D1F9EB';
+
+                return (
+                  <circle
+                    key={i}
+                    cx='317.5'
+                    cy={layerHeight}
+                    r={layerRadius + 10}
+                    stroke={fillColor}
+                    strokeWidth={40}
+                    fill='none'
+                    opacity={1}
+                    transform-origin='317.5 335'
+                    transform='scale(1.12, 0.3)'
+                  />
+                );
+              })}
+
+              {secondConeStart < scrollPosition && (
+                <>
+                  {/* Dashed Circles for the Second Cone with Alternating Colors */}
+                  {Array.from({ length: layers2 - 1 }).map((_, i) => {
+                    const progress2 = i / (layers2 - 1);
+                    const layerHeight = 206 - progress2 * coneHeight2;
+                    const layerRadius = 145 - progress2 * 50;
+
+                    // Calculate circumference and dash length/gap
+                    const circumference = 2 * Math.PI * layerRadius;
+                    const dashLength = (circumference * 0.75) / 6;
+                    const gapLength = circumference / 25;
+
+                    return (
+                      <>
+                        {/* Green dashes */}
+                        <circle
+                          key={`dashed-green-${i}`}
+                          cx='317.5'
+                          cy={layerHeight}
+                          r={layerRadius}
+                          fill='none'
+                          stroke='#07B071'
+                          strokeWidth={40}
+                          strokeDasharray={`${dashLength}, ${gapLength}`}
+                          opacity={1}
+                          transform-origin='317.5 254'
+                          transform='scale(1.12, 0.3)'
+                        />
+                        {/* Blue dashes with offset to alternate */}
+                        <circle
+                          key={`dashed-blue-${i}`}
+                          cx='317.5'
+                          cy={layerHeight}
+                          r={layerRadius}
+                          fill='#D1F9EB' // can change this to white for a different look.
+                          stroke='#7CE1BD'
+                          strokeWidth={40}
+                          strokeDasharray={`${dashLength}, ${gapLength}`}
+                          strokeDashoffset={dashLength + gapLength} // Offset to alternate colors
+                          opacity={1}
+                          transform-origin='317.5 254'
+                          transform='scale(1.12, 0.3)'
+                        />
+                      </>
+                    );
+                  })}
+                </>
+              )}
+            </svg>
           )}
         </div>
-        
       </div>
     </>
   );
