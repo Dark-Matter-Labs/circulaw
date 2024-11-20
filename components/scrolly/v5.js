@@ -219,81 +219,83 @@ export default function V5() {
   };
 
   const opacityOuterWords = Math.min(Math.max(scrollPosition / 250, 0), 1);
-  const opacity = scrollPosition < 250 ? 0 : Math.min((scrollPosition - 250) / 400, 1);
-  const opacity2 = Math.min(Math.max((scrollPosition - 650) / 200, 0), 1);
+  const circleOneOpacity = scrollPosition < 250 ? 0 : Math.min((scrollPosition - 250) / 400, 1);
+  const circleTwoOpacity = Math.min(Math.max((scrollPosition - 650) / 200, 0), 1);
 
   // Define thresholds for the scroll position to control when the transition happens
-  const thresholdStart = 3400; // start the transition
-  const thresholdEnd = 3850; // complete the transition
+  const startSVGTransition = 3400; // start the transition
+  const endSVGTransition = 3850; // complete the transition
 
-  const fadeStart = thresholdStart + 100; // Start fading out 100px after thresholdStart
-  const fadeEnd = thresholdEnd + 200; // Finish fading out 100px after thresholdEnd
-
-  const svgOpacity =
-    scrollPosition < fadeStart
-      ? 1
-      : scrollPosition > fadeEnd
-      ? 0
-      : 1 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
-
-  const fadeInStart = thresholdEnd; // Start fading in 100px after thresholdEnd
-  const fadeInEnd = fadeInStart + 200;
-
-  const secondSvgOpacity =
-    scrollPosition < fadeInStart
-      ? 0
-      : scrollPosition > fadeInEnd
-      ? 1
-      : (scrollPosition - fadeInStart) / (fadeInEnd - fadeInStart);
-
-  const secondConeStart = 5400;
+  const SVGfadeStart = startSVGTransition + 100; // Start fading out 100px after startSVGTransition
+  const SFGfadeEnd = endSVGTransition + 200; // Finish fading out 100px after endSVGTransition
 
   // Calculate the interpolation value
-  const maxRotation = 75;
+  const maxCircleRotation = 75;
 
   // Calculate the interpolation value
-  const progress = Math.min(
-    Math.max((scrollPosition - thresholdStart) / (thresholdEnd - thresholdStart), 0),
+  const SVGTransitionProgress = Math.min(
+    Math.max((scrollPosition - startSVGTransition) / (endSVGTransition - startSVGTransition), 0),
     1,
   );
 
-  // Use the maxRotation angle instead of 90 in the transform
-  const transformStyle = {
-    transform: `rotateX(${progress * maxRotation}deg) scale(${1 + progress * 0.2})`,
+  // Use the maxCircleRotation angle instead of 90 in the transform
+  const transformSVGStyle = {
+    transform: `rotateX(${SVGTransitionProgress * maxCircleRotation}deg) scale(${1 + SVGTransitionProgress * 0.2})`,
     transition: 'transform 0.1s ease-out',
   };
 
-  // Define growth parameters
-  const maxHeight = 300; // Maximum height of the cone is now 190px
-  const maxHeight2 = 300; // Maximum height of the cone is now 190px
+  const svgOpacity =
+    scrollPosition < SVGfadeStart
+      ? 1
+      : scrollPosition > SFGfadeEnd
+      ? 0
+      : 1 - (scrollPosition - SVGfadeStart) / (SFGfadeEnd - SVGfadeStart);
 
-  const layers = 200; // Number of ellipse layers for smoother transition
-  const layers2 = 300;
-  const coneHeight = Math.min((scrollPosition - 3850) / 5, maxHeight);
-  const coneHeight2 = Math.min((scrollPosition - 5400) / 5, maxHeight2);
-  const coneHeight3 = Math.min((scrollPosition - 7200) / 5, maxHeight2);
+  const fadeInSVGTwoStart = endSVGTransition; // Start fading in 100px after endSVGTransition
+  const fadeInSVGTwoEnd = fadeInSVGTwoStart + 200;
+
+  const secondSvgOpacity =
+    scrollPosition < fadeInSVGTwoStart
+      ? 0
+      : scrollPosition > fadeInSVGTwoEnd
+      ? 1
+      : (scrollPosition - fadeInSVGTwoStart) / (fadeInSVGTwoEnd - fadeInSVGTwoStart);
+
+  const secondConeStart = 5400;
+
+  // Define growth parameters
+  const maxConeHeight = 300; // Maximum height of the cone is now 190px
+
+  const layersConeOneAndThree = 200; // Number of ellipse layers for smoother transition
+  const layersConeTwo = 300;
+  const coneHeight = Math.min((scrollPosition - 3850) / 5, maxConeHeight);
+  const coneHeight2 = Math.min((scrollPosition - 5400) / 5, maxConeHeight);
+  const coneHeight3 = Math.min((scrollPosition - 7200) / 5, maxConeHeight);
 
   // Set the scroll positions and max offset
-  const startScroll = 5200; // Replace with the desired start scroll position
-  const endScroll = 5400; // Replace with the desired end scroll position
   const maxCYOffset = 350; // Maximum offset to add to `cy`
 
-  const startScroll2 = 7000; // Replace with the desired start scroll position
-  const endScroll2 = 7200; // Replace with the desired end scroll position
+  const coneOneVerticalShiftStart = 5200; // Replace with the desired start scroll position
+  const coneOneVerticalShiftEnd = 5400; // Replace with the desired end scroll position
+
+  const coneTwoVerticalShiftStart = 7000; // Replace with the desired start scroll position
+  const coneTwoVerticalShiftEnd = 7200; // Replace with the desired end scroll position
 
   function calculateCY(scrollPosition, start, end, maxOffset) {
     if (scrollPosition < start) return 0;
     if (scrollPosition > end) return maxOffset;
 
     // Calculate the progress based on scroll position between start and end
-    const progress = (scrollPosition - start) / (end - start);
+    const CYprogress = (scrollPosition - start) / (end - start);
 
     // Return the calculated offset for the `cy` value
-    return progress * maxOffset;
+    return CYprogress * maxOffset;
   }
 
-  const cyOffset = calculateCY(scrollPosition, startScroll, endScroll, maxCYOffset);
-  const cyOffset2 = calculateCY(scrollPosition, startScroll2, endScroll2, maxCYOffset);
+  const cyOffset = calculateCY(scrollPosition, coneOneVerticalShiftStart, coneOneVerticalShiftEnd, maxCYOffset);
+  const cyOffset2 = calculateCY(scrollPosition, coneTwoVerticalShiftStart, coneTwoVerticalShiftEnd, maxCYOffset);
+
+  
 
   return (
     <>
@@ -368,7 +370,7 @@ export default function V5() {
           className='flex items-center justify-center w-[600px] h-[635px] -ml-4'
           style={{ perspective: '1000px' }}
         >
-          <div className=' h-full w-full' style={transformStyle}>
+          <div className=' h-full w-full' style={transformSVGStyle}>
             <div className='w-full h-full flex items-center justify-center'>
               <svg
                 className='svg'
@@ -514,7 +516,7 @@ export default function V5() {
                   strokeWidth='40'
                   fill='none'
                   style={{
-                    strokeOpacity: opacity, // Opacity increases from 0 to 1
+                    strokeOpacity: circleOneOpacity, // Opacity increases from 0 to 1
                     transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
                   }}
                   className='duration-200 ease-in-out'
@@ -527,7 +529,7 @@ export default function V5() {
                   strokeWidth='40'
                   fill='none'
                   style={{
-                    strokeOpacity: opacity2, // Opacity increases from 0 to 1
+                    strokeOpacity: circleTwoOpacity, // Opacity increases from 0 to 1
                     transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
                   }}
                   className='duration-200 ease-in-out'
@@ -564,7 +566,7 @@ export default function V5() {
                   fill='#035e46'
                   className='p-2xs-bold uppercase tracking-[0.2rem]'
                   style={{
-                    fillOpacity: opacity, // Opacity increases from 0 to 1
+                    fillOpacity: circleOneOpacity, // Opacity increases from 0 to 1
                     transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
                   }}
                 >
@@ -590,7 +592,7 @@ export default function V5() {
                   strokeWidth='40'
                   fill='none'
                   style={{
-                    strokeOpacity: opacity, // Opacity increases from 0 to 1
+                    strokeOpacity: circleOneOpacity, // Opacity increases from 0 to 1
                     transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
                   }}
                   className='duration-200 ease-in-out'
@@ -603,7 +605,7 @@ export default function V5() {
                   strokeWidth='40'
                   fill='none'
                   style={{
-                    strokeOpacity: opacity2, // Opacity increases from 0 to 1
+                    strokeOpacity: circleTwoOpacity, // Opacity increases from 0 to 1
                     transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
                   }}
                   className='duration-200 ease-in-out'
@@ -639,7 +641,7 @@ export default function V5() {
                   fill='#035e46'
                   className='p-2xs-bold uppercase tracking-[0.2rem] duration-200 ease-in-out'
                   style={{
-                    fillOpacity: opacity, // Opacity increases from 0 to 1
+                    fillOpacity: circleOneOpacity, // Opacity increases from 0 to 1
                     transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
                   }}
                 >
@@ -665,7 +667,7 @@ export default function V5() {
                   strokeWidth='40'
                   fill='none'
                   style={{
-                    strokeOpacity: opacity, // Opacity increases from 0 to 1
+                    strokeOpacity: circleTwoOpacity, // Opacity increases from 0 to 1
                     transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
                   }}
                   className='duration-200 ease-in-out'
@@ -678,7 +680,7 @@ export default function V5() {
                   strokeWidth='40'
                   fill='none'
                   style={{
-                    strokeOpacity: opacity2, // Opacity increases from 0 to 1
+                    strokeOpacity: circleTwoOpacity, // Opacity increases from 0 to 1
                     transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
                   }}
                   className='duration-200 ease-in-out'
@@ -714,7 +716,7 @@ export default function V5() {
                   fill='#035e46'
                   className='p-2xs-bold uppercase tracking-[0.2rem] duration-200 ease-in-out'
                   style={{
-                    fillOpacity: opacity, // Opacity increases from 0 to 1
+                    fillOpacity: circleOneOpacity, // Opacity increases from 0 to 1
                     transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
                   }}
                 >
@@ -731,7 +733,7 @@ export default function V5() {
                     outerCircleBarRotation + 90
                   }) scale(1, -1)`}
                   style={{
-                    opacity: opacity2,
+                    opacity: circleTwoOpacity,
                     transition: 'opacity 0.2s ease-in-out',
                   }}
                   className='duration-200 ease-in-out'
@@ -745,7 +747,7 @@ export default function V5() {
                     middleCircleBarRotation + 90
                   }) scale(1, -1)`}
                   style={{
-                    opacity: opacity2,
+                    opacity: circleTwoOpacity,
                     transition: 'opacity 0.2s ease-in-out',
                   }}
                   className='duration-200 ease-in-out'
@@ -759,7 +761,7 @@ export default function V5() {
                     innerCircleBarRotation + 90
                   }) scale(1, -1)`}
                   style={{
-                    opacity: opacity2,
+                    opacity: circleTwoOpacity,
                     transition: 'opacity 0.2s ease-in-out',
                   }}
                   className='duration-200 ease-in-out'
@@ -787,11 +789,11 @@ export default function V5() {
               />
 
               {/* First Cone Layers */}
-              {Array.from({ length: layers }).map((_, i) => {
-                const progress = i / (layers - 1);
+              {Array.from({ length: layersConeOneAndThree }).map((_, i) => {
+                const progress = i / (layersConeOneAndThree - 1);
                 const layerHeight = 317.5 - progress * coneHeight;
                 const layerRadius = 185 - progress * 50;
-                const fillColor = i === layers - 1 ? '#7CE1BD' : '#D1F9EB';
+                const fillColor = i === layersConeOneAndThree - 1 ? '#7CE1BD' : '#D1F9EB';
 
                 return (
                   <circle
@@ -825,8 +827,8 @@ export default function V5() {
               {secondConeStart < scrollPosition && (
                 <>
                   {/* Dashed Circles for the Second Cone with Alternating Colors */}
-                  {Array.from({ length: layers2 - 1 }).map((_, i) => {
-                    const progress2 = i / (layers2 - 1);
+                  {Array.from({ length: layersConeTwo - 1 }).map((_, i) => {
+                    const progress2 = i / (layersConeTwo - 1);
                     const layerHeight = 236 - progress2 * coneHeight2;
                     const layerRadius = 145 - progress2 * 50;
                     // Calcul ate circumference and dash length/gap
@@ -881,11 +883,11 @@ export default function V5() {
                       />
                       {scrollPosition > 7200 && (
                         <>
-                          {Array.from({ length: layers }).map((_, i) => {
-                            const progress3 = i / (layers - 1);
+                          {Array.from({ length: layersConeOneAndThree }).map((_, i) => {
+                            const progress3 = i / (layersConeOneAndThree - 1);
                             const layerHeight = -254 - progress3 * coneHeight3;
                             const layerRadius = 85 - progress3 * 50;
-                            const fillColor = i === layers - 1 ? '#07B071' : '#25C38B';
+                            const fillColor = i === layersConeOneAndThree - 1 ? '#07B071' : '#25C38B';
                             return (
                               <circle
                                 key={i}
