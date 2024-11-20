@@ -11,20 +11,18 @@ import ContentEight from './content/08-content';
 import ContentNine from './content/09-content';
 import ContentTen from './content/10-content';
 import ContentEleven from './content/11-content';
-import ContentTwelve from './content/12-content';
 
 export default function V5() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [activeNav, setActiveNav] = useState(0);
   const [activeContent, setActiveContent] = useState('c1');
-  const [activeCone, setActiveCone] = useState();
   const [animationStage, setAnimationStage] = useState(0);
 
   const navItems = [
     { id: 0, label: 'Circulair bouwen meer effect met mix van instrumenten', scrollTo: 1 },
-    { id: 1, label: 'De plaats van instrumenten in de beleidscyclus', scrollTo: 1301 },
-    { id: 2, label: 'Omgevingsvisie, Omgevingsprogramma, Omgevingsplan', scrollTo: 2601 },
-    { id: 3, label: 'Planregels uit het omgevingsplan', scrollTo: 3901 },
+    { id: 1, label: 'De plaats van instrumenten in de beleidscyclus', scrollTo: 911 },
+    { id: 2, label: 'Omgevingsvisie, Omgevingsprogramma, Omgevingsplan', scrollTo: 4001 },
+    { id: 3, label: 'Planregels uit het omgevingsplan', scrollTo: 9801 },
   ];
 
   const contentComponents = [
@@ -39,7 +37,6 @@ export default function V5() {
     ContentNine,
     ContentTen,
     ContentEleven,
-    ContentTwelve,
   ];
 
   const contentRefs = {
@@ -57,12 +54,6 @@ export default function V5() {
     c12: useRef(),
   };
 
-  const coneContentRefs = {
-    cone1: useRef(),
-    cone2: useRef(),
-    cone3: useRef(),
-  };
-
   useEffect(() => {
     // Define scroll thresholds for navigation and content
     const scrollThresholds = {
@@ -74,24 +65,22 @@ export default function V5() {
       ],
       content: [
         // first svg
+        // nav 1
         { start: 0, end: 455, value: 'c1' },
         { start: 455, end: 910, value: 'c2' },
+        // nav 2
         { start: 910, end: 1440, value: 'c3' },
         { start: 1440, end: 1995, value: 'c4' },
         { start: 1995, end: 2630, value: 'c5' },
         { start: 2630, end: 4000, value: 'c6' }, // can add more time as there is a long scroll from c5 to c6
         // second svg
+        // nav 3
         { start: 4000, end: 5200, value: 'c7' },
         { start: 5200, end: 7000, value: 'c8' },
         { start: 7000, end: 8800, value: 'c9' },
         { start: 8800, end: 9800, value: 'c10' },
-        // { start: 5600, end: 6000, value: 'c11' },
-       //  { start: 6000, end: 6400, value: 'c12' },
-      ],
-      cone: [
-        { start: 4000, value: 'cone1' },
-        { start: 5400, value: 'cone2' },
-        { start: 7200, value: 'cone3' },
+        // nav 4
+        { start: 9800, end: 10800, value: 'c11' },
       ],
     };
 
@@ -111,10 +100,6 @@ export default function V5() {
         (range) => position >= range.start && position < range.end,
       )?.value;
       setActiveContent(activeContentValue ?? 'c1');
-
-      // Set activeCone
-      const activeConeValue = scrollThresholds.cone.find((range) => position >= range.start)?.value;
-      setActiveCone(activeConeValue ?? '');
 
       // Set animationStage
       setAnimationStage(position > 3850 ? 1 : 0);
@@ -285,6 +270,9 @@ export default function V5() {
   const coneTwoVerticalShiftStart = 7000; // Replace with the desired start scroll position
   const coneTwoVerticalShiftEnd = 7200; // Replace with the desired end scroll position
 
+  const mergeConesStart = 8800;
+  const mergeConesFinish = 9800;
+
   function calculateCY(scrollPosition, start, end, maxOffset) {
     if (scrollPosition < start) return 0;
     if (scrollPosition > end) return maxOffset;
@@ -296,18 +284,41 @@ export default function V5() {
     return CYprogress * maxOffset;
   }
 
+  // move first cone down
   const cyOffset = calculateCY(
     scrollPosition,
     coneOneVerticalShiftStart,
     coneOneVerticalShiftEnd,
     maxCYOffset,
   );
+
+  // move second cone down
   const cyOffset2 = calculateCY(
     scrollPosition,
     coneTwoVerticalShiftStart,
     coneTwoVerticalShiftEnd,
     maxCYOffset,
   );
+
+  // move top cone down and bottom cone up
+  const cyOffset3 = calculateCY(scrollPosition, mergeConesStart, mergeConesFinish, maxCYOffset);
+
+  // move coneLabelOne down
+  const coneLabelOneOffset = calculateCY(
+    scrollPosition,
+    coneOneVerticalShiftStart,
+    coneOneVerticalShiftEnd,
+    100,
+  );
+
+  const coneLabelTwoOffset = calculateCY(
+    scrollPosition,
+    coneTwoVerticalShiftStart,
+    coneTwoVerticalShiftEnd,
+    100,
+  );
+
+  const topAndBottomConeOffset = calculateCY(scrollPosition, mergeConesStart, mergeConesFinish, 80);
 
   return (
     <>
@@ -789,16 +800,18 @@ export default function V5() {
               className='overflow-visible absolute'
               style={{ opacity: secondSvgOpacity, transition: 'opacity 0.2s ease-out' }}
             >
-              <circle
-                cx='317.5'
-                cy={317.5 + cyOffset + cyOffset2}
-                r='205'
-                fill='none'
-                stroke='#D1F9EB'
-                strokeWidth={40}
-                transform-origin='317.5 340'
-                transform='scale(1.12, 0.3)'
-              />
+              {cyOffset3 === 0 && (
+                <circle
+                  cx='317.5'
+                  cy={317.5 + cyOffset + cyOffset2}
+                  r='205'
+                  fill='none'
+                  stroke='#D1F9EB'
+                  strokeWidth={40}
+                  transform-origin='317.5 340'
+                  transform='scale(1.12, 0.3)'
+                />
+              )}
 
               {/* First Cone Layers */}
               {Array.from({ length: layersConeOneAndThree }).map((_, i) => {
@@ -811,7 +824,7 @@ export default function V5() {
                   <circle
                     key={i}
                     cx='317.5'
-                    cy={layerHeight + cyOffset + cyOffset2}
+                    cy={layerHeight + cyOffset + cyOffset2 - cyOffset3}
                     r={layerRadius + 10}
                     stroke={fillColor}
                     strokeWidth={40}
@@ -883,16 +896,18 @@ export default function V5() {
                   })}
                   {scrollPosition > 7000 && (
                     <>
-                      <circle
-                        cx='317.5'
-                        cy={-264}
-                        r='95'
-                        fill='none'
-                        stroke='#25C38B'
-                        strokeWidth={40}
-                        transform-origin='317.5 340'
-                        transform='scale(1.12, 0.3)'
-                      />
+                      {cyOffset3 === 0 && (
+                        <circle
+                          cx='317.5'
+                          cy={-264}
+                          r='95'
+                          fill='none'
+                          stroke='#25C38B'
+                          strokeWidth={40}
+                          transform-origin='317.5 340'
+                          transform='scale(1.12, 0.3)'
+                        />
+                      )}
                       {scrollPosition > 7200 && (
                         <>
                           {Array.from({ length: layersConeOneAndThree }).map((_, i) => {
@@ -905,7 +920,7 @@ export default function V5() {
                               <circle
                                 key={i}
                                 cx='317.5'
-                                cy={layerHeight}
+                                cy={layerHeight + cyOffset3}
                                 r={layerRadius + 10}
                                 stroke={fillColor}
                                 strokeWidth={40}
@@ -927,30 +942,48 @@ export default function V5() {
         </div>
 
         <div
-          ref={coneContentRefs.cone1}
-          data-id='cone1'
           style={{
-            transform: `translateY(${cyOffset}px)`,
+            transform: `translateY(${
+              coneLabelOneOffset + coneLabelTwoOffset - topAndBottomConeOffset
+            }px)`,
           }}
           className={`${
-            activeCone === 'cone1' ? 'opacity-100 -translate-y-[350px] ' : 'opacity-0 translate-y-0'
-          } w-[250px] absolute bottom-0 right-0 flex items-start justify-start transition-all duration-500`}
+            scrollPosition > 4000 ? 'opacity-100' : 'opacity-0'
+          } w-[250px] absolute bottom-[350px] right-0 flex items-start justify-start transition-opacity duration-500`}
         >
-          <div className='w-1 rounded-full h-[44px] mr-4 bg-green-600 mt-2'></div>
+          <div className='min-w-1 rounded-full h-[44px] mr-4 bg-green-600 mt-2'></div>
           <div>
             <h3 className='heading-xl-semibold text-green-600'>Omgevingsvisie</h3>
             <p className='heading-xl text-green-600'>Langetermijnvisie voor fysieke leefomgeving</p>
           </div>
         </div>
-        <div className='w-[250px] absolute bottom-[350px] right-0 items-start justify-start hidden'>
-          <div className='w-1 rounded-full h-[44px] mr-4 bg-green-600 mt-2'></div>
+        <div
+          style={{
+            transform: `translateY(${coneLabelTwoOffset}px)`,
+          }}
+          id='coneTwoLabel'
+          className={`${
+            scrollPosition > 5400 ? 'opacity-100' : 'opacity-0'
+          } w-[250px] absolute bottom-[420px] right-0 flex items-start justify-start transition-opacity duration-500`}
+        >
+          <div className='min-w-1 rounded-full h-[44px] mr-4 bg-green-600 mt-2'></div>
           <div>
             <h3 className='heading-xl-semibold text-green-600'>Omgevingsprogramma&apos;s</h3>
-            <p className='heading-xl text-green-600'>Uitwerking beleidsdoelen voor korte-/middellange termijn</p>
+            <p className='heading-xl text-green-600'>
+              Uitwerking beleidsdoelen voor korte-/middellange termijn
+            </p>
           </div>
         </div>
-        <div className='w-[250px] absolute bottom-[350px] right-0 items-start justify-start hidden'>
-          <div className='w-1 rounded-full h-[44px] mr-4 bg-green-600 mt-2'></div>
+        <div
+          style={{
+            transform: `translateY(${topAndBottomConeOffset}px)`,
+          }}
+          className={`${
+            scrollPosition > 7200 ? 'opacity-100' : 'opacity-0'
+          } w-[250px] absolute bottom-[540px] right-0 flex items-start justify-start transition-opacity duration-500`}
+          id='coneThreeLabel'
+        >
+          <div className='min-w-1 rounded-full h-[44px] mr-4 bg-green-600 mt-2'></div>
           <div>
             <h3 className='heading-xl-semibold text-green-600'>Omgevingsplan</h3>
             <p className='heading-xl text-green-600'>Juridisch bindende regels</p>
