@@ -210,8 +210,12 @@ export default function V5() {
     y: 317.5 + (outerCircleRadius - barOffset) * Math.sin((outerCircleBarRotation * Math.PI) / 180),
   };
   const middleCircleBarPosition = {
-    x: 317.5 + (middleCircleRadius - barOffset) * Math.cos((middleCircleBarRotation * Math.PI) / 180),
-    y: 317.5 + (middleCircleRadius - barOffset) * Math.sin((middleCircleBarRotation * Math.PI) / 180),
+    x:
+      317.5 +
+      (middleCircleRadius - barOffset) * Math.cos((middleCircleBarRotation * Math.PI) / 180),
+    y:
+      317.5 +
+      (middleCircleRadius - barOffset) * Math.sin((middleCircleBarRotation * Math.PI) / 180),
   };
   const innerCircleBarPosition = {
     x: 317.5 + (innerCircleRadius - barOffset) * Math.cos((innerCircleBarRotation * Math.PI) / 180),
@@ -240,7 +244,9 @@ export default function V5() {
 
   // Use the maxCircleRotation angle instead of 90 in the transform
   const transformSVGStyle = {
-    transform: `rotateX(${SVGTransitionProgress * maxCircleRotation}deg) scale(${1 + SVGTransitionProgress * 0.2})`,
+    transform: `rotateX(${SVGTransitionProgress * maxCircleRotation}deg) scale(${
+      1 + SVGTransitionProgress * 0.2
+    })`,
     transition: 'transform 0.1s ease-out',
   };
 
@@ -292,10 +298,18 @@ export default function V5() {
     return CYprogress * maxOffset;
   }
 
-  const cyOffset = calculateCY(scrollPosition, coneOneVerticalShiftStart, coneOneVerticalShiftEnd, maxCYOffset);
-  const cyOffset2 = calculateCY(scrollPosition, coneTwoVerticalShiftStart, coneTwoVerticalShiftEnd, maxCYOffset);
-
-  
+  const cyOffset = calculateCY(
+    scrollPosition,
+    coneOneVerticalShiftStart,
+    coneOneVerticalShiftEnd,
+    maxCYOffset,
+  );
+  const cyOffset2 = calculateCY(
+    scrollPosition,
+    coneTwoVerticalShiftStart,
+    coneTwoVerticalShiftEnd,
+    maxCYOffset,
+  );
 
   return (
     <>
@@ -729,9 +743,9 @@ export default function V5() {
                 <path
                   d='M21.9607 34.9614C22.8069 41.7146 18.009 47.9518 11.2032 47.9976V47.9976C4.39739 48.0434 -0.483942 41.8713 0.271307 35.1074L3.37455 7.31502C3.78967 3.59723 7.14572 0.96199 10.8865 0.936819V0.936819C14.6273 0.911649 18.0185 3.50149 18.4837 7.21335L21.9607 34.9614Z'
                   fill='#84E9C5'
-                  transform={`translate(${outerCircleBarPosition.x}, ${outerCircleBarPosition.y}) rotate(${
-                    outerCircleBarRotation + 90
-                  }) scale(1, -1)`}
+                  transform={`translate(${outerCircleBarPosition.x}, ${
+                    outerCircleBarPosition.y
+                  }) rotate(${outerCircleBarRotation + 90}) scale(1, -1)`}
                   style={{
                     opacity: circleTwoOpacity,
                     transition: 'opacity 0.2s ease-in-out',
@@ -743,9 +757,9 @@ export default function V5() {
                 <path
                   d='M21.9607 34.9614C22.8069 41.7146 18.009 47.9518 11.2032 47.9976V47.9976C4.39739 48.0434 -0.483942 41.8713 0.271307 35.1074L3.37455 7.31502C3.78967 3.59723 7.14572 0.96199 10.8865 0.936819V0.936819C14.6273 0.911649 18.0185 3.50149 18.4837 7.21335L21.9607 34.9614Z'
                   fill='#25C38B'
-                  transform={`translate(${middleCircleBarPosition.x}, ${middleCircleBarPosition.y}) rotate(${
-                    middleCircleBarRotation + 90
-                  }) scale(1, -1)`}
+                  transform={`translate(${middleCircleBarPosition.x}, ${
+                    middleCircleBarPosition.y
+                  }) rotate(${middleCircleBarRotation + 90}) scale(1, -1)`}
                   style={{
                     opacity: circleTwoOpacity,
                     transition: 'opacity 0.2s ease-in-out',
@@ -757,9 +771,9 @@ export default function V5() {
                 <path
                   d='M21.9607 34.9614C22.8069 41.7146 18.009 47.9518 11.2032 47.9976V47.9976C4.39739 48.0434 -0.483942 41.8713 0.271307 35.1074L3.37455 7.31502C3.78967 3.59723 7.14572 0.96199 10.8865 0.936819V0.936819C14.6273 0.911649 18.0185 3.50149 18.4837 7.21335L21.9607 34.9614Z'
                   fill='#07B071'
-                  transform={`translate(${innerCircleBarPosition.x}, ${innerCircleBarPosition.y}) rotate(${
-                    innerCircleBarRotation + 90
-                  }) scale(1, -1)`}
+                  transform={`translate(${innerCircleBarPosition.x}, ${
+                    innerCircleBarPosition.y
+                  }) rotate(${innerCircleBarRotation + 90}) scale(1, -1)`}
                   style={{
                     opacity: circleTwoOpacity,
                     transition: 'opacity 0.2s ease-in-out',
@@ -887,7 +901,8 @@ export default function V5() {
                             const progress3 = i / (layersConeOneAndThree - 1);
                             const layerHeight = -254 - progress3 * coneHeight3;
                             const layerRadius = 85 - progress3 * 50;
-                            const fillColor = i === layersConeOneAndThree - 1 ? '#07B071' : '#25C38B';
+                            const fillColor =
+                              i === layersConeOneAndThree - 1 ? '#07B071' : '#25C38B';
                             return (
                               <circle
                                 key={i}
