@@ -12,7 +12,6 @@ import ContentNine from './content/09-content';
 import ContentTen from './content/10-content';
 import ContentEleven from './content/11-content';
 import ContentTwelve from './content/12-content';
-import ContentThirteen from './content/13-content';
 
 export default function V5() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -41,7 +40,6 @@ export default function V5() {
     ContentTen,
     ContentEleven,
     ContentTwelve,
-    ContentThirteen,
   ];
 
   const contentRefs = {
@@ -57,7 +55,6 @@ export default function V5() {
     c10: useRef(),
     c11: useRef(),
     c12: useRef(),
-    c13: useRef(),
   };
 
   const coneContentRefs = {

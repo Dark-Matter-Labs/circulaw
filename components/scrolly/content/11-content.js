@@ -1,16 +1,17 @@
 export default function ContentEleven() {
   return (
     <div className='text-green-600 flex flex-col gap-y-6 max-w-[270px]'>
-      <h3 className='heading-2xl-semibold'>11 Terugkoppeling</h3>
+      <h3 className='heading-2xl-semibold'>3.5 Wisselwerking en samenhang</h3>
       <p className='p-base'>
-        In deze fase staat <span className='p-base-semibold'>toezicht</span> en{' '}
-        <span className='p-base-semibold'>handhaving</span> centraal, plus{' '}
-        <span className='p-base-semibold'>monitoring</span> en{' '}
-        <span className='p-base-semibold'>evaluatie</span> van het beleid en decentrale regels.
+      Voor een optimaal resultaat zijn omgevingsvisie, omgevingsprogramma en omgevingsplan op elkaar <span className='p-base-semibold'>afgestemd</span> en in elkaar <span className='p-base-semibold'>verankerd.</span>
+      
+       
       </p>
       <p className='p-base'>
-        Hieruit kan volgen dat het beleid moet worden aangepast. Wat weer kan leiden tot aanpassing
-        van de instrumenten die je gebruikt. Zoals je omgevingsplan en -visie.
+      Hierbij bepaalt de visie de richting, het programma de uitvoering, en legt het plan de regels vast.
+      </p>
+      <p className='p-base'>
+      Voor het omgevingsplan heeft CircuLaw modelteksten opgesteld die gebruikers zo kunnen overnemen: de planregels.
       </p>
     </div>
   );

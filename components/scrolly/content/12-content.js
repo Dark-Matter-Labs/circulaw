@@ -1,17 +1,19 @@
+import CustomButton from '@/components/custom-button';
+import { IconArrowRight } from '@tabler/icons-react';
+
 export default function ContentTwelve() {
   return (
     <div className='text-green-600 flex flex-col gap-y-6 max-w-[270px]'>
-      <h3 className='heading-2xl-semibold'>12 Terugkoppeling</h3>
+      <h3 className='heading-2xl-semibold'>4.1 Modelteksten voor een omgevingsplan</h3>
       <p className='p-base'>
-        In deze fase staat <span className='p-base-semibold'>toezicht</span> en{' '}
-        <span className='p-base-semibold'>handhaving</span> centraal, plus{' '}
-        <span className='p-base-semibold'>monitoring</span> en{' '}
-        <span className='p-base-semibold'>evaluatie</span> van het beleid en decentrale regels.
+      Voor een omgevingsplan heeft CircuLaw kant en klare teksten opgesteld die de gebruikers kunnen overnemen: de planregels. 
       </p>
       <p className='p-base'>
-        Hieruit kan volgen dat het beleid moet worden aangepast. Wat weer kan leiden tot aanpassing
-        van de instrumenten die je gebruikt. Zoals je omgevingsplan en -visie.
+      Dit zijn dus modelteksten voor een omgevingplan.
       </p>
+      <CustomButton color='whiteBackground'>
+      Bekijk de modelteksten <IconArrowRight />
+      </CustomButton>
     </div>
   );
 }
