@@ -25,6 +25,35 @@ export default function V5() {
     { id: 3, label: 'Planregels uit het omgevingsplan', scrollTo: 9801 },
   ];
 
+      // Define scroll thresholds for navigation and content
+      const scrollThresholds = {
+        nav: [
+          { start: 0, end: 910, value: 0 },
+          { start: 910, end: 4000, value: 1 },
+          { start: 4000, end: 9800, value: 2 },
+          { start: 9800, end: 12000, value: 3 },
+        ],
+        content: [
+          // first svg
+          // nav 1
+          { start: 0, end: 455, value: 'c1' },
+          { start: 455, end: 910, value: 'c2' },
+          // nav 2
+          { start: 910, end: 1440, value: 'c3' },
+          { start: 1440, end: 1995, value: 'c4' },
+          { start: 1995, end: 2630, value: 'c5' },
+          { start: 2630, end: 4000, value: 'c6' }, // can add more time as there is a long scroll from c5 to c6
+          // second svg
+          // nav 3
+          { start: 4000, end: 5200, value: 'c7' },
+          { start: 5200, end: 7000, value: 'c8' },
+          { start: 7000, end: 8800, value: 'c9' },
+          { start: 8800, end: 9800, value: 'c10' },
+          // nav 4
+          { start: 9800, end: 10800, value: 'c11' },
+        ],
+      };
+
   const contentComponents = [
     ContentOne,
     ContentTwo,
@@ -55,35 +84,6 @@ export default function V5() {
   };
 
   useEffect(() => {
-    // Define scroll thresholds for navigation and content
-    const scrollThresholds = {
-      nav: [
-        { start: 0, end: 910, value: 0 },
-        { start: 910, end: 4000, value: 1 },
-        { start: 4000, end: 9800, value: 2 },
-        { start: 9800, end: 12000, value: 3 },
-      ],
-      content: [
-        // first svg
-        // nav 1
-        { start: 0, end: 455, value: 'c1' },
-        { start: 455, end: 910, value: 'c2' },
-        // nav 2
-        { start: 910, end: 1440, value: 'c3' },
-        { start: 1440, end: 1995, value: 'c4' },
-        { start: 1995, end: 2630, value: 'c5' },
-        { start: 2630, end: 4000, value: 'c6' }, // can add more time as there is a long scroll from c5 to c6
-        // second svg
-        // nav 3
-        { start: 4000, end: 5200, value: 'c7' },
-        { start: 5200, end: 7000, value: 'c8' },
-        { start: 7000, end: 8800, value: 'c9' },
-        { start: 8800, end: 9800, value: 'c10' },
-        // nav 4
-        { start: 9800, end: 10800, value: 'c11' },
-      ],
-    };
-
     // Handle scroll event
     const handleScroll = () => {
       const position = window.scrollY;
@@ -793,10 +793,8 @@ export default function V5() {
           </div>
           {animationStage === 1 && (
             <svg
-              width='635'
-              height='635'
               viewBox='0 0 635 635'
-              className='overflow-visible absolute'
+              className='overflow-hidden absolute'
               style={{ opacity: secondSvgOpacity, transition: 'opacity 0.2s ease-out' }}
             >
               {cyOffset3 === 0 && (
@@ -807,7 +805,7 @@ export default function V5() {
                   fill='none'
                   stroke='#D1F9EB'
                   strokeWidth={40}
-                  transform-origin='317.5 340'
+                  transformOrigin='317.5 340'
                   transform='scale(1.12, 0.3)'
                 />
               )}
@@ -829,7 +827,7 @@ export default function V5() {
                     strokeWidth={40}
                     fill='none'
                     opacity={1}
-                    transform-origin='317.5 335'
+                    transformOrigin='317.5 335'
                     transform='scale(1.12, 0.3)'
                   />
                 );
@@ -843,7 +841,7 @@ export default function V5() {
                   fill='none'
                   stroke='#7CE1BD'
                   strokeWidth={40}
-                  transform-origin='317.5 340'
+                  transformOrigin='317.5 340'
                   transform='scale(1.12, 0.3)'
                 />
               )}
@@ -855,7 +853,7 @@ export default function V5() {
                     const progress2 = i / (layersConeTwo - 1);
                     const layerHeight = 236 - progress2 * coneHeight2;
                     const layerRadius = 155 - progress2 * 50;
-                    // Calcul ate circumference and dash length/gap
+                    // Calculate circumference and dash length/gap
                     const circumference = 2 * Math.PI * layerRadius;
                     const dashLength = (circumference * 0.75) / 6;
                     const gapLength = circumference / 25;
@@ -872,7 +870,7 @@ export default function V5() {
                           strokeWidth={40}
                           strokeDasharray={`${dashLength}, ${gapLength}`}
                           opacity={1}
-                          transform-origin='317.5 254'
+                          transformOrigin='317.5 254'
                           transform='scale(1.12, 0.3)'
                         />
                         {/* Blue dashes with offset to alternate */}
@@ -887,7 +885,7 @@ export default function V5() {
                           strokeDasharray={`${dashLength}, ${gapLength}`}
                           strokeDashoffset={dashLength + gapLength} // Offset to alternate colors
                           opacity={1}
-                          transform-origin='317.5 254'
+                          transformOrigin='317.5 254'
                           transform='scale(1.12, 0.3)'
                         />
                       </>
@@ -903,7 +901,7 @@ export default function V5() {
                           fill='none'
                           stroke='#25C38B'
                           strokeWidth={40}
-                          transform-origin='317.5 340'
+                          transformOrigin='317.5 340'
                           transform='scale(1.12, 0.3)'
                         />
                       )}
@@ -925,7 +923,7 @@ export default function V5() {
                                 strokeWidth={40}
                                 fill='none'
                                 opacity={1}
-                                transform-origin='317.5 335'
+                                transformOrigin='317.5 335'
                                 transform='scale(1.12, 0.3)'
                               />
                             );
