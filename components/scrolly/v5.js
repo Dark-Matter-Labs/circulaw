@@ -189,33 +189,33 @@ export default function V5() {
   );
 
   // Starting rotations for each circle to achieve specific starting points on the circumference
-  const rotation1 = 50;
-  const rotation2 = 116.8;
-  const rotation3 = 185;
+  const outerCircleRotation = 50;
+  const middleCircleRotation = 116.8;
+  const innerCircleRotation = 185;
 
   // Calculate the angle shift to move each bar 17 pixels backward along the circumference
-  const angleShift1 = (22 / outerCircleCircumference) * 360;
-  const angleShift2 = (22 / middleCircleCircumference) * 360;
-  const angleShift3 = (22 / innerCircleCircumference) * 360;
+  const outerCircleAngleShift = (22 / outerCircleCircumference) * 360;
+  const middleCircleAngleShift = (22 / middleCircleCircumference) * 360;
+  const innerCircleAngleShift = (22 / innerCircleCircumference) * 360;
 
   // Adjusted starting angles for each bar
-  const barRotation1 = rotation1 - angleShift1;
-  const barRotation2 = rotation2 - angleShift2;
-  const barRotation3 = rotation3 - angleShift3;
+  const outerCircleBarRotation = outerCircleRotation - outerCircleAngleShift;
+  const middleCircleBarRotation = middleCircleRotation - middleCircleAngleShift;
+  const innerCircleBarRotation = innerCircleRotation - innerCircleAngleShift;
 
   // Calculate the position for each bar, moving it slightly inward to align the thicker edge with the circumference
   const barOffset = 24; // Adjust this value to control how far the bar sits from the circle edge
-  const barPosition1 = {
-    x: 317.5 + (outerCircleRadius - barOffset) * Math.cos((barRotation1 * Math.PI) / 180),
-    y: 317.5 + (outerCircleRadius - barOffset) * Math.sin((barRotation1 * Math.PI) / 180),
+  const outerCircleBarPosition = {
+    x: 317.5 + (outerCircleRadius - barOffset) * Math.cos((outerCircleBarRotation * Math.PI) / 180),
+    y: 317.5 + (outerCircleRadius - barOffset) * Math.sin((outerCircleBarRotation * Math.PI) / 180),
   };
-  const barPosition2 = {
-    x: 317.5 + (middleCircleRadius - barOffset) * Math.cos((barRotation2 * Math.PI) / 180),
-    y: 317.5 + (middleCircleRadius - barOffset) * Math.sin((barRotation2 * Math.PI) / 180),
+  const middleCircleBarPosition = {
+    x: 317.5 + (middleCircleRadius - barOffset) * Math.cos((middleCircleBarRotation * Math.PI) / 180),
+    y: 317.5 + (middleCircleRadius - barOffset) * Math.sin((middleCircleBarRotation * Math.PI) / 180),
   };
-  const barPosition3 = {
-    x: 317.5 + (innerCircleRadius - barOffset) * Math.cos((barRotation3 * Math.PI) / 180),
-    y: 317.5 + (innerCircleRadius - barOffset) * Math.sin((barRotation3 * Math.PI) / 180),
+  const innerCircleBarPosition = {
+    x: 317.5 + (innerCircleRadius - barOffset) * Math.cos((innerCircleBarRotation * Math.PI) / 180),
+    y: 317.5 + (innerCircleRadius - barOffset) * Math.sin((innerCircleBarRotation * Math.PI) / 180),
   };
 
   const opacityOuterWords = Math.min(Math.max(scrollPosition / 250, 0), 1);
@@ -541,7 +541,7 @@ export default function V5() {
                   fill='none'
                   strokeDasharray={outerCircleCircumference}
                   strokeDashoffset={outerCircleDrawOffset}
-                  transform={`rotate(${rotation1} 317.5 317.5)`}
+                  transform={`rotate(${outerCircleRotation} 317.5 317.5)`}
                   strokeLinecap='round'
                 />
                 {/* Path for the text, with radius reduced to move text inward */}
@@ -617,7 +617,7 @@ export default function V5() {
                   fill='none'
                   strokeDasharray={middleCircleCircumference}
                   strokeDashoffset={middleCircleDrawOffset}
-                  transform={`rotate(${rotation2} 317.5 317.5)`}
+                  transform={`rotate(${middleCircleRotation} 317.5 317.5)`}
                   strokeLinecap='round'
                 />
                 <path
@@ -692,7 +692,7 @@ export default function V5() {
                   fill='none'
                   strokeDasharray={innerCircleCircumference}
                   strokeDashoffset={innerCircleDrawOffset}
-                  transform={`rotate(${rotation3} 317.5 317.5)`}
+                  transform={`rotate(${innerCircleRotation} 317.5 317.5)`}
                   strokeLinecap='round'
                 />
                 <path
@@ -727,8 +727,8 @@ export default function V5() {
                 <path
                   d='M21.9607 34.9614C22.8069 41.7146 18.009 47.9518 11.2032 47.9976V47.9976C4.39739 48.0434 -0.483942 41.8713 0.271307 35.1074L3.37455 7.31502C3.78967 3.59723 7.14572 0.96199 10.8865 0.936819V0.936819C14.6273 0.911649 18.0185 3.50149 18.4837 7.21335L21.9607 34.9614Z'
                   fill='#84E9C5'
-                  transform={`translate(${barPosition1.x}, ${barPosition1.y}) rotate(${
-                    barRotation1 + 90
+                  transform={`translate(${outerCircleBarPosition.x}, ${outerCircleBarPosition.y}) rotate(${
+                    outerCircleBarRotation + 90
                   }) scale(1, -1)`}
                   style={{
                     opacity: opacity2,
@@ -741,8 +741,8 @@ export default function V5() {
                 <path
                   d='M21.9607 34.9614C22.8069 41.7146 18.009 47.9518 11.2032 47.9976V47.9976C4.39739 48.0434 -0.483942 41.8713 0.271307 35.1074L3.37455 7.31502C3.78967 3.59723 7.14572 0.96199 10.8865 0.936819V0.936819C14.6273 0.911649 18.0185 3.50149 18.4837 7.21335L21.9607 34.9614Z'
                   fill='#25C38B'
-                  transform={`translate(${barPosition2.x}, ${barPosition2.y}) rotate(${
-                    barRotation2 + 90
+                  transform={`translate(${middleCircleBarPosition.x}, ${middleCircleBarPosition.y}) rotate(${
+                    middleCircleBarRotation + 90
                   }) scale(1, -1)`}
                   style={{
                     opacity: opacity2,
@@ -755,8 +755,8 @@ export default function V5() {
                 <path
                   d='M21.9607 34.9614C22.8069 41.7146 18.009 47.9518 11.2032 47.9976V47.9976C4.39739 48.0434 -0.483942 41.8713 0.271307 35.1074L3.37455 7.31502C3.78967 3.59723 7.14572 0.96199 10.8865 0.936819V0.936819C14.6273 0.911649 18.0185 3.50149 18.4837 7.21335L21.9607 34.9614Z'
                   fill='#07B071'
-                  transform={`translate(${barPosition3.x}, ${barPosition3.y}) rotate(${
-                    barRotation3 + 90
+                  transform={`translate(${innerCircleBarPosition.x}, ${innerCircleBarPosition.y}) rotate(${
+                    innerCircleBarRotation + 90
                   }) scale(1, -1)`}
                   style={{
                     opacity: opacity2,
