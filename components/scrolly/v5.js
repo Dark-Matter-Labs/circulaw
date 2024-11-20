@@ -6,12 +6,36 @@ import ContentThree from './content/03-content';
 import ContentFour from './content/04-content';
 import ContentFive from './content/05-content';
 import ContentSix from './content/06-content';
+import ContentSeven from './content/07-content';
+import ContentEight from './content/08-content';
+import ContentNine from './content/09-content';
+import ContentTen from './content/10-content';
+import ContentEleven from './content/11-content';
+import ContentTwelve from './content/12-content';
+import ContentThirteen from './content/13-content';
 
 export default function V5() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [activeNav, setActiveNav] = useState(0);
   const [activeContent, setActiveContent] = useState('c1');
+  const [activeCone, setActiveCone] = useState();
   const [animationStage, setAnimationStage] = useState(0);
+
+  const contentComponents = [
+    ContentOne,
+    ContentTwo,
+    ContentThree,
+    ContentFour,
+    ContentFive,
+    ContentSix,
+    ContentSeven,
+    ContentEight,
+    ContentNine,
+    ContentTen,
+    ContentEleven,
+    ContentTwelve,
+    ContentThirteen,
+  ];
 
   const contentRefs = {
     c1: useRef(),
@@ -20,51 +44,82 @@ export default function V5() {
     c4: useRef(),
     c5: useRef(),
     c6: useRef(),
+    c7: useRef(),
+    c8: useRef(),
+    c9: useRef(),
+    c10: useRef(),
+    c11: useRef(),
+    c12: useRef(),
+    c13: useRef(),
+  };
+
+  const coneContentRefs = {
+    cone1: useRef(),
+    cone2: useRef(),
+    cone3: useRef(),
   };
 
   useEffect(() => {
+    // Define scroll thresholds for navigation and content
+    const scrollThresholds = {
+      nav: [
+        { start: 0, end: 910, value: 0 },
+        { start: 910, end: 3450, value: 1 },
+        { start: 3450, end: 5850, value: 2 },
+        { start: 5850, end: 7800, value: 3 },
+      ],
+      content: [
+        { start: 0, end: 455, value: 'c1' },
+        { start: 455, end: 910, value: 'c2' },
+        { start: 910, end: 1440, value: 'c3' },
+        { start: 1440, end: 1995, value: 'c4' },
+        { start: 1995, end: 2630, value: 'c5' },
+        { start: 2630, end: 3450, value: 'c6' },
+        { start: 3450, end: 4000, value: 'c7' },
+        { start: 4000, end: 4400, value: 'c8' },
+        { start: 4400, end: 4800, value: 'c9' },
+        { start: 4800, end: 5200, value: 'c10' },
+        { start: 5200, end: 5600, value: 'c11' },
+        { start: 5600, end: 6000, value: 'c12' },
+        { start: 6000, end: 6400, value: 'c13' },
+      ],
+      cone: [
+        { start: 4000, value: 'cone1' },
+        { start: 5400, value: 'cone2' },
+        { start: 7200, value: 'cone3' },
+      ],
+    };
+  
+    // Handle scroll event
     const handleScroll = () => {
       const position = window.scrollY;
       setScrollPosition(position);
+  
+      // Set activeNav
+      const activeNavValue = scrollThresholds.nav.find(
+        (range) => position >= range.start && position < range.end
+      )?.value;
+      setActiveNav(activeNavValue ?? 0);
+  
+      // Set activeContent
+      const activeContentValue = scrollThresholds.content.find(
+        (range) => position >= range.start && position < range.end
+      )?.value;
+      setActiveContent(activeContentValue ?? 'c1');
+  
+      // Set activeCone
+      const activeConeValue = scrollThresholds.cone.find((range) => position >= range.start)?.value;
+      setActiveCone(activeConeValue ?? '');
+  
+      // Set animationStage
+      setAnimationStage(position > 3850 ? 1 : 0);
     };
-
-    if (scrollPosition < 910) {
-      setActiveNav(0);
-    } else if (scrollPosition > 910 && scrollPosition < 3450) {
-      setActiveNav(1);
-    } else if (scrollPosition > 3450 && scrollPosition < 5850) {
-      setActiveNav(2);
-    } else if (scrollPosition > 5850 && scrollPosition < 7800) {
-      setActiveNav(3);
-    }
-
-    if (scrollPosition < 455) {
-      setActiveContent('c1');
-    } else if (scrollPosition > 455 && scrollPosition < 910) {
-      setActiveContent('c2');
-    } else if (scrollPosition > 910 && scrollPosition < 1440) {
-      setActiveContent('c3');
-    } else if (scrollPosition > 1440 && scrollPosition < 1995) {
-      setActiveContent('c4');
-    } else if (scrollPosition > 1995 && scrollPosition < 2630) {
-      setActiveContent('c5');
-    } else if (scrollPosition > 2630 && scrollPosition < 3450) {
-      setActiveContent('c6');
-    } else if (scrollPosition > 3450 && scrollPosition < 4000) {
-      setActiveContent('c7');
-    }
-
-    if (scrollPosition > 3850) {
-      setAnimationStage(1);
-    } else {
-      setAnimationStage(0);
-    }
-
+  
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [scrollPosition]);
+  }, []);
 
   // Radii and circumferences for circles
   const radius1 = 185;
@@ -216,7 +271,7 @@ export default function V5() {
       <div className='fixed bottom-8 right-8 text-red-700 heading-2xl-semibold'>
         {scrollPosition}
       </div>
-      <div className='sticky top-44 mt-10 flex items-start justify-center w-full'>
+      <div className='sticky top-44 mt-10 xl:-ml-10 flex items-start justify-start w-full'>
         <div className='w-48 h-full relative mr-6'>
           <div className='sticky h-[700px] grow flex flex-col gap-y-6'>
             <button
@@ -317,87 +372,36 @@ export default function V5() {
             </button>
           </div>
         </div>
-        <div className='flex flex-col relative min-w-[280px]'>
-          <div
-            ref={contentRefs.c1}
-            data-id='c1'
-            className={`${
-              activeContent === 'c1'
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 -translate-y-[300px]'
-            } transition-all duration-500 absolute top-0 left-0`}
-          >
-            <ContentOne />
-          </div>
-          <div
-            ref={contentRefs.c2}
-            data-id='c2'
-            className={`${
-              activeContent === 'c2'
-                ? 'opacity-100 translate-y-0'
-                : activeContent === 'c1'
-                ? 'opacity-0 translate-y-[300px]'
-                : 'opacity-0 -translate-y-[300px]'
-            } transition-all duration-500 absolute top-0 left-0`}
-          >
-            <ContentTwo />
-          </div>
-          <div
-            ref={contentRefs.c3}
-            data-id='c3'
-            className={`${
-              activeContent === 'c3'
-                ? 'opacity-100 translate-y-0'
-                : activeContent === 'c2'
-                ? 'opacity-0 translate-y-[300px]'
-                : 'opacity-0 -translate-y-[300px]'
-            } transition-all duration-500 absolute top-0 left-0`}
-          >
-            <ContentThree />
-          </div>
-          <div
-            ref={contentRefs.c4}
-            data-id='c4'
-            className={`${
-              activeContent === 'c4'
-                ? 'opacity-100 translate-y-0'
-                : activeContent === 'c3'
-                ? 'opacity-0 translate-y-[300px]'
-                : 'opacity-0 -translate-y-[300px]'
-            } transition-all duration-500 absolute top-0 left-0`}
-          >
-            <ContentFour />
-          </div>
-          <div
-            ref={contentRefs.c5}
-            data-id='c5'
-            className={`${
-              activeContent === 'c5'
-                ? 'opacity-100 translate-y-0'
-                : activeContent === 'c4'
-                ? 'opacity-0 translate-y-[300px]'
-                : 'opacity-0 -translate-y-[300px]'
-            } transition-all duration-500 absolute top-0 left-0`}
-          >
-            <ContentFive />
-          </div>
-          <div
-            ref={contentRefs.c6}
-            data-id='c6'
-            className={`${
-              activeContent === 'c6'
-                ? 'opacity-100 translate-y-0'
-                : activeContent === 'c5'
-                ? 'opacity-0 translate-y-[300px]'
-                : 'opacity-0 -translate-y-[300px]'
-            } transition-all duration-500 absolute top-0 left-0`}
-          >
-            <ContentSix />
-          </div>
-        </div>
 
+        <div className='flex flex-col relative min-w-[280px]'>
+          {contentComponents.map((Content, index) => {
+            const contentId = `c${index + 1}`; // Generate IDs like c1, c2, ...
+            const isActive = activeContent === contentId;
+            const prevActive = activeContent === `c${index}`;
+            const nextActive = activeContent === `c${index + 2}`;
+
+            return (
+              <div
+                key={contentId}
+                ref={contentRefs[contentId]}
+                data-id={contentId}
+                className={`${
+                  isActive
+                    ? 'opacity-100 translate-y-0'
+                    : prevActive
+                    ? 'opacity-0 translate-y-[300px]'
+                    : nextActive
+                    ? 'opacity-0 -translate-y-[300px]'
+                    : 'opacity-0 -translate-y-[300px]'
+                } transition-all duration-500 absolute top-0 left-0`}
+              >
+                <Content />
+              </div>
+            );
+          })}
+        </div>
         <div
-          className='flex items-center justify-center w-[635px] h-[635px]'
+          className='flex items-center justify-center w-[600px] h-[635px] -ml-4'
           style={{ perspective: '1000px' }}
         >
           <div className=' h-full w-full' style={transformStyle}>
@@ -418,7 +422,6 @@ export default function V5() {
                   strokeWidth='40'
                   fill='none'
                 />
-
                 {/* Path for 45° */}
                 <path
                   id='path45'
@@ -428,7 +431,6 @@ export default function V5() {
                   fill='none'
                   transform='rotate(45, 317.5, 317.5)'
                 />
-
                 {/* Path for 135° with slightly reduced radius */}
                 <path
                   id='path135'
@@ -448,7 +450,6 @@ export default function V5() {
                   fill='none'
                   transform='rotate(225, 317.5, 317.5)'
                 />
-
                 {/* Path for 315° with slightly reduced radius */}
                 <path
                   id='path315'
@@ -458,7 +459,6 @@ export default function V5() {
                   fill='none'
                   transform='rotate(315, 317.5, 317.5)'
                 />
-
                 {/* Texts along each path */}
                 <text
                   fill={activeContent === 'c3' ? '#07B071' : '#035e46'} // Bright green for active content
@@ -857,7 +857,6 @@ export default function V5() {
                     const circumference = 2 * Math.PI * layerRadius;
                     const dashLength = (circumference * 0.75) / 6;
                     const gapLength = circumference / 25;
-                    console.log(layerHeight);
                     return (
                       <>
                         {/* Green dashes */}
@@ -911,7 +910,6 @@ export default function V5() {
                             const layerHeight = -254 - progress3 * coneHeight3;
                             const layerRadius = 85 - progress3 * 50;
                             const fillColor = i === layers - 1 ? '#07B071' : '#25C38B';
-
                             return (
                               <circle
                                 key={i}
@@ -935,6 +933,37 @@ export default function V5() {
               )}
             </svg>
           )}
+        </div>
+
+        <div
+          ref={coneContentRefs.cone1}
+          data-id='cone1'
+          style={{
+            transform: `translateY(${cyOffset}px)`,
+          }}
+          className={`${
+            activeCone === 'cone1' ? 'opacity-100 -translate-y-[350px] ' : 'opacity-0 translate-y-0'
+          } w-[250px] absolute bottom-0 right-0 flex items-start justify-start transition-all duration-500`}
+        >
+          <div className='w-1 rounded-full h-[44px] mr-4 bg-green-600 mt-2'></div>
+          <div>
+            <h3 className='heading-xl-semibold text-green-600'>Omgevingsvisie</h3>
+            <p className='heading-xl text-green-600'>Langetermijnvisie voor fysieke leefomgeving</p>
+          </div>
+        </div>
+        <div className='w-[250px] absolute bottom-[350px] right-0 items-start justify-start hidden'>
+          <div className='w-1 rounded-full h-[44px] mr-4 bg-green-600 mt-2'></div>
+          <div>
+            <h3 className='heading-xl-semibold text-green-600'>Omgevingsvisie</h3>
+            <p className='heading-xl text-green-600'>Langetermijnvisie voor fysieke leefomgeving</p>
+          </div>
+        </div>
+        <div className='w-[250px] absolute bottom-[350px] right-0 items-start justify-start hidden'>
+          <div className='w-1 rounded-full h-[44px] mr-4 bg-green-600 mt-2'></div>
+          <div>
+            <h3 className='heading-xl-semibold text-green-600'>Omgevingsvisie</h3>
+            <p className='heading-xl text-green-600'>Langetermijnvisie voor fysieke leefomgeving</p>
+          </div>
         </div>
       </div>
     </>
