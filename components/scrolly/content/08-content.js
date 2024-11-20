@@ -1,17 +1,17 @@
 export default function ContentEight() {
   return (
     <div className='text-green-600 flex flex-col gap-y-6 max-w-[270px]'>
-      <h3 className='heading-2xl-semibold'>8 Terugkoppeling</h3>
+      <h3 className='heading-2xl-semibold'>3.2 Gemeentelijke omgevingsprogramma&apos;s</h3>
       <p className='p-base'>
-        In deze fase staat <span className='p-base-semibold'>toezicht</span> en{' '}
-        <span className='p-base-semibold'>handhaving</span> centraal, plus{' '}
-        <span className='p-base-semibold'>monitoring</span> en{' '}
-        <span className='p-base-semibold'>evaluatie</span> van het beleid en decentrale regels.
+      Bevat  <span className='p-base-semibold'>uitwerking</span> van <span className='p-base-semibold'>beleidsdoelen</span> voor de  <span className='p-base-semibold'>fysieke leefomgeving:</span>
       </p>
-      <p className='p-base'>
-        Hieruit kan volgen dat het beleid moet worden aangepast. Wat weer kan leiden tot aanpassing
-        van de instrumenten die je gebruikt. Zoals je omgevingsplan en -visie.
-      </p>
+      <ul className='list-inside list-disc p-base flex flex-col gap-y-2'>
+        <li>Kan maatregelen en acties bevatten</li>
+        <li>Heeft een korte tot middellange horizon</li>
+        <li>Kan <span className='p-base-semibold'>gebiedsgericht</span> of voor specifieke <span className='p-base-semibold'>thema&apos;s</span> worden ingezet</li>
+        <li>Meerdere programma&apos;s zijn mogelijk</li>
+        <li>Voor circulaire beleidsdoelen niet verplicht, maar <span className='p-base-semibold'>vrijwillig</span></li>
+      </ul>
     </div>
   );
 }

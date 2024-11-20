@@ -71,24 +71,25 @@ export default function V5() {
     const scrollThresholds = {
       nav: [
         { start: 0, end: 910, value: 0 },
-        { start: 910, end: 3450, value: 1 },
-        { start: 3450, end: 5850, value: 2 },
-        { start: 5850, end: 7800, value: 3 },
+        { start: 910, end: 4000, value: 1 },
+        { start: 4000, end: 9800, value: 2 },
+        { start: 9800, end: 12000, value: 3 },
       ],
       content: [
+        // first svg
         { start: 0, end: 455, value: 'c1' },
         { start: 455, end: 910, value: 'c2' },
         { start: 910, end: 1440, value: 'c3' },
         { start: 1440, end: 1995, value: 'c4' },
         { start: 1995, end: 2630, value: 'c5' },
-        { start: 2630, end: 3450, value: 'c6' },
-        { start: 3450, end: 4000, value: 'c7' },
-        { start: 4000, end: 4400, value: 'c8' },
-        { start: 4400, end: 4800, value: 'c9' },
-        { start: 4800, end: 5200, value: 'c10' },
-        { start: 5200, end: 5600, value: 'c11' },
-        { start: 5600, end: 6000, value: 'c12' },
-        { start: 6000, end: 6400, value: 'c13' },
+        { start: 2630, end: 4000, value: 'c6' }, // can add more time as there is a long scroll from c5 to c6
+        // second svg
+        { start: 4000, end: 5200, value: 'c7' },
+        { start: 5200, end: 7000, value: 'c8' },
+        { start: 7000, end: 8800, value: 'c9' },
+        { start: 8800, end: 9800, value: 'c10' },
+        // { start: 5600, end: 6000, value: 'c11' },
+       //  { start: 6000, end: 6400, value: 'c12' },
       ],
       cone: [
         { start: 4000, value: 'cone1' },
@@ -273,7 +274,7 @@ export default function V5() {
   const maxConeHeight = 300; // Maximum height of the cone is now 190px
 
   const layersConeOneAndThree = 200; // Number of ellipse layers for smoother transition
-  const layersConeTwo = 300;
+  const layersConeTwo = 250;
   const coneHeight = Math.min((scrollPosition - 3850) / 5, maxConeHeight);
   const coneHeight2 = Math.min((scrollPosition - 5400) / 5, maxConeHeight);
   const coneHeight3 = Math.min((scrollPosition - 7200) / 5, maxConeHeight);
@@ -947,15 +948,15 @@ export default function V5() {
         <div className='w-[250px] absolute bottom-[350px] right-0 items-start justify-start hidden'>
           <div className='w-1 rounded-full h-[44px] mr-4 bg-green-600 mt-2'></div>
           <div>
-            <h3 className='heading-xl-semibold text-green-600'>Omgevingsvisie</h3>
-            <p className='heading-xl text-green-600'>Langetermijnvisie voor fysieke leefomgeving</p>
+            <h3 className='heading-xl-semibold text-green-600'>Omgevingsprogramma&apos;s</h3>
+            <p className='heading-xl text-green-600'>Uitwerking beleidsdoelen voor korte-/middellange termijn</p>
           </div>
         </div>
         <div className='w-[250px] absolute bottom-[350px] right-0 items-start justify-start hidden'>
           <div className='w-1 rounded-full h-[44px] mr-4 bg-green-600 mt-2'></div>
           <div>
-            <h3 className='heading-xl-semibold text-green-600'>Omgevingsvisie</h3>
-            <p className='heading-xl text-green-600'>Langetermijnvisie voor fysieke leefomgeving</p>
+            <h3 className='heading-xl-semibold text-green-600'>Omgevingsplan</h3>
+            <p className='heading-xl text-green-600'>Juridisch bindende regels</p>
           </div>
         </div>
       </div>

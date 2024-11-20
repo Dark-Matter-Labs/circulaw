@@ -1,17 +1,14 @@
 export default function ContentNine() {
   return (
     <div className='text-green-600 flex flex-col gap-y-6 max-w-[270px]'>
-      <h3 className='heading-2xl-semibold'>9 Terugkoppeling</h3>
+      <h3 className='heading-2xl-semibold'>3.3 Omgevingsplan</h3>
       <p className='p-base'>
-        In deze fase staat <span className='p-base-semibold'>toezicht</span> en{' '}
-        <span className='p-base-semibold'>handhaving</span> centraal, plus{' '}
-        <span className='p-base-semibold'>monitoring</span> en{' '}
-        <span className='p-base-semibold'>evaluatie</span> van het beleid en decentrale regels.
+      Bevat alle <span className='p-base-semibold'>gemeentelijke regels</span> over de <span className='p-base-semibold'>fysieke leefomgeving:</span>
       </p>
-      <p className='p-base'>
-        Hieruit kan volgen dat het beleid moet worden aangepast. Wat weer kan leiden tot aanpassing
-        van de instrumenten die je gebruikt. Zoals je omgevingsplan en -visie.
-      </p>
+      <ul className='list-inside list-disc p-base flex flex-col gap-y-2'>
+        <li>Bevat juridisch bindende regels en voorschriften</li>
+        <li>Kan gebiedsgerichte of thematische regels bevatten</li>
+      </ul>
     </div>
   );
 }
