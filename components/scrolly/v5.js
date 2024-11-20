@@ -302,7 +302,6 @@ export default function V5() {
 
   // move top cone down and bottom cone up
   const cyOffset3 = calculateCY(scrollPosition, mergeConesStart, mergeConesFinish, maxCYOffset);
-
   // move coneLabelOne down
   const coneLabelOneOffset = calculateCY(
     scrollPosition,
@@ -817,15 +816,15 @@ export default function V5() {
               {Array.from({ length: layersConeOneAndThree }).map((_, i) => {
                 const progress = i / (layersConeOneAndThree - 1);
                 const layerHeight = 317.5 - progress * coneHeight;
-                const layerRadius = 185 - progress * 50;
+                const layerRadius = 205 - progress * 50;
                 const fillColor = i === layersConeOneAndThree - 1 ? '#7CE1BD' : '#D1F9EB';
 
                 return (
                   <circle
                     key={i}
                     cx='317.5'
-                    cy={layerHeight + cyOffset + cyOffset2 - cyOffset3}
-                    r={layerRadius + 10}
+                    cy={layerHeight + cyOffset + cyOffset2 - cyOffset3 + 22} // this seems odd to just add more here.
+                    r={layerRadius}
                     stroke={fillColor}
                     strokeWidth={40}
                     fill='none'
@@ -840,7 +839,7 @@ export default function V5() {
                 <circle
                   cx='317.5'
                   cy={37.5 + cyOffset2}
-                  r='145'
+                  r='155'
                   fill='none'
                   stroke='#7CE1BD'
                   strokeWidth={40}
@@ -855,7 +854,7 @@ export default function V5() {
                   {Array.from({ length: layersConeTwo - 1 }).map((_, i) => {
                     const progress2 = i / (layersConeTwo - 1);
                     const layerHeight = 236 - progress2 * coneHeight2;
-                    const layerRadius = 145 - progress2 * 50;
+                    const layerRadius = 155 - progress2 * 50;
                     // Calcul ate circumference and dash length/gap
                     const circumference = 2 * Math.PI * layerRadius;
                     const dashLength = (circumference * 0.75) / 6;
@@ -900,7 +899,7 @@ export default function V5() {
                         <circle
                           cx='317.5'
                           cy={-264}
-                          r='95'
+                          r='105'
                           fill='none'
                           stroke='#25C38B'
                           strokeWidth={40}
@@ -913,7 +912,7 @@ export default function V5() {
                           {Array.from({ length: layersConeOneAndThree }).map((_, i) => {
                             const progress3 = i / (layersConeOneAndThree - 1);
                             const layerHeight = -254 - progress3 * coneHeight3;
-                            const layerRadius = 85 - progress3 * 50;
+                            const layerRadius = 105 - progress3 * 50;
                             const fillColor =
                               i === layersConeOneAndThree - 1 ? '#07B071' : '#25C38B';
                             return (
@@ -921,7 +920,7 @@ export default function V5() {
                                 key={i}
                                 cx='317.5'
                                 cy={layerHeight + cyOffset3}
-                                r={layerRadius + 10}
+                                r={layerRadius}
                                 stroke={fillColor}
                                 strokeWidth={40}
                                 fill='none'
