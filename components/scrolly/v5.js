@@ -21,6 +21,13 @@ export default function V5() {
   const [activeCone, setActiveCone] = useState();
   const [animationStage, setAnimationStage] = useState(0);
 
+  const navItems = [
+    { id: 0, label: 'Circulair bouwen meer effect met mix van instrumenten', scrollTo: 1 },
+    { id: 1, label: 'De plaats van instrumenten in de beleidscyclus', scrollTo: 1301 },
+    { id: 2, label: 'Omgevingsvisie, Omgevingsprogramma, Omgevingsplan', scrollTo: 2601 },
+    { id: 3, label: 'Planregels uit het omgevingsplan', scrollTo: 3901 },
+  ];
+
   const contentComponents = [
     ContentOne,
     ContentTwo,
@@ -89,47 +96,48 @@ export default function V5() {
         { start: 7200, value: 'cone3' },
       ],
     };
-  
+
     // Handle scroll event
     const handleScroll = () => {
       const position = window.scrollY;
       setScrollPosition(position);
-  
+
       // Set activeNav
       const activeNavValue = scrollThresholds.nav.find(
-        (range) => position >= range.start && position < range.end
+        (range) => position >= range.start && position < range.end,
       )?.value;
       setActiveNav(activeNavValue ?? 0);
-  
+
       // Set activeContent
       const activeContentValue = scrollThresholds.content.find(
-        (range) => position >= range.start && position < range.end
+        (range) => position >= range.start && position < range.end,
       )?.value;
       setActiveContent(activeContentValue ?? 'c1');
-  
+
       // Set activeCone
       const activeConeValue = scrollThresholds.cone.find((range) => position >= range.start)?.value;
       setActiveCone(activeConeValue ?? '');
-  
+
       // Set animationStage
       setAnimationStage(position > 3850 ? 1 : 0);
     };
-  
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
+  // First SVG
   // Radii and circumferences for circles
-  const radius1 = 185;
-  const circumference1 = 2 * Math.PI * radius1;
-  const radius2 = 135;
-  const circumference2 = 2 * Math.PI * radius2;
-  const radius3 = 85;
-  const circumference3 = 2 * Math.PI * radius3;
+  const outerCircleRadius = 185;
+  const outerCircleCircumference = 2 * Math.PI * outerCircleRadius;
+  const middleCircleRadius = 135;
+  const middleCircleCircumference = 2 * Math.PI * middleCircleRadius;
+  const innerCircleRadius = 85;
+  const innerCircleCircumference = 2 * Math.PI * innerCircleRadius;
 
-  // Define unique scroll ranges for each circle
+  // Define unique scroll ranges for each circle being drawn
   const scrollStartOuter = 875; // Start point for the outer circle
   const scrollEndOuter = 3850; // End point for the outer circle
   const scrollStartMiddle = 1260; // Start point for the middle circle
@@ -138,26 +146,47 @@ export default function V5() {
   const scrollEndInner = 3500; // End point for the inner circle
 
   // Function to calculate progress based on custom start and end points
-  const calculateProgress = (scrollPosition, start, end) => {
+  const calculateCircleDrawProgress = (scrollPosition, start, end) => {
     if (scrollPosition < start) return 0;
     if (scrollPosition > end) return 1;
     return (scrollPosition - start) / (end - start);
   };
 
-  // Calculate the progress for each circle based on its unique scroll range
-  const progressOuter = calculateProgress(scrollPosition, scrollStartOuter, scrollEndOuter);
-  const progressMiddle = calculateProgress(scrollPosition, scrollStartMiddle, scrollEndMiddle);
-  const progressInner = calculateProgress(scrollPosition, scrollStartInner, scrollEndInner);
+  // Calculate the progress of each circle being drawn
+  const outerCircleDrawProgress = calculateCircleDrawProgress(
+    scrollPosition,
+    scrollStartOuter,
+    scrollEndOuter,
+  );
+  const middleCircleDrawProgress = calculateCircleDrawProgress(
+    scrollPosition,
+    scrollStartMiddle,
+    scrollEndMiddle,
+  );
+  const innerCircleDrawProgress = calculateCircleDrawProgress(
+    scrollPosition,
+    scrollStartInner,
+    scrollEndInner,
+  );
 
-  // Calculate strokeDashoffset for each circle based on progress
-  const calculateOffset = (progress, circumference) => {
+  // Function to calculate stroke offset for drawing the circle
+  const calculateStrokeOffset = (progress, circumference) => {
     return circumference * (1 - progress);
   };
 
-  // Calculate strokeDashoffset for each circle based on its progress
-  const offsetOuter = calculateOffset(progressOuter, circumference1);
-  const offsetMiddle = calculateOffset(progressMiddle, circumference2);
-  const offsetInner = calculateOffset(progressInner, circumference3);
+  // Calculate stroke offsets for each circle based on progress
+  const outerCircleDrawOffset = calculateStrokeOffset(
+    outerCircleDrawProgress,
+    outerCircleCircumference,
+  );
+  const middleCircleDrawOffset = calculateStrokeOffset(
+    middleCircleDrawProgress,
+    middleCircleCircumference,
+  );
+  const innerCircleDrawOffset = calculateStrokeOffset(
+    innerCircleDrawProgress,
+    innerCircleCircumference,
+  );
 
   // Starting rotations for each circle to achieve specific starting points on the circumference
   const rotation1 = 50;
@@ -165,9 +194,9 @@ export default function V5() {
   const rotation3 = 185;
 
   // Calculate the angle shift to move each bar 17 pixels backward along the circumference
-  const angleShift1 = (22 / circumference1) * 360;
-  const angleShift2 = (22 / circumference2) * 360;
-  const angleShift3 = (22 / circumference3) * 360;
+  const angleShift1 = (22 / outerCircleCircumference) * 360;
+  const angleShift2 = (22 / middleCircleCircumference) * 360;
+  const angleShift3 = (22 / innerCircleCircumference) * 360;
 
   // Adjusted starting angles for each bar
   const barRotation1 = rotation1 - angleShift1;
@@ -177,16 +206,16 @@ export default function V5() {
   // Calculate the position for each bar, moving it slightly inward to align the thicker edge with the circumference
   const barOffset = 24; // Adjust this value to control how far the bar sits from the circle edge
   const barPosition1 = {
-    x: 317.5 + (radius1 - barOffset) * Math.cos((barRotation1 * Math.PI) / 180),
-    y: 317.5 + (radius1 - barOffset) * Math.sin((barRotation1 * Math.PI) / 180),
+    x: 317.5 + (outerCircleRadius - barOffset) * Math.cos((barRotation1 * Math.PI) / 180),
+    y: 317.5 + (outerCircleRadius - barOffset) * Math.sin((barRotation1 * Math.PI) / 180),
   };
   const barPosition2 = {
-    x: 317.5 + (radius2 - barOffset) * Math.cos((barRotation2 * Math.PI) / 180),
-    y: 317.5 + (radius2 - barOffset) * Math.sin((barRotation2 * Math.PI) / 180),
+    x: 317.5 + (middleCircleRadius - barOffset) * Math.cos((barRotation2 * Math.PI) / 180),
+    y: 317.5 + (middleCircleRadius - barOffset) * Math.sin((barRotation2 * Math.PI) / 180),
   };
   const barPosition3 = {
-    x: 317.5 + (radius3 - barOffset) * Math.cos((barRotation3 * Math.PI) / 180),
-    y: 317.5 + (radius3 - barOffset) * Math.sin((barRotation3 * Math.PI) / 180),
+    x: 317.5 + (innerCircleRadius - barOffset) * Math.cos((barRotation3 * Math.PI) / 180),
+    y: 317.5 + (innerCircleRadius - barOffset) * Math.sin((barRotation3 * Math.PI) / 180),
   };
 
   const opacityOuterWords = Math.min(Math.max(scrollPosition / 250, 0), 1);
@@ -274,102 +303,37 @@ export default function V5() {
       <div className='sticky top-44 mt-10 xl:-ml-10 flex items-start justify-start w-full'>
         <div className='w-48 h-full relative mr-6'>
           <div className='sticky h-[700px] grow flex flex-col gap-y-6'>
-            <button
-              className={`${
-                activeNav === 0 ? 'translate-y-0' : ''
-              } flex flex-row text-green-600 text-left`}
-              id='nav1'
-              onClick={() =>
-                window.scrollTo({
-                  top: 1,
-                  left: 0,
-                  behavior: 'smooth',
-                })
-              }
-            >
-              <div
+            {navItems.map((item) => (
+              <button
+                key={item.id}
                 className={`${
-                  activeNav === 0 ? 'p-2xs-semibold' : 'p-2xs'
-                } h-5 w-5 mt-1 border border-green-600 rounded-full flex items-center justify-center`}
+                  activeNav >= item.id ? 'translate-y-0' : 'translate-y-[300px]'
+                } transition-all duration-400 flex flex-row text-green-600 text-left`}
+                id={`nav${item.id + 1}`}
+                onClick={() =>
+                  window.scrollTo({
+                    top: item.scrollTo,
+                    left: 0,
+                    behavior: 'smooth',
+                  })
+                }
               >
-                1
-              </div>
-              <p className={`${activeNav === 0 ? 'p-xs-semibold' : 'p-xs'} ml-2 max-w-[90px]`}>
-                Circulair bouwen meer effect met mix van instrumenten
-              </p>
-            </button>
-            <button
-              className={`${
-                activeNav > 0 ? 'translate-y-0' : 'translate-y-[300px]'
-              } transition-all duration-400 flex flex-row text-green-600 text-left`}
-              id='nav2'
-              onClick={() =>
-                window.scrollTo({
-                  top: 1301,
-                  left: 0,
-                  behavior: 'smooth',
-                })
-              }
-            >
-              <div
-                className={`${
-                  activeNav === 1 ? 'p-2xs-semibold' : 'p-2xs'
-                } h-5 w-5 mt-1 border border-green-600 rounded-full flex items-center justify-center`}
-              >
-                2
-              </div>
-              <p className={`${activeNav === 1 ? 'p-xs-semibold' : 'p-xs'} ml-2 max-w-[90px]`}>
-                De plaats van instrumenten in de beleidscyclus
-              </p>
-            </button>
-            <button
-              className={`${
-                activeNav > 1 ? 'translate-y-0' : 'translate-y-[300px]'
-              } transition-all duration-400 flex flex-row text-green-600 text-left`}
-              id='nav3'
-              onClick={() =>
-                window.scrollTo({
-                  top: 2601,
-                  left: 0,
-                  behavior: 'smooth',
-                })
-              }
-            >
-              <div
-                className={`${
-                  activeNav === 2 ? 'p-2xs-semibold' : 'p-2xs'
-                } h-5 w-5 mt-1 border border-green-600 rounded-full flex items-center justify-center`}
-              >
-                3
-              </div>
-              <p className={`${activeNav === 2 ? 'p-xs-semibold' : 'p-xs'} ml-2 max-w-[90px]`}>
-                Omgevingsvisie, Omgevingsprogramma, Omgevingsplan
-              </p>
-            </button>
-            <button
-              className={`${
-                activeNav > 2 ? 'translate-y-0' : 'translate-y-[300px]'
-              } transition-all duration-400 flex flex-row text-green-600 text-left`}
-              id='nav4'
-              onClick={() =>
-                window.scrollTo({
-                  top: 3901,
-                  left: 0,
-                  behavior: 'smooth',
-                })
-              }
-            >
-              <div
-                className={`${
-                  activeNav === 3 ? 'p-2xs-semibold' : 'p-2xs'
-                } h-5 w-5 mt-1 border border-green-600 rounded-full flex items-center justify-center`}
-              >
-                4
-              </div>
-              <p className={`${activeNav === 3 ? 'p-xs-semibold' : 'p-xs'} ml-2 max-w-[90px]`}>
-                Planregels uit het omgevingsplan
-              </p>
-            </button>
+                <div
+                  className={`${
+                    activeNav === item.id ? 'p-2xs-semibold' : 'p-2xs'
+                  } h-5 w-5 mt-1 border border-green-600 rounded-full flex items-center justify-center`}
+                >
+                  {item.id + 1}
+                </div>
+                <p
+                  className={`${
+                    activeNav === item.id ? 'p-xs-semibold' : 'p-xs'
+                  } ml-2 max-w-[90px]`}
+                >
+                  {item.label}
+                </p>
+              </button>
+            ))}
           </div>
         </div>
 
@@ -537,7 +501,7 @@ export default function V5() {
                 <circle
                   cx='317.5'
                   cy='317.5'
-                  r={radius1}
+                  r={outerCircleRadius}
                   stroke='#F6F6F6'
                   strokeWidth='40'
                   fill='none'
@@ -545,7 +509,7 @@ export default function V5() {
                 <circle
                   cx='317.5'
                   cy='317.5'
-                  r={radius1}
+                  r={outerCircleRadius}
                   stroke='#E6FBF3'
                   strokeWidth='40'
                   fill='none'
@@ -558,7 +522,7 @@ export default function V5() {
                 <circle
                   cx='317.5'
                   cy='317.5'
-                  r={radius1}
+                  r={outerCircleRadius}
                   stroke='#F6FEFB'
                   strokeWidth='40'
                   fill='none'
@@ -571,12 +535,12 @@ export default function V5() {
                 <circle
                   cx='317.5'
                   cy='317.5'
-                  r={radius1}
+                  r={outerCircleRadius}
                   stroke='#D1F9EB'
                   strokeWidth='40'
                   fill='none'
-                  strokeDasharray={circumference1}
-                  strokeDashoffset={offsetOuter}
+                  strokeDasharray={outerCircleCircumference}
+                  strokeDashoffset={outerCircleDrawOffset}
                   transform={`rotate(${rotation1} 317.5 317.5)`}
                   strokeLinecap='round'
                 />
@@ -584,9 +548,13 @@ export default function V5() {
                 <path
                   id='textPathCircle'
                   d={`
-                M ${317.5 - (radius1 - 20)} 317.5
-                a ${radius1 - 20} ${radius1 - 20} 0 1 1 ${2 * (radius1 - 12)} 0
-                a ${radius1 - 20} ${radius1 - 20} 0 1 1 ${-2 * (radius1 - 12)} 0
+                M ${317.5 - (outerCircleRadius - 20)} 317.5
+                a ${outerCircleRadius - 20} ${outerCircleRadius - 20} 0 1 1 ${
+                    2 * (outerCircleRadius - 12)
+                  } 0
+                a ${outerCircleRadius - 20} ${outerCircleRadius - 20} 0 1 1 ${
+                    -2 * (outerCircleRadius - 12)
+                  } 0
               `}
                   fill='none'
                 />
@@ -609,7 +577,7 @@ export default function V5() {
                 <circle
                   cx='317.5'
                   cy='317.5'
-                  r={radius2}
+                  r={middleCircleRadius}
                   stroke='#F6F6F6'
                   strokeWidth='40'
                   fill='none'
@@ -617,7 +585,7 @@ export default function V5() {
                 <circle
                   cx='317.5'
                   cy='317.5'
-                  r={radius2}
+                  r={middleCircleRadius}
                   stroke='#E6FBF3'
                   strokeWidth='40'
                   fill='none'
@@ -630,7 +598,7 @@ export default function V5() {
                 <circle
                   cx='317.5'
                   cy='317.5'
-                  r={radius2}
+                  r={middleCircleRadius}
                   stroke='#E6FBF3'
                   strokeWidth='40'
                   fill='none'
@@ -643,21 +611,25 @@ export default function V5() {
                 <circle
                   cx='317.5'
                   cy='317.5'
-                  r={radius2}
+                  r={middleCircleRadius}
                   stroke='#84E9C5'
                   strokeWidth='40'
                   fill='none'
-                  strokeDasharray={circumference2}
-                  strokeDashoffset={offsetMiddle}
+                  strokeDasharray={middleCircleCircumference}
+                  strokeDashoffset={middleCircleDrawOffset}
                   transform={`rotate(${rotation2} 317.5 317.5)`}
                   strokeLinecap='round'
                 />
                 <path
                   id='textPathMiddle'
                   d={`
-                M ${317.5 - (radius2 - 20)} 317.5
-                a ${radius2 - 20} ${radius2 - 20} 0 1 1 ${2 * (radius2 - 12)} 0
-                a ${radius2 - 20} ${radius2 - 20} 0 1 1 ${-2 * (radius2 - 12)} 0
+                M ${317.5 - (middleCircleRadius - 20)} 317.5
+                a ${middleCircleRadius - 20} ${middleCircleRadius - 20} 0 1 1 ${
+                    2 * (middleCircleRadius - 12)
+                  } 0
+                a ${middleCircleRadius - 20} ${middleCircleRadius - 20} 0 1 1 ${
+                    -2 * (middleCircleRadius - 12)
+                  } 0
               `}
                   fill='none'
                 />
@@ -680,7 +652,7 @@ export default function V5() {
                 <circle
                   cx='317.5'
                   cy='317.5'
-                  r={radius3}
+                  r={innerCircleRadius}
                   stroke='#F6F6F6'
                   strokeWidth='40'
                   fill='none'
@@ -688,7 +660,7 @@ export default function V5() {
                 <circle
                   cx='317.5'
                   cy='317.5'
-                  r={radius3}
+                  r={innerCircleRadius}
                   stroke='#E6FBF3'
                   strokeWidth='40'
                   fill='none'
@@ -701,7 +673,7 @@ export default function V5() {
                 <circle
                   cx='317.5'
                   cy='317.5'
-                  r={radius3}
+                  r={innerCircleRadius}
                   stroke='#D3F3E8'
                   strokeWidth='40'
                   fill='none'
@@ -714,21 +686,25 @@ export default function V5() {
                 <circle
                   cx='317.5'
                   cy='317.5'
-                  r={radius3}
+                  r={innerCircleRadius}
                   stroke='#25C38B'
                   strokeWidth='40'
                   fill='none'
-                  strokeDasharray={circumference3}
-                  strokeDashoffset={offsetInner}
+                  strokeDasharray={innerCircleCircumference}
+                  strokeDashoffset={innerCircleDrawOffset}
                   transform={`rotate(${rotation3} 317.5 317.5)`}
                   strokeLinecap='round'
                 />
                 <path
                   id='textPathInner'
                   d={`
-                M ${317.5 - (radius3 - 20)} 317.5
-                a ${radius3 - 20} ${radius3 - 20} 0 1 1 ${2 * (radius3 - 12)} 0
-                a ${radius3 - 20} ${radius3 - 20} 0 1 1 ${-2 * (radius3 - 12)} 0
+                M ${317.5 - (innerCircleRadius - 20)} 317.5
+                a ${innerCircleRadius - 20} ${innerCircleRadius - 20} 0 1 1 ${
+                    2 * (innerCircleRadius - 12)
+                  } 0
+                a ${innerCircleRadius - 20} ${innerCircleRadius - 20} 0 1 1 ${
+                    -2 * (innerCircleRadius - 12)
+                  } 0
               `}
                   fill='none'
                 />
