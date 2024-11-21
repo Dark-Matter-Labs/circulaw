@@ -36,7 +36,7 @@ export default function PCLayout({ ...props }) {
             <div>
               {props.productChainData.pcName === 'Bouw' && (
                 <div className='mt-20'>
-                  <Link href='/bouw/planregels'>
+                  <Link href='/scrolly/v5'>
                     <div className='w-full bg-green-50 flex flex-col md:flex-row border border-gray-200 rounded-cl items-start md:items-center justify-between px-10 py-8 gap-8'>
                       <p className='heading-2xl-semibold max-w-sm'>
                         Planregels: modelteksten voor het omgevingsplan
