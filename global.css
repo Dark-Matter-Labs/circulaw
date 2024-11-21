@@ -334,12 +334,3 @@ html {
   background-size: cover;
   background-position: center;
 }
-
-img {
-  max-width: max-content;
-}
-
-.test {
-  transform-origin: center center;
-  will-change: transform;
-}
