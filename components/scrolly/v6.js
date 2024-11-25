@@ -257,8 +257,8 @@ export default function V5() {
   // Define growth parameters
   const maxConeHeight = 300; // Maximum height of the cone is now 190px
 
-  const layersConeOneAndThree = 200; // Number of ellipse layers for smoother transition
-  const layersConeTwo = 250;
+  const layersConeOneAndThree = 100; // Number of ellipse layers for smoother transition
+  const layersConeTwo = 180;
   const coneHeight = Math.min((scrollPosition - 3850) / 5, maxConeHeight);
   const coneHeight2 = Math.min((scrollPosition - 5400) / 5, maxConeHeight);
   const coneHeight3 = Math.min((scrollPosition - 7200) / 5, maxConeHeight);
@@ -861,22 +861,7 @@ export default function V5() {
                     const gapLength = circumference / 25;
                     return (
                       <>
-                        {/* Green dashes */}
-                        <animated.circle
-                          key={`dashed-green-${i}`}
-                          cx='317.5'
-                          cy={layerHeight + cyOffset2}
-                          r={layerRadius}
-                          fill='none'
-                          stroke='#07B071'
-                          strokeWidth={40}
-                          strokeDasharray={`${dashLength}, ${gapLength}`}
-                          opacity={1}
-                          transformOrigin='317.5 254'
-                          transform='scale(1.12, 0.3)'
-                        />
-                        {/* Blue dashes with offset to alternate */}
-                        <animated.circle
+                         <animated.circle
                           key={`dashed-blue-${i}`}
                           cx='317.5'
                           cy={layerHeight + cyOffset2}
