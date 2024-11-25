@@ -13,7 +13,7 @@ import ContentNine from './content/09-content';
 import ContentTen from './content/10-content';
 import ContentEleven from './content/11-content';
 
-export default function V5() {
+export default function V6() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [activeNav, setActiveNav] = useState(0);
   const [activeContent, setActiveContent] = useState('c1');
@@ -325,7 +325,7 @@ export default function V5() {
       <div className='fixed bottom-8 right-8 text-red-700 heading-2xl-semibold'>
         {scrollPosition}
       </div>
-      <div className='sticky top-44 mt-10 xl:-ml-10 flex items-start justify-start w-full'>
+      <div className='sticky top-44 mt-10 xl:mx-20 2xl:mx-auto flex items-start justify-start w-full max-w-[1440px]'>
         <div className='w-48 h-full relative mr-6'>
           <div className='sticky h-[700px] grow flex flex-col gap-y-6'>
             {navItems.map((item) => (

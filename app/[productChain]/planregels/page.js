@@ -3,11 +3,18 @@ import Link from 'next/link';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { IconChevronDown, IconArrowRight } from '@tabler/icons-react';
 import { notFound } from 'next/navigation';
+import V6 from '@/components/scrolly/v6';
 
 export default function ScrollyTellingPage({ params }) {
   if (params.productChain === 'bouw') {
     return (
       <>
+
+        <div className='hidden lg:flex min-h-[10800px] flex-col items-center justify-start mt-10 relative lg:mx-10 2xl:mx-auto'>
+        <V6 />
+        </div>
+
+        <div className='block lg:hidden'>
         <div>
           <div className='w-full bg-green-600 relative h-[260px] sm:h-[360px] mt-3 flex'>
             <Image
@@ -126,6 +133,9 @@ export default function ScrollyTellingPage({ params }) {
             </div>
           </div>
         </div>
+
+        </div>
+       
       </>
     );
   } else return notFound();
