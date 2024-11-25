@@ -12,7 +12,6 @@ const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
 
 const singletonTypes = new Set([
   'siteConfig',
-  'englishPage',
   'partners',
   'navigation',
   'FAQpage',
@@ -47,7 +46,19 @@ export default defineConfig({
   ],
   schema: {
     types: schemaTypes,
-    templates: (templates) => templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),
+    templates: (templates) => [
+      ...templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),
+      {
+        id: 'instruments-by-theme',
+        title: 'Instruments by theme',
+        description: 'Instruments by a specific theme',
+        schemaType: 'instrument',
+        parameters: [{ name: 'themaId', type: 'string' }],
+        value: (params) => ({
+          thema: { _type: 'reference', _ref: params.themaId },
+        }),
+      },
+    ],
 
     document: {
       // For singleton types, filter out actions that are not explicitly included

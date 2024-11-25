@@ -12,6 +12,21 @@ export const Structure = (S, context) =>
   S.list()
     .title('Content Types')
     .items([
+      S.listItem({
+        id: 'instruments-by-theme',
+        title: 'Instruments by theme',
+        schemaType: 'instrument',
+        child: () =>
+          S.documentTypeList('thema').child((themaId) =>
+            S.documentTypeList('instrument')
+              .title('Instruments by thema')
+              .filter('_type == $type && thema._ref == $themaId')
+              .params({ type: 'instrument', themaId })
+              .initialValueTemplates([
+                S.initialValueTemplateItem('instruments-by-theme', { themaId }),
+              ]),
+          ),
+      }),
       S.listItem()
         .title('Instrumenten per thema')
         .icon(VscLaw)
