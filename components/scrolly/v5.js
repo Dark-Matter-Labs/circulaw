@@ -25,34 +25,34 @@ export default function V5() {
     { id: 3, label: 'Planregels uit het omgevingsplan', scrollTo: 9801 },
   ];
 
-      // Define scroll thresholds for navigation and content
-      const scrollThresholds = {
-        nav: [
-          { start: 0, end: 910, value: 0 },
-          { start: 910, end: 4000, value: 1 },
-          { start: 4000, end: 9800, value: 2 },
-          { start: 9800, end: 12000, value: 3 },
-        ],
-        content: [
-          // first svg
-          // nav 1
-          { start: 0, end: 455, value: 'c1' },
-          { start: 455, end: 910, value: 'c2' },
-          // nav 2
-          { start: 910, end: 1440, value: 'c3' },
-          { start: 1440, end: 1995, value: 'c4' },
-          { start: 1995, end: 2630, value: 'c5' },
-          { start: 2630, end: 4000, value: 'c6' }, // can add more time as there is a long scroll from c5 to c6
-          // second svg
-          // nav 3
-          { start: 4000, end: 5200, value: 'c7' },
-          { start: 5200, end: 7000, value: 'c8' },
-          { start: 7000, end: 8800, value: 'c9' },
-          { start: 8800, end: 9800, value: 'c10' },
-          // nav 4
-          { start: 9800, end: 10800, value: 'c11' },
-        ],
-      };
+  // Define scroll thresholds for navigation and content
+  const scrollThresholds = {
+    nav: [
+      { start: 0, end: 910, value: 0 },
+      { start: 910, end: 4000, value: 1 },
+      { start: 4000, end: 9800, value: 2 },
+      { start: 9800, end: 12000, value: 3 },
+    ],
+    content: [
+      // first svg
+      // nav 1
+      { start: 0, end: 455, value: 'c1' },
+      { start: 455, end: 910, value: 'c2' },
+      // nav 2
+      { start: 910, end: 1440, value: 'c3' },
+      { start: 1440, end: 1995, value: 'c4' },
+      { start: 1995, end: 2630, value: 'c5' },
+      { start: 2630, end: 4000, value: 'c6' }, // can add more time as there is a long scroll from c5 to c6
+      // second svg
+      // nav 3
+      { start: 4000, end: 5200, value: 'c7' },
+      { start: 5200, end: 7000, value: 'c8' },
+      { start: 7000, end: 8800, value: 'c9' },
+      { start: 8800, end: 9800, value: 'c10' },
+      // nav 4
+      { start: 9800, end: 10800, value: 'c11' },
+    ],
+  };
 
   const contentComponents = [
     ContentOne,
@@ -860,7 +860,7 @@ export default function V5() {
                     return (
                       <>
                         {/* Green dashes */}
-                 
+
                         {/* Blue dashes with offset to alternate */}
                         <circle
                           key={`dashed-blue-${i}`}
