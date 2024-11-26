@@ -22,8 +22,8 @@ export default function V6() {
   const navItems = [
     { id: 0, label: 'Circulair bouwen meer effect met mix van instrumenten', scrollTo: 1 },
     { id: 1, label: 'De plaats van instrumenten in de beleidscyclus', scrollTo: 911 },
-    { id: 2, label: 'Omgevingsvisie, Omgevingsprogramma, Omgevingsplan', scrollTo: 4001 },
-    { id: 3, label: 'Planregels uit het omgevingsplan', scrollTo: 9801 },
+    { id: 2, label: 'Samenhang tussen omgevingsvisie, -programma en -plan', scrollTo: 4001 },
+    { id: 3, label: 'Modelteksten voor een omgevingsplan', scrollTo: 9801 },
   ];
 
   // Define scroll thresholds for navigation and content
@@ -103,7 +103,7 @@ export default function V6() {
       setActiveContent(activeContentValue ?? 'c1');
 
       // Set animationStage
-      setAnimationStage(position > 3850 ? 1 : 0);
+      setAnimationStage(position > 4850 ? 1 : 0);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -122,12 +122,12 @@ export default function V6() {
   const innerCircleCircumference = 2 * Math.PI * innerCircleRadius;
 
   // Define unique scroll ranges for each circle being drawn
-  const scrollStartOuter = 875; // Start point for the outer circle
-  const scrollEndOuter = 3850; // End point for the outer circle
-  const scrollStartMiddle = 1260; // Start point for the middle circle
-  const scrollEndMiddle = 3675; // End point for the middle circle
-  const scrollStartInner = 1540; // Start point for the inner circle
-  const scrollEndInner = 3500; // End point for the inner circle
+  const scrollStartOuter = 920; // Start point for the outer circle
+  const scrollEndOuter = 3450; // End point for the outer circle
+  const scrollStartMiddle = 1360; // Start point for the middle circle
+  const scrollEndMiddle = 3850 + 235; // End point for the middle circle
+  const scrollStartInner = 2050; // Start point for the inner circle
+  const scrollEndInner = 3850 + 1000; // End point for the inner circle
 
   // Function to calculate progress based on custom start and end points
   const calculateCircleDrawProgress = (scrollPosition, start, end) => {
@@ -173,9 +173,9 @@ export default function V6() {
   );
 
   // Starting rotations for each circle to achieve specific starting points on the circumference
-  const outerCircleRotation = 50;
-  const middleCircleRotation = 116.8;
-  const innerCircleRotation = 185;
+  const outerCircleRotation = 20;
+  const middleCircleRotation = 90;
+  const innerCircleRotation = 175;
 
   // Calculate the angle shift to move each bar 17 pixels backward along the circumference
   const outerCircleAngleShift = (22 / outerCircleCircumference) * 360;
@@ -206,13 +206,13 @@ export default function V6() {
     y: 317.5 + (innerCircleRadius - barOffset) * Math.sin((innerCircleBarRotation * Math.PI) / 180),
   };
 
-  const opacityOuterWords = Math.min(Math.max(scrollPosition / 250, 0), 1);
+  // const opacityOuterWords = Math.min(Math.max(scrollPosition / 250, 0), 1);
   const circleOneOpacity = scrollPosition < 250 ? 0 : Math.min((scrollPosition - 250) / 400, 1);
   const circleTwoOpacity = Math.min(Math.max((scrollPosition - 650) / 200, 0), 1);
 
   // Define thresholds for the scroll position to control when the transition happens
-  const startSVGTransition = 3400; // start the transition
-  const endSVGTransition = 3850; // complete the transition
+  const startSVGTransition = 4400; // start the transition
+  const endSVGTransition = 4850; // complete the transition
 
   const SVGfadeStart = startSVGTransition + 100; // Start fading out 100px after startSVGTransition
   const SFGfadeEnd = endSVGTransition + 200; // Finish fading out 100px after endSVGTransition
@@ -325,7 +325,8 @@ export default function V6() {
       <div className='fixed bottom-8 right-8 text-red-700 heading-2xl-semibold'>
         {scrollPosition}
       </div>
-      <div className='sticky top-44 mt-10 xl:mx-20 2xl:mx-auto flex items-start justify-start w-full max-w-[1440px]'>
+      <div className='fixed top- text-red-700 heading-2xl-semibold'>beleidscyclus</div>
+      <div className='sticky top-32 xl:mx-20 2xl:mx-auto flex items-start justify-start w-[1440px]'>
         <div className='w-48 h-full relative mr-6'>
           <div className='sticky h-[700px] grow flex flex-col gap-y-6'>
             {navItems.map((item) => (
@@ -450,13 +451,10 @@ export default function V6() {
                 />
                 {/* Texts along each path */}
                 <text
-                  fill={activeContent === 'c3' ? '#07B071' : '#035e46'} // Bright green for active content
+                  fill={activeContent === 'c3' ? '#028352' : '#035e46'} // Bright green for active content
                   textAnchor='middle'
                   className='p-2xs-bold uppercase tracking-[0.2rem] duration-200 ease-in-out'
                   style={{
-                    fillOpacity: opacityOuterWords,
-                    transition:
-                      'fill-opacity 0.2s ease-in-out, filter 0.3s ease-in-out, fill 0.3s ease-in-out', // Smooth transition for opacity, color, and filter
                     filter:
                       activeContent === 'c3'
                         ? 'drop-shadow(0px 0px 10px #84E9C5) drop-shadow(0px 0px 10px #84E9C5)'
@@ -467,15 +465,11 @@ export default function V6() {
                     Ontwikkeling
                   </textPath>
                 </text>
-
                 <text
-                  fill={activeContent === 'c4' ? '#07B071' : '#035e46'} // Bright green for active content
+                  fill={activeContent === 'c4' ? '#028352' : '#035e46'} // Bright green for active content
                   textAnchor='middle'
                   className='p-2xs-bold uppercase tracking-[0.2rem] duration-200 ease-in-out'
                   style={{
-                    fillOpacity: opacityOuterWords,
-                    transition:
-                      'fill-opacity 0.2s ease-in-out, filter 0.3s ease-in-out, fill 0.3s ease-in-out', // Smooth transition for opacity, color, and filter
                     filter:
                       activeContent === 'c4'
                         ? 'drop-shadow(0px 0px 10px #84E9C5) drop-shadow(0px 0px 10px #84E9C5)'
@@ -487,13 +481,10 @@ export default function V6() {
                   </textPath>
                 </text>
                 <text
-                  fill={activeContent === 'c5' ? '#07B071' : '#035e46'} // Bright green for active content
+                  fill={activeContent === 'c5' ? '#028352' : '#035e46'} // Bright green for active content
                   textAnchor='middle'
                   className='p-2xs-bold uppercase tracking-[0.2rem] duration-200 ease-in-out'
                   style={{
-                    fillOpacity: opacityOuterWords,
-                    transition:
-                      'fill-opacity 0.2s ease-in-out, filter 0.3s ease-in-out, fill 0.3s ease-in-out', // Smooth transition for opacity, color, and filter
                     filter:
                       activeContent === 'c5'
                         ? 'drop-shadow(0px 0px 10px #84E9C5) drop-shadow(0px 0px 10px #84E9C5)'
@@ -505,13 +496,10 @@ export default function V6() {
                   </textPath>
                 </text>
                 <text
-                  fill={activeContent === 'c6' ? '#07B071' : '#035e46'} // Bright green for active content
+                  fill={activeContent === 'c6' ? '#028352' : '#035e46'} // Bright green for active content
                   textAnchor='middle'
                   className='p-2xs-bold uppercase tracking-[0.2rem] duration-200 ease-in-out'
                   style={{
-                    fillOpacity: opacityOuterWords,
-                    transition:
-                      'fill-opacity 0.2s ease-in-out, filter 0.3s ease-in-out, fill 0.3s ease-in-out', // Smooth transition for opacity, color, and filter
                     filter:
                       activeContent === 'c6'
                         ? 'drop-shadow(0px 0px 10px #84E9C5) drop-shadow(0px 0px 10px #84E9C5)'
@@ -527,7 +515,7 @@ export default function V6() {
                   cx='317.5'
                   cy='317.5'
                   r={outerCircleRadius}
-                  stroke='#F6F6F6'
+                  stroke='#FDFDFD'
                   strokeWidth='40'
                   fill='none'
                 />
@@ -603,7 +591,7 @@ export default function V6() {
                   cx='317.5'
                   cy='317.5'
                   r={middleCircleRadius}
-                  stroke='#F6F6F6'
+                  stroke='#FDFDFD'
                   strokeWidth='40'
                   fill='none'
                 />
@@ -678,7 +666,7 @@ export default function V6() {
                   cx='317.5'
                   cy='317.5'
                   r={innerCircleRadius}
-                  stroke='#F6F6F6'
+                  stroke='#FDFDFD'
                   strokeWidth='40'
                   fill='none'
                 />
@@ -816,7 +804,7 @@ export default function V6() {
                 const progress = i / (layersConeOneAndThree - 1);
                 const layerHeight = 317.5 - progress * coneHeight;
                 const layerRadius = 205 - progress * 50;
-                const fillColor = i === layersConeOneAndThree - 1 ? '#7CE1BD' : '#D1F9EB';
+                const fillColor = i === layersConeOneAndThree - 1 ? '#B4F1DC' : '#D1F9EB';
 
                 return (
                   <animated.circle
@@ -934,10 +922,12 @@ export default function V6() {
             scrollPosition > 4000 ? 'opacity-100' : 'opacity-0'
           } w-[250px] absolute bottom-[350px] right-0 flex items-start justify-start transition-opacity duration-500`}
         >
-          <div className='min-w-1 rounded-full h-[44px] mr-4 bg-green-600 mt-2'></div>
+          <div className='min-w-1 rounded-full h-[44px] mr-4 bg-green-600/40 mt-2'></div>
           <div>
-            <h3 className='heading-xl-semibold text-green-600'>Omgevingsvisie</h3>
-            <p className='heading-xl text-green-600'>Langetermijnvisie voor fysieke leefomgeving</p>
+            <h3 className='heading-xl-semibold text-green-600/40'>Omgevingsvisie</h3>
+            <p className='heading-xl text-green-600/40'>
+              Langetermijnvisie voor fysieke leefomgeving
+            </p>
           </div>
         </div>
         <div
@@ -949,10 +939,10 @@ export default function V6() {
             scrollPosition > 5400 ? 'opacity-100' : 'opacity-0'
           } w-[250px] absolute bottom-[420px] right-0 flex items-start justify-start transition-opacity duration-500`}
         >
-          <div className='min-w-1 rounded-full h-[44px] mr-4 bg-green-600 mt-2'></div>
+          <div className='min-w-1 rounded-full h-[44px] mr-4 bg-green-600/40 mt-2'></div>
           <div>
-            <h3 className='heading-xl-semibold text-green-600'>Omgevingsprogramma&apos;s</h3>
-            <p className='heading-xl text-green-600'>
+            <h3 className='heading-xl-semibold text-green-600/40'>Omgevingsprogramma&apos;s</h3>
+            <p className='heading-xl text-green-600/40'>
               Uitwerking beleidsdoelen voor korte-/middellange termijn
             </p>
           </div>
