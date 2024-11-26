@@ -2,9 +2,13 @@ import CustomButton from '@/components/custom-button';
 import { IconArrowRight } from '@tabler/icons-react';
 import Link from 'next/link';
 
-export default function ContentEleven() {
+export default function ContentEleven({ scrollPosition }) {
   return (
-    <div className='text-green-600 flex flex-col gap-y-6 max-w-[270px]'>
+    <div
+      className={`${
+        scrollPosition < 11000 ? 'hidden' : ''
+      } text-green-600 flex flex-col gap-y-6 max-w-[270px]`}
+    >
       <h3 className='heading-2xl-semibold'>4.1 Modelteksten voor een omgevingsplan</h3>
       <p className='p-base'>
         Voor een omgevingsplan heeft CircuLaw kant en klare teksten opgesteld die de gebruikers
