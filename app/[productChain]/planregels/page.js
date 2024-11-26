@@ -9,7 +9,7 @@ export default function ScrollyTellingPage({ params }) {
   if (params.productChain === 'bouw') {
     return (
       <>
-        <div className='hidden lg:flex min-h-[10800px] flex-col items-center justify-start mt-10 relative lg:mx-10 2xl:mx-auto'>
+        <div className='hidden lg:flex min-h-[12000px] flex-col items-center justify-start mt-10 relative lg:mx-10 2xl:mx-auto'>
           <V6 />
         </div>
 

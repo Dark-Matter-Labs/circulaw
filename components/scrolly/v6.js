@@ -22,36 +22,36 @@ export default function V6() {
   const navItems = [
     { id: 0, label: 'Circulair bouwen meer effect met mix van instrumenten', scrollTo: 1 },
     { id: 1, label: 'De plaats van instrumenten in de beleidscyclus', scrollTo: 911 },
-    { id: 2, label: 'Samenhang tussen omgevingsvisie, -programma en -plan', scrollTo: 4001 },
-    { id: 3, label: 'Modelteksten voor een omgevingsplan', scrollTo: 9801 },
+    { id: 2, label: 'Samenhang tussen omgevingsvisie, -programma en -plan', scrollTo: 5201 },
+    { id: 3, label: 'Modelteksten voor een omgevingsplan', scrollTo: 11001 },
   ];
 
   // Define scroll thresholds for navigation and content
   const scrollThresholds = {
     nav: [
       { start: 0, end: 910, value: 0 },
-      { start: 910, end: 4000, value: 1 },
-      { start: 4000, end: 9800, value: 2 },
-      { start: 9800, end: 12000, value: 3 },
+      { start: 910, end: 5200, value: 1 },
+      { start: 5200, end: 11000, value: 2 },
+      { start: 11000, end: 12000, value: 3 },
     ],
     content: [
       // first svg
       // nav 1
-      { start: 0, end: 455, value: 'c1' },
-      { start: 455, end: 910, value: 'c2' },
+      { start: 0, end: 455, value: 'c1' }, // 1,1
+      { start: 455, end: 910, value: 'c2' }, // 1,2
       // nav 2
-      { start: 910, end: 1440, value: 'c3' },
-      { start: 1440, end: 1995, value: 'c4' },
-      { start: 1995, end: 2630, value: 'c5' },
-      { start: 2630, end: 4000, value: 'c6' }, // can add more time as there is a long scroll from c5 to c6
+      { start: 910, end: 1440, value: 'c3' }, // 2.1
+      { start: 1440, end: 1995, value: 'c4' }, // 2.2
+      { start: 1995, end: 2630, value: 'c5' }, // 2.3
+      { start: 2630, end: 5200, value: 'c6' }, // can add more time as there is a long scroll from c5 to c6
       // second svg
       // nav 3
-      { start: 4000, end: 5200, value: 'c7' },
-      { start: 5200, end: 7000, value: 'c8' },
-      { start: 7000, end: 8800, value: 'c9' },
-      { start: 8800, end: 9800, value: 'c10' },
+      { start: 5200, end: 6700, value: 'c7' },
+      { start: 6700, end: 8500, value: 'c8' },
+      { start: 8500, end: 10000, value: 'c9' },
+      { start: 10000, end: 11000, value: 'c10' },
       // nav 4
-      { start: 9800, end: 10800, value: 'c11' },
+      { start: 11000, end: 12000, value: 'c11' },
     ],
   };
 
@@ -103,7 +103,7 @@ export default function V6() {
       setActiveContent(activeContentValue ?? 'c1');
 
       // Set animationStage
-      setAnimationStage(position > 4850 ? 1 : 0);
+      setAnimationStage(position > 5200 ? 1 : 0);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -126,7 +126,7 @@ export default function V6() {
   const scrollEndOuter = 3450; // End point for the outer circle
   const scrollStartMiddle = 1360; // Start point for the middle circle
   const scrollEndMiddle = 3850 + 235; // End point for the middle circle
-  const scrollStartInner = 2050; // Start point for the inner circle
+  const scrollStartInner = 1995; // Start point for the inner circle
   const scrollEndInner = 3850 + 1000; // End point for the inner circle
 
   // Function to calculate progress based on custom start and end points
@@ -211,8 +211,8 @@ export default function V6() {
   const circleTwoOpacity = Math.min(Math.max((scrollPosition - 650) / 200, 0), 1);
 
   // Define thresholds for the scroll position to control when the transition happens
-  const startSVGTransition = 4400; // start the transition
-  const endSVGTransition = 4850; // complete the transition
+  const startSVGTransition = 4800; // start the transition
+  const endSVGTransition = 5250; // complete the transition
 
   const SVGfadeStart = startSVGTransition + 100; // Start fading out 100px after startSVGTransition
   const SFGfadeEnd = endSVGTransition + 200; // Finish fading out 100px after endSVGTransition
@@ -251,28 +251,28 @@ export default function V6() {
       ? 1
       : (scrollPosition - fadeInSVGTwoStart) / (fadeInSVGTwoEnd - fadeInSVGTwoStart);
 
-  const secondConeStart = 5400;
+  const secondConeStart = 7000;
 
   // Define growth parameters
   const maxConeHeight = 300; // Maximum height of the cone is now 190px
 
   const layersConeOneAndThree = 100; // Number of ellipse layers for smoother transition
   const layersConeTwo = 180;
-  const coneHeight = Math.min((scrollPosition - 3850) / 5, maxConeHeight);
-  const coneHeight2 = Math.min((scrollPosition - 5400) / 5, maxConeHeight);
-  const coneHeight3 = Math.min((scrollPosition - 7200) / 5, maxConeHeight);
+  const coneHeight = Math.min((scrollPosition - 5200) / 5, maxConeHeight);
+  const coneHeight2 = Math.min((scrollPosition - 7000) / 5, maxConeHeight);
+  const coneHeight3 = Math.min((scrollPosition - 8700) / 5, maxConeHeight);
 
   // Set the scroll positions and max offset
   const maxCYOffset = 350; // Maximum offset to add to `cy`
 
-  const coneOneVerticalShiftStart = 5200; // Replace with the desired start scroll position
-  const coneOneVerticalShiftEnd = 5400; // Replace with the desired end scroll position
+  const coneOneVerticalShiftStart = 6700; // Replace with the desired start scroll position
+  const coneOneVerticalShiftEnd = 7100; // Replace with the desired end scroll position
 
-  const coneTwoVerticalShiftStart = 7000; // Replace with the desired start scroll position
-  const coneTwoVerticalShiftEnd = 7200; // Replace with the desired end scroll position
+  const coneTwoVerticalShiftStart = 8500; // Replace with the desired start scroll position
+  const coneTwoVerticalShiftEnd = 8700; // Replace with the desired end scroll position
 
-  const mergeConesStart = 8800;
-  const mergeConesFinish = 9800;
+  const mergeConesStart = 10000;
+  const mergeConesFinish = 11000;
 
   function calculateCY(scrollPosition, start, end, maxOffset) {
     if (scrollPosition < start) return 0;
@@ -325,7 +325,6 @@ export default function V6() {
       <div className='fixed bottom-8 right-8 text-red-700 heading-2xl-semibold'>
         {scrollPosition}
       </div>
-      <div className='fixed top- text-red-700 heading-2xl-semibold'>beleidscyclus</div>
       <div className='sticky top-32 xl:mx-20 2xl:mx-auto flex items-start justify-start w-[1440px]'>
         <div className='w-48 h-full relative mr-6'>
           <div className='sticky h-[700px] grow flex flex-col gap-y-6'>
@@ -822,7 +821,7 @@ export default function V6() {
                 );
               })}
 
-              {scrollPosition > 5200 && (
+              {scrollPosition > 6700 && (
                 <animated.circle
                   cx='317.5'
                   cy={37.5 + cyOffset2}
@@ -865,7 +864,7 @@ export default function V6() {
                       </>
                     );
                   })}
-                  {scrollPosition > 7000 && (
+                  {scrollPosition > 8500 && (
                     <>
                       {cyOffset3 === 0 && (
                         <animated.circle
@@ -879,7 +878,7 @@ export default function V6() {
                           transform='scale(1.12, 0.3)'
                         />
                       )}
-                      {scrollPosition > 7200 && (
+                      {scrollPosition > 8700 && (
                         <>
                           {Array.from({ length: layersConeOneAndThree }).map((_, i) => {
                             const progress3 = i / (layersConeOneAndThree - 1);
@@ -919,13 +918,13 @@ export default function V6() {
             }px)`,
           }}
           className={`${
-            scrollPosition > 4000 ? 'opacity-100' : 'opacity-0'
+            scrollPosition > 5200 ? 'opacity-100' : 'opacity-0'
           } w-[250px] absolute bottom-[350px] right-0 flex items-start justify-start transition-opacity duration-500`}
         >
-          <div className='min-w-1 rounded-full h-[44px] mr-4 bg-green-600/40 mt-2'></div>
+          <div className='min-w-1 rounded-full h-[44px] mr-4 bg-green-600 mt-2'></div>
           <div>
-            <h3 className='heading-xl-semibold text-green-600/40'>Omgevingsvisie</h3>
-            <p className='heading-xl text-green-600/40'>
+            <h3 className='heading-xl-semibold text-green-600'>Omgevingsvisie</h3>
+            <p className='heading-xl text-green-600'>
               Langetermijnvisie voor fysieke leefomgeving
             </p>
           </div>
@@ -936,13 +935,13 @@ export default function V6() {
           }}
           id='coneTwoLabel'
           className={`${
-            scrollPosition > 5400 ? 'opacity-100' : 'opacity-0'
+            scrollPosition > 7000 ? 'opacity-100' : 'opacity-0'
           } w-[250px] absolute bottom-[420px] right-0 flex items-start justify-start transition-opacity duration-500`}
         >
-          <div className='min-w-1 rounded-full h-[44px] mr-4 bg-green-600/40 mt-2'></div>
+          <div className='min-w-1 rounded-full h-[44px] mr-4 bg-green-600 mt-2'></div>
           <div>
-            <h3 className='heading-xl-semibold text-green-600/40'>Omgevingsprogramma&apos;s</h3>
-            <p className='heading-xl text-green-600/40'>
+            <h3 className='heading-xl-semibold text-green-600'>Omgevingsprogramma&apos;s</h3>
+            <p className='heading-xl text-green-600'>
               Uitwerking beleidsdoelen voor korte-/middellange termijn
             </p>
           </div>
@@ -952,7 +951,7 @@ export default function V6() {
             transform: `translateY(${topAndBottomConeOffset}px)`,
           }}
           className={`${
-            scrollPosition > 7200 ? 'opacity-100' : 'opacity-0'
+            scrollPosition > 8700 ? 'opacity-100' : 'opacity-0'
           } w-[250px] absolute bottom-[540px] right-0 flex items-start justify-start transition-opacity duration-500`}
           id='coneThreeLabel'
         >
@@ -960,6 +959,18 @@ export default function V6() {
           <div>
             <h3 className='heading-xl-semibold text-green-600'>Omgevingsplan</h3>
             <p className='heading-xl text-green-600'>Juridisch bindende regels</p>
+          </div>
+        </div>
+        <div
+          className={`${
+            scrollPosition < 4700 ? 'opacity-100' : 'opacity-0'
+          } w-[250px] absolute bottom-[375px] right-0 flex items-start justify-start transition-opacity duration-500`}
+          id='coneThreeLabel'
+        >
+          <div className='min-w-1 rounded-full h-[44px] mr-4 bg-green-600 mt-2'></div>
+          <div>
+            <h3 className='heading-xl-semibold text-green-600'>Beleidscyclus</h3>
+            <p className='heading-xl text-green-600'>Yeah thats alright</p>
           </div>
         </div>
       </div>
