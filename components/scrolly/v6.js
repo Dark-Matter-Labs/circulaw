@@ -325,14 +325,17 @@ export default function V6() {
     <>
       <div className='sticky top-32 w-full max-w-[1312px]'>
         <div className='w-full flex items-center justify-start mb-12'>
-          <div className='rounded-clSm bg-green-200 px-2 text-green-600 flex-row items-center justify-center'>
-            <Link className='' href='/'>
+          <div className='rounded-clSm bg-green-200 px-2 text-green-600 py-1 flex flex-row items-center justify-center'>
+            <Link className='inline-flex flex-row items-center justify-center h-full' href='/'>
               <span className='p-2xs-bold hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                 {' '}
                 Home <span className='ml-2'>{'>'}</span>
               </span>
             </Link>
-            <Link className='ml-3' href='/bouw'>
+            <Link
+              className='ml-3 inline-flex flex-row items-center justify-center h-full'
+              href='/bouw'
+            >
               <span className='p-2xs-bold align-middle hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                 {' '}
                 Bouw <span className='ml-2'>{'>'}</span>
