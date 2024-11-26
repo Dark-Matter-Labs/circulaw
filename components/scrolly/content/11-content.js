@@ -7,7 +7,7 @@ export default function ContentEleven({ scrollPosition }) {
     <div
       className={`${
         scrollPosition < 11000 ? 'hidden' : ''
-      } text-green-600 flex flex-col gap-y-6 max-w-[270px]`}
+      } text-green-600 flex flex-col gap-y-6 max-w-[290px]`}
     >
       <h3 className='heading-2xl-semibold'>4.1 Modelteksten voor een omgevingsplan</h3>
       <p className='p-base'>
