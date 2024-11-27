@@ -222,8 +222,8 @@ export default function V6() {
     y: 317.5 + (innerCircleRadius - barOffset) * Math.sin((innerCircleBarRotation * Math.PI) / 180),
   };
 
-  const circleOneOpacity = scrollPosition < 250 ? 0 : Math.min((scrollPosition - 250) / 400, 1);
-  const circleTwoOpacity = Math.min(Math.max((scrollPosition - 650) / 200, 0), 1);
+  const circleOneOpacity = scrollPosition < 755 ? 0 : Math.min((scrollPosition - 755) / 400, 1);
+  const circleTwoOpacity = Math.min(Math.max((scrollPosition - 1000) / 200, 0), 1);
 
   // Define thresholds for the scroll position to control when the transition happens
   const startSVGTransition = 5100; // start the transition
@@ -558,7 +558,7 @@ export default function V6() {
                     </textPath>
                   </text>
                   {/* Outer Circle */}
-               
+
                   <animated.circle
                     cx='317.5'
                     cy='317.5'
@@ -577,7 +577,7 @@ export default function V6() {
                     fill='none'
                     style={{
                       strokeOpacity: circleOneOpacity, // Opacity increases from 0 to 1
-                      transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
+                      transition: 'stroke-opacity 0.4s ease-in-out', // Smooth transition
                     }}
                     className='duration-200 ease-in-out'
                   />
@@ -593,7 +593,7 @@ export default function V6() {
                     transform={`rotate(${outerCircleRotation} 317.5 317.5)`}
                     strokeLinecap='round'
                   />
-              
+
                   {/* Path for the text, with radius reduced to move text inward */}
                   <path
                     id='textPathCircle'
@@ -615,7 +615,7 @@ export default function V6() {
                     className='p-2xs-extrabold uppercase tracking-[0.2rem]'
                     style={{
                       fillOpacity: circleOneOpacity, // Opacity increases from 0 to 1
-                      transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
+                      transition: 'stroke-opacity 0.4s ease-in-out', // Smooth transition
                     }}
                   >
                     <textPath href='#textPathCircle' startOffset='50%'>
@@ -642,7 +642,7 @@ export default function V6() {
                     fill='none'
                     style={{
                       strokeOpacity: circleOneOpacity, // Opacity increases from 0 to 1
-                      transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
+                      transition: 'stroke-opacity 0.4s ease-in-out', // Smooth transition
                     }}
                     className='duration-200 ease-in-out'
                   />
@@ -678,7 +678,7 @@ export default function V6() {
                     className='p-2xs-extrabold uppercase tracking-[0.2rem] duration-200 ease-in-out'
                     style={{
                       fillOpacity: circleOneOpacity, // Opacity increases from 0 to 1
-                      transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
+                      transition: 'stroke-opacity 0.4s ease-in-out', // Smooth transition
                     }}
                   >
                     <textPath href='#textPathMiddle' startOffset='50%'>
@@ -705,7 +705,7 @@ export default function V6() {
                     fill='none'
                     style={{
                       strokeOpacity: circleOneOpacity, // Opacity increases from 0 to 1
-                      transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
+                      transition: 'stroke-opacity 0.4s ease-in-out', // Smooth transition
                     }}
                     className='duration-200 ease-in-out'
                   />
@@ -721,7 +721,7 @@ export default function V6() {
                     transform={`rotate(${innerCircleRotation} 317.5 317.5)`}
                     strokeLinecap='round'
                   />
-                       
+
                   <path
                     id='textPathInner'
                     d={`
@@ -742,7 +742,7 @@ export default function V6() {
                     className='p-2xs-extrabold uppercase tracking-[0.2rem] duration-200 ease-in-out'
                     style={{
                       fillOpacity: circleOneOpacity, // Opacity increases from 0 to 1
-                      transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
+                      transition: 'stroke-opacity 0.4s ease-in-out', // Smooth transition
                     }}
                   >
                     <textPath href='#textPathInner' startOffset='50%'>
@@ -791,9 +791,19 @@ export default function V6() {
                     }}
                     className='duration-200 ease-in-out'
                   />
-              
 
-        
+                  <circle
+                    cx='317.5'
+                    cy='317.5'
+                    r={outerCircleRadius}
+                    stroke='#F8FBF8'
+                    fill='#F8FBF8'
+                    strokeWidth='40'
+                    style={{
+                      opacity: Math.max(1 - scrollPosition / 300, 0), // Calculate opacity dynamically
+                      transition: 'opacity 0.1s ease-out', // Smooth transition
+                    }}
+                  />
                 </animated.svg>
               </div>
             </div>
@@ -814,7 +824,6 @@ export default function V6() {
                     transformOrigin='317.5 340'
                     transform='scale(1.12, 0.3)'
                   />
-                  
                 )}
 
                 {/* First Cone Layers */}
@@ -963,7 +972,7 @@ export default function V6() {
               className={`${
                 scrollPosition > 5500 ? 'opacity-100' : 'opacity-0'
               } w-[216px] absolute ${
-                screenHeight < 934 ? 'bottom-[423px]' : 'bottom-[375px]'
+                screenHeight < 934 ? 'bottom-[426px]' : 'bottom-[378px]'
               } flex items-center justify-start transition-opacity duration-500`}
             >
               <div className='min-w-[2.5px] rounded-full h-[58px] mr-4 bg-green-600'></div>
@@ -1002,7 +1011,7 @@ export default function V6() {
               } flex items-center justify-start transition-opacity duration-500`}
               id='coneThreeLabel'
             >
-              <div className='min-w-[2.5px] rounded-full h-[34px] mr-4 bg-green-600'></div>
+              <div className='min-w-[2.5px] max-w-[2.5] rounded-full h-[34px] mr-4 bg-green-600'></div>
 
               <div>
                 <h3 className='p-xs-semibold text-green-600'>Omgevingsplan</h3>
@@ -1013,9 +1022,12 @@ export default function V6() {
               className={`${
                 scrollPosition < 5000 ? 'opacity-100' : 'opacity-0'
               } w-[216px] absolute ${
-                screenHeight < 934 ? 'bottom-[423px]' : 'bottom-[375px]'
+                screenHeight < 934 ? 'bottom-[426px]' : 'bottom-[378px]'
               } flex items-center justify-start transition-opacity duration-500`}
               id='coneThreeLabel'
+              style={{
+                left: `${745 + Math.min((scrollPosition / 300) * 300, 360)}px`, // Calculate `right` dynamically
+              }}
             >
               <div className='min-w-[2.5px] rounded-full h-[44px] mr-4 bg-green-600'></div>
               <div>
@@ -1025,7 +1037,6 @@ export default function V6() {
           </div>
         </div>
       </div>
-      {console.log(scrollPosition)}
     </>
   );
 }
