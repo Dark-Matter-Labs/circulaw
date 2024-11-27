@@ -12,14 +12,14 @@ export default function ContentNine() {
         <li>Bevat juridisch bindende regels en voorschriften</li>
         <li>Kan gebiedsgerichte of thematische regels bevatten</li>
       </ul>
-      <p className='p-base italic'>
-        <span className='p-base-semibold'>Let op! </span>
+      <p className='p-xs italic'>
+        <span className='p-xs-semibold'>Let op! </span>
         De Omgevingswet en instrumenten die daarmee samenhangen zijn nieuw. Voor het omgevingsplan
-        betekent dit dat de regels uit oude <span className='p-base-semibold'>bestemmings</span>
-        plannen overgezet zijn naar de nieuwe <span className='p-base-semibold'>omgevings</span>
+        betekent dit dat de regels uit oude <span className='p-xs-semibold'>bestemmings</span>
+        plannen overgezet zijn naar de nieuwe <span className='p-xs-semibold'>omgevings</span>
         plannen.
       </p>
-      <p className='p-base italic'>
+      <p className='p-xs italic'>
         Deze oude regels moeten gemeenten nog aanpassen naar de nieuwe stijl van het omgevingsplan.
         Ook kunnen gemeenten nieuwe regels toevoegen aan het omgevingsplan.
       </p>
