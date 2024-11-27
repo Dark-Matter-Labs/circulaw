@@ -13,12 +13,14 @@ import ContentNine from './content/09-content';
 import ContentTen from './content/10-content';
 import ContentEleven from './content/11-content';
 import Link from 'next/link';
+import { IconArrowRight } from '@tabler/icons-react';
 
 export default function V6() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [activeNav, setActiveNav] = useState(0);
   const [activeContent, setActiveContent] = useState('c1');
   const [animationStage, setAnimationStage] = useState(0);
+  const [screenHeight, setScreenHeight] = useState()
 
   const navItems = [
     { id: 0, label: 'Circulair bouwen meer effect met mix van instrumenten', scrollTo: 1 },
@@ -90,28 +92,40 @@ export default function V6() {
     const handleScroll = () => {
       const position = window.scrollY;
       setScrollPosition(position);
-
+  
       // Set activeNav
       const activeNavValue = scrollThresholds.nav.find(
         (range) => position >= range.start && position < range.end,
       )?.value;
       setActiveNav(activeNavValue ?? 0);
-
+  
       // Set activeContent
       const activeContentValue = scrollThresholds.content.find(
         (range) => position >= range.start && position < range.end,
       )?.value;
       setActiveContent(activeContentValue ?? 'c1');
-
+  
       // Set animationStage
       setAnimationStage(position > 5200 ? 1 : 0);
     };
-
+  
+    // Handle resize event
+    const handleResize = () => {
+      setScreenHeight(window.innerHeight);
+    };
+  
+    // Add event listeners
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+  
+    // Cleanup event listeners
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  
 
   // First SVG
   // Radii and circumferences for circles
@@ -325,7 +339,7 @@ export default function V6() {
     <>
       <div className='sticky top-32 w-full max-w-[1312px]'>
         <div className='w-full flex items-center justify-start mb-12'>
-          <div className='rounded-clSm bg-green-200 px-2 text-green-600 py-1 flex flex-row items-center justify-center'>
+          <div className='rounded-clSm bg-green-5 border border-green-600 px-2 text-green-600 py-1 flex flex-row items-center justify-center'>
             <Link className='inline-flex flex-row items-center justify-center h-full' href='/'>
               <span className='p-2xs-bold hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
                 {' '}
@@ -345,12 +359,16 @@ export default function V6() {
         </div>
         <div className='flex items-start justify-start w-full'>
           <div className='w-48 h-full relative mr-6'>
-            <div className='sticky h-[700px] grow flex flex-col gap-y-6'>
+            <div className='sticky h-[700px] grow flex flex-col gap-y-6 w-full'>
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   className={`${
-                    activeNav >= item.id ? 'translate-y-0' : 'translate-y-[200px]'
+                    activeNav >= item.id 
+                      ? 'translate-y-0' 
+                      : screenHeight < 1080 
+                        ? 'translate-y-[150px]' 
+                        : 'translate-y-[220px]'
                   } transition-all duration-400 flex flex-row text-green-600 text-left`}
                   id={`nav${item.id + 1}`}
                   onClick={() =>
@@ -363,20 +381,24 @@ export default function V6() {
                 >
                   <div
                     className={`${
-                      activeNav === item.id ? 'p-2xs-semibold' : 'p-2xs'
+                      activeNav === item.id ? 'p-3xs-semibold' : 'p-3xs'
                     } h-5 w-5 mt-1 border border-green-600 rounded-full flex items-center justify-center`}
                   >
                     {item.id + 1}
                   </div>
                   <p
                     className={`${
-                      activeNav === item.id ? 'p-xs-semibold' : 'p-xs'
-                    } ml-2 max-w-[90px]`}
+                      activeNav === item.id ? 'p-2xs-semibold' : 'p-2xs'
+                    } ml-2 max-w-[120px]`}
                   >
                     {item.label}
                   </p>
                 </button>
               ))}
+              {scrollPosition < 11000 && 
+              <Link href='/bouw/planregels/modelteksten' className={`${screenHeight < 1080 ? 'bottom-52' : 'bottom-40'} flex flex-row items-center justify-center text-green-600 hover:text-green-300 p-2xs-semibold absolute left-0`}>
+              Bekijk modelteksten <IconArrowRight className='h-4 w-4 ml-1'/>
+              </Link>}
             </div>
           </div>
 
@@ -402,13 +424,13 @@ export default function V6() {
                       : 'opacity-0 -translate-y-[200px]'
                   } transition-all duration-500 absolute top-0 left-0`}
                 >
-                  <Content scrollPosition={scrollPosition} />
+                  <Content scrollPosition={scrollPosition} screenHeight={screenHeight} />
                 </div>
               );
             })}
           </div>
           <div
-            className='flex items-center justify-center w-[600px] h-[635px] -ml-4 -mt-12'
+            className={`${screenHeight < 1080 ? '-mt-12' : ''} flex items-center justify-center w-[600px] h-[635px] -ml-4`}
             style={{ perspective: '1000px' }}
           >
             <div className=' h-full w-full' style={transformSVGStyle}>
@@ -937,7 +959,9 @@ export default function V6() {
               }}
               className={`${
                 scrollPosition > 5200 ? 'opacity-100' : 'opacity-0'
-              } w-[216px] absolute bottom-[423px] flex items-center justify-start transition-opacity duration-500`}
+              } w-[216px] absolute ${
+                screenHeight < 1080 ? 'bottom-[423px]' : 'bottom-[375px]'
+              } flex items-center justify-start transition-opacity duration-500`}
             >
               <div className='min-w-[2.5px] rounded-full h-[58px] mr-4 bg-green-600'></div>
               <div>
@@ -952,7 +976,9 @@ export default function V6() {
               id='coneTwoLabel'
               className={`${
                 scrollPosition > 7000 ? 'opacity-100' : 'opacity-0'
-              } w-[216px] absolute bottom-[498px] flex items-center justify-start transition-opacity duration-500`}
+              } w-[216px] absolute ${
+                screenHeight < 1080 ? 'bottom-[498px]' : 'bottom-[450px]'
+              } flex items-center justify-start transition-opacity duration-500`}
             >
               <div className='min-w-[2.5px] rounded-full h-[80px] mr-4 bg-green-600'></div>
               <div>
@@ -968,7 +994,9 @@ export default function V6() {
               }}
               className={`${
                 scrollPosition > 8700 ? 'opacity-100' : 'opacity-0'
-              } w-[216px] absolute bottom-[598px] flex items-center justify-start transition-opacity duration-500`}
+              } w-[216px] absolute ${
+                screenHeight < 1080 ? 'bottom-[598px]' : 'bottom-[550px]'
+              } flex items-center justify-start transition-opacity duration-500`}
               id='coneThreeLabel'
             >
               <div className='min-w-[2.5px] rounded-full h-[34px] mr-4 bg-green-600'></div>
@@ -981,7 +1009,9 @@ export default function V6() {
             <div
               className={`${
                 scrollPosition < 4700 ? 'opacity-100' : 'opacity-0'
-              } w-[216px] absolute bottom-[423px] flex items-center justify-start transition-opacity duration-500`}
+              } w-[216px] absolute ${
+                screenHeight < 1080 ? 'bottom-[423px]' : 'bottom-[375px]'
+              } flex items-center justify-start transition-opacity duration-500`}
               id='coneThreeLabel'
             >
               <div className='min-w-[2.5px] rounded-full h-[44px] mr-4 bg-green-600'></div>

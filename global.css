@@ -96,6 +96,14 @@
     @apply p-2xs font-bold;
   }
 
+  .p-3xs {
+    @apply text-[10px] font-jakarta leading-[12px]
+  }
+
+  .p-3xs-semibold {
+    @apply p-3xs font-semibold
+  }
+
    /* special fonts */
    .header-desktop {
     @apply font-jakarta text-8xl font-semibold leading-17;
