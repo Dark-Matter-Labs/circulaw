@@ -14,7 +14,7 @@ export default function ContentOne() {
         De instrumenten van de Omgevingswet staan niet op zichzelf, maar maken onderdeel uit van een{' '}
         <span className='p-base-semibold'>beleidscyclus.</span>
       </p>
-      <div className='w-full flex flex-col items-center justify-center mt-12'>
+      <div className='w-full h-72 flex flex-col items-center justify-center mt-10 bg-gradient-to-b from-[#F6FEFB30]/20 to-[#D3F3E8] rounded-cl'>
         <IconDotsVertical className='h-6 w-6' />
         <IconMouse className='h-8 w-8' />
         <p className='p-base-semibold text-center px-6'>

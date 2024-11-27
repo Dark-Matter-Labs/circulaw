@@ -7,7 +7,7 @@ export default function ContentThree() {
       </p>
       <p className='p-base'>
         Beleidsontwikkeling is belangrijk als <span className='p-base-semibold'>onderbouwing</span>{' '}
-        voor de regels in je omgevingsplan.
+        voor de regels in je omgevingsprogramma&apos;s en omgevingsplan.
       </p>
       <p>In deze fase werk je je visie uit in:</p>
       <ul className='list-inside list-disc p-base'>
