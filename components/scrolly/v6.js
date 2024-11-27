@@ -20,7 +20,7 @@ export default function V6() {
   const [activeNav, setActiveNav] = useState(0);
   const [activeContent, setActiveContent] = useState('c1');
   const [animationStage, setAnimationStage] = useState(0);
-  const [screenHeight, setScreenHeight] = useState()
+  const [screenHeight, setScreenHeight] = useState();
 
   const navItems = [
     { id: 0, label: 'Circulair bouwen meer effect met mix van instrumenten', scrollTo: 1 },
@@ -35,7 +35,7 @@ export default function V6() {
       { start: 0, end: 910, value: 0 },
       { start: 910, end: 5200, value: 1 },
       { start: 5200, end: 11000, value: 2 },
-      { start: 11000, end: 12000, value: 3 },
+      { start: 11000, end: 15000, value: 3 },
     ],
     content: [
       // first svg
@@ -54,7 +54,7 @@ export default function V6() {
       { start: 8500, end: 10000, value: 'c9' },
       { start: 10000, end: 11000, value: 'c10' },
       // nav 4
-      { start: 11000, end: 12000, value: 'c11' },
+      { start: 11000, end: 15000, value: 'c11' },
     ],
   };
 
@@ -92,40 +92,38 @@ export default function V6() {
     const handleScroll = () => {
       const position = window.scrollY;
       setScrollPosition(position);
-  
+
       // Set activeNav
       const activeNavValue = scrollThresholds.nav.find(
         (range) => position >= range.start && position < range.end,
       )?.value;
       setActiveNav(activeNavValue ?? 0);
-  
+
       // Set activeContent
       const activeContentValue = scrollThresholds.content.find(
         (range) => position >= range.start && position < range.end,
       )?.value;
       setActiveContent(activeContentValue ?? 'c1');
-  
+
       // Set animationStage
       setAnimationStage(position > 5200 ? 1 : 0);
     };
-  
+
     // Handle resize event
     const handleResize = () => {
       setScreenHeight(window.innerHeight);
     };
-  
+
     // Add event listeners
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
-  
+
     // Cleanup event listeners
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
-
-  
+  }, [scrollThresholds.content, scrollThresholds.nav]);
 
   // First SVG
   // Radii and circumferences for circles
@@ -221,7 +219,7 @@ export default function V6() {
     y: 317.5 + (innerCircleRadius - barOffset) * Math.sin((innerCircleBarRotation * Math.PI) / 180),
   };
 
-  // const opacityOuterWords = Math.min(Math.max(scrollPosition / 250, 0), 1);
+
   const circleOneOpacity = scrollPosition < 250 ? 0 : Math.min((scrollPosition - 250) / 400, 1);
   const circleTwoOpacity = Math.min(Math.max((scrollPosition - 650) / 200, 0), 1);
 
@@ -364,11 +362,11 @@ export default function V6() {
                 <button
                   key={item.id}
                   className={`${
-                    activeNav >= item.id 
-                      ? 'translate-y-0' 
-                      : screenHeight < 1080 
-                        ? 'translate-y-[150px]' 
-                        : 'translate-y-[220px]'
+                    activeNav >= item.id
+                      ? 'translate-y-0'
+                      : screenHeight < 1080
+                      ? 'translate-y-[150px]'
+                      : 'translate-y-[220px]'
                   } transition-all duration-400 flex flex-row text-green-600 text-left`}
                   id={`nav${item.id + 1}`}
                   onClick={() =>
@@ -395,10 +393,16 @@ export default function V6() {
                   </p>
                 </button>
               ))}
-              {scrollPosition < 11000 && 
-              <Link href='/bouw/planregels/modelteksten' className={`${screenHeight < 1080 ? 'bottom-52' : 'bottom-40'} flex flex-row items-center justify-center text-green-600 hover:text-green-300 p-2xs-semibold absolute left-0`}>
-              Bekijk modelteksten <IconArrowRight className='h-4 w-4 ml-1'/>
-              </Link>}
+              {scrollPosition < 11000 && (
+                <Link
+                  href='/bouw/planregels/modelteksten'
+                  className={`${
+                    screenHeight < 1080 ? 'bottom-52' : 'bottom-40'
+                  } flex flex-row items-center justify-center text-green-600 hover:text-green-300 p-2xs-semibold absolute left-0`}
+                >
+                  Bekijk modelteksten <IconArrowRight className='h-4 w-4 ml-1' />
+                </Link>
+              )}
             </div>
           </div>
 
@@ -430,7 +434,9 @@ export default function V6() {
             })}
           </div>
           <div
-            className={`${screenHeight < 1080 ? '-mt-12' : ''} flex items-center justify-center w-[600px] h-[635px] -ml-4`}
+            className={`${
+              screenHeight < 1080 ? '-mt-12' : ''
+            } flex items-center justify-center w-[600px] h-[635px] -ml-4`}
             style={{ perspective: '1000px' }}
           >
             <div className=' h-full w-full' style={transformSVGStyle}>
@@ -492,7 +498,7 @@ export default function V6() {
                   <text
                     fill={activeContent === 'c3' ? '#028352' : '#035e46'} // Bright green for active content
                     textAnchor='middle'
-                    className='p-2xs-bold uppercase tracking-[0.2rem] duration-200 ease-in-out'
+                    className='p-2xs-bold uppercase tracking-[0.2rem]'
                     style={{
                       filter:
                         activeContent === 'c3'
@@ -507,7 +513,7 @@ export default function V6() {
                   <text
                     fill={activeContent === 'c4' ? '#028352' : '#035e46'} // Bright green for active content
                     textAnchor='middle'
-                    className='p-2xs-bold uppercase tracking-[0.2rem] duration-200 ease-in-out'
+                    className='p-2xs-bold uppercase tracking-[0.2rem]'
                     style={{
                       filter:
                         activeContent === 'c4'
@@ -522,7 +528,7 @@ export default function V6() {
                   <text
                     fill={activeContent === 'c5' ? '#028352' : '#035e46'} // Bright green for active content
                     textAnchor='middle'
-                    className='p-2xs-bold uppercase tracking-[0.2rem] duration-200 ease-in-out'
+                    className='p-2xs-bold uppercase tracking-[0.2rem]'
                     style={{
                       filter:
                         activeContent === 'c5'
@@ -537,7 +543,7 @@ export default function V6() {
                   <text
                     fill={activeContent === 'c6' ? '#028352' : '#035e46'} // Bright green for active content
                     textAnchor='middle'
-                    className='p-2xs-bold uppercase tracking-[0.2rem] duration-200 ease-in-out'
+                    className='p-2xs-bold uppercase tracking-[0.2rem]'
                     style={{
                       filter:
                         activeContent === 'c6'
@@ -558,19 +564,7 @@ export default function V6() {
                     strokeWidth='40'
                     fill='none'
                   />
-                  <animated.circle
-                    cx='317.5'
-                    cy='317.5'
-                    r={outerCircleRadius}
-                    stroke='#E6FBF3'
-                    strokeWidth='40'
-                    fill='none'
-                    style={{
-                      strokeOpacity: circleOneOpacity, // Opacity increases from 0 to 1
-                      transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
-                    }}
-                    className='duration-200 ease-in-out'
-                  />
+                
                   <animated.circle
                     cx='317.5'
                     cy='317.5'
@@ -579,7 +573,7 @@ export default function V6() {
                     strokeWidth='40'
                     fill='none'
                     style={{
-                      strokeOpacity: circleTwoOpacity, // Opacity increases from 0 to 1
+                      strokeOpacity: circleOneOpacity, // Opacity increases from 0 to 1
                       transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
                     }}
                     className='duration-200 ease-in-out'
@@ -634,6 +628,7 @@ export default function V6() {
                     strokeWidth='40'
                     fill='none'
                   />
+                 
                   <circle
                     cx='317.5'
                     cy='317.5'
@@ -643,19 +638,6 @@ export default function V6() {
                     fill='none'
                     style={{
                       strokeOpacity: circleOneOpacity, // Opacity increases from 0 to 1
-                      transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
-                    }}
-                    className='duration-200 ease-in-out'
-                  />
-                  <circle
-                    cx='317.5'
-                    cy='317.5'
-                    r={middleCircleRadius}
-                    stroke='#E6FBF3'
-                    strokeWidth='40'
-                    fill='none'
-                    style={{
-                      strokeOpacity: circleTwoOpacity, // Opacity increases from 0 to 1
                       transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
                     }}
                     className='duration-200 ease-in-out'
@@ -709,19 +691,7 @@ export default function V6() {
                     strokeWidth='40'
                     fill='none'
                   />
-                  <circle
-                    cx='317.5'
-                    cy='317.5'
-                    r={innerCircleRadius}
-                    stroke='#E6FBF3'
-                    strokeWidth='40'
-                    fill='none'
-                    style={{
-                      strokeOpacity: circleTwoOpacity, // Opacity increases from 0 to 1
-                      transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
-                    }}
-                    className='duration-200 ease-in-out'
-                  />
+                
                   <circle
                     cx='317.5'
                     cy='317.5'
@@ -730,7 +700,7 @@ export default function V6() {
                     strokeWidth='40'
                     fill='none'
                     style={{
-                      strokeOpacity: circleTwoOpacity, // Opacity increases from 0 to 1
+                      strokeOpacity: circleOneOpacity, // Opacity increases from 0 to 1
                       transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
                     }}
                     className='duration-200 ease-in-out'
@@ -924,8 +894,32 @@ export default function V6() {
                               const progress3 = i / (layersConeOneAndThree - 1);
                               const layerHeight = -254 - progress3 * coneHeight3;
                               const layerRadius = 105 - progress3 * 50;
+
+                              // Interpolate color based on scroll position
+                              const colorProgress = Math.min(
+                                Math.max((scrollPosition - 11100) / 300, 0),
+                                1,
+                              );
+                              // const startColor = '#07B071'; // Starting color at 11000
+                              const endColor = '#035E46'; // Ending color at 11300
+
+                              // Linear interpolation between two colors
+                              const interpolateColor = (start, end, progress) => {
+                                const startRGB = start.match(/\w\w/g).map((x) => parseInt(x, 16));
+                                const endRGB = end.match(/\w\w/g).map((x) => parseInt(x, 16));
+                                const resultRGB = startRGB.map((start, idx) =>
+                                  Math.round(start + (endRGB[idx] - start) * progress),
+                                );
+                                return `#${resultRGB
+                                  .map((x) => x.toString(16).padStart(2, '0'))
+                                  .join('')}`;
+                              };
+
                               const fillColor =
-                                i === layersConeOneAndThree - 1 ? '#07B071' : '#25C38B';
+                                i === layersConeOneAndThree - 1
+                                  ? interpolateColor('#07B071', endColor, colorProgress)
+                                  : interpolateColor('#25C38B', endColor, colorProgress);
+
                               return (
                                 <animated.circle
                                   key={i}
@@ -950,6 +944,7 @@ export default function V6() {
               </animated.svg>
             )}
           </div>
+          {console.log(scrollPosition)}
           <div className='w-[216px] h-full'>
             <div
               style={{
@@ -1017,7 +1012,7 @@ export default function V6() {
               <div className='min-w-[2.5px] rounded-full h-[44px] mr-4 bg-green-600'></div>
               <div>
                 <h3 className='p-xs-semibold text-green-600'>Beleidscyclus</h3>
-                <p className='p-xs text-green-600'>Yeah thats alright</p>
+                <p className='p-xs text-green-600'>Ondertitel</p>
               </div>
             </div>
           </div>

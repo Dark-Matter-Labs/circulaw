@@ -13,11 +13,12 @@ export default function ContentNine() {
         <li>Kan gebiedsgerichte of thematische regels bevatten</li>
       </ul>
       <p className='p-xs italic'>
-        
-        De Omgevingswet en samenhangende instrumenten zijn nieuw. De regels uit oude <span className='p-xs-semibold'>bestemmingsplannen</span> zijn daarom overgezet naar nieuwe <span className='p-xs-semibold'>omgevingsplannen.{' '}</span> 
-        De gemeenten moeten deze nog aanpassen naar de nieuwe stijl van het omgevingsplan. Ook kunnen ze er nieuwe regels aan toevoegen.
+        De Omgevingswet en samenhangende instrumenten zijn nieuw. De regels uit oude{' '}
+        <span className='p-xs-semibold'>bestemmingsplannen</span> zijn daarom overgezet naar nieuwe{' '}
+        <span className='p-xs-semibold'>omgevingsplannen. </span>
+        De gemeenten moeten deze nog aanpassen naar de nieuwe stijl van het omgevingsplan. Ook
+        kunnen ze er nieuwe regels aan toevoegen.
       </p>
-      
     </div>
   );
 }
