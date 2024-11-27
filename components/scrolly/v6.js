@@ -110,9 +110,14 @@ export default function V6() {
     };
 
     // Handle resize event
+
     const handleResize = () => {
-      setScreenHeight(window.innerHeight);
+      if (typeof window !== 'undefined') {
+        setScreenHeight(window.innerHeight);
+      }
     };
+  
+  
 
     // Add event listeners
     window.addEventListener('scroll', handleScroll);
@@ -123,7 +128,7 @@ export default function V6() {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
     };
-  }, [scrollThresholds.content, scrollThresholds.nav]);
+  }, [scrollThresholds.content, scrollThresholds.nav, screenHeight]);
 
   // First SVG
   // Radii and circumferences for circles
@@ -363,7 +368,7 @@ export default function V6() {
                   className={`${
                     activeNav >= item.id
                       ? 'translate-y-0'
-                      : screenHeight < 1080
+                      : screenHeight < 934
                       ? 'translate-y-[150px]'
                       : 'translate-y-[220px]'
                   } transition-all duration-400 flex flex-row text-green-600 text-left`}
@@ -396,7 +401,7 @@ export default function V6() {
                 <Link
                   href='/bouw/planregels/modelteksten'
                   className={`${
-                    screenHeight < 1080 ? 'bottom-52' : 'bottom-40'
+                    screenHeight < 934 ? 'bottom-52' : 'bottom-40'
                   } flex flex-row items-center justify-center text-green-600 hover:text-green-300 p-2xs-semibold absolute left-0`}
                 >
                   Bekijk modelteksten <IconArrowRight className='h-4 w-4 ml-1' />
@@ -434,7 +439,7 @@ export default function V6() {
           </div>
           <div
             className={`${
-              screenHeight < 1080 ? '-mt-12' : ''
+              screenHeight < 934 ? '-mt-12' : ''
             } flex items-center justify-center w-[600px] h-[635px] -ml-4`}
             style={{ perspective: '1000px' }}
           >
@@ -497,7 +502,7 @@ export default function V6() {
                   <text
                     fill={activeContent === 'c3' ? '#028352' : '#035e46'} // Bright green for active content
                     textAnchor='middle'
-                    className='p-2xs-bold uppercase tracking-[0.2rem]'
+                    className='p-2xs-semibold uppercase tracking-[0.2rem]'
                     style={{
                       filter:
                         activeContent === 'c3'
@@ -512,7 +517,7 @@ export default function V6() {
                   <text
                     fill={activeContent === 'c4' ? '#028352' : '#035e46'} // Bright green for active content
                     textAnchor='middle'
-                    className='p-2xs-bold uppercase tracking-[0.2rem]'
+                    className='p-2xs-semibold uppercase tracking-[0.2rem]'
                     style={{
                       filter:
                         activeContent === 'c4'
@@ -527,7 +532,7 @@ export default function V6() {
                   <text
                     fill={activeContent === 'c5' ? '#028352' : '#035e46'} // Bright green for active content
                     textAnchor='middle'
-                    className='p-2xs-bold uppercase tracking-[0.2rem]'
+                    className='p-2xs-semibold uppercase tracking-[0.2rem]'
                     style={{
                       filter:
                         activeContent === 'c5'
@@ -542,7 +547,7 @@ export default function V6() {
                   <text
                     fill={activeContent === 'c6' ? '#028352' : '#035e46'} // Bright green for active content
                     textAnchor='middle'
-                    className='p-2xs-bold uppercase tracking-[0.2rem]'
+                    className='p-2xs-semibold uppercase tracking-[0.2rem]'
                     style={{
                       filter:
                         activeContent === 'c6'
@@ -607,7 +612,7 @@ export default function V6() {
                   <text
                     textAnchor='middle'
                     fill='#035e46'
-                    className='p-2xs-bold uppercase tracking-[0.2rem]'
+                    className='p-2xs-extrabold uppercase tracking-[0.2rem]'
                     style={{
                       fillOpacity: circleOneOpacity, // Opacity increases from 0 to 1
                       transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
@@ -670,7 +675,7 @@ export default function V6() {
                   <text
                     textAnchor='middle'
                     fill='#035e46'
-                    className='p-2xs-bold uppercase tracking-[0.2rem] duration-200 ease-in-out'
+                    className='p-2xs-extrabold uppercase tracking-[0.2rem] duration-200 ease-in-out'
                     style={{
                       fillOpacity: circleOneOpacity, // Opacity increases from 0 to 1
                       transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
@@ -733,7 +738,7 @@ export default function V6() {
                   <text
                     textAnchor='middle'
                     fill='#035e46'
-                    className='p-2xs-bold uppercase tracking-[0.2rem] duration-200 ease-in-out'
+                    className='p-2xs-extrabold uppercase tracking-[0.2rem] duration-200 ease-in-out'
                     style={{
                       fillOpacity: circleOneOpacity, // Opacity increases from 0 to 1
                       transition: 'stroke-opacity 0.2s ease-in-out', // Smooth transition
@@ -953,7 +958,7 @@ export default function V6() {
               className={`${
                 scrollPosition > 5200 ? 'opacity-100' : 'opacity-0'
               } w-[216px] absolute ${
-                screenHeight < 1080 ? 'bottom-[423px]' : 'bottom-[375px]'
+                screenHeight < 934 ? 'bottom-[423px]' : 'bottom-[375px]'
               } flex items-center justify-start transition-opacity duration-500`}
             >
               <div className='min-w-[2.5px] rounded-full h-[58px] mr-4 bg-green-600'></div>
@@ -970,7 +975,7 @@ export default function V6() {
               className={`${
                 scrollPosition > 7000 ? 'opacity-100' : 'opacity-0'
               } w-[216px] absolute ${
-                screenHeight < 1080 ? 'bottom-[498px]' : 'bottom-[450px]'
+                screenHeight < 934 ? 'bottom-[498px]' : 'bottom-[450px]'
               } flex items-center justify-start transition-opacity duration-500`}
             >
               <div className='min-w-[2.5px] rounded-full h-[80px] mr-4 bg-green-600'></div>
@@ -988,7 +993,7 @@ export default function V6() {
               className={`${
                 scrollPosition > 8700 ? 'opacity-100' : 'opacity-0'
               } w-[216px] absolute ${
-                screenHeight < 1080 ? 'bottom-[598px]' : 'bottom-[550px]'
+                screenHeight < 934 ? 'bottom-[598px]' : 'bottom-[550px]'
               } flex items-center justify-start transition-opacity duration-500`}
               id='coneThreeLabel'
             >
@@ -1003,7 +1008,7 @@ export default function V6() {
               className={`${
                 scrollPosition < 4700 ? 'opacity-100' : 'opacity-0'
               } w-[216px] absolute ${
-                screenHeight < 1080 ? 'bottom-[423px]' : 'bottom-[375px]'
+                screenHeight < 934 ? 'bottom-[423px]' : 'bottom-[375px]'
               } flex items-center justify-start transition-opacity duration-500`}
               id='coneThreeLabel'
             >

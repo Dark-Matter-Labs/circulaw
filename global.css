@@ -96,6 +96,10 @@
     @apply p-2xs font-bold;
   }
 
+  .p-2xs-extrabold {
+    @apply p-2xs font-extrabold;
+  }
+
   .p-3xs {
     @apply text-[10px] font-jakarta leading-[12px]
   }

@@ -7,6 +7,7 @@ const PlayerWithNoSSR = dynamic(
 export default function ContentOne({ screenHeight }) {
   return (
     <div className='text-green-600 flex flex-col gap-y-6 max-w-[290px]'>
+      <h2 className='heading-4xl-semibold text-nowrap -mt-20'>Modelteksten voor een omgevingsplan</h2>
       <h3 className='heading-2xl-semibold'>
         1.1 Circulair bouwen: meer effect met een mix van instrumenten
       </h3>
@@ -20,7 +21,7 @@ export default function ContentOne({ screenHeight }) {
       </p>
       <div
         className={`${
-          screenHeight < 1080 ? 'h-44' : 'h-72'
+          screenHeight < 934 ? 'h-44' : 'h-72'
         } w-full flex flex-col items-center justify-end pb-4 mt-10 bg-gradient-to-b from-[#F6FEFB30]/20 to-[#D3F3E8]/20 rounded-cl`}
       >
         <PlayerWithNoSSR
