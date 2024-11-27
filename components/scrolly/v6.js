@@ -408,7 +408,7 @@ export default function V6() {
             })}
           </div>
           <div
-            className='flex items-center justify-center w-[600px] h-[635px] -ml-4'
+            className='flex items-center justify-center w-[600px] h-[635px] -ml-4 -mt-12'
             style={{ perspective: '1000px' }}
           >
             <div className=' h-full w-full' style={transformSVGStyle}>
@@ -937,7 +937,7 @@ export default function V6() {
               }}
               className={`${
                 scrollPosition > 5200 ? 'opacity-100' : 'opacity-0'
-              } w-[216px] absolute bottom-[375px] flex items-center justify-start transition-opacity duration-500`}
+              } w-[216px] absolute bottom-[423px] flex items-center justify-start transition-opacity duration-500`}
             >
               <div className='min-w-[2.5px] rounded-full h-[58px] mr-4 bg-green-600'></div>
               <div>
@@ -952,7 +952,7 @@ export default function V6() {
               id='coneTwoLabel'
               className={`${
                 scrollPosition > 7000 ? 'opacity-100' : 'opacity-0'
-              } w-[216px] absolute bottom-[450px] flex items-center justify-start transition-opacity duration-500`}
+              } w-[216px] absolute bottom-[498px] flex items-center justify-start transition-opacity duration-500`}
             >
               <div className='min-w-[2.5px] rounded-full h-[80px] mr-4 bg-green-600'></div>
               <div>
@@ -968,7 +968,7 @@ export default function V6() {
               }}
               className={`${
                 scrollPosition > 8700 ? 'opacity-100' : 'opacity-0'
-              } w-[216px] absolute bottom-[550px] flex items-center justify-start transition-opacity duration-500`}
+              } w-[216px] absolute bottom-[598px] flex items-center justify-start transition-opacity duration-500`}
               id='coneThreeLabel'
             >
               <div className='min-w-[2.5px] rounded-full h-[34px] mr-4 bg-green-600'></div>
@@ -981,7 +981,7 @@ export default function V6() {
             <div
               className={`${
                 scrollPosition < 4700 ? 'opacity-100' : 'opacity-0'
-              } w-[216px] absolute bottom-[375px] flex items-center justify-start transition-opacity duration-500`}
+              } w-[216px] absolute bottom-[423px] flex items-center justify-start transition-opacity duration-500`}
               id='coneThreeLabel'
             >
               <div className='min-w-[2.5px] rounded-full h-[44px] mr-4 bg-green-600'></div>
