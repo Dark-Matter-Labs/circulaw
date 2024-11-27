@@ -1,7 +1,7 @@
 export default function ContentNine() {
   return (
     <div className='text-green-600 flex flex-col gap-y-4 max-w-[290px]'>
-      <h3 className='heading-2xl-semibold'>3.3 Omgevingsplan</h3>
+      <h3 className='heading-2xl-semibold'>Omgevingsplan</h3>
       <p className='p-base'>
         Bevat alle <span className='p-base-semibold'>gemeentelijke regels</span> over de{' '}
         <span className='p-base-semibold'>fysieke leefomgeving:</span>

@@ -1,7 +1,7 @@
 export default function ContentEight() {
   return (
     <div className='text-green-600 flex flex-col gap-y-6 max-w-[290px]'>
-      <h3 className='heading-2xl-semibold'>3.2 Gemeentelijke omgevingsprogramma&apos;s</h3>
+      <h3 className='heading-2xl-semibold'>Gemeentelijke omgevingsprogramma&apos;s</h3>
       <p className='p-base'>
         Bevat <span className='p-base-semibold'>uitwerking</span> van{' '}
         <span className='p-base-semibold'>beleidsdoelen</span> voor de{' '}

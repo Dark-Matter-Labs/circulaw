@@ -11,7 +11,7 @@ export default function ContentOne({ screenHeight }) {
         Modelteksten voor een omgevingsplan
       </h2>
       <h3 className='heading-2xl-semibold'>
-        1.1 Circulair bouwen: meer effect met een mix van instrumenten
+        Circulair bouwen: meer effect met een mix van instrumenten
       </h3>
       <p className='p-base'>
         Wil je werkelijk <span className='p-base-semibold'>impact</span> maken? Zet dan een{' '}

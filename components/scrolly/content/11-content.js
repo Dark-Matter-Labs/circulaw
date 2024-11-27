@@ -9,7 +9,7 @@ export default function ContentEleven({ scrollPosition }) {
         scrollPosition < 11000 ? 'hidden' : ''
       } text-green-600 flex flex-col gap-y-6 max-w-[290px]`}
     >
-      <h3 className='heading-2xl-semibold'>4.1 Modelteksten voor een omgevingsplan</h3>
+      <h3 className='heading-2xl-semibold'>Modelteksten voor een omgevingsplan</h3>
       <p className='p-base'>
         Voor een omgevingsplan heeft CircuLaw kant en klare teksten opgesteld die de gebruikers
         kunnen overnemen: de planregels.
