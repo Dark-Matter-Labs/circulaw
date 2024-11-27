@@ -368,7 +368,7 @@ export default function V6() {
                       ? 'translate-y-0'
                       : screenHeight < 934
                       ? 'translate-y-[150px]'
-                      : 'translate-y-[220px]'
+                      : 'translate-y-[280px]'
                   } transition-all duration-400 flex flex-row text-green-600 text-left`}
                   id={`nav${item.id + 1}`}
                   onClick={() =>
@@ -399,7 +399,7 @@ export default function V6() {
                 <Link
                   href='/bouw/planregels/modelteksten'
                   className={`${
-                    screenHeight < 934 ? 'bottom-52' : 'bottom-40'
+                    screenHeight < 934 ? 'bottom-52' : 'bottom-[110px]'
                   } flex flex-row items-center justify-center text-green-600 hover:text-green-300 p-2xs-semibold absolute left-0`}
                 >
                   Bekijk modelteksten <IconArrowRight className='h-4 w-4 ml-1' />
