@@ -116,8 +116,6 @@ export default function V6() {
         setScreenHeight(window.innerHeight);
       }
     };
-  
-  
 
     // Add event listeners
     window.addEventListener('scroll', handleScroll);
