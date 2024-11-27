@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { IconChevronDown, IconArrowRight } from '@tabler/icons-react';
 import { notFound } from 'next/navigation';
-import V6 from '@/components/scrolly/v6';
+import ScrollyTellingAnimation from '@/components/scrolly/scrolly-telling-animation';
 
 export default function ScrollyTellingPage({ params }) {
   if (params.productChain === 'bouw') {
     return (
       <>
         <div className='hidden lg:flex min-h-[12600px] w-full flex-col items-center justify-start mt-10 relative lg:px-6 2xl:mx-auto overflow-clip'>
-          <V6 />
+          <ScrollyTellingAnimation />
         </div>
 
         <div className='block lg:hidden'>
