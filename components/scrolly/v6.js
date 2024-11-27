@@ -219,7 +219,6 @@ export default function V6() {
     y: 317.5 + (innerCircleRadius - barOffset) * Math.sin((innerCircleBarRotation * Math.PI) / 180),
   };
 
-
   const circleOneOpacity = scrollPosition < 250 ? 0 : Math.min((scrollPosition - 250) / 400, 1);
   const circleTwoOpacity = Math.min(Math.max((scrollPosition - 650) / 200, 0), 1);
 
@@ -564,7 +563,7 @@ export default function V6() {
                     strokeWidth='40'
                     fill='none'
                   />
-                
+
                   <animated.circle
                     cx='317.5'
                     cy='317.5'
@@ -628,7 +627,7 @@ export default function V6() {
                     strokeWidth='40'
                     fill='none'
                   />
-                 
+
                   <circle
                     cx='317.5'
                     cy='317.5'
@@ -691,7 +690,7 @@ export default function V6() {
                     strokeWidth='40'
                     fill='none'
                   />
-                
+
                   <circle
                     cx='317.5'
                     cy='317.5'
@@ -944,7 +943,6 @@ export default function V6() {
               </animated.svg>
             )}
           </div>
-          {console.log(scrollPosition)}
           <div className='w-[216px] h-full'>
             <div
               style={{
