@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import { animated } from '@react-spring/web';
+import ContentZero from './content/00-content';
 import ContentOne from './content/01-content';
 import ContentTwo from './content/02-content';
 import ContentThree from './content/03-content';
@@ -40,7 +41,8 @@ export default function ScrollyTellingAnimation() {
     content: [
       // first svg
       // nav 1
-      { start: 0, end: 755, value: 'c1' }, // 1,1
+      { start: 0, end: 300, value: 'c0'},
+      { start: 300, end: 755, value: 'c1' }, // 1,1
       { start: 755, end: 1210, value: 'c2' }, // 1,2
       // nav 2
       { start: 1210, end: 1740, value: 'c3' }, // 2.1
@@ -59,6 +61,7 @@ export default function ScrollyTellingAnimation() {
   };
 
   const contentComponents = [
+    ContentZero,
     ContentOne,
     ContentTwo,
     ContentThree,
@@ -73,6 +76,7 @@ export default function ScrollyTellingAnimation() {
   ];
 
   const contentRefs = {
+    c0: useRef(),
     c1: useRef(),
     c2: useRef(),
     c3: useRef(),
@@ -103,7 +107,7 @@ export default function ScrollyTellingAnimation() {
       const activeContentValue = scrollThresholds.content.find(
         (range) => position >= range.start && position < range.end,
       )?.value;
-      setActiveContent(activeContentValue ?? 'c1');
+      setActiveContent(activeContentValue ?? 'c0');
 
       // Set animationStage
       setAnimationStage(position > 5500 ? 1 : 0);
@@ -410,11 +414,11 @@ export default function ScrollyTellingAnimation() {
 
           <div className='relative w-[300px] h-full mr-6'>
             {contentComponents.map((Content, index) => {
-              const contentId = `c${index + 1}`; // Generate IDs like c1, c2, ...
+              const contentId = `c${index}`; // Generate IDs like c1, c2, ...
               const isActive = activeContent === contentId;
-              const prevActive = activeContent === `c${index}`;
-              const nextActive = activeContent === `c${index + 2}`;
-
+              const prevActive = activeContent === `c${index -1}`;
+              const nextActive = activeContent === `c${index + 1}`;
+              console.log(index)
               return (
                 <div
                   key={contentId}
@@ -1025,10 +1029,9 @@ export default function ScrollyTellingAnimation() {
               } flex items-center justify-start transition-opacity duration-500`}
               id='coneThreeLabel'
               style={{
-                left: `${745 + Math.min((scrollPosition / 300) * 300, 360)}px`, // Calculate `right` dynamically
+                left: `${725 + Math.min((scrollPosition / 300) * 300, 380)}px`, // Calculate `right` dynamically
               }}
             >
-               
               <div className={`${scrollPosition > 360 ? 'opacity-100' : 'opacity-0'} min-w-[2.5px] rounded-full h-[44px] mr-4 bg-green-600`}></div>
               <div>
                 <h3 className='heading-xl-semibold text-green-600'>Beleidscyclus</h3>
