@@ -238,7 +238,6 @@ export default function ScrollyTellingAnimation() {
 
   const circleOneOpacity = scrollPosition < 655 ? 0 : Math.min((scrollPosition - 655) / 500, 1);
   const circleTwoOpacity = Math.min(Math.max((scrollPosition - 900) / 300, 0), 1);
-  console.log(scrollPosition);
 
   // Define thresholds for the scroll position to control when the transition happens
   const startSVGTransition = 5100; // start the transition
@@ -1042,7 +1041,6 @@ export default function ScrollyTellingAnimation() {
                 left: `${adjustedLeft + Math.min((scrollPosition / 300) * 300, 380)}px`, // Calculate `right` dynamically
               }}
             >
-              {console.log(adjustedLeft)}
               <div
                 className={`${
                   scrollPosition > 380 ? 'opacity-100' : 'opacity-0'
