@@ -96,6 +96,18 @@
     @apply p-2xs font-bold;
   }
 
+  .p-2xs-extrabold {
+    @apply p-2xs font-extrabold;
+  }
+
+  .p-3xs {
+    @apply text-[10px] font-jakarta leading-[12px]
+  }
+
+  .p-3xs-semibold {
+    @apply p-3xs font-semibold
+  }
+
    /* special fonts */
    .header-desktop {
     @apply font-jakarta text-8xl font-semibold leading-17;
@@ -316,4 +328,21 @@ html {
 	to {
 		height: 0;
 	}
+}
+
+.containerx {
+  position: relative;
+ 
+  height: 100vh;
+}
+
+.svg {
+  transform: rotate(-90deg); /* Start drawing from the top */
+}
+
+.bg-scroll-circles {
+  background-color: 'transparent'; /* Replace with your preferred color or gradient */
+  background-image: url('/scrolly/centered.svg'); /* Use this if you need an image background */
+  background-size: cover;
+  background-position: center;
 }
