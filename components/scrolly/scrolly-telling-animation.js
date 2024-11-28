@@ -22,6 +22,7 @@ export default function ScrollyTellingAnimation() {
   const [activeContent, setActiveContent] = useState('c1');
   const [animationStage, setAnimationStage] = useState(0);
   const [screenHeight, setScreenHeight] = useState();
+  const [screenWidth, setScreenWidth] = useState();
 
   const navItems = [
     { id: 0, label: 'Circulair bouwen meer effect met mix van instrumenten', scrollTo: 1 },
@@ -115,22 +116,31 @@ export default function ScrollyTellingAnimation() {
 
     // Handle resize event
 
-    const handleResize = () => {
+    const handleResizeVertical = () => {
       if (typeof window !== 'undefined') {
         setScreenHeight(window.innerHeight);
       }
     };
 
+    const handleResizeHorizontal = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
     // Add event listeners
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResizeVertical);
+    window.addEventListener('resize', handleResizeHorizontal);
 
     // Cleanup event listeners
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', handleResizeVertical);
+      window.removeEventListener('resize', handleResizeHorizontal);
     };
   }, [scrollThresholds.content, scrollThresholds.nav, screenHeight]);
+
+  const adjustedLeft = screenWidth < 1370 ? 725 - (1370 - screenWidth) * 0.7 : 725;
+  // const adjustedMove = 380 - (1370 - screenWidth); // Subtract directly based on the screen width
 
   // First SVG
   // Radii and circumferences for circles
@@ -1029,9 +1039,10 @@ export default function ScrollyTellingAnimation() {
               } flex items-center justify-start transition-opacity duration-500`}
               id='coneThreeLabel'
               style={{
-                left: `${725 + Math.min((scrollPosition / 300) * 300, 380)}px`, // Calculate `right` dynamically
+                left: `${adjustedLeft + Math.min((scrollPosition / 300) * 300, 380)}px`, // Calculate `right` dynamically
               }}
             >
+              {console.log(adjustedLeft)}
               <div
                 className={`${
                   scrollPosition > 380 ? 'opacity-100' : 'opacity-0'
