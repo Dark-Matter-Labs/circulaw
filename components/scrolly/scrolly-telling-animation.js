@@ -1029,7 +1029,8 @@ export default function ScrollyTellingAnimation() {
                 left: `${745 + Math.min((scrollPosition / 300) * 300, 360)}px`, // Calculate `right` dynamically
               }}
             >
-              <div className='min-w-[2.5px] rounded-full h-[44px] mr-4 bg-green-600'></div>
+              {scrollPosition > 300 && 
+              <div className='min-w-[2.5px] rounded-full h-[44px] mr-4 bg-green-600'></div>}
               <div>
                 <h3 className='heading-xl-semibold text-green-600'>Beleidscyclus</h3>
               </div>
