@@ -53,9 +53,7 @@ export default function ScrollyTellingPage({ params }) {
           </div>
           <div className='global-margin py-10 sm:py-16 flex flex-col md:flex-row relative'>
             <div className='basis-2/3 max-w-4xl'>
-              <p className='p-base italic mb-6'>
-                Bekijk de site op een groter scherm om het verhaal uitgebreider te bekijken
-              </p>
+              <p className='p-base italic mb-6'>Tip: bekijk dit verhaal op een groot scherm.</p>
               <h2 className='heading-2xl-semibold sm:heading-3xl-semibold mb-6'>Planregels</h2>
               <p className='p-base mb-6 max-w-2xl'>
                 Wil je werkelijk impact maken, zet dan een mix van instrumenten in. Voor het
