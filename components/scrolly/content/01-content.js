@@ -7,9 +7,7 @@ const PlayerWithNoSSR = dynamic(
 export default function ContentOne({ screenHeight }) {
   return (
     <div className='text-green-600 flex flex-col gap-y-6 max-w-[290px]'>
-      <h2 className='heading-4xl-semibold text-nowrap -mt-20'>
-        Modelteksten voor een omgevingsplan
-      </h2>
+   
       <h3 className='heading-2xl-semibold'>
         Circulair bouwen: meer effect met een mix van instrumenten
       </h3>

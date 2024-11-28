@@ -10,7 +10,7 @@ export default function ContentThree() {
         voor de regels in je omgevingsprogramma&apos;s en omgevingsplan.
       </p>
       <p>In deze fase werk je je visie uit in:</p>
-      <ul className='list-inside list-disc p-base'>
+      <ul className='list-outside list-disc p-base ml-4'>
         <li>omgevingsvisie, en/of</li>
         <li>omgevingsprogramma&apos;s</li>
       </ul>

@@ -6,7 +6,7 @@ export default function ContentSeven() {
         Dit is de <span className='p-base-semibold'>lange-termijn visie</span> op de{' '}
         <span className='p-base-semibold'>fysieke leefomgeving:</span>
       </p>
-      <ul className='list-inside list-disc p-base flex flex-col gap-y-2'>
+      <ul className='list-outside list-disc p-base flex flex-col gap-y-2 ml-4'>
         <li>
           Beschrijft op hoofdlijnen hoe de toekomst van de leefomgeving eruitziet en welke ambities
           en doelen nagestreefd worden.Geeft richting aan het omgevingsplan

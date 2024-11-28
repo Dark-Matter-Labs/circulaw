@@ -6,7 +6,7 @@ export default function ContentNine() {
         Bevat alle <span className='p-base-semibold'>gemeentelijke regels</span> over de{' '}
         <span className='p-base-semibold'>fysieke leefomgeving:</span>
       </p>
-      <ul className='list-inside list-disc p-base flex flex-col gap-y-1.5'>
+      <ul className='list-outside list-disc p-base flex flex-col gap-y-1.5 ml-4'>
         <li>Regels uit het plan volgen uit de omgevingsvisie en – programma</li>
 
         <li>Bevat juridisch bindende regels en voorschriften</li>
