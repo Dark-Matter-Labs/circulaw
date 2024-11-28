@@ -2,7 +2,7 @@
 // const { redirects } = require('./utils/redirects')
 
 const nextConfig = {
-  
+  reactStrictMode: false,
   // redirects,
   async redirects() {
     return [
