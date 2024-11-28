@@ -10,7 +10,6 @@ import { CiTextAlignJustify } from 'react-icons/ci';
 import productChain from './schemas/documents/product-chain';
 
 export const Structure = (S, context) =>
-
   S.list()
     .title('Content Types')
     .items([
@@ -22,7 +21,9 @@ export const Structure = (S, context) =>
           S.documentTypeList('thema').child((themaId) =>
             S.documentTypeList('instrument')
               .title('Instruments by thema')
-              .filter('_type == $type && thema._ref == $themaId || thema._ref == "drafts." + $themaId')
+              .filter(
+                '_type == $type && thema._ref == $themaId || thema._ref == "drafts." + $themaId',
+              )
               .params({ type: 'instrument', themaId })
               .initialValueTemplates([
                 S.initialValueTemplateItem('instruments-by-theme', { themaId }),
@@ -37,7 +38,9 @@ export const Structure = (S, context) =>
           S.documentTypeList('simpleThema').child((themaId) =>
             S.documentTypeList('instrument')
               .title('Instruments by top 5 thema')
-              .filter('_type == $type && thema._ref == $themaId || thema._ref == "drafts." + $themaId')
+              .filter(
+                '_type == $type && thema._ref == $themaId || thema._ref == "drafts." + $themaId',
+              )
               .params({ type: 'instrument', themaId })
 
               .initialValueTemplates([
@@ -125,7 +128,7 @@ export const Structure = (S, context) =>
         .icon(AiOutlineHome)
         .child(S.document().title('Home Page').schemaType('siteConfig').documentId('siteSettings')),
     ]);
-  
+
 {
   /*
        S.listItem()
