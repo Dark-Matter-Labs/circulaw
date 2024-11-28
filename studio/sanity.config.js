@@ -1,3 +1,4 @@
+import { client, sanityFetch } from '../lib/sanity';
 import { defaultDocumentNode } from './default-document-node';
 import { Structure } from './desk-structure';
 import { schemaTypes } from './schemas';
@@ -54,9 +55,9 @@ export default defineConfig({
         description: 'Instruments by a specific theme',
         schemaType: 'instrument',
         parameters: [{ name: 'themaId', type: 'string' }], // ,
-        value: (params) => ({
-          thema: { _type: 'reference', _ref: params.themaId },
-        }),
+        value: (params) => (
+          resolveThemaId(params)
+        )
       },
       {
         id: 'instruments-by-top-5-theme',
@@ -64,9 +65,9 @@ export default defineConfig({
         description: 'Instruments by a top 5 theme',
         schemaType: 'instrument',
         parameters: [{ name: 'themaId', type: 'string' }], // ,
-        value: (params) => ({
-          thema: { _type: 'reference', _ref: params.themaId },
-        }),
+        value: (params) => (
+          resolveSimpleThemaId(params)
+        )
       },
     ],
 
@@ -80,3 +81,19 @@ export default defineConfig({
     },
   },
 });
+
+async function resolveThemaId(params) {
+  const ids = await client.fetch(`*[_type == 'thema'][]._id`)
+  const themaRef = ids.includes(params.themaId) ? params.themaId :  'drafts.' + params.themaId
+  return {
+    thema: {_type: 'reference', _ref: themaRef} 
+  }
+}
+
+async function resolveSimpleThemaId(params) {
+  const ids = await client.fetch(`*[_type == 'simpleThema'][]._id`)
+  const themaRef = ids.includes(params.themaId) ? params.themaId :  'drafts.' + params.themaId
+  return {
+    thema: {_type: 'reference', _ref: themaRef} 
+  }
+}
