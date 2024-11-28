@@ -109,13 +109,6 @@ export const Structure = (S, context) =>
       }),
       S.documentListItem().schemaType('FAQpage').title('FAQ Page').icon(FaQuestion),
       S.listItem()
-        .title('English Page')
-        .id('englishPage')
-        .icon(FaLanguage)
-        .child(
-          S.document().title('English Page').schemaType('englishPage').documentId('englishPage'),
-        ),
-      S.listItem()
         .title('Partners')
         .id('PartnersList')
         .icon(FaHandshake)
