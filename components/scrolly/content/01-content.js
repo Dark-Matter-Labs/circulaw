@@ -1,9 +1,6 @@
-
-
 export default function ContentOne() {
   return (
     <div className='text-green-600 flex flex-col gap-y-6 max-w-[290px]'>
-   
       <h3 className='heading-2xl-semibold'>
         Circulair bouwen: meer effect met een mix van instrumenten
       </h3>

@@ -41,7 +41,7 @@ export default function ScrollyTellingAnimation() {
     content: [
       // first svg
       // nav 1
-      { start: 0, end: 300, value: 'c0'},
+      { start: 0, end: 300, value: 'c0' },
       { start: 300, end: 755, value: 'c1' }, // 1,1
       { start: 755, end: 1210, value: 'c2' }, // 1,2
       // nav 2
@@ -416,9 +416,8 @@ export default function ScrollyTellingAnimation() {
             {contentComponents.map((Content, index) => {
               const contentId = `c${index}`; // Generate IDs like c1, c2, ...
               const isActive = activeContent === contentId;
-              const prevActive = activeContent === `c${index -1}`;
+              const prevActive = activeContent === `c${index - 1}`;
               const nextActive = activeContent === `c${index + 1}`;
-              console.log(index)
               return (
                 <div
                   key={contentId}
@@ -799,7 +798,7 @@ export default function ScrollyTellingAnimation() {
                   <circle
                     cx='317.5'
                     cy='317.5'
-                    r={outerCircleRadius -10}
+                    r={outerCircleRadius - 10}
                     stroke='#F8FBF8'
                     fill='#F8FBF8'
                     strokeWidth='40'
@@ -1032,7 +1031,11 @@ export default function ScrollyTellingAnimation() {
                 left: `${725 + Math.min((scrollPosition / 300) * 300, 380)}px`, // Calculate `right` dynamically
               }}
             >
-              <div className={`${scrollPosition > 360 ? 'opacity-100' : 'opacity-0'} min-w-[2.5px] rounded-full h-[44px] mr-4 bg-green-600`}></div>
+              <div
+                className={`${
+                  scrollPosition > 360 ? 'opacity-100' : 'opacity-0'
+                } min-w-[2.5px] rounded-full h-[44px] mr-4 bg-green-600`}
+              ></div>
               <div>
                 <h3 className='heading-xl-semibold text-green-600'>Beleidscyclus</h3>
               </div>

@@ -1,5 +1,3 @@
-
-
 import dynamic from 'next/dynamic';
 const PlayerWithNoSSR = dynamic(
   () => import('@lottiefiles/react-lottie-player').then((module) => module.Player),
@@ -9,11 +7,8 @@ const PlayerWithNoSSR = dynamic(
 export default function ContentZero({ screenHeight }) {
   return (
     <div className='text-green-600 flex flex-col gap-y-6 max-w-[290px]'>
-   
-      <h1 className='heading-3xl-semibold'>
-        Modelteksten voor een omgevingsplan
-      </h1>
-     
+      <h1 className='heading-3xl-semibold'>Modelteksten voor een omgevingsplan</h1>
+
       <div
         className={`${
           screenHeight < 934 ? 'h-80' : 'h-[450px]'
