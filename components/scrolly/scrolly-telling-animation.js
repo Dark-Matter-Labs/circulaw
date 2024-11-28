@@ -25,7 +25,7 @@ export default function ScrollyTellingAnimation() {
 
   const navItems = [
     { id: 0, label: 'Circulair bouwen meer effect met mix van instrumenten', scrollTo: 1 },
-    { id: 1, label: 'De plaats van instrumenten in de beleidscyclus', scrollTo: 1211 },
+    { id: 1, label: 'De plaats van instrumenten in de beleidscyclus', scrollTo: 1411 },
     { id: 2, label: 'Samenhang tussen omgevingsvisie, -programma en -plan', scrollTo: 5501 },
     { id: 3, label: 'Modelteksten voor een omgevingsplan', scrollTo: 11301 },
   ];
@@ -33,22 +33,22 @@ export default function ScrollyTellingAnimation() {
   // Define scroll thresholds for navigation and content
   const scrollThresholds = {
     nav: [
-      { start: 0, end: 1210, value: 0 },
-      { start: 1210, end: 5500, value: 1 },
+      { start: 0, end: 1410, value: 0 },
+      { start: 1410, end: 5500, value: 1 },
       { start: 5500, end: 11300, value: 2 },
       { start: 11300, end: 15300, value: 3 },
     ],
     content: [
       // first svg
       // nav 1
-      { start: 0, end: 300, value: 'c0' },
-      { start: 300, end: 755, value: 'c1' }, // 1,1
-      { start: 755, end: 1210, value: 'c2' }, // 1,2
+      { start: 0, end: 380, value: 'c0' },
+      { start: 380, end: 955, value: 'c1' }, // 1,1
+      { start: 955, end: 1410, value: 'c2' }, // 1,2
       // nav 2
-      { start: 1210, end: 1740, value: 'c3' }, // 2.1
-      { start: 1740, end: 2295, value: 'c4' }, // 2.2
-      { start: 2295, end: 2930, value: 'c5' }, // 2.3
-      { start: 2930, end: 5500, value: 'c6' }, // can add more time as there is a long scroll from c5 to c6
+      { start: 1410, end: 1940, value: 'c3' }, // 2.1
+      { start: 1940, end: 2495, value: 'c4' }, // 2.2
+      { start: 2495, end: 3130, value: 'c5' }, // 2.3
+      { start: 3130, end: 5500, value: 'c6' }, // can add more time as there is a long scroll from c5 to c6
       // second svg
       // nav 3
       { start: 5500, end: 7000, value: 'c7' },
@@ -142,12 +142,12 @@ export default function ScrollyTellingAnimation() {
   const innerCircleCircumference = 2 * Math.PI * innerCircleRadius;
 
   // Define unique scroll ranges for each circle being drawn
-  const scrollStartOuter = 1220; // Start point for the outer circle
-  const scrollEndOuter = 3750; // End point for the outer circle
-  const scrollStartMiddle = 1660; // Start point for the middle circle
-  const scrollEndMiddle = 4150 + 235; // End point for the middle circle
-  const scrollStartInner = 2295; // Start point for the inner circle
-  const scrollEndInner = 4150 + 1000; // End point for the inner circle
+  const scrollStartOuter = 1420; // Start point for the outer circle
+  const scrollEndOuter = 3850; // End point for the outer circle
+  const scrollStartMiddle = 1860; // Start point for the middle circle
+  const scrollEndMiddle = 4350 + 235; // End point for the middle circle
+  const scrollStartInner = 2495; // Start point for the inner circle
+  const scrollEndInner = 4350 + 1000; // End point for the inner circle
 
   // Function to calculate progress based on custom start and end points
   const calculateCircleDrawProgress = (scrollPosition, start, end) => {
@@ -226,8 +226,9 @@ export default function ScrollyTellingAnimation() {
     y: 317.5 + (innerCircleRadius - barOffset) * Math.sin((innerCircleBarRotation * Math.PI) / 180),
   };
 
-  const circleOneOpacity = scrollPosition < 755 ? 0 : Math.min((scrollPosition - 755) / 400, 1);
-  const circleTwoOpacity = Math.min(Math.max((scrollPosition - 1000) / 200, 0), 1);
+  const circleOneOpacity = scrollPosition < 655 ? 0 : Math.min((scrollPosition - 655) / 500, 1);
+  const circleTwoOpacity = Math.min(Math.max((scrollPosition - 900) / 300, 0), 1);
+  console.log(scrollPosition);
 
   // Define thresholds for the scroll position to control when the transition happens
   const startSVGTransition = 5100; // start the transition
@@ -1033,7 +1034,7 @@ export default function ScrollyTellingAnimation() {
             >
               <div
                 className={`${
-                  scrollPosition > 360 ? 'opacity-100' : 'opacity-0'
+                  scrollPosition > 380 ? 'opacity-100' : 'opacity-0'
                 } min-w-[2.5px] rounded-full h-[44px] mr-4 bg-green-600`}
               ></div>
               <div>
