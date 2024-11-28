@@ -795,7 +795,7 @@ export default function ScrollyTellingAnimation() {
                   <circle
                     cx='317.5'
                     cy='317.5'
-                    r={outerCircleRadius}
+                    r={outerCircleRadius -10}
                     stroke='#F8FBF8'
                     fill='#F8FBF8'
                     strokeWidth='40'
@@ -1012,7 +1012,6 @@ export default function ScrollyTellingAnimation() {
               id='coneThreeLabel'
             >
               <div className='min-w-[2.5px] max-w-[2.5] rounded-full h-[34px] mr-4 bg-green-600'></div>
-
               <div>
                 <h3 className='p-xs-semibold text-green-600'>Omgevingsplan</h3>
                 <p className='p-xs text-green-600'>Juridisch bindende regels</p>
@@ -1029,8 +1028,8 @@ export default function ScrollyTellingAnimation() {
                 left: `${745 + Math.min((scrollPosition / 300) * 300, 360)}px`, // Calculate `right` dynamically
               }}
             >
-              {scrollPosition > 300 && 
-              <div className='min-w-[2.5px] rounded-full h-[44px] mr-4 bg-green-600'></div>}
+               
+              <div className={`${scrollPosition > 360 ? 'opacity-100' : 'opacity-0'} min-w-[2.5px] rounded-full h-[44px] mr-4 bg-green-600`}></div>
               <div>
                 <h3 className='heading-xl-semibold text-green-600'>Beleidscyclus</h3>
               </div>
