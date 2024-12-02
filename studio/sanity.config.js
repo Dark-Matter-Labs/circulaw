@@ -1,3 +1,4 @@
+import { client, sanityFetch } from '../lib/sanity';
 import { defaultDocumentNode } from './default-document-node';
 import { Structure } from './desk-structure';
 import { schemaTypes } from './schemas';
@@ -7,12 +8,12 @@ import { defineConfig } from 'sanity';
 import { vercelDeployTool } from 'sanity-plugin-vercel-deploy';
 import { deskTool } from 'sanity/desk';
 import { structureTool } from 'sanity/structure';
+import { getIdPair } from 'sanity';
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
 
 const singletonTypes = new Set([
   'siteConfig',
-  'englishPage',
   'partners',
   'navigation',
   'FAQpage',
@@ -47,7 +48,25 @@ export default defineConfig({
   ],
   schema: {
     types: schemaTypes,
-    templates: (templates) => templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),
+    templates: (templates) => [
+      ...templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),
+      {
+        id: 'instruments-by-theme',
+        title: 'Instruments by theme',
+        description: 'Instruments by a specific theme',
+        schemaType: 'instrument',
+        parameters: [{ name: 'themaId', type: 'string' }], // ,
+        value: (params) => resolveThemaId(params),
+      },
+      {
+        id: 'instruments-by-top-5-theme',
+        title: 'Instruments by top 5 theme',
+        description: 'Instruments by a top 5 theme',
+        schemaType: 'instrument',
+        parameters: [{ name: 'themaId', type: 'string' }], // ,
+        value: (params) => resolveSimpleThemaId(params),
+      },
+    ],
 
     document: {
       // For singleton types, filter out actions that are not explicitly included
@@ -59,3 +78,23 @@ export default defineConfig({
     },
   },
 });
+
+async function resolveThemaId(params) {
+  const ids = await client.fetch(`*[_type == 'thema'][]._id`);
+  const themaRef = ids.includes(params.themaId)
+    ? params.themaId
+    : getIdPair(params.themaId).draftId;
+  return {
+    thema: { _type: 'reference', _ref: themaRef },
+  };
+}
+
+async function resolveSimpleThemaId(params) {
+  const ids = await client.fetch(`*[_type == 'simpleThema'][]._id`);
+  const themaRef = ids.includes(params.themaId)
+    ? params.themaId
+    : getIdPair(params.themaId).draftId;
+  return {
+    thema: { _type: 'reference', _ref: themaRef },
+  };
+}
