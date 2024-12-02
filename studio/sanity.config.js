@@ -8,6 +8,7 @@ import { defineConfig } from 'sanity';
 import { vercelDeployTool } from 'sanity-plugin-vercel-deploy';
 import { deskTool } from 'sanity/desk';
 import { structureTool } from 'sanity/structure';
+import { getIdPair } from 'sanity';
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
 
@@ -80,7 +81,9 @@ export default defineConfig({
 
 async function resolveThemaId(params) {
   const ids = await client.fetch(`*[_type == 'thema'][]._id`);
-  const themaRef = ids.includes(params.themaId) ? params.themaId : 'drafts.' + params.themaId;
+  const themaRef = ids.includes(params.themaId)
+    ? params.themaId
+    : getIdPair(params.themaId).draftId;
   return {
     thema: { _type: 'reference', _ref: themaRef },
   };
@@ -88,7 +91,9 @@ async function resolveThemaId(params) {
 
 async function resolveSimpleThemaId(params) {
   const ids = await client.fetch(`*[_type == 'simpleThema'][]._id`);
-  const themaRef = ids.includes(params.themaId) ? params.themaId : 'drafts.' + params.themaId;
+  const themaRef = ids.includes(params.themaId)
+    ? params.themaId
+    : getIdPair(params.themaId).draftId;
   return {
     thema: { _type: 'reference', _ref: themaRef },
   };
