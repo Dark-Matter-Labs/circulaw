@@ -1,4 +1,3 @@
-import { client, sanityFetch } from '../lib/sanity';
 import { defaultDocumentNode } from './default-document-node';
 import { Structure } from './desk-structure';
 import { schemaTypes } from './schemas';
@@ -6,7 +5,6 @@ import { table } from '@sanity/table';
 import { visionTool } from '@sanity/vision';
 import { defineConfig } from 'sanity';
 import { vercelDeployTool } from 'sanity-plugin-vercel-deploy';
-import { deskTool } from 'sanity/desk';
 import { structureTool } from 'sanity/structure';
 import { getIdPair } from 'sanity';
 
@@ -56,7 +54,7 @@ export default defineConfig({
         description: 'Instruments by a specific theme',
         schemaType: 'instrument',
         parameters: [{ name: 'themaId', type: 'string' }], // ,
-        value: (params) => resolveThemaId(params),
+        value: (params, context) => resolveThemaId(params, context),
       },
       {
         id: 'instruments-by-top-5-theme',
@@ -64,7 +62,7 @@ export default defineConfig({
         description: 'Instruments by a top 5 theme',
         schemaType: 'instrument',
         parameters: [{ name: 'themaId', type: 'string' }], // ,
-        value: (params) => resolveSimpleThemaId(params),
+        value: (params, context) => resolveSimpleThemaId(params, context),
       },
     ],
 
@@ -79,7 +77,9 @@ export default defineConfig({
   },
 });
 
-async function resolveThemaId(params) {
+async function resolveThemaId(params, context) {
+  const { getClient } = context;
+  const client = getClient({ apiVersion: '2024-07-15' });
   const ids = await client.fetch(`*[_type == 'thema'][]._id`);
   const themaRef = ids.includes(params.themaId)
     ? params.themaId
@@ -89,7 +89,9 @@ async function resolveThemaId(params) {
   };
 }
 
-async function resolveSimpleThemaId(params) {
+async function resolveSimpleThemaId(params, context) {
+  const { getClient } = context;
+  const client = getClient({ apiVersion: '2024-07-15' });
   const ids = await client.fetch(`*[_type == 'simpleThema'][]._id`);
   const themaRef = ids.includes(params.themaId)
     ? params.themaId
