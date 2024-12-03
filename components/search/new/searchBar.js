@@ -1,20 +1,152 @@
 'use client';
-import { SearchBox } from 'react-instantsearch';
-import { IconX } from '@tabler/icons-react';
+// import { SearchBox } from 'react-instantsearch';
+// import { IconX } from '@tabler/icons-react';
+import { useSearchBox, useInstantSearch } from 'react-instantsearch';
+import { useRef, useState } from 'react';
 
-export default function SearchBar({ algoliaIndex }) {
+export default function SearchBar({ indexName, query }) {
+  const { refine } = useSearchBox({ searchAsYouType: false });
+  const inputRef = useRef();
+  const { status } = useInstantSearch();
+  const [inputValue, setInputValue] = useState(query);
+  const isSearchStalled = status === 'stalled';
 
-    function setQueryStringParameter(name, value) {
-        const params = new URLSearchParams(window.location.search);
-        params.set(name, value);
-        window.history.replaceState({}, '', decodeURIComponent(`${window.location.pathname}?${params}`));
-    }
-    
+  function setQueryStringParameter(name, value) {
+    const params = new URLSearchParams(window.location.search);
+    params.set(name, value);
+    window.history.replaceState(
+      {},
+      '',
+      decodeURIComponent(`${window.location.pathname}?${params}`),
+    );
+  }
+
+  function setQuery(newQuery) {
+    setInputValue(newQuery);
+
+    refine(newQuery);
+  }
+
   return (
     <div className='hidden sm:flex flex-col items-center justify-center gap-y-6'>
       <div className='w-full'>
         <div className='w-full h-full flex flex-col items-center justify-end pb-10'>
-          <SearchBox
+          <div>
+            <form
+              action=''
+              role='search'
+              noValidate
+              onSubmit={(event) => {
+                event.preventDefault();
+                event.stopPropagation();
+
+                if (inputRef.current) {
+                  inputRef.current.blur();
+                }
+              }}
+              onReset={(event) => {
+                event.preventDefault();
+                event.stopPropagation();
+
+                setQuery('');
+
+                if (inputRef.current) {
+                  inputRef.current.focus();
+                }
+              }}
+            >
+              <input
+                ref={inputRef}
+                autoComplete='off'
+                autoCorrect='off'
+                autoCapitalize='off'
+                placeholder='Search for products'
+                spellCheck={false}
+                maxLength={512}
+                type='search'
+                value={inputValue}
+                onChange={(event) => {
+                  setQuery(event.currentTarget.value);
+                }}
+                autoFocus
+              />
+              <button onClick={() => setQueryStringParameter('query', inputValue)} type='submit'>
+                Submit
+              </button>
+              <button
+                onClick={() => setQueryStringParameter('query', '')}
+                type='reset'
+                hidden={inputValue.length === 0 || isSearchStalled}
+              >
+                Reset
+              </button>
+              <span hidden={!isSearchStalled}>Searching…</span>
+            </form>
+          </div>
+
+          <div className='mt-4 flex flex-row'>
+            <>
+              <button
+                onClick={() => setQueryStringParameter('indexName', 'all')}
+                className={`${
+                    indexName === 'all'
+                    ? 'border-b-2 border-green-600'
+                    : 'border-b-2 border-transparent'
+                } p-xs-semibold text-green-600 p-2`}
+              >
+                All
+              </button>
+              <button
+                onClick={() => setQueryStringParameter('indexName', 'instruments')}
+                className={`${
+                    indexName === 'instruments'
+                    ? 'border-b-2 border-green-600'
+                    : 'border-b-2 border-transparent'
+                } p-xs-semibold text-green-600 p-2`}
+              >
+                Instrumenten
+              </button>
+              <button
+                onClick={() => setQueryStringParameter('indexName', 'euLaw')}
+                className={`${
+                    indexName === 'euLaw'
+                    ? 'border-b-2 border-green-600 box-content'
+                    : 'border-b-2 border-transparent'
+                } p-xs-semibold text-green-600 p-2`}
+              >
+                EU wetgeving
+              </button>
+              <button
+                onClick={() => setQueryStringParameter('indexName', 'aboutPage')}
+                className={`${
+                    indexName === 'aboutPage'
+                    ? 'border-b-2 border-green-600'
+                    : 'border-b-2 border-transparent'
+                } p-xs-semibold text-green-600 p-2`}
+              >
+                Over CircuLaw
+              </button>
+              <button
+                onClick={() => setQueryStringParameter('indexName', 'news')}
+                className={`${
+                    indexName === 'news'
+                    ? 'border-b-2 border-green-600'
+                    : 'border-b-2 border-transparent'
+                } p-xs-semibold text-green-600 p-2`}
+              >
+                Nieuws
+              </button>
+            </>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+{
+  /*
+      <SearchBox
             searchAsYouType={false}
             placeholder={'placeholder'}
             classNames={{
@@ -42,60 +174,6 @@ export default function SearchBar({ algoliaIndex }) {
               </div>
             )}
           />
-          <div className='mt-4 flex flex-row'>
-            <>
-              <button
-                onClick={() => setQueryStringParameter('tab', 'all')}
-                className={`${
-                    algoliaIndex === 'all' ? 'border-b-2 border-green-600' : 'border-b-2 border-transparent'
-                } p-xs-semibold text-green-600 p-2`}
-              >
-                All
-              </button>
-              <button
-                onClick={() => setQueryStringParameter('tab', 'instruments')}
-
-                className={`${
-                    algoliaIndex === 'instruments'
-                    ? 'border-b-2 border-green-600'
-                    : 'border-b-2 border-transparent'
-                } p-xs-semibold text-green-600 p-2`}
-              >
-                Instrumenten
-              </button>
-              <button
-              onClick={() => setQueryStringParameter('tab', 'euLaw')}
-                className={`${
-                    algoliaIndex === 'euLaw'
-                    ? 'border-b-2 border-green-600 box-content'
-                    : 'border-b-2 border-transparent'
-                } p-xs-semibold text-green-600 p-2`}
-              >
-                EU wetgeving
-              </button>
-              <button
-              onClick={() => setQueryStringParameter('tab', 'aboutPage')}
-                className={`${
-                    algoliaIndex === 'aboutPage'
-                    ? 'border-b-2 border-green-600'
-                    : 'border-b-2 border-transparent'
-                } p-xs-semibold text-green-600 p-2`}
-              >
-                Over CircuLaw
-              </button>
-              <button
-              onClick={() => setQueryStringParameter('tab', 'news')}
-
-                className={`${
-                    algoliaIndex === 'news' ? 'border-b-2 border-green-600' : 'border-b-2 border-transparent'
-                } p-xs-semibold text-green-600 p-2`}
-              >
-                Nieuws
-              </button>
-            </>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    
+    */
 }

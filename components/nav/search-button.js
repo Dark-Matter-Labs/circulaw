@@ -17,7 +17,10 @@ export default function SearchButton({ linkRef, searchIndex, searchQuery }) {
 
   useEffect(() => {
     setSearchUrl(
-      `/search?${createQueryString('tab', searchIndex)}&${createQueryString('query', searchQuery)}`,
+      `/search?${createQueryString('indexName', searchIndex)}&${createQueryString(
+        'query',
+        searchQuery,
+      )}`,
     );
   }, [searchIndex, createQueryString, searchQuery]);
 
