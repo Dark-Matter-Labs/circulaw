@@ -19,7 +19,7 @@ import { IconArrowRight } from '@tabler/icons-react';
 export default function ScrollyTellingAnimation() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [activeNav, setActiveNav] = useState(0);
-  const [activeContent, setActiveContent] = useState('c1');
+  const [activeContent, setActiveContent] = useState('c0');
   const [animationStage, setAnimationStage] = useState(0);
   const [screenHeight, setScreenHeight] = useState();
   const [screenWidth, setScreenWidth] = useState();

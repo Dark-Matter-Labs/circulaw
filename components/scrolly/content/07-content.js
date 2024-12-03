@@ -3,7 +3,7 @@ export default function ContentSeven() {
     <div className='text-green-600 flex flex-col gap-y-6 max-w-[290px]'>
       <h3 className='heading-2xl-semibold'>Gemeentelijke omgevingsvisie</h3>
       <p className='p-base'>
-        Dit is de <span className='p-base-semibold'>lange-termijn visie</span> op de{' '}
+        Dit is de <span className='p-base-semibold'>langetermijnvisie</span> op de{' '}
         <span className='p-base-semibold'>fysieke leefomgeving:</span>
       </p>
       <ul className='list-outside list-disc p-base flex flex-col gap-y-2 ml-4'>
