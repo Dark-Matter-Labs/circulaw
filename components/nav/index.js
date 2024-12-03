@@ -58,9 +58,9 @@ export default function Nav(props) {
     window.addEventListener('scroll', changeEffect);
   }, []);
 
-  const [searchIndex, setSearchIndex] = useState('instruments');
+  const [searchIndex, setSearchIndex] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [placeholder, setPlaceholder] = useState('instruments');
+  const [placeholder, setPlaceholder] = useState('');
 
   useEffect(() => {
     if (searchIndex === 'instruments') {
@@ -69,9 +69,11 @@ export default function Nav(props) {
       setPlaceholder('Zoek naar over CircuLaw');
     } else if (searchIndex === 'euLaw') {
       setPlaceholder('Zoek naar EU wetgeving');
-    } else {
+    } else if (searchIndex === 'news'){
       setPlaceholder('Zoek naar nieuws');
-    }
+    } else (
+      setPlaceholder('Search All')
+    )
   }, [searchIndex]);
 
   const onChange = () => (e) => {
@@ -822,7 +824,7 @@ export default function Nav(props) {
                 {/* SEARCH MENU */}
 
                 <div
-                  className={`${pathname?.includes('/zoeken') ? 'hidden' : 'block'} ml-6 lg:ml-8`}
+                  className={`${pathname?.includes('/search') ? 'hidden' : 'block'} ml-6 lg:ml-8`}
                 >
                   <button
                     className='h-full relative p-sm group z-100 flex flex-row items-center'
@@ -918,6 +920,16 @@ export default function Nav(props) {
                                 <div className='flex flex-row justify-center w-[600px] gap-x-2.5'>
                                   {pathname === '/' ? (
                                     <>
+                                     <button
+                                        onClick={() => setSearchIndex('all')}
+                                        className={`${
+                                          searchIndex === 'all'
+                                            ? 'border-b-2 border-white'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-white p-2`}
+                                      >
+                                        All
+                                      </button>
                                       <button
                                         onClick={() => setSearchIndex('instruments')}
                                         className={`${
