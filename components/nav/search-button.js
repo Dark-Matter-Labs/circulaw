@@ -16,21 +16,9 @@ export default function SearchButton({ linkRef, searchIndex, searchQuery }) {
   const [searchUrl, setSearchUrl] = useState('');
 
   useEffect(() => {
-    if (searchIndex === 'instruments') {
-      setSearchUrl(
-        `/zoeken/instrumenten?${searchIndex}${createQueryString('[query]', searchQuery)}`,
-      );
-    } else if (searchIndex === 'euLaw') {
-      setSearchUrl(
-        `/zoeken/eu-wetgeving?${searchIndex}${createQueryString('[query]', searchQuery)}`,
-      );
-    } else if (searchIndex === 'aboutPage') {
-      setSearchUrl(
-        `/zoeken/over-circulaw?${searchIndex}${createQueryString('[query]', searchQuery)}`,
-      );
-    } else if (searchIndex === 'newsItems') {
-      setSearchUrl(`/zoeken/nieuws?${searchIndex}${createQueryString('[query]', searchQuery)}`);
-    }
+    setSearchUrl(
+      `/search?${createQueryString('tab', searchIndex)}&${createQueryString('query', searchQuery)}`,
+    );
   }, [searchIndex, createQueryString, searchQuery]);
 
   return (

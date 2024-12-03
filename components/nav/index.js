@@ -69,11 +69,9 @@ export default function Nav(props) {
       setPlaceholder('Zoek naar over CircuLaw');
     } else if (searchIndex === 'euLaw') {
       setPlaceholder('Zoek naar EU wetgeving');
-    } else if (searchIndex === 'news'){
+    } else if (searchIndex === 'news') {
       setPlaceholder('Zoek naar nieuws');
-    } else (
-      setPlaceholder('Search All')
-    )
+    } else setPlaceholder('Search All');
   }, [searchIndex]);
 
   const onChange = () => (e) => {
@@ -920,7 +918,7 @@ export default function Nav(props) {
                                 <div className='flex flex-row justify-center w-[600px] gap-x-2.5'>
                                   {pathname === '/' ? (
                                     <>
-                                     <button
+                                      <button
                                         onClick={() => setSearchIndex('all')}
                                         className={`${
                                           searchIndex === 'all'
