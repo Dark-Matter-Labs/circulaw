@@ -62,7 +62,7 @@ export default function ELearningRegisterComponent() {
             <p className='text-gray-800 pb-8 sm:col-span-2'>
               Hoe zet je bestaande regelgeving in om houtbouw te verankeren in beleid, en zo de
               circulaire economie te stimuleren? Dat leer je in de e-learning Houtbouw van Circulaw.
-              Schrijf je nu vast in! Je ontvangt dan medio januari de link naar de e- learning.
+              Schrijf je nu vast in! Je ontvangt dan medio januari de link naar de e-learning.
             </p>
             <form
               acceptCharset='UTF-8'
