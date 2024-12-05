@@ -1,11 +1,15 @@
 'use client';
-// import { SearchBox } from 'react-instantsearch';
-// import { IconX } from '@tabler/icons-react';
 import { useSearchBox, useInstantSearch } from 'react-instantsearch';
 import { useRef, useState } from 'react';
 
-export default function SearchBar({ indexName, query }) {
-  const { refine } = useSearchBox({ searchAsYouType: false });
+const queryHook = (query, search) => {
+  search(query);
+};
+
+export default function SearchBar(props) {
+  const tab = props.tab;
+  const query = props.query;
+  const { refine } = useSearchBox({ searchAsYouType: false, queryHook: queryHook });
   const inputRef = useRef();
   const { status } = useInstantSearch();
   const [inputValue, setInputValue] = useState(query);
@@ -87,19 +91,17 @@ export default function SearchBar({ indexName, query }) {
           <div className='mt-4 flex flex-row'>
             <>
               <button
-                onClick={() => setQueryStringParameter('indexName', 'all')}
+                onClick={() => setQueryStringParameter('tab', 'all')}
                 className={`${
-                    indexName === 'all'
-                    ? 'border-b-2 border-green-600'
-                    : 'border-b-2 border-transparent'
+                  tab === 'all' ? 'border-b-2 border-green-600' : 'border-b-2 border-transparent'
                 } p-xs-semibold text-green-600 p-2`}
               >
                 All
               </button>
               <button
-                onClick={() => setQueryStringParameter('indexName', 'instruments')}
+                onClick={() => setQueryStringParameter('tab', 'instruments')}
                 className={`${
-                    indexName === 'instruments'
+                  tab === 'instruments'
                     ? 'border-b-2 border-green-600'
                     : 'border-b-2 border-transparent'
                 } p-xs-semibold text-green-600 p-2`}
@@ -107,9 +109,9 @@ export default function SearchBar({ indexName, query }) {
                 Instrumenten
               </button>
               <button
-                onClick={() => setQueryStringParameter('indexName', 'euLaw')}
+                onClick={() => setQueryStringParameter('tab', 'euLaw')}
                 className={`${
-                    indexName === 'euLaw'
+                  tab === 'euLaw'
                     ? 'border-b-2 border-green-600 box-content'
                     : 'border-b-2 border-transparent'
                 } p-xs-semibold text-green-600 p-2`}
@@ -117,9 +119,9 @@ export default function SearchBar({ indexName, query }) {
                 EU wetgeving
               </button>
               <button
-                onClick={() => setQueryStringParameter('indexName', 'aboutPage')}
+                onClick={() => setQueryStringParameter('tab', 'aboutPage')}
                 className={`${
-                    indexName === 'aboutPage'
+                  tab === 'aboutPage'
                     ? 'border-b-2 border-green-600'
                     : 'border-b-2 border-transparent'
                 } p-xs-semibold text-green-600 p-2`}
@@ -127,11 +129,9 @@ export default function SearchBar({ indexName, query }) {
                 Over CircuLaw
               </button>
               <button
-                onClick={() => setQueryStringParameter('indexName', 'news')}
+                onClick={() => setQueryStringParameter('tab', 'news')}
                 className={`${
-                    indexName === 'news'
-                    ? 'border-b-2 border-green-600'
-                    : 'border-b-2 border-transparent'
+                  tab === 'news' ? 'border-b-2 border-green-600' : 'border-b-2 border-transparent'
                 } p-xs-semibold text-green-600 p-2`}
               >
                 Nieuws
