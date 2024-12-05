@@ -422,7 +422,7 @@ export default function ScrollyTellingAnimation() {
             </div>
           </div>
 
-          <div className='relative w-[300px] h-full mr-6'>
+          <div className='relative w-[300px] h-full mr-6 z-[999]'>
             {contentComponents.map((Content, index) => {
               const contentId = `c${index}`; // Generate IDs like c1, c2, ...
               const isActive = activeContent === contentId;
@@ -975,7 +975,7 @@ export default function ScrollyTellingAnimation() {
               </animated.svg>
             )}
           </div>
-          <div className='w-[216px] h-full'>
+          <div className='w-[216px] h-full z-[20]'>
             <div
               style={{
                 transform: `translateY(${
