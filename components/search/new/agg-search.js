@@ -12,10 +12,6 @@ import { InstrumentHit } from '../instrument-hit';
 import EUHit from '../eu-law-hit';
 import NewsHit from '../news-hit';
 
-const queryHook = (query, search) => {
-  search(query);
-};
-
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
 
@@ -178,10 +174,11 @@ export default function AggSearch() {
   );
 }
 
-function SearchBar(props) {
-  const tab = props.tab;
-  const query = props.query;
-  const { refine } = useSearchBox({ searchAsYouType: false, queryHook: queryHook });
+function SearchBar() {
+  const searchParams = useSearchParams();
+  const tab = searchParams.get('tab');
+  const query = searchParams.get('query');
+  const { refine } = useSearchBox();
   const inputRef = useRef();
   const { status } = useInstantSearch();
   const [inputValue, setInputValue] = useState(query);
