@@ -48,7 +48,6 @@ export default function AggSearch() {
         router: {
           cleanUrlOnDispose: true,
           // this takes in the url parameters and reformates them to a url that will work with algolia.
-          // i can just add tab at the end in the url that is returned from this functino
           createURL({ qsModule, location, routeState }) {
             console.log(routeState, '2 - receive routeState and use it to create url');
             const indexState = routeState[tab] || {};
@@ -58,9 +57,6 @@ export default function AggSearch() {
             // grab current query string and convert to object
             const queryParameters = qsModule.parse(search.slice(1)) || {};
             // console.log(queryParameters, '4 - extract the query params from the url')
-            // const indexState = {
-            //   [tab]: { ...routeState[tab], query: queryParameters.query }
-            // };
 
             if (Object.keys(indexState).length) {
               // console.log('5 - check that q params are being assigned to route state')
@@ -100,7 +96,6 @@ export default function AggSearch() {
               const indexUiState = uiState[tab] || {};
 
               // console.log(uiState, '8')
-
               return {
                 query: indexUiState.query,
               };
@@ -182,7 +177,6 @@ export default function AggSearch() {
     </InstantSearchNext>
   );
 }
-
 
 function SearchBar(props) {
   const tab = props.tab;
