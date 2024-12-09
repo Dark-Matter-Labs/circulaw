@@ -1,13 +1,13 @@
 'use client';
 import algoliasearch from 'algoliasearch';
-import { Hits, Configure } from 'react-instantsearch';
+import { Hits, Configure, useSearchBox } from 'react-instantsearch';
 import CustomStats from '../../components/search/stats';
 import AboutHit from './about-hit';
 import NoResults from './no-results';
 import NoResultsBoundary from './no-results-boundary';
-import MobileHeaderSearch from './mobile-header';
 import { InstantSearchNext } from 'react-instantsearch-nextjs';
-import SearchHeader from './search-header';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
@@ -16,28 +16,73 @@ const algoliaClient = algoliasearch(api_id, api_key);
 
 export const dynamic = 'force-dynamic';
 
+const indexName = 'aboutPage';
+
 export default function AboutSearch() {
+  const router = useRouter();
+  const searchParams = useSearchParams()
+  const [query, setQuery] = useState('')
+
+  useEffect(() => {
+    setQuery(searchParams.get('query'))
+  }, [searchParams])
+
   return (
     <InstantSearchNext
       searchClient={algoliaClient}
-      indexName={'aboutPage'}
+      indexName={indexName}
+      insights={true}
+      future={{
+        preserveSharedStateOnUnmount: true,
+      }}
       routing={{
         router: {
-          cleanUrlOnDispose: false,
+          cleanUrlOnDispose: true,
+          createURL({ qsModule, location, routeState }) {
+            const { origin, pathname, search } = location;
+            const queryParameters = qsModule.parse(search.slice(1)) || {};
+            if (routeState.query) {
+              queryParameters.query = routeState.query 
+            }
+
+            let queryString = qsModule.stringify(queryParameters);
+
+            if (queryString.length) {
+              queryString = `?${queryString}`;
+            }
+            return `${origin}${pathname}${queryString}`;
+          },
+          parseURL({ location, qsModule }) {
+            const { query = '' } = qsModule.parse(location.search.slice(1));
+            return {
+              query: decodeURIComponent(query),
+            };
+          },
+          push(url) {
+            if (url.split('?')[1]) {
+              router.push(url);
+            }
+          },
+          stateMapping: {
+            stateToRoute(uiState) {
+              const indexUiState = uiState[indexName] || {}
+              return {
+                query: indexUiState.query
+              }
+            }, 
+            routeToState(routeState) {
+              return {
+                indexName: {
+                  query: routeState.query
+                }
+              }
+            }
+          }
         },
       }}
-      insights={true}
     >
       <Configure hitsPerPage={10} />
-      <div className='bg-green-50 h-[260px] flex items-end justify-center w-full'>
-        <div className='global-margin w-full flex items-center justify-center'>
-          {/* DESKTOP */}
-          <SearchHeader index='aboutPage' />
-          {/* MOBILE */}
-          <MobileHeaderSearch index='aboutPage' />
-        </div>
-      </div>
-
+      <VirtualSearchBox query={query} />
       <div className='global-margin flex'>
         <NoResultsBoundary fallback={<NoResults />}>
           <div className='mb-12'>
@@ -58,4 +103,12 @@ export default function AboutSearch() {
       </div>
     </InstantSearchNext>
   );
+}
+
+function VirtualSearchBox(props) {
+  const { refine } = useSearchBox(props);
+  useEffect(() => {
+    refine(props.query)
+  }, [props.query])
+  return null;
 }
