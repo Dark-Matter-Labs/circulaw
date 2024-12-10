@@ -1,14 +1,13 @@
 'use client';
 import algoliasearch from 'algoliasearch';
-import { Hits, Configure, useSearchBox } from 'react-instantsearch';
+import { Hits, Configure, useSearchBox, InstantSearch } from 'react-instantsearch';
 import NewsHit from './news-hit';
 import CustomStats from './stats';
 import Pagination from '@/components/search/pagination';
 import NoResults from './no-results';
 import NoResultsBoundary from './no-results-boundary';
-import { InstantSearchNext } from 'react-instantsearch-nextjs';
 import { useEffect, useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
@@ -19,8 +18,6 @@ export const dynamic = 'force-dynamic';
 const indexName = 'newsItems';
 
 export default function NewsSearch() {
-
-  const router = useRouter();
   const searchParams = useSearchParams();
   const [query, setQuery] = useState('');
 
@@ -28,54 +25,9 @@ export default function NewsSearch() {
     setQuery(searchParams.get('query'));
   }, [searchParams]);
   return (
-    <InstantSearchNext
+    <InstantSearch
       searchClient={algoliaClient}
       indexName={indexName}
-      routing={{
-        router: {
-          cleanUrlOnDispose: true,
-          createURL({ qsModule, location, routeState }) {
-            const { origin, pathname, search } = location;
-            const queryParameters = qsModule.parse(search.slice(1)) || {};
-            if (routeState.query) {
-              queryParameters.query = routeState.query;
-            }
-
-            let queryString = qsModule.stringify(queryParameters);
-
-            if (queryString.length) {
-              queryString = `?${queryString}`;
-            }
-            return `${origin}${pathname}${queryString}`;
-          },
-          parseURL({ location, qsModule }) {
-            const { query = '' } = qsModule.parse(location.search.slice(1));
-            return {
-              query: decodeURIComponent(query),
-            };
-          },
-          push(url) {
-            if (url.split('?')[1]) {
-              router.push(url);
-            }
-          },
-          stateMapping: {
-            stateToRoute(uiState) {
-              const indexUiState = uiState[indexName] || {};
-              return {
-                query: indexUiState.query,
-              };
-            },
-            routeToState(routeState) {
-              return {
-                indexName: {
-                  query: routeState.query,
-                },
-              };
-            },
-          },
-        },
-      }}
       future={{
         preserveSharedStateOnUnmount: true,
       }}
@@ -104,7 +56,7 @@ export default function NewsSearch() {
           </div>
         </NoResultsBoundary>
       </div>
-    </InstantSearchNext>
+    </InstantSearch>
   );
 }
 
