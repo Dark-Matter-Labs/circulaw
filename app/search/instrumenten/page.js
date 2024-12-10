@@ -1,3 +1,5 @@
-export default function InstrumentSearch() {
-  return <div>Instrument Search</div>;
+import InstrumentSearch from '@/components/search/instrument-search';
+
+export default function InstrumentSearchPage() {
+  return <div><InstrumentSearch /></div>;
 }

@@ -18,14 +18,14 @@ export default function SearchButton({ linkRef, searchIndex, searchQuery }) {
   useEffect(() => {
     if (searchIndex === 'instruments') {
       setSearchUrl(
-        `/zoeken/instrumenten?${searchIndex}${createQueryString('[query]', searchQuery)}`,
+        `/search/instrumenten?${createQueryString('query', searchQuery)}`,
       );
     } else if (searchIndex === 'euLaw') {
       setSearchUrl(`/search/eu-wetgeving?${createQueryString('query', searchQuery)}`);
     } else if (searchIndex === 'aboutPage') {
       setSearchUrl(`/search/over-circulaw?${createQueryString('query', searchQuery)}`);
     } else if (searchIndex === 'newsItems') {
-      setSearchUrl(`/zoeken/nieuws?${searchIndex}${createQueryString('[query]', searchQuery)}`);
+      setSearchUrl(`/search/nieuws?${createQueryString('query', searchQuery)}`);
     }
   }, [searchIndex, createQueryString, searchQuery]);
 
