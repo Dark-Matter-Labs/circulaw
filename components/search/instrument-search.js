@@ -56,7 +56,7 @@ export default function InstrumentSearch() {
     >
       <VirtualSearchBox query={query} />
       <Configure hitsPerPage={10} />
-      <div className='global-margin flex'>
+      <div className='global-margin flex min-h-[80vh]'>
         <NoResultsBoundary fallback={<NoResults />}>
           {/* MOBILE FILTERS */}
           <div className='global-margin flex justify-center'>

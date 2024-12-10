@@ -36,7 +36,7 @@ export default function AboutSearch() {
     >
       <Configure hitsPerPage={10} />
       <VirtualSearchBox query={query} />
-      <div className='global-margin flex'>
+      <div className='global-margin flex min-h-[80vh]'>
         <NoResultsBoundary fallback={<NoResults />}>
           <div className='mb-12'>
             <div className='mt-10 sm:ml-10'>

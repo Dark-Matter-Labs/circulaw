@@ -37,7 +37,7 @@ export default function EUSearch() {
     >
       <Configure hitsPerPage={12} />
       <VirtualSearchBox query={query} />
-      <div className='global-margin flex'>
+      <div className='global-margin flex min-h-[80vh]'>
         <NoResultsBoundary fallback={<NoResults />}>
           <div>
             <div className='sm:ml-12 sm:mt-10 mt-6'>
