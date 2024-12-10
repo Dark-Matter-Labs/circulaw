@@ -109,6 +109,6 @@ function VirtualSearchBox(props) {
   const { refine } = useSearchBox(props);
   useEffect(() => {
     refine(props.query);
-  }, [props.query]);
+  }, [props.query, refine]);
   return null;
 }
