@@ -35,7 +35,7 @@ export default function NewsSearch() {
     >
       <VirtualSearchBox query={query} />
       <Configure hitsPerPage={10} />
-   
+
       <div className='global-margin flex'>
         <NoResultsBoundary fallback={<NoResults />}>
           <div>

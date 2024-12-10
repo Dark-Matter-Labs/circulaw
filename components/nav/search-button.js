@@ -17,9 +17,7 @@ export default function SearchButton({ linkRef, searchIndex, searchQuery }) {
 
   useEffect(() => {
     if (searchIndex === 'instruments') {
-      setSearchUrl(
-        `/search/instrumenten?${createQueryString('query', searchQuery)}`,
-      );
+      setSearchUrl(`/search/instrumenten?${createQueryString('query', searchQuery)}`);
     } else if (searchIndex === 'euLaw') {
       setSearchUrl(`/search/eu-wetgeving?${createQueryString('query', searchQuery)}`);
     } else if (searchIndex === 'aboutPage') {

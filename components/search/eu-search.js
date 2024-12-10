@@ -9,7 +9,6 @@ import NoResultsBoundary from './no-results-boundary';
 import { useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
-
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
 

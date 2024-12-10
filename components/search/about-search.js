@@ -8,7 +8,6 @@ import NoResultsBoundary from './no-results-boundary';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
 
@@ -34,7 +33,6 @@ export default function AboutSearch() {
       future={{
         preserveSharedStateOnUnmount: true,
       }}
-      
     >
       <Configure hitsPerPage={10} />
       <VirtualSearchBox query={query} />
