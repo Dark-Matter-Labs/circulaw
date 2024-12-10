@@ -88,6 +88,11 @@ export default function Nav(props) {
 
   // search Menu
   const [searchMenuIsOpen, setSearchMenuIsOpen] = useState(false);
+
+  function closeSerchMenu() {
+    setSearchMenuIsOpen(false)
+  }
+
   const {
     refs: searchMenuRef,
     floatingStyles: searchMenuStyles,
@@ -874,6 +879,7 @@ export default function Nav(props) {
                             <div className='w-full h-full global-margin flex flex-col items-center justify-end pb-10'>
                               <div className='h-16 w-[600px]'>
                                 <form
+                                  onSubmit={() => setSearchMenuIsOpen(false)}
                                   className={`${
                                     pathname === '/' ? 'bg-green-600' : 'bg-green-50'
                                   }  w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex`}
@@ -895,6 +901,7 @@ export default function Nav(props) {
                                       linkRef={linkRef}
                                       searchIndex={searchIndex}
                                       searchQuery={searchQuery}
+                                      closeSerchMenu={closeSerchMenu}
                                     />
                                   </Suspense>
                                   <button
