@@ -1,3 +1,9 @@
-export default function AllSearch() {
-  return <div>All search</div>;
+import AllSearch from '@/components/search/new/all-search';
+
+export default function AllSearchPage() {
+  return (
+    <div>
+      <AllSearch />
+    </div>
+  );
 }

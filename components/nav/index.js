@@ -58,7 +58,7 @@ export default function Nav(props) {
     window.addEventListener('scroll', changeEffect);
   }, []);
 
-  const [searchIndex, setSearchIndex] = useState('instruments');
+  const [searchIndex, setSearchIndex] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [placeholder, setPlaceholder] = useState('instruments');
 
@@ -69,8 +69,10 @@ export default function Nav(props) {
       setPlaceholder('Zoek naar over CircuLaw');
     } else if (searchIndex === 'euLaw') {
       setPlaceholder('Zoek naar EU wetgeving');
-    } else {
+    } else if (searchIndex === 'news') {
       setPlaceholder('Zoek naar nieuws');
+    } else {
+      setPlaceholder('Circulaire wetgeving buiten de EU');
     }
   }, [searchIndex]);
 
@@ -90,7 +92,7 @@ export default function Nav(props) {
   const [searchMenuIsOpen, setSearchMenuIsOpen] = useState(false);
 
   function closeSerchMenu() {
-    setSearchMenuIsOpen(false)
+    setSearchMenuIsOpen(false);
   }
 
   const {
@@ -925,6 +927,16 @@ export default function Nav(props) {
                                 <div className='flex flex-row justify-center w-[600px] gap-x-2.5'>
                                   {pathname === '/' ? (
                                     <>
+                                      <button
+                                        onClick={() => setSearchIndex('all')}
+                                        className={`${
+                                          searchIndex === 'all'
+                                            ? 'border-b-2 border-white'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-white p-2`}
+                                      >
+                                        Alle
+                                      </button>
                                       <button
                                         onClick={() => setSearchIndex('instruments')}
                                         className={`${

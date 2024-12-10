@@ -24,11 +24,13 @@ export default function SearchButton({ linkRef, searchIndex, searchQuery, closeS
       setSearchUrl(`/search/over-circulaw?${createQueryString('query', searchQuery)}`);
     } else if (searchIndex === 'newsItems') {
       setSearchUrl(`/search/nieuws?${createQueryString('query', searchQuery)}`);
+    } else {
+      setSearchUrl(`/search?${createQueryString('query', searchQuery)}`);
     }
   }, [searchIndex, createQueryString, searchQuery]);
 
   return (
-    <button type='submit' >
+    <button type='submit'>
       <Link
         ref={linkRef}
         href={searchUrl}
