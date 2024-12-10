@@ -1,7 +1,6 @@
 import aboutPage from './documents/about-pages';
 import euLaw from './documents/eu-law';
 import faq from './documents/faq';
-import englishPage from './documents/english-page';
 import instrument from './documents/instrument';
 import partners from './documents/partners';
 import productChain from './documents/product-chain';
@@ -34,7 +33,6 @@ export const schemaTypes = [
   // DOCUMENT TYPES
   instrument,
   aboutPage,
-  englishPage,
   partners,
   thema,
   productChain,

@@ -7,39 +7,47 @@ import { GrNavigate } from 'react-icons/gr';
 import { VscLaw } from 'react-icons/vsc';
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 import { CiTextAlignJustify } from 'react-icons/ci';
+import productChain from './schemas/documents/product-chain';
 
 export const Structure = (S, context) =>
   S.list()
     .title('Content Types')
     .items([
-      S.listItem()
-        .title('Instrumenten per thema')
-        .icon(VscLaw)
-        .child(
-          // List out all categories
-          S.documentTypeList('thema')
-            .title('Instrumenten per thema')
-            .child((themaId) =>
-              S.documentList()
-                .title('Instruments')
-                .filter('_type == "instrument" && $themaId == thema._ref')
-                .params({ themaId }),
-            ),
-        ),
-      S.listItem()
-        .title('Instrumenten per top 5 thema')
-        .icon(VscLaw)
-        .child(
-          // List out all categories
-          S.documentTypeList('simpleThema')
-            .title('Instrumenten per top 5 thema')
-            .child((themaId) =>
-              S.documentList()
-                .title('Instruments')
-                .filter('_type == "instrument" && $themaId ==  thema._ref')
-                .params({ themaId }),
-            ),
-        ),
+      S.listItem({
+        id: 'instruments-by-theme',
+        title: 'Instrumenten per thema',
+        schemaType: 'instrument',
+        child: () =>
+          S.documentTypeList('thema').child((themaId) =>
+            S.documentTypeList('instrument')
+              .title('Instruments by thema')
+              .filter(
+                '_type == $type && thema._ref == $themaId || thema._ref == "drafts." + $themaId',
+              )
+              .params({ type: 'instrument', themaId })
+              .initialValueTemplates([
+                S.initialValueTemplateItem('instruments-by-theme', { themaId }),
+              ]),
+          ),
+      }),
+      S.listItem({
+        id: 'instruments-by-top-5-theme',
+        title: 'Instrumenten per top 5 thema',
+        schemaType: 'instrument',
+        child: () =>
+          S.documentTypeList('simpleThema').child((themaId) =>
+            S.documentTypeList('instrument')
+              .title('Instruments by top 5 thema')
+              .filter(
+                '_type == $type && thema._ref == $themaId || thema._ref == "drafts." + $themaId',
+              )
+              .params({ type: 'instrument', themaId })
+
+              .initialValueTemplates([
+                S.initialValueTemplateItem('instruments-by-top-5-theme', { themaId }),
+              ]),
+          ),
+      }),
       S.listItem()
         .title('Inhoud per EU wet')
         .icon(GiEuropeanFlag)
@@ -109,13 +117,6 @@ export const Structure = (S, context) =>
       }),
       S.documentListItem().schemaType('FAQpage').title('FAQ Page').icon(FaQuestion),
       S.listItem()
-        .title('English Page')
-        .id('englishPage')
-        .icon(FaLanguage)
-        .child(
-          S.document().title('English Page').schemaType('englishPage').documentId('englishPage'),
-        ),
-      S.listItem()
         .title('Partners')
         .id('PartnersList')
         .icon(FaHandshake)
@@ -127,3 +128,23 @@ export const Structure = (S, context) =>
         .icon(AiOutlineHome)
         .child(S.document().title('Home Page').schemaType('siteConfig').documentId('siteSettings')),
     ]);
+
+{
+  /*
+       S.listItem()
+        .title('Instrumenten per top 5 thema')
+        .icon(VscLaw)
+        .child(
+          // List out all categories
+          S.documentTypeList('simpleThema')
+            .title('Instrumenten per top 5 thema')
+            .child((themaId) =>
+              S.documentList()
+                .title('Instruments')
+                .filter('_type == "instrument" && $themaId ==  thema._ref')
+                .params({ themaId }),
+            ),
+        ),
+      
+      */
+}
