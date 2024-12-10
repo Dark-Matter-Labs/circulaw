@@ -17,16 +17,16 @@ const algoliaClient = algoliasearch(api_id, api_key);
 
 export const dynamic = 'force-dynamic';
 
-const indexName = 'euLaw'
+const indexName = 'euLaw';
 
 export default function EUSearch() {
   const router = useRouter();
-  const searchParams = useSearchParams()
-  const [query, setQuery] = useState('')
+  const searchParams = useSearchParams();
+  const [query, setQuery] = useState('');
 
   useEffect(() => {
-    setQuery(searchParams.get('query'))
-  }, [searchParams])
+    setQuery(searchParams.get('query'));
+  }, [searchParams]);
 
   return (
     <InstantSearchNext
@@ -39,7 +39,7 @@ export default function EUSearch() {
             const { origin, pathname, search } = location;
             const queryParameters = qsModule.parse(search.slice(1)) || {};
             if (routeState.query) {
-              queryParameters.query = routeState.query 
+              queryParameters.query = routeState.query;
             }
 
             let queryString = qsModule.stringify(queryParameters);
@@ -62,19 +62,19 @@ export default function EUSearch() {
           },
           stateMapping: {
             stateToRoute(uiState) {
-              const indexUiState = uiState[indexName] || {}
+              const indexUiState = uiState[indexName] || {};
               return {
-                query: indexUiState.query
-              }
-            }, 
+                query: indexUiState.query,
+              };
+            },
             routeToState(routeState) {
               return {
                 indexName: {
-                  query: routeState.query
-                }
-              }
-            }
-          }
+                  query: routeState.query,
+                },
+              };
+            },
+          },
         },
       }}
       future={{
@@ -108,11 +108,10 @@ export default function EUSearch() {
   );
 }
 
-
 function VirtualSearchBox(props) {
   const { refine } = useSearchBox(props);
   useEffect(() => {
-    refine(props.query)
-  }, [props.query])
+    refine(props.query);
+  }, [props.query]);
   return null;
 }

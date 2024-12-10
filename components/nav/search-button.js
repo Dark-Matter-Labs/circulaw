@@ -21,9 +21,7 @@ export default function SearchButton({ linkRef, searchIndex, searchQuery }) {
         `/zoeken/instrumenten?${searchIndex}${createQueryString('[query]', searchQuery)}`,
       );
     } else if (searchIndex === 'euLaw') {
-      setSearchUrl(
-        `/search/eu-wetgeving?${createQueryString('query', searchQuery)}`,
-      );
+      setSearchUrl(`/search/eu-wetgeving?${createQueryString('query', searchQuery)}`);
     } else if (searchIndex === 'aboutPage') {
       setSearchUrl(`/search/over-circulaw?${createQueryString('query', searchQuery)}`);
     } else if (searchIndex === 'newsItems') {
