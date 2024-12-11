@@ -1,18 +1,16 @@
 'use client';
 import { InstantSearch, Index, useHits, useSearchBox, useInstantSearch } from 'react-instantsearch';
-import algoliasearch from 'algoliasearch';
+// import algoliasearch from 'algoliasearch';
 import { useState, useEffect, useCallback } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import searchClient from './search-client';
 
-const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
-const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
-
-const algoliaClient = algoliasearch(api_id, api_key);
 
 export const dynamic = 'force-dynamic';
 
 export default function AllSearch() {
+
   const searchParams = useSearchParams();
   const [query, setQuery] = useState('');
 
@@ -31,11 +29,10 @@ export default function AllSearch() {
 
   return (
     <div>
-      <InstantSearch indexName='instruments' searchClient={algoliaClient}>
+      <InstantSearch indexName='root' searchClient={searchClient}>
         <VirtualSearchBox query={query} />
         <div className='global-margin flex flex-col items-center justify-start min-h-[80vh]'>
           <ScopedResults query={query} />
-
           <Index indexName='instruments'>
             <Link
               href={`/search/instrumenten?${createQueryString('query', query)}`}
