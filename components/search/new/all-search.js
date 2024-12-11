@@ -1,5 +1,5 @@
 'use client';
-import { InstantSearch, Index, useHits, useSearchBox } from 'react-instantsearch';
+import { InstantSearch, Index, useHits, useSearchBox, useInstantSearch } from 'react-instantsearch';
 import algoliasearch from 'algoliasearch';
 import { useState, useEffect, useCallback } from 'react';
 import { useSearchParams } from 'next/navigation';
@@ -15,7 +15,7 @@ export const dynamic = 'force-dynamic';
 export default function AllSearch() {
   const searchParams = useSearchParams();
   const [query, setQuery] = useState('');
-  
+
   const createQueryString = useCallback(
     (name, value) => {
       const params = new URLSearchParams(searchParams.toString());
@@ -25,17 +25,17 @@ export default function AllSearch() {
     [searchParams],
   );
 
-
   useEffect(() => {
     setQuery(searchParams.get('query'));
   }, [searchParams]);
-
 
   return (
     <div>
       <InstantSearch indexName='instruments' searchClient={algoliaClient}>
         <VirtualSearchBox query={query} />
-        <div className='global-margin flex flex-col items-center justify-center mt-6 min-h-[80vh]'>
+        <div className='global-margin flex flex-col items-center justify-start min-h-[80vh]'>
+          <ScopedResults query={query} />
+
           <Index indexName='instruments'>
             <Link
               href={`/search/instrumenten?${createQueryString('query', query)}`}
@@ -49,7 +49,7 @@ export default function AllSearch() {
               href={`/search/eu-wetgeving?${createQueryString('query', query)}`}
               className='hover:text-green-300 w-4/5 border-b border-green-600 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
             >
-              EU wetgeving <VirtualHits/>
+              EU wetgeving <VirtualHits />
             </Link>
           </Index>
           <Index indexName='aboutPage'>
@@ -83,9 +83,31 @@ function VirtualSearchBox(props) {
 }
 
 function VirtualHits(props) {
-  const { results } = useHits(props); 
- 
-  
+  const { results } = useHits(props);
 
   return <div>{results.nbHits}</div>;
+}
+
+function ScopedResults(props) {
+  const { scopedResults } = useInstantSearch(props);
+
+  const instruments = scopedResults.filter((item) => item.indexId === 'instruments');
+  const aboutPages = scopedResults.filter((item) => item.indexId === 'aboutPage');
+  const euLaws = scopedResults.filter((item) => item.indexId === 'euLaw');
+  const newsItems = scopedResults.filter((item) => item.indexId === 'newsItems');
+
+  const numInstruments = instruments[0]?.results?.nbHits;
+  const numAboutPages = aboutPages[0]?.results?.nbHits;
+  const numEULaws = euLaws[0]?.results?.nbHits;
+  const numNewsItems = newsItems[0]?.results?.nbHits;
+  const totalHits = numInstruments + numAboutPages + numEULaws + numNewsItems;
+
+  return (
+    <div className='w-4/5 flex items-start mt-14 mb-10'>
+      <div className='heading-2xl sm:heading-3xl'>
+        {totalHits} resultaten voor:{' '}
+        <span className='font-semibold'>&apos;{props.query}&apos;</span>.
+      </div>
+    </div>
+  );
 }
