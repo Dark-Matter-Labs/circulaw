@@ -72,7 +72,7 @@ export default function Nav(props) {
     } else if (searchIndex === 'news') {
       setPlaceholder('Zoek naar nieuws');
     } else {
-      setPlaceholder('Circulaire wetgeving buiten de EU');
+      setPlaceholder('Zoek naar content binnen Circulaw...');
     }
   }, [searchIndex]);
 

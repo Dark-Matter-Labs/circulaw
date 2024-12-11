@@ -12,7 +12,7 @@ export default function NewSearchBar() {
   const pathname = usePathname();
   const [selectedTab, setSelectedTab] = useState();
 
-  const [placeholder, setPlaceholder] = useState('Circulaire wetgeving buiten de EU');
+  const [placeholder, setPlaceholder] = useState('Zoek naar content binnen Circulaw...');
 
   useEffect(() => {
     if (pathname.includes('instrumenten')) {
@@ -29,7 +29,7 @@ export default function NewSearchBar() {
       setPlaceholder('Zoek naar nieuws');
     } else {
       setSelectedTab('all');
-      setPlaceholder('Circulaire wetgeving buiten de EU');
+      setPlaceholder('Zoek naar content binnen Circulaw...');
     }
   }, [pathname]);
 
