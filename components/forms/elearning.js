@@ -1,19 +1,22 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-import CustomButton from '@/components/custom-button';
 import Link from 'next/link';
+import CustomButton from '@/components/custom-button';
 import { scrollToTop } from '@/utils/scroll-to-top';
 
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/adrrqlja';
 
 export default function ELearningRegisterComponent() {
   const [formStatus, setFormStatus] = useState(false);
+  const [howOther, setHowOther] = useState(false);
   const [query, setQuery] = useState({
     name: '',
     org: '',
     role: '',
     email: '',
+    how: '',
+    howOther: '',
     subscribe: 'no',
   });
 
@@ -25,6 +28,14 @@ export default function ELearningRegisterComponent() {
       [name]: value,
     }));
   };
+
+  useEffect(() => {
+    if (query.how === 'Ander') {
+      setHowOther(true);
+    } else {
+      setHowOther(false);
+    }
+  }, [query]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,6 +53,8 @@ export default function ELearningRegisterComponent() {
           org: '',
           role: '',
           email: '',
+          how: '',
+          howOther: '',
           subscribe: 'no',
         });
         console.log(response);
@@ -140,6 +153,38 @@ export default function ELearningRegisterComponent() {
                     value={query.email}
                     onChange={handleChange()}
                   />
+                </div>
+              </div>
+              <div className='sm:col-span-2'>
+                <label htmlFor='how' className='block  text-gray-800'>
+                  Waar heb je over deze e-learning gehoord?
+                </label>
+                <div className='mt-1 mb-4'>
+                  <select
+                    name='how'
+                    value={query.how}
+                    className='rounded-xl border-green-600 '
+                    onChange={handleChange()}
+                  >
+                    <option value='LinkedIn'>CircuLaw LinkedIn</option>
+                    <option value='Website'>CircuLaw Website</option>
+                    <option value='Nieuwbrief'>CircuLaw Nieuwsbrief</option>
+                    <option value='Binnenlands Bestuur<'>Binnenlands Bestuur</option>
+                    <option value='Ikwilcirculairinkopen.nl'>Ikwilcirculairinkopen.nl</option>
+                    <option value='Ander'>Ander</option>
+                  </select>
+                  {howOther && (
+                    <div className='mt-2'>
+                      <input
+                        id='howOther'
+                        name='howOther'
+                        className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
+                        aria-describedby='howOther'
+                        value={query.howOther}
+                        onChange={handleChange()}
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
               <div className='mt-1 flex items-baseline'>
