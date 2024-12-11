@@ -171,7 +171,7 @@ export default function ELearningRegisterComponent() {
                     <option value='Nieuwbrief'>CircuLaw Nieuwsbrief</option>
                     <option value='Binnenlands Bestuur<'>Binnenlands Bestuur</option>
                     <option value='Ikwilcirculairinkopen.nl'>Ikwilcirculairinkopen.nl</option>
-                    <option value='Ander'>Ander</option>
+                    <option value='Ander'>Anders</option>
                   </select>
                   {howOther && (
                     <div className='mt-2'>
