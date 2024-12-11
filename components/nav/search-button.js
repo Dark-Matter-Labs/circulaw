@@ -2,7 +2,7 @@ import { useSearchParams } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 
-export default function SearchButton({ linkRef, searchIndex, searchQuery }) {
+export default function SearchButton({ linkRef, searchIndex, searchQuery, closeSerchMenu }) {
   const searchParams = useSearchParams();
 
   const createQueryString = useCallback(
@@ -17,19 +17,15 @@ export default function SearchButton({ linkRef, searchIndex, searchQuery }) {
 
   useEffect(() => {
     if (searchIndex === 'instruments') {
-      setSearchUrl(
-        `/zoeken/instrumenten?${searchIndex}${createQueryString('[query]', searchQuery)}`,
-      );
+      setSearchUrl(`/search/instrumenten?${createQueryString('query', searchQuery)}`);
     } else if (searchIndex === 'euLaw') {
-      setSearchUrl(
-        `/zoeken/eu-wetgeving?${searchIndex}${createQueryString('[query]', searchQuery)}`,
-      );
+      setSearchUrl(`/search/eu-wetgeving?${createQueryString('query', searchQuery)}`);
     } else if (searchIndex === 'aboutPage') {
-      setSearchUrl(
-        `/zoeken/over-circulaw?${searchIndex}${createQueryString('[query]', searchQuery)}`,
-      );
+      setSearchUrl(`/search/over-circulaw?${createQueryString('query', searchQuery)}`);
     } else if (searchIndex === 'newsItems') {
-      setSearchUrl(`/zoeken/nieuws?${searchIndex}${createQueryString('[query]', searchQuery)}`);
+      setSearchUrl(`/search/nieuws?${createQueryString('query', searchQuery)}`);
+    } else {
+      setSearchUrl(`/search?${createQueryString('query', searchQuery)}`);
     }
   }, [searchIndex, createQueryString, searchQuery]);
 
@@ -38,6 +34,7 @@ export default function SearchButton({ linkRef, searchIndex, searchQuery }) {
       <Link
         ref={linkRef}
         href={searchUrl}
+        onClick={() => closeSerchMenu()}
         className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl flex items-center justify-center hover:bg-green-200 hover:border-green-200'
       >
         Zoeken

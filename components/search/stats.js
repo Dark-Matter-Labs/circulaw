@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 
 export default function CustomStats({ index }) {
   const { nbHits, query } = useStats();
-  const { uiState } = useInstantSearch();
-
+  const { uiState, scopedResults } = useInstantSearch();
+  console.log(scopedResults);
   const [categorie, setCategorie] = useState([]);
   const [thema, setThema] = useState([]);
   const [overheidslaag, setOverheidslaag] = useState([]);
