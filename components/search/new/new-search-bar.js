@@ -1,5 +1,4 @@
 'use client';
-import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 import { IconX } from '@tabler/icons-react';
 import { useSearchBox, useInstantSearch } from 'react-instantsearch';
@@ -7,14 +6,11 @@ import { Tab, TabList } from '@headlessui/react';
 
 export default function NewSearchBar(props) {
   const { query, refine } = useSearchBox(props);
-  const { status, uiState } = useInstantSearch(props);
+  const { status } = useInstantSearch(props);
   const isSearchStalled = status === 'stalled';
-  console.log(uiState)
-  // const [query, setQuery] = useState(searchParams.get('query'));
+
   const [inputValue, setInputValue] = useState(query);
   const inputRef = useRef(null);
-  // to do make query update when search changes. use newQuery set up from algolia but without refining the search.
-  const pathname = usePathname();
   const [placeholder, setPlaceholder] = useState('Zoek naar content binnen Circulaw...');
   useEffect(() => {
     if (props.selectedIndex === 1) {
@@ -30,11 +26,8 @@ export default function NewSearchBar(props) {
     }
   }, [props.selectedIndex]);
 
-
   function setQuery(newQuery) {
-    console.log(newQuery, 'in set q 1')
     setInputValue(newQuery);
-    console.log(newQuery, 'in set q 2')
     refine(newQuery);
   }
 
@@ -92,13 +85,11 @@ export default function NewSearchBar(props) {
                   <button
                     type='reset'
                     title='Clear the search query'
-                    className={`${inputValue === '' || isSearchStalled ? 'hidden' : ''} ${
-                      pathname === '/' ? 'hover:bg-white/50' : 'hover:bg-green-200'
-                    } absolute top-3.5 right-28 rounded-full p-2  group`}
+                    className={`${
+                      inputValue === '' || isSearchStalled ? 'hidden' : ''
+                    } absolute top-3.5 right-28 rounded-full p-2 group hover:bg-green-200`}
                   >
-                    <IconX
-                      className={`${pathname === '/' ? 'text-white' : 'text-green-600'} h-6 w-6`}
-                    />
+                    <IconX className='h-6 w-6 text-green-600' />
                   </button>
                 </form>
               </div>

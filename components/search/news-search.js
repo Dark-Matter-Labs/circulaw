@@ -8,7 +8,7 @@ import NoResultsBoundary from './no-results-boundary';
 
 export default function NewsSearch() {
   return (
-  <>
+    <>
       <Configure hitsPerPage={10} />
       <div className='global-margin flex min-h-[80vh]'>
         <NoResultsBoundary fallback={<NoResults />}>
@@ -30,5 +30,6 @@ export default function NewsSearch() {
           </div>
         </NoResultsBoundary>
       </div>
-      </>  );
+    </>
+  );
 }

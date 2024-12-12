@@ -1,49 +1,94 @@
 'use client';
-import { InstantSearch, Index, useHits, useInstantSearch } from 'react-instantsearch';
-import { useState } from 'react';
-import searchClient from './search-client';
+import { Index, useHits, useInstantSearch } from 'react-instantsearch';
+import { useState, Fragment } from 'react';
 import NewSearchBar from './new-search-bar';
 import { TabGroup, TabPanels, TabPanel } from '@headlessui/react';
 import AboutSearch from '../about-search';
 import InstrumentSearch from '../instrument-search';
 import EUSearch from '../eu-search';
 import NewsSearch from '../news-search';
+import { InstantSearchNext } from 'react-instantsearch-nextjs';
+import algoliasearch from 'algoliasearch';
+
 
 export const dynamic = 'force-dynamic';
 
+const indexName = 'root';
+
+const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
+const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
+
+const algoliaClient = algoliasearch(api_id, api_key);
+
+const searchClient = {
+  ...algoliaClient,
+  search(requests) {
+    const filtered = requests.filter((request) => request.indexName !== 'root');
+    const query = algoliaClient.search(filtered);
+    return query.then((response) => {
+      response.results = requests.map((request) =>
+        request.indexName === 'root'
+          ? {
+              index: 'root',
+              hits: [],
+              nbHits: 0,
+              nbPages: 0,
+              page: 0,
+              processingTimeMS: 0,
+            }
+          : response.results.shift(),
+      );
+      return response;
+    });
+  },
+};
+
+
 export default function AllSearch() {
-
-  const [selectedIndex, setSelectedIndex] = useState(0)
-
-  function setTabFunction(value) {
-    setSelectedIndex(value)
-  }
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
     <div>
-      <InstantSearch indexName='root' searchClient={searchClient} >
-        <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex} >
-          <NewSearchBar selectedIndex={selectedIndex} setTabFunction={setTabFunction}/>
+      <InstantSearchNext
+        indexName={indexName}
+        searchClient={searchClient}
+        routing
+        future={{ preserveSharedStateOnUnmount: true }}
+      >
+        <TabGroup as={Fragment} selectedIndex={selectedIndex} onChange={setSelectedIndex}>
+          <NewSearchBar selectedIndex={selectedIndex} setTabFunction={setSelectedIndex} />
           <TabPanels>
             <TabPanel className='global-margin flex flex-col items-center justify-start min-h-[80vh]'>
               <ScopedResults />
               <Index indexName='instruments'>
-                <button onClick={() => setSelectedIndex(1)} className='hover:text-green-300 w-4/5 border-b border-green-600 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'>
+                <button
+                  onClick={() => setSelectedIndex(1)}
+                  className='hover:text-green-300 w-4/5 border-b border-green-600 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
+                >
                   Instruments <VirtualHits />
                 </button>
               </Index>
               <Index indexName='euLaw'>
-                <button onClick={() => setSelectedIndex(2)} className='hover:text-green-300 w-4/5 border-b border-green-600 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'>
+                <button
+                  onClick={() => setSelectedIndex(2)}
+                  className='hover:text-green-300 w-4/5 border-b border-green-600 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
+                >
                   EU wetgeving <VirtualHits />
                 </button>
               </Index>
               <Index indexName='aboutPage'>
-                <button onClick={() => setSelectedIndex(3)} className='hover:text-green-300 w-4/5 border-b border-green-600 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'>
+                <button
+                  onClick={() => setSelectedIndex(3)}
+                  className='hover:text-green-300 w-4/5 border-b border-green-600 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
+                >
                   Over CircuLaw <VirtualHits />
                 </button>
               </Index>
               <Index indexName='newsItems'>
-                <button onClick={() => setSelectedIndex(4)} className='hover:text-green-300 w-4/5 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'>
+                <button
+                  onClick={() => setSelectedIndex(4)}
+                  className='hover:text-green-300 w-4/5 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
+                >
                   Nieuws <VirtualHits />
                 </button>
               </Index>
@@ -55,7 +100,7 @@ export default function AllSearch() {
             </TabPanel>
             <TabPanel>
               <Index indexName='euLaw'>
-              <EUSearch />
+                <EUSearch />
               </Index>
             </TabPanel>
             <TabPanel>
@@ -70,7 +115,7 @@ export default function AllSearch() {
             </TabPanel>
           </TabPanels>
         </TabGroup>
-      </InstantSearch>
+      </InstantSearchNext>
     </div>
   );
 }

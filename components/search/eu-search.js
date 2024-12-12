@@ -30,6 +30,6 @@ export default function EUSearch() {
           </div>
         </NoResultsBoundary>
       </div>
-      </>
+    </>
   );
 }
