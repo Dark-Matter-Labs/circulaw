@@ -28,7 +28,7 @@ export default function SearchButton({ linkRef, searchIndex, searchQuery, closeS
       setSearchUrl(`/search?${createQueryString('query', searchQuery)}`);
     }
   }, [searchIndex, createQueryString, searchQuery]);
-
+  
   return (
     <button type='submit'>
       <Link

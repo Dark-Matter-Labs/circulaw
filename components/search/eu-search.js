@@ -1,42 +1,15 @@
 'use client';
-import algoliasearch from 'algoliasearch';
-import { Hits, Configure, useSearchBox, InstantSearch } from 'react-instantsearch';
+import { Hits, Configure } from 'react-instantsearch';
 import EUHit from './eu-law-hit';
 import CustomStats from './stats';
 import Pagination from '@/components/search/pagination';
 import NoResults from './no-results';
 import NoResultsBoundary from './no-results-boundary';
-import { useSearchParams } from 'next/navigation';
-import { useState, useEffect } from 'react';
-
-const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
-const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
-
-const algoliaClient = algoliasearch(api_id, api_key);
-
-export const dynamic = 'force-dynamic';
-
-const indexName = 'euLaw';
 
 export default function EUSearch() {
-  const searchParams = useSearchParams();
-  const [query, setQuery] = useState('');
-
-  useEffect(() => {
-    setQuery(searchParams.get('query'));
-  }, [searchParams]);
-
   return (
-    <InstantSearch
-      searchClient={algoliaClient}
-      indexName={indexName}
-      future={{
-        preserveSharedStateOnUnmount: true,
-      }}
-      insights={true}
-    >
+    <>
       <Configure hitsPerPage={12} />
-      <VirtualSearchBox query={query} />
       <div className='global-margin flex min-h-[80vh]'>
         <NoResultsBoundary fallback={<NoResults />}>
           <div>
@@ -57,14 +30,6 @@ export default function EUSearch() {
           </div>
         </NoResultsBoundary>
       </div>
-    </InstantSearch>
+      </>
   );
-}
-
-function VirtualSearchBox(props) {
-  const { refine } = useSearchBox(props);
-  useEffect(() => {
-    refine(props.query);
-  }, [props.query, refine]);
-  return null;
 }

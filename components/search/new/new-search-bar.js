@@ -1,59 +1,41 @@
 'use client';
-import { usePathname, useSearchParams } from 'next/navigation';
-import { useState, useCallback, useEffect } from 'react';
-import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState, useEffect, useRef } from 'react';
 import { IconX } from '@tabler/icons-react';
+import { useSearchBox, useInstantSearch } from 'react-instantsearch';
+import { Tab, TabList } from '@headlessui/react';
 
-export default function NewSearchBar() {
-  const searchParams = useSearchParams();
-  const [query, setQuery] = useState(searchParams.get('query'));
+export default function NewSearchBar(props) {
+  const { query, refine } = useSearchBox(props);
+  const { status, uiState } = useInstantSearch(props);
+  const isSearchStalled = status === 'stalled';
+  console.log(uiState)
+  // const [query, setQuery] = useState(searchParams.get('query'));
   const [inputValue, setInputValue] = useState(query);
+  const inputRef = useRef(null);
   // to do make query update when search changes. use newQuery set up from algolia but without refining the search.
   const pathname = usePathname();
-  const [selectedTab, setSelectedTab] = useState();
-
   const [placeholder, setPlaceholder] = useState('Zoek naar content binnen Circulaw...');
-
   useEffect(() => {
-    if (pathname.includes('instrumenten')) {
-      setSelectedTab('instrumenten');
+    if (props.selectedIndex === 1) {
       setPlaceholder('Zoek naar instrumenten...');
-    } else if (pathname.includes('eu-wetgeving')) {
-      setSelectedTab('eu-wetgeving');
+    } else if (props.selectedIndex === 2) {
       setPlaceholder('Zoek naar EU wetgeving');
-    } else if (pathname.includes('over-circulaw')) {
-      setSelectedTab('over-circulaw');
+    } else if (props.selectedIndex === 3) {
       setPlaceholder('Zoek naar over CircuLaw');
-    } else if (pathname.includes('nieuws')) {
-      setSelectedTab('nieuws');
+    } else if (props.selectedIndex === 4) {
       setPlaceholder('Zoek naar nieuws');
-    } else {
-      setSelectedTab('all');
+    } else if (props.selectedIndex === 0) {
       setPlaceholder('Zoek naar content binnen Circulaw...');
     }
-  }, [pathname]);
+  }, [props.selectedIndex]);
 
-  const createQueryString = useCallback(
-    (name, value) => {
-      const params = new URLSearchParams(searchParams.toString());
-      params.set(name, value);
-      return params.toString();
-    },
-    [searchParams],
-  );
 
-  function setNewQuery(newQuery) {
+  function setQuery(newQuery) {
+    console.log(newQuery, 'in set q 1')
     setInputValue(newQuery);
-  }
-
-  function setQueryStringParameter(name, value) {
-    const params = new URLSearchParams(window.location.search);
-    params.set(name, value);
-    window.history.replaceState(
-      {},
-      '',
-      decodeURIComponent(`${window.location.pathname}?${params}`),
-    );
+    console.log(newQuery, 'in set q 2')
+    refine(newQuery);
   }
 
   return (
@@ -71,14 +53,22 @@ export default function NewSearchBar() {
                   onSubmit={(event) => {
                     event.preventDefault();
                     event.stopPropagation();
+                    setQuery(inputValue);
+                    if (inputRef.current) {
+                      inputRef.current.blur();
+                    }
                   }}
                   onReset={(event) => {
                     event.preventDefault();
                     event.stopPropagation();
+                    if (inputRef.current) {
+                      inputRef.current.focus();
+                    }
                     setQuery('');
                   }}
                 >
                   <input
+                    ref={inputRef}
                     className='bg-white placeholder:text-green-600 caret-green-600 focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] text-green-600 shadow-card focus:ring-green-600 w-[600px] h-[66px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none p-base focus:ring-1 placeholder:p-base-semibold'
                     autoComplete='off'
                     autoCorrect='off'
@@ -89,24 +79,20 @@ export default function NewSearchBar() {
                     type='text'
                     value={inputValue}
                     onChange={(event) => {
-                      setNewQuery(event.currentTarget.value);
+                      setInputValue(event.currentTarget.value);
                     }}
                     autoFocus
                   />
                   <button
-                    onClick={() => setQueryStringParameter('query', inputValue)}
                     type='submit'
                     className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl flex items-center justify-center hover:bg-green-200 hover:border-green-200'
                   >
                     Zoeken
                   </button>
                   <button
-                    onClick={() => {
-                      setQueryStringParameter('query', ''), setInputValue('');
-                    }}
                     type='reset'
                     title='Clear the search query'
-                    className={`${inputValue === '' ? 'hidden' : ''} ${
+                    className={`${inputValue === '' || isSearchStalled ? 'hidden' : ''} ${
                       pathname === '/' ? 'hover:bg-white/50' : 'hover:bg-green-200'
                     } absolute top-3.5 right-28 rounded-full p-2  group`}
                   >
@@ -116,60 +102,40 @@ export default function NewSearchBar() {
                   </button>
                 </form>
               </div>
-              <div className='mt-4 flex flex-row'>
+              <TabList className='mt-4 flex flex-row'>
                 <>
-                  <Link
-                    href={`/search?${createQueryString('query', inputValue)}`}
-                    className={`${
-                      selectedTab === 'all'
-                        ? 'border-b-2 border-green-600'
-                        : 'border-b-2 border-transparent'
-                    } p-xs-semibold text-green-600 p-2`}
+                  <Tab
+                    onClick={() => props.setTabFunction(0)}
+                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2'
                   >
                     Alle
-                  </Link>
-                  <Link
-                    href={`/search/instrumenten?${createQueryString('query', inputValue)}`}
-                    className={`${
-                      selectedTab === 'instrumenten'
-                        ? 'border-b-2 border-green-600'
-                        : 'border-b-2 border-transparent'
-                    } p-xs-semibold text-green-600 p-2`}
+                  </Tab>
+                  <Tab
+                    onClick={() => props.setTabFunction(1)}
+                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2'
                   >
                     Instrumenten
-                  </Link>
-                  <Link
-                    href={`/search/eu-wetgeving?${createQueryString('query', inputValue)}`}
-                    className={`${
-                      selectedTab === 'eu-wetgeving'
-                        ? 'border-b-2 border-green-600 box-content'
-                        : 'border-b-2 border-transparent'
-                    } p-xs-semibold text-green-600 p-2`}
+                  </Tab>
+                  <Tab
+                    onClick={() => props.setTabFunction(2)}
+                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2'
                   >
                     EU wetgeving
-                  </Link>
-                  <Link
-                    href={`/search/over-circulaw?${createQueryString('query', inputValue)}`}
-                    className={`${
-                      selectedTab === 'over-circulaw'
-                        ? 'border-b-2 border-green-600'
-                        : 'border-b-2 border-transparent'
-                    } p-xs-semibold text-green-600 p-2`}
+                  </Tab>
+                  <Tab
+                    onClick={() => props.setTabFunction(3)}
+                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2'
                   >
                     Over CircuLaw
-                  </Link>
-                  <Link
-                    href={`/search/nieuws?${createQueryString('query', inputValue)}`}
-                    className={`${
-                      selectedTab === 'nieuws'
-                        ? 'border-b-2 border-green-600'
-                        : 'border-b-2 border-transparent'
-                    } p-xs-semibold text-green-600 p-2`}
+                  </Tab>
+                  <Tab
+                    onClick={() => props.setTabFunction(4)}
+                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2'
                   >
                     Nieuws
-                  </Link>
+                  </Tab>
                 </>
-              </div>
+              </TabList>
             </div>
           </div>
         </div>

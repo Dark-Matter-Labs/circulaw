@@ -1,82 +1,78 @@
 'use client';
-import { InstantSearch, Index, useHits, useSearchBox, useInstantSearch } from 'react-instantsearch';
-// import algoliasearch from 'algoliasearch';
-import { useState, useEffect, useCallback } from 'react';
-import { useSearchParams } from 'next/navigation';
-import Link from 'next/link';
+import { InstantSearch, Index, useHits, useInstantSearch } from 'react-instantsearch';
+import { useState } from 'react';
 import searchClient from './search-client';
-
+import NewSearchBar from './new-search-bar';
+import { TabGroup, TabPanels, TabPanel } from '@headlessui/react';
+import AboutSearch from '../about-search';
+import InstrumentSearch from '../instrument-search';
+import EUSearch from '../eu-search';
+import NewsSearch from '../news-search';
 
 export const dynamic = 'force-dynamic';
 
 export default function AllSearch() {
 
-  const searchParams = useSearchParams();
-  const [query, setQuery] = useState('');
+  const [selectedIndex, setSelectedIndex] = useState(0)
 
-  const createQueryString = useCallback(
-    (name, value) => {
-      const params = new URLSearchParams(searchParams.toString());
-      params.set(name, value);
-      return params.toString();
-    },
-    [searchParams],
-  );
-
-  useEffect(() => {
-    setQuery(searchParams.get('query'));
-  }, [searchParams]);
+  function setTabFunction(value) {
+    setSelectedIndex(value)
+  }
 
   return (
     <div>
-      <InstantSearch indexName='root' searchClient={searchClient}>
-        <VirtualSearchBox query={query} />
-        <div className='global-margin flex flex-col items-center justify-start min-h-[80vh]'>
-          <ScopedResults query={query} />
-          <Index indexName='instruments'>
-            <Link
-              href={`/search/instrumenten?${createQueryString('query', query)}`}
-              className='hover:text-green-300 w-4/5 border-b border-green-600 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
-            >
-              Instruments <VirtualHits />
-            </Link>
-          </Index>
-          <Index indexName='euLaw'>
-            <Link
-              href={`/search/eu-wetgeving?${createQueryString('query', query)}`}
-              className='hover:text-green-300 w-4/5 border-b border-green-600 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
-            >
-              EU wetgeving <VirtualHits />
-            </Link>
-          </Index>
-          <Index indexName='aboutPage'>
-            <Link
-              href={`/search/over-circulaw?${createQueryString('query', query)}`}
-              className='hover:text-green-300 w-4/5 border-b border-green-600 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
-            >
-              Over CircuLaw <VirtualHits />
-            </Link>
-          </Index>
-          <Index indexName='newsItems'>
-            <Link
-              href={`/search/nieuws?${createQueryString('query', query)}`}
-              className='hover:text-green-300 w-4/5 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
-            >
-              Nieuws <VirtualHits />
-            </Link>
-          </Index>
-        </div>
+      <InstantSearch indexName='root' searchClient={searchClient} >
+        <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex} >
+          <NewSearchBar selectedIndex={selectedIndex} setTabFunction={setTabFunction}/>
+          <TabPanels>
+            <TabPanel className='global-margin flex flex-col items-center justify-start min-h-[80vh]'>
+              <ScopedResults />
+              <Index indexName='instruments'>
+                <button onClick={() => setSelectedIndex(1)} className='hover:text-green-300 w-4/5 border-b border-green-600 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'>
+                  Instruments <VirtualHits />
+                </button>
+              </Index>
+              <Index indexName='euLaw'>
+                <button onClick={() => setSelectedIndex(2)} className='hover:text-green-300 w-4/5 border-b border-green-600 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'>
+                  EU wetgeving <VirtualHits />
+                </button>
+              </Index>
+              <Index indexName='aboutPage'>
+                <button onClick={() => setSelectedIndex(3)} className='hover:text-green-300 w-4/5 border-b border-green-600 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'>
+                  Over CircuLaw <VirtualHits />
+                </button>
+              </Index>
+              <Index indexName='newsItems'>
+                <button onClick={() => setSelectedIndex(4)} className='hover:text-green-300 w-4/5 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'>
+                  Nieuws <VirtualHits />
+                </button>
+              </Index>
+            </TabPanel>
+            <TabPanel>
+              <Index indexName='instruments'>
+                <InstrumentSearch />
+              </Index>
+            </TabPanel>
+            <TabPanel>
+              <Index indexName='euLaw'>
+              <EUSearch />
+              </Index>
+            </TabPanel>
+            <TabPanel>
+              <Index indexName='aboutPage'>
+                <AboutSearch />
+              </Index>
+            </TabPanel>
+            <TabPanel>
+              <Index indexName='newsItems'>
+                <NewsSearch />
+              </Index>
+            </TabPanel>
+          </TabPanels>
+        </TabGroup>
       </InstantSearch>
     </div>
   );
-}
-
-function VirtualSearchBox(props) {
-  const { refine } = useSearchBox(props);
-  useEffect(() => {
-    refine(props.query);
-  }, [props.query, refine]);
-  return null;
 }
 
 function VirtualHits(props) {
@@ -86,8 +82,7 @@ function VirtualHits(props) {
 }
 
 function ScopedResults(props) {
-  const { scopedResults } = useInstantSearch(props);
-
+  const { scopedResults, uiState } = useInstantSearch(props);
   const instruments = scopedResults.filter((item) => item.indexId === 'instruments');
   const aboutPages = scopedResults.filter((item) => item.indexId === 'aboutPage');
   const euLaws = scopedResults.filter((item) => item.indexId === 'euLaw');
@@ -103,7 +98,7 @@ function ScopedResults(props) {
     <div className='w-4/5 flex items-start mt-14 mb-10'>
       <div className='heading-2xl sm:heading-3xl'>
         {totalHits} resultaten voor:{' '}
-        <span className='font-semibold'>&apos;{props.query}&apos;</span>.
+        <span className='font-semibold'>&apos;{uiState['root'].query}&apos;</span>.
       </div>
     </div>
   );
