@@ -1,17 +1,20 @@
 'use client';
-import { Index, useHits, useInstantSearch } from 'react-instantsearch';
-import { useState, Fragment } from 'react';
+import { InstantSearch, Index, useHits, useInstantSearch } from 'react-instantsearch';
+import { useState, Fragment, useEffect } from 'react';
 import NewSearchBar from './new-search-bar';
 import { TabGroup, TabPanels, TabPanel } from '@headlessui/react';
 import AboutSearch from '../about-search';
 import InstrumentSearch from '../instrument-search';
 import EUSearch from '../eu-search';
 import NewsSearch from '../news-search';
-import { InstantSearchNext } from 'react-instantsearch-nextjs';
 import algoliasearch from 'algoliasearch';
 
-
-export const dynamic = 'force-dynamic';
+// TODO: local storage needs to be cleared when the person is entering search via the nav
+// the search button needs to be removed when the user ins on the search page
+// when the user changes tab from instrument to another one, the refinement list needs to be cleared completely and the ui state updated. 
+// query is being refined on every keystroke so need to change this setting
+// the no results fallback does not have the search term when there are 0 results. 
+// the virtual scoped results needs a condition when there is no search term. 
 
 const indexName = 'root';
 
@@ -45,18 +48,37 @@ const searchClient = {
 
 
 export default function AllSearch() {
-  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const [selectedIndex, setSelectedIndex] = useState(0)
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.localStorage.length > 0) {
+      let selected = localStorage.getItem('selectedIndex');
+      let keys = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        keys.push(localStorage.key(i));
+      }
+      setSelectedIndex(selected);
+    }
+  }, []);
+
+  function setTabFunction(value) {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.setItem('selectedIndex', value);
+      setSelectedIndex(value);
+    }
+  }
 
   return (
     <div>
-      <InstantSearchNext
+      <InstantSearch
         indexName={indexName}
         searchClient={searchClient}
         routing
         future={{ preserveSharedStateOnUnmount: true }}
       >
         <TabGroup as={Fragment} selectedIndex={selectedIndex} onChange={setSelectedIndex}>
-          <NewSearchBar selectedIndex={selectedIndex} setTabFunction={setSelectedIndex} />
+          <NewSearchBar selectedIndex={selectedIndex} setTabFunction={setTabFunction} />
           <TabPanels>
             <TabPanel className='global-margin flex flex-col items-center justify-start min-h-[80vh]'>
               <ScopedResults />
@@ -115,7 +137,7 @@ export default function AllSearch() {
             </TabPanel>
           </TabPanels>
         </TabGroup>
-      </InstantSearchNext>
+      </InstantSearch>
     </div>
   );
 }
