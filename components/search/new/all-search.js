@@ -10,7 +10,7 @@ import NewsSearch from '../news-search';
 import algoliasearch from 'algoliasearch';
 
 // TODO:
-// the virtual scoped results needs a condition when there is no search term. 
+// the virtual scoped results needs a condition when there is no search term.
 
 const indexName = 'root';
 
@@ -42,10 +42,8 @@ const searchClient = {
   },
 };
 
-
 export default function AllSearch() {
-
-  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.localStorage.length > 0) {
@@ -156,16 +154,19 @@ function ScopedResults(props) {
   const numEULaws = euLaws[0]?.results?.nbHits;
   const numNewsItems = newsItems[0]?.results?.nbHits;
   const totalHits = numInstruments + numAboutPages + numEULaws + numNewsItems;
-  console.log(uiState['root'].query, 'no q')
+  console.log(uiState['root'].query, 'no q');
   return (
     <div className='w-4/5 flex items-start mt-14 mb-10'>
       <div className='heading-2xl sm:heading-3xl'>
-        {totalHits} resultaten 
-        {uiState['root'].query && 
-        <>
-        <span>voor:{' '}</span>
-        
-        <span className='font-semibold'>&apos;{uiState['root'].query}&apos;</span></>}.
+        {totalHits} resultaten
+        {uiState['root'].query && (
+          <>
+            <span>voor: </span>
+
+            <span className='font-semibold'>&apos;{uiState['root'].query}&apos;</span>
+          </>
+        )}
+        .
       </div>
     </div>
   );

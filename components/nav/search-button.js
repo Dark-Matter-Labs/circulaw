@@ -16,8 +16,8 @@ export default function SearchButton({ linkRef, searchIndex, searchQuery, closeS
   const [searchUrl, setSearchUrl] = useState('');
 
   function handleSubmit() {
-    closeSerchMenu()
-    localStorage.setItem('selectedIndex', searchIndex)
+    closeSerchMenu();
+    localStorage.setItem('selectedIndex', searchIndex);
   }
 
   useEffect(() => {

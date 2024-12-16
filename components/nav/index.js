@@ -68,10 +68,10 @@ export default function Nav(props) {
     } else if (searchIndex === 1) {
       setPlaceholder('Zoek naar instrumenten...');
     } else if (searchIndex === 2) {
-      setPlaceholder('Zoek naar EU wetgeving'); 
+      setPlaceholder('Zoek naar EU wetgeving');
     } else if (searchIndex === 3) {
       setPlaceholder('Zoek naar over CircuLaw');
-    }  else if (searchIndex === 4) {
+    } else if (searchIndex === 4) {
       setPlaceholder('Zoek naar nieuws');
     }
   }, [searchIndex]);
@@ -94,8 +94,6 @@ export default function Nav(props) {
   function closeSerchMenu() {
     setSearchMenuIsOpen(false);
   }
-
-
 
   const {
     refs: searchMenuRef,
@@ -132,12 +130,12 @@ export default function Nav(props) {
   const { getReferenceProps: searchMenuReferencProps, getFloatingProps: searchMenuFloatingProps } =
     useInteractions([searchMenuClick, searchMenuDismiss, searchMenuRole]);
 
-    // remove search index when user opens search menu from another page
-    useEffect(() => {
-      if (searchMenuIsOpen) {
-        localStorage.removeItem('selectedIndex')
-      }
-    })
+  // remove search index when user opens search menu from another page
+  useEffect(() => {
+    if (searchMenuIsOpen) {
+      localStorage.removeItem('selectedIndex');
+    }
+  });
 
   // main menu
   const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
@@ -989,7 +987,7 @@ export default function Nav(props) {
                                     </>
                                   ) : (
                                     <>
-                                        <button
+                                      <button
                                         onClick={() => setSearchIndex(0)}
                                         className={`${
                                           searchIndex === 0
