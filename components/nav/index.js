@@ -95,6 +95,8 @@ export default function Nav(props) {
     setSearchMenuIsOpen(false);
   }
 
+
+
   const {
     refs: searchMenuRef,
     floatingStyles: searchMenuStyles,
@@ -129,6 +131,13 @@ export default function Nav(props) {
 
   const { getReferenceProps: searchMenuReferencProps, getFloatingProps: searchMenuFloatingProps } =
     useInteractions([searchMenuClick, searchMenuDismiss, searchMenuRole]);
+
+    // remove search index when user opens search menu from another page
+    useEffect(() => {
+      if (searchMenuIsMounted) {
+        localStorage.removeItem('selectedIndex')
+      }
+    })
 
   // main menu
   const [mainMenuIsOpen, setMainMenuIsOpen] = useState(false);
@@ -829,7 +838,7 @@ export default function Nav(props) {
                 {/* SEARCH MENU */}
 
                 <div
-                  className={`${pathname?.includes('/zoeken') ? 'hidden' : 'block'} ml-6 lg:ml-8`}
+                  className={`${pathname?.includes('/search') ? 'hidden' : 'block'} ml-6 lg:ml-8`}
                 >
                   <button
                     className='h-full relative p-sm group z-100 flex flex-row items-center'

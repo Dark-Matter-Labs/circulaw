@@ -26,8 +26,6 @@ export default function NewSearchBar(props) {
     }
   }, [props.selectedIndex]);
 
-  console.log(inputValue, 'input value')
-  console.log(props.selectedIndex)
 
   useEffect(() => {
     // Trigger refine with the current inputValue whenever selectedIndex changes
