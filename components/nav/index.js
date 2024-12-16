@@ -58,21 +58,21 @@ export default function Nav(props) {
     window.addEventListener('scroll', changeEffect);
   }, []);
 
-  const [searchIndex, setSearchIndex] = useState('all');
+  const [searchIndex, setSearchIndex] = useState(0);
   const [searchQuery, setSearchQuery] = useState('');
   const [placeholder, setPlaceholder] = useState('instruments');
 
   useEffect(() => {
-    if (searchIndex === 'instruments') {
-      setPlaceholder('Zoek naar instrumenten...');
-    } else if (searchIndex === 'aboutPage') {
-      setPlaceholder('Zoek naar over CircuLaw');
-    } else if (searchIndex === 'euLaw') {
-      setPlaceholder('Zoek naar EU wetgeving');
-    } else if (searchIndex === 'news') {
-      setPlaceholder('Zoek naar nieuws');
-    } else {
+    if (searchIndex === 0) {
       setPlaceholder('Zoek naar content binnen Circulaw...');
+    } else if (searchIndex === 1) {
+      setPlaceholder('Zoek naar instrumenten...');
+    } else if (searchIndex === 2) {
+      setPlaceholder('Zoek naar EU wetgeving'); 
+    } else if (searchIndex === 3) {
+      setPlaceholder('Zoek naar over CircuLaw');
+    }  else if (searchIndex === 4) {
+      setPlaceholder('Zoek naar nieuws');
     }
   }, [searchIndex]);
 
@@ -134,7 +134,7 @@ export default function Nav(props) {
 
     // remove search index when user opens search menu from another page
     useEffect(() => {
-      if (searchMenuIsMounted) {
+      if (searchMenuIsOpen) {
         localStorage.removeItem('selectedIndex')
       }
     })
@@ -937,9 +937,9 @@ export default function Nav(props) {
                                   {pathname === '/' ? (
                                     <>
                                       <button
-                                        onClick={() => setSearchIndex('all')}
+                                        onClick={() => setSearchIndex(0)}
                                         className={`${
-                                          searchIndex === 'all'
+                                          searchIndex === 0
                                             ? 'border-b-2 border-white'
                                             : 'border-b-2 border-transparent'
                                         } p-xs-semibold text-white p-2`}
@@ -947,9 +947,9 @@ export default function Nav(props) {
                                         Alle
                                       </button>
                                       <button
-                                        onClick={() => setSearchIndex('instruments')}
+                                        onClick={() => setSearchIndex(1)}
                                         className={`${
-                                          searchIndex === 'instruments'
+                                          searchIndex === 1
                                             ? 'border-b-2 border-white'
                                             : 'border-b-2 border-transparent'
                                         } p-xs-semibold text-white p-2`}
@@ -957,9 +957,9 @@ export default function Nav(props) {
                                         Instrumenten
                                       </button>
                                       <button
-                                        onClick={() => setSearchIndex('euLaw')}
+                                        onClick={() => setSearchIndex(2)}
                                         className={`${
-                                          searchIndex === 'euLaw'
+                                          searchIndex === 2
                                             ? 'border-b-2 border-white box-content'
                                             : 'border-b-2 border-transparent'
                                         } p-xs-semibold text-white p-2`}
@@ -967,9 +967,9 @@ export default function Nav(props) {
                                         EU wetgeving
                                       </button>
                                       <button
-                                        onClick={() => setSearchIndex('aboutPage')}
+                                        onClick={() => setSearchIndex(3)}
                                         className={`${
-                                          searchIndex === 'aboutPage'
+                                          searchIndex === 3
                                             ? 'border-b-2 border-white'
                                             : 'border-b-2 border-transparent'
                                         } p-xs-semibold text-white p-2`}
@@ -977,9 +977,9 @@ export default function Nav(props) {
                                         Over
                                       </button>
                                       <button
-                                        onClick={() => setSearchIndex('newsItems')}
+                                        onClick={() => setSearchIndex(4)}
                                         className={`${
-                                          searchIndex === 'newsItems'
+                                          searchIndex === 4
                                             ? 'border-b-2 border-white'
                                             : 'border-b-2 border-transparent'
                                         } p-xs-semibold text-white p-2`}
@@ -989,10 +989,20 @@ export default function Nav(props) {
                                     </>
                                   ) : (
                                     <>
-                                      <button
-                                        onClick={() => setSearchIndex('instruments')}
+                                        <button
+                                        onClick={() => setSearchIndex(0)}
                                         className={`${
-                                          searchIndex === 'instruments'
+                                          searchIndex === 0
+                                            ? 'border-b-2 border-green-600'
+                                            : 'border-b-2 border-transparent'
+                                        } p-xs-semibold text-green-600 p-2`}
+                                      >
+                                        Alle
+                                      </button>
+                                      <button
+                                        onClick={() => setSearchIndex(1)}
+                                        className={`${
+                                          searchIndex === 1
                                             ? 'border-b-2 border-green-600'
                                             : 'border-b-2 border-transparent'
                                         } p-xs-semibold text-green-600 p-2`}
@@ -1000,9 +1010,9 @@ export default function Nav(props) {
                                         Instrumenten
                                       </button>
                                       <button
-                                        onClick={() => setSearchIndex('euLaw')}
+                                        onClick={() => setSearchIndex(2)}
                                         className={`${
-                                          searchIndex === 'euLaw'
+                                          searchIndex === 2
                                             ? 'border-b-2 border-green-600'
                                             : 'border-b-2 border-transparent'
                                         } p-xs-semibold text-green-600 p-2`}
@@ -1010,9 +1020,9 @@ export default function Nav(props) {
                                         EU wetgeving
                                       </button>
                                       <button
-                                        onClick={() => setSearchIndex('aboutPage')}
+                                        onClick={() => setSearchIndex(3)}
                                         className={`${
-                                          searchIndex === 'aboutPage'
+                                          searchIndex === 3
                                             ? 'border-b-2 border-green-600'
                                             : 'border-b-2 border-transparent'
                                         } p-xs-semibold text-green-600 p-2`}
@@ -1020,9 +1030,9 @@ export default function Nav(props) {
                                         Over
                                       </button>
                                       <button
-                                        onClick={() => setSearchIndex('newsItems')}
+                                        onClick={() => setSearchIndex(4)}
                                         className={`${
-                                          searchIndex === 'newsItems'
+                                          searchIndex === 4
                                             ? 'border-b-2 border-green-600'
                                             : 'border-b-2 border-transparent'
                                         } p-xs-semibold text-green-600 p-2`}

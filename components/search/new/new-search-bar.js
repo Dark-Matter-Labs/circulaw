@@ -7,6 +7,9 @@ import { Tab, TabList } from '@headlessui/react';
 export default function NewSearchBar(props) {
   const { query, refine } = useSearchBox(props);
   const { status } = useInstantSearch(props);
+  // const { canRefine } = useClearRefinements(props);
+  
+  // console.log(canRefine)
   const isSearchStalled = status === 'stalled';
 
   const [inputValue, setInputValue] = useState(query);
@@ -26,10 +29,10 @@ export default function NewSearchBar(props) {
     }
   }, [props.selectedIndex]);
 
-
+  // need to only refie on button click
   useEffect(() => {
     // Trigger refine with the current inputValue whenever selectedIndex changes
-    refine(inputValue);
+      refine(inputValue);
   }, [props.selectedIndex, inputValue, refine]);
 
 

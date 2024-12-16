@@ -9,11 +9,7 @@ import EUSearch from '../eu-search';
 import NewsSearch from '../news-search';
 import algoliasearch from 'algoliasearch';
 
-// TODO: local storage needs to be cleared when the person is entering search via the nav
-// the search button needs to be removed when the user ins on the search page
-// when the user changes tab from instrument to another one, the refinement list needs to be cleared completely and the ui state updated. 
-// query is being refined on every keystroke so need to change this setting
-// the no results fallback does not have the search term when there are 0 results. 
+// TODO:
 // the virtual scoped results needs a condition when there is no search term. 
 
 const indexName = 'root';
@@ -160,12 +156,16 @@ function ScopedResults(props) {
   const numEULaws = euLaws[0]?.results?.nbHits;
   const numNewsItems = newsItems[0]?.results?.nbHits;
   const totalHits = numInstruments + numAboutPages + numEULaws + numNewsItems;
-
+  console.log(uiState['root'].query, 'no q')
   return (
     <div className='w-4/5 flex items-start mt-14 mb-10'>
       <div className='heading-2xl sm:heading-3xl'>
-        {totalHits} resultaten voor:{' '}
-        <span className='font-semibold'>&apos;{uiState['root'].query}&apos;</span>.
+        {totalHits} resultaten 
+        {uiState['root'].query && 
+        <>
+        <span>voor:{' '}</span>
+        
+        <span className='font-semibold'>&apos;{uiState['root'].query}&apos;</span></>}.
       </div>
     </div>
   );
