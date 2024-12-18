@@ -22,15 +22,15 @@ export default function SearchButton({ linkRef, searchIndex, searchQuery, closeS
 
   useEffect(() => {
     if (searchIndex === 'instruments') {
-      setSearchUrl(`/search?root${createQueryString('[query]', searchQuery)}`);
+      setSearchUrl(`/zoeken?root${createQueryString('[query]', searchQuery)}`);
     } else if (searchIndex === 'euLaw') {
-      setSearchUrl(`/search?root${createQueryString('[query]', searchQuery)}`);
+      setSearchUrl(`/zoeken?root${createQueryString('[query]', searchQuery)}`);
     } else if (searchIndex === 'aboutPage') {
-      setSearchUrl(`/search?root${createQueryString('[query]', searchQuery)}`);
+      setSearchUrl(`/zoeken?root${createQueryString('[query]', searchQuery)}`);
     } else if (searchIndex === 'newsItems') {
-      setSearchUrl(`/search?root${createQueryString('[query]', searchQuery)}`);
+      setSearchUrl(`/zoeken?root${createQueryString('[query]', searchQuery)}`);
     } else {
-      setSearchUrl(`/search?root${createQueryString('[query]', searchQuery)}`);
+      setSearchUrl(`/zoeken?root${createQueryString('[query]', searchQuery)}`);
     }
   }, [searchIndex, createQueryString, searchQuery]);
 

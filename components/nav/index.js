@@ -523,7 +523,7 @@ export default function Nav(props) {
                             />
                             <div className='flex flex-row items-start w-full justify-start pt-4'>
                               <Link
-                                href='/zoeken/instrumenten'
+                                href='/zoeken'
                                 className='heading-xl-semibold text-green-800 flex flex-row justify-center items-center'
                                 onClick={() => setMobileMenuIsOpen(false)}
                               >
