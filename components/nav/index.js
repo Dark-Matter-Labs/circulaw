@@ -134,6 +134,8 @@ export default function Nav(props) {
   useEffect(() => {
     if (searchMenuIsOpen) {
       localStorage.removeItem('selectedIndex');
+    } else {
+      setSearchIndex(0)
     }
   });
 
@@ -839,7 +841,7 @@ export default function Nav(props) {
                   className={`${pathname?.includes('/search') ? 'hidden' : 'block'} ml-6 lg:ml-8`}
                 >
                   <button
-                    className='h-full relative p-sm group z-100 flex flex-row items-center'
+                    className='h-full w-full relative p-sm group z-100 flex flex-row items-center'
                     ref={searchMenuRef.setReference}
                     {...searchMenuReferencProps()}
                     aria-label='Open search CircuLaw feature'
