@@ -4,7 +4,7 @@ export default function NoResults() {
   const { uiState } = useInstantSearch();
   console.log(uiState, 'no results')
   return (
-    <div className='flex items-center justify-center my-10 w-full '>
+    <div className='flex items-start justify-center my-10 w-full '>
       <div className='flex flex-col items-center justify-center max-w-md'>
         <h2 className='heading-2xl sm:heading-3xl mb-6'>
           Geen resultaten gevonden voor: &apos;

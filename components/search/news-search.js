@@ -10,7 +10,7 @@ export default function NewsSearch() {
   return (
     <>
       <Configure hitsPerPage={10} />
-      <div className='global-margin flex min-h-[80vh]'>
+      <div className='global-margin flex min-h-[80vh] justify-center w-full'>
         <NoResultsBoundary fallback={<NoResults />}>
           <div>
             <div className='sm:ml-12 sm:mt-10 mt-6'>

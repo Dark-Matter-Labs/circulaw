@@ -32,7 +32,7 @@ export default function InstrumentSearch() {
   return (
     <>
       <Configure hitsPerPage={10} />
-      <div className='global-margin flex min-h-[80vh]'>
+      <div className='global-margin flex min-h-[80vh] justify-center w-full'>
         <NoResultsBoundary fallback={<NoResults />}>
           {/* MOBILE FILTERS */}
           <div className='global-margin flex justify-center'>
