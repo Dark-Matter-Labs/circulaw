@@ -2,6 +2,7 @@ import { useInstantSearch } from 'react-instantsearch';
 
 export default function NoResults() {
   const { uiState } = useInstantSearch();
+  console.log(uiState, 'no results')
   return (
     <div className='flex items-center justify-center my-10 w-full '>
       <div className='flex flex-col items-center justify-center max-w-md'>
@@ -10,7 +11,11 @@ export default function NoResults() {
           <span className='heading-2xl-semibold sm:heading-3xl-semibold'>
             {uiState['root'].query}
           </span>
-          &apos;
+          &apos; in 
+            {uiState['aboutPage'] && <span>{' '}Over CircuLaw</span>}
+            {uiState['instruments'] && <span>{' '}Instrumenten</span>}
+            {uiState['euLaw'] && <span>{' '}EU wetgeving</span>}
+            {uiState['newsItems'] && <span>{' '}Nieuws</span>}
         </h2>
         <h3 className='p-base-semibold mb-4'>Tips voor betere resultaten:</h3>
         <ul className='p-base list-disc'>
