@@ -135,7 +135,7 @@ export default function Nav(props) {
     if (searchMenuIsOpen) {
       localStorage.removeItem('selectedIndex');
     } else {
-      setSearchIndex(0)
+      setSearchIndex(0);
     }
   });
 
