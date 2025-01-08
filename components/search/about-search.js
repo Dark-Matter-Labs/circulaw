@@ -10,7 +10,7 @@ export default function AboutSearch() {
     <>
       <Configure hitsPerPage={10} />
 
-      <div className='global-margin flex min-h-[80vh] justify-center w-full'>
+      <div className='global-margin flex min-h-[80vh] justify-center sm:w-full'>
         <NoResultsBoundary fallback={<NoResults />}>
           <div className='mb-12'>
             <div className='mt-10 sm:ml-10'>

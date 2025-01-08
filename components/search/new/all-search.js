@@ -79,7 +79,7 @@ export default function AllSearch() {
               <Index indexName='instruments'>
                 <button
                   onClick={() => setSelectedIndex(1)}
-                  className='hover:text-green-300 w-4/5 border-b border-green-600 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
+                  className='hover:text-green-300 w-full sm:w-4/5 border-b border-green-600 heading-2xl-semibold sm:heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
                 >
                   Instruments <VirtualHits />
                 </button>
@@ -87,7 +87,7 @@ export default function AllSearch() {
               <Index indexName='euLaw'>
                 <button
                   onClick={() => setSelectedIndex(2)}
-                  className='hover:text-green-300 w-4/5 border-b border-green-600 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
+                  className='hover:text-green-300 w-full sm:w-4/5 border-b border-green-600 heading-2xl-semibold sm:heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
                 >
                   EU wetgeving <VirtualHits />
                 </button>
@@ -95,7 +95,7 @@ export default function AllSearch() {
               <Index indexName='aboutPage'>
                 <button
                   onClick={() => setSelectedIndex(3)}
-                  className='hover:text-green-300 w-4/5 border-b border-green-600 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
+                  className='hover:text-green-300 w-full sm:w-4/5 border-b border-green-600 heading-2xl-semibold sm:heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
                 >
                   Over CircuLaw <VirtualHits />
                 </button>
@@ -103,7 +103,7 @@ export default function AllSearch() {
               <Index indexName='newsItems'>
                 <button
                   onClick={() => setSelectedIndex(4)}
-                  className='hover:text-green-300 w-4/5 heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
+                  className='hover:text-green-300 w-full sm:w-4/5 heading-2xl-semibold sm:heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
                 >
                   Nieuws <VirtualHits />
                 </button>
@@ -156,9 +156,9 @@ function ScopedResults(props) {
   const totalHits = numInstruments + numAboutPages + numEULaws + numNewsItems;
   console.log(uiState['root'].query, 'no q');
   return (
-    <div className='w-4/5 flex items-start mt-14 mb-10'>
+    <div className='w-full sm:w-4/5 flex items-start mt-14 mb-10'>
       <div className='heading-2xl sm:heading-3xl'>
-        {totalHits} resultaten
+        {totalHits} resultaten{' '}
         {uiState['root'].query && (
           <>
             <span>voor: </span>

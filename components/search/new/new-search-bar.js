@@ -41,14 +41,14 @@ export default function NewSearchBar(props) {
   }
 
   return (
-    <div className='bg-green-50 h-[260px] flex items-end justify-center w-full'>
+    <div className='bg-green-50 h-[260px] flex items-end justify-center sm:max-w-none w-full'>
       <div className='global-margin w-full flex items-center justify-center'>
-        <div className='hidden sm:flex flex-col items-center justify-center gap-y-6'>
+        <div className='flex flex-col items-center justify-center gap-y-6'>
           <div className='w-full'>
             <div className='w-full h-full flex flex-col items-center justify-end pb-10'>
-              <div>
+              <div className='w-full max-w-sm sm:max-w-[600px]'>
                 <form
-                  className='w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex'
+                  className='max-w-sm sm:max-w-[600px] sm:w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex'
                   action=''
                   role='search'
                   noValidate
@@ -71,7 +71,7 @@ export default function NewSearchBar(props) {
                 >
                   <input
                     ref={inputRef}
-                    className='bg-white placeholder:text-green-600 caret-green-600 focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] text-green-600 shadow-card focus:ring-green-600 w-[600px] h-[66px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none p-base focus:ring-1 placeholder:p-base-semibold'
+                    className='bg-white placeholder:text-green-600 caret-green-600 focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] text-green-600 shadow-card focus:ring-green-600 w-full sm:w-[600px] h-[66px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none p-base focus:ring-1 sm:placeholder:p-base-semibold placeholder:p-2xs'
                     autoComplete='off'
                     autoCorrect='off'
                     autoCapitalize='off'
@@ -102,39 +102,37 @@ export default function NewSearchBar(props) {
                   </button>
                 </form>
               </div>
-              <TabList className='mt-4 flex flex-row'>
-                <>
+              <TabList className='mt-4 max-w-sm flex flex-row overflow-x-scroll snap-x snap-mandatory no-scrollbar'>
                   <Tab
                     onClick={() => props.setTabFunction(0)}
-                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2'
+                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
                   >
                     Alle
                   </Tab>
                   <Tab
                     onClick={() => props.setTabFunction(1)}
-                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2'
+                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
                   >
                     Instrumenten
                   </Tab>
                   <Tab
                     onClick={() => props.setTabFunction(2)}
-                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2'
+                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
                   >
                     EU wetgeving
                   </Tab>
                   <Tab
                     onClick={() => props.setTabFunction(3)}
-                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2'
+                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
                   >
                     Over CircuLaw
                   </Tab>
                   <Tab
                     onClick={() => props.setTabFunction(4)}
-                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2'
+                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
                   >
                     Nieuws
                   </Tab>
-                </>
               </TabList>
             </div>
           </div>

@@ -132,7 +132,7 @@ export default function Nav(props) {
 
   // remove search index when user opens search menu from another page
   useEffect(() => {
-    if (searchMenuIsOpen) {
+    if (searchMenuIsOpen || mobileMenuIsOpen) {
       localStorage.removeItem('selectedIndex');
     } else {
       setSearchIndex(0);

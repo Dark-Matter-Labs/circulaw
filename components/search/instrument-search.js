@@ -31,12 +31,10 @@ export default function InstrumentSearch() {
 
   return (
     <>
-      <Configure hitsPerPage={10} />
-      <div className='global-margin flex min-h-[80vh] justify-center w-full'>
-        <NoResultsBoundary fallback={<NoResults />}>
-          {/* MOBILE FILTERS */}
-          <div className='global-margin flex justify-center'>
-            <Modal Button={<FilterModalButton />}>
+    <div className='flex items-center justify-center global-margin'>
+
+    
+    <Modal Button={<FilterModalButton />}>
               <ModalContent title=''>
                 <div className=' p-4 flex justify-between'>
                   <div className='flex flex-col mt-4 min-w-[270px] '>
@@ -126,7 +124,14 @@ export default function InstrumentSearch() {
                 </div>
               </ModalContent>
             </Modal>
-          </div>
+            </div>
+      <Configure hitsPerPage={10} />
+      <div className='global-margin flex min-h-[80vh] justify-center sm:w-full'>
+        <NoResultsBoundary fallback={<NoResults />}>
+          {/* MOBILE FILTERS */}
+         
+            
+          
           <div className='hidden sm:flex flex-col mt-32 min-w-[270px]'>
             <div className='flex flex-col mr-12'>
               <CustomClearRefinements />
