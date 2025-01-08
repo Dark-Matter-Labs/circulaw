@@ -1,12 +1,12 @@
 'use client';
 import { InstantSearch, Index, useHits, useInstantSearch } from 'react-instantsearch';
 import { useState, Fragment, useEffect } from 'react';
-import NewSearchBar from './new-search-bar';
+import NewSearchBar from './search-bar';
 import { TabGroup, TabPanels, TabPanel } from '@headlessui/react';
-import AboutSearch from '../about-search';
-import InstrumentSearch from '../instrument-search';
-import EUSearch from '../eu-search';
-import NewsSearch from '../news-search';
+import AboutSearch from './about-search';
+import InstrumentSearch from './instrument-search';
+import EUSearch from './eu-search';
+import NewsSearch from './news-search';
 import algoliasearch from 'algoliasearch';
 
 // TODO:
@@ -154,7 +154,6 @@ function ScopedResults(props) {
   const numEULaws = euLaws[0]?.results?.nbHits;
   const numNewsItems = newsItems[0]?.results?.nbHits;
   const totalHits = numInstruments + numAboutPages + numEULaws + numNewsItems;
-  console.log(uiState['root'].query, 'no q');
   return (
     <div className='w-full sm:w-4/5 flex items-start mt-14 mb-10'>
       <div className='heading-2xl sm:heading-3xl'>

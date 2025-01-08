@@ -7,9 +7,7 @@ import { Tab, TabList } from '@headlessui/react';
 export default function NewSearchBar(props) {
   const { query, refine } = useSearchBox(props);
   const { status } = useInstantSearch(props);
-  // const { canRefine } = useClearRefinements(props);
 
-  // console.log(canRefine)
   const isSearchStalled = status === 'stalled';
 
   const [inputValue, setInputValue] = useState(query);
