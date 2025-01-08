@@ -99,7 +99,7 @@ export default function NewSearchBar(props) {
                   </button>
                 </form>
               </div>
-              <TabList className='mt-4 max-w-sm flex flex-row overflow-x-scroll snap-x snap-mandatory no-scrollbar'>
+              <TabList className='mt-4 max-w-sm sm:max-w-none flex flex-row overflow-x-scroll snap-x snap-mandatory no-scrollbar'>
                 <Tab
                   onClick={() => props.setTabFunction(0)}
                   className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
