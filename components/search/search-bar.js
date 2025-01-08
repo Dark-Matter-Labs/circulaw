@@ -31,7 +31,7 @@ export default function NewSearchBar(props) {
   useEffect(() => {
     // Trigger refine with the current inputValue whenever selectedIndex changes
     refine(inputValue);
-  }, [props.selectedIndex, inputValue, refine]);
+  }, [props.selectedIndex, refine]);
 
   function setQuery(newQuery) {
     setInputValue(newQuery);
