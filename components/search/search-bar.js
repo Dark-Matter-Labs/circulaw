@@ -27,11 +27,10 @@ export default function NewSearchBar(props) {
     }
   }, [props.selectedIndex]);
 
-  // need to only refie on button click
   useEffect(() => {
     // Trigger refine with the current inputValue whenever selectedIndex changes
     refine(inputValue);
-  }, [props.selectedIndex, refine]);
+  }, [props.selectedIndex, refine]); // eslint-disable-line
 
   function setQuery(newQuery) {
     setInputValue(newQuery);
