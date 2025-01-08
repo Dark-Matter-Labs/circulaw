@@ -1,4 +1,4 @@
-import AllSearch from '@/components/search/new/all-search';
+import AllSearch from '@/components/search/all-search';
 
 export default function AllSearchPage() {
   return (

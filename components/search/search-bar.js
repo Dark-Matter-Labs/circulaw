@@ -7,9 +7,7 @@ import { Tab, TabList } from '@headlessui/react';
 export default function NewSearchBar(props) {
   const { query, refine } = useSearchBox(props);
   const { status } = useInstantSearch(props);
-  // const { canRefine } = useClearRefinements(props);
 
-  // console.log(canRefine)
   const isSearchStalled = status === 'stalled';
 
   const [inputValue, setInputValue] = useState(query);
@@ -29,11 +27,10 @@ export default function NewSearchBar(props) {
     }
   }, [props.selectedIndex]);
 
-  // need to only refie on button click
   useEffect(() => {
     // Trigger refine with the current inputValue whenever selectedIndex changes
     refine(inputValue);
-  }, [props.selectedIndex, inputValue, refine]);
+  }, [props.selectedIndex, refine]); // eslint-disable-line
 
   function setQuery(newQuery) {
     setInputValue(newQuery);
@@ -102,7 +99,7 @@ export default function NewSearchBar(props) {
                   </button>
                 </form>
               </div>
-              <TabList className='mt-4 max-w-sm flex flex-row overflow-x-scroll snap-x snap-mandatory no-scrollbar'>
+              <TabList className='mt-4 max-w-sm sm:max-w-none flex flex-row overflow-x-scroll snap-x snap-mandatory no-scrollbar'>
                 <Tab
                   onClick={() => props.setTabFunction(0)}
                   className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
