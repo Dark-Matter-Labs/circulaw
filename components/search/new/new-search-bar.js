@@ -103,36 +103,36 @@ export default function NewSearchBar(props) {
                 </form>
               </div>
               <TabList className='mt-4 max-w-sm flex flex-row overflow-x-scroll snap-x snap-mandatory no-scrollbar'>
-                  <Tab
-                    onClick={() => props.setTabFunction(0)}
-                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
-                  >
-                    Alle
-                  </Tab>
-                  <Tab
-                    onClick={() => props.setTabFunction(1)}
-                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
-                  >
-                    Instrumenten
-                  </Tab>
-                  <Tab
-                    onClick={() => props.setTabFunction(2)}
-                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
-                  >
-                    EU wetgeving
-                  </Tab>
-                  <Tab
-                    onClick={() => props.setTabFunction(3)}
-                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
-                  >
-                    Over CircuLaw
-                  </Tab>
-                  <Tab
-                    onClick={() => props.setTabFunction(4)}
-                    className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
-                  >
-                    Nieuws
-                  </Tab>
+                <Tab
+                  onClick={() => props.setTabFunction(0)}
+                  className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
+                >
+                  Alle
+                </Tab>
+                <Tab
+                  onClick={() => props.setTabFunction(1)}
+                  className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
+                >
+                  Instrumenten
+                </Tab>
+                <Tab
+                  onClick={() => props.setTabFunction(2)}
+                  className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
+                >
+                  EU wetgeving
+                </Tab>
+                <Tab
+                  onClick={() => props.setTabFunction(3)}
+                  className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
+                >
+                  Over CircuLaw
+                </Tab>
+                <Tab
+                  onClick={() => props.setTabFunction(4)}
+                  className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
+                >
+                  Nieuws
+                </Tab>
               </TabList>
             </div>
           </div>
