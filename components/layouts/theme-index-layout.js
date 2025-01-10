@@ -40,7 +40,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
             </div>
 
             {/* Desktop Cards */}
-            {thema?.themaName === 'Houtbouw' || thema?.themaName === 'Voedselverspilling' ? (
+            {/* keeping this here as we will be re-using this layout when we add a call to action for the e-learning  */}
+            {thema?.themaName === 'keeping this here' ? (
               <>
                 <div className='grid-cols-3 md:gap-x-8 lg:gap-x-16 hidden sm:grid text-green-800'>
                   <div className='col-span-2 grid grid-col gap-y-4'>
