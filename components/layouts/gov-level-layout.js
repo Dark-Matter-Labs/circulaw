@@ -1,13 +1,33 @@
 'use client';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import OverviewPageHeader from '../theme-page/overview-page-header';
-import { IconArrowRight } from '@tabler/icons-react';
+import { IconArrowRight, IconInfoSquareRoundedFilled } from '@tabler/icons-react';
 
 export default function GovLevelLayout({ ...props }) {
   const allRegionLaws = props.allRegionLaws;
   const provLaws = props.provLaws;
   const gemLaws = props.gemLaws;
   const natLaws = props.natLaws;
+  const [selected, setSelected] = useState('none');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.localStorage.length > 0) {
+      let selected = localStorage.getItem('selectedGovLevel');
+      let keys = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        keys.push(localStorage.key(i));
+      }
+      setSelected(selected);
+    }
+  }, []);
+
+  const handleSelected = (value) => {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.setItem('selectedGovLevel', value);
+      setSelected(value);
+    }
+  };
 
   return (
     <div className=''>
@@ -21,7 +41,61 @@ export default function GovLevelLayout({ ...props }) {
       </div>
 
       <div className='global-margin flex flex-col'>
-        <div className='my-16'>NAV / TOP SECTION</div>
+        <div className='my-16 w-full bg-grey-100 border rounded-cl shadow-card px-8 py-12 flex justify-between items-center'>
+          <div>image</div>
+          <div className='max-w-[300px]'>
+            <div className='flex flex-row items-start'>
+              <IconInfoSquareRoundedFilled className='size-8 mr-3 text-green-500' />
+              <p className='p-base-semibold text-green-500 '>
+                Klik op de cirkels of de titels hieronder om te filteren
+              </p>
+            </div>
+            <ul className='flex flex-col'>
+              <li
+                className={`${
+                  selected === 'alle' ? 'bg-green-100 text-green-500' : 'bg-green-50 text-gray-500'
+                } py-2 px-4 rounded-cl my-2 text-nowrap w-min heading-2xl-semibold`}
+              >
+                <button onClick={() => handleSelected('alle')}>Alle overheidslagen</button>
+              </li>
+              <li
+                className={`${
+                  selected === 'nationaal'
+                    ? 'bg-green-100 text-green-500'
+                    : 'bg-green-50 text-gray-500'
+                } py-2 px-4 rounded-cl my-2 text-nowrap w-min heading-2xl-semibold`}
+              >
+                <button onClick={() => handleSelected('nationaal')}>Nationaal</button>
+              </li>
+              <li
+                className={`${
+                  selected === 'provinciaal'
+                    ? 'bg-green-100 text-green-500'
+                    : 'bg-green-50 text-gray-500'
+                } py-2 px-4 rounded-cl my-2 text-nowrap w-min heading-2xl-semibold`}
+              >
+                <button onClick={() => handleSelected('provinciaal')}>Provinciaal</button>
+              </li>
+              <li
+                className={`${
+                  selected === 'gemeentelijk'
+                    ? 'bg-green-100 text-green-500'
+                    : 'bg-green-50 text-gray-500'
+                } py-2 px-4 rounded-cl my-2 text-nowrap w-min heading-2xl-semibold`}
+              >
+                <button onClick={() => handleSelected('gemeentelijk')}>Gemeentelijk</button>
+              </li>
+
+              <li
+                className={`${
+                  selected === 'none' ? 'text-green-500' : 'text-gray-500'
+                } rounded-cl my-2 text-nowrap w-min p-base-semibold`}
+              >
+                <button onClick={() => handleSelected('none')}>Toon alle instrumenten</button>
+              </li>
+            </ul>
+          </div>
+        </div>
         <div className='flex my-16'>
           <div className='flex-col items-center hidden sm:flex'>
             <div className='[writing-mode:vertical-rl] rotate-180 mb-6 heading-3xl-semibold text-green-500'>
@@ -41,9 +115,9 @@ export default function GovLevelLayout({ ...props }) {
                       <Link
                         key={id}
                         href={`/${instrument.transitionAgenda}/${instrument.thema}/instrumenten/${instrument.slug.current}`}
-                        className=''
+                        className='link-interaction'
                       >
-                        <li className='mb-2 flex flex-row items-start'>
+                        <li className='mb-2 flex flex-row items-start '>
                           <div>
                             <IconArrowRight className='text-inherit size-6 mt-0.5' />
                           </div>
