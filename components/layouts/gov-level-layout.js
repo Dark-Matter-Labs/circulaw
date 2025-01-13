@@ -43,28 +43,46 @@ export default function GovLevelLayout({ ...props }) {
       <div className='global-margin flex flex-col'>
         <div className='my-16 w-full bg-grey-100 border rounded-cl shadow-card px-8 py-12 flex justify-between items-center relative'>
           <div className='flex items-center relative'>
-            <div className='rounded-full bg-green-50 shadow-card size-[332px] absolute left-0 z-10'>
-              <h3 className='heading-2xl-semibold text-green-500 absolute left-20 top-6'>
-                Nationaal
-              </h3>
+            <div
+              className={`${
+                selected === 'nationaal'
+                  ? 'bg-green-400 text-green-50'
+                  : 'bg-green-50 text-green-500'
+              } rounded-full  shadow-card size-[332px] absolute left-0 z-10`}
+            >
+              <h3 className='heading-2xl-semibold absolute left-20 top-6'>Nationaal</h3>
               <div className='absolute top-20 left-12'>
-                <NormalDistributionCircles laws={natLaws} />
+                <NormalDistributionCircles laws={natLaws} isSelected={selected === 'nationaal'} />
               </div>
             </div>
-            <div className='rounded-full bg-green-50 shadow-card size-[265px] absolute left-[132px] z-20'>
-              <h3 className='heading-2xl-semibold text-green-500 absolute left-14 top-6'>
-                Provinciaal
-              </h3>
+            <div
+              className={`${
+                selected === 'provinciaal'
+                  ? 'bg-green-400 text-green-50'
+                  : 'bg-green-50 text-green-500'
+              } rounded-full shadow-card size-[265px] absolute left-[132px] z-20`}
+            >
+              <h3 className='heading-2xl-semibold absolute left-14 top-6'>Provinciaal</h3>
               <div className='absolute top-20 left-12'>
-                <NormalDistributionCircles laws={provLaws} />
+                <NormalDistributionCircles
+                  laws={provLaws}
+                  isSelected={selected === 'provinciaal'}
+                />
               </div>
             </div>
-            <div className='rounded-full bg-green-50 shadow-card size-[220px] absolute left-[290px] z-30'>
-              <h3 className='heading-2xl-semibold text-green-500 absolute left-8 top-6'>
-                Gemeentelijk
-              </h3>
+            <div
+              className={`${
+                selected === 'gemeentelijk'
+                  ? 'bg-green-400 text-green-50'
+                  : 'bg-green-50 text-green-500'
+              } rounded-full shadow-card size-[220px] absolute left-[290px] z-30`}
+            >
+              <h3 className='heading-2xl-semibold absolute left-8 top-6'>Gemeentelijk</h3>
               <div className='absolute top-20 left-12'>
-                <NormalDistributionCircles laws={gemLaws} />
+                <NormalDistributionCircles
+                  laws={gemLaws}
+                  isSelected={selected === 'gemeentelijk'}
+                />
               </div>
             </div>
           </div>
@@ -241,7 +259,7 @@ export default function GovLevelLayout({ ...props }) {
   );
 }
 
-const NormalDistributionCircles = ({ laws }) => {
+const NormalDistributionCircles = ({ laws, isSelected }) => {
   // const ROWS = 5; // Fixed number of rows
 
   // Define the relative weights for a rotated normal distribution
@@ -273,7 +291,12 @@ const NormalDistributionCircles = ({ laws }) => {
       {rows.map((row, rowIndex) => (
         <div key={rowIndex} className='flex space-x-2'>
           {row.map((item, itemIndex) => (
-            <div key={itemIndex} className='size-4 bg-green-400 rounded-full w-5 h-5' />
+            <div
+              key={itemIndex}
+              className={`${
+                isSelected ? 'bg-green-50' : 'bg-green-400'
+              } size-4  rounded-full w-5 h-5`}
+            />
           ))}
         </div>
       ))}
