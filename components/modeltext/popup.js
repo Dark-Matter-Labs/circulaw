@@ -10,8 +10,10 @@ import {
 } from '@/lib/portable-text/pt-components';
 import Link from 'next/link';
 import { Dialog, DialogPanel, DialogTitle, DialogBackdrop, Button } from '@headlessui/react';
+import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 
 export default function PopUp({ pillars, modelTexts }) {
+  const { CustomEvent } = usePiwikPro();
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -166,8 +168,10 @@ export default function PopUp({ pillars, modelTexts }) {
                     <div className='p-base-semibold text-green-800'>Modeltekst omgevingsplan</div>
                     <div className='self-end relative'>
                       <button
+                        id='copy_modeltext'
                         onClick={() => {
                           navigator.clipboard.writeText(selectedModelText.modelTextPT);
+                          CustomEvent.trackEvent('modeltext', selectedModelText.title);
                           setShowLinkCopied(true);
                           setTimeout(() => {
                             setShowLinkCopied(false);

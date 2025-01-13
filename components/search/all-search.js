@@ -81,7 +81,7 @@ export default function AllSearch() {
                   onClick={() => setSelectedIndex(1)}
                   className='hover:text-green-300 w-full sm:w-4/5 border-b border-green-600 heading-2xl-semibold sm:heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
                 >
-                  Instruments <VirtualHits />
+                  Instrumenten <VirtualHits />
                 </button>
               </Index>
               <Index indexName='euLaw'>
