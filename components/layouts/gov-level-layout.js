@@ -41,8 +41,33 @@ export default function GovLevelLayout({ ...props }) {
       </div>
 
       <div className='global-margin flex flex-col'>
-        <div className='my-16 w-full bg-grey-100 border rounded-cl shadow-card px-8 py-12 flex justify-between items-center'>
-          <div>image</div>
+        <div className='my-16 w-full bg-grey-100 border rounded-cl shadow-card px-8 py-12 flex justify-between items-center relative'>
+          <div className='flex items-center relative'>
+            <div className='rounded-full bg-green-50 shadow-card size-[332px] absolute left-0 z-10'>
+              <h3 className='heading-2xl-semibold text-green-500 absolute left-20 top-6'>
+                Nationaal
+              </h3>
+              <div className='absolute top-20 left-12'>
+                <NormalDistributionCircles laws={natLaws} />
+              </div>
+            </div>
+            <div className='rounded-full bg-green-50 shadow-card size-[265px] absolute left-[132px] z-20'>
+              <h3 className='heading-2xl-semibold text-green-500 absolute left-14 top-6'>
+                Provinciaal
+              </h3>
+              <div className='absolute top-20 left-12'>
+                <NormalDistributionCircles laws={provLaws} />
+              </div>
+            </div>
+            <div className='rounded-full bg-green-50 shadow-card size-[220px] absolute left-[290px] z-30'>
+              <h3 className='heading-2xl-semibold text-green-500 absolute left-8 top-6'>
+                Gemeentelijk
+              </h3>
+              <div className='absolute top-20 left-12'>
+                <NormalDistributionCircles laws={gemLaws} />
+              </div>
+            </div>
+          </div>
           <div className='max-w-[300px]'>
             <div className='flex flex-row items-start'>
               <IconInfoSquareRoundedFilled className='size-8 mr-3 text-green-500' />
@@ -56,7 +81,9 @@ export default function GovLevelLayout({ ...props }) {
                   selected === 'alle' ? 'bg-green-100 text-green-500' : 'bg-green-50 text-gray-500'
                 } py-2 px-4 rounded-cl my-2 text-nowrap w-min heading-2xl-semibold`}
               >
-                <button onClick={() => handleSelected('alle')}>Alle overheidslagen</button>
+                <button onClick={() => handleSelected('alle')}>
+                  Alle overheidslagen {allRegionLaws.length}
+                </button>
               </li>
               <li
                 className={`${
@@ -65,7 +92,9 @@ export default function GovLevelLayout({ ...props }) {
                     : 'bg-green-50 text-gray-500'
                 } py-2 px-4 rounded-cl my-2 text-nowrap w-min heading-2xl-semibold`}
               >
-                <button onClick={() => handleSelected('nationaal')}>Nationaal</button>
+                <button onClick={() => handleSelected('nationaal')}>
+                  Nationaal {natLaws.length}
+                </button>
               </li>
               <li
                 className={`${
@@ -74,7 +103,9 @@ export default function GovLevelLayout({ ...props }) {
                     : 'bg-green-50 text-gray-500'
                 } py-2 px-4 rounded-cl my-2 text-nowrap w-min heading-2xl-semibold`}
               >
-                <button onClick={() => handleSelected('provinciaal')}>Provinciaal</button>
+                <button onClick={() => handleSelected('provinciaal')}>
+                  Provinciaal {provLaws.length}
+                </button>
               </li>
               <li
                 className={`${
@@ -83,7 +114,9 @@ export default function GovLevelLayout({ ...props }) {
                     : 'bg-green-50 text-gray-500'
                 } py-2 px-4 rounded-cl my-2 text-nowrap w-min heading-2xl-semibold`}
               >
-                <button onClick={() => handleSelected('gemeentelijk')}>Gemeentelijk</button>
+                <button onClick={() => handleSelected('gemeentelijk')}>
+                  Gemeentelijk {gemLaws.length}
+                </button>
               </li>
 
               <li
@@ -104,8 +137,8 @@ export default function GovLevelLayout({ ...props }) {
             <div className='bg-green-300 rounded-full h-full w-2' />
           </div>
           <div className='min-h-96 flex flex-col sm:flex-row gap-x-10 w-full ml-0 sm:ml-16'>
-            <div className='sm:basis-1/2'>
-              {allRegionLaws.length > 0 && (
+            {allRegionLaws.length && (selected === 'alle' || selected === 'none') > 0 && (
+              <div className='sm:basis-1/2'>
                 <>
                   <h2 className='heading-2xl-semibold text-green-500 mb-4'>
                     Alle overheidslagen {allRegionLaws.length}
@@ -127,10 +160,11 @@ export default function GovLevelLayout({ ...props }) {
                     ))}
                   </ul>
                 </>
-              )}
-            </div>
+              </div>
+            )}
+
             <div className='sm:basis-1/2 flex flex-col'>
-              {natLaws.length > 0 && (
+              {natLaws.length > 0 && (selected === 'nationaal' || selected === 'none') && (
                 <>
                   <h2 className='heading-2xl-semibold text-green-500 mb-4'>
                     Nationaal {natLaws.length}
@@ -153,7 +187,7 @@ export default function GovLevelLayout({ ...props }) {
                   </ul>
                 </>
               )}
-              {provLaws.length > 0 && (
+              {provLaws.length > 0 && (selected === 'provinciaal' || selected === 'none') && (
                 <>
                   <h2 className='heading-2xl-semibold text-green-500 mb-4'>
                     Provinciaal {provLaws.length}
@@ -176,7 +210,7 @@ export default function GovLevelLayout({ ...props }) {
                   </ul>
                 </>
               )}
-              {gemLaws.length > 0 && (
+              {gemLaws.length > 0 && (selected === 'gemeentelijk' || selected === 'none') && (
                 <>
                   <h2 className='heading-2xl-semibold text-green-500 mb-4'>
                     Gemeentelijk {gemLaws.length}
@@ -206,3 +240,43 @@ export default function GovLevelLayout({ ...props }) {
     </div>
   );
 }
+
+const NormalDistributionCircles = ({ laws }) => {
+  // const ROWS = 5; // Fixed number of rows
+
+  // Define the relative weights for a rotated normal distribution
+  const distributionPattern = [1, 3, 5, 3, 1];
+  const totalWeight = distributionPattern.reduce((sum, weight) => sum + weight, 0);
+
+  // Calculate the exact number of items per row
+  let itemsPerRow = distributionPattern.map((weight) =>
+    Math.floor((weight / totalWeight) * laws.length),
+  );
+
+  // Distribute any remaining items (due to rounding errors)
+  let remainingItems = laws.length - itemsPerRow.reduce((sum, count) => sum + count, 0);
+  for (let i = 0; remainingItems > 0; i++) {
+    itemsPerRow[2 - Math.abs(2 - i)]++; // Start filling from the middle row outward
+    remainingItems--;
+  }
+
+  // Split the `gemLaws` array into rows based on the calculated distribution
+  let currentIndex = 0;
+  const rows = itemsPerRow.map((count) => {
+    const rowItems = laws.slice(currentIndex, currentIndex + count);
+    currentIndex += count;
+    return rowItems;
+  });
+
+  return (
+    <div className='flex flex-col space-y-2'>
+      {rows.map((row, rowIndex) => (
+        <div key={rowIndex} className='flex space-x-2'>
+          {row.map((item, itemIndex) => (
+            <div key={itemIndex} className='size-4 bg-green-400 rounded-full w-5 h-5' />
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+};
