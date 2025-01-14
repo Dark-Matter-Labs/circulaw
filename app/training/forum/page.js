@@ -16,15 +16,15 @@ export default function ForumPage() {
           </div>
           <div className='mb-10'>
             <h1 className='text-gray-100 heading-2xl-semibold sm:heading-5xl-semibold'>
-              lets talk about what we learnt! 
+              lets talk about what we learnt!
             </h1>
           </div>
         </div>
       </div>
       <div className='min-h-60 global-margin'>
-      <div className='max-w-[700px]'>
-      <h2 className='heading-3xl-semibold my-10'>Come talk about round laws</h2></div>
-
+        <div className='max-w-[700px]'>
+          <h2 className='heading-3xl-semibold my-10'>Come talk about round laws</h2>
+        </div>
       </div>
     </div>
   );
