@@ -40,8 +40,8 @@ export default function GovLevelLayout({ ...props }) {
         />
       </div>
 
-      <div className='global-margin flex flex-col'>
-        <div className='my-16 w-full bg-grey-100 border rounded-cl shadow-card px-8 py-12 flex justify-between items-center relative'>
+      <div className='global-margin flex flex-col justify-center'>
+        <div className='my-16 w-full max-w-[1160px] bg-grey-100 border rounded-cl shadow-card px-20 py-12 flex justify-between items-center relative'>
           <div className='flex items-center relative'>
             <div
               className={`${
