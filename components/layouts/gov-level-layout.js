@@ -192,7 +192,7 @@ export default function GovLevelLayout({ ...props }) {
                       <Link
                         key={id}
                         href={`/${instrument.transitionAgenda}/${instrument.thema}/instrumenten/${instrument.slug.current}`}
-                        className=''
+                        className='link-interaction'
                       >
                         <li className='mb-2 flex flex-row items-start'>
                           <div>
@@ -215,7 +215,7 @@ export default function GovLevelLayout({ ...props }) {
                       <Link
                         key={id}
                         href={`/${instrument.transitionAgenda}/${instrument.thema}/instrumenten/${instrument.slug.current}`}
-                        className=''
+                        className='link-interaction'
                       >
                         <li className='mb-2 flex flex-row items-start'>
                           <div>
@@ -238,7 +238,7 @@ export default function GovLevelLayout({ ...props }) {
                       <Link
                         key={id}
                         href={`/${instrument.transitionAgenda}/${instrument.thema}/instrumenten/${instrument.slug.current}`}
-                        className=''
+                        className='link-interaction'
                       >
                         <li className='mb-2 flex flex-row items-start'>
                           <div>
