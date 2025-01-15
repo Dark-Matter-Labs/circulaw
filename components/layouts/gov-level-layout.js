@@ -41,14 +41,23 @@ export default function GovLevelLayout({ ...props }) {
       </div>
 
       <div className='global-margin flex flex-col justify-center'>
-        <div className='my-16 w-full max-w-[1160px] bg-grey-100 border rounded-cl shadow-card px-20 py-12 flex justify-between items-center relative'>
-          <div className='flex items-center relative'>
+        <svg xmlns='http://www.w3.org/2000/svg' width='600' height='332'>
+          <path
+            d='M 0 80
+           A 90 90, 75, 1, 0, 275 180'
+            stroke='#FF0000'
+            stroke-width='1'
+            fill='none'
+          />
+        </svg>
+        <div className='flex flex-col sm:flex-row my-16 w-full max-w-[1160px] bg-grey-100 border rounded-cl shadow-card px-6 sm:px-20 py-12 justify-between items-center relative'>
+          <div className='hidden sm:flex items-center relative'>
             <div
               className={`${
                 selected === 'nationaal'
                   ? 'bg-green-400 text-green-50'
                   : 'bg-green-50 text-green-500'
-              } rounded-full  shadow-card size-[332px] absolute left-0 z-10`}
+              } rounded-full shadow-card size-[332px] absolute left-0 z-10`}
             >
               <h3 className='heading-2xl-semibold absolute left-20 top-6'>Nationaal</h3>
               <div className='absolute top-20 left-12'>
@@ -86,6 +95,7 @@ export default function GovLevelLayout({ ...props }) {
               </div>
             </div>
           </div>
+
           <div className='max-w-[300px]'>
             <div className='flex flex-row items-start'>
               <IconInfoSquareRoundedFilled className='size-8 mr-3 text-green-500' />
@@ -146,6 +156,7 @@ export default function GovLevelLayout({ ...props }) {
               </li>
             </ul>
           </div>
+          <div className='h-64 flex sm:hidden'>Mobile version:</div>
         </div>
         <div className='flex my-16'>
           <div className='flex-col items-center hidden sm:flex'>
