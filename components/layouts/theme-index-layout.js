@@ -1,7 +1,6 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { DiscussionEmbed } from 'disqus-react';
 import { IconArrowRight, IconArrowDown } from '@tabler/icons-react';
 import ThemePageHeader from '../theme-page/theme-page-header';
 import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
@@ -10,7 +9,6 @@ import ThemeBottomSection from '@/components/theme-page/section-bottom-theme-ind
 import list from '@/public/thema-card-background/list.svg';
 import samenhang from '@/public/thema-card-background/samenhang.svg';
 import waarvoor from '@/public/thema-card-background/waarvoor.svg';
-import commentIcon from '@/public/comment-icon.svg';
 import comments from '@/public/comments.png';
 import { Link as ScrollLink } from 'react-scroll';
 import { useEffect } from 'react';
@@ -40,7 +38,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
             </div>
 
             {/* Desktop Cards */}
-            {thema?.themaName === 'Houtbouw' || thema?.themaName === 'Voedselverspilling' ? (
+            {/* keeping this here as we will be re-using this layout when we add a call to action for the e-learning  */}
+            {thema?.themaName === 'keeping this here' ? (
               <>
                 <div className='grid-cols-3 md:gap-x-8 lg:gap-x-16 hidden sm:grid text-green-800'>
                   <div className='col-span-2 grid grid-col gap-y-4'>
@@ -436,24 +435,6 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                   );
                 })}
               </ul>
-            </div>
-          )}
-
-          {(thema?.themaName === 'Houtbouw' || thema?.themaName === 'Voedselverspilling') && (
-            <div className='global-margin my-32 text-center' id='comments'>
-              <div className='flex justify-center items-center'>
-                <Image src={commentIcon} alt='' />
-                <h3 className='heading-xl-semibold sm:heading-2xl-semibold pl-2'>
-                  Kaart een nieuw onderwerp aan of discussieer mee
-                </h3>
-              </div>
-              <DiscussionEmbed
-                shortname='circulaw'
-                config={{
-                  identifier: thema?.slug.current,
-                  title: thema?.slug.current,
-                }}
-              />
             </div>
           )}
           {thema?.themeSponsors?.length > 0 && (
