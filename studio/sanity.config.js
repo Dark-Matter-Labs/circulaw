@@ -54,7 +54,7 @@ export default defineConfig({
         description: 'Instruments by a specific theme',
         schemaType: 'instrument',
         parameters: [{ name: 'themaId', type: 'string' }], // ,
-        value: (params) => ({ thema: { _type: '', _ref: params.themaId, _weak: true } }),
+        value: (params) => ({ thema: { _type: 'reference', _ref: params.themaId, _weak: true } }),
       },
       {
         id: 'instruments-by-top-5-theme',
@@ -62,7 +62,7 @@ export default defineConfig({
         description: 'Instruments by a top 5 theme',
         schemaType: 'instrument',
         parameters: [{ name: 'themaId', type: 'string' }], // ,
-        value: (params) => ({ thema: { _type: '', _ref: params.themaId, _weak: true } }),
+        value: (params) => ({ thema: { _type: 'reference', _ref: params.themaId, _weak: true } }),
       },
     ],
 
