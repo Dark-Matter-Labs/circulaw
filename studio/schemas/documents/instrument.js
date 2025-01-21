@@ -108,6 +108,7 @@ export default {
       title: 'Thema',
       name: 'thema',
       type: 'reference',
+      weak: true,
       description: 'Selecteer het thema waaronder dit instrument valt.',
       validation: (Rule) => Rule.required(),
       group: 'high-level',
