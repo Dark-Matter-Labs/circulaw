@@ -103,7 +103,18 @@ export const Structure = (S, context) =>
       S.listItem()
         .title("Thema's")
         .icon(BsCircle)
-        .child(S.documentList().title("Thema's").filter('_type in ["thema", "simpleThema"]')),
+        .child(
+          S.documentTypeList('transitionAgenda')
+            .title('Themas')
+            .child((transitieagendaId) =>
+              S.documentList()
+                .title("Thema's")
+                .filter(
+                  '_type in ["thema", "simpleThema"] && $transitieagendaId == transitionAgenda._ref',
+                )
+                .params({ transitieagendaId }),
+            ),
+        ),
       S.listItem()
         .title('EU wetgeving')
         .icon(GiEuropeanFlag)
