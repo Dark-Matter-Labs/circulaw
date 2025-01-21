@@ -88,7 +88,7 @@ export default {
         slugify: (input) =>
           input
             .toLowerCase()
-            .replace(/[^a-zA-Z0-9]/g, '')
+            .replace(/[^a-zA-Z0-9 ]/g, '')
             .replace(/\s+/g, '-')
             .slice(0, 200),
       },
@@ -108,6 +108,7 @@ export default {
       title: 'Thema',
       name: 'thema',
       type: 'reference',
+      weak: true,
       description: 'Selecteer het thema waaronder dit instrument valt.',
       validation: (Rule) => Rule.required(),
       group: 'high-level',

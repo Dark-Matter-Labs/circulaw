@@ -1,27 +1,17 @@
 'use client';
-import algoliasearch from 'algoliasearch';
-import { Hits, RefinementList, Configure } from 'react-instantsearch';
+import { Hits, Configure, RefinementList } from 'react-instantsearch';
 import { InstrumentHit } from '@/components/search/instrument-hit';
 import CustomStats from './stats';
 import Pagination from '@/components/search/pagination';
-import CustomClearRefinements from '@/components/search/clear-refinements';
-import MobileHeaderSearch from './mobile-header';
 import NoResults from './no-results';
 import NoResultsBoundary from './no-results-boundary';
-import { InstantSearchNext } from 'react-instantsearch-nextjs';
-import SearchHeader from './search-header';
+
 import Modal from '../modal/modal';
 import ModalContent from '../modal/modal-content';
 import RladderTooltipContent from '../instrument/tooltip-r-ladder-content';
-import FilterModalButton from '../modal/modal-buttons/filter-button';
+import CustomClearRefinements from './clear-refinements';
 import InstrumentTooltipButton from '../modal/modal-buttons/instrument-tooltip-button';
-
-const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
-const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
-
-const algoliaClient = algoliasearch(api_id, api_key);
-
-export const dynamic = 'force-dynamic';
+import FilterModalButton from '../modal/modal-buttons/filter-button';
 
 export default function InstrumentSearch() {
   const transformItems = (items) => {
@@ -40,32 +30,8 @@ export default function InstrumentSearch() {
   };
 
   return (
-    <InstantSearchNext
-      searchClient={algoliaClient}
-      indexName={'instruments'}
-      routing={{
-        router: {
-          cleanUrlOnDispose: false,
-        },
-      }}
-      future={{
-        preserveSharedStateOnUnmount: true,
-      }}
-      insights={true}
-    >
-      <Configure hitsPerPage={10} />
-      <div className='bg-green-50 h-[260px] flex items-end justify-center w-full'>
-        <div className='global-margin w-full flex items-center justify-center'>
-          {/* Desktop */}
-          <SearchHeader index='instruments' />
-          {/* Mobile */}
-          <MobileHeaderSearch index='instruments' />
-
-          {/* end mobile */}
-        </div>
-      </div>
-      {/* MOBILE FILTERS */}
-      <div className='global-margin flex justify-center'>
+    <>
+      <div className='flex items-center justify-center global-margin'>
         <Modal Button={<FilterModalButton />}>
           <ModalContent title=''>
             <div className=' p-4 flex justify-between'>
@@ -157,8 +123,11 @@ export default function InstrumentSearch() {
           </ModalContent>
         </Modal>
       </div>
-      <div className='global-margin flex'>
+      <Configure hitsPerPage={10} />
+      <div className='global-margin flex min-h-[80vh] justify-center sm:w-full'>
         <NoResultsBoundary fallback={<NoResults />}>
+          {/* MOBILE FILTERS */}
+
           <div className='hidden sm:flex flex-col mt-32 min-w-[270px]'>
             <div className='flex flex-col mr-12'>
               <CustomClearRefinements />
@@ -261,6 +230,6 @@ export default function InstrumentSearch() {
           </div>
         </NoResultsBoundary>
       </div>
-    </InstantSearchNext>
+    </>
   );
 }
