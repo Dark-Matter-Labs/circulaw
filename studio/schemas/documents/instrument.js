@@ -88,7 +88,7 @@ export default {
         slugify: (input) =>
           input
             .toLowerCase()
-            .replace(/[^a-zA-Z0-9]/g, '')
+            .replace(/[^a-zA-Z0-9 ]/g, '')
             .replace(/\s+/g, '-')
             .slice(0, 200),
       },
