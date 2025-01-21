@@ -390,6 +390,37 @@ export default function GovLevelLayout({ ...props }) {
                 </>
               )}
 
+              {props.thema === 'zonnepanelen' && (
+                <>
+                  {/* National */}
+                  <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[24%] right-[52%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[36%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[46%] right-[51%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[56%] right-[47%] h-3 w-3 rounded-full bg-gray-100'></div>
+
+                  {/* Provincial */}
+                  <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[65%] right-[30%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[65%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[75%] right-[35%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[60%] right-[80%] h-3 w-3 rounded-full bg-gray-100'></div>
+
+                  {/* Local */}
+                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-gray-100'></div>
+                </>
+              )}
+
               {/* ALL Regions 
             <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
             <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
