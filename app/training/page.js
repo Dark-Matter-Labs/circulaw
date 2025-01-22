@@ -100,7 +100,7 @@ export default function LearningLandingPage() {
             </div>
           </div>
         </div>
-        <Link href='/training/aanmelden'>
+        <Link href='/training/aanmelden' className='hidden md:block'>
           <div className='sticky top-32 bg-green-50 ml-16 w-80 flex flex-col p-4 text-green-600'>
             <div className='mb-2'>
               <IconBooks className='size-8' />
