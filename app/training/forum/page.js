@@ -35,7 +35,7 @@ export default function ForumPage() {
           </p>
           <p className='p-base mb-6'>
             Heb je de{' '}
-            <Link href='/trainging' className='link-base link-interaction'>
+            <Link href='/training' className='link-base link-interaction'>
               e-learning
             </Link>{' '}
             nog niet gedaan? Dan raden we je aan dat eerst te doen.{' '}

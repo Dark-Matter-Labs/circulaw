@@ -69,13 +69,22 @@ export default function ElearnignLiveEvent() {
       {!formStatus ? (
         <>
           <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pt-10'>
-            Schrijf je in voor de e-learning Houtbouw LIVE TRAINING
+            Livesessie: Circulaire Houtbouw onder de Omgevingswet
           </h1>
           <div className='mt-8 max-w-3xl mb-20'>
-            <p className='text-gray-800 pb-8 sm:col-span-2'>
-              Hoe zet je bestaande regelgeving in om houtbouw te verankeren in beleid, en zo de
-              circulaire economie te versnellen? Dat leer je in de e-learning Houtbouw van CircuLaw.
-              Schrijf je nu vast in! Je ontvangt dan medio januari de link naar de e-learning.
+            <p className='text-gray-800 pb-6 sm:col-span-2'>
+              Wat fijn dat je de e-learning over houtbouw onder de Omgevingswet hebt afgerond! En
+              wat leuk dat je interesse hebt in de verdiepende livesessie, op 4 maart in [locatie].
+            </p>
+            <p className='text-gray-800 pb-6'>
+              Als je hieronder je gegevens invult, dan laten we je snel weten of je wordt
+              uitgenodigd. Je ontvangt dan ook alle details over het programma. We maken een
+              selectie op basis van je rol en je profiel.
+            </p>
+            <p className='text-gray-800'>Misschien tot snel,</p>
+            <p className='text-gray-800 pb-8'>Team Circulaw</p>
+            <p className='text-gray-800 pb-8'>
+              Ik meld me aan voor de livesessie Houtbouw, op 4 maart in [locatie]
             </p>
             <form
               acceptCharset='UTF-8'
@@ -157,7 +166,7 @@ export default function ElearnignLiveEvent() {
               </div>
               <div className='sm:col-span-2'>
                 <label htmlFor='how' className='block  text-gray-800'>
-                  Waar heb je over deze e-learning gehoord?
+                  Did you finish the e learning?{' '}
                 </label>
                 <div className='mt-1 mb-4'>
                   <select
@@ -166,12 +175,8 @@ export default function ElearnignLiveEvent() {
                     className='rounded-xl border-green-600 '
                     onChange={handleChange()}
                   >
-                    <option value='LinkedIn'>CircuLaw LinkedIn</option>
-                    <option value='Website'>CircuLaw Website</option>
-                    <option value='Nieuwbrief'>CircuLaw Nieuwsbrief</option>
-                    <option value='Binnenlands Bestuur<'>Binnenlands Bestuur</option>
-                    <option value='Ikwilcirculairinkopen.nl'>Ikwilcirculairinkopen.nl</option>
-                    <option value='Ander'>Anders</option>
+                    <option value='LinkedIn'>Ja</option>
+                    <option value='Website'>Nee</option>
                   </select>
                   {howOther && (
                     <div className='mt-2'>
