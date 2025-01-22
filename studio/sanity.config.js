@@ -54,7 +54,7 @@ export default defineConfig({
         description: 'Instruments by a specific theme',
         schemaType: 'instrument',
         parameters: [{ name: 'themaId', type: 'string' }], // ,
-        value: (params, context) => resolveThemaId(params, context),
+        value: (params) => ({ thema: { _type: 'reference', _ref: params.themaId, _weak: true } }),
       },
       {
         id: 'instruments-by-top-5-theme',
@@ -62,7 +62,7 @@ export default defineConfig({
         description: 'Instruments by a top 5 theme',
         schemaType: 'instrument',
         parameters: [{ name: 'themaId', type: 'string' }], // ,
-        value: (params, context) => resolveSimpleThemaId(params, context),
+        value: (params) => ({ thema: { _type: 'reference', _ref: params.themaId, _weak: true } }),
       },
     ],
 
@@ -76,27 +76,3 @@ export default defineConfig({
     },
   },
 });
-
-async function resolveThemaId(params, context) {
-  const { getClient } = context;
-  const client = getClient({ apiVersion: '2024-07-15' });
-  const ids = await client.fetch(`*[_type == 'thema'][]._id`);
-  const themaRef = ids.includes(params.themaId)
-    ? params.themaId
-    : getIdPair(params.themaId).draftId;
-  return {
-    thema: { _type: 'reference', _ref: themaRef },
-  };
-}
-
-async function resolveSimpleThemaId(params, context) {
-  const { getClient } = context;
-  const client = getClient({ apiVersion: '2024-07-15' });
-  const ids = await client.fetch(`*[_type == 'simpleThema'][]._id`);
-  const themaRef = ids.includes(params.themaId)
-    ? params.themaId
-    : getIdPair(params.themaId).draftId;
-  return {
-    thema: { _type: 'reference', _ref: themaRef },
-  };
-}
