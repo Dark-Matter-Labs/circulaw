@@ -20,32 +20,45 @@ export default function ForumPage() {
           </div>
           <div className='mb-10'>
             <h1 className='text-gray-100 heading-2xl-semibold sm:heading-5xl-semibold'>
-              lets talk about what we learnt!
+              Praat verder over houtbouw!
             </h1>
           </div>
         </div>
       </div>
-      <div className='min-h-60 global-margin'>
+      <div className='global-margin my-16'>
         <div className='max-w-[700px]'>
-          <h2 className='heading-3xl-semibold my-10'>Come talk about round laws</h2>
-          <p className='p-base mb-6'>Some text to explain the forum</p>
+          <p className='p-base mb-6'>
+            Heb je onze e-learning &apos;circulaire houtbouw onder de Omgevingswet&apos; afgerond?
+            En wil je graag verder praten of je inzichten delen? Of heb je een specifieke casus? Dan
+            ben je hier op de juiste plek! Hier vind je experts, collega’s en andere gelijkgestemden
+            die zich net als jij bezighouden met houtbouw.
+          </p>
+          <p className='p-base mb-6'>
+            Heb je de{' '}
+            <Link href='/trainging' className='link-base link-interaction'>
+              e-learning
+            </Link>{' '}
+            nog niet gedaan? Dan raden we je aan dat eerst te doen.{' '}
+            <Link href='/training/aanmelden' className='link-base link-interaction'>
+              Meld je nu aan!
+            </Link>
+          </p>
         </div>
-      </div>
-
-      <div className='global-margin my-16 text-center' id='comments'>
-        <div className='flex justify-center items-center'>
-          <Image src={commentIcon} alt='' />
-          <h3 className='heading-xl-semibold sm:heading-2xl-semibold pl-2'>
-            Kaart een nieuw onderwerp aan of discussieer mee
-          </h3>
+        <div className='my-16 text-center max-w-[700px]' id='comments'>
+          <div className='flex justify-center items-center'>
+            <Image src={commentIcon} alt='' />
+            <h3 className='heading-xl-semibold sm:heading-2xl-semibold pl-2'>
+              Kaart een nieuw onderwerp aan of discussieer mee
+            </h3>
+          </div>
+          <DiscussionEmbed
+            shortname='circulaw'
+            config={{
+              identifier: 'eLearning',
+              title: 'eLearning',
+            }}
+          />
         </div>
-        <DiscussionEmbed
-          shortname='circulaw'
-          config={{
-            identifier: 'eLearning',
-            title: 'eLearning',
-          }}
-        />
       </div>
     </div>
   );
