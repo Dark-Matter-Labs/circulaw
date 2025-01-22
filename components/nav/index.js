@@ -594,7 +594,7 @@ export default function Nav(props) {
                         ref={mainMenuRef.setFloating}
                         style={mainMenuStyles}
                         {...mainMenuFloatingProps()}
-                        className='h-72 w-full -z-10 '
+                        className='h-[300px] w-full -z-10 '
                       >
                         <div
                           className='h-full shadow-lg'
