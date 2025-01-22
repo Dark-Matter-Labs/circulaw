@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { IconArrowRight, IconArrowDown } from '@tabler/icons-react';
+import { IconArrowRight } from '@tabler/icons-react';
 import ThemePageHeader from '../theme-page/theme-page-header';
 import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
 import CustomButton from '@/components/custom-button';
@@ -10,7 +10,6 @@ import list from '@/public/thema-card-background/list.svg';
 import samenhang from '@/public/thema-card-background/samenhang.svg';
 import waarvoor from '@/public/thema-card-background/waarvoor.svg';
 import comments from '@/public/comments.png';
-import { Link as ScrollLink } from 'react-scroll';
 import { useEffect } from 'react';
 import ThemeSponsors from '../theme-page/theme-sponsors';
 
@@ -39,7 +38,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
 
             {/* Desktop Cards */}
             {/* keeping this here as we will be re-using this layout when we add a call to action for the e-learning  */}
-            {thema?.themaName === 'keeping this here' ? (
+            {thema?.themaName === 'Houtbouw' ? (
               <>
                 <div className='grid-cols-3 md:gap-x-8 lg:gap-x-16 hidden sm:grid text-green-800'>
                   <div className='col-span-2 grid grid-col gap-y-4'>
@@ -99,7 +98,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                   </div>
 
                   <div className='col-span-1'>
-                    <ScrollLink to='comments' smooth={true} offset={-120} className='w-full'>
+                    <Link href='/training' className='w-full'>
                       <div className='w-full h-full shadow-md rounded-cl bg-green-50 flex flex-col p-4 cursor-pointer'>
                         <Image
                           src={comments}
@@ -109,34 +108,18 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           className=''
                         />
                         <div className='flex flex-col h-full w-full sm:p-4 md:p-6 lg:p-8 justify-between'>
-                          <div className='heading-2xl-semibold'>Laat je horen!</div>
-                          <div className='p-base'>
-                            Begin een discussie, deel je ervaringen, stel je vragen. Help zo jezelf
-                            en anderen verder.
-                            {/* 
-
-                            Er zijn al{' '}
-                            <CommentCount
-                              shortname='circulaw'
-                              config={{
-                                identifier: thema?.slug.current,
-                                title: thema?.slug.current,
-                              }}
-                            />{' '}
-                            gesprekken gaande. Discussieer mee, deel jouw ervaringen, stel je
-                            vragen. Help zo jezelf en anderen verder.*/}
-                          </div>
-
+                          <div className='heading-2xl-semibold'>Lets get learning</div>
+                          <div className='p-base'>Come and start e learning</div>
                           <CustomButton color='greenBackground'>
-                            Start de discussie
-                            <IconArrowDown
+                            Start Learning
+                            <IconArrowRight
                               className='inline-block h-5 w-5 ml-1 place-self-center'
                               aria-hidden='true'
                             />
                           </CustomButton>
                         </div>
                       </div>
-                    </ScrollLink>
+                    </Link>
                   </div>
                 </div>
                 <ul className='sm:hidden max-w-sm'>
@@ -211,33 +194,19 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                     </Link>
                   </li>
                 </ul>
-                <ScrollLink to='comments' smooth={true} offset={-120} className='w-full sm:hidden'>
+                <Link href='/training' className='w-full sm:hidden'>
                   <div className='mt-6 w-full rounded-cl bg-green-50 h-auto p-4 flex flex-col shadow gap-4'>
-                    <div className='heading-xl-semibold'>Laat je horen!</div>
-                    <div className='p-base'>
-                      Begin een discussie, deel je ervaringen, stel je vragen. Help zo jezelf en
-                      anderen verder.
-                      {/* 
-                      Er zijn al{' '}
-                      <CommentCount
-                        shortname='circulaw'
-                        config={{
-                          identifier: thema?.slug.current,
-                          title: thema?.slug.current,
-                        }}
-                      />{' '}
-                      gesprekken gaande. Discussieer mee, deel jouw ervaringen, stel je vragen. Help
-                      zo jezelf en anderen verder.*/}
-                    </div>
+                    <div className='heading-xl-semibold'>Lets get learning</div>
+                    <div className='p-base'>Come and start e learning</div>
                     <CustomButton color='greenBackground'>
-                      Start de discussie
+                      Start learning
                       <IconArrowRight
                         className='inline-block h-5 w-5 ml-1 place-self-center'
                         aria-hidden='true'
                       />
                     </CustomButton>
                   </div>
-                </ScrollLink>
+                </Link>
               </>
             ) : (
               <>
