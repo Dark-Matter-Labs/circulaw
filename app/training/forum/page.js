@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Link from 'next/link';
 import commentIcon from '@/public/comment-icon.svg';
 import Image from 'next/image';
@@ -28,27 +28,25 @@ export default function ForumPage() {
       <div className='min-h-60 global-margin'>
         <div className='max-w-[700px]'>
           <h2 className='heading-3xl-semibold my-10'>Come talk about round laws</h2>
-          <p className='p-base mb-6'>
-            Some text to explain the forum
-          </p>
+          <p className='p-base mb-6'>Some text to explain the forum</p>
         </div>
       </div>
 
       <div className='global-margin my-16 text-center' id='comments'>
-              <div className='flex justify-center items-center'>
-                <Image src={commentIcon} alt='' />
-                <h3 className='heading-xl-semibold sm:heading-2xl-semibold pl-2'>
-                  Kaart een nieuw onderwerp aan of discussieer mee
-                </h3>
-              </div>
-              <DiscussionEmbed
-                shortname='circulaw'
-                config={{
-                  identifier: 'eLearning',
-                  title: 'eLearning'
-                }}
-              />
+        <div className='flex justify-center items-center'>
+          <Image src={commentIcon} alt='' />
+          <h3 className='heading-xl-semibold sm:heading-2xl-semibold pl-2'>
+            Kaart een nieuw onderwerp aan of discussieer mee
+          </h3>
         </div>
+        <DiscussionEmbed
+          shortname='circulaw'
+          config={{
+            identifier: 'eLearning',
+            title: 'eLearning',
+          }}
+        />
+      </div>
     </div>
   );
 }
