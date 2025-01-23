@@ -107,11 +107,11 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           alt='comment image'
                           className=''
                         />
-                        <div className='flex flex-col h-full w-full sm:p-4 md:p-6 lg:p-8 justify-between'>
-                          <div className='heading-2xl-semibold'>
+                        <div className='flex flex-col h-full w-full pt-4 px-4 justify-between'>
+                          <div className='heading-2xl-semibold mb-2'>
                             E-learning Circulaire houtbouw onder de Omgevingswet
                           </div>
-                          <div className='p-base'>
+                          <div className='p-base mb-4'>
                             Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw te
                             verankeren in beleid? Dat leer je in onze e-learning: ‘Circulaire
                             houtbouw onder de Omgevingswet’. Meld je nu aan!
