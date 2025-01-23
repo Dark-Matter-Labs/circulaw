@@ -5,7 +5,7 @@ import Link from 'next/link';
 import CustomButton from '@/components/custom-button';
 import { scrollToTop } from '@/utils/scroll-to-top';
 
-const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/adrrqlja';
+const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/aroovgvb';
 
 export default function ElearnignLiveEvent() {
   const [formStatus, setFormStatus] = useState(false);
