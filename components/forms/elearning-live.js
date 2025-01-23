@@ -9,7 +9,6 @@ const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/adrrqlja';
 
 export default function ElearnignLiveEvent() {
   const [formStatus, setFormStatus] = useState(false);
-  // const [howOther, setHowOther] = useState(false);
   const [query, setQuery] = useState({
     name: '',
     org: '',
