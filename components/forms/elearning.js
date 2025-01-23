@@ -69,13 +69,13 @@ export default function ELearningRegisterComponent() {
       {!formStatus ? (
         <>
           <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pt-10'>
-            Schrijf je in voor de e-learning Houtbouw
+          E-learning &apos;Circulaire houtbouw&apos;: schrijf je nu in!
           </h1>
           <div className='mt-8 max-w-3xl mb-20'>
             <p className='text-gray-800 pb-8 sm:col-span-2'>
               Hoe zet je bestaande regelgeving in om houtbouw te verankeren in beleid, en zo de
               circulaire economie te versnellen? Dat leer je in de e-learning Houtbouw van CircuLaw.
-              Schrijf je nu vast in! Je ontvangt dan medio januari de link naar de e-learning.
+              Schrijf je nu in! Je ontvangt dan van ons de link naar de e-learning.
             </p>
             <form
               acceptCharset='UTF-8'
