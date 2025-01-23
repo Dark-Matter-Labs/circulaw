@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function LearningLandingPage() {
   return (
     <div className=''>
-      <div className='bg-green-600 h-72 my-3'>
+      <div className='bg-green-600 h-56 sm:h-72 my-3'>
         <div className='flex flex-col justify-between items-start h-full global-margin'>
           <div className='bg-gray-100 h-6 mt-6 flex items-center rounded-clSm'>
             <Link
@@ -35,7 +35,22 @@ export default function LearningLandingPage() {
             houtbouw in het beleid van jouw overheid? Dat leer je in onze e-learning:{' '}
             <span className='p-base-semibold'>circulaire houtbouw onder de Omgevingswet</span>.
           </p>
-          <h2 className='heading-3xl-semibold my-10'>Wat kun je verwachten?</h2>
+          <Link href='/training/aanmelden' className='block md:hidden'>
+          <div className='bg-green-50 mt-6 w-full flex flex-col p-4 text-green-600'>
+            <div className='mb-2'>
+              <IconBooks className='size-8' />
+            </div>
+            <div className='heading-2xl-semibold mb-6'>
+            Schrijf je nu in voor de e-learning circulaire houtbouw
+            </div>
+            <div>
+              <CustomButton color='lightGreenBackground'>
+              Meld je nu aan<IconArrowRight  className='ml-0.5'/>
+              </CustomButton>
+            </div>
+          </div>
+        </Link>
+          <h2 className='heading-2xl-semibold sm:heading-3xl-semibold my-10'>Wat kun je verwachten?</h2>
           <p className='p-base mb-6'>Krijg inzicht in de werking van de Omgevingswet</p>
           <div className='relative w-full mb-6 sm:mb-0 h-96'>
             <Image src='/image.png' alt='planregels image' fill className='z-10 object-cover' />
@@ -106,11 +121,11 @@ export default function LearningLandingPage() {
               <IconBooks className='size-8' />
             </div>
             <div className='heading-xl-semibold mb-6'>
-              Leer hoe je onze instrumenten het beste kan toepassen
+            Schrijf je nu in voor de e-learning circulaire houtbouw
             </div>
             <div>
               <CustomButton color='lightGreenBackground'>
-                Aanmelden <IconArrowRight />
+              Meld je nu aan<IconArrowRight  className='ml-0.5'/>
               </CustomButton>
             </div>
           </div>
