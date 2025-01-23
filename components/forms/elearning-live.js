@@ -29,8 +29,6 @@ export default function ElearnignLiveEvent() {
     }));
   };
 
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -163,11 +161,23 @@ export default function ElearnignLiveEvent() {
                   Did you finish the e learning?{' '}
                 </label>
                 <div className='mt-1 flex items-baseline'>
-                <input type='radio' name='isElearningFinished' value='no' onChange={handleChange()} className='checked:bg-green-800 text-green-800'/>
-                <label className='block text-gray-800 pl-2 pr-4'>Nee</label>
-                <input type='radio' name='isElearningFinished' value='yes' onChange={handleChange()} className='checked:bg-green-800 text-green-800'/>
-                <label className='block text-gray-800 pl-2'>Jaa</label>
-              </div>
+                  <input
+                    type='radio'
+                    name='isElearningFinished'
+                    value='no'
+                    onChange={handleChange()}
+                    className='checked:bg-green-800 text-green-800'
+                  />
+                  <label className='block text-gray-800 pl-2 pr-4'>Nee</label>
+                  <input
+                    type='radio'
+                    name='isElearningFinished'
+                    value='yes'
+                    onChange={handleChange()}
+                    className='checked:bg-green-800 text-green-800'
+                  />
+                  <label className='block text-gray-800 pl-2'>Jaa</label>
+                </div>
               </div>
               <div className='mt-1 flex items-baseline'>
                 <input type='hidden' name='subscribe' value='no' />
