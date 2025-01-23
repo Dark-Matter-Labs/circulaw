@@ -36,21 +36,24 @@ export default function LearningLandingPage() {
             <span className='p-base-semibold'>circulaire houtbouw onder de Omgevingswet</span>.
           </p>
           <Link href='/training/aanmelden' className='block md:hidden'>
-          <div className='bg-green-50 mt-6 w-full flex flex-col p-4 text-green-600'>
-            <div className='mb-2'>
-              <IconBooks className='size-8' />
+            <div className='bg-green-50 mt-6 w-full flex flex-col p-4 text-green-600'>
+              <div className='mb-2'>
+                <IconBooks className='size-8' />
+              </div>
+              <div className='heading-2xl-semibold mb-6'>
+                Schrijf je nu in voor de e-learning circulaire houtbouw
+              </div>
+              <div>
+                <CustomButton color='lightGreenBackground'>
+                  Meld je nu aan
+                  <IconArrowRight className='ml-0.5' />
+                </CustomButton>
+              </div>
             </div>
-            <div className='heading-2xl-semibold mb-6'>
-            Schrijf je nu in voor de e-learning circulaire houtbouw
-            </div>
-            <div>
-              <CustomButton color='lightGreenBackground'>
-              Meld je nu aan<IconArrowRight  className='ml-0.5'/>
-              </CustomButton>
-            </div>
-          </div>
-        </Link>
-          <h2 className='heading-2xl-semibold sm:heading-3xl-semibold my-10'>Wat kun je verwachten?</h2>
+          </Link>
+          <h2 className='heading-2xl-semibold sm:heading-3xl-semibold my-10'>
+            Wat kun je verwachten?
+          </h2>
           <p className='p-base mb-6'>Krijg inzicht in de werking van de Omgevingswet</p>
           <div className='relative w-full mb-6 sm:mb-0 h-96'>
             <Image src='/image.png' alt='planregels image' fill className='z-10 object-cover' />
@@ -94,10 +97,10 @@ export default function LearningLandingPage() {
             <div className='mb-6'>
               <h3 className='heading-2xl-semibold mb-4'>Komt er een vervolg op de e-learning?</h3>
               <p className='p-base'>
-                Jazeker! Want er valt nog zoveel meer te vertellen en te bespreken over houtbouw… In
-                maart organiseren we een live-sessie, voor geselecteerde deelnemers. Heb je de
-                e-learning voltooid? Meld je dan aan. Misschien behoor jij dan wel tot de
-                genodigden.
+                Jazeker! Want er valt nog zoveel meer te vertellen en te bespreken over houtbouw… Op
+                4 maart organiseren we een <span className='p-base-semibold'>live-sessie</span>,
+                voor geselecteerde deelnemers. Heb je de e-learning voltooid? Meld je dan aan.
+                Misschien behoor jij dan wel tot de genodigden.
               </p>
             </div>
             <div className='mb-6'>
@@ -111,7 +114,9 @@ export default function LearningLandingPage() {
             </div>
             <div className='mb-6'>
               <h3 className='heading-2xl-semibold mb-4'>Ik heb nog een andere vraag…</h3>
-              <p className='p-base'>We helpen je graag! Neem hier contact met ons op.</p>
+              <p className='p-base'>
+                We helpen je graag! Neem <Link href='/contact'>hier</Link> contact met ons op.
+              </p>
             </div>
           </div>
         </div>
@@ -121,11 +126,12 @@ export default function LearningLandingPage() {
               <IconBooks className='size-8' />
             </div>
             <div className='heading-xl-semibold mb-6'>
-            Schrijf je nu in voor de e-learning circulaire houtbouw
+              Schrijf je nu in voor de e-learning circulaire houtbouw
             </div>
             <div>
               <CustomButton color='lightGreenBackground'>
-              Meld je nu aan<IconArrowRight  className='ml-0.5'/>
+                Meld je nu aan
+                <IconArrowRight className='ml-0.5' />
               </CustomButton>
             </div>
           </div>
