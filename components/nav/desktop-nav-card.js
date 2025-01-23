@@ -26,6 +26,9 @@ export default function DesktopNavCard({ navData, closeNav }) {
       >
         {navData.title} {'>'}
       </Link>
+      {navData.title === 'Bouw' && (
+        <div className='p-base-semibold text-gray-100 mr-8 pb-2 border-b-2 mt-6'>Instrumenten</div>
+      )}
       {navData?.themas?.map((thema, id) => (
         <div className='mt-2' key={id}>
           <Link
@@ -55,11 +58,10 @@ export default function DesktopNavCard({ navData, closeNav }) {
       ))}
       {navData.title === 'Bouw' && (
         <>
-          <div
-            className={`${
-              pathname === '/' ? 'border-green-200' : 'border-green-400'
-            } border-t  mt-3`}
-          >
+          <div className='p-base-semibold text-gray-100 mr-8 pb-2 border-b-2 mt-6'>
+          Toepassing
+          </div>
+          <div>
             <Link
               href='/bouw/planregels'
               onClick={() => {
@@ -68,7 +70,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
               }}
               className={`${
                 pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '
-              } p-xs active:p-xs-semibold active:no-underline cursor-pointer flex flex-row items-center pt-2`}
+              } p-xs active:p-xs-semibold active:no-underline cursor-pointer flex flex-row items-center mt-2`}
             >
               <span className='hover:underline'>Modelteksten voor het omgevingsplan</span>
             </Link>
@@ -84,7 +86,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
                 pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '
               } p-xs active:p-xs-semibold active:no-underline cursor-pointer flex flex-row items-center pt-2`}
             >
-              <span className='hover:underline'>ELEARNING</span>
+              <span className='hover:underline'>E-learning &apos;Circulaire houtbouw&apos;</span>
             </Link>
           </div>
         </>
