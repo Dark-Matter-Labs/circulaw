@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
 import CustomButton from '@/components/custom-button';
@@ -9,7 +9,7 @@ const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/adrrqlja';
 
 export default function ElearnignLiveEvent() {
   const [formStatus, setFormStatus] = useState(false);
-  const [howOther, setHowOther] = useState(false);
+  // const [howOther, setHowOther] = useState(false);
   const [query, setQuery] = useState({
     name: '',
     org: '',
@@ -17,6 +17,7 @@ export default function ElearnignLiveEvent() {
     email: '',
     how: '',
     howOther: '',
+    isElearningFinished: '',
     subscribe: 'no',
   });
 
@@ -29,13 +30,7 @@ export default function ElearnignLiveEvent() {
     }));
   };
 
-  useEffect(() => {
-    if (query.how === 'Ander') {
-      setHowOther(true);
-    } else {
-      setHowOther(false);
-    }
-  }, [query]);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -168,29 +163,12 @@ export default function ElearnignLiveEvent() {
                 <label htmlFor='how' className='block  text-gray-800'>
                   Did you finish the e learning?{' '}
                 </label>
-                <div className='mt-1 mb-4'>
-                  <select
-                    name='how'
-                    value={query.how}
-                    className='rounded-xl border-green-600 '
-                    onChange={handleChange()}
-                  >
-                    <option value='LinkedIn'>Ja</option>
-                    <option value='Website'>Nee</option>
-                  </select>
-                  {howOther && (
-                    <div className='mt-2'>
-                      <input
-                        id='howOther'
-                        name='howOther'
-                        className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
-                        aria-describedby='howOther'
-                        value={query.howOther}
-                        onChange={handleChange()}
-                      />
-                    </div>
-                  )}
-                </div>
+                <div className='mt-1 flex items-baseline'>
+                <input type='radio' name='isElearningFinished' value='no' onChange={handleChange()} className='checked:bg-green-800 text-green-800'/>
+                <label className='block text-gray-800 pl-2 pr-4'>Nee</label>
+                <input type='radio' name='isElearningFinished' value='yes' onChange={handleChange()} className='checked:bg-green-800 text-green-800'/>
+                <label className='block text-gray-800 pl-2'>Jaa</label>
+              </div>
               </div>
               <div className='mt-1 flex items-baseline'>
                 <input type='hidden' name='subscribe' value='no' />
