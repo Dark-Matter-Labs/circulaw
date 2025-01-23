@@ -61,22 +61,29 @@ export default function ElearnignLiveEvent() {
       {!formStatus ? (
         <>
           <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pt-10'>
-            Livesessie: Circulaire Houtbouw onder de Omgevingswet
+            Livesessie: Circulaire houtbouw onder de Omgevingswet
           </h1>
           <div className='mt-8 max-w-3xl mb-20'>
             <p className='text-gray-800 pb-6 sm:col-span-2'>
-              Wat fijn dat je de e-learning over houtbouw onder de Omgevingswet hebt afgerond! En
-              wat leuk dat je interesse hebt in de verdiepende livesessie, op 4 maart in [locatie].
+              Wat fijn dat je de e-learning over circulaire houtbouw onder de Omgevingswet hebt
+              afgerond! En wat leuk dat je interesse hebt in de verdiepende livesessie, op{' '}
+              <span className='p-base-semibold'>
+                4 maart in Gebouw 027W van het AMS Institute, Kattenburgerstraat 5, Amsterdam
+              </span>
+              .
             </p>
             <p className='text-gray-800 pb-6'>
               Als je hieronder je gegevens invult, dan laten we je snel weten of je wordt
-              uitgenodigd. Je ontvangt dan ook alle details over het programma. We maken een
-              selectie op basis van je rol en je profiel.
+              uitgenodigd. Je ontvangt dan ook alle details over het programma.
+            </p>
+            <p className='text-gray-800 pb-6'>
+              Er is een beperkt aantal plekken. We maken een selectie op basis van je rol en je
+              profiel.
             </p>
             <p className='text-gray-800'>Misschien tot snel,</p>
             <p className='text-gray-800 pb-8'>Team Circulaw</p>
             <p className='text-gray-800 pb-8'>
-              Ik meld me aan voor de livesessie Houtbouw, op 4 maart in [locatie]
+              Ik meld me aan voor de livesessie Houtbouw, op 4 maart in Amsterdam.
             </p>
             <form
               acceptCharset='UTF-8'
