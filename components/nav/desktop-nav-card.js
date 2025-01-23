@@ -27,7 +27,13 @@ export default function DesktopNavCard({ navData, closeNav }) {
         {navData.title} {'>'}
       </Link>
       {navData.title === 'Bouw' && (
-        <div className={`${pathname === '/' ? 'text-gray-100 border-gray-100' : 'border-green-600 text-green-600'} p-base-semibold  mr-8 pb-2 border-b-2  mt-6`}>Instrumenten</div>
+        <div
+          className={`${
+            pathname === '/' ? 'text-gray-100 border-gray-100' : 'border-green-600 text-green-600'
+          } p-base-semibold  mr-8 pb-2 border-b-2  mt-6`}
+        >
+          Instrumenten
+        </div>
       )}
       {navData?.themas?.map((thema, id) => (
         <div className='mt-2' key={id}>
@@ -58,8 +64,12 @@ export default function DesktopNavCard({ navData, closeNav }) {
       ))}
       {navData.title === 'Bouw' && (
         <>
-          <div className={`${pathname === '/' ? 'text-gray-100 border-gray-100' : 'border-green-600 text-green-600'} p-base-semibold  mr-8 pb-2 border-b-2  mt-6`}>
-          Toepassing
+          <div
+            className={`${
+              pathname === '/' ? 'text-gray-100 border-gray-100' : 'border-green-600 text-green-600'
+            } p-base-semibold  mr-8 pb-2 border-b-2  mt-6`}
+          >
+            Toepassing
           </div>
           <div>
             <Link
