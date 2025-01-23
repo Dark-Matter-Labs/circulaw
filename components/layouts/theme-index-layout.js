@@ -108,10 +108,16 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           className=''
                         />
                         <div className='flex flex-col h-full w-full sm:p-4 md:p-6 lg:p-8 justify-between'>
-                          <div className='heading-2xl-semibold'>Lets get learning</div>
-                          <div className='p-base'>Come and start e learning</div>
+                          <div className='heading-2xl-semibold'>
+                            E-learning Circulaire houtbouw onder de Omgevingswet
+                          </div>
+                          <div className='p-base'>
+                            Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw te
+                            verankeren in beleid? Dat leer je in onze e-learning: ‘Circulaire
+                            houtbouw onder de Omgevingswet’. Meld je nu aan!
+                          </div>
                           <CustomButton color='greenBackground'>
-                            Start Learning
+                            Meld je nu aan
                             <IconArrowRight
                               className='inline-block h-5 w-5 ml-1 place-self-center'
                               aria-hidden='true'
@@ -196,10 +202,16 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                 </ul>
                 <Link href='/training' className='w-full sm:hidden'>
                   <div className='mt-6 w-full rounded-cl bg-green-50 h-auto p-4 flex flex-col shadow gap-4'>
-                    <div className='heading-xl-semibold'>Lets get learning</div>
-                    <div className='p-base'>Come and start e learning</div>
+                    <div className='heading-xl-semibold'>
+                      E-learning Circulaire houtbouw onder de Omgevingswet
+                    </div>
+                    <div className='p-base'>
+                      Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw te verankeren
+                      in beleid? Dat leer je in onze e-learning: ‘Circulaire houtbouw onder de
+                      Omgevingswet’. Meld je nu aan!
+                    </div>
                     <CustomButton color='greenBackground'>
-                      Start learning
+                      Meld je nu aan
                       <IconArrowRight
                         className='inline-block h-5 w-5 ml-1 place-self-center'
                         aria-hidden='true'

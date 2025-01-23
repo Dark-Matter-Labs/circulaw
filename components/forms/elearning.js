@@ -69,7 +69,7 @@ export default function ELearningRegisterComponent() {
       {!formStatus ? (
         <>
           <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pt-10'>
-          E-learning &apos;Circulaire houtbouw&apos;: schrijf je nu in!
+            E-learning &apos;Circulaire houtbouw&apos;: schrijf je nu in!
           </h1>
           <div className='mt-8 max-w-3xl mb-20'>
             <p className='text-gray-800 pb-8 sm:col-span-2'>

@@ -6,7 +6,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Modal from '../modal/modal';
 import ModalContent from '../modal/modal-content';
-import { IconArrowRight } from '@tabler/icons-react';
 
 // TODO: See what we could move to a layout.js file instead of having everything in components.
 export default function PCLayout({ ...props }) {
@@ -36,32 +35,62 @@ export default function PCLayout({ ...props }) {
             <div>
               {props.productChainData.pcName === 'Bouw' && (
                 <>
-                  <div className='mt-20'>
-                    <Link href='/bouw/planregels'>
-                      <div className='w-full bg-green-50 flex flex-col md:flex-row border border-gray-200 rounded-cl items-start md:items-center justify-between px-10 py-8 gap-8'>
-                        <p className='heading-2xl-semibold max-w-sm'>
-                          Planregels: modelteksten voor het omgevingsplan
-                        </p>
-                        <p className='p-base max-w-sm'>
-                          Samen met de omgevingsvisie en omgevingsprogramma is het omgevingsplan een
-                          van de instrumenten om circulair bouwen te bevorderen
-                        </p>
-                        <CustomButton color='lightGreenBackground'>
-                          Meer over het omgevingsplan
-                          <IconArrowRight />
-                        </CustomButton>
-                      </div>
-                    </Link>
+                  <div className='hidden sm:grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4 sm:gap-x-4 max-w-8xl relative z-0 mt-20'>
+                    <div className='w-full h-[470px] flex-grow bg-green-50 border border-gray-200 rounded-cl group'>
+                      <Link href='/training' className='w-full h-full'>
+                        <div className='h-full w-full flex flex-col flex-grow p-8 justify-between'>
+                          <h3 className='heading-2xl-semibold text-green-600'>
+                            E-learning Circulaire houtbouw onder de Omgevingswet
+                          </h3>
+                          <div>
+                            <p className='p-base pt-4 text-green-800'>
+                              Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw te
+                              verankeren in beleid? Dat leer je in onze e-learning: ‘Circulaire
+                              houtbouw onder de Omgevingswet’. Meld je nu aan!
+                            </p>
+                          </div>
+                          <div className='flex justify-center'>
+                            <CustomButton color='darkGreenBG'>Meld je nu aan </CustomButton>
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
+                    <div className='w-full h-[470px] flex-grow bg-green-50 border border-gray-200 rounded-cl group'>
+                      <Link href='/bouw/planregels' className='w-full h-full'>
+                        <div className='h-full w-full flex flex-col flex-grow p-8 justify-between'>
+                          <h3 className='heading-2xl-semibold text-green-600'>
+                            Planregels: modelteksten voor het omgevingsplan
+                          </h3>
+                          <div>
+                            <p className='p-base pt-4 text-green-800'>
+                              Samen met de omgevingsvisie en omgevingsprogramma is het omgevingsplan
+                              een van de instrumenten om circulair bouwen te bevorderen
+                            </p>
+                          </div>
+                          <div className='flex justify-center'>
+                            <CustomButton color='darkGreenBG'>
+                              Meer over het omgevingsplan{' '}
+                            </CustomButton>
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
                   </div>
-                  <div className='mt-20'>
-                    <Link href='/training'>
-                      <div className='w-full bg-green-50 flex flex-col md:flex-row border border-gray-200 rounded-cl items-start md:items-center justify-between px-10 py-8 gap-8'>
-                        <p className='heading-2xl-semibold max-w-sm'>LEARNING</p>
-                        <p className='p-base max-w-sm'>LEARNING</p>
-                        <CustomButton color='lightGreenBackground'>
-                          Meer over het LEARNING
-                          <IconArrowRight />
-                        </CustomButton>
+                  <div className='w-full bg-green-50 border border-gray-200 rounded-cl mt-6 block sm:hidden'>
+                    <Link href='/training' className='w-full h-full'>
+                      <div className='h-full w-full flex flex-col justify-between flex-grow p-6'>
+                        <h3 className='heading-2xl-semibold pb-4 text-green-600'>
+                          E-learning Circulaire houtbouw onder de Omgevingswet{' '}
+                        </h3>
+                        <p className='p-base text-gren-800'>
+                          Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw te
+                          verankeren in beleid? Dat leer je in onze e-learning: ‘Circulaire houtbouw
+                          onder de Omgevingswet’. Meld je nu aan!
+                        </p>
+
+                        <div className='flex grow self-baseline pt-6'>
+                          <CustomButton color='darkGreenBG'>Meld je nu aan </CustomButton>
+                        </div>
                       </div>
                     </Link>
                   </div>

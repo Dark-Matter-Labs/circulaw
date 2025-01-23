@@ -20,7 +20,7 @@ export default function ForumPage() {
           </div>
           <div className='mb-10'>
             <h1 className='text-gray-100 heading-2xl-semibold sm:heading-5xl-semibold max-w-4xl'>
-            Verder praten over circulaire houtbouw? Dat kan!
+              Verder praten over circulaire houtbouw? Dat kan!
             </h1>
           </div>
         </div>
@@ -28,14 +28,17 @@ export default function ForumPage() {
       <div className='global-margin my-16'>
         <div className='max-w-[700px]'>
           <p className='p-base mb-6'>
-            Heb je onze e-learning <Link href='/traning'>&apos;Circulaire houtbouw onder de Omgevingswet&apos;</Link> fgerond? En wil je graag verder praten of je inzichten delen? Of heb je een specifieke casus? Dan ben je hier op de juiste plek! Hier vind je experts, collega&apos;s en andere gelijkgestemden die zich net als jij bezighouden met houtbouw.
+            Heb je onze e-learning{' '}
+            <Link href='/traning'>&apos;Circulaire houtbouw onder de Omgevingswet&apos;</Link>{' '}
+            fgerond? En wil je graag verder praten of je inzichten delen? Of heb je een specifieke
+            casus? Dan ben je hier op de juiste plek! Hier vind je experts, collega&apos;s en andere
+            gelijkgestemden die zich net als jij bezighouden met houtbouw.
           </p>
           <p className='p-base mb-6'>
-          Heb je de e-learning nog niet gedaan? Dan raden we je aan dat eerst te doen.{' '}
+            Heb je de e-learning nog niet gedaan? Dan raden we je aan dat eerst te doen.{' '}
             <Link href='/training' className='link-base link-interaction'>
-            Meld je nu aan!
+              Meld je nu aan!
             </Link>{' '}
-          
           </p>
         </div>
         <div className='my-16 text-center max-w-[700px]' id='comments'>
