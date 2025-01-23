@@ -14,8 +14,6 @@ export default function ElearnignLiveEvent() {
     org: '',
     role: '',
     email: '',
-    how: '',
-    howOther: '',
     isElearningFinished: '',
     subscribe: 'no',
   });
@@ -45,8 +43,7 @@ export default function ElearnignLiveEvent() {
           org: '',
           role: '',
           email: '',
-          how: '',
-          howOther: '',
+          isElearningFinished: '',
           subscribe: 'no',
         });
         console.log(response);
@@ -164,7 +161,7 @@ export default function ElearnignLiveEvent() {
                 </div>
               </div>
               <div className='sm:col-span-2'>
-                <label htmlFor='how' className='block  text-gray-800'>
+                <label htmlFor='isElearningFinished' className='block  text-gray-800'>
                   Did you finish the e learning?{' '}
                 </label>
                 <div className='mt-1 flex items-baseline'>
