@@ -13,7 +13,7 @@ export default function Modal({ Button, children }) {
       <Dialog
         open={isOpen}
         onClose={() => setIsOpen(false)}
-        className='fixed z-120 inset-0 flex w-screen items-center justify-end'
+        className='fixed inset-0 z-120 flex w-screen items-center justify-end'
       >
         <DialogBackdrop
           transition

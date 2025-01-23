@@ -52,7 +52,7 @@ export default function ThemeLevelSearch(props) {
       insights={true}
     >
       <Configure hitsPerPage={10} filters={`thema:${props?.thema}`} />
-      <div className=' bg-green-600 h-[300px] sm:h-[360px]  flex items-end justify-center w-full mt-3'>
+      <div className='mt-3 flex h-[300px] w-full items-end justify-center bg-green-600 sm:h-[360px]'>
         <OverviewPageHeader
           thema={props?.thema}
           productChain={props.productChain}
@@ -60,8 +60,8 @@ export default function ThemeLevelSearch(props) {
           title={props.title}
         />
       </div>
-      <div className='flex items-center justify-center mt-4'>
-        <div className='mt-10 mb-10 hidden sm:flex items-center justify-start'>
+      <div className='mt-4 flex items-center justify-center'>
+        <div className='mb-10 mt-10 hidden items-center justify-start sm:flex'>
           <SearchBox
             searchAsYouType={false}
             placeholder={props.searchTitle + '...'}
@@ -75,7 +75,7 @@ export default function ThemeLevelSearch(props) {
             submitIconComponent={() => (
               <div
                 type='submit'
-                className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl hover:bg-green-200 hover:border-green-200'
+                className='p-base-semibold absolute right-3 top-3 ml-2 h-[42px] w-24 rounded-cl border border-white bg-white p-2 text-green-600 shadow-card hover:border-green-200 hover:bg-green-200'
               >
                 Zoeken
               </div>
@@ -84,7 +84,7 @@ export default function ThemeLevelSearch(props) {
               <div
                 type='reset'
                 title='Clear the search query'
-                className='absolute top-3.5 right-28 rounded-full p-2 hover:bg-green-300/50 group'
+                className='group absolute right-28 top-3.5 rounded-full p-2 hover:bg-green-300/50'
               >
                 <IconX className='h-6 w-6 text-green-600 group-hover:text-green-900' />
               </div>
@@ -92,7 +92,7 @@ export default function ThemeLevelSearch(props) {
           />
         </div>
       </div>
-      <div className='flex sm:hidden items-center justify-center mt-4'>
+      <div className='mt-4 flex items-center justify-center sm:hidden'>
         <SearchBox
           searchAsYouType={false}
           placeholder={props.searchTitle + '...'}
@@ -106,7 +106,7 @@ export default function ThemeLevelSearch(props) {
           submitIconComponent={() => (
             <div
               type='submit'
-              className='flex items-center ml-2 border h-[40px] w-22 border-white p-2 absolute top-2.5 right-2.5 shadow-card p-base-semibold text-green-600 bg-white rounded-cl'
+              className='w-22 p-base-semibold absolute right-2.5 top-2.5 ml-2 flex h-[40px] items-center rounded-cl border border-white bg-white p-2 text-green-600 shadow-card'
             >
               Zoeken
             </div>
@@ -115,7 +115,7 @@ export default function ThemeLevelSearch(props) {
             <div
               type='reset'
               title='Clear the search query'
-              className='absolute top-3 right-24 rounded-full p-2 hover:bg-green-300/50 group'
+              className='group absolute right-24 top-3 rounded-full p-2 hover:bg-green-300/50'
             >
               <IconX className='h-6 w-6 text-green-600 group-hover:text-green-900' />
             </div>
@@ -127,8 +127,8 @@ export default function ThemeLevelSearch(props) {
         <Modal Button={<FilterModalButton />}>
           <ModalContent title=''>
             <div className='flex justify-between'>
-              <div className='flex flex-col items-center justify-center mt-6 min-w-[270px] '>
-                <div className='flex flex-col mr-4'>
+              <div className='mt-6 flex min-w-[270px] flex-col items-center justify-center'>
+                <div className='mr-4 flex flex-col'>
                   <CustomClearRefinements />
                   <h4 className='heading-xl-semibold mb-1'>Overheidslaag</h4>
                   <RefinementList
@@ -147,7 +147,7 @@ export default function ThemeLevelSearch(props) {
                     sortBy={['label:asc']}
                   />
                 </div>
-                <div className='flex flex-col mr-4'>
+                <div className='mr-4 flex flex-col'>
                   <h4 className='heading-xl-semibold mb-1'>Categorie</h4>
                   <RefinementList
                     attribute='categorie'
@@ -167,8 +167,8 @@ export default function ThemeLevelSearch(props) {
                   />
                 </div>
 
-                <div className='flex flex-col mr-4'>
-                  <div className='flex flex-row w-full justify-between items-center'>
+                <div className='mr-4 flex flex-col'>
+                  <div className='flex w-full flex-row items-center justify-between'>
                     <h4 className='heading-xl-semibold mb-1'>Invloed</h4>
                     <Modal Button={<InstrumentTooltipButton />}>
                       <ModalContent title='Juridische invloed'>
@@ -193,8 +193,8 @@ export default function ThemeLevelSearch(props) {
                   />
                 </div>
 
-                <div className='flex flex-col mr-4'>
-                  <div className='flex flex-row w-full justify-between items-center'>
+                <div className='mr-4 flex flex-col'>
+                  <div className='flex w-full flex-row items-center justify-between'>
                     <h4 className='heading-xl-semibold mb-1'>Juridische houdbaarheid</h4>
                     <Modal Button={<InstrumentTooltipButton />}>
                       <ModalContent title='Geschatte juridische houdbaarheid'>
@@ -218,8 +218,8 @@ export default function ThemeLevelSearch(props) {
                     sortBy={['name:asc']}
                   />
                 </div>
-                <div className='flex flex-col mr-4'>
-                  <div className='flex flex-row w-full justify-between items-center'>
+                <div className='mr-4 flex flex-col'>
+                  <div className='flex w-full flex-row items-center justify-between'>
                     <h4 className='heading-xl-semibold mb-1'>R-Ladder</h4>
                     <Modal Button={<InstrumentTooltipButton />}>
                       <ModalContent title='R-ladder: strategieën van circulariteit'>
@@ -244,7 +244,7 @@ export default function ThemeLevelSearch(props) {
                     transformItems={transformItems}
                   />
                 </div>
-                <div className='flex flex-col mr-6'>
+                <div className='mr-6 flex flex-col'>
                   <RefinementList
                     attribute='extraContent'
                     title='Inclusief'
@@ -270,8 +270,8 @@ export default function ThemeLevelSearch(props) {
 
       <div className='global-margin flex'>
         <NoResultsBoundary fallback={<NoResults />}>
-          <div className='hidden sm:flex flex-col min-w-[270px]'>
-            <div className='flex flex-col mr-12 mt-10'>
+          <div className='hidden min-w-[270px] flex-col sm:flex'>
+            <div className='mr-12 mt-10 flex flex-col'>
               <CustomClearRefinements />
               <h4 className='heading-xl-semibold mb-1'>Overheidslaag</h4>
               <RefinementList
@@ -290,7 +290,7 @@ export default function ThemeLevelSearch(props) {
                 sortBy={['label:asc']}
               />
             </div>
-            <div className='flex flex-col mr-12'>
+            <div className='mr-12 flex flex-col'>
               <h4 className='heading-xl-semibold mb-1'>Categorie</h4>
               <RefinementList
                 attribute='categorie'
@@ -310,8 +310,8 @@ export default function ThemeLevelSearch(props) {
               />
             </div>
 
-            <div className='flex flex-col mr-12'>
-              <div className='flex flex-row w-full justify-between items-center mr-12'>
+            <div className='mr-12 flex flex-col'>
+              <div className='mr-12 flex w-full flex-row items-center justify-between'>
                 <h4 className='heading-xl-semibold mb-1'>Invloed</h4>
                 <Modal Button={<InstrumentTooltipButton />}>
                   <ModalContent title='Juridische invloed'>
@@ -335,8 +335,8 @@ export default function ThemeLevelSearch(props) {
                 sortBy={['name:asc']}
               />
             </div>
-            <div className='flex flex-col mr-12'>
-              <div className='flex flex-row w-full justify-between items-center mr-12'>
+            <div className='mr-12 flex flex-col'>
+              <div className='mr-12 flex w-full flex-row items-center justify-between'>
                 <h4 className='heading-xl-semibold mb-1'>Juridische houdbaarheid</h4>
                 <Modal Button={<InstrumentTooltipButton />}>
                   <ModalContent title='Geschatte juridische houdbaarheid'>
@@ -360,8 +360,8 @@ export default function ThemeLevelSearch(props) {
                 sortBy={['name:asc']}
               />
             </div>
-            <div className='flex flex-col mr-12'>
-              <div className='flex flex-row w-full justify-between items-center mr-12'>
+            <div className='mr-12 flex flex-col'>
+              <div className='mr-12 flex w-full flex-row items-center justify-between'>
                 <h4 className='heading-xl-semibold mb-1'>R-Ladder</h4>
                 <Modal Button={<InstrumentTooltipButton />}>
                   <ModalContent title='R-ladder: strategieën van circulariteit'>
@@ -386,7 +386,7 @@ export default function ThemeLevelSearch(props) {
                 transformItems={transformItems}
               />
             </div>
-            <div className='flex flex-col mr-12'>
+            <div className='mr-12 flex flex-col'>
               <RefinementList
                 attribute='extraContent'
                 title='Inclusief'
@@ -406,7 +406,7 @@ export default function ThemeLevelSearch(props) {
             </div>
           </div>
           <div>
-            <div className='sm:mt-10 sm:ml-14'>
+            <div className='sm:ml-14 sm:mt-10'>
               <CustomStats index='Instrumenten' />
             </div>
             <Hits
@@ -417,7 +417,7 @@ export default function ThemeLevelSearch(props) {
               }}
               hitComponent={InstrumentHit}
             />
-            <div className='w-full flex items-center justify-center mb-12 mt-6'>
+            <div className='mb-12 mt-6 flex w-full items-center justify-center'>
               <Pagination />
             </div>
           </div>

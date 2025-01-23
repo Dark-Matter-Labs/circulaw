@@ -31,12 +31,12 @@ export default function InstrumentSearch() {
 
   return (
     <>
-      <div className='flex items-center justify-center global-margin'>
+      <div className='global-margin flex items-center justify-center'>
         <Modal Button={<FilterModalButton />}>
           <ModalContent title=''>
-            <div className=' p-4 flex justify-between'>
-              <div className='flex flex-col mt-4 min-w-[270px] '>
-                <div className='flex flex-col mr-12'>
+            <div className='flex justify-between p-4'>
+              <div className='mt-4 flex min-w-[270px] flex-col'>
+                <div className='mr-12 flex flex-col'>
                   <CustomClearRefinements />
                   <h4 className='heading-xl-semibold mb-1'>Categorie</h4>
                   <RefinementList
@@ -56,7 +56,7 @@ export default function InstrumentSearch() {
                     sortBy={['label:asc']}
                   />
                 </div>
-                <div className='flex flex-col mr-4'>
+                <div className='mr-4 flex flex-col'>
                   <h4 className='heading-xl-semibold mb-1'>Thema</h4>
                   <RefinementList
                     attribute='thema'
@@ -74,7 +74,7 @@ export default function InstrumentSearch() {
                     sortBy={['label:asc']}
                   />
                 </div>
-                <div className='flex flex-col mr-4'>
+                <div className='mr-4 flex flex-col'>
                   <h4 className='heading-xl-semibold mb-1'>Overheidslaag</h4>
                   <RefinementList
                     attribute='overheidslaag'
@@ -92,8 +92,8 @@ export default function InstrumentSearch() {
                     sortBy={['label:asc']}
                   />
                 </div>
-                <div className='flex flex-col mr-4'>
-                  <div className='flex flex-row w-full justify-between items-center'>
+                <div className='mr-4 flex flex-col'>
+                  <div className='flex w-full flex-row items-center justify-between'>
                     <h4 className='heading-xl-semibold mb-1'>R-Ladder</h4>
                     <Modal Button={<InstrumentTooltipButton />}>
                       <ModalContent title='R-ladder: strategieën van circulariteit'>
@@ -128,8 +128,8 @@ export default function InstrumentSearch() {
         <NoResultsBoundary fallback={<NoResults />}>
           {/* MOBILE FILTERS */}
 
-          <div className='hidden sm:flex flex-col mt-32 min-w-[270px]'>
-            <div className='flex flex-col mr-12'>
+          <div className='mt-32 hidden min-w-[270px] flex-col sm:flex'>
+            <div className='mr-12 flex flex-col'>
               <CustomClearRefinements />
               <h4 className='heading-xl-semibold mb-1'>Categorie</h4>
               <RefinementList
@@ -149,7 +149,7 @@ export default function InstrumentSearch() {
                 sortBy={['label:asc']}
               />
             </div>
-            <div className='flex flex-col mr-12'>
+            <div className='mr-12 flex flex-col'>
               <h4 className='heading-xl-semibold mb-1'>Thema</h4>
               <RefinementList
                 attribute='thema'
@@ -167,7 +167,7 @@ export default function InstrumentSearch() {
                 sortBy={['label:asc']}
               />
             </div>
-            <div className='flex flex-col mr-12'>
+            <div className='mr-12 flex flex-col'>
               <h4 className='heading-xl-semibold mb-1'>Overheidslaag</h4>
               <RefinementList
                 attribute='overheidslaag'
@@ -185,8 +185,8 @@ export default function InstrumentSearch() {
                 sortBy={['label:asc']}
               />
             </div>
-            <div className='flex flex-col mr-12'>
-              <div className='flex flex-row w-full justify-between items-center mr-12'>
+            <div className='mr-12 flex flex-col'>
+              <div className='mr-12 flex w-full flex-row items-center justify-between'>
                 <h4 className='heading-xl-semibold mb-1'>R-Ladder</h4>
                 <Modal Button={<InstrumentTooltipButton />}>
                   <ModalContent title='R-ladder: strategieën van circulariteit'>
@@ -224,7 +224,7 @@ export default function InstrumentSearch() {
               }}
               hitComponent={InstrumentHit}
             />
-            <div className='w-full flex items-center justify-center mb-12 mt-6'>
+            <div className='mb-12 mt-6 flex w-full items-center justify-center'>
               <Pagination />
             </div>
           </div>

@@ -18,11 +18,11 @@ export default function PCLayout({ ...props }) {
         {/* HEADER MOBILE */}
         <div className='bg-gray-100'>
           <div className='global-margin pb-12 sm:pb-20'>
-            <div className='pt-14 pb-0 sm:pb-10'>
-              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 pb-8'>
+            <div className='pb-0 pt-14 sm:pb-10'>
+              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold pb-8 text-green-800'>
                 Thema’s en juridische instrumenten
               </h2>
-              <p className='pb-5 p-base max-w-2xl'>
+              <p className='p-base max-w-2xl pb-5'>
                 {props?.productChainData?.introOne} <b>{props?.totalInstruments} instrumenten</b>{' '}
                 {props?.productChainData?.introTwo}
               </p>
@@ -37,7 +37,7 @@ export default function PCLayout({ ...props }) {
               {props.productChainData.pcName === 'Bouw' && (
                 <div className='mt-20'>
                   <Link href='/bouw/planregels'>
-                    <div className='w-full bg-green-50 flex flex-col md:flex-row border border-gray-200 rounded-cl items-start md:items-center justify-between px-10 py-8 gap-8'>
+                    <div className='flex w-full flex-col items-start justify-between gap-8 rounded-cl border border-gray-200 bg-green-50 px-10 py-8 md:flex-row md:items-center'>
                       <p className='heading-2xl-semibold max-w-sm'>
                         Planregels: modelteksten voor het omgevingsplan
                       </p>
@@ -58,20 +58,20 @@ export default function PCLayout({ ...props }) {
         </div>
         <div className='bg-green-50'>
           <div className='global-margin'>
-            <div className='pt-10 pb-14'>
-              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 pb-14 max-w-3xl'>
+            <div className='pb-14 pt-10'>
+              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold max-w-3xl pb-14 text-green-800'>
                 {props?.productChainData?.impactTitle}
               </h2>
-              <div className='grid grid-cols-1 justify-items-center sm:flex sm:justify-center gap-20'>
+              <div className='grid grid-cols-1 justify-items-center gap-20 sm:flex sm:justify-center'>
                 {props?.impactList?.map((impact) => (
                   <div
-                    className='flex flex-col items-center justify-between text-center max-w-xs'
+                    className='flex max-w-xs flex-col items-center justify-between text-center'
                     key={impact.detail}
                   >
                     <div>
                       {impact?.image && (
                         <Image
-                          className='w-28 h-28 mb-6 rounded-cl'
+                          className='mb-6 h-28 w-28 rounded-cl'
                           src={urlFor(impact?.image).url()}
                           alt='impact image'
                           height={112}
@@ -81,12 +81,12 @@ export default function PCLayout({ ...props }) {
                         />
                       )}
                     </div>
-                    <div className='h-full flex items-start'>
+                    <div className='flex h-full items-start'>
                       <p className='p-base'>{impact.detail}</p>
                     </div>
                     <Modal
                       Button={
-                        <p className='pt-8 p-base-bold text-green-800 border-b pb-1 border-green-800'>
+                        <p className='p-base-bold border-b border-green-800 pb-1 pt-8 text-green-800'>
                           {impact.question}
                         </p>
                       }
@@ -102,15 +102,15 @@ export default function PCLayout({ ...props }) {
             </div>
           </div>
         </div>
-        <div className='global-margin pt-14 bg-gray-100'>
+        <div className='global-margin bg-gray-100 pt-14'>
           <div className='max-w-4xl'>
-            <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 pb-14'>
+            <h2 className='heading-2xl-semibold sm:heading-3xl-semibold pb-14 text-green-800'>
               {props?.productChainData?.ambitionTitle}
             </h2>
             {props?.ambitionList?.map((ambition, index) =>
               index % 2 == 0 ? (
-                <div key={index} className='grid grid-cols-1 sm:grid-cols-2 gap-x-[80px] pb-28'>
-                  <div className='block mb-6 sm:hidden'>
+                <div key={index} className='grid grid-cols-1 gap-x-[80px] pb-28 sm:grid-cols-2'>
+                  <div className='mb-6 block sm:hidden'>
                     {ambition?.image && (
                       <Image
                         src={urlFor(ambition?.image).url()}
@@ -124,10 +124,10 @@ export default function PCLayout({ ...props }) {
                   </div>
                   <div className=''>
                     <span className='p-base-semibold text-green-600'>{ambition.subTitle}</span>
-                    <h4 className='heading-2xl-semibold sm:3xl-semibold text-green-800 mt-2'>
+                    <h4 className='heading-2xl-semibold sm:3xl-semibold mt-2 text-green-800'>
                       {ambition.title}
                     </h4>
-                    <p className='p-base pt-4 max-w-xl pb-4'>{ambition.detail}</p>
+                    <p className='p-base max-w-xl pb-4 pt-4'>{ambition.detail}</p>
                     {ambition.buttonText && (
                       <Link href={ambition.buttonLink}>
                         <CustomButton color='lightGreenBackground'>
@@ -152,7 +152,7 @@ export default function PCLayout({ ...props }) {
               ) : (
                 <div
                   key={ambition.title}
-                  className='grid grid-cols-1 sm:grid-cols-2 gap-x-[80px] pb-28'
+                  className='grid grid-cols-1 gap-x-[80px] pb-28 sm:grid-cols-2'
                 >
                   <div>
                     {ambition?.image && (
@@ -169,10 +169,10 @@ export default function PCLayout({ ...props }) {
                   </div>
                   <div className=''>
                     <span className='p-base-semibold text-green-600'>{ambition.subTitle}</span>
-                    <h4 className='heading-2xl-semibold sm:3xl-semibold text-green-800 mt-2'>
+                    <h4 className='heading-2xl-semibold sm:3xl-semibold mt-2 text-green-800'>
                       {ambition.title}
                     </h4>
-                    <p className='p-base pt-4 max-w-xl pb-4'>{ambition.detail}</p>
+                    <p className='p-base max-w-xl pb-4 pt-4'>{ambition.detail}</p>
                     {ambition.buttonText && (
                       <Link href={ambition.buttonLink}>
                         <CustomButton color='lightGreenBackground'>
@@ -187,13 +187,13 @@ export default function PCLayout({ ...props }) {
           </div>
         </div>
         {props.links && (
-          <div className='pt-14 pb-10 bg-green-50'>
+          <div className='bg-green-50 pb-10 pt-14'>
             <div className='global-margin'>
-              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 pb-14'>
+              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold pb-14 text-green-800'>
                 Duik nog dieper in de materie{' '}
-                <span className='pl-0.5 inline-block h-6 w-6 -mb-1 relative'>
+                <span className='relative -mb-1 inline-block h-6 w-6 pl-0.5'>
                   <svg
-                    className='stroke-current h-6 w-6'
+                    className='h-6 w-6 stroke-current'
                     viewBox='0 0 24 24'
                     fill='none'
                     xmlns='http://www.w3.org/2000/svg'
@@ -209,11 +209,11 @@ export default function PCLayout({ ...props }) {
                 </span>
               </h2>
               <div className='newlineDisplay p-base -mt-2 mb-6'>
-                <ul className='list-disc pl-6 p-base'>
+                <ul className='p-base list-disc pl-6'>
                   {props?.links?.map((link, id) => (
                     <li className='py-0.5' key={id}>
                       <a
-                        className='text-green-500 inline link-interaction'
+                        className='link-interaction inline text-green-500'
                         href={link.link}
                         target='_blank'
                         rel='noreferrer'

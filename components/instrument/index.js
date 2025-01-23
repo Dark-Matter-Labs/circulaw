@@ -34,20 +34,20 @@ export default function Instrument({ data }) {
   return (
     <div ref={ref} className='relative bg-gray-100'>
       <InstrumentHeader data={data} />
-      <div className='bg-gray-100 relative z-0'>
+      <div className='relative z-0 bg-gray-100'>
         <InstrumentFeedbackBlock data={data} />
-        <div className='global-margin sm:mt-4 z-0'>
+        <div className='global-margin z-0 sm:mt-4'>
           {/* Subtitle */}
           <div className='grid grid-cols-1'>
             {data?.subtitel && (
               <div className='max-w-[760px]'>
-                <h2 className='lg:block heading-xl sm:mt-2'> {data?.subtitel}</h2>
+                <h2 className='heading-xl sm:mt-2 lg:block'> {data?.subtitel}</h2>
               </div>
             )}
           </div>
           {/* Content */}
           <div className='grid grid-cols-1'>
-            <div className='pb-20 max-w-[760px]'>
+            <div className='max-w-[760px] pb-20'>
               <div className=''>
                 <PortableText value={data?.content} components={portableTextComponents} />
               </div>
@@ -188,9 +188,9 @@ export default function Instrument({ data }) {
           <div
             className={`${
               scrollEffect
-                ? 'translate-y-0 transition-all ease-in duration-300'
-                : 'translate-y-14 transition-all ease-out duration-300'
-            } ${hidden ? 'hidden' : 'block'} bottom-0 sticky flex justify-center w-full`}
+                ? 'translate-y-0 transition-all duration-300 ease-in'
+                : 'translate-y-14 transition-all duration-300 ease-out'
+            } ${hidden ? 'hidden' : 'block'} sticky bottom-0 flex w-full justify-center`}
           >
             <MobileFeedback data={data} scrollEffect={scrollEffect} />
           </div>

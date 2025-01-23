@@ -3,8 +3,8 @@ import { useInstantSearch } from 'react-instantsearch';
 export default function NoResults() {
   const { uiState } = useInstantSearch();
   return (
-    <div className='flex items-start justify-center my-10 w-full '>
-      <div className='flex flex-col items-center justify-center max-w-md'>
+    <div className='my-10 flex w-full items-start justify-center'>
+      <div className='flex max-w-md flex-col items-center justify-center'>
         <h2 className='heading-2xl sm:heading-3xl mb-6'>
           Geen resultaten gevonden voor: &apos;
           <span className='heading-2xl-semibold sm:heading-3xl-semibold'>

@@ -19,11 +19,11 @@ export default function ThemeBottomSection({ featuredLaws, thema }) {
   return (
     <>
       <div className='bg-gray-200'>
-        <div className='py-8 global-margin'>
+        <div className='global-margin py-8'>
           <h3 className='heading-2xl-semibold sm:heading-3xl-semibold pb-4 lowercase first-letter:uppercase'>
             {thema?.featuredInstrumentTitle}
           </h3>
-          <p className='pb-10 p-base max-w-[830px]'>{thema?.featureInstrumentSubtitle}</p>
+          <p className='p-base max-w-[830px] pb-10'>{thema?.featureInstrumentSubtitle}</p>
 
           <div className=''>
             {images === true ? (
@@ -34,8 +34,8 @@ export default function ThemeBottomSection({ featuredLaws, thema }) {
               </>
             ) : (
               <>
-                <div className='max-w-7xl flex pb-10'>
-                  <div className='w-5 sm:w-2 bg-gradient-to-b from-[#25C38B] to-[#035E46] mr-4 rounded-full mb-10'></div>
+                <div className='flex max-w-7xl pb-10'>
+                  <div className='mb-10 mr-4 w-5 rounded-full bg-gradient-to-b from-[#25C38B] to-[#035E46] sm:w-2'></div>
                   <div>
                     {/* This can be a component - policy list, theme bottom section + here */}
                     {featuredLaws?.map((instrument, index) => (

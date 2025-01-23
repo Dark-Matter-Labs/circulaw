@@ -2,7 +2,7 @@ export default function TooltipJuridischeHoudbaarheidContent({ JHTooltipText }) 
   return (
     <div className='absolute inset-0'>
       {JHTooltipText && <p className='p-base'>{JHTooltipText}</p>}
-      <div className='bg-gray-100 mt-6'>
+      <div className='mt-6 bg-gray-100'>
         <p className='p-base'>
           Met de waardering ‘Juridische houdbaarheid laten we zien hoe risicovol een instrument is:
           wat is het afbreukrisico of de kans dat het instrument onderuit gaat bij de rechter.

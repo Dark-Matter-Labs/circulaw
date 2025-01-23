@@ -1,6 +1,6 @@
 export default function ContentSix() {
   return (
-    <div className='text-green-600 flex flex-col gap-y-6 max-w-[290px]'>
+    <div className='flex max-w-[290px] flex-col gap-y-6 text-green-600'>
       <h3 className='heading-2xl-semibold'>Terugkoppeling</h3>
       <p className='p-base'>
         In deze fase staat <span className='p-base-semibold'>toezicht</span> en{' '}

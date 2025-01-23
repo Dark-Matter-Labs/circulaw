@@ -28,9 +28,9 @@ export default function NewsHit({ hit }) {
       <>
         {hit.slug ? (
           <Link href={`/nieuws/${hit.slug}`}>
-            <div className='flex flex-col sm:flex-row mb-10'>
+            <div className='mb-10 flex flex-col sm:flex-row'>
               {hit.newsImage && (
-                <div className='h-[130px] w-[150px] rounded-cl overflow-hidden relative mr-6 mb-6 sm:mb-0'>
+                <div className='relative mb-6 mr-6 h-[130px] w-[150px] overflow-hidden rounded-cl sm:mb-0'>
                   <Image
                     className='w-full object-cover'
                     src={urlFor(hit.newsImage).auto('format').fit('max').url()}
@@ -44,10 +44,10 @@ export default function NewsHit({ hit }) {
                 </div>
               )}
               {!hit.newsImage && hit.newsOrAgenda === false && (
-                <div className='h-[130px] w-[150px] gradient-700 rounded-cl mr-6 p-base-semibold flex items-center justify-center mb-6 sm:mb-0'></div>
+                <div className='gradient-700 p-base-semibold mb-6 mr-6 flex h-[130px] w-[150px] items-center justify-center rounded-cl sm:mb-0'></div>
               )}
               <div className='flex flex-col'>
-                <div className='flex flex-row mb-6'>
+                <div className='mb-6 flex flex-row'>
                   <Tag classes='bg-green-800 text-white shrink mr-2'>{hit.category}</Tag>
                   {hit.newsDate && (
                     <Tag classes='bg-green-800 text-white shrink mr-2'>
@@ -79,9 +79,9 @@ export default function NewsHit({ hit }) {
           </Link>
         ) : (
           <Link href={hit.linkUrl} target={hit.linkUrl.includes('circulaw.nl') ? '' : '_blank'}>
-            <div className='flex flex-col sm:flex-row mb-10'>
+            <div className='mb-10 flex flex-col sm:flex-row'>
               {hit.newsImage && (
-                <div className='h-[130px] w-[150px] rounded-cl overflow-hidden relative mr-6 mb-6 sm:mb-0'>
+                <div className='relative mb-6 mr-6 h-[130px] w-[150px] overflow-hidden rounded-cl sm:mb-0'>
                   <Image
                     className='w-full object-cover'
                     src={urlFor(hit.newsImage).auto('format').fit('max').url()}
@@ -95,10 +95,10 @@ export default function NewsHit({ hit }) {
                 </div>
               )}
               {!hit.newsImage && hit.newsOrAgenda === false && (
-                <div className='h-[130px] w-[150px] gradient-700 rounded-cl mr-6 p-base-semibold flex items-center justify-center mb-6 sm:mb-0'></div>
+                <div className='gradient-700 p-base-semibold mb-6 mr-6 flex h-[130px] w-[150px] items-center justify-center rounded-cl sm:mb-0'></div>
               )}
               <div className='flex flex-col'>
-                <div className='flex flex-row mb-6'>
+                <div className='mb-6 flex flex-row'>
                   <Tag classes='bg-green-800 text-white shrink mr-2'>{hit.category}</Tag>
                   {hit.newsDate && (
                     <Tag classes='bg-green-800 text-white shrink mr-2'>
@@ -138,10 +138,10 @@ export default function NewsHit({ hit }) {
     );
   } else {
     return (
-      <Link href={hit?.link || ''} target='_blank' className='p-base text-green-800 '>
-        <div className='flex flex-col sm:flex-row mb-10'>
-          <div className='h-[130px] w-[150px] gradient-700 rounded-cl mr-6 flex flex-row items-center justify-center mb-6 sm:mb-0'>
-            <div className='mr-2 heading-4xl-semibold text-white'>
+      <Link href={hit?.link || ''} target='_blank' className='p-base text-green-800'>
+        <div className='mb-10 flex flex-col sm:flex-row'>
+          <div className='gradient-700 mb-6 mr-6 flex h-[130px] w-[150px] flex-row items-center justify-center rounded-cl sm:mb-0'>
+            <div className='heading-4xl-semibold mr-2 text-white'>
               {event.toLocaleDateString('nl-NL', day)}
             </div>
             <div>
@@ -154,7 +154,7 @@ export default function NewsHit({ hit }) {
             </div>
           </div>
           <div className='flex flex-col'>
-            <div className='flex flex-row mb-6'>
+            <div className='mb-6 flex flex-row'>
               <Tag classes='bg-green-800 text-white shrink mr-2'>agenda</Tag>
               {hit.link && (
                 <Tag classes='border border-green-300 text-green-300 shrink mr-2'>

@@ -32,15 +32,15 @@ export default function InstrumentHeader({ data }) {
   return (
     <>
       {/* Not sticky */}
-      <div className='sm:sticky -top-[304px] lgNav:-top-[277px] z-20 bg-gradient-to-b from-[#042D36] to-[#22532200] bg-green-500 pt-3'>
-        <div className='h-auto sm:h-[360px] flex flex-col global-margin justify-between'>
-          <div className='max-w-[800px] pt-6 pb-6 sm:pb-0 flex justify-between items-center'>
+      <div className='-top-[304px] z-20 bg-green-500 bg-gradient-to-b from-[#042D36] to-[#22532200] pt-3 sm:sticky lgNav:-top-[277px]'>
+        <div className='global-margin flex h-auto flex-col justify-between sm:h-[360px]'>
+          <div className='flex max-w-[800px] items-center justify-between pb-6 pt-6 sm:pb-0'>
             <button
               type='button'
               onClick={() => router.back()}
-              className='rounded-clSm bg-gray-100 pl-2 pr-3 py-1.5 p-2xs-bold text-green-600'
+              className='p-2xs-bold rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 text-green-600'
             >
-              <span className='link-interaction '>
+              <span className='link-interaction'>
                 {' '}
                 <span className='mr-2'>{'<'}</span>Terug
               </span>
@@ -50,7 +50,7 @@ export default function InstrumentHeader({ data }) {
             </div>
           </div>
           <div className='mb-6 h-auto'>
-            <div className='w-full flex'>
+            <div className='flex w-full'>
               <Link
                 href={`/${data?.transitionAgenda}/${data?.thema?.toLowerCase().replace(/ /g, '-')}`}
                 className=''
@@ -128,17 +128,17 @@ export default function InstrumentHeader({ data }) {
                 <Tag classes='bg-green-300 text-green-800 mr-2'>Fiscaal</Tag>
               )}
             </div>
-            <div className='max-w-4xl flex justify-start overflow-hidden'>
-              <h1 className='heading-2xl-semibold sm:heading-5xl-semibold justify-self-start lg:block mt-1 text-gray-100 pb-1'>
+            <div className='flex max-w-4xl justify-start overflow-hidden'>
+              <h1 className='heading-2xl-semibold sm:heading-5xl-semibold mt-1 justify-self-start pb-1 text-gray-100 lg:block'>
                 {data?.titel}
               </h1>
             </div>
           </div>
         </div>
         {/* Metadata */}
-        <div className='bg-gray-100 w-full flex justify-items-start sm:border-b sm:border-gray-300'>
+        <div className='flex w-full justify-items-start bg-gray-100 sm:border-b sm:border-gray-300'>
           <div className='global-margin w-full'>
-            <div className='grid grid-col-1 w-full max-w-4xl'>
+            <div className='grid-col-1 grid w-full max-w-4xl'>
               <InstrumentMetaData data={data} />
             </div>
           </div>

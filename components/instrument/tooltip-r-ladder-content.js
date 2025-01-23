@@ -32,7 +32,7 @@ export default function RladderTooltipContent() {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <span className='link-lg underline text-green-500 hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+          <span className='link-lg text-green-500 underline hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'>
             website van RVO
             <LinkIcon />
           </span>
