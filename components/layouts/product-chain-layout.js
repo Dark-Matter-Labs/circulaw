@@ -46,7 +46,7 @@ export default function PCLayout({ ...props }) {
                             <p className='p-base pt-4 text-green-800'>
                               Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw te
                               verankeren in beleid? Dat leer je in onze e-learning: ‘Circulaire
-                              houtbouw onder de Omgevingswet’. Meld je nu aan!
+                              houtbouw onder de Omgevingswet’.
                             </p>
                           </div>
                           <div className='flex justify-center'>
@@ -85,7 +85,7 @@ export default function PCLayout({ ...props }) {
                         <p className='p-base text-gren-800'>
                           Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw te
                           verankeren in beleid? Dat leer je in onze e-learning: ‘Circulaire houtbouw
-                          onder de Omgevingswet’. Meld je nu aan!
+                          onder de Omgevingswet’.
                         </p>
 
                         <div className='flex grow self-baseline pt-6'>

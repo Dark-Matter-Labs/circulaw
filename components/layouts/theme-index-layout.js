@@ -114,7 +114,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           <div className='p-base mb-4'>
                             Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw te
                             verankeren in beleid? Dat leer je in onze e-learning: ‘Circulaire
-                            houtbouw onder de Omgevingswet’. Meld je nu aan!
+                            houtbouw onder de Omgevingswet’.
                           </div>
                           <CustomButton color='greenBackground'>
                             Meld je nu aan
@@ -208,7 +208,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                     <div className='p-base'>
                       Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw te verankeren
                       in beleid? Dat leer je in onze e-learning: ‘Circulaire houtbouw onder de
-                      Omgevingswet’. Meld je nu aan!
+                      Omgevingswet’.
                     </div>
                     <CustomButton color='greenBackground'>
                       Meld je nu aan
