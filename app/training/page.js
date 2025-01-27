@@ -35,7 +35,11 @@ export default function LearningLandingPage() {
             houtbouw in het beleid van jouw overheid? Dat leer je in onze e-learning:{' '}
             <span className='p-base-semibold'>circulaire houtbouw onder de Omgevingswet</span>.
           </p>
-          <Link href='https://training.circulaw.nl/register/a6d26a79-e6b1-42d6-9499-1dbe196fc693' target='_blank' className='block md:hidden'>
+          <Link
+            href='https://training.circulaw.nl/register/a6d26a79-e6b1-42d6-9499-1dbe196fc693'
+            target='_blank'
+            className='block md:hidden'
+          >
             <div className='bg-green-50 mt-6 w-full flex flex-col p-4 text-green-600'>
               <div className='mb-2'>
                 <IconBooks className='size-8' />
@@ -121,7 +125,11 @@ export default function LearningLandingPage() {
             </div>
           </div>
         </div>
-        <Link href='https://training.circulaw.nl/register/a6d26a79-e6b1-42d6-9499-1dbe196fc693' target='_blank' className='hidden md:block'>
+        <Link
+          href='https://training.circulaw.nl/register/a6d26a79-e6b1-42d6-9499-1dbe196fc693'
+          target='_blank'
+          className='hidden md:block'
+        >
           <div className='sticky top-32 bg-green-50 ml-16 w-80 flex flex-col p-4 text-green-600'>
             <div className='mb-2'>
               <IconBooks className='size-8' />
