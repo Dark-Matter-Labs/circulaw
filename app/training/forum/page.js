@@ -30,7 +30,7 @@ export default function ForumPage() {
           <p className='p-base mb-6'>
             Heb je onze e-learning{' '}
             <Link href='/traning'>&apos;Circulaire houtbouw onder de Omgevingswet&apos;</Link>{' '}
-            fgerond? En wil je graag verder praten of je inzichten delen? Of heb je een specifieke
+            afgerond? En wil je graag verder praten of je inzichten delen? Of heb je een specifieke
             casus? Dan ben je hier op de juiste plek! Hier vind je experts, collega&apos;s en andere
             gelijkgestemden die zich net als jij bezighouden met houtbouw.
           </p>
