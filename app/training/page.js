@@ -106,7 +106,7 @@ export default function LearningLandingPage() {
               <h3 className='heading-2xl-semibold mb-4'>
                 Zijn er kosten aan de e-learning verbonden?
               </h3>
-              <p className='p-base'>Nee! Deze e-learning is helemaal gratis.</p>
+              <p className='p-base'>Nee! Deze e-learning is <span className='p-base-semibold'>helemaal gratis</span>.</p>
             </div>
             <div className='mb-6'>
               <h3 className='heading-2xl-semibold mb-4'>Hoelang duurt de e-learning?</h3>
@@ -117,8 +117,8 @@ export default function LearningLandingPage() {
               <p className='p-base'>
                 Jazeker! Want er valt nog zoveel meer te vertellen en te bespreken over houtbouw… Op
                 4 maart organiseren we een <span className='p-base-semibold'>live-sessie</span>,
-                voor geselecteerde deelnemers. Heb je de e-learning voltooid? Meld je dan aan.
-                Misschien behoor jij dan wel tot de genodigden.
+                voor geselecteerde deelnemers. Je ontvangt meer informatie als je de e-learning hebt voltooid.
+
               </p>
             </div>
 
