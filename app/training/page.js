@@ -94,6 +94,21 @@ export default function LearningLandingPage() {
           <div>
             <h2 className='heading-3xl-semibold my-10'>Veelgestelde vragen</h2>
             <div className='mb-6'>
+              <h3 className='heading-2xl-semibold mb-4'>
+                Voor wie is de e-learning Houtbouw bedoeld?
+              </h3>
+              <p className='p-base'>
+                De e-learning Houtbouw is bedoeld voor beleidsmedewerkers, juristen, beleidsmakers
+                en studenten die zich bezighouden met circulair beleid en circulaire regelgeving.
+              </p>
+            </div>
+            <div className='mb-6'>
+              <h3 className='heading-2xl-semibold mb-4'>
+                Zijn er kosten aan de e-learning verbonden?
+              </h3>
+              <p className='p-base'>Nee! Deze e-learning is helemaal gratis.</p>
+            </div>
+            <div className='mb-6'>
               <h3 className='heading-2xl-semibold mb-4'>Hoelang duurt de e-learning?</h3>
               <p className='p-base'>Reken op 1-1,5 uur.</p>
             </div>
@@ -106,15 +121,7 @@ export default function LearningLandingPage() {
                 Misschien behoor jij dan wel tot de genodigden.
               </p>
             </div>
-            <div className='mb-6'>
-              <h3 className='heading-2xl-semibold mb-4'>
-                Voor wie is de e-learning Houtbouw bedoeld?
-              </h3>
-              <p className='p-base'>
-                De e-learning Houtbouw is bedoeld voor beleidsmedewerkers, juristen, beleidsmakers
-                en studenten die zich bezighouden met circulair beleid en circulaire regelgeving.
-              </p>
-            </div>
+
             <div className='mb-6'>
               <h3 className='heading-2xl-semibold mb-4'>Ik heb nog een andere vraag…</h3>
               <p className='p-base'>

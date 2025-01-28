@@ -28,16 +28,20 @@ export default function ForumPage() {
       <div className='global-margin my-16'>
         <div className='max-w-[700px]'>
           <p className='p-base mb-6'>
-            Heb je onze e-learning{' '}
-            <Link href='/traning'><span className='p-base-semibold'>&apos;Circulaire houtbouw onder de Omgevingswet&apos;</span></Link>{' '}
-            afgerond? En wil je graag verder praten of je inzichten delen? Of heb je een specifieke
-            casus? Dan ben je hier op de juiste plek! Hier vind je experts, collega&apos;s en andere
+            Ben je bezig met de e-learning{' '}
+            <Link href='/traning'>
+              <span className='p-base-semibold'>
+                &apos;Circulaire houtbouw onder de Omgevingswet&apos;
+              </span>
+            </Link>
+            ? En wil je graag verder praten of je inzichten delen? Of heb je een specifieke casus?
+            Dan ben je hier op de juiste plek! Hier vind je experts, collega&apos;s en andere
             gelijkgestemden die zich net als jij bezighouden met houtbouw.
           </p>
           <p className='p-base mb-6'>
-            Heb je de e-learning nog niet gedaan? Dan raden we je aan dat eerst te doen.{' '}
+            Ben je nog niet met de e-learning begonnen? Dan raden we je aan dat eerst te doen.{' '}
             <Link href='/training' className='link-base link-interaction'>
-            Lees meer over de e-learning circulaire houtbouw!
+              Lees meer over de e-learning circulaire houtbouw!
             </Link>{' '}
           </p>
         </div>

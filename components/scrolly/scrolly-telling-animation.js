@@ -267,8 +267,8 @@ export default function ScrollyTellingAnimation() {
     scrollPosition < SVGfadeStart
       ? 1
       : scrollPosition > SFGfadeEnd
-        ? 0
-        : 1 - (scrollPosition - SVGfadeStart) / (SFGfadeEnd - SVGfadeStart);
+      ? 0
+      : 1 - (scrollPosition - SVGfadeStart) / (SFGfadeEnd - SVGfadeStart);
 
   const fadeInSVGTwoStart = endSVGTransition; // Start fading in 100px after endSVGTransition
   const fadeInSVGTwoEnd = fadeInSVGTwoStart + 200;
@@ -277,8 +277,8 @@ export default function ScrollyTellingAnimation() {
     scrollPosition < fadeInSVGTwoStart
       ? 0
       : scrollPosition > fadeInSVGTwoEnd
-        ? 1
-        : (scrollPosition - fadeInSVGTwoStart) / (fadeInSVGTwoEnd - fadeInSVGTwoStart);
+      ? 1
+      : (scrollPosition - fadeInSVGTwoStart) / (fadeInSVGTwoEnd - fadeInSVGTwoStart);
 
   const secondConeStart = 7300;
 
@@ -381,8 +381,8 @@ export default function ScrollyTellingAnimation() {
                     activeNav >= item.id
                       ? 'translate-y-0'
                       : screenHeight < 934
-                        ? 'translate-y-[150px]'
-                        : 'translate-y-[280px]'
+                      ? 'translate-y-[150px]'
+                      : 'translate-y-[280px]'
                   } transition-all duration-400 flex flex-row text-green-600 text-left`}
                   id={`nav${item.id + 1}`}
                   onClick={() =>
@@ -437,10 +437,10 @@ export default function ScrollyTellingAnimation() {
                     isActive
                       ? 'opacity-100 translate-y-0'
                       : prevActive
-                        ? 'opacity-0 translate-y-[200px]'
-                        : nextActive
-                          ? 'opacity-0 -translate-y-[200px]'
-                          : 'opacity-0 -translate-y-[200px]'
+                      ? 'opacity-0 translate-y-[200px]'
+                      : nextActive
+                      ? 'opacity-0 -translate-y-[200px]'
+                      : 'opacity-0 -translate-y-[200px]'
                   } transition-all duration-500 absolute top-0 left-0`}
                 >
                   <Content scrollPosition={scrollPosition} screenHeight={screenHeight} />
@@ -613,11 +613,11 @@ export default function ScrollyTellingAnimation() {
                     d={`
                 M ${317.5 - (outerCircleRadius - 20)} 317.5
                 a ${outerCircleRadius - 20} ${outerCircleRadius - 20} 0 1 1 ${
-                  2 * (outerCircleRadius - 12)
-                } 0
+                      2 * (outerCircleRadius - 12)
+                    } 0
                 a ${outerCircleRadius - 20} ${outerCircleRadius - 20} 0 1 1 ${
-                  -2 * (outerCircleRadius - 12)
-                } 0
+                      -2 * (outerCircleRadius - 12)
+                    } 0
               `}
                     fill='none'
                   />
@@ -676,11 +676,11 @@ export default function ScrollyTellingAnimation() {
                     d={`
                 M ${317.5 - (middleCircleRadius - 20)} 317.5
                 a ${middleCircleRadius - 20} ${middleCircleRadius - 20} 0 1 1 ${
-                  2 * (middleCircleRadius - 12)
-                } 0
+                      2 * (middleCircleRadius - 12)
+                    } 0
                 a ${middleCircleRadius - 20} ${middleCircleRadius - 20} 0 1 1 ${
-                  -2 * (middleCircleRadius - 12)
-                } 0
+                      -2 * (middleCircleRadius - 12)
+                    } 0
               `}
                     fill='none'
                   />
@@ -740,11 +740,11 @@ export default function ScrollyTellingAnimation() {
                     d={`
                 M ${317.5 - (innerCircleRadius - 20)} 317.5
                 a ${innerCircleRadius - 20} ${innerCircleRadius - 20} 0 1 1 ${
-                  2 * (innerCircleRadius - 12)
-                } 0
+                      2 * (innerCircleRadius - 12)
+                    } 0
                 a ${innerCircleRadius - 20} ${innerCircleRadius - 20} 0 1 1 ${
-                  -2 * (innerCircleRadius - 12)
-                } 0
+                      -2 * (innerCircleRadius - 12)
+                    } 0
               `}
                     fill='none'
                   />
