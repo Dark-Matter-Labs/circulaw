@@ -49,25 +49,27 @@ export default function ThemaCard({ themaCards }) {
               </li>
             </Link>
           ))}
-          <li className='w-full h-[470px] flex-grow bg-green-50 border border-gray-200 rounded-cl group'>
-            <Link href='/nieuwsbrief' className='w-full h-full'>
-              <div className='h-full w-full flex flex-col flex-grow p-8 justify-between'>
-                <h3 className='heading-2xl-semibold text-green-600'>Nieuwe thema’s</h3>
-                <div>
-                  <p className='p-base pt-4 text-green-800'>
-                    Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
-                  </p>
-                  <p className='p-base pt-4 text-grenn-800'>
-                    Schrijf je in op onze nieuwsbrief en blijf op de hoogte van de laatste
-                    ontwikkelingen.
-                  </p>
+          {themaCards[0].transitionAgenda !== 'bouw' && (
+            <li className='w-full h-[470px] flex-grow bg-green-50 border border-gray-200 rounded-cl group'>
+              <Link href='/nieuwsbrief' className='w-full h-full'>
+                <div className='h-full w-full flex flex-col flex-grow p-8 justify-between'>
+                  <h3 className='heading-2xl-semibold text-green-600'>Nieuwe thema’s</h3>
+                  <div>
+                    <p className='p-base pt-4 text-green-800'>
+                      Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
+                    </p>
+                    <p className='p-base pt-4 text-grenn-800'>
+                      Schrijf je in op onze nieuwsbrief en blijf op de hoogte van de laatste
+                      ontwikkelingen.
+                    </p>
+                  </div>
+                  <div className='flex justify-center'>
+                    <CustomButton color='darkGreenBG'>Houd me op de hoogte </CustomButton>
+                  </div>
                 </div>
-                <div className='flex justify-center'>
-                  <CustomButton color='darkGreenBG'>Houd me op de hoogte </CustomButton>
-                </div>
-              </div>
-            </Link>
-          </li>
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
       <div className='block sm:hidden'>
@@ -98,23 +100,25 @@ export default function ThemaCard({ themaCards }) {
             </div>
           </Link>
         ))}
-        <div className='w-full bg-green-50 border border-gray-200 rounded-cl'>
-          <Link href='/nieuwsbrief' className='w-full h-full'>
-            <div className='h-full w-full flex flex-col justify-between flex-grow p-6'>
-              <h3 className='heading-2xl-semibold pb-4 text-green-600'>Nieuwe thema’s</h3>
-              <p className='p-base text-gren-800'>
-                Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
-              </p>
-              <p className='p-base pt-4 text-green-800'>
-                Schrijf je in op onze nieuwsbrief en blijf op de hoogte van de laatste
-                ontwikkelingen.
-              </p>
-              <div className='flex grow self-baseline pt-6'>
-                <CustomButton color='darkGreenBG'>Houd me op de hoogte </CustomButton>
+        {themaCards[0].transitionAgenda !== 'bouw' && (
+          <div className='w-full bg-green-50 border border-gray-200 rounded-cl'>
+            <Link href='/nieuwsbrief' className='w-full h-full'>
+              <div className='h-full w-full flex flex-col justify-between flex-grow p-6'>
+                <h3 className='heading-2xl-semibold pb-4 text-green-600'>Nieuwe thema’s</h3>
+                <p className='p-base text-gren-800'>
+                  Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
+                </p>
+                <p className='p-base pt-4 text-green-800'>
+                  Schrijf je in op onze nieuwsbrief en blijf op de hoogte van de laatste
+                  ontwikkelingen.
+                </p>
+                <div className='flex grow self-baseline pt-6'>
+                  <CustomButton color='darkGreenBG'>Houd me op de hoogte </CustomButton>
+                </div>
               </div>
-            </div>
-          </Link>
-        </div>
+            </Link>
+          </div>
+        )}
       </div>
     </>
   );

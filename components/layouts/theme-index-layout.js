@@ -117,7 +117,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                             houtbouw onder de Omgevingswet’.
                           </div>
                           <CustomButton color='greenBackground'>
-                            Meld je nu aan
+                          Meer over de e-learning
                             <IconArrowRight
                               className='inline-block h-5 w-5 ml-1 place-self-center'
                               aria-hidden='true'
@@ -211,7 +211,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                       Omgevingswet’.
                     </div>
                     <CustomButton color='greenBackground'>
-                      Meld je nu aan
+                    Meer over de e-learning houtbouw
                       <IconArrowRight
                         className='inline-block h-5 w-5 ml-1 place-self-center'
                         aria-hidden='true'

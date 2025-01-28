@@ -50,7 +50,12 @@ export default function PCLayout({ ...props }) {
                             </p>
                           </div>
                           <div className='flex justify-center'>
-                            <CustomButton color='darkGreenBG'>Meld je nu aan </CustomButton>
+                            <CustomButton color='darkGreenBG'>
+                              <span className='flex flex-col w-full'>
+                                <span>Meer over de</span>{' '}
+                                <span className='block'>e-learning houtbouw</span>
+                              </span>{' '}
+                            </CustomButton>
                           </div>
                         </div>
                       </Link>
@@ -76,6 +81,7 @@ export default function PCLayout({ ...props }) {
                       </Link>
                     </div>
                   </div>
+
                   <div className='w-full bg-green-50 border border-gray-200 rounded-cl mt-6 block sm:hidden'>
                     <Link href='/training' className='w-full h-full'>
                       <div className='h-full w-full flex flex-col justify-between flex-grow p-6'>
@@ -89,7 +95,28 @@ export default function PCLayout({ ...props }) {
                         </p>
 
                         <div className='flex grow self-baseline pt-6'>
-                          <CustomButton color='darkGreenBG'>Meld je nu aan </CustomButton>
+                          <CustomButton color='darkGreenBG'>
+                            Meer over de e-learning houtbouw{' '}
+                          </CustomButton>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                  <div className='w-full bg-green-50 border border-gray-200 rounded-cl mt-6 block sm:hidden'>
+                    <Link href='/training' className='w-full h-full'>
+                      <div className='h-full w-full flex flex-col justify-between flex-grow p-6'>
+                        <h3 className='heading-2xl-semibold pb-4 text-green-600'>
+                          Planregels: modelteksten voor het omgevingsplan
+                        </h3>
+                        <p className='p-base text-gren-800'>
+                          Samen met de omgevingsvisie en omgevingsprogramma is het omgevingsplan een
+                          van de instrumenten om circulair bouwen te bevorderen
+                        </p>
+
+                        <div className='flex grow self-baseline pt-6'>
+                          <CustomButton color='darkGreenBG'>
+                            Meer over het omgevingsplan{' '}
+                          </CustomButton>
                         </div>
                       </div>
                     </Link>

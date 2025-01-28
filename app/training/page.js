@@ -31,7 +31,7 @@ export default function LearningLandingPage() {
             gebaseerd op{' '}
             <span className='p-base-semibold'>natuurlijke, hernieuwbare materialen</span> die zich
             uitstekend lenen voor
-            <span className='p-base-semibold'>hergebruik en recycling</span>. Maar hoe veranker je
+            <span className='p-base-semibold'> hergebruik en recycling</span>. Maar hoe veranker je
             houtbouw in het beleid van jouw overheid? Dat leer je in onze e-learning:{' '}
             <span className='p-base-semibold'>circulaire houtbouw onder de Omgevingswet</span>.
           </p>
@@ -45,7 +45,7 @@ export default function LearningLandingPage() {
                 <IconBooks className='size-8' />
               </div>
               <div className='heading-2xl-semibold mb-6'>
-                Schrijf je nu in voor de e-learning circulaire houtbouw
+                Meld je nu aan voor de e-learning circulaire houtbouw
               </div>
               <div>
                 <CustomButton color='lightGreenBackground'>
@@ -55,14 +55,11 @@ export default function LearningLandingPage() {
               </div>
             </div>
           </Link>
-          <h2 className='heading-2xl-semibold sm:heading-3xl-semibold my-10'>
+          <h2 className='heading-2xl-semibold sm:heading-3xl-semibold mt-10 mb-4'>
             Wat kun je verwachten?
           </h2>
-          <p className='p-base mb-6'>Krijg inzicht in de werking van de Omgevingswet</p>
-          <div className='relative w-full mb-6 sm:mb-0 h-96'>
-            <Image src='/image.png' alt='planregels image' fill className='z-10 object-cover' />
-          </div>
-          <ul className='p-base list-disc	list-outside ml-6 my-6'>
+          <ul className='p-base list-disc	list-outside ml-6 mb-6'>
+            <li>Krijg inzicht in de werking van de Omgevingswet</li>
             <li>
               Lees over de verschillende instrumenten van de Omgevingswet, en hun plek binnen de
               beleidscyclus
@@ -91,10 +88,11 @@ export default function LearningLandingPage() {
             target='_blank'
             className='link-base link-interaction flex flex-row items-center font-semibold'
           >
-            Schrijf je nu in <IconArrowRight className='ml-1 size-4' />
+            Meld je nu aan
+            <IconArrowRight className='ml-1 size-4' />
           </Link>
           <div>
-            <h2 className='heading-3xl-semibold my-10'>Ons antwoord op jouw vragen/FAQ</h2>
+            <h2 className='heading-3xl-semibold my-10'>Veelgestelde vragen</h2>
             <div className='mb-6'>
               <h3 className='heading-2xl-semibold mb-4'>Hoelang duurt de e-learning?</h3>
               <p className='p-base'>Reken op 1-1,5 uur.</p>
@@ -120,7 +118,11 @@ export default function LearningLandingPage() {
             <div className='mb-6'>
               <h3 className='heading-2xl-semibold mb-4'>Ik heb nog een andere vraag…</h3>
               <p className='p-base'>
-                We helpen je graag! Neem <Link href='/contact'>hier</Link> contact met ons op.
+                We helpen je graag!{' '}
+                <Link className='link-base link-interaction' href='/contact'>
+                  Neem contact met ons op
+                </Link>
+                .
               </p>
             </div>
           </div>
@@ -135,7 +137,7 @@ export default function LearningLandingPage() {
               <IconBooks className='size-8' />
             </div>
             <div className='heading-xl-semibold mb-6'>
-              Schrijf je nu in voor de e-learning circulaire houtbouw
+              Meld je nu aan voor de e-learning circulaire houtbouw
             </div>
             <div>
               <CustomButton color='lightGreenBackground'>

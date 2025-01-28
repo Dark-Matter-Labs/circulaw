@@ -29,7 +29,7 @@ export default function ForumPage() {
         <div className='max-w-[700px]'>
           <p className='p-base mb-6'>
             Heb je onze e-learning{' '}
-            <Link href='/traning'>&apos;Circulaire houtbouw onder de Omgevingswet&apos;</Link>{' '}
+            <Link href='/traning'><span className='p-base-semibold'>&apos;Circulaire houtbouw onder de Omgevingswet&apos;</span></Link>{' '}
             afgerond? En wil je graag verder praten of je inzichten delen? Of heb je een specifieke
             casus? Dan ben je hier op de juiste plek! Hier vind je experts, collega&apos;s en andere
             gelijkgestemden die zich net als jij bezighouden met houtbouw.
@@ -37,7 +37,7 @@ export default function ForumPage() {
           <p className='p-base mb-6'>
             Heb je de e-learning nog niet gedaan? Dan raden we je aan dat eerst te doen.{' '}
             <Link href='/training' className='link-base link-interaction'>
-              Meld je nu aan!
+            Lees meer over de e-learning circulaire houtbouw!
             </Link>{' '}
           </p>
         </div>
