@@ -74,7 +74,7 @@ export default function LearningLandingPage() {
             </li>
           </ul>
           <div className='relative w-full mb-6 sm:mb-0 h-96'>
-            <Image src='/image.png' alt='planregels image' fill className='z-10 object-cover' />
+            <Image src='/e-learning.png' alt='planregels image' fill className='z-10 object-cover' />
           </div>
           <p className='p-base my-6'>
             <span className='p-base-semibold'></span>

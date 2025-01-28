@@ -9,7 +9,7 @@ import ThemeBottomSection from '@/components/theme-page/section-bottom-theme-ind
 import list from '@/public/thema-card-background/list.svg';
 import samenhang from '@/public/thema-card-background/samenhang.svg';
 import waarvoor from '@/public/thema-card-background/waarvoor.svg';
-import comments from '@/public/comments.png';
+import elearning from '@/public/e-learning.png'
 import { useEffect } from 'react';
 import ThemeSponsors from '../theme-page/theme-sponsors';
 
@@ -101,11 +101,11 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                     <Link href='/training' className='w-full'>
                       <div className='w-full h-full shadow-md rounded-cl bg-green-50 flex flex-col p-4 cursor-pointer'>
                         <Image
-                          src={comments}
+                          src={elearning}
                           width={406}
                           height={172}
                           alt='comment image'
-                          className=''
+                          className='rounded-cl'
                         />
                         <div className='flex flex-col h-full w-full pt-4 px-4 justify-between'>
                           <div className='heading-2xl-semibold mb-2'>
