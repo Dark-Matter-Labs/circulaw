@@ -9,7 +9,7 @@ import ThemeBottomSection from '@/components/theme-page/section-bottom-theme-ind
 import list from '@/public/thema-card-background/list.svg';
 import samenhang from '@/public/thema-card-background/samenhang.svg';
 import waarvoor from '@/public/thema-card-background/waarvoor.svg';
-import elearning from '@/public/e-learning.png'
+import elearning from '@/public/e-learning.png';
 import { useEffect } from 'react';
 import ThemeSponsors from '../theme-page/theme-sponsors';
 
