@@ -1,7 +1,9 @@
-import LinkIcon from '../link-icon';
-import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { urlFor } from '@/lib/sanity';
+
+import LinkIcon from '../link-icon';
 
 // TODO: try and make these image load on the server/optimise them as they are slow
 export default function ThemePageHeader({ themaData }) {

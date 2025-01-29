@@ -1,13 +1,16 @@
 'use client';
-import { InstantSearch, Index, useHits, useInstantSearch } from 'react-instantsearch';
-import { useState, Fragment, useEffect } from 'react';
-import NewSearchBar from './search-bar';
-import { TabGroup, TabPanels, TabPanel } from '@headlessui/react';
-import AboutSearch from './about-search';
-import InstrumentSearch from './instrument-search';
-import EUSearch from './eu-search';
-import NewsSearch from './news-search';
+
+import { Fragment, useEffect, useState } from 'react';
+import { Index, InstantSearch, useHits, useInstantSearch } from 'react-instantsearch';
+
+import { TabGroup, TabPanel, TabPanels } from '@headlessui/react';
 import algoliasearch from 'algoliasearch';
+
+import AboutSearch from './about-search';
+import EUSearch from './eu-search';
+import InstrumentSearch from './instrument-search';
+import NewsSearch from './news-search';
+import NewSearchBar from './search-bar';
 
 // TODO:
 // the virtual scoped results needs a condition when there is no search term.

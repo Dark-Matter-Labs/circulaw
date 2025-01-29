@@ -1,6 +1,7 @@
+import { useRouter } from 'next/navigation';
+
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import { IconChevronUp } from '@tabler/icons-react';
-import { useRouter } from 'next/navigation';
 
 // TODO: Replace Popover with headless UI Listbox
 export default function InstrumentLinksDropdown({ page, productChain, thema }) {

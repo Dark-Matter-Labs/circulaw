@@ -1,5 +1,7 @@
 'use client';
+
 import { useEffect, useState } from 'react';
+
 import InstrumentCard from '../instrument/instrument-card';
 
 export default function ThemeBottomSection({ featuredLaws, thema }) {

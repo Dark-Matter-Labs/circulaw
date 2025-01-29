@@ -1,5 +1,7 @@
-import { Flex, Card, Stack, Select } from '@sanity/ui';
 import { useEffect, useState } from 'react';
+
+import { Card, Flex, Select, Stack } from '@sanity/ui';
+
 import { client } from '../../lib/sanity';
 
 const Q = `

@@ -1,5 +1,6 @@
-import Tag from '@/components/tag';
 import Link from 'next/link';
+
+import Tag from '@/components/tag';
 
 export default function AgendaCard({ data }) {
   // seperate date

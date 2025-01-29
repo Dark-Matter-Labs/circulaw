@@ -1,10 +1,11 @@
 import Image from 'next/image';
-import HighlightCard from './highlight-card';
-import HighlightsSmallCard from './highlights-small-card';
+
 import cpr1 from '@/public/eu-crp-icons/cpr-1.svg';
 import cpr2 from '@/public/eu-crp-icons/cpr-2.svg';
 import cpr3 from '@/public/eu-crp-icons/cpr-3.svg';
 import cpr4 from '@/public/eu-crp-icons/cpr-4.svg';
+import csddd1 from '@/public/eu-csddd-icons/csddd-1.svg';
+import csddd2 from '@/public/eu-csddd-icons/csddd-2.svg';
 import espr from '@/public/eu-espr-icons/espr-0.svg';
 import espr1 from '@/public/eu-espr-icons/espr-1.svg';
 import espr2 from '@/public/eu-espr-icons/espr-2.svg';
@@ -30,11 +31,12 @@ import tax3 from '@/public/eu-taxonomie-icons/3-taxonomie.svg';
 import tax4 from '@/public/eu-taxonomie-icons/4-taxonomie.svg';
 import tax5 from '@/public/eu-taxonomie-icons/5-taxonomie.svg';
 import tax6 from '@/public/eu-taxonomie-icons/6-taxonomie.svg';
-import csddd1 from '@/public/eu-csddd-icons/csddd-1.svg';
-import csddd2 from '@/public/eu-csddd-icons/csddd-2.svg';
 import wfd1 from '@/public/eu-wfd-icons/wfd-1.svg';
 import wfd2 from '@/public/eu-wfd-icons/wfd-2.svg';
 import wfd3 from '@/public/eu-wfd-icons/wfd-3.svg';
+
+import HighlightCard from './highlight-card';
+import HighlightsSmallCard from './highlights-small-card';
 
 export default function Highlights({ law }) {
   if (law === 'CSRD') {

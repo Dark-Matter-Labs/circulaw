@@ -1,4 +1,5 @@
 'use client';
+
 import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import { PortableText } from '@portabletext/react';
 

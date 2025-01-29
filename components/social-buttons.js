@@ -1,5 +1,8 @@
 'use client';
-import { IconLink } from '@tabler/icons-react';
+
+import { useState } from 'react';
+import { SocialIcon } from 'react-social-icons';
+
 import {
   EmailShareButton,
   LinkedinShareButton,
@@ -7,8 +10,8 @@ import {
   WhatsappShareButton,
 } from 'next-share';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
-import { SocialIcon } from 'react-social-icons';
+
+import { IconLink } from '@tabler/icons-react';
 
 const viewportType = {
   mobile: 'flex flex-row justify-between items-center px-2',

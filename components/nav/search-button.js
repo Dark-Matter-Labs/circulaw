@@ -1,6 +1,7 @@
-import { useSearchParams } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
+
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
 export default function SearchButton({ linkRef, searchIndex, searchQuery, closeSerchMenu }) {
   const searchParams = useSearchParams();

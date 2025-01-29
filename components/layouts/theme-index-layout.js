@@ -1,16 +1,20 @@
 'use client';
+
+import { useEffect } from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { IconArrowRight } from '@tabler/icons-react';
-import ThemePageHeader from '../theme-page/theme-page-header';
-import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
+
 import CustomButton from '@/components/custom-button';
 import ThemeBottomSection from '@/components/theme-page/section-bottom-theme-index';
+import elearning from '@/public/e-learning.png';
 import list from '@/public/thema-card-background/list.svg';
 import samenhang from '@/public/thema-card-background/samenhang.svg';
 import waarvoor from '@/public/thema-card-background/waarvoor.svg';
-import elearning from '@/public/e-learning.png';
-import { useEffect } from 'react';
+import { IconArrowRight } from '@tabler/icons-react';
+
+import ThemePageHeader from '../theme-page/theme-page-header';
+import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
 import ThemeSponsors from '../theme-page/theme-sponsors';
 
 // TODO: See what we could move to a layout.js file instead of having everything in components.

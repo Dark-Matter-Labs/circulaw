@@ -1,8 +1,10 @@
-import CustomButton from '../custom-button';
-import { urlFor } from '@/lib/sanity';
-import { IconArrowRight } from '@tabler/icons-react';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { urlFor } from '@/lib/sanity';
+import { IconArrowRight } from '@tabler/icons-react';
+
+import CustomButton from '../custom-button';
 
 export default function ThemaCard({ themaCards }) {
   return (

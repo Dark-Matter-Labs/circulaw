@@ -1,7 +1,10 @@
 'use client';
-import { useRef, useState, useEffect } from 'react';
-import ImageComponent from '../image-component';
+
+import { useEffect, useRef, useState } from 'react';
+
 import Link from 'next/link';
+
+import ImageComponent from '../image-component';
 
 export default function ThemeSponsors({ thema, sponsors }) {
   const ref = useRef();

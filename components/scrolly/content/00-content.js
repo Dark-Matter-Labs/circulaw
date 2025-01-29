@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+
 const PlayerWithNoSSR = dynamic(
   () => import('@lottiefiles/react-lottie-player').then((module) => module.Player),
   { ssr: false },

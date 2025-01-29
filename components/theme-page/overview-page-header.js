@@ -1,7 +1,9 @@
 'use client';
-import InstrumentLinksDropdown from '@/components/theme-page/instrument-links-dropdown';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
+import InstrumentLinksDropdown from '@/components/theme-page/instrument-links-dropdown';
 
 export default function OverviewPageHeader({ thema, productChain, title, page }) {
   const pathname = usePathname();

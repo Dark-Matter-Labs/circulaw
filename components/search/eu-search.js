@@ -1,10 +1,13 @@
 'use client';
-import { Hits, Configure } from 'react-instantsearch';
-import EUHit from './eu-law-hit';
-import CustomStats from './stats';
+
+import { Configure, Hits } from 'react-instantsearch';
+
 import Pagination from '@/components/search/pagination';
+
+import EUHit from './eu-law-hit';
 import NoResults from './no-results';
 import NoResultsBoundary from './no-results-boundary';
+import CustomStats from './stats';
 
 export default function EUSearch() {
   return (

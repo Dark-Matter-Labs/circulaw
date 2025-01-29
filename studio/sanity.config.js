@@ -1,12 +1,13 @@
-import { defaultDocumentNode } from './default-document-node';
-import { Structure } from './desk-structure';
-import { schemaTypes } from './schemas';
 import { table } from '@sanity/table';
 import { visionTool } from '@sanity/vision';
 import { defineConfig } from 'sanity';
+import { getIdPair } from 'sanity';
 import { vercelDeployTool } from 'sanity-plugin-vercel-deploy';
 import { structureTool } from 'sanity/structure';
-import { getIdPair } from 'sanity';
+
+import { defaultDocumentNode } from './default-document-node';
+import { Structure } from './desk-structure';
+import { schemaTypes } from './schemas';
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
 

@@ -1,19 +1,22 @@
 import { useState } from 'react';
+import { Link as ScrollLink } from 'react-scroll';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
 import CustomButton from '@/components/custom-button';
 import Partners from '@/components/nav/partners';
-import FooterLinkBlock from './footer-link-block';
+import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 import {
-  IconBrandGithub,
   IconArrowUp,
-  IconThumbUp,
-  IconThumbDown,
+  IconBrandGithub,
   IconBrandLinkedin,
   IconFileSearch,
+  IconThumbDown,
+  IconThumbUp,
 } from '@tabler/icons-react';
-import { Link as ScrollLink } from 'react-scroll';
-import { usePiwikPro } from '@piwikpro/next-piwik-pro';
-import { usePathname } from 'next/navigation';
+
+import FooterLinkBlock from './footer-link-block';
 
 const navigation = {
   other: [

@@ -1,6 +1,8 @@
-import CustomButton from '../custom-button';
-import { IconArrowRight } from '@tabler/icons-react';
 import Link from 'next/link';
+
+import { IconArrowRight } from '@tabler/icons-react';
+
+import CustomButton from '../custom-button';
 
 export default function FooterLinkBlock(props) {
   return (

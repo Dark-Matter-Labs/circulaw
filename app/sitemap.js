@@ -1,5 +1,5 @@
-import { client } from '@/lib/sanity';
 import { SITEMAP_QUERY } from '@/lib/queries';
+import { client } from '@/lib/sanity';
 
 const baseUrl = 'https://www.circulaw.nl';
 

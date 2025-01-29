@@ -1,9 +1,12 @@
-import Image from 'next/image';
-import { urlFor } from '@/lib/sanity';
-import Link from 'next/link';
-import Tag from '../tag';
 import { Highlight } from 'react-instantsearch';
+
+import Image from 'next/image';
+import Link from 'next/link';
+
+import { urlFor } from '@/lib/sanity';
 import { IconExternalLink } from '@tabler/icons-react';
+
+import Tag from '../tag';
 
 export default function NewsHit({ hit }) {
   const event = new Date(hit.newsDate);

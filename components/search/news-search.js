@@ -1,10 +1,13 @@
 'use client';
-import { Hits, Configure } from 'react-instantsearch';
-import NewsHit from './news-hit';
-import CustomStats from './stats';
+
+import { Configure, Hits } from 'react-instantsearch';
+
 import Pagination from '@/components/search/pagination';
+
+import NewsHit from './news-hit';
 import NoResults from './no-results';
 import NoResultsBoundary from './no-results-boundary';
+import CustomStats from './stats';
 
 export default function NewsSearch() {
   return (

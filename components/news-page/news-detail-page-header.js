@@ -1,7 +1,11 @@
 'use client';
-import Tag from '@/components/tag';
+
+import { useEffect, useState } from 'react';
+
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+
+import Tag from '@/components/tag';
+
 export default function NewsDetailPageHeader({ data }) {
   const event = new Date(data?.newsDate);
   const options = {

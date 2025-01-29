@@ -1,6 +1,8 @@
-import CustomButton from '../custom-button';
-import { IconArrowDown } from '@tabler/icons-react';
 import { Link as ScrollLink } from 'react-scroll';
+
+import { IconArrowDown } from '@tabler/icons-react';
+
+import CustomButton from '../custom-button';
 
 export default function HomepageHeader() {
   return (

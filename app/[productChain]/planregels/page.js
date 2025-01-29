@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
-import { IconChevronDown, IconArrowRight } from '@tabler/icons-react';
 import { notFound } from 'next/navigation';
+
 import ScrollyTellingAnimation from '@/components/scrolly/scrolly-telling-animation';
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
+import { IconArrowRight, IconChevronDown } from '@tabler/icons-react';
 
 export default function ScrollyTellingPage({ params }) {
   if (params.productChain === 'bouw') {

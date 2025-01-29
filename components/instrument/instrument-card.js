@@ -1,6 +1,7 @@
-import Link from 'next/link';
-import Tag from '@/components/tag';
 import Image from 'next/image';
+import Link from 'next/link';
+
+import Tag from '@/components/tag';
 import { urlFor } from '@/lib/sanity';
 
 export default function InstrumentCard({ instrument, images }) {

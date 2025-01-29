@@ -1,10 +1,13 @@
 'use client';
-import AboutPageDropdown from './about-page-dropdown';
-import AboutPageNav from './about-page-nav';
+
+import Image from 'next/image';
+import Link from 'next/link';
+
 import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import { PortableText } from '@portabletext/react';
-import Link from 'next/link';
-import Image from 'next/image';
+
+import AboutPageDropdown from './about-page-dropdown';
+import AboutPageNav from './about-page-nav';
 
 export default function AboutPageComponent({ data }) {
   return (

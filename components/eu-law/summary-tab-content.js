@@ -1,12 +1,14 @@
-import LinkIcon from '../link-icon';
-import Highlights from './highlights';
-import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
-import Modal from '../modal/modal';
-import ModalContent from '../modal/modal-content';
-import EULawButton from '../modal/modal-buttons/eu-status-button';
+
+import { urlFor } from '@/lib/sanity';
+
 import ImageComponent from '../image-component';
+import LinkIcon from '../link-icon';
+import Modal from '../modal/modal';
+import EULawButton from '../modal/modal-buttons/eu-status-button';
+import ModalContent from '../modal/modal-content';
+import Highlights from './highlights';
 
 export default function SummaryComponent({ lawData }) {
   return (

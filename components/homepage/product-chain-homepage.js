@@ -1,7 +1,8 @@
-import { urlFor } from '@/lib/sanity';
-import { IconArrowRight } from '@tabler/icons-react';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { urlFor } from '@/lib/sanity';
+import { IconArrowRight } from '@tabler/icons-react';
 
 export default function PCHomePage({ pcData }) {
   return (

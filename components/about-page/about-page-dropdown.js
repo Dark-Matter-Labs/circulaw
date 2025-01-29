@@ -1,7 +1,9 @@
 'use client';
+
+import { useRouter } from 'next/navigation';
+
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { IconChevronDown } from '@tabler/icons-react';
-import { useRouter } from 'next/navigation';
 
 export default function AboutPageDropdown({ currentSlug, slugs }) {
   const remainingTitles = slugs?.filter((el) => el.slug !== currentSlug) ?? [];

@@ -1,11 +1,12 @@
 import { notFound } from 'next/navigation';
+
+import PCLayout from '@/components/layouts/product-chain-layout';
 import {
   PC_PATHS_QUERY,
+  PRODUCT_CHAIN_METADATA_QUERY,
   PRODUCT_CHAIN_PAGE_QUERY,
   THEMES_BY_PC_QUERY,
-  PRODUCT_CHAIN_METADATA_QUERY,
 } from '@/lib/queries';
-import PCLayout from '@/components/layouts/product-chain-layout';
 import { client, sanityFetch } from '@/lib/sanity';
 
 // metadata

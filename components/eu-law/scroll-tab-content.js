@@ -1,10 +1,12 @@
 'use client';
+
 // import ScrollTabMobileMenu from './scroll-tab-mobile-menu';
-import { portableTextComponents } from '@/lib/portable-text/pt-components';
-import { PortableText } from '@portabletext/react';
-import { Link, Element } from 'react-scroll';
-import { Dialog, DialogPanel, DialogTitle, CloseButton } from '@headlessui/react';
 import { useState } from 'react';
+import { Element, Link } from 'react-scroll';
+
+import { portableTextComponents } from '@/lib/portable-text/pt-components';
+import { CloseButton, Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
+import { PortableText } from '@portabletext/react';
 import { IconX } from '@tabler/icons-react';
 
 export default function ScrollPagesTabContent({ content, title }) {

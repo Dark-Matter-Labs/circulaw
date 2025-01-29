@@ -1,5 +1,6 @@
-import FeedbackComponent from '@/components/forms/feedback';
 import { Suspense } from 'react';
+
+import FeedbackComponent from '@/components/forms/feedback';
 
 export const metadata = {
   title: 'Met jouw hulp maken we CircuLaw beter - CircuLaw',

@@ -1,7 +1,9 @@
 'use client';
-import Link from 'next/link';
-import commentIcon from '@/public/comment-icon.svg';
+
 import Image from 'next/image';
+import Link from 'next/link';
+
+import commentIcon from '@/public/comment-icon.svg';
 import { DiscussionEmbed } from 'disqus-react';
 
 export default function ForumPage() {

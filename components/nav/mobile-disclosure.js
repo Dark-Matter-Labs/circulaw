@@ -1,6 +1,7 @@
+import Link from 'next/link';
+
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { IconChevronDown } from '@tabler/icons-react';
-import Link from 'next/link';
 
 export default function MobileDisclosure({ navData, closeMenu }) {
   return (

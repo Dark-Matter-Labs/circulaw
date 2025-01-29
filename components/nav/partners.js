@@ -1,8 +1,10 @@
-import ParnerSection from './parner-section';
-import sanityLogo from '@/public/logo_partners/sanity-logo.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
+import sanityLogo from '@/public/logo_partners/sanity-logo.svg';
+
+import ParnerSection from './parner-section';
 
 export default function Partners({ footerText, partnerLogos }) {
   const pathname = usePathname();

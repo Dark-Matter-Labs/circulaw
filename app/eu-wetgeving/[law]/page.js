@@ -1,15 +1,17 @@
-import Link from 'next/link';
-import { client, sanityFetch } from '@/lib/sanity';
-import SocialButtons from '@/components/social-buttons';
-import Tabs from '@/components/eu-law/tabs';
-import TabContent from '@/components/eu-law/tab-content';
-import {
-  EU_LAW_PATHS_QUERY,
-  LAW_TAB_QUERY,
-  LAW_SUMMARY_QUERY,
-  EU_LAW_METADATA_QUERY,
-} from '@/lib/queries';
 import { Suspense } from 'react';
+
+import Link from 'next/link';
+
+import TabContent from '@/components/eu-law/tab-content';
+import Tabs from '@/components/eu-law/tabs';
+import SocialButtons from '@/components/social-buttons';
+import {
+  EU_LAW_METADATA_QUERY,
+  EU_LAW_PATHS_QUERY,
+  LAW_SUMMARY_QUERY,
+  LAW_TAB_QUERY,
+} from '@/lib/queries';
+import { client, sanityFetch } from '@/lib/sanity';
 
 export async function generateMetadata({ params }, parent) {
   // read route params

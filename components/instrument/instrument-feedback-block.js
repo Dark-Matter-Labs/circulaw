@@ -1,7 +1,9 @@
-import CustomButton from '../custom-button';
+import Link from 'next/link';
+
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import { IconArrowLeft } from '@tabler/icons-react';
-import Link from 'next/link';
+
+import CustomButton from '../custom-button';
 
 // TODO: Combine the mobile and desktop components into one
 export default function InstrumentFeedbackBlock({ data }) {

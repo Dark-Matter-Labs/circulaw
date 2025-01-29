@@ -1,13 +1,17 @@
 'use client';
+
+import { useEffect, useState, useTransition } from 'react';
+
+import { usePathname } from 'next/navigation';
+
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
+import { usePiwikPro } from '@piwikpro/next-piwik-pro';
+import { IconChevronUp } from '@tabler/icons-react';
+
 import ExplinationText from '../expertise-page/explination-text';
 import TabButton from '../expertise-page/tab-button';
 import TabLayout from '../expertise-page/tab-layout';
 import OverviewPageHeader from '../theme-page/overview-page-header';
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
-import { IconChevronUp } from '@tabler/icons-react';
-import { useEffect, useState, useTransition } from 'react';
-import { usePiwikPro } from '@piwikpro/next-piwik-pro';
-import { usePathname } from 'next/navigation';
 
 export default function ExpertiseLayout({ expertiseData, ...props }) {
   const [beleid, setBeleid] = useState([]);

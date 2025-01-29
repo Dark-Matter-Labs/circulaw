@@ -1,10 +1,14 @@
 'use client';
-import SocialButtons from '../social-buttons';
-import Tag from '@/components/tag';
-import InstrumentMetaData from './instrument-metadata';
+
+import { useEffect, useState } from 'react';
+
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+
+import Tag from '@/components/tag';
+
+import SocialButtons from '../social-buttons';
+import InstrumentMetaData from './instrument-metadata';
 
 export default function InstrumentHeader({ data }) {
   const router = useRouter();

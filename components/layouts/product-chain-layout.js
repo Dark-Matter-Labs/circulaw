@@ -1,11 +1,13 @@
-import ThemaCard from '../product-chain-page/thema-cards';
+import Image from 'next/image';
+import Link from 'next/link';
+
 import CustomButton from '@/components/custom-button';
 import PageHeader from '@/components/product-chain-page/product-chain-header';
 import { urlFor } from '@/lib/sanity';
-import Image from 'next/image';
-import Link from 'next/link';
+
 import Modal from '../modal/modal';
 import ModalContent from '../modal/modal-content';
+import ThemaCard from '../product-chain-page/thema-cards';
 
 // TODO: See what we could move to a layout.js file instead of having everything in components.
 export default function PCLayout({ ...props }) {

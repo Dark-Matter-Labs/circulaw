@@ -1,5 +1,6 @@
-import Link from 'next/link';
 import { Highlight } from 'react-instantsearch';
+
+import Link from 'next/link';
 
 export default function AboutHit({ hit }) {
   return (

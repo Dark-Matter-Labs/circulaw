@@ -2,8 +2,8 @@ import Modal from '../modal/modal';
 import InstrumentTooltipButton from '../modal/modal-buttons/instrument-tooltip-button';
 import ModalContent from '../modal/modal-content';
 import TooltipJuridischeHoudbaarheidContent from './tooltip-juridische-houdbaarheid-content';
-import RladderTooltipContent from './tooltip-r-ladder-content';
 import TooltipJuridischeInvloedContent from './tooltip-juridische-invloed-content';
+import RladderTooltipContent from './tooltip-r-ladder-content';
 
 export default function InstrumentMetaData({ data, borders }) {
   return (

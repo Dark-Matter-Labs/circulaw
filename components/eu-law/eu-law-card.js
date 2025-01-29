@@ -1,6 +1,7 @@
+import Link from 'next/link';
+
 import StatusThreeStep from './status/status-three-step';
 import StatusTwoStep from './status/status-two-step';
-import Link from 'next/link';
 
 export default function EULawCard({ law }) {
   return (

@@ -1,6 +1,6 @@
-import { sanityFetch } from '@/lib/sanity';
-import { FAQ_PAGE_QUERY } from '@/lib/queries';
 import FAQPageComponent from '@/components/faq-page';
+import { FAQ_PAGE_QUERY } from '@/lib/queries';
+import { sanityFetch } from '@/lib/sanity';
 
 export const metadata = {
   title: 'Vraag en antwoord - CircuLaw',

@@ -1,24 +1,25 @@
 'use client';
-import algoliasearch from 'algoliasearch';
-import { Hits, RefinementList, SearchBox, Configure } from 'react-instantsearch';
-import { InstrumentHit } from '@/components/search/instrument-hit';
-import CustomStats from '../search/stats';
-import Pagination from '@/components/search/pagination';
-import CustomClearRefinements from '@/components/search/clear-refinements';
-import { IconX } from '@tabler/icons-react';
-import Modal from '../modal/modal';
-import ModalContent from '../modal/modal-content';
-import InstrumentTooltipButton from '../modal/modal-buttons/instrument-tooltip-button';
 
-import NoResults from '../search/no-results';
-import NoResultsBoundary from '../search/no-results-boundary';
-import OverviewPageHeader from './overview-page-header';
-
+import { Configure, Hits, RefinementList, SearchBox } from 'react-instantsearch';
 import { InstantSearchNext } from 'react-instantsearch-nextjs';
+
+import CustomClearRefinements from '@/components/search/clear-refinements';
+import { InstrumentHit } from '@/components/search/instrument-hit';
+import Pagination from '@/components/search/pagination';
+import { IconX } from '@tabler/icons-react';
+import algoliasearch from 'algoliasearch';
+
 import TooltipJuridischeHoudbaarheidContent from '../instrument/tooltip-juridische-houdbaarheid-content';
-import FilterModalButton from '../modal/modal-buttons/filter-button';
 import TooltipJuridischeInvloedContent from '../instrument/tooltip-juridische-invloed-content';
 import RladderTooltipContent from '../instrument/tooltip-r-ladder-content';
+import Modal from '../modal/modal';
+import FilterModalButton from '../modal/modal-buttons/filter-button';
+import InstrumentTooltipButton from '../modal/modal-buttons/instrument-tooltip-button';
+import ModalContent from '../modal/modal-content';
+import NoResults from '../search/no-results';
+import NoResultsBoundary from '../search/no-results-boundary';
+import CustomStats from '../search/stats';
+import OverviewPageHeader from './overview-page-header';
 
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;

@@ -1,6 +1,8 @@
 'use client';
-import { Dialog, DialogBackdrop } from '@headlessui/react';
+
 import { useState } from 'react';
+
+import { Dialog, DialogBackdrop } from '@headlessui/react';
 
 // the modal takes a react component as the prop Button
 export default function Modal({ Button, children }) {

@@ -1,9 +1,12 @@
+import { Suspense } from 'react';
+
+import Image from 'next/image';
+import Link from 'next/link';
+
 import CustomButton from '@/components/custom-button';
 import aboutImage from '@/public/home-page/homepageAboutDeco.png';
 import { IconArrowRight } from '@tabler/icons-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Suspense } from 'react';
+
 import YouTubeComponent from './youtube-component';
 
 export default function HomePageAboutSection({ aboutSection }) {

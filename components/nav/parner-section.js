@@ -1,7 +1,9 @@
-import { urlFor } from '@/lib/sanity';
+import { Fragment } from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { Fragment } from 'react';
+
+import { urlFor } from '@/lib/sanity';
 
 const bordersDesktop =
   'lg:[&:nth-child(5)]:border-r-0 lg:[&:nth-child(10)]:border-r-0 lg:[&:nth-child(15)]:border-r-0 lg:[&:nth-child(3)]:border-r lg:[&:nth-child(6)]:border-r lg:[&:nth-child(9)]:border-r lg:[&:nth-child(12)]:border-r lg:[&:nth-child(15)]:border-r';

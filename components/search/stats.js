@@ -1,5 +1,5 @@
-import { useStats, useInstantSearch } from 'react-instantsearch';
 import { useEffect, useState } from 'react';
+import { useInstantSearch, useStats } from 'react-instantsearch';
 
 export default function CustomStats({ index }) {
   const { nbHits, query } = useStats();

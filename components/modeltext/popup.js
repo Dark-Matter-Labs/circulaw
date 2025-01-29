@@ -1,16 +1,20 @@
 'use client';
-import { useState, useEffect, useCallback } from 'react';
-import { IconX, IconCopy, IconCheck } from '@tabler/icons-react';
-import ModelTextCard from './modeltext-card';
-import { useSearchParams, useRouter, usePathname } from 'next/navigation';
-import { PortableText } from '@portabletext/react';
-import {
-  reducedPortableTextComponents,
-  ModelTextComponents,
-} from '@/lib/portable-text/pt-components';
+
+import { useCallback, useEffect, useState } from 'react';
+
 import Link from 'next/link';
-import { Dialog, DialogPanel, DialogTitle, DialogBackdrop, Button } from '@headlessui/react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+
+import {
+  ModelTextComponents,
+  reducedPortableTextComponents,
+} from '@/lib/portable-text/pt-components';
+import { Button, Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
+import { PortableText } from '@portabletext/react';
+import { IconCheck, IconCopy, IconX } from '@tabler/icons-react';
+
+import ModelTextCard from './modeltext-card';
 
 export default function PopUp({ pillars, modelTexts }) {
   const { CustomEvent } = usePiwikPro();

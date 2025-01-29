@@ -1,7 +1,9 @@
-import { setCookie } from 'cookies-next';
+import { useEffect, useState } from 'react';
+
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+
+import { setCookie } from 'cookies-next';
 
 const CookieConsent = ({ hasLocalConsentCookie }) => {
   const [consent, setConsent] = useState(true);

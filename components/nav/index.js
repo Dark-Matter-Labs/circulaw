@@ -1,29 +1,32 @@
 'use client';
-import { usePiwikPro } from '@piwikpro/next-piwik-pro';
+
+import { Suspense, useEffect, useRef, useState } from 'react';
+
 import dynamic from 'next/dynamic';
-import DesktopNavCard from './desktop-nav-card';
-import DesktopSimpleButton from './desktop-simple-button';
-import MobileDisclosure from './mobile-disclosure';
-import MobileSimpleButton from './mobile-simple-button';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
 import HomepageHeader from '@/components/homepage/homepage-header';
 import BetaBanner from '@/components/nav/beta-banner';
 import LangSwitch from '@/components/nav/lang-switch';
 import CirculawLogo from '@/public/circulaw_logotype2.png';
 import logo from '@/public/circulaw_logotype_home2.png';
 import {
-  useFloating,
-  offset,
+  FloatingFocusManager,
+  FloatingOverlay,
   flip,
+  offset,
   shift,
   useClick,
   useDismiss,
-  useRole,
+  useFloating,
   useInteractions,
-  FloatingFocusManager,
+  useRole,
   useTransitionStyles,
-  FloatingOverlay,
 } from '@floating-ui/react';
-import { Disclosure, DisclosurePanel, DisclosureButton } from '@headlessui/react';
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
+import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 import {
   IconChevronDown,
   IconFileDownload,
@@ -31,10 +34,11 @@ import {
   IconSearch,
   IconX,
 } from '@tabler/icons-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState, useEffect, useRef, Suspense } from 'react';
-import { usePathname } from 'next/navigation';
+
+import DesktopNavCard from './desktop-nav-card';
+import DesktopSimpleButton from './desktop-simple-button';
+import MobileDisclosure from './mobile-disclosure';
+import MobileSimpleButton from './mobile-simple-button';
 import SearchButton from './search-button';
 
 const PlayerWithNoSSR = dynamic(

@@ -1,6 +1,8 @@
 'use client';
-import Link from 'next/link';
+
 import { useEffect, useState } from 'react';
+
+import Link from 'next/link';
 
 export default function Tabs({ summaryData, initialTab }) {
   const [selectedTab, setSelectedTab] = useState();

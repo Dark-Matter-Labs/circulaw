@@ -1,7 +1,7 @@
-import { CloseButton, DialogPanel, DialogTitle } from '@headlessui/react';
-import { IconX } from '@tabler/icons-react';
-import { PortableText } from '@portabletext/react';
 import { reducedPortableTextComponents } from '@/lib/portable-text/pt-components';
+import { CloseButton, DialogPanel, DialogTitle } from '@headlessui/react';
+import { PortableText } from '@portabletext/react';
+import { IconX } from '@tabler/icons-react';
 
 export default function ModalContent({ title, children, ptContent }) {
   return (

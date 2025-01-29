@@ -1,12 +1,13 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import { IconArrowDown } from '@tabler/icons-react';
+import Link from 'next/link';
+
 import CustomButton from '@/components/custom-button';
 import EULawCard from '@/components/eu-law/eu-law-card';
-import { sanityFetch } from '@/lib/sanity';
-import { EU_LAW_OVERVIEW_QUERY } from '@/lib/queries';
 import ScrollButton from '@/components/scroll-button';
+import { EU_LAW_OVERVIEW_QUERY } from '@/lib/queries';
+import { sanityFetch } from '@/lib/sanity';
 import globalMeta from '@/utils/global-meta';
+import { IconArrowDown } from '@tabler/icons-react';
 
 export const metadata = {
   title: 'EU wetgeving - CircuLaw',

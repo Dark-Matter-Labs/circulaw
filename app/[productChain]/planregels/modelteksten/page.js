@@ -1,10 +1,11 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+
 import LinkIcon from '@/components/link-icon';
 import PopUp from '@/components/modeltext/popup';
 import { sanityFetch } from '@/lib/sanity';
 import { IconArrowLeft } from '@tabler/icons-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
 
 const PILLARS_QUERY = `
  *[_type == 'pillar'] | order(orderRank) {

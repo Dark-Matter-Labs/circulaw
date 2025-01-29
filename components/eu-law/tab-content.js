@@ -1,10 +1,12 @@
 'use client';
+
 import { useSearchParams } from 'next/navigation';
+
+import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import { PortableText } from '@portabletext/react';
 
-import SummaryComponent from './summary-tab-content';
 import ScrollPagesTabContent from './scroll-tab-content';
-import { portableTextComponents } from '@/lib/portable-text/pt-components';
+import SummaryComponent from './summary-tab-content';
 
 export default function TabContent({ summaryData, tabData }) {
   const searchParams = useSearchParams();

@@ -1,5 +1,6 @@
 import { usePagination } from 'react-instantsearch';
-import { IconChevronRight, IconChevronLeft } from '@tabler/icons-react';
+
+import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 
 export default function Pagination() {
   const { nbPages, currentRefinement, pages, refine, isFirstPage, isLastPage } = usePagination({

@@ -1,17 +1,19 @@
 'use client';
-import { Hits, Configure, RefinementList } from 'react-instantsearch';
+
+import { Configure, Hits, RefinementList } from 'react-instantsearch';
+
 import { InstrumentHit } from '@/components/search/instrument-hit';
-import CustomStats from './stats';
 import Pagination from '@/components/search/pagination';
+
+import RladderTooltipContent from '../instrument/tooltip-r-ladder-content';
+import Modal from '../modal/modal';
+import FilterModalButton from '../modal/modal-buttons/filter-button';
+import InstrumentTooltipButton from '../modal/modal-buttons/instrument-tooltip-button';
+import ModalContent from '../modal/modal-content';
+import CustomClearRefinements from './clear-refinements';
 import NoResults from './no-results';
 import NoResultsBoundary from './no-results-boundary';
-
-import Modal from '../modal/modal';
-import ModalContent from '../modal/modal-content';
-import RladderTooltipContent from '../instrument/tooltip-r-ladder-content';
-import CustomClearRefinements from './clear-refinements';
-import InstrumentTooltipButton from '../modal/modal-buttons/instrument-tooltip-button';
-import FilterModalButton from '../modal/modal-buttons/filter-button';
+import CustomStats from './stats';
 
 export default function InstrumentSearch() {
   const transformItems = (items) => {

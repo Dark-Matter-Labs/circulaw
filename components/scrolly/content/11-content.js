@@ -1,6 +1,7 @@
+import Link from 'next/link';
+
 import CustomButton from '@/components/custom-button';
 import { IconArrowRight } from '@tabler/icons-react';
-import Link from 'next/link';
 
 export default function ContentEleven({ scrollPosition }) {
   return (

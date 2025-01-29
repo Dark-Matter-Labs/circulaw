@@ -1,8 +1,10 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
-import { IconX } from '@tabler/icons-react';
-import { useSearchBox, useInstantSearch } from 'react-instantsearch';
+
+import { useEffect, useRef, useState } from 'react';
+import { useInstantSearch, useSearchBox } from 'react-instantsearch';
+
 import { Tab, TabList } from '@headlessui/react';
+import { IconX } from '@tabler/icons-react';
 
 export default function NewSearchBar(props) {
   const { query, refine } = useSearchBox(props);

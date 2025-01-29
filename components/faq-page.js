@@ -1,9 +1,12 @@
 'use client';
+
+import React from 'react';
+
+import Link from 'next/link';
+
 import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import { PortableText } from '@portabletext/react';
-import Link from 'next/link';
 import * as Accordion from '@radix-ui/react-accordion';
-import React from 'react';
 import { IconChevronDown } from '@tabler/icons-react';
 
 export default function FAQPageComponent({ data }) {

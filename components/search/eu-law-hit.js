@@ -1,6 +1,8 @@
 import { Highlight } from 'react-instantsearch';
-import Link from 'next/link';
+
 import Image from 'next/image';
+import Link from 'next/link';
+
 import { urlFor } from '@/lib/sanity';
 
 export default function EUHit({ hit }) {

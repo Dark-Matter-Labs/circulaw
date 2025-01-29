@@ -1,5 +1,6 @@
-import LinkIcon from '@/components/link-icon';
 import Link from 'next/link';
+
+import LinkIcon from '@/components/link-icon';
 
 export const metadata = {
   title: 'Privacyverklaring - CircuLaw',

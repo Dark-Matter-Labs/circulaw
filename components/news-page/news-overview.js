@@ -1,4 +1,10 @@
 'use client';
+
+import { useEffect, useState } from 'react';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+
+import Link from 'next/link';
+
 import AgendaCard from '@/components/news-page/agenda-card';
 import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
 import FeaturedCard from '@/components/news-page/featured-card';
@@ -6,9 +12,6 @@ import NewsCard from '@/components/news-page/news-card';
 import Tag from '@/components/tag';
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import { IconChevronDown } from '@tabler/icons-react';
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 // TODO: replace Popover with headless UI Listbox
 export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }) {

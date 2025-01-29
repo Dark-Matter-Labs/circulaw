@@ -1,9 +1,12 @@
 'use client';
+
 import { useState } from 'react';
-import axios from 'axios';
+
 import Link from 'next/link';
+
 import CustomButton from '@/components/custom-button';
 import { scrollToTop } from '@/utils/scroll-to-top';
+import axios from 'axios';
 
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/aroovgvb';
 

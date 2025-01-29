@@ -1,7 +1,8 @@
+import Image from 'next/image';
+import Link from 'next/link';
+
 import CustomButton from '@/components/custom-button';
 import { IconArrowRight, IconBooks } from '@tabler/icons-react';
-import Link from 'next/link';
-import Image from 'next/image';
 
 export default function LearningLandingPage() {
   return (

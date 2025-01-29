@@ -1,6 +1,12 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
+
+import { useEffect, useRef, useState } from 'react';
+
+import Link from 'next/link';
+
 import { animated } from '@react-spring/web';
+import { IconArrowRight } from '@tabler/icons-react';
+
 import ContentZero from './content/00-content';
 import ContentOne from './content/01-content';
 import ContentTwo from './content/02-content';
@@ -13,8 +19,6 @@ import ContentEight from './content/08-content';
 import ContentNine from './content/09-content';
 import ContentTen from './content/10-content';
 import ContentEleven from './content/11-content';
-import Link from 'next/link';
-import { IconArrowRight } from '@tabler/icons-react';
 
 export default function ScrollyTellingAnimation() {
   const [scrollPosition, setScrollPosition] = useState(0);

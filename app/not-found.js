@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 import { IconArrowRight } from '@tabler/icons-react';
 
 export default function NotFound() {

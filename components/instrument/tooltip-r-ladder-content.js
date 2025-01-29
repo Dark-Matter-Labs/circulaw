@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 import LinkIcon from '../link-icon';
 
 export default function RladderTooltipContent() {

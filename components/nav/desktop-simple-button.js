@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 
 export default function DesktopSimpleButton({ name, url }) {

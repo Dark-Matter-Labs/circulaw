@@ -1,7 +1,8 @@
-import CustomButton from '@/components/custom-button';
-import { IconArrowRight } from '@tabler/icons-react';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import CustomButton from '@/components/custom-button';
+import { IconArrowRight } from '@tabler/icons-react';
 
 export default function HomePageEUSection({ euData }) {
   return (

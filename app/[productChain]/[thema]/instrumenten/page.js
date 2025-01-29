@@ -1,6 +1,6 @@
+import ThemeLevelSearch from '@/components/theme-page/theme-level-search';
 import { FUll_THEME_PATHS_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
 import { client } from '@/lib/sanity';
-import ThemeLevelSearch from '@/components/theme-page/theme-level-search';
 
 export async function generateMetadata({ params }, parent) {
   // read route params

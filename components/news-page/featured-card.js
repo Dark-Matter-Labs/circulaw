@@ -1,10 +1,13 @@
 'use client';
-import LinkIcon from '../link-icon';
-import Tag from '@/components/tag';
-import { urlFor } from '@/lib/sanity';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
+import Tag from '@/components/tag';
+import { urlFor } from '@/lib/sanity';
+
+import LinkIcon from '../link-icon';
 
 // TODO: refactor - make a seperate component linkWrapper and use a single feature card component.
 export default function FeaturedCard({ data }) {

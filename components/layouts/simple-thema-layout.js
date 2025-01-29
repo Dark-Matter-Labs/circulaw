@@ -1,6 +1,7 @@
+import ThemePageHeader from '@/components/theme-page/theme-page-header';
+
 import InstrumentCard from '../instrument/instrument-card';
 import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
-import ThemePageHeader from '@/components/theme-page/theme-page-header';
 import ThemeSponsors from '../theme-page/theme-sponsors';
 
 // TODO: See what we could move to a layout.js file instead of having everything in components.
