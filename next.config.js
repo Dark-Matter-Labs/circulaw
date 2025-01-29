@@ -11,6 +11,11 @@ const nextConfig = {
         destination: '/bouw/houtbouw',
         permanent: true,
       },
+      {
+        source: '/training/aanmelden',
+        destination: '/training',
+        permanent: true,
+      },
     ]
   },
   transpilePackages: ['@piwikpro/next-piwik-pro'],

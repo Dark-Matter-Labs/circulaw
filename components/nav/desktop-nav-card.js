@@ -26,6 +26,15 @@ export default function DesktopNavCard({ navData, closeNav }) {
       >
         {navData.title} {'>'}
       </Link>
+      {navData.title === 'Bouw' && (
+        <div
+          className={`${
+            pathname === '/' ? 'text-gray-100 border-gray-100' : 'border-green-600 text-green-600'
+          } p-base-semibold  mr-8 pb-2 border-b-2  mt-6`}
+        >
+          Instrumenten
+        </div>
+      )}
       {navData?.themas?.map((thema, id) => (
         <div className='mt-2' key={id}>
           <Link
@@ -54,22 +63,43 @@ export default function DesktopNavCard({ navData, closeNav }) {
         </div>
       ))}
       {navData.title === 'Bouw' && (
-        <div
-          className={`${pathname === '/' ? 'border-green-200' : 'border-green-400'} border-t  mt-3`}
-        >
-          <Link
-            href='/bouw/planregels'
-            onClick={() => {
-              CustomEvent.trackEvent('Nav click', pathname, 'planregels');
-              closeNav(false);
-            }}
+        <>
+          <div
             className={`${
-              pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '
-            } p-xs active:p-xs-semibold active:no-underline cursor-pointer flex flex-row items-center pt-2`}
+              pathname === '/' ? 'text-gray-100 border-gray-100' : 'border-green-600 text-green-600'
+            } p-base-semibold  mr-8 pb-2 border-b-2  mt-6`}
           >
-            <span className='hover:underline'>Modelteksten voor het omgevingsplan</span>
-          </Link>
-        </div>
+            Toepassing
+          </div>
+          <div>
+            <Link
+              href='/bouw/planregels'
+              onClick={() => {
+                CustomEvent.trackEvent('Nav click', pathname, 'planregels');
+                closeNav(false);
+              }}
+              className={`${
+                pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '
+              } p-xs active:p-xs-semibold active:no-underline cursor-pointer flex flex-row items-center mt-2`}
+            >
+              <span className='hover:underline'>Modelteksten voor het omgevingsplan</span>
+            </Link>
+          </div>
+          <div className='mt-[2px]'>
+            <Link
+              href='/training'
+              onClick={() => {
+                CustomEvent.trackEvent('Nav click', pathname, 'planregels');
+                closeNav(false);
+              }}
+              className={`${
+                pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500 '
+              } p-xs active:p-xs-semibold active:no-underline cursor-pointer flex flex-row items-center pt-2`}
+            >
+              <span className='hover:underline'>E-learning &apos;Circulaire houtbouw&apos;</span>
+            </Link>
+          </div>
+        </>
       )}
     </div>
   );
