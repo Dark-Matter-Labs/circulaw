@@ -1,17 +1,19 @@
-import ParnerSection from './parner-section';
-import sanityLogo from '@/public/logo_partners/sanity-logo.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
+import sanityLogo from '@/public/logo_partners/sanity-logo.svg';
+
+import ParnerSection from './parner-section';
 
 export default function Partners({ footerText, partnerLogos }) {
   const pathname = usePathname();
 
   return (
-    <div className='bg-green-800 pt-10 pb-2'>
+    <div className='bg-green-800 pb-2 pt-10'>
       {pathname === '/' && (
-        <div className='global-margin pb-12 px-4 lg:pb-16'>
-          <div className='heading-3xl-semibold text-gray-100 pl-3 sm:pl-6 lg:pl-8'>Partners</div>
+        <div className='global-margin px-4 pb-12 lg:pb-16'>
+          <div className='heading-3xl-semibold pl-3 text-gray-100 sm:pl-6 lg:pl-8'>Partners</div>
           <ParnerSection
             partners={partnerLogos?.developingPartners}
             partnerType='Ontwikkelpartners'
@@ -23,7 +25,7 @@ export default function Partners({ footerText, partnerLogos }) {
           />
         </div>
       )}
-      <div className='global-margin pb-2 text-gray-100 p-base'>
+      <div className='global-margin p-base pb-2 text-gray-100'>
         {pathname === '/en' && (
           <p className='pb-8'>
             This website is currently under development and in this version we are testing the
@@ -36,17 +38,17 @@ export default function Partners({ footerText, partnerLogos }) {
           <p className='pb-8'>
             {footerText?.footerText}&nbsp;
             <Link href='/contact'>
-              <span className='underline link-interaction-dark-bg'>
+              <span className='link-interaction-dark-bg underline'>
                 {footerText?.footerLinkText}
               </span>
             </Link>
           </p>
         )}
-        <hr className='border-gray-100 ' />
-        <div className='text-center py-2'>
-          <span className='text-gray-100 p-xs'>Legal data & content managed with support from</span>
+        <hr className='border-gray-100' />
+        <div className='py-2 text-center'>
+          <span className='p-xs text-gray-100'>Legal data & content managed with support from</span>
           <a target='_blank' href='https://www.sanity.io/' rel='noopener noreferrer'>
-            <Image className='inline mx-2 my-2' src={sanityLogo} alt='Sanity logo' />
+            <Image className='mx-2 my-2 inline' src={sanityLogo} alt='Sanity logo' />
           </a>
         </div>
       </div>

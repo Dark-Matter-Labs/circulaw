@@ -1,6 +1,6 @@
 export default function ContentThree() {
   return (
-    <div className='text-green-600 flex flex-col gap-y-6 max-w-[290px]'>
+    <div className='flex max-w-[290px] flex-col gap-y-6 text-green-600'>
       <h3 className='heading-2xl-semibold text-nowrap'>Beleidsontwikkeling</h3>
       <p className='p-base'>
         De beleidscyclus begint met <span className='p-base-semibold'>beleidsontwikkeling.</span>
@@ -10,7 +10,7 @@ export default function ContentThree() {
         voor de regels in je omgevingsprogramma&apos;s en omgevingsplan.
       </p>
       <p>In deze fase werk je je visie uit in:</p>
-      <ul className='list-outside list-disc p-base ml-4'>
+      <ul className='p-base ml-4 list-outside list-disc'>
         <li>omgevingsvisie, en/of</li>
         <li>omgevingsprogramma&apos;s</li>
       </ul>

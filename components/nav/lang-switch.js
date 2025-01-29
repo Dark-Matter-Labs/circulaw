@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import { IconWorld, IconX } from '@tabler/icons-react';
 
 const googleTranslateElementInit = () => {
@@ -31,20 +32,20 @@ export default function LangSwitch({ background }) {
       <div
         className={classNames(
           translateOpen ? 'block' : 'hidden',
-          'fixed  sm:right-0 top-20 z-[999] bg-white p-5  rounded-cl',
+          'fixed top-20 z-[999] rounded-cl bg-white p-5 sm:right-0',
         )}
       >
         <IconX
           onClick={() => {
             setTranslateOpen(false);
           }}
-          className='h-6 w-6 text-green-800 hover:text-green-900 float-right cursor-pointer'
+          className='float-right h-6 w-6 cursor-pointer text-green-800 hover:text-green-900'
         />
-        <h3 className='heading-2xl-semibold text-green-800 max-w-xs'>
+        <h3 className='heading-2xl-semibold max-w-xs text-green-800'>
           Let Google translate this website
         </h3>
         <div id='google_translate_element' className=''>
-          <p className='p-xs italic max-w-xs py-4'>
+          <p className='p-xs max-w-xs py-4 italic'>
             Irrespective of the language of your choice this website is focusing on Dutch and
             European law in a Dutch context. Moreover, since all translations are automatic, we
             cannot be responsible for any mistakes in the translation. Please, contact us if you
@@ -54,14 +55,14 @@ export default function LangSwitch({ background }) {
       </div>
       <div className=''>
         <button
-          className='h-full relative p-sm group z-100 flex-row items-center justify-center text-green-50 ml-5 lg:ml-4 rounded-clSm flex sm:hidden'
+          className='p-sm group relative z-100 ml-5 flex h-full flex-row items-center justify-center rounded-clSm text-green-50 sm:hidden lg:ml-4'
           onClick={() => {
             setTranslateOpen(!translateOpen);
           }}
           aria-label='Open google translate for CircuLaw'
         >
-          <span className='heading-xl-semibold text-green-800 mr-2'>Vertaling</span>
-          <span className='flex items-center justify-center rounded-clSm h-6 w-7 bg-green-800'>
+          <span className='heading-xl-semibold mr-2 text-green-800'>Vertaling</span>
+          <span className='flex h-6 w-7 items-center justify-center rounded-clSm bg-green-800'>
             <IconWorld className='h-4 w-4' />
           </span>
         </button>
@@ -70,16 +71,16 @@ export default function LangSwitch({ background }) {
       <div
         className={`${
           background === 'dark' ? 'bg-green-50 text-green-600' : 'bg-green-600 text-green-50'
-        }  ml-4 lg:ml-4 rounded-clSm hidden sm:block`}
+        } ml-4 hidden rounded-clSm sm:block lg:ml-4`}
       >
         <button
-          className='h-full relative p-sm group z-100 flex-row items-center hidden sm:flex'
+          className='p-sm group relative z-100 hidden h-full flex-row items-center sm:flex'
           onClick={() => {
             setTranslateOpen(!translateOpen);
           }}
           aria-label='Open google translate for CircuLaw'
         >
-          <span className='flex items-center justify-center rounded-clSm h-6 w-7'>
+          <span className='flex h-6 w-7 items-center justify-center rounded-clSm'>
             <IconWorld className='h-4 w-4' />
           </span>
         </button>

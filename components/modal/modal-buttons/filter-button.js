@@ -2,7 +2,7 @@ import { IconAdjustments } from '@tabler/icons-react';
 
 export default function FilterModalButton() {
   return (
-    <div className='relative px-4 my-6 w-[95vw] inline-flex items-center justify-center bg-green-50 h-[60px] p-2 border-gray-800 rounded-cl focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500 sm:hidden'>
+    <div className='relative my-6 inline-flex h-[60px] w-[95vw] items-center justify-center rounded-cl border-gray-800 bg-green-50 p-2 px-4 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500 sm:hidden'>
       <span className='sr-only'>Open sidebar</span>
       <span className='p-base-bold mr-3'>Filter</span>
       <IconAdjustments className='h-8 w-8 -rotate-90' aria-hidden='true' />

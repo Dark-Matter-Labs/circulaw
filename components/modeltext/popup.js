@@ -1,16 +1,20 @@
 'use client';
-import { useState, useEffect, useCallback } from 'react';
-import { IconX, IconCopy, IconCheck } from '@tabler/icons-react';
-import ModelTextCard from './modeltext-card';
-import { useSearchParams, useRouter, usePathname } from 'next/navigation';
-import { PortableText } from '@portabletext/react';
-import {
-  reducedPortableTextComponents,
-  ModelTextComponents,
-} from '@/lib/portable-text/pt-components';
+
+import { useCallback, useEffect, useState } from 'react';
+
 import Link from 'next/link';
-import { Dialog, DialogPanel, DialogTitle, DialogBackdrop, Button } from '@headlessui/react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+
+import {
+  ModelTextComponents,
+  reducedPortableTextComponents,
+} from '@/lib/portable-text/pt-components';
+import { Button, Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
+import { PortableText } from '@portabletext/react';
+import { IconCheck, IconCopy, IconX } from '@tabler/icons-react';
+
+import ModelTextCard from './modeltext-card';
 
 export default function PopUp({ pillars, modelTexts }) {
   const { CustomEvent } = usePiwikPro();
@@ -79,7 +83,7 @@ export default function PopUp({ pillars, modelTexts }) {
       <div className='max-w-[1280px]'>
         <ul
           id='pillars'
-          className='bg-green-50 rounded-cl flex overflow-x-scroll snap-x snap-mandatory no-scrollbar text-nowrap sm:flex-row p-4 mt-14 gap-x-2.5 justify-between'
+          className='no-scrollbar mt-14 flex snap-x snap-mandatory justify-between gap-x-2.5 overflow-x-scroll text-nowrap rounded-cl bg-green-50 p-4 sm:flex-row'
         >
           {pillars?.map((p) => (
             <li key={p.title}>
@@ -93,7 +97,7 @@ export default function PopUp({ pillars, modelTexts }) {
                   selectedPillar === p.slug
                     ? 'p-base-semibold border-b-2 border-b-green-600'
                     : 'p-base hover:text-green-300'
-                } text-green-600 px-2`}
+                } px-2 text-green-600`}
               >
                 {p.title} {'('}
                 {modelTexts.filter((text) => text.pillar === p.slug).length}
@@ -107,7 +111,7 @@ export default function PopUp({ pillars, modelTexts }) {
             <div key={p.slug}>
               {p.slug === selectedPillar && (
                 <>
-                  <h3 className='heading-xl-semibold mt-8 mb-2'>{p.title}</h3>
+                  <h3 className='heading-xl-semibold mb-2 mt-8'>{p.title}</h3>
                   <p className='p-xs max-w-[700px]'>{p.description}</p>
                 </>
               )}
@@ -115,8 +119,8 @@ export default function PopUp({ pillars, modelTexts }) {
           ))}
         </div>
       </div>
-      <div className='min-h-screen '>
-        <div className='flex flex-wrap gap-6 sm:gap-8 mt-14 gap relative w-full justify-center sm:justify-start items-center'>
+      <div className='min-h-screen'>
+        <div className='gap relative mt-14 flex w-full flex-wrap items-center justify-center gap-6 sm:justify-start sm:gap-8'>
           {filteredModelTexts?.map((text, id) => (
             <Button
               className='w-[366px]'
@@ -147,11 +151,11 @@ export default function PopUp({ pillars, modelTexts }) {
             <div className='flex min-h-full items-center justify-center p-0 sm:px-4 sm:py-10'>
               <DialogPanel
                 transition
-                className='sm:rounded-cl bg-gray-100 border w-screen sm:max-w-3xl min-h-screen sm:min-h-0 sm:overflow-scroll no-scrollbar sm:h-auto sm:max-h-[800px] py-6 px-4 sm:px-10 duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0'
+                className='no-scrollbar data-[closed]:transform-[scale(95%)] min-h-screen w-screen border bg-gray-100 px-4 py-6 duration-300 ease-out data-[closed]:opacity-0 sm:h-auto sm:max-h-[800px] sm:min-h-0 sm:max-w-3xl sm:overflow-scroll sm:rounded-cl sm:px-10'
               >
-                <div className='flex flex-row w-full justify-between items-center mb-4'>
+                <div className='mb-4 flex w-full flex-row items-center justify-between'>
                   <div className='flex flex-row gap-x-2'>
-                    <div className='rounded-cl max-w-min text-nowrap border border-green-400 text-green-400 px-2 py-1 p-2xs-semibold first-letter:uppercase'>
+                    <div className='p-2xs-semibold max-w-min text-nowrap rounded-cl border border-green-400 px-2 py-1 text-green-400 first-letter:uppercase'>
                       {selectedModelText.pillar}
                     </div>
                   </div>
@@ -163,10 +167,10 @@ export default function PopUp({ pillars, modelTexts }) {
                   {selectedModelText?.title}
                 </DialogTitle>
 
-                <div className='w-full border border-green-300 flex flex-col rounded-cl mb-10 overflow-hidden'>
-                  <div className='flex flex-row justify-between bg-green-300 border-b border-green-300 py-3 px-6'>
+                <div className='mb-10 flex w-full flex-col overflow-hidden rounded-cl border border-green-300'>
+                  <div className='flex flex-row justify-between border-b border-green-300 bg-green-300 px-6 py-3'>
                     <div className='p-base-semibold text-green-800'>Modeltekst omgevingsplan</div>
-                    <div className='self-end relative'>
+                    <div className='relative self-end'>
                       <button
                         id='copy_modeltext'
                         onClick={() => {
@@ -182,11 +186,11 @@ export default function PopUp({ pillars, modelTexts }) {
                         } p-xs-semibold flex flex-row`}
                       >
                         Kopieer
-                        <IconCopy className='w-5 h-5 ml-2.5' />
+                        <IconCopy className='ml-2.5 h-5 w-5' />
                       </button>
                       {showLinkCopied && (
-                        <p className='p-xs text-green-500 text-nowrap flex flex-row'>
-                          <IconCheck className='w-5 h-5 text-green-800 ml-2.5' />
+                        <p className='p-xs flex flex-row text-nowrap text-green-500'>
+                          <IconCheck className='ml-2.5 h-5 w-5 text-green-800' />
                         </p>
                       )}
                     </div>
@@ -198,14 +202,14 @@ export default function PopUp({ pillars, modelTexts }) {
                     />
                   </div>
                 </div>
-                <div className='flex flex-col mb-2 pr-6'>
+                <div className='mb-2 flex flex-col pr-6'>
                   <h6 className='heading-xl-semibold'>Toelichting</h6>
                   <PortableText
                     value={selectedModelText.description}
                     components={reducedPortableTextComponents}
                   />
                 </div>
-                <div className='pr-6 mb-6'>
+                <div className='mb-6 pr-6'>
                   <p className='p-base'>
                     <span className='font-semibold'>Let op: </span>{' '}
                     <span className='italic'>
@@ -217,9 +221,9 @@ export default function PopUp({ pillars, modelTexts }) {
                   </p>
                 </div>
                 {selectedModelText?.linkedInstruments && (
-                  <div className='flex flex-col mb-10'>
+                  <div className='mb-10 flex flex-col'>
                     <h6 className='heading-xl-semibold mb-4'>Gelinkte instrumenten</h6>
-                    <ul className='list-disc list-inside ml-2'>
+                    <ul className='ml-2 list-inside list-disc'>
                       {selectedModelText?.linkedInstruments?.map((instrument) => (
                         <li className='p-base underline' key={instrument.slug}>
                           <Link
@@ -234,22 +238,22 @@ export default function PopUp({ pillars, modelTexts }) {
                   </div>
                 )}
                 <div className='flex flex-row justify-between'>
-                  <div className='flex flex-wrap sm:flex-row gap-4'>
+                  <div className='flex flex-wrap gap-4 sm:flex-row'>
                     <div className='flex flex-col'>
                       <div className='p-xs-semibold mb-2'>Schaalniveau</div>
-                      <div className='text-xs text-gray-600 bg-white border border-gray-200 rounded-cl px-2 py-1'>
+                      <div className='rounded-cl border border-gray-200 bg-white px-2 py-1 text-xs text-gray-600'>
                         {selectedModelText.scale}
                       </div>
                     </div>
                     <div className='flex flex-col'>
                       <div className='p-xs-semibold mb-2'>Houdbaarheid</div>
-                      <div className='text-xs text-gray-600 bg-white border border-gray-200 rounded-cl px-2 py-1'>
+                      <div className='rounded-cl border border-gray-200 bg-white px-2 py-1 text-xs text-gray-600'>
                         {selectedModelText.impactLevel}
                       </div>
                     </div>
                     <div className='flex flex-col'>
                       <div className='p-xs-semibold mb-2'>Type regel</div>
-                      <div className='text-xs text-gray-600 bg-white border border-gray-200 rounded-cl px-2 py-1'>
+                      <div className='rounded-cl border border-gray-200 bg-white px-2 py-1 text-xs text-gray-600'>
                         {selectedModelText.type}
                       </div>
                     </div>

@@ -1,21 +1,22 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
-import { IconChevronDown, IconArrowRight } from '@tabler/icons-react';
 import { notFound } from 'next/navigation';
+
 import ScrollyTellingAnimation from '@/components/scrolly/scrolly-telling-animation';
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
+import { IconArrowRight, IconChevronDown } from '@tabler/icons-react';
 
 export default function ScrollyTellingPage({ params }) {
   if (params.productChain === 'bouw') {
     return (
       <>
-        <div className='hidden lg:flex min-h-[12600px] w-full flex-col items-center justify-start mt-10 relative lg:px-6 2xl:mx-auto overflow-clip'>
+        <div className='relative mt-10 hidden min-h-[12600px] w-full flex-col items-center justify-start overflow-clip lg:flex lg:px-6 2xl:mx-auto'>
           <ScrollyTellingAnimation />
         </div>
 
         <div className='block lg:hidden'>
           <div>
-            <div className='w-full bg-green-600 relative h-[260px] sm:h-[360px] mt-3 flex'>
+            <div className='relative mt-3 flex h-[260px] w-full bg-green-600 sm:h-[360px]'>
               <Image
                 src='/modeltext-header.png'
                 alt='homepage decoration'
@@ -25,11 +26,11 @@ export default function ScrollyTellingPage({ params }) {
                 priority={true}
                 quality={100}
               />
-              <div className='z-20 w-full h-full global-margin flex flex-col justify-between'>
+              <div className='global-margin z-20 flex h-full w-full flex-col justify-between'>
                 <div className='pt-6 sm:pt-10'>
-                  <span className='p-2xs-bold align-middle rounded-clSm bg-gray-100 pl-2 pr-3 py-1.5 text-green-600 inline-flex flex-row items-center justify-center group-hover:text-green-300 group-active:text-green-800 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white'>
+                  <span className='p-2xs-bold inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 align-middle text-green-600 group-hover:text-green-300 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white group-active:text-green-800'>
                     <Link
-                      className='hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'
+                      className='hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'
                       href='/'
                     >
                       {' '}
@@ -37,13 +38,13 @@ export default function ScrollyTellingPage({ params }) {
                     </Link>
                     <Link
                       href='/bouw'
-                      className='hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white pl-3'
+                      className='pl-3 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'
                     >
                       Bouw
                     </Link>
                   </span>
                 </div>
-                <div className='mb-6 sm:mb-10 flex flex-col gap-2'>
+                <div className='mb-6 flex flex-col gap-2 sm:mb-10'>
                   <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-white'>
                     Modelteksten voor omgevingsplan
                   </h1>
@@ -51,9 +52,9 @@ export default function ScrollyTellingPage({ params }) {
               </div>
             </div>
           </div>
-          <div className='global-margin py-10 sm:py-16 flex flex-col md:flex-row relative'>
-            <div className='basis-2/3 max-w-4xl'>
-              <p className='p-base italic mb-6'>Tip: bekijk dit verhaal op een groot scherm.</p>
+          <div className='global-margin relative flex flex-col py-10 sm:py-16 md:flex-row'>
+            <div className='max-w-4xl basis-2/3'>
+              <p className='p-base mb-6 italic'>Tip: bekijk dit verhaal op een groot scherm.</p>
               <h2 className='heading-2xl-semibold sm:heading-3xl-semibold mb-6'>Planregels</h2>
               <p className='p-base mb-6 max-w-2xl'>
                 Wil je werkelijk impact maken, zet dan een mix van instrumenten in. Voor het
@@ -70,18 +71,18 @@ export default function ScrollyTellingPage({ params }) {
               <div className='my-16'>
                 <Disclosure className='' as='div'>
                   <>
-                    <DisclosureButton className='group rounded-clSm text-gray-800 bg-green-50 flex justify-between items-center w-full px-6 sm:px-10 py-6'>
+                    <DisclosureButton className='group flex w-full items-center justify-between rounded-clSm bg-green-50 px-6 py-6 text-gray-800 sm:px-10'>
                       <div className='flex flex-col'>
-                        <h4 className='heading-xl-semibold sm:heading-2xl-semibold text-left mb-2.5'>
+                        <h4 className='heading-xl-semibold sm:heading-2xl-semibold mb-2.5 text-left'>
                           Samenhang
                         </h4>
                         <h5 className='p-xs-semibold sm:heading-xl-semibold text-left'>
                           Omgevingsvisie, - programma&apos;s, - plan
                         </h5>
                       </div>
-                      <IconChevronDown className='h-6 w-6 text-gray-800 group-data-[open]:rotate-180 place-self-start' />
+                      <IconChevronDown className='h-6 w-6 place-self-start text-gray-800 group-data-[open]:rotate-180' />
                     </DisclosureButton>
-                    <DisclosurePanel className='bg-green-50 -mt-6 px-6 sm:px-10 pb-4 rounded-b-clSm'>
+                    <DisclosurePanel className='-mt-6 rounded-b-clSm bg-green-50 px-6 pb-4 sm:px-10'>
                       <div className='flex flex-col gap-8 py-6'>
                         <p className='p-base'>
                           De <span className='p-base-semibold'>omgevingsvisie</span> beschrijft op
@@ -105,8 +106,8 @@ export default function ScrollyTellingPage({ params }) {
                   </>
                 </Disclosure>
               </div>
-              <div className='flex flex-col sm:flex-row gap-x-16'>
-                <div className='relative max-w-[700px] max-h-[550px] mb-6 sm:mb-0'>
+              <div className='flex flex-col gap-x-16 sm:flex-row'>
+                <div className='relative mb-6 max-h-[550px] max-w-[700px] sm:mb-0'>
                   <Image
                     src='/planregelsImage.png'
                     alt='planregels image'
@@ -116,17 +117,17 @@ export default function ScrollyTellingPage({ params }) {
                   />
                 </div>
                 <Link href='/bouw/planregels/modelteksten' className='group'>
-                  <div className='w-full bg-green-50 flex flex-col border border-gray-200 rounded-cl items-start justify-start px-10 py-8'>
-                    <div className='mb-4 p-2xs-semibold text-green-800 border rounded-cl border-green-800 px-2 py-1'>
+                  <div className='flex w-full flex-col items-start justify-start rounded-cl border border-gray-200 bg-green-50 px-10 py-8'>
+                    <div className='p-2xs-semibold mb-4 rounded-cl border border-green-800 px-2 py-1 text-green-800'>
                       Plangregels
                     </div>
-                    <p className='heading-2xl-semibold max-w-sm mb-6'>Circulaire bouw verankeren</p>
-                    <p className='p-base max-w-sm mb-6'>
+                    <p className='heading-2xl-semibold mb-6 max-w-sm'>Circulaire bouw verankeren</p>
+                    <p className='p-base mb-6 max-w-sm'>
                       Neem de juiste teksten op in je omgevingsplan
                     </p>
-                    <div className='flex flex-row items-center text-green-800 p-base-semibold group-hover:text-green-200'>
+                    <div className='p-base-semibold flex flex-row items-center text-green-800 group-hover:text-green-200'>
                       Bekijk de planregels
-                      <IconArrowRight className='h-5 w-5 ml-0.5' />
+                      <IconArrowRight className='ml-0.5 h-5 w-5' />
                     </div>
                   </div>
                 </Link>

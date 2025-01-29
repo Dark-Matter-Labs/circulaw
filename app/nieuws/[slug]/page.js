@@ -1,7 +1,7 @@
-import NewsDetailPageHeader from '@/components/news-page/news-detail-page-header';
-import { client, sanityFetch } from '@/lib/sanity';
 import NewsDetailPageBody from '@/components/news-page/news-detail-page-body';
-import { NEWS_SLUGS_QUERY, NEWS_DETAIL_PAGE_QUERY, NEWS_METADATA_QUERY } from '@/lib/queries';
+import NewsDetailPageHeader from '@/components/news-page/news-detail-page-header';
+import { NEWS_DETAIL_PAGE_QUERY, NEWS_METADATA_QUERY, NEWS_SLUGS_QUERY } from '@/lib/queries';
+import { client, sanityFetch } from '@/lib/sanity';
 
 export async function generateMetadata({ params }, parent) {
   // read route params

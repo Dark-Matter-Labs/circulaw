@@ -1,6 +1,6 @@
 export default function ExplinationText({ selected }) {
   return (
-    <div className='sm:py-6 sm:ml-3 mt-5 mb-4 global-margin sm:m-0'>
+    <div className='global-margin mb-4 mt-5 sm:m-0 sm:ml-3 sm:py-6'>
       {selected === 'beleid' && (
         <p className='p-base'>Vooral geïnteresseerd in instrumenten op het gebied van beleid?</p>
       )}

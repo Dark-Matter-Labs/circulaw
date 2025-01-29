@@ -2,8 +2,8 @@ import Modal from '../modal/modal';
 import InstrumentTooltipButton from '../modal/modal-buttons/instrument-tooltip-button';
 import ModalContent from '../modal/modal-content';
 import TooltipJuridischeHoudbaarheidContent from './tooltip-juridische-houdbaarheid-content';
-import RladderTooltipContent from './tooltip-r-ladder-content';
 import TooltipJuridischeInvloedContent from './tooltip-juridische-invloed-content';
+import RladderTooltipContent from './tooltip-r-ladder-content';
 
 export default function InstrumentMetaData({ data, borders }) {
   return (
@@ -11,13 +11,13 @@ export default function InstrumentMetaData({ data, borders }) {
       <div className='hidden sm:block'>
         <div
           className={`${
-            borders === true ? 'sm:border-y sm:border-gray-300' : 'pt-5 pb-3'
-          } h-auto flex flex-row gap-x-4 grow-0 items-center justify-self-start w-full max-w-[870px]`}
+            borders === true ? 'sm:border-y sm:border-gray-300' : 'pb-3 pt-5'
+          } flex h-auto w-full max-w-[870px] grow-0 flex-row items-center gap-x-4 justify-self-start`}
         >
-          <div className='h-auto flex flex-row gap-x-3 grow-0 items-st justify-self-start w-full'>
-            <div className='flex flex-col basis-houdbaarheid'>
+          <div className='items-st flex h-auto w-full grow-0 flex-row gap-x-3 justify-self-start'>
+            <div className='flex basis-houdbaarheid flex-col'>
               <div className='flex items-center'>
-                <div className='p-2xs-semibold text-gray-600 mb-1'>Juridische houdbaarheid</div>
+                <div className='p-2xs-semibold mb-1 text-gray-600'>Juridische houdbaarheid</div>
                 <Modal Button={<InstrumentTooltipButton />}>
                   <ModalContent title='Geschatte juridische houdbaarheid'>
                     <TooltipJuridischeHoudbaarheidContent JHTooltipText={data.JHTooltipText} />
@@ -26,14 +26,14 @@ export default function InstrumentMetaData({ data, borders }) {
               </div>
 
               <div className='flex items-center'>
-                <div className='p-xs-semibold text-green-500 bg-green-50 p-1 rounded-cl'>
+                <div className='p-xs-semibold rounded-cl bg-green-50 p-1 text-green-500'>
                   {data?.juridischeHaalbaarheid}
                 </div>
               </div>
             </div>
-            <div className='flex flex-col basis-invloed'>
+            <div className='flex basis-invloed flex-col'>
               <div className='flex items-center'>
-                <div className='p-2xs-semibold text-gray-600 mb-1'>Invloed</div>
+                <div className='p-2xs-semibold mb-1 text-gray-600'>Invloed</div>
                 <Modal Button={<InstrumentTooltipButton />}>
                   <ModalContent title='Geschatte invloed'>
                     <TooltipJuridischeInvloedContent invloedTooltipText={data.invloedTooltipText} />
@@ -41,18 +41,18 @@ export default function InstrumentMetaData({ data, borders }) {
                 </Modal>
               </div>
               <div className='flex items-center'>
-                <div className='p-xs-semibold text-green-500 bg-green-50 p-1 rounded-cl'>
+                <div className='p-xs-semibold rounded-cl bg-green-50 p-1 text-green-500'>
                   {data?.juridischInvloed}
                 </div>
               </div>
             </div>
-            <div className='flex flex-col basis-overheidslaag'>
-              <div className='flex items-center h-6'>
-                <div className='p-2xs-semibold text-gray-600 mb-1'>Overheidslaag</div>
+            <div className='flex basis-overheidslaag flex-col'>
+              <div className='flex h-6 items-center'>
+                <div className='p-2xs-semibold mb-1 text-gray-600'>Overheidslaag</div>
               </div>
 
-              <div className='p-xs-semibold text-green-500 flex'>
-                <div className='shrink bg-green-50 p-1 rounded-cl'>
+              <div className='p-xs-semibold flex text-green-500'>
+                <div className='shrink rounded-cl bg-green-50 p-1'>
                   {data?.overheidslaag
                     ?.filter((x) => x !== null)
                     .map((level) => (
@@ -64,9 +64,9 @@ export default function InstrumentMetaData({ data, borders }) {
                 </div>
               </div>
             </div>
-            <div className='flex flex-col basis-rladder'>
+            <div className='flex basis-rladder flex-col'>
               <div className='flex items-center'>
-                <div className='p-2xs-semibold text-gray-600 mb-1'>R-ladder</div>
+                <div className='p-2xs-semibold mb-1 text-gray-600'>R-ladder</div>
                 <Modal Button={<InstrumentTooltipButton />}>
                   <ModalContent title='R-ladder: strategieën van circulariteit'>
                     <RladderTooltipContent />
@@ -76,9 +76,9 @@ export default function InstrumentMetaData({ data, borders }) {
 
               <div className='flex items-center'>
                 <div className='flex flex-row items-center'>
-                  <div className='shrink bg-green-50 p-1 rounded-cl'>
+                  <div className='shrink rounded-cl bg-green-50 p-1'>
                     {data?.rLadder?.map((rValue) => (
-                      <span key={rValue} className='p-xs-semibold text-green-500 '>
+                      <span key={rValue} className='p-xs-semibold text-green-500'>
                         {rValue} {data?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                         &nbsp;
                       </span>
@@ -91,11 +91,11 @@ export default function InstrumentMetaData({ data, borders }) {
         </div>
       </div>
       {/* MOBILE */}
-      <div className='flex flex-col sm:hidden justify-center mb-4'>
-        <div className='flex flex-row justify-between h-auto py-2'>
+      <div className='mb-4 flex flex-col justify-center sm:hidden'>
+        <div className='flex h-auto flex-row justify-between py-2'>
           <div className='flex flex-col justify-center'>
             <div className='flex items-center'>
-              <div className='p-xs-semibold sm:py-1 text-gray-600'>Juridische houdbaarheid</div>
+              <div className='p-xs-semibold text-gray-600 sm:py-1'>Juridische houdbaarheid</div>
               <Modal Button={<InstrumentTooltipButton />}>
                 <ModalContent title='Geschatte juridische houdbaarheid'>
                   <TooltipJuridischeHoudbaarheidContent JHTooltipText={data.JHTooltipText} />
@@ -103,7 +103,7 @@ export default function InstrumentMetaData({ data, borders }) {
               </Modal>
             </div>
             <div className='flex items-center'>
-              <div className='shrink bg-green-100 p-1 rounded-cl p-xs-semibold text-green-500'>
+              <div className='p-xs-semibold shrink rounded-cl bg-green-100 p-1 text-green-500'>
                 {data?.juridischeHaalbaarheid}
               </div>
             </div>
@@ -120,7 +120,7 @@ export default function InstrumentMetaData({ data, borders }) {
             </div>
 
             <div className='flex items-center'>
-              <div className='p-xs-semibold text-green-500 shrink bg-green-100 p-1 rounded-cl'>
+              <div className='p-xs-semibold shrink rounded-cl bg-green-100 p-1 text-green-500'>
                 {data?.juridischInvloed}
               </div>
             </div>
@@ -132,7 +132,7 @@ export default function InstrumentMetaData({ data, borders }) {
               <div className='p-xs-semibold py-1 text-gray-600'>Overheidslaag</div>
             </div>
 
-            <div className='p-xs-semibold text-green-500 shrink bg-green-100 p-1 rounded-cl'>
+            <div className='p-xs-semibold shrink rounded-cl bg-green-100 p-1 text-green-500'>
               {data?.overheidslaag
                 ?.filter((x) => x !== null)
                 .map((level) => (
@@ -160,7 +160,7 @@ export default function InstrumentMetaData({ data, borders }) {
                 {data?.rLadder?.map((rValue) => (
                   <div
                     key={rValue}
-                    className='p-xs-semibold text-green-500 shrink bg-green-100 p-1 rounded-cl'
+                    className='p-xs-semibold shrink rounded-cl bg-green-100 p-1 text-green-500'
                   >
                     {rValue} {data?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                     &nbsp;

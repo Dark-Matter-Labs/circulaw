@@ -1,32 +1,34 @@
-import LinkIcon from '../link-icon';
-import Highlights from './highlights';
-import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
-import Modal from '../modal/modal';
-import ModalContent from '../modal/modal-content';
-import EULawButton from '../modal/modal-buttons/eu-status-button';
+
+import { urlFor } from '@/lib/sanity';
+
 import ImageComponent from '../image-component';
+import LinkIcon from '../link-icon';
+import Modal from '../modal/modal';
+import EULawButton from '../modal/modal-buttons/eu-status-button';
+import ModalContent from '../modal/modal-content';
+import Highlights from './highlights';
 
 export default function SummaryComponent({ lawData }) {
   return (
     <div className=''>
       {/* Intro section */}
       <div className='global-margin'>
-        <div className='flex flex-col sm:flex-row gap-y-12 sm:gap-y-0 gap-x-32 my-12 sm:my-20 items-start justify-start'>
+        <div className='my-12 flex flex-col items-start justify-start gap-x-32 gap-y-12 sm:my-20 sm:flex-row sm:gap-y-0'>
           <div className='flex flex-col sm:flex-col-reverse'>
-            <div className='mb-6 sm:mb-0 flex relative sm:hidden items-center justify-center h-[205px] w-full'>
+            <div className='relative mb-6 flex h-[205px] w-full items-center justify-center sm:mb-0 sm:hidden'>
               {lawData?.introImage && (
                 <ImageComponent image={lawData?.introImage} caption={lawData?.imageAlt ?? ''} />
               )}
             </div>
-            <h3 className='heading-xl-semibold text-green-800 mb-6'>Overzicht</h3>
-            <div className='p-base order-last sm:order-first max-w-[540px]'>
+            <h3 className='heading-xl-semibold mb-6 text-green-800'>Overzicht</h3>
+            <div className='p-base order-last max-w-[540px] sm:order-first'>
               {lawData?.summaryIntroText}
             </div>
           </div>
           <div className='flex flex-col items-center justify-center gap-y-8'>
-            <div className='mb-6 sm:mb-0 sm:flex items-center justify-center max-h-80 hidden'>
+            <div className='mb-6 hidden max-h-80 items-center justify-center sm:mb-0 sm:flex'>
               {lawData?.introImage && (
                 <Image
                   src={urlFor(lawData?.introImage).url() ?? ''}
@@ -41,7 +43,7 @@ export default function SummaryComponent({ lawData }) {
               <ModalContent title='Status' ptContent={lawData?.statusContent}>
                 <div className='heading-2xl-semibold mb-8 mt-6'>Welke statussen zijn er?</div>
                 <div>
-                  <h3 className='mb-4 heading-xl-semibold'>1: In onderhandeling</h3>
+                  <h3 className='heading-xl-semibold mb-4'>1: In onderhandeling</h3>
                   <p className='p-base mb-2'>
                     De Europese Commissie komt met een nieuw initiatief voor een nieuwe wet of een
                     wijziging van een bestaande wet. Burgers, bedrijven en organisaties kunnen op
@@ -54,7 +56,7 @@ export default function SummaryComponent({ lawData }) {
                     (amendementen) voorstellen. Op deze manier wordt over de definitieve tekst van
                     een wet onderhandeld.
                   </p>
-                  <h3 className='my-4 heading-xl-semibold'>2: Aangenomen</h3>
+                  <h3 className='heading-xl-semibold my-4'>2: Aangenomen</h3>
                   <p className='p-base mb-2'>
                     De Europese Commissie, Europees Parlement en de Raad van de Europese Unie
                     bereiken overeenstemming over de definitieve tekst van het wetsvoorstel.
@@ -63,7 +65,7 @@ export default function SummaryComponent({ lawData }) {
                     wanneer zij van mening is dat het voorstel te ingrijpend is gewijzigd naar
                     aanleiding van alle amendementen.
                   </p>
-                  <h3 className='my-4 heading-xl-semibold'>3: Implementatie</h3>
+                  <h3 className='heading-xl-semibold my-4'>3: Implementatie</h3>
                   <p className='p-base mb-2'>
                     Als een nieuwe of gewijzigde wet een richtlijn is, dan moet de lidstaat de
                     richtlijn implementeren in nationale wet- en regelgeving. Dit kan door nieuwe
@@ -107,18 +109,18 @@ export default function SummaryComponent({ lawData }) {
       </div>
       {/* Links */}
       <div className='py-10'>
-        <div className='global-margin grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+        <div className='global-margin grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
           {lawData?.linkCol1 && (
             <div className='flex flex-col'>
-              <h3 className='text-green-800 heading-2xl-semibold'>
+              <h3 className='heading-2xl-semibold text-green-800'>
                 Bekijk ook op{' '}
-                <Link href='/' className='underline link-interaction'>
+                <Link href='/' className='link-interaction underline'>
                   Circulaw.nl
                 </Link>
               </h3>
               <ul>
                 {lawData?.linkCol1?.map((link, id) => (
-                  <li key={id} className='p-base text-green-800 my-3'>
+                  <li key={id} className='p-base my-3 text-green-800'>
                     <Link href={link?.link} className='link-interaction'>
                       {link?.linkText}
                     </Link>
@@ -129,12 +131,12 @@ export default function SummaryComponent({ lawData }) {
           )}
           {lawData?.linkCol2 && (
             <div>
-              <h3 className='text-green-800 heading-2xl-semibold'>
+              <h3 className='heading-2xl-semibold text-green-800'>
                 Relevante NL wetgeving <LinkIcon />
               </h3>
               <ul>
                 {lawData?.linkCol2?.map((link, id) => (
-                  <li key={id} className='p-base text-green-800 my-3'>
+                  <li key={id} className='p-base my-3 text-green-800'>
                     <Link href={link?.link} target='_blank' className='link-interaction'>
                       {link?.linkText}
                     </Link>
@@ -145,12 +147,12 @@ export default function SummaryComponent({ lawData }) {
           )}
           {lawData?.linkCol3 && (
             <div>
-              <h3 className='text-green-800 heading-2xl-semibold'>
+              <h3 className='heading-2xl-semibold text-green-800'>
                 Relevante EU-wetgeving <LinkIcon />
               </h3>
               <ul>
                 {lawData?.linkCol3?.map((link, id) => (
-                  <li key={id} className='p-base text-green-800 my-3'>
+                  <li key={id} className='p-base my-3 text-green-800'>
                     <Link href={link?.link} target='_blank' className='link-interaction'>
                       {link?.linkText}
                     </Link>

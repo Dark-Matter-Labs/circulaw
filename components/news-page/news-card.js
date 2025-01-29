@@ -1,8 +1,10 @@
-import LinkIcon from '../link-icon';
-import Tag from '@/components/tag';
-import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import Tag from '@/components/tag';
+import { urlFor } from '@/lib/sanity';
+
+import LinkIcon from '../link-icon';
 
 export default function NewsCard({ data }) {
   const event = new Date(data.newsDate);
@@ -16,22 +18,19 @@ export default function NewsCard({ data }) {
     return (
       <Link href={`/nieuws/${data?.slug?.current}`} className='group'>
         <div
-          className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''}
-                    ${data.colour === 'green' ? 'bg-green-500' : ''}
-                    ${data.colour === 'darkGreen' ? 'bg-green-600' : ''}
-                    ${
-                      data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
-                    } rounded-cl flex flex-col justify-between items-start`}
+          className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-600' : ''} ${
+            data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
+          } flex flex-col items-start justify-between rounded-cl`}
         >
           {data.image && (
-            <div className='w-full h-80 relative rounded-t-cl'>
+            <div className='relative h-80 w-full rounded-t-cl'>
               <Image
                 src={urlFor(data?.image).url()}
                 alt={data?.title + 'image'}
                 priority={true}
                 fill
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
-                className='w-full h-full relative object-cover rounded-t-cl '
+                className='relative h-full w-full rounded-t-cl object-cover'
                 placeholder='blur'
                 blurDataURL={data?.metadata.lqip}
               />
@@ -40,7 +39,7 @@ export default function NewsCard({ data }) {
           <div
             className={`${
               data.linkText || data.createPage === true ? 'justify-between' : ''
-            } px-8 py-6 flex flex-col h-full w-full gap-y-3`}
+            } flex h-full w-full flex-col gap-y-3 px-8 py-6`}
           >
             <div className=''>
               <div className='flex grow-0'>
@@ -82,9 +81,9 @@ export default function NewsCard({ data }) {
               <div
                 className={`${
                   data.colour === 'lightGreen'
-                    ? 'text-green-800 group-hover:text-green-200 group-hover:underline active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                    : 'text-gray-100 group-hover:text-green-200 group-hover:underline active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
-                } self-end heading-xl-semibold`}
+                    ? 'text-green-800 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100 group-hover:text-green-200 group-hover:underline'
+                    : 'text-gray-100 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-400 group-hover:text-green-200 group-hover:underline'
+                } heading-xl-semibold self-end`}
               >
                 Lees meer {'>'}
               </div>
@@ -101,22 +100,19 @@ export default function NewsCard({ data }) {
         className='group'
       >
         <div
-          className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''}
-                    ${data.colour === 'green' ? 'bg-green-500' : ''}
-                    ${data.colour === 'darkGreen' ? 'bg-green-600' : ''}
-                    ${
-                      data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
-                    } rounded-cl flex flex-col justify-between items-start`}
+          className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-600' : ''} ${
+            data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
+          } flex flex-col items-start justify-between rounded-cl`}
         >
           {data.image && (
-            <div className='w-full h-80 relative rounded-t-cl'>
+            <div className='relative h-80 w-full rounded-t-cl'>
               <Image
                 src={urlFor(data?.image).url()}
                 alt={data?.title + 'image'}
                 fill
                 priority={true}
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
-                className='w-full h-full relative object-cover rounded-t-cl '
+                className='relative h-full w-full rounded-t-cl object-cover'
                 placeholder='blur'
                 blurDataURL={data?.metadata.lqip}
               />
@@ -124,8 +120,8 @@ export default function NewsCard({ data }) {
           )}
           <div
             className={`${
-              data.linkText || data.createPage === true ? 'justify-between ' : ''
-            } px-8 py-6 flex flex-col gap-y-3 h-full w-full`}
+              data.linkText || data.createPage === true ? 'justify-between' : ''
+            } flex h-full w-full flex-col gap-y-3 px-8 py-6`}
           >
             <div className=''>
               <div className='flex grow-0'>
@@ -167,9 +163,9 @@ export default function NewsCard({ data }) {
               <div
                 className={`${
                   data.colour === 'lightGreen'
-                    ? 'text-green-800 group-hover:text-green-200 group-hover:underline active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                    : 'text-gray-100 group-hover:text-green-200 group-hover:underline active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
-                } self-end heading-xl-semibold inline-flex flex-row itmes-center`}
+                    ? 'text-green-800 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100 group-hover:text-green-200 group-hover:underline'
+                    : 'text-gray-100 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-400 group-hover:text-green-200 group-hover:underline'
+                } heading-xl-semibold itmes-center inline-flex flex-row self-end`}
               >
                 {data.linkText}{' '}
                 {data.internalExternal === true ? <LinkIcon /> : <span>&nbsp;{'>'}</span>}
@@ -179,9 +175,9 @@ export default function NewsCard({ data }) {
               <div
                 className={`${
                   data.colour === 'lightGreen'
-                    ? 'text-green-800 hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                    : 'text-gray-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
-                } self-end heading-xl-semibold`}
+                    ? 'text-green-800 hover:text-green-200 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100'
+                    : 'text-gray-100 hover:text-green-200 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-400'
+                } heading-xl-semibold self-end`}
               >
                 Lees meer {'>'}
               </div>
@@ -193,22 +189,19 @@ export default function NewsCard({ data }) {
   } else {
     return (
       <div
-        className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''}
-                    ${data.colour === 'green' ? 'bg-green-500' : ''}
-                    ${data.colour === 'darkGreen' ? 'bg-green-600' : ''}
-                    ${
-                      data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
-                    } rounded-cl flex flex-col justify-between items-start`}
+        className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-600' : ''} ${
+          data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
+        } flex flex-col items-start justify-between rounded-cl`}
       >
         {data.image && (
-          <div className='w-full h-80 relative rounded-t-cl'>
+          <div className='relative h-80 w-full rounded-t-cl'>
             <Image
               src={urlFor(data?.image).url()}
               alt={data?.title + 'image'}
               fill
               priority={true}
               sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
-              className='w-full h-full relative object-cover rounded-t-cl '
+              className='relative h-full w-full rounded-t-cl object-cover'
               placeholder='blur'
               blurDataURL={data?.metadata.lqip}
             />
@@ -216,8 +209,8 @@ export default function NewsCard({ data }) {
         )}
         <div
           className={`${
-            data.linkText || data.createPage === true ? 'justify-between ' : ''
-          } px-8 py-6 flex gap-y-3 flex-col h-full w-full`}
+            data.linkText || data.createPage === true ? 'justify-between' : ''
+          } flex h-full w-full flex-col gap-y-3 px-8 py-6`}
         >
           <div className=''>
             <div className='flex grow-0'>
@@ -259,9 +252,9 @@ export default function NewsCard({ data }) {
             <div
               className={`${
                 data.colour === 'lightGreen'
-                  ? 'text-green-800 hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                  : 'text-gray-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
-              } self-end heading-xl-semibold inline-flex flex-row itmes-center`}
+                  ? 'text-green-800 hover:text-green-200 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100'
+                  : 'text-gray-100 hover:text-green-200 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-400'
+              } heading-xl-semibold itmes-center inline-flex flex-row self-end`}
             >
               {data.linkText}{' '}
               {data.internalExternal === true ? <LinkIcon /> : <span>&nbsp;{'>'}</span>}
@@ -271,9 +264,9 @@ export default function NewsCard({ data }) {
             <div
               className={`${
                 data.colour === 'lightGreen'
-                  ? 'text-green-800 hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                  : 'text-gray-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
-              } self-end heading-xl-semibold`}
+                  ? 'text-green-800 hover:text-green-200 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100'
+                  : 'text-gray-100 hover:text-green-200 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-400'
+              } heading-xl-semibold self-end`}
             >
               Lees meer {'>'}
             </div>

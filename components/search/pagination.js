@@ -1,5 +1,6 @@
 import { usePagination } from 'react-instantsearch';
-import { IconChevronRight, IconChevronLeft } from '@tabler/icons-react';
+
+import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 
 export default function Pagination() {
   const { nbPages, currentRefinement, pages, refine, isFirstPage, isLastPage } = usePagination({
@@ -14,10 +15,10 @@ export default function Pagination() {
   if (nbPages !== 1) {
     return (
       <ul className={`${pages[2] + 1 === nbPages ? '' : ''} flex flex-row`}>
-        <li className='mx-1 h-8 w-8 flex items-center justify-center'>
+        <li className='mx-1 flex h-8 w-8 items-center justify-center'>
           <button
             disabled={isFirstPage}
-            className='rounded-cl w-full h-full flex items-center justify-center text-green-900 heading-xl-semibold bg-green-50'
+            className='heading-xl-semibold flex h-full w-full items-center justify-center rounded-cl bg-green-50 text-green-900'
             onClick={(event) => {
               event.preventDefault();
               refine(previousPageIndex);
@@ -27,12 +28,12 @@ export default function Pagination() {
             <IconChevronLeft className='h-6 w-6' />
           </button>
         </li>
-        <li className='mx-1 h-8 w-8 flex items-center justify-center'>
+        <li className='mx-1 flex h-8 w-8 items-center justify-center'>
           <button
             disabled={isFirstPage}
             className={
               isFirstPage
-                ? 'rounded-cl w-full h-full flex items-center justify-center bg-green-500 text-green-50 heading-xl-semibold'
+                ? 'heading-xl-semibold flex h-full w-full items-center justify-center rounded-cl bg-green-500 text-green-50'
                 : 'heading-xl-semibold'
             }
             onClick={(event) => {
@@ -46,7 +47,7 @@ export default function Pagination() {
         </li>
 
         {pages[0] !== 0 && pages[0] !== 1 && (
-          <li className='mx-1 h-8 w-8 flex items-end justify-center'>...</li>
+          <li className='mx-1 flex h-8 w-8 items-end justify-center'>...</li>
         )}
         {pages.length !== 2 && (
           <>
@@ -60,11 +61,11 @@ export default function Pagination() {
                       pages[2] === label &&
                       currentRefinement !== 0 &&
                       currentRefinement !== nbPages - 1
-                        ? 'font-semibold bg-green-500 rounded-cl text-green-50'
+                        ? 'rounded-cl bg-green-500 font-semibold text-green-50'
                         : ''
                     } ${pages[0] === 0 && index === 0 ? 'hidden' : ''} ${
                       pages[2] + 1 === nbPages && index === 2 ? 'hidden' : ''
-                    } mx-1 h-8 w-8 flex items-center justify-center heading-xl-semibold`}
+                    } heading-xl-semibold mx-1 flex h-8 w-8 items-center justify-center`}
                   >
                     <button
                       disabled={false}
@@ -82,15 +83,15 @@ export default function Pagination() {
           </>
         )}
         {pages[2] !== nbPages - 1 && pages[2] !== nbPages - 2 && pages.length > 2 && (
-          <li className='mx-1 h-8 w-8 flex items-end justify-center'>...</li>
+          <li className='mx-1 flex h-8 w-8 items-end justify-center'>...</li>
         )}
 
-        <li className='mx-1 h-8 w-8 flex items-center justify-center'>
+        <li className='mx-1 flex h-8 w-8 items-center justify-center'>
           <button
             disabled={isLastPage}
             className={`${
               isLastPage
-                ? 'rounded-cl w-full h-full flex items-center justify-center bg-green-500 text-green-50 heading-xl-semibold'
+                ? 'heading-xl-semibold flex h-full w-full items-center justify-center rounded-cl bg-green-500 text-green-50'
                 : 'heading-xl-semibold'
             }`}
             onClick={(event) => {
@@ -102,10 +103,10 @@ export default function Pagination() {
             {lastPageIndex + 1}
           </button>
         </li>
-        <li className='mx-1 h-8 w-8 flex items-center justify-center'>
+        <li className='mx-1 flex h-8 w-8 items-center justify-center'>
           <button
             disabled={isLastPage}
-            className='rounded-cl w-full h-full flex items-center justify-center text-green-900 heading-xl-semibold bg-green-50'
+            className='heading-xl-semibold flex h-full w-full items-center justify-center rounded-cl bg-green-50 text-green-900'
             onClick={(event) => {
               event.preventDefault();
               refine(nextPageIndex);

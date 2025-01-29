@@ -1,10 +1,12 @@
 'use client';
+
+import { useEffect } from 'react';
+import { hotjar } from 'react-hotjar';
+
 import CookieConsent from '@/components/cookie-banner';
 import Nav from '@/components/nav';
 import Footer from '@/components/nav/footer';
 import PiwikProProvider from '@piwikpro/next-piwik-pro';
-import { useEffect } from 'react';
-import { hotjar } from 'react-hotjar';
 
 // TODO: what parts of this can we move directly to layout.js
 // moving these parts mean they will render on the server and not client side.

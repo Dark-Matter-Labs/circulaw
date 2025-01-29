@@ -1,12 +1,12 @@
 export default function ContentSeven() {
   return (
-    <div className='text-green-600 flex flex-col gap-y-6 max-w-[290px]'>
+    <div className='flex max-w-[290px] flex-col gap-y-6 text-green-600'>
       <h3 className='heading-2xl-semibold'>Gemeentelijke omgevingsvisie</h3>
       <p className='p-base'>
         Dit is de <span className='p-base-semibold'>langetermijnvisie</span> op de{' '}
         <span className='p-base-semibold'>fysieke leefomgeving:</span>
       </p>
-      <ul className='list-outside list-disc p-base flex flex-col gap-y-2 ml-4'>
+      <ul className='p-base ml-4 flex list-outside list-disc flex-col gap-y-2'>
         <li>
           Beschrijft op hoofdlijnen hoe de toekomst van de leefomgeving eruitziet en welke ambities
           en doelen nagestreefd worden.Geeft richting aan het omgevingsplan
