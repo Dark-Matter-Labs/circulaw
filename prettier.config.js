@@ -10,7 +10,10 @@ const config = {
     'trailingComma': 'all',
     'jsxSingleQuote': true,
     'bracketSpacing': true,
-    'plugins': ['prettier-plugin-tailwindcss']
+    'importOrder': ['^@core/(.*)$', '^@server/(.*)$', '^@ui/(.*)$', '^[./]'],
+    'importOrderSeparation': true,
+    'importOrderSortSpecifiers': true,
+    'plugins': ['@trivago/prettier-plugin-sort-imports', 'prettier-plugin-tailwindcss']
   };
   
   module.exports = config;
