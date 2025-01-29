@@ -20,17 +20,14 @@ export default function FeaturedCard({ data }) {
     return (
       <Link href={`/nieuws/${data?.slug?.current}`} className='group'>
         <div
-          className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''}
-                    ${data.colour === 'green' ? 'bg-green-500' : ''}
-                    ${data.colour === 'darkGreen' ? 'bg-green-600' : ''}
-                    ${
-                      data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
-                    } sm:h-80 rounded-cl flex justify-between items-start flex-col-reverse sm:flex-row`}
+          className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-600' : ''} ${
+            data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
+          } flex flex-col-reverse items-start justify-between rounded-cl sm:h-80 sm:flex-row`}
         >
           <div
             className={`${
               data.linkText || data.createPage === true ? 'justify-between' : ''
-            } px-8 py-6 flex flex-col h-full w-full sm:w-1/2 gap-y-3`}
+            } flex h-full w-full flex-col gap-y-3 px-8 py-6 sm:w-1/2`}
           >
             <div className=''>
               <div className='flex grow-0'>
@@ -72,23 +69,23 @@ export default function FeaturedCard({ data }) {
               <div
                 className={`${
                   data.colour === 'lightGreen'
-                    ? 'text-green-800 group-hover:text-green-200 group-hover:underline active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                    : 'text-gray-100 group-hover:text-green-200 group-hover:underline active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
-                } self-end heading-xl-semibold`}
+                    ? 'text-green-800 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100 group-hover:text-green-200 group-hover:underline'
+                    : 'text-gray-100 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-400 group-hover:text-green-200 group-hover:underline'
+                } heading-xl-semibold self-end`}
               >
                 Lees meer {'>'}
               </div>
             )}
           </div>
           {data.image && (
-            <div className='w-full sm:w-1/2 h-80 relative  rounded-t-cl sm:rounded-r-cl'>
+            <div className='relative h-80 w-full rounded-t-cl sm:w-1/2 sm:rounded-r-cl'>
               <Image
                 src={urlFor(data?.image).url()}
                 alt={data?.title + 'image'}
                 fill
                 priority={pathname === '/' ? false : true}
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
-                className='w-full h-full relative object-cover rounded-t-cl sm:rounded-tl-none sm:rounded-r-cl'
+                className='relative h-full w-full rounded-t-cl object-cover sm:rounded-r-cl sm:rounded-tl-none'
                 placeholder='blur'
                 blurDataURL={data?.metadata.lqip}
               />
@@ -105,17 +102,14 @@ export default function FeaturedCard({ data }) {
         className='group'
       >
         <div
-          className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''}
-                    ${data.colour === 'green' ? 'bg-green-500' : ''}
-                    ${data.colour === 'darkGreen' ? 'bg-green-600' : ''}
-                    ${
-                      data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
-                    } sm:h-80 rounded-cl flex justify-between items-start flex-col-reverse sm:flex-row`}
+          className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-600' : ''} ${
+            data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
+          } flex flex-col-reverse items-start justify-between rounded-cl sm:h-80 sm:flex-row`}
         >
           <div
             className={`${data.linkText || data.createPage === true ? 'justify-between' : ''} ${
               data.image ? 'sm:w-1/2' : ''
-            } px-8 py-6 flex flex-col h-full w-full  gap-y-3`}
+            } flex h-full w-full flex-col gap-y-3 px-8 py-6`}
           >
             <div className=''>
               <div className='flex grow-0'>
@@ -157,9 +151,9 @@ export default function FeaturedCard({ data }) {
               <div
                 className={`${
                   data.colour === 'lightGreen'
-                    ? 'text-green-800 group-hover:text-green-200 group-hover:underline active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                    : 'text-gray-100 group-hover:text-green-200 group-hover:underline active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
-                } self-end heading-xl-semibold inline-flex flex-row itmes-center`}
+                    ? 'text-green-800 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100 group-hover:text-green-200 group-hover:underline'
+                    : 'text-gray-100 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-400 group-hover:text-green-200 group-hover:underline'
+                } heading-xl-semibold itmes-center inline-flex flex-row self-end`}
               >
                 {data.linkText}{' '}
                 {data.internalExternal === true ? <LinkIcon /> : <span>&nbsp;{'>'}</span>}
@@ -167,13 +161,13 @@ export default function FeaturedCard({ data }) {
             )}
           </div>
           {data.image && (
-            <div className='w-full sm:w-1/2 h-80 relative rounded-t-cl sm:rounded-r-cl'>
+            <div className='relative h-80 w-full rounded-t-cl sm:w-1/2 sm:rounded-r-cl'>
               <Image
                 src={urlFor(data?.image).url()}
                 alt={data?.title + 'image'}
                 fill
                 priority={pathname === '/' ? false : true}
-                className='w-full h-full relative object-cover rounded-t-cl sm:rounded-tl-none sm:rounded-r-cl'
+                className='relative h-full w-full rounded-t-cl object-cover sm:rounded-r-cl sm:rounded-tl-none'
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
                 placeholder='blur'
                 blurDataURL={data?.metadata.lqip}
@@ -186,17 +180,14 @@ export default function FeaturedCard({ data }) {
   } else {
     return (
       <div
-        className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''}
-                    ${data.colour === 'green' ? 'bg-green-500' : ''}
-                    ${data.colour === 'darkGreen' ? 'bg-green-600' : ''}
-                    ${
-                      data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
-                    } sm:h-80 rounded-cl flex justify-between items-start flex-col-reverse sm:flex-row`}
+        className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-600' : ''} ${
+          data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
+        } flex flex-col-reverse items-start justify-between rounded-cl sm:h-80 sm:flex-row`}
       >
         <div
           className={`${
             data.linkText || data.createPage === true ? 'justify-between' : ''
-          } px-8 py-6 flex flex-col h-full w-full sm:w-1/2 gap-y-3`}
+          } flex h-full w-full flex-col gap-y-3 px-8 py-6 sm:w-1/2`}
         >
           <div className=''>
             <div className='flex grow-0'>
@@ -238,9 +229,9 @@ export default function FeaturedCard({ data }) {
             <div
               className={`${
                 data.colour === 'lightGreen'
-                  ? 'text-green-800 hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                  : 'text-gray-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
-              } self-end heading-xl-semibold inline-flex flex-row itmes-center`}
+                  ? 'text-green-800 hover:text-green-200 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100'
+                  : 'text-gray-100 hover:text-green-200 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-400'
+              } heading-xl-semibold itmes-center inline-flex flex-row self-end`}
             >
               {data.linkText}{' '}
               {data.internalExternal === true ? <LinkIcon /> : <span>&nbsp;{'>'}</span>}
@@ -250,22 +241,22 @@ export default function FeaturedCard({ data }) {
             <div
               className={`${
                 data.colour === 'lightGreen'
-                  ? 'text-green-800 hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white'
-                  : 'text-gray-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white '
-              } self-end heading-xl-semibold`}
+                  ? 'text-green-800 hover:text-green-200 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100'
+                  : 'text-gray-100 hover:text-green-200 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-400'
+              } heading-xl-semibold self-end`}
             >
               Lees meer {'>'}
             </div>
           )}
         </div>
         {data.image && (
-          <div className='w-full sm:w-1/2 h-80 relative rounded-t-cl sm:rounded-r-cl'>
+          <div className='relative h-80 w-full rounded-t-cl sm:w-1/2 sm:rounded-r-cl'>
             <Image
               src={urlFor(data?.image).url()}
               alt={data?.title + 'image'}
               fill
               priority={pathname === '/' ? false : true}
-              className='w-full h-full relative object-cover rounded-t-cl sm:rounded-tl-none sm:rounded-r-cl '
+              className='relative h-full w-full rounded-t-cl object-cover sm:rounded-r-cl sm:rounded-tl-none'
               sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
               placeholder='blur'
               blurDataURL={data?.metadata.lqip}

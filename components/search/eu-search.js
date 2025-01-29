@@ -13,7 +13,7 @@ export default function EUSearch() {
       <div className='global-margin flex min-h-[80vh] justify-center sm:w-full'>
         <NoResultsBoundary fallback={<NoResults />}>
           <div>
-            <div className='sm:ml-12 sm:mt-10 mt-6'>
+            <div className='mt-6 sm:ml-12 sm:mt-10'>
               <CustomStats index='EU wetgeving' />
             </div>
             <Hits
@@ -24,7 +24,7 @@ export default function EUSearch() {
               }}
               hitComponent={EUHit}
             />
-            <div className='w-full flex items-center justify-center mb-12 mt-6'>
+            <div className='mb-12 mt-6 flex w-full items-center justify-center'>
               <Pagination />
             </div>
           </div>

@@ -7,9 +7,9 @@ export default function InstrumentCard({ instrument, images }) {
   return (
     <>
       <div className='flex'>
-        <div className='hidden sm:flex flex-row justify-start items-center p-4 rounded-cl group hover:shadow-card transition-all duration-100 mb-6 shrink'>
+        <div className='group mb-6 hidden shrink flex-row items-center justify-start rounded-cl p-4 transition-all duration-100 hover:shadow-card sm:flex'>
           {images === true && (
-            <div className='flex items-center w-full h-44 sm:md-0 sm:w-64 sm:h-44 rounded-cl sm:mr-6 mb-4 sm:mb-0 relative '>
+            <div className='sm:md-0 relative mb-4 flex h-44 w-full items-center rounded-cl sm:mb-0 sm:mr-6 sm:h-44 sm:w-64'>
               {instrument.featuredImage && (
                 <Image
                   src={urlFor(instrument?.featuredImage).url()}
@@ -28,7 +28,7 @@ export default function InstrumentCard({ instrument, images }) {
               key={instrument.titel}
             >
               <div className='block'>
-                <div className='flex justify-start items-center -ml-1'>
+                <div className='-ml-1 flex items-center justify-start'>
                   {/* Expertise Tag */}
                   {instrument?.beleid === true && (
                     <Tag classes='bg-green-500 text-gray-100 mr-2'>Beleid</Tag>
@@ -46,39 +46,39 @@ export default function InstrumentCard({ instrument, images }) {
                     <Tag classes='bg-green-500 text-gray-100 mr-2'>Fiscaal</Tag>
                   )}
                 </div>
-                <div className='block mt-2'>
-                  <div className=' mb-2'>
-                    <h3 className='heading-2xl-semibold max-w-[650px] text-gray-800 no-underline group-hover:text-green-300 transition-colors duration-100 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+                <div className='mt-2 block'>
+                  <div className='mb-2'>
+                    <h3 className='heading-2xl-semibold max-w-[650px] text-gray-800 no-underline transition-colors duration-100 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800 group-hover:text-green-300'>
                       {instrument.titel}{' '}
                     </h3>
                   </div>
-                  <div className='block newlineDisplay p-base text-gray-800 mt-2 pb-2'>
-                    <p className='p-base sm:max-w-[650px] line-clamp-3'>{instrument.introText}</p>
+                  <div className='newlineDisplay p-base mt-2 block pb-2 text-gray-800'>
+                    <p className='p-base line-clamp-3 sm:max-w-[650px]'>{instrument.introText}</p>
                   </div>
                   <div className=''>
-                    <div className='h-auto flex flex-row gap-x-3 grow-0 items-st justify-self-start w-full mt-4'>
-                      <div className='flex flex-col basis-houdbaarheid'>
-                        <div className='p-2xs-semibold text-gray-600 mb-1'>
+                    <div className='items-st mt-4 flex h-auto w-full grow-0 flex-row gap-x-3 justify-self-start'>
+                      <div className='flex basis-houdbaarheid flex-col'>
+                        <div className='p-2xs-semibold mb-1 text-gray-600'>
                           Juridische houdbaarheid
                         </div>
                         <div className='flex items-center'>
-                          <div className='p-xs-semibold text-green-500 bg-green-50 p-1 rounded-cl'>
+                          <div className='p-xs-semibold rounded-cl bg-green-50 p-1 text-green-500'>
                             {instrument?.juridischeHaalbaarheid}
                           </div>
                         </div>
                       </div>
-                      <div className='flex flex-col basis-invloed'>
-                        <div className='p-2xs-semibold text-gray-600 mb-1'>Invloed</div>
+                      <div className='flex basis-invloed flex-col'>
+                        <div className='p-2xs-semibold mb-1 text-gray-600'>Invloed</div>
                         <div className='flex items-center'>
-                          <div className='p-xs-semibold text-green-500 bg-green-50 p-1 rounded-cl'>
+                          <div className='p-xs-semibold rounded-cl bg-green-50 p-1 text-green-500'>
                             {instrument?.juridischInvloed}
                           </div>
                         </div>
                       </div>
-                      <div className='flex flex-col basis-overheidslaag'>
-                        <div className='p-2xs-semibold text-gray-600 mb-1'>Overheidslaag</div>
-                        <div className='p-xs-semibold text-green-500  flex'>
-                          <div className='shrink bg-green-50 p-1 rounded-cl'>
+                      <div className='flex basis-overheidslaag flex-col'>
+                        <div className='p-2xs-semibold mb-1 text-gray-600'>Overheidslaag</div>
+                        <div className='p-xs-semibold flex text-green-500'>
+                          <div className='shrink rounded-cl bg-green-50 p-1'>
                             {instrument?.overheidslaag
                               ?.filter((x) => x !== null)
                               .map((level) => (
@@ -93,13 +93,13 @@ export default function InstrumentCard({ instrument, images }) {
                           </div>
                         </div>
                       </div>
-                      <div className='flex flex-col basis-rladder'>
-                        <div className='p-2xs-semibold text-gray-600 mb-1'>R-ladder</div>
+                      <div className='flex basis-rladder flex-col'>
+                        <div className='p-2xs-semibold mb-1 text-gray-600'>R-ladder</div>
                         <div className='flex items-center'>
                           <div className='flex flex-row items-center'>
-                            <div className='shrink bg-green-50 p-1 rounded-cl'>
+                            <div className='shrink rounded-cl bg-green-50 p-1'>
                               {instrument?.rLadder?.map((rValue) => (
-                                <span key={rValue} className='p-xs-semibold text-green-500 '>
+                                <span key={rValue} className='p-xs-semibold text-green-500'>
                                   {rValue}{' '}
                                   {instrument?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                                   &nbsp;
@@ -122,9 +122,9 @@ export default function InstrumentCard({ instrument, images }) {
           href={`/${instrument.transitionAgenda}/${instrument.thema}/instrumenten/${instrument.slug.current}`}
           key={instrument.titel}
         >
-          <div className='block sm:hidden sm:ml-0 mb-10 sm:mb-8 md:max-w-[760px] p-4 bg-green-50 rounded-cl'>
+          <div className='mb-10 block rounded-cl bg-green-50 p-4 sm:mb-8 sm:ml-0 sm:hidden md:max-w-[760px]'>
             {images === true && (
-              <div className='flex items-center w-full h-44 sm:md-0 sm:w-64 sm:h-44 rounded-cl sm:mr-6 mb-4 sm:mb-0 relative '>
+              <div className='sm:md-0 relative mb-4 flex h-44 w-full items-center rounded-cl sm:mb-0 sm:mr-6 sm:h-44 sm:w-64'>
                 {instrument.featuredImage && (
                   <Image
                     src={urlFor(instrument?.featuredImage).url()}
@@ -138,7 +138,7 @@ export default function InstrumentCard({ instrument, images }) {
               </div>
             )}
             <div className=''>
-              <div className='flex justify-start items-center -ml-1'>
+              <div className='-ml-1 flex items-center justify-start'>
                 {/* Expertise Tag */}
                 <Tag classes='border border-green-400 bg-transparent text-green-400 mr-2'>
                   {instrument.thema}
@@ -159,23 +159,23 @@ export default function InstrumentCard({ instrument, images }) {
                   <Tag classes='bg-green-500 text-gray-100'>Fiscaal</Tag>
                 )}
               </div>
-              <div className='block mt-2 '>
-                <div className=' mb-2'>
-                  <h3 className='heading-2xl-semibold max-w-[650px] text-gray-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-winstrumente'>
+              <div className='mt-2 block'>
+                <div className='mb-2'>
+                  <h3 className='heading-2xl-semibold focus:ring-winstrumente max-w-[650px] text-gray-800 no-underline hover:text-green-300 focus:text-green-200 focus:ring-2 active:text-green-800'>
                     {instrument.titel}{' '}
                   </h3>
                 </div>
-                <div className='block  newlineDisplay p-base text-gray-800 mt-2 pb-2'>
-                  <p className='p-base max-w-[650px] line-clamp-4'>{instrument.introText}</p>
+                <div className='newlineDisplay p-base mt-2 block pb-2 text-gray-800'>
+                  <p className='p-base line-clamp-4 max-w-[650px]'>{instrument.introText}</p>
                 </div>
-                <div className='flex flex-col sm:hidden justify-center mb-4'>
-                  <div className='flex flex-row justify-between h-auto py-2'>
+                <div className='mb-4 flex flex-col justify-center sm:hidden'>
+                  <div className='flex h-auto flex-row justify-between py-2'>
                     <div className='flex flex-col justify-center'>
-                      <div className='p-xs-semibold sm:py-1 text-gray-600'>
+                      <div className='p-xs-semibold text-gray-600 sm:py-1'>
                         Juridische houdbaarheid
                       </div>
                       <div className='flex items-center'>
-                        <div className='p-xs-semibold text-green-500 bg-green-100 px-1.5 py-1 rounded-cl'>
+                        <div className='p-xs-semibold rounded-cl bg-green-100 px-1.5 py-1 text-green-500'>
                           {instrument?.juridischeHaalbaarheid}
                         </div>
                       </div>
@@ -183,7 +183,7 @@ export default function InstrumentCard({ instrument, images }) {
                     <div className='flex flex-col justify-center'>
                       <div className='p-xs-semibold py-1 text-gray-600'>Invloed</div>
                       <div className='flex items-center'>
-                        <div className='p-xs-semibold text-green-500 bg-green-100 px-1.5 py-1 rounded-cl'>
+                        <div className='p-xs-semibold rounded-cl bg-green-100 px-1.5 py-1 text-green-500'>
                           {instrument?.juridischInvloed}
                         </div>
                       </div>
@@ -192,7 +192,7 @@ export default function InstrumentCard({ instrument, images }) {
                   <div className='flex h-auto py-2'>
                     <div className='flex flex-col justify-center'>
                       <div className='p-xs-semibold py-1 text-gray-600'>Overheidslaag</div>
-                      <div className='p-xs-semibold text-green-500 bg-green-100 pl-1.5 p-1 rounded-cl'>
+                      <div className='p-xs-semibold rounded-cl bg-green-100 p-1 pl-1.5 text-green-500'>
                         {instrument?.overheidslaag
                           ?.filter((x) => x !== null)
                           .map((level) => (
@@ -209,7 +209,7 @@ export default function InstrumentCard({ instrument, images }) {
                     <div className='flex flex-col justify-center'>
                       <div className='p-xs-semibold py-1 text-gray-600'>R-ladder</div>
                       <div className='flex items-center'>
-                        <div className='flex flex-row items-center bg-green-100 pl-1.5 p-1 rounded-cl'>
+                        <div className='flex flex-row items-center rounded-cl bg-green-100 p-1 pl-1.5'>
                           {instrument?.rLadder?.map((rValue) => (
                             <div key={rValue} className='p-xs-semibold text-green-500'>
                               {rValue}{' '}

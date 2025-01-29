@@ -7,38 +7,38 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
   const router = useRouter();
   if (page === 'list') {
     return (
-      <Popover className='inline-block relative w-full min-w-[260px] pt-4 sm:pt-0'>
+      <Popover className='relative inline-block w-full min-w-[260px] pt-4 sm:pt-0'>
         {({ open }) => (
           <>
             <PopoverButton
               className={`${
                 open ? 'rounded-t-cl' : 'rounded-cl'
-              } bg-green-500 hover:text-green-500 flex justify-between items-center border border-green-500 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
+              } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
             >
               <div
                 className={`${
                   open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
+                } flex h-full w-11/12 items-center justify-start truncate bg-gray-100 pl-3`}
               >
-                <span className='inline text-left p-base-bold text-green-500'>
+                <span className='p-base-bold inline text-left text-green-500'>
                   In lijst met filters
                 </span>
               </div>
-              <div className='w-1/12 px-5 h-full pr-5 bg-green-500 grid items-center justify-center rounded-r-cl border border-green-500'>
+              <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-500 bg-green-500 px-5 pr-5'>
                 <IconChevronUp
-                  className={`${open ? '' : 'rotate-180 transform'} h-6 w-6 text-white z-10`}
+                  className={`${open ? '' : 'rotate-180 transform'} z-10 h-6 w-6 text-white`}
                 />
               </div>
             </PopoverButton>
-            <PopoverPanel className='absolute z-40 min-w-[260px] w-full'>
+            <PopoverPanel className='absolute z-40 w-full min-w-[260px]'>
               <PopoverButton
                 as='div'
                 onClick={() => {
                   router.push(`/${productChain}/${thema}/categorie`);
                 }}
               >
-                <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500'>
-                  <span className='block pl-3 truncate p-base'>Per categorie</span>
+                <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-gray-800 hover:text-green-500'>
+                  <span className='p-base block truncate pl-3'>Per categorie</span>
                 </div>
               </PopoverButton>
               <PopoverButton
@@ -47,8 +47,8 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                   router.push(`/${productChain}/${thema}/overheidsbevoegdheid`);
                 }}
               >
-                <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500'>
-                  <span className='block pl-3 truncate p-base'>Per overheidsbevoegdheid</span>
+                <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-500 bg-gray-100 text-gray-800 hover:text-green-500'>
+                  <span className='p-base block truncate pl-3'>Per overheidsbevoegdheid</span>
                 </div>
               </PopoverButton>
             </PopoverPanel>
@@ -58,36 +58,36 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
     );
   } else if (page === 'samenhang') {
     return (
-      <Popover className='inline-block relative w-full min-w-[260px] pt-4 sm:pt-0'>
+      <Popover className='relative inline-block w-full min-w-[260px] pt-4 sm:pt-0'>
         {({ open }) => (
           <>
             <PopoverButton
               className={`${
                 open ? 'rounded-t-cl' : 'rounded-cl'
-              } text-black bg-green-500 hover:text-green-500 flex justify-between items-center border border-green-500 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
+              } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
             >
               <div
                 className={`${
                   open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
+                } flex h-full w-11/12 items-center justify-start truncate bg-gray-100 pl-3`}
               >
-                <span className='inline text-left p-base-bold text-green-500'>Per categorie</span>
+                <span className='p-base-bold inline text-left text-green-500'>Per categorie</span>
               </div>
-              <div className='w-1/12 px-5 h-full pr-5 bg-green-500 grid items-center justify-center rounded-r-cl border border-green-500'>
+              <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-500 bg-green-500 px-5 pr-5'>
                 <IconChevronUp
-                  className={`${open ? '' : 'rotate-180 transform'} h-6 w-6 text-white z-10`}
+                  className={`${open ? '' : 'rotate-180 transform'} z-10 h-6 w-6 text-white`}
                 />
               </div>
             </PopoverButton>
-            <PopoverPanel className='absolute z-40 min-w-[260px] w-full'>
+            <PopoverPanel className='absolute z-40 w-full min-w-[260px]'>
               <PopoverButton
                 as='div'
                 onClick={() => {
                   router.push(`/${productChain}/${thema}/instrumenten`);
                 }}
               >
-                <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
-                  <span className='block pl-3 truncate p-base'>In lijst met filters</span>
+                <div className='flex h-10 w-full cursor-pointer items-center border-b border-l border-r border-green-500 bg-gray-100 text-gray-800 hover:text-green-500'>
+                  <span className='p-base block truncate pl-3'>In lijst met filters</span>
                 </div>
               </PopoverButton>
               <PopoverButton
@@ -96,8 +96,8 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                   router.push(`/${productChain}/${thema}/overheidsbevoegdheid`);
                 }}
               >
-                <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
-                  <span className='block pl-3 truncate p-base'>Per overheidsbevoegdheid</span>
+                <div className='flex h-10 w-full cursor-pointer items-center rounded-b-cl border-b border-l border-r border-green-500 bg-gray-100 text-gray-800 hover:text-green-500'>
+                  <span className='p-base block truncate pl-3'>Per overheidsbevoegdheid</span>
                 </div>
               </PopoverButton>
             </PopoverPanel>
@@ -107,38 +107,38 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
     );
   } else {
     return (
-      <Popover className='inline-block relative w-full min-w-[260px] pt-4 sm:pt-0'>
+      <Popover className='relative inline-block w-full min-w-[260px] pt-4 sm:pt-0'>
         {({ open }) => (
           <>
             <PopoverButton
               className={`${
                 open ? 'rounded-t-cl' : 'rounded-cl'
-              } text-black bg-green-500 hover:text-green-500 flex justify-between items-center border border-green-500 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
+              } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
             >
               <div
                 className={`${
                   open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
+                } flex h-full w-11/12 items-center justify-start truncate bg-gray-100 pl-3`}
               >
-                <span className='inline text-left p-base-bold text-green-500'>
+                <span className='p-base-bold inline text-left text-green-500'>
                   Per overheidsbevoegdheid
                 </span>
               </div>
-              <div className='w-1/12 px-5 h-full pr-5 bg-green-500 grid items-center justify-center rounded-r-cl border border-green-500 cursor-pointer'>
+              <div className='grid h-full w-1/12 cursor-pointer items-center justify-center rounded-r-cl border border-green-500 bg-green-500 px-5 pr-5'>
                 <IconChevronUp
-                  className={`${open ? '' : 'rotate-180 transform'} h-6 w-6 text-white z-10`}
+                  className={`${open ? '' : 'rotate-180 transform'} z-10 h-6 w-6 text-white`}
                 />
               </div>
             </PopoverButton>
-            <PopoverPanel className='absolute z-40 min-w-[260px] w-full'>
+            <PopoverPanel className='absolute z-40 w-full min-w-[260px]'>
               <PopoverButton
                 as='div'
                 onClick={() => {
                   router.push(`/${productChain}/${thema}/categorie`);
                 }}
               >
-                <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
-                  <span className='block pl-3 truncate p-base'>Per categorie</span>
+                <div className='flex h-10 w-full cursor-pointer items-center border-b border-l border-r border-green-500 bg-gray-100 text-gray-800 hover:text-green-500'>
+                  <span className='p-base block truncate pl-3'>Per categorie</span>
                 </div>
               </PopoverButton>
               <PopoverButton
@@ -147,8 +147,8 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                   router.push(`/${productChain}/${thema}/instrumenten`);
                 }}
               >
-                <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500 cursor-pointer'>
-                  <span className='block pl-3 truncate p-base'>In lijst met filters</span>
+                <div className='flex h-10 w-full cursor-pointer items-center rounded-b-cl border-b border-l border-r border-green-500 bg-gray-100 text-gray-800 hover:text-green-500'>
+                  <span className='p-base block truncate pl-3'>In lijst met filters</span>
                 </div>
               </PopoverButton>
             </PopoverPanel>

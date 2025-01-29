@@ -68,17 +68,17 @@ export default async function EULawPage({ params, searchParams }) {
   return (
     <>
       <div className='relative'>
-        <div className='h-[240px] sm:h-[360px] pt-3 bg-green-800'>
-          <div className='flex flex-col justify-between global-margin h-full'>
-            <div className='pt-6 flex flex-row justify-between'>
-              <div className='p-2xs-bold text-green-600 bg-white w-min pl-2 pr-3 py-1.5 rounded-clSm flex flex-row whitespace-nowrap'>
+        <div className='h-[240px] bg-green-800 pt-3 sm:h-[360px]'>
+          <div className='global-margin flex h-full flex-col justify-between'>
+            <div className='flex flex-row justify-between pt-6'>
+              <div className='p-2xs-bold flex w-min flex-row whitespace-nowrap rounded-clSm bg-white py-1.5 pl-2 pr-3 text-green-600'>
                 <Link href='/' className=''>
                   <span className='link-interaction'>
                     Home <span className='mx-2'>{'>'}</span>
                   </span>
                 </Link>
                 <Link href='/eu-wetgeving'>
-                  <span className='capitalize link-interaction'>EU wetgeving</span>
+                  <span className='link-interaction capitalize'>EU wetgeving</span>
                 </Link>
               </div>
               <div className='hidden sm:block'>
@@ -86,7 +86,7 @@ export default async function EULawPage({ params, searchParams }) {
               </div>
               {/* ${selectedTab.replace(/(-)/g, ' ')} */}
             </div>
-            <h1 className='mb-[60px] sm:mb-[94px] heading-2xl-semibold sm:heading-5xl-semibold text-gray-100 max-w-4xl'>
+            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold mb-[60px] max-w-4xl text-gray-100 sm:mb-[94px]'>
               {' '}
               {summaryData?.title}
             </h1>

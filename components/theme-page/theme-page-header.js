@@ -6,8 +6,8 @@ import Link from 'next/link';
 // TODO: try and make these image load on the server/optimise them as they are slow
 export default function ThemePageHeader({ themaData }) {
   return (
-    <div className='hidden sm:block w-full h-[360px]'>
-      <div className='relative object-cover w-full h-full mt-3'>
+    <div className='hidden h-[360px] w-full sm:block'>
+      <div className='relative mt-3 h-full w-full object-cover'>
         {themaData?.heroImage && (
           <Image
             src={urlFor(themaData?.heroImage).url()}
@@ -19,20 +19,20 @@ export default function ThemePageHeader({ themaData }) {
             blurDataURL={themaData?.metadata.lqip}
           />
         )}
-        <div className='w-full h-full bg-gradient-to-t from-[#035E46] to-[#035E4600] z-0 absolute'></div>
+        <div className='absolute z-0 h-full w-full bg-gradient-to-t from-[#035E46] to-[#035E4600]'></div>
 
-        <div className='global-margin h-[360px] z-5 relative flex flex-col justify-between'>
+        <div className='global-margin z-5 relative flex h-[360px] flex-col justify-between'>
           <div className='pt-8'>
-            <span className='p-2xs-bold align-middle rounded-clSm bg-gray-100 pl-2 pr-3 py-1.5 text-green-600 inline-flex flex-row items-center justify-center group-hover:text-green-300 group-active:text-green-800 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white'>
+            <span className='p-2xs-bold inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 align-middle text-green-600 group-hover:text-green-300 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white group-active:text-green-800'>
               <Link
-                className='hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'
+                className='hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'
                 href='/'
               >
                 {' '}
                 Home <span className='ml-2'>{'>'}</span>
               </Link>
               <Link
-                className='hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'
+                className='hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'
                 href={`/${themaData?.transitionAgenda}`}
               >
                 <span className='ml-2 capitalize'>{themaData?.transitionAgenda} </span>
@@ -40,17 +40,17 @@ export default function ThemePageHeader({ themaData }) {
             </span>
           </div>
 
-          <div className='pb-8 max-w-3xl'>
+          <div className='max-w-3xl pb-8'>
             <div className=''>
-              <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-gray-100 inline-block'>
+              <h1 className='heading-2xl-semibold sm:heading-5xl-semibold inline-block text-gray-100'>
                 {themaData?.themaName}
               </h1>
             </div>
             <div className='col-span-7'>
-              <p className='pt-4 text-gray-100 heading-xl '>
+              <p className='heading-xl pt-4 text-gray-100'>
                 {themaData?.themaSubtitle}{' '}
                 {themaData?.linkText && (
-                  <span className='text-white link-base inline-block hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white group'>
+                  <span className='link-base group inline-block text-white hover:text-green-200 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100'>
                     <a href={themaData?.headerLink} target='_blank' rel='noopener noreferrer'>
                       {themaData?.linkText}
                       <LinkIcon />

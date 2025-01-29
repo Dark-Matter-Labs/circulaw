@@ -6,25 +6,25 @@ import Image from 'next/image';
 export default function LearningLandingPage() {
   return (
     <div className=''>
-      <div className='bg-green-600 h-56 sm:h-72 my-3'>
-        <div className='flex flex-col justify-between items-start h-full global-margin'>
-          <div className='bg-gray-100 h-6 mt-6 flex items-center rounded-clSm'>
+      <div className='my-3 h-56 bg-green-600 sm:h-72'>
+        <div className='global-margin flex h-full flex-col items-start justify-between'>
+          <div className='mt-6 flex h-6 items-center rounded-clSm bg-gray-100'>
             <Link
               href='/'
-              className='p-2xs-bold flex pl-2 flex-row items-center text-green-600 hover:text-green-300 active:text-green-800'
+              className='p-2xs-bold flex flex-row items-center pl-2 text-green-600 hover:text-green-300 active:text-green-800'
             >
               Home
             </Link>
-            <span className='p-2xs-bold text-green-600 px-2'>{'>'}</span>
+            <span className='p-2xs-bold px-2 text-green-600'>{'>'}</span>
           </div>
           <div className='mb-10'>
-            <h1 className='text-gray-100 heading-2xl-semibold sm:heading-5xl-semibold max-w-4xl'>
+            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold max-w-4xl text-gray-100'>
               E-learning: circulaire houtbouw onder de Omgevingswet
             </h1>
           </div>
         </div>
       </div>
-      <div className='global-margin flex relative my-16'>
+      <div className='global-margin relative my-16 flex'>
         <div className='max-w-[700px]'>
           <p className='p-base'>
             Houtbouw past heel goed in een circulaire economie: een manier van bouwen die is
@@ -40,7 +40,7 @@ export default function LearningLandingPage() {
             target='_blank'
             className='block md:hidden'
           >
-            <div className='bg-green-50 mt-6 w-full flex flex-col p-4 text-green-600'>
+            <div className='mt-6 flex w-full flex-col bg-green-50 p-4 text-green-600'>
               <div className='mb-2'>
                 <IconBooks className='size-8' />
               </div>
@@ -55,10 +55,10 @@ export default function LearningLandingPage() {
               </div>
             </div>
           </Link>
-          <h2 className='heading-2xl-semibold sm:heading-3xl-semibold mt-10 mb-4'>
+          <h2 className='heading-2xl-semibold sm:heading-3xl-semibold mb-4 mt-10'>
             Wat kun je verwachten?
           </h2>
-          <ul className='p-base list-disc	list-outside ml-6 mb-6'>
+          <ul className='p-base mb-6 ml-6 list-outside list-disc'>
             <li>Krijg inzicht in de werking van de Omgevingswet</li>
             <li>
               Lees over de verschillende instrumenten van de Omgevingswet, en hun plek binnen de
@@ -73,7 +73,7 @@ export default function LearningLandingPage() {
               opereren
             </li>
           </ul>
-          <div className='relative w-full mb-6 sm:mb-0 h-96'>
+          <div className='relative mb-6 h-96 w-full sm:mb-0'>
             <Image
               src='/e-learning.png'
               alt='planregels image'
@@ -146,7 +146,7 @@ export default function LearningLandingPage() {
           target='_blank'
           className='hidden md:block'
         >
-          <div className='sticky top-32 bg-green-50 ml-16 w-80 flex flex-col p-4 text-green-600'>
+          <div className='sticky top-32 ml-16 flex w-80 flex-col bg-green-50 p-4 text-green-600'>
             <div className='mb-2'>
               <IconBooks className='size-8' />
             </div>

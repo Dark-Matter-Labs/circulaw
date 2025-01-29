@@ -50,7 +50,7 @@ export default function GovLevelLayout({ ...props }) {
   return (
     <div onLoad={useXarrow()}>
       <div className=''>
-        <div className='h-[300px] sm:h-[360px] bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 bg-green-600  sm:mx-0'>
+        <div className='h-[300px] bg-green-600 bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 sm:mx-0 sm:h-[360px]'>
           <OverviewPageHeader
             thema={props.thema}
             productChain={props.transitionAgenda}
@@ -59,18 +59,18 @@ export default function GovLevelLayout({ ...props }) {
           />
         </div>
         {/* DYNAMIC IMAGE */}
-        <div className='mb-20 mt-5 sm:mt-20 hidden sm:block global-margin '>
+        <div className='global-margin mb-20 mt-5 hidden sm:mt-20 sm:block'>
           <div className='flex grid-cols-3 items-start 2xl:justify-center'>
             {/* LEFT HAND SIDE */}
-            <div className='grid col-span-1 items-start justify-center h-full w-80 mt-10'>
+            <div className='col-span-1 mt-10 grid h-full w-80 items-start justify-center'>
               <div
                 id='allId'
-                className='w-80 h-10 border border-green-800 rounded-full text-gray-800 bg-gray-100 flex items-center justify-left'
+                className='justify-left flex h-10 w-80 items-center rounded-full border border-green-800 bg-gray-100 text-gray-800'
               >
-                <div className='h-10 w-10 border-r border-t border-b border-green-800 rounded-full flex items-center justify-center'>
+                <div className='flex h-10 w-10 items-center justify-center rounded-full border-b border-r border-t border-green-800'>
                   <h5 className='p-2xs-semibold sm:p-xs-semibold'>A</h5>
                 </div>
-                <div className='flex items-center justify-center w-full h-full -ml-10'>
+                <div className='-ml-10 flex h-full w-full items-center justify-center'>
                   <h4 className='p-base-semibold sm:headling-xl-semibold'>Alle overheidslagen</h4>
                 </div>
               </div>
@@ -80,10 +80,10 @@ export default function GovLevelLayout({ ...props }) {
                     <Link
                       key={law.titel}
                       href={`/${law.transitionAgenda}/${law.thema}/instrumenten/${law.slug.current}`}
-                      className='inline-block link-interaction'
+                      className='link-interaction inline-block'
                     >
-                      <div className='flex items-start justify-start max-w-80 py-1'>
-                        <span className='pr-2 inline-block'>
+                      <div className='flex max-w-80 items-start justify-start py-1'>
+                        <span className='inline-block pr-2'>
                           {' '}
                           <svg
                             xmlns='http://www.w3.org/2000/svg'
@@ -91,7 +91,7 @@ export default function GovLevelLayout({ ...props }) {
                             viewBox='0 0 24 24'
                             strokeWidth={2}
                             stroke='#028352'
-                            className='w-4  h-4 mt-1'
+                            className='mt-1 h-4 w-4'
                           >
                             <path
                               strokeLinecap='round'
@@ -100,7 +100,7 @@ export default function GovLevelLayout({ ...props }) {
                             />
                           </svg>
                         </span>
-                        <h5 className=' inline-block p-2xs-semibold sm:p-xs-semibold hover:underline'>
+                        <h5 className='p-2xs-semibold sm:p-xs-semibold inline-block hover:underline'>
                           {law.titel}
                         </h5>
                       </div>
@@ -112,12 +112,12 @@ export default function GovLevelLayout({ ...props }) {
             {/* DIAGRAM */}
             <div
               onLoad={useXarrow()}
-              className='w-[34rem] h-[34rem] min-w-[34rem] min-h-[34rem] flex items-center justify-center mx-4 relative'
+              className='relative mx-4 flex h-[34rem] min-h-[34rem] w-[34rem] min-w-[34rem] items-center justify-center'
             >
-              <div className='w-full h-full border-1 border-green-800 bg-green-800 rounded-full flex items-end justify-center'>
-                <div className='w-5/6 h-5/6 border-1 border-green-500 bg-green-500 rounded-full flex items-end justify-center'>
-                  <div className='w-[70%] h-[70%] border-1 border-green-400 bg-green-400 rounded-full flex items-end justify-center'>
-                    <div className='w-[33%] h-[34rem] rounded-[50%] overview-radial-gradient'></div>
+              <div className='border-1 flex h-full w-full items-end justify-center rounded-full border-green-800 bg-green-800'>
+                <div className='border-1 flex h-5/6 w-5/6 items-end justify-center rounded-full border-green-500 bg-green-500'>
+                  <div className='border-1 flex h-[70%] w-[70%] items-end justify-center rounded-full border-green-400 bg-green-400'>
+                    <div className='overview-radial-gradient h-[34rem] w-[33%] rounded-[50%]'></div>
                   </div>
                 </div>
               </div>
@@ -125,7 +125,7 @@ export default function GovLevelLayout({ ...props }) {
               {props.thema === 'windturbines' && (
                 <>
                   {/* All regions = 5 */}
-                  <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
@@ -149,7 +149,7 @@ export default function GovLevelLayout({ ...props }) {
               {props.thema === 'matrasketen' && (
                 <>
                   {/* All regions = 12 */}
-                  <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
@@ -183,7 +183,7 @@ export default function GovLevelLayout({ ...props }) {
               {props.thema === 'houtbouw' && (
                 <>
                   {/* All regions = 18 18 dec 2023 -> 24 */}
-                  <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
@@ -236,7 +236,7 @@ export default function GovLevelLayout({ ...props }) {
               {props.thema === 'voedselverspilling' && (
                 <>
                   {/* All regions =  */}
-                  <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
@@ -269,7 +269,7 @@ export default function GovLevelLayout({ ...props }) {
               {props.thema === 'infra' && (
                 <>
                   {/* All regions =  */}
-                  <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
@@ -307,7 +307,7 @@ export default function GovLevelLayout({ ...props }) {
               {props.thema === 'bedrijventerreinen' && (
                 <>
                   {/* All regions =  */}
-                  <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
@@ -348,7 +348,7 @@ export default function GovLevelLayout({ ...props }) {
               {props.thema === 'bedrijfskleding' && (
                 <>
                   {/* All regions =  */}
-                  <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
@@ -365,7 +365,7 @@ export default function GovLevelLayout({ ...props }) {
               {props.thema === 'consumententextiel' && (
                 <>
                   {/* All regions =  */}
-                  <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
@@ -393,7 +393,7 @@ export default function GovLevelLayout({ ...props }) {
               {props.thema === 'zonnepanelen' && (
                 <>
                   {/* National */}
-                  <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
@@ -475,7 +475,7 @@ export default function GovLevelLayout({ ...props }) {
                 <div>
                   <div id='allEnd' className='absolute bottom-[85%] right-[50%] h-3 w-3'></div>
                   {natLaws.length > 0 && (
-                    <div id='natEnd' className='absolute top-24 right-40 h-3 w-3'></div>
+                    <div id='natEnd' className='absolute right-40 top-24 h-3 w-3'></div>
                   )}
                   <div id='gemEnd' className='absolute bottom-[15%] right-[30%] h-3 w-3'></div>
                   {lines.map((line, i) => (
@@ -486,7 +486,7 @@ export default function GovLevelLayout({ ...props }) {
 
               {provLaws?.length > 0 && (
                 <div>
-                  <div id='provEnd' className='absolute top-60 right-32 h-[1rem] w-[1rem]'></div>
+                  <div id='provEnd' className='absolute right-32 top-60 h-[1rem] w-[1rem]'></div>
                   <Xarrow
                     start='provStart'
                     startAnchor='left'
@@ -502,18 +502,18 @@ export default function GovLevelLayout({ ...props }) {
             </div>
 
             {/* RIGHT HAND SIDE */}
-            <div className='grid col-span-1 items-start justify-center h-full w-80 mt-10'>
+            <div className='col-span-1 mt-10 grid h-full w-80 items-start justify-center'>
               {/* National */}
               {natLaws?.length != 0 && (
                 <div className='pb-3'>
                   <div
                     id='natId'
-                    className='w-80 h-10 bg-green-800 text-white rounded-full flex items-center justify-left'
+                    className='justify-left flex h-10 w-80 items-center rounded-full bg-green-800 text-white'
                   >
-                    <div className='flex items-center justify-center w-full h-full -ml-10'>
+                    <div className='-ml-10 flex h-full w-full items-center justify-center'>
                       <h4 className='p-base-semibold sm:headling-xl-semibold'>Nationaal</h4>
                     </div>
-                    <div className='h-10 w-10 border-l border-t border-b border-white rounded-full flex items-center justify-center'>
+                    <div className='flex h-10 w-10 items-center justify-center rounded-full border-b border-l border-t border-white'>
                       <h5 className='p-2xs-semibold sm:p-xs-semibold'>Nat</h5>
                     </div>
                   </div>
@@ -525,8 +525,8 @@ export default function GovLevelLayout({ ...props }) {
                         href={`/${law.transitionAgenda}/${law.thema}/instrumenten/${law.slug.current}`}
                         className='link-interaction'
                       >
-                        <div className='flex items-start justify-start max-w-80 py-1'>
-                          <span className='pr-2 inline-block'>
+                        <div className='flex max-w-80 items-start justify-start py-1'>
+                          <span className='inline-block pr-2'>
                             {' '}
                             <svg
                               xmlns='http://www.w3.org/2000/svg'
@@ -534,7 +534,7 @@ export default function GovLevelLayout({ ...props }) {
                               viewBox='0 0 24 24'
                               strokeWidth={2}
                               stroke='#028352'
-                              className='w-4  h-4 mt-1'
+                              className='mt-1 h-4 w-4'
                             >
                               <path
                                 strokeLinecap='round'
@@ -543,7 +543,7 @@ export default function GovLevelLayout({ ...props }) {
                               />
                             </svg>
                           </span>
-                          <h5 className='inline-block p-2xs-semibold sm:p-xs-semibold hover:underline'>
+                          <h5 className='p-2xs-semibold sm:p-xs-semibold inline-block hover:underline'>
                             {law.titel}
                           </h5>
                         </div>
@@ -558,12 +558,12 @@ export default function GovLevelLayout({ ...props }) {
                 <div className='pb-3'>
                   <div
                     id='provStart'
-                    className='w-80 h-10 rounded-full text-white bg-green-500 flex items-center justify-left'
+                    className='justify-left flex h-10 w-80 items-center rounded-full bg-green-500 text-white'
                   >
-                    <div className='flex items-center justify-center w-full h-full -ml-10'>
+                    <div className='-ml-10 flex h-full w-full items-center justify-center'>
                       <h4 className='p-base-semibold sm:headling-xl-semibold'>Provinciaal</h4>
                     </div>
-                    <div className='h-10 w-10 border-l border-t border-b border-white rounded-full flex items-center justify-center'>
+                    <div className='flex h-10 w-10 items-center justify-center rounded-full border-b border-l border-t border-white'>
                       <h5 className='p-2xs-semibold sm:p-xs-semibold'>Pr</h5>
                     </div>
                   </div>
@@ -574,8 +574,8 @@ export default function GovLevelLayout({ ...props }) {
                         href={`/${law.transitionAgenda}/${law.thema}/instrumenten/${law.slug.current}`}
                         className='link-interaction'
                       >
-                        <div className='flex items-start justify-start max-w-80 py-1'>
-                          <span className='pr-2 inline-block'>
+                        <div className='flex max-w-80 items-start justify-start py-1'>
+                          <span className='inline-block pr-2'>
                             {' '}
                             <svg
                               xmlns='http://www.w3.org/2000/svg'
@@ -583,7 +583,7 @@ export default function GovLevelLayout({ ...props }) {
                               viewBox='0 0 24 24'
                               strokeWidth={2}
                               stroke='#028352'
-                              className='w-4  h-4 mt-1'
+                              className='mt-1 h-4 w-4'
                             >
                               <path
                                 strokeLinecap='round'
@@ -592,7 +592,7 @@ export default function GovLevelLayout({ ...props }) {
                               />
                             </svg>
                           </span>
-                          <h5 className='inline-block p-2xs-semibold sm:p-xs-semibold hover:underline'>
+                          <h5 className='p-2xs-semibold sm:p-xs-semibold inline-block hover:underline'>
                             {law.titel}
                           </h5>
                         </div>
@@ -606,12 +606,12 @@ export default function GovLevelLayout({ ...props }) {
                 <div>
                   <div
                     id='gemId'
-                    className='w-80 h-10 rounded-full bg-green-400 text-white flex items-center justify-right'
+                    className='justify-right flex h-10 w-80 items-center rounded-full bg-green-400 text-white'
                   >
-                    <div className='flex items-center justify-center w-full h-full -ml-10'>
+                    <div className='-ml-10 flex h-full w-full items-center justify-center'>
                       <h4 className='p-base-semibold sm:headling-xl-semibold'>Gemeentelijk</h4>
                     </div>
-                    <div className='h-10 w-10 border-l border-t border-b border-white rounded-full flex items-center justify-center'>
+                    <div className='flex h-10 w-10 items-center justify-center rounded-full border-b border-l border-t border-white'>
                       <h5 className='p-2xs-semibold sm:p-xs-semibold'>Gem</h5>
                     </div>
                   </div>
@@ -624,9 +624,9 @@ export default function GovLevelLayout({ ...props }) {
                       >
                         <div
                           key={law.titel}
-                          className='flex items-start justify-start max-w-80 py-1'
+                          className='flex max-w-80 items-start justify-start py-1'
                         >
-                          <span className='pr-2 inline-block'>
+                          <span className='inline-block pr-2'>
                             {' '}
                             <svg
                               xmlns='http://www.w3.org/2000/svg'
@@ -634,7 +634,7 @@ export default function GovLevelLayout({ ...props }) {
                               viewBox='0 0 24 24'
                               strokeWidth={2}
                               stroke='#028352'
-                              className='w-4  h-4 mt-1'
+                              className='mt-1 h-4 w-4'
                             >
                               <path
                                 strokeLinecap='round'
@@ -643,7 +643,7 @@ export default function GovLevelLayout({ ...props }) {
                               />
                             </svg>
                           </span>
-                          <h5 className='inline-block p-2xs-semibold sm:p-xs-semibold hover:underline'>
+                          <h5 className='p-2xs-semibold sm:p-xs-semibold inline-block hover:underline'>
                             {law.titel}
                           </h5>
                         </div>
@@ -659,11 +659,11 @@ export default function GovLevelLayout({ ...props }) {
 
       {/* TEXT COMPONENT */}
       <div className='global-margin mb-20 mt-4'>
-        <div className='max-w-3xl mx-auto'>
-          <p className=' p-base text-gray-800 pb-6'>{props.p1}</p>
-          {props.p2 !== '' && <p className=' p-base text-gray-800 pb-6'>{props.p2}</p>}
-          {props.p3 !== '' && <p className=' p-base text-gray-800 pb-6'>{props.p3}</p>}
-          {props.p4 !== '' && <p className=' p-base text-gray-800 pb-6'>{props.p4}</p>}
+        <div className='mx-auto max-w-3xl'>
+          <p className='p-base pb-6 text-gray-800'>{props.p1}</p>
+          {props.p2 !== '' && <p className='p-base pb-6 text-gray-800'>{props.p2}</p>}
+          {props.p3 !== '' && <p className='p-base pb-6 text-gray-800'>{props.p3}</p>}
+          {props.p4 !== '' && <p className='p-base pb-6 text-gray-800'>{props.p4}</p>}
         </div>
         <div className='sm:hidden'>
           <div className='pb-6'>
