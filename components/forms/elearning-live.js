@@ -8,7 +8,7 @@ import { scrollToTop } from '@/utils/scroll-to-top';
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/aroovgvb';
 
 export default function ElearnignLiveEvent() {
-  const [hasCompleted, setHasCompleted] = useState(false);
+  const [hasCompleted, setHasCompleted] = useState(undefined);
 
   const [formStatus, setFormStatus] = useState(false);
   const [query, setQuery] = useState({
@@ -57,16 +57,14 @@ export default function ElearnignLiveEvent() {
     <div className='global-margin'>
       {!formStatus ? (
         <>
-          <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pt-10'>
+          <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pt-10 max-w-4xl'>
             Livesessie: Circulaire houtbouw onder de Omgevingswet
           </h1>
           <div className='mt-8 max-w-3xl mb-20'>
             <p className='text-gray-800 pb-6 sm:col-span-2'>
               Wat fijn dat je de e-learning over circulaire houtbouw onder de Omgevingswet hebt
               afgerond! En wat leuk dat je interesse hebt in de verdiepende livesessie, op{' '}
-              <span className='p-base-semibold'>
-                4 maart in het AMS Institute, Kattenburgerstraat 5, Amsterdam.
-              </span>
+              <span className='p-base-semibold'>4 maart in het AMS Institute, Amsterdam.</span>
             </p>
             <p className='text-gray-800 pb-6'>
               Als je hieronder je gegevens invult, dan laten we je snel weten of je wordt
@@ -76,18 +74,10 @@ export default function ElearnignLiveEvent() {
               Er is een beperkt aantal plekken. We maken een selectie op basis van je rol en je
               profiel.
             </p>
-            <p className='text-gray-800 pb-6'>
-              Heb je de e-learning Circulaire Houtbouw nog niet gedaan?{' '}
-              <Link
-                className='link-base link-interaction'
-                href='https://training.circulaw.nl/register/a6d26a79-e6b1-42d6-9499-1dbe196fc693'
-                target='_blank'
-              >
-                Klik dan hier om je aan te melden!
-              </Link>
-            </p>
             <p className='text-gray-800'>Misschien tot snel,</p>
             <p className='text-gray-800 pb-8'>Team Circulaw</p>
+
+            <h3 className='heading-xl-semibold mb-2'>Ik wil me aanmelden voor de livesessie.</h3>
 
             <div className='sm:col-span-2 mb-6'>
               <label htmlFor='isElearningFinished' className='block text-gray-800'>
@@ -95,15 +85,6 @@ export default function ElearnignLiveEvent() {
               </label>
               <div className='mt-1 flex items-baseline'>
                 {/* Radio button for "Nee" (false) */}
-                <input
-                  type='radio'
-                  name='isElearningFinished'
-                  value='false'
-                  checked={!hasCompleted}
-                  onChange={() => setHasCompleted(false)}
-                  className='checked:bg-green-800 text-green-800'
-                />
-                <label className='block text-gray-800 pl-2 pr-4'>Nee</label>
 
                 {/* Radio button for "Ja" (true) */}
                 <input
@@ -114,9 +95,20 @@ export default function ElearnignLiveEvent() {
                   onChange={() => setHasCompleted(true)}
                   className='checked:bg-green-800 text-green-800'
                 />
-                <label className='block text-gray-800 pl-2'>Ja</label>
+                <label className='block text-gray-800 pl-2 pr-4'>Ja</label>
+
+                <input
+                  type='radio'
+                  name='isElearningFinished'
+                  value='false'
+                  checked={hasCompleted === false}
+                  onChange={() => setHasCompleted(false)}
+                  className='checked:bg-green-800 text-green-800'
+                />
+                <label className='block text-gray-800 pl-2'>Nee</label>
               </div>
             </div>
+            {console.log(hasCompleted)}
 
             {hasCompleted === true && (
               <>
@@ -234,12 +226,22 @@ export default function ElearnignLiveEvent() {
                   </div>
                 </form>
                 <h4 className='pt-8 p-base-semibold sm:headling-xl-semibold text-green-400'>
-              * dit veld is verplicht
-            </h4>
+                  * dit veld is verplicht
+                </h4>
               </>
-
             )}
-          
+            {hasCompleted === false && (
+              <p className='text-gray-800 pb-6'>
+                Heb je de e-learning Circulaire Houtbouw nog niet gedaan?{' '}
+                <Link
+                  className='link-base link-interaction'
+                  href='https://training.circulaw.nl/register/a6d26a79-e6b1-42d6-9499-1dbe196fc693'
+                  target='_blank'
+                >
+                  Klik dan hier om je aan te melden!
+                </Link>
+              </p>
+            )}
           </div>
         </>
       ) : (
