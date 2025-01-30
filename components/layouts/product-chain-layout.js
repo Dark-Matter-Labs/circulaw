@@ -38,9 +38,9 @@ export default function PCLayout({ ...props }) {
               {props.productChainData.pcName === 'Bouw' && (
                 <>
                   <div className='max-w-8xl relative z-0 mt-20 hidden grid-cols-2 gap-x-4 gap-y-8 sm:grid sm:gap-x-4 md:grid-cols-2 lg:grid-cols-4'>
-                    <div className='group h-[470px] w-full flex-grow rounded-cl border border-gray-200 bg-green-50'>
+                    <div className='group w-full flex-grow rounded-cl border border-gray-200 bg-green-50'>
                       <Link href='/training' className='h-full w-full'>
-                        <div className='flex h-full w-full flex-grow flex-col justify-between p-8'>
+                        <div className='flex h-full w-full flex-grow flex-col justify-between gap-y-2 p-6'>
                           <h3 className='heading-2xl-semibold text-green-600'>
                             E-learning Circulaire houtbouw onder de Omgevingswet
                           </h3>
@@ -62,9 +62,9 @@ export default function PCLayout({ ...props }) {
                         </div>
                       </Link>
                     </div>
-                    <div className='group h-[470px] w-full flex-grow rounded-cl border border-gray-200 bg-green-50'>
+                    <div className='group w-full flex-grow rounded-cl border border-gray-200 bg-green-50'>
                       <Link href='/bouw/planregels' className='h-full w-full'>
-                        <div className='flex h-full w-full flex-grow flex-col justify-between p-8'>
+                        <div className='flex h-full w-full flex-grow flex-col justify-between gap-y-2 p-6'>
                           <h3 className='heading-2xl-semibold text-green-600'>
                             Planregels: modelteksten voor het omgevingsplan
                           </h3>
