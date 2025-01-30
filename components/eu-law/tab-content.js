@@ -1,10 +1,12 @@
 'use client';
+
 import { useSearchParams } from 'next/navigation';
+
+import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import { PortableText } from '@portabletext/react';
 
-import SummaryComponent from './summary-tab-content';
 import ScrollPagesTabContent from './scroll-tab-content';
-import { portableTextComponents } from '@/lib/portable-text/pt-components';
+import SummaryComponent from './summary-tab-content';
 
 export default function TabContent({ summaryData, tabData }) {
   const searchParams = useSearchParams();
@@ -38,7 +40,7 @@ export default function TabContent({ summaryData, tabData }) {
         />
       )}
       {selectedTab === 'relevantie-voor-de-circulaire-economie' && (
-        <div className='global-margin my-12 '>
+        <div className='global-margin my-12'>
           <div className='max-w-xl 2xl:max-w-2xl'>
             <h2 className='heading-xl-semibold text-green-800'>
               Relevantie voor de circulaire economie

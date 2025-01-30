@@ -1,5 +1,7 @@
 import { FcAbout } from 'react-icons/fc';
+
 import { orderRankField } from '@sanity/orderable-document-list';
+
 export default {
   title: 'About Pages',
   name: 'aboutPage',

@@ -1,7 +1,11 @@
 'use client';
-import Tag from '@/components/tag';
+
+import { useEffect, useState } from 'react';
+
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+
+import Tag from '@/components/tag';
+
 export default function NewsDetailPageHeader({ data }) {
   const event = new Date(data?.newsDate);
   const options = {
@@ -24,19 +28,19 @@ export default function NewsDetailPageHeader({ data }) {
 
   return (
     <>
-      <div className={`${cardColour} h-72 my-3`}>
-        <div className='flex flex-col justify-between items-start h-full global-margin'>
-          <div className='bg-gray-100 h-6 mt-6 flex items-center rounded-clSm'>
+      <div className={`${cardColour} my-3 h-72`}>
+        <div className='global-margin flex h-full flex-col items-start justify-between'>
+          <div className='mt-6 flex h-6 items-center rounded-clSm bg-gray-100'>
             <Link
               href='/'
-              className='p-2xs-bold flex pl-2 flex-row items-center text-green-600 hover:text-green-300 active:text-green-800'
+              className='p-2xs-bold flex flex-row items-center pl-2 text-green-600 hover:text-green-300 active:text-green-800'
             >
               Home
             </Link>
-            <span className='p-2xs-bold text-green-600 px-2'>{'>'}</span>
+            <span className='p-2xs-bold px-2 text-green-600'>{'>'}</span>
             <Link
               href='/nieuws'
-              className='p-2xs-bold text-green-600 hover:text-green-300 active:text-green-800 pr-2'
+              className='p-2xs-bold pr-2 text-green-600 hover:text-green-300 active:text-green-800'
             >
               Nieuws
             </Link>
@@ -56,7 +60,7 @@ export default function NewsDetailPageHeader({ data }) {
             <h1
               className={`${
                 cardColour === 'bg-green-300' ? 'text-green-800' : 'text-gray-100'
-              } heading-2xl-semibold sm:heading-5xl-semibold `}
+              } heading-2xl-semibold sm:heading-5xl-semibold`}
             >
               {data?.title}
             </h1>

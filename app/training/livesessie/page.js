@@ -1,4 +1,5 @@
 import ElearnignLiveEvent from '@/components/forms/elearning-live';
+
 export const metadata = {
   title: 'Training - CircuLaw',
 };

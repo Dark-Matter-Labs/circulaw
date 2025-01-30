@@ -1,8 +1,9 @@
+import { notFound } from 'next/navigation';
+
+import GovLevelLayout from '@/components/layouts/gov-level-layout';
 import { FUll_THEME_PATHS_QUERY, GOV_LEVEL_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
 import { client, sanityFetch } from '@/lib/sanity';
-import GovLevelLayout from '@/components/layouts/gov-level-layout';
 import placeholderImage from '@/public/gov-level-placeholder-mobile.png';
-import { notFound } from 'next/navigation';
 
 export async function generateMetadata({ params }, parent) {
   // read route params

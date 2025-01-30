@@ -1,17 +1,19 @@
-import CustomButton from '../custom-button';
-import { IconArrowDown } from '@tabler/icons-react';
 import { Link as ScrollLink } from 'react-scroll';
+
+import { IconArrowDown } from '@tabler/icons-react';
+
+import CustomButton from '../custom-button';
 
 export default function HomepageHeader() {
   return (
-    <main className='pb-16 pt-56 z-10 relative'>
+    <main className='relative z-10 pb-16 pt-56'>
       <div className='global-margin'>
-        <div className='text-center max-w-4xl mx-auto'>
-          <div className='text-left sm:text-center max-w-xs m-auto sm:max-w-4xl sm:block text-gray-200'>
-            <h1 className='block header-desktop-mobile sm:header-desktop'>
+        <div className='mx-auto max-w-4xl text-center'>
+          <div className='m-auto max-w-xs text-left text-gray-200 sm:block sm:max-w-4xl sm:text-center'>
+            <h1 className='header-desktop-mobile sm:header-desktop block'>
               Regelgeving voor een circulaire economie
             </h1>{' '}
-            <h2 className='p-base sm:heading-2xl-semibold text-left m-auto sm:text-center mt-2 max-w-sm sm:max-w-full text-gray-200 pt-10 pb-8'>
+            <h2 className='p-base sm:heading-2xl-semibold m-auto mt-2 max-w-sm pb-8 pt-10 text-left text-gray-200 sm:max-w-full sm:text-center'>
               CircuLaw laat decentrale overheden zien hoe je de circulaire transitie kunt
               versnellen. Per productketen bieden we juridische instrumenten op basis van de
               Nederlandse wetgeving. Ook geven we inzicht in Europese wetgeving.
@@ -26,7 +28,7 @@ export default function HomepageHeader() {
                 </ScrollLink>
               </CustomButton>
             </div>
-            <div className='mt-3 rounded-md sm:mt-0 sm:ml-3'>
+            <div className='mt-3 rounded-md sm:ml-3 sm:mt-0'>
               <CustomButton color='home'>
                 <ScrollLink to='about' smooth={true} offset={-100}>
                   Meer over CircuLaw?{' '}

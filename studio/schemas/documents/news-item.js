@@ -1,6 +1,8 @@
-import { NewsItemComponent } from '../../components/news-item';
 import { BsNewspaper } from 'react-icons/bs';
+
 import { orderRankField } from '@sanity/orderable-document-list';
+
+import { NewsItemComponent } from '../../components/news-item';
 
 export default {
   name: 'newsItem',

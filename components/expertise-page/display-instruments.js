@@ -1,5 +1,6 @@
-import DisplaySubHeading from './display-subheading';
 import { useEffect, useState } from 'react';
+
+import DisplaySubHeading from './display-subheading';
 
 const beleidSubCategories = ['strategie', 'beleidsdoorwerking', 'beleidsuitvoering'];
 const inkoopSubCategories = [

@@ -1,8 +1,10 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
-import { IconX } from '@tabler/icons-react';
-import { useSearchBox, useInstantSearch } from 'react-instantsearch';
+
+import { useEffect, useRef, useState } from 'react';
+import { useInstantSearch, useSearchBox } from 'react-instantsearch';
+
 import { Tab, TabList } from '@headlessui/react';
+import { IconX } from '@tabler/icons-react';
 
 export default function NewSearchBar(props) {
   const { query, refine } = useSearchBox(props);
@@ -38,14 +40,14 @@ export default function NewSearchBar(props) {
   }
 
   return (
-    <div className='bg-green-50 h-[260px] flex items-end justify-center sm:max-w-none w-full'>
-      <div className='global-margin w-full flex items-center justify-center'>
+    <div className='flex h-[260px] w-full items-end justify-center bg-green-50 sm:max-w-none'>
+      <div className='global-margin flex w-full items-center justify-center'>
         <div className='flex flex-col items-center justify-center gap-y-6'>
           <div className='w-full'>
-            <div className='w-full h-full flex flex-col items-center justify-end pb-10'>
+            <div className='flex h-full w-full flex-col items-center justify-end pb-10'>
               <div className='w-full max-w-sm sm:max-w-[600px]'>
                 <form
-                  className='max-w-sm sm:max-w-[600px] sm:w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex'
+                  className='relative flex h-[66px] max-w-sm flex-row items-center justify-between rounded-cl sm:w-[600px] sm:max-w-[600px]'
                   action=''
                   role='search'
                   noValidate
@@ -68,7 +70,7 @@ export default function NewSearchBar(props) {
                 >
                   <input
                     ref={inputRef}
-                    className='bg-white placeholder:text-green-600 caret-green-600 focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] text-green-600 shadow-card focus:ring-green-600 w-full sm:w-[600px] h-[66px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none p-base focus:ring-1 sm:placeholder:p-base-semibold placeholder:p-2xs'
+                    className='p-base sm:placeholder:p-base-semibold placeholder:p-2xs h-[66px] w-full rounded-cl border-none bg-white bg-left bg-no-repeat pl-12 text-green-600 caret-green-600 shadow-card [background-position-x:10px] placeholder:text-green-600 focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] focus:ring-1 focus:ring-green-600 sm:w-[600px]'
                     autoComplete='off'
                     autoCorrect='off'
                     autoCapitalize='off'
@@ -84,7 +86,7 @@ export default function NewSearchBar(props) {
                   />
                   <button
                     type='submit'
-                    className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl flex items-center justify-center hover:bg-green-200 hover:border-green-200'
+                    className='p-base-semibold absolute right-3 top-3 ml-2 flex h-[42px] w-24 items-center justify-center rounded-cl border border-white bg-white p-2 text-green-600 shadow-card hover:border-green-200 hover:bg-green-200'
                   >
                     Zoeken
                   </button>
@@ -93,40 +95,40 @@ export default function NewSearchBar(props) {
                     title='Clear the search query'
                     className={`${
                       inputValue === '' || isSearchStalled ? 'hidden' : ''
-                    } absolute top-3.5 right-28 rounded-full p-2 group hover:bg-green-200`}
+                    } group absolute right-28 top-3.5 rounded-full p-2 hover:bg-green-200`}
                   >
                     <IconX className='h-6 w-6 text-green-600' />
                   </button>
                 </form>
               </div>
-              <TabList className='mt-4 max-w-sm sm:max-w-none flex flex-row overflow-x-scroll snap-x snap-mandatory no-scrollbar'>
+              <TabList className='no-scrollbar mt-4 flex max-w-sm snap-x snap-mandatory flex-row overflow-x-scroll sm:max-w-none'>
                 <Tab
                   onClick={() => props.setTabFunction(0)}
-                  className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
+                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-green-600 data-[selected]:border-b-2 data-[selected]:border-green-600'
                 >
                   Alle
                 </Tab>
                 <Tab
                   onClick={() => props.setTabFunction(1)}
-                  className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
+                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-green-600 data-[selected]:border-b-2 data-[selected]:border-green-600'
                 >
                   Instrumenten
                 </Tab>
                 <Tab
                   onClick={() => props.setTabFunction(2)}
-                  className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
+                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-green-600 data-[selected]:border-b-2 data-[selected]:border-green-600'
                 >
                   EU wetgeving
                 </Tab>
                 <Tab
                   onClick={() => props.setTabFunction(3)}
-                  className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
+                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-green-600 data-[selected]:border-b-2 data-[selected]:border-green-600'
                 >
                   Over CircuLaw
                 </Tab>
                 <Tab
                   onClick={() => props.setTabFunction(4)}
-                  className='data-[selected]:border-b-2 data-[selected]:border-green-600 border-b-2 border-transparent p-xs-semibold text-green-600 p-2 text-nowrap'
+                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-green-600 data-[selected]:border-b-2 data-[selected]:border-green-600'
                 >
                   Nieuws
                 </Tab>

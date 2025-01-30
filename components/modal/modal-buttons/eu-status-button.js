@@ -4,7 +4,7 @@ import { IconArrowRight } from '@tabler/icons-react';
 
 export default function EULawButton({ lawData }) {
   return (
-    <div className='border p-4 shadow-card rounded-cl flex flex-col gap-6 sm:max-w-[380px] group'>
+    <div className='group flex flex-col gap-6 rounded-cl border p-4 shadow-card sm:max-w-[380px]'>
       <h3 className='heading-2xl-semibold'>Status</h3>
       <div>
         {' '}
@@ -15,7 +15,7 @@ export default function EULawButton({ lawData }) {
       </div>
       <div className='p-base-semibold flex flex-row items-center justify-start text-green-600 group-hover:text-green-300'>
         <div>Bekijk de tijdlijn van deze regelgeving</div>{' '}
-        <IconArrowRight className='h-5 w-5 ml-1' />
+        <IconArrowRight className='ml-1 h-5 w-5' />
       </div>
     </div>
   );

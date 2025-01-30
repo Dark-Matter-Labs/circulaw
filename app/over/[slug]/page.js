@@ -1,6 +1,6 @@
-import { client, sanityFetch } from '@/lib/sanity';
-import { ABOUT_PAGE_PATHS_QUERY, ABOUT_PAGE_QUERY } from '@/lib/queries';
 import AboutPageComponent from '@/components/about-page';
+import { ABOUT_PAGE_PATHS_QUERY, ABOUT_PAGE_QUERY } from '@/lib/queries';
+import { client, sanityFetch } from '@/lib/sanity';
 
 const ABOUT_PAGE_METADATA_QUERY = `
 *[_type == 'aboutPage' && slug.current == $slug][0] {

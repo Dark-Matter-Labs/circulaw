@@ -1,13 +1,14 @@
+import Link from 'next/link';
+
 import CustomButton from '@/components/custom-button';
 import { IconArrowRight } from '@tabler/icons-react';
-import Link from 'next/link';
 
 export default function ContentEleven({ scrollPosition }) {
   return (
     <div
       className={`${
         scrollPosition < 11000 ? 'hidden' : ''
-      } text-green-600 flex flex-col gap-y-6 max-w-[290px]`}
+      } flex max-w-[290px] flex-col gap-y-6 text-green-600`}
     >
       <h3 className='heading-2xl-semibold'>Modelteksten voor een omgevingsplan</h3>
       <p className='p-base'>
