@@ -80,13 +80,16 @@ export default function ElearnignLiveEvent() {
             <p className='text-gray-800'>Misschien tot snel,</p>
             <p className='pb-8 text-gray-800'>Team Circulaw</p>
 
-            <h3 className='heading-xl-semibold mb-2'>Ik wil me aanmelden voor de livesessie.</h3>
+            <h3 className='heading-3xl-semibold mt-6'>Ik wil me aanmelden voor de livesessie</h3>
 
-            <div className='mb-6 sm:col-span-2'>
-              <label htmlFor='isElearningFinished' className='block text-gray-800'>
+            <div className='mt-12 sm:col-span-2'>
+              <label
+                htmlFor='isElearningFinished'
+                className='heading-xl-semibold sm:heading-2xl-semibold mb-2 block text-gray-800'
+              >
                 Heb je de e-learning afgerond?
               </label>
-              <div className='mt-1 flex items-baseline'>
+              <div className='mb-6 mt-1 flex items-baseline'>
                 {/* Radio button for "Nee" (false) */}
 
                 {/* Radio button for "Ja" (true) */}
@@ -111,14 +114,9 @@ export default function ElearnignLiveEvent() {
                 <label className='block pl-2 text-gray-800'>Nee</label>
               </div>
             </div>
-            {console.log(hasCompleted)}
 
             {hasCompleted === true && (
               <>
-                <p className='pb-8 text-gray-800'>
-                  Ik heb interesse in de livesessie Circulaire Houtbouw, op 4 maart in Amsterdam.
-                </p>
-
                 <form
                   acceptCharset='UTF-8'
                   method='POST'
@@ -128,7 +126,10 @@ export default function ElearnignLiveEvent() {
                   className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'
                 >
                   <div>
-                    <label htmlFor='first-name' className='block text-gray-800'>
+                    <label
+                      htmlFor='first-name'
+                      className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                    >
                       Wat is je naam? <span className='text-green-400'>*</span>
                     </label>
                     <div className='mt-1'>
@@ -145,7 +146,10 @@ export default function ElearnignLiveEvent() {
                     </div>
                   </div>
                   <div className='sm:col-span-2'>
-                    <label htmlFor='company' className='block text-gray-800'>
+                    <label
+                      htmlFor='company'
+                      className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                    >
                       Voor welke organisatie werk je? <span className='text-green-400'>*</span>
                     </label>
                     <div className='mt-1'>
@@ -162,7 +166,10 @@ export default function ElearnignLiveEvent() {
                     </div>
                   </div>
                   <div className='sm:col-span-2'>
-                    <label htmlFor='role' className='block text-gray-800'>
+                    <label
+                      htmlFor='role'
+                      className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                    >
                       Wat is je functie/rol? <span className='text-green-400'>*</span>
                     </label>
                     <div className='mt-1'>
@@ -179,7 +186,10 @@ export default function ElearnignLiveEvent() {
                     </div>
                   </div>
                   <div className='sm:col-span-2'>
-                    <label htmlFor='email' className='block text-gray-800'>
+                    <label
+                      htmlFor='email'
+                      className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                    >
                       Op welk e-mailadres kunnen we je bereiken?{' '}
                       <span className='text-green-400'>*</span>
                     </label>
@@ -200,7 +210,9 @@ export default function ElearnignLiveEvent() {
                   <div className='mt-1 flex items-baseline'>
                     <input type='hidden' name='subscribe' value='no' />
                     <input type='checkbox' name='subscribe' value='yes' onChange={handleChange()} />
-                    <label className='block pl-2 text-gray-800'>Abonneren op de nieuwsbrief</label>
+                    <label className='heading-xl-semibold sm:heading-2xl-semibold block pl-2 text-gray-800'>
+                      Abonneren op de nieuwsbrief
+                    </label>
                   </div>
                   <div className='sm:col-span-2'>
                     <div className=''>
@@ -234,7 +246,7 @@ export default function ElearnignLiveEvent() {
               </>
             )}
             {hasCompleted === false && (
-              <p className='pb-6 text-gray-800'>
+              <p className='mt-2 pb-6 text-gray-800'>
                 Heb je de e-learning Circulaire Houtbouw nog niet gedaan?{' '}
                 <Link
                   className='link-base link-interaction'

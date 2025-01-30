@@ -73,7 +73,10 @@ export default function ContactPageComponent() {
               className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'
             >
               <div>
-                <label htmlFor='first-name' className='block text-gray-800'>
+                <label
+                  htmlFor='first-name'
+                  className='text-gray-80 heading-xl-semibold sm:heading-2xl-semibold block'
+                >
                   Wat is je naam? <span className='text-green-400'>*</span>
                 </label>
                 <div className='mt-1'>
@@ -90,7 +93,10 @@ export default function ContactPageComponent() {
                 </div>
               </div>
               <div className='sm:col-span-2'>
-                <label htmlFor='company' className='block text-gray-800'>
+                <label
+                  htmlFor='company'
+                  className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                >
                   Voor welke organisatie werk je?
                 </label>
                 <div className='mt-1'>
@@ -106,7 +112,10 @@ export default function ContactPageComponent() {
                 </div>
               </div>
               <div className='sm:col-span-2'>
-                <label htmlFor='role' className='block text-gray-800'>
+                <label
+                  htmlFor='role'
+                  className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                >
                   Wat is je functie/rol?
                 </label>
                 <div className='mt-1'>
@@ -122,7 +131,10 @@ export default function ContactPageComponent() {
                 </div>
               </div>
               <div className='sm:col-span-2'>
-                <label htmlFor='email' className='block text-gray-800'>
+                <label
+                  htmlFor='email'
+                  className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                >
                   Op welk e-mailadres kunnen we je bereiken?{' '}
                   <span className='text-green-400'>*</span>
                 </label>
@@ -142,7 +154,10 @@ export default function ContactPageComponent() {
               </div>
 
               <div className='sm:col-span-2'>
-                <label htmlFor='message' className='block text-gray-800'>
+                <label
+                  htmlFor='message'
+                  className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                >
                   Wat is je vraag of opmerking? <span className='text-green-400'>*</span>
                 </label>
                 <div className='mt-1'>
@@ -160,7 +175,9 @@ export default function ContactPageComponent() {
               <div className='mt-1 flex items-baseline'>
                 <input type='hidden' name='subscribe' value='no' />
                 <input type='checkbox' name='subscribe' value='yes' onChange={handleChange()} />
-                <label className='block pl-2 text-gray-800'>Abonneren op de nieuwsbrief</label>
+                <label className='heading-xl-semibold sm:heading-2xl-semibold block pl-2 text-gray-800'>
+                  Abonneren op de nieuwsbrief
+                </label>
               </div>
               <div className='sm:col-span-2'>
                 <div className=''>
