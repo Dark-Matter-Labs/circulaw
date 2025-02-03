@@ -52,7 +52,7 @@ export default {
       name: 'titel',
       type: 'string',
       description: 'Titel van het instrument. Zorg dat deze titel uniek is.',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required(), // TODO: add max length here.
       group: 'high-level',
       initialValue: 'New Instrument',
     },
@@ -115,6 +115,8 @@ export default {
 
       to: [{ type: 'thema' }, { type: 'simpleThema' }],
     },
+
+    // TODO: find out if we still need the extra content
     {
       title: 'Bevat extra info',
       name: 'extraContent',
@@ -130,7 +132,9 @@ export default {
       },
       group: ['meta-data'],
     },
+    
     // ITEMS ONLY IN MetaData
+    // TODO: Check order of this
     {
       title: 'Overheidslaag',
       name: 'overheidslaag',
@@ -166,6 +170,9 @@ export default {
       },
       group: ['meta-data'],
     },
+
+    // TODO: Make this hidden if it is no longer going to be part of the instruments. 
+    // this way it will be available for the houtbowu instruments from the early days. 
     {
       title: 'Toelichting invloed',
       name: 'invloedTooltipText',
@@ -190,6 +197,9 @@ export default {
       },
       group: ['meta-data'],
     },
+
+    // TODO: Make this hidden if it is no longer going to be part of the instruments. 
+    // this way it will be available for the houtbowu instruments from the early days. 
     {
       title: 'Toelichting juridische haalbaarheid',
       name: 'JHTooltipText',
@@ -217,6 +227,7 @@ export default {
       },
       group: ['meta-data'],
     },
+    
     {
       title: 'Rechtsgebied',
       name: 'rechtsgebied',
@@ -280,6 +291,7 @@ export default {
       validation: (Rule) => Rule.uri({ scheme: ['http', 'https'] }),
       group: 'meta-data',
     },
+    // do all laws have dates ? 
     {
       title: 'Ingangsdatum wet',
       name: 'lawDate',
@@ -290,6 +302,7 @@ export default {
         dateFormat: 'DD-MM-YYYY',
       },
     },
+    // perhaps this should move heigher. 
     {
       title: 'Beleid',
       name: 'beleid',
