@@ -54,7 +54,6 @@ export const Structure = (S, context) =>
         .title('Inhoud per EU wet')
         .icon(GiEuropeanFlag)
         .child(
-          // List out all categories
           S.documentTypeList('euLaw')
             .title('Inhoud per EU wet')
             .child((euLawId) =>
@@ -105,18 +104,7 @@ export const Structure = (S, context) =>
       S.listItem()
         .title("Thema's")
         .icon(BsCircle)
-        .child(
-          S.documentTypeList('transitionAgenda')
-            .title('Themas')
-            .child((transitieagendaId) =>
-              S.documentList()
-                .title("Thema's")
-                .filter(
-                  '_type in ["thema", "simpleThema"] && $transitieagendaId == transitionAgenda._ref',
-                )
-                .params({ transitieagendaId }),
-            ),
-        ),
+        .child(S.documentList().title("Thema's").filter('_type in ["thema", "simpleThema"]')),
       S.listItem()
         .title('EU wetgeving')
         .icon(GiEuropeanFlag)
@@ -141,23 +129,3 @@ export const Structure = (S, context) =>
         .icon(AiOutlineHome)
         .child(S.document().title('Home Page').schemaType('siteConfig').documentId('siteSettings')),
     ]);
-
-{
-  /*
-       S.listItem()
-        .title('Instrumenten per top 5 thema')
-        .icon(VscLaw)
-        .child(
-          // List out all categories
-          S.documentTypeList('simpleThema')
-            .title('Instrumenten per top 5 thema')
-            .child((themaId) =>
-              S.documentList()
-                .title('Instruments')
-                .filter('_type == "instrument" && $themaId ==  thema._ref')
-                .params({ themaId }),
-            ),
-        ),
-      
-      */
-}
