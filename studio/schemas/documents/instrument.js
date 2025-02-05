@@ -1,5 +1,6 @@
 import { CgInternal } from 'react-icons/cg';
 import { VscLaw } from 'react-icons/vsc';
+
 import { validation } from 'sanity';
 
 export default {
@@ -46,7 +47,7 @@ export default {
           type: 'string',
           validation: (Rule) =>
             Rule.custom(({ parent }) => {
-              return parent !== undefined                
+              return parent !== undefined
                 ? 'You need to add a caption to the image, this will only be visible to screen readers'
                 : true;
             }),
