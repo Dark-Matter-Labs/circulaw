@@ -122,6 +122,10 @@ export default {
       name: 'extraContent',
       type: 'array',
       description: 'Bevat het instrument voorbeelden en/of leidraden?',
+      deprecated: {
+        reason: 'this field is no longer used in instruments',
+      },
+      hidden: ({ value }) => (value === undefined ? true : false),
       of: [{ type: 'string' }],
       options: {
         list: [
@@ -179,6 +183,10 @@ export default {
       type: 'string',
       description: 'Beschrijf kort waarom dit beperkt, gemiddeld of hoog is',
       group: 'meta-data',
+      deprecated: {
+        reason: 'This field is no longer used in instruments',
+      },
+      hidden: ({ value }) => (value === undefined ? true : false),
     },
     {
       title: 'Juridische Haalbaarheid',
@@ -206,6 +214,10 @@ export default {
       type: 'string',
       description: 'Beschrijf kort waarom dit beperkt, gemiddeld of hoog is',
       group: 'meta-data',
+      deprecated: {
+        reason: 'this field is no longer used in instruments',
+      },
+      hidden: ({ value }) => (value === undefined ? true : false),
     },
     {
       title: 'R-Ladder',
@@ -436,6 +448,10 @@ export default {
         'Plak hier de tekst van de eerste zinnen in (deze tekst wordt in de lijst met alle  instrumenten weergegeven).',
       validation: (Rule) => Rule.required().max(215),
       group: 'copy',
+      deprecated: {
+        reason: 'Please use subtitle instead',
+      },
+      hidden: ({ value }) => (value === undefined ? true : false),
     },
     {
       title: 'Inhoud',
