@@ -115,30 +115,7 @@ export default {
 
       to: [{ type: 'thema' }, { type: 'simpleThema' }],
     },
-
-    // TODO: find out if we still need the extra content
-    {
-      title: 'Bevat extra info',
-      name: 'extraContent',
-      type: 'array',
-      description: 'Bevat het instrument voorbeelden en/of leidraden?',
-      deprecated: {
-        reason: 'this field is no longer used in instruments',
-      },
-      hidden: ({ value }) => (value === undefined ? true : false),
-      of: [{ type: 'string' }],
-      options: {
-        list: [
-          { title: 'Leidraad', value: 'Leidraad' },
-          { title: 'Voorbeeld', value: 'Voorbeeld' },
-        ],
-        layout: 'grid',
-      },
-      group: ['meta-data'],
-    },
-    
     // ITEMS ONLY IN MetaData
-    // TODO: Check order of this
     {
       title: 'Overheidslaag',
       name: 'overheidslaag',
@@ -174,20 +151,6 @@ export default {
       },
       group: ['meta-data'],
     },
-
-    // TODO: Make this hidden if it is no longer going to be part of the instruments. 
-    // this way it will be available for the houtbowu instruments from the early days. 
-    {
-      title: 'Toelichting invloed',
-      name: 'invloedTooltipText',
-      type: 'string',
-      description: 'Beschrijf kort waarom dit beperkt, gemiddeld of hoog is',
-      group: 'meta-data',
-      deprecated: {
-        reason: 'This field is no longer used in instruments',
-      },
-      hidden: ({ value }) => (value === undefined ? true : false),
-    },
     {
       title: 'Juridische Haalbaarheid',
       name: 'juridischeHaalbaarheid',
@@ -206,19 +169,6 @@ export default {
       group: ['meta-data'],
     },
 
-    // TODO: Make this hidden if it is no longer going to be part of the instruments. 
-    // this way it will be available for the houtbowu instruments from the early days. 
-    {
-      title: 'Toelichting juridische haalbaarheid',
-      name: 'JHTooltipText',
-      type: 'string',
-      description: 'Beschrijf kort waarom dit beperkt, gemiddeld of hoog is',
-      group: 'meta-data',
-      deprecated: {
-        reason: 'this field is no longer used in instruments',
-      },
-      hidden: ({ value }) => (value === undefined ? true : false),
-    },
     {
       title: 'R-Ladder',
       name: 'rLadder',
@@ -239,7 +189,7 @@ export default {
       },
       group: ['meta-data'],
     },
-    
+
     {
       title: 'Rechtsgebied',
       name: 'rechtsgebied',
@@ -303,7 +253,7 @@ export default {
       validation: (Rule) => Rule.uri({ scheme: ['http', 'https'] }),
       group: 'meta-data',
     },
-    // do all laws have dates ? 
+    // do all laws have dates ?
     {
       title: 'Ingangsdatum wet',
       name: 'lawDate',
@@ -314,7 +264,7 @@ export default {
         dateFormat: 'DD-MM-YYYY',
       },
     },
-    // perhaps this should move heigher. 
+    // perhaps this should move heigher.
     {
       title: 'Beleid',
       name: 'beleid',
@@ -378,6 +328,7 @@ export default {
           { title: 'Selectiecriteria', value: 'selectiecriteria' },
           { title: 'Gunningscriteria', value: 'gunningscriteria' },
           { title: 'Contracteisen', value: 'contracteisen' },
+          { title: 'Geschiktheidseisen', value: 'geschiktheidseisen' },
         ],
         layout: 'grid',
       },
@@ -440,19 +391,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     // COPY CONTENT
-    {
-      title: 'Intro-regels',
-      name: 'introText',
-      type: 'text',
-      description:
-        'Plak hier de tekst van de eerste zinnen in (deze tekst wordt in de lijst met alle  instrumenten weergegeven).',
-      validation: (Rule) => Rule.required().max(215),
-      group: 'copy',
-      deprecated: {
-        reason: 'Please use subtitle instead',
-      },
-      hidden: ({ value }) => (value === undefined ? true : false),
-    },
     {
       title: 'Inhoud',
       name: 'content',
@@ -543,6 +481,57 @@ export default {
         },
       ],
       group: 'copy',
+    },
+    // depreciated fields
+    {
+      title: 'Intro-regels',
+      name: 'introText',
+      type: 'text',
+      description:
+        'Plak hier de tekst van de eerste zinnen in (deze tekst wordt in de lijst met alle  instrumenten weergegeven).',
+      group: 'copy',
+      deprecated: {
+        reason: 'Please use subtitle instead',
+      },
+      hidden: ({ value }) => (value === undefined ? true : false),
+    },
+    {
+      title: 'Bevat extra info',
+      name: 'extraContent',
+      type: 'array',
+      description: 'Bevat het instrument voorbeelden en/of leidraden?',
+      deprecated: {
+        reason: 'this field is no longer used in instruments',
+      },
+      hidden: ({ value }) => (value === undefined ? true : false),
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Leidraad', value: 'Leidraad' },
+          { title: 'Voorbeeld', value: 'Voorbeeld' },
+        ],
+        layout: 'grid',
+      },
+    },
+    {
+      title: 'Toelichting invloed',
+      name: 'invloedTooltipText',
+      type: 'string',
+      description: 'Beschrijf kort waarom dit beperkt, gemiddeld of hoog is',
+      deprecated: {
+        reason: 'This field is no longer used in instruments',
+      },
+      hidden: ({ value }) => (value === undefined ? true : false),
+    },
+    {
+      title: 'Toelichting juridische haalbaarheid',
+      name: 'JHTooltipText',
+      type: 'string',
+      description: 'Beschrijf kort waarom dit beperkt, gemiddeld of hoog is',
+      deprecated: {
+        reason: 'this field is no longer used in instruments',
+      },
+      hidden: ({ value }) => (value === undefined ? true : false),
     },
   ],
 };
