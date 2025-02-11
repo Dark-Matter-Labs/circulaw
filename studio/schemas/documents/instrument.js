@@ -9,34 +9,18 @@ export default {
   // GROUPS
   groups: [
     {
-      name: 'high-level',
-      title: 'High level content',
-      default: 'true',
-    },
-    {
       name: 'copy',
       title: 'Copy Content',
-    },
-    {
-      name: 'meta-data',
-      title: 'Meta Data',
     },
   ],
   // FIELDS
   fields: [
-    {
-      title: 'test',
-      name: 'test',
-      type: 'array',
-      of: [{type: 'smallPara'}]
-    },
     {
       title: 'Uitgelicht op thema-pagina',
       name: 'isFeatured',
       type: 'boolean',
       description: 'Moet dit instrument op de thema-pagina worden uitgelicht?',
       validation: (Rule) => Rule.required(),
-      group: 'high-level',
       initialValue: false,
     },
     {
@@ -57,7 +41,6 @@ export default {
             }),
         },
       ],
-      group: 'high-level',
     },
     {
       title: 'Titel',
@@ -65,7 +48,6 @@ export default {
       type: 'string',
       description: 'Titel van het instrument. Zorg dat deze titel uniek is.',
       validation: (Rule) => Rule.required(), // TODO: add max length here.
-      group: 'high-level',
       initialValue: 'New Instrument',
     },
     {
@@ -74,7 +56,6 @@ export default {
       type: 'text',
       description: 'Subtitel en/of intro-tekst  -  komt direct onder de titel.',
       validation: (Rule) => Rule.max(300),
-      group: 'high-level',
     },
     {
       title: 'Meta Page Title',
@@ -104,13 +85,11 @@ export default {
             .replace(/\s+/g, '-')
             .slice(0, 200),
       },
-      group: 'high-level',
     },
     {
       title: 'Transitie-agenda',
       name: 'transitionAgenda',
       type: 'reference',
-      group: 'high-level',
       description:
         'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
       validation: (Rule) => Rule.required(),
@@ -123,8 +102,6 @@ export default {
       weak: true,
       description: 'Selecteer het thema waaronder dit instrument valt.',
       validation: (Rule) => Rule.required(),
-      group: 'high-level',
-
       to: [{ type: 'thema' }, { type: 'simpleThema' }],
     },
     // ITEMS ONLY IN MetaData
@@ -144,7 +121,6 @@ export default {
         ],
         layout: 'grid',
       },
-      group: ['meta-data'],
     },
     {
       title: 'Invloed',
@@ -161,7 +137,6 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      group: ['meta-data'],
     },
     {
       title: 'Juridische Haalbaarheid',
@@ -178,7 +153,6 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      group: ['meta-data'],
     },
 
     {
@@ -199,7 +173,6 @@ export default {
         ],
         layout: 'grid',
       },
-      group: ['meta-data'],
     },
 
     {
@@ -217,7 +190,6 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      group: ['meta-data'],
     },
     {
       title: 'Subrechtsgebied',
@@ -239,7 +211,6 @@ export default {
         ],
         layout: 'dropdown',
       },
-      group: ['meta-data'],
     },
     {
       title: 'Citeertitel relevante wet',
@@ -247,7 +218,6 @@ export default {
       type: 'string',
       description: 'De naam van de relevante wet (bv Aanbestedingswet 2012)',
       validation: (Rule) => Rule.required(),
-      group: 'meta-data',
     },
     {
       title: 'Wetsartikel-nummer',
@@ -255,7 +225,6 @@ export default {
       type: 'string',
       description: 'Geef het nummer van het wetsartikel op (bv 2.8a).',
       validation: (Rule) => Rule.required(),
-      group: 'meta-data',
     },
     {
       title: 'Link wetsartikel',
@@ -263,7 +232,6 @@ export default {
       type: 'url',
       description: 'De link naar een wetsartikel moet altijd beginnen met http of https.',
       validation: (Rule) => Rule.uri({ scheme: ['http', 'https'] }),
-      group: 'meta-data',
     },
     // do all laws have dates ?
     {
@@ -271,7 +239,6 @@ export default {
       name: 'lawDate',
       type: 'date',
       description: 'Ingangsdatum wet (laat open als wet nog niet van kracht is)',
-      group: 'meta-data',
       options: {
         dateFormat: 'DD-MM-YYYY',
       },
@@ -282,7 +249,6 @@ export default {
       name: 'beleid',
       type: 'boolean',
       initialValue: false,
-      group: 'meta-data',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -309,7 +275,6 @@ export default {
         ],
         layout: 'grid',
       },
-      group: 'meta-data',
     },
 
     {
@@ -317,7 +282,6 @@ export default {
       name: 'inkoop',
       type: 'boolean',
       initialValue: false,
-      group: 'meta-data',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -344,14 +308,12 @@ export default {
         ],
         layout: 'grid',
       },
-      group: 'meta-data',
     },
     {
       title: 'Grondpositie',
       name: 'grondpositie',
       type: 'boolean',
       initialValue: false,
-      group: 'meta-data',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
           return parent?.transitionAgenda === 'bouw' && typeof currentValue === 'undefined'
@@ -384,14 +346,12 @@ export default {
         ],
         layout: 'grid',
       },
-      group: 'meta-data',
     },
     {
       title: 'Subsidie',
       name: 'subsidie',
       type: 'boolean',
       initialValue: false,
-      group: 'meta-data',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -399,7 +359,6 @@ export default {
       name: 'fiscaal',
       type: 'boolean',
       initialValue: false,
-      group: 'meta-data',
       validation: (Rule) => Rule.required(),
     },
     // COPY CONTENT
@@ -459,8 +418,10 @@ export default {
                     title: 'Open in new window',
                     name: 'blank',
                     type: 'boolean',
+                    description:
+                      'if the link is to a CircuLaw page please select false for open in new window',
                     validation: (Rule) => Rule.required(),
-                    initialValue: false,
+                    initialValue: true,
                   },
                 ],
               },
@@ -500,7 +461,6 @@ export default {
       type: 'text',
       description:
         'Plak hier de tekst van de eerste zinnen in (deze tekst wordt in de lijst met alle  instrumenten weergegeven).',
-      group: 'copy',
       deprecated: {
         reason: 'Please use subtitle instead',
       },
