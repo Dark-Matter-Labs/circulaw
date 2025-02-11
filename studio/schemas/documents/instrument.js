@@ -1,8 +1,6 @@
 import { CgInternal } from 'react-icons/cg';
 import { VscLaw } from 'react-icons/vsc';
 
-import { validation } from 'sanity';
-
 export default {
   title: 'instrument',
   name: 'instrument',
@@ -26,6 +24,12 @@ export default {
   ],
   // FIELDS
   fields: [
+    {
+      title: 'test',
+      name: 'test',
+      type: 'array',
+      of: [{type: 'smallPara'}]
+    },
     {
       title: 'Uitgelicht op thema-pagina',
       name: 'isFeatured',
@@ -471,7 +475,6 @@ export default {
                     type: 'reference',
                     title: 'Reference',
                     to: [{ type: 'instrument' }],
-                    validation: (Rule) => Rule.required(),
                     options: {
                       disableNew: true,
                     },
@@ -542,4 +545,10 @@ export default {
       hidden: ({ value }) => (value === undefined ? true : false),
     },
   ],
+  preview: {
+    select: {
+      title: 'titel',
+      subtitle: 'thema.themaName',
+    },
+  },
 };
