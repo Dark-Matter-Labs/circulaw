@@ -373,7 +373,6 @@ export default {
               block._type === 'block' &&
               block.children.every((span) => span._type === 'span' && span.text.trim() === ''),
           );
-          console.log(emptyBlocks);
           const emptyPaths = emptyBlocks.map((block, index) => [{ _key: block._key }] || [index]);
 
           return emptyPaths.length === 0
