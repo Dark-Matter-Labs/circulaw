@@ -366,6 +366,27 @@ export default {
       title: 'Inhoud',
       name: 'content',
       type: 'array',
+      validation: rule => rule.custom(blocks => {
+        const emptyBlocks = (blocks || []).filter(
+          block =>
+            block._type === 'block' &&
+            block.children.every(span =>
+              span._type === 'span' &&
+              span.text.trim() === ''
+            )
+        )
+        console.log(emptyBlocks)
+        const emptyPaths = emptyBlocks.map(
+          (block, index) => [{_key: block._key}] || [index]
+        )
+    
+        return emptyPaths.length === 0
+          ? true
+          : {
+              message: 'Paragraph cannot be empty',
+              paths: emptyPaths
+            }
+      }),
       of: [
         {
           type: 'greenBox',
