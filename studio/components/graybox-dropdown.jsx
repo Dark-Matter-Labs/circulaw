@@ -1,12 +1,19 @@
-import { Card, Stack, Text } from '@sanity/ui';
+import { Card, Flex, Stack, Text } from '@sanity/ui';
 
 export function GrayBoxDropDown(props) {
   const { title } = props;
   return (
-    <Card padding={4} width='full'>
-      <Stack space={[3, 3, 4, 5]}>
-        <Text>Grey box drop down: {title}</Text>
-      </Stack>
+    <Card padding={2} width='full'>
+      <Flex justify='space-between'>
+        <Stack space={[1, 1, 2, 3]}>
+          <Text size={1} weight='semibold'>
+            {title}
+          </Text>
+          <Text size={1} weight=''>
+            Grey box dropdown
+          </Text>
+        </Stack>
+      </Flex>
     </Card>
   );
 }
