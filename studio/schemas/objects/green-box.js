@@ -1,5 +1,7 @@
 import { CgInternal } from 'react-icons/cg';
 
+import { GrayBoxDropDown } from '../../components/graybox-dropdown';
+
 // rename
 export default {
   title: 'Gray Box dropdown',
@@ -70,4 +72,12 @@ export default {
       ],
     },
   ],
+  preview: {
+    select: {
+      title: 'greenBoxTitle',
+    },
+  },
+  components: {
+    preview: GrayBoxDropDown,
+  },
 };

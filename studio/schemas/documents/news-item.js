@@ -1,6 +1,7 @@
 import { BsNewspaper } from 'react-icons/bs';
 
 import { orderRankField } from '@sanity/orderable-document-list';
+import { validation } from 'sanity';
 
 import { NewsItemComponent } from '../../components/news-item';
 
@@ -16,6 +17,8 @@ export default {
       type: 'boolean',
       title: 'Is this an Agenda Item?',
       description: 'select true if this is an Agenda Itme',
+      initialValue: false,
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'title',
