@@ -1,7 +1,8 @@
+import { NextResponse } from 'next/server';
+
 import { client } from '@/lib/sanity';
 import algoliasearch from 'algoliasearch';
 import indexer from 'sanity-algolia';
-import { NextResponse } from 'next/server';
 
 export const agoliaInstance = algoliasearch(
   process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID,

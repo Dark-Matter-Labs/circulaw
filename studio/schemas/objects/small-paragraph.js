@@ -1,5 +1,7 @@
 import { CgInternal } from 'react-icons/cg';
 
+import { GrayBox } from '../../components/graybox';
+
 // rename
 export default {
   title: 'Gray Box',
@@ -69,4 +71,12 @@ export default {
       ],
     },
   ],
+  preview: {
+    select: {
+      title: 'smallParaTitle',
+    },
+  },
+  components: {
+    preview: GrayBox,
+  },
 };

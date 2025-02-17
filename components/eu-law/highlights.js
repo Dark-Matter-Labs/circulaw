@@ -1,10 +1,11 @@
 import Image from 'next/image';
-import HighlightCard from './highlight-card';
-import HighlightsSmallCard from './highlights-small-card';
+
 import cpr1 from '@/public/eu-crp-icons/cpr-1.svg';
 import cpr2 from '@/public/eu-crp-icons/cpr-2.svg';
 import cpr3 from '@/public/eu-crp-icons/cpr-3.svg';
 import cpr4 from '@/public/eu-crp-icons/cpr-4.svg';
+import csddd1 from '@/public/eu-csddd-icons/csddd-1.svg';
+import csddd2 from '@/public/eu-csddd-icons/csddd-2.svg';
 import espr from '@/public/eu-espr-icons/espr-0.svg';
 import espr1 from '@/public/eu-espr-icons/espr-1.svg';
 import espr2 from '@/public/eu-espr-icons/espr-2.svg';
@@ -30,23 +31,24 @@ import tax3 from '@/public/eu-taxonomie-icons/3-taxonomie.svg';
 import tax4 from '@/public/eu-taxonomie-icons/4-taxonomie.svg';
 import tax5 from '@/public/eu-taxonomie-icons/5-taxonomie.svg';
 import tax6 from '@/public/eu-taxonomie-icons/6-taxonomie.svg';
-import csddd1 from '@/public/eu-csddd-icons/csddd-1.svg';
-import csddd2 from '@/public/eu-csddd-icons/csddd-2.svg';
 import wfd1 from '@/public/eu-wfd-icons/wfd-1.svg';
 import wfd2 from '@/public/eu-wfd-icons/wfd-2.svg';
 import wfd3 from '@/public/eu-wfd-icons/wfd-3.svg';
+
+import HighlightCard from './highlight-card';
+import HighlightsSmallCard from './highlights-small-card';
 
 export default function Highlights({ law }) {
   if (law === 'CSRD') {
     return (
       <>
         <div className='global-margin'>
-          <h2 className='text-green-800 heading-3xl-semibold mb-4'>CSRD Highlights</h2>
+          <h2 className='heading-3xl-semibold mb-4 text-green-800'>CSRD Highlights</h2>
           <p className='mb-16 max-w-xl'>
             De CSRD is per boekjaar 2024 van toepassing op bedrijven die voldoen aan ten minste twee
             van de volgende criteria:
           </p>
-          <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
+          <div className='mb-6 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-10 lgNav:grid-cols-3'>
             <HighlightCard
               text='Een jaarlijkse omzet van meer dan:'
               number='€50'
@@ -66,10 +68,10 @@ export default function Highlights({ law }) {
     return (
       <>
         <div className='global-margin'>
-          <h2 className='text-green-800 heading-3xl-semibold mb-4'>EED Highlights</h2>
+          <h2 className='heading-3xl-semibold mb-4 text-green-800'>EED Highlights</h2>
           <p className='mb-16 max-w-xl'>2030 EU Energy Efficiency-doelen</p>
 
-          <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-12'>
+          <div className='mb-12 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-10 lgNav:grid-cols-3'>
             <HighlightCard
               text='Bindende opgave voor uiteindelijke energiebesparing:'
               number='11.7%'
@@ -84,7 +86,7 @@ export default function Highlights({ law }) {
           <p className='my-16 max-w-xl'>Tussentijds, verplichte besparingsdoelen</p>
 
           <div className='sm:max-w-3xl'>
-            <div className='grid grid-cols-2 md:grid-cols-4 mb-6 gap-6 items-start justify-start'>
+            <div className='mb-6 grid grid-cols-2 items-start justify-start gap-6 md:grid-cols-4'>
               <HighlightsSmallCard date='2024-2025' number='1.3%' />
               <HighlightsSmallCard date='2026-2027' number='1.5%' />
               <HighlightsSmallCard date='2028-2030' number='1.9%' />
@@ -98,9 +100,9 @@ export default function Highlights({ law }) {
     return (
       <>
         <div className='global-margin'>
-          <h2 className='text-green-800 heading-3xl-semibold mb-4'>SUP Highlights</h2>
+          <h2 className='heading-3xl-semibold mb-4 text-green-800'>SUP Highlights</h2>
           <p className='mb-16 max-w-xl'>De SUP richt zich op dit moment op 10 productgroepen:</p>
-          <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
+          <div className='mb-6 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-10 lgNav:grid-cols-3'>
             <HighlightCard text='Wattenstaafjes' icon={sup1} />
             <HighlightCard text='Bestek, borden, rietjes en roerstaafjes' icon={sup2} />
             <HighlightCard text='Ballonnen en stokjes voor ballonnen' icon={sup3} />
@@ -124,12 +126,12 @@ export default function Highlights({ law }) {
   } else if (law === 'Construction Products Regulation (CPR)') {
     return (
       <div className='global-margin'>
-        <h2 className='text-green-800 heading-3xl-semibold mb-4'>CRP Highlights</h2>
+        <h2 className='heading-3xl-semibold mb-4 text-green-800'>CRP Highlights</h2>
         <p className='mb-12 max-w-xl'>
           De CPR stelt eisen aan de functionaliteit, veiligheid en milieuvriendelijkheid van
           bouwproducten. Zo wordt circulariteit in de bouw gestimuleerd:
         </p>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
+        <div className='mb-6 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-10 lgNav:grid-cols-3'>
           <HighlightCard
             text='Voorschriften voor duurzaamheid en milieuvriendelijkheid'
             icon={cpr1}
@@ -143,13 +145,13 @@ export default function Highlights({ law }) {
   } else if (law === 'Ecodesign for Sustainable Products Regulation (ESPR)') {
     return (
       <div className='global-margin'>
-        <h2 className='text-green-800 heading-3xl-semibold mb-4'>ESPR Highlights</h2>
+        <h2 className='heading-3xl-semibold mb-4 text-green-800'>ESPR Highlights</h2>
 
         <p className='mb-12 max-w-xl'>
           Op basis van de ESPR worden producteisen gesteld op het gebied van onder andere de
           volgende aspecten.
         </p>
-        <div className='max-w-2xl sm:gap-10 mb-12'>
+        <div className='mb-12 max-w-2xl sm:gap-10'>
           <HighlightCard
             text='Duurzaamheid, herbruikbaarheid, op waardeerbaarheid, repareerbaarheid, recyclebaarheid, aandeel gerecycled materiaal, energieverbruik en energie-efficiëntie, grondstoffengebruik en grondstoffen-efficiëntie'
             icon={espr}
@@ -158,7 +160,7 @@ export default function Highlights({ law }) {
         <p className='my-16 max-w-xl'>
           De producteisen gaan in elk geval gelden voor de volgende productgroepen.
         </p>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
+        <div className='mb-6 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-10 lgNav:grid-cols-3'>
           <HighlightCard text='Kleding en schoenen' icon={espr1} />
           <HighlightCard text='Meubels' icon={espr2} />
           <HighlightCard text='Banden' icon={espr3} />
@@ -173,9 +175,9 @@ export default function Highlights({ law }) {
   } else if (law === 'EU Taxonomie') {
     return (
       <div className='global-margin'>
-        <h2 className='text-green-800 heading-3xl-semibold mb-4'>EU Taxonomie highlights</h2>
+        <h2 className='heading-3xl-semibold mb-4 text-green-800'>EU Taxonomie highlights</h2>
         <p className='mb-12 max-w-xl'>De hoofddoelen van de EU Taxonomie op een rijtje:</p>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
+        <div className='mb-6 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-10 lgNav:grid-cols-3'>
           <HighlightCard
             text='Uitstoot van broeikasgassen met tenminste 55% teruggedrongen in 2030 (vergeleken met peiljaar 1990)'
             icon={tax1}
@@ -203,13 +205,13 @@ export default function Highlights({ law }) {
   } else if (law === 'Corporate Sustainability Due Diligence Directive (CSDDD)') {
     return (
       <div className='global-margin'>
-        <h2 className='text-green-800 heading-3xl-semibold mb-4'>CSDDD highlights</h2>
-        <p className='mb-12 max-w-xl p-base'>waar bestaat de CSDDD uit?</p>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
+        <h2 className='heading-3xl-semibold mb-4 text-green-800'>CSDDD highlights</h2>
+        <p className='p-base mb-12 max-w-xl'>waar bestaat de CSDDD uit?</p>
+        <div className='mb-6 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-10 lgNav:grid-cols-3'>
           <HighlightCard text='1. Due diligence verplichting' icon={csddd1} />
           <HighlightCard text='2. Klimaattransititieplan' icon={csddd2} />
         </div>
-        <p className='p-base mt-12 mb-12'>Voor welke bedrijven geldt de CSDDD?</p>
+        <p className='p-base mb-12 mt-12'>Voor welke bedrijven geldt de CSDDD?</p>
         <Image
           src='/eu-csddd-icons/csddd-scope.png'
           alt='an image describing the scope of the CSDDD'
@@ -221,9 +223,9 @@ export default function Highlights({ law }) {
   } else if (law === 'Waste Framework Directive (WFD)') {
     return (
       <div className='global-margin'>
-        <h2 className='text-green-800 heading-3xl-semibold mb-4'>WFD highlights</h2>
+        <h2 className='heading-3xl-semibold mb-4 text-green-800'>WFD highlights</h2>
         <p className='mb-12 max-w-xl'>De bindende doelen van de WFD</p>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lgNav:grid-cols-3 gap-6 sm:gap-10 mb-6'>
+        <div className='mb-6 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-10 lgNav:grid-cols-3'>
           <HighlightCard text='Geharmoniseerde regelingen voor UPV' icon={wfd1} />
           <HighlightCard
             text='Een vermindering van 10% in de verwerking- en productiefase, vergeleken met peiljaar 2020'

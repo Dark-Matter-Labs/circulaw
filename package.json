@@ -15,7 +15,7 @@
     "build:staging": "env-cmd -e staging next build",
     "build:prod": "env-cmd -e production next build",
     "start": "next start",
-    "clean": "prettier --write \"(pages|components|studio|lib|app)/**/*.+(js|jsx|json|css|md)\" --config ./.prettier.json",
+    "clean": "prettier --write \"(pages|components|studio|lib|app)/**/*.+(js|jsx|json|css|md)\" --config ./prettier.config.js",
     "lint": "next lint",
     "prepare": "husky install",
     "pre-commit": "next lint --fix"
@@ -57,6 +57,7 @@
     "sanity-algolia": "^1.1.0"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "autoprefixer": "^10.4.20",
     "concurrently": "^7.6.0",
     "env-cmd": "^10.1.0",
@@ -65,7 +66,8 @@
     "eslint-config-prettier": "^8.5.0",
     "husky": "^8.0.2",
     "postcss": "^8.4.47",
-    "prettier": "2.5.1",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^3.3.13"
   }
 }

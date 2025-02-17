@@ -9,17 +9,8 @@ export default {
   // GROUPS
   groups: [
     {
-      name: 'high-level',
-      title: 'High level content',
-      default: 'true',
-    },
-    {
       name: 'copy',
       title: 'Copy Content',
-    },
-    {
-      name: 'meta-data',
-      title: 'Meta Data',
     },
   ],
   // FIELDS
@@ -30,7 +21,6 @@ export default {
       type: 'boolean',
       description: 'Moet dit instrument op de thema-pagina worden uitgelicht?',
       validation: (Rule) => Rule.required(),
-      group: 'high-level',
       initialValue: false,
     },
     {
@@ -43,17 +33,21 @@ export default {
           title: 'Alt Text',
           name: 'altText',
           type: 'string',
+          validation: (Rule) =>
+            Rule.custom(({ parent }) => {
+              return parent !== undefined
+                ? 'You need to add a caption to the image, this will only be visible to screen readers'
+                : true;
+            }),
         },
       ],
-      group: 'high-level',
     },
     {
       title: 'Titel',
       name: 'titel',
       type: 'string',
       description: 'Titel van het instrument. Zorg dat deze titel uniek is.',
-      validation: (Rule) => Rule.required(),
-      group: 'high-level',
+      validation: (Rule) => Rule.required(), // TODO: add max length here.
       initialValue: 'New Instrument',
     },
     {
@@ -62,7 +56,6 @@ export default {
       type: 'text',
       description: 'Subtitel en/of intro-tekst  -  komt direct onder de titel.',
       validation: (Rule) => Rule.max(300),
-      group: 'high-level',
     },
     {
       title: 'Meta Page Title',
@@ -92,13 +85,11 @@ export default {
             .replace(/\s+/g, '-')
             .slice(0, 200),
       },
-      group: 'high-level',
     },
     {
       title: 'Transitie-agenda',
       name: 'transitionAgenda',
       type: 'reference',
-      group: 'high-level',
       description:
         'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
       validation: (Rule) => Rule.required(),
@@ -111,24 +102,7 @@ export default {
       weak: true,
       description: 'Selecteer het thema waaronder dit instrument valt.',
       validation: (Rule) => Rule.required(),
-      group: 'high-level',
-
       to: [{ type: 'thema' }, { type: 'simpleThema' }],
-    },
-    {
-      title: 'Bevat extra info',
-      name: 'extraContent',
-      type: 'array',
-      description: 'Bevat het instrument voorbeelden en/of leidraden?',
-      of: [{ type: 'string' }],
-      options: {
-        list: [
-          { title: 'Leidraad', value: 'Leidraad' },
-          { title: 'Voorbeeld', value: 'Voorbeeld' },
-        ],
-        layout: 'grid',
-      },
-      group: ['meta-data'],
     },
     // ITEMS ONLY IN MetaData
     {
@@ -147,7 +121,6 @@ export default {
         ],
         layout: 'grid',
       },
-      group: ['meta-data'],
     },
     {
       title: 'Invloed',
@@ -164,14 +137,6 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      group: ['meta-data'],
-    },
-    {
-      title: 'Toelichting invloed',
-      name: 'invloedTooltipText',
-      type: 'string',
-      description: 'Beschrijf kort waarom dit beperkt, gemiddeld of hoog is',
-      group: 'meta-data',
     },
     {
       title: 'Juridische Haalbaarheid',
@@ -188,15 +153,8 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      group: ['meta-data'],
     },
-    {
-      title: 'Toelichting juridische haalbaarheid',
-      name: 'JHTooltipText',
-      type: 'string',
-      description: 'Beschrijf kort waarom dit beperkt, gemiddeld of hoog is',
-      group: 'meta-data',
-    },
+
     {
       title: 'R-Ladder',
       name: 'rLadder',
@@ -215,8 +173,8 @@ export default {
         ],
         layout: 'grid',
       },
-      group: ['meta-data'],
     },
+
     {
       title: 'Rechtsgebied',
       name: 'rechtsgebied',
@@ -232,7 +190,6 @@ export default {
         layout: 'radio',
         direction: 'horizontal',
       },
-      group: ['meta-data'],
     },
     {
       title: 'Subrechtsgebied',
@@ -254,7 +211,6 @@ export default {
         ],
         layout: 'dropdown',
       },
-      group: ['meta-data'],
     },
     {
       title: 'Citeertitel relevante wet',
@@ -262,7 +218,6 @@ export default {
       type: 'string',
       description: 'De naam van de relevante wet (bv Aanbestedingswet 2012)',
       validation: (Rule) => Rule.required(),
-      group: 'meta-data',
     },
     {
       title: 'Wetsartikel-nummer',
@@ -270,7 +225,6 @@ export default {
       type: 'string',
       description: 'Geef het nummer van het wetsartikel op (bv 2.8a).',
       validation: (Rule) => Rule.required(),
-      group: 'meta-data',
     },
     {
       title: 'Link wetsartikel',
@@ -278,24 +232,23 @@ export default {
       type: 'url',
       description: 'De link naar een wetsartikel moet altijd beginnen met http of https.',
       validation: (Rule) => Rule.uri({ scheme: ['http', 'https'] }),
-      group: 'meta-data',
     },
+    // do all laws have dates ?
     {
       title: 'Ingangsdatum wet',
       name: 'lawDate',
       type: 'date',
       description: 'Ingangsdatum wet (laat open als wet nog niet van kracht is)',
-      group: 'meta-data',
       options: {
         dateFormat: 'DD-MM-YYYY',
       },
     },
+    // perhaps this should move heigher.
     {
       title: 'Beleid',
       name: 'beleid',
       type: 'boolean',
       initialValue: false,
-      group: 'meta-data',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -322,7 +275,6 @@ export default {
         ],
         layout: 'grid',
       },
-      group: 'meta-data',
     },
 
     {
@@ -330,7 +282,6 @@ export default {
       name: 'inkoop',
       type: 'boolean',
       initialValue: false,
-      group: 'meta-data',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -353,17 +304,16 @@ export default {
           { title: 'Selectiecriteria', value: 'selectiecriteria' },
           { title: 'Gunningscriteria', value: 'gunningscriteria' },
           { title: 'Contracteisen', value: 'contracteisen' },
+          { title: 'Geschiktheidseisen', value: 'geschiktheidseisen' },
         ],
         layout: 'grid',
       },
-      group: 'meta-data',
     },
     {
       title: 'Grondpositie',
       name: 'grondpositie',
       type: 'boolean',
       initialValue: false,
-      group: 'meta-data',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
           return parent?.transitionAgenda === 'bouw' && typeof currentValue === 'undefined'
@@ -396,14 +346,12 @@ export default {
         ],
         layout: 'grid',
       },
-      group: 'meta-data',
     },
     {
       title: 'Subsidie',
       name: 'subsidie',
       type: 'boolean',
       initialValue: false,
-      group: 'meta-data',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -411,23 +359,29 @@ export default {
       name: 'fiscaal',
       type: 'boolean',
       initialValue: false,
-      group: 'meta-data',
       validation: (Rule) => Rule.required(),
     },
     // COPY CONTENT
     {
-      title: 'Intro-regels',
-      name: 'introText',
-      type: 'text',
-      description:
-        'Plak hier de tekst van de eerste zinnen in (deze tekst wordt in de lijst met alle  instrumenten weergegeven).',
-      validation: (Rule) => Rule.required().max(215),
-      group: 'copy',
-    },
-    {
       title: 'Inhoud',
       name: 'content',
       type: 'array',
+      validation: (rule) =>
+        rule.custom((blocks) => {
+          const emptyBlocks = (blocks || []).filter(
+            (block) =>
+              block._type === 'block' &&
+              block.children.every((span) => span._type === 'span' && span.text.trim() === ''),
+          );
+          const emptyPaths = emptyBlocks.map((block, index) => [{ _key: block._key }] || [index]);
+
+          return emptyPaths.length === 0
+            ? true
+            : {
+                message: 'Paragraph cannot be empty',
+                paths: emptyPaths,
+              };
+        }),
       of: [
         {
           type: 'greenBox',
@@ -480,8 +434,10 @@ export default {
                     title: 'Open in new window',
                     name: 'blank',
                     type: 'boolean',
+                    description:
+                      'if the link is to a CircuLaw page please select false for open in new window',
                     validation: (Rule) => Rule.required(),
-                    initialValue: false,
+                    initialValue: true,
                   },
                 ],
               },
@@ -496,7 +452,6 @@ export default {
                     type: 'reference',
                     title: 'Reference',
                     to: [{ type: 'instrument' }],
-                    validation: (Rule) => Rule.required(),
                     options: {
                       disableNew: true,
                     },
@@ -515,5 +470,61 @@ export default {
       ],
       group: 'copy',
     },
+    // depreciated fields
+    {
+      title: 'Intro-regels',
+      name: 'introText',
+      type: 'text',
+      description:
+        'Plak hier de tekst van de eerste zinnen in (deze tekst wordt in de lijst met alle  instrumenten weergegeven).',
+      deprecated: {
+        reason: 'Please use subtitle instead',
+      },
+      hidden: ({ value }) => (value === undefined ? true : false),
+    },
+    {
+      title: 'Bevat extra info',
+      name: 'extraContent',
+      type: 'array',
+      description: 'Bevat het instrument voorbeelden en/of leidraden?',
+      deprecated: {
+        reason: 'this field is no longer used in instruments',
+      },
+      hidden: ({ value }) => (value === undefined ? true : false),
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Leidraad', value: 'Leidraad' },
+          { title: 'Voorbeeld', value: 'Voorbeeld' },
+        ],
+        layout: 'grid',
+      },
+    },
+    {
+      title: 'Toelichting invloed',
+      name: 'invloedTooltipText',
+      type: 'string',
+      description: 'Beschrijf kort waarom dit beperkt, gemiddeld of hoog is',
+      deprecated: {
+        reason: 'This field is no longer used in instruments',
+      },
+      hidden: ({ value }) => (value === undefined ? true : false),
+    },
+    {
+      title: 'Toelichting juridische haalbaarheid',
+      name: 'JHTooltipText',
+      type: 'string',
+      description: 'Beschrijf kort waarom dit beperkt, gemiddeld of hoog is',
+      deprecated: {
+        reason: 'this field is no longer used in instruments',
+      },
+      hidden: ({ value }) => (value === undefined ? true : false),
+    },
   ],
+  preview: {
+    select: {
+      title: 'titel',
+      subtitle: 'thema.themaName',
+    },
+  },
 };

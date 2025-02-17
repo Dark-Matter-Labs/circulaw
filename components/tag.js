@@ -1,7 +1,7 @@
 export default function Tag({ children, classes }) {
   return (
     <div
-      className={`${classes} first-letter:uppercase px-2.5 h-6 rounded-[8px] p-2xs-bold flex items-center`}
+      className={`${classes} p-2xs-bold flex h-6 items-center rounded-[8px] px-2.5 first-letter:uppercase`}
     >
       <span className='first-letter:uppercase'>{children}</span>
     </div>

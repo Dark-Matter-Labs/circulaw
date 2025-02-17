@@ -1,10 +1,14 @@
 'use client';
+
 import { useRef, useState } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
-import axios from 'axios';
-import { scrollToTop } from '@/utils/scroll-to-top';
-import CustomButton from '../custom-button';
+
 import Link from 'next/link';
+import { useRouter, useSearchParams } from 'next/navigation';
+
+import { scrollToTop } from '@/utils/scroll-to-top';
+import axios from 'axios';
+
+import CustomButton from '../custom-button';
 
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/929e2e8c-bdf9-4c5f-a293-699dd63de422';
 
@@ -80,18 +84,18 @@ export default function FeedbackComponent() {
             <button
               type='button'
               onClick={() => router.back()}
-              className='mt-12 p-2xs-bold text-green-600 bg-gray-100 pl-2 pr-3 py-1.5 rounded-clSm'
+              className='p-2xs-bold mt-12 rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 text-green-600'
             >
-              <span className='  '>Terug</span>
+              <span className=' '>Terug</span>
               <span className='ml-2'>{'>'}</span>
             </button>
-            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-gray-800 pt-10'>
+            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pt-10 text-gray-800'>
               Met jouw hulp maken we CircuLaw beter
             </h1>
-            <p className='heading-2xl pt-8 max-w-3xl'>
+            <p className='heading-2xl max-w-3xl pt-8'>
               Ook bezig met <span className='font-semibold'>{`‘${instrument}’`}</span>
             </p>
-            <p className='heading-2xl pt-4 max-w-3xl'>Deel met ons:</p>
+            <p className='heading-2xl max-w-3xl pt-4'>Deel met ons:</p>
             <ul className='heading-2xl max-w-3xl'>
               <li>- voorbeelden uit jouw praktijk</li>
               <li>- je tips om toepassing makkelijker te maken</li>
@@ -117,7 +121,7 @@ export default function FeedbackComponent() {
                       id='message'
                       name='message'
                       rows={8}
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border border-gray-300 rounded-cl'
+                      className='block w-full rounded-cl border border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
                       required
                       value={query.message}
                       onChange={handleChange()}
@@ -157,7 +161,7 @@ export default function FeedbackComponent() {
                       name='name'
                       id='first-name'
                       autoComplete='given-name'
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
+                      className='block w-full rounded-cl border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
                       value={query.name}
                       onChange={handleChange()}
                       required
@@ -165,7 +169,7 @@ export default function FeedbackComponent() {
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
-                  <label htmlFor='email' className='block  text-gray-800'>
+                  <label htmlFor='email' className='block text-gray-800'>
                     <h3 className='heading-xl-semibold sm:heading-2xl-semibold'>
                       Je e-mail <span className='text-green-400'>*</span>
                     </h3>
@@ -176,7 +180,7 @@ export default function FeedbackComponent() {
                       name='email'
                       type='email'
                       autoComplete='email'
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
+                      className='block w-full rounded-cl border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
                       aria-describedby='emailHelp'
                       required
                       value={query.email}
@@ -188,7 +192,7 @@ export default function FeedbackComponent() {
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
-                  <label htmlFor='company' className='block  text-gray-800'>
+                  <label htmlFor='company' className='block text-gray-800'>
                     <h3 className='heading-xl-semibold sm:heading-2xl-semibold'>
                       Je organisatie / bedrijf <span className='text-green-400'>*</span>
                     </h3>
@@ -199,7 +203,7 @@ export default function FeedbackComponent() {
                       name='org'
                       id='company'
                       autoComplete='organization'
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
+                      className='block w-full rounded-cl border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
                       value={query.org}
                       onChange={handleChange()}
                       required
@@ -207,7 +211,7 @@ export default function FeedbackComponent() {
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
-                  <label htmlFor='company' className='block  text-gray-800'>
+                  <label htmlFor='company' className='block text-gray-800'>
                     <h3 className='heading-xl-semibold sm:heading-2xl-semibold'>
                       Je functie / rol <span className='text-green-400'>*</span>
                     </h3>
@@ -218,7 +222,7 @@ export default function FeedbackComponent() {
                       name='role'
                       id='role'
                       autoComplete='role'
-                      className='py-3 px-4 block w-full shadow-sm focus:ring-green-600 focus:border-green-600 border-gray-300 rounded-cl'
+                      className='block w-full rounded-cl border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
                       value={query.role}
                       onChange={handleChange()}
                       required
@@ -239,7 +243,7 @@ export default function FeedbackComponent() {
                       hebben of je op de hoogte willen houden van dit instrument. Je gegevens zullen
                       nooit gebruikt worden voor andere doeleinden. Lees onze{' '}
                       <Link href='/privacy-policy'>
-                        <span className='link-interaction text-green-500 hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+                        <span className='link-interaction text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'>
                           privacy verklaring.
                         </span>
                       </Link>
@@ -252,24 +256,24 @@ export default function FeedbackComponent() {
                     type='submit'
                     onClick={scrollToTop}
                     className={
-                      'bg-green-600 hover:bg-green-200 hover:text-green-600 text-gray-100 active:bg-green-800 active:text-gray-100 focus:outline-none focus:ring-2 focus:ring-white rounded-full inline-flex items-center px-4 py-2 button '
+                      'button inline-flex items-center rounded-full bg-green-600 px-4 py-2 text-gray-100 hover:bg-green-200 hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-800 active:text-gray-100'
                     }
                   >
                     Verzenden &rarr;
                   </button>
                 </div>
               </form>
-              <h4 className='pt-8 p-base-semibold sm:headling-xl-semibold text-green-400'>
+              <h4 className='p-base-semibold sm:headling-xl-semibold pt-8 text-green-400'>
                 * dit veld is verplicht
               </h4>
             </div>
           </>
         ) : (
           <>
-            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pt-10'>
+            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pt-10 text-green-600'>
               Dank voor je feedback!
             </h1>
-            <p className=' p-base py-10 max-w-2xl text-gray-800'>
+            <p className='p-base max-w-2xl py-10 text-gray-800'>
               Samen met jou kunnen we CircuLaw blijven verbeteren, en dat is hard nodig! We gaan je
               feedback bekijken en zullen je eventueel benaderen als we nog vragen hebben of
               antwoorden op jouw vraag. Wil je op de hoogte blijven van CircuLaw?{' '}
@@ -283,7 +287,7 @@ export default function FeedbackComponent() {
                 </a>
               </span>
             </p>
-            <div className='sm:col-span-2 pb-20'>
+            <div className='pb-20 sm:col-span-2'>
               <Link href='/'>
                 <CustomButton color='whiteBackground'>Naar de homepage &rarr;</CustomButton>
               </Link>

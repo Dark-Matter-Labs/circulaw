@@ -1,6 +1,8 @@
 'use client';
-import { Dialog, DialogBackdrop } from '@headlessui/react';
+
 import { useState } from 'react';
+
+import { Dialog, DialogBackdrop } from '@headlessui/react';
 
 // the modal takes a react component as the prop Button
 export default function Modal({ Button, children }) {
@@ -13,7 +15,7 @@ export default function Modal({ Button, children }) {
       <Dialog
         open={isOpen}
         onClose={() => setIsOpen(false)}
-        className='fixed z-120 inset-0 flex w-screen items-center justify-end'
+        className='fixed inset-0 z-120 flex w-screen items-center justify-end'
       >
         <DialogBackdrop
           transition

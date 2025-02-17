@@ -1,18 +1,20 @@
 import { Highlight } from 'react-instantsearch';
+
 import Link from 'next/link';
+
 import Tag from '@/components/tag';
 
 export const InstrumentHit = ({ hit }) => {
   return (
     <>
-      <article className='hidden sm:block p-4 rounded-cl group hover:shadow-card transition-all duration-100 w-[760px]'>
+      <article className='group hidden w-[760px] rounded-cl p-4 transition-all duration-100 hover:shadow-card sm:block'>
         <Link
           href={`/${hit?.transitionAgenda?.toLowerCase()}/${hit?.thema?.toLowerCase()}/instrumenten/${
             hit.slug
           }`}
         >
           <div className='block'>
-            <div className='flex justify-start items-center -ml-1'>
+            <div className='-ml-1 flex items-center justify-start'>
               <Tag classes='border border-green-400 bg-transparent text-green-400 mr-2'>
                 {hit.thema}
               </Tag>
@@ -33,9 +35,9 @@ export const InstrumentHit = ({ hit }) => {
                 <Tag classes='bg-green-500 text-gray-100 mr-2'>Fiscaal</Tag>
               )}
             </div>
-            <div className='block mt-2 '>
-              <div className=' mb-2'>
-                <h3 className='heading-2xl-semibold max-w-[650px] text-gray-800 no-underline group-hover:text-green-300 transition-colors duration-100 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+            <div className='mt-2 block'>
+              <div className='mb-2'>
+                <h3 className='heading-2xl-semibold max-w-[650px] text-gray-800 no-underline transition-colors duration-100 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800 group-hover:text-green-300'>
                   <Highlight
                     attribute='titel'
                     hit={hit}
@@ -45,8 +47,8 @@ export const InstrumentHit = ({ hit }) => {
                   />
                 </h3>
               </div>
-              <div className='block newlineDisplay p-base text-gray-800 mt-2 pb-2'>
-                <p className='p-base max-w-[650px] line-clamp-3'>
+              <div className='newlineDisplay p-base mt-2 block pb-2 text-gray-800'>
+                <p className='p-base line-clamp-3 max-w-[650px]'>
                   <Highlight
                     attribute='subtitel'
                     hit={hit}
@@ -58,27 +60,27 @@ export const InstrumentHit = ({ hit }) => {
               </div>
               {/* ADD METADATA */}
               <div className='hidden sm:block'>
-                <div className='h-auto flex flex-row gap-x-3 grow-0 items-center justify-self-start w-full mt-4'>
-                  <div className='flex flex-col basis-houdbaarheid'>
-                    <div className='p-2xs-semibold text-gray-600 mb-1'>Juridische houdbaarheid</div>
+                <div className='mt-4 flex h-auto w-full grow-0 flex-row items-center gap-x-3 justify-self-start'>
+                  <div className='flex basis-houdbaarheid flex-col'>
+                    <div className='p-2xs-semibold mb-1 text-gray-600'>Juridische houdbaarheid</div>
                     <div className='flex items-center'>
-                      <div className='p-xs-semibold text-green-500 bg-green-50 p-1 rounded-cl'>
+                      <div className='p-xs-semibold rounded-cl bg-green-50 p-1 text-green-500'>
                         {hit?.juridischeHaalbaarheid}
                       </div>
                     </div>
                   </div>
-                  <div className='flex flex-col basis-invloed'>
-                    <div className='p-2xs-semibold text-gray-600 mb-1'>Invloed</div>
+                  <div className='flex basis-invloed flex-col'>
+                    <div className='p-2xs-semibold mb-1 text-gray-600'>Invloed</div>
                     <div className='flex items-center'>
-                      <div className='p-xs-semibold text-green-500 bg-green-50 p-1 rounded-cl'>
+                      <div className='p-xs-semibold rounded-cl bg-green-50 p-1 text-green-500'>
                         {hit?.juridischInvloed}
                       </div>
                     </div>
                   </div>
-                  <div className='flex flex-col basis-overheidslaag'>
-                    <div className='p-2xs-semibold text-gray-600 mb-1'>Overheidslaag</div>
-                    <div className='p-xs-semibold text-green-500  flex'>
-                      <div className='shrink bg-green-50 p-1 rounded-cl'>
+                  <div className='flex basis-overheidslaag flex-col'>
+                    <div className='p-2xs-semibold mb-1 text-gray-600'>Overheidslaag</div>
+                    <div className='p-xs-semibold flex text-green-500'>
+                      <div className='shrink rounded-cl bg-green-50 p-1'>
                         {hit?.overheidslaag
                           ?.filter((x) => x !== null)
                           .map((level) => (
@@ -90,13 +92,13 @@ export const InstrumentHit = ({ hit }) => {
                       </div>
                     </div>
                   </div>
-                  <div className='flex flex-col basis-rladder'>
-                    <div className='p-2xs-semibold text-gray-600 mb-1'>R-ladder</div>
+                  <div className='flex basis-rladder flex-col'>
+                    <div className='p-2xs-semibold mb-1 text-gray-600'>R-ladder</div>
                     <div className='flex items-center'>
                       <div className='flex flex-row items-center'>
-                        <div className='shrink bg-green-50 p-1 rounded-cl'>
+                        <div className='shrink rounded-cl bg-green-50 p-1'>
                           {hit?.rLadder?.map((rValue) => (
-                            <span key={rValue} className='p-xs-semibold text-green-500 '>
+                            <span key={rValue} className='p-xs-semibold text-green-500'>
                               {rValue} {hit?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                               &nbsp;
                             </span>
@@ -108,14 +110,14 @@ export const InstrumentHit = ({ hit }) => {
                 </div>
               </div>
               {/* MOBILE */}
-              <div className='flex flex-col sm:hidden justify-center mb-4'>
-                <div className='flex flex-row justify-between h-auto py-2 border-b border-t-2 border-gray-400'>
+              <div className='mb-4 flex flex-col justify-center sm:hidden'>
+                <div className='flex h-auto flex-row justify-between border-b border-t-2 border-gray-400 py-2'>
                   <div className='flex flex-col justify-center'>
-                    <div className='p-xs-semibold sm:py-1 text-gray-600'>
+                    <div className='p-xs-semibold text-gray-600 sm:py-1'>
                       Juridische houdbaarheid
                     </div>
                     <div className='flex items-center'>
-                      <div className='p-xs-semibold text-green-500 pr-2'>
+                      <div className='p-xs-semibold pr-2 text-green-500'>
                         {hit?.juridischeHaalbaarheid}
                       </div>
                     </div>
@@ -123,13 +125,13 @@ export const InstrumentHit = ({ hit }) => {
                   <div className='flex flex-col justify-center'>
                     <div className='p-xs-semibold py-1 text-gray-600'>Invloed</div>
                     <div className='flex items-center'>
-                      <div className='p-xs-semibold text-green-500 pr-2'>
+                      <div className='p-xs-semibold pr-2 text-green-500'>
                         {hit?.juridischInvloed}
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className='border-b border-gray-400 flex h-auto py-2'>
+                <div className='flex h-auto border-b border-gray-400 py-2'>
                   <div className='flex flex-col justify-center'>
                     <div className='p-xs-semibold py-1 text-gray-600'>Overheidslaag</div>
                     <div className='p-xs-semibold text-green-500'>
@@ -144,7 +146,7 @@ export const InstrumentHit = ({ hit }) => {
                     </div>
                   </div>
                 </div>
-                <div className='flex py-2 border-b-2 border-gray-400'>
+                <div className='flex border-b-2 border-gray-400 py-2'>
                   <div className='flex flex-col justify-center'>
                     <div className='p-xs-semibold py-1 text-gray-600'>R-ladder</div>
                     <div className='flex items-center'>
@@ -171,8 +173,8 @@ export const InstrumentHit = ({ hit }) => {
             hit.slug
           }`}
         >
-          <div className='block sm:ml-0 mb-10 sm:mb-8 md:max-w-[760px] p-4 bg-green-50 rounded-cl'>
-            <div className='flex justify-start items-center -ml-1'>
+          <div className='mb-10 block rounded-cl bg-green-50 p-4 sm:mb-8 sm:ml-0 md:max-w-[760px]'>
+            <div className='-ml-1 flex items-center justify-start'>
               {/* Expertise Tag */}
               <Tag classes='border border-green-400 bg-transparent text-green-400 mr-2'>
                 {hit.thema}
@@ -194,9 +196,9 @@ export const InstrumentHit = ({ hit }) => {
               )}
             </div>
 
-            <div className='block mt-2 '>
-              <div className=' mb-2'>
-                <h3 className='heading-2xl-semibold max-w-[650px] text-gray-800 no-underline hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
+            <div className='mt-2 block'>
+              <div className='mb-2'>
+                <h3 className='heading-2xl-semibold max-w-[650px] text-gray-800 no-underline hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'>
                   <Highlight
                     attribute='titel'
                     hit={hit}
@@ -206,7 +208,7 @@ export const InstrumentHit = ({ hit }) => {
                   />
                 </h3>
               </div>
-              <div className='block  newlineDisplay p-base text-gray-800 mt-2 pb-2'>
+              <div className='newlineDisplay p-base mt-2 block pb-2 text-gray-800'>
                 <p className='p-base max-w-[650px]'>
                   {' '}
                   <Highlight
@@ -218,14 +220,14 @@ export const InstrumentHit = ({ hit }) => {
                   />
                 </p>
               </div>
-              <div className='flex flex-col sm:hidden justify-center mb-4'>
-                <div className='flex flex-row justify-between h-auto py-2'>
+              <div className='mb-4 flex flex-col justify-center sm:hidden'>
+                <div className='flex h-auto flex-row justify-between py-2'>
                   <div className='flex flex-col justify-center'>
-                    <div className='p-xs-semibold sm:py-1 text-gray-600'>
+                    <div className='p-xs-semibold text-gray-600 sm:py-1'>
                       Juridische houdbaarheid
                     </div>
                     <div className='flex items-center'>
-                      <div className='p-xs-semibold text-green-500 bg-green-100 px-1.5 py-1 rounded-cl'>
+                      <div className='p-xs-semibold rounded-cl bg-green-100 px-1.5 py-1 text-green-500'>
                         {hit?.juridischeHaalbaarheid}
                       </div>
                     </div>
@@ -233,7 +235,7 @@ export const InstrumentHit = ({ hit }) => {
                   <div className='flex flex-col justify-center'>
                     <div className='p-xs-semibold py-1 text-gray-600'>Invloed</div>
                     <div className='flex items-center'>
-                      <div className='p-xs-semibold text-green-500 bg-green-100 px-1.5 py-1 rounded-cl'>
+                      <div className='p-xs-semibold rounded-cl bg-green-100 px-1.5 py-1 text-green-500'>
                         {hit?.juridischInvloed}
                       </div>
                     </div>
@@ -242,7 +244,7 @@ export const InstrumentHit = ({ hit }) => {
                 <div className='flex h-auto py-2'>
                   <div className='flex flex-col justify-center'>
                     <div className='p-xs-semibold py-1 text-gray-600'>Overheidslaag</div>
-                    <div className='p-xs-semibold text-green-500 bg-green-100 pl-1.5 p-1 rounded-cl'>
+                    <div className='p-xs-semibold rounded-cl bg-green-100 p-1 pl-1.5 text-green-500'>
                       {hit?.overheidslaag
                         ?.filter((x) => x !== null)
                         .map((level) => (
@@ -258,7 +260,7 @@ export const InstrumentHit = ({ hit }) => {
                   <div className='flex flex-col justify-center'>
                     <div className='p-xs-semibold py-1 text-gray-600'>R-ladder</div>
                     <div className='flex items-center'>
-                      <div className='flex flex-row items-center bg-green-100 pl-1.5 p-1 rounded-cl'>
+                      <div className='flex flex-row items-center rounded-cl bg-green-100 p-1 pl-1.5'>
                         {hit?.rLadder?.map((rValue) => (
                           <div key={rValue} className='p-xs-semibold text-green-500'>
                             {rValue} {hit?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}

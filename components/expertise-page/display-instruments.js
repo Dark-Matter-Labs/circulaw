@@ -1,5 +1,6 @@
-import DisplaySubHeading from './display-subheading';
 import { useEffect, useState } from 'react';
+
+import DisplaySubHeading from './display-subheading';
 
 const beleidSubCategories = ['strategie', 'beleidsdoorwerking', 'beleidsuitvoering'];
 const inkoopSubCategories = [
@@ -9,6 +10,7 @@ const inkoopSubCategories = [
   'selectiecriteria',
   'gunningscriteria',
   'contracteisen',
+  'geschiktheidseisen',
 ];
 const grondpositieSubCategories = [
   'strategie',
@@ -29,6 +31,7 @@ export default function DisplayInstruments({ category, categoryName }) {
   const [inkoop4, setInkoop4] = useState();
   const [inkoop5, setInkoop5] = useState();
   const [inkoop6, setInkoop6] = useState();
+  const [inkoop7, setInkoop7] = useState();
 
   const [grondpositie1, setGrondpositie1] = useState();
   const [grondpositie2, setGrondpositie2] = useState();
@@ -82,6 +85,11 @@ export default function DisplayInstruments({ category, categoryName }) {
         instrument?.inkoopSubCategory?.includes(inkoopSubCategories[5]),
       ),
     );
+    setInkoop7(
+      category?.filter((instrument) =>
+        instrument?.inkoopSubCategory?.includes(inkoopSubCategories[6]),
+      ),
+    );
 
     setGrondpositie1(
       category?.filter((instrument) =>
@@ -123,6 +131,7 @@ export default function DisplayInstruments({ category, categoryName }) {
           {inkoop4 !== 0 && <DisplaySubHeading arr={inkoop4} subCat={inkoopSubCategories[3]} />}
           {inkoop5 !== 0 && <DisplaySubHeading arr={inkoop5} subCat={inkoopSubCategories[4]} />}
           {inkoop6 !== 0 && <DisplaySubHeading arr={inkoop6} subCat={inkoopSubCategories[5]} />}
+          {inkoop7 !== 0 && <DisplaySubHeading arr={inkoop7} subCat={inkoopSubCategories[6]} />}
         </div>
       )}
       {categoryName === 'grondpositie' && (

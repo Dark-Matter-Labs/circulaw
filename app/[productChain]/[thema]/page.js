@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation';
-import { client, sanityFetch } from '@/lib/sanity';
-import { THEME_PATHS_QUERY, THEME_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
+
 import SimpleThemaLayout from '@/components/layouts/simple-thema-layout';
 import ThemeLayout from '@/components/layouts/theme-index-layout';
+import { THEME_METADATA_QUERY, THEME_PATHS_QUERY, THEME_QUERY } from '@/lib/queries';
+import { client, sanityFetch } from '@/lib/sanity';
 
 // metadata
 export async function generateMetadata({ params }, parent) {

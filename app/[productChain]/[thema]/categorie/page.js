@@ -1,6 +1,6 @@
-import { FUll_THEME_PATHS_QUERY, CATEGORIE_PAGE_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
-import { client, sanityFetch } from '@/lib/sanity';
 import ExpertiseLayout from '@/components/layouts/expertise-layout';
+import { CATEGORIE_PAGE_QUERY, FUll_THEME_PATHS_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
+import { client, sanityFetch } from '@/lib/sanity';
 
 export async function generateMetadata({ params }, parent) {
   // read route params
