@@ -169,7 +169,7 @@ export default {
       title: 'Inhoud',
       name: 'content',
       type: 'array',
-      hidden: ({ parent }) => parent.createPage === false || parent.newsOrAgenda === true,
+      hidden: ({ parent }) => (parent?.createPage === false) || (parent?.newsOrAgenda === true),
       of: [
         {
           type: 'greenBox',
