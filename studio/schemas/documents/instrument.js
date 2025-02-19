@@ -176,7 +176,6 @@ export default {
         layout: 'grid',
       },
     },
-
     {
       title: 'Rechtsgebied',
       name: 'rechtsgebied',
