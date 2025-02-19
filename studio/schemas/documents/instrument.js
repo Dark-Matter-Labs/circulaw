@@ -1,6 +1,8 @@
 import { CgInternal } from 'react-icons/cg';
 import { VscLaw } from 'react-icons/vsc';
 
+import { lineBreak } from '../../components/headerInput';
+
 export default {
   title: 'instrument',
   name: 'instrument',
@@ -174,7 +176,6 @@ export default {
         layout: 'grid',
       },
     },
-
     {
       title: 'Rechtsgebied',
       name: 'rechtsgebied',
@@ -213,37 +214,13 @@ export default {
       },
     },
     {
-      title: 'Citeertitel relevante wet',
-      name: 'citeertitel',
-      type: 'string',
-      description: 'De naam van de relevante wet (bv Aanbestedingswet 2012)',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      title: 'Wetsartikel-nummer',
-      name: 'artikel',
-      type: 'string',
-      description: 'Geef het nummer van het wetsartikel op (bv 2.8a).',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      title: 'Link wetsartikel',
-      name: 'artikelLink',
-      type: 'url',
-      description: 'De link naar een wetsartikel moet altijd beginnen met http of https.',
-      validation: (Rule) => Rule.uri({ scheme: ['http', 'https'] }),
-    },
-    // do all laws have dates ?
-    {
-      title: 'Ingangsdatum wet',
-      name: 'lawDate',
-      type: 'date',
-      description: 'Ingangsdatum wet (laat open als wet nog niet van kracht is)',
-      options: {
-        dateFormat: 'DD-MM-YYYY',
+      name: 'category',
+      title: 'CATEGORIE',
+      type: 'text',
+      components: {
+        input: lineBreak,
       },
     },
-    // perhaps this should move heigher.
     {
       title: 'Beleid',
       name: 'beleid',
@@ -360,6 +337,37 @@ export default {
       type: 'boolean',
       initialValue: false,
       validation: (Rule) => Rule.required(),
+    },
+    {
+      title: 'Citeertitel relevante wet',
+      name: 'citeertitel',
+      type: 'string',
+      description: 'De naam van de relevante wet (bv Aanbestedingswet 2012)',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: 'Wetsartikel-nummer',
+      name: 'artikel',
+      type: 'string',
+      description: 'Geef het nummer van het wetsartikel op (bv 2.8a).',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: 'Link wetsartikel',
+      name: 'artikelLink',
+      type: 'url',
+      description: 'De link naar een wetsartikel moet altijd beginnen met http of https.',
+      validation: (Rule) => Rule.uri({ scheme: ['http', 'https'] }),
+    },
+    // do all laws have dates ?
+    {
+      title: 'Ingangsdatum wet',
+      name: 'lawDate',
+      type: 'date',
+      description: 'Ingangsdatum wet (laat open als wet nog niet van kracht is)',
+      options: {
+        dateFormat: 'DD-MM-YYYY',
+      },
     },
     // COPY CONTENT
     {
