@@ -17,7 +17,7 @@
     "start": "next start",
     "clean": "prettier --write \"(pages|components|studio|lib|app)/**/*.+(js|jsx|json|css|md)\" --config ./prettier.config.js",
     "lint": "next lint",
-    "prepare": "husky install",
+    "prepare": "husky",
     "pre-commit": "next lint --fix"
   },
   "dependencies": {
@@ -64,7 +64,7 @@
     "eslint": "8.4.1",
     "eslint-config-next": "^13.5.7",
     "eslint-config-prettier": "^8.5.0",
-    "husky": "^8.0.2",
+    "husky": "^9.1.7",
     "postcss": "^8.4.47",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",

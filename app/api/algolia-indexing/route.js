@@ -106,44 +106,45 @@ linkUrl,
 `;
 
 export async function GET() {
-  // fetch instruments
-  const instruments = await client.fetch(QUERY);
-  const aboutPage = await client.fetch(ABOUT_QUERY);
-  const euLaw = await client.fetch(EU_LAW_QUERY);
-  const newsItems = await client.fetch(NEWS_ITEMS_QUERY);
-  const instrumentIndex = agoliaInstance.initIndex('instruments');
-  const aboutIndex = agoliaInstance.initIndex('aboutPage');
-  const euLawIndex = agoliaInstance.initIndex('euLaw');
-  const newsIndex = agoliaInstance.initIndex('newsItems');
+  if (process.env.NODE_ENV === 'production') {
+    const instruments = await client.fetch(QUERY);
+    const aboutPage = await client.fetch(ABOUT_QUERY);
+    const euLaw = await client.fetch(EU_LAW_QUERY);
+    const newsItems = await client.fetch(NEWS_ITEMS_QUERY);
+    const instrumentIndex = agoliaInstance.initIndex('instruments');
+    const aboutIndex = agoliaInstance.initIndex('aboutPage');
+    const euLawIndex = agoliaInstance.initIndex('euLaw');
+    const newsIndex = agoliaInstance.initIndex('newsItems');
 
-  try {
-    console.time(
-      `Saving ${instruments.length} instruments 
-      and ${aboutPage.length} about pages
-      and ${euLaw.length} eu laws
-      and ${newsItems.length} news items to index`,
-    );
+    try {
+      console.time(
+        `Saving ${instruments.length} instruments 
+        and ${aboutPage.length} about pages
+        and ${euLaw.length} eu laws
+        and ${newsItems.length} news items to index`,
+      );
 
-    await instrumentIndex.saveObjects(instruments);
-    await aboutIndex.saveObjects(aboutPage);
-    await euLawIndex.saveObjects(euLaw);
-    await newsIndex.saveObjects(newsItems);
+      await instrumentIndex.saveObjects(instruments);
+      await aboutIndex.saveObjects(aboutPage);
+      await euLawIndex.saveObjects(euLaw);
+      await newsIndex.saveObjects(newsItems);
 
-    console.timeEnd(
-      `Saving ${instruments.length} instruments 
-      and ${aboutPage.length} about pages
-      and ${euLaw.length} eu laws
-      and ${newsItems.length} news items to index`,
-    );
-    return Response.json({
-      status: 200,
-      body: 'Success!',
-    });
-  } catch (error) {
-    console.error(error, 'error');
-    return {
-      status: 500,
-      body: error,
-    };
-  }
+      console.timeEnd(
+        `Saving ${instruments.length} instruments 
+        and ${aboutPage.length} about pages
+        and ${euLaw.length} eu laws
+        and ${newsItems.length} news items to index`,
+      );
+      return Response.json({
+        status: 200,
+        body: 'Success!',
+      });
+    } catch (error) {
+      console.error(error, 'error');
+      return {
+        status: 500,
+        body: error,
+      };
+    }
+  } else return;
 }
