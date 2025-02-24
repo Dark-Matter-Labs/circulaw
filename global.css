@@ -7,7 +7,7 @@
     @apply max-w-7xl;
     @apply mx-4;
     @apply md:mx-10;
-    @apply xl:mx-20;
+    @apply xl:mx-28;
     @apply 2xl:mx-auto;
   }
 
