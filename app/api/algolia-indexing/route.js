@@ -106,7 +106,7 @@ linkUrl,
 `;
 
 export async function GET() {
-  if (process.env.NODE_ENV === 'production') {
+  if (process.env.APP_ENV === 'production') {
     const instruments = await client.fetch(QUERY);
     const aboutPage = await client.fetch(ABOUT_QUERY);
     const euLaw = await client.fetch(EU_LAW_QUERY);
@@ -146,5 +146,9 @@ export async function GET() {
         body: error,
       };
     }
-  } else return;
+  } else
+    return Response.json({
+      status: 204,
+      body: 'this route only runs on production deployments.',
+    });
 }
