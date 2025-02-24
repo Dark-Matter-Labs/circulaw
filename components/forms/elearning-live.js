@@ -67,7 +67,7 @@ export default function ElearnignLiveEvent() {
             <p className='pb-6 text-gray-800 sm:col-span-2'>
               Wat fijn dat je de e-learning over circulaire houtbouw onder de Omgevingswet hebt
               afgerond! En wat leuk dat je interesse hebt in de verdiepende livesessie, op{' '}
-              <span className='p-base-semibold'>4 maart in het AMS Institute, Amsterdam.</span>
+              <span className='p-base-semibold'>8 april in het AMS Institute, Amsterdam.</span>
             </p>
             <p className='pb-6 text-gray-800'>
               Als je hieronder je gegevens invult, dan laten we je snel weten of je wordt
