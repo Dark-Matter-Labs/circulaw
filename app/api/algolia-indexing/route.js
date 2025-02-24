@@ -146,5 +146,9 @@ export async function GET() {
         body: error,
       };
     }
-  } else return;
+  } else
+    return Response.json({
+      status: 204,
+      body: 'this route only runs on production deployments.',
+    });
 }
