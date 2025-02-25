@@ -103,7 +103,6 @@ module.exports = {
     'delay-[500ms]',
     'delay-[750ms]',
     'delay-[1000ms]',
-    // etc.
   ],
   plugins: [
     require('@tailwindcss/forms')
