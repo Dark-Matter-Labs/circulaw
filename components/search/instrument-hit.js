@@ -62,7 +62,9 @@ export const InstrumentHit = ({ hit }) => {
               <div className='hidden sm:block'>
                 <div className='mt-4 flex h-auto w-full grow-0 flex-row items-center gap-x-3 justify-self-start'>
                   <div className='flex basis-houdbaarheid flex-col'>
-                    <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>Juridische houdbaarheid</div>
+                    <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>
+                      Juridische houdbaarheid
+                    </div>
                     <div className='flex items-center'>
                       <div className='p-xs-semibold rounded-cl bg-green-100 p-1 text-green-500'>
                         {hit?.juridischeHaalbaarheid}

@@ -67,7 +67,9 @@ export default function DesktopNavCard({ navData, closeNav }) {
         <>
           <div
             className={`${
-              pathname === '/' ? 'border-green-100 text-green-100' : 'border-green-500 text-green-500'
+              pathname === '/'
+                ? 'border-green-100 text-green-100'
+                : 'border-green-500 text-green-500'
             } p-base-semibold mr-8 mt-6 border-b-2 pb-2`}
           >
             Toepassing
