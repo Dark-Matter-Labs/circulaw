@@ -154,7 +154,7 @@ export default function NewsLetterComponent() {
 
               <div className='sm:col-span-2'>
                 <div className=''>
-                  <p className='text-gray-500'>
+                  <p className='text-cl-grey'>
                     We slaan je persoonsgegevens op en gebruiken deze alleen voor het toezenden van
                     nieuwsbrieven. Wil je geen nieuwsbrieven meer ontvangen? Onder aan iedere
                     nieuwsbrief vind je de mogelijkheid je af te melden. Zie verder onze{' '}

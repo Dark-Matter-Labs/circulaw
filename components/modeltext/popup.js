@@ -145,7 +145,7 @@ export default function PopUp({ pillars, modelTexts }) {
         >
           <DialogBackdrop
             transition
-            className='fixed inset-0 bg-gray-500/75 transition duration-500 ease-out data-[closed]:opacity-0'
+            className='fixed inset-0 bg-cl-grey/75 transition duration-500 ease-out data-[closed]:opacity-0'
           />
           <div className='fixed inset-0 z-10 w-screen overflow-y-auto'>
             <div className='flex min-h-full items-center justify-center p-0 sm:px-4 sm:py-10'>

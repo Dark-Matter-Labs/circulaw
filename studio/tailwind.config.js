@@ -13,7 +13,7 @@ module.exports = {
         'gray-200': '#F8FBF8',
         'gray-300': '#DAD8D8',
         'gray-400': '#BFC0BF',
-        'gray-500': '#A2A3A2',
+        'cl-grey': '#A2A3A2',
         'cl-dark-grey': '#676868',
         'cl-black': '#1F2223',
         'green-200': '#84E9C5',

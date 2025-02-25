@@ -69,7 +69,7 @@ export default function ScrollPagesTabContent({ content, title }) {
             open={isOpen}
             onClose={closeModal}
             transition
-            className='fixed inset-0 z-120 flex w-screen items-center justify-end bg-gray-500/75 transition duration-500 ease-out data-[closed]:opacity-0'
+            className='fixed inset-0 z-120 flex w-screen items-center justify-end bg-cl-grey/75 transition duration-500 ease-out data-[closed]:opacity-0'
           >
             <DialogPanel
               transition

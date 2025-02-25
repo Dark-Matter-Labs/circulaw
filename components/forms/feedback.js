@@ -144,7 +144,7 @@ export default function FeedbackComponent() {
                     accept='.png,.jpg,.jpeg,.gif,.pdf'
                     onChange={handleFileChange()}
                   />
-                  <p className='text-gray-500'>
+                  <p className='text-cl-grey'>
                     Voeg eventueel een document (PNG, JPG, GIF, PDF) toe om je tip of voorbeeld te
                     illustreren
                   </p>
@@ -186,7 +186,7 @@ export default function FeedbackComponent() {
                       value={query.email}
                       onChange={handleChange()}
                     />
-                    <p className='text-gray-500'>
+                    <p className='text-cl-grey'>
                       Zodat we contact met je kunnen opnemen voor vragen
                     </p>
                   </div>
@@ -238,7 +238,7 @@ export default function FeedbackComponent() {
                 </div>
                 <div className='sm:col-span-2'>
                   <div className=''>
-                    <p className='text-gray-500'>
+                    <p className='text-cl-grey'>
                       Door verzenden geef je akkoord dat we je mogen benaderen als we meer vragen
                       hebben of je op de hoogte willen houden van dit instrument. Je gegevens zullen
                       nooit gebruikt worden voor andere doeleinden. Lees onze{' '}

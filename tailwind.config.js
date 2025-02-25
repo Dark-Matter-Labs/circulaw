@@ -31,7 +31,7 @@ module.exports = {
         'gray-200': '#F0F0F0', // gray 250 in DS
         'gray-300': '#DAD8D8',
         'gray-400': '#BFC0BF',
-        'gray-500': '#A2A3A2',
+        'cl-grey': '#A2A3A2',
         'cl-dark-grey': '#676868',
         'cl-black': '#1F2223',
       },

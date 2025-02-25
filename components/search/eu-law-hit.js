@@ -33,16 +33,16 @@ export default function EUHit({ hit }) {
                 <div className='flex flex-col'>
                   <div>
                     <div className='p-2xs-semibold mb-6 flex h-[52px] max-w-[524px] flex-row justify-start gap-x-2'>
-                      <div className='flex h-full min-w-[73px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-gray-500/30'>
+                      <div className='flex h-full min-w-[73px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-cl-grey/30'>
                         Overzicht
                       </div>
                       <div className='box-border flex h-full min-w-[132px] items-start justify-center rounded-t-cl border border-green-500 px-2 py-3 text-green-500'>
                         Verplichtingen voor Europese lidstaten
                       </div>
-                      <div className='flex h-full min-w-[164px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-gray-500/30'>
+                      <div className='flex h-full min-w-[164px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-cl-grey/30'>
                         Relevantie voor regionale en lokale overheden{' '}
                       </div>
-                      <div className='flex h-full min-w-[131px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-gray-500/30'>
+                      <div className='flex h-full min-w-[131px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-cl-grey/30'>
                         Relevantie voor de circulaire economie
                       </div>
                     </div>
@@ -85,7 +85,7 @@ export default function EUHit({ hit }) {
               ) : null}
             </div>
             <div>
-              <div className='p-2xs-semibold flex h-[52px] w-[132px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-gray-500/30'>
+              <div className='p-2xs-semibold flex h-[52px] w-[132px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-cl-grey/30'>
                 Verplichtingen voor Europese lidstaten
               </div>
             </div>
@@ -138,16 +138,16 @@ export default function EUHit({ hit }) {
                 <div className='flex flex-col'>
                   <div>
                     <div className='p-2xs-semibold mb-6 flex h-[52px] max-w-[524px] flex-row justify-start gap-x-2'>
-                      <div className='flex h-full min-w-[73px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-gray-500/30'>
+                      <div className='flex h-full min-w-[73px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-cl-grey/30'>
                         Overzicht
                       </div>
-                      <div className='flex h-full min-w-[132px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-gray-500/30'>
+                      <div className='flex h-full min-w-[132px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-cl-grey/30'>
                         Verplichtingen voor Europese lidstaten
                       </div>
                       <div className='box-border flex h-full min-w-[164px] items-start justify-center rounded-t-cl border border-green-500 px-2 py-3 text-green-500'>
                         Relevantie voor regionale en lokale overheden{' '}
                       </div>
-                      <div className='flex h-full min-w-[131px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-gray-500/30'>
+                      <div className='flex h-full min-w-[131px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-cl-grey/30'>
                         Relevantie voor de circulaire economie
                       </div>
                     </div>
@@ -191,7 +191,7 @@ export default function EUHit({ hit }) {
             ) : null}
           </div>
           <div>
-            <div className='p-2xs-semibold flex h-[52px] w-[164px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-gray-500/30'>
+            <div className='p-2xs-semibold flex h-[52px] w-[164px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-cl-grey/30'>
               Relevantie voor regionale en lokale overheden{' '}
             </div>
           </div>
@@ -243,13 +243,13 @@ export default function EUHit({ hit }) {
                 <div className='flex flex-col'>
                   <div>
                     <div className='p-2xs-semibold mb-6 flex h-[52px] max-w-[524px] flex-row justify-start gap-x-2'>
-                      <div className='flex h-full min-w-[73px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-gray-500/30'>
+                      <div className='flex h-full min-w-[73px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-cl-grey/30'>
                         Overzicht
                       </div>
-                      <div className='flex h-full min-w-[132px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-gray-500/30'>
+                      <div className='flex h-full min-w-[132px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-cl-grey/30'>
                         Verplichtingen voor Europese lidstaten
                       </div>
-                      <div className='flex h-full min-w-[164px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-gray-500/30'>
+                      <div className='flex h-full min-w-[164px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-cl-grey/30'>
                         Relevantie voor regionale en lokale overheden{' '}
                       </div>
                       <div className='box-border flex h-full min-w-[133px] items-start justify-center rounded-t-cl border border-green-500 px-2 py-3 text-green-500'>
@@ -296,7 +296,7 @@ export default function EUHit({ hit }) {
             ) : null}
           </div>
           <div>
-            <div className='p-2xs-semibold flex h-[52px] w-[131px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-gray-500/30'>
+            <div className='p-2xs-semibold flex h-[52px] w-[131px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-cl-grey/30'>
               Relevantie voor de circulaire economie
             </div>
           </div>
@@ -351,13 +351,13 @@ export default function EUHit({ hit }) {
                       <div className='box-border flex h-full min-w-[73px] items-start justify-center rounded-t-cl border border-green-500 px-2 py-3 text-green-500'>
                         Overzicht
                       </div>
-                      <div className='flex h-full min-w-[132px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-gray-500/30'>
+                      <div className='flex h-full min-w-[132px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-cl-grey/30'>
                         Verplichtingen voor Europese lidstaten
                       </div>
-                      <div className='flex h-full min-w-[164px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-gray-500/30'>
+                      <div className='flex h-full min-w-[164px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-cl-grey/30'>
                         Relevantie voor regionale en lokale overheden{' '}
                       </div>
-                      <div className='flex h-full min-w-[131px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-gray-500/30'>
+                      <div className='flex h-full min-w-[131px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-cl-grey/30'>
                         Relevantie voor de circulaire economie
                       </div>
                     </div>
@@ -400,7 +400,7 @@ export default function EUHit({ hit }) {
               ) : null}
             </div>
             <div>
-              <div className='p-2xs-semibold flex h-[52px] w-[73px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-gray-500/30'>
+              <div className='p-2xs-semibold flex h-[52px] w-[73px] items-start justify-center rounded-t-cl bg-gray-200/30 px-2 py-3 text-cl-grey/30'>
                 Overzicht
               </div>
             </div>

@@ -216,7 +216,7 @@ export default function ElearnignLiveEvent() {
                   </div>
                   <div className='sm:col-span-2'>
                     <div className=''>
-                      <p className='text-gray-500'>
+                      <p className='text-cl-grey'>
                         Door verzenden geef je akkoord dat we je mogen benaderen als we meer vragen
                         hebben of je op de hoogte willen houden van je vraag of opmerking. Je
                         gegevens zullen nooit gebruikt worden voor andere doeleinden. Lees onze{' '}
