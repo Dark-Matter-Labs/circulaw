@@ -152,19 +152,19 @@ export default function Instrument({ data }) {
                               <div className='flex flex-wrap sm:flex-row gap-4'>
                                 <div className='flex flex-col'>
                                   <div className='p-xs-semibold mb-2'>Schaalniveau</div>
-                                  <div className='text-xs text-cl-dark-grey bg-white border border-gray-200 rounded-cl px-2 py-1'>
+                                  <div className='text-xs text-cl-dark-grey bg-white border border-green-100 rounded-cl px-2 py-1'>
                                     {text.scale}
                                   </div>
                                 </div>
                                 <div className='flex flex-col'>
                                   <div className='p-xs-semibold mb-2'>Houdbaarheid</div>
-                                  <div className='text-xs text-cl-dark-grey bg-white border border-gray-200 rounded-cl px-2 py-1'>
+                                  <div className='text-xs text-cl-dark-grey bg-white border border-green-100 rounded-cl px-2 py-1'>
                                     {text.impactLevel}
                                   </div>
                                 </div>
                                 <div className='flex flex-col'>
                                   <div className='p-xs-semibold mb-2'>Type regel</div>
-                                  <div className='text-xs text-cl-dark-grey bg-white border border-gray-200 rounded-cl px-2 py-1'>
+                                  <div className='text-xs text-cl-dark-grey bg-white border border-green-100 rounded-cl px-2 py-1'>
                                     {text.type}
                                   </div>
                                 </div>

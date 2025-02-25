@@ -117,7 +117,7 @@ export default function ScrollyTellingPage({ params }) {
                   />
                 </div>
                 <Link href='/bouw/planregels/modelteksten' className='group'>
-                  <div className='flex w-full flex-col items-start justify-start rounded-cl border border-gray-200 bg-green-100 px-10 py-8'>
+                  <div className='flex w-full flex-col items-start justify-start rounded-cl border border-green-100 bg-green-100 px-10 py-8'>
                     <div className='p-2xs-semibold mb-4 rounded-cl border border-cl-black px-2 py-1 text-cl-black'>
                       Plangregels
                     </div>

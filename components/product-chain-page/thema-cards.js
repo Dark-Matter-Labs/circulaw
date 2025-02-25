@@ -43,7 +43,7 @@ export default function ThemaCard({ themaCards }) {
                   <p className='p-base pb-2 text-green-300'>{thema.count} instrumenten</p>
                   <p className='p-base w-full text-gray-100'>{thema.homePageCardText}</p>
                   <div className='flex flex-grow items-end justify-end'>
-                    <div className='flex h-12 w-12 items-center justify-center self-end rounded-full border-2 border-gray-200 bg-transparent text-gray-200 focus:bg-green-200 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-400 group-hover:border-green-300 group-hover:bg-green-300 group-hover:text-green-500'>
+                    <div className='flex h-12 w-12 items-center justify-center self-end rounded-full border-2 border-green-100 bg-transparent text-green-100 focus:bg-green-200 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-400 group-hover:border-green-300 group-hover:bg-green-300 group-hover:text-green-500'>
                       <IconArrowRight className='inline-block h-6 w-6' aria-hidden='true' />
                     </div>
                   </div>
@@ -52,7 +52,7 @@ export default function ThemaCard({ themaCards }) {
             </Link>
           ))}
           {themaCards[0].transitionAgenda !== 'bouw' && (
-            <li className='group h-[470px] w-full flex-grow rounded-cl border border-gray-200 bg-green-100'>
+            <li className='group h-[470px] w-full flex-grow rounded-cl border border-green-100 bg-green-100'>
               <Link href='/nieuwsbrief' className='h-full w-full'>
                 <div className='flex h-full w-full flex-grow flex-col justify-between p-8'>
                   <h3 className='heading-2xl-semibold text-green-500'>Nieuwe thema’s</h3>
@@ -103,7 +103,7 @@ export default function ThemaCard({ themaCards }) {
           </Link>
         ))}
         {themaCards[0].transitionAgenda !== 'bouw' && (
-          <div className='w-full rounded-cl border border-gray-200 bg-green-100'>
+          <div className='w-full rounded-cl border border-green-100 bg-green-100'>
             <Link href='/nieuwsbrief' className='h-full w-full'>
               <div className='flex h-full w-full flex-grow flex-col justify-between p-6'>
                 <h3 className='heading-2xl-semibold pb-4 text-green-500'>Nieuwe thema’s</h3>

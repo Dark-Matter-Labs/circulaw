@@ -20,7 +20,7 @@ export default function ThemeBottomSection({ featuredLaws, thema }) {
 
   return (
     <>
-      <div className='bg-gray-200'>
+      <div className='bg-green-100'>
         <div className='global-margin py-8'>
           <h3 className='heading-2xl-semibold sm:heading-3xl-semibold pb-4 lowercase first-letter:uppercase'>
             {thema?.featuredInstrumentTitle}

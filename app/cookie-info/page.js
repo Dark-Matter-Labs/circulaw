@@ -85,7 +85,7 @@ export default function CookieInfo() {
             <div className='overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-cl'>
               <table className='min-w-full divide-y divide-cl-black'>
                 <thead className='bg-gray-50'>
-                  <tr className='divide-x divide-gray-200'>
+                  <tr className='divide-x divide-green-100'>
                     <th scope='col' className='py-3.5 pl-4 pr-4 text-left text-cl-black sm:pl-6'>
                       Cookie naam
                     </th>
@@ -97,9 +97,9 @@ export default function CookieInfo() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className='divide-y divide-gray-200 bg-gray-100'>
+                <tbody className='divide-y divide-green-100 bg-gray-100'>
                   {cookies.map((cookie) => (
-                    <tr key={cookie.email} className='divide-x divide-gray-200'>
+                    <tr key={cookie.email} className='divide-x divide-green-100'>
                       <td className='whitespace-nowrap py-4 pl-4 pr-4 text-cl-black sm:pl-6'>
                         {cookie.name}
                       </td>

@@ -20,7 +20,7 @@ export default function MobileFeedback({ data }) {
             <IconArrowUp className={`${open ? 'rotate-180' : ''} h-5 w-5 text-gray-100`} />
           </PopoverButton>
           <PopoverPanel className={`${open ? '-translate-y-64' : ''} h-64 w-full`}>
-            <div className='flex h-full flex-col items-center justify-between bg-gray-200 px-8 py-4'>
+            <div className='flex h-full flex-col items-center justify-between bg-green-100 px-8 py-4'>
               <div className=''>
                 <h4 className='heading-xl-semibold'>Deel met ons:</h4>
                 <ul className='p-base list-disc'>

@@ -9,11 +9,11 @@ export default function HomepageHeader() {
     <main className='relative z-10 pb-16 pt-56'>
       <div className='global-margin'>
         <div className='mx-auto max-w-4xl text-center'>
-          <div className='m-auto max-w-xs text-left text-gray-200 sm:block sm:max-w-4xl sm:text-center'>
+          <div className='m-auto max-w-xs text-left text-green-100 sm:block sm:max-w-4xl sm:text-center'>
             <h1 className='header-desktop-mobile sm:header-desktop block'>
               Regelgeving voor een circulaire economie
             </h1>{' '}
-            <h2 className='p-base sm:heading-2xl-semibold m-auto mt-2 max-w-sm pb-8 pt-10 text-left text-gray-200 sm:max-w-full sm:text-center'>
+            <h2 className='p-base sm:heading-2xl-semibold m-auto mt-2 max-w-sm pb-8 pt-10 text-left text-green-100 sm:max-w-full sm:text-center'>
               CircuLaw laat decentrale overheden zien hoe je de circulaire transitie kunt
               versnellen. Per productketen bieden we juridische instrumenten op basis van de
               Nederlandse wetgeving. Ook geven we inzicht in Europese wetgeving.

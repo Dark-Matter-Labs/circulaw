@@ -19,13 +19,12 @@ module.exports = {
         ]
       },
       colors: {
-        'green-100': '#F8FBF8',
-        'green-200': '#D1F9EB', 
+        'green-100': '#F8FBF8', // keep
+        'green-200': '#D1F9EB', // keep
         'green-300': '#84E9C5', // keep
         'green-400': '#25C38B', // keep
         'green-500': '#028352', // keep
         'gray-100': '#FDFDFD',
-        'gray-200': '#F0F0F0', // gray 250 in DS
         'cl-grey': '#A2A3A2', // keep
         'cl-dark-grey': '#676868', // keep
         'cl-black': '#1F2223', // keep

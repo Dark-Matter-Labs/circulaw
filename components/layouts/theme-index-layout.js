@@ -391,7 +391,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
             )}
           </div>
 
-          <div className='bg-gray-200'>
+          <div className='bg-green-100'>
             <ThemeBottomSection featuredLaws={featuredLaws} thema={thema} />
           </div>
           {thema?.reports && (
