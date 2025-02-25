@@ -48,12 +48,12 @@ export default function EUHit({ hit }) {
                     </div>
                   </div>
                   <div className='max-w-[524px]'>
-                    <h2 className='heading-xl-semibold transition-all duration-300 group-hover:text-green-300'>
+                    <h2 className='heading-xl-semibold transition-all duration-300 group-hover:text-green-400'>
                       <Highlight
                         attribute='lawTitle'
                         hit={hit}
                         classNames={{
-                          highlighted: 'text-green-300 bg-green-300/20',
+                          highlighted: 'text-green-400 bg-green-400/20',
                         }}
                       />
                     </h2>
@@ -62,7 +62,7 @@ export default function EUHit({ hit }) {
                         attribute='eu1Content'
                         hit={hit}
                         classNames={{
-                          highlighted: 'text-green-300 bg-green-300/20',
+                          highlighted: 'text-green-400 bg-green-400/20',
                         }}
                       />
                     </p>
@@ -94,7 +94,7 @@ export default function EUHit({ hit }) {
                 attribute='lawTitle'
                 hit={hit}
                 classNames={{
-                  highlighted: 'text-green-300 bg-green-300/20',
+                  highlighted: 'text-green-400 bg-green-400/20',
                 }}
               />
             </h2>
@@ -103,7 +103,7 @@ export default function EUHit({ hit }) {
                 attribute='eu1Content'
                 hit={hit}
                 classNames={{
-                  highlighted: 'text-green-300 bg-green-300/20',
+                  highlighted: 'text-green-400 bg-green-400/20',
                 }}
               />
             </p>
@@ -153,12 +153,12 @@ export default function EUHit({ hit }) {
                     </div>
                   </div>
                   <div className='max-w-[524px]'>
-                    <h2 className='heading-xl-semibold transition-all duration-300 group-hover:text-green-300'>
+                    <h2 className='heading-xl-semibold transition-all duration-300 group-hover:text-green-400'>
                       <Highlight
                         attribute='lawTitle'
                         hit={hit}
                         classNames={{
-                          highlighted: 'text-green-300 bg-green-300/20',
+                          highlighted: 'text-green-400 bg-green-400/20',
                         }}
                       />
                     </h2>
@@ -167,7 +167,7 @@ export default function EUHit({ hit }) {
                         attribute='localContent1'
                         hit={hit}
                         classNames={{
-                          highlighted: 'text-green-300 bg-green-300/20',
+                          highlighted: 'text-green-400 bg-green-400/20',
                         }}
                       />
                     </p>
@@ -200,7 +200,7 @@ export default function EUHit({ hit }) {
               attribute='lawTitle'
               hit={hit}
               classNames={{
-                highlighted: 'text-green-300 bg-green-300/20',
+                highlighted: 'text-green-400 bg-green-400/20',
               }}
             />
           </h2>
@@ -209,7 +209,7 @@ export default function EUHit({ hit }) {
               attribute='localContent1'
               hit={hit}
               classNames={{
-                highlighted: 'text-green-300 bg-green-300/20',
+                highlighted: 'text-green-400 bg-green-400/20',
               }}
             />
           </p>
@@ -258,12 +258,12 @@ export default function EUHit({ hit }) {
                     </div>
                   </div>
                   <div className='max-w-[524px]'>
-                    <h2 className='heading-xl-semibold transition-all duration-300 group-hover:text-green-300'>
+                    <h2 className='heading-xl-semibold transition-all duration-300 group-hover:text-green-400'>
                       <Highlight
                         attribute='lawTitle'
                         hit={hit}
                         classNames={{
-                          highlighted: 'text-green-300 bg-green-300/20',
+                          highlighted: 'text-green-400 bg-green-400/20',
                         }}
                       />
                     </h2>
@@ -272,7 +272,7 @@ export default function EUHit({ hit }) {
                         attribute='ceContent'
                         hit={hit}
                         classNames={{
-                          highlighted: 'text-green-300 bg-green-300/20',
+                          highlighted: 'text-green-400 bg-green-400/20',
                         }}
                       />
                     </p>
@@ -305,7 +305,7 @@ export default function EUHit({ hit }) {
               attribute='lawTitle'
               hit={hit}
               classNames={{
-                highlighted: 'text-green-300 bg-green-300/20',
+                highlighted: 'text-green-400 bg-green-400/20',
               }}
             />
           </h2>
@@ -314,7 +314,7 @@ export default function EUHit({ hit }) {
               attribute='ceContent'
               hit={hit}
               classNames={{
-                highlighted: 'text-green-300 bg-green-300/20',
+                highlighted: 'text-green-400 bg-green-400/20',
               }}
             />
           </p>
@@ -363,12 +363,12 @@ export default function EUHit({ hit }) {
                     </div>
                   </div>
                   <div className='max-w-[524px]'>
-                    <h2 className='heading-xl-semibold transition-all duration-300 group-hover:text-green-300'>
+                    <h2 className='heading-xl-semibold transition-all duration-300 group-hover:text-green-400'>
                       <Highlight
                         attribute='lawTitle'
                         hit={hit}
                         classNames={{
-                          highlighted: 'text-green-300 bg-green-300/20',
+                          highlighted: 'text-green-400 bg-green-400/20',
                         }}
                       />
                     </h2>
@@ -377,7 +377,7 @@ export default function EUHit({ hit }) {
                         attribute='introText'
                         hit={hit}
                         classNames={{
-                          highlighted: 'text-green-300 bg-green-300/20',
+                          highlighted: 'text-green-400 bg-green-400/20',
                         }}
                       />
                     </p>
@@ -409,7 +409,7 @@ export default function EUHit({ hit }) {
                 attribute='lawTitle'
                 hit={hit}
                 classNames={{
-                  highlighted: 'text-green-300 bg-green-300/20',
+                  highlighted: 'text-green-400 bg-green-400/20',
                 }}
               />
             </h2>
@@ -418,7 +418,7 @@ export default function EUHit({ hit }) {
                 attribute='ceContent'
                 hit={hit}
                 classNames={{
-                  highlighted: 'text-green-300 bg-green-300/20',
+                  highlighted: 'text-green-400 bg-green-400/20',
                 }}
               />
             </p>

@@ -22,7 +22,7 @@ export default function ThemePageHeader({ pageTitle }) {
               className='group inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 text-green-500'
               href='/'
             >
-              <span className='p-2xs-bold align-middle group-hover:text-green-300 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
+              <span className='p-2xs-bold align-middle group-hover:text-green-400 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
                 {' '}
                 Home <span className='ml-2'>{'>'}</span>
               </span>
@@ -30,7 +30,7 @@ export default function ThemePageHeader({ pageTitle }) {
           </div>
           <div className='max-w-3xl pb-8'>
             <div className=''>
-              <div className='p-base sm:heading-2xl-semibold text-green-300'>Productketen</div>
+              <div className='p-base sm:heading-2xl-semibold text-green-400'>Productketen</div>
               <h1 className='heading-3xl-semibold sm:heading-5xl-semibold inline-block text-gray-100'>
                 {pageTitle}
               </h1>

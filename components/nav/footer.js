@@ -171,14 +171,14 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                             target='_blank'
                             aria-label='link to CircuLaw LinkedIn'
                           >
-                            <IconBrandLinkedin className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-300' />
+                            <IconBrandLinkedin className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-400' />
                           </Link>
                           <Link
                             href='https://github.com/Dark-Matter-Labs/circulaw'
                             target='_blank'
                             aria-label='link to CircuLaw github'
                           >
-                            <IconBrandGithub className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-300' />
+                            <IconBrandGithub className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-400' />
                           </Link>
                           <Link
                             href='https://openresearch.amsterdam/nl/page/89270/circulaw---circulaire-regelgevingstool'

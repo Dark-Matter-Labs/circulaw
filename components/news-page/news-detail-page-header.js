@@ -18,7 +18,7 @@ export default function NewsDetailPageHeader({ data }) {
 
   useEffect(() => {
     if (data?.colour === 'lightGreen') {
-      setCardColour('bg-green-300');
+      setCardColour('bg-green-400');
     } else if (data?.colour === 'green') {
       setCardColour('bg-green-500');
     } else if (data?.colour === 'darkGreen') {
@@ -33,14 +33,14 @@ export default function NewsDetailPageHeader({ data }) {
           <div className='mt-6 flex h-6 items-center rounded-clSm bg-gray-100'>
             <Link
               href='/'
-              className='p-2xs-bold flex flex-row items-center pl-2 text-green-500 hover:text-green-300 active:text-cl-black'
+              className='p-2xs-bold flex flex-row items-center pl-2 text-green-500 hover:text-green-400 active:text-cl-black'
             >
               Home
             </Link>
             <span className='p-2xs-bold px-2 text-green-500'>{'>'}</span>
             <Link
               href='/nieuws'
-              className='p-2xs-bold pr-2 text-green-500 hover:text-green-300 active:text-cl-black'
+              className='p-2xs-bold pr-2 text-green-500 hover:text-green-400 active:text-cl-black'
             >
               Nieuws
             </Link>
@@ -50,7 +50,7 @@ export default function NewsDetailPageHeader({ data }) {
               <Tag
                 classes={`${
                   data?.colour === 'extraDarkGreen'
-                    ? 'text-green-300 border border-green-300 bg-transparent'
+                    ? 'text-green-400 border border-green-400 bg-transparent'
                     : 'text-white bg-cl-black border border-cl-black'
                 }`}
               >
@@ -59,7 +59,7 @@ export default function NewsDetailPageHeader({ data }) {
             </div>
             <h1
               className={`${
-                cardColour === 'bg-green-300' ? 'text-cl-black' : 'text-gray-100'
+                cardColour === 'bg-green-400' ? 'text-cl-black' : 'text-gray-100'
               } heading-2xl-semibold sm:heading-5xl-semibold`}
             >
               {data?.title}
@@ -67,7 +67,7 @@ export default function NewsDetailPageHeader({ data }) {
             {data?.newsDate && (
               <div
                 className={`${
-                  cardColour === 'bg-green-300' ? 'text-cl-black' : 'text-gray-100'
+                  cardColour === 'bg-green-400' ? 'text-cl-black' : 'text-gray-100'
                 } p-base`}
               >
                 {' '}

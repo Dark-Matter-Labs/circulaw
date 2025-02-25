@@ -14,7 +14,7 @@ export default function ForumPage() {
           <div className='mt-6 flex h-6 items-center rounded-clSm bg-gray-100'>
             <Link
               href='/'
-              className='p-2xs-bold flex flex-row items-center pl-2 text-green-500 hover:text-green-300 active:text-cl-black'
+              className='p-2xs-bold flex flex-row items-center pl-2 text-green-500 hover:text-green-400 active:text-cl-black'
             >
               Home
             </Link>

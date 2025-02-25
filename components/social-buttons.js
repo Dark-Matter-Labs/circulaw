@@ -88,7 +88,7 @@ export default function SocialButtons({ title, viewport }) {
       </span>
       <span className='pr-2' title='Copy link to clipboard'>
         <IconLink
-          className='inline-block h-6 w-6 rounded-full bg-gray-100 p-1 text-[#A2A3A2] hover:cursor-pointer hover:bg-green-300'
+          className='inline-block h-6 w-6 rounded-full bg-gray-100 p-1 text-[#A2A3A2] hover:cursor-pointer hover:bg-green-400'
           onClick={() => {
             navigator.clipboard.writeText(url + pathname);
             setShowLinkCopied(true);

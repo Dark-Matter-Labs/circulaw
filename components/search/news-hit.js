@@ -64,7 +64,7 @@ export default function NewsHit({ hit }) {
                     attribute='title'
                     hit={hit}
                     classNames={{
-                      highlighted: 'text-green-300 bg-green-300/20',
+                      highlighted: 'text-green-400 bg-green-400/20',
                     }}
                   />
                 </h2>
@@ -73,7 +73,7 @@ export default function NewsHit({ hit }) {
                     attribute='newsText'
                     hit={hit}
                     classNames={{
-                      highlighted: 'text-green-300 bg-green-300/20',
+                      highlighted: 'text-green-400 bg-green-400/20',
                     }}
                   />
                 </p>
@@ -110,7 +110,7 @@ export default function NewsHit({ hit }) {
                     </Tag>
                   )}
                   {!hit.linkUrl.includes('circulaw.nl') && (
-                    <Tag classes='border border-green-300 text-green-300 shrink mr-2'>
+                    <Tag classes='border border-green-400 text-green-400 shrink mr-2'>
                       <IconExternalLink className='h-4 w-4' />
                     </Tag>
                   )}
@@ -120,7 +120,7 @@ export default function NewsHit({ hit }) {
                     attribute='title'
                     hit={hit}
                     classNames={{
-                      highlighted: 'text-green-300 bg-green-300/20',
+                      highlighted: 'text-green-400 bg-green-400/20',
                     }}
                   />
                 </h2>
@@ -129,7 +129,7 @@ export default function NewsHit({ hit }) {
                     attribute='newsText'
                     hit={hit}
                     classNames={{
-                      highlighted: 'text-green-300 bg-green-300/20',
+                      highlighted: 'text-green-400 bg-green-400/20',
                     }}
                   />
                 </p>
@@ -160,7 +160,7 @@ export default function NewsHit({ hit }) {
             <div className='mb-6 flex flex-row'>
               <Tag classes='bg-cl-black text-white shrink mr-2'>agenda</Tag>
               {hit.link && (
-                <Tag classes='border border-green-300 text-green-300 shrink mr-2'>
+                <Tag classes='border border-green-400 text-green-400 shrink mr-2'>
                   <IconExternalLink className='h-4 w-4' />
                 </Tag>
               )}
@@ -170,7 +170,7 @@ export default function NewsHit({ hit }) {
                 attribute='title'
                 hit={hit}
                 classNames={{
-                  highlighted: 'text-green-300 bg-green-300/20',
+                  highlighted: 'text-green-400 bg-green-400/20',
                 }}
               />
             </h2>

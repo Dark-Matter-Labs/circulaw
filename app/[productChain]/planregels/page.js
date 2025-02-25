@@ -28,9 +28,9 @@ export default function ScrollyTellingPage({ params }) {
               />
               <div className='global-margin z-20 flex h-full w-full flex-col justify-between'>
                 <div className='pt-6 sm:pt-10'>
-                  <span className='p-2xs-bold inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 align-middle text-green-500 group-hover:text-green-300 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
+                  <span className='p-2xs-bold inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 align-middle text-green-500 group-hover:text-green-400 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
                     <Link
-                      className='hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'
+                      className='hover:text-green-400 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'
                       href='/'
                     >
                       {' '}
@@ -38,7 +38,7 @@ export default function ScrollyTellingPage({ params }) {
                     </Link>
                     <Link
                       href='/bouw'
-                      className='pl-3 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'
+                      className='pl-3 hover:text-green-400 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'
                     >
                       Bouw
                     </Link>

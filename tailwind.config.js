@@ -22,14 +22,13 @@ module.exports = {
         'green-50': '#F8FBF8',
         'green-100': '#D1F9EB', 
         'green-200': '#84E9C5',
-        'green-300': '#25C38B',
-        'green-400': '#07B071',
-        'green-500': '#028352',
+        'green-400': '#25C38B', // keep
+        'green-500': '#028352', // keep
         'gray-100': '#FDFDFD',
         'gray-200': '#F0F0F0', // gray 250 in DS
-        'cl-grey': '#A2A3A2',
-        'cl-dark-grey': '#676868',
-        'cl-black': '#1F2223',
+        'cl-grey': '#A2A3A2', // keep
+        'cl-dark-grey': '#676868', // keep
+        'cl-black': '#1F2223', // keep
       },
       fontFamily: {
         jakarta: ['var(--font-plus-jakarta-sans)'],

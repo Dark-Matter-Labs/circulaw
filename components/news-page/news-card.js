@@ -18,7 +18,7 @@ export default function NewsCard({ data }) {
     return (
       <Link href={`/nieuws/${data?.slug?.current}`} className='group'>
         <div
-          className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-500' : ''} ${
+          className={`${data.colour === 'lightGreen' ? 'bg-green-400' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-500' : ''} ${
             data.colour === 'extraDarkGreen' ? 'bg-cl-black' : ''
           } flex flex-col items-start justify-between rounded-cl`}
         >
@@ -46,7 +46,7 @@ export default function NewsCard({ data }) {
                 <Tag
                   classes={`${
                     data.colour === 'extraDarkGreen'
-                      ? 'text-green-300 border border-green-300 bg-transparent'
+                      ? 'text-green-400 border border-green-400 bg-transparent'
                       : 'text-white bg-cl-black border border-cl-black'
                   }`}
                 >
@@ -100,7 +100,7 @@ export default function NewsCard({ data }) {
         className='group'
       >
         <div
-          className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-500' : ''} ${
+          className={`${data.colour === 'lightGreen' ? 'bg-green-400' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-500' : ''} ${
             data.colour === 'extraDarkGreen' ? 'bg-cl-black' : ''
           } flex flex-col items-start justify-between rounded-cl`}
         >
@@ -128,7 +128,7 @@ export default function NewsCard({ data }) {
                 <Tag
                   classes={`${
                     data.colour === 'extraDarkGreen'
-                      ? 'text-green-300 border border-green-300 bg-transparent'
+                      ? 'text-green-400 border border-green-400 bg-transparent'
                       : 'text-white bg-cl-black border border-cl-black'
                   }`}
                 >
@@ -189,7 +189,7 @@ export default function NewsCard({ data }) {
   } else {
     return (
       <div
-        className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-500' : ''} ${
+        className={`${data.colour === 'lightGreen' ? 'bg-green-400' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-500' : ''} ${
           data.colour === 'extraDarkGreen' ? 'bg-cl-black' : ''
         } flex flex-col items-start justify-between rounded-cl`}
       >
@@ -217,7 +217,7 @@ export default function NewsCard({ data }) {
               <Tag
                 classes={`${
                   data.colour === 'extraDarkGreen'
-                    ? 'text-green-300 border border-green-300 bg-transparent'
+                    ? 'text-green-400 border border-green-400 bg-transparent'
                     : 'text-white bg-cl-black border border-cl-black'
                 }`}
               >

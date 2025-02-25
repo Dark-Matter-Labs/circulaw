@@ -23,7 +23,7 @@ export default function AgendaCard({ data }) {
               <div className='w-auto'>
                 <div className='flex flex-col justify-between'>
                   <div className='flex grow-0'>
-                    <Tag classes='text-green-300 border border-green-300'>Agenda</Tag>
+                    <Tag classes='text-green-400 border border-green-400'>Agenda</Tag>
                   </div>
                   <div className='flex flex-row items-center'>
                     <div className='p-agenda-card-day mr-2 text-green-200'>
@@ -55,7 +55,7 @@ export default function AgendaCard({ data }) {
             <div className='w-auto'>
               <div className='flex flex-col justify-between'>
                 <div className='flex grow-0 pb-3'>
-                  <Tag classes='text-green-300 border border-green-300'>Agenda</Tag>
+                  <Tag classes='text-green-400 border border-green-400'>Agenda</Tag>
                 </div>
                 <div className='flex flex-row items-center'>
                   <div className='p-agenda-card-day mr-2 text-green-200'>

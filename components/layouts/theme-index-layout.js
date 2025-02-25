@@ -56,7 +56,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         <div className='col-span-2 flex flex-col gap-y-2 p-4'>
                           <div className='heading-xl-semibold'>{thema?.samenhangTitle}</div>
                           <div className='p-base h-full flex-grow'>{thema?.samenhangText}</div>
-                          <div className='p-base-semibold flex w-full items-center justify-end group-hover:text-green-300'>
+                          <div className='p-base-semibold flex w-full items-center justify-end group-hover:text-green-400'>
                             Bekijk jouw categorie
                             <IconArrowRight className='ml-0.5 h-5 w-5' />
                           </div>
@@ -73,7 +73,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         <div className='col-span-2 flex flex-col gap-y-2 p-4'>
                           <div className='heading-xl-semibold'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
                           <div className='p-base h-full flex-grow'>{thema?.listText}</div>
-                          <div className='p-base-semibold flex w-full items-center justify-end group-hover:text-green-300'>
+                          <div className='p-base-semibold flex w-full items-center justify-end group-hover:text-green-400'>
                             Naar de lijst
                             <IconArrowRight className='ml-0.5 h-5 w-5' />
                           </div>
@@ -92,7 +92,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         <div className='col-span-2 flex flex-col gap-y-2 p-4'>
                           <div className='heading-xl-semibold'>{thema?.welkeTitle}</div>
                           <div className='p-base h-full flex-grow'>{thema?.welkeText}</div>
-                          <div className='p-base-semibold flex w-full items-center justify-end group-hover:text-green-300'>
+                          <div className='p-base-semibold flex w-full items-center justify-end group-hover:text-green-400'>
                             Bekijk de bevoegdheden
                             <IconArrowRight className='ml-0.5 h-5 w-5' />
                           </div>
@@ -410,7 +410,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         }/${
                           process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
                         }/${id}.${extension}`}
-                        className='heading-xl-semibold flex items-center text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'
+                        className='heading-xl-semibold flex items-center text-green-500 hover:text-green-400 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'
                         target='_blank'
                       >
                         {report.linkText}

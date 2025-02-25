@@ -96,7 +96,7 @@ export default function PopUp({ pillars, modelTexts }) {
                 className={`${
                   selectedPillar === p.slug
                     ? 'p-base-semibold border-b-2 border-b-green-500'
-                    : 'p-base hover:text-green-300'
+                    : 'p-base hover:text-green-400'
                 } px-2 text-green-500`}
               >
                 {p.title} {'('}
@@ -167,8 +167,8 @@ export default function PopUp({ pillars, modelTexts }) {
                   {selectedModelText?.title}
                 </DialogTitle>
 
-                <div className='mb-10 flex w-full flex-col overflow-hidden rounded-cl border border-green-300'>
-                  <div className='flex flex-row justify-between border-b border-green-300 bg-green-300 px-6 py-3'>
+                <div className='mb-10 flex w-full flex-col overflow-hidden rounded-cl border border-green-400'>
+                  <div className='flex flex-row justify-between border-b border-green-400 bg-green-400 px-6 py-3'>
                     <div className='p-base-semibold text-cl-black'>Modeltekst omgevingsplan</div>
                     <div className='relative self-end'>
                       <button

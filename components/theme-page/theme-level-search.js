@@ -85,7 +85,7 @@ export default function ThemeLevelSearch(props) {
               <div
                 type='reset'
                 title='Clear the search query'
-                className='group absolute right-28 top-3.5 rounded-full p-2 hover:bg-green-300/50'
+                className='group absolute right-28 top-3.5 rounded-full p-2 hover:bg-green-400/50'
               >
                 <IconX className='h-6 w-6 text-green-500 group-hover:text-green-900' />
               </div>
@@ -116,7 +116,7 @@ export default function ThemeLevelSearch(props) {
             <div
               type='reset'
               title='Clear the search query'
-              className='group absolute right-24 top-3 rounded-full p-2 hover:bg-green-300/50'
+              className='group absolute right-24 top-3 rounded-full p-2 hover:bg-green-400/50'
             >
               <IconX className='h-6 w-6 text-green-500 group-hover:text-green-900' />
             </div>

@@ -12,7 +12,7 @@ export default function ModelTextCard({ text }) {
       <h4 className='heading-2xl-semibold mb-6 min-h-[68px] text-start'>{text.title}</h4>
       <h5 className='heading-xl-semibold'>Toelichting:</h5>
       <p className='mb-6 line-clamp-3 min-h-[72px] text-start'>{text.descriptionPT}</p>
-      <div className='p-base-semibold link-interaction flex flex-row items-center justify-start group-hover:text-green-300'>
+      <div className='p-base-semibold link-interaction flex flex-row items-center justify-start group-hover:text-green-400'>
         Modeltekst bekijken <IconArrowRight className='ml-0.5 h-5 w-5' />
       </div>
     </div>
