@@ -85,7 +85,7 @@ export default function ContactPageComponent() {
                     name='name'
                     id='first-name'
                     autoComplete='given-name'
-                    className='block w-full rounded-cl border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                    className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
                     value={query.name}
                     onChange={handleChange()}
                     required
@@ -105,7 +105,7 @@ export default function ContactPageComponent() {
                     name='org'
                     id='company'
                     autoComplete='organization'
-                    className='block w-full rounded-cl border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                    className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
                     value={query.org}
                     onChange={handleChange()}
                   />
@@ -124,7 +124,7 @@ export default function ContactPageComponent() {
                     name='role'
                     id='role'
                     autoComplete='role'
-                    className='block w-full rounded-cl border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                    className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
                     value={query.role}
                     onChange={handleChange()}
                   />
@@ -144,7 +144,7 @@ export default function ContactPageComponent() {
                     name='email'
                     type='email'
                     autoComplete='email'
-                    className='block w-full rounded-cl border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                    className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
                     aria-describedby='emailHelp'
                     required
                     value={query.email}
@@ -165,7 +165,7 @@ export default function ContactPageComponent() {
                     id='message'
                     name='message'
                     rows={4}
-                    className='block w-full rounded-cl border border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                    className='block w-full rounded-cl border border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
                     required
                     value={query.message}
                     onChange={handleChange()}

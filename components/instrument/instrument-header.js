@@ -140,7 +140,7 @@ export default function InstrumentHeader({ data }) {
           </div>
         </div>
         {/* Metadata */}
-        <div className='flex w-full justify-items-start bg-gray-100 sm:border-b sm:border-gray-300'>
+        <div className='flex w-full justify-items-start bg-gray-100 sm:border-b sm:border-cl-grey'>
           <div className='global-margin w-full'>
             <div className='grid-col-1 grid w-full max-w-4xl'>
               <InstrumentMetaData data={data} />

@@ -121,7 +121,7 @@ export default function FeedbackComponent() {
                       id='message'
                       name='message'
                       rows={8}
-                      className='block w-full rounded-cl border border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                      className='block w-full rounded-cl border border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
                       required
                       value={query.message}
                       onChange={handleChange()}
@@ -161,7 +161,7 @@ export default function FeedbackComponent() {
                       name='name'
                       id='first-name'
                       autoComplete='given-name'
-                      className='block w-full rounded-cl border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                      className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
                       value={query.name}
                       onChange={handleChange()}
                       required
@@ -180,7 +180,7 @@ export default function FeedbackComponent() {
                       name='email'
                       type='email'
                       autoComplete='email'
-                      className='block w-full rounded-cl border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                      className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
                       aria-describedby='emailHelp'
                       required
                       value={query.email}
@@ -203,7 +203,7 @@ export default function FeedbackComponent() {
                       name='org'
                       id='company'
                       autoComplete='organization'
-                      className='block w-full rounded-cl border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                      className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
                       value={query.org}
                       onChange={handleChange()}
                       required
@@ -222,7 +222,7 @@ export default function FeedbackComponent() {
                       name='role'
                       id='role'
                       autoComplete='role'
-                      className='block w-full rounded-cl border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                      className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
                       value={query.role}
                       onChange={handleChange()}
                       required

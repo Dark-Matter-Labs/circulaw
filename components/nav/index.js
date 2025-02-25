@@ -607,7 +607,7 @@ export default function Nav(props) {
                         >
                           <div
                             className={`${
-                              pathname === '/' ? 'bg-green-500' : 'bg-gray-300'
+                              pathname === '/' ? 'bg-green-500' : 'bg-cl-grey'
                             } flex-cols-5 relative flex h-full gap-[1px]`}
                           >
                             {props?.navItems?.map((navItem, id) => (

@@ -11,7 +11,7 @@ export default function InstrumentMetaData({ data, borders }) {
       <div className='hidden sm:block'>
         <div
           className={`${
-            borders === true ? 'sm:border-y sm:border-gray-300' : 'pb-3 pt-5'
+            borders === true ? 'sm:border-y sm:border-cl-grey' : 'pb-3 pt-5'
           } flex h-auto w-full max-w-[870px] grow-0 flex-row items-center gap-x-4 justify-self-start`}
         >
           <div className='items-st flex h-auto w-full grow-0 flex-row gap-x-3 justify-self-start'>

@@ -115,7 +115,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                       rows={2}
                       value={feedback}
                       onChange={(e) => setFeedback(e.target.value)}
-                      className='block w-3/4 rounded-cl border border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                      className='block w-3/4 rounded-cl border border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
                     />
                   </div>
                 </div>

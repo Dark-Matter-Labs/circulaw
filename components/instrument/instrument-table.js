@@ -19,7 +19,7 @@ export default function InstrumentTable({ data }) {
       <div className='grid grid-cols-6'>
         <table className='col-span-6 table-fixed sm:col-span-4 sm:m-0'>
           <tbody>
-            <tr className='boder-gray-300 border-b border-t'>
+            <tr className='boder-cl-grey border-b border-t'>
               <td className='p-base w-1/3 py-3'>Rechtsgebied</td>
               <td className='p-base-semibold w-2/3 py-3 capitalize'>
                 <span className='flex justify-end text-right sm:justify-start sm:text-left'>
@@ -29,7 +29,7 @@ export default function InstrumentTable({ data }) {
                 </span>
               </td>
             </tr>
-            <tr className='boder-gray-300 border-b'>
+            <tr className='boder-cl-grey border-b'>
               <td className='p-base w-1/3 py-3'>Citeertitel</td>
               <td className='p-base-semibold w-2/3 py-3 first-letter:uppercase'>
                 <span className='flex justify-end text-right sm:justify-start sm:text-left'>
@@ -37,7 +37,7 @@ export default function InstrumentTable({ data }) {
                 </span>
               </td>
             </tr>
-            <tr className='boder-gray-300 border-b'>
+            <tr className='boder-cl-grey border-b'>
               <td className='p-base w-1/3 py-3'>Artikel</td>
               <td className='p-base-semibold w-2/3 py-3'>
                 {data?.artikelLink ? (
@@ -54,7 +54,7 @@ export default function InstrumentTable({ data }) {
                 )}
               </td>
             </tr>
-            <tr className='boder-gray-300 border-b'>
+            <tr className='boder-cl-grey border-b'>
               <td className='p-base w-1/3 py-3'>Geldig vanaf</td>
               <td className='p-base-semibold w-2/3 py-3'>
                 <span className='flex justify-end sm:justify-start'>
