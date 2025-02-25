@@ -64,7 +64,7 @@ export const InstrumentHit = ({ hit }) => {
                   <div className='flex basis-houdbaarheid flex-col'>
                     <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>Juridische houdbaarheid</div>
                     <div className='flex items-center'>
-                      <div className='p-xs-semibold rounded-cl bg-green-50 p-1 text-green-500'>
+                      <div className='p-xs-semibold rounded-cl bg-green-100 p-1 text-green-500'>
                         {hit?.juridischeHaalbaarheid}
                       </div>
                     </div>
@@ -72,7 +72,7 @@ export const InstrumentHit = ({ hit }) => {
                   <div className='flex basis-invloed flex-col'>
                     <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>Invloed</div>
                     <div className='flex items-center'>
-                      <div className='p-xs-semibold rounded-cl bg-green-50 p-1 text-green-500'>
+                      <div className='p-xs-semibold rounded-cl bg-green-100 p-1 text-green-500'>
                         {hit?.juridischInvloed}
                       </div>
                     </div>
@@ -80,7 +80,7 @@ export const InstrumentHit = ({ hit }) => {
                   <div className='flex basis-overheidslaag flex-col'>
                     <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>Overheidslaag</div>
                     <div className='p-xs-semibold flex text-green-500'>
-                      <div className='shrink rounded-cl bg-green-50 p-1'>
+                      <div className='shrink rounded-cl bg-green-100 p-1'>
                         {hit?.overheidslaag
                           ?.filter((x) => x !== null)
                           .map((level) => (
@@ -96,7 +96,7 @@ export const InstrumentHit = ({ hit }) => {
                     <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>R-ladder</div>
                     <div className='flex items-center'>
                       <div className='flex flex-row items-center'>
-                        <div className='shrink rounded-cl bg-green-50 p-1'>
+                        <div className='shrink rounded-cl bg-green-100 p-1'>
                           {hit?.rLadder?.map((rValue) => (
                             <span key={rValue} className='p-xs-semibold text-green-500'>
                               {rValue} {hit?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
@@ -173,7 +173,7 @@ export const InstrumentHit = ({ hit }) => {
             hit.slug
           }`}
         >
-          <div className='mb-10 block rounded-cl bg-green-50 p-4 sm:mb-8 sm:ml-0 md:max-w-[760px]'>
+          <div className='mb-10 block rounded-cl bg-green-100 p-4 sm:mb-8 sm:ml-0 md:max-w-[760px]'>
             <div className='-ml-1 flex items-center justify-start'>
               {/* Expertise Tag */}
               <Tag classes='border border-green-400 bg-transparent text-green-400 mr-2'>

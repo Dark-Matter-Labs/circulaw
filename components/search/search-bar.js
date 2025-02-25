@@ -40,7 +40,7 @@ export default function NewSearchBar(props) {
   }
 
   return (
-    <div className='flex h-[260px] w-full items-end justify-center bg-green-50 sm:max-w-none'>
+    <div className='flex h-[260px] w-full items-end justify-center bg-green-100 sm:max-w-none'>
       <div className='global-margin flex w-full items-center justify-center'>
         <div className='flex flex-col items-center justify-center gap-y-6'>
           <div className='w-full'>

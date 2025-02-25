@@ -26,7 +26,7 @@ export default function InstrumentMetaData({ data, borders }) {
               </div>
 
               <div className='flex items-center'>
-                <div className='p-xs-semibold rounded-cl bg-green-50 p-1 text-green-500'>
+                <div className='p-xs-semibold rounded-cl bg-green-100 p-1 text-green-500'>
                   {data?.juridischeHaalbaarheid}
                 </div>
               </div>
@@ -41,7 +41,7 @@ export default function InstrumentMetaData({ data, borders }) {
                 </Modal>
               </div>
               <div className='flex items-center'>
-                <div className='p-xs-semibold rounded-cl bg-green-50 p-1 text-green-500'>
+                <div className='p-xs-semibold rounded-cl bg-green-100 p-1 text-green-500'>
                   {data?.juridischInvloed}
                 </div>
               </div>
@@ -52,7 +52,7 @@ export default function InstrumentMetaData({ data, borders }) {
               </div>
 
               <div className='p-xs-semibold flex text-green-500'>
-                <div className='shrink rounded-cl bg-green-50 p-1'>
+                <div className='shrink rounded-cl bg-green-100 p-1'>
                   {data?.overheidslaag
                     ?.filter((x) => x !== null)
                     .map((level) => (
@@ -76,7 +76,7 @@ export default function InstrumentMetaData({ data, borders }) {
 
               <div className='flex items-center'>
                 <div className='flex flex-row items-center'>
-                  <div className='shrink rounded-cl bg-green-50 p-1'>
+                  <div className='shrink rounded-cl bg-green-100 p-1'>
                     {data?.rLadder?.map((rValue) => (
                       <span key={rValue} className='p-xs-semibold text-green-500'>
                         {rValue} {data?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}

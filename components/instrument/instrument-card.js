@@ -63,7 +63,7 @@ export default function InstrumentCard({ instrument, images }) {
                           Juridische houdbaarheid
                         </div>
                         <div className='flex items-center'>
-                          <div className='p-xs-semibold rounded-cl bg-green-50 p-1 text-green-500'>
+                          <div className='p-xs-semibold rounded-cl bg-green-100 p-1 text-green-500'>
                             {instrument?.juridischeHaalbaarheid}
                           </div>
                         </div>
@@ -71,7 +71,7 @@ export default function InstrumentCard({ instrument, images }) {
                       <div className='flex basis-invloed flex-col'>
                         <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>Invloed</div>
                         <div className='flex items-center'>
-                          <div className='p-xs-semibold rounded-cl bg-green-50 p-1 text-green-500'>
+                          <div className='p-xs-semibold rounded-cl bg-green-100 p-1 text-green-500'>
                             {instrument?.juridischInvloed}
                           </div>
                         </div>
@@ -79,7 +79,7 @@ export default function InstrumentCard({ instrument, images }) {
                       <div className='flex basis-overheidslaag flex-col'>
                         <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>Overheidslaag</div>
                         <div className='p-xs-semibold flex text-green-500'>
-                          <div className='shrink rounded-cl bg-green-50 p-1'>
+                          <div className='shrink rounded-cl bg-green-100 p-1'>
                             {instrument?.overheidslaag
                               ?.filter((x) => x !== null)
                               .map((level) => (
@@ -98,7 +98,7 @@ export default function InstrumentCard({ instrument, images }) {
                         <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>R-ladder</div>
                         <div className='flex items-center'>
                           <div className='flex flex-row items-center'>
-                            <div className='shrink rounded-cl bg-green-50 p-1'>
+                            <div className='shrink rounded-cl bg-green-100 p-1'>
                               {instrument?.rLadder?.map((rValue) => (
                                 <span key={rValue} className='p-xs-semibold text-green-500'>
                                   {rValue}{' '}
@@ -123,7 +123,7 @@ export default function InstrumentCard({ instrument, images }) {
           href={`/${instrument.transitionAgenda}/${instrument.thema}/instrumenten/${instrument.slug.current}`}
           key={instrument.titel}
         >
-          <div className='mb-10 block rounded-cl bg-green-50 p-4 sm:mb-8 sm:ml-0 sm:hidden md:max-w-[760px]'>
+          <div className='mb-10 block rounded-cl bg-green-100 p-4 sm:mb-8 sm:ml-0 sm:hidden md:max-w-[760px]'>
             {images === true && (
               <div className='sm:md-0 relative mb-4 flex h-44 w-full items-center rounded-cl sm:mb-0 sm:mr-6 sm:h-44 sm:w-64'>
                 {instrument.featuredImage && (

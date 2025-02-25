@@ -38,7 +38,7 @@ export default function PCLayout({ ...props }) {
               {props.productChainData.pcName === 'Bouw' && (
                 <>
                   <div className='max-w-8xl relative z-0 mt-20 hidden grid-cols-2 gap-x-4 gap-y-8 sm:grid sm:gap-x-4 md:grid-cols-2 lg:grid-cols-4'>
-                    <div className='group w-full flex-grow rounded-cl border border-gray-200 bg-green-50'>
+                    <div className='group w-full flex-grow rounded-cl border border-gray-200 bg-green-100'>
                       <Link href='/training' className='h-full w-full'>
                         <div className='flex h-full w-full flex-grow flex-col justify-between gap-y-2 p-6'>
                           <h3 className='heading-2xl-semibold text-green-500'>
@@ -62,7 +62,7 @@ export default function PCLayout({ ...props }) {
                         </div>
                       </Link>
                     </div>
-                    <div className='group w-full flex-grow rounded-cl border border-gray-200 bg-green-50'>
+                    <div className='group w-full flex-grow rounded-cl border border-gray-200 bg-green-100'>
                       <Link href='/bouw/planregels' className='h-full w-full'>
                         <div className='flex h-full w-full flex-grow flex-col justify-between gap-y-2 p-6'>
                           <h3 className='heading-2xl-semibold text-green-500'>
@@ -84,7 +84,7 @@ export default function PCLayout({ ...props }) {
                     </div>
                   </div>
 
-                  <div className='mt-6 block w-full rounded-cl border border-gray-200 bg-green-50 sm:hidden'>
+                  <div className='mt-6 block w-full rounded-cl border border-gray-200 bg-green-100 sm:hidden'>
                     <Link href='/training' className='h-full w-full'>
                       <div className='flex h-full w-full flex-grow flex-col justify-between p-6'>
                         <h3 className='heading-2xl-semibold pb-4 text-green-500'>
@@ -104,7 +104,7 @@ export default function PCLayout({ ...props }) {
                       </div>
                     </Link>
                   </div>
-                  <div className='mt-6 block w-full rounded-cl border border-gray-200 bg-green-50 sm:hidden'>
+                  <div className='mt-6 block w-full rounded-cl border border-gray-200 bg-green-100 sm:hidden'>
                     <Link href='/training' className='h-full w-full'>
                       <div className='flex h-full w-full flex-grow flex-col justify-between p-6'>
                         <h3 className='heading-2xl-semibold pb-4 text-green-500'>
@@ -128,7 +128,7 @@ export default function PCLayout({ ...props }) {
             </div>
           </div>
         </div>
-        <div className='bg-green-50'>
+        <div className='bg-green-100'>
           <div className='global-margin'>
             <div className='pb-14 pt-10'>
               <h2 className='heading-2xl-semibold sm:heading-3xl-semibold max-w-3xl pb-14 text-cl-black'>
@@ -259,7 +259,7 @@ export default function PCLayout({ ...props }) {
           </div>
         </div>
         {props.links && (
-          <div className='bg-green-50 pb-10 pt-14'>
+          <div className='bg-green-100 pb-10 pt-14'>
             <div className='global-margin'>
               <h2 className='heading-2xl-semibold sm:heading-3xl-semibold pb-14 text-cl-black'>
                 Duik nog dieper in de materie{' '}

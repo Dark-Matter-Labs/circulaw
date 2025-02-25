@@ -60,7 +60,7 @@ export default async function Page() {
               <ScrollButton to='laws' offset={-140}>
                 <CustomButton color='euPage'>
                   Bekijk de {data?.length} wetten{' '}
-                  <IconArrowDown className='ml-3 h-5 w-5 text-green-50' />
+                  <IconArrowDown className='ml-3 h-5 w-5 text-green-100' />
                 </CustomButton>
               </ScrollButton>
             </div>

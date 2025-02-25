@@ -321,7 +321,7 @@ export default function Nav(props) {
                         ]
                   }`,
                 ]
-              : 'bg-green-50 shadow-lg'
+              : 'bg-green-100 shadow-lg'
           } global-padding flex h-[70px] w-full flex-row items-center justify-between lgNav:h-[98px] lgNav:w-auto lgNav:items-end`}
         >
           <>
@@ -406,7 +406,7 @@ export default function Nav(props) {
                     id='overlay'
                     lockScroll
                     style={{ background: 'rgba(0, 0, 0, 0)' }}
-                    className='-z-10 mt-[70px] bg-green-50'
+                    className='-z-10 mt-[70px] bg-green-100'
                   >
                     <FloatingFocusManager context={mobileContext} modal={false} disabled>
                       <div
@@ -416,7 +416,7 @@ export default function Nav(props) {
                         {...mobileFloatingProps()}
                       >
                         <div
-                          className='h-full w-full bg-green-50'
+                          className='h-full w-full bg-green-100'
                           style={{ ...mobileMenuTransitionStyles }}
                         >
                           <div className='global-margin flex flex-col items-start justify-end'>
@@ -532,7 +532,7 @@ export default function Nav(props) {
                                 onClick={() => setMobileMenuIsOpen(false)}
                               >
                                 <span className='mr-2'>Zoeken </span>
-                                <span className='flex h-6 w-7 items-center justify-center rounded-clSm bg-cl-black text-green-50'>
+                                <span className='flex h-6 w-7 items-center justify-center rounded-clSm bg-cl-black text-green-100'>
                                   <IconSearch className='h-4 w-4' />
                                 </span>
                               </Link>
@@ -676,7 +676,7 @@ export default function Nav(props) {
                       >
                         <div
                           className={`${
-                            pathname === '/' ? 'bg-green-500' : 'bg-green-50'
+                            pathname === '/' ? 'bg-green-500' : 'bg-green-100'
                           } h-full pb-10 pl-6 pr-8 pt-8 shadow-lg`}
                           style={{ ...euMenuTransitionStyles }}
                           onMouseLeave={() => setEuMenuIsOpen(false)}
@@ -798,7 +798,7 @@ export default function Nav(props) {
                       >
                         <div
                           className={`${
-                            pathname === '/' ? 'bg-green-500' : 'bg-green-50'
+                            pathname === '/' ? 'bg-green-500' : 'bg-green-100'
                           } h-full pb-10 pl-6 pr-8 pt-8 shadow-lg`}
                           style={{ ...overMenuTransitionStyles }}
                           onMouseLeave={() => setOverMenuIsOpen(false)}
@@ -856,15 +856,15 @@ export default function Nav(props) {
                           ? [
                               `${
                                 pathname === '/'
-                                  ? 'bg-green-50 text-green-500'
-                                  : 'bg-green-500 text-green-50'
+                                  ? 'bg-green-100 text-green-500'
+                                  : 'bg-green-500 text-green-100'
                               }`,
                             ]
                           : [
                               `${
                                 pathname === '/'
-                                  ? 'bg-green-50 text-green-500'
-                                  : 'bg-green-500 text-green-50'
+                                  ? 'bg-green-100 text-green-500'
+                                  : 'bg-green-500 text-green-100'
                               }`,
                             ]
                       } flex h-6 w-7 items-center justify-center rounded-clSm`}
@@ -887,7 +887,7 @@ export default function Nav(props) {
                         >
                           <div
                             className={`${
-                              pathname === '/' ? 'bg-green-500' : 'bg-green-50'
+                              pathname === '/' ? 'bg-green-500' : 'bg-green-100'
                             } h-full`}
                           >
                             {/* MAKE INTO A COMPONENT */}
@@ -896,7 +896,7 @@ export default function Nav(props) {
                                 <form
                                   onSubmit={() => setSearchMenuIsOpen(false)}
                                   className={`${
-                                    pathname === '/' ? 'bg-green-500' : 'bg-green-50'
+                                    pathname === '/' ? 'bg-green-500' : 'bg-green-100'
                                   } relative flex h-[66px] w-[600px] flex-row items-center justify-between rounded-cl`}
                                   onKeyDown={(e) => {
                                     if (e.key === 'Enter') enterClick(e);
@@ -905,7 +905,7 @@ export default function Nav(props) {
                                   <input
                                     className={`${
                                       pathname === '/'
-                                        ? 'bg-green-50/50 text-white caret-white placeholder:text-white focus:bg-[url("/search-icon.png")] focus:bg-[length:24px_24px] focus:ring-white'
+                                        ? 'bg-green-100/50 text-white caret-white placeholder:text-white focus:bg-[url("/search-icon.png")] focus:bg-[length:24px_24px] focus:ring-white'
                                         : 'bg-white text-green-500 caret-green-500 shadow-card placeholder:text-green-500 focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] focus:ring-green-500'
                                     } p-base placeholder:p-base-semibold h-[66px] w-[600px] rounded-cl border-none bg-left bg-no-repeat pl-12 [background-position-x:10px] focus:ring-1`}
                                     placeholder={placeholder}

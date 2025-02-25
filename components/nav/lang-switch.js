@@ -55,7 +55,7 @@ export default function LangSwitch({ background }) {
       </div>
       <div className=''>
         <button
-          className='p-sm group relative z-100 ml-5 flex h-full flex-row items-center justify-center rounded-clSm text-green-50 sm:hidden lg:ml-4'
+          className='p-sm group relative z-100 ml-5 flex h-full flex-row items-center justify-center rounded-clSm text-green-100 sm:hidden lg:ml-4'
           onClick={() => {
             setTranslateOpen(!translateOpen);
           }}
@@ -70,7 +70,7 @@ export default function LangSwitch({ background }) {
 
       <div
         className={`${
-          background === 'dark' ? 'bg-green-50 text-green-500' : 'bg-green-500 text-green-50'
+          background === 'dark' ? 'bg-green-100 text-green-500' : 'bg-green-500 text-green-100'
         } ml-4 hidden rounded-clSm sm:block lg:ml-4`}
       >
         <button

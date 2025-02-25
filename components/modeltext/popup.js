@@ -83,7 +83,7 @@ export default function PopUp({ pillars, modelTexts }) {
       <div className='max-w-[1280px]'>
         <ul
           id='pillars'
-          className='no-scrollbar mt-14 flex snap-x snap-mandatory justify-between gap-x-2.5 overflow-x-scroll text-nowrap rounded-cl bg-green-50 p-4 sm:flex-row'
+          className='no-scrollbar mt-14 flex snap-x snap-mandatory justify-between gap-x-2.5 overflow-x-scroll text-nowrap rounded-cl bg-green-100 p-4 sm:flex-row'
         >
           {pillars?.map((p) => (
             <li key={p.title}>

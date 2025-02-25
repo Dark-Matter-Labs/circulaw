@@ -71,7 +71,7 @@ export default function ScrollyTellingPage({ params }) {
               <div className='my-16'>
                 <Disclosure className='' as='div'>
                   <>
-                    <DisclosureButton className='group flex w-full items-center justify-between rounded-clSm bg-green-50 px-6 py-6 text-cl-black sm:px-10'>
+                    <DisclosureButton className='group flex w-full items-center justify-between rounded-clSm bg-green-100 px-6 py-6 text-cl-black sm:px-10'>
                       <div className='flex flex-col'>
                         <h4 className='heading-xl-semibold sm:heading-2xl-semibold mb-2.5 text-left'>
                           Samenhang
@@ -82,7 +82,7 @@ export default function ScrollyTellingPage({ params }) {
                       </div>
                       <IconChevronDown className='h-6 w-6 place-self-start text-cl-black group-data-[open]:rotate-180' />
                     </DisclosureButton>
-                    <DisclosurePanel className='-mt-6 rounded-b-clSm bg-green-50 px-6 pb-4 sm:px-10'>
+                    <DisclosurePanel className='-mt-6 rounded-b-clSm bg-green-100 px-6 pb-4 sm:px-10'>
                       <div className='flex flex-col gap-8 py-6'>
                         <p className='p-base'>
                           De <span className='p-base-semibold'>omgevingsvisie</span> beschrijft op
@@ -117,7 +117,7 @@ export default function ScrollyTellingPage({ params }) {
                   />
                 </div>
                 <Link href='/bouw/planregels/modelteksten' className='group'>
-                  <div className='flex w-full flex-col items-start justify-start rounded-cl border border-gray-200 bg-green-50 px-10 py-8'>
+                  <div className='flex w-full flex-col items-start justify-start rounded-cl border border-gray-200 bg-green-100 px-10 py-8'>
                     <div className='p-2xs-semibold mb-4 rounded-cl border border-cl-black px-2 py-1 text-cl-black'>
                       Plangregels
                     </div>

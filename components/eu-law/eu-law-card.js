@@ -8,7 +8,7 @@ export default function EULawCard({ law }) {
     <>
       <Link href={`/eu-wetgeving/${law?.slug?.current}`} className='hidden h-full md:block'>
         <div className='group flex h-full flex-col'>
-          <div className='h-full rounded-cl border bg-gray-100 shadow-md transition-all duration-300 group-hover:bg-green-50'>
+          <div className='h-full rounded-cl border bg-gray-100 shadow-md transition-all duration-300 group-hover:bg-green-100'>
             <div className='z-10 flex h-full flex-col justify-between'>
               <h3 className='heading-2xl-semibold min-h-[85px] p-4'>{law?.title}</h3>
               {/* STATUS bar */}
@@ -20,7 +20,7 @@ export default function EULawCard({ law }) {
                   )}
                 </div>
               </div>
-              <div className='p-base-semibold flex h-full min-h-[42px] items-center justify-center rounded-b-cl bg-green-50 text-green-500'>
+              <div className='p-base-semibold flex h-full min-h-[42px] items-center justify-center rounded-b-cl bg-green-100 text-green-500'>
                 Bekijk deze wet {'>'}
               </div>
             </div>

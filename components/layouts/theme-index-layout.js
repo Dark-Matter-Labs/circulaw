@@ -47,7 +47,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                 <div className='hidden grid-cols-3 text-cl-black sm:grid md:gap-x-8 lg:gap-x-16'>
                   <div className='grid-col col-span-2 grid gap-y-4'>
                     <Link href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/categorie`}>
-                      <div className='group grid h-44 w-full grid-cols-3 rounded-cl bg-green-50 hover:cursor-pointer'>
+                      <div className='group grid h-44 w-full grid-cols-3 rounded-cl bg-green-100 hover:cursor-pointer'>
                         <div className='col-span-1 rounded-l-cl bg-green-500'>
                           <div className='flex h-full w-full items-center justify-center p-4'>
                             <Image src={samenhang} alt='' className='h-3/4 w-3/4' />
@@ -64,7 +64,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                       </div>
                     </Link>
                     <Link href={`/${thema?.transitionAgenda}/${thema?.slug.current}/instrumenten/`}>
-                      <div className='group grid h-44 w-full grid-cols-3 rounded-cl bg-green-50 hover:cursor-pointer'>
+                      <div className='group grid h-44 w-full grid-cols-3 rounded-cl bg-green-100 hover:cursor-pointer'>
                         <div className='col-span-1 rounded-l-cl bg-green-500'>
                           <div className='flex h-full w-full items-center justify-center p-4'>
                             <Image src={list} alt='' className='h-3/4 w-3/4' />
@@ -83,7 +83,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                     <Link
                       href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/overheidsbevoegdheid`}
                     >
-                      <div className='group grid h-44 w-full grid-cols-3 rounded-cl bg-green-50 hover:cursor-pointer'>
+                      <div className='group grid h-44 w-full grid-cols-3 rounded-cl bg-green-100 hover:cursor-pointer'>
                         <div className='col-span-1 rounded-l-cl bg-green-500'>
                           <div className='flex h-full w-full items-center justify-center p-4'>
                             <Image src={waarvoor} alt='' className='h-3/4 w-3/4' />
@@ -103,7 +103,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
 
                   <div className='col-span-1'>
                     <Link href='/training' className='w-full'>
-                      <div className='flex h-full w-full cursor-pointer flex-col rounded-cl bg-green-50 p-4 shadow-md'>
+                      <div className='flex h-full w-full cursor-pointer flex-col rounded-cl bg-green-100 p-4 shadow-md'>
                         <Image
                           src={elearning}
                           width={406}
@@ -205,7 +205,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                   </li>
                 </ul>
                 <Link href='/training' className='w-full sm:hidden'>
-                  <div className='mt-6 flex h-auto w-full flex-col gap-4 rounded-cl bg-green-50 p-4 shadow'>
+                  <div className='mt-6 flex h-auto w-full flex-col gap-4 rounded-cl bg-green-100 p-4 shadow'>
                     <div className='heading-xl-semibold'>
                       E-learning Circulaire houtbouw onder de Omgevingswet
                     </div>

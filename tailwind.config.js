@@ -19,7 +19,7 @@ module.exports = {
         ]
       },
       colors: {
-        'green-50': '#F8FBF8',
+        'green-100': '#F8FBF8',
         'green-200': '#D1F9EB', 
         'green-300': '#84E9C5', // keep
         'green-400': '#25C38B', // keep

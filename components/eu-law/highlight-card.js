@@ -8,7 +8,7 @@ export default function HighlightCard({ text, number, circleText, icon }) {
           <div className='p-base-semibold mb-4'>{text}</div>
         </div>
         <div className=''>
-          <div className='flex h-36 w-36 flex-col items-center justify-center rounded-full border-[12px] border-green-50 bg-[#D1F9EB]'>
+          <div className='flex h-36 w-36 flex-col items-center justify-center rounded-full border-[12px] border-green-100 bg-[#D1F9EB]'>
             {number && (
               <>
                 <div className='heading-2xl-semibold text-center text-green-500'> {number}</div>
@@ -26,7 +26,7 @@ export default function HighlightCard({ text, number, circleText, icon }) {
           <div className='p-base-semibold mx-4 w-full'>{text}</div>
         </div>
         <div className=''>
-          <div className='mx-4 flex h-36 w-36 flex-col items-center justify-center rounded-full border-[12px] border-green-50 bg-[#D1F9EB]'>
+          <div className='mx-4 flex h-36 w-36 flex-col items-center justify-center rounded-full border-[12px] border-green-100 bg-[#D1F9EB]'>
             {number && (
               <>
                 <div className='heading-2xl-semibold text-center text-green-500'> {number}</div>

@@ -52,7 +52,7 @@ export default function ThemaCard({ themaCards }) {
             </Link>
           ))}
           {themaCards[0].transitionAgenda !== 'bouw' && (
-            <li className='group h-[470px] w-full flex-grow rounded-cl border border-gray-200 bg-green-50'>
+            <li className='group h-[470px] w-full flex-grow rounded-cl border border-gray-200 bg-green-100'>
               <Link href='/nieuwsbrief' className='h-full w-full'>
                 <div className='flex h-full w-full flex-grow flex-col justify-between p-8'>
                   <h3 className='heading-2xl-semibold text-green-500'>Nieuwe thema’s</h3>
@@ -103,7 +103,7 @@ export default function ThemaCard({ themaCards }) {
           </Link>
         ))}
         {themaCards[0].transitionAgenda !== 'bouw' && (
-          <div className='w-full rounded-cl border border-gray-200 bg-green-50'>
+          <div className='w-full rounded-cl border border-gray-200 bg-green-100'>
             <Link href='/nieuwsbrief' className='h-full w-full'>
               <div className='flex h-full w-full flex-grow flex-col justify-between p-6'>
                 <h3 className='heading-2xl-semibold pb-4 text-green-500'>Nieuwe thema’s</h3>

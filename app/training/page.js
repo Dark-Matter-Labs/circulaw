@@ -41,7 +41,7 @@ export default function LearningLandingPage() {
             target='_blank'
             className='block md:hidden'
           >
-            <div className='mt-6 flex w-full flex-col bg-green-50 p-4 text-green-500'>
+            <div className='mt-6 flex w-full flex-col bg-green-100 p-4 text-green-500'>
               <div className='mb-2'>
                 <IconBooks className='size-8' />
               </div>
@@ -147,7 +147,7 @@ export default function LearningLandingPage() {
           target='_blank'
           className='hidden md:block'
         >
-          <div className='sticky top-32 ml-16 flex w-80 flex-col bg-green-50 p-4 text-green-500'>
+          <div className='sticky top-32 ml-16 flex w-80 flex-col bg-green-100 p-4 text-green-500'>
             <div className='mb-2'>
               <IconBooks className='size-8' />
             </div>
