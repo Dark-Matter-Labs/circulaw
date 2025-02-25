@@ -59,7 +59,7 @@ export default function InstrumentCard({ instrument, images }) {
                   <div className=''>
                     <div className='items-st mt-4 flex h-auto w-full grow-0 flex-row gap-x-3 justify-self-start'>
                       <div className='flex basis-houdbaarheid flex-col'>
-                        <div className='p-2xs-semibold mb-1 text-gray-600'>
+                        <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>
                           Juridische houdbaarheid
                         </div>
                         <div className='flex items-center'>
@@ -69,7 +69,7 @@ export default function InstrumentCard({ instrument, images }) {
                         </div>
                       </div>
                       <div className='flex basis-invloed flex-col'>
-                        <div className='p-2xs-semibold mb-1 text-gray-600'>Invloed</div>
+                        <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>Invloed</div>
                         <div className='flex items-center'>
                           <div className='p-xs-semibold rounded-cl bg-green-50 p-1 text-green-500'>
                             {instrument?.juridischInvloed}
@@ -77,7 +77,7 @@ export default function InstrumentCard({ instrument, images }) {
                         </div>
                       </div>
                       <div className='flex basis-overheidslaag flex-col'>
-                        <div className='p-2xs-semibold mb-1 text-gray-600'>Overheidslaag</div>
+                        <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>Overheidslaag</div>
                         <div className='p-xs-semibold flex text-green-500'>
                           <div className='shrink rounded-cl bg-green-50 p-1'>
                             {instrument?.overheidslaag
@@ -95,7 +95,7 @@ export default function InstrumentCard({ instrument, images }) {
                         </div>
                       </div>
                       <div className='flex basis-rladder flex-col'>
-                        <div className='p-2xs-semibold mb-1 text-gray-600'>R-ladder</div>
+                        <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>R-ladder</div>
                         <div className='flex items-center'>
                           <div className='flex flex-row items-center'>
                             <div className='shrink rounded-cl bg-green-50 p-1'>
@@ -172,7 +172,7 @@ export default function InstrumentCard({ instrument, images }) {
                 <div className='mb-4 flex flex-col justify-center sm:hidden'>
                   <div className='flex h-auto flex-row justify-between py-2'>
                     <div className='flex flex-col justify-center'>
-                      <div className='p-xs-semibold text-gray-600 sm:py-1'>
+                      <div className='p-xs-semibold text-cl-dark-grey sm:py-1'>
                         Juridische houdbaarheid
                       </div>
                       <div className='flex items-center'>
@@ -182,7 +182,7 @@ export default function InstrumentCard({ instrument, images }) {
                       </div>
                     </div>
                     <div className='flex flex-col justify-center'>
-                      <div className='p-xs-semibold py-1 text-gray-600'>Invloed</div>
+                      <div className='p-xs-semibold py-1 text-cl-dark-grey'>Invloed</div>
                       <div className='flex items-center'>
                         <div className='p-xs-semibold rounded-cl bg-green-100 px-1.5 py-1 text-green-500'>
                           {instrument?.juridischInvloed}
@@ -192,7 +192,7 @@ export default function InstrumentCard({ instrument, images }) {
                   </div>
                   <div className='flex h-auto py-2'>
                     <div className='flex flex-col justify-center'>
-                      <div className='p-xs-semibold py-1 text-gray-600'>Overheidslaag</div>
+                      <div className='p-xs-semibold py-1 text-cl-dark-grey'>Overheidslaag</div>
                       <div className='p-xs-semibold rounded-cl bg-green-100 p-1 pl-1.5 text-green-500'>
                         {instrument?.overheidslaag
                           ?.filter((x) => x !== null)
@@ -208,7 +208,7 @@ export default function InstrumentCard({ instrument, images }) {
                   </div>
                   <div className='flex py-2'>
                     <div className='flex flex-col justify-center'>
-                      <div className='p-xs-semibold py-1 text-gray-600'>R-ladder</div>
+                      <div className='p-xs-semibold py-1 text-cl-dark-grey'>R-ladder</div>
                       <div className='flex items-center'>
                         <div className='flex flex-row items-center rounded-cl bg-green-100 p-1 pl-1.5'>
                           {instrument?.rLadder?.map((rValue) => (

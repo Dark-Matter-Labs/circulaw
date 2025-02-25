@@ -241,19 +241,19 @@ export default function PopUp({ pillars, modelTexts }) {
                   <div className='flex flex-wrap gap-4 sm:flex-row'>
                     <div className='flex flex-col'>
                       <div className='p-xs-semibold mb-2'>Schaalniveau</div>
-                      <div className='rounded-cl border border-gray-200 bg-white px-2 py-1 text-xs text-gray-600'>
+                      <div className='rounded-cl border border-gray-200 bg-white px-2 py-1 text-xs text-cl-dark-grey'>
                         {selectedModelText.scale}
                       </div>
                     </div>
                     <div className='flex flex-col'>
                       <div className='p-xs-semibold mb-2'>Houdbaarheid</div>
-                      <div className='rounded-cl border border-gray-200 bg-white px-2 py-1 text-xs text-gray-600'>
+                      <div className='rounded-cl border border-gray-200 bg-white px-2 py-1 text-xs text-cl-dark-grey'>
                         {selectedModelText.impactLevel}
                       </div>
                     </div>
                     <div className='flex flex-col'>
                       <div className='p-xs-semibold mb-2'>Type regel</div>
-                      <div className='rounded-cl border border-gray-200 bg-white px-2 py-1 text-xs text-gray-600'>
+                      <div className='rounded-cl border border-gray-200 bg-white px-2 py-1 text-xs text-cl-dark-grey'>
                         {selectedModelText.type}
                       </div>
                     </div>

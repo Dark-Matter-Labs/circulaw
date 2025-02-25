@@ -17,7 +17,7 @@ export default function InstrumentMetaData({ data, borders }) {
           <div className='items-st flex h-auto w-full grow-0 flex-row gap-x-3 justify-self-start'>
             <div className='flex basis-houdbaarheid flex-col'>
               <div className='flex items-center'>
-                <div className='p-2xs-semibold mb-1 text-gray-600'>Juridische houdbaarheid</div>
+                <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>Juridische houdbaarheid</div>
                 <Modal Button={<InstrumentTooltipButton />}>
                   <ModalContent title='Geschatte juridische houdbaarheid'>
                     <TooltipJuridischeHoudbaarheidContent JHTooltipText={data.JHTooltipText} />
@@ -33,7 +33,7 @@ export default function InstrumentMetaData({ data, borders }) {
             </div>
             <div className='flex basis-invloed flex-col'>
               <div className='flex items-center'>
-                <div className='p-2xs-semibold mb-1 text-gray-600'>Invloed</div>
+                <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>Invloed</div>
                 <Modal Button={<InstrumentTooltipButton />}>
                   <ModalContent title='Geschatte invloed'>
                     <TooltipJuridischeInvloedContent invloedTooltipText={data.invloedTooltipText} />
@@ -48,7 +48,7 @@ export default function InstrumentMetaData({ data, borders }) {
             </div>
             <div className='flex basis-overheidslaag flex-col'>
               <div className='flex h-6 items-center'>
-                <div className='p-2xs-semibold mb-1 text-gray-600'>Overheidslaag</div>
+                <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>Overheidslaag</div>
               </div>
 
               <div className='p-xs-semibold flex text-green-500'>
@@ -66,7 +66,7 @@ export default function InstrumentMetaData({ data, borders }) {
             </div>
             <div className='flex basis-rladder flex-col'>
               <div className='flex items-center'>
-                <div className='p-2xs-semibold mb-1 text-gray-600'>R-ladder</div>
+                <div className='p-2xs-semibold mb-1 text-cl-dark-grey'>R-ladder</div>
                 <Modal Button={<InstrumentTooltipButton />}>
                   <ModalContent title='R-ladder: strategieën van circulariteit'>
                     <RladderTooltipContent />
@@ -95,7 +95,7 @@ export default function InstrumentMetaData({ data, borders }) {
         <div className='flex h-auto flex-row justify-between py-2'>
           <div className='flex flex-col justify-center'>
             <div className='flex items-center'>
-              <div className='p-xs-semibold text-gray-600 sm:py-1'>Juridische houdbaarheid</div>
+              <div className='p-xs-semibold text-cl-dark-grey sm:py-1'>Juridische houdbaarheid</div>
               <Modal Button={<InstrumentTooltipButton />}>
                 <ModalContent title='Geschatte juridische houdbaarheid'>
                   <TooltipJuridischeHoudbaarheidContent JHTooltipText={data.JHTooltipText} />
@@ -111,7 +111,7 @@ export default function InstrumentMetaData({ data, borders }) {
 
           <div className='flex flex-col justify-center'>
             <div className='flex items-center'>
-              <div className='p-xs-semibold py-1 text-gray-600'>Invloed</div>
+              <div className='p-xs-semibold py-1 text-cl-dark-grey'>Invloed</div>
               <Modal Button={<InstrumentTooltipButton />}>
                 <ModalContent title='Geschatte invloed'>
                   <TooltipJuridischeInvloedContent invloedTooltipText={data.invloedTooltipText} />
@@ -129,7 +129,7 @@ export default function InstrumentMetaData({ data, borders }) {
         <div className='flex h-auto py-2'>
           <div className='flex flex-col justify-center'>
             <div className='flex items-center'>
-              <div className='p-xs-semibold py-1 text-gray-600'>Overheidslaag</div>
+              <div className='p-xs-semibold py-1 text-cl-dark-grey'>Overheidslaag</div>
             </div>
 
             <div className='p-xs-semibold shrink rounded-cl bg-green-100 p-1 text-green-500'>
@@ -147,7 +147,7 @@ export default function InstrumentMetaData({ data, borders }) {
         <div className='flex py-2'>
           <div className='flex flex-col justify-center'>
             <div className='flex items-center'>
-              <div className='p-xs-semibold py-1 text-gray-600'>R-ladder</div>
+              <div className='p-xs-semibold py-1 text-cl-dark-grey'>R-ladder</div>
               <Modal Button={<InstrumentTooltipButton />}>
                 <ModalContent title='R-ladder: strategieën van circulariteit'>
                   <RladderTooltipContent />
