@@ -41,7 +41,7 @@ export default function PCLayout({ ...props }) {
                     <div className='group w-full flex-grow rounded-cl border border-gray-200 bg-green-50'>
                       <Link href='/training' className='h-full w-full'>
                         <div className='flex h-full w-full flex-grow flex-col justify-between gap-y-2 p-6'>
-                          <h3 className='heading-2xl-semibold text-green-600'>
+                          <h3 className='heading-2xl-semibold text-green-500'>
                             E-learning Circulaire houtbouw onder de Omgevingswet
                           </h3>
                           <div>
@@ -65,7 +65,7 @@ export default function PCLayout({ ...props }) {
                     <div className='group w-full flex-grow rounded-cl border border-gray-200 bg-green-50'>
                       <Link href='/bouw/planregels' className='h-full w-full'>
                         <div className='flex h-full w-full flex-grow flex-col justify-between gap-y-2 p-6'>
-                          <h3 className='heading-2xl-semibold text-green-600'>
+                          <h3 className='heading-2xl-semibold text-green-500'>
                             Planregels: modelteksten voor het omgevingsplan
                           </h3>
                           <div>
@@ -87,7 +87,7 @@ export default function PCLayout({ ...props }) {
                   <div className='mt-6 block w-full rounded-cl border border-gray-200 bg-green-50 sm:hidden'>
                     <Link href='/training' className='h-full w-full'>
                       <div className='flex h-full w-full flex-grow flex-col justify-between p-6'>
-                        <h3 className='heading-2xl-semibold pb-4 text-green-600'>
+                        <h3 className='heading-2xl-semibold pb-4 text-green-500'>
                           E-learning Circulaire houtbouw onder de Omgevingswet{' '}
                         </h3>
                         <p className='p-base text-gren-800'>
@@ -107,7 +107,7 @@ export default function PCLayout({ ...props }) {
                   <div className='mt-6 block w-full rounded-cl border border-gray-200 bg-green-50 sm:hidden'>
                     <Link href='/training' className='h-full w-full'>
                       <div className='flex h-full w-full flex-grow flex-col justify-between p-6'>
-                        <h3 className='heading-2xl-semibold pb-4 text-green-600'>
+                        <h3 className='heading-2xl-semibold pb-4 text-green-500'>
                           Planregels: modelteksten voor het omgevingsplan
                         </h3>
                         <p className='p-base text-gren-800'>
@@ -195,7 +195,7 @@ export default function PCLayout({ ...props }) {
                     )}
                   </div>
                   <div className=''>
-                    <span className='p-base-semibold text-green-600'>{ambition.subTitle}</span>
+                    <span className='p-base-semibold text-green-500'>{ambition.subTitle}</span>
                     <h4 className='heading-2xl-semibold sm:3xl-semibold mt-2 text-cl-black'>
                       {ambition.title}
                     </h4>
@@ -240,7 +240,7 @@ export default function PCLayout({ ...props }) {
                     )}
                   </div>
                   <div className=''>
-                    <span className='p-base-semibold text-green-600'>{ambition.subTitle}</span>
+                    <span className='p-base-semibold text-green-500'>{ambition.subTitle}</span>
                     <h4 className='heading-2xl-semibold sm:3xl-semibold mt-2 text-cl-black'>
                       {ambition.title}
                     </h4>

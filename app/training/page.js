@@ -7,16 +7,16 @@ import { IconArrowRight, IconBooks } from '@tabler/icons-react';
 export default function LearningLandingPage() {
   return (
     <div className=''>
-      <div className='my-3 h-56 bg-green-600 sm:h-72'>
+      <div className='my-3 h-56 bg-green-500 sm:h-72'>
         <div className='global-margin flex h-full flex-col items-start justify-between'>
           <div className='mt-6 flex h-6 items-center rounded-clSm bg-gray-100'>
             <Link
               href='/'
-              className='p-2xs-bold flex flex-row items-center pl-2 text-green-600 hover:text-green-300 active:text-cl-black'
+              className='p-2xs-bold flex flex-row items-center pl-2 text-green-500 hover:text-green-300 active:text-cl-black'
             >
               Home
             </Link>
-            <span className='p-2xs-bold px-2 text-green-600'>{'>'}</span>
+            <span className='p-2xs-bold px-2 text-green-500'>{'>'}</span>
           </div>
           <div className='mb-10'>
             <h1 className='heading-2xl-semibold sm:heading-5xl-semibold max-w-4xl text-gray-100'>
@@ -41,7 +41,7 @@ export default function LearningLandingPage() {
             target='_blank'
             className='block md:hidden'
           >
-            <div className='mt-6 flex w-full flex-col bg-green-50 p-4 text-green-600'>
+            <div className='mt-6 flex w-full flex-col bg-green-50 p-4 text-green-500'>
               <div className='mb-2'>
                 <IconBooks className='size-8' />
               </div>
@@ -147,7 +147,7 @@ export default function LearningLandingPage() {
           target='_blank'
           className='hidden md:block'
         >
-          <div className='sticky top-32 ml-16 flex w-80 flex-col bg-green-50 p-4 text-green-600'>
+          <div className='sticky top-32 ml-16 flex w-80 flex-col bg-green-50 p-4 text-green-500'>
             <div className='mb-2'>
               <IconBooks className='size-8' />
             </div>

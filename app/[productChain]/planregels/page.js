@@ -16,7 +16,7 @@ export default function ScrollyTellingPage({ params }) {
 
         <div className='block lg:hidden'>
           <div>
-            <div className='relative mt-3 flex h-[260px] w-full bg-green-600 sm:h-[360px]'>
+            <div className='relative mt-3 flex h-[260px] w-full bg-green-500 sm:h-[360px]'>
               <Image
                 src='/modeltext-header.png'
                 alt='homepage decoration'
@@ -28,7 +28,7 @@ export default function ScrollyTellingPage({ params }) {
               />
               <div className='global-margin z-20 flex h-full w-full flex-col justify-between'>
                 <div className='pt-6 sm:pt-10'>
-                  <span className='p-2xs-bold inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 align-middle text-green-600 group-hover:text-green-300 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
+                  <span className='p-2xs-bold inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 align-middle text-green-500 group-hover:text-green-300 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
                     <Link
                       className='hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'
                       href='/'

@@ -22,7 +22,7 @@ export default function NewsDetailPageHeader({ data }) {
     } else if (data?.colour === 'green') {
       setCardColour('bg-green-500');
     } else if (data?.colour === 'darkGreen') {
-      setCardColour('bg-green-600');
+      setCardColour('bg-green-500');
     } else setCardColour('bg-cl-black');
   }, [data]);
 
@@ -33,14 +33,14 @@ export default function NewsDetailPageHeader({ data }) {
           <div className='mt-6 flex h-6 items-center rounded-clSm bg-gray-100'>
             <Link
               href='/'
-              className='p-2xs-bold flex flex-row items-center pl-2 text-green-600 hover:text-green-300 active:text-cl-black'
+              className='p-2xs-bold flex flex-row items-center pl-2 text-green-500 hover:text-green-300 active:text-cl-black'
             >
               Home
             </Link>
-            <span className='p-2xs-bold px-2 text-green-600'>{'>'}</span>
+            <span className='p-2xs-bold px-2 text-green-500'>{'>'}</span>
             <Link
               href='/nieuws'
-              className='p-2xs-bold pr-2 text-green-600 hover:text-green-300 active:text-cl-black'
+              className='p-2xs-bold pr-2 text-green-500 hover:text-green-300 active:text-cl-black'
             >
               Nieuws
             </Link>

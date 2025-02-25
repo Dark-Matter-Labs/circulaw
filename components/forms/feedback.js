@@ -84,7 +84,7 @@ export default function FeedbackComponent() {
             <button
               type='button'
               onClick={() => router.back()}
-              className='p-2xs-bold mt-12 rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 text-green-600'
+              className='p-2xs-bold mt-12 rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 text-green-500'
             >
               <span className=' '>Terug</span>
               <span className='ml-2'>{'>'}</span>
@@ -121,7 +121,7 @@ export default function FeedbackComponent() {
                       id='message'
                       name='message'
                       rows={8}
-                      className='block w-full rounded-cl border border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                      className='block w-full rounded-cl border border-cl-grey px-4 py-3 shadow-sm focus:border-green-500 focus:ring-green-500'
                       required
                       value={query.message}
                       onChange={handleChange()}
@@ -161,7 +161,7 @@ export default function FeedbackComponent() {
                       name='name'
                       id='first-name'
                       autoComplete='given-name'
-                      className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                      className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-500 focus:ring-green-500'
                       value={query.name}
                       onChange={handleChange()}
                       required
@@ -180,7 +180,7 @@ export default function FeedbackComponent() {
                       name='email'
                       type='email'
                       autoComplete='email'
-                      className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                      className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-500 focus:ring-green-500'
                       aria-describedby='emailHelp'
                       required
                       value={query.email}
@@ -203,7 +203,7 @@ export default function FeedbackComponent() {
                       name='org'
                       id='company'
                       autoComplete='organization'
-                      className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                      className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-500 focus:ring-green-500'
                       value={query.org}
                       onChange={handleChange()}
                       required
@@ -222,7 +222,7 @@ export default function FeedbackComponent() {
                       name='role'
                       id='role'
                       autoComplete='role'
-                      className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                      className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-500 focus:ring-green-500'
                       value={query.role}
                       onChange={handleChange()}
                       required
@@ -256,7 +256,7 @@ export default function FeedbackComponent() {
                     type='submit'
                     onClick={scrollToTop}
                     className={
-                      'button inline-flex items-center rounded-full bg-green-600 px-4 py-2 text-gray-100 hover:bg-green-200 hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-white active:bg-cl-black active:text-gray-100'
+                      'button inline-flex items-center rounded-full bg-green-500 px-4 py-2 text-gray-100 hover:bg-green-200 hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-white active:bg-cl-black active:text-gray-100'
                     }
                   >
                     Verzenden &rarr;
@@ -270,7 +270,7 @@ export default function FeedbackComponent() {
           </>
         ) : (
           <>
-            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pt-10 text-green-600'>
+            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pt-10 text-green-500'>
               Dank voor je feedback!
             </h1>
             <p className='p-base max-w-2xl py-10 text-cl-black'>

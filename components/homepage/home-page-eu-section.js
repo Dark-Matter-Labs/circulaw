@@ -10,7 +10,7 @@ export default function HomePageEUSection({ euData }) {
       <div className='flex flex-col items-center justify-between sm:flex-row'>
         <div className='flex w-full flex-col sm:w-7/12'>
           <div className='mr-6 border-b border-cl-black'>
-            <h2 className='heading-2xl-semibold sm:heading-5xl-semibold pb-6 text-green-600'>
+            <h2 className='heading-2xl-semibold sm:heading-5xl-semibold pb-6 text-green-500'>
               EU wetgeving
             </h2>
           </div>

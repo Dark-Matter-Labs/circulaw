@@ -18,7 +18,7 @@ export default function NewsCard({ data }) {
     return (
       <Link href={`/nieuws/${data?.slug?.current}`} className='group'>
         <div
-          className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-600' : ''} ${
+          className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-500' : ''} ${
             data.colour === 'extraDarkGreen' ? 'bg-cl-black' : ''
           } flex flex-col items-start justify-between rounded-cl`}
         >
@@ -100,7 +100,7 @@ export default function NewsCard({ data }) {
         className='group'
       >
         <div
-          className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-600' : ''} ${
+          className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-500' : ''} ${
             data.colour === 'extraDarkGreen' ? 'bg-cl-black' : ''
           } flex flex-col items-start justify-between rounded-cl`}
         >
@@ -189,7 +189,7 @@ export default function NewsCard({ data }) {
   } else {
     return (
       <div
-        className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-600' : ''} ${
+        className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-500' : ''} ${
           data.colour === 'extraDarkGreen' ? 'bg-cl-black' : ''
         } flex flex-col items-start justify-between rounded-cl`}
       >

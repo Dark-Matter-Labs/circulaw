@@ -19,7 +19,7 @@ export default async function Page() {
     <>
       <div className='sm:pt-18 -z-50 bg-gray-100 py-12 sm:pb-24' name='thema'>
         <div className='global-margin -z-20'>
-          <h2 className='heading-2xl-semibold sm:heading-5xl-semibold border-b border-cl-dark-grey pb-6 pt-8 text-green-600'>
+          <h2 className='heading-2xl-semibold sm:heading-5xl-semibold border-b border-cl-dark-grey pb-6 pt-8 text-green-500'>
             Ontdek direct onze instrumenten
           </h2>
           <p className='heading-xl max-w-[750px] whitespace-normal py-4'>
@@ -55,7 +55,7 @@ export default async function Page() {
       <div className='bg-gray-100 pb-12 pt-12 sm:pt-0'>
         <div className='global-margin'>
           <div className='flex flex-col pb-12 sm:pb-24'>
-            <h3 className='heading-2xl-semibold sm:heading-5xl-semibold w-full border-b border-cl-black pb-6 text-green-600'>
+            <h3 className='heading-2xl-semibold sm:heading-5xl-semibold w-full border-b border-cl-black pb-6 text-green-500'>
               Uitgelichte nieuwsberichten
             </h3>
 
@@ -74,7 +74,7 @@ export default async function Page() {
                 </div>
               ))}
             </div>
-            <div className='p-base-bold flex items-center justify-end text-green-600'>
+            <div className='p-base-bold flex items-center justify-end text-green-500'>
               <Link
                 href='/nieuws'
                 className='flex items-center hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'

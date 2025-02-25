@@ -357,7 +357,7 @@ export default function ScrollyTellingAnimation() {
     <>
       <div className='sticky top-32 w-full max-w-[1312px]'>
         <div className='mb-12 flex w-full items-center justify-start'>
-          <div className='bg-green-5 flex flex-row items-center justify-center rounded-clSm border border-green-600 px-2 py-1 text-green-600'>
+          <div className='bg-green-5 flex flex-row items-center justify-center rounded-clSm border border-green-500 px-2 py-1 text-green-500'>
             <Link className='inline-flex h-full flex-row items-center justify-center' href='/'>
               <span className='p-2xs-bold hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'>
                 {' '}
@@ -387,7 +387,7 @@ export default function ScrollyTellingAnimation() {
                       : screenHeight < 934
                         ? 'translate-y-[150px]'
                         : 'translate-y-[280px]'
-                  } duration-400 flex flex-row text-left text-green-600 transition-all`}
+                  } duration-400 flex flex-row text-left text-green-500 transition-all`}
                   id={`nav${item.id + 1}`}
                   onClick={() =>
                     window.scrollTo({
@@ -400,7 +400,7 @@ export default function ScrollyTellingAnimation() {
                   <div
                     className={`${
                       activeNav === item.id ? 'p-3xs-semibold' : 'p-3xs'
-                    } mt-1 flex h-5 w-5 items-center justify-center rounded-full border border-green-600`}
+                    } mt-1 flex h-5 w-5 items-center justify-center rounded-full border border-green-500`}
                   >
                     {item.id + 1}
                   </div>
@@ -418,7 +418,7 @@ export default function ScrollyTellingAnimation() {
                   href='/bouw/planregels/modelteksten'
                   className={`${
                     screenHeight < 934 ? 'bottom-52' : 'bottom-[110px]'
-                  } p-2xs-semibold absolute left-0 flex flex-row items-center justify-center text-green-600 hover:text-green-300`}
+                  } p-2xs-semibold absolute left-0 flex flex-row items-center justify-center text-green-500 hover:text-green-300`}
                 >
                   Bekijk modelteksten <IconArrowRight className='ml-1 h-4 w-4' />
                 </Link>
@@ -992,10 +992,10 @@ export default function ScrollyTellingAnimation() {
                 screenHeight < 934 ? 'bottom-[426px]' : 'bottom-[378px]'
               } flex items-center justify-start transition-opacity duration-500`}
             >
-              <div className='mr-4 h-[58px] min-w-[2.5px] rounded-full bg-green-600'></div>
+              <div className='mr-4 h-[58px] min-w-[2.5px] rounded-full bg-green-500'></div>
               <div>
-                <h3 className='p-xs-semibold text-green-600'>Omgevingsvisie</h3>
-                <p className='p-xs text-green-600'>Langetermijnvisie voor fysieke leefomgeving</p>
+                <h3 className='p-xs-semibold text-green-500'>Omgevingsvisie</h3>
+                <p className='p-xs text-green-500'>Langetermijnvisie voor fysieke leefomgeving</p>
               </div>
             </div>
             <div
@@ -1009,10 +1009,10 @@ export default function ScrollyTellingAnimation() {
                 screenHeight < 934 ? 'bottom-[498px]' : 'bottom-[450px]'
               } flex items-center justify-start transition-opacity duration-500`}
             >
-              <div className='mr-4 h-[80px] min-w-[2.5px] rounded-full bg-green-600'></div>
+              <div className='mr-4 h-[80px] min-w-[2.5px] rounded-full bg-green-500'></div>
               <div>
-                <h3 className='p-xs-semibold text-green-600'>Omgevingsprogramma&apos;s</h3>
-                <p className='p-xs text-green-600'>
+                <h3 className='p-xs-semibold text-green-500'>Omgevingsprogramma&apos;s</h3>
+                <p className='p-xs text-green-500'>
                   Uitwerking beleidsdoelen voor korte-/middellange termijn
                 </p>
               </div>
@@ -1028,10 +1028,10 @@ export default function ScrollyTellingAnimation() {
               } flex items-center justify-start transition-opacity duration-500`}
               id='coneThreeLabel'
             >
-              <div className='mr-4 h-[34px] min-w-[2.5px] max-w-[2.5] rounded-full bg-green-600'></div>
+              <div className='mr-4 h-[34px] min-w-[2.5px] max-w-[2.5] rounded-full bg-green-500'></div>
               <div>
-                <h3 className='p-xs-semibold text-green-600'>Omgevingsplan</h3>
-                <p className='p-xs text-green-600'>Juridisch bindende regels</p>
+                <h3 className='p-xs-semibold text-green-500'>Omgevingsplan</h3>
+                <p className='p-xs text-green-500'>Juridisch bindende regels</p>
               </div>
             </div>
             <div
@@ -1048,10 +1048,10 @@ export default function ScrollyTellingAnimation() {
               <div
                 className={`${
                   scrollPosition > 380 ? 'opacity-100' : 'opacity-0'
-                } mr-4 h-[44px] min-w-[2.5px] rounded-full bg-green-600`}
+                } mr-4 h-[44px] min-w-[2.5px] rounded-full bg-green-500`}
               ></div>
               <div>
-                <h3 className='heading-xl-semibold text-green-600'>Beleidscyclus</h3>
+                <h3 className='heading-xl-semibold text-green-500'>Beleidscyclus</h3>
               </div>
             </div>
           </div>

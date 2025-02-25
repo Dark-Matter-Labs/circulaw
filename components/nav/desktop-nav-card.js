@@ -9,7 +9,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
   return (
     <div
       className={`${
-        pathname === '/' ? 'bg-green-600 text-green-200' : 'bg-green-50 text-cl-black'
+        pathname === '/' ? 'bg-green-500 text-green-200' : 'bg-green-50 text-cl-black'
       } h-full w-full ${
         navData.slug === 'bouw'
           ? '3xl:pl-32 pl-4 pr-2 pt-8 lgNav:pl-10 xl:pl-20'
@@ -30,7 +30,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
       {navData.title === 'Bouw' && (
         <div
           className={`${
-            pathname === '/' ? 'border-gray-100 text-gray-100' : 'border-green-600 text-green-600'
+            pathname === '/' ? 'border-gray-100 text-gray-100' : 'border-green-500 text-green-500'
           } p-base-semibold mr-8 mt-6 border-b-2 pb-2`}
         >
           Instrumenten
@@ -42,7 +42,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
             id='navClick'
             href={`/${navData.slug}/${thema.slug}`}
             className={`${
-              pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500'
+              pathname === '/' ? 'text-white' : 'text-green-500 hover:text-green-500'
             } p-xs active:p-xs-semibold cursor-pointer active:no-underline`}
             onClick={() => {
               CustomEvent.trackEvent('Nav click', pathname, thema.themaName);
@@ -67,7 +67,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
         <>
           <div
             className={`${
-              pathname === '/' ? 'border-gray-100 text-gray-100' : 'border-green-600 text-green-600'
+              pathname === '/' ? 'border-gray-100 text-gray-100' : 'border-green-500 text-green-500'
             } p-base-semibold mr-8 mt-6 border-b-2 pb-2`}
           >
             Toepassing
@@ -80,7 +80,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
                 closeNav(false);
               }}
               className={`${
-                pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500'
+                pathname === '/' ? 'text-white' : 'text-green-500 hover:text-green-500'
               } p-xs active:p-xs-semibold mt-2 flex cursor-pointer flex-row items-center active:no-underline`}
             >
               <span className='hover:underline'>Modelteksten voor het omgevingsplan</span>
@@ -94,7 +94,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
                 closeNav(false);
               }}
               className={`${
-                pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500'
+                pathname === '/' ? 'text-white' : 'text-green-500 hover:text-green-500'
               } p-xs active:p-xs-semibold flex cursor-pointer flex-row items-center pt-2 active:no-underline`}
             >
               <span className='hover:underline'>E-learning &apos;Circulaire houtbouw&apos;</span>

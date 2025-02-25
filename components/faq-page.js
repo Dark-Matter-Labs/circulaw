@@ -14,7 +14,7 @@ export default function FAQPageComponent({ data }) {
     <div className='global-margin pb-8 text-cl-black'>
       <div className='grid w-full grid-cols-1 justify-center'>
         <div className=''>
-          <div className='p-2xs-bold link-interaction rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 pt-8 text-green-600'>
+          <div className='p-2xs-bold link-interaction rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 pt-8 text-green-500'>
             <Link href='/' className='link-interaction'>
               Home<span className='ml-2'>{'>'}</span>
             </Link>
@@ -33,10 +33,10 @@ export default function FAQPageComponent({ data }) {
               {data.FAQPageContent.map((item, i) => (
                 <Accordion.Item
                   key={i}
-                  className='border-t border-green-600 pb-12 pt-4'
+                  className='border-t border-green-500 pb-12 pt-4'
                   value={`item-${i + 1}`}
                 >
-                  <Accordion.Trigger className='heading-xl-semibold sm:heading-3xl-semibold group mr-4 flex w-full justify-between text-green-600'>
+                  <Accordion.Trigger className='heading-xl-semibold sm:heading-3xl-semibold group mr-4 flex w-full justify-between text-green-500'>
                     <span className='text-left'>{item.question}</span>{' '}
                     <IconChevronDown className='h-8 w-8 transition-transform duration-300 ease-in-out group-data-[state=open]:rotate-180' />
                   </Accordion.Trigger>

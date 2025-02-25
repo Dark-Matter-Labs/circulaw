@@ -53,7 +53,7 @@ export default function GovLevelLayout({ ...props }) {
   return (
     <div onLoad={useXarrow()}>
       <div className=''>
-        <div className='h-[300px] bg-green-600 bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 sm:mx-0 sm:h-[360px]'>
+        <div className='h-[300px] bg-green-500 bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 sm:mx-0 sm:h-[360px]'>
           <OverviewPageHeader
             thema={props.thema}
             productChain={props.transitionAgenda}

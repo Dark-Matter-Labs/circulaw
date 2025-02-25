@@ -13,7 +13,7 @@ export default function EULawButton({ lawData }) {
           <StatusThreeStep status={lawData?.statusThreeStep} />
         )}
       </div>
-      <div className='p-base-semibold flex flex-row items-center justify-start text-green-600 group-hover:text-green-300'>
+      <div className='p-base-semibold flex flex-row items-center justify-start text-green-500 group-hover:text-green-300'>
         <div>Bekijk de tijdlijn van deze regelgeving</div>{' '}
         <IconArrowRight className='ml-1 h-5 w-5' />
       </div>

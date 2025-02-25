@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function ThemePageHeader({ pageTitle }) {
   return (
     <div className='block h-[260px] w-full sm:h-[360px]'>
-      <div className='relative mt-3 h-full w-full bg-green-600 object-cover'>
+      <div className='relative mt-3 h-full w-full bg-green-500 object-cover'>
         <Image
           src='/modeltext-header.png'
           alt='homepage decoration'
@@ -19,7 +19,7 @@ export default function ThemePageHeader({ pageTitle }) {
         <div className='global-margin z-5 relative flex h-[260px] flex-col justify-between sm:h-[360px]'>
           <div className='pt-8'>
             <Link
-              className='group inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 text-green-600'
+              className='group inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 text-green-500'
               href='/'
             >
               <span className='p-2xs-bold align-middle group-hover:text-green-300 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>

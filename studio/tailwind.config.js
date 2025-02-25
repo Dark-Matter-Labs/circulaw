@@ -20,7 +20,7 @@ module.exports = {
         'green-300': '#25C38B',
         'green-400': '#6D9F6B',
         'green-500': '#028352',
-        'green-600': '#035E46',
+        'green-500': '#035E46',
         'cl-black': '#053237',
       },
       fontFamily: {

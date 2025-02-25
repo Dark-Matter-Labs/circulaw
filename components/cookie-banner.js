@@ -52,7 +52,7 @@ const CookieConsent = ({ hasLocalConsentCookie }) => {
         consent === true ? 'hidden' : ''
       }`}
     >
-      <div className='flex flex-col items-start space-y-2 bg-green-600 px-20 py-6 md:flex-row md:items-stretch md:space-x-2 md:space-y-0'>
+      <div className='flex flex-col items-start space-y-2 bg-green-500 px-20 py-6 md:flex-row md:items-stretch md:space-x-2 md:space-y-0'>
         <div className='flex flex-grow items-center text-gray-100'>
           <p className='p-base'>
             Op deze site gebruiken we cookies om te analyseren hoe jij de site gebruikt en om de
@@ -69,13 +69,13 @@ const CookieConsent = ({ hasLocalConsentCookie }) => {
         </div>
         <div className='flex items-center'>
           <button
-            className='button mr-2 inline-flex items-center rounded-full border border-gray-100 bg-transparent px-4 py-4 text-gray-100 hover:bg-green-200 hover:text-green-600 focus:bg-green-100 focus:outline-none focus:ring-2 focus:ring-white active:bg-cl-black active:text-gray-100'
+            className='button mr-2 inline-flex items-center rounded-full border border-gray-100 bg-transparent px-4 py-4 text-gray-100 hover:bg-green-200 hover:text-green-500 focus:bg-green-100 focus:outline-none focus:ring-2 focus:ring-white active:bg-cl-black active:text-gray-100'
             onClick={() => denyCookie()}
           >
             Weiger
           </button>
           <button
-            className='button ml-2 inline-flex items-center rounded-full border border-green-600 bg-gray-100 px-4 py-4 text-green-600 hover:border-gray-100 hover:bg-green-200 focus:bg-green-100 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-300 active:text-green-600'
+            className='button ml-2 inline-flex items-center rounded-full border border-green-500 bg-gray-100 px-4 py-4 text-green-500 hover:border-gray-100 hover:bg-green-200 focus:bg-green-100 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-300 active:text-green-500'
             onClick={() => {
               acceptCookie();
             }}

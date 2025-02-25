@@ -311,11 +311,11 @@ export default function Nav(props) {
                     searchMenuIsMounted ||
                     (overMenuIsMounted && scrollEffect === false) ||
                     (euMenuIsMounted && scrollEffect === false)
-                      ? ['bg-green-600 bg-opacity-100 shadow-lg transition-all duration-75']
+                      ? ['bg-green-500 bg-opacity-100 shadow-lg transition-all duration-75']
                       : [
                           `${
                             scrollEffect === true
-                              ? 'tranition-all bg-green-600 shadow-lg duration-150'
+                              ? 'tranition-all bg-green-500 shadow-lg duration-150'
                               : 'bg-opacity-0 transition-all duration-150'
                           }`,
                         ]
@@ -389,7 +389,7 @@ export default function Nav(props) {
               <div className='inset-y-0 float-right flex items-center pt-2 lgNav:hidden'>
                 <button
                   className={`${
-                    pathname !== '/' ? 'text-green-600' : 'text-gray-100'
+                    pathname !== '/' ? 'text-green-500' : 'text-gray-100'
                   } 'p-2 rounded-md`}
                   ref={mobileRef.setReference}
                   {...mobileRefProps()}
@@ -449,7 +449,7 @@ export default function Nav(props) {
                                 </DisclosureButton>
                                 <DisclosurePanel className='ml-4'>
                                   <ul>
-                                    <li className='p-base my-2 flex h-10 cursor-pointer items-center text-green-600 last:mb-2'>
+                                    <li className='p-base my-2 flex h-10 cursor-pointer items-center text-green-500 last:mb-2'>
                                       <Link
                                         href={'/eu-wetgeving'}
                                         onClick={() => setMobileMenuIsOpen(false)}
@@ -460,7 +460,7 @@ export default function Nav(props) {
                                     {props?.euSlugs?.map((euPage) => (
                                       <li
                                         key={euPage?.slug}
-                                        className='p-base my-2 flex h-10 cursor-pointer items-center text-green-600 last:mb-2'
+                                        className='p-base my-2 flex h-10 cursor-pointer items-center text-green-500 last:mb-2'
                                       >
                                         <Link
                                           href={`/eu-wetgeving/${euPage?.slug}`}
@@ -470,7 +470,7 @@ export default function Nav(props) {
                                         </Link>
                                       </li>
                                     ))}
-                                    <li className='p-base mt-6 flex h-auto cursor-pointer items-center border-t border-green-600 py-2 text-green-400 last:mb-2'>
+                                    <li className='p-base mt-6 flex h-auto cursor-pointer items-center border-t border-green-500 py-2 text-green-400 last:mb-2'>
                                       <Link
                                         href='https://www.circulaw.nl/European_green_deal.pdf'
                                         onClick={() => setMobileMenuIsOpen(false)}
@@ -496,7 +496,7 @@ export default function Nav(props) {
                                     {props?.aboutSlugs?.map((aboutPage) => (
                                       <li
                                         key={aboutPage?.slug}
-                                        className='p-base my-2 flex h-10 cursor-pointer items-center text-green-600 last:mb-2'
+                                        className='p-base my-2 flex h-10 cursor-pointer items-center text-green-500 last:mb-2'
                                       >
                                         <Link
                                           href={`/over/${aboutPage?.slug}`}
@@ -676,7 +676,7 @@ export default function Nav(props) {
                       >
                         <div
                           className={`${
-                            pathname === '/' ? 'bg-green-600' : 'bg-green-50'
+                            pathname === '/' ? 'bg-green-500' : 'bg-green-50'
                           } h-full pb-10 pl-6 pr-8 pt-8 shadow-lg`}
                           style={{ ...euMenuTransitionStyles }}
                           onMouseLeave={() => setEuMenuIsOpen(false)}
@@ -685,7 +685,7 @@ export default function Nav(props) {
                             className={`${
                               pathname === '/'
                                 ? 'text-white'
-                                : 'text-green-600 hover:text-green-500'
+                                : 'text-green-500 hover:text-green-500'
                             } p-xs active:p-xs-semibold mb-2 cursor-pointer hover:underline active:no-underline`}
                           >
                             <Link
@@ -705,7 +705,7 @@ export default function Nav(props) {
                               className={`${
                                 pathname === '/'
                                   ? 'text-white'
-                                  : 'text-green-600 hover:text-green-500'
+                                  : 'text-green-500 hover:text-green-500'
                               } p-xs active:p-xs-semibold mb-2 cursor-pointer hover:underline active:no-underline`}
                             >
                               <Link
@@ -798,7 +798,7 @@ export default function Nav(props) {
                       >
                         <div
                           className={`${
-                            pathname === '/' ? 'bg-green-600' : 'bg-green-50'
+                            pathname === '/' ? 'bg-green-500' : 'bg-green-50'
                           } h-full pb-10 pl-6 pr-8 pt-8 shadow-lg`}
                           style={{ ...overMenuTransitionStyles }}
                           onMouseLeave={() => setOverMenuIsOpen(false)}
@@ -810,7 +810,7 @@ export default function Nav(props) {
                               className={`${
                                 pathname === '/'
                                   ? 'text-white'
-                                  : 'text-green-600 hover:text-green-500'
+                                  : 'text-green-500 hover:text-green-500'
                               } p-xs active:p-xs-semibold mb-2 cursor-pointer hover:underline active:no-underline`}
                             >
                               <Link
@@ -856,15 +856,15 @@ export default function Nav(props) {
                           ? [
                               `${
                                 pathname === '/'
-                                  ? 'bg-green-50 text-green-600'
-                                  : 'bg-green-600 text-green-50'
+                                  ? 'bg-green-50 text-green-500'
+                                  : 'bg-green-500 text-green-50'
                               }`,
                             ]
                           : [
                               `${
                                 pathname === '/'
-                                  ? 'bg-green-50 text-green-600'
-                                  : 'bg-green-600 text-green-50'
+                                  ? 'bg-green-50 text-green-500'
+                                  : 'bg-green-500 text-green-50'
                               }`,
                             ]
                       } flex h-6 w-7 items-center justify-center rounded-clSm`}
@@ -887,7 +887,7 @@ export default function Nav(props) {
                         >
                           <div
                             className={`${
-                              pathname === '/' ? 'bg-green-600' : 'bg-green-50'
+                              pathname === '/' ? 'bg-green-500' : 'bg-green-50'
                             } h-full`}
                           >
                             {/* MAKE INTO A COMPONENT */}
@@ -896,7 +896,7 @@ export default function Nav(props) {
                                 <form
                                   onSubmit={() => setSearchMenuIsOpen(false)}
                                   className={`${
-                                    pathname === '/' ? 'bg-green-600' : 'bg-green-50'
+                                    pathname === '/' ? 'bg-green-500' : 'bg-green-50'
                                   } relative flex h-[66px] w-[600px] flex-row items-center justify-between rounded-cl`}
                                   onKeyDown={(e) => {
                                     if (e.key === 'Enter') enterClick(e);
@@ -906,7 +906,7 @@ export default function Nav(props) {
                                     className={`${
                                       pathname === '/'
                                         ? 'bg-green-50/50 text-white caret-white placeholder:text-white focus:bg-[url("/search-icon.png")] focus:bg-[length:24px_24px] focus:ring-white'
-                                        : 'bg-white text-green-600 caret-green-600 shadow-card placeholder:text-green-600 focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] focus:ring-green-600'
+                                        : 'bg-white text-green-500 caret-green-500 shadow-card placeholder:text-green-500 focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] focus:ring-green-500'
                                     } p-base placeholder:p-base-semibold h-[66px] w-[600px] rounded-cl border-none bg-left bg-no-repeat pl-12 [background-position-x:10px] focus:ring-1`}
                                     placeholder={placeholder}
                                     onChange={onChange()}
@@ -929,7 +929,7 @@ export default function Nav(props) {
                                   >
                                     <IconX
                                       className={`${
-                                        pathname === '/' ? 'text-white' : 'text-green-600'
+                                        pathname === '/' ? 'text-white' : 'text-green-500'
                                       } h-6 w-6`}
                                     />
                                   </button>
@@ -997,9 +997,9 @@ export default function Nav(props) {
                                         onClick={() => setSearchIndex(0)}
                                         className={`${
                                           searchIndex === 0
-                                            ? 'border-b-2 border-green-600'
+                                            ? 'border-b-2 border-green-500'
                                             : 'border-b-2 border-transparent'
-                                        } p-xs-semibold p-2 text-green-600`}
+                                        } p-xs-semibold p-2 text-green-500`}
                                       >
                                         Alle
                                       </button>
@@ -1007,9 +1007,9 @@ export default function Nav(props) {
                                         onClick={() => setSearchIndex(1)}
                                         className={`${
                                           searchIndex === 1
-                                            ? 'border-b-2 border-green-600'
+                                            ? 'border-b-2 border-green-500'
                                             : 'border-b-2 border-transparent'
-                                        } p-xs-semibold p-2 text-green-600`}
+                                        } p-xs-semibold p-2 text-green-500`}
                                       >
                                         Instrumenten
                                       </button>
@@ -1017,9 +1017,9 @@ export default function Nav(props) {
                                         onClick={() => setSearchIndex(2)}
                                         className={`${
                                           searchIndex === 2
-                                            ? 'border-b-2 border-green-600'
+                                            ? 'border-b-2 border-green-500'
                                             : 'border-b-2 border-transparent'
-                                        } p-xs-semibold p-2 text-green-600`}
+                                        } p-xs-semibold p-2 text-green-500`}
                                       >
                                         EU wetgeving
                                       </button>
@@ -1027,9 +1027,9 @@ export default function Nav(props) {
                                         onClick={() => setSearchIndex(3)}
                                         className={`${
                                           searchIndex === 3
-                                            ? 'border-b-2 border-green-600'
+                                            ? 'border-b-2 border-green-500'
                                             : 'border-b-2 border-transparent'
-                                        } p-xs-semibold p-2 text-green-600`}
+                                        } p-xs-semibold p-2 text-green-500`}
                                       >
                                         Over
                                       </button>
@@ -1037,9 +1037,9 @@ export default function Nav(props) {
                                         onClick={() => setSearchIndex(4)}
                                         className={`${
                                           searchIndex === 4
-                                            ? 'border-b-2 border-green-600'
+                                            ? 'border-b-2 border-green-500'
                                             : 'border-b-2 border-transparent'
-                                        } p-xs-semibold p-2 text-green-600`}
+                                        } p-xs-semibold p-2 text-green-500`}
                                       >
                                         Nieuws
                                       </button>
@@ -1076,7 +1076,7 @@ export default function Nav(props) {
         </nav>
       </div>
       {pathname === '/' && (
-        <div className='relative -mt-[9rem] w-full bg-green-600'>
+        <div className='relative -mt-[9rem] w-full bg-green-500'>
           <Image
             src='/home-page/header-image.png'
             alt='homepage decoration'

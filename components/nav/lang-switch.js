@@ -70,7 +70,7 @@ export default function LangSwitch({ background }) {
 
       <div
         className={`${
-          background === 'dark' ? 'bg-green-50 text-green-600' : 'bg-green-600 text-green-50'
+          background === 'dark' ? 'bg-green-50 text-green-500' : 'bg-green-500 text-green-50'
         } ml-4 hidden rounded-clSm sm:block lg:ml-4`}
       >
         <button

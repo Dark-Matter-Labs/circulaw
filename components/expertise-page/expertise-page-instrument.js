@@ -26,7 +26,7 @@ export default function ExpertisePageInstrument({ instrument }) {
             </div>
             <div className='w-[90px]'>
               {instrument.overheidslaag.includes('Nationaal') && (
-                <div className='h-4 w-4 rounded-full bg-green-600'></div>
+                <div className='h-4 w-4 rounded-full bg-green-500'></div>
               )}
             </div>
           </div>

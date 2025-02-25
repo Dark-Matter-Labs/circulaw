@@ -58,9 +58,9 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                 </ScrollLink>
               </CustomButton>
             </div>
-            <div className='global-margin border-t border-t-green-600 py-10'>
+            <div className='global-margin border-t border-t-green-500 py-10'>
               <div className={`flex items-center justify-center ${jeeNee}`}>
-                <h3 className='heading-xl-semibold sm:heading-2xl-semibold pr-8 text-green-600'>
+                <h3 className='heading-xl-semibold sm:heading-2xl-semibold pr-8 text-green-500'>
                   Vond je deze pagina nuttig?
                 </h3>
                 <div className='mr-4'>
@@ -115,7 +115,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                       rows={2}
                       value={feedback}
                       onChange={(e) => setFeedback(e.target.value)}
-                      className='block w-3/4 rounded-cl border border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                      className='block w-3/4 rounded-cl border border-cl-grey px-4 py-3 shadow-sm focus:border-green-500 focus:ring-green-500'
                     />
                   </div>
                 </div>
@@ -143,7 +143,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                 <p className='p-base mx-auto leading-6 text-gray-900'>Bedankt voor je reactie!</p>
               </div>
             </div>
-            <div className='bg-green-600'>
+            <div className='bg-green-500'>
               <div className='global-margin pt-8 lg:px-8 lg:pt-16'>
                 <div className='pb-20'>
                   <div className=''>

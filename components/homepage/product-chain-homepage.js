@@ -21,8 +21,8 @@ export default function PCHomePage({ pcData }) {
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
                 className='h-[37.5%] w-auto origin-center rounded-t-cl object-cover transition-transform duration-300 group-hover:scale-110'
               />
-              <div className='absolute bottom-0 left-0 flex h-[72%] flex-col justify-between rounded-b-cl bg-cl-black px-6 pb-4 pt-5 transition-all duration-300 group-hover:translate-y-[20px] group-hover:bg-green-600'>
-                <div className='flex h-[180px] origin-center flex-col justify-center divide-y-[0.5px] divide-green-600 transition-all duration-300 group-hover:-translate-y-[20px] group-hover:divide-gray-100'>
+              <div className='absolute bottom-0 left-0 flex h-[72%] flex-col justify-between rounded-b-cl bg-cl-black px-6 pb-4 pt-5 transition-all duration-300 group-hover:translate-y-[20px] group-hover:bg-green-500'>
+                <div className='flex h-[180px] origin-center flex-col justify-center divide-y-[0.5px] divide-green-500 transition-all duration-300 group-hover:-translate-y-[20px] group-hover:divide-gray-100'>
                   <div className='heading-2xl-semibold flex h-1/2 w-full items-end break-words pb-3 text-white transition duration-300'>
                     <div
                       className={`${
@@ -44,7 +44,7 @@ export default function PCHomePage({ pcData }) {
                   </div>
                 </div>
                 <div className='grid justify-items-end transition-all duration-300 group-hover:-translate-y-[20px]'>
-                  <div className='flex h-10 w-10 items-center justify-center self-end rounded-full border-2 border-white bg-transparent text-white focus:bg-green-100 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-300 group-hover:border-green-200 group-hover:bg-green-200 group-hover:text-green-600'>
+                  <div className='flex h-10 w-10 items-center justify-center self-end rounded-full border-2 border-white bg-transparent text-white focus:bg-green-100 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-300 group-hover:border-green-200 group-hover:bg-green-200 group-hover:text-green-500'>
                     <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />
                   </div>
                 </div>
@@ -81,7 +81,7 @@ export default function PCHomePage({ pcData }) {
                   <h4 className='p-sm text-green-200'>{chain.themaCount} thema&apos;s</h4>
                 </div>
                 <div className='mr-4 grid justify-items-end'>
-                  <div className='flex h-10 w-10 items-center justify-center self-end rounded-full border-2 border-white bg-transparent text-white focus:bg-green-100 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-300 group-hover:border-green-200 group-hover:bg-green-200 group-hover:text-green-600'>
+                  <div className='flex h-10 w-10 items-center justify-center self-end rounded-full border-2 border-white bg-transparent text-white focus:bg-green-100 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-300 group-hover:border-green-200 group-hover:bg-green-200 group-hover:text-green-500'>
                     <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />
                   </div>
                 </div>

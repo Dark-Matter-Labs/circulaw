@@ -95,9 +95,9 @@ export default function PopUp({ pillars, modelTexts }) {
                 }}
                 className={`${
                   selectedPillar === p.slug
-                    ? 'p-base-semibold border-b-2 border-b-green-600'
+                    ? 'p-base-semibold border-b-2 border-b-green-500'
                     : 'p-base hover:text-green-300'
-                } px-2 text-green-600`}
+                } px-2 text-green-500`}
               >
                 {p.title} {'('}
                 {modelTexts.filter((text) => text.pillar === p.slug).length}
@@ -227,7 +227,7 @@ export default function PopUp({ pillars, modelTexts }) {
                       {selectedModelText?.linkedInstruments?.map((instrument) => (
                         <li className='p-base underline' key={instrument.slug}>
                           <Link
-                            className='link-interaction text-green-600'
+                            className='link-interaction text-green-500'
                             href={`/${instrument.transitionAgenda}/${instrument.thema}/instrumenten/${instrument.slug}`}
                           >
                             {instrument.titel}

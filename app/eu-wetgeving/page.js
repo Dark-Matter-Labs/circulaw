@@ -36,7 +36,7 @@ export default async function Page() {
             <Link
               href='/'
               type='button'
-              className='p-2xs-bold rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 text-green-600'
+              className='p-2xs-bold rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 text-green-500'
             >
               <span className='link-interaction'>
                 Home <span className='ml-2'>{'>'}</span>

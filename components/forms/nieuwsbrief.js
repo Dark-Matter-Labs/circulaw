@@ -61,7 +61,7 @@ export default function NewsLetterComponent() {
     <div className='global-margin'>
       {!formStatus ? (
         <>
-          <h1 className='heading-3xl-semibold sm:heading-5xl-semibold pt-10 text-green-600'>
+          <h1 className='heading-3xl-semibold sm:heading-5xl-semibold pt-10 text-green-500'>
             Nieuwsbrief
           </h1>
 
@@ -93,7 +93,7 @@ export default function NewsLetterComponent() {
                     name='name'
                     id='first-name'
                     autoComplete='given-name'
-                    className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                    className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-500 focus:ring-green-500'
                     value={query.name}
                     onChange={handleChange()}
                     required
@@ -111,7 +111,7 @@ export default function NewsLetterComponent() {
                     name='email'
                     type='email'
                     autoComplete='email'
-                    className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                    className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-500 focus:ring-green-500'
                     aria-describedby='emailHelp'
                     required
                     value={query.email}
@@ -129,7 +129,7 @@ export default function NewsLetterComponent() {
                     name='org'
                     id='company'
                     autoComplete='organization'
-                    className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                    className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-500 focus:ring-green-500'
                     value={query.org}
                     onChange={handleChange()}
                   />
@@ -145,7 +145,7 @@ export default function NewsLetterComponent() {
                     name='role'
                     id='role'
                     autoComplete='role'
-                    className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                    className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-500 focus:ring-green-500'
                     value={query.role}
                     onChange={handleChange()}
                   />
@@ -171,7 +171,7 @@ export default function NewsLetterComponent() {
                 <button
                   type='submit'
                   className={
-                    'button inline-flex items-center rounded-full border-2 border-green-600 bg-transparent px-4 py-2 text-green-600 hover:bg-green-200 focus:bg-green-100 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-300'
+                    'button inline-flex items-center rounded-full border-2 border-green-500 bg-transparent px-4 py-2 text-green-500 hover:bg-green-200 focus:bg-green-100 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-300'
                   }
                 >
                   Verzenden &rarr;
@@ -183,7 +183,7 @@ export default function NewsLetterComponent() {
         </>
       ) : (
         <>
-          <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pt-10 text-green-600'>
+          <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pt-10 text-green-500'>
             Bedankt!
           </h1>
           <p className='p-lg max-w-2xl py-10 text-cl-black'>

@@ -12,10 +12,10 @@ export default function MobileDisclosure({ navData, closeMenu }) {
             {navData?.title}
             <IconChevronDown className='ml-2 mt-1 h-5 w-5 group-data-[open]:rotate-180' />
           </DisclosureButton>
-          <DisclosurePanel className='p-base text-green-600'>
+          <DisclosurePanel className='p-base text-green-500'>
             <ul>
               {navData.title === 'Bouw' && (
-                <li className='mb-1 ml-4 flex w-full items-center border-b-2 border-green-600 pb-2 pt-4 font-semibold'>
+                <li className='mb-1 ml-4 flex w-full items-center border-b-2 border-green-500 pb-2 pt-4 font-semibold'>
                   Instrumenten
                 </li>
               )}
@@ -40,7 +40,7 @@ export default function MobileDisclosure({ navData, closeMenu }) {
               ))}
               {navData.title === 'Bouw' && (
                 <>
-                  <li className='mb-1 ml-4 flex w-full items-center border-b-2 border-green-600 pb-2 pt-4 font-semibold'>
+                  <li className='mb-1 ml-4 flex w-full items-center border-b-2 border-green-500 pb-2 pt-4 font-semibold'>
                     Toepassing
                   </li>
                   <li className='ml-4 mt-4 pt-2'>

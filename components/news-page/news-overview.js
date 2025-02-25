@@ -50,7 +50,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
     <div className='global-margin mt-4 flex flex-col'>
       <div className='mt-10'>
         <Link href='/' className='p-2xs-bold'>
-          <span className='text-green-600 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'>
+          <span className='text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'>
             Home<span className='p-2xs-bold px-2'>{'>'}</span>
           </span>
         </Link>
@@ -90,7 +90,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                       <PopoverButton
                         className={`${
                           open ? 'rounded-t-cl' : 'rounded-cl'
-                        } flex h-10 w-full items-center justify-between border border-green-600 bg-green-600 text-black hover:text-green-600 focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
+                        } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
                       >
                         <div
                           className={`${
@@ -99,7 +99,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                         >
                           <span className='p-base-bold inline text-left text-green-500'>Alles</span>
                         </div>
-                        <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-600 bg-green-600 px-5 pr-5'>
+                        <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-500 bg-green-500 px-5 pr-5'>
                           <IconChevronDown
                             className={`${
                               open ? '' : 'rotate-180 transform'
@@ -113,24 +113,24 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           as='div'
                           onClick={() => setArticleType('Agenda')}
                         >
-                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Agenda</span>
                           </div>
                         </PopoverButton>
                         <PopoverButton as='div' onClick={() => setArticleType('Circulair nieuws')}>
-                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Circulair nieuws</span>
                           </div>
                         </PopoverButton>
 
                         <PopoverButton as='div' onClick={() => setArticleType('Nieuw op de site')}>
-                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Nieuw op de site</span>
                           </div>
                         </PopoverButton>
 
                         <PopoverButton as='div' onClick={() => setArticleType('Artikelen')}>
-                          <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Artikelen</span>
                           </div>
                         </PopoverButton>
@@ -146,7 +146,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                       <PopoverButton
                         className={`${
                           open ? 'rounded-t-cl' : 'rounded-cl'
-                        } flex h-10 w-full items-center justify-between border border-green-600 bg-green-600 text-black hover:text-green-600 focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
+                        } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
                       >
                         <div
                           className={`${
@@ -157,7 +157,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                             Agenda
                           </span>
                         </div>
-                        <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-600 bg-green-600 px-5 pr-5'>
+                        <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-500 bg-green-500 px-5 pr-5'>
                           <IconChevronDown
                             className={`${
                               open ? '' : 'rotate-180 transform'
@@ -171,24 +171,24 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           as='div'
                           onClick={() => setArticleType('Alles')}
                         >
-                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Alles</span>
                           </div>
                         </PopoverButton>
                         <PopoverButton as='div' onClick={() => setArticleType('Circulair nieuws')}>
-                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Circulair nieuws</span>
                           </div>
                         </PopoverButton>
 
                         <PopoverButton as='div' onClick={() => setArticleType('Nieuw op de site')}>
-                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Nieuw op de site</span>
                           </div>
                         </PopoverButton>
 
                         <PopoverButton as='div' onClick={() => setArticleType('Artikelen')}>
-                          <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Artikelen</span>
                           </div>
                         </PopoverButton>
@@ -205,7 +205,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                       <PopoverButton
                         className={`${
                           open ? 'rounded-t-cl' : 'rounded-cl'
-                        } flex h-10 w-full items-center justify-between border border-green-600 bg-green-600 text-black hover:text-green-600 focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
+                        } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
                       >
                         <div
                           className={`${
@@ -216,7 +216,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                             Circulair nieuws
                           </span>
                         </div>
-                        <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-600 bg-green-600 px-5 pr-5'>
+                        <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-500 bg-green-500 px-5 pr-5'>
                           <IconChevronDown
                             className={`${
                               open ? '' : 'rotate-180 transform'
@@ -230,24 +230,24 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           as='div'
                           onClick={() => setArticleType('Alles')}
                         >
-                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Alles</span>
                           </div>
                         </PopoverButton>
                         <PopoverButton as='div' onClick={() => setArticleType('Agenda')}>
-                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Agenda</span>
                           </div>
                         </PopoverButton>
 
                         <PopoverButton as='div' onClick={() => setArticleType('Nieuw op de site')}>
-                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Nieuw op de site</span>
                           </div>
                         </PopoverButton>
 
                         <PopoverButton as='div' onClick={() => setArticleType('Artikelen')}>
-                          <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Artikelen</span>
                           </div>
                         </PopoverButton>
@@ -263,7 +263,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                       <PopoverButton
                         className={`${
                           open ? 'rounded-t-cl' : 'rounded-cl'
-                        } flex h-10 w-full items-center justify-between border border-green-600 bg-green-600 text-black hover:text-green-600 focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
+                        } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
                       >
                         <div
                           className={`${
@@ -274,7 +274,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                             Nieuw op de site
                           </span>
                         </div>
-                        <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-600 bg-green-600 px-5 pr-5'>
+                        <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-500 bg-green-500 px-5 pr-5'>
                           <IconChevronDown
                             className={`${
                               open ? '' : 'rotate-180 transform'
@@ -288,24 +288,24 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           as='div'
                           onClick={() => setArticleType('Alles')}
                         >
-                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Alles</span>
                           </div>
                         </PopoverButton>
                         <PopoverButton as='div' onClick={() => setArticleType('Agenda')}>
-                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Agenda</span>
                           </div>
                         </PopoverButton>
 
                         <PopoverButton as='div' onClick={() => setArticleType('Circulair nieuws')}>
-                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Circulair nieuws</span>
                           </div>
                         </PopoverButton>
 
                         <PopoverButton as='div' onClick={() => setArticleType('Artikelen')}>
-                          <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Artikelen</span>
                           </div>
                         </PopoverButton>
@@ -321,7 +321,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                       <PopoverButton
                         className={`${
                           open ? 'rounded-t-cl' : 'rounded-cl'
-                        } flex h-10 w-full items-center justify-between border border-green-600 bg-green-600 text-black hover:text-green-600 focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
+                        } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
                       >
                         <div
                           className={`${
@@ -332,7 +332,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                             Artikelen
                           </span>
                         </div>
-                        <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-600 bg-green-600 px-5 pr-5'>
+                        <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-500 bg-green-500 px-5 pr-5'>
                           <IconChevronDown
                             className={`${
                               open ? '' : 'rotate-180 transform'
@@ -346,24 +346,24 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                           as='div'
                           onClick={() => setArticleType('Alles')}
                         >
-                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Alles</span>
                           </div>
                         </PopoverButton>
                         <PopoverButton as='div' onClick={() => setArticleType('Agenda')}>
-                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Agenda</span>
                           </div>
                         </PopoverButton>
 
                         <PopoverButton as='div' onClick={() => setArticleType('Circulair nieuws')}>
-                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Circulair nieuws</span>
                           </div>
                         </PopoverButton>
 
                         <PopoverButton as='div' onClick={() => setArticleType('Nieuw op de site')}>
-                          <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-600 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-600'>
+                          <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:cursor-pointer hover:text-green-500'>
                             <span className='p-base block truncate pl-3'>Nieuw op de site</span>
                           </div>
                         </PopoverButton>

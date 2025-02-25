@@ -82,7 +82,7 @@ export default function AllSearch() {
               <Index indexName='instruments'>
                 <button
                   onClick={() => setSelectedIndex(1)}
-                  className='heading-2xl-semibold sm:heading-3xl-semibold flex w-full flex-row items-center justify-between border-b border-green-600 py-10 text-green-600 hover:text-green-300 sm:w-4/5'
+                  className='heading-2xl-semibold sm:heading-3xl-semibold flex w-full flex-row items-center justify-between border-b border-green-500 py-10 text-green-500 hover:text-green-300 sm:w-4/5'
                 >
                   Instrumenten <VirtualHits />
                 </button>
@@ -90,7 +90,7 @@ export default function AllSearch() {
               <Index indexName='euLaw'>
                 <button
                   onClick={() => setSelectedIndex(2)}
-                  className='heading-2xl-semibold sm:heading-3xl-semibold flex w-full flex-row items-center justify-between border-b border-green-600 py-10 text-green-600 hover:text-green-300 sm:w-4/5'
+                  className='heading-2xl-semibold sm:heading-3xl-semibold flex w-full flex-row items-center justify-between border-b border-green-500 py-10 text-green-500 hover:text-green-300 sm:w-4/5'
                 >
                   EU wetgeving <VirtualHits />
                 </button>
@@ -98,7 +98,7 @@ export default function AllSearch() {
               <Index indexName='aboutPage'>
                 <button
                   onClick={() => setSelectedIndex(3)}
-                  className='heading-2xl-semibold sm:heading-3xl-semibold flex w-full flex-row items-center justify-between border-b border-green-600 py-10 text-green-600 hover:text-green-300 sm:w-4/5'
+                  className='heading-2xl-semibold sm:heading-3xl-semibold flex w-full flex-row items-center justify-between border-b border-green-500 py-10 text-green-500 hover:text-green-300 sm:w-4/5'
                 >
                   Over CircuLaw <VirtualHits />
                 </button>
@@ -106,7 +106,7 @@ export default function AllSearch() {
               <Index indexName='newsItems'>
                 <button
                   onClick={() => setSelectedIndex(4)}
-                  className='heading-2xl-semibold sm:heading-3xl-semibold flex w-full flex-row items-center justify-between py-10 text-green-600 hover:text-green-300 sm:w-4/5'
+                  className='heading-2xl-semibold sm:heading-3xl-semibold flex w-full flex-row items-center justify-between py-10 text-green-500 hover:text-green-300 sm:w-4/5'
                 >
                   Nieuws <VirtualHits />
                 </button>

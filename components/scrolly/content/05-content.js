@@ -1,6 +1,6 @@
 export default function ContentFive() {
   return (
-    <div className='flex max-w-[290px] flex-col gap-y-6 text-green-600'>
+    <div className='flex max-w-[290px] flex-col gap-y-6 text-green-500'>
       <h3 className='heading-2xl-semibold'>Beleidsuitvoering</h3>
       <p className='p-base'>
         In deze fase van de beleidscyclus draait het om{' '}
