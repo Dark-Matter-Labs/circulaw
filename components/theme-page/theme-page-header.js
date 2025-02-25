@@ -52,7 +52,7 @@ export default function ThemePageHeader({ themaData }) {
               <p className='heading-xl pt-4 text-gray-100'>
                 {themaData?.themaSubtitle}{' '}
                 {themaData?.linkText && (
-                  <span className='link-base group inline-block text-white hover:text-green-300 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100'>
+                  <span className='link-base group inline-block text-white hover:text-green-300 focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200'>
                     <a href={themaData?.headerLink} target='_blank' rel='noopener noreferrer'>
                       {themaData?.linkText}
                       <LinkIcon />

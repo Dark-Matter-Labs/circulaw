@@ -227,7 +227,7 @@ export const InstrumentHit = ({ hit }) => {
                       Juridische houdbaarheid
                     </div>
                     <div className='flex items-center'>
-                      <div className='p-xs-semibold rounded-cl bg-green-100 px-1.5 py-1 text-green-500'>
+                      <div className='p-xs-semibold rounded-cl bg-green-200 px-1.5 py-1 text-green-500'>
                         {hit?.juridischeHaalbaarheid}
                       </div>
                     </div>
@@ -235,7 +235,7 @@ export const InstrumentHit = ({ hit }) => {
                   <div className='flex flex-col justify-center'>
                     <div className='p-xs-semibold py-1 text-cl-dark-grey'>Invloed</div>
                     <div className='flex items-center'>
-                      <div className='p-xs-semibold rounded-cl bg-green-100 px-1.5 py-1 text-green-500'>
+                      <div className='p-xs-semibold rounded-cl bg-green-200 px-1.5 py-1 text-green-500'>
                         {hit?.juridischInvloed}
                       </div>
                     </div>
@@ -244,7 +244,7 @@ export const InstrumentHit = ({ hit }) => {
                 <div className='flex h-auto py-2'>
                   <div className='flex flex-col justify-center'>
                     <div className='p-xs-semibold py-1 text-cl-dark-grey'>Overheidslaag</div>
-                    <div className='p-xs-semibold rounded-cl bg-green-100 p-1 pl-1.5 text-green-500'>
+                    <div className='p-xs-semibold rounded-cl bg-green-200 p-1 pl-1.5 text-green-500'>
                       {hit?.overheidslaag
                         ?.filter((x) => x !== null)
                         .map((level) => (
@@ -260,7 +260,7 @@ export const InstrumentHit = ({ hit }) => {
                   <div className='flex flex-col justify-center'>
                     <div className='p-xs-semibold py-1 text-cl-dark-grey'>R-ladder</div>
                     <div className='flex items-center'>
-                      <div className='flex flex-row items-center rounded-cl bg-green-100 p-1 pl-1.5'>
+                      <div className='flex flex-row items-center rounded-cl bg-green-200 p-1 pl-1.5'>
                         {hit?.rLadder?.map((rValue) => (
                           <div key={rValue} className='p-xs-semibold text-green-500'>
                             {rValue} {hit?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}

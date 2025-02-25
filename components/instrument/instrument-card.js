@@ -176,7 +176,7 @@ export default function InstrumentCard({ instrument, images }) {
                         Juridische houdbaarheid
                       </div>
                       <div className='flex items-center'>
-                        <div className='p-xs-semibold rounded-cl bg-green-100 px-1.5 py-1 text-green-500'>
+                        <div className='p-xs-semibold rounded-cl bg-green-200 px-1.5 py-1 text-green-500'>
                           {instrument?.juridischeHaalbaarheid}
                         </div>
                       </div>
@@ -184,7 +184,7 @@ export default function InstrumentCard({ instrument, images }) {
                     <div className='flex flex-col justify-center'>
                       <div className='p-xs-semibold py-1 text-cl-dark-grey'>Invloed</div>
                       <div className='flex items-center'>
-                        <div className='p-xs-semibold rounded-cl bg-green-100 px-1.5 py-1 text-green-500'>
+                        <div className='p-xs-semibold rounded-cl bg-green-200 px-1.5 py-1 text-green-500'>
                           {instrument?.juridischInvloed}
                         </div>
                       </div>
@@ -193,7 +193,7 @@ export default function InstrumentCard({ instrument, images }) {
                   <div className='flex h-auto py-2'>
                     <div className='flex flex-col justify-center'>
                       <div className='p-xs-semibold py-1 text-cl-dark-grey'>Overheidslaag</div>
-                      <div className='p-xs-semibold rounded-cl bg-green-100 p-1 pl-1.5 text-green-500'>
+                      <div className='p-xs-semibold rounded-cl bg-green-200 p-1 pl-1.5 text-green-500'>
                         {instrument?.overheidslaag
                           ?.filter((x) => x !== null)
                           .map((level) => (
@@ -210,7 +210,7 @@ export default function InstrumentCard({ instrument, images }) {
                     <div className='flex flex-col justify-center'>
                       <div className='p-xs-semibold py-1 text-cl-dark-grey'>R-ladder</div>
                       <div className='flex items-center'>
-                        <div className='flex flex-row items-center rounded-cl bg-green-100 p-1 pl-1.5'>
+                        <div className='flex flex-row items-center rounded-cl bg-green-200 p-1 pl-1.5'>
                           {instrument?.rLadder?.map((rValue) => (
                             <div key={rValue} className='p-xs-semibold text-green-500'>
                               {rValue}{' '}

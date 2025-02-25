@@ -198,7 +198,7 @@ export default function ContactPageComponent() {
                 <button
                   type='submit'
                   className={
-                    'button inline-flex items-center rounded-full border-2 border-green-500 bg-transparent px-4 py-2 text-green-500 hover:bg-green-300 focus:bg-green-100 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-400'
+                    'button inline-flex items-center rounded-full border-2 border-green-500 bg-transparent px-4 py-2 text-green-500 hover:bg-green-300 focus:bg-green-200 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-400'
                   }
                 >
                   Verzenden &rarr;

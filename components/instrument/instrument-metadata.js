@@ -103,7 +103,7 @@ export default function InstrumentMetaData({ data, borders }) {
               </Modal>
             </div>
             <div className='flex items-center'>
-              <div className='p-xs-semibold shrink rounded-cl bg-green-100 p-1 text-green-500'>
+              <div className='p-xs-semibold shrink rounded-cl bg-green-200 p-1 text-green-500'>
                 {data?.juridischeHaalbaarheid}
               </div>
             </div>
@@ -120,7 +120,7 @@ export default function InstrumentMetaData({ data, borders }) {
             </div>
 
             <div className='flex items-center'>
-              <div className='p-xs-semibold shrink rounded-cl bg-green-100 p-1 text-green-500'>
+              <div className='p-xs-semibold shrink rounded-cl bg-green-200 p-1 text-green-500'>
                 {data?.juridischInvloed}
               </div>
             </div>
@@ -132,7 +132,7 @@ export default function InstrumentMetaData({ data, borders }) {
               <div className='p-xs-semibold py-1 text-cl-dark-grey'>Overheidslaag</div>
             </div>
 
-            <div className='p-xs-semibold shrink rounded-cl bg-green-100 p-1 text-green-500'>
+            <div className='p-xs-semibold shrink rounded-cl bg-green-200 p-1 text-green-500'>
               {data?.overheidslaag
                 ?.filter((x) => x !== null)
                 .map((level) => (
@@ -160,7 +160,7 @@ export default function InstrumentMetaData({ data, borders }) {
                 {data?.rLadder?.map((rValue) => (
                   <div
                     key={rValue}
-                    className='p-xs-semibold shrink rounded-cl bg-green-100 p-1 text-green-500'
+                    className='p-xs-semibold shrink rounded-cl bg-green-200 p-1 text-green-500'
                   >
                     {rValue} {data?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                     &nbsp;

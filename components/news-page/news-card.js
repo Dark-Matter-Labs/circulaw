@@ -81,8 +81,8 @@ export default function NewsCard({ data }) {
               <div
                 className={`${
                   data.colour === 'lightGreen'
-                    ? 'text-cl-black focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100 group-hover:text-green-300 group-hover:underline'
-                    : 'text-gray-100 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-400 group-hover:text-green-300 group-hover:underline'
+                    ? 'text-cl-black focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200 group-hover:text-green-300 group-hover:underline'
+                    : 'text-gray-100 focus:right-2 focus:text-green-200 focus:ring-white active:text-green-400 group-hover:text-green-300 group-hover:underline'
                 } heading-xl-semibold self-end`}
               >
                 Lees meer {'>'}
@@ -163,8 +163,8 @@ export default function NewsCard({ data }) {
               <div
                 className={`${
                   data.colour === 'lightGreen'
-                    ? 'text-cl-black focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100 group-hover:text-green-300 group-hover:underline'
-                    : 'text-gray-100 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-400 group-hover:text-green-300 group-hover:underline'
+                    ? 'text-cl-black focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200 group-hover:text-green-300 group-hover:underline'
+                    : 'text-gray-100 focus:right-2 focus:text-green-200 focus:ring-white active:text-green-400 group-hover:text-green-300 group-hover:underline'
                 } heading-xl-semibold itmes-center inline-flex flex-row self-end`}
               >
                 {data.linkText}{' '}
@@ -175,8 +175,8 @@ export default function NewsCard({ data }) {
               <div
                 className={`${
                   data.colour === 'lightGreen'
-                    ? 'text-cl-black hover:text-green-300 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100'
-                    : 'text-gray-100 hover:text-green-300 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-400'
+                    ? 'text-cl-black hover:text-green-300 focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200'
+                    : 'text-gray-100 hover:text-green-300 focus:right-2 focus:text-green-200 focus:ring-white active:text-green-400'
                 } heading-xl-semibold self-end`}
               >
                 Lees meer {'>'}
@@ -252,8 +252,8 @@ export default function NewsCard({ data }) {
             <div
               className={`${
                 data.colour === 'lightGreen'
-                  ? 'text-cl-black hover:text-green-300 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100'
-                  : 'text-gray-100 hover:text-green-300 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-400'
+                  ? 'text-cl-black hover:text-green-300 focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200'
+                  : 'text-gray-100 hover:text-green-300 focus:right-2 focus:text-green-200 focus:ring-white active:text-green-400'
               } heading-xl-semibold itmes-center inline-flex flex-row self-end`}
             >
               {data.linkText}{' '}
@@ -264,8 +264,8 @@ export default function NewsCard({ data }) {
             <div
               className={`${
                 data.colour === 'lightGreen'
-                  ? 'text-cl-black hover:text-green-300 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100'
-                  : 'text-gray-100 hover:text-green-300 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-400'
+                  ? 'text-cl-black hover:text-green-300 focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200'
+                  : 'text-gray-100 hover:text-green-300 focus:right-2 focus:text-green-200 focus:ring-white active:text-green-400'
               } heading-xl-semibold self-end`}
             >
               Lees meer {'>'}
