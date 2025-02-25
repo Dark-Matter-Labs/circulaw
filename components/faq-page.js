@@ -11,7 +11,7 @@ import { IconChevronDown } from '@tabler/icons-react';
 
 export default function FAQPageComponent({ data }) {
   return (
-    <div className='global-margin pb-8 text-gray-800'>
+    <div className='global-margin pb-8 text-cl-black'>
       <div className='grid w-full grid-cols-1 justify-center'>
         <div className=''>
           <div className='p-2xs-bold link-interaction rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 pt-8 text-green-600'>
@@ -21,7 +21,7 @@ export default function FAQPageComponent({ data }) {
           </div>
 
           <div className='mx-auto max-w-4xl'>
-            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold py-6 text-gray-800 sm:pb-10 sm:pt-10 lg:block'>
+            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold py-6 text-cl-black sm:pb-10 sm:pt-10 lg:block'>
               {data?.pageTitle}
             </h1>
             <Accordion.Root

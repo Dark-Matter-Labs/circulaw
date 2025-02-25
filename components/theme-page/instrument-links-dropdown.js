@@ -38,7 +38,7 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                   router.push(`/${productChain}/${thema}/categorie`);
                 }}
               >
-                <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-gray-800 hover:text-green-500'>
+                <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:text-green-500'>
                   <span className='p-base block truncate pl-3'>Per categorie</span>
                 </div>
               </PopoverButton>
@@ -48,7 +48,7 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                   router.push(`/${productChain}/${thema}/overheidsbevoegdheid`);
                 }}
               >
-                <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-500 bg-gray-100 text-gray-800 hover:text-green-500'>
+                <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:text-green-500'>
                   <span className='p-base block truncate pl-3'>Per overheidsbevoegdheid</span>
                 </div>
               </PopoverButton>
@@ -87,7 +87,7 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                   router.push(`/${productChain}/${thema}/instrumenten`);
                 }}
               >
-                <div className='flex h-10 w-full cursor-pointer items-center border-b border-l border-r border-green-500 bg-gray-100 text-gray-800 hover:text-green-500'>
+                <div className='flex h-10 w-full cursor-pointer items-center border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:text-green-500'>
                   <span className='p-base block truncate pl-3'>In lijst met filters</span>
                 </div>
               </PopoverButton>
@@ -97,7 +97,7 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                   router.push(`/${productChain}/${thema}/overheidsbevoegdheid`);
                 }}
               >
-                <div className='flex h-10 w-full cursor-pointer items-center rounded-b-cl border-b border-l border-r border-green-500 bg-gray-100 text-gray-800 hover:text-green-500'>
+                <div className='flex h-10 w-full cursor-pointer items-center rounded-b-cl border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:text-green-500'>
                   <span className='p-base block truncate pl-3'>Per overheidsbevoegdheid</span>
                 </div>
               </PopoverButton>
@@ -138,7 +138,7 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                   router.push(`/${productChain}/${thema}/categorie`);
                 }}
               >
-                <div className='flex h-10 w-full cursor-pointer items-center border-b border-l border-r border-green-500 bg-gray-100 text-gray-800 hover:text-green-500'>
+                <div className='flex h-10 w-full cursor-pointer items-center border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:text-green-500'>
                   <span className='p-base block truncate pl-3'>Per categorie</span>
                 </div>
               </PopoverButton>
@@ -148,7 +148,7 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
                   router.push(`/${productChain}/${thema}/instrumenten`);
                 }}
               >
-                <div className='flex h-10 w-full cursor-pointer items-center rounded-b-cl border-b border-l border-r border-green-500 bg-gray-100 text-gray-800 hover:text-green-500'>
+                <div className='flex h-10 w-full cursor-pointer items-center rounded-b-cl border-b border-l border-r border-green-500 bg-gray-100 text-cl-black hover:text-green-500'>
                   <span className='p-base block truncate pl-3'>In lijst met filters</span>
                 </div>
               </PopoverButton>

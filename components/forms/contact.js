@@ -95,7 +95,7 @@ export default function ContactPageComponent() {
               <div className='sm:col-span-2'>
                 <label
                   htmlFor='company'
-                  className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                  className='heading-xl-semibold sm:heading-2xl-semibold block text-cl-black'
                 >
                   Voor welke organisatie werk je?
                 </label>
@@ -114,7 +114,7 @@ export default function ContactPageComponent() {
               <div className='sm:col-span-2'>
                 <label
                   htmlFor='role'
-                  className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                  className='heading-xl-semibold sm:heading-2xl-semibold block text-cl-black'
                 >
                   Wat is je functie/rol?
                 </label>
@@ -133,7 +133,7 @@ export default function ContactPageComponent() {
               <div className='sm:col-span-2'>
                 <label
                   htmlFor='email'
-                  className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                  className='heading-xl-semibold sm:heading-2xl-semibold block text-cl-black'
                 >
                   Op welk e-mailadres kunnen we je bereiken?{' '}
                   <span className='text-green-400'>*</span>
@@ -156,7 +156,7 @@ export default function ContactPageComponent() {
               <div className='sm:col-span-2'>
                 <label
                   htmlFor='message'
-                  className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                  className='heading-xl-semibold sm:heading-2xl-semibold block text-cl-black'
                 >
                   Wat is je vraag of opmerking? <span className='text-green-400'>*</span>
                 </label>
@@ -175,7 +175,7 @@ export default function ContactPageComponent() {
               <div className='mt-1 flex items-baseline'>
                 <input type='hidden' name='subscribe' value='no' />
                 <input type='checkbox' name='subscribe' value='yes' onChange={handleChange()} />
-                <label className='heading-xl-semibold sm:heading-2xl-semibold block pl-2 text-gray-800'>
+                <label className='heading-xl-semibold sm:heading-2xl-semibold block pl-2 text-cl-black'>
                   Abonneren op de nieuwsbrief
                 </label>
               </div>
@@ -215,7 +215,7 @@ export default function ContactPageComponent() {
           <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pt-10 text-green-600'>
             Bedankt!
           </h1>
-          <p className='p-base max-w-2xl py-10 text-gray-800'>
+          <p className='p-base max-w-2xl py-10 text-cl-black'>
             Dank voor je bericht! Je hoort van ons.
           </p>
           <div className='pb-20 sm:col-span-2'>

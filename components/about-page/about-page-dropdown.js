@@ -26,7 +26,7 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
             {remainingTitles?.map((remaining, id) => (
               <DisclosureButton
                 key={id}
-                className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-gray-800 last:rounded-b-cl hover:text-green-500'
+                className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-gray-100 text-cl-black last:rounded-b-cl hover:text-green-500'
                 as='li'
                 onClick={() => {
                   router.push(`/over/${encodeURIComponent(remaining?.slug)}`);

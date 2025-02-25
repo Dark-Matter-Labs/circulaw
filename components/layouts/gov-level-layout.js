@@ -68,7 +68,7 @@ export default function GovLevelLayout({ ...props }) {
             <div className='col-span-1 mt-10 grid h-full w-80 items-start justify-center'>
               <div
                 id='allId'
-                className='justify-left flex h-10 w-80 items-center rounded-full border border-green-800 bg-gray-100 text-gray-800'
+                className='justify-left flex h-10 w-80 items-center rounded-full border border-green-800 bg-gray-100 text-cl-black'
               >
                 <div className='flex h-10 w-10 items-center justify-center rounded-full border-b border-r border-t border-green-800'>
                   <h5 className='p-2xs-semibold sm:p-xs-semibold'>A</h5>
@@ -663,10 +663,10 @@ export default function GovLevelLayout({ ...props }) {
       {/* TEXT COMPONENT */}
       <div className='global-margin mb-20 mt-4'>
         <div className='mx-auto max-w-3xl'>
-          <p className='p-base pb-6 text-gray-800'>{props.p1}</p>
-          {props.p2 !== '' && <p className='p-base pb-6 text-gray-800'>{props.p2}</p>}
-          {props.p3 !== '' && <p className='p-base pb-6 text-gray-800'>{props.p3}</p>}
-          {props.p4 !== '' && <p className='p-base pb-6 text-gray-800'>{props.p4}</p>}
+          <p className='p-base pb-6 text-cl-black'>{props.p1}</p>
+          {props.p2 !== '' && <p className='p-base pb-6 text-cl-black'>{props.p2}</p>}
+          {props.p3 !== '' && <p className='p-base pb-6 text-cl-black'>{props.p3}</p>}
+          {props.p4 !== '' && <p className='p-base pb-6 text-cl-black'>{props.p4}</p>}
         </div>
         <div className='sm:hidden'>
           <div className='pb-6'>

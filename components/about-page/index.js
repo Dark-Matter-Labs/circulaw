@@ -13,7 +13,7 @@ export default function AboutPageComponent({ data }) {
   return (
     <div>
       <div className='h-40 bg-about-header bg-cover bg-center'></div>
-      <div className='global-margin pb-8 text-gray-800'>
+      <div className='global-margin pb-8 text-cl-black'>
         <div className='block w-full lg:hidden'>
           <AboutPageDropdown currentSlug={data?.slug.current} slugs={data?.slugs} />
         </div>
@@ -25,7 +25,7 @@ export default function AboutPageComponent({ data }) {
               </Link>
             </div>
             <div className='max-w-3xl'>
-              <h1 className='heading-2xl-semibold sm:heading-5xl-semibold py-6 text-gray-800 sm:pb-10 sm:pt-10 lg:block'>
+              <h1 className='heading-2xl-semibold sm:heading-5xl-semibold py-6 text-cl-black sm:pb-10 sm:pt-10 lg:block'>
                 {data?.pageTitle}
               </h1>
               <PortableText value={data?.aboutPageContent} components={portableTextComponents} />

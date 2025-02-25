@@ -48,7 +48,7 @@ const cookies = [
 
 export default function CookieInfo() {
   return (
-    <div className='global-margin my-20 max-w-2xl text-gray-800'>
+    <div className='global-margin my-20 max-w-2xl text-cl-black'>
       <h1 className='heading-3xl-semibold sm:heading-5xl-semibold pb-6'>Cookiebeleid CircuLaw</h1>
       <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>Wat zijn cookies?</h2>
       <p className='p-base max-w-4xl pb-6'>
@@ -86,7 +86,7 @@ export default function CookieInfo() {
               <table className='min-w-full divide-y divide-green-800'>
                 <thead className='bg-gray-50'>
                   <tr className='divide-x divide-gray-200'>
-                    <th scope='col' className='py-3.5 pl-4 pr-4 text-left text-gray-800 sm:pl-6'>
+                    <th scope='col' className='py-3.5 pl-4 pr-4 text-left text-cl-black sm:pl-6'>
                       Cookie naam
                     </th>
                     <th scope='col' className='px-4 py-3.5 text-left text-gray-900'>
@@ -100,11 +100,11 @@ export default function CookieInfo() {
                 <tbody className='divide-y divide-gray-200 bg-gray-100'>
                   {cookies.map((cookie) => (
                     <tr key={cookie.email} className='divide-x divide-gray-200'>
-                      <td className='whitespace-nowrap py-4 pl-4 pr-4 text-gray-800 sm:pl-6'>
+                      <td className='whitespace-nowrap py-4 pl-4 pr-4 text-cl-black sm:pl-6'>
                         {cookie.name}
                       </td>
-                      <td className='p-4 text-gray-800'>{cookie.description}</td>
-                      <td className='whitespace-nowrap p-4 text-gray-800'>{cookie.valid}</td>
+                      <td className='p-4 text-cl-black'>{cookie.description}</td>
+                      <td className='whitespace-nowrap p-4 text-cl-black'>{cookie.valid}</td>
                     </tr>
                   ))}
                 </tbody>

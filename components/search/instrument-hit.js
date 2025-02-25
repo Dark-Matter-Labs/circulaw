@@ -37,7 +37,7 @@ export const InstrumentHit = ({ hit }) => {
             </div>
             <div className='mt-2 block'>
               <div className='mb-2'>
-                <h3 className='heading-2xl-semibold max-w-[650px] text-gray-800 no-underline transition-colors duration-100 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800 group-hover:text-green-300'>
+                <h3 className='heading-2xl-semibold max-w-[650px] text-cl-black no-underline transition-colors duration-100 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800 group-hover:text-green-300'>
                   <Highlight
                     attribute='titel'
                     hit={hit}
@@ -47,7 +47,7 @@ export const InstrumentHit = ({ hit }) => {
                   />
                 </h3>
               </div>
-              <div className='newlineDisplay p-base mt-2 block pb-2 text-gray-800'>
+              <div className='newlineDisplay p-base mt-2 block pb-2 text-cl-black'>
                 <p className='p-base line-clamp-3 max-w-[650px]'>
                   <Highlight
                     attribute='subtitel'
@@ -198,7 +198,7 @@ export const InstrumentHit = ({ hit }) => {
 
             <div className='mt-2 block'>
               <div className='mb-2'>
-                <h3 className='heading-2xl-semibold max-w-[650px] text-gray-800 no-underline hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'>
+                <h3 className='heading-2xl-semibold max-w-[650px] text-cl-black no-underline hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'>
                   <Highlight
                     attribute='titel'
                     hit={hit}
@@ -208,7 +208,7 @@ export const InstrumentHit = ({ hit }) => {
                   />
                 </h3>
               </div>
-              <div className='newlineDisplay p-base mt-2 block pb-2 text-gray-800'>
+              <div className='newlineDisplay p-base mt-2 block pb-2 text-cl-black'>
                 <p className='p-base max-w-[650px]'>
                   {' '}
                   <Highlight

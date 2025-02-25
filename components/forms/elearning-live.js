@@ -64,28 +64,28 @@ export default function ElearnignLiveEvent() {
             Livesessie: Circulaire houtbouw onder de Omgevingswet
           </h1>
           <div className='mb-20 mt-8 max-w-3xl'>
-            <p className='pb-6 text-gray-800 sm:col-span-2'>
+            <p className='pb-6 text-cl-black sm:col-span-2'>
               Wat fijn dat je de e-learning over circulaire houtbouw onder de Omgevingswet hebt
               afgerond! En wat leuk dat je interesse hebt in de verdiepende livesessie, op{' '}
               <span className='p-base-semibold'>8 april in het AMS Institute, Amsterdam.</span>
             </p>
-            <p className='pb-6 text-gray-800'>
+            <p className='pb-6 text-cl-black'>
               Als je hieronder je gegevens invult, dan laten we je snel weten of je wordt
               uitgenodigd. Je ontvangt dan ook alle details over het programma.
             </p>
-            <p className='pb-6 text-gray-800'>
+            <p className='pb-6 text-cl-black'>
               Er is een beperkt aantal plekken. We maken een selectie op basis van je rol en je
               profiel.
             </p>
-            <p className='text-gray-800'>Misschien tot snel,</p>
-            <p className='pb-8 text-gray-800'>Team Circulaw</p>
+            <p className='text-cl-black'>Misschien tot snel,</p>
+            <p className='pb-8 text-cl-black'>Team Circulaw</p>
 
             <h3 className='heading-3xl-semibold mt-6'>Ik wil me aanmelden voor de livesessie</h3>
 
             <div className='mt-12 sm:col-span-2'>
               <label
                 htmlFor='isElearningFinished'
-                className='heading-xl-semibold sm:heading-2xl-semibold mb-2 block text-gray-800'
+                className='heading-xl-semibold sm:heading-2xl-semibold mb-2 block text-cl-black'
               >
                 Heb je de e-learning afgerond?
               </label>
@@ -101,7 +101,7 @@ export default function ElearnignLiveEvent() {
                   onChange={() => setHasCompleted(true)}
                   className='text-green-800 checked:bg-green-800'
                 />
-                <label className='block pl-2 pr-4 text-gray-800'>Ja</label>
+                <label className='block pl-2 pr-4 text-cl-black'>Ja</label>
 
                 <input
                   type='radio'
@@ -111,7 +111,7 @@ export default function ElearnignLiveEvent() {
                   onChange={() => setHasCompleted(false)}
                   className='text-green-800 checked:bg-green-800'
                 />
-                <label className='block pl-2 text-gray-800'>Nee</label>
+                <label className='block pl-2 text-cl-black'>Nee</label>
               </div>
             </div>
 
@@ -128,7 +128,7 @@ export default function ElearnignLiveEvent() {
                   <div>
                     <label
                       htmlFor='first-name'
-                      className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                      className='heading-xl-semibold sm:heading-2xl-semibold block text-cl-black'
                     >
                       Wat is je naam? <span className='text-green-400'>*</span>
                     </label>
@@ -148,7 +148,7 @@ export default function ElearnignLiveEvent() {
                   <div className='sm:col-span-2'>
                     <label
                       htmlFor='company'
-                      className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                      className='heading-xl-semibold sm:heading-2xl-semibold block text-cl-black'
                     >
                       Voor welke organisatie werk je? <span className='text-green-400'>*</span>
                     </label>
@@ -168,7 +168,7 @@ export default function ElearnignLiveEvent() {
                   <div className='sm:col-span-2'>
                     <label
                       htmlFor='role'
-                      className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                      className='heading-xl-semibold sm:heading-2xl-semibold block text-cl-black'
                     >
                       Wat is je functie/rol? <span className='text-green-400'>*</span>
                     </label>
@@ -188,7 +188,7 @@ export default function ElearnignLiveEvent() {
                   <div className='sm:col-span-2'>
                     <label
                       htmlFor='email'
-                      className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                      className='heading-xl-semibold sm:heading-2xl-semibold block text-cl-black'
                     >
                       Op welk e-mailadres kunnen we je bereiken?{' '}
                       <span className='text-green-400'>*</span>
@@ -210,7 +210,7 @@ export default function ElearnignLiveEvent() {
                   <div className='mt-1 flex items-baseline'>
                     <input type='hidden' name='subscribe' value='no' />
                     <input type='checkbox' name='subscribe' value='yes' onChange={handleChange()} />
-                    <label className='heading-xl-semibold sm:heading-2xl-semibold block pl-2 text-gray-800'>
+                    <label className='heading-xl-semibold sm:heading-2xl-semibold block pl-2 text-cl-black'>
                       Abonneren op de nieuwsbrief
                     </label>
                   </div>
@@ -246,7 +246,7 @@ export default function ElearnignLiveEvent() {
               </>
             )}
             {hasCompleted === false && (
-              <p className='mt-2 pb-6 text-gray-800'>
+              <p className='mt-2 pb-6 text-cl-black'>
                 Heb je de e-learning Circulaire Houtbouw nog niet gedaan?{' '}
                 <Link
                   className='link-base link-interaction'
@@ -264,7 +264,7 @@ export default function ElearnignLiveEvent() {
           <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pt-10 text-green-600'>
             Bedankt!
           </h1>
-          <p className='p-base max-w-2xl py-10 text-gray-800'>
+          <p className='p-base max-w-2xl py-10 text-cl-black'>
             Dank voor je interesse! Je hoort van ons
           </p>
           <div className='pb-20 sm:col-span-2'>

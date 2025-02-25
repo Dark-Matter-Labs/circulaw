@@ -327,7 +327,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                               className='h-full w-full rounded-l-cl'
                             />
                           </div>
-                          <div className='flex max-w-[240px] items-center justify-center px-4 text-gray-800'>
+                          <div className='flex max-w-[240px] items-center justify-center px-4 text-cl-black'>
                             <div className='heading-xl-semibold'>Instrumenten per categorie</div>
                             <IconArrowRight
                               className='mt-1 block h-8 w-8 text-green-600'
@@ -351,7 +351,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                               className='h-full w-full rounded-l-cl'
                             />
                           </div>
-                          <div className='flex max-w-[240px] items-center justify-center px-4 text-gray-800'>
+                          <div className='flex max-w-[240px] items-center justify-center px-4 text-cl-black'>
                             <div className='heading-xl-semibold'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
                             <IconArrowRight
                               className='block h-8 w-8 text-green-600'
@@ -375,7 +375,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                               className='h-full w-full rounded-l-cl'
                             />
                           </div>
-                          <div className='flex max-w-[240px] items-center justify-center px-4 text-gray-800'>
+                          <div className='flex max-w-[240px] items-center justify-center px-4 text-cl-black'>
                             <div className='heading-xl-semibold'>{thema?.welkeTitle}</div>
                             <IconArrowRight
                               className='mt-1 block h-8 w-8 text-green-600'

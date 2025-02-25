@@ -89,7 +89,7 @@ export default function FeedbackComponent() {
               <span className=' '>Terug</span>
               <span className='ml-2'>{'>'}</span>
             </button>
-            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pt-10 text-gray-800'>
+            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pt-10 text-cl-black'>
               Met jouw hulp maken we CircuLaw beter
             </h1>
             <p className='heading-2xl max-w-3xl pt-8'>
@@ -111,7 +111,7 @@ export default function FeedbackComponent() {
                 className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'
               >
                 <div className='sm:col-span-2'>
-                  <label htmlFor='message' className='block text-gray-800'>
+                  <label htmlFor='message' className='block text-cl-black'>
                     <h3 className='heading-xl-semibold sm:heading-2xl-semibold'>
                       Tip, voorbeeld, vraag <span className='text-green-400'>*</span>
                     </h3>
@@ -129,7 +129,7 @@ export default function FeedbackComponent() {
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
-                  <label htmlFor='file' className='block text-gray-800'>
+                  <label htmlFor='file' className='block text-cl-black'>
                     <h3 className='heading-xl-semibold sm:heading-2xl-semibold pb-2'>Bijlagen</h3>
                   </label>
                   <CustomButton color='greenBackgroundLessRound' onClick={handleClick}>
@@ -150,7 +150,7 @@ export default function FeedbackComponent() {
                   </p>
                 </div>
                 <div>
-                  <label htmlFor='first-name' className='block text-gray-800'>
+                  <label htmlFor='first-name' className='block text-cl-black'>
                     <h3 className='heading-xl-semibold sm:heading-2xl-semibold'>
                       Je voor- en achternaam <span className='text-green-400'>*</span>
                     </h3>
@@ -169,7 +169,7 @@ export default function FeedbackComponent() {
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
-                  <label htmlFor='email' className='block text-gray-800'>
+                  <label htmlFor='email' className='block text-cl-black'>
                     <h3 className='heading-xl-semibold sm:heading-2xl-semibold'>
                       Je e-mail <span className='text-green-400'>*</span>
                     </h3>
@@ -192,7 +192,7 @@ export default function FeedbackComponent() {
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
-                  <label htmlFor='company' className='block text-gray-800'>
+                  <label htmlFor='company' className='block text-cl-black'>
                     <h3 className='heading-xl-semibold sm:heading-2xl-semibold'>
                       Je organisatie / bedrijf <span className='text-green-400'>*</span>
                     </h3>
@@ -211,7 +211,7 @@ export default function FeedbackComponent() {
                   </div>
                 </div>
                 <div className='sm:col-span-2'>
-                  <label htmlFor='company' className='block text-gray-800'>
+                  <label htmlFor='company' className='block text-cl-black'>
                     <h3 className='heading-xl-semibold sm:heading-2xl-semibold'>
                       Je functie / rol <span className='text-green-400'>*</span>
                     </h3>
@@ -273,7 +273,7 @@ export default function FeedbackComponent() {
             <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pt-10 text-green-600'>
               Dank voor je feedback!
             </h1>
-            <p className='p-base max-w-2xl py-10 text-gray-800'>
+            <p className='p-base max-w-2xl py-10 text-cl-black'>
               Samen met jou kunnen we CircuLaw blijven verbeteren, en dat is hard nodig! We gaan je
               feedback bekijken en zullen je eventueel benaderen als we nog vragen hebben of
               antwoorden op jouw vraag. Wil je op de hoogte blijven van CircuLaw?{' '}

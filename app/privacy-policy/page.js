@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function Privacy() {
   return (
-    <div className='global-margin my-20 max-w-2xl text-gray-800'>
+    <div className='global-margin my-20 max-w-2xl text-cl-black'>
       <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pb-6'>Privacyverklaring</h1>
       <p className='p-base max-w-4xl pb-6 pt-2'>
         Het team CircuLaw is verantwoordelijk voor de verwerking van persoonsgegevens zoals

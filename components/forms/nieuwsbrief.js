@@ -68,7 +68,7 @@ export default function NewsLetterComponent() {
           <div className='mb-20 mt-8 max-w-3xl'>
             <div className='pb-8 sm:col-span-2'>
               <div className=''>
-                <p className='text-gray-800'>
+                <p className='text-cl-black'>
                   Fijn dat je geïnteresseerd bent in CircuLaw-nieuws. Onze nieuwsbrief sturen we
                   alleen als we echt wat te melden hebben. Je hoeft dus niet bang te zijn voor een
                   overdaad aan berichten van ons.
@@ -84,7 +84,7 @@ export default function NewsLetterComponent() {
               className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'
             >
               <div>
-                <label htmlFor='first-name' className='block text-gray-800'>
+                <label htmlFor='first-name' className='block text-cl-black'>
                   Wat is je naam? <span className='text-green-400'>*</span>
                 </label>
                 <div className='mt-1'>
@@ -101,7 +101,7 @@ export default function NewsLetterComponent() {
                 </div>
               </div>
               <div className='sm:col-span-2'>
-                <label htmlFor='email' className='block text-gray-800'>
+                <label htmlFor='email' className='block text-cl-black'>
                   Op welk e-mailadres kunnen we je bereiken?{' '}
                   <span className='text-green-400'>*</span>
                 </label>
@@ -120,7 +120,7 @@ export default function NewsLetterComponent() {
                 </div>
               </div>
               <div className='sm:col-span-2'>
-                <label htmlFor='company' className='block text-gray-800'>
+                <label htmlFor='company' className='block text-cl-black'>
                   Voor welke organisatie werk je?
                 </label>
                 <div className='mt-1'>
@@ -136,7 +136,7 @@ export default function NewsLetterComponent() {
                 </div>
               </div>
               <div className='sm:col-span-2'>
-                <label htmlFor='role' className='block text-gray-800'>
+                <label htmlFor='role' className='block text-cl-black'>
                   Wat is je functie/rol?
                 </label>
                 <div className='mt-1'>
@@ -186,7 +186,7 @@ export default function NewsLetterComponent() {
           <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pt-10 text-green-600'>
             Bedankt!
           </h1>
-          <p className='p-lg max-w-2xl py-10 text-gray-800'>
+          <p className='p-lg max-w-2xl py-10 text-cl-black'>
             Bedankt voor je aanmelding voor onze nieuwsbrief!
           </p>
           <div className='pb-20 sm:col-span-2'>

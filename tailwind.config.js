@@ -32,8 +32,8 @@ module.exports = {
         'gray-300': '#DAD8D8',
         'gray-400': '#BFC0BF',
         'gray-500': '#A2A3A2',
-        'gray-600': '#676868',
-        'gray-800': '#1F2223',
+        'cl-dark-grey': '#676868',
+        'cl-black': '#1F2223',
       },
       fontFamily: {
         jakarta: ['var(--font-plus-jakarta-sans)'],

@@ -49,11 +49,11 @@ export default function InstrumentCard({ instrument, images }) {
                 </div>
                 <div className='mt-2 block'>
                   <div className='mb-2'>
-                    <h3 className='heading-2xl-semibold max-w-[650px] text-gray-800 no-underline transition-colors duration-100 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800 group-hover:text-green-300'>
+                    <h3 className='heading-2xl-semibold max-w-[650px] text-cl-black no-underline transition-colors duration-100 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800 group-hover:text-green-300'>
                       {instrument.titel}{' '}
                     </h3>
                   </div>
-                  <div className='newlineDisplay p-base mt-2 block pb-2 text-gray-800'>
+                  <div className='newlineDisplay p-base mt-2 block pb-2 text-cl-black'>
                     <p className='p-base line-clamp-3 sm:max-w-[650px]'>{instrument.introText}</p>
                   </div>
                   <div className=''>
@@ -162,11 +162,11 @@ export default function InstrumentCard({ instrument, images }) {
               </div>
               <div className='mt-2 block'>
                 <div className='mb-2'>
-                  <h3 className='heading-2xl-semibold focus:ring-winstrumente max-w-[650px] text-gray-800 no-underline hover:text-green-300 focus:text-green-200 focus:ring-2 active:text-green-800'>
+                  <h3 className='heading-2xl-semibold focus:ring-winstrumente max-w-[650px] text-cl-black no-underline hover:text-green-300 focus:text-green-200 focus:ring-2 active:text-green-800'>
                     {instrument.titel}{' '}
                   </h3>
                 </div>
-                <div className='newlineDisplay p-base mt-2 block pb-2 text-gray-800'>
+                <div className='newlineDisplay p-base mt-2 block pb-2 text-cl-black'>
                   <p className='p-base line-clamp-4 max-w-[650px]'>{instrument.introText}</p>
                 </div>
                 <div className='mb-4 flex flex-col justify-center sm:hidden'>
