@@ -99,7 +99,7 @@ export default function ElearnignLiveEvent() {
                   value='true'
                   checked={hasCompleted}
                   onChange={() => setHasCompleted(true)}
-                  className='text-green-800 checked:bg-green-800'
+                  className='text-cl-black checked:bg-cl-black'
                 />
                 <label className='block pl-2 pr-4 text-cl-black'>Ja</label>
 
@@ -109,7 +109,7 @@ export default function ElearnignLiveEvent() {
                   value='false'
                   checked={hasCompleted === false}
                   onChange={() => setHasCompleted(false)}
-                  className='text-green-800 checked:bg-green-800'
+                  className='text-cl-black checked:bg-cl-black'
                 />
                 <label className='block pl-2 text-cl-black'>Nee</label>
               </div>
@@ -221,7 +221,7 @@ export default function ElearnignLiveEvent() {
                         hebben of je op de hoogte willen houden van je vraag of opmerking. Je
                         gegevens zullen nooit gebruikt worden voor andere doeleinden. Lees onze{' '}
                         <Link href='/privacy-policy' className='link-interaction'>
-                          <span className='text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'>
+                          <span className='text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'>
                             privacy verklaring.
                           </span>
                         </Link>

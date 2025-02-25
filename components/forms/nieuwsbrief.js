@@ -159,7 +159,7 @@ export default function NewsLetterComponent() {
                     nieuwsbrieven. Wil je geen nieuwsbrieven meer ontvangen? Onder aan iedere
                     nieuwsbrief vind je de mogelijkheid je af te melden. Zie verder onze{' '}
                     <Link href='/privacy-policy' className='link-interaction'>
-                      <span className='text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'>
+                      <span className='text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'>
                         privacy verklaring.
                       </span>
                     </Link>

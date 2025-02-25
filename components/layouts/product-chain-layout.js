@@ -20,7 +20,7 @@ export default function PCLayout({ ...props }) {
         <div className='bg-gray-100'>
           <div className='global-margin pb-12 sm:pb-20'>
             <div className='pb-0 pt-14 sm:pb-10'>
-              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold pb-8 text-green-800'>
+              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold pb-8 text-cl-black'>
                 Thema’s en juridische instrumenten
               </h2>
               <p className='p-base max-w-2xl pb-5'>
@@ -45,7 +45,7 @@ export default function PCLayout({ ...props }) {
                             E-learning Circulaire houtbouw onder de Omgevingswet
                           </h3>
                           <div>
-                            <p className='p-base pt-4 text-green-800'>
+                            <p className='p-base pt-4 text-cl-black'>
                               Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw te
                               verankeren in beleid? Dat leer je in onze e-learning: ‘Circulaire
                               houtbouw onder de Omgevingswet’.
@@ -69,7 +69,7 @@ export default function PCLayout({ ...props }) {
                             Planregels: modelteksten voor het omgevingsplan
                           </h3>
                           <div>
-                            <p className='p-base pt-4 text-green-800'>
+                            <p className='p-base pt-4 text-cl-black'>
                               Samen met de omgevingsvisie en omgevingsprogramma is het omgevingsplan
                               een van de instrumenten om circulair bouwen te bevorderen
                             </p>
@@ -131,7 +131,7 @@ export default function PCLayout({ ...props }) {
         <div className='bg-green-50'>
           <div className='global-margin'>
             <div className='pb-14 pt-10'>
-              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold max-w-3xl pb-14 text-green-800'>
+              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold max-w-3xl pb-14 text-cl-black'>
                 {props?.productChainData?.impactTitle}
               </h2>
               <div className='grid grid-cols-1 justify-items-center gap-20 sm:flex sm:justify-center'>
@@ -158,7 +158,7 @@ export default function PCLayout({ ...props }) {
                     </div>
                     <Modal
                       Button={
-                        <p className='p-base-bold border-b border-green-800 pb-1 pt-8 text-green-800'>
+                        <p className='p-base-bold border-b border-cl-black pb-1 pt-8 text-cl-black'>
                           {impact.question}
                         </p>
                       }
@@ -176,7 +176,7 @@ export default function PCLayout({ ...props }) {
         </div>
         <div className='global-margin bg-gray-100 pt-14'>
           <div className='max-w-4xl'>
-            <h2 className='heading-2xl-semibold sm:heading-3xl-semibold pb-14 text-green-800'>
+            <h2 className='heading-2xl-semibold sm:heading-3xl-semibold pb-14 text-cl-black'>
               {props?.productChainData?.ambitionTitle}
             </h2>
             {props?.ambitionList?.map((ambition, index) =>
@@ -196,7 +196,7 @@ export default function PCLayout({ ...props }) {
                   </div>
                   <div className=''>
                     <span className='p-base-semibold text-green-600'>{ambition.subTitle}</span>
-                    <h4 className='heading-2xl-semibold sm:3xl-semibold mt-2 text-green-800'>
+                    <h4 className='heading-2xl-semibold sm:3xl-semibold mt-2 text-cl-black'>
                       {ambition.title}
                     </h4>
                     <p className='p-base max-w-xl pb-4 pt-4'>{ambition.detail}</p>
@@ -241,7 +241,7 @@ export default function PCLayout({ ...props }) {
                   </div>
                   <div className=''>
                     <span className='p-base-semibold text-green-600'>{ambition.subTitle}</span>
-                    <h4 className='heading-2xl-semibold sm:3xl-semibold mt-2 text-green-800'>
+                    <h4 className='heading-2xl-semibold sm:3xl-semibold mt-2 text-cl-black'>
                       {ambition.title}
                     </h4>
                     <p className='p-base max-w-xl pb-4 pt-4'>{ambition.detail}</p>
@@ -261,7 +261,7 @@ export default function PCLayout({ ...props }) {
         {props.links && (
           <div className='bg-green-50 pb-10 pt-14'>
             <div className='global-margin'>
-              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold pb-14 text-green-800'>
+              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold pb-14 text-cl-black'>
                 Duik nog dieper in de materie{' '}
                 <span className='relative -mb-1 inline-block h-6 w-6 pl-0.5'>
                   <svg

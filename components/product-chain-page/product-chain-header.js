@@ -22,7 +22,7 @@ export default function ThemePageHeader({ pageTitle }) {
               className='group inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 text-green-600'
               href='/'
             >
-              <span className='p-2xs-bold align-middle group-hover:text-green-300 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white group-active:text-green-800'>
+              <span className='p-2xs-bold align-middle group-hover:text-green-300 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
                 {' '}
                 Home <span className='ml-2'>{'>'}</span>
               </span>

@@ -39,9 +39,9 @@ export default function LangSwitch({ background }) {
           onClick={() => {
             setTranslateOpen(false);
           }}
-          className='float-right h-6 w-6 cursor-pointer text-green-800 hover:text-green-900'
+          className='float-right h-6 w-6 cursor-pointer text-cl-black hover:text-green-900'
         />
-        <h3 className='heading-2xl-semibold max-w-xs text-green-800'>
+        <h3 className='heading-2xl-semibold max-w-xs text-cl-black'>
           Let Google translate this website
         </h3>
         <div id='google_translate_element' className=''>
@@ -61,8 +61,8 @@ export default function LangSwitch({ background }) {
           }}
           aria-label='Open google translate for CircuLaw'
         >
-          <span className='heading-xl-semibold mr-2 text-green-800'>Vertaling</span>
-          <span className='flex h-6 w-7 items-center justify-center rounded-clSm bg-green-800'>
+          <span className='heading-xl-semibold mr-2 text-cl-black'>Vertaling</span>
+          <span className='flex h-6 w-7 items-center justify-center rounded-clSm bg-cl-black'>
             <IconWorld className='h-4 w-4' />
           </span>
         </button>

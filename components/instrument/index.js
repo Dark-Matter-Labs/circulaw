@@ -80,7 +80,7 @@ export default function Instrument({ data }) {
                           <DisclosurePanel className='rounded-b-cl bg-green-50 w-full py-6 px-4 sm:px-10'>
                             <div className='w-full border border-green-300 flex flex-col rounded-cl mb-10 overflow-hidden'>
                               <div className='flex flex-row justify-between bg-green-300 border-b border-green-300 py-3 px-6'>
-                                <div className='p-base-semibold text-green-800'>
+                                <div className='p-base-semibold text-cl-black'>
                                   Modeltekst omgevingsplan
                                 </div>
                                 <div className='self-end relative'>
@@ -101,7 +101,7 @@ export default function Instrument({ data }) {
                                   </button>
                                   {showLinkCopied && (
                                     <p className='p-xs text-green-500 text-nowrap flex flex-row'>
-                                      <IconCheck className='w-5 h-5 text-green-800 ml-2.5' />
+                                      <IconCheck className='w-5 h-5 text-cl-black ml-2.5' />
                                     </p>
                                   )}
                                 </div>

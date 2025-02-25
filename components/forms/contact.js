@@ -186,7 +186,7 @@ export default function ContactPageComponent() {
                     hebben of je op de hoogte willen houden van je vraag of opmerking. Je gegevens
                     zullen nooit gebruikt worden voor andere doeleinden. Lees onze{' '}
                     <Link href='/privacy-policy' className='link-interaction'>
-                      <span className='text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'>
+                      <span className='text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'>
                         privacy verklaring.
                       </span>
                     </Link>

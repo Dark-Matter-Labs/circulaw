@@ -160,7 +160,7 @@ export default function PopUp({ pillars, modelTexts }) {
                     </div>
                   </div>
                   <Button onClick={close}>
-                    <IconX className='h-6 w-6 text-green-800' />
+                    <IconX className='h-6 w-6 text-cl-black' />
                   </Button>
                 </div>
                 <DialogTitle as='h3' className='heading-2xl-semibold mb-8'>
@@ -169,7 +169,7 @@ export default function PopUp({ pillars, modelTexts }) {
 
                 <div className='mb-10 flex w-full flex-col overflow-hidden rounded-cl border border-green-300'>
                   <div className='flex flex-row justify-between border-b border-green-300 bg-green-300 px-6 py-3'>
-                    <div className='p-base-semibold text-green-800'>Modeltekst omgevingsplan</div>
+                    <div className='p-base-semibold text-cl-black'>Modeltekst omgevingsplan</div>
                     <div className='relative self-end'>
                       <button
                         id='copy_modeltext'
@@ -190,7 +190,7 @@ export default function PopUp({ pillars, modelTexts }) {
                       </button>
                       {showLinkCopied && (
                         <p className='p-xs flex flex-row text-nowrap text-green-500'>
-                          <IconCheck className='ml-2.5 h-5 w-5 text-green-800' />
+                          <IconCheck className='ml-2.5 h-5 w-5 text-cl-black' />
                         </p>
                       )}
                     </div>

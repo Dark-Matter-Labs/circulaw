@@ -23,7 +23,7 @@ export default function NewsDetailPageHeader({ data }) {
       setCardColour('bg-green-500');
     } else if (data?.colour === 'darkGreen') {
       setCardColour('bg-green-600');
-    } else setCardColour('bg-green-800');
+    } else setCardColour('bg-cl-black');
   }, [data]);
 
   return (
@@ -33,14 +33,14 @@ export default function NewsDetailPageHeader({ data }) {
           <div className='mt-6 flex h-6 items-center rounded-clSm bg-gray-100'>
             <Link
               href='/'
-              className='p-2xs-bold flex flex-row items-center pl-2 text-green-600 hover:text-green-300 active:text-green-800'
+              className='p-2xs-bold flex flex-row items-center pl-2 text-green-600 hover:text-green-300 active:text-cl-black'
             >
               Home
             </Link>
             <span className='p-2xs-bold px-2 text-green-600'>{'>'}</span>
             <Link
               href='/nieuws'
-              className='p-2xs-bold pr-2 text-green-600 hover:text-green-300 active:text-green-800'
+              className='p-2xs-bold pr-2 text-green-600 hover:text-green-300 active:text-cl-black'
             >
               Nieuws
             </Link>
@@ -51,7 +51,7 @@ export default function NewsDetailPageHeader({ data }) {
                 classes={`${
                   data?.colour === 'extraDarkGreen'
                     ? 'text-green-300 border border-green-300 bg-transparent'
-                    : 'text-white bg-green-800 border border-green-800'
+                    : 'text-white bg-cl-black border border-cl-black'
                 }`}
               >
                 {data?.category}
@@ -59,7 +59,7 @@ export default function NewsDetailPageHeader({ data }) {
             </div>
             <h1
               className={`${
-                cardColour === 'bg-green-300' ? 'text-green-800' : 'text-gray-100'
+                cardColour === 'bg-green-300' ? 'text-cl-black' : 'text-gray-100'
               } heading-2xl-semibold sm:heading-5xl-semibold`}
             >
               {data?.title}
@@ -67,7 +67,7 @@ export default function NewsDetailPageHeader({ data }) {
             {data?.newsDate && (
               <div
                 className={`${
-                  cardColour === 'bg-green-300' ? 'text-green-800' : 'text-gray-100'
+                  cardColour === 'bg-green-300' ? 'text-cl-black' : 'text-gray-100'
                 } p-base`}
               >
                 {' '}

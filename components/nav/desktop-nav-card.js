@@ -9,7 +9,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
   return (
     <div
       className={`${
-        pathname === '/' ? 'bg-green-600 text-green-200' : 'bg-green-50 text-green-800'
+        pathname === '/' ? 'bg-green-600 text-green-200' : 'bg-green-50 text-cl-black'
       } h-full w-full ${
         navData.slug === 'bouw'
           ? '3xl:pl-32 pl-4 pr-2 pt-8 lgNav:pl-10 xl:pl-20'
@@ -54,7 +54,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
             {thema.new && (
               <span
                 className={`${
-                  pathname === '/' ? 'text-green-200' : 'text-green-800'
+                  pathname === '/' ? 'text-green-200' : 'text-cl-black'
                 } absolute ml-1.5 mt-[2px] font-jakarta text-[8px] font-bold uppercase hover:no-underline`}
               >
                 Nieuw

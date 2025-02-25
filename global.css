@@ -139,7 +139,7 @@
   }
 
   .link-interaction {
-    @apply hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white;
+    @apply hover:text-green-300 active:text-cl-black focus:text-green-200 focus:ring-2 focus:ring-white;
   }
 
   .link-interaction-light-green-bg {

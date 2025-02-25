@@ -26,7 +26,6 @@ module.exports = {
         'green-400': '#07B071',
         'green-500': '#028352',
         'green-600': '#035E46',
-        'green-800': '#053237',
         'gray-100': '#FDFDFD',
         'gray-200': '#F0F0F0', // gray 250 in DS
         'cl-grey': '#A2A3A2',

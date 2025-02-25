@@ -422,7 +422,7 @@ export default function Nav(props) {
                           <div className='global-margin flex flex-col items-start justify-end'>
                             <Disclosure>
                               <>
-                                <DisclosureButton className='heading-xl-semibold group flex w-full flex-row items-center py-4 text-left text-green-800 data-[open]:text-green-500'>
+                                <DisclosureButton className='heading-xl-semibold group flex w-full flex-row items-center py-4 text-left text-cl-black data-[open]:text-green-500'>
                                   Productketens
                                   <IconChevronDown className='ml-2 mt-1 h-5 w-5 group-data-[open]:rotate-180' />
                                 </DisclosureButton>
@@ -443,7 +443,7 @@ export default function Nav(props) {
                             {/* EU */}
                             <Disclosure>
                               <>
-                                <DisclosureButton className='heading-xl-semibold group flex w-full flex-row items-center border-t py-4 text-left text-green-800 data-[open]:text-green-500'>
+                                <DisclosureButton className='heading-xl-semibold group flex w-full flex-row items-center border-t py-4 text-left text-cl-black data-[open]:text-green-500'>
                                   EU wetgeving
                                   <IconChevronDown className='ml-2 mt-1 h-5 w-5 group-data-[open]:rotate-180' />
                                 </DisclosureButton>
@@ -487,7 +487,7 @@ export default function Nav(props) {
 
                             <Disclosure>
                               <>
-                                <DisclosureButton className='heading-xl-semibold group flex w-full flex-row items-center border-t py-4 text-left text-green-800 data-[open]:text-green-500'>
+                                <DisclosureButton className='heading-xl-semibold group flex w-full flex-row items-center border-t py-4 text-left text-cl-black data-[open]:text-green-500'>
                                   Over CircuLaw
                                   <IconChevronDown className='ml-2 mt-1 h-5 w-5 group-data-[open]:rotate-180' />
                                 </DisclosureButton>
@@ -528,11 +528,11 @@ export default function Nav(props) {
                             <div className='flex w-full flex-row items-start justify-start pt-4'>
                               <Link
                                 href='/zoeken'
-                                className='heading-xl-semibold flex flex-row items-center justify-center text-green-800'
+                                className='heading-xl-semibold flex flex-row items-center justify-center text-cl-black'
                                 onClick={() => setMobileMenuIsOpen(false)}
                               >
                                 <span className='mr-2'>Zoeken </span>
-                                <span className='flex h-6 w-7 items-center justify-center rounded-clSm bg-green-800 text-green-50'>
+                                <span className='flex h-6 w-7 items-center justify-center rounded-clSm bg-cl-black text-green-50'>
                                   <IconSearch className='h-4 w-4' />
                                 </span>
                               </Link>
@@ -565,7 +565,7 @@ export default function Nav(props) {
                               `${
                                 pathname === '/'
                                   ? 'text-white group-hover:decoration-green-200'
-                                  : 'text-green-800 group-hover:decoration-green-500'
+                                  : 'text-cl-black group-hover:decoration-green-500'
                               }`,
                             ]
                       } p-base group-hover:underline`}
@@ -639,7 +639,7 @@ export default function Nav(props) {
                               `${
                                 pathname === '/'
                                   ? 'text-white group-hover:decoration-green-200'
-                                  : 'text-green-800 group-hover:decoration-green-500'
+                                  : 'text-cl-black group-hover:decoration-green-500'
                               }`,
                             ]
                       } p-base group-hover:underline`}
@@ -761,7 +761,7 @@ export default function Nav(props) {
                               `${
                                 pathname === '/'
                                   ? 'text-white group-hover:decoration-green-200'
-                                  : 'text-green-800 group-hover:decoration-green-500'
+                                  : 'text-cl-black group-hover:decoration-green-500'
                               }`,
                             ]
                       } p-base group-hover:underline`}

@@ -55,7 +55,7 @@ export default async function Page() {
       <div className='bg-gray-100 pb-12 pt-12 sm:pt-0'>
         <div className='global-margin'>
           <div className='flex flex-col pb-12 sm:pb-24'>
-            <h3 className='heading-2xl-semibold sm:heading-5xl-semibold w-full border-b border-green-800 pb-6 text-green-600'>
+            <h3 className='heading-2xl-semibold sm:heading-5xl-semibold w-full border-b border-cl-black pb-6 text-green-600'>
               Uitgelichte nieuwsberichten
             </h3>
 
@@ -77,7 +77,7 @@ export default async function Page() {
             <div className='p-base-bold flex items-center justify-end text-green-600'>
               <Link
                 href='/nieuws'
-                className='flex items-center hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'
+                className='flex items-center hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'
               >
                 Bekijk alle nieuwsberichten{' '}
                 <IconArrowRight className='ml-0.5 inline-block h-6 w-6' aria-hidden='true' />

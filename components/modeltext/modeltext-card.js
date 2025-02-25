@@ -6,7 +6,7 @@ export default function ModelTextCard({ text }) {
       key={text.title}
       className='group flex h-full w-[366px] flex-grow basis-1/3 cursor-pointer flex-col rounded-cl bg-green-50 p-6 text-left shadow-card'
     >
-      <div className='p-2xs-semibold mb-6 w-min rounded-cl border border-green-800 px-2 py-1'>
+      <div className='p-2xs-semibold mb-6 w-min rounded-cl border border-cl-black px-2 py-1'>
         Omgevingsplan
       </div>
       <h4 className='heading-2xl-semibold mb-6 min-h-[68px] text-start'>{text.title}</h4>

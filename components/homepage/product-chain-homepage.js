@@ -21,7 +21,7 @@ export default function PCHomePage({ pcData }) {
                 sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
                 className='h-[37.5%] w-auto origin-center rounded-t-cl object-cover transition-transform duration-300 group-hover:scale-110'
               />
-              <div className='absolute bottom-0 left-0 flex h-[72%] flex-col justify-between rounded-b-cl bg-green-800 px-6 pb-4 pt-5 transition-all duration-300 group-hover:translate-y-[20px] group-hover:bg-green-600'>
+              <div className='absolute bottom-0 left-0 flex h-[72%] flex-col justify-between rounded-b-cl bg-cl-black px-6 pb-4 pt-5 transition-all duration-300 group-hover:translate-y-[20px] group-hover:bg-green-600'>
                 <div className='flex h-[180px] origin-center flex-col justify-center divide-y-[0.5px] divide-green-600 transition-all duration-300 group-hover:-translate-y-[20px] group-hover:divide-gray-100'>
                   <div className='heading-2xl-semibold flex h-1/2 w-full items-end break-words pb-3 text-white transition duration-300'>
                     <div
@@ -55,7 +55,7 @@ export default function PCHomePage({ pcData }) {
       </ul>
       <ul className='flex w-full flex-col sm:hidden'>
         {pcData.map((chain, id) => (
-          <li key={id} className='mb-6 block h-32 w-full rounded-cl bg-green-800 shadow sm:hidden'>
+          <li key={id} className='mb-6 block h-32 w-full rounded-cl bg-cl-black shadow sm:hidden'>
             <Link href={`/${chain.slug}`} className='h-full w-full'>
               <div className='flex items-center justify-between'>
                 <div className='relative flex h-32 w-28 items-center justify-center'>

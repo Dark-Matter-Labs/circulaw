@@ -10,7 +10,7 @@ export default function Partners({ footerText, partnerLogos }) {
   const pathname = usePathname();
 
   return (
-    <div className='bg-green-800 pb-2 pt-10'>
+    <div className='bg-cl-black pb-2 pt-10'>
       {pathname === '/' && (
         <div className='global-margin px-4 pb-12 lg:pb-16'>
           <div className='heading-3xl-semibold pl-3 text-gray-100 sm:pl-6 lg:pl-8'>Partners</div>

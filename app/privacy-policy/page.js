@@ -17,7 +17,7 @@ export default function Privacy() {
       </p>
       <p className='p-base max-w-4xl pb-10'>
         Contactgegevens projectteam CircuLaw:{' '}
-        <span className='link-lg link-interaction text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'>
+        <span className='link-lg link-interaction text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'>
           <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
         </span>
       </p>
@@ -118,7 +118,7 @@ export default function Privacy() {
       <p className='p-base max-w-4xl pb-6'>
         De gemeente Amsterdam heeft het recht om haar Privacyverklaring te wijzigen. Als er
         inhoudelijke wijzigingen worden doorgevoerd, maken we dit bekend via de website{' '}
-        <span className='link-lg text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'>
+        <span className='link-lg text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'>
           <a href='https://www.amsterdam.nl/' target='_blank' rel='noopener noreferrer'>
             amsterdam.nl
           </a>
@@ -128,14 +128,14 @@ export default function Privacy() {
       </p>
       <p className='p-base max-w-4xl pb-6'>
         Heb je vragen naar aanleiding van deze Privacyverklaring? Mail{' '}
-        <span className='link-lg text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'>
+        <span className='link-lg text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'>
           <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
         </span>
       </p>
       <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>Cookies</h2>
       <p className='p-base max-w-4xl pb-6'>
         Bekijk ons{' '}
-        <span className='link-lg text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'>
+        <span className='link-lg text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'>
           <Link href='/cookie-info'>Cookiebeleid</Link>
         </span>
         .

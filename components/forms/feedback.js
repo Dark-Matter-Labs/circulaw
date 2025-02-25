@@ -243,7 +243,7 @@ export default function FeedbackComponent() {
                       hebben of je op de hoogte willen houden van dit instrument. Je gegevens zullen
                       nooit gebruikt worden voor andere doeleinden. Lees onze{' '}
                       <Link href='/privacy-policy'>
-                        <span className='link-interaction text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'>
+                        <span className='link-interaction text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'>
                           privacy verklaring.
                         </span>
                       </Link>
@@ -256,7 +256,7 @@ export default function FeedbackComponent() {
                     type='submit'
                     onClick={scrollToTop}
                     className={
-                      'button inline-flex items-center rounded-full bg-green-600 px-4 py-2 text-gray-100 hover:bg-green-200 hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-800 active:text-gray-100'
+                      'button inline-flex items-center rounded-full bg-green-600 px-4 py-2 text-gray-100 hover:bg-green-200 hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-white active:bg-cl-black active:text-gray-100'
                     }
                   >
                     Verzenden &rarr;

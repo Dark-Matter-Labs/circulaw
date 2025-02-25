@@ -68,9 +68,9 @@ export default function GovLevelLayout({ ...props }) {
             <div className='col-span-1 mt-10 grid h-full w-80 items-start justify-center'>
               <div
                 id='allId'
-                className='justify-left flex h-10 w-80 items-center rounded-full border border-green-800 bg-gray-100 text-cl-black'
+                className='justify-left flex h-10 w-80 items-center rounded-full border border-cl-black bg-gray-100 text-cl-black'
               >
-                <div className='flex h-10 w-10 items-center justify-center rounded-full border-b border-r border-t border-green-800'>
+                <div className='flex h-10 w-10 items-center justify-center rounded-full border-b border-r border-t border-cl-black'>
                   <h5 className='p-2xs-semibold sm:p-xs-semibold'>A</h5>
                 </div>
                 <div className='-ml-10 flex h-full w-full items-center justify-center'>
@@ -117,7 +117,7 @@ export default function GovLevelLayout({ ...props }) {
               onLoad={useXarrow()}
               className='relative mx-4 flex h-[34rem] min-h-[34rem] w-[34rem] min-w-[34rem] items-center justify-center'
             >
-              <div className='border-1 flex h-full w-full items-end justify-center rounded-full border-green-800 bg-green-800'>
+              <div className='border-1 flex h-full w-full items-end justify-center rounded-full border-cl-black bg-cl-black'>
                 <div className='border-1 flex h-5/6 w-5/6 items-end justify-center rounded-full border-green-500 bg-green-500'>
                   <div className='border-1 flex h-[70%] w-[70%] items-end justify-center rounded-full border-green-400 bg-green-400'>
                     <div className='overview-radial-gradient h-[34rem] w-[33%] rounded-[50%]'></div>
@@ -511,7 +511,7 @@ export default function GovLevelLayout({ ...props }) {
                 <div className='pb-3'>
                   <div
                     id='natId'
-                    className='justify-left flex h-10 w-80 items-center rounded-full bg-green-800 text-white'
+                    className='justify-left flex h-10 w-80 items-center rounded-full bg-cl-black text-white'
                   >
                     <div className='-ml-10 flex h-full w-full items-center justify-center'>
                       <h4 className='p-base-semibold sm:headling-xl-semibold'>Nationaal</h4>

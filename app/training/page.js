@@ -12,7 +12,7 @@ export default function LearningLandingPage() {
           <div className='mt-6 flex h-6 items-center rounded-clSm bg-gray-100'>
             <Link
               href='/'
-              className='p-2xs-bold flex flex-row items-center pl-2 text-green-600 hover:text-green-300 active:text-green-800'
+              className='p-2xs-bold flex flex-row items-center pl-2 text-green-600 hover:text-green-300 active:text-cl-black'
             >
               Home
             </Link>

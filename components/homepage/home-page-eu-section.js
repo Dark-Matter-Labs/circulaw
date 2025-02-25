@@ -9,7 +9,7 @@ export default function HomePageEUSection({ euData }) {
     <Link href='/eu-wetgeving'>
       <div className='flex flex-col items-center justify-between sm:flex-row'>
         <div className='flex w-full flex-col sm:w-7/12'>
-          <div className='mr-6 border-b border-green-800'>
+          <div className='mr-6 border-b border-cl-black'>
             <h2 className='heading-2xl-semibold sm:heading-5xl-semibold pb-6 text-green-600'>
               EU wetgeving
             </h2>

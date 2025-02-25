@@ -50,13 +50,13 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
     <div className='global-margin mt-4 flex flex-col'>
       <div className='mt-10'>
         <Link href='/' className='p-2xs-bold'>
-          <span className='text-green-600 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'>
+          <span className='text-green-600 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'>
             Home<span className='p-2xs-bold px-2'>{'>'}</span>
           </span>
         </Link>
       </div>
       <div className='mt-10'>
-        <h1 className='heading-xl-semibold sm:heading-2xl-semibold w-full border-b-2 border-green-800 pb-5'>
+        <h1 className='heading-xl-semibold sm:heading-2xl-semibold w-full border-b-2 border-cl-black pb-5'>
           Uitgelichte nieuwsberichten
         </h1>
         <div className='grid grid-cols-1 grid-rows-1 gap-6 overflow-hidden py-10 sm:grid-cols-2 lg:grid-cols-4'>
@@ -76,7 +76,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
         </div>
       </div>
       <div className=''>
-        <div className='flex flex-col justify-between border-b-2 border-green-800 pb-5 sm:flex-row sm:items-center'>
+        <div className='flex flex-col justify-between border-b-2 border-cl-black pb-5 sm:flex-row sm:items-center'>
           <h2 className='heading-xl-semibold sm:heading-2xl-semibold pb-4 sm:pb-0'>
             Laatste nieuws{' '}
           </h2>
@@ -390,22 +390,22 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
         </ResponsiveMasonry>
         {nonFeaturedNewsItems.length > 12 && (
           <div className='mb-10'>
-            <h2 className='heading-xl-semibold sm:heading-2xl-semibold w-full border-b-2 border-green-800 pb-5'>
+            <h2 className='heading-xl-semibold sm:heading-2xl-semibold w-full border-b-2 border-cl-black pb-5'>
               Archief
             </h2>
             <div className='py-10'>
               {nonFeaturedNewsItems.slice(13, 30)?.map((item, id) => (
                 <div
                   key={id}
-                  className='heading-xl-semibold mb-3 flex flex-row items-center text-green-800'
+                  className='heading-xl-semibold mb-3 flex flex-row items-center text-cl-black'
                 >
                   {item.newsOrAgenda !== true && (
-                    <Tag classes='text-white bg-green-800 border border-green-800 mr-3'>
+                    <Tag classes='text-white bg-cl-black border border-cl-black mr-3'>
                       {item.category}
                     </Tag>
                   )}
                   {item.newsOrAgenda === true && (
-                    <Tag classes='text-white bg-green-800 border border-green-800 mr-3'>Agenda</Tag>
+                    <Tag classes='text-white bg-cl-black border border-cl-black mr-3'>Agenda</Tag>
                   )}
 
                   <div>
@@ -435,7 +435,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                   {item.newsDate && (
                     <>
                       <div className='mx-2 h-2 w-2 rounded-full bg-cl-grey'></div>
-                      <span className='p-base text-green-800' suppressHydrationWarning>
+                      <span className='p-base text-cl-black' suppressHydrationWarning>
                         {' '}
                         {new Date(item.newsDate).toLocaleDateString('nl-NL', options)}
                       </span>

@@ -17,7 +17,7 @@ export default function Tabs({ summaryData, initialTab }) {
 
   return (
     <div className='sticky top-16 z-50 shadow-lg lgNav:top-24'>
-      <div className='no-scrollbar -mt-12 flex snap-x snap-mandatory overflow-x-scroll bg-green-800 pt-4 sm:-mt-[72px] lgNav:block'>
+      <div className='no-scrollbar -mt-12 flex snap-x snap-mandatory overflow-x-scroll bg-cl-black pt-4 sm:-mt-[72px] lgNav:block'>
         <div className='global-margin'>
           <div className='p-2xs-semibold flex h-[57px] max-w-3xl flex-row justify-start gap-x-2 text-green-500'>
             <Link

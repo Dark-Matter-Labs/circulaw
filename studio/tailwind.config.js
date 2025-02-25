@@ -21,7 +21,7 @@ module.exports = {
         'green-400': '#6D9F6B',
         'green-500': '#028352',
         'green-600': '#035E46',
-        'green-800': '#053237',
+        'cl-black': '#053237',
       },
       fontFamily: {
         urbanist: ['Urbanist', 'sans-serif'],

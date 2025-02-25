@@ -70,7 +70,7 @@ export default async function EULawPage({ params, searchParams }) {
   return (
     <>
       <div className='relative'>
-        <div className='h-[240px] bg-green-800 pt-3 sm:h-[360px]'>
+        <div className='h-[240px] bg-cl-black pt-3 sm:h-[360px]'>
           <div className='global-margin flex h-full flex-col justify-between'>
             <div className='flex flex-row justify-between pt-6'>
               <div className='p-2xs-bold flex w-min flex-row whitespace-nowrap rounded-clSm bg-white py-1.5 pl-2 pr-3 text-green-600'>

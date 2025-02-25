@@ -44,7 +44,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
             {/* keeping this here as we will be re-using this layout when we add a call to action for the e-learning  */}
             {thema?.themaName === 'Houtbouw' ? (
               <>
-                <div className='hidden grid-cols-3 text-green-800 sm:grid md:gap-x-8 lg:gap-x-16'>
+                <div className='hidden grid-cols-3 text-cl-black sm:grid md:gap-x-8 lg:gap-x-16'>
                   <div className='grid-col col-span-2 grid gap-y-4'>
                     <Link href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/categorie`}>
                       <div className='group grid h-44 w-full grid-cols-3 rounded-cl bg-green-50 hover:cursor-pointer'>
@@ -410,7 +410,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         }/${
                           process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
                         }/${id}.${extension}`}
-                        className='heading-xl-semibold flex items-center text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'
+                        className='heading-xl-semibold flex items-center text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'
                         target='_blank'
                       >
                         {report.linkText}

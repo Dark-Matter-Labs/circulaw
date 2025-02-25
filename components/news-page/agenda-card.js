@@ -18,7 +18,7 @@ export default function AgendaCard({ data }) {
     <>
       {data.link && (
         <Link href={data.link} target='_blank' className='group'>
-          <div className='col-span-1 flex flex-col items-center justify-between rounded-cl bg-green-800'>
+          <div className='col-span-1 flex flex-col items-center justify-between rounded-cl bg-cl-black'>
             <div className='flex h-full w-full flex-col justify-between gap-y-4 px-8 py-6'>
               <div className='w-auto'>
                 <div className='flex flex-col justify-between'>
@@ -50,7 +50,7 @@ export default function AgendaCard({ data }) {
       )}
 
       {!data.link && (
-        <div className='col-span-1 flex flex-col items-center justify-between rounded-cl bg-green-800'>
+        <div className='col-span-1 flex flex-col items-center justify-between rounded-cl bg-cl-black'>
           <div className='flex h-full w-full flex-col justify-between gap-y-4 px-8 py-6'>
             <div className='w-auto'>
               <div className='flex flex-col justify-between'>

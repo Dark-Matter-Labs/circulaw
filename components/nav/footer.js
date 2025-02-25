@@ -48,7 +48,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
       <footer className='' aria-labelledby='footer-heading'>
         {pathname !== '/en' && (
           <div>
-            <div className='flex w-full items-center justify-center border-y-2 border-gray-100 bg-green-800 py-8 lgNav:hidden'>
+            <div className='flex w-full items-center justify-center border-y-2 border-gray-100 bg-cl-black py-8 lgNav:hidden'>
               <CustomButton color='home'>
                 <ScrollLink to='top' smooth={true}>
                   <span>

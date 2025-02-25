@@ -69,26 +69,26 @@ export default function InstrumentHeader({ data }) {
                   href={`/${data?.transitionAgenda}/${data?.thema}/categorie`}
                   onClick={() => setCategorie('beleid')}
                 >
-                  <Tag classes='bg-green-300 text-green-800 hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
+                  <Tag classes='bg-green-300 text-cl-black hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
                     Beleid
                   </Tag>
                 </Link>
               )}
               {data?.beleid === true && data?.themaType !== 'thema' && (
-                <Tag classes='bg-green-300 text-green-800 mr-2'>Beleid</Tag>
+                <Tag classes='bg-green-300 text-cl-black mr-2'>Beleid</Tag>
               )}
               {data?.inkoop === true && data?.themaType === 'thema' && (
                 <Link
                   href={`/${data?.transitionAgenda}/${data?.thema}/categorie`}
                   onClick={() => setCategorie('inkoop')}
                 >
-                  <Tag classes='bg-green-300 text-green-800 hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
+                  <Tag classes='bg-green-300 text-cl-black hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
                     Inkoop
                   </Tag>
                 </Link>
               )}
               {data?.inkoop === true && data?.themaType !== 'thema' && (
-                <Tag classes='bg-green-300 text-green-800 mr-2'>Inkoop</Tag>
+                <Tag classes='bg-green-300 text-cl-black mr-2'>Inkoop</Tag>
               )}
 
               {data?.grondpositie === true && data?.themaType === 'thema' && (
@@ -96,13 +96,13 @@ export default function InstrumentHeader({ data }) {
                   href={`/${data?.transitionAgenda}/${data?.thema}/categorie`}
                   onClick={() => setCategorie('grondpositie')}
                 >
-                  <Tag classes='bg-green-300 text-green-800 hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
+                  <Tag classes='bg-green-300 text-cl-black hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
                     Grondpositie
                   </Tag>
                 </Link>
               )}
               {data?.grondpositie === true && data?.themaType !== 'thema' && (
-                <Tag classes='bg-green-300 text-green-800 mr-2'>Grondpositie</Tag>
+                <Tag classes='bg-green-300 text-cl-black mr-2'>Grondpositie</Tag>
               )}
 
               {data?.subsidie === true && data?.themaType === 'thema' && (
@@ -110,26 +110,26 @@ export default function InstrumentHeader({ data }) {
                   href={`/${data?.transitionAgenda}/${data?.thema}/categorie`}
                   onClick={() => setCategorie('subsidie')}
                 >
-                  <Tag classes='bg-green-300 text-green-800 hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
+                  <Tag classes='bg-green-300 text-cl-black hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
                     Subsidie
                   </Tag>
                 </Link>
               )}
               {data?.subsidie === true && data?.themaType !== 'thema' && (
-                <Tag classes='bg-green-300 text-green-800 mr-2'>Subsidie</Tag>
+                <Tag classes='bg-green-300 text-cl-black mr-2'>Subsidie</Tag>
               )}
               {data?.fiscaal === true && data?.themaType === 'thema' && (
                 <Link
                   href={`/${data?.transitionAgenda}/${data?.thema}/categorie`}
                   onClick={() => setCategorie('fiscaal')}
                 >
-                  <Tag classes='bg-green-300 text-green-800 hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
+                  <Tag classes='bg-green-300 text-cl-black hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white mr-2'>
                     Fiscaal
                   </Tag>
                 </Link>
               )}
               {data?.fiscaal === true && data?.themaType !== 'thema' && (
-                <Tag classes='bg-green-300 text-green-800 mr-2'>Fiscaal</Tag>
+                <Tag classes='bg-green-300 text-cl-black mr-2'>Fiscaal</Tag>
               )}
             </div>
             <div className='flex max-w-4xl justify-start overflow-hidden'>

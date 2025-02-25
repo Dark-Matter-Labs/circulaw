@@ -14,7 +14,7 @@ export default function HomePageAboutSection({ aboutSection }) {
     <div className='flex flex-col items-center justify-between pb-12 sm:flex-row sm:pb-24'>
       <div className='flex flex-col sm:mr-6 sm:w-1/2'>
         <Link href={`/over/${encodeURIComponent(aboutSection?.aboutSectionSlug)}`} name='about'>
-          <div className='border-b border-green-800'>
+          <div className='border-b border-cl-black'>
             <h2 className='heading-2xl-semibold sm:heading-5xl-semibold pb-6 text-green-600'>
               {aboutSection?.aboutSectionTitle}
             </h2>

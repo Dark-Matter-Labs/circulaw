@@ -51,9 +51,9 @@ export default function NewsHit({ hit }) {
               )}
               <div className='flex flex-col'>
                 <div className='mb-6 flex flex-row'>
-                  <Tag classes='bg-green-800 text-white shrink mr-2'>{hit.category}</Tag>
+                  <Tag classes='bg-cl-black text-white shrink mr-2'>{hit.category}</Tag>
                   {hit.newsDate && (
-                    <Tag classes='bg-green-800 text-white shrink mr-2'>
+                    <Tag classes='bg-cl-black text-white shrink mr-2'>
                       {' '}
                       {event.toLocaleDateString('nl-NL', options)}
                     </Tag>
@@ -102,9 +102,9 @@ export default function NewsHit({ hit }) {
               )}
               <div className='flex flex-col'>
                 <div className='mb-6 flex flex-row'>
-                  <Tag classes='bg-green-800 text-white shrink mr-2'>{hit.category}</Tag>
+                  <Tag classes='bg-cl-black text-white shrink mr-2'>{hit.category}</Tag>
                   {hit.newsDate && (
-                    <Tag classes='bg-green-800 text-white shrink mr-2'>
+                    <Tag classes='bg-cl-black text-white shrink mr-2'>
                       {' '}
                       {event.toLocaleDateString('nl-NL', options)}
                     </Tag>
@@ -141,7 +141,7 @@ export default function NewsHit({ hit }) {
     );
   } else {
     return (
-      <Link href={hit?.link || ''} target='_blank' className='p-base text-green-800'>
+      <Link href={hit?.link || ''} target='_blank' className='p-base text-cl-black'>
         <div className='mb-10 flex flex-col sm:flex-row'>
           <div className='gradient-700 mb-6 mr-6 flex h-[130px] w-[150px] flex-row items-center justify-center rounded-cl sm:mb-0'>
             <div className='heading-4xl-semibold mr-2 text-white'>
@@ -158,7 +158,7 @@ export default function NewsHit({ hit }) {
           </div>
           <div className='flex flex-col'>
             <div className='mb-6 flex flex-row'>
-              <Tag classes='bg-green-800 text-white shrink mr-2'>agenda</Tag>
+              <Tag classes='bg-cl-black text-white shrink mr-2'>agenda</Tag>
               {hit.link && (
                 <Tag classes='border border-green-300 text-green-300 shrink mr-2'>
                   <IconExternalLink className='h-4 w-4' />

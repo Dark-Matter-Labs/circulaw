@@ -57,7 +57,7 @@ export default function ThemaCard({ themaCards }) {
                 <div className='flex h-full w-full flex-grow flex-col justify-between p-8'>
                   <h3 className='heading-2xl-semibold text-green-600'>Nieuwe thema’s</h3>
                   <div>
-                    <p className='p-base pt-4 text-green-800'>
+                    <p className='p-base pt-4 text-cl-black'>
                       Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
                     </p>
                     <p className='p-base text-grenn-800 pt-4'>
@@ -110,7 +110,7 @@ export default function ThemaCard({ themaCards }) {
                 <p className='p-base text-gren-800'>
                   Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
                 </p>
-                <p className='p-base pt-4 text-green-800'>
+                <p className='p-base pt-4 text-cl-black'>
                   Schrijf je in op onze nieuwsbrief en blijf op de hoogte van de laatste
                   ontwikkelingen.
                 </p>

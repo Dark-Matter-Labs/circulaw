@@ -8,7 +8,7 @@ export default function ExpertisePageInstrument({ instrument }) {
         className=''
       >
         {/* DESKTOP */}
-        <li className='hidden flex-row border-b transition duration-500 ease-in-out first:border-t-0 hover:cursor-pointer hover:bg-[#035E46] hover:bg-opacity-5 hover:text-green-800 sm:flex'>
+        <li className='hidden flex-row border-b transition duration-500 ease-in-out first:border-t-0 hover:cursor-pointer hover:bg-[#035E46] hover:bg-opacity-5 hover:text-cl-black sm:flex'>
           <div className='p-base ml-3 w-full basis-1/2 overflow-hidden border-black py-3'>
             {instrument.titel}
           </div>

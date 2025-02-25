@@ -21,14 +21,14 @@ export default function ThemePageHeaderMobile({ themaData }) {
             <div className='pt-8'>
               <span className='p-2xs-bold inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 align-middle text-green-600'>
                 <Link
-                  className='hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'
+                  className='hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'
                   href='/'
                 >
                   Home<span className='ml-2'>{'>'}</span>{' '}
                 </Link>
                 <Link
                   href={`/${themaData?.transitionAgenda}`}
-                  className='hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'
+                  className='hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'
                 >
                   <span className='ml-2 capitalize'>{themaData?.transitionAgenda}</span>
                 </Link>
