@@ -77,14 +77,14 @@ export default function FeedbackComponent() {
       });
   };
   return (
-    <div className='bg-gray-100'>
+    <div className='bg-green-100'>
       <div className='global-margin'>
         {!formStatus ? (
           <>
             <button
               type='button'
               onClick={() => router.back()}
-              className='p-2xs-bold mt-12 rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 text-green-500'
+              className='p-2xs-bold mt-12 rounded-clSm bg-green-100 py-1.5 pl-2 pr-3 text-green-500'
             >
               <span className=' '>Terug</span>
               <span className='ml-2'>{'>'}</span>
@@ -256,7 +256,7 @@ export default function FeedbackComponent() {
                     type='submit'
                     onClick={scrollToTop}
                     className={
-                      'button inline-flex items-center rounded-full bg-green-500 px-4 py-2 text-gray-100 hover:bg-green-300 hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-white active:bg-cl-black active:text-gray-100'
+                      'button inline-flex items-center rounded-full bg-green-500 px-4 py-2 text-green-100 hover:bg-green-300 hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-white active:bg-cl-black active:text-green-100'
                     }
                   >
                     Verzenden &rarr;

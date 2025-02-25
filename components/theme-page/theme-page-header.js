@@ -25,7 +25,7 @@ export default function ThemePageHeader({ themaData }) {
 
         <div className='global-margin z-5 relative flex h-[360px] flex-col justify-between'>
           <div className='pt-8'>
-            <span className='p-2xs-bold inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 align-middle text-green-500 group-hover:text-green-400 group-focus:text-green-300 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
+            <span className='p-2xs-bold inline-flex flex-row items-center justify-center rounded-clSm bg-green-100 py-1.5 pl-2 pr-3 align-middle text-green-500 group-hover:text-green-400 group-focus:text-green-300 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
               <Link
                 className='hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'
                 href='/'
@@ -44,12 +44,12 @@ export default function ThemePageHeader({ themaData }) {
 
           <div className='max-w-3xl pb-8'>
             <div className=''>
-              <h1 className='heading-2xl-semibold sm:heading-5xl-semibold inline-block text-gray-100'>
+              <h1 className='heading-2xl-semibold sm:heading-5xl-semibold inline-block text-green-100'>
                 {themaData?.themaName}
               </h1>
             </div>
             <div className='col-span-7'>
-              <p className='heading-xl pt-4 text-gray-100'>
+              <p className='heading-xl pt-4 text-green-100'>
                 {themaData?.themaSubtitle}{' '}
                 {themaData?.linkText && (
                   <span className='link-base group inline-block text-white hover:text-green-300 focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200'>

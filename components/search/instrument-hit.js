@@ -20,19 +20,19 @@ export const InstrumentHit = ({ hit }) => {
               </Tag>
               {/* Expertise Tag */}
               {hit?.categorie?.includes('beleid') && (
-                <Tag classes='bg-green-500 text-gray-100 mr-2'>Beleid</Tag>
+                <Tag classes='bg-green-500 text-green-100 mr-2'>Beleid</Tag>
               )}
               {hit?.categorie?.includes('inkoop') && (
-                <Tag classes='bg-green-500 text-gray-100 mr-2'>Inkoop</Tag>
+                <Tag classes='bg-green-500 text-green-100 mr-2'>Inkoop</Tag>
               )}
               {hit?.categorie?.includes('grondpositie') && (
-                <Tag classes='bg-green-500 text-gray-100 mr-2'>Grondpositie</Tag>
+                <Tag classes='bg-green-500 text-green-100 mr-2'>Grondpositie</Tag>
               )}
               {hit?.categorie?.includes('subsidie') && (
-                <Tag classes='bg-green-500 text-gray-100 mr-2'>Subsidie</Tag>
+                <Tag classes='bg-green-500 text-green-100 mr-2'>Subsidie</Tag>
               )}
               {hit?.categorie?.includes('fiscaal') && (
-                <Tag classes='bg-green-500 text-gray-100 mr-2'>Fiscaal</Tag>
+                <Tag classes='bg-green-500 text-green-100 mr-2'>Fiscaal</Tag>
               )}
             </div>
             <div className='mt-2 block'>
@@ -180,19 +180,19 @@ export const InstrumentHit = ({ hit }) => {
                 {hit.thema}
               </Tag>
               {hit?.categorie?.includes('beleid') && (
-                <Tag classes='bg-green-500 text-gray-100 mr-2'>Beleid</Tag>
+                <Tag classes='bg-green-500 text-green-100 mr-2'>Beleid</Tag>
               )}
               {hit?.categorie?.includes('inkoop') && (
-                <Tag classes='bg-green-500 text-gray-100 mr-2'>Inkoop</Tag>
+                <Tag classes='bg-green-500 text-green-100 mr-2'>Inkoop</Tag>
               )}
               {hit?.categorie?.includes('grondpositie') && (
-                <Tag classes='bg-green-500 text-gray-100 mr-2'>Grondpositie</Tag>
+                <Tag classes='bg-green-500 text-green-100 mr-2'>Grondpositie</Tag>
               )}
               {hit?.categorie?.includes('subsidie') && (
-                <Tag classes='bg-green-500 text-gray-100 mr-2'>Subsidie</Tag>
+                <Tag classes='bg-green-500 text-green-100 mr-2'>Subsidie</Tag>
               )}
               {hit?.categorie?.includes('fiscaal') && (
-                <Tag classes='bg-green-500 text-gray-100'>Fiscaal</Tag>
+                <Tag classes='bg-green-500 text-green-100'>Fiscaal</Tag>
               )}
             </div>
 

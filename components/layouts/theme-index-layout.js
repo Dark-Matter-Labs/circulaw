@@ -32,7 +32,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
         <ThemePageHeaderMobile themaData={thema} />
 
         {/* CARDS */}
-        <div className='bg-gray-100'>
+        <div className='bg-green-100'>
           <div className='global-margin pb-16 sm:pb-20'>
             <div className='pb-14 pt-20'>
               <h2 className='heading-2xl-semibold sm:heading-3xl-semibold'>
@@ -245,7 +245,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         </div>
                       </div>
 
-                      <div className='flex h-72 flex-col justify-between rounded-b-cl border border-cl-grey bg-gray-100 p-5'>
+                      <div className='flex h-72 flex-col justify-between rounded-b-cl border border-cl-grey bg-green-100 p-5'>
                         <div>
                           <div className='heading-2xl-semibold pb-4'>{thema?.samenhangTitle}</div>
                           <div className='p-base'>{thema?.samenhangText}</div>
@@ -270,7 +270,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           <Image src={list} alt='' className='h-full w-full' />
                         </div>
                       </div>
-                      <div className='flex h-72 flex-col justify-between rounded-b-cl border border-cl-grey bg-gray-100 p-5'>
+                      <div className='flex h-72 flex-col justify-between rounded-b-cl border border-cl-grey bg-green-100 p-5'>
                         <div>
                           <div className='heading-2xl-semibold pb-4'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
                           <div className='p-base'>{thema?.listText}</div>
@@ -298,7 +298,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           <Image src={waarvoor} alt='' className='h-full w-full' />
                         </div>
                       </div>
-                      <div className='flex h-72 flex-col justify-between rounded-b-cl border border-cl-grey bg-gray-100 p-5'>
+                      <div className='flex h-72 flex-col justify-between rounded-b-cl border border-cl-grey bg-green-100 p-5'>
                         <div>
                           <div className='heading-2xl-semibold pb-4'>{thema?.welkeTitle}</div>
                           <div className='p-base'>{thema?.welkeText}</div>

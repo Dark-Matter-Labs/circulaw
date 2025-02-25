@@ -19,7 +19,7 @@ export default function ThemePageHeaderMobile({ themaData }) {
         <div className='global-margin z-10 flex h-full w-full flex-col justify-between'>
           <div>
             <div className='pt-8'>
-              <span className='p-2xs-bold inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 align-middle text-green-500'>
+              <span className='p-2xs-bold inline-flex flex-row items-center justify-center rounded-clSm bg-green-100 py-1.5 pl-2 pr-3 align-middle text-green-500'>
                 <Link
                   className='hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'
                   href='/'
@@ -36,10 +36,10 @@ export default function ThemePageHeaderMobile({ themaData }) {
             </div>
           </div>
           <div className='mb-6'>
-            <h1 className='heading-4xl-semibold sm:heading-5xl-semibold pb-1 text-gray-100'>
+            <h1 className='heading-4xl-semibold sm:heading-5xl-semibold pb-1 text-green-100'>
               {themaData?.themaName}
             </h1>
-            <p className='p-base text-gray-100'>{themaData?.themaSubtitle}</p>
+            <p className='p-base text-green-100'>{themaData?.themaSubtitle}</p>
           </div>
         </div>
       </div>

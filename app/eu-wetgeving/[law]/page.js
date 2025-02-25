@@ -88,7 +88,7 @@ export default async function EULawPage({ params, searchParams }) {
               </div>
               {/* ${selectedTab.replace(/(-)/g, ' ')} */}
             </div>
-            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold mb-[60px] max-w-4xl text-gray-100 sm:mb-[94px]'>
+            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold mb-[60px] max-w-4xl text-green-100 sm:mb-[94px]'>
               {' '}
               {summaryData?.title}
             </h1>

@@ -30,7 +30,7 @@ export default function NewsDetailPageHeader({ data }) {
     <>
       <div className={`${cardColour} my-3 h-72`}>
         <div className='global-margin flex h-full flex-col items-start justify-between'>
-          <div className='mt-6 flex h-6 items-center rounded-clSm bg-gray-100'>
+          <div className='mt-6 flex h-6 items-center rounded-clSm bg-green-100'>
             <Link
               href='/'
               className='p-2xs-bold flex flex-row items-center pl-2 text-green-500 hover:text-green-400 active:text-cl-black'
@@ -59,7 +59,7 @@ export default function NewsDetailPageHeader({ data }) {
             </div>
             <h1
               className={`${
-                cardColour === 'bg-green-400' ? 'text-cl-black' : 'text-gray-100'
+                cardColour === 'bg-green-400' ? 'text-cl-black' : 'text-green-100'
               } heading-2xl-semibold sm:heading-5xl-semibold`}
             >
               {data?.title}
@@ -67,7 +67,7 @@ export default function NewsDetailPageHeader({ data }) {
             {data?.newsDate && (
               <div
                 className={`${
-                  cardColour === 'bg-green-400' ? 'text-cl-black' : 'text-gray-100'
+                  cardColour === 'bg-green-400' ? 'text-cl-black' : 'text-green-100'
                 } p-base`}
               >
                 {' '}

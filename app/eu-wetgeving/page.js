@@ -36,7 +36,7 @@ export default async function Page() {
             <Link
               href='/'
               type='button'
-              className='p-2xs-bold rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 text-green-500'
+              className='p-2xs-bold rounded-clSm bg-green-100 py-1.5 pl-2 pr-3 text-green-500'
             >
               <span className='link-interaction'>
                 Home <span className='ml-2'>{'>'}</span>
@@ -44,7 +44,7 @@ export default async function Page() {
             </Link>
           </div>
           <div className='mb-8 flex flex-col'>
-            <h1 className='heading-4xl-semibold sm:heading-5xl-semibold mb-10 text-gray-100'>
+            <h1 className='heading-4xl-semibold sm:heading-5xl-semibold mb-10 text-green-100'>
               EU wet- en regelgeving voor een circulaire economie
             </h1>
             <p className='p-base mb-4 max-w-xl text-white'>

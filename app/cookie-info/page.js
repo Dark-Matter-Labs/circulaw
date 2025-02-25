@@ -97,7 +97,7 @@ export default function CookieInfo() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className='divide-y divide-green-100 bg-gray-100'>
+                <tbody className='divide-y divide-green-100 bg-green-100'>
                   {cookies.map((cookie) => (
                     <tr key={cookie.email} className='divide-x divide-green-100'>
                       <td className='whitespace-nowrap py-4 pl-4 pr-4 text-cl-black sm:pl-6'>

@@ -6,7 +6,7 @@ export default function AboutHit({ hit }) {
   return (
     <>
       <Link href={`/over/${hit.slug}`} onClick={() => sessionStorage.clear()} className='group'>
-        <article className='flex h-full flex-col rounded-cl bg-gray-100'>
+        <article className='flex h-full flex-col rounded-cl bg-green-100'>
           <div className='h-full rounded-cl p-4 shadow-card'>
             <div className='max-w-[690px]'>
               <h2 className='heading-2xl-semibold mb-4 transition-all duration-300 group-hover:text-green-400'>

@@ -37,11 +37,11 @@ export default function ThemaCard({ themaCards }) {
                   )}
                 </div>
                 <div className='group flex h-full w-full flex-col bg-green-500 px-6 py-4'>
-                  <h3 className='heading-2xl-semibold pointer-events-none hidden text-gray-100 sm:inline'>
+                  <h3 className='heading-2xl-semibold pointer-events-none hidden text-green-100 sm:inline'>
                     {thema.themaName}
                   </h3>
                   <p className='p-base pb-2 text-green-300'>{thema.count} instrumenten</p>
-                  <p className='p-base w-full text-gray-100'>{thema.homePageCardText}</p>
+                  <p className='p-base w-full text-green-100'>{thema.homePageCardText}</p>
                   <div className='flex flex-grow items-end justify-end'>
                     <div className='flex h-12 w-12 items-center justify-center self-end rounded-full border-2 border-green-100 bg-transparent text-green-100 focus:bg-green-200 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-400 group-hover:border-green-300 group-hover:bg-green-300 group-hover:text-green-500'>
                       <IconArrowRight className='inline-block h-6 w-6' aria-hidden='true' />
@@ -94,7 +94,7 @@ export default function ThemaCard({ themaCards }) {
                     </div>
                   )}
                 </div>
-                <div className='pl-4 text-gray-100'>
+                <div className='pl-4 text-green-100'>
                   <h3 className='heading-2xl-semibold'>{thema.themaName}</h3>
                   <p className='p-base text-green-300'>{thema.count} instrumenten</p>
                 </div>

@@ -19,7 +19,7 @@ export default function ThemePageHeader({ pageTitle }) {
         <div className='global-margin z-5 relative flex h-[260px] flex-col justify-between sm:h-[360px]'>
           <div className='pt-8'>
             <Link
-              className='group inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 text-green-500'
+              className='group inline-flex flex-row items-center justify-center rounded-clSm bg-green-100 py-1.5 pl-2 pr-3 text-green-500'
               href='/'
             >
               <span className='p-2xs-bold align-middle group-hover:text-green-400 group-focus:text-green-300 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
@@ -31,7 +31,7 @@ export default function ThemePageHeader({ pageTitle }) {
           <div className='max-w-3xl pb-8'>
             <div className=''>
               <div className='p-base sm:heading-2xl-semibold text-green-400'>Productketen</div>
-              <h1 className='heading-3xl-semibold sm:heading-5xl-semibold inline-block text-gray-100'>
+              <h1 className='heading-3xl-semibold sm:heading-5xl-semibold inline-block text-green-100'>
                 {pageTitle}
               </h1>
             </div>

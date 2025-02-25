@@ -68,7 +68,7 @@ export default function GovLevelLayout({ ...props }) {
             <div className='col-span-1 mt-10 grid h-full w-80 items-start justify-center'>
               <div
                 id='allId'
-                className='justify-left flex h-10 w-80 items-center rounded-full border border-cl-black bg-gray-100 text-cl-black'
+                className='justify-left flex h-10 w-80 items-center rounded-full border border-cl-black bg-green-100 text-cl-black'
               >
                 <div className='flex h-10 w-10 items-center justify-center rounded-full border-b border-r border-t border-cl-black'>
                   <h5 className='p-2xs-semibold sm:p-xs-semibold'>A</h5>
@@ -128,351 +128,351 @@ export default function GovLevelLayout({ ...props }) {
               {props.thema === 'windturbines' && (
                 <>
                   {/* All regions = 5 */}
-                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
 
                   {/* National = 1 */}
-                  <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-green-100'></div>
 
                   {/* Provincial = 3 */}
-                  <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[65%] right-[30%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[65%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[65%] right-[30%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[65%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
 
                   {/* Local = 3 */}
-                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-green-100'></div>
                 </>
               )}
 
               {props.thema === 'matrasketen' && (
                 <>
                   {/* All regions = 12 */}
-                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[42%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[40%] right-[52%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[70%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[75%] right-[53%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[28%] right-[52%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[42%] right-[46%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[40%] right-[52%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[70%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[75%] right-[53%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[28%] right-[52%] h-3 w-3 rounded-full bg-green-100'></div>
 
                   {/* National = 8 */}
-                  <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[80%] right-[20%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[80%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[70%] right-[85%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[85%] right-[75%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[75%] right-[13%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[95%] right-[60%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[88%] right-[40%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[80%] right-[20%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[80%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[70%] right-[85%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[85%] right-[75%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[75%] right-[13%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[95%] right-[60%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[88%] right-[40%] h-3 w-3 rounded-full bg-green-100'></div>
                   {/* Provincial = 0 */}
 
                   {/* Local = 3 */}
-                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-green-100'></div>
                 </>
               )}
 
               {props.thema === 'houtbouw' && (
                 <>
                   {/* All regions = 18 18 dec 2023 -> 24 */}
-                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[24%] right-[52%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[36%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[46%] right-[51%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[56%] right-[47%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[84%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[74%] right-[47%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[65%] right-[51%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[42%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[40%] right-[52%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[70%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[70%] right-[53%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[24%] right-[52%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[36%] right-[46%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[46%] right-[51%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[56%] right-[47%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[84%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[74%] right-[47%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[65%] right-[51%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[42%] right-[46%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[40%] right-[52%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[70%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[70%] right-[53%] h-3 w-3 rounded-full bg-green-100'></div>
 
-                  <div className='absolute bottom-[60%] right-[54%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[44%] right-[54%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[30%] right-[56%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[80%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[75%] right-[55%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[60%] right-[54%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[44%] right-[54%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[30%] right-[56%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[80%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[75%] right-[55%] h-3 w-3 rounded-full bg-green-100'></div>
 
                   {/* National = 2 */}
-                  <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[80%] right-[20%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[80%] right-[20%] h-3 w-3 rounded-full bg-green-100'></div>
 
                   {/* Provincial = 3 */}
-                  <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[65%] right-[30%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[65%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[65%] right-[30%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[65%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
 
                   {/* Local = 8  -- 11*/}
-                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[45%] right-[33%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[15%] right-[33%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[45%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[30%] right-[38%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[20%] right-[25%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[34%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[12%] right-[66%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[45%] right-[33%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[15%] right-[33%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[45%] right-[65%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[30%] right-[38%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[20%] right-[25%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[34%] right-[65%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[12%] right-[66%] h-3 w-3 rounded-full bg-green-100'></div>
                 </>
               )}
 
               {props.thema === 'voedselverspilling' && (
                 <>
                   {/* All regions =  */}
-                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[24%] right-[52%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[36%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[24%] right-[52%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[36%] right-[46%] h-3 w-3 rounded-full bg-green-100'></div>
 
                   {/* National = 2 */}
-                  <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[80%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[80%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
 
                   {/* Provincial = 2 */}
-                  <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[60%] right-[80%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[60%] right-[80%] h-3 w-3 rounded-full bg-green-100'></div>
                   {/* Local = 8 */}
-                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[45%] right-[33%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[15%] right-[33%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[45%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[30%] right-[38%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[45%] right-[33%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[15%] right-[33%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[45%] right-[65%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[30%] right-[38%] h-3 w-3 rounded-full bg-green-100'></div>
                 </>
               )}
 
               {props.thema === 'infra' && (
                 <>
                   {/* All regions =  */}
-                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[24%] right-[52%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[36%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[56%] right-[47%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[24%] right-[52%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[36%] right-[46%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[56%] right-[47%] h-3 w-3 rounded-full bg-green-100'></div>
 
                   {/* National = 2 */}
-                  <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[80%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[70%] right-[85%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[80%] right-[20%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[85%] right-[75%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[75%] right-[13%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[95%] right-[60%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[80%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[70%] right-[85%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[80%] right-[20%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[85%] right-[75%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[75%] right-[13%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[95%] right-[60%] h-3 w-3 rounded-full bg-green-100'></div>
 
                   {/* Provincial = 2 */}
-                  <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[60%] right-[80%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[65%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[75%] right-[35%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[60%] right-[80%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[65%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[75%] right-[35%] h-3 w-3 rounded-full bg-green-100'></div>
                   {/* Local = 8 */}
-                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[45%] right-[33%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[45%] right-[33%] h-3 w-3 rounded-full bg-green-100'></div>
                 </>
               )}
 
               {props.thema === 'bedrijventerreinen' && (
                 <>
                   {/* All regions =  */}
-                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[24%] right-[52%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[36%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[24%] right-[52%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[36%] right-[46%] h-3 w-3 rounded-full bg-green-100'></div>
 
                   {/* National = 2 */}
-                  <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[80%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[70%] right-[85%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[80%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[70%] right-[85%] h-3 w-3 rounded-full bg-green-100'></div>
 
                   {/* Provincial = 2 */}
-                  <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[65%] right-[30%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[65%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[75%] right-[35%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[60%] right-[80%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[65%] right-[30%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[65%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[75%] right-[35%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[60%] right-[80%] h-3 w-3 rounded-full bg-green-100'></div>
 
-                  <div className='absolute bottom-[60%] right-[24%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[55%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[45%] right-[78%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[35%] right-[15%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[75%] right-[60%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[30%] right-[84%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[60%] right-[24%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[55%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[45%] right-[78%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[35%] right-[15%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[75%] right-[60%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[30%] right-[84%] h-3 w-3 rounded-full bg-green-100'></div>
 
                   {/* Local = 8 */}
-                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-green-100'></div>
                 </>
               )}
 
               {props.thema === 'bedrijfskleding' && (
                 <>
                   {/* All regions =  */}
-                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
 
                   {/* Local = 8 */}
-                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-green-100'></div>
                 </>
               )}
 
               {props.thema === 'consumententextiel' && (
                 <>
                   {/* All regions =  */}
-                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-green-100'></div>
 
                   {/* Provincial = 2 */}
-                  <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-green-100'></div>
 
                   {/* Local = 8 */}
-                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[45%] right-[33%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[15%] right-[33%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[45%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[30%] right-[38%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[20%] right-[25%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[34%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[45%] right-[33%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[15%] right-[33%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[45%] right-[65%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[30%] right-[38%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[20%] right-[25%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[34%] right-[65%] h-3 w-3 rounded-full bg-green-100'></div>
                 </>
               )}
 
               {props.thema === 'zonnepanelen' && (
                 <>
                   {/* National */}
-                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[24%] right-[52%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[36%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[46%] right-[51%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[56%] right-[47%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[24%] right-[52%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[36%] right-[46%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[46%] right-[51%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[56%] right-[47%] h-3 w-3 rounded-full bg-green-100'></div>
 
                   {/* Provincial */}
-                  <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[65%] right-[30%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[65%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[75%] right-[35%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[60%] right-[80%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[65%] right-[30%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[65%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[75%] right-[35%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[60%] right-[80%] h-3 w-3 rounded-full bg-green-100'></div>
 
                   {/* Local */}
-                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-green-100'></div>
+                  <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-green-100'></div>
                 </>
               )}
 
               {/* ALL Regions 
-            <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div> 
-            <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[24%] right-[52%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[36%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[46%] right-[51%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[56%] right-[47%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[84%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[74%] right-[47%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[65%] right-[51%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[42%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[40%] right-[52%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[70%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[70%] right-[53%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[28%] right-[52%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[39%] right-[44%] h-3 w-3 rounded-full bg-gray-100'></div>*/}
+            <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div> 
+            <div className='absolute bottom-[92%] right-[46%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[90%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[12%] right-[44%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[14%] right-[53%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[22%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[24%] right-[52%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[36%] right-[46%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[46%] right-[51%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[56%] right-[47%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[84%] right-[50%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[74%] right-[47%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[65%] right-[51%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[42%] right-[46%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[40%] right-[52%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[70%] right-[45%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[70%] right-[53%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[28%] right-[52%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[39%] right-[44%] h-3 w-3 rounded-full bg-green-100'></div>*/}
 
               {/* NATIONAL             
-            <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-gray-100' ></div>
-            <div className='absolute bottom-[80%] right-[20%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[80%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[70%] right-[85%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[85%] right-[75%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[75%] right-[13%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[95%] right-[60%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[88%] right-[40%] h-3 w-3 rounded-full bg-gray-100'></div>*/}
+            <div className='absolute bottom-[90%] right-[30%] h-3 w-3 rounded-full bg-green-100' ></div>
+            <div className='absolute bottom-[80%] right-[20%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[80%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[70%] right-[85%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[85%] right-[75%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[75%] right-[13%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[95%] right-[60%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[88%] right-[40%] h-3 w-3 rounded-full bg-green-100'></div>*/}
 
               {/* Provincial 
-            <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[65%] right-[30%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[65%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[75%] right-[35%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[60%] right-[80%] h-3 w-3 rounded-full bg-gray-100'></div>*/}
+            <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[65%] right-[30%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[65%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[75%] right-[35%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[60%] right-[80%] h-3 w-3 rounded-full bg-green-100'></div>*/}
 
               {/* Local 
-            <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[45%] right-[33%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[15%] right-[33%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[45%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
-            <div className='absolute bottom-[30%] right-[38%] h-3 w-3 rounded-full bg-gray-100'></div>*/}
+            <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[45%] right-[33%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[15%] right-[33%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[45%] right-[65%] h-3 w-3 rounded-full bg-green-100'></div>
+            <div className='absolute bottom-[30%] right-[38%] h-3 w-3 rounded-full bg-green-100'></div>*/}
 
               {allRegionLaws && (
                 <div>

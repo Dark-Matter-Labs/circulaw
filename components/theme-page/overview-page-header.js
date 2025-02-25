@@ -15,7 +15,7 @@ export default function OverviewPageHeader({ thema, productChain, title, page })
         } global-margin flex h-full flex-col justify-between`}
       >
         <div className='flex flex-col pt-4 sm:flex-row sm:items-center sm:justify-between'>
-          <div className='p-2xs-bold flex w-min flex-row rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 text-green-500'>
+          <div className='p-2xs-bold flex w-min flex-row rounded-clSm bg-green-100 py-1.5 pl-2 pr-3 text-green-500'>
             <Link href='/' className=''>
               <span className='link-interaction'>
                 Home<span className='mx-2'>{'>'}</span>

@@ -151,7 +151,7 @@ export default function PopUp({ pillars, modelTexts }) {
             <div className='flex min-h-full items-center justify-center p-0 sm:px-4 sm:py-10'>
               <DialogPanel
                 transition
-                className='no-scrollbar data-[closed]:transform-[scale(95%)] min-h-screen w-screen border bg-gray-100 px-4 py-6 duration-300 ease-out data-[closed]:opacity-0 sm:h-auto sm:max-h-[800px] sm:min-h-0 sm:max-w-3xl sm:overflow-scroll sm:rounded-cl sm:px-10'
+                className='no-scrollbar data-[closed]:transform-[scale(95%)] min-h-screen w-screen border bg-green-100 px-4 py-6 duration-300 ease-out data-[closed]:opacity-0 sm:h-auto sm:max-h-[800px] sm:min-h-0 sm:max-w-3xl sm:overflow-scroll sm:rounded-cl sm:px-10'
               >
                 <div className='mb-4 flex w-full flex-row items-center justify-between'>
                   <div className='flex flex-row gap-x-2'>

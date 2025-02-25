@@ -24,7 +24,6 @@ module.exports = {
         'green-300': '#84E9C5', // keep
         'green-400': '#25C38B', // keep
         'green-500': '#028352', // keep
-        'gray-100': '#FDFDFD',
         'cl-grey': '#A2A3A2', // keep
         'cl-dark-grey': '#676868', // keep
         'cl-black': '#1F2223', // keep

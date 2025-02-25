@@ -17,7 +17,7 @@ export default async function Page() {
   });
   return (
     <>
-      <div className='sm:pt-18 -z-50 bg-gray-100 py-12 sm:pb-24' name='thema'>
+      <div className='sm:pt-18 -z-50 bg-green-100 py-12 sm:pb-24' name='thema'>
         <div className='global-margin -z-20'>
           <h2 className='heading-2xl-semibold sm:heading-5xl-semibold border-b border-cl-dark-grey pb-6 pt-8 text-green-500'>
             Ontdek direct onze instrumenten
@@ -46,13 +46,13 @@ export default async function Page() {
         </div>
       </div>
 
-      <div className='bg-gray-100 pb-12 sm:pb-24 sm:pt-0'>
+      <div className='bg-green-100 pb-12 sm:pb-24 sm:pt-0'>
         <div className='global-margin'>
           <HomePageEUSection euData={data.euData} />
         </div>
       </div>
 
-      <div className='bg-gray-100 pb-12 pt-12 sm:pt-0'>
+      <div className='bg-green-100 pb-12 pt-12 sm:pt-0'>
         <div className='global-margin'>
           <div className='flex flex-col pb-12 sm:pb-24'>
             <h3 className='heading-2xl-semibold sm:heading-5xl-semibold w-full border-b border-cl-black pb-6 text-green-500'>

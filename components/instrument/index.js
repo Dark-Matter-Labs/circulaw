@@ -35,9 +35,9 @@ export default function Instrument({ data }) {
     window.addEventListener('scroll', changeEffect);
   }, []);
   return (
-    <div ref={ref} className='relative bg-gray-100'>
+    <div ref={ref} className='relative bg-green-100'>
       <InstrumentHeader data={data} />
-      <div className='relative z-0 bg-gray-100'>
+      <div className='relative z-0 bg-green-100'>
         <InstrumentFeedbackBlock data={data} />
         <div className='global-margin z-0 sm:mt-4'>
           {/* Subtitle */}

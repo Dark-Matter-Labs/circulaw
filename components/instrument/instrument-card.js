@@ -32,19 +32,19 @@ export default function InstrumentCard({ instrument, images }) {
                 <div className='-ml-1 flex items-center justify-start'>
                   {/* Expertise Tag */}
                   {instrument?.beleid === true && (
-                    <Tag classes='bg-green-500 text-gray-100 mr-2'>Beleid</Tag>
+                    <Tag classes='bg-green-500 text-green-100 mr-2'>Beleid</Tag>
                   )}
                   {instrument?.inkoop === true && (
-                    <Tag classes='bg-green-500 text-gray-100 mr-2'>Inkoop</Tag>
+                    <Tag classes='bg-green-500 text-green-100 mr-2'>Inkoop</Tag>
                   )}
                   {instrument?.grondpositie === true && (
-                    <Tag classes='bg-green-500 text-gray-100 mr-2'>Grondpositie</Tag>
+                    <Tag classes='bg-green-500 text-green-100 mr-2'>Grondpositie</Tag>
                   )}
                   {instrument?.subsidie === true && (
-                    <Tag classes='bg-green-500 text-gray-100 mr-2'>Subsidie</Tag>
+                    <Tag classes='bg-green-500 text-green-100 mr-2'>Subsidie</Tag>
                   )}
                   {instrument?.fiscaal === true && (
-                    <Tag classes='bg-green-500 text-gray-100 mr-2'>Fiscaal</Tag>
+                    <Tag classes='bg-green-500 text-green-100 mr-2'>Fiscaal</Tag>
                   )}
                 </div>
                 <div className='mt-2 block'>
@@ -145,19 +145,19 @@ export default function InstrumentCard({ instrument, images }) {
                   {instrument.thema}
                 </Tag>
                 {instrument?.categorie?.includes('beleid') && (
-                  <Tag classes='bg-green-500 text-gray-100 mr-2'>Beleid</Tag>
+                  <Tag classes='bg-green-500 text-green-100 mr-2'>Beleid</Tag>
                 )}
                 {instrument?.categorie?.includes('inkoop') && (
-                  <Tag classes='bg-green-500 text-gray-100 mr-2'>Inkoop</Tag>
+                  <Tag classes='bg-green-500 text-green-100 mr-2'>Inkoop</Tag>
                 )}
                 {instrument?.categorie?.includes('grondpositie') && (
-                  <Tag classes='bg-green-500 text-gray-100 mr-2'>Grondpositie</Tag>
+                  <Tag classes='bg-green-500 text-green-100 mr-2'>Grondpositie</Tag>
                 )}
                 {instrument?.categorie?.includes('subsidie') && (
-                  <Tag classes='bg-green-500 text-gray-100 mr-2'>Subsidie</Tag>
+                  <Tag classes='bg-green-500 text-green-100 mr-2'>Subsidie</Tag>
                 )}
                 {instrument?.categorie?.includes('fiscaal') && (
-                  <Tag classes='bg-green-500 text-gray-100'>Fiscaal</Tag>
+                  <Tag classes='bg-green-500 text-green-100'>Fiscaal</Tag>
                 )}
               </div>
               <div className='mt-2 block'>

@@ -8,7 +8,7 @@ export default function EULawCard({ law }) {
     <>
       <Link href={`/eu-wetgeving/${law?.slug?.current}`} className='hidden h-full md:block'>
         <div className='group flex h-full flex-col'>
-          <div className='h-full rounded-cl border bg-gray-100 shadow-md transition-all duration-300 group-hover:bg-green-100'>
+          <div className='h-full rounded-cl border bg-green-100 shadow-md transition-all duration-300 group-hover:bg-green-100'>
             <div className='z-10 flex h-full flex-col justify-between'>
               <h3 className='heading-2xl-semibold min-h-[85px] p-4'>{law?.title}</h3>
               {/* STATUS bar */}

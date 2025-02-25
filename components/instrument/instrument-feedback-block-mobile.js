@@ -14,10 +14,10 @@ export default function MobileFeedback({ data }) {
           <PopoverButton
             className={`${
               open ? '-translate-y-64' : ''
-            } flex h-full w-full flex-row items-center justify-between rounded-t-clSm bg-green-500 px-8 text-gray-100`}
+            } flex h-full w-full flex-row items-center justify-between rounded-t-clSm bg-green-500 px-8 text-green-100`}
           >
             <div className='p-base'>Help ons circulaw te verbeteren</div>
-            <IconArrowUp className={`${open ? 'rotate-180' : ''} h-5 w-5 text-gray-100`} />
+            <IconArrowUp className={`${open ? 'rotate-180' : ''} h-5 w-5 text-green-100`} />
           </PopoverButton>
           <PopoverPanel className={`${open ? '-translate-y-64' : ''} h-64 w-full`}>
             <div className='flex h-full flex-col items-center justify-between bg-green-100 px-8 py-4'>

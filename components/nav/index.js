@@ -389,7 +389,7 @@ export default function Nav(props) {
               <div className='inset-y-0 float-right flex items-center pt-2 lgNav:hidden'>
                 <button
                   className={`${
-                    pathname !== '/' ? 'text-green-500' : 'text-gray-100'
+                    pathname !== '/' ? 'text-green-500' : 'text-green-100'
                   } 'p-2 rounded-md`}
                   ref={mobileRef.setReference}
                   {...mobileRefProps()}

@@ -17,7 +17,7 @@ export default function PCLayout({ ...props }) {
         {/* HEADER DESKTOP */}
         <PageHeader pageTitle={props?.productChainData?.pcName} />
         {/* HEADER MOBILE */}
-        <div className='bg-gray-100'>
+        <div className='bg-green-100'>
           <div className='global-margin pb-12 sm:pb-20'>
             <div className='pb-0 pt-14 sm:pb-10'>
               <h2 className='heading-2xl-semibold sm:heading-3xl-semibold pb-8 text-cl-black'>
@@ -174,7 +174,7 @@ export default function PCLayout({ ...props }) {
             </div>
           </div>
         </div>
-        <div className='global-margin bg-gray-100 pt-14'>
+        <div className='global-margin bg-green-100 pt-14'>
           <div className='max-w-4xl'>
             <h2 className='heading-2xl-semibold sm:heading-3xl-semibold pb-14 text-cl-black'>
               {props?.productChainData?.ambitionTitle}

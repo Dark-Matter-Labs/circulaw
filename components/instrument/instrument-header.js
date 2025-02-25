@@ -42,7 +42,7 @@ export default function InstrumentHeader({ data }) {
             <button
               type='button'
               onClick={() => router.back()}
-              className='p-2xs-bold rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 text-green-500'
+              className='p-2xs-bold rounded-clSm bg-green-100 py-1.5 pl-2 pr-3 text-green-500'
             >
               <span className='link-interaction'>
                 {' '}
@@ -59,7 +59,7 @@ export default function InstrumentHeader({ data }) {
                 href={`/${data?.transitionAgenda}/${data?.thema?.toLowerCase().replace(/ /g, '-')}`}
                 className=''
               >
-                <Tag classes='border border-gray-100 hover:border-green-300 active:border-green-400 text-gray-100 mr-2 hover:text-green-300 active:text-green-400 focus:text-green-200 focus:right-2 focus:ring-white'>
+                <Tag classes='border border-green-100 hover:border-green-300 active:border-green-400 text-green-100 mr-2 hover:text-green-300 active:text-green-400 focus:text-green-200 focus:right-2 focus:ring-white'>
                   {data?.thema?.replace('-', ' ')}
                 </Tag>
               </Link>
@@ -69,7 +69,7 @@ export default function InstrumentHeader({ data }) {
                   href={`/${data?.transitionAgenda}/${data?.thema}/categorie`}
                   onClick={() => setCategorie('beleid')}
                 >
-                  <Tag classes='bg-green-400 text-cl-black hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-200 focus:right-2 focus:ring-white mr-2'>
+                  <Tag classes='bg-green-400 text-cl-black hover:text-green-100 hover:border hover:border-green-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-200 focus:right-2 focus:ring-white mr-2'>
                     Beleid
                   </Tag>
                 </Link>
@@ -82,7 +82,7 @@ export default function InstrumentHeader({ data }) {
                   href={`/${data?.transitionAgenda}/${data?.thema}/categorie`}
                   onClick={() => setCategorie('inkoop')}
                 >
-                  <Tag classes='bg-green-400 text-cl-black hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-200 focus:right-2 focus:ring-white mr-2'>
+                  <Tag classes='bg-green-400 text-cl-black hover:text-green-100 hover:border hover:border-green-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-200 focus:right-2 focus:ring-white mr-2'>
                     Inkoop
                   </Tag>
                 </Link>
@@ -96,7 +96,7 @@ export default function InstrumentHeader({ data }) {
                   href={`/${data?.transitionAgenda}/${data?.thema}/categorie`}
                   onClick={() => setCategorie('grondpositie')}
                 >
-                  <Tag classes='bg-green-400 text-cl-black hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-200 focus:right-2 focus:ring-white mr-2'>
+                  <Tag classes='bg-green-400 text-cl-black hover:text-green-100 hover:border hover:border-green-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-200 focus:right-2 focus:ring-white mr-2'>
                     Grondpositie
                   </Tag>
                 </Link>
@@ -110,7 +110,7 @@ export default function InstrumentHeader({ data }) {
                   href={`/${data?.transitionAgenda}/${data?.thema}/categorie`}
                   onClick={() => setCategorie('subsidie')}
                 >
-                  <Tag classes='bg-green-400 text-cl-black hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-200 focus:right-2 focus:ring-white mr-2'>
+                  <Tag classes='bg-green-400 text-cl-black hover:text-green-100 hover:border hover:border-green-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-200 focus:right-2 focus:ring-white mr-2'>
                     Subsidie
                   </Tag>
                 </Link>
@@ -123,7 +123,7 @@ export default function InstrumentHeader({ data }) {
                   href={`/${data?.transitionAgenda}/${data?.thema}/categorie`}
                   onClick={() => setCategorie('fiscaal')}
                 >
-                  <Tag classes='bg-green-400 text-cl-black hover:text-gray-100 hover:border hover:border-gray-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-200 focus:right-2 focus:ring-white mr-2'>
+                  <Tag classes='bg-green-400 text-cl-black hover:text-green-100 hover:border hover:border-green-100 hover:bg-transparent active:border-green-400 active:text-green-400 focus:text-green-200 focus:right-2 focus:ring-white mr-2'>
                     Fiscaal
                   </Tag>
                 </Link>
@@ -133,14 +133,14 @@ export default function InstrumentHeader({ data }) {
               )}
             </div>
             <div className='flex max-w-4xl justify-start overflow-hidden'>
-              <h1 className='heading-2xl-semibold sm:heading-5xl-semibold mt-1 justify-self-start pb-1 text-gray-100 lg:block'>
+              <h1 className='heading-2xl-semibold sm:heading-5xl-semibold mt-1 justify-self-start pb-1 text-green-100 lg:block'>
                 {data?.titel}
               </h1>
             </div>
           </div>
         </div>
         {/* Metadata */}
-        <div className='flex w-full justify-items-start bg-gray-100 sm:border-b sm:border-cl-grey'>
+        <div className='flex w-full justify-items-start bg-green-100 sm:border-b sm:border-cl-grey'>
           <div className='global-margin w-full'>
             <div className='grid-col-1 grid w-full max-w-4xl'>
               <InstrumentMetaData data={data} />

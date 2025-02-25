@@ -48,7 +48,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
       <footer className='' aria-labelledby='footer-heading'>
         {pathname !== '/en' && (
           <div>
-            <div className='flex w-full items-center justify-center border-y-2 border-gray-100 bg-cl-black py-8 lgNav:hidden'>
+            <div className='flex w-full items-center justify-center border-y-2 border-green-100 bg-cl-black py-8 lgNav:hidden'>
               <CustomButton color='home'>
                 <ScrollLink to='top' smooth={true}>
                   <span>
@@ -148,7 +148,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                 <div className='pb-20'>
                   <div className=''>
                     <div className='grid grid-cols-1 gap-2 sm:grid-cols-4 sm:gap-8'>
-                      <div className='block border-b border-gray-100 pb-4 sm:hidden'>
+                      <div className='block border-b border-green-100 pb-4 sm:hidden'>
                         <FooterLinkBlock
                           title='Schrijf je in voor onze CircuLaw Nieuwsbrief'
                           paragraph='Zo ben je altijd op de hoogte van het laatste CircuLaw-nieuws. '
@@ -162,7 +162,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                           buttonText='Neem contact op'
                           buttonLink='/contact'
                         />
-                        <div className='p-base block pt-6 text-gray-100 sm:hidden'>
+                        <div className='p-base block pt-6 text-green-100 sm:hidden'>
                           <h3 className='heading-xl-semibold sm:heading-2xl-semibold inline-block'>
                             Volg ons op:
                           </h3>
@@ -189,13 +189,13 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                           </Link>
                         </div>
                       </div>
-                      <div className='border-b border-gray-100 py-2 sm:border-0 sm:py-0'>
+                      <div className='border-b border-green-100 py-2 sm:border-0 sm:py-0'>
                         <h4 className='heading-xl-semibold text-green-300'>Productketens</h4>
                         <div className='grid grid-cols-1 gap-8 py-2 sm:py-0'>
                           <ul role='list' className='mt-4 space-y-4'>
                             {navigation.thema?.map((thema) => (
                               <li key={thema.name}>
-                                <a href={thema.slug} className='p-base text-gray-100'>
+                                <a href={thema.slug} className='p-base text-green-100'>
                                   <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
                                     {thema.name}
                                   </span>
@@ -205,7 +205,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                           </ul>
                         </div>
                       </div>
-                      <div className='border-b border-gray-100 py-2 sm:border-0 sm:py-0'>
+                      <div className='border-b border-green-100 py-2 sm:border-0 sm:py-0'>
                         <h4 className='heading-xl-semibold text-green-300'>Over CircuLaw</h4>
                         <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                           {' '}
@@ -215,7 +215,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                                 <li key={id}>
                                   <a
                                     href={`/over/${encodeURIComponent(slug.slug)}`}
-                                    className='p-base text-gray-100'
+                                    className='p-base text-green-100'
                                   >
                                     <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
                                       {slug.pageTitle.replaceAll('-', ' ')}
@@ -229,7 +229,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                       <div className='py-2 sm:py-0'>
                         <ul role='list' className='space-y-4'>
                           <li>
-                            <a className='p-base link-interaction text-gray-100' href={vraagSlug}>
+                            <a className='p-base link-interaction text-green-100' href={vraagSlug}>
                               <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
                                 Vraag en antwoord
                               </span>
@@ -261,7 +261,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                           buttonText='Neem contact op'
                           buttonLink='/contact'
                         />
-                        <div className='p-base relative z-0 flex items-center justify-center py-6 text-gray-100 sm:block'>
+                        <div className='p-base relative z-0 flex items-center justify-center py-6 text-green-100 sm:block'>
                           <h3 className='heading-xl-semibold sm:heading-2xl-semibold inline-block'>
                             Volg ons op:
                           </h3>

@@ -13,7 +13,7 @@ export default function Partners({ footerText, partnerLogos }) {
     <div className='bg-cl-black pb-2 pt-10'>
       {pathname === '/' && (
         <div className='global-margin px-4 pb-12 lg:pb-16'>
-          <div className='heading-3xl-semibold pl-3 text-gray-100 sm:pl-6 lg:pl-8'>Partners</div>
+          <div className='heading-3xl-semibold pl-3 text-green-100 sm:pl-6 lg:pl-8'>Partners</div>
           <ParnerSection
             partners={partnerLogos?.developingPartners}
             partnerType='Ontwikkelpartners'
@@ -25,7 +25,7 @@ export default function Partners({ footerText, partnerLogos }) {
           />
         </div>
       )}
-      <div className='global-margin p-base pb-2 text-gray-100'>
+      <div className='global-margin p-base pb-2 text-green-100'>
         {pathname === '/en' && (
           <p className='pb-8'>
             This website is currently under development and in this version we are testing the
@@ -44,9 +44,9 @@ export default function Partners({ footerText, partnerLogos }) {
             </Link>
           </p>
         )}
-        <hr className='border-gray-100' />
+        <hr className='border-green-100' />
         <div className='py-2 text-center'>
-          <span className='p-xs text-gray-100'>Legal data & content managed with support from</span>
+          <span className='p-xs text-green-100'>Legal data & content managed with support from</span>
           <a target='_blank' href='https://www.sanity.io/' rel='noopener noreferrer'>
             <Image className='mx-2 my-2 inline' src={sanityLogo} alt='Sanity logo' />
           </a>

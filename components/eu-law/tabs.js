@@ -23,7 +23,7 @@ export default function Tabs({ summaryData, initialTab }) {
             <Link
               className={`${
                 selectedTab === 'overzicht'
-                  ? 'bg-gray-100 text-green-500'
+                  ? 'bg-green-100 text-green-500'
                   : 'bg-green-500 text-white'
               } flex h-full w-[73px] items-start justify-center rounded-t-cl px-3 py-2`}
               href={{
@@ -37,7 +37,7 @@ export default function Tabs({ summaryData, initialTab }) {
             <Link
               className={`${
                 selectedTab === 'verplichtingen-voor-europese-lidstaten'
-                  ? 'bg-gray-100 text-green-500'
+                  ? 'bg-green-100 text-green-500'
                   : 'bg-green-500 text-white'
               } flex h-full w-[140px] items-start justify-center rounded-t-cl px-3 py-2`}
               href={{
@@ -51,7 +51,7 @@ export default function Tabs({ summaryData, initialTab }) {
             <Link
               className={`${
                 selectedTab === 'relevantie-voor-regionale-en-lokale-overheden'
-                  ? 'bg-gray-100 text-green-500'
+                  ? 'bg-green-100 text-green-500'
                   : 'bg-green-500 text-white'
               } flex h-full w-[170px] items-start justify-center rounded-t-cl px-3 py-2`}
               href={{
@@ -65,7 +65,7 @@ export default function Tabs({ summaryData, initialTab }) {
             <Link
               className={`${
                 selectedTab === 'relevantie-voor-de-circulaire-economie'
-                  ? 'bg-gray-100 text-green-500'
+                  ? 'bg-green-100 text-green-500'
                   : 'bg-green-500 text-white'
               } flex h-full w-[140px] items-start justify-center rounded-t-cl px-3 py-2`}
               href={{

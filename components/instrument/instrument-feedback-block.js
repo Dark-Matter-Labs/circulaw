@@ -14,12 +14,12 @@ export default function InstrumentFeedbackBlock({ data }) {
           <PopoverButton
             className={`${
               open ? '-translate-x-52 sm:-translate-x-60' : ''
-            } flex h-full w-full flex-col items-center justify-between rounded-l-clSm bg-green-500 text-gray-100`}
+            } flex h-full w-full flex-col items-center justify-between rounded-l-clSm bg-green-500 text-green-100`}
           >
             <IconArrowLeft
               className={`${
                 open ? 'rotate-180 transform' : ''
-              } mt-3 h-6 text-gray-100 sm:mt-10 sm:w-6`}
+              } mt-3 h-6 text-green-100 sm:mt-10 sm:w-6`}
             />
             <div className='p-base sm:heading-xl rotate-180 pt-3 [writing-mode:vertical-lr] sm:pt-10'>
               Help ons circulaw te verbeteren

@@ -22,7 +22,7 @@ export default function PCHomePage({ pcData }) {
                 className='h-[37.5%] w-auto origin-center rounded-t-cl object-cover transition-transform duration-300 group-hover:scale-110'
               />
               <div className='absolute bottom-0 left-0 flex h-[72%] flex-col justify-between rounded-b-cl bg-cl-black px-6 pb-4 pt-5 transition-all duration-300 group-hover:translate-y-[20px] group-hover:bg-green-500'>
-                <div className='flex h-[180px] origin-center flex-col justify-center divide-y-[0.5px] divide-green-500 transition-all duration-300 group-hover:-translate-y-[20px] group-hover:divide-gray-100'>
+                <div className='flex h-[180px] origin-center flex-col justify-center divide-y-[0.5px] divide-green-500 transition-all duration-300 group-hover:-translate-y-[20px] group-hover:divide-green-100'>
                   <div className='heading-2xl-semibold flex h-1/2 w-full items-end break-words pb-3 text-white transition duration-300'>
                     <div
                       className={`${
@@ -69,7 +69,7 @@ export default function PCHomePage({ pcData }) {
                     className='h-full w-full rounded-l-cl object-cover'
                   />
                 </div>
-                <div className='ml-4 w-full max-w-[170px] break-words text-gray-100'>
+                <div className='ml-4 w-full max-w-[170px] break-words text-green-100'>
                   <h3 className='heading-2xl-semibold w-full break-words'>
                     {' '}
                     {chain.pcName === 'Consumptiegoederen' ? (
