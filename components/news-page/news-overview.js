@@ -434,7 +434,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
                   </div>
                   {item.newsDate && (
                     <>
-                      <div className='mx-2 h-2 w-2 rounded-full bg-gray-400'></div>
+                      <div className='mx-2 h-2 w-2 rounded-full bg-cl-grey'></div>
                       <span className='p-base text-green-800' suppressHydrationWarning>
                         {' '}
                         {new Date(item.newsDate).toLocaleDateString('nl-NL', options)}

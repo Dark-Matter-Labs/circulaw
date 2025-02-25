@@ -111,7 +111,7 @@ export const InstrumentHit = ({ hit }) => {
               </div>
               {/* MOBILE */}
               <div className='mb-4 flex flex-col justify-center sm:hidden'>
-                <div className='flex h-auto flex-row justify-between border-b border-t-2 border-gray-400 py-2'>
+                <div className='flex h-auto flex-row justify-between border-b border-t-2 border-cl-grey py-2'>
                   <div className='flex flex-col justify-center'>
                     <div className='p-xs-semibold text-cl-dark-grey sm:py-1'>
                       Juridische houdbaarheid
@@ -131,7 +131,7 @@ export const InstrumentHit = ({ hit }) => {
                     </div>
                   </div>
                 </div>
-                <div className='flex h-auto border-b border-gray-400 py-2'>
+                <div className='flex h-auto border-b border-cl-grey py-2'>
                   <div className='flex flex-col justify-center'>
                     <div className='p-xs-semibold py-1 text-cl-dark-grey'>Overheidslaag</div>
                     <div className='p-xs-semibold text-green-500'>
@@ -146,7 +146,7 @@ export const InstrumentHit = ({ hit }) => {
                     </div>
                   </div>
                 </div>
-                <div className='flex border-b-2 border-gray-400 py-2'>
+                <div className='flex border-b-2 border-cl-grey py-2'>
                   <div className='flex flex-col justify-center'>
                     <div className='p-xs-semibold py-1 text-cl-dark-grey'>R-ladder</div>
                     <div className='flex items-center'>
