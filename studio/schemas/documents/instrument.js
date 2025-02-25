@@ -99,7 +99,7 @@ export default {
       title: 'Thema*',
       name: 'thema',
       type: 'reference',
-      weak: true,
+      weak: true, 
       validation: (Rule) => Rule.required(),
       to: [{ type: 'thema' }, { type: 'simpleThema' }],
     },
