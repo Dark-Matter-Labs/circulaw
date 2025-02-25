@@ -8,7 +8,7 @@ export default function FooterLinkBlock(props) {
   return (
     <div className=''>
       <div className=''>
-        <h3 className='heading-xl-semibold text-green-200'>{props.title}</h3>
+        <h3 className='heading-xl-semibold text-green-300'>{props.title}</h3>
         <div className=''>
           <div>
             <div className='p-base mt-2 max-w-xl text-gray-100'>{props.paragraph}</div>

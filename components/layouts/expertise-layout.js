@@ -412,7 +412,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                       id='gemeentelijk'
                       checked={local?.value === 'Gemeentelijk'}
                       onChange={() => handleRadioButton('Gemeentelijk')}
-                      className='mr-2 h-4 w-4 cursor-pointer border-2 border-black bg-none text-green-200 focus:ring-2 focus:ring-green-200'
+                      className='mr-2 h-4 w-4 cursor-pointer border-2 border-black bg-none text-green-300 focus:ring-2 focus:ring-green-300'
                     />
                     <label htmlFor='gemeentelijk' className='p-2xs-semibold hover:cursor-pointer'>
                       Gemeentelijk

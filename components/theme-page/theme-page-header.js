@@ -25,16 +25,16 @@ export default function ThemePageHeader({ themaData }) {
 
         <div className='global-margin z-5 relative flex h-[360px] flex-col justify-between'>
           <div className='pt-8'>
-            <span className='p-2xs-bold inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 align-middle text-green-500 group-hover:text-green-400 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
+            <span className='p-2xs-bold inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 align-middle text-green-500 group-hover:text-green-400 group-focus:text-green-300 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
               <Link
-                className='hover:text-green-400 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'
+                className='hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'
                 href='/'
               >
                 {' '}
                 Home <span className='ml-2'>{'>'}</span>
               </Link>
               <Link
-                className='hover:text-green-400 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'
+                className='hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'
                 href={`/${themaData?.transitionAgenda}`}
               >
                 <span className='ml-2 capitalize'>{themaData?.transitionAgenda} </span>
@@ -52,7 +52,7 @@ export default function ThemePageHeader({ themaData }) {
               <p className='heading-xl pt-4 text-gray-100'>
                 {themaData?.themaSubtitle}{' '}
                 {themaData?.linkText && (
-                  <span className='link-base group inline-block text-white hover:text-green-200 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100'>
+                  <span className='link-base group inline-block text-white hover:text-green-300 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100'>
                     <a href={themaData?.headerLink} target='_blank' rel='noopener noreferrer'>
                       {themaData?.linkText}
                       <LinkIcon />

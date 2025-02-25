@@ -37,7 +37,7 @@ export const InstrumentHit = ({ hit }) => {
             </div>
             <div className='mt-2 block'>
               <div className='mb-2'>
-                <h3 className='heading-2xl-semibold max-w-[650px] text-cl-black no-underline transition-colors duration-100 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black group-hover:text-green-400'>
+                <h3 className='heading-2xl-semibold max-w-[650px] text-cl-black no-underline transition-colors duration-100 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black group-hover:text-green-400'>
                   <Highlight
                     attribute='titel'
                     hit={hit}
@@ -198,7 +198,7 @@ export const InstrumentHit = ({ hit }) => {
 
             <div className='mt-2 block'>
               <div className='mb-2'>
-                <h3 className='heading-2xl-semibold max-w-[650px] text-cl-black no-underline hover:text-green-400 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'>
+                <h3 className='heading-2xl-semibold max-w-[650px] text-cl-black no-underline hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'>
                   <Highlight
                     attribute='titel'
                     hit={hit}

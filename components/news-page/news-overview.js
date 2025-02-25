@@ -50,7 +50,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
     <div className='global-margin mt-4 flex flex-col'>
       <div className='mt-10'>
         <Link href='/' className='p-2xs-bold'>
-          <span className='text-green-500 hover:text-green-400 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'>
+          <span className='text-green-500 hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'>
             Home<span className='p-2xs-bold px-2'>{'>'}</span>
           </span>
         </Link>

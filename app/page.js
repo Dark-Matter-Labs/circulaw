@@ -77,7 +77,7 @@ export default async function Page() {
             <div className='p-base-bold flex items-center justify-end text-green-500'>
               <Link
                 href='/nieuws'
-                className='flex items-center hover:text-green-400 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'
+                className='flex items-center hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'
               >
                 Bekijk alle nieuwsberichten{' '}
                 <IconArrowRight className='ml-0.5 inline-block h-6 w-6' aria-hidden='true' />

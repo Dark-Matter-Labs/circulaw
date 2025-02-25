@@ -76,7 +76,7 @@ export default function ThemeLevelSearch(props) {
             submitIconComponent={() => (
               <div
                 type='submit'
-                className='p-base-semibold absolute right-3 top-3 ml-2 h-[42px] w-24 rounded-cl border border-white bg-white p-2 text-green-500 shadow-card hover:border-green-200 hover:bg-green-200'
+                className='p-base-semibold absolute right-3 top-3 ml-2 h-[42px] w-24 rounded-cl border border-white bg-white p-2 text-green-500 shadow-card hover:border-green-300 hover:bg-green-300'
               >
                 Zoeken
               </div>

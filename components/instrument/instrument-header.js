@@ -59,7 +59,7 @@ export default function InstrumentHeader({ data }) {
                 href={`/${data?.transitionAgenda}/${data?.thema?.toLowerCase().replace(/ /g, '-')}`}
                 className=''
               >
-                <Tag classes='border border-gray-100 hover:border-green-200 active:border-green-400 text-gray-100 mr-2 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>
+                <Tag classes='border border-gray-100 hover:border-green-300 active:border-green-400 text-gray-100 mr-2 hover:text-green-300 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white'>
                   {data?.thema?.replace('-', ' ')}
                 </Tag>
               </Link>

@@ -560,11 +560,11 @@ export default function Nav(props) {
                     <span
                       className={`${
                         mainMenuIsOpen === true
-                          ? [`${pathname === '/' ? 'text-green-200' : 'text-green-500'}`]
+                          ? [`${pathname === '/' ? 'text-green-300' : 'text-green-500'}`]
                           : [
                               `${
                                 pathname === '/'
-                                  ? 'text-white group-hover:decoration-green-200'
+                                  ? 'text-white group-hover:decoration-green-300'
                                   : 'text-cl-black group-hover:decoration-green-500'
                               }`,
                             ]
@@ -578,14 +578,14 @@ export default function Nav(props) {
                           ? [
                               `${
                                 pathname === '/'
-                                  ? 'rotate-180 text-green-200'
+                                  ? 'rotate-180 text-green-300'
                                   : 'rotate-180 text-green-500'
                               }`,
                             ]
                           : [
                               `${
                                 pathname === '/'
-                                  ? 'text-white group-hover:text-green-200'
+                                  ? 'text-white group-hover:text-green-300'
                                   : 'group-hover:text-green-500'
                               }`,
                             ]
@@ -634,11 +634,11 @@ export default function Nav(props) {
                     <span
                       className={`${
                         euMenuIsOpen === true
-                          ? [`${pathname === '/' ? 'text-green-200' : 'text-green-500'}`]
+                          ? [`${pathname === '/' ? 'text-green-300' : 'text-green-500'}`]
                           : [
                               `${
                                 pathname === '/'
-                                  ? 'text-white group-hover:decoration-green-200'
+                                  ? 'text-white group-hover:decoration-green-300'
                                   : 'text-cl-black group-hover:decoration-green-500'
                               }`,
                             ]
@@ -652,14 +652,14 @@ export default function Nav(props) {
                           ? [
                               `${
                                 pathname === '/'
-                                  ? 'rotate-180 text-green-200'
+                                  ? 'rotate-180 text-green-300'
                                   : 'rotate-180 text-green-500'
                               }`,
                             ]
                           : [
                               `${
                                 pathname === '/'
-                                  ? 'text-white group-hover:text-green-200'
+                                  ? 'text-white group-hover:text-green-300'
                                   : 'group-hover:text-green-500'
                               }`,
                             ]
@@ -723,7 +723,7 @@ export default function Nav(props) {
                           <div
                             className={`${
                               pathname === '/'
-                                ? 'border-green-200 text-green-200'
+                                ? 'border-green-300 text-green-300'
                                 : 'border-green-400 text-green-400'
                             } p-xs active:p-xs-semibold mt-4 cursor-pointer border-t pt-3 hover:underline active:no-underline`}
                           >
@@ -756,11 +756,11 @@ export default function Nav(props) {
                     <span
                       className={`${
                         overMenuIsOpen === true
-                          ? [`${pathname === '/' ? 'text-green-200' : 'text-green-500'}`]
+                          ? [`${pathname === '/' ? 'text-green-300' : 'text-green-500'}`]
                           : [
                               `${
                                 pathname === '/'
-                                  ? 'text-white group-hover:decoration-green-200'
+                                  ? 'text-white group-hover:decoration-green-300'
                                   : 'text-cl-black group-hover:decoration-green-500'
                               }`,
                             ]
@@ -774,14 +774,14 @@ export default function Nav(props) {
                           ? [
                               `${
                                 pathname === '/'
-                                  ? 'rotate-180 text-green-200'
+                                  ? 'rotate-180 text-green-300'
                                   : 'rotate-180 text-green-500'
                               }`,
                             ]
                           : [
                               `${
                                 pathname === '/'
-                                  ? 'text-white group-hover:text-green-200'
+                                  ? 'text-white group-hover:text-green-300'
                                   : 'group-hover:text-green-500'
                               }`,
                             ]
@@ -923,7 +923,7 @@ export default function Nav(props) {
                                     type='reset'
                                     title='Clear the search query'
                                     className={`${searchQuery === '' ? 'hidden' : ''} ${
-                                      pathname === '/' ? 'hover:bg-white/50' : 'hover:bg-green-200'
+                                      pathname === '/' ? 'hover:bg-white/50' : 'hover:bg-green-300'
                                     } group absolute right-28 top-3.5 rounded-full p-2`}
                                     onClick={() => setSearchQuery('')}
                                   >

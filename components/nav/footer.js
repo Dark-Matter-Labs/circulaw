@@ -190,7 +190,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                         </div>
                       </div>
                       <div className='border-b border-gray-100 py-2 sm:border-0 sm:py-0'>
-                        <h4 className='heading-xl-semibold text-green-200'>Productketens</h4>
+                        <h4 className='heading-xl-semibold text-green-300'>Productketens</h4>
                         <div className='grid grid-cols-1 gap-8 py-2 sm:py-0'>
                           <ul role='list' className='mt-4 space-y-4'>
                             {navigation.thema?.map((thema) => (
@@ -206,7 +206,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                         </div>
                       </div>
                       <div className='border-b border-gray-100 py-2 sm:border-0 sm:py-0'>
-                        <h4 className='heading-xl-semibold text-green-200'>Over CircuLaw</h4>
+                        <h4 className='heading-xl-semibold text-green-300'>Over CircuLaw</h4>
                         <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                           {' '}
                           <ul role='list' className='mt-4 space-y-4'>
@@ -267,7 +267,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                           </h3>
                           <span data-text='Volg ons op LinkedIn' className='tooltip p-base z-40'>
                             <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
-                              <IconBrandLinkedin className='mb-1.5 ml-3 inline-block h-7 w-7 hover:text-green-200' />
+                              <IconBrandLinkedin className='mb-1.5 ml-3 inline-block h-7 w-7 hover:text-green-300' />
                             </Link>
                           </span>
                           <span data-text='Volg ons op GitHub' className='tooltip p-base z-30'>
@@ -275,7 +275,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                               href='https://github.com/Dark-Matter-Labs/circulaw'
                               target='_blank'
                             >
-                              <IconBrandGithub className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-200' />
+                              <IconBrandGithub className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-300' />
                             </Link>
                           </span>
                           <span data-text='Volg ons op OpenResearch' className='tooltip p-base'>
@@ -283,7 +283,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                               href='https://openresearch.amsterdam/nl/page/89270/circulaw---circulaire-regelgevingstool'
                               target='_blank'
                             >
-                              <IconFileSearch className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-200' />
+                              <IconFileSearch className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-300' />
                             </Link>
                           </span>
                         </div>

@@ -16,7 +16,7 @@ export default function ExpertisePageInstrument({ instrument }) {
             <div className='mr-4 w-[60px]'></div>
             <div className='mr-4 w-[115px]'>
               {instrument.overheidslaag.includes('Gemeentelijk') && (
-                <div className='h-4 w-4 rounded-full bg-green-200'></div>
+                <div className='h-4 w-4 rounded-full bg-green-300'></div>
               )}
             </div>
             <div className='mr-4 w-[100px]'>

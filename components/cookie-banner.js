@@ -69,13 +69,13 @@ const CookieConsent = ({ hasLocalConsentCookie }) => {
         </div>
         <div className='flex items-center'>
           <button
-            className='button mr-2 inline-flex items-center rounded-full border border-gray-100 bg-transparent px-4 py-4 text-gray-100 hover:bg-green-200 hover:text-green-500 focus:bg-green-100 focus:outline-none focus:ring-2 focus:ring-white active:bg-cl-black active:text-gray-100'
+            className='button mr-2 inline-flex items-center rounded-full border border-gray-100 bg-transparent px-4 py-4 text-gray-100 hover:bg-green-300 hover:text-green-500 focus:bg-green-100 focus:outline-none focus:ring-2 focus:ring-white active:bg-cl-black active:text-gray-100'
             onClick={() => denyCookie()}
           >
             Weiger
           </button>
           <button
-            className='button ml-2 inline-flex items-center rounded-full border border-green-500 bg-gray-100 px-4 py-4 text-green-500 hover:border-gray-100 hover:bg-green-200 focus:bg-green-100 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-400 active:text-green-500'
+            className='button ml-2 inline-flex items-center rounded-full border border-green-500 bg-gray-100 px-4 py-4 text-green-500 hover:border-gray-100 hover:bg-green-300 focus:bg-green-100 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-400 active:text-green-500'
             onClick={() => {
               acceptCookie();
             }}

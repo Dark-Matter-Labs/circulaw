@@ -44,9 +44,9 @@ export default async function ModelTextPage({ params }) {
           />
           <div className='global-margin z-20 flex h-full w-full flex-col justify-between'>
             <div className='pt-6 sm:pt-10'>
-              <span className='p-2xs-bold inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 align-middle text-green-500 group-hover:text-green-400 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
+              <span className='p-2xs-bold inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 align-middle text-green-500 group-hover:text-green-400 group-focus:text-green-300 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
                 <Link
-                  className='hover:text-green-400 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'
+                  className='hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'
                   href='/'
                 >
                   {' '}
@@ -54,13 +54,13 @@ export default async function ModelTextPage({ params }) {
                 </Link>
                 <Link
                   href='/bouw'
-                  className='pl-3 hover:text-green-400 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'
+                  className='pl-3 hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'
                 >
                   Bouw <span className='ml-2'>{'>'}</span>
                 </Link>
                 <Link
                   href='/bouw/planregels'
-                  className='pl-3 hover:text-green-400 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'
+                  className='pl-3 hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'
                 >
                   Modelteksten voor omgevingsplan
                 </Link>
@@ -92,7 +92,7 @@ export default async function ModelTextPage({ params }) {
               href='/bouw/planregels'
               className='hover:link-interaction p-base-semibold group mb-6 flex items-center text-green-500 underline'
             >
-              <div className='mr-2 flex h-12 w-12 items-center justify-center self-end rounded-full border-2 border-green-500 bg-transparent text-green-500 focus:bg-green-100 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-400 group-hover:border-green-200 group-hover:bg-green-200 group-hover:text-green-500'>
+              <div className='mr-2 flex h-12 w-12 items-center justify-center self-end rounded-full border-2 border-green-500 bg-transparent text-green-500 focus:bg-green-100 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-400 group-hover:border-green-300 group-hover:bg-green-300 group-hover:text-green-500'>
                 <IconArrowLeft className='inline-block h-6 w-6' aria-hidden='true' />
               </div>
               <span className='max-w-xs'>

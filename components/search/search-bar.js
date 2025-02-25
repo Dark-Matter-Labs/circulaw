@@ -86,7 +86,7 @@ export default function NewSearchBar(props) {
                   />
                   <button
                     type='submit'
-                    className='p-base-semibold absolute right-3 top-3 ml-2 flex h-[42px] w-24 items-center justify-center rounded-cl border border-white bg-white p-2 text-green-500 shadow-card hover:border-green-200 hover:bg-green-200'
+                    className='p-base-semibold absolute right-3 top-3 ml-2 flex h-[42px] w-24 items-center justify-center rounded-cl border border-white bg-white p-2 text-green-500 shadow-card hover:border-green-300 hover:bg-green-300'
                   >
                     Zoeken
                   </button>
@@ -95,7 +95,7 @@ export default function NewSearchBar(props) {
                     title='Clear the search query'
                     className={`${
                       inputValue === '' || isSearchStalled ? 'hidden' : ''
-                    } group absolute right-28 top-3.5 rounded-full p-2 hover:bg-green-200`}
+                    } group absolute right-28 top-3.5 rounded-full p-2 hover:bg-green-300`}
                   >
                     <IconX className='h-6 w-6 text-green-500' />
                   </button>

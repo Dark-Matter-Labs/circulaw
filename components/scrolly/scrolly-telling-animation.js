@@ -359,7 +359,7 @@ export default function ScrollyTellingAnimation() {
         <div className='mb-12 flex w-full items-center justify-start'>
           <div className='bg-green-5 flex flex-row items-center justify-center rounded-clSm border border-green-500 px-2 py-1 text-green-500'>
             <Link className='inline-flex h-full flex-row items-center justify-center' href='/'>
-              <span className='p-2xs-bold hover:text-green-400 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'>
+              <span className='p-2xs-bold hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'>
                 {' '}
                 Home <span className='ml-2'>{'>'}</span>
               </span>
@@ -368,7 +368,7 @@ export default function ScrollyTellingAnimation() {
               className='ml-3 inline-flex h-full flex-row items-center justify-center'
               href='/bouw'
             >
-              <span className='p-2xs-bold align-middle hover:text-green-400 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'>
+              <span className='p-2xs-bold align-middle hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'>
                 {' '}
                 Bouw <span className='ml-2'>{'>'}</span>
               </span>

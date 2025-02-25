@@ -21,7 +21,7 @@ module.exports = {
       colors: {
         'green-50': '#F8FBF8',
         'green-100': '#D1F9EB', 
-        'green-200': '#84E9C5',
+        'green-300': '#84E9C5',
         'green-400': '#25C38B', // keep
         'green-500': '#028352', // keep
         'gray-100': '#FDFDFD',

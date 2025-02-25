@@ -410,7 +410,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         }/${
                           process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
                         }/${id}.${extension}`}
-                        className='heading-xl-semibold flex items-center text-green-500 hover:text-green-400 focus:text-green-200 focus:ring-2 focus:ring-white active:text-cl-black'
+                        className='heading-xl-semibold flex items-center text-green-500 hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'
                         target='_blank'
                       >
                         {report.linkText}
