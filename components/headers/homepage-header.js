@@ -14,7 +14,7 @@ export default function HomepageHeader() {
         <div className='max-w-4xl text-left'>
           <div className='max-w-xs text-left text-green-100 sm:block sm:max-w-4xl'>
             <h1 className='heading-6xl-semibold block'>Regelgeving voor een circulaire economie</h1>{' '}
-            <h2 className='p-base sm:heading-2xl-semibold mt-2 max-w-2xl pb-8 pt-10 text-left text-green-100'>
+            <h2 className='p-base sm:heading-2xl-semibold mt-2 max-w-2xl pb-8 pt-6 text-left text-green-100'>
               CircuLaw laat decentrale overheden zien hoe je de circulaire transitie kunt
               versnellen. Per productketen bieden we juridische instrumenten op basis van de
               Nederlandse wetgeving. Ook geven we inzicht in Europese wetgeving.
