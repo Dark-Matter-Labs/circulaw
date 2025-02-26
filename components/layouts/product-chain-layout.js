@@ -2,9 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import CustomButton from '@/components/custom-button';
-import PageHeader from '@/components/product-chain-page/product-chain-header';
 import { urlFor } from '@/lib/sanity';
 
+import Header from '../headers/header';
 import Modal from '../modal/modal';
 import ModalContent from '../modal/modal-content';
 import ThemaCard from '../product-chain-page/thema-cards';
@@ -15,8 +15,13 @@ export default function PCLayout({ ...props }) {
     <>
       <div>
         {/* HEADER DESKTOP */}
-        <PageHeader pageTitle={props?.productChainData?.pcName} />
-        {/* HEADER MOBILE */}
+        <Header
+          title={props?.productChainData?.pcName}
+          imageURL='/modeltext-header.png'
+          pageType='productChain'
+          subtitle='Productketen'
+        />
+
         <div className='bg-green-100'>
           <div className='global-margin pb-12 sm:pb-20'>
             <div className='pb-0 pt-14 sm:pb-10'>
