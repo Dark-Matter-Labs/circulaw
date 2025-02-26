@@ -19,7 +19,25 @@
     @apply 2xl:px-40
   }
 
+    
+    .header-desktop {
+      @apply font-jakarta text-8xl font-semibold leading-17;
+    }
+  
+    .header-desktop-mobile {
+      @apply font-jakarta text-5xl font-semibold leading-14;
+    }
+  
+
   /* new system */
+  .heading-6xl {
+    @apply font-jakarta text-8xl leading-17
+  }
+
+  .heading-6xl-semibold {
+    @apply heading-6xl  font-semibold
+  }
+
   .heading-5xl {
     @apply font-jakarta text-7xl leading-16
   }
@@ -108,14 +126,8 @@
     @apply p-3xs font-semibold
   }
 
-   /* special fonts */
-   .header-desktop {
-    @apply font-jakarta text-8xl font-semibold leading-17;
-  }
 
-  .header-desktop-mobile {
-    @apply font-jakarta text-5xl font-semibold leading-14;
-  }
+  /* special fonts */
 
   .p-agenda-card-day {
     @apply font-jakarta text-[88px] font-bold leading-[88px]
