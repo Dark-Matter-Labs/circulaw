@@ -7,7 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import HomepageHeader from '@/components/homepage/homepage-header';
+import HomepageHeader from '@/components/headers/homepage-header';
 import BetaBanner from '@/components/nav/beta-banner';
 import LangSwitch from '@/components/nav/lang-switch';
 import CirculawLogo from '@/public/circulaw_logotype2.png';
@@ -1076,13 +1076,13 @@ export default function Nav(props) {
         </nav>
       </div>
       {pathname === '/' && (
-        <div className='relative -mt-[9rem] w-full bg-green-500'>
+        <div className='relative -mt-[9rem] min-h-[400px] md:min-h-[836px]'>
           <Image
-            src='/home-page/header-image.png'
+            src='/home-page/homepage-header.png'
             alt='homepage decoration'
             fill
             sizes='100vw'
-            className='z-10 object-cover'
+            className='z-10 object-cover object-bottom'
             priority={true}
             quality={100}
           />
