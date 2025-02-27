@@ -13,8 +13,7 @@ import samenhang from '@/public/thema-card-background/samenhang.svg';
 import waarvoor from '@/public/thema-card-background/waarvoor.svg';
 import { IconArrowRight } from '@tabler/icons-react';
 
-import ThemePageHeader from '../theme-page/theme-page-header';
-import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
+import Header from '../headers/header';
 import ThemeSponsors from '../theme-page/theme-sponsors';
 
 // TODO: See what we could move to a layout.js file instead of having everything in components.
@@ -23,13 +22,16 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
     localStorage.clear();
   });
 
+  console.log(thema);
   return (
     <>
       <div>
-        {/* HEADER DESKTOP */}
-        <ThemePageHeader themaData={thema} />
-        {/* HEADER MOBILE */}
-        <ThemePageHeaderMobile themaData={thema} />
+        <Header
+          title={thema?.themaName}
+          imageURL={thema?.heroImage}
+          subtitle={thema?.themaSubtitle}
+          pageType='thema'
+        />
 
         {/* CARDS */}
         <div className='bg-green-100'>
@@ -41,7 +43,6 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
             </div>
 
             {/* Desktop Cards */}
-            {/* keeping this here as we will be re-using this layout when we add a call to action for the e-learning  */}
             {thema?.themaName === 'Houtbouw' ? (
               <>
                 <div className='hidden grid-cols-3 text-cl-black sm:grid md:gap-x-8 lg:gap-x-16'>
