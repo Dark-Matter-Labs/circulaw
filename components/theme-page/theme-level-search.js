@@ -9,6 +9,7 @@ import Pagination from '@/components/search/pagination';
 import { IconX } from '@tabler/icons-react';
 import algoliasearch from 'algoliasearch';
 
+import Header from '../headers';
 import TooltipJuridischeHoudbaarheidContent from '../instrument/tooltip-juridische-houdbaarheid-content';
 import TooltipJuridischeInvloedContent from '../instrument/tooltip-juridische-invloed-content';
 import RladderTooltipContent from '../instrument/tooltip-r-ladder-content';
@@ -19,7 +20,6 @@ import ModalContent from '../modal/modal-content';
 import NoResults from '../search/no-results';
 import NoResultsBoundary from '../search/no-results-boundary';
 import CustomStats from '../search/stats';
-import OverviewPageHeader from './overview-page-header';
 
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
@@ -53,14 +53,16 @@ export default function ThemeLevelSearch(props) {
       insights={true}
     >
       <Configure hitsPerPage={10} filters={`thema:${props?.thema}`} />
-      <div className='mt-3 flex h-[300px] w-full items-end justify-center bg-green-500 sm:h-[360px]'>
-        <OverviewPageHeader
-          thema={props?.thema}
-          productChain={props.productChain}
-          page='list'
-          title={props.title}
-        />
-      </div>
+
+      <Header
+        thema={props?.thema}
+        productChain={props.productChain}
+        page='list'
+        title={props.title}
+        pageType='instrumentOverview'
+        bgColor='bg-cl-black'
+      />
+
       <div className='mt-4 flex items-center justify-center'>
         <div className='mb-10 mt-10 hidden items-center justify-start sm:flex'>
           <SearchBox

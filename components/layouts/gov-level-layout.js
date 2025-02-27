@@ -53,7 +53,7 @@ export default function GovLevelLayout({ ...props }) {
   return (
     <div onLoad={useXarrow()}>
       <div className=''>
-        <Header 
+        <Header
           thema={props.thema}
           productChain={props.transitionAgenda}
           title={props.title}
@@ -61,7 +61,7 @@ export default function GovLevelLayout({ ...props }) {
           bgColor='bg-cl-black'
           pageType='instrumentOverview'
         />
-     
+
         {/* DYNAMIC IMAGE */}
         <div className='global-margin mb-20 mt-5 hidden sm:mt-20 sm:block'>
           <div className='flex grid-cols-3 items-start 2xl:justify-center'>

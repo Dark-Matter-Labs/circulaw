@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 
-import InstrumentLinksDropdown from '../theme-page/instrument-links-dropdown';
+import InstrumentLinksDropdown from './instrument-links-dropdown';
 import Breadcrumb from './breadcrumbs';
 
 export default function Header({ imageURL, bgColor, title, pageType, subtitle, ...props }) {
@@ -27,9 +27,11 @@ export default function Header({ imageURL, bgColor, title, pageType, subtitle, .
             </>
           )}
           <div className='z-5 relative flex flex-col justify-between'>
-            <div className='mb-20 flex flex-row justify-between'>
+            <div
+              className={`${pageType === 'withTabs' || pageType==='instrumentOverview' ? 'mb-12' : 'mb-20'} flex flex-row justify-between`}
+            >
               <Breadcrumb pageType={pageType} />
-              {pageType === 'withTabs' || pageType === 'instrumentOverview' && (
+              {(pageType === 'withTabs' || 'instrumentOverview') && (
                 <div className='block py-3 sm:float-right sm:py-0'>
                   <div className='p-base hidden pb-2 text-white sm:block'>
                     Bekijk de instrumenten:
