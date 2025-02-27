@@ -1,13 +1,11 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
 import CustomButton from '@/components/custom-button';
 import EULawCard from '@/components/eu-law/eu-law-card';
-import ScrollButton from '@/components/scroll-button';
+import Header from '@/components/headers';
 import { EU_LAW_OVERVIEW_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
 import globalMeta from '@/utils/global-meta';
-import { IconArrowDown } from '@tabler/icons-react';
 
 export const metadata = {
   title: 'EU wetgeving - CircuLaw',
@@ -30,43 +28,15 @@ export default async function Page() {
   const data = await sanityFetch({ query: EU_LAW_OVERVIEW_QUERY, tags: ['euLaw'] });
   return (
     <>
-      <div className='overflow-hidden bg-[url("/bg-eu.png")] bg-cover bg-center bg-no-repeat pt-3'>
-        <div className='global-margin relative z-10 mt-10 flex h-full flex-col justify-between'>
-          <div className='mb-20 pt-6'>
-            <Link
-              href='/'
-              type='button'
-              className='p-2xs-bold rounded-clSm bg-green-100 py-1.5 pl-2 pr-3 text-green-500'
-            >
-              <span className='link-interaction'>
-                Home <span className='ml-2'>{'>'}</span>
-              </span>
-            </Link>
-          </div>
-          <div className='mb-8 flex flex-col'>
-            <h1 className='heading-4xl-semibold sm:heading-5xl-semibold mb-10 text-green-100'>
-              EU wet- en regelgeving voor een circulaire economie
-            </h1>
-            <p className='p-base mb-4 max-w-xl text-white'>
-              Er komt een lawine van Europese wet- en regelgeving op ons af, gericht op de
+      <Header
+        title='EU wet- en regelgeving voor een circulaire economie'
+        imageURL='/bg-eu.png'
+        subtitle='Er komt een lawine van Europese wet- en regelgeving op ons af, gericht op de
               verduurzaming van onze maatschappij. Veel van deze nieuwe wet- en regelgeving valt
-              onder de Green Deal, met als tussendoel Fit for 55.
-            </p>
-            <p className='p-base max-w-xl text-white'>
-              CircuLaw laat je zien hoe je deze verordeningen en richtlijnen kunt toepassen op de
-              circulaire doelen van jouw gemeente of provincie.
-            </p>
-            <div className='mt-8'>
-              <ScrollButton to='laws' offset={-140}>
-                <CustomButton color='euPage'>
-                  Bekijk de {data?.length} wetten{' '}
-                  <IconArrowDown className='ml-3 h-5 w-5 text-green-100' />
-                </CustomButton>
-              </ScrollButton>
-            </div>
-          </div>
-        </div>
-      </div>
+              onder de Green Deal, met als tussendoel Fit for 55.'
+        pageType='euOverview'
+        length={data.length}
+      />
       <div className='global-margin'>
         <div className='mt-10 flex flex-col sm:flex-row'>
           <div className='p-base mr-8 flex basis-1/2 flex-col justify-start'>

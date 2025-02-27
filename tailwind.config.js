@@ -77,7 +77,7 @@ module.exports = {
         'rladder': '29%',
       },
       backgroundImage: {
-        'about-header': 'url("/about-header.png")',
+        // 'about-header': 'url("/about-header.png")',
         'header': 'url("/home-page/homepage_bg.png")',
         // 'scoll-circles': 'url("/scrolly/centered.svg")',
       },

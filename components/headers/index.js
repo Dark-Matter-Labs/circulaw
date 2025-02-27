@@ -2,6 +2,10 @@
 
 import Image from 'next/image';
 
+import { IconArrowDown } from '@tabler/icons-react';
+
+import CustomButton from '../custom-button';
+import ScrollButton from '../scroll-button';
 import Breadcrumb from './breadcrumbs';
 import InstrumentLinksDropdown from './instrument-links-dropdown';
 
@@ -51,8 +55,24 @@ export default function Header({ imageURL, bgColor, title, pageType, subtitle, .
               <h1 className='heading-3xl-semibold sm:heading-5xl-semibold inline-block text-green-100'>
                 {title}
               </h1>
-              {pageType === 'thema' && (
-                <p className='heading-xl pt-2 text-green-100'>{subtitle} </p>
+              {(pageType === 'thema' || pageType === 'euOverview') && (
+                <p className='p-base max-w-3xl pt-2 text-green-100'>{subtitle} </p>
+              )}
+              {pageType === 'euOverview' && (
+                <>
+                  <p className='p-base mt-4 max-w-xl text-white'>
+                    CircuLaw laat je zien hoe je deze verordeningen en richtlijnen kunt toepassen op
+                    de circulaire doelen van jouw gemeente of provincie.
+                  </p>
+                  <div className='mt-8'>
+                    <ScrollButton to='laws' offset={-140}>
+                      <CustomButton color='euPage'>
+                        Bekijk de {props?.length} wetten{' '}
+                        <IconArrowDown className='ml-3 h-5 w-5 text-green-100' />
+                      </CustomButton>
+                    </ScrollButton>
+                  </div>
+                </>
               )}
             </div>
           </div>
