@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function AboutPageNav({ currentSlug, slugs }) {
   return (
-    <nav className='sticky top-48 my-12 min-w-[390px]' aria-label='Sidebar'>
+    <nav className='sticky top-48 mb-12 min-w-[390px]' aria-label='Sidebar'>
       <h3 className='heading-3xl-semibold mb-5 ml-3'>Over Circulaw</h3>
       <ul className=''>
         {slugs?.map((slug) => (

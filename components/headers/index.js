@@ -6,7 +6,6 @@ import Breadcrumb from './breadcrumbs';
 import InstrumentLinksDropdown from './instrument-links-dropdown';
 
 export default function Header({ imageURL, bgColor, title, pageType, subtitle, ...props }) {
-  console.log(pageType);
   return (
     <>
       <div
