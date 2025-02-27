@@ -2,9 +2,8 @@
 
 import Image from 'next/image';
 
-import Breadcrumb from './breadcrumbs';
-
 import InstrumentLinksDropdown from '../theme-page/instrument-links-dropdown';
+import Breadcrumb from './breadcrumbs';
 
 export default function Header({ imageURL, bgColor, title, pageType, subtitle, ...props }) {
   return (
@@ -31,10 +30,16 @@ export default function Header({ imageURL, bgColor, title, pageType, subtitle, .
             <div className='mb-20 flex flex-row justify-between'>
               <Breadcrumb pageType={pageType} />
               {pageType === 'withTabs' && (
-                 <div className='block py-3 sm:float-right sm:py-0'>
-                            <div className='p-base hidden pb-2 text-white sm:block'>Bekijk de instrumenten:</div>
-                            <InstrumentLinksDropdown page={props.page} productChain={props.productChain} thema={props.thema} />
-                          </div>
+                <div className='block py-3 sm:float-right sm:py-0'>
+                  <div className='p-base hidden pb-2 text-white sm:block'>
+                    Bekijk de instrumenten:
+                  </div>
+                  <InstrumentLinksDropdown
+                    page={props.page}
+                    productChain={props.productChain}
+                    thema={props.thema}
+                  />
+                </div>
               )}
             </div>
 

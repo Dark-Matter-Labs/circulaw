@@ -7,7 +7,7 @@ export default function Breadcrumb({ pageType }) {
   const paths = usePathname();
   const pathNames = paths.split('/').filter((path) => path);
   return (
-    <ul className='h-min p-2xs-semibold inline-flex flex-row items-center justify-center rounded-clSm bg-green-100 py-1.5 pl-2 pr-3 align-middle text-green-500 group-hover:text-green-400 group-focus:text-green-300 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
+    <ul className='p-2xs-semibold inline-flex h-min flex-row items-center justify-center rounded-clSm bg-green-100 py-1.5 pl-2 pr-3 align-middle text-green-500 group-hover:text-green-400 group-focus:text-green-300 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
       {pageType !== 'instrument' && (
         <li>
           <Link

@@ -311,11 +311,17 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
       CustomEvent.trackEvent('Categorie Tab Change', pathname, value);
     }
   }
-  console.log(props)
   return (
     <>
       <div className='flex flex-col'>
-        <Header title={props.title} bgColor='bg-cl-black' pageType='withTabs' page='categorie' thema={props.thema} productChain={props.transitionAgenda}/>
+        <Header
+          title={props.title}
+          bgColor='bg-cl-black'
+          pageType='withTabs'
+          page='categorie'
+          thema={props.thema}
+          productChain={props.transitionAgenda}
+        />
         {/* DESKTOP */}
         <div className='global-margin hidden max-w-[1280px] pb-10 sm:flex'>
           <div className='w-full flex-col justify-start'>
