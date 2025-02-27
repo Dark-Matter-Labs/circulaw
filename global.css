@@ -5,9 +5,9 @@
 @layer components {
   .global-margin {
     @apply max-w-7xl;
-    @apply mx-4;
-    @apply md:mx-10;
-    @apply xl:mx-28;
+    @apply mx-[20px];
+    @apply md:mx-[70px];
+    @apply xl:mx-[140px];
     @apply 2xl:mx-auto;
   }
 

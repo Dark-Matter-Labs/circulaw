@@ -9,7 +9,6 @@ import { IconChevronRight } from '@tabler/icons-react';
 export default function Header({ imageURL, bgColor, title, pageType, subtitle }) {
   const paths = usePathname();
   const pathNames = paths.split('/').filter((path) => path);
-
   return (
     <>
       <div className={`${bgColor} global-margin mt-20`}>

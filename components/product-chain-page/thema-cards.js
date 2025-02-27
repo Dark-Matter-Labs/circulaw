@@ -12,7 +12,7 @@ export default function ThemaCard({ themaCards }) {
       <div className='hidden sm:block'>
         <ul
           role='list'
-          className='max-w-8xl relative z-0 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-4 md:grid-cols-2 lg:grid-cols-4'
+          className='max-w-8xl relative z-0 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-4 md:grid-cols-2 lg:grid-cols-3'
         >
           {themaCards?.map((thema, id) => (
             <Link href={`/${thema.transitionAgenda}/${thema.slug}`} key={id}>
@@ -36,12 +36,12 @@ export default function ThemaCard({ themaCards }) {
                     </div>
                   )}
                 </div>
-                <div className='group flex h-full w-full flex-col bg-green-500 px-6 py-4'>
-                  <h3 className='heading-2xl-semibold pointer-events-none hidden text-green-100 sm:inline'>
+                <div className='group flex h-full w-full flex-col bg-green-300 px-6 py-4'>
+                  <h3 className='heading-2xl-semibold pointer-events-none hidden text-cl-black sm:inline'>
                     {thema.themaName}
                   </h3>
-                  <p className='p-base pb-2 text-green-300'>{thema.count} instrumenten</p>
-                  <p className='p-base w-full text-green-100'>{thema.homePageCardText}</p>
+                  <p className='p-base pb-2 text-cl-black p-xs'>{thema.count} instrumenten</p>
+                  <p className='p-base w-full text-cl-black'>{thema.homePageCardText}</p>
                   <div className='flex flex-grow items-end justify-end'>
                     <div className='flex h-12 w-12 items-center justify-center self-end rounded-full border-2 border-green-100 bg-transparent text-green-100 focus:bg-green-200 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-400 group-hover:border-green-300 group-hover:bg-green-300 group-hover:text-green-500'>
                       <IconArrowRight className='inline-block h-6 w-6' aria-hidden='true' />

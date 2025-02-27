@@ -22,7 +22,7 @@ export default function PCLayout({ ...props }) {
           subtitle='Productketen'
         />
 
-        <div className='bg-green-100'>
+        <div className=''>
           <div className='global-margin pb-12 sm:pb-20'>
             <div className='pb-0 pt-14 sm:pb-10'>
               <h2 className='heading-2xl-semibold sm:heading-3xl-semibold pb-8 text-cl-black'>
@@ -42,7 +42,7 @@ export default function PCLayout({ ...props }) {
             <div>
               {props.productChainData.pcName === 'Bouw' && (
                 <>
-                  <div className='max-w-8xl relative z-0 mt-20 hidden grid-cols-2 gap-x-4 gap-y-8 sm:grid sm:gap-x-4 md:grid-cols-2 lg:grid-cols-4'>
+                  <div className='max-w-8xl relative z-0 mt-20 hidden grid-cols-2 gap-x-4 gap-y-8 sm:grid sm:gap-x-4 md:grid-cols-2 lg:grid-cols-3'>
                     <div className='group w-full flex-grow rounded-cl border border-green-100 bg-green-100'>
                       <Link href='/training' className='h-full w-full'>
                         <div className='flex h-full w-full flex-grow flex-col justify-between gap-y-2 p-6'>

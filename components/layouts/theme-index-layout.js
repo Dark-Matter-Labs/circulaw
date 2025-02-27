@@ -33,7 +33,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
         />
 
         {/* CARDS */}
-        <div className='bg-green-100'>
+        <div className=''>
           <div className='global-margin pb-16 sm:pb-20'>
             <div className='pb-14 pt-20'>
               <h2 className='heading-2xl-semibold sm:heading-3xl-semibold'>
@@ -391,7 +391,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
             )}
           </div>
 
-          <div className='bg-green-100'>
+          <div className=''>
             <ThemeBottomSection featuredLaws={featuredLaws} thema={thema} />
           </div>
           {thema?.reports && (

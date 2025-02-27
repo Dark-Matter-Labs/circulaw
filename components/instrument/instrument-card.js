@@ -8,7 +8,7 @@ export default function InstrumentCard({ instrument, images }) {
   return (
     <>
       <div className='flex'>
-        <div className='group mb-6 hidden shrink flex-row items-center justify-start rounded-cl p-4 transition-all duration-100 hover:shadow-card sm:flex'>
+        <div className='group mb-6 hidden shrink flex-row items-center justify-start rounded-cl p-4 transition-all duration-100 hover:shadow-card sm:flex bg-green-100'>
           {images === true && (
             <div className='sm:md-0 relative mb-4 flex h-44 w-full items-center rounded-cl sm:mb-0 sm:mr-6 sm:h-44 sm:w-64'>
               {instrument.featuredImage && (
