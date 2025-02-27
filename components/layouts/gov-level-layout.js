@@ -5,7 +5,7 @@ import Xarrow, { useXarrow } from 'react-xarrows';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import OverviewPageHeader from '../theme-page/overview-page-header';
+import Header from '../headers';
 
 // TODO: refactor this to work on mobile and implement new design once it is ready
 export default function GovLevelLayout({ ...props }) {
@@ -53,14 +53,15 @@ export default function GovLevelLayout({ ...props }) {
   return (
     <div onLoad={useXarrow()}>
       <div className=''>
-        <div className='h-[300px] bg-green-500 bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 sm:mx-0 sm:h-[360px]'>
-          <OverviewPageHeader
-            thema={props.thema}
-            productChain={props.transitionAgenda}
-            title={props.title}
-            page='welke'
-          />
-        </div>
+        <Header 
+          thema={props.thema}
+          productChain={props.transitionAgenda}
+          title={props.title}
+          page='welke'
+          bgColor='bg-cl-black'
+          pageType='instrumentOverview'
+        />
+     
         {/* DYNAMIC IMAGE */}
         <div className='global-margin mb-20 mt-5 hidden sm:mt-20 sm:block'>
           <div className='flex grid-cols-3 items-start 2xl:justify-center'>

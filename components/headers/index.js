@@ -29,7 +29,7 @@ export default function Header({ imageURL, bgColor, title, pageType, subtitle, .
           <div className='z-5 relative flex flex-col justify-between'>
             <div className='mb-20 flex flex-row justify-between'>
               <Breadcrumb pageType={pageType} />
-              {pageType === 'withTabs' && (
+              {pageType === 'withTabs' || pageType === 'instrumentOverview' && (
                 <div className='block py-3 sm:float-right sm:py-0'>
                   <div className='p-base hidden pb-2 text-white sm:block'>
                     Bekijk de instrumenten:
@@ -42,7 +42,6 @@ export default function Header({ imageURL, bgColor, title, pageType, subtitle, .
                 </div>
               )}
             </div>
-
             <div className='max-w-3xl'>
               {pageType === 'productChain' && (
                 <div className='p-base sm:heading-2xl-semibold text-green-400'>{subtitle}</div>
