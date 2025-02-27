@@ -1,12 +1,14 @@
 'use client';
 
+// TODO: Need to fix mobile design of tab layout and everything.
+
 import { useEffect, useState, useTransition } from 'react';
 
 import { usePathname } from 'next/navigation';
 
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
+// import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
-import { IconChevronUp } from '@tabler/icons-react';
+// import { IconChevronUp } from '@tabler/icons-react';
 
 import ExplinationText from '../expertise-page/explination-text';
 import TabButton from '../expertise-page/tab-button';
@@ -323,10 +325,10 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           productChain={props.transitionAgenda}
         />
         {/* DESKTOP */}
-        <div className='global-margin hidden max-w-[1280px] pb-10 sm:flex'>
-          <div className='w-full flex-col justify-start'>
-            <div className='z-5 w-full rounded-b-cl bg-cl-black'>
-              <div className='ml-16 flex h-12 flex-row justify-start gap-x-3 sm:h-[52px]'>
+      <div className='global-margin'>
+          <div className='w-full flex flex-col 2xl:min-w-[1122.69px] justify-start'>
+            <div className='z-5 h-12'>
+              <div className='px-16 flex h-full flex-row justify-start gap-x-3 sm:h-[52px] overflow-x-scroll no-scrollbar bg-cl-black rounded-b-cl'>
                 <TabButton
                   selected={selectedTab}
                   onClick={() => {
@@ -493,8 +495,12 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           </div>
         </div>
 
+        </div>
+       
+        
         {/* MOBILE */}
         <div className='sm:hidden'>
+          {/**  
           <div className='no-scrollbar -mt-12 flex snap-x snap-mandatory overflow-x-scroll sm:hidden'>
             <div className='flex h-12 gap-x-2'>
               <TabButton
@@ -552,8 +558,8 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 name='fiscaal'
               />
             </div>
-          </div>
-
+          </div>*/}
+{/*
           <ExplinationText selected={selectedTab} />
 
           <div className='pb-4'>
@@ -771,6 +777,8 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             </div>
           </div>
 
+           */}
+
           {/* DISPLAY INSTRUMENTS MOBILE */}
           {selectedTab === 'beleid' && (
             <TabLayout
@@ -813,7 +821,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             />
           )}
         </div>
-      </div>
+    
     </>
   );
 }
