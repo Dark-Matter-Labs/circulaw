@@ -1,14 +1,13 @@
 'use client';
 
 // TODO: Need to fix mobile design of tab layout and everything.
-
 import { useEffect, useState, useTransition } from 'react';
 
 import { usePathname } from 'next/navigation';
 
-// import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
-// import { IconChevronUp } from '@tabler/icons-react';
+import { IconChevronUp } from '@tabler/icons-react';
 
 import ExplinationText from '../expertise-page/explination-text';
 import TabButton from '../expertise-page/tab-button';
@@ -315,7 +314,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
   }
   return (
     <>
-      <div className='flex flex-col'>
+      <div className=''>
         <Header
           title={props.title}
           bgColor='bg-cl-black'
@@ -325,10 +324,10 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
           productChain={props.transitionAgenda}
         />
         {/* DESKTOP */}
-      <div className='global-margin'>
-          <div className='w-full flex flex-col 2xl:min-w-[1122.69px] justify-start'>
+        <div className='global-margin'>
+          <div className='flex w-full flex-col justify-start'>
             <div className='z-5 h-12'>
-              <div className='px-16 flex h-full flex-row justify-start gap-x-3 sm:h-[52px] overflow-x-scroll no-scrollbar bg-cl-black rounded-b-cl'>
+              <div className='no-scrollbar flex h-full flex-row justify-start gap-x-3 overflow-x-scroll rounded-b-cl bg-cl-black px-16 sm:h-[52px]'>
                 <TabButton
                   selected={selectedTab}
                   onClick={() => {
@@ -387,8 +386,8 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             </div>
 
             <ExplinationText selected={selectedTab} />
-
-            <div className='flex h-11 max-w-[880px] flex-row items-center'>
+            {/* desktop filters */}
+            <div className='hidden h-11 max-w-[880px] flex-row items-center sm:flex'>
               <div className='ml-3 flex basis-1/2 justify-end pr-3'>
                 <div className='p-2xs-bold'>Toon:</div>
               </div>
@@ -452,6 +451,232 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 </div>
               </div>
             </div>
+
+            {/* Mobile filter */}
+            <div className='pb-4 sm:hidden'>
+              <div className='mx-4'>
+                <p className='p-base'>Toon overheidslaag:</p>
+                <div className='w-full min-w-[260px] pt-3'>
+                  {local?.value === 'alle' && (
+                    <Disclosure>
+                      {({ open }) => (
+                        <>
+                          <DisclosureButton
+                            className={`${
+                              open ? 'rounded-t-cl' : 'rounded-cl'
+                            } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
+                          >
+                            <div
+                              className={`${
+                                open ? 'rounded-tl-cl' : 'rounded-l-cl'
+                              } flex h-full w-11/12 items-center justify-start truncate bg-green-100 pl-3`}
+                            >
+                              <span className='p-base-bold inline text-left text-green-500'>
+                                Alle
+                              </span>
+                            </div>
+                            <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-500 bg-green-500 px-5 pr-5'>
+                              <IconChevronUp
+                                className={`${
+                                  open ? '' : 'rotate-180 transform'
+                                } z-10 h-5 w-5 text-white`}
+                              />
+                            </div>
+                          </DisclosureButton>
+                          <DisclosurePanel>
+                            <DisclosureButton
+                              as='div'
+                              onClick={() => handleRadioButton('Gemeentelijk')}
+                            >
+                              <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
+                                <span className='p-base block truncate pl-3'>Gemeentelijk</span>
+                              </div>
+                            </DisclosureButton>
+                            <DisclosureButton
+                              as='div'
+                              onClick={() => handleRadioButton('Provinciaal')}
+                            >
+                              <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
+                                <span className='p-base block truncate pl-3'>Provinciaal</span>
+                              </div>
+                            </DisclosureButton>
+
+                            <DisclosureButton
+                              as='div'
+                              onClick={() => handleRadioButton('Nationaal')}
+                            >
+                              <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
+                                <span className='p-base block truncate pl-3'>Nationaal</span>
+                              </div>
+                            </DisclosureButton>
+                          </DisclosurePanel>
+                        </>
+                      )}
+                    </Disclosure>
+                  )}
+                  {local?.value === 'Nationaal' && (
+                    <Disclosure>
+                      {({ open }) => (
+                        <>
+                          <DisclosureButton
+                            className={`${
+                              open ? 'rounded-t-cl' : 'rounded-cl'
+                            } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
+                          >
+                            <div
+                              className={`${
+                                open ? 'rounded-tl-cl' : 'rounded-l-cl'
+                              } flex h-full w-11/12 items-center justify-start truncate bg-green-100 pl-3`}
+                            >
+                              <span className='p-base-bold inline text-left text-green-500'>
+                                Nationaal
+                              </span>
+                            </div>
+                            <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-500 bg-green-500 px-5 pr-5'>
+                              <IconChevronUp
+                                className={`${
+                                  open ? '' : 'rotate-180 transform'
+                                } z-10 h-5 w-5 text-white`}
+                              />
+                            </div>
+                          </DisclosureButton>
+                          <DisclosurePanel>
+                            <DisclosureButton as='div' onClick={() => handleRadioButton('alle')}>
+                              <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
+                                <span className='p-base block truncate pl-3'>Alle</span>
+                              </div>
+                            </DisclosureButton>
+                            <DisclosureButton
+                              as='div'
+                              onClick={() => handleRadioButton('Gemeentelijk')}
+                            >
+                              <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
+                                <span className='p-base block truncate pl-3'>Gemeentelijk</span>
+                              </div>
+                            </DisclosureButton>
+                            <DisclosureButton
+                              as='div'
+                              onClick={() => handleRadioButton('Provinciaal')}
+                            >
+                              <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
+                                <span className='p-base block truncate pl-3'>Provinciaal</span>
+                              </div>
+                            </DisclosureButton>
+                          </DisclosurePanel>
+                        </>
+                      )}
+                    </Disclosure>
+                  )}
+                  {local?.value === 'Provinciaal' && (
+                    <Disclosure>
+                      {({ open }) => (
+                        <>
+                          <DisclosureButton
+                            className={`${
+                              open ? 'rounded-t-cl' : 'rounded-cl'
+                            } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
+                          >
+                            <div
+                              className={`${
+                                open ? 'rounded-tl-cl' : 'rounded-l-cl'
+                              } flex h-full w-11/12 items-center justify-start truncate bg-green-100 pl-3`}
+                            >
+                              <span className='p-base-bold inline text-left text-green-500'>
+                                Provinciaal
+                              </span>
+                            </div>
+                            <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-500 bg-green-500 px-5 pr-5'>
+                              <IconChevronUp
+                                className={`${
+                                  open ? '' : 'rotate-180 transform'
+                                } z-10 h-5 w-5 text-white`}
+                              />
+                            </div>
+                          </DisclosureButton>
+                          <DisclosurePanel>
+                            <DisclosureButton as='div' onClick={() => handleRadioButton('alle')}>
+                              <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
+                                <span className='p-base block truncate pl-3'>Alle</span>
+                              </div>
+                            </DisclosureButton>
+                            <DisclosureButton
+                              as='div'
+                              onClick={() => handleRadioButton('Gemeentelijk')}
+                            >
+                              <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
+                                <span className='p-base block truncate pl-3'>Gemeentelijk</span>
+                              </div>
+                            </DisclosureButton>
+                            <DisclosureButton
+                              as='div'
+                              onClick={() => handleRadioButton('Nationaal')}
+                            >
+                              <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
+                                <span className='p-base block truncate pl-3'>Nationaal</span>
+                              </div>
+                            </DisclosureButton>
+                          </DisclosurePanel>
+                        </>
+                      )}
+                    </Disclosure>
+                  )}
+                  {local?.value === 'Gemeentelijk' && (
+                    <Disclosure>
+                      {({ open }) => (
+                        <>
+                          <DisclosureButton
+                            className={`${
+                              open ? 'rounded-t-cl' : 'rounded-cl'
+                            } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
+                          >
+                            <div
+                              className={`${
+                                open ? 'rounded-tl-cl' : 'rounded-l-cl'
+                              } flex h-full w-11/12 items-center justify-start truncate bg-green-100 pl-3`}
+                            >
+                              <span className='p-base-bold inline text-left text-green-500'>
+                                Gemeentelijk
+                              </span>
+                            </div>
+                            <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-500 bg-green-500 px-5 pr-5'>
+                              <IconChevronUp
+                                className={`${
+                                  open ? '' : 'rotate-180 transform'
+                                } z-10 h-5 w-5 text-white`}
+                              />
+                            </div>
+                          </DisclosureButton>
+                          <DisclosurePanel>
+                            <DisclosureButton as='div' onClick={() => handleRadioButton('alle')}>
+                              <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
+                                <span className='p-base block truncate pl-3'>Alle</span>
+                              </div>
+                            </DisclosureButton>
+                            <DisclosureButton
+                              as='div'
+                              onClick={() => handleRadioButton('Provinciaal')}
+                            >
+                              <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
+                                <span className='p-base block truncate pl-3'>Provinciaal</span>
+                              </div>
+                            </DisclosureButton>
+                            <DisclosureButton
+                              as='div'
+                              onClick={() => handleRadioButton('Nationaal')}
+                            >
+                              <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
+                                <span className='p-base block truncate pl-3'>Nationaal</span>
+                              </div>
+                            </DisclosureButton>
+                          </DisclosurePanel>
+                        </>
+                      )}
+                    </Disclosure>
+                  )}
+                </div>
+              </div>
+            </div>
+
             {selectedTab === 'beleid' && (
               <TabLayout
                 category={beleid}
@@ -494,13 +719,12 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
             )}
           </div>
         </div>
+      </div>
 
-        </div>
-       
-        
-        {/* MOBILE */}
-        <div className='sm:hidden'>
-          {/**  
+      {/* MOBILE */}
+      {/*  */}
+      <div className='sm:hidden'>
+        {/* 
           <div className='no-scrollbar -mt-12 flex snap-x snap-mandatory overflow-x-scroll sm:hidden'>
             <div className='flex h-12 gap-x-2'>
               <TabButton
@@ -558,228 +782,11 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
                 name='fiscaal'
               />
             </div>
-          </div>*/}
-{/*
-          <ExplinationText selected={selectedTab} />
+          </div> 
+          
+             <ExplinationText selected={selectedTab} />*/}
 
-          <div className='pb-4'>
-            <div className='mx-4'>
-              <p className='p-base'>Toon overheidslaag:</p>
-              <div className='w-full min-w-[260px] pt-3'>
-                {local?.value === 'alle' && (
-                  <Disclosure>
-                    {({ open }) => (
-                      <>
-                        <DisclosureButton
-                          className={`${
-                            open ? 'rounded-t-cl' : 'rounded-cl'
-                          } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
-                        >
-                          <div
-                            className={`${
-                              open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                            } flex h-full w-11/12 items-center justify-start truncate bg-green-100 pl-3`}
-                          >
-                            <span className='p-base-bold inline text-left text-green-500'>
-                              Alle
-                            </span>
-                          </div>
-                          <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-500 bg-green-500 px-5 pr-5'>
-                            <IconChevronUp
-                              className={`${
-                                open ? '' : 'rotate-180 transform'
-                              } z-10 h-5 w-5 text-white`}
-                            />
-                          </div>
-                        </DisclosureButton>
-                        <DisclosurePanel>
-                          <DisclosureButton
-                            as='div'
-                            onClick={() => handleRadioButton('Gemeentelijk')}
-                          >
-                            <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
-                              <span className='p-base block truncate pl-3'>Gemeentelijk</span>
-                            </div>
-                          </DisclosureButton>
-                          <DisclosureButton
-                            as='div'
-                            onClick={() => handleRadioButton('Provinciaal')}
-                          >
-                            <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
-                              <span className='p-base block truncate pl-3'>Provinciaal</span>
-                            </div>
-                          </DisclosureButton>
-
-                          <DisclosureButton as='div' onClick={() => handleRadioButton('Nationaal')}>
-                            <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
-                              <span className='p-base block truncate pl-3'>Nationaal</span>
-                            </div>
-                          </DisclosureButton>
-                        </DisclosurePanel>
-                      </>
-                    )}
-                  </Disclosure>
-                )}
-                {local?.value === 'Nationaal' && (
-                  <Disclosure>
-                    {({ open }) => (
-                      <>
-                        <DisclosureButton
-                          className={`${
-                            open ? 'rounded-t-cl' : 'rounded-cl'
-                          } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
-                        >
-                          <div
-                            className={`${
-                              open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                            } flex h-full w-11/12 items-center justify-start truncate bg-green-100 pl-3`}
-                          >
-                            <span className='p-base-bold inline text-left text-green-500'>
-                              Nationaal
-                            </span>
-                          </div>
-                          <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-500 bg-green-500 px-5 pr-5'>
-                            <IconChevronUp
-                              className={`${
-                                open ? '' : 'rotate-180 transform'
-                              } z-10 h-5 w-5 text-white`}
-                            />
-                          </div>
-                        </DisclosureButton>
-                        <DisclosurePanel>
-                          <DisclosureButton as='div' onClick={() => handleRadioButton('alle')}>
-                            <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
-                              <span className='p-base block truncate pl-3'>Alle</span>
-                            </div>
-                          </DisclosureButton>
-                          <DisclosureButton
-                            as='div'
-                            onClick={() => handleRadioButton('Gemeentelijk')}
-                          >
-                            <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
-                              <span className='p-base block truncate pl-3'>Gemeentelijk</span>
-                            </div>
-                          </DisclosureButton>
-                          <DisclosureButton
-                            as='div'
-                            onClick={() => handleRadioButton('Provinciaal')}
-                          >
-                            <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
-                              <span className='p-base block truncate pl-3'>Provinciaal</span>
-                            </div>
-                          </DisclosureButton>
-                        </DisclosurePanel>
-                      </>
-                    )}
-                  </Disclosure>
-                )}
-                {local?.value === 'Provinciaal' && (
-                  <Disclosure>
-                    {({ open }) => (
-                      <>
-                        <DisclosureButton
-                          className={`${
-                            open ? 'rounded-t-cl' : 'rounded-cl'
-                          } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
-                        >
-                          <div
-                            className={`${
-                              open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                            } flex h-full w-11/12 items-center justify-start truncate bg-green-100 pl-3`}
-                          >
-                            <span className='p-base-bold inline text-left text-green-500'>
-                              Provinciaal
-                            </span>
-                          </div>
-                          <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-500 bg-green-500 px-5 pr-5'>
-                            <IconChevronUp
-                              className={`${
-                                open ? '' : 'rotate-180 transform'
-                              } z-10 h-5 w-5 text-white`}
-                            />
-                          </div>
-                        </DisclosureButton>
-                        <DisclosurePanel>
-                          <DisclosureButton as='div' onClick={() => handleRadioButton('alle')}>
-                            <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
-                              <span className='p-base block truncate pl-3'>Alle</span>
-                            </div>
-                          </DisclosureButton>
-                          <DisclosureButton
-                            as='div'
-                            onClick={() => handleRadioButton('Gemeentelijk')}
-                          >
-                            <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
-                              <span className='p-base block truncate pl-3'>Gemeentelijk</span>
-                            </div>
-                          </DisclosureButton>
-                          <DisclosureButton as='div' onClick={() => handleRadioButton('Nationaal')}>
-                            <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
-                              <span className='p-base block truncate pl-3'>Nationaal</span>
-                            </div>
-                          </DisclosureButton>
-                        </DisclosurePanel>
-                      </>
-                    )}
-                  </Disclosure>
-                )}
-                {local?.value === 'Gemeentelijk' && (
-                  <Disclosure>
-                    {({ open }) => (
-                      <>
-                        <DisclosureButton
-                          className={`${
-                            open ? 'rounded-t-cl' : 'rounded-cl'
-                          } flex h-10 w-full items-center justify-between border border-green-500 bg-green-500 text-black hover:text-green-500 focus:outline-none focus-visible:ring focus-visible:ring-green-500 focus-visible:ring-opacity-75`}
-                        >
-                          <div
-                            className={`${
-                              open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                            } flex h-full w-11/12 items-center justify-start truncate bg-green-100 pl-3`}
-                          >
-                            <span className='p-base-bold inline text-left text-green-500'>
-                              Gemeentelijk
-                            </span>
-                          </div>
-                          <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-500 bg-green-500 px-5 pr-5'>
-                            <IconChevronUp
-                              className={`${
-                                open ? '' : 'rotate-180 transform'
-                              } z-10 h-5 w-5 text-white`}
-                            />
-                          </div>
-                        </DisclosureButton>
-                        <DisclosurePanel>
-                          <DisclosureButton as='div' onClick={() => handleRadioButton('alle')}>
-                            <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
-                              <span className='p-base block truncate pl-3'>Alle</span>
-                            </div>
-                          </DisclosureButton>
-                          <DisclosureButton
-                            as='div'
-                            onClick={() => handleRadioButton('Provinciaal')}
-                          >
-                            <div className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
-                              <span className='p-base block truncate pl-3'>Provinciaal</span>
-                            </div>
-                          </DisclosureButton>
-                          <DisclosureButton as='div' onClick={() => handleRadioButton('Nationaal')}>
-                            <div className='flex h-10 w-full items-center rounded-b-cl border-b border-l border-r border-green-500 bg-green-100 text-cl-black hover:text-green-500'>
-                              <span className='p-base block truncate pl-3'>Nationaal</span>
-                            </div>
-                          </DisclosureButton>
-                        </DisclosurePanel>
-                      </>
-                    )}
-                  </Disclosure>
-                )}
-              </div>
-            </div>
-          </div>
-
-           */}
-
-          {/* DISPLAY INSTRUMENTS MOBILE */}
+        {/* DISPLAY INSTRUMENTS MOBILE 
           {selectedTab === 'beleid' && (
             <TabLayout
               category={beleid}
@@ -819,9 +826,8 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
               transitionAgenda={props.transitionAgenda}
               isPending={isPending}
             />
-          )}
-        </div>
-    
+          )}*/}
+      </div>
     </>
   );
 }
