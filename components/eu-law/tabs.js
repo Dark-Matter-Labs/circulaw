@@ -17,13 +17,13 @@ export default function Tabs({ summaryData, initialTab }) {
 
   return (
     <div className='sticky top-16 z-50 shadow-lg lgNav:top-24'>
-      <div className='no-scrollbar -mt-12 flex snap-x snap-mandatory overflow-x-scroll bg-green-800 pt-4 sm:-mt-[72px] lgNav:block'>
+      <div className='no-scrollbar -mt-12 flex snap-x snap-mandatory overflow-x-scroll bg-cl-black pt-4 sm:-mt-[72px] lgNav:block'>
         <div className='global-margin'>
           <div className='p-2xs-semibold flex h-[57px] max-w-3xl flex-row justify-start gap-x-2 text-green-500'>
             <Link
               className={`${
                 selectedTab === 'overzicht'
-                  ? 'bg-gray-100 text-green-500'
+                  ? 'bg-green-100 text-green-500'
                   : 'bg-green-500 text-white'
               } flex h-full w-[73px] items-start justify-center rounded-t-cl px-3 py-2`}
               href={{
@@ -37,7 +37,7 @@ export default function Tabs({ summaryData, initialTab }) {
             <Link
               className={`${
                 selectedTab === 'verplichtingen-voor-europese-lidstaten'
-                  ? 'bg-gray-100 text-green-500'
+                  ? 'bg-green-100 text-green-500'
                   : 'bg-green-500 text-white'
               } flex h-full w-[140px] items-start justify-center rounded-t-cl px-3 py-2`}
               href={{
@@ -51,7 +51,7 @@ export default function Tabs({ summaryData, initialTab }) {
             <Link
               className={`${
                 selectedTab === 'relevantie-voor-regionale-en-lokale-overheden'
-                  ? 'bg-gray-100 text-green-500'
+                  ? 'bg-green-100 text-green-500'
                   : 'bg-green-500 text-white'
               } flex h-full w-[170px] items-start justify-center rounded-t-cl px-3 py-2`}
               href={{
@@ -65,7 +65,7 @@ export default function Tabs({ summaryData, initialTab }) {
             <Link
               className={`${
                 selectedTab === 'relevantie-voor-de-circulaire-economie'
-                  ? 'bg-gray-100 text-green-500'
+                  ? 'bg-green-100 text-green-500'
                   : 'bg-green-500 text-white'
               } flex h-full w-[140px] items-start justify-center rounded-t-cl px-3 py-2`}
               href={{

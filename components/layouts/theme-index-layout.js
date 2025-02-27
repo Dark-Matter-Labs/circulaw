@@ -13,8 +13,7 @@ import samenhang from '@/public/thema-card-background/samenhang.svg';
 import waarvoor from '@/public/thema-card-background/waarvoor.svg';
 import { IconArrowRight } from '@tabler/icons-react';
 
-import ThemePageHeader from '../theme-page/theme-page-header';
-import ThemePageHeaderMobile from '../theme-page/theme-page-header-mobile';
+import Header from '../headers';
 import ThemeSponsors from '../theme-page/theme-sponsors';
 
 // TODO: See what we could move to a layout.js file instead of having everything in components.
@@ -26,13 +25,15 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
   return (
     <>
       <div>
-        {/* HEADER DESKTOP */}
-        <ThemePageHeader themaData={thema} />
-        {/* HEADER MOBILE */}
-        <ThemePageHeaderMobile themaData={thema} />
+        <Header
+          title={thema?.themaName}
+          imageURL={thema?.heroImage}
+          subtitle={thema?.themaSubtitle}
+          pageType='thema'
+        />
 
         {/* CARDS */}
-        <div className='bg-gray-100'>
+        <div className=''>
           <div className='global-margin pb-16 sm:pb-20'>
             <div className='pb-14 pt-20'>
               <h2 className='heading-2xl-semibold sm:heading-3xl-semibold'>
@@ -41,14 +42,13 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
             </div>
 
             {/* Desktop Cards */}
-            {/* keeping this here as we will be re-using this layout when we add a call to action for the e-learning  */}
             {thema?.themaName === 'Houtbouw' ? (
               <>
-                <div className='hidden grid-cols-3 text-green-800 sm:grid md:gap-x-8 lg:gap-x-16'>
+                <div className='hidden grid-cols-3 text-cl-black sm:grid md:gap-x-8 lg:gap-x-16'>
                   <div className='grid-col col-span-2 grid gap-y-4'>
                     <Link href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/categorie`}>
-                      <div className='group grid h-44 w-full grid-cols-3 rounded-cl bg-green-50 hover:cursor-pointer'>
-                        <div className='col-span-1 rounded-l-cl bg-green-600'>
+                      <div className='group grid h-44 w-full grid-cols-3 rounded-cl bg-green-100 hover:cursor-pointer'>
+                        <div className='col-span-1 rounded-l-cl bg-green-500'>
                           <div className='flex h-full w-full items-center justify-center p-4'>
                             <Image src={samenhang} alt='' className='h-3/4 w-3/4' />
                           </div>
@@ -56,7 +56,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         <div className='col-span-2 flex flex-col gap-y-2 p-4'>
                           <div className='heading-xl-semibold'>{thema?.samenhangTitle}</div>
                           <div className='p-base h-full flex-grow'>{thema?.samenhangText}</div>
-                          <div className='p-base-semibold flex w-full items-center justify-end group-hover:text-green-300'>
+                          <div className='p-base-semibold flex w-full items-center justify-end group-hover:text-green-400'>
                             Bekijk jouw categorie
                             <IconArrowRight className='ml-0.5 h-5 w-5' />
                           </div>
@@ -64,8 +64,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                       </div>
                     </Link>
                     <Link href={`/${thema?.transitionAgenda}/${thema?.slug.current}/instrumenten/`}>
-                      <div className='group grid h-44 w-full grid-cols-3 rounded-cl bg-green-50 hover:cursor-pointer'>
-                        <div className='col-span-1 rounded-l-cl bg-green-600'>
+                      <div className='group grid h-44 w-full grid-cols-3 rounded-cl bg-green-100 hover:cursor-pointer'>
+                        <div className='col-span-1 rounded-l-cl bg-green-500'>
                           <div className='flex h-full w-full items-center justify-center p-4'>
                             <Image src={list} alt='' className='h-3/4 w-3/4' />
                           </div>
@@ -73,7 +73,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         <div className='col-span-2 flex flex-col gap-y-2 p-4'>
                           <div className='heading-xl-semibold'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
                           <div className='p-base h-full flex-grow'>{thema?.listText}</div>
-                          <div className='p-base-semibold flex w-full items-center justify-end group-hover:text-green-300'>
+                          <div className='p-base-semibold flex w-full items-center justify-end group-hover:text-green-400'>
                             Naar de lijst
                             <IconArrowRight className='ml-0.5 h-5 w-5' />
                           </div>
@@ -83,8 +83,8 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                     <Link
                       href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/overheidsbevoegdheid`}
                     >
-                      <div className='group grid h-44 w-full grid-cols-3 rounded-cl bg-green-50 hover:cursor-pointer'>
-                        <div className='col-span-1 rounded-l-cl bg-green-600'>
+                      <div className='group grid h-44 w-full grid-cols-3 rounded-cl bg-green-100 hover:cursor-pointer'>
+                        <div className='col-span-1 rounded-l-cl bg-green-500'>
                           <div className='flex h-full w-full items-center justify-center p-4'>
                             <Image src={waarvoor} alt='' className='h-3/4 w-3/4' />
                           </div>
@@ -92,7 +92,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         <div className='col-span-2 flex flex-col gap-y-2 p-4'>
                           <div className='heading-xl-semibold'>{thema?.welkeTitle}</div>
                           <div className='p-base h-full flex-grow'>{thema?.welkeText}</div>
-                          <div className='p-base-semibold flex w-full items-center justify-end group-hover:text-green-300'>
+                          <div className='p-base-semibold flex w-full items-center justify-end group-hover:text-green-400'>
                             Bekijk de bevoegdheden
                             <IconArrowRight className='ml-0.5 h-5 w-5' />
                           </div>
@@ -103,7 +103,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
 
                   <div className='col-span-1'>
                     <Link href='/training' className='w-full'>
-                      <div className='flex h-full w-full cursor-pointer flex-col rounded-cl bg-green-50 p-4 shadow-md'>
+                      <div className='flex h-full w-full cursor-pointer flex-col rounded-cl bg-green-100 p-4 shadow-md'>
                         <Image
                           src={elearning}
                           width={406}
@@ -137,7 +137,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                     <Link href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/categorie`}>
                       <div className='bg-grey-50 mb-6 h-24 w-full rounded-cl shadow'>
                         <div className='flex items-center justify-start'>
-                          <div className='relative h-24 w-24 rounded-l-cl bg-green-600 p-1 shadow'>
+                          <div className='relative h-24 w-24 rounded-l-cl bg-green-500 p-1 shadow'>
                             <Image
                               src={samenhang}
                               alt='vector image for categorie page'
@@ -147,7 +147,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           <div className='text-grey-800 flex max-w-[240px] items-center justify-center px-4'>
                             <div className='heading-xl-semibold'>Instrumenten per categorie</div>
                             <IconArrowRight
-                              className='mt-1 block h-8 w-8 text-green-600'
+                              className='mt-1 block h-8 w-8 text-green-500'
                               aria-hidden='true'
                             />
                           </div>
@@ -161,7 +161,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                     >
                       <div className='bg-grey-50 my-6 h-24 w-full rounded-cl shadow'>
                         <div className='flex items-center justify-start'>
-                          <div className='relative h-24 w-24 rounded-l-cl bg-green-600 p-1 shadow'>
+                          <div className='relative h-24 w-24 rounded-l-cl bg-green-500 p-1 shadow'>
                             <Image
                               src={list}
                               alt='vector image for list page'
@@ -171,7 +171,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           <div className='text-grey-800 flex max-w-[240px] items-center justify-center px-4'>
                             <div className='heading-xl-semibold'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
                             <IconArrowRight
-                              className='block h-8 w-8 text-green-600'
+                              className='block h-8 w-8 text-green-500'
                               aria-hidden='true'
                             />
                           </div>
@@ -185,7 +185,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                     >
                       <div className='bg-grey-50 mt-6 h-24 w-full rounded-cl shadow'>
                         <div className='flex items-center justify-start'>
-                          <div className='relative h-24 w-24 rounded-l-cl bg-green-600 p-1 shadow'>
+                          <div className='relative h-24 w-24 rounded-l-cl bg-green-500 p-1 shadow'>
                             <Image
                               src={waarvoor}
                               alt='vector image for waarvoor page'
@@ -195,7 +195,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           <div className='text-grey-800 flex max-w-[240px] items-center justify-center px-4'>
                             <div className='heading-xl-semibold'>{thema?.welkeTitle}</div>
                             <IconArrowRight
-                              className='mt-1 block h-8 w-8 text-green-600'
+                              className='mt-1 block h-8 w-8 text-green-500'
                               aria-hidden='true'
                             />
                           </div>
@@ -205,7 +205,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                   </li>
                 </ul>
                 <Link href='/training' className='w-full sm:hidden'>
-                  <div className='mt-6 flex h-auto w-full flex-col gap-4 rounded-cl bg-green-50 p-4 shadow'>
+                  <div className='mt-6 flex h-auto w-full flex-col gap-4 rounded-cl bg-green-100 p-4 shadow'>
                     <div className='heading-xl-semibold'>
                       E-learning Circulaire houtbouw onder de Omgevingswet
                     </div>
@@ -235,7 +235,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                       role='listitem'
                       className='flex h-auto min-w-[300px] max-w-[355px] flex-col rounded-cl'
                     >
-                      <div className='flex h-48 items-center justify-center rounded-t-cl bg-green-600'>
+                      <div className='flex h-48 items-center justify-center rounded-t-cl bg-green-500'>
                         <div className='p-4'>
                           <Image
                             src={samenhang}
@@ -245,7 +245,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         </div>
                       </div>
 
-                      <div className='flex h-72 flex-col justify-between rounded-b-cl border border-gray-400 bg-gray-100 p-5'>
+                      <div className='flex h-72 flex-col justify-between rounded-b-cl border border-cl-grey bg-green-100 p-5'>
                         <div>
                           <div className='heading-2xl-semibold pb-4'>{thema?.samenhangTitle}</div>
                           <div className='p-base'>{thema?.samenhangText}</div>
@@ -265,12 +265,12 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                       role='listitem'
                       className='flex h-auto min-w-[300px] max-w-[355px] flex-col rounded-cl'
                     >
-                      <div className='flex h-48 items-center justify-center rounded-t-cl bg-green-600'>
+                      <div className='flex h-48 items-center justify-center rounded-t-cl bg-green-500'>
                         <div className='p-4'>
                           <Image src={list} alt='' className='h-full w-full' />
                         </div>
                       </div>
-                      <div className='flex h-72 flex-col justify-between rounded-b-cl border border-gray-400 bg-gray-100 p-5'>
+                      <div className='flex h-72 flex-col justify-between rounded-b-cl border border-cl-grey bg-green-100 p-5'>
                         <div>
                           <div className='heading-2xl-semibold pb-4'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
                           <div className='p-base'>{thema?.listText}</div>
@@ -292,13 +292,13 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                       role='listitem'
                       className='flex h-auto min-w-[300px] max-w-[355px] flex-col rounded-cl'
                     >
-                      <div className='flex h-48 items-center justify-center rounded-t-cl bg-green-600'>
+                      <div className='flex h-48 items-center justify-center rounded-t-cl bg-green-500'>
                         <div className='p-4'>
                           {' '}
                           <Image src={waarvoor} alt='' className='h-full w-full' />
                         </div>
                       </div>
-                      <div className='flex h-72 flex-col justify-between rounded-b-cl border border-gray-400 bg-gray-100 p-5'>
+                      <div className='flex h-72 flex-col justify-between rounded-b-cl border border-cl-grey bg-green-100 p-5'>
                         <div>
                           <div className='heading-2xl-semibold pb-4'>{thema?.welkeTitle}</div>
                           <div className='p-base'>{thema?.welkeText}</div>
@@ -320,17 +320,17 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                     <Link href={`/${thema?.transitionAgenda}/${thema?.slug?.current}/categorie`}>
                       <div className='mb-6 h-24 w-full rounded-cl bg-gray-50 shadow'>
                         <div className='flex items-center justify-start'>
-                          <div className='relative h-24 w-24 rounded-l-cl bg-green-600 p-1 shadow'>
+                          <div className='relative h-24 w-24 rounded-l-cl bg-green-500 p-1 shadow'>
                             <Image
                               src={samenhang}
                               alt='vector image for categorie page'
                               className='h-full w-full rounded-l-cl'
                             />
                           </div>
-                          <div className='flex max-w-[240px] items-center justify-center px-4 text-gray-800'>
+                          <div className='flex max-w-[240px] items-center justify-center px-4 text-cl-black'>
                             <div className='heading-xl-semibold'>Instrumenten per categorie</div>
                             <IconArrowRight
-                              className='mt-1 block h-8 w-8 text-green-600'
+                              className='mt-1 block h-8 w-8 text-green-500'
                               aria-hidden='true'
                             />
                           </div>
@@ -344,17 +344,17 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                     >
                       <div className='my-6 h-24 w-full rounded-cl bg-gray-50 shadow'>
                         <div className='flex items-center justify-start'>
-                          <div className='relative h-24 w-24 rounded-l-cl bg-green-600 p-1 shadow'>
+                          <div className='relative h-24 w-24 rounded-l-cl bg-green-500 p-1 shadow'>
                             <Image
                               src={list}
                               alt='vector image for list page'
                               className='h-full w-full rounded-l-cl'
                             />
                           </div>
-                          <div className='flex max-w-[240px] items-center justify-center px-4 text-gray-800'>
+                          <div className='flex max-w-[240px] items-center justify-center px-4 text-cl-black'>
                             <div className='heading-xl-semibold'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
                             <IconArrowRight
-                              className='block h-8 w-8 text-green-600'
+                              className='block h-8 w-8 text-green-500'
                               aria-hidden='true'
                             />
                           </div>
@@ -368,17 +368,17 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                     >
                       <div className='mt-6 h-24 w-full rounded-cl bg-gray-50 shadow'>
                         <div className='flex items-center justify-start'>
-                          <div className='relative h-24 w-24 rounded-l-cl bg-green-600 p-1 shadow'>
+                          <div className='relative h-24 w-24 rounded-l-cl bg-green-500 p-1 shadow'>
                             <Image
                               src={waarvoor}
                               alt='vector image for waarvoor page'
                               className='h-full w-full rounded-l-cl'
                             />
                           </div>
-                          <div className='flex max-w-[240px] items-center justify-center px-4 text-gray-800'>
+                          <div className='flex max-w-[240px] items-center justify-center px-4 text-cl-black'>
                             <div className='heading-xl-semibold'>{thema?.welkeTitle}</div>
                             <IconArrowRight
-                              className='mt-1 block h-8 w-8 text-green-600'
+                              className='mt-1 block h-8 w-8 text-green-500'
                               aria-hidden='true'
                             />
                           </div>
@@ -391,7 +391,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
             )}
           </div>
 
-          <div className='bg-gray-200'>
+          <div className=''>
             <ThemeBottomSection featuredLaws={featuredLaws} thema={thema} />
           </div>
           {thema?.reports && (
@@ -410,7 +410,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                         }/${
                           process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
                         }/${id}.${extension}`}
-                        className='heading-xl-semibold flex items-center text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'
+                        className='heading-xl-semibold flex items-center text-green-500 hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'
                         target='_blank'
                       >
                         {report.linkText}

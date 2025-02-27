@@ -30,7 +30,7 @@ export default function ThemeSponsors({ thema, sponsors }) {
 
   return (
     <>
-      <div className='h-auto bg-gray-100'>
+      <div className='h-auto bg-green-100'>
         <div className='global-margin flex flex-col items-center justify-center'>
           <div className='heading-xl-semibold mb-10 mt-20 flex flex-row items-center text-green-500'>
             <div className='h-11 w-1.5 bg-green-500'></div>

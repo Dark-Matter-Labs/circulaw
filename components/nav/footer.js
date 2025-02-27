@@ -48,7 +48,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
       <footer className='' aria-labelledby='footer-heading'>
         {pathname !== '/en' && (
           <div>
-            <div className='flex w-full items-center justify-center border-y-2 border-gray-100 bg-green-800 py-8 lgNav:hidden'>
+            <div className='flex w-full items-center justify-center border-y-2 border-green-100 bg-cl-black py-8 lgNav:hidden'>
               <CustomButton color='home'>
                 <ScrollLink to='top' smooth={true}>
                   <span>
@@ -58,9 +58,9 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                 </ScrollLink>
               </CustomButton>
             </div>
-            <div className='global-margin border-t border-t-green-600 py-10'>
+            <div className='global-margin border-t border-t-green-500 py-10'>
               <div className={`flex items-center justify-center ${jeeNee}`}>
-                <h3 className='heading-xl-semibold sm:heading-2xl-semibold pr-8 text-green-600'>
+                <h3 className='heading-xl-semibold sm:heading-2xl-semibold pr-8 text-green-500'>
                   Vond je deze pagina nuttig?
                 </h3>
                 <div className='mr-4'>
@@ -115,7 +115,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                       rows={2}
                       value={feedback}
                       onChange={(e) => setFeedback(e.target.value)}
-                      className='block w-3/4 rounded-cl border border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                      className='block w-3/4 rounded-cl border border-cl-grey px-4 py-3 shadow-sm focus:border-green-500 focus:ring-green-500'
                     />
                   </div>
                 </div>
@@ -143,12 +143,12 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                 <p className='p-base mx-auto leading-6 text-gray-900'>Bedankt voor je reactie!</p>
               </div>
             </div>
-            <div className='bg-green-600'>
+            <div className='bg-green-500'>
               <div className='global-margin pt-8 lg:px-8 lg:pt-16'>
                 <div className='pb-20'>
                   <div className=''>
                     <div className='grid grid-cols-1 gap-2 sm:grid-cols-4 sm:gap-8'>
-                      <div className='block border-b border-gray-100 pb-4 sm:hidden'>
+                      <div className='block border-b border-green-100 pb-4 sm:hidden'>
                         <FooterLinkBlock
                           title='Schrijf je in voor onze CircuLaw Nieuwsbrief'
                           paragraph='Zo ben je altijd op de hoogte van het laatste CircuLaw-nieuws. '
@@ -162,7 +162,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                           buttonText='Neem contact op'
                           buttonLink='/contact'
                         />
-                        <div className='p-base block pt-6 text-gray-100 sm:hidden'>
+                        <div className='p-base block pt-6 text-green-100 sm:hidden'>
                           <h3 className='heading-xl-semibold sm:heading-2xl-semibold inline-block'>
                             Volg ons op:
                           </h3>
@@ -171,14 +171,14 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                             target='_blank'
                             aria-label='link to CircuLaw LinkedIn'
                           >
-                            <IconBrandLinkedin className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-300' />
+                            <IconBrandLinkedin className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-400' />
                           </Link>
                           <Link
                             href='https://github.com/Dark-Matter-Labs/circulaw'
                             target='_blank'
                             aria-label='link to CircuLaw github'
                           >
-                            <IconBrandGithub className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-300' />
+                            <IconBrandGithub className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-400' />
                           </Link>
                           <Link
                             href='https://openresearch.amsterdam/nl/page/89270/circulaw---circulaire-regelgevingstool'
@@ -189,13 +189,13 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                           </Link>
                         </div>
                       </div>
-                      <div className='border-b border-gray-100 py-2 sm:border-0 sm:py-0'>
-                        <h4 className='heading-xl-semibold text-green-200'>Productketens</h4>
+                      <div className='border-b border-green-100 py-2 sm:border-0 sm:py-0'>
+                        <h4 className='heading-xl-semibold text-green-300'>Productketens</h4>
                         <div className='grid grid-cols-1 gap-8 py-2 sm:py-0'>
                           <ul role='list' className='mt-4 space-y-4'>
                             {navigation.thema?.map((thema) => (
                               <li key={thema.name}>
-                                <a href={thema.slug} className='p-base text-gray-100'>
+                                <a href={thema.slug} className='p-base text-green-100'>
                                   <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
                                     {thema.name}
                                   </span>
@@ -205,8 +205,8 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                           </ul>
                         </div>
                       </div>
-                      <div className='border-b border-gray-100 py-2 sm:border-0 sm:py-0'>
-                        <h4 className='heading-xl-semibold text-green-200'>Over CircuLaw</h4>
+                      <div className='border-b border-green-100 py-2 sm:border-0 sm:py-0'>
+                        <h4 className='heading-xl-semibold text-green-300'>Over CircuLaw</h4>
                         <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                           {' '}
                           <ul role='list' className='mt-4 space-y-4'>
@@ -215,7 +215,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                                 <li key={id}>
                                   <a
                                     href={`/over/${encodeURIComponent(slug.slug)}`}
-                                    className='p-base text-gray-100'
+                                    className='p-base text-green-100'
                                   >
                                     <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
                                       {slug.pageTitle.replaceAll('-', ' ')}
@@ -229,7 +229,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                       <div className='py-2 sm:py-0'>
                         <ul role='list' className='space-y-4'>
                           <li>
-                            <a className='p-base link-interaction text-gray-100' href={vraagSlug}>
+                            <a className='p-base link-interaction text-green-100' href={vraagSlug}>
                               <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
                                 Vraag en antwoord
                               </span>
@@ -261,13 +261,13 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                           buttonText='Neem contact op'
                           buttonLink='/contact'
                         />
-                        <div className='p-base relative z-0 flex items-center justify-center py-6 text-gray-100 sm:block'>
+                        <div className='p-base relative z-0 flex items-center justify-center py-6 text-green-100 sm:block'>
                           <h3 className='heading-xl-semibold sm:heading-2xl-semibold inline-block'>
                             Volg ons op:
                           </h3>
                           <span data-text='Volg ons op LinkedIn' className='tooltip p-base z-40'>
                             <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
-                              <IconBrandLinkedin className='mb-1.5 ml-3 inline-block h-7 w-7 hover:text-green-200' />
+                              <IconBrandLinkedin className='mb-1.5 ml-3 inline-block h-7 w-7 hover:text-green-300' />
                             </Link>
                           </span>
                           <span data-text='Volg ons op GitHub' className='tooltip p-base z-30'>
@@ -275,7 +275,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                               href='https://github.com/Dark-Matter-Labs/circulaw'
                               target='_blank'
                             >
-                              <IconBrandGithub className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-200' />
+                              <IconBrandGithub className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-300' />
                             </Link>
                           </span>
                           <span data-text='Volg ons op OpenResearch' className='tooltip p-base'>
@@ -283,7 +283,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                               href='https://openresearch.amsterdam/nl/page/89270/circulaw---circulaire-regelgevingstool'
                               target='_blank'
                             >
-                              <IconFileSearch className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-200' />
+                              <IconFileSearch className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-300' />
                             </Link>
                           </span>
                         </div>

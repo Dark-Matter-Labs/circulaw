@@ -23,8 +23,8 @@ export default function FeaturedCard({ data }) {
     return (
       <Link href={`/nieuws/${data?.slug?.current}`} className='group'>
         <div
-          className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-600' : ''} ${
-            data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
+          className={`${data.colour === 'lightGreen' ? 'bg-green-400' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-500' : ''} ${
+            data.colour === 'extraDarkGreen' ? 'bg-cl-black' : ''
           } flex flex-col-reverse items-start justify-between rounded-cl sm:h-80 sm:flex-row`}
         >
           <div
@@ -37,8 +37,8 @@ export default function FeaturedCard({ data }) {
                 <Tag
                   classes={`${
                     data.colour === 'extraDarkGreen'
-                      ? 'text-green-300 border border-green-300 bg-transparent'
-                      : 'text-white bg-green-800 border border-green-800'
+                      ? 'text-green-400 border border-green-400 bg-transparent'
+                      : 'text-white bg-cl-black border border-cl-black'
                   }`}
                 >
                   {data.category}
@@ -46,7 +46,7 @@ export default function FeaturedCard({ data }) {
               </div>
               <div
                 className={`${
-                  data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
+                  data.colour === 'lightGreen' ? 'text-cl-black' : 'text-green-100'
                 } heading-2xl-semibold py-0.5`}
               >
                 {data.title}
@@ -54,7 +54,7 @@ export default function FeaturedCard({ data }) {
               {data.newsDate && (
                 <div
                   className={`${
-                    data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
+                    data.colour === 'lightGreen' ? 'text-cl-black' : 'text-green-100'
                   } p-xs-semibold`}
                 >
                   {event.toLocaleDateString('nl-NL', options)}
@@ -63,7 +63,7 @@ export default function FeaturedCard({ data }) {
             </div>
             <div
               className={`${
-                data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
+                data.colour === 'lightGreen' ? 'text-cl-black' : 'text-green-100'
               } p-base line-clamp-2`}
             >
               {data.newsText}
@@ -72,8 +72,8 @@ export default function FeaturedCard({ data }) {
               <div
                 className={`${
                   data.colour === 'lightGreen'
-                    ? 'text-green-800 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100 group-hover:text-green-200 group-hover:underline'
-                    : 'text-gray-100 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-400 group-hover:text-green-200 group-hover:underline'
+                    ? 'text-cl-black focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200 group-hover:text-green-300 group-hover:underline'
+                    : 'text-green-100 focus:right-2 focus:text-green-200 focus:ring-white active:text-green-400 group-hover:text-green-300 group-hover:underline'
                 } heading-xl-semibold self-end`}
               >
                 Lees meer {'>'}
@@ -105,8 +105,8 @@ export default function FeaturedCard({ data }) {
         className='group'
       >
         <div
-          className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-600' : ''} ${
-            data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
+          className={`${data.colour === 'lightGreen' ? 'bg-green-400' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-500' : ''} ${
+            data.colour === 'extraDarkGreen' ? 'bg-cl-black' : ''
           } flex flex-col-reverse items-start justify-between rounded-cl sm:h-80 sm:flex-row`}
         >
           <div
@@ -119,8 +119,8 @@ export default function FeaturedCard({ data }) {
                 <Tag
                   classes={`${
                     data.colour === 'extraDarkGreen'
-                      ? 'text-green-300 border border-green-300 bg-transparent'
-                      : 'text-white bg-green-800 border border-green-800'
+                      ? 'text-green-400 border border-green-400 bg-transparent'
+                      : 'text-white bg-cl-black border border-cl-black'
                   }`}
                 >
                   {data.category}
@@ -128,7 +128,7 @@ export default function FeaturedCard({ data }) {
               </div>
               <div
                 className={`${
-                  data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
+                  data.colour === 'lightGreen' ? 'text-cl-black' : 'text-green-100'
                 } heading-2xl-semibold py-0.5`}
               >
                 {data.title}
@@ -136,7 +136,7 @@ export default function FeaturedCard({ data }) {
               {data.newsDate && (
                 <div
                   className={`${
-                    data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
+                    data.colour === 'lightGreen' ? 'text-cl-black' : 'text-green-100'
                   } p-xs-semibold`}
                 >
                   {event.toLocaleDateString('nl-NL', options)}
@@ -145,7 +145,7 @@ export default function FeaturedCard({ data }) {
             </div>
             <div
               className={`${
-                data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
+                data.colour === 'lightGreen' ? 'text-cl-black' : 'text-green-100'
               } p-base line-clamp-4`}
             >
               {data.newsText}
@@ -154,8 +154,8 @@ export default function FeaturedCard({ data }) {
               <div
                 className={`${
                   data.colour === 'lightGreen'
-                    ? 'text-green-800 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100 group-hover:text-green-200 group-hover:underline'
-                    : 'text-gray-100 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-400 group-hover:text-green-200 group-hover:underline'
+                    ? 'text-cl-black focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200 group-hover:text-green-300 group-hover:underline'
+                    : 'text-green-100 focus:right-2 focus:text-green-200 focus:ring-white active:text-green-400 group-hover:text-green-300 group-hover:underline'
                 } heading-xl-semibold itmes-center inline-flex flex-row self-end`}
               >
                 {data.linkText}{' '}
@@ -183,8 +183,8 @@ export default function FeaturedCard({ data }) {
   } else {
     return (
       <div
-        className={`${data.colour === 'lightGreen' ? 'bg-green-300' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-600' : ''} ${
-          data.colour === 'extraDarkGreen' ? 'bg-green-800' : ''
+        className={`${data.colour === 'lightGreen' ? 'bg-green-400' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-500' : ''} ${
+          data.colour === 'extraDarkGreen' ? 'bg-cl-black' : ''
         } flex flex-col-reverse items-start justify-between rounded-cl sm:h-80 sm:flex-row`}
       >
         <div
@@ -197,8 +197,8 @@ export default function FeaturedCard({ data }) {
               <Tag
                 classes={`${
                   data.colour === 'extraDarkGreen'
-                    ? 'text-green-300 border border-green-300 bg-transparent'
-                    : 'text-white bg-green-800 border border-green-800'
+                    ? 'text-green-400 border border-green-400 bg-transparent'
+                    : 'text-white bg-cl-black border border-cl-black'
                 }`}
               >
                 {data.category}
@@ -206,7 +206,7 @@ export default function FeaturedCard({ data }) {
             </div>
             <div
               className={`${
-                data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
+                data.colour === 'lightGreen' ? 'text-cl-black' : 'text-green-100'
               } heading-2xl-semibold py-0.5`}
             >
               {data.title}
@@ -214,7 +214,7 @@ export default function FeaturedCard({ data }) {
             {data.newsDate && (
               <div
                 className={`${
-                  data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
+                  data.colour === 'lightGreen' ? 'text-cl-black' : 'text-green-100'
                 } p-xs-semibold`}
               >
                 {event.toLocaleDateString('nl-NL', options)}
@@ -223,7 +223,7 @@ export default function FeaturedCard({ data }) {
           </div>
           <div
             className={`${
-              data.colour === 'lightGreen' ? 'text-green-800' : 'text-gray-100'
+              data.colour === 'lightGreen' ? 'text-cl-black' : 'text-green-100'
             } p-base line-clamp-4`}
           >
             {data.newsText}
@@ -232,8 +232,8 @@ export default function FeaturedCard({ data }) {
             <div
               className={`${
                 data.colour === 'lightGreen'
-                  ? 'text-green-800 hover:text-green-200 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100'
-                  : 'text-gray-100 hover:text-green-200 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-400'
+                  ? 'text-cl-black hover:text-green-300 focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200'
+                  : 'text-green-100 hover:text-green-300 focus:right-2 focus:text-green-200 focus:ring-white active:text-green-400'
               } heading-xl-semibold itmes-center inline-flex flex-row self-end`}
             >
               {data.linkText}{' '}
@@ -244,8 +244,8 @@ export default function FeaturedCard({ data }) {
             <div
               className={`${
                 data.colour === 'lightGreen'
-                  ? 'text-green-800 hover:text-green-200 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-100'
-                  : 'text-gray-100 hover:text-green-200 focus:right-2 focus:text-green-100 focus:ring-white active:text-green-400'
+                  ? 'text-cl-black hover:text-green-300 focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200'
+                  : 'text-green-100 hover:text-green-300 focus:right-2 focus:text-green-200 focus:ring-white active:text-green-400'
               } heading-xl-semibold self-end`}
             >
               Lees meer {'>'}
