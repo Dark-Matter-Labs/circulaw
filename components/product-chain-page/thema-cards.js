@@ -40,7 +40,7 @@ export default function ThemaCard({ themaCards }) {
                   <h3 className='heading-2xl-semibold pointer-events-none hidden text-cl-black sm:inline'>
                     {thema.themaName}
                   </h3>
-                  <p className='p-base pb-2 text-cl-black p-xs'>{thema.count} instrumenten</p>
+                  <p className='p-base p-xs pb-2 text-cl-black'>{thema.count} instrumenten</p>
                   <p className='p-base w-full text-cl-black'>{thema.homePageCardText}</p>
                   <div className='flex flex-grow items-end justify-end'>
                     <div className='flex h-12 w-12 items-center justify-center self-end rounded-full border-2 border-green-100 bg-transparent text-green-100 focus:bg-green-200 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-400 group-hover:border-green-300 group-hover:bg-green-300 group-hover:text-green-500'>

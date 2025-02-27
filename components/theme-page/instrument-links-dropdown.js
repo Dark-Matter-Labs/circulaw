@@ -57,7 +57,7 @@ export default function InstrumentLinksDropdown({ page, productChain, thema }) {
         )}
       </Popover>
     );
-  } else if (page === 'samenhang') {
+  } else if (page === 'categorie') {
     return (
       <Popover className='relative inline-block w-full min-w-[260px] pt-4 sm:pt-0'>
         {({ open }) => (

@@ -1,17 +1,17 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
-import { IconChevronRight } from '@tabler/icons-react';
+import Breadcrumb from './breadcrumbs';
 
-export default function Header({ imageURL, bgColor, title, pageType, subtitle }) {
-  const paths = usePathname();
-  const pathNames = paths.split('/').filter((path) => path);
+import InstrumentLinksDropdown from '../theme-page/instrument-links-dropdown';
+
+export default function Header({ imageURL, bgColor, title, pageType, subtitle, ...props }) {
   return (
     <>
-      <div className={`${bgColor} global-margin mt-20`}>
+      <div
+        className={`${bgColor} global-margin mt-20 ${pageType === 'withTabs' ? 'rounded-t-cl' : 'rounded-cl'}`}
+      >
         <div className='relative h-full w-full object-cover px-16 py-10'>
           {imageURL && (
             <>
@@ -28,49 +28,16 @@ export default function Header({ imageURL, bgColor, title, pageType, subtitle })
             </>
           )}
           <div className='z-5 relative flex flex-col justify-between'>
-            {/* Breadcrumb */}
-            <div className='mb-20'>
-              <ul className='p-2xs-semibold inline-flex flex-row items-center justify-center rounded-clSm bg-green-100 py-1.5 pl-2 pr-3 align-middle text-green-500 group-hover:text-green-400 group-focus:text-green-300 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
-                {pageType !== 'instrument' && (
-                  <li>
-                    <Link
-                      className='flex flex-row items-center hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'
-                      href='/'
-                    >
-                      {' '}
-                      Home <IconChevronRight className='ml-2 size-3' />
-                    </Link>
-                  </li>
-                )}
-                {pathNames.length > 0 && (
-                  <>
-                    {pathNames.map((pathName, id) => (
-                      <>
-                        {pathNames.length > 1 && pathName !== pathNames.slice(-1)[0] ? (
-                          <li key={id}>
-                            <Link
-                              className='ml-2 flex flex-row items-center capitalize hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'
-                              href='/bouw'
-                            >
-                              {pathName}
-
-                              <IconChevronRight className='ml-2 size-3' />
-                            </Link>
-                          </li>
-                        ) : (
-                          <li
-                            key={id}
-                            className='ml-2 flex flex-row items-center capitalize text-cl-black'
-                          >
-                            {pathName}
-                          </li>
-                        )}
-                      </>
-                    ))}
-                  </>
-                )}
-              </ul>
+            <div className='mb-20 flex flex-row justify-between'>
+              <Breadcrumb pageType={pageType} />
+              {pageType === 'withTabs' && (
+                 <div className='block py-3 sm:float-right sm:py-0'>
+                            <div className='p-base hidden pb-2 text-white sm:block'>Bekijk de instrumenten:</div>
+                            <InstrumentLinksDropdown page={props.page} productChain={props.productChain} thema={props.thema} />
+                          </div>
+              )}
             </div>
+
             <div className='max-w-3xl'>
               {pageType === 'productChain' && (
                 <div className='p-base sm:heading-2xl-semibold text-green-400'>{subtitle}</div>

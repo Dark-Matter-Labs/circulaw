@@ -20,6 +20,8 @@ export default function PCLayout({ ...props }) {
           imageURL='/modeltext-header.png'
           pageType='productChain'
           subtitle='Productketen'
+          thema={props?.thema}
+          productChain={props.productChain}
         />
 
         <div className=''>
@@ -133,7 +135,7 @@ export default function PCLayout({ ...props }) {
             </div>
           </div>
         </div>
-        <div className='bg-green-100'>
+        <div>
           <div className='global-margin'>
             <div className='pb-14 pt-10'>
               <h2 className='heading-2xl-semibold sm:heading-3xl-semibold max-w-3xl pb-14 text-cl-black'>
@@ -179,7 +181,7 @@ export default function PCLayout({ ...props }) {
             </div>
           </div>
         </div>
-        <div className='global-margin bg-green-100 pt-14'>
+        <div className='global-margin pt-14'>
           <div className='max-w-4xl'>
             <h2 className='heading-2xl-semibold sm:heading-3xl-semibold pb-14 text-cl-black'>
               {props?.productChainData?.ambitionTitle}
@@ -264,7 +266,7 @@ export default function PCLayout({ ...props }) {
           </div>
         </div>
         {props.links && (
-          <div className='bg-green-100 pb-10 pt-14'>
+          <div className='pb-10 pt-14'>
             <div className='global-margin'>
               <h2 className='heading-2xl-semibold sm:heading-3xl-semibold pb-14 text-cl-black'>
                 Duik nog dieper in de materie{' '}

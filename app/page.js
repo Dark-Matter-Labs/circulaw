@@ -46,13 +46,13 @@ export default async function Page() {
         </div>
       </div>
 
-      <div className='bg-green-100 pb-12 sm:pb-24 sm:pt-0'>
+      <div className='pb-12 sm:pb-24 sm:pt-0'>
         <div className='global-margin'>
           <HomePageEUSection euData={data.euData} />
         </div>
       </div>
 
-      <div className='bg-green-100 pb-12 pt-12 sm:pt-0'>
+      <div className='pb-12 pt-12 sm:pt-0'>
         <div className='global-margin'>
           <div className='flex flex-col pb-12 sm:pb-24'>
             <h3 className='heading-2xl-semibold sm:heading-5xl-semibold w-full border-b border-cl-black pb-6 text-green-500'>
