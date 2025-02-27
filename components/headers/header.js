@@ -31,7 +31,7 @@ export default function Header({ imageURL, bgColor, title, pageType, subtitle })
           <div className='z-5 relative flex flex-col justify-between'>
             {/* Breadcrumb */}
             <div className='mb-20'>
-              <ul className='p-2xs-bold inline-flex flex-row items-center justify-center rounded-clSm bg-green-100 py-1.5 pl-2 pr-3 align-middle text-green-500 group-hover:text-green-400 group-focus:text-green-300 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
+              <ul className='p-2xs-semibold inline-flex flex-row items-center justify-center rounded-clSm bg-green-100 py-1.5 pl-2 pr-3 align-middle text-green-500 group-hover:text-green-400 group-focus:text-green-300 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
                 {pageType !== 'instrument' && (
                   <li>
                     <Link

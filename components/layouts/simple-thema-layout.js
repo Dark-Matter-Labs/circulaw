@@ -1,18 +1,18 @@
+import Header from '../headers/header';
 import InstrumentCard from '../instrument/instrument-card';
 import ThemeSponsors from '../theme-page/theme-sponsors';
-import Header from '../headers/header';
 
 // TODO: See what we could move to a layout.js file instead of having everything in components.
 export default function SimpleThemaLayout({ instruments, numberOfLaws, ...props }) {
   const themaData = props.thema;
   return (
     <>
-     <Header 
+      <Header
         title={themaData?.themaName}
         imageURL={themaData?.heroImage}
         subtitle={themaData?.themaSubtitle}
         pageType='thema'
-     />
+      />
 
       <div className='global-margin'>
         <div className='mb-10 max-w-[830px]'>

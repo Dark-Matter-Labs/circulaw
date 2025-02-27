@@ -22,7 +22,6 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
     localStorage.clear();
   });
 
-  console.log(thema);
   return (
     <>
       <div>
