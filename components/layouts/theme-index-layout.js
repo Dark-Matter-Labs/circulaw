@@ -13,7 +13,7 @@ import samenhang from '@/public/thema-card-background/samenhang.svg';
 import waarvoor from '@/public/thema-card-background/waarvoor.svg';
 import { IconArrowRight } from '@tabler/icons-react';
 
-import Header from '../headers/header';
+import Header from '../headers';
 import ThemeSponsors from '../theme-page/theme-sponsors';
 
 // TODO: See what we could move to a layout.js file instead of having everything in components.

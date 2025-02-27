@@ -1,4 +1,4 @@
-import Header from '../headers/header';
+import Header from '../headers';
 import InstrumentCard from '../instrument/instrument-card';
 import ThemeSponsors from '../theme-page/theme-sponsors';
 

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import CustomButton from '@/components/custom-button';
 import { urlFor } from '@/lib/sanity';
 
-import Header from '../headers/header';
+import Header from '../headers';
 import Modal from '../modal/modal';
 import ModalContent from '../modal/modal-content';
 import ThemaCard from '../product-chain-page/thema-cards';

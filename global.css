@@ -13,13 +13,12 @@
 
 /* used in the nav component */
   .global-padding {
-    @apply px-4;
+    @apply px-4;  
     @apply md:px-10;
     @apply xl:px-20;
     @apply 2xl:px-40
   }
 
-  
   /* new system */
   .heading-6xl {
     @apply font-jakarta text-8xl leading-17
