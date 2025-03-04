@@ -45,18 +45,18 @@ export default {
       ],
     },
     {
-      title: 'Titel',
+      title: 'Titel*',
       name: 'titel',
       type: 'string',
-      description: 'Titel van het instrument. Zorg dat deze titel uniek is.',
-      validation: (Rule) => Rule.required(), // TODO: add max length here.
+      description: 'Per thema moet de titel uniek zijn. Max 80 tekens (incl. spaties)',
+      validation: (Rule) => Rule.required().max(80), // TODO: add max length here.
       initialValue: 'New Instrument',
     },
     {
-      title: 'Subtitel',
+      title: 'Intro*',
       name: 'subtitel',
       type: 'text',
-      description: 'Subtitel en/of intro-tekst  -  komt direct onder de titel.',
+      description: 'Komt direct onder de titel. Max 300 tekens (incl. spaties)',
       validation: (Rule) => Rule.max(300),
     },
     {
@@ -72,11 +72,11 @@ export default {
       description: 'SEO',
     },
     {
-      title: 'Slug',
+      title: 'Slug*',
       name: 'slug',
       type: 'slug',
       description:
-        'Klik op ‘aanmaken’. (Slug is het gedeelte van een URL die na de domeinnaam komt. Deze paginanaam wordt automatisch gegenereerd aan de hand van de titel.)',
+        'Klik op ‘Generate’. Als de titel gelijk is aan een instrument binnen een ander thema, voeg dan altijd het thema toe: _[thema]',
       options: {
         source: 'titel',
         inUnique: 'true',
@@ -89,20 +89,17 @@ export default {
       },
     },
     {
-      title: 'Transitie-agenda',
+      title: 'Productketen*',
       name: 'transitionAgenda',
       type: 'reference',
-      description:
-        'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
       validation: (Rule) => Rule.required(),
       to: [{ type: 'transitionAgenda' }],
     },
     {
-      title: 'Thema',
+      title: 'Thema*',
       name: 'thema',
       type: 'reference',
-      weak: true,
-      description: 'Selecteer het thema waaronder dit instrument valt.',
+      weak: true, 
       validation: (Rule) => Rule.required(),
       to: [{ type: 'thema' }, { type: 'simpleThema' }],
     },
