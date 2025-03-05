@@ -1,86 +1,175 @@
-import { notFound } from 'next/navigation'
-import Link from 'next/link'
-import Image from 'next/image'
+import Image from 'next/image';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+
+import NewButton from '@/components/new-button';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { IconChevronDown } from '@tabler/icons-react';
 
-
-
-export default function AreaPlanning({params}) {
-    if (params.productChain === 'bouw') {
-        return (
-            <>
-            <div className="block h-[260px] w-full sm:h-[360px] bg-green-500">
-                  <div className='global-margin z-5 relative flex h-[260px] flex-col justify-between sm:h-[360px]'>
-          <div className='pt-8'>
-            <Link
-              className='group inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 text-green-600'
-              href='/'
-            >
-              <span className='p-2xs-bold align-middle group-hover:text-green-300 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white group-active:text-green-800'>
-                {' '}
-                Home <span className='ml-2'>{'>'}</span>
-              </span>
-            </Link>
-          </div>
-          <div className='max-w-5xl pb-8'>
-            <div className=''>
-              <h1 className='heading-3xl-semibold sm:heading-5xl-semibold inline-block text-gray-100'>
-              Stimuleer houtbouw in circulaire gebiedsontwikkeling
-              </h1>
+export default function AreaPlanning({ params }) {
+  if (params.productChain === 'bouw') {
+    return (
+      <>
+        <div className='block h-[260px] w-full bg-green-500 sm:h-[360px]'>
+          <div className='global-margin z-5 relative flex h-[260px] flex-col justify-between sm:h-[360px]'>
+            <div className='pt-8'>
+              <Link
+                className='group inline-flex flex-row items-center justify-center rounded-clSm bg-gray-100 py-1.5 pl-2 pr-3 text-green-600'
+                href='/'
+              >
+                <span className='p-2xs-bold align-middle group-hover:text-green-300 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white group-active:text-green-800'>
+                  {' '}
+                  Home <span className='ml-2'>{'>'}</span>
+                </span>
+              </Link>
+            </div>
+            <div className='max-w-5xl pb-8'>
+              <div className=''>
+                <h1 className='heading-3xl-semibold sm:heading-5xl-semibold inline-block text-gray-100'>
+                  Stimuleer houtbouw in circulaire gebiedsontwikkeling
+                </h1>
+              </div>
             </div>
           </div>
         </div>
-            </div>
 
-            <div className='global-margin'>
-                <div className='relative w-full my-16 pt-10 flex items-center'>
-                    <Image 
-                        src='/area-planning-image.png'
-                        alt='infographique'
-                        width={900}
-                        height={900 * (555 / 1160)}
-                        sizes='
+        <div className='global-margin p-base'>
+          <div className='relative my-16 flex w-full items-center pt-10'>
+            <Image
+              src='/area-planning-image.png'
+              alt='infographique'
+              width={900}
+              height={900 * (555 / 1160)}
+              sizes='
                               (max-width: 768px) 95vw,
                               (max-width: 1200px) 60vw,
                               40vw'
-                              className='w-full'
-                    />
-                </div>
-                <div>
-                  <h2 className='heading-xl-semibold sm:heading-2xl-semibold'>
-                  Het circulaire gebiedsontwikkelingsproces
-                  </h2>
-                  <div className='my-16'>
-                <Disclosure className='' as='div'>
-                  <>
-                    <DisclosureButton className='group flex w-full items-center justify-between rounded-clSm bg-green-50 px-6 py-6 text-gray-800 sm:px-10'>
-                      <div className='flex flex-col'>
-                        <h3 className='heading-xl-semibold sm:heading-2xl-semibold mb-2.5 text-left'>
+              className='w-full'
+            />
+          </div>
+          <div>
+            <h2 className='heading-xl-semibold sm:heading-2xl-semibold'>
+              Het circulaire gebiedsontwikkelingsproces
+            </h2>
+            <div className='my-10'>
+              <Disclosure className='max-w-[700px]' as='div'>
+                <>
+                  <DisclosureButton className='group flex w-full items-center justify-between rounded-clSm bg-gray-200 px-6 py-6 text-gray-800 sm:px-10'>
+                    <div className='flex flex-col'>
+                      <h3 className='heading-xl-semibold sm:heading-2xl-semibold mb-2.5 text-left'>
                         Alle fasen kort uitgelegd
-                        </h3>
-                      </div>
-                      <IconChevronDown className='h-6 w-6 place-self-start text-gray-800 group-data-[open]:rotate-180' />
-                    </DisclosureButton>
-                    <DisclosurePanel className='-mt-6 rounded-b-clSm bg-green-50 px-6 pb-4 sm:px-10'>
-                      <div className='flex flex-col gap-8 py-6'>
-                          <h4 className='heading-xl-semibold'>
-                          Alle fasen kort uitgelegd
-                          </h4>
-                          <ul className=''>
-                            <li>
-                              <span className='p-base-semibold'></span>
-                            </li>
-                          </ul>
-                      </div>
-                    </DisclosurePanel>
-                  </>
-                </Disclosure>
-              </div>
-                </div>
+                      </h3>
+                    </div>
+                    <IconChevronDown className='h-6 w-6 text-gray-800 group-data-[open]:rotate-180' />
+                  </DisclosureButton>
+                  <DisclosurePanel className='-mt-6 rounded-b-clSm bg-gray-200 px-6 pb-4 sm:px-10'>
+                    <div className='flex flex-col gap-8 py-6'>
+                      <ul className='ml-6 flex list-outside list-disc flex-col gap-y-4'>
+                        <li>
+                          <span className='p-base-semibold'>Verkenning:</span>in de verkenningsfase
+                          wordt onderzocht of de gebiedsontwikkeling gewenst is, welke partijen
+                          betrokken kunnen en willen worden en of er (betere) alternatieven zijn.
+                          Aan het eind van de verkenningsfase moet minimaal een plan zijn opgesteld
+                          met de projectdoelen en rolverdeling.
+                        </li>
+                        <li>
+                          <span className='p-base-semibold'>Haalbaarheid:</span>in de
+                          haalbaarheidsfase wordt er &apos;gerekend en getekend&apos;. Dit betekent
+                          dat een of meerdere ontwerpen worden ontwikkeld en er wordt gerekend aan
+                          de businesscase voor de gebiedsontwikkeling. Ook moeten de beleidsmatige,
+                          planologische en andere publiekrechtelijke randvoorwaarden worden
+                          georganiseerd.
+                        </li>
+                        <li>
+                          <span className='p-base-semibold'>Voorbereiding:</span>
+                          In de voorbereidingsfase worden de laatste zaken uitgewerkt voor de
+                          realisatiefase. Denk hierbij aan het uitwerken van het definitieve
+                          ontwerp, het verkrijgen van de benodigde omgevingsvergunningen en het
+                          sluiten van de benodigde overeenkomsten.
+                        </li>
+                        <li>
+                          <span className='p-base-semibold'>Realisatie:</span>In de realisatiefase
+                          wordt de ontwikkellocatie bouwrijp gemaakt en wordt gestart met de
+                          uitvoering.
+                        </li>
+                        <li>
+                          <span className='p-base-semibold'>Exploitatie:</span>
+                          in de exploitatiefase worden de gebouwen opgeleverd en wordt het beheer
+                          van het openbaar terrein overgedragen.
+                        </li>
+                        <li>
+                          <span className='p-base-semibold'>Transformatie:</span>
+                          bij start van het gebiedsontwikkelingsproces en in de voorfase moet ook al
+                          rekening worden gehouden met de uiteindelijke transformatie van het gebied
+                          in de toekomst. Dit transformeren houdt het veranderen van het
+                          oorspronkelijke gebruik van het gebied in naar een andere en nieuwe
+                          gebruiksfunctie. Hierdoor start het gebiedsontwikkelingsproces opnieuw.
+                        </li>
+                      </ul>
+                    </div>
+                  </DisclosurePanel>
+                </>
+              </Disclosure>
             </div>
-            </>
-        )
-    } else return notFound()
-    
+            <div className='mb-20 flex max-w-[500px] flex-col gap-y-4'>
+              <p>
+                Een gebiedsontwikkeling heeft als doel de leefbaarheid, economische waarde en
+                duurzaamheid van een gebied te verbeteren. Gebiedsontwikkeling bestaat uit een
+                aantal fasen die je kunt onderverdelen in: Verkenning, Haalbaarheid, Voorbereiding,
+                Realisatie, Exploitatie en Transformatie. In al die fasen kun je specifieke
+                juridische instrumenten toepassen.
+              </p>
+              <p>
+                In de visie van Circulaw moet je zo vroeg mogelijk in het proces actie ondernemen.
+                Zo weet je zeker dat jouw ambities goed verankerd worden in het hele proces. Daarom
+                voegen we een &apos;Voorfase&apos; aan het proces toe. In deze Voorfase onderzoek je
+                zo goed als mogelijk welke informatiestukken je moet lezen, welke collega&apos;s je
+                moet benaderen en bij welke belangrijke momenten van het gebiedsontwikkelingsproces
+                jij moet zijn aangehaakt.
+              </p>
+              <p>
+                In het hele proces van gebiedsontwikkeling is het zaak dat je het juiste juridische
+                instrument op het juiste moment inzet om circulariteit goed mee te nemen. Ook
+                houtbouw kan op deze manier een stevige plek krijgen binnen gebiedsontwikkeling.
+              </p>
+              <p>
+                Wil je meer weten, of ben je benieuwd wat wij voor je kunnen betekenen? Neem dan
+                contact op!
+              </p>
+            </div>
+            <div className='mb-10 max-w-[700px]'>
+              <h3 className='heading-xl-semibold sm:heading-2xl-semibold mb-6'>
+                Juridische instrumenten voor houtbouw in circulaire gebiedsontwikkeling
+              </h3>
+              <p className='mr-6'>
+                Gedurende het proces van gebiedsontwikkeling kun je verschillende juridische
+                instrumenten inzetten. Specifiek voor houtbouw heeft CircuLaw 35 juridische
+                instrumenten in kaart gebracht. Die instrumenten winnen aan kracht als je al in de
+                voorfase de juiste maatregelen treft. De voorfase bevat een aantal gemeentebrede
+                instrumenten. In de afbeelding zie je de juridische instrumenten die je per fase van
+                gebiedsontwikkeling kunt inzetten, om houtbouw te bevorderen.
+              </p>
+            </div>
+            <div className='max-w-[700px] rounded-cl bg-green-50 p-10'>
+              <div className='w-full'>
+                {/* Using an arbitrary aspect ratio for A4: 210 / 297 */}
+                <div className='aspect-[1788/1670]'>
+                  <iframe
+                    src='/area-planning.pdf#zoom=44'
+                    title='PDF Viewer'
+                    className='h-full w-full border-0'
+                  />
+                </div>
+                <div className='w-full pt-10'>
+                  <NewButton type='filled' icon='download' href='/'>
+                    Download framework Amsterdam
+                  </NewButton>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  } else return notFound();
 }
