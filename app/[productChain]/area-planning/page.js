@@ -33,7 +33,7 @@ export default function AreaPlanning({ params }) {
           </div>
         </div>
 
-        <div className='global-margin p-base'>
+        <div className='global-margin p-base mb-20'>
           <div className='relative my-16 flex w-full items-center pt-10'>
             <Image
               src='/area-planning-image.png'
@@ -150,7 +150,7 @@ export default function AreaPlanning({ params }) {
                 gebiedsontwikkeling kunt inzetten, om houtbouw te bevorderen.
               </p>
             </div>
-            <div className='max-w-[700px] rounded-cl bg-green-50 p-10'>
+            <div className='my-20 max-w-[700px] rounded-cl bg-green-50 p-10'>
               <div className='w-full'>
                 {/* Using an arbitrary aspect ratio for A4: 210 / 297 */}
                 <div className='aspect-[1788/1670]'>
@@ -160,13 +160,92 @@ export default function AreaPlanning({ params }) {
                     className='h-full w-full border-0'
                   />
                 </div>
-                <div className='w-full pt-10'>
-                  <NewButton type='filled' icon='download' href='/'>
+                <div className='flex w-full items-center justify-center pt-10'>
+                  <NewButton variant='primaryDark' icon='download' href='/'>
                     Download framework Amsterdam
                   </NewButton>
                 </div>
               </div>
             </div>
+            <div className='mb-20 flex max-w-[700px] flex-col'>
+              <h3 className='heading-xl-semibold sm:heading-2xl-semibold mb-6'>
+                Voorbeelden uit de praktijk
+              </h3>
+              <p className=''>
+                Met onze aanpak als leidraad kun je het proces van gebiedsontwikkeling echt naar je
+                hand zetten. Daarbij heb je natuurlijk alle ruimte om de instrumenten naar eigen
+                inzicht in te richten. De gemeenten Zaandam en Amsterdam gingen je al voor!
+              </p>
+              <div className='mt-10 flex gap-x-8'>
+                <Link href='/'>
+                  <div className='group relative flex w-full flex-col overflow-hidden rounded-cl shadow-lg'>
+                    <div className='max-h-[180px] w-full rounded-cl object-cover'>
+                      <Image
+                        className='fill rounded-t-cl'
+                        src='/area-planning-download.png'
+                        alt='image of graph'
+                        width={1440}
+                        height={720}
+                        priority={true}
+                      />
+                    </div>
+                    <div className='group flex h-full w-full flex-col bg-green-50 px-6 py-4'>
+                      <div className='flex flex-grow items-center justify-center'>
+                        <NewButton variant='primaryDark' icon='download'>
+                          Download Zaandam
+                        </NewButton>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+                <Link href='/'>
+                  <div className='group relative flex w-full flex-col overflow-hidden rounded-cl shadow-lg'>
+                    <div className='max-h-[180px] w-full rounded-cl object-cover'>
+                      <Image
+                        className='fill rounded-t-cl'
+                        src='/area-planning-download.png'
+                        alt='image of graph'
+                        width={1440}
+                        height={720}
+                        priority={true}
+                      />
+                    </div>
+                    <div className='group flex h-full w-full flex-col bg-green-50 px-6 py-4'>
+                      <div className='flex flex-grow items-center justify-center'>
+                        <NewButton variant='primaryDark' icon='download'>
+                          Download framework
+                        </NewButton>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </div>
+            <div className='max-w-[500px]'>
+              <h3 className='heading-xl-semibold sm:heading-2xl-semibold mb-6'>
+                Hoe kunnen wij je helpen?
+              </h3>
+              <p className='mb-6'>
+                Benieuwd hoe jouw gemeente duurzaamheid en circulariteit kan bevorderen binnen het
+                circulaire gebiedsontwikkelingsproces? CircuLaw biedt ondersteuning op maat:
+              </p>
+              <ul className='ml-6 flex list-outside list-disc flex-col gap-y-4'>
+                <li>
+                  <span className='p-base-semibold'>Workshops</span>waarin je inzicht krijgt in de
+                  juridische instrumenten rond gebiedsontwikkeling, en hoe je die het beste kunt
+                  inzetten.
+                </li>
+                <li>
+                  <span className='p-base-semibold'>Implementatietrajecten</span>voor een
+                  succesvolle toepassing van juridische instrumenten.
+                </li>
+                <li>
+                  <span className='p-base-semibold'>Visuele overzichten</span>
+                  van je juridische mogelijkheden.
+                </li>
+              </ul>
+            </div>
+            <div className='mt-6'>card</div>
           </div>
         </div>
       </>

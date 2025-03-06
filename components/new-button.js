@@ -1,9 +1,19 @@
 import { IconArrowDown, IconArrowRight, IconFileDownload, IconPdf } from '@tabler/icons-react';
 
-export default function NewButton({ type, icon, children }) {
+const varientStyles = {
+  primaryLight:
+    'bg-white text-green-500 hover:bg-green-200 hover:text-green-600 group-hover:bg-green-200 group-hover:text-green-600 focus:bg-green-200 focus:outline-2 focus:outline-green-500 focus:text-green-500 focus:border-green-500 active:bg-green-300 active:text-green-500',
+  primaryDark:
+    'bg-green-500 text-gray-100 hover:bg-green-200 hover:text-green-600 group-hover:bg-green-200 group-hover:text-green-600 focus:bg-green-200 focus:outline-2 focus:outline-green-500 focus:text-green-500 focus:border-green-500 active:bg-green-300 active:text-green-500',
+  secondaryLight: '',
+  secondaryDark: '',
+};
+
+export default function NewButton({ variant, icon, children, ...props }) {
   return (
     <button
-      className={`${type === 'primary' ? 'bg-green-500 text-gray-100 hover:bg-green-200 hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-800 active:text-gray-100' : ''} button p-base-semibold inline-flex items-center justify-center rounded-full px-4 py-2`}
+      {...props}
+      className={`button p-base-semibold inline-flex items-center justify-center rounded-full px-4 py-2 ${varientStyles[variant]}`}
     >
       {children}
       {icon === 'pdf' && <IconPdf className='ml-2 size-5' />}
