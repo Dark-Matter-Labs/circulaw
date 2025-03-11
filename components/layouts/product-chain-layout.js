@@ -82,6 +82,20 @@ export default function PCLayout({ ...props }) {
                         </div>
                       </Link>
                     </div>
+
+                    <div className='group w-full flex-grow rounded-cl border border-gray-200 bg-green-50'>
+                      <Link href='/bouw/area-planning' className='h-full w-full'>
+                        <div className='flex h-full w-full flex-grow flex-col justify-between gap-y-2 p-6'>
+                          <h3 className='heading-2xl-semibold text-green-600'>AREA PLANNING </h3>
+                          <div>
+                            <p className='p-base pt-4 text-green-800'>AREA PLANNING</p>
+                          </div>
+                          <div className='flex justify-center'>
+                            <CustomButton color='darkGreenBG'>GET PLANNING </CustomButton>
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
                   </div>
 
                   <div className='mt-6 block w-full rounded-cl border border-gray-200 bg-green-50 sm:hidden'>
@@ -114,6 +128,20 @@ export default function PCLayout({ ...props }) {
                           Samen met de omgevingsvisie en omgevingsprogramma is het omgevingsplan een
                           van de instrumenten om circulair bouwen te bevorderen
                         </p>
+
+                        <div className='flex grow self-baseline pt-6'>
+                          <CustomButton color='darkGreenBG'>
+                            Meer over het omgevingsplan{' '}
+                          </CustomButton>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                  <div className='mt-6 block w-full rounded-cl border border-gray-200 bg-green-50 sm:hidden'>
+                    <Link href='/bouw/area-planning' className='h-full w-full'>
+                      <div className='flex h-full w-full flex-grow flex-col justify-between p-6'>
+                        <h3 className='heading-2xl-semibold pb-4 text-green-600'>AREA PLANNING</h3>
+                        <p className='p-base text-gren-800'>AREA PLANNING</p>
 
                         <div className='flex grow self-baseline pt-6'>
                           <CustomButton color='darkGreenBG'>
