@@ -13,12 +13,12 @@ export default function NewButton({ variant, icon, children, ...props }) {
   return (
     <button
       {...props}
-      className={`button p-base-semibold inline-flex items-center justify-center rounded-full px-4 py-2 ${varientStyles[variant]}`}
+      className={`button p-base-semibold inline-flex max-w-min items-center justify-center text-nowrap rounded-full px-4 py-2 ${varientStyles[variant]}`}
     >
       {children}
       {icon === 'pdf' && <IconPdf className='ml-2 size-5' />}
-      {icon === 'arrowRight' && <IconArrowDown className='ml-2 size-5' />}
-      {icon === 'arrowDown' && <IconArrowRight className='ml-2 size-5' />}
+      {icon === 'arrowRight' && <IconArrowRight className='ml-2 size-5' />}
+      {icon === 'arrowDown' && <IconArrowDown className='ml-2 size-5' />}
       {icon === 'download' && <IconFileDownload className='ml-2 size-5' />}
     </button>
   );
