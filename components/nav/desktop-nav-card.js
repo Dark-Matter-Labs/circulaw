@@ -102,9 +102,9 @@ export default function DesktopNavCard({ navData, closeNav }) {
           </div>
           <div className='mt-[2px]'>
             <Link
-              href='/bouw/area-planning'
+              href='/bouw/gebiedsontwikkeling'
               onClick={() => {
-                CustomEvent.trackEvent('Nav click', pathname, 'area-planning');
+                CustomEvent.trackEvent('Nav click', pathname, 'gebiedsontwikkeling');
                 closeNav(false);
               }}
               className={`${

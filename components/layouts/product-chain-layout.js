@@ -84,7 +84,7 @@ export default function PCLayout({ ...props }) {
                     </div>
 
                     <div className='group w-full flex-grow rounded-cl border border-gray-200 bg-green-50'>
-                      <Link href='/bouw/area-planning' className='h-full w-full'>
+                      <Link href='/bouw/gebiedsontwikkeling' className='h-full w-full'>
                         <div className='flex h-full w-full flex-grow flex-col justify-between gap-y-2 p-6'>
                           <h3 className='heading-2xl-semibold text-green-600'>AREA PLANNING </h3>
                           <div>
@@ -138,7 +138,7 @@ export default function PCLayout({ ...props }) {
                     </Link>
                   </div>
                   <div className='mt-6 block w-full rounded-cl border border-gray-200 bg-green-50 sm:hidden'>
-                    <Link href='/bouw/area-planning' className='h-full w-full'>
+                    <Link href='/bouw/gebiedsontwikkeling' className='h-full w-full'>
                       <div className='flex h-full w-full flex-grow flex-col justify-between p-6'>
                         <h3 className='heading-2xl-semibold pb-4 text-green-600'>AREA PLANNING</h3>
                         <p className='p-base text-gren-800'>AREA PLANNING</p>
