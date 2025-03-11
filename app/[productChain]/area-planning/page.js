@@ -46,7 +46,6 @@ export default function AreaPlanning({ params }) {
             className='w-full'
           />
         </div>
-
         <div className='global-margin p-base mb-10 md:mb-20'>
           <div className='relative hidden w-full items-center pt-10 sm:my-8 md:my-16 md:flex'>
             <Image
@@ -61,10 +60,9 @@ export default function AreaPlanning({ params }) {
               className='w-full'
             />
           </div>
-
           <div className='relative w-full md:flex md:flex-row-reverse md:justify-between'>
-            <div className='sticky top-12 ml-8 hidden max-h-[600px] max-w-[350px] md:block'>
-              <div className='flex h-full w-full cursor-pointer flex-col rounded-cl bg-green-50 p-4 shadow-md'>
+            <div className='sticky top-32 ml-8 hidden max-h-[600px] max-w-[350px] md:block'>
+              <div className='flex h-full w-full flex-col rounded-cl bg-green-50 p-4 shadow-md'>
                 <Image
                   src={elearning}
                   width={406}
@@ -78,11 +76,9 @@ export default function AreaPlanning({ params }) {
                     Benieuwd hoe jouw gemeente duurzaamheid en circulariteit kan bevorderen binnen
                     het circulaire gebiedsontwikkelingsproces? CircuLaw biedt ondersteuning op maat:
                   </div>
-                  <Link href='#scroll' scroll={true}>
-                    <NewButton variant='primaryDark' icon='arrowDown'>
-                      Lees meer
-                    </NewButton>
-                  </Link>
+                  <NewButton variant='primaryDark' icon='arrowDown' scrollTo='contact'>
+                    Lees meer
+                  </NewButton>
                 </div>
               </div>
             </div>
@@ -150,7 +146,7 @@ export default function AreaPlanning({ params }) {
                   </>
                 </Disclosure>
               </div>
-              <div className='mb-10 flex max-w-[500px] flex-col gap-y-4 sm:mb-20'>
+              <div className='mb-10 flex max-w-[700px] flex-col gap-y-4 sm:mb-20'>
                 <p>
                   Een gebiedsontwikkeling heeft als doel de leefbaarheid, economische waarde en
                   duurzaamheid van een gebied te verbeteren. Gebiedsontwikkeling bestaat uit een
@@ -201,13 +197,18 @@ export default function AreaPlanning({ params }) {
                     />
                   </div>
                   <div className='flex w-full items-center justify-center pt-10'>
-                    <NewButton variant='primaryDark' icon='download' href='/'>
-                      Download framework Amsterdam
+                    <NewButton
+                      variant='primaryDark'
+                      icon='download'
+                      href='/area-planning.pdf'
+                      newTab={true}
+                    >
+                      Download framework
                     </NewButton>
                   </div>
                 </div>
               </div>
-              <div className='mb-10 flex max-w-[700px] flex-col sm:mb-20' id='scroll'>
+              <div className='mb-10 flex max-w-[700px] flex-col sm:mb-20'>
                 <h3 className='heading-xl-semibold sm:heading-2xl-semibold mb-6'>
                   Voorbeelden uit de praktijk
                 </h3>
@@ -216,8 +217,8 @@ export default function AreaPlanning({ params }) {
                   je hand zetten. Daarbij heb je natuurlijk alle ruimte om de instrumenten naar
                   eigen inzicht in te richten. De gemeenten Zaandam en Amsterdam gingen je al voor!
                 </p>
-                <div className='mt-10 flex flex-col gap-y-8 md:flex-row md:gap-x-8'>
-                  <Link href='/'>
+                <div className='mt-10 grid grid-cols-1 gap-y-8 md:grid-cols-2 md:gap-x-8'>
+                  <div>
                     <div className='group relative flex w-full flex-col overflow-hidden rounded-cl shadow-lg'>
                       <div className='max-h-[180px] w-full rounded-cl object-cover'>
                         <Image
@@ -231,37 +232,21 @@ export default function AreaPlanning({ params }) {
                       </div>
                       <div className='group flex h-full w-full flex-col bg-green-50 px-6 py-4'>
                         <div className='flex flex-grow items-center justify-center'>
-                          <NewButton variant='primaryDark' icon='download'>
-                            Download Zaandam
+                          <NewButton
+                            variant='primaryDark'
+                            icon='download'
+                            href='/amsterdam.pdf'
+                            newTab={true}
+                          >
+                            Download Amsterdam
                           </NewButton>
                         </div>
                       </div>
                     </div>
-                  </Link>
-                  <Link href='/'>
-                    <div className='group relative flex w-full flex-col overflow-hidden rounded-cl shadow-lg'>
-                      <div className='max-h-[180px] w-full rounded-cl object-cover'>
-                        <Image
-                          className='fill rounded-t-cl'
-                          src='/area-planning-download.png'
-                          alt='image of graph'
-                          width={1440}
-                          height={720}
-                          priority={true}
-                        />
-                      </div>
-                      <div className='group flex h-full w-full flex-col bg-green-50 px-6 py-4'>
-                        <div className='flex flex-grow items-center justify-center'>
-                          <NewButton variant='primaryDark' icon='download'>
-                            Download framework
-                          </NewButton>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
+                  </div>
                 </div>
               </div>
-              <div className='max-w-[500px]'>
+              <div className='max-w-[700px]' id='contact'>
                 <h3 className='heading-xl-semibold sm:heading-2xl-semibold mb-6'>
                   Hoe kunnen wij je helpen?
                 </h3>
@@ -293,7 +278,7 @@ export default function AreaPlanning({ params }) {
                       Meer weten? Benieuwd wat CircuLaw voor je kan betekenen? We helpen je graag!
                     </div>
                   </div>
-                  <NewButton variant='primaryDark' icon='arrowRight'>
+                  <NewButton variant='primaryDark' icon='arrowRight' href='/contact'>
                     Neem contact op
                   </NewButton>
                 </div>
