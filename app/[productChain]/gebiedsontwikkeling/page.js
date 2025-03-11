@@ -91,7 +91,7 @@ export default function AreaPlanning({ params }) {
                   <>
                     <DisclosureButton className='group flex w-full items-center justify-between rounded-clSm bg-gray-200 px-6 py-6 text-gray-800 sm:px-10'>
                       <div className='flex flex-col'>
-                        <h3 className='heading-xl-semibold sm:heading-2xl-semibold mb-2.5 text-left'>
+                        <h3 className='heading-xl-semibold sm:heading-2xl-semibold text-left'>
                           Alle fasen kort uitgelegd
                         </h3>
                       </div>
