@@ -9,7 +9,7 @@ import CustomButton from '../custom-button';
 
 export default function HomepageHeader() {
   return (
-    <main className='relative z-10 pt-44'>
+    <main className='relative z-10 pt-64'>
       <div className='global-margin relative'>
         <div className='max-w-4xl text-left'>
           <div className='max-w-xs text-left text-green-100 sm:block sm:max-w-4xl'>
@@ -39,7 +39,7 @@ export default function HomepageHeader() {
             </div>
           </div>
         </div>
-        <div className='group absolute bottom-0 right-0 z-30 overflow-visible'>
+        <div className='group absolute bottom-0 -right-10 z-30 overflow-visible'>
           <Link href='/over/wat-is-circulaw' className='h-full w-full'>
             <Image
               src='/home-page/homepage-video-cta.png'

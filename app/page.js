@@ -17,9 +17,9 @@ export default async function Page() {
   });
   return (
     <>
-      <div className='sm:pt-18 -z-50 py-12 sm:pb-24' name='thema'>
+      <div className='-z-50 pb-12 sm:pb-24' name='thema'>
         <div className='global-margin -z-20'>
-          <h2 className='heading-2xl-semibold sm:heading-5xl-semibold border-b border-cl-dark-grey pb-6 pt-8 text-green-500'>
+          <h2 className='heading-2xl-semibold sm:heading-5xl-semibold border-b border-cl-dark-grey pb-6 text-green-500'>
             Ontdek direct onze instrumenten
           </h2>
           <p className='heading-xl max-w-[750px] whitespace-normal py-4'>
