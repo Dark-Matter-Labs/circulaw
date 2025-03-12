@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import NewButton from '@/components/new-button';
-import elearning from '@/public/e-learning.png';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { IconChevronDown, IconProgressBolt } from '@tabler/icons-react';
 
@@ -65,7 +64,7 @@ export default function AreaPlanning({ params }) {
             <div className='sticky top-32 ml-8 hidden max-h-[600px] max-w-[350px] md:block'>
               <div className='flex h-full w-full flex-col rounded-cl bg-green-50 p-4 shadow-md'>
                 <Image
-                  src={elearning}
+                  src='/forum.png'
                   width={406}
                   height={172}
                   alt='comment image'
@@ -178,7 +177,7 @@ export default function AreaPlanning({ params }) {
               </div>
               <div className='mb-10 flex h-full w-full flex-col rounded-cl bg-green-50 p-4 shadow-md md:hidden'>
                 <Image
-                  src={elearning}
+                  src='/forum.png'
                   width={406}
                   height={172}
                   alt='comment image'
@@ -224,7 +223,7 @@ export default function AreaPlanning({ params }) {
                     />
                   </div>
                   <Image
-                    src={elearning}
+                    src='/framework-thumbnail.png'
                     width={406}
                     height={172}
                     alt='comment image'
@@ -265,10 +264,10 @@ export default function AreaPlanning({ params }) {
                 <div className='mt-10 grid grid-cols-1 gap-y-8 md:grid-cols-2 md:gap-x-8'>
                   <div>
                     <div className='group relative flex w-full flex-col overflow-hidden rounded-cl shadow-lg'>
-                      <div className='max-h-[180px] w-full rounded-cl object-cover'>
+                      <div className='max-h-[210px] w-full rounded-cl object-cover'>
                         <Image
                           className='fill rounded-t-cl'
-                          src='/area-planning-download.png'
+                          src='/download-thumbnail.png'
                           alt='image of graph'
                           width={1440}
                           height={720}
