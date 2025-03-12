@@ -58,7 +58,11 @@ export default function MobileDisclosure({ navData, closeMenu }) {
                     </Link>
                   </li>
                   <li className='ml-4 mt-4 pt-2'>
-                    <Link href='/bouw/gebiedsontwikkeling' onClick={() => closeMenu(false)} className=''>
+                    <Link
+                      href='/bouw/gebiedsontwikkeling'
+                      onClick={() => closeMenu(false)}
+                      className=''
+                    >
                       <span className='flex w-full items-center'>
                         E-learning &apos;Circulaire houtbouw&apos;
                       </span>

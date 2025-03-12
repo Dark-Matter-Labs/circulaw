@@ -173,6 +173,26 @@ export default function AreaPlanning({ params }) {
                   contact op!
                 </p>
               </div>
+              {/* add scroll link card */}
+              <div className='mb-10 flex h-full w-full flex-col rounded-cl bg-green-50 p-4 shadow-md md:hidden'>
+                <Image
+                  src={elearning}
+                  width={406}
+                  height={172}
+                  alt='comment image'
+                  className='rounded-cl'
+                />
+                <div className='flex h-full w-full flex-col justify-between px-4 pt-4'>
+                  <div className='heading-2xl-semibold mb-2'>Hoe kunnen wij je helpen?</div>
+                  <div className='p-base mb-4'>
+                    Benieuwd hoe jouw gemeente duurzaamheid en circulariteit kan bevorderen binnen
+                    het circulaire gebiedsontwikkelingsproces? CircuLaw biedt ondersteuning op maat:
+                  </div>
+                  <NewButton variant='primaryDark' icon='arrowDown' scrollTo='contact'>
+                    Lees meer
+                  </NewButton>
+                </div>
+              </div>
               <div className='mb-10 max-w-[700px]'>
                 <h3 className='heading-xl-semibold sm:heading-2xl-semibold mb-6'>
                   Juridische instrumenten voor houtbouw in circulaire gebiedsontwikkeling
@@ -186,17 +206,24 @@ export default function AreaPlanning({ params }) {
                   van gebiedsontwikkeling kunt inzetten, om houtbouw te bevorderen.
                 </p>
               </div>
-              <div className='my-20 hidden max-w-[700px] rounded-cl bg-green-50 p-10 md:block'>
+              <div className='mb-10 max-w-[700px] rounded-cl bg-green-50 p-4 md:my-20 md:block md:p-10'>
                 <div className='w-full'>
                   {/* Using an arbitrary aspect ratio for A4: 210 / 297 */}
-                  <div className='aspect-[1788/1670]'>
+                  <div className='hidden aspect-[1788/1670] md:block'>
                     <iframe
                       src='/area-planning.pdf#zoom=44'
                       title='PDF Viewer'
                       className='h-full w-full border-0'
                     />
                   </div>
-                  <div className='flex w-full items-center justify-center pt-10'>
+                  <Image
+                    src={elearning}
+                    width={406}
+                    height={172}
+                    alt='comment image'
+                    className='rounded-cl md:hidden'
+                  />
+                  <div className='flex w-full items-center justify-center pt-4 md:pt-10'>
                     <NewButton
                       variant='primaryDark'
                       icon='download'
