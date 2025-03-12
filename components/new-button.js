@@ -30,8 +30,6 @@ export default function NewButton({ variant, icon, href, newTab, scrollTo, child
     }
   };
 
-  console.log(scrollTo);
-
   if (scrollTo) {
     return (
       <ScrollLink
