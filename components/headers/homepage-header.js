@@ -39,7 +39,7 @@ export default function HomepageHeader() {
             </div>
           </div>
         </div>
-        <div className='group absolute bottom-0 -right-10 z-30 overflow-visible'>
+        <div className='group absolute -right-10 bottom-0 z-30 overflow-visible'>
           <Link href='/over/wat-is-circulaw' className='h-full w-full'>
             <Image
               src='/home-page/homepage-video-cta.png'
