@@ -111,7 +111,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
                 pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500'
               } p-xs active:p-xs-semibold flex cursor-pointer flex-row items-center pt-2 active:no-underline`}
             >
-              <span className='hover:underline'>NAV AREA PLANNING</span>
+              <span className='hover:underline'>Houtbouw in gebiedsontwikkeling</span>
             </Link>
           </div>
         </>

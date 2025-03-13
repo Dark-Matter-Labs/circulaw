@@ -64,7 +64,7 @@ export default function MobileDisclosure({ navData, closeMenu }) {
                       className=''
                     >
                       <span className='flex w-full items-center'>
-                        E-learning &apos;Circulaire houtbouw&apos;
+                        Houtbouw in gebiedsontwikkeling
                       </span>
                     </Link>
                   </li>
