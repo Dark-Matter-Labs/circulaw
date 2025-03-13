@@ -86,8 +86,8 @@ export default function PCLayout({ ...props }) {
                     <div className='group w-full flex-grow rounded-cl border border-gray-200 bg-green-50'>
                       <Link href='/bouw/gebiedsontwikkeling' className='h-full w-full'>
                         <div className='flex h-full w-full flex-grow flex-col justify-between gap-y-2 p-6'>
-                          <h3 className='heading-2xl-semibold text-green-600'>
-                            Stimuleer houtbouw in gebiedsontwikkeling
+                          <h3 className='heading-2xl-semibold text-green-600 text-wrap'>
+                          Veranker houtbouw in gebiedsontwikkeling
                           </h3>
                           <div>
                             <p className='p-base pt-4 text-green-800'>
