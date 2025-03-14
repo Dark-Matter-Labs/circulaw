@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
+import { IconChevronRight } from '@tabler/icons-react';
 
 export default function DesktopNavCard({ navData, closeNav }) {
   const pathname = usePathname();
@@ -19,13 +20,13 @@ export default function DesktopNavCard({ navData, closeNav }) {
       <Link
         id='navClick'
         href={`/${navData.slug}`}
-        className='hover:underline'
+        className='hover:underline flex items-center'
         onClick={() => {
           closeNav(false);
           CustomEvent.trackEvent('Nav click', pathname, navData.title);
         }}
       >
-        {navData.title} {'>'}
+        {navData.title} <IconChevronRight className='size-4 ml-1 mt-1'/>
       </Link>
       {navData.title === 'Bouw' && (
         <div
