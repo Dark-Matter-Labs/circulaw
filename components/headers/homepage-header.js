@@ -1,11 +1,9 @@
-import { Link as ScrollLink } from 'react-scroll';
-
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { IconArrowDown, IconArrowRight } from '@tabler/icons-react';
+import { IconArrowRight } from '@tabler/icons-react';
 
-import CustomButton from '../custom-button';
+import NewButton from '../new-button';
 
 export default function HomepageHeader() {
   return (
@@ -22,20 +20,14 @@ export default function HomepageHeader() {
           </div>
           <div className='mt-2 sm:flex sm:justify-start md:mt-2'>
             <div className=''>
-              <CustomButton color='greenBackground'>
-                <ScrollLink to='thema' smooth={true} offset={-95}>
-                  Bekijk de thema&rsquo;s{' '}
-                  <IconArrowDown className='inline-block h-5 w-5' aria-hidden='true' />
-                </ScrollLink>
-              </CustomButton>
+              <NewButton variant='primaryDark' icon='arrowDown' scrollTo='thema'>
+                Bekijk de thema&rsquo;s
+              </NewButton>
             </div>
             <div className='mt-3 rounded-md sm:ml-3 sm:mt-0'>
-              <CustomButton color='greenBackground'>
-                <ScrollLink to='about' smooth={true} offset={-100}>
-                  Meer over CircuLaw?{' '}
-                  <IconArrowDown className='inline-block h-5 w-5' aria-hidden='true' />
-                </ScrollLink>
-              </CustomButton>
+              <NewButton variant='primaryDark' icon='arrowDown' scrollTo='about'>
+                Meer over CircuLaw?
+              </NewButton>
             </div>
           </div>
         </div>

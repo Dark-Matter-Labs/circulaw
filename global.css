@@ -187,6 +187,10 @@ html {
   background: linear-gradient(35deg, #3DB989 20.34%, #028453 56.51%, #03794F 64.05%, #066548 82.89%, #085E46 95.7%);
 }
 
+.gradient-homepage-cards {
+  background: linear-gradient(0deg, rgba(217, 239, 231, 0) -16.44%, rgba(217, 239, 231, 0.68) 72.35%, #D9EFE7 100%);
+}
+
 /* used for PDF blocks in Portable text */
 .gradient-pdf {
   background: linear-gradient(#042D36 0%, rgba(34, 83, 44, 0) 100%);
