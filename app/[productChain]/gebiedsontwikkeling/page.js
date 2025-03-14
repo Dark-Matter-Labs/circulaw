@@ -250,11 +250,11 @@ export default function AreaPlanning({ params }) {
                 beschikking hebt.
               </p>
 
-              <div className='mb-10 flex max-w-[700px] flex-col sm:mb-20'>
+              <div className='mb-10 flex max-w-[750px] flex-col sm:mb-20'>
                 <h3 className='heading-xl-semibold sm:heading-2xl-semibold mb-6'>
                   Voorbeelden uit de praktijk
                 </h3>
-                <p className=''>
+                <p className='max-w-[700px]'>
                   Met onze aanpak als leidraad kun je het proces van gebiedsontwikkeling echt naar
                   je hand zetten. Daarbij heb je natuurlijk{' '}
                   <span className='p-base-semibold'>alle ruimte</span> om de instrumenten naar eigen
@@ -275,12 +275,12 @@ export default function AreaPlanning({ params }) {
                           priority={true}
                         />
                       </div>
-                      <div className='group flex h-full w-full flex-col bg-green-50 px-6 py-4'>
+                      <div className='group flex h-full w-full flex-col bg-green-50 p-6'>
                         <div className='flex flex-grow items-center justify-center'>
                           <NewButton
                             variant='primaryDark'
                             icon='download'
-                            href='/amsterdam.pdf'
+                            href='/Plaberum-framework-gebasseerd-op-Amsterdam.pdf'
                             newTab={true}
                           >
                             Download voorbeeld Amsterdam
