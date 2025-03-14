@@ -205,7 +205,7 @@ export default function AreaPlanningLayout() {
               {/* Using an arbitrary aspect ratio for A4: 210 / 297 */}
               <div className='hidden aspect-[1788/1670] md:block'>
                 <iframe
-                  src='/area-planning.pdf#zoom=44'
+                  src='/Gebiedsontwikkeling-Framework.pdf#zoom=44'
                   title='PDF Viewer'
                   className='h-full w-full border-0'
                 />
@@ -221,7 +221,7 @@ export default function AreaPlanningLayout() {
                 <NewButton
                   variant='primaryDark'
                   icon='download'
-                  href='/area-planning.pdf'
+                  href='/Gebiedsontwikkeling-Framework.pdf'
                   newTab={true}
                 >
                   Download framework
