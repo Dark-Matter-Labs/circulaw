@@ -330,7 +330,7 @@ export default function Nav(props) {
               {pathname === '/' && (
                 <>
                   {/* LOGO DESKTOP HP */}
-                  <div className='hidden lgNav:block min-h-[98px]'>
+                  <div className='hidden min-h-[98px] lgNav:block'>
                     <Link href='/'>
                       <PlayerWithNoSSR
                         autoplay

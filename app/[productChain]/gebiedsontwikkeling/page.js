@@ -84,9 +84,32 @@ export default function AreaPlanning({ params }) {
               </div>
             </div>
             <div className='flex flex-col'>
-              <h2 className='heading-xl-semibold sm:heading-2xl-semibold'>
-                Een gebiedsontwikkelingsproces
+              <h2 className='heading-xl-semibold sm:heading-2xl-semibold mb-6 md:mb-10'>
+                Het gebiedsontwikkelingsproces
               </h2>
+              <div className='flex max-w-[700px] flex-col gap-y-4'>
+                <p>
+                  Een gebiedsontwikkeling heeft als doel de{' '}
+                  <span className='p-base-semibold'>
+                    leefbaarheid, economische waarde en duurzaamheid
+                  </span>{' '}
+                  van een gebied te verbeteren. Gebiedsontwikkeling bestaat uit een aantal fasen:{' '}
+                  <span className='p-base-semibold'>
+                    Verkenning, Verdieping, Voorbereiding, Realisatie, Exploitatie en Transformatie.
+                  </span>{' '}
+                  In al die fasen kun je specifieke juridische instrumenten toepassen.
+                </p>
+                <p>
+                  In de visie van CircuLaw moet je{' '}
+                  <span className='p-base-semibold'>zo vroeg mogelijk</span> in het proces actie
+                  ondernemen. Zo weet je zeker dat jouw ambities goed verankerd worden in het hele
+                  proces. Daarom voegen we een{' '}
+                  <span className='p-base-semibold'>&apos;Voorfase&apos;</span> aan het proces toe.
+                  In deze voorfase onderzoek je welke informatiestukken je moet lezen, welke
+                  collega&apos;s je moet benaderen en bij welke belangrijke momenten van het
+                  gebiedsontwikkelingsproces jij moet zijn aangehaakt.
+                </p>
+              </div>
               <div className='my-5 md:my-10'>
                 <Disclosure className='max-w-[700px]' as='div'>
                   <>
@@ -147,35 +170,11 @@ export default function AreaPlanning({ params }) {
                   </>
                 </Disclosure>
               </div>
-              <div className='mb-10 flex max-w-[700px] flex-col gap-y-4 sm:mb-20'>
-                <p>
-                  Gebiedsontwikkeling heeft als doel de{' '}
-                  <span className='p-base-semibold'>
-                    leefbaarheid, economische waarde en duurzaamheid
-                  </span>{' '}
-                  van een gebied te verbeteren. Gebiedsontwikkeling bestaat uit een aantal fasen:{' '}
-                  <span className='p-base-semibold'>
-                    Verkenning, Verdieping, Voorbereiding, Realisatie, Exploitatie en Transformatie.
-                  </span>{' '}
-                  In al die fasen kun je specifieke juridische instrumenten toepassen.
-                </p>
-                <p>
-                  In de visie van Circulaw moet je{' '}
-                  <span className='p-base-semibold'>zo vroeg mogelijk</span> in het proces actie
-                  ondernemen. Zo weet je zeker dat jouw ambities goed verankerd worden in het hele
-                  proces. Daarom voegen we een{' '}
-                  <span className='p-base-semibold'>&apos;Voorfase&apos;</span> aan het proces toe.
-                </p>
-                <p>
-                  In het hele proces van gebiedsontwikkeling is het zaak dat je het juiste
-                  juridische instrument op het{' '}
-                  <span className='p-base-semibold'>juiste moment</span> inzet. Ook{' '}
-                  <span className='p-base-semibold'>houtbouw</span> kan op deze manier een{' '}
-                  <span className='p-base-semibold'>stevige plek</span> krijgen binnen
-                  gebiedsontwikkeling. Wil je meer weten, of ben je benieuwd wat wij voor je kunnen
-                  betekenen? Neem dan contact op!
-                </p>
-              </div>
+              <p className='p-base mb-10 max-w-[700px] md:mb-20'>
+                In het hele proces van gebiedsontwikkeling is het zaak dat je het juiste juridische
+                instrument op het juiste moment inzet, en zo circulariteit goed meeneemt. Ook
+                houtbouw kan op deze manier een stevige plek krijgen binnen gebiedsontwikkeling.
+              </p>
               <div className='mb-10 flex h-full w-full flex-col rounded-cl bg-green-50 p-4 shadow-md md:hidden'>
                 <Image
                   src='/forum.png'
@@ -199,21 +198,20 @@ export default function AreaPlanning({ params }) {
                 <h3 className='heading-xl-semibold sm:heading-2xl-semibold mb-6'>
                   Juridische instrumenten voor houtbouw in circulaire gebiedsontwikkeling
                 </h3>
-                <span className='p-base-semibold'></span>
-                <p className='mr-6'>
+                <p className='mb-6 mr-6'>
                   Gedurende het proces van gebiedsontwikkeling kun je verschillende juridische
-                  instrumenten inzetten. Die instrumenten winnen aan kracht als je al in de{' '}
-                  <span className='p-base-semibold'>voorfase</span> de juiste maatregelen treft.
+                  instrumenten inzetten. Specifiek voor houtbouw heeft CircuLaw{' '}
+                  <span className='p-base-semibold'>35 juridische instrumenten</span> in kaart
+                  gebracht. Die instrumenten winnen aan kracht als je al in de voorfase de juiste
+                  maatregelen treft. Die voorfase bevat een aantal{' '}
+                  <span className='p-base-semibold'>gemeentebrede</span> instrumenten.
                 </p>
                 <p className='mr-6'>
-                  Specifiek voor <span className='p-base-semibold'>houtbouw</span> heeft CircuLaw{' '}
-                  <span className='p-base-semibold'>35 juridische instrumenten</span> ontwikkeld. In
-                  de afbeelding zie je de juridische instrumenten die je per fase van de
-                  gebiedsontwikkeling kunt inzetten, om{' '}
-                  <span className='p-base-semibold'>circulaire houtbouw te bevorderen.</span>{' '}
+                  In de afbeelding zie je de juridische instrumenten die je per fase van
+                  gebiedsontwikkeling kunt inzetten, om houtbouw te bevorderen.
                 </p>
               </div>
-              <div className='mb-10 max-w-[700px] rounded-cl bg-green-50 p-4 md:block md:p-10'>
+              <div className='mb-10 max-w-[700px] rounded-cl bg-green-50 p-4 md:mb-20 md:block md:p-10'>
                 <div className='w-full'>
                   {/* Using an arbitrary aspect ratio for A4: 210 / 297 */}
                   <div className='hidden aspect-[1788/1670] md:block'>
@@ -242,24 +240,17 @@ export default function AreaPlanning({ params }) {
                   </div>
                 </div>
               </div>
-              <p className='p-base mb-10 max-w-[700px]'>
-                In elke fase van gebiedsontwikkeling kun je{' '}
-                <span className='p-base-semibold'>specifieke juridische instrumenten</span> inzetten
-                - van voorfase tot transformatie. Zo kun je circulaire houtbouw optimaal bevorderen
-                in het hele proces. Op deze plaat zie je welke instrumenten je per fase tot je
-                beschikking hebt.
-              </p>
-
               <div className='mb-10 flex max-w-[750px] flex-col sm:mb-20'>
                 <h3 className='heading-xl-semibold sm:heading-2xl-semibold mb-6'>
                   Voorbeelden uit de praktijk
                 </h3>
                 <p className='max-w-[700px]'>
+                  <span className='p-base-semibold'></span>
                   Met onze aanpak als leidraad kun je het proces van gebiedsontwikkeling echt naar
                   je hand zetten. Daarbij heb je natuurlijk{' '}
-                  <span className='p-base-semibold'>alle ruimte</span> om de instrumenten naar eigen
-                  inzicht in te richten. De gemeenten{' '}
-                  <span className='p-base-semibold'>Zaandam</span> en{' '}
+                  <span className='p-base-semibold'>alle ruimte</span> om de instrumenten naar{' '}
+                  <span className='p-base-semibold'>eigen inzicht</span> in te richten. Onder meer
+                  de <span className='p-base-semibold'>gemeente Amsterdam</span> ging je al voor!
                   <span className='p-base-semibold'>Amsterdam</span> gingen je al voor!
                 </p>
                 <div className='mt-10 grid grid-cols-1 gap-y-8 md:grid-cols-2 md:gap-x-8'>
