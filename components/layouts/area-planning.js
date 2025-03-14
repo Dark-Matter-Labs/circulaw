@@ -239,7 +239,6 @@ export default function AreaPlanningLayout() {
               <span className='p-base-semibold'>alle ruimte</span> om de instrumenten naar{' '}
               <span className='p-base-semibold'>eigen inzicht</span> in te richten. Onder meer de{' '}
               <span className='p-base-semibold'>gemeente Amsterdam</span> ging je al voor!
-              <span className='p-base-semibold'>Amsterdam</span> gingen je al voor!
             </p>
             <div className='mt-10 grid grid-cols-1 gap-y-8 md:grid-cols-2 md:gap-x-8'>
               <div>
