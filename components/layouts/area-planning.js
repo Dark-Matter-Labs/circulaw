@@ -205,7 +205,7 @@ export default function AreaPlanningLayout() {
               {/* Using an arbitrary aspect ratio for A4: 210 / 297 */}
               <div className='hidden aspect-[1788/1670] md:block'>
                 <iframe
-                  src='/area-planning.pdf#zoom=44'
+                  src='/Gebiedsontwikkeling-Framework.pdf#zoom=44'
                   title='PDF Viewer'
                   className='h-full w-full border-0'
                 />
@@ -221,7 +221,7 @@ export default function AreaPlanningLayout() {
                 <NewButton
                   variant='primaryDark'
                   icon='download'
-                  href='/area-planning.pdf'
+                  href='/Gebiedsontwikkeling-Framework.pdf'
                   newTab={true}
                 >
                   Download framework
@@ -239,7 +239,6 @@ export default function AreaPlanningLayout() {
               <span className='p-base-semibold'>alle ruimte</span> om de instrumenten naar{' '}
               <span className='p-base-semibold'>eigen inzicht</span> in te richten. Onder meer de{' '}
               <span className='p-base-semibold'>gemeente Amsterdam</span> ging je al voor!
-              <span className='p-base-semibold'>Amsterdam</span> gingen je al voor!
             </p>
             <div className='mt-10 grid grid-cols-1 gap-y-8 md:grid-cols-2 md:gap-x-8'>
               <div>
