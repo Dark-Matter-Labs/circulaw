@@ -62,6 +62,7 @@ export default {
       type: 'slug',
       group: 'devOnly',
       description: 'DO NOT CHANGE',
+      validation: (Rule) => Rule.required(),
       options: {
         source: 'themaName',
         inUnique: 'true',
