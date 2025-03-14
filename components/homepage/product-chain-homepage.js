@@ -48,7 +48,7 @@ export default function PCHomePage({ pcData }) {
                     </div>
                   )}
                   {chain.pcName === 'Kunststoffen' && (
-                    <div className='heading-3xl-semibold min-h-[100px] items-end break-words pt-4 text-green-500'>
+                    <div className='heading-3xl-semibold min-h-[100px] items-end break-words pt-4 text-green-500 lg:mr-6'>
                       Kunst-stoffen
                     </div>
                   )}

@@ -1,13 +1,11 @@
-
-import HomePageAboutSection from '@/components/homepage/home-page-about-section';
 import HomePageEUSection from '@/components/homepage/home-page-eu-section';
 import PCHomePage from '@/components/homepage/product-chain-homepage';
 import InlineLink from '@/components/inline-link';
-import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
-import FeaturedCard from '@/components/news-page/featured-card';
+import NewsCard from '@/components/news-page/news-card';
 import TitleDecorator from '@/components/title-decorator';
 import { HOME_PAGE_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
+
 
 export default async function Page() {
   const data = await sanityFetch({
@@ -23,7 +21,6 @@ export default async function Page() {
             <h2 className='heading-5xl-semibold text-green-500'>Ontdek direct onze instrumenten</h2>
             <TitleDecorator width='w-1/4' />
           </div>
-
           <div className='basis-1/2'>
             <p className='heading-2xl whitespace-normal'>
               De overheid heeft 5 productketens gekozen voor het
@@ -45,30 +42,20 @@ export default async function Page() {
           <HomePageEUSection euData={data.euData} />
         </div>
         <div className='mb-40'>
-          <h3 className='heading-5xl-semibold w-full text-green-500'>
-            Uitgelichte nieuwsberichten
-          </h3>
-          <TitleDecorator width='w-[17%]' />
-
-          <div className='grid grid-cols-1 grid-rows-1 gap-6 overflow-hidden py-10 sm:grid-cols-2 lg:grid-cols-4'>
-            {data.newsItems.map((item, id) => (
-              <div
-                className={`${
-                  item.image
-                    ? 'sm:flex-cols-2 col-span-1 flex-col sm:col-span-2'
-                    : 'col-span-1 flex-col gap-3'
-                }`}
-                key={id}
-              >
-                {item.newsOrAgenda === true && <FeaturedAgendaCard data={item} />}
-                {item.newsOrAgenda === false && <FeaturedCard data={item} />}
-              </div>
-            ))}
+          <div className='mb-20 w-1/2'>
+            <h3 className='heading-5xl-semibold text-green-500'>Uitgelichte nieuwsberichten</h3>
+            <TitleDecorator width='w-1/4' />
           </div>
+          <ul className='grid grid-cols-3 gap-x-3 overflow-hidden'>
+            {data.newsItems.map((item, id) => (
+              <li key={id}>{item.newsOrAgenda === false && <NewsCard data={item} />}</li>
+            ))}
+          </ul>
         </div>
+        {/*
         <div>
           <HomePageAboutSection aboutSection={data.aboutSection} />
-        </div>
+        </div> */}
       </div>
     </>
   );
