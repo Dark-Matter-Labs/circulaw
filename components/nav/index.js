@@ -883,7 +883,7 @@ export default function Nav(props) {
                         <div
                           className='h-full shadow-lg'
                           style={{ ...searchMenuTransitionStyles }}
-                          // onMouseLeave={() => setSearchMenuIsOpen(false)}
+                          onMouseLeave={() => setSearchMenuIsOpen(false)}
                         >
                           <div
                             className={`${
