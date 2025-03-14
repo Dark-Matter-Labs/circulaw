@@ -35,7 +35,7 @@ export default function AreaPlanning({ params }) {
         <div className='relative my-5 w-full items-center md:hidden'>
           <Image
             src='/area-planning-mob.png'
-            alt='infographique'
+            alt='Visual waarin de fases van de gebiedsontwikkeling te zien zijn'
             width={900}
             height={900 * (380 / 1160)}
             sizes='
@@ -49,14 +49,15 @@ export default function AreaPlanning({ params }) {
           <div className='relative hidden w-full items-center pt-10 sm:my-8 md:my-16 md:flex'>
             <Image
               src='/area-planning-image.png'
-              alt='infographique'
+              alt='Visual waarin de fases van de gebiedsontwikkeling te zien zijn'
               width={900}
-              height={900 * (380 / 1160)}
+              height={900 * (1680 / 4640)}
               quality={100}
+              priority
               sizes='
                               (max-width: 768px) 95vw,
-                              (max-width: 1200px) 60vw,
-                              40vw'
+                              (max-width: 1200px) 100vw,
+                              100vw'
               className='w-full'
             />
           </div>
