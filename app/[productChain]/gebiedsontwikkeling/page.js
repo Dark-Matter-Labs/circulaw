@@ -245,7 +245,6 @@ export default function AreaPlanning({ params }) {
                   Voorbeelden uit de praktijk
                 </h3>
                 <p className='max-w-[700px]'>
-                  <span className='p-base-semibold'></span>
                   Met onze aanpak als leidraad kun je het proces van gebiedsontwikkeling echt naar
                   je hand zetten. Daarbij heb je natuurlijk{' '}
                   <span className='p-base-semibold'>alle ruimte</span> om de instrumenten naar{' '}
