@@ -19,7 +19,7 @@ export default async function Page() {
   return (
     <>
       <div className='global-margin'>
-        <div className='mb-20 flex flex-row gap-x-32' name='thema'>
+        <div className='mb-20 flex flex-row xl:gap-x-32' name='thema'>
           {/* TODO: Make title component that can be used widely */}
           <div className='flex basis-1/2 flex-col'>
             <h2 className='heading-5xl-semibold text-green-500'>Ontdek direct onze instrumenten</h2>
@@ -40,10 +40,10 @@ export default async function Page() {
             </p>
           </div>
         </div>
-        <PCHomePage pcData={data.pcHomePage} />
-      </div>
-      <div className='pb-12 sm:pb-24 sm:pt-0'>
-        <div className='global-margin'>
+        <div className='mb-52'>
+          <PCHomePage pcData={data.pcHomePage} />
+        </div>
+        <div className='mb-52'>
           <HomePageEUSection euData={data.euData} />
         </div>
       </div>
