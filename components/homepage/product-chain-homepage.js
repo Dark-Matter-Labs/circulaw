@@ -16,7 +16,7 @@ export default function PCHomePage({ pcData }) {
             <Link
               key={id}
               href={`/${chain.slug}`}
-              className='group flex min-w-[190px] max-w-[256px] grow'
+              className='group flex min-w-[190px] max-w-[256px] grow basis-1/5'
             >
               <li className='relative flex w-full flex-col'>
                 <Image
