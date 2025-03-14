@@ -20,13 +20,13 @@ export default function DesktopNavCard({ navData, closeNav }) {
       <Link
         id='navClick'
         href={`/${navData.slug}`}
-        className='hover:underline flex items-center'
+        className='flex items-center hover:underline'
         onClick={() => {
           closeNav(false);
           CustomEvent.trackEvent('Nav click', pathname, navData.title);
         }}
       >
-        {navData.title} <IconChevronRight className='size-4 ml-1 mt-1'/>
+        {navData.title} <IconChevronRight className='ml-1 mt-1 size-4' />
       </Link>
       {navData.title === 'Bouw' && (
         <div

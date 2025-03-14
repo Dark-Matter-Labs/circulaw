@@ -190,12 +190,12 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                         </div>
                       </div>
                       <div className='border-b border-green-100 py-2 sm:border-0 sm:py-0'>
-                        <h4 className='heading-xl-semibold text-green-300'>Productketens</h4>
+                        <h4 className='heading-2xl-semibold text-cl-black'>Productketens</h4>
                         <div className='grid grid-cols-1 gap-8 py-2 sm:py-0'>
                           <ul role='list' className='mt-4 space-y-4'>
                             {navigation.thema?.map((thema) => (
                               <li key={thema.name}>
-                                <a href={thema.slug} className='p-base text-green-100'>
+                                <a href={thema.slug} className='p-base-semibold text-white'>
                                   <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
                                     {thema.name}
                                   </span>
@@ -206,7 +206,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                         </div>
                       </div>
                       <div className='border-b border-green-100 py-2 sm:border-0 sm:py-0'>
-                        <h4 className='heading-xl-semibold text-green-300'>Over CircuLaw</h4>
+                        <h4 className='heading-2xl-semibold text-cl-black'>Over CircuLaw</h4>
                         <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
                           {' '}
                           <ul role='list' className='mt-4 space-y-4'>
@@ -215,7 +215,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                                 <li key={id}>
                                   <a
                                     href={`/over/${encodeURIComponent(slug.slug)}`}
-                                    className='p-base text-green-100'
+                                    className='p-base-semibold text-white'
                                   >
                                     <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
                                       {slug.pageTitle.replaceAll('-', ' ')}
@@ -229,7 +229,10 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                       <div className='py-2 sm:py-0'>
                         <ul role='list' className='space-y-4'>
                           <li>
-                            <a className='p-base link-interaction text-green-100' href={vraagSlug}>
+                            <a
+                              className='p-base-semibold link-interaction text-white'
+                              href={vraagSlug}
+                            >
                               <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
                                 Vraag en antwoord
                               </span>
@@ -239,7 +242,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                             <li key={item.name}>
                               <a
                                 href={item.href}
-                                className='p-base link-interaction-light-green-bg'
+                                className='p-base-semibold link-interaction-light-green-bg text-white'
                               >
                                 {item.name}
                               </a>

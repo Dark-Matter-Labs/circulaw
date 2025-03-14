@@ -6,7 +6,6 @@ import TitleDecorator from '@/components/title-decorator';
 import { HOME_PAGE_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
 
-
 export default async function Page() {
   const data = await sanityFetch({
     query: HOME_PAGE_QUERY,
