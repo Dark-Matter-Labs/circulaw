@@ -116,20 +116,6 @@ export default function DesktopNavCard({ navData, closeNav }) {
               <span className='hover:underline'>Houtbouw in gebiedsontwikkeling</span>
             </Link>
           </div>
-          <div className='mt-[2px]'>
-            <Link
-              href='/bouw/gebiedsontwikkeling'
-              onClick={() => {
-                CustomEvent.trackEvent('Nav click', pathname, 'gebiedsontwikkeling');
-                closeNav(false);
-              }}
-              className={`${
-                pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500'
-              } p-xs active:p-xs-semibold flex cursor-pointer flex-row items-center pt-2 active:no-underline`}
-            >
-              <span className='hover:underline'>Houtbouw in gebiedsontwikkeling</span>
-            </Link>
-          </div>
         </>
       )}
     </div>
