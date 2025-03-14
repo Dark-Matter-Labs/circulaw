@@ -322,7 +322,7 @@ export default function Nav(props) {
                   }`,
                 ]
               : 'bg-green-50 shadow-lg'
-          } global-padding flex h-[70px] w-full flex-row items-center justify-between lgNav:h-[98px] lgNav:w-auto lgNav:items-end`}
+          } global-padding flex h-[70px] w-full flex-row items-center justify-between lgNav:min-h-max lgNav:w-auto lgNav:items-end`}
         >
           <>
             {/* LOGO */}
@@ -330,7 +330,7 @@ export default function Nav(props) {
               {pathname === '/' && (
                 <>
                   {/* LOGO DESKTOP HP */}
-                  <div className='hidden lgNav:block'>
+                  <div className='hidden lgNav:block min-h-[98px]'>
                     <Link href='/'>
                       <PlayerWithNoSSR
                         autoplay
@@ -598,12 +598,12 @@ export default function Nav(props) {
                         ref={mainMenuRef.setFloating}
                         style={mainMenuStyles}
                         {...mainMenuFloatingProps()}
-                        className='-z-10 h-[430px] w-full'
+                        className='-z-10 w-full'
                       >
                         <div
                           className='h-full shadow-lg'
                           style={{ ...mainMenuTransitionStyles }}
-                          onMouseLeave={() => setMainMenuIsOpen(false)}
+                          // onMouseLeave={() => setMainMenuIsOpen(false)}
                         >
                           <div
                             className={`${
