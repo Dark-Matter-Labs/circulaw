@@ -13,6 +13,8 @@ export default function AgendaCard({ data }) {
   const year = {
     year: 'numeric',
   };
+
+  
   return (
     <>
       {data.link && (

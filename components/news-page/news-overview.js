@@ -6,8 +6,6 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import Link from 'next/link';
 
 import AgendaCard from '@/components/news-page/agenda-card';
-import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
-import FeaturedCard from '@/components/news-page/featured-card';
 import NewsCard from '@/components/news-page/news-card';
 import Tag from '@/components/tag';
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
@@ -69,8 +67,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
               }`}
               key={id}
             >
-              {item.newsOrAgenda === true && <FeaturedAgendaCard data={item} />}
-              {item.newsOrAgenda === false && <FeaturedCard data={item} />}
+              {item.newsOrAgenda === false && <NewsCard data={item} />}
             </div>
           ))}
         </div>
