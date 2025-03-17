@@ -57,16 +57,9 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
         <h1 className='heading-xl-semibold sm:heading-2xl-semibold w-full border-b-2 border-cl-black pb-5'>
           Uitgelichte nieuwsberichten
         </h1>
-        <div className='grid grid-cols-1 grid-rows-1 gap-6 overflow-hidden py-10 sm:grid-cols-2 lg:grid-cols-4'>
+        <div className='grid grid-cols-1 grid-rows-1 gap-6 overflow-hidden py-10 sm:grid-cols-2 md:grid-cols-3'>
           {featuresNewsItems.map((item, id) => (
-            <div
-              className={`${
-                item.image != null
-                  ? 'sm:flex-cols-2 col-span-1 flex-col sm:col-span-2'
-                  : 'col-span-1 flex-col gap-3'
-              }`}
-              key={id}
-            >
+            <div key={id}>
               {item.newsOrAgenda === false && <NewsCard data={item} />}
             </div>
           ))}
@@ -373,7 +366,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
           </div>
         </div>
         <ResponsiveMasonry
-          columnsCountBreakPoints={{ 350: 1, 640: 2, 1024: 3, 1280: 4 }}
+          columnsCountBreakPoints={{ 350: 1, 640: 2, 1024: 3 }}
           className='py-10'
         >
           <Masonry gutter='24px'>

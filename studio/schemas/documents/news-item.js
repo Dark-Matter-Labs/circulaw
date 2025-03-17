@@ -5,6 +5,16 @@ import { validation } from 'sanity';
 
 import { NewsItemComponent } from '../../components/news-item';
 
+
+// if the news item is featured - must have image
+// prefil link internal/external in portable text. 
+// update newsOrAgenda to isNews
+// update featured to isFeatured low-prio
+// update createPage to hasPage
+// add max length to news card text ?
+// make date mandatory
+// update internalExternal to isInternal
+
 export default {
   name: 'newsItem',
   title: 'News Item',
@@ -75,10 +85,9 @@ export default {
       hidden: ({ parent }) => parent.newsOrAgenda === true,
       options: {
         list: [
-          { title: 'Light green', value: 'lightGreen' },
-          { title: 'Green', value: 'green' },
-          { title: 'Dark green', value: 'darkGreen' },
-          { title: 'Extra dark green', value: 'extraDarkGreen' },
+          { title: 'Light green', value: 'lightGreen' }, // green 200
+          { title: 'Green', value: 'green' }, // green 300
+          { title: 'Dark green', value: 'darkGreen' }, // green-400
         ],
       },
     },
@@ -147,7 +156,6 @@ export default {
         },
       ],
     },
-
     {
       title: 'Slug',
       name: 'slug',
