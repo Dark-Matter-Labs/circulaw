@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import Image from 'next/image';
 
-import NewButton from '@/components/new-button';
+import NewButton from '@/components/shared/new-button';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { IconChevronDown, IconProgressBolt } from '@tabler/icons-react';
 

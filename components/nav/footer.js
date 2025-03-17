@@ -7,7 +7,7 @@ import Partners from '@/components/nav/partners';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
 import { IconBrandGithub, IconBrandLinkedin, IconFileSearch } from '@tabler/icons-react';
 
-import NewButton from '../new-button';
+import NewButton from '../shared/new-button';
 import FooterLinkBlock from './footer-link-block';
 
 const navigation = {

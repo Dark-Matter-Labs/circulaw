@@ -1,4 +1,4 @@
-import NewButton from '../new-button';
+import NewButton from '../shared/new-button';
 
 export default function FooterLinkBlock(props) {
   return (

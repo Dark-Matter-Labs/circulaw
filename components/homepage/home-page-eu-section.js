@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import ImageComponent from '../image-component';
-import NewButton from '../new-button';
+import NewButton from '../shared/new-button';
 import TitleDecorator from '../title-decorator';
 
 export default function HomePageEUSection({ euData }) {

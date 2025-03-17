@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { IconArrowRight } from '@tabler/icons-react';
 
-import NewButton from '../new-button';
+import NewButton from '../shared/new-button';
 
 export default function HomepageHeader() {
   return (
