@@ -12,7 +12,7 @@ export default function Partners({ footerText, partnerLogos }) {
   return (
     <div className='bg-cl-black pb-2 pt-10'>
       {pathname === '/' && (
-        <div className='global-margin px-4 pb-12 lg:pb-16'>
+        <div className='global-margin pb-12 lg:pb-16'>
           <div className='heading-3xl-semibold pl-3 text-green-100 sm:pl-6 lg:pl-8'>Partners</div>
           <ParnerSection
             partners={partnerLogos?.developingPartners}
@@ -26,24 +26,12 @@ export default function Partners({ footerText, partnerLogos }) {
         </div>
       )}
       <div className='global-margin p-base pb-2 text-green-100'>
-        {pathname === '/en' && (
-          <p className='pb-8'>
-            This website is currently under development and in this version we are testing the
-            technology, design, and content of the site. The content of the site may be incomplete
-            or contain errors. This means that no rights can be derived from the content of this
-            site.
-          </p>
-        )}
-        {pathname !== '/en' && (
-          <p className='pb-8'>
-            {footerText?.footerText}&nbsp;
-            <Link href='/contact'>
-              <span className='link-interaction-dark-bg underline'>
-                {footerText?.footerLinkText}
-              </span>
-            </Link>
-          </p>
-        )}
+        <p className='pb-8'>
+          {footerText?.footerText}&nbsp;
+          <Link href='/contact'>
+            <span className='link-interaction-dark-bg underline'>{footerText?.footerLinkText}</span>
+          </Link>
+        </p>
         <hr className='border-green-100' />
         <div className='py-2 text-center'>
           <span className='p-xs text-green-100'>

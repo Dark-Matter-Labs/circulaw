@@ -1,21 +1,13 @@
 import { useState } from 'react';
-import { Link as ScrollLink } from 'react-scroll';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import CustomButton from '@/components/custom-button';
 import Partners from '@/components/nav/partners';
 import { usePiwikPro } from '@piwikpro/next-piwik-pro';
-import {
-  IconArrowUp,
-  IconBrandGithub,
-  IconBrandLinkedin,
-  IconFileSearch,
-  IconThumbDown,
-  IconThumbUp,
-} from '@tabler/icons-react';
+import { IconBrandGithub, IconBrandLinkedin, IconFileSearch } from '@tabler/icons-react';
 
+import NewButton from '../new-button';
 import FooterLinkBlock from './footer-link-block';
 
 const navigation = {
@@ -46,26 +38,22 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
   return (
     <>
       <footer className='' aria-labelledby='footer-heading'>
-        {pathname !== '/en' && (
-          <div>
-            <div className='flex w-full items-center justify-center border-y-2 border-green-100 bg-cl-black py-8 lgNav:hidden'>
-              <CustomButton color='home'>
-                <ScrollLink to='top' smooth={true}>
-                  <span>
-                    Top
-                    <IconArrowUp className='ml-1 inline-block h-5 w-5' />
-                  </span>
-                </ScrollLink>
-              </CustomButton>
-            </div>
-            <div className='global-margin border-t border-t-green-500 py-10'>
+        <div>
+          <div className='flex w-full items-center justify-center border-t border-green-500 bg-green-100 py-8 lgNav:hidden'>
+            <NewButton variant='secondaryDark' icon='arrowUp' scrollTo='top'>
+              Top
+            </NewButton>
+          </div>
+          <div className='border-t border-t-green-500'>
+            <div className='global-margin py-10'>
               <div className={`flex items-center justify-center ${jeeNee}`}>
                 <h3 className='heading-xl-semibold sm:heading-2xl-semibold pr-8 text-green-500'>
                   Vond je deze pagina nuttig?
                 </h3>
                 <div className='mr-4'>
-                  <CustomButton
-                    color='whiteBackground'
+                  <NewButton
+                    variant='secondaryDark'
+                    icon='thumbUp'
                     id='je'
                     onClick={() => {
                       setFeedback('');
@@ -74,14 +62,13 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                       setMoreInfoOpen('block');
                     }}
                   >
-                    {' '}
-                    <IconThumbUp className='mr-1 h-6 w-6' />
                     Ja
-                  </CustomButton>
+                  </NewButton>
                 </div>
                 <div>
-                  <CustomButton
-                    color='whiteBackground'
+                  <NewButton
+                    variant='secondaryDark'
+                    icon='thumbDown'
                     id='nee'
                     onClick={() => {
                       setFeedback('');
@@ -90,10 +77,8 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                       setMoreInfoOpen(true);
                     }}
                   >
-                    {' '}
-                    <IconThumbDown className='mr-1 h-6 w-6' />
                     Nee
-                  </CustomButton>
+                  </NewButton>
                 </div>
               </div>
               <div className={moreInfoOpen}>
@@ -121,8 +106,8 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                 </div>
 
                 <div className='mt-5 sm:mt-6'>
-                  <CustomButton
-                    color='whiteBackground'
+                  <NewButton
+                    variant='secondaryDark'
                     id='moreFeedback'
                     onClick={() => {
                       CustomEvent.trackEvent(
@@ -136,160 +121,157 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                     }}
                   >
                     Versturen
-                  </CustomButton>
+                  </NewButton>
                 </div>
               </div>
               <div className={`success-message max-w-sm px-4 py-4 ${successMessage}`}>
                 <p className='p-base mx-auto leading-6 text-gray-900'>Bedankt voor je reactie!</p>
               </div>
             </div>
-            <div className='bg-green-500'>
-              <div className='global-margin pt-8 lg:px-8 lg:pt-16'>
-                <div className='pb-20'>
-                  <div className=''>
-                    <div className='grid grid-cols-1 gap-2 sm:grid-cols-4 sm:gap-8'>
-                      <div className='block border-b border-green-100 pb-4 sm:hidden'>
-                        <FooterLinkBlock
-                          title='Schrijf je in voor onze CircuLaw Nieuwsbrief'
-                          paragraph='Zo ben je altijd op de hoogte van het laatste CircuLaw-nieuws. '
-                          buttonText='Aanmelden'
-                          buttonLink='/nieuwsbrief'
-                        />
-                        <div className='py-4'></div>
-                        <FooterLinkBlock
-                          title='Doe met ons mee'
-                          paragraph='Heb je vragen, wil je je ervaringen delen of wil je een wetsanalyse laten uitvoeren op een circulair  thema of casus?'
-                          buttonText='Neem contact op'
-                          buttonLink='/contact'
-                        />
-                        <div className='p-base block pt-6 text-green-100 sm:hidden'>
-                          <h3 className='heading-xl-semibold sm:heading-2xl-semibold inline-block'>
-                            Volg ons op:
-                          </h3>
-                          <Link
-                            href='https://www.linkedin.com/company/circulaw/'
-                            target='_blank'
-                            aria-label='link to CircuLaw LinkedIn'
-                          >
-                            <IconBrandLinkedin className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-400' />
-                          </Link>
-                          <Link
-                            href='https://github.com/Dark-Matter-Labs/circulaw'
-                            target='_blank'
-                            aria-label='link to CircuLaw github'
-                          >
-                            <IconBrandGithub className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-400' />
-                          </Link>
-                          <Link
-                            href='https://openresearch.amsterdam/nl/page/89270/circulaw---circulaire-regelgevingstool'
-                            target='_blank'
-                            aria-label='linke to CircuLaw open research'
-                          >
-                            <IconFileSearch className='mb-1.5 ml-3 inline-block h-6 w-6' />
-                          </Link>
-                        </div>
+          </div>
+          <div className='bg-green-500'>
+            <div className='global-margin pt-8 lg:pt-16'>
+              <div className='pb-20'>
+                <div className=''>
+                  <div className='grid grid-cols-1 gap-2 sm:grid-cols-4 sm:gap-8'>
+                    <div className='block border-b border-white pb-4 sm:hidden'>
+                      <FooterLinkBlock
+                        title='Schrijf je in voor onze CircuLaw Nieuwsbrief'
+                        paragraph='Zo ben je altijd op de hoogte van het laatste CircuLaw-nieuws. '
+                        buttonText='Aanmelden'
+                        buttonLink='/nieuwsbrief'
+                      />
+                      <div className='py-4'></div>
+                      <FooterLinkBlock
+                        title='Doe met ons mee'
+                        paragraph='Heb je vragen, wil je je ervaringen delen of wil je een wetsanalyse laten uitvoeren op een circulair  thema of casus?'
+                        buttonText='Neem contact op'
+                        buttonLink='/contact'
+                      />
+                      <div className='p-base block pt-6 text-white sm:hidden'>
+                        <h3 className='heading-xl-semibold sm:heading-2xl-semibold inline-block'>
+                          Volg ons op:
+                        </h3>
+                        <Link
+                          href='https://www.linkedin.com/company/circulaw/'
+                          target='_blank'
+                          aria-label='link to CircuLaw LinkedIn'
+                        >
+                          <IconBrandLinkedin className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-400' />
+                        </Link>
+                        <Link
+                          href='https://github.com/Dark-Matter-Labs/circulaw'
+                          target='_blank'
+                          aria-label='link to CircuLaw github'
+                        >
+                          <IconBrandGithub className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-400' />
+                        </Link>
+                        <Link
+                          href='https://openresearch.amsterdam/nl/page/89270/circulaw---circulaire-regelgevingstool'
+                          target='_blank'
+                          aria-label='linke to CircuLaw open research'
+                        >
+                          <IconFileSearch className='mb-1.5 ml-3 inline-block h-6 w-6' />
+                        </Link>
                       </div>
-                      <div className='border-b border-green-100 py-2 sm:border-0 sm:py-0'>
-                        <h4 className='heading-2xl-semibold text-cl-black'>Productketens</h4>
-                        <div className='grid grid-cols-1 gap-8 py-2 sm:py-0'>
-                          <ul role='list' className='mt-4 space-y-4'>
-                            {navigation.thema?.map((thema) => (
-                              <li key={thema.name}>
-                                <a href={thema.slug} className='p-base-semibold text-white'>
-                                  <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
-                                    {thema.name}
-                                  </span>
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                      <div className='border-b border-green-100 py-2 sm:border-0 sm:py-0'>
-                        <h4 className='heading-2xl-semibold text-cl-black'>Over CircuLaw</h4>
-                        <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
-                          {' '}
-                          <ul role='list' className='mt-4 space-y-4'>
-                            {aboutSlugs &&
-                              aboutSlugs?.map((slug, id) => (
-                                <li key={id}>
-                                  <a
-                                    href={`/over/${encodeURIComponent(slug.slug)}`}
-                                    className='p-base-semibold text-white'
-                                  >
-                                    <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
-                                      {slug.pageTitle.replaceAll('-', ' ')}
-                                    </span>
-                                  </a>
-                                </li>
-                              ))}
-                          </ul>
-                        </div>
-                      </div>
-                      <div className='py-2 sm:py-0'>
-                        <ul role='list' className='space-y-4'>
-                          <li>
-                            <a
-                              className='p-base-semibold link-interaction text-white'
-                              href={vraagSlug}
-                            >
-                              <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
-                                Vraag en antwoord
-                              </span>
-                            </a>
-                          </li>
-                          {navigation.other.map((item) => (
-                            <li key={item.name}>
-                              <a
-                                href={item.href}
-                                className='p-base-semibold link-interaction-light-green-bg text-white'
-                              >
-                                {item.name}
+                    </div>
+                    <div className='border-b border-green-100 py-2 sm:border-0 sm:py-0'>
+                      <h4 className='heading-2xl-semibold text-cl-black'>Productketens</h4>
+                      <div className='grid grid-cols-1 gap-8 py-2 sm:py-0'>
+                        <ul role='list' className='mt-4 space-y-4'>
+                          {navigation.thema?.map((thema) => (
+                            <li key={thema.name}>
+                              <a href={thema.slug} className='p-base-semibold text-white'>
+                                <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
+                                  {thema.name}
+                                </span>
                               </a>
                             </li>
                           ))}
                         </ul>
                       </div>
-                      <div className='hidden sm:block'>
-                        <FooterLinkBlock
-                          title='Schrijf je in voor onze CircuLaw Nieuwsbrief'
-                          paragraph='Zo ben je altijd op de hoogte van het laatste CircuLaw-nieuws. '
-                          buttonText='Aanmelden'
-                          buttonLink='/nieuwsbrief'
-                        />
-                        <div className='py-4'></div>
-                        <FooterLinkBlock
-                          title='Doe met ons mee'
-                          paragraph='Heb je vragen, wil je je ervaringen delen of wil je een wetsanalyse laten uitvoeren op een circulair  thema of casus?'
-                          buttonText='Neem contact op'
-                          buttonLink='/contact'
-                        />
-                        <div className='p-base relative z-0 flex items-center justify-center py-6 text-green-100 sm:block'>
-                          <h3 className='heading-xl-semibold sm:heading-2xl-semibold inline-block'>
-                            Volg ons op:
-                          </h3>
-                          <span data-text='Volg ons op LinkedIn' className='tooltip p-base z-40'>
-                            <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
-                              <IconBrandLinkedin className='mb-1.5 ml-3 inline-block h-7 w-7 hover:text-green-300' />
-                            </Link>
-                          </span>
-                          <span data-text='Volg ons op GitHub' className='tooltip p-base z-30'>
-                            <Link
-                              href='https://github.com/Dark-Matter-Labs/circulaw'
-                              target='_blank'
+                    </div>
+                    <div className='border-b border-white py-2 sm:border-0 sm:py-0'>
+                      <h4 className='heading-2xl-semibold text-cl-black'>Over CircuLaw</h4>
+                      <div className='grid grid-cols-1 gap-8 pb-4 sm:pb-0'>
+                        {' '}
+                        <ul role='list' className='mt-4 space-y-4'>
+                          {aboutSlugs &&
+                            aboutSlugs?.map((slug, id) => (
+                              <li key={id}>
+                                <a
+                                  href={`/over/${encodeURIComponent(slug.slug)}`}
+                                  className='p-base-semibold text-white'
+                                >
+                                  <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
+                                    {slug.pageTitle.replaceAll('-', ' ')}
+                                  </span>
+                                </a>
+                              </li>
+                            ))}
+                        </ul>
+                      </div>
+                    </div>
+                    <div className='py-2 sm:py-0'>
+                      <ul role='list' className='space-y-4'>
+                        <li>
+                          <a
+                            className='p-base-semibold link-interaction text-white'
+                            href={vraagSlug}
+                          >
+                            <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
+                              Vraag en antwoord
+                            </span>
+                          </a>
+                        </li>
+                        {navigation.other.map((item) => (
+                          <li key={item.name}>
+                            <a
+                              href={item.href}
+                              className='p-base-semibold link-interaction-light-green-bg text-white'
                             >
-                              <IconBrandGithub className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-300' />
-                            </Link>
-                          </span>
-                          <span data-text='Volg ons op OpenResearch' className='tooltip p-base'>
-                            <Link
-                              href='https://openresearch.amsterdam/nl/page/89270/circulaw---circulaire-regelgevingstool'
-                              target='_blank'
-                            >
-                              <IconFileSearch className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-300' />
-                            </Link>
-                          </span>
-                        </div>
+                              {item.name}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className='hidden sm:block'>
+                      <FooterLinkBlock
+                        title='Schrijf je in voor onze CircuLaw Nieuwsbrief'
+                        paragraph='Zo ben je altijd op de hoogte van het laatste CircuLaw-nieuws. '
+                        buttonText='Aanmelden'
+                        buttonLink='/nieuwsbrief'
+                      />
+                      <div className='py-4'></div>
+                      <FooterLinkBlock
+                        title='Doe met ons mee'
+                        paragraph='Heb je vragen, wil je je ervaringen delen of wil je een wetsanalyse laten uitvoeren op een circulair  thema of casus?'
+                        buttonText='Neem contact op'
+                        buttonLink='/contact'
+                      />
+                      <div className='p-base relative z-0 flex items-center justify-center py-6 text-white sm:block'>
+                        <h3 className='heading-xl-semibold sm:heading-2xl-semibold inline-block'>
+                          Volg ons op:
+                        </h3>
+                        <span data-text='Volg ons op LinkedIn' className='tooltip p-base z-40'>
+                          <Link href='https://www.linkedin.com/company/circulaw/' target='_blank'>
+                            <IconBrandLinkedin className='mb-1.5 ml-3 inline-block h-7 w-7 hover:text-green-300' />
+                          </Link>
+                        </span>
+                        <span data-text='Volg ons op GitHub' className='tooltip p-base z-30'>
+                          <Link href='https://github.com/Dark-Matter-Labs/circulaw' target='_blank'>
+                            <IconBrandGithub className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-300' />
+                          </Link>
+                        </span>
+                        <span data-text='Volg ons op OpenResearch' className='tooltip p-base'>
+                          <Link
+                            href='https://openresearch.amsterdam/nl/page/89270/circulaw---circulaire-regelgevingstool'
+                            target='_blank'
+                          >
+                            <IconFileSearch className='mb-1.5 ml-3 inline-block h-6 w-6 hover:text-green-300' />
+                          </Link>
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -297,7 +279,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
               </div>
             </div>
           </div>
-        )}
+        </div>
         <Partners footerText={footerText} partnerLogos={partnerLogos} />
       </footer>
     </>
