@@ -9,7 +9,7 @@ const varientStyles = {
 
 export default function Badge({children, variant}) {
     return (
-        <div className={`${varientStyles[variant]} border rounded-clSm text-2xl-semibold py-1 px-2`}>
+        <div className={`${varientStyles[variant]} border-2 rounded-clSm p-2xs-semibold py-1 px-2`}>
             {children}
         </div>
     )

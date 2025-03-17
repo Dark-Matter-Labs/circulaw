@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-
-import Tag from '@/components/tag';
+import Badge from '../shared/new-badge';
 import { urlFor } from '@/lib/sanity';
 
 import LinkIcon from '../link-icon';
@@ -43,15 +42,9 @@ export default function NewsCard({ data }) {
           >
             <div className=''>
               <div className='flex grow-0'>
-                <Tag
-                  classes={`${
-                    data.colour === 'extraDarkGreen'
-                      ? 'text-green-400 border border-green-400 bg-transparent'
-                      : 'text-white bg-cl-black border border-cl-black'
-                  }`}
-                >
-                  {data.category}
-                </Tag>
+                <Badge variant='green'>
+                {data.category}
+                </Badge>
               </div>
               <div
                 className={`${
@@ -125,15 +118,10 @@ export default function NewsCard({ data }) {
           >
             <div className=''>
               <div className='flex grow-0'>
-                <Tag
-                  classes={`${
-                    data.colour === 'extraDarkGreen'
-                      ? 'text-green-400 border border-green-400 bg-transparent'
-                      : 'text-white bg-cl-black border border-cl-black'
-                  }`}
-                >
-                  {data.category}
-                </Tag>
+              <Badge variant='green'>
+              {data.category}
+              </Badge>
+                
               </div>
               <div
                 className={`${
@@ -214,15 +202,11 @@ export default function NewsCard({ data }) {
         >
           <div className=''>
             <div className='flex grow-0'>
-              <Tag
-                classes={`${
-                  data.colour === 'extraDarkGreen'
-                    ? 'text-green-400 border border-green-400 bg-transparent'
-                    : 'text-white bg-cl-black border border-cl-black'
-                }`}
-              >
-                {data.category}
-              </Tag>
+              <Badge>
+              {data.category}
+              </Badge>
+                
+            
             </div>
             <div
               className={`${
