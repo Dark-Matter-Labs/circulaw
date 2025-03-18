@@ -5,7 +5,7 @@ import { urlFor } from '@/lib/sanity';
 
 import LinkIcon from '../link-icon';
 import Badge from '../shared/new-badge';
-import { IconChevronRight } from '@tabler/icons-react';
+import { IconArrowRight, IconExternalLink } from '@tabler/icons-react';
 
 export default function NewNewsCard({ data }) {
   const event = new Date(data.newsDate);
@@ -14,7 +14,6 @@ export default function NewNewsCard({ data }) {
     month: 'long',
     year: 'numeric',
   };
-  console.log(data.colour)
 
   
 
@@ -42,14 +41,14 @@ export default function NewNewsCard({ data }) {
           <div
             className={`${
               data.linkText || data.hasPage === true ? 'justify-between' : ''
-            } flex h-full w-full flex-col gap-y-3 px-8 py-6`}
+            } flex h-full w-full flex-col gap-y-6 px-8 pt-8 pb-6`}
           >
             <div className=''>
               <div className='flex grow-0'>
                 <Badge variant='black'>{data.category}</Badge>
               </div>
               <div
-                className='text-cl-black heading-2xl-semibold py-0.5'
+                className='text-cl-black heading-2xl-semibold pb-0.5 pt-4'
               >
                 {data.title}
               </div>
@@ -69,7 +68,7 @@ export default function NewNewsCard({ data }) {
               <div
                 className='text-cl-black focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200 group-hover:text-green-300 group-hover:underline heading-xl-semibold self-start flex items-center'
               >
-                Lees meer <IconChevronRight className='size-4 mt-1'/>
+                Lees meer <IconArrowRight className='ml-1'/>
               </div>
             )}
           </div>
@@ -80,12 +79,11 @@ export default function NewNewsCard({ data }) {
     return (
       <Link
         href={data.linkUrl}
-        target={`${data.internalExternal === true ? '_blank' : ''}`}
+        target={`${data.isExternal === true ? '_blank' : ''}`}
         className='group'
       >
-        <div
-          className={`${data.colour === 'lightGreen' ? 'bg-green-400' : ''} ${data.colour === 'green' ? 'bg-green-500' : ''} ${data.colour === 'darkGreen' ? 'bg-green-500' : ''} ${
-            data.colour === 'extraDarkGreen' ? 'bg-cl-black' : ''
+         <div
+          className={`bg-${data.colour}
           } flex flex-col items-start justify-between rounded-cl`}
         >
           {data.image && (
@@ -104,58 +102,36 @@ export default function NewNewsCard({ data }) {
           )}
           <div
             className={`${
-              data.linkText || data.createPage === true ? 'justify-between' : ''
-            } flex h-full w-full flex-col gap-y-3 px-8 py-6`}
+              data.linkText === true ? 'justify-between' : ''
+            } flex h-full w-full flex-col gap-y-6 px-8 pt-8 pb-6`}
           >
             <div className=''>
               <div className='flex grow-0'>
-                <Badge variant='green'>{data.category}</Badge>
+                <Badge variant='black'>{data.category}</Badge>
               </div>
               <div
-                className={`${
-                  data.colour === 'lightGreen' ? 'text-cl-black' : 'text-green-100'
-                } heading-2xl-semibold py-0.5`}
+                className='text-cl-black heading-2xl-semibold pt-4 pb-0.5'
               >
                 {data.title}
               </div>
               {data.newsDate && (
                 <div
-                  className={`${
-                    data.colour === 'lightGreen' ? 'text-cl-black' : 'text-green-100'
-                  } p-xs-semibold`}
+                  className='p-xs-semibold text-cl-black'
                 >
                   {event.toLocaleDateString('nl-NL', options)}
                 </div>
               )}
             </div>
             <div
-              className={`${
-                data.colour === 'lightGreen' ? 'text-cl-black' : 'text-green-100'
-              } p-base`}
+              className='p-base text-cl-black'
             >
               {data.newsText}
             </div>
             {data.linkText && (
               <div
-                className={`${
-                  data.colour === 'lightGreen'
-                    ? 'text-cl-black focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200 group-hover:text-green-300 group-hover:underline'
-                    : 'text-green-100 focus:right-2 focus:text-green-200 focus:ring-white active:text-green-400 group-hover:text-green-300 group-hover:underline'
-                } heading-xl-semibold itmes-center inline-flex flex-row self-end`}
-              >
-                {data.linkText}{' '}
-                {data.internalExternal === true ? <LinkIcon /> : <span>&nbsp;{'>'}</span>}
-              </div>
-            )}
-            {data.createPage === true && (
-              <div
-                className={`${
-                  data.colour === 'lightGreen'
-                    ? 'text-cl-black hover:text-green-300 focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200'
-                    : 'text-green-100 hover:text-green-300 focus:right-2 focus:text-green-200 focus:ring-white active:text-green-400'
-                } heading-xl-semibold self-end`}
-              >
-                Lees meer {'>'}
+                className='text-cl-black focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200 group-hover:text-green-300 group-hover:underline heading-xl-semibold self-start flex items-center'>
+                {data.linkText}
+                {data.isExternal === true ? <IconExternalLink className='size-5 ml-1' /> : <IconArrowRight className='ml-1'/>}
               </div>
             )}
           </div>
@@ -190,7 +166,7 @@ export default function NewNewsCard({ data }) {
         >
           <div className=''>
             <div className='flex grow-0'>
-              <Badge>{data.category}</Badge>
+              <Badge variant='black'>{data.category}</Badge>
             </div>
             <div
               className={`${
