@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import Image from 'next/image';
 
+import NewButton from '@/components/new-button';
+import headerImage from '@/public/Visual-waarin-de-fases-van-de-gebiedsontwikkeling-te-zien-zijn.svg';
 import NewButton from '@/components/shared/new-button';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { IconChevronDown, IconProgressBolt } from '@tabler/icons-react';
@@ -35,7 +37,7 @@ export default function AreaPlanningLayout() {
     <div className='global-margin p-base mb-10 md:mb-20'>
       <div className='relative hidden w-full items-center pt-10 sm:my-8 md:my-16 md:flex'>
         <Image
-          src='/area-planning-image.png'
+          src={headerImage}
           alt='Visual waarin de fases van de gebiedsontwikkeling te zien zijn'
           width={900}
           height={900 * (1680 / 4640)}
@@ -205,7 +207,7 @@ export default function AreaPlanningLayout() {
               {/* Using an arbitrary aspect ratio for A4: 210 / 297 */}
               <div className='hidden aspect-[1788/1670] md:block'>
                 <iframe
-                  src='/Gebiedsontwikkeling-Framework.pdf#zoom=44'
+                  src='/Gebiedsontwikkeling-framework.pdf#zoom=44'
                   title='PDF Viewer'
                   className='h-full w-full border-0'
                 />
@@ -221,7 +223,7 @@ export default function AreaPlanningLayout() {
                 <NewButton
                   variant='primaryDark'
                   icon='download'
-                  href='/Gebiedsontwikkeling-Framework.pdf'
+                  href='/Gebiedsontwikkeling-framework.pdf'
                   newTab={true}
                 >
                   Download framework
@@ -258,7 +260,7 @@ export default function AreaPlanningLayout() {
                       <NewButton
                         variant='primaryDark'
                         icon='download'
-                        href='/Plaberum-framework-gebasseerd-op-Amsterdam.pdf'
+                        href='/Plaberum-gebaseerd-op-gemeente-Amsterdam.pdf'
                         newTab={true}
                       >
                         Download voorbeeld Amsterdam
