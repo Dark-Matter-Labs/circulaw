@@ -5,9 +5,9 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 import NewButton from '@/components/new-button';
+import headerImage from '@/public/Visual-waarin-de-fases-van-de-gebiedsontwikkeling-te-zien-zijn.svg';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { IconChevronDown, IconProgressBolt } from '@tabler/icons-react';
-import headerImage from '@/public/Visual-waarin-de-fases-van-de-gebiedsontwikkeling-te-zien-zijn.svg'
 
 function useIsVisible(ref) {
   const [isIntersecting, setIntersecting] = useState(false);
