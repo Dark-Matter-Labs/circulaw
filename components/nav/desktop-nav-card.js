@@ -10,7 +10,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
     <div
       className={`${
         pathname === '/' ? 'bg-green-600 text-green-200' : 'bg-green-50 text-green-800'
-      } h-full w-full ${
+      } flex w-full flex-col pb-6 ${
         navData.slug === 'bouw'
           ? '3xl:pl-32 pl-4 pr-2 pt-8 lgNav:pl-10 xl:pl-20'
           : 'pl-3 pr-2 pt-8 lg:pl-6'
@@ -90,7 +90,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
             <Link
               href='/training'
               onClick={() => {
-                CustomEvent.trackEvent('Nav click', pathname, 'planregels');
+                CustomEvent.trackEvent('Nav click', pathname, 'training');
                 closeNav(false);
               }}
               className={`${
@@ -98,6 +98,20 @@ export default function DesktopNavCard({ navData, closeNav }) {
               } p-xs active:p-xs-semibold flex cursor-pointer flex-row items-center pt-2 active:no-underline`}
             >
               <span className='hover:underline'>E-learning &apos;Circulaire houtbouw&apos;</span>
+            </Link>
+          </div>
+          <div className='mt-[2px]'>
+            <Link
+              href='/bouw/gebiedsontwikkeling'
+              onClick={() => {
+                CustomEvent.trackEvent('Nav click', pathname, 'gebiedsontwikkeling');
+                closeNav(false);
+              }}
+              className={`${
+                pathname === '/' ? 'text-white' : 'text-green-600 hover:text-green-500'
+              } p-xs active:p-xs-semibold flex cursor-pointer flex-row items-center pt-2 active:no-underline`}
+            >
+              <span className='hover:underline'>Houtbouw in gebiedsontwikkeling</span>
             </Link>
           </div>
         </>

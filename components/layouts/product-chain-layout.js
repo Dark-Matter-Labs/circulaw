@@ -82,6 +82,25 @@ export default function PCLayout({ ...props }) {
                         </div>
                       </Link>
                     </div>
+
+                    <div className='group w-full flex-grow rounded-cl border border-gray-200 bg-green-50'>
+                      <Link href='/bouw/gebiedsontwikkeling' className='h-full w-full'>
+                        <div className='flex h-full w-full flex-grow flex-col justify-between gap-y-2 p-6'>
+                          <h3 className='heading-2xl-semibold text-wrap text-green-600'>
+                            Veranker houtbouw in gebiedsontwikkeling
+                          </h3>
+                          <div>
+                            <p className='p-base pt-4 text-green-800'>
+                              Het proces van gebiedsontwikkeling biedt kansen om circulariteit te
+                              stimuleren
+                            </p>
+                          </div>
+                          <div className='flex justify-center'>
+                            <CustomButton color='darkGreenBG'>Lees verder</CustomButton>
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
                   </div>
 
                   <div className='mt-6 block w-full rounded-cl border border-gray-200 bg-green-50 sm:hidden'>
@@ -92,8 +111,8 @@ export default function PCLayout({ ...props }) {
                         </h3>
                         <p className='p-base text-gren-800'>
                           Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw te
-                          verankeren in beleid? Dat leer je in onze e-learning: ‘Circulaire houtbouw
-                          onder de Omgevingswet’.
+                          verankeren in beleid? Dat leer je in onze e-learning: &apos;Circulaire
+                          houtbouw onder de Omgevingswet&apos;.
                         </p>
 
                         <div className='flex grow self-baseline pt-6'>
@@ -119,6 +138,23 @@ export default function PCLayout({ ...props }) {
                           <CustomButton color='darkGreenBG'>
                             Meer over het omgevingsplan{' '}
                           </CustomButton>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                  <div className='mt-6 block w-full rounded-cl border border-gray-200 bg-green-50 sm:hidden'>
+                    <Link href='/bouw/gebiedsontwikkeling' className='h-full w-full'>
+                      <div className='flex h-full w-full flex-grow flex-col justify-between p-6'>
+                        <h3 className='heading-2xl-semibold pb-4 text-green-600'>
+                          Veranker houtbouw in gebiedsontwikkeling
+                        </h3>
+                        <p className='p-base text-gren-800'>
+                          Het proces van gebiedsontwikkeling biedt kansen om circulariteit te
+                          stimuleren
+                        </p>
+
+                        <div className='flex grow self-baseline pt-6'>
+                          <CustomButton color='darkGreenBG'>Lees verder </CustomButton>
                         </div>
                       </div>
                     </Link>
