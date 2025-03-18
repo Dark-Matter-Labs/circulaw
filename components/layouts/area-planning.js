@@ -7,6 +7,7 @@ import Image from 'next/image';
 import NewButton from '@/components/new-button';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { IconChevronDown, IconProgressBolt } from '@tabler/icons-react';
+import headerImage from '@/public/Visual-waarin-de-fases-van-de-gebiedsontwikkeling-te-zien-zijn.svg'
 
 function useIsVisible(ref) {
   const [isIntersecting, setIntersecting] = useState(false);
@@ -35,7 +36,7 @@ export default function AreaPlanningLayout() {
     <div className='global-margin p-base mb-10 md:mb-20'>
       <div className='relative hidden w-full items-center pt-10 sm:my-8 md:my-16 md:flex'>
         <Image
-          src='/area-planning-image.png'
+          src={headerImage}
           alt='Visual waarin de fases van de gebiedsontwikkeling te zien zijn'
           width={900}
           height={900 * (1680 / 4640)}
