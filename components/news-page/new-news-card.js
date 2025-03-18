@@ -2,10 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { urlFor } from '@/lib/sanity';
+import { IconArrowRight, IconExternalLink } from '@tabler/icons-react';
 
 import LinkIcon from '../link-icon';
 import Badge from '../shared/new-badge';
-import { IconArrowRight, IconExternalLink } from '@tabler/icons-react';
 
 export default function NewNewsCard({ data }) {
   const event = new Date(data.newsDate);
@@ -15,15 +15,10 @@ export default function NewNewsCard({ data }) {
     year: 'numeric',
   };
 
-  
-
   if (data.hasPage === true) {
     return (
       <Link href={`/nieuws/${data?.slug?.current}`} className='group'>
-        <div
-          className={`bg-${data.colour}
-          } flex flex-col items-start justify-between rounded-cl`}
-        >
+        <div className={`bg-${data.colour} } flex flex-col items-start justify-between rounded-cl`}>
           {data.image && (
             <div className='relative h-80 w-full rounded-t-cl'>
               <Image
@@ -41,34 +36,23 @@ export default function NewNewsCard({ data }) {
           <div
             className={`${
               data.linkText || data.hasPage === true ? 'justify-between' : ''
-            } flex h-full w-full flex-col gap-y-6 px-8 pt-8 pb-6`}
+            } flex h-full w-full flex-col gap-y-6 px-8 pb-6 pt-8`}
           >
             <div className=''>
               <div className='flex grow-0'>
                 <Badge variant='black'>{data.category}</Badge>
               </div>
-              <div
-                className='text-cl-black heading-2xl-semibold pb-0.5 pt-4'
-              >
-                {data.title}
-              </div>
+              <div className='heading-2xl-semibold pb-0.5 pt-4 text-cl-black'>{data.title}</div>
               {data.newsDate && (
-                <div
-                  className='p-xs-semibold text-cl-black'
-                >
+                <div className='p-xs-semibold text-cl-black'>
                   {event.toLocaleDateString('nl-NL', options)}
                 </div>
               )}
             </div>
-            <div
-              className='text-cl-black p-base'>
-              {data.newsText}
-            </div>
+            <div className='p-base text-cl-black'>{data.newsText}</div>
             {data.hasPage === true && (
-              <div
-                className='text-cl-black focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200 group-hover:text-green-300 group-hover:underline heading-xl-semibold self-start flex items-center'
-              >
-                Lees meer <IconArrowRight className='ml-1'/>
+              <div className='heading-xl-semibold flex items-center self-start text-cl-black focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200 group-hover:text-green-300 group-hover:underline'>
+                Lees meer <IconArrowRight className='ml-1' />
               </div>
             )}
           </div>
@@ -82,10 +66,7 @@ export default function NewNewsCard({ data }) {
         target={`${data.isExternal === true ? '_blank' : ''}`}
         className='group'
       >
-         <div
-          className={`bg-${data.colour}
-          } flex flex-col items-start justify-between rounded-cl`}
-        >
+        <div className={`bg-${data.colour} } flex flex-col items-start justify-between rounded-cl`}>
           {data.image && (
             <div className='relative h-80 w-full rounded-t-cl'>
               <Image
@@ -103,35 +84,28 @@ export default function NewNewsCard({ data }) {
           <div
             className={`${
               data.linkText === true ? 'justify-between' : ''
-            } flex h-full w-full flex-col gap-y-6 px-8 pt-8 pb-6`}
+            } flex h-full w-full flex-col gap-y-6 px-8 pb-6 pt-8`}
           >
             <div className=''>
               <div className='flex grow-0'>
                 <Badge variant='black'>{data.category}</Badge>
               </div>
-              <div
-                className='text-cl-black heading-2xl-semibold pt-4 pb-0.5'
-              >
-                {data.title}
-              </div>
+              <div className='heading-2xl-semibold pb-0.5 pt-4 text-cl-black'>{data.title}</div>
               {data.newsDate && (
-                <div
-                  className='p-xs-semibold text-cl-black'
-                >
+                <div className='p-xs-semibold text-cl-black'>
                   {event.toLocaleDateString('nl-NL', options)}
                 </div>
               )}
             </div>
-            <div
-              className='p-base text-cl-black'
-            >
-              {data.newsText}
-            </div>
+            <div className='p-base text-cl-black'>{data.newsText}</div>
             {data.linkText && (
-              <div
-                className='text-cl-black focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200 group-hover:text-green-300 group-hover:underline heading-xl-semibold self-start flex items-center'>
+              <div className='heading-xl-semibold flex items-center self-start text-cl-black focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200 group-hover:text-green-300 group-hover:underline'>
                 {data.linkText}
-                {data.isExternal === true ? <IconExternalLink className='size-5 ml-1' /> : <IconArrowRight className='ml-1'/>}
+                {data.isExternal === true ? (
+                  <IconExternalLink className='ml-1 size-5' />
+                ) : (
+                  <IconArrowRight className='ml-1' />
+                )}
               </div>
             )}
           </div>

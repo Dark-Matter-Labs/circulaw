@@ -45,7 +45,7 @@ export default async function Page() {
             <h3 className='heading-5xl-semibold text-green-500'>Uitgelichte nieuwsberichten</h3>
             <TitleDecorator width='w-1/4' />
           </div>
-          <FeaturedNewsSection items={data.newsItems}/>
+          <FeaturedNewsSection items={data.newsItems} />
         </div>
         {/*
         <div>
