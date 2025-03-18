@@ -59,9 +59,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
         </h1>
         <div className='grid grid-cols-1 grid-rows-1 gap-6 overflow-hidden py-10 sm:grid-cols-2 md:grid-cols-3'>
           {featuresNewsItems.map((item, id) => (
-            <div key={id}>
-              {item.newsOrAgenda === false && <NewsCard data={item} />}
-            </div>
+            <div key={id}>{item.newsOrAgenda === false && <NewsCard data={item} />}</div>
           ))}
         </div>
       </div>
@@ -365,10 +363,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
             </div>
           </div>
         </div>
-        <ResponsiveMasonry
-          columnsCountBreakPoints={{ 350: 1, 640: 2, 1024: 3 }}
-          className='py-10'
-        >
+        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 640: 2, 1024: 3 }} className='py-10'>
           <Masonry gutter='24px'>
             {notFeatured?.map((item, id) => (
               <div key={id} className='min-h relative mb-4 break-inside-avoid-column'>

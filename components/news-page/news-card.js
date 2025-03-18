@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Badge from '../shared/new-badge';
+
 import { urlFor } from '@/lib/sanity';
 
 import LinkIcon from '../link-icon';
+import Badge from '../shared/new-badge';
 
 export default function NewsCard({ data }) {
   const event = new Date(data.newsDate);
@@ -42,9 +43,7 @@ export default function NewsCard({ data }) {
           >
             <div className=''>
               <div className='flex grow-0'>
-                <Badge variant='green'>
-                {data.category}
-                </Badge>
+                <Badge variant='green'>{data.category}</Badge>
               </div>
               <div
                 className={`${
@@ -118,10 +117,7 @@ export default function NewsCard({ data }) {
           >
             <div className=''>
               <div className='flex grow-0'>
-              <Badge variant='green'>
-              {data.category}
-              </Badge>
-                
+                <Badge variant='green'>{data.category}</Badge>
               </div>
               <div
                 className={`${
@@ -202,11 +198,7 @@ export default function NewsCard({ data }) {
         >
           <div className=''>
             <div className='flex grow-0'>
-              <Badge>
-              {data.category}
-              </Badge>
-                
-            
+              <Badge>{data.category}</Badge>
             </div>
             <div
               className={`${

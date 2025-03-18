@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import Badge from '../shared/new-badge';
+
 export default function AgendaCard({ data }) {
   // seperate date
   const event = new Date(data.newsDate);
@@ -14,7 +15,6 @@ export default function AgendaCard({ data }) {
     year: 'numeric',
   };
 
-  
   return (
     <>
       {data.link && (
@@ -24,9 +24,7 @@ export default function AgendaCard({ data }) {
               <div className='w-auto'>
                 <div className='flex flex-col justify-between'>
                   <div className='flex grow-0'>
-                  <Badge variant='green'>
-                  Agenda
-                  </Badge>
+                    <Badge variant='green'>Agenda</Badge>
                   </div>
                   <div className='flex flex-row items-center'>
                     <div className='p-agenda-card-day mr-2 text-green-300'>
@@ -58,10 +56,7 @@ export default function AgendaCard({ data }) {
             <div className='w-auto'>
               <div className='flex flex-col justify-between'>
                 <div className='flex grow-0 pb-3'>
-                  <Badge variant='green'>
-                  Agenda
-                  </Badge>
-                 
+                  <Badge variant='green'>Agenda</Badge>
                 </div>
                 <div className='flex flex-row items-center'>
                   <div className='p-agenda-card-day mr-2 text-green-300'>
