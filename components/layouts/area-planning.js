@@ -205,7 +205,7 @@ export default function AreaPlanningLayout() {
               {/* Using an arbitrary aspect ratio for A4: 210 / 297 */}
               <div className='hidden aspect-[1788/1670] md:block'>
                 <iframe
-                  src='/Gebiedsontwikkeling-Framework.pdf#zoom=44'
+                  src='/Gebiedsontwikkeling-framework.pdf#zoom=44'
                   title='PDF Viewer'
                   className='h-full w-full border-0'
                 />
@@ -221,7 +221,7 @@ export default function AreaPlanningLayout() {
                 <NewButton
                   variant='primaryDark'
                   icon='download'
-                  href='/Gebiedsontwikkeling-Framework.pdf'
+                  href='/Gebiedsontwikkeling-framework.pdf'
                   newTab={true}
                 >
                   Download framework
@@ -258,7 +258,7 @@ export default function AreaPlanningLayout() {
                       <NewButton
                         variant='primaryDark'
                         icon='download'
-                        href='/Plaberum-framework-gebasseerd-op-Amsterdam.pdf'
+                        href='/Plaberum-gebaseerd-op-gemeente-Amsterdam.pdf'
                         newTab={true}
                       >
                         Download voorbeeld Amsterdam
