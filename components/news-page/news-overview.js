@@ -6,10 +6,10 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import Link from 'next/link';
 
 import AgendaCard from '@/components/news-page/agenda-card';
-import NewsCard from '@/components/news-page/news-card';
 import Tag from '@/components/tag';
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import { IconChevronDown } from '@tabler/icons-react';
+import NewNewsCard from './new-news-card';
 
 // TODO: replace Popover with headless UI Listbox
 export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }) {
@@ -59,7 +59,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
         </h1>
         <div className='grid grid-cols-1 grid-rows-1 gap-6 overflow-hidden py-10 sm:grid-cols-2 md:grid-cols-3'>
           {featuresNewsItems.map((item, id) => (
-            <div key={id}>{item.newsOrAgenda === false && <NewsCard data={item} />}</div>
+            <div key={id}>{item.newsOrAgenda === false && <NewNewsCard data={item} />}</div>
           ))}
         </div>
       </div>
@@ -368,7 +368,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
             {notFeatured?.map((item, id) => (
               <div key={id} className='min-h relative mb-4 break-inside-avoid-column'>
                 {item.newsOrAgenda === true && <AgendaCard data={item} />}
-                {item.newsOrAgenda === false && <NewsCard data={item} />}
+                {item.newsOrAgenda === false && <NewNewsCard data={item} />}
               </div>
             ))}
           </Masonry>
