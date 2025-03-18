@@ -1,7 +1,7 @@
 import HomePageEUSection from '@/components/homepage/home-page-eu-section';
 import PCHomePage from '@/components/homepage/product-chain-homepage';
 import InlineLink from '@/components/inline-link';
-import NewsCard from '@/components/news-page/news-card';
+import FeaturedNewsSection from '@/components/news-page/featured-section';
 import TitleDecorator from '@/components/title-decorator';
 import { HOME_PAGE_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
@@ -45,11 +45,7 @@ export default async function Page() {
             <h3 className='heading-5xl-semibold text-green-500'>Uitgelichte nieuwsberichten</h3>
             <TitleDecorator width='w-1/4' />
           </div>
-          <ul className='grid grid-cols-3 gap-x-3 overflow-hidden'>
-            {data.newsItems.map((item, id) => (
-              <li key={id}>{item.newsOrAgenda === false && <NewsCard data={item} />}</li>
-            ))}
-          </ul>
+          <FeaturedNewsSection items={data.newsItems}/>
         </div>
         {/*
         <div>
