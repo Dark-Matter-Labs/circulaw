@@ -603,7 +603,7 @@ export default function Nav(props) {
                         <div
                           className='h-full shadow-lg'
                           style={{ ...mainMenuTransitionStyles }}
-                          // onMouseLeave={() => setMainMenuIsOpen(false)}
+                          onMouseLeave={() => setMainMenuIsOpen(false)}
                         >
                           <div
                             className={`${
