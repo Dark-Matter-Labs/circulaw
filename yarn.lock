@@ -3161,13 +3161,6 @@ next@^14.2.15:
     "@next/swc-win32-ia32-msvc" "14.2.15"
     "@next/swc-win32-x64-msvc" "14.2.15"
 
-nextjs-linkedin-insight-tag@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/nextjs-linkedin-insight-tag/-/nextjs-linkedin-insight-tag-0.0.6.tgz#bf6d4531c3dfdeedae16c2233051ba43d32fac2c"
-  integrity sha512-hk3cHpz+1SLbe0hd2nFjUP2AlFmgeDMHHudXGTYrtIvRri/qliFEIpURH7FJWKxQLXm9f1X8B5O20Wvj2wNPCg==
-  dependencies:
-    typescript "^4.9.4"
-
 node-releases@^2.0.18:
   version "2.0.18"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.18.tgz#f010e8d35e2fe8d6b2944f03f70213ecedc4ca3f"
@@ -3555,11 +3548,6 @@ react-player@^2.16.0:
     memoize-one "^5.1.1"
     prop-types "^15.7.2"
     react-fast-compare "^3.0.1"
-
-react-responsive-masonry@^2.1.7:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/react-responsive-masonry/-/react-responsive-masonry-2.3.0.tgz#9e99c9deff44a7ba5b0f83705214df6e65443b28"
-  integrity sha512-ttb71B75qAfZ5q2CRLKRnCRO9V6p1Vkgw1C9wIeNaD2JpAxwCb1hUBI4Drqea9hNlvxxLpUkO0TRE5CLxqLY0A==
 
 react-scroll@^1.8.7:
   version "1.9.0"
@@ -4210,11 +4198,6 @@ typed-array-length@^1.0.6:
     has-proto "^1.0.3"
     is-typed-array "^1.1.13"
     possible-typed-array-names "^1.0.0"
-
-typescript@^4.9.4:
-  version "4.9.5"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.5.tgz#095979f9bcc0d09da324d58d03ce8f8374cbe65a"
-  integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
 
 unbox-primitive@^1.0.2:
   version "1.0.2"
