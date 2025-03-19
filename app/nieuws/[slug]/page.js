@@ -50,7 +50,12 @@ export default async function NewsDetailPage({ params }) {
   });
   return (
     <>
-      <Header title={newsPageContent.title} bgColor={`bg-${newsPageContent.colour}`} pageType='news' newsData={newsPageContent}/>
+      <Header
+        title={newsPageContent.title}
+        bgColor={`bg-${newsPageContent.colour}`}
+        pageType='news'
+        newsData={newsPageContent}
+      />
       <NewsDetailPageBody data={newsPageContent} />
     </>
   );

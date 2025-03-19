@@ -205,10 +205,11 @@ export default function AreaPlanningLayout() {
             <div className='w-full'>
               {/* Using an arbitrary aspect ratio for A4: 210 / 297 */}
               <div className='hidden aspect-[1788/1670] md:block'>
-                <iframe
+                <embed
                   src='/Gebiedsontwikkeling-Framework.pdf#zoom=44'
                   title='PDF Viewer'
                   className='h-full w-full border-0'
+                  type='application/pdf'
                 />
               </div>
               <Image

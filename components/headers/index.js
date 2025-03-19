@@ -6,9 +6,9 @@ import { IconArrowDown } from '@tabler/icons-react';
 
 import CustomButton from '../custom-button';
 import ScrollButton from '../scroll-button';
+import Badge from '../shared/new-badge';
 import Breadcrumb from './breadcrumbs';
 import InstrumentLinksDropdown from './instrument-links-dropdown';
-import Badge from '../shared/new-badge';
 
 export default function Header({ imageURL, bgColor, title, pageType, subtitle, ...props }) {
   return (
@@ -50,21 +50,21 @@ export default function Header({ imageURL, bgColor, title, pageType, subtitle, .
               )}
             </div>
             <div className=''>
-              {pageType === 'news' && (
-                <Badge variant='black'>
-                  {props.newsData.category}
-                </Badge>
-              )}
+              {pageType === 'news' && <Badge variant='black'>{props.newsData.category}</Badge>}
               {pageType === 'productChain' && (
                 <div className='p-base sm:heading-2xl-semibold text-green-400'>{subtitle}</div>
               )}
-              <h1 className={`heading-3xl-semibold sm:heading-5xl-semibold inline-block ${pageType === 'news' ? 'text-cl-black' : 'text-green-100'}`}>
+              <h1
+                className={`heading-3xl-semibold sm:heading-5xl-semibold inline-block ${pageType === 'news' ? 'text-cl-black' : 'text-green-100'}`}
+              >
                 {title}
               </h1>
               {(pageType === 'thema' || pageType === 'euOverview') && (
                 <p className='p-base max-w-3xl pt-2 text-green-100'>{subtitle} </p>
               )}
-              {pageType === 'news' && (<p className='p-base max-w-3xl pt-2 text-cl-black'>{props.newsData.newsDate} </p>)}
+              {pageType === 'news' && (
+                <p className='p-base max-w-3xl pt-2 text-cl-black'>{props.newsData.newsDate} </p>
+              )}
               {pageType === 'euOverview' && (
                 <>
                   <p className='p-base mt-4 max-w-xl text-white'>

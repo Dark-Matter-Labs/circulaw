@@ -26,8 +26,8 @@ export default function Breadcrumb({ pageType }) {
             <li key={id}>
               <Link
                 className='ml-2 flex flex-row items-center capitalize hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'
-                href={id === 0 ? `/${pathName}`:`/${pathNames[0]}/${pathNames[1]}`}
-              >           
+                href={id === 0 ? `/${pathName}` : `/${pathNames[0]}/${pathNames[1]}`}
+              >
                 {pathName}
                 <IconChevronRight className='ml-2 size-3' />
               </Link>
