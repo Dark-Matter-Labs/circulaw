@@ -14,7 +14,7 @@ export function MasonryGrid({ children, className }) {
       // Custom breakpoints: 350: 1, 640: 2, 1024: 3
       if (width >= 1024) {
         setColumnCount(3);
-      } else if (width >= 350) {
+      } else if (width >= 640) {
         setColumnCount(2);
       } else {
         setColumnCount(1);

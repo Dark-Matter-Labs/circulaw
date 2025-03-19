@@ -77,15 +77,22 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
           </h2>
           <div className='flex flex-row items-center justify-between'>
             <div className='heading-xl-semibold sm:heading-2xl-semibold pr-4'>Bekijk:</div>
-            <Listbox value={articleType} onChange={setArticleType} >
-              <ListboxButton className='rounded-cl p-base-bold w-64 sm:w-80 flex h-10 items-center justify-between border-2 border-green-500 text-black px-4'>
+            <Listbox value={articleType} onChange={setArticleType}>
+              <ListboxButton className='p-base-bold flex h-10 w-64 items-center justify-between rounded-cl border-2 border-green-500 px-4 text-black sm:w-80'>
                 {articleType.name}
                 <IconChevronDown />
               </ListboxButton>
-
-              <ListboxOptions anchor='bottom' transition className='border-2 border-green-500 rounded-cl [--anchor-gap:2px] w-64 sm:w-80 transition duration-100 ease-in data-[leave]:data-[closed]:opacity-0'>
+              <ListboxOptions
+                anchor='bottom'
+                transition
+                className='w-64 rounded-cl border-2 border-green-500 transition duration-100 ease-in [--anchor-gap:2px] data-[leave]:data-[closed]:opacity-0 sm:w-80'
+              >
                 {articleTypes.map((type) => (
-                  <ListboxOption key={type.name} value={type} className={`${type.id === 5 ? '': 'border-b-2 border-green-500'} flex h-10 items-center px-4 p-base bg-white hover:p-base-semibold cursor-pointer `}>
+                  <ListboxOption
+                    key={type.name}
+                    value={type}
+                    className={`${type.id === 5 ? '' : 'border-b-2 border-green-500'} p-base hover:p-base-semibold flex h-10 cursor-pointer items-center bg-white px-4`}
+                  >
                     {type.name}
                   </ListboxOption>
                 ))}
