@@ -1,5 +1,5 @@
+import Header from '@/components/headers';
 import NewsDetailPageBody from '@/components/news-page/news-detail-page-body';
-import NewsDetailPageHeader from '@/components/news-page/news-detail-page-header';
 import { NEWS_DETAIL_PAGE_QUERY, NEWS_METADATA_QUERY, NEWS_SLUGS_QUERY } from '@/lib/queries';
 import { client, sanityFetch } from '@/lib/sanity';
 
@@ -37,14 +37,12 @@ export async function generateMetadata({ params }, parent) {
 
 export async function generateStaticParams() {
   const newsPages = await client.fetch(NEWS_SLUGS_QUERY, { next: { tags: ['newsItem'] } });
-  console.log(newsPages);
   return newsPages.map((newsPage) => ({ slug: newsPage }));
 }
 
 export const dynamicParams = false;
 
 export default async function NewsDetailPage({ params }) {
-  console.log(params);
   const newsPageContent = await sanityFetch({
     query: NEWS_DETAIL_PAGE_QUERY,
     qParams: params,
@@ -52,7 +50,7 @@ export default async function NewsDetailPage({ params }) {
   });
   return (
     <>
-      <NewsDetailPageHeader data={newsPageContent} />
+      <Header title={newsPageContent.title} bgColor={`bg-${newsPageContent.colour}`} pageType='news' newsData={newsPageContent}/>
       <NewsDetailPageBody data={newsPageContent} />
     </>
   );
