@@ -15,8 +15,8 @@ export default function TabButton({
           id='categorieTab'
           className={`${
             selected === name
-              ? 'bg-gray-100 text-green-500'
-              : 'bg-green-500 text-gray-100 hover:bg-green-400'
+              ? 'bg-green-100 text-green-500'
+              : 'bg-green-500 text-green-100 hover:bg-green-400'
           } ${
             numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50 hover:bg-green-500' : ''
           } flex flex-row items-center rounded-t-cl p-3`}
@@ -44,8 +44,8 @@ export default function TabButton({
           id='categorieTab'
           className={`${
             selected === name
-              ? 'bg-gray-100 text-green-500'
-              : 'bg-green-500 text-gray-100 hover:bg-green-400'
+              ? 'bg-green-100 text-green-500'
+              : 'bg-green-500 text-green-100 hover:bg-green-400'
           } ${
             numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50 hover:bg-green-500' : ''
           } flex flex-row items-center rounded-t-cl p-3`}
@@ -73,8 +73,8 @@ export default function TabButton({
           id='categorieTab'
           className={`${
             selected === name
-              ? 'bg-gray-100 text-green-500'
-              : 'bg-green-500 text-gray-100 hover:bg-green-400'
+              ? 'bg-green-100 text-green-500'
+              : 'bg-green-500 text-green-100 hover:bg-green-400'
           } ${
             numInstrument === 0 ? 'opacity-50 hover:bg-green-500' : ''
           } flex flex-row items-center rounded-t-cl p-3`}

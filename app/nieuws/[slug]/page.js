@@ -1,5 +1,5 @@
+import Header from '@/components/headers';
 import NewsDetailPageBody from '@/components/news-page/news-detail-page-body';
-import NewsDetailPageHeader from '@/components/news-page/news-detail-page-header';
 import { NEWS_DETAIL_PAGE_QUERY, NEWS_METADATA_QUERY, NEWS_SLUGS_QUERY } from '@/lib/queries';
 import { client, sanityFetch } from '@/lib/sanity';
 
@@ -50,7 +50,12 @@ export default async function NewsDetailPage({ params }) {
   });
   return (
     <>
-      <NewsDetailPageHeader data={newsPageContent} />
+      <Header
+        title={newsPageContent.title}
+        bgColor={`bg-${newsPageContent.colour}`}
+        pageType='news'
+        newsData={newsPageContent}
+      />
       <NewsDetailPageBody data={newsPageContent} />
     </>
   );

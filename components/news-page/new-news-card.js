@@ -1,0 +1,152 @@
+import Image from 'next/image';
+import Link from 'next/link';
+
+import { urlFor } from '@/lib/sanity';
+import { IconArrowRight, IconExternalLink } from '@tabler/icons-react';
+
+import Badge from '../shared/new-badge';
+
+export default function NewNewsCard({ data }) {
+  const event = new Date(data.newsDate);
+  const options = {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  };
+
+  if (data.hasPage === true) {
+    return (
+      <Link href={`/nieuws/${data?.slug?.current}`} className='group'>
+        <div className={`bg-${data.colour} } flex flex-col items-start justify-between rounded-cl`}>
+          {data.image && (
+            <div className='relative h-80 w-full rounded-t-cl'>
+              <Image
+                src={urlFor(data?.image).url()}
+                alt={data?.title + 'image'}
+                priority={true}
+                fill
+                sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
+                className='relative h-full w-full rounded-t-cl object-cover'
+                placeholder='blur'
+                blurDataURL={data?.metadata.lqip}
+              />
+            </div>
+          )}
+          <div
+            className={`${
+              data.linkText || data.hasPage === true ? 'justify-between' : ''
+            } flex h-full w-full flex-col gap-y-6 px-8 pb-6 pt-8`}
+          >
+            <div className=''>
+              <div className='flex grow-0'>
+                <Badge variant='black'>{data.category}</Badge>
+              </div>
+              <div className='heading-2xl-semibold pb-0.5 pt-4 text-cl-black'>{data.title}</div>
+              {data.newsDate && (
+                <div className='p-xs-semibold text-cl-black'>
+                  {event.toLocaleDateString('nl-NL', options)}
+                </div>
+              )}
+            </div>
+            <div className='p-base text-cl-black'>{data.newsText}</div>
+            {data.hasPage === true && (
+              <div className='heading-xl-semibold flex items-center self-start text-cl-black focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200 group-hover:text-green-300 group-hover:underline'>
+                Lees meer <IconArrowRight className='ml-1' />
+              </div>
+            )}
+          </div>
+        </div>
+      </Link>
+    );
+  } else if (data.linkUrl !== undefined) {
+    return (
+      <Link
+        href={data.linkUrl}
+        target={`${data.isExternal === true ? '_blank' : ''}`}
+        className='group'
+      >
+        <div className={`bg-${data.colour} } flex flex-col items-start justify-between rounded-cl`}>
+          {data.image && (
+            <div className='relative h-80 w-full rounded-t-cl'>
+              <Image
+                src={urlFor(data?.image).url()}
+                alt={data?.title + 'image'}
+                fill
+                priority={true}
+                sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
+                className='relative h-full w-full rounded-t-cl object-cover'
+                placeholder='blur'
+                blurDataURL={data?.metadata.lqip}
+              />
+            </div>
+          )}
+          <div
+            className={`${
+              data.linkText === true ? 'justify-between' : ''
+            } flex h-full w-full flex-col gap-y-6 px-8 pb-6 pt-8`}
+          >
+            <div className=''>
+              <div className='flex grow-0'>
+                <Badge variant='black'>{data.category}</Badge>
+              </div>
+              <div className='heading-2xl-semibold pb-0.5 pt-4 text-cl-black'>{data.title}</div>
+              {data.newsDate && (
+                <div className='p-xs-semibold text-cl-black'>
+                  {event.toLocaleDateString('nl-NL', options)}
+                </div>
+              )}
+            </div>
+            <div className='p-base text-cl-black'>{data.newsText}</div>
+            {data.linkText && (
+              <div className='heading-xl-semibold flex items-center self-start text-cl-black focus:right-2 focus:text-green-200 focus:ring-white active:text-green-200 group-hover:text-green-300 group-hover:underline'>
+                {data.linkText}
+                {data.isExternal === true ? (
+                  <IconExternalLink className='ml-1 size-5' />
+                ) : (
+                  <IconArrowRight className='ml-1' />
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      </Link>
+    );
+  } else {
+    return (
+      <div className={`bg-${data.colour} } flex flex-col items-start justify-between rounded-cl`}>
+        {data.image && (
+          <div className='relative h-80 w-full rounded-t-cl'>
+            <Image
+              src={urlFor(data?.image).url()}
+              alt={data?.title + 'image'}
+              fill
+              priority={true}
+              sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
+              className='relative h-full w-full rounded-t-cl object-cover'
+              placeholder='blur'
+              blurDataURL={data?.metadata.lqip}
+            />
+          </div>
+        )}
+        <div
+          className={`${
+            data.linkText || data.createPage === true ? 'justify-between' : ''
+          } flex h-full w-full flex-col gap-y-6 px-8 pb-6 pt-8`}
+        >
+          <div className=''>
+            <div className='flex grow-0'>
+              <Badge variant='black'>{data.category}</Badge>
+            </div>
+            <div className='heading-2xl-semibold pb-0.5 pt-4 text-cl-black'>{data.title}</div>
+            {data.newsDate && (
+              <div className='p-xs-semibold text-cl-black'>
+                {event.toLocaleDateString('nl-NL', options)}
+              </div>
+            )}
+          </div>
+          <div className='p-base text-cl-black'>{data.newsText}</div>
+        </div>
+      </div>
+    );
+  }
+}

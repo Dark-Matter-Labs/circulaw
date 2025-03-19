@@ -9,19 +9,19 @@ import { DiscussionEmbed } from 'disqus-react';
 export default function ForumPage() {
   return (
     <div>
-      <div className='my-3 h-56 bg-green-600 sm:h-72'>
+      <div className='my-3 h-56 bg-green-500 sm:h-72'>
         <div className='global-margin flex h-full flex-col items-start justify-between'>
-          <div className='mt-6 flex h-6 items-center rounded-clSm bg-gray-100'>
+          <div className='mt-6 flex h-6 items-center rounded-clSm bg-green-100'>
             <Link
               href='/'
-              className='p-2xs-bold flex flex-row items-center pl-2 text-green-600 hover:text-green-300 active:text-green-800'
+              className='p-2xs-bold flex flex-row items-center pl-2 text-green-500 hover:text-green-400 active:text-cl-black'
             >
               Home
             </Link>
-            <span className='p-2xs-bold px-2 text-green-600'>{'>'}</span>
+            <span className='p-2xs-bold px-2 text-green-500'>{'>'}</span>
           </div>
           <div className='mb-10'>
-            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold max-w-4xl text-gray-100'>
+            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold max-w-4xl text-green-100'>
               Verder praten over circulaire houtbouw? Dat kan!
             </h1>
           </div>

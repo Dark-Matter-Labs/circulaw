@@ -5,11 +5,11 @@ import { IconArrowRight } from '@tabler/icons-react';
 export default function NotFound() {
   return (
     <div className='global-margin my-20 flex flex-col justify-center text-center'>
-      <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pb-2 text-gray-800'>404</h1>
-      <p className='p-base text-gray-800'>
+      <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pb-2 text-cl-black'>404</h1>
+      <p className='p-base text-cl-black'>
         We kunnen de pagina die je zoekt niet vinden. Kunnen we je verder helpen?
       </p>
-      <p className='p-base text-gray-800'>Zoek verder:</p>
+      <p className='p-base text-cl-black'>Zoek verder:</p>
       <ul className=''>
         <li className='p-base-semibold text-green-500 underline'>
           <Link href='/' className='link-interaction'>
