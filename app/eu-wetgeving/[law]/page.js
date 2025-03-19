@@ -65,20 +65,15 @@ export default async function EULawPage({ params, searchParams }) {
     tags: ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab'],
   });
   const initialTab = searchParams.tab;
-  return (
-    <>
-      <Header title={summaryData?.title} bgColor='bg-cl-black' pageType='euLaw' />
-      <div className='relative'>
-        <div className='global-margin'>
-          <div className='relative flex w-full flex-col justify-start'>
-            <Tabs summaryData={summaryData} initialTab={initialTab} />
-          </div>
-        </div>
 
+
+  return (
+    <div className='relative'>
+      <Header title={summaryData?.title} bgColor='bg-cl-black' pageType='euLaw' />
+      <Tabs summaryData={summaryData} initialTab={initialTab} />
         <Suspense>
           <TabContent summaryData={summaryData} tabData={tabData} />
         </Suspense>
       </div>
-    </>
   );
 }

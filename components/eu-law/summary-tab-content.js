@@ -83,7 +83,7 @@ export default function SummaryComponent({ lawData }) {
         </div>
       </div>
       {/* Ovewrview cards and stats */}
-      <div className='bg-green-100 py-10'>
+      <div className='py-10'>
         {lawData?.title === 'Corporate Sustainability Reporting Directive (CSRD)' && (
           <Highlights law='CSRD' />
         )}
