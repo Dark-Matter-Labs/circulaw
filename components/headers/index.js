@@ -14,7 +14,7 @@ export default function Header({ imageURL, bgColor, title, pageType, subtitle, .
   return (
     <>
       <div
-        className={`${bgColor} global-margin mt-20 ${pageType === 'withTabs' ? 'rounded-t-cl' : 'rounded-cl'}`}
+        className={`${bgColor} global-margin mt-20 ${pageType === 'categorie' || pageType === 'euLaw' ? 'rounded-t-cl' : 'rounded-cl'}`}
       >
         <div className='relative h-full w-full object-cover px-16 py-10'>
           {imageURL && (
@@ -33,10 +33,10 @@ export default function Header({ imageURL, bgColor, title, pageType, subtitle, .
           )}
           <div className='z-5 relative flex flex-col justify-between'>
             <div
-              className={`${pageType === 'withTabs' || pageType === 'instrumentOverview' ? 'mb-12' : 'mb-20'} flex flex-row justify-between`}
+              className={`${pageType === 'categorie' || pageType === 'instrumentOverview' || pageType === 'euLaw' ? 'mb-12' : 'mb-20'} flex flex-row justify-between`}
             >
               <Breadcrumb pageType={pageType} />
-              {(pageType === 'withTabs' || pageType === 'instrumentOverview') && (
+              {(pageType === 'categorie' || pageType === 'instrumentOverview') && (
                 <div className='block py-3 sm:float-right sm:py-0'>
                   <div className='p-base hidden pb-2 text-white sm:block'>
                     Bekijk de instrumenten:

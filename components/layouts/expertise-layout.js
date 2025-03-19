@@ -318,7 +318,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
         <Header
           title={props.title}
           bgColor='bg-cl-black'
-          pageType='withTabs'
+          pageType='categorie'
           page='categorie'
           thema={props.thema}
           productChain={props.transitionAgenda}
