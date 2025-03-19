@@ -2,28 +2,20 @@
 
 import React from 'react';
 
-import Link from 'next/link';
-
 import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import { PortableText } from '@portabletext/react';
 import * as Accordion from '@radix-ui/react-accordion';
 import { IconChevronDown } from '@tabler/icons-react';
 
+import Header from './headers';
+
 export default function FAQPageComponent({ data }) {
   return (
-    <div className='global-margin pb-8 text-cl-black'>
-      <div className='grid w-full grid-cols-1 justify-center'>
-        <div className=''>
-          <div className='p-2xs-bold link-interaction rounded-clSm py-1.5 pl-2 pr-3 pt-8 text-green-500'>
-            <Link href='/' className='link-interaction'>
-              Home<span className='ml-2'>{'>'}</span>
-            </Link>
-          </div>
-
-          <div className='mx-auto max-w-4xl'>
-            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold py-6 text-cl-black sm:pb-10 sm:pt-10 lg:block'>
-              {data?.pageTitle}
-            </h1>
+    <>
+      <Header title={data?.pageTitle} bgColor='bg-green-500' />
+      <div className='global-margin py-8'>
+        <div className='grid w-full grid-cols-1 justify-start'>
+          <div className='max-w-4xl px-16'>
             <Accordion.Root
               className='flex flex-col gap-y-5'
               type='single'
@@ -49,6 +41,6 @@ export default function FAQPageComponent({ data }) {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
