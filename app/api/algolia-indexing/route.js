@@ -20,7 +20,7 @@ const QUERY = `
     "slug": slug.current,
     "transitionAgenda":transitionAgenda->pcName,
     "thema": thema->slug.current,
-    "themaName: thema->themaName,
+    "themaName": thema->themaName,
     extraContent,
     overheidslaag,
     juridischInvloed,
