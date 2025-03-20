@@ -321,13 +321,10 @@ export default function GovLevelLayout({ ...props }) {
                   <div className='absolute bottom-[24%] right-[52%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[36%] right-[46%] h-3 w-3 rounded-full bg-gray-100'></div>
 
-                 
-
                   {/* Provincial = 2 */}
                   <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[65%] right-[30%] h-3 w-3 rounded-full bg-gray-100'></div>
                   <div className='absolute bottom-[65%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
-                  
 
                   {/* Local = 8 */}
                   <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
@@ -412,7 +409,7 @@ export default function GovLevelLayout({ ...props }) {
                   <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-gray-100'></div>
                 </>
               )}
-                {props.thema === 'organische-reststromen' && (
+              {props.thema === 'organische-reststromen' && (
                 <>
                   {/* National */}
                   <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
