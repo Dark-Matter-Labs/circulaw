@@ -3,6 +3,7 @@ import { client } from '@/lib/sanity';
 
 const baseUrl = 'https://www.circulaw.nl';
 
+// TODO: update to sanityFetch
 export async function getURLS() {
   const urls = await client.fetch(SITEMAP_QUERY, {
     next: {
