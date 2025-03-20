@@ -8,7 +8,7 @@ export default function NoResults() {
         <h2 className='heading-2xl sm:heading-3xl mb-6'>
           Geen resultaten gevonden voor: &apos;
           <span className='heading-2xl-semibold sm:heading-3xl-semibold'>
-            {uiState['root'].query}
+            {uiState['root']?.query}
           </span>
           &apos; in
           {uiState['aboutPage'] && <span> Over CircuLaw</span>}
