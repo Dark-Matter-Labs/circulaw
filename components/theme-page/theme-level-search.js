@@ -16,7 +16,7 @@ import Modal from '../modal/modal';
 import FilterModalButton from '../modal/modal-buttons/filter-button';
 import InstrumentTooltipButton from '../modal/modal-buttons/instrument-tooltip-button';
 import ModalContent from '../modal/modal-content';
-import NoResults from '../search/no-results';
+import NoResultsInstruments from '../search/no-results-instrument';
 import NoResultsBoundary from '../search/no-results-boundary';
 import CustomStats from '../search/stats';
 import OverviewPageHeader from './overview-page-header';
@@ -270,7 +270,7 @@ export default function ThemeLevelSearch(props) {
       </div>
 
       <div className='global-margin flex'>
-        <NoResultsBoundary fallback={<NoResults />}>
+        <NoResultsBoundary fallback={<NoResultsInstruments />}>
           <div className='hidden min-w-[270px] flex-col sm:flex'>
             <div className='mr-12 mt-10 flex flex-col'>
               <CustomClearRefinements />

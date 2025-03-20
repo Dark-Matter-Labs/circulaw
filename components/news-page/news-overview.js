@@ -1,8 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+// import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
+import Masonry, {ResponsiveMasonry} from 'react-responsive-masonry';
 import Link from 'next/link';
 
 import AgendaCard from '@/components/news-page/agenda-card';
