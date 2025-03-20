@@ -105,6 +105,7 @@ linkUrl,
 }
 `;
 
+// TODO: check to see if client.fetch should be sanityFetch
 export async function GET() {
   if (process.env.APP_ENV === 'production') {
     const instruments = await client.fetch(QUERY);
