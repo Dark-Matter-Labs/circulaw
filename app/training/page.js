@@ -2,13 +2,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import CustomButton from '@/components/custom-button';
-import { IconArrowRight, IconBooks } from '@tabler/icons-react';
 import Header from '@/components/headers';
+import { IconArrowRight, IconBooks } from '@tabler/icons-react';
 
 export default function LearningLandingPage() {
   return (
     <div className=''>
-      <Header title='E-learning: circulaire houtbouw onder de Omgevingswet' bgColor='bg-green-500'/>
+      <Header
+        title='E-learning: circulaire houtbouw onder de Omgevingswet'
+        bgColor='bg-green-500'
+      />
       <div className='global-margin relative my-16 flex'>
         <div className='max-w-[700px]'>
           <p className='p-base'>

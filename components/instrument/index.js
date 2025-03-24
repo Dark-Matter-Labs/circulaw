@@ -5,9 +5,10 @@ import { useEffect, useRef, useState } from 'react';
 import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import { PortableText } from '@portabletext/react';
 
+import Header from '../headers';
 import InstrumentFeedbackBlock from './instrument-feedback-block';
 import MobileFeedback from './instrument-feedback-block-mobile';
-import InstrumentHeader from './instrument-header';
+import InstrumentMetaData from './instrument-metadata';
 import InstrumentTable from './instrument-table';
 
 export default function Instrument({ data }) {
@@ -36,7 +37,15 @@ export default function Instrument({ data }) {
   }, []);
   return (
     <div ref={ref} className='relative bg-green-100'>
-      <InstrumentHeader data={data} />
+      <Header title={data.titel} bgColor='bg-green-500' pageType='instrument' data={data} />
+      {/* Metadata */}
+      <div className='flex w-full justify-items-start bg-green-100 sm:border-b sm:border-cl-grey'>
+        <div className='global-margin w-full'>
+          <div className='grid-col-1 grid w-full max-w-4xl'>
+            <InstrumentMetaData data={data} />
+          </div>
+        </div>
+      </div>
       <div className='relative z-0 bg-green-100'>
         <InstrumentFeedbackBlock data={data} />
         <div className='global-margin z-0 sm:mt-4'>

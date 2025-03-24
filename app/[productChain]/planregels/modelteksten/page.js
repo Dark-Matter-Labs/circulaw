@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import Header from '@/components/headers';
 import LinkIcon from '@/components/link-icon';
 import PopUp from '@/components/modeltext/popup';
 import { sanityFetch } from '@/lib/sanity';
 import { IconArrowLeft } from '@tabler/icons-react';
-import Header from '@/components/headers';
 
 const PILLARS_QUERY = `
  *[_type == 'pillar'] | order(orderRank) {
@@ -32,7 +32,7 @@ export default async function ModelTextPage({ params }) {
   if (params.productChain === 'bouw') {
     return (
       <>
-      <Header title='Aan de slag met het omgevingsplan' imageURL='/modeltext-header.png' />
+        <Header title='Aan de slag met het omgevingsplan' imageURL='/modeltext-header.png' />
         <div className='global-margin my-10 flex h-max flex-col bg-white sm:my-16'>
           <div className='flex max-w-[760px] flex-col'>
             <p className='p-base pb-6'>

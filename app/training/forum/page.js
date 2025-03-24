@@ -3,14 +3,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import Header from '@/components/headers';
 import commentIcon from '@/public/comment-icon.svg';
 import { DiscussionEmbed } from 'disqus-react';
-import Header from '@/components/headers';
 
 export default function ForumPage() {
   return (
     <div>
-      <Header title='Verder praten over circulaire houtbouw? Dat kan!' bgColor='bg-green-500'/>
+      <Header title='Verder praten over circulaire houtbouw? Dat kan!' bgColor='bg-green-500' />
       <div className='global-margin my-16'>
         <div className='max-w-[700px]'>
           <p className='p-base mb-6'>

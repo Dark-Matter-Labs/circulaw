@@ -7,9 +7,11 @@ import { IconArrowDown } from '@tabler/icons-react';
 import CustomButton from '../custom-button';
 import ScrollButton from '../scroll-button';
 import Badge from '../shared/new-badge';
+import Tag from '../shared/new-tag';
 import Breadcrumb from './breadcrumbs';
 
 export default function Header({ imageURL, bgColor, title, pageType, subtitle, ...props }) {
+  console.log(props.data);
   return (
     <>
       <div
@@ -37,6 +39,58 @@ export default function Header({ imageURL, bgColor, title, pageType, subtitle, .
               <Breadcrumb pageType={pageType} />
             </div>
             <div className=''>
+              {pageType === 'instrument' && (
+                <div className='flex flex-row gap-x-3'>
+                  <Tag href={`/${props.data.transitionAgenda}/${props.data.thema}`} variant='white'>
+                    {props.data.thema}
+                  </Tag>
+                  {props.data.beleid && (
+                    <Tag
+                      variant='black'
+                      href={`/${props.data.transitionAgenda}/${props.data.thema}/categorie`}
+                      category='beleid'
+                    >
+                      Beleid
+                    </Tag>
+                  )}
+                  {props.data.fiscaal && (
+                    <Tag
+                      variant='black'
+                      href={`/${props.data.transitionAgenda}/${props.data.thema}/categorie`}
+                      category='fiscaal'
+                    >
+                      Fiscaal
+                    </Tag>
+                  )}
+                  {props.data.inkoop && (
+                    <Tag
+                      variant='black'
+                      href={`/${props.data.transitionAgenda}/${props.data.thema}/categorie`}
+                      category='inkoop'
+                    >
+                      Inkoop
+                    </Tag>
+                  )}
+                  {props.data.grondpositie && (
+                    <Tag
+                      variant='black'
+                      href={`/${props.data.transitionAgenda}/${props.data.thema}/categorie`}
+                      category='grondpositie'
+                    >
+                      Grondpositie
+                    </Tag>
+                  )}
+                  {props.data.subsidie && (
+                    <Tag
+                      variant='black'
+                      href={`/${props.data.transitionAgenda}/${props.data.thema}/categorie`}
+                      category='subsidie'
+                    >
+                      Subsidie
+                    </Tag>
+                  )}
+                </div>
+              )}
               {pageType === 'news' && <Badge variant='black'>{props.newsData.category}</Badge>}
               {pageType === 'productChain' && (
                 <div className='p-base sm:heading-2xl-semibold text-green-400'>{subtitle}</div>

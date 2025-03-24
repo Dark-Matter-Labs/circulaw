@@ -1,14 +1,17 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
-import AreaPlanningLayout from '@/components/layouts/area-planning';
 import Header from '@/components/headers';
+import AreaPlanningLayout from '@/components/layouts/area-planning';
 
 export default function AreaPlanning({ params }) {
   if (params.productChain === 'bouw') {
     return (
       <>
-      <Header title='Stimuleer houtbouw in circulaire gebiedsontwikkeling' bgColor='bg-green-500'/>
+        <Header
+          title='Stimuleer houtbouw in circulaire gebiedsontwikkeling'
+          bgColor='bg-green-500'
+        />
         <div className='relative my-5 w-full items-center md:hidden'>
           <Image
             src='/area-planning-mob.png'
