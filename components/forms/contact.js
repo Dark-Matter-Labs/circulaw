@@ -7,6 +7,7 @@ import Link from 'next/link';
 import CustomButton from '@/components/custom-button';
 import { scrollToTop } from '@/utils/scroll-to-top';
 import axios from 'axios';
+import Header from '../headers';
 
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/a53bd6aa-495c-416a-b8ec-2b36b6be1af9';
 
@@ -57,12 +58,12 @@ export default function ContactPageComponent() {
       });
   };
   return (
+    <>
+    <Header title='Contact' bgColor='bg-green-500'/>
     <div className='global-margin'>
       {!formStatus ? (
         <>
-          <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pt-10 text-green-500'>
-            Contact
-          </h1>
+          
           <div className='mb-20 mt-8 max-w-3xl'>
             <form
               acceptCharset='UTF-8'
@@ -226,5 +227,6 @@ export default function ContactPageComponent() {
         </>
       )}
     </div>
+    </>
   );
 }

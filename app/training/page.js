@@ -3,28 +3,12 @@ import Link from 'next/link';
 
 import CustomButton from '@/components/custom-button';
 import { IconArrowRight, IconBooks } from '@tabler/icons-react';
+import Header from '@/components/headers';
 
 export default function LearningLandingPage() {
   return (
     <div className=''>
-      <div className='my-3 h-56 bg-green-500 sm:h-72'>
-        <div className='global-margin flex h-full flex-col items-start justify-between'>
-          <div className='mt-6 flex h-6 items-center rounded-clSm bg-green-100'>
-            <Link
-              href='/'
-              className='p-2xs-bold flex flex-row items-center pl-2 text-green-500 hover:text-green-400 active:text-cl-black'
-            >
-              Home
-            </Link>
-            <span className='p-2xs-bold px-2 text-green-500'>{'>'}</span>
-          </div>
-          <div className='mb-10'>
-            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold max-w-4xl text-green-100'>
-              E-learning: circulaire houtbouw onder de Omgevingswet
-            </h1>
-          </div>
-        </div>
-      </div>
+      <Header title='E-learning: circulaire houtbouw onder de Omgevingswet' bgColor='bg-green-500'/>
       <div className='global-margin relative my-16 flex'>
         <div className='max-w-[700px]'>
           <p className='p-base'>

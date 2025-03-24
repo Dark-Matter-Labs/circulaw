@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
@@ -6,6 +5,7 @@ import LinkIcon from '@/components/link-icon';
 import PopUp from '@/components/modeltext/popup';
 import { sanityFetch } from '@/lib/sanity';
 import { IconArrowLeft } from '@tabler/icons-react';
+import Header from '@/components/headers';
 
 const PILLARS_QUERY = `
  *[_type == 'pillar'] | order(orderRank) {
@@ -32,47 +32,7 @@ export default async function ModelTextPage({ params }) {
   if (params.productChain === 'bouw') {
     return (
       <>
-        <div className='relative mt-3 flex h-[260px] w-full bg-green-500 sm:h-[360px]'>
-          <Image
-            src='/modeltext-header.png'
-            alt='homepage decoration'
-            fill
-            sizes='100vw'
-            className='z-10 object-cover'
-            priority={true}
-            quality={100}
-          />
-          <div className='global-margin z-20 flex h-full w-full flex-col justify-between'>
-            <div className='pt-6 sm:pt-10'>
-              <span className='p-2xs-bold inline-flex flex-row items-center justify-center rounded-clSm bg-green-100 py-1.5 pl-2 pr-3 align-middle text-green-500 group-hover:text-green-400 group-focus:text-green-300 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
-                <Link
-                  className='hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'
-                  href='/'
-                >
-                  {' '}
-                  Home <span className='ml-2'>{'>'}</span>
-                </Link>
-                <Link
-                  href='/bouw'
-                  className='pl-3 hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'
-                >
-                  Bouw <span className='ml-2'>{'>'}</span>
-                </Link>
-                <Link
-                  href='/bouw/planregels'
-                  className='pl-3 hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'
-                >
-                  Modelteksten voor omgevingsplan
-                </Link>
-              </span>
-            </div>
-            <div className='mb-6 flex flex-col gap-2 sm:mb-10'>
-              <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-white'>
-                Aan de slag met het omgevingsplan
-              </h1>
-            </div>
-          </div>
-        </div>
+      <Header title='Aan de slag met het omgevingsplan' imageURL='/modeltext-header.png' />
         <div className='global-margin my-10 flex h-max flex-col bg-white sm:my-16'>
           <div className='flex max-w-[760px] flex-col'>
             <p className='p-base pb-6'>

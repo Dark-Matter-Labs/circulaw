@@ -8,7 +8,6 @@ import CustomButton from '../custom-button';
 import ScrollButton from '../scroll-button';
 import Badge from '../shared/new-badge';
 import Breadcrumb from './breadcrumbs';
-import InstrumentLinksDropdown from './instrument-links-dropdown';
 
 export default function Header({ imageURL, bgColor, title, pageType, subtitle, ...props }) {
   return (
@@ -36,18 +35,6 @@ export default function Header({ imageURL, bgColor, title, pageType, subtitle, .
               className={`${pageType === 'categorie' || pageType === 'instrumentOverview' || pageType === 'euLaw' ? 'mb-12' : 'mb-20'} flex flex-row justify-between`}
             >
               <Breadcrumb pageType={pageType} />
-              {(pageType === 'categorie' || pageType === 'instrumentOverview') && (
-                <div className='block py-3 sm:float-right sm:py-0'>
-                  <div className='p-base hidden pb-2 text-white sm:block'>
-                    Bekijk de instrumenten:
-                  </div>
-                  <InstrumentLinksDropdown
-                    page={props.page}
-                    productChain={props.productChain}
-                    thema={props.thema}
-                  />
-                </div>
-              )}
             </div>
             <div className=''>
               {pageType === 'news' && <Badge variant='black'>{props.newsData.category}</Badge>}

@@ -7,6 +7,7 @@ import Link from 'next/link';
 import CustomButton from '@/components/custom-button';
 import { scrollToTop } from '@/utils/scroll-to-top';
 import axios from 'axios';
+import Header from '../headers';
 
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/raeqmmza';
 
@@ -58,13 +59,13 @@ export default function NewsLetterComponent() {
   };
 
   return (
+    <>
+    <Header title='Nieuwsbrief' bgColor='bg-green-500' subtitle='Fijn dat je geïnteresseerd bent in CircuLaw-nieuws. Onze nieuwsbrief sturen we
+                  alleen als we echt wat te melden hebben. Je hoeft dus niet bang te zijn voor een
+                  overdaad aan berichten van ons.' />
     <div className='global-margin'>
       {!formStatus ? (
         <>
-          <h1 className='heading-3xl-semibold sm:heading-5xl-semibold pt-10 text-green-500'>
-            Nieuwsbrief
-          </h1>
-
           <div className='mb-20 mt-8 max-w-3xl'>
             <div className='pb-8 sm:col-span-2'>
               <div className=''>
@@ -197,5 +198,6 @@ export default function NewsLetterComponent() {
         </>
       )}
     </div>
+    </>
   );
 }
