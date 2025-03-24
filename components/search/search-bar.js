@@ -40,11 +40,11 @@ export default function NewSearchBar(props) {
   }
 
   return (
-    <div className='flex h-[260px] w-full items-end justify-center bg-green-100 sm:max-w-none'>
-      <div className='global-margin flex w-full items-center justify-center'>
-        <div className='flex flex-col items-center justify-center gap-y-6'>
+    <div className='rounded-cl global-margin mt-20 bg-green-500'>
+      <div className='relative h-full w-full object-cover px-16 py-10'>
+        <div className='flex flex-col items-center justify-center gap-y-6 h-full'>
           <div className='w-full'>
-            <div className='flex h-full w-full flex-col items-center justify-end pb-10'>
+            <div className='flex h-full w-full flex-col items-center justify-end'>
               <div className='w-full max-w-sm sm:max-w-[600px]'>
                 <form
                   className='relative flex h-[66px] max-w-sm flex-row items-center justify-between rounded-cl sm:w-[600px] sm:max-w-[600px]'
@@ -70,7 +70,7 @@ export default function NewSearchBar(props) {
                 >
                   <input
                     ref={inputRef}
-                    className='p-base sm:placeholder:p-base-semibold placeholder:p-2xs h-[66px] w-full rounded-cl border-none bg-white bg-left bg-no-repeat pl-12 text-green-500 caret-green-500 shadow-card [background-position-x:10px] placeholder:text-green-500 focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] focus:ring-1 focus:ring-green-500 sm:w-[600px]'
+                    className='p-base sm:placeholder:p-base-semibold placeholder:p-2xs h-[66px] w-full rounded-cl border-none bg-white bg-left bg-no-repeat pl-12 text-cl-black caret-cl-black shadow-card [background-position-x:10px] placeholder:text-cl-black focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] focus:ring-1 focus:ring-cl-black sm:w-[600px]'
                     autoComplete='off'
                     autoCorrect='off'
                     autoCapitalize='off'
@@ -86,7 +86,7 @@ export default function NewSearchBar(props) {
                   />
                   <button
                     type='submit'
-                    className='p-base-semibold absolute right-3 top-3 ml-2 flex h-[42px] w-24 items-center justify-center rounded-cl border border-white bg-white p-2 text-green-500 shadow-card hover:border-green-300 hover:bg-green-300'
+                    className='p-base-semibold absolute right-3 top-3 ml-2 flex h-[42px] w-24 items-center justify-center rounded-cl border border-white bg-white p-2 text-cl-black shadow-card hover:border-green-300 hover:bg-green-300'
                   >
                     Zoeken
                   </button>
@@ -97,38 +97,38 @@ export default function NewSearchBar(props) {
                       inputValue === '' || isSearchStalled ? 'hidden' : ''
                     } group absolute right-28 top-3.5 rounded-full p-2 hover:bg-green-300`}
                   >
-                    <IconX className='h-6 w-6 text-green-500' />
+                    <IconX className='h-6 w-6 text-cl-black' />
                   </button>
                 </form>
               </div>
               <TabList className='no-scrollbar mt-4 flex max-w-sm snap-x snap-mandatory flex-row overflow-x-scroll sm:max-w-none'>
                 <Tab
                   onClick={() => props.setTabFunction(0)}
-                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-green-500 data-[selected]:border-b-2 data-[selected]:border-green-500'
+                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-cl-black data-[selected]:border-b-2 data-[selected]:border-cl-black'
                 >
                   Alle
                 </Tab>
                 <Tab
                   onClick={() => props.setTabFunction(1)}
-                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-green-500 data-[selected]:border-b-2 data-[selected]:border-green-500'
+                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-cl-black data-[selected]:border-b-2 data-[selected]:border-cl-black'
                 >
                   Instrumenten
                 </Tab>
                 <Tab
                   onClick={() => props.setTabFunction(2)}
-                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-green-500 data-[selected]:border-b-2 data-[selected]:border-green-500'
+                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-cl-black data-[selected]:border-b-2 data-[selected]:border-cl-black'
                 >
                   EU wetgeving
                 </Tab>
                 <Tab
                   onClick={() => props.setTabFunction(3)}
-                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-green-500 data-[selected]:border-b-2 data-[selected]:border-green-500'
+                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-cl-black data-[selected]:border-b-2 data-[selected]:border-cl-black'
                 >
                   Over CircuLaw
                 </Tab>
                 <Tab
                   onClick={() => props.setTabFunction(4)}
-                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-green-500 data-[selected]:border-b-2 data-[selected]:border-green-500'
+                  className='p-xs-semibold text-nowrap border-b-2 border-transparent p-2 text-cl-black data-[selected]:border-b-2 data-[selected]:border-cl-black'
                 >
                   Nieuws
                 </Tab>
