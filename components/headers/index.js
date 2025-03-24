@@ -49,6 +49,7 @@ export default function Header({ imageURL, bgColor, title, pageType, subtitle, .
                       variant='black'
                       href={`/${props.data.transitionAgenda}/${props.data.thema}/categorie`}
                       category='beleid'
+                      themaType={props.data.themaType}
                     >
                       Beleid
                     </Tag>
@@ -58,6 +59,7 @@ export default function Header({ imageURL, bgColor, title, pageType, subtitle, .
                       variant='black'
                       href={`/${props.data.transitionAgenda}/${props.data.thema}/categorie`}
                       category='fiscaal'
+                      themaType={props.data.themaType}
                     >
                       Fiscaal
                     </Tag>
@@ -67,6 +69,7 @@ export default function Header({ imageURL, bgColor, title, pageType, subtitle, .
                       variant='black'
                       href={`/${props.data.transitionAgenda}/${props.data.thema}/categorie`}
                       category='inkoop'
+                      themaType={props.data.themaType}
                     >
                       Inkoop
                     </Tag>
@@ -76,6 +79,7 @@ export default function Header({ imageURL, bgColor, title, pageType, subtitle, .
                       variant='black'
                       href={`/${props.data.transitionAgenda}/${props.data.thema}/categorie`}
                       category='grondpositie'
+                      themaType={props.data.themaType}
                     >
                       Grondpositie
                     </Tag>
@@ -85,6 +89,7 @@ export default function Header({ imageURL, bgColor, title, pageType, subtitle, .
                       variant='black'
                       href={`/${props.data.transitionAgenda}/${props.data.thema}/categorie`}
                       category='subsidie'
+                      themaType={props.data.themaType}
                     >
                       Subsidie
                     </Tag>
