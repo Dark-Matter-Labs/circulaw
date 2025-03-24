@@ -105,6 +105,14 @@ export default {
       type: 'string',
       title: 'Link text',
       description: 'text to be displayed in the link',
+      validation: (Rule) =>
+        Rule.custom((currentValue, { parent }) => {
+          return parent.isFeatured === true &&
+            parent.hasPage === false &&
+            currentValue === undefined
+            ? 'Featured items must have a link or their own page'
+            : true;
+        }),
       hidden: ({ parent }) => parent.hasPage === true || parent.isAgendaItem === true,
     },
     {

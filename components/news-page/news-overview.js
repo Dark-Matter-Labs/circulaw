@@ -10,6 +10,8 @@ import { IconChevronDown } from '@tabler/icons-react';
 
 import Header from '../headers';
 import Badge from '../shared/new-badge';
+import TitleDecorator from '../title-decorator';
+import FeaturedNewsSection from './featured-section';
 import { MasonryGrid } from './masonry';
 import NewNewsCard from './new-news-card';
 
@@ -54,20 +56,22 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
 
   return (
     <>
-      <Header title='Uitgelichte nieuwsberichten' bgColor='bg-green-500' />
-
-      <div className='global-margin mt-4 flex flex-col'>
-        <div className='grid grid-cols-1 grid-rows-1 gap-6 overflow-hidden py-10 sm:grid-cols-2 lg:grid-cols-3'>
-          {featuresNewsItems.map((item, id) => (
-            <div key={id}>{item.isFeatured === true && <NewNewsCard data={item} />}</div>
-          ))}
+      <Header title='Nieuws' bgColor='bg-green-500' />
+      <div className='global-margin mt-20 flex flex-col'>
+        <div className='mb-6 w-1/2'>
+          <h3 className='heading-5xl-semibold text-green-500'>Uitgelichte nieuwsberichten</h3>
+          <TitleDecorator width='w-1/4' />
+        </div>
+        <div className='py-10'>
+          <FeaturedNewsSection items={featuresNewsItems} />
         </div>
         <div className=''>
-          <div className='flex flex-col justify-between border-b-2 border-cl-black pb-5 sm:flex-row sm:items-center'>
-            <h2 className='heading-xl-semibold sm:heading-2xl-semibold pb-4 sm:pb-0'>
-              Laatste nieuws{' '}
-            </h2>
-            <div className='flex flex-row items-center justify-between'>
+          <div className='mt-20 flex flex-col justify-between pb-6 sm:flex-row sm:items-center'>
+            <div className='w-1/2'>
+              <h3 className='heading-5xl-semibold text-green-500'>Uitgelichte nieuwsberichten</h3>
+              <TitleDecorator width='w-1/4' />
+            </div>
+            <div className='flex flex-row items-center justify-between place-self-start'>
               <div className='heading-xl-semibold sm:heading-2xl-semibold pr-4'>Bekijk:</div>
               <Listbox value={articleType} onChange={setArticleType}>
                 <ListboxButton className='p-base-bold flex h-10 w-64 items-center justify-between rounded-cl border-2 border-green-500 px-4 text-black sm:w-80'>
@@ -109,9 +113,10 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
           </div>
           {nonFeaturedNewsItems.length > 12 && (
             <div className='mb-10'>
-              <h2 className='heading-xl-semibold sm:heading-2xl-semibold w-full border-b-2 border-cl-black pb-5'>
-                Archief
-              </h2>
+              <div className='w-1/2'>
+                <h3 className='heading-5xl-semibold mt-20 text-green-500'>Archief</h3>
+                <TitleDecorator width='w-1/4' />
+              </div>
               <div className='py-10'>
                 {nonFeaturedNewsItems.slice(13, 30)?.map((item, id) => (
                   <div

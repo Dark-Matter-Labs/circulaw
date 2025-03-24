@@ -66,14 +66,13 @@ export default async function EULawPage({ params, searchParams }) {
   });
   const initialTab = searchParams.tab;
 
-
   return (
     <div className='relative'>
       <Header title={summaryData?.title} bgColor='bg-cl-black' pageType='euLaw' />
       <Tabs summaryData={summaryData} initialTab={initialTab} />
-        <Suspense>
-          <TabContent summaryData={summaryData} tabData={tabData} />
-        </Suspense>
-      </div>
+      <Suspense>
+        <TabContent summaryData={summaryData} tabData={tabData} />
+      </Suspense>
+    </div>
   );
 }
