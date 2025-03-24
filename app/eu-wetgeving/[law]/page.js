@@ -9,20 +9,18 @@ import {
   LAW_SUMMARY_QUERY,
   LAW_TAB_QUERY,
 } from '@/lib/queries';
-import { client, sanityFetch } from '@/lib/sanity';
+import { sanityFetch } from '@/lib/sanity';
 
 export async function generateMetadata({ params }, parent) {
   // read route params
   const law = params.law;
 
   // fetch data
-  const euLawMetaData = await client.fetch(
-    EU_LAW_METADATA_QUERY,
-    { law },
-    {
-      next: { tags: ['euLaw'] },
-    },
-  );
+  const euLawMetaData = await sanityFetch({
+    query: EU_LAW_METADATA_QUERY,
+    qParams: { law },
+    tags: ['euLaw'],
+  });
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
@@ -45,7 +43,7 @@ export async function generateMetadata({ params }, parent) {
 }
 
 export async function generateStaticParams() {
-  const laws = await client.fetch(EU_LAW_PATHS_QUERY, { next: { tags: ['euLaw'] } });
+  const laws = await sanityFetch({ query: EU_LAW_PATHS_QUERY, tags: ['euLaw'] });
   return laws.map((law) => ({
     law: law,
   }));

@@ -17,8 +17,8 @@ import Modal from '../modal/modal';
 import FilterModalButton from '../modal/modal-buttons/filter-button';
 import InstrumentTooltipButton from '../modal/modal-buttons/instrument-tooltip-button';
 import ModalContent from '../modal/modal-content';
-import NoResults from '../search/no-results';
 import NoResultsBoundary from '../search/no-results-boundary';
+import NoResultsInstruments from '../search/no-results-instrument';
 import CustomStats from '../search/stats';
 
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
@@ -272,7 +272,7 @@ export default function ThemeLevelSearch(props) {
       </div>
 
       <div className='global-margin flex'>
-        <NoResultsBoundary fallback={<NoResults />}>
+        <NoResultsBoundary fallback={<NoResultsInstruments />}>
           <div className='hidden min-w-[270px] flex-col sm:flex'>
             <div className='mr-12 mt-10 flex flex-col'>
               <CustomClearRefinements />
