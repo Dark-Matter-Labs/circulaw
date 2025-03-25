@@ -11,13 +11,15 @@ export default function EULawHeader({ summaryData, initialTab }) {
   const [isSticky, setIsSticky] = useState(false);
   const [headerHeight, setHeaderHeight] = useState(0);
   const [navbarHeight, setNavbarHeight] = useState(98); // Default to 98px
-
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [scrollDirection, setScrollDirection] = useState('down');
   // Adjust the position of the tabs based on the header's height
   const adjustTabsPosition = () => {
     if (headerRef.current) {
       setHeaderHeight(headerRef.current.offsetHeight);
     }
   };
+
   // Adjust navbar height
   const adjustNavbarHeight = () => {
     if (window.innerWidth < 990) {
@@ -29,31 +31,42 @@ export default function EULawHeader({ summaryData, initialTab }) {
 
   // Check when the user has scrolled past the header and the navbar
   const handleScroll = () => {
-    if (window.scrollY > headerHeight + navbarHeight) {
+    const currentScrollY = window.scrollY;
+
+    // Detect scroll direction
+    if (currentScrollY > lastScrollY) {
+      setScrollDirection('down');
+    } else {
+      setScrollDirection('up');
+    }
+
+    // Add a slight threshold for a smoother effect
+    const stickyThreshold = headerHeight + navbarHeight - (scrollDirection === 'up' ? -100 : 0);
+
+    if (currentScrollY > stickyThreshold) {
       setIsSticky(true);
     } else {
       setIsSticky(false);
     }
+
+    setLastScrollY(currentScrollY);
   };
 
   // Set the correct position when the component mounts or window is resized
   useEffect(() => {
     adjustNavbarHeight();
     adjustTabsPosition();
-    window.addEventListener('resize', () => {
-      adjustNavbarHeight();
-      adjustTabsPosition();
-    });
+    window.addEventListener('resize', adjustNavbarHeight);
+    window.addEventListener('resize', adjustTabsPosition);
     window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener('resize', () => {
-        adjustNavbarHeight();
-        adjustTabsPosition();
-      });
+      window.removeEventListener('resize', adjustNavbarHeight);
+      window.removeEventListener('resize', adjustTabsPosition);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [headerHeight, isSticky]);
+    // eslint-disable-next-line
+  }, [headerHeight, navbarHeight, lastScrollY]);
 
   return (
     <>
@@ -67,7 +80,6 @@ export default function EULawHeader({ summaryData, initialTab }) {
         summaryData={summaryData}
         initialTab={initialTab}
         tabsRef={tabsRef}
-        headerHeight={headerHeight}
         isSticky={isSticky}
         navbarHeight={navbarHeight}
       />

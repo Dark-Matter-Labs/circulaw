@@ -8,7 +8,6 @@ export default function Tabs({
   summaryData,
   initialTab,
   tabsRef,
-  headerHeight,
   isSticky,
   navbarHeight,
 }) {
@@ -22,7 +21,6 @@ export default function Tabs({
     }
   }, [initialTab]);
 
-  console.log(headerHeight);
   return (
     <>
       <div
@@ -32,7 +30,7 @@ export default function Tabs({
       >
         <div className='global-margin'>
           <div
-            className={`${isSticky ? 'rounded-cl' : '-translate-y-4 rounded-b-cl'} transiton no-scrollbar flex h-full snap-x snap-mandatory flex-row content-end justify-start gap-x-3 overflow-x-scroll bg-cl-black px-16 duration-300 h-[87px] lgNav:block`}
+            className={`${isSticky ? 'rounded-cl' : '-translate-y-4 rounded-b-cl'} transiton no-scrollbar flex snap-x snap-mandatory flex-row content-end justify-start gap-x-3 overflow-x-scroll bg-cl-black px-16 duration-300 h-[87px] lgNav:block`}
           >
             <div className='p-2xs-semibold flex h-[57px] max-w-3xl flex-row justify-start gap-x-2 self-end text-green-500'>
               <Link
