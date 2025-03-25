@@ -10,11 +10,20 @@ import Badge from '../shared/new-badge';
 import Tag from '../shared/new-tag';
 import Breadcrumb from './breadcrumbs';
 
-export default function Header({ imageURL, bgColor, title, pageType, subtitle, ...props }) {
-  console.log(props.data);
+export default function Header({
+  imageURL,
+  bgColor,
+  title,
+  pageType,
+  subtitle,
+  headerRef,
+  ...props
+}) {
   return (
     <>
       <div
+        id='header'
+        ref={headerRef}
         className={`${bgColor} global-margin mt-20 ${pageType === 'categorie' || pageType === 'euLaw' ? 'rounded-t-cl' : 'rounded-cl'}`}
       >
         <div className='relative h-full w-full object-cover px-16 py-10'>

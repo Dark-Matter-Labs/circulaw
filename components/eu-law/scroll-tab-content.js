@@ -38,7 +38,7 @@ export default function ScrollPagesTabContent({ content, title }) {
           ))}
         </div>
         <div className='absolute right-2 top-0 hidden h-full md:right-12 lgNav:block lg:right-20 xl:right-56'>
-          <ul className='sticky top-48 my-12 min-w-[390px]'>
+          <ul className='sticky top-[220px] my-12 min-w-[390px]'>
             <h4 className='heading-3xl-semibold mb-5 ml-3'>In deze pagina</h4>
             {content.map((section, id) => (
               <li key={id} className='my-4 text-cl-black'>

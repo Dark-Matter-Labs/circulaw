@@ -40,9 +40,9 @@ export default function NewSearchBar(props) {
   }
 
   return (
-    <div className='rounded-cl global-margin mt-20 bg-green-500'>
+    <div className='global-margin mt-20 rounded-cl bg-green-500'>
       <div className='relative h-full w-full object-cover px-16 py-10'>
-        <div className='flex flex-col items-center justify-center gap-y-6 h-full'>
+        <div className='flex h-full flex-col items-center justify-center gap-y-6'>
           <div className='w-full'>
             <div className='flex h-full w-full flex-col items-center justify-end'>
               <div className='w-full max-w-sm sm:max-w-[600px]'>
