@@ -11,13 +11,15 @@ import ThemaCard from '../product-chain-page/thema-cards';
 
 // TODO: See what we could move to a layout.js file instead of having everything in components.
 export default function PCLayout({ ...props }) {
+  console.log(props)
   return (
     <>
       <div>
         {/* HEADER DESKTOP */}
         <Header
           title={props?.productChainData?.pcName}
-          imageURL='/modeltext-header.png'
+          // imageURL='/modeltext-header.png'
+          bgColor='bg-green-500'
           pageType='productChain'
           subtitle='Productketen'
           thema={props?.thema}

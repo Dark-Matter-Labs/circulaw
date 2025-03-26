@@ -14,7 +14,7 @@ export default async function Page() {
   return (
     <>
       <div className='global-margin'>
-        <div className='mb-20 flex flex-row xl:gap-x-32' name='thema'>
+        <div className='mb-20 mt-8 flex flex-row xl:gap-x-32' name='thema'>
           {/* TODO: Make title component that can be used widely */}
           <div className='flex basis-1/2 flex-col'>
             <h2 className='heading-5xl-semibold text-green-500'>Ontdek direct onze instrumenten</h2>

@@ -1,13 +1,11 @@
-import Link from 'next/link';
-
 import ImageComponent from '../image-component';
 import NewButton from '../shared/new-button';
 import TitleDecorator from '../title-decorator';
 
 export default function HomePageEUSection({ euData }) {
   return (
-    <Link href='/eu-wetgeving'>
-      <div className='group flex flex-row items-center justify-between gap-x-12'>
+
+      <div className='group flex flex-row items-center justify-between gap-x-20'>
         <div className='relative basis-1/2'>
           <ImageComponent image={euData?.image} caption='' />
         </div>
@@ -19,11 +17,10 @@ export default function HomePageEUSection({ euData }) {
           <div className='heading-xl pb-8 pt-10'>
             <p>{euData.euLaw}</p>
           </div>
-          <NewButton variant='primaryDark' icon='arrowRight'>
+          <NewButton variant='primaryDark' icon='arrowRight' href='/eu-wetgeving'>
             Bekijk de EU wetgeving
           </NewButton>
         </div>
       </div>
-    </Link>
   );
 }

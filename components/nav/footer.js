@@ -25,8 +25,8 @@ const navigation = {
     { name: 'Kunststoffen', slug: '/kunststoffen' },
   ],
 };
-
-export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos }) {
+  // vraagSlug
+export default function Footer({ aboutSlugs, footerText, partnerLogos }) {
   const { CustomEvent } = usePiwikPro();
   const [moreInfoOpen, setMoreInfoOpen] = useState('hidden');
   const [successMessage, setSuccessMessage] = useState('hidden');
@@ -212,8 +212,10 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                         </ul>
                       </div>
                     </div>
+                    
                     <div className='py-2 sm:py-0'>
-                      <ul role='list' className='space-y-4'>
+                      {/* 
+                      <ul role='list' className='space-y-4 mt-[50px]'>
                         <li>
                           <a
                             className='p-base-semibold link-interaction text-white'
@@ -234,7 +236,7 @@ export default function Footer({ vraagSlug, aboutSlugs, footerText, partnerLogos
                             </a>
                           </li>
                         ))}
-                      </ul>
+                      </ul>*/}
                     </div>
                     <div className='hidden sm:block'>
                       <FooterLinkBlock

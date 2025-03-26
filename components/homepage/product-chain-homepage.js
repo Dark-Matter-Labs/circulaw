@@ -37,7 +37,12 @@ export default function PCHomePage({ pcData }) {
                       Consumptie-goederen
                     </div>
                   )}
-                  {(chain.pcName === 'Bouw' || chain.pcName === 'Biomassa en voedsel') && (
+                    {chain.pcName === 'Bouw' && (
+                    <div className='heading-3xl-semibold min-h-[100px] items-end break-words pt-4 text-green-500'>
+                      Bouw en infra
+                    </div>
+                  )}
+                  {chain.pcName === 'Biomassa en voedsel' && (
                     <div className='heading-3xl-semibold break-pretty min-h-[100px] items-end break-words pt-4 text-green-500'>
                       {chain.pcName}
                     </div>

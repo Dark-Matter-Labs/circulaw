@@ -16,9 +16,9 @@ import {
 
 const varientStyles = {
   primaryLight:
-    'bg-white text-green-500 hover:bg-green-200 hover:text-green-600 group-hover:bg-green-200 group-hover:text-green-600 focus:bg-green-200 focus:outline-2 focus:outline-green-500 focus:text-green-500 focus:border-green-500 active:bg-green-300 active:text-green-500',
+    'bg-white text-green-500 hover:bg-green-200 hover:text-green-500 group-hover:bg-green-200 group-hover:text-green-500 focus:bg-green-200 focus:outline-2 focus:outline-green-500 focus:text-green-500 focus:border-green-500 active:bg-green-300 active:text-green-500',
   primaryDark:
-    'bg-green-500 text-gray-100 hover:bg-green-200 hover:text-green-600 group-hover:bg-green-200 group-hover:text-green-600 focus:bg-green-200 focus:outline-2 focus:outline-green-500 focus:text-green-500 focus:border-green-500 active:bg-green-300 active:text-green-500',
+    'bg-green-500 text-white hover:bg-green-200 hover:text-green-500 group-hover:bg-green-200 group-hover:text-green-500 focus:bg-green-200 focus:outline-2 focus:outline-green-500 focus:text-green-500 focus:border-green-500 active:bg-green-300 active:text-green-500',
   secondaryLight:
     'bg-transparent text-white border-2 border-white hover:border-green-200 group-hover:border-green-200 rounded-full hover:bg-green-200 hover:text-green-600 group-hover:bg-green-200 group-hover:text-green-600 focus:bg-green-200 focus:outline-2 focus:outline-green-500 focus:text-green-500 focus:border-green-500 active:bg-green-300 active:text-green-500',
   secondaryDark:

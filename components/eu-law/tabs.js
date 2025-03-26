@@ -4,13 +4,7 @@ import { useEffect, useState } from 'react';
 
 import Link from 'next/link';
 
-export default function Tabs({
-  summaryData,
-  initialTab,
-  tabsRef,
-  isSticky,
-  navbarHeight,
-}) {
+export default function Tabs({ summaryData, initialTab, tabsRef, isSticky, navbarHeight }) {
   const [selectedTab, setSelectedTab] = useState();
 
   useEffect(() => {
@@ -30,7 +24,7 @@ export default function Tabs({
       >
         <div className='global-margin'>
           <div
-            className={`${isSticky ? 'rounded-cl' : '-translate-y-4 rounded-b-cl'} transiton no-scrollbar flex snap-x snap-mandatory flex-row content-end justify-start gap-x-3 overflow-x-scroll bg-cl-black px-16 duration-300 h-[87px] lgNav:block`}
+            className={`${isSticky ? 'rounded-cl' : '-translate-y-4 rounded-b-cl'} transiton no-scrollbar flex h-[87px] snap-x snap-mandatory flex-row content-end justify-start gap-x-3 overflow-x-scroll bg-cl-black px-16 duration-300 lgNav:block`}
           >
             <div className='p-2xs-semibold flex h-[57px] max-w-3xl flex-row justify-start gap-x-2 self-end text-green-500'>
               <Link
