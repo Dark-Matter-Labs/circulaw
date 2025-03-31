@@ -18,7 +18,7 @@ export default function PCLayout({ ...props }) {
         {/* HEADER DESKTOP */}
         <Header
           title={props?.productChainData?.pcName}
-          // imageURL='/modeltext-header.png'
+          imageURL='/big-decoration.png'
           bgColor='bg-green-500'
           pageType='productChain'
           subtitle='Productketen'

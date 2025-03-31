@@ -26,7 +26,7 @@ export default function Header({
         ref={headerRef}
         className={`${bgColor} global-margin mt-20 ${pageType === 'categorie' || pageType === 'euLaw' ? 'rounded-t-cl' : 'rounded-cl'}`}
       >
-        <div className='relative h-full w-full object-cover px-16 py-10'>
+        <div className='relative h-full w-full px-16 py-10 overflow-hidden'>
           {imageURL && (
             <>
               <Image
@@ -34,11 +34,12 @@ export default function Header({
                 alt='homepage decoration'
                 fill
                 sizes='100vw'
-                className='rounded-cl object-cover'
+                className='rounded-cl origin-top !w-auto !h-auto'
                 priority={true}
                 quality={100}
               />
-              <div className='absolute left-0 top-0 z-0 h-full w-full rounded-cl bg-gradient-to-t from-[#035E46] to-[#035E4600]'></div>{' '}
+              {pageType === 'thema' && <div className='absolute left-0 top-0 z-0 h-full w-full rounded-cl bg-gradient-to-t from-[#035E46] to-[#035E4600]'></div>}
+              
             </>
           )}
           <div className='z-5 relative flex flex-col justify-between'>
@@ -107,7 +108,7 @@ export default function Header({
               )}
               {pageType === 'news' && <Badge variant='black'>{props.newsData.category}</Badge>}
               {pageType === 'productChain' && (
-                <div className='p-base sm:heading-2xl-semibold text-green-400'>{subtitle}</div>
+                <div className='p-base sm:heading-2xl-semibold text-green-300'>{subtitle}</div>
               )}
               <h1
                 className={`heading-3xl-semibold sm:heading-5xl-semibold inline-block ${pageType === 'news' ? 'text-cl-black' : 'text-green-100'}`}

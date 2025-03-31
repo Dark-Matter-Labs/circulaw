@@ -11,7 +11,7 @@ export default function DesktopNavCard({ navData, closeNav }) {
     <div
       className={`${
         pathname === '/' ? 'bg-green-500 text-green-300' : 'bg-green-100 text-cl-black'
-      } flex w-full flex-col pb-6 ${
+      } flex w-full flex-col pb-12 ${
         navData.slug === 'bouw'
           ? '3xl:pl-32 pl-4 pr-2 pt-8 lgNav:pl-10 xl:pl-20'
           : 'pl-3 pr-2 pt-8 lg:pl-6'
