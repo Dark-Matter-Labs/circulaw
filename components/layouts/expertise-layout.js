@@ -317,7 +317,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
       <div className=''>
         <Header
           title={props.title}
-          bgColor='bg-cl-black'
+          bgColor='bg-green-500'
           pageType='categorie'
           page='categorie'
           thema={props.thema}
@@ -327,7 +327,7 @@ export default function ExpertiseLayout({ expertiseData, ...props }) {
         <div className='global-margin'>
           <div className='flex w-full flex-col justify-start'>
             <div className='z-5 h-12'>
-              <div className='no-scrollbar flex h-full flex-row justify-start gap-x-3 overflow-x-scroll rounded-b-cl bg-cl-black px-16 sm:h-[52px]'>
+              <div className='no-scrollbar flex h-full flex-row justify-start gap-x-3 overflow-x-scroll rounded-b-cl bg-green-500 px-16 sm:h-[52px]'>
                 <TabButton
                   selected={selectedTab}
                   onClick={() => {

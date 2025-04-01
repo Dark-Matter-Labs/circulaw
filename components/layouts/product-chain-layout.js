@@ -11,7 +11,6 @@ import ThemaCard from '../product-chain-page/thema-cards';
 
 // TODO: See what we could move to a layout.js file instead of having everything in components.
 export default function PCLayout({ ...props }) {
-  console.log(props)
   return (
     <>
       <div>

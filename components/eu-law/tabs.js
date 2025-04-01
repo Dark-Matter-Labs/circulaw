@@ -24,14 +24,14 @@ export default function Tabs({ summaryData, initialTab, tabsRef, isSticky, navba
       >
         <div className='global-margin'>
           <div
-            className={`${isSticky ? 'rounded-cl' : '-translate-y-4 rounded-b-cl'} transiton no-scrollbar flex h-[87px] snap-x snap-mandatory flex-row content-end justify-start gap-x-3 overflow-x-scroll bg-cl-black px-16 duration-300 lgNav:block`}
+            className={`${isSticky ? 'rounded-cl' : '-translate-y-4 rounded-b-cl'} transiton no-scrollbar flex h-[87px] snap-x snap-mandatory flex-row content-end justify-start gap-x-3 overflow-x-scroll bg-green-500 px-16 duration-300 lgNav:block`}
           >
             <div className='p-2xs-semibold flex h-[57px] max-w-3xl flex-row justify-start gap-x-2 self-end text-green-500'>
               <Link
                 className={`${
                   selectedTab === 'overzicht'
-                    ? 'bg-green-100 text-green-500'
-                    : 'bg-green-500 text-white'
+                    ? 'bg-green-100 text-cl-black'
+                    : 'bg-green-300 text-green-500'
                 } flex h-full w-[73px] items-start justify-center rounded-t-cl px-3 py-2`}
                 href={{
                   pathname: `/eu-wetgeving/${summaryData?.slug?.current}`,
@@ -44,8 +44,8 @@ export default function Tabs({ summaryData, initialTab, tabsRef, isSticky, navba
               <Link
                 className={`${
                   selectedTab === 'verplichtingen-voor-europese-lidstaten'
-                    ? 'bg-green-100 text-green-500'
-                    : 'bg-green-500 text-white'
+                    ? 'bg-green-100 text-cl-black'
+                    : 'bg-green-300 text-green-500'
                 } flex h-full w-[140px] items-start justify-center rounded-t-cl px-3 py-2`}
                 href={{
                   pathname: `/eu-wetgeving/${summaryData?.slug?.current}`,
@@ -58,8 +58,8 @@ export default function Tabs({ summaryData, initialTab, tabsRef, isSticky, navba
               <Link
                 className={`${
                   selectedTab === 'relevantie-voor-regionale-en-lokale-overheden'
-                    ? 'bg-green-100 text-green-500'
-                    : 'bg-green-500 text-white'
+                    ? 'bg-green-100 text-cl-black'
+                    : 'bg-green-300 text-green-500'
                 } flex h-full w-[170px] items-start justify-center rounded-t-cl px-3 py-2`}
                 href={{
                   pathname: `/eu-wetgeving/${summaryData?.slug?.current}`,
@@ -72,8 +72,8 @@ export default function Tabs({ summaryData, initialTab, tabsRef, isSticky, navba
               <Link
                 className={`${
                   selectedTab === 'relevantie-voor-de-circulaire-economie'
-                    ? 'bg-green-100 text-green-500'
-                    : 'bg-green-500 text-white'
+                     ? 'bg-green-100 text-cl-black'
+                    : 'bg-green-300 text-green-500'
                 } flex h-full w-[140px] items-start justify-center rounded-t-cl px-3 py-2`}
                 href={{
                   pathname: `/eu-wetgeving/${summaryData?.slug?.current}`,

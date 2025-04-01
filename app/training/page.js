@@ -11,6 +11,7 @@ export default function LearningLandingPage() {
       <Header
         title='E-learning: circulaire houtbouw onder de Omgevingswet'
         bgColor='bg-green-500'
+        imageURL='/big-decoration.png'
       />
       <div className='global-margin relative my-16 flex'>
         <div className='max-w-[700px]'>

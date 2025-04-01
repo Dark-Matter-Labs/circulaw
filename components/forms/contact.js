@@ -60,7 +60,7 @@ export default function ContactPageComponent() {
   };
   return (
     <>
-      <Header title='Contact' bgColor='bg-green-500' />
+      <Header title='Contact' bgColor='bg-green-500' imageURL='/big-decoration.png' />
       <div className='global-margin'>
         {!formStatus ? (
           <>

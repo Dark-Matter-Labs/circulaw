@@ -60,7 +60,8 @@ export default function ThemeLevelSearch(props) {
         page='list'
         title={props.title}
         pageType='instrumentOverview'
-        bgColor='bg-cl-black'
+        bgColor='bg-green-500'
+        imageURL='/big-decoration.png'
       />
 
       <div className='mt-4 flex items-center justify-center'>

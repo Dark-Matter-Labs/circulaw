@@ -49,7 +49,8 @@ export default async function NewsDetailPage({ params }) {
     <>
       <Header
         title={newsPageContent.title}
-        bgColor={`bg-${newsPageContent.colour}`}
+        bgColor='bg-green-500'
+        imageURL='/big-decoration.png'
         pageType='news'
         newsData={newsPageContent}
       />

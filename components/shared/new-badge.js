@@ -2,7 +2,7 @@
 
 const varientStyles = {
   green: 'border-green-500 text-green-500',
-  white: 'border-white text-white',
+  white: 'border-green-100 text-green-100',
   black: 'border-cl-black text-cl-black',
 };
 

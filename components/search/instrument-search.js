@@ -32,7 +32,6 @@ export default function InstrumentSearch() {
   };
 
   const transformThemas = (items) => {
-    console.log(items);
     return items.map((item) => ({
       ...item,
       label: item.label.replace('-', ' '),

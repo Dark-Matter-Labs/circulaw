@@ -2,13 +2,10 @@
 
 import Image from 'next/image';
 
-import { IconArrowDown } from '@tabler/icons-react';
-
-import CustomButton from '../custom-button';
-import ScrollButton from '../scroll-button';
 import Badge from '../shared/new-badge';
 import Tag from '../shared/new-tag';
 import Breadcrumb from './breadcrumbs';
+import NewButton from '../shared/new-button';
 
 export default function Header({
   imageURL,
@@ -26,7 +23,7 @@ export default function Header({
         ref={headerRef}
         className={`${bgColor} global-margin mt-20 ${pageType === 'categorie' || pageType === 'euLaw' ? 'rounded-t-cl' : 'rounded-cl'}`}
       >
-        <div className='relative h-full w-full px-16 py-10 overflow-hidden'>
+        <div className='relative w-full h-full px-16 py-10 overflow-hidden'>
           {imageURL && (
             <>
               <Image
@@ -34,7 +31,7 @@ export default function Header({
                 alt='homepage decoration'
                 fill
                 sizes='100vw'
-                className='rounded-cl origin-top !w-auto !h-auto'
+                className={`${pageType === 'thema' ? 'object-cover' : '!w-auto !h-auto origin-top'} rounded-cl`}
                 priority={true}
                 quality={100}
               />
@@ -106,12 +103,12 @@ export default function Header({
                   )}
                 </div>
               )}
-              {pageType === 'news' && <Badge variant='black'>{props.newsData.category}</Badge>}
+              {pageType === 'news' && <Badge variant='white'>{props.newsData.category}</Badge>}
               {pageType === 'productChain' && (
                 <div className='p-base sm:heading-2xl-semibold text-green-300'>{subtitle}</div>
               )}
               <h1
-                className={`heading-3xl-semibold sm:heading-5xl-semibold inline-block ${pageType === 'news' ? 'text-cl-black' : 'text-green-100'}`}
+                className='heading-3xl-semibold sm:heading-5xl-semibold inline-block text-green-100'
               >
                 {title}
               </h1>
@@ -119,7 +116,7 @@ export default function Header({
                 <p className='p-base max-w-3xl pt-2 text-green-100'>{subtitle} </p>
               )}
               {pageType === 'news' && (
-                <p className='p-base max-w-3xl pt-2 text-cl-black'>{props.newsData.newsDate} </p>
+                <p className='heading-2xl-semibold max-w-3xl pt-2 text-green-100'>{props.newsData.newsDate} </p>
               )}
               {pageType === 'euOverview' && (
                 <>
@@ -128,12 +125,9 @@ export default function Header({
                     de circulaire doelen van jouw gemeente of provincie.
                   </p>
                   <div className='mt-8'>
-                    <ScrollButton to='laws' offset={-140}>
-                      <CustomButton color='euPage'>
-                        Bekijk de {props?.length} wetten{' '}
-                        <IconArrowDown className='ml-3 h-5 w-5 text-green-100' />
-                      </CustomButton>
-                    </ScrollButton>
+                    <NewButton icon='arrowDown' scrollTo='laws' variant='secondaryLight'>
+                    Bekijk de {props?.length} wetten{' '}
+                    </NewButton>
                   </div>
                 </>
               )}

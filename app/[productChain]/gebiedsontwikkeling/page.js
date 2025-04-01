@@ -11,6 +11,7 @@ export default function AreaPlanning({ params }) {
         <Header
           title='Stimuleer houtbouw in circulaire gebiedsontwikkeling'
           bgColor='bg-green-500'
+          imageURL='/big-decoration.png'
         />
         <div className='relative my-5 w-full items-center md:hidden'>
           <Image

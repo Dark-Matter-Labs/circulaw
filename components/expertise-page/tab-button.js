@@ -15,10 +15,10 @@ export default function TabButton({
           id='categorieTab'
           className={`${
             selected === name
-              ? 'bg-green-100 text-green-500'
-              : 'bg-green-500 text-green-100 hover:bg-green-400'
+              ? 'bg-green-100 text-cl-black'
+              : 'bg-green-300 text-green-500'
           } ${
-            numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50 hover:bg-green-500' : ''
+            numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50' : ''
           } flex flex-row items-center rounded-t-cl p-3`}
         >
           <div className='flex flex-row items-baseline'>
@@ -44,10 +44,10 @@ export default function TabButton({
           id='categorieTab'
           className={`${
             selected === name
-              ? 'bg-green-100 text-green-500'
-              : 'bg-green-500 text-green-100 hover:bg-green-400'
+              ? 'bg-green-100 text-cl-black'
+              : 'bg-green-300 text-green-500'
           } ${
-            numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50 hover:bg-green-500' : ''
+            numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50' : ''
           } flex flex-row items-center rounded-t-cl p-3`}
         >
           <div className='flex flex-row items-baseline'>
@@ -73,10 +73,10 @@ export default function TabButton({
           id='categorieTab'
           className={`${
             selected === name
-              ? 'bg-green-100 text-green-500'
-              : 'bg-green-500 text-green-100 hover:bg-green-400'
+              ? 'bg-green-100 text-cl-black'
+              : 'bg-green-300 text-green-500'
           } ${
-            numInstrument === 0 ? 'opacity-50 hover:bg-green-500' : ''
+            numInstrument === 0 ? 'opacity-50' : ''
           } flex flex-row items-center rounded-t-cl p-3`}
         >
           <div className='flex flex-row items-baseline'>

@@ -58,7 +58,8 @@ export default function GovLevelLayout({ ...props }) {
           productChain={props.transitionAgenda}
           title={props.title}
           page='welke'
-          bgColor='bg-cl-black'
+          bgColor='bg-green-500'
+          imageURL='/big-decoration.png'
           pageType='instrumentOverview'
         />
 

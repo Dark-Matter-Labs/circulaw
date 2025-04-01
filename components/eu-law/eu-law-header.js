@@ -72,7 +72,7 @@ export default function EULawHeader({ summaryData, initialTab }) {
     <>
       <Header
         title={summaryData?.title}
-        bgColor='bg-cl-black'
+        bgColor='bg-green-500'
         pageType='euLaw'
         headerRef={headerRef}
       />

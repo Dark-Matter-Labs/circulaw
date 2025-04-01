@@ -67,6 +67,7 @@ export default function NewsLetterComponent() {
         subtitle='Fijn dat je geïnteresseerd bent in CircuLaw-nieuws. Onze nieuwsbrief sturen we
                   alleen als we echt wat te melden hebben. Je hoeft dus niet bang te zijn voor een
                   overdaad aan berichten van ons.'
+        imageURL='/big-decoration.png'
       />
       <div className='global-margin'>
         {!formStatus ? (

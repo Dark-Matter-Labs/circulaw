@@ -30,7 +30,8 @@ export default async function Page() {
     <>
       <Header
         title='EU wet- en regelgeving voor een circulaire economie'
-        imageURL='/bg-eu.png'
+        imageURL='/big-decoration.png'
+        bgColor='bg-green-500'
         subtitle='Er komt een lawine van Europese wet- en regelgeving op ons af, gericht op de
               verduurzaming van onze maatschappij. Veel van deze nieuwe wet- en regelgeving valt
               onder de Green Deal, met als tussendoel Fit for 55.'

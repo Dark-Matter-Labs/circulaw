@@ -34,6 +34,7 @@ export default function Partners({ footerText, partnerLogos }) {
         </p>
         <hr className='border-green-100' />
         <div className='py-2 text-center'>
+          {/* TODO: add links to cookies and legal policies here when design is ready */}
           <span className='p-xs text-green-100'>
             Legal data & content managed with support from
           </span>
