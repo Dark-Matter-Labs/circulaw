@@ -31,6 +31,14 @@ export default function InstrumentSearch() {
     }));
   };
 
+  const transformThemas = (items) => {
+    console.log(items);
+    return items.map((item) => ({
+      ...item,
+      label: item.label.replace('-', ' '),
+    }));
+  };
+
   return (
     <>
       <div className='global-margin flex items-center justify-center'>
@@ -74,6 +82,7 @@ export default function InstrumentSearch() {
                         'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                     }}
                     sortBy={['label:asc']}
+                    transformItems={transformThemas}
                   />
                 </div>
                 <div className='mr-4 flex flex-col'>
@@ -117,7 +126,7 @@ export default function InstrumentSearch() {
                         'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                     }}
                     sortBy={['name:asc']}
-                    transformItems={transformItems}
+                    // transformItems={transformItems}
                   />
                 </div>
               </div>
@@ -167,6 +176,7 @@ export default function InstrumentSearch() {
                     'border-none bg-white text-[16px] p-base font-semibold before:content-["("] after:content-[")"]',
                 }}
                 sortBy={['label:asc']}
+                transformItems={transformThemas}
               />
             </div>
             <div className='mr-12 flex flex-col'>

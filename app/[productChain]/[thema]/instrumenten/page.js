@@ -47,7 +47,7 @@ export const dynamic = 'force-dynamic';
 export default async function InstrumentenPage({ params }) {
   return (
     <ThemeLevelSearch
-      title={`Lijst van alle ${params?.thema} instrumenten`}
+      title={`Lijst van alle ${params?.thema.replace('-', ' ')} instrumenten`}
       thema={params?.thema}
       productChain={params?.productChain}
       searchTitle={`Zoek in ${params?.thema}`}
