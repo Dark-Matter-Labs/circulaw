@@ -57,7 +57,7 @@ Navigate to /studio folder and run `sanity deploy` to deploy changes to CMS syst
 
 ### Analytics
 
-- [SimpleAnalytics](https://www.simpleanalytics.com/) for basic privacy centric analytics
+- [PiwikPro](https://piwik.pro/) for basic privacy centric analytics
 - [Hotjar](https://www.hotjar.com/) for more detailed testing for the beta
 
 ## License
