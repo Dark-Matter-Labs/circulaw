@@ -4,12 +4,12 @@ import TitleDecorator from '../title-decorator';
 
 export default function HomePageEUSection({ euData }) {
   return (
-    <div className='group flex flex-row items-center justify-between gap-x-20'>
+    <div className='group flex flex-col gap-y-8 sm:flex-row items-center justify-between gap-x-20'>
       <div className='relative basis-1/2'>
         <ImageComponent image={euData?.image} caption='' />
       </div>
       <div className='flex w-full basis-1/2 flex-col'>
-        <h2 className='heading-5xl-semibold sm:heading-5xl-semibold text-green-500'>
+        <h2 className='heading-3xl-semibold sm:heading-5xl-semibold sm:heading-5xl-semibold text-green-500'>
           EU wetgeving
         </h2>
         <TitleDecorator width='w-1/4' />
