@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { urlFor } from '@/lib/sanity';
 import newthemasvg from '@/public/new-thema-cta.svg';
 
-import CustomButton from '../custom-button';
 import NewButton from '../shared/new-button';
 import NewRoundButton from '../shared/new-round-button';
 
@@ -81,28 +80,9 @@ export default function ThemaCard({ themaCards }) {
             </div>
           </Link>
         ))}
-        {themaCards[0].transitionAgenda !== 'bouw' && (
-          <div className='w-full rounded-cl border border-green-100 bg-green-100'>
-            <Link href='/nieuwsbrief' className='h-full w-full'>
-              <div className='flex h-full w-full flex-grow justify-between p-6'>
-                <h3 className='heading-2xl-semibold pb-4 text-green-500'>Nieuwe thema’s</h3>
-                <p className='p-base text-gren-800'>
-                  Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
-                </p>
-                <p className='p-base pt-4 text-cl-black'>
-                  Schrijf je in op onze nieuwsbrief en blijf op de hoogte van de laatste
-                  ontwikkelingen.
-                </p>
-                <div className='flex grow self-baseline pt-6'>
-                  <CustomButton color='darkGreenBG'>Houd me op de hoogte </CustomButton>
-                </div>
-              </div>
-            </Link>
-          </div>
-        )}
       </div>
       {themaCards[0].transitionAgenda !== 'bouw' && (
-        <div className='mt-20 flex w-full flex-row items-center justify-between rounded-cl bg-green-400 px-20 py-6'>
+        <div className='mt-20 flex w-full flex-col md:flex-row items-center justify-between rounded-cl bg-green-400 px-6 md:px-20 py-6 gap-y-6'>
           <div className='flex flex-col items-center justify-between'>
             <Image src={newthemasvg} height={85} width={85} className='mb-4' />
             <h3 className='heading-2xl-semibold text-nowrap text-cl-black'>Nieuwe thema’s</h3>
@@ -115,7 +95,7 @@ export default function ThemaCard({ themaCards }) {
               Schrijf je in op onze nieuwsbrief en blijf op de hoogte van de laatste ontwikkelingen.
             </p>
           </div>
-          <div className='flex justify-center'>
+          <div className='flex justify-start md:justify-center w-full'>
             <NewButton variant='secondaryLight' href='/nieuwsbrief'>
               Houd me op de hoogte{' '}
             </NewButton>

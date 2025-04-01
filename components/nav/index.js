@@ -1076,13 +1076,13 @@ export default function Nav(props) {
         </nav>
       </div>
       {pathname === '/' && (
-        <div className='relative -mt-[9rem] min-h-[400px] md:min-h-[886px]'>
+        <div className='relative -mt-[9rem] min-h-[700px] md:min-h-[886px]'>
           <Image
             src='/home-page/homepage-header.png'
             alt='homepage decoration'
             fill
             sizes='100vw'
-            className='z-10 object-cover object-bottom'
+            className='z-10 object-cover object-center md:object-bottom'
             priority={true}
             quality={100}
           />

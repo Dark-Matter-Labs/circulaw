@@ -19,7 +19,6 @@ const navigation = {
     { name: 'Kunststoffen', slug: '/kunststoffen' },
   ],
 };
-// vraagSlug
 export default function Footer({ aboutSlugs, footerText, partnerLogos }) {
   const { CustomEvent } = usePiwikPro();
   const [moreInfoOpen, setMoreInfoOpen] = useState('hidden');
@@ -86,7 +85,6 @@ export default function Footer({ aboutSlugs, footerText, partnerLogos }) {
                       Jammer, vertel ons waarom niet, zodat we onze website kunnen verbeteren.
                     </h5>
                   )}
-
                   <div className='mt-2'>
                     <textarea
                       id='message'
@@ -98,7 +96,6 @@ export default function Footer({ aboutSlugs, footerText, partnerLogos }) {
                     />
                   </div>
                 </div>
-
                 <div className='mt-5 sm:mt-6'>
                   <NewButton
                     variant='secondaryDark'
@@ -169,6 +166,7 @@ export default function Footer({ aboutSlugs, footerText, partnerLogos }) {
                         </Link>
                       </div>
                     </div>
+             
                     <div className='border-b border-green-100 py-2 sm:border-0 sm:py-0'>
                       <h4 className='heading-2xl-semibold text-cl-black'>Productketens</h4>
                       <div className='grid grid-cols-1 gap-8 py-2 sm:py-0'>
@@ -216,6 +214,7 @@ export default function Footer({ aboutSlugs, footerText, partnerLogos }) {
                         </ul>
                       </div>
                     </div>
+                    <div />
                     <div className='hidden sm:block'>
                       <FooterLinkBlock
                         title='Schrijf je in voor onze CircuLaw Nieuwsbrief'
