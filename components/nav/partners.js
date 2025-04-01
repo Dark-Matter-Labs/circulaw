@@ -6,6 +6,15 @@ import sanityLogo from '@/public/logo_partners/sanity-logo.svg';
 
 import ParnerSection from './parner-section';
 
+const navigation = {
+  other: [
+    { name: 'Contact', href: '/contact', className: '' },
+    { name: 'Disclaimer/Beta', href: '/beta', className: '' },
+    { name: 'Privacy', href: '/privacy-policy', className: '' },
+    { name: 'Cookies', href: '/cookie-info', className: '' },
+  ],
+};
+
 export default function Partners({ footerText, partnerLogos }) {
   const pathname = usePathname();
 
@@ -33,14 +42,28 @@ export default function Partners({ footerText, partnerLogos }) {
           </Link>
         </p>
         <hr className='border-green-100' />
-        <div className='py-2 text-center'>
-          {/* TODO: add links to cookies and legal policies here when design is ready */}
-          <span className='p-xs text-green-100'>
-            Legal data & content managed with support from
-          </span>
-          <a target='_blank' href='https://www.sanity.io/' rel='noopener noreferrer'>
-            <Image className='mx-2 my-2 inline' src={sanityLogo} alt='Sanity logo' />
-          </a>
+        <div className='flex flex-col items-center justify-center py-2 pb-6 lgNav:flex-row lgNav:justify-between'>
+          <div className='flex basis-1/2 flex-col items-center lgNav:flex-row'>
+            {/* TODO: add links to cookies and legal policies here when design is ready */}
+            <span className='p-xs text-green-100'>
+              Legal data & content managed with support from
+            </span>
+            <a target='_blank' href='https://www.sanity.io/' rel='noopener noreferrer'>
+              <Image className='mx-2 my-2 inline' src={sanityLogo} alt='Sanity logo' />
+            </a>
+          </div>
+          <ul role='list' className='flex flex-row gap-x-4'>
+            {navigation.other.map((item) => (
+              <li key={item.name}>
+                <a
+                  href={item.href}
+                  className='p-base link-interaction-light-green-bg text-white underline'
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

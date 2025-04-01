@@ -11,12 +11,6 @@ import NewButton from '../shared/new-button';
 import FooterLinkBlock from './footer-link-block';
 
 const navigation = {
-  other: [
-    { name: 'Contact', href: '/contact', className: '' },
-    { name: 'Disclaimer/Beta', href: '/beta', className: '' },
-    { name: 'Privacy', href: '/privacy-policy', className: '' },
-    { name: 'Cookies', href: '/cookie-info', className: '' },
-  ],
   thema: [
     { name: 'Bouw', slug: '/bouw' },
     { name: 'Consumptiegoederen', slug: '/consumptiegoederen' },
@@ -209,34 +203,18 @@ export default function Footer({ aboutSlugs, footerText, partnerLogos }) {
                                 </a>
                               </li>
                             ))}
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div className='py-2 sm:py-0'>
-                      {/* 
-                      <ul role='list' className='space-y-4 mt-[50px]'>
-                        <li>
-                          <a
-                            className='p-base-semibold link-interaction text-white'
-                            href={vraagSlug}
-                          >
-                            <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
-                              Vraag en antwoord
-                            </span>
-                          </a>
-                        </li>
-                        {navigation.other.map((item) => (
-                          <li key={item.name}>
+                          <li>
                             <a
-                              href={item.href}
-                              className='p-base-semibold link-interaction-light-green-bg text-white'
+                              className='p-base-semibold link-interaction text-white'
+                              href='/vraag-en-antwoord'
                             >
-                              {item.name}
+                              <span className='link-interaction-light-green-bg inline-block first-letter:uppercase'>
+                                Vraag en antwoord
+                              </span>
                             </a>
                           </li>
-                        ))}
-                      </ul>*/}
+                        </ul>
+                      </div>
                     </div>
                     <div className='hidden sm:block'>
                       <FooterLinkBlock
