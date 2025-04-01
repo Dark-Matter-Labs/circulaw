@@ -37,7 +37,13 @@ export default function Instrument({ data }) {
   }, []);
   return (
     <div ref={ref} className='relative bg-green-100'>
-      <Header title={data.titel} bgColor='bg-green-500' pageType='instrument' data={data} imageURL='/big-decoration.png' />
+      <Header
+        title={data.titel}
+        bgColor='bg-green-500'
+        pageType='instrument'
+        data={data}
+        imageURL='/big-decoration.png'
+      />
       {/* Metadata */}
       <div className='flex w-full justify-items-start bg-green-100 sm:border-b sm:border-cl-grey'>
         <div className='global-margin w-full'>

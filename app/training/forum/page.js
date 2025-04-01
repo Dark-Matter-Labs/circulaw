@@ -10,7 +10,11 @@ import { DiscussionEmbed } from 'disqus-react';
 export default function ForumPage() {
   return (
     <div>
-      <Header title='Verder praten over circulaire houtbouw? Dat kan!' bgColor='bg-green-500' imageURL='/big-decoration.png' />
+      <Header
+        title='Verder praten over circulaire houtbouw? Dat kan!'
+        bgColor='bg-green-500'
+        imageURL='/big-decoration.png'
+      />
       <div className='global-margin my-16'>
         <div className='max-w-[700px]'>
           <p className='p-base mb-6'>

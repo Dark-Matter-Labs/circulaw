@@ -12,7 +12,7 @@ import Header from './headers';
 export default function FAQPageComponent({ data }) {
   return (
     <>
-      <Header title={data?.pageTitle} bgColor='bg-green-500' imageURL='/big-decoration.png'/>
+      <Header title={data?.pageTitle} bgColor='bg-green-500' imageURL='/big-decoration.png' />
       <div className='global-margin py-8'>
         <div className='grid w-full grid-cols-1 justify-start'>
           <div className='max-w-4xl px-16'>

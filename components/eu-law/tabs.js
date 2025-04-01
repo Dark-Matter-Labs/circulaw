@@ -72,7 +72,7 @@ export default function Tabs({ summaryData, initialTab, tabsRef, isSticky, navba
               <Link
                 className={`${
                   selectedTab === 'relevantie-voor-de-circulaire-economie'
-                     ? 'bg-green-100 text-cl-black'
+                    ? 'bg-green-100 text-cl-black'
                     : 'bg-green-300 text-green-500'
                 } flex h-full w-[140px] items-start justify-center rounded-t-cl px-3 py-2`}
                 href={{

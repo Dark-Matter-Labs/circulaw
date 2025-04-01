@@ -37,7 +37,7 @@ export default function PCHomePage({ pcData }) {
                       Consumptie-goederen
                     </div>
                   )}
-                    {chain.pcName === 'Bouw' && (
+                  {chain.pcName === 'Bouw' && (
                     <div className='heading-3xl-semibold min-h-[100px] items-end break-words pt-4 text-green-500'>
                       Bouw en infra
                     </div>

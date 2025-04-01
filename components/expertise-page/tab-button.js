@@ -14,9 +14,7 @@ export default function TabButton({
           onClick={onClick}
           id='categorieTab'
           className={`${
-            selected === name
-              ? 'bg-green-100 text-cl-black'
-              : 'bg-green-300 text-green-500'
+            selected === name ? 'bg-green-100 text-cl-black' : 'bg-green-300 text-green-500'
           } ${
             numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50' : ''
           } flex flex-row items-center rounded-t-cl p-3`}
@@ -43,9 +41,7 @@ export default function TabButton({
           onClick={onClick}
           id='categorieTab'
           className={`${
-            selected === name
-              ? 'bg-green-100 text-cl-black'
-              : 'bg-green-300 text-green-500'
+            selected === name ? 'bg-green-100 text-cl-black' : 'bg-green-300 text-green-500'
           } ${
             numInstrument === 0 && numInstruments2 === 0 ? 'opacity-50' : ''
           } flex flex-row items-center rounded-t-cl p-3`}
@@ -72,12 +68,8 @@ export default function TabButton({
           onClick={onClick}
           id='categorieTab'
           className={`${
-            selected === name
-              ? 'bg-green-100 text-cl-black'
-              : 'bg-green-300 text-green-500'
-          } ${
-            numInstrument === 0 ? 'opacity-50' : ''
-          } flex flex-row items-center rounded-t-cl p-3`}
+            selected === name ? 'bg-green-100 text-cl-black' : 'bg-green-300 text-green-500'
+          } ${numInstrument === 0 ? 'opacity-50' : ''} flex flex-row items-center rounded-t-cl p-3`}
         >
           <div className='flex flex-row items-baseline'>
             <h3 className='heading-xl-semibold sm:heading-2xl-semibold pr-1 first-letter:capitalize'>

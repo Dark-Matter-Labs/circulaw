@@ -13,7 +13,7 @@ export default function Breadcrumb({ pageType }) {
       <button
         type='button'
         onClick={() => router.back()}
-        className='p-2xs-semibold inline-flex h-min flex-row items-center justify-center rounded-full bg-green-100 py-1.5 px-3 align-middle text-green-500 hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'
+        className='p-2xs-semibold inline-flex h-min flex-row items-center justify-center rounded-full bg-green-100 px-3 py-1.5 align-middle text-green-500 hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'
       >
         <IconChevronLeft className='mr-1 size-4' />
         Terug
@@ -21,7 +21,7 @@ export default function Breadcrumb({ pageType }) {
     );
   } else {
     return (
-      <ul className='p-2xs-semibold inline-flex h-min flex-row items-center justify-center rounded-full bg-green-100 py-1.5 px-3 align-middle text-green-500 group-hover:text-green-400 group-focus:text-green-300 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
+      <ul className='p-2xs-semibold inline-flex h-min flex-row items-center justify-center rounded-full bg-green-100 px-3 py-1.5 align-middle text-green-500 group-hover:text-green-400 group-focus:text-green-300 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black'>
         {pageType !== 'instrument' && (
           <li key='home'>
             <Link

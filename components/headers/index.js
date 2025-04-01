@@ -3,9 +3,9 @@
 import Image from 'next/image';
 
 import Badge from '../shared/new-badge';
+import NewButton from '../shared/new-button';
 import Tag from '../shared/new-tag';
 import Breadcrumb from './breadcrumbs';
-import NewButton from '../shared/new-button';
 
 export default function Header({
   imageURL,
@@ -23,7 +23,7 @@ export default function Header({
         ref={headerRef}
         className={`${bgColor} global-margin mt-20 ${pageType === 'categorie' || pageType === 'euLaw' ? 'rounded-t-cl' : 'rounded-cl'}`}
       >
-        <div className='relative w-full h-full px-16 py-10 overflow-hidden'>
+        <div className='relative h-full w-full overflow-hidden px-16 py-10'>
           {imageURL && (
             <>
               <Image
@@ -31,12 +31,13 @@ export default function Header({
                 alt='homepage decoration'
                 fill
                 sizes='100vw'
-                className={`${pageType === 'thema' ? 'object-cover' : '!w-auto !h-auto origin-top'} rounded-cl`}
+                className={`${pageType === 'thema' ? 'object-cover' : '!h-auto !w-auto origin-top'} rounded-cl`}
                 priority={true}
                 quality={100}
               />
-              {pageType === 'thema' && <div className='absolute left-0 top-0 z-0 h-full w-full rounded-cl bg-gradient-to-t from-[#035E46] to-[#035E4600]'></div>}
-              
+              {pageType === 'thema' && (
+                <div className='absolute left-0 top-0 z-0 h-full w-full rounded-cl bg-gradient-to-t from-[#035E46] to-[#035E4600]'></div>
+              )}
             </>
           )}
           <div className='z-5 relative flex flex-col justify-between'>
@@ -107,16 +108,16 @@ export default function Header({
               {pageType === 'productChain' && (
                 <div className='p-base sm:heading-2xl-semibold text-green-300'>{subtitle}</div>
               )}
-              <h1
-                className='heading-3xl-semibold sm:heading-5xl-semibold inline-block text-green-100'
-              >
+              <h1 className='heading-3xl-semibold sm:heading-5xl-semibold inline-block text-green-100'>
                 {title}
               </h1>
               {(pageType === 'thema' || pageType === 'euOverview') && (
                 <p className='p-base max-w-3xl pt-2 text-green-100'>{subtitle} </p>
               )}
               {pageType === 'news' && (
-                <p className='heading-2xl-semibold max-w-3xl pt-2 text-green-100'>{props.newsData.newsDate} </p>
+                <p className='heading-2xl-semibold max-w-3xl pt-2 text-green-100'>
+                  {props.newsData.newsDate}{' '}
+                </p>
               )}
               {pageType === 'euOverview' && (
                 <>
@@ -126,7 +127,7 @@ export default function Header({
                   </p>
                   <div className='mt-8'>
                     <NewButton icon='arrowDown' scrollTo='laws' variant='secondaryLight'>
-                    Bekijk de {props?.length} wetten{' '}
+                      Bekijk de {props?.length} wetten{' '}
                     </NewButton>
                   </div>
                 </>

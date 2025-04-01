@@ -32,7 +32,11 @@ export default async function ModelTextPage({ params }) {
   if (params.productChain === 'bouw') {
     return (
       <>
-        <Header title='Aan de slag met het omgevingsplan' imageURL='/big-decoration.png' bgColor='bg-green-500' />
+        <Header
+          title='Aan de slag met het omgevingsplan'
+          imageURL='/big-decoration.png'
+          bgColor='bg-green-500'
+        />
         <div className='global-margin my-10 flex h-max flex-col bg-white sm:my-16'>
           <div className='flex max-w-[760px] flex-col'>
             <p className='p-base pb-6'>

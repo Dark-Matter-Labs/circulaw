@@ -56,7 +56,7 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
 
   return (
     <>
-      <Header title='Nieuws' bgColor='bg-green-500' imageURL='/big-decoration.png'/>
+      <Header title='Nieuws' bgColor='bg-green-500' imageURL='/big-decoration.png' />
       <div className='global-margin mt-20 flex flex-col'>
         <div className='mb-6 w-1/2'>
           <h3 className='heading-5xl-semibold text-green-500'>Uitgelichte nieuwsberichten</h3>

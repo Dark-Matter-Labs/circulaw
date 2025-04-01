@@ -12,7 +12,7 @@ import AboutPageNav from './about-page-nav';
 export default function AboutPageComponent({ data }) {
   return (
     <div>
-      <Header title={data?.pageTitle} imageURL='/big-decoration.png' bgColor='bg-green-500'/>
+      <Header title={data?.pageTitle} imageURL='/big-decoration.png' bgColor='bg-green-500' />
       <div className='global-margin pb-8 text-cl-black'>
         <div className='block w-full lg:hidden'>
           <AboutPageDropdown currentSlug={data?.slug.current} slugs={data?.slugs} />
