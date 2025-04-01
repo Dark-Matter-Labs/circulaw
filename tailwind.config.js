@@ -19,14 +19,17 @@ module.exports = {
         ]
       },
       colors: {
-        'green-100': '#F8FBF8', // keep
-        'green-200': '#D1F9EB', // keep
-        'green-300': '#84E9C5', // keep
-        'green-400': '#25C38B', // keep
-        'green-500': '#028352', // keep
-        'cl-grey': '#A2A3A2', // keep
-        'cl-dark-grey': '#676868', // keep
-        'cl-black': '#1F2223', // keep
+        'green-100': '#F8FBF8', 
+        'green-200': '#D1F9EB', 
+        'green-300': '#84E9C5', 
+        'green-400': '#25C38B', 
+        'green-500': '#028352', 
+        'orange-100': '#F7E3C3',
+        'orange-200': '#E9A63B',
+        'orange-300': '#E57238',
+        'cl-grey': '#A2A3A2',
+        'cl-dark-grey': '#676868', 
+        'cl-black': '#1F2223', 
       },
       fontFamily: {
         jakarta: ['var(--font-plus-jakarta-sans)'],
