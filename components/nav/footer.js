@@ -166,7 +166,7 @@ export default function Footer({ aboutSlugs, footerText, partnerLogos }) {
                         </Link>
                       </div>
                     </div>
-             
+
                     <div className='border-b border-green-100 py-2 sm:border-0 sm:py-0'>
                       <h4 className='heading-2xl-semibold text-cl-black'>Productketens</h4>
                       <div className='grid grid-cols-1 gap-8 py-2 sm:py-0'>

@@ -11,7 +11,9 @@ export default function HomepageHeader() {
       <div className='global-margin relative'>
         <div className='max-w-4xl text-left'>
           <div className='max-w-sm text-left text-green-100 sm:block sm:max-w-4xl'>
-            <h1 className='heading-3xl-semibold sm:heading-6xl-semibold block'>Regelgeving voor een circulaire economie</h1>{' '}
+            <h1 className='heading-3xl-semibold sm:heading-6xl-semibold block'>
+              Regelgeving voor een circulaire economie
+            </h1>{' '}
             <h2 className='p-base sm:heading-2xl-semibold mt-2 max-w-2xl pb-8 pt-6 text-left text-green-100'>
               CircuLaw laat decentrale overheden zien hoe je de circulaire transitie kunt
               versnellen. Per productketen bieden we juridische instrumenten op basis van de
@@ -31,7 +33,7 @@ export default function HomepageHeader() {
             </div>
           </div>
         </div>
-        <div className='group absolute -bottom-20 right-8 z-30 overflow-visible hidden sm:absolute'>
+        <div className='group absolute -bottom-20 right-8 z-30 hidden overflow-visible sm:absolute'>
           <Link href='/over/wat-is-circulaw' className='h-full w-full'>
             <Image
               src='/home-page/homepage-video-cta.png'

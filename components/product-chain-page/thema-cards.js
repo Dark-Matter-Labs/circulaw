@@ -82,7 +82,7 @@ export default function ThemaCard({ themaCards }) {
         ))}
       </div>
       {themaCards[0].transitionAgenda !== 'bouw' && (
-        <div className='mt-20 flex w-full flex-col md:flex-row items-center justify-between rounded-cl bg-green-400 px-6 md:px-20 py-6 gap-y-6'>
+        <div className='mt-20 flex w-full flex-col items-center justify-between gap-y-6 rounded-cl bg-green-400 px-6 py-6 md:flex-row md:px-20'>
           <div className='flex flex-col items-center justify-between'>
             <Image src={newthemasvg} height={85} width={85} className='mb-4' />
             <h3 className='heading-2xl-semibold text-nowrap text-cl-black'>Nieuwe thema’s</h3>
@@ -95,7 +95,7 @@ export default function ThemaCard({ themaCards }) {
               Schrijf je in op onze nieuwsbrief en blijf op de hoogte van de laatste ontwikkelingen.
             </p>
           </div>
-          <div className='flex justify-start md:justify-center w-full'>
+          <div className='flex w-full justify-start md:justify-center'>
             <NewButton variant='secondaryLight' href='/nieuwsbrief'>
               Houd me op de hoogte{' '}
             </NewButton>

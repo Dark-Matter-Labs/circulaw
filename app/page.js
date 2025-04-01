@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import Link from 'next/link';
+
 import HomePageEUSection from '@/components/homepage/home-page-eu-section';
 import PCHomePage from '@/components/homepage/product-chain-homepage';
 import InlineLink from '@/components/inline-link';
@@ -5,8 +8,6 @@ import FeaturedNewsSection from '@/components/news-page/featured-section';
 import TitleDecorator from '@/components/title-decorator';
 import { HOME_PAGE_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
-import Link from 'next/link';
-import Image from 'next/image';
 import { IconArrowRight } from '@tabler/icons-react';
 
 export default async function Page() {
@@ -18,30 +19,35 @@ export default async function Page() {
     <>
       <div className='global-margin'>
         <div className='mb-20 flex flex-col gap-y-6 sm:flex-row xl:gap-x-32' name='thema'>
-        <div className='mb-20 w-full flex items-center justify-center group sm:hidden relative'>
-          <Link href='/over/wat-is-circulaw' className='h-full w-full flex items-center justify-center'>
-            <Image
-              src='/home-page/homepage-video-cta.png'
-              alt='screenshot of CircuLaw animation'
-              width={760}
-              height={730}
-              className='-rotate-30 size-80'
-            />
-            <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform'>
-              <div className='flex flex-col gap-y-8'>
-                <h3 className='heading-4xl-semibold text-green-100'>Wat is CircuLaw?</h3>
+          <div className='group relative mb-20 flex w-full items-center justify-center sm:hidden'>
+            <Link
+              href='/over/wat-is-circulaw'
+              className='flex h-full w-full items-center justify-center'
+            >
+              <Image
+                src='/home-page/homepage-video-cta.png'
+                alt='screenshot of CircuLaw animation'
+                width={760}
+                height={730}
+                className='-rotate-30 size-80'
+              />
+              <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform'>
+                <div className='flex flex-col gap-y-8'>
+                  <h3 className='heading-4xl-semibold text-green-100'>Wat is CircuLaw?</h3>
 
-                <div className='heading-xl-semibold text-green-100 group-hover:underline'>
-                  Video bekijken
-                  <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />
+                  <div className='heading-xl-semibold text-green-100 group-hover:underline'>
+                    Video bekijken
+                    <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
-        </div>
+            </Link>
+          </div>
 
           <div className='flex basis-1/2 flex-col'>
-            <h2 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-500'>Ontdek direct onze instrumenten</h2>
+            <h2 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-500'>
+              Ontdek direct onze instrumenten
+            </h2>
             <TitleDecorator width='w-1/4' />
           </div>
           <div className='basis-1/2'>
@@ -66,7 +72,9 @@ export default async function Page() {
         </div>
         <div className='mb-40'>
           <div className='mb-20 sm:w-1/2'>
-            <h3 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-500'>Uitgelichte nieuwsberichten</h3>
+            <h3 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-500'>
+              Uitgelichte nieuwsberichten
+            </h3>
             <TitleDecorator width='w-1/4' />
           </div>
           <FeaturedNewsSection items={data.newsItems} />
