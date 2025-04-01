@@ -322,7 +322,7 @@ export default function Nav(props) {
                   }`,
                 ]
               : 'bg-green-50 shadow-lg'
-          } global-padding flex h-[70px] w-full flex-row items-center justify-between lgNav:min-h-max lgNav:w-auto lgNav:items-end`}
+          } global-padding flex h-[70px] w-full flex-row items-center justify-between lgNav:min-h-max lgNav:h-[98px] lgNav:w-auto lgNav:items-end`}
         >
           <>
             {/* LOGO */}
