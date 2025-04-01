@@ -33,7 +33,7 @@ export default function HomepageHeader() {
             </div>
           </div>
         </div>
-        <div className='group absolute -bottom-20 right-8 z-30 hidden overflow-visible sm:absolute'>
+        <div className='group absolute -bottom-20 right-8 z-30 hidden overflow-visible sm:block'>
           <Link href='/over/wat-is-circulaw' className='h-full w-full'>
             <Image
               src='/home-page/homepage-video-cta.png'
@@ -45,7 +45,6 @@ export default function HomepageHeader() {
             <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform'>
               <div className='flex flex-col gap-y-8'>
                 <h3 className='heading-4xl-semibold text-green-100'>Wat is CircuLaw?</h3>
-
                 <div className='heading-xl-semibold text-green-100 group-hover:underline'>
                   Video bekijken
                   <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />

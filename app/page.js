@@ -43,7 +43,6 @@ export default async function Page() {
               </div>
             </Link>
           </div>
-
           <div className='flex basis-1/2 flex-col'>
             <h2 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-500'>
               Ontdek direct onze instrumenten
