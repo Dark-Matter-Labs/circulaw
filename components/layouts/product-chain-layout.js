@@ -3,7 +3,6 @@ import Link from 'next/link';
 
 import { urlFor } from '@/lib/sanity';
 
-import CustomButton from '../custom-button';
 import Header from '../headers';
 import Modal from '../modal/modal';
 import ModalContent from '../modal/modal-content';
@@ -152,11 +151,9 @@ export default function PCLayout({ ...props }) {
                     </h4>
                     <p className='p-base max-w-xl pb-4 pt-4'>{ambition.detail}</p>
                     {ambition.buttonText && (
-                      <Link href={ambition.buttonLink}>
-                        <CustomButton color='lightGreenBackground'>
-                          {ambition.buttonText}
-                        </CustomButton>
-                      </Link>
+                      <NewButton variant='primaryDark' href={ambition.buttonLink}>
+                        {ambition.buttonText}
+                      </NewButton>
                     )}
                   </div>
                   <div className='hidden sm:block'>
@@ -197,11 +194,9 @@ export default function PCLayout({ ...props }) {
                     </h4>
                     <p className='p-base max-w-xl pb-4 pt-4'>{ambition.detail}</p>
                     {ambition.buttonText && (
-                      <Link href={ambition.buttonLink}>
-                        <CustomButton color='lightGreenBackground'>
-                          {ambition.buttonText}
-                        </CustomButton>
-                      </Link>
+                      <NewButton variant='primaryDark' href={ambition.buttonLink}>
+                        {ambition.buttonText}
+                      </NewButton>
                     )}
                   </div>
                 </div>
