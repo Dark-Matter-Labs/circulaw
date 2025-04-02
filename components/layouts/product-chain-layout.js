@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { urlFor } from '@/lib/sanity';
+import { IconExternalLink } from '@tabler/icons-react';
 
 import Header from '../headers';
 import Modal from '../modal/modal';
@@ -44,7 +45,6 @@ export default function PCLayout({ ...props }) {
           thema={props?.thema}
           productChain={props.productChain}
         />
-
         <div className=''>
           <div className='global-margin pb-12 sm:pb-20'>
             <div className='pb-0 pt-14 sm:pb-10'>
@@ -208,23 +208,7 @@ export default function PCLayout({ ...props }) {
           <div className='pb-10 pt-14'>
             <div className='global-margin'>
               <h2 className='heading-2xl-semibold sm:heading-3xl-semibold pb-14 text-cl-black'>
-                Duik nog dieper in de materie{' '}
-                <span className='relative -mb-1 inline-block h-6 w-6 pl-0.5'>
-                  <svg
-                    className='h-6 w-6 stroke-current'
-                    viewBox='0 0 24 24'
-                    fill='none'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <path
-                      d='M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14'
-                      stroke=''
-                      strokeWidth='2'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                    />
-                  </svg>
-                </span>
+                Duik nog dieper in de materie <IconExternalLink className='inline-block' />
               </h2>
               <div className='newlineDisplay p-base -mt-2 mb-6'>
                 <ul className='p-base list-disc pl-6'>
