@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 import HomePageEUSection from '@/components/homepage/home-page-eu-section';
 import PCHomePage from '@/components/homepage/product-chain-homepage';
-import InlineLink from '@/components/shared/inline-link';
 import FeaturedNewsSection from '@/components/news-page/featured-section';
+import InlineLink from '@/components/shared/inline-link';
 import TitleDecorator from '@/components/title-decorator';
 import { HOME_PAGE_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';

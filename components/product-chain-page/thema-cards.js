@@ -82,7 +82,7 @@ export default function ThemaCard({ themaCards }) {
         ))}
       </div>
       {themaCards[0].transitionAgenda !== 'bouw' && (
-        <div className='mt-20 flex w-full flex-col items-center justify-between gap-y-6 rounded-cl bg-green-400 px-6 py-6 md:flex-row md:px-20'>
+        <div className='mt-20 flex w-full flex-col items-center justify-between gap-y-6 rounded-cl bg-green-400 px-6 py-6 md:flex-row md:px-24'>
           <div className='flex flex-col items-center justify-between'>
             <Image
               src={newthemasvg}
@@ -93,7 +93,7 @@ export default function ThemaCard({ themaCards }) {
             />
             <h3 className='heading-2xl-semibold text-nowrap text-cl-black'>Nieuwe thema’s</h3>
           </div>
-          <div className='max-w-[550px]'>
+          <div className='max-w-[400px]'>
             <p className='p-base text-cl-black'>
               Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
             </p>
@@ -101,8 +101,8 @@ export default function ThemaCard({ themaCards }) {
               Schrijf je in op onze nieuwsbrief en blijf op de hoogte van de laatste ontwikkelingen.
             </p>
           </div>
-          <div className='flex w-full justify-start md:justify-center'>
-            <NewButton variant='secondaryLight' href='/nieuwsbrief'>
+          <div className='flex justify-start w-full md:w-auto md:justify-center'>
+            <NewButton variant='secondaryLight' href='/nieuwsbrief' icon='arrowRight'>
               Houd me op de hoogte{' '}
             </NewButton>
           </div>
