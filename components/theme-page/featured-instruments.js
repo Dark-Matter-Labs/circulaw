@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import InstrumentCard from '../instrument/instrument-card';
 
-export default function ThemeBottomSection({ featuredLaws, thema }) {
+export default function FeaturedInstruments({ featuredLaws, thema }) {
   const [images, setImages] = useState();
   useEffect(() => {
     if (

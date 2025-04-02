@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import CustomButton from '@/components/custom-button';
-import ThemeBottomSection from '@/components/theme-page/section-bottom-theme-index';
+import FeaturedInstruments from '@/components/theme-page/section-bottom-theme-index';
 import elearning from '@/public/e-learning.png';
 import list from '@/public/thema-card-background/list.svg';
 import samenhang from '@/public/thema-card-background/samenhang.svg';
@@ -392,7 +392,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
           </div>
 
           <div className=''>
-            <ThemeBottomSection featuredLaws={featuredLaws} thema={thema} />
+            <FeaturedInstruments featuredLaws={featuredLaws} thema={thema} />
           </div>
           {thema?.reports && (
             <div className='global-margin'>
