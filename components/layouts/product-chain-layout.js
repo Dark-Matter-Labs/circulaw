@@ -151,7 +151,7 @@ export default function PCLayout({ ...props }) {
                     </h4>
                     <p className='p-base max-w-xl pb-4 pt-4'>{ambition.detail}</p>
                     {ambition.buttonText && (
-                      <NewButton variant='primaryDark' href={ambition.buttonLink}>
+                      <NewButton variant='primaryDark' href={ambition.buttonLink} icon='arrowRight'>
                         {ambition.buttonText}
                       </NewButton>
                     )}
@@ -194,7 +194,7 @@ export default function PCLayout({ ...props }) {
                     </h4>
                     <p className='p-base max-w-xl pb-4 pt-4'>{ambition.detail}</p>
                     {ambition.buttonText && (
-                      <NewButton variant='primaryDark' href={ambition.buttonLink}>
+                      <NewButton variant='primaryDark' href={ambition.buttonLink} icon='arrowRight'>
                         {ambition.buttonText}
                       </NewButton>
                     )}
