@@ -74,7 +74,6 @@ export default function EULawHeader({ summaryData, initialTab }) {
         title={summaryData?.title}
         bgColor='bg-green-500'
         pageType='euLaw'
-        imageURL='/big-decoration.png'
         headerRef={headerRef}
       />
       <Tabs

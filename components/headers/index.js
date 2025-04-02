@@ -21,7 +21,7 @@ export default function Header({
       <div
         id='header'
         ref={headerRef}
-        className={`${bgColor} global-margin mt-10 sm:mt-20 ${pageType === '' || pageType === 'euLaw' ? 'rounded-t-cl' : 'rounded-cl'}`}
+        className={`${bgColor} global-margin mt-10 sm:mt-20 ${pageType === 'euLaw' ? 'rounded-t-cl' : 'rounded-cl'}`}
       >
         <div
           className={`${pageType === 'categorie' ? 'pb-[116px] sm:pt-10' : ''} relative h-full w-full overflow-hidden p-6 sm:px-16`}
