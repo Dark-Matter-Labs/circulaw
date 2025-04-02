@@ -1,6 +1,6 @@
 export default function ContentNine() {
   return (
-    <div className='flex max-w-[290px] flex-col gap-y-4 text-green-600'>
+    <div className='flex max-w-[290px] flex-col gap-y-4 text-green-500'>
       <h3 className='heading-2xl-semibold'>Omgevingsplan</h3>
       <p className='p-base'>
         Bevat alle <span className='p-base-semibold'>gemeentelijke regels</span> over de{' '}

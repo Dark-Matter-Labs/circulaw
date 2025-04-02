@@ -60,32 +60,32 @@ export default function ElearnignLiveEvent() {
     <div className='global-margin'>
       {!formStatus ? (
         <>
-          <h1 className='heading-2xl-semibold sm:heading-5xl-semibold max-w-4xl pt-10 text-green-600'>
+          <h1 className='heading-2xl-semibold sm:heading-5xl-semibold max-w-4xl pt-10 text-green-500'>
             Livesessie: Circulaire houtbouw onder de Omgevingswet
           </h1>
           <div className='mb-20 mt-8 max-w-3xl'>
-            <p className='pb-6 text-gray-800 sm:col-span-2'>
+            <p className='pb-6 text-cl-black sm:col-span-2'>
               Wat fijn dat je de e-learning over circulaire houtbouw onder de Omgevingswet hebt
               afgerond! En wat leuk dat je interesse hebt in de verdiepende livesessie, op{' '}
               <span className='p-base-semibold'>8 april in het AMS Institute, Amsterdam.</span>
             </p>
-            <p className='pb-6 text-gray-800'>
+            <p className='pb-6 text-cl-black'>
               Als je hieronder je gegevens invult, dan laten we je snel weten of je wordt
               uitgenodigd. Je ontvangt dan ook alle details over het programma.
             </p>
-            <p className='pb-6 text-gray-800'>
+            <p className='pb-6 text-cl-black'>
               Er is een beperkt aantal plekken. We maken een selectie op basis van je rol en je
               profiel.
             </p>
-            <p className='text-gray-800'>Misschien tot snel,</p>
-            <p className='pb-8 text-gray-800'>Team Circulaw</p>
+            <p className='text-cl-black'>Misschien tot snel,</p>
+            <p className='pb-8 text-cl-black'>Team Circulaw</p>
 
             <h3 className='heading-3xl-semibold mt-6'>Ik wil me aanmelden voor de livesessie</h3>
 
             <div className='mt-12 sm:col-span-2'>
               <label
                 htmlFor='isElearningFinished'
-                className='heading-xl-semibold sm:heading-2xl-semibold mb-2 block text-gray-800'
+                className='heading-xl-semibold sm:heading-2xl-semibold mb-2 block text-cl-black'
               >
                 Heb je de e-learning afgerond?
               </label>
@@ -99,9 +99,9 @@ export default function ElearnignLiveEvent() {
                   value='true'
                   checked={hasCompleted}
                   onChange={() => setHasCompleted(true)}
-                  className='text-green-800 checked:bg-green-800'
+                  className='text-cl-black checked:bg-cl-black'
                 />
-                <label className='block pl-2 pr-4 text-gray-800'>Ja</label>
+                <label className='block pl-2 pr-4 text-cl-black'>Ja</label>
 
                 <input
                   type='radio'
@@ -109,9 +109,9 @@ export default function ElearnignLiveEvent() {
                   value='false'
                   checked={hasCompleted === false}
                   onChange={() => setHasCompleted(false)}
-                  className='text-green-800 checked:bg-green-800'
+                  className='text-cl-black checked:bg-cl-black'
                 />
-                <label className='block pl-2 text-gray-800'>Nee</label>
+                <label className='block pl-2 text-cl-black'>Nee</label>
               </div>
             </div>
 
@@ -128,7 +128,7 @@ export default function ElearnignLiveEvent() {
                   <div>
                     <label
                       htmlFor='first-name'
-                      className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                      className='heading-xl-semibold sm:heading-2xl-semibold block text-cl-black'
                     >
                       Wat is je naam? <span className='text-green-400'>*</span>
                     </label>
@@ -138,7 +138,7 @@ export default function ElearnignLiveEvent() {
                         name='name'
                         id='first-name'
                         autoComplete='given-name'
-                        className='block w-full rounded-cl border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                        className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-500 focus:ring-green-500'
                         value={query.name}
                         onChange={handleChange()}
                         required
@@ -148,7 +148,7 @@ export default function ElearnignLiveEvent() {
                   <div className='sm:col-span-2'>
                     <label
                       htmlFor='company'
-                      className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                      className='heading-xl-semibold sm:heading-2xl-semibold block text-cl-black'
                     >
                       Voor welke organisatie werk je? <span className='text-green-400'>*</span>
                     </label>
@@ -158,7 +158,7 @@ export default function ElearnignLiveEvent() {
                         name='org'
                         id='company'
                         autoComplete='organization'
-                        className='block w-full rounded-cl border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                        className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-500 focus:ring-green-500'
                         value={query.org}
                         onChange={handleChange()}
                         required
@@ -168,7 +168,7 @@ export default function ElearnignLiveEvent() {
                   <div className='sm:col-span-2'>
                     <label
                       htmlFor='role'
-                      className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                      className='heading-xl-semibold sm:heading-2xl-semibold block text-cl-black'
                     >
                       Wat is je functie/rol? <span className='text-green-400'>*</span>
                     </label>
@@ -178,7 +178,7 @@ export default function ElearnignLiveEvent() {
                         name='role'
                         id='role'
                         autoComplete='role'
-                        className='block w-full rounded-cl border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                        className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-500 focus:ring-green-500'
                         value={query.role}
                         onChange={handleChange()}
                         required
@@ -188,7 +188,7 @@ export default function ElearnignLiveEvent() {
                   <div className='sm:col-span-2'>
                     <label
                       htmlFor='email'
-                      className='heading-xl-semibold sm:heading-2xl-semibold block text-gray-800'
+                      className='heading-xl-semibold sm:heading-2xl-semibold block text-cl-black'
                     >
                       Op welk e-mailadres kunnen we je bereiken?{' '}
                       <span className='text-green-400'>*</span>
@@ -199,7 +199,7 @@ export default function ElearnignLiveEvent() {
                         name='email'
                         type='email'
                         autoComplete='email'
-                        className='block w-full rounded-cl border-gray-300 px-4 py-3 shadow-sm focus:border-green-600 focus:ring-green-600'
+                        className='block w-full rounded-cl border-cl-grey px-4 py-3 shadow-sm focus:border-green-500 focus:ring-green-500'
                         aria-describedby='emailHelp'
                         required
                         value={query.email}
@@ -210,18 +210,18 @@ export default function ElearnignLiveEvent() {
                   <div className='mt-1 flex items-baseline'>
                     <input type='hidden' name='subscribe' value='no' />
                     <input type='checkbox' name='subscribe' value='yes' onChange={handleChange()} />
-                    <label className='heading-xl-semibold sm:heading-2xl-semibold block pl-2 text-gray-800'>
+                    <label className='heading-xl-semibold sm:heading-2xl-semibold block pl-2 text-cl-black'>
                       Abonneren op de nieuwsbrief
                     </label>
                   </div>
                   <div className='sm:col-span-2'>
                     <div className=''>
-                      <p className='text-gray-500'>
+                      <p className='text-cl-grey'>
                         Door verzenden geef je akkoord dat we je mogen benaderen als we meer vragen
                         hebben of je op de hoogte willen houden van je vraag of opmerking. Je
                         gegevens zullen nooit gebruikt worden voor andere doeleinden. Lees onze{' '}
                         <Link href='/privacy-policy' className='link-interaction'>
-                          <span className='text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'>
+                          <span className='text-green-500 hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'>
                             privacy verklaring.
                           </span>
                         </Link>
@@ -233,7 +233,7 @@ export default function ElearnignLiveEvent() {
                     <button
                       type='submit'
                       className={
-                        'button inline-flex items-center rounded-full border-2 border-green-600 bg-transparent px-4 py-2 text-green-600 hover:bg-green-200 focus:bg-green-100 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-300'
+                        'button inline-flex items-center rounded-full border-2 border-green-500 bg-transparent px-4 py-2 text-green-500 hover:bg-green-300 focus:bg-green-200 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-400'
                       }
                     >
                       Verzenden &rarr;
@@ -246,7 +246,7 @@ export default function ElearnignLiveEvent() {
               </>
             )}
             {hasCompleted === false && (
-              <p className='mt-2 pb-6 text-gray-800'>
+              <p className='mt-2 pb-6 text-cl-black'>
                 Heb je de e-learning Circulaire Houtbouw nog niet gedaan?{' '}
                 <Link
                   className='link-base link-interaction'
@@ -261,10 +261,10 @@ export default function ElearnignLiveEvent() {
         </>
       ) : (
         <>
-          <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pt-10 text-green-600'>
+          <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pt-10 text-green-500'>
             Bedankt!
           </h1>
-          <p className='p-base max-w-2xl py-10 text-gray-800'>
+          <p className='p-base max-w-2xl py-10 text-cl-black'>
             Dank voor je interesse! Je hoort van ons
           </p>
           <div className='pb-20 sm:col-span-2'>
