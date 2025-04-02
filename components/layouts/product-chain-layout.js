@@ -1,15 +1,36 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import CustomButton from '@/components/custom-button';
 import { urlFor } from '@/lib/sanity';
 
+import CustomButton from '../custom-button';
 import Header from '../headers';
 import Modal from '../modal/modal';
 import ModalContent from '../modal/modal-content';
 import ThemaCard from '../product-chain-page/thema-cards';
+import NewButton from '../shared/new-button';
 
-// TODO: See what we could move to a layout.js file instead of having everything in components.
+const callToActions = [
+  {
+    title: 'Planregels: modelteksten voor het omgevingsplan',
+    text: 'Samen met de omgevingsvisie en omgevingsprogramma is het omgevingsplan een van de instrumenten om circulair bouwen te bevorderen',
+    buttonText: 'Meer over het omgevingsplan',
+    link: '/bouw/planregels',
+  },
+  {
+    title: 'E-learning Circulaire houtbouw onder de Omgevingswet',
+    text: 'Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw teverankeren in beleid? Dat leer je in onze e-learning: "Circulaire houtbouw onder de Omgevingswet".',
+    buttonText: 'Lees verder',
+    link: '/training',
+  },
+  {
+    title: 'Veranker houtbouw in gebiedsontwikkeling',
+    text: 'Samen met de omgevingsvisie en omgevingsprogramma is het omgevingsplan een van de instrumenten om circulair bouwen te bevorderen',
+    buttonText: 'Lees verder',
+    link: '/bouw/gebiedsontwikkeling',
+  },
+];
+
 export default function PCLayout({ ...props }) {
   return (
     <>
@@ -44,130 +65,16 @@ export default function PCLayout({ ...props }) {
             </div>
             <div>
               {props.productChainData.pcName === 'Bouw' && (
-                <>
-                  <div className='max-w-8xl relative z-0 mt-20 hidden grid-cols-2 gap-x-4 gap-y-8 sm:grid sm:gap-x-4 md:grid-cols-2 lg:grid-cols-3'>
-                    <div className='group w-full flex-grow rounded-cl border border-green-100 bg-green-100'>
-                      <Link href='/training' className='h-full w-full'>
-                        <div className='flex h-full w-full flex-grow flex-col justify-between gap-y-2 p-6'>
-                          <h3 className='heading-2xl-semibold text-green-500'>
-                            E-learning Circulaire houtbouw onder de Omgevingswet
-                          </h3>
-                          <div>
-                            <p className='p-base pt-4 text-cl-black'>
-                              Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw te
-                              verankeren in beleid? Dat leer je in onze e-learning: ‘Circulaire
-                              houtbouw onder de Omgevingswet’.
-                            </p>
-                          </div>
-                          <div className='flex justify-center'>
-                            <CustomButton color='darkGreenBG'>
-                              <span className='flex w-full flex-col'>
-                                <span>Meer over de</span>{' '}
-                                <span className='block'>e-learning houtbouw</span>
-                              </span>{' '}
-                            </CustomButton>
-                          </div>
-                        </div>
-                      </Link>
-                    </div>
-                    <div className='group w-full flex-grow rounded-cl border border-green-100 bg-green-100'>
-                      <Link href='/bouw/planregels' className='h-full w-full'>
-                        <div className='flex h-full w-full flex-grow flex-col justify-between gap-y-2 p-6'>
-                          <h3 className='heading-2xl-semibold text-green-500'>
-                            Planregels: modelteksten voor het omgevingsplan
-                          </h3>
-                          <div>
-                            <p className='p-base pt-4 text-cl-black'>
-                              Samen met de omgevingsvisie en omgevingsprogramma is het omgevingsplan
-                              een van de instrumenten om circulair bouwen te bevorderen
-                            </p>
-                          </div>
-                          <div className='flex justify-center'>
-                            <CustomButton color='darkGreenBG'>
-                              Meer over het omgevingsplan{' '}
-                            </CustomButton>
-                          </div>
-                        </div>
-                      </Link>
-                    </div>
-
-                    <div className='group w-full flex-grow rounded-cl border border-gray-200 bg-green-50'>
-                      <Link href='/bouw/gebiedsontwikkeling' className='h-full w-full'>
-                        <div className='flex h-full w-full flex-grow flex-col justify-between gap-y-2 p-6'>
-                          <h3 className='heading-2xl-semibold text-wrap text-green-600'>
-                            Veranker houtbouw in gebiedsontwikkeling
-                          </h3>
-                          <div>
-                            <p className='p-base pt-4 text-green-800'>
-                              Het proces van gebiedsontwikkeling biedt kansen om circulariteit te
-                              stimuleren
-                            </p>
-                          </div>
-                          <div className='flex justify-center'>
-                            <CustomButton color='darkGreenBG'>Lees verder</CustomButton>
-                          </div>
-                        </div>
-                      </Link>
-                    </div>
-                  </div>
-
-                  <div className='mt-6 block w-full rounded-cl border border-green-100 bg-green-100 sm:hidden'>
-                    <Link href='/training' className='h-full w-full'>
-                      <div className='flex h-full w-full flex-grow flex-col justify-between p-6'>
-                        <h3 className='heading-2xl-semibold pb-4 text-green-500'>
-                          E-learning Circulaire houtbouw onder de Omgevingswet{' '}
-                        </h3>
-                        <p className='p-base text-gren-800'>
-                          Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw te
-                          verankeren in beleid? Dat leer je in onze e-learning: &apos;Circulaire
-                          houtbouw onder de Omgevingswet&apos;.
-                        </p>
-
-                        <div className='flex grow self-baseline pt-6'>
-                          <CustomButton color='darkGreenBG'>
-                            Meer over de e-learning houtbouw{' '}
-                          </CustomButton>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                  <div className='mt-6 block w-full rounded-cl border border-green-100 bg-green-100 sm:hidden'>
-                    <Link href='/training' className='h-full w-full'>
-                      <div className='flex h-full w-full flex-grow flex-col justify-between p-6'>
-                        <h3 className='heading-2xl-semibold pb-4 text-green-500'>
-                          Planregels: modelteksten voor het omgevingsplan
-                        </h3>
-                        <p className='p-base text-gren-800'>
-                          Samen met de omgevingsvisie en omgevingsprogramma is het omgevingsplan een
-                          van de instrumenten om circulair bouwen te bevorderen
-                        </p>
-
-                        <div className='flex grow self-baseline pt-6'>
-                          <CustomButton color='darkGreenBG'>
-                            Meer over het omgevingsplan{' '}
-                          </CustomButton>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                  <div className='mt-6 block w-full rounded-cl border border-gray-200 bg-green-50 sm:hidden'>
-                    <Link href='/bouw/gebiedsontwikkeling' className='h-full w-full'>
-                      <div className='flex h-full w-full flex-grow flex-col justify-between p-6'>
-                        <h3 className='heading-2xl-semibold pb-4 text-green-600'>
-                          Veranker houtbouw in gebiedsontwikkeling
-                        </h3>
-                        <p className='p-base text-gren-800'>
-                          Het proces van gebiedsontwikkeling biedt kansen om circulariteit te
-                          stimuleren
-                        </p>
-
-                        <div className='flex grow self-baseline pt-6'>
-                          <CustomButton color='darkGreenBG'>Lees verder </CustomButton>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                </>
+                <div className='max-w-8xl relative z-0 mt-20 grid grid-cols-1 gap-x-4 gap-y-8 sm:gap-x-4 md:grid-cols-2 lg:grid-cols-3'>
+                  {callToActions.map((cta, id) => (
+                    <CallToAction
+                      key={id}
+                      title={cta.title}
+                      text={cta.text}
+                      buttonText={cta.buttonText}
+                    />
+                  ))}
+                </div>
               )}
             </div>
           </div>
@@ -345,5 +252,25 @@ export default function PCLayout({ ...props }) {
         )}
       </div>
     </>
+  );
+}
+
+function CallToAction({ title, text, buttonText }) {
+  return (
+    <div className='group w-full rounded-cl border border-green-100 bg-green-100'>
+      <Link href='/training' className='h-full w-full'>
+        <div className='flex h-full w-full flex-grow flex-col justify-between gap-y-6 p-6'>
+          <h3 className='heading-2xl-semibold text-green-500'>{title}</h3>
+          <div>
+            <p className='p-base pt-4 text-cl-black'>{text}</p>
+          </div>
+          <div className='flex justify-start'>
+            <NewButton variant='secondaryDark' icon='arrowRight'>
+              {buttonText}
+            </NewButton>
+          </div>
+        </div>
+      </Link>
+    </div>
   );
 }

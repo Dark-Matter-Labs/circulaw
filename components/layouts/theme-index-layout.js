@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import CustomButton from '@/components/custom-button';
-import FeaturedInstruments from '@/components/theme-page/section-bottom-theme-index';
+import FeaturedInstruments from '@/components/theme-page/featured-instruments';
 import elearning from '@/public/e-learning.png';
 import list from '@/public/thema-card-background/list.svg';
 import samenhang from '@/public/thema-card-background/samenhang.svg';

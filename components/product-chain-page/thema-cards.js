@@ -84,7 +84,13 @@ export default function ThemaCard({ themaCards }) {
       {themaCards[0].transitionAgenda !== 'bouw' && (
         <div className='mt-20 flex w-full flex-col items-center justify-between gap-y-6 rounded-cl bg-green-400 px-6 py-6 md:flex-row md:px-20'>
           <div className='flex flex-col items-center justify-between'>
-            <Image src={newthemasvg} height={85} width={85} className='mb-4' />
+            <Image
+              src={newthemasvg}
+              alt='small icon representing thema'
+              height={85}
+              width={85}
+              className='mb-4'
+            />
             <h3 className='heading-2xl-semibold text-nowrap text-cl-black'>Nieuwe thema’s</h3>
           </div>
           <div className='max-w-[550px]'>
