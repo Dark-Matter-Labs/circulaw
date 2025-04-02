@@ -14,6 +14,7 @@ import waarvoor from '@/public/thema-card-background/waarvoor.svg';
 import { IconArrowRight } from '@tabler/icons-react';
 
 import Header from '../headers';
+import NewButton from '../shared/new-button';
 import ThemeSponsors from '../theme-page/theme-sponsors';
 
 // TODO: See what we could move to a layout.js file instead of having everything in components.
@@ -102,34 +103,28 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                   </div>
 
                   <div className='col-span-1'>
-                    <Link href='/training' className='w-full'>
-                      <div className='flex h-full w-full cursor-pointer flex-col rounded-cl bg-green-100 p-4 shadow-md'>
-                        <Image
-                          src={elearning}
-                          width={406}
-                          height={172}
-                          alt='comment image'
-                          className='rounded-cl'
-                        />
-                        <div className='flex h-full w-full flex-col justify-between px-4 pt-4'>
-                          <div className='heading-2xl-semibold mb-2'>
-                            E-learning Circulaire houtbouw onder de Omgevingswet
-                          </div>
-                          <div className='p-base mb-4'>
-                            Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw te
-                            verankeren in beleid? Dat leer je in onze e-learning: ‘Circulaire
-                            houtbouw onder de Omgevingswet’.
-                          </div>
-                          <CustomButton color='greenBackground'>
-                            Meer over de e-learning
-                            <IconArrowRight
-                              className='ml-1 inline-block h-5 w-5 place-self-center'
-                              aria-hidden='true'
-                            />
-                          </CustomButton>
+                    <div className='flex h-full w-full cursor-pointer flex-col rounded-cl bg-green-100 p-4 shadow-md'>
+                      <Image
+                        src={elearning}
+                        width={406}
+                        height={172}
+                        alt='comment image'
+                        className='rounded-cl'
+                      />
+                      <div className='flex h-full w-full flex-col justify-between px-4 pt-4'>
+                        <div className='heading-2xl-semibold mb-2'>
+                          E-learning Circulaire houtbouw onder de Omgevingswet
                         </div>
+                        <div className='p-base mb-4'>
+                          Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw te
+                          verankeren in beleid? Dat leer je in onze e-learning: ‘Circulaire houtbouw
+                          onder de Omgevingswet’.
+                        </div>
+                        <NewButton variant='primaryDark' icon='arrowRight' href='/training'>
+                          Meer over de e-learning
+                        </NewButton>
                       </div>
-                    </Link>
+                    </div>
                   </div>
                 </div>
                 <ul className='max-w-sm sm:hidden'>
@@ -204,25 +199,20 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                     </Link>
                   </li>
                 </ul>
-                <Link href='/training' className='w-full sm:hidden'>
-                  <div className='mt-6 flex h-auto w-full flex-col gap-4 rounded-cl bg-green-100 p-4 shadow'>
-                    <div className='heading-xl-semibold'>
-                      E-learning Circulaire houtbouw onder de Omgevingswet
-                    </div>
-                    <div className='p-base'>
-                      Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw te verankeren
-                      in beleid? Dat leer je in onze e-learning: ‘Circulaire houtbouw onder de
-                      Omgevingswet’.
-                    </div>
-                    <CustomButton color='greenBackground'>
-                      Meer over de e-learning houtbouw
-                      <IconArrowRight
-                        className='ml-1 inline-block h-5 w-5 place-self-center'
-                        aria-hidden='true'
-                      />
-                    </CustomButton>
+
+                <div className='mt-6 flex h-auto w-full flex-col gap-4 rounded-cl bg-green-100 p-4 shadow'>
+                  <div className='heading-2xl-semibold'>
+                    E-learning Circulaire houtbouw onder de Omgevingswet
                   </div>
-                </Link>
+                  <div className='p-base'>
+                    Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw te verankeren in
+                    beleid? Dat leer je in onze e-learning: ‘Circulaire houtbouw onder de
+                    Omgevingswet’.
+                  </div>
+                  <NewButton variant='primaryDark' icon='arrowRight' href='/training'>
+                    Meer over de e-learning houtbouw
+                  </NewButton>
+                </div>
               </>
             ) : (
               <>
@@ -250,13 +240,9 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           <div className='heading-2xl-semibold pb-4'>{thema?.samenhangTitle}</div>
                           <div className='p-base'>{thema?.samenhangText}</div>
                         </div>
-                        <CustomButton color='whiteBackground'>
+                        <NewButton variant='secondaryDark' icon='arrowRight'>
                           Bekijk jouw categorie
-                          <IconArrowRight
-                            className='ml-1 inline-block h-5 w-5 place-self-center'
-                            aria-hidden='true'
-                          />
-                        </CustomButton>
+                        </NewButton>
                       </div>
                     </li>
                   </Link>

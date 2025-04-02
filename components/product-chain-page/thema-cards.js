@@ -101,7 +101,7 @@ export default function ThemaCard({ themaCards }) {
               Schrijf je in op onze nieuwsbrief en blijf op de hoogte van de laatste ontwikkelingen.
             </p>
           </div>
-          <div className='flex justify-start w-full md:w-auto md:justify-center'>
+          <div className='flex w-full justify-start md:w-auto md:justify-center'>
             <NewButton variant='secondaryLight' href='/nieuwsbrief' icon='arrowRight'>
               Houd me op de hoogte{' '}
             </NewButton>
