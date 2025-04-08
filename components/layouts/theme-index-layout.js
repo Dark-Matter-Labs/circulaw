@@ -200,7 +200,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                   </li>
                 </ul>
 
-                <div className='mt-6 flex h-auto w-full flex-col gap-4 rounded-cl bg-green-100 p-4 shadow'>
+                <div className='mt-6 flex sm:hidden h-auto w-full flex-col gap-4 rounded-cl bg-green-100 p-4 shadow'>
                   <div className='heading-2xl-semibold'>
                     E-learning Circulaire houtbouw onder de Omgevingswet
                   </div>
