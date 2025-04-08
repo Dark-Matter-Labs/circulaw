@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
-import CustomButton from '@/components/custom-button';
 import EULawCard from '@/components/eu-law/eu-law-card';
 import Header from '@/components/headers';
+import NewButton from '@/components/shared/new-button';
 import { EU_LAW_OVERVIEW_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
 import globalMeta from '@/utils/global-meta';
@@ -55,9 +55,14 @@ export default async function Page() {
               </p>
             </div>
             <div className='sm:mt-0 sm:w-2/5'>
-              <a href='/European_green_deal.pdf' target='_blank' rel='noreferrer'>
-                <CustomButton color='whiteBackground'>Download PDF</CustomButton>
-              </a>
+              <NewButton
+                icon='download'
+                variant='secondaryDark'
+                href='/European_green_deal.pdf'
+                newTab={true}
+              >
+                Download PDF
+              </NewButton>
             </div>
           </div>
           <div className='mt-8 h-full w-full basis-1/2 sm:mt-0'>

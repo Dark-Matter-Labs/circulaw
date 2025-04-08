@@ -48,9 +48,9 @@ export default function Breadcrumb({ pageType }) {
             ) : (
               <li
                 key={pathName}
-                className='ml-2 flex flex-row items-center capitalize text-cl-black'
+                className='ml-2 flex max-w-[20ch] flex-row items-center overflow-hidden whitespace-nowrap capitalize text-cl-black'
               >
-                {pathName}
+                <span className='truncate'>{pathName}</span> {/* For Mobile: Single Line Clamp */}
               </li>
             ),
           )}

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import { IconChevronRight } from '@tabler/icons-react';
+
 import StatusThreeStep from './status/status-three-step';
 import StatusTwoStep from './status/status-two-step';
 
@@ -21,7 +23,7 @@ export default function EULawCard({ law }) {
                 </div>
               </div>
               <div className='p-base-semibold flex h-full min-h-[42px] items-center justify-center rounded-b-cl bg-green-100 text-green-500'>
-                Bekijk deze wet {'>'}
+                Bekijk deze wet <IconChevronRight className='inline-block size-5' />
               </div>
             </div>
           </div>
@@ -41,9 +43,8 @@ export default function EULawCard({ law }) {
               {law.statusStep === 'Three Step' && <StatusThreeStep status={law.statusThreeStep} />}
             </div>
           </div>
-
           <div className='p-base-semibold flex items-center justify-center border-t pt-4'>
-            Bekijk deze wet {'>'}
+            Bekijk deze wet <IconChevronRight className='inline-block size-5' />
           </div>
         </div>
       </Link>

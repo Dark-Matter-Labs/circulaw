@@ -68,7 +68,7 @@ export default function PCHomePage({ pcData }) {
           ))}
         </ul>
       </div>
-      <div className='flex flex-col gap-y-[10px]'>
+      <div className='flex flex-col gap-y-[10px] sm:hidden'>
         {pcData.map((chain, id) => (
           <Link key={id} href={`/${chain.slug}`}>
             <div className='h-28 w-full rounded-cl bg-green-200 shadow'>
