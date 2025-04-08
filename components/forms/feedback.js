@@ -5,10 +5,9 @@ import { useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 
-import { scrollToTop } from '@/utils/scroll-to-top';
 import axios from 'axios';
 
-import CustomButton from '../custom-button';
+import NewButton from '../shared/new-button';
 
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/929e2e8c-bdf9-4c5f-a293-699dd63de422';
 
@@ -132,9 +131,9 @@ export default function FeedbackComponent() {
                   <label htmlFor='file' className='block text-cl-black'>
                     <h3 className='heading-xl-semibold sm:heading-2xl-semibold pb-2'>Bijlagen</h3>
                   </label>
-                  <CustomButton color='greenBackgroundLessRound' onClick={handleClick}>
+                  <NewButton variant='primaryDark' onClick={handleClick}>
                     Upload bestand
-                  </CustomButton>
+                  </NewButton>
                   {query.files !== '' && <p>{query.files.name}</p>}
                   <input
                     className='hidden'
@@ -252,15 +251,9 @@ export default function FeedbackComponent() {
                 </div>
                 <input type='hidden' name='_gotcha' className='hidden' />
                 <div className='sm:col-span-2'>
-                  <button
-                    type='submit'
-                    onClick={scrollToTop}
-                    className={
-                      'button inline-flex items-center rounded-full bg-green-500 px-4 py-2 text-green-100 hover:bg-green-300 hover:text-green-500 focus:outline-none focus:ring-2 focus:ring-white active:bg-cl-black active:text-green-100'
-                    }
-                  >
-                    Verzenden &rarr;
-                  </button>
+                  <NewButton variant='secondaryDark' icon='arrowRight' type='submit'>
+                    Verzenden
+                  </NewButton>
                 </div>
               </form>
               <h4 className='p-base-semibold sm:headling-xl-semibold pt-8 text-green-400'>
@@ -288,9 +281,9 @@ export default function FeedbackComponent() {
               </span>
             </p>
             <div className='pb-20 sm:col-span-2'>
-              <Link href='/'>
-                <CustomButton color='whiteBackground'>Naar de homepage &rarr;</CustomButton>
-              </Link>
+              <NewButton variant='secondaryDark' icon='arrowRight' href='/'>
+                Naar de homepage
+              </NewButton>
             </div>
           </>
         )}

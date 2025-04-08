@@ -156,12 +156,9 @@ export default function InstrumentMetaData({ data, borders }) {
             </div>
 
             <div className='flex items-center'>
-              <div className='flex flex-row items-center bg-green-200 rounded-cl p-1'>
+              <div className='flex flex-row items-center rounded-cl bg-green-200 p-1'>
                 {data?.rLadder?.map((rValue) => (
-                  <div
-                    key={rValue}
-                    className='p-xs-semibold shrink text-green-500'
-                  >
+                  <div key={rValue} className='p-xs-semibold shrink text-green-500'>
                     {rValue} {data?.rLadder.slice(-1)[0] !== rValue && <span>-</span>}
                     &nbsp;
                   </div>

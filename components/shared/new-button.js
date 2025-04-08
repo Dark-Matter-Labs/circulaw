@@ -4,6 +4,7 @@ import { Link as ScrollLink } from 'react-scroll';
 
 import { useRouter } from 'next/navigation';
 
+import { scrollToTop } from '@/utils/scroll-to-top';
 import {
   IconArrowDown,
   IconArrowRight,
@@ -33,6 +34,8 @@ export default function NewButton({ variant, icon, href, newTab, scrollTo, child
   };
 
   const handleClick = (newTab) => {
+    // return nothing if props type exists.
+    if (props.type) return scrollToTop();
     if (newTab === true) {
       openNewTab();
     } else {

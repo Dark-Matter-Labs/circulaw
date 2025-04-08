@@ -4,11 +4,11 @@ import { useState } from 'react';
 
 import Link from 'next/link';
 
-import CustomButton from '@/components/custom-button';
 import { scrollToTop } from '@/utils/scroll-to-top';
 import axios from 'axios';
 
 import Header from '../headers';
+import NewButton from '../shared/new-button';
 
 const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/raeqmmza';
 
@@ -175,14 +175,9 @@ export default function NewsLetterComponent() {
                 </div>
                 <input type='hidden' name='_gotcha' className='hidden' />
                 <div className='sm:col-span-2'>
-                  <button
-                    type='submit'
-                    className={
-                      'button inline-flex items-center rounded-full border-2 border-green-500 bg-transparent px-4 py-2 text-green-500 hover:bg-green-300 focus:bg-green-200 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-400'
-                    }
-                  >
-                    Verzenden &rarr;
-                  </button>
+                  <NewButton variant='secondaryDark' icon='arrowRight' type='submit'>
+                    Verzenden
+                  </NewButton>
                 </div>
               </form>
               <h4 className='p-base-semibold pt-8 text-green-400'>* dit veld is verplicht</h4>
@@ -197,9 +192,9 @@ export default function NewsLetterComponent() {
               Bedankt voor je aanmelding voor onze nieuwsbrief!
             </p>
             <div className='pb-20 sm:col-span-2'>
-              <Link href='/'>
-                <CustomButton color='whiteBackground'>Naar de homepage &rarr;</CustomButton>
-              </Link>
+              <NewButton variant='secondaryDark' icon='arrowRight' href='/'>
+                Naar de homepage
+              </NewButton>
             </div>
           </>
         )}

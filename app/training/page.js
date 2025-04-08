@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import CustomButton from '@/components/custom-button';
 import Header from '@/components/headers';
+import NewButton from '@/components/shared/new-button';
 import { IconArrowRight, IconBooks } from '@tabler/icons-react';
 
 export default function LearningLandingPage() {
@@ -24,26 +24,25 @@ export default function LearningLandingPage() {
             houtbouw in het beleid van jouw overheid? Dat leer je in onze e-learning:{' '}
             <span className='p-base-semibold'>circulaire houtbouw onder de Omgevingswet</span>.
           </p>
-          <Link
-            href='https://training.circulaw.nl/register/a6d26a79-e6b1-42d6-9499-1dbe196fc693'
-            target='_blank'
-            className='block md:hidden'
-          >
-            <div className='mt-6 flex w-full flex-col bg-green-100 p-4 text-green-500'>
-              <div className='mb-2'>
-                <IconBooks className='size-8' />
-              </div>
-              <div className='heading-2xl-semibold mb-6'>
-                Meld je nu aan voor de e-learning circulaire houtbouw
-              </div>
-              <div>
-                <CustomButton color='lightGreenBackground'>
-                  Meld je nu aan
-                  <IconArrowRight className='ml-0.5' />
-                </CustomButton>
-              </div>
+
+          <div className='mt-6 flex w-full flex-col bg-green-100 p-4 text-green-500 md:hidden'>
+            <div className='mb-2'>
+              <IconBooks className='size-8' />
             </div>
-          </Link>
+            <div className='heading-2xl-semibold mb-6'>
+              Meld je nu aan voor de e-learning circulaire houtbouw
+            </div>
+            <div>
+              <NewButton
+                variant='primaryDark'
+                icon='arrowRight'
+                href='https://training.circulaw.nl/register/a6d26a79-e6b1-42d6-9499-1dbe196fc693'
+                newTab={true}
+              >
+                Meld je nu aan
+              </NewButton>
+            </div>
+          </div>
           <h2 className='heading-2xl-semibold sm:heading-3xl-semibold mb-4 mt-10'>
             Wat kun je verwachten?
           </h2>
@@ -133,9 +132,9 @@ export default function LearningLandingPage() {
         <Link
           href='https://training.circulaw.nl/register/a6d26a79-e6b1-42d6-9499-1dbe196fc693'
           target='_blank'
-          className='hidden md:block'
+          className=''
         >
-          <div className='sticky top-32 ml-16 flex w-80 flex-col bg-green-100 p-4 text-green-500'>
+          <div className='sticky top-32 ml-16 hidden w-80 flex-col bg-green-100 p-4 text-green-500 md:flex'>
             <div className='mb-2'>
               <IconBooks className='size-8' />
             </div>
@@ -143,10 +142,14 @@ export default function LearningLandingPage() {
               Meld je nu aan voor de e-learning circulaire houtbouw
             </div>
             <div>
-              <CustomButton color='lightGreenBackground'>
+              <NewButton
+                variant='primaryDark'
+                icon='arrowRight'
+                href='https://training.circulaw.nl/register/a6d26a79-e6b1-42d6-9499-1dbe196fc693'
+                newTab={true}
+              >
                 Meld je nu aan
-                <IconArrowRight className='ml-0.5' />
-              </CustomButton>
+              </NewButton>
             </div>
           </div>
         </Link>
