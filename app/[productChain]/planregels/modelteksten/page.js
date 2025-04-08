@@ -3,9 +3,9 @@ import { notFound } from 'next/navigation';
 
 import Header from '@/components/headers';
 import PopUp from '@/components/modeltext/popup';
+import InlineExternalLink from '@/components/shared/inline-external-link';
 import { sanityFetch } from '@/lib/sanity';
 import { IconArrowLeft } from '@tabler/icons-react';
-import InlineExternalLink from '@/components/shared/inline-external-link';
 
 const PILLARS_QUERY = `
  *[_type == 'pillar'] | order(orderRank) {
@@ -43,7 +43,7 @@ export default async function ModelTextPage({ params }) {
               We hebben de planregels voor het omgevingsplan ingedeeld op basis van 6 pijlers. Deze
               pijlers sluiten aan bij het{' '}
               <InlineExternalLink href='https://toekomstbestendigbouwen.nl/' size='5'>
-              Convenant Toekomstig Bestendig Bouwen
+                Convenant Toekomstig Bestendig Bouwen
               </InlineExternalLink>
               . En beslaan meer thema&apos;s dan alleen circulaire.
             </p>

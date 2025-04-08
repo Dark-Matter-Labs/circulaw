@@ -7,7 +7,7 @@ export default function ModalContent({ title, children, ptContent }) {
   return (
     <DialogPanel
       transition
-      className='z-130 ml-10 min-h-[101vh] w-full max-w-md bg-white p-8 pt-10 duration-500 ease-out data-[closed]:translate-x-[28rem] overflow-scroll'
+      className='z-130 ml-10 min-h-[101vh] w-full max-w-md overflow-scroll bg-white p-8 pt-10 duration-500 ease-out data-[closed]:translate-x-[28rem]'
     >
       <CloseButton className='absolute right-0 top-0 float-right flex pr-8 pt-4 sm:-ml-10'>
         <span className='sr-only'>Close panel</span>

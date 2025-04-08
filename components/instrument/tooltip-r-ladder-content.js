@@ -27,7 +27,7 @@ export default function RladderTooltipContent() {
       <span className='p-base py-2'>
         Bron en meer over de de R-ladder op de{' '}
         <InlineExternalLink href='https://www.rvo.nl/onderwerpen/r-ladder' size='5'>
-        website van RVO
+          website van RVO
         </InlineExternalLink>
       </span>
     </div>

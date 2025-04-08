@@ -93,8 +93,11 @@ export default function Privacy() {
       <p className='p-base max-w-4xl pb-10'>
         Als je het niet eens bent met de manier waarop CircuLaw omgaat met je persoonsgegevens dan
         kun je een klacht indienen bij de{' '}
-        <InlineExternalLink href='https://autoriteitpersoonsgegevens.nl/nl/zelf-doen/gebruik-uw-privacyrechten/klacht-melden-bij-de-ap' size='5'>
-        Autoriteit Persoonsgegevens
+        <InlineExternalLink
+          href='https://autoriteitpersoonsgegevens.nl/nl/zelf-doen/gebruik-uw-privacyrechten/klacht-melden-bij-de-ap'
+          size='5'
+        >
+          Autoriteit Persoonsgegevens
         </InlineExternalLink>
         .
       </p>
@@ -112,9 +115,8 @@ export default function Privacy() {
         De gemeente Amsterdam heeft het recht om haar Privacyverklaring te wijzigen. Als er
         inhoudelijke wijzigingen worden doorgevoerd, maken we dit bekend via de website{' '}
         <InlineExternalLink href='https://www.amsterdam.nl/' size='5'>
-        amsterdam.nl
+          amsterdam.nl
         </InlineExternalLink>
-       
         .{' '}
       </p>
       <p className='p-base max-w-4xl pb-6'>
