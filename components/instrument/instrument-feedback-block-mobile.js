@@ -27,9 +27,9 @@ export default function MobileFeedback({ data }) {
                   <li>de ervaring van jou of andere organisaties met een soortgelijk instrument</li>
                 </ul>
               </div>
-                <NewButton variant='primaryDark' href={`/feedback?instrument=${data?.titel}`}>
+              <NewButton variant='primaryDark' href={`/feedback?instrument=${data?.titel}`}>
                 Ik deel mijn kennis
-                </NewButton>
+              </NewButton>
             </div>
           </PopoverPanel>
         </>

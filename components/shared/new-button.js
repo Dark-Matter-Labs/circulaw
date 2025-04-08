@@ -28,7 +28,7 @@ const varientStyles = {
 
 export default function NewButton({ variant, icon, href, newTab, scrollTo, children, ...props }) {
   const router = useRouter();
-  
+
   const openNewTab = () => {
     window.open(href, '_blank', 'noreferrer');
   };

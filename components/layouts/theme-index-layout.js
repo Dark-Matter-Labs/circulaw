@@ -261,7 +261,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           <div className='p-base'>{thema?.listText}</div>
                         </div>
                         <NewButton variant='secondaryDark' icon='arrowRight'>
-                        Naar de lijst
+                          Naar de lijst
                         </NewButton>
                       </div>
                     </li>
@@ -285,7 +285,7 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           <div className='p-base'>{thema?.welkeText}</div>
                         </div>
                         <NewButton variant='secondaryDark' icon='arrowRight'>
-                        Bekijk de bevoegdheden
+                          Bekijk de bevoegdheden
                         </NewButton>
                       </div>{' '}
                     </li>

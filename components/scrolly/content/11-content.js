@@ -1,4 +1,3 @@
-
 import NewButton from '@/components/shared/new-button';
 
 export default function ContentEleven({ scrollPosition }) {
@@ -15,9 +14,8 @@ export default function ContentEleven({ scrollPosition }) {
       </p>
       <p className='p-base'>Dit zijn dus modelteksten voor een omgevingplan.</p>
       <NewButton variant='secondaryDark' href='/bouw/planregels/modelteksten' icon='arrowRight'>
-      Bekijk de modelteksten
+        Bekijk de modelteksten
       </NewButton>
-   
     </div>
   );
 }

@@ -1,7 +1,7 @@
-import NewButton from '../shared/new-button';
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import { IconArrowLeft } from '@tabler/icons-react';
 
+import NewButton from '../shared/new-button';
 
 // TODO: Combine the mobile and desktop components into one
 export default function InstrumentFeedbackBlock({ data }) {
@@ -34,7 +34,7 @@ export default function InstrumentFeedbackBlock({ data }) {
                 </ul>
               </div>
               <NewButton variant='primaryDark' href={`/feedback?instrument=${data?.titel}`}>
-              Ik deel mijn kennis
+                Ik deel mijn kennis
               </NewButton>
             </div>
           </PopoverPanel>
