@@ -4,7 +4,7 @@ import Link from 'next/link';
 import HomePageEUSection from '@/components/homepage/home-page-eu-section';
 import PCHomePage from '@/components/homepage/product-chain-homepage';
 import FeaturedNewsSection from '@/components/news-page/featured-section';
-import InlineLink from '@/components/shared/inline-link';
+import InlineExternalLink from '@/components/shared/inline-external-link';
 import TitleDecorator from '@/components/title-decorator';
 import { HOME_PAGE_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
@@ -52,12 +52,12 @@ export default async function Page() {
           <div className='basis-1/2'>
             <p className='heading-xl sm:heading-2xl whitespace-normal'>
               De overheid heeft 5 productketens gekozen voor het
-              <InlineLink
+              <InlineExternalLink
                 href='https://www.rijksoverheid.nl/documenten/beleidsnotas/2023/02/03/nationaal-programma-circulaire-economie-2023-2030'
-                isExternal={true}
+                size='6'
               >
                 Nationaal Programma Circulaire Economie 2023-2030
-              </InlineLink>
+              </InlineExternalLink>
               Deze ketens zijn belangrijk voor de economie, maar belasten ook het milieu. In
               transitieagenda&apos;s staat hoe deze ketens in 2050 circulair kunnen zijn.
             </p>

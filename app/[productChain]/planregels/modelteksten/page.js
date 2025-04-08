@@ -2,10 +2,10 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import Header from '@/components/headers';
-import LinkIcon from '@/components/link-icon';
 import PopUp from '@/components/modeltext/popup';
 import { sanityFetch } from '@/lib/sanity';
 import { IconArrowLeft } from '@tabler/icons-react';
+import InlineExternalLink from '@/components/shared/inline-external-link';
 
 const PILLARS_QUERY = `
  *[_type == 'pillar'] | order(orderRank) {
@@ -42,14 +42,9 @@ export default async function ModelTextPage({ params }) {
             <p className='p-base pb-6'>
               We hebben de planregels voor het omgevingsplan ingedeeld op basis van 6 pijlers. Deze
               pijlers sluiten aan bij het{' '}
-              <Link
-                href='https://toekomstbestendigbouwen.nl/'
-                className='link-interaction'
-                target='_blank'
-              >
-                Convenant Toekomstig Bestendig Bouwen
-                <LinkIcon />
-              </Link>
+              <InlineExternalLink href='https://toekomstbestendigbouwen.nl/' size='5'>
+              Convenant Toekomstig Bestendig Bouwen
+              </InlineExternalLink>
               . En beslaan meer thema&apos;s dan alleen circulaire.
             </p>
             <Link

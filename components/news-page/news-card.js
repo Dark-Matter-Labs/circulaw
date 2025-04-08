@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 import { urlFor } from '@/lib/sanity';
 
-import LinkIcon from '../link-icon';
 import Badge from '../shared/new-badge';
+import { IconChevronRight, IconExternalLink } from '@tabler/icons-react';
 
 export default function NewsCard({ data }) {
   const event = new Date(data.newsDate);
@@ -152,7 +152,7 @@ export default function NewsCard({ data }) {
                 } heading-xl-semibold itmes-center inline-flex flex-row self-end`}
               >
                 {data.linkText}{' '}
-                {data.internalExternal === true ? <LinkIcon /> : <span>&nbsp;{'>'}</span>}
+                {data.internalExternal === true ? <IconExternalLink className='inline-block'/> : <span><IconChevronRight className='inline-block'/></span>}
               </div>
             )}
             {data.createPage === true && (
@@ -233,7 +233,7 @@ export default function NewsCard({ data }) {
               } heading-xl-semibold itmes-center inline-flex flex-row self-end`}
             >
               {data.linkText}{' '}
-              {data.internalExternal === true ? <LinkIcon /> : <span>&nbsp;{'>'}</span>}
+              {data.internalExternal === true ? <IconExternalLink className='inline-block' /> : <span><IconChevronRight className='inline-block'/></span>}
             </div>
           )}
           {data.createPage === true && (

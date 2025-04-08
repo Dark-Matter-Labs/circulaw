@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import Link from 'next/link';
+
 import { IconExternalLink } from '@tabler/icons-react';
 
 const formatDate = (date) => {
@@ -41,11 +42,11 @@ export default function InstrumentTable({ data }) {
               <td className='p-base w-1/3 py-3'>Artikel</td>
               <td className='p-base-semibold w-2/3 py-3'>
                 {data?.artikelLink ? (
-                  <span className='link-interaction flex justify-end text-green-500 sm:justify-start items-center'>
+                  <span className='link-interaction flex items-center justify-end text-green-500 sm:justify-start'>
                     <Link className='' target='_blank' href={data?.artikelLink} rel='noreferrer'>
                       <span className='link-interaction flex items-center'>
                         {data?.artikel}
-                        <IconExternalLink className='inline-block size-5 ml-1'/>
+                        <IconExternalLink className='ml-1 inline-block size-5' />
                       </span>
                     </Link>
                   </span>

@@ -4,11 +4,11 @@ import Link from 'next/link';
 import { urlFor } from '@/lib/sanity';
 
 import ImageComponent from '../image-component';
-import LinkIcon from '../link-icon';
 import Modal from '../modal/modal';
 import EULawButton from '../modal/modal-buttons/eu-status-button';
 import ModalContent from '../modal/modal-content';
 import Highlights from './highlights';
+import { IconExternalLink } from '@tabler/icons-react';
 
 export default function SummaryComponent({ lawData }) {
   return (
@@ -132,7 +132,7 @@ export default function SummaryComponent({ lawData }) {
           {lawData?.linkCol2 && (
             <div>
               <h3 className='heading-2xl-semibold text-cl-black'>
-                Relevante NL wetgeving <LinkIcon />
+                Relevante NL wetgeving <IconExternalLink className='inline-block'/>
               </h3>
               <ul>
                 {lawData?.linkCol2?.map((link, id) => (
@@ -148,7 +148,7 @@ export default function SummaryComponent({ lawData }) {
           {lawData?.linkCol3 && (
             <div>
               <h3 className='heading-2xl-semibold text-cl-black'>
-                Relevante EU-wetgeving <LinkIcon />
+                Relevante EU-wetgeving <IconExternalLink className='inline-block'/>
               </h3>
               <ul>
                 {lawData?.linkCol3?.map((link, id) => (
