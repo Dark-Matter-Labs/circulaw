@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
-import LinkIcon from '../link-icon';
+import Link from 'next/link';
+import { IconExternalLink } from '@tabler/icons-react';
 
 const formatDate = (date) => {
   let dateObject = new Date(date);
   return dateObject.toLocaleDateString();
 };
 
-// TODO: get the redisgn of this prioritised by Andrea, update schema and front end.
 export default function InstrumentTable({ data }) {
   const [date, setDate] = useState();
   useEffect(() => {
@@ -41,13 +41,13 @@ export default function InstrumentTable({ data }) {
               <td className='p-base w-1/3 py-3'>Artikel</td>
               <td className='p-base-semibold w-2/3 py-3'>
                 {data?.artikelLink ? (
-                  <span className='link-interaction flex justify-end text-green-500 sm:justify-start'>
-                    <a className='' target='_blank' href={data?.artikelLink} rel='noreferrer'>
-                      <span className='link-interaction'>
+                  <span className='link-interaction flex justify-end text-green-500 sm:justify-start items-center'>
+                    <Link className='' target='_blank' href={data?.artikelLink} rel='noreferrer'>
+                      <span className='link-interaction flex items-center'>
                         {data?.artikel}
-                        <LinkIcon />
+                        <IconExternalLink className='inline-block size-5 ml-1'/>
                       </span>
-                    </a>
+                    </Link>
                   </span>
                 ) : (
                   <span className='p-base-semibold'>nvt</span>

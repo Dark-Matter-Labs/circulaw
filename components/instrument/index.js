@@ -45,7 +45,7 @@ export default function Instrument({ data }) {
         imageURL='/big-decoration.png'
       />
       {/* Metadata */}
-      <div className='flex w-full justify-items-start bg-green-100 sm:border-b sm:border-cl-grey'>
+      <div className='flex w-full justify-items-start bg-green-100 sm:border-b sm:border-cl-grey sm:sticky top-[70px] lgNav:top-[98px] z-20'>
         <div className='global-margin w-full'>
           <div className='grid-col-1 grid w-full max-w-4xl'>
             <InstrumentMetaData data={data} />
