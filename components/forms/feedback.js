@@ -3,7 +3,7 @@
 import { useRef, useState } from 'react';
 
 import Link from 'next/link';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 
 import axios from 'axios';
 
@@ -14,7 +14,6 @@ const GETFORM_FORM_ENDPOINT = 'https://getform.io/f/929e2e8c-bdf9-4c5f-a293-699d
 export default function FeedbackComponent() {
   const searchParams = useSearchParams();
   const instrument = searchParams.get('instrument');
-  const router = useRouter();
   const hiddenFileInput = useRef(null);
   const [formStatus, setFormStatus] = useState(false);
 
@@ -80,14 +79,6 @@ export default function FeedbackComponent() {
       <div className='global-margin'>
         {!formStatus ? (
           <>
-            <button
-              type='button'
-              onClick={() => router.back()}
-              className='p-2xs-bold mt-12 rounded-clSm bg-green-100 py-1.5 pl-2 pr-3 text-green-500'
-            >
-              <span className=' '>Terug</span>
-              <span className='ml-2'>{'>'}</span>
-            </button>
             <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pt-10 text-cl-black'>
               Met jouw hulp maken we CircuLaw beter
             </h1>

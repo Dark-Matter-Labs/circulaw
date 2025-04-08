@@ -19,6 +19,7 @@ import ContentEight from './content/08-content';
 import ContentNine from './content/09-content';
 import ContentTen from './content/10-content';
 import ContentEleven from './content/11-content';
+import Breadcrumb from '../headers/breadcrumbs';
 
 export default function ScrollyTellingAnimation() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -357,23 +358,7 @@ export default function ScrollyTellingAnimation() {
     <>
       <div className='sticky top-32 w-full max-w-[1312px]'>
         <div className='mb-12 flex w-full items-center justify-start'>
-          <div className='bg-green-5 flex flex-row items-center justify-center rounded-clSm border border-green-500 px-2 py-1 text-green-500'>
-            <Link className='inline-flex h-full flex-row items-center justify-center' href='/'>
-              <span className='p-2xs-bold hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'>
-                {' '}
-                Home <span className='ml-2'>{'>'}</span>
-              </span>
-            </Link>
-            <Link
-              className='ml-3 inline-flex h-full flex-row items-center justify-center'
-              href='/bouw'
-            >
-              <span className='p-2xs-bold align-middle hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'>
-                {' '}
-                Bouw <span className='ml-2'>{'>'}</span>
-              </span>
-            </Link>
-          </div>
+          <Breadcrumb pageType='noHeader'/>
         </div>
         <div className='flex w-full items-start justify-start'>
           <div className='relative mr-6 h-full w-48'>
