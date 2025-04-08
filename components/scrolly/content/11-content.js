@@ -1,7 +1,5 @@
-import Link from 'next/link';
 
-import CustomButton from '@/components/custom-button';
-import { IconArrowRight } from '@tabler/icons-react';
+import NewButton from '@/components/shared/new-button';
 
 export default function ContentEleven({ scrollPosition }) {
   return (
@@ -16,11 +14,10 @@ export default function ContentEleven({ scrollPosition }) {
         kunnen overnemen: de planregels.
       </p>
       <p className='p-base'>Dit zijn dus modelteksten voor een omgevingplan.</p>
-      <Link href='/bouw/planregels/modelteksten'>
-        <CustomButton color='whiteBackground'>
-          Bekijk de modelteksten <IconArrowRight />
-        </CustomButton>
-      </Link>
+      <NewButton variant='secondaryDark' href='/bouw/planregels/modelteksten' icon='arrowRight'>
+      Bekijk de modelteksten
+      </NewButton>
+   
     </div>
   );
 }

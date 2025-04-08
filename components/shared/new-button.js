@@ -28,13 +28,13 @@ const varientStyles = {
 
 export default function NewButton({ variant, icon, href, newTab, scrollTo, children, ...props }) {
   const router = useRouter();
-
+  
   const openNewTab = () => {
     window.open(href, '_blank', 'noreferrer');
   };
 
   const handleClick = (newTab) => {
-    // return nothing if props type exists.
+    // return nothing if props.type exists.
     if (props.type) return scrollToTop();
     if (newTab === true) {
       openNewTab();

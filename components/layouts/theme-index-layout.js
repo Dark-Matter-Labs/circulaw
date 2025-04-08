@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import CustomButton from '@/components/custom-button';
 import FeaturedInstruments from '@/components/theme-page/featured-instruments';
 import elearning from '@/public/e-learning.png';
 import list from '@/public/thema-card-background/list.svg';
@@ -261,14 +260,10 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           <div className='heading-2xl-semibold pb-4'>{`Lijst van ${numberOfLaws} instrumenten`}</div>
                           <div className='p-base'>{thema?.listText}</div>
                         </div>
-                        <CustomButton color='whiteBackground'>
-                          Naar de lijst
-                          <IconArrowRight
-                            className='ml-1 inline-block h-5 w-5 place-self-center'
-                            aria-hidden='true'
-                          />
-                        </CustomButton>
-                      </div>{' '}
+                        <NewButton variant='secondaryDark' icon='arrowRight'>
+                        Naar de lijst
+                        </NewButton>
+                      </div>
                     </li>
                   </Link>
                   <Link
@@ -289,13 +284,9 @@ export default function ThemeLayout({ featuredLaws, thema, numberOfLaws }) {
                           <div className='heading-2xl-semibold pb-4'>{thema?.welkeTitle}</div>
                           <div className='p-base'>{thema?.welkeText}</div>
                         </div>
-                        <CustomButton color='whiteBackground'>
-                          Bekijk de bevoegdheden
-                          <IconArrowRight
-                            className='ml-1 inline-block h-5 w-5 place-self-center'
-                            aria-hidden='true'
-                          />
-                        </CustomButton>
+                        <NewButton variant='secondaryDark' icon='arrowRight'>
+                        Bekijk de bevoegdheden
+                        </NewButton>
                       </div>{' '}
                     </li>
                   </Link>
