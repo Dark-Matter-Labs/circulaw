@@ -21,7 +21,9 @@ export default function Breadcrumb({ pageType }) {
     );
   } else {
     return (
-      <ul className={`${pageType === 'noHeader' ? 'border rounded-full border-green-500' : 'bg-green-100'} p-2xs-semibold inline-flex h-min flex-row items-center justify-center rounded-full px-3 py-1.5 align-middle text-green-500 group-hover:text-green-400 group-focus:text-green-300 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black`}>
+      <ul
+        className={`${pageType === 'noHeader' ? 'rounded-full border border-green-500' : 'bg-green-100'} p-2xs-semibold inline-flex h-min flex-row items-center justify-center rounded-full px-3 py-1.5 align-middle text-green-500 group-hover:text-green-400 group-focus:text-green-300 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black`}
+      >
         {pageType !== 'instrument' && (
           <li key='home'>
             <Link

@@ -1,23 +1,44 @@
+'use client';
+
+import { useState } from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { urlFor } from '@/lib/sanity';
 import { IconArrowRight } from '@tabler/icons-react';
 
+import Badge from '../shared/new-badge';
 import NewRoundButton from '../shared/new-round-button';
 import TitleDecorator from '../title-decorator';
 
 export default function PCHomePage({ pcData }) {
+  const [isHovered, setIsHovered] = useState(false);
+  const [hoveredProductChain, setHoveredProductChain] = useState('');
+  console.log(hoveredProductChain);
+
+  function handleMouseLeave() {
+    setIsHovered(false);
+    setHoveredProductChain('');
+  }
+
   return (
     <>
-      <div className='relative hidden w-full p-4 sm:flex'>
-        <div className='gradient-homepage-cards absolute bottom-0 right-0 h-1/2 w-full rotate-180 rounded-cl' />
-        <ul className='no-scrollbar relative z-20 flex h-full w-full snap-mandatory flex-row gap-x-8 overflow-scroll'>
+      <div className='relative hidden h-[800px] w-full sm:flex'>
+        <div
+          className={`${isHovered ? 'bg-transparent' : 'gradient-homepage-cards'} absolute bottom-[127px] right-0 h-1/2 w-full rotate-180 rounded-cl`}
+        />
+        <ul
+          className='no-scrollbar group relative z-20 flex h-full w-full snap-mandatory flex-row overflow-scroll'
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => handleMouseLeave()}
+        >
           {pcData?.map((chain, id) => (
             <Link
               key={id}
               href={`/${chain.slug}`}
-              className='group flex min-w-[190px] max-w-[256px] grow basis-1/5'
+              className={`${hoveredProductChain === chain.slug ? 'relative h-[770px] bg-green-200' : 'h-[673px]'} group flex min-w-[240px] grow basis-1/5 rounded-cl p-4 transition-all duration-300`}
+              onMouseEnter={() => setHoveredProductChain(chain.slug)}
             >
               <li className='relative flex w-full flex-col'>
                 <Image
@@ -27,38 +48,54 @@ export default function PCHomePage({ pcData }) {
                   placeholder='blur'
                   blurDataURL={chain?.metadata.lqip}
                   sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
-                  className='relative h-[430px] rounded-cl object-cover'
+                  className={`${hoveredProductChain === chain.slug ? 'h-[350px]' : 'h-[430px]'} relative rounded-cl object-cover transition-all duration-300`}
                 />
-                <div className='p-base-semibold p-base absolute bottom-[211px] rounded-b-cl bg-green-500/50 p-2 pt-3 text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100'>
-                  {chain.cardText}
-                </div>
-                <div className='w-full'>
-                  {chain.pcName === 'Consumptiegoederen' && (
-                    <div className='heading-3xl-semibold min-h-[100px] items-end break-words pt-4 text-green-500'>
-                      Consumptie-goederen
+
+                <div className='flex w-full max-w-[200px] grow flex-col justify-between'>
+                  <div>
+                    {chain.pcName === 'Consumptiegoederen' && (
+                      <div className='heading-3xl-semibold min-h-[100px] items-end break-words pt-4 text-green-500'>
+                        Consumptie-goederen
+                      </div>
+                    )}
+                    {chain.pcName === 'Bouw' && (
+                      <div className='heading-3xl-semibold min-h-[100px] items-end break-words pt-4 text-green-500'>
+                        Bouw en infra
+                      </div>
+                    )}
+                    {chain.pcName === 'Biomassa en voedsel' && (
+                      <div className='heading-3xl-semibold break-pretty min-h-[100px] items-end break-words pt-4 text-green-500'>
+                        {chain.pcName}
+                      </div>
+                    )}
+                    {chain.pcName === 'Maakindustrie' && (
+                      <div className='heading-3xl-semibold min-h-[100px] items-end break-words pt-4 text-green-500'>
+                        Maak-Industrie
+                      </div>
+                    )}
+                    {chain.pcName === 'Kunststoffen' && (
+                      <div className='heading-3xl-semibold min-h-[100px] items-end break-words pt-4 text-green-500 lg:mr-6'>
+                        Kunst-stoffen
+                      </div>
+                    )}
+                    <TitleDecorator width='w-2/3' />
+                  </div>
+                  <div
+                    className={`absolute left-0 top-[510px] w-full opacity-0 transition-all duration-300 ${hoveredProductChain === chain.slug ? 'opacity-100' : 'h-0'} p-base`}
+                  >
+                    <div className='mb-4 flex flex-col gap-y-2'>
+                      <Badge variant='black'>
+                        {chain.themaCount === 1 ? (
+                          <span className=''>{chain.themaCount} Thema</span>
+                        ) : (
+                          <span className=''>{chain.themaCount} Thema&apos;s</span>
+                        )}
+                      </Badge>
+                      {chain.slug === 'bouw' && <Badge variant='black'>3 Toepassing</Badge>}
                     </div>
-                  )}
-                  {chain.pcName === 'Bouw' && (
-                    <div className='heading-3xl-semibold min-h-[100px] items-end break-words pt-4 text-green-500'>
-                      Bouw en infra
-                    </div>
-                  )}
-                  {chain.pcName === 'Biomassa en voedsel' && (
-                    <div className='heading-3xl-semibold break-pretty min-h-[100px] items-end break-words pt-4 text-green-500'>
-                      {chain.pcName}
-                    </div>
-                  )}
-                  {chain.pcName === 'Maakindustrie' && (
-                    <div className='heading-3xl-semibold min-h-[100px] items-end break-words pt-4 text-green-500'>
-                      Maak-Industrie
-                    </div>
-                  )}
-                  {chain.pcName === 'Kunststoffen' && (
-                    <div className='heading-3xl-semibold min-h-[100px] items-end break-words pt-4 text-green-500 lg:mr-6'>
-                      Kunst-stoffen
-                    </div>
-                  )}
-                  <TitleDecorator width='w-2/3' />
+                    <p>{chain.cardText}</p>
+                  </div>
+
                   <div className='mb-3 mt-6 flex h-12 w-12 items-center justify-center self-end rounded-full border border-green-500 bg-transparent text-green-500'>
                     <IconArrowRight className='inline-block size-6' aria-hidden='true' />
                   </div>

@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { animated } from '@react-spring/web';
 import { IconArrowRight } from '@tabler/icons-react';
 
+import Breadcrumb from '../headers/breadcrumbs';
 import ContentZero from './content/00-content';
 import ContentOne from './content/01-content';
 import ContentTwo from './content/02-content';
@@ -19,7 +20,6 @@ import ContentEight from './content/08-content';
 import ContentNine from './content/09-content';
 import ContentTen from './content/10-content';
 import ContentEleven from './content/11-content';
-import Breadcrumb from '../headers/breadcrumbs';
 
 export default function ScrollyTellingAnimation() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -358,7 +358,7 @@ export default function ScrollyTellingAnimation() {
     <>
       <div className='sticky top-32 w-full max-w-[1312px]'>
         <div className='mb-12 flex w-full items-center justify-start'>
-          <Breadcrumb pageType='noHeader'/>
+          <Breadcrumb pageType='noHeader' />
         </div>
         <div className='flex w-full items-start justify-start'>
           <div className='relative mr-6 h-full w-48'>
