@@ -336,14 +336,17 @@ html {
 	}
 }
 
-.containerx {
-  position: relative;
- 
-  height: 100vh;
-}
-
 .svg {
   transform: rotate(-90deg); /* Start drawing from the top */
 }
 
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+}
 
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

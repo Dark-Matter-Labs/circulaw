@@ -66,6 +66,9 @@ export default {
           type: 'smallPara',
         },
         {
+          type: 'youtube',
+        },
+        {
           type: 'block',
           of: [
             {
