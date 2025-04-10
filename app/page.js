@@ -9,7 +9,8 @@ import InlineExternalLink from '@/components/shared/inline-external-link';
 import TitleDecorator from '@/components/title-decorator';
 import { HOME_PAGE_QUERY } from '@/lib/queries';
 import { sanityFetch } from '@/lib/sanity';
-import { IconArrowRight } from '@tabler/icons-react';
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
+import { IconArrowRight, IconInfoSquareRoundedFilled } from '@tabler/icons-react';
 
 export default async function Page() {
   const data = await sanityFetch({
@@ -19,7 +20,7 @@ export default async function Page() {
   return (
     <>
       <div className='global-margin'>
-        <div className='mb-20 flex flex-col gap-y-6 sm:flex-row xl:gap-x-32' name='thema'>
+        <div className='mb-20 flex flex-col gap-y-6 sm:flex-row xl:gap-x-24' name='thema'>
           <div className='group relative mb-20 flex w-full items-center justify-center sm:hidden'>
             <Link
               href='/over/wat-is-circulaw'
@@ -45,9 +46,30 @@ export default async function Page() {
             </Link>
           </div>
           <div className='flex basis-1/2 flex-col'>
-            <h2 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-500'>
-              Ontdek direct onze instrumenten
-            </h2>
+            <div className=''>
+              <h2 className='heading-3xl-semibold sm:heading-5xl-semibold inline text-green-500'>
+                Ontdek direct onze instrumenten
+              </h2>
+              <Popover className='inline align-top'>
+                <PopoverButton className=''>
+                  <IconInfoSquareRoundedFilled className='ml-1 inline fill-green-500' />
+                </PopoverButton>
+                <PopoverPanel
+                  anchor='bottom'
+                  className='z-50 flex max-w-[250px] flex-col rounded-cl bg-green-100 p-5 text-green-500 shadow-card [--anchor-gap:8px]'
+                >
+                  <p className='p-base'>
+                    Een instrument beschrijft per thema hoe bepaalde juridische regels toegepast
+                    kunnen worden om circulariteit te bevorderen.
+                  </p>
+                  <p className='p-base mt-4'>
+                    Meerdere instrumenten kunnen dus gebaseerd zijn op dezelfde wet-en regelgeving,
+                    maar van elkaar verschillen in de manier waarop zij per thema toepasbaar zijn.
+                    Niet waarop zij per thema toepasbaar zijn.{' '}
+                  </p>{' '}
+                </PopoverPanel>
+              </Popover>
+            </div>
             <TitleDecorator width='w-1/4' />
           </div>
           <div className='basis-1/2'>
@@ -72,7 +94,7 @@ export default async function Page() {
         </div>
         <div className='mb-40'>
           <div className='mb-10 sm:w-1/2'>
-            <h3 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-500'>
+            <h3 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-500' id='news'>
               Uitgelichte nieuwsberichten
             </h3>
             <TitleDecorator width='w-1/4' />

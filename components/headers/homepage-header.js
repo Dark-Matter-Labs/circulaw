@@ -27,7 +27,7 @@ export default function HomepageHeader() {
               </NewButton>
             </div>
             <div className='mt-3 rounded-md sm:ml-3 sm:mt-0'>
-              <NewButton variant='secondaryLight' icon='arrowDown' scrollTo='about'>
+              <NewButton variant='secondaryLight' icon='arrowDown' scrollTo='news'>
                 Meer over CircuLaw?
               </NewButton>
             </div>
