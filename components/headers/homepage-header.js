@@ -22,12 +22,12 @@ export default function HomepageHeader() {
           </div>
           <div className='mt-2 sm:flex sm:justify-start md:mt-2'>
             <div className=''>
-              <NewButton variant='primaryDark' icon='arrowDown' scrollTo='thema'>
+              <NewButton variant='primaryLight' icon='arrowDown' scrollTo='thema'>
                 Bekijk de thema&rsquo;s
               </NewButton>
             </div>
             <div className='mt-3 rounded-md sm:ml-3 sm:mt-0'>
-              <NewButton variant='primaryDark' icon='arrowDown' scrollTo='about'>
+              <NewButton variant='secondaryLight' icon='arrowDown' scrollTo='about'>
                 Meer over CircuLaw?
               </NewButton>
             </div>

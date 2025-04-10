@@ -16,6 +16,10 @@ module.exports = {
         'card': [
           '0px 0px 3px 0px rgba(12, 26, 75, 0.24)',
           '0px 3px 8px -1px rgba(50, 50, 71, 0.05)'
+        ],
+        '': [
+          '0px 0px 1px 0px rgba(12, 26, 75, 0.24)',
+          '0px 3px 8px -1px rgba(50, 50, 71, 0.05)'
         ]
       },
       colors: {
@@ -26,7 +30,7 @@ module.exports = {
         'green-500': '#028352', 
         'orange-100': '#F7E3C3',
         'orange-200': '#E9A63B',
-        'orange-300': '#E57238',
+        'orange-300': '#D75B1D',
         'cl-grey': '#A2A3A2',
         'cl-dark-grey': '#676868', 
         'cl-black': '#1F2223', 

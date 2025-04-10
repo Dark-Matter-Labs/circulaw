@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import HomePageEUSection from '@/components/homepage/home-page-eu-section';
+import LatestContent from '@/components/homepage/latest-content';
 import PCHomePage from '@/components/homepage/product-chain-homepage';
 import FeaturedNewsSection from '@/components/news-page/featured-section';
 import InlineExternalLink from '@/components/shared/inline-external-link';
@@ -13,8 +14,9 @@ import { IconArrowRight } from '@tabler/icons-react';
 export default async function Page() {
   const data = await sanityFetch({
     query: HOME_PAGE_QUERY,
-    tags: ['siteConfig', 'transitionAgenda', 'thema', 'newsItem'],
+    tags: ['siteConfig', 'transitionAgenda', 'thema', 'newsItem', 'euLaw'],
   });
+  console.log(data.latestContent);
   return (
     <>
       <div className='global-margin'>
@@ -63,19 +65,20 @@ export default async function Page() {
             </p>
           </div>
         </div>
-        <div className='mb-20 sm:mb-52'>
+        <div className='mb-20 sm:mb-32'>
           <PCHomePage pcData={data.pcHomePage} />
         </div>
-        <div className='mb-20 sm:mb-52'>
+        <div className='mb-20 sm:mb-40'>
           <HomePageEUSection euData={data.euData} />
         </div>
         <div className='mb-40'>
-          <div className='mb-20 sm:w-1/2'>
+          <div className='mb-10 sm:w-1/2'>
             <h3 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-500'>
               Uitgelichte nieuwsberichten
             </h3>
             <TitleDecorator width='w-1/4' />
           </div>
+          <LatestContent latestContent={data.latestContent} />
           <FeaturedNewsSection items={data.newsItems} />
         </div>
       </div>
