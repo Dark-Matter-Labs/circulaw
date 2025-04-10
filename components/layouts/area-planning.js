@@ -54,13 +54,14 @@ export default function AreaPlanningLayout() {
           className={`${targetVisible ? 'opacity-0' : 'opacity-100'} sticky top-32 ml-8 hidden max-h-[600px] max-w-[350px] transition-opacity duration-300 md:block`}
         >
           <div className='flex h-full w-full flex-col rounded-cl bg-green-50 p-4 shadow-md'>
-            <Image
-              src='/forum.png'
-              width={406}
-              height={172}
-              alt='comment image'
-              className='rounded-cl'
-            />
+            <div className='w-fill relative h-full'>
+              <Image
+                src='/area-planning-cta.jpg'
+                fill
+                alt='People sitting on a bench looking at green art'
+                className='rounded-cl object-cover'
+              />
+            </div>
             <div className='flex h-full w-full flex-col justify-between px-4 pt-4'>
               <div className='heading-2xl-semibold mb-2'>Hoe kunnen wij je helpen?</div>
               <div className='p-base mb-4'>
@@ -167,10 +168,10 @@ export default function AreaPlanningLayout() {
           </p>
           <div className='mb-10 flex h-full w-full flex-col rounded-cl bg-green-50 p-4 shadow-md md:hidden'>
             <Image
-              src='/forum.png'
+              src='/area-planning-cta.jpg'
               width={406}
               height={172}
-              alt='comment image'
+              alt='People sitting on a bench looking at green art'
               className='rounded-cl'
             />
             <div className='flex h-full w-full flex-col justify-between px-4 pt-4'>
