@@ -2,7 +2,7 @@ import { Highlight } from 'react-instantsearch';
 
 import Link from 'next/link';
 
-import Tag from '@/components/tag';
+import Badge from '../shared/new-badge';
 
 export const InstrumentHit = ({ hit }) => {
   return (
@@ -14,26 +14,17 @@ export const InstrumentHit = ({ hit }) => {
           }`}
         >
           <div className='block'>
-            <div className='-ml-1 flex items-center justify-start'>
-              <Tag classes='border border-green-400 bg-transparent text-green-400 mr-2'>
-                {hit.thema}
-              </Tag>
-              {/* Expertise Tag */}
-              {hit?.categorie?.includes('beleid') && (
-                <Tag classes='bg-green-500 text-green-100 mr-2'>Beleid</Tag>
-              )}
-              {hit?.categorie?.includes('inkoop') && (
-                <Tag classes='bg-green-500 text-green-100 mr-2'>Inkoop</Tag>
-              )}
+            <div className='-ml-1 flex items-center justify-start gap-x-1'>
+              <Badge variant='black'>{hit.thema}</Badge>
+              {console.log(hit)}
+              {/* Expertise Badge */}
+              {hit?.categorie?.includes('beleid') && <Badge variant='green'>Beleid</Badge>}
+              {hit?.categorie?.includes('inkoop') && <Badge variant='green'>Inkoop</Badge>}
               {hit?.categorie?.includes('grondpositie') && (
-                <Tag classes='bg-green-500 text-green-100 mr-2'>Grondpositie</Tag>
+                <Badge variant='green'>Grondpositie</Badge>
               )}
-              {hit?.categorie?.includes('subsidie') && (
-                <Tag classes='bg-green-500 text-green-100 mr-2'>Subsidie</Tag>
-              )}
-              {hit?.categorie?.includes('fiscaal') && (
-                <Tag classes='bg-green-500 text-green-100 mr-2'>Fiscaal</Tag>
-              )}
+              {hit?.categorie?.includes('subsidie') && <Badge variant='green'>Subsidie</Badge>}
+              {hit?.categorie?.includes('fiscaal') && <Badge variant='green'>Fiscaal</Badge>}
             </div>
             <div className='mt-2 block'>
               <div className='mb-2'>
@@ -176,26 +167,16 @@ export const InstrumentHit = ({ hit }) => {
           }`}
         >
           <div className='mb-10 block rounded-cl bg-green-100 p-4 sm:mb-8 sm:ml-0 md:max-w-[760px]'>
-            <div className='-ml-1 flex items-center justify-start'>
-              {/* Expertise Tag */}
-              <Tag classes='border border-green-400 bg-transparent text-green-400 mr-2'>
-                {hit.thema}
-              </Tag>
-              {hit?.categorie?.includes('beleid') && (
-                <Tag classes='bg-green-500 text-green-100 mr-2'>Beleid</Tag>
-              )}
-              {hit?.categorie?.includes('inkoop') && (
-                <Tag classes='bg-green-500 text-green-100 mr-2'>Inkoop</Tag>
-              )}
+            <div className='-ml-1 flex items-center justify-start gap-x-1'>
+              {/* Expertise Badge */}
+              <Badge variant='black'>{hit.thema}</Badge>
+              {hit?.categorie?.includes('beleid') && <Badge variant='green'>Beleid</Badge>}
+              {hit?.categorie?.includes('inkoop') && <Badge variant='green'>Inkoop</Badge>}
               {hit?.categorie?.includes('grondpositie') && (
-                <Tag classes='bg-green-500 text-green-100 mr-2'>Grondpositie</Tag>
+                <Badge variant='green'>Grondpositie</Badge>
               )}
-              {hit?.categorie?.includes('subsidie') && (
-                <Tag classes='bg-green-500 text-green-100 mr-2'>Subsidie</Tag>
-              )}
-              {hit?.categorie?.includes('fiscaal') && (
-                <Tag classes='bg-green-500 text-green-100'>Fiscaal</Tag>
-              )}
+              {hit?.categorie?.includes('subsidie') && <Badge variant='green'>Subsidie</Badge>}
+              {hit?.categorie?.includes('fiscaal') && <Badge variant='green'>Fiscaal</Badge>}
             </div>
 
             <div className='mt-2 block'>

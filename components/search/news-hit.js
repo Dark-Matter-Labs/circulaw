@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { urlFor } from '@/lib/sanity';
 import { IconExternalLink } from '@tabler/icons-react';
 
-import Tag from '../tag';
+import Badge from '../shared/new-badge';
 
 export default function NewsHit({ hit }) {
   const event = new Date(hit.newsDate);
@@ -50,13 +50,10 @@ export default function NewsHit({ hit }) {
                 <div className='gradient-700 p-base-semibold mb-6 mr-6 flex h-[130px] w-[150px] items-center justify-center rounded-cl sm:mb-0'></div>
               )}
               <div className='flex flex-col'>
-                <div className='mb-6 flex flex-row'>
-                  <Tag classes='bg-cl-black text-white shrink mr-2'>{hit.category}</Tag>
+                <div className='mb-6 flex flex-row gap-x-1'>
+                  <Badge variant='black'>{hit.category}</Badge>
                   {hit.newsDate && (
-                    <Tag classes='bg-cl-black text-white shrink mr-2'>
-                      {' '}
-                      {event.toLocaleDateString('nl-NL', options)}
-                    </Tag>
+                    <Badge variant='green'> {event.toLocaleDateString('nl-NL', options)}</Badge>
                   )}
                 </div>
                 <h2 className='heading-xl-semibold'>
@@ -101,18 +98,15 @@ export default function NewsHit({ hit }) {
                 <div className='gradient-700 p-base-semibold mb-6 mr-6 flex h-[130px] w-[150px] items-center justify-center rounded-cl sm:mb-0'></div>
               )}
               <div className='flex flex-col'>
-                <div className='mb-6 flex flex-row'>
-                  <Tag classes='bg-cl-black text-white shrink mr-2'>{hit.category}</Tag>
+                <div className='mb-6 flex flex-row gap-x-1'>
+                  <Badge variant='black'>{hit.category}</Badge>
                   {hit.newsDate && (
-                    <Tag classes='bg-cl-black text-white shrink mr-2'>
-                      {' '}
-                      {event.toLocaleDateString('nl-NL', options)}
-                    </Tag>
+                    <Badge variant='green'> {event.toLocaleDateString('nl-NL', options)}</Badge>
                   )}
                   {!hit.linkUrl.includes('circulaw.nl') && (
-                    <Tag classes='border border-green-400 text-green-400 shrink mr-2'>
+                    <Badge variant='green'>
                       <IconExternalLink className='h-4 w-4' />
-                    </Tag>
+                    </Badge>
                   )}
                 </div>
                 <h2 className='heading-xl-semibold'>
@@ -157,12 +151,12 @@ export default function NewsHit({ hit }) {
             </div>
           </div>
           <div className='flex flex-col'>
-            <div className='mb-6 flex flex-row'>
-              <Tag classes='bg-cl-black text-white shrink mr-2'>agenda</Tag>
+            <div className='mb-6 flex flex-row gap-x-1'>
+              <Badge variant='black'>agenda</Badge>
               {hit.link && (
-                <Tag classes='border border-green-400 text-green-400 shrink mr-2'>
+                <Badge variant='green'>
                   <IconExternalLink className='h-4 w-4' />
-                </Tag>
+                </Badge>
               )}
             </div>
             <h2 className='heading-xl-semibold'>
