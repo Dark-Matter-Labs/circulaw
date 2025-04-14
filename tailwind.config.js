@@ -16,24 +16,24 @@ module.exports = {
         'card': [
           '0px 0px 3px 0px rgba(12, 26, 75, 0.24)',
           '0px 3px 8px -1px rgba(50, 50, 71, 0.05)'
+        ],
+        '': [
+          '0px 0px 1px 0px rgba(12, 26, 75, 0.24)',
+          '0px 3px 8px -1px rgba(50, 50, 71, 0.05)'
         ]
       },
       colors: {
-        'green-50': '#F8FBF8',
-        'green-100': '#D1F9EB', 
-        'green-200': '#84E9C5',
-        'green-300': '#25C38B',
-        'green-400': '#07B071',
-        'green-500': '#028352',
-        'green-600': '#035E46',
-        'green-800': '#053237',
-        'gray-100': '#FDFDFD',
-        'gray-200': '#F0F0F0', // gray 250 in DS
-        'gray-300': '#DAD8D8',
-        'gray-400': '#BFC0BF',
-        'gray-500': '#A2A3A2',
-        'gray-600': '#676868',
-        'gray-800': '#1F2223',
+        'green-100': '#F8FBF8', 
+        'green-200': '#D1F9EB', 
+        'green-300': '#84E9C5', 
+        'green-400': '#25C38B', 
+        'green-500': '#028352', 
+        'orange-100': '#F7E3C3',
+        'orange-200': '#E9A63B',
+        'orange-300': '#D75B1D',
+        'cl-grey': '#A2A3A2',
+        'cl-dark-grey': '#676868', 
+        'cl-black': '#1F2223', 
       },
       fontFamily: {
         jakarta: ['var(--font-plus-jakarta-sans)'],
@@ -84,7 +84,7 @@ module.exports = {
         'rladder': '29%',
       },
       backgroundImage: {
-        'about-header': 'url("/about-header.png")',
+        // 'about-header': 'url("/about-header.png")',
         'header': 'url("/home-page/homepage_bg.png")',
         // 'scoll-circles': 'url("/scrolly/centered.svg")',
       },
@@ -110,7 +110,6 @@ module.exports = {
     'delay-[500ms]',
     'delay-[750ms]',
     'delay-[1000ms]',
-    // etc.
   ],
   plugins: [
     require('@tailwindcss/forms')

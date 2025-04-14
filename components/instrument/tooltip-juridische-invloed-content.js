@@ -2,7 +2,7 @@ export default function TooltipJuridischeInvloedContent({ invloedTooltipText }) 
   return (
     <div className='absolute inset-0'>
       {invloedTooltipText && <p className='p-base'>{invloedTooltipText}</p>}
-      <div className='mt-6 bg-gray-100'>
+      <div className='mt-6 bg-green-100'>
         <p className='p-base'>
           Met ‘invloed’ bedoelen wij de invloed van het instrument in de praktijk. We kijken
           hiervoor onder andere naar:

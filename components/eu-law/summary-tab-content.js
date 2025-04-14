@@ -2,9 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { urlFor } from '@/lib/sanity';
+import { IconExternalLink } from '@tabler/icons-react';
 
 import ImageComponent from '../image-component';
-import LinkIcon from '../link-icon';
 import Modal from '../modal/modal';
 import EULawButton from '../modal/modal-buttons/eu-status-button';
 import ModalContent from '../modal/modal-content';
@@ -22,7 +22,7 @@ export default function SummaryComponent({ lawData }) {
                 <ImageComponent image={lawData?.introImage} caption={lawData?.imageAlt ?? ''} />
               )}
             </div>
-            <h3 className='heading-xl-semibold mb-6 text-green-800'>Overzicht</h3>
+            <h3 className='heading-xl-semibold mb-6 text-cl-black'>Overzicht</h3>
             <div className='p-base order-last max-w-[540px] sm:order-first'>
               {lawData?.summaryIntroText}
             </div>
@@ -83,7 +83,7 @@ export default function SummaryComponent({ lawData }) {
         </div>
       </div>
       {/* Ovewrview cards and stats */}
-      <div className='bg-green-50 py-10'>
+      <div className='py-10'>
         {lawData?.title === 'Corporate Sustainability Reporting Directive (CSRD)' && (
           <Highlights law='CSRD' />
         )}
@@ -112,7 +112,7 @@ export default function SummaryComponent({ lawData }) {
         <div className='global-margin grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
           {lawData?.linkCol1 && (
             <div className='flex flex-col'>
-              <h3 className='heading-2xl-semibold text-green-800'>
+              <h3 className='heading-2xl-semibold text-cl-black'>
                 Bekijk ook op{' '}
                 <Link href='/' className='link-interaction underline'>
                   Circulaw.nl
@@ -120,7 +120,7 @@ export default function SummaryComponent({ lawData }) {
               </h3>
               <ul>
                 {lawData?.linkCol1?.map((link, id) => (
-                  <li key={id} className='p-base my-3 text-green-800'>
+                  <li key={id} className='p-base my-3 text-cl-black'>
                     <Link href={link?.link} className='link-interaction'>
                       {link?.linkText}
                     </Link>
@@ -131,12 +131,12 @@ export default function SummaryComponent({ lawData }) {
           )}
           {lawData?.linkCol2 && (
             <div>
-              <h3 className='heading-2xl-semibold text-green-800'>
-                Relevante NL wetgeving <LinkIcon />
+              <h3 className='heading-2xl-semibold text-cl-black'>
+                Relevante NL wetgeving <IconExternalLink className='inline-block' />
               </h3>
               <ul>
                 {lawData?.linkCol2?.map((link, id) => (
-                  <li key={id} className='p-base my-3 text-green-800'>
+                  <li key={id} className='p-base my-3 text-cl-black'>
                     <Link href={link?.link} target='_blank' className='link-interaction'>
                       {link?.linkText}
                     </Link>
@@ -147,12 +147,12 @@ export default function SummaryComponent({ lawData }) {
           )}
           {lawData?.linkCol3 && (
             <div>
-              <h3 className='heading-2xl-semibold text-green-800'>
-                Relevante EU-wetgeving <LinkIcon />
+              <h3 className='heading-2xl-semibold text-cl-black'>
+                Relevante EU-wetgeving <IconExternalLink className='inline-block' />
               </h3>
               <ul>
                 {lawData?.linkCol3?.map((link, id) => (
-                  <li key={id} className='p-base my-3 text-green-800'>
+                  <li key={id} className='p-base my-3 text-cl-black'>
                     <Link href={link?.link} target='_blank' className='link-interaction'>
                       {link?.linkText}
                     </Link>

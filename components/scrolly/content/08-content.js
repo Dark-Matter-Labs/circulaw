@@ -1,6 +1,6 @@
 export default function ContentEight() {
   return (
-    <div className='flex max-w-[290px] flex-col gap-y-6 text-green-600'>
+    <div className='flex max-w-[290px] flex-col gap-y-6 text-green-500'>
       <h3 className='heading-2xl-semibold'>Gemeentelijke omgevingsprogramma&apos;s</h3>
       <p className='p-base'>
         Bevat <span className='p-base-semibold'>uitwerking</span> van{' '}
