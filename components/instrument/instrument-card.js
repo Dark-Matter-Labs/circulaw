@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import Tag from '@/components/tag';
 import { urlFor } from '@/lib/sanity';
+
+import Badge from '../shared/new-badge';
 
 export default function InstrumentCard({ instrument, images }) {
   return (
@@ -31,21 +32,11 @@ export default function InstrumentCard({ instrument, images }) {
               <div className='block'>
                 <div className='-ml-1 flex items-center justify-start'>
                   {/* Expertise Tag */}
-                  {instrument?.beleid === true && (
-                    <Tag classes='bg-green-500 text-green-100 mr-2'>Beleid</Tag>
-                  )}
-                  {instrument?.inkoop === true && (
-                    <Tag classes='bg-green-500 text-green-100 mr-2'>Inkoop</Tag>
-                  )}
-                  {instrument?.grondpositie === true && (
-                    <Tag classes='bg-green-500 text-green-100 mr-2'>Grondpositie</Tag>
-                  )}
-                  {instrument?.subsidie === true && (
-                    <Tag classes='bg-green-500 text-green-100 mr-2'>Subsidie</Tag>
-                  )}
-                  {instrument?.fiscaal === true && (
-                    <Tag classes='bg-green-500 text-green-100 mr-2'>Fiscaal</Tag>
-                  )}
+                  {instrument?.beleid === true && <Badge variant='green'>Beleid</Badge>}
+                  {instrument?.inkoop === true && <Badge variant='green'>Inkoop</Badge>}
+                  {instrument?.grondpositie === true && <Badge variant='green'>Grondpositie</Badge>}
+                  {instrument?.subsidie === true && <Badge variant='green'>Subsidie</Badge>}
+                  {instrument?.fiscaal === true && <Badge variant='green'>Fiscaal</Badge>}
                 </div>
                 <div className='mt-2 block'>
                   <div className='mb-2'>
@@ -140,25 +131,11 @@ export default function InstrumentCard({ instrument, images }) {
             )}
             <div className=''>
               <div className='-ml-1 flex items-center justify-start'>
-                {/* Expertise Tag */}
-                <Tag classes='border border-green-400 bg-transparent text-green-400 mr-2'>
-                  {instrument.thema}
-                </Tag>
-                {instrument?.categorie?.includes('beleid') && (
-                  <Tag classes='bg-green-500 text-green-100 mr-2'>Beleid</Tag>
-                )}
-                {instrument?.categorie?.includes('inkoop') && (
-                  <Tag classes='bg-green-500 text-green-100 mr-2'>Inkoop</Tag>
-                )}
-                {instrument?.categorie?.includes('grondpositie') && (
-                  <Tag classes='bg-green-500 text-green-100 mr-2'>Grondpositie</Tag>
-                )}
-                {instrument?.categorie?.includes('subsidie') && (
-                  <Tag classes='bg-green-500 text-green-100 mr-2'>Subsidie</Tag>
-                )}
-                {instrument?.categorie?.includes('fiscaal') && (
-                  <Tag classes='bg-green-500 text-green-100'>Fiscaal</Tag>
-                )}
+                {instrument?.beleid === true && <Badge variant='green'>Beleid</Badge>}
+                {instrument?.inkoop === true && <Badge variant='green'>Inkoop</Badge>}
+                {instrument?.grondpositie === true && <Badge variant='green'>Grondpositie</Badge>}
+                {instrument?.subsidie === true && <Badge variant='green'>Subsidie</Badge>}
+                {instrument?.fiscaal === true && <Badge variant='green'>Fiscaal</Badge>}
               </div>
               <div className='mt-2 block'>
                 <div className='mb-2'>
