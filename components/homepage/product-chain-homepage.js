@@ -15,7 +15,6 @@ import TitleDecorator from '../title-decorator';
 export default function PCHomePage({ pcData }) {
   const [isHovered, setIsHovered] = useState(false);
   const [hoveredProductChain, setHoveredProductChain] = useState('');
-  console.log(hoveredProductChain);
 
   function handleMouseLeave() {
     setIsHovered(false);

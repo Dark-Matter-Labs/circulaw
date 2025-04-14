@@ -16,7 +16,6 @@ export const InstrumentHit = ({ hit }) => {
           <div className='block'>
             <div className='-ml-1 flex items-center justify-start gap-x-1'>
               <Badge variant='black'>{hit.thema}</Badge>
-              {console.log(hit)}
               {/* Expertise Badge */}
               {hit?.categorie?.includes('beleid') && <Badge variant='green'>Beleid</Badge>}
               {hit?.categorie?.includes('inkoop') && <Badge variant='green'>Inkoop</Badge>}
