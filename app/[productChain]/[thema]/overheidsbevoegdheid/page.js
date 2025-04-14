@@ -2,20 +2,18 @@ import { notFound } from 'next/navigation';
 
 import GovLevelLayout from '@/components/layouts/gov-level-layout';
 import { FUll_THEME_PATHS_QUERY, GOV_LEVEL_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
-import { client, sanityFetch } from '@/lib/sanity';
+import { sanityFetch } from '@/lib/sanity';
 import placeholderImage from '@/public/gov-level-placeholder-mobile.png';
 
 export async function generateMetadata({ params }, parent) {
   // read route params
   const thema = params.thema;
   // fetch data
-  const themaMetaData = await client.fetch(
-    THEME_METADATA_QUERY,
-    { thema },
-    {
-      next: { tags: ['thema', 'simpleThema'] },
-    },
-  );
+  const themaMetaData = await sanityFetch({
+    query: THEME_METADATA_QUERY,
+    qParams: { thema },
+    tags: ['thema', 'simpleThema'],
+  });
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
@@ -38,8 +36,9 @@ export async function generateMetadata({ params }, parent) {
 }
 
 export async function generateStaticParams() {
-  const themas = await client.fetch(FUll_THEME_PATHS_QUERY, {
-    next: { tags: ['thema', 'simpleThema'] },
+  const themas = await sanityFetch({
+    query: FUll_THEME_PATHS_QUERY,
+    tags: ['thema', 'simpleThema'],
   });
   return themas.map((thema) => ({ thema: thema.thema, productChain: thema.productChain }));
 }

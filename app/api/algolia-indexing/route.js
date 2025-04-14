@@ -19,7 +19,8 @@ const QUERY = `
     "content": pt::text(content),
     "slug": slug.current,
     "transitionAgenda":transitionAgenda->pcName,
-    "thema": thema->themaName,
+    "thema": thema->slug.current,
+    "themaName": thema->themaName,
     extraContent,
     overheidslaag,
     juridischInvloed,
@@ -105,6 +106,7 @@ linkUrl,
 }
 `;
 
+// TODO: check to see if client.fetch should be sanityFetch
 export async function GET() {
   if (process.env.APP_ENV === 'production') {
     const instruments = await client.fetch(QUERY);
