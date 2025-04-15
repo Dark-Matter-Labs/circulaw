@@ -120,15 +120,7 @@ export default function LearningLandingPage() {
               <h3 className='heading-2xl-semibold mb-4'>Hoelang duurt de e-learning?</h3>
               <p className='p-base'>Reken op 1-1,5 uur.</p>
             </div>
-            <div className='mb-6'>
-              <h3 className='heading-2xl-semibold mb-4'>Komt er een vervolg op de e-learning?</h3>
-              <p className='p-base'>
-                Jazeker! Want er valt nog zoveel meer te vertellen en te bespreken over houtbouw… Op
-                8 april organiseren we een <span className='p-base-semibold'>live-sessie</span>,
-                voor geselecteerde deelnemers. Je ontvangt meer informatie als je de e-learning hebt
-                voltooid.
-              </p>
-            </div>
+          
 
             <div className='mb-6'>
               <h3 className='heading-2xl-semibold mb-4'>Ik heb nog een andere vraag…</h3>
