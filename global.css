@@ -116,9 +116,7 @@
     @apply p-3xs font-semibold
   }
 
-
   /* special fonts */
-
   .p-agenda-card-day {
     @apply font-jakarta text-[88px] font-bold leading-[88px]
   }

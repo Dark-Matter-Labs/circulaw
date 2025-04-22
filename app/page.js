@@ -20,8 +20,8 @@ export default async function Page() {
   return (
     <>
       <div className='global-margin'>
-        <div className='mb-20 flex flex-col gap-y-6 sm:flex-row xl:gap-x-24' name='thema'>
-          <div className='group relative mb-20 flex w-full items-center justify-center sm:hidden'>
+        <div className='mb-20 flex flex-col gap-y-6 md:flex-row xl:gap-x-24' name='thema'>
+          <div className='group relative mb-20 flex w-full items-center justify-center md:hidden'>
             <Link
               href='/over/wat-is-circulaw'
               className='flex h-full w-full items-center justify-center'
@@ -36,7 +36,6 @@ export default async function Page() {
               <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform'>
                 <div className='flex flex-col gap-y-8'>
                   <h3 className='heading-4xl-semibold text-green-100'>Wat is CircuLaw?</h3>
-
                   <div className='heading-xl-semibold text-green-100 group-hover:underline'>
                     Video bekijken
                     <IconArrowRight className='inline-block h-5 w-5' aria-hidden='true' />
