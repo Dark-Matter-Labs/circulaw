@@ -4,7 +4,7 @@ import TitleDecorator from '../title-decorator';
 
 export default function HomePageEUSection({ euData }) {
   return (
-    <div className='group flex flex-col items-center justify-between gap-x-20 gap-y-8 sm:flex-row'>
+    <div className='flex flex-col items-center justify-between gap-x-20 gap-y-8 sm:flex-row'>
       <div className='relative basis-1/2'>
         <ImageComponent image={euData?.image} caption='' />
       </div>
