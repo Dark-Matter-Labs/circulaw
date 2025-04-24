@@ -17,13 +17,13 @@ import {
 
 const varientStyles = {
   primaryLight:
-    'bg-white text-green-500 hover:bg-green-200 hover:text-green-500 group-hover:bg-green-200 group-hover:text-green-500 focus:bg-green-200 focus:outline-2 focus:outline-green-500 focus:text-green-500 focus:border-green-500 active:bg-green-300 active:text-green-500',
+    'bg-white text-green-500 border-2 border-white hover:border-green-200 group-hover:border-green-200 hover:bg-green-200 hover:text-green-500 group-hover:bg-green-200 group-hover:text-green-500 focus:bg-green-200 focus:outline-2 focus:outline-green-500 focus:text-green-500 focus:border-green-500 active:bg-green-300 active:text-green-500',
   primaryDark:
-    'bg-green-500 text-white hover:bg-green-200 hover:text-green-500 group-hover:bg-green-200 group-hover:text-green-500 focus:bg-green-200 focus:outline-2 focus:outline-green-500 focus:text-green-500 focus:border-green-500 active:bg-green-300 active:text-green-500',
+    'bg-green-500 text-white border-2 border-green-500 hover:border-green-200 group-hover:border-green-200 hover:bg-green-200 hover:text-green-500 group-hover:bg-green-200 group-hover:text-green-500 focus:bg-green-200 focus:outline-2 focus:outline-green-500 focus:text-green-500 focus:border-green-500 active:bg-green-300 active:text-green-500',
   secondaryLight:
-    'bg-transparent text-white border-2 border-white hover:border-green-200 group-hover:border-green-200 rounded-full hover:bg-green-200 hover:text-green-600 group-hover:bg-green-200 group-hover:text-green-600 focus:bg-green-200 focus:outline-2 focus:outline-green-500 focus:text-green-500 focus:border-green-500 active:bg-green-300 active:text-green-500',
+    'bg-transparent text-white border-2 box-border border-white hover:border-green-200 group-hover:border-green-200 rounded-full hover:bg-green-200 hover:text-green-600 group-hover:bg-green-200 group-hover:text-green-600 focus:bg-green-200 focus:outline-2 focus:outline-green-500 focus:text-green-500 focus:border-green-500 active:bg-green-300 active:text-green-500',
   secondaryDark:
-    'bg-transparent text-green-500 border-green-500 border-2 hover:border-green-200 group-hover:border-green-200 rounded-full hover:bg-green-200 hover:text-green-600 group-hover:bg-green-200 group-hover:text-green-600 focus:bg-green-200 focus:outline-2 focus:outline-green-500 focus:text-green-500 focus:border-green-500 active:bg-green-300 active:text-green-500',
+    'bg-transparent text-green-500 border-green-500 border-2 box-border hover:border-green-200 group-hover:border-green-200 rounded-full hover:bg-green-200 hover:text-green-600 group-hover:bg-green-200 group-hover:text-green-600 focus:bg-green-200 focus:outline-2 focus:outline-green-500 focus:text-green-500 focus:border-green-500 active:bg-green-300 active:text-green-500',
 };
 
 export default function NewButton({ variant, icon, href, newTab, scrollTo, children, ...props }) {
