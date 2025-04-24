@@ -33,7 +33,7 @@ export default function Header({
                 alt='homepage decoration'
                 fill
                 sizes='100vw'
-                className={`${pageType === 'thema' ? 'object-cover' : '!h-auto !w-auto origin-top'} rounded-cl`}
+                className={`${pageType === 'thema' ? 'object-cover' : 'object-cover object-right min-h-[40vh] sm:!h-auto sm:!w-auto sm:origin-top'} rounded-cl`}
                 priority={true}
                 quality={100}
               />
