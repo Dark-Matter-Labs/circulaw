@@ -13,7 +13,6 @@ export default function NewNewsCard({ data }) {
     month: 'long',
     year: 'numeric',
   };
-  console.log(data.colour);
   const CardContent = () => (
     <div className={`bg-${data.colour} flex h-full w-full flex-col rounded-cl`}>
       {data.image && (

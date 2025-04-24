@@ -40,16 +40,19 @@ export default function PCHomePage({ pcData }) {
               onMouseEnter={() => setHoveredProductChain(chain.slug)}
             >
               <li className='relative flex w-full flex-col'>
-                <Image
-                  src={urlFor(chain?.image).url()}
-                  alt={chain.alt}
-                  fill
-                  placeholder='blur'
-                  blurDataURL={chain?.metadata.lqip}
-                  sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
-                  className={`${hoveredProductChain === chain.slug ? 'h-[350px]' : 'h-[430px]'} relative rounded-cl object-cover transition-all duration-300`}
-                />
-
+                <div
+                  className={`relative w-full overflow-hidden rounded-b-cl transition-all duration-300 ${hoveredProductChain === chain.slug ? 'h-[350px]' : 'h-[430px]'}`}
+                >
+                  <Image
+                    src={urlFor(chain?.image).url()}
+                    alt={chain.alt}
+                    fill
+                    placeholder='blur'
+                    blurDataURL={chain?.metadata.lqip}
+                    sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
+                    className='relative h-[430px] rounded-cl object-cover'
+                  />
+                </div>
                 <div className='flex w-full max-w-[200px] grow flex-col justify-between'>
                   <div>
                     {chain.pcName === 'Consumptiegoederen' && (

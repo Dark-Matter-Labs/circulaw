@@ -1076,7 +1076,7 @@ export default function Nav(props) {
         </nav>
       </div>
       {pathname === '/' && (
-        <div className='relative -mt-[9rem] min-h-[700px] md:min-h-[886px]'>
+        <div className='relative -mt-[9rem] min-h-[750px] md:min-h-[886px]'>
           <Image
             src='/home-page/homepage-header.png'
             alt='homepage decoration'
