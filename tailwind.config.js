@@ -17,7 +17,7 @@ module.exports = {
           '0px 0px 3px 0px rgba(12, 26, 75, 0.24)',
           '0px 3px 8px -1px rgba(50, 50, 71, 0.05)'
         ],
-        '': [
+        'cl1': [
           '0px 0px 1px 0px rgba(12, 26, 75, 0.24)',
           '0px 3px 8px -1px rgba(50, 50, 71, 0.05)'
         ]
@@ -103,6 +103,12 @@ module.exports = {
         '120': '120',
         '130': '130'
       },
+      keyframes: {
+        'infinite-scroll': {'0%': { transform: 'translateX(0)'}, '100%': {transform: 'translateX(calc(-50% - 12px))'}} 
+      },
+      animation: {
+        'infinite-scroll': 'infinite-scroll 40s linear infinite'
+      },
     },
   },
   // this allows the dynamic setting of animation delay in theme-sponsors.js
@@ -113,7 +119,17 @@ module.exports = {
     'delay-[1000ms]',
   ],
   plugins: [
-    require('@tailwindcss/forms')
+    require('@tailwindcss/forms'), 
+    function ({ addUtilities }) {
+      addUtilities({
+        '.paused': {
+          'animation-play-state': 'paused',
+        },
+        '.running': {
+          'animation-play-state': 'running',
+        },
+      });
+    },
 ],
 };
 
