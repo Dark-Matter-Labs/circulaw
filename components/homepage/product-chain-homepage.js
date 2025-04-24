@@ -25,7 +25,7 @@ export default function PCHomePage({ pcData }) {
     <>
       <div className='relative hidden h-[800px] w-full sm:flex'>
         <div
-          className={`${isHovered ? 'bg-transparent' : 'gradient-homepage-cards'} absolute bottom-[127px] right-0 h-1/2 w-full rotate-180 rounded-cl`}
+          className={`${isHovered ? 'opacity-0' : 'opacity-100'} gradient-homepage-cards absolute bottom-[127px] right-0 h-1/2 w-full rotate-180 rounded-cl transition-all duration-300`}
         />
         <ul
           className='no-scrollbar group relative z-20 flex h-full w-full snap-mandatory flex-row overflow-scroll'
