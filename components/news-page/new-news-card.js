@@ -13,7 +13,7 @@ export default function NewNewsCard({ data }) {
     month: 'long',
     year: 'numeric',
   };
-  console.log(data.colour)
+  console.log(data.colour);
   const CardContent = () => (
     <div className={`bg-${data.colour} flex h-full w-full flex-col rounded-cl`}>
       {data.image && (
@@ -48,7 +48,9 @@ export default function NewNewsCard({ data }) {
         {data.isFeatured === false && <div className='p-base text-cl-black'>{data.newsText}</div>}
 
         {(data.hasPage === true || data.linkText) && (
-          <div className={`${data.colour === 'green-200' ? 'hover:text-green-400 active:text-green-400 focus:text-green-400 focus:ring-2 focus:ring-green-400 group-hover:text-green-400 group-active:text-green-400 group-focus:text-green-400 group-focus:ring-2 group-focus:ring-green-400' : 'hover:text-white active:text-white focus:text-white focus:ring-2 focus:ring-white group-hover:text-white group-active:text-white group-focus:text-white group-focus:ring-2 group-focus:ring-white'} heading-xl-semibold mt-auto flex items-center self-start text-cl-black`}>
+          <div
+            className={`${data.colour === 'green-200' ? 'hover:text-green-400 focus:text-green-400 focus:ring-2 focus:ring-green-400 active:text-green-400 group-hover:text-green-400 group-focus:text-green-400 group-focus:ring-2 group-focus:ring-green-400 group-active:text-green-400' : 'hover:text-white focus:text-white focus:ring-2 focus:ring-white active:text-white group-hover:text-white group-focus:text-white group-focus:ring-2 group-focus:ring-white group-active:text-white'} heading-xl-semibold mt-auto flex items-center self-start text-cl-black`}
+          >
             {data.linkText || 'Lees meer'}
             {data.isExternal === true ? (
               <IconExternalLink className='ml-1 size-5' />

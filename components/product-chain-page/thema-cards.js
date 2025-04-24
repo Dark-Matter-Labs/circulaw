@@ -52,12 +52,12 @@ export default function ThemaCard({ themaCards }) {
           ))}
         </ul>
       </div>
-      <div className='block sm:hidden'>
-        {themaCards?.map((thema, id) => (
+      <div className='flex flex-col gap-y-[10px] sm:hidden'>
+        {themaCards.map((thema, id) => (
           <Link key={id} href={`/${thema.transitionAgenda}/${thema.slug}`}>
-            <div className='my-6 h-24 w-full rounded-cl bg-green-500 shadow'>
+            <div className='h-28 w-full rounded-cl bg-green-100 shadow'>
               <div className='flex items-center justify-start'>
-                <div className='relative h-24 w-24'>
+                <div className='relative !h-28 !w-24'>
                   <Image
                     src={urlFor(thema?.mobileCardImage).url()}
                     alt={thema?.themaName + 'image'}
@@ -72,15 +72,24 @@ export default function ThemaCard({ themaCards }) {
                     </div>
                   )}
                 </div>
-                <div className='pl-4 text-green-100'>
-                  <h3 className='heading-2xl-semibold'>{thema.themaName}</h3>
-                  <p className='p-base text-green-300'>{thema.count} instrumenten</p>
+                <div className='flex grow flex-row items-center justify-between pl-6 pr-4 text-black'>
+                  <div>
+                    <h3 className='heading-xl-semibold max-w-[132px] break-words'>
+                      {thema.themaName}
+                    </h3>
+
+                    <p className='p-xs-semibold text-green-500'>{thema.count} instrumenten</p>
+                  </div>
+                  <div className='flex items-center justify-end'>
+                    <NewRoundButton variant='orange' />
+                  </div>
                 </div>
               </div>
             </div>
           </Link>
         ))}
       </div>
+
       {themaCards[0].transitionAgenda !== 'bouw' && (
         <div className='mt-20 flex w-full flex-col items-center justify-between gap-y-6 rounded-cl bg-green-400 px-6 py-6 md:flex-row md:px-24'>
           <div className='flex flex-col items-center justify-between'>
