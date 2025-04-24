@@ -42,7 +42,7 @@ export default function NewSearchBar(props) {
   return (
     <div className='global-margin mt-20 rounded-cl bg-green-500'>
       <div className='relative h-full w-full object-cover px-16 py-10'>
-        <div className='flex h-full flex-col items-center justify-center gap-y-6'>
+        <div className='flex h-full flex-col items-center justify-center gap-y-6 my-5'>
           <div className='w-full'>
             <div className='flex h-full w-full flex-col items-center justify-end'>
               <div className='w-full max-w-sm sm:max-w-[600px]'>
