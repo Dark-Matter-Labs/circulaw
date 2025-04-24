@@ -110,7 +110,7 @@ export default function Header({
               {pageType === 'productChain' && (
                 <div className='p-base sm:heading-2xl-semibold text-green-300'>{subtitle}</div>
               )}
-              <h1 className='heading-3xl-semibold sm:heading-5xl-semibold inline-block text-green-100 break-words max-w-xs sm:max-w-none'>
+              <h1 className='heading-3xl-semibold sm:heading-5xl-semibold inline-block max-w-xs break-words text-green-100 sm:max-w-none'>
                 {title}
               </h1>
               {(pageType === 'thema' || pageType === 'euOverview') && (
