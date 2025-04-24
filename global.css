@@ -134,12 +134,20 @@
     @apply font-jakarta text-xl font-semibold leading-13 underline;
   }
 
+  .new-link-primary {
+    @apply hover:text-white active:text-white focus:text-white focus:ring-2 focus:ring-white group-hover:text-white group-active:text-white group-focus:text-white group-focus:ring-2 group-focus:ring-white 
+  }
+
+  .new-link-secondary {
+    @apply hover:text-green-400 active:text-green-400 focus:text-green-400 focus:ring-2 focus:ring-green-400 group-hover:text-green-400 group-active:text-green-400 group-focus:text-green-400 group-focus:ring-2 group-focus:ring-green-400 
+  }
+
   .link-base {
     @apply font-jakarta text-base font-medium leading-11 underline;
   }
 
   .link-interaction {
-    @apply hover:text-green-400 active:text-cl-black focus:text-green-300 focus:ring-2 focus:ring-white;
+    @apply hover:text-green-400 active:text-green-400 focus:ring-2 focus:text-green-400;
   }
 
   .link-interaction-light-green-bg {
@@ -174,7 +182,6 @@ html {
   white-space: break-spaces;
 }
 
-/* CHECK GRADIENTS BY SEARCHING BG_GRAD*/
 
 /* used on EU law card  */
 .gradient-600 {
