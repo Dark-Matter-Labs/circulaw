@@ -93,7 +93,7 @@ export default function PCHomePage({ pcData }) {
                           <span className=''>{chain.themaCount} Thema&apos;s</span>
                         )}
                       </Badge>
-                      {chain.slug === 'bouw' && <Badge variant='black'>3 Toepassing</Badge>}
+                      {chain.slug === 'bouw' && <Badge variant='black'>3 toepassingen</Badge>}
                     </div>
                     <p>{chain.cardText}</p>
                   </div>
