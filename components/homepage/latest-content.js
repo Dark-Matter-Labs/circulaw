@@ -16,7 +16,7 @@ export default function LatestContent({ latestContent }) {
           return (
             <li
               key={id}
-              className={`${id % 2 === 0 ? 'bg-green-100' : 'bg-orange-100'} shadow-cl1 flex flex-row rounded-cl border p-4`}
+              className={`${id % 2 === 0 ? 'bg-green-100' : 'bg-orange-100'} flex flex-row rounded-cl border p-4 shadow-cl1`}
             >
               {c._type === 'euLaw' ? (
                 <Link className='h-full w-full' href={`/eu-wetgeving/${c.slug}`}>

@@ -72,7 +72,7 @@ export default function PCHomePage({ pcData }) {
                     )}
                     {chain.pcName === 'Maakindustrie' && (
                       <div className='heading-3xl-semibold min-h-[100px] items-end break-words pt-4 text-green-500'>
-                        Maak-Industrie
+                        Maak-industrie
                       </div>
                     )}
                     {chain.pcName === 'Kunststoffen' && (

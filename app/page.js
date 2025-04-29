@@ -19,8 +19,11 @@ export default async function Page() {
   });
   return (
     <>
-      <div className='global-margin'>
-        <div className='mb-20 flex flex-col gap-y-6 md:flex-row xl:gap-x-24' name='thema'>
+      <div className=''>
+        <div
+          className='global-margin mb-20 flex flex-col gap-y-6 md:flex-row xl:gap-x-24'
+          name='thema'
+        >
           <div className='group relative mb-20 flex w-full items-center justify-center md:hidden'>
             <Link
               href='/over/wat-is-circulaw'
@@ -85,21 +88,25 @@ export default async function Page() {
             </p>
           </div>
         </div>
-        <div className='mb-20 sm:mb-32'>
+        <div className='global-margin mb-20 sm:mb-32'>
           <PCHomePage pcData={data.pcHomePage} />
         </div>
-        <div className='mb-20 sm:mb-40'>
+        <div className='global-margin mb-20 sm:mb-40'>
           <HomePageEUSection euData={data.euData} />
         </div>
         <div className='mb-40'>
-          <div className='mb-10 sm:w-1/2'>
-            <h3 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-500' id='news'>
-              Uitgelichte nieuwsberichten
-            </h3>
-            <TitleDecorator width='w-1/4' />
+          <div className='global-margin'>
+            <div className='mb-10 sm:w-1/2'>
+              <h3 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-500' id='news'>
+                Uitgelichte nieuwsberichten
+              </h3>
+              <TitleDecorator width='w-1/4' />
+            </div>
           </div>
           <LatestContent latestContent={data.latestContent} />
-          <FeaturedNewsSection items={data.newsItems} />
+          <div className='global-margin'>
+            <FeaturedNewsSection items={data.newsItems} />
+          </div>
         </div>
       </div>
     </>
