@@ -98,7 +98,7 @@ export default async function Page() {
           <div className='global-margin'>
             <div className='mb-10 sm:w-1/2'>
               <h3 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-500' id='news'>
-                Uitgelichte nieuwsberichten
+                Uitgelicht nieuws
               </h3>
               <TitleDecorator width='w-1/4' />
             </div>
