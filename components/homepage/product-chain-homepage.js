@@ -98,7 +98,7 @@ export default function PCHomePage({ pcData }) {
                     <p>{chain.cardText}</p>
                   </div>
 
-                  <div className='mb-3 mt-6 flex h-12 w-12 items-center justify-center self-end rounded-full border border-green-500 bg-transparent text-green-500'>
+                  <div className='mb-3 mt-6 flex h-12 w-12 items-center justify-center self-start rounded-full border border-green-500 bg-transparent text-green-500'>
                     <IconArrowRight className='inline-block size-6' aria-hidden='true' />
                   </div>
                 </div>
