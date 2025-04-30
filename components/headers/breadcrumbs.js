@@ -7,8 +7,9 @@ export default function Breadcrumb({ pageType }) {
   const paths = usePathname();
   const pathNames = paths.split('/').filter((path) => path && path !== 'over');
   const router = useRouter();
+  const isMobile = window.innerWidth <= 640;
 
-  if (pageType === 'instrument') {
+  if (pageType === 'instrument' || isMobile) {
     return (
       <button
         type='button'
@@ -22,7 +23,7 @@ export default function Breadcrumb({ pageType }) {
   } else {
     return (
       <ul
-        className={`${pageType === 'noHeader' ? 'rounded-full border border-green-500' : 'bg-green-100'} p-2xs-semibold inline-flex h-min flex-row items-center justify-center rounded-full px-3 py-1.5 align-middle text-green-500 group-hover:text-green-400 group-focus:text-green-300 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black`}
+        className={`${pageType === 'noHeader' ? 'rounded-full border border-green-500' : 'bg-green-100'} p-2xs-semibold hidden h-min flex-row items-center justify-center rounded-full px-3 py-1.5 align-middle text-green-500 group-hover:text-green-400 group-focus:text-green-300 group-focus:ring-2 group-focus:ring-white group-active:text-cl-black sm:inline-flex`}
       >
         {pageType !== 'instrument' && (
           <li key='home'>
