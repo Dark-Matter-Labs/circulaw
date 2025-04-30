@@ -15,7 +15,7 @@ export default function InstrumentCard({ instrument, images }) {
               {instrument.featuredImage && (
                 <Image
                   src={urlFor(instrument?.featuredImage).url()}
-                  alt={instrument?.featuredImage?.altText}
+                  alt={instrument?.featuredImage?.altText || ''}
                   fill
                   placeholder='blur'
                   blurDataURL={instrument?.metadata.lqip}
@@ -120,7 +120,7 @@ export default function InstrumentCard({ instrument, images }) {
                 {instrument.featuredImage && (
                   <Image
                     src={urlFor(instrument?.featuredImage).url()}
-                    alt={instrument?.featuredImage?.altText}
+                    alt={instrument?.featuredImage?.altText || ''}
                     fill
                     placeholder='blur'
                     blurDataURL={instrument?.metadata.lqip}

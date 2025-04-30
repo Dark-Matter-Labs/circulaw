@@ -15,7 +15,7 @@ export default function FAQPageComponent({ data }) {
       <Header title={data?.pageTitle} bgColor='bg-green-500' imageURL='/big-decoration.png' />
       <div className='global-margin py-8'>
         <div className='grid w-full grid-cols-1 justify-start'>
-          <div className='max-w-4xl px-16'>
+          <div className='max-w-4xl sm:px-16'>
             <Accordion.Root
               className='flex flex-col gap-y-5'
               type='single'
