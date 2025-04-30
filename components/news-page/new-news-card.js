@@ -6,27 +6,55 @@ import { IconArrowRight, IconExternalLink } from '@tabler/icons-react';
 
 import Badge from '../shared/new-badge';
 
-export default function NewNewsCard({ data }) {
-  const event = new Date(data.newsDate);
-  const options = {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  };
-  const CardContent = () => (
+const getBackgroundColor = (isFeatured, id, colour) => {
+  if (isFeatured) {
+    switch (id) {
+      case 0:
+        return 'bg-green-300';
+      case 1:
+        return 'bg-green-200';
+      case 2:
+        return 'bg-green-400';
+      default:
+        return 'bg-green-500';
+    }
+  } else {
+    return `bg-${colour}`; // fallback to colour based on the prop
+  }
+};
+
+const formatDate = (date) => {
+  const event = new Date(date);
+  const options = { day: 'numeric', month: 'long', year: 'numeric' };
+  return event.toLocaleDateString('nl-NL', options);
+};
+
+const renderLinkButton = (data) => {
+  const linkClasses =
+    (data.id === 1 && data.isFeatured) || (data.isFeatured === false && data.colour === 'green-200')
+      ? 'hover:text-green-400 focus:text-green-400 focus:ring-2 focus:ring-green-400 active:text-green-400 group-hover:text-green-400 group-focus:text-green-400 group-focus:ring-2 group-focus:ring-green-400 group-active:text-green-400'
+      : 'hover:text-white focus:text-white focus:ring-2 focus:ring-white active:text-white group-hover:text-white group-focus:text-white group-focus:ring-2 group-focus:ring-white group-active:text-white';
+
+  return (
     <div
-      className={`${
-        data.isFeatured
-          ? data.id === 0
-            ? 'bg-green-300'
-            : data.id === 1
-              ? 'bg-green-200'
-              : data.id === 2
-                ? 'bg-green-400'
-                : 'bg-green-500' // default background if featured and id does not match 0, 1, or 2
-          : `bg-${data.colour}` // background based on data.colour if not featured
-      } flex h-full w-full flex-col rounded-cl`}
+      className={`${linkClasses} heading-xl-semibold mt-auto flex items-center self-start text-cl-black`}
     >
+      {data.linkText || 'Lees meer'}
+      {data.isExternal ? (
+        <IconExternalLink className='ml-1 size-5' />
+      ) : (
+        <IconArrowRight className='ml-1' />
+      )}
+    </div>
+  );
+};
+
+export default function NewNewsCard({ data }) {
+  const backgroundColor = getBackgroundColor(data.isFeatured, data.id, data.colour);
+  const formattedDate = data.newsDate ? formatDate(data.newsDate) : null;
+
+  const CardContent = () => (
+    <div className={`${backgroundColor} flex h-full w-full flex-col rounded-cl`}>
       {data.image && (
         <div className='relative h-64 w-full rounded-t-cl'>
           <Image
@@ -49,42 +77,27 @@ export default function NewNewsCard({ data }) {
           <h3 className='heading-2xl-semibold line-clamp-4 pb-0.5 pt-4 text-cl-black'>
             {data.title}
           </h3>
-          {data.newsDate && (
-            <div className='p-xs-semibold text-cl-black'>
-              {event.toLocaleDateString('nl-NL', options)}
-            </div>
-          )}
+          {formattedDate && <div className='p-xs-semibold text-cl-black'>{formattedDate}</div>}
         </div>
 
         {data.isFeatured === false && <div className='p-base text-cl-black'>{data.newsText}</div>}
 
-        {(data.hasPage === true || data.linkText) && (
-          <div
-            className={`${data.colour === 'green-200' ? 'hover:text-green-400 focus:text-green-400 focus:ring-2 focus:ring-green-400 active:text-green-400 group-hover:text-green-400 group-focus:text-green-400 group-focus:ring-2 group-focus:ring-green-400 group-active:text-green-400' : 'hover:text-white focus:text-white focus:ring-2 focus:ring-white active:text-white group-hover:text-white group-focus:text-white group-focus:ring-2 group-focus:ring-white group-active:text-white'} heading-xl-semibold mt-auto flex items-center self-start text-cl-black`}
-          >
-            {data.linkText || 'Lees meer'}
-            {data.isExternal === true ? (
-              <IconExternalLink className='ml-1 size-5' />
-            ) : (
-              <IconArrowRight className='ml-1' />
-            )}
-          </div>
-        )}
+        {(data.hasPage || data.linkText) && renderLinkButton(data)}
       </div>
     </div>
   );
 
-  if (data.hasPage === true) {
+  if (data.hasPage) {
     return (
-      <Link href={`/nieuws/${data?.slug?.current}`} className='group flex h-full w-full'>
+      <Link href={`/nieuws/${data.slug?.current}`} className='group flex h-full w-full'>
         <CardContent />
       </Link>
     );
-  } else if (data?.linkUrl) {
+  } else if (data.linkUrl) {
     return (
       <Link
-        href={data.linkUrl || '#'}
-        target={data.isExternal === true ? '_blank' : ''}
+        href={data.linkUrl}
+        target={data.isExternal ? '_blank' : ''}
         className='group flex h-full w-full'
       >
         <CardContent />
