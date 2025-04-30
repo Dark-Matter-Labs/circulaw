@@ -14,7 +14,19 @@ export default function NewNewsCard({ data }) {
     year: 'numeric',
   };
   const CardContent = () => (
-    <div className={`bg-${data.colour} flex h-full w-full flex-col rounded-cl`}>
+    <div
+      className={`${
+        data.isFeatured
+          ? data.id === 0
+            ? 'bg-green-300'
+            : data.id === 1
+              ? 'bg-green-200'
+              : data.id === 2
+                ? 'bg-green-400'
+                : 'bg-green-500' // default background if featured and id does not match 0, 1, or 2
+          : `bg-${data.colour}` // background based on data.colour if not featured
+      } flex h-full w-full flex-col rounded-cl`}
+    >
       {data.image && (
         <div className='relative h-64 w-full rounded-t-cl'>
           <Image
