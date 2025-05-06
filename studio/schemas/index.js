@@ -21,7 +21,7 @@ import dropDown from './objects/drop-down';
 import euLawSection from './objects/eu-law-section';
 import faqItem from './objects/faq-item';
 import faqSection from './objects/faq-section';
-import greenBox from './objects/green-box';
+import dropDownHighlight from './objects/drop-down-highlight';
 import imageBlock from './objects/image-object';
 import inlineTable from './objects/inline-table';
 import linkObject from './objects/link-object';
@@ -59,7 +59,7 @@ export const schemaTypes = [
   pillar,
 
   // OBJECTS
-  greenBox,
+  dropDownHighlight,
   pdfBlock,
   imageBlock,
   smallPara,

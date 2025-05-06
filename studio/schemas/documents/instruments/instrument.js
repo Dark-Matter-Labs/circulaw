@@ -386,7 +386,7 @@ export default {
         }),
       of: [
         {
-          type: 'greenBox',
+          type: 'dropDownHighlight',
         },
         {
           type: 'pdfBlock',

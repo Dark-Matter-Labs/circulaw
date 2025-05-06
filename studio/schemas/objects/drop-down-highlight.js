@@ -5,7 +5,7 @@ import { GrayBoxDropDown } from '../../components/graybox-dropdown';
 // rename
 export default {
   title: 'Gray Box dropdown',
-  name: 'greenBox',
+  name: 'dropDownHighlight',
   type: 'object',
   description: 'Gebruik dit voor tekst die je wil benadrukken',
   fields: [

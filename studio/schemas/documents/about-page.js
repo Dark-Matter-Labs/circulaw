@@ -54,7 +54,7 @@ export default {
         'Voer hier de tekst in (maak gebruik van voorgestelde subkoppen, alinea-indeling,  enz.).',
       of: [
         {
-          type: 'greenBox',
+          type: 'dropDownHighlight',
         },
         {
           type: 'imageBlock',

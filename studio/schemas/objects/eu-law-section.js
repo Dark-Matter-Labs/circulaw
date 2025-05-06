@@ -15,7 +15,7 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'greenBox',
+          type: 'dropDownHighlight',
         },
         {
           type: 'pdfBlock',

@@ -171,7 +171,7 @@ export default {
       hidden: ({ parent }) => parent?.createPage === false || parent?.newsOrAgenda === true,
       of: [
         {
-          type: 'greenBox',
+          type: 'dropDownHighlight',
         },
         {
           type: 'pdfBlock',
