@@ -5,6 +5,7 @@ import euLaw from './documents/eu-law';
 import euLocalTab from './documents/eu-local-tab';
 import faq from './documents/faq';
 import instrument from './documents/instrument';
+import milestone from './documents/milestone';
 import modelText from './documents/model-text';
 import newsItem from './documents/news-item';
 import partners from './documents/partners';
@@ -12,6 +13,7 @@ import pillar from './documents/pillar';
 import productChain from './documents/product-chain';
 import simpleThema from './documents/simple-thema';
 import siteConfig from './documents/site-config';
+import teamMember from './documents/team-member';
 import thema from './documents/thema';
 import dropDown from './objects/drop-down';
 import euLawSection from './objects/eu-law-section';
@@ -46,6 +48,8 @@ export const schemaTypes = [
   euLocalTab,
   modelText,
   pillar,
+  teamMember,
+  milestone,
 
   // OBJECTS
   greenBox,

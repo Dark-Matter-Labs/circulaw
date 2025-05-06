@@ -4,12 +4,10 @@ import { CiTextAlignJustify } from 'react-icons/ci';
 import { FaHandshake, FaLanguage, FaQuestion } from 'react-icons/fa';
 import { FcAbout } from 'react-icons/fc';
 import { GiEuropeanFlag, GiGreekTemple } from 'react-icons/gi';
-import { GrNavigate } from 'react-icons/gr';
-import { VscLaw } from 'react-icons/vsc';
+import { IoCalendarOutline } from 'react-icons/io5';
+import { RiTeamLine } from 'react-icons/ri';
 
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
-
-import productChain from './schemas/documents/product-chain';
 
 export const Structure = (S, context) =>
   S.list()
@@ -64,6 +62,36 @@ export const Structure = (S, context) =>
                 )
                 .params({ euLawId }),
             ),
+        ),
+      S.listItem()
+        .title('About Page New')
+        .icon(FcAbout)
+        .child(
+          S.list()
+            .title('About Page New')
+            .items([
+              S.listItem()
+                .title('About Pages')
+                .icon(FcAbout)
+                .child(
+                  S.documentList('aboutPage').title('About Pages').filter('_type == "aboutPage"'),
+                ),
+              S.divider(),
+              S.listItem()
+                .title('Team members')
+                .icon(RiTeamLine)
+                .child(
+                  S.documentList('teamMember')
+                    .title('Team members')
+                    .filter('_type == "teamMember"'),
+                ),
+              S.listItem()
+                .title('Timeline updates')
+                .icon(IoCalendarOutline)
+                .child(
+                  S.documentList('milestone').title('Milestones').filter('_type == "milestone"'),
+                ),
+            ]),
         ),
       orderableDocumentListDeskItem({
         type: 'aboutPage',
