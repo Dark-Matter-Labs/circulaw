@@ -89,14 +89,14 @@ export const Structure = (S, context) =>
             ),
         ),
       S.divider(),
-      S.listItem()
-        .title('Productketen')
-        .icon(BsCircle)
-        .child(
-          S.documentList()
-            .title('Productketen')
-            .filter('_type == "transitionAgenda" || _type == "simplePC"'),
-        ),
+      orderableDocumentListDeskItem({
+        type: 'transitionAgenda',
+        S,
+        context,
+        title: 'Productketen',
+        icon: BsCircle,
+      }),
+      // TODO: group themes by product chain and make them orderable
       S.listItem()
         .title("Thema's")
         .icon(BsCircle)
