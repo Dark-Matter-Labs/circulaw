@@ -1,6 +1,6 @@
 import { BsCircle } from 'react-icons/bs';
 
-import { lineBreak } from '../../components/headerInput';
+import { lineBreak } from '../../../components/headerInput';
 
 export default {
   title: 'Thema',
