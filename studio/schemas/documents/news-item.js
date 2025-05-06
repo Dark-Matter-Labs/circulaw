@@ -1,7 +1,6 @@
 import { BsNewspaper } from 'react-icons/bs';
 
 import { orderRankField } from '@sanity/orderable-document-list';
-import { validation } from 'sanity';
 
 import { NewsItemComponent } from '../../components/news-item';
 

@@ -1,14 +1,14 @@
 import aboutPage from './documents/about-pages';
-import euCircularEconomyTab from './documents/eu-circular-economy-tab';
-import euEuropeTab from './documents/eu-europe-tab';
-import euLaw from './documents/eu-law';
-import euLocalTab from './documents/eu-local-tab';
+import euCircularEconomyTab from './documents/eu/eu-circular-economy-tab';
+import euEuropeTab from './documents/eu/eu-europe-tab';
+import euLaw from './documents/eu/eu-law';
+import euLocalTab from './documents/eu/eu-local-tab';
 import faq from './documents/faq';
-import instrument from './documents/instrument';
-import modelText from './documents/model-text';
+import instrument from './documents/instruments/instrument';
+import modelText from './documents/modeltexts/model-text';
 import newsItem from './documents/news-item';
 import partners from './documents/partners';
-import pillar from './documents/pillar';
+import pillar from './documents/modeltexts/pillar';
 import productChain from './documents/product-chain';
 import simpleThema from './documents/simple-thema';
 import siteConfig from './documents/site-config';
@@ -39,11 +39,15 @@ export const schemaTypes = [
   faq,
   simpleThema,
   newsItem,
+
+  // EU LAW
   euLaw,
   euLawSection,
   euCircularEconomyTab,
   euEuropeTab,
   euLocalTab,
+
+  // Modwl text
   modelText,
   pillar,
 
