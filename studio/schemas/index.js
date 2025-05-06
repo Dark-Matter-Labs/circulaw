@@ -1,18 +1,26 @@
-import aboutPage from './documents/about-pages';
+import aboutPage from './documents/about-page';
+import faq from './documents/faq';
+import newsItem from './documents/news-item';
+import partners from './documents/partners';
+import siteConfig from './documents/site-config';
+
+
+// EU LAW
 import euCircularEconomyTab from './documents/eu/eu-circular-economy-tab';
 import euEuropeTab from './documents/eu/eu-europe-tab';
 import euLaw from './documents/eu/eu-law';
 import euLocalTab from './documents/eu/eu-local-tab';
-import faq from './documents/faq';
+
+// INSTRUMENTS
 import instrument from './documents/instruments/instrument';
+import productChain from './documents/instruments/product-chain';
+import simpleThema from './documents/instruments/simple-thema';
+import thema from './documents/instruments/thema';
+// MODEL TEXTS
 import modelText from './documents/modeltexts/model-text';
-import newsItem from './documents/news-item';
-import partners from './documents/partners';
 import pillar from './documents/modeltexts/pillar';
-import productChain from './documents/product-chain';
-import simpleThema from './documents/simple-thema';
-import siteConfig from './documents/site-config';
-import thema from './documents/thema';
+
+// OBJECTS
 import dropDown from './objects/drop-down';
 import euLawSection from './objects/eu-law-section';
 import faqItem from './objects/faq-item';
@@ -31,14 +39,18 @@ import { youtube } from './objects/youtube-embed';
 
 export const schemaTypes = [
   // DOCUMENT TYPES
+
+  // INSTRUMENTS
   instrument,
+  simpleThema,
+  productChain,
+
+  newsItem,
   aboutPage,
   partners,
   thema,
-  productChain,
   faq,
-  simpleThema,
-  newsItem,
+  
 
   // EU LAW
   euLaw,
