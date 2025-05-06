@@ -4,8 +4,8 @@ import { CiTextAlignJustify } from 'react-icons/ci';
 import { FaHandshake, FaQuestion } from 'react-icons/fa';
 import { FcAbout } from 'react-icons/fc';
 import { GiEuropeanFlag, GiGreekTemple } from 'react-icons/gi';
-import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 
+import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 
 export const Structure = (S, context) =>
   S.list()

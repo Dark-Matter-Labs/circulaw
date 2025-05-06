@@ -13,9 +13,7 @@ export default {
       title: 'Copy Content',
     },
   ],
-  fieldsets: [
-    {name: 'category', title: 'Category'},
-  ],
+  fieldsets: [{ name: 'category', title: 'Category' }],
   // FIELDS
   fields: [
     {

@@ -87,7 +87,7 @@ export default {
       type: 'string',
       group: 'editableContent',
       description: 'Kort intro onder de thematitel',
-      validation: (Rule) => Rule.required(), 
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Hoofdafbeelding',

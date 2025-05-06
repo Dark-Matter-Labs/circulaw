@@ -1,16 +1,10 @@
 import aboutPage from './documents/about-page';
-import faq from './documents/faq';
-import newsItem from './documents/news-item';
-import partners from './documents/partners';
-import siteConfig from './documents/site-config';
-
-
 // EU LAW
 import euCircularEconomyTab from './documents/eu/eu-circular-economy-tab';
 import euEuropeTab from './documents/eu/eu-europe-tab';
 import euLaw from './documents/eu/eu-law';
 import euLocalTab from './documents/eu/eu-local-tab';
-
+import faq from './documents/faq';
 // INSTRUMENTS
 import instrument from './documents/instruments/instrument';
 import productChain from './documents/instruments/product-chain';
@@ -19,7 +13,9 @@ import thema from './documents/instruments/thema';
 // MODEL TEXTS
 import modelText from './documents/modeltexts/model-text';
 import pillar from './documents/modeltexts/pillar';
-
+import newsItem from './documents/news-item';
+import partners from './documents/partners';
+import siteConfig from './documents/site-config';
 // OBJECTS
 import dropDown from './objects/drop-down';
 import euLawSection from './objects/eu-law-section';
@@ -50,7 +46,6 @@ export const schemaTypes = [
   partners,
   thema,
   faq,
-  
 
   // EU LAW
   euLaw,
