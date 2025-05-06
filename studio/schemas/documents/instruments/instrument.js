@@ -6,7 +6,6 @@ export default {
   name: 'instrument',
   type: 'document',
   icon: VscLaw,
-  // GROUPS
   groups: [
     {
       name: 'copy',
@@ -14,7 +13,6 @@ export default {
     },
   ],
   fieldsets: [{ name: 'category', title: 'Category' }],
-  // FIELDS
   fields: [
     {
       title: 'Uitgelicht op thema-pagina',

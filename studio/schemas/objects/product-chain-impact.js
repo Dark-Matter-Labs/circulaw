@@ -1,4 +1,3 @@
-import { BsNewspaper } from 'react-icons/bs';
 
 export default {
   name: 'ImpactItem',
