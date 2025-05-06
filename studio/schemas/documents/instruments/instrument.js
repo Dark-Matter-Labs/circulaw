@@ -15,6 +15,9 @@ export default {
       title: 'Copy Content',
     },
   ],
+  fieldsets: [
+    {name: 'category', title: 'Category'},
+  ],
   // FIELDS
   fields: [
     {
@@ -211,24 +214,18 @@ export default {
       },
     },
     {
-      name: 'category',
-      title: 'CATEGORIE',
-      type: 'text',
-      components: {
-        input: lineBreak,
-      },
-    },
-    {
       title: 'Beleid',
       name: 'beleid',
       type: 'boolean',
       initialValue: false,
       validation: (Rule) => Rule.required(),
+      fieldset: 'category',
     },
     {
       title: 'Beleid sub category',
       name: 'beleidSubCategory',
       type: 'array',
+      fieldset: 'category',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
           return parent?.beleid === true &&
@@ -255,6 +252,7 @@ export default {
       title: 'Inkoop',
       name: 'inkoop',
       type: 'boolean',
+      fieldset: 'category',
       initialValue: false,
       validation: (Rule) => Rule.required(),
     },
@@ -262,6 +260,7 @@ export default {
       title: 'Inkoop sub category',
       name: 'inkoopSubCategory',
       type: 'array',
+      fieldset: 'category',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
           return parent?.inkoop === true && typeof currentValue === 'undefined'
@@ -287,6 +286,7 @@ export default {
       title: 'Grondpositie',
       name: 'grondpositie',
       type: 'boolean',
+      fieldset: 'category',
       initialValue: false,
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
@@ -299,6 +299,7 @@ export default {
       title: 'Grondpositie sub category',
       name: 'grondpositieSubCategory', // remo
       type: 'array',
+      fieldset: 'category',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
           return parent?.grondpositie === true &&
@@ -325,6 +326,7 @@ export default {
       title: 'Subsidie',
       name: 'subsidie',
       type: 'boolean',
+      fieldset: 'category',
       initialValue: false,
       validation: (Rule) => Rule.required(),
     },
@@ -332,6 +334,7 @@ export default {
       title: 'fiscaal',
       name: 'fiscaal',
       type: 'boolean',
+      fieldset: 'category',
       initialValue: false,
       validation: (Rule) => Rule.required(),
     },
