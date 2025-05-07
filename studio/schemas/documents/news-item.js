@@ -177,7 +177,7 @@ export default {
           type: 'pdfBlock',
         },
         {
-          type: 'smallPara',
+          type: 'highlightBlock',
         },
         {
           type: 'imageBlock',

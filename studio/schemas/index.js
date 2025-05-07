@@ -29,7 +29,7 @@ import partner from './objects/partner';
 import pdfBlock from './objects/pdf-block';
 import productChainAmbition from './objects/product-chain-ambition';
 import productChainImpact from './objects/product-chain-impact';
-import smallPara from './objects/small-paragraph';
+import highlightBlock from './objects/highlight-block';
 import themePageReport from './objects/thema-report';
 import { youtube } from './objects/youtube-embed';
 
@@ -62,7 +62,7 @@ export const schemaTypes = [
   dropDownHighlight,
   pdfBlock,
   imageBlock,
-  smallPara,
+  highlightBlock,
   siteConfig,
   dropDown,
   partner,

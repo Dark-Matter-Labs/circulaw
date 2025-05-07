@@ -5,7 +5,7 @@ import { GrayBox } from '../../components/graybox';
 // rename
 export default {
   title: 'Gray Box',
-  name: 'smallPara',
+  name: 'highlightBlock',
   type: 'object',
   fields: [
     {
