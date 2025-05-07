@@ -1,4 +1,5 @@
 import { VscLaw } from 'react-icons/vsc';
+
 import { contentArray } from '../../../utils/portable-text-arrays';
 
 export default {

@@ -1,6 +1,7 @@
 import { FcAbout } from 'react-icons/fc';
 
 import { orderRankField } from '@sanity/orderable-document-list';
+
 import { contentArray } from '../../utils/portable-text-arrays';
 
 export default {
@@ -53,9 +54,7 @@ export default {
       type: 'array',
       description:
         'Voer hier de tekst in (maak gebruik van voorgestelde subkoppen, alinea-indeling,  enz.).',
-      of: [
-        ...contentArray
-      ],
+      of: [...contentArray],
     },
   ],
 };

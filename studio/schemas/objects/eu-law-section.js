@@ -1,4 +1,4 @@
-import { contentArray } from '../../utils/portable-text-arrays'
+import { contentArray } from '../../utils/portable-text-arrays';
 
 export default {
   name: 'euLawSection',

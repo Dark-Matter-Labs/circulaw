@@ -1,4 +1,4 @@
-import {contentArray} from '../../utils/portable-text-arrays';
+import { contentArray } from '../../utils/portable-text-arrays';
 
 export default {
   title: 'FAQ Item',
@@ -17,9 +17,7 @@ export default {
       title: 'Response',
       name: 'response',
       type: 'array',
-      of: [
-        ...contentArray,
-      ],
+      of: [...contentArray],
     },
   ],
 };
