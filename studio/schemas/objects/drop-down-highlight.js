@@ -11,7 +11,7 @@ export default {
   fields: [
     {
       title: 'Kader highlight Titel',
-      name: 'greenBoxTitle',
+      name: 'title',
       type: 'string',
     },
     {
@@ -74,7 +74,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'greenBoxTitle',
+      title: 'title',
     },
   },
   components: {
