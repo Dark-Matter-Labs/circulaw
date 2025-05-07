@@ -1,3 +1,5 @@
+import { CgInternal } from 'react-icons/cg';
+
 export const contentArray = [
     { type: 'dropDownHighlight' }, 
     { type: 'pdfBlock' },          
@@ -37,6 +39,7 @@ export const contentArray = [
             name: 'internalLink',
             type: 'object',
             title: 'Internal link (Instrument)',
+            icon: CgInternal,
             fields: [
               {
                 name: 'reference',
@@ -44,9 +47,11 @@ export const contentArray = [
                 title: 'Reference',
                 to: [{ type: 'instrument' }], // Only used in `instrument` schema
                 options: {
+                    disableNew: true,
                     modal: {
                       type: 'popover',
                       width: 1,
+                      
                     },
                   },
               },

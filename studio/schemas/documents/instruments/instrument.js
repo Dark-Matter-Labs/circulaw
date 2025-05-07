@@ -1,4 +1,3 @@
-import { CgInternal } from 'react-icons/cg';
 import { VscLaw } from 'react-icons/vsc';
 import { contentArray } from '../../../utils/portable-text-arrays';
 
