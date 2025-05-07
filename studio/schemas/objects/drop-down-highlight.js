@@ -16,7 +16,7 @@ export default {
     },
     {
       title: 'Kader highlight PT',
-      name: 'greenBoxPText',
+      name: 'content',
       type: 'array',
       of: [
         {
