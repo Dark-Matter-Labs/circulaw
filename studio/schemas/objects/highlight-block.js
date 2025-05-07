@@ -15,7 +15,7 @@ export default {
     },
     {
       title: 'Kader secundaire PT',
-      name: 'smallParaPText',
+      name: 'content',
       type: 'array',
       of: [
         {
