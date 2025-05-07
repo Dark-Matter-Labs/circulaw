@@ -10,7 +10,7 @@ export default {
   fields: [
     {
       title: 'Kader secundaire info Title',
-      name: 'smallParaTitle',
+      name: 'title',
       type: 'string',
     },
     {
@@ -73,7 +73,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'smallParaTitle',
+      title: 'title',
     },
   },
   components: {
