@@ -18,10 +18,11 @@ import partners from './documents/partners';
 import siteConfig from './documents/site-config';
 // OBJECTS
 import dropDown from './objects/drop-down';
+import dropDownHighlight from './objects/drop-down-highlight';
 import euLawSection from './objects/eu-law-section';
 import faqItem from './objects/faq-item';
 import faqSection from './objects/faq-section';
-import dropDownHighlight from './objects/drop-down-highlight';
+import highlightBlock from './objects/highlight-block';
 import imageBlock from './objects/image-object';
 import inlineTable from './objects/inline-table';
 import linkObject from './objects/link-object';
@@ -29,7 +30,6 @@ import partner from './objects/partner';
 import pdfBlock from './objects/pdf-block';
 import productChainAmbition from './objects/product-chain-ambition';
 import productChainImpact from './objects/product-chain-impact';
-import highlightBlock from './objects/highlight-block';
 import themePageReport from './objects/thema-report';
 import { youtube } from './objects/youtube-embed';
 

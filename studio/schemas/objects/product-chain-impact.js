@@ -1,4 +1,3 @@
-
 export default {
   name: 'ImpactItem',
   title: 'Impact Item',
