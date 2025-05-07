@@ -24,7 +24,6 @@ import faqItem from './objects/faq-item';
 import faqSection from './objects/faq-section';
 import highlightBlock from './objects/highlight-block';
 import imageBlock from './objects/image-object';
-import inlineTable from './objects/inline-table';
 import linkObject from './objects/link-object';
 import partner from './objects/partner';
 import pdfBlock from './objects/pdf-block';
@@ -71,7 +70,6 @@ export const schemaTypes = [
   productChainAmbition,
   productChainImpact,
   linkObject,
-  inlineTable,
   youtube,
   themePageReport,
 ];

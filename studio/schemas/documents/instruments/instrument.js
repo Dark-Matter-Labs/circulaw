@@ -1,5 +1,6 @@
 import { CgInternal } from 'react-icons/cg';
 import { VscLaw } from 'react-icons/vsc';
+import { contentArray } from '../../../utils/portable-text-arrays';
 
 export default {
   title: 'instrument',
@@ -384,92 +385,7 @@ export default {
                 paths: emptyPaths,
               };
         }),
-      of: [
-        {
-          type: 'dropDownHighlight',
-        },
-        {
-          type: 'pdfBlock',
-        },
-        {
-          type: 'highlightBlock',
-        },
-        {
-          type: 'block',
-          of: [
-            {
-              type: 'dropDown',
-            },
-          ],
-          lists: [
-            { title: 'Bullet', value: 'bullet' },
-            { title: 'Number', value: 'number' },
-          ],
-          styles: [
-            { title: 'H2', value: 'h2' },
-            { title: 'H3', value: 'h3' },
-            { title: 'normal', value: 'normal' },
-            // { title: 'subheading', value: 'subheading' },
-          ],
-          marks: {
-            decorators: [
-              { title: 'Strong', value: 'strong' },
-              { title: 'Emphasis', value: 'em' },
-            ],
-            annotations: [
-              {
-                title: 'URL',
-                name: 'link',
-                type: 'object',
-                fields: [
-                  {
-                    title: 'URL',
-                    name: 'href',
-                    type: 'url',
-
-                    validation: (Rule) =>
-                      Rule.required()
-                        .uri({ scheme: ['http', 'https'] })
-                        .warning('Url is incorrect'),
-                  },
-                  {
-                    title: 'Open in new window',
-                    name: 'blank',
-                    type: 'boolean',
-                    description:
-                      'if the link is to a CircuLaw page please select false for open in new window',
-                    validation: (Rule) => Rule.required(),
-                    initialValue: true,
-                  },
-                ],
-              },
-              {
-                name: 'internalLink',
-                type: 'object',
-                title: 'Internal link (Instrument)',
-                icon: CgInternal,
-                fields: [
-                  {
-                    name: 'reference',
-                    type: 'reference',
-                    title: 'Reference',
-                    to: [{ type: 'instrument' }],
-                    options: {
-                      disableNew: true,
-                    },
-                  },
-                ],
-                options: {
-                  modal: {
-                    type: 'popover',
-                    width: 1,
-                  },
-                },
-              },
-            ],
-          },
-        },
-      ],
+      of: [...contentArray],
       group: 'copy',
     },
     // depreciated fields

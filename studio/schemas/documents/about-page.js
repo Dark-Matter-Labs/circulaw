@@ -1,6 +1,7 @@
 import { FcAbout } from 'react-icons/fc';
 
 import { orderRankField } from '@sanity/orderable-document-list';
+import { contentArray } from '../../utils/portable-text-arrays';
 
 export default {
   title: 'About Pages',
@@ -53,61 +54,7 @@ export default {
       description:
         'Voer hier de tekst in (maak gebruik van voorgestelde subkoppen, alinea-indeling,  enz.).',
       of: [
-        {
-          type: 'dropDownHighlight',
-        },
-        {
-          type: 'imageBlock',
-        },
-        {
-          type: 'pdfBlock',
-        },
-        {
-          type: 'highlightBlock',
-        },
-        {
-          type: 'block',
-          of: [
-            {
-              type: 'dropDown',
-            },
-          ],
-          lists: [
-            { title: 'Bullet', value: 'bullet' },
-            { title: 'Number', value: 'number' },
-          ],
-          styles: [
-            { title: 'H2', value: 'h2' },
-            { title: 'H3', value: 'h3' },
-            { title: 'normal', value: 'normal' },
-            { title: 'subheading', value: 'subheading' },
-          ],
-          marks: {
-            decorators: [
-              { title: 'Strong', value: 'strong' },
-              { title: 'Emphasis', value: 'em' },
-            ],
-            annotations: [
-              {
-                title: 'URL',
-                name: 'link',
-                type: 'object',
-                fields: [
-                  {
-                    title: 'URL',
-                    name: 'href',
-                    type: 'url',
-                  },
-                  {
-                    title: 'Open in new winder',
-                    name: 'blank',
-                    type: 'boolean',
-                  },
-                ],
-              },
-            ],
-          },
-        },
+        ...contentArray
       ],
     },
   ],
