@@ -2,7 +2,6 @@ import { AiOutlineHighlight } from 'react-icons/ai';
 import { FcAbout } from 'react-icons/fc';
 
 import Highlight from '../../components/highlight';
-
 // import { orderRankField } from '@sanity/orderable-document-list';
 
 import { contentArray } from '../../utils/portable-text-arrays';
@@ -94,7 +93,7 @@ export default {
       name: 'content',
       type: 'array',
       group: 'editableContent',
-      of: [{ type: 'greenBox' }],
+      of: [{ type: 'dropDownHighlight' }, { type: 'title' }, { type: 'twoColumnSection' }],
     },
     {
       title: 'Meta Page Title',

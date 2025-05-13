@@ -18,21 +18,23 @@ import newsItem from './documents/news-item';
 import partners from './documents/partners';
 import siteConfig from './documents/site-config';
 import teamMember from './documents/team-member';
-// OBJECTS
-import dropDown from './objects/drop-down';
-import dropDownHighlight from './objects/drop-down-highlight';
+import title from './objects/about-page/title';
+import twoColumnSection from './objects/about-page/two-column-section';
 import euLawSection from './objects/eu-law-section';
 import faqItem from './objects/faq-item';
 import faqSection from './objects/faq-section';
-import highlightBlock from './objects/highlight-block';
-import imageBlock from './objects/image-object';
 import linkObject from './objects/link-object';
 import partner from './objects/partner';
-import pdfBlock from './objects/pdf-block';
+// OBJECTS
+import dropDown from './objects/portable-text/drop-down';
+import dropDownHighlight from './objects/portable-text/drop-down-highlight';
+import highlightBlock from './objects/portable-text/highlight-block';
+import imageBlock from './objects/portable-text/image-object';
+import pdfBlock from './objects/portable-text/pdf-block';
+import { youtube } from './objects/portable-text/youtube-embed';
 import productChainAmbition from './objects/product-chain-ambition';
 import productChainImpact from './objects/product-chain-impact';
 import themePageReport from './objects/thema-report';
-import { youtube } from './objects/youtube-embed';
 
 export const schemaTypes = [
   // DOCUMENT TYPES
@@ -42,8 +44,8 @@ export const schemaTypes = [
   simpleThema,
   productChain,
 
+  // OTHER PAGES
   newsItem,
-  aboutPage,
   partners,
   thema,
   faq,
@@ -55,13 +57,18 @@ export const schemaTypes = [
   euEuropeTab,
   euLocalTab,
 
-  // Modwl text
+  // MODEL TEXTS
   modelText,
   pillar,
+
+  // ABOUT PAGE OBJECTS and DOCUMENTS
+  aboutPage,
   teamMember,
   milestone,
+  title,
+  twoColumnSection,
 
-  // OBJECTS
+  // SHARED OBJECTS
   dropDownHighlight,
   pdfBlock,
   imageBlock,
