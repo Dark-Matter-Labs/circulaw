@@ -17,6 +17,7 @@ export default async function Page() {
     query: HOME_PAGE_QUERY,
     tags: ['siteConfig', 'transitionAgenda', 'thema', 'newsItem', 'euLaw'],
   });
+  console.log(data)
   return (
     <>
       <div className=''>
@@ -89,7 +90,7 @@ export default async function Page() {
           </div>
         </div>
         <div className='global-margin mb-20 sm:mb-32'>
-          <PCHomePage pcData={data.pcHomePage} />
+          <PCHomePage pcData={data.pcHomePageQuery} />
         </div>
         <div className='global-margin mb-20 sm:mb-40'>
           <HomePageEUSection euData={data.euData} />
