@@ -93,7 +93,7 @@ export default {
       name: 'content',
       type: 'array',
       group: 'editableContent',
-      of: [{ type: 'dropDownHighlight' }, { type: 'title' }, { type: 'twoColumnSection' }],
+      of: [{ type: 'dropDownHighlight' }, { type: 'title' }, { type: 'twoColumnSection' }, { type:'accordionDropdown' }],
     },
     {
       title: 'Meta Page Title',

@@ -1,4 +1,6 @@
 import aboutPage from './documents/about-page';
+import accordionDropdown from './objects/about-page/accordion-dropdown';
+import accordionDropdownContent from './objects/about-page/accordion-dropdown-content';
 // EU LAW
 import euCircularEconomyTab from './documents/eu/eu-circular-economy-tab';
 import euEuropeTab from './documents/eu/eu-europe-tab';
@@ -67,6 +69,8 @@ export const schemaTypes = [
   milestone,
   title,
   twoColumnSection,
+  accordionDropdown,
+  accordionDropdownContent,
 
   // SHARED OBJECTS
   dropDownHighlight,
