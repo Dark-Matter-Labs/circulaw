@@ -1,13 +1,11 @@
-import CustomButton from '@/components/custom-button';
-import { IconArrowRight } from '@tabler/icons-react';
-import Link from 'next/link';
+import NewButton from '@/components/shared/new-button';
 
 export default function ContentEleven({ scrollPosition }) {
   return (
     <div
       className={`${
         scrollPosition < 11000 ? 'hidden' : ''
-      } text-green-600 flex flex-col gap-y-6 max-w-[290px]`}
+      } flex max-w-[290px] flex-col gap-y-6 text-green-500`}
     >
       <h3 className='heading-2xl-semibold'>Modelteksten voor een omgevingsplan</h3>
       <p className='p-base'>
@@ -15,11 +13,9 @@ export default function ContentEleven({ scrollPosition }) {
         kunnen overnemen: de planregels.
       </p>
       <p className='p-base'>Dit zijn dus modelteksten voor een omgevingplan.</p>
-      <Link href='/bouw/planregels/modelteksten'>
-        <CustomButton color='whiteBackground'>
-          Bekijk de modelteksten <IconArrowRight />
-        </CustomButton>
-      </Link>
+      <NewButton variant='secondaryDark' href='/bouw/planregels/modelteksten' icon='arrowRight'>
+        Bekijk de modelteksten
+      </NewButton>
     </div>
   );
 }

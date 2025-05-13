@@ -1,6 +1,7 @@
-import { useSearchParams } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
+
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
 export default function SearchButton({ linkRef, searchIndex, searchQuery, closeSerchMenu }) {
   const searchParams = useSearchParams();
@@ -40,7 +41,7 @@ export default function SearchButton({ linkRef, searchIndex, searchQuery, closeS
         ref={linkRef}
         href={searchUrl}
         onClick={() => handleSubmit()}
-        className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl flex items-center justify-center hover:bg-green-200 hover:border-green-200'
+        className='p-base-semibold absolute right-3 top-3 ml-2 flex h-[42px] w-24 items-center justify-center rounded-cl border border-white bg-white p-2 text-green-500 shadow-card hover:border-green-300 hover:bg-green-300'
       >
         Zoeken
       </Link>

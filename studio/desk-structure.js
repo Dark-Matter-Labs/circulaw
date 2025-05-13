@@ -1,13 +1,11 @@
 import { AiOutlineHome } from 'react-icons/ai';
 import { BsCircle, BsNewspaper } from 'react-icons/bs';
-import { FaLanguage, FaHandshake, FaQuestion } from 'react-icons/fa';
+import { CiTextAlignJustify } from 'react-icons/ci';
+import { FaHandshake, FaQuestion } from 'react-icons/fa';
 import { FcAbout } from 'react-icons/fc';
 import { GiEuropeanFlag, GiGreekTemple } from 'react-icons/gi';
-import { GrNavigate } from 'react-icons/gr';
-import { VscLaw } from 'react-icons/vsc';
+
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
-import { CiTextAlignJustify } from 'react-icons/ci';
-import productChain from './schemas/documents/product-chain';
 
 export const Structure = (S, context) =>
   S.list()
@@ -52,7 +50,6 @@ export const Structure = (S, context) =>
         .title('Inhoud per EU wet')
         .icon(GiEuropeanFlag)
         .child(
-          // List out all categories
           S.documentTypeList('euLaw')
             .title('Inhoud per EU wet')
             .child((euLawId) =>
@@ -92,14 +89,14 @@ export const Structure = (S, context) =>
             ),
         ),
       S.divider(),
-      S.listItem()
-        .title('Productketen')
-        .icon(BsCircle)
-        .child(
-          S.documentList()
-            .title('Productketen')
-            .filter('_type == "transitionAgenda" || _type == "simplePC"'),
-        ),
+      orderableDocumentListDeskItem({
+        type: 'transitionAgenda',
+        S,
+        context,
+        title: 'Productketen',
+        icon: BsCircle,
+      }),
+      // TODO: group themes by product chain and make them orderable
       S.listItem()
         .title("Thema's")
         .icon(BsCircle)
@@ -128,23 +125,3 @@ export const Structure = (S, context) =>
         .icon(AiOutlineHome)
         .child(S.document().title('Home Page').schemaType('siteConfig').documentId('siteSettings')),
     ]);
-
-{
-  /*
-       S.listItem()
-        .title('Instrumenten per top 5 thema')
-        .icon(VscLaw)
-        .child(
-          // List out all categories
-          S.documentTypeList('simpleThema')
-            .title('Instrumenten per top 5 thema')
-            .child((themaId) =>
-              S.documentList()
-                .title('Instruments')
-                .filter('_type == "instrument" && $themaId ==  thema._ref')
-                .params({ themaId }),
-            ),
-        ),
-      
-      */
-}

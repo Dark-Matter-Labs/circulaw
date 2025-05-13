@@ -5,13 +5,13 @@ export default function CustomClearRefinements(props) {
 
   return (
     <>
-      <div className='w-[265px] flex flex-row items-center justify-between mb-8 sm:mb-12 '>
+      <div className='mb-8 flex w-[265px] flex-row items-center justify-between sm:mb-12'>
         <div className='heading-2xl-semibold mr-6'>Filter Op:</div>
         <button
           onClick={refine}
           className={`${
-            canRefine ? 'text-green-500' : 'text-gray-400'
-          } underline heading-xl-semibold`}
+            canRefine ? 'text-green-500' : 'text-cl-grey'
+          } heading-xl-semibold underline`}
         >
           Wis filters
         </button>

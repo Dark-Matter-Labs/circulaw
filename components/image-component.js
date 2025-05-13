@@ -1,7 +1,7 @@
-import { getImageDimensions } from '@sanity/asset-utils';
 import Image from 'next/image';
 
 import { urlFor } from '@/lib/sanity';
+import { getImageDimensions } from '@sanity/asset-utils';
 
 export default function ImageComponent({ image, caption }) {
   const { width, height } = getImageDimensions(image);

@@ -1,6 +1,13 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
+
+import { useEffect, useRef, useState } from 'react';
+
+import Link from 'next/link';
+
 import { animated } from '@react-spring/web';
+import { IconArrowRight } from '@tabler/icons-react';
+
+import Breadcrumb from '../headers/breadcrumbs';
 import ContentZero from './content/00-content';
 import ContentOne from './content/01-content';
 import ContentTwo from './content/02-content';
@@ -13,8 +20,6 @@ import ContentEight from './content/08-content';
 import ContentNine from './content/09-content';
 import ContentTen from './content/10-content';
 import ContentEleven from './content/11-content';
-import Link from 'next/link';
-import { IconArrowRight } from '@tabler/icons-react';
 
 export default function ScrollyTellingAnimation() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -267,8 +272,8 @@ export default function ScrollyTellingAnimation() {
     scrollPosition < SVGfadeStart
       ? 1
       : scrollPosition > SFGfadeEnd
-      ? 0
-      : 1 - (scrollPosition - SVGfadeStart) / (SFGfadeEnd - SVGfadeStart);
+        ? 0
+        : 1 - (scrollPosition - SVGfadeStart) / (SFGfadeEnd - SVGfadeStart);
 
   const fadeInSVGTwoStart = endSVGTransition; // Start fading in 100px after endSVGTransition
   const fadeInSVGTwoEnd = fadeInSVGTwoStart + 200;
@@ -277,8 +282,8 @@ export default function ScrollyTellingAnimation() {
     scrollPosition < fadeInSVGTwoStart
       ? 0
       : scrollPosition > fadeInSVGTwoEnd
-      ? 1
-      : (scrollPosition - fadeInSVGTwoStart) / (fadeInSVGTwoEnd - fadeInSVGTwoStart);
+        ? 1
+        : (scrollPosition - fadeInSVGTwoStart) / (fadeInSVGTwoEnd - fadeInSVGTwoStart);
 
   const secondConeStart = 7300;
 
@@ -352,28 +357,12 @@ export default function ScrollyTellingAnimation() {
   return (
     <>
       <div className='sticky top-32 w-full max-w-[1312px]'>
-        <div className='w-full flex items-center justify-start mb-12'>
-          <div className='rounded-clSm bg-green-5 border border-green-600 px-2 text-green-600 py-1 flex flex-row items-center justify-center'>
-            <Link className='inline-flex flex-row items-center justify-center h-full' href='/'>
-              <span className='p-2xs-bold hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
-                {' '}
-                Home <span className='ml-2'>{'>'}</span>
-              </span>
-            </Link>
-            <Link
-              className='ml-3 inline-flex flex-row items-center justify-center h-full'
-              href='/bouw'
-            >
-              <span className='p-2xs-bold align-middle hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
-                {' '}
-                Bouw <span className='ml-2'>{'>'}</span>
-              </span>
-            </Link>
-          </div>
+        <div className='mb-12 flex w-full items-center justify-start'>
+          <Breadcrumb pageType='noHeader' />
         </div>
-        <div className='flex items-start justify-start w-full'>
-          <div className='w-48 h-full relative mr-6'>
-            <div className='sticky h-[700px] grow flex flex-col gap-y-6 w-full'>
+        <div className='flex w-full items-start justify-start'>
+          <div className='relative mr-6 h-full w-48'>
+            <div className='sticky flex h-[700px] w-full grow flex-col gap-y-6'>
               {navItems.map((item) => (
                 <button
                   key={item.id}
@@ -381,9 +370,9 @@ export default function ScrollyTellingAnimation() {
                     activeNav >= item.id
                       ? 'translate-y-0'
                       : screenHeight < 934
-                      ? 'translate-y-[150px]'
-                      : 'translate-y-[280px]'
-                  } transition-all duration-400 flex flex-row text-green-600 text-left`}
+                        ? 'translate-y-[150px]'
+                        : 'translate-y-[280px]'
+                  } duration-400 flex flex-row text-left text-green-500 transition-all`}
                   id={`nav${item.id + 1}`}
                   onClick={() =>
                     window.scrollTo({
@@ -396,7 +385,7 @@ export default function ScrollyTellingAnimation() {
                   <div
                     className={`${
                       activeNav === item.id ? 'p-3xs-semibold' : 'p-3xs'
-                    } h-5 w-5 mt-1 border border-green-600 rounded-full flex items-center justify-center`}
+                    } mt-1 flex h-5 w-5 items-center justify-center rounded-full border border-green-500`}
                   >
                     {item.id + 1}
                   </div>
@@ -414,15 +403,15 @@ export default function ScrollyTellingAnimation() {
                   href='/bouw/planregels/modelteksten'
                   className={`${
                     screenHeight < 934 ? 'bottom-52' : 'bottom-[110px]'
-                  } flex flex-row items-center justify-center text-green-600 hover:text-green-300 p-2xs-semibold absolute left-0`}
+                  } p-2xs-semibold absolute left-0 flex flex-row items-center justify-center text-green-500 hover:text-green-400`}
                 >
-                  Bekijk modelteksten <IconArrowRight className='h-4 w-4 ml-1' />
+                  Bekijk modelteksten <IconArrowRight className='ml-1 h-4 w-4' />
                 </Link>
               )}
             </div>
           </div>
 
-          <div className='relative w-[300px] h-full mr-6 z-[999]'>
+          <div className='relative z-[999] mr-6 h-full w-[300px]'>
             {contentComponents.map((Content, index) => {
               const contentId = `c${index}`; // Generate IDs like c1, c2, ...
               const isActive = activeContent === contentId;
@@ -435,13 +424,13 @@ export default function ScrollyTellingAnimation() {
                   data-id={contentId}
                   className={`${
                     isActive
-                      ? 'opacity-100 translate-y-0'
+                      ? 'translate-y-0 opacity-100'
                       : prevActive
-                      ? 'opacity-0 translate-y-[200px]'
-                      : nextActive
-                      ? 'opacity-0 -translate-y-[200px]'
-                      : 'opacity-0 -translate-y-[200px]'
-                  } transition-all duration-500 absolute top-0 left-0`}
+                        ? 'translate-y-[200px] opacity-0'
+                        : nextActive
+                          ? '-translate-y-[200px] opacity-0'
+                          : '-translate-y-[200px] opacity-0'
+                  } absolute left-0 top-0 transition-all duration-500`}
                 >
                   <Content scrollPosition={scrollPosition} screenHeight={screenHeight} />
                 </div>
@@ -451,11 +440,11 @@ export default function ScrollyTellingAnimation() {
           <div
             className={`${
               screenHeight < 934 ? '-mt-12' : ''
-            } flex items-center justify-center w-[600px] h-[635px] -ml-4`}
+            } -ml-4 flex h-[635px] w-[600px] items-center justify-center`}
             style={{ perspective: '1000px' }}
           >
-            <div className=' h-full w-full' style={transformSVGStyle}>
-              <div className='w-full h-full flex items-center justify-center'>
+            <div className='h-full w-full' style={transformSVGStyle}>
+              <div className='flex h-full w-full items-center justify-center'>
                 <animated.svg
                   className='svg'
                   height='635'
@@ -613,11 +602,11 @@ export default function ScrollyTellingAnimation() {
                     d={`
                 M ${317.5 - (outerCircleRadius - 20)} 317.5
                 a ${outerCircleRadius - 20} ${outerCircleRadius - 20} 0 1 1 ${
-                      2 * (outerCircleRadius - 12)
-                    } 0
+                  2 * (outerCircleRadius - 12)
+                } 0
                 a ${outerCircleRadius - 20} ${outerCircleRadius - 20} 0 1 1 ${
-                      -2 * (outerCircleRadius - 12)
-                    } 0
+                  -2 * (outerCircleRadius - 12)
+                } 0
               `}
                     fill='none'
                   />
@@ -676,11 +665,11 @@ export default function ScrollyTellingAnimation() {
                     d={`
                 M ${317.5 - (middleCircleRadius - 20)} 317.5
                 a ${middleCircleRadius - 20} ${middleCircleRadius - 20} 0 1 1 ${
-                      2 * (middleCircleRadius - 12)
-                    } 0
+                  2 * (middleCircleRadius - 12)
+                } 0
                 a ${middleCircleRadius - 20} ${middleCircleRadius - 20} 0 1 1 ${
-                      -2 * (middleCircleRadius - 12)
-                    } 0
+                  -2 * (middleCircleRadius - 12)
+                } 0
               `}
                     fill='none'
                   />
@@ -740,11 +729,11 @@ export default function ScrollyTellingAnimation() {
                     d={`
                 M ${317.5 - (innerCircleRadius - 20)} 317.5
                 a ${innerCircleRadius - 20} ${innerCircleRadius - 20} 0 1 1 ${
-                      2 * (innerCircleRadius - 12)
-                    } 0
+                  2 * (innerCircleRadius - 12)
+                } 0
                 a ${innerCircleRadius - 20} ${innerCircleRadius - 20} 0 1 1 ${
-                      -2 * (innerCircleRadius - 12)
-                    } 0
+                  -2 * (innerCircleRadius - 12)
+                } 0
               `}
                     fill='none'
                   />
@@ -823,7 +812,7 @@ export default function ScrollyTellingAnimation() {
             {animationStage === 1 && (
               <animated.svg
                 viewBox='0 0 635 635'
-                className='overflow-hidden absolute'
+                className='absolute overflow-hidden'
                 style={{ opacity: secondSvgOpacity, transition: 'opacity 0.2s ease-out' }}
               >
                 {cyOffset3 === 0 && (
@@ -975,7 +964,7 @@ export default function ScrollyTellingAnimation() {
               </animated.svg>
             )}
           </div>
-          <div className='w-[216px] h-full z-[20]'>
+          <div className='z-[20] h-full w-[216px]'>
             <div
               style={{
                 transform: `translateY(${
@@ -984,14 +973,14 @@ export default function ScrollyTellingAnimation() {
               }}
               className={`${
                 scrollPosition > 5500 ? 'opacity-100' : 'opacity-0'
-              } w-[216px] absolute ${
+              } absolute w-[216px] ${
                 screenHeight < 934 ? 'bottom-[426px]' : 'bottom-[378px]'
               } flex items-center justify-start transition-opacity duration-500`}
             >
-              <div className='min-w-[2.5px] rounded-full h-[58px] mr-4 bg-green-600'></div>
+              <div className='mr-4 h-[58px] min-w-[2.5px] rounded-full bg-green-500'></div>
               <div>
-                <h3 className='p-xs-semibold text-green-600'>Omgevingsvisie</h3>
-                <p className='p-xs text-green-600'>Langetermijnvisie voor fysieke leefomgeving</p>
+                <h3 className='p-xs-semibold text-green-500'>Omgevingsvisie</h3>
+                <p className='p-xs text-green-500'>Langetermijnvisie voor fysieke leefomgeving</p>
               </div>
             </div>
             <div
@@ -1001,14 +990,14 @@ export default function ScrollyTellingAnimation() {
               id='coneTwoLabel'
               className={`${
                 scrollPosition > 7300 ? 'opacity-100' : 'opacity-0'
-              } w-[216px] absolute ${
+              } absolute w-[216px] ${
                 screenHeight < 934 ? 'bottom-[498px]' : 'bottom-[450px]'
               } flex items-center justify-start transition-opacity duration-500`}
             >
-              <div className='min-w-[2.5px] rounded-full h-[80px] mr-4 bg-green-600'></div>
+              <div className='mr-4 h-[80px] min-w-[2.5px] rounded-full bg-green-500'></div>
               <div>
-                <h3 className='p-xs-semibold text-green-600'>Omgevingsprogramma&apos;s</h3>
-                <p className='p-xs text-green-600'>
+                <h3 className='p-xs-semibold text-green-500'>Omgevingsprogramma&apos;s</h3>
+                <p className='p-xs text-green-500'>
                   Uitwerking beleidsdoelen voor korte-/middellange termijn
                 </p>
               </div>
@@ -1019,21 +1008,21 @@ export default function ScrollyTellingAnimation() {
               }}
               className={`${
                 scrollPosition > 9000 ? 'opacity-100' : 'opacity-0'
-              } w-[216px] absolute ${
+              } absolute w-[216px] ${
                 screenHeight < 934 ? 'bottom-[598px]' : 'bottom-[550px]'
               } flex items-center justify-start transition-opacity duration-500`}
               id='coneThreeLabel'
             >
-              <div className='min-w-[2.5px] max-w-[2.5] rounded-full h-[34px] mr-4 bg-green-600'></div>
+              <div className='mr-4 h-[34px] min-w-[2.5px] max-w-[2.5] rounded-full bg-green-500'></div>
               <div>
-                <h3 className='p-xs-semibold text-green-600'>Omgevingsplan</h3>
-                <p className='p-xs text-green-600'>Juridisch bindende regels</p>
+                <h3 className='p-xs-semibold text-green-500'>Omgevingsplan</h3>
+                <p className='p-xs text-green-500'>Juridisch bindende regels</p>
               </div>
             </div>
             <div
               className={`${
                 scrollPosition < 5000 ? 'opacity-100' : 'opacity-0'
-              } w-[216px] absolute ${
+              } absolute w-[216px] ${
                 screenHeight < 934 ? 'bottom-[426px]' : 'bottom-[378px]'
               } flex items-center justify-start transition-opacity duration-500`}
               id='coneThreeLabel'
@@ -1044,10 +1033,10 @@ export default function ScrollyTellingAnimation() {
               <div
                 className={`${
                   scrollPosition > 380 ? 'opacity-100' : 'opacity-0'
-                } min-w-[2.5px] rounded-full h-[44px] mr-4 bg-green-600`}
+                } mr-4 h-[44px] min-w-[2.5px] rounded-full bg-green-500`}
               ></div>
               <div>
-                <h3 className='heading-xl-semibold text-green-600'>Beleidscyclus</h3>
+                <h3 className='heading-xl-semibold text-green-500'>Beleidscyclus</h3>
               </div>
             </div>
           </div>

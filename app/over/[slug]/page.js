@@ -1,6 +1,6 @@
-import { client, sanityFetch } from '@/lib/sanity';
-import { ABOUT_PAGE_PATHS_QUERY, ABOUT_PAGE_QUERY } from '@/lib/queries';
 import AboutPageComponent from '@/components/about-page';
+import { ABOUT_PAGE_PATHS_QUERY, ABOUT_PAGE_QUERY } from '@/lib/queries';
+import { sanityFetch } from '@/lib/sanity';
 
 const ABOUT_PAGE_METADATA_QUERY = `
 *[_type == 'aboutPage' && slug.current == $slug][0] {
@@ -15,13 +15,11 @@ export async function generateMetadata({ params }, parent) {
   // read route params
   const slug = params.slug;
   // fetch data
-  const aboutPageMetaData = await client.fetch(
-    ABOUT_PAGE_METADATA_QUERY,
-    { slug },
-    {
-      next: { tags: ['aboutPage'] },
-    },
-  );
+  const aboutPageMetaData = await sanityFetch({
+    query: ABOUT_PAGE_METADATA_QUERY,
+    qParams: { slug },
+    tags: ['aboutPage'],
+  });
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
@@ -44,7 +42,7 @@ export async function generateMetadata({ params }, parent) {
 }
 
 export async function generateStaticParams() {
-  const slugs = await client.fetch(ABOUT_PAGE_PATHS_QUERY);
+  const slugs = await sanityFetch({ query: ABOUT_PAGE_PATHS_QUERY, tags: ['aboutPage'] });
   return slugs.map((slug) => ({ slug }));
 }
 

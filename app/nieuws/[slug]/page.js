@@ -1,19 +1,17 @@
-import NewsDetailPageHeader from '@/components/news-page/news-detail-page-header';
-import { client, sanityFetch } from '@/lib/sanity';
+import Header from '@/components/headers';
 import NewsDetailPageBody from '@/components/news-page/news-detail-page-body';
-import { NEWS_SLUGS_QUERY, NEWS_DETAIL_PAGE_QUERY, NEWS_METADATA_QUERY } from '@/lib/queries';
+import { NEWS_DETAIL_PAGE_QUERY, NEWS_METADATA_QUERY, NEWS_SLUGS_QUERY } from '@/lib/queries';
+import { sanityFetch } from '@/lib/sanity';
 
 export async function generateMetadata({ params }, parent) {
   // read route params
   const slug = params.slug;
   // fetch data
-  const newsPageMetaData = await client.fetch(
-    NEWS_METADATA_QUERY,
-    { slug },
-    {
-      next: { tags: ['newsItem'] },
-    },
-  );
+  const newsPageMetaData = await sanityFetch({
+    query: NEWS_METADATA_QUERY,
+    qParams: { slug },
+    tags: ['newsItem'],
+  });
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
@@ -36,10 +34,9 @@ export async function generateMetadata({ params }, parent) {
 }
 
 export async function generateStaticParams() {
-  const newsPages = await client.fetch(NEWS_SLUGS_QUERY, { next: { tags: ['newsItem'] } });
+  const newsPages = await sanityFetch({ query: NEWS_SLUGS_QUERY, tags: ['newsItem'] });
   return newsPages.map((newsPage) => ({ slug: newsPage }));
 }
-
 export const dynamicParams = false;
 
 export default async function NewsDetailPage({ params }) {
@@ -50,7 +47,13 @@ export default async function NewsDetailPage({ params }) {
   });
   return (
     <>
-      <NewsDetailPageHeader data={newsPageContent} />
+      <Header
+        title={newsPageContent.title}
+        bgColor='bg-green-500'
+        imageURL='/big-decoration.png'
+        pageType='news'
+        newsData={newsPageContent}
+      />
       <NewsDetailPageBody data={newsPageContent} />
     </>
   );

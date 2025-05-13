@@ -1,34 +1,45 @@
 'use client';
-import AgendaCard from '@/components/news-page/agenda-card';
-import FeaturedAgendaCard from '@/components/news-page/featured-agenda-card';
-import FeaturedCard from '@/components/news-page/featured-card';
-import NewsCard from '@/components/news-page/news-card';
-import Tag from '@/components/tag';
-import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
-import { IconChevronDown } from '@tabler/icons-react';
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
-// TODO: replace Popover with headless UI Listbox
+import { useEffect, useState } from 'react';
+
+import Link from 'next/link';
+
+import AgendaCard from '@/components/news-page/agenda-card';
+import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react';
+import { IconChevronDown } from '@tabler/icons-react';
+
+import Header from '../headers';
+import Badge from '../shared/new-badge';
+import TitleDecorator from '../title-decorator';
+import FeaturedNewsSection from './featured-section';
+import { MasonryGrid } from './masonry';
+import NewNewsCard from './new-news-card';
+
+const articleTypes = [
+  { id: 1, name: 'Alles' },
+  { id: 2, name: 'Nieuw op de site' },
+  { id: 3, name: 'Agenda' },
+  { id: 4, name: 'Artikelen' },
+  { id: 5, name: 'Circulair nieuws' },
+];
 export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }) {
-  const [articleType, setArticleType] = useState('Alles');
+  const [articleType, setArticleType] = useState(articleTypes[0]);
   const [notFeatured, setNotFeatured] = useState();
 
   useEffect(() => {
-    if (articleType === 'Nieuw op de site') {
+    if (articleType.name === 'Nieuw op de site') {
       setNotFeatured(
         nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.category === 'Nieuw op de site'),
       );
-    } else if (articleType === 'Agenda') {
+    } else if (articleType.name === 'Agenda') {
       setNotFeatured(
-        nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.newsOrAgenda === true),
+        nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.isAgendaItem === true),
       );
-    } else if (articleType === 'Artikelen') {
+    } else if (articleType.name === 'Artikelen') {
       setNotFeatured(
         nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.category === 'Artikelen'),
       );
-    } else if (articleType === 'Circulair nieuws') {
+    } else if (articleType.name === 'Circulair nieuws') {
       setNotFeatured(
         nonFeaturedNewsItems?.slice(0, 12)?.filter((item) => item.category === 'Circulair nieuws'),
       );
@@ -44,406 +55,116 @@ export default function NewsOverview({ featuresNewsItems, nonFeaturedNewsItems }
   };
 
   return (
-    <div className='flex flex-col global-margin mt-4'>
-      <div className='mt-10'>
-        <Link href='/' className='p-2xs-bold'>
-          <span className='hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white text-green-600'>
-            Home<span className='p-2xs-bold px-2'>{'>'}</span>
-          </span>
-        </Link>
-      </div>
-      <div className='mt-10'>
-        <h1 className='heading-xl-semibold sm:heading-2xl-semibold w-full border-b-2 pb-5 border-green-800'>
-          Uitgelichte nieuwsberichten
-        </h1>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-1 gap-6 py-10 overflow-hidden'>
-          {featuresNewsItems.map((item, id) => (
-            <div
-              className={`${
-                item.image != null
-                  ? 'col-span-1 flex-col sm:col-span-2 sm:flex-cols-2'
-                  : 'col-span-1 flex-col gap-3'
-              }`}
-              key={id}
-            >
-              {item.newsOrAgenda === true && <FeaturedAgendaCard data={item} />}
-              {item.newsOrAgenda === false && <FeaturedCard data={item} />}
-            </div>
-          ))}
+    <>
+      <Header title='Nieuws' bgColor='bg-green-500' imageURL='/big-decoration.png' />
+      <div className='global-margin mt-20 flex flex-col'>
+        <div className='mb-6 w-1/2'>
+          <h3 className='heading-5xl-semibold text-green-500'>Uitgelichte nieuwsberichten</h3>
+          <TitleDecorator width='w-1/4' />
         </div>
-      </div>
-      <div className=''>
-        <div className='flex flex-col sm:flex-row justify-between sm:items-center border-b-2 pb-5 border-green-800'>
-          <h2 className='heading-xl-semibold sm:heading-2xl-semibold pb-4 sm:pb-0'>
-            Laatste nieuws{' '}
-          </h2>
-          <div className='flex flex-row items-center justify-between'>
-            <div className='heading-xl-semibold sm:heading-2xl-semibold pr-4'>Bekijk:</div>
-            <div>
-              {articleType === 'Alles' && (
-                <Popover className='w-64 sm:w-80 relative'>
-                  {({ open }) => (
-                    <>
-                      <PopoverButton
-                        className={`${
-                          open ? 'rounded-t-cl' : 'rounded-cl'
-                        } text-black bg-green-600 hover:text-green-600 flex justify-between items-center border border-green-600 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
-                      >
-                        <div
-                          className={`${
-                            open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                          } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
-                        >
-                          <span className='inline text-left p-base-bold text-green-500'>Alles</span>
-                        </div>
-                        <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
-                          <IconChevronDown
-                            className={`${
-                              open ? '' : 'rotate-180 transform'
-                            } h-6 w-6 text-white z-10`}
-                          />
-                        </div>
-                      </PopoverButton>
-                      <PopoverPanel className='absolute z-20'>
-                        <PopoverButton
-                          className='w-64 sm:w-80'
-                          as='div'
-                          onClick={() => setArticleType('Agenda')}
-                        >
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Agenda</span>
-                          </div>
-                        </PopoverButton>
-                        <PopoverButton as='div' onClick={() => setArticleType('Circulair nieuws')}>
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Circulair nieuws</span>
-                          </div>
-                        </PopoverButton>
-
-                        <PopoverButton as='div' onClick={() => setArticleType('Nieuw op de site')}>
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Nieuw op de site</span>
-                          </div>
-                        </PopoverButton>
-
-                        <PopoverButton as='div' onClick={() => setArticleType('Artikelen')}>
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Artikelen</span>
-                          </div>
-                        </PopoverButton>
-                      </PopoverPanel>
-                    </>
-                  )}
-                </Popover>
-              )}
-              {articleType === 'Agenda' && (
-                <Popover className='w-64 sm:w-80 relative'>
-                  {({ open }) => (
-                    <>
-                      <PopoverButton
-                        className={`${
-                          open ? 'rounded-t-cl' : 'rounded-cl'
-                        } text-black bg-green-600 hover:text-green-600 flex justify-between items-center border border-green-600 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
-                      >
-                        <div
-                          className={`${
-                            open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                          } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
-                        >
-                          <span className='inline text-left p-base-bold text-green-500'>
-                            Agenda
-                          </span>
-                        </div>
-                        <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
-                          <IconChevronDown
-                            className={`${
-                              open ? '' : 'rotate-180 transform'
-                            } h-6 w-6 text-white z-10`}
-                          />
-                        </div>
-                      </PopoverButton>
-                      <PopoverPanel className='absolute z-20'>
-                        <PopoverButton
-                          className='w-64 sm:w-80'
-                          as='div'
-                          onClick={() => setArticleType('Alles')}
-                        >
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Alles</span>
-                          </div>
-                        </PopoverButton>
-                        <PopoverButton as='div' onClick={() => setArticleType('Circulair nieuws')}>
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Circulair nieuws</span>
-                          </div>
-                        </PopoverButton>
-
-                        <PopoverButton as='div' onClick={() => setArticleType('Nieuw op de site')}>
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Nieuw op de site</span>
-                          </div>
-                        </PopoverButton>
-
-                        <PopoverButton as='div' onClick={() => setArticleType('Artikelen')}>
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Artikelen</span>
-                          </div>
-                        </PopoverButton>
-                      </PopoverPanel>
-                    </>
-                  )}
-                </Popover>
-              )}
-
-              {articleType === 'Circulair nieuws' && (
-                <Popover className='w-64 sm:w-80 relative'>
-                  {({ open }) => (
-                    <>
-                      <PopoverButton
-                        className={`${
-                          open ? 'rounded-t-cl' : 'rounded-cl'
-                        } text-black bg-green-600 hover:text-green-600 flex justify-between items-center border border-green-600 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
-                      >
-                        <div
-                          className={`${
-                            open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                          } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
-                        >
-                          <span className='inline text-left p-base-bold text-green-500'>
-                            Circulair nieuws
-                          </span>
-                        </div>
-                        <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
-                          <IconChevronDown
-                            className={`${
-                              open ? '' : 'rotate-180 transform'
-                            } h-6 w-6 text-white z-10`}
-                          />
-                        </div>
-                      </PopoverButton>
-                      <PopoverPanel className='absolute z-20'>
-                        <PopoverButton
-                          className='w-64 sm:w-80'
-                          as='div'
-                          onClick={() => setArticleType('Alles')}
-                        >
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Alles</span>
-                          </div>
-                        </PopoverButton>
-                        <PopoverButton as='div' onClick={() => setArticleType('Agenda')}>
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Agenda</span>
-                          </div>
-                        </PopoverButton>
-
-                        <PopoverButton as='div' onClick={() => setArticleType('Nieuw op de site')}>
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Nieuw op de site</span>
-                          </div>
-                        </PopoverButton>
-
-                        <PopoverButton as='div' onClick={() => setArticleType('Artikelen')}>
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Artikelen</span>
-                          </div>
-                        </PopoverButton>
-                      </PopoverPanel>
-                    </>
-                  )}
-                </Popover>
-              )}
-              {articleType === 'Nieuw op de site' && (
-                <Popover className='w-64 sm:w-80 relative'>
-                  {({ open }) => (
-                    <>
-                      <PopoverButton
-                        className={`${
-                          open ? 'rounded-t-cl' : 'rounded-cl'
-                        } text-black bg-green-600 hover:text-green-600 flex justify-between items-center border border-green-600 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
-                      >
-                        <div
-                          className={`${
-                            open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                          } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
-                        >
-                          <span className='inline text-left p-base-bold text-green-500'>
-                            Nieuw op de site
-                          </span>
-                        </div>
-                        <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
-                          <IconChevronDown
-                            className={`${
-                              open ? '' : 'rotate-180 transform'
-                            } h-6 w-6 text-white z-10`}
-                          />
-                        </div>
-                      </PopoverButton>
-                      <PopoverPanel className='absolute z-20'>
-                        <PopoverButton
-                          className='w-64 sm:w-80'
-                          as='div'
-                          onClick={() => setArticleType('Alles')}
-                        >
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Alles</span>
-                          </div>
-                        </PopoverButton>
-                        <PopoverButton as='div' onClick={() => setArticleType('Agenda')}>
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Agenda</span>
-                          </div>
-                        </PopoverButton>
-
-                        <PopoverButton as='div' onClick={() => setArticleType('Circulair nieuws')}>
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Circulair nieuws</span>
-                          </div>
-                        </PopoverButton>
-
-                        <PopoverButton as='div' onClick={() => setArticleType('Artikelen')}>
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Artikelen</span>
-                          </div>
-                        </PopoverButton>
-                      </PopoverPanel>
-                    </>
-                  )}
-                </Popover>
-              )}
-              {articleType === 'Artikelen' && (
-                <Popover className='w-64 sm:w-80 relative'>
-                  {({ open }) => (
-                    <>
-                      <PopoverButton
-                        className={`${
-                          open ? 'rounded-t-cl' : 'rounded-cl'
-                        } text-black bg-green-600 hover:text-green-600 flex justify-between items-center border border-green-600 h-10 w-full focus:outline-none focus-visible:ring focus-visible:ring-green-600 focus-visible:ring-opacity-75`}
-                      >
-                        <div
-                          className={`${
-                            open ? 'rounded-tl-cl' : 'rounded-l-cl'
-                          } h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate`}
-                        >
-                          <span className='inline text-left p-base-bold text-green-500'>
-                            Artikelen
-                          </span>
-                        </div>
-                        <div className='w-1/12 px-5 h-full pr-5 bg-green-600 grid items-center justify-center rounded-r-cl border border-green-600'>
-                          <IconChevronDown
-                            className={`${
-                              open ? '' : 'rotate-180 transform'
-                            } h-6 w-6 text-white z-10`}
-                          />
-                        </div>
-                      </PopoverButton>
-                      <PopoverPanel className='absolute z-20'>
-                        <PopoverButton
-                          className='w-64 sm:w-80'
-                          as='div'
-                          onClick={() => setArticleType('Alles')}
-                        >
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Alles</span>
-                          </div>
-                        </PopoverButton>
-                        <PopoverButton as='div' onClick={() => setArticleType('Agenda')}>
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Agenda</span>
-                          </div>
-                        </PopoverButton>
-
-                        <PopoverButton as='div' onClick={() => setArticleType('Circulair nieuws')}>
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Circulair nieuws</span>
-                          </div>
-                        </PopoverButton>
-
-                        <PopoverButton as='div' onClick={() => setArticleType('Nieuw op de site')}>
-                          <div className='bg-gray-100 w-full text-gray-800 border-b border-l border-r rounded-b-cl border-green-600 h-10 flex items-center hover:text-green-600 hover:cursor-pointer'>
-                            <span className='block pl-3 truncate p-base'>Nieuw op de site</span>
-                          </div>
-                        </PopoverButton>
-                      </PopoverPanel>
-                    </>
-                  )}
-                </Popover>
-              )}
+        <div className='py-10'>
+          <FeaturedNewsSection items={featuresNewsItems} />
+        </div>
+        <div className=''>
+          <div className='mt-20 flex flex-col justify-between pb-6 sm:flex-row sm:items-center'>
+            <div className='w-1/2'>
+              <h3 className='heading-5xl-semibold text-green-500'>Uitgelichte nieuwsberichten</h3>
+              <TitleDecorator width='w-1/4' />
+            </div>
+            <div className='flex flex-row items-center justify-between place-self-start'>
+              <div className='heading-xl-semibold sm:heading-2xl-semibold pr-4'>Bekijk:</div>
+              <Listbox value={articleType} onChange={setArticleType}>
+                <ListboxButton className='p-base-bold flex h-10 w-64 items-center justify-between rounded-cl border-2 border-green-500 px-4 text-black sm:w-80'>
+                  {articleType.name}
+                  <IconChevronDown />
+                </ListboxButton>
+                <ListboxOptions
+                  anchor='bottom'
+                  transition
+                  className='w-64 rounded-cl border-2 border-green-500 transition duration-100 ease-in [--anchor-gap:2px] data-[leave]:data-[closed]:opacity-0 sm:w-80'
+                >
+                  {articleTypes.map((type) => (
+                    <ListboxOption
+                      key={type.name}
+                      value={type}
+                      className={`${type.id === 5 ? '' : 'border-b-2 border-green-500'} p-base hover:p-base-semibold flex h-10 cursor-pointer items-center bg-white px-4`}
+                    >
+                      {type.name}
+                    </ListboxOption>
+                  ))}
+                </ListboxOptions>
+              </Listbox>
             </div>
           </div>
-        </div>
-        <ResponsiveMasonry
-          columnsCountBreakPoints={{ 350: 1, 640: 2, 1024: 3, 1280: 4 }}
-          className='py-10'
-        >
-          <Masonry gutter='24px'>
-            {notFeatured?.map((item, id) => (
-              <div key={id} className='relative break-inside-avoid-column min-h mb-4'>
-                {item.newsOrAgenda === true && <AgendaCard data={item} />}
-                {item.newsOrAgenda === false && <NewsCard data={item} />}
+          <div className='py-10'>
+            <MasonryGrid>
+              {notFeatured?.map((item, id) => {
+                return (
+                  <>
+                    {item.isAgendaItem === true ? (
+                      <AgendaCard data={item} key={id} />
+                    ) : (
+                      <NewNewsCard data={item} key={id} />
+                    )}
+                  </>
+                );
+              })}
+            </MasonryGrid>
+          </div>
+          {nonFeaturedNewsItems.length > 12 && (
+            <div className='mb-10'>
+              <div className='w-1/2'>
+                <h3 className='heading-5xl-semibold mt-20 text-green-500'>Archief</h3>
+                <TitleDecorator width='w-1/4' />
               </div>
-            ))}
-          </Masonry>
-        </ResponsiveMasonry>
-        {nonFeaturedNewsItems.length > 12 && (
-          <div className='mb-10'>
-            <h2 className='heading-xl-semibold sm:heading-2xl-semibold w-full border-b-2 pb-5 border-green-800'>
-              Archief
-            </h2>
-            <div className='py-10'>
-              {nonFeaturedNewsItems.slice(13, 30)?.map((item, id) => (
-                <div
-                  key={id}
-                  className='flex flex-row items-center mb-3 heading-xl-semibold text-green-800'
-                >
-                  {item.newsOrAgenda !== true && (
-                    <Tag classes='text-white bg-green-800 border border-green-800 mr-3'>
-                      {item.category}
-                    </Tag>
-                  )}
-                  {item.newsOrAgenda === true && (
-                    <Tag classes='text-white bg-green-800 border border-green-800 mr-3'>Agenda</Tag>
-                  )}
-
-                  <div>
-                    {item.createPage === true && (
-                      <Link className='link-interaction' href={`/nieuws/${item.slug.current}`}>
-                        {item.title}
-                      </Link>
-                    )}
-                    {item.linkUrl !== undefined && (
-                      <Link
-                        href={item.linkUrl}
-                        target={`${item.internalExternal === true ? '_blank' : ''}`}
-                        className='link-interaction'
-                      >
-                        {item.title}
-                      </Link>
-                    )}
-                    {item.link && item.newsOrAgenda === true && (
-                      <Link className='link-interaction' href={item.link}>
-                        {item.title}
-                      </Link>
-                    )}
-                    {item.link === undefined && item.newsOrAgenda === true && (
-                      <div>{item.title}</div>
+              <div className='py-10'>
+                {nonFeaturedNewsItems.slice(13, 30)?.map((item, id) => (
+                  <div
+                    key={id}
+                    className='heading-xl-semibold mb-3 flex flex-row items-center text-cl-black'
+                  >
+                    {item.isAgendaItem !== true && <Badge variant='black'>{item.category}</Badge>}
+                    {item.isAgendaItem === true && <Badge variant='black'>Agenda</Badge>}
+                    <div className='ml-3'>
+                      {item.hasPage === true && (
+                        <Link className='link-interaction' href={`/nieuws/${item.slug.current}`}>
+                          {item.title}
+                        </Link>
+                      )}
+                      {item.linkUrl !== undefined && (
+                        <Link
+                          href={item.linkUrl}
+                          target={`${item.internalExternal === true ? '_blank' : ''}`}
+                          className='link-interaction'
+                        >
+                          {item.title}
+                        </Link>
+                      )}
+                      {item.link && item.isAgendaItem === true && (
+                        <Link className='link-interaction' href={item.link}>
+                          {item.title}
+                        </Link>
+                      )}
+                      {item.link === undefined && item.isAgendaItem === true && (
+                        <div>{item.title}</div>
+                      )}
+                    </div>
+                    {item.newsDate && (
+                      <>
+                        <div className='mx-2 h-2 w-2 rounded-full bg-cl-grey' />
+                        <span className='p-base text-cl-black' suppressHydrationWarning>
+                          {' '}
+                          {new Date(item.newsDate).toLocaleDateString('nl-NL', options)}
+                        </span>
+                      </>
                     )}
                   </div>
-                  {item.newsDate && (
-                    <>
-                      <div className='h-2 w-2 rounded-full bg-gray-400 mx-2'></div>
-                      <span className='p-base text-green-800' suppressHydrationWarning>
-                        {' '}
-                        {new Date(item.newsDate).toLocaleDateString('nl-NL', options)}
-                      </span>
-                    </>
-                  )}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

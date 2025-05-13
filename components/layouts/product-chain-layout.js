@@ -1,28 +1,57 @@
-import ThemaCard from '../product-chain-page/thema-cards';
-import CustomButton from '@/components/custom-button';
-import PageHeader from '@/components/product-chain-page/product-chain-header';
-import { urlFor } from '@/lib/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { urlFor } from '@/lib/sanity';
+import { IconExternalLink } from '@tabler/icons-react';
+
+import Header from '../headers';
 import Modal from '../modal/modal';
 import ModalContent from '../modal/modal-content';
-import { IconArrowRight } from '@tabler/icons-react';
+import ThemaCard from '../product-chain-page/thema-cards';
+import NewButton from '../shared/new-button';
 
-// TODO: See what we could move to a layout.js file instead of having everything in components.
+const callToActions = [
+  {
+    title: 'Planregels: modelteksten voor het omgevingsplan',
+    text: 'Samen met de omgevingsvisie en omgevingsprogramma is het omgevingsplan een van de instrumenten om circulair bouwen te bevorderen',
+    buttonText: 'Meer over het omgevingsplan',
+    link: '/bouw/planregels',
+  },
+  {
+    title: 'E-learning Circulaire houtbouw onder de Omgevingswet',
+    text: 'Hoe gebruik je de instrumenten van de Omgevingswet om houtbouw teverankeren in beleid? Dat leer je in onze e-learning: "Circulaire houtbouw onder de Omgevingswet".',
+    buttonText: 'Lees verder',
+    link: '/training',
+  },
+  {
+    title: 'Veranker houtbouw in gebiedsontwikkeling',
+    text: 'Samen met de omgevingsvisie en omgevingsprogramma is het omgevingsplan een van de instrumenten om circulair bouwen te bevorderen',
+    buttonText: 'Lees verder',
+    link: '/bouw/gebiedsontwikkeling',
+  },
+];
+
 export default function PCLayout({ ...props }) {
   return (
     <>
       <div>
         {/* HEADER DESKTOP */}
-        <PageHeader pageTitle={props?.productChainData?.pcName} />
-        {/* HEADER MOBILE */}
-        <div className='bg-gray-100'>
+        <Header
+          title={props?.productChainData?.pcName}
+          imageURL='/big-decoration.png'
+          bgColor='bg-green-500'
+          pageType='productChain'
+          subtitle='Productketen'
+          thema={props?.thema}
+          productChain={props.productChain}
+        />
+        <div className=''>
           <div className='global-margin pb-12 sm:pb-20'>
-            <div className='pt-14 pb-0 sm:pb-10'>
-              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 pb-8'>
+            <div className='pb-0 pt-14 sm:pb-10'>
+              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold pb-8 text-cl-black'>
                 Thema’s en juridische instrumenten
               </h2>
-              <p className='pb-5 p-base max-w-2xl'>
+              <p className='p-base max-w-2xl pb-5'>
                 {props?.productChainData?.introOne} <b>{props?.totalInstruments} instrumenten</b>{' '}
                 {props?.productChainData?.introTwo}
               </p>
@@ -35,43 +64,36 @@ export default function PCLayout({ ...props }) {
             </div>
             <div>
               {props.productChainData.pcName === 'Bouw' && (
-                <div className='mt-20'>
-                  <Link href='/bouw/planregels'>
-                    <div className='w-full bg-green-50 flex flex-col md:flex-row border border-gray-200 rounded-cl items-start md:items-center justify-between px-10 py-8 gap-8'>
-                      <p className='heading-2xl-semibold max-w-sm'>
-                        Planregels: modelteksten voor het omgevingsplan
-                      </p>
-                      <p className='p-base max-w-sm'>
-                        Samen met de omgevingsvisie en omgevingsprogramma is het omgevingsplan een
-                        van de instrumenten om circulair bouwen te bevorderen
-                      </p>
-                      <CustomButton color='lightGreenBackground'>
-                        Meer over het omgevingsplan
-                        <IconArrowRight />
-                      </CustomButton>
-                    </div>
-                  </Link>
+                <div className='max-w-8xl relative z-0 mt-20 grid grid-cols-1 gap-x-4 gap-y-8 sm:gap-x-4 md:grid-cols-2 lg:grid-cols-3'>
+                  {callToActions.map((cta, id) => (
+                    <CallToAction
+                      key={id}
+                      title={cta.title}
+                      text={cta.text}
+                      buttonText={cta.buttonText}
+                    />
+                  ))}
                 </div>
               )}
             </div>
           </div>
         </div>
-        <div className='bg-green-50'>
+        <div>
           <div className='global-margin'>
-            <div className='pt-10 pb-14'>
-              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 pb-14 max-w-3xl'>
+            <div className='pb-14 pt-10'>
+              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold max-w-3xl pb-14 text-cl-black'>
                 {props?.productChainData?.impactTitle}
               </h2>
-              <div className='grid grid-cols-1 justify-items-center sm:flex sm:justify-center gap-20'>
+              <div className='grid grid-cols-1 justify-items-center gap-20 sm:flex sm:justify-center'>
                 {props?.impactList?.map((impact) => (
                   <div
-                    className='flex flex-col items-center justify-between text-center max-w-xs'
+                    className='flex max-w-xs flex-col items-center justify-between text-center'
                     key={impact.detail}
                   >
                     <div>
                       {impact?.image && (
                         <Image
-                          className='w-28 h-28 mb-6 rounded-cl'
+                          className='mb-6 h-28 w-28 rounded-cl'
                           src={urlFor(impact?.image).url()}
                           alt='impact image'
                           height={112}
@@ -81,12 +103,12 @@ export default function PCLayout({ ...props }) {
                         />
                       )}
                     </div>
-                    <div className='h-full flex items-start'>
+                    <div className='flex h-full items-start'>
                       <p className='p-base'>{impact.detail}</p>
                     </div>
                     <Modal
                       Button={
-                        <p className='pt-8 p-base-bold text-green-800 border-b pb-1 border-green-800'>
+                        <p className='p-base-bold border-b border-cl-black pb-1 pt-8 text-cl-black'>
                           {impact.question}
                         </p>
                       }
@@ -102,15 +124,15 @@ export default function PCLayout({ ...props }) {
             </div>
           </div>
         </div>
-        <div className='global-margin pt-14 bg-gray-100'>
+        <div className='global-margin pt-14'>
           <div className='max-w-4xl'>
-            <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 pb-14'>
+            <h2 className='heading-2xl-semibold sm:heading-3xl-semibold pb-14 text-cl-black'>
               {props?.productChainData?.ambitionTitle}
             </h2>
             {props?.ambitionList?.map((ambition, index) =>
               index % 2 == 0 ? (
-                <div key={index} className='grid grid-cols-1 sm:grid-cols-2 gap-x-[80px] pb-28'>
-                  <div className='block mb-6 sm:hidden'>
+                <div key={index} className='grid grid-cols-1 gap-x-[80px] pb-28 sm:grid-cols-2'>
+                  <div className='mb-6 block sm:hidden'>
                     {ambition?.image && (
                       <Image
                         src={urlFor(ambition?.image).url()}
@@ -123,17 +145,15 @@ export default function PCLayout({ ...props }) {
                     )}
                   </div>
                   <div className=''>
-                    <span className='p-base-semibold text-green-600'>{ambition.subTitle}</span>
-                    <h4 className='heading-2xl-semibold sm:3xl-semibold text-green-800 mt-2'>
+                    <span className='p-base-semibold text-green-500'>{ambition.subTitle}</span>
+                    <h4 className='heading-2xl-semibold sm:3xl-semibold mt-2 text-cl-black'>
                       {ambition.title}
                     </h4>
-                    <p className='p-base pt-4 max-w-xl pb-4'>{ambition.detail}</p>
+                    <p className='p-base max-w-xl pb-4 pt-4'>{ambition.detail}</p>
                     {ambition.buttonText && (
-                      <Link href={ambition.buttonLink}>
-                        <CustomButton color='lightGreenBackground'>
-                          {ambition.buttonText}
-                        </CustomButton>
-                      </Link>
+                      <NewButton variant='primaryDark' href={ambition.buttonLink} icon='arrowRight'>
+                        {ambition.buttonText}
+                      </NewButton>
                     )}
                   </div>
                   <div className='hidden sm:block'>
@@ -152,7 +172,7 @@ export default function PCLayout({ ...props }) {
               ) : (
                 <div
                   key={ambition.title}
-                  className='grid grid-cols-1 sm:grid-cols-2 gap-x-[80px] pb-28'
+                  className='grid grid-cols-1 gap-x-[80px] pb-28 sm:grid-cols-2'
                 >
                   <div>
                     {ambition?.image && (
@@ -168,17 +188,15 @@ export default function PCLayout({ ...props }) {
                     )}
                   </div>
                   <div className=''>
-                    <span className='p-base-semibold text-green-600'>{ambition.subTitle}</span>
-                    <h4 className='heading-2xl-semibold sm:3xl-semibold text-green-800 mt-2'>
+                    <span className='p-base-semibold text-green-500'>{ambition.subTitle}</span>
+                    <h4 className='heading-2xl-semibold sm:3xl-semibold mt-2 text-cl-black'>
                       {ambition.title}
                     </h4>
-                    <p className='p-base pt-4 max-w-xl pb-4'>{ambition.detail}</p>
+                    <p className='p-base max-w-xl pb-4 pt-4'>{ambition.detail}</p>
                     {ambition.buttonText && (
-                      <Link href={ambition.buttonLink}>
-                        <CustomButton color='lightGreenBackground'>
-                          {ambition.buttonText}
-                        </CustomButton>
-                      </Link>
+                      <NewButton variant='primaryDark' href={ambition.buttonLink} icon='arrowRight'>
+                        {ambition.buttonText}
+                      </NewButton>
                     )}
                   </div>
                 </div>
@@ -187,33 +205,17 @@ export default function PCLayout({ ...props }) {
           </div>
         </div>
         {props.links && (
-          <div className='pt-14 pb-10 bg-green-50'>
+          <div className='pb-10 pt-14'>
             <div className='global-margin'>
-              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold text-green-800 pb-14'>
-                Duik nog dieper in de materie{' '}
-                <span className='pl-0.5 inline-block h-6 w-6 -mb-1 relative'>
-                  <svg
-                    className='stroke-current h-6 w-6'
-                    viewBox='0 0 24 24'
-                    fill='none'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <path
-                      d='M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14'
-                      stroke=''
-                      strokeWidth='2'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                    />
-                  </svg>
-                </span>
+              <h2 className='heading-2xl-semibold sm:heading-3xl-semibold pb-14 text-cl-black'>
+                Duik nog dieper in de materie <IconExternalLink className='inline-block' />
               </h2>
               <div className='newlineDisplay p-base -mt-2 mb-6'>
-                <ul className='list-disc pl-6 p-base'>
+                <ul className='p-base list-disc pl-6'>
                   {props?.links?.map((link, id) => (
                     <li className='py-0.5' key={id}>
                       <a
-                        className='text-green-500 inline link-interaction'
+                        className='link-interaction inline text-green-500'
                         href={link.link}
                         target='_blank'
                         rel='noreferrer'
@@ -229,5 +231,25 @@ export default function PCLayout({ ...props }) {
         )}
       </div>
     </>
+  );
+}
+
+function CallToAction({ title, text, buttonText }) {
+  return (
+    <div className='group w-full rounded-cl border border-green-100 bg-green-100'>
+      <Link href='/training' className='h-full w-full'>
+        <div className='flex h-full w-full flex-grow flex-col justify-between gap-y-6 p-6'>
+          <h3 className='heading-2xl-semibold text-green-500'>{title}</h3>
+          <div>
+            <p className='p-base pt-4 text-cl-black'>{text}</p>
+          </div>
+          <div className='flex justify-start'>
+            <NewButton variant='secondaryDark' icon='arrowRight'>
+              {buttonText}
+            </NewButton>
+          </div>
+        </div>
+      </Link>
+    </div>
   );
 }

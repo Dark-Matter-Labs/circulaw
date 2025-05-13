@@ -4,6 +4,13 @@ import { useEffect, useState } from 'react';
 import OverviewPageHeader from '../theme-page/overview-page-header';
 import { IconArrowRight, IconInfoSquareRoundedFilled } from '@tabler/icons-react';
 
+import Xarrow, { useXarrow } from 'react-xarrows';
+
+import Image from 'next/image';
+import Link from 'next/link';
+
+import Header from '../headers';
+
 export default function GovLevelLayout({ ...props }) {
   const allRegionLaws = props.allRegionLaws;
   const provLaws = props.provLaws;
@@ -30,35 +37,33 @@ export default function GovLevelLayout({ ...props }) {
   };
 
   return (
-    <div className=''>
-      <div className='h-[300px] sm:h-[360px] bg-gradient-to-t from-[#042D36]/20 to-[#22532200]/20 bg-green-600  sm:mx-0'>
-        <OverviewPageHeader
+    <div onLoad={useXarrow()}>
+      <div className=''>
+        <Header
           thema={props.thema}
           productChain={props.transitionAgenda}
           title={props.title}
           page='welke'
+          bgColor='bg-green-500'
+          imageURL='/big-decoration.png'
+          pageType='instrumentOverview'
         />
-      </div>
 
-      <div className='global-margin flex flex-col justify-center'>
-        
-   
-
-        <div className='flex flex-col sm:flex-row my-16 w-full max-w-[1160px] bg-grey-100 border rounded-cl shadow-card px-6 sm:px-20 py-12 justify-between items-center relative'>
-        
-        
-          <div className='hidden sm:flex items-center relative'>
-         
-            <div
-              className={`${
-                selected === 'nationaal'
-                  ? 'bg-green-400 text-green-50'
-                  : 'bg-green-50 text-green-500'
-              } rounded-full shadow-card size-[332px] absolute left-0 -z-10`}
-            >
-              <h3 className='heading-2xl-semibold absolute left-20 top-6'>Nationaal</h3>
-              <div className='absolute top-20 left-12'>
-                <NormalDistributionCircles laws={natLaws} isSelected={selected === 'nationaal'} />
+        {/* DYNAMIC IMAGE */}
+        <div className='global-margin mb-20 mt-5 hidden sm:mt-20 sm:block'>
+          <div className='flex grid-cols-3 items-start 2xl:justify-center'>
+            {/* LEFT HAND SIDE */}
+            <div className='col-span-1 mt-10 grid h-full w-80 items-start justify-center'>
+              <div
+                id='allId'
+                className='justify-left flex h-10 w-80 items-center rounded-full border border-cl-black bg-green-100 text-cl-black'
+              >
+                <div className='flex h-10 w-10 items-center justify-center rounded-full border-b border-r border-t border-cl-black'>
+                  <h5 className='p-2xs-semibold sm:p-xs-semibold'>A</h5>
+                </div>
+                <div className='-ml-10 flex h-full w-full items-center justify-center'>
+                  <h4 className='p-base-semibold sm:headling-xl-semibold'>Alle overheidslagen</h4>
+                </div>
               </div>
             </div>
             <div

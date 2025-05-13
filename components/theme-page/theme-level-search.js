@@ -1,24 +1,25 @@
 'use client';
-import algoliasearch from 'algoliasearch';
-import { Hits, RefinementList, SearchBox, Configure } from 'react-instantsearch';
-import { InstrumentHit } from '@/components/search/instrument-hit';
-import CustomStats from '../search/stats';
-import Pagination from '@/components/search/pagination';
-import CustomClearRefinements from '@/components/search/clear-refinements';
-import { IconX } from '@tabler/icons-react';
-import Modal from '../modal/modal';
-import ModalContent from '../modal/modal-content';
-import InstrumentTooltipButton from '../modal/modal-buttons/instrument-tooltip-button';
 
-import NoResults from '../search/no-results';
-import NoResultsBoundary from '../search/no-results-boundary';
-import OverviewPageHeader from './overview-page-header';
-
+import { Configure, Hits, RefinementList, SearchBox } from 'react-instantsearch';
 import { InstantSearchNext } from 'react-instantsearch-nextjs';
+
+import CustomClearRefinements from '@/components/search/clear-refinements';
+import { InstrumentHit } from '@/components/search/instrument-hit';
+import Pagination from '@/components/search/pagination';
+import { IconX } from '@tabler/icons-react';
+import algoliasearch from 'algoliasearch';
+
+import Header from '../headers';
 import TooltipJuridischeHoudbaarheidContent from '../instrument/tooltip-juridische-houdbaarheid-content';
-import FilterModalButton from '../modal/modal-buttons/filter-button';
 import TooltipJuridischeInvloedContent from '../instrument/tooltip-juridische-invloed-content';
 import RladderTooltipContent from '../instrument/tooltip-r-ladder-content';
+import Modal from '../modal/modal';
+import FilterModalButton from '../modal/modal-buttons/filter-button';
+import InstrumentTooltipButton from '../modal/modal-buttons/instrument-tooltip-button';
+import ModalContent from '../modal/modal-content';
+import NoResultsBoundary from '../search/no-results-boundary';
+import NoResultsInstruments from '../search/no-results-instrument';
+import CustomStats from '../search/stats';
 
 const api_key = process.env.NEXT_PUBLIC_AGOLIA_SEARCH_KEY;
 const api_id = process.env.NEXT_PUBLIC_AGOLIA_APPLICATION_ID;
@@ -52,16 +53,19 @@ export default function ThemeLevelSearch(props) {
       insights={true}
     >
       <Configure hitsPerPage={10} filters={`thema:${props?.thema}`} />
-      <div className=' bg-green-600 h-[300px] sm:h-[360px]  flex items-end justify-center w-full mt-3'>
-        <OverviewPageHeader
-          thema={props?.thema}
-          productChain={props.productChain}
-          page='list'
-          title={props.title}
-        />
-      </div>
-      <div className='flex items-center justify-center mt-4'>
-        <div className='mt-10 mb-10 hidden sm:flex items-center justify-start'>
+
+      <Header
+        thema={props?.thema}
+        productChain={props.productChain}
+        page='list'
+        title={props.title}
+        pageType='instrumentOverview'
+        bgColor='bg-green-500'
+        imageURL='/big-decoration.png'
+      />
+
+      <div className='mt-4 flex items-center justify-center'>
+        <div className='mb-10 mt-10 hidden items-center justify-start sm:flex'>
           <SearchBox
             searchAsYouType={false}
             placeholder={props.searchTitle + '...'}
@@ -69,13 +73,13 @@ export default function ThemeLevelSearch(props) {
               root: 'h-16 w-[600px] bg-white',
               form: 'bg-white shadow-card w-[600px] h-[66px] rounded-cl flex-row items-center justify-between relative flex',
               input:
-                'w-[600px] h-[66px] focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-green-600 p-base text-green-600 focus:ring-1 focus:ring-white placeholder:text-green-600 placeholder:p-base-semibold',
+                'w-[600px] h-[66px] focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-12 rounded-cl border-none bg-white/50 caret-green-500 p-base text-green-500 focus:ring-1 focus:ring-white placeholder:text-green-500 placeholder:p-base-semibold',
               submitIcon: 'visible',
             }}
             submitIconComponent={() => (
               <div
                 type='submit'
-                className='ml-2 border h-[42px] w-24 border-white p-2 absolute top-3 right-3 shadow-card p-base-semibold text-green-600 bg-white rounded-cl hover:bg-green-200 hover:border-green-200'
+                className='p-base-semibold absolute right-3 top-3 ml-2 h-[42px] w-24 rounded-cl border border-white bg-white p-2 text-green-500 shadow-card hover:border-green-300 hover:bg-green-300'
               >
                 Zoeken
               </div>
@@ -84,15 +88,15 @@ export default function ThemeLevelSearch(props) {
               <div
                 type='reset'
                 title='Clear the search query'
-                className='absolute top-3.5 right-28 rounded-full p-2 hover:bg-green-300/50 group'
+                className='group absolute right-28 top-3.5 rounded-full p-2 hover:bg-green-400/50'
               >
-                <IconX className='h-6 w-6 text-green-600 group-hover:text-green-900' />
+                <IconX className='h-6 w-6 text-green-500 group-hover:text-green-900' />
               </div>
             )}
           />
         </div>
       </div>
-      <div className='flex sm:hidden items-center justify-center mt-4'>
+      <div className='mt-4 flex items-center justify-center sm:hidden'>
         <SearchBox
           searchAsYouType={false}
           placeholder={props.searchTitle + '...'}
@@ -100,13 +104,13 @@ export default function ThemeLevelSearch(props) {
             root: 'h-16 max-w-sm w-full bg-white',
             form: 'bg-white shadow-card max-w-sm w-full h-[60px] rounded-cl flex-row items-center justify-between relative flex',
             input:
-              'max-w-sm w-full h-[60px] focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-10 rounded-cl border-none bg-white/50 caret-green-600 p-base text-green-600 focus:ring-1 focus:ring-white placeholder:text-green-600 placeholder:p-base-semibold',
+              'max-w-sm w-full h-[60px] focus:bg-[url("/search-icon-dark-hq.png")] focus:bg-[length:24px_24px] bg-no-repeat bg-left [background-position-x:10px] pl-10 rounded-cl border-none bg-white/50 caret-green-500 p-base text-green-500 focus:ring-1 focus:ring-white placeholder:text-green-500 placeholder:p-base-semibold',
             submitIcon: 'visible',
           }}
           submitIconComponent={() => (
             <div
               type='submit'
-              className='flex items-center ml-2 border h-[40px] w-22 border-white p-2 absolute top-2.5 right-2.5 shadow-card p-base-semibold text-green-600 bg-white rounded-cl'
+              className='w-22 p-base-semibold absolute right-2.5 top-2.5 ml-2 flex h-[40px] items-center rounded-cl border border-white bg-white p-2 text-green-500 shadow-card'
             >
               Zoeken
             </div>
@@ -115,9 +119,9 @@ export default function ThemeLevelSearch(props) {
             <div
               type='reset'
               title='Clear the search query'
-              className='absolute top-3 right-24 rounded-full p-2 hover:bg-green-300/50 group'
+              className='group absolute right-24 top-3 rounded-full p-2 hover:bg-green-400/50'
             >
-              <IconX className='h-6 w-6 text-green-600 group-hover:text-green-900' />
+              <IconX className='h-6 w-6 text-green-500 group-hover:text-green-900' />
             </div>
           )}
         />
@@ -127,8 +131,8 @@ export default function ThemeLevelSearch(props) {
         <Modal Button={<FilterModalButton />}>
           <ModalContent title=''>
             <div className='flex justify-between'>
-              <div className='flex flex-col items-center justify-center mt-6 min-w-[270px] '>
-                <div className='flex flex-col mr-4'>
+              <div className='mt-6 flex min-w-[270px] flex-col items-center justify-center'>
+                <div className='mr-4 flex flex-col'>
                   <CustomClearRefinements />
                   <h4 className='heading-xl-semibold mb-1'>Overheidslaag</h4>
                   <RefinementList
@@ -138,7 +142,7 @@ export default function ThemeLevelSearch(props) {
                       item: 'pt-2',
                       list: 'empty:hidden',
                       checkbox:
-                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
                       labelText: 'p-base flex-grow capitalize ml-2',
                       count:
@@ -147,7 +151,7 @@ export default function ThemeLevelSearch(props) {
                     sortBy={['label:asc']}
                   />
                 </div>
-                <div className='flex flex-col mr-4'>
+                <div className='mr-4 flex flex-col'>
                   <h4 className='heading-xl-semibold mb-1'>Categorie</h4>
                   <RefinementList
                     attribute='categorie'
@@ -157,7 +161,7 @@ export default function ThemeLevelSearch(props) {
                       item: 'pt-2',
                       list: 'empty:hidden',
                       checkbox:
-                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
                       labelText: 'p-base flex-grow capitalize ml-2',
                       count:
@@ -167,8 +171,8 @@ export default function ThemeLevelSearch(props) {
                   />
                 </div>
 
-                <div className='flex flex-col mr-4'>
-                  <div className='flex flex-row w-full justify-between items-center'>
+                <div className='mr-4 flex flex-col'>
+                  <div className='flex w-full flex-row items-center justify-between'>
                     <h4 className='heading-xl-semibold mb-1'>Invloed</h4>
                     <Modal Button={<InstrumentTooltipButton />}>
                       <ModalContent title='Juridische invloed'>
@@ -183,7 +187,7 @@ export default function ThemeLevelSearch(props) {
                       list: 'empty:hidden',
                       item: 'pt-2',
                       checkbox:
-                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
                       labelText: 'p-base flex-grow capitalize ml-2',
                       count:
@@ -193,8 +197,8 @@ export default function ThemeLevelSearch(props) {
                   />
                 </div>
 
-                <div className='flex flex-col mr-4'>
-                  <div className='flex flex-row w-full justify-between items-center'>
+                <div className='mr-4 flex flex-col'>
+                  <div className='flex w-full flex-row items-center justify-between'>
                     <h4 className='heading-xl-semibold mb-1'>Juridische houdbaarheid</h4>
                     <Modal Button={<InstrumentTooltipButton />}>
                       <ModalContent title='Geschatte juridische houdbaarheid'>
@@ -209,7 +213,7 @@ export default function ThemeLevelSearch(props) {
                       list: 'empty:hidden',
                       item: 'pt-2',
                       checkbox:
-                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
                       labelText: 'p-base flex-grow capitalize ml-2',
                       count:
@@ -218,8 +222,8 @@ export default function ThemeLevelSearch(props) {
                     sortBy={['name:asc']}
                   />
                 </div>
-                <div className='flex flex-col mr-4'>
-                  <div className='flex flex-row w-full justify-between items-center'>
+                <div className='mr-4 flex flex-col'>
+                  <div className='flex w-full flex-row items-center justify-between'>
                     <h4 className='heading-xl-semibold mb-1'>R-Ladder</h4>
                     <Modal Button={<InstrumentTooltipButton />}>
                       <ModalContent title='R-ladder: strategieën van circulariteit'>
@@ -234,7 +238,7 @@ export default function ThemeLevelSearch(props) {
                       list: 'empty:hidden',
                       item: 'pt-2',
                       checkbox:
-                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
                       labelText: 'p-base flex-grow capitalize ml-2',
                       count:
@@ -244,7 +248,7 @@ export default function ThemeLevelSearch(props) {
                     transformItems={transformItems}
                   />
                 </div>
-                <div className='flex flex-col mr-6'>
+                <div className='mr-6 flex flex-col'>
                   <RefinementList
                     attribute='extraContent'
                     title='Inclusief'
@@ -253,7 +257,7 @@ export default function ThemeLevelSearch(props) {
                       item: 'pt-2',
                       list: 'empty:hidden before:content-["Inclusief"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
                       checkbox:
-                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                        'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                       label: 'flex justify-between items-center',
                       labelText: 'p-base flex-grow capitalize ml-2',
                       count:
@@ -269,9 +273,9 @@ export default function ThemeLevelSearch(props) {
       </div>
 
       <div className='global-margin flex'>
-        <NoResultsBoundary fallback={<NoResults />}>
-          <div className='hidden sm:flex flex-col min-w-[270px]'>
-            <div className='flex flex-col mr-12 mt-10'>
+        <NoResultsBoundary fallback={<NoResultsInstruments />}>
+          <div className='hidden min-w-[270px] flex-col sm:flex'>
+            <div className='mr-12 mt-10 flex flex-col'>
               <CustomClearRefinements />
               <h4 className='heading-xl-semibold mb-1'>Overheidslaag</h4>
               <RefinementList
@@ -281,7 +285,7 @@ export default function ThemeLevelSearch(props) {
                   item: 'pt-2',
                   list: 'empty:hidden',
                   checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
                   labelText: 'p-base flex-grow capitalize ml-2',
                   count:
@@ -290,7 +294,7 @@ export default function ThemeLevelSearch(props) {
                 sortBy={['label:asc']}
               />
             </div>
-            <div className='flex flex-col mr-12'>
+            <div className='mr-12 flex flex-col'>
               <h4 className='heading-xl-semibold mb-1'>Categorie</h4>
               <RefinementList
                 attribute='categorie'
@@ -300,7 +304,7 @@ export default function ThemeLevelSearch(props) {
                   item: 'pt-2',
                   list: 'empty:hidden',
                   checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
                   labelText: 'p-base flex-grow capitalize ml-2',
                   count:
@@ -310,8 +314,8 @@ export default function ThemeLevelSearch(props) {
               />
             </div>
 
-            <div className='flex flex-col mr-12'>
-              <div className='flex flex-row w-full justify-between items-center mr-12'>
+            <div className='mr-12 flex flex-col'>
+              <div className='mr-12 flex w-full flex-row items-center justify-between'>
                 <h4 className='heading-xl-semibold mb-1'>Invloed</h4>
                 <Modal Button={<InstrumentTooltipButton />}>
                   <ModalContent title='Juridische invloed'>
@@ -326,7 +330,7 @@ export default function ThemeLevelSearch(props) {
                   list: 'empty:hidden',
                   item: 'pt-2',
                   checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
                   labelText: 'p-base flex-grow capitalize ml-2',
                   count:
@@ -335,8 +339,8 @@ export default function ThemeLevelSearch(props) {
                 sortBy={['name:asc']}
               />
             </div>
-            <div className='flex flex-col mr-12'>
-              <div className='flex flex-row w-full justify-between items-center mr-12'>
+            <div className='mr-12 flex flex-col'>
+              <div className='mr-12 flex w-full flex-row items-center justify-between'>
                 <h4 className='heading-xl-semibold mb-1'>Juridische houdbaarheid</h4>
                 <Modal Button={<InstrumentTooltipButton />}>
                   <ModalContent title='Geschatte juridische houdbaarheid'>
@@ -351,7 +355,7 @@ export default function ThemeLevelSearch(props) {
                   list: 'empty:hidden',
                   item: 'pt-2',
                   checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
                   labelText: 'p-base flex-grow capitalize ml-2',
                   count:
@@ -360,8 +364,8 @@ export default function ThemeLevelSearch(props) {
                 sortBy={['name:asc']}
               />
             </div>
-            <div className='flex flex-col mr-12'>
-              <div className='flex flex-row w-full justify-between items-center mr-12'>
+            <div className='mr-12 flex flex-col'>
+              <div className='mr-12 flex w-full flex-row items-center justify-between'>
                 <h4 className='heading-xl-semibold mb-1'>R-Ladder</h4>
                 <Modal Button={<InstrumentTooltipButton />}>
                   <ModalContent title='R-ladder: strategieën van circulariteit'>
@@ -376,7 +380,7 @@ export default function ThemeLevelSearch(props) {
                   list: 'empty:hidden',
                   item: 'pt-2',
                   checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
                   labelText: 'p-base flex-grow capitalize ml-2',
                   count:
@@ -386,7 +390,7 @@ export default function ThemeLevelSearch(props) {
                 transformItems={transformItems}
               />
             </div>
-            <div className='flex flex-col mr-12'>
+            <div className='mr-12 flex flex-col'>
               <RefinementList
                 attribute='extraContent'
                 title='Inclusief'
@@ -395,7 +399,7 @@ export default function ThemeLevelSearch(props) {
                   item: 'pt-2',
                   list: 'empty:hidden before:content-["Inclusief"] before:h-24 before:text-[18px] before:font-semibold before:font-jakarta',
                   checkbox:
-                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-600',
+                    'rounded-[3px] h-5 w-5 shadow-none border-2 border-grey-500 focus:ring-green-500',
                   label: 'flex justify-between items-center',
                   labelText: 'p-base flex-grow capitalize ml-2',
                   count:
@@ -406,7 +410,7 @@ export default function ThemeLevelSearch(props) {
             </div>
           </div>
           <div>
-            <div className='sm:mt-10 sm:ml-14'>
+            <div className='sm:ml-14 sm:mt-10'>
               <CustomStats index='Instrumenten' />
             </div>
             <Hits
@@ -417,7 +421,7 @@ export default function ThemeLevelSearch(props) {
               }}
               hitComponent={InstrumentHit}
             />
-            <div className='w-full flex items-center justify-center mb-12 mt-6'>
+            <div className='mb-12 mt-6 flex w-full items-center justify-center'>
               <Pagination />
             </div>
           </div>

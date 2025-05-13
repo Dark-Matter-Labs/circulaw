@@ -1,25 +1,24 @@
 import { notFound } from 'next/navigation';
+
+import PCLayout from '@/components/layouts/product-chain-layout';
 import {
   PC_PATHS_QUERY,
+  PRODUCT_CHAIN_METADATA_QUERY,
   PRODUCT_CHAIN_PAGE_QUERY,
   THEMES_BY_PC_QUERY,
-  PRODUCT_CHAIN_METADATA_QUERY,
 } from '@/lib/queries';
-import PCLayout from '@/components/layouts/product-chain-layout';
-import { client, sanityFetch } from '@/lib/sanity';
+import { sanityFetch } from '@/lib/sanity';
 
 // metadata
 export async function generateMetadata({ params }, parent) {
   // read route params
   const productChain = params.productChain;
   // fetch data
-  const productChainMetaData = await client.fetch(
-    PRODUCT_CHAIN_METADATA_QUERY,
-    { productChain },
-    {
-      next: { tags: ['transitionAgenda'] },
-    },
-  );
+  const productChainMetaData = await sanityFetch({
+    query: PRODUCT_CHAIN_METADATA_QUERY,
+    qParams: { productChain },
+    tags: ['transitionAgenda'],
+  });
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
@@ -43,9 +42,10 @@ export async function generateMetadata({ params }, parent) {
 
 // slugs
 export async function generateStaticParams() {
-  const productChains = await client.fetch(PC_PATHS_QUERY, {
-    next: { tags: ['transitionAgenda'] },
-  });
+  const productChains = await sanityFetch(
+    { query: PC_PATHS_QUERY, tags: ['transitionAgenda'] },
+    {},
+  );
   return productChains.map((productChain) => ({ productChain }));
 }
 

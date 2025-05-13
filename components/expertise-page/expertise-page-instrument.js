@@ -8,33 +8,33 @@ export default function ExpertisePageInstrument({ instrument }) {
         className=''
       >
         {/* DESKTOP */}
-        <li className='hidden sm:flex flex-row first:border-t-0 border-b hover:bg-[#035E46] hover:bg-opacity-5  hover:text-green-800 hover:cursor-pointer transition duration-500 ease-in-out'>
-          <div className='border-black basis-1/2 ml-3 overflow-hidden w-full py-3 p-base'>
+        <li className='hidden flex-row border-b transition duration-500 ease-in-out first:border-t-0 hover:cursor-pointer hover:bg-[#035E46] hover:bg-opacity-5 hover:text-cl-black sm:flex'>
+          <div className='p-base ml-3 w-full basis-1/2 overflow-hidden border-black py-3'>
             {instrument.titel}
           </div>
-          <div className='flex flex-row items-center justify-between basis-1/2 mr-3 max-w-[413px]'>
-            <div className='w-[60px] mr-4'></div>
-            <div className='w-[115px] mr-4'>
+          <div className='mr-3 flex max-w-[413px] basis-1/2 flex-row items-center justify-between'>
+            <div className='mr-4 w-[60px]'></div>
+            <div className='mr-4 w-[115px]'>
               {instrument.overheidslaag.includes('Gemeentelijk') && (
-                <div className='h-4 w-4 bg-green-200 rounded-full'></div>
+                <div className='h-4 w-4 rounded-full bg-green-300'></div>
               )}
             </div>
-            <div className='w-[100px] mr-4'>
+            <div className='mr-4 w-[100px]'>
               {instrument.overheidslaag.includes('Provinciaal') && (
-                <div className='h-4 w-4 bg-green-400 rounded-full'></div>
+                <div className='h-4 w-4 rounded-full bg-green-400'></div>
               )}
             </div>
             <div className='w-[90px]'>
               {instrument.overheidslaag.includes('Nationaal') && (
-                <div className='h-4 w-4 bg-green-600 rounded-full'></div>
+                <div className='h-4 w-4 rounded-full bg-green-500'></div>
               )}
             </div>
           </div>
         </li>
         {/* MOBILE */}
-        <li className='sm:hidden border-b py-2'>
+        <li className='border-b py-2 sm:hidden'>
           <div className='p-base mx-4 pb-2'>{instrument.titel}</div>
-          <div className='flex flex-row mx-4'>
+          <div className='mx-4 flex flex-row'>
             {instrument?.overheidslaag
               ?.filter((x) => x !== null)
               .map((lev) => (

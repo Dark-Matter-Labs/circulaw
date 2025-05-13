@@ -1,9 +1,8 @@
-import Link from 'next/link';
-import LinkIcon from '../link-icon';
+import InlineExternalLink from '../shared/inline-external-link';
 
 export default function RladderTooltipContent() {
   return (
-    <div className='absolute inset-0'>
+    <div className='mb-10'>
       <p className='p-base'>
         Met de R-ladder geven we per instrument een schatting van de mate van circulariteit aan. De
         R-ladder heeft 6 tredes (R1 tot en met R6) die verschillende strategieën van circulariteit
@@ -27,16 +26,9 @@ export default function RladderTooltipContent() {
       </p>
       <span className='p-base py-2'>
         Bron en meer over de de R-ladder op de{' '}
-        <Link
-          href='https://www.rvo.nl/onderwerpen/r-ladder'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <span className='link-lg underline text-green-500 hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'>
-            website van RVO
-            <LinkIcon />
-          </span>
-        </Link>
+        <InlineExternalLink href='https://www.rvo.nl/onderwerpen/r-ladder' size='5'>
+          website van RVO
+        </InlineExternalLink>
       </span>
     </div>
   );

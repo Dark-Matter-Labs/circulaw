@@ -1,61 +1,25 @@
-import CustomButton from '@/components/custom-button';
-import { IconArrowRight } from '@tabler/icons-react';
-import Image from 'next/image';
-import Link from 'next/link';
+import ImageComponent from '../image-component';
+import NewButton from '../shared/new-button';
+import TitleDecorator from '../title-decorator';
 
 export default function HomePageEUSection({ euData }) {
   return (
-    <Link href='/eu-wetgeving'>
-      <div className='flex flex-col sm:flex-row items-center justify-between'>
-        <div className='w-full sm:w-7/12 flex flex-col'>
-          <div className='border-b border-green-800 mr-6'>
-            <h2 className='heading-2xl-semibold sm:heading-5xl-semibold text-green-600 pb-6'>
-              EU wetgeving
-            </h2>
-          </div>
-          <div className='hidden sm:block py-6 p-base mr-6'>
-            <p>{euData.euLaw}</p>
-          </div>
-          <div className='w-full flex justify-center sm:hidden py-6'>
-            <div className='flex relative h-[200px] w-full justify-center'>
-              <Image
-                src={euData?.image}
-                fill
-                alt='image for wat circulaw'
-                className='rounded-cl'
-                sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
-                loading='lazy'
-                placeholder='blur'
-                blurDataURL={euData?.metadata.lqip}
-              />{' '}
-            </div>
-          </div>
-          <div className='block sm:hidden pb-6 p-base'>
-            <p>{euData.euLaw}</p>
-          </div>
-          <div>
-            <span className='text-green-500 link-lg link-interaction'>
-              <CustomButton color='whiteBackground'>
-                Bekijk de EU wetgeving{' '}
-                <IconArrowRight className='inline-block h-5 w-5 ml-1' aria-hidden='true' />
-              </CustomButton>
-            </span>
-          </div>
-        </div>
-        <div className='hidden sm:w-5/12 sm:flex justify-center'>
-          <div className='relative w-[400px] h-[266px] rounded-cl'>
-            <Image
-              src={euData?.image}
-              fill
-              alt='image for wat circulaw'
-              className='rounded-cl'
-              sizes='(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw'
-              placeholder='blur'
-              blurDataURL={euData?.metadata.lqip}
-            />
-          </div>
-        </div>
+    <div className='flex flex-col items-center justify-between gap-x-20 gap-y-16 sm:flex-row'>
+      <div className='relative basis-1/2'>
+        <ImageComponent image={euData?.image} caption='' />
       </div>
-    </Link>
+      <div className='flex w-full basis-1/2 flex-col'>
+        <h2 className='heading-3xl-semibold sm:heading-5xl-semibold sm:heading-5xl-semibold text-green-500'>
+          EU wetgeving
+        </h2>
+        <TitleDecorator width='w-1/4' />
+        <div className='heading-xl pb-8 pt-10'>
+          <p>{euData.euLaw}</p>
+        </div>
+        <NewButton variant='primaryDark' icon='arrowRight' href='/eu-wetgeving'>
+          Bekijk de EU wetgeving
+        </NewButton>
+      </div>
+    </div>
   );
 }

@@ -5,21 +5,29 @@
 @layer components {
   .global-margin {
     @apply max-w-7xl;
-    @apply mx-4;
-    @apply md:mx-10;
-    @apply xl:mx-20;
+    @apply mx-[20px];
+    @apply md:mx-[70px];
+    @apply xl:mx-[140px];
     @apply 2xl:mx-auto;
   }
 
 /* used in the nav component */
   .global-padding {
-    @apply px-4;
+    @apply px-4;  
     @apply md:px-10;
     @apply xl:px-20;
     @apply 2xl:px-40
   }
 
   /* new system */
+  .heading-6xl {
+    @apply font-jakarta text-8xl leading-17
+  }
+
+  .heading-6xl-semibold {
+    @apply heading-6xl  font-semibold
+  }
+
   .heading-5xl {
     @apply font-jakarta text-7xl leading-16
   }
@@ -108,15 +116,7 @@
     @apply p-3xs font-semibold
   }
 
-   /* special fonts */
-   .header-desktop {
-    @apply font-jakarta text-8xl font-semibold leading-17;
-  }
-
-  .header-desktop-mobile {
-    @apply font-jakarta text-5xl font-semibold leading-14;
-  }
-
+  /* special fonts */
   .p-agenda-card-day {
     @apply font-jakarta text-[88px] font-bold leading-[88px]
   }
@@ -134,20 +134,28 @@
     @apply font-jakarta text-xl font-semibold leading-13 underline;
   }
 
+  .new-link-primary {
+    @apply hover:text-white active:text-white focus:text-white focus:ring-2 focus:ring-white group-hover:text-white group-active:text-white group-focus:text-white group-focus:ring-2 group-focus:ring-white 
+  }
+
+  .new-link-secondary {
+    @apply hover:text-green-400 active:text-green-400 focus:text-green-400 focus:ring-2 focus:ring-green-400 group-hover:text-green-400 group-active:text-green-400 group-focus:text-green-400 group-focus:ring-2 group-focus:ring-green-400 
+  }
+
   .link-base {
     @apply font-jakarta text-base font-medium leading-11 underline;
   }
 
   .link-interaction {
-    @apply hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white;
+    @apply hover:text-green-400 active:text-green-400 focus:ring-2 focus:text-green-400;
   }
 
   .link-interaction-light-green-bg {
-    @apply text-gray-100 hover:text-green-200 active:text-green-100 focus:text-green-100 focus:right-2 focus:ring-white
+    @apply text-green-100 hover:text-green-300 active:text-green-200 focus:text-green-200 focus:right-2 focus:ring-white
   }
 
   .link-interaction-dark-bg {
-    @apply text-gray-100 hover:text-green-200 active:text-green-400 focus:text-green-100 focus:right-2 focus:ring-white
+    @apply text-green-100 hover:text-green-300 active:text-green-400 focus:text-green-200 focus:right-2 focus:ring-white
   }
 
   .button {
@@ -174,7 +182,6 @@ html {
   white-space: break-spaces;
 }
 
-/* CHECK GRADIENTS BY SEARCHING BG_GRAD*/
 
 /* used on EU law card  */
 .gradient-600 {
@@ -183,6 +190,10 @@ html {
 
 .gradient-700 {
   background: linear-gradient(35deg, #3DB989 20.34%, #028453 56.51%, #03794F 64.05%, #066548 82.89%, #085E46 95.7%);
+}
+
+.gradient-homepage-cards {
+  background: linear-gradient(0deg, rgba(217, 239, 231, 0) -16.44%, rgba(217, 239, 231, 0.68) 72.35%, #D9EFE7 100%);
 }
 
 /* used for PDF blocks in Portable text */
@@ -330,19 +341,17 @@ html {
 	}
 }
 
-.containerx {
-  position: relative;
- 
-  height: 100vh;
-}
-
 .svg {
   transform: rotate(-90deg); /* Start drawing from the top */
 }
 
-.bg-scroll-circles {
-  background-color: 'transparent'; /* Replace with your preferred color or gradient */
-  background-image: url('/scrolly/centered.svg'); /* Use this if you need an image background */
-  background-size: cover;
-  background-position: center;
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
 }

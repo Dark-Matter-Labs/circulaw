@@ -1,7 +1,7 @@
 // ./src/schemas/schemaTypes/youTubeType/YouTubePreview.tsx
+import YouTubePlayer from 'react-player/youtube';
 
 import { Flex, Text } from '@sanity/ui';
-import YouTubePlayer from 'react-player/youtube';
 
 export function YouTubePreview(props) {
   const { title: url } = props;

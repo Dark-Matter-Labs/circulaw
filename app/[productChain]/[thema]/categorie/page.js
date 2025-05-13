@@ -1,18 +1,16 @@
-import { FUll_THEME_PATHS_QUERY, CATEGORIE_PAGE_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
-import { client, sanityFetch } from '@/lib/sanity';
 import ExpertiseLayout from '@/components/layouts/expertise-layout';
+import { CATEGORIE_PAGE_QUERY, FUll_THEME_PATHS_QUERY, THEME_METADATA_QUERY } from '@/lib/queries';
+import { sanityFetch } from '@/lib/sanity';
 
 export async function generateMetadata({ params }, parent) {
   // read route params
   const thema = params.thema;
   // fetch data
-  const themaMetaData = await client.fetch(
-    THEME_METADATA_QUERY,
-    { thema },
-    {
-      next: { tags: ['thema', 'simpleThema'] },
-    },
-  );
+  const themaMetaData = await sanityFetch({
+    query: THEME_METADATA_QUERY,
+    qParams: { thema },
+    tags: ['thema', 'simpleThema'],
+  });
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
@@ -35,9 +33,7 @@ export async function generateMetadata({ params }, parent) {
 }
 
 export async function generateStaticParams() {
-  const themas = await client.fetch(FUll_THEME_PATHS_QUERY, {
-    next: { tags: ['thema'] },
-  });
+  const themas = await sanityFetch({ query: FUll_THEME_PATHS_QUERY, tags: ['thema'] }, {});
   return themas.map((thema) => ({ thema: thema.thema, productChain: thema.productChain }));
 }
 

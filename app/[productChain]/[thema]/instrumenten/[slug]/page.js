@@ -1,19 +1,18 @@
 import { notFound } from 'next/navigation';
+
 import Instrument from '@/components/instrument';
-import { INSTRUMENT_PATHS_QUERY, INSTRUMENT_PAGE_QUERY, INSTRUMENT_META_DATA } from '@/lib/queries';
-import { client, sanityFetch } from '@/lib/sanity';
+import { INSTRUMENT_META_DATA, INSTRUMENT_PAGE_QUERY, INSTRUMENT_PATHS_QUERY } from '@/lib/queries';
+import { sanityFetch } from '@/lib/sanity';
 
 export async function generateMetadata({ params }, parent) {
   // read route params
   const slug = params.slug;
   // fetch data
-  const instrumentMetaData = await client.fetch(
-    INSTRUMENT_META_DATA,
-    { slug },
-    {
-      next: { tags: ['instrument'] },
-    },
-  );
+  const instrumentMetaData = await sanityFetch({
+    query: INSTRUMENT_META_DATA,
+    qParams: { slug },
+    tags: ['instrument'],
+  });
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || [];
   const generic = (await parent).openGraph;
@@ -38,7 +37,7 @@ export async function generateMetadata({ params }, parent) {
 }
 
 export async function generateStaticParams() {
-  const slugs = await client.fetch(INSTRUMENT_PATHS_QUERY, { next: { tags: ['instrument'] } });
+  const slugs = await sanityFetch({ query: INSTRUMENT_PATHS_QUERY, tags: ['instrument'] });
   return slugs.map((slug) => ({
     thema: slug.thema,
     productChain: slug.productChain,

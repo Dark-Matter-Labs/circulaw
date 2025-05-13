@@ -1,7 +1,9 @@
 'use client';
+
+import { useRouter } from 'next/navigation';
+
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { IconChevronDown } from '@tabler/icons-react';
-import { useRouter } from 'next/navigation';
 
 export default function AboutPageDropdown({ currentSlug, slugs }) {
   const remainingTitles = slugs?.filter((el) => el.slug !== currentSlug) ?? [];
@@ -9,29 +11,29 @@ export default function AboutPageDropdown({ currentSlug, slugs }) {
   const router = useRouter();
 
   return (
-    <div className='pt-8 w-full'>
+    <div className='w-full pt-8'>
       <Disclosure>
         <>
-          <DisclosureButton className='text-black bg-green-500 flex justify-between items-center border border-green-500 h-10 w-full group rounded-cl data-[open]:rounded-t-cl data-[open]:rounded-b-none'>
-            <div className='h-full bg-gray-100 w-11/12 flex items-center justify-start pl-3 truncate rounded-l-cl group-data-[open]:rounded-tl-cl group-data-[open]:rounded-bl-none'>
-              <span className='inline text-left '>{currentPage[0]?.pageTitle}</span>
+          <DisclosureButton className='group flex h-10 w-full items-center justify-between rounded-cl border border-green-500 bg-green-500 text-black data-[open]:rounded-b-none data-[open]:rounded-t-cl'>
+            <div className='flex h-full w-11/12 items-center justify-start truncate rounded-l-cl bg-green-100 pl-3 group-data-[open]:rounded-bl-none group-data-[open]:rounded-tl-cl'>
+              <span className='inline text-left'>{currentPage[0]?.pageTitle}</span>
             </div>
-            <div className='w-1/12 px-5 h-full pr-5 bg-green-500 grid items-center justify-center rounded-r-cl border border-green-500'>
-              <IconChevronDown className='h-6 w-6 text-white z-10 group-data-[open]:rotate-180 transform' />
+            <div className='grid h-full w-1/12 items-center justify-center rounded-r-cl border border-green-500 bg-green-500 px-5 pr-5'>
+              <IconChevronDown className='z-10 h-6 w-6 transform text-white group-data-[open]:rotate-180' />
             </div>
           </DisclosureButton>
           <DisclosurePanel as='ul'>
             {remainingTitles?.map((remaining, id) => (
               <DisclosureButton
                 key={id}
-                className='bg-gray-100 w-full text-gray-800 border-b border-l border-r last:rounded-b-cl border-green-500 h-10 flex items-center hover:text-green-500'
+                className='flex h-10 w-full items-center border-b border-l border-r border-green-500 bg-green-100 text-cl-black last:rounded-b-cl hover:text-green-500'
                 as='li'
                 onClick={() => {
                   router.push(`/over/${encodeURIComponent(remaining?.slug)}`);
                 }}
               >
                 <div className=''>
-                  <span className='block pl-3 truncate'>{remaining?.pageTitle}</span>
+                  <span className='block truncate pl-3'>{remaining?.pageTitle}</span>
                 </div>
               </DisclosureButton>
             ))}

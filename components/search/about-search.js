@@ -1,5 +1,7 @@
 'use client';
-import { Hits, Configure } from 'react-instantsearch';
+
+import { Configure, Hits } from 'react-instantsearch';
+
 import CustomStats from '../../components/search/stats';
 import AboutHit from './about-hit';
 import NoResults from './no-results';

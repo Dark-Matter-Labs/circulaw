@@ -1,10 +1,11 @@
-import LinkIcon from '@/components/link-icon';
-import PopUp from '@/components/modeltext/popup';
-import { sanityFetch } from '@/lib/sanity';
-import { IconArrowLeft } from '@tabler/icons-react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+
+import Header from '@/components/headers';
+import PopUp from '@/components/modeltext/popup';
+import InlineExternalLink from '@/components/shared/inline-external-link';
+import { sanityFetch } from '@/lib/sanity';
+import { IconArrowLeft } from '@tabler/icons-react';
 
 const PILLARS_QUERY = `
  *[_type == 'pillar'] | order(orderRank) {
@@ -31,67 +32,26 @@ export default async function ModelTextPage({ params }) {
   if (params.productChain === 'bouw') {
     return (
       <>
-        <div className='w-full bg-green-600 relative h-[260px] sm:h-[360px] mt-3 flex'>
-          <Image
-            src='/modeltext-header.png'
-            alt='homepage decoration'
-            fill
-            sizes='100vw'
-            className='z-10 object-cover'
-            priority={true}
-            quality={100}
-          />
-          <div className='z-20 w-full h-full global-margin flex flex-col justify-between'>
-            <div className='pt-6 sm:pt-10'>
-              <span className='p-2xs-bold align-middle rounded-clSm bg-gray-100 pl-2 pr-3 py-1.5 text-green-600 inline-flex flex-row items-center justify-center group-hover:text-green-300 group-active:text-green-800 group-focus:text-green-200 group-focus:ring-2 group-focus:ring-white'>
-                <Link
-                  className='hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white'
-                  href='/'
-                >
-                  {' '}
-                  Home <span className='ml-2'>{'>'}</span>
-                </Link>
-                <Link
-                  href='/bouw'
-                  className='hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white pl-3'
-                >
-                  Bouw <span className='ml-2'>{'>'}</span>
-                </Link>
-                <Link
-                  href='/bouw/planregels'
-                  className='hover:text-green-300 active:text-green-800 focus:text-green-200 focus:ring-2 focus:ring-white pl-3'
-                >
-                  Modelteksten voor omgevingsplan
-                </Link>
-              </span>
-            </div>
-            <div className='mb-6 sm:mb-10 flex flex-col gap-2'>
-              <h1 className='heading-2xl-semibold sm:heading-5xl-semibold text-white'>
-                Aan de slag met het omgevingsplan
-              </h1>
-            </div>
-          </div>
-        </div>
-        <div className=' bg-white flex flex-col global-margin my-10 sm:my-16 h-max'>
-          <div className='flex flex-col max-w-[760px]'>
+        <Header
+          title='Aan de slag met het omgevingsplan'
+          imageURL='/big-decoration.png'
+          bgColor='bg-green-500'
+        />
+        <div className='global-margin my-10 flex h-max flex-col bg-white sm:my-16'>
+          <div className='flex max-w-[760px] flex-col'>
             <p className='p-base pb-6'>
               We hebben de planregels voor het omgevingsplan ingedeeld op basis van 6 pijlers. Deze
               pijlers sluiten aan bij het{' '}
-              <Link
-                href='https://toekomstbestendigbouwen.nl/'
-                className='link-interaction'
-                target='_blank'
-              >
+              <InlineExternalLink href='https://toekomstbestendigbouwen.nl/' size='5'>
                 Convenant Toekomstig Bestendig Bouwen
-                <LinkIcon />
-              </Link>
+              </InlineExternalLink>
               . En beslaan meer thema&apos;s dan alleen circulaire.
             </p>
             <Link
               href='/bouw/planregels'
-              className='flex items-center mb-6 text-green-600 hover:link-interaction underline p-base-semibold group'
+              className='hover:link-interaction p-base-semibold group mb-6 flex items-center text-green-500 underline'
             >
-              <div className='h-12 w-12 mr-2 rounded-full flex items-center justify-center border-2 text-green-600 border-green-600 bg-transparent group-hover:bg-green-200 group-hover:border-green-200 group-hover:text-green-600  active:bg-green-300 focus:outline-none focus:bg-green-100 focus:ring-2 focus:ring-white self-end'>
+              <div className='mr-2 flex h-12 w-12 items-center justify-center self-end rounded-full border-2 border-green-500 bg-transparent text-green-500 focus:bg-green-200 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-400 group-hover:border-green-300 group-hover:bg-green-300 group-hover:text-green-500'>
                 <IconArrowLeft className='inline-block h-6 w-6' aria-hidden='true' />
               </div>
               <span className='max-w-xs'>

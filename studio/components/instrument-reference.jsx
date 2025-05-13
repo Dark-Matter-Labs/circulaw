@@ -1,37 +1,60 @@
-import { Flex, Card, Stack, Select } from '@sanity/ui';
 import { useEffect, useState } from 'react';
-import { client } from '../../lib/sanity';
+import { BsSearch } from 'react-icons/bs';
 
-const Q = `
-*[_type in ['thema', 'simpleThema']] {
-    themaName
-}
-`;
+import { Autocomplete, Avatar, Box, Card, Flex, Stack, Text } from '@sanity/ui';
+import { useClient } from 'sanity';
 
 export function InstrumentInput(props) {
-  const [allThemes, setAllThemas] = useState([]);
-  //  const [selectedTheme, setSelectedTheme] = useState()
-  const { elementProps, value = '' } = props;
+  const [themas, setThemas] = useState();
+  const [selectedTheme, setSelectedTheme] = useState();
+  const [instruments, setInstruments] = useState();
+  const [selectedInstrument, setSelectedInstrument] = useState();
+
+  const client = useClient();
 
   useEffect(() => {
-    client.fetch(Q).then((data) => setAllThemas(data));
-  }, []);
+    async function fetchThemas() {
+      const res = await client.fetch(`*[_type in['thema', 'simpleThema']] {
+        
+          "value": themaName}`);
+      setThemas(res);
+    }
+
+    async function fetchInstruments() {
+      const res =
+        await client.fetch(`*[_type == 'instrument' && thema->themaName == ${selectedTheme.toLowerCase()}] {
+            "value": titel, 
+        }`);
+      setInstruments(res);
+    }
+    if (selectedTheme && !instruments) fetchInstruments();
+    if (!themas) fetchThemas();
+  }, [selectedTheme]);
 
   return (
-    <Flex gap={3} paddingRight={2} align='center'>
-      <Card padding={4}>
-        <Stack>
-          <Select {...elementProps} fontSize={[2, 2, 3, 4]} padding={[3, 3, 4]} space={[3, 3, 4]}>
-            <optgroup label='Select a thema'>
-              {allThemes?.map((thema) => (
-                <option key={thema.themaName} value={thema.themaName}>
-                  {thema.themaName}
-                </option>
-              ))}
-            </optgroup>
-          </Select>
-        </Stack>
-      </Card>
-    </Flex>
+    <Card padding={4} width='full'>
+      <Stack space={[3, 3, 4, 5]}>
+        <Autocomplete
+          fontSize={[2, 2, 3]}
+          icon={BsSearch}
+          id='autocomplete-example'
+          options={themas}
+          placeholder='Search theme'
+          onSelect={(value) => setSelectedTheme(value)}
+          openButton
+        />
+        {instruments && (
+          <Autocomplete
+            fontSize={[2, 2, 3]}
+            icon={BsSearch}
+            id='autocomplete-example'
+            options={instruments}
+            placeholder='Search instruments'
+            onSelect={(value) => setSelectedInstrument(value)}
+            openButton
+          />
+        )}
+      </Stack>
+    </Card>
   );
 }

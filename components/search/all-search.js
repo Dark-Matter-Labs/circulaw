@@ -1,13 +1,16 @@
 'use client';
-import { InstantSearch, Index, useHits, useInstantSearch } from 'react-instantsearch';
-import { useState, Fragment, useEffect } from 'react';
-import NewSearchBar from './search-bar';
-import { TabGroup, TabPanels, TabPanel } from '@headlessui/react';
-import AboutSearch from './about-search';
-import InstrumentSearch from './instrument-search';
-import EUSearch from './eu-search';
-import NewsSearch from './news-search';
+
+import { Fragment, useEffect, useState } from 'react';
+import { Index, InstantSearch, useHits, useInstantSearch } from 'react-instantsearch';
+
+import { TabGroup, TabPanel, TabPanels } from '@headlessui/react';
 import algoliasearch from 'algoliasearch';
+
+import AboutSearch from './about-search';
+import EUSearch from './eu-search';
+import InstrumentSearch from './instrument-search';
+import NewsSearch from './news-search';
+import NewSearchBar from './search-bar';
 
 // TODO:
 // the virtual scoped results needs a condition when there is no search term.
@@ -74,12 +77,12 @@ export default function AllSearch() {
         <TabGroup as={Fragment} selectedIndex={selectedIndex} onChange={setSelectedIndex}>
           <NewSearchBar selectedIndex={selectedIndex} setTabFunction={setTabFunction} />
           <TabPanels>
-            <TabPanel className='global-margin flex flex-col items-center justify-start min-h-[80vh]'>
+            <TabPanel className='global-margin flex min-h-[80vh] flex-col items-center justify-start'>
               <ScopedResults />
               <Index indexName='instruments'>
                 <button
                   onClick={() => setSelectedIndex(1)}
-                  className='hover:text-green-300 w-full sm:w-4/5 border-b border-green-600 heading-2xl-semibold sm:heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
+                  className='heading-2xl-semibold sm:heading-3xl-semibold flex w-full flex-row items-center justify-between border-b border-green-500 py-10 text-green-500 hover:text-green-400 sm:w-4/5'
                 >
                   Instrumenten <VirtualHits />
                 </button>
@@ -87,7 +90,7 @@ export default function AllSearch() {
               <Index indexName='euLaw'>
                 <button
                   onClick={() => setSelectedIndex(2)}
-                  className='hover:text-green-300 w-full sm:w-4/5 border-b border-green-600 heading-2xl-semibold sm:heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
+                  className='heading-2xl-semibold sm:heading-3xl-semibold flex w-full flex-row items-center justify-between border-b border-green-500 py-10 text-green-500 hover:text-green-400 sm:w-4/5'
                 >
                   EU wetgeving <VirtualHits />
                 </button>
@@ -95,7 +98,7 @@ export default function AllSearch() {
               <Index indexName='aboutPage'>
                 <button
                   onClick={() => setSelectedIndex(3)}
-                  className='hover:text-green-300 w-full sm:w-4/5 border-b border-green-600 heading-2xl-semibold sm:heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
+                  className='heading-2xl-semibold sm:heading-3xl-semibold flex w-full flex-row items-center justify-between border-b border-green-500 py-10 text-green-500 hover:text-green-400 sm:w-4/5'
                 >
                   Over CircuLaw <VirtualHits />
                 </button>
@@ -103,7 +106,7 @@ export default function AllSearch() {
               <Index indexName='newsItems'>
                 <button
                   onClick={() => setSelectedIndex(4)}
-                  className='hover:text-green-300 w-full sm:w-4/5 heading-2xl-semibold sm:heading-3xl-semibold text-green-600 flex flex-row justify-between items-center py-10'
+                  className='heading-2xl-semibold sm:heading-3xl-semibold flex w-full flex-row items-center justify-between py-10 text-green-500 hover:text-green-400 sm:w-4/5'
                 >
                   Nieuws <VirtualHits />
                 </button>
@@ -155,7 +158,7 @@ function ScopedResults(props) {
   const numNewsItems = newsItems[0]?.results?.nbHits;
   const totalHits = numInstruments + numAboutPages + numEULaws + numNewsItems;
   return (
-    <div className='w-full sm:w-4/5 flex items-start mt-14 mb-10'>
+    <div className='mb-10 mt-14 flex w-full items-start sm:w-4/5'>
       <div className='heading-2xl sm:heading-3xl'>
         {totalHits} resultaten{' '}
         {uiState['root'].query && (

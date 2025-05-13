@@ -1,6 +1,6 @@
 export default function ContentTen() {
   return (
-    <div className='text-green-600 flex flex-col gap-y-6 max-w-[290px]'>
+    <div className='flex max-w-[290px] flex-col gap-y-6 text-green-500'>
       <h3 className='heading-2xl-semibold'>Wisselwerking en samenhang</h3>
       <p className='p-base'>
         Voor een optimaal resultaat zijn omgevingsvisie, omgevingsprogramma en omgevingsplan op

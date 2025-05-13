@@ -1,11 +1,15 @@
 'use client';
-import InstrumentFeedbackBlock from './instrument-feedback-block';
-import MobileFeedback from './instrument-feedback-block-mobile';
-import InstrumentHeader from './instrument-header';
-import InstrumentTable from './instrument-table';
+
+import { useEffect, useRef, useState } from 'react';
+
 import { portableTextComponents } from '@/lib/portable-text/pt-components';
 import { PortableText } from '@portabletext/react';
-import { useState, useEffect, useRef } from 'react';
+
+import Header from '../headers';
+import InstrumentFeedbackBlock from './instrument-feedback-block';
+import MobileFeedback from './instrument-feedback-block-mobile';
+import InstrumentMetaData from './instrument-metadata';
+import InstrumentTable from './instrument-table';
 
 export default function Instrument({ data }) {
   const [scrollEffect, setScrollEffect] = useState(false);
@@ -32,22 +36,36 @@ export default function Instrument({ data }) {
     window.addEventListener('scroll', changeEffect);
   }, []);
   return (
-    <div ref={ref} className='relative bg-gray-100'>
-      <InstrumentHeader data={data} />
-      <div className='bg-gray-100 relative z-0'>
+    <div ref={ref} className='relative'>
+      <Header
+        title={data.titel}
+        bgColor='bg-green-500'
+        pageType='instrument'
+        data={data}
+        imageURL='/big-decoration.png'
+      />
+      {/* Metadata */}
+      <div className='top-[70px] z-20 flex w-full justify-items-start bg-white sm:sticky sm:border-cl-grey lgNav:top-[98px]'>
+        <div className='global-margin w-full'>
+          <div className='grid-col-1 grid w-full max-w-4xl'>
+            <InstrumentMetaData data={data} />
+          </div>
+        </div>
+      </div>
+      <div className='relative z-0'>
         <InstrumentFeedbackBlock data={data} />
-        <div className='global-margin sm:mt-4 z-0'>
+        <div className='global-margin z-0 sm:mt-4'>
           {/* Subtitle */}
           <div className='grid grid-cols-1'>
             {data?.subtitel && (
               <div className='max-w-[760px]'>
-                <h2 className='lg:block heading-xl sm:mt-2'> {data?.subtitel}</h2>
+                <h2 className='heading-xl sm:mt-2 lg:block'> {data?.subtitel}</h2>
               </div>
             )}
           </div>
           {/* Content */}
           <div className='grid grid-cols-1'>
-            <div className='pb-20 max-w-[760px]'>
+            <div className='max-w-[760px] pb-20'>
               <div className=''>
                 <PortableText value={data?.content} components={portableTextComponents} />
               </div>
@@ -65,19 +83,19 @@ export default function Instrument({ data }) {
                     {data.modelTexts.map((text, id) => (
                       <>
                         <Disclosure as='div' key={id} className='my-6'>
-                          <DisclosureButton className='group rounded-cl data-[open]:rounded-b-none text-gray-800 bg-green-50 flex justify-between items-center w-full px-6 sm:px-10 py-6'>
+                          <DisclosureButton className='group rounded-cl data-[open]:rounded-b-none text-cl-black bg-green-100 flex justify-between items-center w-full px-6 sm:px-10 py-6'>
                             <div className='flex flex-col text-left'>
                               <div className='rounded-cl max-w-min text-nowrap border border-green-400 text-green-400 px-2 py-1 p-2xs-semibold first-letter:uppercase mb-4'>
                                 {text.pillar}
                               </div>
                               <h5 className='heading-2xl-semibold'>{text.title}</h5>
                             </div>
-                            <IconChevronDown className='h-6 w-6 text-gray-800 group-data-[open]:rotate-180 place-self-start' />
+                            <IconChevronDown className='h-6 w-6 text-cl-black group-data-[open]:rotate-180 place-self-start' />
                           </DisclosureButton>
-                          <DisclosurePanel className='rounded-b-cl bg-green-50 w-full py-6 px-4 sm:px-10'>
-                            <div className='w-full border border-green-300 flex flex-col rounded-cl mb-10 overflow-hidden'>
-                              <div className='flex flex-row justify-between bg-green-300 border-b border-green-300 py-3 px-6'>
-                                <div className='p-base-semibold text-green-800'>
+                          <DisclosurePanel className='rounded-b-cl bg-green-100 w-full py-6 px-4 sm:px-10'>
+                            <div className='w-full border border-green-400 flex flex-col rounded-cl mb-10 overflow-hidden'>
+                              <div className='flex flex-row justify-between bg-green-400 border-b border-green-400 py-3 px-6'>
+                                <div className='p-base-semibold text-cl-black'>
                                   Modeltekst omgevingsplan
                                 </div>
                                 <div className='self-end relative'>
@@ -98,7 +116,7 @@ export default function Instrument({ data }) {
                                   </button>
                                   {showLinkCopied && (
                                     <p className='p-xs text-green-500 text-nowrap flex flex-row'>
-                                      <IconCheck className='w-5 h-5 text-green-800 ml-2.5' />
+                                      <IconCheck className='w-5 h-5 text-cl-black ml-2.5' />
                                     </p>
                                   )}
                                 </div>
@@ -135,7 +153,7 @@ export default function Instrument({ data }) {
                                   {text?.linkedInstruments?.map((instrument) => (
                                     <li className='p-base underline' key={instrument.slug}>
                                       <Link
-                                        className='link-interaction text-green-600'
+                                        className='link-interaction text-green-500'
                                         href={`/${instrument.transitionAgenda}/${instrument.thema}/instrumenten/${instrument.slug}`}
                                       >
                                         {instrument.titel}
@@ -149,19 +167,19 @@ export default function Instrument({ data }) {
                               <div className='flex flex-wrap sm:flex-row gap-4'>
                                 <div className='flex flex-col'>
                                   <div className='p-xs-semibold mb-2'>Schaalniveau</div>
-                                  <div className='text-xs text-gray-600 bg-white border border-gray-200 rounded-cl px-2 py-1'>
+                                  <div className='text-xs text-cl-dark-grey bg-white border border-green-100 rounded-cl px-2 py-1'>
                                     {text.scale}
                                   </div>
                                 </div>
                                 <div className='flex flex-col'>
                                   <div className='p-xs-semibold mb-2'>Houdbaarheid</div>
-                                  <div className='text-xs text-gray-600 bg-white border border-gray-200 rounded-cl px-2 py-1'>
+                                  <div className='text-xs text-cl-dark-grey bg-white border border-green-100 rounded-cl px-2 py-1'>
                                     {text.impactLevel}
                                   </div>
                                 </div>
                                 <div className='flex flex-col'>
                                   <div className='p-xs-semibold mb-2'>Type regel</div>
-                                  <div className='text-xs text-gray-600 bg-white border border-gray-200 rounded-cl px-2 py-1'>
+                                  <div className='text-xs text-cl-dark-grey bg-white border border-green-100 rounded-cl px-2 py-1'>
                                     {text.type}
                                   </div>
                                 </div>
@@ -169,7 +187,7 @@ export default function Instrument({ data }) {
                             </div>
                             <Link
                               href={`/bouw/planregels/modelteksten?pillar=${text.pillar}`}
-                              className='mt-8 underline p-base-semibold flex items-center justify-start text-green-600'
+                              className='mt-8 underline p-base-semibold flex items-center justify-start text-green-500'
                             >
                               Overzicht alle modelteksten{' '}
                               <IconArrowRight className='inline-block ml-0.5' />
@@ -188,9 +206,9 @@ export default function Instrument({ data }) {
           <div
             className={`${
               scrollEffect
-                ? 'translate-y-0 transition-all ease-in duration-300'
-                : 'translate-y-14 transition-all ease-out duration-300'
-            } ${hidden ? 'hidden' : 'block'} bottom-0 sticky flex justify-center w-full`}
+                ? 'translate-y-0 transition-all duration-300 ease-in'
+                : 'translate-y-14 transition-all duration-300 ease-out'
+            } ${hidden ? 'hidden' : 'block'} sticky bottom-0 flex w-full justify-center`}
           >
             <MobileFeedback data={data} scrollEffect={scrollEffect} />
           </div>

@@ -1,6 +1,6 @@
+import { parseBody } from 'next-sanity/webhook';
 import { revalidateTag } from 'next/cache';
 import { NextResponse } from 'next/server';
-import { parseBody } from 'next-sanity/webhook';
 
 export const runtime = 'edge';
 
