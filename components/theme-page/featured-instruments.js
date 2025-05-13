@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import InstrumentCard from '../instrument/instrument-card';
 
-export default function ThemeBottomSection({ featuredLaws, thema }) {
+export default function FeaturedInstruments({ featuredLaws, thema }) {
   const [images, setImages] = useState();
   useEffect(() => {
     if (
@@ -20,7 +20,7 @@ export default function ThemeBottomSection({ featuredLaws, thema }) {
 
   return (
     <>
-      <div className='bg-gray-200'>
+      <div className=''>
         <div className='global-margin py-8'>
           <h3 className='heading-2xl-semibold sm:heading-3xl-semibold pb-4 lowercase first-letter:uppercase'>
             {thema?.featuredInstrumentTitle}

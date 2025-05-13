@@ -4,7 +4,7 @@ import ExpertisePageInstrument from './expertise-page-instrument';
 export default function TabLayout({ selected, category, transitionAgenda, isPending }) {
   return (
     <>
-      <div className={`${isPending ? 'min-h-[1200px] bg-gray-100' : ''}`}>
+      <div className={`${isPending ? 'min-h-[1200px] bg-green-100' : 'max-w-[880px]'}`}>
         {/* DISPLAY INSTRUMENTS DESKTOP */}
         <div className='flex flex-col'>
           <ul>

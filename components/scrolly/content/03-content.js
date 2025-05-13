@@ -1,6 +1,6 @@
 export default function ContentThree() {
   return (
-    <div className='flex max-w-[290px] flex-col gap-y-6 text-green-600'>
+    <div className='flex max-w-[290px] flex-col gap-y-6 text-green-500'>
       <h3 className='heading-2xl-semibold text-nowrap'>Beleidsontwikkeling</h3>
       <p className='p-base'>
         De beleidscyclus begint met <span className='p-base-semibold'>beleidsontwikkeling.</span>

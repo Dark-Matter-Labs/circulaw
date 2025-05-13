@@ -3549,11 +3549,6 @@ react-player@^2.16.0:
     prop-types "^15.7.2"
     react-fast-compare "^3.0.1"
 
-react-responsive-masonry@^2.1.7:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/react-responsive-masonry/-/react-responsive-masonry-2.3.0.tgz#9e99c9deff44a7ba5b0f83705214df6e65443b28"
-  integrity sha512-ttb71B75qAfZ5q2CRLKRnCRO9V6p1Vkgw1C9wIeNaD2JpAxwCb1hUBI4Drqea9hNlvxxLpUkO0TRE5CLxqLY0A==
-
 react-scroll@^1.8.7:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.9.0.tgz#2984006e184afd0e4018f837d127edf5fa8f152c"

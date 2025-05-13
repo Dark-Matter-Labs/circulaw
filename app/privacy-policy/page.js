@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import LinkIcon from '@/components/link-icon';
+import InlineExternalLink from '@/components/shared/inline-external-link';
 
 export const metadata = {
   title: 'Privacyverklaring - CircuLaw',
@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function Privacy() {
   return (
-    <div className='global-margin my-20 max-w-2xl text-gray-800'>
+    <div className='global-margin my-20 max-w-2xl text-cl-black'>
       <h1 className='heading-2xl-semibold sm:heading-5xl-semibold pb-6'>Privacyverklaring</h1>
       <p className='p-base max-w-4xl pb-6 pt-2'>
         Het team CircuLaw is verantwoordelijk voor de verwerking van persoonsgegevens zoals
@@ -17,7 +17,7 @@ export default function Privacy() {
       </p>
       <p className='p-base max-w-4xl pb-10'>
         Contactgegevens projectteam CircuLaw:{' '}
-        <span className='link-lg link-interaction text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'>
+        <span className='link-lg link-interaction text-green-500 hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'>
           <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
         </span>
       </p>
@@ -93,16 +93,12 @@ export default function Privacy() {
       <p className='p-base max-w-4xl pb-10'>
         Als je het niet eens bent met de manier waarop CircuLaw omgaat met je persoonsgegevens dan
         kun je een klacht indienen bij de{' '}
-        <span className='link-lg link-interaction text-green-500'>
-          <a
-            href='https://autoriteitpersoonsgegevens.nl/nl/zelf-doen/gebruik-uw-privacyrechten/klacht-melden-bij-de-ap'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Autoriteit Persoonsgegevens
-          </a>
-          <LinkIcon />
-        </span>
+        <InlineExternalLink
+          href='https://autoriteitpersoonsgegevens.nl/nl/zelf-doen/gebruik-uw-privacyrechten/klacht-melden-bij-de-ap'
+          size='5'
+        >
+          Autoriteit Persoonsgegevens
+        </InlineExternalLink>
         .
       </p>
       <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>
@@ -118,24 +114,21 @@ export default function Privacy() {
       <p className='p-base max-w-4xl pb-6'>
         De gemeente Amsterdam heeft het recht om haar Privacyverklaring te wijzigen. Als er
         inhoudelijke wijzigingen worden doorgevoerd, maken we dit bekend via de website{' '}
-        <span className='link-lg text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'>
-          <a href='https://www.amsterdam.nl/' target='_blank' rel='noopener noreferrer'>
-            amsterdam.nl
-          </a>
-          <LinkIcon />
-        </span>
+        <InlineExternalLink href='https://www.amsterdam.nl/' size='5'>
+          amsterdam.nl
+        </InlineExternalLink>
         .{' '}
       </p>
       <p className='p-base max-w-4xl pb-6'>
         Heb je vragen naar aanleiding van deze Privacyverklaring? Mail{' '}
-        <span className='link-lg text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'>
+        <span className='link-lg text-green-500 hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'>
           <a href='mailto:info@circulaw.nl'>info@circulaw.nl</a>
         </span>
       </p>
       <h2 className='heading-xl-semibold sm:heading-3xl-semibold py-2'>Cookies</h2>
       <p className='p-base max-w-4xl pb-6'>
         Bekijk ons{' '}
-        <span className='link-lg text-green-500 hover:text-green-300 focus:text-green-200 focus:ring-2 focus:ring-white active:text-green-800'>
+        <span className='link-lg text-green-500 hover:text-green-400 focus:text-green-300 focus:ring-2 focus:ring-white active:text-cl-black'>
           <Link href='/cookie-info'>Cookiebeleid</Link>
         </span>
         .
