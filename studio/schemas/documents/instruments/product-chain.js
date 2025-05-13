@@ -1,6 +1,6 @@
 import { BsCircle } from 'react-icons/bs';
 
-import { lineBreak } from '../../components/headerInput';
+import { orderRankField } from '@sanity/orderable-document-list';
 
 export default {
   title: 'Transitie-agenda',
@@ -28,22 +28,15 @@ export default {
   ],
   fields: [
     {
-      name: 'General',
-      title: 'GENERAL',
-      type: 'text',
-      components: {
-        input: lineBreak,
-      },
-      group: 'editableContent',
-    },
-    {
       title: 'Product Chain Titel',
       name: 'pcName',
       type: 'string',
       validation: (Rule) => Rule.required(),
       description: 'DO NOT CHANGE This will be displayed in the Navigation, Footer, Thema Card etc',
-      group: 'devOnly',
+      group: 'editableContent',
+      readOnly: true,
     },
+    orderRankField({ type: 'transitionAgenda', newItemPosition: 'before' }),
     {
       title: 'Meta Page Title',
       name: 'metaTitle',
@@ -90,12 +83,6 @@ export default {
       title: 'Homepage Card Text',
       name: 'cardText',
       type: 'string',
-      group: 'homepage',
-    },
-    {
-      name: 'order',
-      type: 'number',
-      title: 'Home Page order',
       group: 'homepage',
     },
     {

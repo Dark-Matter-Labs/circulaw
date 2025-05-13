@@ -5,6 +5,8 @@ import Highlight from '../../components/highlight';
 
 // import { orderRankField } from '@sanity/orderable-document-list';
 
+import { contentArray } from '../../utils/portable-text-arrays';
+
 export default {
   title: 'About Pages',
   name: 'aboutPage',
@@ -106,7 +108,14 @@ export default {
       name: 'metaDescribe',
       type: 'string',
       description: 'SEO',
-      group: 'seo',
+    },
+    {
+      title: 'Copy',
+      name: 'aboutPageContent',
+      type: 'array',
+      description:
+        'Voer hier de tekst in (maak gebruik van voorgestelde subkoppen, alinea-indeling,  enz.).',
+      of: [...contentArray],
     },
   ],
 };

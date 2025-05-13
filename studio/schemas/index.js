@@ -1,61 +1,71 @@
-import aboutPage from './documents/about-pages';
-import euCircularEconomyTab from './documents/eu-circular-economy-tab';
-import euEuropeTab from './documents/eu-europe-tab';
-import euLaw from './documents/eu-law';
-import euLocalTab from './documents/eu-local-tab';
+import aboutPage from './documents/about-page';
+// EU LAW
+import euCircularEconomyTab from './documents/eu/eu-circular-economy-tab';
+import euEuropeTab from './documents/eu/eu-europe-tab';
+import euLaw from './documents/eu/eu-law';
+import euLocalTab from './documents/eu/eu-local-tab';
 import faq from './documents/faq';
-import instrument from './documents/instrument';
+// INSTRUMENTS
+import instrument from './documents/instruments/instrument';
+import productChain from './documents/instruments/product-chain';
+import simpleThema from './documents/instruments/simple-thema';
+import thema from './documents/instruments/thema';
+// MODEL TEXTS
 import milestone from './documents/milestone';
-import modelText from './documents/model-text';
+import modelText from './documents/modeltexts/model-text';
+import pillar from './documents/modeltexts/pillar';
 import newsItem from './documents/news-item';
 import partners from './documents/partners';
-import pillar from './documents/pillar';
-import productChain from './documents/product-chain';
-import simpleThema from './documents/simple-thema';
 import siteConfig from './documents/site-config';
 import teamMember from './documents/team-member';
-import thema from './documents/thema';
+// OBJECTS
 import dropDown from './objects/drop-down';
+import dropDownHighlight from './objects/drop-down-highlight';
 import euLawSection from './objects/eu-law-section';
 import faqItem from './objects/faq-item';
 import faqSection from './objects/faq-section';
-import greenBox from './objects/green-box';
+import highlightBlock from './objects/highlight-block';
 import imageBlock from './objects/image-object';
-import inlineTable from './objects/inline-table';
 import linkObject from './objects/link-object';
 import partner from './objects/partner';
 import pdfBlock from './objects/pdf-block';
 import productChainAmbition from './objects/product-chain-ambition';
 import productChainImpact from './objects/product-chain-impact';
-import smallPara from './objects/small-paragraph';
 import themePageReport from './objects/thema-report';
 import { youtube } from './objects/youtube-embed';
 
 export const schemaTypes = [
   // DOCUMENT TYPES
+
+  // INSTRUMENTS
   instrument,
+  simpleThema,
+  productChain,
+
+  newsItem,
   aboutPage,
   partners,
   thema,
-  productChain,
   faq,
-  simpleThema,
-  newsItem,
+
+  // EU LAW
   euLaw,
   euLawSection,
   euCircularEconomyTab,
   euEuropeTab,
   euLocalTab,
+
+  // Modwl text
   modelText,
   pillar,
   teamMember,
   milestone,
 
   // OBJECTS
-  greenBox,
+  dropDownHighlight,
   pdfBlock,
   imageBlock,
-  smallPara,
+  highlightBlock,
   siteConfig,
   dropDown,
   partner,
@@ -64,7 +74,6 @@ export const schemaTypes = [
   productChainAmbition,
   productChainImpact,
   linkObject,
-  inlineTable,
   youtube,
   themePageReport,
 ];

@@ -9,7 +9,7 @@ const varientStyles = {
 export default function Badge({ children, variant }) {
   return (
     <div
-      className={`${varientStyles[variant]} p-2xs-semibold flex max-w-min items-center justify-center text-nowrap rounded-clSm border px-2 py-1`}
+      className={`${varientStyles[variant]} p-2xs-semibold flex max-w-min items-center justify-center text-nowrap rounded-clSm border-[1.5px] px-2 py-1`}
     >
       {children}
     </div>
