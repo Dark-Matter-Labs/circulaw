@@ -3,7 +3,7 @@ import { BsNewspaper } from 'react-icons/bs';
 export default {
   name: 'AmbitionItem',
   title: 'Ambition Item',
-  type: 'document',
+  type: 'object',
   fields: [
     {
       name: 'title',

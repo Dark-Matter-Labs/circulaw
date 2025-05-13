@@ -1,6 +1,6 @@
 import { BsCircle } from 'react-icons/bs';
 
-import { lineBreak } from '../../components/headerInput';
+import { lineBreak } from '../../../components/headerInput';
 
 export default {
   title: 'Thema',
@@ -14,27 +14,28 @@ export default {
       default: true,
     },
     {
-      name: 'devOnly',
-      title: 'Dev Only',
+      name: 'seo',
+      title: 'seo',
+    },
+  ],
+  fieldsets: [
+    {
+      name: 'homePageCards',
+      title: 'HOMEPAGE KAARTEN',
+    },
+    {
+      name: 'overviewCards',
+      title: 'OVERZICHTSKAARTEN',
     },
   ],
   fields: [
-    {
-      name: 'General',
-      title: 'GENERAL',
-      type: 'text',
-      components: {
-        input: lineBreak,
-      },
-      group: 'editableContent',
-    },
     {
       title: 'Titel thema',
       name: 'themaName',
       type: 'string',
       validation: (Rule) => Rule.required(),
       description: 'DO NOT CHANGE This will be displayed in the Navigation, Footer, Thema Card etc',
-      group: 'devOnly',
+      group: 'editableContent',
       initialValue: 'New Thema',
     },
     {
@@ -49,18 +50,20 @@ export default {
       name: 'metaTitle',
       type: 'string',
       description: 'SEO',
+      group: 'seo',
     },
     {
       title: 'Meta Description',
       name: 'metaDescribe',
       type: 'string',
       description: 'SEO',
+      group: 'seo',
     },
     {
       title: 'Slug',
       name: 'slug',
       type: 'slug',
-      group: 'devOnly',
+      group: 'editableContent',
       description: 'DO NOT CHANGE',
       validation: (Rule) => Rule.required(),
       options: {
@@ -82,7 +85,7 @@ export default {
         'Selecteer de transitieagenda waaronder dit instrument valt (is nog niet zichtbaar op de site)',
       validation: (Rule) => Rule.required(),
       to: [{ type: 'transitionAgenda' }],
-      group: 'devOnly',
+      group: 'editableContent',
     },
     {
       title: 'Thema intro',
@@ -131,18 +134,10 @@ export default {
       group: 'editableContent',
     },
     {
-      name: 'overviewCards',
-      title: 'OVERZICHTSKAARTEN',
-      type: 'text',
-      components: {
-        input: lineBreak,
-      },
-      group: 'editableContent',
-    },
-    {
       title: 'Intro op lijstkaart',
       name: 'listText',
       type: 'text',
+      fieldset: 'overviewCards',
       description:
         'Tekst over de instrumentenlijst. Titel op deze kaart wordt automatisch gegenereerd.',
       validation: (Rule) => Rule.required(),
@@ -152,6 +147,7 @@ export default {
       title: 'Titel samenhang-kaart',
       name: 'samenhangTitle',
       type: 'string',
+      fieldset: 'overviewCards',
       validation: (Rule) => Rule.required().max(70),
       group: 'editableContent',
     },
@@ -159,6 +155,7 @@ export default {
       title: 'Intro samenhang-kaart',
       name: 'samenhangText',
       type: 'text',
+      fieldset: 'overviewCards',
       validation: (Rule) => Rule.required(),
       group: 'editableContent',
     },
@@ -166,6 +163,7 @@ export default {
       title: 'Titel bevoegdheden-kaart',
       name: 'welkeTitle',
       type: 'string',
+      fieldset: 'overviewCards',
       validation: (Rule) => Rule.required().max(70),
       group: 'editableContent',
     },
@@ -173,16 +171,8 @@ export default {
       title: 'Intro bevoegdhedenkaart',
       name: 'welkeText',
       type: 'text',
+      fieldset: 'overviewCards',
       validation: (Rule) => Rule.required(),
-      group: 'editableContent',
-    },
-    {
-      name: 'homePageCards',
-      title: 'HOMEPAGE KAARTEN',
-      type: 'text',
-      components: {
-        input: lineBreak,
-      },
       group: 'editableContent',
     },
     {
@@ -190,6 +180,7 @@ export default {
       name: 'homePageCardText',
       type: 'text',
       group: 'editableContent',
+      fieldset: 'homePageCards',
     },
     {
       title: 'Volgorde presentatie thema’s', // need to add max length
@@ -197,6 +188,7 @@ export default {
       type: 'number',
       description:
         'Elk thema moet een eigen nummer krijgen. Nummer bepaalt de volgorde van presentatie.',
+      fieldset: 'homePageCards',
       group: 'editableContent',
     },
     {
@@ -205,6 +197,7 @@ export default {
       type: 'image',
       description:
         'Beeld moet altijd icoon van thema bevatten. Bij nieuw thema banner ‘NIEUW’ toevoegen.',
+      fieldset: 'homePageCards',
       group: 'editableContent',
     },
     {
@@ -213,6 +206,7 @@ export default {
       type: 'image',
       description:
         'Beeld moet altijd icoon van thema bevatten. Bij nieuw thema banner ‘NIEUW’ toevoegen.',
+      fieldset: 'homePageCards',
       group: 'editableContent',
     },
     {
