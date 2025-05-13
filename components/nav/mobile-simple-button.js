@@ -5,7 +5,7 @@ export default function MobileSimpleButton({ name, url, closeMenu }) {
     <div
       className={`${name === 'Nieuws' || name === 'EU wetgeving' ? 'border-t' : ''} ${
         name === 'EU wetgeving' ? '' : 'border-b'
-      } heading-xl-semibold flex w-full flex-row items-center py-4 text-left text-green-800`}
+      } heading-xl-semibold flex w-full flex-row items-center py-4 text-left text-cl-black`}
     >
       <Link href={url} onClick={() => closeMenu(false)}>
         {name}

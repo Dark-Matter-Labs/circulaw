@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { urlFor } from '@/lib/sanity';
 import { IconExternalLink } from '@tabler/icons-react';
 
-import Tag from '../tag';
+import Badge from '../shared/new-badge';
 
 export default function NewsHit({ hit }) {
   const event = new Date(hit.newsDate);
@@ -50,13 +50,10 @@ export default function NewsHit({ hit }) {
                 <div className='gradient-700 p-base-semibold mb-6 mr-6 flex h-[130px] w-[150px] items-center justify-center rounded-cl sm:mb-0'></div>
               )}
               <div className='flex flex-col'>
-                <div className='mb-6 flex flex-row'>
-                  <Tag classes='bg-green-800 text-white shrink mr-2'>{hit.category}</Tag>
+                <div className='mb-6 flex flex-row gap-x-1'>
+                  <Badge variant='black'>{hit.category}</Badge>
                   {hit.newsDate && (
-                    <Tag classes='bg-green-800 text-white shrink mr-2'>
-                      {' '}
-                      {event.toLocaleDateString('nl-NL', options)}
-                    </Tag>
+                    <Badge variant='green'> {event.toLocaleDateString('nl-NL', options)}</Badge>
                   )}
                 </div>
                 <h2 className='heading-xl-semibold'>
@@ -64,7 +61,7 @@ export default function NewsHit({ hit }) {
                     attribute='title'
                     hit={hit}
                     classNames={{
-                      highlighted: 'text-green-300 bg-green-300/20',
+                      highlighted: 'text-green-400 bg-green-400/20',
                     }}
                   />
                 </h2>
@@ -73,7 +70,7 @@ export default function NewsHit({ hit }) {
                     attribute='newsText'
                     hit={hit}
                     classNames={{
-                      highlighted: 'text-green-300 bg-green-300/20',
+                      highlighted: 'text-green-400 bg-green-400/20',
                     }}
                   />
                 </p>
@@ -101,18 +98,15 @@ export default function NewsHit({ hit }) {
                 <div className='gradient-700 p-base-semibold mb-6 mr-6 flex h-[130px] w-[150px] items-center justify-center rounded-cl sm:mb-0'></div>
               )}
               <div className='flex flex-col'>
-                <div className='mb-6 flex flex-row'>
-                  <Tag classes='bg-green-800 text-white shrink mr-2'>{hit.category}</Tag>
+                <div className='mb-6 flex flex-row gap-x-1'>
+                  <Badge variant='black'>{hit.category}</Badge>
                   {hit.newsDate && (
-                    <Tag classes='bg-green-800 text-white shrink mr-2'>
-                      {' '}
-                      {event.toLocaleDateString('nl-NL', options)}
-                    </Tag>
+                    <Badge variant='green'> {event.toLocaleDateString('nl-NL', options)}</Badge>
                   )}
                   {!hit.linkUrl.includes('circulaw.nl') && (
-                    <Tag classes='border border-green-300 text-green-300 shrink mr-2'>
+                    <Badge variant='green'>
                       <IconExternalLink className='h-4 w-4' />
-                    </Tag>
+                    </Badge>
                   )}
                 </div>
                 <h2 className='heading-xl-semibold'>
@@ -120,7 +114,7 @@ export default function NewsHit({ hit }) {
                     attribute='title'
                     hit={hit}
                     classNames={{
-                      highlighted: 'text-green-300 bg-green-300/20',
+                      highlighted: 'text-green-400 bg-green-400/20',
                     }}
                   />
                 </h2>
@@ -129,7 +123,7 @@ export default function NewsHit({ hit }) {
                     attribute='newsText'
                     hit={hit}
                     classNames={{
-                      highlighted: 'text-green-300 bg-green-300/20',
+                      highlighted: 'text-green-400 bg-green-400/20',
                     }}
                   />
                 </p>
@@ -141,7 +135,7 @@ export default function NewsHit({ hit }) {
     );
   } else {
     return (
-      <Link href={hit?.link || ''} target='_blank' className='p-base text-green-800'>
+      <Link href={hit?.link || ''} target='_blank' className='p-base text-cl-black'>
         <div className='mb-10 flex flex-col sm:flex-row'>
           <div className='gradient-700 mb-6 mr-6 flex h-[130px] w-[150px] flex-row items-center justify-center rounded-cl sm:mb-0'>
             <div className='heading-4xl-semibold mr-2 text-white'>
@@ -157,12 +151,12 @@ export default function NewsHit({ hit }) {
             </div>
           </div>
           <div className='flex flex-col'>
-            <div className='mb-6 flex flex-row'>
-              <Tag classes='bg-green-800 text-white shrink mr-2'>agenda</Tag>
+            <div className='mb-6 flex flex-row gap-x-1'>
+              <Badge variant='black'>agenda</Badge>
               {hit.link && (
-                <Tag classes='border border-green-300 text-green-300 shrink mr-2'>
+                <Badge variant='green'>
                   <IconExternalLink className='h-4 w-4' />
-                </Tag>
+                </Badge>
               )}
             </div>
             <h2 className='heading-xl-semibold'>
@@ -170,7 +164,7 @@ export default function NewsHit({ hit }) {
                 attribute='title'
                 hit={hit}
                 classNames={{
-                  highlighted: 'text-green-300 bg-green-300/20',
+                  highlighted: 'text-green-400 bg-green-400/20',
                 }}
               />
             </h2>
