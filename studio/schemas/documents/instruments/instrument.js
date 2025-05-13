@@ -1,21 +1,19 @@
-import { CgInternal } from 'react-icons/cg';
 import { VscLaw } from 'react-icons/vsc';
 
-import { lineBreak } from '../../components/headerInput';
+import { contentArray } from '../../../utils/portable-text-arrays';
 
 export default {
   title: 'instrument',
   name: 'instrument',
   type: 'document',
   icon: VscLaw,
-  // GROUPS
   groups: [
     {
       name: 'copy',
       title: 'Copy Content',
     },
   ],
-  // FIELDS
+  fieldsets: [{ name: 'category', title: 'Category' }],
   fields: [
     {
       title: 'Uitgelicht op thema-pagina',
@@ -211,24 +209,18 @@ export default {
       },
     },
     {
-      name: 'category',
-      title: 'CATEGORIE',
-      type: 'text',
-      components: {
-        input: lineBreak,
-      },
-    },
-    {
       title: 'Beleid',
       name: 'beleid',
       type: 'boolean',
       initialValue: false,
       validation: (Rule) => Rule.required(),
+      fieldset: 'category',
     },
     {
       title: 'Beleid sub category',
       name: 'beleidSubCategory',
       type: 'array',
+      fieldset: 'category',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
           return parent?.beleid === true &&
@@ -255,6 +247,7 @@ export default {
       title: 'Inkoop',
       name: 'inkoop',
       type: 'boolean',
+      fieldset: 'category',
       initialValue: false,
       validation: (Rule) => Rule.required(),
     },
@@ -262,6 +255,7 @@ export default {
       title: 'Inkoop sub category',
       name: 'inkoopSubCategory',
       type: 'array',
+      fieldset: 'category',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
           return parent?.inkoop === true && typeof currentValue === 'undefined'
@@ -287,6 +281,7 @@ export default {
       title: 'Grondpositie',
       name: 'grondpositie',
       type: 'boolean',
+      fieldset: 'category',
       initialValue: false,
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
@@ -299,6 +294,7 @@ export default {
       title: 'Grondpositie sub category',
       name: 'grondpositieSubCategory', // remo
       type: 'array',
+      fieldset: 'category',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
           return parent?.grondpositie === true &&
@@ -325,6 +321,7 @@ export default {
       title: 'Subsidie',
       name: 'subsidie',
       type: 'boolean',
+      fieldset: 'category',
       initialValue: false,
       validation: (Rule) => Rule.required(),
     },
@@ -332,6 +329,7 @@ export default {
       title: 'fiscaal',
       name: 'fiscaal',
       type: 'boolean',
+      fieldset: 'category',
       initialValue: false,
       validation: (Rule) => Rule.required(),
     },
@@ -387,92 +385,7 @@ export default {
                 paths: emptyPaths,
               };
         }),
-      of: [
-        {
-          type: 'greenBox',
-        },
-        {
-          type: 'pdfBlock',
-        },
-        {
-          type: 'smallPara',
-        },
-        {
-          type: 'block',
-          of: [
-            {
-              type: 'dropDown',
-            },
-          ],
-          lists: [
-            { title: 'Bullet', value: 'bullet' },
-            { title: 'Number', value: 'number' },
-          ],
-          styles: [
-            { title: 'H2', value: 'h2' },
-            { title: 'H3', value: 'h3' },
-            { title: 'normal', value: 'normal' },
-            // { title: 'subheading', value: 'subheading' },
-          ],
-          marks: {
-            decorators: [
-              { title: 'Strong', value: 'strong' },
-              { title: 'Emphasis', value: 'em' },
-            ],
-            annotations: [
-              {
-                title: 'URL',
-                name: 'link',
-                type: 'object',
-                fields: [
-                  {
-                    title: 'URL',
-                    name: 'href',
-                    type: 'url',
-
-                    validation: (Rule) =>
-                      Rule.required()
-                        .uri({ scheme: ['http', 'https'] })
-                        .warning('Url is incorrect'),
-                  },
-                  {
-                    title: 'Open in new window',
-                    name: 'blank',
-                    type: 'boolean',
-                    description:
-                      'if the link is to a CircuLaw page please select false for open in new window',
-                    validation: (Rule) => Rule.required(),
-                    initialValue: true,
-                  },
-                ],
-              },
-              {
-                name: 'internalLink',
-                type: 'object',
-                title: 'Internal link (Instrument)',
-                icon: CgInternal,
-                fields: [
-                  {
-                    name: 'reference',
-                    type: 'reference',
-                    title: 'Reference',
-                    to: [{ type: 'instrument' }],
-                    options: {
-                      disableNew: true,
-                    },
-                  },
-                ],
-                options: {
-                  modal: {
-                    type: 'popover',
-                    width: 1,
-                  },
-                },
-              },
-            ],
-          },
-        },
-      ],
+      of: [...contentArray],
       group: 'copy',
     },
     // depreciated fields

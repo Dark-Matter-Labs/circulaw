@@ -3,6 +3,7 @@ import { BsNewspaper } from 'react-icons/bs';
 import { orderRankField } from '@sanity/orderable-document-list';
 
 import { NewsItemComponent } from '../../components/news-item';
+import { contentArray } from '../../utils/portable-text-arrays';
 
 export default {
   name: 'newsItem',
@@ -189,92 +190,8 @@ export default {
       title: 'Inhoud',
       name: 'content',
       type: 'array',
-      hidden: ({ parent }) => parent?.hasPage === false || parent?.isAgendaItem === true,
-      of: [
-        {
-          type: 'greenBox',
-        },
-        {
-          type: 'pdfBlock',
-        },
-        {
-          type: 'smallPara',
-        },
-        {
-          type: 'imageBlock',
-        },
-        {
-          type: 'youtube',
-        },
-        {
-          type: 'block',
-          of: [
-            {
-              type: 'dropDown',
-            },
-          ],
-          lists: [
-            { title: 'Bullet', value: 'bullet' },
-            { title: 'Number', value: 'number' },
-          ],
-          styles: [
-            { title: 'H2', value: 'h2' },
-            { title: 'H3', value: 'h3' },
-            { title: 'normal', value: 'normal' },
-            // { title: 'subheading', value: 'subheading' },
-          ],
-          marks: {
-            decorators: [
-              { title: 'Strong', value: 'strong' },
-              { title: 'Emphasis', value: 'em' },
-            ],
-            annotations: [
-              {
-                title: 'URL',
-                name: 'link',
-                type: 'object',
-                fields: [
-                  {
-                    title: 'URL',
-                    name: 'href',
-                    type: 'url',
-
-                    validation: (Rule) =>
-                      Rule.required()
-                        .uri({ scheme: ['http', 'https'] })
-                        .warning('Url is incorrect'),
-                  },
-                  {
-                    title: 'Open in new window',
-                    name: 'blank',
-                    type: 'boolean',
-                    initialValue: false,
-                    validation: (Rule) => Rule.required(),
-                    initialValue: false,
-                  },
-                ],
-              },
-              {
-                name: 'internalLink',
-                type: 'object',
-                title: 'Internal link (Instrument)',
-                fields: [
-                  {
-                    name: 'reference',
-                    type: 'reference',
-                    title: 'Reference',
-                    to: [{ type: 'instrument' }],
-                    validation: (Rule) => Rule.required(),
-                    options: {
-                      disableNew: true,
-                    },
-                  },
-                ],
-              },
-            ],
-          },
-        },
-      ],
+      hidden: ({ parent }) => parent?.createPage === false || parent?.newsOrAgenda === true,
+      of: [...contentArray],
     },
     // @TODO: need to fix this - maybe make one link
     {
