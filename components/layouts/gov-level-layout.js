@@ -1,14 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import OverviewPageHeader from '../theme-page/overview-page-header';
 import { IconArrowRight, IconInfoSquareRoundedFilled } from '@tabler/icons-react';
-
-import Xarrow, { useXarrow } from 'react-xarrows';
-
-import Image from 'next/image';
-import Link from 'next/link';
-
 import Header from '../headers';
 
 export default function GovLevelLayout({ ...props }) {
@@ -37,7 +30,7 @@ export default function GovLevelLayout({ ...props }) {
   };
 
   return (
-    <div onLoad={useXarrow()}>
+    <div>
       <div className=''>
         <Header
           thema={props.thema}
@@ -51,54 +44,7 @@ export default function GovLevelLayout({ ...props }) {
 
         {/* DYNAMIC IMAGE */}
         <div className='global-margin mb-20 mt-5 hidden sm:mt-20 sm:block'>
-          <div className='flex grid-cols-3 items-start 2xl:justify-center'>
-            {/* LEFT HAND SIDE */}
-            <div className='col-span-1 mt-10 grid h-full w-80 items-start justify-center'>
-              <div
-                id='allId'
-                className='justify-left flex h-10 w-80 items-center rounded-full border border-cl-black bg-green-100 text-cl-black'
-              >
-                <div className='flex h-10 w-10 items-center justify-center rounded-full border-b border-r border-t border-cl-black'>
-                  <h5 className='p-2xs-semibold sm:p-xs-semibold'>A</h5>
-                </div>
-                <div className='-ml-10 flex h-full w-full items-center justify-center'>
-                  <h4 className='p-base-semibold sm:headling-xl-semibold'>Alle overheidslagen</h4>
-                </div>
-              </div>
-            </div>
-            <div
-              className={`${
-                selected === 'provinciaal'
-                  ? 'bg-green-400 text-green-50'
-                  : 'bg-green-50 text-green-500'
-              } rounded-full shadow-card size-[265px] absolute left-[132px] z-20`}
-            >
-              <h3 className='heading-2xl-semibold absolute left-14 top-6'>Provinciaal</h3>
-              <div className='absolute top-20 left-12'>
-                <NormalDistributionCircles
-                  laws={provLaws}
-                  isSelected={selected === 'provinciaal'}
-                />
-              </div>
-            </div>
-            <div
-              className={`${
-                selected === 'gemeentelijk'
-                  ? 'bg-green-400 text-green-50'
-                  : 'bg-green-50 text-green-500'
-              } rounded-full shadow-card size-[220px] absolute left-[290px] z-30`}
-            >
-              <h3 className='heading-2xl-semibold absolute left-8 top-6'>Gemeentelijk</h3>
-              <div className='absolute top-20 left-12'>
-                <NormalDistributionCircles
-                  laws={gemLaws}
-                  isSelected={selected === 'gemeentelijk'}
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className='max-w-[300px]'>
+          <div className=''>
             <div className='flex flex-row items-start'>
               <IconInfoSquareRoundedFilled className='size-8 mr-3 text-green-500' />
               <p className='p-base-semibold text-green-500 '>
@@ -160,7 +106,7 @@ export default function GovLevelLayout({ ...props }) {
           </div>
           <div className='h-64 flex sm:hidden'>Mobile version:</div>
         </div>
-        <div className='flex my-16'>
+        <div className='flex my-16 global-margin'>
           <div className='flex-col items-center hidden sm:flex'>
             <div className='[writing-mode:vertical-rl] rotate-180 mb-6 heading-3xl-semibold text-green-500'>
               Instrumentn
@@ -272,60 +218,3 @@ export default function GovLevelLayout({ ...props }) {
   );
 }
 
-const NormalDistributionCircles = ({ laws, isSelected }) => {
-  // const ROWS = 5; // Fixed number of rows
-
-  // Define the relative weights for a rotated normal distribution
-  const distributionPattern = [1, 3, 5, 3, 1];
-  const totalWeight = distributionPattern.reduce((sum, weight) => sum + weight, 0);
-
-  // Calculate the exact number of items per row
-  let itemsPerRow = distributionPattern.map((weight) =>
-    Math.floor((weight / totalWeight) * laws.length),
-  );
-
-  // Distribute any remaining items (due to rounding errors)
-  let remainingItems = laws.length - itemsPerRow.reduce((sum, count) => sum + count, 0);
-  for (let i = 0; remainingItems > 0; i++) {
-    itemsPerRow[2 - Math.abs(2 - i)]++; // Start filling from the middle row outward
-    remainingItems--;
-  }
-
-  // Split the `gemLaws` array into rows based on the calculated distribution
-  let currentIndex = 0;
-  const rows = itemsPerRow.map((count) => {
-    const rowItems = laws.slice(currentIndex, currentIndex + count);
-    currentIndex += count;
-    return rowItems;
-  });
-
-  return (
-    <div className='flex flex-col space-y-2'>
-      {rows.map((row, rowIndex) => (
-        <div key={rowIndex} className='flex space-x-2'>
-          {row.map((item, itemIndex) => (
-            <div
-              key={itemIndex}
-              className={`${
-                isSelected ? 'bg-green-50' : 'bg-green-400'
-              } size-4  rounded-full w-5 h-5`}
-            />
-          ))}
-        </div>
-      ))}
-    </div>
-  );
-};
-
-{/*
-  Path of the first circle... not sure if this is a good way to go about it. 
-   <svg width="332" height="332" viewBox="1.5 0.5 332 332">
-            <path
-            className='shadow-card'
-            d="M265,33 
-            A165.5,165.5 0 1 0 265,300"
-            fill="#f8fbf8"
-            stroke="#f8fbf8"
-            />
-            </svg>
-  */}
