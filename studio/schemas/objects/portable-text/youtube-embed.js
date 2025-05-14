@@ -1,7 +1,7 @@
 import { PlayIcon } from '@sanity/icons';
 import { defineField, defineType } from 'sanity';
 
-import { YouTubePreview } from './YouTubePreview';
+import { YouTubePreview } from '../../../components/YouTubePreview';
 
 export const youtube = defineType({
   name: 'youtube',

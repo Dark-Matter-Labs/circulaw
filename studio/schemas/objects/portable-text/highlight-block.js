@@ -1,21 +1,20 @@
 import { CgInternal } from 'react-icons/cg';
 
-import { GrayBoxDropDown } from '../../components/graybox-dropdown';
+import { GrayBox } from '../../../components/graybox';
 
 // rename
 export default {
-  title: 'Gray Box dropdown',
-  name: 'dropDownHighlight',
+  title: 'Gray Box',
+  name: 'highlightBlock',
   type: 'object',
-  description: 'Gebruik dit voor tekst die je wil benadrukken',
   fields: [
     {
-      title: 'Kader highlight Titel',
+      title: 'Kader secundaire info Title',
       name: 'title',
       type: 'string',
     },
     {
-      title: 'Kader highlight PT',
+      title: 'Kader secundaire PT',
       name: 'content',
       type: 'array',
       of: [
@@ -78,6 +77,6 @@ export default {
     },
   },
   components: {
-    preview: GrayBoxDropDown,
+    preview: GrayBox,
   },
 };
