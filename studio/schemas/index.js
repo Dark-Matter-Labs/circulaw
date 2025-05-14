@@ -1,8 +1,4 @@
 import aboutPage from './documents/about-page';
-import accordionDropdown from './objects/about-page/accordion-dropdown';
-import accordionDropdownContent from './objects/about-page/accordion-dropdown-content';
-import intro from './objects/about-page/intro';
-import cta from './objects/about-page/cta';
 // EU LAW
 import euCircularEconomyTab from './documents/eu/eu-circular-economy-tab';
 import euEuropeTab from './documents/eu/eu-europe-tab';
@@ -22,6 +18,10 @@ import newsItem from './documents/news-item';
 import partners from './documents/partners';
 import siteConfig from './documents/site-config';
 import teamMember from './documents/team-member';
+import accordionDropdown from './objects/about-page/accordion-dropdown';
+import accordionDropdownContent from './objects/about-page/accordion-dropdown-content';
+import cta from './objects/about-page/cta';
+import intro from './objects/about-page/intro';
 import title from './objects/about-page/title';
 import twoColumnSection from './objects/about-page/two-column-section';
 import euLawSection from './objects/eu-law-section';

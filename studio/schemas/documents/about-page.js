@@ -1,6 +1,5 @@
 import { FcAbout } from 'react-icons/fc';
 
-
 import { contentArray } from '../../utils/portable-text-arrays';
 
 export default {
@@ -55,7 +54,16 @@ export default {
       name: 'content',
       type: 'array',
       group: 'editableContent',
-      of: [{ type: 'dropDownHighlight' }, { type: 'title' }, { type: 'twoColumnSection' }, { type:'accordionDropdown' }, {type: 'intro'}, {type: 'youtube'}, { type: 'imageBlock' }, { type: 'cta'}],
+      of: [
+        { type: 'dropDownHighlight' },
+        { type: 'title' },
+        { type: 'twoColumnSection' },
+        { type: 'accordionDropdown' },
+        { type: 'intro' },
+        { type: 'youtube' },
+        { type: 'imageBlock' },
+        { type: 'cta' },
+      ],
     },
     {
       title: 'Meta Page Title',

@@ -1,12 +1,13 @@
-import { AiOutlineHighlight } from "react-icons/ai"
-import Highlight from "../../../components/highlight"
+import { AiOutlineHighlight } from 'react-icons/ai';
+
+import Highlight from '../../../components/highlight';
 
 export default {
-    title: 'Intro',
-    name: 'intro',
-    type: 'object',
-    fields: [
-        {
+  title: 'Intro',
+  name: 'intro',
+  type: 'object',
+  fields: [
+    {
       title: 'Intro text',
       name: 'introText',
       type: 'array',
@@ -32,5 +33,5 @@ export default {
         },
       ],
     },
-    ],
-}
+  ],
+};

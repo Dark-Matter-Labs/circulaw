@@ -61,15 +61,13 @@ export const contentArray = [
 ];
 
 export const simpleContentArray = [
-   {
+  {
     type: 'block',
     lists: [
       { title: 'Bullet', value: 'bullet' },
       { title: 'Number', value: 'number' },
     ],
-    styles: [
-      { title: 'normal', value: 'normal' },
-    ],
+    styles: [{ title: 'normal', value: 'normal' }],
     marks: {
       decorators: [
         { title: 'Strong', value: 'strong' },
@@ -109,7 +107,4 @@ export const simpleContentArray = [
       ],
     },
   },
-]
-
-
-
+];
