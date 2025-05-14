@@ -1,7 +1,6 @@
 'use client';
 
-import Link from 'next/link';
-
+import Pagination from '@/components/about-page/pagination';
 import { InlineImageComponent, YTComponent } from '@/lib/portable-text/portable-text-types';
 
 import Header from '../headers';
@@ -26,11 +25,8 @@ export default function AboutPageComponent({ data }) {
   return (
     <div>
       <Header title={data?.pageTitle} imageURL='/big-decoration.png' bgColor='bg-green-500' />
-      <div className='global-margin mt-10 flex flex-row items-center justify-between px-8'>
-        <Link href='/'>Left Arrow</Link>
-        <Link href='/'>Right Arrow</Link>
-      </div>
-      <div className='global-margin mt-32 flex flex-col gap-x-8 pb-8 text-cl-black'>
+      <Pagination pages={data.pages} />
+      <div className='global-margin mt-32 flex flex-col gap-x-8 text-cl-black'>
         {data.content.map((item, index) => {
           // Get the component based on `_type`
           const Component = componentMap[item._type];
@@ -46,6 +42,9 @@ export default function AboutPageComponent({ data }) {
           // If no matching component, render a fallback or nothing
           return null;
         })}
+      </div>
+      <div className='my-10'>
+        <Pagination pages={data.pages} />
       </div>
     </div>
   );
