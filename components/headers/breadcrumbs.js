@@ -7,7 +7,7 @@ export default function Breadcrumb({ pageType }) {
   const paths = usePathname();
   const pathNames = paths.split('/').filter((path) => path && path !== 'over');
   const router = useRouter();
-  const isMobile = window.innerWidth <= 640;
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 640;
 
   if (pageType === 'instrument' || isMobile) {
     return (

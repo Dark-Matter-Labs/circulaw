@@ -1,4 +1,3 @@
-
 import NewButton from '@/components/shared/new-button';
 import TitleDecorator from '@/components/title-decorator';
 
