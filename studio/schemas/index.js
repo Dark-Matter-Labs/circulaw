@@ -1,6 +1,8 @@
 import aboutPage from './documents/about-page';
 import accordionDropdown from './objects/about-page/accordion-dropdown';
 import accordionDropdownContent from './objects/about-page/accordion-dropdown-content';
+import intro from './objects/about-page/intro';
+import cta from './objects/about-page/cta';
 // EU LAW
 import euCircularEconomyTab from './documents/eu/eu-circular-economy-tab';
 import euEuropeTab from './documents/eu/eu-europe-tab';
@@ -71,6 +73,8 @@ export const schemaTypes = [
   twoColumnSection,
   accordionDropdown,
   accordionDropdownContent,
+  intro,
+  cta,
 
   // SHARED OBJECTS
   dropDownHighlight,

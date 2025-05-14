@@ -1,8 +1,5 @@
-import { AiOutlineHighlight } from 'react-icons/ai';
 import { FcAbout } from 'react-icons/fc';
 
-import Highlight from '../../components/highlight';
-// import { orderRankField } from '@sanity/orderable-document-list';
 
 import { contentArray } from '../../utils/portable-text-arrays';
 
@@ -54,46 +51,11 @@ export default {
       },
     },
     {
-      title: 'Subtitle',
-      name: 'subTitle',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-      group: 'editableContent',
-      description: 'this will display on top of the title in the page',
-    },
-    {
-      title: 'Intro text',
-      name: 'introText',
-      type: 'array',
-      validation: (Rule) => Rule.required(),
-      group: 'editableContent',
-      of: [
-        {
-          type: 'block',
-          styles: [{ title: 'normal', value: 'normal' }],
-          marks: {
-            decorators: [
-              {
-                title: 'Highlight',
-                value: 'highlight',
-                blockEditor: {
-                  render: Highlight,
-                  icon: AiOutlineHighlight,
-                },
-              },
-            ],
-            annotations: [],
-          },
-          lists: [],
-        },
-      ],
-    },
-    {
       title: 'Content',
       name: 'content',
       type: 'array',
       group: 'editableContent',
-      of: [{ type: 'dropDownHighlight' }, { type: 'title' }, { type: 'twoColumnSection' }, { type:'accordionDropdown' }],
+      of: [{ type: 'dropDownHighlight' }, { type: 'title' }, { type: 'twoColumnSection' }, { type:'accordionDropdown' }, {type: 'intro'}, {type: 'youtube'}, { type: 'imageBlock' }, { type: 'cta'}],
     },
     {
       title: 'Meta Page Title',
