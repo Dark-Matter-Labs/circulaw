@@ -78,13 +78,5 @@ export default {
       type: 'string',
       description: 'SEO',
     },
-    {
-      title: 'Copy',
-      name: 'aboutPageContent',
-      type: 'array',
-      description:
-        'Voer hier de tekst in (maak gebruik van voorgestelde subkoppen, alinea-indeling,  enz.).',
-      of: [...contentArray],
-    },
   ],
 };
