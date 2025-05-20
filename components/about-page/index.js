@@ -7,9 +7,9 @@ import Header from '../headers';
 import AccordionDropdown from './content/accordion-dropdown';
 import Cta from './content/cta';
 import Intro from './content/intro';
+import Timeline from './content/timeline';
 import AboutPageTitle from './content/title';
 import TwoColumnSection from './content/two-column-section';
-import Timeline from './content/timeline';
 
 // Map of components based on `_type`
 const componentMap = {
@@ -20,7 +20,7 @@ const componentMap = {
   accordionDropdown: AccordionDropdown,
   imageBlock: InlineImageComponent,
   cta: Cta,
-  timeline: Timeline
+  timeline: Timeline,
 };
 
 export default function AboutPageComponent({ data }) {

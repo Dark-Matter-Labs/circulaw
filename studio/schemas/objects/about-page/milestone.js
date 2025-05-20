@@ -1,4 +1,5 @@
 import { GoMilestone } from 'react-icons/go';
+
 import HighlightLargeText from '../../../components/highlight-large-text';
 
 export default {
@@ -18,8 +19,7 @@ export default {
       title: 'Year',
       name: 'year',
       type: 'number',
-      validation: (Rule) =>
-        Rule.min(1900).max(new Date().getFullYear()).integer(),
+      validation: (Rule) => Rule.min(1900).max(new Date().getFullYear()).integer(),
     },
     {
       title: 'Month',
@@ -42,7 +42,7 @@ export default {
         ],
       },
     },
-     {
+    {
       title: 'Description',
       name: 'description',
       type: 'array',

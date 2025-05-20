@@ -1,5 +1,4 @@
 import aboutPage from './documents/about-page';
-import timeline from './objects/about-page/timeline';
 // EU LAW
 import euCircularEconomyTab from './documents/eu/eu-circular-economy-tab';
 import euEuropeTab from './documents/eu/eu-europe-tab';
@@ -11,8 +10,6 @@ import instrument from './documents/instruments/instrument';
 import productChain from './documents/instruments/product-chain';
 import simpleThema from './documents/instruments/simple-thema';
 import thema from './documents/instruments/thema';
-// MODEL TEXTS
-import milestone from './objects/about-page/milestone';
 import modelText from './documents/modeltexts/model-text';
 import pillar from './documents/modeltexts/pillar';
 import newsItem from './documents/news-item';
@@ -23,6 +20,9 @@ import accordionDropdown from './objects/about-page/accordion-dropdown';
 import accordionDropdownContent from './objects/about-page/accordion-dropdown-content';
 import cta from './objects/about-page/cta';
 import intro from './objects/about-page/intro';
+// MODEL TEXTS
+import milestone from './objects/about-page/milestone';
+import timeline from './objects/about-page/timeline';
 import title from './objects/about-page/title';
 import twoColumnSection from './objects/about-page/two-column-section';
 import euLawSection from './objects/eu-law-section';

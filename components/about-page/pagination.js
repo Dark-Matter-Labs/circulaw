@@ -20,23 +20,20 @@ export default function Pagination({ pages }) {
   const nextPage = pages[nextPageIndex];
 
   return (
-    <div className="global-margin mt-10 flex flex-row items-center justify-between px-8">
+    <div className='global-margin mt-10 flex flex-row items-center justify-between px-8'>
       {/* Render the previous link */}
       <Link
         href={previousPage.href}
-        className="p-base flex flex-row text-black hover:text-green-400"
+        className='p-base flex flex-row text-black hover:text-green-400'
       >
         <IconChevronLeft />
-        <span className="p-base-semibold">Vorige:&nbsp;</span>
+        <span className='p-base-semibold'>Vorige:&nbsp;</span>
         {previousPage.name}
       </Link>
 
       {/* Render the next link */}
-      <Link
-        href={nextPage.href}
-        className="flex flex-row text-green-500 hover:text-green-400"
-      >
-        <span className="p-base-semibold">Volgende:&nbsp;</span>
+      <Link href={nextPage.href} className='flex flex-row text-green-500 hover:text-green-400'>
+        <span className='p-base-semibold'>Volgende:&nbsp;</span>
         {nextPage.name} <IconChevronRight />
       </Link>
     </div>
