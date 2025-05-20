@@ -2,6 +2,7 @@ import { PortableText } from 'next-sanity';
 
 export default function Intro({ data }) {
   return (
+    <div className='mb-[120px]'>
     <PortableText
       value={data.introText}
       components={{
@@ -13,5 +14,6 @@ export default function Intro({ data }) {
         },
       }}
     />
+    </div>
   );
 }
