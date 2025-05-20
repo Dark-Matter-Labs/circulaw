@@ -1,4 +1,5 @@
 import aboutPage from './documents/about-page';
+import timeline from './objects/about-page/timeline';
 // EU LAW
 import euCircularEconomyTab from './documents/eu/eu-circular-economy-tab';
 import euEuropeTab from './documents/eu/eu-europe-tab';
@@ -11,7 +12,7 @@ import productChain from './documents/instruments/product-chain';
 import simpleThema from './documents/instruments/simple-thema';
 import thema from './documents/instruments/thema';
 // MODEL TEXTS
-import milestone from './documents/milestone';
+import milestone from './objects/about-page/milestone';
 import modelText from './documents/modeltexts/model-text';
 import pillar from './documents/modeltexts/pillar';
 import newsItem from './documents/news-item';
@@ -69,6 +70,7 @@ export const schemaTypes = [
   aboutPage,
   teamMember,
   milestone,
+  timeline,
   title,
   twoColumnSection,
   accordionDropdown,

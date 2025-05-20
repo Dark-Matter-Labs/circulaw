@@ -85,12 +85,6 @@ export const Structure = (S, context) =>
                     .title('Team members')
                     .filter('_type == "teamMember"'),
                 ),
-              S.listItem()
-                .title('Timeline updates')
-                .icon(IoCalendarOutline)
-                .child(
-                  S.documentList('milestone').title('Milestones').filter('_type == "milestone"'),
-                ),
             ]),
         ),
       orderableDocumentListDeskItem({

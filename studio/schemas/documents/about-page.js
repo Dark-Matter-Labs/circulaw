@@ -63,6 +63,7 @@ export default {
         { type: 'youtube' },
         { type: 'imageBlock' },
         { type: 'cta' },
+        { type: 'timeline' },
       ],
     },
     {

@@ -9,6 +9,7 @@ import Cta from './content/cta';
 import Intro from './content/intro';
 import AboutPageTitle from './content/title';
 import TwoColumnSection from './content/two-column-section';
+import Timeline from './content/timeline';
 
 // Map of components based on `_type`
 const componentMap = {
@@ -19,6 +20,7 @@ const componentMap = {
   accordionDropdown: AccordionDropdown,
   imageBlock: InlineImageComponent,
   cta: Cta,
+  timeline: Timeline
 };
 
 export default function AboutPageComponent({ data }) {
