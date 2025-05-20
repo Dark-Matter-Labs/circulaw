@@ -3,9 +3,11 @@ import TitleDecorator from '@/components/title-decorator';
 
 export default function Cta({ data }) {
   return (
-    <div className='mb-[60px] sm:mb-[120px] flex flex-col sm:flex-row gap-x-[160px] rounded-cl bg-green-100 px-6 sm:px-16 py-[40px] sm:py-14'>
-      <div className='max-w-[350px] mb-4 sm:mb-0'>
-        <h3 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-500'>{data?.title}</h3>
+    <div className='mb-[60px] flex flex-col gap-x-[160px] rounded-cl bg-green-100 px-6 py-[40px] sm:mb-[120px] sm:flex-row sm:px-16 sm:py-14'>
+      <div className='mb-4 max-w-[350px] sm:mb-0'>
+        <h3 className='heading-3xl-semibold sm:heading-5xl-semibold text-green-500'>
+          {data?.title}
+        </h3>
         <div className='mb-2'>
           <TitleDecorator width='w-1/4' colour='bg-green-500' />
         </div>

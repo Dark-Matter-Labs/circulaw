@@ -20,26 +20,30 @@ export default function Pagination({ pages, position }) {
 
   return (
     <div
-      className={`${position === 'top' ? 'mt-4 sm:mt-10' : ''} global-margin flex flex-row gap-x-8 items-center justify-between sm:px-8`}
+      className={`${position === 'top' ? 'mt-4 sm:mt-10' : ''} global-margin flex flex-row items-center justify-between gap-x-8 sm:px-8`}
     >
       {/* Render the previous link */}
-        <Link
-          href={previousPage.href}
-          className='p-2xs sm:p-base flex flex-row text-black hover:text-green-400 items-center min-w-0'
-        >
-          <IconChevronLeft />
-          <span className='p-2xs-semibold sm:p-base-semibold whitespace-nowrap'>Vorige:&nbsp;</span>
-          <span className="truncate whitespace-nowrap overflow-hidden max-w-[100px] sm:max-w-none">{previousPage.name}</span>
-        </Link>
+      <Link
+        href={previousPage.href}
+        className='p-2xs sm:p-base flex min-w-0 flex-row items-center text-black hover:text-green-400'
+      >
+        <IconChevronLeft />
+        <span className='p-2xs-semibold sm:p-base-semibold whitespace-nowrap'>Vorige:&nbsp;</span>
+        <span className='max-w-[100px] overflow-hidden truncate whitespace-nowrap sm:max-w-none'>
+          {previousPage.name}
+        </span>
+      </Link>
 
-        <Link
-          href={nextPage.href}
-          className='p-2xs sm:p-base flex flex-row text-green-500 hover:text-green-400 items-center min-w-0'
-        >
-          <span className='p-2xs-semibold sm:p-base-semibold whitespace-nowrap'>Volgende:&nbsp;</span>
-          <span className="truncate whitespace-nowrap overflow-hidden max-w-[100px] sm:max-w-none">{nextPage.name}</span>
-          <IconChevronRight />
-        </Link>
+      <Link
+        href={nextPage.href}
+        className='p-2xs sm:p-base flex min-w-0 flex-row items-center text-green-500 hover:text-green-400'
+      >
+        <span className='p-2xs-semibold sm:p-base-semibold whitespace-nowrap'>Volgende:&nbsp;</span>
+        <span className='max-w-[100px] overflow-hidden truncate whitespace-nowrap sm:max-w-none'>
+          {nextPage.name}
+        </span>
+        <IconChevronRight />
+      </Link>
     </div>
   );
 }
