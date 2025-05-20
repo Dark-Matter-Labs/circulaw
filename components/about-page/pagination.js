@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 
-export default function Pagination({ pages }) {
+export default function Pagination({ pages, position }) {
   const pathname = usePathname();
 
   // Find the current page index based on the current URL
@@ -19,7 +19,9 @@ export default function Pagination({ pages }) {
   const nextPage = pages[nextPageIndex];
 
   return (
-    <div className='global-margin mt-10 flex flex-row items-center justify-between px-8'>
+    <div
+      className={`${position === 'top' ? 'mt-10' : ''} global-margin flex flex-row items-center justify-between px-8`}
+    >
       {/* Render the previous link */}
       <Link
         href={previousPage.href}

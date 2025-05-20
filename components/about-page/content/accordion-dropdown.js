@@ -8,7 +8,7 @@ import { aboutPageReducedPortableTextComponents } from '../../../lib/portable-te
 
 export default function AccordionDropdown({ data }) {
   return (
-    <div className='my-32'>
+    <div className='mb-[120px]'>
       <Disclosure>
         {({ open }) => (
           <>

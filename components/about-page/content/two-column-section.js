@@ -6,7 +6,7 @@ import { aboutPageReducedPortableTextComponents } from '../../../lib/portable-te
 
 export default function TwoColumnSection({ data }) {
   return (
-    <div className='grid grid-cols-2 gap-x-8'>
+    <div className='mb-[120px] grid grid-cols-2 gap-x-8'>
       <div className='flex max-w-[500px] flex-col'>
         <div className='mb-2'>
           <h3 className='heading-3xl-semibold text-green-500'>{data?.leftColumnTitle}</h3>

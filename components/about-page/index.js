@@ -27,8 +27,8 @@ export default function AboutPageComponent({ data }) {
   return (
     <div>
       <Header title={data?.pageTitle} imageURL='/big-decoration.png' bgColor='bg-green-500' />
-      <Pagination pages={data.pages} />
-      <div className='global-margin mt-32 flex flex-col gap-x-8 text-cl-black'>
+      <Pagination pages={data.pages} position='top' />
+      <div className='global-margin mt-[120px] flex flex-col gap-x-8 text-cl-black'>
         {data.content.map((item, index) => {
           // Get the component based on `_type`
           const Component = componentMap[item._type];
@@ -45,7 +45,7 @@ export default function AboutPageComponent({ data }) {
           return null;
         })}
       </div>
-      <div className='my-10'>
+      <div className='mb-10'>
         <Pagination pages={data.pages} />
       </div>
     </div>
