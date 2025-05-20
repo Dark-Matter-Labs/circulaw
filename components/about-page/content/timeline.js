@@ -39,7 +39,7 @@ export default function Timeline({ data }) {
   });
 
   return (
-    <div className='mb-[120px]'>
+    <div className='mb-[60px] sm:mb-[120px]'>
       <TabGroup defaultIndex={defaultIndex}>
         <TabList className='no-scrollbar mb-20 flex w-full flex-row justify-between gap-x-2 overflow-x-scroll'>
           {years.map((year, index) => (
@@ -47,7 +47,7 @@ export default function Timeline({ data }) {
               key={index}
               className={({ selected }) =>
                 [
-                  'heading-4xl-semibold border-y-2 border-orange-200 p-14 text-orange-300',
+                  'heading-2xl-semibold sm:heading-4xl-semibold border-y-2 border-orange-200 py-6 sm:py-[40px] px-[40px] sm:px-[60px] text-orange-300',
                   selected ? 'rounded-clSm border-none bg-orange-100' : '',
                 ].join(' ')
               }
@@ -61,7 +61,7 @@ export default function Timeline({ data }) {
             <TabPanel key={years[idx]}>
               <ul className='mb-12 flex flex-col gap-y-14'>
                 {group.milestones.map((item) => (
-                  <li key={item._key} className='flex flex-row items-center'>
+                  <li key={item._key} className='flex flex-col gap-y-1 sm:flex-row items-start sm:items-center'>
                     {item.typeOfMilestone === 'milestone' && (
                       <>
                         <div className='heading-2xl-semibold relative flex h-14 min-w-[150px] items-center rounded-clSm pl-4 text-orange-300'>
@@ -72,16 +72,16 @@ export default function Timeline({ data }) {
                             {item.month ? `${dutchMonths[item.month]} ` : ''}
                           </span>
                         </div>
-                        <div className='pl-12'>
+                        <div className='sm:pl-12'>
                           <PortableText
                             value={item.description}
                             components={{
                               block: {
-                                normal: ({ children }) => <p className='heading-2xl'>{children}</p>,
+                                normal: ({ children }) => <p className='p-base sm:heading-2xl'>{children}</p>,
                               },
                               marks: {
                                 highlight: ({ children }) => (
-                                  <span className='heading-3xl-semibold'>{children}</span>
+                                  <span className='heading-2xl-semibold sm:heading-3xl-semibold'>{children}</span>
                                 ),
                               },
                             }}
@@ -93,23 +93,23 @@ export default function Timeline({ data }) {
                 ))}
               </ul>
               {group.aggregateMilestones.length > 0 && (
-                <ul className='w-2/3 flex-shrink divide-y-2 divide-orange-200 border-y-2 border-orange-200'>
+                <ul className='sm:w-2/3 flex-shrink divide-y-2 divide-orange-200 border-y-2 border-orange-200'>
                   {group.aggregateMilestones.map((item, index) => (
                     <li key={index} className='flex flex-row items-center'>
                       {item.typeOfMilestone === 'aggregateMilestone' && (
-                        <div className='flex flex-row items-center justify-start py-8'>
-                          <h3 className='heading-2xl-semibold mr-4 text-orange-300'>
+                        <div className='flex flex-col sm:flex-row items-start sm:items-center justify-start py-8'>
+                          <h3 className='heading-2xl-semibold sm:mr-4 text-orange-300'>
                             {item.title}:
                           </h3>
                           <PortableText
                             value={item.description}
                             components={{
                               block: {
-                                normal: ({ children }) => <p className='heading-2xl'>{children}</p>,
+                                normal: ({ children }) => <p className='p-base sm:heading-2xl'>{children}</p>,
                               },
                               marks: {
                                 highlight: ({ children }) => (
-                                  <span className='heading-3xl-semibold'>{children}</span>
+                                  <span className='heading-2xl-semibold sm:heading-3xl-semibold'>{children}</span>
                                 ),
                               },
                             }}
