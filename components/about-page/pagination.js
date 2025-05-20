@@ -7,7 +7,6 @@ import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 
 export default function Pagination({ pages }) {
   const pathname = usePathname();
-  console.log(pathname, 'pathname');
 
   // Find the current page index based on the current URL
   const currentPageIndex = pages.findIndex((page) => page.href === pathname);
