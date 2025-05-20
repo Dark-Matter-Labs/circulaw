@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
+
 import { PortableText } from 'next-sanity';
 
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
@@ -21,6 +23,8 @@ const dutchMonths = [
 ];
 
 export default function Timeline({ data }) {
+  const tabListRef = useRef(null);
+
   const years = Array.from(new Set(data.timelineItems.map((item) => item.year))).sort(
     (a, b) => a - b,
   );
@@ -38,10 +42,24 @@ export default function Timeline({ data }) {
     };
   });
 
+  useEffect(() => {
+    function scrollToRight() {
+      if (tabListRef.current) {
+        tabListRef.current.scrollLeft = tabListRef.current.scrollWidth;
+      }
+    }
+    scrollToRight(); // Initial scroll
+    window.addEventListener('resize', scrollToRight);
+    return () => window.removeEventListener('resize', scrollToRight);
+  }, []);
+
   return (
     <div className='mb-[60px] sm:mb-[120px]'>
       <TabGroup defaultIndex={defaultIndex}>
-        <TabList className='no-scrollbar mb-20 flex w-full flex-row justify-between gap-x-2 overflow-x-scroll'>
+        <TabList
+          ref={tabListRef}
+          className='no-scrollbar mb-20 flex w-full flex-row justify-between gap-x-2 overflow-x-scroll'
+        >
           {years.map((year, index) => (
             <Tab
               key={index}
