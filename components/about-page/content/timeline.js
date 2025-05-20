@@ -21,16 +21,22 @@ const dutchMonths = [
 ];
 
 export default function Timeline({ data }) {
-  console.log(data, 'timeline data');
   const years = Array.from(new Set(data.timelineItems.map((item) => item.year))).sort(
     (a, b) => a - b,
   );
 
   const defaultIndex = years.indexOf(2024) !== -1 ? years.indexOf(2024) : 0;
 
-  const itemsByYear = years.map((year) =>
-    data.timelineItems.filter((item) => item.year === year).sort((a, b) => a.month - b.month),
-  );
+  const itemsByYear = years.map((year) => {
+    const items = data.timelineItems
+      .filter((item) => item.year === year)
+      .sort((a, b) => a.month - b.month);
+
+    return {
+      milestones: items.filter((item) => item.typeOfMilestone === 'milestone'),
+      aggregateMilestones: items.filter((item) => item.typeOfMilestone === 'aggregateMilestone'),
+    };
+  });
 
   return (
     <div className='mb-[120px]'>
@@ -42,7 +48,7 @@ export default function Timeline({ data }) {
               className={({ selected }) =>
                 [
                   'heading-4xl-semibold border-y-2 border-orange-200 p-14 text-orange-300',
-                  selected ? 'rounded-clSm border-none bg-orange-100 text-orange-500' : '',
+                  selected ? 'rounded-clSm border-none bg-orange-100' : '',
                 ].join(' ')
               }
             >
@@ -51,37 +57,69 @@ export default function Timeline({ data }) {
           ))}
         </TabList>
         <TabPanels>
-          {itemsByYear.map((items, idx) => (
+          {itemsByYear.map((group, idx) => (
             <TabPanel key={years[idx]}>
-              <ul className='flex flex-col gap-y-14'>
-                {items.map((item) => (
-                  <li key={item._key} className='mb-6 flex flex-row items-center'>
-                    <div className='heading-2xl-semibold relative flex h-14 min-w-[150px] items-center rounded-clSm pl-4 text-orange-300'>
-                      {/* Background covers only first 10px */}
-                      <span className='absolute left-0 top-0 h-full w-12 rounded-clSm bg-orange-100' />
-                      {/* Text sits above the background */}
-                      <span className='relative z-10 pl-1'>
-                        {item.month ? `${dutchMonths[item.month]} ` : ''}
-                      </span>
-                    </div>
-                    <div className='pl-12'>
-                      <PortableText
-                        value={item.description}
-                        components={{
-                          block: {
-                            normal: ({ children }) => <p className='heading-2xl'>{children}</p>,
-                          },
-                          marks: {
-                            highlight: ({ children }) => (
-                              <span className='heading-3xl-semibold'>{children}</span>
-                            ),
-                          },
-                        }}
-                      />
-                    </div>
+              <ul className='mb-12 flex flex-col gap-y-14'>
+                {group.milestones.map((item) => (
+                  <li key={item._key} className='flex flex-row items-center'>
+                    {item.typeOfMilestone === 'milestone' && (
+                      <>
+                        <div className='heading-2xl-semibold relative flex h-14 min-w-[150px] items-center rounded-clSm pl-4 text-orange-300'>
+                          {/* Background covers only first 10px */}
+                          <span className='absolute left-0 top-0 h-full w-12 rounded-clSm bg-orange-100' />
+                          {/* Text sits above the background */}
+                          <span className='relative z-10 pl-1'>
+                            {item.month ? `${dutchMonths[item.month]} ` : ''}
+                          </span>
+                        </div>
+                        <div className='pl-12'>
+                          <PortableText
+                            value={item.description}
+                            components={{
+                              block: {
+                                normal: ({ children }) => <p className='heading-2xl'>{children}</p>,
+                              },
+                              marks: {
+                                highlight: ({ children }) => (
+                                  <span className='heading-3xl-semibold'>{children}</span>
+                                ),
+                              },
+                            }}
+                          />
+                        </div>
+                      </>
+                    )}
                   </li>
                 ))}
               </ul>
+              {group.aggregateMilestones.length > 0 && (
+                <ul className='w-2/3 flex-shrink divide-y-2 divide-orange-200 border-y-2 border-orange-200'>
+                  {group.aggregateMilestones.map((item, index) => (
+                    <li key={index} className='flex flex-row items-center'>
+                      {item.typeOfMilestone === 'aggregateMilestone' && (
+                        <div className='flex flex-row items-center justify-start py-8'>
+                          <h3 className='heading-2xl-semibold mr-4 text-orange-300'>
+                            {item.title}:
+                          </h3>
+                          <PortableText
+                            value={item.description}
+                            components={{
+                              block: {
+                                normal: ({ children }) => <p className='heading-2xl'>{children}</p>,
+                              },
+                              marks: {
+                                highlight: ({ children }) => (
+                                  <span className='heading-3xl-semibold'>{children}</span>
+                                ),
+                              },
+                            }}
+                          />
+                        </div>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </TabPanel>
           ))}
         </TabPanels>

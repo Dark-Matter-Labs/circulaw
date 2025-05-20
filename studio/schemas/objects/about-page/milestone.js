@@ -1,4 +1,5 @@
 import { GoMilestone } from 'react-icons/go';
+import { VscMilestone } from 'react-icons/vsc';
 
 import HighlightLargeText from '../../../components/highlight-large-text';
 
@@ -9,10 +10,25 @@ export default {
   icon: GoMilestone,
   fields: [
     {
+      title: 'Type of Milestone',
+      name: 'typeOfMilestone',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Milestone', value: 'milestone' },
+          { title: 'Aggregate Milestone', value: 'aggregateMilestone' },
+        ],
+        layout: 'radio',
+      },
+      validation: (Rule) => Rule.required(),
+      initialValue: 'milestone',
+    },
+    // Fields for both types
+    {
       title: 'Title',
       name: 'title',
       type: 'string',
-      description: 'the title of the milestone will not be shown',
+      description: 'The title of the milestone will not be shown',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -21,6 +37,7 @@ export default {
       type: 'number',
       validation: (Rule) => Rule.min(1900).max(new Date().getFullYear()).integer(),
     },
+    // Only show month for "milestone"
     {
       title: 'Month',
       name: 'month',
@@ -41,6 +58,7 @@ export default {
           { title: 'December', value: 12 },
         ],
       },
+      hidden: ({ parent }) => parent?.typeOfMilestone !== 'milestone',
     },
     {
       title: 'Description',
@@ -69,4 +87,29 @@ export default {
       ],
     },
   ],
+  preview: {
+    select: {
+      typeOfMilestone: 'typeOfMilestone',
+      title: 'title',
+      year: 'year',
+      month: 'month',
+      description: 'description',
+    },
+    prepare(selection) {
+      const { typeOfMilestone, title, year, month } = selection;
+      if (typeOfMilestone === 'aggregateMilestone') {
+        return {
+          title: `Aggregate: ${title}`,
+          subtitle: `Year: ${year}`,
+          media: VscMilestone,
+        };
+      }
+      // For "milestone"
+      return {
+        title: title,
+        subtitle: `Month: ${month || '-'} | Year: ${year}`,
+        media: GoMilestone,
+      };
+    },
+  },
 };
