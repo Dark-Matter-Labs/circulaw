@@ -10,6 +10,7 @@ import Intro from './content/intro';
 import Timeline from './content/timeline';
 import AboutPageTitle from './content/title';
 import TwoColumnSection from './content/two-column-section';
+import TiledImages from './content/tiled-images';
 
 // Map of components based on `_type`
 const componentMap = {
@@ -21,6 +22,7 @@ const componentMap = {
   imageBlock: InlineImageComponent,
   cta: Cta,
   timeline: Timeline,
+  tiledImages: TiledImages,
 };
 
 export default function AboutPageComponent({ data }) {

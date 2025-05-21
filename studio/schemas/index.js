@@ -1,4 +1,5 @@
 import aboutPage from './documents/about-page';
+import tiledImages from './objects/about-page/tiled-images';
 // EU LAW
 import euCircularEconomyTab from './documents/eu/eu-circular-economy-tab';
 import euEuropeTab from './documents/eu/eu-europe-tab';
@@ -77,6 +78,7 @@ export const schemaTypes = [
   accordionDropdownContent,
   intro,
   cta,
+  tiledImages,
 
   // SHARED OBJECTS
   dropDownHighlight,

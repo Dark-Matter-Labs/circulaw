@@ -64,6 +64,7 @@ export default {
         { type: 'imageBlock' },
         { type: 'cta' },
         { type: 'timeline' },
+        { type: 'tiledImages' },
       ],
     },
     {
