@@ -66,6 +66,7 @@ export default {
         { type: 'timeline' },
         { type: 'tiledImages' },
         { type: 'team' },
+        { type: 'partnersSection' },
       ],
     },
     {

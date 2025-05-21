@@ -21,6 +21,7 @@ import cta from './objects/about-page/cta';
 import intro from './objects/about-page/intro';
 // MODEL TEXTS
 import milestone from './objects/about-page/milestone';
+import partnersSection from './objects/about-page/partners-section';
 import team from './objects/about-page/team';
 import teamMember from './objects/about-page/team-member';
 import tiledImages from './objects/about-page/tiled-images';
@@ -81,6 +82,7 @@ export const schemaTypes = [
   intro,
   cta,
   tiledImages,
+  partnersSection,
 
   // SHARED OBJECTS
   dropDownHighlight,
