@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
@@ -7,7 +9,17 @@ export default function Breadcrumb({ pageType }) {
   const paths = usePathname();
   const pathNames = paths.split('/').filter((path) => path && path !== 'over');
   const router = useRouter();
-  const isMobile = window.innerWidth <= 640;
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 640);
+    }
+    handleResize(); // Set initial value
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   if (pageType === 'instrument' || isMobile) {
     return (
