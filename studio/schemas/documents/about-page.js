@@ -65,6 +65,7 @@ export default {
         { type: 'cta' },
         { type: 'timeline' },
         { type: 'tiledImages' },
+        { type: 'team' },
       ],
     },
     {

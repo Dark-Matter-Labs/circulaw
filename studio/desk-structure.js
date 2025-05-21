@@ -76,15 +76,6 @@ export const Structure = (S, context) =>
                 .child(
                   S.documentList('aboutPage').title('About Pages').filter('_type == "aboutPage"'),
                 ),
-              S.divider(),
-              S.listItem()
-                .title('Team members')
-                .icon(RiTeamLine)
-                .child(
-                  S.documentList('teamMember')
-                    .title('Team members')
-                    .filter('_type == "teamMember"'),
-                ),
             ]),
         ),
       orderableDocumentListDeskItem({

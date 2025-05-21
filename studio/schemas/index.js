@@ -15,13 +15,14 @@ import pillar from './documents/modeltexts/pillar';
 import newsItem from './documents/news-item';
 import partners from './documents/partners';
 import siteConfig from './documents/site-config';
-import teamMember from './documents/team-member';
 import accordionDropdown from './objects/about-page/accordion-dropdown';
 import accordionDropdownContent from './objects/about-page/accordion-dropdown-content';
 import cta from './objects/about-page/cta';
 import intro from './objects/about-page/intro';
 // MODEL TEXTS
 import milestone from './objects/about-page/milestone';
+import team from './objects/about-page/team';
+import teamMember from './objects/about-page/team-member';
 import tiledImages from './objects/about-page/tiled-images';
 import timeline from './objects/about-page/timeline';
 import title from './objects/about-page/title';
@@ -70,6 +71,7 @@ export const schemaTypes = [
   // ABOUT PAGE OBJECTS and DOCUMENTS
   aboutPage,
   teamMember,
+  team,
   milestone,
   timeline,
   title,

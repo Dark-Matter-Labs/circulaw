@@ -7,6 +7,7 @@ import Header from '../headers';
 import AccordionDropdown from './content/accordion-dropdown';
 import Cta from './content/cta';
 import Intro from './content/intro';
+import Team from './content/team';
 import TiledImages from './content/tiled-images';
 import Timeline from './content/timeline';
 import AboutPageTitle from './content/title';
@@ -23,6 +24,7 @@ const componentMap = {
   cta: Cta,
   timeline: Timeline,
   tiledImages: TiledImages,
+  team: Team,
 };
 
 export default function AboutPageComponent({ data }) {
