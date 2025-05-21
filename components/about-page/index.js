@@ -7,10 +7,10 @@ import Header from '../headers';
 import AccordionDropdown from './content/accordion-dropdown';
 import Cta from './content/cta';
 import Intro from './content/intro';
+import TiledImages from './content/tiled-images';
 import Timeline from './content/timeline';
 import AboutPageTitle from './content/title';
 import TwoColumnSection from './content/two-column-section';
-import TiledImages from './content/tiled-images';
 
 // Map of components based on `_type`
 const componentMap = {

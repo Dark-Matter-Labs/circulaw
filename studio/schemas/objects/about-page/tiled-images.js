@@ -15,23 +15,23 @@ export default {
               name: 'caption',
               title: 'Caption',
               type: 'string',
-              validation: Rule => Rule.required().error('Caption is required'),
+              validation: (Rule) => Rule.required().error('Caption is required'),
             },
           ],
         },
       ],
-      validation: Rule =>
+      validation: (Rule) =>
         Rule.required()
           .min(3)
           .max(3)
           .error('You must provide exactly 3 images, each with a caption'),
     },
   ],
-    preview: {
+  preview: {
     prepare() {
-        return {
+      return {
         title: 'Tiled Images',
-        };
+      };
     },
-    },
+  },
 };

@@ -1,5 +1,4 @@
 import aboutPage from './documents/about-page';
-import tiledImages from './objects/about-page/tiled-images';
 // EU LAW
 import euCircularEconomyTab from './documents/eu/eu-circular-economy-tab';
 import euEuropeTab from './documents/eu/eu-europe-tab';
@@ -23,6 +22,7 @@ import cta from './objects/about-page/cta';
 import intro from './objects/about-page/intro';
 // MODEL TEXTS
 import milestone from './objects/about-page/milestone';
+import tiledImages from './objects/about-page/tiled-images';
 import timeline from './objects/about-page/timeline';
 import title from './objects/about-page/title';
 import twoColumnSection from './objects/about-page/two-column-section';
