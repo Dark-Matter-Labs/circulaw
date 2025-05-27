@@ -29,7 +29,6 @@ export default {
         'Voer de titel in. De titel komt terug in de slug (het deel van de URL na de domeinnaam - zichtbaar in de navigatie en footer)',
     },
     orderRankField({ type: 'aboutPage', newItemPosition: 'before' }),
-
     {
       title: 'Slug',
       name: 'slug',
@@ -69,6 +68,7 @@ export default {
         { type: 'team' },
         { type: 'partnersSection' },
         { type: 'mediaItems' },
+        { type: 'testimonials' },
       ],
     },
     {

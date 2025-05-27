@@ -14,6 +14,7 @@ import TiledImages from './content/tiled-images';
 import Timeline from './content/timeline';
 import AboutPageTitle from './content/title';
 import TwoColumnSection from './content/two-column-section';
+import Testimonials from './content/testimonials';
 
 // Map of components based on `_type`
 const componentMap = {
@@ -29,6 +30,7 @@ const componentMap = {
   team: Team,
   partnersSection: Partners,
   mediaItems: MediaItems,
+  testimonials: Testimonials
 };
 
 export default function AboutPageComponent({ data }) {
@@ -38,9 +40,7 @@ export default function AboutPageComponent({ data }) {
       <Pagination pages={data.pages} position='top' />
       <div className='global-margin mt-[60px] flex flex-col gap-x-8 text-cl-black sm:mt-[120px]'>
         {data.content.map((item, index) => {
-          // Get the component based on `_type`
           const Component = componentMap[item._type];
-          // If a matching component exists, render it
           if (Component) {
             return (
               <div key={index} className=''>
@@ -48,8 +48,6 @@ export default function AboutPageComponent({ data }) {
               </div>
             );
           }
-
-          // If no matching component, render a fallback or nothing
           return null;
         })}
       </div>

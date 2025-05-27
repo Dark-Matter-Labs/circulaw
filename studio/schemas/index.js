@@ -1,4 +1,6 @@
 import aboutPage from './documents/about-page';
+import testimonial from './objects/about-page/testimonial';
+import testimonials from './objects/about-page/testimonials';
 // EU LAW
 import euCircularEconomyTab from './documents/eu/eu-circular-economy-tab';
 import euEuropeTab from './documents/eu/eu-europe-tab';
@@ -87,6 +89,8 @@ export const schemaTypes = [
   partnersSection,
   mediaItem,
   mediaItems,
+  testimonial, 
+  testimonials, 
 
   // SHARED OBJECTS
   dropDownHighlight,
