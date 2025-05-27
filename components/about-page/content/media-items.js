@@ -6,7 +6,6 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react
 import { IconChevronDown } from '@tabler/icons-react';
 
 export default function MediaItems({ data }) {
-  console.log('Media items data:', data);
   return (
     <div className='mb-[60px] sm:mb-[120px]'>
       <Disclosure>
