@@ -120,7 +120,6 @@ export default function LearningLandingPage() {
               <h3 className='heading-2xl-semibold mb-4'>Hoelang duurt de e-learning?</h3>
               <p className='p-base'>Reken op 1-1,5 uur.</p>
             </div>
-          
 
             <div className='mb-6'>
               <h3 className='heading-2xl-semibold mb-4'>Ik heb nog een andere vraag…</h3>

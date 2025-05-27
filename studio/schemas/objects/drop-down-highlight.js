@@ -5,18 +5,18 @@ import { GrayBoxDropDown } from '../../components/graybox-dropdown';
 // rename
 export default {
   title: 'Gray Box dropdown',
-  name: 'greenBox',
+  name: 'dropDownHighlight',
   type: 'object',
   description: 'Gebruik dit voor tekst die je wil benadrukken',
   fields: [
     {
       title: 'Kader highlight Titel',
-      name: 'greenBoxTitle',
+      name: 'title',
       type: 'string',
     },
     {
       title: 'Kader highlight PT',
-      name: 'greenBoxPText',
+      name: 'content',
       type: 'array',
       of: [
         {
@@ -74,7 +74,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'greenBoxTitle',
+      title: 'title',
     },
   },
   components: {
