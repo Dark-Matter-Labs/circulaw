@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { IconBrandLinkedinFilled, IconPlus } from '@tabler/icons-react';
+import { IconBrandLinkedinFilled, IconMinus, IconPlus } from '@tabler/icons-react';
 
 export default function Team({ data }) {
   const [showTeamMembers, setShowTeamMembers] = useState('');
@@ -14,7 +14,11 @@ export default function Team({ data }) {
   const strategy = data.teamMembers.filter((member) => member.department === 'strategy');
 
   function handleClick(department) {
-    setShowTeamMembers(department);
+    if (department === showTeamMembers) {
+      setShowTeamMembers('');
+    } else {
+      setShowTeamMembers(department);
+    }
   }
 
   return (
@@ -96,7 +100,11 @@ export default function Team({ data }) {
           onClick={() => handleClick('legal')}
           className='mr-10 mt-3 flex size-10 items-center justify-center place-self-end rounded-full bg-orange-100'
         >
-          <IconPlus className='text-orange-300' />
+          {showTeamMembers !== 'legal' ? (
+            <IconPlus className='text-orange-300' />
+          ) : (
+            <IconMinus className='text-orange-300' />
+          )}
         </button>
       </div>
       <div className='heading-2xl sm:heading-4xl absolute right-10 top-40 max-w-[120px] text-green-500 sm:right-28 sm:top-52 sm:max-w-none'>
@@ -105,7 +113,11 @@ export default function Team({ data }) {
           onClick={() => handleClick('developers')}
           className='ml-10 mt-3 flex size-10 items-center justify-center place-self-start rounded-full bg-orange-100'
         >
-          <IconPlus className='text-orange-300' />
+          {showTeamMembers !== 'developers' ? (
+            <IconPlus className='text-orange-300' />
+          ) : (
+            <IconMinus className='text-orange-300' />
+          )}
         </button>
       </div>
       <div className='heading-2xl sm:heading-4xl absolute bottom-10 left-10 max-w-[190px] text-green-500 sm:bottom-20 sm:left-32 sm:max-w-none'>
@@ -113,7 +125,11 @@ export default function Team({ data }) {
           onClick={() => handleClick('strategy')}
           className='mr-20 mt-3 flex size-10 items-center justify-center place-self-end rounded-full bg-orange-100'
         >
-          <IconPlus className='text-orange-300' />
+          {showTeamMembers !== 'strategy' ? (
+            <IconPlus className='text-orange-300' />
+          ) : (
+            <IconMinus className='text-orange-300' />
+          )}
         </button>
         Het strategische team
       </div>
