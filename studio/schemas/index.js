@@ -19,6 +19,8 @@ import accordionDropdown from './objects/about-page/accordion-dropdown';
 import accordionDropdownContent from './objects/about-page/accordion-dropdown-content';
 import cta from './objects/about-page/cta';
 import intro from './objects/about-page/intro';
+import mediaItem from './objects/about-page/media-item';
+import mediaItems from './objects/about-page/media-items';
 // MODEL TEXTS
 import milestone from './objects/about-page/milestone';
 import partnersSection from './objects/about-page/partners-section';
@@ -83,6 +85,8 @@ export const schemaTypes = [
   cta,
   tiledImages,
   partnersSection,
+  mediaItem,
+  mediaItems,
 
   // SHARED OBJECTS
   dropDownHighlight,

@@ -1,7 +1,5 @@
 import { FcAbout } from 'react-icons/fc';
 
-import { contentArray } from '../../utils/portable-text-arrays';
-
 export default {
   title: 'About Pages',
   name: 'aboutPage',
@@ -67,6 +65,7 @@ export default {
         { type: 'tiledImages' },
         { type: 'team' },
         { type: 'partnersSection' },
+        { type: 'mediaItems' },
       ],
     },
     {

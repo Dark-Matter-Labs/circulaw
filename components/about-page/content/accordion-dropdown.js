@@ -19,11 +19,11 @@ export default function AccordionDropdown({ data }) {
                   : 'border-y-2' // Full border when closed
               }`}
             >
-              <h4 className='heading-2xl-semibold sm:heading-3xl-semibold text-left'>
+              <h4 className='heading-2xl-semibold sm:heading-4xl-semibold text-left'>
                 {data.title}
               </h4>
               <IconChevronDown
-                className={`h-6 w-6 text-black transition-transform ${
+                className={`size-8 text-black transition-transform ${
                   open ? 'rotate-180' : 'rotate-0'
                 }`}
               />
