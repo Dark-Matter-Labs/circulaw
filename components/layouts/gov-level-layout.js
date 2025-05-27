@@ -446,6 +446,22 @@ export default function GovLevelLayout({ ...props }) {
                 </>
               )}
 
+              {props.thema === 'biobased-isoleren' && (
+                <>
+                  {/* All regions =  */}
+                  <div className='absolute bottom-[8%] right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[33%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
+
+                  {/* Provincial */}
+                  <div className='absolute bottom-[55%] right-[20%] h-3 w-3 rounded-full bg-gray-100'></div>
+
+                  {/* Local */}
+                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
+                </>
+              )}
+
               {/* ALL Regions 
             <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
             <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
