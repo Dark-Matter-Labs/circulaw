@@ -16,5 +16,18 @@ export default {
       of: [{ type: 'accordionDropdownContent' }],
       validation: (Rule) => Rule.required(),
     },
+    {
+      name: 'design',
+      type: 'string',
+      title: 'Design',
+      description: 'Select the design for the accordion dropdown',
+      options: {
+        list: [
+          { title: 'Default', value: 'default' },
+          { title: 'Orange', value: 'orange' },
+        ],
+        layout: 'radio',
+      },
+    },
   ],
 };
