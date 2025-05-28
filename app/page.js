@@ -17,7 +17,6 @@ export default async function Page() {
     query: HOME_PAGE_QUERY,
     tags: ['siteConfig', 'transitionAgenda', 'thema', 'newsItem', 'euLaw'],
   });
-  console.log(data)
   return (
     <>
       <div className=''>
