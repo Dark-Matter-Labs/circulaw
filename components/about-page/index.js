@@ -10,11 +10,11 @@ import Intro from './content/intro';
 import MediaItems from './content/media-items';
 import Partners from './content/partners';
 import Team from './content/team';
+import Testimonials from './content/testimonials';
 import TiledImages from './content/tiled-images';
 import Timeline from './content/timeline';
 import AboutPageTitle from './content/title';
 import TwoColumnSection from './content/two-column-section';
-import Testimonials from './content/testimonials';
 
 // Map of components based on `_type`
 const componentMap = {
@@ -30,7 +30,7 @@ const componentMap = {
   team: Team,
   partnersSection: Partners,
   mediaItems: MediaItems,
-  testimonials: Testimonials
+  testimonials: Testimonials,
 };
 
 export default function AboutPageComponent({ data }) {

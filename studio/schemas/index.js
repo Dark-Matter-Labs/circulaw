@@ -1,6 +1,4 @@
 import aboutPage from './documents/about-page';
-import testimonial from './objects/about-page/testimonial';
-import testimonials from './objects/about-page/testimonials';
 // EU LAW
 import euCircularEconomyTab from './documents/eu/eu-circular-economy-tab';
 import euEuropeTab from './documents/eu/eu-europe-tab';
@@ -28,6 +26,8 @@ import milestone from './objects/about-page/milestone';
 import partnersSection from './objects/about-page/partners-section';
 import team from './objects/about-page/team';
 import teamMember from './objects/about-page/team-member';
+import testimonial from './objects/about-page/testimonial';
+import testimonials from './objects/about-page/testimonials';
 import tiledImages from './objects/about-page/tiled-images';
 import timeline from './objects/about-page/timeline';
 import title from './objects/about-page/title';
@@ -89,8 +89,8 @@ export const schemaTypes = [
   partnersSection,
   mediaItem,
   mediaItems,
-  testimonial, 
-  testimonials, 
+  testimonial,
+  testimonials,
 
   // SHARED OBJECTS
   dropDownHighlight,
