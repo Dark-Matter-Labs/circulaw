@@ -15,6 +15,7 @@ import TiledImages from './content/tiled-images';
 import Timeline from './content/timeline';
 import AboutPageTitle from './content/title';
 import TwoColumnSection from './content/two-column-section';
+import Urgency from './content/urgency';
 
 // Map of components based on `_type`
 const componentMap = {
@@ -31,6 +32,7 @@ const componentMap = {
   partnersSection: Partners,
   mediaItems: MediaItems,
   testimonials: Testimonials,
+  urgency: Urgency,
 };
 
 export default function AboutPageComponent({ data }) {

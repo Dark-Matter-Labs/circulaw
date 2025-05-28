@@ -1,3 +1,5 @@
+import { simpleContentArray } from '../../../utils/portable-text-arrays';
+
 export default {
   title: 'Two Column Section',
   name: 'twoColumnSection',
@@ -13,7 +15,7 @@ export default {
       title: 'Left Column Content',
       name: 'leftColumnContent',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [...simpleContentArray],
       validation: (Rule) => Rule.required(),
     },
     {
@@ -26,7 +28,7 @@ export default {
       title: 'Right Column Content',
       name: 'rightColumnContent',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [...simpleContentArray],
       validation: (Rule) => Rule.required(),
     },
   ],

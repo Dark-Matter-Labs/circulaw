@@ -69,6 +69,7 @@ export default {
         { type: 'partnersSection' },
         { type: 'mediaItems' },
         { type: 'testimonials' },
+        { type: 'urgency' },
       ],
     },
     {

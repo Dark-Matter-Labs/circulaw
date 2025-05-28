@@ -32,6 +32,7 @@ import tiledImages from './objects/about-page/tiled-images';
 import timeline from './objects/about-page/timeline';
 import title from './objects/about-page/title';
 import twoColumnSection from './objects/about-page/two-column-section';
+import urgency from './objects/about-page/urgency-section';
 import euLawSection from './objects/eu-law-section';
 import faqItem from './objects/faq-item';
 import faqSection from './objects/faq-section';
@@ -91,6 +92,7 @@ export const schemaTypes = [
   mediaItems,
   testimonial,
   testimonials,
+  urgency,
 
   // SHARED OBJECTS
   dropDownHighlight,
