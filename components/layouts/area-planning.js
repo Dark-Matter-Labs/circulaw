@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import Image from 'next/image';
 
-import NewButton from '@/components/new-button';
+import NewButton from '@/components/shared/new-button';
 import headerImage from '@/public/Visual-waarin-de-fases-van-de-gebiedsontwikkeling-te-zien-zijn.svg';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { IconChevronDown, IconProgressBolt } from '@tabler/icons-react';
@@ -206,10 +206,11 @@ export default function AreaPlanningLayout() {
             <div className='w-full'>
               {/* Using an arbitrary aspect ratio for A4: 210 / 297 */}
               <div className='hidden aspect-[1788/1670] md:block'>
-                <iframe
+                <embed
                   src='/Gebiedsontwikkeling-Framework.pdf#zoom=44'
                   title='PDF Viewer'
                   className='h-full w-full border-0'
+                  type='application/pdf'
                 />
               </div>
               <Image

@@ -2,9 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { urlFor } from '@/lib/sanity';
-import { IconArrowRight } from '@tabler/icons-react';
+import newthemasvg from '@/public/new-thema-cta.svg';
 
-import CustomButton from '../custom-button';
+import NewButton from '../shared/new-button';
+import NewRoundButton from '../shared/new-round-button';
 
 export default function ThemaCard({ themaCards }) {
   return (
@@ -12,7 +13,7 @@ export default function ThemaCard({ themaCards }) {
       <div className='hidden sm:block'>
         <ul
           role='list'
-          className='max-w-8xl relative z-0 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-4 md:grid-cols-2 lg:grid-cols-4'
+          className='max-w-8xl relative z-0 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-4 md:grid-cols-2 lg:grid-cols-3'
         >
           {themaCards?.map((thema, id) => (
             <Link href={`/${thema.transitionAgenda}/${thema.slug}`} key={id}>
@@ -36,50 +37,27 @@ export default function ThemaCard({ themaCards }) {
                     </div>
                   )}
                 </div>
-                <div className='group flex h-full w-full flex-col bg-green-600 px-6 py-4'>
-                  <h3 className='heading-2xl-semibold pointer-events-none hidden text-gray-100 sm:inline'>
+                <div className='group flex h-full w-full flex-col bg-green-100 px-6 py-4'>
+                  <h3 className='heading-2xl-semibold pointer-events-none hidden text-cl-black sm:inline'>
                     {thema.themaName}
                   </h3>
-                  <p className='p-base pb-2 text-green-200'>{thema.count} instrumenten</p>
-                  <p className='p-base w-full text-gray-100'>{thema.homePageCardText}</p>
-                  <div className='flex flex-grow items-end justify-end'>
-                    <div className='flex h-12 w-12 items-center justify-center self-end rounded-full border-2 border-gray-200 bg-transparent text-gray-200 focus:bg-green-100 focus:outline-none focus:ring-2 focus:ring-white active:bg-green-300 group-hover:border-green-200 group-hover:bg-green-200 group-hover:text-green-600'>
-                      <IconArrowRight className='inline-block h-6 w-6' aria-hidden='true' />
-                    </div>
+                  <p className='p-base p-xs pb-2 text-green-500'>{thema.count} instrumenten</p>
+                  <p className='p-base w-full text-cl-black'>{thema.homePageCardText}</p>
+                  <div className='flex flex-grow items-end justify-start'>
+                    <NewRoundButton variant='orange' />
                   </div>
                 </div>
               </li>
             </Link>
           ))}
-          {themaCards[0].transitionAgenda !== 'bouw' && (
-            <li className='group h-[470px] w-full flex-grow rounded-cl border border-gray-200 bg-green-50'>
-              <Link href='/nieuwsbrief' className='h-full w-full'>
-                <div className='flex h-full w-full flex-grow flex-col justify-between p-8'>
-                  <h3 className='heading-2xl-semibold text-green-600'>Nieuwe thema’s</h3>
-                  <div>
-                    <p className='p-base pt-4 text-green-800'>
-                      Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
-                    </p>
-                    <p className='p-base text-grenn-800 pt-4'>
-                      Schrijf je in op onze nieuwsbrief en blijf op de hoogte van de laatste
-                      ontwikkelingen.
-                    </p>
-                  </div>
-                  <div className='flex justify-center'>
-                    <CustomButton color='darkGreenBG'>Houd me op de hoogte </CustomButton>
-                  </div>
-                </div>
-              </Link>
-            </li>
-          )}
         </ul>
       </div>
-      <div className='block sm:hidden'>
-        {themaCards?.map((thema, id) => (
+      <div className='flex flex-col gap-y-[10px] sm:hidden'>
+        {themaCards.map((thema, id) => (
           <Link key={id} href={`/${thema.transitionAgenda}/${thema.slug}`}>
-            <div className='my-6 h-24 w-full rounded-cl bg-green-600 shadow'>
+            <div className='h-28 w-full rounded-cl bg-green-100 shadow'>
               <div className='flex items-center justify-start'>
-                <div className='relative h-24 w-24'>
+                <div className='relative !h-28 !w-24'>
                   <Image
                     src={urlFor(thema?.mobileCardImage).url()}
                     alt={thema?.themaName + 'image'}
@@ -94,34 +72,51 @@ export default function ThemaCard({ themaCards }) {
                     </div>
                   )}
                 </div>
-                <div className='pl-4 text-gray-100'>
-                  <h3 className='heading-2xl-semibold'>{thema.themaName}</h3>
-                  <p className='p-base text-green-200'>{thema.count} instrumenten</p>
+                <div className='flex grow flex-row items-center justify-between pl-6 pr-4 text-black'>
+                  <div>
+                    <h3 className='heading-xl-semibold max-w-[132px] break-words'>
+                      {thema.themaName}
+                    </h3>
+
+                    <p className='p-xs-semibold text-green-500'>{thema.count} instrumenten</p>
+                  </div>
+                  <div className='flex items-center justify-end'>
+                    <NewRoundButton variant='orange' />
+                  </div>
                 </div>
               </div>
             </div>
           </Link>
         ))}
-        {themaCards[0].transitionAgenda !== 'bouw' && (
-          <div className='w-full rounded-cl border border-gray-200 bg-green-50'>
-            <Link href='/nieuwsbrief' className='h-full w-full'>
-              <div className='flex h-full w-full flex-grow flex-col justify-between p-6'>
-                <h3 className='heading-2xl-semibold pb-4 text-green-600'>Nieuwe thema’s</h3>
-                <p className='p-base text-gren-800'>
-                  Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
-                </p>
-                <p className='p-base pt-4 text-green-800'>
-                  Schrijf je in op onze nieuwsbrief en blijf op de hoogte van de laatste
-                  ontwikkelingen.
-                </p>
-                <div className='flex grow self-baseline pt-6'>
-                  <CustomButton color='darkGreenBG'>Houd me op de hoogte </CustomButton>
-                </div>
-              </div>
-            </Link>
-          </div>
-        )}
       </div>
+
+      {themaCards[0].transitionAgenda !== 'bouw' && (
+        <div className='mt-20 flex w-full flex-col items-center justify-between gap-y-6 rounded-cl bg-green-400 px-6 py-6 md:flex-row md:px-24'>
+          <div className='flex flex-col items-center justify-between'>
+            <Image
+              src={newthemasvg}
+              alt='small icon representing thema'
+              height={85}
+              width={85}
+              className='mb-4'
+            />
+            <h3 className='heading-2xl-semibold text-nowrap text-cl-black'>Nieuwe thema’s</h3>
+          </div>
+          <div className='max-w-[400px]'>
+            <p className='p-base text-cl-black'>
+              Stap voor stap werkt CircuLaw de instrumenten uit voor nieuwe thema&apos;s.
+            </p>
+            <p className='p-base text-cl-black'>
+              Schrijf je in op onze nieuwsbrief en blijf op de hoogte van de laatste ontwikkelingen.
+            </p>
+          </div>
+          <div className='flex w-full justify-start md:w-auto md:justify-center'>
+            <NewButton variant='secondaryLight' href='/nieuwsbrief' icon='arrowRight'>
+              Houd me op de hoogte{' '}
+            </NewButton>
+          </div>
+        </div>
+      )}
     </>
   );
 }

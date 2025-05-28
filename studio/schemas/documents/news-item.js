@@ -13,7 +13,7 @@ export default {
   fields: [
     orderRankField({ type: 'newsItem', newItemPosition: 'before' }),
     {
-      name: 'newsOrAgenda',
+      name: 'isAgendaItem',
       type: 'boolean',
       title: 'Is this an Agenda Item?',
       description: 'select true if this is an Agenda Itme',
@@ -27,18 +27,18 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'featured',
+      name: 'isFeatured',
       type: 'boolean',
       initialValue: false,
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'createPage',
+      name: 'hasPage',
       type: 'boolean',
       title: 'Create Page for the news item',
       description: 'Select true if the news item will have its own page with content',
       initialValue: false,
-      hidden: ({ parent }) => parent.newsOrAgenda === true,
+      hidden: ({ parent }) => parent.isAgendaItem === true,
     },
     {
       name: 'category',
@@ -47,11 +47,11 @@ export default {
       description: 'select the type of news item',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
-          return parent.newsOrAgenda !== true && currentValue === undefined
+          return parent.isAgendaItem !== true && currentValue === undefined
             ? 'A value is required'
             : true;
         }),
-      hidden: ({ parent }) => parent.newsOrAgenda === true,
+      hidden: ({ parent }) => parent.isAgendaItem === true,
       options: {
         list: [
           { title: 'Nieuw op de site', value: 'Nieuw op de site' },
@@ -68,17 +68,16 @@ export default {
         'select the colour of the news item card. Make sure it works with the other news items next to it.',
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
-          return parent.newsOrAgenda !== true && currentValue === undefined
+          return parent.isAgendaItem !== true && currentValue === undefined
             ? 'A value is required'
             : true;
         }),
-      hidden: ({ parent }) => parent.newsOrAgenda === true,
+      hidden: ({ parent }) => parent.isAgendaItem === true,
       options: {
         list: [
-          { title: 'Light green', value: 'lightGreen' },
-          { title: 'Green', value: 'green' },
-          { title: 'Dark green', value: 'darkGreen' },
-          { title: 'Extra dark green', value: 'extraDarkGreen' },
+          { title: 'Light green', value: 'green-200' }, // green 200
+          { title: 'Green', value: 'green-300' }, // green 300
+          { title: 'Dark green', value: 'green-400' }, // green-400
         ],
       },
     },
@@ -86,13 +85,15 @@ export default {
       name: 'newsText',
       type: 'text',
       title: 'News item text',
+      description:
+        'keep this short and sweet. If you need more space to write, consider creating a page for the news item',
       validation: (Rule) =>
-        Rule.custom((currentValue, { parent }) => {
-          return parent.newsOrAgenda !== true && currentValue === undefined
+        Rule.max(300).custom((currentValue, { parent }) => {
+          return parent.isAgendaItem !== true && currentValue === undefined
             ? 'A value is required'
             : true;
         }),
-      hidden: ({ parent }) => parent.newsOrAgenda === true,
+      hidden: ({ parent }) => parent.isAgendaItem === true,
     },
     {
       name: 'newsDate',
@@ -105,13 +106,21 @@ export default {
       type: 'string',
       title: 'Link text',
       description: 'text to be displayed in the link',
-      hidden: ({ parent }) => parent.createPage === true || parent.newsOrAgenda === true,
+      validation: (Rule) =>
+        Rule.custom((currentValue, { parent }) => {
+          return parent.isFeatured === true &&
+            parent.hasPage === false &&
+            currentValue === undefined
+            ? 'Featured items must have a link or their own page'
+            : true;
+        }),
+      hidden: ({ parent }) => parent.hasPage === true || parent.isAgendaItem === true,
     },
     {
       name: 'linkUrl',
       type: 'url',
       title: 'Link',
-      hidden: ({ parent }) => parent.createPage === true || parent.newsOrAgenda === true,
+      hidden: ({ parent }) => parent.hasPage === true || parent.isAgendaItem === true,
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
           return parent.linkText !== undefined && currentValue === undefined
@@ -122,11 +131,12 @@ export default {
         'Link to internal or external page. please select whethere it is internal or external below.',
     },
     {
-      name: 'internalExternal',
+      name: 'isExternal',
       type: 'boolean',
       title: 'Internal or External Link',
+      initialValue: false,
       description: 'select true if external',
-      hidden: ({ parent }) => parent.createPage === true || parent.newsOrAgenda === true,
+      hidden: ({ parent }) => parent.hasPage === true || parent.isAgendaItem === true,
       validation: (Rule) =>
         Rule.custom((currentValue, { parent }) => {
           return parent?.linkUrl !== undefined && currentValue === undefined
@@ -138,21 +148,32 @@ export default {
       title: 'News Image',
       name: 'newsImage',
       type: 'image',
-      hidden: ({ parent }) => parent.newsOrAgenda === true || parent.newsOrAgenda === true,
+      validation: (Rule) =>
+        Rule.custom((currentValue, { document }) => {
+          return currentValue === undefined && document.isFeatured === true
+            ? 'Featured news items must have an image'
+            : true;
+        }),
+      hidden: ({ parent }) => parent.isAgendaItem === true,
       fields: [
         {
           title: 'Alt Text',
           name: 'altText',
           type: 'string',
+          validation: (Rule) =>
+            Rule.custom((currentValue, { document }) => {
+              return currentValue === undefined && document.newsImage !== undefined
+                ? 'You need to add a caption to the image, this will only be visible to screen readers'
+                : true;
+            }),
         },
       ],
     },
-
     {
       title: 'Slug',
       name: 'slug',
       type: 'slug',
-      hidden: ({ parent }) => parent.createPage === false || parent.newsOrAgenda === true,
+      hidden: ({ parent }) => parent.hasPage === false || parent.isAgendaItem === true,
       description:
         'Klik op ‘aanmaken’. (Slug is het gedeelte van een URL die na de domeinnaam komt. Deze paginanaam wordt automatisch gegenereerd aan de hand van de titel.)',
       options: {
@@ -179,17 +200,17 @@ export default {
       title: 'link to event',
       description: 'this does not effect the order in which news items are displayed',
       validation: (Rule) => Rule.uri({ scheme: ['http', 'https'] }).warning('Url is incorrect'),
-      hidden: ({ parent }) => parent.newsOrAgenda === false,
+      hidden: ({ parent }) => parent.isAgendaItem === false,
     },
   ],
   preview: {
     select: {
       title: 'title',
       date: 'newsDate',
-      featured: 'featured',
+      isFeatured: 'isFeatured',
     },
-    prepare: ({ title, date, featured }) => ({
-      title: [featured ? '⭐️ ' : '', `${title ?? `No book selected`}`].join(` `),
+    prepare: ({ title, date, isFeatured }) => ({
+      title: [isFeatured ? '⭐️ ' : '', `${title ?? `No book selected`}`].join(` `),
       subtitle: `${date}`,
       media: BsNewspaper,
     }),
