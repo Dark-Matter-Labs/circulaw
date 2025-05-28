@@ -41,8 +41,8 @@ export default function Urgency({ data }) {
           />
         </div>
         <div className='flex max-w-[500px] flex-col'>
-          <p className='heading-xl sm:heading-2xl mb-10'>{data?.ctaContent}</p>
-          <NewButton href='/' variant='primaryDark' icon='arrowRight'>
+          <p className='heading-xl sm:heading-2xl mb-6 sm:mb-10'>{data?.ctaContent}</p>
+          <NewButton href='/European_green_deal.pdf' newTab={true} variant='primaryDark' icon='download'>
             Download impactreport
           </NewButton>
         </div>
