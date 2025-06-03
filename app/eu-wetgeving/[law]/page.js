@@ -1,10 +1,7 @@
 import { Suspense } from 'react';
 
-import Link from 'next/link';
-
+import EULawHeader from '@/components/eu-law/eu-law-header';
 import TabContent from '@/components/eu-law/tab-content';
-import Tabs from '@/components/eu-law/tabs';
-import SocialButtons from '@/components/social-buttons';
 import {
   EU_LAW_METADATA_QUERY,
   EU_LAW_PATHS_QUERY,
@@ -65,38 +62,14 @@ export default async function EULawPage({ params, searchParams }) {
     tags: ['euEuropeTab', 'euCircularEconomyTab', 'euLocalTab'],
   });
   const initialTab = searchParams.tab;
+
   return (
     <>
-      <div className='relative'>
-        <div className='h-[240px] bg-green-800 pt-3 sm:h-[360px]'>
-          <div className='global-margin flex h-full flex-col justify-between'>
-            <div className='flex flex-row justify-between pt-6'>
-              <div className='p-2xs-bold flex w-min flex-row whitespace-nowrap rounded-clSm bg-white py-1.5 pl-2 pr-3 text-green-600'>
-                <Link href='/' className=''>
-                  <span className='link-interaction'>
-                    Home <span className='mx-2'>{'>'}</span>
-                  </span>
-                </Link>
-                <Link href='/eu-wetgeving'>
-                  <span className='link-interaction capitalize'>EU wetgeving</span>
-                </Link>
-              </div>
-              <div className='hidden sm:block'>
-                <SocialButtons title={`${summaryData?.title} -`} />
-              </div>
-              {/* ${selectedTab.replace(/(-)/g, ' ')} */}
-            </div>
-            <h1 className='heading-2xl-semibold sm:heading-5xl-semibold mb-[60px] max-w-4xl text-gray-100 sm:mb-[94px]'>
-              {' '}
-              {summaryData?.title}
-            </h1>
-          </div>
-        </div>
-        <Tabs summaryData={summaryData} initialTab={initialTab} />
-        <Suspense>
-          <TabContent summaryData={summaryData} tabData={tabData} />
-        </Suspense>
-      </div>
+      <EULawHeader summaryData={summaryData} initialTab={initialTab} />
+
+      <Suspense>
+        <TabContent summaryData={summaryData} tabData={tabData} />
+      </Suspense>
     </>
   );
 }

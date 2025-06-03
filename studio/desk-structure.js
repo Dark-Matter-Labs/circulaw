@@ -4,6 +4,8 @@ import { CiTextAlignJustify } from 'react-icons/ci';
 import { FaHandshake, FaQuestion } from 'react-icons/fa';
 import { FcAbout } from 'react-icons/fc';
 import { GiEuropeanFlag, GiGreekTemple } from 'react-icons/gi';
+import { IoCalendarOutline } from 'react-icons/io5';
+import { RiTeamLine } from 'react-icons/ri';
 
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 
