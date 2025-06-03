@@ -1,40 +1,60 @@
 'use client';
 
-import Image from 'next/image';
-
-import { portableTextComponents } from '@/lib/portable-text/pt-components';
-import { PortableText } from '@portabletext/react';
+import Pagination from '@/components/about-page/pagination';
+import { InlineImageComponent, YTComponent } from '@/lib/portable-text/portable-text-types';
 
 import Header from '../headers';
-import AboutPageDropdown from './about-page-dropdown';
-import AboutPageNav from './about-page-nav';
+import AccordionDropdown from './content/accordion-dropdown';
+import Cta from './content/cta';
+import Intro from './content/intro';
+import MediaItems from './content/media-items';
+import Partners from './content/partners';
+import Team from './content/team';
+import Testimonials from './content/testimonials';
+import TiledImages from './content/tiled-images';
+import Timeline from './content/timeline';
+import AboutPageTitle from './content/title';
+import TwoColumnSection from './content/two-column-section';
+import Urgency from './content/urgency';
+
+// Map of components based on `_type`
+const componentMap = {
+  title: AboutPageTitle,
+  intro: Intro,
+  youtube: YTComponent,
+  twoColumnSection: TwoColumnSection,
+  accordionDropdown: AccordionDropdown,
+  imageBlock: InlineImageComponent,
+  cta: Cta,
+  timeline: Timeline,
+  tiledImages: TiledImages,
+  team: Team,
+  partnersSection: Partners,
+  mediaItems: MediaItems,
+  testimonials: Testimonials,
+  urgency: Urgency,
+};
 
 export default function AboutPageComponent({ data }) {
   return (
     <div>
       <Header title={data?.pageTitle} imageURL='/big-decoration.png' bgColor='bg-green-500' />
-      <div className='global-margin pb-8 text-cl-black'>
-        <div className='block w-full lg:hidden'>
-          <AboutPageDropdown currentSlug={data?.slug.current} slugs={data?.slugs} />
-        </div>
-        <div className='max-w-8xl mt-10 grid w-full grid-cols-1 lg:grid-cols-3'>
-          <div className='lg:col-span-2'>
-            <div className='max-w-3xl'>
-              <PortableText value={data?.aboutPageContent} components={portableTextComponents} />
-            </div>
-            {data?._id === '2573771a-7b6d-4404-9162-c9427cc825c8' && (
-              <div>
-                <Image src='/method.png' alt='image of methodology' width={768} height={1806} />
+      <Pagination pages={data.pages} position='top' />
+      <div className='global-margin mt-[60px] flex flex-col gap-x-8 text-cl-black sm:mt-[120px]'>
+        {data.content.map((item, index) => {
+          const Component = componentMap[item._type];
+          if (Component) {
+            return (
+              <div key={index} className=''>
+                <Component data={item} />
               </div>
-            )}
-          </div>
-          <div className='col-span-1 mt-3 hidden lg:mb-20 lg:ml-12 lg:block'>
-            <AboutPageNav currentSlug={data?.slug.current} slugs={data?.slugs} />
-          </div>
-          <div className='block lg:hidden'>
-            <AboutPageDropdown currentSlug={data?.slug.current} slugs={data?.slugs} />
-          </div>
-        </div>
+            );
+          }
+          return null;
+        })}
+      </div>
+      <div className='mb-10'>
+        <Pagination pages={data.pages} />
       </div>
     </div>
   );

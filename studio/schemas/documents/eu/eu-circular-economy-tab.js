@@ -74,3 +74,5 @@ export default {
     },
   ],
 };
+
+// TODO: use the object here.
