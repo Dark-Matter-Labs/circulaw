@@ -462,7 +462,6 @@ export default function GovLevelLayout({ ...props }) {
                 </>
               )}
 
-
               {props.thema === 'afvalpreventie' && (
                 <>
                   <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
