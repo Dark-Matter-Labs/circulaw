@@ -206,6 +206,19 @@ export default async function GovernmentLevelPage({ params }) {
         imageMob={placeholderImage}
       />
     );
+  } else if (params.thema === 'afvalpreventie') {
+    return (
+      <GovLevelLayout
+        thema={params?.thema}
+        transitionAgenda={params?.productChain}
+        title='Welk instrument kan welke overheid gebruiken voor afvalpreventie'
+        allRegionLaws={govLevelContent?.allRegions}
+        natLaws={govLevelContent?.national}
+        provLaws={govLevelContent?.provincial}
+        gemLaws={govLevelContent?.local}
+        imageMob={placeholderImage}
+      />
+    );
   } else {
     return notFound();
   }
