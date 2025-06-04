@@ -462,6 +462,22 @@ export default function GovLevelLayout({ ...props }) {
                 </>
               )}
 
+              {props.thema === 'afvalpreventie' && (
+                <>
+                  <div className='absolute bottom-[20%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[35%] right-[70%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[15%] right-[60%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[30%] right-[25%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[45%] right-[33%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[15%] right-[33%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[45%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[30%] right-[38%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[20%] right-[25%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[34%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
+                  <div className='absolute bottom-[12%] right-[66%] h-3 w-3 rounded-full bg-gray-100'></div>
+                </>
+              )}
+
               {/* ALL Regions 
             <div className='absolute bottom-[8%]  right-[50%] h-3 w-3 rounded-full bg-gray-100'></div>
             <div className='absolute bottom-[50%] right-[45%] h-3 w-3 rounded-full bg-gray-100'></div>
