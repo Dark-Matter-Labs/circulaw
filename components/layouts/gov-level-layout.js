@@ -65,21 +65,21 @@ export default function GovLevelLayout({ ...props }) {
         <div className='global-margin mb-20 mt-5 hidden sm:mt-20 sm:block'>
           <div className='flex grid-cols-3 items-start 2xl:justify-center'>
             {/* LEFT HAND SIDE */}
-            <div className='col-span-1 mt-10 grid h-full w-80 items-start justify-center'>
-              <div
-                id='allId'
-                className='justify-left flex h-10 w-80 items-center rounded-full border border-green-800 bg-gray-100 text-gray-800'
-              >
-                <div className='flex h-10 w-10 items-center justify-center rounded-full border-b border-r border-t border-green-800'>
-                  <h5 className='p-2xs-semibold sm:p-xs-semibold'>A</h5>
+            {allRegionLaws?.length !== 0 && (
+              <div className='col-span-1 mt-10 grid h-full w-80 items-start justify-center'>
+                <div
+                  id='allId'
+                  className='justify-left flex h-10 w-80 items-center rounded-full border border-green-800 bg-gray-100 text-gray-800'
+                >
+                  <div className='flex h-10 w-10 items-center justify-center rounded-full border-b border-r border-t border-green-800'>
+                    <h5 className='p-2xs-semibold sm:p-xs-semibold'>A</h5>
+                  </div>
+                  <div className='-ml-10 flex h-full w-full items-center justify-center'>
+                    <h4 className='p-base-semibold sm:headling-xl-semibold'>Alle overheidslagen</h4>
+                  </div>
                 </div>
-                <div className='-ml-10 flex h-full w-full items-center justify-center'>
-                  <h4 className='p-base-semibold sm:headling-xl-semibold'>Alle overheidslagen</h4>
-                </div>
-              </div>
-              <div className='pl-4 pt-3'>
-                {allRegionLaws?.length != 0 &&
-                  allRegionLaws?.map((law) => (
+                <div className='pl-4 pt-3'>
+                  {allRegionLaws?.map((law) => (
                     <Link
                       key={law.titel}
                       href={`/${law.transitionAgenda}/${law.thema}/instrumenten/${law.slug.current}`}
@@ -109,9 +109,9 @@ export default function GovLevelLayout({ ...props }) {
                       </div>
                     </Link>
                   ))}
+                </div>
               </div>
-            </div>
-
+            )}
             {/* DIAGRAM */}
             <div
               onLoad={useXarrow()}
@@ -528,18 +528,18 @@ export default function GovLevelLayout({ ...props }) {
             <div className='absolute bottom-[45%] right-[65%] h-3 w-3 rounded-full bg-gray-100'></div>
             <div className='absolute bottom-[30%] right-[38%] h-3 w-3 rounded-full bg-gray-100'></div>*/}
 
-              {allRegionLaws && (
-                <div>
+              <div>
+                {allRegionLaws.length !== 0 && (
                   <div id='allEnd' className='absolute bottom-[85%] right-[50%] h-3 w-3'></div>
-                  {natLaws.length > 0 && (
-                    <div id='natEnd' className='absolute right-40 top-24 h-3 w-3'></div>
-                  )}
-                  <div id='gemEnd' className='absolute bottom-[15%] right-[30%] h-3 w-3'></div>
-                  {lines.map((line, i) => (
-                    <Xarrow key={i} {...line} />
-                  ))}
-                </div>
-              )}
+                )}
+                {natLaws.length > 0 && (
+                  <div id='natEnd' className='absolute right-40 top-24 h-3 w-3'></div>
+                )}
+                <div id='gemEnd' className='absolute bottom-[15%] right-[30%] h-3 w-3'></div>
+                {lines.map((line, i) => (
+                  <Xarrow key={i} {...line} />
+                ))}
+              </div>
 
               {provLaws?.length > 0 && (
                 <div>
