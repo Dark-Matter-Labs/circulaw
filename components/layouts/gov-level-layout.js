@@ -9,15 +9,15 @@ import { IconArrowRight, IconInfoSquareRoundedFilled } from '@tabler/icons-react
 import Header from '../headers';
 
 function getGovLevelBgColor(length, allLengths) {
-  if (length === 0) return 'bg-black';
+  if (length === 0) return '#000000'; // black
 
   const sorted = [...allLengths].sort((a, b) => a - b);
   const min = sorted[0];
   const max = sorted[2];
 
-  if (length === max) return 'bg-green-500';
-  if (length === min) return 'bg-green-300';
-  return 'bg-green-400';
+  if (length === max) return '#028352'; // green-500
+  if (length === min) return '#84E9C5'; // green-300
+  return '#25C38B'; // green-400
 }
 
 export default function GovLevelLayout({ ...props }) {
@@ -79,6 +79,12 @@ export default function GovLevelLayout({ ...props }) {
 
   useEffect(() => {
     const levels = ['nationaal', 'provinciaal', 'gemeentelijk', 'alle'];
+    const bgColors = {
+      nationaal: natBg,
+      provinciaal: provBg,
+      gemeentelijk: gemBg,
+      alle: '#22c55e',
+    };
     const newLines = levels.map((level) => {
       const btn = buttonRefs[level].current;
       const circle = circleRefs[level].current;
@@ -86,15 +92,30 @@ export default function GovLevelLayout({ ...props }) {
       const btnRect = btn.getBoundingClientRect();
       const circleRect = circle.getBoundingClientRect();
       const containerRect = containerRef.current.getBoundingClientRect();
-      // For each line:
-      const x1 = btnRect.left - containerRect.left;
-      const y1 = btnRect.top + btnRect.height / 2 - containerRect.top;
-      const x2 = circleRect.left + circleRect.width / 2 - containerRect.left;
-      const y2 = y1;
-      return { x1, y1, x2, y2 };
+      let x1 = btnRect.left - containerRect.left;
+      let y1 = btnRect.top + btnRect.height / 2 - containerRect.top;
+      let x2 = circleRect.left + circleRect.width / 2 - containerRect.left;
+      let y2 = y1;
+
+      const lineOffsets = {
+        nationaal: { x1: -40, y1: 0, x2: 180, y2: 0 },
+        provinciaal: { x1: -40, y1: 0, x2: 140, y2: 0 },
+        gemeentelijk: { x1: -40, y1: 0, x2: 40, y2: 0 },
+        alle: { x1: -40, y1: 0, x2: 0, y2: 0 },
+      };
+      const offset = lineOffsets[level] || {};
+      x1 += offset.x1 || 0;
+      y1 += offset.y1 || 0;
+      x2 += offset.x2 || 0;
+      y2 += offset.y2 || 0;
+
+      // If selected, always use #f7e3c3
+      const stroke = selected === level ? '#f7e3c3' : bgColors[level];
+
+      return { x1, y1, x2, y2, stroke };
     });
     setLines(newLines.filter(Boolean));
-  }, [selected]);
+  }, [selected, natBg, provBg, gemBg]);
 
   return (
     <div>
@@ -110,7 +131,34 @@ export default function GovLevelLayout({ ...props }) {
         />
 
         <div className='global-margin relative mb-20 mt-5 hidden sm:mt-20 sm:block'>
-          <div className='flex flex-row items-center justify-between gap-x-10 rounded-cl px-12 py-6 shadow-cl1'>
+          <div
+            className='flex flex-row items-center justify-between gap-x-10 rounded-cl px-12 py-6 shadow-cl1'
+            ref={containerRef}
+          >
+            {/* SVG overlay here, positioned absolutely */}
+            <svg
+              style={{
+                position: 'absolute',
+                left: 0,
+                top: 0,
+                width: '100%',
+                height: '100%',
+                pointerEvents: 'none',
+                zIndex: 50,
+              }}
+            >
+              {lines.map((line, idx) => (
+                <line
+                  key={idx}
+                  x1={line.x1}
+                  y1={line.y1}
+                  x2={line.x2}
+                  y2={line.y2}
+                  stroke={line.stroke}
+                  strokeWidth='2'
+                />
+              ))}
+            </svg>
             <div className='flex max-w-[140px] flex-col gap-y-1'>
               <h4 className='p-xs-semibold'>Hoogste aantal instrumenten</h4>
               <div className='h-9 w-9 rounded-clSm bg-green-500' />
@@ -118,50 +166,30 @@ export default function GovLevelLayout({ ...props }) {
               <div className='h-9 w-9 rounded-clSm bg-green-300' />
               <h4 className='p-xs-semibold'>Laagste aantal instrumenten</h4>
             </div>
-            <div className='relative flex h-[550px] flex-col gap-y-10' ref={containerRef}>
-              {/* SVG overlay */}
-              <svg
-                style={{
-                  position: 'absolute',
-                  left: 0,
-                  top: 0,
-                  width: '100%',
-                  height: '100%',
-                  pointerEvents: 'none',
-                  zIndex: 50,
-                }}
-              >
-                {lines.map((line, idx) => (
-                  <line
-                    key={idx}
-                    x1={line.x1}
-                    y1={line.y1}
-                    x2={line.x2}
-                    y2={line.y2}
-                    stroke='#22c55e'
-                    strokeWidth='2'
-                  />
-                ))}
-              </svg>
+            <div className='relative flex h-[550px] flex-col gap-y-10 overflow-visible'>
               <div className='relative h-[450px] w-[450px]'>
                 <button
                   onClick={() => handleSelected('nationaal')}
                   ref={circleRefs.nationaal}
+                  style={selected === 'nationaal' ? {} : { backgroundColor: natBg }}
                   className={`${selected === 'nationaal' ? 'bg-orange-100' : natBg} absolute bottom-0 left-1/2 z-10 h-[450px] w-[450px] -translate-x-1/2 rounded-full`}
                 ></button>
                 <button
                   onClick={() => handleSelected('provinciaal')}
                   ref={circleRefs.provinciaal}
+                  style={selected === 'provinciaal' ? {} : { backgroundColor: provBg }}
                   className={`${selected === 'provinciaal' ? 'bg-orange-100' : provBg} absolute bottom-0 left-1/2 z-20 h-[350px] w-[350px] -translate-x-1/2 rounded-full`}
                 ></button>
                 <button
                   onClick={() => handleSelected('gemeentelijk')}
                   ref={circleRefs.gemeentelijk}
+                  style={selected === 'gemeentelijk' ? {} : { backgroundColor: gemBg }}
                   className={`${selected === 'gemeentelijk' ? 'bg-orange-100' : gemBg} absolute bottom-0 left-1/2 z-30 h-[250px] w-[250px] -translate-x-1/2 rounded-full`}
                 ></button>
                 <button
                   onClick={() => handleSelected('alle')}
                   ref={circleRefs.alle}
+                  style={selected === 'alle' ? {} : { backgroundColor: '#FFFFFF99' }}
                   className={`${selected === 'alle' ? 'bg-orange-100' : 'bg-white/60'} absolute bottom-0 left-1/2 z-40 h-[450px] w-[94px] -translate-x-1/2 rounded-[50%]`}
                 ></button>
               </div>
